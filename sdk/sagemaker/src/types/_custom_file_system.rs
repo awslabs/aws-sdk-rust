@@ -8,6 +8,8 @@ pub enum CustomFileSystem {
     EfsFileSystem(crate::types::EfsFileSystem),
     /// <p>A custom file system in Amazon FSx for Lustre.</p>
     FSxLustreFileSystem(crate::types::FSxLustreFileSystem),
+    /// <p>A custom file system in Amazon S3. This is only supported in Amazon SageMaker Unified Studio.</p>
+    S3FileSystem(crate::types::S3FileSystem),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -44,6 +46,19 @@ impl CustomFileSystem {
     /// Returns true if this is a [`FSxLustreFileSystem`](crate::types::CustomFileSystem::FSxLustreFileSystem).
     pub fn is_f_sx_lustre_file_system(&self) -> bool {
         self.as_f_sx_lustre_file_system().is_ok()
+    }
+    /// Tries to convert the enum instance into [`S3FileSystem`](crate::types::CustomFileSystem::S3FileSystem), extracting the inner [`S3FileSystem`](crate::types::S3FileSystem).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_s3_file_system(&self) -> ::std::result::Result<&crate::types::S3FileSystem, &Self> {
+        if let CustomFileSystem::S3FileSystem(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`S3FileSystem`](crate::types::CustomFileSystem::S3FileSystem).
+    pub fn is_s3_file_system(&self) -> bool {
+        self.as_s3_file_system().is_ok()
     }
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {

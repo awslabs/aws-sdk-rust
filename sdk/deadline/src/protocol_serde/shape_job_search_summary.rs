@@ -120,6 +120,19 @@ where
                                 ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
                             )?);
                         }
+                        "updatedAt" => {
+                            builder = builder.set_updated_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                tokens.next(),
+                                ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
+                            )?);
+                        }
+                        "updatedBy" => {
+                            builder = builder.set_updated_by(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "jobParameters" => {
                             builder = builder.set_job_parameters(crate::protocol_serde::shape_job_parameters::de_job_parameters(tokens)?);
                         }

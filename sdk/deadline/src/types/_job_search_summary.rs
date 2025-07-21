@@ -58,6 +58,10 @@ pub struct JobSearchSummary {
     pub ended_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time the resource started running.</p>
     pub started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The date and time the resource was updated.</p>
+    pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The user or system that updated this resource.</p>
+    pub updated_by: ::std::option::Option<::std::string::String>,
     /// <p>The job parameters.</p>
     pub job_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::JobParameter>>,
     /// <p>The maximum number of worker hosts that can concurrently process a job. When the <code>maxWorkerCount</code> is reached, no more workers will be assigned to process the job, even if the fleets assigned to the job's queue has available workers.</p>
@@ -154,6 +158,14 @@ impl JobSearchSummary {
     pub fn started_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.started_at.as_ref()
     }
+    /// <p>The date and time the resource was updated.</p>
+    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.updated_at.as_ref()
+    }
+    /// <p>The user or system that updated this resource.</p>
+    pub fn updated_by(&self) -> ::std::option::Option<&str> {
+        self.updated_by.as_deref()
+    }
     /// <p>The job parameters.</p>
     pub fn job_parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::JobParameter>> {
         self.job_parameters.as_ref()
@@ -188,6 +200,8 @@ impl ::std::fmt::Debug for JobSearchSummary {
         formatter.field("created_at", &self.created_at);
         formatter.field("ended_at", &self.ended_at);
         formatter.field("started_at", &self.started_at);
+        formatter.field("updated_at", &self.updated_at);
+        formatter.field("updated_by", &self.updated_by);
         formatter.field("job_parameters", &"*** Sensitive Data Redacted ***");
         formatter.field("max_worker_count", &self.max_worker_count);
         formatter.field("source_job_id", &self.source_job_id);
@@ -221,6 +235,8 @@ pub struct JobSearchSummaryBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) ended_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) updated_by: ::std::option::Option<::std::string::String>,
     pub(crate) job_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::JobParameter>>,
     pub(crate) max_worker_count: ::std::option::Option<i32>,
     pub(crate) source_job_id: ::std::option::Option<::std::string::String>,
@@ -522,6 +538,34 @@ impl JobSearchSummaryBuilder {
     pub fn get_started_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.started_at
     }
+    /// <p>The date and time the resource was updated.</p>
+    pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.updated_at = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The date and time the resource was updated.</p>
+    pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.updated_at = input;
+        self
+    }
+    /// <p>The date and time the resource was updated.</p>
+    pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_at
+    }
+    /// <p>The user or system that updated this resource.</p>
+    pub fn updated_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.updated_by = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The user or system that updated this resource.</p>
+    pub fn set_updated_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.updated_by = input;
+        self
+    }
+    /// <p>The user or system that updated this resource.</p>
+    pub fn get_updated_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.updated_by
+    }
     /// Adds a key-value pair to `job_parameters`.
     ///
     /// To override the contents of this collection use [`set_job_parameters`](Self::set_job_parameters).
@@ -598,6 +642,8 @@ impl JobSearchSummaryBuilder {
             created_at: self.created_at,
             ended_at: self.ended_at,
             started_at: self.started_at,
+            updated_at: self.updated_at,
+            updated_by: self.updated_by,
             job_parameters: self.job_parameters,
             max_worker_count: self.max_worker_count,
             source_job_id: self.source_job_id,
@@ -623,6 +669,8 @@ impl ::std::fmt::Debug for JobSearchSummaryBuilder {
         formatter.field("created_at", &self.created_at);
         formatter.field("ended_at", &self.ended_at);
         formatter.field("started_at", &self.started_at);
+        formatter.field("updated_at", &self.updated_at);
+        formatter.field("updated_by", &self.updated_by);
         formatter.field("job_parameters", &"*** Sensitive Data Redacted ***");
         formatter.field("max_worker_count", &self.max_worker_count);
         formatter.field("source_job_id", &self.source_job_id);

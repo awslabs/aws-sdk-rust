@@ -608,6 +608,33 @@ pub struct HumanTaskConfig {
     /// <li>
     /// <p><code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code></p></li>
     /// </ul>
+    /// <p><b>Generative AI/Custom</b> - Direct passthrough of input data without any transformation.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:aws:lambda:us-east-1:432418664414:function:PRE-PassThrough</code></p></li>
+    /// <li>
+    /// <p><code>arn:aws:lambda:us-east-2:266458841044:function:PRE-PassThrough</code></p></li>
+    /// <li>
+    /// <p><code>arn:aws:lambda:us-west-2:081040173940:function:PRE-PassThrough</code></p></li>
+    /// <li>
+    /// <p><code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-PassThrough</code></p></li>
+    /// <li>
+    /// <p><code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-PassThrough</code></p></li>
+    /// <li>
+    /// <p><code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-PassThrough</code></p></li>
+    /// <li>
+    /// <p><code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-PassThrough</code></p></li>
+    /// <li>
+    /// <p><code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-PassThrough</code></p></li>
+    /// <li>
+    /// <p><code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-PassThrough</code></p></li>
+    /// <li>
+    /// <p><code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-PassThrough</code></p></li>
+    /// <li>
+    /// <p><code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-PassThrough</code></p></li>
+    /// <li>
+    /// <p><code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-PassThrough</code></p></li>
+    /// </ul>
     pub pre_human_task_lambda_arn: ::std::option::Option<::std::string::String>,
     /// <p>Keywords used to describe the task so that workers on Amazon Mechanical Turk can discover the task.</p>
     pub task_keywords: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -1250,6 +1277,33 @@ impl HumanTaskConfig {
     /// <p><code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code></p></li>
     /// <li>
     /// <p><code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code></p></li>
+    /// </ul>
+    /// <p><b>Generative AI/Custom</b> - Direct passthrough of input data without any transformation.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:aws:lambda:us-east-1:432418664414:function:PRE-PassThrough</code></p></li>
+    /// <li>
+    /// <p><code>arn:aws:lambda:us-east-2:266458841044:function:PRE-PassThrough</code></p></li>
+    /// <li>
+    /// <p><code>arn:aws:lambda:us-west-2:081040173940:function:PRE-PassThrough</code></p></li>
+    /// <li>
+    /// <p><code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-PassThrough</code></p></li>
+    /// <li>
+    /// <p><code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-PassThrough</code></p></li>
+    /// <li>
+    /// <p><code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-PassThrough</code></p></li>
+    /// <li>
+    /// <p><code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-PassThrough</code></p></li>
+    /// <li>
+    /// <p><code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-PassThrough</code></p></li>
+    /// <li>
+    /// <p><code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-PassThrough</code></p></li>
+    /// <li>
+    /// <p><code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-PassThrough</code></p></li>
+    /// <li>
+    /// <p><code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-PassThrough</code></p></li>
+    /// <li>
+    /// <p><code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-PassThrough</code></p></li>
     /// </ul>
     pub fn pre_human_task_lambda_arn(&self) -> ::std::option::Option<&str> {
         self.pre_human_task_lambda_arn.as_deref()
@@ -1962,6 +2016,33 @@ impl HumanTaskConfigBuilder {
     /// <li>
     /// <p><code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code></p></li>
     /// </ul>
+    /// <p><b>Generative AI/Custom</b> - Direct passthrough of input data without any transformation.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:aws:lambda:us-east-1:432418664414:function:PRE-PassThrough</code></p></li>
+    /// <li>
+    /// <p><code>arn:aws:lambda:us-east-2:266458841044:function:PRE-PassThrough</code></p></li>
+    /// <li>
+    /// <p><code>arn:aws:lambda:us-west-2:081040173940:function:PRE-PassThrough</code></p></li>
+    /// <li>
+    /// <p><code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-PassThrough</code></p></li>
+    /// <li>
+    /// <p><code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-PassThrough</code></p></li>
+    /// <li>
+    /// <p><code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-PassThrough</code></p></li>
+    /// <li>
+    /// <p><code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-PassThrough</code></p></li>
+    /// <li>
+    /// <p><code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-PassThrough</code></p></li>
+    /// <li>
+    /// <p><code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-PassThrough</code></p></li>
+    /// <li>
+    /// <p><code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-PassThrough</code></p></li>
+    /// <li>
+    /// <p><code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-PassThrough</code></p></li>
+    /// <li>
+    /// <p><code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-PassThrough</code></p></li>
+    /// </ul>
     pub fn pre_human_task_lambda_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pre_human_task_lambda_arn = ::std::option::Option::Some(input.into());
         self
@@ -2566,6 +2647,33 @@ impl HumanTaskConfigBuilder {
     /// <li>
     /// <p><code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code></p></li>
     /// </ul>
+    /// <p><b>Generative AI/Custom</b> - Direct passthrough of input data without any transformation.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:aws:lambda:us-east-1:432418664414:function:PRE-PassThrough</code></p></li>
+    /// <li>
+    /// <p><code>arn:aws:lambda:us-east-2:266458841044:function:PRE-PassThrough</code></p></li>
+    /// <li>
+    /// <p><code>arn:aws:lambda:us-west-2:081040173940:function:PRE-PassThrough</code></p></li>
+    /// <li>
+    /// <p><code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-PassThrough</code></p></li>
+    /// <li>
+    /// <p><code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-PassThrough</code></p></li>
+    /// <li>
+    /// <p><code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-PassThrough</code></p></li>
+    /// <li>
+    /// <p><code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-PassThrough</code></p></li>
+    /// <li>
+    /// <p><code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-PassThrough</code></p></li>
+    /// <li>
+    /// <p><code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-PassThrough</code></p></li>
+    /// <li>
+    /// <p><code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-PassThrough</code></p></li>
+    /// <li>
+    /// <p><code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-PassThrough</code></p></li>
+    /// <li>
+    /// <p><code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-PassThrough</code></p></li>
+    /// </ul>
     pub fn set_pre_human_task_lambda_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pre_human_task_lambda_arn = input;
         self
@@ -3169,6 +3277,33 @@ impl HumanTaskConfigBuilder {
     /// <p><code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code></p></li>
     /// <li>
     /// <p><code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code></p></li>
+    /// </ul>
+    /// <p><b>Generative AI/Custom</b> - Direct passthrough of input data without any transformation.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:aws:lambda:us-east-1:432418664414:function:PRE-PassThrough</code></p></li>
+    /// <li>
+    /// <p><code>arn:aws:lambda:us-east-2:266458841044:function:PRE-PassThrough</code></p></li>
+    /// <li>
+    /// <p><code>arn:aws:lambda:us-west-2:081040173940:function:PRE-PassThrough</code></p></li>
+    /// <li>
+    /// <p><code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-PassThrough</code></p></li>
+    /// <li>
+    /// <p><code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-PassThrough</code></p></li>
+    /// <li>
+    /// <p><code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-PassThrough</code></p></li>
+    /// <li>
+    /// <p><code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-PassThrough</code></p></li>
+    /// <li>
+    /// <p><code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-PassThrough</code></p></li>
+    /// <li>
+    /// <p><code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-PassThrough</code></p></li>
+    /// <li>
+    /// <p><code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-PassThrough</code></p></li>
+    /// <li>
+    /// <p><code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-PassThrough</code></p></li>
+    /// <li>
+    /// <p><code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-PassThrough</code></p></li>
     /// </ul>
     pub fn get_pre_human_task_lambda_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.pre_human_task_lambda_arn

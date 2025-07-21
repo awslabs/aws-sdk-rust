@@ -19,6 +19,8 @@ pub use crate::types::_cognito_member_definition::CognitoMemberDefinition;
 
 pub use crate::types::_workforce::Workforce;
 
+pub use crate::types::_workforce_ip_address_type::WorkforceIpAddressType;
+
 pub use crate::types::_workforce_status::WorkforceStatus;
 
 pub use crate::types::_workforce_vpc_config_response::WorkforceVpcConfigResponse;
@@ -50,6 +52,8 @@ pub use crate::types::_app_type::AppType;
 pub use crate::types::_ml_tools::MlTools;
 
 pub use crate::types::_custom_file_system_config::CustomFileSystemConfig;
+
+pub use crate::types::_s3_file_system_config::S3FileSystemConfig;
 
 pub use crate::types::_f_sx_lustre_file_system_config::FSxLustreFileSystemConfig;
 
@@ -142,6 +146,8 @@ pub use crate::types::_profiler_config_for_update::ProfilerConfigForUpdate;
 pub use crate::types::_space_settings::SpaceSettings;
 
 pub use crate::types::_custom_file_system::CustomFileSystem;
+
+pub use crate::types::_s3_file_system::S3FileSystem;
 
 pub use crate::types::_f_sx_lustre_file_system::FSxLustreFileSystem;
 
@@ -3487,6 +3493,10 @@ mod _s3_data_source;
 
 mod _s3_data_type;
 
+mod _s3_file_system;
+
+mod _s3_file_system_config;
+
 mod _s3_model_data_source;
 
 mod _s3_model_data_type;
@@ -3856,6 +3866,8 @@ mod _warm_pool_status;
 mod _worker_access_configuration;
 
 mod _workforce;
+
+mod _workforce_ip_address_type;
 
 mod _workforce_status;
 

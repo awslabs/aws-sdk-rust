@@ -13,8 +13,10 @@ pub struct CreateDomainInput {
     /// <p>A collection of <code>Domain</code> settings.</p>
     pub domain_settings: ::std::option::Option<crate::types::DomainSettings>,
     /// <p>The VPC subnets that the domain uses for communication.</p>
+    /// <p>The field is optional when the <code>AppNetworkAccessType</code> parameter is set to <code>PublicInternetOnly</code> for domains created from Amazon SageMaker Unified Studio.</p>
     pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ID of the Amazon Virtual Private Cloud (VPC) that the domain uses for communication.</p>
+    /// <p>The field is optional when the <code>AppNetworkAccessType</code> parameter is set to <code>PublicInternetOnly</code> for domains created from Amazon SageMaker Unified Studio.</p>
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>Tags to associated with the Domain. Each tag consists of a key and an optional value. Tag keys must be unique per resource. Tags are searchable using the <code>Search</code> API.</p>
     /// <p>Tags that you specify for the Domain are also added to all Apps that the Domain launches.</p>
@@ -58,12 +60,14 @@ impl CreateDomainInput {
         self.domain_settings.as_ref()
     }
     /// <p>The VPC subnets that the domain uses for communication.</p>
+    /// <p>The field is optional when the <code>AppNetworkAccessType</code> parameter is set to <code>PublicInternetOnly</code> for domains created from Amazon SageMaker Unified Studio.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_ids.is_none()`.
     pub fn subnet_ids(&self) -> &[::std::string::String] {
         self.subnet_ids.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the Amazon Virtual Private Cloud (VPC) that the domain uses for communication.</p>
+    /// <p>The field is optional when the <code>AppNetworkAccessType</code> parameter is set to <code>PublicInternetOnly</code> for domains created from Amazon SageMaker Unified Studio.</p>
     pub fn vpc_id(&self) -> ::std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
@@ -199,6 +203,7 @@ impl CreateDomainInputBuilder {
     /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
     ///
     /// <p>The VPC subnets that the domain uses for communication.</p>
+    /// <p>The field is optional when the <code>AppNetworkAccessType</code> parameter is set to <code>PublicInternetOnly</code> for domains created from Amazon SageMaker Unified Studio.</p>
     pub fn subnet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subnet_ids.unwrap_or_default();
         v.push(input.into());
@@ -206,25 +211,30 @@ impl CreateDomainInputBuilder {
         self
     }
     /// <p>The VPC subnets that the domain uses for communication.</p>
+    /// <p>The field is optional when the <code>AppNetworkAccessType</code> parameter is set to <code>PublicInternetOnly</code> for domains created from Amazon SageMaker Unified Studio.</p>
     pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.subnet_ids = input;
         self
     }
     /// <p>The VPC subnets that the domain uses for communication.</p>
+    /// <p>The field is optional when the <code>AppNetworkAccessType</code> parameter is set to <code>PublicInternetOnly</code> for domains created from Amazon SageMaker Unified Studio.</p>
     pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.subnet_ids
     }
     /// <p>The ID of the Amazon Virtual Private Cloud (VPC) that the domain uses for communication.</p>
+    /// <p>The field is optional when the <code>AppNetworkAccessType</code> parameter is set to <code>PublicInternetOnly</code> for domains created from Amazon SageMaker Unified Studio.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Virtual Private Cloud (VPC) that the domain uses for communication.</p>
+    /// <p>The field is optional when the <code>AppNetworkAccessType</code> parameter is set to <code>PublicInternetOnly</code> for domains created from Amazon SageMaker Unified Studio.</p>
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
     }
     /// <p>The ID of the Amazon Virtual Private Cloud (VPC) that the domain uses for communication.</p>
+    /// <p>The field is optional when the <code>AppNetworkAccessType</code> parameter is set to <code>PublicInternetOnly</code> for domains created from Amazon SageMaker Unified Studio.</p>
     pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.vpc_id
     }

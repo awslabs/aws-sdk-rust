@@ -24,6 +24,10 @@ pub struct TaskSearchSummary {
     pub started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time the resource ended running.</p>
     pub ended_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The date and time the resource was updated.</p>
+    pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The user or system that updated this resource.</p>
+    pub updated_by: ::std::option::Option<::std::string::String>,
 }
 impl TaskSearchSummary {
     /// <p>The task ID.</p>
@@ -66,6 +70,14 @@ impl TaskSearchSummary {
     pub fn ended_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.ended_at.as_ref()
     }
+    /// <p>The date and time the resource was updated.</p>
+    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.updated_at.as_ref()
+    }
+    /// <p>The user or system that updated this resource.</p>
+    pub fn updated_by(&self) -> ::std::option::Option<&str> {
+        self.updated_by.as_deref()
+    }
 }
 impl ::std::fmt::Debug for TaskSearchSummary {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -80,6 +92,8 @@ impl ::std::fmt::Debug for TaskSearchSummary {
         formatter.field("failure_retry_count", &self.failure_retry_count);
         formatter.field("started_at", &self.started_at);
         formatter.field("ended_at", &self.ended_at);
+        formatter.field("updated_at", &self.updated_at);
+        formatter.field("updated_by", &self.updated_by);
         formatter.finish()
     }
 }
@@ -104,6 +118,8 @@ pub struct TaskSearchSummaryBuilder {
     pub(crate) failure_retry_count: ::std::option::Option<i32>,
     pub(crate) started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) ended_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) updated_by: ::std::option::Option<::std::string::String>,
 }
 impl TaskSearchSummaryBuilder {
     /// <p>The task ID.</p>
@@ -255,6 +271,34 @@ impl TaskSearchSummaryBuilder {
     pub fn get_ended_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.ended_at
     }
+    /// <p>The date and time the resource was updated.</p>
+    pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.updated_at = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The date and time the resource was updated.</p>
+    pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.updated_at = input;
+        self
+    }
+    /// <p>The date and time the resource was updated.</p>
+    pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_at
+    }
+    /// <p>The user or system that updated this resource.</p>
+    pub fn updated_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.updated_by = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The user or system that updated this resource.</p>
+    pub fn set_updated_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.updated_by = input;
+        self
+    }
+    /// <p>The user or system that updated this resource.</p>
+    pub fn get_updated_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.updated_by
+    }
     /// Consumes the builder and constructs a [`TaskSearchSummary`](crate::types::TaskSearchSummary).
     pub fn build(self) -> crate::types::TaskSearchSummary {
         crate::types::TaskSearchSummary {
@@ -268,6 +312,8 @@ impl TaskSearchSummaryBuilder {
             failure_retry_count: self.failure_retry_count,
             started_at: self.started_at,
             ended_at: self.ended_at,
+            updated_at: self.updated_at,
+            updated_by: self.updated_by,
         }
     }
 }
@@ -284,6 +330,8 @@ impl ::std::fmt::Debug for TaskSearchSummaryBuilder {
         formatter.field("failure_retry_count", &self.failure_retry_count);
         formatter.field("started_at", &self.started_at);
         formatter.field("ended_at", &self.ended_at);
+        formatter.field("updated_at", &self.updated_at);
+        formatter.field("updated_by", &self.updated_by);
         formatter.finish()
     }
 }

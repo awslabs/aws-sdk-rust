@@ -99,6 +99,8 @@ pub use crate::types::_host_configuration::HostConfigurationBuilder;
 
 pub use crate::types::_service_managed_ec2_fleet_configuration::ServiceManagedEc2FleetConfigurationBuilder;
 
+pub use crate::types::_vpc_configuration::VpcConfigurationBuilder;
+
 pub use crate::types::_service_managed_ec2_instance_market_options::ServiceManagedEc2InstanceMarketOptionsBuilder;
 
 pub use crate::types::_service_managed_ec2_instance_capabilities::ServiceManagedEc2InstanceCapabilitiesBuilder;

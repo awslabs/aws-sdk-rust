@@ -16,6 +16,12 @@ pub fn ser_custom_file_system(
             crate::protocol_serde::shape_f_sx_lustre_file_system::ser_f_sx_lustre_file_system(&mut object_2, inner)?;
             object_2.finish();
         }
+        crate::types::CustomFileSystem::S3FileSystem(inner) => {
+            #[allow(unused_mut)]
+            let mut object_3 = object_16.key("S3FileSystem").start_object();
+            crate::protocol_serde::shape_s3_file_system::ser_s3_file_system(&mut object_3, inner)?;
+            object_3.finish();
+        }
         crate::types::CustomFileSystem::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "CustomFileSystem",
@@ -63,6 +69,11 @@ where
                         "FSxLustreFileSystem" => Some(crate::types::CustomFileSystem::FSxLustreFileSystem(
                             crate::protocol_serde::shape_f_sx_lustre_file_system::de_f_sx_lustre_file_system(tokens)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'FSxLustreFileSystem' cannot be null")
+                            })?,
+                        )),
+                        "S3FileSystem" => Some(crate::types::CustomFileSystem::S3FileSystem(
+                            crate::protocol_serde::shape_s3_file_system::de_s3_file_system(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'S3FileSystem' cannot be null")
                             })?,
                         )),
                         _ => {

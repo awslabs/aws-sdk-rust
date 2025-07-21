@@ -5379,9 +5379,6 @@ pub(crate) fn compute_quota_resource_config_correct_errors(
     if builder.instance_type.is_none() {
         builder.instance_type = "no value was set".parse::<crate::types::ClusterInstanceType>().ok()
     }
-    if builder.count.is_none() {
-        builder.count = Some(Default::default())
-    }
     builder
 }
 
@@ -5958,15 +5955,6 @@ pub(crate) fn clarify_text_config_correct_errors(
     }
     if builder.granularity.is_none() {
         builder.granularity = "no value was set".parse::<crate::types::ClarifyTextGranularity>().ok()
-    }
-    builder
-}
-
-pub(crate) fn cluster_ebs_volume_config_correct_errors(
-    mut builder: crate::types::builders::ClusterEbsVolumeConfigBuilder,
-) -> crate::types::builders::ClusterEbsVolumeConfigBuilder {
-    if builder.volume_size_in_gb.is_none() {
-        builder.volume_size_in_gb = Some(Default::default())
     }
     builder
 }

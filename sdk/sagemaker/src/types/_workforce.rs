@@ -26,6 +26,8 @@ pub struct Workforce {
     pub status: ::std::option::Option<crate::types::WorkforceStatus>,
     /// <p>The reason your workforce failed.</p>
     pub failure_reason: ::std::option::Option<::std::string::String>,
+    /// <p>The IP address type you specify - either <code>IPv4</code> only or <code>dualstack</code> (<code>IPv4</code> and <code>IPv6</code>) - to support your labeling workforce.</p>
+    pub ip_address_type: ::std::option::Option<crate::types::WorkforceIpAddressType>,
 }
 impl Workforce {
     /// <p>The name of the private workforce.</p>
@@ -72,6 +74,10 @@ impl Workforce {
     pub fn failure_reason(&self) -> ::std::option::Option<&str> {
         self.failure_reason.as_deref()
     }
+    /// <p>The IP address type you specify - either <code>IPv4</code> only or <code>dualstack</code> (<code>IPv4</code> and <code>IPv6</code>) - to support your labeling workforce.</p>
+    pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::WorkforceIpAddressType> {
+        self.ip_address_type.as_ref()
+    }
 }
 impl Workforce {
     /// Creates a new builder-style object to manufacture [`Workforce`](crate::types::Workforce).
@@ -95,6 +101,7 @@ pub struct WorkforceBuilder {
     pub(crate) workforce_vpc_config: ::std::option::Option<crate::types::WorkforceVpcConfigResponse>,
     pub(crate) status: ::std::option::Option<crate::types::WorkforceStatus>,
     pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
+    pub(crate) ip_address_type: ::std::option::Option<crate::types::WorkforceIpAddressType>,
 }
 impl WorkforceBuilder {
     /// <p>The name of the private workforce.</p>
@@ -253,6 +260,20 @@ impl WorkforceBuilder {
     pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.failure_reason
     }
+    /// <p>The IP address type you specify - either <code>IPv4</code> only or <code>dualstack</code> (<code>IPv4</code> and <code>IPv6</code>) - to support your labeling workforce.</p>
+    pub fn ip_address_type(mut self, input: crate::types::WorkforceIpAddressType) -> Self {
+        self.ip_address_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The IP address type you specify - either <code>IPv4</code> only or <code>dualstack</code> (<code>IPv4</code> and <code>IPv6</code>) - to support your labeling workforce.</p>
+    pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::WorkforceIpAddressType>) -> Self {
+        self.ip_address_type = input;
+        self
+    }
+    /// <p>The IP address type you specify - either <code>IPv4</code> only or <code>dualstack</code> (<code>IPv4</code> and <code>IPv6</code>) - to support your labeling workforce.</p>
+    pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::WorkforceIpAddressType> {
+        &self.ip_address_type
+    }
     /// Consumes the builder and constructs a [`Workforce`](crate::types::Workforce).
     pub fn build(self) -> crate::types::Workforce {
         crate::types::Workforce {
@@ -267,6 +288,7 @@ impl WorkforceBuilder {
             workforce_vpc_config: self.workforce_vpc_config,
             status: self.status,
             failure_reason: self.failure_reason,
+            ip_address_type: self.ip_address_type,
         }
     }
 }

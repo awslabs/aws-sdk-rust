@@ -42,5 +42,8 @@ pub fn ser_create_workforce_input_input(
         crate::protocol_serde::shape_workforce_vpc_config_request::ser_workforce_vpc_config_request(&mut object_13, var_12)?;
         object_13.finish();
     }
+    if let Some(var_14) = &input.ip_address_type {
+        object.key("IpAddressType").string(var_14.as_str());
+    }
     Ok(())
 }

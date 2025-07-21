@@ -16,6 +16,12 @@ pub fn ser_custom_file_system_config(
             crate::protocol_serde::shape_f_sx_lustre_file_system_config::ser_f_sx_lustre_file_system_config(&mut object_2, inner)?;
             object_2.finish();
         }
+        crate::types::CustomFileSystemConfig::S3FileSystemConfig(inner) => {
+            #[allow(unused_mut)]
+            let mut object_3 = object_18.key("S3FileSystemConfig").start_object();
+            crate::protocol_serde::shape_s3_file_system_config::ser_s3_file_system_config(&mut object_3, inner)?;
+            object_3.finish();
+        }
         crate::types::CustomFileSystemConfig::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "CustomFileSystemConfig",
@@ -68,6 +74,11 @@ where
                                     )
                                 },
                             )?,
+                        )),
+                        "S3FileSystemConfig" => Some(crate::types::CustomFileSystemConfig::S3FileSystemConfig(
+                            crate::protocol_serde::shape_s3_file_system_config::de_s3_file_system_config(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'S3FileSystemConfig' cannot be null")
+                            })?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

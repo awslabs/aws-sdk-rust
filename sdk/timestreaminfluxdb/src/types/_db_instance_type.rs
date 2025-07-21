@@ -14,6 +14,7 @@
 /// match dbinstancetype {
 ///     DbInstanceType::DbInflux12Xlarge => { /* ... */ },
 ///     DbInstanceType::DbInflux16Xlarge => { /* ... */ },
+///     DbInstanceType::DbInflux24Xlarge => { /* ... */ },
 ///     DbInstanceType::DbInflux2Xlarge => { /* ... */ },
 ///     DbInstanceType::DbInflux4Xlarge => { /* ... */ },
 ///     DbInstanceType::DbInflux8Xlarge => { /* ... */ },
@@ -53,6 +54,8 @@ pub enum DbInstanceType {
     #[allow(missing_docs)] // documentation missing in model
     DbInflux16Xlarge,
     #[allow(missing_docs)] // documentation missing in model
+    DbInflux24Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
     DbInflux2Xlarge,
     #[allow(missing_docs)] // documentation missing in model
     DbInflux4Xlarge,
@@ -73,6 +76,7 @@ impl ::std::convert::From<&str> for DbInstanceType {
         match s {
             "db.influx.12xlarge" => DbInstanceType::DbInflux12Xlarge,
             "db.influx.16xlarge" => DbInstanceType::DbInflux16Xlarge,
+            "db.influx.24xlarge" => DbInstanceType::DbInflux24Xlarge,
             "db.influx.2xlarge" => DbInstanceType::DbInflux2Xlarge,
             "db.influx.4xlarge" => DbInstanceType::DbInflux4Xlarge,
             "db.influx.8xlarge" => DbInstanceType::DbInflux8Xlarge,
@@ -96,6 +100,7 @@ impl DbInstanceType {
         match self {
             DbInstanceType::DbInflux12Xlarge => "db.influx.12xlarge",
             DbInstanceType::DbInflux16Xlarge => "db.influx.16xlarge",
+            DbInstanceType::DbInflux24Xlarge => "db.influx.24xlarge",
             DbInstanceType::DbInflux2Xlarge => "db.influx.2xlarge",
             DbInstanceType::DbInflux4Xlarge => "db.influx.4xlarge",
             DbInstanceType::DbInflux8Xlarge => "db.influx.8xlarge",
@@ -110,6 +115,7 @@ impl DbInstanceType {
         &[
             "db.influx.12xlarge",
             "db.influx.16xlarge",
+            "db.influx.24xlarge",
             "db.influx.2xlarge",
             "db.influx.4xlarge",
             "db.influx.8xlarge",
@@ -141,6 +147,7 @@ impl ::std::fmt::Display for DbInstanceType {
         match self {
             DbInstanceType::DbInflux12Xlarge => write!(f, "db.influx.12xlarge"),
             DbInstanceType::DbInflux16Xlarge => write!(f, "db.influx.16xlarge"),
+            DbInstanceType::DbInflux24Xlarge => write!(f, "db.influx.24xlarge"),
             DbInstanceType::DbInflux2Xlarge => write!(f, "db.influx.2xlarge"),
             DbInstanceType::DbInflux4Xlarge => write!(f, "db.influx.4xlarge"),
             DbInstanceType::DbInflux8Xlarge => write!(f, "db.influx.8xlarge"),

@@ -3141,6 +3141,10 @@ pub(crate) mod shape_rule_parameters;
 
 pub(crate) mod shape_s3_data_source;
 
+pub(crate) mod shape_s3_file_system;
+
+pub(crate) mod shape_s3_file_system_config;
+
 pub(crate) mod shape_s3_model_data_source;
 
 pub(crate) mod shape_scaling_policy;

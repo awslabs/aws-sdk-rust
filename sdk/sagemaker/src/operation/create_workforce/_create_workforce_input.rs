@@ -17,6 +17,8 @@ pub struct CreateWorkforceInput {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Use this parameter to configure a workforce using VPC.</p>
     pub workforce_vpc_config: ::std::option::Option<crate::types::WorkforceVpcConfigRequest>,
+    /// <p>Use this parameter to specify whether you want <code>IPv4</code> only or <code>dualstack</code> (<code>IPv4</code> and <code>IPv6</code>) to support your labeling workforce.</p>
+    pub ip_address_type: ::std::option::Option<crate::types::WorkforceIpAddressType>,
 }
 impl CreateWorkforceInput {
     /// <p>Use this parameter to configure an Amazon Cognito private workforce. A single Cognito workforce is created using and corresponds to a single <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html"> Amazon Cognito user pool</a>.</p>
@@ -47,6 +49,10 @@ impl CreateWorkforceInput {
     pub fn workforce_vpc_config(&self) -> ::std::option::Option<&crate::types::WorkforceVpcConfigRequest> {
         self.workforce_vpc_config.as_ref()
     }
+    /// <p>Use this parameter to specify whether you want <code>IPv4</code> only or <code>dualstack</code> (<code>IPv4</code> and <code>IPv6</code>) to support your labeling workforce.</p>
+    pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::WorkforceIpAddressType> {
+        self.ip_address_type.as_ref()
+    }
 }
 impl CreateWorkforceInput {
     /// Creates a new builder-style object to manufacture [`CreateWorkforceInput`](crate::operation::create_workforce::CreateWorkforceInput).
@@ -65,6 +71,7 @@ pub struct CreateWorkforceInputBuilder {
     pub(crate) workforce_name: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) workforce_vpc_config: ::std::option::Option<crate::types::WorkforceVpcConfigRequest>,
+    pub(crate) ip_address_type: ::std::option::Option<crate::types::WorkforceIpAddressType>,
 }
 impl CreateWorkforceInputBuilder {
     /// <p>Use this parameter to configure an Amazon Cognito private workforce. A single Cognito workforce is created using and corresponds to a single <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html"> Amazon Cognito user pool</a>.</p>
@@ -164,6 +171,20 @@ impl CreateWorkforceInputBuilder {
     pub fn get_workforce_vpc_config(&self) -> &::std::option::Option<crate::types::WorkforceVpcConfigRequest> {
         &self.workforce_vpc_config
     }
+    /// <p>Use this parameter to specify whether you want <code>IPv4</code> only or <code>dualstack</code> (<code>IPv4</code> and <code>IPv6</code>) to support your labeling workforce.</p>
+    pub fn ip_address_type(mut self, input: crate::types::WorkforceIpAddressType) -> Self {
+        self.ip_address_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Use this parameter to specify whether you want <code>IPv4</code> only or <code>dualstack</code> (<code>IPv4</code> and <code>IPv6</code>) to support your labeling workforce.</p>
+    pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::WorkforceIpAddressType>) -> Self {
+        self.ip_address_type = input;
+        self
+    }
+    /// <p>Use this parameter to specify whether you want <code>IPv4</code> only or <code>dualstack</code> (<code>IPv4</code> and <code>IPv6</code>) to support your labeling workforce.</p>
+    pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::WorkforceIpAddressType> {
+        &self.ip_address_type
+    }
     /// Consumes the builder and constructs a [`CreateWorkforceInput`](crate::operation::create_workforce::CreateWorkforceInput).
     pub fn build(
         self,
@@ -175,6 +196,7 @@ impl CreateWorkforceInputBuilder {
             workforce_name: self.workforce_name,
             tags: self.tags,
             workforce_vpc_config: self.workforce_vpc_config,
+            ip_address_type: self.ip_address_type,
         })
     }
 }

@@ -48,10 +48,16 @@ pub struct StepSearchSummary {
     pub task_failure_retry_count: ::std::option::Option<i32>,
     /// <p>The date and time the resource was created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The user or system that created this resource.</p>
+    pub created_by: ::std::option::Option<::std::string::String>,
     /// <p>The date and time the resource started running.</p>
     pub started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time the resource ended running.</p>
     pub ended_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The date and time the resource was updated.</p>
+    pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The user or system that updated this resource.</p>
+    pub updated_by: ::std::option::Option<::std::string::String>,
     /// <p>The parameters and combination expressions for the search.</p>
     pub parameter_space: ::std::option::Option<crate::types::ParameterSpace>,
 }
@@ -122,6 +128,10 @@ impl StepSearchSummary {
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
+    /// <p>The user or system that created this resource.</p>
+    pub fn created_by(&self) -> ::std::option::Option<&str> {
+        self.created_by.as_deref()
+    }
     /// <p>The date and time the resource started running.</p>
     pub fn started_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.started_at.as_ref()
@@ -129,6 +139,14 @@ impl StepSearchSummary {
     /// <p>The date and time the resource ended running.</p>
     pub fn ended_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.ended_at.as_ref()
+    }
+    /// <p>The date and time the resource was updated.</p>
+    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.updated_at.as_ref()
+    }
+    /// <p>The user or system that updated this resource.</p>
+    pub fn updated_by(&self) -> ::std::option::Option<&str> {
+        self.updated_by.as_deref()
     }
     /// <p>The parameters and combination expressions for the search.</p>
     pub fn parameter_space(&self) -> ::std::option::Option<&crate::types::ParameterSpace> {
@@ -157,8 +175,11 @@ pub struct StepSearchSummaryBuilder {
     pub(crate) task_run_status_counts: ::std::option::Option<::std::collections::HashMap<crate::types::TaskRunStatus, i32>>,
     pub(crate) task_failure_retry_count: ::std::option::Option<i32>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) created_by: ::std::option::Option<::std::string::String>,
     pub(crate) started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) ended_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) updated_by: ::std::option::Option<::std::string::String>,
     pub(crate) parameter_space: ::std::option::Option<crate::types::ParameterSpace>,
 }
 impl StepSearchSummaryBuilder {
@@ -388,6 +409,20 @@ impl StepSearchSummaryBuilder {
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_at
     }
+    /// <p>The user or system that created this resource.</p>
+    pub fn created_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.created_by = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The user or system that created this resource.</p>
+    pub fn set_created_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.created_by = input;
+        self
+    }
+    /// <p>The user or system that created this resource.</p>
+    pub fn get_created_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.created_by
+    }
     /// <p>The date and time the resource started running.</p>
     pub fn started_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.started_at = ::std::option::Option::Some(input);
@@ -415,6 +450,34 @@ impl StepSearchSummaryBuilder {
     /// <p>The date and time the resource ended running.</p>
     pub fn get_ended_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.ended_at
+    }
+    /// <p>The date and time the resource was updated.</p>
+    pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.updated_at = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The date and time the resource was updated.</p>
+    pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.updated_at = input;
+        self
+    }
+    /// <p>The date and time the resource was updated.</p>
+    pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_at
+    }
+    /// <p>The user or system that updated this resource.</p>
+    pub fn updated_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.updated_by = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The user or system that updated this resource.</p>
+    pub fn set_updated_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.updated_by = input;
+        self
+    }
+    /// <p>The user or system that updated this resource.</p>
+    pub fn get_updated_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.updated_by
     }
     /// <p>The parameters and combination expressions for the search.</p>
     pub fn parameter_space(mut self, input: crate::types::ParameterSpace) -> Self {
@@ -444,8 +507,11 @@ impl StepSearchSummaryBuilder {
             task_run_status_counts: self.task_run_status_counts,
             task_failure_retry_count: self.task_failure_retry_count,
             created_at: self.created_at,
+            created_by: self.created_by,
             started_at: self.started_at,
             ended_at: self.ended_at,
+            updated_at: self.updated_at,
+            updated_by: self.updated_by,
             parameter_space: self.parameter_space,
         }
     }

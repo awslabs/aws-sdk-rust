@@ -8,6 +8,8 @@ pub struct ServiceManagedEc2FleetConfiguration {
     pub instance_capabilities: ::std::option::Option<crate::types::ServiceManagedEc2InstanceCapabilities>,
     /// <p>The Amazon EC2 market type.</p>
     pub instance_market_options: ::std::option::Option<crate::types::ServiceManagedEc2InstanceMarketOptions>,
+    /// <p>The VPC configuration details for a service managed Amazon EC2 fleet.</p>
+    pub vpc_configuration: ::std::option::Option<crate::types::VpcConfiguration>,
     /// <p>The storage profile ID.</p>
     pub storage_profile_id: ::std::option::Option<::std::string::String>,
 }
@@ -19,6 +21,10 @@ impl ServiceManagedEc2FleetConfiguration {
     /// <p>The Amazon EC2 market type.</p>
     pub fn instance_market_options(&self) -> ::std::option::Option<&crate::types::ServiceManagedEc2InstanceMarketOptions> {
         self.instance_market_options.as_ref()
+    }
+    /// <p>The VPC configuration details for a service managed Amazon EC2 fleet.</p>
+    pub fn vpc_configuration(&self) -> ::std::option::Option<&crate::types::VpcConfiguration> {
+        self.vpc_configuration.as_ref()
     }
     /// <p>The storage profile ID.</p>
     pub fn storage_profile_id(&self) -> ::std::option::Option<&str> {
@@ -38,6 +44,7 @@ impl ServiceManagedEc2FleetConfiguration {
 pub struct ServiceManagedEc2FleetConfigurationBuilder {
     pub(crate) instance_capabilities: ::std::option::Option<crate::types::ServiceManagedEc2InstanceCapabilities>,
     pub(crate) instance_market_options: ::std::option::Option<crate::types::ServiceManagedEc2InstanceMarketOptions>,
+    pub(crate) vpc_configuration: ::std::option::Option<crate::types::VpcConfiguration>,
     pub(crate) storage_profile_id: ::std::option::Option<::std::string::String>,
 }
 impl ServiceManagedEc2FleetConfigurationBuilder {
@@ -71,6 +78,20 @@ impl ServiceManagedEc2FleetConfigurationBuilder {
     pub fn get_instance_market_options(&self) -> &::std::option::Option<crate::types::ServiceManagedEc2InstanceMarketOptions> {
         &self.instance_market_options
     }
+    /// <p>The VPC configuration details for a service managed Amazon EC2 fleet.</p>
+    pub fn vpc_configuration(mut self, input: crate::types::VpcConfiguration) -> Self {
+        self.vpc_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The VPC configuration details for a service managed Amazon EC2 fleet.</p>
+    pub fn set_vpc_configuration(mut self, input: ::std::option::Option<crate::types::VpcConfiguration>) -> Self {
+        self.vpc_configuration = input;
+        self
+    }
+    /// <p>The VPC configuration details for a service managed Amazon EC2 fleet.</p>
+    pub fn get_vpc_configuration(&self) -> &::std::option::Option<crate::types::VpcConfiguration> {
+        &self.vpc_configuration
+    }
     /// <p>The storage profile ID.</p>
     pub fn storage_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.storage_profile_id = ::std::option::Option::Some(input.into());
@@ -90,6 +111,7 @@ impl ServiceManagedEc2FleetConfigurationBuilder {
         crate::types::ServiceManagedEc2FleetConfiguration {
             instance_capabilities: self.instance_capabilities,
             instance_market_options: self.instance_market_options,
+            vpc_configuration: self.vpc_configuration,
             storage_profile_id: self.storage_profile_id,
         }
     }

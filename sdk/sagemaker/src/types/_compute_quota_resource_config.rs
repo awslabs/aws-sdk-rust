@@ -50,7 +50,6 @@ impl ComputeQuotaResourceConfigBuilder {
         &self.instance_type
     }
     /// <p>The number of instances to add to the instance group of a SageMaker HyperPod cluster.</p>
-    /// This field is required.
     pub fn count(mut self, input: i32) -> Self {
         self.count = ::std::option::Option::Some(input);
         self

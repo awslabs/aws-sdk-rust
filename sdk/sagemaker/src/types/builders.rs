@@ -35,6 +35,8 @@ pub use crate::types::_studio_web_portal_settings::StudioWebPortalSettingsBuilde
 
 pub use crate::types::_hidden_sage_maker_image::HiddenSageMakerImageBuilder;
 
+pub use crate::types::_s3_file_system_config::S3FileSystemConfigBuilder;
+
 pub use crate::types::_f_sx_lustre_file_system_config::FSxLustreFileSystemConfigBuilder;
 
 pub use crate::types::_efs_file_system_config::EfsFileSystemConfigBuilder;
@@ -104,6 +106,8 @@ pub use crate::types::_profiler_rule_configuration::ProfilerRuleConfigurationBui
 pub use crate::types::_profiler_config_for_update::ProfilerConfigForUpdateBuilder;
 
 pub use crate::types::_space_settings::SpaceSettingsBuilder;
+
+pub use crate::types::_s3_file_system::S3FileSystemBuilder;
 
 pub use crate::types::_f_sx_lustre_file_system::FSxLustreFileSystemBuilder;
 

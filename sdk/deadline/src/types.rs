@@ -167,6 +167,8 @@ pub use crate::types::_fleet_configuration::FleetConfiguration;
 
 pub use crate::types::_service_managed_ec2_fleet_configuration::ServiceManagedEc2FleetConfiguration;
 
+pub use crate::types::_vpc_configuration::VpcConfiguration;
+
 pub use crate::types::_service_managed_ec2_instance_market_options::ServiceManagedEc2InstanceMarketOptions;
 
 pub use crate::types::_ec2_market_type::Ec2MarketType;
@@ -730,6 +732,8 @@ mod _v_cpu_count_range;
 mod _validation_exception_field;
 
 mod _validation_exception_reason;
+
+mod _vpc_configuration;
 
 mod _windows_user;
 

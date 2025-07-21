@@ -13,6 +13,7 @@
 /// # let reservedcapacityinstancetype = unimplemented!();
 /// match reservedcapacityinstancetype {
 ///     ReservedCapacityInstanceType::MlP4D24Xlarge => { /* ... */ },
+///     ReservedCapacityInstanceType::MlP4De24Xlarge => { /* ... */ },
 ///     ReservedCapacityInstanceType::MlP548Xlarge => { /* ... */ },
 ///     ReservedCapacityInstanceType::MlP5E48Xlarge => { /* ... */ },
 ///     ReservedCapacityInstanceType::MlP5En48Xlarge => { /* ... */ },
@@ -50,6 +51,8 @@ pub enum ReservedCapacityInstanceType {
     #[allow(missing_docs)] // documentation missing in model
     MlP4D24Xlarge,
     #[allow(missing_docs)] // documentation missing in model
+    MlP4De24Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
     MlP548Xlarge,
     #[allow(missing_docs)] // documentation missing in model
     MlP5E48Xlarge,
@@ -69,6 +72,7 @@ impl ::std::convert::From<&str> for ReservedCapacityInstanceType {
     fn from(s: &str) -> Self {
         match s {
             "ml.p4d.24xlarge" => ReservedCapacityInstanceType::MlP4D24Xlarge,
+            "ml.p4de.24xlarge" => ReservedCapacityInstanceType::MlP4De24Xlarge,
             "ml.p5.48xlarge" => ReservedCapacityInstanceType::MlP548Xlarge,
             "ml.p5e.48xlarge" => ReservedCapacityInstanceType::MlP5E48Xlarge,
             "ml.p5en.48xlarge" => ReservedCapacityInstanceType::MlP5En48Xlarge,
@@ -91,6 +95,7 @@ impl ReservedCapacityInstanceType {
     pub fn as_str(&self) -> &str {
         match self {
             ReservedCapacityInstanceType::MlP4D24Xlarge => "ml.p4d.24xlarge",
+            ReservedCapacityInstanceType::MlP4De24Xlarge => "ml.p4de.24xlarge",
             ReservedCapacityInstanceType::MlP548Xlarge => "ml.p5.48xlarge",
             ReservedCapacityInstanceType::MlP5E48Xlarge => "ml.p5e.48xlarge",
             ReservedCapacityInstanceType::MlP5En48Xlarge => "ml.p5en.48xlarge",
@@ -104,6 +109,7 @@ impl ReservedCapacityInstanceType {
     pub const fn values() -> &'static [&'static str] {
         &[
             "ml.p4d.24xlarge",
+            "ml.p4de.24xlarge",
             "ml.p5.48xlarge",
             "ml.p5e.48xlarge",
             "ml.p5en.48xlarge",
@@ -134,6 +140,7 @@ impl ::std::fmt::Display for ReservedCapacityInstanceType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ReservedCapacityInstanceType::MlP4D24Xlarge => write!(f, "ml.p4d.24xlarge"),
+            ReservedCapacityInstanceType::MlP4De24Xlarge => write!(f, "ml.p4de.24xlarge"),
             ReservedCapacityInstanceType::MlP548Xlarge => write!(f, "ml.p5.48xlarge"),
             ReservedCapacityInstanceType::MlP5E48Xlarge => write!(f, "ml.p5e.48xlarge"),
             ReservedCapacityInstanceType::MlP5En48Xlarge => write!(f, "ml.p5en.48xlarge"),

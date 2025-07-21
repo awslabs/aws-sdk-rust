@@ -2,7 +2,7 @@
 
 /// <p>A summary of the information about a CloudFront distribution.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DistributionSummary {
     /// <p>The identifier for the distribution. For example: <code>EDFDVBD632BHDS5</code>.</p>
     pub id: ::std::string::String,
@@ -167,6 +167,36 @@ impl DistributionSummary {
         self.anycast_ip_list_id.as_deref()
     }
 }
+impl ::std::fmt::Debug for DistributionSummary {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("DistributionSummary");
+        formatter.field("id", &self.id);
+        formatter.field("arn", &self.arn);
+        formatter.field("e_tag", &self.e_tag);
+        formatter.field("status", &self.status);
+        formatter.field("last_modified_time", &self.last_modified_time);
+        formatter.field("domain_name", &self.domain_name);
+        formatter.field("aliases", &self.aliases);
+        formatter.field("origins", &self.origins);
+        formatter.field("origin_groups", &self.origin_groups);
+        formatter.field("default_cache_behavior", &self.default_cache_behavior);
+        formatter.field("cache_behaviors", &self.cache_behaviors);
+        formatter.field("custom_error_responses", &self.custom_error_responses);
+        formatter.field("comment", &"*** Sensitive Data Redacted ***");
+        formatter.field("price_class", &self.price_class);
+        formatter.field("enabled", &self.enabled);
+        formatter.field("viewer_certificate", &self.viewer_certificate);
+        formatter.field("restrictions", &self.restrictions);
+        formatter.field("web_acl_id", &self.web_acl_id);
+        formatter.field("http_version", &self.http_version);
+        formatter.field("is_ipv6_enabled", &self.is_ipv6_enabled);
+        formatter.field("alias_icp_recordals", &self.alias_icp_recordals);
+        formatter.field("staging", &self.staging);
+        formatter.field("connection_mode", &self.connection_mode);
+        formatter.field("anycast_ip_list_id", &self.anycast_ip_list_id);
+        formatter.finish()
+    }
+}
 impl DistributionSummary {
     /// Creates a new builder-style object to manufacture [`DistributionSummary`](crate::types::DistributionSummary).
     pub fn builder() -> crate::types::builders::DistributionSummaryBuilder {
@@ -175,7 +205,7 @@ impl DistributionSummary {
 }
 
 /// A builder for [`DistributionSummary`](crate::types::DistributionSummary).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct DistributionSummaryBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -678,5 +708,35 @@ impl DistributionSummaryBuilder {
             connection_mode: self.connection_mode,
             anycast_ip_list_id: self.anycast_ip_list_id,
         })
+    }
+}
+impl ::std::fmt::Debug for DistributionSummaryBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("DistributionSummaryBuilder");
+        formatter.field("id", &self.id);
+        formatter.field("arn", &self.arn);
+        formatter.field("e_tag", &self.e_tag);
+        formatter.field("status", &self.status);
+        formatter.field("last_modified_time", &self.last_modified_time);
+        formatter.field("domain_name", &self.domain_name);
+        formatter.field("aliases", &self.aliases);
+        formatter.field("origins", &self.origins);
+        formatter.field("origin_groups", &self.origin_groups);
+        formatter.field("default_cache_behavior", &self.default_cache_behavior);
+        formatter.field("cache_behaviors", &self.cache_behaviors);
+        formatter.field("custom_error_responses", &self.custom_error_responses);
+        formatter.field("comment", &"*** Sensitive Data Redacted ***");
+        formatter.field("price_class", &self.price_class);
+        formatter.field("enabled", &self.enabled);
+        formatter.field("viewer_certificate", &self.viewer_certificate);
+        formatter.field("restrictions", &self.restrictions);
+        formatter.field("web_acl_id", &self.web_acl_id);
+        formatter.field("http_version", &self.http_version);
+        formatter.field("is_ipv6_enabled", &self.is_ipv6_enabled);
+        formatter.field("alias_icp_recordals", &self.alias_icp_recordals);
+        formatter.field("staging", &self.staging);
+        formatter.field("connection_mode", &self.connection_mode);
+        formatter.field("anycast_ip_list_id", &self.anycast_ip_list_id);
+        formatter.finish()
     }
 }

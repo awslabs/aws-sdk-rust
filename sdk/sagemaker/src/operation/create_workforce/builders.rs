@@ -206,4 +206,18 @@ impl CreateWorkforceFluentBuilder {
     pub fn get_workforce_vpc_config(&self) -> &::std::option::Option<crate::types::WorkforceVpcConfigRequest> {
         self.inner.get_workforce_vpc_config()
     }
+    /// <p>Use this parameter to specify whether you want <code>IPv4</code> only or <code>dualstack</code> (<code>IPv4</code> and <code>IPv6</code>) to support your labeling workforce.</p>
+    pub fn ip_address_type(mut self, input: crate::types::WorkforceIpAddressType) -> Self {
+        self.inner = self.inner.ip_address_type(input);
+        self
+    }
+    /// <p>Use this parameter to specify whether you want <code>IPv4</code> only or <code>dualstack</code> (<code>IPv4</code> and <code>IPv6</code>) to support your labeling workforce.</p>
+    pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::WorkforceIpAddressType>) -> Self {
+        self.inner = self.inner.set_ip_address_type(input);
+        self
+    }
+    /// <p>Use this parameter to specify whether you want <code>IPv4</code> only or <code>dualstack</code> (<code>IPv4</code> and <code>IPv6</code>) to support your labeling workforce.</p>
+    pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::WorkforceIpAddressType> {
+        self.inner.get_ip_address_type()
+    }
 }

@@ -111,6 +111,12 @@ impl ListOriginAccessControlsFluentBuilder {
         self.config_override = config_override;
         self
     }
+    /// Create a paginator for this request
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_origin_access_controls::paginator::ListOriginAccessControlsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+    pub fn into_paginator(self) -> crate::operation::list_origin_access_controls::paginator::ListOriginAccessControlsPaginator {
+        crate::operation::list_origin_access_controls::paginator::ListOriginAccessControlsPaginator::new(self.handle, self.inner)
+    }
     /// <p>Use this field when paginating results to indicate where to begin in your list of origin access controls. The response includes the items in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.marker(input.into());

@@ -123,6 +123,20 @@ pub(crate) fn reflens_list_key_value_stores_output_output_key_value_store_list_n
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_origin_access_controls_output_output_origin_access_control_list_next_marker(
+    input: &crate::operation::list_origin_access_controls::ListOriginAccessControlsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.origin_access_control_list {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    let input = match &input.next_marker {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_public_keys_output_output_public_key_list_next_marker(
     input: &crate::operation::list_public_keys::ListPublicKeysOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -223,6 +237,14 @@ pub(crate) fn lens_list_key_value_stores_output_output_key_value_store_list_item
     input: crate::operation::list_key_value_stores::ListKeyValueStoresOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::KeyValueStore>> {
     let input = input.key_value_store_list?;
+    let input = input.items?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_origin_access_controls_output_output_origin_access_control_list_items(
+    input: crate::operation::list_origin_access_controls::ListOriginAccessControlsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::OriginAccessControlSummary>> {
+    let input = input.origin_access_control_list?;
     let input = input.items?;
     ::std::option::Option::Some(input)
 }

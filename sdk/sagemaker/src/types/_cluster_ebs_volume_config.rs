@@ -28,7 +28,6 @@ pub struct ClusterEbsVolumeConfigBuilder {
 }
 impl ClusterEbsVolumeConfigBuilder {
     /// <p>The size in gigabytes (GB) of the additional EBS volume to be attached to the instances in the SageMaker HyperPod cluster instance group. The additional EBS volume is attached to each instance within the SageMaker HyperPod cluster instance group and mounted to <code>/opt/sagemaker</code>.</p>
-    /// This field is required.
     pub fn volume_size_in_gb(mut self, input: i32) -> Self {
         self.volume_size_in_gb = ::std::option::Option::Some(input);
         self

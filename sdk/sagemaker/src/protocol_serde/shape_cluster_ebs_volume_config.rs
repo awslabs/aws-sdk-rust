@@ -44,7 +44,7 @@ where
                     }
                 }
             }
-            Ok(Some(crate::serde_util::cluster_ebs_volume_config_correct_errors(builder).build()))
+            Ok(Some(builder.build()))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

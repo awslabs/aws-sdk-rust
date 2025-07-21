@@ -695,6 +695,8 @@ pub(crate) mod shape_step_parameter;
 
 pub(crate) mod shape_string_filter_expression;
 
+pub(crate) mod shape_vpc_configuration;
+
 pub(crate) mod shape_accelerator_capabilities;
 
 pub(crate) mod shape_accelerator_count_range;
@@ -734,6 +736,8 @@ pub(crate) mod shape_sync_input_job_attachments_session_action_definition_summar
 pub(crate) mod shape_task_run_session_action_definition_summary;
 
 pub(crate) mod shape_v_cpu_count_range;
+
+pub(crate) mod shape_vpc_resource_configuration_arns;
 
 pub(crate) mod shape_accelerator_selection;
 

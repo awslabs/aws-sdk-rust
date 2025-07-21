@@ -18,8 +18,14 @@ pub fn ser_service_managed_ec2_fleet_configuration(
         )?;
         object_4.finish();
     }
-    if let Some(var_5) = &input.storage_profile_id {
-        object.key("storageProfileId").string(var_5.as_str());
+    if let Some(var_5) = &input.vpc_configuration {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("vpcConfiguration").start_object();
+        crate::protocol_serde::shape_vpc_configuration::ser_vpc_configuration(&mut object_6, var_5)?;
+        object_6.finish();
+    }
+    if let Some(var_7) = &input.storage_profile_id {
+        object.key("storageProfileId").string(var_7.as_str());
     }
     Ok(())
 }
@@ -38,28 +44,31 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "instanceCapabilities" => {
-                                builder = builder.set_instance_capabilities(
-                                    crate::protocol_serde::shape_service_managed_ec2_instance_capabilities::de_service_managed_ec2_instance_capabilities(tokens)?
-                                );
-                            }
-                            "instanceMarketOptions" => {
-                                builder = builder.set_instance_market_options(
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "instanceCapabilities" => {
+                            builder = builder.set_instance_capabilities(
+                                crate::protocol_serde::shape_service_managed_ec2_instance_capabilities::de_service_managed_ec2_instance_capabilities(
+                                    tokens,
+                                )?,
+                            );
+                        }
+                        "instanceMarketOptions" => {
+                            builder = builder.set_instance_market_options(
                                     crate::protocol_serde::shape_service_managed_ec2_instance_market_options::de_service_managed_ec2_instance_market_options(tokens)?
                                 );
-                            }
-                            "storageProfileId" => {
-                                builder = builder.set_storage_profile_id(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                        .transpose()?,
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                    }
+                        "vpcConfiguration" => {
+                            builder = builder.set_vpc_configuration(crate::protocol_serde::shape_vpc_configuration::de_vpc_configuration(tokens)?);
+                        }
+                        "storageProfileId" => {
+                            builder = builder.set_storage_profile_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {:?}",

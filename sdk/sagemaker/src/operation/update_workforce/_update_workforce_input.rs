@@ -12,6 +12,8 @@ pub struct UpdateWorkforceInput {
     pub oidc_config: ::std::option::Option<crate::types::OidcConfig>,
     /// <p>Use this parameter to update your VPC configuration for a workforce.</p>
     pub workforce_vpc_config: ::std::option::Option<crate::types::WorkforceVpcConfigRequest>,
+    /// <p>Use this parameter to specify whether you want <code>IPv4</code> only or <code>dualstack</code> (<code>IPv4</code> and <code>IPv6</code>) to support your labeling workforce.</p>
+    pub ip_address_type: ::std::option::Option<crate::types::WorkforceIpAddressType>,
 }
 impl UpdateWorkforceInput {
     /// <p>The name of the private workforce that you want to update. You can find your workforce name by using the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListWorkforces.html">ListWorkforces</a> operation.</p>
@@ -31,6 +33,10 @@ impl UpdateWorkforceInput {
     pub fn workforce_vpc_config(&self) -> ::std::option::Option<&crate::types::WorkforceVpcConfigRequest> {
         self.workforce_vpc_config.as_ref()
     }
+    /// <p>Use this parameter to specify whether you want <code>IPv4</code> only or <code>dualstack</code> (<code>IPv4</code> and <code>IPv6</code>) to support your labeling workforce.</p>
+    pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::WorkforceIpAddressType> {
+        self.ip_address_type.as_ref()
+    }
 }
 impl UpdateWorkforceInput {
     /// Creates a new builder-style object to manufacture [`UpdateWorkforceInput`](crate::operation::update_workforce::UpdateWorkforceInput).
@@ -47,6 +53,7 @@ pub struct UpdateWorkforceInputBuilder {
     pub(crate) source_ip_config: ::std::option::Option<crate::types::SourceIpConfig>,
     pub(crate) oidc_config: ::std::option::Option<crate::types::OidcConfig>,
     pub(crate) workforce_vpc_config: ::std::option::Option<crate::types::WorkforceVpcConfigRequest>,
+    pub(crate) ip_address_type: ::std::option::Option<crate::types::WorkforceIpAddressType>,
 }
 impl UpdateWorkforceInputBuilder {
     /// <p>The name of the private workforce that you want to update. You can find your workforce name by using the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListWorkforces.html">ListWorkforces</a> operation.</p>
@@ -109,6 +116,20 @@ impl UpdateWorkforceInputBuilder {
     pub fn get_workforce_vpc_config(&self) -> &::std::option::Option<crate::types::WorkforceVpcConfigRequest> {
         &self.workforce_vpc_config
     }
+    /// <p>Use this parameter to specify whether you want <code>IPv4</code> only or <code>dualstack</code> (<code>IPv4</code> and <code>IPv6</code>) to support your labeling workforce.</p>
+    pub fn ip_address_type(mut self, input: crate::types::WorkforceIpAddressType) -> Self {
+        self.ip_address_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Use this parameter to specify whether you want <code>IPv4</code> only or <code>dualstack</code> (<code>IPv4</code> and <code>IPv6</code>) to support your labeling workforce.</p>
+    pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::WorkforceIpAddressType>) -> Self {
+        self.ip_address_type = input;
+        self
+    }
+    /// <p>Use this parameter to specify whether you want <code>IPv4</code> only or <code>dualstack</code> (<code>IPv4</code> and <code>IPv6</code>) to support your labeling workforce.</p>
+    pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::WorkforceIpAddressType> {
+        &self.ip_address_type
+    }
     /// Consumes the builder and constructs a [`UpdateWorkforceInput`](crate::operation::update_workforce::UpdateWorkforceInput).
     pub fn build(
         self,
@@ -118,6 +139,7 @@ impl UpdateWorkforceInputBuilder {
             source_ip_config: self.source_ip_config,
             oidc_config: self.oidc_config,
             workforce_vpc_config: self.workforce_vpc_config,
+            ip_address_type: self.ip_address_type,
         })
     }
 }

@@ -2,7 +2,7 @@
 
 /// <p>The configuration for a string schema.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct StringSchemaConfig {
     /// <p>A comment to describe the parameter.</p>
     pub comment: ::std::option::Option<::std::string::String>,
@@ -25,6 +25,15 @@ impl StringSchemaConfig {
         self.required
     }
 }
+impl ::std::fmt::Debug for StringSchemaConfig {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("StringSchemaConfig");
+        formatter.field("comment", &"*** Sensitive Data Redacted ***");
+        formatter.field("default_value", &self.default_value);
+        formatter.field("required", &self.required);
+        formatter.finish()
+    }
+}
 impl StringSchemaConfig {
     /// Creates a new builder-style object to manufacture [`StringSchemaConfig`](crate::types::StringSchemaConfig).
     pub fn builder() -> crate::types::builders::StringSchemaConfigBuilder {
@@ -33,7 +42,7 @@ impl StringSchemaConfig {
 }
 
 /// A builder for [`StringSchemaConfig`](crate::types::StringSchemaConfig).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct StringSchemaConfigBuilder {
     pub(crate) comment: ::std::option::Option<::std::string::String>,
@@ -98,5 +107,14 @@ impl StringSchemaConfigBuilder {
                 )
             })?,
         })
+    }
+}
+impl ::std::fmt::Debug for StringSchemaConfigBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("StringSchemaConfigBuilder");
+        formatter.field("comment", &"*** Sensitive Data Redacted ***");
+        formatter.field("default_value", &self.default_value);
+        formatter.field("required", &self.required);
+        formatter.finish()
     }
 }

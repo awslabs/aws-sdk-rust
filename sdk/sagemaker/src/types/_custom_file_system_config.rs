@@ -8,6 +8,8 @@ pub enum CustomFileSystemConfig {
     EfsFileSystemConfig(crate::types::EfsFileSystemConfig),
     /// <p>The settings for a custom Amazon FSx for Lustre file system.</p>
     FSxLustreFileSystemConfig(crate::types::FSxLustreFileSystemConfig),
+    /// <p>Configuration settings for a custom Amazon S3 file system.</p>
+    S3FileSystemConfig(crate::types::S3FileSystemConfig),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -44,6 +46,19 @@ impl CustomFileSystemConfig {
     /// Returns true if this is a [`FSxLustreFileSystemConfig`](crate::types::CustomFileSystemConfig::FSxLustreFileSystemConfig).
     pub fn is_f_sx_lustre_file_system_config(&self) -> bool {
         self.as_f_sx_lustre_file_system_config().is_ok()
+    }
+    /// Tries to convert the enum instance into [`S3FileSystemConfig`](crate::types::CustomFileSystemConfig::S3FileSystemConfig), extracting the inner [`S3FileSystemConfig`](crate::types::S3FileSystemConfig).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_s3_file_system_config(&self) -> ::std::result::Result<&crate::types::S3FileSystemConfig, &Self> {
+        if let CustomFileSystemConfig::S3FileSystemConfig(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`S3FileSystemConfig`](crate::types::CustomFileSystemConfig::S3FileSystemConfig).
+    pub fn is_s3_file_system_config(&self) -> bool {
+        self.as_s3_file_system_config().is_ok()
     }
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {
