@@ -20,7 +20,7 @@ jobs:
           cd smithy-rs
           git init
           git remote add origin https://github.com/smithy-lang/smithy-rs.git
-          
+
           if git fetch origin $SMITHY_RS_VERSION; then
             echo "smithy-rs@$SMITHY_RS_VERSION found"
           else
@@ -28,3 +28,48 @@ jobs:
             exit 1
           fi
 
+      - name: Check for tools changes in smithy-rs
+        run: |
+          SMITHY_RS_VERSION=$(jq -r ".dependencies.smithyRsVersion" config.json)
+          echo "Checking for tools changes in smithy-rs@$SMITHY_RS_VERSION"
+          cd smithy-rs
+
+          # Get the latest 10 release tags by creation date
+          git fetch origin --tags
+
+          # Get latest 10 release tags sorted by creation date (newest first)
+          LATEST_N_RELEASES=$(git tag -l "release-*" --sort=-creatordate | head -n 10)
+
+          # Find the previous release before SMITHY_RS_VERSION
+          PREV_VERSION=""
+          FOUND_CURRENT=false
+          for release in $LATEST_N_RELEASES; do
+            if [ "$FOUND_CURRENT" = true ]; then
+              PREV_VERSION="$release"
+              break
+            fi
+            if [ "$release" = "$SMITHY_RS_VERSION" ]; then
+              FOUND_CURRENT=true
+            fi
+          done
+
+          if [ -n "$PREV_VERSION" ]; then
+            # Remove "release-" prefix for display
+            PREV_VERSION_NUM=${PREV_VERSION#release-}
+            CURRENT_VERSION_NUM=${SMITHY_RS_VERSION#release-}
+            echo "Previous version: $PREV_VERSION_NUM"
+            echo "Current version: $CURRENT_VERSION_NUM"
+
+            # Check if tools directory has changes between versions
+            if git diff --name-only $PREV_VERSION..$SMITHY_RS_VERSION | grep -q "^tools/"; then
+              echo "::warning::Tools changes detected between $PREV_VERSION_NUM and $CURRENT_VERSION_NUM"
+              echo "::warning::Release infrastructure must be updated to use the new tools before updating config.json"
+              git diff --name-only $PREV_VERSION..$SMITHY_RS_VERSION | grep "^tools/" | while read file; do
+                echo "::warning::Changed: $file"
+              done
+            else
+              echo "No tools changes detected"
+            fi
+          else
+            echo "::warning::Could not determine previous release version for comparison"
+          fi
