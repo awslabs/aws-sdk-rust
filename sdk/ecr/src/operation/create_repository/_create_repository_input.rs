@@ -12,6 +12,8 @@ pub struct CreateRepositoryInput {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The tag mutability setting for the repository. If this parameter is omitted, the default setting of <code>MUTABLE</code> will be used which will allow image tags to be overwritten. If <code>IMMUTABLE</code> is specified, all image tags within the repository will be immutable which will prevent them from being overwritten.</p>
     pub image_tag_mutability: ::std::option::Option<crate::types::ImageTagMutability>,
+    /// <p>Creates a repository with a list of filters that define which image tags can override the default image tag mutability setting.</p>
+    pub image_tag_mutability_exclusion_filters: ::std::option::Option<::std::vec::Vec<crate::types::ImageTagMutabilityExclusionFilter>>,
     /// <p>The image scanning configuration for the repository. This determines whether images are scanned for known vulnerabilities after being pushed to the repository.</p>
     pub image_scanning_configuration: ::std::option::Option<crate::types::ImageScanningConfiguration>,
     /// <p>The encryption configuration for the repository. This determines how the contents of your repository are encrypted at rest.</p>
@@ -37,6 +39,12 @@ impl CreateRepositoryInput {
     pub fn image_tag_mutability(&self) -> ::std::option::Option<&crate::types::ImageTagMutability> {
         self.image_tag_mutability.as_ref()
     }
+    /// <p>Creates a repository with a list of filters that define which image tags can override the default image tag mutability setting.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.image_tag_mutability_exclusion_filters.is_none()`.
+    pub fn image_tag_mutability_exclusion_filters(&self) -> &[crate::types::ImageTagMutabilityExclusionFilter] {
+        self.image_tag_mutability_exclusion_filters.as_deref().unwrap_or_default()
+    }
     /// <p>The image scanning configuration for the repository. This determines whether images are scanned for known vulnerabilities after being pushed to the repository.</p>
     pub fn image_scanning_configuration(&self) -> ::std::option::Option<&crate::types::ImageScanningConfiguration> {
         self.image_scanning_configuration.as_ref()
@@ -61,6 +69,7 @@ pub struct CreateRepositoryInputBuilder {
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) image_tag_mutability: ::std::option::Option<crate::types::ImageTagMutability>,
+    pub(crate) image_tag_mutability_exclusion_filters: ::std::option::Option<::std::vec::Vec<crate::types::ImageTagMutabilityExclusionFilter>>,
     pub(crate) image_scanning_configuration: ::std::option::Option<crate::types::ImageScanningConfiguration>,
     pub(crate) encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
 }
@@ -131,6 +140,31 @@ impl CreateRepositoryInputBuilder {
     pub fn get_image_tag_mutability(&self) -> &::std::option::Option<crate::types::ImageTagMutability> {
         &self.image_tag_mutability
     }
+    /// Appends an item to `image_tag_mutability_exclusion_filters`.
+    ///
+    /// To override the contents of this collection use [`set_image_tag_mutability_exclusion_filters`](Self::set_image_tag_mutability_exclusion_filters).
+    ///
+    /// <p>Creates a repository with a list of filters that define which image tags can override the default image tag mutability setting.</p>
+    pub fn image_tag_mutability_exclusion_filters(mut self, input: crate::types::ImageTagMutabilityExclusionFilter) -> Self {
+        let mut v = self.image_tag_mutability_exclusion_filters.unwrap_or_default();
+        v.push(input);
+        self.image_tag_mutability_exclusion_filters = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Creates a repository with a list of filters that define which image tags can override the default image tag mutability setting.</p>
+    pub fn set_image_tag_mutability_exclusion_filters(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ImageTagMutabilityExclusionFilter>>,
+    ) -> Self {
+        self.image_tag_mutability_exclusion_filters = input;
+        self
+    }
+    /// <p>Creates a repository with a list of filters that define which image tags can override the default image tag mutability setting.</p>
+    pub fn get_image_tag_mutability_exclusion_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ImageTagMutabilityExclusionFilter>> {
+        &self.image_tag_mutability_exclusion_filters
+    }
     /// <p>The image scanning configuration for the repository. This determines whether images are scanned for known vulnerabilities after being pushed to the repository.</p>
     pub fn image_scanning_configuration(mut self, input: crate::types::ImageScanningConfiguration) -> Self {
         self.image_scanning_configuration = ::std::option::Option::Some(input);
@@ -168,6 +202,7 @@ impl CreateRepositoryInputBuilder {
             repository_name: self.repository_name,
             tags: self.tags,
             image_tag_mutability: self.image_tag_mutability,
+            image_tag_mutability_exclusion_filters: self.image_tag_mutability_exclusion_filters,
             image_scanning_configuration: self.image_scanning_configuration,
             encryption_configuration: self.encryption_configuration,
         })

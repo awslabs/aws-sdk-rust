@@ -30,23 +30,38 @@ pub fn ser_update_repository_creation_template_input_input(
     if let Some(var_9) = &input.image_tag_mutability {
         object.key("imageTagMutability").string(var_9.as_str());
     }
-    if let Some(var_10) = &input.repository_policy {
-        object.key("repositoryPolicy").string(var_10.as_str());
-    }
-    if let Some(var_11) = &input.lifecycle_policy {
-        object.key("lifecyclePolicy").string(var_11.as_str());
-    }
-    if let Some(var_12) = &input.applied_for {
-        let mut array_13 = object.key("appliedFor").start_array();
-        for item_14 in var_12 {
+    if let Some(var_10) = &input.image_tag_mutability_exclusion_filters {
+        let mut array_11 = object.key("imageTagMutabilityExclusionFilters").start_array();
+        for item_12 in var_10 {
             {
-                array_13.value().string(item_14.as_str());
+                #[allow(unused_mut)]
+                let mut object_13 = array_11.value().start_object();
+                crate::protocol_serde::shape_image_tag_mutability_exclusion_filter::ser_image_tag_mutability_exclusion_filter(
+                    &mut object_13,
+                    item_12,
+                )?;
+                object_13.finish();
             }
         }
-        array_13.finish();
+        array_11.finish();
     }
-    if let Some(var_15) = &input.custom_role_arn {
-        object.key("customRoleArn").string(var_15.as_str());
+    if let Some(var_14) = &input.repository_policy {
+        object.key("repositoryPolicy").string(var_14.as_str());
+    }
+    if let Some(var_15) = &input.lifecycle_policy {
+        object.key("lifecyclePolicy").string(var_15.as_str());
+    }
+    if let Some(var_16) = &input.applied_for {
+        let mut array_17 = object.key("appliedFor").start_array();
+        for item_18 in var_16 {
+            {
+                array_17.value().string(item_18.as_str());
+            }
+        }
+        array_17.finish();
+    }
+    if let Some(var_19) = &input.custom_role_arn {
+        object.key("customRoleArn").string(var_19.as_str());
     }
     Ok(())
 }

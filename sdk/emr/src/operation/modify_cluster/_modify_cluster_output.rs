@@ -5,12 +5,18 @@
 pub struct ModifyClusterOutput {
     /// <p>The number of steps that can be executed concurrently.</p>
     pub step_concurrency_level: ::std::option::Option<i32>,
+    /// <p>Reserved.</p>
+    pub extended_support: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl ModifyClusterOutput {
     /// <p>The number of steps that can be executed concurrently.</p>
     pub fn step_concurrency_level(&self) -> ::std::option::Option<i32> {
         self.step_concurrency_level
+    }
+    /// <p>Reserved.</p>
+    pub fn extended_support(&self) -> ::std::option::Option<bool> {
+        self.extended_support
     }
 }
 impl ::aws_types::request_id::RequestId for ModifyClusterOutput {
@@ -30,6 +36,7 @@ impl ModifyClusterOutput {
 #[non_exhaustive]
 pub struct ModifyClusterOutputBuilder {
     pub(crate) step_concurrency_level: ::std::option::Option<i32>,
+    pub(crate) extended_support: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl ModifyClusterOutputBuilder {
@@ -47,6 +54,20 @@ impl ModifyClusterOutputBuilder {
     pub fn get_step_concurrency_level(&self) -> &::std::option::Option<i32> {
         &self.step_concurrency_level
     }
+    /// <p>Reserved.</p>
+    pub fn extended_support(mut self, input: bool) -> Self {
+        self.extended_support = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Reserved.</p>
+    pub fn set_extended_support(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.extended_support = input;
+        self
+    }
+    /// <p>Reserved.</p>
+    pub fn get_extended_support(&self) -> &::std::option::Option<bool> {
+        &self.extended_support
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -60,6 +81,7 @@ impl ModifyClusterOutputBuilder {
     pub fn build(self) -> crate::operation::modify_cluster::ModifyClusterOutput {
         crate::operation::modify_cluster::ModifyClusterOutput {
             step_concurrency_level: self.step_concurrency_level,
+            extended_support: self.extended_support,
             _request_id: self._request_id,
         }
     }

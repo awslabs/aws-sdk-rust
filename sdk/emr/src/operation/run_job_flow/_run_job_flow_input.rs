@@ -101,6 +101,8 @@ pub struct RunJobFlowInput {
     pub ebs_root_volume_iops: ::std::option::Option<i32>,
     /// <p>The throughput, in MiB/s, of the Amazon EBS root device volume of the Linux AMI that is used for each Amazon EC2 instance. Available in Amazon EMR releases 6.15.0 and later.</p>
     pub ebs_root_volume_throughput: ::std::option::Option<i32>,
+    /// <p>Reserved.</p>
+    pub extended_support: ::std::option::Option<bool>,
 }
 impl RunJobFlowInput {
     /// <p>The name of the job flow.</p>
@@ -278,6 +280,10 @@ impl RunJobFlowInput {
     pub fn ebs_root_volume_throughput(&self) -> ::std::option::Option<i32> {
         self.ebs_root_volume_throughput
     }
+    /// <p>Reserved.</p>
+    pub fn extended_support(&self) -> ::std::option::Option<bool> {
+        self.extended_support
+    }
 }
 impl RunJobFlowInput {
     /// Creates a new builder-style object to manufacture [`RunJobFlowInput`](crate::operation::run_job_flow::RunJobFlowInput).
@@ -321,6 +327,7 @@ pub struct RunJobFlowInputBuilder {
     pub(crate) os_release_label: ::std::option::Option<::std::string::String>,
     pub(crate) ebs_root_volume_iops: ::std::option::Option<i32>,
     pub(crate) ebs_root_volume_throughput: ::std::option::Option<i32>,
+    pub(crate) extended_support: ::std::option::Option<bool>,
 }
 impl RunJobFlowInputBuilder {
     /// <p>The name of the job flow.</p>
@@ -912,6 +919,20 @@ impl RunJobFlowInputBuilder {
     pub fn get_ebs_root_volume_throughput(&self) -> &::std::option::Option<i32> {
         &self.ebs_root_volume_throughput
     }
+    /// <p>Reserved.</p>
+    pub fn extended_support(mut self, input: bool) -> Self {
+        self.extended_support = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Reserved.</p>
+    pub fn set_extended_support(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.extended_support = input;
+        self
+    }
+    /// <p>Reserved.</p>
+    pub fn get_extended_support(&self) -> &::std::option::Option<bool> {
+        &self.extended_support
+    }
     /// Consumes the builder and constructs a [`RunJobFlowInput`](crate::operation::run_job_flow::RunJobFlowInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::run_job_flow::RunJobFlowInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::run_job_flow::RunJobFlowInput {
@@ -946,6 +967,7 @@ impl RunJobFlowInputBuilder {
             os_release_label: self.os_release_label,
             ebs_root_volume_iops: self.ebs_root_volume_iops,
             ebs_root_volume_throughput: self.ebs_root_volume_throughput,
+            extended_support: self.extended_support,
         })
     }
 }

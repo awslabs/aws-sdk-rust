@@ -134,6 +134,11 @@ pub(crate) fn de_put_image_tag_mutability(
                             .transpose()?,
                     );
                 }
+                "imageTagMutabilityExclusionFilters" => {
+                    builder = builder.set_image_tag_mutability_exclusion_filters(
+                        crate::protocol_serde::shape_image_tag_mutability_exclusion_filters::de_image_tag_mutability_exclusion_filters(tokens)?,
+                    );
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

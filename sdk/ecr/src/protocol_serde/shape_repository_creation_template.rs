@@ -43,6 +43,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "imageTagMutabilityExclusionFilters" => {
+                            builder = builder.set_image_tag_mutability_exclusion_filters(
+                                crate::protocol_serde::shape_image_tag_mutability_exclusion_filters::de_image_tag_mutability_exclusion_filters(
+                                    tokens,
+                                )?,
+                            );
+                        }
                         "repositoryPolicy" => {
                             builder = builder.set_repository_policy(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

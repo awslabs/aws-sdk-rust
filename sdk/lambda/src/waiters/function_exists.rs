@@ -73,7 +73,7 @@ impl FunctionExistsFluentBuilder {
         };
         let orchestrator = ::aws_smithy_runtime::client::waiters::WaiterOrchestrator::builder()
             .min_delay(::std::time::Duration::from_secs(1))
-            .max_delay(::std::time::Duration::from_secs(120))
+            .max_delay(::std::time::Duration::from_secs(20))
             .max_wait(max_wait)
             .time_source(time_source)
             .sleep_impl(sleep_impl)
