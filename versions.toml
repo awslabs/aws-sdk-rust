@@ -814,9 +814,9 @@ model_hash = '5ec7004d46e2bb30c8d974da3846e960c6d52a00307ee4cc8a62b95566a1fc84'
 
 [crates.aws-sdk-ec2]
 category = 'AwsSdk'
-version = '1.149.0'
-source_hash = '03bdee6df73352617e38c650c276e156a4daa2716abfa7de90fa244fdae31fba'
-model_hash = 'eb2d699379a3b82766a7f91ae6366cb11ee5ad804c8f310dab6b6a0ab2beaec4'
+version = '1.150.0'
+source_hash = '0f2cbc9f3750f54d537ec6645431477e5947e766b8430072374b0c3c0c403a00'
+model_hash = 'e77a40275acb14ceae27d8b96c9bb21a44a45c257270d62893a82df5e254d511'
 
 [crates.aws-sdk-ec2instanceconnect]
 category = 'AwsSdk'
@@ -1042,9 +1042,9 @@ model_hash = '7a8bc11f1498fcf202e15dad74c422522285ca4c8f290e50f7d08d42f31ccf26'
 
 [crates.aws-sdk-glue]
 category = 'AwsSdk'
-version = '1.107.0'
-source_hash = '5ce59e005d7f45413b4b6c8c5851d5fc9673c46026413fe6516570920ce6de84'
-model_hash = 'bced70938d5509366a336ef412ba81c64ca01d532b21c596389cc5ee0419f74f'
+version = '1.108.0'
+source_hash = '57f8ecde129be07e26f7dd4efb3f48b3b721f7c2846ff955d15b21ff1255f4b9'
+model_hash = '901b0940692370d169bdf3be8ffb0aaaa4a3e7325fc5453d5028c9011e3b5118'
 
 [crates.aws-sdk-grafana]
 category = 'AwsSdk'
@@ -2500,9 +2500,9 @@ model_hash = 'ea0c0698700b094af579048beb00d0935acb8d3a22bd40b92f940ee8c925d4f5'
 
 [crates.aws-sdk-workspacesthinclient]
 category = 'AwsSdk'
-version = '1.81.0'
-source_hash = 'f74b7392210fb8865ba642c7599b368809a2bfa889257d026ae489f53d4d238c'
-model_hash = '42bbab7ecb1efd5e01c85bbfcf1dc86cbcaac9976bf931277768636d5701d7d1'
+version = '1.82.0'
+source_hash = 'd892e679a2202d017e232a13ed2fd4c53cd823f5551d0dca29ab7f4aa928050c'
+model_hash = 'cc84eb546b4cbea9274ab3593e743b5edbc95042b52ba396277054d168c8b731'
 
 [crates.aws-sdk-workspacesweb]
 category = 'AwsSdk'
@@ -2675,12 +2675,7 @@ source_hash = 'bf12003f8591194479dbb26fe65ee3acaf27c68b70648f2248070a16e8d0e25f'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '7581e2c90ebb2b84dc1a89353651a8f020eae052ef4c14474acb5f86fa15f0e5'
-
-[release]
-tag = 'release-2025-07-22'
-
 [release.crates]
-aws-sdk-ecr = '1.85.0'
-aws-sdk-emr = '1.83.0'
-aws-sdk-lambda = '1.89.0'
-aws-sdk-neptunedata = '1.77.0'
+aws-sdk-ec2 = '1.150.0'
+aws-sdk-glue = '1.108.0'
+aws-sdk-workspacesthinclient = '1.82.0'

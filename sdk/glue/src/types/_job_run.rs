@@ -113,6 +113,8 @@ pub struct JobRun {
     /// <p>This field holds details that pertain to the state of a job run. The field is nullable.</p>
     /// <p>For example, when a job run is in a WAITING state as a result of job run queuing, the field has the reason why the job run is in that state.</p>
     pub state_detail: ::std::option::Option<::std::string::String>,
+    /// <p>This inline session policy to the StartJobRun API allows you to dynamically restrict the permissions of the specified execution role for the scope of the job, without requiring the creation of additional IAM roles.</p>
+    pub execution_role_session_policy: ::std::option::Option<::std::string::String>,
 }
 impl JobRun {
     /// <p>The ID of this job run.</p>
@@ -284,6 +286,10 @@ impl JobRun {
     pub fn state_detail(&self) -> ::std::option::Option<&str> {
         self.state_detail.as_deref()
     }
+    /// <p>This inline session policy to the StartJobRun API allows you to dynamically restrict the permissions of the specified execution role for the scope of the job, without requiring the creation of additional IAM roles.</p>
+    pub fn execution_role_session_policy(&self) -> ::std::option::Option<&str> {
+        self.execution_role_session_policy.as_deref()
+    }
 }
 impl JobRun {
     /// Creates a new builder-style object to manufacture [`JobRun`](crate::types::JobRun).
@@ -325,6 +331,7 @@ pub struct JobRunBuilder {
     pub(crate) maintenance_window: ::std::option::Option<::std::string::String>,
     pub(crate) profile_name: ::std::option::Option<::std::string::String>,
     pub(crate) state_detail: ::std::option::Option<::std::string::String>,
+    pub(crate) execution_role_session_policy: ::std::option::Option<::std::string::String>,
 }
 impl JobRunBuilder {
     /// <p>The ID of this job run.</p>
@@ -898,6 +905,20 @@ impl JobRunBuilder {
     pub fn get_state_detail(&self) -> &::std::option::Option<::std::string::String> {
         &self.state_detail
     }
+    /// <p>This inline session policy to the StartJobRun API allows you to dynamically restrict the permissions of the specified execution role for the scope of the job, without requiring the creation of additional IAM roles.</p>
+    pub fn execution_role_session_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.execution_role_session_policy = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>This inline session policy to the StartJobRun API allows you to dynamically restrict the permissions of the specified execution role for the scope of the job, without requiring the creation of additional IAM roles.</p>
+    pub fn set_execution_role_session_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.execution_role_session_policy = input;
+        self
+    }
+    /// <p>This inline session policy to the StartJobRun API allows you to dynamically restrict the permissions of the specified execution role for the scope of the job, without requiring the creation of additional IAM roles.</p>
+    pub fn get_execution_role_session_policy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.execution_role_session_policy
+    }
     /// Consumes the builder and constructs a [`JobRun`](crate::types::JobRun).
     pub fn build(self) -> crate::types::JobRun {
         crate::types::JobRun {
@@ -930,6 +951,7 @@ impl JobRunBuilder {
             maintenance_window: self.maintenance_window,
             profile_name: self.profile_name,
             state_detail: self.state_detail,
+            execution_role_session_policy: self.execution_role_session_policy,
         }
     }
 }

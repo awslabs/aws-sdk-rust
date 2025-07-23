@@ -51,8 +51,9 @@ impl crate::operation::terminate_instances::builders::TerminateInstancesInputBui
 /// </ul>
 /// <p>Terminated instances remain visible after termination (for approximately one hour).</p>
 /// <p>By default, Amazon EC2 deletes all EBS volumes that were attached when the instance launched. Volumes attached after instance launch continue running.</p>
-/// <p>You can stop, start, and terminate EBS-backed instances. You can only terminate instance store-backed instances. What happens to an instance differs if you stop or terminate it. For example, when you stop an instance, the root device and any other devices attached to the instance persist. When you terminate an instance, any attached EBS volumes with the <code>DeleteOnTermination</code> block device mapping parameter set to <code>true</code> are automatically deleted. For more information about the differences between stopping and terminating instances, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance lifecycle</a> in the <i>Amazon EC2 User Guide</i>.</p>
-/// <p>For more information about troubleshooting, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesShuttingDown.html">Troubleshooting terminating your instance</a> in the <i>Amazon EC2 User Guide</i>.</p>
+/// <p>By default, the TerminateInstances operation includes a graceful operating system (OS) shutdown. To bypass the graceful shutdown, use the <code>skipOsShutdown</code> parameter; however, this might risk data integrity.</p>
+/// <p>You can stop, start, and terminate EBS-backed instances. You can only terminate instance store-backed instances. What happens to an instance differs if you stop or terminate it. For example, when you stop an instance, the root device and any other devices attached to the instance persist. When you terminate an instance, any attached EBS volumes with the <code>DeleteOnTermination</code> block device mapping parameter set to <code>true</code> are automatically deleted. For more information about the differences between stopping and terminating instances, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Amazon EC2 instance state changes</a> in the <i>Amazon EC2 User Guide</i>.</p>
+/// <p>When you terminate an instance, we attempt to terminate it forcibly after a short while. If your instance appears stuck in the shutting-down state after a period of time, there might be an issue with the underlying host computer. For more information about terminating and troubleshooting terminating your instances, see <a href="https://docs.aws.amazon.com/">Terminate Amazon EC2 instances</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesShuttingDown.html">Troubleshooting terminating your instance</a> in the <i>Amazon EC2 User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct TerminateInstancesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -159,6 +160,23 @@ impl TerminateInstancesFluentBuilder {
     /// <p>Constraints: Up to 1000 instance IDs. We recommend breaking up this request into smaller batches.</p>
     pub fn get_instance_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_instance_ids()
+    }
+    /// <p>Specifies whether to bypass the graceful OS shutdown process when the instance is terminated.</p>
+    /// <p>Default: <code>false</code></p>
+    pub fn skip_os_shutdown(mut self, input: bool) -> Self {
+        self.inner = self.inner.skip_os_shutdown(input);
+        self
+    }
+    /// <p>Specifies whether to bypass the graceful OS shutdown process when the instance is terminated.</p>
+    /// <p>Default: <code>false</code></p>
+    pub fn set_skip_os_shutdown(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_skip_os_shutdown(input);
+        self
+    }
+    /// <p>Specifies whether to bypass the graceful OS shutdown process when the instance is terminated.</p>
+    /// <p>Default: <code>false</code></p>
+    pub fn get_skip_os_shutdown(&self) -> &::std::option::Option<bool> {
+        self.inner.get_skip_os_shutdown()
     }
     /// <p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {

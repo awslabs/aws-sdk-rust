@@ -44,6 +44,8 @@ pub struct Device {
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Key Management Service key used to encrypt the device.</p>
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The user ID of the most recent session on the device.</p>
+    pub last_user_id: ::std::option::Option<::std::string::String>,
 }
 impl Device {
     /// <p>The ID of the device.</p>
@@ -126,6 +128,10 @@ impl Device {
     pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
         self.kms_key_arn.as_deref()
     }
+    /// <p>The user ID of the most recent session on the device.</p>
+    pub fn last_user_id(&self) -> ::std::option::Option<&str> {
+        self.last_user_id.as_deref()
+    }
 }
 impl ::std::fmt::Debug for Device {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -150,6 +156,7 @@ impl ::std::fmt::Debug for Device {
         formatter.field("updated_at", &self.updated_at);
         formatter.field("arn", &self.arn);
         formatter.field("kms_key_arn", &self.kms_key_arn);
+        formatter.field("last_user_id", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -184,6 +191,7 @@ pub struct DeviceBuilder {
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) last_user_id: ::std::option::Option<::std::string::String>,
 }
 impl DeviceBuilder {
     /// <p>The ID of the device.</p>
@@ -466,6 +474,20 @@ impl DeviceBuilder {
     pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_arn
     }
+    /// <p>The user ID of the most recent session on the device.</p>
+    pub fn last_user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.last_user_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The user ID of the most recent session on the device.</p>
+    pub fn set_last_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.last_user_id = input;
+        self
+    }
+    /// <p>The user ID of the most recent session on the device.</p>
+    pub fn get_last_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_user_id
+    }
     /// Consumes the builder and constructs a [`Device`](crate::types::Device).
     pub fn build(self) -> crate::types::Device {
         crate::types::Device {
@@ -489,6 +511,7 @@ impl DeviceBuilder {
             updated_at: self.updated_at,
             arn: self.arn,
             kms_key_arn: self.kms_key_arn,
+            last_user_id: self.last_user_id,
         }
     }
 }
@@ -515,6 +538,7 @@ impl ::std::fmt::Debug for DeviceBuilder {
         formatter.field("updated_at", &self.updated_at);
         formatter.field("arn", &self.arn);
         formatter.field("kms_key_arn", &self.kms_key_arn);
+        formatter.field("last_user_id", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

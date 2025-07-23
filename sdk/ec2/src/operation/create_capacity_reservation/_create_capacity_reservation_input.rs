@@ -6,7 +6,7 @@ pub struct CreateCapacityReservationInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensure Idempotency</a>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The instance type for which to reserve capacity.</p><note>
-    /// <p>You can request future-dated Capacity Reservations for instance types in the C, M, R, I, and T instance families only.</p>
+    /// <p>You can request future-dated Capacity Reservations for instance types in the C, M, R, I, T, and G instance families only.</p>
     /// </note>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub instance_type: ::std::option::Option<::std::string::String>,
@@ -25,7 +25,7 @@ pub struct CreateCapacityReservationInput {
     /// </ul>
     pub tenancy: ::std::option::Option<crate::types::CapacityReservationTenancy>,
     /// <p>The number of instances for which to reserve capacity.</p><note>
-    /// <p>You can request future-dated Capacity Reservations for an instance count with a minimum of 100 vCPUs. For example, if you request a future-dated Capacity Reservation for <code>m5.xlarge</code> instances, you must request at least 25 instances (<i>25 * m5.xlarge = 100 vCPUs</i>).</p>
+    /// <p>You can request future-dated Capacity Reservations for an instance count with a minimum of 64 vCPUs. For example, if you request a future-dated Capacity Reservation for <code>m5.xlarge</code> instances, you must request at least 25 instances (<i>16 * m5.xlarge = 64 vCPUs</i>).</p>
     /// </note>
     /// <p>Valid range: 1 - 1000</p>
     pub instance_count: ::std::option::Option<i32>,
@@ -97,7 +97,7 @@ impl CreateCapacityReservationInput {
         self.client_token.as_deref()
     }
     /// <p>The instance type for which to reserve capacity.</p><note>
-    /// <p>You can request future-dated Capacity Reservations for instance types in the C, M, R, I, and T instance families only.</p>
+    /// <p>You can request future-dated Capacity Reservations for instance types in the C, M, R, I, T, and G instance families only.</p>
     /// </note>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn instance_type(&self) -> ::std::option::Option<&str> {
@@ -126,7 +126,7 @@ impl CreateCapacityReservationInput {
         self.tenancy.as_ref()
     }
     /// <p>The number of instances for which to reserve capacity.</p><note>
-    /// <p>You can request future-dated Capacity Reservations for an instance count with a minimum of 100 vCPUs. For example, if you request a future-dated Capacity Reservation for <code>m5.xlarge</code> instances, you must request at least 25 instances (<i>25 * m5.xlarge = 100 vCPUs</i>).</p>
+    /// <p>You can request future-dated Capacity Reservations for an instance count with a minimum of 64 vCPUs. For example, if you request a future-dated Capacity Reservation for <code>m5.xlarge</code> instances, you must request at least 25 instances (<i>16 * m5.xlarge = 64 vCPUs</i>).</p>
     /// </note>
     /// <p>Valid range: 1 - 1000</p>
     pub fn instance_count(&self) -> ::std::option::Option<i32> {
@@ -267,7 +267,7 @@ impl CreateCapacityReservationInputBuilder {
         &self.client_token
     }
     /// <p>The instance type for which to reserve capacity.</p><note>
-    /// <p>You can request future-dated Capacity Reservations for instance types in the C, M, R, I, and T instance families only.</p>
+    /// <p>You can request future-dated Capacity Reservations for instance types in the C, M, R, I, T, and G instance families only.</p>
     /// </note>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
     /// This field is required.
@@ -276,7 +276,7 @@ impl CreateCapacityReservationInputBuilder {
         self
     }
     /// <p>The instance type for which to reserve capacity.</p><note>
-    /// <p>You can request future-dated Capacity Reservations for instance types in the C, M, R, I, and T instance families only.</p>
+    /// <p>You can request future-dated Capacity Reservations for instance types in the C, M, R, I, T, and G instance families only.</p>
     /// </note>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -284,7 +284,7 @@ impl CreateCapacityReservationInputBuilder {
         self
     }
     /// <p>The instance type for which to reserve capacity.</p><note>
-    /// <p>You can request future-dated Capacity Reservations for instance types in the C, M, R, I, and T instance families only.</p>
+    /// <p>You can request future-dated Capacity Reservations for instance types in the C, M, R, I, T, and G instance families only.</p>
     /// </note>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -366,7 +366,7 @@ impl CreateCapacityReservationInputBuilder {
         &self.tenancy
     }
     /// <p>The number of instances for which to reserve capacity.</p><note>
-    /// <p>You can request future-dated Capacity Reservations for an instance count with a minimum of 100 vCPUs. For example, if you request a future-dated Capacity Reservation for <code>m5.xlarge</code> instances, you must request at least 25 instances (<i>25 * m5.xlarge = 100 vCPUs</i>).</p>
+    /// <p>You can request future-dated Capacity Reservations for an instance count with a minimum of 64 vCPUs. For example, if you request a future-dated Capacity Reservation for <code>m5.xlarge</code> instances, you must request at least 25 instances (<i>16 * m5.xlarge = 64 vCPUs</i>).</p>
     /// </note>
     /// <p>Valid range: 1 - 1000</p>
     /// This field is required.
@@ -375,7 +375,7 @@ impl CreateCapacityReservationInputBuilder {
         self
     }
     /// <p>The number of instances for which to reserve capacity.</p><note>
-    /// <p>You can request future-dated Capacity Reservations for an instance count with a minimum of 100 vCPUs. For example, if you request a future-dated Capacity Reservation for <code>m5.xlarge</code> instances, you must request at least 25 instances (<i>25 * m5.xlarge = 100 vCPUs</i>).</p>
+    /// <p>You can request future-dated Capacity Reservations for an instance count with a minimum of 64 vCPUs. For example, if you request a future-dated Capacity Reservation for <code>m5.xlarge</code> instances, you must request at least 25 instances (<i>16 * m5.xlarge = 64 vCPUs</i>).</p>
     /// </note>
     /// <p>Valid range: 1 - 1000</p>
     pub fn set_instance_count(mut self, input: ::std::option::Option<i32>) -> Self {
@@ -383,7 +383,7 @@ impl CreateCapacityReservationInputBuilder {
         self
     }
     /// <p>The number of instances for which to reserve capacity.</p><note>
-    /// <p>You can request future-dated Capacity Reservations for an instance count with a minimum of 100 vCPUs. For example, if you request a future-dated Capacity Reservation for <code>m5.xlarge</code> instances, you must request at least 25 instances (<i>25 * m5.xlarge = 100 vCPUs</i>).</p>
+    /// <p>You can request future-dated Capacity Reservations for an instance count with a minimum of 64 vCPUs. For example, if you request a future-dated Capacity Reservation for <code>m5.xlarge</code> instances, you must request at least 25 instances (<i>16 * m5.xlarge = 64 vCPUs</i>).</p>
     /// </note>
     /// <p>Valid range: 1 - 1000</p>
     pub fn get_instance_count(&self) -> &::std::option::Option<i32> {

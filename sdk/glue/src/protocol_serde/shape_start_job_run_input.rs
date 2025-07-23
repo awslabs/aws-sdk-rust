@@ -61,5 +61,8 @@ pub fn ser_start_job_run_input_input(
     if let Some(var_16) = &input.execution_class {
         object.key("ExecutionClass").string(var_16.as_str());
     }
+    if let Some(var_17) = &input.execution_role_session_policy {
+        object.key("ExecutionRoleSessionPolicy").string(var_17.as_str());
+    }
     Ok(())
 }

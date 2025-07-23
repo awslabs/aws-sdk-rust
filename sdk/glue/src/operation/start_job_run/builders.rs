@@ -392,4 +392,18 @@ impl StartJobRunFluentBuilder {
     pub fn get_execution_class(&self) -> &::std::option::Option<crate::types::ExecutionClass> {
         self.inner.get_execution_class()
     }
+    /// <p>This inline session policy to the StartJobRun API allows you to dynamically restrict the permissions of the specified execution role for the scope of the job, without requiring the creation of additional IAM roles.</p>
+    pub fn execution_role_session_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.execution_role_session_policy(input.into());
+        self
+    }
+    /// <p>This inline session policy to the StartJobRun API allows you to dynamically restrict the permissions of the specified execution role for the scope of the job, without requiring the creation of additional IAM roles.</p>
+    pub fn set_execution_role_session_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_execution_role_session_policy(input);
+        self
+    }
+    /// <p>This inline session policy to the StartJobRun API allows you to dynamically restrict the permissions of the specified execution role for the scope of the job, without requiring the creation of additional IAM roles.</p>
+    pub fn get_execution_role_session_policy(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_execution_role_session_policy()
+    }
 }

@@ -34,6 +34,8 @@ pub struct DeviceSummary {
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the device.</p>
     pub arn: ::std::option::Option<::std::string::String>,
+    /// <p>The user ID of the most recent session on the device.</p>
+    pub last_user_id: ::std::option::Option<::std::string::String>,
 }
 impl DeviceSummary {
     /// <p>The ID of the device.</p>
@@ -96,6 +98,10 @@ impl DeviceSummary {
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
+    /// <p>The user ID of the most recent session on the device.</p>
+    pub fn last_user_id(&self) -> ::std::option::Option<&str> {
+        self.last_user_id.as_deref()
+    }
 }
 impl ::std::fmt::Debug for DeviceSummary {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -115,6 +121,7 @@ impl ::std::fmt::Debug for DeviceSummary {
         formatter.field("created_at", &self.created_at);
         formatter.field("updated_at", &self.updated_at);
         formatter.field("arn", &self.arn);
+        formatter.field("last_user_id", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -144,6 +151,7 @@ pub struct DeviceSummaryBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) last_user_id: ::std::option::Option<::std::string::String>,
 }
 impl DeviceSummaryBuilder {
     /// <p>The ID of the device.</p>
@@ -356,6 +364,20 @@ impl DeviceSummaryBuilder {
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
+    /// <p>The user ID of the most recent session on the device.</p>
+    pub fn last_user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.last_user_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The user ID of the most recent session on the device.</p>
+    pub fn set_last_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.last_user_id = input;
+        self
+    }
+    /// <p>The user ID of the most recent session on the device.</p>
+    pub fn get_last_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_user_id
+    }
     /// Consumes the builder and constructs a [`DeviceSummary`](crate::types::DeviceSummary).
     pub fn build(self) -> crate::types::DeviceSummary {
         crate::types::DeviceSummary {
@@ -374,6 +396,7 @@ impl DeviceSummaryBuilder {
             created_at: self.created_at,
             updated_at: self.updated_at,
             arn: self.arn,
+            last_user_id: self.last_user_id,
         }
     }
 }
@@ -395,6 +418,7 @@ impl ::std::fmt::Debug for DeviceSummaryBuilder {
         formatter.field("created_at", &self.created_at);
         formatter.field("updated_at", &self.updated_at);
         formatter.field("arn", &self.arn);
+        formatter.field("last_user_id", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
