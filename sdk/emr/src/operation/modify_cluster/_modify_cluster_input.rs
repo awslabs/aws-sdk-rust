@@ -7,6 +7,8 @@ pub struct ModifyClusterInput {
     pub cluster_id: ::std::option::Option<::std::string::String>,
     /// <p>The number of steps that can be executed concurrently. You can specify a minimum of 1 step and a maximum of 256 steps. We recommend that you do not change this parameter while steps are running or the <code>ActionOnFailure</code> setting may not behave as expected. For more information see <code>Step$ActionOnFailure</code>.</p>
     pub step_concurrency_level: ::std::option::Option<i32>,
+    /// <p>Reserved.</p>
+    pub extended_support: ::std::option::Option<bool>,
 }
 impl ModifyClusterInput {
     /// <p>The unique identifier of the cluster.</p>
@@ -16,6 +18,10 @@ impl ModifyClusterInput {
     /// <p>The number of steps that can be executed concurrently. You can specify a minimum of 1 step and a maximum of 256 steps. We recommend that you do not change this parameter while steps are running or the <code>ActionOnFailure</code> setting may not behave as expected. For more information see <code>Step$ActionOnFailure</code>.</p>
     pub fn step_concurrency_level(&self) -> ::std::option::Option<i32> {
         self.step_concurrency_level
+    }
+    /// <p>Reserved.</p>
+    pub fn extended_support(&self) -> ::std::option::Option<bool> {
+        self.extended_support
     }
 }
 impl ModifyClusterInput {
@@ -31,6 +37,7 @@ impl ModifyClusterInput {
 pub struct ModifyClusterInputBuilder {
     pub(crate) cluster_id: ::std::option::Option<::std::string::String>,
     pub(crate) step_concurrency_level: ::std::option::Option<i32>,
+    pub(crate) extended_support: ::std::option::Option<bool>,
 }
 impl ModifyClusterInputBuilder {
     /// <p>The unique identifier of the cluster.</p>
@@ -62,6 +69,20 @@ impl ModifyClusterInputBuilder {
     pub fn get_step_concurrency_level(&self) -> &::std::option::Option<i32> {
         &self.step_concurrency_level
     }
+    /// <p>Reserved.</p>
+    pub fn extended_support(mut self, input: bool) -> Self {
+        self.extended_support = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Reserved.</p>
+    pub fn set_extended_support(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.extended_support = input;
+        self
+    }
+    /// <p>Reserved.</p>
+    pub fn get_extended_support(&self) -> &::std::option::Option<bool> {
+        &self.extended_support
+    }
     /// Consumes the builder and constructs a [`ModifyClusterInput`](crate::operation::modify_cluster::ModifyClusterInput).
     pub fn build(
         self,
@@ -69,6 +90,7 @@ impl ModifyClusterInputBuilder {
         ::std::result::Result::Ok(crate::operation::modify_cluster::ModifyClusterInput {
             cluster_id: self.cluster_id,
             step_concurrency_level: self.step_concurrency_level,
+            extended_support: self.extended_support,
         })
     }
 }

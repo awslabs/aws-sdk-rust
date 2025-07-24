@@ -13,7 +13,9 @@
 /// # let imagetagmutability = unimplemented!();
 /// match imagetagmutability {
 ///     ImageTagMutability::Immutable => { /* ... */ },
+///     ImageTagMutability::ImmutableWithExclusion => { /* ... */ },
 ///     ImageTagMutability::Mutable => { /* ... */ },
+///     ImageTagMutability::MutableWithExclusion => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -45,7 +47,11 @@ pub enum ImageTagMutability {
     #[allow(missing_docs)] // documentation missing in model
     Immutable,
     #[allow(missing_docs)] // documentation missing in model
+    ImmutableWithExclusion,
+    #[allow(missing_docs)] // documentation missing in model
     Mutable,
+    #[allow(missing_docs)] // documentation missing in model
+    MutableWithExclusion,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -54,7 +60,9 @@ impl ::std::convert::From<&str> for ImageTagMutability {
     fn from(s: &str) -> Self {
         match s {
             "IMMUTABLE" => ImageTagMutability::Immutable,
+            "IMMUTABLE_WITH_EXCLUSION" => ImageTagMutability::ImmutableWithExclusion,
             "MUTABLE" => ImageTagMutability::Mutable,
+            "MUTABLE_WITH_EXCLUSION" => ImageTagMutability::MutableWithExclusion,
             other => ImageTagMutability::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -71,13 +79,15 @@ impl ImageTagMutability {
     pub fn as_str(&self) -> &str {
         match self {
             ImageTagMutability::Immutable => "IMMUTABLE",
+            ImageTagMutability::ImmutableWithExclusion => "IMMUTABLE_WITH_EXCLUSION",
             ImageTagMutability::Mutable => "MUTABLE",
+            ImageTagMutability::MutableWithExclusion => "MUTABLE_WITH_EXCLUSION",
             ImageTagMutability::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["IMMUTABLE", "MUTABLE"]
+        &["IMMUTABLE", "IMMUTABLE_WITH_EXCLUSION", "MUTABLE", "MUTABLE_WITH_EXCLUSION"]
     }
 }
 impl ::std::convert::AsRef<str> for ImageTagMutability {
@@ -101,7 +111,9 @@ impl ::std::fmt::Display for ImageTagMutability {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ImageTagMutability::Immutable => write!(f, "IMMUTABLE"),
+            ImageTagMutability::ImmutableWithExclusion => write!(f, "IMMUTABLE_WITH_EXCLUSION"),
             ImageTagMutability::Mutable => write!(f, "MUTABLE"),
+            ImageTagMutability::MutableWithExclusion => write!(f, "MUTABLE_WITH_EXCLUSION"),
             ImageTagMutability::Unknown(value) => write!(f, "{}", value),
         }
     }

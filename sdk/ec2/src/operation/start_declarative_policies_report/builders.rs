@@ -24,8 +24,8 @@ impl crate::operation::start_declarative_policies_report::builders::StartDeclara
 ///
 /// <p>Generates an account status report. The report is generated asynchronously, and can take several hours to complete.</p>
 /// <p>The report provides the current status of all attributes supported by declarative policies for the accounts within the specified scope. The scope is determined by the specified <code>TargetId</code>, which can represent an individual account, or all the accounts that fall under the specified organizational unit (OU) or root (the entire Amazon Web Services Organization).</p>
-/// <p>The report is saved to your specified S3 bucket, using the following path structure (with the <i>italicized placeholders</i> representing your specific values):</p>
-/// <p><code>s3://<i>amzn-s3-demo-bucket</i>/<i>your-optional-s3-prefix</i>/ec2_<i>targetId</i>_<i>reportId</i>_<i>yyyyMMdd</i>T<i>hhmm</i>Z.csv</code></p>
+/// <p>The report is saved to your specified S3 bucket, using the following path structure (with the capitalized placeholders representing your specific values):</p>
+/// <p><code>s3://AMZN-S3-DEMO-BUCKET/YOUR-OPTIONAL-S3-PREFIX/ec2_TARGETID_REPORTID_YYYYMMDDTHHMMZ.csv</code></p>
 /// <p class="title"><b>Prerequisites for generating a report</b></p>
 /// <ul>
 /// <li>

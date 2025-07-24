@@ -12,5 +12,17 @@ pub fn ser_put_image_tag_mutability_input_input(
     if let Some(var_3) = &input.image_tag_mutability {
         object.key("imageTagMutability").string(var_3.as_str());
     }
+    if let Some(var_4) = &input.image_tag_mutability_exclusion_filters {
+        let mut array_5 = object.key("imageTagMutabilityExclusionFilters").start_array();
+        for item_6 in var_4 {
+            {
+                #[allow(unused_mut)]
+                let mut object_7 = array_5.value().start_object();
+                crate::protocol_serde::shape_image_tag_mutability_exclusion_filter::ser_image_tag_mutability_exclusion_filter(&mut object_7, item_6)?;
+                object_7.finish();
+            }
+        }
+        array_5.finish();
+    }
     Ok(())
 }

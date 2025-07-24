@@ -3,6 +3,10 @@ pub use crate::types::_repository_creation_template::RepositoryCreationTemplate;
 
 pub use crate::types::_rct_applied_for::RctAppliedFor;
 
+pub use crate::types::_image_tag_mutability_exclusion_filter::ImageTagMutabilityExclusionFilter;
+
+pub use crate::types::_image_tag_mutability_exclusion_filter_type::ImageTagMutabilityExclusionFilterType;
+
 pub use crate::types::_image_tag_mutability::ImageTagMutability;
 
 pub use crate::types::_tag::Tag;
@@ -178,6 +182,10 @@ mod _image_scan_status;
 mod _image_scanning_configuration;
 
 mod _image_tag_mutability;
+
+mod _image_tag_mutability_exclusion_filter;
+
+mod _image_tag_mutability_exclusion_filter_type;
 
 mod _layer;
 

@@ -76,6 +76,8 @@ pub struct Cluster {
     pub ebs_root_volume_iops: ::std::option::Option<i32>,
     /// <p>The throughput, in MiB/s, of the Amazon EBS root device volume of the Linux AMI that is used for each Amazon EC2 instance. Available in Amazon EMR releases 6.15.0 and later.</p>
     pub ebs_root_volume_throughput: ::std::option::Option<i32>,
+    /// <p>Reserved.</p>
+    pub extended_support: ::std::option::Option<bool>,
 }
 impl Cluster {
     /// <p>The unique identifier for the cluster.</p>
@@ -226,6 +228,10 @@ impl Cluster {
     pub fn ebs_root_volume_throughput(&self) -> ::std::option::Option<i32> {
         self.ebs_root_volume_throughput
     }
+    /// <p>Reserved.</p>
+    pub fn extended_support(&self) -> ::std::option::Option<bool> {
+        self.extended_support
+    }
 }
 impl Cluster {
     /// Creates a new builder-style object to manufacture [`Cluster`](crate::types::Cluster).
@@ -272,6 +278,7 @@ pub struct ClusterBuilder {
     pub(crate) os_release_label: ::std::option::Option<::std::string::String>,
     pub(crate) ebs_root_volume_iops: ::std::option::Option<i32>,
     pub(crate) ebs_root_volume_throughput: ::std::option::Option<i32>,
+    pub(crate) extended_support: ::std::option::Option<bool>,
 }
 impl ClusterBuilder {
     /// <p>The unique identifier for the cluster.</p>
@@ -786,6 +793,20 @@ impl ClusterBuilder {
     pub fn get_ebs_root_volume_throughput(&self) -> &::std::option::Option<i32> {
         &self.ebs_root_volume_throughput
     }
+    /// <p>Reserved.</p>
+    pub fn extended_support(mut self, input: bool) -> Self {
+        self.extended_support = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Reserved.</p>
+    pub fn set_extended_support(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.extended_support = input;
+        self
+    }
+    /// <p>Reserved.</p>
+    pub fn get_extended_support(&self) -> &::std::option::Option<bool> {
+        &self.extended_support
+    }
     /// Consumes the builder and constructs a [`Cluster`](crate::types::Cluster).
     pub fn build(self) -> crate::types::Cluster {
         crate::types::Cluster {
@@ -823,6 +844,7 @@ impl ClusterBuilder {
             os_release_label: self.os_release_label,
             ebs_root_volume_iops: self.ebs_root_volume_iops,
             ebs_root_volume_throughput: self.ebs_root_volume_throughput,
+            extended_support: self.extended_support,
         }
     }
 }

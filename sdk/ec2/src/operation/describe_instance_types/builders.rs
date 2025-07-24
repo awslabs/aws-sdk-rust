@@ -183,7 +183,7 @@ impl DescribeInstanceTypesFluentBuilder {
     /// <li>
     /// <p><code>ebs-info.nvme-support</code> - Indicates whether non-volatile memory express (NVMe) is supported for EBS volumes (<code>required</code> | <code>supported</code> | <code>unsupported</code>).</p></li>
     /// <li>
-    /// <p><code>free-tier-eligible</code> - Indicates whether the instance type is eligible to use in the free tier (<code>true</code> | <code>false</code>).</p></li>
+    /// <p><code>free-tier-eligible</code> - A Boolean that indicates whether this instance type can be used under the Amazon Web Services Free Tier (<code>true</code> | <code>false</code>).</p></li>
     /// <li>
     /// <p><code>hibernation-supported</code> - Indicates whether On-Demand hibernation is supported (<code>true</code> | <code>false</code>).</p></li>
     /// <li>
@@ -298,7 +298,7 @@ impl DescribeInstanceTypesFluentBuilder {
     /// <li>
     /// <p><code>ebs-info.nvme-support</code> - Indicates whether non-volatile memory express (NVMe) is supported for EBS volumes (<code>required</code> | <code>supported</code> | <code>unsupported</code>).</p></li>
     /// <li>
-    /// <p><code>free-tier-eligible</code> - Indicates whether the instance type is eligible to use in the free tier (<code>true</code> | <code>false</code>).</p></li>
+    /// <p><code>free-tier-eligible</code> - A Boolean that indicates whether this instance type can be used under the Amazon Web Services Free Tier (<code>true</code> | <code>false</code>).</p></li>
     /// <li>
     /// <p><code>hibernation-supported</code> - Indicates whether On-Demand hibernation is supported (<code>true</code> | <code>false</code>).</p></li>
     /// <li>
@@ -413,7 +413,7 @@ impl DescribeInstanceTypesFluentBuilder {
     /// <li>
     /// <p><code>ebs-info.nvme-support</code> - Indicates whether non-volatile memory express (NVMe) is supported for EBS volumes (<code>required</code> | <code>supported</code> | <code>unsupported</code>).</p></li>
     /// <li>
-    /// <p><code>free-tier-eligible</code> - Indicates whether the instance type is eligible to use in the free tier (<code>true</code> | <code>false</code>).</p></li>
+    /// <p><code>free-tier-eligible</code> - A Boolean that indicates whether this instance type can be used under the Amazon Web Services Free Tier (<code>true</code> | <code>false</code>).</p></li>
     /// <li>
     /// <p><code>hibernation-supported</code> - Indicates whether On-Demand hibernation is supported (<code>true</code> | <code>false</code>).</p></li>
     /// <li>

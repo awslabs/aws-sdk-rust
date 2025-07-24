@@ -12,5 +12,8 @@ pub fn ser_modify_cluster_input_input(
             ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
+    if let Some(var_3) = &input.extended_support {
+        object.key("ExtendedSupport").boolean(*var_3);
+    }
     Ok(())
 }

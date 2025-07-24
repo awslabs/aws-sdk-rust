@@ -327,6 +327,10 @@ pub(crate) mod shape_image_scan_status;
 
 pub(crate) mod shape_image_scanning_configuration;
 
+pub(crate) mod shape_image_tag_mutability_exclusion_filter;
+
+pub(crate) mod shape_image_tag_mutability_exclusion_filters;
+
 pub(crate) mod shape_layer_failure_list;
 
 pub(crate) mod shape_layer_list;

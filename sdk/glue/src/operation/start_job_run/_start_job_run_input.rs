@@ -64,6 +64,8 @@ pub struct StartJobRunInput {
     /// <p>The flexible execution class is appropriate for time-insensitive jobs whose start and completion times may vary.</p>
     /// <p>Only jobs with Glue version 3.0 and above and command type <code>glueetl</code> will be allowed to set <code>ExecutionClass</code> to <code>FLEX</code>. The flexible execution class is available for Spark jobs.</p>
     pub execution_class: ::std::option::Option<crate::types::ExecutionClass>,
+    /// <p>This inline session policy to the StartJobRun API allows you to dynamically restrict the permissions of the specified execution role for the scope of the job, without requiring the creation of additional IAM roles.</p>
+    pub execution_role_session_policy: ::std::option::Option<::std::string::String>,
 }
 impl StartJobRunInput {
     /// <p>The name of the job definition to use.</p>
@@ -151,6 +153,10 @@ impl StartJobRunInput {
     pub fn execution_class(&self) -> ::std::option::Option<&crate::types::ExecutionClass> {
         self.execution_class.as_ref()
     }
+    /// <p>This inline session policy to the StartJobRun API allows you to dynamically restrict the permissions of the specified execution role for the scope of the job, without requiring the creation of additional IAM roles.</p>
+    pub fn execution_role_session_policy(&self) -> ::std::option::Option<&str> {
+        self.execution_role_session_policy.as_deref()
+    }
 }
 impl StartJobRunInput {
     /// Creates a new builder-style object to manufacture [`StartJobRunInput`](crate::operation::start_job_run::StartJobRunInput).
@@ -175,6 +181,7 @@ pub struct StartJobRunInputBuilder {
     pub(crate) worker_type: ::std::option::Option<crate::types::WorkerType>,
     pub(crate) number_of_workers: ::std::option::Option<i32>,
     pub(crate) execution_class: ::std::option::Option<crate::types::ExecutionClass>,
+    pub(crate) execution_role_session_policy: ::std::option::Option<::std::string::String>,
 }
 impl StartJobRunInputBuilder {
     /// <p>The name of the job definition to use.</p>
@@ -463,6 +470,20 @@ impl StartJobRunInputBuilder {
     pub fn get_execution_class(&self) -> &::std::option::Option<crate::types::ExecutionClass> {
         &self.execution_class
     }
+    /// <p>This inline session policy to the StartJobRun API allows you to dynamically restrict the permissions of the specified execution role for the scope of the job, without requiring the creation of additional IAM roles.</p>
+    pub fn execution_role_session_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.execution_role_session_policy = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>This inline session policy to the StartJobRun API allows you to dynamically restrict the permissions of the specified execution role for the scope of the job, without requiring the creation of additional IAM roles.</p>
+    pub fn set_execution_role_session_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.execution_role_session_policy = input;
+        self
+    }
+    /// <p>This inline session policy to the StartJobRun API allows you to dynamically restrict the permissions of the specified execution role for the scope of the job, without requiring the creation of additional IAM roles.</p>
+    pub fn get_execution_role_session_policy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.execution_role_session_policy
+    }
     /// Consumes the builder and constructs a [`StartJobRunInput`](crate::operation::start_job_run::StartJobRunInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::start_job_run::StartJobRunInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_job_run::StartJobRunInput {
@@ -478,6 +499,7 @@ impl StartJobRunInputBuilder {
             worker_type: self.worker_type,
             number_of_workers: self.number_of_workers,
             execution_class: self.execution_class,
+            execution_role_session_policy: self.execution_role_session_policy,
         })
     }
 }

@@ -693,4 +693,18 @@ impl RunJobFlowFluentBuilder {
     pub fn get_ebs_root_volume_throughput(&self) -> &::std::option::Option<i32> {
         self.inner.get_ebs_root_volume_throughput()
     }
+    /// <p>Reserved.</p>
+    pub fn extended_support(mut self, input: bool) -> Self {
+        self.inner = self.inner.extended_support(input);
+        self
+    }
+    /// <p>Reserved.</p>
+    pub fn set_extended_support(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_extended_support(input);
+        self
+    }
+    /// <p>Reserved.</p>
+    pub fn get_extended_support(&self) -> &::std::option::Option<bool> {
+        self.inner.get_extended_support()
+    }
 }

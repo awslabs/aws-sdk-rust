@@ -26,6 +26,18 @@ pub(crate) fn encryption_configuration_for_repository_creation_template_correct_
     builder
 }
 
+pub(crate) fn image_tag_mutability_exclusion_filter_correct_errors(
+    mut builder: crate::types::builders::ImageTagMutabilityExclusionFilterBuilder,
+) -> crate::types::builders::ImageTagMutabilityExclusionFilterBuilder {
+    if builder.filter_type.is_none() {
+        builder.filter_type = "no value was set".parse::<crate::types::ImageTagMutabilityExclusionFilterType>().ok()
+    }
+    if builder.filter.is_none() {
+        builder.filter = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn tag_correct_errors(mut builder: crate::types::builders::TagBuilder) -> crate::types::builders::TagBuilder {
     if builder.key.is_none() {
         builder.key = Some(Default::default())

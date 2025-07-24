@@ -189,5 +189,8 @@ pub fn ser_run_job_flow_input_input(
             ::aws_smithy_types::Number::NegInt((*var_58).into()),
         );
     }
+    if let Some(var_59) = &input.extended_support {
+        object.key("ExtendedSupport").boolean(*var_59);
+    }
     Ok(())
 }

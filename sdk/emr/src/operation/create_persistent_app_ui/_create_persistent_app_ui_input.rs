@@ -11,7 +11,7 @@ pub struct CreatePersistentAppUiInput {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The cross reference for the persistent application user interface.</p>
     pub x_referer: ::std::option::Option<::std::string::String>,
-    /// <p>The profiler type for the persistent application user interface. Valid values are SHS, TEZUI, or YTS.</p>
+    /// <p>The profiler type for the persistent application user interface.</p>
     pub profiler_type: ::std::option::Option<crate::types::ProfilerType>,
 }
 impl CreatePersistentAppUiInput {
@@ -33,7 +33,7 @@ impl CreatePersistentAppUiInput {
     pub fn x_referer(&self) -> ::std::option::Option<&str> {
         self.x_referer.as_deref()
     }
-    /// <p>The profiler type for the persistent application user interface. Valid values are SHS, TEZUI, or YTS.</p>
+    /// <p>The profiler type for the persistent application user interface.</p>
     pub fn profiler_type(&self) -> ::std::option::Option<&crate::types::ProfilerType> {
         self.profiler_type.as_ref()
     }
@@ -119,17 +119,17 @@ impl CreatePersistentAppUiInputBuilder {
     pub fn get_x_referer(&self) -> &::std::option::Option<::std::string::String> {
         &self.x_referer
     }
-    /// <p>The profiler type for the persistent application user interface. Valid values are SHS, TEZUI, or YTS.</p>
+    /// <p>The profiler type for the persistent application user interface.</p>
     pub fn profiler_type(mut self, input: crate::types::ProfilerType) -> Self {
         self.profiler_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The profiler type for the persistent application user interface. Valid values are SHS, TEZUI, or YTS.</p>
+    /// <p>The profiler type for the persistent application user interface.</p>
     pub fn set_profiler_type(mut self, input: ::std::option::Option<crate::types::ProfilerType>) -> Self {
         self.profiler_type = input;
         self
     }
-    /// <p>The profiler type for the persistent application user interface. Valid values are SHS, TEZUI, or YTS.</p>
+    /// <p>The profiler type for the persistent application user interface.</p>
     pub fn get_profiler_type(&self) -> &::std::option::Option<crate::types::ProfilerType> {
         &self.profiler_type
     }

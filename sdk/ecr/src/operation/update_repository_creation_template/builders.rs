@@ -189,6 +189,30 @@ impl UpdateRepositoryCreationTemplateFluentBuilder {
     pub fn get_image_tag_mutability(&self) -> &::std::option::Option<crate::types::ImageTagMutability> {
         self.inner.get_image_tag_mutability()
     }
+    ///
+    /// Appends an item to `imageTagMutabilityExclusionFilters`.
+    ///
+    /// To override the contents of this collection use [`set_image_tag_mutability_exclusion_filters`](Self::set_image_tag_mutability_exclusion_filters).
+    ///
+    /// <p>Updates a repository with filters that define which image tags can override the default image tag mutability setting.</p>
+    pub fn image_tag_mutability_exclusion_filters(mut self, input: crate::types::ImageTagMutabilityExclusionFilter) -> Self {
+        self.inner = self.inner.image_tag_mutability_exclusion_filters(input);
+        self
+    }
+    /// <p>Updates a repository with filters that define which image tags can override the default image tag mutability setting.</p>
+    pub fn set_image_tag_mutability_exclusion_filters(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ImageTagMutabilityExclusionFilter>>,
+    ) -> Self {
+        self.inner = self.inner.set_image_tag_mutability_exclusion_filters(input);
+        self
+    }
+    /// <p>Updates a repository with filters that define which image tags can override the default image tag mutability setting.</p>
+    pub fn get_image_tag_mutability_exclusion_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ImageTagMutabilityExclusionFilter>> {
+        self.inner.get_image_tag_mutability_exclusion_filters()
+    }
     /// <p>Updates the repository policy created using the template. A repository policy is a permissions policy associated with a repository to control access permissions.</p>
     pub fn repository_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.repository_policy(input.into());

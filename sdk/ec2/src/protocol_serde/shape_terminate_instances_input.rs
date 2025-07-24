@@ -19,9 +19,14 @@ pub fn ser_terminate_instances_input_input_input(
         }
     }
     #[allow(unused_mut)]
-    let mut scope_6 = writer.prefix("DryRun");
-    if let Some(var_7) = &input.dry_run {
+    let mut scope_6 = writer.prefix("SkipOsShutdown");
+    if let Some(var_7) = &input.skip_os_shutdown {
         scope_6.boolean(*var_7);
+    }
+    #[allow(unused_mut)]
+    let mut scope_8 = writer.prefix("DryRun");
+    if let Some(var_9) = &input.dry_run {
+        scope_8.boolean(*var_9);
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

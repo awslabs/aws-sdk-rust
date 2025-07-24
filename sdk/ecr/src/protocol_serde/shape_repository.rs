@@ -55,6 +55,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "imageTagMutabilityExclusionFilters" => {
+                            builder = builder.set_image_tag_mutability_exclusion_filters(
+                                crate::protocol_serde::shape_image_tag_mutability_exclusion_filters::de_image_tag_mutability_exclusion_filters(
+                                    tokens,
+                                )?,
+                            );
+                        }
                         "imageScanningConfiguration" => {
                             builder = builder.set_image_scanning_configuration(
                                 crate::protocol_serde::shape_image_scanning_configuration::de_image_scanning_configuration(tokens)?,

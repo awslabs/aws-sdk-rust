@@ -169,17 +169,17 @@ impl CreatePersistentAppUIFluentBuilder {
     pub fn get_x_referer(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_x_referer()
     }
-    /// <p>The profiler type for the persistent application user interface. Valid values are SHS, TEZUI, or YTS.</p>
+    /// <p>The profiler type for the persistent application user interface.</p>
     pub fn profiler_type(mut self, input: crate::types::ProfilerType) -> Self {
         self.inner = self.inner.profiler_type(input);
         self
     }
-    /// <p>The profiler type for the persistent application user interface. Valid values are SHS, TEZUI, or YTS.</p>
+    /// <p>The profiler type for the persistent application user interface.</p>
     pub fn set_profiler_type(mut self, input: ::std::option::Option<crate::types::ProfilerType>) -> Self {
         self.inner = self.inner.set_profiler_type(input);
         self
     }
-    /// <p>The profiler type for the persistent application user interface. Valid values are SHS, TEZUI, or YTS.</p>
+    /// <p>The profiler type for the persistent application user interface.</p>
     pub fn get_profiler_type(&self) -> &::std::option::Option<crate::types::ProfilerType> {
         self.inner.get_profiler_type()
     }

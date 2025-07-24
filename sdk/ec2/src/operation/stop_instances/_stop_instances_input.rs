@@ -5,9 +5,14 @@
 pub struct StopInstancesInput {
     /// <p>The IDs of the instances.</p>
     pub instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>Hibernates the instance if the instance was enabled for hibernation at launch. If the instance cannot hibernate successfully, a normal shutdown occurs. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>Hibernates the instance if the instance was enabled for hibernation at launch. If the instance cannot hibernate successfully, a normal shutdown occurs. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your Amazon EC2 instance</a> in the <i>Amazon EC2 User Guide</i>.</p>
     /// <p>Default: <code>false</code></p>
     pub hibernate: ::std::option::Option<bool>,
+    /// <p>Specifies whether to bypass the graceful OS shutdown process when the instance is stopped.</p><important>
+    /// <p>Bypassing the graceful OS shutdown might result in data loss or corruption (for example, memory contents not flushed to disk or loss of in-flight IOs) or skipped shutdown scripts.</p>
+    /// </important>
+    /// <p>Default: <code>false</code></p>
+    pub skip_os_shutdown: ::std::option::Option<bool>,
     /// <p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>Forces the instance to stop. The instance will first attempt a graceful shutdown, which includes flushing file system caches and metadata. If the graceful shutdown fails to complete within the timeout period, the instance shuts down forcibly without flushing the file system caches and metadata.</p>
@@ -22,10 +27,17 @@ impl StopInstancesInput {
     pub fn instance_ids(&self) -> &[::std::string::String] {
         self.instance_ids.as_deref().unwrap_or_default()
     }
-    /// <p>Hibernates the instance if the instance was enabled for hibernation at launch. If the instance cannot hibernate successfully, a normal shutdown occurs. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>Hibernates the instance if the instance was enabled for hibernation at launch. If the instance cannot hibernate successfully, a normal shutdown occurs. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your Amazon EC2 instance</a> in the <i>Amazon EC2 User Guide</i>.</p>
     /// <p>Default: <code>false</code></p>
     pub fn hibernate(&self) -> ::std::option::Option<bool> {
         self.hibernate
+    }
+    /// <p>Specifies whether to bypass the graceful OS shutdown process when the instance is stopped.</p><important>
+    /// <p>Bypassing the graceful OS shutdown might result in data loss or corruption (for example, memory contents not flushed to disk or loss of in-flight IOs) or skipped shutdown scripts.</p>
+    /// </important>
+    /// <p>Default: <code>false</code></p>
+    pub fn skip_os_shutdown(&self) -> ::std::option::Option<bool> {
+        self.skip_os_shutdown
     }
     /// <p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
@@ -51,6 +63,7 @@ impl StopInstancesInput {
 pub struct StopInstancesInputBuilder {
     pub(crate) instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) hibernate: ::std::option::Option<bool>,
+    pub(crate) skip_os_shutdown: ::std::option::Option<bool>,
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) force: ::std::option::Option<bool>,
 }
@@ -75,22 +88,45 @@ impl StopInstancesInputBuilder {
     pub fn get_instance_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.instance_ids
     }
-    /// <p>Hibernates the instance if the instance was enabled for hibernation at launch. If the instance cannot hibernate successfully, a normal shutdown occurs. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>Hibernates the instance if the instance was enabled for hibernation at launch. If the instance cannot hibernate successfully, a normal shutdown occurs. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your Amazon EC2 instance</a> in the <i>Amazon EC2 User Guide</i>.</p>
     /// <p>Default: <code>false</code></p>
     pub fn hibernate(mut self, input: bool) -> Self {
         self.hibernate = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Hibernates the instance if the instance was enabled for hibernation at launch. If the instance cannot hibernate successfully, a normal shutdown occurs. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>Hibernates the instance if the instance was enabled for hibernation at launch. If the instance cannot hibernate successfully, a normal shutdown occurs. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your Amazon EC2 instance</a> in the <i>Amazon EC2 User Guide</i>.</p>
     /// <p>Default: <code>false</code></p>
     pub fn set_hibernate(mut self, input: ::std::option::Option<bool>) -> Self {
         self.hibernate = input;
         self
     }
-    /// <p>Hibernates the instance if the instance was enabled for hibernation at launch. If the instance cannot hibernate successfully, a normal shutdown occurs. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>Hibernates the instance if the instance was enabled for hibernation at launch. If the instance cannot hibernate successfully, a normal shutdown occurs. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your Amazon EC2 instance</a> in the <i>Amazon EC2 User Guide</i>.</p>
     /// <p>Default: <code>false</code></p>
     pub fn get_hibernate(&self) -> &::std::option::Option<bool> {
         &self.hibernate
+    }
+    /// <p>Specifies whether to bypass the graceful OS shutdown process when the instance is stopped.</p><important>
+    /// <p>Bypassing the graceful OS shutdown might result in data loss or corruption (for example, memory contents not flushed to disk or loss of in-flight IOs) or skipped shutdown scripts.</p>
+    /// </important>
+    /// <p>Default: <code>false</code></p>
+    pub fn skip_os_shutdown(mut self, input: bool) -> Self {
+        self.skip_os_shutdown = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to bypass the graceful OS shutdown process when the instance is stopped.</p><important>
+    /// <p>Bypassing the graceful OS shutdown might result in data loss or corruption (for example, memory contents not flushed to disk or loss of in-flight IOs) or skipped shutdown scripts.</p>
+    /// </important>
+    /// <p>Default: <code>false</code></p>
+    pub fn set_skip_os_shutdown(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.skip_os_shutdown = input;
+        self
+    }
+    /// <p>Specifies whether to bypass the graceful OS shutdown process when the instance is stopped.</p><important>
+    /// <p>Bypassing the graceful OS shutdown might result in data loss or corruption (for example, memory contents not flushed to disk or loss of in-flight IOs) or skipped shutdown scripts.</p>
+    /// </important>
+    /// <p>Default: <code>false</code></p>
+    pub fn get_skip_os_shutdown(&self) -> &::std::option::Option<bool> {
+        &self.skip_os_shutdown
     }
     /// <p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -133,6 +169,7 @@ impl StopInstancesInputBuilder {
         ::std::result::Result::Ok(crate::operation::stop_instances::StopInstancesInput {
             instance_ids: self.instance_ids,
             hibernate: self.hibernate,
+            skip_os_shutdown: self.skip_os_shutdown,
             dry_run: self.dry_run,
             force: self.force,
         })

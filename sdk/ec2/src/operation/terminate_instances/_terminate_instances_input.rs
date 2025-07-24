@@ -6,6 +6,9 @@ pub struct TerminateInstancesInput {
     /// <p>The IDs of the instances.</p>
     /// <p>Constraints: Up to 1000 instance IDs. We recommend breaking up this request into smaller batches.</p>
     pub instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Specifies whether to bypass the graceful OS shutdown process when the instance is terminated.</p>
+    /// <p>Default: <code>false</code></p>
+    pub skip_os_shutdown: ::std::option::Option<bool>,
     /// <p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
 }
@@ -16,6 +19,11 @@ impl TerminateInstancesInput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_ids.is_none()`.
     pub fn instance_ids(&self) -> &[::std::string::String] {
         self.instance_ids.as_deref().unwrap_or_default()
+    }
+    /// <p>Specifies whether to bypass the graceful OS shutdown process when the instance is terminated.</p>
+    /// <p>Default: <code>false</code></p>
+    pub fn skip_os_shutdown(&self) -> ::std::option::Option<bool> {
+        self.skip_os_shutdown
     }
     /// <p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
@@ -34,6 +42,7 @@ impl TerminateInstancesInput {
 #[non_exhaustive]
 pub struct TerminateInstancesInputBuilder {
     pub(crate) instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) skip_os_shutdown: ::std::option::Option<bool>,
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl TerminateInstancesInputBuilder {
@@ -60,6 +69,23 @@ impl TerminateInstancesInputBuilder {
     pub fn get_instance_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.instance_ids
     }
+    /// <p>Specifies whether to bypass the graceful OS shutdown process when the instance is terminated.</p>
+    /// <p>Default: <code>false</code></p>
+    pub fn skip_os_shutdown(mut self, input: bool) -> Self {
+        self.skip_os_shutdown = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to bypass the graceful OS shutdown process when the instance is terminated.</p>
+    /// <p>Default: <code>false</code></p>
+    pub fn set_skip_os_shutdown(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.skip_os_shutdown = input;
+        self
+    }
+    /// <p>Specifies whether to bypass the graceful OS shutdown process when the instance is terminated.</p>
+    /// <p>Default: <code>false</code></p>
+    pub fn get_skip_os_shutdown(&self) -> &::std::option::Option<bool> {
+        &self.skip_os_shutdown
+    }
     /// <p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -80,6 +106,7 @@ impl TerminateInstancesInputBuilder {
     ) -> ::std::result::Result<crate::operation::terminate_instances::TerminateInstancesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::terminate_instances::TerminateInstancesInput {
             instance_ids: self.instance_ids,
+            skip_os_shutdown: self.skip_os_shutdown,
             dry_run: self.dry_run,
         })
     }

@@ -24,14 +24,19 @@ pub fn ser_stop_instances_input_input_input(
         scope_6.boolean(*var_7);
     }
     #[allow(unused_mut)]
-    let mut scope_8 = writer.prefix("DryRun");
-    if let Some(var_9) = &input.dry_run {
+    let mut scope_8 = writer.prefix("SkipOsShutdown");
+    if let Some(var_9) = &input.skip_os_shutdown {
         scope_8.boolean(*var_9);
     }
     #[allow(unused_mut)]
-    let mut scope_10 = writer.prefix("Force");
-    if let Some(var_11) = &input.force {
+    let mut scope_10 = writer.prefix("DryRun");
+    if let Some(var_11) = &input.dry_run {
         scope_10.boolean(*var_11);
+    }
+    #[allow(unused_mut)]
+    let mut scope_12 = writer.prefix("Force");
+    if let Some(var_13) = &input.force {
+        scope_12.boolean(*var_13);
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
