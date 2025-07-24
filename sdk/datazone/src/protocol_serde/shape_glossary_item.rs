@@ -82,6 +82,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "additionalAttributes" => {
+                            builder = builder.set_additional_attributes(
+                                crate::protocol_serde::shape_glossary_item_additional_attributes::de_glossary_item_additional_attributes(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

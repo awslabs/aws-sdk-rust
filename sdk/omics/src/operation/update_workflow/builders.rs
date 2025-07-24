@@ -22,7 +22,20 @@ impl crate::operation::update_workflow::builders::UpdateWorkflowInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateWorkflow`.
 ///
-/// <p>Updates information about a workflow. For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/update-private-workflow.html">Update a private workflow</a> in the Amazon Web Services HealthOmics User Guide.</p>
+/// <p>Updates information about a workflow.</p>
+/// <p>You can update the following workflow information:</p>
+/// <ul>
+/// <li>
+/// <p>Name</p></li>
+/// <li>
+/// <p>Description</p></li>
+/// <li>
+/// <p>Default storage type</p></li>
+/// <li>
+/// <p>Default storage capacity (with workflow ID)</p></li>
+/// </ul>
+/// <p>This operation returns a response with no body if the operation is successful. You can check the workflow updates by calling the <code>GetWorkflow</code> API operation.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/update-private-workflow.html">Update a private workflow</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateWorkflowFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -177,5 +190,19 @@ impl UpdateWorkflowFluentBuilder {
     /// <p>The default static storage capacity (in gibibytes) for runs that use this workflow or workflow version.</p>
     pub fn get_storage_capacity(&self) -> &::std::option::Option<i32> {
         self.inner.get_storage_capacity()
+    }
+    /// <p>The markdown content for the workflow's README file. This provides documentation and usage information for users of the workflow.</p>
+    pub fn readme_markdown(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.readme_markdown(input.into());
+        self
+    }
+    /// <p>The markdown content for the workflow's README file. This provides documentation and usage information for users of the workflow.</p>
+    pub fn set_readme_markdown(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_readme_markdown(input);
+        self
+    }
+    /// <p>The markdown content for the workflow's README file. This provides documentation and usage information for users of the workflow.</p>
+    pub fn get_readme_markdown(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_readme_markdown()
     }
 }

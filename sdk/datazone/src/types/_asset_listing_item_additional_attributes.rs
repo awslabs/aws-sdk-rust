@@ -6,6 +6,8 @@
 pub struct AssetListingItemAdditionalAttributes {
     /// <p>The metadata forms that form additional attributes of the metadata asset.</p>
     pub forms: ::std::option::Option<::std::string::String>,
+    /// <p>List of rationales indicating why this item was matched by search.</p>
+    pub match_rationale: ::std::option::Option<::std::vec::Vec<crate::types::MatchRationaleItem>>,
     /// <p>The latest time series data points forms included in the additional attributes of an asset.</p>
     pub latest_time_series_data_point_forms: ::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesDataPointSummaryFormOutput>>,
 }
@@ -13,6 +15,12 @@ impl AssetListingItemAdditionalAttributes {
     /// <p>The metadata forms that form additional attributes of the metadata asset.</p>
     pub fn forms(&self) -> ::std::option::Option<&str> {
         self.forms.as_deref()
+    }
+    /// <p>List of rationales indicating why this item was matched by search.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.match_rationale.is_none()`.
+    pub fn match_rationale(&self) -> &[crate::types::MatchRationaleItem] {
+        self.match_rationale.as_deref().unwrap_or_default()
     }
     /// <p>The latest time series data points forms included in the additional attributes of an asset.</p>
     ///
@@ -33,6 +41,7 @@ impl AssetListingItemAdditionalAttributes {
 #[non_exhaustive]
 pub struct AssetListingItemAdditionalAttributesBuilder {
     pub(crate) forms: ::std::option::Option<::std::string::String>,
+    pub(crate) match_rationale: ::std::option::Option<::std::vec::Vec<crate::types::MatchRationaleItem>>,
     pub(crate) latest_time_series_data_point_forms: ::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesDataPointSummaryFormOutput>>,
 }
 impl AssetListingItemAdditionalAttributesBuilder {
@@ -49,6 +58,26 @@ impl AssetListingItemAdditionalAttributesBuilder {
     /// <p>The metadata forms that form additional attributes of the metadata asset.</p>
     pub fn get_forms(&self) -> &::std::option::Option<::std::string::String> {
         &self.forms
+    }
+    /// Appends an item to `match_rationale`.
+    ///
+    /// To override the contents of this collection use [`set_match_rationale`](Self::set_match_rationale).
+    ///
+    /// <p>List of rationales indicating why this item was matched by search.</p>
+    pub fn match_rationale(mut self, input: crate::types::MatchRationaleItem) -> Self {
+        let mut v = self.match_rationale.unwrap_or_default();
+        v.push(input);
+        self.match_rationale = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>List of rationales indicating why this item was matched by search.</p>
+    pub fn set_match_rationale(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MatchRationaleItem>>) -> Self {
+        self.match_rationale = input;
+        self
+    }
+    /// <p>List of rationales indicating why this item was matched by search.</p>
+    pub fn get_match_rationale(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MatchRationaleItem>> {
+        &self.match_rationale
     }
     /// Appends an item to `latest_time_series_data_point_forms`.
     ///
@@ -79,6 +108,7 @@ impl AssetListingItemAdditionalAttributesBuilder {
     pub fn build(self) -> crate::types::AssetListingItemAdditionalAttributes {
         crate::types::AssetListingItemAdditionalAttributes {
             forms: self.forms,
+            match_rationale: self.match_rationale,
             latest_time_series_data_point_forms: self.latest_time_series_data_point_forms,
         }
     }

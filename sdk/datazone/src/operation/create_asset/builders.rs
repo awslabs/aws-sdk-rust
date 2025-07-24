@@ -137,16 +137,19 @@ impl CreateAssetFluentBuilder {
         self.inner.get_domain_identifier()
     }
     /// <p>The external identifier of the asset.</p>
+    /// <p>If the value for the <code>externalIdentifier</code> parameter is specified, it must be a unique value.</p>
     pub fn external_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.external_identifier(input.into());
         self
     }
     /// <p>The external identifier of the asset.</p>
+    /// <p>If the value for the <code>externalIdentifier</code> parameter is specified, it must be a unique value.</p>
     pub fn set_external_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_external_identifier(input);
         self
     }
     /// <p>The external identifier of the asset.</p>
+    /// <p>If the value for the <code>externalIdentifier</code> parameter is specified, it must be a unique value.</p>
     pub fn get_external_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_external_identifier()
     }

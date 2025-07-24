@@ -63,6 +63,10 @@ impl Config {
     pub fn auth_scheme_resolver(&self) -> ::std::option::Option<::aws_smithy_runtime_api::client::auth::SharedAuthSchemeOptionResolver> {
         self.runtime_components.auth_scheme_option_resolver()
     }
+    /// Returns the configured auth scheme preference
+    pub fn auth_scheme_preference(&self) -> ::std::option::Option<&::aws_smithy_runtime_api::client::auth::AuthSchemePreference> {
+        self.config.load::<::aws_smithy_runtime_api::client::auth::AuthSchemePreference>()
+    }
     /// Returns the endpoint resolver.
     pub fn endpoint_resolver(&self) -> ::aws_smithy_runtime_api::client::endpoint::SharedEndpointResolver {
         self.runtime_components.endpoint_resolver().expect("resolver defaulted if not set")
@@ -176,6 +180,7 @@ impl Builder {
     pub(crate) fn from_config_bag(config_bag: &::aws_smithy_types::config_bag::ConfigBag) -> Self {
         let mut builder = Self::new();
         builder.set_stalled_stream_protection(config_bag.load::<crate::config::StalledStreamProtectionConfig>().cloned());
+        builder.set_auth_scheme_preference(config_bag.load::<::aws_smithy_runtime_api::client::auth::AuthSchemePreference>().cloned());
         builder.set_retry_config(config_bag.load::<::aws_smithy_types::retry::RetryConfig>().cloned());
         builder.set_timeout_config(config_bag.load::<::aws_smithy_types::timeout::TimeoutConfig>().cloned());
         builder.set_retry_partition(config_bag.load::<::aws_smithy_runtime::client::retries::RetryPartition>().cloned());
@@ -423,6 +428,63 @@ impl Builder {
     pub fn set_auth_scheme_resolver(&mut self, auth_scheme_resolver: impl crate::config::auth::ResolveAuthScheme + 'static) -> &mut Self {
         self.runtime_components
             .set_auth_scheme_option_resolver(::std::option::Option::Some(auth_scheme_resolver.into_shared_resolver()));
+        self
+    }
+    /// Set the auth scheme preference for an auth scheme resolver
+    /// (typically the default auth scheme resolver).
+    ///
+    /// Each operation has a predefined order of auth schemes, as determined by the service,
+    /// for auth scheme resolution. By using the auth scheme preference, customers
+    /// can reorder the schemes resolved by the auth scheme resolver.
+    ///
+    /// The preference list is intended as a hint rather than a strict override.
+    /// Any schemes not present in the originally resolved auth schemes will be ignored.
+    ///
+    /// # Examples
+    ///
+    /// ```no_run
+    /// # use aws_smithy_runtime_api::client::auth::AuthSchemeId;
+    /// let config = aws_sdk_migrationhubconfig::Config::builder()
+    ///     .auth_scheme_preference([AuthSchemeId::from("scheme1"), AuthSchemeId::from("scheme2")])
+    ///     // ...
+    ///     .build();
+    /// let client = aws_sdk_migrationhubconfig::Client::from_conf(config);
+    /// ```
+
+    pub fn auth_scheme_preference(
+        mut self,
+        preference: impl ::std::convert::Into<::aws_smithy_runtime_api::client::auth::AuthSchemePreference>,
+    ) -> Self {
+        self.set_auth_scheme_preference(::std::option::Option::Some(preference.into()));
+        self
+    }
+
+    /// Set the auth scheme preference for an auth scheme resolver
+    /// (typically the default auth scheme resolver).
+    ///
+    /// Each operation has a predefined order of auth schemes, as determined by the service,
+    /// for auth scheme resolution. By using the auth scheme preference, customers
+    /// can reorder the schemes resolved by the auth scheme resolver.
+    ///
+    /// The preference list is intended as a hint rather than a strict override.
+    /// Any schemes not present in the originally resolved auth schemes will be ignored.
+    ///
+    /// # Examples
+    ///
+    /// ```no_run
+    /// # use aws_smithy_runtime_api::client::auth::AuthSchemeId;
+    /// let config = aws_sdk_migrationhubconfig::Config::builder()
+    ///     .auth_scheme_preference([AuthSchemeId::from("scheme1"), AuthSchemeId::from("scheme2")])
+    ///     // ...
+    ///     .build();
+    /// let client = aws_sdk_migrationhubconfig::Client::from_conf(config);
+    /// ```
+
+    pub fn set_auth_scheme_preference(
+        &mut self,
+        preference: ::std::option::Option<::aws_smithy_runtime_api::client::auth::AuthSchemePreference>,
+    ) -> &mut Self {
+        self.config.store_or_unset(preference);
         self
     }
     /// Sets the endpoint resolver to use when making requests.
@@ -1294,6 +1356,7 @@ impl From<&::aws_types::sdk_config::SdkConfig> for Builder {
         builder.set_http_client(input.http_client());
         builder.set_time_source(input.time_source());
         builder.set_behavior_version(input.behavior_version());
+        builder.set_auth_scheme_preference(input.auth_scheme_preference().cloned());
         // setting `None` here removes the default
         if let Some(config) = input.stalled_stream_protection() {
             builder.set_stalled_stream_protection(Some(config));

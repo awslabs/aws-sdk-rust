@@ -21,6 +21,7 @@ pub mod arbitrary;
 mod buf;
 pub mod error;
 pub mod frame;
+pub mod message_size_hint;
 pub mod smithy;
 #[cfg(feature = "test-util")]
 pub mod test_util;

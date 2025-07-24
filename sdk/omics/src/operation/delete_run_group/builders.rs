@@ -22,7 +22,14 @@ impl crate::operation::delete_run_group::builders::DeleteRunGroupInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteRunGroup`.
 ///
-/// <p>Deletes a workflow run group.</p>
+/// <p>Deletes a run group and returns a response with no body if the operation is successful.</p>
+/// <p>To verify that the run group is deleted:</p>
+/// <ul>
+/// <li>
+/// <p>Use <code>ListRunGroups</code> to confirm the workflow no longer appears in the list.</p></li>
+/// <li>
+/// <p>Use <code>GetRunGroup</code> to verify the workflow cannot be found.</p></li>
+/// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteRunGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

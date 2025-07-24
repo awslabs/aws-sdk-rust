@@ -9,6 +9,8 @@ pub struct SearchListingsOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Total number of search results.</p>
     pub total_match_count: ::std::option::Option<i32>,
+    /// <p>Contains computed counts grouped by field values based on the requested aggregation attributes for the matching listings.</p>
+    pub aggregates: ::std::option::Option<::std::vec::Vec<crate::types::AggregationOutput>>,
     _request_id: Option<String>,
 }
 impl SearchListingsOutput {
@@ -25,6 +27,12 @@ impl SearchListingsOutput {
     /// <p>Total number of search results.</p>
     pub fn total_match_count(&self) -> ::std::option::Option<i32> {
         self.total_match_count
+    }
+    /// <p>Contains computed counts grouped by field values based on the requested aggregation attributes for the matching listings.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.aggregates.is_none()`.
+    pub fn aggregates(&self) -> &[crate::types::AggregationOutput] {
+        self.aggregates.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for SearchListingsOutput {
@@ -46,6 +54,7 @@ pub struct SearchListingsOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::SearchResultItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) total_match_count: ::std::option::Option<i32>,
+    pub(crate) aggregates: ::std::option::Option<::std::vec::Vec<crate::types::AggregationOutput>>,
     _request_id: Option<String>,
 }
 impl SearchListingsOutputBuilder {
@@ -97,6 +106,26 @@ impl SearchListingsOutputBuilder {
     pub fn get_total_match_count(&self) -> &::std::option::Option<i32> {
         &self.total_match_count
     }
+    /// Appends an item to `aggregates`.
+    ///
+    /// To override the contents of this collection use [`set_aggregates`](Self::set_aggregates).
+    ///
+    /// <p>Contains computed counts grouped by field values based on the requested aggregation attributes for the matching listings.</p>
+    pub fn aggregates(mut self, input: crate::types::AggregationOutput) -> Self {
+        let mut v = self.aggregates.unwrap_or_default();
+        v.push(input);
+        self.aggregates = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Contains computed counts grouped by field values based on the requested aggregation attributes for the matching listings.</p>
+    pub fn set_aggregates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AggregationOutput>>) -> Self {
+        self.aggregates = input;
+        self
+    }
+    /// <p>Contains computed counts grouped by field values based on the requested aggregation attributes for the matching listings.</p>
+    pub fn get_aggregates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AggregationOutput>> {
+        &self.aggregates
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -112,6 +141,7 @@ impl SearchListingsOutputBuilder {
             items: self.items,
             next_token: self.next_token,
             total_match_count: self.total_match_count,
+            aggregates: self.aggregates,
             _request_id: self._request_id,
         }
     }

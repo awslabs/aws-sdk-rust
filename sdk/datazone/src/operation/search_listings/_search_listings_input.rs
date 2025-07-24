@@ -15,6 +15,8 @@ pub struct SearchListingsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the filters for the search of listings.</p>
     pub filters: ::std::option::Option<crate::types::FilterClause>,
+    /// <p>Enables you to specify one or more attributes to compute and return counts grouped by field values.</p>
+    pub aggregations: ::std::option::Option<::std::vec::Vec<crate::types::AggregationListItem>>,
     /// <p>Specifies the way for sorting the search results.</p>
     pub sort: ::std::option::Option<crate::types::SearchSort>,
     /// <p>Specifies additional attributes for the search.</p>
@@ -47,6 +49,12 @@ impl SearchListingsInput {
     pub fn filters(&self) -> ::std::option::Option<&crate::types::FilterClause> {
         self.filters.as_ref()
     }
+    /// <p>Enables you to specify one or more attributes to compute and return counts grouped by field values.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.aggregations.is_none()`.
+    pub fn aggregations(&self) -> &[crate::types::AggregationListItem] {
+        self.aggregations.as_deref().unwrap_or_default()
+    }
     /// <p>Specifies the way for sorting the search results.</p>
     pub fn sort(&self) -> ::std::option::Option<&crate::types::SearchSort> {
         self.sort.as_ref()
@@ -75,6 +83,7 @@ pub struct SearchListingsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<crate::types::FilterClause>,
+    pub(crate) aggregations: ::std::option::Option<::std::vec::Vec<crate::types::AggregationListItem>>,
     pub(crate) sort: ::std::option::Option<crate::types::SearchSort>,
     pub(crate) additional_attributes: ::std::option::Option<::std::vec::Vec<crate::types::SearchOutputAdditionalAttribute>>,
 }
@@ -170,6 +179,26 @@ impl SearchListingsInputBuilder {
     pub fn get_filters(&self) -> &::std::option::Option<crate::types::FilterClause> {
         &self.filters
     }
+    /// Appends an item to `aggregations`.
+    ///
+    /// To override the contents of this collection use [`set_aggregations`](Self::set_aggregations).
+    ///
+    /// <p>Enables you to specify one or more attributes to compute and return counts grouped by field values.</p>
+    pub fn aggregations(mut self, input: crate::types::AggregationListItem) -> Self {
+        let mut v = self.aggregations.unwrap_or_default();
+        v.push(input);
+        self.aggregations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Enables you to specify one or more attributes to compute and return counts grouped by field values.</p>
+    pub fn set_aggregations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AggregationListItem>>) -> Self {
+        self.aggregations = input;
+        self
+    }
+    /// <p>Enables you to specify one or more attributes to compute and return counts grouped by field values.</p>
+    pub fn get_aggregations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AggregationListItem>> {
+        &self.aggregations
+    }
     /// <p>Specifies the way for sorting the search results.</p>
     pub fn sort(mut self, input: crate::types::SearchSort) -> Self {
         self.sort = ::std::option::Option::Some(input);
@@ -215,6 +244,7 @@ impl SearchListingsInputBuilder {
             max_results: self.max_results,
             next_token: self.next_token,
             filters: self.filters,
+            aggregations: self.aggregations,
             sort: self.sort,
             additional_attributes: self.additional_attributes,
         })

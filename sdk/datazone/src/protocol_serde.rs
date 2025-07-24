@@ -503,6 +503,10 @@ pub(crate) mod shape_accepted_asset_scope;
 
 pub(crate) mod shape_action_parameters;
 
+pub(crate) mod shape_aggregation_list_item;
+
+pub(crate) mod shape_aggregation_output_list;
+
 pub(crate) mod shape_applicable_asset_types;
 
 pub(crate) mod shape_asset_filter_configuration;
@@ -747,6 +751,8 @@ pub(crate) mod shape_user_profile_summaries;
 
 pub(crate) mod shape_add_to_project_member_pool_policy_grant_detail;
 
+pub(crate) mod shape_aggregation_output;
+
 pub(crate) mod shape_asset_filter_summary;
 
 pub(crate) mod shape_asset_listing;
@@ -989,6 +995,8 @@ pub(crate) mod shape_user_policy_grant_principal;
 
 pub(crate) mod shape_user_profile_summary;
 
+pub(crate) mod shape_aggregation_output_items;
+
 pub(crate) mod shape_all_users_grant_filter;
 
 pub(crate) mod shape_asset_item;
@@ -1095,6 +1103,8 @@ pub(crate) mod shape_tracking_assets;
 
 pub(crate) mod shape_username_password;
 
+pub(crate) mod shape_aggregation_output_item;
+
 pub(crate) mod shape_all_domain_units_grant_filter;
 
 pub(crate) mod shape_asset_in_data_product_listing_items;
@@ -1115,6 +1125,8 @@ pub(crate) mod shape_configurable_action_parameter;
 
 pub(crate) mod shape_connection_properties;
 
+pub(crate) mod shape_data_product_item_additional_attributes;
+
 pub(crate) mod shape_data_product_listing_item_additional_attributes;
 
 pub(crate) mod shape_detailed_glossary_term;
@@ -1128,6 +1140,10 @@ pub(crate) mod shape_failed_query_processing_error_messages;
 pub(crate) mod shape_filter_expression;
 
 pub(crate) mod shape_filter_ids;
+
+pub(crate) mod shape_glossary_item_additional_attributes;
+
+pub(crate) mod shape_glossary_term_item_additional_attributes;
 
 pub(crate) mod shape_group_details;
 
@@ -1191,6 +1207,8 @@ pub(crate) mod shape_like_expression;
 
 pub(crate) mod shape_listing_summary_item;
 
+pub(crate) mod shape_match_rationale;
+
 pub(crate) mod shape_name_identifier;
 
 pub(crate) mod shape_name_identifiers;
@@ -1213,8 +1231,18 @@ pub(crate) mod shape_authorization_code_properties;
 
 pub(crate) mod shape_glue_o_auth2_credentials;
 
+pub(crate) mod shape_match_rationale_item;
+
 pub(crate) mod shape_o_auth2_client_application;
 
 pub(crate) mod shape_string_list;
 
 pub(crate) mod shape_token_url_parameters_map;
+
+pub(crate) mod shape_text_matches;
+
+pub(crate) mod shape_text_match_item;
+
+pub(crate) mod shape_match_offsets;
+
+pub(crate) mod shape_match_offset;

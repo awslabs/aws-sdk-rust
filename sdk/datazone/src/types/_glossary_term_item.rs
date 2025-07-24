@@ -28,6 +28,8 @@ pub struct GlossaryTermItem {
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon DataZone user who updated the business glossary term.</p>
     pub updated_by: ::std::option::Option<::std::string::String>,
+    /// <p>The additional attributes of an Amazon DataZone glossary term.</p>
+    pub additional_attributes: ::std::option::Option<crate::types::GlossaryTermItemAdditionalAttributes>,
 }
 impl GlossaryTermItem {
     /// <p>The identifier of the Amazon DataZone domain in which the business glossary exists.</p>
@@ -82,6 +84,10 @@ impl GlossaryTermItem {
     pub fn updated_by(&self) -> ::std::option::Option<&str> {
         self.updated_by.as_deref()
     }
+    /// <p>The additional attributes of an Amazon DataZone glossary term.</p>
+    pub fn additional_attributes(&self) -> ::std::option::Option<&crate::types::GlossaryTermItemAdditionalAttributes> {
+        self.additional_attributes.as_ref()
+    }
 }
 impl ::std::fmt::Debug for GlossaryTermItem {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -98,6 +104,7 @@ impl ::std::fmt::Debug for GlossaryTermItem {
         formatter.field("created_by", &self.created_by);
         formatter.field("updated_at", &self.updated_at);
         formatter.field("updated_by", &self.updated_by);
+        formatter.field("additional_attributes", &self.additional_attributes);
         formatter.finish()
     }
 }
@@ -124,6 +131,7 @@ pub struct GlossaryTermItemBuilder {
     pub(crate) created_by: ::std::option::Option<::std::string::String>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_by: ::std::option::Option<::std::string::String>,
+    pub(crate) additional_attributes: ::std::option::Option<crate::types::GlossaryTermItemAdditionalAttributes>,
 }
 impl GlossaryTermItemBuilder {
     /// <p>The identifier of the Amazon DataZone domain in which the business glossary exists.</p>
@@ -299,6 +307,20 @@ impl GlossaryTermItemBuilder {
     pub fn get_updated_by(&self) -> &::std::option::Option<::std::string::String> {
         &self.updated_by
     }
+    /// <p>The additional attributes of an Amazon DataZone glossary term.</p>
+    pub fn additional_attributes(mut self, input: crate::types::GlossaryTermItemAdditionalAttributes) -> Self {
+        self.additional_attributes = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The additional attributes of an Amazon DataZone glossary term.</p>
+    pub fn set_additional_attributes(mut self, input: ::std::option::Option<crate::types::GlossaryTermItemAdditionalAttributes>) -> Self {
+        self.additional_attributes = input;
+        self
+    }
+    /// <p>The additional attributes of an Amazon DataZone glossary term.</p>
+    pub fn get_additional_attributes(&self) -> &::std::option::Option<crate::types::GlossaryTermItemAdditionalAttributes> {
+        &self.additional_attributes
+    }
     /// Consumes the builder and constructs a [`GlossaryTermItem`](crate::types::GlossaryTermItem).
     /// This method will fail if any of the following fields are not set:
     /// - [`domain_id`](crate::types::builders::GlossaryTermItemBuilder::domain_id)
@@ -345,6 +367,7 @@ impl GlossaryTermItemBuilder {
             created_by: self.created_by,
             updated_at: self.updated_at,
             updated_by: self.updated_by,
+            additional_attributes: self.additional_attributes,
         })
     }
 }
@@ -363,6 +386,7 @@ impl ::std::fmt::Debug for GlossaryTermItemBuilder {
         formatter.field("created_by", &self.created_by);
         formatter.field("updated_at", &self.updated_at);
         formatter.field("updated_by", &self.updated_by);
+        formatter.field("additional_attributes", &self.additional_attributes);
         formatter.finish()
     }
 }

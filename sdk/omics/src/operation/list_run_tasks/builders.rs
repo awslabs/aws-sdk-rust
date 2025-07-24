@@ -22,7 +22,7 @@ impl crate::operation::list_run_tasks::builders::ListRunTasksInputBuilder {
 }
 /// Fluent builder constructing a request to `ListRunTasks`.
 ///
-/// <p>Retrieves a list of tasks for a run.</p>
+/// <p>Returns a list of tasks and status information within their specified run. Use this operation to monitor runs and to identify which specific tasks have failed.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListRunTasksFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

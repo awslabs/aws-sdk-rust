@@ -22,7 +22,7 @@ impl crate::operation::get_run_task::builders::GetRunTaskInputBuilder {
 }
 /// Fluent builder constructing a request to `GetRunTask`.
 ///
-/// <p>Gets information about a workflow run task.</p>
+/// <p>Gets detailed information about a run task using its ID.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetRunTaskFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

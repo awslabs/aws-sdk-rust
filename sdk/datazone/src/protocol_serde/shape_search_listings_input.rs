@@ -12,41 +12,53 @@ pub fn ser_search_listings_input_input(
         }
         array_2.finish();
     }
-    if let Some(var_4) = &input.filters {
-        #[allow(unused_mut)]
-        let mut object_5 = object.key("filters").start_object();
-        crate::protocol_serde::shape_filter_clause::ser_filter_clause(&mut object_5, var_4)?;
-        object_5.finish();
-    }
-    if let Some(var_6) = &input.max_results {
-        object.key("maxResults").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_6).into()),
-        );
-    }
-    if let Some(var_7) = &input.next_token {
-        object.key("nextToken").string(var_7.as_str());
-    }
-    if let Some(var_8) = &input.search_in {
-        let mut array_9 = object.key("searchIn").start_array();
-        for item_10 in var_8 {
+    if let Some(var_4) = &input.aggregations {
+        let mut array_5 = object.key("aggregations").start_array();
+        for item_6 in var_4 {
             {
                 #[allow(unused_mut)]
-                let mut object_11 = array_9.value().start_object();
-                crate::protocol_serde::shape_search_in_item::ser_search_in_item(&mut object_11, item_10)?;
-                object_11.finish();
+                let mut object_7 = array_5.value().start_object();
+                crate::protocol_serde::shape_aggregation_list_item::ser_aggregation_list_item(&mut object_7, item_6)?;
+                object_7.finish();
             }
         }
-        array_9.finish();
+        array_5.finish();
     }
-    if let Some(var_12) = &input.search_text {
-        object.key("searchText").string(var_12.as_str());
-    }
-    if let Some(var_13) = &input.sort {
+    if let Some(var_8) = &input.filters {
         #[allow(unused_mut)]
-        let mut object_14 = object.key("sort").start_object();
-        crate::protocol_serde::shape_search_sort::ser_search_sort(&mut object_14, var_13)?;
-        object_14.finish();
+        let mut object_9 = object.key("filters").start_object();
+        crate::protocol_serde::shape_filter_clause::ser_filter_clause(&mut object_9, var_8)?;
+        object_9.finish();
+    }
+    if let Some(var_10) = &input.max_results {
+        object.key("maxResults").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_10).into()),
+        );
+    }
+    if let Some(var_11) = &input.next_token {
+        object.key("nextToken").string(var_11.as_str());
+    }
+    if let Some(var_12) = &input.search_in {
+        let mut array_13 = object.key("searchIn").start_array();
+        for item_14 in var_12 {
+            {
+                #[allow(unused_mut)]
+                let mut object_15 = array_13.value().start_object();
+                crate::protocol_serde::shape_search_in_item::ser_search_in_item(&mut object_15, item_14)?;
+                object_15.finish();
+            }
+        }
+        array_13.finish();
+    }
+    if let Some(var_16) = &input.search_text {
+        object.key("searchText").string(var_16.as_str());
+    }
+    if let Some(var_17) = &input.sort {
+        #[allow(unused_mut)]
+        let mut object_18 = object.key("sort").start_object();
+        crate::protocol_serde::shape_search_sort::ser_search_sort(&mut object_18, var_17)?;
+        object_18.finish();
     }
     Ok(())
 }

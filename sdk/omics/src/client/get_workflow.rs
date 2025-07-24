@@ -27,6 +27,9 @@ impl super::Client {
     ///   - [`accelerators(Option<Accelerators>)`](crate::operation::get_workflow::GetWorkflowOutput::accelerators): <p>The computational accelerator specified to run the workflow.</p>
     ///   - [`storage_type(Option<StorageType>)`](crate::operation::get_workflow::GetWorkflowOutput::storage_type): <p>The default storage type for runs using this workflow.</p>
     ///   - [`uuid(Option<String>)`](crate::operation::get_workflow::GetWorkflowOutput::uuid): <p>The universally unique identifier (UUID) value for this workflow.</p>
+    ///   - [`readme(Option<String>)`](crate::operation::get_workflow::GetWorkflowOutput::readme): <p>The README content for the workflow, providing documentation and usage information.</p>
+    ///   - [`definition_repository_details(Option<DefinitionRepositoryDetails>)`](crate::operation::get_workflow::GetWorkflowOutput::definition_repository_details): <p>Details about the source code repository that hosts the workflow definition files.</p>
+    ///   - [`readme_path(Option<String>)`](crate::operation::get_workflow::GetWorkflowOutput::readme_path): <p>The path to the workflow README markdown file within the repository. This file provides documentation and usage information for the workflow. If not specified, the <code>README.md</code> file from the root directory of the repository will be used.</p>
     /// - On failure, responds with [`SdkError<GetWorkflowError>`](crate::operation::get_workflow::GetWorkflowError)
     pub fn get_workflow(&self) -> crate::operation::get_workflow::builders::GetWorkflowFluentBuilder {
         crate::operation::get_workflow::builders::GetWorkflowFluentBuilder::new(self.handle.clone())

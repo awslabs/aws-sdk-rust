@@ -22,7 +22,7 @@ impl crate::operation::list_workflows::builders::ListWorkflowsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListWorkflows`.
 ///
-/// <p>Retrieves a list of workflows.</p>
+/// <p>Retrieves a list of existing workflows. You can filter for specific workflows by their name and type. Using the type parameter, specify <code>PRIVATE</code> to retrieve a list of private workflows or specify <code>READY2RUN</code> for a list of all Ready2Run workflows. If you do not specify the type of workflow, this operation returns a list of existing workflows.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListWorkflowsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

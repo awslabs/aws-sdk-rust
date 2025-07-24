@@ -13,6 +13,8 @@ pub struct UpdateWorkflowVersionInput {
     pub storage_type: ::std::option::Option<crate::types::StorageType>,
     /// <p>The default static storage capacity (in gibibytes) for runs that use this workflow or workflow version.</p>
     pub storage_capacity: ::std::option::Option<i32>,
+    /// <p>The markdown content for the workflow version's README file. This provides documentation and usage information for users of this specific workflow version.</p>
+    pub readme_markdown: ::std::option::Option<::std::string::String>,
 }
 impl UpdateWorkflowVersionInput {
     /// <p>The workflow's ID.</p>
@@ -35,6 +37,10 @@ impl UpdateWorkflowVersionInput {
     pub fn storage_capacity(&self) -> ::std::option::Option<i32> {
         self.storage_capacity
     }
+    /// <p>The markdown content for the workflow version's README file. This provides documentation and usage information for users of this specific workflow version.</p>
+    pub fn readme_markdown(&self) -> ::std::option::Option<&str> {
+        self.readme_markdown.as_deref()
+    }
 }
 impl UpdateWorkflowVersionInput {
     /// Creates a new builder-style object to manufacture [`UpdateWorkflowVersionInput`](crate::operation::update_workflow_version::UpdateWorkflowVersionInput).
@@ -52,6 +58,7 @@ pub struct UpdateWorkflowVersionInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) storage_type: ::std::option::Option<crate::types::StorageType>,
     pub(crate) storage_capacity: ::std::option::Option<i32>,
+    pub(crate) readme_markdown: ::std::option::Option<::std::string::String>,
 }
 impl UpdateWorkflowVersionInputBuilder {
     /// <p>The workflow's ID.</p>
@@ -126,6 +133,20 @@ impl UpdateWorkflowVersionInputBuilder {
     pub fn get_storage_capacity(&self) -> &::std::option::Option<i32> {
         &self.storage_capacity
     }
+    /// <p>The markdown content for the workflow version's README file. This provides documentation and usage information for users of this specific workflow version.</p>
+    pub fn readme_markdown(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.readme_markdown = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The markdown content for the workflow version's README file. This provides documentation and usage information for users of this specific workflow version.</p>
+    pub fn set_readme_markdown(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.readme_markdown = input;
+        self
+    }
+    /// <p>The markdown content for the workflow version's README file. This provides documentation and usage information for users of this specific workflow version.</p>
+    pub fn get_readme_markdown(&self) -> &::std::option::Option<::std::string::String> {
+        &self.readme_markdown
+    }
     /// Consumes the builder and constructs a [`UpdateWorkflowVersionInput`](crate::operation::update_workflow_version::UpdateWorkflowVersionInput).
     pub fn build(
         self,
@@ -137,6 +158,7 @@ impl UpdateWorkflowVersionInputBuilder {
             description: self.description,
             storage_type: self.storage_type,
             storage_capacity: self.storage_capacity,
+            readme_markdown: self.readme_markdown,
         })
     }
 }

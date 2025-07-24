@@ -199,6 +199,11 @@ pub(crate) fn de_get_workflow_version(
                             .transpose()?,
                     );
                 }
+                "definitionRepositoryDetails" => {
+                    builder = builder.set_definition_repository_details(
+                        crate::protocol_serde::shape_definition_repository_details::de_definition_repository_details(tokens)?,
+                    );
+                }
                 "description" => {
                     builder = builder.set_description(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -233,6 +238,20 @@ pub(crate) fn de_get_workflow_version(
                 "parameterTemplate" => {
                     builder = builder.set_parameter_template(
                         crate::protocol_serde::shape_workflow_parameter_template::de_workflow_parameter_template(tokens)?,
+                    );
+                }
+                "readme" => {
+                    builder = builder.set_readme(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "readmePath" => {
+                    builder = builder.set_readme_path(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
                     );
                 }
                 "status" => {

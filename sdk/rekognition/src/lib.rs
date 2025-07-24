@@ -110,7 +110,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-rekognition = "1.80.0"
+//! aws-sdk-rekognition = "1.81.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

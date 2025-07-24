@@ -27,7 +27,7 @@ impl crate::operation::create_workflow_version::builders::CreateWorkflowVersionI
 /// <p>Provide a version name that is unique for this workflow. You cannot change the name after HealthOmics creates the version.</p><note>
 /// <p>Don’t include any personally identifiable information (PII) in the version name. Version names appear in the workflow version ARN.</p>
 /// </note>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/workflow-versions.html">Workflow versioning in Amazon Web Services HealthOmics</a> in the Amazon Web Services HealthOmics User Guide.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/workflow-versions.html">Workflow versioning in Amazon Web Services HealthOmics</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateWorkflowVersionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -326,5 +326,99 @@ impl CreateWorkflowVersionFluentBuilder {
     /// <p>Amazon Web Services Id of the owner of the S3 bucket that contains the workflow definition. You need to specify this parameter if your account is not the bucket owner.</p>
     pub fn get_workflow_bucket_owner_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_workflow_bucket_owner_id()
+    }
+    /// <p>The markdown content for the workflow version's README file. This provides documentation and usage information for users of this specific workflow version.</p>
+    pub fn readme_markdown(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.readme_markdown(input.into());
+        self
+    }
+    /// <p>The markdown content for the workflow version's README file. This provides documentation and usage information for users of this specific workflow version.</p>
+    pub fn set_readme_markdown(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_readme_markdown(input);
+        self
+    }
+    /// <p>The markdown content for the workflow version's README file. This provides documentation and usage information for users of this specific workflow version.</p>
+    pub fn get_readme_markdown(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_readme_markdown()
+    }
+    /// <p>The path to the workflow version parameter template JSON file within the repository. This file defines the input parameters for runs that use this workflow version. If not specified, the workflow version will be created without a parameter template.</p>
+    pub fn parameter_template_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.parameter_template_path(input.into());
+        self
+    }
+    /// <p>The path to the workflow version parameter template JSON file within the repository. This file defines the input parameters for runs that use this workflow version. If not specified, the workflow version will be created without a parameter template.</p>
+    pub fn set_parameter_template_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_parameter_template_path(input);
+        self
+    }
+    /// <p>The path to the workflow version parameter template JSON file within the repository. This file defines the input parameters for runs that use this workflow version. If not specified, the workflow version will be created without a parameter template.</p>
+    pub fn get_parameter_template_path(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_parameter_template_path()
+    }
+    /// <p>The path to the workflow version README markdown file within the repository. This file provides documentation and usage information for the workflow. If not specified, the <code>README.md</code> file from the root directory of the repository will be used.</p>
+    pub fn readme_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.readme_path(input.into());
+        self
+    }
+    /// <p>The path to the workflow version README markdown file within the repository. This file provides documentation and usage information for the workflow. If not specified, the <code>README.md</code> file from the root directory of the repository will be used.</p>
+    pub fn set_readme_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_readme_path(input);
+        self
+    }
+    /// <p>The path to the workflow version README markdown file within the repository. This file provides documentation and usage information for the workflow. If not specified, the <code>README.md</code> file from the root directory of the repository will be used.</p>
+    pub fn get_readme_path(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_readme_path()
+    }
+    /// <p>The repository information for the workflow version definition. This allows you to source your workflow version definition directly from a code repository.</p>
+    pub fn definition_repository(mut self, input: crate::types::DefinitionRepository) -> Self {
+        self.inner = self.inner.definition_repository(input);
+        self
+    }
+    /// <p>The repository information for the workflow version definition. This allows you to source your workflow version definition directly from a code repository.</p>
+    pub fn set_definition_repository(mut self, input: ::std::option::Option<crate::types::DefinitionRepository>) -> Self {
+        self.inner = self.inner.set_definition_repository(input);
+        self
+    }
+    /// <p>The repository information for the workflow version definition. This allows you to source your workflow version definition directly from a code repository.</p>
+    pub fn get_definition_repository(&self) -> &::std::option::Option<crate::types::DefinitionRepository> {
+        self.inner.get_definition_repository()
+    }
+    /// <p>The S3 URI of the README file for the workflow version. This file provides documentation and usage information for the workflow version. Requirements include:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The S3 URI must begin with <code>s3://USER-OWNED-BUCKET/</code></p></li>
+    /// <li>
+    /// <p>The requester must have access to the S3 bucket and object.</p></li>
+    /// <li>
+    /// <p>The max README content length is 500 KiB.</p></li>
+    /// </ul>
+    pub fn readme_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.readme_uri(input.into());
+        self
+    }
+    /// <p>The S3 URI of the README file for the workflow version. This file provides documentation and usage information for the workflow version. Requirements include:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The S3 URI must begin with <code>s3://USER-OWNED-BUCKET/</code></p></li>
+    /// <li>
+    /// <p>The requester must have access to the S3 bucket and object.</p></li>
+    /// <li>
+    /// <p>The max README content length is 500 KiB.</p></li>
+    /// </ul>
+    pub fn set_readme_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_readme_uri(input);
+        self
+    }
+    /// <p>The S3 URI of the README file for the workflow version. This file provides documentation and usage information for the workflow version. Requirements include:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The S3 URI must begin with <code>s3://USER-OWNED-BUCKET/</code></p></li>
+    /// <li>
+    /// <p>The requester must have access to the S3 bucket and object.</p></li>
+    /// <li>
+    /// <p>The max README content length is 500 KiB.</p></li>
+    /// </ul>
+    pub fn get_readme_uri(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_readme_uri()
     }
 }

@@ -21,6 +21,9 @@ where
                                     .transpose()?,
                             );
                         }
+                        "matchRationale" => {
+                            builder = builder.set_match_rationale(crate::protocol_serde::shape_match_rationale::de_match_rationale(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

@@ -7,8 +7,8 @@ use crate::client::auth::no_auth::NO_AUTH_SCHEME_ID;
 use crate::client::identity::IdentityCache;
 use aws_smithy_runtime_api::box_error::BoxError;
 use aws_smithy_runtime_api::client::auth::{
-    AuthScheme, AuthSchemeEndpointConfig, AuthSchemeId, AuthSchemeOptionResolverParams,
-    ResolveAuthSchemeOptions,
+    AuthScheme, AuthSchemeEndpointConfig, AuthSchemeId, AuthSchemeOption,
+    AuthSchemeOptionResolverParams, AuthSchemePreference, ResolveAuthSchemeOptions,
 };
 use aws_smithy_runtime_api::client::endpoint::{EndpointResolverParams, ResolveEndpoint};
 use aws_smithy_runtime_api::client::identity::{Identity, ResolveIdentity};
@@ -19,6 +19,7 @@ use aws_smithy_types::config_bag::{ConfigBag, Storable, StoreReplace};
 use aws_smithy_types::endpoint::Endpoint;
 use aws_smithy_types::Document;
 use std::borrow::Cow;
+use std::collections::HashMap;
 use std::error::Error as StdError;
 use std::fmt;
 use tracing::trace;
@@ -125,6 +126,8 @@ pub(super) async fn resolve_identity(
     let options = option_resolver
         .resolve_auth_scheme_options_v2(params, cfg, runtime_components)
         .await?;
+    let options =
+        reprioritize_with_auth_scheme_preference(options, cfg.load::<AuthSchemePreference>()).await;
 
     trace!(
         auth_scheme_option_resolver_params = ?params,
@@ -183,6 +186,40 @@ pub(super) async fn resolve_identity(
     }
 
     Err(NoMatchingAuthSchemeError(explored).into())
+}
+
+// Re-prioritize `supported_auth_scheme_options` based on `auth_scheme_preference`
+//
+// Schemes in `auth_scheme_preference` that are not present in `supported_auth_scheme_options` will be ignored.
+async fn reprioritize_with_auth_scheme_preference(
+    supported_auth_scheme_options: Vec<AuthSchemeOption>,
+    auth_scheme_preference: Option<&AuthSchemePreference>,
+) -> Vec<AuthSchemeOption> {
+    match auth_scheme_preference {
+        Some(preference) => {
+            // maps auth scheme ID to the index in the preference list
+            let preference_map: HashMap<_, _> = preference
+                .clone()
+                .into_iter()
+                .enumerate()
+                .map(|(i, s)| (s, i))
+                .collect();
+            let (mut preferred, non_preferred): (Vec<_>, Vec<_>) = supported_auth_scheme_options
+                .into_iter()
+                .partition(|auth_scheme_option| {
+                    preference_map.contains_key(auth_scheme_option.scheme_id())
+                });
+
+            preferred.sort_by_key(|opt| {
+                preference_map
+                    .get(opt.scheme_id())
+                    .expect("guaranteed by `partition`")
+            });
+            preferred.extend(non_preferred);
+            preferred
+        }
+        None => supported_auth_scheme_options,
+    }
 }
 
 pub(super) fn sign_request(
@@ -883,6 +920,216 @@ mod tests {
             "Note: there were other auth schemes that were evaluated that weren't listed here",
         ) {
             panic!("The error should indicate that the explored list was truncated.");
+        }
+    }
+
+    #[cfg(feature = "http-auth")]
+    #[tokio::test]
+    async fn test_resolve_identity() {
+        use crate::client::auth::http::{ApiKeyAuthScheme, ApiKeyLocation, BasicAuthScheme};
+        use aws_smithy_runtime_api::client::auth::http::{
+            HTTP_API_KEY_AUTH_SCHEME_ID, HTTP_BASIC_AUTH_SCHEME_ID,
+        };
+        use aws_smithy_runtime_api::client::identity::http::Token;
+        use aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder;
+
+        #[derive(Debug)]
+        struct Cache;
+        impl ResolveCachedIdentity for Cache {
+            fn resolve_cached_identity<'a>(
+                &'a self,
+                identity_resolver: SharedIdentityResolver,
+                rc: &'a RuntimeComponents,
+                cfg: &'a ConfigBag,
+            ) -> IdentityFuture<'a> {
+                IdentityFuture::new(
+                    async move { identity_resolver.resolve_identity(rc, cfg).await },
+                )
+            }
+        }
+
+        let mut layer = Layer::new("test");
+        layer.store_put(AuthSchemeAndEndpointOrchestrationV2);
+        layer.store_put(AuthSchemeOptionResolverParams::new("doesntmatter"));
+        let mut cfg = ConfigBag::of_layers(vec![layer]);
+
+        let runtime_components_builder = RuntimeComponentsBuilder::for_tests()
+            .with_auth_scheme(SharedAuthScheme::new(BasicAuthScheme::new()))
+            .with_auth_scheme(SharedAuthScheme::new(ApiKeyAuthScheme::new(
+                "result:",
+                ApiKeyLocation::Header,
+                "Authorization",
+            )))
+            .with_auth_scheme_option_resolver(Some(SharedAuthSchemeOptionResolver::new(
+                StaticAuthSchemeOptionResolver::new(vec![
+                    HTTP_BASIC_AUTH_SCHEME_ID,
+                    HTTP_API_KEY_AUTH_SCHEME_ID,
+                ]),
+            )))
+            .with_identity_cache(Some(Cache));
+
+        struct TestCase {
+            builder_updater: Box<dyn Fn(RuntimeComponentsBuilder) -> RuntimeComponents>,
+            resolved_auth_scheme: AuthSchemeId,
+            should_error: bool,
+        }
+
+        for test_case in [
+            TestCase {
+                builder_updater: Box::new(|rcb: RuntimeComponentsBuilder| {
+                    rcb.with_identity_resolver(
+                        HTTP_BASIC_AUTH_SCHEME_ID,
+                        SharedIdentityResolver::new(Token::new("basic", None)),
+                    )
+                    .with_identity_resolver(
+                        HTTP_API_KEY_AUTH_SCHEME_ID,
+                        SharedIdentityResolver::new(Token::new("api-key", None)),
+                    )
+                    .build()
+                    .unwrap()
+                }),
+                resolved_auth_scheme: HTTP_BASIC_AUTH_SCHEME_ID,
+                should_error: false,
+            },
+            TestCase {
+                builder_updater: Box::new(|rcb: RuntimeComponentsBuilder| {
+                    rcb.with_identity_resolver(
+                        HTTP_BASIC_AUTH_SCHEME_ID,
+                        SharedIdentityResolver::new(Token::new("basic", None)),
+                    )
+                    .build()
+                    .unwrap()
+                }),
+                resolved_auth_scheme: HTTP_BASIC_AUTH_SCHEME_ID,
+                should_error: false,
+            },
+            TestCase {
+                builder_updater: Box::new(|rcb: RuntimeComponentsBuilder| {
+                    rcb.with_identity_resolver(
+                        HTTP_API_KEY_AUTH_SCHEME_ID,
+                        SharedIdentityResolver::new(Token::new("api-key", None)),
+                    )
+                    .build()
+                    .unwrap()
+                }),
+                resolved_auth_scheme: HTTP_API_KEY_AUTH_SCHEME_ID,
+                should_error: false,
+            },
+            TestCase {
+                builder_updater: Box::new(|rcb: RuntimeComponentsBuilder| rcb.build().unwrap()),
+                resolved_auth_scheme: HTTP_API_KEY_AUTH_SCHEME_ID,
+                should_error: true,
+            },
+        ]
+        .into_iter()
+        {
+            let runtime_components =
+                (test_case.builder_updater)(runtime_components_builder.clone());
+            match resolve_identity(&runtime_components, &mut cfg).await {
+                Ok(resolved) => assert_eq!(test_case.resolved_auth_scheme, resolved.0),
+                Err(e) if test_case.should_error => {
+                    assert!(e.downcast_ref::<NoMatchingAuthSchemeError>().is_some());
+                }
+                _ => {
+                    panic!("`resolve_identity` returned an `Err` when no error was expected in the test.");
+                }
+            }
+        }
+    }
+
+    #[cfg(feature = "http-auth")]
+    #[tokio::test]
+    async fn auth_scheme_preference() {
+        use aws_smithy_runtime_api::client::auth::http::{
+            HTTP_API_KEY_AUTH_SCHEME_ID, HTTP_BASIC_AUTH_SCHEME_ID, HTTP_BEARER_AUTH_SCHEME_ID,
+        };
+
+        struct TestCase {
+            supported: Vec<AuthSchemeOption>,
+            preference: Option<AuthSchemePreference>,
+            expected_resolved_auths: Vec<AuthSchemeId>,
+        }
+
+        for test_case in [
+            TestCase {
+                supported: [HTTP_API_KEY_AUTH_SCHEME_ID, HTTP_BASIC_AUTH_SCHEME_ID]
+                    .map(AuthSchemeOption::from)
+                    .to_vec(),
+                preference: None,
+                expected_resolved_auths: vec![
+                    HTTP_API_KEY_AUTH_SCHEME_ID,
+                    HTTP_BASIC_AUTH_SCHEME_ID,
+                ],
+            },
+            TestCase {
+                supported: [HTTP_API_KEY_AUTH_SCHEME_ID, HTTP_BASIC_AUTH_SCHEME_ID]
+                    .map(AuthSchemeOption::from)
+                    .to_vec(),
+                preference: Some([].into()),
+                expected_resolved_auths: vec![
+                    HTTP_API_KEY_AUTH_SCHEME_ID,
+                    HTTP_BASIC_AUTH_SCHEME_ID,
+                ],
+            },
+            TestCase {
+                supported: [HTTP_API_KEY_AUTH_SCHEME_ID, HTTP_BASIC_AUTH_SCHEME_ID]
+                    .map(AuthSchemeOption::from)
+                    .to_vec(),
+                preference: Some(["bogus"].map(AuthSchemeId::from).into()),
+                expected_resolved_auths: vec![
+                    HTTP_API_KEY_AUTH_SCHEME_ID,
+                    HTTP_BASIC_AUTH_SCHEME_ID,
+                ],
+            },
+            TestCase {
+                supported: [HTTP_API_KEY_AUTH_SCHEME_ID, HTTP_BASIC_AUTH_SCHEME_ID]
+                    .map(AuthSchemeOption::from)
+                    .to_vec(),
+                preference: Some([HTTP_BASIC_AUTH_SCHEME_ID].into()),
+                expected_resolved_auths: vec![
+                    HTTP_BASIC_AUTH_SCHEME_ID,
+                    HTTP_API_KEY_AUTH_SCHEME_ID,
+                ],
+            },
+            TestCase {
+                supported: [HTTP_API_KEY_AUTH_SCHEME_ID, HTTP_BASIC_AUTH_SCHEME_ID]
+                    .map(AuthSchemeOption::from)
+                    .to_vec(),
+                preference: Some([HTTP_BASIC_AUTH_SCHEME_ID, HTTP_API_KEY_AUTH_SCHEME_ID].into()),
+                expected_resolved_auths: vec![
+                    HTTP_BASIC_AUTH_SCHEME_ID,
+                    HTTP_API_KEY_AUTH_SCHEME_ID,
+                ],
+            },
+            TestCase {
+                supported: [HTTP_API_KEY_AUTH_SCHEME_ID, HTTP_BASIC_AUTH_SCHEME_ID]
+                    .map(AuthSchemeOption::from)
+                    .to_vec(),
+                preference: Some(
+                    [
+                        HTTP_BASIC_AUTH_SCHEME_ID,
+                        HTTP_BEARER_AUTH_SCHEME_ID,
+                        HTTP_API_KEY_AUTH_SCHEME_ID,
+                    ]
+                    .into(),
+                ),
+                expected_resolved_auths: vec![
+                    HTTP_BASIC_AUTH_SCHEME_ID,
+                    HTTP_API_KEY_AUTH_SCHEME_ID,
+                ],
+            },
+        ] {
+            let actual = reprioritize_with_auth_scheme_preference(
+                test_case.supported,
+                test_case.preference.as_ref(),
+            )
+            .await;
+            let actual = actual
+                .iter()
+                .map(|opt| opt.scheme_id())
+                .cloned()
+                .collect::<Vec<_>>();
+            assert_eq!(test_case.expected_resolved_auths, actual);
         }
     }
 }

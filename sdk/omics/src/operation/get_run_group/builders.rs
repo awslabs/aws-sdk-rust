@@ -22,7 +22,7 @@ impl crate::operation::get_run_group::builders::GetRunGroupInputBuilder {
 }
 /// Fluent builder constructing a request to `GetRunGroup`.
 ///
-/// <p>Gets information about a workflow run group.</p>
+/// <p>Gets information about a run group and returns its metadata.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetRunGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

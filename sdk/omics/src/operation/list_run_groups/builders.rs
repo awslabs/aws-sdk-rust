@@ -22,7 +22,7 @@ impl crate::operation::list_run_groups::builders::ListRunGroupsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListRunGroups`.
 ///
-/// <p>Retrieves a list of run groups.</p>
+/// <p>Retrieves a list of all run groups and returns the metadata for each run group.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListRunGroupsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

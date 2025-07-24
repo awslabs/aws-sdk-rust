@@ -22,7 +22,7 @@ impl crate::operation::list_workflow_versions::builders::ListWorkflowVersionsInp
 }
 /// Fluent builder constructing a request to `ListWorkflowVersions`.
 ///
-/// <p>Lists the workflow versions for the specified workflow. For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/workflow-versions.html">Workflow versioning in Amazon Web Services HealthOmics</a> in the Amazon Web Services HealthOmics User Guide.</p>
+/// <p>Lists the workflow versions for the specified workflow. For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/workflow-versions.html">Workflow versioning in Amazon Web Services HealthOmics</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListWorkflowVersionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

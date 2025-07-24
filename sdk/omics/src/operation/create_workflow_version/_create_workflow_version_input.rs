@@ -32,6 +32,24 @@ pub struct CreateWorkflowVersionInput {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Amazon Web Services Id of the owner of the S3 bucket that contains the workflow definition. You need to specify this parameter if your account is not the bucket owner.</p>
     pub workflow_bucket_owner_id: ::std::option::Option<::std::string::String>,
+    /// <p>The markdown content for the workflow version's README file. This provides documentation and usage information for users of this specific workflow version.</p>
+    pub readme_markdown: ::std::option::Option<::std::string::String>,
+    /// <p>The path to the workflow version parameter template JSON file within the repository. This file defines the input parameters for runs that use this workflow version. If not specified, the workflow version will be created without a parameter template.</p>
+    pub parameter_template_path: ::std::option::Option<::std::string::String>,
+    /// <p>The path to the workflow version README markdown file within the repository. This file provides documentation and usage information for the workflow. If not specified, the <code>README.md</code> file from the root directory of the repository will be used.</p>
+    pub readme_path: ::std::option::Option<::std::string::String>,
+    /// <p>The repository information for the workflow version definition. This allows you to source your workflow version definition directly from a code repository.</p>
+    pub definition_repository: ::std::option::Option<crate::types::DefinitionRepository>,
+    /// <p>The S3 URI of the README file for the workflow version. This file provides documentation and usage information for the workflow version. Requirements include:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The S3 URI must begin with <code>s3://USER-OWNED-BUCKET/</code></p></li>
+    /// <li>
+    /// <p>The requester must have access to the S3 bucket and object.</p></li>
+    /// <li>
+    /// <p>The max README content length is 500 KiB.</p></li>
+    /// </ul>
+    pub readme_uri: ::std::option::Option<::std::string::String>,
 }
 impl CreateWorkflowVersionInput {
     /// <p>The ID of the workflow where you are creating the new version.</p>
@@ -91,6 +109,34 @@ impl CreateWorkflowVersionInput {
     pub fn workflow_bucket_owner_id(&self) -> ::std::option::Option<&str> {
         self.workflow_bucket_owner_id.as_deref()
     }
+    /// <p>The markdown content for the workflow version's README file. This provides documentation and usage information for users of this specific workflow version.</p>
+    pub fn readme_markdown(&self) -> ::std::option::Option<&str> {
+        self.readme_markdown.as_deref()
+    }
+    /// <p>The path to the workflow version parameter template JSON file within the repository. This file defines the input parameters for runs that use this workflow version. If not specified, the workflow version will be created without a parameter template.</p>
+    pub fn parameter_template_path(&self) -> ::std::option::Option<&str> {
+        self.parameter_template_path.as_deref()
+    }
+    /// <p>The path to the workflow version README markdown file within the repository. This file provides documentation and usage information for the workflow. If not specified, the <code>README.md</code> file from the root directory of the repository will be used.</p>
+    pub fn readme_path(&self) -> ::std::option::Option<&str> {
+        self.readme_path.as_deref()
+    }
+    /// <p>The repository information for the workflow version definition. This allows you to source your workflow version definition directly from a code repository.</p>
+    pub fn definition_repository(&self) -> ::std::option::Option<&crate::types::DefinitionRepository> {
+        self.definition_repository.as_ref()
+    }
+    /// <p>The S3 URI of the README file for the workflow version. This file provides documentation and usage information for the workflow version. Requirements include:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The S3 URI must begin with <code>s3://USER-OWNED-BUCKET/</code></p></li>
+    /// <li>
+    /// <p>The requester must have access to the S3 bucket and object.</p></li>
+    /// <li>
+    /// <p>The max README content length is 500 KiB.</p></li>
+    /// </ul>
+    pub fn readme_uri(&self) -> ::std::option::Option<&str> {
+        self.readme_uri.as_deref()
+    }
 }
 impl CreateWorkflowVersionInput {
     /// Creates a new builder-style object to manufacture [`CreateWorkflowVersionInput`](crate::operation::create_workflow_version::CreateWorkflowVersionInput).
@@ -117,6 +163,11 @@ pub struct CreateWorkflowVersionInputBuilder {
     pub(crate) storage_capacity: ::std::option::Option<i32>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) workflow_bucket_owner_id: ::std::option::Option<::std::string::String>,
+    pub(crate) readme_markdown: ::std::option::Option<::std::string::String>,
+    pub(crate) parameter_template_path: ::std::option::Option<::std::string::String>,
+    pub(crate) readme_path: ::std::option::Option<::std::string::String>,
+    pub(crate) definition_repository: ::std::option::Option<crate::types::DefinitionRepository>,
+    pub(crate) readme_uri: ::std::option::Option<::std::string::String>,
 }
 impl CreateWorkflowVersionInputBuilder {
     /// <p>The ID of the workflow where you are creating the new version.</p>
@@ -338,6 +389,100 @@ impl CreateWorkflowVersionInputBuilder {
     pub fn get_workflow_bucket_owner_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.workflow_bucket_owner_id
     }
+    /// <p>The markdown content for the workflow version's README file. This provides documentation and usage information for users of this specific workflow version.</p>
+    pub fn readme_markdown(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.readme_markdown = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The markdown content for the workflow version's README file. This provides documentation and usage information for users of this specific workflow version.</p>
+    pub fn set_readme_markdown(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.readme_markdown = input;
+        self
+    }
+    /// <p>The markdown content for the workflow version's README file. This provides documentation and usage information for users of this specific workflow version.</p>
+    pub fn get_readme_markdown(&self) -> &::std::option::Option<::std::string::String> {
+        &self.readme_markdown
+    }
+    /// <p>The path to the workflow version parameter template JSON file within the repository. This file defines the input parameters for runs that use this workflow version. If not specified, the workflow version will be created without a parameter template.</p>
+    pub fn parameter_template_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.parameter_template_path = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The path to the workflow version parameter template JSON file within the repository. This file defines the input parameters for runs that use this workflow version. If not specified, the workflow version will be created without a parameter template.</p>
+    pub fn set_parameter_template_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.parameter_template_path = input;
+        self
+    }
+    /// <p>The path to the workflow version parameter template JSON file within the repository. This file defines the input parameters for runs that use this workflow version. If not specified, the workflow version will be created without a parameter template.</p>
+    pub fn get_parameter_template_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parameter_template_path
+    }
+    /// <p>The path to the workflow version README markdown file within the repository. This file provides documentation and usage information for the workflow. If not specified, the <code>README.md</code> file from the root directory of the repository will be used.</p>
+    pub fn readme_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.readme_path = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The path to the workflow version README markdown file within the repository. This file provides documentation and usage information for the workflow. If not specified, the <code>README.md</code> file from the root directory of the repository will be used.</p>
+    pub fn set_readme_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.readme_path = input;
+        self
+    }
+    /// <p>The path to the workflow version README markdown file within the repository. This file provides documentation and usage information for the workflow. If not specified, the <code>README.md</code> file from the root directory of the repository will be used.</p>
+    pub fn get_readme_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.readme_path
+    }
+    /// <p>The repository information for the workflow version definition. This allows you to source your workflow version definition directly from a code repository.</p>
+    pub fn definition_repository(mut self, input: crate::types::DefinitionRepository) -> Self {
+        self.definition_repository = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The repository information for the workflow version definition. This allows you to source your workflow version definition directly from a code repository.</p>
+    pub fn set_definition_repository(mut self, input: ::std::option::Option<crate::types::DefinitionRepository>) -> Self {
+        self.definition_repository = input;
+        self
+    }
+    /// <p>The repository information for the workflow version definition. This allows you to source your workflow version definition directly from a code repository.</p>
+    pub fn get_definition_repository(&self) -> &::std::option::Option<crate::types::DefinitionRepository> {
+        &self.definition_repository
+    }
+    /// <p>The S3 URI of the README file for the workflow version. This file provides documentation and usage information for the workflow version. Requirements include:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The S3 URI must begin with <code>s3://USER-OWNED-BUCKET/</code></p></li>
+    /// <li>
+    /// <p>The requester must have access to the S3 bucket and object.</p></li>
+    /// <li>
+    /// <p>The max README content length is 500 KiB.</p></li>
+    /// </ul>
+    pub fn readme_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.readme_uri = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The S3 URI of the README file for the workflow version. This file provides documentation and usage information for the workflow version. Requirements include:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The S3 URI must begin with <code>s3://USER-OWNED-BUCKET/</code></p></li>
+    /// <li>
+    /// <p>The requester must have access to the S3 bucket and object.</p></li>
+    /// <li>
+    /// <p>The max README content length is 500 KiB.</p></li>
+    /// </ul>
+    pub fn set_readme_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.readme_uri = input;
+        self
+    }
+    /// <p>The S3 URI of the README file for the workflow version. This file provides documentation and usage information for the workflow version. Requirements include:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The S3 URI must begin with <code>s3://USER-OWNED-BUCKET/</code></p></li>
+    /// <li>
+    /// <p>The requester must have access to the S3 bucket and object.</p></li>
+    /// <li>
+    /// <p>The max README content length is 500 KiB.</p></li>
+    /// </ul>
+    pub fn get_readme_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.readme_uri
+    }
     /// Consumes the builder and constructs a [`CreateWorkflowVersionInput`](crate::operation::create_workflow_version::CreateWorkflowVersionInput).
     pub fn build(
         self,
@@ -358,6 +503,11 @@ impl CreateWorkflowVersionInputBuilder {
             storage_capacity: self.storage_capacity,
             tags: self.tags,
             workflow_bucket_owner_id: self.workflow_bucket_owner_id,
+            readme_markdown: self.readme_markdown,
+            parameter_template_path: self.parameter_template_path,
+            readme_path: self.readme_path,
+            definition_repository: self.definition_repository,
+            readme_uri: self.readme_uri,
         })
     }
 }

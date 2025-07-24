@@ -114,16 +114,19 @@ impl GetAssetFluentBuilder {
         self.inner.get_domain_identifier()
     }
     /// <p>The ID of the Amazon DataZone asset.</p>
+    /// <p>This parameter supports either the value of <code>assetId</code> or <code>externalIdentifier</code> as input. If you are passing the value of <code>externalIdentifier</code>, you must prefix this value with <code>externalIdentifer%2F</code>.</p>
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identifier(input.into());
         self
     }
     /// <p>The ID of the Amazon DataZone asset.</p>
+    /// <p>This parameter supports either the value of <code>assetId</code> or <code>externalIdentifier</code> as input. If you are passing the value of <code>externalIdentifier</code>, you must prefix this value with <code>externalIdentifer%2F</code>.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_identifier(input);
         self
     }
     /// <p>The ID of the Amazon DataZone asset.</p>
+    /// <p>This parameter supports either the value of <code>assetId</code> or <code>externalIdentifier</code> as input. If you are passing the value of <code>externalIdentifier</code>, you must prefix this value with <code>externalIdentifer%2F</code>.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_identifier()
     }

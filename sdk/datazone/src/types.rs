@@ -421,6 +421,10 @@ pub use crate::types::_search_in_item::SearchInItem;
 
 pub use crate::types::_types_search_scope::TypesSearchScope;
 
+pub use crate::types::_aggregation_output::AggregationOutput;
+
+pub use crate::types::_aggregation_output_item::AggregationOutputItem;
+
 pub use crate::types::_search_result_item::SearchResultItem;
 
 pub use crate::types::_data_product_listing_item::DataProductListingItem;
@@ -429,11 +433,19 @@ pub use crate::types::_listing_summary_item::ListingSummaryItem;
 
 pub use crate::types::_data_product_listing_item_additional_attributes::DataProductListingItemAdditionalAttributes;
 
+pub use crate::types::_match_rationale_item::MatchRationaleItem;
+
+pub use crate::types::_text_match_item::TextMatchItem;
+
+pub use crate::types::_match_offset::MatchOffset;
+
 pub use crate::types::_asset_listing_item::AssetListingItem;
 
 pub use crate::types::_asset_listing_item_additional_attributes::AssetListingItemAdditionalAttributes;
 
 pub use crate::types::_search_output_additional_attribute::SearchOutputAdditionalAttribute;
+
+pub use crate::types::_aggregation_list_item::AggregationListItem;
 
 pub use crate::types::_group_profile_summary::GroupProfileSummary;
 
@@ -443,13 +455,19 @@ pub use crate::types::_search_inventory_result_item::SearchInventoryResultItem;
 
 pub use crate::types::_data_product_result_item::DataProductResultItem;
 
+pub use crate::types::_data_product_item_additional_attributes::DataProductItemAdditionalAttributes;
+
 pub use crate::types::_asset_item::AssetItem;
 
 pub use crate::types::_asset_item_additional_attributes::AssetItemAdditionalAttributes;
 
 pub use crate::types::_glossary_term_item::GlossaryTermItem;
 
+pub use crate::types::_glossary_term_item_additional_attributes::GlossaryTermItemAdditionalAttributes;
+
 pub use crate::types::_glossary_item::GlossaryItem;
+
+pub use crate::types::_glossary_item_additional_attributes::GlossaryItemAdditionalAttributes;
 
 pub use crate::types::_inventory_search_scope::InventorySearchScope;
 
@@ -703,6 +721,12 @@ mod _action_parameters;
 
 mod _add_to_project_member_pool_policy_grant_detail;
 
+mod _aggregation_list_item;
+
+mod _aggregation_output;
+
+mod _aggregation_output_item;
+
 mod _all_domain_units_grant_filter;
 
 mod _all_users_grant_filter;
@@ -810,6 +834,8 @@ mod _custom_parameter;
 mod _data_asset_activity_status;
 
 mod _data_product_item;
+
+mod _data_product_item_additional_attributes;
 
 mod _data_product_item_type;
 
@@ -947,9 +973,13 @@ mod _form_type_status;
 
 mod _glossary_item;
 
+mod _glossary_item_additional_attributes;
+
 mod _glossary_status;
 
 mod _glossary_term_item;
+
+mod _glossary_term_item_additional_attributes;
 
 mod _glossary_term_status;
 
@@ -1072,6 +1102,10 @@ mod _listing_summary;
 mod _listing_summary_item;
 
 mod _managed_policy_type;
+
+mod _match_offset;
+
+mod _match_rationale_item;
 
 mod _member;
 
@@ -1342,6 +1376,8 @@ mod _target_entity_type;
 mod _task_status;
 
 mod _term_relations;
+
+mod _text_match_item;
 
 mod _time_series_data_point_form_input;
 

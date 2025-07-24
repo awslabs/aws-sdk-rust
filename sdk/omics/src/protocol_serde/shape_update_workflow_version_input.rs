@@ -6,14 +6,17 @@ pub fn ser_update_workflow_version_input_input(
     if let Some(var_1) = &input.description {
         object.key("description").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.storage_capacity {
+    if let Some(var_2) = &input.readme_markdown {
+        object.key("readmeMarkdown").string(var_2.as_str());
+    }
+    if let Some(var_3) = &input.storage_capacity {
         object.key("storageCapacity").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_2).into()),
+            ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if let Some(var_3) = &input.storage_type {
-        object.key("storageType").string(var_3.as_str());
+    if let Some(var_4) = &input.storage_type {
+        object.key("storageType").string(var_4.as_str());
     }
     Ok(())
 }

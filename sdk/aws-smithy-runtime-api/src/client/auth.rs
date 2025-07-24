@@ -420,3 +420,37 @@ impl<'a> From<&'a Document> for AuthSchemeEndpointConfig<'a> {
         Self(Some(value))
     }
 }
+
+/// An ordered list of [AuthSchemeId]s
+///
+/// Can be used to reorder already-resolved auth schemes by an auth scheme resolver.
+/// This list is intended as a hint rather than a strict override;
+/// any schemes not present in the resolved auth schemes will be ignored.
+#[derive(Clone, Debug, Default, Eq, PartialEq)]
+pub struct AuthSchemePreference {
+    preference_list: Vec<AuthSchemeId>,
+}
+
+impl Storable for AuthSchemePreference {
+    type Storer = StoreReplace<Self>;
+}
+
+impl IntoIterator for AuthSchemePreference {
+    type Item = AuthSchemeId;
+    type IntoIter = std::vec::IntoIter<Self::Item>;
+
+    fn into_iter(self) -> Self::IntoIter {
+        self.preference_list.into_iter()
+    }
+}
+
+impl<T> From<T> for AuthSchemePreference
+where
+    T: AsRef<[AuthSchemeId]>,
+{
+    fn from(slice: T) -> Self {
+        AuthSchemePreference {
+            preference_list: slice.as_ref().to_vec(),
+        }
+    }
+}

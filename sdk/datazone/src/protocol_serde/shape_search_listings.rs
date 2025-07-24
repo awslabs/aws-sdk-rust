@@ -131,6 +131,9 @@ pub(crate) fn de_search_listings(
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "aggregates" => {
+                    builder = builder.set_aggregates(crate::protocol_serde::shape_aggregation_output_list::de_aggregation_output_list(tokens)?);
+                }
                 "items" => {
                     builder = builder.set_items(crate::protocol_serde::shape_search_result_items::de_search_result_items(tokens)?);
                 }

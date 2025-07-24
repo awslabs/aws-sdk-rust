@@ -22,7 +22,7 @@ impl crate::operation::list_run_caches::builders::ListRunCachesInputBuilder {
 }
 /// Fluent builder constructing a request to `ListRunCaches`.
 ///
-/// <p>Retrieves a list of your run caches.</p>
+/// <p>Retrieves a list of your run caches and the metadata for each cache.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListRunCachesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

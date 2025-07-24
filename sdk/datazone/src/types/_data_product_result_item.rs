@@ -24,6 +24,8 @@ pub struct DataProductResultItem {
     pub first_revision_created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The user who created the first revision of the data product.</p>
     pub first_revision_created_by: ::std::option::Option<::std::string::String>,
+    /// <p>The additional attributes of an Amazon DataZone data product.</p>
+    pub additional_attributes: ::std::option::Option<crate::types::DataProductItemAdditionalAttributes>,
 }
 impl DataProductResultItem {
     /// <p>The ID of the domain where the data product lives.</p>
@@ -72,6 +74,10 @@ impl DataProductResultItem {
     pub fn first_revision_created_by(&self) -> ::std::option::Option<&str> {
         self.first_revision_created_by.as_deref()
     }
+    /// <p>The additional attributes of an Amazon DataZone data product.</p>
+    pub fn additional_attributes(&self) -> ::std::option::Option<&crate::types::DataProductItemAdditionalAttributes> {
+        self.additional_attributes.as_ref()
+    }
 }
 impl ::std::fmt::Debug for DataProductResultItem {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -86,6 +92,7 @@ impl ::std::fmt::Debug for DataProductResultItem {
         formatter.field("created_by", &self.created_by);
         formatter.field("first_revision_created_at", &self.first_revision_created_at);
         formatter.field("first_revision_created_by", &self.first_revision_created_by);
+        formatter.field("additional_attributes", &self.additional_attributes);
         formatter.finish()
     }
 }
@@ -110,6 +117,7 @@ pub struct DataProductResultItemBuilder {
     pub(crate) created_by: ::std::option::Option<::std::string::String>,
     pub(crate) first_revision_created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) first_revision_created_by: ::std::option::Option<::std::string::String>,
+    pub(crate) additional_attributes: ::std::option::Option<crate::types::DataProductItemAdditionalAttributes>,
 }
 impl DataProductResultItemBuilder {
     /// <p>The ID of the domain where the data product lives.</p>
@@ -262,6 +270,20 @@ impl DataProductResultItemBuilder {
     pub fn get_first_revision_created_by(&self) -> &::std::option::Option<::std::string::String> {
         &self.first_revision_created_by
     }
+    /// <p>The additional attributes of an Amazon DataZone data product.</p>
+    pub fn additional_attributes(mut self, input: crate::types::DataProductItemAdditionalAttributes) -> Self {
+        self.additional_attributes = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The additional attributes of an Amazon DataZone data product.</p>
+    pub fn set_additional_attributes(mut self, input: ::std::option::Option<crate::types::DataProductItemAdditionalAttributes>) -> Self {
+        self.additional_attributes = input;
+        self
+    }
+    /// <p>The additional attributes of an Amazon DataZone data product.</p>
+    pub fn get_additional_attributes(&self) -> &::std::option::Option<crate::types::DataProductItemAdditionalAttributes> {
+        &self.additional_attributes
+    }
     /// Consumes the builder and constructs a [`DataProductResultItem`](crate::types::DataProductResultItem).
     /// This method will fail if any of the following fields are not set:
     /// - [`domain_id`](crate::types::builders::DataProductResultItemBuilder::domain_id)
@@ -300,6 +322,7 @@ impl DataProductResultItemBuilder {
             created_by: self.created_by,
             first_revision_created_at: self.first_revision_created_at,
             first_revision_created_by: self.first_revision_created_by,
+            additional_attributes: self.additional_attributes,
         })
     }
 }
@@ -316,6 +339,7 @@ impl ::std::fmt::Debug for DataProductResultItemBuilder {
         formatter.field("created_by", &self.created_by);
         formatter.field("first_revision_created_at", &self.first_revision_created_at);
         formatter.field("first_revision_created_by", &self.first_revision_created_by);
+        formatter.field("additional_attributes", &self.additional_attributes);
         formatter.finish()
     }
 }

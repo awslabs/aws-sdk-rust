@@ -69,3 +69,6 @@ pub mod checksums;
 
 /// Default provider chain for account-based endpoint mode
 pub mod account_id_endpoint_mode;
+
+/// Default provider chain for auth scheme preference list
+pub mod auth_scheme_preference;

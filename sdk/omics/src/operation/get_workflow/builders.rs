@@ -22,8 +22,9 @@ impl crate::operation::get_workflow::builders::GetWorkflowInputBuilder {
 }
 /// Fluent builder constructing a request to `GetWorkflow`.
 ///
-/// <p>Gets information about a workflow.</p>
+/// <p>Gets all information about a workflow using its ID.</p>
 /// <p>If a workflow is shared with you, you cannot export the workflow.</p>
+/// <p>For more information about your workflow status, see <a href="https://docs.aws.amazon.com/omics/latest/dev/using-get-workflow.html">Verify the workflow status</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetWorkflowFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

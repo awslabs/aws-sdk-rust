@@ -223,6 +223,7 @@ mod loader {
     use aws_smithy_async::rt::sleep::{default_async_sleep, AsyncSleep, SharedAsyncSleep};
     use aws_smithy_async::time::{SharedTimeSource, TimeSource};
     use aws_smithy_runtime::client::identity::IdentityCache;
+    use aws_smithy_runtime_api::client::auth::AuthSchemePreference;
     use aws_smithy_runtime_api::client::behavior_version::BehaviorVersion;
     use aws_smithy_runtime_api::client::http::HttpClient;
     use aws_smithy_runtime_api::client::identity::{ResolveCachedIdentity, SharedIdentityCache};
@@ -242,9 +243,10 @@ mod loader {
     use aws_types::SdkConfig;
 
     use crate::default_provider::{
-        account_id_endpoint_mode, app_name, checksums, credentials, disable_request_compression,
-        endpoint_url, ignore_configured_endpoint_urls as ignore_ep, region,
-        request_min_compression_size_bytes, retry_config, timeout_config, use_dual_stack, use_fips,
+        account_id_endpoint_mode, app_name, auth_scheme_preference, checksums, credentials,
+        disable_request_compression, endpoint_url, ignore_configured_endpoint_urls as ignore_ep,
+        region, request_min_compression_size_bytes, retry_config, timeout_config, use_dual_stack,
+        use_fips,
     };
     use crate::meta::region::ProvideRegion;
     #[allow(deprecated)]
@@ -271,6 +273,7 @@ mod loader {
     #[derive(Default, Debug)]
     pub struct ConfigLoader {
         app_name: Option<AppName>,
+        auth_scheme_preference: Option<AuthSchemePreference>,
         identity_cache: Option<SharedIdentityCache>,
         credentials_provider: TriStateOption<SharedCredentialsProvider>,
         token_provider: Option<SharedTokenProvider>,
@@ -400,6 +403,28 @@ mod loader {
         /// then override the HTTP client set with this function on the client-specific `Config`s.
         pub fn http_client(mut self, http_client: impl HttpClient + 'static) -> Self {
             self.http_client = Some(http_client.into_shared());
+            self
+        }
+
+        #[doc = docs_for!(auth_scheme_preference)]
+        ///
+        /// # Examples
+        /// ```no_run
+        /// # use aws_smithy_runtime_api::client::auth::AuthSchemeId;
+        /// # async fn create_config() {
+        /// let config = aws_config::from_env()
+        ///     // Favors a custom auth scheme over the SigV4 auth scheme.
+        ///     // Note: This will not result in an error, even if the custom scheme is missing from the resolved auth schemes.
+        ///     .auth_scheme_preference([AuthSchemeId::from("custom"), aws_runtime::auth::sigv4::SCHEME_ID])
+        ///     .load()
+        ///     .await;
+        /// # }
+        /// ```
+        pub fn auth_scheme_preference(
+            mut self,
+            auth_scheme_preference: impl Into<AuthSchemePreference>,
+        ) -> Self {
+            self.auth_scheme_preference = Some(auth_scheme_preference.into());
             self
         }
 
@@ -962,6 +987,13 @@ mod loader {
                     account_id_endpoint_mode::account_id_endpoint_mode_provider(&conf).await
                 };
 
+            let auth_scheme_preference =
+                if let Some(auth_scheme_preference) = self.auth_scheme_preference {
+                    Some(auth_scheme_preference)
+                } else {
+                    auth_scheme_preference::auth_scheme_preference_provider(&conf).await
+                };
+
             builder.set_request_checksum_calculation(request_checksum_calculation);
             builder.set_response_checksum_validation(response_checksum_validation);
             builder.set_identity_cache(identity_cache);
@@ -974,6 +1006,7 @@ mod loader {
             builder.set_request_min_compression_size_bytes(request_min_compression_size_bytes);
             builder.set_stalled_stream_protection(self.stalled_stream_protection_config);
             builder.set_account_id_endpoint_mode(account_id_endpoint_mode);
+            builder.set_auth_scheme_preference(auth_scheme_preference);
             builder.build()
         }
     }

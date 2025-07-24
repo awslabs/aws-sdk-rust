@@ -42,7 +42,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-keyspacesstreams = "1.3.1"
+//! aws-sdk-keyspacesstreams = "1.4.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

@@ -263,19 +263,31 @@ pub use crate::types::_filter::FilterBuilder;
 
 pub use crate::types::_search_in_item::SearchInItemBuilder;
 
+pub use crate::types::_aggregation_output::AggregationOutputBuilder;
+
+pub use crate::types::_aggregation_output_item::AggregationOutputItemBuilder;
+
 pub use crate::types::_data_product_listing_item::DataProductListingItemBuilder;
 
 pub use crate::types::_listing_summary_item::ListingSummaryItemBuilder;
 
 pub use crate::types::_data_product_listing_item_additional_attributes::DataProductListingItemAdditionalAttributesBuilder;
 
+pub use crate::types::_text_match_item::TextMatchItemBuilder;
+
+pub use crate::types::_match_offset::MatchOffsetBuilder;
+
 pub use crate::types::_asset_listing_item::AssetListingItemBuilder;
 
 pub use crate::types::_asset_listing_item_additional_attributes::AssetListingItemAdditionalAttributesBuilder;
 
+pub use crate::types::_aggregation_list_item::AggregationListItemBuilder;
+
 pub use crate::types::_group_profile_summary::GroupProfileSummaryBuilder;
 
 pub use crate::types::_data_product_result_item::DataProductResultItemBuilder;
+
+pub use crate::types::_data_product_item_additional_attributes::DataProductItemAdditionalAttributesBuilder;
 
 pub use crate::types::_asset_item::AssetItemBuilder;
 
@@ -283,7 +295,11 @@ pub use crate::types::_asset_item_additional_attributes::AssetItemAdditionalAttr
 
 pub use crate::types::_glossary_term_item::GlossaryTermItemBuilder;
 
+pub use crate::types::_glossary_term_item_additional_attributes::GlossaryTermItemAdditionalAttributesBuilder;
+
 pub use crate::types::_glossary_item::GlossaryItemBuilder;
+
+pub use crate::types::_glossary_item_additional_attributes::GlossaryItemAdditionalAttributesBuilder;
 
 pub use crate::types::_domain_unit_policy_grant_principal::DomainUnitPolicyGrantPrincipalBuilder;
 

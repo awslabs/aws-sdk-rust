@@ -22,7 +22,7 @@ impl crate::operation::create_run_group::builders::CreateRunGroupInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateRunGroup`.
 ///
-/// <p>You can optionally create a run group to limit the compute resources for the runs that you add to the group.</p>
+/// <p>Creates a run group to limit the compute resources for the runs that are added to the group. Returns an ARN, ID, and tags for the run group.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateRunGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -13,6 +13,7 @@
 /// # let workflowexport = unimplemented!();
 /// match workflowexport {
 ///     WorkflowExport::Definition => { /* ... */ },
+///     WorkflowExport::Readme => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -43,6 +44,8 @@
 pub enum WorkflowExport {
     #[allow(missing_docs)] // documentation missing in model
     Definition,
+    #[allow(missing_docs)] // documentation missing in model
+    Readme,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -51,6 +54,7 @@ impl ::std::convert::From<&str> for WorkflowExport {
     fn from(s: &str) -> Self {
         match s {
             "DEFINITION" => WorkflowExport::Definition,
+            "README" => WorkflowExport::Readme,
             other => WorkflowExport::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -67,12 +71,13 @@ impl WorkflowExport {
     pub fn as_str(&self) -> &str {
         match self {
             WorkflowExport::Definition => "DEFINITION",
+            WorkflowExport::Readme => "README",
             WorkflowExport::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DEFINITION"]
+        &["DEFINITION", "README"]
     }
 }
 impl ::std::convert::AsRef<str> for WorkflowExport {
@@ -96,6 +101,7 @@ impl ::std::fmt::Display for WorkflowExport {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             WorkflowExport::Definition => write!(f, "DEFINITION"),
+            WorkflowExport::Readme => write!(f, "README"),
             WorkflowExport::Unknown(value) => write!(f, "{}", value),
         }
     }

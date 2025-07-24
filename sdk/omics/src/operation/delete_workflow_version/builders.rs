@@ -23,7 +23,7 @@ impl crate::operation::delete_workflow_version::builders::DeleteWorkflowVersionI
 /// Fluent builder constructing a request to `DeleteWorkflowVersion`.
 ///
 /// <p>Deletes a workflow version. Deleting a workflow version doesn't affect any ongoing runs that are using the workflow version.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/workflow-versions.html">Workflow versioning in Amazon Web Services HealthOmics</a> in the Amazon Web Services HealthOmics User Guide.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/workflow-versions.html">Workflow versioning in Amazon Web Services HealthOmics</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteWorkflowVersionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

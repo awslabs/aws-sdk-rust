@@ -22,7 +22,21 @@ impl crate::operation::update_run_group::builders::UpdateRunGroupInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateRunGroup`.
 ///
-/// <p>Updates a run group.</p>
+/// <p>Updates the settings of a run group and returns a response with no body if the operation is successful.</p>
+/// <p>You can update the following settings with <code>UpdateRunGroup</code>:</p>
+/// <ul>
+/// <li>
+/// <p>Maximum number of CPUs</p></li>
+/// <li>
+/// <p>Run time (measured in minutes)</p></li>
+/// <li>
+/// <p>Number of GPUs</p></li>
+/// <li>
+/// <p>Number of concurrent runs</p></li>
+/// <li>
+/// <p>Group name</p></li>
+/// </ul>
+/// <p>To confirm that the settings have been successfully updated, use the <code>ListRunGroups</code> or <code>GetRunGroup</code> API operations to verify that the desired changes have been made.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateRunGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

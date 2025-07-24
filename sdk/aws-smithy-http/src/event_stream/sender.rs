@@ -4,6 +4,7 @@
  */
 
 use aws_smithy_eventstream::frame::{write_message_to, MarshallMessage, SignMessage};
+use aws_smithy_eventstream::message_size_hint::MessageSizeHint;
 use aws_smithy_runtime_api::client::result::SdkError;
 use aws_smithy_types::error::ErrorMetadata;
 use bytes::Bytes;
@@ -165,17 +166,17 @@ impl<T, E: StdError + Send + Sync + 'static> Stream for MessageStreamAdapter<T, 
                         .sign(message)
                         .map_err(SdkError::construction_failure)?;
 
-                    let mut buffer = Vec::new();
+                    let mut buffer = Vec::with_capacity(message.size_hint());
                     write_message_to(&message, &mut buffer)
                         .map_err(SdkError::construction_failure)?;
                     trace!(signed_message = ?buffer, "sending signed event stream message");
                     Poll::Ready(Some(Ok(Bytes::from(buffer))))
                 } else if !self.end_signal_sent {
                     self.end_signal_sent = true;
-                    let mut buffer = Vec::new();
                     match self.signer.sign_empty() {
                         Some(sign) => {
                             let message = sign.map_err(SdkError::construction_failure)?;
+                            let mut buffer = Vec::with_capacity(message.size_hint());
                             write_message_to(&message, &mut buffer)
                                 .map_err(SdkError::construction_failure)?;
                             trace!(signed_message = ?buffer, "sending signed empty message to terminate the event stream");

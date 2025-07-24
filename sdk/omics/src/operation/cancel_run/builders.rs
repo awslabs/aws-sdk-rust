@@ -22,7 +22,7 @@ impl crate::operation::cancel_run::builders::CancelRunInputBuilder {
 }
 /// Fluent builder constructing a request to `CancelRun`.
 ///
-/// <p>Cancels a run.</p>
+/// <p>Cancels a run using its ID and returns a response with no body if the operation is successful. To confirm that the run has been cancelled, use the <code>ListRuns</code> API operation to check that it is no longer listed.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CancelRunFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

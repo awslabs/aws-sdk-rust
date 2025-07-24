@@ -22,9 +22,8 @@ impl crate::operation::get_run::builders::GetRunInputBuilder {
 }
 /// Fluent builder constructing a request to `GetRun`.
 ///
-/// <p>Gets information about a workflow run.</p>
-/// <p>If a workflow is shared with you, you cannot export information about the run.</p>
-/// <p>Amazon Web Services HealthOmics stores a fixed number of runs that are available to the console and API. If GetRun doesn't return the requested run, you can find run logs for all runs in the CloudWatch logs. For more information about viewing the run logs, see <a href="https://docs.aws.amazon.com/omics/latest/dev/cloudwatch-logs.html">CloudWatch logs</a> in the <i>in the Amazon Web Services HealthOmics User Guide</i>.</p>
+/// <p>Gets detailed information about a specific run using its ID.</p>
+/// <p>Amazon Web Services HealthOmics stores a configurable number of runs, as determined by service limits, that are available to the console and API. If <code>GetRun</code> does not return the requested run, you can find all run logs in the CloudWatch logs. For more information about viewing the run logs, see <a href="https://docs.aws.amazon.com/omics/latest/dev/monitoring-cloudwatch-logs.html">CloudWatch logs</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetRunFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

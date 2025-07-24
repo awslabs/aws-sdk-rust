@@ -22,7 +22,7 @@ impl crate::operation::update_workflow_version::builders::UpdateWorkflowVersionI
 }
 /// Fluent builder constructing a request to `UpdateWorkflowVersion`.
 ///
-/// <p>Updates information about the workflow version. For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/workflow-versions.html">Workflow versioning in Amazon Web Services HealthOmics</a> in the Amazon Web Services HealthOmics User Guide.</p>
+/// <p>Updates information about the workflow version. For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/workflow-versions.html">Workflow versioning in Amazon Web Services HealthOmics</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateWorkflowVersionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -177,5 +177,19 @@ impl UpdateWorkflowVersionFluentBuilder {
     /// <p>The default static storage capacity (in gibibytes) for runs that use this workflow or workflow version.</p>
     pub fn get_storage_capacity(&self) -> &::std::option::Option<i32> {
         self.inner.get_storage_capacity()
+    }
+    /// <p>The markdown content for the workflow version's README file. This provides documentation and usage information for users of this specific workflow version.</p>
+    pub fn readme_markdown(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.readme_markdown(input.into());
+        self
+    }
+    /// <p>The markdown content for the workflow version's README file. This provides documentation and usage information for users of this specific workflow version.</p>
+    pub fn set_readme_markdown(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_readme_markdown(input);
+        self
+    }
+    /// <p>The markdown content for the workflow version's README file. This provides documentation and usage information for users of this specific workflow version.</p>
+    pub fn get_readme_markdown(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_readme_markdown()
     }
 }

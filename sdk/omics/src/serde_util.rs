@@ -1290,6 +1290,18 @@ pub(crate) fn sequence_store_detail_correct_errors(
     builder
 }
 
+pub(crate) fn source_reference_correct_errors(
+    mut builder: crate::types::builders::SourceReferenceBuilder,
+) -> crate::types::builders::SourceReferenceBuilder {
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::SourceReferenceType>().ok()
+    }
+    if builder.value.is_none() {
+        builder.value = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn variant_import_item_detail_correct_errors(
     mut builder: crate::types::builders::VariantImportItemDetailBuilder,
 ) -> crate::types::builders::VariantImportItemDetailBuilder {

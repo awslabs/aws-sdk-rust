@@ -43,6 +43,12 @@ pub struct GetWorkflowVersionOutput {
     pub uuid: ::std::option::Option<::std::string::String>,
     /// <p>Amazon Web Services Id of the owner of the bucket.</p>
     pub workflow_bucket_owner_id: ::std::option::Option<::std::string::String>,
+    /// <p>The README content for the workflow version, providing documentation and usage information specific to this version.</p>
+    pub readme: ::std::option::Option<::std::string::String>,
+    /// <p>Details about the source code repository that hosts the workflow version definition files.</p>
+    pub definition_repository_details: ::std::option::Option<crate::types::DefinitionRepositoryDetails>,
+    /// <p>The path to the workflow version README markdown file within the repository. This file provides documentation and usage information for the workflow. If not specified, the <code>README.md</code> file from the root directory of the repository will be used.</p>
+    pub readme_path: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetWorkflowVersionOutput {
@@ -126,6 +132,18 @@ impl GetWorkflowVersionOutput {
     pub fn workflow_bucket_owner_id(&self) -> ::std::option::Option<&str> {
         self.workflow_bucket_owner_id.as_deref()
     }
+    /// <p>The README content for the workflow version, providing documentation and usage information specific to this version.</p>
+    pub fn readme(&self) -> ::std::option::Option<&str> {
+        self.readme.as_deref()
+    }
+    /// <p>Details about the source code repository that hosts the workflow version definition files.</p>
+    pub fn definition_repository_details(&self) -> ::std::option::Option<&crate::types::DefinitionRepositoryDetails> {
+        self.definition_repository_details.as_ref()
+    }
+    /// <p>The path to the workflow version README markdown file within the repository. This file provides documentation and usage information for the workflow. If not specified, the <code>README.md</code> file from the root directory of the repository will be used.</p>
+    pub fn readme_path(&self) -> ::std::option::Option<&str> {
+        self.readme_path.as_deref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetWorkflowVersionOutput {
     fn request_id(&self) -> Option<&str> {
@@ -163,6 +181,9 @@ pub struct GetWorkflowVersionOutputBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) uuid: ::std::option::Option<::std::string::String>,
     pub(crate) workflow_bucket_owner_id: ::std::option::Option<::std::string::String>,
+    pub(crate) readme: ::std::option::Option<::std::string::String>,
+    pub(crate) definition_repository_details: ::std::option::Option<crate::types::DefinitionRepositoryDetails>,
+    pub(crate) readme_path: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetWorkflowVersionOutputBuilder {
@@ -469,6 +490,48 @@ impl GetWorkflowVersionOutputBuilder {
     pub fn get_workflow_bucket_owner_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.workflow_bucket_owner_id
     }
+    /// <p>The README content for the workflow version, providing documentation and usage information specific to this version.</p>
+    pub fn readme(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.readme = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The README content for the workflow version, providing documentation and usage information specific to this version.</p>
+    pub fn set_readme(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.readme = input;
+        self
+    }
+    /// <p>The README content for the workflow version, providing documentation and usage information specific to this version.</p>
+    pub fn get_readme(&self) -> &::std::option::Option<::std::string::String> {
+        &self.readme
+    }
+    /// <p>Details about the source code repository that hosts the workflow version definition files.</p>
+    pub fn definition_repository_details(mut self, input: crate::types::DefinitionRepositoryDetails) -> Self {
+        self.definition_repository_details = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Details about the source code repository that hosts the workflow version definition files.</p>
+    pub fn set_definition_repository_details(mut self, input: ::std::option::Option<crate::types::DefinitionRepositoryDetails>) -> Self {
+        self.definition_repository_details = input;
+        self
+    }
+    /// <p>Details about the source code repository that hosts the workflow version definition files.</p>
+    pub fn get_definition_repository_details(&self) -> &::std::option::Option<crate::types::DefinitionRepositoryDetails> {
+        &self.definition_repository_details
+    }
+    /// <p>The path to the workflow version README markdown file within the repository. This file provides documentation and usage information for the workflow. If not specified, the <code>README.md</code> file from the root directory of the repository will be used.</p>
+    pub fn readme_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.readme_path = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The path to the workflow version README markdown file within the repository. This file provides documentation and usage information for the workflow. If not specified, the <code>README.md</code> file from the root directory of the repository will be used.</p>
+    pub fn set_readme_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.readme_path = input;
+        self
+    }
+    /// <p>The path to the workflow version README markdown file within the repository. This file provides documentation and usage information for the workflow. If not specified, the <code>README.md</code> file from the root directory of the repository will be used.</p>
+    pub fn get_readme_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.readme_path
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -501,6 +564,9 @@ impl GetWorkflowVersionOutputBuilder {
             tags: self.tags,
             uuid: self.uuid,
             workflow_bucket_owner_id: self.workflow_bucket_owner_id,
+            readme: self.readme,
+            definition_repository_details: self.definition_repository_details,
+            readme_path: self.readme_path,
             _request_id: self._request_id,
         }
     }

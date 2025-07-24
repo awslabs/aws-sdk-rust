@@ -20,7 +20,7 @@ use aws_smithy_types::config_bag::ConfigBag;
 use std::borrow::Cow;
 
 /// Auth scheme ID for "no auth".
-pub const NO_AUTH_SCHEME_ID: AuthSchemeId = AuthSchemeId::new("no_auth");
+pub const NO_AUTH_SCHEME_ID: AuthSchemeId = AuthSchemeId::new("noAuth");
 
 /// A [`RuntimePlugin`] that registers a "no auth" identity resolver and auth scheme.
 ///

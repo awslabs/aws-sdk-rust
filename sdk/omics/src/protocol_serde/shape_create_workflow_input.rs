@@ -6,58 +6,79 @@ pub fn ser_create_workflow_input_input(
     if let Some(var_1) = &input.accelerators {
         object.key("accelerators").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.definition_uri {
-        object.key("definitionUri").string(var_2.as_str());
-    }
-    if let Some(var_3) = &input.definition_zip {
-        object.key("definitionZip").string_unchecked(&::aws_smithy_types::base64::encode(var_3));
-    }
-    if let Some(var_4) = &input.description {
-        object.key("description").string(var_4.as_str());
-    }
-    if let Some(var_5) = &input.engine {
-        object.key("engine").string(var_5.as_str());
-    }
-    if let Some(var_6) = &input.main {
-        object.key("main").string(var_6.as_str());
-    }
-    if let Some(var_7) = &input.name {
-        object.key("name").string(var_7.as_str());
-    }
-    if let Some(var_8) = &input.parameter_template {
+    if let Some(var_2) = &input.definition_repository {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("parameterTemplate").start_object();
-        for (key_10, value_11) in var_8 {
+        let mut object_3 = object.key("definitionRepository").start_object();
+        crate::protocol_serde::shape_definition_repository::ser_definition_repository(&mut object_3, var_2)?;
+        object_3.finish();
+    }
+    if let Some(var_4) = &input.definition_uri {
+        object.key("definitionUri").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.definition_zip {
+        object.key("definitionZip").string_unchecked(&::aws_smithy_types::base64::encode(var_5));
+    }
+    if let Some(var_6) = &input.description {
+        object.key("description").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.engine {
+        object.key("engine").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.main {
+        object.key("main").string(var_8.as_str());
+    }
+    if let Some(var_9) = &input.name {
+        object.key("name").string(var_9.as_str());
+    }
+    if let Some(var_10) = &input.parameter_template {
+        #[allow(unused_mut)]
+        let mut object_11 = object.key("parameterTemplate").start_object();
+        for (key_12, value_13) in var_10 {
             {
                 #[allow(unused_mut)]
-                let mut object_12 = object_9.key(key_10.as_str()).start_object();
-                crate::protocol_serde::shape_workflow_parameter::ser_workflow_parameter(&mut object_12, value_11)?;
-                object_12.finish();
+                let mut object_14 = object_11.key(key_12.as_str()).start_object();
+                crate::protocol_serde::shape_workflow_parameter::ser_workflow_parameter(&mut object_14, value_13)?;
+                object_14.finish();
             }
         }
-        object_9.finish();
+        object_11.finish();
     }
-    if let Some(var_13) = &input.request_id {
-        object.key("requestId").string(var_13.as_str());
+    if let Some(var_15) = &input.parameter_template_path {
+        object.key("parameterTemplatePath").string(var_15.as_str());
     }
-    if let Some(var_14) = &input.storage_capacity {
+    if let Some(var_16) = &input.readme_markdown {
+        object.key("readmeMarkdown").string(var_16.as_str());
+    }
+    if let Some(var_17) = &input.readme_path {
+        object.key("readmePath").string(var_17.as_str());
+    }
+    if let Some(var_18) = &input.readme_uri {
+        object.key("readmeUri").string(var_18.as_str());
+    }
+    if let Some(var_19) = &input.request_id {
+        object.key("requestId").string(var_19.as_str());
+    }
+    if let Some(var_20) = &input.storage_capacity {
         object.key("storageCapacity").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_14).into()),
+            ::aws_smithy_types::Number::NegInt((*var_20).into()),
         );
     }
-    if let Some(var_15) = &input.storage_type {
-        object.key("storageType").string(var_15.as_str());
+    if let Some(var_21) = &input.storage_type {
+        object.key("storageType").string(var_21.as_str());
     }
-    if let Some(var_16) = &input.tags {
+    if let Some(var_22) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_17 = object.key("tags").start_object();
-        for (key_18, value_19) in var_16 {
+        let mut object_23 = object.key("tags").start_object();
+        for (key_24, value_25) in var_22 {
             {
-                object_17.key(key_18.as_str()).string(value_19.as_str());
+                object_23.key(key_24.as_str()).string(value_25.as_str());
             }
         }
-        object_17.finish();
+        object_23.finish();
+    }
+    if let Some(var_26) = &input.workflow_bucket_owner_id {
+        object.key("workflowBucketOwnerId").string(var_26.as_str());
     }
     Ok(())
 }

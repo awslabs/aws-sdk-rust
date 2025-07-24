@@ -29,6 +29,9 @@ impl super::Client {
     ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_workflow_version::GetWorkflowVersionOutput::tags): <p>The workflow version tags</p>
     ///   - [`uuid(Option<String>)`](crate::operation::get_workflow_version::GetWorkflowVersionOutput::uuid): <p>The universally unique identifier (UUID) value for this workflow version</p>
     ///   - [`workflow_bucket_owner_id(Option<String>)`](crate::operation::get_workflow_version::GetWorkflowVersionOutput::workflow_bucket_owner_id): <p>Amazon Web Services Id of the owner of the bucket.</p>
+    ///   - [`readme(Option<String>)`](crate::operation::get_workflow_version::GetWorkflowVersionOutput::readme): <p>The README content for the workflow version, providing documentation and usage information specific to this version.</p>
+    ///   - [`definition_repository_details(Option<DefinitionRepositoryDetails>)`](crate::operation::get_workflow_version::GetWorkflowVersionOutput::definition_repository_details): <p>Details about the source code repository that hosts the workflow version definition files.</p>
+    ///   - [`readme_path(Option<String>)`](crate::operation::get_workflow_version::GetWorkflowVersionOutput::readme_path): <p>The path to the workflow version README markdown file within the repository. This file provides documentation and usage information for the workflow. If not specified, the <code>README.md</code> file from the root directory of the repository will be used.</p>
     /// - On failure, responds with [`SdkError<GetWorkflowVersionError>`](crate::operation::get_workflow_version::GetWorkflowVersionError)
     pub fn get_workflow_version(&self) -> crate::operation::get_workflow_version::builders::GetWorkflowVersionFluentBuilder {
         crate::operation::get_workflow_version::builders::GetWorkflowVersionFluentBuilder::new(self.handle.clone())

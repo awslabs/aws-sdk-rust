@@ -203,6 +203,25 @@ impl SearchListingsFluentBuilder {
     pub fn get_filters(&self) -> &::std::option::Option<crate::types::FilterClause> {
         self.inner.get_filters()
     }
+    ///
+    /// Appends an item to `aggregations`.
+    ///
+    /// To override the contents of this collection use [`set_aggregations`](Self::set_aggregations).
+    ///
+    /// <p>Enables you to specify one or more attributes to compute and return counts grouped by field values.</p>
+    pub fn aggregations(mut self, input: crate::types::AggregationListItem) -> Self {
+        self.inner = self.inner.aggregations(input);
+        self
+    }
+    /// <p>Enables you to specify one or more attributes to compute and return counts grouped by field values.</p>
+    pub fn set_aggregations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AggregationListItem>>) -> Self {
+        self.inner = self.inner.set_aggregations(input);
+        self
+    }
+    /// <p>Enables you to specify one or more attributes to compute and return counts grouped by field values.</p>
+    pub fn get_aggregations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AggregationListItem>> {
+        self.inner.get_aggregations()
+    }
     /// <p>Specifies the way for sorting the search results.</p>
     pub fn sort(mut self, input: crate::types::SearchSort) -> Self {
         self.inner = self.inner.sort(input);

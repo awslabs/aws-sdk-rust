@@ -22,7 +22,14 @@ impl crate::operation::delete_workflow::builders::DeleteWorkflowInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteWorkflow`.
 ///
-/// <p>Deletes a workflow.</p>
+/// <p>Deletes a workflow by specifying its ID. No response is returned if the deletion is successful.</p>
+/// <p>To verify that the workflow is deleted:</p>
+/// <ul>
+/// <li>
+/// <p>Use <code>ListWorkflows</code> to confirm the workflow no longer appears in the list.</p></li>
+/// <li>
+/// <p>Use <code>GetWorkflow</code> to verify the workflow cannot be found.</p></li>
+/// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteWorkflowFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
