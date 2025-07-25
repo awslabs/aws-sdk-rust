@@ -9,6 +9,7 @@ use aws_smithy_http_client::test_util::capture_request;
 use aws_smithy_http_client::test_util::dvr::ReplayingClient;
 use aws_smithy_runtime::client::auth::no_auth::NO_AUTH_SCHEME_ID;
 use aws_smithy_runtime::test_util::capture_test_logs::capture_test_logs;
+use aws_smithy_runtime_api::client::auth::AuthSchemeId;
 
 #[tokio::test]
 async fn list_objects() {
@@ -155,6 +156,33 @@ async fn no_auth_should_be_selected_when_no_credentials_is_configured() {
             .await
     );
 
+    assert!(logs_contain(&format!(
+        "resolving identity scheme_id=AuthSchemeId {{ scheme_id: \"{auth_scheme_id_str}\" }}",
+        auth_scheme_id_str = NO_AUTH_SCHEME_ID.inner(),
+    )));
+}
+
+#[tracing_test::traced_test]
+#[tokio::test]
+async fn auth_scheme_preference_specifying_legacy_no_auth_scheme_id_should_be_supported() {
+    let (http_client, _) = capture_request(None);
+    let conf = Config::builder()
+        .http_client(http_client)
+        .region(Region::new("us-east-2"))
+        .with_test_defaults()
+        .auth_scheme_preference([AuthSchemeId::from("no_auth")])
+        .build();
+    let client = Client::from_conf(conf);
+    let _ = client
+        .get_object()
+        .bucket("arn:aws:s3::123456789012:accesspoint/mfzwi23gnjvgw.mrap")
+        .key("doesnotmatter")
+        .send()
+        .await;
+
+    // What should appear in the log is the updated no auth scheme ID, not the legacy one.
+    // The legacy no auth scheme ID passed to the auth scheme preference merely reprioritizes
+    // ones supported in the runtime, which should contain the updated no auth scheme ID.
     assert!(logs_contain(&format!(
         "resolving identity scheme_id=AuthSchemeId {{ scheme_id: \"{auth_scheme_id_str}\" }}",
         auth_scheme_id_str = NO_AUTH_SCHEME_ID.inner(),

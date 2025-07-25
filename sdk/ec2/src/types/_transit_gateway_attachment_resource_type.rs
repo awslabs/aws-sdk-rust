@@ -14,6 +14,7 @@
 /// match transitgatewayattachmentresourcetype {
 ///     TransitGatewayAttachmentResourceType::Connect => { /* ... */ },
 ///     TransitGatewayAttachmentResourceType::DirectConnectGateway => { /* ... */ },
+///     TransitGatewayAttachmentResourceType::NetworkFunction => { /* ... */ },
 ///     TransitGatewayAttachmentResourceType::Peering => { /* ... */ },
 ///     TransitGatewayAttachmentResourceType::TgwPeering => { /* ... */ },
 ///     TransitGatewayAttachmentResourceType::Vpc => { /* ... */ },
@@ -51,6 +52,8 @@ pub enum TransitGatewayAttachmentResourceType {
     #[allow(missing_docs)] // documentation missing in model
     DirectConnectGateway,
     #[allow(missing_docs)] // documentation missing in model
+    NetworkFunction,
+    #[allow(missing_docs)] // documentation missing in model
     Peering,
     #[allow(missing_docs)] // documentation missing in model
     TgwPeering,
@@ -67,6 +70,7 @@ impl ::std::convert::From<&str> for TransitGatewayAttachmentResourceType {
         match s {
             "connect" => TransitGatewayAttachmentResourceType::Connect,
             "direct-connect-gateway" => TransitGatewayAttachmentResourceType::DirectConnectGateway,
+            "network-function" => TransitGatewayAttachmentResourceType::NetworkFunction,
             "peering" => TransitGatewayAttachmentResourceType::Peering,
             "tgw-peering" => TransitGatewayAttachmentResourceType::TgwPeering,
             "vpc" => TransitGatewayAttachmentResourceType::Vpc,
@@ -88,6 +92,7 @@ impl TransitGatewayAttachmentResourceType {
         match self {
             TransitGatewayAttachmentResourceType::Connect => "connect",
             TransitGatewayAttachmentResourceType::DirectConnectGateway => "direct-connect-gateway",
+            TransitGatewayAttachmentResourceType::NetworkFunction => "network-function",
             TransitGatewayAttachmentResourceType::Peering => "peering",
             TransitGatewayAttachmentResourceType::TgwPeering => "tgw-peering",
             TransitGatewayAttachmentResourceType::Vpc => "vpc",
@@ -97,7 +102,15 @@ impl TransitGatewayAttachmentResourceType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["connect", "direct-connect-gateway", "peering", "tgw-peering", "vpc", "vpn"]
+        &[
+            "connect",
+            "direct-connect-gateway",
+            "network-function",
+            "peering",
+            "tgw-peering",
+            "vpc",
+            "vpn",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for TransitGatewayAttachmentResourceType {
@@ -122,6 +135,7 @@ impl ::std::fmt::Display for TransitGatewayAttachmentResourceType {
         match self {
             TransitGatewayAttachmentResourceType::Connect => write!(f, "connect"),
             TransitGatewayAttachmentResourceType::DirectConnectGateway => write!(f, "direct-connect-gateway"),
+            TransitGatewayAttachmentResourceType::NetworkFunction => write!(f, "network-function"),
             TransitGatewayAttachmentResourceType::Peering => write!(f, "peering"),
             TransitGatewayAttachmentResourceType::TgwPeering => write!(f, "tgw-peering"),
             TransitGatewayAttachmentResourceType::Vpc => write!(f, "vpc"),

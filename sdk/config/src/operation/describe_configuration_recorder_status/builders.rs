@@ -118,21 +118,21 @@ impl DescribeConfigurationRecorderStatusFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_configuration_recorder_names`](Self::set_configuration_recorder_names).
     ///
-    /// <p>The name of the configuration recorder. If the name is not specified, the opertation returns the status for the customer managed configuration recorder configured for the account, if applicable.</p><note>
+    /// <p>The name of the configuration recorder. If the name is not specified, the operation returns the status for the customer managed configuration recorder configured for the account, if applicable.</p><note>
     /// <p>When making a request to this operation, you can only specify one configuration recorder.</p>
     /// </note>
     pub fn configuration_recorder_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.configuration_recorder_names(input.into());
         self
     }
-    /// <p>The name of the configuration recorder. If the name is not specified, the opertation returns the status for the customer managed configuration recorder configured for the account, if applicable.</p><note>
+    /// <p>The name of the configuration recorder. If the name is not specified, the operation returns the status for the customer managed configuration recorder configured for the account, if applicable.</p><note>
     /// <p>When making a request to this operation, you can only specify one configuration recorder.</p>
     /// </note>
     pub fn set_configuration_recorder_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_configuration_recorder_names(input);
         self
     }
-    /// <p>The name of the configuration recorder. If the name is not specified, the opertation returns the status for the customer managed configuration recorder configured for the account, if applicable.</p><note>
+    /// <p>The name of the configuration recorder. If the name is not specified, the operation returns the status for the customer managed configuration recorder configured for the account, if applicable.</p><note>
     /// <p>When making a request to this operation, you can only specify one configuration recorder.</p>
     /// </note>
     pub fn get_configuration_recorder_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {

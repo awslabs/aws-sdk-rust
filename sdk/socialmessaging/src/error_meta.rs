@@ -13,6 +13,8 @@ pub enum Error {
     InternalServiceException(crate::types::error::InternalServiceException),
     /// <p>One or more parameters provided to the action are not valid.</p>
     InvalidParametersException(crate::types::error::InvalidParametersException),
+    /// <p>The request was denied because it would exceed one or more service quotas or limits.</p>
+    LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>The resource was not found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
@@ -36,6 +38,7 @@ impl ::std::fmt::Display for Error {
             Error::DependencyException(inner) => inner.fmt(f),
             Error::InternalServiceException(inner) => inner.fmt(f),
             Error::InvalidParametersException(inner) => inner.fmt(f),
+            Error::LimitExceededException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
             Error::ThrottledRequestException(inner) => inner.fmt(f),
             Error::ValidationException(inner) => inner.fmt(f),
@@ -65,6 +68,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::DependencyException(inner) => inner.meta(),
             Self::InternalServiceException(inner) => inner.meta(),
             Self::InvalidParametersException(inner) => inner.meta(),
+            Self::LimitExceededException(inner) => inner.meta(),
             Self::ResourceNotFoundException(inner) => inner.meta(),
             Self::ThrottledRequestException(inner) => inner.meta(),
             Self::ValidationException(inner) => inner.meta(),
@@ -106,6 +110,9 @@ impl From<crate::operation::associate_whats_app_business_account::AssociateWhats
             crate::operation::associate_whats_app_business_account::AssociateWhatsAppBusinessAccountError::InvalidParametersException(inner) => {
                 Error::InvalidParametersException(inner)
             }
+            crate::operation::associate_whats_app_business_account::AssociateWhatsAppBusinessAccountError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
             crate::operation::associate_whats_app_business_account::AssociateWhatsAppBusinessAccountError::ThrottledRequestException(inner) => {
                 Error::ThrottledRequestException(inner)
             }
@@ -116,6 +123,153 @@ impl From<crate::operation::associate_whats_app_business_account::AssociateWhats
                 Error::ValidationException(inner)
             }
             crate::operation::associate_whats_app_business_account::AssociateWhatsAppBusinessAccountError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_whats_app_message_template::CreateWhatsAppMessageTemplateError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_whats_app_message_template::CreateWhatsAppMessageTemplateError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_whats_app_message_template::CreateWhatsAppMessageTemplateError> for Error {
+    fn from(err: crate::operation::create_whats_app_message_template::CreateWhatsAppMessageTemplateError) -> Self {
+        match err {
+            crate::operation::create_whats_app_message_template::CreateWhatsAppMessageTemplateError::DependencyException(inner) => {
+                Error::DependencyException(inner)
+            }
+            crate::operation::create_whats_app_message_template::CreateWhatsAppMessageTemplateError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::create_whats_app_message_template::CreateWhatsAppMessageTemplateError::InvalidParametersException(inner) => {
+                Error::InvalidParametersException(inner)
+            }
+            crate::operation::create_whats_app_message_template::CreateWhatsAppMessageTemplateError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_whats_app_message_template::CreateWhatsAppMessageTemplateError::ThrottledRequestException(inner) => {
+                Error::ThrottledRequestException(inner)
+            }
+            crate::operation::create_whats_app_message_template::CreateWhatsAppMessageTemplateError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_whats_app_message_template::CreateWhatsAppMessageTemplateError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::create_whats_app_message_template::CreateWhatsAppMessageTemplateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_whats_app_message_template_from_library::CreateWhatsAppMessageTemplateFromLibraryError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_whats_app_message_template_from_library::CreateWhatsAppMessageTemplateFromLibraryError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_whats_app_message_template_from_library::CreateWhatsAppMessageTemplateFromLibraryError> for Error {
+    fn from(err: crate::operation::create_whats_app_message_template_from_library::CreateWhatsAppMessageTemplateFromLibraryError) -> Self {
+        match err {
+            crate::operation::create_whats_app_message_template_from_library::CreateWhatsAppMessageTemplateFromLibraryError::DependencyException(inner) => Error::DependencyException(inner),
+            crate::operation::create_whats_app_message_template_from_library::CreateWhatsAppMessageTemplateFromLibraryError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::create_whats_app_message_template_from_library::CreateWhatsAppMessageTemplateFromLibraryError::InvalidParametersException(inner) => Error::InvalidParametersException(inner),
+            crate::operation::create_whats_app_message_template_from_library::CreateWhatsAppMessageTemplateFromLibraryError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_whats_app_message_template_from_library::CreateWhatsAppMessageTemplateFromLibraryError::ThrottledRequestException(inner) => Error::ThrottledRequestException(inner),
+            crate::operation::create_whats_app_message_template_from_library::CreateWhatsAppMessageTemplateFromLibraryError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_whats_app_message_template_from_library::CreateWhatsAppMessageTemplateFromLibraryError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_whats_app_message_template_from_library::CreateWhatsAppMessageTemplateFromLibraryError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_whats_app_message_template_media::CreateWhatsAppMessageTemplateMediaError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_whats_app_message_template_media::CreateWhatsAppMessageTemplateMediaError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_whats_app_message_template_media::CreateWhatsAppMessageTemplateMediaError> for Error {
+    fn from(err: crate::operation::create_whats_app_message_template_media::CreateWhatsAppMessageTemplateMediaError) -> Self {
+        match err {
+            crate::operation::create_whats_app_message_template_media::CreateWhatsAppMessageTemplateMediaError::DependencyException(inner) => {
+                Error::DependencyException(inner)
+            }
+            crate::operation::create_whats_app_message_template_media::CreateWhatsAppMessageTemplateMediaError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::create_whats_app_message_template_media::CreateWhatsAppMessageTemplateMediaError::InvalidParametersException(inner) => {
+                Error::InvalidParametersException(inner)
+            }
+            crate::operation::create_whats_app_message_template_media::CreateWhatsAppMessageTemplateMediaError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_whats_app_message_template_media::CreateWhatsAppMessageTemplateMediaError::ThrottledRequestException(inner) => {
+                Error::ThrottledRequestException(inner)
+            }
+            crate::operation::create_whats_app_message_template_media::CreateWhatsAppMessageTemplateMediaError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_whats_app_message_template_media::CreateWhatsAppMessageTemplateMediaError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::create_whats_app_message_template_media::CreateWhatsAppMessageTemplateMediaError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
         }
@@ -166,6 +320,59 @@ impl From<crate::operation::delete_whats_app_message_media::DeleteWhatsAppMessag
                 Error::ValidationException(inner)
             }
             crate::operation::delete_whats_app_message_media::DeleteWhatsAppMessageMediaError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_whats_app_message_template::DeleteWhatsAppMessageTemplateError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_whats_app_message_template::DeleteWhatsAppMessageTemplateError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_whats_app_message_template::DeleteWhatsAppMessageTemplateError> for Error {
+    fn from(err: crate::operation::delete_whats_app_message_template::DeleteWhatsAppMessageTemplateError) -> Self {
+        match err {
+            crate::operation::delete_whats_app_message_template::DeleteWhatsAppMessageTemplateError::DependencyException(inner) => {
+                Error::DependencyException(inner)
+            }
+            crate::operation::delete_whats_app_message_template::DeleteWhatsAppMessageTemplateError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::delete_whats_app_message_template::DeleteWhatsAppMessageTemplateError::InvalidParametersException(inner) => {
+                Error::InvalidParametersException(inner)
+            }
+            crate::operation::delete_whats_app_message_template::DeleteWhatsAppMessageTemplateError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_whats_app_message_template::DeleteWhatsAppMessageTemplateError::ThrottledRequestException(inner) => {
+                Error::ThrottledRequestException(inner)
+            }
+            crate::operation::delete_whats_app_message_template::DeleteWhatsAppMessageTemplateError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_whats_app_message_template::DeleteWhatsAppMessageTemplateError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_whats_app_message_template::DeleteWhatsAppMessageTemplateError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -363,6 +570,51 @@ impl From<crate::operation::get_whats_app_message_media::GetWhatsAppMessageMedia
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_whats_app_message_template::GetWhatsAppMessageTemplateError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_whats_app_message_template::GetWhatsAppMessageTemplateError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_whats_app_message_template::GetWhatsAppMessageTemplateError> for Error {
+    fn from(err: crate::operation::get_whats_app_message_template::GetWhatsAppMessageTemplateError) -> Self {
+        match err {
+            crate::operation::get_whats_app_message_template::GetWhatsAppMessageTemplateError::DependencyException(inner) => {
+                Error::DependencyException(inner)
+            }
+            crate::operation::get_whats_app_message_template::GetWhatsAppMessageTemplateError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::get_whats_app_message_template::GetWhatsAppMessageTemplateError::InvalidParametersException(inner) => {
+                Error::InvalidParametersException(inner)
+            }
+            crate::operation::get_whats_app_message_template::GetWhatsAppMessageTemplateError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_whats_app_message_template::GetWhatsAppMessageTemplateError::ThrottledRequestException(inner) => {
+                Error::ThrottledRequestException(inner)
+            }
+            crate::operation::get_whats_app_message_template::GetWhatsAppMessageTemplateError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_whats_app_message_template::GetWhatsAppMessageTemplateError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_whats_app_message_template::GetWhatsAppMessageTemplateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
@@ -444,6 +696,104 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
             crate::operation::list_tags_for_resource::ListTagsForResourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_whats_app_message_templates::ListWhatsAppMessageTemplatesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_whats_app_message_templates::ListWhatsAppMessageTemplatesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_whats_app_message_templates::ListWhatsAppMessageTemplatesError> for Error {
+    fn from(err: crate::operation::list_whats_app_message_templates::ListWhatsAppMessageTemplatesError) -> Self {
+        match err {
+            crate::operation::list_whats_app_message_templates::ListWhatsAppMessageTemplatesError::DependencyException(inner) => {
+                Error::DependencyException(inner)
+            }
+            crate::operation::list_whats_app_message_templates::ListWhatsAppMessageTemplatesError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::list_whats_app_message_templates::ListWhatsAppMessageTemplatesError::InvalidParametersException(inner) => {
+                Error::InvalidParametersException(inner)
+            }
+            crate::operation::list_whats_app_message_templates::ListWhatsAppMessageTemplatesError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_whats_app_message_templates::ListWhatsAppMessageTemplatesError::ThrottledRequestException(inner) => {
+                Error::ThrottledRequestException(inner)
+            }
+            crate::operation::list_whats_app_message_templates::ListWhatsAppMessageTemplatesError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_whats_app_message_templates::ListWhatsAppMessageTemplatesError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_whats_app_message_templates::ListWhatsAppMessageTemplatesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_whats_app_template_library::ListWhatsAppTemplateLibraryError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_whats_app_template_library::ListWhatsAppTemplateLibraryError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_whats_app_template_library::ListWhatsAppTemplateLibraryError> for Error {
+    fn from(err: crate::operation::list_whats_app_template_library::ListWhatsAppTemplateLibraryError) -> Self {
+        match err {
+            crate::operation::list_whats_app_template_library::ListWhatsAppTemplateLibraryError::DependencyException(inner) => {
+                Error::DependencyException(inner)
+            }
+            crate::operation::list_whats_app_template_library::ListWhatsAppTemplateLibraryError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::list_whats_app_template_library::ListWhatsAppTemplateLibraryError::InvalidParametersException(inner) => {
+                Error::InvalidParametersException(inner)
+            }
+            crate::operation::list_whats_app_template_library::ListWhatsAppTemplateLibraryError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_whats_app_template_library::ListWhatsAppTemplateLibraryError::ThrottledRequestException(inner) => {
+                Error::ThrottledRequestException(inner)
+            }
+            crate::operation::list_whats_app_template_library::ListWhatsAppTemplateLibraryError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_whats_app_template_library::ListWhatsAppTemplateLibraryError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_whats_app_template_library::ListWhatsAppTemplateLibraryError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -620,6 +970,59 @@ impl From<crate::operation::untag_resource::UntagResourceError> for Error {
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_whats_app_message_template::UpdateWhatsAppMessageTemplateError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_whats_app_message_template::UpdateWhatsAppMessageTemplateError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_whats_app_message_template::UpdateWhatsAppMessageTemplateError> for Error {
+    fn from(err: crate::operation::update_whats_app_message_template::UpdateWhatsAppMessageTemplateError) -> Self {
+        match err {
+            crate::operation::update_whats_app_message_template::UpdateWhatsAppMessageTemplateError::DependencyException(inner) => {
+                Error::DependencyException(inner)
+            }
+            crate::operation::update_whats_app_message_template::UpdateWhatsAppMessageTemplateError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::update_whats_app_message_template::UpdateWhatsAppMessageTemplateError::InvalidParametersException(inner) => {
+                Error::InvalidParametersException(inner)
+            }
+            crate::operation::update_whats_app_message_template::UpdateWhatsAppMessageTemplateError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_whats_app_message_template::UpdateWhatsAppMessageTemplateError::ThrottledRequestException(inner) => {
+                Error::ThrottledRequestException(inner)
+            }
+            crate::operation::update_whats_app_message_template::UpdateWhatsAppMessageTemplateError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_whats_app_message_template::UpdateWhatsAppMessageTemplateError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::update_whats_app_message_template::UpdateWhatsAppMessageTemplateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl ::std::error::Error for Error {
     fn source(&self) -> std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
@@ -628,6 +1031,7 @@ impl ::std::error::Error for Error {
             Error::DependencyException(inner) => inner.source(),
             Error::InternalServiceException(inner) => inner.source(),
             Error::InvalidParametersException(inner) => inner.source(),
+            Error::LimitExceededException(inner) => inner.source(),
             Error::ResourceNotFoundException(inner) => inner.source(),
             Error::ThrottledRequestException(inner) => inner.source(),
             Error::ValidationException(inner) => inner.source(),
@@ -643,6 +1047,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::DependencyException(e) => e.request_id(),
             Self::InternalServiceException(e) => e.request_id(),
             Self::InvalidParametersException(e) => e.request_id(),
+            Self::LimitExceededException(e) => e.request_id(),
             Self::ResourceNotFoundException(e) => e.request_id(),
             Self::ThrottledRequestException(e) => e.request_id(),
             Self::ValidationException(e) => e.request_id(),

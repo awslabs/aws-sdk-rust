@@ -26,7 +26,7 @@ impl crate::operation::create_queue::builders::CreateQueueInputBuilder {
 /// <ul>
 /// <li>
 /// <p>If you don't specify the <code>FifoQueue</code> attribute, Amazon SQS creates a standard queue.</p><note>
-/// <p>You can't change the queue type after you create it and you can't convert an existing standard queue into a FIFO queue. You must either create a new FIFO queue for your application or delete your existing standard queue and recreate it as a FIFO queue. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-moving">Moving From a Standard Queue to a FIFO Queue</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+/// <p>You can't change the queue type after you create it and you can't convert an existing standard queue into a FIFO queue. You must either create a new FIFO queue for your application or delete your existing standard queue and recreate it as a FIFO queue. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-moving">Moving From a standard queue to a FIFO queue</a> in the <i>Amazon SQS Developer Guide</i>.</p>
 /// </note></li>
 /// <li>
 /// <p>If you don't provide a value for an attribute, the queue is created with the default value for the attribute.</p></li>

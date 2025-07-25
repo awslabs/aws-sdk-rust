@@ -126,6 +126,9 @@ pub(crate) fn de_get_application(
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "ApplicationConfig" => {
+                    builder = builder.set_application_config(crate::protocol_serde::shape_application_config::de_application_config(tokens)?);
+                }
                 "ApplicationSourceConfig" => {
                     builder = builder.set_application_source_config(
                         crate::protocol_serde::shape_application_source_config::de_application_source_config(tokens)?,
@@ -157,6 +160,19 @@ pub(crate) fn de_get_application(
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
                     );
+                }
+                "IframeConfig" => {
+                    builder = builder.set_iframe_config(crate::protocol_serde::shape_iframe_config::de_iframe_config(tokens)?);
+                }
+                "InitializationTimeout" => {
+                    builder = builder.set_initialization_timeout(
+                        ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                            .map(i32::try_from)
+                            .transpose()?,
+                    );
+                }
+                "IsService" => {
+                    builder = builder.set_is_service(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
                 "LastModifiedTime" => {
                     builder = builder.set_last_modified_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

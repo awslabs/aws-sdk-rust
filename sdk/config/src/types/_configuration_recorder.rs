@@ -9,7 +9,7 @@ pub struct ConfigurationRecorder {
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the configuration recorder.</p>
     /// <p>For customer managed configuration recorders, Config automatically assigns the name of "default" when creating a configuration recorder if you do not specify a name at creation time.</p>
-    /// <p>For service-linked configuration recorders, Config automatically assigns a name that has the prefix "<code>AWS</code>" to a new service-linked configuration recorder.</p><note>
+    /// <p>For service-linked configuration recorders, Config automatically assigns a name that has the prefix "<code>AWSConfigurationRecorderFor</code>" to a new service-linked configuration recorder.</p><note>
     /// <p><b>Changing the name of a configuration recorder</b></p>
     /// <p>To change the name of the customer managed configuration recorder, you must delete it and create a new customer managed configuration recorder with a new name.</p>
     /// <p>You cannot change the name of a service-linked configuration recorder.</p>
@@ -58,7 +58,7 @@ impl ConfigurationRecorder {
     }
     /// <p>The name of the configuration recorder.</p>
     /// <p>For customer managed configuration recorders, Config automatically assigns the name of "default" when creating a configuration recorder if you do not specify a name at creation time.</p>
-    /// <p>For service-linked configuration recorders, Config automatically assigns a name that has the prefix "<code>AWS</code>" to a new service-linked configuration recorder.</p><note>
+    /// <p>For service-linked configuration recorders, Config automatically assigns a name that has the prefix "<code>AWSConfigurationRecorderFor</code>" to a new service-linked configuration recorder.</p><note>
     /// <p><b>Changing the name of a configuration recorder</b></p>
     /// <p>To change the name of the customer managed configuration recorder, you must delete it and create a new customer managed configuration recorder with a new name.</p>
     /// <p>You cannot change the name of a service-linked configuration recorder.</p>
@@ -148,7 +148,7 @@ impl ConfigurationRecorderBuilder {
     }
     /// <p>The name of the configuration recorder.</p>
     /// <p>For customer managed configuration recorders, Config automatically assigns the name of "default" when creating a configuration recorder if you do not specify a name at creation time.</p>
-    /// <p>For service-linked configuration recorders, Config automatically assigns a name that has the prefix "<code>AWS</code>" to a new service-linked configuration recorder.</p><note>
+    /// <p>For service-linked configuration recorders, Config automatically assigns a name that has the prefix "<code>AWSConfigurationRecorderFor</code>" to a new service-linked configuration recorder.</p><note>
     /// <p><b>Changing the name of a configuration recorder</b></p>
     /// <p>To change the name of the customer managed configuration recorder, you must delete it and create a new customer managed configuration recorder with a new name.</p>
     /// <p>You cannot change the name of a service-linked configuration recorder.</p>
@@ -159,7 +159,7 @@ impl ConfigurationRecorderBuilder {
     }
     /// <p>The name of the configuration recorder.</p>
     /// <p>For customer managed configuration recorders, Config automatically assigns the name of "default" when creating a configuration recorder if you do not specify a name at creation time.</p>
-    /// <p>For service-linked configuration recorders, Config automatically assigns a name that has the prefix "<code>AWS</code>" to a new service-linked configuration recorder.</p><note>
+    /// <p>For service-linked configuration recorders, Config automatically assigns a name that has the prefix "<code>AWSConfigurationRecorderFor</code>" to a new service-linked configuration recorder.</p><note>
     /// <p><b>Changing the name of a configuration recorder</b></p>
     /// <p>To change the name of the customer managed configuration recorder, you must delete it and create a new customer managed configuration recorder with a new name.</p>
     /// <p>You cannot change the name of a service-linked configuration recorder.</p>
@@ -170,7 +170,7 @@ impl ConfigurationRecorderBuilder {
     }
     /// <p>The name of the configuration recorder.</p>
     /// <p>For customer managed configuration recorders, Config automatically assigns the name of "default" when creating a configuration recorder if you do not specify a name at creation time.</p>
-    /// <p>For service-linked configuration recorders, Config automatically assigns a name that has the prefix "<code>AWS</code>" to a new service-linked configuration recorder.</p><note>
+    /// <p>For service-linked configuration recorders, Config automatically assigns a name that has the prefix "<code>AWSConfigurationRecorderFor</code>" to a new service-linked configuration recorder.</p><note>
     /// <p><b>Changing the name of a configuration recorder</b></p>
     /// <p>To change the name of the customer managed configuration recorder, you must delete it and create a new customer managed configuration recorder with a new name.</p>
     /// <p>You cannot change the name of a service-linked configuration recorder.</p>

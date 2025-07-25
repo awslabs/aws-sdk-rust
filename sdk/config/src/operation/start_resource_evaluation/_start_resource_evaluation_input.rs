@@ -7,7 +7,9 @@ pub struct StartResourceEvaluationInput {
     pub resource_details: ::std::option::Option<crate::types::ResourceDetails>,
     /// <p>Returns an <code>EvaluationContext</code> object.</p>
     pub evaluation_context: ::std::option::Option<crate::types::EvaluationContext>,
-    /// <p>The mode of an evaluation. The valid values for this API are <code>DETECTIVE</code> and <code>PROACTIVE</code>.</p>
+    /// <p>The mode of an evaluation.</p><note>
+    /// <p>The only valid value for this API is <code>PROACTIVE</code>.</p>
+    /// </note>
     pub evaluation_mode: ::std::option::Option<crate::types::EvaluationMode>,
     /// <p>The timeout for an evaluation. The default is 900 seconds. You cannot specify a number greater than 3600. If you specify 0, Config uses the default.</p>
     pub evaluation_timeout: ::std::option::Option<i32>,
@@ -25,7 +27,9 @@ impl StartResourceEvaluationInput {
     pub fn evaluation_context(&self) -> ::std::option::Option<&crate::types::EvaluationContext> {
         self.evaluation_context.as_ref()
     }
-    /// <p>The mode of an evaluation. The valid values for this API are <code>DETECTIVE</code> and <code>PROACTIVE</code>.</p>
+    /// <p>The mode of an evaluation.</p><note>
+    /// <p>The only valid value for this API is <code>PROACTIVE</code>.</p>
+    /// </note>
     pub fn evaluation_mode(&self) -> ::std::option::Option<&crate::types::EvaluationMode> {
         self.evaluation_mode.as_ref()
     }
@@ -87,18 +91,24 @@ impl StartResourceEvaluationInputBuilder {
     pub fn get_evaluation_context(&self) -> &::std::option::Option<crate::types::EvaluationContext> {
         &self.evaluation_context
     }
-    /// <p>The mode of an evaluation. The valid values for this API are <code>DETECTIVE</code> and <code>PROACTIVE</code>.</p>
+    /// <p>The mode of an evaluation.</p><note>
+    /// <p>The only valid value for this API is <code>PROACTIVE</code>.</p>
+    /// </note>
     /// This field is required.
     pub fn evaluation_mode(mut self, input: crate::types::EvaluationMode) -> Self {
         self.evaluation_mode = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The mode of an evaluation. The valid values for this API are <code>DETECTIVE</code> and <code>PROACTIVE</code>.</p>
+    /// <p>The mode of an evaluation.</p><note>
+    /// <p>The only valid value for this API is <code>PROACTIVE</code>.</p>
+    /// </note>
     pub fn set_evaluation_mode(mut self, input: ::std::option::Option<crate::types::EvaluationMode>) -> Self {
         self.evaluation_mode = input;
         self
     }
-    /// <p>The mode of an evaluation. The valid values for this API are <code>DETECTIVE</code> and <code>PROACTIVE</code>.</p>
+    /// <p>The mode of an evaluation.</p><note>
+    /// <p>The only valid value for this API is <code>PROACTIVE</code>.</p>
+    /// </note>
     pub fn get_evaluation_mode(&self) -> &::std::option::Option<crate::types::EvaluationMode> {
         &self.evaluation_mode
     }

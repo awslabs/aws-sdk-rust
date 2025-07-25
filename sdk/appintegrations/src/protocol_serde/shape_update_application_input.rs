@@ -3,50 +3,71 @@ pub fn ser_update_application_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_application::UpdateApplicationInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.application_source_config {
+    if let Some(var_1) = &input.application_config {
         #[allow(unused_mut)]
-        let mut object_2 = object.key("ApplicationSourceConfig").start_object();
-        crate::protocol_serde::shape_application_source_config::ser_application_source_config(&mut object_2, var_1)?;
+        let mut object_2 = object.key("ApplicationConfig").start_object();
+        crate::protocol_serde::shape_application_config::ser_application_config(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.description {
-        object.key("Description").string(var_3.as_str());
+    if let Some(var_3) = &input.application_source_config {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("ApplicationSourceConfig").start_object();
+        crate::protocol_serde::shape_application_source_config::ser_application_source_config(&mut object_4, var_3)?;
+        object_4.finish();
     }
-    if let Some(var_4) = &input.name {
-        object.key("Name").string(var_4.as_str());
+    if let Some(var_5) = &input.description {
+        object.key("Description").string(var_5.as_str());
     }
-    if let Some(var_5) = &input.permissions {
-        let mut array_6 = object.key("Permissions").start_array();
-        for item_7 in var_5 {
+    if let Some(var_6) = &input.iframe_config {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("IframeConfig").start_object();
+        crate::protocol_serde::shape_iframe_config::ser_iframe_config(&mut object_7, var_6)?;
+        object_7.finish();
+    }
+    if let Some(var_8) = &input.initialization_timeout {
+        object.key("InitializationTimeout").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_8).into()),
+        );
+    }
+    if let Some(var_9) = &input.is_service {
+        object.key("IsService").boolean(*var_9);
+    }
+    if let Some(var_10) = &input.name {
+        object.key("Name").string(var_10.as_str());
+    }
+    if let Some(var_11) = &input.permissions {
+        let mut array_12 = object.key("Permissions").start_array();
+        for item_13 in var_11 {
             {
-                array_6.value().string(item_7.as_str());
+                array_12.value().string(item_13.as_str());
             }
         }
-        array_6.finish();
+        array_12.finish();
     }
-    if let Some(var_8) = &input.publications {
-        let mut array_9 = object.key("Publications").start_array();
-        for item_10 in var_8 {
+    if let Some(var_14) = &input.publications {
+        let mut array_15 = object.key("Publications").start_array();
+        for item_16 in var_14 {
             {
                 #[allow(unused_mut)]
-                let mut object_11 = array_9.value().start_object();
-                crate::protocol_serde::shape_publication::ser_publication(&mut object_11, item_10)?;
-                object_11.finish();
+                let mut object_17 = array_15.value().start_object();
+                crate::protocol_serde::shape_publication::ser_publication(&mut object_17, item_16)?;
+                object_17.finish();
             }
         }
-        array_9.finish();
+        array_15.finish();
     }
-    if let Some(var_12) = &input.subscriptions {
-        let mut array_13 = object.key("Subscriptions").start_array();
-        for item_14 in var_12 {
+    if let Some(var_18) = &input.subscriptions {
+        let mut array_19 = object.key("Subscriptions").start_array();
+        for item_20 in var_18 {
             {
                 #[allow(unused_mut)]
-                let mut object_15 = array_13.value().start_object();
-                crate::protocol_serde::shape_subscription::ser_subscription(&mut object_15, item_14)?;
-                object_15.finish();
+                let mut object_21 = array_19.value().start_object();
+                crate::protocol_serde::shape_subscription::ser_subscription(&mut object_21, item_20)?;
+                object_21.finish();
             }
         }
-        array_13.finish();
+        array_19.finish();
     }
     Ok(())
 }

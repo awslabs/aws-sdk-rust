@@ -74,6 +74,7 @@
 ///     ValidationExceptionType::OnlyCmafInputTypeAllowForceEndpointErrorConfiguration => { /* ... */ },
 ///     ValidationExceptionType::OnlyCmafInputTypeAllowMqcsInputSwitching => { /* ... */ },
 ///     ValidationExceptionType::OnlyCmafInputTypeAllowMqcsOutputConfiguration => { /* ... */ },
+///     ValidationExceptionType::OnlyCmafInputTypeAllowPreferredInputConfiguration => { /* ... */ },
 ///     ValidationExceptionType::PeriodTriggersNoneSpecifiedWithAdditionalValues => { /* ... */ },
 ///     ValidationExceptionType::RoleArnInvalidFormat => { /* ... */ },
 ///     ValidationExceptionType::RoleArnLengthOutOfRange => { /* ... */ },
@@ -252,6 +253,8 @@ pub enum ValidationExceptionType {
     #[allow(missing_docs)] // documentation missing in model
     OnlyCmafInputTypeAllowMqcsOutputConfiguration,
     #[allow(missing_docs)] // documentation missing in model
+    OnlyCmafInputTypeAllowPreferredInputConfiguration,
+    #[allow(missing_docs)] // documentation missing in model
     PeriodTriggersNoneSpecifiedWithAdditionalValues,
     #[allow(missing_docs)] // documentation missing in model
     RoleArnInvalidFormat,
@@ -376,6 +379,7 @@ impl ::std::convert::From<&str> for ValidationExceptionType {
             }
             "ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_INPUT_SWITCHING" => ValidationExceptionType::OnlyCmafInputTypeAllowMqcsInputSwitching,
             "ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_OUTPUT_CONFIGURATION" => ValidationExceptionType::OnlyCmafInputTypeAllowMqcsOutputConfiguration,
+            "ONLY_CMAF_INPUT_TYPE_ALLOW_PREFERRED_INPUT_CONFIGURATION" => ValidationExceptionType::OnlyCmafInputTypeAllowPreferredInputConfiguration,
             "PERIOD_TRIGGERS_NONE_SPECIFIED_WITH_ADDITIONAL_VALUES" => ValidationExceptionType::PeriodTriggersNoneSpecifiedWithAdditionalValues,
             "ROLE_ARN_INVALID_FORMAT" => ValidationExceptionType::RoleArnInvalidFormat,
             "ROLE_ARN_LENGTH_OUT_OF_RANGE" => ValidationExceptionType::RoleArnLengthOutOfRange,
@@ -484,6 +488,7 @@ impl ValidationExceptionType {
             }
             ValidationExceptionType::OnlyCmafInputTypeAllowMqcsInputSwitching => "ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_INPUT_SWITCHING",
             ValidationExceptionType::OnlyCmafInputTypeAllowMqcsOutputConfiguration => "ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_OUTPUT_CONFIGURATION",
+            ValidationExceptionType::OnlyCmafInputTypeAllowPreferredInputConfiguration => "ONLY_CMAF_INPUT_TYPE_ALLOW_PREFERRED_INPUT_CONFIGURATION",
             ValidationExceptionType::PeriodTriggersNoneSpecifiedWithAdditionalValues => "PERIOD_TRIGGERS_NONE_SPECIFIED_WITH_ADDITIONAL_VALUES",
             ValidationExceptionType::RoleArnInvalidFormat => "ROLE_ARN_INVALID_FORMAT",
             ValidationExceptionType::RoleArnLengthOutOfRange => "ROLE_ARN_LENGTH_OUT_OF_RANGE",
@@ -577,6 +582,7 @@ impl ValidationExceptionType {
             "ONLY_CMAF_INPUT_TYPE_ALLOW_FORCE_ENDPOINT_ERROR_CONFIGURATION",
             "ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_INPUT_SWITCHING",
             "ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_OUTPUT_CONFIGURATION",
+            "ONLY_CMAF_INPUT_TYPE_ALLOW_PREFERRED_INPUT_CONFIGURATION",
             "PERIOD_TRIGGERS_NONE_SPECIFIED_WITH_ADDITIONAL_VALUES",
             "ROLE_ARN_INVALID_FORMAT",
             "ROLE_ARN_LENGTH_OUT_OF_RANGE",
@@ -698,6 +704,9 @@ impl ::std::fmt::Display for ValidationExceptionType {
             ValidationExceptionType::OnlyCmafInputTypeAllowMqcsInputSwitching => write!(f, "ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_INPUT_SWITCHING"),
             ValidationExceptionType::OnlyCmafInputTypeAllowMqcsOutputConfiguration => {
                 write!(f, "ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_OUTPUT_CONFIGURATION")
+            }
+            ValidationExceptionType::OnlyCmafInputTypeAllowPreferredInputConfiguration => {
+                write!(f, "ONLY_CMAF_INPUT_TYPE_ALLOW_PREFERRED_INPUT_CONFIGURATION")
             }
             ValidationExceptionType::PeriodTriggersNoneSpecifiedWithAdditionalValues => {
                 write!(f, "PERIOD_TRIGGERS_NONE_SPECIFIED_WITH_ADDITIONAL_VALUES")

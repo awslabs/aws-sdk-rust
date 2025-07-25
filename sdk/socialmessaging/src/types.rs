@@ -29,11 +29,33 @@ pub use crate::types::_whats_app_signup_callback::WhatsAppSignupCallback;
 
 pub use crate::types::_linked_whats_app_business_account_summary::LinkedWhatsAppBusinessAccountSummary;
 
+pub use crate::types::_meta_library_template_definition::MetaLibraryTemplateDefinition;
+
+pub use crate::types::_library_template_button_list::LibraryTemplateButtonList;
+
+pub use crate::types::_template_summary::TemplateSummary;
+
+pub use crate::types::_meta_library_template::MetaLibraryTemplate;
+
+pub use crate::types::_library_template_body_inputs::LibraryTemplateBodyInputs;
+
+pub use crate::types::_library_template_button_input::LibraryTemplateButtonInput;
+
+mod _library_template_body_inputs;
+
+mod _library_template_button_input;
+
+mod _library_template_button_list;
+
 mod _linked_whats_app_business_account;
 
 mod _linked_whats_app_business_account_id_meta_data;
 
 mod _linked_whats_app_business_account_summary;
+
+mod _meta_library_template;
+
+mod _meta_library_template_definition;
 
 mod _registration_status;
 
@@ -42,6 +64,8 @@ mod _s3_file;
 mod _s3_presigned_url;
 
 mod _tag;
+
+mod _template_summary;
 
 mod _waba_phone_number_setup_finalization;
 

@@ -5,6 +5,12 @@ pub use crate::types::_schedule_configuration::ScheduleConfigurationBuilder;
 
 pub use crate::types::_on_demand_configuration::OnDemandConfigurationBuilder;
 
+pub use crate::types::_iframe_config::IframeConfigBuilder;
+
+pub use crate::types::_application_config::ApplicationConfigBuilder;
+
+pub use crate::types::_contact_handling::ContactHandlingBuilder;
+
 pub use crate::types::_publication::PublicationBuilder;
 
 pub use crate::types::_subscription::SubscriptionBuilder;

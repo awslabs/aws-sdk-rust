@@ -19,6 +19,14 @@ pub struct UpdateApplicationInput {
     pub publications: ::std::option::Option<::std::vec::Vec<crate::types::Publication>>,
     /// <p>The configuration of events or requests that the application has access to.</p>
     pub permissions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Indicates whether the application is a service.</p>
+    pub is_service: ::std::option::Option<bool>,
+    /// <p>The maximum time in milliseconds allowed to establish a connection with the workspace.</p>
+    pub initialization_timeout: ::std::option::Option<i32>,
+    /// <p>The configuration settings for the application.</p>
+    pub application_config: ::std::option::Option<crate::types::ApplicationConfig>,
+    /// <p>The iframe configuration for the application.</p>
+    pub iframe_config: ::std::option::Option<crate::types::IframeConfig>,
 }
 impl UpdateApplicationInput {
     /// <p>The Amazon Resource Name (ARN) of the Application.</p>
@@ -57,6 +65,22 @@ impl UpdateApplicationInput {
     pub fn permissions(&self) -> &[::std::string::String] {
         self.permissions.as_deref().unwrap_or_default()
     }
+    /// <p>Indicates whether the application is a service.</p>
+    pub fn is_service(&self) -> ::std::option::Option<bool> {
+        self.is_service
+    }
+    /// <p>The maximum time in milliseconds allowed to establish a connection with the workspace.</p>
+    pub fn initialization_timeout(&self) -> ::std::option::Option<i32> {
+        self.initialization_timeout
+    }
+    /// <p>The configuration settings for the application.</p>
+    pub fn application_config(&self) -> ::std::option::Option<&crate::types::ApplicationConfig> {
+        self.application_config.as_ref()
+    }
+    /// <p>The iframe configuration for the application.</p>
+    pub fn iframe_config(&self) -> ::std::option::Option<&crate::types::IframeConfig> {
+        self.iframe_config.as_ref()
+    }
 }
 impl UpdateApplicationInput {
     /// Creates a new builder-style object to manufacture [`UpdateApplicationInput`](crate::operation::update_application::UpdateApplicationInput).
@@ -76,6 +100,10 @@ pub struct UpdateApplicationInputBuilder {
     pub(crate) subscriptions: ::std::option::Option<::std::vec::Vec<crate::types::Subscription>>,
     pub(crate) publications: ::std::option::Option<::std::vec::Vec<crate::types::Publication>>,
     pub(crate) permissions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) is_service: ::std::option::Option<bool>,
+    pub(crate) initialization_timeout: ::std::option::Option<i32>,
+    pub(crate) application_config: ::std::option::Option<crate::types::ApplicationConfig>,
+    pub(crate) iframe_config: ::std::option::Option<crate::types::IframeConfig>,
 }
 impl UpdateApplicationInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Application.</p>
@@ -201,6 +229,62 @@ impl UpdateApplicationInputBuilder {
     pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.permissions
     }
+    /// <p>Indicates whether the application is a service.</p>
+    pub fn is_service(mut self, input: bool) -> Self {
+        self.is_service = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether the application is a service.</p>
+    pub fn set_is_service(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.is_service = input;
+        self
+    }
+    /// <p>Indicates whether the application is a service.</p>
+    pub fn get_is_service(&self) -> &::std::option::Option<bool> {
+        &self.is_service
+    }
+    /// <p>The maximum time in milliseconds allowed to establish a connection with the workspace.</p>
+    pub fn initialization_timeout(mut self, input: i32) -> Self {
+        self.initialization_timeout = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The maximum time in milliseconds allowed to establish a connection with the workspace.</p>
+    pub fn set_initialization_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.initialization_timeout = input;
+        self
+    }
+    /// <p>The maximum time in milliseconds allowed to establish a connection with the workspace.</p>
+    pub fn get_initialization_timeout(&self) -> &::std::option::Option<i32> {
+        &self.initialization_timeout
+    }
+    /// <p>The configuration settings for the application.</p>
+    pub fn application_config(mut self, input: crate::types::ApplicationConfig) -> Self {
+        self.application_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration settings for the application.</p>
+    pub fn set_application_config(mut self, input: ::std::option::Option<crate::types::ApplicationConfig>) -> Self {
+        self.application_config = input;
+        self
+    }
+    /// <p>The configuration settings for the application.</p>
+    pub fn get_application_config(&self) -> &::std::option::Option<crate::types::ApplicationConfig> {
+        &self.application_config
+    }
+    /// <p>The iframe configuration for the application.</p>
+    pub fn iframe_config(mut self, input: crate::types::IframeConfig) -> Self {
+        self.iframe_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The iframe configuration for the application.</p>
+    pub fn set_iframe_config(mut self, input: ::std::option::Option<crate::types::IframeConfig>) -> Self {
+        self.iframe_config = input;
+        self
+    }
+    /// <p>The iframe configuration for the application.</p>
+    pub fn get_iframe_config(&self) -> &::std::option::Option<crate::types::IframeConfig> {
+        &self.iframe_config
+    }
     /// Consumes the builder and constructs a [`UpdateApplicationInput`](crate::operation::update_application::UpdateApplicationInput).
     pub fn build(
         self,
@@ -213,6 +297,10 @@ impl UpdateApplicationInputBuilder {
             subscriptions: self.subscriptions,
             publications: self.publications,
             permissions: self.permissions,
+            is_service: self.is_service,
+            initialization_timeout: self.initialization_timeout,
+            application_config: self.application_config,
+            iframe_config: self.iframe_config,
         })
     }
 }

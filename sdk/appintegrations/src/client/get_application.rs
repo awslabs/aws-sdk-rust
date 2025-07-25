@@ -17,6 +17,10 @@ impl super::Client {
     ///   - [`last_modified_time(Option<DateTime>)`](crate::operation::get_application::GetApplicationOutput::last_modified_time): <p>The last modified time of the Application.</p>
     ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_application::GetApplicationOutput::tags): <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     ///   - [`permissions(Option<Vec::<String>>)`](crate::operation::get_application::GetApplicationOutput::permissions): <p>The configuration of events or requests that the application has access to.</p>
+    ///   - [`is_service(bool)`](crate::operation::get_application::GetApplicationOutput::is_service): <p>Indicates whether the application is a service.</p>
+    ///   - [`initialization_timeout(Option<i32>)`](crate::operation::get_application::GetApplicationOutput::initialization_timeout): <p>The maximum time in milliseconds allowed to establish a connection with the workspace.</p>
+    ///   - [`application_config(Option<ApplicationConfig>)`](crate::operation::get_application::GetApplicationOutput::application_config): <p>The configuration settings for the application.</p>
+    ///   - [`iframe_config(Option<IframeConfig>)`](crate::operation::get_application::GetApplicationOutput::iframe_config): <p>The iframe configuration for the application.</p>
     /// - On failure, responds with [`SdkError<GetApplicationError>`](crate::operation::get_application::GetApplicationError)
     pub fn get_application(&self) -> crate::operation::get_application::builders::GetApplicationFluentBuilder {
         crate::operation::get_application::builders::GetApplicationFluentBuilder::new(self.handle.clone())

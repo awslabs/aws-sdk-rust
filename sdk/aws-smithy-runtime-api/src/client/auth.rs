@@ -151,11 +151,22 @@ impl AsRef<AuthSchemeId> for AuthSchemeId {
     }
 }
 
+// Normalizes auth scheme IDs for comparison and hashing by treating "no_auth" and "noAuth" as equivalent
+// by converting "no_auth" to "noAuth".
+// This is for backward compatibility; "no_auth" was incorrectly used in earlier GA versions of the SDK and
+// could be used still in some places.
+const fn normalize_auth_scheme_id(s: &'static str) -> &'static str {
+    match s.as_bytes() {
+        b"no_auth" => "noAuth",
+        _ => s,
+    }
+}
+
 impl AuthSchemeId {
     /// Creates a new auth scheme ID.
     pub const fn new(scheme_id: &'static str) -> Self {
         Self {
-            scheme_id: Cow::Borrowed(scheme_id),
+            scheme_id: Cow::Borrowed(normalize_auth_scheme_id(scheme_id)),
         }
     }
 
@@ -188,7 +199,19 @@ impl From<&'static str> for AuthSchemeId {
 
 impl From<Cow<'static, str>> for AuthSchemeId {
     fn from(scheme_id: Cow<'static, str>) -> Self {
-        Self { scheme_id }
+        let normalized_scheme_id = match &scheme_id {
+            Cow::Borrowed(s) => Cow::Borrowed(normalize_auth_scheme_id(s)),
+            Cow::Owned(s) => {
+                if s == "no_auth" {
+                    Cow::Borrowed("noAuth")
+                } else {
+                    scheme_id
+                }
+            }
+        };
+        Self {
+            scheme_id: normalized_scheme_id,
+        }
     }
 }
 
@@ -452,5 +475,131 @@ where
         AuthSchemePreference {
             preference_list: slice.as_ref().to_vec(),
         }
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_auth_scheme_id_new_normalizes_no_auth() {
+        // Test that "no_auth" gets normalized to "noAuth"
+        let auth_scheme_id = AuthSchemeId::new("no_auth");
+        assert_eq!(auth_scheme_id.inner(), "noAuth");
+    }
+
+    #[test]
+    fn test_auth_scheme_id_new_preserves_no_auth_camel_case() {
+        // Test that "noAuth" remains unchanged
+        let auth_scheme_id = AuthSchemeId::new("noAuth");
+        assert_eq!(auth_scheme_id.inner(), "noAuth");
+    }
+
+    #[test]
+    fn test_auth_scheme_id_new_preserves_other_schemes() {
+        // Test that other auth scheme IDs are not modified
+        let test_cases = [
+            "sigv4",
+            "sigv4a",
+            "httpBearerAuth",
+            "httpBasicAuth",
+            "custom_auth",
+            "bearer",
+            "basic",
+        ];
+
+        for scheme in test_cases {
+            let auth_scheme_id = AuthSchemeId::new(scheme);
+            assert_eq!(auth_scheme_id.inner(), scheme);
+        }
+    }
+
+    #[test]
+    fn test_auth_scheme_id_equality_after_normalization() {
+        // Test that "no_auth" and "noAuth" are considered equal after normalization
+        let no_auth_underscore = AuthSchemeId::new("no_auth");
+        let no_auth_camel = AuthSchemeId::new("noAuth");
+
+        assert_eq!(no_auth_underscore, no_auth_camel);
+        assert_eq!(no_auth_underscore.inner(), no_auth_camel.inner());
+    }
+
+    #[test]
+    fn test_auth_scheme_id_hash_consistency_after_normalization() {
+        use std::collections::HashMap;
+
+        // Test that normalized IDs have consistent hashing behavior
+        let mut map = HashMap::new();
+        let no_auth_underscore = AuthSchemeId::new("no_auth");
+        let no_auth_camel = AuthSchemeId::new("noAuth");
+
+        map.insert(no_auth_underscore.clone(), "value1");
+        map.insert(no_auth_camel.clone(), "value2");
+
+        // Should only have one entry since they normalize to the same value
+        assert_eq!(map.len(), 1);
+        assert_eq!(map.get(&no_auth_underscore), Some(&"value2"));
+        assert_eq!(map.get(&no_auth_camel), Some(&"value2"));
+    }
+
+    #[test]
+    fn test_auth_scheme_id_ordering_after_normalization() {
+        // Test that ordering works correctly with normalized values
+        let no_auth_underscore = AuthSchemeId::new("no_auth");
+        let no_auth_camel = AuthSchemeId::new("noAuth");
+        let other_scheme = AuthSchemeId::new("sigv4");
+
+        assert_eq!(
+            no_auth_underscore.cmp(&no_auth_camel),
+            std::cmp::Ordering::Equal
+        );
+        assert_eq!(no_auth_underscore.cmp(&other_scheme), "noAuth".cmp("sigv4"));
+    }
+
+    #[test]
+    fn test_normalize_auth_scheme_id_function() {
+        // Test the normalize function directly
+        assert_eq!(normalize_auth_scheme_id("no_auth"), "noAuth");
+        assert_eq!(normalize_auth_scheme_id("noAuth"), "noAuth");
+        assert_eq!(normalize_auth_scheme_id("sigv4"), "sigv4");
+        assert_eq!(normalize_auth_scheme_id("custom"), "custom");
+    }
+
+    #[test]
+    fn test_auth_scheme_id_from_cow_borrowed_normalizes_no_auth() {
+        // Test that Cow::Borrowed("no_auth") gets normalized to "noAuth"
+        let auth_scheme_id = AuthSchemeId::from(Cow::Borrowed("no_auth"));
+        assert_eq!(auth_scheme_id.inner(), "noAuth");
+    }
+
+    #[test]
+    fn test_auth_scheme_id_from_cow_borrowed_preserves_no_auth_camel_case() {
+        // Test that Cow::Borrowed("noAuth") remains unchanged
+        let auth_scheme_id = AuthSchemeId::from(Cow::Borrowed("noAuth"));
+        assert_eq!(auth_scheme_id.inner(), "noAuth");
+    }
+
+    #[test]
+    fn test_auth_scheme_id_from_cow_owned_normalizes_no_auth() {
+        // Test that Cow::Owned(String::from("no_auth")) gets normalized to "noAuth"
+        let auth_scheme_id = AuthSchemeId::from(Cow::Owned(String::from("no_auth")));
+        assert_eq!(auth_scheme_id.inner(), "noAuth");
+    }
+
+    #[test]
+    fn test_auth_scheme_id_from_cow_owned_preserves_no_auth_camel_case() {
+        // Test that Cow::Owned(String::from("noAuth")) remains unchanged
+        let auth_scheme_id = AuthSchemeId::from(Cow::Owned(String::from("noAuth")));
+        assert_eq!(auth_scheme_id.inner(), "noAuth");
+    }
+
+    #[test]
+    fn test_auth_scheme_id_from_cow_between_borrowed_and_owned_mixing_updated_and_legacy() {
+        let borrowed_no_auth = AuthSchemeId::from(Cow::Borrowed("noAuth"));
+        let owned_no_auth = AuthSchemeId::from(Cow::Owned(String::from("no_auth")));
+
+        assert_eq!(borrowed_no_auth, owned_no_auth);
+        assert_eq!(borrowed_no_auth.inner(), owned_no_auth.inner());
     }
 }

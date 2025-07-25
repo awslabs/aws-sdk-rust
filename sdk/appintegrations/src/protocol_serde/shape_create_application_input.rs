@@ -3,66 +3,87 @@ pub fn ser_create_application_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_application::CreateApplicationInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.application_source_config {
+    if let Some(var_1) = &input.application_config {
         #[allow(unused_mut)]
-        let mut object_2 = object.key("ApplicationSourceConfig").start_object();
-        crate::protocol_serde::shape_application_source_config::ser_application_source_config(&mut object_2, var_1)?;
+        let mut object_2 = object.key("ApplicationConfig").start_object();
+        crate::protocol_serde::shape_application_config::ser_application_config(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.client_token {
-        object.key("ClientToken").string(var_3.as_str());
-    }
-    if let Some(var_4) = &input.description {
-        object.key("Description").string(var_4.as_str());
-    }
-    if let Some(var_5) = &input.name {
-        object.key("Name").string(var_5.as_str());
-    }
-    if let Some(var_6) = &input.namespace {
-        object.key("Namespace").string(var_6.as_str());
-    }
-    if let Some(var_7) = &input.permissions {
-        let mut array_8 = object.key("Permissions").start_array();
-        for item_9 in var_7 {
-            {
-                array_8.value().string(item_9.as_str());
-            }
-        }
-        array_8.finish();
-    }
-    if let Some(var_10) = &input.publications {
-        let mut array_11 = object.key("Publications").start_array();
-        for item_12 in var_10 {
-            {
-                #[allow(unused_mut)]
-                let mut object_13 = array_11.value().start_object();
-                crate::protocol_serde::shape_publication::ser_publication(&mut object_13, item_12)?;
-                object_13.finish();
-            }
-        }
-        array_11.finish();
-    }
-    if let Some(var_14) = &input.subscriptions {
-        let mut array_15 = object.key("Subscriptions").start_array();
-        for item_16 in var_14 {
-            {
-                #[allow(unused_mut)]
-                let mut object_17 = array_15.value().start_object();
-                crate::protocol_serde::shape_subscription::ser_subscription(&mut object_17, item_16)?;
-                object_17.finish();
-            }
-        }
-        array_15.finish();
-    }
-    if let Some(var_18) = &input.tags {
+    if let Some(var_3) = &input.application_source_config {
         #[allow(unused_mut)]
-        let mut object_19 = object.key("Tags").start_object();
-        for (key_20, value_21) in var_18 {
+        let mut object_4 = object.key("ApplicationSourceConfig").start_object();
+        crate::protocol_serde::shape_application_source_config::ser_application_source_config(&mut object_4, var_3)?;
+        object_4.finish();
+    }
+    if let Some(var_5) = &input.client_token {
+        object.key("ClientToken").string(var_5.as_str());
+    }
+    if let Some(var_6) = &input.description {
+        object.key("Description").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.iframe_config {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("IframeConfig").start_object();
+        crate::protocol_serde::shape_iframe_config::ser_iframe_config(&mut object_8, var_7)?;
+        object_8.finish();
+    }
+    if let Some(var_9) = &input.initialization_timeout {
+        object.key("InitializationTimeout").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_9).into()),
+        );
+    }
+    if let Some(var_10) = &input.is_service {
+        object.key("IsService").boolean(*var_10);
+    }
+    if let Some(var_11) = &input.name {
+        object.key("Name").string(var_11.as_str());
+    }
+    if let Some(var_12) = &input.namespace {
+        object.key("Namespace").string(var_12.as_str());
+    }
+    if let Some(var_13) = &input.permissions {
+        let mut array_14 = object.key("Permissions").start_array();
+        for item_15 in var_13 {
             {
-                object_19.key(key_20.as_str()).string(value_21.as_str());
+                array_14.value().string(item_15.as_str());
             }
         }
-        object_19.finish();
+        array_14.finish();
+    }
+    if let Some(var_16) = &input.publications {
+        let mut array_17 = object.key("Publications").start_array();
+        for item_18 in var_16 {
+            {
+                #[allow(unused_mut)]
+                let mut object_19 = array_17.value().start_object();
+                crate::protocol_serde::shape_publication::ser_publication(&mut object_19, item_18)?;
+                object_19.finish();
+            }
+        }
+        array_17.finish();
+    }
+    if let Some(var_20) = &input.subscriptions {
+        let mut array_21 = object.key("Subscriptions").start_array();
+        for item_22 in var_20 {
+            {
+                #[allow(unused_mut)]
+                let mut object_23 = array_21.value().start_object();
+                crate::protocol_serde::shape_subscription::ser_subscription(&mut object_23, item_22)?;
+                object_23.finish();
+            }
+        }
+        array_21.finish();
+    }
+    if let Some(var_24) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_25 = object.key("Tags").start_object();
+        for (key_26, value_27) in var_24 {
+            {
+                object_25.key(key_26.as_str()).string(value_27.as_str());
+            }
+        }
+        object_25.finish();
     }
     Ok(())
 }

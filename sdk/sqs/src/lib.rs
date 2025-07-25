@@ -36,7 +36,7 @@
 //!     - [Amazon SQS Message Attributes](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes)
 //!     - [Amazon SQS Dead-Letter Queues](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html)
 //!
-//!   - [Amazon SQS in the _Command Line Interface_](http://docs.aws.amazon.com/cli/latest/reference/sqs/index.html)
+//!   - [Amazon SQS in the Command Line Interface](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/sqs/index.html)
 //!   - _Amazon Web Services General Reference_
 //!     - [Regions and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#sqs_region)
 //!
@@ -52,7 +52,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-sqs = "1.77.0"
+//! aws-sdk-sqs = "1.78.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

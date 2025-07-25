@@ -116,17 +116,23 @@ impl DescribeConfigurationRecordersFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_configuration_recorder_names`](Self::set_configuration_recorder_names).
     ///
-    /// <p>A list of names of the configuration recorders that you want to specify.</p>
+    /// <p>A list of names of the configuration recorders that you want to specify.</p><note>
+    /// <p>When making a request to this operation, you can only specify one configuration recorder.</p>
+    /// </note>
     pub fn configuration_recorder_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.configuration_recorder_names(input.into());
         self
     }
-    /// <p>A list of names of the configuration recorders that you want to specify.</p>
+    /// <p>A list of names of the configuration recorders that you want to specify.</p><note>
+    /// <p>When making a request to this operation, you can only specify one configuration recorder.</p>
+    /// </note>
     pub fn set_configuration_recorder_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_configuration_recorder_names(input);
         self
     }
-    /// <p>A list of names of the configuration recorders that you want to specify.</p>
+    /// <p>A list of names of the configuration recorders that you want to specify.</p><note>
+    /// <p>When making a request to this operation, you can only specify one configuration recorder.</p>
+    /// </note>
     pub fn get_configuration_recorder_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_configuration_recorder_names()
     }

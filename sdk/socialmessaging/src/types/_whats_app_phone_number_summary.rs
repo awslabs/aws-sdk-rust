@@ -18,6 +18,8 @@ pub struct WhatsAppPhoneNumberSummary {
     pub display_phone_number: ::std::string::String,
     /// <p>The quality rating of the phone number. This is from Meta.</p>
     pub quality_rating: ::std::string::String,
+    /// <p>The geographic region where the WhatsApp phone number's data is stored and processed.</p>
+    pub data_localization_region: ::std::option::Option<::std::string::String>,
 }
 impl WhatsAppPhoneNumberSummary {
     /// <p>The full Amazon Resource Name (ARN) for the phone number.</p>
@@ -55,6 +57,10 @@ impl WhatsAppPhoneNumberSummary {
         use std::ops::Deref;
         self.quality_rating.deref()
     }
+    /// <p>The geographic region where the WhatsApp phone number's data is stored and processed.</p>
+    pub fn data_localization_region(&self) -> ::std::option::Option<&str> {
+        self.data_localization_region.as_deref()
+    }
 }
 impl WhatsAppPhoneNumberSummary {
     /// Creates a new builder-style object to manufacture [`WhatsAppPhoneNumberSummary`](crate::types::WhatsAppPhoneNumberSummary).
@@ -74,6 +80,7 @@ pub struct WhatsAppPhoneNumberSummaryBuilder {
     pub(crate) display_phone_number_name: ::std::option::Option<::std::string::String>,
     pub(crate) display_phone_number: ::std::option::Option<::std::string::String>,
     pub(crate) quality_rating: ::std::option::Option<::std::string::String>,
+    pub(crate) data_localization_region: ::std::option::Option<::std::string::String>,
 }
 impl WhatsAppPhoneNumberSummaryBuilder {
     /// <p>The full Amazon Resource Name (ARN) for the phone number.</p>
@@ -181,6 +188,20 @@ impl WhatsAppPhoneNumberSummaryBuilder {
     pub fn get_quality_rating(&self) -> &::std::option::Option<::std::string::String> {
         &self.quality_rating
     }
+    /// <p>The geographic region where the WhatsApp phone number's data is stored and processed.</p>
+    pub fn data_localization_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.data_localization_region = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The geographic region where the WhatsApp phone number's data is stored and processed.</p>
+    pub fn set_data_localization_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.data_localization_region = input;
+        self
+    }
+    /// <p>The geographic region where the WhatsApp phone number's data is stored and processed.</p>
+    pub fn get_data_localization_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_localization_region
+    }
     /// Consumes the builder and constructs a [`WhatsAppPhoneNumberSummary`](crate::types::WhatsAppPhoneNumberSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::types::builders::WhatsAppPhoneNumberSummaryBuilder::arn)
@@ -234,6 +255,7 @@ impl WhatsAppPhoneNumberSummaryBuilder {
                     "quality_rating was not specified but it is required when building WhatsAppPhoneNumberSummary",
                 )
             })?,
+            data_localization_region: self.data_localization_region,
         })
     }
 }

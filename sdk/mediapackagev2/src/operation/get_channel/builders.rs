@@ -22,7 +22,7 @@ impl crate::operation::get_channel::builders::GetChannelInputBuilder {
 }
 /// Fluent builder constructing a request to `GetChannel`.
 ///
-/// <p>Retrieves the specified channel that's configured in AWS Elemental MediaPackage, including the origin endpoints that are associated with it.</p>
+/// <p>Retrieves the specified channel that's configured in AWS Elemental MediaPackage.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetChannelFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -6,12 +6,18 @@
 pub struct WhatsAppSignupCallback {
     /// <p>The access token for your WhatsApp Business Account. The <code>accessToken</code> value is provided by Meta.</p>
     pub access_token: ::std::string::String,
+    /// <p>The URL where WhatsApp will send callback notifications for this account.</p>
+    pub callback_url: ::std::option::Option<::std::string::String>,
 }
 impl WhatsAppSignupCallback {
     /// <p>The access token for your WhatsApp Business Account. The <code>accessToken</code> value is provided by Meta.</p>
     pub fn access_token(&self) -> &str {
         use std::ops::Deref;
         self.access_token.deref()
+    }
+    /// <p>The URL where WhatsApp will send callback notifications for this account.</p>
+    pub fn callback_url(&self) -> ::std::option::Option<&str> {
+        self.callback_url.as_deref()
     }
 }
 impl WhatsAppSignupCallback {
@@ -26,6 +32,7 @@ impl WhatsAppSignupCallback {
 #[non_exhaustive]
 pub struct WhatsAppSignupCallbackBuilder {
     pub(crate) access_token: ::std::option::Option<::std::string::String>,
+    pub(crate) callback_url: ::std::option::Option<::std::string::String>,
 }
 impl WhatsAppSignupCallbackBuilder {
     /// <p>The access token for your WhatsApp Business Account. The <code>accessToken</code> value is provided by Meta.</p>
@@ -43,6 +50,20 @@ impl WhatsAppSignupCallbackBuilder {
     pub fn get_access_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.access_token
     }
+    /// <p>The URL where WhatsApp will send callback notifications for this account.</p>
+    pub fn callback_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.callback_url = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The URL where WhatsApp will send callback notifications for this account.</p>
+    pub fn set_callback_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.callback_url = input;
+        self
+    }
+    /// <p>The URL where WhatsApp will send callback notifications for this account.</p>
+    pub fn get_callback_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.callback_url
+    }
     /// Consumes the builder and constructs a [`WhatsAppSignupCallback`](crate::types::WhatsAppSignupCallback).
     /// This method will fail if any of the following fields are not set:
     /// - [`access_token`](crate::types::builders::WhatsAppSignupCallbackBuilder::access_token)
@@ -54,6 +75,7 @@ impl WhatsAppSignupCallbackBuilder {
                     "access_token was not specified but it is required when building WhatsAppSignupCallback",
                 )
             })?,
+            callback_url: self.callback_url,
         })
     }
 }

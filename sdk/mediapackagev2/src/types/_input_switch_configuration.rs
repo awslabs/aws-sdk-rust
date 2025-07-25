@@ -6,11 +6,17 @@
 pub struct InputSwitchConfiguration {
     /// <p>When true, AWS Elemental MediaPackage performs input switching based on the MQCS. Default is true. This setting is valid only when <code>InputType</code> is <code>CMAF</code>.</p>
     pub mqcs_input_switching: ::std::option::Option<bool>,
+    /// <p>For CMAF inputs, indicates which input MediaPackage should prefer when both inputs have equal MQCS scores. Select <code>1</code> to prefer the first ingest endpoint, or <code>2</code> to prefer the second ingest endpoint. If you don't specify a preferred input, MediaPackage uses its default switching behavior when MQCS scores are equal.</p>
+    pub preferred_input: ::std::option::Option<i32>,
 }
 impl InputSwitchConfiguration {
     /// <p>When true, AWS Elemental MediaPackage performs input switching based on the MQCS. Default is true. This setting is valid only when <code>InputType</code> is <code>CMAF</code>.</p>
     pub fn mqcs_input_switching(&self) -> ::std::option::Option<bool> {
         self.mqcs_input_switching
+    }
+    /// <p>For CMAF inputs, indicates which input MediaPackage should prefer when both inputs have equal MQCS scores. Select <code>1</code> to prefer the first ingest endpoint, or <code>2</code> to prefer the second ingest endpoint. If you don't specify a preferred input, MediaPackage uses its default switching behavior when MQCS scores are equal.</p>
+    pub fn preferred_input(&self) -> ::std::option::Option<i32> {
+        self.preferred_input
     }
 }
 impl InputSwitchConfiguration {
@@ -25,6 +31,7 @@ impl InputSwitchConfiguration {
 #[non_exhaustive]
 pub struct InputSwitchConfigurationBuilder {
     pub(crate) mqcs_input_switching: ::std::option::Option<bool>,
+    pub(crate) preferred_input: ::std::option::Option<i32>,
 }
 impl InputSwitchConfigurationBuilder {
     /// <p>When true, AWS Elemental MediaPackage performs input switching based on the MQCS. Default is true. This setting is valid only when <code>InputType</code> is <code>CMAF</code>.</p>
@@ -41,10 +48,25 @@ impl InputSwitchConfigurationBuilder {
     pub fn get_mqcs_input_switching(&self) -> &::std::option::Option<bool> {
         &self.mqcs_input_switching
     }
+    /// <p>For CMAF inputs, indicates which input MediaPackage should prefer when both inputs have equal MQCS scores. Select <code>1</code> to prefer the first ingest endpoint, or <code>2</code> to prefer the second ingest endpoint. If you don't specify a preferred input, MediaPackage uses its default switching behavior when MQCS scores are equal.</p>
+    pub fn preferred_input(mut self, input: i32) -> Self {
+        self.preferred_input = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>For CMAF inputs, indicates which input MediaPackage should prefer when both inputs have equal MQCS scores. Select <code>1</code> to prefer the first ingest endpoint, or <code>2</code> to prefer the second ingest endpoint. If you don't specify a preferred input, MediaPackage uses its default switching behavior when MQCS scores are equal.</p>
+    pub fn set_preferred_input(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.preferred_input = input;
+        self
+    }
+    /// <p>For CMAF inputs, indicates which input MediaPackage should prefer when both inputs have equal MQCS scores. Select <code>1</code> to prefer the first ingest endpoint, or <code>2</code> to prefer the second ingest endpoint. If you don't specify a preferred input, MediaPackage uses its default switching behavior when MQCS scores are equal.</p>
+    pub fn get_preferred_input(&self) -> &::std::option::Option<i32> {
+        &self.preferred_input
+    }
     /// Consumes the builder and constructs a [`InputSwitchConfiguration`](crate::types::InputSwitchConfiguration).
     pub fn build(self) -> crate::types::InputSwitchConfiguration {
         crate::types::InputSwitchConfiguration {
             mqcs_input_switching: self.mqcs_input_switching,
+            preferred_input: self.preferred_input,
         }
     }
 }

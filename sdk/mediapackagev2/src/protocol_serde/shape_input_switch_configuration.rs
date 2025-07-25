@@ -17,6 +17,13 @@ where
                         "MQCSInputSwitching" => {
                             builder = builder.set_mqcs_input_switching(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
+                        "PreferredInput" => {
+                            builder = builder.set_preferred_input(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -41,6 +48,12 @@ pub fn ser_input_switch_configuration(
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.mqcs_input_switching {
         object.key("MQCSInputSwitching").boolean(*var_1);
+    }
+    if let Some(var_2) = &input.preferred_input {
+        object.key("PreferredInput").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
+        );
     }
     Ok(())
 }

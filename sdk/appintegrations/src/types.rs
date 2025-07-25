@@ -7,6 +7,14 @@ pub use crate::types::_on_demand_configuration::OnDemandConfiguration;
 
 pub use crate::types::_execution_mode::ExecutionMode;
 
+pub use crate::types::_iframe_config::IframeConfig;
+
+pub use crate::types::_application_config::ApplicationConfig;
+
+pub use crate::types::_contact_handling::ContactHandling;
+
+pub use crate::types::_contact_handling_scope::ContactHandlingScope;
+
 pub use crate::types::_publication::Publication;
 
 pub use crate::types::_subscription::Subscription;
@@ -37,9 +45,15 @@ pub use crate::types::_file_configuration::FileConfiguration;
 
 mod _application_association_summary;
 
+mod _application_config;
+
 mod _application_source_config;
 
 mod _application_summary;
+
+mod _contact_handling;
+
+mod _contact_handling_scope;
 
 mod _data_integration_association_summary;
 
@@ -60,6 +74,8 @@ mod _execution_status;
 mod _external_url_config;
 
 mod _file_configuration;
+
+mod _iframe_config;
 
 mod _last_execution_status;
 

@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeConfigurationRecorderStatusInput {
-    /// <p>The name of the configuration recorder. If the name is not specified, the opertation returns the status for the customer managed configuration recorder configured for the account, if applicable.</p><note>
+    /// <p>The name of the configuration recorder. If the name is not specified, the operation returns the status for the customer managed configuration recorder configured for the account, if applicable.</p><note>
     /// <p>When making a request to this operation, you can only specify one configuration recorder.</p>
     /// </note>
     pub configuration_recorder_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -14,7 +14,7 @@ pub struct DescribeConfigurationRecorderStatusInput {
     pub arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeConfigurationRecorderStatusInput {
-    /// <p>The name of the configuration recorder. If the name is not specified, the opertation returns the status for the customer managed configuration recorder configured for the account, if applicable.</p><note>
+    /// <p>The name of the configuration recorder. If the name is not specified, the operation returns the status for the customer managed configuration recorder configured for the account, if applicable.</p><note>
     /// <p>When making a request to this operation, you can only specify one configuration recorder.</p>
     /// </note>
     ///
@@ -51,7 +51,7 @@ impl DescribeConfigurationRecorderStatusInputBuilder {
     ///
     /// To override the contents of this collection use [`set_configuration_recorder_names`](Self::set_configuration_recorder_names).
     ///
-    /// <p>The name of the configuration recorder. If the name is not specified, the opertation returns the status for the customer managed configuration recorder configured for the account, if applicable.</p><note>
+    /// <p>The name of the configuration recorder. If the name is not specified, the operation returns the status for the customer managed configuration recorder configured for the account, if applicable.</p><note>
     /// <p>When making a request to this operation, you can only specify one configuration recorder.</p>
     /// </note>
     pub fn configuration_recorder_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -60,14 +60,14 @@ impl DescribeConfigurationRecorderStatusInputBuilder {
         self.configuration_recorder_names = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The name of the configuration recorder. If the name is not specified, the opertation returns the status for the customer managed configuration recorder configured for the account, if applicable.</p><note>
+    /// <p>The name of the configuration recorder. If the name is not specified, the operation returns the status for the customer managed configuration recorder configured for the account, if applicable.</p><note>
     /// <p>When making a request to this operation, you can only specify one configuration recorder.</p>
     /// </note>
     pub fn set_configuration_recorder_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.configuration_recorder_names = input;
         self
     }
-    /// <p>The name of the configuration recorder. If the name is not specified, the opertation returns the status for the customer managed configuration recorder configured for the account, if applicable.</p><note>
+    /// <p>The name of the configuration recorder. If the name is not specified, the operation returns the status for the customer managed configuration recorder configured for the account, if applicable.</p><note>
     /// <p>When making a request to this operation, you can only specify one configuration recorder.</p>
     /// </note>
     pub fn get_configuration_recorder_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {

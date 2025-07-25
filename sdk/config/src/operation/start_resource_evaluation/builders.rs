@@ -140,17 +140,23 @@ impl StartResourceEvaluationFluentBuilder {
     pub fn get_evaluation_context(&self) -> &::std::option::Option<crate::types::EvaluationContext> {
         self.inner.get_evaluation_context()
     }
-    /// <p>The mode of an evaluation. The valid values for this API are <code>DETECTIVE</code> and <code>PROACTIVE</code>.</p>
+    /// <p>The mode of an evaluation.</p><note>
+    /// <p>The only valid value for this API is <code>PROACTIVE</code>.</p>
+    /// </note>
     pub fn evaluation_mode(mut self, input: crate::types::EvaluationMode) -> Self {
         self.inner = self.inner.evaluation_mode(input);
         self
     }
-    /// <p>The mode of an evaluation. The valid values for this API are <code>DETECTIVE</code> and <code>PROACTIVE</code>.</p>
+    /// <p>The mode of an evaluation.</p><note>
+    /// <p>The only valid value for this API is <code>PROACTIVE</code>.</p>
+    /// </note>
     pub fn set_evaluation_mode(mut self, input: ::std::option::Option<crate::types::EvaluationMode>) -> Self {
         self.inner = self.inner.set_evaluation_mode(input);
         self
     }
-    /// <p>The mode of an evaluation. The valid values for this API are <code>DETECTIVE</code> and <code>PROACTIVE</code>.</p>
+    /// <p>The mode of an evaluation.</p><note>
+    /// <p>The only valid value for this API is <code>PROACTIVE</code>.</p>
+    /// </note>
     pub fn get_evaluation_mode(&self) -> &::std::option::Option<crate::types::EvaluationMode> {
         self.inner.get_evaluation_mode()
     }

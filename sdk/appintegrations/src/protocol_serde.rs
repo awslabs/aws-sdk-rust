@@ -113,6 +113,8 @@ pub(crate) mod shape_update_event_integration_input;
 
 pub(crate) mod shape_application_associations_list;
 
+pub(crate) mod shape_application_config;
+
 pub(crate) mod shape_application_source_config;
 
 pub(crate) mod shape_applications_list;
@@ -130,6 +132,8 @@ pub(crate) mod shape_event_integrations_list;
 pub(crate) mod shape_execution_configuration;
 
 pub(crate) mod shape_file_configuration;
+
+pub(crate) mod shape_iframe_config;
 
 pub(crate) mod shape_object_configuration;
 
@@ -151,6 +155,8 @@ pub(crate) mod shape_application_association_summary;
 
 pub(crate) mod shape_application_summary;
 
+pub(crate) mod shape_contact_handling;
+
 pub(crate) mod shape_data_integration_association_summary;
 
 pub(crate) mod shape_data_integration_summary;
@@ -164,6 +170,8 @@ pub(crate) mod shape_external_url_config;
 pub(crate) mod shape_fields_map;
 
 pub(crate) mod shape_folder_list;
+
+pub(crate) mod shape_iframe_permission_list;
 
 pub(crate) mod shape_on_demand_configuration;
 

@@ -16,6 +16,8 @@ pub struct ApplicationSummary {
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time when the application was last modified.</p>
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>Indicates whether the application is a service.</p>
+    pub is_service: bool,
 }
 impl ApplicationSummary {
     /// <p>The Amazon Resource Name (ARN) of the Application.</p>
@@ -42,6 +44,10 @@ impl ApplicationSummary {
     pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
+    /// <p>Indicates whether the application is a service.</p>
+    pub fn is_service(&self) -> bool {
+        self.is_service
+    }
 }
 impl ApplicationSummary {
     /// Creates a new builder-style object to manufacture [`ApplicationSummary`](crate::types::ApplicationSummary).
@@ -60,6 +66,7 @@ pub struct ApplicationSummaryBuilder {
     pub(crate) namespace: ::std::option::Option<::std::string::String>,
     pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) is_service: ::std::option::Option<bool>,
 }
 impl ApplicationSummaryBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Application.</p>
@@ -146,6 +153,20 @@ impl ApplicationSummaryBuilder {
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_time
     }
+    /// <p>Indicates whether the application is a service.</p>
+    pub fn is_service(mut self, input: bool) -> Self {
+        self.is_service = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether the application is a service.</p>
+    pub fn set_is_service(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.is_service = input;
+        self
+    }
+    /// <p>Indicates whether the application is a service.</p>
+    pub fn get_is_service(&self) -> &::std::option::Option<bool> {
+        &self.is_service
+    }
     /// Consumes the builder and constructs a [`ApplicationSummary`](crate::types::ApplicationSummary).
     pub fn build(self) -> crate::types::ApplicationSummary {
         crate::types::ApplicationSummary {
@@ -155,6 +176,7 @@ impl ApplicationSummaryBuilder {
             namespace: self.namespace,
             created_time: self.created_time,
             last_modified_time: self.last_modified_time,
+            is_service: self.is_service.unwrap_or_default(),
         }
     }
 }

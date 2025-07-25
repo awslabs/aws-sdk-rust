@@ -227,4 +227,60 @@ impl UpdateApplicationFluentBuilder {
     pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_permissions()
     }
+    /// <p>Indicates whether the application is a service.</p>
+    pub fn is_service(mut self, input: bool) -> Self {
+        self.inner = self.inner.is_service(input);
+        self
+    }
+    /// <p>Indicates whether the application is a service.</p>
+    pub fn set_is_service(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_is_service(input);
+        self
+    }
+    /// <p>Indicates whether the application is a service.</p>
+    pub fn get_is_service(&self) -> &::std::option::Option<bool> {
+        self.inner.get_is_service()
+    }
+    /// <p>The maximum time in milliseconds allowed to establish a connection with the workspace.</p>
+    pub fn initialization_timeout(mut self, input: i32) -> Self {
+        self.inner = self.inner.initialization_timeout(input);
+        self
+    }
+    /// <p>The maximum time in milliseconds allowed to establish a connection with the workspace.</p>
+    pub fn set_initialization_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.inner = self.inner.set_initialization_timeout(input);
+        self
+    }
+    /// <p>The maximum time in milliseconds allowed to establish a connection with the workspace.</p>
+    pub fn get_initialization_timeout(&self) -> &::std::option::Option<i32> {
+        self.inner.get_initialization_timeout()
+    }
+    /// <p>The configuration settings for the application.</p>
+    pub fn application_config(mut self, input: crate::types::ApplicationConfig) -> Self {
+        self.inner = self.inner.application_config(input);
+        self
+    }
+    /// <p>The configuration settings for the application.</p>
+    pub fn set_application_config(mut self, input: ::std::option::Option<crate::types::ApplicationConfig>) -> Self {
+        self.inner = self.inner.set_application_config(input);
+        self
+    }
+    /// <p>The configuration settings for the application.</p>
+    pub fn get_application_config(&self) -> &::std::option::Option<crate::types::ApplicationConfig> {
+        self.inner.get_application_config()
+    }
+    /// <p>The iframe configuration for the application.</p>
+    pub fn iframe_config(mut self, input: crate::types::IframeConfig) -> Self {
+        self.inner = self.inner.iframe_config(input);
+        self
+    }
+    /// <p>The iframe configuration for the application.</p>
+    pub fn set_iframe_config(mut self, input: ::std::option::Option<crate::types::IframeConfig>) -> Self {
+        self.inner = self.inner.set_iframe_config(input);
+        self
+    }
+    /// <p>The iframe configuration for the application.</p>
+    pub fn get_iframe_config(&self) -> &::std::option::Option<crate::types::IframeConfig> {
+        self.inner.get_iframe_config()
+    }
 }

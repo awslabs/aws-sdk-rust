@@ -4,7 +4,9 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeConfigurationRecordersInput {
-    /// <p>A list of names of the configuration recorders that you want to specify.</p>
+    /// <p>A list of names of the configuration recorders that you want to specify.</p><note>
+    /// <p>When making a request to this operation, you can only specify one configuration recorder.</p>
+    /// </note>
     pub configuration_recorder_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>For service-linked configuration recorders, you can use the service principal of the linked Amazon Web Services service to specify the configuration recorder.</p>
     pub service_principal: ::std::option::Option<::std::string::String>,
@@ -12,7 +14,9 @@ pub struct DescribeConfigurationRecordersInput {
     pub arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeConfigurationRecordersInput {
-    /// <p>A list of names of the configuration recorders that you want to specify.</p>
+    /// <p>A list of names of the configuration recorders that you want to specify.</p><note>
+    /// <p>When making a request to this operation, you can only specify one configuration recorder.</p>
+    /// </note>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.configuration_recorder_names.is_none()`.
     pub fn configuration_recorder_names(&self) -> &[::std::string::String] {
@@ -47,19 +51,25 @@ impl DescribeConfigurationRecordersInputBuilder {
     ///
     /// To override the contents of this collection use [`set_configuration_recorder_names`](Self::set_configuration_recorder_names).
     ///
-    /// <p>A list of names of the configuration recorders that you want to specify.</p>
+    /// <p>A list of names of the configuration recorders that you want to specify.</p><note>
+    /// <p>When making a request to this operation, you can only specify one configuration recorder.</p>
+    /// </note>
     pub fn configuration_recorder_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.configuration_recorder_names.unwrap_or_default();
         v.push(input.into());
         self.configuration_recorder_names = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of names of the configuration recorders that you want to specify.</p>
+    /// <p>A list of names of the configuration recorders that you want to specify.</p><note>
+    /// <p>When making a request to this operation, you can only specify one configuration recorder.</p>
+    /// </note>
     pub fn set_configuration_recorder_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.configuration_recorder_names = input;
         self
     }
-    /// <p>A list of names of the configuration recorders that you want to specify.</p>
+    /// <p>A list of names of the configuration recorders that you want to specify.</p><note>
+    /// <p>When making a request to this operation, you can only specify one configuration recorder.</p>
+    /// </note>
     pub fn get_configuration_recorder_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.configuration_recorder_names
     }

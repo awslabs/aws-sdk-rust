@@ -15,6 +15,8 @@ pub use crate::types::error::_dependency_exception::DependencyException;
 
 pub use crate::types::error::_access_denied_by_meta_exception::AccessDeniedByMetaException;
 
+pub use crate::types::error::_limit_exceeded_exception::LimitExceededException;
+
 mod _access_denied_by_meta_exception;
 
 mod _access_denied_exception;
@@ -24,6 +26,8 @@ mod _dependency_exception;
 mod _internal_service_exception;
 
 mod _invalid_parameters_exception;
+
+mod _limit_exceeded_exception;
 
 mod _resource_not_found_exception;
 

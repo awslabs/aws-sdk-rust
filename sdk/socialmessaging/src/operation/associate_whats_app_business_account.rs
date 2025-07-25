@@ -271,6 +271,8 @@ pub enum AssociateWhatsAppBusinessAccountError {
     DependencyException(crate::types::error::DependencyException),
     /// <p>One or more parameters provided to the action are not valid.</p>
     InvalidParametersException(crate::types::error::InvalidParametersException),
+    /// <p>The request was denied because it would exceed one or more service quotas or limits.</p>
+    LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottledRequestException(crate::types::error::ThrottledRequestException),
     /// <p>You do not have sufficient access to perform this action.</p>
@@ -312,6 +314,7 @@ impl AssociateWhatsAppBusinessAccountError {
         match self {
             Self::DependencyException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidParametersException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::LimitExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ThrottledRequestException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::AccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ValidationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -325,6 +328,10 @@ impl AssociateWhatsAppBusinessAccountError {
     /// Returns `true` if the error kind is `AssociateWhatsAppBusinessAccountError::InvalidParametersException`.
     pub fn is_invalid_parameters_exception(&self) -> bool {
         matches!(self, Self::InvalidParametersException(_))
+    }
+    /// Returns `true` if the error kind is `AssociateWhatsAppBusinessAccountError::LimitExceededException`.
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(self, Self::LimitExceededException(_))
     }
     /// Returns `true` if the error kind is `AssociateWhatsAppBusinessAccountError::ThrottledRequestException`.
     pub fn is_throttled_request_exception(&self) -> bool {
@@ -344,6 +351,7 @@ impl ::std::error::Error for AssociateWhatsAppBusinessAccountError {
         match self {
             Self::DependencyException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidParametersException(_inner) => ::std::option::Option::Some(_inner),
+            Self::LimitExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::ThrottledRequestException(_inner) => ::std::option::Option::Some(_inner),
             Self::AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
             Self::ValidationException(_inner) => ::std::option::Option::Some(_inner),
@@ -356,6 +364,7 @@ impl ::std::fmt::Display for AssociateWhatsAppBusinessAccountError {
         match self {
             Self::DependencyException(_inner) => _inner.fmt(f),
             Self::InvalidParametersException(_inner) => _inner.fmt(f),
+            Self::LimitExceededException(_inner) => _inner.fmt(f),
             Self::ThrottledRequestException(_inner) => _inner.fmt(f),
             Self::AccessDeniedException(_inner) => _inner.fmt(f),
             Self::ValidationException(_inner) => _inner.fmt(f),
@@ -386,6 +395,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for AssociateWhat
         match self {
             Self::DependencyException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidParametersException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::LimitExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ThrottledRequestException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ValidationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

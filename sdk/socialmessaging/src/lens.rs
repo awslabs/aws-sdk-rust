@@ -9,9 +9,43 @@ pub(crate) fn reflens_list_linked_whats_app_business_accounts_output_output_next
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_whats_app_message_templates_output_output_next_token(
+    input: &crate::operation::list_whats_app_message_templates::ListWhatsAppMessageTemplatesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_whats_app_template_library_output_output_next_token(
+    input: &crate::operation::list_whats_app_template_library::ListWhatsAppTemplateLibraryOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_linked_whats_app_business_accounts_output_output_linked_accounts(
     input: crate::operation::list_linked_whats_app_business_accounts::ListLinkedWhatsAppBusinessAccountsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::LinkedWhatsAppBusinessAccountSummary>> {
     let input = input.linked_accounts?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_whats_app_message_templates_output_output_templates(
+    input: crate::operation::list_whats_app_message_templates::ListWhatsAppMessageTemplatesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::TemplateSummary>> {
+    let input = input.templates?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_whats_app_template_library_output_output_meta_library_templates(
+    input: crate::operation::list_whats_app_template_library::ListWhatsAppTemplateLibraryOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::MetaLibraryTemplateDefinition>> {
+    let input = input.meta_library_templates?;
     ::std::option::Option::Some(input)
 }

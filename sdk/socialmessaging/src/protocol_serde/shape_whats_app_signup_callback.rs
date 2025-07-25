@@ -6,5 +6,8 @@ pub fn ser_whats_app_signup_callback(
     {
         object.key("accessToken").string(input.access_token.as_str());
     }
+    if let Some(var_1) = &input.callback_url {
+        object.key("callbackUrl").string(var_1.as_str());
+    }
     Ok(())
 }
