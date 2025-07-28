@@ -7,7 +7,15 @@ pub struct ExecuteQueryInput {
     pub query_statement: ::std::option::Option<::std::string::String>,
     /// <p>The string that specifies the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>The maximum number of results to return at one time. The default is 25.</p>
+    /// <p>The maximum number of results to return at one time.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Minimum is 1</p></li>
+    /// <li>
+    /// <p>Maximum is 20000</p></li>
+    /// <li>
+    /// <p>Default is 250</p></li>
+    /// </ul>
     pub max_results: ::std::option::Option<i32>,
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
@@ -21,7 +29,15 @@ impl ExecuteQueryInput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to return at one time. The default is 25.</p>
+    /// <p>The maximum number of results to return at one time.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Minimum is 1</p></li>
+    /// <li>
+    /// <p>Maximum is 20000</p></li>
+    /// <li>
+    /// <p>Default is 250</p></li>
+    /// </ul>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -76,17 +92,41 @@ impl ExecuteQueryInputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
-    /// <p>The maximum number of results to return at one time. The default is 25.</p>
+    /// <p>The maximum number of results to return at one time.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Minimum is 1</p></li>
+    /// <li>
+    /// <p>Maximum is 20000</p></li>
+    /// <li>
+    /// <p>Default is 250</p></li>
+    /// </ul>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of results to return at one time. The default is 25.</p>
+    /// <p>The maximum number of results to return at one time.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Minimum is 1</p></li>
+    /// <li>
+    /// <p>Maximum is 20000</p></li>
+    /// <li>
+    /// <p>Default is 250</p></li>
+    /// </ul>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>The maximum number of results to return at one time. The default is 25.</p>
+    /// <p>The maximum number of results to return at one time.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Minimum is 1</p></li>
+    /// <li>
+    /// <p>Maximum is 20000</p></li>
+    /// <li>
+    /// <p>Default is 250</p></li>
+    /// </ul>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }

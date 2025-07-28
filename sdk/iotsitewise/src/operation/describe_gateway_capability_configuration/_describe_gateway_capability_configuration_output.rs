@@ -9,18 +9,18 @@ pub struct DescribeGatewayCapabilityConfigurationOutput {
     pub capability_namespace: ::std::string::String,
     /// <p>The JSON document that defines the gateway capability's configuration. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/configure-sources.html#configure-source-cli">Configuring data sources (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub capability_configuration: ::std::string::String,
-    /// <p>The synchronization status of the capability configuration. The sync status can be one of the following:</p>
+    /// <p>The synchronization status of the gateway capability configuration. The sync status can be one of the following:</p>
     /// <ul>
     /// <li>
-    /// <p><code>IN_SYNC</code> – The gateway is running the capability configuration.</p></li>
+    /// <p><code>IN_SYNC</code> - The gateway is running with the latest configuration.</p></li>
     /// <li>
-    /// <p><code>NOT_APPLICABLE</code> – Synchronization is not required for this capability configuration. This is most common when integrating partner data sources, because the data integration is handled externally by the partner.</p></li>
+    /// <p><code>OUT_OF_SYNC</code> - The gateway hasn't received the latest configuration.</p></li>
     /// <li>
-    /// <p><code>OUT_OF_SYNC</code> – The gateway hasn't received the capability configuration.</p></li>
+    /// <p><code>SYNC_FAILED</code> - The gateway rejected the latest configuration.</p></li>
     /// <li>
-    /// <p><code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p></li>
+    /// <p><code>UNKNOWN</code> - The gateway hasn't reported its sync status.</p></li>
     /// <li>
-    /// <p><code>UNKNOWN</code> – The synchronization status is currently unknown due to an undetermined or temporary error.</p></li>
+    /// <p><code>NOT_APPLICABLE</code> - The gateway doesn't support this capability. This is most common when integrating partner data sources, because the data integration is handled externally by the partner.</p></li>
     /// </ul>
     pub capability_sync_status: crate::types::CapabilitySyncStatus,
     _request_id: Option<String>,
@@ -41,18 +41,18 @@ impl DescribeGatewayCapabilityConfigurationOutput {
         use std::ops::Deref;
         self.capability_configuration.deref()
     }
-    /// <p>The synchronization status of the capability configuration. The sync status can be one of the following:</p>
+    /// <p>The synchronization status of the gateway capability configuration. The sync status can be one of the following:</p>
     /// <ul>
     /// <li>
-    /// <p><code>IN_SYNC</code> – The gateway is running the capability configuration.</p></li>
+    /// <p><code>IN_SYNC</code> - The gateway is running with the latest configuration.</p></li>
     /// <li>
-    /// <p><code>NOT_APPLICABLE</code> – Synchronization is not required for this capability configuration. This is most common when integrating partner data sources, because the data integration is handled externally by the partner.</p></li>
+    /// <p><code>OUT_OF_SYNC</code> - The gateway hasn't received the latest configuration.</p></li>
     /// <li>
-    /// <p><code>OUT_OF_SYNC</code> – The gateway hasn't received the capability configuration.</p></li>
+    /// <p><code>SYNC_FAILED</code> - The gateway rejected the latest configuration.</p></li>
     /// <li>
-    /// <p><code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p></li>
+    /// <p><code>UNKNOWN</code> - The gateway hasn't reported its sync status.</p></li>
     /// <li>
-    /// <p><code>UNKNOWN</code> – The synchronization status is currently unknown due to an undetermined or temporary error.</p></li>
+    /// <p><code>NOT_APPLICABLE</code> - The gateway doesn't support this capability. This is most common when integrating partner data sources, because the data integration is handled externally by the partner.</p></li>
     /// </ul>
     pub fn capability_sync_status(&self) -> &crate::types::CapabilitySyncStatus {
         &self.capability_sync_status
@@ -126,53 +126,53 @@ impl DescribeGatewayCapabilityConfigurationOutputBuilder {
     pub fn get_capability_configuration(&self) -> &::std::option::Option<::std::string::String> {
         &self.capability_configuration
     }
-    /// <p>The synchronization status of the capability configuration. The sync status can be one of the following:</p>
+    /// <p>The synchronization status of the gateway capability configuration. The sync status can be one of the following:</p>
     /// <ul>
     /// <li>
-    /// <p><code>IN_SYNC</code> – The gateway is running the capability configuration.</p></li>
+    /// <p><code>IN_SYNC</code> - The gateway is running with the latest configuration.</p></li>
     /// <li>
-    /// <p><code>NOT_APPLICABLE</code> – Synchronization is not required for this capability configuration. This is most common when integrating partner data sources, because the data integration is handled externally by the partner.</p></li>
+    /// <p><code>OUT_OF_SYNC</code> - The gateway hasn't received the latest configuration.</p></li>
     /// <li>
-    /// <p><code>OUT_OF_SYNC</code> – The gateway hasn't received the capability configuration.</p></li>
+    /// <p><code>SYNC_FAILED</code> - The gateway rejected the latest configuration.</p></li>
     /// <li>
-    /// <p><code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p></li>
+    /// <p><code>UNKNOWN</code> - The gateway hasn't reported its sync status.</p></li>
     /// <li>
-    /// <p><code>UNKNOWN</code> – The synchronization status is currently unknown due to an undetermined or temporary error.</p></li>
+    /// <p><code>NOT_APPLICABLE</code> - The gateway doesn't support this capability. This is most common when integrating partner data sources, because the data integration is handled externally by the partner.</p></li>
     /// </ul>
     /// This field is required.
     pub fn capability_sync_status(mut self, input: crate::types::CapabilitySyncStatus) -> Self {
         self.capability_sync_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The synchronization status of the capability configuration. The sync status can be one of the following:</p>
+    /// <p>The synchronization status of the gateway capability configuration. The sync status can be one of the following:</p>
     /// <ul>
     /// <li>
-    /// <p><code>IN_SYNC</code> – The gateway is running the capability configuration.</p></li>
+    /// <p><code>IN_SYNC</code> - The gateway is running with the latest configuration.</p></li>
     /// <li>
-    /// <p><code>NOT_APPLICABLE</code> – Synchronization is not required for this capability configuration. This is most common when integrating partner data sources, because the data integration is handled externally by the partner.</p></li>
+    /// <p><code>OUT_OF_SYNC</code> - The gateway hasn't received the latest configuration.</p></li>
     /// <li>
-    /// <p><code>OUT_OF_SYNC</code> – The gateway hasn't received the capability configuration.</p></li>
+    /// <p><code>SYNC_FAILED</code> - The gateway rejected the latest configuration.</p></li>
     /// <li>
-    /// <p><code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p></li>
+    /// <p><code>UNKNOWN</code> - The gateway hasn't reported its sync status.</p></li>
     /// <li>
-    /// <p><code>UNKNOWN</code> – The synchronization status is currently unknown due to an undetermined or temporary error.</p></li>
+    /// <p><code>NOT_APPLICABLE</code> - The gateway doesn't support this capability. This is most common when integrating partner data sources, because the data integration is handled externally by the partner.</p></li>
     /// </ul>
     pub fn set_capability_sync_status(mut self, input: ::std::option::Option<crate::types::CapabilitySyncStatus>) -> Self {
         self.capability_sync_status = input;
         self
     }
-    /// <p>The synchronization status of the capability configuration. The sync status can be one of the following:</p>
+    /// <p>The synchronization status of the gateway capability configuration. The sync status can be one of the following:</p>
     /// <ul>
     /// <li>
-    /// <p><code>IN_SYNC</code> – The gateway is running the capability configuration.</p></li>
+    /// <p><code>IN_SYNC</code> - The gateway is running with the latest configuration.</p></li>
     /// <li>
-    /// <p><code>NOT_APPLICABLE</code> – Synchronization is not required for this capability configuration. This is most common when integrating partner data sources, because the data integration is handled externally by the partner.</p></li>
+    /// <p><code>OUT_OF_SYNC</code> - The gateway hasn't received the latest configuration.</p></li>
     /// <li>
-    /// <p><code>OUT_OF_SYNC</code> – The gateway hasn't received the capability configuration.</p></li>
+    /// <p><code>SYNC_FAILED</code> - The gateway rejected the latest configuration.</p></li>
     /// <li>
-    /// <p><code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p></li>
+    /// <p><code>UNKNOWN</code> - The gateway hasn't reported its sync status.</p></li>
     /// <li>
-    /// <p><code>UNKNOWN</code> – The synchronization status is currently unknown due to an undetermined or temporary error.</p></li>
+    /// <p><code>NOT_APPLICABLE</code> - The gateway doesn't support this capability. This is most common when integrating partner data sources, because the data integration is handled externally by the partner.</p></li>
     /// </ul>
     pub fn get_capability_sync_status(&self) -> &::std::option::Option<crate::types::CapabilitySyncStatus> {
         &self.capability_sync_status

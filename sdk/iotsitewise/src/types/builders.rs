@@ -23,6 +23,18 @@ pub use crate::types::_source_detail::SourceDetailBuilder;
 
 pub use crate::types::_kendra_source_detail::KendraSourceDetailBuilder;
 
+pub use crate::types::_computation_model_status::ComputationModelStatusBuilder;
+
+pub use crate::types::_computation_model_data_binding_value::ComputationModelDataBindingValueBuilder;
+
+pub use crate::types::_asset_property_binding_value::AssetPropertyBindingValueBuilder;
+
+pub use crate::types::_asset_model_property_binding_value::AssetModelPropertyBindingValueBuilder;
+
+pub use crate::types::_computation_model_configuration::ComputationModelConfigurationBuilder;
+
+pub use crate::types::_computation_model_anomaly_detection_configuration::ComputationModelAnomalyDetectionConfigurationBuilder;
+
 pub use crate::types::_asset_model_status::AssetModelStatusBuilder;
 
 pub use crate::types::_asset_model_composite_model_path_segment::AssetModelCompositeModelPathSegmentBuilder;
@@ -111,9 +123,37 @@ pub use crate::types::_greengrass_v2::GreengrassV2Builder;
 
 pub use crate::types::_greengrass::GreengrassBuilder;
 
+pub use crate::types::_execution_summary::ExecutionSummaryBuilder;
+
+pub use crate::types::_execution_status::ExecutionStatusBuilder;
+
+pub use crate::types::_resolve_to::ResolveToBuilder;
+
+pub use crate::types::_target_resource::TargetResourceBuilder;
+
 pub use crate::types::_dataset_summary::DatasetSummaryBuilder;
 
 pub use crate::types::_dashboard_summary::DashboardSummaryBuilder;
+
+pub use crate::types::_computation_model_summary::ComputationModelSummaryBuilder;
+
+pub use crate::types::_computation_model_resolve_to_resource_summary::ComputationModelResolveToResourceSummaryBuilder;
+
+pub use crate::types::_computation_model_data_binding_usage_summary::ComputationModelDataBindingUsageSummaryBuilder;
+
+pub use crate::types::_matched_data_binding::MatchedDataBindingBuilder;
+
+pub use crate::types::_data_binding_value::DataBindingValueBuilder;
+
+pub use crate::types::_data_binding_value_filter::DataBindingValueFilterBuilder;
+
+pub use crate::types::_asset_model_property_binding_value_filter::AssetModelPropertyBindingValueFilterBuilder;
+
+pub use crate::types::_asset_property_binding_value_filter::AssetPropertyBindingValueFilterBuilder;
+
+pub use crate::types::_asset_model_binding_value_filter::AssetModelBindingValueFilterBuilder;
+
+pub use crate::types::_asset_binding_value_filter::AssetBindingValueFilterBuilder;
 
 pub use crate::types::_composition_relationship_summary::CompositionRelationshipSummaryBuilder;
 
@@ -142,8 +182,6 @@ pub use crate::types::_asset_model_property_summary::AssetModelPropertySummaryBu
 pub use crate::types::_asset_model_composite_model_summary::AssetModelCompositeModelSummaryBuilder;
 
 pub use crate::types::_action_summary::ActionSummaryBuilder;
-
-pub use crate::types::_target_resource::TargetResourceBuilder;
 
 pub use crate::types::_access_policy_summary::AccessPolicySummaryBuilder;
 
@@ -189,6 +227,8 @@ pub use crate::types::_action_payload::ActionPayloadBuilder;
 
 pub use crate::types::_image_location::ImageLocationBuilder;
 
+pub use crate::types::_action_definition::ActionDefinitionBuilder;
+
 pub use crate::types::_job_configuration::JobConfigurationBuilder;
 
 pub use crate::types::_file_format::FileFormatBuilder;
@@ -204,8 +244,6 @@ pub use crate::types::_file::FileBuilder;
 pub use crate::types::_composite_model_property::CompositeModelPropertyBuilder;
 
 pub use crate::types::_property::PropertyBuilder;
-
-pub use crate::types::_action_definition::ActionDefinitionBuilder;
 
 pub use crate::types::_composition_details::CompositionDetailsBuilder;
 

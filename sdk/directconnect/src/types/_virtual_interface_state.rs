@@ -19,6 +19,7 @@
 ///     VirtualInterfaceState::Down => { /* ... */ },
 ///     VirtualInterfaceState::Pending => { /* ... */ },
 ///     VirtualInterfaceState::Rejected => { /* ... */ },
+///     VirtualInterfaceState::Testing => { /* ... */ },
 ///     VirtualInterfaceState::UnknownValue => { /* ... */ },
 ///     VirtualInterfaceState::Verifying => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -64,6 +65,8 @@ pub enum VirtualInterfaceState {
     Pending,
     #[allow(missing_docs)] // documentation missing in model
     Rejected,
+    #[allow(missing_docs)] // documentation missing in model
+    Testing,
     ///
     /// _Note: `::Unknown` has been renamed to `::UnknownValue`._
     UnknownValue,
@@ -83,6 +86,7 @@ impl ::std::convert::From<&str> for VirtualInterfaceState {
             "down" => VirtualInterfaceState::Down,
             "pending" => VirtualInterfaceState::Pending,
             "rejected" => VirtualInterfaceState::Rejected,
+            "testing" => VirtualInterfaceState::Testing,
             "unknown" => VirtualInterfaceState::UnknownValue,
             "verifying" => VirtualInterfaceState::Verifying,
             other => VirtualInterfaceState::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -107,6 +111,7 @@ impl VirtualInterfaceState {
             VirtualInterfaceState::Down => "down",
             VirtualInterfaceState::Pending => "pending",
             VirtualInterfaceState::Rejected => "rejected",
+            VirtualInterfaceState::Testing => "testing",
             VirtualInterfaceState::UnknownValue => "unknown",
             VirtualInterfaceState::Verifying => "verifying",
             VirtualInterfaceState::Unknown(value) => value.as_str(),
@@ -122,6 +127,7 @@ impl VirtualInterfaceState {
             "down",
             "pending",
             "rejected",
+            "testing",
             "unknown",
             "verifying",
         ]
@@ -154,6 +160,7 @@ impl ::std::fmt::Display for VirtualInterfaceState {
             VirtualInterfaceState::Down => write!(f, "down"),
             VirtualInterfaceState::Pending => write!(f, "pending"),
             VirtualInterfaceState::Rejected => write!(f, "rejected"),
+            VirtualInterfaceState::Testing => write!(f, "testing"),
             VirtualInterfaceState::UnknownValue => write!(f, "unknown"),
             VirtualInterfaceState::Verifying => write!(f, "verifying"),
             VirtualInterfaceState::Unknown(value) => write!(f, "{}", value),

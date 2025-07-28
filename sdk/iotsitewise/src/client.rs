@@ -216,6 +216,8 @@ mod create_asset_model_composite_model;
 
 mod create_bulk_import_job;
 
+mod create_computation_model;
+
 mod create_dashboard;
 
 mod create_dataset;
@@ -261,6 +263,8 @@ mod delete_asset_model;
 
 mod delete_asset_model_composite_model;
 
+mod delete_computation_model;
+
 mod delete_dashboard;
 
 mod delete_dataset;
@@ -289,11 +293,17 @@ mod describe_asset_property;
 
 mod describe_bulk_import_job;
 
+mod describe_computation_model;
+
+mod describe_computation_model_execution_summary;
+
 mod describe_dashboard;
 
 mod describe_dataset;
 
 mod describe_default_encryption_configuration;
+
+mod describe_execution;
 
 mod describe_gateway;
 
@@ -349,9 +359,17 @@ mod list_bulk_import_jobs;
 
 mod list_composition_relationships;
 
+mod list_computation_model_data_binding_usages;
+
+mod list_computation_model_resolve_to_resources;
+
+mod list_computation_models;
+
 mod list_dashboards;
 
 mod list_datasets;
+
+mod list_executions;
 
 mod list_gateways;
 
@@ -384,6 +402,8 @@ mod update_asset_model;
 mod update_asset_model_composite_model;
 
 mod update_asset_property;
+
+mod update_computation_model;
 
 mod update_dashboard;
 

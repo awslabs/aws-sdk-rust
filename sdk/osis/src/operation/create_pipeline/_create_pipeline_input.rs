@@ -21,6 +21,8 @@ pub struct CreatePipelineInput {
     pub encryption_at_rest_options: ::std::option::Option<crate::types::EncryptionAtRestOptions>,
     /// <p>List of tags to add to the pipeline upon creation.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that provides the required permissions for a pipeline to read from the source and write to the sink. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/pipeline-security-overview.html">Setting up roles and users in Amazon OpenSearch Ingestion</a>.</p>
+    pub pipeline_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl CreatePipelineInput {
     /// <p>The name of the OpenSearch Ingestion pipeline to create. Pipeline names are unique across the pipelines owned by an account within an Amazon Web Services Region.</p>
@@ -61,6 +63,10 @@ impl CreatePipelineInput {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that provides the required permissions for a pipeline to read from the source and write to the sink. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/pipeline-security-overview.html">Setting up roles and users in Amazon OpenSearch Ingestion</a>.</p>
+    pub fn pipeline_role_arn(&self) -> ::std::option::Option<&str> {
+        self.pipeline_role_arn.as_deref()
+    }
 }
 impl CreatePipelineInput {
     /// Creates a new builder-style object to manufacture [`CreatePipelineInput`](crate::operation::create_pipeline::CreatePipelineInput).
@@ -82,6 +88,7 @@ pub struct CreatePipelineInputBuilder {
     pub(crate) buffer_options: ::std::option::Option<crate::types::BufferOptions>,
     pub(crate) encryption_at_rest_options: ::std::option::Option<crate::types::EncryptionAtRestOptions>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) pipeline_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl CreatePipelineInputBuilder {
     /// <p>The name of the OpenSearch Ingestion pipeline to create. Pipeline names are unique across the pipelines owned by an account within an Amazon Web Services Region.</p>
@@ -220,6 +227,20 @@ impl CreatePipelineInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that provides the required permissions for a pipeline to read from the source and write to the sink. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/pipeline-security-overview.html">Setting up roles and users in Amazon OpenSearch Ingestion</a>.</p>
+    pub fn pipeline_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.pipeline_role_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that provides the required permissions for a pipeline to read from the source and write to the sink. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/pipeline-security-overview.html">Setting up roles and users in Amazon OpenSearch Ingestion</a>.</p>
+    pub fn set_pipeline_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.pipeline_role_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that provides the required permissions for a pipeline to read from the source and write to the sink. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/pipeline-security-overview.html">Setting up roles and users in Amazon OpenSearch Ingestion</a>.</p>
+    pub fn get_pipeline_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_role_arn
+    }
     /// Consumes the builder and constructs a [`CreatePipelineInput`](crate::operation::create_pipeline::CreatePipelineInput).
     pub fn build(
         self,
@@ -234,6 +255,7 @@ impl CreatePipelineInputBuilder {
             buffer_options: self.buffer_options,
             encryption_at_rest_options: self.encryption_at_rest_options,
             tags: self.tags,
+            pipeline_role_arn: self.pipeline_role_arn,
         })
     }
 }

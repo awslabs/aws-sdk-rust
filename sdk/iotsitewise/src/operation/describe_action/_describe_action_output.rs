@@ -13,6 +13,8 @@ pub struct DescribeActionOutput {
     pub action_payload: ::std::option::Option<crate::types::ActionPayload>,
     /// <p>The time the action was executed.</p>
     pub execution_time: ::aws_smithy_types::DateTime,
+    /// <p>The detailed resource this action resolves to.</p>
+    pub resolve_to: ::std::option::Option<crate::types::ResolveTo>,
     _request_id: Option<String>,
 }
 impl DescribeActionOutput {
@@ -38,6 +40,10 @@ impl DescribeActionOutput {
     pub fn execution_time(&self) -> &::aws_smithy_types::DateTime {
         &self.execution_time
     }
+    /// <p>The detailed resource this action resolves to.</p>
+    pub fn resolve_to(&self) -> ::std::option::Option<&crate::types::ResolveTo> {
+        self.resolve_to.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for DescribeActionOutput {
     fn request_id(&self) -> Option<&str> {
@@ -60,6 +66,7 @@ pub struct DescribeActionOutputBuilder {
     pub(crate) action_definition_id: ::std::option::Option<::std::string::String>,
     pub(crate) action_payload: ::std::option::Option<crate::types::ActionPayload>,
     pub(crate) execution_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) resolve_to: ::std::option::Option<crate::types::ResolveTo>,
     _request_id: Option<String>,
 }
 impl DescribeActionOutputBuilder {
@@ -138,6 +145,20 @@ impl DescribeActionOutputBuilder {
     pub fn get_execution_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.execution_time
     }
+    /// <p>The detailed resource this action resolves to.</p>
+    pub fn resolve_to(mut self, input: crate::types::ResolveTo) -> Self {
+        self.resolve_to = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The detailed resource this action resolves to.</p>
+    pub fn set_resolve_to(mut self, input: ::std::option::Option<crate::types::ResolveTo>) -> Self {
+        self.resolve_to = input;
+        self
+    }
+    /// <p>The detailed resource this action resolves to.</p>
+    pub fn get_resolve_to(&self) -> &::std::option::Option<crate::types::ResolveTo> {
+        &self.resolve_to
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -176,6 +197,7 @@ impl DescribeActionOutputBuilder {
                     "execution_time was not specified but it is required when building DescribeActionOutput",
                 )
             })?,
+            resolve_to: self.resolve_to,
             _request_id: self._request_id,
         })
     }

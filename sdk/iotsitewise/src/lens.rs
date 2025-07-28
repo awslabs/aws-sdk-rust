@@ -159,6 +159,36 @@ pub(crate) fn reflens_list_composition_relationships_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_computation_model_data_binding_usages_output_output_next_token(
+    input: &crate::operation::list_computation_model_data_binding_usages::ListComputationModelDataBindingUsagesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_computation_model_resolve_to_resources_output_output_next_token(
+    input: &crate::operation::list_computation_model_resolve_to_resources::ListComputationModelResolveToResourcesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_computation_models_output_output_next_token(
+    input: &crate::operation::list_computation_models::ListComputationModelsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_dashboards_output_output_next_token(
     input: &crate::operation::list_dashboards::ListDashboardsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -171,6 +201,16 @@ pub(crate) fn reflens_list_dashboards_output_output_next_token(
 
 pub(crate) fn reflens_list_datasets_output_output_next_token(
     input: &crate::operation::list_datasets::ListDatasetsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_executions_output_output_next_token(
+    input: &crate::operation::list_executions::ListExecutionsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -320,6 +360,27 @@ pub(crate) fn lens_list_composition_relationships_output_output_composition_rela
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_list_computation_model_data_binding_usages_output_output_data_binding_usage_summaries(
+    input: crate::operation::list_computation_model_data_binding_usages::ListComputationModelDataBindingUsagesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ComputationModelDataBindingUsageSummary>> {
+    let input = input.data_binding_usage_summaries;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_computation_model_resolve_to_resources_output_output_computation_model_resolve_to_resource_summaries(
+    input: crate::operation::list_computation_model_resolve_to_resources::ListComputationModelResolveToResourcesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ComputationModelResolveToResourceSummary>> {
+    let input = input.computation_model_resolve_to_resource_summaries;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_computation_models_output_output_computation_model_summaries(
+    input: crate::operation::list_computation_models::ListComputationModelsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ComputationModelSummary>> {
+    let input = input.computation_model_summaries;
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_dashboards_output_output_dashboard_summaries(
     input: crate::operation::list_dashboards::ListDashboardsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DashboardSummary>> {
@@ -331,6 +392,13 @@ pub(crate) fn lens_list_datasets_output_output_dataset_summaries(
     input: crate::operation::list_datasets::ListDatasetsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DatasetSummary>> {
     let input = input.dataset_summaries;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_executions_output_output_execution_summaries(
+    input: crate::operation::list_executions::ListExecutionsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ExecutionSummary>> {
+    let input = input.execution_summaries;
     ::std::option::Option::Some(input)
 }
 

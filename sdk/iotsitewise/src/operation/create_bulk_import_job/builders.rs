@@ -24,7 +24,15 @@ impl crate::operation::create_bulk_import_job::builders::CreateBulkImportJobInpu
 ///
 /// <p>Defines a job to ingest data to IoT SiteWise from Amazon S3. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/CreateBulkImportJob.html">Create a bulk import job (CLI)</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p><important>
 /// <p>Before you create a bulk import job, you must enable IoT SiteWise warm tier or IoT SiteWise cold tier. For more information about how to configure storage settings, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_PutStorageConfiguration.html">PutStorageConfiguration</a>.</p>
-/// <p>Bulk import is designed to store historical data to IoT SiteWise. It does not trigger computations or notifications on IoT SiteWise warm or cold tier storage.</p>
+/// <p>Bulk import is designed to store historical data to IoT SiteWise.</p>
+/// <ul>
+/// <li>
+/// <p>Newly ingested data in the hot tier triggers notifications and computations.</p></li>
+/// <li>
+/// <p>After data moves from the hot tier to the warm or cold tier based on retention settings, it does not trigger computations or notifications.</p></li>
+/// <li>
+/// <p>Data older than 7 days does not trigger computations or notifications.</p></li>
+/// </ul>
 /// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateBulkImportJobFluentBuilder {

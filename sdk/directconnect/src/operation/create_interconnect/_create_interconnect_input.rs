@@ -15,6 +15,8 @@ pub struct CreateInterconnectInput {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The name of the service provider associated with the interconnect.</p>
     pub provider_name: ::std::option::Option<::std::string::String>,
+    /// <p>Indicates whether you want the interconnect to support MAC Security (MACsec).</p>
+    pub request_mac_sec: ::std::option::Option<bool>,
 }
 impl CreateInterconnectInput {
     /// <p>The name of the interconnect.</p>
@@ -43,6 +45,10 @@ impl CreateInterconnectInput {
     pub fn provider_name(&self) -> ::std::option::Option<&str> {
         self.provider_name.as_deref()
     }
+    /// <p>Indicates whether you want the interconnect to support MAC Security (MACsec).</p>
+    pub fn request_mac_sec(&self) -> ::std::option::Option<bool> {
+        self.request_mac_sec
+    }
 }
 impl CreateInterconnectInput {
     /// Creates a new builder-style object to manufacture [`CreateInterconnectInput`](crate::operation::create_interconnect::CreateInterconnectInput).
@@ -61,6 +67,7 @@ pub struct CreateInterconnectInputBuilder {
     pub(crate) lag_id: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) provider_name: ::std::option::Option<::std::string::String>,
+    pub(crate) request_mac_sec: ::std::option::Option<bool>,
 }
 impl CreateInterconnectInputBuilder {
     /// <p>The name of the interconnect.</p>
@@ -156,6 +163,20 @@ impl CreateInterconnectInputBuilder {
     pub fn get_provider_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.provider_name
     }
+    /// <p>Indicates whether you want the interconnect to support MAC Security (MACsec).</p>
+    pub fn request_mac_sec(mut self, input: bool) -> Self {
+        self.request_mac_sec = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether you want the interconnect to support MAC Security (MACsec).</p>
+    pub fn set_request_mac_sec(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.request_mac_sec = input;
+        self
+    }
+    /// <p>Indicates whether you want the interconnect to support MAC Security (MACsec).</p>
+    pub fn get_request_mac_sec(&self) -> &::std::option::Option<bool> {
+        &self.request_mac_sec
+    }
     /// Consumes the builder and constructs a [`CreateInterconnectInput`](crate::operation::create_interconnect::CreateInterconnectInput).
     pub fn build(
         self,
@@ -167,6 +188,7 @@ impl CreateInterconnectInputBuilder {
             lag_id: self.lag_id,
             tags: self.tags,
             provider_name: self.provider_name,
+            request_mac_sec: self.request_mac_sec,
         })
     }
 }

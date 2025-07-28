@@ -5,6 +5,8 @@
 pub struct DescribeAssetOutput {
     /// <p>The ID of the asset, in UUID format.</p>
     pub asset_id: ::std::string::String,
+    /// <p>The external ID of the asset, if any.</p>
+    pub asset_external_id: ::std::option::Option<::std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p>
     /// <p><code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code></p>
     pub asset_arn: ::std::string::String,
@@ -29,8 +31,6 @@ pub struct DescribeAssetOutput {
     pub asset_description: ::std::option::Option<::std::string::String>,
     /// <p>The list of the immediate child custom composite model summaries for the asset.</p>
     pub asset_composite_model_summaries: ::std::option::Option<::std::vec::Vec<crate::types::AssetCompositeModelSummary>>,
-    /// <p>The external ID of the asset, if any.</p>
-    pub asset_external_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeAssetOutput {
@@ -38,6 +38,10 @@ impl DescribeAssetOutput {
     pub fn asset_id(&self) -> &str {
         use std::ops::Deref;
         self.asset_id.deref()
+    }
+    /// <p>The external ID of the asset, if any.</p>
+    pub fn asset_external_id(&self) -> ::std::option::Option<&str> {
+        self.asset_external_id.as_deref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p>
     /// <p><code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code></p>
@@ -94,10 +98,6 @@ impl DescribeAssetOutput {
     pub fn asset_composite_model_summaries(&self) -> &[crate::types::AssetCompositeModelSummary] {
         self.asset_composite_model_summaries.as_deref().unwrap_or_default()
     }
-    /// <p>The external ID of the asset, if any.</p>
-    pub fn asset_external_id(&self) -> ::std::option::Option<&str> {
-        self.asset_external_id.as_deref()
-    }
 }
 impl ::aws_types::request_id::RequestId for DescribeAssetOutput {
     fn request_id(&self) -> Option<&str> {
@@ -116,6 +116,7 @@ impl DescribeAssetOutput {
 #[non_exhaustive]
 pub struct DescribeAssetOutputBuilder {
     pub(crate) asset_id: ::std::option::Option<::std::string::String>,
+    pub(crate) asset_external_id: ::std::option::Option<::std::string::String>,
     pub(crate) asset_arn: ::std::option::Option<::std::string::String>,
     pub(crate) asset_name: ::std::option::Option<::std::string::String>,
     pub(crate) asset_model_id: ::std::option::Option<::std::string::String>,
@@ -127,7 +128,6 @@ pub struct DescribeAssetOutputBuilder {
     pub(crate) asset_status: ::std::option::Option<crate::types::AssetStatus>,
     pub(crate) asset_description: ::std::option::Option<::std::string::String>,
     pub(crate) asset_composite_model_summaries: ::std::option::Option<::std::vec::Vec<crate::types::AssetCompositeModelSummary>>,
-    pub(crate) asset_external_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeAssetOutputBuilder {
@@ -145,6 +145,20 @@ impl DescribeAssetOutputBuilder {
     /// <p>The ID of the asset, in UUID format.</p>
     pub fn get_asset_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.asset_id
+    }
+    /// <p>The external ID of the asset, if any.</p>
+    pub fn asset_external_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.asset_external_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The external ID of the asset, if any.</p>
+    pub fn set_asset_external_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.asset_external_id = input;
+        self
+    }
+    /// <p>The external ID of the asset, if any.</p>
+    pub fn get_asset_external_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.asset_external_id
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p>
     /// <p><code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code></p>
@@ -339,20 +353,6 @@ impl DescribeAssetOutputBuilder {
     pub fn get_asset_composite_model_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetCompositeModelSummary>> {
         &self.asset_composite_model_summaries
     }
-    /// <p>The external ID of the asset, if any.</p>
-    pub fn asset_external_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.asset_external_id = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The external ID of the asset, if any.</p>
-    pub fn set_asset_external_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.asset_external_id = input;
-        self
-    }
-    /// <p>The external ID of the asset, if any.</p>
-    pub fn get_asset_external_id(&self) -> &::std::option::Option<::std::string::String> {
-        &self.asset_external_id
-    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -382,6 +382,7 @@ impl DescribeAssetOutputBuilder {
                     "asset_id was not specified but it is required when building DescribeAssetOutput",
                 )
             })?,
+            asset_external_id: self.asset_external_id,
             asset_arn: self.asset_arn.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "asset_arn",
@@ -428,7 +429,6 @@ impl DescribeAssetOutputBuilder {
             asset_status: self.asset_status,
             asset_description: self.asset_description,
             asset_composite_model_summaries: self.asset_composite_model_summaries,
-            asset_external_id: self.asset_external_id,
             _request_id: self._request_id,
         })
     }

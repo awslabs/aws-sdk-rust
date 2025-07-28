@@ -21,6 +21,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "externalId" => {
+                            builder = builder.set_external_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "arn" => {
                             builder = builder.set_arn(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -62,13 +69,6 @@ where
                         }
                         "description" => {
                             builder = builder.set_description(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "externalId" => {
-                            builder = builder.set_external_id(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,

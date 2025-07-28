@@ -36,5 +36,8 @@ pub fn ser_update_pipeline_input_input(
     if let Some(var_9) = &input.pipeline_configuration_body {
         object.key("PipelineConfigurationBody").string(var_9.as_str());
     }
+    if let Some(var_10) = &input.pipeline_role_arn {
+        object.key("PipelineRoleArn").string(var_10.as_str());
+    }
     Ok(())
 }

@@ -50,6 +50,16 @@ pub struct CreateInterconnectOutput {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The name of the service provider associated with the interconnect.</p>
     pub provider_name: ::std::option::Option<::std::string::String>,
+    /// <p>Indicates whether the interconnect supports MAC Security (MACsec).</p>
+    pub mac_sec_capable: ::std::option::Option<bool>,
+    /// <p>The MAC Security (MACsec) port link status.</p>
+    /// <p>The valid values are <code>Encryption Up</code>, which means that there is an active Connection Key Name, or <code>Encryption Down</code>.</p>
+    pub port_encryption_status: ::std::option::Option<::std::string::String>,
+    /// <p>The MAC Security (MACsec) encryption mode.</p>
+    /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
+    pub encryption_mode: ::std::option::Option<::std::string::String>,
+    /// <p>The MAC Security (MACsec) security keys.</p>
+    pub mac_sec_keys: ::std::option::Option<::std::vec::Vec<crate::types::MacSecKey>>,
     _request_id: Option<String>,
 }
 impl CreateInterconnectOutput {
@@ -131,6 +141,26 @@ impl CreateInterconnectOutput {
     pub fn provider_name(&self) -> ::std::option::Option<&str> {
         self.provider_name.as_deref()
     }
+    /// <p>Indicates whether the interconnect supports MAC Security (MACsec).</p>
+    pub fn mac_sec_capable(&self) -> ::std::option::Option<bool> {
+        self.mac_sec_capable
+    }
+    /// <p>The MAC Security (MACsec) port link status.</p>
+    /// <p>The valid values are <code>Encryption Up</code>, which means that there is an active Connection Key Name, or <code>Encryption Down</code>.</p>
+    pub fn port_encryption_status(&self) -> ::std::option::Option<&str> {
+        self.port_encryption_status.as_deref()
+    }
+    /// <p>The MAC Security (MACsec) encryption mode.</p>
+    /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
+    pub fn encryption_mode(&self) -> ::std::option::Option<&str> {
+        self.encryption_mode.as_deref()
+    }
+    /// <p>The MAC Security (MACsec) security keys.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.mac_sec_keys.is_none()`.
+    pub fn mac_sec_keys(&self) -> &[crate::types::MacSecKey] {
+        self.mac_sec_keys.as_deref().unwrap_or_default()
+    }
 }
 impl ::aws_types::request_id::RequestId for CreateInterconnectOutput {
     fn request_id(&self) -> Option<&str> {
@@ -163,6 +193,10 @@ pub struct CreateInterconnectOutputBuilder {
     pub(crate) has_logical_redundancy: ::std::option::Option<crate::types::HasLogicalRedundancy>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) provider_name: ::std::option::Option<::std::string::String>,
+    pub(crate) mac_sec_capable: ::std::option::Option<bool>,
+    pub(crate) port_encryption_status: ::std::option::Option<::std::string::String>,
+    pub(crate) encryption_mode: ::std::option::Option<::std::string::String>,
+    pub(crate) mac_sec_keys: ::std::option::Option<::std::vec::Vec<crate::types::MacSecKey>>,
     _request_id: Option<String>,
 }
 impl CreateInterconnectOutputBuilder {
@@ -430,6 +464,74 @@ impl CreateInterconnectOutputBuilder {
     pub fn get_provider_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.provider_name
     }
+    /// <p>Indicates whether the interconnect supports MAC Security (MACsec).</p>
+    pub fn mac_sec_capable(mut self, input: bool) -> Self {
+        self.mac_sec_capable = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether the interconnect supports MAC Security (MACsec).</p>
+    pub fn set_mac_sec_capable(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.mac_sec_capable = input;
+        self
+    }
+    /// <p>Indicates whether the interconnect supports MAC Security (MACsec).</p>
+    pub fn get_mac_sec_capable(&self) -> &::std::option::Option<bool> {
+        &self.mac_sec_capable
+    }
+    /// <p>The MAC Security (MACsec) port link status.</p>
+    /// <p>The valid values are <code>Encryption Up</code>, which means that there is an active Connection Key Name, or <code>Encryption Down</code>.</p>
+    pub fn port_encryption_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.port_encryption_status = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The MAC Security (MACsec) port link status.</p>
+    /// <p>The valid values are <code>Encryption Up</code>, which means that there is an active Connection Key Name, or <code>Encryption Down</code>.</p>
+    pub fn set_port_encryption_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.port_encryption_status = input;
+        self
+    }
+    /// <p>The MAC Security (MACsec) port link status.</p>
+    /// <p>The valid values are <code>Encryption Up</code>, which means that there is an active Connection Key Name, or <code>Encryption Down</code>.</p>
+    pub fn get_port_encryption_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.port_encryption_status
+    }
+    /// <p>The MAC Security (MACsec) encryption mode.</p>
+    /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
+    pub fn encryption_mode(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.encryption_mode = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The MAC Security (MACsec) encryption mode.</p>
+    /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
+    pub fn set_encryption_mode(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.encryption_mode = input;
+        self
+    }
+    /// <p>The MAC Security (MACsec) encryption mode.</p>
+    /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
+    pub fn get_encryption_mode(&self) -> &::std::option::Option<::std::string::String> {
+        &self.encryption_mode
+    }
+    /// Appends an item to `mac_sec_keys`.
+    ///
+    /// To override the contents of this collection use [`set_mac_sec_keys`](Self::set_mac_sec_keys).
+    ///
+    /// <p>The MAC Security (MACsec) security keys.</p>
+    pub fn mac_sec_keys(mut self, input: crate::types::MacSecKey) -> Self {
+        let mut v = self.mac_sec_keys.unwrap_or_default();
+        v.push(input);
+        self.mac_sec_keys = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The MAC Security (MACsec) security keys.</p>
+    pub fn set_mac_sec_keys(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MacSecKey>>) -> Self {
+        self.mac_sec_keys = input;
+        self
+    }
+    /// <p>The MAC Security (MACsec) security keys.</p>
+    pub fn get_mac_sec_keys(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MacSecKey>> {
+        &self.mac_sec_keys
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -457,6 +559,10 @@ impl CreateInterconnectOutputBuilder {
             has_logical_redundancy: self.has_logical_redundancy,
             tags: self.tags,
             provider_name: self.provider_name,
+            mac_sec_capable: self.mac_sec_capable,
+            port_encryption_status: self.port_encryption_status,
+            encryption_mode: self.encryption_mode,
+            mac_sec_keys: self.mac_sec_keys,
             _request_id: self._request_id,
         }
     }

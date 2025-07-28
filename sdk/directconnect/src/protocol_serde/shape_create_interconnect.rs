@@ -225,6 +225,26 @@ pub(crate) fn de_create_interconnect(
                             .transpose()?,
                     );
                 }
+                "macSecCapable" => {
+                    builder = builder.set_mac_sec_capable(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                }
+                "portEncryptionStatus" => {
+                    builder = builder.set_port_encryption_status(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "encryptionMode" => {
+                    builder = builder.set_encryption_mode(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "macSecKeys" => {
+                    builder = builder.set_mac_sec_keys(crate::protocol_serde::shape_mac_sec_key_list::de_mac_sec_key_list(tokens)?);
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

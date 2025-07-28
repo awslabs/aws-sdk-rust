@@ -31,6 +31,9 @@ where
                         "targetResource" => {
                             builder = builder.set_target_resource(crate::protocol_serde::shape_target_resource::de_target_resource(tokens)?);
                         }
+                        "resolveTo" => {
+                            builder = builder.set_resolve_to(crate::protocol_serde::shape_resolve_to::de_resolve_to(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

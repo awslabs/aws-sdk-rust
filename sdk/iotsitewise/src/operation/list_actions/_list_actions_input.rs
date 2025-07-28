@@ -11,6 +11,10 @@ pub struct ListActionsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return for each paginated request.</p>
     pub max_results: ::std::option::Option<i32>,
+    /// <p>The type of the resolved resource.</p>
+    pub resolve_to_resource_type: ::std::option::Option<crate::types::ResolveToResourceType>,
+    /// <p>The ID of the resolved resource.</p>
+    pub resolve_to_resource_id: ::std::option::Option<::std::string::String>,
 }
 impl ListActionsInput {
     /// <p>The type of resource.</p>
@@ -29,6 +33,14 @@ impl ListActionsInput {
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
+    /// <p>The type of the resolved resource.</p>
+    pub fn resolve_to_resource_type(&self) -> ::std::option::Option<&crate::types::ResolveToResourceType> {
+        self.resolve_to_resource_type.as_ref()
+    }
+    /// <p>The ID of the resolved resource.</p>
+    pub fn resolve_to_resource_id(&self) -> ::std::option::Option<&str> {
+        self.resolve_to_resource_id.as_deref()
+    }
 }
 impl ListActionsInput {
     /// Creates a new builder-style object to manufacture [`ListActionsInput`](crate::operation::list_actions::ListActionsInput).
@@ -45,6 +57,8 @@ pub struct ListActionsInputBuilder {
     pub(crate) target_resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
+    pub(crate) resolve_to_resource_type: ::std::option::Option<crate::types::ResolveToResourceType>,
+    pub(crate) resolve_to_resource_id: ::std::option::Option<::std::string::String>,
 }
 impl ListActionsInputBuilder {
     /// <p>The type of resource.</p>
@@ -105,6 +119,34 @@ impl ListActionsInputBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
+    /// <p>The type of the resolved resource.</p>
+    pub fn resolve_to_resource_type(mut self, input: crate::types::ResolveToResourceType) -> Self {
+        self.resolve_to_resource_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of the resolved resource.</p>
+    pub fn set_resolve_to_resource_type(mut self, input: ::std::option::Option<crate::types::ResolveToResourceType>) -> Self {
+        self.resolve_to_resource_type = input;
+        self
+    }
+    /// <p>The type of the resolved resource.</p>
+    pub fn get_resolve_to_resource_type(&self) -> &::std::option::Option<crate::types::ResolveToResourceType> {
+        &self.resolve_to_resource_type
+    }
+    /// <p>The ID of the resolved resource.</p>
+    pub fn resolve_to_resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resolve_to_resource_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the resolved resource.</p>
+    pub fn set_resolve_to_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.resolve_to_resource_id = input;
+        self
+    }
+    /// <p>The ID of the resolved resource.</p>
+    pub fn get_resolve_to_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resolve_to_resource_id
+    }
     /// Consumes the builder and constructs a [`ListActionsInput`](crate::operation::list_actions::ListActionsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_actions::ListActionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_actions::ListActionsInput {
@@ -112,6 +154,8 @@ impl ListActionsInputBuilder {
             target_resource_id: self.target_resource_id,
             next_token: self.next_token,
             max_results: self.max_results,
+            resolve_to_resource_type: self.resolve_to_resource_type,
+            resolve_to_resource_id: self.resolve_to_resource_id,
         })
     }
 }

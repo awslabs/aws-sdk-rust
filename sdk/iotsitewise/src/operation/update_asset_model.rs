@@ -284,7 +284,7 @@ pub enum UpdateAssetModelError {
     InternalFailureException(crate::types::error::InternalFailureException),
     /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters. Check your request and try again.</p>
     InvalidRequestException(crate::types::error::InvalidRequestException),
-    /// <p>You've reached the limit for a resource. For example, this can occur if you're trying to associate more than the allowed number of child assets or attempting to create more than the allowed number of properties for an asset model.</p>
+    /// <p>You've reached the quota for a resource. For example, this can occur if you're trying to associate more than the allowed number of child assets or attempting to create more than the allowed number of properties for an asset model.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>The precondition in one or more of the request-header fields evaluated to <code>FALSE</code>.</p>

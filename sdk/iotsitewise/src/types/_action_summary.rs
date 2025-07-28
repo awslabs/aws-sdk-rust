@@ -10,6 +10,8 @@ pub struct ActionSummary {
     pub action_definition_id: ::std::option::Option<::std::string::String>,
     /// <p>The resource the action will be taken on.</p>
     pub target_resource: ::std::option::Option<crate::types::TargetResource>,
+    /// <p>The detailed resource this action resolves to.</p>
+    pub resolve_to: ::std::option::Option<crate::types::ResolveTo>,
 }
 impl ActionSummary {
     /// <p>The ID of the action.</p>
@@ -23,6 +25,10 @@ impl ActionSummary {
     /// <p>The resource the action will be taken on.</p>
     pub fn target_resource(&self) -> ::std::option::Option<&crate::types::TargetResource> {
         self.target_resource.as_ref()
+    }
+    /// <p>The detailed resource this action resolves to.</p>
+    pub fn resolve_to(&self) -> ::std::option::Option<&crate::types::ResolveTo> {
+        self.resolve_to.as_ref()
     }
 }
 impl ActionSummary {
@@ -39,6 +45,7 @@ pub struct ActionSummaryBuilder {
     pub(crate) action_id: ::std::option::Option<::std::string::String>,
     pub(crate) action_definition_id: ::std::option::Option<::std::string::String>,
     pub(crate) target_resource: ::std::option::Option<crate::types::TargetResource>,
+    pub(crate) resolve_to: ::std::option::Option<crate::types::ResolveTo>,
 }
 impl ActionSummaryBuilder {
     /// <p>The ID of the action.</p>
@@ -83,12 +90,27 @@ impl ActionSummaryBuilder {
     pub fn get_target_resource(&self) -> &::std::option::Option<crate::types::TargetResource> {
         &self.target_resource
     }
+    /// <p>The detailed resource this action resolves to.</p>
+    pub fn resolve_to(mut self, input: crate::types::ResolveTo) -> Self {
+        self.resolve_to = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The detailed resource this action resolves to.</p>
+    pub fn set_resolve_to(mut self, input: ::std::option::Option<crate::types::ResolveTo>) -> Self {
+        self.resolve_to = input;
+        self
+    }
+    /// <p>The detailed resource this action resolves to.</p>
+    pub fn get_resolve_to(&self) -> &::std::option::Option<crate::types::ResolveTo> {
+        &self.resolve_to
+    }
     /// Consumes the builder and constructs a [`ActionSummary`](crate::types::ActionSummary).
     pub fn build(self) -> crate::types::ActionSummary {
         crate::types::ActionSummary {
             action_id: self.action_id,
             action_definition_id: self.action_definition_id,
             target_resource: self.target_resource,
+            resolve_to: self.resolve_to,
         }
     }
 }

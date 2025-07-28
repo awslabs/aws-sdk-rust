@@ -39,23 +39,26 @@ pub fn ser_create_pipeline_input_input(
     if let Some(var_10) = &input.pipeline_name {
         object.key("PipelineName").string(var_10.as_str());
     }
-    if let Some(var_11) = &input.tags {
-        let mut array_12 = object.key("Tags").start_array();
-        for item_13 in var_11 {
+    if let Some(var_11) = &input.pipeline_role_arn {
+        object.key("PipelineRoleArn").string(var_11.as_str());
+    }
+    if let Some(var_12) = &input.tags {
+        let mut array_13 = object.key("Tags").start_array();
+        for item_14 in var_12 {
             {
                 #[allow(unused_mut)]
-                let mut object_14 = array_12.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_14, item_13)?;
-                object_14.finish();
+                let mut object_15 = array_13.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_15, item_14)?;
+                object_15.finish();
             }
         }
-        array_12.finish();
+        array_13.finish();
     }
-    if let Some(var_15) = &input.vpc_options {
+    if let Some(var_16) = &input.vpc_options {
         #[allow(unused_mut)]
-        let mut object_16 = object.key("VpcOptions").start_object();
-        crate::protocol_serde::shape_vpc_options::ser_vpc_options(&mut object_16, var_15)?;
-        object_16.finish();
+        let mut object_17 = object.key("VpcOptions").start_object();
+        crate::protocol_serde::shape_vpc_options::ser_vpc_options(&mut object_17, var_16)?;
+        object_17.finish();
     }
     Ok(())
 }

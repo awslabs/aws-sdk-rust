@@ -15,11 +15,17 @@ pub fn ser_execute_action_input_input(
     if let Some(var_4) = &input.client_token {
         object.key("clientToken").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.target_resource {
+    if let Some(var_5) = &input.resolve_to {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("targetResource").start_object();
-        crate::protocol_serde::shape_target_resource::ser_target_resource(&mut object_6, var_5)?;
+        let mut object_6 = object.key("resolveTo").start_object();
+        crate::protocol_serde::shape_resolve_to::ser_resolve_to(&mut object_6, var_5)?;
         object_6.finish();
+    }
+    if let Some(var_7) = &input.target_resource {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("targetResource").start_object();
+        crate::protocol_serde::shape_target_resource::ser_target_resource(&mut object_8, var_7)?;
+        object_8.finish();
     }
     Ok(())
 }

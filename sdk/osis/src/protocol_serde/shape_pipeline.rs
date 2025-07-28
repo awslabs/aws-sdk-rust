@@ -112,6 +112,13 @@ where
                         "Tags" => {
                             builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens)?);
                         }
+                        "PipelineRoleArn" => {
+                            builder = builder.set_pipeline_role_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

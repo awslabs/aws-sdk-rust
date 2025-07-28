@@ -8,7 +8,10 @@ pub struct GatewaySummary {
     pub gateway_id: ::std::string::String,
     /// <p>The name of the gateway.</p>
     pub gateway_name: ::std::string::String,
-    /// <p>Contains a gateway's platform information.</p>
+    /// <p>The gateway's platform configuration. You can only specify one platform type in a gateway.</p>
+    /// <p>(Legacy only) For Greengrass V1 gateways, specify the <code>greengrass</code> parameter with a valid Greengrass group ARN.</p>
+    /// <p>For Greengrass V2 gateways, specify the <code>greengrassV2</code> parameter with a valid core device thing name. If creating a V3 gateway (<code>gatewayVersion=3</code>), you must also specify the <code>coreDeviceOperatingSystem</code>.</p>
+    /// <p>For Siemens Industrial Edge gateways, specify the <code>siemensIE</code> parameter with a valid IoT Core thing name.</p>
     pub gateway_platform: ::std::option::Option<crate::types::GatewayPlatform>,
     /// <p>The version of the gateway. A value of <code>3</code> indicates an MQTT-enabled, V3 gateway, while <code>2</code> indicates a Classic streams, V2 gateway.</p>
     pub gateway_version: ::std::option::Option<::std::string::String>,
@@ -30,7 +33,10 @@ impl GatewaySummary {
         use std::ops::Deref;
         self.gateway_name.deref()
     }
-    /// <p>Contains a gateway's platform information.</p>
+    /// <p>The gateway's platform configuration. You can only specify one platform type in a gateway.</p>
+    /// <p>(Legacy only) For Greengrass V1 gateways, specify the <code>greengrass</code> parameter with a valid Greengrass group ARN.</p>
+    /// <p>For Greengrass V2 gateways, specify the <code>greengrassV2</code> parameter with a valid core device thing name. If creating a V3 gateway (<code>gatewayVersion=3</code>), you must also specify the <code>coreDeviceOperatingSystem</code>.</p>
+    /// <p>For Siemens Industrial Edge gateways, specify the <code>siemensIE</code> parameter with a valid IoT Core thing name.</p>
     pub fn gateway_platform(&self) -> ::std::option::Option<&crate::types::GatewayPlatform> {
         self.gateway_platform.as_ref()
     }
@@ -103,17 +109,26 @@ impl GatewaySummaryBuilder {
     pub fn get_gateway_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.gateway_name
     }
-    /// <p>Contains a gateway's platform information.</p>
+    /// <p>The gateway's platform configuration. You can only specify one platform type in a gateway.</p>
+    /// <p>(Legacy only) For Greengrass V1 gateways, specify the <code>greengrass</code> parameter with a valid Greengrass group ARN.</p>
+    /// <p>For Greengrass V2 gateways, specify the <code>greengrassV2</code> parameter with a valid core device thing name. If creating a V3 gateway (<code>gatewayVersion=3</code>), you must also specify the <code>coreDeviceOperatingSystem</code>.</p>
+    /// <p>For Siemens Industrial Edge gateways, specify the <code>siemensIE</code> parameter with a valid IoT Core thing name.</p>
     pub fn gateway_platform(mut self, input: crate::types::GatewayPlatform) -> Self {
         self.gateway_platform = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Contains a gateway's platform information.</p>
+    /// <p>The gateway's platform configuration. You can only specify one platform type in a gateway.</p>
+    /// <p>(Legacy only) For Greengrass V1 gateways, specify the <code>greengrass</code> parameter with a valid Greengrass group ARN.</p>
+    /// <p>For Greengrass V2 gateways, specify the <code>greengrassV2</code> parameter with a valid core device thing name. If creating a V3 gateway (<code>gatewayVersion=3</code>), you must also specify the <code>coreDeviceOperatingSystem</code>.</p>
+    /// <p>For Siemens Industrial Edge gateways, specify the <code>siemensIE</code> parameter with a valid IoT Core thing name.</p>
     pub fn set_gateway_platform(mut self, input: ::std::option::Option<crate::types::GatewayPlatform>) -> Self {
         self.gateway_platform = input;
         self
     }
-    /// <p>Contains a gateway's platform information.</p>
+    /// <p>The gateway's platform configuration. You can only specify one platform type in a gateway.</p>
+    /// <p>(Legacy only) For Greengrass V1 gateways, specify the <code>greengrass</code> parameter with a valid Greengrass group ARN.</p>
+    /// <p>For Greengrass V2 gateways, specify the <code>greengrassV2</code> parameter with a valid core device thing name. If creating a V3 gateway (<code>gatewayVersion=3</code>), you must also specify the <code>coreDeviceOperatingSystem</code>.</p>
+    /// <p>For Siemens Industrial Edge gateways, specify the <code>siemensIE</code> parameter with a valid IoT Core thing name.</p>
     pub fn get_gateway_platform(&self) -> &::std::option::Option<crate::types::GatewayPlatform> {
         &self.gateway_platform
     }

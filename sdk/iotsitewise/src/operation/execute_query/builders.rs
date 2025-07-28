@@ -136,17 +136,41 @@ impl ExecuteQueryFluentBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// <p>The maximum number of results to return at one time. The default is 25.</p>
+    /// <p>The maximum number of results to return at one time.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Minimum is 1</p></li>
+    /// <li>
+    /// <p>Maximum is 20000</p></li>
+    /// <li>
+    /// <p>Default is 250</p></li>
+    /// </ul>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>The maximum number of results to return at one time. The default is 25.</p>
+    /// <p>The maximum number of results to return at one time.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Minimum is 1</p></li>
+    /// <li>
+    /// <p>Maximum is 20000</p></li>
+    /// <li>
+    /// <p>Default is 250</p></li>
+    /// </ul>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>The maximum number of results to return at one time. The default is 25.</p>
+    /// <p>The maximum number of results to return at one time.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Minimum is 1</p></li>
+    /// <li>
+    /// <p>Maximum is 20000</p></li>
+    /// <li>
+    /// <p>Default is 250</p></li>
+    /// </ul>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }

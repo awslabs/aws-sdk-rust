@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateConnectionInput {
-    /// <p>The ID of the dedicated connection.</p>
+    /// <p>The ID of the connection.</p>
     /// <p>You can use <code>DescribeConnections</code> to retrieve the connection ID.</p>
     pub connection_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the connection.</p>
@@ -13,7 +13,7 @@ pub struct UpdateConnectionInput {
     pub encryption_mode: ::std::option::Option<::std::string::String>,
 }
 impl UpdateConnectionInput {
-    /// <p>The ID of the dedicated connection.</p>
+    /// <p>The ID of the connection.</p>
     /// <p>You can use <code>DescribeConnections</code> to retrieve the connection ID.</p>
     pub fn connection_id(&self) -> ::std::option::Option<&str> {
         self.connection_id.as_deref()
@@ -44,20 +44,20 @@ pub struct UpdateConnectionInputBuilder {
     pub(crate) encryption_mode: ::std::option::Option<::std::string::String>,
 }
 impl UpdateConnectionInputBuilder {
-    /// <p>The ID of the dedicated connection.</p>
+    /// <p>The ID of the connection.</p>
     /// <p>You can use <code>DescribeConnections</code> to retrieve the connection ID.</p>
     /// This field is required.
     pub fn connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the dedicated connection.</p>
+    /// <p>The ID of the connection.</p>
     /// <p>You can use <code>DescribeConnections</code> to retrieve the connection ID.</p>
     pub fn set_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connection_id = input;
         self
     }
-    /// <p>The ID of the dedicated connection.</p>
+    /// <p>The ID of the connection.</p>
     /// <p>You can use <code>DescribeConnections</code> to retrieve the connection ID.</p>
     pub fn get_connection_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.connection_id

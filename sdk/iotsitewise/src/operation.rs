@@ -40,6 +40,9 @@ pub mod create_asset_model_composite_model;
 /// Types for the `CreateBulkImportJob` operation.
 pub mod create_bulk_import_job;
 
+/// Types for the `CreateComputationModel` operation.
+pub mod create_computation_model;
+
 /// Types for the `CreateDashboard` operation.
 pub mod create_dashboard;
 
@@ -66,6 +69,9 @@ pub mod delete_asset_model;
 
 /// Types for the `DeleteAssetModelCompositeModel` operation.
 pub mod delete_asset_model_composite_model;
+
+/// Types for the `DeleteComputationModel` operation.
+pub mod delete_computation_model;
 
 /// Types for the `DeleteDashboard` operation.
 pub mod delete_dashboard;
@@ -109,6 +115,12 @@ pub mod describe_asset_property;
 /// Types for the `DescribeBulkImportJob` operation.
 pub mod describe_bulk_import_job;
 
+/// Types for the `DescribeComputationModel` operation.
+pub mod describe_computation_model;
+
+/// Types for the `DescribeComputationModelExecutionSummary` operation.
+pub mod describe_computation_model_execution_summary;
+
 /// Types for the `DescribeDashboard` operation.
 pub mod describe_dashboard;
 
@@ -117,6 +129,9 @@ pub mod describe_dataset;
 
 /// Types for the `DescribeDefaultEncryptionConfiguration` operation.
 pub mod describe_default_encryption_configuration;
+
+/// Types for the `DescribeExecution` operation.
+pub mod describe_execution;
 
 /// Types for the `DescribeGateway` operation.
 pub mod describe_gateway;
@@ -199,11 +214,23 @@ pub mod list_bulk_import_jobs;
 /// Types for the `ListCompositionRelationships` operation.
 pub mod list_composition_relationships;
 
+/// Types for the `ListComputationModelDataBindingUsages` operation.
+pub mod list_computation_model_data_binding_usages;
+
+/// Types for the `ListComputationModelResolveToResources` operation.
+pub mod list_computation_model_resolve_to_resources;
+
+/// Types for the `ListComputationModels` operation.
+pub mod list_computation_models;
+
 /// Types for the `ListDashboards` operation.
 pub mod list_dashboards;
 
 /// Types for the `ListDatasets` operation.
 pub mod list_datasets;
+
+/// Types for the `ListExecutions` operation.
+pub mod list_executions;
 
 /// Types for the `ListGateways` operation.
 pub mod list_gateways;
@@ -252,6 +279,9 @@ pub mod update_asset_model_composite_model;
 
 /// Types for the `UpdateAssetProperty` operation.
 pub mod update_asset_property;
+
+/// Types for the `UpdateComputationModel` operation.
+pub mod update_computation_model;
 
 /// Types for the `UpdateDashboard` operation.
 pub mod update_dashboard;

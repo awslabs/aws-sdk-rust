@@ -136,6 +136,34 @@ impl CreateAssetFluentBuilder {
     pub fn get_asset_model_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_asset_model_id()
     }
+    /// <p>The ID to assign to the asset, if desired. IoT SiteWise automatically generates a unique ID for you, so this parameter is never required. However, if you prefer to supply your own ID instead, you can specify it here in UUID format. If you specify your own ID, it must be globally unique.</p>
+    pub fn asset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.asset_id(input.into());
+        self
+    }
+    /// <p>The ID to assign to the asset, if desired. IoT SiteWise automatically generates a unique ID for you, so this parameter is never required. However, if you prefer to supply your own ID instead, you can specify it here in UUID format. If you specify your own ID, it must be globally unique.</p>
+    pub fn set_asset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_asset_id(input);
+        self
+    }
+    /// <p>The ID to assign to the asset, if desired. IoT SiteWise automatically generates a unique ID for you, so this parameter is never required. However, if you prefer to supply your own ID instead, you can specify it here in UUID format. If you specify your own ID, it must be globally unique.</p>
+    pub fn get_asset_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_asset_id()
+    }
+    /// <p>An external ID to assign to the asset. The external ID must be unique within your Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn asset_external_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.asset_external_id(input.into());
+        self
+    }
+    /// <p>An external ID to assign to the asset. The external ID must be unique within your Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn set_asset_external_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_asset_external_id(input);
+        self
+    }
+    /// <p>An external ID to assign to the asset. The external ID must be unique within your Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn get_asset_external_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_asset_external_id()
+    }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -182,33 +210,5 @@ impl CreateAssetFluentBuilder {
     /// <p>A description for the asset.</p>
     pub fn get_asset_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_asset_description()
-    }
-    /// <p>The ID to assign to the asset, if desired. IoT SiteWise automatically generates a unique ID for you, so this parameter is never required. However, if you prefer to supply your own ID instead, you can specify it here in UUID format. If you specify your own ID, it must be globally unique.</p>
-    pub fn asset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.asset_id(input.into());
-        self
-    }
-    /// <p>The ID to assign to the asset, if desired. IoT SiteWise automatically generates a unique ID for you, so this parameter is never required. However, if you prefer to supply your own ID instead, you can specify it here in UUID format. If you specify your own ID, it must be globally unique.</p>
-    pub fn set_asset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_asset_id(input);
-        self
-    }
-    /// <p>The ID to assign to the asset, if desired. IoT SiteWise automatically generates a unique ID for you, so this parameter is never required. However, if you prefer to supply your own ID instead, you can specify it here in UUID format. If you specify your own ID, it must be globally unique.</p>
-    pub fn get_asset_id(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_asset_id()
-    }
-    /// <p>An external ID to assign to the asset. The external ID must be unique within your Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn asset_external_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.asset_external_id(input.into());
-        self
-    }
-    /// <p>An external ID to assign to the asset. The external ID must be unique within your Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn set_asset_external_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_asset_external_id(input);
-        self
-    }
-    /// <p>An external ID to assign to the asset. The external ID must be unique within your Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn get_asset_external_id(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_asset_external_id()
     }
 }

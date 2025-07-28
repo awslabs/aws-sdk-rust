@@ -40,6 +40,8 @@ pub struct Pipeline {
     pub destinations: ::std::option::Option<::std::vec::Vec<crate::types::PipelineDestination>>,
     /// <p>A list of tags associated with the given pipeline.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that provides the required permissions for a pipeline to read from the source and write to the sink.</p>
+    pub pipeline_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl Pipeline {
     /// <p>The name of the pipeline.</p>
@@ -124,6 +126,10 @@ impl Pipeline {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that provides the required permissions for a pipeline to read from the source and write to the sink.</p>
+    pub fn pipeline_role_arn(&self) -> ::std::option::Option<&str> {
+        self.pipeline_role_arn.as_deref()
+    }
 }
 impl Pipeline {
     /// Creates a new builder-style object to manufacture [`Pipeline`](crate::types::Pipeline).
@@ -154,6 +160,7 @@ pub struct PipelineBuilder {
     pub(crate) service_vpc_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::ServiceVpcEndpoint>>,
     pub(crate) destinations: ::std::option::Option<::std::vec::Vec<crate::types::PipelineDestination>>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) pipeline_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl PipelineBuilder {
     /// <p>The name of the pipeline.</p>
@@ -438,6 +445,20 @@ impl PipelineBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that provides the required permissions for a pipeline to read from the source and write to the sink.</p>
+    pub fn pipeline_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.pipeline_role_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that provides the required permissions for a pipeline to read from the source and write to the sink.</p>
+    pub fn set_pipeline_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.pipeline_role_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that provides the required permissions for a pipeline to read from the source and write to the sink.</p>
+    pub fn get_pipeline_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_role_arn
+    }
     /// Consumes the builder and constructs a [`Pipeline`](crate::types::Pipeline).
     pub fn build(self) -> crate::types::Pipeline {
         crate::types::Pipeline {
@@ -459,6 +480,7 @@ impl PipelineBuilder {
             service_vpc_endpoints: self.service_vpc_endpoints,
             destinations: self.destinations,
             tags: self.tags,
+            pipeline_role_arn: self.pipeline_role_arn,
         }
     }
 }

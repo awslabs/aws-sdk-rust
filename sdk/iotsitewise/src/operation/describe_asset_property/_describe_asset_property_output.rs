@@ -5,6 +5,8 @@
 pub struct DescribeAssetPropertyOutput {
     /// <p>The ID of the asset, in UUID format.</p>
     pub asset_id: ::std::string::String,
+    /// <p>The external ID of the asset. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub asset_external_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the asset.</p>
     pub asset_name: ::std::string::String,
     /// <p>The ID of the asset model, in UUID format.</p>
@@ -14,8 +16,6 @@ pub struct DescribeAssetPropertyOutput {
     pub asset_property: ::std::option::Option<crate::types::Property>,
     /// <p>The composite model that declares this asset property, if this asset property exists in a composite model.</p>
     pub composite_model: ::std::option::Option<crate::types::CompositeModelProperty>,
-    /// <p>The external ID of the asset. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub asset_external_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeAssetPropertyOutput {
@@ -23,6 +23,10 @@ impl DescribeAssetPropertyOutput {
     pub fn asset_id(&self) -> &str {
         use std::ops::Deref;
         self.asset_id.deref()
+    }
+    /// <p>The external ID of the asset. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn asset_external_id(&self) -> ::std::option::Option<&str> {
+        self.asset_external_id.as_deref()
     }
     /// <p>The name of the asset.</p>
     pub fn asset_name(&self) -> &str {
@@ -43,10 +47,6 @@ impl DescribeAssetPropertyOutput {
     pub fn composite_model(&self) -> ::std::option::Option<&crate::types::CompositeModelProperty> {
         self.composite_model.as_ref()
     }
-    /// <p>The external ID of the asset. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn asset_external_id(&self) -> ::std::option::Option<&str> {
-        self.asset_external_id.as_deref()
-    }
 }
 impl ::aws_types::request_id::RequestId for DescribeAssetPropertyOutput {
     fn request_id(&self) -> Option<&str> {
@@ -65,11 +65,11 @@ impl DescribeAssetPropertyOutput {
 #[non_exhaustive]
 pub struct DescribeAssetPropertyOutputBuilder {
     pub(crate) asset_id: ::std::option::Option<::std::string::String>,
+    pub(crate) asset_external_id: ::std::option::Option<::std::string::String>,
     pub(crate) asset_name: ::std::option::Option<::std::string::String>,
     pub(crate) asset_model_id: ::std::option::Option<::std::string::String>,
     pub(crate) asset_property: ::std::option::Option<crate::types::Property>,
     pub(crate) composite_model: ::std::option::Option<crate::types::CompositeModelProperty>,
-    pub(crate) asset_external_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeAssetPropertyOutputBuilder {
@@ -87,6 +87,20 @@ impl DescribeAssetPropertyOutputBuilder {
     /// <p>The ID of the asset, in UUID format.</p>
     pub fn get_asset_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.asset_id
+    }
+    /// <p>The external ID of the asset. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn asset_external_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.asset_external_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The external ID of the asset. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn set_asset_external_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.asset_external_id = input;
+        self
+    }
+    /// <p>The external ID of the asset. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn get_asset_external_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.asset_external_id
     }
     /// <p>The name of the asset.</p>
     /// This field is required.
@@ -149,20 +163,6 @@ impl DescribeAssetPropertyOutputBuilder {
     pub fn get_composite_model(&self) -> &::std::option::Option<crate::types::CompositeModelProperty> {
         &self.composite_model
     }
-    /// <p>The external ID of the asset. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn asset_external_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.asset_external_id = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The external ID of the asset. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn set_asset_external_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.asset_external_id = input;
-        self
-    }
-    /// <p>The external ID of the asset. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn get_asset_external_id(&self) -> &::std::option::Option<::std::string::String> {
-        &self.asset_external_id
-    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -188,6 +188,7 @@ impl DescribeAssetPropertyOutputBuilder {
                     "asset_id was not specified but it is required when building DescribeAssetPropertyOutput",
                 )
             })?,
+            asset_external_id: self.asset_external_id,
             asset_name: self.asset_name.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "asset_name",
@@ -202,7 +203,6 @@ impl DescribeAssetPropertyOutputBuilder {
             })?,
             asset_property: self.asset_property,
             composite_model: self.composite_model,
-            asset_external_id: self.asset_external_id,
             _request_id: self._request_id,
         })
     }

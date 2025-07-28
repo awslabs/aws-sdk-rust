@@ -5,7 +5,7 @@
 pub struct DescribeGatewayCapabilityConfigurationInput {
     /// <p>The ID of the gateway that defines the capability configuration.</p>
     pub gateway_id: ::std::option::Option<::std::string::String>,
-    /// <p>The namespace of the capability configuration. For example, if you configure OPC-UA sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as <code>1</code>.</p>
+    /// <p>The namespace of the capability configuration. For example, if you configure OPC UA sources for an MQTT-enabled gateway, your OPC-UA capability configuration has the namespace <code>iotsitewise:opcuacollector:3</code>.</p>
     pub capability_namespace: ::std::option::Option<::std::string::String>,
 }
 impl DescribeGatewayCapabilityConfigurationInput {
@@ -13,7 +13,7 @@ impl DescribeGatewayCapabilityConfigurationInput {
     pub fn gateway_id(&self) -> ::std::option::Option<&str> {
         self.gateway_id.as_deref()
     }
-    /// <p>The namespace of the capability configuration. For example, if you configure OPC-UA sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as <code>1</code>.</p>
+    /// <p>The namespace of the capability configuration. For example, if you configure OPC UA sources for an MQTT-enabled gateway, your OPC-UA capability configuration has the namespace <code>iotsitewise:opcuacollector:3</code>.</p>
     pub fn capability_namespace(&self) -> ::std::option::Option<&str> {
         self.capability_namespace.as_deref()
     }
@@ -48,18 +48,18 @@ impl DescribeGatewayCapabilityConfigurationInputBuilder {
     pub fn get_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.gateway_id
     }
-    /// <p>The namespace of the capability configuration. For example, if you configure OPC-UA sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as <code>1</code>.</p>
+    /// <p>The namespace of the capability configuration. For example, if you configure OPC UA sources for an MQTT-enabled gateway, your OPC-UA capability configuration has the namespace <code>iotsitewise:opcuacollector:3</code>.</p>
     /// This field is required.
     pub fn capability_namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.capability_namespace = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The namespace of the capability configuration. For example, if you configure OPC-UA sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as <code>1</code>.</p>
+    /// <p>The namespace of the capability configuration. For example, if you configure OPC UA sources for an MQTT-enabled gateway, your OPC-UA capability configuration has the namespace <code>iotsitewise:opcuacollector:3</code>.</p>
     pub fn set_capability_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.capability_namespace = input;
         self
     }
-    /// <p>The namespace of the capability configuration. For example, if you configure OPC-UA sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as <code>1</code>.</p>
+    /// <p>The namespace of the capability configuration. For example, if you configure OPC UA sources for an MQTT-enabled gateway, your OPC-UA capability configuration has the namespace <code>iotsitewise:opcuacollector:3</code>.</p>
     pub fn get_capability_namespace(&self) -> &::std::option::Option<::std::string::String> {
         &self.capability_namespace
     }

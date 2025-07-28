@@ -202,4 +202,18 @@ impl CreateInterconnectFluentBuilder {
     pub fn get_provider_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_provider_name()
     }
+    /// <p>Indicates whether you want the interconnect to support MAC Security (MACsec).</p>
+    pub fn request_mac_sec(mut self, input: bool) -> Self {
+        self.inner = self.inner.request_mac_sec(input);
+        self
+    }
+    /// <p>Indicates whether you want the interconnect to support MAC Security (MACsec).</p>
+    pub fn set_request_mac_sec(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_request_mac_sec(input);
+        self
+    }
+    /// <p>Indicates whether you want the interconnect to support MAC Security (MACsec).</p>
+    pub fn get_request_mac_sec(&self) -> &::std::option::Option<bool> {
+        self.inner.get_request_mac_sec()
+    }
 }

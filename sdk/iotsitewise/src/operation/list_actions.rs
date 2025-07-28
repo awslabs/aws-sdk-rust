@@ -219,6 +219,16 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListActionsR
                         query.push_kv("maxResults", ::aws_smithy_types::primitive::Encoder::from(*inner_4).encode());
                     }
                 }
+                if let ::std::option::Option::Some(inner_5) = &_input.resolve_to_resource_type {
+                    {
+                        query.push_kv("resolveToResourceType", &::aws_smithy_http::query::fmt_string(inner_5));
+                    }
+                }
+                if let ::std::option::Option::Some(inner_6) = &_input.resolve_to_resource_id {
+                    {
+                        query.push_kv("resolveToResourceId", &::aws_smithy_http::query::fmt_string(inner_6));
+                    }
+                }
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

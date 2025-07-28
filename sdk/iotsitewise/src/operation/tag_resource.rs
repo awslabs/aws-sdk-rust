@@ -284,7 +284,7 @@ pub enum TagResourceError {
     InternalFailureException(crate::types::error::InternalFailureException),
     /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters. Check your request and try again.</p>
     InvalidRequestException(crate::types::error::InvalidRequestException),
-    /// <p>You've reached the limit for a resource. For example, this can occur if you're trying to associate more than the allowed number of child assets or attempting to create more than the allowed number of properties for an asset model.</p>
+    /// <p>You've reached the quota for a resource. For example, this can occur if you're trying to associate more than the allowed number of child assets or attempting to create more than the allowed number of properties for an asset model.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>The requested resource can't be found.</p>
@@ -292,7 +292,7 @@ pub enum TagResourceError {
     /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
-    /// <p>You've reached the limit for the number of tags allowed for a resource. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html#tag-conventions">Tag naming limits and requirements</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>You've reached the quota for the number of tags allowed for a resource. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html#tag-conventions">Tag naming limits and requirements</a> in the <i>Amazon Web Services General Reference</i>.</p>
     TooManyTagsException(crate::types::error::TooManyTagsException),
     /// <p>You are not authorized.</p>
     UnauthorizedException(crate::types::error::UnauthorizedException),

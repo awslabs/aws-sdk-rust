@@ -17,6 +17,8 @@ pub struct UpdatePipelineInput {
     pub buffer_options: ::std::option::Option<crate::types::BufferOptions>,
     /// <p>Key-value pairs to configure encryption for data that is written to a persistent buffer.</p>
     pub encryption_at_rest_options: ::std::option::Option<crate::types::EncryptionAtRestOptions>,
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that provides the required permissions for a pipeline to read from the source and write to the sink. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/pipeline-security-overview.html">Setting up roles and users in Amazon OpenSearch Ingestion</a>.</p>
+    pub pipeline_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl UpdatePipelineInput {
     /// <p>The name of the pipeline to update.</p>
@@ -47,6 +49,10 @@ impl UpdatePipelineInput {
     pub fn encryption_at_rest_options(&self) -> ::std::option::Option<&crate::types::EncryptionAtRestOptions> {
         self.encryption_at_rest_options.as_ref()
     }
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that provides the required permissions for a pipeline to read from the source and write to the sink. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/pipeline-security-overview.html">Setting up roles and users in Amazon OpenSearch Ingestion</a>.</p>
+    pub fn pipeline_role_arn(&self) -> ::std::option::Option<&str> {
+        self.pipeline_role_arn.as_deref()
+    }
 }
 impl UpdatePipelineInput {
     /// Creates a new builder-style object to manufacture [`UpdatePipelineInput`](crate::operation::update_pipeline::UpdatePipelineInput).
@@ -66,6 +72,7 @@ pub struct UpdatePipelineInputBuilder {
     pub(crate) log_publishing_options: ::std::option::Option<crate::types::LogPublishingOptions>,
     pub(crate) buffer_options: ::std::option::Option<crate::types::BufferOptions>,
     pub(crate) encryption_at_rest_options: ::std::option::Option<crate::types::EncryptionAtRestOptions>,
+    pub(crate) pipeline_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl UpdatePipelineInputBuilder {
     /// <p>The name of the pipeline to update.</p>
@@ -167,6 +174,20 @@ impl UpdatePipelineInputBuilder {
     pub fn get_encryption_at_rest_options(&self) -> &::std::option::Option<crate::types::EncryptionAtRestOptions> {
         &self.encryption_at_rest_options
     }
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that provides the required permissions for a pipeline to read from the source and write to the sink. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/pipeline-security-overview.html">Setting up roles and users in Amazon OpenSearch Ingestion</a>.</p>
+    pub fn pipeline_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.pipeline_role_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that provides the required permissions for a pipeline to read from the source and write to the sink. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/pipeline-security-overview.html">Setting up roles and users in Amazon OpenSearch Ingestion</a>.</p>
+    pub fn set_pipeline_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.pipeline_role_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that provides the required permissions for a pipeline to read from the source and write to the sink. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/pipeline-security-overview.html">Setting up roles and users in Amazon OpenSearch Ingestion</a>.</p>
+    pub fn get_pipeline_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_role_arn
+    }
     /// Consumes the builder and constructs a [`UpdatePipelineInput`](crate::operation::update_pipeline::UpdatePipelineInput).
     pub fn build(
         self,
@@ -179,6 +200,7 @@ impl UpdatePipelineInputBuilder {
             log_publishing_options: self.log_publishing_options,
             buffer_options: self.buffer_options,
             encryption_at_rest_options: self.encryption_at_rest_options,
+            pipeline_role_arn: self.pipeline_role_arn,
         })
     }
 }

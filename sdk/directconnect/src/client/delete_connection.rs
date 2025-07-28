@@ -27,6 +27,7 @@ impl super::Client {
     ///   - [`port_encryption_status(Option<String>)`](crate::operation::delete_connection::DeleteConnectionOutput::port_encryption_status): <p>The MAC Security (MACsec) port link status of the connection.</p> <p>The valid values are <code>Encryption Up</code>, which means that there is an active Connection Key Name, or <code>Encryption Down</code>.</p>
     ///   - [`encryption_mode(Option<String>)`](crate::operation::delete_connection::DeleteConnectionOutput::encryption_mode): <p>The MAC Security (MACsec) connection encryption mode.</p> <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
     ///   - [`mac_sec_keys(Option<Vec::<MacSecKey>>)`](crate::operation::delete_connection::DeleteConnectionOutput::mac_sec_keys): <p>The MAC Security (MACsec) security keys associated with the connection.</p>
+    ///   - [`partner_interconnect_mac_sec_capable(Option<bool>)`](crate::operation::delete_connection::DeleteConnectionOutput::partner_interconnect_mac_sec_capable): <p>Indicates whether the interconnect hosting this connection supports MAC Security (MACsec).</p>
     /// - On failure, responds with [`SdkError<DeleteConnectionError>`](crate::operation::delete_connection::DeleteConnectionError)
     pub fn delete_connection(&self) -> crate::operation::delete_connection::builders::DeleteConnectionFluentBuilder {
         crate::operation::delete_connection::builders::DeleteConnectionFluentBuilder::new(self.handle.clone())

@@ -70,6 +70,8 @@ pub struct Connection {
     pub encryption_mode: ::std::option::Option<::std::string::String>,
     /// <p>The MAC Security (MACsec) security keys associated with the connection.</p>
     pub mac_sec_keys: ::std::option::Option<::std::vec::Vec<crate::types::MacSecKey>>,
+    /// <p>Indicates whether the interconnect hosting this connection supports MAC Security (MACsec).</p>
+    pub partner_interconnect_mac_sec_capable: ::std::option::Option<bool>,
 }
 impl Connection {
     /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
@@ -186,6 +188,10 @@ impl Connection {
     pub fn mac_sec_keys(&self) -> &[crate::types::MacSecKey] {
         self.mac_sec_keys.as_deref().unwrap_or_default()
     }
+    /// <p>Indicates whether the interconnect hosting this connection supports MAC Security (MACsec).</p>
+    pub fn partner_interconnect_mac_sec_capable(&self) -> ::std::option::Option<bool> {
+        self.partner_interconnect_mac_sec_capable
+    }
 }
 impl Connection {
     /// Creates a new builder-style object to manufacture [`Connection`](crate::types::Connection).
@@ -220,6 +226,7 @@ pub struct ConnectionBuilder {
     pub(crate) port_encryption_status: ::std::option::Option<::std::string::String>,
     pub(crate) encryption_mode: ::std::option::Option<::std::string::String>,
     pub(crate) mac_sec_keys: ::std::option::Option<::std::vec::Vec<crate::types::MacSecKey>>,
+    pub(crate) partner_interconnect_mac_sec_capable: ::std::option::Option<bool>,
 }
 impl ConnectionBuilder {
     /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
@@ -608,6 +615,20 @@ impl ConnectionBuilder {
     pub fn get_mac_sec_keys(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MacSecKey>> {
         &self.mac_sec_keys
     }
+    /// <p>Indicates whether the interconnect hosting this connection supports MAC Security (MACsec).</p>
+    pub fn partner_interconnect_mac_sec_capable(mut self, input: bool) -> Self {
+        self.partner_interconnect_mac_sec_capable = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether the interconnect hosting this connection supports MAC Security (MACsec).</p>
+    pub fn set_partner_interconnect_mac_sec_capable(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.partner_interconnect_mac_sec_capable = input;
+        self
+    }
+    /// <p>Indicates whether the interconnect hosting this connection supports MAC Security (MACsec).</p>
+    pub fn get_partner_interconnect_mac_sec_capable(&self) -> &::std::option::Option<bool> {
+        &self.partner_interconnect_mac_sec_capable
+    }
     /// Consumes the builder and constructs a [`Connection`](crate::types::Connection).
     pub fn build(self) -> crate::types::Connection {
         crate::types::Connection {
@@ -633,6 +654,7 @@ impl ConnectionBuilder {
             port_encryption_status: self.port_encryption_status,
             encryption_mode: self.encryption_mode,
             mac_sec_keys: self.mac_sec_keys,
+            partner_interconnect_mac_sec_capable: self.partner_interconnect_mac_sec_capable,
         }
     }
 }

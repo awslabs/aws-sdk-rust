@@ -233,6 +233,24 @@ pub(crate) fn create_bulk_import_job_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_computation_model_output_output_correct_errors(
+    mut builder: crate::operation::create_computation_model::builders::CreateComputationModelOutputBuilder,
+) -> crate::operation::create_computation_model::builders::CreateComputationModelOutputBuilder {
+    if builder.computation_model_id.is_none() {
+        builder.computation_model_id = Some(Default::default())
+    }
+    if builder.computation_model_arn.is_none() {
+        builder.computation_model_arn = Some(Default::default())
+    }
+    if builder.computation_model_status.is_none() {
+        builder.computation_model_status = {
+            let builder = crate::types::builders::ComputationModelStatusBuilder::default();
+            crate::serde_util::computation_model_status_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn create_dashboard_output_output_correct_errors(
     mut builder: crate::operation::create_dashboard::builders::CreateDashboardOutputBuilder,
 ) -> crate::operation::create_dashboard::builders::CreateDashboardOutputBuilder {
@@ -347,6 +365,18 @@ pub(crate) fn delete_asset_model_composite_model_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn delete_computation_model_output_output_correct_errors(
+    mut builder: crate::operation::delete_computation_model::builders::DeleteComputationModelOutputBuilder,
+) -> crate::operation::delete_computation_model::builders::DeleteComputationModelOutputBuilder {
+    if builder.computation_model_status.is_none() {
+        builder.computation_model_status = {
+            let builder = crate::types::builders::ComputationModelStatusBuilder::default();
+            crate::serde_util::computation_model_status_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn delete_dataset_output_output_correct_errors(
     mut builder: crate::operation::delete_dataset::builders::DeleteDatasetOutputBuilder,
 ) -> crate::operation::delete_dataset::builders::DeleteDatasetOutputBuilder {
@@ -413,7 +443,7 @@ pub(crate) fn describe_action_output_output_correct_errors(
     if builder.target_resource.is_none() {
         builder.target_resource = {
             let builder = crate::types::builders::TargetResourceBuilder::default();
-            crate::serde_util::target_resource_correct_errors(builder).build().ok()
+            Some(builder.build())
         }
     }
     if builder.action_definition_id.is_none() {
@@ -617,6 +647,60 @@ pub(crate) fn describe_bulk_import_job_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn describe_computation_model_output_output_correct_errors(
+    mut builder: crate::operation::describe_computation_model::builders::DescribeComputationModelOutputBuilder,
+) -> crate::operation::describe_computation_model::builders::DescribeComputationModelOutputBuilder {
+    if builder.computation_model_id.is_none() {
+        builder.computation_model_id = Some(Default::default())
+    }
+    if builder.computation_model_arn.is_none() {
+        builder.computation_model_arn = Some(Default::default())
+    }
+    if builder.computation_model_name.is_none() {
+        builder.computation_model_name = Some(Default::default())
+    }
+    if builder.computation_model_configuration.is_none() {
+        builder.computation_model_configuration = {
+            let builder = crate::types::builders::ComputationModelConfigurationBuilder::default();
+            Some(builder.build())
+        }
+    }
+    if builder.computation_model_data_binding.is_none() {
+        builder.computation_model_data_binding = Some(Default::default())
+    }
+    if builder.computation_model_creation_date.is_none() {
+        builder.computation_model_creation_date = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.computation_model_last_update_date.is_none() {
+        builder.computation_model_last_update_date = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.computation_model_status.is_none() {
+        builder.computation_model_status = {
+            let builder = crate::types::builders::ComputationModelStatusBuilder::default();
+            crate::serde_util::computation_model_status_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.computation_model_version.is_none() {
+        builder.computation_model_version = Some(Default::default())
+    }
+    if builder.action_definitions.is_none() {
+        builder.action_definitions = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn describe_computation_model_execution_summary_output_output_correct_errors(
+    mut builder: crate::operation::describe_computation_model_execution_summary::builders::DescribeComputationModelExecutionSummaryOutputBuilder,
+) -> crate::operation::describe_computation_model_execution_summary::builders::DescribeComputationModelExecutionSummaryOutputBuilder {
+    if builder.computation_model_id.is_none() {
+        builder.computation_model_id = Some(Default::default())
+    }
+    if builder.computation_model_execution_summary.is_none() {
+        builder.computation_model_execution_summary = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn describe_dashboard_output_output_correct_errors(
     mut builder: crate::operation::describe_dashboard::builders::DescribeDashboardOutputBuilder,
 ) -> crate::operation::describe_dashboard::builders::DescribeDashboardOutputBuilder {
@@ -690,6 +774,33 @@ pub(crate) fn describe_default_encryption_configuration_output_output_correct_er
         builder.configuration_status = {
             let builder = crate::types::builders::ConfigurationStatusBuilder::default();
             crate::serde_util::configuration_status_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn describe_execution_output_output_correct_errors(
+    mut builder: crate::operation::describe_execution::builders::DescribeExecutionOutputBuilder,
+) -> crate::operation::describe_execution::builders::DescribeExecutionOutputBuilder {
+    if builder.execution_id.is_none() {
+        builder.execution_id = Some(Default::default())
+    }
+    if builder.target_resource.is_none() {
+        builder.target_resource = {
+            let builder = crate::types::builders::TargetResourceBuilder::default();
+            Some(builder.build())
+        }
+    }
+    if builder.target_resource_version.is_none() {
+        builder.target_resource_version = Some(Default::default())
+    }
+    if builder.execution_start_time.is_none() {
+        builder.execution_start_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.execution_status.is_none() {
+        builder.execution_status = {
+            let builder = crate::types::builders::ExecutionStatusBuilder::default();
+            crate::serde_util::execution_status_correct_errors(builder).build().ok()
         }
     }
     builder
@@ -992,6 +1103,33 @@ pub(crate) fn list_composition_relationships_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_computation_model_data_binding_usages_output_output_correct_errors(
+    mut builder: crate::operation::list_computation_model_data_binding_usages::builders::ListComputationModelDataBindingUsagesOutputBuilder,
+) -> crate::operation::list_computation_model_data_binding_usages::builders::ListComputationModelDataBindingUsagesOutputBuilder {
+    if builder.data_binding_usage_summaries.is_none() {
+        builder.data_binding_usage_summaries = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_computation_model_resolve_to_resources_output_output_correct_errors(
+    mut builder: crate::operation::list_computation_model_resolve_to_resources::builders::ListComputationModelResolveToResourcesOutputBuilder,
+) -> crate::operation::list_computation_model_resolve_to_resources::builders::ListComputationModelResolveToResourcesOutputBuilder {
+    if builder.computation_model_resolve_to_resource_summaries.is_none() {
+        builder.computation_model_resolve_to_resource_summaries = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_computation_models_output_output_correct_errors(
+    mut builder: crate::operation::list_computation_models::builders::ListComputationModelsOutputBuilder,
+) -> crate::operation::list_computation_models::builders::ListComputationModelsOutputBuilder {
+    if builder.computation_model_summaries.is_none() {
+        builder.computation_model_summaries = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_dashboards_output_output_correct_errors(
     mut builder: crate::operation::list_dashboards::builders::ListDashboardsOutputBuilder,
 ) -> crate::operation::list_dashboards::builders::ListDashboardsOutputBuilder {
@@ -1006,6 +1144,15 @@ pub(crate) fn list_datasets_output_output_correct_errors(
 ) -> crate::operation::list_datasets::builders::ListDatasetsOutputBuilder {
     if builder.dataset_summaries.is_none() {
         builder.dataset_summaries = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_executions_output_output_correct_errors(
+    mut builder: crate::operation::list_executions::builders::ListExecutionsOutputBuilder,
+) -> crate::operation::list_executions::builders::ListExecutionsOutputBuilder {
+    if builder.execution_summaries.is_none() {
+        builder.execution_summaries = Some(Default::default())
     }
     builder
 }
@@ -1124,6 +1271,18 @@ pub(crate) fn update_asset_model_composite_model_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn update_computation_model_output_output_correct_errors(
+    mut builder: crate::operation::update_computation_model::builders::UpdateComputationModelOutputBuilder,
+) -> crate::operation::update_computation_model::builders::UpdateComputationModelOutputBuilder {
+    if builder.computation_model_status.is_none() {
+        builder.computation_model_status = {
+            let builder = crate::types::builders::ComputationModelStatusBuilder::default();
+            crate::serde_util::computation_model_status_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn update_gateway_capability_configuration_output_output_correct_errors(
     mut builder: crate::operation::update_gateway_capability_configuration::builders::UpdateGatewayCapabilityConfigurationOutputBuilder,
 ) -> crate::operation::update_gateway_capability_configuration::builders::UpdateGatewayCapabilityConfigurationOutputBuilder {
@@ -1164,6 +1323,15 @@ pub(crate) fn asset_model_status_correct_errors(
     builder
 }
 
+pub(crate) fn computation_model_status_correct_errors(
+    mut builder: crate::types::builders::ComputationModelStatusBuilder,
+) -> crate::types::builders::ComputationModelStatusBuilder {
+    if builder.state.is_none() {
+        builder.state = "no value was set".parse::<crate::types::ComputationModelState>().ok()
+    }
+    builder
+}
+
 pub(crate) fn dataset_status_correct_errors(
     mut builder: crate::types::builders::DatasetStatusBuilder,
 ) -> crate::types::builders::DatasetStatusBuilder {
@@ -1176,15 +1344,6 @@ pub(crate) fn dataset_status_correct_errors(
 pub(crate) fn portal_status_correct_errors(mut builder: crate::types::builders::PortalStatusBuilder) -> crate::types::builders::PortalStatusBuilder {
     if builder.state.is_none() {
         builder.state = "no value was set".parse::<crate::types::PortalState>().ok()
-    }
-    builder
-}
-
-pub(crate) fn target_resource_correct_errors(
-    mut builder: crate::types::builders::TargetResourceBuilder,
-) -> crate::types::builders::TargetResourceBuilder {
-    if builder.asset_id.is_none() {
-        builder.asset_id = Some(Default::default())
     }
     builder
 }
@@ -1239,6 +1398,15 @@ pub(crate) fn configuration_status_correct_errors(
 ) -> crate::types::builders::ConfigurationStatusBuilder {
     if builder.state.is_none() {
         builder.state = "no value was set".parse::<crate::types::ConfigurationState>().ok()
+    }
+    builder
+}
+
+pub(crate) fn execution_status_correct_errors(
+    mut builder: crate::types::builders::ExecutionStatusBuilder,
+) -> crate::types::builders::ExecutionStatusBuilder {
+    if builder.state.is_none() {
+        builder.state = "no value was set".parse::<crate::types::ExecutionState>().ok()
     }
     builder
 }
@@ -1328,6 +1496,13 @@ pub(crate) fn property_correct_errors(mut builder: crate::types::builders::Prope
     }
     if builder.data_type.is_none() {
         builder.data_type = "no value was set".parse::<crate::types::PropertyDataType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn resolve_to_correct_errors(mut builder: crate::types::builders::ResolveToBuilder) -> crate::types::builders::ResolveToBuilder {
+    if builder.asset_id.is_none() {
+        builder.asset_id = Some(Default::default())
     }
     builder
 }
@@ -1791,6 +1966,66 @@ pub(crate) fn composition_relationship_summary_correct_errors(
     builder
 }
 
+pub(crate) fn computation_model_anomaly_detection_configuration_correct_errors(
+    mut builder: crate::types::builders::ComputationModelAnomalyDetectionConfigurationBuilder,
+) -> crate::types::builders::ComputationModelAnomalyDetectionConfigurationBuilder {
+    if builder.input_properties.is_none() {
+        builder.input_properties = Some(Default::default())
+    }
+    if builder.result_property.is_none() {
+        builder.result_property = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn computation_model_data_binding_usage_summary_correct_errors(
+    mut builder: crate::types::builders::ComputationModelDataBindingUsageSummaryBuilder,
+) -> crate::types::builders::ComputationModelDataBindingUsageSummaryBuilder {
+    if builder.computation_model_ids.is_none() {
+        builder.computation_model_ids = Some(Default::default())
+    }
+    if builder.matched_data_binding.is_none() {
+        builder.matched_data_binding = {
+            let builder = crate::types::builders::MatchedDataBindingBuilder::default();
+            Some(crate::serde_util::matched_data_binding_correct_errors(builder).build())
+        }
+    }
+    builder
+}
+
+pub(crate) fn computation_model_summary_correct_errors(
+    mut builder: crate::types::builders::ComputationModelSummaryBuilder,
+) -> crate::types::builders::ComputationModelSummaryBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::ComputationModelType>().ok()
+    }
+    if builder.creation_date.is_none() {
+        builder.creation_date = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.last_update_date.is_none() {
+        builder.last_update_date = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.status.is_none() {
+        builder.status = {
+            let builder = crate::types::builders::ComputationModelStatusBuilder::default();
+            crate::serde_util::computation_model_status_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.version.is_none() {
+        builder.version = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn configuration_error_details_correct_errors(
     mut builder: crate::types::builders::ConfigurationErrorDetailsBuilder,
 ) -> crate::types::builders::ConfigurationErrorDetailsBuilder {
@@ -1863,6 +2098,33 @@ pub(crate) fn error_details_correct_errors(mut builder: crate::types::builders::
     }
     if builder.message.is_none() {
         builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn execution_summary_correct_errors(
+    mut builder: crate::types::builders::ExecutionSummaryBuilder,
+) -> crate::types::builders::ExecutionSummaryBuilder {
+    if builder.execution_id.is_none() {
+        builder.execution_id = Some(Default::default())
+    }
+    if builder.target_resource.is_none() {
+        builder.target_resource = {
+            let builder = crate::types::builders::TargetResourceBuilder::default();
+            Some(builder.build())
+        }
+    }
+    if builder.target_resource_version.is_none() {
+        builder.target_resource_version = Some(Default::default())
+    }
+    if builder.execution_start_time.is_none() {
+        builder.execution_start_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.execution_status.is_none() {
+        builder.execution_status = {
+            let builder = crate::types::builders::ExecutionStatusBuilder::default();
+            crate::serde_util::execution_status_correct_errors(builder).build().ok()
+        }
     }
     builder
 }
@@ -2091,6 +2353,30 @@ pub(crate) fn user_identity_correct_errors(mut builder: crate::types::builders::
     builder
 }
 
+pub(crate) fn asset_model_property_binding_value_correct_errors(
+    mut builder: crate::types::builders::AssetModelPropertyBindingValueBuilder,
+) -> crate::types::builders::AssetModelPropertyBindingValueBuilder {
+    if builder.asset_model_id.is_none() {
+        builder.asset_model_id = Some(Default::default())
+    }
+    if builder.property_id.is_none() {
+        builder.property_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn asset_property_binding_value_correct_errors(
+    mut builder: crate::types::builders::AssetPropertyBindingValueBuilder,
+) -> crate::types::builders::AssetPropertyBindingValueBuilder {
+    if builder.asset_id.is_none() {
+        builder.asset_id = Some(Default::default())
+    }
+    if builder.property_id.is_none() {
+        builder.property_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn batch_get_asset_property_aggregates_error_info_correct_errors(
     mut builder: crate::types::builders::BatchGetAssetPropertyAggregatesErrorInfoBuilder,
 ) -> crate::types::builders::BatchGetAssetPropertyAggregatesErrorInfoBuilder {
@@ -2144,6 +2430,18 @@ pub(crate) fn kendra_source_detail_correct_errors(
     }
     if builder.role_arn.is_none() {
         builder.role_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn matched_data_binding_correct_errors(
+    mut builder: crate::types::builders::MatchedDataBindingBuilder,
+) -> crate::types::builders::MatchedDataBindingBuilder {
+    if builder.value.is_none() {
+        builder.value = {
+            let builder = crate::types::builders::DataBindingValueBuilder::default();
+            Some(builder.build())
+        }
     }
     builder
 }

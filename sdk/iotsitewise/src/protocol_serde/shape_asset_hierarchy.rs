@@ -21,15 +21,15 @@ where
                                     .transpose()?,
                             );
                         }
-                        "name" => {
-                            builder = builder.set_name(
+                        "externalId" => {
+                            builder = builder.set_external_id(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
                         }
-                        "externalId" => {
-                            builder = builder.set_external_id(
+                        "name" => {
+                            builder = builder.set_name(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,

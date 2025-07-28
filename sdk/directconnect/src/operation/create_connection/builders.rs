@@ -201,19 +201,19 @@ impl CreateConnectionFluentBuilder {
         self.inner.get_provider_name()
     }
     /// <p>Indicates whether you want the connection to support MAC Security (MACsec).</p>
-    /// <p>MAC Security (MACsec) is only available on dedicated connections. For information about MAC Security (MACsec) prerequisties, see <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites">MACsec prerequisties</a> in the <i>Direct Connect User Guide</i>.</p>
+    /// <p>MAC Security (MACsec) is unavailable on hosted connections. For information about MAC Security (MACsec) prerequisites, see <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/MACSec.html">MAC Security in Direct Connect</a> in the <i>Direct Connect User Guide</i>.</p>
     pub fn request_mac_sec(mut self, input: bool) -> Self {
         self.inner = self.inner.request_mac_sec(input);
         self
     }
     /// <p>Indicates whether you want the connection to support MAC Security (MACsec).</p>
-    /// <p>MAC Security (MACsec) is only available on dedicated connections. For information about MAC Security (MACsec) prerequisties, see <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites">MACsec prerequisties</a> in the <i>Direct Connect User Guide</i>.</p>
+    /// <p>MAC Security (MACsec) is unavailable on hosted connections. For information about MAC Security (MACsec) prerequisites, see <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/MACSec.html">MAC Security in Direct Connect</a> in the <i>Direct Connect User Guide</i>.</p>
     pub fn set_request_mac_sec(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_request_mac_sec(input);
         self
     }
     /// <p>Indicates whether you want the connection to support MAC Security (MACsec).</p>
-    /// <p>MAC Security (MACsec) is only available on dedicated connections. For information about MAC Security (MACsec) prerequisties, see <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites">MACsec prerequisties</a> in the <i>Direct Connect User Guide</i>.</p>
+    /// <p>MAC Security (MACsec) is unavailable on hosted connections. For information about MAC Security (MACsec) prerequisites, see <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/MACSec.html">MAC Security in Direct Connect</a> in the <i>Direct Connect User Guide</i>.</p>
     pub fn get_request_mac_sec(&self) -> &::std::option::Option<bool> {
         self.inner.get_request_mac_sec()
     }

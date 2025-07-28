@@ -22,7 +22,7 @@ impl crate::operation::disassociate_mac_sec_key::builders::DisassociateMacSecKey
 }
 /// Fluent builder constructing a request to `DisassociateMacSecKey`.
 ///
-/// <p>Removes the association between a MAC Security (MACsec) security key and an Direct Connect dedicated connection.</p>
+/// <p>Removes the association between a MAC Security (MACsec) security key and a Direct Connect connection.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateMacSecKeyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,20 +108,20 @@ impl DisassociateMacSecKeyFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p>
-    /// <p>You can use <code>DescribeConnections</code> or <code>DescribeLags</code> to retrieve connection ID.</p>
+    /// <p>The ID of the dedicated connection (dxcon-xxxx), interconnect (dxcon-xxxx), or LAG (dxlag-xxxx).</p>
+    /// <p>You can use <code>DescribeConnections</code>, <code>DescribeInterconnects</code>, or <code>DescribeLags</code> to retrieve connection ID.</p>
     pub fn connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connection_id(input.into());
         self
     }
-    /// <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p>
-    /// <p>You can use <code>DescribeConnections</code> or <code>DescribeLags</code> to retrieve connection ID.</p>
+    /// <p>The ID of the dedicated connection (dxcon-xxxx), interconnect (dxcon-xxxx), or LAG (dxlag-xxxx).</p>
+    /// <p>You can use <code>DescribeConnections</code>, <code>DescribeInterconnects</code>, or <code>DescribeLags</code> to retrieve connection ID.</p>
     pub fn set_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_connection_id(input);
         self
     }
-    /// <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p>
-    /// <p>You can use <code>DescribeConnections</code> or <code>DescribeLags</code> to retrieve connection ID.</p>
+    /// <p>The ID of the dedicated connection (dxcon-xxxx), interconnect (dxcon-xxxx), or LAG (dxlag-xxxx).</p>
+    /// <p>You can use <code>DescribeConnections</code>, <code>DescribeInterconnects</code>, or <code>DescribeLags</code> to retrieve connection ID.</p>
     pub fn get_connection_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_connection_id()
     }

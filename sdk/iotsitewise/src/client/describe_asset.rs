@@ -7,6 +7,7 @@ impl super::Client {
     ///   - [`exclude_properties(bool)`](crate::operation::describe_asset::builders::DescribeAssetFluentBuilder::exclude_properties) / [`set_exclude_properties(Option<bool>)`](crate::operation::describe_asset::builders::DescribeAssetFluentBuilder::set_exclude_properties):<br>required: **false**<br><p>Whether or not to exclude asset properties from the response.</p><br>
     /// - On success, responds with [`DescribeAssetOutput`](crate::operation::describe_asset::DescribeAssetOutput) with field(s):
     ///   - [`asset_id(String)`](crate::operation::describe_asset::DescribeAssetOutput::asset_id): <p>The ID of the asset, in UUID format.</p>
+    ///   - [`asset_external_id(Option<String>)`](crate::operation::describe_asset::DescribeAssetOutput::asset_external_id): <p>The external ID of the asset, if any.</p>
     ///   - [`asset_arn(String)`](crate::operation::describe_asset::DescribeAssetOutput::asset_arn): <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p> <p><code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code></p>
     ///   - [`asset_name(String)`](crate::operation::describe_asset::DescribeAssetOutput::asset_name): <p>The name of the asset.</p>
     ///   - [`asset_model_id(String)`](crate::operation::describe_asset::DescribeAssetOutput::asset_model_id): <p>The ID of the asset model that was used to create the asset.</p>
@@ -18,7 +19,6 @@ impl super::Client {
     ///   - [`asset_status(Option<AssetStatus>)`](crate::operation::describe_asset::DescribeAssetOutput::asset_status): <p>The current status of the asset, which contains a state and any error message.</p>
     ///   - [`asset_description(Option<String>)`](crate::operation::describe_asset::DescribeAssetOutput::asset_description): <p>A description for the asset.</p>
     ///   - [`asset_composite_model_summaries(Option<Vec::<AssetCompositeModelSummary>>)`](crate::operation::describe_asset::DescribeAssetOutput::asset_composite_model_summaries): <p>The list of the immediate child custom composite model summaries for the asset.</p>
-    ///   - [`asset_external_id(Option<String>)`](crate::operation::describe_asset::DescribeAssetOutput::asset_external_id): <p>The external ID of the asset, if any.</p>
     /// - On failure, responds with [`SdkError<DescribeAssetError>`](crate::operation::describe_asset::DescribeAssetError)
     pub fn describe_asset(&self) -> crate::operation::describe_asset::builders::DescribeAssetFluentBuilder {
         crate::operation::describe_asset::builders::DescribeAssetFluentBuilder::new(self.handle.clone())

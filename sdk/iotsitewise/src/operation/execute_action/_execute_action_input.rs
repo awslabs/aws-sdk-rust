@@ -11,6 +11,8 @@ pub struct ExecuteActionInput {
     pub action_payload: ::std::option::Option<crate::types::ActionPayload>,
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
+    /// <p>The detailed resource this action resolves to.</p>
+    pub resolve_to: ::std::option::Option<crate::types::ResolveTo>,
 }
 impl ExecuteActionInput {
     /// <p>The resource the action will be taken on.</p>
@@ -29,6 +31,10 @@ impl ExecuteActionInput {
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
+    /// <p>The detailed resource this action resolves to.</p>
+    pub fn resolve_to(&self) -> ::std::option::Option<&crate::types::ResolveTo> {
+        self.resolve_to.as_ref()
+    }
 }
 impl ExecuteActionInput {
     /// Creates a new builder-style object to manufacture [`ExecuteActionInput`](crate::operation::execute_action::ExecuteActionInput).
@@ -45,6 +51,7 @@ pub struct ExecuteActionInputBuilder {
     pub(crate) action_definition_id: ::std::option::Option<::std::string::String>,
     pub(crate) action_payload: ::std::option::Option<crate::types::ActionPayload>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
+    pub(crate) resolve_to: ::std::option::Option<crate::types::ResolveTo>,
 }
 impl ExecuteActionInputBuilder {
     /// <p>The resource the action will be taken on.</p>
@@ -106,6 +113,20 @@ impl ExecuteActionInputBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
+    /// <p>The detailed resource this action resolves to.</p>
+    pub fn resolve_to(mut self, input: crate::types::ResolveTo) -> Self {
+        self.resolve_to = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The detailed resource this action resolves to.</p>
+    pub fn set_resolve_to(mut self, input: ::std::option::Option<crate::types::ResolveTo>) -> Self {
+        self.resolve_to = input;
+        self
+    }
+    /// <p>The detailed resource this action resolves to.</p>
+    pub fn get_resolve_to(&self) -> &::std::option::Option<crate::types::ResolveTo> {
+        &self.resolve_to
+    }
     /// Consumes the builder and constructs a [`ExecuteActionInput`](crate::operation::execute_action::ExecuteActionInput).
     pub fn build(
         self,
@@ -115,6 +136,7 @@ impl ExecuteActionInputBuilder {
             action_definition_id: self.action_definition_id,
             action_payload: self.action_payload,
             client_token: self.client_token,
+            resolve_to: self.resolve_to,
         })
     }
 }

@@ -230,6 +230,10 @@ pub(crate) fn de_update_connection(
                 "macSecKeys" => {
                     builder = builder.set_mac_sec_keys(crate::protocol_serde::shape_mac_sec_key_list::de_mac_sec_key_list(tokens)?);
                 }
+                "partnerInterconnectMacSecCapable" => {
+                    builder =
+                        builder.set_partner_interconnect_mac_sec_capable(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

@@ -5,13 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TargetResource {
     /// <p>The ID of the asset, in UUID format.</p>
-    pub asset_id: ::std::string::String,
+    pub asset_id: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the computation model.</p>
+    pub computation_model_id: ::std::option::Option<::std::string::String>,
 }
 impl TargetResource {
     /// <p>The ID of the asset, in UUID format.</p>
-    pub fn asset_id(&self) -> &str {
-        use std::ops::Deref;
-        self.asset_id.deref()
+    pub fn asset_id(&self) -> ::std::option::Option<&str> {
+        self.asset_id.as_deref()
+    }
+    /// <p>The ID of the computation model.</p>
+    pub fn computation_model_id(&self) -> ::std::option::Option<&str> {
+        self.computation_model_id.as_deref()
     }
 }
 impl TargetResource {
@@ -26,10 +31,10 @@ impl TargetResource {
 #[non_exhaustive]
 pub struct TargetResourceBuilder {
     pub(crate) asset_id: ::std::option::Option<::std::string::String>,
+    pub(crate) computation_model_id: ::std::option::Option<::std::string::String>,
 }
 impl TargetResourceBuilder {
     /// <p>The ID of the asset, in UUID format.</p>
-    /// This field is required.
     pub fn asset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_id = ::std::option::Option::Some(input.into());
         self
@@ -43,17 +48,25 @@ impl TargetResourceBuilder {
     pub fn get_asset_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.asset_id
     }
+    /// <p>The ID of the computation model.</p>
+    pub fn computation_model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.computation_model_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the computation model.</p>
+    pub fn set_computation_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.computation_model_id = input;
+        self
+    }
+    /// <p>The ID of the computation model.</p>
+    pub fn get_computation_model_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.computation_model_id
+    }
     /// Consumes the builder and constructs a [`TargetResource`](crate::types::TargetResource).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`asset_id`](crate::types::builders::TargetResourceBuilder::asset_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::TargetResource, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TargetResource {
-            asset_id: self.asset_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "asset_id",
-                    "asset_id was not specified but it is required when building TargetResource",
-                )
-            })?,
-        })
+    pub fn build(self) -> crate::types::TargetResource {
+        crate::types::TargetResource {
+            asset_id: self.asset_id,
+            computation_model_id: self.computation_model_id,
+        }
     }
 }

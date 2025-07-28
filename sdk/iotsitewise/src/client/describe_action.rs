@@ -10,6 +10,7 @@ impl super::Client {
     ///   - [`action_definition_id(String)`](crate::operation::describe_action::DescribeActionOutput::action_definition_id): <p>The ID of the action definition.</p>
     ///   - [`action_payload(Option<ActionPayload>)`](crate::operation::describe_action::DescribeActionOutput::action_payload): <p>The JSON payload of the action.</p>
     ///   - [`execution_time(DateTime)`](crate::operation::describe_action::DescribeActionOutput::execution_time): <p>The time the action was executed.</p>
+    ///   - [`resolve_to(Option<ResolveTo>)`](crate::operation::describe_action::DescribeActionOutput::resolve_to): <p>The detailed resource this action resolves to.</p>
     /// - On failure, responds with [`SdkError<DescribeActionError>`](crate::operation::describe_action::DescribeActionError)
     pub fn describe_action(&self) -> crate::operation::describe_action::builders::DescribeActionFluentBuilder {
         crate::operation::describe_action::builders::DescribeActionFluentBuilder::new(self.handle.clone())

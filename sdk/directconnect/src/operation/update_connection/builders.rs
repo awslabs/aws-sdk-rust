@@ -22,7 +22,7 @@ impl crate::operation::update_connection::builders::UpdateConnectionInputBuilder
 }
 /// Fluent builder constructing a request to `UpdateConnection`.
 ///
-/// <p>Updates the Direct Connect dedicated connection configuration.</p>
+/// <p>Updates the Direct Connect connection configuration.</p>
 /// <p>You can update the following parameters for a connection:</p>
 /// <ul>
 /// <li>
@@ -115,19 +115,19 @@ impl UpdateConnectionFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ID of the dedicated connection.</p>
+    /// <p>The ID of the connection.</p>
     /// <p>You can use <code>DescribeConnections</code> to retrieve the connection ID.</p>
     pub fn connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connection_id(input.into());
         self
     }
-    /// <p>The ID of the dedicated connection.</p>
+    /// <p>The ID of the connection.</p>
     /// <p>You can use <code>DescribeConnections</code> to retrieve the connection ID.</p>
     pub fn set_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_connection_id(input);
         self
     }
-    /// <p>The ID of the dedicated connection.</p>
+    /// <p>The ID of the connection.</p>
     /// <p>You can use <code>DescribeConnections</code> to retrieve the connection ID.</p>
     pub fn get_connection_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_connection_id()

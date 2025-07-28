@@ -22,7 +22,18 @@ impl crate::operation::describe_gateway_capability_configuration::builders::Desc
 }
 /// Fluent builder constructing a request to `DescribeGatewayCapabilityConfiguration`.
 ///
-/// <p>Retrieves information about a gateway capability configuration. Each gateway capability defines data sources for a gateway. A capability configuration can contain multiple data source configurations. If you define OPC-UA sources for a gateway in the IoT SiteWise console, all of your OPC-UA sources are stored in one capability configuration. To list all capability configurations for a gateway, use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeGateway.html">DescribeGateway</a>.</p>
+/// <p>Each gateway capability defines data sources for a gateway. This is the namespace of the gateway capability.</p>
+/// <p>. The namespace follows the format <code>service:capability:version</code>, where:</p>
+/// <ul>
+/// <li>
+/// <p><code>service</code> - The service providing the capability, or <code>iotsitewise</code>.</p></li>
+/// <li>
+/// <p><code>capability</code> - The specific capability type. Options include: <code>opcuacollector</code> for the OPC UA data source collector, or <code>publisher</code> for data publisher capability.</p></li>
+/// <li>
+/// <p><code>version</code> - The version number of the capability. Option include <code>2</code> for Classic streams, V2 gateways, and <code>3</code> for MQTT-enabled, V3 gateways.</p></li>
+/// </ul>
+/// <p>After updating a capability configuration, the sync status becomes <code>OUT_OF_SYNC</code> until the gateway processes the configuration.Use <code>DescribeGatewayCapabilityConfiguration</code> to check the sync status and verify the configuration was applied.</p>
+/// <p>A gateway can have multiple capability configurations with different namespaces.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeGatewayCapabilityConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -126,17 +137,17 @@ impl DescribeGatewayCapabilityConfigurationFluentBuilder {
     pub fn get_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_gateway_id()
     }
-    /// <p>The namespace of the capability configuration. For example, if you configure OPC-UA sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as <code>1</code>.</p>
+    /// <p>The namespace of the capability configuration. For example, if you configure OPC UA sources for an MQTT-enabled gateway, your OPC-UA capability configuration has the namespace <code>iotsitewise:opcuacollector:3</code>.</p>
     pub fn capability_namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.capability_namespace(input.into());
         self
     }
-    /// <p>The namespace of the capability configuration. For example, if you configure OPC-UA sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as <code>1</code>.</p>
+    /// <p>The namespace of the capability configuration. For example, if you configure OPC UA sources for an MQTT-enabled gateway, your OPC-UA capability configuration has the namespace <code>iotsitewise:opcuacollector:3</code>.</p>
     pub fn set_capability_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_capability_namespace(input);
         self
     }
-    /// <p>The namespace of the capability configuration. For example, if you configure OPC-UA sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as <code>1</code>.</p>
+    /// <p>The namespace of the capability configuration. For example, if you configure OPC UA sources for an MQTT-enabled gateway, your OPC-UA capability configuration has the namespace <code>iotsitewise:opcuacollector:3</code>.</p>
     pub fn get_capability_namespace(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_capability_namespace()
     }

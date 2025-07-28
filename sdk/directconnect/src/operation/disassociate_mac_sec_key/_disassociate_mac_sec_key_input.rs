@@ -3,16 +3,16 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateMacSecKeyInput {
-    /// <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p>
-    /// <p>You can use <code>DescribeConnections</code> or <code>DescribeLags</code> to retrieve connection ID.</p>
+    /// <p>The ID of the dedicated connection (dxcon-xxxx), interconnect (dxcon-xxxx), or LAG (dxlag-xxxx).</p>
+    /// <p>You can use <code>DescribeConnections</code>, <code>DescribeInterconnects</code>, or <code>DescribeLags</code> to retrieve connection ID.</p>
     pub connection_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the MAC Security (MACsec) secret key.</p>
     /// <p>You can use <code>DescribeConnections</code> to retrieve the ARN of the MAC Security (MACsec) secret key.</p>
     pub secret_arn: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateMacSecKeyInput {
-    /// <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p>
-    /// <p>You can use <code>DescribeConnections</code> or <code>DescribeLags</code> to retrieve connection ID.</p>
+    /// <p>The ID of the dedicated connection (dxcon-xxxx), interconnect (dxcon-xxxx), or LAG (dxlag-xxxx).</p>
+    /// <p>You can use <code>DescribeConnections</code>, <code>DescribeInterconnects</code>, or <code>DescribeLags</code> to retrieve connection ID.</p>
     pub fn connection_id(&self) -> ::std::option::Option<&str> {
         self.connection_id.as_deref()
     }
@@ -37,21 +37,21 @@ pub struct DisassociateMacSecKeyInputBuilder {
     pub(crate) secret_arn: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateMacSecKeyInputBuilder {
-    /// <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p>
-    /// <p>You can use <code>DescribeConnections</code> or <code>DescribeLags</code> to retrieve connection ID.</p>
+    /// <p>The ID of the dedicated connection (dxcon-xxxx), interconnect (dxcon-xxxx), or LAG (dxlag-xxxx).</p>
+    /// <p>You can use <code>DescribeConnections</code>, <code>DescribeInterconnects</code>, or <code>DescribeLags</code> to retrieve connection ID.</p>
     /// This field is required.
     pub fn connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p>
-    /// <p>You can use <code>DescribeConnections</code> or <code>DescribeLags</code> to retrieve connection ID.</p>
+    /// <p>The ID of the dedicated connection (dxcon-xxxx), interconnect (dxcon-xxxx), or LAG (dxlag-xxxx).</p>
+    /// <p>You can use <code>DescribeConnections</code>, <code>DescribeInterconnects</code>, or <code>DescribeLags</code> to retrieve connection ID.</p>
     pub fn set_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connection_id = input;
         self
     }
-    /// <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p>
-    /// <p>You can use <code>DescribeConnections</code> or <code>DescribeLags</code> to retrieve connection ID.</p>
+    /// <p>The ID of the dedicated connection (dxcon-xxxx), interconnect (dxcon-xxxx), or LAG (dxlag-xxxx).</p>
+    /// <p>You can use <code>DescribeConnections</code>, <code>DescribeInterconnects</code>, or <code>DescribeLags</code> to retrieve connection ID.</p>
     pub fn get_connection_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.connection_id
     }

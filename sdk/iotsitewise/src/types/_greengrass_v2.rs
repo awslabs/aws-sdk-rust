@@ -6,7 +6,7 @@
 pub struct GreengrassV2 {
     /// <p>The name of the IoT thing for your IoT Greengrass V2 core device.</p>
     pub core_device_thing_name: ::std::string::String,
-    /// <p>The operating system of the core device in IoT Greengrass V2.</p>
+    /// <p>The operating system of the core device in IoT Greengrass V2. Specifying the operating system is required for MQTT-enabled, V3 gateways (<code>gatewayVersion</code> <code>3</code>) and not applicable for Classic stream, V2 gateways (<code>gatewayVersion</code> <code>2</code>).</p>
     pub core_device_operating_system: ::std::option::Option<crate::types::CoreDeviceOperatingSystem>,
 }
 impl GreengrassV2 {
@@ -15,7 +15,7 @@ impl GreengrassV2 {
         use std::ops::Deref;
         self.core_device_thing_name.deref()
     }
-    /// <p>The operating system of the core device in IoT Greengrass V2.</p>
+    /// <p>The operating system of the core device in IoT Greengrass V2. Specifying the operating system is required for MQTT-enabled, V3 gateways (<code>gatewayVersion</code> <code>3</code>) and not applicable for Classic stream, V2 gateways (<code>gatewayVersion</code> <code>2</code>).</p>
     pub fn core_device_operating_system(&self) -> ::std::option::Option<&crate::types::CoreDeviceOperatingSystem> {
         self.core_device_operating_system.as_ref()
     }
@@ -50,17 +50,17 @@ impl GreengrassV2Builder {
     pub fn get_core_device_thing_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.core_device_thing_name
     }
-    /// <p>The operating system of the core device in IoT Greengrass V2.</p>
+    /// <p>The operating system of the core device in IoT Greengrass V2. Specifying the operating system is required for MQTT-enabled, V3 gateways (<code>gatewayVersion</code> <code>3</code>) and not applicable for Classic stream, V2 gateways (<code>gatewayVersion</code> <code>2</code>).</p>
     pub fn core_device_operating_system(mut self, input: crate::types::CoreDeviceOperatingSystem) -> Self {
         self.core_device_operating_system = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The operating system of the core device in IoT Greengrass V2.</p>
+    /// <p>The operating system of the core device in IoT Greengrass V2. Specifying the operating system is required for MQTT-enabled, V3 gateways (<code>gatewayVersion</code> <code>3</code>) and not applicable for Classic stream, V2 gateways (<code>gatewayVersion</code> <code>2</code>).</p>
     pub fn set_core_device_operating_system(mut self, input: ::std::option::Option<crate::types::CoreDeviceOperatingSystem>) -> Self {
         self.core_device_operating_system = input;
         self
     }
-    /// <p>The operating system of the core device in IoT Greengrass V2.</p>
+    /// <p>The operating system of the core device in IoT Greengrass V2. Specifying the operating system is required for MQTT-enabled, V3 gateways (<code>gatewayVersion</code> <code>3</code>) and not applicable for Classic stream, V2 gateways (<code>gatewayVersion</code> <code>2</code>).</p>
     pub fn get_core_device_operating_system(&self) -> &::std::option::Option<crate::types::CoreDeviceOperatingSystem> {
         &self.core_device_operating_system
     }

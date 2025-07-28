@@ -13,6 +13,7 @@
 /// # let targetresourcetype = unimplemented!();
 /// match targetresourcetype {
 ///     TargetResourceType::Asset => { /* ... */ },
+///     TargetResourceType::ComputationModel => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -43,6 +44,8 @@
 pub enum TargetResourceType {
     #[allow(missing_docs)] // documentation missing in model
     Asset,
+    #[allow(missing_docs)] // documentation missing in model
+    ComputationModel,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -51,6 +54,7 @@ impl ::std::convert::From<&str> for TargetResourceType {
     fn from(s: &str) -> Self {
         match s {
             "ASSET" => TargetResourceType::Asset,
+            "COMPUTATION_MODEL" => TargetResourceType::ComputationModel,
             other => TargetResourceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -67,12 +71,13 @@ impl TargetResourceType {
     pub fn as_str(&self) -> &str {
         match self {
             TargetResourceType::Asset => "ASSET",
+            TargetResourceType::ComputationModel => "COMPUTATION_MODEL",
             TargetResourceType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ASSET"]
+        &["ASSET", "COMPUTATION_MODEL"]
     }
 }
 impl ::std::convert::AsRef<str> for TargetResourceType {
@@ -96,6 +101,7 @@ impl ::std::fmt::Display for TargetResourceType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             TargetResourceType::Asset => write!(f, "ASSET"),
+            TargetResourceType::ComputationModel => write!(f, "COMPUTATION_MODEL"),
             TargetResourceType::Unknown(value) => write!(f, "{}", value),
         }
     }

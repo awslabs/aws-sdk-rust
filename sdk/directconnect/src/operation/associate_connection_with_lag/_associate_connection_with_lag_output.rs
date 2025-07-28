@@ -70,6 +70,8 @@ pub struct AssociateConnectionWithLagOutput {
     pub encryption_mode: ::std::option::Option<::std::string::String>,
     /// <p>The MAC Security (MACsec) security keys associated with the connection.</p>
     pub mac_sec_keys: ::std::option::Option<::std::vec::Vec<crate::types::MacSecKey>>,
+    /// <p>Indicates whether the interconnect hosting this connection supports MAC Security (MACsec).</p>
+    pub partner_interconnect_mac_sec_capable: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl AssociateConnectionWithLagOutput {
@@ -187,6 +189,10 @@ impl AssociateConnectionWithLagOutput {
     pub fn mac_sec_keys(&self) -> &[crate::types::MacSecKey] {
         self.mac_sec_keys.as_deref().unwrap_or_default()
     }
+    /// <p>Indicates whether the interconnect hosting this connection supports MAC Security (MACsec).</p>
+    pub fn partner_interconnect_mac_sec_capable(&self) -> ::std::option::Option<bool> {
+        self.partner_interconnect_mac_sec_capable
+    }
 }
 impl ::aws_types::request_id::RequestId for AssociateConnectionWithLagOutput {
     fn request_id(&self) -> Option<&str> {
@@ -226,6 +232,7 @@ pub struct AssociateConnectionWithLagOutputBuilder {
     pub(crate) port_encryption_status: ::std::option::Option<::std::string::String>,
     pub(crate) encryption_mode: ::std::option::Option<::std::string::String>,
     pub(crate) mac_sec_keys: ::std::option::Option<::std::vec::Vec<crate::types::MacSecKey>>,
+    pub(crate) partner_interconnect_mac_sec_capable: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl AssociateConnectionWithLagOutputBuilder {
@@ -615,6 +622,20 @@ impl AssociateConnectionWithLagOutputBuilder {
     pub fn get_mac_sec_keys(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MacSecKey>> {
         &self.mac_sec_keys
     }
+    /// <p>Indicates whether the interconnect hosting this connection supports MAC Security (MACsec).</p>
+    pub fn partner_interconnect_mac_sec_capable(mut self, input: bool) -> Self {
+        self.partner_interconnect_mac_sec_capable = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether the interconnect hosting this connection supports MAC Security (MACsec).</p>
+    pub fn set_partner_interconnect_mac_sec_capable(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.partner_interconnect_mac_sec_capable = input;
+        self
+    }
+    /// <p>Indicates whether the interconnect hosting this connection supports MAC Security (MACsec).</p>
+    pub fn get_partner_interconnect_mac_sec_capable(&self) -> &::std::option::Option<bool> {
+        &self.partner_interconnect_mac_sec_capable
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -649,6 +670,7 @@ impl AssociateConnectionWithLagOutputBuilder {
             port_encryption_status: self.port_encryption_status,
             encryption_mode: self.encryption_mode,
             mac_sec_keys: self.mac_sec_keys,
+            partner_interconnect_mac_sec_capable: self.partner_interconnect_mac_sec_capable,
             _request_id: self._request_id,
         }
     }

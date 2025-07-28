@@ -7,8 +7,10 @@ pub struct CreateGatewayInput {
     pub gateway_name: ::std::option::Option<::std::string::String>,
     /// <p>The gateway's platform. You can only specify one platform in a gateway.</p>
     pub gateway_platform: ::std::option::Option<crate::types::GatewayPlatform>,
-    /// <p>The version of the gateway to create. Specify <code>3</code> to create an MQTT-enabled, V3 gateway and <code>2</code> To create a Classic streams, V2 gateway. If the version isn't specified, a Classic streams, V2 gateway is created by default.</p>
-    /// <p>We recommend creating an MQTT-enabled, V3 gateway for self-hosted gateways. SiteWise Edge gateways on Siemens Industrial Edge should use gateway version <code>2</code>. For more information on gateway versions, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/gw-self-host-gg2.html"> Self-host a SiteWise Edge gateway with IoT Greengrass V2</a>.</p>
+    /// <p>The version of the gateway to create. Specify <code>3</code> to create an MQTT-enabled, V3 gateway and <code>2</code> to create a Classic streams, V2 gateway. If not specified, the default is <code>2</code> (Classic streams, V2 gateway).</p><note>
+    /// <p>When creating a V3 gateway (<code>gatewayVersion=3</code>) with the <code>GreengrassV2</code> platform, you must also specify the <code>coreDeviceOperatingSystem</code> parameter.</p>
+    /// </note>
+    /// <p>We recommend creating an MQTT-enabled gateway for self-hosted gateways and Siemens Industrial Edge gateways. For more information on gateway versions, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/gateways.html">Use Amazon Web Services IoT SiteWise Edge Edge gateways</a>.</p>
     pub gateway_version: ::std::option::Option<::std::string::String>,
     /// <p>A list of key-value pairs that contain metadata for the gateway. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -22,8 +24,10 @@ impl CreateGatewayInput {
     pub fn gateway_platform(&self) -> ::std::option::Option<&crate::types::GatewayPlatform> {
         self.gateway_platform.as_ref()
     }
-    /// <p>The version of the gateway to create. Specify <code>3</code> to create an MQTT-enabled, V3 gateway and <code>2</code> To create a Classic streams, V2 gateway. If the version isn't specified, a Classic streams, V2 gateway is created by default.</p>
-    /// <p>We recommend creating an MQTT-enabled, V3 gateway for self-hosted gateways. SiteWise Edge gateways on Siemens Industrial Edge should use gateway version <code>2</code>. For more information on gateway versions, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/gw-self-host-gg2.html"> Self-host a SiteWise Edge gateway with IoT Greengrass V2</a>.</p>
+    /// <p>The version of the gateway to create. Specify <code>3</code> to create an MQTT-enabled, V3 gateway and <code>2</code> to create a Classic streams, V2 gateway. If not specified, the default is <code>2</code> (Classic streams, V2 gateway).</p><note>
+    /// <p>When creating a V3 gateway (<code>gatewayVersion=3</code>) with the <code>GreengrassV2</code> platform, you must also specify the <code>coreDeviceOperatingSystem</code> parameter.</p>
+    /// </note>
+    /// <p>We recommend creating an MQTT-enabled gateway for self-hosted gateways and Siemens Industrial Edge gateways. For more information on gateway versions, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/gateways.html">Use Amazon Web Services IoT SiteWise Edge Edge gateways</a>.</p>
     pub fn gateway_version(&self) -> ::std::option::Option<&str> {
         self.gateway_version.as_deref()
     }
@@ -79,20 +83,26 @@ impl CreateGatewayInputBuilder {
     pub fn get_gateway_platform(&self) -> &::std::option::Option<crate::types::GatewayPlatform> {
         &self.gateway_platform
     }
-    /// <p>The version of the gateway to create. Specify <code>3</code> to create an MQTT-enabled, V3 gateway and <code>2</code> To create a Classic streams, V2 gateway. If the version isn't specified, a Classic streams, V2 gateway is created by default.</p>
-    /// <p>We recommend creating an MQTT-enabled, V3 gateway for self-hosted gateways. SiteWise Edge gateways on Siemens Industrial Edge should use gateway version <code>2</code>. For more information on gateway versions, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/gw-self-host-gg2.html"> Self-host a SiteWise Edge gateway with IoT Greengrass V2</a>.</p>
+    /// <p>The version of the gateway to create. Specify <code>3</code> to create an MQTT-enabled, V3 gateway and <code>2</code> to create a Classic streams, V2 gateway. If not specified, the default is <code>2</code> (Classic streams, V2 gateway).</p><note>
+    /// <p>When creating a V3 gateway (<code>gatewayVersion=3</code>) with the <code>GreengrassV2</code> platform, you must also specify the <code>coreDeviceOperatingSystem</code> parameter.</p>
+    /// </note>
+    /// <p>We recommend creating an MQTT-enabled gateway for self-hosted gateways and Siemens Industrial Edge gateways. For more information on gateway versions, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/gateways.html">Use Amazon Web Services IoT SiteWise Edge Edge gateways</a>.</p>
     pub fn gateway_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The version of the gateway to create. Specify <code>3</code> to create an MQTT-enabled, V3 gateway and <code>2</code> To create a Classic streams, V2 gateway. If the version isn't specified, a Classic streams, V2 gateway is created by default.</p>
-    /// <p>We recommend creating an MQTT-enabled, V3 gateway for self-hosted gateways. SiteWise Edge gateways on Siemens Industrial Edge should use gateway version <code>2</code>. For more information on gateway versions, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/gw-self-host-gg2.html"> Self-host a SiteWise Edge gateway with IoT Greengrass V2</a>.</p>
+    /// <p>The version of the gateway to create. Specify <code>3</code> to create an MQTT-enabled, V3 gateway and <code>2</code> to create a Classic streams, V2 gateway. If not specified, the default is <code>2</code> (Classic streams, V2 gateway).</p><note>
+    /// <p>When creating a V3 gateway (<code>gatewayVersion=3</code>) with the <code>GreengrassV2</code> platform, you must also specify the <code>coreDeviceOperatingSystem</code> parameter.</p>
+    /// </note>
+    /// <p>We recommend creating an MQTT-enabled gateway for self-hosted gateways and Siemens Industrial Edge gateways. For more information on gateway versions, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/gateways.html">Use Amazon Web Services IoT SiteWise Edge Edge gateways</a>.</p>
     pub fn set_gateway_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.gateway_version = input;
         self
     }
-    /// <p>The version of the gateway to create. Specify <code>3</code> to create an MQTT-enabled, V3 gateway and <code>2</code> To create a Classic streams, V2 gateway. If the version isn't specified, a Classic streams, V2 gateway is created by default.</p>
-    /// <p>We recommend creating an MQTT-enabled, V3 gateway for self-hosted gateways. SiteWise Edge gateways on Siemens Industrial Edge should use gateway version <code>2</code>. For more information on gateway versions, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/gw-self-host-gg2.html"> Self-host a SiteWise Edge gateway with IoT Greengrass V2</a>.</p>
+    /// <p>The version of the gateway to create. Specify <code>3</code> to create an MQTT-enabled, V3 gateway and <code>2</code> to create a Classic streams, V2 gateway. If not specified, the default is <code>2</code> (Classic streams, V2 gateway).</p><note>
+    /// <p>When creating a V3 gateway (<code>gatewayVersion=3</code>) with the <code>GreengrassV2</code> platform, you must also specify the <code>coreDeviceOperatingSystem</code> parameter.</p>
+    /// </note>
+    /// <p>We recommend creating an MQTT-enabled gateway for self-hosted gateways and Siemens Industrial Edge gateways. For more information on gateway versions, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/gateways.html">Use Amazon Web Services IoT SiteWise Edge Edge gateways</a>.</p>
     pub fn get_gateway_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.gateway_version
     }

@@ -43,6 +43,20 @@ pub use crate::types::_dataset_source_format::DatasetSourceFormat;
 
 pub use crate::types::_dataset_source_type::DatasetSourceType;
 
+pub use crate::types::_computation_model_status::ComputationModelStatus;
+
+pub use crate::types::_computation_model_state::ComputationModelState;
+
+pub use crate::types::_computation_model_data_binding_value::ComputationModelDataBindingValue;
+
+pub use crate::types::_asset_property_binding_value::AssetPropertyBindingValue;
+
+pub use crate::types::_asset_model_property_binding_value::AssetModelPropertyBindingValue;
+
+pub use crate::types::_computation_model_configuration::ComputationModelConfiguration;
+
+pub use crate::types::_computation_model_anomaly_detection_configuration::ComputationModelAnomalyDetectionConfiguration;
+
 pub use crate::types::_property_notification_state::PropertyNotificationState;
 
 pub use crate::types::_asset_model_status::AssetModelStatus;
@@ -163,9 +177,45 @@ pub use crate::types::_core_device_operating_system::CoreDeviceOperatingSystem;
 
 pub use crate::types::_greengrass::Greengrass;
 
+pub use crate::types::_execution_summary::ExecutionSummary;
+
+pub use crate::types::_execution_status::ExecutionStatus;
+
+pub use crate::types::_execution_state::ExecutionState;
+
+pub use crate::types::_resolve_to::ResolveTo;
+
+pub use crate::types::_target_resource::TargetResource;
+
+pub use crate::types::_resolve_to_resource_type::ResolveToResourceType;
+
+pub use crate::types::_target_resource_type::TargetResourceType;
+
 pub use crate::types::_dataset_summary::DatasetSummary;
 
 pub use crate::types::_dashboard_summary::DashboardSummary;
+
+pub use crate::types::_computation_model_summary::ComputationModelSummary;
+
+pub use crate::types::_computation_model_type::ComputationModelType;
+
+pub use crate::types::_computation_model_resolve_to_resource_summary::ComputationModelResolveToResourceSummary;
+
+pub use crate::types::_computation_model_data_binding_usage_summary::ComputationModelDataBindingUsageSummary;
+
+pub use crate::types::_matched_data_binding::MatchedDataBinding;
+
+pub use crate::types::_data_binding_value::DataBindingValue;
+
+pub use crate::types::_data_binding_value_filter::DataBindingValueFilter;
+
+pub use crate::types::_asset_model_property_binding_value_filter::AssetModelPropertyBindingValueFilter;
+
+pub use crate::types::_asset_property_binding_value_filter::AssetPropertyBindingValueFilter;
+
+pub use crate::types::_asset_model_binding_value_filter::AssetModelBindingValueFilter;
+
+pub use crate::types::_asset_binding_value_filter::AssetBindingValueFilter;
 
 pub use crate::types::_composition_relationship_summary::CompositionRelationshipSummary;
 
@@ -212,10 +262,6 @@ pub use crate::types::_list_asset_model_properties_filter::ListAssetModelPropert
 pub use crate::types::_asset_model_composite_model_summary::AssetModelCompositeModelSummary;
 
 pub use crate::types::_action_summary::ActionSummary;
-
-pub use crate::types::_target_resource::TargetResource;
-
-pub use crate::types::_target_resource_type::TargetResourceType;
 
 pub use crate::types::_access_policy_summary::AccessPolicySummary;
 
@@ -279,6 +325,8 @@ pub use crate::types::_auth_mode::AuthMode;
 
 pub use crate::types::_image_location::ImageLocation;
 
+pub use crate::types::_action_definition::ActionDefinition;
+
 pub use crate::types::_job_configuration::JobConfiguration;
 
 pub use crate::types::_file_format::FileFormat;
@@ -296,8 +344,6 @@ pub use crate::types::_file::File;
 pub use crate::types::_composite_model_property::CompositeModelProperty;
 
 pub use crate::types::_property::Property;
-
-pub use crate::types::_action_definition::ActionDefinition;
 
 pub use crate::types::_composition_details::CompositionDetails;
 
@@ -383,6 +429,8 @@ mod _aggregates;
 
 mod _alarms;
 
+mod _asset_binding_value_filter;
+
 mod _asset_composite_model;
 
 mod _asset_composite_model_path_segment;
@@ -397,6 +445,8 @@ mod _asset_hierarchy;
 
 mod _asset_hierarchy_info;
 
+mod _asset_model_binding_value_filter;
+
 mod _asset_model_composite_model;
 
 mod _asset_model_composite_model_definition;
@@ -410,6 +460,10 @@ mod _asset_model_hierarchy;
 mod _asset_model_hierarchy_definition;
 
 mod _asset_model_property;
+
+mod _asset_model_property_binding_value;
+
+mod _asset_model_property_binding_value_filter;
 
 mod _asset_model_property_definition;
 
@@ -428,6 +482,10 @@ mod _asset_model_type;
 mod _asset_model_version_type;
 
 mod _asset_property;
+
+mod _asset_property_binding_value;
+
+mod _asset_property_binding_value_filter;
 
 mod _asset_property_path_segment;
 
@@ -513,6 +571,24 @@ mod _composition_relationship_item;
 
 mod _composition_relationship_summary;
 
+mod _computation_model_anomaly_detection_configuration;
+
+mod _computation_model_configuration;
+
+mod _computation_model_data_binding_usage_summary;
+
+mod _computation_model_data_binding_value;
+
+mod _computation_model_resolve_to_resource_summary;
+
+mod _computation_model_state;
+
+mod _computation_model_status;
+
+mod _computation_model_summary;
+
+mod _computation_model_type;
+
 mod _compute_location;
 
 mod _configuration_error_details;
@@ -530,6 +606,10 @@ mod _csv;
 mod _customer_managed_s3_storage;
 
 mod _dashboard_summary;
+
+mod _data_binding_value;
+
+mod _data_binding_value_filter;
 
 mod _data_set_reference;
 
@@ -560,6 +640,12 @@ mod _error_code;
 mod _error_details;
 
 mod _error_report_location;
+
+mod _execution_state;
+
+mod _execution_status;
+
+mod _execution_summary;
 
 mod _expression_variable;
 
@@ -627,6 +713,8 @@ mod _logging_level;
 
 mod _logging_options;
 
+mod _matched_data_binding;
+
 mod _measurement;
 
 mod _measurement_processing_config;
@@ -682,6 +770,10 @@ mod _quality;
 mod _raw_value_type;
 
 mod _reference;
+
+mod _resolve_to;
+
+mod _resolve_to_resource_type;
 
 mod _resource;
 

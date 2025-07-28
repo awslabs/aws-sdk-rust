@@ -49,6 +49,8 @@ pub(crate) mod shape_create_asset_model_composite_model;
 
 pub(crate) mod shape_create_bulk_import_job;
 
+pub(crate) mod shape_create_computation_model;
+
 pub(crate) mod shape_create_dashboard;
 
 pub(crate) mod shape_create_dataset;
@@ -66,6 +68,8 @@ pub(crate) mod shape_delete_asset;
 pub(crate) mod shape_delete_asset_model;
 
 pub(crate) mod shape_delete_asset_model_composite_model;
+
+pub(crate) mod shape_delete_computation_model;
 
 pub(crate) mod shape_delete_dashboard;
 
@@ -95,11 +99,17 @@ pub(crate) mod shape_describe_asset_property;
 
 pub(crate) mod shape_describe_bulk_import_job;
 
+pub(crate) mod shape_describe_computation_model;
+
+pub(crate) mod shape_describe_computation_model_execution_summary;
+
 pub(crate) mod shape_describe_dashboard;
 
 pub(crate) mod shape_describe_dataset;
 
 pub(crate) mod shape_describe_default_encryption_configuration;
+
+pub(crate) mod shape_describe_execution;
 
 pub(crate) mod shape_describe_gateway;
 
@@ -155,9 +165,17 @@ pub(crate) mod shape_list_bulk_import_jobs;
 
 pub(crate) mod shape_list_composition_relationships;
 
+pub(crate) mod shape_list_computation_model_data_binding_usages;
+
+pub(crate) mod shape_list_computation_model_resolve_to_resources;
+
+pub(crate) mod shape_list_computation_models;
+
 pub(crate) mod shape_list_dashboards;
 
 pub(crate) mod shape_list_datasets;
+
+pub(crate) mod shape_list_executions;
 
 pub(crate) mod shape_list_gateways;
 
@@ -190,6 +208,8 @@ pub(crate) mod shape_update_asset_model;
 pub(crate) mod shape_update_asset_model_composite_model;
 
 pub(crate) mod shape_update_asset_property;
+
+pub(crate) mod shape_update_computation_model;
 
 pub(crate) mod shape_update_dashboard;
 
@@ -241,6 +261,8 @@ pub(crate) mod shape_create_asset_model_input;
 
 pub(crate) mod shape_create_bulk_import_job_input;
 
+pub(crate) mod shape_create_computation_model_input;
+
 pub(crate) mod shape_create_dashboard_input;
 
 pub(crate) mod shape_create_dataset_input;
@@ -272,6 +294,8 @@ pub(crate) mod shape_invoke_assistant_input;
 pub(crate) mod shape_invoke_assistant_output;
 
 pub(crate) mod shape_limit_exceeded_exception;
+
+pub(crate) mod shape_list_computation_model_data_binding_usages_input;
 
 pub(crate) mod shape_precondition_failed_exception;
 
@@ -306,6 +330,8 @@ pub(crate) mod shape_update_asset_model_composite_model_input;
 pub(crate) mod shape_update_asset_model_input;
 
 pub(crate) mod shape_update_asset_property_input;
+
+pub(crate) mod shape_update_computation_model_input;
 
 pub(crate) mod shape_update_dashboard_input;
 
@@ -431,9 +457,27 @@ pub(crate) mod shape_composition_details;
 
 pub(crate) mod shape_composition_relationship_summaries;
 
+pub(crate) mod shape_computation_model_configuration;
+
+pub(crate) mod shape_computation_model_data_binding;
+
+pub(crate) mod shape_computation_model_data_binding_usage_summaries;
+
+pub(crate) mod shape_computation_model_data_binding_value;
+
+pub(crate) mod shape_computation_model_execution_summary;
+
+pub(crate) mod shape_computation_model_resolve_to_resource_summaries;
+
+pub(crate) mod shape_computation_model_status;
+
+pub(crate) mod shape_computation_model_summaries;
+
 pub(crate) mod shape_configuration_status;
 
 pub(crate) mod shape_dashboard_summaries;
+
+pub(crate) mod shape_data_binding_value_filter;
 
 pub(crate) mod shape_dataset_source;
 
@@ -442,6 +486,14 @@ pub(crate) mod shape_dataset_status;
 pub(crate) mod shape_dataset_summaries;
 
 pub(crate) mod shape_error_report_location;
+
+pub(crate) mod shape_execution_details;
+
+pub(crate) mod shape_execution_result;
+
+pub(crate) mod shape_execution_status;
+
+pub(crate) mod shape_execution_summaries;
 
 pub(crate) mod shape_file;
 
@@ -485,6 +537,8 @@ pub(crate) mod shape_property;
 
 pub(crate) mod shape_put_asset_property_value_entry;
 
+pub(crate) mod shape_resolve_to;
+
 pub(crate) mod shape_resource;
 
 pub(crate) mod shape_retention_period;
@@ -507,6 +561,8 @@ pub(crate) mod shape_action_summary;
 
 pub(crate) mod shape_aggregated_value;
 
+pub(crate) mod shape_asset_binding_value_filter;
+
 pub(crate) mod shape_asset_composite_model;
 
 pub(crate) mod shape_asset_composite_model_path_segment;
@@ -517,9 +573,15 @@ pub(crate) mod shape_asset_error_details;
 
 pub(crate) mod shape_asset_hierarchy;
 
+pub(crate) mod shape_asset_model_binding_value_filter;
+
 pub(crate) mod shape_asset_model_composite_model_path_segment;
 
 pub(crate) mod shape_asset_model_composite_model_summary;
+
+pub(crate) mod shape_asset_model_property_binding_value;
+
+pub(crate) mod shape_asset_model_property_binding_value_filter;
 
 pub(crate) mod shape_asset_model_property_path_segment;
 
@@ -528,6 +590,10 @@ pub(crate) mod shape_asset_model_property_summary;
 pub(crate) mod shape_asset_model_summary;
 
 pub(crate) mod shape_asset_property;
+
+pub(crate) mod shape_asset_property_binding_value;
+
+pub(crate) mod shape_asset_property_binding_value_filter;
 
 pub(crate) mod shape_asset_property_path;
 
@@ -565,6 +631,14 @@ pub(crate) mod shape_composition_relationship;
 
 pub(crate) mod shape_composition_relationship_summary;
 
+pub(crate) mod shape_computation_model_anomaly_detection_configuration;
+
+pub(crate) mod shape_computation_model_data_binding_usage_summary;
+
+pub(crate) mod shape_computation_model_resolve_to_resource_summary;
+
+pub(crate) mod shape_computation_model_summary;
+
 pub(crate) mod shape_configuration_error_details;
 
 pub(crate) mod shape_customer_managed_s3_storage;
@@ -574,6 +648,8 @@ pub(crate) mod shape_dashboard_summary;
 pub(crate) mod shape_dataset_summary;
 
 pub(crate) mod shape_error_details;
+
+pub(crate) mod shape_execution_summary;
 
 pub(crate) mod shape_file_format;
 
@@ -645,9 +721,13 @@ pub(crate) mod shape_batch_get_asset_property_value_history_error_info;
 
 pub(crate) mod shape_batch_put_asset_property_errors;
 
+pub(crate) mod shape_binding_value_list;
+
 pub(crate) mod shape_column_type;
 
 pub(crate) mod shape_composition_relationship_item;
+
+pub(crate) mod shape_computation_model_id_list;
 
 pub(crate) mod shape_csv;
 
@@ -656,6 +736,8 @@ pub(crate) mod shape_datum_list;
 pub(crate) mod shape_detailed_errors;
 
 pub(crate) mod shape_kendra_source_detail;
+
+pub(crate) mod shape_matched_data_binding;
 
 pub(crate) mod shape_measurement;
 
@@ -674,6 +756,8 @@ pub(crate) mod shape_batch_put_asset_property_error;
 pub(crate) mod shape_citations;
 
 pub(crate) mod shape_column_names;
+
+pub(crate) mod shape_data_binding_value;
 
 pub(crate) mod shape_datum;
 

@@ -132,6 +132,9 @@ pub(crate) fn de_describe_action(
                         ::aws_smithy_types::date_time::Format::EpochSeconds,
                     )?);
                 }
+                "resolveTo" => {
+                    builder = builder.set_resolve_to(crate::protocol_serde::shape_resolve_to::de_resolve_to(tokens)?);
+                }
                 "targetResource" => {
                     builder = builder.set_target_resource(crate::protocol_serde::shape_target_resource::de_target_resource(tokens)?);
                 }

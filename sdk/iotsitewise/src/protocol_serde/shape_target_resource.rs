@@ -21,6 +21,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "computationModelId" => {
+                            builder = builder.set_computation_model_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -31,9 +38,7 @@ where
                     }
                 }
             }
-            Ok(Some(crate::serde_util::target_resource_correct_errors(builder).build().map_err(
-                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
-            )?))
+            Ok(Some(builder.build()))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -45,8 +50,11 @@ pub fn ser_target_resource(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TargetResource,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    {
-        object.key("assetId").string(input.asset_id.as_str());
+    if let Some(var_1) = &input.asset_id {
+        object.key("assetId").string(var_1.as_str());
+    }
+    if let Some(var_2) = &input.computation_model_id {
+        object.key("computationModelId").string(var_2.as_str());
     }
     Ok(())
 }

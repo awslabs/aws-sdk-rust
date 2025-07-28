@@ -164,4 +164,18 @@ impl ExecuteActionFluentBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
+    /// <p>The detailed resource this action resolves to.</p>
+    pub fn resolve_to(mut self, input: crate::types::ResolveTo) -> Self {
+        self.inner = self.inner.resolve_to(input);
+        self
+    }
+    /// <p>The detailed resource this action resolves to.</p>
+    pub fn set_resolve_to(mut self, input: ::std::option::Option<crate::types::ResolveTo>) -> Self {
+        self.inner = self.inner.set_resolve_to(input);
+        self
+    }
+    /// <p>The detailed resource this action resolves to.</p>
+    pub fn get_resolve_to(&self) -> &::std::option::Option<crate::types::ResolveTo> {
+        self.inner.get_resolve_to()
+    }
 }

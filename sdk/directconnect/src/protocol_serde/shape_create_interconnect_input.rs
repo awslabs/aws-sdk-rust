@@ -30,5 +30,8 @@ pub fn ser_create_interconnect_input_input(
     if let Some(var_9) = &input.provider_name {
         object.key("providerName").string(var_9.as_str());
     }
+    if let Some(var_10) = &input.request_mac_sec {
+        object.key("requestMACSec").boolean(*var_10);
+    }
     Ok(())
 }

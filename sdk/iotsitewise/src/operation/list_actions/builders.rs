@@ -164,4 +164,32 @@ impl ListActionsFluentBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
+    /// <p>The type of the resolved resource.</p>
+    pub fn resolve_to_resource_type(mut self, input: crate::types::ResolveToResourceType) -> Self {
+        self.inner = self.inner.resolve_to_resource_type(input);
+        self
+    }
+    /// <p>The type of the resolved resource.</p>
+    pub fn set_resolve_to_resource_type(mut self, input: ::std::option::Option<crate::types::ResolveToResourceType>) -> Self {
+        self.inner = self.inner.set_resolve_to_resource_type(input);
+        self
+    }
+    /// <p>The type of the resolved resource.</p>
+    pub fn get_resolve_to_resource_type(&self) -> &::std::option::Option<crate::types::ResolveToResourceType> {
+        self.inner.get_resolve_to_resource_type()
+    }
+    /// <p>The ID of the resolved resource.</p>
+    pub fn resolve_to_resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.resolve_to_resource_id(input.into());
+        self
+    }
+    /// <p>The ID of the resolved resource.</p>
+    pub fn set_resolve_to_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_resolve_to_resource_id(input);
+        self
+    }
+    /// <p>The ID of the resolved resource.</p>
+    pub fn get_resolve_to_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resolve_to_resource_id()
+    }
 }

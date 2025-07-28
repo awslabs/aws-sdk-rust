@@ -3,18 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateMacSecKeyOutput {
-    /// <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p>
+    /// <p>The ID of the dedicated connection (dxcon-xxxx), interconnect (dxcon-xxxx), or LAG (dxlag-xxxx).</p>
     pub connection_id: ::std::option::Option<::std::string::String>,
-    /// <p>The MAC Security (MACsec) security keys associated with the dedicated connection.</p>
+    /// <p>The MAC Security (MACsec) security keys associated with the connection.</p>
     pub mac_sec_keys: ::std::option::Option<::std::vec::Vec<crate::types::MacSecKey>>,
     _request_id: Option<String>,
 }
 impl AssociateMacSecKeyOutput {
-    /// <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p>
+    /// <p>The ID of the dedicated connection (dxcon-xxxx), interconnect (dxcon-xxxx), or LAG (dxlag-xxxx).</p>
     pub fn connection_id(&self) -> ::std::option::Option<&str> {
         self.connection_id.as_deref()
     }
-    /// <p>The MAC Security (MACsec) security keys associated with the dedicated connection.</p>
+    /// <p>The MAC Security (MACsec) security keys associated with the connection.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.mac_sec_keys.is_none()`.
     pub fn mac_sec_keys(&self) -> &[crate::types::MacSecKey] {
@@ -42,17 +42,17 @@ pub struct AssociateMacSecKeyOutputBuilder {
     _request_id: Option<String>,
 }
 impl AssociateMacSecKeyOutputBuilder {
-    /// <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p>
+    /// <p>The ID of the dedicated connection (dxcon-xxxx), interconnect (dxcon-xxxx), or LAG (dxlag-xxxx).</p>
     pub fn connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p>
+    /// <p>The ID of the dedicated connection (dxcon-xxxx), interconnect (dxcon-xxxx), or LAG (dxlag-xxxx).</p>
     pub fn set_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connection_id = input;
         self
     }
-    /// <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p>
+    /// <p>The ID of the dedicated connection (dxcon-xxxx), interconnect (dxcon-xxxx), or LAG (dxlag-xxxx).</p>
     pub fn get_connection_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.connection_id
     }
@@ -60,19 +60,19 @@ impl AssociateMacSecKeyOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_mac_sec_keys`](Self::set_mac_sec_keys).
     ///
-    /// <p>The MAC Security (MACsec) security keys associated with the dedicated connection.</p>
+    /// <p>The MAC Security (MACsec) security keys associated with the connection.</p>
     pub fn mac_sec_keys(mut self, input: crate::types::MacSecKey) -> Self {
         let mut v = self.mac_sec_keys.unwrap_or_default();
         v.push(input);
         self.mac_sec_keys = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The MAC Security (MACsec) security keys associated with the dedicated connection.</p>
+    /// <p>The MAC Security (MACsec) security keys associated with the connection.</p>
     pub fn set_mac_sec_keys(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MacSecKey>>) -> Self {
         self.mac_sec_keys = input;
         self
     }
-    /// <p>The MAC Security (MACsec) security keys associated with the dedicated connection.</p>
+    /// <p>The MAC Security (MACsec) security keys associated with the connection.</p>
     pub fn get_mac_sec_keys(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MacSecKey>> {
         &self.mac_sec_keys
     }
