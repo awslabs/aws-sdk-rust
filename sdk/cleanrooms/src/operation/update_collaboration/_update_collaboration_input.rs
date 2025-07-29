@@ -9,7 +9,9 @@ pub struct UpdateCollaborationInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the collaboration.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The analytics engine.</p>
+    /// <p>The analytics engine.</p><note>
+    /// <p>After July 16, 2025, the <code>CLEAN_ROOMS_SQL</code> parameter will no longer be available.</p>
+    /// </note>
     pub analytics_engine: ::std::option::Option<crate::types::AnalyticsEngine>,
 }
 impl UpdateCollaborationInput {
@@ -25,7 +27,9 @@ impl UpdateCollaborationInput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The analytics engine.</p>
+    /// <p>The analytics engine.</p><note>
+    /// <p>After July 16, 2025, the <code>CLEAN_ROOMS_SQL</code> parameter will no longer be available.</p>
+    /// </note>
     pub fn analytics_engine(&self) -> ::std::option::Option<&crate::types::AnalyticsEngine> {
         self.analytics_engine.as_ref()
     }
@@ -90,17 +94,23 @@ impl UpdateCollaborationInputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>The analytics engine.</p>
+    /// <p>The analytics engine.</p><note>
+    /// <p>After July 16, 2025, the <code>CLEAN_ROOMS_SQL</code> parameter will no longer be available.</p>
+    /// </note>
     pub fn analytics_engine(mut self, input: crate::types::AnalyticsEngine) -> Self {
         self.analytics_engine = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The analytics engine.</p>
+    /// <p>The analytics engine.</p><note>
+    /// <p>After July 16, 2025, the <code>CLEAN_ROOMS_SQL</code> parameter will no longer be available.</p>
+    /// </note>
     pub fn set_analytics_engine(mut self, input: ::std::option::Option<crate::types::AnalyticsEngine>) -> Self {
         self.analytics_engine = input;
         self
     }
-    /// <p>The analytics engine.</p>
+    /// <p>The analytics engine.</p><note>
+    /// <p>After July 16, 2025, the <code>CLEAN_ROOMS_SQL</code> parameter will no longer be available.</p>
+    /// </note>
     pub fn get_analytics_engine(&self) -> &::std::option::Option<crate::types::AnalyticsEngine> {
         &self.analytics_engine
     }

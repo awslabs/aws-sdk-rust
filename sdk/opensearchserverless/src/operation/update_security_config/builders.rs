@@ -181,6 +181,20 @@ impl UpdateSecurityConfigFluentBuilder {
     pub fn get_iam_identity_center_options_updates(&self) -> &::std::option::Option<crate::types::UpdateIamIdentityCenterConfigOptions> {
         self.inner.get_iam_identity_center_options_updates()
     }
+    /// <p>Describes IAM federation options in the form of a key-value map for updating an existing security configuration. Use this field to modify IAM federation settings for the security configuration.</p>
+    pub fn iam_federation_options(mut self, input: crate::types::IamFederationConfigOptions) -> Self {
+        self.inner = self.inner.iam_federation_options(input);
+        self
+    }
+    /// <p>Describes IAM federation options in the form of a key-value map for updating an existing security configuration. Use this field to modify IAM federation settings for the security configuration.</p>
+    pub fn set_iam_federation_options(mut self, input: ::std::option::Option<crate::types::IamFederationConfigOptions>) -> Self {
+        self.inner = self.inner.set_iam_federation_options(input);
+        self
+    }
+    /// <p>Describes IAM federation options in the form of a key-value map for updating an existing security configuration. Use this field to modify IAM federation settings for the security configuration.</p>
+    pub fn get_iam_federation_options(&self) -> &::std::option::Option<crate::types::IamFederationConfigOptions> {
+        self.inner.get_iam_federation_options()
+    }
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());

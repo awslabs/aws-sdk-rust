@@ -2,7 +2,7 @@
 
 /// <p>Contains the tracker resource details.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ListTrackersResponseEntry {
     /// <p>The name of the tracker resource.</p>
     pub tracker_name: ::std::string::String,
@@ -49,6 +49,18 @@ impl ListTrackersResponseEntry {
         &self.update_time
     }
 }
+impl ::std::fmt::Debug for ListTrackersResponseEntry {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ListTrackersResponseEntry");
+        formatter.field("tracker_name", &self.tracker_name);
+        formatter.field("description", &self.description);
+        formatter.field("pricing_plan", &self.pricing_plan);
+        formatter.field("pricing_plan_data_source", &self.pricing_plan_data_source);
+        formatter.field("create_time", &"*** Sensitive Data Redacted ***");
+        formatter.field("update_time", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl ListTrackersResponseEntry {
     /// Creates a new builder-style object to manufacture [`ListTrackersResponseEntry`](crate::types::ListTrackersResponseEntry).
     pub fn builder() -> crate::types::builders::ListTrackersResponseEntryBuilder {
@@ -57,7 +69,7 @@ impl ListTrackersResponseEntry {
 }
 
 /// A builder for [`ListTrackersResponseEntry`](crate::types::ListTrackersResponseEntry).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct ListTrackersResponseEntryBuilder {
     pub(crate) tracker_name: ::std::option::Option<::std::string::String>,
@@ -197,5 +209,17 @@ impl ListTrackersResponseEntryBuilder {
                 )
             })?,
         })
+    }
+}
+impl ::std::fmt::Debug for ListTrackersResponseEntryBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ListTrackersResponseEntryBuilder");
+        formatter.field("tracker_name", &self.tracker_name);
+        formatter.field("description", &self.description);
+        formatter.field("pricing_plan", &self.pricing_plan);
+        formatter.field("pricing_plan_data_source", &self.pricing_plan_data_source);
+        formatter.field("create_time", &"*** Sensitive Data Redacted ***");
+        formatter.field("update_time", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

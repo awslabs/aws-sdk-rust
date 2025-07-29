@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateKeyOutput {
-    /// <p>The key value/string of an API key. This value is used when making API calls to authorize the call. For example, see <a href="https://docs.aws.amazon.com/location/latest/APIReference/API_GetMapGlyphs.html">GetMapGlyphs</a>.</p>
+    /// <p>The key value/string of an API key. This value is used when making API calls to authorize the call. For example, see <a href="https://docs.aws.amazon.com/location/previous/APIReference/API_GetMapGlyphs.html">GetMapGlyphs</a>.</p>
     pub key: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) for the API key resource. Used when you need to specify a resource across all Amazon Web Services.</p>
     /// <ul>
@@ -18,7 +18,7 @@ pub struct CreateKeyOutput {
     _request_id: Option<String>,
 }
 impl CreateKeyOutput {
-    /// <p>The key value/string of an API key. This value is used when making API calls to authorize the call. For example, see <a href="https://docs.aws.amazon.com/location/latest/APIReference/API_GetMapGlyphs.html">GetMapGlyphs</a>.</p>
+    /// <p>The key value/string of an API key. This value is used when making API calls to authorize the call. For example, see <a href="https://docs.aws.amazon.com/location/previous/APIReference/API_GetMapGlyphs.html">GetMapGlyphs</a>.</p>
     pub fn key(&self) -> &str {
         use std::ops::Deref;
         self.key.deref()
@@ -48,7 +48,7 @@ impl ::std::fmt::Debug for CreateKeyOutput {
         formatter.field("key", &"*** Sensitive Data Redacted ***");
         formatter.field("key_arn", &self.key_arn);
         formatter.field("key_name", &self.key_name);
-        formatter.field("create_time", &self.create_time);
+        formatter.field("create_time", &"*** Sensitive Data Redacted ***");
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -76,18 +76,18 @@ pub struct CreateKeyOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateKeyOutputBuilder {
-    /// <p>The key value/string of an API key. This value is used when making API calls to authorize the call. For example, see <a href="https://docs.aws.amazon.com/location/latest/APIReference/API_GetMapGlyphs.html">GetMapGlyphs</a>.</p>
+    /// <p>The key value/string of an API key. This value is used when making API calls to authorize the call. For example, see <a href="https://docs.aws.amazon.com/location/previous/APIReference/API_GetMapGlyphs.html">GetMapGlyphs</a>.</p>
     /// This field is required.
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The key value/string of an API key. This value is used when making API calls to authorize the call. For example, see <a href="https://docs.aws.amazon.com/location/latest/APIReference/API_GetMapGlyphs.html">GetMapGlyphs</a>.</p>
+    /// <p>The key value/string of an API key. This value is used when making API calls to authorize the call. For example, see <a href="https://docs.aws.amazon.com/location/previous/APIReference/API_GetMapGlyphs.html">GetMapGlyphs</a>.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key = input;
         self
     }
-    /// <p>The key value/string of an API key. This value is used when making API calls to authorize the call. For example, see <a href="https://docs.aws.amazon.com/location/latest/APIReference/API_GetMapGlyphs.html">GetMapGlyphs</a>.</p>
+    /// <p>The key value/string of an API key. This value is used when making API calls to authorize the call. For example, see <a href="https://docs.aws.amazon.com/location/previous/APIReference/API_GetMapGlyphs.html">GetMapGlyphs</a>.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.key
     }
@@ -199,7 +199,7 @@ impl ::std::fmt::Debug for CreateKeyOutputBuilder {
         formatter.field("key", &"*** Sensitive Data Redacted ***");
         formatter.field("key_arn", &self.key_arn);
         formatter.field("key_name", &self.key_name);
-        formatter.field("create_time", &self.create_time);
+        formatter.field("create_time", &"*** Sensitive Data Redacted ***");
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

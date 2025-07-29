@@ -219,6 +219,8 @@ pub(crate) mod shape_effective_lifecycle_policy_details;
 
 pub(crate) mod shape_effective_lifecycle_policy_error_details;
 
+pub(crate) mod shape_iam_federation_config_options;
+
 pub(crate) mod shape_lifecycle_policy_detail;
 
 pub(crate) mod shape_lifecycle_policy_details;

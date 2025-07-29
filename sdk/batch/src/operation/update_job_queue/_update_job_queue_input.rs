@@ -16,6 +16,8 @@ pub struct UpdateJobQueueInput {
     /// <p>All compute environments that are associated with a job queue must share the same architecture. Batch doesn't support mixing compute environment architecture types in a single job queue.</p>
     /// </note>
     pub compute_environment_order: ::std::option::Option<::std::vec::Vec<crate::types::ComputeEnvironmentOrder>>,
+    /// <p>The order of the service environment associated with the job queue. Job queues with a higher priority are evaluated first when associated with the same service environment.</p>
+    pub service_environment_order: ::std::option::Option<::std::vec::Vec<crate::types::ServiceEnvironmentOrder>>,
     /// <p>The set of actions that Batch perform on jobs that remain at the head of the job queue in the specified state longer than specified times. Batch will perform each action after <code>maxTimeSeconds</code> has passed. (<b>Note</b>: The minimum value for maxTimeSeconds is 600 (10 minutes) and its maximum value is 86,400 (24 hours).)</p>
     pub job_state_time_limit_actions: ::std::option::Option<::std::vec::Vec<crate::types::JobStateTimeLimitAction>>,
 }
@@ -44,6 +46,12 @@ impl UpdateJobQueueInput {
     pub fn compute_environment_order(&self) -> &[crate::types::ComputeEnvironmentOrder] {
         self.compute_environment_order.as_deref().unwrap_or_default()
     }
+    /// <p>The order of the service environment associated with the job queue. Job queues with a higher priority are evaluated first when associated with the same service environment.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.service_environment_order.is_none()`.
+    pub fn service_environment_order(&self) -> &[crate::types::ServiceEnvironmentOrder] {
+        self.service_environment_order.as_deref().unwrap_or_default()
+    }
     /// <p>The set of actions that Batch perform on jobs that remain at the head of the job queue in the specified state longer than specified times. Batch will perform each action after <code>maxTimeSeconds</code> has passed. (<b>Note</b>: The minimum value for maxTimeSeconds is 600 (10 minutes) and its maximum value is 86,400 (24 hours).)</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.job_state_time_limit_actions.is_none()`.
@@ -67,6 +75,7 @@ pub struct UpdateJobQueueInputBuilder {
     pub(crate) scheduling_policy_arn: ::std::option::Option<::std::string::String>,
     pub(crate) priority: ::std::option::Option<i32>,
     pub(crate) compute_environment_order: ::std::option::Option<::std::vec::Vec<crate::types::ComputeEnvironmentOrder>>,
+    pub(crate) service_environment_order: ::std::option::Option<::std::vec::Vec<crate::types::ServiceEnvironmentOrder>>,
     pub(crate) job_state_time_limit_actions: ::std::option::Option<::std::vec::Vec<crate::types::JobStateTimeLimitAction>>,
 }
 impl UpdateJobQueueInputBuilder {
@@ -153,6 +162,26 @@ impl UpdateJobQueueInputBuilder {
     pub fn get_compute_environment_order(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ComputeEnvironmentOrder>> {
         &self.compute_environment_order
     }
+    /// Appends an item to `service_environment_order`.
+    ///
+    /// To override the contents of this collection use [`set_service_environment_order`](Self::set_service_environment_order).
+    ///
+    /// <p>The order of the service environment associated with the job queue. Job queues with a higher priority are evaluated first when associated with the same service environment.</p>
+    pub fn service_environment_order(mut self, input: crate::types::ServiceEnvironmentOrder) -> Self {
+        let mut v = self.service_environment_order.unwrap_or_default();
+        v.push(input);
+        self.service_environment_order = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The order of the service environment associated with the job queue. Job queues with a higher priority are evaluated first when associated with the same service environment.</p>
+    pub fn set_service_environment_order(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceEnvironmentOrder>>) -> Self {
+        self.service_environment_order = input;
+        self
+    }
+    /// <p>The order of the service environment associated with the job queue. Job queues with a higher priority are evaluated first when associated with the same service environment.</p>
+    pub fn get_service_environment_order(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceEnvironmentOrder>> {
+        &self.service_environment_order
+    }
     /// Appends an item to `job_state_time_limit_actions`.
     ///
     /// To override the contents of this collection use [`set_job_state_time_limit_actions`](Self::set_job_state_time_limit_actions).
@@ -183,6 +212,7 @@ impl UpdateJobQueueInputBuilder {
             scheduling_policy_arn: self.scheduling_policy_arn,
             priority: self.priority,
             compute_environment_order: self.compute_environment_order,
+            service_environment_order: self.service_environment_order,
             job_state_time_limit_actions: self.job_state_time_limit_actions,
         })
     }

@@ -13,6 +13,7 @@
 /// # let jobstatetimelimitactionsaction = unimplemented!();
 /// match jobstatetimelimitactionsaction {
 ///     JobStateTimeLimitActionsAction::Cancel => { /* ... */ },
+///     JobStateTimeLimitActionsAction::Terminate => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -43,6 +44,8 @@
 pub enum JobStateTimeLimitActionsAction {
     #[allow(missing_docs)] // documentation missing in model
     Cancel,
+    #[allow(missing_docs)] // documentation missing in model
+    Terminate,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -51,6 +54,7 @@ impl ::std::convert::From<&str> for JobStateTimeLimitActionsAction {
     fn from(s: &str) -> Self {
         match s {
             "CANCEL" => JobStateTimeLimitActionsAction::Cancel,
+            "TERMINATE" => JobStateTimeLimitActionsAction::Terminate,
             other => JobStateTimeLimitActionsAction::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -67,12 +71,13 @@ impl JobStateTimeLimitActionsAction {
     pub fn as_str(&self) -> &str {
         match self {
             JobStateTimeLimitActionsAction::Cancel => "CANCEL",
+            JobStateTimeLimitActionsAction::Terminate => "TERMINATE",
             JobStateTimeLimitActionsAction::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CANCEL"]
+        &["CANCEL", "TERMINATE"]
     }
 }
 impl ::std::convert::AsRef<str> for JobStateTimeLimitActionsAction {
@@ -96,6 +101,7 @@ impl ::std::fmt::Display for JobStateTimeLimitActionsAction {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             JobStateTimeLimitActionsAction::Cancel => write!(f, "CANCEL"),
+            JobStateTimeLimitActionsAction::Terminate => write!(f, "TERMINATE"),
             JobStateTimeLimitActionsAction::Unknown(value) => write!(f, "{}", value),
         }
     }

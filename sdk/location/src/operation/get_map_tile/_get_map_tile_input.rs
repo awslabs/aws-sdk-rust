@@ -11,7 +11,7 @@ pub struct GetMapTileInput {
     pub x: ::std::option::Option<::std::string::String>,
     /// <p>The Y axis value for the map tile.</p>
     pub y: ::std::option::Option<::std::string::String>,
-    /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
+    /// <p>The optional <a href="https://docs.aws.amazon.com/location/previous/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
     pub key: ::std::option::Option<::std::string::String>,
 }
 impl GetMapTileInput {
@@ -31,7 +31,7 @@ impl GetMapTileInput {
     pub fn y(&self) -> ::std::option::Option<&str> {
         self.y.as_deref()
     }
-    /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
+    /// <p>The optional <a href="https://docs.aws.amazon.com/location/previous/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
     pub fn key(&self) -> ::std::option::Option<&str> {
         self.key.as_deref()
     }
@@ -125,17 +125,17 @@ impl GetMapTileInputBuilder {
     pub fn get_y(&self) -> &::std::option::Option<::std::string::String> {
         &self.y
     }
-    /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
+    /// <p>The optional <a href="https://docs.aws.amazon.com/location/previous/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
+    /// <p>The optional <a href="https://docs.aws.amazon.com/location/previous/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key = input;
         self
     }
-    /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
+    /// <p>The optional <a href="https://docs.aws.amazon.com/location/previous/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.key
     }

@@ -41,7 +41,7 @@ pub struct Place {
     /// </note>
     pub unit_number: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Location categories that describe this Place.</p>
-    /// <p>For more information about using categories, including a list of Amazon Location categories, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
+    /// <p>For more information about using categories, including a list of Amazon Location categories, see <a href="https://docs.aws.amazon.com/location/previous/developerguide/category-filtering.html">Categories and filtering</a>, in the <i>Amazon Location Service developer guide</i>.</p>
     pub categories: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Categories from the data provider that describe the Place that are not mapped to any Amazon Location categories.</p>
     pub supplemental_categories: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -115,7 +115,7 @@ impl Place {
         self.unit_number.as_deref()
     }
     /// <p>The Amazon Location categories that describe this Place.</p>
-    /// <p>For more information about using categories, including a list of Amazon Location categories, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
+    /// <p>For more information about using categories, including a list of Amazon Location categories, see <a href="https://docs.aws.amazon.com/location/previous/developerguide/category-filtering.html">Categories and filtering</a>, in the <i>Amazon Location Service developer guide</i>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.categories.is_none()`.
     pub fn categories(&self) -> &[::std::string::String] {
@@ -387,7 +387,7 @@ impl PlaceBuilder {
     /// To override the contents of this collection use [`set_categories`](Self::set_categories).
     ///
     /// <p>The Amazon Location categories that describe this Place.</p>
-    /// <p>For more information about using categories, including a list of Amazon Location categories, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
+    /// <p>For more information about using categories, including a list of Amazon Location categories, see <a href="https://docs.aws.amazon.com/location/previous/developerguide/category-filtering.html">Categories and filtering</a>, in the <i>Amazon Location Service developer guide</i>.</p>
     pub fn categories(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.categories.unwrap_or_default();
         v.push(input.into());
@@ -395,13 +395,13 @@ impl PlaceBuilder {
         self
     }
     /// <p>The Amazon Location categories that describe this Place.</p>
-    /// <p>For more information about using categories, including a list of Amazon Location categories, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
+    /// <p>For more information about using categories, including a list of Amazon Location categories, see <a href="https://docs.aws.amazon.com/location/previous/developerguide/category-filtering.html">Categories and filtering</a>, in the <i>Amazon Location Service developer guide</i>.</p>
     pub fn set_categories(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.categories = input;
         self
     }
     /// <p>The Amazon Location categories that describe this Place.</p>
-    /// <p>For more information about using categories, including a list of Amazon Location categories, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
+    /// <p>For more information about using categories, including a list of Amazon Location categories, see <a href="https://docs.aws.amazon.com/location/previous/developerguide/category-filtering.html">Categories and filtering</a>, in the <i>Amazon Location Service developer guide</i>.</p>
     pub fn get_categories(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.categories
     }

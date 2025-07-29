@@ -4,7 +4,7 @@
 /// <p>The returned geometry will always match the geometry format used when the geofence was created.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ListGeofenceCollectionsResponseEntry {
     /// <p>The name of the geofence collection.</p>
     pub collection_name: ::std::string::String,
@@ -51,6 +51,18 @@ impl ListGeofenceCollectionsResponseEntry {
         &self.update_time
     }
 }
+impl ::std::fmt::Debug for ListGeofenceCollectionsResponseEntry {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ListGeofenceCollectionsResponseEntry");
+        formatter.field("collection_name", &self.collection_name);
+        formatter.field("description", &self.description);
+        formatter.field("pricing_plan", &self.pricing_plan);
+        formatter.field("pricing_plan_data_source", &self.pricing_plan_data_source);
+        formatter.field("create_time", &"*** Sensitive Data Redacted ***");
+        formatter.field("update_time", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl ListGeofenceCollectionsResponseEntry {
     /// Creates a new builder-style object to manufacture [`ListGeofenceCollectionsResponseEntry`](crate::types::ListGeofenceCollectionsResponseEntry).
     pub fn builder() -> crate::types::builders::ListGeofenceCollectionsResponseEntryBuilder {
@@ -59,7 +71,7 @@ impl ListGeofenceCollectionsResponseEntry {
 }
 
 /// A builder for [`ListGeofenceCollectionsResponseEntry`](crate::types::ListGeofenceCollectionsResponseEntry).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct ListGeofenceCollectionsResponseEntryBuilder {
     pub(crate) collection_name: ::std::option::Option<::std::string::String>,
@@ -201,5 +213,17 @@ impl ListGeofenceCollectionsResponseEntryBuilder {
                 )
             })?,
         })
+    }
+}
+impl ::std::fmt::Debug for ListGeofenceCollectionsResponseEntryBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ListGeofenceCollectionsResponseEntryBuilder");
+        formatter.field("collection_name", &self.collection_name);
+        formatter.field("description", &self.description);
+        formatter.field("pricing_plan", &self.pricing_plan);
+        formatter.field("pricing_plan_data_source", &self.pricing_plan_data_source);
+        formatter.field("create_time", &"*** Sensitive Data Redacted ***");
+        formatter.field("update_time", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

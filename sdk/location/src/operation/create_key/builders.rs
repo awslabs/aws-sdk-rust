@@ -23,7 +23,7 @@ impl crate::operation::create_key::builders::CreateKeyInputBuilder {
 /// Fluent builder constructing a request to `CreateKey`.
 ///
 /// <p>Creates an API key resource in your Amazon Web Services account, which lets you grant actions for Amazon Location resources to the API key bearer.</p><note>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">Using API keys</a>.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/location/previous/developerguide/using-apikeys.html">Using API keys</a>.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateKeyFluentBuilder {

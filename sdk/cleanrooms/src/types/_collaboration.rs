@@ -34,7 +34,9 @@ pub struct Collaboration {
     /// <p>An indicator as to whether job logging has been enabled or disabled for the collaboration.</p>
     /// <p>When <code>ENABLED</code>, Clean Rooms logs details about jobs run within this collaboration and those logs can be viewed in Amazon CloudWatch Logs. The default value is <code>DISABLED</code>.</p>
     pub job_log_status: ::std::option::Option<crate::types::CollaborationJobLogStatus>,
-    /// <p>The analytics engine for the collaboration.</p>
+    /// <p>The analytics engine for the collaboration.</p><note>
+    /// <p>After July 16, 2025, the <code>CLEAN_ROOMS_SQL</code> parameter will no longer be available.</p>
+    /// </note>
     pub analytics_engine: ::std::option::Option<crate::types::AnalyticsEngine>,
 }
 impl Collaboration {
@@ -101,7 +103,9 @@ impl Collaboration {
     pub fn job_log_status(&self) -> ::std::option::Option<&crate::types::CollaborationJobLogStatus> {
         self.job_log_status.as_ref()
     }
-    /// <p>The analytics engine for the collaboration.</p>
+    /// <p>The analytics engine for the collaboration.</p><note>
+    /// <p>After July 16, 2025, the <code>CLEAN_ROOMS_SQL</code> parameter will no longer be available.</p>
+    /// </note>
     pub fn analytics_engine(&self) -> ::std::option::Option<&crate::types::AnalyticsEngine> {
         self.analytics_engine.as_ref()
     }
@@ -345,17 +349,23 @@ impl CollaborationBuilder {
     pub fn get_job_log_status(&self) -> &::std::option::Option<crate::types::CollaborationJobLogStatus> {
         &self.job_log_status
     }
-    /// <p>The analytics engine for the collaboration.</p>
+    /// <p>The analytics engine for the collaboration.</p><note>
+    /// <p>After July 16, 2025, the <code>CLEAN_ROOMS_SQL</code> parameter will no longer be available.</p>
+    /// </note>
     pub fn analytics_engine(mut self, input: crate::types::AnalyticsEngine) -> Self {
         self.analytics_engine = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The analytics engine for the collaboration.</p>
+    /// <p>The analytics engine for the collaboration.</p><note>
+    /// <p>After July 16, 2025, the <code>CLEAN_ROOMS_SQL</code> parameter will no longer be available.</p>
+    /// </note>
     pub fn set_analytics_engine(mut self, input: ::std::option::Option<crate::types::AnalyticsEngine>) -> Self {
         self.analytics_engine = input;
         self
     }
-    /// <p>The analytics engine for the collaboration.</p>
+    /// <p>The analytics engine for the collaboration.</p><note>
+    /// <p>After July 16, 2025, the <code>CLEAN_ROOMS_SQL</code> parameter will no longer be available.</p>
+    /// </note>
     pub fn get_analytics_engine(&self) -> &::std::option::Option<crate::types::AnalyticsEngine> {
         &self.analytics_engine
     }

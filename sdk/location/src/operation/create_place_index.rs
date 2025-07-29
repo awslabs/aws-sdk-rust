@@ -102,6 +102,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateP
                 .expect("required fields set"),
         ));
 
+        cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::SensitiveOutput);
         cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::Metadata::new(
             "CreatePlaceIndex",
             "Location",
@@ -265,7 +266,7 @@ pub enum CreatePlaceIndexError {
     ConflictException(crate::types::error::ConflictException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::types::error::InternalServerException),
-    /// <p>The operation was denied because the request would exceed the maximum <a href="https://docs.aws.amazon.com/location/latest/developerguide/location-quotas.html">quota</a> set for Amazon Location Service.</p>
+    /// <p>The operation was denied because the request would exceed the maximum <a href="https://docs.aws.amazon.com/location/previous/developerguide/location-quotas.html">quota</a> set for Amazon Location Service.</p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// <p>The request was denied because of request throttling.</p>
     ThrottlingException(crate::types::error::ThrottlingException),

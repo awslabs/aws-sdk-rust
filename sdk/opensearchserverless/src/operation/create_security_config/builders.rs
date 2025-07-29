@@ -150,17 +150,17 @@ impl CreateSecurityConfigFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
-    /// <p>Describes SAML options in in the form of a key-value map. This field is required if you specify <code>saml</code> for the <code>type</code> parameter.</p>
+    /// <p>Describes SAML options in in the form of a key-value map. This field is required if you specify <code>SAML</code> for the <code>type</code> parameter.</p>
     pub fn saml_options(mut self, input: crate::types::SamlConfigOptions) -> Self {
         self.inner = self.inner.saml_options(input);
         self
     }
-    /// <p>Describes SAML options in in the form of a key-value map. This field is required if you specify <code>saml</code> for the <code>type</code> parameter.</p>
+    /// <p>Describes SAML options in in the form of a key-value map. This field is required if you specify <code>SAML</code> for the <code>type</code> parameter.</p>
     pub fn set_saml_options(mut self, input: ::std::option::Option<crate::types::SamlConfigOptions>) -> Self {
         self.inner = self.inner.set_saml_options(input);
         self
     }
-    /// <p>Describes SAML options in in the form of a key-value map. This field is required if you specify <code>saml</code> for the <code>type</code> parameter.</p>
+    /// <p>Describes SAML options in in the form of a key-value map. This field is required if you specify <code>SAML</code> for the <code>type</code> parameter.</p>
     pub fn get_saml_options(&self) -> &::std::option::Option<crate::types::SamlConfigOptions> {
         self.inner.get_saml_options()
     }
@@ -177,6 +177,20 @@ impl CreateSecurityConfigFluentBuilder {
     /// <p>Describes IAM Identity Center options in the form of a key-value map. This field is required if you specify iamidentitycenter for the type parameter.</p>
     pub fn get_iam_identity_center_options(&self) -> &::std::option::Option<crate::types::CreateIamIdentityCenterConfigOptions> {
         self.inner.get_iam_identity_center_options()
+    }
+    /// <p>Describes IAM federation options in the form of a key-value map. This field is required if you specify <code>iamFederation</code> for the <code>type</code> parameter.</p>
+    pub fn iam_federation_options(mut self, input: crate::types::IamFederationConfigOptions) -> Self {
+        self.inner = self.inner.iam_federation_options(input);
+        self
+    }
+    /// <p>Describes IAM federation options in the form of a key-value map. This field is required if you specify <code>iamFederation</code> for the <code>type</code> parameter.</p>
+    pub fn set_iam_federation_options(mut self, input: ::std::option::Option<crate::types::IamFederationConfigOptions>) -> Self {
+        self.inner = self.inner.set_iam_federation_options(input);
+        self
+    }
+    /// <p>Describes IAM federation options in the form of a key-value map. This field is required if you specify <code>iamFederation</code> for the <code>type</code> parameter.</p>
+    pub fn get_iam_federation_options(&self) -> &::std::option::Option<crate::types::IamFederationConfigOptions> {
+        self.inner.get_iam_federation_options()
     }
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

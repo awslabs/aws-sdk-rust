@@ -57,7 +57,7 @@ impl ::std::fmt::Debug for DeviceState {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("DeviceState");
         formatter.field("device_id", &self.device_id);
-        formatter.field("sample_time", &self.sample_time);
+        formatter.field("sample_time", &"*** Sensitive Data Redacted ***");
         formatter.field("position", &"*** Sensitive Data Redacted ***");
         formatter.field("accuracy", &self.accuracy);
         formatter.field("ipv4_address", &self.ipv4_address);
@@ -234,7 +234,7 @@ impl ::std::fmt::Debug for DeviceStateBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("DeviceStateBuilder");
         formatter.field("device_id", &self.device_id);
-        formatter.field("sample_time", &self.sample_time);
+        formatter.field("sample_time", &"*** Sensitive Data Redacted ***");
         formatter.field("position", &"*** Sensitive Data Redacted ***");
         formatter.field("accuracy", &self.accuracy);
         formatter.field("ipv4_address", &self.ipv4_address);

@@ -48,8 +48,8 @@ impl ::std::fmt::Debug for GetDevicePositionOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GetDevicePositionOutput");
         formatter.field("device_id", &self.device_id);
-        formatter.field("sample_time", &self.sample_time);
-        formatter.field("received_time", &self.received_time);
+        formatter.field("sample_time", &"*** Sensitive Data Redacted ***");
+        formatter.field("received_time", &"*** Sensitive Data Redacted ***");
         formatter.field("position", &"*** Sensitive Data Redacted ***");
         formatter.field("accuracy", &self.accuracy);
         formatter.field("position_properties", &"*** Sensitive Data Redacted ***");
@@ -234,8 +234,8 @@ impl ::std::fmt::Debug for GetDevicePositionOutputBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GetDevicePositionOutputBuilder");
         formatter.field("device_id", &self.device_id);
-        formatter.field("sample_time", &self.sample_time);
-        formatter.field("received_time", &self.received_time);
+        formatter.field("sample_time", &"*** Sensitive Data Redacted ***");
+        formatter.field("received_time", &"*** Sensitive Data Redacted ***");
         formatter.field("position", &"*** Sensitive Data Redacted ***");
         formatter.field("accuracy", &self.accuracy);
         formatter.field("position_properties", &"*** Sensitive Data Redacted ***");

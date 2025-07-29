@@ -79,9 +79,9 @@ impl ::std::fmt::Debug for DescribeKeyOutput {
         formatter.field("key_arn", &self.key_arn);
         formatter.field("key_name", &self.key_name);
         formatter.field("restrictions", &self.restrictions);
-        formatter.field("create_time", &self.create_time);
-        formatter.field("expire_time", &self.expire_time);
-        formatter.field("update_time", &self.update_time);
+        formatter.field("create_time", &"*** Sensitive Data Redacted ***");
+        formatter.field("expire_time", &"*** Sensitive Data Redacted ***");
+        formatter.field("update_time", &"*** Sensitive Data Redacted ***");
         formatter.field("description", &self.description);
         formatter.field("tags", &self.tags);
         formatter.field("_request_id", &self._request_id);
@@ -336,9 +336,9 @@ impl ::std::fmt::Debug for DescribeKeyOutputBuilder {
         formatter.field("key_arn", &self.key_arn);
         formatter.field("key_name", &self.key_name);
         formatter.field("restrictions", &self.restrictions);
-        formatter.field("create_time", &self.create_time);
-        formatter.field("expire_time", &self.expire_time);
-        formatter.field("update_time", &self.update_time);
+        formatter.field("create_time", &"*** Sensitive Data Redacted ***");
+        formatter.field("expire_time", &"*** Sensitive Data Redacted ***");
+        formatter.field("update_time", &"*** Sensitive Data Redacted ***");
         formatter.field("description", &self.description);
         formatter.field("tags", &self.tags);
         formatter.field("_request_id", &self._request_id);

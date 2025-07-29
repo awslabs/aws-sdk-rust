@@ -18,7 +18,7 @@ pub struct SearchPlaceIndexForPositionInput {
     /// <p>If you set the <code>language</code> parameter to <code>el</code>, for Greek, then the <code>city</code> in the results will more likely be returned as <code>Αθήνα</code>.</p>
     /// <p>If the data provider does not have a value for Greek, the result will be in a language that the provider does support.</p>
     pub language: ::std::option::Option<::std::string::String>,
-    /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
+    /// <p>The optional <a href="https://docs.aws.amazon.com/location/previous/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
     pub key: ::std::option::Option<::std::string::String>,
 }
 impl SearchPlaceIndexForPositionInput {
@@ -47,7 +47,7 @@ impl SearchPlaceIndexForPositionInput {
     pub fn language(&self) -> ::std::option::Option<&str> {
         self.language.as_deref()
     }
-    /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
+    /// <p>The optional <a href="https://docs.aws.amazon.com/location/previous/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
     pub fn key(&self) -> ::std::option::Option<&str> {
         self.key.as_deref()
     }
@@ -165,17 +165,17 @@ impl SearchPlaceIndexForPositionInputBuilder {
     pub fn get_language(&self) -> &::std::option::Option<::std::string::String> {
         &self.language
     }
-    /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
+    /// <p>The optional <a href="https://docs.aws.amazon.com/location/previous/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
+    /// <p>The optional <a href="https://docs.aws.amazon.com/location/previous/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key = input;
         self
     }
-    /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
+    /// <p>The optional <a href="https://docs.aws.amazon.com/location/previous/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.key
     }

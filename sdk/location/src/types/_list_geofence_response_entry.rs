@@ -8,7 +8,7 @@
 pub struct ListGeofenceResponseEntry {
     /// <p>The geofence identifier.</p>
     pub geofence_id: ::std::string::String,
-    /// <p>Contains the geofence geometry details describing a polygon or a circle.</p>
+    /// <p>Contains the geofence geometry details describing the position of the geofence. Can be a circle, a polygon, or a multipolygon.</p>
     pub geometry: ::std::option::Option<crate::types::GeofenceGeometry>,
     /// <p>Identifies the state of the geofence. A geofence will hold one of the following states:</p>
     /// <ul>
@@ -38,7 +38,7 @@ impl ListGeofenceResponseEntry {
         use std::ops::Deref;
         self.geofence_id.deref()
     }
-    /// <p>Contains the geofence geometry details describing a polygon or a circle.</p>
+    /// <p>Contains the geofence geometry details describing the position of the geofence. Can be a circle, a polygon, or a multipolygon.</p>
     pub fn geometry(&self) -> ::std::option::Option<&crate::types::GeofenceGeometry> {
         self.geometry.as_ref()
     }
@@ -79,8 +79,8 @@ impl ::std::fmt::Debug for ListGeofenceResponseEntry {
         formatter.field("geofence_id", &self.geofence_id);
         formatter.field("geometry", &self.geometry);
         formatter.field("status", &self.status);
-        formatter.field("create_time", &self.create_time);
-        formatter.field("update_time", &self.update_time);
+        formatter.field("create_time", &"*** Sensitive Data Redacted ***");
+        formatter.field("update_time", &"*** Sensitive Data Redacted ***");
         formatter.field("geofence_properties", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
@@ -119,18 +119,18 @@ impl ListGeofenceResponseEntryBuilder {
     pub fn get_geofence_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.geofence_id
     }
-    /// <p>Contains the geofence geometry details describing a polygon or a circle.</p>
+    /// <p>Contains the geofence geometry details describing the position of the geofence. Can be a circle, a polygon, or a multipolygon.</p>
     /// This field is required.
     pub fn geometry(mut self, input: crate::types::GeofenceGeometry) -> Self {
         self.geometry = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Contains the geofence geometry details describing a polygon or a circle.</p>
+    /// <p>Contains the geofence geometry details describing the position of the geofence. Can be a circle, a polygon, or a multipolygon.</p>
     pub fn set_geometry(mut self, input: ::std::option::Option<crate::types::GeofenceGeometry>) -> Self {
         self.geometry = input;
         self
     }
-    /// <p>Contains the geofence geometry details describing a polygon or a circle.</p>
+    /// <p>Contains the geofence geometry details describing the position of the geofence. Can be a circle, a polygon, or a multipolygon.</p>
     pub fn get_geometry(&self) -> &::std::option::Option<crate::types::GeofenceGeometry> {
         &self.geometry
     }
@@ -288,8 +288,8 @@ impl ::std::fmt::Debug for ListGeofenceResponseEntryBuilder {
         formatter.field("geofence_id", &self.geofence_id);
         formatter.field("geometry", &self.geometry);
         formatter.field("status", &self.status);
-        formatter.field("create_time", &self.create_time);
-        formatter.field("update_time", &self.update_time);
+        formatter.field("create_time", &"*** Sensitive Data Redacted ***");
+        formatter.field("update_time", &"*** Sensitive Data Redacted ***");
         formatter.field("geofence_properties", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }

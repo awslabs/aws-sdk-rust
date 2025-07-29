@@ -164,17 +164,17 @@ impl CreateAnalysisTemplateFluentBuilder {
     pub fn get_format(&self) -> &::std::option::Option<crate::types::AnalysisFormat> {
         self.inner.get_format()
     }
-    /// <p>The information in the analysis template. Currently supports <code>text</code>, the query text for the analysis template.</p>
+    /// <p>The information in the analysis template.</p>
     pub fn source(mut self, input: crate::types::AnalysisSource) -> Self {
         self.inner = self.inner.source(input);
         self
     }
-    /// <p>The information in the analysis template. Currently supports <code>text</code>, the query text for the analysis template.</p>
+    /// <p>The information in the analysis template.</p>
     pub fn set_source(mut self, input: ::std::option::Option<crate::types::AnalysisSource>) -> Self {
         self.inner = self.inner.set_source(input);
         self
     }
-    /// <p>The information in the analysis template. Currently supports <code>text</code>, the query text for the analysis template.</p>
+    /// <p>The information in the analysis template.</p>
     pub fn get_source(&self) -> &::std::option::Option<crate::types::AnalysisSource> {
         self.inner.get_source()
     }

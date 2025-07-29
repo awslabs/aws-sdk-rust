@@ -190,6 +190,25 @@ impl UpdateJobQueueFluentBuilder {
         self.inner.get_compute_environment_order()
     }
     ///
+    /// Appends an item to `serviceEnvironmentOrder`.
+    ///
+    /// To override the contents of this collection use [`set_service_environment_order`](Self::set_service_environment_order).
+    ///
+    /// <p>The order of the service environment associated with the job queue. Job queues with a higher priority are evaluated first when associated with the same service environment.</p>
+    pub fn service_environment_order(mut self, input: crate::types::ServiceEnvironmentOrder) -> Self {
+        self.inner = self.inner.service_environment_order(input);
+        self
+    }
+    /// <p>The order of the service environment associated with the job queue. Job queues with a higher priority are evaluated first when associated with the same service environment.</p>
+    pub fn set_service_environment_order(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceEnvironmentOrder>>) -> Self {
+        self.inner = self.inner.set_service_environment_order(input);
+        self
+    }
+    /// <p>The order of the service environment associated with the job queue. Job queues with a higher priority are evaluated first when associated with the same service environment.</p>
+    pub fn get_service_environment_order(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceEnvironmentOrder>> {
+        self.inner.get_service_environment_order()
+    }
+    ///
     /// Appends an item to `jobStateTimeLimitActions`.
     ///
     /// To override the contents of this collection use [`set_job_state_time_limit_actions`](Self::set_job_state_time_limit_actions).

@@ -32,6 +32,8 @@ impl crate::operation::get_place::builders::GetPlaceInputBuilder {
 /// <li>
 /// <p>Data provider specified in the place index resource</p></li>
 /// </ul>
+/// </note> <note>
+/// <p>If your Place index resource is configured with Grab as your geolocation provider and Storage as Intended use, the GetPlace operation is unavailable. For more information, see <a href="http://aws.amazon.com/service-terms">AWS service terms</a>.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetPlaceFluentBuilder {
@@ -163,17 +165,17 @@ impl GetPlaceFluentBuilder {
     pub fn get_language(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_language()
     }
-    /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
+    /// <p>The optional <a href="https://docs.aws.amazon.com/location/previous/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.key(input.into());
         self
     }
-    /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
+    /// <p>The optional <a href="https://docs.aws.amazon.com/location/previous/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_key(input);
         self
     }
-    /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
+    /// <p>The optional <a href="https://docs.aws.amazon.com/location/previous/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_key()
     }

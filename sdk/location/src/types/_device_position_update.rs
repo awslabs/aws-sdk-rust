@@ -45,7 +45,7 @@ impl ::std::fmt::Debug for DevicePositionUpdate {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("DevicePositionUpdate");
         formatter.field("device_id", &self.device_id);
-        formatter.field("sample_time", &self.sample_time);
+        formatter.field("sample_time", &"*** Sensitive Data Redacted ***");
         formatter.field("position", &"*** Sensitive Data Redacted ***");
         formatter.field("accuracy", &self.accuracy);
         formatter.field("position_properties", &"*** Sensitive Data Redacted ***");
@@ -198,7 +198,7 @@ impl ::std::fmt::Debug for DevicePositionUpdateBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("DevicePositionUpdateBuilder");
         formatter.field("device_id", &self.device_id);
-        formatter.field("sample_time", &self.sample_time);
+        formatter.field("sample_time", &"*** Sensitive Data Redacted ***");
         formatter.field("position", &"*** Sensitive Data Redacted ***");
         formatter.field("accuracy", &self.accuracy);
         formatter.field("position_properties", &"*** Sensitive Data Redacted ***");

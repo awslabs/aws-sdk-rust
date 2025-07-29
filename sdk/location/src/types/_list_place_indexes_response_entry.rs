@@ -2,7 +2,7 @@
 
 /// <p>A place index resource listed in your Amazon Web Services account.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ListPlaceIndexesResponseEntry {
     /// <p>The name of the place index resource.</p>
     pub index_name: ::std::string::String,
@@ -17,7 +17,7 @@ pub struct ListPlaceIndexesResponseEntry {
     /// <li>
     /// <p><code>Here</code></p></li>
     /// </ul>
-    /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
+    /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/previous/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     pub data_source: ::std::string::String,
     /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
     #[deprecated(note = "Deprecated. Always returns RequestBasedUsage.", since = "2022-02-01")]
@@ -47,7 +47,7 @@ impl ListPlaceIndexesResponseEntry {
     /// <li>
     /// <p><code>Here</code></p></li>
     /// </ul>
-    /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
+    /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/previous/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     pub fn data_source(&self) -> &str {
         use std::ops::Deref;
         self.data_source.deref()
@@ -66,6 +66,18 @@ impl ListPlaceIndexesResponseEntry {
         &self.update_time
     }
 }
+impl ::std::fmt::Debug for ListPlaceIndexesResponseEntry {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ListPlaceIndexesResponseEntry");
+        formatter.field("index_name", &self.index_name);
+        formatter.field("description", &self.description);
+        formatter.field("data_source", &self.data_source);
+        formatter.field("pricing_plan", &self.pricing_plan);
+        formatter.field("create_time", &"*** Sensitive Data Redacted ***");
+        formatter.field("update_time", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl ListPlaceIndexesResponseEntry {
     /// Creates a new builder-style object to manufacture [`ListPlaceIndexesResponseEntry`](crate::types::ListPlaceIndexesResponseEntry).
     pub fn builder() -> crate::types::builders::ListPlaceIndexesResponseEntryBuilder {
@@ -74,7 +86,7 @@ impl ListPlaceIndexesResponseEntry {
 }
 
 /// A builder for [`ListPlaceIndexesResponseEntry`](crate::types::ListPlaceIndexesResponseEntry).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct ListPlaceIndexesResponseEntryBuilder {
     pub(crate) index_name: ::std::option::Option<::std::string::String>,
@@ -124,7 +136,7 @@ impl ListPlaceIndexesResponseEntryBuilder {
     /// <li>
     /// <p><code>Here</code></p></li>
     /// </ul>
-    /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
+    /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/previous/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     /// This field is required.
     pub fn data_source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_source = ::std::option::Option::Some(input.into());
@@ -139,7 +151,7 @@ impl ListPlaceIndexesResponseEntryBuilder {
     /// <li>
     /// <p><code>Here</code></p></li>
     /// </ul>
-    /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
+    /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/previous/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     pub fn set_data_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_source = input;
         self
@@ -153,7 +165,7 @@ impl ListPlaceIndexesResponseEntryBuilder {
     /// <li>
     /// <p><code>Here</code></p></li>
     /// </ul>
-    /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
+    /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/previous/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     pub fn get_data_source(&self) -> &::std::option::Option<::std::string::String> {
         &self.data_source
     }
@@ -245,5 +257,17 @@ impl ListPlaceIndexesResponseEntryBuilder {
                 )
             })?,
         })
+    }
+}
+impl ::std::fmt::Debug for ListPlaceIndexesResponseEntryBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ListPlaceIndexesResponseEntryBuilder");
+        formatter.field("index_name", &self.index_name);
+        formatter.field("description", &self.description);
+        formatter.field("data_source", &self.data_source);
+        formatter.field("pricing_plan", &self.pricing_plan);
+        formatter.field("create_time", &"*** Sensitive Data Redacted ***");
+        formatter.field("update_time", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

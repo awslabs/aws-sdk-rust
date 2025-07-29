@@ -33,6 +33,8 @@ pub(crate) mod shape_create_job_queue;
 
 pub(crate) mod shape_create_scheduling_policy;
 
+pub(crate) mod shape_create_service_environment;
+
 pub(crate) mod shape_delete_compute_environment;
 
 pub(crate) mod shape_delete_consumable_resource;
@@ -40,6 +42,8 @@ pub(crate) mod shape_delete_consumable_resource;
 pub(crate) mod shape_delete_job_queue;
 
 pub(crate) mod shape_delete_scheduling_policy;
+
+pub(crate) mod shape_delete_service_environment;
 
 pub(crate) mod shape_deregister_job_definition;
 
@@ -55,6 +59,10 @@ pub(crate) mod shape_describe_jobs;
 
 pub(crate) mod shape_describe_scheduling_policies;
 
+pub(crate) mod shape_describe_service_environments;
+
+pub(crate) mod shape_describe_service_job;
+
 pub(crate) mod shape_get_job_queue_snapshot;
 
 pub(crate) mod shape_list_consumable_resources;
@@ -65,15 +73,21 @@ pub(crate) mod shape_list_jobs_by_consumable_resource;
 
 pub(crate) mod shape_list_scheduling_policies;
 
+pub(crate) mod shape_list_service_jobs;
+
 pub(crate) mod shape_list_tags_for_resource;
 
 pub(crate) mod shape_register_job_definition;
 
 pub(crate) mod shape_submit_job;
 
+pub(crate) mod shape_submit_service_job;
+
 pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_terminate_job;
+
+pub(crate) mod shape_terminate_service_job;
 
 pub(crate) mod shape_untag_resource;
 
@@ -84,6 +98,8 @@ pub(crate) mod shape_update_consumable_resource;
 pub(crate) mod shape_update_job_queue;
 
 pub(crate) mod shape_update_scheduling_policy;
+
+pub(crate) mod shape_update_service_environment;
 
 pub(crate) mod shape_cancel_job_input;
 
@@ -105,6 +121,8 @@ pub(crate) mod shape_create_job_queue_input;
 
 pub(crate) mod shape_create_scheduling_policy_input;
 
+pub(crate) mod shape_create_service_environment_input;
+
 pub(crate) mod shape_delete_compute_environment_input;
 
 pub(crate) mod shape_delete_consumable_resource_input;
@@ -112,6 +130,8 @@ pub(crate) mod shape_delete_consumable_resource_input;
 pub(crate) mod shape_delete_job_queue_input;
 
 pub(crate) mod shape_delete_scheduling_policy_input;
+
+pub(crate) mod shape_delete_service_environment_input;
 
 pub(crate) mod shape_deregister_job_definition_input;
 
@@ -127,6 +147,10 @@ pub(crate) mod shape_describe_jobs_input;
 
 pub(crate) mod shape_describe_scheduling_policies_input;
 
+pub(crate) mod shape_describe_service_environments_input;
+
+pub(crate) mod shape_describe_service_job_input;
+
 pub(crate) mod shape_get_job_queue_snapshot_input;
 
 pub(crate) mod shape_list_consumable_resources_input;
@@ -137,15 +161,21 @@ pub(crate) mod shape_list_jobs_input;
 
 pub(crate) mod shape_list_scheduling_policies_input;
 
+pub(crate) mod shape_list_service_jobs_input;
+
 pub(crate) mod shape_register_job_definition_input;
 
 pub(crate) mod shape_server_exception;
 
 pub(crate) mod shape_submit_job_input;
 
+pub(crate) mod shape_submit_service_job_input;
+
 pub(crate) mod shape_tag_resource_input;
 
 pub(crate) mod shape_terminate_job_input;
+
+pub(crate) mod shape_terminate_service_job_input;
 
 pub(crate) mod shape_update_compute_environment_input;
 
@@ -155,7 +185,11 @@ pub(crate) mod shape_update_job_queue_input;
 
 pub(crate) mod shape_update_scheduling_policy_input;
 
+pub(crate) mod shape_update_service_environment_input;
+
 pub(crate) mod shape_array_properties;
+
+pub(crate) mod shape_capacity_limit;
 
 pub(crate) mod shape_compute_environment_detail_list;
 
@@ -203,6 +237,8 @@ pub(crate) mod shape_job_timeout;
 
 pub(crate) mod shape_key_values_pair;
 
+pub(crate) mod shape_latest_service_job_attempt;
+
 pub(crate) mod shape_list_jobs_by_consumable_resource_summary_list;
 
 pub(crate) mod shape_node_overrides;
@@ -214,6 +250,18 @@ pub(crate) mod shape_retry_strategy;
 pub(crate) mod shape_scheduling_policy_detail_list;
 
 pub(crate) mod shape_scheduling_policy_listing_detail_list;
+
+pub(crate) mod shape_service_environment_detail_list;
+
+pub(crate) mod shape_service_environment_order;
+
+pub(crate) mod shape_service_job_attempt_details;
+
+pub(crate) mod shape_service_job_retry_strategy;
+
+pub(crate) mod shape_service_job_summary_list;
+
+pub(crate) mod shape_service_job_timeout;
 
 pub(crate) mod shape_tagris_tags_map;
 
@@ -279,6 +327,18 @@ pub(crate) mod shape_scheduling_policy_listing_detail;
 
 pub(crate) mod shape_secret;
 
+pub(crate) mod shape_service_environment_detail;
+
+pub(crate) mod shape_service_job_attempt_detail;
+
+pub(crate) mod shape_service_job_evaluate_on_exit;
+
+pub(crate) mod shape_service_job_evaluate_on_exit_list;
+
+pub(crate) mod shape_service_job_summary;
+
+pub(crate) mod shape_service_resource_id;
+
 pub(crate) mod shape_share_attributes;
 
 pub(crate) mod shape_task_properties_override;
@@ -292,6 +352,8 @@ pub(crate) mod shape_array_properties_detail;
 pub(crate) mod shape_array_properties_summary;
 
 pub(crate) mod shape_attempt_details;
+
+pub(crate) mod shape_capacity_limits;
 
 pub(crate) mod shape_compute_environment_orders;
 
@@ -336,6 +398,8 @@ pub(crate) mod shape_node_properties_summary;
 pub(crate) mod shape_parameters_map;
 
 pub(crate) mod shape_platform_capability_list;
+
+pub(crate) mod shape_service_environment_orders;
 
 pub(crate) mod shape_task_container_overrides;
 

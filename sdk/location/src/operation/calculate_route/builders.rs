@@ -22,16 +22,16 @@ impl crate::operation::calculate_route::builders::CalculateRouteInputBuilder {
 }
 /// Fluent builder constructing a request to `CalculateRoute`.
 ///
-/// <p><a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html">Calculates a route</a> given the following required parameters: <code>DeparturePosition</code> and <code>DestinationPosition</code>. Requires that you first <a href="https://docs.aws.amazon.com/location-routes/latest/APIReference/API_CreateRouteCalculator.html">create a route calculator resource</a>.</p>
+/// <p><a href="https://docs.aws.amazon.com/location/previous/developerguide/calculate-route.html">Calculates a route</a> given the following required parameters: <code>DeparturePosition</code> and <code>DestinationPosition</code>. Requires that you first <a href="https://docs.aws.amazon.com/location-routes/latest/APIReference/API_CreateRouteCalculator.html">create a route calculator resource</a>.</p>
 /// <p>By default, a request that doesn't specify a departure time uses the best time of day to travel with the best traffic conditions when calculating the route.</p>
 /// <p>Additional options include:</p>
 /// <ul>
 /// <li>
-/// <p><a href="https://docs.aws.amazon.com/location/latest/developerguide/departure-time.html">Specifying a departure time</a> using either <code>DepartureTime</code> or <code>DepartNow</code>. This calculates a route based on predictive traffic data at the given time.</p><note>
+/// <p><a href="https://docs.aws.amazon.com/location/previous/developerguide/departure-time.html">Specifying a departure time</a> using either <code>DepartureTime</code> or <code>DepartNow</code>. This calculates a route based on predictive traffic data at the given time.</p><note>
 /// <p>You can't specify both <code>DepartureTime</code> and <code>DepartNow</code> in a single request. Specifying both parameters returns a validation error.</p>
 /// </note></li>
 /// <li>
-/// <p><a href="https://docs.aws.amazon.com/location/latest/developerguide/travel-mode.html">Specifying a travel mode</a> using TravelMode sets the transportation mode used to calculate the routes. This also lets you specify additional route preferences in <code>CarModeOptions</code> if traveling by <code>Car</code>, or <code>TruckModeOptions</code> if traveling by <code>Truck</code>.</p><note>
+/// <p><a href="https://docs.aws.amazon.com/location/previous/developerguide/travel-mode.html">Specifying a travel mode</a> using TravelMode sets the transportation mode used to calculate the routes. This also lets you specify additional route preferences in <code>CarModeOptions</code> if traveling by <code>Car</code>, or <code>TruckModeOptions</code> if traveling by <code>Truck</code>.</p><note>
 /// <p>If you specify <code>walking</code> for the travel mode and your data provider is Esri, the start and destination must be within 40km.</p>
 /// </note></li>
 /// </ul>
@@ -144,7 +144,7 @@ impl CalculateRouteFluentBuilder {
     /// <li>
     /// <p>For example, <code>\[-123.115, 49.285\]</code></p></li>
     /// </ul><note>
-    /// <p>If you specify a departure that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>. If Esri is the provider for your route calculator, specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>
+    /// <p>If you specify a departure that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/previous/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>. If Esri is the provider for your route calculator, specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>
     /// </note>
     /// <p>Valid Values: <code>\[-180 to 180,-90 to 90\]</code></p>
     pub fn departure_position(mut self, input: f64) -> Self {
@@ -156,7 +156,7 @@ impl CalculateRouteFluentBuilder {
     /// <li>
     /// <p>For example, <code>\[-123.115, 49.285\]</code></p></li>
     /// </ul><note>
-    /// <p>If you specify a departure that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>. If Esri is the provider for your route calculator, specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>
+    /// <p>If you specify a departure that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/previous/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>. If Esri is the provider for your route calculator, specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>
     /// </note>
     /// <p>Valid Values: <code>\[-180 to 180,-90 to 90\]</code></p>
     pub fn set_departure_position(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
@@ -168,7 +168,7 @@ impl CalculateRouteFluentBuilder {
     /// <li>
     /// <p>For example, <code>\[-123.115, 49.285\]</code></p></li>
     /// </ul><note>
-    /// <p>If you specify a departure that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>. If Esri is the provider for your route calculator, specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>
+    /// <p>If you specify a departure that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/previous/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>. If Esri is the provider for your route calculator, specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>
     /// </note>
     /// <p>Valid Values: <code>\[-180 to 180,-90 to 90\]</code></p>
     pub fn get_departure_position(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
@@ -184,7 +184,7 @@ impl CalculateRouteFluentBuilder {
     /// <li>
     /// <p>For example, <code>\[-122.339, 47.615\]</code></p></li>
     /// </ul><note>
-    /// <p>If you specify a destination that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>.</p>
+    /// <p>If you specify a destination that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/previous/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>.</p>
     /// </note>
     /// <p>Valid Values: <code>\[-180 to 180,-90 to 90\]</code></p>
     pub fn destination_position(mut self, input: f64) -> Self {
@@ -196,7 +196,7 @@ impl CalculateRouteFluentBuilder {
     /// <li>
     /// <p>For example, <code>\[-122.339, 47.615\]</code></p></li>
     /// </ul><note>
-    /// <p>If you specify a destination that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>.</p>
+    /// <p>If you specify a destination that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/previous/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>.</p>
     /// </note>
     /// <p>Valid Values: <code>\[-180 to 180,-90 to 90\]</code></p>
     pub fn set_destination_position(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
@@ -208,7 +208,7 @@ impl CalculateRouteFluentBuilder {
     /// <li>
     /// <p>For example, <code>\[-122.339, 47.615\]</code></p></li>
     /// </ul><note>
-    /// <p>If you specify a destination that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>.</p>
+    /// <p>If you specify a destination that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/previous/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>.</p>
     /// </note>
     /// <p>Valid Values: <code>\[-180 to 180,-90 to 90\]</code></p>
     pub fn get_destination_position(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
@@ -224,7 +224,7 @@ impl CalculateRouteFluentBuilder {
     /// <li>
     /// <p>For example, from the <code>DeparturePosition</code> <code>\[-123.115, 49.285\]</code>, the route follows the order that the waypoint positions are given <code>\[\[-122.757, 49.0021\],\[-122.349, 47.620\]\]</code></p></li>
     /// </ul><note>
-    /// <p>If you specify a waypoint position that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>.</p>
+    /// <p>If you specify a waypoint position that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/previous/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>.</p>
     /// <p>Specifying more than 23 waypoints returns a <code>400 ValidationException</code> error.</p>
     /// <p>If Esri is the provider for your route calculator, specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>
     /// </note>
@@ -238,7 +238,7 @@ impl CalculateRouteFluentBuilder {
     /// <li>
     /// <p>For example, from the <code>DeparturePosition</code> <code>\[-123.115, 49.285\]</code>, the route follows the order that the waypoint positions are given <code>\[\[-122.757, 49.0021\],\[-122.349, 47.620\]\]</code></p></li>
     /// </ul><note>
-    /// <p>If you specify a waypoint position that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>.</p>
+    /// <p>If you specify a waypoint position that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/previous/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>.</p>
     /// <p>Specifying more than 23 waypoints returns a <code>400 ValidationException</code> error.</p>
     /// <p>If Esri is the provider for your route calculator, specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>
     /// </note>
@@ -252,7 +252,7 @@ impl CalculateRouteFluentBuilder {
     /// <li>
     /// <p>For example, from the <code>DeparturePosition</code> <code>\[-123.115, 49.285\]</code>, the route follows the order that the waypoint positions are given <code>\[\[-122.757, 49.0021\],\[-122.349, 47.620\]\]</code></p></li>
     /// </ul><note>
-    /// <p>If you specify a waypoint position that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>.</p>
+    /// <p>If you specify a waypoint position that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/previous/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>.</p>
     /// <p>Specifying more than 23 waypoints returns a <code>400 ValidationException</code> error.</p>
     /// <p>If Esri is the provider for your route calculator, specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>
     /// </note>
@@ -263,7 +263,7 @@ impl CalculateRouteFluentBuilder {
     /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility. You can choose <code>Car</code>, <code>Truck</code>, <code>Walking</code>, <code>Bicycle</code> or <code>Motorcycle</code> as options for the <code>TravelMode</code>.</p><note>
     /// <p><code>Bicycle</code> and <code>Motorcycle</code> are only valid when using Grab as a data provider, and only within Southeast Asia.</p>
     /// <p><code>Truck</code> is not available for Grab.</p>
-    /// <p>For more details on the using Grab for routing, including areas of coverage, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
+    /// <p>For more details on the using Grab for routing, including areas of coverage, see <a href="https://docs.aws.amazon.com/location/previous/developerguide/grab.html">GrabMaps</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
     /// </note>
     /// <p>The <code>TravelMode</code> you specify also determines how you specify route preferences:</p>
     /// <ul>
@@ -280,7 +280,7 @@ impl CalculateRouteFluentBuilder {
     /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility. You can choose <code>Car</code>, <code>Truck</code>, <code>Walking</code>, <code>Bicycle</code> or <code>Motorcycle</code> as options for the <code>TravelMode</code>.</p><note>
     /// <p><code>Bicycle</code> and <code>Motorcycle</code> are only valid when using Grab as a data provider, and only within Southeast Asia.</p>
     /// <p><code>Truck</code> is not available for Grab.</p>
-    /// <p>For more details on the using Grab for routing, including areas of coverage, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
+    /// <p>For more details on the using Grab for routing, including areas of coverage, see <a href="https://docs.aws.amazon.com/location/previous/developerguide/grab.html">GrabMaps</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
     /// </note>
     /// <p>The <code>TravelMode</code> you specify also determines how you specify route preferences:</p>
     /// <ul>
@@ -297,7 +297,7 @@ impl CalculateRouteFluentBuilder {
     /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility. You can choose <code>Car</code>, <code>Truck</code>, <code>Walking</code>, <code>Bicycle</code> or <code>Motorcycle</code> as options for the <code>TravelMode</code>.</p><note>
     /// <p><code>Bicycle</code> and <code>Motorcycle</code> are only valid when using Grab as a data provider, and only within Southeast Asia.</p>
     /// <p><code>Truck</code> is not available for Grab.</p>
-    /// <p>For more details on the using Grab for routing, including areas of coverage, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
+    /// <p>For more details on the using Grab for routing, including areas of coverage, see <a href="https://docs.aws.amazon.com/location/previous/developerguide/grab.html">GrabMaps</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
     /// </note>
     /// <p>The <code>TravelMode</code> you specify also determines how you specify route preferences:</p>
     /// <ul>
@@ -461,17 +461,17 @@ impl CalculateRouteFluentBuilder {
     pub fn get_optimize_for(&self) -> &::std::option::Option<crate::types::OptimizationMode> {
         self.inner.get_optimize_for()
     }
-    /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
+    /// <p>The optional <a href="https://docs.aws.amazon.com/location/previous/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.key(input.into());
         self
     }
-    /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
+    /// <p>The optional <a href="https://docs.aws.amazon.com/location/previous/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_key(input);
         self
     }
-    /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
+    /// <p>The optional <a href="https://docs.aws.amazon.com/location/previous/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_key()
     }

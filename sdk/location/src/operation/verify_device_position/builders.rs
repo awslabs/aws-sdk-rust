@@ -22,7 +22,9 @@ impl crate::operation::verify_device_position::builders::VerifyDevicePositionInp
 }
 /// Fluent builder constructing a request to `VerifyDevicePosition`.
 ///
-/// <p>Verifies the integrity of the device's position by determining if it was reported behind a proxy, and by comparing it to an inferred position estimated based on the device's state.</p>
+/// <p>Verifies the integrity of the device's position by determining if it was reported behind a proxy, and by comparing it to an inferred position estimated based on the device's state.</p><note>
+/// <p>The Location Integrity SDK provides enhanced features related to device verification, and it is available for use by request. To get access to the SDK, contact <a href="https://aws.amazon.com/contact-us/sales-support/?pg=locationprice&amp;cta=herobtn">Sales Support</a>.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct VerifyDevicePositionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

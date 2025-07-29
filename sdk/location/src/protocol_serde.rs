@@ -403,6 +403,8 @@ pub(crate) mod shape_list_route_calculators_response_entry;
 
 pub(crate) mod shape_list_trackers_response_entry;
 
+pub(crate) mod shape_multi_linear_rings;
+
 pub(crate) mod shape_place_category_list;
 
 pub(crate) mod shape_place_geometry;

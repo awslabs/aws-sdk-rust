@@ -65,7 +65,7 @@ impl ::std::fmt::Debug for ForecastedEvent {
         formatter.field("is_device_in_geofence", &self.is_device_in_geofence);
         formatter.field("nearest_distance", &self.nearest_distance);
         formatter.field("event_type", &self.event_type);
-        formatter.field("forecasted_breach_time", &self.forecasted_breach_time);
+        formatter.field("forecasted_breach_time", &"*** Sensitive Data Redacted ***");
         formatter.field("geofence_properties", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
@@ -261,7 +261,7 @@ impl ::std::fmt::Debug for ForecastedEventBuilder {
         formatter.field("is_device_in_geofence", &self.is_device_in_geofence);
         formatter.field("nearest_distance", &self.nearest_distance);
         formatter.field("event_type", &self.event_type);
-        formatter.field("forecasted_breach_time", &self.forecasted_breach_time);
+        formatter.field("forecasted_breach_time", &"*** Sensitive Data Redacted ***");
         formatter.field("geofence_properties", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }

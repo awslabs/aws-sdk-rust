@@ -150,6 +150,39 @@ impl UpdateConfiguredTableFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
+    /// <p>A pointer to the dataset that underlies this table.</p>
+    pub fn table_reference(mut self, input: crate::types::TableReference) -> Self {
+        self.inner = self.inner.table_reference(input);
+        self
+    }
+    /// <p>A pointer to the dataset that underlies this table.</p>
+    pub fn set_table_reference(mut self, input: ::std::option::Option<crate::types::TableReference>) -> Self {
+        self.inner = self.inner.set_table_reference(input);
+        self
+    }
+    /// <p>A pointer to the dataset that underlies this table.</p>
+    pub fn get_table_reference(&self) -> &::std::option::Option<crate::types::TableReference> {
+        self.inner.get_table_reference()
+    }
+    ///
+    /// Appends an item to `allowedColumns`.
+    ///
+    /// To override the contents of this collection use [`set_allowed_columns`](Self::set_allowed_columns).
+    ///
+    /// <p>The columns of the underlying table that can be used by collaborations or analysis rules.</p>
+    pub fn allowed_columns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.allowed_columns(input.into());
+        self
+    }
+    /// <p>The columns of the underlying table that can be used by collaborations or analysis rules.</p>
+    pub fn set_allowed_columns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_allowed_columns(input);
+        self
+    }
+    /// <p>The columns of the underlying table that can be used by collaborations or analysis rules.</p>
+    pub fn get_allowed_columns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_allowed_columns()
+    }
     /// <p>The analysis method for the configured table.</p>
     /// <p><code>DIRECT_QUERY</code> allows SQL queries to be run directly on this table.</p>
     /// <p><code>DIRECT_JOB</code> allows PySpark jobs to be run directly on this table.</p>

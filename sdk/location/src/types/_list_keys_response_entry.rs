@@ -2,7 +2,7 @@
 
 /// <p>An API key resource listed in your Amazon Web Services account.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ListKeysResponseEntry {
     /// <p>The name of the API key resource.</p>
     pub key_name: ::std::string::String,
@@ -44,6 +44,18 @@ impl ListKeysResponseEntry {
         &self.update_time
     }
 }
+impl ::std::fmt::Debug for ListKeysResponseEntry {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ListKeysResponseEntry");
+        formatter.field("key_name", &self.key_name);
+        formatter.field("expire_time", &"*** Sensitive Data Redacted ***");
+        formatter.field("description", &self.description);
+        formatter.field("restrictions", &self.restrictions);
+        formatter.field("create_time", &"*** Sensitive Data Redacted ***");
+        formatter.field("update_time", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl ListKeysResponseEntry {
     /// Creates a new builder-style object to manufacture [`ListKeysResponseEntry`](crate::types::ListKeysResponseEntry).
     pub fn builder() -> crate::types::builders::ListKeysResponseEntryBuilder {
@@ -52,7 +64,7 @@ impl ListKeysResponseEntry {
 }
 
 /// A builder for [`ListKeysResponseEntry`](crate::types::ListKeysResponseEntry).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct ListKeysResponseEntryBuilder {
     pub(crate) key_name: ::std::option::Option<::std::string::String>,
@@ -187,5 +199,17 @@ impl ListKeysResponseEntryBuilder {
                 )
             })?,
         })
+    }
+}
+impl ::std::fmt::Debug for ListKeysResponseEntryBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ListKeysResponseEntryBuilder");
+        formatter.field("key_name", &self.key_name);
+        formatter.field("expire_time", &"*** Sensitive Data Redacted ***");
+        formatter.field("description", &self.description);
+        formatter.field("restrictions", &self.restrictions);
+        formatter.field("create_time", &"*** Sensitive Data Redacted ***");
+        formatter.field("update_time", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

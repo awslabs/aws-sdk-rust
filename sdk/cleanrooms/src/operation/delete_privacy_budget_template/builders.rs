@@ -22,7 +22,7 @@ impl crate::operation::delete_privacy_budget_template::builders::DeletePrivacyBu
 }
 /// Fluent builder constructing a request to `DeletePrivacyBudgetTemplate`.
 ///
-/// <p>Deletes a privacy budget template for a specified membership.</p>
+/// <p>Deletes a privacy budget template for a specified collaboration.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeletePrivacyBudgetTemplateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -9,6 +9,10 @@ pub struct UpdateConfiguredTableInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A new description for the configured table.</p>
     pub description: ::std::option::Option<::std::string::String>,
+    /// <p>A pointer to the dataset that underlies this table.</p>
+    pub table_reference: ::std::option::Option<crate::types::TableReference>,
+    /// <p>The columns of the underlying table that can be used by collaborations or analysis rules.</p>
+    pub allowed_columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The analysis method for the configured table.</p>
     /// <p><code>DIRECT_QUERY</code> allows SQL queries to be run directly on this table.</p>
     /// <p><code>DIRECT_JOB</code> allows PySpark jobs to be run directly on this table.</p>
@@ -29,6 +33,16 @@ impl UpdateConfiguredTableInput {
     /// <p>A new description for the configured table.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
+    }
+    /// <p>A pointer to the dataset that underlies this table.</p>
+    pub fn table_reference(&self) -> ::std::option::Option<&crate::types::TableReference> {
+        self.table_reference.as_ref()
+    }
+    /// <p>The columns of the underlying table that can be used by collaborations or analysis rules.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.allowed_columns.is_none()`.
+    pub fn allowed_columns(&self) -> &[::std::string::String] {
+        self.allowed_columns.as_deref().unwrap_or_default()
     }
     /// <p>The analysis method for the configured table.</p>
     /// <p><code>DIRECT_QUERY</code> allows SQL queries to be run directly on this table.</p>
@@ -58,6 +72,8 @@ pub struct UpdateConfiguredTableInputBuilder {
     pub(crate) configured_table_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) table_reference: ::std::option::Option<crate::types::TableReference>,
+    pub(crate) allowed_columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) analysis_method: ::std::option::Option<crate::types::AnalysisMethod>,
     pub(crate) selected_analysis_methods: ::std::option::Option<::std::vec::Vec<crate::types::SelectedAnalysisMethod>>,
 }
@@ -104,6 +120,40 @@ impl UpdateConfiguredTableInputBuilder {
     /// <p>A new description for the configured table.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
+    }
+    /// <p>A pointer to the dataset that underlies this table.</p>
+    pub fn table_reference(mut self, input: crate::types::TableReference) -> Self {
+        self.table_reference = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A pointer to the dataset that underlies this table.</p>
+    pub fn set_table_reference(mut self, input: ::std::option::Option<crate::types::TableReference>) -> Self {
+        self.table_reference = input;
+        self
+    }
+    /// <p>A pointer to the dataset that underlies this table.</p>
+    pub fn get_table_reference(&self) -> &::std::option::Option<crate::types::TableReference> {
+        &self.table_reference
+    }
+    /// Appends an item to `allowed_columns`.
+    ///
+    /// To override the contents of this collection use [`set_allowed_columns`](Self::set_allowed_columns).
+    ///
+    /// <p>The columns of the underlying table that can be used by collaborations or analysis rules.</p>
+    pub fn allowed_columns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.allowed_columns.unwrap_or_default();
+        v.push(input.into());
+        self.allowed_columns = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The columns of the underlying table that can be used by collaborations or analysis rules.</p>
+    pub fn set_allowed_columns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.allowed_columns = input;
+        self
+    }
+    /// <p>The columns of the underlying table that can be used by collaborations or analysis rules.</p>
+    pub fn get_allowed_columns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.allowed_columns
     }
     /// <p>The analysis method for the configured table.</p>
     /// <p><code>DIRECT_QUERY</code> allows SQL queries to be run directly on this table.</p>
@@ -157,6 +207,8 @@ impl UpdateConfiguredTableInputBuilder {
             configured_table_identifier: self.configured_table_identifier,
             name: self.name,
             description: self.description,
+            table_reference: self.table_reference,
+            allowed_columns: self.allowed_columns,
             analysis_method: self.analysis_method,
             selected_analysis_methods: self.selected_analysis_methods,
         })

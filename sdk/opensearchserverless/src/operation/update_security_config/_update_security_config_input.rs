@@ -13,6 +13,8 @@ pub struct UpdateSecurityConfigInput {
     pub saml_options: ::std::option::Option<crate::types::SamlConfigOptions>,
     /// <p>Describes IAM Identity Center options in the form of a key-value map.</p>
     pub iam_identity_center_options_updates: ::std::option::Option<crate::types::UpdateIamIdentityCenterConfigOptions>,
+    /// <p>Describes IAM federation options in the form of a key-value map for updating an existing security configuration. Use this field to modify IAM federation settings for the security configuration.</p>
+    pub iam_federation_options: ::std::option::Option<crate::types::IamFederationConfigOptions>,
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
@@ -37,6 +39,10 @@ impl UpdateSecurityConfigInput {
     pub fn iam_identity_center_options_updates(&self) -> ::std::option::Option<&crate::types::UpdateIamIdentityCenterConfigOptions> {
         self.iam_identity_center_options_updates.as_ref()
     }
+    /// <p>Describes IAM federation options in the form of a key-value map for updating an existing security configuration. Use this field to modify IAM federation settings for the security configuration.</p>
+    pub fn iam_federation_options(&self) -> ::std::option::Option<&crate::types::IamFederationConfigOptions> {
+        self.iam_federation_options.as_ref()
+    }
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
@@ -58,6 +64,7 @@ pub struct UpdateSecurityConfigInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) saml_options: ::std::option::Option<crate::types::SamlConfigOptions>,
     pub(crate) iam_identity_center_options_updates: ::std::option::Option<crate::types::UpdateIamIdentityCenterConfigOptions>,
+    pub(crate) iam_federation_options: ::std::option::Option<crate::types::IamFederationConfigOptions>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdateSecurityConfigInputBuilder {
@@ -136,6 +143,20 @@ impl UpdateSecurityConfigInputBuilder {
     pub fn get_iam_identity_center_options_updates(&self) -> &::std::option::Option<crate::types::UpdateIamIdentityCenterConfigOptions> {
         &self.iam_identity_center_options_updates
     }
+    /// <p>Describes IAM federation options in the form of a key-value map for updating an existing security configuration. Use this field to modify IAM federation settings for the security configuration.</p>
+    pub fn iam_federation_options(mut self, input: crate::types::IamFederationConfigOptions) -> Self {
+        self.iam_federation_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Describes IAM federation options in the form of a key-value map for updating an existing security configuration. Use this field to modify IAM federation settings for the security configuration.</p>
+    pub fn set_iam_federation_options(mut self, input: ::std::option::Option<crate::types::IamFederationConfigOptions>) -> Self {
+        self.iam_federation_options = input;
+        self
+    }
+    /// <p>Describes IAM federation options in the form of a key-value map for updating an existing security configuration. Use this field to modify IAM federation settings for the security configuration.</p>
+    pub fn get_iam_federation_options(&self) -> &::std::option::Option<crate::types::IamFederationConfigOptions> {
+        &self.iam_federation_options
+    }
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -161,6 +182,7 @@ impl UpdateSecurityConfigInputBuilder {
             description: self.description,
             saml_options: self.saml_options,
             iam_identity_center_options_updates: self.iam_identity_center_options_updates,
+            iam_federation_options: self.iam_federation_options,
             client_token: self.client_token,
         })
     }

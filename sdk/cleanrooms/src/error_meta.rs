@@ -2752,6 +2752,9 @@ impl From<crate::operation::update_configured_table::UpdateConfiguredTableError>
             crate::operation::update_configured_table::UpdateConfiguredTableError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
+            crate::operation::update_configured_table::UpdateConfiguredTableError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
             crate::operation::update_configured_table::UpdateConfiguredTableError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_configured_table::UpdateConfiguredTableError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_configured_table::UpdateConfiguredTableError::Unhandled(inner) => Error::Unhandled(inner),

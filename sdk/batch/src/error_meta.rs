@@ -171,6 +171,32 @@ impl From<crate::operation::create_scheduling_policy::CreateSchedulingPolicyErro
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_service_environment::CreateServiceEnvironmentError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_service_environment::CreateServiceEnvironmentError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_service_environment::CreateServiceEnvironmentError> for Error {
+    fn from(err: crate::operation::create_service_environment::CreateServiceEnvironmentError) -> Self {
+        match err {
+            crate::operation::create_service_environment::CreateServiceEnvironmentError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::create_service_environment::CreateServiceEnvironmentError::ServerException(inner) => Error::ServerException(inner),
+            crate::operation::create_service_environment::CreateServiceEnvironmentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_compute_environment::DeleteComputeEnvironmentError, R>>
     for Error
 where
@@ -268,6 +294,32 @@ impl From<crate::operation::delete_scheduling_policy::DeleteSchedulingPolicyErro
             crate::operation::delete_scheduling_policy::DeleteSchedulingPolicyError::ClientException(inner) => Error::ClientException(inner),
             crate::operation::delete_scheduling_policy::DeleteSchedulingPolicyError::ServerException(inner) => Error::ServerException(inner),
             crate::operation::delete_scheduling_policy::DeleteSchedulingPolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_service_environment::DeleteServiceEnvironmentError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_service_environment::DeleteServiceEnvironmentError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_service_environment::DeleteServiceEnvironmentError> for Error {
+    fn from(err: crate::operation::delete_service_environment::DeleteServiceEnvironmentError) -> Self {
+        match err {
+            crate::operation::delete_service_environment::DeleteServiceEnvironmentError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::delete_service_environment::DeleteServiceEnvironmentError::ServerException(inner) => Error::ServerException(inner),
+            crate::operation::delete_service_environment::DeleteServiceEnvironmentError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -450,6 +502,59 @@ impl From<crate::operation::describe_scheduling_policies::DescribeSchedulingPoli
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_service_environments::DescribeServiceEnvironmentsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_service_environments::DescribeServiceEnvironmentsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_service_environments::DescribeServiceEnvironmentsError> for Error {
+    fn from(err: crate::operation::describe_service_environments::DescribeServiceEnvironmentsError) -> Self {
+        match err {
+            crate::operation::describe_service_environments::DescribeServiceEnvironmentsError::ClientException(inner) => {
+                Error::ClientException(inner)
+            }
+            crate::operation::describe_service_environments::DescribeServiceEnvironmentsError::ServerException(inner) => {
+                Error::ServerException(inner)
+            }
+            crate::operation::describe_service_environments::DescribeServiceEnvironmentsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_service_job::DescribeServiceJobError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_service_job::DescribeServiceJobError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_service_job::DescribeServiceJobError> for Error {
+    fn from(err: crate::operation::describe_service_job::DescribeServiceJobError) -> Self {
+        match err {
+            crate::operation::describe_service_job::DescribeServiceJobError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::describe_service_job::DescribeServiceJobError::ServerException(inner) => Error::ServerException(inner),
+            crate::operation::describe_service_job::DescribeServiceJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_job_queue_snapshot::GetJobQueueSnapshotError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -581,6 +686,29 @@ impl From<crate::operation::list_scheduling_policies::ListSchedulingPoliciesErro
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_service_jobs::ListServiceJobsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_service_jobs::ListServiceJobsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_service_jobs::ListServiceJobsError> for Error {
+    fn from(err: crate::operation::list_service_jobs::ListServiceJobsError) -> Self {
+        match err {
+            crate::operation::list_service_jobs::ListServiceJobsError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::list_service_jobs::ListServiceJobsError::ServerException(inner) => Error::ServerException(inner),
+            crate::operation::list_service_jobs::ListServiceJobsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -652,6 +780,29 @@ impl From<crate::operation::submit_job::SubmitJobError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::submit_service_job::SubmitServiceJobError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::submit_service_job::SubmitServiceJobError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::submit_service_job::SubmitServiceJobError> for Error {
+    fn from(err: crate::operation::submit_service_job::SubmitServiceJobError) -> Self {
+        match err {
+            crate::operation::submit_service_job::SubmitServiceJobError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::submit_service_job::SubmitServiceJobError::ServerException(inner) => Error::ServerException(inner),
+            crate::operation::submit_service_job::SubmitServiceJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::tag_resource::TagResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -695,6 +846,29 @@ impl From<crate::operation::terminate_job::TerminateJobError> for Error {
             crate::operation::terminate_job::TerminateJobError::ClientException(inner) => Error::ClientException(inner),
             crate::operation::terminate_job::TerminateJobError::ServerException(inner) => Error::ServerException(inner),
             crate::operation::terminate_job::TerminateJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::terminate_service_job::TerminateServiceJobError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::terminate_service_job::TerminateServiceJobError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::terminate_service_job::TerminateServiceJobError> for Error {
+    fn from(err: crate::operation::terminate_service_job::TerminateServiceJobError) -> Self {
+        match err {
+            crate::operation::terminate_service_job::TerminateServiceJobError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::terminate_service_job::TerminateServiceJobError::ServerException(inner) => Error::ServerException(inner),
+            crate::operation::terminate_service_job::TerminateServiceJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -818,6 +992,32 @@ impl From<crate::operation::update_scheduling_policy::UpdateSchedulingPolicyErro
             crate::operation::update_scheduling_policy::UpdateSchedulingPolicyError::ClientException(inner) => Error::ClientException(inner),
             crate::operation::update_scheduling_policy::UpdateSchedulingPolicyError::ServerException(inner) => Error::ServerException(inner),
             crate::operation::update_scheduling_policy::UpdateSchedulingPolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_service_environment::UpdateServiceEnvironmentError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_service_environment::UpdateServiceEnvironmentError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_service_environment::UpdateServiceEnvironmentError> for Error {
+    fn from(err: crate::operation::update_service_environment::UpdateServiceEnvironmentError) -> Self {
+        match err {
+            crate::operation::update_service_environment::UpdateServiceEnvironmentError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::update_service_environment::UpdateServiceEnvironmentError::ServerException(inner) => Error::ServerException(inner),
+            crate::operation::update_service_environment::UpdateServiceEnvironmentError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

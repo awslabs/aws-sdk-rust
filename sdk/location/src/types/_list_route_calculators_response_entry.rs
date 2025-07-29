@@ -2,7 +2,7 @@
 
 /// <p>A route calculator resource listed in your Amazon Web Services account.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ListRouteCalculatorsResponseEntry {
     /// <p>The name of the route calculator resource.</p>
     pub calculator_name: ::std::string::String,
@@ -17,7 +17,7 @@ pub struct ListRouteCalculatorsResponseEntry {
     /// <li>
     /// <p><code>Here</code></p></li>
     /// </ul>
-    /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
+    /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/previous/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     pub data_source: ::std::string::String,
     /// <p>Always returns <code>RequestBasedUsage</code>.</p>
     #[deprecated(note = "Deprecated. Always returns RequestBasedUsage.", since = "2022-02-01")]
@@ -55,7 +55,7 @@ impl ListRouteCalculatorsResponseEntry {
     /// <li>
     /// <p><code>Here</code></p></li>
     /// </ul>
-    /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
+    /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/previous/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     pub fn data_source(&self) -> &str {
         use std::ops::Deref;
         self.data_source.deref()
@@ -82,6 +82,18 @@ impl ListRouteCalculatorsResponseEntry {
         &self.update_time
     }
 }
+impl ::std::fmt::Debug for ListRouteCalculatorsResponseEntry {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ListRouteCalculatorsResponseEntry");
+        formatter.field("calculator_name", &self.calculator_name);
+        formatter.field("description", &self.description);
+        formatter.field("data_source", &self.data_source);
+        formatter.field("pricing_plan", &self.pricing_plan);
+        formatter.field("create_time", &"*** Sensitive Data Redacted ***");
+        formatter.field("update_time", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl ListRouteCalculatorsResponseEntry {
     /// Creates a new builder-style object to manufacture [`ListRouteCalculatorsResponseEntry`](crate::types::ListRouteCalculatorsResponseEntry).
     pub fn builder() -> crate::types::builders::ListRouteCalculatorsResponseEntryBuilder {
@@ -90,7 +102,7 @@ impl ListRouteCalculatorsResponseEntry {
 }
 
 /// A builder for [`ListRouteCalculatorsResponseEntry`](crate::types::ListRouteCalculatorsResponseEntry).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct ListRouteCalculatorsResponseEntryBuilder {
     pub(crate) calculator_name: ::std::option::Option<::std::string::String>,
@@ -140,7 +152,7 @@ impl ListRouteCalculatorsResponseEntryBuilder {
     /// <li>
     /// <p><code>Here</code></p></li>
     /// </ul>
-    /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
+    /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/previous/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     /// This field is required.
     pub fn data_source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_source = ::std::option::Option::Some(input.into());
@@ -155,7 +167,7 @@ impl ListRouteCalculatorsResponseEntryBuilder {
     /// <li>
     /// <p><code>Here</code></p></li>
     /// </ul>
-    /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
+    /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/previous/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     pub fn set_data_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_source = input;
         self
@@ -169,7 +181,7 @@ impl ListRouteCalculatorsResponseEntryBuilder {
     /// <li>
     /// <p><code>Here</code></p></li>
     /// </ul>
-    /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
+    /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/previous/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     pub fn get_data_source(&self) -> &::std::option::Option<::std::string::String> {
         &self.data_source
     }
@@ -285,5 +297,17 @@ impl ListRouteCalculatorsResponseEntryBuilder {
                 )
             })?,
         })
+    }
+}
+impl ::std::fmt::Debug for ListRouteCalculatorsResponseEntryBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ListRouteCalculatorsResponseEntryBuilder");
+        formatter.field("calculator_name", &self.calculator_name);
+        formatter.field("description", &self.description);
+        formatter.field("data_source", &self.data_source);
+        formatter.field("pricing_plan", &self.pricing_plan);
+        formatter.field("create_time", &"*** Sensitive Data Redacted ***");
+        formatter.field("update_time", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

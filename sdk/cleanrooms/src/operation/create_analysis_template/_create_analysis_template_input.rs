@@ -11,7 +11,7 @@ pub struct CreateAnalysisTemplateInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The format of the analysis template.</p>
     pub format: ::std::option::Option<crate::types::AnalysisFormat>,
-    /// <p>The information in the analysis template. Currently supports <code>text</code>, the query text for the analysis template.</p>
+    /// <p>The information in the analysis template.</p>
     pub source: ::std::option::Option<crate::types::AnalysisSource>,
     /// <p>An optional label that you can assign to a resource when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to this resource.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -37,7 +37,7 @@ impl CreateAnalysisTemplateInput {
     pub fn format(&self) -> ::std::option::Option<&crate::types::AnalysisFormat> {
         self.format.as_ref()
     }
-    /// <p>The information in the analysis template. Currently supports <code>text</code>, the query text for the analysis template.</p>
+    /// <p>The information in the analysis template.</p>
     pub fn source(&self) -> ::std::option::Option<&crate::types::AnalysisSource> {
         self.source.as_ref()
     }
@@ -136,18 +136,18 @@ impl CreateAnalysisTemplateInputBuilder {
     pub fn get_format(&self) -> &::std::option::Option<crate::types::AnalysisFormat> {
         &self.format
     }
-    /// <p>The information in the analysis template. Currently supports <code>text</code>, the query text for the analysis template.</p>
+    /// <p>The information in the analysis template.</p>
     /// This field is required.
     pub fn source(mut self, input: crate::types::AnalysisSource) -> Self {
         self.source = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The information in the analysis template. Currently supports <code>text</code>, the query text for the analysis template.</p>
+    /// <p>The information in the analysis template.</p>
     pub fn set_source(mut self, input: ::std::option::Option<crate::types::AnalysisSource>) -> Self {
         self.source = input;
         self
     }
-    /// <p>The information in the analysis template. Currently supports <code>text</code>, the query text for the analysis template.</p>
+    /// <p>The information in the analysis template.</p>
     pub fn get_source(&self) -> &::std::option::Option<crate::types::AnalysisSource> {
         &self.source
     }

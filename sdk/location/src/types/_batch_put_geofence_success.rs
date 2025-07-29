@@ -2,7 +2,7 @@
 
 /// <p>Contains a summary of each geofence that was successfully stored in a given geofence collection.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct BatchPutGeofenceSuccess {
     /// <p>The geofence successfully stored in a geofence collection.</p>
     pub geofence_id: ::std::string::String,
@@ -26,6 +26,15 @@ impl BatchPutGeofenceSuccess {
         &self.update_time
     }
 }
+impl ::std::fmt::Debug for BatchPutGeofenceSuccess {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("BatchPutGeofenceSuccess");
+        formatter.field("geofence_id", &self.geofence_id);
+        formatter.field("create_time", &"*** Sensitive Data Redacted ***");
+        formatter.field("update_time", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl BatchPutGeofenceSuccess {
     /// Creates a new builder-style object to manufacture [`BatchPutGeofenceSuccess`](crate::types::BatchPutGeofenceSuccess).
     pub fn builder() -> crate::types::builders::BatchPutGeofenceSuccessBuilder {
@@ -34,7 +43,7 @@ impl BatchPutGeofenceSuccess {
 }
 
 /// A builder for [`BatchPutGeofenceSuccess`](crate::types::BatchPutGeofenceSuccess).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct BatchPutGeofenceSuccessBuilder {
     pub(crate) geofence_id: ::std::option::Option<::std::string::String>,
@@ -113,5 +122,14 @@ impl BatchPutGeofenceSuccessBuilder {
                 )
             })?,
         })
+    }
+}
+impl ::std::fmt::Debug for BatchPutGeofenceSuccessBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("BatchPutGeofenceSuccessBuilder");
+        formatter.field("geofence_id", &self.geofence_id);
+        formatter.field("create_time", &"*** Sensitive Data Redacted ***");
+        formatter.field("update_time", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

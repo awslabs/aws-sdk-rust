@@ -2,7 +2,7 @@
 
 /// <p>Contains error details for each device that failed to update its position.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct BatchUpdateDevicePositionError {
     /// <p>The device associated with the failed location update.</p>
     pub device_id: ::std::string::String,
@@ -26,6 +26,15 @@ impl BatchUpdateDevicePositionError {
         self.error.as_ref()
     }
 }
+impl ::std::fmt::Debug for BatchUpdateDevicePositionError {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("BatchUpdateDevicePositionError");
+        formatter.field("device_id", &self.device_id);
+        formatter.field("sample_time", &"*** Sensitive Data Redacted ***");
+        formatter.field("error", &self.error);
+        formatter.finish()
+    }
+}
 impl BatchUpdateDevicePositionError {
     /// Creates a new builder-style object to manufacture [`BatchUpdateDevicePositionError`](crate::types::BatchUpdateDevicePositionError).
     pub fn builder() -> crate::types::builders::BatchUpdateDevicePositionErrorBuilder {
@@ -34,7 +43,7 @@ impl BatchUpdateDevicePositionError {
 }
 
 /// A builder for [`BatchUpdateDevicePositionError`](crate::types::BatchUpdateDevicePositionError).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct BatchUpdateDevicePositionErrorBuilder {
     pub(crate) device_id: ::std::option::Option<::std::string::String>,
@@ -107,5 +116,14 @@ impl BatchUpdateDevicePositionErrorBuilder {
             })?,
             error: self.error,
         })
+    }
+}
+impl ::std::fmt::Debug for BatchUpdateDevicePositionErrorBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("BatchUpdateDevicePositionErrorBuilder");
+        formatter.field("device_id", &self.device_id);
+        formatter.field("sample_time", &"*** Sensitive Data Redacted ***");
+        formatter.field("error", &self.error);
+        formatter.finish()
     }
 }

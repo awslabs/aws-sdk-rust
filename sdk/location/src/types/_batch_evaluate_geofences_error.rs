@@ -2,7 +2,7 @@
 
 /// <p>Contains error details for each device that failed to evaluate its position against the geofences in a given geofence collection.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct BatchEvaluateGeofencesError {
     /// <p>The device associated with the position evaluation error.</p>
     pub device_id: ::std::string::String,
@@ -26,6 +26,15 @@ impl BatchEvaluateGeofencesError {
         self.error.as_ref()
     }
 }
+impl ::std::fmt::Debug for BatchEvaluateGeofencesError {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("BatchEvaluateGeofencesError");
+        formatter.field("device_id", &self.device_id);
+        formatter.field("sample_time", &"*** Sensitive Data Redacted ***");
+        formatter.field("error", &self.error);
+        formatter.finish()
+    }
+}
 impl BatchEvaluateGeofencesError {
     /// Creates a new builder-style object to manufacture [`BatchEvaluateGeofencesError`](crate::types::BatchEvaluateGeofencesError).
     pub fn builder() -> crate::types::builders::BatchEvaluateGeofencesErrorBuilder {
@@ -34,7 +43,7 @@ impl BatchEvaluateGeofencesError {
 }
 
 /// A builder for [`BatchEvaluateGeofencesError`](crate::types::BatchEvaluateGeofencesError).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct BatchEvaluateGeofencesErrorBuilder {
     pub(crate) device_id: ::std::option::Option<::std::string::String>,
@@ -107,5 +116,14 @@ impl BatchEvaluateGeofencesErrorBuilder {
             })?,
             error: self.error,
         })
+    }
+}
+impl ::std::fmt::Debug for BatchEvaluateGeofencesErrorBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("BatchEvaluateGeofencesErrorBuilder");
+        formatter.field("device_id", &self.device_id);
+        formatter.field("sample_time", &"*** Sensitive Data Redacted ***");
+        formatter.field("error", &self.error);
+        formatter.finish()
     }
 }

@@ -39,8 +39,20 @@ pub fn ser_update_job_queue_input_input(
     if let Some(var_11) = &input.scheduling_policy_arn {
         object.key("schedulingPolicyArn").string(var_11.as_str());
     }
-    if let Some(var_12) = &input.state {
-        object.key("state").string(var_12.as_str());
+    if let Some(var_12) = &input.service_environment_order {
+        let mut array_13 = object.key("serviceEnvironmentOrder").start_array();
+        for item_14 in var_12 {
+            {
+                #[allow(unused_mut)]
+                let mut object_15 = array_13.value().start_object();
+                crate::protocol_serde::shape_service_environment_order::ser_service_environment_order(&mut object_15, item_14)?;
+                object_15.finish();
+            }
+        }
+        array_13.finish();
+    }
+    if let Some(var_16) = &input.state {
+        object.key("state").string(var_16.as_str());
     }
     Ok(())
 }

@@ -2,10 +2,10 @@
 
 /// <p>Specifies the map tile style selected from an available provider.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct MapConfiguration {
     /// <p>Specifies the map style selected from an available data provider.</p>
-    /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri map styles</a>:</p>
+    /// <p>Valid <a href="https://docs.aws.amazon.com/location/previous/developerguide/esri.html">Esri map styles</a>:</p>
     /// <ul>
     /// <li>
     /// <p><code>VectorEsriDarkGrayCanvas</code> – The Esri Dark Gray Canvas map style. A vector basemap with a dark gray, neutral background with minimal colors, labels, and features that's designed to draw attention to your thematic content.</p></li>
@@ -20,7 +20,7 @@ pub struct MapConfiguration {
     /// <li>
     /// <p><code>VectorEsriNavigation</code> – The Esri Navigation map style, which provides a detailed basemap for the world symbolized with a custom navigation map style that's designed for use during the day in mobile devices.</p></li>
     /// </ul>
-    /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies map styles</a>:</p>
+    /// <p>Valid <a href="https://docs.aws.amazon.com/location/previous/developerguide/HERE.html">HERE Technologies map styles</a>:</p>
     /// <ul>
     /// <li>
     /// <p><code>VectorHereContrast</code> – The HERE Contrast (Berlin) map style is a high contrast detailed base map of the world that blends 3D and 2D rendering.</p><note>
@@ -37,16 +37,16 @@ pub struct MapConfiguration {
     /// <p>Hybrid styles use both vector and raster tiles when rendering the map that you see. This means that more tiles are retrieved than when using either vector or raster tiles alone. Your charges will include all tiles retrieved.</p>
     /// </note></li>
     /// </ul>
-    /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps map styles</a>:</p>
+    /// <p>Valid <a href="https://docs.aws.amazon.com/location/previous/developerguide/grab.html">GrabMaps map styles</a>:</p>
     /// <ul>
     /// <li>
     /// <p><code>VectorGrabStandardLight</code> – The Grab Standard Light map style provides a basemap with detailed land use coloring, area names, roads, landmarks, and points of interest covering Southeast Asia.</p></li>
     /// <li>
     /// <p><code>VectorGrabStandardDark</code> – The Grab Standard Dark map style provides a dark variation of the standard basemap covering Southeast Asia.</p></li>
     /// </ul><note>
-    /// <p>Grab provides maps only for countries in Southeast Asia, and is only available in the Asia Pacific (Singapore) Region (<code>ap-southeast-1</code>). For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html#grab-coverage-area">GrabMaps countries and area covered</a>.</p>
+    /// <p>Grab provides maps only for countries in Southeast Asia, and is only available in the Asia Pacific (Singapore) Region (<code>ap-southeast-1</code>). For more information, see <a href="https://docs.aws.amazon.com/location/previous/developerguide/grab.html#grab-coverage-area">GrabMaps countries and area covered</a>.</p>
     /// </note>
-    /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html">Open Data map styles</a>:</p>
+    /// <p>Valid <a href="https://docs.aws.amazon.com/location/previous/developerguide/open-data.html">Open Data map styles</a>:</p>
     /// <ul>
     /// <li>
     /// <p><code>VectorOpenDataStandardLight</code> – The Open Data Standard Light map style provides a detailed basemap for the world suitable for website and mobile application use. The map includes highways major roads, minor roads, railways, water features, cities, parks, landmarks, building footprints, and administrative boundaries.</p></li>
@@ -60,7 +60,7 @@ pub struct MapConfiguration {
     pub style: ::std::string::String,
     /// <p>Specifies the political view for the style. Leave unset to not use a political view, or, for styles that support specific political views, you can choose a view, such as <code>IND</code> for the Indian view.</p>
     /// <p>Default is unset.</p><note>
-    /// <p>Not all map resources or styles support political view styles. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/map-concepts.html#political-views">Political views</a> for more information.</p>
+    /// <p>Not all map resources or styles support political view styles. See <a href="https://docs.aws.amazon.com/location/previous/developerguide/map-concepts.html#political-views">Political views</a> for more information.</p>
     /// </note>
     pub political_view: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the custom layers for the style. Leave unset to not enable any custom layer, or, for styles that support custom layers, you can enable layer(s), such as POI layer for the VectorEsriNavigation style. Default is <code>unset</code>.</p><note>
@@ -70,7 +70,7 @@ pub struct MapConfiguration {
 }
 impl MapConfiguration {
     /// <p>Specifies the map style selected from an available data provider.</p>
-    /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri map styles</a>:</p>
+    /// <p>Valid <a href="https://docs.aws.amazon.com/location/previous/developerguide/esri.html">Esri map styles</a>:</p>
     /// <ul>
     /// <li>
     /// <p><code>VectorEsriDarkGrayCanvas</code> – The Esri Dark Gray Canvas map style. A vector basemap with a dark gray, neutral background with minimal colors, labels, and features that's designed to draw attention to your thematic content.</p></li>
@@ -85,7 +85,7 @@ impl MapConfiguration {
     /// <li>
     /// <p><code>VectorEsriNavigation</code> – The Esri Navigation map style, which provides a detailed basemap for the world symbolized with a custom navigation map style that's designed for use during the day in mobile devices.</p></li>
     /// </ul>
-    /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies map styles</a>:</p>
+    /// <p>Valid <a href="https://docs.aws.amazon.com/location/previous/developerguide/HERE.html">HERE Technologies map styles</a>:</p>
     /// <ul>
     /// <li>
     /// <p><code>VectorHereContrast</code> – The HERE Contrast (Berlin) map style is a high contrast detailed base map of the world that blends 3D and 2D rendering.</p><note>
@@ -102,16 +102,16 @@ impl MapConfiguration {
     /// <p>Hybrid styles use both vector and raster tiles when rendering the map that you see. This means that more tiles are retrieved than when using either vector or raster tiles alone. Your charges will include all tiles retrieved.</p>
     /// </note></li>
     /// </ul>
-    /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps map styles</a>:</p>
+    /// <p>Valid <a href="https://docs.aws.amazon.com/location/previous/developerguide/grab.html">GrabMaps map styles</a>:</p>
     /// <ul>
     /// <li>
     /// <p><code>VectorGrabStandardLight</code> – The Grab Standard Light map style provides a basemap with detailed land use coloring, area names, roads, landmarks, and points of interest covering Southeast Asia.</p></li>
     /// <li>
     /// <p><code>VectorGrabStandardDark</code> – The Grab Standard Dark map style provides a dark variation of the standard basemap covering Southeast Asia.</p></li>
     /// </ul><note>
-    /// <p>Grab provides maps only for countries in Southeast Asia, and is only available in the Asia Pacific (Singapore) Region (<code>ap-southeast-1</code>). For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html#grab-coverage-area">GrabMaps countries and area covered</a>.</p>
+    /// <p>Grab provides maps only for countries in Southeast Asia, and is only available in the Asia Pacific (Singapore) Region (<code>ap-southeast-1</code>). For more information, see <a href="https://docs.aws.amazon.com/location/previous/developerguide/grab.html#grab-coverage-area">GrabMaps countries and area covered</a>.</p>
     /// </note>
-    /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html">Open Data map styles</a>:</p>
+    /// <p>Valid <a href="https://docs.aws.amazon.com/location/previous/developerguide/open-data.html">Open Data map styles</a>:</p>
     /// <ul>
     /// <li>
     /// <p><code>VectorOpenDataStandardLight</code> – The Open Data Standard Light map style provides a detailed basemap for the world suitable for website and mobile application use. The map includes highways major roads, minor roads, railways, water features, cities, parks, landmarks, building footprints, and administrative boundaries.</p></li>
@@ -128,7 +128,7 @@ impl MapConfiguration {
     }
     /// <p>Specifies the political view for the style. Leave unset to not use a political view, or, for styles that support specific political views, you can choose a view, such as <code>IND</code> for the Indian view.</p>
     /// <p>Default is unset.</p><note>
-    /// <p>Not all map resources or styles support political view styles. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/map-concepts.html#political-views">Political views</a> for more information.</p>
+    /// <p>Not all map resources or styles support political view styles. See <a href="https://docs.aws.amazon.com/location/previous/developerguide/map-concepts.html#political-views">Political views</a> for more information.</p>
     /// </note>
     pub fn political_view(&self) -> ::std::option::Option<&str> {
         self.political_view.as_deref()
@@ -142,6 +142,15 @@ impl MapConfiguration {
         self.custom_layers.as_deref().unwrap_or_default()
     }
 }
+impl ::std::fmt::Debug for MapConfiguration {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("MapConfiguration");
+        formatter.field("style", &self.style);
+        formatter.field("political_view", &"*** Sensitive Data Redacted ***");
+        formatter.field("custom_layers", &self.custom_layers);
+        formatter.finish()
+    }
+}
 impl MapConfiguration {
     /// Creates a new builder-style object to manufacture [`MapConfiguration`](crate::types::MapConfiguration).
     pub fn builder() -> crate::types::builders::MapConfigurationBuilder {
@@ -150,7 +159,7 @@ impl MapConfiguration {
 }
 
 /// A builder for [`MapConfiguration`](crate::types::MapConfiguration).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct MapConfigurationBuilder {
     pub(crate) style: ::std::option::Option<::std::string::String>,
@@ -159,7 +168,7 @@ pub struct MapConfigurationBuilder {
 }
 impl MapConfigurationBuilder {
     /// <p>Specifies the map style selected from an available data provider.</p>
-    /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri map styles</a>:</p>
+    /// <p>Valid <a href="https://docs.aws.amazon.com/location/previous/developerguide/esri.html">Esri map styles</a>:</p>
     /// <ul>
     /// <li>
     /// <p><code>VectorEsriDarkGrayCanvas</code> – The Esri Dark Gray Canvas map style. A vector basemap with a dark gray, neutral background with minimal colors, labels, and features that's designed to draw attention to your thematic content.</p></li>
@@ -174,7 +183,7 @@ impl MapConfigurationBuilder {
     /// <li>
     /// <p><code>VectorEsriNavigation</code> – The Esri Navigation map style, which provides a detailed basemap for the world symbolized with a custom navigation map style that's designed for use during the day in mobile devices.</p></li>
     /// </ul>
-    /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies map styles</a>:</p>
+    /// <p>Valid <a href="https://docs.aws.amazon.com/location/previous/developerguide/HERE.html">HERE Technologies map styles</a>:</p>
     /// <ul>
     /// <li>
     /// <p><code>VectorHereContrast</code> – The HERE Contrast (Berlin) map style is a high contrast detailed base map of the world that blends 3D and 2D rendering.</p><note>
@@ -191,16 +200,16 @@ impl MapConfigurationBuilder {
     /// <p>Hybrid styles use both vector and raster tiles when rendering the map that you see. This means that more tiles are retrieved than when using either vector or raster tiles alone. Your charges will include all tiles retrieved.</p>
     /// </note></li>
     /// </ul>
-    /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps map styles</a>:</p>
+    /// <p>Valid <a href="https://docs.aws.amazon.com/location/previous/developerguide/grab.html">GrabMaps map styles</a>:</p>
     /// <ul>
     /// <li>
     /// <p><code>VectorGrabStandardLight</code> – The Grab Standard Light map style provides a basemap with detailed land use coloring, area names, roads, landmarks, and points of interest covering Southeast Asia.</p></li>
     /// <li>
     /// <p><code>VectorGrabStandardDark</code> – The Grab Standard Dark map style provides a dark variation of the standard basemap covering Southeast Asia.</p></li>
     /// </ul><note>
-    /// <p>Grab provides maps only for countries in Southeast Asia, and is only available in the Asia Pacific (Singapore) Region (<code>ap-southeast-1</code>). For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html#grab-coverage-area">GrabMaps countries and area covered</a>.</p>
+    /// <p>Grab provides maps only for countries in Southeast Asia, and is only available in the Asia Pacific (Singapore) Region (<code>ap-southeast-1</code>). For more information, see <a href="https://docs.aws.amazon.com/location/previous/developerguide/grab.html#grab-coverage-area">GrabMaps countries and area covered</a>.</p>
     /// </note>
-    /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html">Open Data map styles</a>:</p>
+    /// <p>Valid <a href="https://docs.aws.amazon.com/location/previous/developerguide/open-data.html">Open Data map styles</a>:</p>
     /// <ul>
     /// <li>
     /// <p><code>VectorOpenDataStandardLight</code> – The Open Data Standard Light map style provides a detailed basemap for the world suitable for website and mobile application use. The map includes highways major roads, minor roads, railways, water features, cities, parks, landmarks, building footprints, and administrative boundaries.</p></li>
@@ -217,7 +226,7 @@ impl MapConfigurationBuilder {
         self
     }
     /// <p>Specifies the map style selected from an available data provider.</p>
-    /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri map styles</a>:</p>
+    /// <p>Valid <a href="https://docs.aws.amazon.com/location/previous/developerguide/esri.html">Esri map styles</a>:</p>
     /// <ul>
     /// <li>
     /// <p><code>VectorEsriDarkGrayCanvas</code> – The Esri Dark Gray Canvas map style. A vector basemap with a dark gray, neutral background with minimal colors, labels, and features that's designed to draw attention to your thematic content.</p></li>
@@ -232,7 +241,7 @@ impl MapConfigurationBuilder {
     /// <li>
     /// <p><code>VectorEsriNavigation</code> – The Esri Navigation map style, which provides a detailed basemap for the world symbolized with a custom navigation map style that's designed for use during the day in mobile devices.</p></li>
     /// </ul>
-    /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies map styles</a>:</p>
+    /// <p>Valid <a href="https://docs.aws.amazon.com/location/previous/developerguide/HERE.html">HERE Technologies map styles</a>:</p>
     /// <ul>
     /// <li>
     /// <p><code>VectorHereContrast</code> – The HERE Contrast (Berlin) map style is a high contrast detailed base map of the world that blends 3D and 2D rendering.</p><note>
@@ -249,16 +258,16 @@ impl MapConfigurationBuilder {
     /// <p>Hybrid styles use both vector and raster tiles when rendering the map that you see. This means that more tiles are retrieved than when using either vector or raster tiles alone. Your charges will include all tiles retrieved.</p>
     /// </note></li>
     /// </ul>
-    /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps map styles</a>:</p>
+    /// <p>Valid <a href="https://docs.aws.amazon.com/location/previous/developerguide/grab.html">GrabMaps map styles</a>:</p>
     /// <ul>
     /// <li>
     /// <p><code>VectorGrabStandardLight</code> – The Grab Standard Light map style provides a basemap with detailed land use coloring, area names, roads, landmarks, and points of interest covering Southeast Asia.</p></li>
     /// <li>
     /// <p><code>VectorGrabStandardDark</code> – The Grab Standard Dark map style provides a dark variation of the standard basemap covering Southeast Asia.</p></li>
     /// </ul><note>
-    /// <p>Grab provides maps only for countries in Southeast Asia, and is only available in the Asia Pacific (Singapore) Region (<code>ap-southeast-1</code>). For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html#grab-coverage-area">GrabMaps countries and area covered</a>.</p>
+    /// <p>Grab provides maps only for countries in Southeast Asia, and is only available in the Asia Pacific (Singapore) Region (<code>ap-southeast-1</code>). For more information, see <a href="https://docs.aws.amazon.com/location/previous/developerguide/grab.html#grab-coverage-area">GrabMaps countries and area covered</a>.</p>
     /// </note>
-    /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html">Open Data map styles</a>:</p>
+    /// <p>Valid <a href="https://docs.aws.amazon.com/location/previous/developerguide/open-data.html">Open Data map styles</a>:</p>
     /// <ul>
     /// <li>
     /// <p><code>VectorOpenDataStandardLight</code> – The Open Data Standard Light map style provides a detailed basemap for the world suitable for website and mobile application use. The map includes highways major roads, minor roads, railways, water features, cities, parks, landmarks, building footprints, and administrative boundaries.</p></li>
@@ -274,7 +283,7 @@ impl MapConfigurationBuilder {
         self
     }
     /// <p>Specifies the map style selected from an available data provider.</p>
-    /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri map styles</a>:</p>
+    /// <p>Valid <a href="https://docs.aws.amazon.com/location/previous/developerguide/esri.html">Esri map styles</a>:</p>
     /// <ul>
     /// <li>
     /// <p><code>VectorEsriDarkGrayCanvas</code> – The Esri Dark Gray Canvas map style. A vector basemap with a dark gray, neutral background with minimal colors, labels, and features that's designed to draw attention to your thematic content.</p></li>
@@ -289,7 +298,7 @@ impl MapConfigurationBuilder {
     /// <li>
     /// <p><code>VectorEsriNavigation</code> – The Esri Navigation map style, which provides a detailed basemap for the world symbolized with a custom navigation map style that's designed for use during the day in mobile devices.</p></li>
     /// </ul>
-    /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies map styles</a>:</p>
+    /// <p>Valid <a href="https://docs.aws.amazon.com/location/previous/developerguide/HERE.html">HERE Technologies map styles</a>:</p>
     /// <ul>
     /// <li>
     /// <p><code>VectorHereContrast</code> – The HERE Contrast (Berlin) map style is a high contrast detailed base map of the world that blends 3D and 2D rendering.</p><note>
@@ -306,16 +315,16 @@ impl MapConfigurationBuilder {
     /// <p>Hybrid styles use both vector and raster tiles when rendering the map that you see. This means that more tiles are retrieved than when using either vector or raster tiles alone. Your charges will include all tiles retrieved.</p>
     /// </note></li>
     /// </ul>
-    /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps map styles</a>:</p>
+    /// <p>Valid <a href="https://docs.aws.amazon.com/location/previous/developerguide/grab.html">GrabMaps map styles</a>:</p>
     /// <ul>
     /// <li>
     /// <p><code>VectorGrabStandardLight</code> – The Grab Standard Light map style provides a basemap with detailed land use coloring, area names, roads, landmarks, and points of interest covering Southeast Asia.</p></li>
     /// <li>
     /// <p><code>VectorGrabStandardDark</code> – The Grab Standard Dark map style provides a dark variation of the standard basemap covering Southeast Asia.</p></li>
     /// </ul><note>
-    /// <p>Grab provides maps only for countries in Southeast Asia, and is only available in the Asia Pacific (Singapore) Region (<code>ap-southeast-1</code>). For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html#grab-coverage-area">GrabMaps countries and area covered</a>.</p>
+    /// <p>Grab provides maps only for countries in Southeast Asia, and is only available in the Asia Pacific (Singapore) Region (<code>ap-southeast-1</code>). For more information, see <a href="https://docs.aws.amazon.com/location/previous/developerguide/grab.html#grab-coverage-area">GrabMaps countries and area covered</a>.</p>
     /// </note>
-    /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html">Open Data map styles</a>:</p>
+    /// <p>Valid <a href="https://docs.aws.amazon.com/location/previous/developerguide/open-data.html">Open Data map styles</a>:</p>
     /// <ul>
     /// <li>
     /// <p><code>VectorOpenDataStandardLight</code> – The Open Data Standard Light map style provides a detailed basemap for the world suitable for website and mobile application use. The map includes highways major roads, minor roads, railways, water features, cities, parks, landmarks, building footprints, and administrative boundaries.</p></li>
@@ -331,7 +340,7 @@ impl MapConfigurationBuilder {
     }
     /// <p>Specifies the political view for the style. Leave unset to not use a political view, or, for styles that support specific political views, you can choose a view, such as <code>IND</code> for the Indian view.</p>
     /// <p>Default is unset.</p><note>
-    /// <p>Not all map resources or styles support political view styles. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/map-concepts.html#political-views">Political views</a> for more information.</p>
+    /// <p>Not all map resources or styles support political view styles. See <a href="https://docs.aws.amazon.com/location/previous/developerguide/map-concepts.html#political-views">Political views</a> for more information.</p>
     /// </note>
     pub fn political_view(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.political_view = ::std::option::Option::Some(input.into());
@@ -339,7 +348,7 @@ impl MapConfigurationBuilder {
     }
     /// <p>Specifies the political view for the style. Leave unset to not use a political view, or, for styles that support specific political views, you can choose a view, such as <code>IND</code> for the Indian view.</p>
     /// <p>Default is unset.</p><note>
-    /// <p>Not all map resources or styles support political view styles. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/map-concepts.html#political-views">Political views</a> for more information.</p>
+    /// <p>Not all map resources or styles support political view styles. See <a href="https://docs.aws.amazon.com/location/previous/developerguide/map-concepts.html#political-views">Political views</a> for more information.</p>
     /// </note>
     pub fn set_political_view(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.political_view = input;
@@ -347,7 +356,7 @@ impl MapConfigurationBuilder {
     }
     /// <p>Specifies the political view for the style. Leave unset to not use a political view, or, for styles that support specific political views, you can choose a view, such as <code>IND</code> for the Indian view.</p>
     /// <p>Default is unset.</p><note>
-    /// <p>Not all map resources or styles support political view styles. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/map-concepts.html#political-views">Political views</a> for more information.</p>
+    /// <p>Not all map resources or styles support political view styles. See <a href="https://docs.aws.amazon.com/location/previous/developerguide/map-concepts.html#political-views">Political views</a> for more information.</p>
     /// </note>
     pub fn get_political_view(&self) -> &::std::option::Option<::std::string::String> {
         &self.political_view
@@ -392,5 +401,14 @@ impl MapConfigurationBuilder {
             political_view: self.political_view,
             custom_layers: self.custom_layers,
         })
+    }
+}
+impl ::std::fmt::Debug for MapConfigurationBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("MapConfigurationBuilder");
+        formatter.field("style", &self.style);
+        formatter.field("political_view", &"*** Sensitive Data Redacted ***");
+        formatter.field("custom_layers", &self.custom_layers);
+        formatter.finish()
     }
 }

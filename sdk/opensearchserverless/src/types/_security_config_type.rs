@@ -12,6 +12,7 @@
 /// ```text
 /// # let securityconfigtype = unimplemented!();
 /// match securityconfigtype {
+///     SecurityConfigType::Iamfederation => { /* ... */ },
 ///     SecurityConfigType::Iamidentitycenter => { /* ... */ },
 ///     SecurityConfigType::Saml => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -42,6 +43,8 @@
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum SecurityConfigType {
+    /// iam federation
+    Iamfederation,
     /// iam identity center
     Iamidentitycenter,
     /// saml provider
@@ -53,6 +56,7 @@ pub enum SecurityConfigType {
 impl ::std::convert::From<&str> for SecurityConfigType {
     fn from(s: &str) -> Self {
         match s {
+            "iamfederation" => SecurityConfigType::Iamfederation,
             "iamidentitycenter" => SecurityConfigType::Iamidentitycenter,
             "saml" => SecurityConfigType::Saml,
             other => SecurityConfigType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -70,6 +74,7 @@ impl SecurityConfigType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            SecurityConfigType::Iamfederation => "iamfederation",
             SecurityConfigType::Iamidentitycenter => "iamidentitycenter",
             SecurityConfigType::Saml => "saml",
             SecurityConfigType::Unknown(value) => value.as_str(),
@@ -77,7 +82,7 @@ impl SecurityConfigType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["iamidentitycenter", "saml"]
+        &["iamfederation", "iamidentitycenter", "saml"]
     }
 }
 impl ::std::convert::AsRef<str> for SecurityConfigType {
@@ -100,6 +105,7 @@ impl SecurityConfigType {
 impl ::std::fmt::Display for SecurityConfigType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            SecurityConfigType::Iamfederation => write!(f, "iamfederation"),
             SecurityConfigType::Iamidentitycenter => write!(f, "iamidentitycenter"),
             SecurityConfigType::Saml => write!(f, "saml"),
             SecurityConfigType::Unknown(value) => write!(f, "{}", value),

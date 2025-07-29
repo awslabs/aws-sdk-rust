@@ -68,6 +68,18 @@ where
                                 crate::protocol_serde::shape_compute_environment_orders::de_compute_environment_orders(tokens)?,
                             );
                         }
+                        "serviceEnvironmentOrder" => {
+                            builder = builder.set_service_environment_order(
+                                crate::protocol_serde::shape_service_environment_orders::de_service_environment_orders(tokens)?,
+                            );
+                        }
+                        "jobQueueType" => {
+                            builder = builder.set_job_queue_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::JobQueueType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "tags" => {
                             builder = builder.set_tags(crate::protocol_serde::shape_tagris_tags_map::de_tagris_tags_map(tokens)?);
                         }

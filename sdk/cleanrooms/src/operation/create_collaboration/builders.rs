@@ -286,17 +286,23 @@ impl CreateCollaborationFluentBuilder {
     pub fn get_creator_payment_configuration(&self) -> &::std::option::Option<crate::types::PaymentConfiguration> {
         self.inner.get_creator_payment_configuration()
     }
-    /// <p>The analytics engine.</p>
+    /// <p>The analytics engine.</p><note>
+    /// <p>After July 16, 2025, the <code>CLEAN_ROOMS_SQL</code> parameter will no longer be available.</p>
+    /// </note>
     pub fn analytics_engine(mut self, input: crate::types::AnalyticsEngine) -> Self {
         self.inner = self.inner.analytics_engine(input);
         self
     }
-    /// <p>The analytics engine.</p>
+    /// <p>The analytics engine.</p><note>
+    /// <p>After July 16, 2025, the <code>CLEAN_ROOMS_SQL</code> parameter will no longer be available.</p>
+    /// </note>
     pub fn set_analytics_engine(mut self, input: ::std::option::Option<crate::types::AnalyticsEngine>) -> Self {
         self.inner = self.inner.set_analytics_engine(input);
         self
     }
-    /// <p>The analytics engine.</p>
+    /// <p>The analytics engine.</p><note>
+    /// <p>After July 16, 2025, the <code>CLEAN_ROOMS_SQL</code> parameter will no longer be available.</p>
+    /// </note>
     pub fn get_analytics_engine(&self) -> &::std::option::Option<crate::types::AnalyticsEngine> {
         self.inner.get_analytics_engine()
     }

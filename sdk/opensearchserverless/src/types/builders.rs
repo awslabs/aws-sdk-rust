@@ -13,6 +13,8 @@ pub use crate::types::_security_policy_summary::SecurityPolicySummaryBuilder;
 
 pub use crate::types::_security_config_detail::SecurityConfigDetailBuilder;
 
+pub use crate::types::_iam_federation_config_options::IamFederationConfigOptionsBuilder;
+
 pub use crate::types::_iam_identity_center_config_options::IamIdentityCenterConfigOptionsBuilder;
 
 pub use crate::types::_saml_config_options::SamlConfigOptionsBuilder;

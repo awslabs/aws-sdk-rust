@@ -2,7 +2,7 @@
 
 /// <p>Contains details of an existing map resource in your Amazon Web Services account.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ListMapsResponseEntry {
     /// <p>The name of the associated map resource.</p>
     pub map_name: ::std::string::String,
@@ -48,6 +48,18 @@ impl ListMapsResponseEntry {
         &self.update_time
     }
 }
+impl ::std::fmt::Debug for ListMapsResponseEntry {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ListMapsResponseEntry");
+        formatter.field("map_name", &self.map_name);
+        formatter.field("description", &self.description);
+        formatter.field("data_source", &self.data_source);
+        formatter.field("pricing_plan", &self.pricing_plan);
+        formatter.field("create_time", &"*** Sensitive Data Redacted ***");
+        formatter.field("update_time", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl ListMapsResponseEntry {
     /// Creates a new builder-style object to manufacture [`ListMapsResponseEntry`](crate::types::ListMapsResponseEntry).
     pub fn builder() -> crate::types::builders::ListMapsResponseEntryBuilder {
@@ -56,7 +68,7 @@ impl ListMapsResponseEntry {
 }
 
 /// A builder for [`ListMapsResponseEntry`](crate::types::ListMapsResponseEntry).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct ListMapsResponseEntryBuilder {
     pub(crate) map_name: ::std::option::Option<::std::string::String>,
@@ -200,5 +212,17 @@ impl ListMapsResponseEntryBuilder {
                 )
             })?,
         })
+    }
+}
+impl ::std::fmt::Debug for ListMapsResponseEntryBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ListMapsResponseEntryBuilder");
+        formatter.field("map_name", &self.map_name);
+        formatter.field("description", &self.description);
+        formatter.field("data_source", &self.data_source);
+        formatter.field("pricing_plan", &self.pricing_plan);
+        formatter.field("create_time", &"*** Sensitive Data Redacted ***");
+        formatter.field("update_time", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

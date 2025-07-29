@@ -29,7 +29,7 @@ pub struct CalculateRouteSummary {
     /// <li>
     /// <p><code>Here</code></p></li>
     /// </ul>
-    /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
+    /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/previous/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     pub data_source: ::std::string::String,
     /// <p>The total distance covered by the route. The sum of the distance travelled between every stop on the route.</p><note>
     /// <p>If Esri is the data source for the route calculator, the route distance can’t be greater than 400 km. If the route exceeds 400 km, the response is a <code>400 RoutesValidationException</code> error.</p>
@@ -69,7 +69,7 @@ impl CalculateRouteSummary {
     /// <li>
     /// <p><code>Here</code></p></li>
     /// </ul>
-    /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
+    /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/previous/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     pub fn data_source(&self) -> &str {
         use std::ops::Deref;
         self.data_source.deref()
@@ -189,7 +189,7 @@ impl CalculateRouteSummaryBuilder {
     /// <li>
     /// <p><code>Here</code></p></li>
     /// </ul>
-    /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
+    /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/previous/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     /// This field is required.
     pub fn data_source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_source = ::std::option::Option::Some(input.into());
@@ -204,7 +204,7 @@ impl CalculateRouteSummaryBuilder {
     /// <li>
     /// <p><code>Here</code></p></li>
     /// </ul>
-    /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
+    /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/previous/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     pub fn set_data_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_source = input;
         self
@@ -218,7 +218,7 @@ impl CalculateRouteSummaryBuilder {
     /// <li>
     /// <p><code>Here</code></p></li>
     /// </ul>
-    /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
+    /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/previous/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     pub fn get_data_source(&self) -> &::std::option::Option<::std::string::String> {
         &self.data_source
     }

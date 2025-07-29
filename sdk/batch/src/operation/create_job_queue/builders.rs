@@ -200,6 +200,39 @@ impl CreateJobQueueFluentBuilder {
         self.inner.get_compute_environment_order()
     }
     ///
+    /// Appends an item to `serviceEnvironmentOrder`.
+    ///
+    /// To override the contents of this collection use [`set_service_environment_order`](Self::set_service_environment_order).
+    ///
+    /// <p>A list of service environments that this job queue can use to allocate jobs. All serviceEnvironments must have the same type. A job queue can't have both a serviceEnvironmentOrder and a computeEnvironmentOrder field.</p>
+    pub fn service_environment_order(mut self, input: crate::types::ServiceEnvironmentOrder) -> Self {
+        self.inner = self.inner.service_environment_order(input);
+        self
+    }
+    /// <p>A list of service environments that this job queue can use to allocate jobs. All serviceEnvironments must have the same type. A job queue can't have both a serviceEnvironmentOrder and a computeEnvironmentOrder field.</p>
+    pub fn set_service_environment_order(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceEnvironmentOrder>>) -> Self {
+        self.inner = self.inner.set_service_environment_order(input);
+        self
+    }
+    /// <p>A list of service environments that this job queue can use to allocate jobs. All serviceEnvironments must have the same type. A job queue can't have both a serviceEnvironmentOrder and a computeEnvironmentOrder field.</p>
+    pub fn get_service_environment_order(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceEnvironmentOrder>> {
+        self.inner.get_service_environment_order()
+    }
+    /// <p>The type of job queue. For service jobs that run on SageMaker Training, this value is <code>SAGEMAKER_TRAINING</code>. For regular container jobs, this value is <code>EKS</code>, <code>ECS</code>, or <code>ECS_FARGATE</code> depending on the compute environment.</p>
+    pub fn job_queue_type(mut self, input: crate::types::JobQueueType) -> Self {
+        self.inner = self.inner.job_queue_type(input);
+        self
+    }
+    /// <p>The type of job queue. For service jobs that run on SageMaker Training, this value is <code>SAGEMAKER_TRAINING</code>. For regular container jobs, this value is <code>EKS</code>, <code>ECS</code>, or <code>ECS_FARGATE</code> depending on the compute environment.</p>
+    pub fn set_job_queue_type(mut self, input: ::std::option::Option<crate::types::JobQueueType>) -> Self {
+        self.inner = self.inner.set_job_queue_type(input);
+        self
+    }
+    /// <p>The type of job queue. For service jobs that run on SageMaker Training, this value is <code>SAGEMAKER_TRAINING</code>. For regular container jobs, this value is <code>EKS</code>, <code>ECS</code>, or <code>ECS_FARGATE</code> depending on the compute environment.</p>
+    pub fn get_job_queue_type(&self) -> &::std::option::Option<crate::types::JobQueueType> {
+        self.inner.get_job_queue_type()
+    }
+    ///
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

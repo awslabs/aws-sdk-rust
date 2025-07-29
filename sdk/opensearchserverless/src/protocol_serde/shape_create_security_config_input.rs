@@ -24,8 +24,14 @@ pub fn ser_create_security_config_input_input(
         crate::protocol_serde::shape_create_iam_identity_center_config_options::ser_create_iam_identity_center_config_options(&mut object_7, var_6)?;
         object_7.finish();
     }
-    if let Some(var_8) = &input.client_token {
-        object.key("clientToken").string(var_8.as_str());
+    if let Some(var_8) = &input.iam_federation_options {
+        #[allow(unused_mut)]
+        let mut object_9 = object.key("iamFederationOptions").start_object();
+        crate::protocol_serde::shape_iam_federation_config_options::ser_iam_federation_config_options(&mut object_9, var_8)?;
+        object_9.finish();
+    }
+    if let Some(var_10) = &input.client_token {
+        object.key("clientToken").string(var_10.as_str());
     }
     Ok(())
 }

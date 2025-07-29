@@ -25,7 +25,7 @@ pub struct SearchPlaceIndexForSuggestionsSummary {
     /// <li>
     /// <p>Here</p></li>
     /// </ul>
-    /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
+    /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/previous/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     pub data_source: ::std::string::String,
     /// <p>The preferred language used to return results. Matches the language in the request. The value is a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p>
     pub language: ::std::option::Option<::std::string::String>,
@@ -71,7 +71,7 @@ impl SearchPlaceIndexForSuggestionsSummary {
     /// <li>
     /// <p>Here</p></li>
     /// </ul>
-    /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
+    /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/previous/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     pub fn data_source(&self) -> &str {
         use std::ops::Deref;
         self.data_source.deref()
@@ -93,7 +93,7 @@ impl ::std::fmt::Debug for SearchPlaceIndexForSuggestionsSummary {
         formatter.field("text", &"*** Sensitive Data Redacted ***");
         formatter.field("bias_position", &"*** Sensitive Data Redacted ***");
         formatter.field("filter_b_box", &"*** Sensitive Data Redacted ***");
-        formatter.field("filter_countries", &self.filter_countries);
+        formatter.field("filter_countries", &"*** Sensitive Data Redacted ***");
         formatter.field("max_results", &self.max_results);
         formatter.field("data_source", &self.data_source);
         formatter.field("language", &self.language);
@@ -226,7 +226,7 @@ impl SearchPlaceIndexForSuggestionsSummaryBuilder {
     /// <li>
     /// <p>Here</p></li>
     /// </ul>
-    /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
+    /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/previous/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     /// This field is required.
     pub fn data_source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_source = ::std::option::Option::Some(input.into());
@@ -241,7 +241,7 @@ impl SearchPlaceIndexForSuggestionsSummaryBuilder {
     /// <li>
     /// <p>Here</p></li>
     /// </ul>
-    /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
+    /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/previous/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     pub fn set_data_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_source = input;
         self
@@ -255,7 +255,7 @@ impl SearchPlaceIndexForSuggestionsSummaryBuilder {
     /// <li>
     /// <p>Here</p></li>
     /// </ul>
-    /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
+    /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/previous/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     pub fn get_data_source(&self) -> &::std::option::Option<::std::string::String> {
         &self.data_source
     }
@@ -328,7 +328,7 @@ impl ::std::fmt::Debug for SearchPlaceIndexForSuggestionsSummaryBuilder {
         formatter.field("text", &"*** Sensitive Data Redacted ***");
         formatter.field("bias_position", &"*** Sensitive Data Redacted ***");
         formatter.field("filter_b_box", &"*** Sensitive Data Redacted ***");
-        formatter.field("filter_countries", &self.filter_countries);
+        formatter.field("filter_countries", &"*** Sensitive Data Redacted ***");
         formatter.field("max_results", &self.max_results);
         formatter.field("data_source", &self.data_source);
         formatter.field("language", &self.language);

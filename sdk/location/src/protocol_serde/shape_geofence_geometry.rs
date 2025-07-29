@@ -23,6 +23,9 @@ where
                         "Geobuf" => {
                             builder = builder.set_geobuf(::aws_smithy_json::deserialize::token::expect_blob_or_null(tokens.next())?);
                         }
+                        "MultiPolygon" => {
+                            builder = builder.set_multi_polygon(crate::protocol_serde::shape_multi_linear_rings::de_multi_linear_rings(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -77,6 +80,36 @@ pub fn ser_geofence_geometry(
     }
     if let Some(var_10) = &input.geobuf {
         object.key("Geobuf").string_unchecked(&::aws_smithy_types::base64::encode(var_10));
+    }
+    if let Some(var_11) = &input.multi_polygon {
+        let mut array_12 = object.key("MultiPolygon").start_array();
+        for item_13 in var_11 {
+            {
+                let mut array_14 = array_12.value().start_array();
+                for item_15 in item_13 {
+                    {
+                        let mut array_16 = array_14.value().start_array();
+                        for item_17 in item_15 {
+                            {
+                                let mut array_18 = array_16.value().start_array();
+                                for item_19 in item_17 {
+                                    {
+                                        array_18.value().number(
+                                            #[allow(clippy::useless_conversion)]
+                                            ::aws_smithy_types::Number::Float((*item_19).into()),
+                                        );
+                                    }
+                                }
+                                array_18.finish();
+                            }
+                        }
+                        array_16.finish();
+                    }
+                }
+                array_14.finish();
+            }
+        }
+        array_12.finish();
     }
     Ok(())
 }

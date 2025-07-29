@@ -16,6 +16,9 @@ pub mod create_job_queue;
 /// Types for the `CreateSchedulingPolicy` operation.
 pub mod create_scheduling_policy;
 
+/// Types for the `CreateServiceEnvironment` operation.
+pub mod create_service_environment;
+
 /// Types for the `DeleteComputeEnvironment` operation.
 pub mod delete_compute_environment;
 
@@ -27,6 +30,9 @@ pub mod delete_job_queue;
 
 /// Types for the `DeleteSchedulingPolicy` operation.
 pub mod delete_scheduling_policy;
+
+/// Types for the `DeleteServiceEnvironment` operation.
+pub mod delete_service_environment;
 
 /// Types for the `DeregisterJobDefinition` operation.
 pub mod deregister_job_definition;
@@ -49,6 +55,12 @@ pub mod describe_jobs;
 /// Types for the `DescribeSchedulingPolicies` operation.
 pub mod describe_scheduling_policies;
 
+/// Types for the `DescribeServiceEnvironments` operation.
+pub mod describe_service_environments;
+
+/// Types for the `DescribeServiceJob` operation.
+pub mod describe_service_job;
+
 /// Types for the `GetJobQueueSnapshot` operation.
 pub mod get_job_queue_snapshot;
 
@@ -64,6 +76,9 @@ pub mod list_jobs_by_consumable_resource;
 /// Types for the `ListSchedulingPolicies` operation.
 pub mod list_scheduling_policies;
 
+/// Types for the `ListServiceJobs` operation.
+pub mod list_service_jobs;
+
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
 
@@ -73,11 +88,17 @@ pub mod register_job_definition;
 /// Types for the `SubmitJob` operation.
 pub mod submit_job;
 
+/// Types for the `SubmitServiceJob` operation.
+pub mod submit_service_job;
+
 /// Types for the `TagResource` operation.
 pub mod tag_resource;
 
 /// Types for the `TerminateJob` operation.
 pub mod terminate_job;
+
+/// Types for the `TerminateServiceJob` operation.
+pub mod terminate_service_job;
 
 /// Types for the `UntagResource` operation.
 pub mod untag_resource;
@@ -93,3 +114,6 @@ pub mod update_job_queue;
 
 /// Types for the `UpdateSchedulingPolicy` operation.
 pub mod update_scheduling_policy;
+
+/// Types for the `UpdateServiceEnvironment` operation.
+pub mod update_service_environment;

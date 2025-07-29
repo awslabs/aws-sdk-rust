@@ -22,7 +22,7 @@ impl crate::operation::create_privacy_budget_template::builders::CreatePrivacyBu
 }
 /// Fluent builder constructing a request to `CreatePrivacyBudgetTemplate`.
 ///
-/// <p>Creates a privacy budget template for a specified membership. Each membership can have only one privacy budget template, but it can be deleted and recreated. If you need to change the privacy budget template for a membership, use the <code>UpdatePrivacyBudgetTemplate</code> operation.</p>
+/// <p>Creates a privacy budget template for a specified collaboration. Each collaboration can have only one privacy budget template. If you need to change the privacy budget template, use the <code>UpdatePrivacyBudgetTemplate</code> operation.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreatePrivacyBudgetTemplateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

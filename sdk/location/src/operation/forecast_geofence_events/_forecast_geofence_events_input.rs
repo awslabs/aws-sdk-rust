@@ -5,9 +5,9 @@
 pub struct ForecastGeofenceEventsInput {
     /// <p>The name of the geofence collection.</p>
     pub collection_name: ::std::option::Option<::std::string::String>,
-    /// <p>The device's state, including current position and speed.</p>
+    /// <p>Represents the device's state, including its current position and speed. When speed is omitted, this API performs a <i>containment check</i>. The <i>containment check</i> operation returns <code>IDLE</code> events for geofences where the device is currently inside of, but no other events.</p>
     pub device_state: ::std::option::Option<crate::types::ForecastGeofenceEventsDeviceState>,
-    /// <p>Specifies the time horizon in minutes for the forecasted events.</p>
+    /// <p>The forward-looking time window for forecasting, specified in minutes. The API only returns events that are predicted to occur within this time horizon. When no value is specified, this API performs a <i>containment check</i>. The <i>containment check</i> operation returns <code>IDLE</code> events for geofences where the device is currently inside of, but no other events.</p>
     pub time_horizon_minutes: ::std::option::Option<f64>,
     /// <p>The distance unit used for the <code>NearestDistance</code> property returned in a forecasted event. The measurement system must match for <code>DistanceUnit</code> and <code>SpeedUnit</code>; if <code>Kilometers</code> is specified for <code>DistanceUnit</code>, then <code>SpeedUnit</code> must be <code>KilometersPerHour</code>.</p>
     /// <p>Default Value: <code>Kilometers</code></p>
@@ -27,11 +27,11 @@ impl ForecastGeofenceEventsInput {
     pub fn collection_name(&self) -> ::std::option::Option<&str> {
         self.collection_name.as_deref()
     }
-    /// <p>The device's state, including current position and speed.</p>
+    /// <p>Represents the device's state, including its current position and speed. When speed is omitted, this API performs a <i>containment check</i>. The <i>containment check</i> operation returns <code>IDLE</code> events for geofences where the device is currently inside of, but no other events.</p>
     pub fn device_state(&self) -> ::std::option::Option<&crate::types::ForecastGeofenceEventsDeviceState> {
         self.device_state.as_ref()
     }
-    /// <p>Specifies the time horizon in minutes for the forecasted events.</p>
+    /// <p>The forward-looking time window for forecasting, specified in minutes. The API only returns events that are predicted to occur within this time horizon. When no value is specified, this API performs a <i>containment check</i>. The <i>containment check</i> operation returns <code>IDLE</code> events for geofences where the device is currently inside of, but no other events.</p>
     pub fn time_horizon_minutes(&self) -> ::std::option::Option<f64> {
         self.time_horizon_minutes
     }
@@ -91,32 +91,32 @@ impl ForecastGeofenceEventsInputBuilder {
     pub fn get_collection_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.collection_name
     }
-    /// <p>The device's state, including current position and speed.</p>
+    /// <p>Represents the device's state, including its current position and speed. When speed is omitted, this API performs a <i>containment check</i>. The <i>containment check</i> operation returns <code>IDLE</code> events for geofences where the device is currently inside of, but no other events.</p>
     /// This field is required.
     pub fn device_state(mut self, input: crate::types::ForecastGeofenceEventsDeviceState) -> Self {
         self.device_state = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The device's state, including current position and speed.</p>
+    /// <p>Represents the device's state, including its current position and speed. When speed is omitted, this API performs a <i>containment check</i>. The <i>containment check</i> operation returns <code>IDLE</code> events for geofences where the device is currently inside of, but no other events.</p>
     pub fn set_device_state(mut self, input: ::std::option::Option<crate::types::ForecastGeofenceEventsDeviceState>) -> Self {
         self.device_state = input;
         self
     }
-    /// <p>The device's state, including current position and speed.</p>
+    /// <p>Represents the device's state, including its current position and speed. When speed is omitted, this API performs a <i>containment check</i>. The <i>containment check</i> operation returns <code>IDLE</code> events for geofences where the device is currently inside of, but no other events.</p>
     pub fn get_device_state(&self) -> &::std::option::Option<crate::types::ForecastGeofenceEventsDeviceState> {
         &self.device_state
     }
-    /// <p>Specifies the time horizon in minutes for the forecasted events.</p>
+    /// <p>The forward-looking time window for forecasting, specified in minutes. The API only returns events that are predicted to occur within this time horizon. When no value is specified, this API performs a <i>containment check</i>. The <i>containment check</i> operation returns <code>IDLE</code> events for geofences where the device is currently inside of, but no other events.</p>
     pub fn time_horizon_minutes(mut self, input: f64) -> Self {
         self.time_horizon_minutes = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the time horizon in minutes for the forecasted events.</p>
+    /// <p>The forward-looking time window for forecasting, specified in minutes. The API only returns events that are predicted to occur within this time horizon. When no value is specified, this API performs a <i>containment check</i>. The <i>containment check</i> operation returns <code>IDLE</code> events for geofences where the device is currently inside of, but no other events.</p>
     pub fn set_time_horizon_minutes(mut self, input: ::std::option::Option<f64>) -> Self {
         self.time_horizon_minutes = input;
         self
     }
-    /// <p>Specifies the time horizon in minutes for the forecasted events.</p>
+    /// <p>The forward-looking time window for forecasting, specified in minutes. The API only returns events that are predicted to occur within this time horizon. When no value is specified, this API performs a <i>containment check</i>. The <i>containment check</i> operation returns <code>IDLE</code> events for geofences where the device is currently inside of, but no other events.</p>
     pub fn get_time_horizon_minutes(&self) -> &::std::option::Option<f64> {
         &self.time_horizon_minutes
     }

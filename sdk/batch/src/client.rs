@@ -146,6 +146,8 @@ mod create_job_queue;
 
 mod create_scheduling_policy;
 
+mod create_service_environment;
+
 /// Operation customization and supporting types.
 ///
 /// The underlying HTTP requests made during an operation can be customized
@@ -181,6 +183,8 @@ mod delete_job_queue;
 
 mod delete_scheduling_policy;
 
+mod delete_service_environment;
+
 mod deregister_job_definition;
 
 mod describe_compute_environments;
@@ -195,6 +199,10 @@ mod describe_jobs;
 
 mod describe_scheduling_policies;
 
+mod describe_service_environments;
+
+mod describe_service_job;
+
 mod get_job_queue_snapshot;
 
 mod list_consumable_resources;
@@ -205,15 +213,21 @@ mod list_jobs_by_consumable_resource;
 
 mod list_scheduling_policies;
 
+mod list_service_jobs;
+
 mod list_tags_for_resource;
 
 mod register_job_definition;
 
 mod submit_job;
 
+mod submit_service_job;
+
 mod tag_resource;
 
 mod terminate_job;
+
+mod terminate_service_job;
 
 mod untag_resource;
 
@@ -224,3 +238,5 @@ mod update_consumable_resource;
 mod update_job_queue;
 
 mod update_scheduling_policy;
+
+mod update_service_environment;

@@ -35,9 +35,9 @@ pub struct SearchPlaceIndexForSuggestionsInput {
     /// <p>If the data provider does not have a value for Greek, the result will be in a language that the provider does support.</p>
     pub language: ::std::option::Option<::std::string::String>,
     /// <p>A list of one or more Amazon Location categories to filter the returned places. If you include more than one category, the results will include results that match <i>any</i> of the categories listed.</p>
-    /// <p>For more information about using categories, including a list of Amazon Location categories, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
+    /// <p>For more information about using categories, including a list of Amazon Location categories, see <a href="https://docs.aws.amazon.com/location/previous/developerguide/category-filtering.html">Categories and filtering</a>, in the <i>Amazon Location Service developer guide</i>.</p>
     pub filter_categories: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
+    /// <p>The optional <a href="https://docs.aws.amazon.com/location/previous/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
     pub key: ::std::option::Option<::std::string::String>,
 }
 impl SearchPlaceIndexForSuggestionsInput {
@@ -93,13 +93,13 @@ impl SearchPlaceIndexForSuggestionsInput {
         self.language.as_deref()
     }
     /// <p>A list of one or more Amazon Location categories to filter the returned places. If you include more than one category, the results will include results that match <i>any</i> of the categories listed.</p>
-    /// <p>For more information about using categories, including a list of Amazon Location categories, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
+    /// <p>For more information about using categories, including a list of Amazon Location categories, see <a href="https://docs.aws.amazon.com/location/previous/developerguide/category-filtering.html">Categories and filtering</a>, in the <i>Amazon Location Service developer guide</i>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filter_categories.is_none()`.
     pub fn filter_categories(&self) -> &[::std::string::String] {
         self.filter_categories.as_deref().unwrap_or_default()
     }
-    /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
+    /// <p>The optional <a href="https://docs.aws.amazon.com/location/previous/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
     pub fn key(&self) -> ::std::option::Option<&str> {
         self.key.as_deref()
     }
@@ -111,7 +111,7 @@ impl ::std::fmt::Debug for SearchPlaceIndexForSuggestionsInput {
         formatter.field("text", &"*** Sensitive Data Redacted ***");
         formatter.field("bias_position", &"*** Sensitive Data Redacted ***");
         formatter.field("filter_b_box", &"*** Sensitive Data Redacted ***");
-        formatter.field("filter_countries", &self.filter_countries);
+        formatter.field("filter_countries", &"*** Sensitive Data Redacted ***");
         formatter.field("max_results", &self.max_results);
         formatter.field("language", &self.language);
         formatter.field("filter_categories", &self.filter_categories);
@@ -315,7 +315,7 @@ impl SearchPlaceIndexForSuggestionsInputBuilder {
     /// To override the contents of this collection use [`set_filter_categories`](Self::set_filter_categories).
     ///
     /// <p>A list of one or more Amazon Location categories to filter the returned places. If you include more than one category, the results will include results that match <i>any</i> of the categories listed.</p>
-    /// <p>For more information about using categories, including a list of Amazon Location categories, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
+    /// <p>For more information about using categories, including a list of Amazon Location categories, see <a href="https://docs.aws.amazon.com/location/previous/developerguide/category-filtering.html">Categories and filtering</a>, in the <i>Amazon Location Service developer guide</i>.</p>
     pub fn filter_categories(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.filter_categories.unwrap_or_default();
         v.push(input.into());
@@ -323,27 +323,27 @@ impl SearchPlaceIndexForSuggestionsInputBuilder {
         self
     }
     /// <p>A list of one or more Amazon Location categories to filter the returned places. If you include more than one category, the results will include results that match <i>any</i> of the categories listed.</p>
-    /// <p>For more information about using categories, including a list of Amazon Location categories, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
+    /// <p>For more information about using categories, including a list of Amazon Location categories, see <a href="https://docs.aws.amazon.com/location/previous/developerguide/category-filtering.html">Categories and filtering</a>, in the <i>Amazon Location Service developer guide</i>.</p>
     pub fn set_filter_categories(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.filter_categories = input;
         self
     }
     /// <p>A list of one or more Amazon Location categories to filter the returned places. If you include more than one category, the results will include results that match <i>any</i> of the categories listed.</p>
-    /// <p>For more information about using categories, including a list of Amazon Location categories, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
+    /// <p>For more information about using categories, including a list of Amazon Location categories, see <a href="https://docs.aws.amazon.com/location/previous/developerguide/category-filtering.html">Categories and filtering</a>, in the <i>Amazon Location Service developer guide</i>.</p>
     pub fn get_filter_categories(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.filter_categories
     }
-    /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
+    /// <p>The optional <a href="https://docs.aws.amazon.com/location/previous/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
+    /// <p>The optional <a href="https://docs.aws.amazon.com/location/previous/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key = input;
         self
     }
-    /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
+    /// <p>The optional <a href="https://docs.aws.amazon.com/location/previous/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.key
     }
@@ -376,7 +376,7 @@ impl ::std::fmt::Debug for SearchPlaceIndexForSuggestionsInputBuilder {
         formatter.field("text", &"*** Sensitive Data Redacted ***");
         formatter.field("bias_position", &"*** Sensitive Data Redacted ***");
         formatter.field("filter_b_box", &"*** Sensitive Data Redacted ***");
-        formatter.field("filter_countries", &self.filter_countries);
+        formatter.field("filter_countries", &"*** Sensitive Data Redacted ***");
         formatter.field("max_results", &self.max_results);
         formatter.field("language", &self.language);
         formatter.field("filter_categories", &self.filter_categories);

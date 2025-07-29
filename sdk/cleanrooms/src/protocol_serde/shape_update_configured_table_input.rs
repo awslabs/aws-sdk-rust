@@ -3,23 +3,38 @@ pub fn ser_update_configured_table_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_configured_table::UpdateConfiguredTableInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.analysis_method {
-        object.key("analysisMethod").string(var_1.as_str());
-    }
-    if let Some(var_2) = &input.description {
-        object.key("description").string(var_2.as_str());
-    }
-    if let Some(var_3) = &input.name {
-        object.key("name").string(var_3.as_str());
-    }
-    if let Some(var_4) = &input.selected_analysis_methods {
-        let mut array_5 = object.key("selectedAnalysisMethods").start_array();
-        for item_6 in var_4 {
+    if let Some(var_1) = &input.allowed_columns {
+        let mut array_2 = object.key("allowedColumns").start_array();
+        for item_3 in var_1 {
             {
-                array_5.value().string(item_6.as_str());
+                array_2.value().string(item_3.as_str());
             }
         }
-        array_5.finish();
+        array_2.finish();
+    }
+    if let Some(var_4) = &input.analysis_method {
+        object.key("analysisMethod").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.description {
+        object.key("description").string(var_5.as_str());
+    }
+    if let Some(var_6) = &input.name {
+        object.key("name").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.selected_analysis_methods {
+        let mut array_8 = object.key("selectedAnalysisMethods").start_array();
+        for item_9 in var_7 {
+            {
+                array_8.value().string(item_9.as_str());
+            }
+        }
+        array_8.finish();
+    }
+    if let Some(var_10) = &input.table_reference {
+        #[allow(unused_mut)]
+        let mut object_11 = object.key("tableReference").start_object();
+        crate::protocol_serde::shape_table_reference::ser_table_reference(&mut object_11, var_10)?;
+        object_11.finish();
     }
     Ok(())
 }

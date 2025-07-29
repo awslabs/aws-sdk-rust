@@ -6,16 +6,16 @@ pub struct CalculateRouteMatrixInput {
     /// <p>The name of the route calculator resource that you want to use to calculate the route matrix.</p>
     pub calculator_name: ::std::option::Option<::std::string::String>,
     /// <p>The list of departure (origin) positions for the route matrix. An array of points, each of which is itself a 2-value array defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format: <code>\[longitude, latitude\]</code>. For example, <code>\[-123.115, 49.285\]</code>.</p><important>
-    /// <p>Depending on the data provider selected in the route calculator resource there may be additional restrictions on the inputs you can choose. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route-matrix.html#matrix-routing-position-limits"> Position restrictions</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
+    /// <p>Depending on the data provider selected in the route calculator resource there may be additional restrictions on the inputs you can choose. See <a href="https://docs.aws.amazon.com/location/previous/developerguide/calculate-route-matrix.html#matrix-routing-position-limits"> Position restrictions</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
     /// </important> <note>
-    /// <p>For route calculators that use Esri as the data provider, if you specify a departure that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html"> moves the position to the nearest road</a>. The snapped value is available in the result in <code>SnappedDeparturePositions</code>.</p>
+    /// <p>For route calculators that use Esri as the data provider, if you specify a departure that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/previous/developerguide/snap-to-nearby-road.html"> moves the position to the nearest road</a>. The snapped value is available in the result in <code>SnappedDeparturePositions</code>.</p>
     /// </note>
     /// <p>Valid Values: <code>\[-180 to 180,-90 to 90\]</code></p>
     pub departure_positions: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<f64>>>,
     /// <p>The list of destination positions for the route matrix. An array of points, each of which is itself a 2-value array defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format: <code>\[longitude, latitude\]</code>. For example, <code>\[-122.339, 47.615\]</code></p><important>
-    /// <p>Depending on the data provider selected in the route calculator resource there may be additional restrictions on the inputs you can choose. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route-matrix.html#matrix-routing-position-limits"> Position restrictions</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
+    /// <p>Depending on the data provider selected in the route calculator resource there may be additional restrictions on the inputs you can choose. See <a href="https://docs.aws.amazon.com/location/previous/developerguide/calculate-route-matrix.html#matrix-routing-position-limits"> Position restrictions</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
     /// </important> <note>
-    /// <p>For route calculators that use Esri as the data provider, if you specify a destination that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html"> moves the position to the nearest road</a>. The snapped value is available in the result in <code>SnappedDestinationPositions</code>.</p>
+    /// <p>For route calculators that use Esri as the data provider, if you specify a destination that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/previous/developerguide/snap-to-nearby-road.html"> moves the position to the nearest road</a>. The snapped value is available in the result in <code>SnappedDestinationPositions</code>.</p>
     /// </note>
     /// <p>Valid Values: <code>\[-180 to 180,-90 to 90\]</code></p>
     pub destination_positions: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<f64>>>,
@@ -29,7 +29,7 @@ pub struct CalculateRouteMatrixInput {
     /// </ul><note>
     /// <p><code>Bicycle</code> or <code>Motorcycle</code> are only valid when using <code>Grab</code> as a data provider, and only within Southeast Asia.</p>
     /// <p><code>Truck</code> is not available for Grab.</p>
-    /// <p>For more information about using Grab as a data provider, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
+    /// <p>For more information about using Grab as a data provider, see <a href="https://docs.aws.amazon.com/location/previous/developerguide/grab.html">GrabMaps</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
     /// </note>
     /// <p>Default Value: <code>Car</code></p>
     pub travel_mode: ::std::option::Option<crate::types::TravelMode>,
@@ -54,7 +54,7 @@ pub struct CalculateRouteMatrixInput {
     /// <p>Specifies route preferences when traveling by <code>Truck</code>, such as avoiding routes that use ferries or tolls, and truck specifications to consider when choosing an optimal road.</p>
     /// <p>Requirements: <code>TravelMode</code> must be specified as <code>Truck</code>.</p>
     pub truck_mode_options: ::std::option::Option<crate::types::CalculateRouteTruckModeOptions>,
-    /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
+    /// <p>The optional <a href="https://docs.aws.amazon.com/location/previous/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
     pub key: ::std::option::Option<::std::string::String>,
 }
 impl CalculateRouteMatrixInput {
@@ -63,9 +63,9 @@ impl CalculateRouteMatrixInput {
         self.calculator_name.as_deref()
     }
     /// <p>The list of departure (origin) positions for the route matrix. An array of points, each of which is itself a 2-value array defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format: <code>\[longitude, latitude\]</code>. For example, <code>\[-123.115, 49.285\]</code>.</p><important>
-    /// <p>Depending on the data provider selected in the route calculator resource there may be additional restrictions on the inputs you can choose. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route-matrix.html#matrix-routing-position-limits"> Position restrictions</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
+    /// <p>Depending on the data provider selected in the route calculator resource there may be additional restrictions on the inputs you can choose. See <a href="https://docs.aws.amazon.com/location/previous/developerguide/calculate-route-matrix.html#matrix-routing-position-limits"> Position restrictions</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
     /// </important> <note>
-    /// <p>For route calculators that use Esri as the data provider, if you specify a departure that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html"> moves the position to the nearest road</a>. The snapped value is available in the result in <code>SnappedDeparturePositions</code>.</p>
+    /// <p>For route calculators that use Esri as the data provider, if you specify a departure that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/previous/developerguide/snap-to-nearby-road.html"> moves the position to the nearest road</a>. The snapped value is available in the result in <code>SnappedDeparturePositions</code>.</p>
     /// </note>
     /// <p>Valid Values: <code>\[-180 to 180,-90 to 90\]</code></p>
     ///
@@ -74,9 +74,9 @@ impl CalculateRouteMatrixInput {
         self.departure_positions.as_deref().unwrap_or_default()
     }
     /// <p>The list of destination positions for the route matrix. An array of points, each of which is itself a 2-value array defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format: <code>\[longitude, latitude\]</code>. For example, <code>\[-122.339, 47.615\]</code></p><important>
-    /// <p>Depending on the data provider selected in the route calculator resource there may be additional restrictions on the inputs you can choose. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route-matrix.html#matrix-routing-position-limits"> Position restrictions</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
+    /// <p>Depending on the data provider selected in the route calculator resource there may be additional restrictions on the inputs you can choose. See <a href="https://docs.aws.amazon.com/location/previous/developerguide/calculate-route-matrix.html#matrix-routing-position-limits"> Position restrictions</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
     /// </important> <note>
-    /// <p>For route calculators that use Esri as the data provider, if you specify a destination that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html"> moves the position to the nearest road</a>. The snapped value is available in the result in <code>SnappedDestinationPositions</code>.</p>
+    /// <p>For route calculators that use Esri as the data provider, if you specify a destination that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/previous/developerguide/snap-to-nearby-road.html"> moves the position to the nearest road</a>. The snapped value is available in the result in <code>SnappedDestinationPositions</code>.</p>
     /// </note>
     /// <p>Valid Values: <code>\[-180 to 180,-90 to 90\]</code></p>
     ///
@@ -94,7 +94,7 @@ impl CalculateRouteMatrixInput {
     /// </ul><note>
     /// <p><code>Bicycle</code> or <code>Motorcycle</code> are only valid when using <code>Grab</code> as a data provider, and only within Southeast Asia.</p>
     /// <p><code>Truck</code> is not available for Grab.</p>
-    /// <p>For more information about using Grab as a data provider, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
+    /// <p>For more information about using Grab as a data provider, see <a href="https://docs.aws.amazon.com/location/previous/developerguide/grab.html">GrabMaps</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
     /// </note>
     /// <p>Default Value: <code>Car</code></p>
     pub fn travel_mode(&self) -> ::std::option::Option<&crate::types::TravelMode> {
@@ -131,7 +131,7 @@ impl CalculateRouteMatrixInput {
     pub fn truck_mode_options(&self) -> ::std::option::Option<&crate::types::CalculateRouteTruckModeOptions> {
         self.truck_mode_options.as_ref()
     }
-    /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
+    /// <p>The optional <a href="https://docs.aws.amazon.com/location/previous/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
     pub fn key(&self) -> ::std::option::Option<&str> {
         self.key.as_deref()
     }
@@ -143,7 +143,7 @@ impl ::std::fmt::Debug for CalculateRouteMatrixInput {
         formatter.field("departure_positions", &"*** Sensitive Data Redacted ***");
         formatter.field("destination_positions", &"*** Sensitive Data Redacted ***");
         formatter.field("travel_mode", &self.travel_mode);
-        formatter.field("departure_time", &self.departure_time);
+        formatter.field("departure_time", &"*** Sensitive Data Redacted ***");
         formatter.field("depart_now", &self.depart_now);
         formatter.field("distance_unit", &self.distance_unit);
         formatter.field("car_mode_options", &self.car_mode_options);
@@ -195,9 +195,9 @@ impl CalculateRouteMatrixInputBuilder {
     /// To override the contents of this collection use [`set_departure_positions`](Self::set_departure_positions).
     ///
     /// <p>The list of departure (origin) positions for the route matrix. An array of points, each of which is itself a 2-value array defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format: <code>\[longitude, latitude\]</code>. For example, <code>\[-123.115, 49.285\]</code>.</p><important>
-    /// <p>Depending on the data provider selected in the route calculator resource there may be additional restrictions on the inputs you can choose. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route-matrix.html#matrix-routing-position-limits"> Position restrictions</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
+    /// <p>Depending on the data provider selected in the route calculator resource there may be additional restrictions on the inputs you can choose. See <a href="https://docs.aws.amazon.com/location/previous/developerguide/calculate-route-matrix.html#matrix-routing-position-limits"> Position restrictions</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
     /// </important> <note>
-    /// <p>For route calculators that use Esri as the data provider, if you specify a departure that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html"> moves the position to the nearest road</a>. The snapped value is available in the result in <code>SnappedDeparturePositions</code>.</p>
+    /// <p>For route calculators that use Esri as the data provider, if you specify a departure that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/previous/developerguide/snap-to-nearby-road.html"> moves the position to the nearest road</a>. The snapped value is available in the result in <code>SnappedDeparturePositions</code>.</p>
     /// </note>
     /// <p>Valid Values: <code>\[-180 to 180,-90 to 90\]</code></p>
     pub fn departure_positions(mut self, input: ::std::vec::Vec<f64>) -> Self {
@@ -207,9 +207,9 @@ impl CalculateRouteMatrixInputBuilder {
         self
     }
     /// <p>The list of departure (origin) positions for the route matrix. An array of points, each of which is itself a 2-value array defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format: <code>\[longitude, latitude\]</code>. For example, <code>\[-123.115, 49.285\]</code>.</p><important>
-    /// <p>Depending on the data provider selected in the route calculator resource there may be additional restrictions on the inputs you can choose. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route-matrix.html#matrix-routing-position-limits"> Position restrictions</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
+    /// <p>Depending on the data provider selected in the route calculator resource there may be additional restrictions on the inputs you can choose. See <a href="https://docs.aws.amazon.com/location/previous/developerguide/calculate-route-matrix.html#matrix-routing-position-limits"> Position restrictions</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
     /// </important> <note>
-    /// <p>For route calculators that use Esri as the data provider, if you specify a departure that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html"> moves the position to the nearest road</a>. The snapped value is available in the result in <code>SnappedDeparturePositions</code>.</p>
+    /// <p>For route calculators that use Esri as the data provider, if you specify a departure that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/previous/developerguide/snap-to-nearby-road.html"> moves the position to the nearest road</a>. The snapped value is available in the result in <code>SnappedDeparturePositions</code>.</p>
     /// </note>
     /// <p>Valid Values: <code>\[-180 to 180,-90 to 90\]</code></p>
     pub fn set_departure_positions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<f64>>>) -> Self {
@@ -217,9 +217,9 @@ impl CalculateRouteMatrixInputBuilder {
         self
     }
     /// <p>The list of departure (origin) positions for the route matrix. An array of points, each of which is itself a 2-value array defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format: <code>\[longitude, latitude\]</code>. For example, <code>\[-123.115, 49.285\]</code>.</p><important>
-    /// <p>Depending on the data provider selected in the route calculator resource there may be additional restrictions on the inputs you can choose. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route-matrix.html#matrix-routing-position-limits"> Position restrictions</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
+    /// <p>Depending on the data provider selected in the route calculator resource there may be additional restrictions on the inputs you can choose. See <a href="https://docs.aws.amazon.com/location/previous/developerguide/calculate-route-matrix.html#matrix-routing-position-limits"> Position restrictions</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
     /// </important> <note>
-    /// <p>For route calculators that use Esri as the data provider, if you specify a departure that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html"> moves the position to the nearest road</a>. The snapped value is available in the result in <code>SnappedDeparturePositions</code>.</p>
+    /// <p>For route calculators that use Esri as the data provider, if you specify a departure that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/previous/developerguide/snap-to-nearby-road.html"> moves the position to the nearest road</a>. The snapped value is available in the result in <code>SnappedDeparturePositions</code>.</p>
     /// </note>
     /// <p>Valid Values: <code>\[-180 to 180,-90 to 90\]</code></p>
     pub fn get_departure_positions(&self) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<f64>>> {
@@ -230,9 +230,9 @@ impl CalculateRouteMatrixInputBuilder {
     /// To override the contents of this collection use [`set_destination_positions`](Self::set_destination_positions).
     ///
     /// <p>The list of destination positions for the route matrix. An array of points, each of which is itself a 2-value array defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format: <code>\[longitude, latitude\]</code>. For example, <code>\[-122.339, 47.615\]</code></p><important>
-    /// <p>Depending on the data provider selected in the route calculator resource there may be additional restrictions on the inputs you can choose. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route-matrix.html#matrix-routing-position-limits"> Position restrictions</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
+    /// <p>Depending on the data provider selected in the route calculator resource there may be additional restrictions on the inputs you can choose. See <a href="https://docs.aws.amazon.com/location/previous/developerguide/calculate-route-matrix.html#matrix-routing-position-limits"> Position restrictions</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
     /// </important> <note>
-    /// <p>For route calculators that use Esri as the data provider, if you specify a destination that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html"> moves the position to the nearest road</a>. The snapped value is available in the result in <code>SnappedDestinationPositions</code>.</p>
+    /// <p>For route calculators that use Esri as the data provider, if you specify a destination that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/previous/developerguide/snap-to-nearby-road.html"> moves the position to the nearest road</a>. The snapped value is available in the result in <code>SnappedDestinationPositions</code>.</p>
     /// </note>
     /// <p>Valid Values: <code>\[-180 to 180,-90 to 90\]</code></p>
     pub fn destination_positions(mut self, input: ::std::vec::Vec<f64>) -> Self {
@@ -242,9 +242,9 @@ impl CalculateRouteMatrixInputBuilder {
         self
     }
     /// <p>The list of destination positions for the route matrix. An array of points, each of which is itself a 2-value array defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format: <code>\[longitude, latitude\]</code>. For example, <code>\[-122.339, 47.615\]</code></p><important>
-    /// <p>Depending on the data provider selected in the route calculator resource there may be additional restrictions on the inputs you can choose. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route-matrix.html#matrix-routing-position-limits"> Position restrictions</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
+    /// <p>Depending on the data provider selected in the route calculator resource there may be additional restrictions on the inputs you can choose. See <a href="https://docs.aws.amazon.com/location/previous/developerguide/calculate-route-matrix.html#matrix-routing-position-limits"> Position restrictions</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
     /// </important> <note>
-    /// <p>For route calculators that use Esri as the data provider, if you specify a destination that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html"> moves the position to the nearest road</a>. The snapped value is available in the result in <code>SnappedDestinationPositions</code>.</p>
+    /// <p>For route calculators that use Esri as the data provider, if you specify a destination that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/previous/developerguide/snap-to-nearby-road.html"> moves the position to the nearest road</a>. The snapped value is available in the result in <code>SnappedDestinationPositions</code>.</p>
     /// </note>
     /// <p>Valid Values: <code>\[-180 to 180,-90 to 90\]</code></p>
     pub fn set_destination_positions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<f64>>>) -> Self {
@@ -252,9 +252,9 @@ impl CalculateRouteMatrixInputBuilder {
         self
     }
     /// <p>The list of destination positions for the route matrix. An array of points, each of which is itself a 2-value array defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format: <code>\[longitude, latitude\]</code>. For example, <code>\[-122.339, 47.615\]</code></p><important>
-    /// <p>Depending on the data provider selected in the route calculator resource there may be additional restrictions on the inputs you can choose. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route-matrix.html#matrix-routing-position-limits"> Position restrictions</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
+    /// <p>Depending on the data provider selected in the route calculator resource there may be additional restrictions on the inputs you can choose. See <a href="https://docs.aws.amazon.com/location/previous/developerguide/calculate-route-matrix.html#matrix-routing-position-limits"> Position restrictions</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
     /// </important> <note>
-    /// <p>For route calculators that use Esri as the data provider, if you specify a destination that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html"> moves the position to the nearest road</a>. The snapped value is available in the result in <code>SnappedDestinationPositions</code>.</p>
+    /// <p>For route calculators that use Esri as the data provider, if you specify a destination that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/previous/developerguide/snap-to-nearby-road.html"> moves the position to the nearest road</a>. The snapped value is available in the result in <code>SnappedDestinationPositions</code>.</p>
     /// </note>
     /// <p>Valid Values: <code>\[-180 to 180,-90 to 90\]</code></p>
     pub fn get_destination_positions(&self) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<f64>>> {
@@ -270,7 +270,7 @@ impl CalculateRouteMatrixInputBuilder {
     /// </ul><note>
     /// <p><code>Bicycle</code> or <code>Motorcycle</code> are only valid when using <code>Grab</code> as a data provider, and only within Southeast Asia.</p>
     /// <p><code>Truck</code> is not available for Grab.</p>
-    /// <p>For more information about using Grab as a data provider, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
+    /// <p>For more information about using Grab as a data provider, see <a href="https://docs.aws.amazon.com/location/previous/developerguide/grab.html">GrabMaps</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
     /// </note>
     /// <p>Default Value: <code>Car</code></p>
     pub fn travel_mode(mut self, input: crate::types::TravelMode) -> Self {
@@ -287,7 +287,7 @@ impl CalculateRouteMatrixInputBuilder {
     /// </ul><note>
     /// <p><code>Bicycle</code> or <code>Motorcycle</code> are only valid when using <code>Grab</code> as a data provider, and only within Southeast Asia.</p>
     /// <p><code>Truck</code> is not available for Grab.</p>
-    /// <p>For more information about using Grab as a data provider, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
+    /// <p>For more information about using Grab as a data provider, see <a href="https://docs.aws.amazon.com/location/previous/developerguide/grab.html">GrabMaps</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
     /// </note>
     /// <p>Default Value: <code>Car</code></p>
     pub fn set_travel_mode(mut self, input: ::std::option::Option<crate::types::TravelMode>) -> Self {
@@ -304,7 +304,7 @@ impl CalculateRouteMatrixInputBuilder {
     /// </ul><note>
     /// <p><code>Bicycle</code> or <code>Motorcycle</code> are only valid when using <code>Grab</code> as a data provider, and only within Southeast Asia.</p>
     /// <p><code>Truck</code> is not available for Grab.</p>
-    /// <p>For more information about using Grab as a data provider, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
+    /// <p>For more information about using Grab as a data provider, see <a href="https://docs.aws.amazon.com/location/previous/developerguide/grab.html">GrabMaps</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
     /// </note>
     /// <p>Default Value: <code>Car</code></p>
     pub fn get_travel_mode(&self) -> &::std::option::Option<crate::types::TravelMode> {
@@ -413,17 +413,17 @@ impl CalculateRouteMatrixInputBuilder {
     pub fn get_truck_mode_options(&self) -> &::std::option::Option<crate::types::CalculateRouteTruckModeOptions> {
         &self.truck_mode_options
     }
-    /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
+    /// <p>The optional <a href="https://docs.aws.amazon.com/location/previous/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
+    /// <p>The optional <a href="https://docs.aws.amazon.com/location/previous/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key = input;
         self
     }
-    /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
+    /// <p>The optional <a href="https://docs.aws.amazon.com/location/previous/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.key
     }
@@ -453,7 +453,7 @@ impl ::std::fmt::Debug for CalculateRouteMatrixInputBuilder {
         formatter.field("departure_positions", &"*** Sensitive Data Redacted ***");
         formatter.field("destination_positions", &"*** Sensitive Data Redacted ***");
         formatter.field("travel_mode", &self.travel_mode);
-        formatter.field("departure_time", &self.departure_time);
+        formatter.field("departure_time", &"*** Sensitive Data Redacted ***");
         formatter.field("depart_now", &self.depart_now);
         formatter.field("distance_unit", &self.distance_unit);
         formatter.field("car_mode_options", &self.car_mode_options);

@@ -136,22 +136,22 @@ impl PutGeofenceFluentBuilder {
     pub fn get_geofence_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_geofence_id()
     }
-    /// <p>Contains the details to specify the position of the geofence. Can be a polygon, a circle or a polygon encoded in Geobuf format. Including multiple selections will return a validation error.</p><note>
-    /// <p>The <a href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html"> geofence polygon</a> format supports a maximum of 1,000 vertices. The <a href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html">Geofence Geobuf</a> format supports a maximum of 100,000 vertices.</p>
+    /// <p>Contains the details to specify the position of the geofence. Can be a circle, a polygon, or a multipolygon. <code>Polygon</code> and <code>MultiPolygon</code> geometries can be defined using their respective parameters, or encoded in Geobuf format using the <code>Geobuf</code> parameter. Including multiple geometry types in the same request will return a validation error.</p><note>
+    /// <p>The geofence <code>Polygon</code> and <code>MultiPolygon</code> formats support a maximum of 1,000 total vertices. The <code>Geobuf</code> format supports a maximum of 100,000 vertices.</p>
     /// </note>
     pub fn geometry(mut self, input: crate::types::GeofenceGeometry) -> Self {
         self.inner = self.inner.geometry(input);
         self
     }
-    /// <p>Contains the details to specify the position of the geofence. Can be a polygon, a circle or a polygon encoded in Geobuf format. Including multiple selections will return a validation error.</p><note>
-    /// <p>The <a href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html"> geofence polygon</a> format supports a maximum of 1,000 vertices. The <a href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html">Geofence Geobuf</a> format supports a maximum of 100,000 vertices.</p>
+    /// <p>Contains the details to specify the position of the geofence. Can be a circle, a polygon, or a multipolygon. <code>Polygon</code> and <code>MultiPolygon</code> geometries can be defined using their respective parameters, or encoded in Geobuf format using the <code>Geobuf</code> parameter. Including multiple geometry types in the same request will return a validation error.</p><note>
+    /// <p>The geofence <code>Polygon</code> and <code>MultiPolygon</code> formats support a maximum of 1,000 total vertices. The <code>Geobuf</code> format supports a maximum of 100,000 vertices.</p>
     /// </note>
     pub fn set_geometry(mut self, input: ::std::option::Option<crate::types::GeofenceGeometry>) -> Self {
         self.inner = self.inner.set_geometry(input);
         self
     }
-    /// <p>Contains the details to specify the position of the geofence. Can be a polygon, a circle or a polygon encoded in Geobuf format. Including multiple selections will return a validation error.</p><note>
-    /// <p>The <a href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html"> geofence polygon</a> format supports a maximum of 1,000 vertices. The <a href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html">Geofence Geobuf</a> format supports a maximum of 100,000 vertices.</p>
+    /// <p>Contains the details to specify the position of the geofence. Can be a circle, a polygon, or a multipolygon. <code>Polygon</code> and <code>MultiPolygon</code> geometries can be defined using their respective parameters, or encoded in Geobuf format using the <code>Geobuf</code> parameter. Including multiple geometry types in the same request will return a validation error.</p><note>
+    /// <p>The geofence <code>Polygon</code> and <code>MultiPolygon</code> formats support a maximum of 1,000 total vertices. The <code>Geobuf</code> format supports a maximum of 100,000 vertices.</p>
     /// </note>
     pub fn get_geometry(&self) -> &::std::option::Option<crate::types::GeofenceGeometry> {
         self.inner.get_geometry()

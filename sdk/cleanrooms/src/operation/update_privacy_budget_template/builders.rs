@@ -22,7 +22,7 @@ impl crate::operation::update_privacy_budget_template::builders::UpdatePrivacyBu
 }
 /// Fluent builder constructing a request to `UpdatePrivacyBudgetTemplate`.
 ///
-/// <p>Updates the privacy budget template for the specified membership.</p>
+/// <p>Updates the privacy budget template for the specified collaboration.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdatePrivacyBudgetTemplateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

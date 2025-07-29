@@ -17,6 +17,8 @@ pub use crate::types::_security_policy_summary::SecurityPolicySummary;
 
 pub use crate::types::_security_config_detail::SecurityConfigDetail;
 
+pub use crate::types::_iam_federation_config_options::IamFederationConfigOptions;
+
 pub use crate::types::_iam_identity_center_config_options::IamIdentityCenterConfigOptions;
 
 pub use crate::types::_iam_identity_center_group_attribute::IamIdentityCenterGroupAttribute;
@@ -134,6 +136,8 @@ mod _delete_vpc_endpoint_detail;
 mod _effective_lifecycle_policy_detail;
 
 mod _effective_lifecycle_policy_error_detail;
+
+mod _iam_federation_config_options;
 
 mod _iam_identity_center_config_options;
 

@@ -2,10 +2,10 @@
 
 /// <p>Specifies the political view for the style.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct MapConfigurationUpdate {
     /// <p>Specifies the political view for the style. Set to an empty string to not use a political view, or, for styles that support specific political views, you can choose a view, such as <code>IND</code> for the Indian view.</p><note>
-    /// <p>Not all map resources or styles support political view styles. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/map-concepts.html#political-views">Political views</a> for more information.</p>
+    /// <p>Not all map resources or styles support political view styles. See <a href="https://docs.aws.amazon.com/location/previous/developerguide/map-concepts.html#political-views">Political views</a> for more information.</p>
     /// </note>
     pub political_view: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the custom layers for the style. Leave unset to not enable any custom layer, or, for styles that support custom layers, you can enable layer(s), such as POI layer for the VectorEsriNavigation style. Default is <code>unset</code>.</p><note>
@@ -15,7 +15,7 @@ pub struct MapConfigurationUpdate {
 }
 impl MapConfigurationUpdate {
     /// <p>Specifies the political view for the style. Set to an empty string to not use a political view, or, for styles that support specific political views, you can choose a view, such as <code>IND</code> for the Indian view.</p><note>
-    /// <p>Not all map resources or styles support political view styles. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/map-concepts.html#political-views">Political views</a> for more information.</p>
+    /// <p>Not all map resources or styles support political view styles. See <a href="https://docs.aws.amazon.com/location/previous/developerguide/map-concepts.html#political-views">Political views</a> for more information.</p>
     /// </note>
     pub fn political_view(&self) -> ::std::option::Option<&str> {
         self.political_view.as_deref()
@@ -29,6 +29,14 @@ impl MapConfigurationUpdate {
         self.custom_layers.as_deref().unwrap_or_default()
     }
 }
+impl ::std::fmt::Debug for MapConfigurationUpdate {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("MapConfigurationUpdate");
+        formatter.field("political_view", &"*** Sensitive Data Redacted ***");
+        formatter.field("custom_layers", &self.custom_layers);
+        formatter.finish()
+    }
+}
 impl MapConfigurationUpdate {
     /// Creates a new builder-style object to manufacture [`MapConfigurationUpdate`](crate::types::MapConfigurationUpdate).
     pub fn builder() -> crate::types::builders::MapConfigurationUpdateBuilder {
@@ -37,7 +45,7 @@ impl MapConfigurationUpdate {
 }
 
 /// A builder for [`MapConfigurationUpdate`](crate::types::MapConfigurationUpdate).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct MapConfigurationUpdateBuilder {
     pub(crate) political_view: ::std::option::Option<::std::string::String>,
@@ -45,21 +53,21 @@ pub struct MapConfigurationUpdateBuilder {
 }
 impl MapConfigurationUpdateBuilder {
     /// <p>Specifies the political view for the style. Set to an empty string to not use a political view, or, for styles that support specific political views, you can choose a view, such as <code>IND</code> for the Indian view.</p><note>
-    /// <p>Not all map resources or styles support political view styles. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/map-concepts.html#political-views">Political views</a> for more information.</p>
+    /// <p>Not all map resources or styles support political view styles. See <a href="https://docs.aws.amazon.com/location/previous/developerguide/map-concepts.html#political-views">Political views</a> for more information.</p>
     /// </note>
     pub fn political_view(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.political_view = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the political view for the style. Set to an empty string to not use a political view, or, for styles that support specific political views, you can choose a view, such as <code>IND</code> for the Indian view.</p><note>
-    /// <p>Not all map resources or styles support political view styles. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/map-concepts.html#political-views">Political views</a> for more information.</p>
+    /// <p>Not all map resources or styles support political view styles. See <a href="https://docs.aws.amazon.com/location/previous/developerguide/map-concepts.html#political-views">Political views</a> for more information.</p>
     /// </note>
     pub fn set_political_view(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.political_view = input;
         self
     }
     /// <p>Specifies the political view for the style. Set to an empty string to not use a political view, or, for styles that support specific political views, you can choose a view, such as <code>IND</code> for the Indian view.</p><note>
-    /// <p>Not all map resources or styles support political view styles. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/map-concepts.html#political-views">Political views</a> for more information.</p>
+    /// <p>Not all map resources or styles support political view styles. See <a href="https://docs.aws.amazon.com/location/previous/developerguide/map-concepts.html#political-views">Political views</a> for more information.</p>
     /// </note>
     pub fn get_political_view(&self) -> &::std::option::Option<::std::string::String> {
         &self.political_view
@@ -96,5 +104,13 @@ impl MapConfigurationUpdateBuilder {
             political_view: self.political_view,
             custom_layers: self.custom_layers,
         }
+    }
+}
+impl ::std::fmt::Debug for MapConfigurationUpdateBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("MapConfigurationUpdateBuilder");
+        formatter.field("political_view", &"*** Sensitive Data Redacted ***");
+        formatter.field("custom_layers", &self.custom_layers);
+        formatter.finish()
     }
 }

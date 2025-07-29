@@ -35,6 +35,18 @@ pub(crate) fn create_scheduling_policy_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_service_environment_output_output_correct_errors(
+    mut builder: crate::operation::create_service_environment::builders::CreateServiceEnvironmentOutputBuilder,
+) -> crate::operation::create_service_environment::builders::CreateServiceEnvironmentOutputBuilder {
+    if builder.service_environment_name.is_none() {
+        builder.service_environment_name = Some(Default::default())
+    }
+    if builder.service_environment_arn.is_none() {
+        builder.service_environment_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn describe_consumable_resource_output_output_correct_errors(
     mut builder: crate::operation::describe_consumable_resource::builders::DescribeConsumableResourceOutputBuilder,
 ) -> crate::operation::describe_consumable_resource::builders::DescribeConsumableResourceOutputBuilder {
@@ -43,6 +55,30 @@ pub(crate) fn describe_consumable_resource_output_output_correct_errors(
     }
     if builder.consumable_resource_arn.is_none() {
         builder.consumable_resource_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn describe_service_job_output_output_correct_errors(
+    mut builder: crate::operation::describe_service_job::builders::DescribeServiceJobOutputBuilder,
+) -> crate::operation::describe_service_job::builders::DescribeServiceJobOutputBuilder {
+    if builder.job_id.is_none() {
+        builder.job_id = Some(Default::default())
+    }
+    if builder.job_name.is_none() {
+        builder.job_name = Some(Default::default())
+    }
+    if builder.job_queue.is_none() {
+        builder.job_queue = Some(Default::default())
+    }
+    if builder.service_job_type.is_none() {
+        builder.service_job_type = "no value was set".parse::<crate::types::ServiceJobType>().ok()
+    }
+    if builder.started_at.is_none() {
+        builder.started_at = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::ServiceJobStatus>().ok()
     }
     builder
 }
@@ -74,6 +110,15 @@ pub(crate) fn list_jobs_by_consumable_resource_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_service_jobs_output_output_correct_errors(
+    mut builder: crate::operation::list_service_jobs::builders::ListServiceJobsOutputBuilder,
+) -> crate::operation::list_service_jobs::builders::ListServiceJobsOutputBuilder {
+    if builder.job_summary_list.is_none() {
+        builder.job_summary_list = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn register_job_definition_output_output_correct_errors(
     mut builder: crate::operation::register_job_definition::builders::RegisterJobDefinitionOutputBuilder,
 ) -> crate::operation::register_job_definition::builders::RegisterJobDefinitionOutputBuilder {
@@ -101,6 +146,18 @@ pub(crate) fn submit_job_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn submit_service_job_output_output_correct_errors(
+    mut builder: crate::operation::submit_service_job::builders::SubmitServiceJobOutputBuilder,
+) -> crate::operation::submit_service_job::builders::SubmitServiceJobOutputBuilder {
+    if builder.job_name.is_none() {
+        builder.job_name = Some(Default::default())
+    }
+    if builder.job_id.is_none() {
+        builder.job_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn update_consumable_resource_output_output_correct_errors(
     mut builder: crate::operation::update_consumable_resource::builders::UpdateConsumableResourceOutputBuilder,
 ) -> crate::operation::update_consumable_resource::builders::UpdateConsumableResourceOutputBuilder {
@@ -109,6 +166,27 @@ pub(crate) fn update_consumable_resource_output_output_correct_errors(
     }
     if builder.consumable_resource_arn.is_none() {
         builder.consumable_resource_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn update_service_environment_output_output_correct_errors(
+    mut builder: crate::operation::update_service_environment::builders::UpdateServiceEnvironmentOutputBuilder,
+) -> crate::operation::update_service_environment::builders::UpdateServiceEnvironmentOutputBuilder {
+    if builder.service_environment_name.is_none() {
+        builder.service_environment_name = Some(Default::default())
+    }
+    if builder.service_environment_arn.is_none() {
+        builder.service_environment_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn service_job_retry_strategy_correct_errors(
+    mut builder: crate::types::builders::ServiceJobRetryStrategyBuilder,
+) -> crate::types::builders::ServiceJobRetryStrategyBuilder {
+    if builder.attempts.is_none() {
+        builder.attempts = Some(Default::default())
     }
     builder
 }
@@ -259,6 +337,51 @@ pub(crate) fn scheduling_policy_listing_detail_correct_errors(
     builder
 }
 
+pub(crate) fn service_environment_detail_correct_errors(
+    mut builder: crate::types::builders::ServiceEnvironmentDetailBuilder,
+) -> crate::types::builders::ServiceEnvironmentDetailBuilder {
+    if builder.service_environment_name.is_none() {
+        builder.service_environment_name = Some(Default::default())
+    }
+    if builder.service_environment_arn.is_none() {
+        builder.service_environment_arn = Some(Default::default())
+    }
+    if builder.service_environment_type.is_none() {
+        builder.service_environment_type = "no value was set".parse::<crate::types::ServiceEnvironmentType>().ok()
+    }
+    if builder.capacity_limits.is_none() {
+        builder.capacity_limits = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn service_job_summary_correct_errors(
+    mut builder: crate::types::builders::ServiceJobSummaryBuilder,
+) -> crate::types::builders::ServiceJobSummaryBuilder {
+    if builder.job_id.is_none() {
+        builder.job_id = Some(Default::default())
+    }
+    if builder.job_name.is_none() {
+        builder.job_name = Some(Default::default())
+    }
+    if builder.service_job_type.is_none() {
+        builder.service_job_type = "no value was set".parse::<crate::types::ServiceJobType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn service_resource_id_correct_errors(
+    mut builder: crate::types::builders::ServiceResourceIdBuilder,
+) -> crate::types::builders::ServiceResourceIdBuilder {
+    if builder.name.is_none() {
+        builder.name = "no value was set".parse::<crate::types::ServiceResourceIdName>().ok()
+    }
+    if builder.value.is_none() {
+        builder.value = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn compute_resource_correct_errors(
     mut builder: crate::types::builders::ComputeResourceBuilder,
 ) -> crate::types::builders::ComputeResourceBuilder {
@@ -363,6 +486,18 @@ pub(crate) fn repository_credentials_correct_errors(
 ) -> crate::types::builders::RepositoryCredentialsBuilder {
     if builder.credentials_parameter.is_none() {
         builder.credentials_parameter = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn service_environment_order_correct_errors(
+    mut builder: crate::types::builders::ServiceEnvironmentOrderBuilder,
+) -> crate::types::builders::ServiceEnvironmentOrderBuilder {
+    if builder.order.is_none() {
+        builder.order = Some(Default::default())
+    }
+    if builder.service_environment.is_none() {
+        builder.service_environment = Some(Default::default())
     }
     builder
 }
