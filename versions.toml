@@ -2675,6 +2675,10 @@ source_hash = '7bc468878559887b5deed1311d466c4943b267b326ac6abbba8957e049ee01c8'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = 'f23e1fca2fa497b42210743e88c33bbd47c0ed9bafe76cb3dd1d4b7edf7f4b6e'
+
+[release]
+tag = 'release-2025-07-30'
+
 [release.crates]
 aws-sdk-cloudfront = '1.87.0'
 aws-sdk-directory = '1.81.0'
