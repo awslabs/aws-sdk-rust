@@ -43,6 +43,8 @@ pub(crate) mod shape_create_conditional_forwarder;
 
 pub(crate) mod shape_create_directory;
 
+pub(crate) mod shape_create_hybrid_ad;
+
 pub(crate) mod shape_create_log_subscription;
 
 pub(crate) mod shape_create_microsoft_ad;
@@ -50,6 +52,8 @@ pub(crate) mod shape_create_microsoft_ad;
 pub(crate) mod shape_create_snapshot;
 
 pub(crate) mod shape_create_trust;
+
+pub(crate) mod shape_delete_ad_assessment;
 
 pub(crate) mod shape_delete_conditional_forwarder;
 
@@ -65,6 +69,8 @@ pub(crate) mod shape_deregister_certificate;
 
 pub(crate) mod shape_deregister_event_topic;
 
+pub(crate) mod shape_describe_ad_assessment;
+
 pub(crate) mod shape_describe_certificate;
 
 pub(crate) mod shape_describe_client_authentication_settings;
@@ -78,6 +84,8 @@ pub(crate) mod shape_describe_directory_data_access;
 pub(crate) mod shape_describe_domain_controllers;
 
 pub(crate) mod shape_describe_event_topics;
+
+pub(crate) mod shape_describe_hybrid_ad_update;
 
 pub(crate) mod shape_describe_ldaps_settings;
 
@@ -117,6 +125,8 @@ pub(crate) mod shape_get_directory_limits;
 
 pub(crate) mod shape_get_snapshot_limits;
 
+pub(crate) mod shape_list_ad_assessments;
+
 pub(crate) mod shape_list_certificates;
 
 pub(crate) mod shape_list_ip_routes;
@@ -145,6 +155,8 @@ pub(crate) mod shape_restore_from_snapshot;
 
 pub(crate) mod shape_share_directory;
 
+pub(crate) mod shape_start_ad_assessment;
+
 pub(crate) mod shape_start_schema_extension;
 
 pub(crate) mod shape_unshare_directory;
@@ -152,6 +164,8 @@ pub(crate) mod shape_unshare_directory;
 pub(crate) mod shape_update_conditional_forwarder;
 
 pub(crate) mod shape_update_directory_setup;
+
+pub(crate) mod shape_update_hybrid_ad;
 
 pub(crate) mod shape_update_number_of_domain_controllers;
 
@@ -174,6 +188,8 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
 pub(crate) mod shape_accept_shared_directory_input;
 
 pub(crate) mod shape_access_denied_exception;
+
+pub(crate) mod shape_ad_assessment_limit_exceeded_exception;
 
 pub(crate) mod shape_add_ip_routes_input;
 
@@ -205,6 +221,8 @@ pub(crate) mod shape_create_conditional_forwarder_input;
 
 pub(crate) mod shape_create_directory_input;
 
+pub(crate) mod shape_create_hybrid_ad_input;
+
 pub(crate) mod shape_create_log_subscription_input;
 
 pub(crate) mod shape_create_microsoft_ad_input;
@@ -212,6 +230,8 @@ pub(crate) mod shape_create_microsoft_ad_input;
 pub(crate) mod shape_create_snapshot_input;
 
 pub(crate) mod shape_create_trust_input;
+
+pub(crate) mod shape_delete_ad_assessment_input;
 
 pub(crate) mod shape_delete_conditional_forwarder_input;
 
@@ -227,6 +247,8 @@ pub(crate) mod shape_deregister_certificate_input;
 
 pub(crate) mod shape_deregister_event_topic_input;
 
+pub(crate) mod shape_describe_ad_assessment_input;
+
 pub(crate) mod shape_describe_certificate_input;
 
 pub(crate) mod shape_describe_client_authentication_settings_input;
@@ -240,6 +262,8 @@ pub(crate) mod shape_describe_directory_data_access_input;
 pub(crate) mod shape_describe_domain_controllers_input;
 
 pub(crate) mod shape_describe_event_topics_input;
+
+pub(crate) mod shape_describe_hybrid_ad_update_input;
 
 pub(crate) mod shape_describe_ldaps_settings_input;
 
@@ -317,6 +341,8 @@ pub(crate) mod shape_invalid_target_exception;
 
 pub(crate) mod shape_ip_route_limit_exceeded_exception;
 
+pub(crate) mod shape_list_ad_assessments_input;
+
 pub(crate) mod shape_list_certificates_input;
 
 pub(crate) mod shape_list_ip_routes_input;
@@ -357,6 +383,8 @@ pub(crate) mod shape_share_limit_exceeded_exception;
 
 pub(crate) mod shape_snapshot_limit_exceeded_exception;
 
+pub(crate) mod shape_start_ad_assessment_input;
+
 pub(crate) mod shape_start_schema_extension_input;
 
 pub(crate) mod shape_tag_limit_exceeded_exception;
@@ -371,6 +399,8 @@ pub(crate) mod shape_update_conditional_forwarder_input;
 
 pub(crate) mod shape_update_directory_setup_input;
 
+pub(crate) mod shape_update_hybrid_ad_input;
+
 pub(crate) mod shape_update_number_of_domain_controllers_input;
 
 pub(crate) mod shape_update_radius_input;
@@ -382,6 +412,14 @@ pub(crate) mod shape_update_trust_input;
 pub(crate) mod shape_user_does_not_exist_exception;
 
 pub(crate) mod shape_verify_trust_input;
+
+pub(crate) mod shape_assessment;
+
+pub(crate) mod shape_assessment_configuration;
+
+pub(crate) mod shape_assessment_reports;
+
+pub(crate) mod shape_assessments;
 
 pub(crate) mod shape_attribute;
 
@@ -408,6 +446,12 @@ pub(crate) mod shape_directory_vpc_settings;
 pub(crate) mod shape_domain_controllers;
 
 pub(crate) mod shape_event_topics;
+
+pub(crate) mod shape_hybrid_administrator_account_update;
+
+pub(crate) mod shape_hybrid_customer_instances_settings;
+
+pub(crate) mod shape_hybrid_update_activities;
 
 pub(crate) mod shape_ip_route;
 
@@ -449,6 +493,12 @@ pub(crate) mod shape_unshare_target;
 
 pub(crate) mod shape_update_activities;
 
+pub(crate) mod shape_assessment_instance_ids;
+
+pub(crate) mod shape_assessment_report;
+
+pub(crate) mod shape_assessment_summary;
+
 pub(crate) mod shape_attributes;
 
 pub(crate) mod shape_certificate_info;
@@ -457,11 +507,15 @@ pub(crate) mod shape_client_authentication_setting_info;
 
 pub(crate) mod shape_conditional_forwarder;
 
+pub(crate) mod shape_customer_dns_ips;
+
 pub(crate) mod shape_directory_description;
 
 pub(crate) mod shape_domain_controller;
 
 pub(crate) mod shape_event_topic;
+
+pub(crate) mod shape_hybrid_update_info_entries;
 
 pub(crate) mod shape_ip_route_info;
 
@@ -473,13 +527,19 @@ pub(crate) mod shape_region_description;
 
 pub(crate) mod shape_schema_extension_info;
 
+pub(crate) mod shape_security_group_ids;
+
 pub(crate) mod shape_setting_entry;
 
 pub(crate) mod shape_snapshot;
 
+pub(crate) mod shape_subnet_ids;
+
 pub(crate) mod shape_trust;
 
 pub(crate) mod shape_update_info_entry;
+
+pub(crate) mod shape_assessment_validations;
 
 pub(crate) mod shape_directory_configuration_setting_request_detailed_status;
 
@@ -489,6 +549,10 @@ pub(crate) mod shape_directory_vpc_settings_description;
 
 pub(crate) mod shape_dns_ip_addrs;
 
+pub(crate) mod shape_hybrid_settings_description;
+
+pub(crate) mod shape_hybrid_update_info_entry;
+
 pub(crate) mod shape_owner_directory_description;
 
 pub(crate) mod shape_regions_info;
@@ -497,10 +561,12 @@ pub(crate) mod shape_update_value;
 
 pub(crate) mod shape_additional_regions;
 
+pub(crate) mod shape_assessment_validation;
+
 pub(crate) mod shape_availability_zones;
+
+pub(crate) mod shape_hybrid_update_value;
 
 pub(crate) mod shape_ip_addrs;
 
 pub(crate) mod shape_servers;
-
-pub(crate) mod shape_subnet_ids;

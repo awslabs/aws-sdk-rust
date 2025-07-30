@@ -19,6 +19,8 @@ pub use crate::types::error::_directory_does_not_exist_exception::DirectoryDoesN
 
 pub use crate::types::error::_domain_controller_limit_exceeded_exception::DomainControllerLimitExceededException;
 
+pub use crate::types::error::_ad_assessment_limit_exceeded_exception::AdAssessmentLimitExceededException;
+
 pub use crate::types::error::_snapshot_limit_exceeded_exception::SnapshotLimitExceededException;
 
 pub use crate::types::error::_directory_in_desired_state_exception::DirectoryInDesiredStateException;
@@ -74,6 +76,8 @@ pub use crate::types::error::_directory_already_in_region_exception::DirectoryAl
 pub use crate::types::error::_ip_route_limit_exceeded_exception::IpRouteLimitExceededException;
 
 mod _access_denied_exception;
+
+mod _ad_assessment_limit_exceeded_exception;
 
 mod _authentication_failed_exception;
 

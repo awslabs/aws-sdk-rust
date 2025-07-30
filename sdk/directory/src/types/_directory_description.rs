@@ -58,6 +58,8 @@ pub struct DirectoryDescription {
     pub regions_info: ::std::option::Option<crate::types::RegionsInfo>,
     /// <p>The operating system (OS) version of the directory.</p>
     pub os_version: ::std::option::Option<crate::types::OsVersion>,
+    /// <p>Contains information about the hybrid directory configuration for the directory, including Amazon Web Services System Manager managed node identifiers and DNS IPs.</p>
+    pub hybrid_settings: ::std::option::Option<crate::types::HybridSettingsDescription>,
 }
 impl DirectoryDescription {
     /// <p>The directory identifier.</p>
@@ -168,6 +170,10 @@ impl DirectoryDescription {
     pub fn os_version(&self) -> ::std::option::Option<&crate::types::OsVersion> {
         self.os_version.as_ref()
     }
+    /// <p>Contains information about the hybrid directory configuration for the directory, including Amazon Web Services System Manager managed node identifiers and DNS IPs.</p>
+    pub fn hybrid_settings(&self) -> ::std::option::Option<&crate::types::HybridSettingsDescription> {
+        self.hybrid_settings.as_ref()
+    }
 }
 impl ::std::fmt::Debug for DirectoryDescription {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -198,6 +204,7 @@ impl ::std::fmt::Debug for DirectoryDescription {
         formatter.field("owner_directory_description", &self.owner_directory_description);
         formatter.field("regions_info", &self.regions_info);
         formatter.field("os_version", &self.os_version);
+        formatter.field("hybrid_settings", &self.hybrid_settings);
         formatter.finish()
     }
 }
@@ -238,6 +245,7 @@ pub struct DirectoryDescriptionBuilder {
     pub(crate) owner_directory_description: ::std::option::Option<crate::types::OwnerDirectoryDescription>,
     pub(crate) regions_info: ::std::option::Option<crate::types::RegionsInfo>,
     pub(crate) os_version: ::std::option::Option<crate::types::OsVersion>,
+    pub(crate) hybrid_settings: ::std::option::Option<crate::types::HybridSettingsDescription>,
 }
 impl DirectoryDescriptionBuilder {
     /// <p>The directory identifier.</p>
@@ -616,6 +624,20 @@ impl DirectoryDescriptionBuilder {
     pub fn get_os_version(&self) -> &::std::option::Option<crate::types::OsVersion> {
         &self.os_version
     }
+    /// <p>Contains information about the hybrid directory configuration for the directory, including Amazon Web Services System Manager managed node identifiers and DNS IPs.</p>
+    pub fn hybrid_settings(mut self, input: crate::types::HybridSettingsDescription) -> Self {
+        self.hybrid_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains information about the hybrid directory configuration for the directory, including Amazon Web Services System Manager managed node identifiers and DNS IPs.</p>
+    pub fn set_hybrid_settings(mut self, input: ::std::option::Option<crate::types::HybridSettingsDescription>) -> Self {
+        self.hybrid_settings = input;
+        self
+    }
+    /// <p>Contains information about the hybrid directory configuration for the directory, including Amazon Web Services System Manager managed node identifiers and DNS IPs.</p>
+    pub fn get_hybrid_settings(&self) -> &::std::option::Option<crate::types::HybridSettingsDescription> {
+        &self.hybrid_settings
+    }
     /// Consumes the builder and constructs a [`DirectoryDescription`](crate::types::DirectoryDescription).
     pub fn build(self) -> crate::types::DirectoryDescription {
         crate::types::DirectoryDescription {
@@ -645,6 +667,7 @@ impl DirectoryDescriptionBuilder {
             owner_directory_description: self.owner_directory_description,
             regions_info: self.regions_info,
             os_version: self.os_version,
+            hybrid_settings: self.hybrid_settings,
         }
     }
 }
@@ -677,6 +700,7 @@ impl ::std::fmt::Debug for DirectoryDescriptionBuilder {
         formatter.field("owner_directory_description", &self.owner_directory_description);
         formatter.field("regions_info", &self.regions_info);
         formatter.field("os_version", &self.os_version);
+        formatter.field("hybrid_settings", &self.hybrid_settings);
         formatter.finish()
     }
 }

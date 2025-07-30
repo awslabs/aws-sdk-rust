@@ -42,6 +42,18 @@ pub struct LoRaWanGetServiceProfileInfo {
     pub target_per: i32,
     /// <p>The MinGwDiversity value.</p>
     pub min_gw_diversity: ::std::option::Option<i32>,
+    /// <p>The Transmit Power Index minimum value.</p>
+    /// <p>Default: <code>0</code></p>
+    pub tx_power_index_min: ::std::option::Option<i32>,
+    /// <p>The Transmit Power Index maximum value.</p>
+    /// <p>Default: <code>15</code></p>
+    pub tx_power_index_max: ::std::option::Option<i32>,
+    /// <p>The minimum number of transmissions.</p>
+    /// <p>Default: <code>0</code></p>
+    pub nb_trans_min: ::std::option::Option<i32>,
+    /// <p>The maximum number of transmissions.</p>
+    /// <p>Default: <code>3</code></p>
+    pub nb_trans_max: ::std::option::Option<i32>,
 }
 impl LoRaWanGetServiceProfileInfo {
     /// <p>The ULRate value.</p>
@@ -120,6 +132,26 @@ impl LoRaWanGetServiceProfileInfo {
     pub fn min_gw_diversity(&self) -> ::std::option::Option<i32> {
         self.min_gw_diversity
     }
+    /// <p>The Transmit Power Index minimum value.</p>
+    /// <p>Default: <code>0</code></p>
+    pub fn tx_power_index_min(&self) -> ::std::option::Option<i32> {
+        self.tx_power_index_min
+    }
+    /// <p>The Transmit Power Index maximum value.</p>
+    /// <p>Default: <code>15</code></p>
+    pub fn tx_power_index_max(&self) -> ::std::option::Option<i32> {
+        self.tx_power_index_max
+    }
+    /// <p>The minimum number of transmissions.</p>
+    /// <p>Default: <code>0</code></p>
+    pub fn nb_trans_min(&self) -> ::std::option::Option<i32> {
+        self.nb_trans_min
+    }
+    /// <p>The maximum number of transmissions.</p>
+    /// <p>Default: <code>3</code></p>
+    pub fn nb_trans_max(&self) -> ::std::option::Option<i32> {
+        self.nb_trans_max
+    }
 }
 impl LoRaWanGetServiceProfileInfo {
     /// Creates a new builder-style object to manufacture [`LoRaWanGetServiceProfileInfo`](crate::types::LoRaWanGetServiceProfileInfo).
@@ -151,6 +183,10 @@ pub struct LoRaWanGetServiceProfileInfoBuilder {
     pub(crate) nwk_geo_loc: ::std::option::Option<bool>,
     pub(crate) target_per: ::std::option::Option<i32>,
     pub(crate) min_gw_diversity: ::std::option::Option<i32>,
+    pub(crate) tx_power_index_min: ::std::option::Option<i32>,
+    pub(crate) tx_power_index_max: ::std::option::Option<i32>,
+    pub(crate) nb_trans_min: ::std::option::Option<i32>,
+    pub(crate) nb_trans_max: ::std::option::Option<i32>,
 }
 impl LoRaWanGetServiceProfileInfoBuilder {
     /// <p>The ULRate value.</p>
@@ -419,6 +455,74 @@ impl LoRaWanGetServiceProfileInfoBuilder {
     pub fn get_min_gw_diversity(&self) -> &::std::option::Option<i32> {
         &self.min_gw_diversity
     }
+    /// <p>The Transmit Power Index minimum value.</p>
+    /// <p>Default: <code>0</code></p>
+    pub fn tx_power_index_min(mut self, input: i32) -> Self {
+        self.tx_power_index_min = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Transmit Power Index minimum value.</p>
+    /// <p>Default: <code>0</code></p>
+    pub fn set_tx_power_index_min(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.tx_power_index_min = input;
+        self
+    }
+    /// <p>The Transmit Power Index minimum value.</p>
+    /// <p>Default: <code>0</code></p>
+    pub fn get_tx_power_index_min(&self) -> &::std::option::Option<i32> {
+        &self.tx_power_index_min
+    }
+    /// <p>The Transmit Power Index maximum value.</p>
+    /// <p>Default: <code>15</code></p>
+    pub fn tx_power_index_max(mut self, input: i32) -> Self {
+        self.tx_power_index_max = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Transmit Power Index maximum value.</p>
+    /// <p>Default: <code>15</code></p>
+    pub fn set_tx_power_index_max(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.tx_power_index_max = input;
+        self
+    }
+    /// <p>The Transmit Power Index maximum value.</p>
+    /// <p>Default: <code>15</code></p>
+    pub fn get_tx_power_index_max(&self) -> &::std::option::Option<i32> {
+        &self.tx_power_index_max
+    }
+    /// <p>The minimum number of transmissions.</p>
+    /// <p>Default: <code>0</code></p>
+    pub fn nb_trans_min(mut self, input: i32) -> Self {
+        self.nb_trans_min = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The minimum number of transmissions.</p>
+    /// <p>Default: <code>0</code></p>
+    pub fn set_nb_trans_min(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.nb_trans_min = input;
+        self
+    }
+    /// <p>The minimum number of transmissions.</p>
+    /// <p>Default: <code>0</code></p>
+    pub fn get_nb_trans_min(&self) -> &::std::option::Option<i32> {
+        &self.nb_trans_min
+    }
+    /// <p>The maximum number of transmissions.</p>
+    /// <p>Default: <code>3</code></p>
+    pub fn nb_trans_max(mut self, input: i32) -> Self {
+        self.nb_trans_max = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The maximum number of transmissions.</p>
+    /// <p>Default: <code>3</code></p>
+    pub fn set_nb_trans_max(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.nb_trans_max = input;
+        self
+    }
+    /// <p>The maximum number of transmissions.</p>
+    /// <p>Default: <code>3</code></p>
+    pub fn get_nb_trans_max(&self) -> &::std::option::Option<i32> {
+        &self.nb_trans_max
+    }
     /// Consumes the builder and constructs a [`LoRaWanGetServiceProfileInfo`](crate::types::LoRaWanGetServiceProfileInfo).
     pub fn build(self) -> crate::types::LoRaWanGetServiceProfileInfo {
         crate::types::LoRaWanGetServiceProfileInfo {
@@ -441,6 +545,10 @@ impl LoRaWanGetServiceProfileInfoBuilder {
             nwk_geo_loc: self.nwk_geo_loc.unwrap_or_default(),
             target_per: self.target_per.unwrap_or_default(),
             min_gw_diversity: self.min_gw_diversity,
+            tx_power_index_min: self.tx_power_index_min,
+            tx_power_index_max: self.tx_power_index_max,
+            nb_trans_min: self.nb_trans_min,
+            nb_trans_max: self.nb_trans_max,
         }
     }
 }

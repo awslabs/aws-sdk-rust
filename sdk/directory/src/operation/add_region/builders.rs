@@ -130,17 +130,17 @@ impl AddRegionFluentBuilder {
     pub fn get_region_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_region_name()
     }
-    /// <p>Contains VPC information for the <code>CreateDirectory</code> or <code>CreateMicrosoftAD</code> operation.</p>
+    /// <p>Contains VPC information for the <code>CreateDirectory</code>, <code>CreateMicrosoftAD</code>, or <code>CreateHybridAD</code> operation.</p>
     pub fn vpc_settings(mut self, input: crate::types::DirectoryVpcSettings) -> Self {
         self.inner = self.inner.vpc_settings(input);
         self
     }
-    /// <p>Contains VPC information for the <code>CreateDirectory</code> or <code>CreateMicrosoftAD</code> operation.</p>
+    /// <p>Contains VPC information for the <code>CreateDirectory</code>, <code>CreateMicrosoftAD</code>, or <code>CreateHybridAD</code> operation.</p>
     pub fn set_vpc_settings(mut self, input: ::std::option::Option<crate::types::DirectoryVpcSettings>) -> Self {
         self.inner = self.inner.set_vpc_settings(input);
         self
     }
-    /// <p>Contains VPC information for the <code>CreateDirectory</code> or <code>CreateMicrosoftAD</code> operation.</p>
+    /// <p>Contains VPC information for the <code>CreateDirectory</code>, <code>CreateMicrosoftAD</code>, or <code>CreateHybridAD</code> operation.</p>
     pub fn get_vpc_settings(&self) -> &::std::option::Option<crate::types::DirectoryVpcSettings> {
         self.inner.get_vpc_settings()
     }

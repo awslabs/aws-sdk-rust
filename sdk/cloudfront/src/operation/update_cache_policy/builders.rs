@@ -31,7 +31,9 @@ impl crate::operation::update_cache_policy::builders::UpdateCachePolicyInputBuil
 /// <p>Locally modify the fields in the cache policy configuration that you want to update.</p></li>
 /// <li>
 /// <p>Call <code>UpdateCachePolicy</code> by providing the entire cache policy configuration, including the fields that you modified and those that you didn't.</p></li>
-/// </ol>
+/// </ol><important>
+/// <p>If your minimum TTL is greater than 0, CloudFront will cache content for at least the duration specified in the cache policy's minimum TTL, even if the <code>Cache-Control: no-cache</code>, <code>no-store</code>, or <code>private</code> directives are present in the origin headers.</p>
+/// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateCachePolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

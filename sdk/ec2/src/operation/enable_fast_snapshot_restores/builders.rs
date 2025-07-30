@@ -23,7 +23,7 @@ impl crate::operation::enable_fast_snapshot_restores::builders::EnableFastSnapsh
 /// Fluent builder constructing a request to `EnableFastSnapshotRestores`.
 ///
 /// <p>Enables fast snapshot restores for the specified snapshots in the specified Availability Zones.</p>
-/// <p>You get the full benefit of fast snapshot restores after they enter the <code>enabled</code> state. To get the current state of fast snapshot restores, use <code>DescribeFastSnapshotRestores</code>. To disable fast snapshot restores, use <code>DisableFastSnapshotRestores</code>.</p>
+/// <p>You get the full benefit of fast snapshot restores after they enter the <code>enabled</code> state.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-fast-snapshot-restore.html">Amazon EBS fast snapshot restore</a> in the <i>Amazon EBS User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct EnableFastSnapshotRestoresFluentBuilder {

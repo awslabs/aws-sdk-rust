@@ -93,19 +93,24 @@ pub fn ser_modify_db_cluster_input_input_input(
         scope_32.string(var_33);
     }
     #[allow(unused_mut)]
-    let mut scope_34 = writer.prefix("ManageMasterUserPassword");
-    if let Some(var_35) = &input.manage_master_user_password {
-        scope_34.boolean(*var_35);
+    let mut scope_34 = writer.prefix("ServerlessV2ScalingConfiguration");
+    if let Some(var_35) = &input.serverless_v2_scaling_configuration {
+        crate::protocol_serde::shape_serverless_v2_scaling_configuration::ser_serverless_v2_scaling_configuration(scope_34, var_35)?;
     }
     #[allow(unused_mut)]
-    let mut scope_36 = writer.prefix("MasterUserSecretKmsKeyId");
-    if let Some(var_37) = &input.master_user_secret_kms_key_id {
-        scope_36.string(var_37);
+    let mut scope_36 = writer.prefix("ManageMasterUserPassword");
+    if let Some(var_37) = &input.manage_master_user_password {
+        scope_36.boolean(*var_37);
     }
     #[allow(unused_mut)]
-    let mut scope_38 = writer.prefix("RotateMasterUserPassword");
-    if let Some(var_39) = &input.rotate_master_user_password {
-        scope_38.boolean(*var_39);
+    let mut scope_38 = writer.prefix("MasterUserSecretKmsKeyId");
+    if let Some(var_39) = &input.master_user_secret_kms_key_id {
+        scope_38.string(var_39);
+    }
+    #[allow(unused_mut)]
+    let mut scope_40 = writer.prefix("RotateMasterUserPassword");
+    if let Some(var_41) = &input.rotate_master_user_password {
+        scope_40.boolean(*var_41);
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

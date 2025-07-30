@@ -24,5 +24,29 @@ pub fn ser_lo_ra_wan_service_profile(
     if input.ra_allowed {
         object.key("RaAllowed").boolean(input.ra_allowed);
     }
+    if let Some(var_3) = &input.tx_power_index_min {
+        object.key("TxPowerIndexMin").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_3).into()),
+        );
+    }
+    if let Some(var_4) = &input.tx_power_index_max {
+        object.key("TxPowerIndexMax").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_4).into()),
+        );
+    }
+    if let Some(var_5) = &input.nb_trans_min {
+        object.key("NbTransMin").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_5).into()),
+        );
+    }
+    if let Some(var_6) = &input.nb_trans_max {
+        object.key("NbTransMax").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_6).into()),
+        );
+    }
     Ok(())
 }

@@ -141,14 +141,19 @@ pub fn ser_create_db_cluster_input_input_input(
         scope_53.string(var_54);
     }
     #[allow(unused_mut)]
-    let mut scope_55 = writer.prefix("ManageMasterUserPassword");
-    if let Some(var_56) = &input.manage_master_user_password {
-        scope_55.boolean(*var_56);
+    let mut scope_55 = writer.prefix("ServerlessV2ScalingConfiguration");
+    if let Some(var_56) = &input.serverless_v2_scaling_configuration {
+        crate::protocol_serde::shape_serverless_v2_scaling_configuration::ser_serverless_v2_scaling_configuration(scope_55, var_56)?;
     }
     #[allow(unused_mut)]
-    let mut scope_57 = writer.prefix("MasterUserSecretKmsKeyId");
-    if let Some(var_58) = &input.master_user_secret_kms_key_id {
-        scope_57.string(var_58);
+    let mut scope_57 = writer.prefix("ManageMasterUserPassword");
+    if let Some(var_58) = &input.manage_master_user_password {
+        scope_57.boolean(*var_58);
+    }
+    #[allow(unused_mut)]
+    let mut scope_59 = writer.prefix("MasterUserSecretKmsKeyId");
+    if let Some(var_60) = &input.master_user_secret_kms_key_id {
+        scope_59.string(var_60);
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

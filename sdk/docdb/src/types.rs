@@ -7,11 +7,15 @@ pub use crate::types::_db_cluster::DbCluster;
 
 pub use crate::types::_cluster_master_user_secret::ClusterMasterUserSecret;
 
+pub use crate::types::_serverless_v2_scaling_configuration_info::ServerlessV2ScalingConfigurationInfo;
+
 pub use crate::types::_db_cluster_role::DbClusterRole;
 
 pub use crate::types::_vpc_security_group_membership::VpcSecurityGroupMembership;
 
 pub use crate::types::_db_cluster_member::DbClusterMember;
+
+pub use crate::types::_serverless_v2_scaling_configuration::ServerlessV2ScalingConfiguration;
 
 pub use crate::types::_tag::Tag;
 
@@ -62,6 +66,8 @@ pub use crate::types::_event_categories_map::EventCategoriesMap;
 pub use crate::types::_engine_defaults::EngineDefaults;
 
 pub use crate::types::_db_engine_version::DbEngineVersion;
+
+pub use crate::types::_serverless_v2_features_support::ServerlessV2FeaturesSupport;
 
 pub use crate::types::_upgrade_target::UpgradeTarget;
 
@@ -132,6 +138,12 @@ mod _pending_maintenance_action;
 mod _pending_modified_values;
 
 mod _resource_pending_maintenance_actions;
+
+mod _serverless_v2_features_support;
+
+mod _serverless_v2_scaling_configuration;
+
+mod _serverless_v2_scaling_configuration_info;
 
 mod _source_type;
 

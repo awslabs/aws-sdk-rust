@@ -82,6 +82,8 @@ pub struct ModifyDbClusterInput {
     /// <p>Valid values for storage type - <code>standard | iopt1</code></p>
     /// <p>Default value is <code>standard </code></p>
     pub storage_type: ::std::option::Option<::std::string::String>,
+    /// <p>Contains the scaling configuration of an Amazon DocumentDB Serverless cluster.</p>
+    pub serverless_v2_scaling_configuration: ::std::option::Option<crate::types::ServerlessV2ScalingConfiguration>,
     /// <p>Specifies whether to manage the master user password with Amazon Web Services Secrets Manager. If the cluster doesn't manage the master user password with Amazon Web Services Secrets Manager, you can turn on this management. In this case, you can't specify <code>MasterUserPassword</code>. If the cluster already manages the master user password with Amazon Web Services Secrets Manager, and you specify that the master user password is not managed with Amazon Web Services Secrets Manager, then you must specify <code>MasterUserPassword</code>. In this case, Amazon DocumentDB deletes the secret and uses the new password for the master user specified by <code>MasterUserPassword</code>.</p>
     pub manage_master_user_password: ::std::option::Option<bool>,
     /// <p>The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in Amazon Web Services Secrets Manager.</p>
@@ -211,6 +213,10 @@ impl ModifyDbClusterInput {
     pub fn storage_type(&self) -> ::std::option::Option<&str> {
         self.storage_type.as_deref()
     }
+    /// <p>Contains the scaling configuration of an Amazon DocumentDB Serverless cluster.</p>
+    pub fn serverless_v2_scaling_configuration(&self) -> ::std::option::Option<&crate::types::ServerlessV2ScalingConfiguration> {
+        self.serverless_v2_scaling_configuration.as_ref()
+    }
     /// <p>Specifies whether to manage the master user password with Amazon Web Services Secrets Manager. If the cluster doesn't manage the master user password with Amazon Web Services Secrets Manager, you can turn on this management. In this case, you can't specify <code>MasterUserPassword</code>. If the cluster already manages the master user password with Amazon Web Services Secrets Manager, and you specify that the master user password is not managed with Amazon Web Services Secrets Manager, then you must specify <code>MasterUserPassword</code>. In this case, Amazon DocumentDB deletes the secret and uses the new password for the master user specified by <code>MasterUserPassword</code>.</p>
     pub fn manage_master_user_password(&self) -> ::std::option::Option<bool> {
         self.manage_master_user_password
@@ -261,6 +267,7 @@ pub struct ModifyDbClusterInputBuilder {
     pub(crate) allow_major_version_upgrade: ::std::option::Option<bool>,
     pub(crate) deletion_protection: ::std::option::Option<bool>,
     pub(crate) storage_type: ::std::option::Option<::std::string::String>,
+    pub(crate) serverless_v2_scaling_configuration: ::std::option::Option<crate::types::ServerlessV2ScalingConfiguration>,
     pub(crate) manage_master_user_password: ::std::option::Option<bool>,
     pub(crate) master_user_secret_kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) rotate_master_user_password: ::std::option::Option<bool>,
@@ -627,6 +634,20 @@ impl ModifyDbClusterInputBuilder {
     pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.storage_type
     }
+    /// <p>Contains the scaling configuration of an Amazon DocumentDB Serverless cluster.</p>
+    pub fn serverless_v2_scaling_configuration(mut self, input: crate::types::ServerlessV2ScalingConfiguration) -> Self {
+        self.serverless_v2_scaling_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains the scaling configuration of an Amazon DocumentDB Serverless cluster.</p>
+    pub fn set_serverless_v2_scaling_configuration(mut self, input: ::std::option::Option<crate::types::ServerlessV2ScalingConfiguration>) -> Self {
+        self.serverless_v2_scaling_configuration = input;
+        self
+    }
+    /// <p>Contains the scaling configuration of an Amazon DocumentDB Serverless cluster.</p>
+    pub fn get_serverless_v2_scaling_configuration(&self) -> &::std::option::Option<crate::types::ServerlessV2ScalingConfiguration> {
+        &self.serverless_v2_scaling_configuration
+    }
     /// <p>Specifies whether to manage the master user password with Amazon Web Services Secrets Manager. If the cluster doesn't manage the master user password with Amazon Web Services Secrets Manager, you can turn on this management. In this case, you can't specify <code>MasterUserPassword</code>. If the cluster already manages the master user password with Amazon Web Services Secrets Manager, and you specify that the master user password is not managed with Amazon Web Services Secrets Manager, then you must specify <code>MasterUserPassword</code>. In this case, Amazon DocumentDB deletes the secret and uses the new password for the master user specified by <code>MasterUserPassword</code>.</p>
     pub fn manage_master_user_password(mut self, input: bool) -> Self {
         self.manage_master_user_password = ::std::option::Option::Some(input);
@@ -722,6 +743,7 @@ impl ModifyDbClusterInputBuilder {
             allow_major_version_upgrade: self.allow_major_version_upgrade,
             deletion_protection: self.deletion_protection,
             storage_type: self.storage_type,
+            serverless_v2_scaling_configuration: self.serverless_v2_scaling_configuration,
             manage_master_user_password: self.manage_master_user_password,
             master_user_secret_kms_key_id: self.master_user_secret_kms_key_id,
             rotate_master_user_password: self.rotate_master_user_password,

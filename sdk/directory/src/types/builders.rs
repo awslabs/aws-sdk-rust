@@ -3,9 +3,17 @@ pub use crate::types::_setting::SettingBuilder;
 
 pub use crate::types::_radius_settings::RadiusSettingsBuilder;
 
+pub use crate::types::_hybrid_customer_instances_settings::HybridCustomerInstancesSettingsBuilder;
+
+pub use crate::types::_hybrid_administrator_account_update::HybridAdministratorAccountUpdateBuilder;
+
 pub use crate::types::_os_update_settings::OsUpdateSettingsBuilder;
 
 pub use crate::types::_unshare_target::UnshareTargetBuilder;
+
+pub use crate::types::_assessment_configuration::AssessmentConfigurationBuilder;
+
+pub use crate::types::_directory_vpc_settings::DirectoryVpcSettingsBuilder;
 
 pub use crate::types::_share_target::ShareTargetBuilder;
 
@@ -20,6 +28,8 @@ pub use crate::types::_log_subscription::LogSubscriptionBuilder;
 pub use crate::types::_ip_route_info::IpRouteInfoBuilder;
 
 pub use crate::types::_certificate_info::CertificateInfoBuilder;
+
+pub use crate::types::_assessment_summary::AssessmentSummaryBuilder;
 
 pub use crate::types::_snapshot_limits::SnapshotLimitsBuilder;
 
@@ -39,15 +49,21 @@ pub use crate::types::_setting_entry::SettingEntryBuilder;
 
 pub use crate::types::_region_description::RegionDescriptionBuilder;
 
-pub use crate::types::_directory_vpc_settings::DirectoryVpcSettingsBuilder;
-
 pub use crate::types::_ldaps_setting_info::LdapsSettingInfoBuilder;
+
+pub use crate::types::_hybrid_update_activities::HybridUpdateActivitiesBuilder;
+
+pub use crate::types::_hybrid_update_info_entry::HybridUpdateInfoEntryBuilder;
+
+pub use crate::types::_hybrid_update_value::HybridUpdateValueBuilder;
 
 pub use crate::types::_event_topic::EventTopicBuilder;
 
 pub use crate::types::_domain_controller::DomainControllerBuilder;
 
 pub use crate::types::_directory_description::DirectoryDescriptionBuilder;
+
+pub use crate::types::_hybrid_settings_description::HybridSettingsDescriptionBuilder;
 
 pub use crate::types::_regions_info::RegionsInfoBuilder;
 
@@ -62,6 +78,12 @@ pub use crate::types::_conditional_forwarder::ConditionalForwarderBuilder;
 pub use crate::types::_client_authentication_setting_info::ClientAuthenticationSettingInfoBuilder;
 
 pub use crate::types::_certificate::CertificateBuilder;
+
+pub use crate::types::_assessment_report::AssessmentReportBuilder;
+
+pub use crate::types::_assessment_validation::AssessmentValidationBuilder;
+
+pub use crate::types::_assessment::AssessmentBuilder;
 
 pub use crate::types::_computer::ComputerBuilder;
 

@@ -339,6 +339,8 @@ pub(crate) mod shape_parameter;
 
 pub(crate) mod shape_resource_not_found_fault;
 
+pub(crate) mod shape_serverless_v2_scaling_configuration;
+
 pub(crate) mod shape_shared_snapshot_quota_exceeded_fault;
 
 pub(crate) mod shape_snapshot_quota_exceeded_fault;
@@ -453,6 +455,8 @@ pub(crate) mod shape_pending_modified_values;
 
 pub(crate) mod shape_read_replica_identifier_list;
 
+pub(crate) mod shape_serverless_v2_scaling_configuration_info;
+
 pub(crate) mod shape_source_ids_list;
 
 pub(crate) mod shape_subnet_list;
@@ -476,6 +480,8 @@ pub(crate) mod shape_global_cluster_member;
 pub(crate) mod shape_pending_cloudwatch_logs_exports;
 
 pub(crate) mod shape_pending_maintenance_action;
+
+pub(crate) mod shape_serverless_v2_features_support;
 
 pub(crate) mod shape_subnet;
 

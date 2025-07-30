@@ -7,7 +7,7 @@ pub struct AddRegionInput {
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Region where you want to add domain controllers for replication. For example, <code>us-east-1</code>.</p>
     pub region_name: ::std::option::Option<::std::string::String>,
-    /// <p>Contains VPC information for the <code>CreateDirectory</code> or <code>CreateMicrosoftAD</code> operation.</p>
+    /// <p>Contains VPC information for the <code>CreateDirectory</code>, <code>CreateMicrosoftAD</code>, or <code>CreateHybridAD</code> operation.</p>
     pub vpc_settings: ::std::option::Option<crate::types::DirectoryVpcSettings>,
 }
 impl AddRegionInput {
@@ -19,7 +19,7 @@ impl AddRegionInput {
     pub fn region_name(&self) -> ::std::option::Option<&str> {
         self.region_name.as_deref()
     }
-    /// <p>Contains VPC information for the <code>CreateDirectory</code> or <code>CreateMicrosoftAD</code> operation.</p>
+    /// <p>Contains VPC information for the <code>CreateDirectory</code>, <code>CreateMicrosoftAD</code>, or <code>CreateHybridAD</code> operation.</p>
     pub fn vpc_settings(&self) -> ::std::option::Option<&crate::types::DirectoryVpcSettings> {
         self.vpc_settings.as_ref()
     }
@@ -70,18 +70,18 @@ impl AddRegionInputBuilder {
     pub fn get_region_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.region_name
     }
-    /// <p>Contains VPC information for the <code>CreateDirectory</code> or <code>CreateMicrosoftAD</code> operation.</p>
+    /// <p>Contains VPC information for the <code>CreateDirectory</code>, <code>CreateMicrosoftAD</code>, or <code>CreateHybridAD</code> operation.</p>
     /// This field is required.
     pub fn vpc_settings(mut self, input: crate::types::DirectoryVpcSettings) -> Self {
         self.vpc_settings = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Contains VPC information for the <code>CreateDirectory</code> or <code>CreateMicrosoftAD</code> operation.</p>
+    /// <p>Contains VPC information for the <code>CreateDirectory</code>, <code>CreateMicrosoftAD</code>, or <code>CreateHybridAD</code> operation.</p>
     pub fn set_vpc_settings(mut self, input: ::std::option::Option<crate::types::DirectoryVpcSettings>) -> Self {
         self.vpc_settings = input;
         self
     }
-    /// <p>Contains VPC information for the <code>CreateDirectory</code> or <code>CreateMicrosoftAD</code> operation.</p>
+    /// <p>Contains VPC information for the <code>CreateDirectory</code>, <code>CreateMicrosoftAD</code>, or <code>CreateHybridAD</code> operation.</p>
     pub fn get_vpc_settings(&self) -> &::std::option::Option<crate::types::DirectoryVpcSettings> {
         &self.vpc_settings
     }

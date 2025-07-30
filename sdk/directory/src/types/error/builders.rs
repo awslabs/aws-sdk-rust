@@ -19,6 +19,8 @@ pub use crate::types::error::_directory_does_not_exist_exception::DirectoryDoesN
 
 pub use crate::types::error::_domain_controller_limit_exceeded_exception::DomainControllerLimitExceededExceptionBuilder;
 
+pub use crate::types::error::_ad_assessment_limit_exceeded_exception::AdAssessmentLimitExceededExceptionBuilder;
+
 pub use crate::types::error::_snapshot_limit_exceeded_exception::SnapshotLimitExceededExceptionBuilder;
 
 pub use crate::types::error::_directory_in_desired_state_exception::DirectoryInDesiredStateExceptionBuilder;

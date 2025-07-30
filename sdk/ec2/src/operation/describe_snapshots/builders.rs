@@ -38,7 +38,6 @@ impl crate::operation::describe_snapshots::builders::DescribeSnapshotsInputBuild
 /// <p>If you specify one or more snapshot owners using the <code>OwnerIds</code> option, only snapshots from the specified owners and for which you have access are returned. The results can include the Amazon Web Services account IDs of the specified owners, <code>amazon</code> for snapshots owned by Amazon, or <code>self</code> for snapshots that you own.</p>
 /// <p>If you specify a list of restorable users, only snapshots with create snapshot permissions for those users are returned. You can specify Amazon Web Services account IDs (if you own the snapshots), <code>self</code> for snapshots for which you own or have explicit permissions, or <code>all</code> for public snapshots.</p>
 /// <p>If you are describing a long list of snapshots, we recommend that you paginate the output to make the list more manageable. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
-/// <p>To get the state of fast snapshot restores for a snapshot, use <code>DescribeFastSnapshotRestores</code>.</p>
 /// <p>For more information about EBS snapshots, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-snapshots.html">Amazon EBS snapshots</a> in the <i>Amazon EBS User Guide</i>.</p><important>
 /// <p>We strongly recommend using only paginated requests. Unpaginated requests are susceptible to throttling and timeouts.</p>
 /// </important>

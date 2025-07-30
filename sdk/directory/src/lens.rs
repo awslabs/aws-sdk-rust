@@ -89,6 +89,16 @@ pub(crate) fn reflens_describe_update_directory_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_ad_assessments_output_output_next_token(
+    input: &crate::operation::list_ad_assessments::ListAdAssessmentsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_certificates_output_output_next_token(
     input: &crate::operation::list_certificates::ListCertificatesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -192,6 +202,13 @@ pub(crate) fn lens_describe_update_directory_output_output_update_activities(
     input: crate::operation::describe_update_directory::DescribeUpdateDirectoryOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::UpdateInfoEntry>> {
     let input = input.update_activities?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_ad_assessments_output_output_assessments(
+    input: crate::operation::list_ad_assessments::ListAdAssessmentsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::AssessmentSummary>> {
+    let input = input.assessments?;
     ::std::option::Option::Some(input)
 }
 

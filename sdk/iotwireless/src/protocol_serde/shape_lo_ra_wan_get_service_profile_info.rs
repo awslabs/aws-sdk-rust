@@ -121,6 +121,34 @@ where
                                     .transpose()?,
                             );
                         }
+                        "TxPowerIndexMin" => {
+                            builder = builder.set_tx_power_index_min(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "TxPowerIndexMax" => {
+                            builder = builder.set_tx_power_index_max(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "NbTransMin" => {
+                            builder = builder.set_nb_trans_min(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "NbTransMax" => {
+                            builder = builder.set_nb_trans_max(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

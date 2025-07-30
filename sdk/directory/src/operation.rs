@@ -31,6 +31,9 @@ pub mod create_conditional_forwarder;
 /// Types for the `CreateDirectory` operation.
 pub mod create_directory;
 
+/// Types for the `CreateHybridAD` operation.
+pub mod create_hybrid_ad;
+
 /// Types for the `CreateLogSubscription` operation.
 pub mod create_log_subscription;
 
@@ -42,6 +45,9 @@ pub mod create_snapshot;
 
 /// Types for the `CreateTrust` operation.
 pub mod create_trust;
+
+/// Types for the `DeleteADAssessment` operation.
+pub mod delete_ad_assessment;
 
 /// Types for the `DeleteConditionalForwarder` operation.
 pub mod delete_conditional_forwarder;
@@ -64,6 +70,9 @@ pub mod deregister_certificate;
 /// Types for the `DeregisterEventTopic` operation.
 pub mod deregister_event_topic;
 
+/// Types for the `DescribeADAssessment` operation.
+pub mod describe_ad_assessment;
+
 /// Types for the `DescribeCertificate` operation.
 pub mod describe_certificate;
 
@@ -84,6 +93,9 @@ pub mod describe_domain_controllers;
 
 /// Types for the `DescribeEventTopics` operation.
 pub mod describe_event_topics;
+
+/// Types for the `DescribeHybridADUpdate` operation.
+pub mod describe_hybrid_ad_update;
 
 /// Types for the `DescribeLDAPSSettings` operation.
 pub mod describe_ldaps_settings;
@@ -142,6 +154,9 @@ pub mod get_directory_limits;
 /// Types for the `GetSnapshotLimits` operation.
 pub mod get_snapshot_limits;
 
+/// Types for the `ListADAssessments` operation.
+pub mod list_ad_assessments;
+
 /// Types for the `ListCertificates` operation.
 pub mod list_certificates;
 
@@ -184,6 +199,9 @@ pub mod restore_from_snapshot;
 /// Types for the `ShareDirectory` operation.
 pub mod share_directory;
 
+/// Types for the `StartADAssessment` operation.
+pub mod start_ad_assessment;
+
 /// Types for the `StartSchemaExtension` operation.
 pub mod start_schema_extension;
 
@@ -195,6 +213,9 @@ pub mod update_conditional_forwarder;
 
 /// Types for the `UpdateDirectorySetup` operation.
 pub mod update_directory_setup;
+
+/// Types for the `UpdateHybridAD` operation.
+pub mod update_hybrid_ad;
 
 /// Types for the `UpdateNumberOfDomainControllers` operation.
 pub mod update_number_of_domain_controllers;

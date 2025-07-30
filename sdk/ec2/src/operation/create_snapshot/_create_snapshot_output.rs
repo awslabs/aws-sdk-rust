@@ -42,7 +42,7 @@ pub struct CreateSnapshotOutput {
     pub full_snapshot_size_in_bytes: ::std::option::Option<i64>,
     /// <p>The ID of the snapshot. Each snapshot receives a unique identifier when it is created.</p>
     pub snapshot_id: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of the volume that was used to create the snapshot. Snapshots created by the <code>CopySnapshot</code> action have an arbitrary volume ID that should not be used for any purpose.</p>
+    /// <p>The ID of the volume that was used to create the snapshot. Snapshots created by a copy snapshot operation have an arbitrary volume ID that you should not use for any purpose.</p>
     pub volume_id: ::std::option::Option<::std::string::String>,
     /// <p>The snapshot state.</p>
     pub state: ::std::option::Option<crate::types::SnapshotState>,
@@ -131,7 +131,7 @@ impl CreateSnapshotOutput {
     pub fn snapshot_id(&self) -> ::std::option::Option<&str> {
         self.snapshot_id.as_deref()
     }
-    /// <p>The ID of the volume that was used to create the snapshot. Snapshots created by the <code>CopySnapshot</code> action have an arbitrary volume ID that should not be used for any purpose.</p>
+    /// <p>The ID of the volume that was used to create the snapshot. Snapshots created by a copy snapshot operation have an arbitrary volume ID that you should not use for any purpose.</p>
     pub fn volume_id(&self) -> ::std::option::Option<&str> {
         self.volume_id.as_deref()
     }
@@ -434,17 +434,17 @@ impl CreateSnapshotOutputBuilder {
     pub fn get_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.snapshot_id
     }
-    /// <p>The ID of the volume that was used to create the snapshot. Snapshots created by the <code>CopySnapshot</code> action have an arbitrary volume ID that should not be used for any purpose.</p>
+    /// <p>The ID of the volume that was used to create the snapshot. Snapshots created by a copy snapshot operation have an arbitrary volume ID that you should not use for any purpose.</p>
     pub fn volume_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.volume_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the volume that was used to create the snapshot. Snapshots created by the <code>CopySnapshot</code> action have an arbitrary volume ID that should not be used for any purpose.</p>
+    /// <p>The ID of the volume that was used to create the snapshot. Snapshots created by a copy snapshot operation have an arbitrary volume ID that you should not use for any purpose.</p>
     pub fn set_volume_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.volume_id = input;
         self
     }
-    /// <p>The ID of the volume that was used to create the snapshot. Snapshots created by the <code>CopySnapshot</code> action have an arbitrary volume ID that should not be used for any purpose.</p>
+    /// <p>The ID of the volume that was used to create the snapshot. Snapshots created by a copy snapshot operation have an arbitrary volume ID that you should not use for any purpose.</p>
     pub fn get_volume_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.volume_id
     }

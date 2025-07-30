@@ -87,9 +87,14 @@ pub fn ser_restore_db_cluster_to_point_in_time_input_input_input(
         scope_32.boolean(*var_33);
     }
     #[allow(unused_mut)]
-    let mut scope_34 = writer.prefix("StorageType");
-    if let Some(var_35) = &input.storage_type {
-        scope_34.string(var_35);
+    let mut scope_34 = writer.prefix("ServerlessV2ScalingConfiguration");
+    if let Some(var_35) = &input.serverless_v2_scaling_configuration {
+        crate::protocol_serde::shape_serverless_v2_scaling_configuration::ser_serverless_v2_scaling_configuration(scope_34, var_35)?;
+    }
+    #[allow(unused_mut)]
+    let mut scope_36 = writer.prefix("StorageType");
+    if let Some(var_37) = &input.storage_type {
+        scope_36.string(var_37);
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

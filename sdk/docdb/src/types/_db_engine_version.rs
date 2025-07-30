@@ -25,6 +25,8 @@ pub struct DbEngineVersion {
     pub supported_ca_certificate_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Indicates whether the engine version supports rotating the server certificate without rebooting the DB instance.</p>
     pub supports_certificate_rotation_without_restart: ::std::option::Option<bool>,
+    /// <p>Specifies any Amazon DocumentDB Serverless properties or limits that differ between Amazon DocumentDB engine versions. You can test the values of this attribute when deciding which Amazon DocumentDB version to use in a new or upgraded cluster. You can also retrieve the version of an existing cluster and check whether that version supports certain Amazon DocumentDB Serverless features before you attempt to use those features.</p>
+    pub serverless_v2_features_support: ::std::option::Option<crate::types::ServerlessV2FeaturesSupport>,
 }
 impl DbEngineVersion {
     /// <p>The name of the database engine.</p>
@@ -74,6 +76,10 @@ impl DbEngineVersion {
     pub fn supports_certificate_rotation_without_restart(&self) -> ::std::option::Option<bool> {
         self.supports_certificate_rotation_without_restart
     }
+    /// <p>Specifies any Amazon DocumentDB Serverless properties or limits that differ between Amazon DocumentDB engine versions. You can test the values of this attribute when deciding which Amazon DocumentDB version to use in a new or upgraded cluster. You can also retrieve the version of an existing cluster and check whether that version supports certain Amazon DocumentDB Serverless features before you attempt to use those features.</p>
+    pub fn serverless_v2_features_support(&self) -> ::std::option::Option<&crate::types::ServerlessV2FeaturesSupport> {
+        self.serverless_v2_features_support.as_ref()
+    }
 }
 impl DbEngineVersion {
     /// Creates a new builder-style object to manufacture [`DbEngineVersion`](crate::types::DbEngineVersion).
@@ -96,6 +102,7 @@ pub struct DbEngineVersionBuilder {
     pub(crate) supports_log_exports_to_cloudwatch_logs: ::std::option::Option<bool>,
     pub(crate) supported_ca_certificate_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) supports_certificate_rotation_without_restart: ::std::option::Option<bool>,
+    pub(crate) serverless_v2_features_support: ::std::option::Option<crate::types::ServerlessV2FeaturesSupport>,
 }
 impl DbEngineVersionBuilder {
     /// <p>The name of the database engine.</p>
@@ -259,6 +266,20 @@ impl DbEngineVersionBuilder {
     pub fn get_supports_certificate_rotation_without_restart(&self) -> &::std::option::Option<bool> {
         &self.supports_certificate_rotation_without_restart
     }
+    /// <p>Specifies any Amazon DocumentDB Serverless properties or limits that differ between Amazon DocumentDB engine versions. You can test the values of this attribute when deciding which Amazon DocumentDB version to use in a new or upgraded cluster. You can also retrieve the version of an existing cluster and check whether that version supports certain Amazon DocumentDB Serverless features before you attempt to use those features.</p>
+    pub fn serverless_v2_features_support(mut self, input: crate::types::ServerlessV2FeaturesSupport) -> Self {
+        self.serverless_v2_features_support = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies any Amazon DocumentDB Serverless properties or limits that differ between Amazon DocumentDB engine versions. You can test the values of this attribute when deciding which Amazon DocumentDB version to use in a new or upgraded cluster. You can also retrieve the version of an existing cluster and check whether that version supports certain Amazon DocumentDB Serverless features before you attempt to use those features.</p>
+    pub fn set_serverless_v2_features_support(mut self, input: ::std::option::Option<crate::types::ServerlessV2FeaturesSupport>) -> Self {
+        self.serverless_v2_features_support = input;
+        self
+    }
+    /// <p>Specifies any Amazon DocumentDB Serverless properties or limits that differ between Amazon DocumentDB engine versions. You can test the values of this attribute when deciding which Amazon DocumentDB version to use in a new or upgraded cluster. You can also retrieve the version of an existing cluster and check whether that version supports certain Amazon DocumentDB Serverless features before you attempt to use those features.</p>
+    pub fn get_serverless_v2_features_support(&self) -> &::std::option::Option<crate::types::ServerlessV2FeaturesSupport> {
+        &self.serverless_v2_features_support
+    }
     /// Consumes the builder and constructs a [`DbEngineVersion`](crate::types::DbEngineVersion).
     pub fn build(self) -> crate::types::DbEngineVersion {
         crate::types::DbEngineVersion {
@@ -272,6 +293,7 @@ impl DbEngineVersionBuilder {
             supports_log_exports_to_cloudwatch_logs: self.supports_log_exports_to_cloudwatch_logs,
             supported_ca_certificate_identifiers: self.supported_ca_certificate_identifiers,
             supports_certificate_rotation_without_restart: self.supports_certificate_rotation_without_restart,
+            serverless_v2_features_support: self.serverless_v2_features_support,
         }
     }
 }

@@ -46,6 +46,8 @@ pub struct Route {
     pub core_network_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the ODB network.</p>
     pub odb_network_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The next hop IP address for routes propagated by VPC Route Server into VPC route tables.</p>
+    pub ip_address: ::std::option::Option<::std::string::String>,
 }
 impl Route {
     /// <p>The IPv4 CIDR block used for the destination match.</p>
@@ -124,6 +126,10 @@ impl Route {
     pub fn odb_network_arn(&self) -> ::std::option::Option<&str> {
         self.odb_network_arn.as_deref()
     }
+    /// <p>The next hop IP address for routes propagated by VPC Route Server into VPC route tables.</p>
+    pub fn ip_address(&self) -> ::std::option::Option<&str> {
+        self.ip_address.as_deref()
+    }
 }
 impl Route {
     /// Creates a new builder-style object to manufacture [`Route`](crate::types::Route).
@@ -153,6 +159,7 @@ pub struct RouteBuilder {
     pub(crate) vpc_peering_connection_id: ::std::option::Option<::std::string::String>,
     pub(crate) core_network_arn: ::std::option::Option<::std::string::String>,
     pub(crate) odb_network_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) ip_address: ::std::option::Option<::std::string::String>,
 }
 impl RouteBuilder {
     /// <p>The IPv4 CIDR block used for the destination match.</p>
@@ -417,6 +424,20 @@ impl RouteBuilder {
     pub fn get_odb_network_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.odb_network_arn
     }
+    /// <p>The next hop IP address for routes propagated by VPC Route Server into VPC route tables.</p>
+    pub fn ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ip_address = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The next hop IP address for routes propagated by VPC Route Server into VPC route tables.</p>
+    pub fn set_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.ip_address = input;
+        self
+    }
+    /// <p>The next hop IP address for routes propagated by VPC Route Server into VPC route tables.</p>
+    pub fn get_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ip_address
+    }
     /// Consumes the builder and constructs a [`Route`](crate::types::Route).
     pub fn build(self) -> crate::types::Route {
         crate::types::Route {
@@ -437,6 +458,7 @@ impl RouteBuilder {
             vpc_peering_connection_id: self.vpc_peering_connection_id,
             core_network_arn: self.core_network_arn,
             odb_network_arn: self.odb_network_arn,
+            ip_address: self.ip_address,
         }
     }
 }

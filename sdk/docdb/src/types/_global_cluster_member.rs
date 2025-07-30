@@ -6,7 +6,7 @@
 pub struct GlobalClusterMember {
     /// <p>The Amazon Resource Name (ARN) for each Amazon DocumentDB cluster.</p>
     pub db_cluster_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) for each read-only secondary cluster associated with the Aurora global cluster.</p>
+    /// <p>The Amazon Resource Name (ARN) for each read-only secondary cluster associated with the Amazon DocumentDB global cluster.</p>
     pub readers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies whether the Amazon DocumentDB cluster is the primary cluster (that is, has read-write capability) for the Amazon DocumentDB global cluster with which it is associated.</p>
     pub is_writer: ::std::option::Option<bool>,
@@ -16,7 +16,7 @@ impl GlobalClusterMember {
     pub fn db_cluster_arn(&self) -> ::std::option::Option<&str> {
         self.db_cluster_arn.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) for each read-only secondary cluster associated with the Aurora global cluster.</p>
+    /// <p>The Amazon Resource Name (ARN) for each read-only secondary cluster associated with the Amazon DocumentDB global cluster.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.readers.is_none()`.
     pub fn readers(&self) -> &[::std::string::String] {
@@ -61,19 +61,19 @@ impl GlobalClusterMemberBuilder {
     ///
     /// To override the contents of this collection use [`set_readers`](Self::set_readers).
     ///
-    /// <p>The Amazon Resource Name (ARN) for each read-only secondary cluster associated with the Aurora global cluster.</p>
+    /// <p>The Amazon Resource Name (ARN) for each read-only secondary cluster associated with the Amazon DocumentDB global cluster.</p>
     pub fn readers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.readers.unwrap_or_default();
         v.push(input.into());
         self.readers = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) for each read-only secondary cluster associated with the Aurora global cluster.</p>
+    /// <p>The Amazon Resource Name (ARN) for each read-only secondary cluster associated with the Amazon DocumentDB global cluster.</p>
     pub fn set_readers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.readers = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) for each read-only secondary cluster associated with the Aurora global cluster.</p>
+    /// <p>The Amazon Resource Name (ARN) for each read-only secondary cluster associated with the Amazon DocumentDB global cluster.</p>
     pub fn get_readers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.readers
     }

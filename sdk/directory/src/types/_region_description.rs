@@ -12,7 +12,7 @@ pub struct RegionDescription {
     pub region_type: ::std::option::Option<crate::types::RegionType>,
     /// <p>The status of the replication process for the specified Region.</p>
     pub status: ::std::option::Option<crate::types::DirectoryStage>,
-    /// <p>Contains VPC information for the <code>CreateDirectory</code> or <code>CreateMicrosoftAD</code> operation.</p>
+    /// <p>Contains VPC information for the <code>CreateDirectory</code>, <code>CreateMicrosoftAD</code>, or <code>CreateHybridAD</code> operation.</p>
     pub vpc_settings: ::std::option::Option<crate::types::DirectoryVpcSettings>,
     /// <p>The desired number of domain controllers in the specified Region for the specified directory.</p>
     pub desired_number_of_domain_controllers: ::std::option::Option<i32>,
@@ -40,7 +40,7 @@ impl RegionDescription {
     pub fn status(&self) -> ::std::option::Option<&crate::types::DirectoryStage> {
         self.status.as_ref()
     }
-    /// <p>Contains VPC information for the <code>CreateDirectory</code> or <code>CreateMicrosoftAD</code> operation.</p>
+    /// <p>Contains VPC information for the <code>CreateDirectory</code>, <code>CreateMicrosoftAD</code>, or <code>CreateHybridAD</code> operation.</p>
     pub fn vpc_settings(&self) -> ::std::option::Option<&crate::types::DirectoryVpcSettings> {
         self.vpc_settings.as_ref()
     }
@@ -139,17 +139,17 @@ impl RegionDescriptionBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::DirectoryStage> {
         &self.status
     }
-    /// <p>Contains VPC information for the <code>CreateDirectory</code> or <code>CreateMicrosoftAD</code> operation.</p>
+    /// <p>Contains VPC information for the <code>CreateDirectory</code>, <code>CreateMicrosoftAD</code>, or <code>CreateHybridAD</code> operation.</p>
     pub fn vpc_settings(mut self, input: crate::types::DirectoryVpcSettings) -> Self {
         self.vpc_settings = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Contains VPC information for the <code>CreateDirectory</code> or <code>CreateMicrosoftAD</code> operation.</p>
+    /// <p>Contains VPC information for the <code>CreateDirectory</code>, <code>CreateMicrosoftAD</code>, or <code>CreateHybridAD</code> operation.</p>
     pub fn set_vpc_settings(mut self, input: ::std::option::Option<crate::types::DirectoryVpcSettings>) -> Self {
         self.vpc_settings = input;
         self
     }
-    /// <p>Contains VPC information for the <code>CreateDirectory</code> or <code>CreateMicrosoftAD</code> operation.</p>
+    /// <p>Contains VPC information for the <code>CreateDirectory</code>, <code>CreateMicrosoftAD</code>, or <code>CreateHybridAD</code> operation.</p>
     pub fn get_vpc_settings(&self) -> &::std::option::Option<crate::types::DirectoryVpcSettings> {
         &self.vpc_settings
     }

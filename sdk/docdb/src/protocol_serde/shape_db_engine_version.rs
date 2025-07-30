@@ -132,6 +132,16 @@ pub fn de_db_engine_version(
                 builder = builder.set_supports_certificate_rotation_without_restart(var_10);
             }
             ,
+            s if s.matches("ServerlessV2FeaturesSupport") /* ServerlessV2FeaturesSupport com.amazonaws.docdb#DBEngineVersion$ServerlessV2FeaturesSupport */ =>  {
+                let var_11 =
+                    Some(
+                        crate::protocol_serde::shape_serverless_v2_features_support::de_serverless_v2_features_support(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_serverless_v2_features_support(var_11);
+            }
+            ,
             _ => {}
         }
     }

@@ -431,14 +431,24 @@ pub fn de_db_cluster(
                 builder = builder.set_storage_type(var_33);
             }
             ,
-            s if s.matches("MasterUserSecret") /* MasterUserSecret com.amazonaws.docdb#DBCluster$MasterUserSecret */ =>  {
+            s if s.matches("ServerlessV2ScalingConfiguration") /* ServerlessV2ScalingConfiguration com.amazonaws.docdb#DBCluster$ServerlessV2ScalingConfiguration */ =>  {
                 let var_34 =
+                    Some(
+                        crate::protocol_serde::shape_serverless_v2_scaling_configuration_info::de_serverless_v2_scaling_configuration_info(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_serverless_v2_scaling_configuration(var_34);
+            }
+            ,
+            s if s.matches("MasterUserSecret") /* MasterUserSecret com.amazonaws.docdb#DBCluster$MasterUserSecret */ =>  {
+                let var_35 =
                     Some(
                         crate::protocol_serde::shape_cluster_master_user_secret::de_cluster_master_user_secret(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_master_user_secret(var_34);
+                builder = builder.set_master_user_secret(var_35);
             }
             ,
             _ => {}

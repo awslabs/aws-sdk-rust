@@ -98,9 +98,14 @@ pub fn ser_restore_db_cluster_from_snapshot_input_input_input(
         scope_37.string(var_38);
     }
     #[allow(unused_mut)]
-    let mut scope_39 = writer.prefix("StorageType");
-    if let Some(var_40) = &input.storage_type {
-        scope_39.string(var_40);
+    let mut scope_39 = writer.prefix("ServerlessV2ScalingConfiguration");
+    if let Some(var_40) = &input.serverless_v2_scaling_configuration {
+        crate::protocol_serde::shape_serverless_v2_scaling_configuration::ser_serverless_v2_scaling_configuration(scope_39, var_40)?;
+    }
+    #[allow(unused_mut)]
+    let mut scope_41 = writer.prefix("StorageType");
+    if let Some(var_42) = &input.storage_type {
+        scope_41.string(var_42);
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

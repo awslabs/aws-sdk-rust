@@ -24,7 +24,6 @@ impl crate::operation::enable_ebs_encryption_by_default::builders::EnableEbsEncr
 ///
 /// <p>Enables EBS encryption by default for your account in the current Region.</p>
 /// <p>After you enable encryption by default, the EBS volumes that you create are always encrypted, either using the default KMS key or the KMS key that you specified when you created each volume. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html">Amazon EBS encryption</a> in the <i>Amazon EBS User Guide</i>.</p>
-/// <p>You can specify the default KMS key for encryption by default using <code>ModifyEbsDefaultKmsKeyId</code> or <code>ResetEbsDefaultKmsKeyId</code>.</p>
 /// <p>Enabling encryption by default has no effect on the encryption status of your existing volumes.</p>
 /// <p>After you enable encryption by default, you can no longer launch instances using instance types that do not support encryption. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption-requirements.html#ebs-encryption_supported_instances">Supported instance types</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

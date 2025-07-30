@@ -51,6 +51,10 @@ pub struct Origin {
     /// <p>The number of seconds that CloudFront waits when trying to establish a connection to the origin. The minimum timeout is 1 second, the maximum is 10 seconds, and the default (if you don't specify otherwise) is 10 seconds.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#origin-connection-timeout">Origin Connection Timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     pub connection_timeout: ::std::option::Option<i32>,
+    /// <p>The time (in seconds) that a request from CloudFront to the origin can stay open and wait for a response. If the complete response isn't received from the origin by this time, CloudFront ends the connection.</p>
+    /// <p>The value for <code>ResponseCompletionTimeout</code> must be equal to or greater than the value for <code>OriginReadTimeout</code>. If you don't set a value for <code>ResponseCompletionTimeout</code>, CloudFront doesn't enforce a maximum value.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DownloadDistValuesOrigin.html#response-completion-timeout">Response completion timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    pub response_completion_timeout: ::std::option::Option<i32>,
     /// <p>CloudFront Origin Shield. Using Origin Shield can help reduce the load on your origin.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/origin-shield.html">Using Origin Shield</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     pub origin_shield: ::std::option::Option<crate::types::OriginShield>,
@@ -104,6 +108,12 @@ impl Origin {
     pub fn connection_timeout(&self) -> ::std::option::Option<i32> {
         self.connection_timeout
     }
+    /// <p>The time (in seconds) that a request from CloudFront to the origin can stay open and wait for a response. If the complete response isn't received from the origin by this time, CloudFront ends the connection.</p>
+    /// <p>The value for <code>ResponseCompletionTimeout</code> must be equal to or greater than the value for <code>OriginReadTimeout</code>. If you don't set a value for <code>ResponseCompletionTimeout</code>, CloudFront doesn't enforce a maximum value.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DownloadDistValuesOrigin.html#response-completion-timeout">Response completion timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    pub fn response_completion_timeout(&self) -> ::std::option::Option<i32> {
+        self.response_completion_timeout
+    }
     /// <p>CloudFront Origin Shield. Using Origin Shield can help reduce the load on your origin.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/origin-shield.html">Using Origin Shield</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     pub fn origin_shield(&self) -> ::std::option::Option<&crate::types::OriginShield> {
@@ -135,6 +145,7 @@ pub struct OriginBuilder {
     pub(crate) vpc_origin_config: ::std::option::Option<crate::types::VpcOriginConfig>,
     pub(crate) connection_attempts: ::std::option::Option<i32>,
     pub(crate) connection_timeout: ::std::option::Option<i32>,
+    pub(crate) response_completion_timeout: ::std::option::Option<i32>,
     pub(crate) origin_shield: ::std::option::Option<crate::types::OriginShield>,
     pub(crate) origin_access_control_id: ::std::option::Option<::std::string::String>,
 }
@@ -288,6 +299,26 @@ impl OriginBuilder {
     pub fn get_connection_timeout(&self) -> &::std::option::Option<i32> {
         &self.connection_timeout
     }
+    /// <p>The time (in seconds) that a request from CloudFront to the origin can stay open and wait for a response. If the complete response isn't received from the origin by this time, CloudFront ends the connection.</p>
+    /// <p>The value for <code>ResponseCompletionTimeout</code> must be equal to or greater than the value for <code>OriginReadTimeout</code>. If you don't set a value for <code>ResponseCompletionTimeout</code>, CloudFront doesn't enforce a maximum value.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DownloadDistValuesOrigin.html#response-completion-timeout">Response completion timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    pub fn response_completion_timeout(mut self, input: i32) -> Self {
+        self.response_completion_timeout = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The time (in seconds) that a request from CloudFront to the origin can stay open and wait for a response. If the complete response isn't received from the origin by this time, CloudFront ends the connection.</p>
+    /// <p>The value for <code>ResponseCompletionTimeout</code> must be equal to or greater than the value for <code>OriginReadTimeout</code>. If you don't set a value for <code>ResponseCompletionTimeout</code>, CloudFront doesn't enforce a maximum value.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DownloadDistValuesOrigin.html#response-completion-timeout">Response completion timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    pub fn set_response_completion_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.response_completion_timeout = input;
+        self
+    }
+    /// <p>The time (in seconds) that a request from CloudFront to the origin can stay open and wait for a response. If the complete response isn't received from the origin by this time, CloudFront ends the connection.</p>
+    /// <p>The value for <code>ResponseCompletionTimeout</code> must be equal to or greater than the value for <code>OriginReadTimeout</code>. If you don't set a value for <code>ResponseCompletionTimeout</code>, CloudFront doesn't enforce a maximum value.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DownloadDistValuesOrigin.html#response-completion-timeout">Response completion timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    pub fn get_response_completion_timeout(&self) -> &::std::option::Option<i32> {
+        &self.response_completion_timeout
+    }
     /// <p>CloudFront Origin Shield. Using Origin Shield can help reduce the load on your origin.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/origin-shield.html">Using Origin Shield</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     pub fn origin_shield(mut self, input: crate::types::OriginShield) -> Self {
@@ -344,6 +375,7 @@ impl OriginBuilder {
             vpc_origin_config: self.vpc_origin_config,
             connection_attempts: self.connection_attempts,
             connection_timeout: self.connection_timeout,
+            response_completion_timeout: self.response_completion_timeout,
             origin_shield: self.origin_shield,
             origin_access_control_id: self.origin_access_control_id,
         })

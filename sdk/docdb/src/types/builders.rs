@@ -7,11 +7,15 @@ pub use crate::types::_db_cluster::DbClusterBuilder;
 
 pub use crate::types::_cluster_master_user_secret::ClusterMasterUserSecretBuilder;
 
+pub use crate::types::_serverless_v2_scaling_configuration_info::ServerlessV2ScalingConfigurationInfoBuilder;
+
 pub use crate::types::_db_cluster_role::DbClusterRoleBuilder;
 
 pub use crate::types::_vpc_security_group_membership::VpcSecurityGroupMembershipBuilder;
 
 pub use crate::types::_db_cluster_member::DbClusterMemberBuilder;
+
+pub use crate::types::_serverless_v2_scaling_configuration::ServerlessV2ScalingConfigurationBuilder;
 
 pub use crate::types::_tag::TagBuilder;
 
@@ -58,6 +62,8 @@ pub use crate::types::_event_categories_map::EventCategoriesMapBuilder;
 pub use crate::types::_engine_defaults::EngineDefaultsBuilder;
 
 pub use crate::types::_db_engine_version::DbEngineVersionBuilder;
+
+pub use crate::types::_serverless_v2_features_support::ServerlessV2FeaturesSupportBuilder;
 
 pub use crate::types::_upgrade_target::UpgradeTargetBuilder;
 

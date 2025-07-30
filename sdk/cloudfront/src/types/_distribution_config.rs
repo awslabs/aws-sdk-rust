@@ -100,7 +100,7 @@ pub struct DistributionConfig {
     /// </note>
     /// <p>A distribution tenant configuration.</p>
     pub tenant_config: ::std::option::Option<crate::types::TenantConfig>,
-    /// <p>This field specifies whether the connection mode is through a standard distribution (direct) or a multi-tenant distribution with distribution tenants(tenant-only).</p>
+    /// <p>This field specifies whether the connection mode is through a standard distribution (direct) or a multi-tenant distribution with distribution tenants (tenant-only).</p>
     pub connection_mode: ::std::option::Option<crate::types::ConnectionMode>,
 }
 impl DistributionConfig {
@@ -244,7 +244,7 @@ impl DistributionConfig {
     pub fn tenant_config(&self) -> ::std::option::Option<&crate::types::TenantConfig> {
         self.tenant_config.as_ref()
     }
-    /// <p>This field specifies whether the connection mode is through a standard distribution (direct) or a multi-tenant distribution with distribution tenants(tenant-only).</p>
+    /// <p>This field specifies whether the connection mode is through a standard distribution (direct) or a multi-tenant distribution with distribution tenants (tenant-only).</p>
     pub fn connection_mode(&self) -> ::std::option::Option<&crate::types::ConnectionMode> {
         self.connection_mode.as_ref()
     }
@@ -773,17 +773,17 @@ impl DistributionConfigBuilder {
     pub fn get_tenant_config(&self) -> &::std::option::Option<crate::types::TenantConfig> {
         &self.tenant_config
     }
-    /// <p>This field specifies whether the connection mode is through a standard distribution (direct) or a multi-tenant distribution with distribution tenants(tenant-only).</p>
+    /// <p>This field specifies whether the connection mode is through a standard distribution (direct) or a multi-tenant distribution with distribution tenants (tenant-only).</p>
     pub fn connection_mode(mut self, input: crate::types::ConnectionMode) -> Self {
         self.connection_mode = ::std::option::Option::Some(input);
         self
     }
-    /// <p>This field specifies whether the connection mode is through a standard distribution (direct) or a multi-tenant distribution with distribution tenants(tenant-only).</p>
+    /// <p>This field specifies whether the connection mode is through a standard distribution (direct) or a multi-tenant distribution with distribution tenants (tenant-only).</p>
     pub fn set_connection_mode(mut self, input: ::std::option::Option<crate::types::ConnectionMode>) -> Self {
         self.connection_mode = input;
         self
     }
-    /// <p>This field specifies whether the connection mode is through a standard distribution (direct) or a multi-tenant distribution with distribution tenants(tenant-only).</p>
+    /// <p>This field specifies whether the connection mode is through a standard distribution (direct) or a multi-tenant distribution with distribution tenants (tenant-only).</p>
     pub fn get_connection_mode(&self) -> &::std::option::Option<crate::types::ConnectionMode> {
         &self.connection_mode
     }

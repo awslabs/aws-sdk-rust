@@ -103,6 +103,8 @@ pub struct CreateDbClusterInput {
     /// <p>When you create a DocumentDB DB cluster with the storage type set to <code>iopt1</code>, the storage type is returned in the response. The storage type isn't returned when you set it to <code>standard</code>.</p>
     /// </note>
     pub storage_type: ::std::option::Option<::std::string::String>,
+    /// <p>Contains the scaling configuration of an Amazon DocumentDB Serverless cluster.</p>
+    pub serverless_v2_scaling_configuration: ::std::option::Option<crate::types::ServerlessV2ScalingConfiguration>,
     /// <p>Specifies whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
     /// <p>Constraint: You can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p>
     pub manage_master_user_password: ::std::option::Option<bool>,
@@ -262,6 +264,10 @@ impl CreateDbClusterInput {
     pub fn storage_type(&self) -> ::std::option::Option<&str> {
         self.storage_type.as_deref()
     }
+    /// <p>Contains the scaling configuration of an Amazon DocumentDB Serverless cluster.</p>
+    pub fn serverless_v2_scaling_configuration(&self) -> ::std::option::Option<&crate::types::ServerlessV2ScalingConfiguration> {
+        self.serverless_v2_scaling_configuration.as_ref()
+    }
     /// <p>Specifies whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
     /// <p>Constraint: You can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p>
     pub fn manage_master_user_password(&self) -> ::std::option::Option<bool> {
@@ -307,6 +313,7 @@ pub struct CreateDbClusterInputBuilder {
     pub(crate) deletion_protection: ::std::option::Option<bool>,
     pub(crate) global_cluster_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) storage_type: ::std::option::Option<::std::string::String>,
+    pub(crate) serverless_v2_scaling_configuration: ::std::option::Option<crate::types::ServerlessV2ScalingConfiguration>,
     pub(crate) manage_master_user_password: ::std::option::Option<bool>,
     pub(crate) master_user_secret_kms_key_id: ::std::option::Option<::std::string::String>,
 }
@@ -802,6 +809,20 @@ impl CreateDbClusterInputBuilder {
     pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.storage_type
     }
+    /// <p>Contains the scaling configuration of an Amazon DocumentDB Serverless cluster.</p>
+    pub fn serverless_v2_scaling_configuration(mut self, input: crate::types::ServerlessV2ScalingConfiguration) -> Self {
+        self.serverless_v2_scaling_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains the scaling configuration of an Amazon DocumentDB Serverless cluster.</p>
+    pub fn set_serverless_v2_scaling_configuration(mut self, input: ::std::option::Option<crate::types::ServerlessV2ScalingConfiguration>) -> Self {
+        self.serverless_v2_scaling_configuration = input;
+        self
+    }
+    /// <p>Contains the scaling configuration of an Amazon DocumentDB Serverless cluster.</p>
+    pub fn get_serverless_v2_scaling_configuration(&self) -> &::std::option::Option<crate::types::ServerlessV2ScalingConfiguration> {
+        &self.serverless_v2_scaling_configuration
+    }
     /// <p>Specifies whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
     /// <p>Constraint: You can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p>
     pub fn manage_master_user_password(mut self, input: bool) -> Self {
@@ -868,6 +889,7 @@ impl CreateDbClusterInputBuilder {
             deletion_protection: self.deletion_protection,
             global_cluster_identifier: self.global_cluster_identifier,
             storage_type: self.storage_type,
+            serverless_v2_scaling_configuration: self.serverless_v2_scaling_configuration,
             manage_master_user_password: self.manage_master_user_password,
             master_user_secret_kms_key_id: self.master_user_secret_kms_key_id,
         })

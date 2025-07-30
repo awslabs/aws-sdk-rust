@@ -14,6 +14,18 @@ pub struct LoRaWanServiceProfile {
     pub pr_allowed: bool,
     /// <p>The RAAllowed value that describes whether roaming activation is allowed.</p>
     pub ra_allowed: bool,
+    /// <p>The Transmit Power Index minimum.</p>
+    /// <p>Default: <code>0</code></p>
+    pub tx_power_index_min: ::std::option::Option<i32>,
+    /// <p>The Transmit Power Index maximum.</p>
+    /// <p>Default: <code>15</code></p>
+    pub tx_power_index_max: ::std::option::Option<i32>,
+    /// <p>The minimum number of transmissions.</p>
+    /// <p>Default: <code>0</code></p>
+    pub nb_trans_min: ::std::option::Option<i32>,
+    /// <p>The maximum number of transmissions.</p>
+    /// <p>Default: <code>3</code></p>
+    pub nb_trans_max: ::std::option::Option<i32>,
 }
 impl LoRaWanServiceProfile {
     /// <p>The AddGWMetaData value.</p>
@@ -36,6 +48,26 @@ impl LoRaWanServiceProfile {
     pub fn ra_allowed(&self) -> bool {
         self.ra_allowed
     }
+    /// <p>The Transmit Power Index minimum.</p>
+    /// <p>Default: <code>0</code></p>
+    pub fn tx_power_index_min(&self) -> ::std::option::Option<i32> {
+        self.tx_power_index_min
+    }
+    /// <p>The Transmit Power Index maximum.</p>
+    /// <p>Default: <code>15</code></p>
+    pub fn tx_power_index_max(&self) -> ::std::option::Option<i32> {
+        self.tx_power_index_max
+    }
+    /// <p>The minimum number of transmissions.</p>
+    /// <p>Default: <code>0</code></p>
+    pub fn nb_trans_min(&self) -> ::std::option::Option<i32> {
+        self.nb_trans_min
+    }
+    /// <p>The maximum number of transmissions.</p>
+    /// <p>Default: <code>3</code></p>
+    pub fn nb_trans_max(&self) -> ::std::option::Option<i32> {
+        self.nb_trans_max
+    }
 }
 impl LoRaWanServiceProfile {
     /// Creates a new builder-style object to manufacture [`LoRaWanServiceProfile`](crate::types::LoRaWanServiceProfile).
@@ -53,6 +85,10 @@ pub struct LoRaWanServiceProfileBuilder {
     pub(crate) dr_max: ::std::option::Option<i32>,
     pub(crate) pr_allowed: ::std::option::Option<bool>,
     pub(crate) ra_allowed: ::std::option::Option<bool>,
+    pub(crate) tx_power_index_min: ::std::option::Option<i32>,
+    pub(crate) tx_power_index_max: ::std::option::Option<i32>,
+    pub(crate) nb_trans_min: ::std::option::Option<i32>,
+    pub(crate) nb_trans_max: ::std::option::Option<i32>,
 }
 impl LoRaWanServiceProfileBuilder {
     /// <p>The AddGWMetaData value.</p>
@@ -125,6 +161,74 @@ impl LoRaWanServiceProfileBuilder {
     pub fn get_ra_allowed(&self) -> &::std::option::Option<bool> {
         &self.ra_allowed
     }
+    /// <p>The Transmit Power Index minimum.</p>
+    /// <p>Default: <code>0</code></p>
+    pub fn tx_power_index_min(mut self, input: i32) -> Self {
+        self.tx_power_index_min = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Transmit Power Index minimum.</p>
+    /// <p>Default: <code>0</code></p>
+    pub fn set_tx_power_index_min(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.tx_power_index_min = input;
+        self
+    }
+    /// <p>The Transmit Power Index minimum.</p>
+    /// <p>Default: <code>0</code></p>
+    pub fn get_tx_power_index_min(&self) -> &::std::option::Option<i32> {
+        &self.tx_power_index_min
+    }
+    /// <p>The Transmit Power Index maximum.</p>
+    /// <p>Default: <code>15</code></p>
+    pub fn tx_power_index_max(mut self, input: i32) -> Self {
+        self.tx_power_index_max = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Transmit Power Index maximum.</p>
+    /// <p>Default: <code>15</code></p>
+    pub fn set_tx_power_index_max(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.tx_power_index_max = input;
+        self
+    }
+    /// <p>The Transmit Power Index maximum.</p>
+    /// <p>Default: <code>15</code></p>
+    pub fn get_tx_power_index_max(&self) -> &::std::option::Option<i32> {
+        &self.tx_power_index_max
+    }
+    /// <p>The minimum number of transmissions.</p>
+    /// <p>Default: <code>0</code></p>
+    pub fn nb_trans_min(mut self, input: i32) -> Self {
+        self.nb_trans_min = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The minimum number of transmissions.</p>
+    /// <p>Default: <code>0</code></p>
+    pub fn set_nb_trans_min(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.nb_trans_min = input;
+        self
+    }
+    /// <p>The minimum number of transmissions.</p>
+    /// <p>Default: <code>0</code></p>
+    pub fn get_nb_trans_min(&self) -> &::std::option::Option<i32> {
+        &self.nb_trans_min
+    }
+    /// <p>The maximum number of transmissions.</p>
+    /// <p>Default: <code>3</code></p>
+    pub fn nb_trans_max(mut self, input: i32) -> Self {
+        self.nb_trans_max = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The maximum number of transmissions.</p>
+    /// <p>Default: <code>3</code></p>
+    pub fn set_nb_trans_max(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.nb_trans_max = input;
+        self
+    }
+    /// <p>The maximum number of transmissions.</p>
+    /// <p>Default: <code>3</code></p>
+    pub fn get_nb_trans_max(&self) -> &::std::option::Option<i32> {
+        &self.nb_trans_max
+    }
     /// Consumes the builder and constructs a [`LoRaWanServiceProfile`](crate::types::LoRaWanServiceProfile).
     pub fn build(self) -> crate::types::LoRaWanServiceProfile {
         crate::types::LoRaWanServiceProfile {
@@ -133,6 +237,10 @@ impl LoRaWanServiceProfileBuilder {
             dr_max: self.dr_max,
             pr_allowed: self.pr_allowed.unwrap_or_default(),
             ra_allowed: self.ra_allowed.unwrap_or_default(),
+            tx_power_index_min: self.tx_power_index_min,
+            tx_power_index_max: self.tx_power_index_max,
+            nb_trans_min: self.nb_trans_min,
+            nb_trans_max: self.nb_trans_max,
         }
     }
 }

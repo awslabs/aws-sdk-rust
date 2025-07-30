@@ -230,6 +230,19 @@ pub fn de_route(
                 builder = builder.set_odb_network_arn(var_17);
             }
             ,
+            s if s.matches("ipAddress") /* IpAddress com.amazonaws.ec2#Route$IpAddress */ =>  {
+                let var_18 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_ip_address(var_18);
+            }
+            ,
             _ => {}
         }
     }

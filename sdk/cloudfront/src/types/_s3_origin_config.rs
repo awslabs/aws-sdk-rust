@@ -15,6 +15,9 @@ pub struct S3OriginConfig {
     /// <p>To replace the origin access identity, update the distribution configuration and specify the new origin access identity.</p>
     /// <p>For more information about the origin access identity, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     pub origin_access_identity: ::std::string::String,
+    /// <p>Specifies how long, in seconds, CloudFront waits for a response from the origin. This is also known as the <i>origin response timeout</i>. The minimum timeout is 1 second, the maximum is 120 seconds, and the default (if you don't specify otherwise) is 30 seconds.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DownloadDistValuesOrigin.html#DownloadDistValuesOriginResponseTimeout">Response timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    pub origin_read_timeout: ::std::option::Option<i32>,
 }
 impl S3OriginConfig {
     /// <note>
@@ -31,6 +34,11 @@ impl S3OriginConfig {
         use std::ops::Deref;
         self.origin_access_identity.deref()
     }
+    /// <p>Specifies how long, in seconds, CloudFront waits for a response from the origin. This is also known as the <i>origin response timeout</i>. The minimum timeout is 1 second, the maximum is 120 seconds, and the default (if you don't specify otherwise) is 30 seconds.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DownloadDistValuesOrigin.html#DownloadDistValuesOriginResponseTimeout">Response timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    pub fn origin_read_timeout(&self) -> ::std::option::Option<i32> {
+        self.origin_read_timeout
+    }
 }
 impl S3OriginConfig {
     /// Creates a new builder-style object to manufacture [`S3OriginConfig`](crate::types::S3OriginConfig).
@@ -44,6 +52,7 @@ impl S3OriginConfig {
 #[non_exhaustive]
 pub struct S3OriginConfigBuilder {
     pub(crate) origin_access_identity: ::std::option::Option<::std::string::String>,
+    pub(crate) origin_read_timeout: ::std::option::Option<i32>,
 }
 impl S3OriginConfigBuilder {
     /// <note>
@@ -88,10 +97,28 @@ impl S3OriginConfigBuilder {
     pub fn get_origin_access_identity(&self) -> &::std::option::Option<::std::string::String> {
         &self.origin_access_identity
     }
+    /// <p>Specifies how long, in seconds, CloudFront waits for a response from the origin. This is also known as the <i>origin response timeout</i>. The minimum timeout is 1 second, the maximum is 120 seconds, and the default (if you don't specify otherwise) is 30 seconds.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DownloadDistValuesOrigin.html#DownloadDistValuesOriginResponseTimeout">Response timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    pub fn origin_read_timeout(mut self, input: i32) -> Self {
+        self.origin_read_timeout = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies how long, in seconds, CloudFront waits for a response from the origin. This is also known as the <i>origin response timeout</i>. The minimum timeout is 1 second, the maximum is 120 seconds, and the default (if you don't specify otherwise) is 30 seconds.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DownloadDistValuesOrigin.html#DownloadDistValuesOriginResponseTimeout">Response timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    pub fn set_origin_read_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.origin_read_timeout = input;
+        self
+    }
+    /// <p>Specifies how long, in seconds, CloudFront waits for a response from the origin. This is also known as the <i>origin response timeout</i>. The minimum timeout is 1 second, the maximum is 120 seconds, and the default (if you don't specify otherwise) is 30 seconds.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DownloadDistValuesOrigin.html#DownloadDistValuesOriginResponseTimeout">Response timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    pub fn get_origin_read_timeout(&self) -> &::std::option::Option<i32> {
+        &self.origin_read_timeout
+    }
     /// Consumes the builder and constructs a [`S3OriginConfig`](crate::types::S3OriginConfig).
     pub fn build(self) -> crate::types::S3OriginConfig {
         crate::types::S3OriginConfig {
             origin_access_identity: self.origin_access_identity.unwrap_or_default(),
+            origin_read_timeout: self.origin_read_timeout,
         }
     }
 }

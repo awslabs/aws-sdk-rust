@@ -62,6 +62,8 @@ pub struct RestoreDbClusterFromSnapshotInput {
     /// <p><i>Type:</i> String. &nbsp; &nbsp; &nbsp; <i>Required:</i> No.</p>
     /// <p>If this argument is omitted, the default DB cluster parameter group is used. If supplied, must match the name of an existing default DB cluster parameter group. The string must consist of from 1 to 255 letters, numbers or hyphens. Its first character must be a letter, and it cannot end with a hyphen or contain two consecutive hyphens.</p>
     pub db_cluster_parameter_group_name: ::std::option::Option<::std::string::String>,
+    /// <p>Contains the scaling configuration of an Amazon DocumentDB Serverless cluster.</p>
+    pub serverless_v2_scaling_configuration: ::std::option::Option<crate::types::ServerlessV2ScalingConfiguration>,
     /// <p>The storage type to associate with the DB cluster.</p>
     /// <p>For information on storage types for Amazon DocumentDB clusters, see Cluster storage configurations in the <i>Amazon DocumentDB Developer Guide</i>.</p>
     /// <p>Valid values for storage type - <code>standard | iopt1</code></p>
@@ -161,6 +163,10 @@ impl RestoreDbClusterFromSnapshotInput {
     pub fn db_cluster_parameter_group_name(&self) -> ::std::option::Option<&str> {
         self.db_cluster_parameter_group_name.as_deref()
     }
+    /// <p>Contains the scaling configuration of an Amazon DocumentDB Serverless cluster.</p>
+    pub fn serverless_v2_scaling_configuration(&self) -> ::std::option::Option<&crate::types::ServerlessV2ScalingConfiguration> {
+        self.serverless_v2_scaling_configuration.as_ref()
+    }
     /// <p>The storage type to associate with the DB cluster.</p>
     /// <p>For information on storage types for Amazon DocumentDB clusters, see Cluster storage configurations in the <i>Amazon DocumentDB Developer Guide</i>.</p>
     /// <p>Valid values for storage type - <code>standard | iopt1</code></p>
@@ -193,6 +199,7 @@ pub struct RestoreDbClusterFromSnapshotInputBuilder {
     pub(crate) enable_cloudwatch_logs_exports: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) deletion_protection: ::std::option::Option<bool>,
     pub(crate) db_cluster_parameter_group_name: ::std::option::Option<::std::string::String>,
+    pub(crate) serverless_v2_scaling_configuration: ::std::option::Option<crate::types::ServerlessV2ScalingConfiguration>,
     pub(crate) storage_type: ::std::option::Option<::std::string::String>,
 }
 impl RestoreDbClusterFromSnapshotInputBuilder {
@@ -501,6 +508,20 @@ impl RestoreDbClusterFromSnapshotInputBuilder {
     pub fn get_db_cluster_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_cluster_parameter_group_name
     }
+    /// <p>Contains the scaling configuration of an Amazon DocumentDB Serverless cluster.</p>
+    pub fn serverless_v2_scaling_configuration(mut self, input: crate::types::ServerlessV2ScalingConfiguration) -> Self {
+        self.serverless_v2_scaling_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains the scaling configuration of an Amazon DocumentDB Serverless cluster.</p>
+    pub fn set_serverless_v2_scaling_configuration(mut self, input: ::std::option::Option<crate::types::ServerlessV2ScalingConfiguration>) -> Self {
+        self.serverless_v2_scaling_configuration = input;
+        self
+    }
+    /// <p>Contains the scaling configuration of an Amazon DocumentDB Serverless cluster.</p>
+    pub fn get_serverless_v2_scaling_configuration(&self) -> &::std::option::Option<crate::types::ServerlessV2ScalingConfiguration> {
+        &self.serverless_v2_scaling_configuration
+    }
     /// <p>The storage type to associate with the DB cluster.</p>
     /// <p>For information on storage types for Amazon DocumentDB clusters, see Cluster storage configurations in the <i>Amazon DocumentDB Developer Guide</i>.</p>
     /// <p>Valid values for storage type - <code>standard | iopt1</code></p>
@@ -545,6 +566,7 @@ impl RestoreDbClusterFromSnapshotInputBuilder {
             enable_cloudwatch_logs_exports: self.enable_cloudwatch_logs_exports,
             deletion_protection: self.deletion_protection,
             db_cluster_parameter_group_name: self.db_cluster_parameter_group_name,
+            serverless_v2_scaling_configuration: self.serverless_v2_scaling_configuration,
             storage_type: self.storage_type,
         })
     }

@@ -174,6 +174,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "HybridSettings" => {
+                            builder = builder.set_hybrid_settings(
+                                crate::protocol_serde::shape_hybrid_settings_description::de_hybrid_settings_description(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

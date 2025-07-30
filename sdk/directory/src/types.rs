@@ -7,6 +7,10 @@ pub use crate::types::_radius_settings::RadiusSettings;
 
 pub use crate::types::_radius_authentication_protocol::RadiusAuthenticationProtocol;
 
+pub use crate::types::_hybrid_customer_instances_settings::HybridCustomerInstancesSettings;
+
+pub use crate::types::_hybrid_administrator_account_update::HybridAdministratorAccountUpdate;
+
 pub use crate::types::_os_update_settings::OsUpdateSettings;
 
 pub use crate::types::_os_version::OsVersion;
@@ -16,6 +20,10 @@ pub use crate::types::_update_type::UpdateType;
 pub use crate::types::_unshare_target::UnshareTarget;
 
 pub use crate::types::_target_type::TargetType;
+
+pub use crate::types::_assessment_configuration::AssessmentConfiguration;
+
+pub use crate::types::_directory_vpc_settings::DirectoryVpcSettings;
 
 pub use crate::types::_share_method::ShareMethod;
 
@@ -40,6 +48,8 @@ pub use crate::types::_ip_route_status_msg::IpRouteStatusMsg;
 pub use crate::types::_certificate_info::CertificateInfo;
 
 pub use crate::types::_certificate_state::CertificateState;
+
+pub use crate::types::_assessment_summary::AssessmentSummary;
 
 pub use crate::types::_snapshot_limits::SnapshotLimits;
 
@@ -79,8 +89,6 @@ pub use crate::types::_directory_configuration_status::DirectoryConfigurationSta
 
 pub use crate::types::_region_description::RegionDescription;
 
-pub use crate::types::_directory_vpc_settings::DirectoryVpcSettings;
-
 pub use crate::types::_directory_stage::DirectoryStage;
 
 pub use crate::types::_region_type::RegionType;
@@ -88,6 +96,14 @@ pub use crate::types::_region_type::RegionType;
 pub use crate::types::_ldaps_setting_info::LdapsSettingInfo;
 
 pub use crate::types::_ldaps_status::LdapsStatus;
+
+pub use crate::types::_hybrid_update_activities::HybridUpdateActivities;
+
+pub use crate::types::_hybrid_update_info_entry::HybridUpdateInfoEntry;
+
+pub use crate::types::_hybrid_update_value::HybridUpdateValue;
+
+pub use crate::types::_hybrid_update_type::HybridUpdateType;
 
 pub use crate::types::_event_topic::EventTopic;
 
@@ -100,6 +116,8 @@ pub use crate::types::_domain_controller_status::DomainControllerStatus;
 pub use crate::types::_data_access_status::DataAccessStatus;
 
 pub use crate::types::_directory_description::DirectoryDescription;
+
+pub use crate::types::_hybrid_settings_description::HybridSettingsDescription;
 
 pub use crate::types::_regions_info::RegionsInfo;
 
@@ -127,6 +145,12 @@ pub use crate::types::_client_authentication_status::ClientAuthenticationStatus;
 
 pub use crate::types::_certificate::Certificate;
 
+pub use crate::types::_assessment_report::AssessmentReport;
+
+pub use crate::types::_assessment_validation::AssessmentValidation;
+
+pub use crate::types::_assessment::Assessment;
+
 pub use crate::types::_computer::Computer;
 
 pub use crate::types::_attribute::Attribute;
@@ -134,6 +158,16 @@ pub use crate::types::_attribute::Attribute;
 pub use crate::types::_directory_connect_settings::DirectoryConnectSettings;
 
 pub use crate::types::_ip_route::IpRoute;
+
+mod _assessment;
+
+mod _assessment_configuration;
+
+mod _assessment_report;
+
+mod _assessment_summary;
+
+mod _assessment_validation;
 
 mod _attribute;
 
@@ -186,6 +220,20 @@ mod _domain_controller;
 mod _domain_controller_status;
 
 mod _event_topic;
+
+mod _hybrid_administrator_account_update;
+
+mod _hybrid_customer_instances_settings;
+
+mod _hybrid_settings_description;
+
+mod _hybrid_update_activities;
+
+mod _hybrid_update_info_entry;
+
+mod _hybrid_update_type;
+
+mod _hybrid_update_value;
 
 mod _ip_route;
 

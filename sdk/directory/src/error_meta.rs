@@ -3,6 +3,10 @@
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum Error {
+    /// <p>A directory assessment is automatically created when you create a hybrid directory. There are two types of assessments: <code>CUSTOMER</code> and <code>SYSTEM</code>. Your Amazon Web Services account has a limit of 100 <code>CUSTOMER</code> directory assessments.</p>
+    /// <p>If you attempt to create a hybrid directory; and you already have 100 <code>CUSTOMER</code> directory assessments;, you will encounter an error. Delete assessments to free up capacity before trying again.</p>
+    /// <p>You can request an increase to your <code>CUSTOMER</code> directory assessment quota by contacting customer support or delete existing CUSTOMER directory assessments; to free up capacity.</p>
+    AdAssessmentLimitExceededException(crate::types::error::AdAssessmentLimitExceededException),
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>An authentication error occurred.</p>
@@ -89,6 +93,7 @@ pub enum Error {
 impl ::std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
+            Error::AdAssessmentLimitExceededException(inner) => inner.fmt(f),
             Error::AccessDeniedException(inner) => inner.fmt(f),
             Error::AuthenticationFailedException(inner) => inner.fmt(f),
             Error::CertificateAlreadyExistsException(inner) => inner.fmt(f),
@@ -147,6 +152,7 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
     fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
         match self {
+            Self::AdAssessmentLimitExceededException(inner) => inner.meta(),
             Self::AccessDeniedException(inner) => inner.meta(),
             Self::AuthenticationFailedException(inner) => inner.meta(),
             Self::CertificateAlreadyExistsException(inner) => inner.meta(),
@@ -499,6 +505,40 @@ impl From<crate::operation::create_directory::CreateDirectoryError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_hybrid_ad::CreateHybridADError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_hybrid_ad::CreateHybridADError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_hybrid_ad::CreateHybridADError> for Error {
+    fn from(err: crate::operation::create_hybrid_ad::CreateHybridADError) -> Self {
+        match err {
+            crate::operation::create_hybrid_ad::CreateHybridADError::AdAssessmentLimitExceededException(inner) => {
+                Error::AdAssessmentLimitExceededException(inner)
+            }
+            crate::operation::create_hybrid_ad::CreateHybridADError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::create_hybrid_ad::CreateHybridADError::DirectoryLimitExceededException(inner) => {
+                Error::DirectoryLimitExceededException(inner)
+            }
+            crate::operation::create_hybrid_ad::CreateHybridADError::EntityDoesNotExistException(inner) => Error::EntityDoesNotExistException(inner),
+            crate::operation::create_hybrid_ad::CreateHybridADError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::create_hybrid_ad::CreateHybridADError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::create_hybrid_ad::CreateHybridADError::UnsupportedOperationException(inner) => {
+                Error::UnsupportedOperationException(inner)
+            }
+            crate::operation::create_hybrid_ad::CreateHybridADError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_log_subscription::CreateLogSubscriptionError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -620,6 +660,38 @@ impl From<crate::operation::create_trust::CreateTrustError> for Error {
             crate::operation::create_trust::CreateTrustError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::create_trust::CreateTrustError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
             crate::operation::create_trust::CreateTrustError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_ad_assessment::DeleteADAssessmentError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_ad_assessment::DeleteADAssessmentError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_ad_assessment::DeleteADAssessmentError> for Error {
+    fn from(err: crate::operation::delete_ad_assessment::DeleteADAssessmentError) -> Self {
+        match err {
+            crate::operation::delete_ad_assessment::DeleteADAssessmentError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::delete_ad_assessment::DeleteADAssessmentError::EntityDoesNotExistException(inner) => {
+                Error::EntityDoesNotExistException(inner)
+            }
+            crate::operation::delete_ad_assessment::DeleteADAssessmentError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::delete_ad_assessment::DeleteADAssessmentError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::delete_ad_assessment::DeleteADAssessmentError::UnsupportedOperationException(inner) => {
+                Error::UnsupportedOperationException(inner)
+            }
+            crate::operation::delete_ad_assessment::DeleteADAssessmentError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -838,6 +910,38 @@ impl From<crate::operation::deregister_event_topic::DeregisterEventTopicError> f
             }
             crate::operation::deregister_event_topic::DeregisterEventTopicError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::deregister_event_topic::DeregisterEventTopicError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_ad_assessment::DescribeADAssessmentError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_ad_assessment::DescribeADAssessmentError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_ad_assessment::DescribeADAssessmentError> for Error {
+    fn from(err: crate::operation::describe_ad_assessment::DescribeADAssessmentError) -> Self {
+        match err {
+            crate::operation::describe_ad_assessment::DescribeADAssessmentError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::describe_ad_assessment::DescribeADAssessmentError::EntityDoesNotExistException(inner) => {
+                Error::EntityDoesNotExistException(inner)
+            }
+            crate::operation::describe_ad_assessment::DescribeADAssessmentError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::describe_ad_assessment::DescribeADAssessmentError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::describe_ad_assessment::DescribeADAssessmentError::UnsupportedOperationException(inner) => {
+                Error::UnsupportedOperationException(inner)
+            }
+            crate::operation::describe_ad_assessment::DescribeADAssessmentError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1113,6 +1217,44 @@ impl From<crate::operation::describe_event_topics::DescribeEventTopicsError> for
             }
             crate::operation::describe_event_topics::DescribeEventTopicsError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::describe_event_topics::DescribeEventTopicsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_hybrid_ad_update::DescribeHybridADUpdateError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_hybrid_ad_update::DescribeHybridADUpdateError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_hybrid_ad_update::DescribeHybridADUpdateError> for Error {
+    fn from(err: crate::operation::describe_hybrid_ad_update::DescribeHybridADUpdateError) -> Self {
+        match err {
+            crate::operation::describe_hybrid_ad_update::DescribeHybridADUpdateError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::describe_hybrid_ad_update::DescribeHybridADUpdateError::DirectoryDoesNotExistException(inner) => {
+                Error::DirectoryDoesNotExistException(inner)
+            }
+            crate::operation::describe_hybrid_ad_update::DescribeHybridADUpdateError::InvalidNextTokenException(inner) => {
+                Error::InvalidNextTokenException(inner)
+            }
+            crate::operation::describe_hybrid_ad_update::DescribeHybridADUpdateError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::describe_hybrid_ad_update::DescribeHybridADUpdateError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::describe_hybrid_ad_update::DescribeHybridADUpdateError::UnsupportedOperationException(inner) => {
+                Error::UnsupportedOperationException(inner)
+            }
+            crate::operation::describe_hybrid_ad_update::DescribeHybridADUpdateError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1729,6 +1871,38 @@ impl From<crate::operation::get_snapshot_limits::GetSnapshotLimitsError> for Err
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_ad_assessments::ListADAssessmentsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_ad_assessments::ListADAssessmentsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_ad_assessments::ListADAssessmentsError> for Error {
+    fn from(err: crate::operation::list_ad_assessments::ListADAssessmentsError) -> Self {
+        match err {
+            crate::operation::list_ad_assessments::ListADAssessmentsError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::list_ad_assessments::ListADAssessmentsError::DirectoryDoesNotExistException(inner) => {
+                Error::DirectoryDoesNotExistException(inner)
+            }
+            crate::operation::list_ad_assessments::ListADAssessmentsError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::list_ad_assessments::ListADAssessmentsError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::list_ad_assessments::ListADAssessmentsError::UnsupportedOperationException(inner) => {
+                Error::UnsupportedOperationException(inner)
+            }
+            crate::operation::list_ad_assessments::ListADAssessmentsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_certificates::ListCertificatesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2170,6 +2344,41 @@ impl From<crate::operation::share_directory::ShareDirectoryError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_ad_assessment::StartADAssessmentError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_ad_assessment::StartADAssessmentError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_ad_assessment::StartADAssessmentError> for Error {
+    fn from(err: crate::operation::start_ad_assessment::StartADAssessmentError) -> Self {
+        match err {
+            crate::operation::start_ad_assessment::StartADAssessmentError::AdAssessmentLimitExceededException(inner) => {
+                Error::AdAssessmentLimitExceededException(inner)
+            }
+            crate::operation::start_ad_assessment::StartADAssessmentError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::start_ad_assessment::StartADAssessmentError::DirectoryDoesNotExistException(inner) => {
+                Error::DirectoryDoesNotExistException(inner)
+            }
+            crate::operation::start_ad_assessment::StartADAssessmentError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::start_ad_assessment::StartADAssessmentError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::start_ad_assessment::StartADAssessmentError::UnsupportedOperationException(inner) => {
+                Error::UnsupportedOperationException(inner)
+            }
+            crate::operation::start_ad_assessment::StartADAssessmentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_schema_extension::StartSchemaExtensionError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2314,6 +2523,39 @@ impl From<crate::operation::update_directory_setup::UpdateDirectorySetupError> f
                 Error::UnsupportedOperationException(inner)
             }
             crate::operation::update_directory_setup::UpdateDirectorySetupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_hybrid_ad::UpdateHybridADError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_hybrid_ad::UpdateHybridADError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_hybrid_ad::UpdateHybridADError> for Error {
+    fn from(err: crate::operation::update_hybrid_ad::UpdateHybridADError) -> Self {
+        match err {
+            crate::operation::update_hybrid_ad::UpdateHybridADError::AdAssessmentLimitExceededException(inner) => {
+                Error::AdAssessmentLimitExceededException(inner)
+            }
+            crate::operation::update_hybrid_ad::UpdateHybridADError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::update_hybrid_ad::UpdateHybridADError::DirectoryDoesNotExistException(inner) => {
+                Error::DirectoryDoesNotExistException(inner)
+            }
+            crate::operation::update_hybrid_ad::UpdateHybridADError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::update_hybrid_ad::UpdateHybridADError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::update_hybrid_ad::UpdateHybridADError::UnsupportedOperationException(inner) => {
+                Error::UnsupportedOperationException(inner)
+            }
+            crate::operation::update_hybrid_ad::UpdateHybridADError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2483,9 +2725,22 @@ impl From<crate::operation::verify_trust::VerifyTrustError> for Error {
         }
     }
 }
+impl<O, E> ::std::convert::From<::aws_smithy_runtime_api::client::waiters::error::WaiterError<O, E>> for Error
+where
+    O: ::std::fmt::Debug + ::std::marker::Send + ::std::marker::Sync + 'static,
+    E: ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::waiters::error::WaiterError<O, E>) -> Self {
+        Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+            meta: ::std::default::Default::default(),
+            source: err.into(),
+        })
+    }
+}
 impl ::std::error::Error for Error {
     fn source(&self) -> std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Error::AdAssessmentLimitExceededException(inner) => inner.source(),
             Error::AccessDeniedException(inner) => inner.source(),
             Error::AuthenticationFailedException(inner) => inner.source(),
             Error::CertificateAlreadyExistsException(inner) => inner.source(),
@@ -2530,6 +2785,7 @@ impl ::std::error::Error for Error {
 impl ::aws_types::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {
+            Self::AdAssessmentLimitExceededException(e) => e.request_id(),
             Self::AccessDeniedException(e) => e.request_id(),
             Self::AuthenticationFailedException(e) => e.request_id(),
             Self::CertificateAlreadyExistsException(e) => e.request_id(),

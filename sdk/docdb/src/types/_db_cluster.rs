@@ -70,11 +70,12 @@ pub struct DbCluster {
     /// <p>Specifies whether this cluster can be deleted. If <code>DeletionProtection</code> is enabled, the cluster cannot be deleted unless it is modified and <code>DeletionProtection</code> is disabled. <code>DeletionProtection</code> protects clusters from being accidentally deleted.</p>
     pub deletion_protection: ::std::option::Option<bool>,
     /// <p>Storage type associated with your cluster</p>
-    /// <p>Storage type associated with your cluster</p>
     /// <p>For information on storage types for Amazon DocumentDB clusters, see Cluster storage configurations in the <i>Amazon DocumentDB Developer Guide</i>.</p>
     /// <p>Valid values for storage type - <code>standard | iopt1</code></p>
     /// <p>Default value is <code>standard </code></p>
     pub storage_type: ::std::option::Option<::std::string::String>,
+    /// <p>The scaling configuration of an Amazon DocumentDB Serverless cluster.</p>
+    pub serverless_v2_scaling_configuration: ::std::option::Option<crate::types::ServerlessV2ScalingConfigurationInfo>,
     /// <p>The secret managed by Amazon DocumentDB in Amazon Web Services Secrets Manager for the master user password.</p>
     pub master_user_secret: ::std::option::Option<crate::types::ClusterMasterUserSecret>,
 }
@@ -221,12 +222,15 @@ impl DbCluster {
         self.deletion_protection
     }
     /// <p>Storage type associated with your cluster</p>
-    /// <p>Storage type associated with your cluster</p>
     /// <p>For information on storage types for Amazon DocumentDB clusters, see Cluster storage configurations in the <i>Amazon DocumentDB Developer Guide</i>.</p>
     /// <p>Valid values for storage type - <code>standard | iopt1</code></p>
     /// <p>Default value is <code>standard </code></p>
     pub fn storage_type(&self) -> ::std::option::Option<&str> {
         self.storage_type.as_deref()
+    }
+    /// <p>The scaling configuration of an Amazon DocumentDB Serverless cluster.</p>
+    pub fn serverless_v2_scaling_configuration(&self) -> ::std::option::Option<&crate::types::ServerlessV2ScalingConfigurationInfo> {
+        self.serverless_v2_scaling_configuration.as_ref()
     }
     /// <p>The secret managed by Amazon DocumentDB in Amazon Web Services Secrets Manager for the master user password.</p>
     pub fn master_user_secret(&self) -> ::std::option::Option<&crate::types::ClusterMasterUserSecret> {
@@ -277,6 +281,7 @@ pub struct DbClusterBuilder {
     pub(crate) enabled_cloudwatch_logs_exports: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) deletion_protection: ::std::option::Option<bool>,
     pub(crate) storage_type: ::std::option::Option<::std::string::String>,
+    pub(crate) serverless_v2_scaling_configuration: ::std::option::Option<crate::types::ServerlessV2ScalingConfigurationInfo>,
     pub(crate) master_user_secret: ::std::option::Option<crate::types::ClusterMasterUserSecret>,
 }
 impl DbClusterBuilder {
@@ -768,7 +773,6 @@ impl DbClusterBuilder {
         &self.deletion_protection
     }
     /// <p>Storage type associated with your cluster</p>
-    /// <p>Storage type associated with your cluster</p>
     /// <p>For information on storage types for Amazon DocumentDB clusters, see Cluster storage configurations in the <i>Amazon DocumentDB Developer Guide</i>.</p>
     /// <p>Valid values for storage type - <code>standard | iopt1</code></p>
     /// <p>Default value is <code>standard </code></p>
@@ -776,7 +780,6 @@ impl DbClusterBuilder {
         self.storage_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Storage type associated with your cluster</p>
     /// <p>Storage type associated with your cluster</p>
     /// <p>For information on storage types for Amazon DocumentDB clusters, see Cluster storage configurations in the <i>Amazon DocumentDB Developer Guide</i>.</p>
     /// <p>Valid values for storage type - <code>standard | iopt1</code></p>
@@ -786,12 +789,28 @@ impl DbClusterBuilder {
         self
     }
     /// <p>Storage type associated with your cluster</p>
-    /// <p>Storage type associated with your cluster</p>
     /// <p>For information on storage types for Amazon DocumentDB clusters, see Cluster storage configurations in the <i>Amazon DocumentDB Developer Guide</i>.</p>
     /// <p>Valid values for storage type - <code>standard | iopt1</code></p>
     /// <p>Default value is <code>standard </code></p>
     pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.storage_type
+    }
+    /// <p>The scaling configuration of an Amazon DocumentDB Serverless cluster.</p>
+    pub fn serverless_v2_scaling_configuration(mut self, input: crate::types::ServerlessV2ScalingConfigurationInfo) -> Self {
+        self.serverless_v2_scaling_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The scaling configuration of an Amazon DocumentDB Serverless cluster.</p>
+    pub fn set_serverless_v2_scaling_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::ServerlessV2ScalingConfigurationInfo>,
+    ) -> Self {
+        self.serverless_v2_scaling_configuration = input;
+        self
+    }
+    /// <p>The scaling configuration of an Amazon DocumentDB Serverless cluster.</p>
+    pub fn get_serverless_v2_scaling_configuration(&self) -> &::std::option::Option<crate::types::ServerlessV2ScalingConfigurationInfo> {
+        &self.serverless_v2_scaling_configuration
     }
     /// <p>The secret managed by Amazon DocumentDB in Amazon Web Services Secrets Manager for the master user password.</p>
     pub fn master_user_secret(mut self, input: crate::types::ClusterMasterUserSecret) -> Self {
@@ -843,6 +862,7 @@ impl DbClusterBuilder {
             enabled_cloudwatch_logs_exports: self.enabled_cloudwatch_logs_exports,
             deletion_protection: self.deletion_protection,
             storage_type: self.storage_type,
+            serverless_v2_scaling_configuration: self.serverless_v2_scaling_configuration,
             master_user_secret: self.master_user_secret,
         }
     }
