@@ -766,6 +766,15 @@ pub(crate) fn rule_based_properties_correct_errors(
     builder
 }
 
+pub(crate) fn rule_condition_properties_correct_errors(
+    mut builder: crate::types::builders::RuleConditionPropertiesBuilder,
+) -> crate::types::builders::RuleConditionPropertiesBuilder {
+    if builder.rules.is_none() {
+        builder.rules = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn schema_input_attribute_correct_errors(
     mut builder: crate::types::builders::SchemaInputAttributeBuilder,
 ) -> crate::types::builders::SchemaInputAttributeBuilder {
@@ -865,6 +874,18 @@ pub(crate) fn rule_correct_errors(mut builder: crate::types::builders::RuleBuild
     }
     if builder.matching_keys.is_none() {
         builder.matching_keys = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn rule_condition_correct_errors(
+    mut builder: crate::types::builders::RuleConditionBuilder,
+) -> crate::types::builders::RuleConditionBuilder {
+    if builder.rule_name.is_none() {
+        builder.rule_name = Some(Default::default())
+    }
+    if builder.condition.is_none() {
+        builder.condition = Some(Default::default())
     }
     builder
 }

@@ -37,6 +37,24 @@ pub use crate::types::_trust_store::TrustStore;
 
 pub use crate::types::_trust_store_summary::TrustStoreSummary;
 
+pub use crate::types::_session_logger::SessionLogger;
+
+pub use crate::types::_log_configuration::LogConfiguration;
+
+pub use crate::types::_s3_log_configuration::S3LogConfiguration;
+
+pub use crate::types::_folder_structure::FolderStructure;
+
+pub use crate::types::_log_file_format::LogFileFormat;
+
+pub use crate::types::_event_filter::EventFilter;
+
+pub use crate::types::_event::Event;
+
+pub use crate::types::_unit::Unit;
+
+pub use crate::types::_session_logger_summary::SessionLoggerSummary;
+
 pub use crate::types::_portal::Portal;
 
 pub use crate::types::_instance_type::InstanceType;
@@ -117,6 +135,12 @@ mod _data_protection_settings_summary;
 
 mod _enabled_type;
 
+mod _event;
+
+mod _event_filter;
+
+mod _folder_structure;
+
 mod _identity_provider;
 
 mod _identity_provider_summary;
@@ -134,6 +158,10 @@ mod _ip_access_settings;
 mod _ip_access_settings_summary;
 
 mod _ip_rule;
+
+mod _log_configuration;
+
+mod _log_file_format;
 
 mod _max_display_resolution;
 
@@ -153,7 +181,13 @@ mod _redaction_place_holder_type;
 
 mod _renderer_type;
 
+mod _s3_log_configuration;
+
 mod _session;
+
+mod _session_logger;
+
+mod _session_logger_summary;
 
 mod _session_sort_by;
 
@@ -172,6 +206,8 @@ mod _toolbar_type;
 mod _trust_store;
 
 mod _trust_store_summary;
+
+mod _unit;
 
 mod _user_access_logging_settings;
 

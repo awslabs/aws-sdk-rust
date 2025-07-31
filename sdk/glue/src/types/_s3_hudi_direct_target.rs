@@ -22,6 +22,8 @@ pub struct S3HudiDirectTarget {
     pub additional_options: ::std::collections::HashMap<::std::string::String, ::std::string::String>,
     /// <p>A policy that specifies update behavior for the crawler.</p>
     pub schema_change_policy: ::std::option::Option<crate::types::DirectSchemaChangePolicy>,
+    /// <p>Specifies whether to automatically enable data quality evaluation for the S3 Hudi direct target. When set to <code>true</code>, data quality checks are performed automatically during the write operation.</p>
+    pub auto_data_quality: ::std::option::Option<crate::types::AutoDataQuality>,
 }
 impl S3HudiDirectTarget {
     /// <p>The name of the data target.</p>
@@ -65,6 +67,10 @@ impl S3HudiDirectTarget {
     pub fn schema_change_policy(&self) -> ::std::option::Option<&crate::types::DirectSchemaChangePolicy> {
         self.schema_change_policy.as_ref()
     }
+    /// <p>Specifies whether to automatically enable data quality evaluation for the S3 Hudi direct target. When set to <code>true</code>, data quality checks are performed automatically during the write operation.</p>
+    pub fn auto_data_quality(&self) -> ::std::option::Option<&crate::types::AutoDataQuality> {
+        self.auto_data_quality.as_ref()
+    }
 }
 impl S3HudiDirectTarget {
     /// Creates a new builder-style object to manufacture [`S3HudiDirectTarget`](crate::types::S3HudiDirectTarget).
@@ -86,6 +92,7 @@ pub struct S3HudiDirectTargetBuilder {
     pub(crate) format: ::std::option::Option<crate::types::TargetFormat>,
     pub(crate) additional_options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) schema_change_policy: ::std::option::Option<crate::types::DirectSchemaChangePolicy>,
+    pub(crate) auto_data_quality: ::std::option::Option<crate::types::AutoDataQuality>,
 }
 impl S3HudiDirectTargetBuilder {
     /// <p>The name of the data target.</p>
@@ -243,6 +250,20 @@ impl S3HudiDirectTargetBuilder {
     pub fn get_schema_change_policy(&self) -> &::std::option::Option<crate::types::DirectSchemaChangePolicy> {
         &self.schema_change_policy
     }
+    /// <p>Specifies whether to automatically enable data quality evaluation for the S3 Hudi direct target. When set to <code>true</code>, data quality checks are performed automatically during the write operation.</p>
+    pub fn auto_data_quality(mut self, input: crate::types::AutoDataQuality) -> Self {
+        self.auto_data_quality = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to automatically enable data quality evaluation for the S3 Hudi direct target. When set to <code>true</code>, data quality checks are performed automatically during the write operation.</p>
+    pub fn set_auto_data_quality(mut self, input: ::std::option::Option<crate::types::AutoDataQuality>) -> Self {
+        self.auto_data_quality = input;
+        self
+    }
+    /// <p>Specifies whether to automatically enable data quality evaluation for the S3 Hudi direct target. When set to <code>true</code>, data quality checks are performed automatically during the write operation.</p>
+    pub fn get_auto_data_quality(&self) -> &::std::option::Option<crate::types::AutoDataQuality> {
+        &self.auto_data_quality
+    }
     /// Consumes the builder and constructs a [`S3HudiDirectTarget`](crate::types::S3HudiDirectTarget).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::S3HudiDirectTargetBuilder::name)
@@ -292,6 +313,7 @@ impl S3HudiDirectTargetBuilder {
                 )
             })?,
             schema_change_policy: self.schema_change_policy,
+            auto_data_quality: self.auto_data_quality,
         })
     }
 }

@@ -59,6 +59,16 @@ pub(crate) fn reflens_list_portals_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_session_loggers_output_output_next_token(
+    input: &crate::operation::list_session_loggers::ListSessionLoggersOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_sessions_output_output_next_token(
     input: &crate::operation::list_sessions::ListSessionsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -113,6 +123,13 @@ pub(crate) fn lens_list_data_protection_settings_output_output_data_protection_s
     input: crate::operation::list_data_protection_settings::ListDataProtectionSettingsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DataProtectionSettingsSummary>> {
     let input = input.data_protection_settings?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_session_loggers_output_output_session_loggers(
+    input: crate::operation::list_session_loggers::ListSessionLoggersOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::SessionLoggerSummary>> {
+    let input = input.session_loggers?;
     ::std::option::Option::Some(input)
 }
 

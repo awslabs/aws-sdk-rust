@@ -607,6 +607,75 @@ impl From<crate::operation::create_multi_region_endpoint::CreateMultiRegionEndpo
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_tenant::CreateTenantError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_tenant::CreateTenantError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_tenant::CreateTenantError> for Error {
+    fn from(err: crate::operation::create_tenant::CreateTenantError) -> Self {
+        match err {
+            crate::operation::create_tenant::CreateTenantError::AlreadyExistsException(inner) => Error::AlreadyExistsException(inner),
+            crate::operation::create_tenant::CreateTenantError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::create_tenant::CreateTenantError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::create_tenant::CreateTenantError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::create_tenant::CreateTenantError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_tenant_resource_association::CreateTenantResourceAssociationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_tenant_resource_association::CreateTenantResourceAssociationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_tenant_resource_association::CreateTenantResourceAssociationError> for Error {
+    fn from(err: crate::operation::create_tenant_resource_association::CreateTenantResourceAssociationError) -> Self {
+        match err {
+            crate::operation::create_tenant_resource_association::CreateTenantResourceAssociationError::AlreadyExistsException(inner) => {
+                Error::AlreadyExistsException(inner)
+            }
+            crate::operation::create_tenant_resource_association::CreateTenantResourceAssociationError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::create_tenant_resource_association::CreateTenantResourceAssociationError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::create_tenant_resource_association::CreateTenantResourceAssociationError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::create_tenant_resource_association::CreateTenantResourceAssociationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_configuration_set::DeleteConfigurationSetError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -960,6 +1029,71 @@ impl From<crate::operation::delete_suppressed_destination::DeleteSuppressedDesti
                 Error::TooManyRequestsException(inner)
             }
             crate::operation::delete_suppressed_destination::DeleteSuppressedDestinationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_tenant::DeleteTenantError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_tenant::DeleteTenantError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_tenant::DeleteTenantError> for Error {
+    fn from(err: crate::operation::delete_tenant::DeleteTenantError) -> Self {
+        match err {
+            crate::operation::delete_tenant::DeleteTenantError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::delete_tenant::DeleteTenantError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_tenant::DeleteTenantError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::delete_tenant::DeleteTenantError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_tenant_resource_association::DeleteTenantResourceAssociationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_tenant_resource_association::DeleteTenantResourceAssociationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_tenant_resource_association::DeleteTenantResourceAssociationError> for Error {
+    fn from(err: crate::operation::delete_tenant_resource_association::DeleteTenantResourceAssociationError) -> Self {
+        match err {
+            crate::operation::delete_tenant_resource_association::DeleteTenantResourceAssociationError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::delete_tenant_resource_association::DeleteTenantResourceAssociationError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::delete_tenant_resource_association::DeleteTenantResourceAssociationError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::delete_tenant_resource_association::DeleteTenantResourceAssociationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1582,6 +1716,32 @@ impl From<crate::operation::get_multi_region_endpoint::GetMultiRegionEndpointErr
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_reputation_entity::GetReputationEntityError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_reputation_entity::GetReputationEntityError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_reputation_entity::GetReputationEntityError> for Error {
+    fn from(err: crate::operation::get_reputation_entity::GetReputationEntityError) -> Self {
+        match err {
+            crate::operation::get_reputation_entity::GetReputationEntityError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_reputation_entity::GetReputationEntityError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_reputation_entity::GetReputationEntityError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::get_reputation_entity::GetReputationEntityError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_suppressed_destination::GetSuppressedDestinationError, R>>
     for Error
 where
@@ -1610,6 +1770,30 @@ impl From<crate::operation::get_suppressed_destination::GetSuppressedDestination
                 Error::TooManyRequestsException(inner)
             }
             crate::operation::get_suppressed_destination::GetSuppressedDestinationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_tenant::GetTenantError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_tenant::GetTenantError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_tenant::GetTenantError> for Error {
+    fn from(err: crate::operation::get_tenant::GetTenantError) -> Self {
+        match err {
+            crate::operation::get_tenant::GetTenantError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_tenant::GetTenantError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_tenant::GetTenantError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::get_tenant::GetTenantError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1987,6 +2171,59 @@ impl From<crate::operation::list_recommendations::ListRecommendationsError> for 
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_reputation_entities::ListReputationEntitiesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_reputation_entities::ListReputationEntitiesError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_reputation_entities::ListReputationEntitiesError> for Error {
+    fn from(err: crate::operation::list_reputation_entities::ListReputationEntitiesError) -> Self {
+        match err {
+            crate::operation::list_reputation_entities::ListReputationEntitiesError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::list_reputation_entities::ListReputationEntitiesError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::list_reputation_entities::ListReputationEntitiesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_resource_tenants::ListResourceTenantsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_resource_tenants::ListResourceTenantsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_resource_tenants::ListResourceTenantsError> for Error {
+    fn from(err: crate::operation::list_resource_tenants::ListResourceTenantsError) -> Self {
+        match err {
+            crate::operation::list_resource_tenants::ListResourceTenantsError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::list_resource_tenants::ListResourceTenantsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::list_resource_tenants::ListResourceTenantsError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::list_resource_tenants::ListResourceTenantsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_suppressed_destinations::ListSuppressedDestinationsError, R>>
     for Error
 where
@@ -2043,6 +2280,55 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
                 Error::TooManyRequestsException(inner)
             }
             crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_tenant_resources::ListTenantResourcesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_tenant_resources::ListTenantResourcesError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_tenant_resources::ListTenantResourcesError> for Error {
+    fn from(err: crate::operation::list_tenant_resources::ListTenantResourcesError) -> Self {
+        match err {
+            crate::operation::list_tenant_resources::ListTenantResourcesError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::list_tenant_resources::ListTenantResourcesError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::list_tenant_resources::ListTenantResourcesError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::list_tenant_resources::ListTenantResourcesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_tenants::ListTenantsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_tenants::ListTenantsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_tenants::ListTenantsError> for Error {
+    fn from(err: crate::operation::list_tenants::ListTenantsError) -> Self {
+        match err {
+            crate::operation::list_tenants::ListTenantsError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::list_tenants::ListTenantsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::list_tenants::ListTenantsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -3298,6 +3584,78 @@ impl From<crate::operation::update_email_template::UpdateEmailTemplateError> for
                 Error::TooManyRequestsException(inner)
             }
             crate::operation::update_email_template::UpdateEmailTemplateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_reputation_entity_customer_managed_status::UpdateReputationEntityCustomerManagedStatusError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_reputation_entity_customer_managed_status::UpdateReputationEntityCustomerManagedStatusError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_reputation_entity_customer_managed_status::UpdateReputationEntityCustomerManagedStatusError> for Error {
+    fn from(err: crate::operation::update_reputation_entity_customer_managed_status::UpdateReputationEntityCustomerManagedStatusError) -> Self {
+        match err {
+            crate::operation::update_reputation_entity_customer_managed_status::UpdateReputationEntityCustomerManagedStatusError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::update_reputation_entity_customer_managed_status::UpdateReputationEntityCustomerManagedStatusError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_reputation_entity_customer_managed_status::UpdateReputationEntityCustomerManagedStatusError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::update_reputation_entity_customer_managed_status::UpdateReputationEntityCustomerManagedStatusError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_reputation_entity_policy::UpdateReputationEntityPolicyError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_reputation_entity_policy::UpdateReputationEntityPolicyError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_reputation_entity_policy::UpdateReputationEntityPolicyError> for Error {
+    fn from(err: crate::operation::update_reputation_entity_policy::UpdateReputationEntityPolicyError) -> Self {
+        match err {
+            crate::operation::update_reputation_entity_policy::UpdateReputationEntityPolicyError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::update_reputation_entity_policy::UpdateReputationEntityPolicyError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::update_reputation_entity_policy::UpdateReputationEntityPolicyError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::update_reputation_entity_policy::UpdateReputationEntityPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

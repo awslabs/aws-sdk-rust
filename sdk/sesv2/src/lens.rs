@@ -139,8 +139,48 @@ pub(crate) fn reflens_list_recommendations_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_reputation_entities_output_output_next_token(
+    input: &crate::operation::list_reputation_entities::ListReputationEntitiesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_resource_tenants_output_output_next_token(
+    input: &crate::operation::list_resource_tenants::ListResourceTenantsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_suppressed_destinations_output_output_next_token(
     input: &crate::operation::list_suppressed_destinations::ListSuppressedDestinationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_tenant_resources_output_output_next_token(
+    input: &crate::operation::list_tenant_resources::ListTenantResourcesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_tenants_output_output_next_token(
+    input: &crate::operation::list_tenants::ListTenantsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -153,5 +193,33 @@ pub(crate) fn lens_list_multi_region_endpoints_output_output_multi_region_endpoi
     input: crate::operation::list_multi_region_endpoints::ListMultiRegionEndpointsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::MultiRegionEndpoint>> {
     let input = input.multi_region_endpoints?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_reputation_entities_output_output_reputation_entities(
+    input: crate::operation::list_reputation_entities::ListReputationEntitiesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ReputationEntity>> {
+    let input = input.reputation_entities?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_resource_tenants_output_output_resource_tenants(
+    input: crate::operation::list_resource_tenants::ListResourceTenantsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ResourceTenantMetadata>> {
+    let input = input.resource_tenants?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_tenant_resources_output_output_tenant_resources(
+    input: crate::operation::list_tenant_resources::ListTenantResourcesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::TenantResource>> {
+    let input = input.tenant_resources?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_tenants_output_output_tenants(
+    input: crate::operation::list_tenants::ListTenantsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::TenantInfo>> {
+    let input = input.tenants?;
     ::std::option::Option::Some(input)
 }

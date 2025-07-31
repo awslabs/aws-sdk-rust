@@ -136,6 +136,12 @@ pub fn ser_profile_attributes(
         }
         object_42.finish();
     }
+    if let Some(var_46) = &input.profile_type {
+        #[allow(unused_mut)]
+        let mut object_47 = object.key("ProfileType").start_object();
+        crate::protocol_serde::shape_profile_type_dimension::ser_profile_type_dimension(&mut object_47, var_46)?;
+        object_47.finish();
+    }
     Ok(())
 }
 
@@ -221,6 +227,10 @@ where
                         }
                         "Attributes" => {
                             builder = builder.set_attributes(crate::protocol_serde::shape_custom_attributes::de_custom_attributes(tokens)?);
+                        }
+                        "ProfileType" => {
+                            builder =
+                                builder.set_profile_type(crate::protocol_serde::shape_profile_type_dimension::de_profile_type_dimension(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

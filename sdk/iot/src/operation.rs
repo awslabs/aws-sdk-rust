@@ -304,6 +304,9 @@ pub mod describe_dimension;
 /// Types for the `DescribeDomainConfiguration` operation.
 pub mod describe_domain_configuration;
 
+/// Types for the `DescribeEncryptionConfiguration` operation.
+pub mod describe_encryption_configuration;
+
 /// Types for the `DescribeEndpoint` operation.
 pub mod describe_endpoint;
 
@@ -753,6 +756,9 @@ pub mod update_domain_configuration;
 
 /// Types for the `UpdateDynamicThingGroup` operation.
 pub mod update_dynamic_thing_group;
+
+/// Types for the `UpdateEncryptionConfiguration` operation.
+pub mod update_encryption_configuration;
 
 /// Types for the `UpdateEventConfigurations` operation.
 pub mod update_event_configurations;

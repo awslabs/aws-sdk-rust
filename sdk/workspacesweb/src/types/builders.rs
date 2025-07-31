@@ -25,6 +25,16 @@ pub use crate::types::_trust_store::TrustStoreBuilder;
 
 pub use crate::types::_trust_store_summary::TrustStoreSummaryBuilder;
 
+pub use crate::types::_session_logger::SessionLoggerBuilder;
+
+pub use crate::types::_log_configuration::LogConfigurationBuilder;
+
+pub use crate::types::_s3_log_configuration::S3LogConfigurationBuilder;
+
+pub use crate::types::_unit::UnitBuilder;
+
+pub use crate::types::_session_logger_summary::SessionLoggerSummaryBuilder;
+
 pub use crate::types::_portal::PortalBuilder;
 
 pub use crate::types::_portal_summary::PortalSummaryBuilder;

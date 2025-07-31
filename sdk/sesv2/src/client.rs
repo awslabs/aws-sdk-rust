@@ -166,6 +166,10 @@ mod create_import_job;
 
 mod create_multi_region_endpoint;
 
+mod create_tenant;
+
+mod create_tenant_resource_association;
+
 /// Operation customization and supporting types.
 ///
 /// The underlying HTTP requests made during an operation can be customized
@@ -215,6 +219,10 @@ mod delete_multi_region_endpoint;
 
 mod delete_suppressed_destination;
 
+mod delete_tenant;
+
+mod delete_tenant_resource_association;
+
 mod get_account;
 
 mod get_blacklist_reports;
@@ -257,7 +265,11 @@ mod get_message_insights;
 
 mod get_multi_region_endpoint;
 
+mod get_reputation_entity;
+
 mod get_suppressed_destination;
+
+mod get_tenant;
 
 mod list_configuration_sets;
 
@@ -285,9 +297,17 @@ mod list_multi_region_endpoints;
 
 mod list_recommendations;
 
+mod list_reputation_entities;
+
+mod list_resource_tenants;
+
 mod list_suppressed_destinations;
 
 mod list_tags_for_resource;
+
+mod list_tenant_resources;
+
+mod list_tenants;
 
 mod put_account_dedicated_ip_warmup_attributes;
 
@@ -356,3 +376,7 @@ mod update_custom_verification_email_template;
 mod update_email_identity_policy;
 
 mod update_email_template;
+
+mod update_reputation_entity_customer_managed_status;
+
+mod update_reputation_entity_policy;

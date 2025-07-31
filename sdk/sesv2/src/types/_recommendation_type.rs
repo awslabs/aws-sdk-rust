@@ -13,9 +13,12 @@
 /// # let recommendationtype = unimplemented!();
 /// match recommendationtype {
 ///     RecommendationType::Bimi => { /* ... */ },
+///     RecommendationType::Bounce => { /* ... */ },
 ///     RecommendationType::Complaint => { /* ... */ },
 ///     RecommendationType::Dkim => { /* ... */ },
 ///     RecommendationType::Dmarc => { /* ... */ },
+///     RecommendationType::Feedback3P => { /* ... */ },
+///     RecommendationType::IpListing => { /* ... */ },
 ///     RecommendationType::Spf => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -48,11 +51,17 @@ pub enum RecommendationType {
     #[allow(missing_docs)] // documentation missing in model
     Bimi,
     #[allow(missing_docs)] // documentation missing in model
+    Bounce,
+    #[allow(missing_docs)] // documentation missing in model
     Complaint,
     #[allow(missing_docs)] // documentation missing in model
     Dkim,
     #[allow(missing_docs)] // documentation missing in model
     Dmarc,
+    #[allow(missing_docs)] // documentation missing in model
+    Feedback3P,
+    #[allow(missing_docs)] // documentation missing in model
+    IpListing,
     #[allow(missing_docs)] // documentation missing in model
     Spf,
     /// `Unknown` contains new variants that have been added since this code was generated.
@@ -63,9 +72,12 @@ impl ::std::convert::From<&str> for RecommendationType {
     fn from(s: &str) -> Self {
         match s {
             "BIMI" => RecommendationType::Bimi,
+            "BOUNCE" => RecommendationType::Bounce,
             "COMPLAINT" => RecommendationType::Complaint,
             "DKIM" => RecommendationType::Dkim,
             "DMARC" => RecommendationType::Dmarc,
+            "FEEDBACK_3P" => RecommendationType::Feedback3P,
+            "IP_LISTING" => RecommendationType::IpListing,
             "SPF" => RecommendationType::Spf,
             other => RecommendationType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -83,16 +95,19 @@ impl RecommendationType {
     pub fn as_str(&self) -> &str {
         match self {
             RecommendationType::Bimi => "BIMI",
+            RecommendationType::Bounce => "BOUNCE",
             RecommendationType::Complaint => "COMPLAINT",
             RecommendationType::Dkim => "DKIM",
             RecommendationType::Dmarc => "DMARC",
+            RecommendationType::Feedback3P => "FEEDBACK_3P",
+            RecommendationType::IpListing => "IP_LISTING",
             RecommendationType::Spf => "SPF",
             RecommendationType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["BIMI", "COMPLAINT", "DKIM", "DMARC", "SPF"]
+        &["BIMI", "BOUNCE", "COMPLAINT", "DKIM", "DMARC", "FEEDBACK_3P", "IP_LISTING", "SPF"]
     }
 }
 impl ::std::convert::AsRef<str> for RecommendationType {
@@ -116,9 +131,12 @@ impl ::std::fmt::Display for RecommendationType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             RecommendationType::Bimi => write!(f, "BIMI"),
+            RecommendationType::Bounce => write!(f, "BOUNCE"),
             RecommendationType::Complaint => write!(f, "COMPLAINT"),
             RecommendationType::Dkim => write!(f, "DKIM"),
             RecommendationType::Dmarc => write!(f, "DMARC"),
+            RecommendationType::Feedback3P => write!(f, "FEEDBACK_3P"),
+            RecommendationType::IpListing => write!(f, "IP_LISTING"),
             RecommendationType::Spf => write!(f, "SPF"),
             RecommendationType::Unknown(value) => write!(f, "{}", value),
         }

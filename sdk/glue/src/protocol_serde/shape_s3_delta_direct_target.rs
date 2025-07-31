@@ -58,6 +58,12 @@ pub fn ser_s3_delta_direct_target(
         crate::protocol_serde::shape_direct_schema_change_policy::ser_direct_schema_change_policy(&mut object_14, var_13)?;
         object_14.finish();
     }
+    if let Some(var_15) = &input.auto_data_quality {
+        #[allow(unused_mut)]
+        let mut object_16 = object.key("AutoDataQuality").start_object();
+        crate::protocol_serde::shape_auto_data_quality::ser_auto_data_quality(&mut object_16, var_15)?;
+        object_16.finish();
+    }
     Ok(())
 }
 
@@ -125,6 +131,9 @@ where
                             builder = builder.set_schema_change_policy(
                                 crate::protocol_serde::shape_direct_schema_change_policy::de_direct_schema_change_policy(tokens)?,
                             );
+                        }
+                        "AutoDataQuality" => {
+                            builder = builder.set_auto_data_quality(crate::protocol_serde::shape_auto_data_quality::de_auto_data_quality(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

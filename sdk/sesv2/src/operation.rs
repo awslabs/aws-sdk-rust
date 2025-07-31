@@ -46,6 +46,12 @@ pub mod create_import_job;
 /// Types for the `CreateMultiRegionEndpoint` operation.
 pub mod create_multi_region_endpoint;
 
+/// Types for the `CreateTenant` operation.
+pub mod create_tenant;
+
+/// Types for the `CreateTenantResourceAssociation` operation.
+pub mod create_tenant_resource_association;
+
 /// Types for the `DeleteConfigurationSet` operation.
 pub mod delete_configuration_set;
 
@@ -78,6 +84,12 @@ pub mod delete_multi_region_endpoint;
 
 /// Types for the `DeleteSuppressedDestination` operation.
 pub mod delete_suppressed_destination;
+
+/// Types for the `DeleteTenant` operation.
+pub mod delete_tenant;
+
+/// Types for the `DeleteTenantResourceAssociation` operation.
+pub mod delete_tenant_resource_association;
 
 /// Types for the `GetAccount` operation.
 pub mod get_account;
@@ -142,8 +154,14 @@ pub mod get_message_insights;
 /// Types for the `GetMultiRegionEndpoint` operation.
 pub mod get_multi_region_endpoint;
 
+/// Types for the `GetReputationEntity` operation.
+pub mod get_reputation_entity;
+
 /// Types for the `GetSuppressedDestination` operation.
 pub mod get_suppressed_destination;
+
+/// Types for the `GetTenant` operation.
+pub mod get_tenant;
 
 /// Types for the `ListConfigurationSets` operation.
 pub mod list_configuration_sets;
@@ -184,11 +202,23 @@ pub mod list_multi_region_endpoints;
 /// Types for the `ListRecommendations` operation.
 pub mod list_recommendations;
 
+/// Types for the `ListReputationEntities` operation.
+pub mod list_reputation_entities;
+
+/// Types for the `ListResourceTenants` operation.
+pub mod list_resource_tenants;
+
 /// Types for the `ListSuppressedDestinations` operation.
 pub mod list_suppressed_destinations;
 
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
+
+/// Types for the `ListTenantResources` operation.
+pub mod list_tenant_resources;
+
+/// Types for the `ListTenants` operation.
+pub mod list_tenants;
 
 /// Types for the `PutAccountDedicatedIpWarmupAttributes` operation.
 pub mod put_account_dedicated_ip_warmup_attributes;
@@ -291,3 +321,9 @@ pub mod update_email_identity_policy;
 
 /// Types for the `UpdateEmailTemplate` operation.
 pub mod update_email_template;
+
+/// Types for the `UpdateReputationEntityCustomerManagedStatus` operation.
+pub mod update_reputation_entity_customer_managed_status;
+
+/// Types for the `UpdateReputationEntityPolicy` operation.
+pub mod update_reputation_entity_policy;

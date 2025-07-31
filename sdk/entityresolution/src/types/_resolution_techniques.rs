@@ -6,8 +6,10 @@
 pub struct ResolutionTechniques {
     /// <p>The type of matching. There are three types of matching: <code>RULE_MATCHING</code>, <code>ML_MATCHING</code>, and <code>PROVIDER</code>.</p>
     pub resolution_type: crate::types::ResolutionType,
-    /// <p>An object which defines the list of matching rules to run and has a field <code>Rules</code>, which is a list of rule objects.</p>
+    /// <p>An object which defines the list of matching rules to run and has a field <code>rules</code>, which is a list of rule objects.</p>
     pub rule_based_properties: ::std::option::Option<crate::types::RuleBasedProperties>,
+    /// <p>An object containing the <code>rules</code> for a matching workflow.</p>
+    pub rule_condition_properties: ::std::option::Option<crate::types::RuleConditionProperties>,
     /// <p>The properties of the provider service.</p>
     pub provider_properties: ::std::option::Option<crate::types::ProviderProperties>,
 }
@@ -16,9 +18,13 @@ impl ResolutionTechniques {
     pub fn resolution_type(&self) -> &crate::types::ResolutionType {
         &self.resolution_type
     }
-    /// <p>An object which defines the list of matching rules to run and has a field <code>Rules</code>, which is a list of rule objects.</p>
+    /// <p>An object which defines the list of matching rules to run and has a field <code>rules</code>, which is a list of rule objects.</p>
     pub fn rule_based_properties(&self) -> ::std::option::Option<&crate::types::RuleBasedProperties> {
         self.rule_based_properties.as_ref()
+    }
+    /// <p>An object containing the <code>rules</code> for a matching workflow.</p>
+    pub fn rule_condition_properties(&self) -> ::std::option::Option<&crate::types::RuleConditionProperties> {
+        self.rule_condition_properties.as_ref()
     }
     /// <p>The properties of the provider service.</p>
     pub fn provider_properties(&self) -> ::std::option::Option<&crate::types::ProviderProperties> {
@@ -38,6 +44,7 @@ impl ResolutionTechniques {
 pub struct ResolutionTechniquesBuilder {
     pub(crate) resolution_type: ::std::option::Option<crate::types::ResolutionType>,
     pub(crate) rule_based_properties: ::std::option::Option<crate::types::RuleBasedProperties>,
+    pub(crate) rule_condition_properties: ::std::option::Option<crate::types::RuleConditionProperties>,
     pub(crate) provider_properties: ::std::option::Option<crate::types::ProviderProperties>,
 }
 impl ResolutionTechniquesBuilder {
@@ -56,19 +63,33 @@ impl ResolutionTechniquesBuilder {
     pub fn get_resolution_type(&self) -> &::std::option::Option<crate::types::ResolutionType> {
         &self.resolution_type
     }
-    /// <p>An object which defines the list of matching rules to run and has a field <code>Rules</code>, which is a list of rule objects.</p>
+    /// <p>An object which defines the list of matching rules to run and has a field <code>rules</code>, which is a list of rule objects.</p>
     pub fn rule_based_properties(mut self, input: crate::types::RuleBasedProperties) -> Self {
         self.rule_based_properties = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An object which defines the list of matching rules to run and has a field <code>Rules</code>, which is a list of rule objects.</p>
+    /// <p>An object which defines the list of matching rules to run and has a field <code>rules</code>, which is a list of rule objects.</p>
     pub fn set_rule_based_properties(mut self, input: ::std::option::Option<crate::types::RuleBasedProperties>) -> Self {
         self.rule_based_properties = input;
         self
     }
-    /// <p>An object which defines the list of matching rules to run and has a field <code>Rules</code>, which is a list of rule objects.</p>
+    /// <p>An object which defines the list of matching rules to run and has a field <code>rules</code>, which is a list of rule objects.</p>
     pub fn get_rule_based_properties(&self) -> &::std::option::Option<crate::types::RuleBasedProperties> {
         &self.rule_based_properties
+    }
+    /// <p>An object containing the <code>rules</code> for a matching workflow.</p>
+    pub fn rule_condition_properties(mut self, input: crate::types::RuleConditionProperties) -> Self {
+        self.rule_condition_properties = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An object containing the <code>rules</code> for a matching workflow.</p>
+    pub fn set_rule_condition_properties(mut self, input: ::std::option::Option<crate::types::RuleConditionProperties>) -> Self {
+        self.rule_condition_properties = input;
+        self
+    }
+    /// <p>An object containing the <code>rules</code> for a matching workflow.</p>
+    pub fn get_rule_condition_properties(&self) -> &::std::option::Option<crate::types::RuleConditionProperties> {
+        &self.rule_condition_properties
     }
     /// <p>The properties of the provider service.</p>
     pub fn provider_properties(mut self, input: crate::types::ProviderProperties) -> Self {
@@ -96,6 +117,7 @@ impl ResolutionTechniquesBuilder {
                 )
             })?,
             rule_based_properties: self.rule_based_properties,
+            rule_condition_properties: self.rule_condition_properties,
             provider_properties: self.provider_properties,
         })
     }

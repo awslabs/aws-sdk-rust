@@ -9,6 +9,9 @@ pub fn ser_glue_studio_schema_column(
     if let Some(var_1) = &input.r#type {
         object.key("Type").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.glue_studio_type {
+        object.key("GlueStudioType").string(var_2.as_str());
+    }
     Ok(())
 }
 
@@ -36,6 +39,13 @@ where
                         }
                         "Type" => {
                             builder = builder.set_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "GlueStudioType" => {
+                            builder = builder.set_glue_studio_type(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,

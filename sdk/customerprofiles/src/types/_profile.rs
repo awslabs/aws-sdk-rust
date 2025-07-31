@@ -62,6 +62,10 @@ pub struct Profile {
     pub party_type_string: ::std::option::Option<::std::string::String>,
     /// <p>An alternative to Gender which accepts any string as input.</p>
     pub gender_string: ::std::option::Option<::std::string::String>,
+    /// <p>The type of the profile.</p>
+    pub profile_type: ::std::option::Option<crate::types::ProfileType>,
+    /// <p>The customer or account’s engagement preferences.</p>
+    pub engagement_preferences: ::std::option::Option<crate::types::EngagementPreferences>,
 }
 impl Profile {
     /// <p>The unique identifier of a customer profile.</p>
@@ -174,6 +178,14 @@ impl Profile {
     pub fn gender_string(&self) -> ::std::option::Option<&str> {
         self.gender_string.as_deref()
     }
+    /// <p>The type of the profile.</p>
+    pub fn profile_type(&self) -> ::std::option::Option<&crate::types::ProfileType> {
+        self.profile_type.as_ref()
+    }
+    /// <p>The customer or account’s engagement preferences.</p>
+    pub fn engagement_preferences(&self) -> ::std::option::Option<&crate::types::EngagementPreferences> {
+        self.engagement_preferences.as_ref()
+    }
 }
 impl ::std::fmt::Debug for Profile {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -203,6 +215,8 @@ impl ::std::fmt::Debug for Profile {
         formatter.field("found_by_items", &self.found_by_items);
         formatter.field("party_type_string", &"*** Sensitive Data Redacted ***");
         formatter.field("gender_string", &"*** Sensitive Data Redacted ***");
+        formatter.field("profile_type", &"*** Sensitive Data Redacted ***");
+        formatter.field("engagement_preferences", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -242,6 +256,8 @@ pub struct ProfileBuilder {
     pub(crate) found_by_items: ::std::option::Option<::std::vec::Vec<crate::types::FoundByKeyValue>>,
     pub(crate) party_type_string: ::std::option::Option<::std::string::String>,
     pub(crate) gender_string: ::std::option::Option<::std::string::String>,
+    pub(crate) profile_type: ::std::option::Option<crate::types::ProfileType>,
+    pub(crate) engagement_preferences: ::std::option::Option<crate::types::EngagementPreferences>,
 }
 impl ProfileBuilder {
     /// <p>The unique identifier of a customer profile.</p>
@@ -630,6 +646,34 @@ impl ProfileBuilder {
     pub fn get_gender_string(&self) -> &::std::option::Option<::std::string::String> {
         &self.gender_string
     }
+    /// <p>The type of the profile.</p>
+    pub fn profile_type(mut self, input: crate::types::ProfileType) -> Self {
+        self.profile_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of the profile.</p>
+    pub fn set_profile_type(mut self, input: ::std::option::Option<crate::types::ProfileType>) -> Self {
+        self.profile_type = input;
+        self
+    }
+    /// <p>The type of the profile.</p>
+    pub fn get_profile_type(&self) -> &::std::option::Option<crate::types::ProfileType> {
+        &self.profile_type
+    }
+    /// <p>The customer or account’s engagement preferences.</p>
+    pub fn engagement_preferences(mut self, input: crate::types::EngagementPreferences) -> Self {
+        self.engagement_preferences = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The customer or account’s engagement preferences.</p>
+    pub fn set_engagement_preferences(mut self, input: ::std::option::Option<crate::types::EngagementPreferences>) -> Self {
+        self.engagement_preferences = input;
+        self
+    }
+    /// <p>The customer or account’s engagement preferences.</p>
+    pub fn get_engagement_preferences(&self) -> &::std::option::Option<crate::types::EngagementPreferences> {
+        &self.engagement_preferences
+    }
     /// Consumes the builder and constructs a [`Profile`](crate::types::Profile).
     pub fn build(self) -> crate::types::Profile {
         crate::types::Profile {
@@ -658,6 +702,8 @@ impl ProfileBuilder {
             found_by_items: self.found_by_items,
             party_type_string: self.party_type_string,
             gender_string: self.gender_string,
+            profile_type: self.profile_type,
+            engagement_preferences: self.engagement_preferences,
         }
     }
 }
@@ -689,6 +735,8 @@ impl ::std::fmt::Debug for ProfileBuilder {
         formatter.field("found_by_items", &self.found_by_items);
         formatter.field("party_type_string", &"*** Sensitive Data Redacted ***");
         formatter.field("gender_string", &"*** Sensitive Data Redacted ***");
+        formatter.field("profile_type", &"*** Sensitive Data Redacted ***");
+        formatter.field("engagement_preferences", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

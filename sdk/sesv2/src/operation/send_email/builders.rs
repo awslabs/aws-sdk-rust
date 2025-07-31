@@ -275,6 +275,26 @@ impl SendEmailFluentBuilder {
     pub fn get_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_endpoint_id()
     }
+    /// <p>The name of the tenant through which this email will be sent.</p><note>
+    /// <p>The email sending operation will only succeed if all referenced resources (identities, configuration sets, and templates) are associated with this tenant.</p>
+    /// </note>
+    pub fn tenant_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.tenant_name(input.into());
+        self
+    }
+    /// <p>The name of the tenant through which this email will be sent.</p><note>
+    /// <p>The email sending operation will only succeed if all referenced resources (identities, configuration sets, and templates) are associated with this tenant.</p>
+    /// </note>
+    pub fn set_tenant_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_tenant_name(input);
+        self
+    }
+    /// <p>The name of the tenant through which this email will be sent.</p><note>
+    /// <p>The email sending operation will only succeed if all referenced resources (identities, configuration sets, and templates) are associated with this tenant.</p>
+    /// </note>
+    pub fn get_tenant_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_tenant_name()
+    }
     /// <p>An object used to specify a list or topic to which an email belongs, which will be used when a contact chooses to unsubscribe.</p>
     pub fn list_management_options(mut self, input: crate::types::ListManagementOptions) -> Self {
         self.inner = self.inner.list_management_options(input);

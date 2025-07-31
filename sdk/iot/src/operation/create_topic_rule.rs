@@ -277,6 +277,8 @@ pub enum CreateTopicRuleError {
     ServiceUnavailableException(crate::types::error::ServiceUnavailableException),
     /// <p>The Rule-SQL expression can't be parsed correctly.</p>
     SqlParseException(crate::types::error::SqlParseException),
+    /// <p>You are not authorized to perform this operation.</p>
+    UnauthorizedException(crate::types::error::UnauthorizedException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -316,6 +318,7 @@ impl CreateTopicRuleError {
             Self::ResourceAlreadyExistsException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ServiceUnavailableException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::SqlParseException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::UnauthorizedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
     }
@@ -343,6 +346,10 @@ impl CreateTopicRuleError {
     pub fn is_sql_parse_exception(&self) -> bool {
         matches!(self, Self::SqlParseException(_))
     }
+    /// Returns `true` if the error kind is `CreateTopicRuleError::UnauthorizedException`.
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(self, Self::UnauthorizedException(_))
+    }
 }
 impl ::std::error::Error for CreateTopicRuleError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
@@ -353,6 +360,7 @@ impl ::std::error::Error for CreateTopicRuleError {
             Self::ResourceAlreadyExistsException(_inner) => ::std::option::Option::Some(_inner),
             Self::ServiceUnavailableException(_inner) => ::std::option::Option::Some(_inner),
             Self::SqlParseException(_inner) => ::std::option::Option::Some(_inner),
+            Self::UnauthorizedException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
     }
@@ -366,6 +374,7 @@ impl ::std::fmt::Display for CreateTopicRuleError {
             Self::ResourceAlreadyExistsException(_inner) => _inner.fmt(f),
             Self::ServiceUnavailableException(_inner) => _inner.fmt(f),
             Self::SqlParseException(_inner) => _inner.fmt(f),
+            Self::UnauthorizedException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -393,6 +402,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateTopicRu
             Self::ResourceAlreadyExistsException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ServiceUnavailableException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::SqlParseException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::UnauthorizedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }
     }

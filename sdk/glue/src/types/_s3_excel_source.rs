@@ -28,7 +28,7 @@ pub struct S3ExcelSource {
     pub number_rows: ::std::option::Option<i64>,
     /// <p>The number of rows to skip at the end of each Excel file.</p>
     pub skip_footer: ::std::option::Option<i32>,
-    /// <p>The AWS Glue schemas to apply to the processed data.</p>
+    /// <p>The Glue schemas to apply to the processed data.</p>
     pub output_schemas: ::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>>,
 }
 impl S3ExcelSource {
@@ -84,7 +84,7 @@ impl S3ExcelSource {
     pub fn skip_footer(&self) -> ::std::option::Option<i32> {
         self.skip_footer
     }
-    /// <p>The AWS Glue schemas to apply to the processed data.</p>
+    /// <p>The Glue schemas to apply to the processed data.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.output_schemas.is_none()`.
     pub fn output_schemas(&self) -> &[crate::types::GlueSchema] {
@@ -302,19 +302,19 @@ impl S3ExcelSourceBuilder {
     ///
     /// To override the contents of this collection use [`set_output_schemas`](Self::set_output_schemas).
     ///
-    /// <p>The AWS Glue schemas to apply to the processed data.</p>
+    /// <p>The Glue schemas to apply to the processed data.</p>
     pub fn output_schemas(mut self, input: crate::types::GlueSchema) -> Self {
         let mut v = self.output_schemas.unwrap_or_default();
         v.push(input);
         self.output_schemas = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The AWS Glue schemas to apply to the processed data.</p>
+    /// <p>The Glue schemas to apply to the processed data.</p>
     pub fn set_output_schemas(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>>) -> Self {
         self.output_schemas = input;
         self
     }
-    /// <p>The AWS Glue schemas to apply to the processed data.</p>
+    /// <p>The Glue schemas to apply to the processed data.</p>
     pub fn get_output_schemas(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>> {
         &self.output_schemas
     }

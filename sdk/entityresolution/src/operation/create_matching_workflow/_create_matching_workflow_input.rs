@@ -9,11 +9,13 @@ pub struct CreateMatchingWorkflowInput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>InputSource</code> objects, which have the fields <code>InputSourceARN</code> and <code>SchemaName</code>.</p>
     pub input_source_config: ::std::option::Option<::std::vec::Vec<crate::types::InputSource>>,
-    /// <p>A list of <code>OutputSource</code> objects, each of which contains fields <code>OutputS3Path</code>, <code>ApplyNormalization</code>, and <code>Output</code>.</p>
+    /// <p>A list of <code>OutputSource</code> objects, each of which contains fields <code>outputS3Path</code>, <code>applyNormalization</code>, <code>KMSArn</code>, and <code>output</code>.</p>
     pub output_source_config: ::std::option::Option<::std::vec::Vec<crate::types::OutputSource>>,
     /// <p>An object which defines the <code>resolutionType</code> and the <code>ruleBasedProperties</code>.</p>
     pub resolution_techniques: ::std::option::Option<crate::types::ResolutionTechniques>,
-    /// <p>An object which defines an incremental run type and has only <code>incrementalRunType</code> as a field.</p>
+    /// <p>Optional. An object that defines the incremental run type. This object contains only the <code>incrementalRunType</code> field, which appears as "Automatic" in the console.</p><important>
+    /// <p>For workflows where <code>resolutionType</code> is <code>ML_MATCHING</code>, incremental processing is not supported.</p>
+    /// </important>
     pub incremental_run_config: ::std::option::Option<crate::types::IncrementalRunConfig>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes this role to create resources on your behalf as part of workflow execution.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
@@ -35,7 +37,7 @@ impl CreateMatchingWorkflowInput {
     pub fn input_source_config(&self) -> &[crate::types::InputSource] {
         self.input_source_config.as_deref().unwrap_or_default()
     }
-    /// <p>A list of <code>OutputSource</code> objects, each of which contains fields <code>OutputS3Path</code>, <code>ApplyNormalization</code>, and <code>Output</code>.</p>
+    /// <p>A list of <code>OutputSource</code> objects, each of which contains fields <code>outputS3Path</code>, <code>applyNormalization</code>, <code>KMSArn</code>, and <code>output</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.output_source_config.is_none()`.
     pub fn output_source_config(&self) -> &[crate::types::OutputSource] {
@@ -45,7 +47,9 @@ impl CreateMatchingWorkflowInput {
     pub fn resolution_techniques(&self) -> ::std::option::Option<&crate::types::ResolutionTechniques> {
         self.resolution_techniques.as_ref()
     }
-    /// <p>An object which defines an incremental run type and has only <code>incrementalRunType</code> as a field.</p>
+    /// <p>Optional. An object that defines the incremental run type. This object contains only the <code>incrementalRunType</code> field, which appears as "Automatic" in the console.</p><important>
+    /// <p>For workflows where <code>resolutionType</code> is <code>ML_MATCHING</code>, incremental processing is not supported.</p>
+    /// </important>
     pub fn incremental_run_config(&self) -> ::std::option::Option<&crate::types::IncrementalRunConfig> {
         self.incremental_run_config.as_ref()
     }
@@ -132,19 +136,19 @@ impl CreateMatchingWorkflowInputBuilder {
     ///
     /// To override the contents of this collection use [`set_output_source_config`](Self::set_output_source_config).
     ///
-    /// <p>A list of <code>OutputSource</code> objects, each of which contains fields <code>OutputS3Path</code>, <code>ApplyNormalization</code>, and <code>Output</code>.</p>
+    /// <p>A list of <code>OutputSource</code> objects, each of which contains fields <code>outputS3Path</code>, <code>applyNormalization</code>, <code>KMSArn</code>, and <code>output</code>.</p>
     pub fn output_source_config(mut self, input: crate::types::OutputSource) -> Self {
         let mut v = self.output_source_config.unwrap_or_default();
         v.push(input);
         self.output_source_config = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of <code>OutputSource</code> objects, each of which contains fields <code>OutputS3Path</code>, <code>ApplyNormalization</code>, and <code>Output</code>.</p>
+    /// <p>A list of <code>OutputSource</code> objects, each of which contains fields <code>outputS3Path</code>, <code>applyNormalization</code>, <code>KMSArn</code>, and <code>output</code>.</p>
     pub fn set_output_source_config(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OutputSource>>) -> Self {
         self.output_source_config = input;
         self
     }
-    /// <p>A list of <code>OutputSource</code> objects, each of which contains fields <code>OutputS3Path</code>, <code>ApplyNormalization</code>, and <code>Output</code>.</p>
+    /// <p>A list of <code>OutputSource</code> objects, each of which contains fields <code>outputS3Path</code>, <code>applyNormalization</code>, <code>KMSArn</code>, and <code>output</code>.</p>
     pub fn get_output_source_config(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OutputSource>> {
         &self.output_source_config
     }
@@ -163,17 +167,23 @@ impl CreateMatchingWorkflowInputBuilder {
     pub fn get_resolution_techniques(&self) -> &::std::option::Option<crate::types::ResolutionTechniques> {
         &self.resolution_techniques
     }
-    /// <p>An object which defines an incremental run type and has only <code>incrementalRunType</code> as a field.</p>
+    /// <p>Optional. An object that defines the incremental run type. This object contains only the <code>incrementalRunType</code> field, which appears as "Automatic" in the console.</p><important>
+    /// <p>For workflows where <code>resolutionType</code> is <code>ML_MATCHING</code>, incremental processing is not supported.</p>
+    /// </important>
     pub fn incremental_run_config(mut self, input: crate::types::IncrementalRunConfig) -> Self {
         self.incremental_run_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An object which defines an incremental run type and has only <code>incrementalRunType</code> as a field.</p>
+    /// <p>Optional. An object that defines the incremental run type. This object contains only the <code>incrementalRunType</code> field, which appears as "Automatic" in the console.</p><important>
+    /// <p>For workflows where <code>resolutionType</code> is <code>ML_MATCHING</code>, incremental processing is not supported.</p>
+    /// </important>
     pub fn set_incremental_run_config(mut self, input: ::std::option::Option<crate::types::IncrementalRunConfig>) -> Self {
         self.incremental_run_config = input;
         self
     }
-    /// <p>An object which defines an incremental run type and has only <code>incrementalRunType</code> as a field.</p>
+    /// <p>Optional. An object that defines the incremental run type. This object contains only the <code>incrementalRunType</code> field, which appears as "Automatic" in the console.</p><important>
+    /// <p>For workflows where <code>resolutionType</code> is <code>ML_MATCHING</code>, incremental processing is not supported.</p>
+    /// </important>
     pub fn get_incremental_run_config(&self) -> &::std::option::Option<crate::types::IncrementalRunConfig> {
         &self.incremental_run_config
     }

@@ -13,6 +13,10 @@ pub use crate::types::_provider_properties::ProviderProperties;
 
 pub use crate::types::_intermediate_source_configuration::IntermediateSourceConfiguration;
 
+pub use crate::types::_rule_condition_properties::RuleConditionProperties;
+
+pub use crate::types::_rule_condition::RuleCondition;
+
 pub use crate::types::_rule_based_properties::RuleBasedProperties;
 
 pub use crate::types::_match_purpose::MatchPurpose;
@@ -216,6 +220,10 @@ mod _resolution_type;
 mod _rule;
 
 mod _rule_based_properties;
+
+mod _rule_condition;
+
+mod _rule_condition_properties;
 
 mod _schema_attribute_type;
 

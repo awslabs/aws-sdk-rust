@@ -12,6 +12,15 @@ pub fn ser_dynamo_db_catalog_source(
     {
         object.key("Table").string(input.table.as_str());
     }
+    if let Some(var_1) = &input.pitr_enabled {
+        object.key("PitrEnabled").boolean(*var_1);
+    }
+    if let Some(var_2) = &input.additional_options {
+        #[allow(unused_mut)]
+        let mut object_3 = object.key("AdditionalOptions").start_object();
+        crate::protocol_serde::shape_ddbelt_catalog_additional_options::ser_ddbelt_catalog_additional_options(&mut object_3, var_2)?;
+        object_3.finish();
+    }
     Ok(())
 }
 
@@ -49,6 +58,14 @@ where
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
+                            );
+                        }
+                        "PitrEnabled" => {
+                            builder = builder.set_pitr_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "AdditionalOptions" => {
+                            builder = builder.set_additional_options(
+                                crate::protocol_serde::shape_ddbelt_catalog_additional_options::de_ddbelt_catalog_additional_options(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

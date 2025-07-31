@@ -144,6 +144,8 @@ mod associate_ip_access_settings;
 
 mod associate_network_settings;
 
+mod associate_session_logger;
+
 mod associate_trust_store;
 
 mod associate_user_access_logging_settings;
@@ -161,6 +163,8 @@ mod create_ip_access_settings;
 mod create_network_settings;
 
 mod create_portal;
+
+mod create_session_logger;
 
 mod create_trust_store;
 
@@ -207,6 +211,8 @@ mod delete_network_settings;
 
 mod delete_portal;
 
+mod delete_session_logger;
+
 mod delete_trust_store;
 
 mod delete_user_access_logging_settings;
@@ -220,6 +226,8 @@ mod disassociate_data_protection_settings;
 mod disassociate_ip_access_settings;
 
 mod disassociate_network_settings;
+
+mod disassociate_session_logger;
 
 mod disassociate_trust_store;
 
@@ -245,6 +253,8 @@ mod get_portal_service_provider_metadata;
 
 mod get_session;
 
+mod get_session_logger;
+
 mod get_trust_store;
 
 mod get_trust_store_certificate;
@@ -264,6 +274,8 @@ mod list_ip_access_settings;
 mod list_network_settings;
 
 mod list_portals;
+
+mod list_session_loggers;
 
 mod list_sessions;
 
@@ -292,6 +304,8 @@ mod update_ip_access_settings;
 mod update_network_settings;
 
 mod update_portal;
+
+mod update_session_logger;
 
 mod update_trust_store;
 

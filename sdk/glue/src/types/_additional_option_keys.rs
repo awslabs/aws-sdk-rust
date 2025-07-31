@@ -12,6 +12,7 @@
 /// ```text
 /// # let additionaloptionkeys = unimplemented!();
 /// match additionaloptionkeys {
+///     AdditionalOptionKeys::CompositeOption => { /* ... */ },
 ///     AdditionalOptionKeys::ObservationsOption => { /* ... */ },
 ///     AdditionalOptionKeys::CacheOption => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -43,6 +44,8 @@
 )]
 pub enum AdditionalOptionKeys {
     #[allow(missing_docs)] // documentation missing in model
+    CompositeOption,
+    #[allow(missing_docs)] // documentation missing in model
     ObservationsOption,
     #[allow(missing_docs)] // documentation missing in model
     CacheOption,
@@ -53,6 +56,7 @@ pub enum AdditionalOptionKeys {
 impl ::std::convert::From<&str> for AdditionalOptionKeys {
     fn from(s: &str) -> Self {
         match s {
+            "compositeRuleEvaluation.method" => AdditionalOptionKeys::CompositeOption,
             "observations.scope" => AdditionalOptionKeys::ObservationsOption,
             "performanceTuning.caching" => AdditionalOptionKeys::CacheOption,
             other => AdditionalOptionKeys::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -70,6 +74,7 @@ impl AdditionalOptionKeys {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            AdditionalOptionKeys::CompositeOption => "compositeRuleEvaluation.method",
             AdditionalOptionKeys::ObservationsOption => "observations.scope",
             AdditionalOptionKeys::CacheOption => "performanceTuning.caching",
             AdditionalOptionKeys::Unknown(value) => value.as_str(),
@@ -77,7 +82,7 @@ impl AdditionalOptionKeys {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["observations.scope", "performanceTuning.caching"]
+        &["compositeRuleEvaluation.method", "observations.scope", "performanceTuning.caching"]
     }
 }
 impl ::std::convert::AsRef<str> for AdditionalOptionKeys {
@@ -100,6 +105,7 @@ impl AdditionalOptionKeys {
 impl ::std::fmt::Display for AdditionalOptionKeys {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            AdditionalOptionKeys::CompositeOption => write!(f, "compositeRuleEvaluation.method"),
             AdditionalOptionKeys::ObservationsOption => write!(f, "observations.scope"),
             AdditionalOptionKeys::CacheOption => write!(f, "performanceTuning.caching"),
             AdditionalOptionKeys::Unknown(value) => write!(f, "{}", value),

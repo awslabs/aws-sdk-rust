@@ -21,6 +21,20 @@ pub struct PiiDetection {
     pub threshold_fraction: ::std::option::Option<f64>,
     /// <p>Indicates the value that will replace the detected entity.</p>
     pub mask_value: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies whether to redact the detected PII text. When set to <code>true</code>, PII content is replaced with redaction characters.</p>
+    pub redact_text: ::std::option::Option<::std::string::String>,
+    /// <p>The character used to replace detected PII content when redaction is enabled. The default redaction character is <code>*</code>.</p>
+    pub redact_char: ::std::option::Option<::std::string::String>,
+    /// <p>A regular expression pattern used to identify additional PII content beyond the standard detection algorithms.</p>
+    pub match_pattern: ::std::option::Option<::std::string::String>,
+    /// <p>The number of characters to exclude from redaction on the left side of detected PII content. This allows preserving context around the sensitive data.</p>
+    pub num_left_chars_to_exclude: ::std::option::Option<i32>,
+    /// <p>The number of characters to exclude from redaction on the right side of detected PII content. This allows preserving context around the sensitive data.</p>
+    pub num_right_chars_to_exclude: ::std::option::Option<i32>,
+    /// <p>Additional parameters for configuring PII detection behavior and sensitivity settings.</p>
+    pub detection_parameters: ::std::option::Option<::std::string::String>,
+    /// <p>The sensitivity level for PII detection. Higher sensitivity levels detect more potential PII but may result in more false positives.</p>
+    pub detection_sensitivity: ::std::option::Option<::std::string::String>,
 }
 impl PiiDetection {
     /// <p>The name of the transform node.</p>
@@ -59,6 +73,34 @@ impl PiiDetection {
     pub fn mask_value(&self) -> ::std::option::Option<&str> {
         self.mask_value.as_deref()
     }
+    /// <p>Specifies whether to redact the detected PII text. When set to <code>true</code>, PII content is replaced with redaction characters.</p>
+    pub fn redact_text(&self) -> ::std::option::Option<&str> {
+        self.redact_text.as_deref()
+    }
+    /// <p>The character used to replace detected PII content when redaction is enabled. The default redaction character is <code>*</code>.</p>
+    pub fn redact_char(&self) -> ::std::option::Option<&str> {
+        self.redact_char.as_deref()
+    }
+    /// <p>A regular expression pattern used to identify additional PII content beyond the standard detection algorithms.</p>
+    pub fn match_pattern(&self) -> ::std::option::Option<&str> {
+        self.match_pattern.as_deref()
+    }
+    /// <p>The number of characters to exclude from redaction on the left side of detected PII content. This allows preserving context around the sensitive data.</p>
+    pub fn num_left_chars_to_exclude(&self) -> ::std::option::Option<i32> {
+        self.num_left_chars_to_exclude
+    }
+    /// <p>The number of characters to exclude from redaction on the right side of detected PII content. This allows preserving context around the sensitive data.</p>
+    pub fn num_right_chars_to_exclude(&self) -> ::std::option::Option<i32> {
+        self.num_right_chars_to_exclude
+    }
+    /// <p>Additional parameters for configuring PII detection behavior and sensitivity settings.</p>
+    pub fn detection_parameters(&self) -> ::std::option::Option<&str> {
+        self.detection_parameters.as_deref()
+    }
+    /// <p>The sensitivity level for PII detection. Higher sensitivity levels detect more potential PII but may result in more false positives.</p>
+    pub fn detection_sensitivity(&self) -> ::std::option::Option<&str> {
+        self.detection_sensitivity.as_deref()
+    }
 }
 impl PiiDetection {
     /// Creates a new builder-style object to manufacture [`PiiDetection`](crate::types::PiiDetection).
@@ -79,6 +121,13 @@ pub struct PiiDetectionBuilder {
     pub(crate) sample_fraction: ::std::option::Option<f64>,
     pub(crate) threshold_fraction: ::std::option::Option<f64>,
     pub(crate) mask_value: ::std::option::Option<::std::string::String>,
+    pub(crate) redact_text: ::std::option::Option<::std::string::String>,
+    pub(crate) redact_char: ::std::option::Option<::std::string::String>,
+    pub(crate) match_pattern: ::std::option::Option<::std::string::String>,
+    pub(crate) num_left_chars_to_exclude: ::std::option::Option<i32>,
+    pub(crate) num_right_chars_to_exclude: ::std::option::Option<i32>,
+    pub(crate) detection_parameters: ::std::option::Option<::std::string::String>,
+    pub(crate) detection_sensitivity: ::std::option::Option<::std::string::String>,
 }
 impl PiiDetectionBuilder {
     /// <p>The name of the transform node.</p>
@@ -210,6 +259,104 @@ impl PiiDetectionBuilder {
     pub fn get_mask_value(&self) -> &::std::option::Option<::std::string::String> {
         &self.mask_value
     }
+    /// <p>Specifies whether to redact the detected PII text. When set to <code>true</code>, PII content is replaced with redaction characters.</p>
+    pub fn redact_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.redact_text = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Specifies whether to redact the detected PII text. When set to <code>true</code>, PII content is replaced with redaction characters.</p>
+    pub fn set_redact_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.redact_text = input;
+        self
+    }
+    /// <p>Specifies whether to redact the detected PII text. When set to <code>true</code>, PII content is replaced with redaction characters.</p>
+    pub fn get_redact_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.redact_text
+    }
+    /// <p>The character used to replace detected PII content when redaction is enabled. The default redaction character is <code>*</code>.</p>
+    pub fn redact_char(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.redact_char = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The character used to replace detected PII content when redaction is enabled. The default redaction character is <code>*</code>.</p>
+    pub fn set_redact_char(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.redact_char = input;
+        self
+    }
+    /// <p>The character used to replace detected PII content when redaction is enabled. The default redaction character is <code>*</code>.</p>
+    pub fn get_redact_char(&self) -> &::std::option::Option<::std::string::String> {
+        &self.redact_char
+    }
+    /// <p>A regular expression pattern used to identify additional PII content beyond the standard detection algorithms.</p>
+    pub fn match_pattern(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.match_pattern = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A regular expression pattern used to identify additional PII content beyond the standard detection algorithms.</p>
+    pub fn set_match_pattern(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.match_pattern = input;
+        self
+    }
+    /// <p>A regular expression pattern used to identify additional PII content beyond the standard detection algorithms.</p>
+    pub fn get_match_pattern(&self) -> &::std::option::Option<::std::string::String> {
+        &self.match_pattern
+    }
+    /// <p>The number of characters to exclude from redaction on the left side of detected PII content. This allows preserving context around the sensitive data.</p>
+    pub fn num_left_chars_to_exclude(mut self, input: i32) -> Self {
+        self.num_left_chars_to_exclude = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of characters to exclude from redaction on the left side of detected PII content. This allows preserving context around the sensitive data.</p>
+    pub fn set_num_left_chars_to_exclude(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.num_left_chars_to_exclude = input;
+        self
+    }
+    /// <p>The number of characters to exclude from redaction on the left side of detected PII content. This allows preserving context around the sensitive data.</p>
+    pub fn get_num_left_chars_to_exclude(&self) -> &::std::option::Option<i32> {
+        &self.num_left_chars_to_exclude
+    }
+    /// <p>The number of characters to exclude from redaction on the right side of detected PII content. This allows preserving context around the sensitive data.</p>
+    pub fn num_right_chars_to_exclude(mut self, input: i32) -> Self {
+        self.num_right_chars_to_exclude = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of characters to exclude from redaction on the right side of detected PII content. This allows preserving context around the sensitive data.</p>
+    pub fn set_num_right_chars_to_exclude(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.num_right_chars_to_exclude = input;
+        self
+    }
+    /// <p>The number of characters to exclude from redaction on the right side of detected PII content. This allows preserving context around the sensitive data.</p>
+    pub fn get_num_right_chars_to_exclude(&self) -> &::std::option::Option<i32> {
+        &self.num_right_chars_to_exclude
+    }
+    /// <p>Additional parameters for configuring PII detection behavior and sensitivity settings.</p>
+    pub fn detection_parameters(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.detection_parameters = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Additional parameters for configuring PII detection behavior and sensitivity settings.</p>
+    pub fn set_detection_parameters(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.detection_parameters = input;
+        self
+    }
+    /// <p>Additional parameters for configuring PII detection behavior and sensitivity settings.</p>
+    pub fn get_detection_parameters(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detection_parameters
+    }
+    /// <p>The sensitivity level for PII detection. Higher sensitivity levels detect more potential PII but may result in more false positives.</p>
+    pub fn detection_sensitivity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.detection_sensitivity = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The sensitivity level for PII detection. Higher sensitivity levels detect more potential PII but may result in more false positives.</p>
+    pub fn set_detection_sensitivity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.detection_sensitivity = input;
+        self
+    }
+    /// <p>The sensitivity level for PII detection. Higher sensitivity levels detect more potential PII but may result in more false positives.</p>
+    pub fn get_detection_sensitivity(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detection_sensitivity
+    }
     /// Consumes the builder and constructs a [`PiiDetection`](crate::types::PiiDetection).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::PiiDetectionBuilder::name)
@@ -246,6 +393,13 @@ impl PiiDetectionBuilder {
             sample_fraction: self.sample_fraction,
             threshold_fraction: self.threshold_fraction,
             mask_value: self.mask_value,
+            redact_text: self.redact_text,
+            redact_char: self.redact_char,
+            match_pattern: self.match_pattern,
+            num_left_chars_to_exclude: self.num_left_chars_to_exclude,
+            num_right_chars_to_exclude: self.num_right_chars_to_exclude,
+            detection_parameters: self.detection_parameters,
+            detection_sensitivity: self.detection_sensitivity,
         })
     }
 }

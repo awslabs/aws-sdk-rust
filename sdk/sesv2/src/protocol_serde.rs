@@ -53,6 +53,10 @@ pub(crate) mod shape_create_import_job;
 
 pub(crate) mod shape_create_multi_region_endpoint;
 
+pub(crate) mod shape_create_tenant;
+
+pub(crate) mod shape_create_tenant_resource_association;
+
 pub(crate) mod shape_delete_configuration_set;
 
 pub(crate) mod shape_delete_configuration_set_event_destination;
@@ -74,6 +78,10 @@ pub(crate) mod shape_delete_email_template;
 pub(crate) mod shape_delete_multi_region_endpoint;
 
 pub(crate) mod shape_delete_suppressed_destination;
+
+pub(crate) mod shape_delete_tenant;
+
+pub(crate) mod shape_delete_tenant_resource_association;
 
 pub(crate) mod shape_get_account;
 
@@ -117,7 +125,11 @@ pub(crate) mod shape_get_message_insights;
 
 pub(crate) mod shape_get_multi_region_endpoint;
 
+pub(crate) mod shape_get_reputation_entity;
+
 pub(crate) mod shape_get_suppressed_destination;
+
+pub(crate) mod shape_get_tenant;
 
 pub(crate) mod shape_list_configuration_sets;
 
@@ -145,9 +157,17 @@ pub(crate) mod shape_list_multi_region_endpoints;
 
 pub(crate) mod shape_list_recommendations;
 
+pub(crate) mod shape_list_reputation_entities;
+
+pub(crate) mod shape_list_resource_tenants;
+
 pub(crate) mod shape_list_suppressed_destinations;
 
 pub(crate) mod shape_list_tags_for_resource;
+
+pub(crate) mod shape_list_tenant_resources;
+
+pub(crate) mod shape_list_tenants;
 
 pub(crate) mod shape_put_account_dedicated_ip_warmup_attributes;
 
@@ -217,6 +237,10 @@ pub(crate) mod shape_update_email_identity_policy;
 
 pub(crate) mod shape_update_email_template;
 
+pub(crate) mod shape_update_reputation_entity_customer_managed_status;
+
+pub(crate) mod shape_update_reputation_entity_policy;
+
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
         b"{}"
@@ -263,6 +287,16 @@ pub(crate) mod shape_create_import_job_input;
 
 pub(crate) mod shape_create_multi_region_endpoint_input;
 
+pub(crate) mod shape_create_tenant_input;
+
+pub(crate) mod shape_create_tenant_resource_association_input;
+
+pub(crate) mod shape_delete_tenant_input;
+
+pub(crate) mod shape_delete_tenant_resource_association_input;
+
+pub(crate) mod shape_get_tenant_input;
+
 pub(crate) mod shape_internal_service_error_exception;
 
 pub(crate) mod shape_invalid_next_token_exception;
@@ -276,6 +310,14 @@ pub(crate) mod shape_list_export_jobs_input;
 pub(crate) mod shape_list_import_jobs_input;
 
 pub(crate) mod shape_list_recommendations_input;
+
+pub(crate) mod shape_list_reputation_entities_input;
+
+pub(crate) mod shape_list_resource_tenants_input;
+
+pub(crate) mod shape_list_tenant_resources_input;
+
+pub(crate) mod shape_list_tenants_input;
 
 pub(crate) mod shape_mail_from_domain_not_verified_exception;
 
@@ -352,6 +394,10 @@ pub(crate) mod shape_update_custom_verification_email_template_input;
 pub(crate) mod shape_update_email_identity_policy_input;
 
 pub(crate) mod shape_update_email_template_input;
+
+pub(crate) mod shape_update_reputation_entity_customer_managed_status_input;
+
+pub(crate) mod shape_update_reputation_entity_policy_input;
 
 pub(crate) mod shape_account_details;
 
@@ -465,7 +511,13 @@ pub(crate) mod shape_policy_map;
 
 pub(crate) mod shape_recommendations_list;
 
+pub(crate) mod shape_reputation_entities_list;
+
+pub(crate) mod shape_reputation_entity;
+
 pub(crate) mod shape_reputation_options;
+
+pub(crate) mod shape_resource_tenant_metadata_list;
 
 pub(crate) mod shape_routes;
 
@@ -484,6 +536,12 @@ pub(crate) mod shape_suppression_options;
 pub(crate) mod shape_tag;
 
 pub(crate) mod shape_tag_list;
+
+pub(crate) mod shape_tenant;
+
+pub(crate) mod shape_tenant_info_list;
+
+pub(crate) mod shape_tenant_resource_list;
 
 pub(crate) mod shape_topic;
 
@@ -575,6 +633,8 @@ pub(crate) mod shape_recommendation;
 
 pub(crate) mod shape_replacement_email_content;
 
+pub(crate) mod shape_resource_tenant_metadata;
+
 pub(crate) mod shape_review_details;
 
 pub(crate) mod shape_route;
@@ -585,6 +645,8 @@ pub(crate) mod shape_sns_destination;
 
 pub(crate) mod shape_soa_record;
 
+pub(crate) mod shape_status_record;
+
 pub(crate) mod shape_suppressed_destination_attributes;
 
 pub(crate) mod shape_suppressed_destination_summary;
@@ -594,6 +656,10 @@ pub(crate) mod shape_suppression_list_destination;
 pub(crate) mod shape_suppression_list_reasons;
 
 pub(crate) mod shape_template;
+
+pub(crate) mod shape_tenant_info;
+
+pub(crate) mod shape_tenant_resource;
 
 pub(crate) mod shape_topic_filter;
 

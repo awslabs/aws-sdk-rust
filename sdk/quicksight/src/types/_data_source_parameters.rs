@@ -22,6 +22,8 @@ pub enum DataSourceParameters {
     DatabricksParameters(crate::types::DatabricksParameters),
     /// <p>The parameters for Exasol.</p>
     ExasolParameters(crate::types::ExasolParameters),
+    /// <p>The parameters for Impala.</p>
+    ImpalaParameters(crate::types::ImpalaParameters),
     /// <p>The parameters for Jira.</p>
     JiraParameters(crate::types::JiraParameters),
     /// <p>The parameters for MariaDB.</p>
@@ -183,6 +185,19 @@ impl DataSourceParameters {
     /// Returns true if this is a [`ExasolParameters`](crate::types::DataSourceParameters::ExasolParameters).
     pub fn is_exasol_parameters(&self) -> bool {
         self.as_exasol_parameters().is_ok()
+    }
+    /// Tries to convert the enum instance into [`ImpalaParameters`](crate::types::DataSourceParameters::ImpalaParameters), extracting the inner [`ImpalaParameters`](crate::types::ImpalaParameters).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_impala_parameters(&self) -> ::std::result::Result<&crate::types::ImpalaParameters, &Self> {
+        if let DataSourceParameters::ImpalaParameters(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`ImpalaParameters`](crate::types::DataSourceParameters::ImpalaParameters).
+    pub fn is_impala_parameters(&self) -> bool {
+        self.as_impala_parameters().is_ok()
     }
     /// Tries to convert the enum instance into [`JiraParameters`](crate::types::DataSourceParameters::JiraParameters), extracting the inner [`JiraParameters`](crate::types::JiraParameters).
     /// Returns `Err(&Self)` if it can't be converted.

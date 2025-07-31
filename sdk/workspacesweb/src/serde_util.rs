@@ -47,6 +47,18 @@ pub(crate) fn associate_network_settings_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn associate_session_logger_output_output_correct_errors(
+    mut builder: crate::operation::associate_session_logger::builders::AssociateSessionLoggerOutputBuilder,
+) -> crate::operation::associate_session_logger::builders::AssociateSessionLoggerOutputBuilder {
+    if builder.portal_arn.is_none() {
+        builder.portal_arn = Some(Default::default())
+    }
+    if builder.session_logger_arn.is_none() {
+        builder.session_logger_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn associate_trust_store_output_output_correct_errors(
     mut builder: crate::operation::associate_trust_store::builders::AssociateTrustStoreOutputBuilder,
 ) -> crate::operation::associate_trust_store::builders::AssociateTrustStoreOutputBuilder {
@@ -136,6 +148,15 @@ pub(crate) fn create_portal_output_output_correct_errors(
     }
     if builder.portal_endpoint.is_none() {
         builder.portal_endpoint = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn create_session_logger_output_output_correct_errors(
+    mut builder: crate::operation::create_session_logger::builders::CreateSessionLoggerOutputBuilder,
+) -> crate::operation::create_session_logger::builders::CreateSessionLoggerOutputBuilder {
+    if builder.session_logger_arn.is_none() {
+        builder.session_logger_arn = Some(Default::default())
     }
     builder
 }
@@ -263,6 +284,18 @@ pub(crate) fn update_network_settings_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn update_session_logger_output_output_correct_errors(
+    mut builder: crate::operation::update_session_logger::builders::UpdateSessionLoggerOutputBuilder,
+) -> crate::operation::update_session_logger::builders::UpdateSessionLoggerOutputBuilder {
+    if builder.session_logger.is_none() {
+        builder.session_logger = {
+            let builder = crate::types::builders::SessionLoggerBuilder::default();
+            crate::serde_util::session_logger_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn update_trust_store_output_output_correct_errors(
     mut builder: crate::operation::update_trust_store::builders::UpdateTrustStoreOutputBuilder,
 ) -> crate::operation::update_trust_store::builders::UpdateTrustStoreOutputBuilder {
@@ -337,6 +370,15 @@ pub(crate) fn network_settings_correct_errors(
 ) -> crate::types::builders::NetworkSettingsBuilder {
     if builder.network_settings_arn.is_none() {
         builder.network_settings_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn session_logger_correct_errors(
+    mut builder: crate::types::builders::SessionLoggerBuilder,
+) -> crate::types::builders::SessionLoggerBuilder {
+    if builder.session_logger_arn.is_none() {
+        builder.session_logger_arn = Some(Default::default())
     }
     builder
 }
@@ -443,6 +485,15 @@ pub(crate) fn portal_summary_correct_errors(
     builder
 }
 
+pub(crate) fn session_logger_summary_correct_errors(
+    mut builder: crate::types::builders::SessionLoggerSummaryBuilder,
+) -> crate::types::builders::SessionLoggerSummaryBuilder {
+    if builder.session_logger_arn.is_none() {
+        builder.session_logger_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn tag_correct_errors(mut builder: crate::types::builders::TagBuilder) -> crate::types::builders::TagBuilder {
     if builder.key.is_none() {
         builder.key = Some(Default::default())
@@ -486,6 +537,21 @@ pub(crate) fn validation_exception_field_correct_errors(
 pub(crate) fn ip_rule_correct_errors(mut builder: crate::types::builders::IpRuleBuilder) -> crate::types::builders::IpRuleBuilder {
     if builder.ip_range.is_none() {
         builder.ip_range = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn s3_log_configuration_correct_errors(
+    mut builder: crate::types::builders::S3LogConfigurationBuilder,
+) -> crate::types::builders::S3LogConfigurationBuilder {
+    if builder.bucket.is_none() {
+        builder.bucket = Some(Default::default())
+    }
+    if builder.log_file_format.is_none() {
+        builder.log_file_format = "no value was set".parse::<crate::types::LogFileFormat>().ok()
+    }
+    if builder.folder_structure.is_none() {
+        builder.folder_structure = "no value was set".parse::<crate::types::FolderStructure>().ok()
     }
     builder
 }

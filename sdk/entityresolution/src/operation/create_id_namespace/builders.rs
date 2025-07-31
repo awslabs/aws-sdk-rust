@@ -22,7 +22,7 @@ impl crate::operation::create_id_namespace::builders::CreateIdNamespaceInputBuil
 }
 /// Fluent builder constructing a request to `CreateIdNamespace`.
 ///
-/// <p>Creates an ID namespace object which will help customers provide metadata explaining their dataset and how to use it. Each ID namespace must have a unique name. To modify an existing ID namespace, use the <code>UpdateIdNamespace</code> API.</p>
+/// <p>Creates an ID namespace object which will help customers provide metadata explaining their dataset and how to use it. Each ID namespace must have a unique name. To modify an existing ID namespace, use the UpdateIdNamespace API.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateIdNamespaceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

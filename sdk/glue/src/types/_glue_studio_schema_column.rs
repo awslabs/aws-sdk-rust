@@ -8,6 +8,8 @@ pub struct GlueStudioSchemaColumn {
     pub name: ::std::string::String,
     /// <p>The hive type for this column in the Glue Studio schema.</p>
     pub r#type: ::std::option::Option<::std::string::String>,
+    /// <p>The data type of the column as defined in Glue Studio.</p>
+    pub glue_studio_type: ::std::option::Option<::std::string::String>,
 }
 impl GlueStudioSchemaColumn {
     /// <p>The name of the column in the Glue Studio schema.</p>
@@ -18,6 +20,10 @@ impl GlueStudioSchemaColumn {
     /// <p>The hive type for this column in the Glue Studio schema.</p>
     pub fn r#type(&self) -> ::std::option::Option<&str> {
         self.r#type.as_deref()
+    }
+    /// <p>The data type of the column as defined in Glue Studio.</p>
+    pub fn glue_studio_type(&self) -> ::std::option::Option<&str> {
+        self.glue_studio_type.as_deref()
     }
 }
 impl GlueStudioSchemaColumn {
@@ -33,6 +39,7 @@ impl GlueStudioSchemaColumn {
 pub struct GlueStudioSchemaColumnBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
+    pub(crate) glue_studio_type: ::std::option::Option<::std::string::String>,
 }
 impl GlueStudioSchemaColumnBuilder {
     /// <p>The name of the column in the Glue Studio schema.</p>
@@ -64,6 +71,20 @@ impl GlueStudioSchemaColumnBuilder {
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.r#type
     }
+    /// <p>The data type of the column as defined in Glue Studio.</p>
+    pub fn glue_studio_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.glue_studio_type = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The data type of the column as defined in Glue Studio.</p>
+    pub fn set_glue_studio_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.glue_studio_type = input;
+        self
+    }
+    /// <p>The data type of the column as defined in Glue Studio.</p>
+    pub fn get_glue_studio_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.glue_studio_type
+    }
     /// Consumes the builder and constructs a [`GlueStudioSchemaColumn`](crate::types::GlueStudioSchemaColumn).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::GlueStudioSchemaColumnBuilder::name)
@@ -76,6 +97,7 @@ impl GlueStudioSchemaColumnBuilder {
                 )
             })?,
             r#type: self.r#type,
+            glue_studio_type: self.glue_studio_type,
         })
     }
 }

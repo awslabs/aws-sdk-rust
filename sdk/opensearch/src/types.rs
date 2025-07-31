@@ -117,6 +117,8 @@ pub use crate::types::_advanced_security_options_status::AdvancedSecurityOptions
 
 pub use crate::types::_advanced_security_options::AdvancedSecurityOptions;
 
+pub use crate::types::_iam_federation_options_output::IamFederationOptionsOutput;
+
 pub use crate::types::_jwt_options_output::JwtOptionsOutput;
 
 pub use crate::types::_saml_options_output::SamlOptionsOutput;
@@ -196,6 +198,8 @@ pub use crate::types::_dry_run_mode::DryRunMode;
 pub use crate::types::_identity_center_options_input::IdentityCenterOptionsInput;
 
 pub use crate::types::_advanced_security_options_input::AdvancedSecurityOptionsInput;
+
+pub use crate::types::_iam_federation_options_input::IamFederationOptionsInput;
 
 pub use crate::types::_jwt_options_input::JwtOptionsInput;
 
@@ -540,6 +544,10 @@ mod _environment_info;
 mod _error_details;
 
 mod _filter;
+
+mod _iam_federation_options_input;
+
+mod _iam_federation_options_output;
 
 mod _iam_identity_center_options;
 

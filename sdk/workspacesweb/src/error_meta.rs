@@ -244,6 +244,41 @@ impl From<crate::operation::associate_network_settings::AssociateNetworkSettings
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_session_logger::AssociateSessionLoggerError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_session_logger::AssociateSessionLoggerError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::associate_session_logger::AssociateSessionLoggerError> for Error {
+    fn from(err: crate::operation::associate_session_logger::AssociateSessionLoggerError) -> Self {
+        match err {
+            crate::operation::associate_session_logger::AssociateSessionLoggerError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::associate_session_logger::AssociateSessionLoggerError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::associate_session_logger::AssociateSessionLoggerError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::associate_session_logger::AssociateSessionLoggerError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::associate_session_logger::AssociateSessionLoggerError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::associate_session_logger::AssociateSessionLoggerError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::associate_session_logger::AssociateSessionLoggerError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_trust_store::AssociateTrustStoreError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -586,6 +621,37 @@ impl From<crate::operation::create_portal::CreatePortalError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_session_logger::CreateSessionLoggerError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_session_logger::CreateSessionLoggerError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_session_logger::CreateSessionLoggerError> for Error {
+    fn from(err: crate::operation::create_session_logger::CreateSessionLoggerError) -> Self {
+        match err {
+            crate::operation::create_session_logger::CreateSessionLoggerError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_session_logger::CreateSessionLoggerError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_session_logger::CreateSessionLoggerError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_session_logger::CreateSessionLoggerError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_session_logger::CreateSessionLoggerError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_session_logger::CreateSessionLoggerError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_session_logger::CreateSessionLoggerError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_trust_store::CreateTrustStoreError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -892,6 +958,34 @@ impl From<crate::operation::delete_portal::DeletePortalError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_session_logger::DeleteSessionLoggerError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_session_logger::DeleteSessionLoggerError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_session_logger::DeleteSessionLoggerError> for Error {
+    fn from(err: crate::operation::delete_session_logger::DeleteSessionLoggerError) -> Self {
+        match err {
+            crate::operation::delete_session_logger::DeleteSessionLoggerError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_session_logger::DeleteSessionLoggerError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_session_logger::DeleteSessionLoggerError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_session_logger::DeleteSessionLoggerError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_session_logger::DeleteSessionLoggerError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_session_logger::DeleteSessionLoggerError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_trust_store::DeleteTrustStoreError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1170,6 +1264,45 @@ impl From<crate::operation::disassociate_network_settings::DisassociateNetworkSe
                 Error::ValidationException(inner)
             }
             crate::operation::disassociate_network_settings::DisassociateNetworkSettingsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::disassociate_session_logger::DisassociateSessionLoggerError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::disassociate_session_logger::DisassociateSessionLoggerError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::disassociate_session_logger::DisassociateSessionLoggerError> for Error {
+    fn from(err: crate::operation::disassociate_session_logger::DisassociateSessionLoggerError) -> Self {
+        match err {
+            crate::operation::disassociate_session_logger::DisassociateSessionLoggerError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::disassociate_session_logger::DisassociateSessionLoggerError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::disassociate_session_logger::DisassociateSessionLoggerError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::disassociate_session_logger::DisassociateSessionLoggerError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::disassociate_session_logger::DisassociateSessionLoggerError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::disassociate_session_logger::DisassociateSessionLoggerError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1582,6 +1715,32 @@ impl From<crate::operation::get_session::GetSessionError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_session_logger::GetSessionLoggerError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_session_logger::GetSessionLoggerError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_session_logger::GetSessionLoggerError> for Error {
+    fn from(err: crate::operation::get_session_logger::GetSessionLoggerError) -> Self {
+        match err {
+            crate::operation::get_session_logger::GetSessionLoggerError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_session_logger::GetSessionLoggerError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_session_logger::GetSessionLoggerError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_session_logger::GetSessionLoggerError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_session_logger::GetSessionLoggerError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_session_logger::GetSessionLoggerError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_trust_store::GetTrustStoreError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1888,6 +2047,31 @@ impl From<crate::operation::list_portals::ListPortalsError> for Error {
             crate::operation::list_portals::ListPortalsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_portals::ListPortalsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_portals::ListPortalsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_session_loggers::ListSessionLoggersError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_session_loggers::ListSessionLoggersError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_session_loggers::ListSessionLoggersError> for Error {
+    fn from(err: crate::operation::list_session_loggers::ListSessionLoggersError) -> Self {
+        match err {
+            crate::operation::list_session_loggers::ListSessionLoggersError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_session_loggers::ListSessionLoggersError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_session_loggers::ListSessionLoggersError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_session_loggers::ListSessionLoggersError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_session_loggers::ListSessionLoggersError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2338,6 +2522,36 @@ impl From<crate::operation::update_portal::UpdatePortalError> for Error {
             crate::operation::update_portal::UpdatePortalError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_portal::UpdatePortalError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_portal::UpdatePortalError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_session_logger::UpdateSessionLoggerError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_session_logger::UpdateSessionLoggerError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_session_logger::UpdateSessionLoggerError> for Error {
+    fn from(err: crate::operation::update_session_logger::UpdateSessionLoggerError) -> Self {
+        match err {
+            crate::operation::update_session_logger::UpdateSessionLoggerError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_session_logger::UpdateSessionLoggerError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_session_logger::UpdateSessionLoggerError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_session_logger::UpdateSessionLoggerError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_session_logger::UpdateSessionLoggerError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_session_logger::UpdateSessionLoggerError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

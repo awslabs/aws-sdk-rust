@@ -28,6 +28,10 @@ pub struct SendBulkEmailInput {
     pub configuration_set_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the multi-region endpoint (global-endpoint).</p>
     pub endpoint_id: ::std::option::Option<::std::string::String>,
+    /// <p>The name of the tenant through which this bulk email will be sent.</p><note>
+    /// <p>The email sending operation will only succeed if all referenced resources (identities, configuration sets, and templates) are associated with this tenant.</p>
+    /// </note>
+    pub tenant_name: ::std::option::Option<::std::string::String>,
 }
 impl SendBulkEmailInput {
     /// <p>The email address to use as the "From" address for the email. The address that you specify has to be verified.</p>
@@ -80,6 +84,12 @@ impl SendBulkEmailInput {
     pub fn endpoint_id(&self) -> ::std::option::Option<&str> {
         self.endpoint_id.as_deref()
     }
+    /// <p>The name of the tenant through which this bulk email will be sent.</p><note>
+    /// <p>The email sending operation will only succeed if all referenced resources (identities, configuration sets, and templates) are associated with this tenant.</p>
+    /// </note>
+    pub fn tenant_name(&self) -> ::std::option::Option<&str> {
+        self.tenant_name.as_deref()
+    }
 }
 impl SendBulkEmailInput {
     /// Creates a new builder-style object to manufacture [`SendBulkEmailInput`](crate::operation::send_bulk_email::SendBulkEmailInput).
@@ -102,6 +112,7 @@ pub struct SendBulkEmailInputBuilder {
     pub(crate) bulk_email_entries: ::std::option::Option<::std::vec::Vec<crate::types::BulkEmailEntry>>,
     pub(crate) configuration_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) endpoint_id: ::std::option::Option<::std::string::String>,
+    pub(crate) tenant_name: ::std::option::Option<::std::string::String>,
 }
 impl SendBulkEmailInputBuilder {
     /// <p>The email address to use as the "From" address for the email. The address that you specify has to be verified.</p>
@@ -275,6 +286,26 @@ impl SendBulkEmailInputBuilder {
     pub fn get_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.endpoint_id
     }
+    /// <p>The name of the tenant through which this bulk email will be sent.</p><note>
+    /// <p>The email sending operation will only succeed if all referenced resources (identities, configuration sets, and templates) are associated with this tenant.</p>
+    /// </note>
+    pub fn tenant_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.tenant_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the tenant through which this bulk email will be sent.</p><note>
+    /// <p>The email sending operation will only succeed if all referenced resources (identities, configuration sets, and templates) are associated with this tenant.</p>
+    /// </note>
+    pub fn set_tenant_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.tenant_name = input;
+        self
+    }
+    /// <p>The name of the tenant through which this bulk email will be sent.</p><note>
+    /// <p>The email sending operation will only succeed if all referenced resources (identities, configuration sets, and templates) are associated with this tenant.</p>
+    /// </note>
+    pub fn get_tenant_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tenant_name
+    }
     /// Consumes the builder and constructs a [`SendBulkEmailInput`](crate::operation::send_bulk_email::SendBulkEmailInput).
     pub fn build(
         self,
@@ -290,6 +321,7 @@ impl SendBulkEmailInputBuilder {
             bulk_email_entries: self.bulk_email_entries,
             configuration_set_name: self.configuration_set_name,
             endpoint_id: self.endpoint_id,
+            tenant_name: self.tenant_name,
         })
     }
 }

@@ -46,6 +46,8 @@ pub struct ProfileAttributes {
     pub billing_address: ::std::option::Option<crate::types::AddressDimension>,
     /// <p>A field to describe values to segment on within attributes.</p>
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeDimension>>,
+    /// <p>A field to describe values to segment on within profile type.</p>
+    pub profile_type: ::std::option::Option<crate::types::ProfileTypeDimension>,
 }
 impl ProfileAttributes {
     /// <p>A field to describe values to segment on within account number.</p>
@@ -132,6 +134,10 @@ impl ProfileAttributes {
     pub fn attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::AttributeDimension>> {
         self.attributes.as_ref()
     }
+    /// <p>A field to describe values to segment on within profile type.</p>
+    pub fn profile_type(&self) -> ::std::option::Option<&crate::types::ProfileTypeDimension> {
+        self.profile_type.as_ref()
+    }
 }
 impl ::std::fmt::Debug for ProfileAttributes {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -157,6 +163,7 @@ impl ::std::fmt::Debug for ProfileAttributes {
         formatter.field("mailing_address", &"*** Sensitive Data Redacted ***");
         formatter.field("billing_address", &"*** Sensitive Data Redacted ***");
         formatter.field("attributes", &"*** Sensitive Data Redacted ***");
+        formatter.field("profile_type", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -192,6 +199,7 @@ pub struct ProfileAttributesBuilder {
     pub(crate) mailing_address: ::std::option::Option<crate::types::AddressDimension>,
     pub(crate) billing_address: ::std::option::Option<crate::types::AddressDimension>,
     pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeDimension>>,
+    pub(crate) profile_type: ::std::option::Option<crate::types::ProfileTypeDimension>,
 }
 impl ProfileAttributesBuilder {
     /// <p>A field to describe values to segment on within account number.</p>
@@ -497,6 +505,20 @@ impl ProfileAttributesBuilder {
     pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeDimension>> {
         &self.attributes
     }
+    /// <p>A field to describe values to segment on within profile type.</p>
+    pub fn profile_type(mut self, input: crate::types::ProfileTypeDimension) -> Self {
+        self.profile_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A field to describe values to segment on within profile type.</p>
+    pub fn set_profile_type(mut self, input: ::std::option::Option<crate::types::ProfileTypeDimension>) -> Self {
+        self.profile_type = input;
+        self
+    }
+    /// <p>A field to describe values to segment on within profile type.</p>
+    pub fn get_profile_type(&self) -> &::std::option::Option<crate::types::ProfileTypeDimension> {
+        &self.profile_type
+    }
     /// Consumes the builder and constructs a [`ProfileAttributes`](crate::types::ProfileAttributes).
     pub fn build(self) -> crate::types::ProfileAttributes {
         crate::types::ProfileAttributes {
@@ -521,6 +543,7 @@ impl ProfileAttributesBuilder {
             mailing_address: self.mailing_address,
             billing_address: self.billing_address,
             attributes: self.attributes,
+            profile_type: self.profile_type,
         }
     }
 }
@@ -548,6 +571,7 @@ impl ::std::fmt::Debug for ProfileAttributesBuilder {
         formatter.field("mailing_address", &"*** Sensitive Data Redacted ***");
         formatter.field("billing_address", &"*** Sensitive Data Redacted ***");
         formatter.field("attributes", &"*** Sensitive Data Redacted ***");
+        formatter.field("profile_type", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

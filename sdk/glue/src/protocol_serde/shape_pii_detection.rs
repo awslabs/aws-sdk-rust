@@ -45,6 +45,33 @@ pub fn ser_pii_detection(
     if let Some(var_8) = &input.mask_value {
         object.key("MaskValue").string(var_8.as_str());
     }
+    if let Some(var_9) = &input.redact_text {
+        object.key("RedactText").string(var_9.as_str());
+    }
+    if let Some(var_10) = &input.redact_char {
+        object.key("RedactChar").string(var_10.as_str());
+    }
+    if let Some(var_11) = &input.match_pattern {
+        object.key("MatchPattern").string(var_11.as_str());
+    }
+    if let Some(var_12) = &input.num_left_chars_to_exclude {
+        object.key("NumLeftCharsToExclude").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_12).into()),
+        );
+    }
+    if let Some(var_13) = &input.num_right_chars_to_exclude {
+        object.key("NumRightCharsToExclude").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_13).into()),
+        );
+    }
+    if let Some(var_14) = &input.detection_parameters {
+        object.key("DetectionParameters").string(var_14.as_str());
+    }
+    if let Some(var_15) = &input.detection_sensitivity {
+        object.key("DetectionSensitivity").string(var_15.as_str());
+    }
     Ok(())
 }
 
@@ -104,6 +131,55 @@ where
                         }
                         "MaskValue" => {
                             builder = builder.set_mask_value(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "RedactText" => {
+                            builder = builder.set_redact_text(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "RedactChar" => {
+                            builder = builder.set_redact_char(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "MatchPattern" => {
+                            builder = builder.set_match_pattern(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "NumLeftCharsToExclude" => {
+                            builder = builder.set_num_left_chars_to_exclude(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "NumRightCharsToExclude" => {
+                            builder = builder.set_num_right_chars_to_exclude(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "DetectionParameters" => {
+                            builder = builder.set_detection_parameters(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "DetectionSensitivity" => {
+                            builder = builder.set_detection_sensitivity(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,

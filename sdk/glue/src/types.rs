@@ -139,13 +139,49 @@ pub use crate::types::_execution_class::ExecutionClass;
 
 pub use crate::types::_code_gen_configuration_node::CodeGenConfigurationNode;
 
-pub use crate::types::_connector_data_target::ConnectorDataTarget;
-
-pub use crate::types::_connector_data_source::ConnectorDataSource;
+pub use crate::types::_dynamo_dbelt_connector_source::DynamoDbeltConnectorSource;
 
 pub use crate::types::_glue_schema::GlueSchema;
 
 pub use crate::types::_glue_studio_schema_column::GlueStudioSchemaColumn;
+
+pub use crate::types::_ddbelt_connection_options::DdbeltConnectionOptions;
+
+pub use crate::types::_ddb_export_type::DdbExportType;
+
+pub use crate::types::_s3_hyper_direct_target::S3HyperDirectTarget;
+
+pub use crate::types::_auto_data_quality::AutoDataQuality;
+
+pub use crate::types::_direct_schema_change_policy::DirectSchemaChangePolicy;
+
+pub use crate::types::_update_catalog_behavior::UpdateCatalogBehavior;
+
+pub use crate::types::_hyper_target_compression_type::HyperTargetCompressionType;
+
+pub use crate::types::_target_format::TargetFormat;
+
+pub use crate::types::_s3_excel_source::S3ExcelSource;
+
+pub use crate::types::_s3_direct_source_additional_options::S3DirectSourceAdditionalOptions;
+
+pub use crate::types::_parquet_compression_type::ParquetCompressionType;
+
+pub use crate::types::_s3_iceberg_direct_target::S3IcebergDirectTarget;
+
+pub use crate::types::_iceberg_target_compression_type::IcebergTargetCompressionType;
+
+pub use crate::types::_s3_iceberg_catalog_target::S3IcebergCatalogTarget;
+
+pub use crate::types::_catalog_schema_change_policy::CatalogSchemaChangePolicy;
+
+pub use crate::types::_catalog_iceberg_source::CatalogIcebergSource;
+
+pub use crate::types::_s3_catalog_iceberg_source::S3CatalogIcebergSource;
+
+pub use crate::types::_connector_data_target::ConnectorDataTarget;
+
+pub use crate::types::_connector_data_source::ConnectorDataSource;
 
 pub use crate::types::_snowflake_target::SnowflakeTarget;
 
@@ -185,21 +221,11 @@ pub use crate::types::_amazon_redshift_source::AmazonRedshiftSource;
 
 pub use crate::types::_s3_delta_direct_target::S3DeltaDirectTarget;
 
-pub use crate::types::_direct_schema_change_policy::DirectSchemaChangePolicy;
-
-pub use crate::types::_update_catalog_behavior::UpdateCatalogBehavior;
-
-pub use crate::types::_target_format::TargetFormat;
-
 pub use crate::types::_delta_target_compression_type::DeltaTargetCompressionType;
 
 pub use crate::types::_s3_delta_catalog_target::S3DeltaCatalogTarget;
 
-pub use crate::types::_catalog_schema_change_policy::CatalogSchemaChangePolicy;
-
 pub use crate::types::_s3_delta_source::S3DeltaSource;
-
-pub use crate::types::_s3_direct_source_additional_options::S3DirectSourceAdditionalOptions;
 
 pub use crate::types::_catalog_delta_source::CatalogDeltaSource;
 
@@ -230,6 +256,20 @@ pub use crate::types::_dynamic_transform::DynamicTransform;
 pub use crate::types::_transform_config_parameter::TransformConfigParameter;
 
 pub use crate::types::_param_type::ParamType;
+
+pub use crate::types::_route::Route;
+
+pub use crate::types::_group_filters::GroupFilters;
+
+pub use crate::types::_filter_logical_operator::FilterLogicalOperator;
+
+pub use crate::types::_filter_expression::FilterExpression;
+
+pub use crate::types::_filter_value::FilterValue;
+
+pub use crate::types::_filter_value_type::FilterValueType;
+
+pub use crate::types::_filter_operation::FilterOperation;
 
 pub use crate::types::_postgre_sql_catalog_target::PostgreSqlCatalogTarget;
 
@@ -303,16 +343,6 @@ pub use crate::types::_custom_code::CustomCode;
 
 pub use crate::types::_filter::Filter;
 
-pub use crate::types::_filter_expression::FilterExpression;
-
-pub use crate::types::_filter_value::FilterValue;
-
-pub use crate::types::_filter_value_type::FilterValueType;
-
-pub use crate::types::_filter_operation::FilterOperation;
-
-pub use crate::types::_filter_logical_operator::FilterLogicalOperator;
-
 pub use crate::types::_fill_missing_values::FillMissingValues;
 
 pub use crate::types::_select_from_collection::SelectFromCollection;
@@ -337,19 +367,9 @@ pub use crate::types::_apply_mapping::ApplyMapping;
 
 pub use crate::types::_mapping::Mapping;
 
-pub use crate::types::_s3_iceberg_direct_target::S3IcebergDirectTarget;
-
-pub use crate::types::_iceberg_target_compression_type::IcebergTargetCompressionType;
-
 pub use crate::types::_s3_direct_target::S3DirectTarget;
 
-pub use crate::types::_s3_hyper_direct_target::S3HyperDirectTarget;
-
-pub use crate::types::_hyper_target_compression_type::HyperTargetCompressionType;
-
 pub use crate::types::_s3_glue_parquet_target::S3GlueParquetTarget;
-
-pub use crate::types::_parquet_compression_type::ParquetCompressionType;
 
 pub use crate::types::_s3_catalog_target::S3CatalogTarget;
 
@@ -365,6 +385,8 @@ pub use crate::types::_jdbc_connector_target::JdbcConnectorTarget;
 
 pub use crate::types::_dynamo_db_catalog_source::DynamoDbCatalogSource;
 
+pub use crate::types::_ddbelt_catalog_additional_options::DdbeltCatalogAdditionalOptions;
+
 pub use crate::types::_relational_catalog_source::RelationalCatalogSource;
 
 pub use crate::types::_s3_parquet_source::S3ParquetSource;
@@ -372,8 +394,6 @@ pub use crate::types::_s3_parquet_source::S3ParquetSource;
 pub use crate::types::_s3_json_source::S3JsonSource;
 
 pub use crate::types::_compression_type::CompressionType;
-
-pub use crate::types::_s3_excel_source::S3ExcelSource;
 
 pub use crate::types::_s3_csv_source::S3CsvSource;
 
@@ -1075,6 +1095,8 @@ mod _authentication_type;
 
 mod _authorization_code_properties;
 
+mod _auto_data_quality;
+
 mod _backfill_error;
 
 mod _backfill_error_code;
@@ -1122,6 +1144,8 @@ mod _catalog_encryption_mode;
 mod _catalog_entry;
 
 mod _catalog_hudi_source;
+
+mod _catalog_iceberg_source;
 
 mod _catalog_import_status;
 
@@ -1335,6 +1359,12 @@ mod _datatype;
 
 mod _date_column_statistics_data;
 
+mod _ddb_export_type;
+
+mod _ddbelt_catalog_additional_options;
+
+mod _ddbelt_connection_options;
+
 mod _decimal_column_statistics_data;
 
 mod _decimal_number;
@@ -1380,6 +1410,8 @@ mod _dynamic_transform;
 mod _dynamo_db_catalog_source;
 
 mod _dynamo_db_target;
+
+mod _dynamo_dbelt_connector_source;
 
 mod _edge;
 
@@ -1470,6 +1502,8 @@ mod _governed_catalog_source;
 mod _governed_catalog_target;
 
 mod _grok_classifier;
+
+mod _group_filters;
 
 mod _hudi_target;
 
@@ -1761,6 +1795,8 @@ mod _retention_configuration;
 
 mod _retention_metrics;
 
+mod _route;
+
 mod _run_identifier;
 
 mod _run_metrics;
@@ -1768,6 +1804,8 @@ mod _run_metrics;
 mod _s3_catalog_delta_source;
 
 mod _s3_catalog_hudi_source;
+
+mod _s3_catalog_iceberg_source;
 
 mod _s3_catalog_source;
 
@@ -1800,6 +1838,8 @@ mod _s3_hudi_direct_target;
 mod _s3_hudi_source;
 
 mod _s3_hyper_direct_target;
+
+mod _s3_iceberg_catalog_target;
 
 mod _s3_iceberg_direct_target;
 

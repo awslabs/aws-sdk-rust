@@ -1599,6 +1599,8 @@ pub(crate) mod shape_catalog_delta_source;
 
 pub(crate) mod shape_catalog_hudi_source;
 
+pub(crate) mod shape_catalog_iceberg_source;
+
 pub(crate) mod shape_catalog_kafka_source;
 
 pub(crate) mod shape_catalog_kinesis_source;
@@ -1708,6 +1710,8 @@ pub(crate) mod shape_dynamic_transform;
 pub(crate) mod shape_dynamo_db_catalog_source;
 
 pub(crate) mod shape_dynamo_db_target;
+
+pub(crate) mod shape_dynamo_dbelt_connector_source;
 
 pub(crate) mod shape_encryption_at_rest;
 
@@ -1863,9 +1867,13 @@ pub(crate) mod shape_resource_uri_list;
 
 pub(crate) mod shape_retention_configuration;
 
+pub(crate) mod shape_route;
+
 pub(crate) mod shape_s3_catalog_delta_source;
 
 pub(crate) mod shape_s3_catalog_hudi_source;
+
+pub(crate) mod shape_s3_catalog_iceberg_source;
 
 pub(crate) mod shape_s3_catalog_source;
 
@@ -1894,6 +1902,8 @@ pub(crate) mod shape_s3_hudi_direct_target;
 pub(crate) mod shape_s3_hudi_source;
 
 pub(crate) mod shape_s3_hyper_direct_target;
+
+pub(crate) mod shape_s3_iceberg_catalog_target;
 
 pub(crate) mod shape_s3_iceberg_direct_target;
 
@@ -1987,6 +1997,8 @@ pub(crate) mod shape_allowed_values;
 
 pub(crate) mod shape_amazon_redshift_node_data;
 
+pub(crate) mod shape_auto_data_quality;
+
 pub(crate) mod shape_backfill_errors;
 
 pub(crate) mod shape_basic_authentication_credentials;
@@ -2031,6 +2043,10 @@ pub(crate) mod shape_data_lake_principal;
 
 pub(crate) mod shape_date_column_statistics_data;
 
+pub(crate) mod shape_ddbelt_catalog_additional_options;
+
+pub(crate) mod shape_ddbelt_connection_options;
+
 pub(crate) mod shape_decimal_column_statistics_data;
 
 pub(crate) mod shape_delta_target_list;
@@ -2058,6 +2074,8 @@ pub(crate) mod shape_filter_expression;
 pub(crate) mod shape_glue_schema;
 
 pub(crate) mod shape_glue_table_additional_options;
+
+pub(crate) mod shape_group_filters;
 
 pub(crate) mod shape_hudi_target_list;
 
@@ -2270,6 +2288,8 @@ pub(crate) mod shape_filter_expressions;
 pub(crate) mod shape_glue_schemas;
 
 pub(crate) mod shape_glue_studio_path_list;
+
+pub(crate) mod shape_group_filters_list;
 
 pub(crate) mod shape_iceberg_partition_field;
 

@@ -25,6 +25,11 @@ where
                             builder = builder
                                 .set_rule_based_properties(crate::protocol_serde::shape_rule_based_properties::de_rule_based_properties(tokens)?);
                         }
+                        "ruleConditionProperties" => {
+                            builder = builder.set_rule_condition_properties(
+                                crate::protocol_serde::shape_rule_condition_properties::de_rule_condition_properties(tokens)?,
+                            );
+                        }
                         "providerProperties" => {
                             builder =
                                 builder.set_provider_properties(crate::protocol_serde::shape_provider_properties::de_provider_properties(tokens)?);
@@ -62,11 +67,17 @@ pub fn ser_resolution_techniques(
         crate::protocol_serde::shape_rule_based_properties::ser_rule_based_properties(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.provider_properties {
+    if let Some(var_3) = &input.rule_condition_properties {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("providerProperties").start_object();
-        crate::protocol_serde::shape_provider_properties::ser_provider_properties(&mut object_4, var_3)?;
+        let mut object_4 = object.key("ruleConditionProperties").start_object();
+        crate::protocol_serde::shape_rule_condition_properties::ser_rule_condition_properties(&mut object_4, var_3)?;
         object_4.finish();
+    }
+    if let Some(var_5) = &input.provider_properties {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("providerProperties").start_object();
+        crate::protocol_serde::shape_provider_properties::ser_provider_properties(&mut object_6, var_5)?;
+        object_6.finish();
     }
     Ok(())
 }

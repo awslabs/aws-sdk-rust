@@ -26,6 +26,8 @@ pub struct PortalSummary {
     pub user_settings_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the network settings that is associated with the web portal.</p>
     pub network_settings_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The ARN of the session logger that is assocaited with the portal.</p>
+    pub session_logger_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the trust that is associated with this web portal.</p>
     pub trust_store_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the user access logging settings that is associated with the web portal.</p>
@@ -87,6 +89,10 @@ impl PortalSummary {
     pub fn network_settings_arn(&self) -> ::std::option::Option<&str> {
         self.network_settings_arn.as_deref()
     }
+    /// <p>The ARN of the session logger that is assocaited with the portal.</p>
+    pub fn session_logger_arn(&self) -> ::std::option::Option<&str> {
+        self.session_logger_arn.as_deref()
+    }
     /// <p>The ARN of the trust that is associated with this web portal.</p>
     pub fn trust_store_arn(&self) -> ::std::option::Option<&str> {
         self.trust_store_arn.as_deref()
@@ -128,6 +134,7 @@ impl ::std::fmt::Debug for PortalSummary {
         formatter.field("data_protection_settings_arn", &self.data_protection_settings_arn);
         formatter.field("user_settings_arn", &self.user_settings_arn);
         formatter.field("network_settings_arn", &self.network_settings_arn);
+        formatter.field("session_logger_arn", &self.session_logger_arn);
         formatter.field("trust_store_arn", &self.trust_store_arn);
         formatter.field("user_access_logging_settings_arn", &self.user_access_logging_settings_arn);
         formatter.field("authentication_type", &self.authentication_type);
@@ -159,6 +166,7 @@ pub struct PortalSummaryBuilder {
     pub(crate) data_protection_settings_arn: ::std::option::Option<::std::string::String>,
     pub(crate) user_settings_arn: ::std::option::Option<::std::string::String>,
     pub(crate) network_settings_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) session_logger_arn: ::std::option::Option<::std::string::String>,
     pub(crate) trust_store_arn: ::std::option::Option<::std::string::String>,
     pub(crate) user_access_logging_settings_arn: ::std::option::Option<::std::string::String>,
     pub(crate) authentication_type: ::std::option::Option<crate::types::AuthenticationType>,
@@ -322,6 +330,20 @@ impl PortalSummaryBuilder {
     pub fn get_network_settings_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.network_settings_arn
     }
+    /// <p>The ARN of the session logger that is assocaited with the portal.</p>
+    pub fn session_logger_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.session_logger_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN of the session logger that is assocaited with the portal.</p>
+    pub fn set_session_logger_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.session_logger_arn = input;
+        self
+    }
+    /// <p>The ARN of the session logger that is assocaited with the portal.</p>
+    pub fn get_session_logger_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_logger_arn
+    }
     /// <p>The ARN of the trust that is associated with this web portal.</p>
     pub fn trust_store_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trust_store_arn = ::std::option::Option::Some(input.into());
@@ -433,6 +455,7 @@ impl PortalSummaryBuilder {
             data_protection_settings_arn: self.data_protection_settings_arn,
             user_settings_arn: self.user_settings_arn,
             network_settings_arn: self.network_settings_arn,
+            session_logger_arn: self.session_logger_arn,
             trust_store_arn: self.trust_store_arn,
             user_access_logging_settings_arn: self.user_access_logging_settings_arn,
             authentication_type: self.authentication_type,
@@ -456,6 +479,7 @@ impl ::std::fmt::Debug for PortalSummaryBuilder {
         formatter.field("data_protection_settings_arn", &self.data_protection_settings_arn);
         formatter.field("user_settings_arn", &self.user_settings_arn);
         formatter.field("network_settings_arn", &self.network_settings_arn);
+        formatter.field("session_logger_arn", &self.session_logger_arn);
         formatter.field("trust_store_arn", &self.trust_store_arn);
         formatter.field("user_access_logging_settings_arn", &self.user_access_logging_settings_arn);
         formatter.field("authentication_type", &self.authentication_type);

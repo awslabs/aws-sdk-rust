@@ -15,6 +15,7 @@
 ///     UsageType::CodeRepositoryIac => { /* ... */ },
 ///     UsageType::CodeRepositorySast => { /* ... */ },
 ///     UsageType::CodeRepositorySca => { /* ... */ },
+///     UsageType::Ec2AgentlessInstanceHours => { /* ... */ },
 ///     UsageType::Ec2InstanceHours => { /* ... */ },
 ///     UsageType::EcrInitialScan => { /* ... */ },
 ///     UsageType::EcrRescan => { /* ... */ },
@@ -55,6 +56,8 @@ pub enum UsageType {
     #[allow(missing_docs)] // documentation missing in model
     CodeRepositorySca,
     #[allow(missing_docs)] // documentation missing in model
+    Ec2AgentlessInstanceHours,
+    #[allow(missing_docs)] // documentation missing in model
     Ec2InstanceHours,
     #[allow(missing_docs)] // documentation missing in model
     EcrInitialScan,
@@ -74,6 +77,7 @@ impl ::std::convert::From<&str> for UsageType {
             "CODE_REPOSITORY_IAC" => UsageType::CodeRepositoryIac,
             "CODE_REPOSITORY_SAST" => UsageType::CodeRepositorySast,
             "CODE_REPOSITORY_SCA" => UsageType::CodeRepositorySca,
+            "EC2_AGENTLESS_INSTANCE_HOURS" => UsageType::Ec2AgentlessInstanceHours,
             "EC2_INSTANCE_HOURS" => UsageType::Ec2InstanceHours,
             "ECR_INITIAL_SCAN" => UsageType::EcrInitialScan,
             "ECR_RESCAN" => UsageType::EcrRescan,
@@ -97,6 +101,7 @@ impl UsageType {
             UsageType::CodeRepositoryIac => "CODE_REPOSITORY_IAC",
             UsageType::CodeRepositorySast => "CODE_REPOSITORY_SAST",
             UsageType::CodeRepositorySca => "CODE_REPOSITORY_SCA",
+            UsageType::Ec2AgentlessInstanceHours => "EC2_AGENTLESS_INSTANCE_HOURS",
             UsageType::Ec2InstanceHours => "EC2_INSTANCE_HOURS",
             UsageType::EcrInitialScan => "ECR_INITIAL_SCAN",
             UsageType::EcrRescan => "ECR_RESCAN",
@@ -111,6 +116,7 @@ impl UsageType {
             "CODE_REPOSITORY_IAC",
             "CODE_REPOSITORY_SAST",
             "CODE_REPOSITORY_SCA",
+            "EC2_AGENTLESS_INSTANCE_HOURS",
             "EC2_INSTANCE_HOURS",
             "ECR_INITIAL_SCAN",
             "ECR_RESCAN",
@@ -142,6 +148,7 @@ impl ::std::fmt::Display for UsageType {
             UsageType::CodeRepositoryIac => write!(f, "CODE_REPOSITORY_IAC"),
             UsageType::CodeRepositorySast => write!(f, "CODE_REPOSITORY_SAST"),
             UsageType::CodeRepositorySca => write!(f, "CODE_REPOSITORY_SCA"),
+            UsageType::Ec2AgentlessInstanceHours => write!(f, "EC2_AGENTLESS_INSTANCE_HOURS"),
             UsageType::Ec2InstanceHours => write!(f, "EC2_INSTANCE_HOURS"),
             UsageType::EcrInitialScan => write!(f, "ECR_INITIAL_SCAN"),
             UsageType::EcrRescan => write!(f, "ECR_RESCAN"),

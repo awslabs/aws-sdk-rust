@@ -10,6 +10,10 @@ pub struct CatalogSource {
     pub database: ::std::string::String,
     /// <p>The name of the table in the database to read from.</p>
     pub table: ::std::string::String,
+    /// <p>Partitions satisfying this predicate are deleted. Files within the retention period in these partitions are not deleted.</p>
+    pub partition_predicate: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies the data schema for the catalog source.</p>
+    pub output_schemas: ::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>>,
 }
 impl CatalogSource {
     /// <p>The name of the data store.</p>
@@ -27,6 +31,16 @@ impl CatalogSource {
         use std::ops::Deref;
         self.table.deref()
     }
+    /// <p>Partitions satisfying this predicate are deleted. Files within the retention period in these partitions are not deleted.</p>
+    pub fn partition_predicate(&self) -> ::std::option::Option<&str> {
+        self.partition_predicate.as_deref()
+    }
+    /// <p>Specifies the data schema for the catalog source.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.output_schemas.is_none()`.
+    pub fn output_schemas(&self) -> &[crate::types::GlueSchema] {
+        self.output_schemas.as_deref().unwrap_or_default()
+    }
 }
 impl CatalogSource {
     /// Creates a new builder-style object to manufacture [`CatalogSource`](crate::types::CatalogSource).
@@ -42,6 +56,8 @@ pub struct CatalogSourceBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) database: ::std::option::Option<::std::string::String>,
     pub(crate) table: ::std::option::Option<::std::string::String>,
+    pub(crate) partition_predicate: ::std::option::Option<::std::string::String>,
+    pub(crate) output_schemas: ::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>>,
 }
 impl CatalogSourceBuilder {
     /// <p>The name of the data store.</p>
@@ -89,6 +105,40 @@ impl CatalogSourceBuilder {
     pub fn get_table(&self) -> &::std::option::Option<::std::string::String> {
         &self.table
     }
+    /// <p>Partitions satisfying this predicate are deleted. Files within the retention period in these partitions are not deleted.</p>
+    pub fn partition_predicate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.partition_predicate = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Partitions satisfying this predicate are deleted. Files within the retention period in these partitions are not deleted.</p>
+    pub fn set_partition_predicate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.partition_predicate = input;
+        self
+    }
+    /// <p>Partitions satisfying this predicate are deleted. Files within the retention period in these partitions are not deleted.</p>
+    pub fn get_partition_predicate(&self) -> &::std::option::Option<::std::string::String> {
+        &self.partition_predicate
+    }
+    /// Appends an item to `output_schemas`.
+    ///
+    /// To override the contents of this collection use [`set_output_schemas`](Self::set_output_schemas).
+    ///
+    /// <p>Specifies the data schema for the catalog source.</p>
+    pub fn output_schemas(mut self, input: crate::types::GlueSchema) -> Self {
+        let mut v = self.output_schemas.unwrap_or_default();
+        v.push(input);
+        self.output_schemas = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Specifies the data schema for the catalog source.</p>
+    pub fn set_output_schemas(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>>) -> Self {
+        self.output_schemas = input;
+        self
+    }
+    /// <p>Specifies the data schema for the catalog source.</p>
+    pub fn get_output_schemas(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>> {
+        &self.output_schemas
+    }
     /// Consumes the builder and constructs a [`CatalogSource`](crate::types::CatalogSource).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::CatalogSourceBuilder::name)
@@ -114,6 +164,8 @@ impl CatalogSourceBuilder {
                     "table was not specified but it is required when building CatalogSource",
                 )
             })?,
+            partition_predicate: self.partition_predicate,
+            output_schemas: self.output_schemas,
         })
     }
 }

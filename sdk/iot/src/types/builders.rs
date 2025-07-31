@@ -421,6 +421,8 @@ pub use crate::types::_scheduling_config::SchedulingConfigBuilder;
 
 pub use crate::types::_job_process_details::JobProcessDetailsBuilder;
 
+pub use crate::types::_configuration_details::ConfigurationDetailsBuilder;
+
 pub use crate::types::_server_certificate_summary::ServerCertificateSummaryBuilder;
 
 pub use crate::types::_authorizer_description::AuthorizerDescriptionBuilder;

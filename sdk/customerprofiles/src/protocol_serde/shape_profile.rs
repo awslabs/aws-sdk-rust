@@ -165,6 +165,17 @@ where
                                     .transpose()?,
                             );
                         }
+                        "ProfileType" => {
+                            builder = builder.set_profile_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ProfileType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "EngagementPreferences" => {
+                            builder = builder
+                                .set_engagement_preferences(crate::protocol_serde::shape_engagement_preferences::de_engagement_preferences(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

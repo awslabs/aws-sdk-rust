@@ -18,6 +18,10 @@ pub struct S3HudiCatalogTarget {
     pub additional_options: ::std::collections::HashMap<::std::string::String, ::std::string::String>,
     /// <p>A policy that specifies update behavior for the crawler.</p>
     pub schema_change_policy: ::std::option::Option<crate::types::CatalogSchemaChangePolicy>,
+    /// <p>Specifies whether to automatically enable data quality evaluation for the S3 Hudi catalog target. When set to <code>true</code>, data quality checks are performed automatically during the write operation.</p>
+    pub auto_data_quality: ::std::option::Option<crate::types::AutoDataQuality>,
+    /// <p>Specifies the data schema for the S3 Hudi catalog target.</p>
+    pub output_schemas: ::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>>,
 }
 impl S3HudiCatalogTarget {
     /// <p>The name of the data target.</p>
@@ -54,6 +58,16 @@ impl S3HudiCatalogTarget {
     pub fn schema_change_policy(&self) -> ::std::option::Option<&crate::types::CatalogSchemaChangePolicy> {
         self.schema_change_policy.as_ref()
     }
+    /// <p>Specifies whether to automatically enable data quality evaluation for the S3 Hudi catalog target. When set to <code>true</code>, data quality checks are performed automatically during the write operation.</p>
+    pub fn auto_data_quality(&self) -> ::std::option::Option<&crate::types::AutoDataQuality> {
+        self.auto_data_quality.as_ref()
+    }
+    /// <p>Specifies the data schema for the S3 Hudi catalog target.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.output_schemas.is_none()`.
+    pub fn output_schemas(&self) -> &[crate::types::GlueSchema] {
+        self.output_schemas.as_deref().unwrap_or_default()
+    }
 }
 impl S3HudiCatalogTarget {
     /// Creates a new builder-style object to manufacture [`S3HudiCatalogTarget`](crate::types::S3HudiCatalogTarget).
@@ -73,6 +87,8 @@ pub struct S3HudiCatalogTargetBuilder {
     pub(crate) database: ::std::option::Option<::std::string::String>,
     pub(crate) additional_options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) schema_change_policy: ::std::option::Option<crate::types::CatalogSchemaChangePolicy>,
+    pub(crate) auto_data_quality: ::std::option::Option<crate::types::AutoDataQuality>,
+    pub(crate) output_schemas: ::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>>,
 }
 impl S3HudiCatalogTargetBuilder {
     /// <p>The name of the data target.</p>
@@ -201,6 +217,40 @@ impl S3HudiCatalogTargetBuilder {
     pub fn get_schema_change_policy(&self) -> &::std::option::Option<crate::types::CatalogSchemaChangePolicy> {
         &self.schema_change_policy
     }
+    /// <p>Specifies whether to automatically enable data quality evaluation for the S3 Hudi catalog target. When set to <code>true</code>, data quality checks are performed automatically during the write operation.</p>
+    pub fn auto_data_quality(mut self, input: crate::types::AutoDataQuality) -> Self {
+        self.auto_data_quality = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to automatically enable data quality evaluation for the S3 Hudi catalog target. When set to <code>true</code>, data quality checks are performed automatically during the write operation.</p>
+    pub fn set_auto_data_quality(mut self, input: ::std::option::Option<crate::types::AutoDataQuality>) -> Self {
+        self.auto_data_quality = input;
+        self
+    }
+    /// <p>Specifies whether to automatically enable data quality evaluation for the S3 Hudi catalog target. When set to <code>true</code>, data quality checks are performed automatically during the write operation.</p>
+    pub fn get_auto_data_quality(&self) -> &::std::option::Option<crate::types::AutoDataQuality> {
+        &self.auto_data_quality
+    }
+    /// Appends an item to `output_schemas`.
+    ///
+    /// To override the contents of this collection use [`set_output_schemas`](Self::set_output_schemas).
+    ///
+    /// <p>Specifies the data schema for the S3 Hudi catalog target.</p>
+    pub fn output_schemas(mut self, input: crate::types::GlueSchema) -> Self {
+        let mut v = self.output_schemas.unwrap_or_default();
+        v.push(input);
+        self.output_schemas = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Specifies the data schema for the S3 Hudi catalog target.</p>
+    pub fn set_output_schemas(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>>) -> Self {
+        self.output_schemas = input;
+        self
+    }
+    /// <p>Specifies the data schema for the S3 Hudi catalog target.</p>
+    pub fn get_output_schemas(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>> {
+        &self.output_schemas
+    }
     /// Consumes the builder and constructs a [`S3HudiCatalogTarget`](crate::types::S3HudiCatalogTarget).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::S3HudiCatalogTargetBuilder::name)
@@ -242,6 +292,8 @@ impl S3HudiCatalogTargetBuilder {
                 )
             })?,
             schema_change_policy: self.schema_change_policy,
+            auto_data_quality: self.auto_data_quality,
+            output_schemas: self.output_schemas,
         })
     }
 }

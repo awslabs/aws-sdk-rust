@@ -6,6 +6,8 @@ pub struct TerminateInstancesInput {
     /// <p>The IDs of the instances.</p>
     /// <p>Constraints: Up to 1000 instance IDs. We recommend breaking up this request into smaller batches.</p>
     pub instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Forces the instances to terminate. The instance will first attempt a graceful shutdown, which includes flushing file system caches and metadata. If the graceful shutdown fails to complete within the timeout period, the instance shuts down forcibly without flushing the file system caches and metadata.</p>
+    pub force: ::std::option::Option<bool>,
     /// <p>Specifies whether to bypass the graceful OS shutdown process when the instance is terminated.</p>
     /// <p>Default: <code>false</code></p>
     pub skip_os_shutdown: ::std::option::Option<bool>,
@@ -19,6 +21,10 @@ impl TerminateInstancesInput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_ids.is_none()`.
     pub fn instance_ids(&self) -> &[::std::string::String] {
         self.instance_ids.as_deref().unwrap_or_default()
+    }
+    /// <p>Forces the instances to terminate. The instance will first attempt a graceful shutdown, which includes flushing file system caches and metadata. If the graceful shutdown fails to complete within the timeout period, the instance shuts down forcibly without flushing the file system caches and metadata.</p>
+    pub fn force(&self) -> ::std::option::Option<bool> {
+        self.force
     }
     /// <p>Specifies whether to bypass the graceful OS shutdown process when the instance is terminated.</p>
     /// <p>Default: <code>false</code></p>
@@ -42,6 +48,7 @@ impl TerminateInstancesInput {
 #[non_exhaustive]
 pub struct TerminateInstancesInputBuilder {
     pub(crate) instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) force: ::std::option::Option<bool>,
     pub(crate) skip_os_shutdown: ::std::option::Option<bool>,
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
@@ -68,6 +75,20 @@ impl TerminateInstancesInputBuilder {
     /// <p>Constraints: Up to 1000 instance IDs. We recommend breaking up this request into smaller batches.</p>
     pub fn get_instance_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.instance_ids
+    }
+    /// <p>Forces the instances to terminate. The instance will first attempt a graceful shutdown, which includes flushing file system caches and metadata. If the graceful shutdown fails to complete within the timeout period, the instance shuts down forcibly without flushing the file system caches and metadata.</p>
+    pub fn force(mut self, input: bool) -> Self {
+        self.force = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Forces the instances to terminate. The instance will first attempt a graceful shutdown, which includes flushing file system caches and metadata. If the graceful shutdown fails to complete within the timeout period, the instance shuts down forcibly without flushing the file system caches and metadata.</p>
+    pub fn set_force(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.force = input;
+        self
+    }
+    /// <p>Forces the instances to terminate. The instance will first attempt a graceful shutdown, which includes flushing file system caches and metadata. If the graceful shutdown fails to complete within the timeout period, the instance shuts down forcibly without flushing the file system caches and metadata.</p>
+    pub fn get_force(&self) -> &::std::option::Option<bool> {
+        &self.force
     }
     /// <p>Specifies whether to bypass the graceful OS shutdown process when the instance is terminated.</p>
     /// <p>Default: <code>false</code></p>
@@ -106,6 +127,7 @@ impl TerminateInstancesInputBuilder {
     ) -> ::std::result::Result<crate::operation::terminate_instances::TerminateInstancesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::terminate_instances::TerminateInstancesInput {
             instance_ids: self.instance_ids,
+            force: self.force,
             skip_os_shutdown: self.skip_os_shutdown,
             dry_run: self.dry_run,
         })

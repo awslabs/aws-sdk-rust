@@ -73,6 +73,8 @@ pub use crate::types::_advanced_security_options_status::AdvancedSecurityOptions
 
 pub use crate::types::_advanced_security_options::AdvancedSecurityOptionsBuilder;
 
+pub use crate::types::_iam_federation_options_output::IamFederationOptionsOutputBuilder;
+
 pub use crate::types::_jwt_options_output::JwtOptionsOutputBuilder;
 
 pub use crate::types::_saml_options_output::SamlOptionsOutputBuilder;
@@ -136,6 +138,8 @@ pub use crate::types::_natural_language_query_generation_options_input::NaturalL
 pub use crate::types::_identity_center_options_input::IdentityCenterOptionsInputBuilder;
 
 pub use crate::types::_advanced_security_options_input::AdvancedSecurityOptionsInputBuilder;
+
+pub use crate::types::_iam_federation_options_input::IamFederationOptionsInputBuilder;
 
 pub use crate::types::_jwt_options_input::JwtOptionsInputBuilder;
 

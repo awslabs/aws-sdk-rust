@@ -22,7 +22,7 @@ impl crate::operation::create_id_mapping_workflow::builders::CreateIdMappingWork
 }
 /// Fluent builder constructing a request to `CreateIdMappingWorkflow`.
 ///
-/// <p>Creates an <code>IdMappingWorkflow</code> object which stores the configuration of the data processing job to be run. Each <code>IdMappingWorkflow</code> must have a unique workflow name. To modify an existing workflow, use the <code>UpdateIdMappingWorkflow</code> API.</p>
+/// <p>Creates an <code>IdMappingWorkflow</code> object which stores the configuration of the data processing job to be run. Each <code>IdMappingWorkflow</code> must have a unique workflow name. To modify an existing workflow, use the UpdateIdMappingWorkflow API.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateIdMappingWorkflowFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -160,17 +160,17 @@ impl CreateIdMappingWorkflowFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_output_source_config`](Self::set_output_source_config).
     ///
-    /// <p>A list of <code>IdMappingWorkflowOutputSource</code> objects, each of which contains fields <code>OutputS3Path</code> and <code>Output</code>.</p>
+    /// <p>A list of <code>IdMappingWorkflowOutputSource</code> objects, each of which contains fields <code>outputS3Path</code> and <code>KMSArn</code>.</p>
     pub fn output_source_config(mut self, input: crate::types::IdMappingWorkflowOutputSource) -> Self {
         self.inner = self.inner.output_source_config(input);
         self
     }
-    /// <p>A list of <code>IdMappingWorkflowOutputSource</code> objects, each of which contains fields <code>OutputS3Path</code> and <code>Output</code>.</p>
+    /// <p>A list of <code>IdMappingWorkflowOutputSource</code> objects, each of which contains fields <code>outputS3Path</code> and <code>KMSArn</code>.</p>
     pub fn set_output_source_config(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IdMappingWorkflowOutputSource>>) -> Self {
         self.inner = self.inner.set_output_source_config(input);
         self
     }
-    /// <p>A list of <code>IdMappingWorkflowOutputSource</code> objects, each of which contains fields <code>OutputS3Path</code> and <code>Output</code>.</p>
+    /// <p>A list of <code>IdMappingWorkflowOutputSource</code> objects, each of which contains fields <code>outputS3Path</code> and <code>KMSArn</code>.</p>
     pub fn get_output_source_config(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IdMappingWorkflowOutputSource>> {
         self.inner.get_output_source_config()
     }

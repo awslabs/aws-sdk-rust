@@ -90,6 +90,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "sessionLoggerArn" => {
+                            builder = builder.set_session_logger_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "trustStoreArn" => {
                             builder = builder.set_trust_store_arn(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

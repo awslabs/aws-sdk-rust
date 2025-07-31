@@ -13,6 +13,9 @@ pub mod associate_ip_access_settings;
 /// Types for the `AssociateNetworkSettings` operation.
 pub mod associate_network_settings;
 
+/// Types for the `AssociateSessionLogger` operation.
+pub mod associate_session_logger;
+
 /// Types for the `AssociateTrustStore` operation.
 pub mod associate_trust_store;
 
@@ -39,6 +42,9 @@ pub mod create_network_settings;
 
 /// Types for the `CreatePortal` operation.
 pub mod create_portal;
+
+/// Types for the `CreateSessionLogger` operation.
+pub mod create_session_logger;
 
 /// Types for the `CreateTrustStore` operation.
 pub mod create_trust_store;
@@ -67,6 +73,9 @@ pub mod delete_network_settings;
 /// Types for the `DeletePortal` operation.
 pub mod delete_portal;
 
+/// Types for the `DeleteSessionLogger` operation.
+pub mod delete_session_logger;
+
 /// Types for the `DeleteTrustStore` operation.
 pub mod delete_trust_store;
 
@@ -87,6 +96,9 @@ pub mod disassociate_ip_access_settings;
 
 /// Types for the `DisassociateNetworkSettings` operation.
 pub mod disassociate_network_settings;
+
+/// Types for the `DisassociateSessionLogger` operation.
+pub mod disassociate_session_logger;
 
 /// Types for the `DisassociateTrustStore` operation.
 pub mod disassociate_trust_store;
@@ -124,6 +136,9 @@ pub mod get_portal_service_provider_metadata;
 /// Types for the `GetSession` operation.
 pub mod get_session;
 
+/// Types for the `GetSessionLogger` operation.
+pub mod get_session_logger;
+
 /// Types for the `GetTrustStore` operation.
 pub mod get_trust_store;
 
@@ -153,6 +168,9 @@ pub mod list_network_settings;
 
 /// Types for the `ListPortals` operation.
 pub mod list_portals;
+
+/// Types for the `ListSessionLoggers` operation.
+pub mod list_session_loggers;
 
 /// Types for the `ListSessions` operation.
 pub mod list_sessions;
@@ -195,6 +213,9 @@ pub mod update_network_settings;
 
 /// Types for the `UpdatePortal` operation.
 pub mod update_portal;
+
+/// Types for the `UpdateSessionLogger` operation.
+pub mod update_session_logger;
 
 /// Types for the `UpdateTrustStore` operation.
 pub mod update_trust_store;

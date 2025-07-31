@@ -1553,6 +1553,8 @@ pub use crate::types::_credential_pair::CredentialPair;
 
 pub use crate::types::_data_source_parameters::DataSourceParameters;
 
+pub use crate::types::_impala_parameters::ImpalaParameters;
+
 pub use crate::types::_big_query_parameters::BigQueryParameters;
 
 pub use crate::types::_trino_parameters::TrinoParameters;
@@ -3460,6 +3462,8 @@ mod _image_set_configuration;
 mod _image_source;
 
 mod _image_static_file;
+
+mod _impala_parameters;
 
 mod _include_folder_members;
 

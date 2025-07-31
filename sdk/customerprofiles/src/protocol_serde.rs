@@ -311,6 +311,8 @@ pub(crate) mod shape_domain_list;
 
 pub(crate) mod shape_domain_stats;
 
+pub(crate) mod shape_engagement_preferences;
+
 pub(crate) mod shape_event_stream_destination_details;
 
 pub(crate) mod shape_event_stream_summary_list;
@@ -428,6 +430,8 @@ pub(crate) mod shape_batch_get_calculated_attribute_for_profile_error;
 pub(crate) mod shape_batch_get_profile_error;
 
 pub(crate) mod shape_calculated_attribute_value;
+
+pub(crate) mod shape_contact_preference;
 
 pub(crate) mod shape_detected_profile_object_type;
 
@@ -553,6 +557,8 @@ pub(crate) mod shape_calculated_attribute_dimension;
 
 pub(crate) mod shape_dimension_list;
 
+pub(crate) mod shape_email_preference_list;
+
 pub(crate) mod shape_field_name_list;
 
 pub(crate) mod shape_filter_attribute_dimension;
@@ -566,6 +572,8 @@ pub(crate) mod shape_marketo_source_properties;
 pub(crate) mod shape_matching_attributes;
 
 pub(crate) mod shape_matching_rule_attribute_list;
+
+pub(crate) mod shape_phone_preference_list;
 
 pub(crate) mod shape_profile_attributes;
 
@@ -595,6 +603,8 @@ pub(crate) mod shape_object_attributes;
 
 pub(crate) mod shape_profile_dimension;
 
+pub(crate) mod shape_profile_type_dimension;
+
 pub(crate) mod shape_attribute_map;
 
 pub(crate) mod shape_calculated_custom_attributes;
@@ -606,6 +616,8 @@ pub(crate) mod shape_event_trigger_values;
 pub(crate) mod shape_date_values;
 
 pub(crate) mod shape_extra_length_values;
+
+pub(crate) mod shape_profile_type_values;
 
 pub(crate) mod shape_value_list;
 

@@ -15,32 +15,53 @@ pub fn ser_s3_hyper_direct_target(
         }
         array_1.finish();
     }
-    if let Some(var_3) = &input.partition_keys {
-        let mut array_4 = object.key("PartitionKeys").start_array();
-        for item_5 in var_3 {
+    if let Some(var_3) = &input.format {
+        object.key("Format").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.partition_keys {
+        let mut array_5 = object.key("PartitionKeys").start_array();
+        for item_6 in var_4 {
             {
-                let mut array_6 = array_4.value().start_array();
-                for item_7 in item_5 {
+                let mut array_7 = array_5.value().start_array();
+                for item_8 in item_6 {
                     {
-                        array_6.value().string(item_7.as_str());
+                        array_7.value().string(item_8.as_str());
                     }
                 }
-                array_6.finish();
+                array_7.finish();
             }
         }
-        array_4.finish();
+        array_5.finish();
     }
     {
         object.key("Path").string(input.path.as_str());
     }
-    if let Some(var_8) = &input.compression {
-        object.key("Compression").string(var_8.as_str());
+    if let Some(var_9) = &input.compression {
+        object.key("Compression").string(var_9.as_str());
     }
-    if let Some(var_9) = &input.schema_change_policy {
+    if let Some(var_10) = &input.schema_change_policy {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("SchemaChangePolicy").start_object();
-        crate::protocol_serde::shape_direct_schema_change_policy::ser_direct_schema_change_policy(&mut object_10, var_9)?;
-        object_10.finish();
+        let mut object_11 = object.key("SchemaChangePolicy").start_object();
+        crate::protocol_serde::shape_direct_schema_change_policy::ser_direct_schema_change_policy(&mut object_11, var_10)?;
+        object_11.finish();
+    }
+    if let Some(var_12) = &input.auto_data_quality {
+        #[allow(unused_mut)]
+        let mut object_13 = object.key("AutoDataQuality").start_object();
+        crate::protocol_serde::shape_auto_data_quality::ser_auto_data_quality(&mut object_13, var_12)?;
+        object_13.finish();
+    }
+    if let Some(var_14) = &input.output_schemas {
+        let mut array_15 = object.key("OutputSchemas").start_array();
+        for item_16 in var_14 {
+            {
+                #[allow(unused_mut)]
+                let mut object_17 = array_15.value().start_object();
+                crate::protocol_serde::shape_glue_schema::ser_glue_schema(&mut object_17, item_16)?;
+                object_17.finish();
+            }
+        }
+        array_15.finish();
     }
     Ok(())
 }
@@ -70,6 +91,13 @@ where
                         "Inputs" => {
                             builder = builder.set_inputs(crate::protocol_serde::shape_one_input::de_one_input(tokens)?);
                         }
+                        "Format" => {
+                            builder = builder.set_format(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::TargetFormat::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "PartitionKeys" => {
                             builder =
                                 builder.set_partition_keys(crate::protocol_serde::shape_glue_studio_path_list::de_glue_studio_path_list(tokens)?);
@@ -92,6 +120,12 @@ where
                             builder = builder.set_schema_change_policy(
                                 crate::protocol_serde::shape_direct_schema_change_policy::de_direct_schema_change_policy(tokens)?,
                             );
+                        }
+                        "AutoDataQuality" => {
+                            builder = builder.set_auto_data_quality(crate::protocol_serde::shape_auto_data_quality::de_auto_data_quality(tokens)?);
+                        }
+                        "OutputSchemas" => {
+                            builder = builder.set_output_schemas(crate::protocol_serde::shape_glue_schemas::de_glue_schemas(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

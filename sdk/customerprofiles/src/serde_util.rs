@@ -842,6 +842,18 @@ pub(crate) fn profile_dimension_correct_errors(
     builder
 }
 
+pub(crate) fn profile_type_dimension_correct_errors(
+    mut builder: crate::types::builders::ProfileTypeDimensionBuilder,
+) -> crate::types::builders::ProfileTypeDimensionBuilder {
+    if builder.dimension_type.is_none() {
+        builder.dimension_type = "no value was set".parse::<crate::types::ProfileTypeDimensionType>().ok()
+    }
+    if builder.values.is_none() {
+        builder.values = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn attribute_dimension_correct_errors(
     mut builder: crate::types::builders::AttributeDimensionBuilder,
 ) -> crate::types::builders::AttributeDimensionBuilder {

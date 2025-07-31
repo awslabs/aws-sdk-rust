@@ -21,6 +21,18 @@ pub fn ser_direct_jdbc_source(
     if let Some(var_1) = &input.redshift_tmp_dir {
         object.key("RedshiftTmpDir").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.output_schemas {
+        let mut array_3 = object.key("OutputSchemas").start_array();
+        for item_4 in var_2 {
+            {
+                #[allow(unused_mut)]
+                let mut object_5 = array_3.value().start_object();
+                crate::protocol_serde::shape_glue_schema::ser_glue_schema(&mut object_5, item_4)?;
+                object_5.finish();
+            }
+        }
+        array_3.finish();
+    }
     Ok(())
 }
 
@@ -80,6 +92,9 @@ where
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
+                        }
+                        "OutputSchemas" => {
+                            builder = builder.set_output_schemas(crate::protocol_serde::shape_glue_schemas::de_glue_schemas(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

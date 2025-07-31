@@ -16,6 +16,8 @@ pub struct S3CatalogTarget {
     pub database: ::std::string::String,
     /// <p>A policy that specifies update behavior for the crawler.</p>
     pub schema_change_policy: ::std::option::Option<crate::types::CatalogSchemaChangePolicy>,
+    /// <p>Specifies whether to automatically enable data quality evaluation for the S3 catalog target. When set to <code>true</code>, data quality checks are performed automatically during the write operation.</p>
+    pub auto_data_quality: ::std::option::Option<crate::types::AutoDataQuality>,
 }
 impl S3CatalogTarget {
     /// <p>The name of the data target.</p>
@@ -48,6 +50,10 @@ impl S3CatalogTarget {
     pub fn schema_change_policy(&self) -> ::std::option::Option<&crate::types::CatalogSchemaChangePolicy> {
         self.schema_change_policy.as_ref()
     }
+    /// <p>Specifies whether to automatically enable data quality evaluation for the S3 catalog target. When set to <code>true</code>, data quality checks are performed automatically during the write operation.</p>
+    pub fn auto_data_quality(&self) -> ::std::option::Option<&crate::types::AutoDataQuality> {
+        self.auto_data_quality.as_ref()
+    }
 }
 impl S3CatalogTarget {
     /// Creates a new builder-style object to manufacture [`S3CatalogTarget`](crate::types::S3CatalogTarget).
@@ -66,6 +72,7 @@ pub struct S3CatalogTargetBuilder {
     pub(crate) table: ::std::option::Option<::std::string::String>,
     pub(crate) database: ::std::option::Option<::std::string::String>,
     pub(crate) schema_change_policy: ::std::option::Option<crate::types::CatalogSchemaChangePolicy>,
+    pub(crate) auto_data_quality: ::std::option::Option<crate::types::AutoDataQuality>,
 }
 impl S3CatalogTargetBuilder {
     /// <p>The name of the data target.</p>
@@ -167,6 +174,20 @@ impl S3CatalogTargetBuilder {
     pub fn get_schema_change_policy(&self) -> &::std::option::Option<crate::types::CatalogSchemaChangePolicy> {
         &self.schema_change_policy
     }
+    /// <p>Specifies whether to automatically enable data quality evaluation for the S3 catalog target. When set to <code>true</code>, data quality checks are performed automatically during the write operation.</p>
+    pub fn auto_data_quality(mut self, input: crate::types::AutoDataQuality) -> Self {
+        self.auto_data_quality = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to automatically enable data quality evaluation for the S3 catalog target. When set to <code>true</code>, data quality checks are performed automatically during the write operation.</p>
+    pub fn set_auto_data_quality(mut self, input: ::std::option::Option<crate::types::AutoDataQuality>) -> Self {
+        self.auto_data_quality = input;
+        self
+    }
+    /// <p>Specifies whether to automatically enable data quality evaluation for the S3 catalog target. When set to <code>true</code>, data quality checks are performed automatically during the write operation.</p>
+    pub fn get_auto_data_quality(&self) -> &::std::option::Option<crate::types::AutoDataQuality> {
+        &self.auto_data_quality
+    }
     /// Consumes the builder and constructs a [`S3CatalogTarget`](crate::types::S3CatalogTarget).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::S3CatalogTargetBuilder::name)
@@ -201,6 +222,7 @@ impl S3CatalogTargetBuilder {
                 )
             })?,
             schema_change_policy: self.schema_change_policy,
+            auto_data_quality: self.auto_data_quality,
         })
     }
 }

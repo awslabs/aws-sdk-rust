@@ -18,10 +18,14 @@ pub struct S3IcebergDirectTarget {
     pub additional_options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Defines how schema changes are handled when writing data to the Iceberg table.</p>
     pub schema_change_policy: ::std::option::Option<crate::types::DirectSchemaChangePolicy>,
+    /// <p>Specifies configuration options for automatic data quality evaluation in Glue jobs. This structure enables automated data quality checks and monitoring during ETL operations, helping to ensure data integrity and reliability without manual intervention.</p>
+    pub auto_data_quality: ::std::option::Option<crate::types::AutoDataQuality>,
     /// <p>Specifies the compression codec used for Iceberg table files in S3.</p>
     pub compression: crate::types::IcebergTargetCompressionType,
     /// <p>Sets the number of target partitions for distributing Iceberg table files across S3.</p>
     pub number_target_partitions: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies the data schema for the S3 Iceberg direct target.</p>
+    pub output_schemas: ::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>>,
 }
 impl S3IcebergDirectTarget {
     /// <p>Specifies the unique identifier for the Iceberg target node in your data pipeline.</p>
@@ -57,6 +61,10 @@ impl S3IcebergDirectTarget {
     pub fn schema_change_policy(&self) -> ::std::option::Option<&crate::types::DirectSchemaChangePolicy> {
         self.schema_change_policy.as_ref()
     }
+    /// <p>Specifies configuration options for automatic data quality evaluation in Glue jobs. This structure enables automated data quality checks and monitoring during ETL operations, helping to ensure data integrity and reliability without manual intervention.</p>
+    pub fn auto_data_quality(&self) -> ::std::option::Option<&crate::types::AutoDataQuality> {
+        self.auto_data_quality.as_ref()
+    }
     /// <p>Specifies the compression codec used for Iceberg table files in S3.</p>
     pub fn compression(&self) -> &crate::types::IcebergTargetCompressionType {
         &self.compression
@@ -64,6 +72,12 @@ impl S3IcebergDirectTarget {
     /// <p>Sets the number of target partitions for distributing Iceberg table files across S3.</p>
     pub fn number_target_partitions(&self) -> ::std::option::Option<&str> {
         self.number_target_partitions.as_deref()
+    }
+    /// <p>Specifies the data schema for the S3 Iceberg direct target.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.output_schemas.is_none()`.
+    pub fn output_schemas(&self) -> &[crate::types::GlueSchema] {
+        self.output_schemas.as_deref().unwrap_or_default()
     }
 }
 impl S3IcebergDirectTarget {
@@ -84,8 +98,10 @@ pub struct S3IcebergDirectTargetBuilder {
     pub(crate) format: ::std::option::Option<crate::types::TargetFormat>,
     pub(crate) additional_options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) schema_change_policy: ::std::option::Option<crate::types::DirectSchemaChangePolicy>,
+    pub(crate) auto_data_quality: ::std::option::Option<crate::types::AutoDataQuality>,
     pub(crate) compression: ::std::option::Option<crate::types::IcebergTargetCompressionType>,
     pub(crate) number_target_partitions: ::std::option::Option<::std::string::String>,
+    pub(crate) output_schemas: ::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>>,
 }
 impl S3IcebergDirectTargetBuilder {
     /// <p>Specifies the unique identifier for the Iceberg target node in your data pipeline.</p>
@@ -214,6 +230,20 @@ impl S3IcebergDirectTargetBuilder {
     pub fn get_schema_change_policy(&self) -> &::std::option::Option<crate::types::DirectSchemaChangePolicy> {
         &self.schema_change_policy
     }
+    /// <p>Specifies configuration options for automatic data quality evaluation in Glue jobs. This structure enables automated data quality checks and monitoring during ETL operations, helping to ensure data integrity and reliability without manual intervention.</p>
+    pub fn auto_data_quality(mut self, input: crate::types::AutoDataQuality) -> Self {
+        self.auto_data_quality = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies configuration options for automatic data quality evaluation in Glue jobs. This structure enables automated data quality checks and monitoring during ETL operations, helping to ensure data integrity and reliability without manual intervention.</p>
+    pub fn set_auto_data_quality(mut self, input: ::std::option::Option<crate::types::AutoDataQuality>) -> Self {
+        self.auto_data_quality = input;
+        self
+    }
+    /// <p>Specifies configuration options for automatic data quality evaluation in Glue jobs. This structure enables automated data quality checks and monitoring during ETL operations, helping to ensure data integrity and reliability without manual intervention.</p>
+    pub fn get_auto_data_quality(&self) -> &::std::option::Option<crate::types::AutoDataQuality> {
+        &self.auto_data_quality
+    }
     /// <p>Specifies the compression codec used for Iceberg table files in S3.</p>
     /// This field is required.
     pub fn compression(mut self, input: crate::types::IcebergTargetCompressionType) -> Self {
@@ -242,6 +272,26 @@ impl S3IcebergDirectTargetBuilder {
     /// <p>Sets the number of target partitions for distributing Iceberg table files across S3.</p>
     pub fn get_number_target_partitions(&self) -> &::std::option::Option<::std::string::String> {
         &self.number_target_partitions
+    }
+    /// Appends an item to `output_schemas`.
+    ///
+    /// To override the contents of this collection use [`set_output_schemas`](Self::set_output_schemas).
+    ///
+    /// <p>Specifies the data schema for the S3 Iceberg direct target.</p>
+    pub fn output_schemas(mut self, input: crate::types::GlueSchema) -> Self {
+        let mut v = self.output_schemas.unwrap_or_default();
+        v.push(input);
+        self.output_schemas = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Specifies the data schema for the S3 Iceberg direct target.</p>
+    pub fn set_output_schemas(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>>) -> Self {
+        self.output_schemas = input;
+        self
+    }
+    /// <p>Specifies the data schema for the S3 Iceberg direct target.</p>
+    pub fn get_output_schemas(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>> {
+        &self.output_schemas
     }
     /// Consumes the builder and constructs a [`S3IcebergDirectTarget`](crate::types::S3IcebergDirectTarget).
     /// This method will fail if any of the following fields are not set:
@@ -279,6 +329,7 @@ impl S3IcebergDirectTargetBuilder {
             })?,
             additional_options: self.additional_options,
             schema_change_policy: self.schema_change_policy,
+            auto_data_quality: self.auto_data_quality,
             compression: self.compression.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "compression",
@@ -286,6 +337,7 @@ impl S3IcebergDirectTargetBuilder {
                 )
             })?,
             number_target_partitions: self.number_target_partitions,
+            output_schemas: self.output_schemas,
         })
     }
 }

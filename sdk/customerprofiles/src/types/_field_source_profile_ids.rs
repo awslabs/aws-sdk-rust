@@ -46,6 +46,10 @@ pub struct FieldSourceProfileIds {
     pub billing_address: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the attributes field to be merged.</p>
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>A unique identifier for the profile type field to be merged.</p>
+    pub profile_type: ::std::option::Option<::std::string::String>,
+    /// <p>A unique identifier for the engagement preferences field to be merged.</p>
+    pub engagement_preferences: ::std::option::Option<::std::string::String>,
 }
 impl FieldSourceProfileIds {
     /// <p>A unique identifier for the account number field to be merged.</p>
@@ -132,6 +136,14 @@ impl FieldSourceProfileIds {
     pub fn attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.attributes.as_ref()
     }
+    /// <p>A unique identifier for the profile type field to be merged.</p>
+    pub fn profile_type(&self) -> ::std::option::Option<&str> {
+        self.profile_type.as_deref()
+    }
+    /// <p>A unique identifier for the engagement preferences field to be merged.</p>
+    pub fn engagement_preferences(&self) -> ::std::option::Option<&str> {
+        self.engagement_preferences.as_deref()
+    }
 }
 impl FieldSourceProfileIds {
     /// Creates a new builder-style object to manufacture [`FieldSourceProfileIds`](crate::types::FieldSourceProfileIds).
@@ -165,6 +177,8 @@ pub struct FieldSourceProfileIdsBuilder {
     pub(crate) mailing_address: ::std::option::Option<::std::string::String>,
     pub(crate) billing_address: ::std::option::Option<::std::string::String>,
     pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) profile_type: ::std::option::Option<::std::string::String>,
+    pub(crate) engagement_preferences: ::std::option::Option<::std::string::String>,
 }
 impl FieldSourceProfileIdsBuilder {
     /// <p>A unique identifier for the account number field to be merged.</p>
@@ -467,6 +481,34 @@ impl FieldSourceProfileIdsBuilder {
     pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.attributes
     }
+    /// <p>A unique identifier for the profile type field to be merged.</p>
+    pub fn profile_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.profile_type = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A unique identifier for the profile type field to be merged.</p>
+    pub fn set_profile_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.profile_type = input;
+        self
+    }
+    /// <p>A unique identifier for the profile type field to be merged.</p>
+    pub fn get_profile_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profile_type
+    }
+    /// <p>A unique identifier for the engagement preferences field to be merged.</p>
+    pub fn engagement_preferences(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.engagement_preferences = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A unique identifier for the engagement preferences field to be merged.</p>
+    pub fn set_engagement_preferences(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.engagement_preferences = input;
+        self
+    }
+    /// <p>A unique identifier for the engagement preferences field to be merged.</p>
+    pub fn get_engagement_preferences(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engagement_preferences
+    }
     /// Consumes the builder and constructs a [`FieldSourceProfileIds`](crate::types::FieldSourceProfileIds).
     pub fn build(self) -> crate::types::FieldSourceProfileIds {
         crate::types::FieldSourceProfileIds {
@@ -491,6 +533,8 @@ impl FieldSourceProfileIdsBuilder {
             mailing_address: self.mailing_address,
             billing_address: self.billing_address,
             attributes: self.attributes,
+            profile_type: self.profile_type,
+            engagement_preferences: self.engagement_preferences,
         }
     }
 }

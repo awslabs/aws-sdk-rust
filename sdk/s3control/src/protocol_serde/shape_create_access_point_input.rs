@@ -21,9 +21,18 @@ pub fn ser_create_access_point_input_input_input(
         let inner_writer = scope.start_el("Scope");
         crate::protocol_serde::shape_scope::ser_scope(var_4, inner_writer)?
     }
-    if let Some(var_5) = &input.vpc_configuration {
+    if let Some(var_5) = &input.tags {
+        let mut inner_writer = scope.start_el("Tags").finish();
+        for list_item_6 in var_5 {
+            {
+                let inner_writer = inner_writer.start_el("Tag");
+                crate::protocol_serde::shape_tag::ser_tag(list_item_6, inner_writer)?
+            }
+        }
+    }
+    if let Some(var_7) = &input.vpc_configuration {
         let inner_writer = scope.start_el("VpcConfiguration");
-        crate::protocol_serde::shape_vpc_configuration::ser_vpc_configuration(var_5, inner_writer)?
+        crate::protocol_serde::shape_vpc_configuration::ser_vpc_configuration(var_7, inner_writer)?
     }
     scope.finish();
     Ok(())

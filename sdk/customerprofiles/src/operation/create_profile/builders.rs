@@ -450,4 +450,32 @@ impl CreateProfileFluentBuilder {
     pub fn get_gender_string(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_gender_string()
     }
+    /// <p>The type of the profile.</p>
+    pub fn profile_type(mut self, input: crate::types::ProfileType) -> Self {
+        self.inner = self.inner.profile_type(input);
+        self
+    }
+    /// <p>The type of the profile.</p>
+    pub fn set_profile_type(mut self, input: ::std::option::Option<crate::types::ProfileType>) -> Self {
+        self.inner = self.inner.set_profile_type(input);
+        self
+    }
+    /// <p>The type of the profile.</p>
+    pub fn get_profile_type(&self) -> &::std::option::Option<crate::types::ProfileType> {
+        self.inner.get_profile_type()
+    }
+    /// <p>Object that defines the preferred methods of engagement, per channel.</p>
+    pub fn engagement_preferences(mut self, input: crate::types::EngagementPreferences) -> Self {
+        self.inner = self.inner.engagement_preferences(input);
+        self
+    }
+    /// <p>Object that defines the preferred methods of engagement, per channel.</p>
+    pub fn set_engagement_preferences(mut self, input: ::std::option::Option<crate::types::EngagementPreferences>) -> Self {
+        self.inner = self.inner.set_engagement_preferences(input);
+        self
+    }
+    /// <p>Object that defines the preferred methods of engagement, per channel.</p>
+    pub fn get_engagement_preferences(&self) -> &::std::option::Option<crate::types::EngagementPreferences> {
+        self.inner.get_engagement_preferences()
+    }
 }

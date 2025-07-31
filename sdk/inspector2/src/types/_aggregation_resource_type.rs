@@ -15,6 +15,7 @@
 ///     AggregationResourceType::AwsEc2Instance => { /* ... */ },
 ///     AggregationResourceType::AwsEcrContainerImage => { /* ... */ },
 ///     AggregationResourceType::AwsLambdaFunction => { /* ... */ },
+///     AggregationResourceType::CodeRepository => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -49,6 +50,8 @@ pub enum AggregationResourceType {
     AwsEcrContainerImage,
     #[allow(missing_docs)] // documentation missing in model
     AwsLambdaFunction,
+    #[allow(missing_docs)] // documentation missing in model
+    CodeRepository,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -59,6 +62,7 @@ impl ::std::convert::From<&str> for AggregationResourceType {
             "AWS_EC2_INSTANCE" => AggregationResourceType::AwsEc2Instance,
             "AWS_ECR_CONTAINER_IMAGE" => AggregationResourceType::AwsEcrContainerImage,
             "AWS_LAMBDA_FUNCTION" => AggregationResourceType::AwsLambdaFunction,
+            "CODE_REPOSITORY" => AggregationResourceType::CodeRepository,
             other => AggregationResourceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -77,12 +81,13 @@ impl AggregationResourceType {
             AggregationResourceType::AwsEc2Instance => "AWS_EC2_INSTANCE",
             AggregationResourceType::AwsEcrContainerImage => "AWS_ECR_CONTAINER_IMAGE",
             AggregationResourceType::AwsLambdaFunction => "AWS_LAMBDA_FUNCTION",
+            AggregationResourceType::CodeRepository => "CODE_REPOSITORY",
             AggregationResourceType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AWS_EC2_INSTANCE", "AWS_ECR_CONTAINER_IMAGE", "AWS_LAMBDA_FUNCTION"]
+        &["AWS_EC2_INSTANCE", "AWS_ECR_CONTAINER_IMAGE", "AWS_LAMBDA_FUNCTION", "CODE_REPOSITORY"]
     }
 }
 impl ::std::convert::AsRef<str> for AggregationResourceType {
@@ -108,6 +113,7 @@ impl ::std::fmt::Display for AggregationResourceType {
             AggregationResourceType::AwsEc2Instance => write!(f, "AWS_EC2_INSTANCE"),
             AggregationResourceType::AwsEcrContainerImage => write!(f, "AWS_ECR_CONTAINER_IMAGE"),
             AggregationResourceType::AwsLambdaFunction => write!(f, "AWS_LAMBDA_FUNCTION"),
+            AggregationResourceType::CodeRepository => write!(f, "CODE_REPOSITORY"),
             AggregationResourceType::Unknown(value) => write!(f, "{}", value),
         }
     }

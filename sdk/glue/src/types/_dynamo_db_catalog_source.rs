@@ -10,6 +10,10 @@ pub struct DynamoDbCatalogSource {
     pub database: ::std::string::String,
     /// <p>The name of the table in the database to read from.</p>
     pub table: ::std::string::String,
+    /// <p>Specifies whether Point-in-Time Recovery (PITR) is enabled for the DynamoDB table. When set to <code>true</code>, allows reading from a specific point in time. The default value is <code>false</code>.</p>
+    pub pitr_enabled: ::std::option::Option<bool>,
+    /// <p>Specifies additional connection options for the DynamoDB data source.</p>
+    pub additional_options: ::std::option::Option<crate::types::DdbeltCatalogAdditionalOptions>,
 }
 impl DynamoDbCatalogSource {
     /// <p>The name of the data source.</p>
@@ -27,6 +31,14 @@ impl DynamoDbCatalogSource {
         use std::ops::Deref;
         self.table.deref()
     }
+    /// <p>Specifies whether Point-in-Time Recovery (PITR) is enabled for the DynamoDB table. When set to <code>true</code>, allows reading from a specific point in time. The default value is <code>false</code>.</p>
+    pub fn pitr_enabled(&self) -> ::std::option::Option<bool> {
+        self.pitr_enabled
+    }
+    /// <p>Specifies additional connection options for the DynamoDB data source.</p>
+    pub fn additional_options(&self) -> ::std::option::Option<&crate::types::DdbeltCatalogAdditionalOptions> {
+        self.additional_options.as_ref()
+    }
 }
 impl DynamoDbCatalogSource {
     /// Creates a new builder-style object to manufacture [`DynamoDbCatalogSource`](crate::types::DynamoDbCatalogSource).
@@ -42,6 +54,8 @@ pub struct DynamoDbCatalogSourceBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) database: ::std::option::Option<::std::string::String>,
     pub(crate) table: ::std::option::Option<::std::string::String>,
+    pub(crate) pitr_enabled: ::std::option::Option<bool>,
+    pub(crate) additional_options: ::std::option::Option<crate::types::DdbeltCatalogAdditionalOptions>,
 }
 impl DynamoDbCatalogSourceBuilder {
     /// <p>The name of the data source.</p>
@@ -89,6 +103,34 @@ impl DynamoDbCatalogSourceBuilder {
     pub fn get_table(&self) -> &::std::option::Option<::std::string::String> {
         &self.table
     }
+    /// <p>Specifies whether Point-in-Time Recovery (PITR) is enabled for the DynamoDB table. When set to <code>true</code>, allows reading from a specific point in time. The default value is <code>false</code>.</p>
+    pub fn pitr_enabled(mut self, input: bool) -> Self {
+        self.pitr_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether Point-in-Time Recovery (PITR) is enabled for the DynamoDB table. When set to <code>true</code>, allows reading from a specific point in time. The default value is <code>false</code>.</p>
+    pub fn set_pitr_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.pitr_enabled = input;
+        self
+    }
+    /// <p>Specifies whether Point-in-Time Recovery (PITR) is enabled for the DynamoDB table. When set to <code>true</code>, allows reading from a specific point in time. The default value is <code>false</code>.</p>
+    pub fn get_pitr_enabled(&self) -> &::std::option::Option<bool> {
+        &self.pitr_enabled
+    }
+    /// <p>Specifies additional connection options for the DynamoDB data source.</p>
+    pub fn additional_options(mut self, input: crate::types::DdbeltCatalogAdditionalOptions) -> Self {
+        self.additional_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies additional connection options for the DynamoDB data source.</p>
+    pub fn set_additional_options(mut self, input: ::std::option::Option<crate::types::DdbeltCatalogAdditionalOptions>) -> Self {
+        self.additional_options = input;
+        self
+    }
+    /// <p>Specifies additional connection options for the DynamoDB data source.</p>
+    pub fn get_additional_options(&self) -> &::std::option::Option<crate::types::DdbeltCatalogAdditionalOptions> {
+        &self.additional_options
+    }
     /// Consumes the builder and constructs a [`DynamoDbCatalogSource`](crate::types::DynamoDbCatalogSource).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::DynamoDbCatalogSourceBuilder::name)
@@ -114,6 +156,8 @@ impl DynamoDbCatalogSourceBuilder {
                     "table was not specified but it is required when building DynamoDbCatalogSource",
                 )
             })?,
+            pitr_enabled: self.pitr_enabled,
+            additional_options: self.additional_options,
         })
     }
 }

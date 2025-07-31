@@ -9,6 +9,10 @@ pub use crate::types::_provider_properties::ProviderPropertiesBuilder;
 
 pub use crate::types::_intermediate_source_configuration::IntermediateSourceConfigurationBuilder;
 
+pub use crate::types::_rule_condition_properties::RuleConditionPropertiesBuilder;
+
+pub use crate::types::_rule_condition::RuleConditionBuilder;
+
 pub use crate::types::_rule_based_properties::RuleBasedPropertiesBuilder;
 
 pub use crate::types::_rule::RuleBuilder;

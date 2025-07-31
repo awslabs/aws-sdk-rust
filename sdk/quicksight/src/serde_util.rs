@@ -818,6 +818,21 @@ pub(crate) fn filter_group_correct_errors(mut builder: crate::types::builders::F
     builder
 }
 
+pub(crate) fn impala_parameters_correct_errors(
+    mut builder: crate::types::builders::ImpalaParametersBuilder,
+) -> crate::types::builders::ImpalaParametersBuilder {
+    if builder.host.is_none() {
+        builder.host = Some(Default::default())
+    }
+    if builder.port.is_none() {
+        builder.port = Some(Default::default())
+    }
+    if builder.sql_endpoint_path.is_none() {
+        builder.sql_endpoint_path = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn incremental_refresh_correct_errors(
     mut builder: crate::types::builders::IncrementalRefreshBuilder,
 ) -> crate::types::builders::IncrementalRefreshBuilder {

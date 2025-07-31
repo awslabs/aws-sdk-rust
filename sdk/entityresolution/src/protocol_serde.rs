@@ -269,6 +269,8 @@ pub(crate) mod shape_required_bucket_actions_list;
 
 pub(crate) mod shape_rule_based_properties;
 
+pub(crate) mod shape_rule_condition_properties;
+
 pub(crate) mod shape_schema_mapping_summary;
 
 pub(crate) mod shape_schemas;
@@ -284,6 +286,10 @@ pub(crate) mod shape_output_attributes;
 pub(crate) mod shape_provider_schema_attribute;
 
 pub(crate) mod shape_rule;
+
+pub(crate) mod shape_rule_condition;
+
+pub(crate) mod shape_rule_condition_list;
 
 pub(crate) mod shape_rule_list;
 

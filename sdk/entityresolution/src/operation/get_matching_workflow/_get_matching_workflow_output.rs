@@ -11,7 +11,7 @@ pub struct GetMatchingWorkflowOutput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>InputSource</code> objects, which have the fields <code>InputSourceARN</code> and <code>SchemaName</code>.</p>
     pub input_source_config: ::std::vec::Vec<crate::types::InputSource>,
-    /// <p>A list of <code>OutputSource</code> objects, each of which contains fields <code>OutputS3Path</code>, <code>ApplyNormalization</code>, and <code>Output</code>.</p>
+    /// <p>A list of <code>OutputSource</code> objects, each of which contains fields <code>outputS3Path</code>, <code>applyNormalization</code>, <code>KMSArn</code>, and <code>output</code>.</p>
     pub output_source_config: ::std::vec::Vec<crate::types::OutputSource>,
     /// <p>An object which defines the <code>resolutionType</code> and the <code>ruleBasedProperties</code>.</p>
     pub resolution_techniques: ::std::option::Option<crate::types::ResolutionTechniques>,
@@ -47,7 +47,7 @@ impl GetMatchingWorkflowOutput {
         use std::ops::Deref;
         self.input_source_config.deref()
     }
-    /// <p>A list of <code>OutputSource</code> objects, each of which contains fields <code>OutputS3Path</code>, <code>ApplyNormalization</code>, and <code>Output</code>.</p>
+    /// <p>A list of <code>OutputSource</code> objects, each of which contains fields <code>outputS3Path</code>, <code>applyNormalization</code>, <code>KMSArn</code>, and <code>output</code>.</p>
     pub fn output_source_config(&self) -> &[crate::types::OutputSource] {
         use std::ops::Deref;
         self.output_source_config.deref()
@@ -176,19 +176,19 @@ impl GetMatchingWorkflowOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_output_source_config`](Self::set_output_source_config).
     ///
-    /// <p>A list of <code>OutputSource</code> objects, each of which contains fields <code>OutputS3Path</code>, <code>ApplyNormalization</code>, and <code>Output</code>.</p>
+    /// <p>A list of <code>OutputSource</code> objects, each of which contains fields <code>outputS3Path</code>, <code>applyNormalization</code>, <code>KMSArn</code>, and <code>output</code>.</p>
     pub fn output_source_config(mut self, input: crate::types::OutputSource) -> Self {
         let mut v = self.output_source_config.unwrap_or_default();
         v.push(input);
         self.output_source_config = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of <code>OutputSource</code> objects, each of which contains fields <code>OutputS3Path</code>, <code>ApplyNormalization</code>, and <code>Output</code>.</p>
+    /// <p>A list of <code>OutputSource</code> objects, each of which contains fields <code>outputS3Path</code>, <code>applyNormalization</code>, <code>KMSArn</code>, and <code>output</code>.</p>
     pub fn set_output_source_config(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OutputSource>>) -> Self {
         self.output_source_config = input;
         self
     }
-    /// <p>A list of <code>OutputSource</code> objects, each of which contains fields <code>OutputS3Path</code>, <code>ApplyNormalization</code>, and <code>Output</code>.</p>
+    /// <p>A list of <code>OutputSource</code> objects, each of which contains fields <code>outputS3Path</code>, <code>applyNormalization</code>, <code>KMSArn</code>, and <code>output</code>.</p>
     pub fn get_output_source_config(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OutputSource>> {
         &self.output_source_config
     }

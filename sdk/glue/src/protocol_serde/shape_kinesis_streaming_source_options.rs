@@ -92,6 +92,9 @@ pub fn ser_kinesis_streaming_source_options(
             .key("StartingTimestamp")
             .date_time(var_21, ::aws_smithy_types::date_time::Format::DateTime)?;
     }
+    if let Some(var_22) = &input.fanout_consumer_arn {
+        object.key("FanoutConsumerARN").string(var_22.as_str());
+    }
     Ok(())
 }
 
@@ -248,6 +251,13 @@ where
                                 tokens.next(),
                                 ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
                             )?);
+                        }
+                        "FanoutConsumerARN" => {
+                            builder = builder.set_fanout_consumer_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

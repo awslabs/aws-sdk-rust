@@ -507,6 +507,8 @@ pub(crate) mod shape_environment_info;
 
 pub(crate) mod shape_error_details;
 
+pub(crate) mod shape_iam_federation_options_input;
+
 pub(crate) mod shape_identity_center_options;
 
 pub(crate) mod shape_identity_center_options_status;
@@ -592,6 +594,8 @@ pub(crate) mod shape_availability_zone_list;
 pub(crate) mod shape_change_progress_stage;
 
 pub(crate) mod shape_duration;
+
+pub(crate) mod shape_iam_federation_options_output;
 
 pub(crate) mod shape_instance_limits;
 

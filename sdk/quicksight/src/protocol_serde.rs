@@ -1213,6 +1213,8 @@ pub(crate) mod shape_iam_policy_assignment_summary;
 
 pub(crate) mod shape_identity_name_list;
 
+pub(crate) mod shape_impala_parameters;
+
 pub(crate) mod shape_integer_dataset_parameter;
 
 pub(crate) mod shape_integer_parameter;

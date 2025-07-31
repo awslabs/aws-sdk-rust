@@ -73,5 +73,11 @@ pub fn ser_field_source_profile_ids(
         }
         object_22.finish();
     }
+    if let Some(var_25) = &input.profile_type {
+        object.key("ProfileType").string(var_25.as_str());
+    }
+    if let Some(var_26) = &input.engagement_preferences {
+        object.key("EngagementPreferences").string(var_26.as_str());
+    }
     Ok(())
 }

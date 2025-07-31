@@ -27,6 +27,11 @@ where
                         "JWTOptions" => {
                             builder = builder.set_jwt_options(crate::protocol_serde::shape_jwt_options_output::de_jwt_options_output(tokens)?);
                         }
+                        "IAMFederationOptions" => {
+                            builder = builder.set_iam_federation_options(
+                                crate::protocol_serde::shape_iam_federation_options_output::de_iam_federation_options_output(tokens)?,
+                            );
+                        }
                         "AnonymousAuthDisableDate" => {
                             builder = builder.set_anonymous_auth_disable_date(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),

@@ -47,6 +47,8 @@ pub struct KinesisStreamingSourceOptions {
     pub emit_consumer_lag_metrics: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp of the record in the Kinesis data stream to start reading data from. The possible values are a timestamp string in UTC format of the pattern <code>yyyy-mm-ddTHH:MM:SSZ</code> (where Z represents a UTC timezone offset with a +/-. For example: "2023-04-04T08:00:00+08:00").</p>
     pub starting_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The Amazon Resource Name (ARN) of the Kinesis Data Streams enhanced fan-out consumer. When specified, enables enhanced fan-out for dedicated throughput and lower latency data consumption.</p>
+    pub fanout_consumer_arn: ::std::option::Option<::std::string::String>,
 }
 impl KinesisStreamingSourceOptions {
     /// <p>The URL of the Kinesis endpoint.</p>
@@ -134,6 +136,10 @@ impl KinesisStreamingSourceOptions {
     pub fn starting_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.starting_timestamp.as_ref()
     }
+    /// <p>The Amazon Resource Name (ARN) of the Kinesis Data Streams enhanced fan-out consumer. When specified, enables enhanced fan-out for dedicated throughput and lower latency data consumption.</p>
+    pub fn fanout_consumer_arn(&self) -> ::std::option::Option<&str> {
+        self.fanout_consumer_arn.as_deref()
+    }
 }
 impl KinesisStreamingSourceOptions {
     /// Creates a new builder-style object to manufacture [`KinesisStreamingSourceOptions`](crate::types::KinesisStreamingSourceOptions).
@@ -167,6 +173,7 @@ pub struct KinesisStreamingSourceOptionsBuilder {
     pub(crate) add_record_timestamp: ::std::option::Option<::std::string::String>,
     pub(crate) emit_consumer_lag_metrics: ::std::option::Option<::std::string::String>,
     pub(crate) starting_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) fanout_consumer_arn: ::std::option::Option<::std::string::String>,
 }
 impl KinesisStreamingSourceOptionsBuilder {
     /// <p>The URL of the Kinesis endpoint.</p>
@@ -466,6 +473,20 @@ impl KinesisStreamingSourceOptionsBuilder {
     pub fn get_starting_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.starting_timestamp
     }
+    /// <p>The Amazon Resource Name (ARN) of the Kinesis Data Streams enhanced fan-out consumer. When specified, enables enhanced fan-out for dedicated throughput and lower latency data consumption.</p>
+    pub fn fanout_consumer_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.fanout_consumer_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Kinesis Data Streams enhanced fan-out consumer. When specified, enables enhanced fan-out for dedicated throughput and lower latency data consumption.</p>
+    pub fn set_fanout_consumer_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.fanout_consumer_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Kinesis Data Streams enhanced fan-out consumer. When specified, enables enhanced fan-out for dedicated throughput and lower latency data consumption.</p>
+    pub fn get_fanout_consumer_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fanout_consumer_arn
+    }
     /// Consumes the builder and constructs a [`KinesisStreamingSourceOptions`](crate::types::KinesisStreamingSourceOptions).
     pub fn build(self) -> crate::types::KinesisStreamingSourceOptions {
         crate::types::KinesisStreamingSourceOptions {
@@ -490,6 +511,7 @@ impl KinesisStreamingSourceOptionsBuilder {
             add_record_timestamp: self.add_record_timestamp,
             emit_consumer_lag_metrics: self.emit_consumer_lag_metrics,
             starting_timestamp: self.starting_timestamp,
+            fanout_consumer_arn: self.fanout_consumer_arn,
         }
     }
 }

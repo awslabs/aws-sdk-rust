@@ -18,8 +18,6 @@ pub struct CodeGenConfigurationNode {
     pub s3_catalog_source: ::std::option::Option<crate::types::S3CatalogSource>,
     /// <p>Specifies a command-separated value (CSV) data store stored in Amazon S3.</p>
     pub s3_csv_source: ::std::option::Option<crate::types::S3CsvSource>,
-    /// <p>Defines configuration parameters for reading Excel files from Amazon S3.</p>
-    pub s3_excel_source: ::std::option::Option<crate::types::S3ExcelSource>,
     /// <p>Specifies a JSON data store stored in Amazon S3.</p>
     pub s3_json_source: ::std::option::Option<crate::types::S3JsonSource>,
     /// <p>Specifies an Apache Parquet data store stored in Amazon S3.</p>
@@ -40,12 +38,8 @@ pub struct CodeGenConfigurationNode {
     pub s3_catalog_target: ::std::option::Option<crate::types::S3CatalogTarget>,
     /// <p>Specifies a data target that writes to Amazon S3 in Apache Parquet columnar storage.</p>
     pub s3_glue_parquet_target: ::std::option::Option<crate::types::S3GlueParquetTarget>,
-    /// <p>Defines configuration parameters for writing data to Amazon S3 using HyperDirect optimization.</p>
-    pub s3_hyper_direct_target: ::std::option::Option<crate::types::S3HyperDirectTarget>,
     /// <p>Specifies a data target that writes to Amazon S3.</p>
     pub s3_direct_target: ::std::option::Option<crate::types::S3DirectTarget>,
-    /// <p>Defines configuration parameters for writing data to Amazon S3 as an Apache Iceberg table.</p>
-    pub s3_iceberg_direct_target: ::std::option::Option<crate::types::S3IcebergDirectTarget>,
     /// <p>Specifies a transform that maps data property keys in the data source to data property keys in the data target. You can rename keys, modify the data types for keys, and choose which keys to drop from the dataset.</p>
     pub apply_mapping: ::std::option::Option<crate::types::ApplyMapping>,
     /// <p>Specifies a transform that chooses the data property keys that you want to keep.</p>
@@ -110,6 +104,8 @@ pub struct CodeGenConfigurationNode {
     pub oracle_sql_catalog_target: ::std::option::Option<crate::types::OracleSqlCatalogTarget>,
     /// <p>Specifies a target that uses Postgres SQL.</p>
     pub postgre_sql_catalog_target: ::std::option::Option<crate::types::PostgreSqlCatalogTarget>,
+    /// <p>Specifies a route node that directs data to different output paths based on defined filtering conditions.</p>
+    pub route: ::std::option::Option<crate::types::Route>,
     /// <p>Specifies a custom visual transform created by a user.</p>
     pub dynamic_transform: ::std::option::Option<crate::types::DynamicTransform>,
     /// <p>Specifies your data quality evaluation criteria.</p>
@@ -152,6 +148,20 @@ pub struct CodeGenConfigurationNode {
     pub connector_data_source: ::std::option::Option<crate::types::ConnectorDataSource>,
     /// <p>Specifies a target generated with standard connection options.</p>
     pub connector_data_target: ::std::option::Option<crate::types::ConnectorDataTarget>,
+    /// <p>Specifies an Apache Iceberg data source that is registered in the Glue Data Catalog. The Iceberg data source must be stored in Amazon S3.</p>
+    pub s3_catalog_iceberg_source: ::std::option::Option<crate::types::S3CatalogIcebergSource>,
+    /// <p>Specifies an Apache Iceberg data source that is registered in the Glue Data Catalog.</p>
+    pub catalog_iceberg_source: ::std::option::Option<crate::types::CatalogIcebergSource>,
+    /// <p>Specifies an Apache Iceberg catalog target that writes data to Amazon S3 and registers the table in the Glue Data Catalog.</p>
+    pub s3_iceberg_catalog_target: ::std::option::Option<crate::types::S3IcebergCatalogTarget>,
+    /// <p>Defines configuration parameters for writing data to Amazon S3 as an Apache Iceberg table.</p>
+    pub s3_iceberg_direct_target: ::std::option::Option<crate::types::S3IcebergDirectTarget>,
+    /// <p>Defines configuration parameters for reading Excel files from Amazon S3.</p>
+    pub s3_excel_source: ::std::option::Option<crate::types::S3ExcelSource>,
+    /// <p>Defines configuration parameters for writing data to Amazon S3 using HyperDirect optimization.</p>
+    pub s3_hyper_direct_target: ::std::option::Option<crate::types::S3HyperDirectTarget>,
+    /// <p>Specifies a DynamoDB ELT connector source for extracting data from DynamoDB tables.</p>
+    pub dynamo_dbelt_connector_source: ::std::option::Option<crate::types::DynamoDbeltConnectorSource>,
 }
 impl CodeGenConfigurationNode {
     /// <p>Specifies a connector to an Amazon Athena data source.</p>
@@ -181,10 +191,6 @@ impl CodeGenConfigurationNode {
     /// <p>Specifies a command-separated value (CSV) data store stored in Amazon S3.</p>
     pub fn s3_csv_source(&self) -> ::std::option::Option<&crate::types::S3CsvSource> {
         self.s3_csv_source.as_ref()
-    }
-    /// <p>Defines configuration parameters for reading Excel files from Amazon S3.</p>
-    pub fn s3_excel_source(&self) -> ::std::option::Option<&crate::types::S3ExcelSource> {
-        self.s3_excel_source.as_ref()
     }
     /// <p>Specifies a JSON data store stored in Amazon S3.</p>
     pub fn s3_json_source(&self) -> ::std::option::Option<&crate::types::S3JsonSource> {
@@ -226,17 +232,9 @@ impl CodeGenConfigurationNode {
     pub fn s3_glue_parquet_target(&self) -> ::std::option::Option<&crate::types::S3GlueParquetTarget> {
         self.s3_glue_parquet_target.as_ref()
     }
-    /// <p>Defines configuration parameters for writing data to Amazon S3 using HyperDirect optimization.</p>
-    pub fn s3_hyper_direct_target(&self) -> ::std::option::Option<&crate::types::S3HyperDirectTarget> {
-        self.s3_hyper_direct_target.as_ref()
-    }
     /// <p>Specifies a data target that writes to Amazon S3.</p>
     pub fn s3_direct_target(&self) -> ::std::option::Option<&crate::types::S3DirectTarget> {
         self.s3_direct_target.as_ref()
-    }
-    /// <p>Defines configuration parameters for writing data to Amazon S3 as an Apache Iceberg table.</p>
-    pub fn s3_iceberg_direct_target(&self) -> ::std::option::Option<&crate::types::S3IcebergDirectTarget> {
-        self.s3_iceberg_direct_target.as_ref()
     }
     /// <p>Specifies a transform that maps data property keys in the data source to data property keys in the data target. You can rename keys, modify the data types for keys, and choose which keys to drop from the dataset.</p>
     pub fn apply_mapping(&self) -> ::std::option::Option<&crate::types::ApplyMapping> {
@@ -366,6 +364,10 @@ impl CodeGenConfigurationNode {
     pub fn postgre_sql_catalog_target(&self) -> ::std::option::Option<&crate::types::PostgreSqlCatalogTarget> {
         self.postgre_sql_catalog_target.as_ref()
     }
+    /// <p>Specifies a route node that directs data to different output paths based on defined filtering conditions.</p>
+    pub fn route(&self) -> ::std::option::Option<&crate::types::Route> {
+        self.route.as_ref()
+    }
     /// <p>Specifies a custom visual transform created by a user.</p>
     pub fn dynamic_transform(&self) -> ::std::option::Option<&crate::types::DynamicTransform> {
         self.dynamic_transform.as_ref()
@@ -450,6 +452,34 @@ impl CodeGenConfigurationNode {
     pub fn connector_data_target(&self) -> ::std::option::Option<&crate::types::ConnectorDataTarget> {
         self.connector_data_target.as_ref()
     }
+    /// <p>Specifies an Apache Iceberg data source that is registered in the Glue Data Catalog. The Iceberg data source must be stored in Amazon S3.</p>
+    pub fn s3_catalog_iceberg_source(&self) -> ::std::option::Option<&crate::types::S3CatalogIcebergSource> {
+        self.s3_catalog_iceberg_source.as_ref()
+    }
+    /// <p>Specifies an Apache Iceberg data source that is registered in the Glue Data Catalog.</p>
+    pub fn catalog_iceberg_source(&self) -> ::std::option::Option<&crate::types::CatalogIcebergSource> {
+        self.catalog_iceberg_source.as_ref()
+    }
+    /// <p>Specifies an Apache Iceberg catalog target that writes data to Amazon S3 and registers the table in the Glue Data Catalog.</p>
+    pub fn s3_iceberg_catalog_target(&self) -> ::std::option::Option<&crate::types::S3IcebergCatalogTarget> {
+        self.s3_iceberg_catalog_target.as_ref()
+    }
+    /// <p>Defines configuration parameters for writing data to Amazon S3 as an Apache Iceberg table.</p>
+    pub fn s3_iceberg_direct_target(&self) -> ::std::option::Option<&crate::types::S3IcebergDirectTarget> {
+        self.s3_iceberg_direct_target.as_ref()
+    }
+    /// <p>Defines configuration parameters for reading Excel files from Amazon S3.</p>
+    pub fn s3_excel_source(&self) -> ::std::option::Option<&crate::types::S3ExcelSource> {
+        self.s3_excel_source.as_ref()
+    }
+    /// <p>Defines configuration parameters for writing data to Amazon S3 using HyperDirect optimization.</p>
+    pub fn s3_hyper_direct_target(&self) -> ::std::option::Option<&crate::types::S3HyperDirectTarget> {
+        self.s3_hyper_direct_target.as_ref()
+    }
+    /// <p>Specifies a DynamoDB ELT connector source for extracting data from DynamoDB tables.</p>
+    pub fn dynamo_dbelt_connector_source(&self) -> ::std::option::Option<&crate::types::DynamoDbeltConnectorSource> {
+        self.dynamo_dbelt_connector_source.as_ref()
+    }
 }
 impl CodeGenConfigurationNode {
     /// Creates a new builder-style object to manufacture [`CodeGenConfigurationNode`](crate::types::CodeGenConfigurationNode).
@@ -469,7 +499,6 @@ pub struct CodeGenConfigurationNodeBuilder {
     pub(crate) redshift_source: ::std::option::Option<crate::types::RedshiftSource>,
     pub(crate) s3_catalog_source: ::std::option::Option<crate::types::S3CatalogSource>,
     pub(crate) s3_csv_source: ::std::option::Option<crate::types::S3CsvSource>,
-    pub(crate) s3_excel_source: ::std::option::Option<crate::types::S3ExcelSource>,
     pub(crate) s3_json_source: ::std::option::Option<crate::types::S3JsonSource>,
     pub(crate) s3_parquet_source: ::std::option::Option<crate::types::S3ParquetSource>,
     pub(crate) relational_catalog_source: ::std::option::Option<crate::types::RelationalCatalogSource>,
@@ -480,9 +509,7 @@ pub struct CodeGenConfigurationNodeBuilder {
     pub(crate) redshift_target: ::std::option::Option<crate::types::RedshiftTarget>,
     pub(crate) s3_catalog_target: ::std::option::Option<crate::types::S3CatalogTarget>,
     pub(crate) s3_glue_parquet_target: ::std::option::Option<crate::types::S3GlueParquetTarget>,
-    pub(crate) s3_hyper_direct_target: ::std::option::Option<crate::types::S3HyperDirectTarget>,
     pub(crate) s3_direct_target: ::std::option::Option<crate::types::S3DirectTarget>,
-    pub(crate) s3_iceberg_direct_target: ::std::option::Option<crate::types::S3IcebergDirectTarget>,
     pub(crate) apply_mapping: ::std::option::Option<crate::types::ApplyMapping>,
     pub(crate) select_fields: ::std::option::Option<crate::types::SelectFields>,
     pub(crate) drop_fields: ::std::option::Option<crate::types::DropFields>,
@@ -515,6 +542,7 @@ pub struct CodeGenConfigurationNodeBuilder {
     pub(crate) my_sql_catalog_target: ::std::option::Option<crate::types::MySqlCatalogTarget>,
     pub(crate) oracle_sql_catalog_target: ::std::option::Option<crate::types::OracleSqlCatalogTarget>,
     pub(crate) postgre_sql_catalog_target: ::std::option::Option<crate::types::PostgreSqlCatalogTarget>,
+    pub(crate) route: ::std::option::Option<crate::types::Route>,
     pub(crate) dynamic_transform: ::std::option::Option<crate::types::DynamicTransform>,
     pub(crate) evaluate_data_quality: ::std::option::Option<crate::types::EvaluateDataQuality>,
     pub(crate) s3_catalog_hudi_source: ::std::option::Option<crate::types::S3CatalogHudiSource>,
@@ -536,6 +564,13 @@ pub struct CodeGenConfigurationNodeBuilder {
     pub(crate) snowflake_target: ::std::option::Option<crate::types::SnowflakeTarget>,
     pub(crate) connector_data_source: ::std::option::Option<crate::types::ConnectorDataSource>,
     pub(crate) connector_data_target: ::std::option::Option<crate::types::ConnectorDataTarget>,
+    pub(crate) s3_catalog_iceberg_source: ::std::option::Option<crate::types::S3CatalogIcebergSource>,
+    pub(crate) catalog_iceberg_source: ::std::option::Option<crate::types::CatalogIcebergSource>,
+    pub(crate) s3_iceberg_catalog_target: ::std::option::Option<crate::types::S3IcebergCatalogTarget>,
+    pub(crate) s3_iceberg_direct_target: ::std::option::Option<crate::types::S3IcebergDirectTarget>,
+    pub(crate) s3_excel_source: ::std::option::Option<crate::types::S3ExcelSource>,
+    pub(crate) s3_hyper_direct_target: ::std::option::Option<crate::types::S3HyperDirectTarget>,
+    pub(crate) dynamo_dbelt_connector_source: ::std::option::Option<crate::types::DynamoDbeltConnectorSource>,
 }
 impl CodeGenConfigurationNodeBuilder {
     /// <p>Specifies a connector to an Amazon Athena data source.</p>
@@ -635,20 +670,6 @@ impl CodeGenConfigurationNodeBuilder {
     /// <p>Specifies a command-separated value (CSV) data store stored in Amazon S3.</p>
     pub fn get_s3_csv_source(&self) -> &::std::option::Option<crate::types::S3CsvSource> {
         &self.s3_csv_source
-    }
-    /// <p>Defines configuration parameters for reading Excel files from Amazon S3.</p>
-    pub fn s3_excel_source(mut self, input: crate::types::S3ExcelSource) -> Self {
-        self.s3_excel_source = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>Defines configuration parameters for reading Excel files from Amazon S3.</p>
-    pub fn set_s3_excel_source(mut self, input: ::std::option::Option<crate::types::S3ExcelSource>) -> Self {
-        self.s3_excel_source = input;
-        self
-    }
-    /// <p>Defines configuration parameters for reading Excel files from Amazon S3.</p>
-    pub fn get_s3_excel_source(&self) -> &::std::option::Option<crate::types::S3ExcelSource> {
-        &self.s3_excel_source
     }
     /// <p>Specifies a JSON data store stored in Amazon S3.</p>
     pub fn s3_json_source(mut self, input: crate::types::S3JsonSource) -> Self {
@@ -790,20 +811,6 @@ impl CodeGenConfigurationNodeBuilder {
     pub fn get_s3_glue_parquet_target(&self) -> &::std::option::Option<crate::types::S3GlueParquetTarget> {
         &self.s3_glue_parquet_target
     }
-    /// <p>Defines configuration parameters for writing data to Amazon S3 using HyperDirect optimization.</p>
-    pub fn s3_hyper_direct_target(mut self, input: crate::types::S3HyperDirectTarget) -> Self {
-        self.s3_hyper_direct_target = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>Defines configuration parameters for writing data to Amazon S3 using HyperDirect optimization.</p>
-    pub fn set_s3_hyper_direct_target(mut self, input: ::std::option::Option<crate::types::S3HyperDirectTarget>) -> Self {
-        self.s3_hyper_direct_target = input;
-        self
-    }
-    /// <p>Defines configuration parameters for writing data to Amazon S3 using HyperDirect optimization.</p>
-    pub fn get_s3_hyper_direct_target(&self) -> &::std::option::Option<crate::types::S3HyperDirectTarget> {
-        &self.s3_hyper_direct_target
-    }
     /// <p>Specifies a data target that writes to Amazon S3.</p>
     pub fn s3_direct_target(mut self, input: crate::types::S3DirectTarget) -> Self {
         self.s3_direct_target = ::std::option::Option::Some(input);
@@ -817,20 +824,6 @@ impl CodeGenConfigurationNodeBuilder {
     /// <p>Specifies a data target that writes to Amazon S3.</p>
     pub fn get_s3_direct_target(&self) -> &::std::option::Option<crate::types::S3DirectTarget> {
         &self.s3_direct_target
-    }
-    /// <p>Defines configuration parameters for writing data to Amazon S3 as an Apache Iceberg table.</p>
-    pub fn s3_iceberg_direct_target(mut self, input: crate::types::S3IcebergDirectTarget) -> Self {
-        self.s3_iceberg_direct_target = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>Defines configuration parameters for writing data to Amazon S3 as an Apache Iceberg table.</p>
-    pub fn set_s3_iceberg_direct_target(mut self, input: ::std::option::Option<crate::types::S3IcebergDirectTarget>) -> Self {
-        self.s3_iceberg_direct_target = input;
-        self
-    }
-    /// <p>Defines configuration parameters for writing data to Amazon S3 as an Apache Iceberg table.</p>
-    pub fn get_s3_iceberg_direct_target(&self) -> &::std::option::Option<crate::types::S3IcebergDirectTarget> {
-        &self.s3_iceberg_direct_target
     }
     /// <p>Specifies a transform that maps data property keys in the data source to data property keys in the data target. You can rename keys, modify the data types for keys, and choose which keys to drop from the dataset.</p>
     pub fn apply_mapping(mut self, input: crate::types::ApplyMapping) -> Self {
@@ -1280,6 +1273,20 @@ impl CodeGenConfigurationNodeBuilder {
     pub fn get_postgre_sql_catalog_target(&self) -> &::std::option::Option<crate::types::PostgreSqlCatalogTarget> {
         &self.postgre_sql_catalog_target
     }
+    /// <p>Specifies a route node that directs data to different output paths based on defined filtering conditions.</p>
+    pub fn route(mut self, input: crate::types::Route) -> Self {
+        self.route = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies a route node that directs data to different output paths based on defined filtering conditions.</p>
+    pub fn set_route(mut self, input: ::std::option::Option<crate::types::Route>) -> Self {
+        self.route = input;
+        self
+    }
+    /// <p>Specifies a route node that directs data to different output paths based on defined filtering conditions.</p>
+    pub fn get_route(&self) -> &::std::option::Option<crate::types::Route> {
+        &self.route
+    }
     /// <p>Specifies a custom visual transform created by a user.</p>
     pub fn dynamic_transform(mut self, input: crate::types::DynamicTransform) -> Self {
         self.dynamic_transform = ::std::option::Option::Some(input);
@@ -1574,6 +1581,104 @@ impl CodeGenConfigurationNodeBuilder {
     pub fn get_connector_data_target(&self) -> &::std::option::Option<crate::types::ConnectorDataTarget> {
         &self.connector_data_target
     }
+    /// <p>Specifies an Apache Iceberg data source that is registered in the Glue Data Catalog. The Iceberg data source must be stored in Amazon S3.</p>
+    pub fn s3_catalog_iceberg_source(mut self, input: crate::types::S3CatalogIcebergSource) -> Self {
+        self.s3_catalog_iceberg_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies an Apache Iceberg data source that is registered in the Glue Data Catalog. The Iceberg data source must be stored in Amazon S3.</p>
+    pub fn set_s3_catalog_iceberg_source(mut self, input: ::std::option::Option<crate::types::S3CatalogIcebergSource>) -> Self {
+        self.s3_catalog_iceberg_source = input;
+        self
+    }
+    /// <p>Specifies an Apache Iceberg data source that is registered in the Glue Data Catalog. The Iceberg data source must be stored in Amazon S3.</p>
+    pub fn get_s3_catalog_iceberg_source(&self) -> &::std::option::Option<crate::types::S3CatalogIcebergSource> {
+        &self.s3_catalog_iceberg_source
+    }
+    /// <p>Specifies an Apache Iceberg data source that is registered in the Glue Data Catalog.</p>
+    pub fn catalog_iceberg_source(mut self, input: crate::types::CatalogIcebergSource) -> Self {
+        self.catalog_iceberg_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies an Apache Iceberg data source that is registered in the Glue Data Catalog.</p>
+    pub fn set_catalog_iceberg_source(mut self, input: ::std::option::Option<crate::types::CatalogIcebergSource>) -> Self {
+        self.catalog_iceberg_source = input;
+        self
+    }
+    /// <p>Specifies an Apache Iceberg data source that is registered in the Glue Data Catalog.</p>
+    pub fn get_catalog_iceberg_source(&self) -> &::std::option::Option<crate::types::CatalogIcebergSource> {
+        &self.catalog_iceberg_source
+    }
+    /// <p>Specifies an Apache Iceberg catalog target that writes data to Amazon S3 and registers the table in the Glue Data Catalog.</p>
+    pub fn s3_iceberg_catalog_target(mut self, input: crate::types::S3IcebergCatalogTarget) -> Self {
+        self.s3_iceberg_catalog_target = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies an Apache Iceberg catalog target that writes data to Amazon S3 and registers the table in the Glue Data Catalog.</p>
+    pub fn set_s3_iceberg_catalog_target(mut self, input: ::std::option::Option<crate::types::S3IcebergCatalogTarget>) -> Self {
+        self.s3_iceberg_catalog_target = input;
+        self
+    }
+    /// <p>Specifies an Apache Iceberg catalog target that writes data to Amazon S3 and registers the table in the Glue Data Catalog.</p>
+    pub fn get_s3_iceberg_catalog_target(&self) -> &::std::option::Option<crate::types::S3IcebergCatalogTarget> {
+        &self.s3_iceberg_catalog_target
+    }
+    /// <p>Defines configuration parameters for writing data to Amazon S3 as an Apache Iceberg table.</p>
+    pub fn s3_iceberg_direct_target(mut self, input: crate::types::S3IcebergDirectTarget) -> Self {
+        self.s3_iceberg_direct_target = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Defines configuration parameters for writing data to Amazon S3 as an Apache Iceberg table.</p>
+    pub fn set_s3_iceberg_direct_target(mut self, input: ::std::option::Option<crate::types::S3IcebergDirectTarget>) -> Self {
+        self.s3_iceberg_direct_target = input;
+        self
+    }
+    /// <p>Defines configuration parameters for writing data to Amazon S3 as an Apache Iceberg table.</p>
+    pub fn get_s3_iceberg_direct_target(&self) -> &::std::option::Option<crate::types::S3IcebergDirectTarget> {
+        &self.s3_iceberg_direct_target
+    }
+    /// <p>Defines configuration parameters for reading Excel files from Amazon S3.</p>
+    pub fn s3_excel_source(mut self, input: crate::types::S3ExcelSource) -> Self {
+        self.s3_excel_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Defines configuration parameters for reading Excel files from Amazon S3.</p>
+    pub fn set_s3_excel_source(mut self, input: ::std::option::Option<crate::types::S3ExcelSource>) -> Self {
+        self.s3_excel_source = input;
+        self
+    }
+    /// <p>Defines configuration parameters for reading Excel files from Amazon S3.</p>
+    pub fn get_s3_excel_source(&self) -> &::std::option::Option<crate::types::S3ExcelSource> {
+        &self.s3_excel_source
+    }
+    /// <p>Defines configuration parameters for writing data to Amazon S3 using HyperDirect optimization.</p>
+    pub fn s3_hyper_direct_target(mut self, input: crate::types::S3HyperDirectTarget) -> Self {
+        self.s3_hyper_direct_target = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Defines configuration parameters for writing data to Amazon S3 using HyperDirect optimization.</p>
+    pub fn set_s3_hyper_direct_target(mut self, input: ::std::option::Option<crate::types::S3HyperDirectTarget>) -> Self {
+        self.s3_hyper_direct_target = input;
+        self
+    }
+    /// <p>Defines configuration parameters for writing data to Amazon S3 using HyperDirect optimization.</p>
+    pub fn get_s3_hyper_direct_target(&self) -> &::std::option::Option<crate::types::S3HyperDirectTarget> {
+        &self.s3_hyper_direct_target
+    }
+    /// <p>Specifies a DynamoDB ELT connector source for extracting data from DynamoDB tables.</p>
+    pub fn dynamo_dbelt_connector_source(mut self, input: crate::types::DynamoDbeltConnectorSource) -> Self {
+        self.dynamo_dbelt_connector_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies a DynamoDB ELT connector source for extracting data from DynamoDB tables.</p>
+    pub fn set_dynamo_dbelt_connector_source(mut self, input: ::std::option::Option<crate::types::DynamoDbeltConnectorSource>) -> Self {
+        self.dynamo_dbelt_connector_source = input;
+        self
+    }
+    /// <p>Specifies a DynamoDB ELT connector source for extracting data from DynamoDB tables.</p>
+    pub fn get_dynamo_dbelt_connector_source(&self) -> &::std::option::Option<crate::types::DynamoDbeltConnectorSource> {
+        &self.dynamo_dbelt_connector_source
+    }
     /// Consumes the builder and constructs a [`CodeGenConfigurationNode`](crate::types::CodeGenConfigurationNode).
     pub fn build(self) -> crate::types::CodeGenConfigurationNode {
         crate::types::CodeGenConfigurationNode {
@@ -1584,7 +1689,6 @@ impl CodeGenConfigurationNodeBuilder {
             redshift_source: self.redshift_source,
             s3_catalog_source: self.s3_catalog_source,
             s3_csv_source: self.s3_csv_source,
-            s3_excel_source: self.s3_excel_source,
             s3_json_source: self.s3_json_source,
             s3_parquet_source: self.s3_parquet_source,
             relational_catalog_source: self.relational_catalog_source,
@@ -1595,9 +1699,7 @@ impl CodeGenConfigurationNodeBuilder {
             redshift_target: self.redshift_target,
             s3_catalog_target: self.s3_catalog_target,
             s3_glue_parquet_target: self.s3_glue_parquet_target,
-            s3_hyper_direct_target: self.s3_hyper_direct_target,
             s3_direct_target: self.s3_direct_target,
-            s3_iceberg_direct_target: self.s3_iceberg_direct_target,
             apply_mapping: self.apply_mapping,
             select_fields: self.select_fields,
             drop_fields: self.drop_fields,
@@ -1630,6 +1732,7 @@ impl CodeGenConfigurationNodeBuilder {
             my_sql_catalog_target: self.my_sql_catalog_target,
             oracle_sql_catalog_target: self.oracle_sql_catalog_target,
             postgre_sql_catalog_target: self.postgre_sql_catalog_target,
+            route: self.route,
             dynamic_transform: self.dynamic_transform,
             evaluate_data_quality: self.evaluate_data_quality,
             s3_catalog_hudi_source: self.s3_catalog_hudi_source,
@@ -1651,6 +1754,13 @@ impl CodeGenConfigurationNodeBuilder {
             snowflake_target: self.snowflake_target,
             connector_data_source: self.connector_data_source,
             connector_data_target: self.connector_data_target,
+            s3_catalog_iceberg_source: self.s3_catalog_iceberg_source,
+            catalog_iceberg_source: self.catalog_iceberg_source,
+            s3_iceberg_catalog_target: self.s3_iceberg_catalog_target,
+            s3_iceberg_direct_target: self.s3_iceberg_direct_target,
+            s3_excel_source: self.s3_excel_source,
+            s3_hyper_direct_target: self.s3_hyper_direct_target,
+            dynamo_dbelt_connector_source: self.dynamo_dbelt_connector_source,
         }
     }
 }

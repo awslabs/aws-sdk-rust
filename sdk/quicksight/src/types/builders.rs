@@ -1223,6 +1223,8 @@ pub use crate::types::_data_source_credentials::DataSourceCredentialsBuilder;
 
 pub use crate::types::_credential_pair::CredentialPairBuilder;
 
+pub use crate::types::_impala_parameters::ImpalaParametersBuilder;
+
 pub use crate::types::_big_query_parameters::BigQueryParametersBuilder;
 
 pub use crate::types::_trino_parameters::TrinoParametersBuilder;

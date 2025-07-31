@@ -71,7 +71,17 @@ pub use crate::types::_guardian_attributes::GuardianAttributesBuilder;
 
 pub use crate::types::_dashboard_attributes::DashboardAttributesBuilder;
 
+pub use crate::types::_tenant_info::TenantInfoBuilder;
+
+pub use crate::types::_tenant_resource::TenantResourceBuilder;
+
 pub use crate::types::_suppressed_destination_summary::SuppressedDestinationSummaryBuilder;
+
+pub use crate::types::_resource_tenant_metadata::ResourceTenantMetadataBuilder;
+
+pub use crate::types::_reputation_entity::ReputationEntityBuilder;
+
+pub use crate::types::_status_record::StatusRecordBuilder;
 
 pub use crate::types::_recommendation::RecommendationBuilder;
 
@@ -104,6 +114,8 @@ pub use crate::types::_list_contacts_filter::ListContactsFilterBuilder;
 pub use crate::types::_topic_filter::TopicFilterBuilder;
 
 pub use crate::types::_contact_list::ContactListBuilder;
+
+pub use crate::types::_tenant::TenantBuilder;
 
 pub use crate::types::_suppressed_destination::SuppressedDestinationBuilder;
 

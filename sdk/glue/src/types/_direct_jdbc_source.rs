@@ -16,6 +16,8 @@ pub struct DirectJdbcSource {
     pub connection_type: crate::types::JdbcConnectionType,
     /// <p>The temp directory of the JDBC Redshift source.</p>
     pub redshift_tmp_dir: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies the data schema for the direct JDBC source.</p>
+    pub output_schemas: ::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>>,
 }
 impl DirectJdbcSource {
     /// <p>The name of the JDBC source connection.</p>
@@ -46,6 +48,12 @@ impl DirectJdbcSource {
     pub fn redshift_tmp_dir(&self) -> ::std::option::Option<&str> {
         self.redshift_tmp_dir.as_deref()
     }
+    /// <p>Specifies the data schema for the direct JDBC source.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.output_schemas.is_none()`.
+    pub fn output_schemas(&self) -> &[crate::types::GlueSchema] {
+        self.output_schemas.as_deref().unwrap_or_default()
+    }
 }
 impl DirectJdbcSource {
     /// Creates a new builder-style object to manufacture [`DirectJdbcSource`](crate::types::DirectJdbcSource).
@@ -64,6 +72,7 @@ pub struct DirectJdbcSourceBuilder {
     pub(crate) connection_name: ::std::option::Option<::std::string::String>,
     pub(crate) connection_type: ::std::option::Option<crate::types::JdbcConnectionType>,
     pub(crate) redshift_tmp_dir: ::std::option::Option<::std::string::String>,
+    pub(crate) output_schemas: ::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>>,
 }
 impl DirectJdbcSourceBuilder {
     /// <p>The name of the JDBC source connection.</p>
@@ -155,6 +164,26 @@ impl DirectJdbcSourceBuilder {
     pub fn get_redshift_tmp_dir(&self) -> &::std::option::Option<::std::string::String> {
         &self.redshift_tmp_dir
     }
+    /// Appends an item to `output_schemas`.
+    ///
+    /// To override the contents of this collection use [`set_output_schemas`](Self::set_output_schemas).
+    ///
+    /// <p>Specifies the data schema for the direct JDBC source.</p>
+    pub fn output_schemas(mut self, input: crate::types::GlueSchema) -> Self {
+        let mut v = self.output_schemas.unwrap_or_default();
+        v.push(input);
+        self.output_schemas = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Specifies the data schema for the direct JDBC source.</p>
+    pub fn set_output_schemas(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>>) -> Self {
+        self.output_schemas = input;
+        self
+    }
+    /// <p>Specifies the data schema for the direct JDBC source.</p>
+    pub fn get_output_schemas(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>> {
+        &self.output_schemas
+    }
     /// Consumes the builder and constructs a [`DirectJdbcSource`](crate::types::DirectJdbcSource).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::DirectJdbcSourceBuilder::name)
@@ -195,6 +224,7 @@ impl DirectJdbcSourceBuilder {
                 )
             })?,
             redshift_tmp_dir: self.redshift_tmp_dir,
+            output_schemas: self.output_schemas,
         })
     }
 }

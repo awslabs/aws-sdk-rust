@@ -46,50 +46,59 @@ pub fn ser_create_profile_input_input(
     if let Some(var_15) = &input.email_address {
         object.key("EmailAddress").string(var_15.as_str());
     }
-    if let Some(var_16) = &input.first_name {
-        object.key("FirstName").string(var_16.as_str());
-    }
-    if let Some(var_17) = &input.gender {
-        object.key("Gender").string(var_17.as_str());
-    }
-    if let Some(var_18) = &input.gender_string {
-        object.key("GenderString").string(var_18.as_str());
-    }
-    if let Some(var_19) = &input.home_phone_number {
-        object.key("HomePhoneNumber").string(var_19.as_str());
-    }
-    if let Some(var_20) = &input.last_name {
-        object.key("LastName").string(var_20.as_str());
-    }
-    if let Some(var_21) = &input.mailing_address {
+    if let Some(var_16) = &input.engagement_preferences {
         #[allow(unused_mut)]
-        let mut object_22 = object.key("MailingAddress").start_object();
-        crate::protocol_serde::shape_address::ser_address(&mut object_22, var_21)?;
-        object_22.finish();
+        let mut object_17 = object.key("EngagementPreferences").start_object();
+        crate::protocol_serde::shape_engagement_preferences::ser_engagement_preferences(&mut object_17, var_16)?;
+        object_17.finish();
     }
-    if let Some(var_23) = &input.middle_name {
-        object.key("MiddleName").string(var_23.as_str());
+    if let Some(var_18) = &input.first_name {
+        object.key("FirstName").string(var_18.as_str());
     }
-    if let Some(var_24) = &input.mobile_phone_number {
-        object.key("MobilePhoneNumber").string(var_24.as_str());
+    if let Some(var_19) = &input.gender {
+        object.key("Gender").string(var_19.as_str());
     }
-    if let Some(var_25) = &input.party_type {
-        object.key("PartyType").string(var_25.as_str());
+    if let Some(var_20) = &input.gender_string {
+        object.key("GenderString").string(var_20.as_str());
     }
-    if let Some(var_26) = &input.party_type_string {
-        object.key("PartyTypeString").string(var_26.as_str());
+    if let Some(var_21) = &input.home_phone_number {
+        object.key("HomePhoneNumber").string(var_21.as_str());
     }
-    if let Some(var_27) = &input.personal_email_address {
-        object.key("PersonalEmailAddress").string(var_27.as_str());
+    if let Some(var_22) = &input.last_name {
+        object.key("LastName").string(var_22.as_str());
     }
-    if let Some(var_28) = &input.phone_number {
-        object.key("PhoneNumber").string(var_28.as_str());
-    }
-    if let Some(var_29) = &input.shipping_address {
+    if let Some(var_23) = &input.mailing_address {
         #[allow(unused_mut)]
-        let mut object_30 = object.key("ShippingAddress").start_object();
-        crate::protocol_serde::shape_address::ser_address(&mut object_30, var_29)?;
-        object_30.finish();
+        let mut object_24 = object.key("MailingAddress").start_object();
+        crate::protocol_serde::shape_address::ser_address(&mut object_24, var_23)?;
+        object_24.finish();
+    }
+    if let Some(var_25) = &input.middle_name {
+        object.key("MiddleName").string(var_25.as_str());
+    }
+    if let Some(var_26) = &input.mobile_phone_number {
+        object.key("MobilePhoneNumber").string(var_26.as_str());
+    }
+    if let Some(var_27) = &input.party_type {
+        object.key("PartyType").string(var_27.as_str());
+    }
+    if let Some(var_28) = &input.party_type_string {
+        object.key("PartyTypeString").string(var_28.as_str());
+    }
+    if let Some(var_29) = &input.personal_email_address {
+        object.key("PersonalEmailAddress").string(var_29.as_str());
+    }
+    if let Some(var_30) = &input.phone_number {
+        object.key("PhoneNumber").string(var_30.as_str());
+    }
+    if let Some(var_31) = &input.profile_type {
+        object.key("ProfileType").string(var_31.as_str());
+    }
+    if let Some(var_32) = &input.shipping_address {
+        #[allow(unused_mut)]
+        let mut object_33 = object.key("ShippingAddress").start_object();
+        crate::protocol_serde::shape_address::ser_address(&mut object_33, var_32)?;
+        object_33.finish();
     }
     Ok(())
 }

@@ -52,11 +52,29 @@ pub fn ser_s3_iceberg_direct_target(
         crate::protocol_serde::shape_direct_schema_change_policy::ser_direct_schema_change_policy(&mut object_13, var_12)?;
         object_13.finish();
     }
+    if let Some(var_14) = &input.auto_data_quality {
+        #[allow(unused_mut)]
+        let mut object_15 = object.key("AutoDataQuality").start_object();
+        crate::protocol_serde::shape_auto_data_quality::ser_auto_data_quality(&mut object_15, var_14)?;
+        object_15.finish();
+    }
     {
         object.key("Compression").string(input.compression.as_str());
     }
-    if let Some(var_14) = &input.number_target_partitions {
-        object.key("NumberTargetPartitions").string(var_14.as_str());
+    if let Some(var_16) = &input.number_target_partitions {
+        object.key("NumberTargetPartitions").string(var_16.as_str());
+    }
+    if let Some(var_17) = &input.output_schemas {
+        let mut array_18 = object.key("OutputSchemas").start_array();
+        for item_19 in var_17 {
+            {
+                #[allow(unused_mut)]
+                let mut object_20 = array_18.value().start_object();
+                crate::protocol_serde::shape_glue_schema::ser_glue_schema(&mut object_20, item_19)?;
+                object_20.finish();
+            }
+        }
+        array_18.finish();
     }
     Ok(())
 }
@@ -112,6 +130,9 @@ where
                                 crate::protocol_serde::shape_direct_schema_change_policy::de_direct_schema_change_policy(tokens)?,
                             );
                         }
+                        "AutoDataQuality" => {
+                            builder = builder.set_auto_data_quality(crate::protocol_serde::shape_auto_data_quality::de_auto_data_quality(tokens)?);
+                        }
                         "Compression" => {
                             builder = builder.set_compression(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -125,6 +146,9 @@ where
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
+                        }
+                        "OutputSchemas" => {
+                            builder = builder.set_output_schemas(crate::protocol_serde::shape_glue_schemas::de_glue_schemas(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

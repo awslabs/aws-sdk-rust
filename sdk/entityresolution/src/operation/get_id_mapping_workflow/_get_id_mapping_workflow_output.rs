@@ -11,7 +11,7 @@ pub struct GetIdMappingWorkflowOutput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>InputSource</code> objects, which have the fields <code>InputSourceARN</code> and <code>SchemaName</code>.</p>
     pub input_source_config: ::std::vec::Vec<crate::types::IdMappingWorkflowInputSource>,
-    /// <p>A list of <code>OutputSource</code> objects, each of which contains fields <code>OutputS3Path</code> and <code>KMSArn</code>.</p>
+    /// <p>A list of <code>OutputSource</code> objects, each of which contains fields <code>outputS3Path</code> and <code>KMSArn</code>.</p>
     pub output_source_config: ::std::option::Option<::std::vec::Vec<crate::types::IdMappingWorkflowOutputSource>>,
     /// <p>An object which defines the ID mapping technique and any additional configurations.</p>
     pub id_mapping_techniques: ::std::option::Option<crate::types::IdMappingTechniques>,
@@ -45,7 +45,7 @@ impl GetIdMappingWorkflowOutput {
         use std::ops::Deref;
         self.input_source_config.deref()
     }
-    /// <p>A list of <code>OutputSource</code> objects, each of which contains fields <code>OutputS3Path</code> and <code>KMSArn</code>.</p>
+    /// <p>A list of <code>OutputSource</code> objects, each of which contains fields <code>outputS3Path</code> and <code>KMSArn</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.output_source_config.is_none()`.
     pub fn output_source_config(&self) -> &[crate::types::IdMappingWorkflowOutputSource] {
@@ -170,19 +170,19 @@ impl GetIdMappingWorkflowOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_output_source_config`](Self::set_output_source_config).
     ///
-    /// <p>A list of <code>OutputSource</code> objects, each of which contains fields <code>OutputS3Path</code> and <code>KMSArn</code>.</p>
+    /// <p>A list of <code>OutputSource</code> objects, each of which contains fields <code>outputS3Path</code> and <code>KMSArn</code>.</p>
     pub fn output_source_config(mut self, input: crate::types::IdMappingWorkflowOutputSource) -> Self {
         let mut v = self.output_source_config.unwrap_or_default();
         v.push(input);
         self.output_source_config = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of <code>OutputSource</code> objects, each of which contains fields <code>OutputS3Path</code> and <code>KMSArn</code>.</p>
+    /// <p>A list of <code>OutputSource</code> objects, each of which contains fields <code>outputS3Path</code> and <code>KMSArn</code>.</p>
     pub fn set_output_source_config(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IdMappingWorkflowOutputSource>>) -> Self {
         self.output_source_config = input;
         self
     }
-    /// <p>A list of <code>OutputSource</code> objects, each of which contains fields <code>OutputS3Path</code> and <code>KMSArn</code>.</p>
+    /// <p>A list of <code>OutputSource</code> objects, each of which contains fields <code>outputS3Path</code> and <code>KMSArn</code>.</p>
     pub fn get_output_source_config(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IdMappingWorkflowOutputSource>> {
         &self.output_source_config
     }

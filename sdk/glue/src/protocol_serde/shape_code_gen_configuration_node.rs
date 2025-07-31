@@ -45,407 +45,437 @@ pub fn ser_code_gen_configuration_node(
         crate::protocol_serde::shape_s3_csv_source::ser_s3_csv_source(&mut object_14, var_13)?;
         object_14.finish();
     }
-    if let Some(var_15) = &input.s3_excel_source {
+    if let Some(var_15) = &input.s3_json_source {
         #[allow(unused_mut)]
-        let mut object_16 = object.key("S3ExcelSource").start_object();
-        crate::protocol_serde::shape_s3_excel_source::ser_s3_excel_source(&mut object_16, var_15)?;
+        let mut object_16 = object.key("S3JsonSource").start_object();
+        crate::protocol_serde::shape_s3_json_source::ser_s3_json_source(&mut object_16, var_15)?;
         object_16.finish();
     }
-    if let Some(var_17) = &input.s3_json_source {
+    if let Some(var_17) = &input.s3_parquet_source {
         #[allow(unused_mut)]
-        let mut object_18 = object.key("S3JsonSource").start_object();
-        crate::protocol_serde::shape_s3_json_source::ser_s3_json_source(&mut object_18, var_17)?;
+        let mut object_18 = object.key("S3ParquetSource").start_object();
+        crate::protocol_serde::shape_s3_parquet_source::ser_s3_parquet_source(&mut object_18, var_17)?;
         object_18.finish();
     }
-    if let Some(var_19) = &input.s3_parquet_source {
+    if let Some(var_19) = &input.relational_catalog_source {
         #[allow(unused_mut)]
-        let mut object_20 = object.key("S3ParquetSource").start_object();
-        crate::protocol_serde::shape_s3_parquet_source::ser_s3_parquet_source(&mut object_20, var_19)?;
+        let mut object_20 = object.key("RelationalCatalogSource").start_object();
+        crate::protocol_serde::shape_relational_catalog_source::ser_relational_catalog_source(&mut object_20, var_19)?;
         object_20.finish();
     }
-    if let Some(var_21) = &input.relational_catalog_source {
+    if let Some(var_21) = &input.dynamo_db_catalog_source {
         #[allow(unused_mut)]
-        let mut object_22 = object.key("RelationalCatalogSource").start_object();
-        crate::protocol_serde::shape_relational_catalog_source::ser_relational_catalog_source(&mut object_22, var_21)?;
+        let mut object_22 = object.key("DynamoDBCatalogSource").start_object();
+        crate::protocol_serde::shape_dynamo_db_catalog_source::ser_dynamo_db_catalog_source(&mut object_22, var_21)?;
         object_22.finish();
     }
-    if let Some(var_23) = &input.dynamo_db_catalog_source {
+    if let Some(var_23) = &input.jdbc_connector_target {
         #[allow(unused_mut)]
-        let mut object_24 = object.key("DynamoDBCatalogSource").start_object();
-        crate::protocol_serde::shape_dynamo_db_catalog_source::ser_dynamo_db_catalog_source(&mut object_24, var_23)?;
+        let mut object_24 = object.key("JDBCConnectorTarget").start_object();
+        crate::protocol_serde::shape_jdbc_connector_target::ser_jdbc_connector_target(&mut object_24, var_23)?;
         object_24.finish();
     }
-    if let Some(var_25) = &input.jdbc_connector_target {
+    if let Some(var_25) = &input.spark_connector_target {
         #[allow(unused_mut)]
-        let mut object_26 = object.key("JDBCConnectorTarget").start_object();
-        crate::protocol_serde::shape_jdbc_connector_target::ser_jdbc_connector_target(&mut object_26, var_25)?;
+        let mut object_26 = object.key("SparkConnectorTarget").start_object();
+        crate::protocol_serde::shape_spark_connector_target::ser_spark_connector_target(&mut object_26, var_25)?;
         object_26.finish();
     }
-    if let Some(var_27) = &input.spark_connector_target {
+    if let Some(var_27) = &input.catalog_target {
         #[allow(unused_mut)]
-        let mut object_28 = object.key("SparkConnectorTarget").start_object();
-        crate::protocol_serde::shape_spark_connector_target::ser_spark_connector_target(&mut object_28, var_27)?;
+        let mut object_28 = object.key("CatalogTarget").start_object();
+        crate::protocol_serde::shape_basic_catalog_target::ser_basic_catalog_target(&mut object_28, var_27)?;
         object_28.finish();
     }
-    if let Some(var_29) = &input.catalog_target {
+    if let Some(var_29) = &input.redshift_target {
         #[allow(unused_mut)]
-        let mut object_30 = object.key("CatalogTarget").start_object();
-        crate::protocol_serde::shape_basic_catalog_target::ser_basic_catalog_target(&mut object_30, var_29)?;
+        let mut object_30 = object.key("RedshiftTarget").start_object();
+        crate::protocol_serde::shape_redshift_target::ser_redshift_target(&mut object_30, var_29)?;
         object_30.finish();
     }
-    if let Some(var_31) = &input.redshift_target {
+    if let Some(var_31) = &input.s3_catalog_target {
         #[allow(unused_mut)]
-        let mut object_32 = object.key("RedshiftTarget").start_object();
-        crate::protocol_serde::shape_redshift_target::ser_redshift_target(&mut object_32, var_31)?;
+        let mut object_32 = object.key("S3CatalogTarget").start_object();
+        crate::protocol_serde::shape_s3_catalog_target::ser_s3_catalog_target(&mut object_32, var_31)?;
         object_32.finish();
     }
-    if let Some(var_33) = &input.s3_catalog_target {
+    if let Some(var_33) = &input.s3_glue_parquet_target {
         #[allow(unused_mut)]
-        let mut object_34 = object.key("S3CatalogTarget").start_object();
-        crate::protocol_serde::shape_s3_catalog_target::ser_s3_catalog_target(&mut object_34, var_33)?;
+        let mut object_34 = object.key("S3GlueParquetTarget").start_object();
+        crate::protocol_serde::shape_s3_glue_parquet_target::ser_s3_glue_parquet_target(&mut object_34, var_33)?;
         object_34.finish();
     }
-    if let Some(var_35) = &input.s3_glue_parquet_target {
+    if let Some(var_35) = &input.s3_direct_target {
         #[allow(unused_mut)]
-        let mut object_36 = object.key("S3GlueParquetTarget").start_object();
-        crate::protocol_serde::shape_s3_glue_parquet_target::ser_s3_glue_parquet_target(&mut object_36, var_35)?;
+        let mut object_36 = object.key("S3DirectTarget").start_object();
+        crate::protocol_serde::shape_s3_direct_target::ser_s3_direct_target(&mut object_36, var_35)?;
         object_36.finish();
     }
-    if let Some(var_37) = &input.s3_hyper_direct_target {
+    if let Some(var_37) = &input.apply_mapping {
         #[allow(unused_mut)]
-        let mut object_38 = object.key("S3HyperDirectTarget").start_object();
-        crate::protocol_serde::shape_s3_hyper_direct_target::ser_s3_hyper_direct_target(&mut object_38, var_37)?;
+        let mut object_38 = object.key("ApplyMapping").start_object();
+        crate::protocol_serde::shape_apply_mapping::ser_apply_mapping(&mut object_38, var_37)?;
         object_38.finish();
     }
-    if let Some(var_39) = &input.s3_direct_target {
+    if let Some(var_39) = &input.select_fields {
         #[allow(unused_mut)]
-        let mut object_40 = object.key("S3DirectTarget").start_object();
-        crate::protocol_serde::shape_s3_direct_target::ser_s3_direct_target(&mut object_40, var_39)?;
+        let mut object_40 = object.key("SelectFields").start_object();
+        crate::protocol_serde::shape_select_fields::ser_select_fields(&mut object_40, var_39)?;
         object_40.finish();
     }
-    if let Some(var_41) = &input.s3_iceberg_direct_target {
+    if let Some(var_41) = &input.drop_fields {
         #[allow(unused_mut)]
-        let mut object_42 = object.key("S3IcebergDirectTarget").start_object();
-        crate::protocol_serde::shape_s3_iceberg_direct_target::ser_s3_iceberg_direct_target(&mut object_42, var_41)?;
+        let mut object_42 = object.key("DropFields").start_object();
+        crate::protocol_serde::shape_drop_fields::ser_drop_fields(&mut object_42, var_41)?;
         object_42.finish();
     }
-    if let Some(var_43) = &input.apply_mapping {
+    if let Some(var_43) = &input.rename_field {
         #[allow(unused_mut)]
-        let mut object_44 = object.key("ApplyMapping").start_object();
-        crate::protocol_serde::shape_apply_mapping::ser_apply_mapping(&mut object_44, var_43)?;
+        let mut object_44 = object.key("RenameField").start_object();
+        crate::protocol_serde::shape_rename_field::ser_rename_field(&mut object_44, var_43)?;
         object_44.finish();
     }
-    if let Some(var_45) = &input.select_fields {
+    if let Some(var_45) = &input.spigot {
         #[allow(unused_mut)]
-        let mut object_46 = object.key("SelectFields").start_object();
-        crate::protocol_serde::shape_select_fields::ser_select_fields(&mut object_46, var_45)?;
+        let mut object_46 = object.key("Spigot").start_object();
+        crate::protocol_serde::shape_spigot::ser_spigot(&mut object_46, var_45)?;
         object_46.finish();
     }
-    if let Some(var_47) = &input.drop_fields {
+    if let Some(var_47) = &input.join {
         #[allow(unused_mut)]
-        let mut object_48 = object.key("DropFields").start_object();
-        crate::protocol_serde::shape_drop_fields::ser_drop_fields(&mut object_48, var_47)?;
+        let mut object_48 = object.key("Join").start_object();
+        crate::protocol_serde::shape_join::ser_join(&mut object_48, var_47)?;
         object_48.finish();
     }
-    if let Some(var_49) = &input.rename_field {
+    if let Some(var_49) = &input.split_fields {
         #[allow(unused_mut)]
-        let mut object_50 = object.key("RenameField").start_object();
-        crate::protocol_serde::shape_rename_field::ser_rename_field(&mut object_50, var_49)?;
+        let mut object_50 = object.key("SplitFields").start_object();
+        crate::protocol_serde::shape_split_fields::ser_split_fields(&mut object_50, var_49)?;
         object_50.finish();
     }
-    if let Some(var_51) = &input.spigot {
+    if let Some(var_51) = &input.select_from_collection {
         #[allow(unused_mut)]
-        let mut object_52 = object.key("Spigot").start_object();
-        crate::protocol_serde::shape_spigot::ser_spigot(&mut object_52, var_51)?;
+        let mut object_52 = object.key("SelectFromCollection").start_object();
+        crate::protocol_serde::shape_select_from_collection::ser_select_from_collection(&mut object_52, var_51)?;
         object_52.finish();
     }
-    if let Some(var_53) = &input.join {
+    if let Some(var_53) = &input.fill_missing_values {
         #[allow(unused_mut)]
-        let mut object_54 = object.key("Join").start_object();
-        crate::protocol_serde::shape_join::ser_join(&mut object_54, var_53)?;
+        let mut object_54 = object.key("FillMissingValues").start_object();
+        crate::protocol_serde::shape_fill_missing_values::ser_fill_missing_values(&mut object_54, var_53)?;
         object_54.finish();
     }
-    if let Some(var_55) = &input.split_fields {
+    if let Some(var_55) = &input.filter {
         #[allow(unused_mut)]
-        let mut object_56 = object.key("SplitFields").start_object();
-        crate::protocol_serde::shape_split_fields::ser_split_fields(&mut object_56, var_55)?;
+        let mut object_56 = object.key("Filter").start_object();
+        crate::protocol_serde::shape_filter::ser_filter(&mut object_56, var_55)?;
         object_56.finish();
     }
-    if let Some(var_57) = &input.select_from_collection {
+    if let Some(var_57) = &input.custom_code {
         #[allow(unused_mut)]
-        let mut object_58 = object.key("SelectFromCollection").start_object();
-        crate::protocol_serde::shape_select_from_collection::ser_select_from_collection(&mut object_58, var_57)?;
+        let mut object_58 = object.key("CustomCode").start_object();
+        crate::protocol_serde::shape_custom_code::ser_custom_code(&mut object_58, var_57)?;
         object_58.finish();
     }
-    if let Some(var_59) = &input.fill_missing_values {
+    if let Some(var_59) = &input.spark_sql {
         #[allow(unused_mut)]
-        let mut object_60 = object.key("FillMissingValues").start_object();
-        crate::protocol_serde::shape_fill_missing_values::ser_fill_missing_values(&mut object_60, var_59)?;
+        let mut object_60 = object.key("SparkSQL").start_object();
+        crate::protocol_serde::shape_spark_sql::ser_spark_sql(&mut object_60, var_59)?;
         object_60.finish();
     }
-    if let Some(var_61) = &input.filter {
+    if let Some(var_61) = &input.direct_kinesis_source {
         #[allow(unused_mut)]
-        let mut object_62 = object.key("Filter").start_object();
-        crate::protocol_serde::shape_filter::ser_filter(&mut object_62, var_61)?;
+        let mut object_62 = object.key("DirectKinesisSource").start_object();
+        crate::protocol_serde::shape_direct_kinesis_source::ser_direct_kinesis_source(&mut object_62, var_61)?;
         object_62.finish();
     }
-    if let Some(var_63) = &input.custom_code {
+    if let Some(var_63) = &input.direct_kafka_source {
         #[allow(unused_mut)]
-        let mut object_64 = object.key("CustomCode").start_object();
-        crate::protocol_serde::shape_custom_code::ser_custom_code(&mut object_64, var_63)?;
+        let mut object_64 = object.key("DirectKafkaSource").start_object();
+        crate::protocol_serde::shape_direct_kafka_source::ser_direct_kafka_source(&mut object_64, var_63)?;
         object_64.finish();
     }
-    if let Some(var_65) = &input.spark_sql {
+    if let Some(var_65) = &input.catalog_kinesis_source {
         #[allow(unused_mut)]
-        let mut object_66 = object.key("SparkSQL").start_object();
-        crate::protocol_serde::shape_spark_sql::ser_spark_sql(&mut object_66, var_65)?;
+        let mut object_66 = object.key("CatalogKinesisSource").start_object();
+        crate::protocol_serde::shape_catalog_kinesis_source::ser_catalog_kinesis_source(&mut object_66, var_65)?;
         object_66.finish();
     }
-    if let Some(var_67) = &input.direct_kinesis_source {
+    if let Some(var_67) = &input.catalog_kafka_source {
         #[allow(unused_mut)]
-        let mut object_68 = object.key("DirectKinesisSource").start_object();
-        crate::protocol_serde::shape_direct_kinesis_source::ser_direct_kinesis_source(&mut object_68, var_67)?;
+        let mut object_68 = object.key("CatalogKafkaSource").start_object();
+        crate::protocol_serde::shape_catalog_kafka_source::ser_catalog_kafka_source(&mut object_68, var_67)?;
         object_68.finish();
     }
-    if let Some(var_69) = &input.direct_kafka_source {
+    if let Some(var_69) = &input.drop_null_fields {
         #[allow(unused_mut)]
-        let mut object_70 = object.key("DirectKafkaSource").start_object();
-        crate::protocol_serde::shape_direct_kafka_source::ser_direct_kafka_source(&mut object_70, var_69)?;
+        let mut object_70 = object.key("DropNullFields").start_object();
+        crate::protocol_serde::shape_drop_null_fields::ser_drop_null_fields(&mut object_70, var_69)?;
         object_70.finish();
     }
-    if let Some(var_71) = &input.catalog_kinesis_source {
+    if let Some(var_71) = &input.merge {
         #[allow(unused_mut)]
-        let mut object_72 = object.key("CatalogKinesisSource").start_object();
-        crate::protocol_serde::shape_catalog_kinesis_source::ser_catalog_kinesis_source(&mut object_72, var_71)?;
+        let mut object_72 = object.key("Merge").start_object();
+        crate::protocol_serde::shape_merge::ser_merge(&mut object_72, var_71)?;
         object_72.finish();
     }
-    if let Some(var_73) = &input.catalog_kafka_source {
+    if let Some(var_73) = &input.union {
         #[allow(unused_mut)]
-        let mut object_74 = object.key("CatalogKafkaSource").start_object();
-        crate::protocol_serde::shape_catalog_kafka_source::ser_catalog_kafka_source(&mut object_74, var_73)?;
+        let mut object_74 = object.key("Union").start_object();
+        crate::protocol_serde::shape_union::ser_union(&mut object_74, var_73)?;
         object_74.finish();
     }
-    if let Some(var_75) = &input.drop_null_fields {
+    if let Some(var_75) = &input.pii_detection {
         #[allow(unused_mut)]
-        let mut object_76 = object.key("DropNullFields").start_object();
-        crate::protocol_serde::shape_drop_null_fields::ser_drop_null_fields(&mut object_76, var_75)?;
+        let mut object_76 = object.key("PIIDetection").start_object();
+        crate::protocol_serde::shape_pii_detection::ser_pii_detection(&mut object_76, var_75)?;
         object_76.finish();
     }
-    if let Some(var_77) = &input.merge {
+    if let Some(var_77) = &input.aggregate {
         #[allow(unused_mut)]
-        let mut object_78 = object.key("Merge").start_object();
-        crate::protocol_serde::shape_merge::ser_merge(&mut object_78, var_77)?;
+        let mut object_78 = object.key("Aggregate").start_object();
+        crate::protocol_serde::shape_aggregate::ser_aggregate(&mut object_78, var_77)?;
         object_78.finish();
     }
-    if let Some(var_79) = &input.union {
+    if let Some(var_79) = &input.drop_duplicates {
         #[allow(unused_mut)]
-        let mut object_80 = object.key("Union").start_object();
-        crate::protocol_serde::shape_union::ser_union(&mut object_80, var_79)?;
+        let mut object_80 = object.key("DropDuplicates").start_object();
+        crate::protocol_serde::shape_drop_duplicates::ser_drop_duplicates(&mut object_80, var_79)?;
         object_80.finish();
     }
-    if let Some(var_81) = &input.pii_detection {
+    if let Some(var_81) = &input.governed_catalog_target {
         #[allow(unused_mut)]
-        let mut object_82 = object.key("PIIDetection").start_object();
-        crate::protocol_serde::shape_pii_detection::ser_pii_detection(&mut object_82, var_81)?;
+        let mut object_82 = object.key("GovernedCatalogTarget").start_object();
+        crate::protocol_serde::shape_governed_catalog_target::ser_governed_catalog_target(&mut object_82, var_81)?;
         object_82.finish();
     }
-    if let Some(var_83) = &input.aggregate {
+    if let Some(var_83) = &input.governed_catalog_source {
         #[allow(unused_mut)]
-        let mut object_84 = object.key("Aggregate").start_object();
-        crate::protocol_serde::shape_aggregate::ser_aggregate(&mut object_84, var_83)?;
+        let mut object_84 = object.key("GovernedCatalogSource").start_object();
+        crate::protocol_serde::shape_governed_catalog_source::ser_governed_catalog_source(&mut object_84, var_83)?;
         object_84.finish();
     }
-    if let Some(var_85) = &input.drop_duplicates {
+    if let Some(var_85) = &input.microsoft_sql_server_catalog_source {
         #[allow(unused_mut)]
-        let mut object_86 = object.key("DropDuplicates").start_object();
-        crate::protocol_serde::shape_drop_duplicates::ser_drop_duplicates(&mut object_86, var_85)?;
+        let mut object_86 = object.key("MicrosoftSQLServerCatalogSource").start_object();
+        crate::protocol_serde::shape_microsoft_sql_server_catalog_source::ser_microsoft_sql_server_catalog_source(&mut object_86, var_85)?;
         object_86.finish();
     }
-    if let Some(var_87) = &input.governed_catalog_target {
+    if let Some(var_87) = &input.my_sql_catalog_source {
         #[allow(unused_mut)]
-        let mut object_88 = object.key("GovernedCatalogTarget").start_object();
-        crate::protocol_serde::shape_governed_catalog_target::ser_governed_catalog_target(&mut object_88, var_87)?;
+        let mut object_88 = object.key("MySQLCatalogSource").start_object();
+        crate::protocol_serde::shape_my_sql_catalog_source::ser_my_sql_catalog_source(&mut object_88, var_87)?;
         object_88.finish();
     }
-    if let Some(var_89) = &input.governed_catalog_source {
+    if let Some(var_89) = &input.oracle_sql_catalog_source {
         #[allow(unused_mut)]
-        let mut object_90 = object.key("GovernedCatalogSource").start_object();
-        crate::protocol_serde::shape_governed_catalog_source::ser_governed_catalog_source(&mut object_90, var_89)?;
+        let mut object_90 = object.key("OracleSQLCatalogSource").start_object();
+        crate::protocol_serde::shape_oracle_sql_catalog_source::ser_oracle_sql_catalog_source(&mut object_90, var_89)?;
         object_90.finish();
     }
-    if let Some(var_91) = &input.microsoft_sql_server_catalog_source {
+    if let Some(var_91) = &input.postgre_sql_catalog_source {
         #[allow(unused_mut)]
-        let mut object_92 = object.key("MicrosoftSQLServerCatalogSource").start_object();
-        crate::protocol_serde::shape_microsoft_sql_server_catalog_source::ser_microsoft_sql_server_catalog_source(&mut object_92, var_91)?;
+        let mut object_92 = object.key("PostgreSQLCatalogSource").start_object();
+        crate::protocol_serde::shape_postgre_sql_catalog_source::ser_postgre_sql_catalog_source(&mut object_92, var_91)?;
         object_92.finish();
     }
-    if let Some(var_93) = &input.my_sql_catalog_source {
+    if let Some(var_93) = &input.microsoft_sql_server_catalog_target {
         #[allow(unused_mut)]
-        let mut object_94 = object.key("MySQLCatalogSource").start_object();
-        crate::protocol_serde::shape_my_sql_catalog_source::ser_my_sql_catalog_source(&mut object_94, var_93)?;
+        let mut object_94 = object.key("MicrosoftSQLServerCatalogTarget").start_object();
+        crate::protocol_serde::shape_microsoft_sql_server_catalog_target::ser_microsoft_sql_server_catalog_target(&mut object_94, var_93)?;
         object_94.finish();
     }
-    if let Some(var_95) = &input.oracle_sql_catalog_source {
+    if let Some(var_95) = &input.my_sql_catalog_target {
         #[allow(unused_mut)]
-        let mut object_96 = object.key("OracleSQLCatalogSource").start_object();
-        crate::protocol_serde::shape_oracle_sql_catalog_source::ser_oracle_sql_catalog_source(&mut object_96, var_95)?;
+        let mut object_96 = object.key("MySQLCatalogTarget").start_object();
+        crate::protocol_serde::shape_my_sql_catalog_target::ser_my_sql_catalog_target(&mut object_96, var_95)?;
         object_96.finish();
     }
-    if let Some(var_97) = &input.postgre_sql_catalog_source {
+    if let Some(var_97) = &input.oracle_sql_catalog_target {
         #[allow(unused_mut)]
-        let mut object_98 = object.key("PostgreSQLCatalogSource").start_object();
-        crate::protocol_serde::shape_postgre_sql_catalog_source::ser_postgre_sql_catalog_source(&mut object_98, var_97)?;
+        let mut object_98 = object.key("OracleSQLCatalogTarget").start_object();
+        crate::protocol_serde::shape_oracle_sql_catalog_target::ser_oracle_sql_catalog_target(&mut object_98, var_97)?;
         object_98.finish();
     }
-    if let Some(var_99) = &input.microsoft_sql_server_catalog_target {
+    if let Some(var_99) = &input.postgre_sql_catalog_target {
         #[allow(unused_mut)]
-        let mut object_100 = object.key("MicrosoftSQLServerCatalogTarget").start_object();
-        crate::protocol_serde::shape_microsoft_sql_server_catalog_target::ser_microsoft_sql_server_catalog_target(&mut object_100, var_99)?;
+        let mut object_100 = object.key("PostgreSQLCatalogTarget").start_object();
+        crate::protocol_serde::shape_postgre_sql_catalog_target::ser_postgre_sql_catalog_target(&mut object_100, var_99)?;
         object_100.finish();
     }
-    if let Some(var_101) = &input.my_sql_catalog_target {
+    if let Some(var_101) = &input.route {
         #[allow(unused_mut)]
-        let mut object_102 = object.key("MySQLCatalogTarget").start_object();
-        crate::protocol_serde::shape_my_sql_catalog_target::ser_my_sql_catalog_target(&mut object_102, var_101)?;
+        let mut object_102 = object.key("Route").start_object();
+        crate::protocol_serde::shape_route::ser_route(&mut object_102, var_101)?;
         object_102.finish();
     }
-    if let Some(var_103) = &input.oracle_sql_catalog_target {
+    if let Some(var_103) = &input.dynamic_transform {
         #[allow(unused_mut)]
-        let mut object_104 = object.key("OracleSQLCatalogTarget").start_object();
-        crate::protocol_serde::shape_oracle_sql_catalog_target::ser_oracle_sql_catalog_target(&mut object_104, var_103)?;
+        let mut object_104 = object.key("DynamicTransform").start_object();
+        crate::protocol_serde::shape_dynamic_transform::ser_dynamic_transform(&mut object_104, var_103)?;
         object_104.finish();
     }
-    if let Some(var_105) = &input.postgre_sql_catalog_target {
+    if let Some(var_105) = &input.evaluate_data_quality {
         #[allow(unused_mut)]
-        let mut object_106 = object.key("PostgreSQLCatalogTarget").start_object();
-        crate::protocol_serde::shape_postgre_sql_catalog_target::ser_postgre_sql_catalog_target(&mut object_106, var_105)?;
+        let mut object_106 = object.key("EvaluateDataQuality").start_object();
+        crate::protocol_serde::shape_evaluate_data_quality::ser_evaluate_data_quality(&mut object_106, var_105)?;
         object_106.finish();
     }
-    if let Some(var_107) = &input.dynamic_transform {
+    if let Some(var_107) = &input.s3_catalog_hudi_source {
         #[allow(unused_mut)]
-        let mut object_108 = object.key("DynamicTransform").start_object();
-        crate::protocol_serde::shape_dynamic_transform::ser_dynamic_transform(&mut object_108, var_107)?;
+        let mut object_108 = object.key("S3CatalogHudiSource").start_object();
+        crate::protocol_serde::shape_s3_catalog_hudi_source::ser_s3_catalog_hudi_source(&mut object_108, var_107)?;
         object_108.finish();
     }
-    if let Some(var_109) = &input.evaluate_data_quality {
+    if let Some(var_109) = &input.catalog_hudi_source {
         #[allow(unused_mut)]
-        let mut object_110 = object.key("EvaluateDataQuality").start_object();
-        crate::protocol_serde::shape_evaluate_data_quality::ser_evaluate_data_quality(&mut object_110, var_109)?;
+        let mut object_110 = object.key("CatalogHudiSource").start_object();
+        crate::protocol_serde::shape_catalog_hudi_source::ser_catalog_hudi_source(&mut object_110, var_109)?;
         object_110.finish();
     }
-    if let Some(var_111) = &input.s3_catalog_hudi_source {
+    if let Some(var_111) = &input.s3_hudi_source {
         #[allow(unused_mut)]
-        let mut object_112 = object.key("S3CatalogHudiSource").start_object();
-        crate::protocol_serde::shape_s3_catalog_hudi_source::ser_s3_catalog_hudi_source(&mut object_112, var_111)?;
+        let mut object_112 = object.key("S3HudiSource").start_object();
+        crate::protocol_serde::shape_s3_hudi_source::ser_s3_hudi_source(&mut object_112, var_111)?;
         object_112.finish();
     }
-    if let Some(var_113) = &input.catalog_hudi_source {
+    if let Some(var_113) = &input.s3_hudi_catalog_target {
         #[allow(unused_mut)]
-        let mut object_114 = object.key("CatalogHudiSource").start_object();
-        crate::protocol_serde::shape_catalog_hudi_source::ser_catalog_hudi_source(&mut object_114, var_113)?;
+        let mut object_114 = object.key("S3HudiCatalogTarget").start_object();
+        crate::protocol_serde::shape_s3_hudi_catalog_target::ser_s3_hudi_catalog_target(&mut object_114, var_113)?;
         object_114.finish();
     }
-    if let Some(var_115) = &input.s3_hudi_source {
+    if let Some(var_115) = &input.s3_hudi_direct_target {
         #[allow(unused_mut)]
-        let mut object_116 = object.key("S3HudiSource").start_object();
-        crate::protocol_serde::shape_s3_hudi_source::ser_s3_hudi_source(&mut object_116, var_115)?;
+        let mut object_116 = object.key("S3HudiDirectTarget").start_object();
+        crate::protocol_serde::shape_s3_hudi_direct_target::ser_s3_hudi_direct_target(&mut object_116, var_115)?;
         object_116.finish();
     }
-    if let Some(var_117) = &input.s3_hudi_catalog_target {
+    if let Some(var_117) = &input.direct_jdbc_source {
         #[allow(unused_mut)]
-        let mut object_118 = object.key("S3HudiCatalogTarget").start_object();
-        crate::protocol_serde::shape_s3_hudi_catalog_target::ser_s3_hudi_catalog_target(&mut object_118, var_117)?;
+        let mut object_118 = object.key("DirectJDBCSource").start_object();
+        crate::protocol_serde::shape_direct_jdbc_source::ser_direct_jdbc_source(&mut object_118, var_117)?;
         object_118.finish();
     }
-    if let Some(var_119) = &input.s3_hudi_direct_target {
+    if let Some(var_119) = &input.s3_catalog_delta_source {
         #[allow(unused_mut)]
-        let mut object_120 = object.key("S3HudiDirectTarget").start_object();
-        crate::protocol_serde::shape_s3_hudi_direct_target::ser_s3_hudi_direct_target(&mut object_120, var_119)?;
+        let mut object_120 = object.key("S3CatalogDeltaSource").start_object();
+        crate::protocol_serde::shape_s3_catalog_delta_source::ser_s3_catalog_delta_source(&mut object_120, var_119)?;
         object_120.finish();
     }
-    if let Some(var_121) = &input.direct_jdbc_source {
+    if let Some(var_121) = &input.catalog_delta_source {
         #[allow(unused_mut)]
-        let mut object_122 = object.key("DirectJDBCSource").start_object();
-        crate::protocol_serde::shape_direct_jdbc_source::ser_direct_jdbc_source(&mut object_122, var_121)?;
+        let mut object_122 = object.key("CatalogDeltaSource").start_object();
+        crate::protocol_serde::shape_catalog_delta_source::ser_catalog_delta_source(&mut object_122, var_121)?;
         object_122.finish();
     }
-    if let Some(var_123) = &input.s3_catalog_delta_source {
+    if let Some(var_123) = &input.s3_delta_source {
         #[allow(unused_mut)]
-        let mut object_124 = object.key("S3CatalogDeltaSource").start_object();
-        crate::protocol_serde::shape_s3_catalog_delta_source::ser_s3_catalog_delta_source(&mut object_124, var_123)?;
+        let mut object_124 = object.key("S3DeltaSource").start_object();
+        crate::protocol_serde::shape_s3_delta_source::ser_s3_delta_source(&mut object_124, var_123)?;
         object_124.finish();
     }
-    if let Some(var_125) = &input.catalog_delta_source {
+    if let Some(var_125) = &input.s3_delta_catalog_target {
         #[allow(unused_mut)]
-        let mut object_126 = object.key("CatalogDeltaSource").start_object();
-        crate::protocol_serde::shape_catalog_delta_source::ser_catalog_delta_source(&mut object_126, var_125)?;
+        let mut object_126 = object.key("S3DeltaCatalogTarget").start_object();
+        crate::protocol_serde::shape_s3_delta_catalog_target::ser_s3_delta_catalog_target(&mut object_126, var_125)?;
         object_126.finish();
     }
-    if let Some(var_127) = &input.s3_delta_source {
+    if let Some(var_127) = &input.s3_delta_direct_target {
         #[allow(unused_mut)]
-        let mut object_128 = object.key("S3DeltaSource").start_object();
-        crate::protocol_serde::shape_s3_delta_source::ser_s3_delta_source(&mut object_128, var_127)?;
+        let mut object_128 = object.key("S3DeltaDirectTarget").start_object();
+        crate::protocol_serde::shape_s3_delta_direct_target::ser_s3_delta_direct_target(&mut object_128, var_127)?;
         object_128.finish();
     }
-    if let Some(var_129) = &input.s3_delta_catalog_target {
+    if let Some(var_129) = &input.amazon_redshift_source {
         #[allow(unused_mut)]
-        let mut object_130 = object.key("S3DeltaCatalogTarget").start_object();
-        crate::protocol_serde::shape_s3_delta_catalog_target::ser_s3_delta_catalog_target(&mut object_130, var_129)?;
+        let mut object_130 = object.key("AmazonRedshiftSource").start_object();
+        crate::protocol_serde::shape_amazon_redshift_source::ser_amazon_redshift_source(&mut object_130, var_129)?;
         object_130.finish();
     }
-    if let Some(var_131) = &input.s3_delta_direct_target {
+    if let Some(var_131) = &input.amazon_redshift_target {
         #[allow(unused_mut)]
-        let mut object_132 = object.key("S3DeltaDirectTarget").start_object();
-        crate::protocol_serde::shape_s3_delta_direct_target::ser_s3_delta_direct_target(&mut object_132, var_131)?;
+        let mut object_132 = object.key("AmazonRedshiftTarget").start_object();
+        crate::protocol_serde::shape_amazon_redshift_target::ser_amazon_redshift_target(&mut object_132, var_131)?;
         object_132.finish();
     }
-    if let Some(var_133) = &input.amazon_redshift_source {
+    if let Some(var_133) = &input.evaluate_data_quality_multi_frame {
         #[allow(unused_mut)]
-        let mut object_134 = object.key("AmazonRedshiftSource").start_object();
-        crate::protocol_serde::shape_amazon_redshift_source::ser_amazon_redshift_source(&mut object_134, var_133)?;
+        let mut object_134 = object.key("EvaluateDataQualityMultiFrame").start_object();
+        crate::protocol_serde::shape_evaluate_data_quality_multi_frame::ser_evaluate_data_quality_multi_frame(&mut object_134, var_133)?;
         object_134.finish();
     }
-    if let Some(var_135) = &input.amazon_redshift_target {
+    if let Some(var_135) = &input.recipe {
         #[allow(unused_mut)]
-        let mut object_136 = object.key("AmazonRedshiftTarget").start_object();
-        crate::protocol_serde::shape_amazon_redshift_target::ser_amazon_redshift_target(&mut object_136, var_135)?;
+        let mut object_136 = object.key("Recipe").start_object();
+        crate::protocol_serde::shape_recipe::ser_recipe(&mut object_136, var_135)?;
         object_136.finish();
     }
-    if let Some(var_137) = &input.evaluate_data_quality_multi_frame {
+    if let Some(var_137) = &input.snowflake_source {
         #[allow(unused_mut)]
-        let mut object_138 = object.key("EvaluateDataQualityMultiFrame").start_object();
-        crate::protocol_serde::shape_evaluate_data_quality_multi_frame::ser_evaluate_data_quality_multi_frame(&mut object_138, var_137)?;
+        let mut object_138 = object.key("SnowflakeSource").start_object();
+        crate::protocol_serde::shape_snowflake_source::ser_snowflake_source(&mut object_138, var_137)?;
         object_138.finish();
     }
-    if let Some(var_139) = &input.recipe {
+    if let Some(var_139) = &input.snowflake_target {
         #[allow(unused_mut)]
-        let mut object_140 = object.key("Recipe").start_object();
-        crate::protocol_serde::shape_recipe::ser_recipe(&mut object_140, var_139)?;
+        let mut object_140 = object.key("SnowflakeTarget").start_object();
+        crate::protocol_serde::shape_snowflake_target::ser_snowflake_target(&mut object_140, var_139)?;
         object_140.finish();
     }
-    if let Some(var_141) = &input.snowflake_source {
+    if let Some(var_141) = &input.connector_data_source {
         #[allow(unused_mut)]
-        let mut object_142 = object.key("SnowflakeSource").start_object();
-        crate::protocol_serde::shape_snowflake_source::ser_snowflake_source(&mut object_142, var_141)?;
+        let mut object_142 = object.key("ConnectorDataSource").start_object();
+        crate::protocol_serde::shape_connector_data_source::ser_connector_data_source(&mut object_142, var_141)?;
         object_142.finish();
     }
-    if let Some(var_143) = &input.snowflake_target {
+    if let Some(var_143) = &input.connector_data_target {
         #[allow(unused_mut)]
-        let mut object_144 = object.key("SnowflakeTarget").start_object();
-        crate::protocol_serde::shape_snowflake_target::ser_snowflake_target(&mut object_144, var_143)?;
+        let mut object_144 = object.key("ConnectorDataTarget").start_object();
+        crate::protocol_serde::shape_connector_data_target::ser_connector_data_target(&mut object_144, var_143)?;
         object_144.finish();
     }
-    if let Some(var_145) = &input.connector_data_source {
+    if let Some(var_145) = &input.s3_catalog_iceberg_source {
         #[allow(unused_mut)]
-        let mut object_146 = object.key("ConnectorDataSource").start_object();
-        crate::protocol_serde::shape_connector_data_source::ser_connector_data_source(&mut object_146, var_145)?;
+        let mut object_146 = object.key("S3CatalogIcebergSource").start_object();
+        crate::protocol_serde::shape_s3_catalog_iceberg_source::ser_s3_catalog_iceberg_source(&mut object_146, var_145)?;
         object_146.finish();
     }
-    if let Some(var_147) = &input.connector_data_target {
+    if let Some(var_147) = &input.catalog_iceberg_source {
         #[allow(unused_mut)]
-        let mut object_148 = object.key("ConnectorDataTarget").start_object();
-        crate::protocol_serde::shape_connector_data_target::ser_connector_data_target(&mut object_148, var_147)?;
+        let mut object_148 = object.key("CatalogIcebergSource").start_object();
+        crate::protocol_serde::shape_catalog_iceberg_source::ser_catalog_iceberg_source(&mut object_148, var_147)?;
         object_148.finish();
+    }
+    if let Some(var_149) = &input.s3_iceberg_catalog_target {
+        #[allow(unused_mut)]
+        let mut object_150 = object.key("S3IcebergCatalogTarget").start_object();
+        crate::protocol_serde::shape_s3_iceberg_catalog_target::ser_s3_iceberg_catalog_target(&mut object_150, var_149)?;
+        object_150.finish();
+    }
+    if let Some(var_151) = &input.s3_iceberg_direct_target {
+        #[allow(unused_mut)]
+        let mut object_152 = object.key("S3IcebergDirectTarget").start_object();
+        crate::protocol_serde::shape_s3_iceberg_direct_target::ser_s3_iceberg_direct_target(&mut object_152, var_151)?;
+        object_152.finish();
+    }
+    if let Some(var_153) = &input.s3_excel_source {
+        #[allow(unused_mut)]
+        let mut object_154 = object.key("S3ExcelSource").start_object();
+        crate::protocol_serde::shape_s3_excel_source::ser_s3_excel_source(&mut object_154, var_153)?;
+        object_154.finish();
+    }
+    if let Some(var_155) = &input.s3_hyper_direct_target {
+        #[allow(unused_mut)]
+        let mut object_156 = object.key("S3HyperDirectTarget").start_object();
+        crate::protocol_serde::shape_s3_hyper_direct_target::ser_s3_hyper_direct_target(&mut object_156, var_155)?;
+        object_156.finish();
+    }
+    if let Some(var_157) = &input.dynamo_dbelt_connector_source {
+        #[allow(unused_mut)]
+        let mut object_158 = object.key("DynamoDBELTConnectorSource").start_object();
+        crate::protocol_serde::shape_dynamo_dbelt_connector_source::ser_dynamo_dbelt_connector_source(&mut object_158, var_157)?;
+        object_158.finish();
     }
     Ok(())
 }
@@ -490,9 +520,6 @@ where
                         "S3CsvSource" => {
                             builder = builder.set_s3_csv_source(crate::protocol_serde::shape_s3_csv_source::de_s3_csv_source(tokens)?);
                         }
-                        "S3ExcelSource" => {
-                            builder = builder.set_s3_excel_source(crate::protocol_serde::shape_s3_excel_source::de_s3_excel_source(tokens)?);
-                        }
                         "S3JsonSource" => {
                             builder = builder.set_s3_json_source(crate::protocol_serde::shape_s3_json_source::de_s3_json_source(tokens)?);
                         }
@@ -530,17 +557,8 @@ where
                             builder = builder
                                 .set_s3_glue_parquet_target(crate::protocol_serde::shape_s3_glue_parquet_target::de_s3_glue_parquet_target(tokens)?);
                         }
-                        "S3HyperDirectTarget" => {
-                            builder = builder
-                                .set_s3_hyper_direct_target(crate::protocol_serde::shape_s3_hyper_direct_target::de_s3_hyper_direct_target(tokens)?);
-                        }
                         "S3DirectTarget" => {
                             builder = builder.set_s3_direct_target(crate::protocol_serde::shape_s3_direct_target::de_s3_direct_target(tokens)?);
-                        }
-                        "S3IcebergDirectTarget" => {
-                            builder = builder.set_s3_iceberg_direct_target(
-                                crate::protocol_serde::shape_s3_iceberg_direct_target::de_s3_iceberg_direct_target(tokens)?,
-                            );
                         }
                         "ApplyMapping" => {
                             builder = builder.set_apply_mapping(crate::protocol_serde::shape_apply_mapping::de_apply_mapping(tokens)?);
@@ -662,6 +680,9 @@ where
                                 crate::protocol_serde::shape_postgre_sql_catalog_target::de_postgre_sql_catalog_target(tokens)?,
                             );
                         }
+                        "Route" => {
+                            builder = builder.set_route(crate::protocol_serde::shape_route::de_route(tokens)?);
+                        }
                         "DynamicTransform" => {
                             builder = builder.set_dynamic_transform(crate::protocol_serde::shape_dynamic_transform::de_dynamic_transform(tokens)?);
                         }
@@ -741,6 +762,37 @@ where
                         "ConnectorDataTarget" => {
                             builder = builder
                                 .set_connector_data_target(crate::protocol_serde::shape_connector_data_target::de_connector_data_target(tokens)?);
+                        }
+                        "S3CatalogIcebergSource" => {
+                            builder = builder.set_s3_catalog_iceberg_source(
+                                crate::protocol_serde::shape_s3_catalog_iceberg_source::de_s3_catalog_iceberg_source(tokens)?,
+                            );
+                        }
+                        "CatalogIcebergSource" => {
+                            builder = builder
+                                .set_catalog_iceberg_source(crate::protocol_serde::shape_catalog_iceberg_source::de_catalog_iceberg_source(tokens)?);
+                        }
+                        "S3IcebergCatalogTarget" => {
+                            builder = builder.set_s3_iceberg_catalog_target(
+                                crate::protocol_serde::shape_s3_iceberg_catalog_target::de_s3_iceberg_catalog_target(tokens)?,
+                            );
+                        }
+                        "S3IcebergDirectTarget" => {
+                            builder = builder.set_s3_iceberg_direct_target(
+                                crate::protocol_serde::shape_s3_iceberg_direct_target::de_s3_iceberg_direct_target(tokens)?,
+                            );
+                        }
+                        "S3ExcelSource" => {
+                            builder = builder.set_s3_excel_source(crate::protocol_serde::shape_s3_excel_source::de_s3_excel_source(tokens)?);
+                        }
+                        "S3HyperDirectTarget" => {
+                            builder = builder
+                                .set_s3_hyper_direct_target(crate::protocol_serde::shape_s3_hyper_direct_target::de_s3_hyper_direct_target(tokens)?);
+                        }
+                        "DynamoDBELTConnectorSource" => {
+                            builder = builder.set_dynamo_dbelt_connector_source(
+                                crate::protocol_serde::shape_dynamo_dbelt_connector_source::de_dynamo_dbelt_connector_source(tokens)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

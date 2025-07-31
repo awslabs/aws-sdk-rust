@@ -13,9 +13,12 @@
 /// # let piitype = unimplemented!();
 /// match piitype {
 ///     PiiType::ColumnAudit => { /* ... */ },
+///     PiiType::ColumnHashing => { /* ... */ },
 ///     PiiType::ColumnMasking => { /* ... */ },
 ///     PiiType::RowAudit => { /* ... */ },
+///     PiiType::RowHashing => { /* ... */ },
 ///     PiiType::RowMasking => { /* ... */ },
+///     PiiType::RowPartialMasking => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -47,11 +50,17 @@ pub enum PiiType {
     #[allow(missing_docs)] // documentation missing in model
     ColumnAudit,
     #[allow(missing_docs)] // documentation missing in model
+    ColumnHashing,
+    #[allow(missing_docs)] // documentation missing in model
     ColumnMasking,
     #[allow(missing_docs)] // documentation missing in model
     RowAudit,
     #[allow(missing_docs)] // documentation missing in model
+    RowHashing,
+    #[allow(missing_docs)] // documentation missing in model
     RowMasking,
+    #[allow(missing_docs)] // documentation missing in model
+    RowPartialMasking,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -60,9 +69,12 @@ impl ::std::convert::From<&str> for PiiType {
     fn from(s: &str) -> Self {
         match s {
             "ColumnAudit" => PiiType::ColumnAudit,
+            "ColumnHashing" => PiiType::ColumnHashing,
             "ColumnMasking" => PiiType::ColumnMasking,
             "RowAudit" => PiiType::RowAudit,
+            "RowHashing" => PiiType::RowHashing,
             "RowMasking" => PiiType::RowMasking,
+            "RowPartialMasking" => PiiType::RowPartialMasking,
             other => PiiType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -79,15 +91,26 @@ impl PiiType {
     pub fn as_str(&self) -> &str {
         match self {
             PiiType::ColumnAudit => "ColumnAudit",
+            PiiType::ColumnHashing => "ColumnHashing",
             PiiType::ColumnMasking => "ColumnMasking",
             PiiType::RowAudit => "RowAudit",
+            PiiType::RowHashing => "RowHashing",
             PiiType::RowMasking => "RowMasking",
+            PiiType::RowPartialMasking => "RowPartialMasking",
             PiiType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ColumnAudit", "ColumnMasking", "RowAudit", "RowMasking"]
+        &[
+            "ColumnAudit",
+            "ColumnHashing",
+            "ColumnMasking",
+            "RowAudit",
+            "RowHashing",
+            "RowMasking",
+            "RowPartialMasking",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for PiiType {
@@ -111,9 +134,12 @@ impl ::std::fmt::Display for PiiType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             PiiType::ColumnAudit => write!(f, "ColumnAudit"),
+            PiiType::ColumnHashing => write!(f, "ColumnHashing"),
             PiiType::ColumnMasking => write!(f, "ColumnMasking"),
             PiiType::RowAudit => write!(f, "RowAudit"),
+            PiiType::RowHashing => write!(f, "RowHashing"),
             PiiType::RowMasking => write!(f, "RowMasking"),
+            PiiType::RowPartialMasking => write!(f, "RowPartialMasking"),
             PiiType::Unknown(value) => write!(f, "{}", value),
         }
     }

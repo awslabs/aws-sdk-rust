@@ -652,6 +652,21 @@ pub(crate) fn catalog_hudi_source_correct_errors(
     builder
 }
 
+pub(crate) fn catalog_iceberg_source_correct_errors(
+    mut builder: crate::types::builders::CatalogIcebergSourceBuilder,
+) -> crate::types::builders::CatalogIcebergSourceBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.database.is_none() {
+        builder.database = Some(Default::default())
+    }
+    if builder.table.is_none() {
+        builder.table = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn catalog_kafka_source_correct_errors(
     mut builder: crate::types::builders::CatalogKafkaSourceBuilder,
 ) -> crate::types::builders::CatalogKafkaSourceBuilder {
@@ -911,6 +926,15 @@ pub(crate) fn dynamo_db_catalog_source_correct_errors(
     }
     if builder.table.is_none() {
         builder.table = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn dynamo_dbelt_connector_source_correct_errors(
+    mut builder: crate::types::builders::DynamoDbeltConnectorSourceBuilder,
+) -> crate::types::builders::DynamoDbeltConnectorSourceBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
     }
     builder
 }
@@ -1339,6 +1363,19 @@ pub(crate) fn rename_field_correct_errors(mut builder: crate::types::builders::R
     builder
 }
 
+pub(crate) fn route_correct_errors(mut builder: crate::types::builders::RouteBuilder) -> crate::types::builders::RouteBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.inputs.is_none() {
+        builder.inputs = Some(Default::default())
+    }
+    if builder.group_filters_list.is_none() {
+        builder.group_filters_list = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn s3_catalog_delta_source_correct_errors(
     mut builder: crate::types::builders::S3CatalogDeltaSourceBuilder,
 ) -> crate::types::builders::S3CatalogDeltaSourceBuilder {
@@ -1357,6 +1394,21 @@ pub(crate) fn s3_catalog_delta_source_correct_errors(
 pub(crate) fn s3_catalog_hudi_source_correct_errors(
     mut builder: crate::types::builders::S3CatalogHudiSourceBuilder,
 ) -> crate::types::builders::S3CatalogHudiSourceBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.database.is_none() {
+        builder.database = Some(Default::default())
+    }
+    if builder.table.is_none() {
+        builder.table = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn s3_catalog_iceberg_source_correct_errors(
+    mut builder: crate::types::builders::S3CatalogIcebergSourceBuilder,
+) -> crate::types::builders::S3CatalogIcebergSourceBuilder {
     if builder.name.is_none() {
         builder.name = Some(Default::default())
     }
@@ -1584,6 +1636,24 @@ pub(crate) fn s3_hyper_direct_target_correct_errors(
     builder
 }
 
+pub(crate) fn s3_iceberg_catalog_target_correct_errors(
+    mut builder: crate::types::builders::S3IcebergCatalogTargetBuilder,
+) -> crate::types::builders::S3IcebergCatalogTargetBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.inputs.is_none() {
+        builder.inputs = Some(Default::default())
+    }
+    if builder.table.is_none() {
+        builder.table = Some(Default::default())
+    }
+    if builder.database.is_none() {
+        builder.database = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn s3_iceberg_direct_target_correct_errors(
     mut builder: crate::types::builders::S3IcebergDirectTargetBuilder,
 ) -> crate::types::builders::S3IcebergDirectTargetBuilder {
@@ -1797,6 +1867,15 @@ pub(crate) fn union_correct_errors(mut builder: crate::types::builders::UnionBui
     builder
 }
 
+pub(crate) fn ddbelt_connection_options_correct_errors(
+    mut builder: crate::types::builders::DdbeltConnectionOptionsBuilder,
+) -> crate::types::builders::DdbeltConnectionOptionsBuilder {
+    if builder.dynamodb_table_arn.is_none() {
+        builder.dynamodb_table_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn decimal_number_correct_errors(
     mut builder: crate::types::builders::DecimalNumberBuilder,
 ) -> crate::types::builders::DecimalNumberBuilder {
@@ -1841,6 +1920,19 @@ pub(crate) fn filter_expression_correct_errors(
     }
     if builder.values.is_none() {
         builder.values = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn group_filters_correct_errors(mut builder: crate::types::builders::GroupFiltersBuilder) -> crate::types::builders::GroupFiltersBuilder {
+    if builder.group_name.is_none() {
+        builder.group_name = Some(Default::default())
+    }
+    if builder.filters.is_none() {
+        builder.filters = Some(Default::default())
+    }
+    if builder.logical_operator.is_none() {
+        builder.logical_operator = "no value was set".parse::<crate::types::FilterLogicalOperator>().ok()
     }
     builder
 }

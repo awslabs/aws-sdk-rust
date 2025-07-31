@@ -60,5 +60,8 @@ pub fn ser_send_bulk_email_input_input(
         }
         array_18.finish();
     }
+    if let Some(var_20) = &input.tenant_name {
+        object.key("TenantName").string(var_20.as_str());
+    }
     Ok(())
 }

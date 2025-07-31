@@ -135,6 +135,8 @@ pub use crate::types::_configuration::Configuration;
 
 pub use crate::types::_event_type::EventType;
 
+pub use crate::types::_encryption_type::EncryptionType;
+
 pub use crate::types::_client_certificate_config::ClientCertificateConfig;
 
 pub use crate::types::_application_protocol::ApplicationProtocol;
@@ -579,6 +581,10 @@ pub use crate::types::_job_process_details::JobProcessDetails;
 
 pub use crate::types::_index_status::IndexStatus;
 
+pub use crate::types::_configuration_details::ConfigurationDetails;
+
+pub use crate::types::_configuration_status::ConfigurationStatus;
+
 pub use crate::types::_domain_type::DomainType;
 
 pub use crate::types::_server_certificate_summary::ServerCertificateSummary;
@@ -805,6 +811,10 @@ mod _config_name;
 
 mod _configuration;
 
+mod _configuration_details;
+
+mod _configuration_status;
+
 mod _custom_code_signing;
 
 mod _custom_metric_type;
@@ -858,6 +868,8 @@ mod _effective_policy;
 mod _elasticsearch_action;
 
 mod _enable_io_t_logging_params;
+
+mod _encryption_type;
 
 mod _error_info;
 

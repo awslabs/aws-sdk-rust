@@ -14,10 +14,12 @@ pub struct S3GlueParquetTarget {
     pub path: ::std::string::String,
     /// <p>Specifies how the data is compressed. This is generally not necessary if the data has a standard file extension. Possible values are <code>"gzip"</code> and <code>"bzip"</code>).</p>
     pub compression: ::std::option::Option<crate::types::ParquetCompressionType>,
-    /// <p>Specifies the number of target partitions for Parquet files when writing to Amazon S3 using AWS Glue.</p>
+    /// <p>Specifies the number of target partitions for Parquet files when writing to Amazon S3 using Glue.</p>
     pub number_target_partitions: ::std::option::Option<::std::string::String>,
     /// <p>A policy that specifies update behavior for the crawler.</p>
     pub schema_change_policy: ::std::option::Option<crate::types::DirectSchemaChangePolicy>,
+    /// <p>Specifies whether to automatically enable data quality evaluation for the S3 Glue Parquet target. When set to <code>true</code>, data quality checks are performed automatically during the write operation.</p>
+    pub auto_data_quality: ::std::option::Option<crate::types::AutoDataQuality>,
 }
 impl S3GlueParquetTarget {
     /// <p>The name of the data target.</p>
@@ -45,13 +47,17 @@ impl S3GlueParquetTarget {
     pub fn compression(&self) -> ::std::option::Option<&crate::types::ParquetCompressionType> {
         self.compression.as_ref()
     }
-    /// <p>Specifies the number of target partitions for Parquet files when writing to Amazon S3 using AWS Glue.</p>
+    /// <p>Specifies the number of target partitions for Parquet files when writing to Amazon S3 using Glue.</p>
     pub fn number_target_partitions(&self) -> ::std::option::Option<&str> {
         self.number_target_partitions.as_deref()
     }
     /// <p>A policy that specifies update behavior for the crawler.</p>
     pub fn schema_change_policy(&self) -> ::std::option::Option<&crate::types::DirectSchemaChangePolicy> {
         self.schema_change_policy.as_ref()
+    }
+    /// <p>Specifies whether to automatically enable data quality evaluation for the S3 Glue Parquet target. When set to <code>true</code>, data quality checks are performed automatically during the write operation.</p>
+    pub fn auto_data_quality(&self) -> ::std::option::Option<&crate::types::AutoDataQuality> {
+        self.auto_data_quality.as_ref()
     }
 }
 impl S3GlueParquetTarget {
@@ -72,6 +78,7 @@ pub struct S3GlueParquetTargetBuilder {
     pub(crate) compression: ::std::option::Option<crate::types::ParquetCompressionType>,
     pub(crate) number_target_partitions: ::std::option::Option<::std::string::String>,
     pub(crate) schema_change_policy: ::std::option::Option<crate::types::DirectSchemaChangePolicy>,
+    pub(crate) auto_data_quality: ::std::option::Option<crate::types::AutoDataQuality>,
 }
 impl S3GlueParquetTargetBuilder {
     /// <p>The name of the data target.</p>
@@ -158,17 +165,17 @@ impl S3GlueParquetTargetBuilder {
     pub fn get_compression(&self) -> &::std::option::Option<crate::types::ParquetCompressionType> {
         &self.compression
     }
-    /// <p>Specifies the number of target partitions for Parquet files when writing to Amazon S3 using AWS Glue.</p>
+    /// <p>Specifies the number of target partitions for Parquet files when writing to Amazon S3 using Glue.</p>
     pub fn number_target_partitions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.number_target_partitions = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies the number of target partitions for Parquet files when writing to Amazon S3 using AWS Glue.</p>
+    /// <p>Specifies the number of target partitions for Parquet files when writing to Amazon S3 using Glue.</p>
     pub fn set_number_target_partitions(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.number_target_partitions = input;
         self
     }
-    /// <p>Specifies the number of target partitions for Parquet files when writing to Amazon S3 using AWS Glue.</p>
+    /// <p>Specifies the number of target partitions for Parquet files when writing to Amazon S3 using Glue.</p>
     pub fn get_number_target_partitions(&self) -> &::std::option::Option<::std::string::String> {
         &self.number_target_partitions
     }
@@ -185,6 +192,20 @@ impl S3GlueParquetTargetBuilder {
     /// <p>A policy that specifies update behavior for the crawler.</p>
     pub fn get_schema_change_policy(&self) -> &::std::option::Option<crate::types::DirectSchemaChangePolicy> {
         &self.schema_change_policy
+    }
+    /// <p>Specifies whether to automatically enable data quality evaluation for the S3 Glue Parquet target. When set to <code>true</code>, data quality checks are performed automatically during the write operation.</p>
+    pub fn auto_data_quality(mut self, input: crate::types::AutoDataQuality) -> Self {
+        self.auto_data_quality = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to automatically enable data quality evaluation for the S3 Glue Parquet target. When set to <code>true</code>, data quality checks are performed automatically during the write operation.</p>
+    pub fn set_auto_data_quality(mut self, input: ::std::option::Option<crate::types::AutoDataQuality>) -> Self {
+        self.auto_data_quality = input;
+        self
+    }
+    /// <p>Specifies whether to automatically enable data quality evaluation for the S3 Glue Parquet target. When set to <code>true</code>, data quality checks are performed automatically during the write operation.</p>
+    pub fn get_auto_data_quality(&self) -> &::std::option::Option<crate::types::AutoDataQuality> {
+        &self.auto_data_quality
     }
     /// Consumes the builder and constructs a [`S3GlueParquetTarget`](crate::types::S3GlueParquetTarget).
     /// This method will fail if any of the following fields are not set:
@@ -215,6 +236,7 @@ impl S3GlueParquetTargetBuilder {
             compression: self.compression,
             number_target_partitions: self.number_target_partitions,
             schema_change_policy: self.schema_change_policy,
+            auto_data_quality: self.auto_data_quality,
         })
     }
 }

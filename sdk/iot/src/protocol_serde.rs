@@ -231,6 +231,8 @@ pub(crate) mod shape_describe_dimension;
 
 pub(crate) mod shape_describe_domain_configuration;
 
+pub(crate) mod shape_describe_encryption_configuration;
+
 pub(crate) mod shape_describe_endpoint;
 
 pub(crate) mod shape_describe_event_configurations;
@@ -535,6 +537,8 @@ pub(crate) mod shape_update_domain_configuration;
 
 pub(crate) mod shape_update_dynamic_thing_group;
 
+pub(crate) mod shape_update_encryption_configuration;
+
 pub(crate) mod shape_update_event_configurations;
 
 pub(crate) mod shape_update_fleet_metric;
@@ -801,6 +805,8 @@ pub(crate) mod shape_update_domain_configuration_input;
 
 pub(crate) mod shape_update_dynamic_thing_group_input;
 
+pub(crate) mod shape_update_encryption_configuration_input;
+
 pub(crate) mod shape_update_event_configurations_input;
 
 pub(crate) mod shape_update_fleet_metric_input;
@@ -954,6 +960,8 @@ pub(crate) mod shape_command_payload;
 pub(crate) mod shape_command_summary_list;
 
 pub(crate) mod shape_configuration;
+
+pub(crate) mod shape_configuration_details;
 
 pub(crate) mod shape_destination_package_versions;
 

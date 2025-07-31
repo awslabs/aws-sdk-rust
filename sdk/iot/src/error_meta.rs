@@ -1893,6 +1893,7 @@ impl From<crate::operation::create_topic_rule::CreateTopicRuleError> for Error {
                 Error::ServiceUnavailableException(inner)
             }
             crate::operation::create_topic_rule::CreateTopicRuleError::SqlParseException(inner) => Error::SqlParseException(inner),
+            crate::operation::create_topic_rule::CreateTopicRuleError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::create_topic_rule::CreateTopicRuleError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1931,6 +1932,9 @@ impl From<crate::operation::create_topic_rule_destination::CreateTopicRuleDestin
             }
             crate::operation::create_topic_rule_destination::CreateTopicRuleDestinationError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::create_topic_rule_destination::CreateTopicRuleDestinationError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
             }
             crate::operation::create_topic_rule_destination::CreateTopicRuleDestinationError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -3667,6 +3671,53 @@ impl From<crate::operation::describe_domain_configuration::DescribeDomainConfigu
                 Error::UnauthorizedException(inner)
             }
             crate::operation::describe_domain_configuration::DescribeDomainConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_encryption_configuration::DescribeEncryptionConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_encryption_configuration::DescribeEncryptionConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_encryption_configuration::DescribeEncryptionConfigurationError> for Error {
+    fn from(err: crate::operation::describe_encryption_configuration::DescribeEncryptionConfigurationError) -> Self {
+        match err {
+            crate::operation::describe_encryption_configuration::DescribeEncryptionConfigurationError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::operation::describe_encryption_configuration::DescribeEncryptionConfigurationError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::describe_encryption_configuration::DescribeEncryptionConfigurationError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::describe_encryption_configuration::DescribeEncryptionConfigurationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::describe_encryption_configuration::DescribeEncryptionConfigurationError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::describe_encryption_configuration::DescribeEncryptionConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -7297,6 +7348,7 @@ impl From<crate::operation::list_topic_rules::ListTopicRulesError> for Error {
             crate::operation::list_topic_rules::ListTopicRulesError::InternalException(inner) => Error::InternalException(inner),
             crate::operation::list_topic_rules::ListTopicRulesError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::list_topic_rules::ListTopicRulesError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::list_topic_rules::ListTopicRulesError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::list_topic_rules::ListTopicRulesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -8691,6 +8743,49 @@ impl From<crate::operation::update_dynamic_thing_group::UpdateDynamicThingGroupE
                 Error::VersionConflictException(inner)
             }
             crate::operation::update_dynamic_thing_group::UpdateDynamicThingGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_encryption_configuration::UpdateEncryptionConfigurationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_encryption_configuration::UpdateEncryptionConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_encryption_configuration::UpdateEncryptionConfigurationError> for Error {
+    fn from(err: crate::operation::update_encryption_configuration::UpdateEncryptionConfigurationError) -> Self {
+        match err {
+            crate::operation::update_encryption_configuration::UpdateEncryptionConfigurationError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::operation::update_encryption_configuration::UpdateEncryptionConfigurationError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::update_encryption_configuration::UpdateEncryptionConfigurationError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::update_encryption_configuration::UpdateEncryptionConfigurationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_encryption_configuration::UpdateEncryptionConfigurationError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::update_encryption_configuration::UpdateEncryptionConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

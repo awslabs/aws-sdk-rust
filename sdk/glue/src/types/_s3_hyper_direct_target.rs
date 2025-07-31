@@ -8,6 +8,8 @@ pub struct S3HyperDirectTarget {
     pub name: ::std::string::String,
     /// <p>Specifies the input source for the HyperDirect target.</p>
     pub inputs: ::std::vec::Vec<::std::string::String>,
+    /// <p>Specifies the data output format for the HyperDirect target.</p>
+    pub format: ::std::option::Option<crate::types::TargetFormat>,
     /// <p>Defines the partitioning strategy for the output data.</p>
     pub partition_keys: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
     /// <p>The S3 location where the output data will be written.</p>
@@ -16,6 +18,10 @@ pub struct S3HyperDirectTarget {
     pub compression: ::std::option::Option<crate::types::HyperTargetCompressionType>,
     /// <p>Defines how schema changes are handled during write operations.</p>
     pub schema_change_policy: ::std::option::Option<crate::types::DirectSchemaChangePolicy>,
+    /// <p>Specifies whether to automatically enable data quality evaluation for the S3 Hyper direct target. When set to <code>true</code>, data quality checks are performed automatically during the write operation.</p>
+    pub auto_data_quality: ::std::option::Option<crate::types::AutoDataQuality>,
+    /// <p>Specifies the data schema for the S3 Hyper direct target.</p>
+    pub output_schemas: ::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>>,
 }
 impl S3HyperDirectTarget {
     /// <p>The unique identifier for the HyperDirect target node.</p>
@@ -27,6 +33,10 @@ impl S3HyperDirectTarget {
     pub fn inputs(&self) -> &[::std::string::String] {
         use std::ops::Deref;
         self.inputs.deref()
+    }
+    /// <p>Specifies the data output format for the HyperDirect target.</p>
+    pub fn format(&self) -> ::std::option::Option<&crate::types::TargetFormat> {
+        self.format.as_ref()
     }
     /// <p>Defines the partitioning strategy for the output data.</p>
     ///
@@ -47,6 +57,16 @@ impl S3HyperDirectTarget {
     pub fn schema_change_policy(&self) -> ::std::option::Option<&crate::types::DirectSchemaChangePolicy> {
         self.schema_change_policy.as_ref()
     }
+    /// <p>Specifies whether to automatically enable data quality evaluation for the S3 Hyper direct target. When set to <code>true</code>, data quality checks are performed automatically during the write operation.</p>
+    pub fn auto_data_quality(&self) -> ::std::option::Option<&crate::types::AutoDataQuality> {
+        self.auto_data_quality.as_ref()
+    }
+    /// <p>Specifies the data schema for the S3 Hyper direct target.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.output_schemas.is_none()`.
+    pub fn output_schemas(&self) -> &[crate::types::GlueSchema] {
+        self.output_schemas.as_deref().unwrap_or_default()
+    }
 }
 impl S3HyperDirectTarget {
     /// Creates a new builder-style object to manufacture [`S3HyperDirectTarget`](crate::types::S3HyperDirectTarget).
@@ -61,10 +81,13 @@ impl S3HyperDirectTarget {
 pub struct S3HyperDirectTargetBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) format: ::std::option::Option<crate::types::TargetFormat>,
     pub(crate) partition_keys: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
     pub(crate) path: ::std::option::Option<::std::string::String>,
     pub(crate) compression: ::std::option::Option<crate::types::HyperTargetCompressionType>,
     pub(crate) schema_change_policy: ::std::option::Option<crate::types::DirectSchemaChangePolicy>,
+    pub(crate) auto_data_quality: ::std::option::Option<crate::types::AutoDataQuality>,
+    pub(crate) output_schemas: ::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>>,
 }
 impl S3HyperDirectTargetBuilder {
     /// <p>The unique identifier for the HyperDirect target node.</p>
@@ -101,6 +124,20 @@ impl S3HyperDirectTargetBuilder {
     /// <p>Specifies the input source for the HyperDirect target.</p>
     pub fn get_inputs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.inputs
+    }
+    /// <p>Specifies the data output format for the HyperDirect target.</p>
+    pub fn format(mut self, input: crate::types::TargetFormat) -> Self {
+        self.format = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the data output format for the HyperDirect target.</p>
+    pub fn set_format(mut self, input: ::std::option::Option<crate::types::TargetFormat>) -> Self {
+        self.format = input;
+        self
+    }
+    /// <p>Specifies the data output format for the HyperDirect target.</p>
+    pub fn get_format(&self) -> &::std::option::Option<crate::types::TargetFormat> {
+        &self.format
     }
     /// Appends an item to `partition_keys`.
     ///
@@ -165,6 +202,40 @@ impl S3HyperDirectTargetBuilder {
     pub fn get_schema_change_policy(&self) -> &::std::option::Option<crate::types::DirectSchemaChangePolicy> {
         &self.schema_change_policy
     }
+    /// <p>Specifies whether to automatically enable data quality evaluation for the S3 Hyper direct target. When set to <code>true</code>, data quality checks are performed automatically during the write operation.</p>
+    pub fn auto_data_quality(mut self, input: crate::types::AutoDataQuality) -> Self {
+        self.auto_data_quality = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to automatically enable data quality evaluation for the S3 Hyper direct target. When set to <code>true</code>, data quality checks are performed automatically during the write operation.</p>
+    pub fn set_auto_data_quality(mut self, input: ::std::option::Option<crate::types::AutoDataQuality>) -> Self {
+        self.auto_data_quality = input;
+        self
+    }
+    /// <p>Specifies whether to automatically enable data quality evaluation for the S3 Hyper direct target. When set to <code>true</code>, data quality checks are performed automatically during the write operation.</p>
+    pub fn get_auto_data_quality(&self) -> &::std::option::Option<crate::types::AutoDataQuality> {
+        &self.auto_data_quality
+    }
+    /// Appends an item to `output_schemas`.
+    ///
+    /// To override the contents of this collection use [`set_output_schemas`](Self::set_output_schemas).
+    ///
+    /// <p>Specifies the data schema for the S3 Hyper direct target.</p>
+    pub fn output_schemas(mut self, input: crate::types::GlueSchema) -> Self {
+        let mut v = self.output_schemas.unwrap_or_default();
+        v.push(input);
+        self.output_schemas = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Specifies the data schema for the S3 Hyper direct target.</p>
+    pub fn set_output_schemas(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>>) -> Self {
+        self.output_schemas = input;
+        self
+    }
+    /// <p>Specifies the data schema for the S3 Hyper direct target.</p>
+    pub fn get_output_schemas(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>> {
+        &self.output_schemas
+    }
     /// Consumes the builder and constructs a [`S3HyperDirectTarget`](crate::types::S3HyperDirectTarget).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::S3HyperDirectTargetBuilder::name)
@@ -184,6 +255,7 @@ impl S3HyperDirectTargetBuilder {
                     "inputs was not specified but it is required when building S3HyperDirectTarget",
                 )
             })?,
+            format: self.format,
             partition_keys: self.partition_keys,
             path: self.path.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
@@ -193,6 +265,8 @@ impl S3HyperDirectTargetBuilder {
             })?,
             compression: self.compression,
             schema_change_policy: self.schema_change_policy,
+            auto_data_quality: self.auto_data_quality,
+            output_schemas: self.output_schemas,
         })
     }
 }

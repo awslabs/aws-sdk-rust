@@ -93,13 +93,37 @@ pub use crate::types::_source_control_details::SourceControlDetailsBuilder;
 
 pub use crate::types::_code_gen_configuration_node::CodeGenConfigurationNodeBuilder;
 
-pub use crate::types::_connector_data_target::ConnectorDataTargetBuilder;
-
-pub use crate::types::_connector_data_source::ConnectorDataSourceBuilder;
+pub use crate::types::_dynamo_dbelt_connector_source::DynamoDbeltConnectorSourceBuilder;
 
 pub use crate::types::_glue_schema::GlueSchemaBuilder;
 
 pub use crate::types::_glue_studio_schema_column::GlueStudioSchemaColumnBuilder;
+
+pub use crate::types::_ddbelt_connection_options::DdbeltConnectionOptionsBuilder;
+
+pub use crate::types::_s3_hyper_direct_target::S3HyperDirectTargetBuilder;
+
+pub use crate::types::_auto_data_quality::AutoDataQualityBuilder;
+
+pub use crate::types::_direct_schema_change_policy::DirectSchemaChangePolicyBuilder;
+
+pub use crate::types::_s3_excel_source::S3ExcelSourceBuilder;
+
+pub use crate::types::_s3_direct_source_additional_options::S3DirectSourceAdditionalOptionsBuilder;
+
+pub use crate::types::_s3_iceberg_direct_target::S3IcebergDirectTargetBuilder;
+
+pub use crate::types::_s3_iceberg_catalog_target::S3IcebergCatalogTargetBuilder;
+
+pub use crate::types::_catalog_schema_change_policy::CatalogSchemaChangePolicyBuilder;
+
+pub use crate::types::_catalog_iceberg_source::CatalogIcebergSourceBuilder;
+
+pub use crate::types::_s3_catalog_iceberg_source::S3CatalogIcebergSourceBuilder;
+
+pub use crate::types::_connector_data_target::ConnectorDataTargetBuilder;
+
+pub use crate::types::_connector_data_source::ConnectorDataSourceBuilder;
 
 pub use crate::types::_snowflake_target::SnowflakeTargetBuilder;
 
@@ -135,15 +159,9 @@ pub use crate::types::_amazon_redshift_source::AmazonRedshiftSourceBuilder;
 
 pub use crate::types::_s3_delta_direct_target::S3DeltaDirectTargetBuilder;
 
-pub use crate::types::_direct_schema_change_policy::DirectSchemaChangePolicyBuilder;
-
 pub use crate::types::_s3_delta_catalog_target::S3DeltaCatalogTargetBuilder;
 
-pub use crate::types::_catalog_schema_change_policy::CatalogSchemaChangePolicyBuilder;
-
 pub use crate::types::_s3_delta_source::S3DeltaSourceBuilder;
-
-pub use crate::types::_s3_direct_source_additional_options::S3DirectSourceAdditionalOptionsBuilder;
 
 pub use crate::types::_catalog_delta_source::CatalogDeltaSourceBuilder;
 
@@ -166,6 +184,14 @@ pub use crate::types::_evaluate_data_quality::EvaluateDataQualityBuilder;
 pub use crate::types::_dynamic_transform::DynamicTransformBuilder;
 
 pub use crate::types::_transform_config_parameter::TransformConfigParameterBuilder;
+
+pub use crate::types::_route::RouteBuilder;
+
+pub use crate::types::_group_filters::GroupFiltersBuilder;
+
+pub use crate::types::_filter_expression::FilterExpressionBuilder;
+
+pub use crate::types::_filter_value::FilterValueBuilder;
 
 pub use crate::types::_postgre_sql_catalog_target::PostgreSqlCatalogTargetBuilder;
 
@@ -231,10 +257,6 @@ pub use crate::types::_custom_code::CustomCodeBuilder;
 
 pub use crate::types::_filter::FilterBuilder;
 
-pub use crate::types::_filter_expression::FilterExpressionBuilder;
-
-pub use crate::types::_filter_value::FilterValueBuilder;
-
 pub use crate::types::_fill_missing_values::FillMissingValuesBuilder;
 
 pub use crate::types::_select_from_collection::SelectFromCollectionBuilder;
@@ -257,11 +279,7 @@ pub use crate::types::_apply_mapping::ApplyMappingBuilder;
 
 pub use crate::types::_mapping::MappingBuilder;
 
-pub use crate::types::_s3_iceberg_direct_target::S3IcebergDirectTargetBuilder;
-
 pub use crate::types::_s3_direct_target::S3DirectTargetBuilder;
-
-pub use crate::types::_s3_hyper_direct_target::S3HyperDirectTargetBuilder;
 
 pub use crate::types::_s3_glue_parquet_target::S3GlueParquetTargetBuilder;
 
@@ -279,13 +297,13 @@ pub use crate::types::_jdbc_connector_target::JdbcConnectorTargetBuilder;
 
 pub use crate::types::_dynamo_db_catalog_source::DynamoDbCatalogSourceBuilder;
 
+pub use crate::types::_ddbelt_catalog_additional_options::DdbeltCatalogAdditionalOptionsBuilder;
+
 pub use crate::types::_relational_catalog_source::RelationalCatalogSourceBuilder;
 
 pub use crate::types::_s3_parquet_source::S3ParquetSourceBuilder;
 
 pub use crate::types::_s3_json_source::S3JsonSourceBuilder;
-
-pub use crate::types::_s3_excel_source::S3ExcelSourceBuilder;
 
 pub use crate::types::_s3_csv_source::S3CsvSourceBuilder;
 

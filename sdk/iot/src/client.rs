@@ -365,6 +365,8 @@ mod describe_dimension;
 
 mod describe_domain_configuration;
 
+mod describe_encryption_configuration;
+
 mod describe_endpoint;
 
 mod describe_event_configurations;
@@ -664,6 +666,8 @@ mod update_dimension;
 mod update_domain_configuration;
 
 mod update_dynamic_thing_group;
+
+mod update_encryption_configuration;
 
 mod update_event_configurations;
 

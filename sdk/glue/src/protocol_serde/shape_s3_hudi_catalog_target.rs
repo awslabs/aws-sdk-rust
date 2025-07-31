@@ -52,6 +52,24 @@ pub fn ser_s3_hudi_catalog_target(
         crate::protocol_serde::shape_catalog_schema_change_policy::ser_catalog_schema_change_policy(&mut object_12, var_11)?;
         object_12.finish();
     }
+    if let Some(var_13) = &input.auto_data_quality {
+        #[allow(unused_mut)]
+        let mut object_14 = object.key("AutoDataQuality").start_object();
+        crate::protocol_serde::shape_auto_data_quality::ser_auto_data_quality(&mut object_14, var_13)?;
+        object_14.finish();
+    }
+    if let Some(var_15) = &input.output_schemas {
+        let mut array_16 = object.key("OutputSchemas").start_array();
+        for item_17 in var_15 {
+            {
+                #[allow(unused_mut)]
+                let mut object_18 = array_16.value().start_object();
+                crate::protocol_serde::shape_glue_schema::ser_glue_schema(&mut object_18, item_17)?;
+                object_18.finish();
+            }
+        }
+        array_16.finish();
+    }
     Ok(())
 }
 
@@ -105,6 +123,12 @@ where
                             builder = builder.set_schema_change_policy(
                                 crate::protocol_serde::shape_catalog_schema_change_policy::de_catalog_schema_change_policy(tokens)?,
                             );
+                        }
+                        "AutoDataQuality" => {
+                            builder = builder.set_auto_data_quality(crate::protocol_serde::shape_auto_data_quality::de_auto_data_quality(tokens)?);
+                        }
+                        "OutputSchemas" => {
+                            builder = builder.set_output_schemas(crate::protocol_serde::shape_glue_schemas::de_glue_schemas(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
