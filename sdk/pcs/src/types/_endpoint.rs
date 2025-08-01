@@ -6,12 +6,16 @@
 pub struct Endpoint {
     /// <p>Indicates the type of endpoint running at the specific IP address.</p>
     pub r#type: crate::types::EndpointType,
-    /// <p>The endpoint's private IP address.</p>
-    /// <p>Example: <code>2.2.2.2</code></p>
+    /// <p>For clusters that use IPv4, this is the endpoint's private IP address.</p>
+    /// <p>Example: <code>10.1.2.3</code></p>
+    /// <p>For clusters configured to use IPv6, this is an empty string.</p>
     pub private_ip_address: ::std::string::String,
     /// <p>The endpoint's public IP address.</p>
-    /// <p>Example: <code>1.1.1.1</code></p>
+    /// <p>Example: <code>192.0.2.1</code></p>
     pub public_ip_address: ::std::option::Option<::std::string::String>,
+    /// <p>The endpoint's IPv6 address.</p>
+    /// <p>Example: <code>2001:db8::1</code></p>
+    pub ipv6_address: ::std::option::Option<::std::string::String>,
     /// <p>The endpoint's connection port number.</p>
     /// <p>Example: <code>1234</code></p>
     pub port: ::std::string::String,
@@ -21,16 +25,22 @@ impl Endpoint {
     pub fn r#type(&self) -> &crate::types::EndpointType {
         &self.r#type
     }
-    /// <p>The endpoint's private IP address.</p>
-    /// <p>Example: <code>2.2.2.2</code></p>
+    /// <p>For clusters that use IPv4, this is the endpoint's private IP address.</p>
+    /// <p>Example: <code>10.1.2.3</code></p>
+    /// <p>For clusters configured to use IPv6, this is an empty string.</p>
     pub fn private_ip_address(&self) -> &str {
         use std::ops::Deref;
         self.private_ip_address.deref()
     }
     /// <p>The endpoint's public IP address.</p>
-    /// <p>Example: <code>1.1.1.1</code></p>
+    /// <p>Example: <code>192.0.2.1</code></p>
     pub fn public_ip_address(&self) -> ::std::option::Option<&str> {
         self.public_ip_address.as_deref()
+    }
+    /// <p>The endpoint's IPv6 address.</p>
+    /// <p>Example: <code>2001:db8::1</code></p>
+    pub fn ipv6_address(&self) -> ::std::option::Option<&str> {
+        self.ipv6_address.as_deref()
     }
     /// <p>The endpoint's connection port number.</p>
     /// <p>Example: <code>1234</code></p>
@@ -53,6 +63,7 @@ pub struct EndpointBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::EndpointType>,
     pub(crate) private_ip_address: ::std::option::Option<::std::string::String>,
     pub(crate) public_ip_address: ::std::option::Option<::std::string::String>,
+    pub(crate) ipv6_address: ::std::option::Option<::std::string::String>,
     pub(crate) port: ::std::option::Option<::std::string::String>,
 }
 impl EndpointBuilder {
@@ -71,40 +82,60 @@ impl EndpointBuilder {
     pub fn get_type(&self) -> &::std::option::Option<crate::types::EndpointType> {
         &self.r#type
     }
-    /// <p>The endpoint's private IP address.</p>
-    /// <p>Example: <code>2.2.2.2</code></p>
+    /// <p>For clusters that use IPv4, this is the endpoint's private IP address.</p>
+    /// <p>Example: <code>10.1.2.3</code></p>
+    /// <p>For clusters configured to use IPv6, this is an empty string.</p>
     /// This field is required.
     pub fn private_ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.private_ip_address = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The endpoint's private IP address.</p>
-    /// <p>Example: <code>2.2.2.2</code></p>
+    /// <p>For clusters that use IPv4, this is the endpoint's private IP address.</p>
+    /// <p>Example: <code>10.1.2.3</code></p>
+    /// <p>For clusters configured to use IPv6, this is an empty string.</p>
     pub fn set_private_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.private_ip_address = input;
         self
     }
-    /// <p>The endpoint's private IP address.</p>
-    /// <p>Example: <code>2.2.2.2</code></p>
+    /// <p>For clusters that use IPv4, this is the endpoint's private IP address.</p>
+    /// <p>Example: <code>10.1.2.3</code></p>
+    /// <p>For clusters configured to use IPv6, this is an empty string.</p>
     pub fn get_private_ip_address(&self) -> &::std::option::Option<::std::string::String> {
         &self.private_ip_address
     }
     /// <p>The endpoint's public IP address.</p>
-    /// <p>Example: <code>1.1.1.1</code></p>
+    /// <p>Example: <code>192.0.2.1</code></p>
     pub fn public_ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.public_ip_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The endpoint's public IP address.</p>
-    /// <p>Example: <code>1.1.1.1</code></p>
+    /// <p>Example: <code>192.0.2.1</code></p>
     pub fn set_public_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.public_ip_address = input;
         self
     }
     /// <p>The endpoint's public IP address.</p>
-    /// <p>Example: <code>1.1.1.1</code></p>
+    /// <p>Example: <code>192.0.2.1</code></p>
     pub fn get_public_ip_address(&self) -> &::std::option::Option<::std::string::String> {
         &self.public_ip_address
+    }
+    /// <p>The endpoint's IPv6 address.</p>
+    /// <p>Example: <code>2001:db8::1</code></p>
+    pub fn ipv6_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ipv6_address = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The endpoint's IPv6 address.</p>
+    /// <p>Example: <code>2001:db8::1</code></p>
+    pub fn set_ipv6_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.ipv6_address = input;
+        self
+    }
+    /// <p>The endpoint's IPv6 address.</p>
+    /// <p>Example: <code>2001:db8::1</code></p>
+    pub fn get_ipv6_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ipv6_address
     }
     /// <p>The endpoint's connection port number.</p>
     /// <p>Example: <code>1234</code></p>
@@ -144,6 +175,7 @@ impl EndpointBuilder {
                 )
             })?,
             public_ip_address: self.public_ip_address,
+            ipv6_address: self.ipv6_address,
             port: self.port.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "port",

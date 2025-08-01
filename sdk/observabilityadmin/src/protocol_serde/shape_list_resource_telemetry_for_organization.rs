@@ -70,6 +70,26 @@ pub fn de_list_resource_telemetry_for_organization_http_error(
                 tmp
             })
         }
+        "TooManyRequestsException" => {
+            crate::operation::list_resource_telemetry_for_organization::ListResourceTelemetryForOrganizationError::TooManyRequestsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
+                    output =
+                        crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(_response_body, output)
+                            .map_err(
+                                crate::operation::list_resource_telemetry_for_organization::ListResourceTelemetryForOrganizationError::unhandled,
+                            )?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "ValidationException" => {
             crate::operation::list_resource_telemetry_for_organization::ListResourceTelemetryForOrganizationError::ValidationException({
                 #[allow(unused_mut)]

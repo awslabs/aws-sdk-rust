@@ -275,6 +275,8 @@ pub enum GetLoadBalancerTlsPoliciesError {
     /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::types::error::InvalidInputException),
+    /// <p>Lightsail throws this exception when an operation is performed on resources in an opt-in Region that is currently being set up.</p>
+    RegionSetupInProgressException(crate::types::error::RegionSetupInProgressException),
     /// <p>A general service exception.</p>
     ServiceException(crate::types::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
@@ -315,6 +317,7 @@ impl GetLoadBalancerTlsPoliciesError {
             Self::AccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::AccountSetupInProgressException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidInputException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::RegionSetupInProgressException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ServiceException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::UnauthenticatedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
@@ -332,6 +335,10 @@ impl GetLoadBalancerTlsPoliciesError {
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(self, Self::InvalidInputException(_))
     }
+    /// Returns `true` if the error kind is `GetLoadBalancerTlsPoliciesError::RegionSetupInProgressException`.
+    pub fn is_region_setup_in_progress_exception(&self) -> bool {
+        matches!(self, Self::RegionSetupInProgressException(_))
+    }
     /// Returns `true` if the error kind is `GetLoadBalancerTlsPoliciesError::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(self, Self::ServiceException(_))
@@ -347,6 +354,7 @@ impl ::std::error::Error for GetLoadBalancerTlsPoliciesError {
             Self::AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
             Self::AccountSetupInProgressException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidInputException(_inner) => ::std::option::Option::Some(_inner),
+            Self::RegionSetupInProgressException(_inner) => ::std::option::Option::Some(_inner),
             Self::ServiceException(_inner) => ::std::option::Option::Some(_inner),
             Self::UnauthenticatedException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
@@ -359,6 +367,7 @@ impl ::std::fmt::Display for GetLoadBalancerTlsPoliciesError {
             Self::AccessDeniedException(_inner) => _inner.fmt(f),
             Self::AccountSetupInProgressException(_inner) => _inner.fmt(f),
             Self::InvalidInputException(_inner) => _inner.fmt(f),
+            Self::RegionSetupInProgressException(_inner) => _inner.fmt(f),
             Self::ServiceException(_inner) => _inner.fmt(f),
             Self::UnauthenticatedException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
@@ -385,6 +394,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for GetLoadBalanc
             Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::AccountSetupInProgressException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidInputException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::RegionSetupInProgressException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ServiceException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::UnauthenticatedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,

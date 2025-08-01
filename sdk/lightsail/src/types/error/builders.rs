@@ -3,6 +3,8 @@ pub use crate::types::error::_unauthenticated_exception::UnauthenticatedExceptio
 
 pub use crate::types::error::_service_exception::ServiceExceptionBuilder;
 
+pub use crate::types::error::_region_setup_in_progress_exception::RegionSetupInProgressExceptionBuilder;
+
 pub use crate::types::error::_operation_failure_exception::OperationFailureExceptionBuilder;
 
 pub use crate::types::error::_not_found_exception::NotFoundExceptionBuilder;

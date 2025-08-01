@@ -59,14 +59,14 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`ListResourceTelemetry`](crate::operation::list_resource_telemetry) operation has
-/// a [`Client::list_resource_telemetry`], function which returns a builder for that operation.
+/// For example, the [`CreateTelemetryRule`](crate::operation::create_telemetry_rule) operation has
+/// a [`Client::create_telemetry_rule`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.list_resource_telemetry()
-///     .resource_identifier_prefix("example")
+/// let result = client.create_telemetry_rule()
+///     .rule_name("example")
 ///     .send()
 ///     .await;
 /// ```
@@ -136,6 +136,10 @@ impl Client {
     }
 }
 
+mod create_telemetry_rule;
+
+mod create_telemetry_rule_for_organization;
+
 /// Operation customization and supporting types.
 ///
 /// The underlying HTTP requests made during an operation can be customized
@@ -147,7 +151,7 @@ impl Client {
 /// # let client: aws_sdk_observabilityadmin::Client = unimplemented!();
 /// use ::http::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.get_telemetry_evaluation_status()
+/// let result = client.create_telemetry_rule()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
@@ -163,13 +167,27 @@ impl Client {
 /// ```
 pub mod customize;
 
+mod delete_telemetry_rule;
+
+mod delete_telemetry_rule_for_organization;
+
 mod get_telemetry_evaluation_status;
 
 mod get_telemetry_evaluation_status_for_organization;
 
+mod get_telemetry_rule;
+
+mod get_telemetry_rule_for_organization;
+
 mod list_resource_telemetry;
 
 mod list_resource_telemetry_for_organization;
+
+mod list_tags_for_resource;
+
+mod list_telemetry_rules;
+
+mod list_telemetry_rules_for_organization;
 
 mod start_telemetry_evaluation;
 
@@ -178,3 +196,11 @@ mod start_telemetry_evaluation_for_organization;
 mod stop_telemetry_evaluation;
 
 mod stop_telemetry_evaluation_for_organization;
+
+mod tag_resource;
+
+mod untag_resource;
+
+mod update_telemetry_rule;
+
+mod update_telemetry_rule_for_organization;

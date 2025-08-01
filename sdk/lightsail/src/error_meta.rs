@@ -15,6 +15,8 @@ pub enum Error {
     NotFoundException(crate::types::error::NotFoundException),
     /// <p>Lightsail throws this exception when an operation fails to execute.</p>
     OperationFailureException(crate::types::error::OperationFailureException),
+    /// <p>Lightsail throws this exception when an operation is performed on resources in an opt-in Region that is currently being set up.</p>
+    RegionSetupInProgressException(crate::types::error::RegionSetupInProgressException),
     /// <p>A general service exception.</p>
     ServiceException(crate::types::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
@@ -36,6 +38,7 @@ impl ::std::fmt::Display for Error {
             Error::InvalidInputException(inner) => inner.fmt(f),
             Error::NotFoundException(inner) => inner.fmt(f),
             Error::OperationFailureException(inner) => inner.fmt(f),
+            Error::RegionSetupInProgressException(inner) => inner.fmt(f),
             Error::ServiceException(inner) => inner.fmt(f),
             Error::UnauthenticatedException(inner) => inner.fmt(f),
             Error::Unhandled(_) => {
@@ -64,6 +67,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::InvalidInputException(inner) => inner.meta(),
             Self::NotFoundException(inner) => inner.meta(),
             Self::OperationFailureException(inner) => inner.meta(),
+            Self::RegionSetupInProgressException(inner) => inner.meta(),
             Self::ServiceException(inner) => inner.meta(),
             Self::UnauthenticatedException(inner) => inner.meta(),
             Self::Unhandled(inner) => &inner.meta,
@@ -94,6 +98,9 @@ impl From<crate::operation::allocate_static_ip::AllocateStaticIpError> for Error
             crate::operation::allocate_static_ip::AllocateStaticIpError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::allocate_static_ip::AllocateStaticIpError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::allocate_static_ip::AllocateStaticIpError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::allocate_static_ip::AllocateStaticIpError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::allocate_static_ip::AllocateStaticIpError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::allocate_static_ip::AllocateStaticIpError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
             crate::operation::allocate_static_ip::AllocateStaticIpError::Unhandled(inner) => Error::Unhandled(inner),
@@ -172,6 +179,7 @@ impl From<crate::operation::attach_disk::AttachDiskError> for Error {
             crate::operation::attach_disk::AttachDiskError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::attach_disk::AttachDiskError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::attach_disk::AttachDiskError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::attach_disk::AttachDiskError::RegionSetupInProgressException(inner) => Error::RegionSetupInProgressException(inner),
             crate::operation::attach_disk::AttachDiskError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::attach_disk::AttachDiskError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
             crate::operation::attach_disk::AttachDiskError::Unhandled(inner) => Error::Unhandled(inner),
@@ -220,6 +228,9 @@ impl From<crate::operation::attach_instances_to_load_balancer::AttachInstancesTo
             }
             crate::operation::attach_instances_to_load_balancer::AttachInstancesToLoadBalancerError::OperationFailureException(inner) => {
                 Error::OperationFailureException(inner)
+            }
+            crate::operation::attach_instances_to_load_balancer::AttachInstancesToLoadBalancerError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
             }
             crate::operation::attach_instances_to_load_balancer::AttachInstancesToLoadBalancerError::ServiceException(inner) => {
                 Error::ServiceException(inner)
@@ -274,6 +285,9 @@ impl From<crate::operation::attach_load_balancer_tls_certificate::AttachLoadBala
             crate::operation::attach_load_balancer_tls_certificate::AttachLoadBalancerTlsCertificateError::OperationFailureException(inner) => {
                 Error::OperationFailureException(inner)
             }
+            crate::operation::attach_load_balancer_tls_certificate::AttachLoadBalancerTlsCertificateError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::attach_load_balancer_tls_certificate::AttachLoadBalancerTlsCertificateError::ServiceException(inner) => {
                 Error::ServiceException(inner)
             }
@@ -310,6 +324,9 @@ impl From<crate::operation::attach_static_ip::AttachStaticIpError> for Error {
             crate::operation::attach_static_ip::AttachStaticIpError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::attach_static_ip::AttachStaticIpError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::attach_static_ip::AttachStaticIpError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::attach_static_ip::AttachStaticIpError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::attach_static_ip::AttachStaticIpError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::attach_static_ip::AttachStaticIpError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
             crate::operation::attach_static_ip::AttachStaticIpError::Unhandled(inner) => Error::Unhandled(inner),
@@ -349,6 +366,9 @@ impl From<crate::operation::close_instance_public_ports::CloseInstancePublicPort
             crate::operation::close_instance_public_ports::CloseInstancePublicPortsError::OperationFailureException(inner) => {
                 Error::OperationFailureException(inner)
             }
+            crate::operation::close_instance_public_ports::CloseInstancePublicPortsError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::close_instance_public_ports::CloseInstancePublicPortsError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::close_instance_public_ports::CloseInstancePublicPortsError::UnauthenticatedException(inner) => {
                 Error::UnauthenticatedException(inner)
@@ -381,6 +401,7 @@ impl From<crate::operation::copy_snapshot::CopySnapshotError> for Error {
             crate::operation::copy_snapshot::CopySnapshotError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::copy_snapshot::CopySnapshotError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::copy_snapshot::CopySnapshotError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::copy_snapshot::CopySnapshotError::RegionSetupInProgressException(inner) => Error::RegionSetupInProgressException(inner),
             crate::operation::copy_snapshot::CopySnapshotError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::copy_snapshot::CopySnapshotError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
             crate::operation::copy_snapshot::CopySnapshotError::Unhandled(inner) => Error::Unhandled(inner),
@@ -406,6 +427,7 @@ impl From<crate::operation::create_bucket::CreateBucketError> for Error {
         match err {
             crate::operation::create_bucket::CreateBucketError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::create_bucket::CreateBucketError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::create_bucket::CreateBucketError::RegionSetupInProgressException(inner) => Error::RegionSetupInProgressException(inner),
             crate::operation::create_bucket::CreateBucketError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::create_bucket::CreateBucketError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
             crate::operation::create_bucket::CreateBucketError::Unhandled(inner) => Error::Unhandled(inner),
@@ -438,6 +460,9 @@ impl From<crate::operation::create_bucket_access_key::CreateBucketAccessKeyError
                 Error::InvalidInputException(inner)
             }
             crate::operation::create_bucket_access_key::CreateBucketAccessKeyError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::create_bucket_access_key::CreateBucketAccessKeyError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::create_bucket_access_key::CreateBucketAccessKeyError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::create_bucket_access_key::CreateBucketAccessKeyError::UnauthenticatedException(inner) => {
                 Error::UnauthenticatedException(inner)
@@ -466,6 +491,9 @@ impl From<crate::operation::create_certificate::CreateCertificateError> for Erro
             crate::operation::create_certificate::CreateCertificateError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::create_certificate::CreateCertificateError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::create_certificate::CreateCertificateError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::create_certificate::CreateCertificateError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::create_certificate::CreateCertificateError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::create_certificate::CreateCertificateError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
             crate::operation::create_certificate::CreateCertificateError::Unhandled(inner) => Error::Unhandled(inner),
@@ -507,6 +535,9 @@ impl From<crate::operation::create_cloud_formation_stack::CreateCloudFormationSt
             crate::operation::create_cloud_formation_stack::CreateCloudFormationStackError::OperationFailureException(inner) => {
                 Error::OperationFailureException(inner)
             }
+            crate::operation::create_cloud_formation_stack::CreateCloudFormationStackError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::create_cloud_formation_stack::CreateCloudFormationStackError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::create_cloud_formation_stack::CreateCloudFormationStackError::UnauthenticatedException(inner) => {
                 Error::UnauthenticatedException(inner)
@@ -537,6 +568,9 @@ impl From<crate::operation::create_contact_method::CreateContactMethodError> for
             crate::operation::create_contact_method::CreateContactMethodError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::create_contact_method::CreateContactMethodError::OperationFailureException(inner) => {
                 Error::OperationFailureException(inner)
+            }
+            crate::operation::create_contact_method::CreateContactMethodError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
             }
             crate::operation::create_contact_method::CreateContactMethodError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::create_contact_method::CreateContactMethodError::UnauthenticatedException(inner) => {
@@ -572,6 +606,9 @@ impl From<crate::operation::create_container_service::CreateContainerServiceErro
                 Error::InvalidInputException(inner)
             }
             crate::operation::create_container_service::CreateContainerServiceError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::create_container_service::CreateContainerServiceError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::create_container_service::CreateContainerServiceError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::create_container_service::CreateContainerServiceError::UnauthenticatedException(inner) => {
                 Error::UnauthenticatedException(inner)
@@ -616,6 +653,9 @@ impl From<crate::operation::create_container_service_deployment::CreateContainer
             }
             crate::operation::create_container_service_deployment::CreateContainerServiceDeploymentError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
+            }
+            crate::operation::create_container_service_deployment::CreateContainerServiceDeploymentError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
             }
             crate::operation::create_container_service_deployment::CreateContainerServiceDeploymentError::ServiceException(inner) => {
                 Error::ServiceException(inner)
@@ -664,6 +704,9 @@ impl From<crate::operation::create_container_service_registry_login::CreateConta
             crate::operation::create_container_service_registry_login::CreateContainerServiceRegistryLoginError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
+            crate::operation::create_container_service_registry_login::CreateContainerServiceRegistryLoginError::RegionSetupInProgressException(
+                inner,
+            ) => Error::RegionSetupInProgressException(inner),
             crate::operation::create_container_service_registry_login::CreateContainerServiceRegistryLoginError::ServiceException(inner) => {
                 Error::ServiceException(inner)
             }
@@ -698,6 +741,7 @@ impl From<crate::operation::create_disk::CreateDiskError> for Error {
             crate::operation::create_disk::CreateDiskError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::create_disk::CreateDiskError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::create_disk::CreateDiskError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::create_disk::CreateDiskError::RegionSetupInProgressException(inner) => Error::RegionSetupInProgressException(inner),
             crate::operation::create_disk::CreateDiskError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::create_disk::CreateDiskError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
             crate::operation::create_disk::CreateDiskError::Unhandled(inner) => Error::Unhandled(inner),
@@ -737,6 +781,9 @@ impl From<crate::operation::create_disk_from_snapshot::CreateDiskFromSnapshotErr
             crate::operation::create_disk_from_snapshot::CreateDiskFromSnapshotError::OperationFailureException(inner) => {
                 Error::OperationFailureException(inner)
             }
+            crate::operation::create_disk_from_snapshot::CreateDiskFromSnapshotError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::create_disk_from_snapshot::CreateDiskFromSnapshotError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::create_disk_from_snapshot::CreateDiskFromSnapshotError::UnauthenticatedException(inner) => {
                 Error::UnauthenticatedException(inner)
@@ -770,6 +817,9 @@ impl From<crate::operation::create_disk_snapshot::CreateDiskSnapshotError> for E
             crate::operation::create_disk_snapshot::CreateDiskSnapshotError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::create_disk_snapshot::CreateDiskSnapshotError::OperationFailureException(inner) => {
                 Error::OperationFailureException(inner)
+            }
+            crate::operation::create_disk_snapshot::CreateDiskSnapshotError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
             }
             crate::operation::create_disk_snapshot::CreateDiskSnapshotError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::create_disk_snapshot::CreateDiskSnapshotError::UnauthenticatedException(inner) => {
@@ -832,6 +882,7 @@ impl From<crate::operation::create_domain::CreateDomainError> for Error {
             crate::operation::create_domain::CreateDomainError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::create_domain::CreateDomainError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::create_domain::CreateDomainError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::create_domain::CreateDomainError::RegionSetupInProgressException(inner) => Error::RegionSetupInProgressException(inner),
             crate::operation::create_domain::CreateDomainError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::create_domain::CreateDomainError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
             crate::operation::create_domain::CreateDomainError::Unhandled(inner) => Error::Unhandled(inner),
@@ -863,6 +914,9 @@ impl From<crate::operation::create_domain_entry::CreateDomainEntryError> for Err
             crate::operation::create_domain_entry::CreateDomainEntryError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::create_domain_entry::CreateDomainEntryError::OperationFailureException(inner) => {
                 Error::OperationFailureException(inner)
+            }
+            crate::operation::create_domain_entry::CreateDomainEntryError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
             }
             crate::operation::create_domain_entry::CreateDomainEntryError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::create_domain_entry::CreateDomainEntryError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
@@ -907,6 +961,9 @@ impl From<crate::operation::create_gui_session_access_details::CreateGUISessionA
             crate::operation::create_gui_session_access_details::CreateGUISessionAccessDetailsError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
+            crate::operation::create_gui_session_access_details::CreateGUISessionAccessDetailsError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::create_gui_session_access_details::CreateGUISessionAccessDetailsError::ServiceException(inner) => {
                 Error::ServiceException(inner)
             }
@@ -941,6 +998,9 @@ impl From<crate::operation::create_instances::CreateInstancesError> for Error {
             crate::operation::create_instances::CreateInstancesError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::create_instances::CreateInstancesError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::create_instances::CreateInstancesError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::create_instances::CreateInstancesError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::create_instances::CreateInstancesError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::create_instances::CreateInstancesError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
             crate::operation::create_instances::CreateInstancesError::Unhandled(inner) => Error::Unhandled(inner),
@@ -986,6 +1046,9 @@ impl From<crate::operation::create_instances_from_snapshot::CreateInstancesFromS
             crate::operation::create_instances_from_snapshot::CreateInstancesFromSnapshotError::OperationFailureException(inner) => {
                 Error::OperationFailureException(inner)
             }
+            crate::operation::create_instances_from_snapshot::CreateInstancesFromSnapshotError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::create_instances_from_snapshot::CreateInstancesFromSnapshotError::ServiceException(inner) => {
                 Error::ServiceException(inner)
             }
@@ -1028,6 +1091,9 @@ impl From<crate::operation::create_instance_snapshot::CreateInstanceSnapshotErro
             crate::operation::create_instance_snapshot::CreateInstanceSnapshotError::OperationFailureException(inner) => {
                 Error::OperationFailureException(inner)
             }
+            crate::operation::create_instance_snapshot::CreateInstanceSnapshotError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::create_instance_snapshot::CreateInstanceSnapshotError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::create_instance_snapshot::CreateInstanceSnapshotError::UnauthenticatedException(inner) => {
                 Error::UnauthenticatedException(inner)
@@ -1060,6 +1126,9 @@ impl From<crate::operation::create_key_pair::CreateKeyPairError> for Error {
             crate::operation::create_key_pair::CreateKeyPairError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::create_key_pair::CreateKeyPairError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::create_key_pair::CreateKeyPairError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::create_key_pair::CreateKeyPairError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::create_key_pair::CreateKeyPairError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::create_key_pair::CreateKeyPairError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
             crate::operation::create_key_pair::CreateKeyPairError::Unhandled(inner) => Error::Unhandled(inner),
@@ -1091,6 +1160,9 @@ impl From<crate::operation::create_load_balancer::CreateLoadBalancerError> for E
             crate::operation::create_load_balancer::CreateLoadBalancerError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::create_load_balancer::CreateLoadBalancerError::OperationFailureException(inner) => {
                 Error::OperationFailureException(inner)
+            }
+            crate::operation::create_load_balancer::CreateLoadBalancerError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
             }
             crate::operation::create_load_balancer::CreateLoadBalancerError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::create_load_balancer::CreateLoadBalancerError::UnauthenticatedException(inner) => {
@@ -1143,6 +1215,9 @@ impl From<crate::operation::create_load_balancer_tls_certificate::CreateLoadBala
             crate::operation::create_load_balancer_tls_certificate::CreateLoadBalancerTlsCertificateError::OperationFailureException(inner) => {
                 Error::OperationFailureException(inner)
             }
+            crate::operation::create_load_balancer_tls_certificate::CreateLoadBalancerTlsCertificateError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::create_load_balancer_tls_certificate::CreateLoadBalancerTlsCertificateError::ServiceException(inner) => {
                 Error::ServiceException(inner)
             }
@@ -1188,6 +1263,9 @@ impl From<crate::operation::create_relational_database::CreateRelationalDatabase
             crate::operation::create_relational_database::CreateRelationalDatabaseError::OperationFailureException(inner) => {
                 Error::OperationFailureException(inner)
             }
+            crate::operation::create_relational_database::CreateRelationalDatabaseError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::create_relational_database::CreateRelationalDatabaseError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::create_relational_database::CreateRelationalDatabaseError::UnauthenticatedException(inner) => {
                 Error::UnauthenticatedException(inner)
@@ -1229,6 +1307,7 @@ impl From<crate::operation::create_relational_database_from_snapshot::CreateRela
             crate::operation::create_relational_database_from_snapshot::CreateRelationalDatabaseFromSnapshotError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::create_relational_database_from_snapshot::CreateRelationalDatabaseFromSnapshotError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::create_relational_database_from_snapshot::CreateRelationalDatabaseFromSnapshotError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::create_relational_database_from_snapshot::CreateRelationalDatabaseFromSnapshotError::RegionSetupInProgressException(inner) => Error::RegionSetupInProgressException(inner),
             crate::operation::create_relational_database_from_snapshot::CreateRelationalDatabaseFromSnapshotError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::create_relational_database_from_snapshot::CreateRelationalDatabaseFromSnapshotError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
             crate::operation::create_relational_database_from_snapshot::CreateRelationalDatabaseFromSnapshotError::Unhandled(inner) => Error::Unhandled(inner),
@@ -1278,6 +1357,9 @@ impl From<crate::operation::create_relational_database_snapshot::CreateRelationa
             crate::operation::create_relational_database_snapshot::CreateRelationalDatabaseSnapshotError::OperationFailureException(inner) => {
                 Error::OperationFailureException(inner)
             }
+            crate::operation::create_relational_database_snapshot::CreateRelationalDatabaseSnapshotError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::create_relational_database_snapshot::CreateRelationalDatabaseSnapshotError::ServiceException(inner) => {
                 Error::ServiceException(inner)
             }
@@ -1309,6 +1391,7 @@ impl From<crate::operation::delete_alarm::DeleteAlarmError> for Error {
             crate::operation::delete_alarm::DeleteAlarmError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::delete_alarm::DeleteAlarmError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::delete_alarm::DeleteAlarmError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::delete_alarm::DeleteAlarmError::RegionSetupInProgressException(inner) => Error::RegionSetupInProgressException(inner),
             crate::operation::delete_alarm::DeleteAlarmError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::delete_alarm::DeleteAlarmError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
             crate::operation::delete_alarm::DeleteAlarmError::Unhandled(inner) => Error::Unhandled(inner),
@@ -1338,6 +1421,9 @@ impl From<crate::operation::delete_auto_snapshot::DeleteAutoSnapshotError> for E
             crate::operation::delete_auto_snapshot::DeleteAutoSnapshotError::OperationFailureException(inner) => {
                 Error::OperationFailureException(inner)
             }
+            crate::operation::delete_auto_snapshot::DeleteAutoSnapshotError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::delete_auto_snapshot::DeleteAutoSnapshotError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::delete_auto_snapshot::DeleteAutoSnapshotError::UnauthenticatedException(inner) => {
                 Error::UnauthenticatedException(inner)
@@ -1366,6 +1452,7 @@ impl From<crate::operation::delete_bucket::DeleteBucketError> for Error {
             crate::operation::delete_bucket::DeleteBucketError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::delete_bucket::DeleteBucketError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::delete_bucket::DeleteBucketError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_bucket::DeleteBucketError::RegionSetupInProgressException(inner) => Error::RegionSetupInProgressException(inner),
             crate::operation::delete_bucket::DeleteBucketError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::delete_bucket::DeleteBucketError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
             crate::operation::delete_bucket::DeleteBucketError::Unhandled(inner) => Error::Unhandled(inner),
@@ -1398,6 +1485,9 @@ impl From<crate::operation::delete_bucket_access_key::DeleteBucketAccessKeyError
                 Error::InvalidInputException(inner)
             }
             crate::operation::delete_bucket_access_key::DeleteBucketAccessKeyError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_bucket_access_key::DeleteBucketAccessKeyError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::delete_bucket_access_key::DeleteBucketAccessKeyError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::delete_bucket_access_key::DeleteBucketAccessKeyError::UnauthenticatedException(inner) => {
                 Error::UnauthenticatedException(inner)
@@ -1426,6 +1516,9 @@ impl From<crate::operation::delete_certificate::DeleteCertificateError> for Erro
             crate::operation::delete_certificate::DeleteCertificateError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::delete_certificate::DeleteCertificateError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::delete_certificate::DeleteCertificateError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_certificate::DeleteCertificateError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::delete_certificate::DeleteCertificateError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::delete_certificate::DeleteCertificateError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
             crate::operation::delete_certificate::DeleteCertificateError::Unhandled(inner) => Error::Unhandled(inner),
@@ -1455,6 +1548,9 @@ impl From<crate::operation::delete_contact_method::DeleteContactMethodError> for
             crate::operation::delete_contact_method::DeleteContactMethodError::OperationFailureException(inner) => {
                 Error::OperationFailureException(inner)
             }
+            crate::operation::delete_contact_method::DeleteContactMethodError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::delete_contact_method::DeleteContactMethodError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::delete_contact_method::DeleteContactMethodError::UnauthenticatedException(inner) => {
                 Error::UnauthenticatedException(inner)
@@ -1483,6 +1579,9 @@ impl From<crate::operation::delete_container_image::DeleteContainerImageError> f
             crate::operation::delete_container_image::DeleteContainerImageError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::delete_container_image::DeleteContainerImageError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::delete_container_image::DeleteContainerImageError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_container_image::DeleteContainerImageError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::delete_container_image::DeleteContainerImageError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::delete_container_image::DeleteContainerImageError::UnauthenticatedException(inner) => {
                 Error::UnauthenticatedException(inner)
@@ -1517,6 +1616,9 @@ impl From<crate::operation::delete_container_service::DeleteContainerServiceErro
                 Error::InvalidInputException(inner)
             }
             crate::operation::delete_container_service::DeleteContainerServiceError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_container_service::DeleteContainerServiceError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::delete_container_service::DeleteContainerServiceError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::delete_container_service::DeleteContainerServiceError::UnauthenticatedException(inner) => {
                 Error::UnauthenticatedException(inner)
@@ -1547,6 +1649,7 @@ impl From<crate::operation::delete_disk::DeleteDiskError> for Error {
             crate::operation::delete_disk::DeleteDiskError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::delete_disk::DeleteDiskError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::delete_disk::DeleteDiskError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::delete_disk::DeleteDiskError::RegionSetupInProgressException(inner) => Error::RegionSetupInProgressException(inner),
             crate::operation::delete_disk::DeleteDiskError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::delete_disk::DeleteDiskError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
             crate::operation::delete_disk::DeleteDiskError::Unhandled(inner) => Error::Unhandled(inner),
@@ -1578,6 +1681,9 @@ impl From<crate::operation::delete_disk_snapshot::DeleteDiskSnapshotError> for E
             crate::operation::delete_disk_snapshot::DeleteDiskSnapshotError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::delete_disk_snapshot::DeleteDiskSnapshotError::OperationFailureException(inner) => {
                 Error::OperationFailureException(inner)
+            }
+            crate::operation::delete_disk_snapshot::DeleteDiskSnapshotError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
             }
             crate::operation::delete_disk_snapshot::DeleteDiskSnapshotError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::delete_disk_snapshot::DeleteDiskSnapshotError::UnauthenticatedException(inner) => {
@@ -1640,6 +1746,7 @@ impl From<crate::operation::delete_domain::DeleteDomainError> for Error {
             crate::operation::delete_domain::DeleteDomainError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::delete_domain::DeleteDomainError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::delete_domain::DeleteDomainError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::delete_domain::DeleteDomainError::RegionSetupInProgressException(inner) => Error::RegionSetupInProgressException(inner),
             crate::operation::delete_domain::DeleteDomainError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::delete_domain::DeleteDomainError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
             crate::operation::delete_domain::DeleteDomainError::Unhandled(inner) => Error::Unhandled(inner),
@@ -1672,6 +1779,9 @@ impl From<crate::operation::delete_domain_entry::DeleteDomainEntryError> for Err
             crate::operation::delete_domain_entry::DeleteDomainEntryError::OperationFailureException(inner) => {
                 Error::OperationFailureException(inner)
             }
+            crate::operation::delete_domain_entry::DeleteDomainEntryError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::delete_domain_entry::DeleteDomainEntryError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::delete_domain_entry::DeleteDomainEntryError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
             crate::operation::delete_domain_entry::DeleteDomainEntryError::Unhandled(inner) => Error::Unhandled(inner),
@@ -1702,6 +1812,9 @@ impl From<crate::operation::delete_instance::DeleteInstanceError> for Error {
             crate::operation::delete_instance::DeleteInstanceError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::delete_instance::DeleteInstanceError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::delete_instance::DeleteInstanceError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::delete_instance::DeleteInstanceError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::delete_instance::DeleteInstanceError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::delete_instance::DeleteInstanceError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
             crate::operation::delete_instance::DeleteInstanceError::Unhandled(inner) => Error::Unhandled(inner),
@@ -1740,6 +1853,9 @@ impl From<crate::operation::delete_instance_snapshot::DeleteInstanceSnapshotErro
             crate::operation::delete_instance_snapshot::DeleteInstanceSnapshotError::OperationFailureException(inner) => {
                 Error::OperationFailureException(inner)
             }
+            crate::operation::delete_instance_snapshot::DeleteInstanceSnapshotError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::delete_instance_snapshot::DeleteInstanceSnapshotError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::delete_instance_snapshot::DeleteInstanceSnapshotError::UnauthenticatedException(inner) => {
                 Error::UnauthenticatedException(inner)
@@ -1772,6 +1888,9 @@ impl From<crate::operation::delete_key_pair::DeleteKeyPairError> for Error {
             crate::operation::delete_key_pair::DeleteKeyPairError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::delete_key_pair::DeleteKeyPairError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::delete_key_pair::DeleteKeyPairError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::delete_key_pair::DeleteKeyPairError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::delete_key_pair::DeleteKeyPairError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::delete_key_pair::DeleteKeyPairError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
             crate::operation::delete_key_pair::DeleteKeyPairError::Unhandled(inner) => Error::Unhandled(inner),
@@ -1803,6 +1922,9 @@ impl From<crate::operation::delete_known_host_keys::DeleteKnownHostKeysError> fo
             crate::operation::delete_known_host_keys::DeleteKnownHostKeysError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::delete_known_host_keys::DeleteKnownHostKeysError::OperationFailureException(inner) => {
                 Error::OperationFailureException(inner)
+            }
+            crate::operation::delete_known_host_keys::DeleteKnownHostKeysError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
             }
             crate::operation::delete_known_host_keys::DeleteKnownHostKeysError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::delete_known_host_keys::DeleteKnownHostKeysError::UnauthenticatedException(inner) => {
@@ -1837,6 +1959,9 @@ impl From<crate::operation::delete_load_balancer::DeleteLoadBalancerError> for E
             crate::operation::delete_load_balancer::DeleteLoadBalancerError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::delete_load_balancer::DeleteLoadBalancerError::OperationFailureException(inner) => {
                 Error::OperationFailureException(inner)
+            }
+            crate::operation::delete_load_balancer::DeleteLoadBalancerError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
             }
             crate::operation::delete_load_balancer::DeleteLoadBalancerError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::delete_load_balancer::DeleteLoadBalancerError::UnauthenticatedException(inner) => {
@@ -1889,6 +2014,9 @@ impl From<crate::operation::delete_load_balancer_tls_certificate::DeleteLoadBala
             crate::operation::delete_load_balancer_tls_certificate::DeleteLoadBalancerTlsCertificateError::OperationFailureException(inner) => {
                 Error::OperationFailureException(inner)
             }
+            crate::operation::delete_load_balancer_tls_certificate::DeleteLoadBalancerTlsCertificateError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::delete_load_balancer_tls_certificate::DeleteLoadBalancerTlsCertificateError::ServiceException(inner) => {
                 Error::ServiceException(inner)
             }
@@ -1933,6 +2061,9 @@ impl From<crate::operation::delete_relational_database::DeleteRelationalDatabase
             crate::operation::delete_relational_database::DeleteRelationalDatabaseError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::delete_relational_database::DeleteRelationalDatabaseError::OperationFailureException(inner) => {
                 Error::OperationFailureException(inner)
+            }
+            crate::operation::delete_relational_database::DeleteRelationalDatabaseError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
             }
             crate::operation::delete_relational_database::DeleteRelationalDatabaseError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::delete_relational_database::DeleteRelationalDatabaseError::UnauthenticatedException(inner) => {
@@ -1984,6 +2115,9 @@ impl From<crate::operation::delete_relational_database_snapshot::DeleteRelationa
             }
             crate::operation::delete_relational_database_snapshot::DeleteRelationalDatabaseSnapshotError::OperationFailureException(inner) => {
                 Error::OperationFailureException(inner)
+            }
+            crate::operation::delete_relational_database_snapshot::DeleteRelationalDatabaseSnapshotError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
             }
             crate::operation::delete_relational_database_snapshot::DeleteRelationalDatabaseSnapshotError::ServiceException(inner) => {
                 Error::ServiceException(inner)
@@ -2069,6 +2203,7 @@ impl From<crate::operation::detach_disk::DetachDiskError> for Error {
             crate::operation::detach_disk::DetachDiskError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::detach_disk::DetachDiskError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::detach_disk::DetachDiskError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::detach_disk::DetachDiskError::RegionSetupInProgressException(inner) => Error::RegionSetupInProgressException(inner),
             crate::operation::detach_disk::DetachDiskError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::detach_disk::DetachDiskError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
             crate::operation::detach_disk::DetachDiskError::Unhandled(inner) => Error::Unhandled(inner),
@@ -2118,6 +2253,9 @@ impl From<crate::operation::detach_instances_from_load_balancer::DetachInstances
             crate::operation::detach_instances_from_load_balancer::DetachInstancesFromLoadBalancerError::OperationFailureException(inner) => {
                 Error::OperationFailureException(inner)
             }
+            crate::operation::detach_instances_from_load_balancer::DetachInstancesFromLoadBalancerError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::detach_instances_from_load_balancer::DetachInstancesFromLoadBalancerError::ServiceException(inner) => {
                 Error::ServiceException(inner)
             }
@@ -2152,6 +2290,9 @@ impl From<crate::operation::detach_static_ip::DetachStaticIpError> for Error {
             crate::operation::detach_static_ip::DetachStaticIpError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::detach_static_ip::DetachStaticIpError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::detach_static_ip::DetachStaticIpError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::detach_static_ip::DetachStaticIpError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::detach_static_ip::DetachStaticIpError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::detach_static_ip::DetachStaticIpError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
             crate::operation::detach_static_ip::DetachStaticIpError::Unhandled(inner) => Error::Unhandled(inner),
@@ -2179,6 +2320,9 @@ impl From<crate::operation::disable_add_on::DisableAddOnError> for Error {
             crate::operation::disable_add_on::DisableAddOnError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::disable_add_on::DisableAddOnError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::disable_add_on::DisableAddOnError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::disable_add_on::DisableAddOnError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::disable_add_on::DisableAddOnError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::disable_add_on::DisableAddOnError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
             crate::operation::disable_add_on::DisableAddOnError::Unhandled(inner) => Error::Unhandled(inner),
@@ -2218,6 +2362,9 @@ impl From<crate::operation::download_default_key_pair::DownloadDefaultKeyPairErr
             crate::operation::download_default_key_pair::DownloadDefaultKeyPairError::OperationFailureException(inner) => {
                 Error::OperationFailureException(inner)
             }
+            crate::operation::download_default_key_pair::DownloadDefaultKeyPairError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::download_default_key_pair::DownloadDefaultKeyPairError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::download_default_key_pair::DownloadDefaultKeyPairError::UnauthenticatedException(inner) => {
                 Error::UnauthenticatedException(inner)
@@ -2247,6 +2394,7 @@ impl From<crate::operation::enable_add_on::EnableAddOnError> for Error {
             crate::operation::enable_add_on::EnableAddOnError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::enable_add_on::EnableAddOnError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::enable_add_on::EnableAddOnError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::enable_add_on::EnableAddOnError::RegionSetupInProgressException(inner) => Error::RegionSetupInProgressException(inner),
             crate::operation::enable_add_on::EnableAddOnError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::enable_add_on::EnableAddOnError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
             crate::operation::enable_add_on::EnableAddOnError::Unhandled(inner) => Error::Unhandled(inner),
@@ -2277,6 +2425,9 @@ impl From<crate::operation::export_snapshot::ExportSnapshotError> for Error {
             crate::operation::export_snapshot::ExportSnapshotError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::export_snapshot::ExportSnapshotError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::export_snapshot::ExportSnapshotError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::export_snapshot::ExportSnapshotError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::export_snapshot::ExportSnapshotError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::export_snapshot::ExportSnapshotError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
             crate::operation::export_snapshot::ExportSnapshotError::Unhandled(inner) => Error::Unhandled(inner),
@@ -2307,6 +2458,9 @@ impl From<crate::operation::get_active_names::GetActiveNamesError> for Error {
             crate::operation::get_active_names::GetActiveNamesError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::get_active_names::GetActiveNamesError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::get_active_names::GetActiveNamesError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::get_active_names::GetActiveNamesError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::get_active_names::GetActiveNamesError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::get_active_names::GetActiveNamesError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
             crate::operation::get_active_names::GetActiveNamesError::Unhandled(inner) => Error::Unhandled(inner),
@@ -2334,6 +2488,7 @@ impl From<crate::operation::get_alarms::GetAlarmsError> for Error {
             crate::operation::get_alarms::GetAlarmsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::get_alarms::GetAlarmsError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::get_alarms::GetAlarmsError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::get_alarms::GetAlarmsError::RegionSetupInProgressException(inner) => Error::RegionSetupInProgressException(inner),
             crate::operation::get_alarms::GetAlarmsError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::get_alarms::GetAlarmsError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
             crate::operation::get_alarms::GetAlarmsError::Unhandled(inner) => Error::Unhandled(inner),
@@ -2361,6 +2516,9 @@ impl From<crate::operation::get_auto_snapshots::GetAutoSnapshotsError> for Error
             crate::operation::get_auto_snapshots::GetAutoSnapshotsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::get_auto_snapshots::GetAutoSnapshotsError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::get_auto_snapshots::GetAutoSnapshotsError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::get_auto_snapshots::GetAutoSnapshotsError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::get_auto_snapshots::GetAutoSnapshotsError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::get_auto_snapshots::GetAutoSnapshotsError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
             crate::operation::get_auto_snapshots::GetAutoSnapshotsError::Unhandled(inner) => Error::Unhandled(inner),
@@ -2391,6 +2549,9 @@ impl From<crate::operation::get_blueprints::GetBlueprintsError> for Error {
             crate::operation::get_blueprints::GetBlueprintsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::get_blueprints::GetBlueprintsError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::get_blueprints::GetBlueprintsError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::get_blueprints::GetBlueprintsError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::get_blueprints::GetBlueprintsError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::get_blueprints::GetBlueprintsError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
             crate::operation::get_blueprints::GetBlueprintsError::Unhandled(inner) => Error::Unhandled(inner),
@@ -2417,6 +2578,9 @@ impl From<crate::operation::get_bucket_access_keys::GetBucketAccessKeysError> fo
             crate::operation::get_bucket_access_keys::GetBucketAccessKeysError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::get_bucket_access_keys::GetBucketAccessKeysError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::get_bucket_access_keys::GetBucketAccessKeysError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_bucket_access_keys::GetBucketAccessKeysError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::get_bucket_access_keys::GetBucketAccessKeysError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::get_bucket_access_keys::GetBucketAccessKeysError::UnauthenticatedException(inner) => {
                 Error::UnauthenticatedException(inner)
@@ -2444,6 +2608,9 @@ impl From<crate::operation::get_bucket_bundles::GetBucketBundlesError> for Error
         match err {
             crate::operation::get_bucket_bundles::GetBucketBundlesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::get_bucket_bundles::GetBucketBundlesError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::get_bucket_bundles::GetBucketBundlesError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::get_bucket_bundles::GetBucketBundlesError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::get_bucket_bundles::GetBucketBundlesError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
             crate::operation::get_bucket_bundles::GetBucketBundlesError::Unhandled(inner) => Error::Unhandled(inner),
@@ -2470,6 +2637,9 @@ impl From<crate::operation::get_bucket_metric_data::GetBucketMetricDataError> fo
             crate::operation::get_bucket_metric_data::GetBucketMetricDataError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::get_bucket_metric_data::GetBucketMetricDataError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::get_bucket_metric_data::GetBucketMetricDataError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_bucket_metric_data::GetBucketMetricDataError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::get_bucket_metric_data::GetBucketMetricDataError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::get_bucket_metric_data::GetBucketMetricDataError::UnauthenticatedException(inner) => {
                 Error::UnauthenticatedException(inner)
@@ -2498,6 +2668,7 @@ impl From<crate::operation::get_buckets::GetBucketsError> for Error {
             crate::operation::get_buckets::GetBucketsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::get_buckets::GetBucketsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::get_buckets::GetBucketsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_buckets::GetBucketsError::RegionSetupInProgressException(inner) => Error::RegionSetupInProgressException(inner),
             crate::operation::get_buckets::GetBucketsError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::get_buckets::GetBucketsError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
             crate::operation::get_buckets::GetBucketsError::Unhandled(inner) => Error::Unhandled(inner),
@@ -2526,6 +2697,7 @@ impl From<crate::operation::get_bundles::GetBundlesError> for Error {
             crate::operation::get_bundles::GetBundlesError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::get_bundles::GetBundlesError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::get_bundles::GetBundlesError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::get_bundles::GetBundlesError::RegionSetupInProgressException(inner) => Error::RegionSetupInProgressException(inner),
             crate::operation::get_bundles::GetBundlesError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::get_bundles::GetBundlesError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
             crate::operation::get_bundles::GetBundlesError::Unhandled(inner) => Error::Unhandled(inner),
@@ -2552,6 +2724,9 @@ impl From<crate::operation::get_certificates::GetCertificatesError> for Error {
             crate::operation::get_certificates::GetCertificatesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::get_certificates::GetCertificatesError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::get_certificates::GetCertificatesError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_certificates::GetCertificatesError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::get_certificates::GetCertificatesError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::get_certificates::GetCertificatesError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
             crate::operation::get_certificates::GetCertificatesError::Unhandled(inner) => Error::Unhandled(inner),
@@ -2601,6 +2776,9 @@ impl From<crate::operation::get_cloud_formation_stack_records::GetCloudFormation
             crate::operation::get_cloud_formation_stack_records::GetCloudFormationStackRecordsError::OperationFailureException(inner) => {
                 Error::OperationFailureException(inner)
             }
+            crate::operation::get_cloud_formation_stack_records::GetCloudFormationStackRecordsError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::get_cloud_formation_stack_records::GetCloudFormationStackRecordsError::ServiceException(inner) => {
                 Error::ServiceException(inner)
             }
@@ -2634,6 +2812,9 @@ impl From<crate::operation::get_contact_methods::GetContactMethodsError> for Err
             crate::operation::get_contact_methods::GetContactMethodsError::OperationFailureException(inner) => {
                 Error::OperationFailureException(inner)
             }
+            crate::operation::get_contact_methods::GetContactMethodsError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::get_contact_methods::GetContactMethodsError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::get_contact_methods::GetContactMethodsError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
             crate::operation::get_contact_methods::GetContactMethodsError::Unhandled(inner) => Error::Unhandled(inner),
@@ -2663,6 +2844,9 @@ impl From<crate::operation::get_container_api_metadata::GetContainerAPIMetadataE
             crate::operation::get_container_api_metadata::GetContainerAPIMetadataError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
+            crate::operation::get_container_api_metadata::GetContainerAPIMetadataError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::get_container_api_metadata::GetContainerAPIMetadataError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::get_container_api_metadata::GetContainerAPIMetadataError::UnauthenticatedException(inner) => {
                 Error::UnauthenticatedException(inner)
@@ -2691,6 +2875,9 @@ impl From<crate::operation::get_container_images::GetContainerImagesError> for E
             crate::operation::get_container_images::GetContainerImagesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::get_container_images::GetContainerImagesError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::get_container_images::GetContainerImagesError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_container_images::GetContainerImagesError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::get_container_images::GetContainerImagesError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::get_container_images::GetContainerImagesError::UnauthenticatedException(inner) => {
                 Error::UnauthenticatedException(inner)
@@ -2719,6 +2906,9 @@ impl From<crate::operation::get_container_log::GetContainerLogError> for Error {
             crate::operation::get_container_log::GetContainerLogError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::get_container_log::GetContainerLogError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::get_container_log::GetContainerLogError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_container_log::GetContainerLogError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::get_container_log::GetContainerLogError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::get_container_log::GetContainerLogError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
             crate::operation::get_container_log::GetContainerLogError::Unhandled(inner) => Error::Unhandled(inner),
@@ -2761,6 +2951,9 @@ impl From<crate::operation::get_container_service_deployments::GetContainerServi
             }
             crate::operation::get_container_service_deployments::GetContainerServiceDeploymentsError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
+            }
+            crate::operation::get_container_service_deployments::GetContainerServiceDeploymentsError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
             }
             crate::operation::get_container_service_deployments::GetContainerServiceDeploymentsError::ServiceException(inner) => {
                 Error::ServiceException(inner)
@@ -2809,6 +3002,9 @@ impl From<crate::operation::get_container_service_metric_data::GetContainerServi
             crate::operation::get_container_service_metric_data::GetContainerServiceMetricDataError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
+            crate::operation::get_container_service_metric_data::GetContainerServiceMetricDataError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::get_container_service_metric_data::GetContainerServiceMetricDataError::ServiceException(inner) => {
                 Error::ServiceException(inner)
             }
@@ -2848,6 +3044,9 @@ impl From<crate::operation::get_container_service_powers::GetContainerServicePow
             crate::operation::get_container_service_powers::GetContainerServicePowersError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
+            crate::operation::get_container_service_powers::GetContainerServicePowersError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::get_container_service_powers::GetContainerServicePowersError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::get_container_service_powers::GetContainerServicePowersError::UnauthenticatedException(inner) => {
                 Error::UnauthenticatedException(inner)
@@ -2876,6 +3075,9 @@ impl From<crate::operation::get_container_services::GetContainerServicesError> f
             crate::operation::get_container_services::GetContainerServicesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::get_container_services::GetContainerServicesError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::get_container_services::GetContainerServicesError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_container_services::GetContainerServicesError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::get_container_services::GetContainerServicesError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::get_container_services::GetContainerServicesError::UnauthenticatedException(inner) => {
                 Error::UnauthenticatedException(inner)
@@ -2904,6 +3106,9 @@ impl From<crate::operation::get_cost_estimate::GetCostEstimateError> for Error {
             crate::operation::get_cost_estimate::GetCostEstimateError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::get_cost_estimate::GetCostEstimateError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::get_cost_estimate::GetCostEstimateError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_cost_estimate::GetCostEstimateError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::get_cost_estimate::GetCostEstimateError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::get_cost_estimate::GetCostEstimateError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
             crate::operation::get_cost_estimate::GetCostEstimateError::Unhandled(inner) => Error::Unhandled(inner),
@@ -2932,6 +3137,7 @@ impl From<crate::operation::get_disk::GetDiskError> for Error {
             crate::operation::get_disk::GetDiskError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::get_disk::GetDiskError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::get_disk::GetDiskError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::get_disk::GetDiskError::RegionSetupInProgressException(inner) => Error::RegionSetupInProgressException(inner),
             crate::operation::get_disk::GetDiskError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::get_disk::GetDiskError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
             crate::operation::get_disk::GetDiskError::Unhandled(inner) => Error::Unhandled(inner),
@@ -2960,6 +3166,7 @@ impl From<crate::operation::get_disks::GetDisksError> for Error {
             crate::operation::get_disks::GetDisksError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::get_disks::GetDisksError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::get_disks::GetDisksError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::get_disks::GetDisksError::RegionSetupInProgressException(inner) => Error::RegionSetupInProgressException(inner),
             crate::operation::get_disks::GetDisksError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::get_disks::GetDisksError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
             crate::operation::get_disks::GetDisksError::Unhandled(inner) => Error::Unhandled(inner),
@@ -2990,6 +3197,9 @@ impl From<crate::operation::get_disk_snapshot::GetDiskSnapshotError> for Error {
             crate::operation::get_disk_snapshot::GetDiskSnapshotError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::get_disk_snapshot::GetDiskSnapshotError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::get_disk_snapshot::GetDiskSnapshotError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::get_disk_snapshot::GetDiskSnapshotError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::get_disk_snapshot::GetDiskSnapshotError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::get_disk_snapshot::GetDiskSnapshotError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
             crate::operation::get_disk_snapshot::GetDiskSnapshotError::Unhandled(inner) => Error::Unhandled(inner),
@@ -3020,6 +3230,9 @@ impl From<crate::operation::get_disk_snapshots::GetDiskSnapshotsError> for Error
             crate::operation::get_disk_snapshots::GetDiskSnapshotsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::get_disk_snapshots::GetDiskSnapshotsError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::get_disk_snapshots::GetDiskSnapshotsError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::get_disk_snapshots::GetDiskSnapshotsError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::get_disk_snapshots::GetDiskSnapshotsError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::get_disk_snapshots::GetDiskSnapshotsError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
             crate::operation::get_disk_snapshots::GetDiskSnapshotsError::Unhandled(inner) => Error::Unhandled(inner),
@@ -3202,6 +3415,7 @@ impl From<crate::operation::get_domain::GetDomainError> for Error {
             crate::operation::get_domain::GetDomainError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::get_domain::GetDomainError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::get_domain::GetDomainError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::get_domain::GetDomainError::RegionSetupInProgressException(inner) => Error::RegionSetupInProgressException(inner),
             crate::operation::get_domain::GetDomainError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::get_domain::GetDomainError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
             crate::operation::get_domain::GetDomainError::Unhandled(inner) => Error::Unhandled(inner),
@@ -3230,6 +3444,7 @@ impl From<crate::operation::get_domains::GetDomainsError> for Error {
             crate::operation::get_domains::GetDomainsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::get_domains::GetDomainsError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::get_domains::GetDomainsError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::get_domains::GetDomainsError::RegionSetupInProgressException(inner) => Error::RegionSetupInProgressException(inner),
             crate::operation::get_domains::GetDomainsError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::get_domains::GetDomainsError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
             crate::operation::get_domains::GetDomainsError::Unhandled(inner) => Error::Unhandled(inner),
@@ -3269,6 +3484,9 @@ impl From<crate::operation::get_export_snapshot_records::GetExportSnapshotRecord
             crate::operation::get_export_snapshot_records::GetExportSnapshotRecordsError::OperationFailureException(inner) => {
                 Error::OperationFailureException(inner)
             }
+            crate::operation::get_export_snapshot_records::GetExportSnapshotRecordsError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::get_export_snapshot_records::GetExportSnapshotRecordsError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::get_export_snapshot_records::GetExportSnapshotRecordsError::UnauthenticatedException(inner) => {
                 Error::UnauthenticatedException(inner)
@@ -3299,6 +3517,7 @@ impl From<crate::operation::get_instance::GetInstanceError> for Error {
             crate::operation::get_instance::GetInstanceError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::get_instance::GetInstanceError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::get_instance::GetInstanceError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::get_instance::GetInstanceError::RegionSetupInProgressException(inner) => Error::RegionSetupInProgressException(inner),
             crate::operation::get_instance::GetInstanceError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::get_instance::GetInstanceError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
             crate::operation::get_instance::GetInstanceError::Unhandled(inner) => Error::Unhandled(inner),
@@ -3337,6 +3556,9 @@ impl From<crate::operation::get_instance_access_details::GetInstanceAccessDetail
             crate::operation::get_instance_access_details::GetInstanceAccessDetailsError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::get_instance_access_details::GetInstanceAccessDetailsError::OperationFailureException(inner) => {
                 Error::OperationFailureException(inner)
+            }
+            crate::operation::get_instance_access_details::GetInstanceAccessDetailsError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
             }
             crate::operation::get_instance_access_details::GetInstanceAccessDetailsError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::get_instance_access_details::GetInstanceAccessDetailsError::UnauthenticatedException(inner) => {
@@ -3378,6 +3600,9 @@ impl From<crate::operation::get_instance_metric_data::GetInstanceMetricDataError
             crate::operation::get_instance_metric_data::GetInstanceMetricDataError::OperationFailureException(inner) => {
                 Error::OperationFailureException(inner)
             }
+            crate::operation::get_instance_metric_data::GetInstanceMetricDataError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::get_instance_metric_data::GetInstanceMetricDataError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::get_instance_metric_data::GetInstanceMetricDataError::UnauthenticatedException(inner) => {
                 Error::UnauthenticatedException(inner)
@@ -3418,6 +3643,9 @@ impl From<crate::operation::get_instance_port_states::GetInstancePortStatesError
             crate::operation::get_instance_port_states::GetInstancePortStatesError::OperationFailureException(inner) => {
                 Error::OperationFailureException(inner)
             }
+            crate::operation::get_instance_port_states::GetInstancePortStatesError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::get_instance_port_states::GetInstancePortStatesError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::get_instance_port_states::GetInstancePortStatesError::UnauthenticatedException(inner) => {
                 Error::UnauthenticatedException(inner)
@@ -3450,6 +3678,7 @@ impl From<crate::operation::get_instances::GetInstancesError> for Error {
             crate::operation::get_instances::GetInstancesError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::get_instances::GetInstancesError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::get_instances::GetInstancesError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::get_instances::GetInstancesError::RegionSetupInProgressException(inner) => Error::RegionSetupInProgressException(inner),
             crate::operation::get_instances::GetInstancesError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::get_instances::GetInstancesError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
             crate::operation::get_instances::GetInstancesError::Unhandled(inner) => Error::Unhandled(inner),
@@ -3481,6 +3710,9 @@ impl From<crate::operation::get_instance_snapshot::GetInstanceSnapshotError> for
             crate::operation::get_instance_snapshot::GetInstanceSnapshotError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::get_instance_snapshot::GetInstanceSnapshotError::OperationFailureException(inner) => {
                 Error::OperationFailureException(inner)
+            }
+            crate::operation::get_instance_snapshot::GetInstanceSnapshotError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
             }
             crate::operation::get_instance_snapshot::GetInstanceSnapshotError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::get_instance_snapshot::GetInstanceSnapshotError::UnauthenticatedException(inner) => {
@@ -3516,6 +3748,9 @@ impl From<crate::operation::get_instance_snapshots::GetInstanceSnapshotsError> f
             crate::operation::get_instance_snapshots::GetInstanceSnapshotsError::OperationFailureException(inner) => {
                 Error::OperationFailureException(inner)
             }
+            crate::operation::get_instance_snapshots::GetInstanceSnapshotsError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::get_instance_snapshots::GetInstanceSnapshotsError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::get_instance_snapshots::GetInstanceSnapshotsError::UnauthenticatedException(inner) => {
                 Error::UnauthenticatedException(inner)
@@ -3548,6 +3783,9 @@ impl From<crate::operation::get_instance_state::GetInstanceStateError> for Error
             crate::operation::get_instance_state::GetInstanceStateError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::get_instance_state::GetInstanceStateError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::get_instance_state::GetInstanceStateError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::get_instance_state::GetInstanceStateError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::get_instance_state::GetInstanceStateError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::get_instance_state::GetInstanceStateError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
             crate::operation::get_instance_state::GetInstanceStateError::Unhandled(inner) => Error::Unhandled(inner),
@@ -3576,6 +3814,7 @@ impl From<crate::operation::get_key_pair::GetKeyPairError> for Error {
             crate::operation::get_key_pair::GetKeyPairError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::get_key_pair::GetKeyPairError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::get_key_pair::GetKeyPairError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::get_key_pair::GetKeyPairError::RegionSetupInProgressException(inner) => Error::RegionSetupInProgressException(inner),
             crate::operation::get_key_pair::GetKeyPairError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::get_key_pair::GetKeyPairError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
             crate::operation::get_key_pair::GetKeyPairError::Unhandled(inner) => Error::Unhandled(inner),
@@ -3606,6 +3845,7 @@ impl From<crate::operation::get_key_pairs::GetKeyPairsError> for Error {
             crate::operation::get_key_pairs::GetKeyPairsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::get_key_pairs::GetKeyPairsError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::get_key_pairs::GetKeyPairsError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::get_key_pairs::GetKeyPairsError::RegionSetupInProgressException(inner) => Error::RegionSetupInProgressException(inner),
             crate::operation::get_key_pairs::GetKeyPairsError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::get_key_pairs::GetKeyPairsError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
             crate::operation::get_key_pairs::GetKeyPairsError::Unhandled(inner) => Error::Unhandled(inner),
@@ -3636,6 +3876,9 @@ impl From<crate::operation::get_load_balancer::GetLoadBalancerError> for Error {
             crate::operation::get_load_balancer::GetLoadBalancerError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::get_load_balancer::GetLoadBalancerError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::get_load_balancer::GetLoadBalancerError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::get_load_balancer::GetLoadBalancerError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::get_load_balancer::GetLoadBalancerError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::get_load_balancer::GetLoadBalancerError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
             crate::operation::get_load_balancer::GetLoadBalancerError::Unhandled(inner) => Error::Unhandled(inner),
@@ -3677,6 +3920,9 @@ impl From<crate::operation::get_load_balancer_metric_data::GetLoadBalancerMetric
             crate::operation::get_load_balancer_metric_data::GetLoadBalancerMetricDataError::OperationFailureException(inner) => {
                 Error::OperationFailureException(inner)
             }
+            crate::operation::get_load_balancer_metric_data::GetLoadBalancerMetricDataError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::get_load_balancer_metric_data::GetLoadBalancerMetricDataError::ServiceException(inner) => {
                 Error::ServiceException(inner)
             }
@@ -3711,6 +3957,9 @@ impl From<crate::operation::get_load_balancers::GetLoadBalancersError> for Error
             crate::operation::get_load_balancers::GetLoadBalancersError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::get_load_balancers::GetLoadBalancersError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::get_load_balancers::GetLoadBalancersError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::get_load_balancers::GetLoadBalancersError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::get_load_balancers::GetLoadBalancersError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::get_load_balancers::GetLoadBalancersError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
             crate::operation::get_load_balancers::GetLoadBalancersError::Unhandled(inner) => Error::Unhandled(inner),
@@ -3760,6 +4009,9 @@ impl From<crate::operation::get_load_balancer_tls_certificates::GetLoadBalancerT
             crate::operation::get_load_balancer_tls_certificates::GetLoadBalancerTlsCertificatesError::OperationFailureException(inner) => {
                 Error::OperationFailureException(inner)
             }
+            crate::operation::get_load_balancer_tls_certificates::GetLoadBalancerTlsCertificatesError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::get_load_balancer_tls_certificates::GetLoadBalancerTlsCertificatesError::ServiceException(inner) => {
                 Error::ServiceException(inner)
             }
@@ -3799,6 +4051,9 @@ impl From<crate::operation::get_load_balancer_tls_policies::GetLoadBalancerTlsPo
             crate::operation::get_load_balancer_tls_policies::GetLoadBalancerTlsPoliciesError::InvalidInputException(inner) => {
                 Error::InvalidInputException(inner)
             }
+            crate::operation::get_load_balancer_tls_policies::GetLoadBalancerTlsPoliciesError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::get_load_balancer_tls_policies::GetLoadBalancerTlsPoliciesError::ServiceException(inner) => {
                 Error::ServiceException(inner)
             }
@@ -3833,6 +4088,7 @@ impl From<crate::operation::get_operation::GetOperationError> for Error {
             crate::operation::get_operation::GetOperationError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::get_operation::GetOperationError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::get_operation::GetOperationError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::get_operation::GetOperationError::RegionSetupInProgressException(inner) => Error::RegionSetupInProgressException(inner),
             crate::operation::get_operation::GetOperationError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::get_operation::GetOperationError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
             crate::operation::get_operation::GetOperationError::Unhandled(inner) => Error::Unhandled(inner),
@@ -3863,6 +4119,9 @@ impl From<crate::operation::get_operations::GetOperationsError> for Error {
             crate::operation::get_operations::GetOperationsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::get_operations::GetOperationsError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::get_operations::GetOperationsError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::get_operations::GetOperationsError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::get_operations::GetOperationsError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::get_operations::GetOperationsError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
             crate::operation::get_operations::GetOperationsError::Unhandled(inner) => Error::Unhandled(inner),
@@ -3902,6 +4161,9 @@ impl From<crate::operation::get_operations_for_resource::GetOperationsForResourc
             crate::operation::get_operations_for_resource::GetOperationsForResourceError::OperationFailureException(inner) => {
                 Error::OperationFailureException(inner)
             }
+            crate::operation::get_operations_for_resource::GetOperationsForResourceError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::get_operations_for_resource::GetOperationsForResourceError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::get_operations_for_resource::GetOperationsForResourceError::UnauthenticatedException(inner) => {
                 Error::UnauthenticatedException(inner)
@@ -3932,6 +4194,7 @@ impl From<crate::operation::get_regions::GetRegionsError> for Error {
             crate::operation::get_regions::GetRegionsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::get_regions::GetRegionsError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::get_regions::GetRegionsError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::get_regions::GetRegionsError::RegionSetupInProgressException(inner) => Error::RegionSetupInProgressException(inner),
             crate::operation::get_regions::GetRegionsError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::get_regions::GetRegionsError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
             crate::operation::get_regions::GetRegionsError::Unhandled(inner) => Error::Unhandled(inner),
@@ -3969,6 +4232,9 @@ impl From<crate::operation::get_relational_database::GetRelationalDatabaseError>
             crate::operation::get_relational_database::GetRelationalDatabaseError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::get_relational_database::GetRelationalDatabaseError::OperationFailureException(inner) => {
                 Error::OperationFailureException(inner)
+            }
+            crate::operation::get_relational_database::GetRelationalDatabaseError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
             }
             crate::operation::get_relational_database::GetRelationalDatabaseError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::get_relational_database::GetRelationalDatabaseError::UnauthenticatedException(inner) => {
@@ -4021,6 +4287,9 @@ impl From<crate::operation::get_relational_database_blueprints::GetRelationalDat
             crate::operation::get_relational_database_blueprints::GetRelationalDatabaseBlueprintsError::OperationFailureException(inner) => {
                 Error::OperationFailureException(inner)
             }
+            crate::operation::get_relational_database_blueprints::GetRelationalDatabaseBlueprintsError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::get_relational_database_blueprints::GetRelationalDatabaseBlueprintsError::ServiceException(inner) => {
                 Error::ServiceException(inner)
             }
@@ -4070,6 +4339,9 @@ impl From<crate::operation::get_relational_database_bundles::GetRelationalDataba
             crate::operation::get_relational_database_bundles::GetRelationalDatabaseBundlesError::OperationFailureException(inner) => {
                 Error::OperationFailureException(inner)
             }
+            crate::operation::get_relational_database_bundles::GetRelationalDatabaseBundlesError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::get_relational_database_bundles::GetRelationalDatabaseBundlesError::ServiceException(inner) => {
                 Error::ServiceException(inner)
             }
@@ -4118,6 +4390,9 @@ impl From<crate::operation::get_relational_database_events::GetRelationalDatabas
             }
             crate::operation::get_relational_database_events::GetRelationalDatabaseEventsError::OperationFailureException(inner) => {
                 Error::OperationFailureException(inner)
+            }
+            crate::operation::get_relational_database_events::GetRelationalDatabaseEventsError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
             }
             crate::operation::get_relational_database_events::GetRelationalDatabaseEventsError::ServiceException(inner) => {
                 Error::ServiceException(inner)
@@ -4172,6 +4447,9 @@ impl From<crate::operation::get_relational_database_log_events::GetRelationalDat
             crate::operation::get_relational_database_log_events::GetRelationalDatabaseLogEventsError::OperationFailureException(inner) => {
                 Error::OperationFailureException(inner)
             }
+            crate::operation::get_relational_database_log_events::GetRelationalDatabaseLogEventsError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::get_relational_database_log_events::GetRelationalDatabaseLogEventsError::ServiceException(inner) => {
                 Error::ServiceException(inner)
             }
@@ -4225,6 +4503,9 @@ impl From<crate::operation::get_relational_database_log_streams::GetRelationalDa
             crate::operation::get_relational_database_log_streams::GetRelationalDatabaseLogStreamsError::OperationFailureException(inner) => {
                 Error::OperationFailureException(inner)
             }
+            crate::operation::get_relational_database_log_streams::GetRelationalDatabaseLogStreamsError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::get_relational_database_log_streams::GetRelationalDatabaseLogStreamsError::ServiceException(inner) => {
                 Error::ServiceException(inner)
             }
@@ -4268,6 +4549,7 @@ impl From<crate::operation::get_relational_database_master_user_password::GetRel
             crate::operation::get_relational_database_master_user_password::GetRelationalDatabaseMasterUserPasswordError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::get_relational_database_master_user_password::GetRelationalDatabaseMasterUserPasswordError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::get_relational_database_master_user_password::GetRelationalDatabaseMasterUserPasswordError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::get_relational_database_master_user_password::GetRelationalDatabaseMasterUserPasswordError::RegionSetupInProgressException(inner) => Error::RegionSetupInProgressException(inner),
             crate::operation::get_relational_database_master_user_password::GetRelationalDatabaseMasterUserPasswordError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::get_relational_database_master_user_password::GetRelationalDatabaseMasterUserPasswordError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
             crate::operation::get_relational_database_master_user_password::GetRelationalDatabaseMasterUserPasswordError::Unhandled(inner) => Error::Unhandled(inner),
@@ -4316,6 +4598,9 @@ impl From<crate::operation::get_relational_database_metric_data::GetRelationalDa
             }
             crate::operation::get_relational_database_metric_data::GetRelationalDatabaseMetricDataError::OperationFailureException(inner) => {
                 Error::OperationFailureException(inner)
+            }
+            crate::operation::get_relational_database_metric_data::GetRelationalDatabaseMetricDataError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
             }
             crate::operation::get_relational_database_metric_data::GetRelationalDatabaseMetricDataError::ServiceException(inner) => {
                 Error::ServiceException(inner)
@@ -4370,6 +4655,9 @@ impl From<crate::operation::get_relational_database_parameters::GetRelationalDat
             crate::operation::get_relational_database_parameters::GetRelationalDatabaseParametersError::OperationFailureException(inner) => {
                 Error::OperationFailureException(inner)
             }
+            crate::operation::get_relational_database_parameters::GetRelationalDatabaseParametersError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::get_relational_database_parameters::GetRelationalDatabaseParametersError::ServiceException(inner) => {
                 Error::ServiceException(inner)
             }
@@ -4411,6 +4699,9 @@ impl From<crate::operation::get_relational_databases::GetRelationalDatabasesErro
             crate::operation::get_relational_databases::GetRelationalDatabasesError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::get_relational_databases::GetRelationalDatabasesError::OperationFailureException(inner) => {
                 Error::OperationFailureException(inner)
+            }
+            crate::operation::get_relational_databases::GetRelationalDatabasesError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
             }
             crate::operation::get_relational_databases::GetRelationalDatabasesError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::get_relational_databases::GetRelationalDatabasesError::UnauthenticatedException(inner) => {
@@ -4459,6 +4750,9 @@ impl From<crate::operation::get_relational_database_snapshot::GetRelationalDatab
             }
             crate::operation::get_relational_database_snapshot::GetRelationalDatabaseSnapshotError::OperationFailureException(inner) => {
                 Error::OperationFailureException(inner)
+            }
+            crate::operation::get_relational_database_snapshot::GetRelationalDatabaseSnapshotError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
             }
             crate::operation::get_relational_database_snapshot::GetRelationalDatabaseSnapshotError::ServiceException(inner) => {
                 Error::ServiceException(inner)
@@ -4513,6 +4807,9 @@ impl From<crate::operation::get_relational_database_snapshots::GetRelationalData
             crate::operation::get_relational_database_snapshots::GetRelationalDatabaseSnapshotsError::OperationFailureException(inner) => {
                 Error::OperationFailureException(inner)
             }
+            crate::operation::get_relational_database_snapshots::GetRelationalDatabaseSnapshotsError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::get_relational_database_snapshots::GetRelationalDatabaseSnapshotsError::ServiceException(inner) => {
                 Error::ServiceException(inner)
             }
@@ -4543,6 +4840,9 @@ impl From<crate::operation::get_setup_history::GetSetupHistoryError> for Error {
             crate::operation::get_setup_history::GetSetupHistoryError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::get_setup_history::GetSetupHistoryError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::get_setup_history::GetSetupHistoryError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_setup_history::GetSetupHistoryError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::get_setup_history::GetSetupHistoryError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::get_setup_history::GetSetupHistoryError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
             crate::operation::get_setup_history::GetSetupHistoryError::Unhandled(inner) => Error::Unhandled(inner),
@@ -4573,6 +4873,7 @@ impl From<crate::operation::get_static_ip::GetStaticIpError> for Error {
             crate::operation::get_static_ip::GetStaticIpError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::get_static_ip::GetStaticIpError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::get_static_ip::GetStaticIpError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::get_static_ip::GetStaticIpError::RegionSetupInProgressException(inner) => Error::RegionSetupInProgressException(inner),
             crate::operation::get_static_ip::GetStaticIpError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::get_static_ip::GetStaticIpError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
             crate::operation::get_static_ip::GetStaticIpError::Unhandled(inner) => Error::Unhandled(inner),
@@ -4603,6 +4904,9 @@ impl From<crate::operation::get_static_ips::GetStaticIpsError> for Error {
             crate::operation::get_static_ips::GetStaticIpsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::get_static_ips::GetStaticIpsError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::get_static_ips::GetStaticIpsError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::get_static_ips::GetStaticIpsError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::get_static_ips::GetStaticIpsError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::get_static_ips::GetStaticIpsError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
             crate::operation::get_static_ips::GetStaticIpsError::Unhandled(inner) => Error::Unhandled(inner),
@@ -4633,6 +4937,9 @@ impl From<crate::operation::import_key_pair::ImportKeyPairError> for Error {
             crate::operation::import_key_pair::ImportKeyPairError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::import_key_pair::ImportKeyPairError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::import_key_pair::ImportKeyPairError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::import_key_pair::ImportKeyPairError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::import_key_pair::ImportKeyPairError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::import_key_pair::ImportKeyPairError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
             crate::operation::import_key_pair::ImportKeyPairError::Unhandled(inner) => Error::Unhandled(inner),
@@ -4663,6 +4970,7 @@ impl From<crate::operation::is_vpc_peered::IsVpcPeeredError> for Error {
             crate::operation::is_vpc_peered::IsVpcPeeredError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::is_vpc_peered::IsVpcPeeredError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::is_vpc_peered::IsVpcPeeredError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::is_vpc_peered::IsVpcPeeredError::RegionSetupInProgressException(inner) => Error::RegionSetupInProgressException(inner),
             crate::operation::is_vpc_peered::IsVpcPeeredError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::is_vpc_peered::IsVpcPeeredError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
             crate::operation::is_vpc_peered::IsVpcPeeredError::Unhandled(inner) => Error::Unhandled(inner),
@@ -4702,6 +5010,9 @@ impl From<crate::operation::open_instance_public_ports::OpenInstancePublicPortsE
             crate::operation::open_instance_public_ports::OpenInstancePublicPortsError::OperationFailureException(inner) => {
                 Error::OperationFailureException(inner)
             }
+            crate::operation::open_instance_public_ports::OpenInstancePublicPortsError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::open_instance_public_ports::OpenInstancePublicPortsError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::open_instance_public_ports::OpenInstancePublicPortsError::UnauthenticatedException(inner) => {
                 Error::UnauthenticatedException(inner)
@@ -4732,6 +5043,7 @@ impl From<crate::operation::peer_vpc::PeerVpcError> for Error {
             crate::operation::peer_vpc::PeerVpcError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::peer_vpc::PeerVpcError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::peer_vpc::PeerVpcError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::peer_vpc::PeerVpcError::RegionSetupInProgressException(inner) => Error::RegionSetupInProgressException(inner),
             crate::operation::peer_vpc::PeerVpcError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::peer_vpc::PeerVpcError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
             crate::operation::peer_vpc::PeerVpcError::Unhandled(inner) => Error::Unhandled(inner),
@@ -4759,6 +5071,7 @@ impl From<crate::operation::put_alarm::PutAlarmError> for Error {
             crate::operation::put_alarm::PutAlarmError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::put_alarm::PutAlarmError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::put_alarm::PutAlarmError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::put_alarm::PutAlarmError::RegionSetupInProgressException(inner) => Error::RegionSetupInProgressException(inner),
             crate::operation::put_alarm::PutAlarmError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::put_alarm::PutAlarmError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
             crate::operation::put_alarm::PutAlarmError::Unhandled(inner) => Error::Unhandled(inner),
@@ -4798,6 +5111,9 @@ impl From<crate::operation::put_instance_public_ports::PutInstancePublicPortsErr
             crate::operation::put_instance_public_ports::PutInstancePublicPortsError::OperationFailureException(inner) => {
                 Error::OperationFailureException(inner)
             }
+            crate::operation::put_instance_public_ports::PutInstancePublicPortsError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::put_instance_public_ports::PutInstancePublicPortsError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::put_instance_public_ports::PutInstancePublicPortsError::UnauthenticatedException(inner) => {
                 Error::UnauthenticatedException(inner)
@@ -4830,6 +5146,9 @@ impl From<crate::operation::reboot_instance::RebootInstanceError> for Error {
             crate::operation::reboot_instance::RebootInstanceError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::reboot_instance::RebootInstanceError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::reboot_instance::RebootInstanceError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::reboot_instance::RebootInstanceError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::reboot_instance::RebootInstanceError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::reboot_instance::RebootInstanceError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
             crate::operation::reboot_instance::RebootInstanceError::Unhandled(inner) => Error::Unhandled(inner),
@@ -4869,6 +5188,9 @@ impl From<crate::operation::reboot_relational_database::RebootRelationalDatabase
             crate::operation::reboot_relational_database::RebootRelationalDatabaseError::OperationFailureException(inner) => {
                 Error::OperationFailureException(inner)
             }
+            crate::operation::reboot_relational_database::RebootRelationalDatabaseError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::reboot_relational_database::RebootRelationalDatabaseError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::reboot_relational_database::RebootRelationalDatabaseError::UnauthenticatedException(inner) => {
                 Error::UnauthenticatedException(inner)
@@ -4903,6 +5225,9 @@ impl From<crate::operation::register_container_image::RegisterContainerImageErro
                 Error::InvalidInputException(inner)
             }
             crate::operation::register_container_image::RegisterContainerImageError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::register_container_image::RegisterContainerImageError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::register_container_image::RegisterContainerImageError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::register_container_image::RegisterContainerImageError::UnauthenticatedException(inner) => {
                 Error::UnauthenticatedException(inner)
@@ -4935,6 +5260,9 @@ impl From<crate::operation::release_static_ip::ReleaseStaticIpError> for Error {
             crate::operation::release_static_ip::ReleaseStaticIpError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::release_static_ip::ReleaseStaticIpError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::release_static_ip::ReleaseStaticIpError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::release_static_ip::ReleaseStaticIpError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::release_static_ip::ReleaseStaticIpError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::release_static_ip::ReleaseStaticIpError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
             crate::operation::release_static_ip::ReleaseStaticIpError::Unhandled(inner) => Error::Unhandled(inner),
@@ -5015,6 +5343,9 @@ impl From<crate::operation::send_contact_method_verification::SendContactMethodV
             crate::operation::send_contact_method_verification::SendContactMethodVerificationError::OperationFailureException(inner) => {
                 Error::OperationFailureException(inner)
             }
+            crate::operation::send_contact_method_verification::SendContactMethodVerificationError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::send_contact_method_verification::SendContactMethodVerificationError::ServiceException(inner) => {
                 Error::ServiceException(inner)
             }
@@ -5049,6 +5380,9 @@ impl From<crate::operation::set_ip_address_type::SetIpAddressTypeError> for Erro
             crate::operation::set_ip_address_type::SetIpAddressTypeError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::set_ip_address_type::SetIpAddressTypeError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::set_ip_address_type::SetIpAddressTypeError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::set_ip_address_type::SetIpAddressTypeError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::set_ip_address_type::SetIpAddressTypeError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::set_ip_address_type::SetIpAddressTypeError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
             crate::operation::set_ip_address_type::SetIpAddressTypeError::Unhandled(inner) => Error::Unhandled(inner),
@@ -5084,6 +5418,9 @@ impl From<crate::operation::set_resource_access_for_bucket::SetResourceAccessFor
             crate::operation::set_resource_access_for_bucket::SetResourceAccessForBucketError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
+            crate::operation::set_resource_access_for_bucket::SetResourceAccessForBucketError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::set_resource_access_for_bucket::SetResourceAccessForBucketError::ServiceException(inner) => {
                 Error::ServiceException(inner)
             }
@@ -5114,6 +5451,9 @@ impl From<crate::operation::setup_instance_https::SetupInstanceHttpsError> for E
             crate::operation::setup_instance_https::SetupInstanceHttpsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::setup_instance_https::SetupInstanceHttpsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::setup_instance_https::SetupInstanceHttpsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::setup_instance_https::SetupInstanceHttpsError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::setup_instance_https::SetupInstanceHttpsError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::setup_instance_https::SetupInstanceHttpsError::UnauthenticatedException(inner) => {
                 Error::UnauthenticatedException(inner)
@@ -5142,6 +5482,9 @@ impl From<crate::operation::start_gui_session::StartGUISessionError> for Error {
             crate::operation::start_gui_session::StartGUISessionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::start_gui_session::StartGUISessionError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::start_gui_session::StartGUISessionError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::start_gui_session::StartGUISessionError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::start_gui_session::StartGUISessionError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::start_gui_session::StartGUISessionError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
             crate::operation::start_gui_session::StartGUISessionError::Unhandled(inner) => Error::Unhandled(inner),
@@ -5172,6 +5515,9 @@ impl From<crate::operation::start_instance::StartInstanceError> for Error {
             crate::operation::start_instance::StartInstanceError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::start_instance::StartInstanceError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::start_instance::StartInstanceError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::start_instance::StartInstanceError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::start_instance::StartInstanceError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::start_instance::StartInstanceError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
             crate::operation::start_instance::StartInstanceError::Unhandled(inner) => Error::Unhandled(inner),
@@ -5211,6 +5557,9 @@ impl From<crate::operation::start_relational_database::StartRelationalDatabaseEr
             crate::operation::start_relational_database::StartRelationalDatabaseError::OperationFailureException(inner) => {
                 Error::OperationFailureException(inner)
             }
+            crate::operation::start_relational_database::StartRelationalDatabaseError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::start_relational_database::StartRelationalDatabaseError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::start_relational_database::StartRelationalDatabaseError::UnauthenticatedException(inner) => {
                 Error::UnauthenticatedException(inner)
@@ -5239,6 +5588,9 @@ impl From<crate::operation::stop_gui_session::StopGUISessionError> for Error {
             crate::operation::stop_gui_session::StopGUISessionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::stop_gui_session::StopGUISessionError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::stop_gui_session::StopGUISessionError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::stop_gui_session::StopGUISessionError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::stop_gui_session::StopGUISessionError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::stop_gui_session::StopGUISessionError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
             crate::operation::stop_gui_session::StopGUISessionError::Unhandled(inner) => Error::Unhandled(inner),
@@ -5269,6 +5621,7 @@ impl From<crate::operation::stop_instance::StopInstanceError> for Error {
             crate::operation::stop_instance::StopInstanceError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::stop_instance::StopInstanceError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::stop_instance::StopInstanceError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::stop_instance::StopInstanceError::RegionSetupInProgressException(inner) => Error::RegionSetupInProgressException(inner),
             crate::operation::stop_instance::StopInstanceError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::stop_instance::StopInstanceError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
             crate::operation::stop_instance::StopInstanceError::Unhandled(inner) => Error::Unhandled(inner),
@@ -5307,6 +5660,9 @@ impl From<crate::operation::stop_relational_database::StopRelationalDatabaseErro
             crate::operation::stop_relational_database::StopRelationalDatabaseError::OperationFailureException(inner) => {
                 Error::OperationFailureException(inner)
             }
+            crate::operation::stop_relational_database::StopRelationalDatabaseError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::stop_relational_database::StopRelationalDatabaseError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::stop_relational_database::StopRelationalDatabaseError::UnauthenticatedException(inner) => {
                 Error::UnauthenticatedException(inner)
@@ -5337,6 +5693,7 @@ impl From<crate::operation::tag_resource::TagResourceError> for Error {
             crate::operation::tag_resource::TagResourceError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::tag_resource::TagResourceError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::tag_resource::TagResourceError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::tag_resource::TagResourceError::RegionSetupInProgressException(inner) => Error::RegionSetupInProgressException(inner),
             crate::operation::tag_resource::TagResourceError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::tag_resource::TagResourceError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
             crate::operation::tag_resource::TagResourceError::Unhandled(inner) => Error::Unhandled(inner),
@@ -5364,6 +5721,7 @@ impl From<crate::operation::test_alarm::TestAlarmError> for Error {
             crate::operation::test_alarm::TestAlarmError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::test_alarm::TestAlarmError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::test_alarm::TestAlarmError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::test_alarm::TestAlarmError::RegionSetupInProgressException(inner) => Error::RegionSetupInProgressException(inner),
             crate::operation::test_alarm::TestAlarmError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::test_alarm::TestAlarmError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
             crate::operation::test_alarm::TestAlarmError::Unhandled(inner) => Error::Unhandled(inner),
@@ -5392,6 +5750,7 @@ impl From<crate::operation::unpeer_vpc::UnpeerVpcError> for Error {
             crate::operation::unpeer_vpc::UnpeerVpcError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::unpeer_vpc::UnpeerVpcError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::unpeer_vpc::UnpeerVpcError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::unpeer_vpc::UnpeerVpcError::RegionSetupInProgressException(inner) => Error::RegionSetupInProgressException(inner),
             crate::operation::unpeer_vpc::UnpeerVpcError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::unpeer_vpc::UnpeerVpcError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
             crate::operation::unpeer_vpc::UnpeerVpcError::Unhandled(inner) => Error::Unhandled(inner),
@@ -5422,6 +5781,9 @@ impl From<crate::operation::untag_resource::UntagResourceError> for Error {
             crate::operation::untag_resource::UntagResourceError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::untag_resource::UntagResourceError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::untag_resource::UntagResourceError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::untag_resource::UntagResourceError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::untag_resource::UntagResourceError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::untag_resource::UntagResourceError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
             crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
@@ -5448,6 +5810,7 @@ impl From<crate::operation::update_bucket::UpdateBucketError> for Error {
             crate::operation::update_bucket::UpdateBucketError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::update_bucket::UpdateBucketError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::update_bucket::UpdateBucketError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::update_bucket::UpdateBucketError::RegionSetupInProgressException(inner) => Error::RegionSetupInProgressException(inner),
             crate::operation::update_bucket::UpdateBucketError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::update_bucket::UpdateBucketError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
             crate::operation::update_bucket::UpdateBucketError::Unhandled(inner) => Error::Unhandled(inner),
@@ -5474,6 +5837,9 @@ impl From<crate::operation::update_bucket_bundle::UpdateBucketBundleError> for E
             crate::operation::update_bucket_bundle::UpdateBucketBundleError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::update_bucket_bundle::UpdateBucketBundleError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::update_bucket_bundle::UpdateBucketBundleError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::update_bucket_bundle::UpdateBucketBundleError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::update_bucket_bundle::UpdateBucketBundleError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::update_bucket_bundle::UpdateBucketBundleError::UnauthenticatedException(inner) => {
                 Error::UnauthenticatedException(inner)
@@ -5508,6 +5874,9 @@ impl From<crate::operation::update_container_service::UpdateContainerServiceErro
                 Error::InvalidInputException(inner)
             }
             crate::operation::update_container_service::UpdateContainerServiceError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::update_container_service::UpdateContainerServiceError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::update_container_service::UpdateContainerServiceError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::update_container_service::UpdateContainerServiceError::UnauthenticatedException(inner) => {
                 Error::UnauthenticatedException(inner)
@@ -5609,6 +5978,9 @@ impl From<crate::operation::update_domain_entry::UpdateDomainEntryError> for Err
             crate::operation::update_domain_entry::UpdateDomainEntryError::OperationFailureException(inner) => {
                 Error::OperationFailureException(inner)
             }
+            crate::operation::update_domain_entry::UpdateDomainEntryError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::update_domain_entry::UpdateDomainEntryError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::update_domain_entry::UpdateDomainEntryError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
             crate::operation::update_domain_entry::UpdateDomainEntryError::Unhandled(inner) => Error::Unhandled(inner),
@@ -5654,6 +6026,9 @@ impl From<crate::operation::update_instance_metadata_options::UpdateInstanceMeta
             }
             crate::operation::update_instance_metadata_options::UpdateInstanceMetadataOptionsError::OperationFailureException(inner) => {
                 Error::OperationFailureException(inner)
+            }
+            crate::operation::update_instance_metadata_options::UpdateInstanceMetadataOptionsError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
             }
             crate::operation::update_instance_metadata_options::UpdateInstanceMetadataOptionsError::ServiceException(inner) => {
                 Error::ServiceException(inner)
@@ -5704,6 +6079,9 @@ impl From<crate::operation::update_load_balancer_attribute::UpdateLoadBalancerAt
             crate::operation::update_load_balancer_attribute::UpdateLoadBalancerAttributeError::OperationFailureException(inner) => {
                 Error::OperationFailureException(inner)
             }
+            crate::operation::update_load_balancer_attribute::UpdateLoadBalancerAttributeError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
+            }
             crate::operation::update_load_balancer_attribute::UpdateLoadBalancerAttributeError::ServiceException(inner) => {
                 Error::ServiceException(inner)
             }
@@ -5746,6 +6124,9 @@ impl From<crate::operation::update_relational_database::UpdateRelationalDatabase
             crate::operation::update_relational_database::UpdateRelationalDatabaseError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::update_relational_database::UpdateRelationalDatabaseError::OperationFailureException(inner) => {
                 Error::OperationFailureException(inner)
+            }
+            crate::operation::update_relational_database::UpdateRelationalDatabaseError::RegionSetupInProgressException(inner) => {
+                Error::RegionSetupInProgressException(inner)
             }
             crate::operation::update_relational_database::UpdateRelationalDatabaseError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::update_relational_database::UpdateRelationalDatabaseError::UnauthenticatedException(inner) => {
@@ -5798,6 +6179,9 @@ impl From<crate::operation::update_relational_database_parameters::UpdateRelatio
             crate::operation::update_relational_database_parameters::UpdateRelationalDatabaseParametersError::OperationFailureException(inner) => {
                 Error::OperationFailureException(inner)
             }
+            crate::operation::update_relational_database_parameters::UpdateRelationalDatabaseParametersError::RegionSetupInProgressException(
+                inner,
+            ) => Error::RegionSetupInProgressException(inner),
             crate::operation::update_relational_database_parameters::UpdateRelationalDatabaseParametersError::ServiceException(inner) => {
                 Error::ServiceException(inner)
             }
@@ -5818,6 +6202,7 @@ impl ::std::error::Error for Error {
             Error::InvalidInputException(inner) => inner.source(),
             Error::NotFoundException(inner) => inner.source(),
             Error::OperationFailureException(inner) => inner.source(),
+            Error::RegionSetupInProgressException(inner) => inner.source(),
             Error::ServiceException(inner) => inner.source(),
             Error::UnauthenticatedException(inner) => inner.source(),
             Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source),
@@ -5832,6 +6217,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::InvalidInputException(e) => e.request_id(),
             Self::NotFoundException(e) => e.request_id(),
             Self::OperationFailureException(e) => e.request_id(),
+            Self::RegionSetupInProgressException(e) => e.request_id(),
             Self::ServiceException(e) => e.request_id(),
             Self::UnauthenticatedException(e) => e.request_id(),
             Self::Unhandled(e) => e.meta.request_id(),

@@ -22,7 +22,7 @@ impl crate::operation::stop_telemetry_evaluation_for_organization::builders::Sto
 }
 /// Fluent builder constructing a request to `StopTelemetryEvaluationForOrganization`.
 ///
-/// <p>This action offboards the Organization of the caller AWS account from thef telemetry config feature.</p>
+/// <p>This action offboards the Organization of the caller Amazon Web Services account from the telemetry config feature.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StopTelemetryEvaluationForOrganizationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

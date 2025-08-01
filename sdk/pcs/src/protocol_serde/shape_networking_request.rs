@@ -21,5 +21,8 @@ pub fn ser_networking_request(
         }
         array_5.finish();
     }
+    if let Some(var_7) = &input.network_type {
+        object.key("networkType").string(var_7.as_str());
+    }
     Ok(())
 }

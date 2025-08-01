@@ -95,6 +95,24 @@ pub fn de_attach_disk_http_error(
             }
             tmp
         }),
+        "RegionSetupInProgressException" => crate::operation::attach_disk::AttachDiskError::RegionSetupInProgressException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::RegionSetupInProgressExceptionBuilder::default();
+                output = crate::protocol_serde::shape_region_setup_in_progress_exception::de_region_setup_in_progress_exception_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::attach_disk::AttachDiskError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "ServiceException" => crate::operation::attach_disk::AttachDiskError::ServiceException({
             #[allow(unused_mut)]
             let mut tmp = {

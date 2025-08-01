@@ -6,11 +6,11 @@ pub struct GetInvestigationGroupOutput {
     /// <p>The name of the user who created the investigation group.</p>
     pub created_by: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the investigation group was created.</p>
-    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub created_at: ::std::option::Option<i64>,
     /// <p>The name of the user who created the investigation group.</p>
     pub last_modified_by: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the investigation group was most recently modified.</p>
-    pub last_modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub last_modified_at: ::std::option::Option<i64>,
     /// <p>The name of the investigation group.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the investigation group.</p>
@@ -21,10 +21,10 @@ pub struct GetInvestigationGroupOutput {
     pub encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
     /// <p>Specifies how long that investigation data is kept.</p>
     pub retention_in_days: ::std::option::Option<i64>,
-    /// <p>This structure is a string array. The first string is the ARN of a Amazon SNS topic. The array of strings display the ARNs of Amazon Q in chat applications configurations that are associated with that topic. For more information about these configuration ARNs, see <a href="https://docs.aws.amazon.com/chatbot/latest/adminguide/getting-started.html">Getting started with Amazon Q in chat applications</a> and <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awschatbot.html#awschatbot-resources-for-iam-policies">Resource type defined by Amazon Web Services Chatbot</a>.</p>
+    /// <p>This structure is a string array. The first string is the ARN of a Amazon SNS topic. The array of strings display the ARNs of chat applications configurations that are associated with that topic. For more information about these configuration ARNs, see <a href="https://docs.aws.amazon.com/chatbot/latest/adminguide/getting-started.html">Getting started with Amazon Q in chat applications</a> and <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awschatbot.html#awschatbot-resources-for-iam-policies">Resource type defined by Amazon Web Services Chatbot</a>.</p>
     pub chatbot_notification_channel:
         ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
-    /// <p>Displays the custom tag keys for custom applications in your system that you have specified in the investigation group. Resource tags help Amazon Q narrow the search space when it is unable to discover definite relationships between resources.</p>
+    /// <p>Displays the custom tag keys for custom applications in your system that you have specified in the investigation group. Resource tags help CloudWatch investigations narrow the search space when it is unable to discover definite relationships between resources.</p>
     pub tag_key_boundaries: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies whether CloudWatch investigationshas access to change events that are recorded by CloudTrail.</p>
     pub is_cloud_trail_event_history_enabled: ::std::option::Option<bool>,
@@ -38,16 +38,16 @@ impl GetInvestigationGroupOutput {
         self.created_by.as_deref()
     }
     /// <p>The date and time that the investigation group was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.created_at.as_ref()
+    pub fn created_at(&self) -> ::std::option::Option<i64> {
+        self.created_at
     }
     /// <p>The name of the user who created the investigation group.</p>
     pub fn last_modified_by(&self) -> ::std::option::Option<&str> {
         self.last_modified_by.as_deref()
     }
     /// <p>The date and time that the investigation group was most recently modified.</p>
-    pub fn last_modified_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.last_modified_at.as_ref()
+    pub fn last_modified_at(&self) -> ::std::option::Option<i64> {
+        self.last_modified_at
     }
     /// <p>The name of the investigation group.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -69,13 +69,13 @@ impl GetInvestigationGroupOutput {
     pub fn retention_in_days(&self) -> ::std::option::Option<i64> {
         self.retention_in_days
     }
-    /// <p>This structure is a string array. The first string is the ARN of a Amazon SNS topic. The array of strings display the ARNs of Amazon Q in chat applications configurations that are associated with that topic. For more information about these configuration ARNs, see <a href="https://docs.aws.amazon.com/chatbot/latest/adminguide/getting-started.html">Getting started with Amazon Q in chat applications</a> and <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awschatbot.html#awschatbot-resources-for-iam-policies">Resource type defined by Amazon Web Services Chatbot</a>.</p>
+    /// <p>This structure is a string array. The first string is the ARN of a Amazon SNS topic. The array of strings display the ARNs of chat applications configurations that are associated with that topic. For more information about these configuration ARNs, see <a href="https://docs.aws.amazon.com/chatbot/latest/adminguide/getting-started.html">Getting started with Amazon Q in chat applications</a> and <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awschatbot.html#awschatbot-resources-for-iam-policies">Resource type defined by Amazon Web Services Chatbot</a>.</p>
     pub fn chatbot_notification_channel(
         &self,
     ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         self.chatbot_notification_channel.as_ref()
     }
-    /// <p>Displays the custom tag keys for custom applications in your system that you have specified in the investigation group. Resource tags help Amazon Q narrow the search space when it is unable to discover definite relationships between resources.</p>
+    /// <p>Displays the custom tag keys for custom applications in your system that you have specified in the investigation group. Resource tags help CloudWatch investigations narrow the search space when it is unable to discover definite relationships between resources.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_key_boundaries.is_none()`.
     pub fn tag_key_boundaries(&self) -> &[::std::string::String] {
@@ -109,9 +109,9 @@ impl GetInvestigationGroupOutput {
 #[non_exhaustive]
 pub struct GetInvestigationGroupOutputBuilder {
     pub(crate) created_by: ::std::option::Option<::std::string::String>,
-    pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) created_at: ::std::option::Option<i64>,
     pub(crate) last_modified_by: ::std::option::Option<::std::string::String>,
-    pub(crate) last_modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_modified_at: ::std::option::Option<i64>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
@@ -140,17 +140,17 @@ impl GetInvestigationGroupOutputBuilder {
         &self.created_by
     }
     /// <p>The date and time that the investigation group was created.</p>
-    pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+    pub fn created_at(mut self, input: i64) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time that the investigation group was created.</p>
-    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<i64>) -> Self {
         self.created_at = input;
         self
     }
     /// <p>The date and time that the investigation group was created.</p>
-    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_created_at(&self) -> &::std::option::Option<i64> {
         &self.created_at
     }
     /// <p>The name of the user who created the investigation group.</p>
@@ -168,17 +168,17 @@ impl GetInvestigationGroupOutputBuilder {
         &self.last_modified_by
     }
     /// <p>The date and time that the investigation group was most recently modified.</p>
-    pub fn last_modified_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+    pub fn last_modified_at(mut self, input: i64) -> Self {
         self.last_modified_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time that the investigation group was most recently modified.</p>
-    pub fn set_last_modified_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+    pub fn set_last_modified_at(mut self, input: ::std::option::Option<i64>) -> Self {
         self.last_modified_at = input;
         self
     }
     /// <p>The date and time that the investigation group was most recently modified.</p>
-    pub fn get_last_modified_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_modified_at(&self) -> &::std::option::Option<i64> {
         &self.last_modified_at
     }
     /// <p>The name of the investigation group.</p>
@@ -255,7 +255,7 @@ impl GetInvestigationGroupOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_chatbot_notification_channel`](Self::set_chatbot_notification_channel).
     ///
-    /// <p>This structure is a string array. The first string is the ARN of a Amazon SNS topic. The array of strings display the ARNs of Amazon Q in chat applications configurations that are associated with that topic. For more information about these configuration ARNs, see <a href="https://docs.aws.amazon.com/chatbot/latest/adminguide/getting-started.html">Getting started with Amazon Q in chat applications</a> and <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awschatbot.html#awschatbot-resources-for-iam-policies">Resource type defined by Amazon Web Services Chatbot</a>.</p>
+    /// <p>This structure is a string array. The first string is the ARN of a Amazon SNS topic. The array of strings display the ARNs of chat applications configurations that are associated with that topic. For more information about these configuration ARNs, see <a href="https://docs.aws.amazon.com/chatbot/latest/adminguide/getting-started.html">Getting started with Amazon Q in chat applications</a> and <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awschatbot.html#awschatbot-resources-for-iam-policies">Resource type defined by Amazon Web Services Chatbot</a>.</p>
     pub fn chatbot_notification_channel(
         mut self,
         k: impl ::std::convert::Into<::std::string::String>,
@@ -266,7 +266,7 @@ impl GetInvestigationGroupOutputBuilder {
         self.chatbot_notification_channel = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>This structure is a string array. The first string is the ARN of a Amazon SNS topic. The array of strings display the ARNs of Amazon Q in chat applications configurations that are associated with that topic. For more information about these configuration ARNs, see <a href="https://docs.aws.amazon.com/chatbot/latest/adminguide/getting-started.html">Getting started with Amazon Q in chat applications</a> and <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awschatbot.html#awschatbot-resources-for-iam-policies">Resource type defined by Amazon Web Services Chatbot</a>.</p>
+    /// <p>This structure is a string array. The first string is the ARN of a Amazon SNS topic. The array of strings display the ARNs of chat applications configurations that are associated with that topic. For more information about these configuration ARNs, see <a href="https://docs.aws.amazon.com/chatbot/latest/adminguide/getting-started.html">Getting started with Amazon Q in chat applications</a> and <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awschatbot.html#awschatbot-resources-for-iam-policies">Resource type defined by Amazon Web Services Chatbot</a>.</p>
     pub fn set_chatbot_notification_channel(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
@@ -274,7 +274,7 @@ impl GetInvestigationGroupOutputBuilder {
         self.chatbot_notification_channel = input;
         self
     }
-    /// <p>This structure is a string array. The first string is the ARN of a Amazon SNS topic. The array of strings display the ARNs of Amazon Q in chat applications configurations that are associated with that topic. For more information about these configuration ARNs, see <a href="https://docs.aws.amazon.com/chatbot/latest/adminguide/getting-started.html">Getting started with Amazon Q in chat applications</a> and <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awschatbot.html#awschatbot-resources-for-iam-policies">Resource type defined by Amazon Web Services Chatbot</a>.</p>
+    /// <p>This structure is a string array. The first string is the ARN of a Amazon SNS topic. The array of strings display the ARNs of chat applications configurations that are associated with that topic. For more information about these configuration ARNs, see <a href="https://docs.aws.amazon.com/chatbot/latest/adminguide/getting-started.html">Getting started with Amazon Q in chat applications</a> and <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awschatbot.html#awschatbot-resources-for-iam-policies">Resource type defined by Amazon Web Services Chatbot</a>.</p>
     pub fn get_chatbot_notification_channel(
         &self,
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
@@ -284,19 +284,19 @@ impl GetInvestigationGroupOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_tag_key_boundaries`](Self::set_tag_key_boundaries).
     ///
-    /// <p>Displays the custom tag keys for custom applications in your system that you have specified in the investigation group. Resource tags help Amazon Q narrow the search space when it is unable to discover definite relationships between resources.</p>
+    /// <p>Displays the custom tag keys for custom applications in your system that you have specified in the investigation group. Resource tags help CloudWatch investigations narrow the search space when it is unable to discover definite relationships between resources.</p>
     pub fn tag_key_boundaries(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.tag_key_boundaries.unwrap_or_default();
         v.push(input.into());
         self.tag_key_boundaries = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Displays the custom tag keys for custom applications in your system that you have specified in the investigation group. Resource tags help Amazon Q narrow the search space when it is unable to discover definite relationships between resources.</p>
+    /// <p>Displays the custom tag keys for custom applications in your system that you have specified in the investigation group. Resource tags help CloudWatch investigations narrow the search space when it is unable to discover definite relationships between resources.</p>
     pub fn set_tag_key_boundaries(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.tag_key_boundaries = input;
         self
     }
-    /// <p>Displays the custom tag keys for custom applications in your system that you have specified in the investigation group. Resource tags help Amazon Q narrow the search space when it is unable to discover definite relationships between resources.</p>
+    /// <p>Displays the custom tag keys for custom applications in your system that you have specified in the investigation group. Resource tags help CloudWatch investigations narrow the search space when it is unable to discover definite relationships between resources.</p>
     pub fn get_tag_key_boundaries(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.tag_key_boundaries
     }

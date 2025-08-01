@@ -289,7 +289,7 @@ pub enum PublishBatchError {
     NotFoundException(crate::types::error::NotFoundException),
     /// <p>Exception error indicating platform application disabled.</p>
     PlatformApplicationDisabledException(crate::types::error::PlatformApplicationDisabledException),
-    /// <p>The batch request contains more entries than permissible.</p>
+    /// <p>The batch request contains more entries than permissible (more than 10).</p>
     TooManyEntriesInBatchRequestException(crate::types::error::TooManyEntriesInBatchRequestException),
     /// <p>Indicates that a parameter in the request is invalid.</p>
     ValidationException(crate::types::error::ValidationException),

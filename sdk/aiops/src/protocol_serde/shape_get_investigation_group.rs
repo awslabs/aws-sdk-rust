@@ -175,10 +175,11 @@ pub(crate) fn de_get_investigation_group(
                     );
                 }
                 "createdAt" => {
-                    builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
-                        tokens.next(),
-                        ::aws_smithy_types::date_time::Format::EpochSeconds,
-                    )?);
+                    builder = builder.set_created_at(
+                        ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                            .map(i64::try_from)
+                            .transpose()?,
+                    );
                 }
                 "createdBy" => {
                     builder = builder.set_created_by(
@@ -202,10 +203,11 @@ pub(crate) fn de_get_investigation_group(
                         builder.set_is_cloud_trail_event_history_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
                 "lastModifiedAt" => {
-                    builder = builder.set_last_modified_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
-                        tokens.next(),
-                        ::aws_smithy_types::date_time::Format::EpochSeconds,
-                    )?);
+                    builder = builder.set_last_modified_at(
+                        ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                            .map(i64::try_from)
+                            .transpose()?,
+                    );
                 }
                 "lastModifiedBy" => {
                     builder = builder.set_last_modified_by(

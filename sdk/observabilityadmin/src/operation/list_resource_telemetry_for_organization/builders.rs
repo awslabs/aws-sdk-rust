@@ -22,7 +22,7 @@ impl crate::operation::list_resource_telemetry_for_organization::builders::ListR
 }
 /// Fluent builder constructing a request to `ListResourceTelemetryForOrganization`.
 ///
-/// <p>Returns a list of telemetry configurations for AWS resources supported by telemetry config in the organization.</p>
+/// <p>Returns a list of telemetry configurations for Amazon Web Services resources supported by telemetry config in the organization.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListResourceTelemetryForOrganizationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -127,17 +127,17 @@ impl ListResourceTelemetryForOrganizationFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_account_identifiers`](Self::set_account_identifiers).
     ///
-    /// <p>A list of AWS account IDs used to filter the resources to those associated with the specified accounts.</p>
+    /// <p>A list of Amazon Web Services accounts used to filter the resources to those associated with the specified accounts.</p>
     pub fn account_identifiers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.account_identifiers(input.into());
         self
     }
-    /// <p>A list of AWS account IDs used to filter the resources to those associated with the specified accounts.</p>
+    /// <p>A list of Amazon Web Services accounts used to filter the resources to those associated with the specified accounts.</p>
     pub fn set_account_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_account_identifiers(input);
         self
     }
-    /// <p>A list of AWS account IDs used to filter the resources to those associated with the specified accounts.</p>
+    /// <p>A list of Amazon Web Services accounts used to filter the resources to those associated with the specified accounts.</p>
     pub fn get_account_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_account_identifiers()
     }

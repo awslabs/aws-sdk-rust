@@ -96,6 +96,24 @@ pub fn de_delete_domain_entry_http_error(
             }
             tmp
         }),
+        "RegionSetupInProgressException" => crate::operation::delete_domain_entry::DeleteDomainEntryError::RegionSetupInProgressException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::RegionSetupInProgressExceptionBuilder::default();
+                output = crate::protocol_serde::shape_region_setup_in_progress_exception::de_region_setup_in_progress_exception_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::delete_domain_entry::DeleteDomainEntryError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "ServiceException" => crate::operation::delete_domain_entry::DeleteDomainEntryError::ServiceException({
             #[allow(unused_mut)]
             let mut tmp = {

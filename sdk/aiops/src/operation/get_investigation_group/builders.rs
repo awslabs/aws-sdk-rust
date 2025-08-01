@@ -108,17 +108,17 @@ impl GetInvestigationGroupFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>Specify either the name or the ARN of the investigation group that you want to view.</p>
+    /// <p>Specify either the name or the ARN of the investigation group that you want to view. This is used to set the name of the investigation group.</p>
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identifier(input.into());
         self
     }
-    /// <p>Specify either the name or the ARN of the investigation group that you want to view.</p>
+    /// <p>Specify either the name or the ARN of the investigation group that you want to view. This is used to set the name of the investigation group.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_identifier(input);
         self
     }
-    /// <p>Specify either the name or the ARN of the investigation group that you want to view.</p>
+    /// <p>Specify either the name or the ARN of the investigation group that you want to view. This is used to set the name of the investigation group.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_identifier()
     }

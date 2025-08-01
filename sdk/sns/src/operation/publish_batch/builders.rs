@@ -22,14 +22,17 @@ impl crate::operation::publish_batch::builders::PublishBatchInputBuilder {
 }
 /// Fluent builder constructing a request to `PublishBatch`.
 ///
-/// <p>Publishes up to ten messages to the specified topic. This is a batch version of <code>Publish</code>. For FIFO topics, multiple messages within a single batch are published in the order they are sent, and messages are deduplicated within the batch and across batches for 5 minutes.</p>
-/// <p>The result of publishing each message is reported individually in the response. Because the batch request can result in a combination of successful and unsuccessful actions, you should check for batch errors even when the call returns an HTTP status code of <code>200</code>.</p>
-/// <p>The maximum allowed individual message size and the maximum total payload size (the sum of the individual lengths of all of the batched messages) are both 256 KB (262,144 bytes).</p>
-/// <p>Some actions take lists of parameters. These lists are specified using the <code>param.n</code> notation. Values of <code>n</code> are integers starting from 1. For example, a parameter list with two elements looks like this:</p>
-/// <p>&amp;AttributeName.1=first</p>
-/// <p>&amp;AttributeName.2=second</p>
+/// <p>Publishes up to 10 messages to the specified topic in a single batch. This is a batch version of the <code>Publish</code> API. If you try to send more than 10 messages in a single batch request, you will receive a <code>TooManyEntriesInBatchRequest</code> exception.</p>
+/// <p>For FIFO topics, multiple messages within a single batch are published in the order they are sent, and messages are deduplicated within the batch and across batches for five minutes.</p>
+/// <p>The result of publishing each message is reported individually in the response. Because the batch request can result in a combination of successful and unsuccessful actions, you should check for batch errors even when the call returns an HTTP status code of 200.</p>
+/// <p>The maximum allowed individual message size and the maximum total payload size (the sum of the individual lengths of all of the batched messages) are both 256 KB (262,144 bytes).</p><important>
+/// <p>The <code>PublishBatch</code> API can send up to 10 messages at a time. If you attempt to send more than 10 messages in one request, you will encounter a <code>TooManyEntriesInBatchRequest</code> exception. In such cases, split your messages into multiple requests, each containing no more than 10 messages.</p>
+/// </important>
+/// <p>Some actions take lists of parameters. These lists are specified using the <code>param.n</code> notation. Values of <code>n</code> are integers starting from <b>1</b>. For example, a parameter list with two elements looks like this:</p>
+/// <p><code>&amp;AttributeName.1=first</code></p>
+/// <p><code>&amp;AttributeName.2=second</code></p>
 /// <p>If you send a batch message to a topic, Amazon SNS publishes the batch message to each endpoint that is subscribed to the topic. The format of the batch message depends on the notification protocol for each subscribed endpoint.</p>
-/// <p>When a <code>messageId</code> is returned, the batch message is saved and Amazon SNS immediately delivers the message to subscribers.</p>
+/// <p>When a <code>messageId</code> is returned, the batch message is saved, and Amazon SNS immediately delivers the message to subscribers.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PublishBatchFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -1,14 +1,14 @@
 [workspace]
 resolver = "2"
 exclude = [
-    "examples/lambda",
     "examples/webassembly",
-    "examples/examples",
-    "examples/cross_service",
     "examples/test-utils",
-    "tests/telemetry",
+    "examples/cross_service",
+    "examples/lambda",
+    "examples/examples",
     "tests/webassembly",
-    "tests/no-default-features"
+    "tests/no-default-features",
+    "tests/telemetry"
 ]
 members = [
     "sdk/accessanalyzer",
@@ -38,6 +38,7 @@ members = [
     "sdk/appstream",
     "sdk/appsync",
     "sdk/apptest",
+    "sdk/arcregionswitch",
     "sdk/arczonalshift",
     "sdk/artifact",
     "sdk/athena",

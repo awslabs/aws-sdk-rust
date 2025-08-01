@@ -22,7 +22,7 @@ impl crate::operation::list_resource_telemetry::builders::ListResourceTelemetryI
 }
 /// Fluent builder constructing a request to `ListResourceTelemetry`.
 ///
-/// <p>Returns a list of telemetry configurations for AWS resources supported by telemetry config. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/telemetry-config-cloudwatch.html">Auditing CloudWatch telemetry configurations</a>.</p>
+/// <p>Returns a list of telemetry configurations for Amazon Web Services resources supported by telemetry config. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/telemetry-config-cloudwatch.html">Auditing CloudWatch telemetry configurations</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListResourceTelemetryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

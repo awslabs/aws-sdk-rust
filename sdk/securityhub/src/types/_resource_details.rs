@@ -211,6 +211,8 @@ pub struct ResourceDetails {
     pub aws_s3_access_point: ::std::option::Option<crate::types::AwsS3AccessPointDetails>,
     /// <p>Provides details about an Client VPN endpoint. A Client VPN endpoint is the resource that you create and configure to enable and manage client VPN sessions. It's the termination point for all client VPN sessions.</p>
     pub aws_ec2_client_vpn_endpoint: ::std::option::Option<crate::types::AwsEc2ClientVpnEndpointDetails>,
+    /// <p>Details about an external code repository with which you can connect your Amazon Web Services resources. The connection is established through Amazon Inspector.</p>
+    pub code_repository: ::std::option::Option<crate::types::CodeRepositoryDetails>,
 }
 impl ResourceDetails {
     /// <p>Details for an autoscaling group.</p>
@@ -615,6 +617,10 @@ impl ResourceDetails {
     pub fn aws_ec2_client_vpn_endpoint(&self) -> ::std::option::Option<&crate::types::AwsEc2ClientVpnEndpointDetails> {
         self.aws_ec2_client_vpn_endpoint.as_ref()
     }
+    /// <p>Details about an external code repository with which you can connect your Amazon Web Services resources. The connection is established through Amazon Inspector.</p>
+    pub fn code_repository(&self) -> ::std::option::Option<&crate::types::CodeRepositoryDetails> {
+        self.code_repository.as_ref()
+    }
 }
 impl ResourceDetails {
     /// Creates a new builder-style object to manufacture [`ResourceDetails`](crate::types::ResourceDetails).
@@ -726,6 +732,7 @@ pub struct ResourceDetailsBuilder {
     pub(crate) aws_msk_cluster: ::std::option::Option<crate::types::AwsMskClusterDetails>,
     pub(crate) aws_s3_access_point: ::std::option::Option<crate::types::AwsS3AccessPointDetails>,
     pub(crate) aws_ec2_client_vpn_endpoint: ::std::option::Option<crate::types::AwsEc2ClientVpnEndpointDetails>,
+    pub(crate) code_repository: ::std::option::Option<crate::types::CodeRepositoryDetails>,
 }
 impl ResourceDetailsBuilder {
     /// <p>Details for an autoscaling group.</p>
@@ -2156,6 +2163,20 @@ impl ResourceDetailsBuilder {
     pub fn get_aws_ec2_client_vpn_endpoint(&self) -> &::std::option::Option<crate::types::AwsEc2ClientVpnEndpointDetails> {
         &self.aws_ec2_client_vpn_endpoint
     }
+    /// <p>Details about an external code repository with which you can connect your Amazon Web Services resources. The connection is established through Amazon Inspector.</p>
+    pub fn code_repository(mut self, input: crate::types::CodeRepositoryDetails) -> Self {
+        self.code_repository = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Details about an external code repository with which you can connect your Amazon Web Services resources. The connection is established through Amazon Inspector.</p>
+    pub fn set_code_repository(mut self, input: ::std::option::Option<crate::types::CodeRepositoryDetails>) -> Self {
+        self.code_repository = input;
+        self
+    }
+    /// <p>Details about an external code repository with which you can connect your Amazon Web Services resources. The connection is established through Amazon Inspector.</p>
+    pub fn get_code_repository(&self) -> &::std::option::Option<crate::types::CodeRepositoryDetails> {
+        &self.code_repository
+    }
     /// Consumes the builder and constructs a [`ResourceDetails`](crate::types::ResourceDetails).
     pub fn build(self) -> crate::types::ResourceDetails {
         crate::types::ResourceDetails {
@@ -2258,6 +2279,7 @@ impl ResourceDetailsBuilder {
             aws_msk_cluster: self.aws_msk_cluster,
             aws_s3_access_point: self.aws_s3_access_point,
             aws_ec2_client_vpn_endpoint: self.aws_ec2_client_vpn_endpoint,
+            code_repository: self.code_repository,
         }
     }
 }

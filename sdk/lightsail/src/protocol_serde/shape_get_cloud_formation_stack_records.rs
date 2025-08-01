@@ -103,6 +103,26 @@ pub fn de_get_cloud_formation_stack_records_http_error(
                 tmp
             })
         }
+        "RegionSetupInProgressException" => {
+            crate::operation::get_cloud_formation_stack_records::GetCloudFormationStackRecordsError::RegionSetupInProgressException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::RegionSetupInProgressExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_region_setup_in_progress_exception::de_region_setup_in_progress_exception_json_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::get_cloud_formation_stack_records::GetCloudFormationStackRecordsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "ServiceException" => crate::operation::get_cloud_formation_stack_records::GetCloudFormationStackRecordsError::ServiceException({
             #[allow(unused_mut)]
             let mut tmp = {

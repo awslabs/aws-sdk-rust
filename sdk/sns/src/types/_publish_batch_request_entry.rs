@@ -20,7 +20,7 @@ pub struct PublishBatchRequestEntry {
     /// <li>
     /// <p>contain at least a top-level JSON key of "default" with a value that is a string.</p></li>
     /// </ul>
-    /// <p>You can define other top-level keys that define the message you want to send to a specific transport protocol (e.g. http).</p>
+    /// <p>You can define other top-level keys that define the message you want to send to a specific transport protocol (for example, http).</p>
     pub message_structure: ::std::option::Option<::std::string::String>,
     /// <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-message-attributes.html">Amazon SNS message attributes</a> in the Amazon SNS Developer Guide.</p>
     pub message_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MessageAttributeValue>>,
@@ -56,13 +56,10 @@ pub struct PublishBatchRequestEntry {
     /// <p>Amazon SNS continues to keep track of the message deduplication ID even after the message is received and deleted.</p>
     /// </note>
     pub message_deduplication_id: ::std::option::Option<::std::string::String>,
-    /// <p>This parameter applies only to FIFO (first-in-first-out) topics.</p>
-    /// <p>The tag that specifies that a message belongs to a specific message group. Messages that belong to the same message group are processed in a FIFO manner (however, messages in different message groups might be processed out of order). To interleave multiple ordered streams within a single topic, use <code>MessageGroupId</code> values (for example, session data for multiple users). In this scenario, multiple consumers can process the topic, but the session data of each user is processed in a FIFO fashion.</p>
-    /// <p>You must associate a non-empty <code>MessageGroupId</code> with a message. If you don't provide a <code>MessageGroupId</code>, the action fails.</p>
+    /// <p>FIFO topics: The tag that specifies that a message belongs to a specific message group. Messages that belong to the same message group are processed in a FIFO manner (however, messages in different message groups might be processed out of order). To interleave multiple ordered streams within a single topic, use <code>MessageGroupId</code> values (for example, session data for multiple users). In this scenario, multiple consumers can process the topic, but the session data of each user is processed in a FIFO fashion. You must associate a non-empty <code>MessageGroupId</code> with a message. If you do not provide a <code>MessageGroupId</code>, the action fails.</p>
+    /// <p>Standard topics: The <code>MessageGroupId</code> is optional and is forwarded only to Amazon SQS standard subscriptions to activate <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-fair-queues.html">fair queues</a>. The <code>MessageGroupId</code> is not used for, or sent to, any other endpoint types.</p>
     /// <p>The length of <code>MessageGroupId</code> is 128 characters.</p>
-    /// <p><code>MessageGroupId</code> can contain alphanumeric characters <code>(a-z, A-Z, 0-9)</code> and punctuation <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@\[\\]^_`{|}~)</code>.</p><important>
-    /// <p><code>MessageGroupId</code> is required for FIFO topics. You can't use it for standard topics.</p>
-    /// </important>
+    /// <p><code>MessageGroupId</code> can contain alphanumeric characters <code>(a-z, A-Z, 0-9)</code> and punctuation <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@\[\\]^_`{|}~)</code>.</p>
     pub message_group_id: ::std::option::Option<::std::string::String>,
 }
 impl PublishBatchRequestEntry {
@@ -90,7 +87,7 @@ impl PublishBatchRequestEntry {
     /// <li>
     /// <p>contain at least a top-level JSON key of "default" with a value that is a string.</p></li>
     /// </ul>
-    /// <p>You can define other top-level keys that define the message you want to send to a specific transport protocol (e.g. http).</p>
+    /// <p>You can define other top-level keys that define the message you want to send to a specific transport protocol (for example, http).</p>
     pub fn message_structure(&self) -> ::std::option::Option<&str> {
         self.message_structure.as_deref()
     }
@@ -134,13 +131,10 @@ impl PublishBatchRequestEntry {
     pub fn message_deduplication_id(&self) -> ::std::option::Option<&str> {
         self.message_deduplication_id.as_deref()
     }
-    /// <p>This parameter applies only to FIFO (first-in-first-out) topics.</p>
-    /// <p>The tag that specifies that a message belongs to a specific message group. Messages that belong to the same message group are processed in a FIFO manner (however, messages in different message groups might be processed out of order). To interleave multiple ordered streams within a single topic, use <code>MessageGroupId</code> values (for example, session data for multiple users). In this scenario, multiple consumers can process the topic, but the session data of each user is processed in a FIFO fashion.</p>
-    /// <p>You must associate a non-empty <code>MessageGroupId</code> with a message. If you don't provide a <code>MessageGroupId</code>, the action fails.</p>
+    /// <p>FIFO topics: The tag that specifies that a message belongs to a specific message group. Messages that belong to the same message group are processed in a FIFO manner (however, messages in different message groups might be processed out of order). To interleave multiple ordered streams within a single topic, use <code>MessageGroupId</code> values (for example, session data for multiple users). In this scenario, multiple consumers can process the topic, but the session data of each user is processed in a FIFO fashion. You must associate a non-empty <code>MessageGroupId</code> with a message. If you do not provide a <code>MessageGroupId</code>, the action fails.</p>
+    /// <p>Standard topics: The <code>MessageGroupId</code> is optional and is forwarded only to Amazon SQS standard subscriptions to activate <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-fair-queues.html">fair queues</a>. The <code>MessageGroupId</code> is not used for, or sent to, any other endpoint types.</p>
     /// <p>The length of <code>MessageGroupId</code> is 128 characters.</p>
-    /// <p><code>MessageGroupId</code> can contain alphanumeric characters <code>(a-z, A-Z, 0-9)</code> and punctuation <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@\[\\]^_`{|}~)</code>.</p><important>
-    /// <p><code>MessageGroupId</code> is required for FIFO topics. You can't use it for standard topics.</p>
-    /// </important>
+    /// <p><code>MessageGroupId</code> can contain alphanumeric characters <code>(a-z, A-Z, 0-9)</code> and punctuation <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@\[\\]^_`{|}~)</code>.</p>
     pub fn message_group_id(&self) -> ::std::option::Option<&str> {
         self.message_group_id.as_deref()
     }
@@ -225,7 +219,7 @@ impl PublishBatchRequestEntryBuilder {
     /// <li>
     /// <p>contain at least a top-level JSON key of "default" with a value that is a string.</p></li>
     /// </ul>
-    /// <p>You can define other top-level keys that define the message you want to send to a specific transport protocol (e.g. http).</p>
+    /// <p>You can define other top-level keys that define the message you want to send to a specific transport protocol (for example, http).</p>
     pub fn message_structure(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message_structure = ::std::option::Option::Some(input.into());
         self
@@ -237,7 +231,7 @@ impl PublishBatchRequestEntryBuilder {
     /// <li>
     /// <p>contain at least a top-level JSON key of "default" with a value that is a string.</p></li>
     /// </ul>
-    /// <p>You can define other top-level keys that define the message you want to send to a specific transport protocol (e.g. http).</p>
+    /// <p>You can define other top-level keys that define the message you want to send to a specific transport protocol (for example, http).</p>
     pub fn set_message_structure(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message_structure = input;
         self
@@ -249,7 +243,7 @@ impl PublishBatchRequestEntryBuilder {
     /// <li>
     /// <p>contain at least a top-level JSON key of "default" with a value that is a string.</p></li>
     /// </ul>
-    /// <p>You can define other top-level keys that define the message you want to send to a specific transport protocol (e.g. http).</p>
+    /// <p>You can define other top-level keys that define the message you want to send to a specific transport protocol (for example, http).</p>
     pub fn get_message_structure(&self) -> &::std::option::Option<::std::string::String> {
         &self.message_structure
     }
@@ -382,35 +376,26 @@ impl PublishBatchRequestEntryBuilder {
     pub fn get_message_deduplication_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.message_deduplication_id
     }
-    /// <p>This parameter applies only to FIFO (first-in-first-out) topics.</p>
-    /// <p>The tag that specifies that a message belongs to a specific message group. Messages that belong to the same message group are processed in a FIFO manner (however, messages in different message groups might be processed out of order). To interleave multiple ordered streams within a single topic, use <code>MessageGroupId</code> values (for example, session data for multiple users). In this scenario, multiple consumers can process the topic, but the session data of each user is processed in a FIFO fashion.</p>
-    /// <p>You must associate a non-empty <code>MessageGroupId</code> with a message. If you don't provide a <code>MessageGroupId</code>, the action fails.</p>
+    /// <p>FIFO topics: The tag that specifies that a message belongs to a specific message group. Messages that belong to the same message group are processed in a FIFO manner (however, messages in different message groups might be processed out of order). To interleave multiple ordered streams within a single topic, use <code>MessageGroupId</code> values (for example, session data for multiple users). In this scenario, multiple consumers can process the topic, but the session data of each user is processed in a FIFO fashion. You must associate a non-empty <code>MessageGroupId</code> with a message. If you do not provide a <code>MessageGroupId</code>, the action fails.</p>
+    /// <p>Standard topics: The <code>MessageGroupId</code> is optional and is forwarded only to Amazon SQS standard subscriptions to activate <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-fair-queues.html">fair queues</a>. The <code>MessageGroupId</code> is not used for, or sent to, any other endpoint types.</p>
     /// <p>The length of <code>MessageGroupId</code> is 128 characters.</p>
-    /// <p><code>MessageGroupId</code> can contain alphanumeric characters <code>(a-z, A-Z, 0-9)</code> and punctuation <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@\[\\]^_`{|}~)</code>.</p><important>
-    /// <p><code>MessageGroupId</code> is required for FIFO topics. You can't use it for standard topics.</p>
-    /// </important>
+    /// <p><code>MessageGroupId</code> can contain alphanumeric characters <code>(a-z, A-Z, 0-9)</code> and punctuation <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@\[\\]^_`{|}~)</code>.</p>
     pub fn message_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message_group_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>This parameter applies only to FIFO (first-in-first-out) topics.</p>
-    /// <p>The tag that specifies that a message belongs to a specific message group. Messages that belong to the same message group are processed in a FIFO manner (however, messages in different message groups might be processed out of order). To interleave multiple ordered streams within a single topic, use <code>MessageGroupId</code> values (for example, session data for multiple users). In this scenario, multiple consumers can process the topic, but the session data of each user is processed in a FIFO fashion.</p>
-    /// <p>You must associate a non-empty <code>MessageGroupId</code> with a message. If you don't provide a <code>MessageGroupId</code>, the action fails.</p>
+    /// <p>FIFO topics: The tag that specifies that a message belongs to a specific message group. Messages that belong to the same message group are processed in a FIFO manner (however, messages in different message groups might be processed out of order). To interleave multiple ordered streams within a single topic, use <code>MessageGroupId</code> values (for example, session data for multiple users). In this scenario, multiple consumers can process the topic, but the session data of each user is processed in a FIFO fashion. You must associate a non-empty <code>MessageGroupId</code> with a message. If you do not provide a <code>MessageGroupId</code>, the action fails.</p>
+    /// <p>Standard topics: The <code>MessageGroupId</code> is optional and is forwarded only to Amazon SQS standard subscriptions to activate <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-fair-queues.html">fair queues</a>. The <code>MessageGroupId</code> is not used for, or sent to, any other endpoint types.</p>
     /// <p>The length of <code>MessageGroupId</code> is 128 characters.</p>
-    /// <p><code>MessageGroupId</code> can contain alphanumeric characters <code>(a-z, A-Z, 0-9)</code> and punctuation <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@\[\\]^_`{|}~)</code>.</p><important>
-    /// <p><code>MessageGroupId</code> is required for FIFO topics. You can't use it for standard topics.</p>
-    /// </important>
+    /// <p><code>MessageGroupId</code> can contain alphanumeric characters <code>(a-z, A-Z, 0-9)</code> and punctuation <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@\[\\]^_`{|}~)</code>.</p>
     pub fn set_message_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message_group_id = input;
         self
     }
-    /// <p>This parameter applies only to FIFO (first-in-first-out) topics.</p>
-    /// <p>The tag that specifies that a message belongs to a specific message group. Messages that belong to the same message group are processed in a FIFO manner (however, messages in different message groups might be processed out of order). To interleave multiple ordered streams within a single topic, use <code>MessageGroupId</code> values (for example, session data for multiple users). In this scenario, multiple consumers can process the topic, but the session data of each user is processed in a FIFO fashion.</p>
-    /// <p>You must associate a non-empty <code>MessageGroupId</code> with a message. If you don't provide a <code>MessageGroupId</code>, the action fails.</p>
+    /// <p>FIFO topics: The tag that specifies that a message belongs to a specific message group. Messages that belong to the same message group are processed in a FIFO manner (however, messages in different message groups might be processed out of order). To interleave multiple ordered streams within a single topic, use <code>MessageGroupId</code> values (for example, session data for multiple users). In this scenario, multiple consumers can process the topic, but the session data of each user is processed in a FIFO fashion. You must associate a non-empty <code>MessageGroupId</code> with a message. If you do not provide a <code>MessageGroupId</code>, the action fails.</p>
+    /// <p>Standard topics: The <code>MessageGroupId</code> is optional and is forwarded only to Amazon SQS standard subscriptions to activate <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-fair-queues.html">fair queues</a>. The <code>MessageGroupId</code> is not used for, or sent to, any other endpoint types.</p>
     /// <p>The length of <code>MessageGroupId</code> is 128 characters.</p>
-    /// <p><code>MessageGroupId</code> can contain alphanumeric characters <code>(a-z, A-Z, 0-9)</code> and punctuation <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@\[\\]^_`{|}~)</code>.</p><important>
-    /// <p><code>MessageGroupId</code> is required for FIFO topics. You can't use it for standard topics.</p>
-    /// </important>
+    /// <p><code>MessageGroupId</code> can contain alphanumeric characters <code>(a-z, A-Z, 0-9)</code> and punctuation <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@\[\\]^_`{|}~)</code>.</p>
     pub fn get_message_group_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.message_group_id
     }

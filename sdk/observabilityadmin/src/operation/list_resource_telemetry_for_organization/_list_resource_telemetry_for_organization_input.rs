@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListResourceTelemetryForOrganizationInput {
-    /// <p>A list of AWS account IDs used to filter the resources to those associated with the specified accounts.</p>
+    /// <p>A list of Amazon Web Services accounts used to filter the resources to those associated with the specified accounts.</p>
     pub account_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A string used to filter resources in the organization which have a <code>ResourceIdentifier</code> starting with the <code>ResourceIdentifierPrefix</code>.</p>
     pub resource_identifier_prefix: ::std::option::Option<::std::string::String>,
@@ -19,7 +19,7 @@ pub struct ListResourceTelemetryForOrganizationInput {
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListResourceTelemetryForOrganizationInput {
-    /// <p>A list of AWS account IDs used to filter the resources to those associated with the specified accounts.</p>
+    /// <p>A list of Amazon Web Services accounts used to filter the resources to those associated with the specified accounts.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_identifiers.is_none()`.
     pub fn account_identifiers(&self) -> &[::std::string::String] {
@@ -79,19 +79,19 @@ impl ListResourceTelemetryForOrganizationInputBuilder {
     ///
     /// To override the contents of this collection use [`set_account_identifiers`](Self::set_account_identifiers).
     ///
-    /// <p>A list of AWS account IDs used to filter the resources to those associated with the specified accounts.</p>
+    /// <p>A list of Amazon Web Services accounts used to filter the resources to those associated with the specified accounts.</p>
     pub fn account_identifiers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.account_identifiers.unwrap_or_default();
         v.push(input.into());
         self.account_identifiers = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of AWS account IDs used to filter the resources to those associated with the specified accounts.</p>
+    /// <p>A list of Amazon Web Services accounts used to filter the resources to those associated with the specified accounts.</p>
     pub fn set_account_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.account_identifiers = input;
         self
     }
-    /// <p>A list of AWS account IDs used to filter the resources to those associated with the specified accounts.</p>
+    /// <p>A list of Amazon Web Services accounts used to filter the resources to those associated with the specified accounts.</p>
     pub fn get_account_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.account_identifiers
     }

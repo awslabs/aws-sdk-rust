@@ -155,17 +155,23 @@ impl CreateAssessmentFrameworkFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_control_sets`](Self::set_control_sets).
     ///
-    /// <p>The control sets that are associated with the framework.</p>
+    /// <p>The control sets that are associated with the framework.</p><note>
+    /// <p>The <code>Controls</code> object returns a partial response when called through Framework APIs. For a complete <code>Controls</code> object, use <code>GetControl</code>.</p>
+    /// </note>
     pub fn control_sets(mut self, input: crate::types::CreateAssessmentFrameworkControlSet) -> Self {
         self.inner = self.inner.control_sets(input);
         self
     }
-    /// <p>The control sets that are associated with the framework.</p>
+    /// <p>The control sets that are associated with the framework.</p><note>
+    /// <p>The <code>Controls</code> object returns a partial response when called through Framework APIs. For a complete <code>Controls</code> object, use <code>GetControl</code>.</p>
+    /// </note>
     pub fn set_control_sets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CreateAssessmentFrameworkControlSet>>) -> Self {
         self.inner = self.inner.set_control_sets(input);
         self
     }
-    /// <p>The control sets that are associated with the framework.</p>
+    /// <p>The control sets that are associated with the framework.</p><note>
+    /// <p>The <code>Controls</code> object returns a partial response when called through Framework APIs. For a complete <code>Controls</code> object, use <code>GetControl</code>.</p>
+    /// </note>
     pub fn get_control_sets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateAssessmentFrameworkControlSet>> {
         self.inner.get_control_sets()
     }

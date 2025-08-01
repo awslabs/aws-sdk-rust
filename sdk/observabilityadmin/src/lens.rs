@@ -19,6 +19,26 @@ pub(crate) fn reflens_list_resource_telemetry_for_organization_output_output_nex
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_telemetry_rules_output_output_next_token(
+    input: &crate::operation::list_telemetry_rules::ListTelemetryRulesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_telemetry_rules_for_organization_output_output_next_token(
+    input: &crate::operation::list_telemetry_rules_for_organization::ListTelemetryRulesForOrganizationOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_resource_telemetry_output_output_telemetry_configurations(
     input: crate::operation::list_resource_telemetry::ListResourceTelemetryOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::TelemetryConfiguration>> {
@@ -30,5 +50,19 @@ pub(crate) fn lens_list_resource_telemetry_for_organization_output_output_teleme
     input: crate::operation::list_resource_telemetry_for_organization::ListResourceTelemetryForOrganizationOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::TelemetryConfiguration>> {
     let input = input.telemetry_configurations?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_telemetry_rules_output_output_telemetry_rule_summaries(
+    input: crate::operation::list_telemetry_rules::ListTelemetryRulesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::TelemetryRuleSummary>> {
+    let input = input.telemetry_rule_summaries?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_telemetry_rules_for_organization_output_output_telemetry_rule_summaries(
+    input: crate::operation::list_telemetry_rules_for_organization::ListTelemetryRulesForOrganizationOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::TelemetryRuleSummary>> {
+    let input = input.telemetry_rule_summaries?;
     ::std::option::Option::Some(input)
 }

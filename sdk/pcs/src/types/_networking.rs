@@ -28,7 +28,7 @@ pub struct Networking {
     /// <li>
     /// <p>Ports: All</p></li>
     /// <li>
-    /// <p>Destination: 0.0.0.0/0 (IPv4)</p></li>
+    /// <p>Destination: 0.0.0.0/0 (IPv4) or ::/0 (IPv6)</p></li>
     /// </ul></li>
     /// <li>
     /// <p>Outbound rule 2</p>
@@ -42,6 +42,8 @@ pub struct Networking {
     /// </ul></li>
     /// </ul>
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The IP address version the cluster uses. The default is <code>IPV4</code>.</p>
+    pub network_type: ::std::option::Option<crate::types::NetworkType>,
 }
 impl Networking {
     /// <p>The ID of the subnet where Amazon Web Services PCS creates an Elastic Network Interface (ENI) to enable communication between managed controllers and Amazon Web Services PCS resources. The subnet must have an available IP address, cannot reside in AWS Outposts, AWS Wavelength, or an AWS Local Zone.</p>
@@ -72,7 +74,7 @@ impl Networking {
     /// <li>
     /// <p>Ports: All</p></li>
     /// <li>
-    /// <p>Destination: 0.0.0.0/0 (IPv4)</p></li>
+    /// <p>Destination: 0.0.0.0/0 (IPv4) or ::/0 (IPv6)</p></li>
     /// </ul></li>
     /// <li>
     /// <p>Outbound rule 2</p>
@@ -90,6 +92,10 @@ impl Networking {
     pub fn security_group_ids(&self) -> &[::std::string::String] {
         self.security_group_ids.as_deref().unwrap_or_default()
     }
+    /// <p>The IP address version the cluster uses. The default is <code>IPV4</code>.</p>
+    pub fn network_type(&self) -> ::std::option::Option<&crate::types::NetworkType> {
+        self.network_type.as_ref()
+    }
 }
 impl Networking {
     /// Creates a new builder-style object to manufacture [`Networking`](crate::types::Networking).
@@ -104,6 +110,7 @@ impl Networking {
 pub struct NetworkingBuilder {
     pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) network_type: ::std::option::Option<crate::types::NetworkType>,
 }
 impl NetworkingBuilder {
     /// Appends an item to `subnet_ids`.
@@ -154,7 +161,7 @@ impl NetworkingBuilder {
     /// <li>
     /// <p>Ports: All</p></li>
     /// <li>
-    /// <p>Destination: 0.0.0.0/0 (IPv4)</p></li>
+    /// <p>Destination: 0.0.0.0/0 (IPv4) or ::/0 (IPv6)</p></li>
     /// </ul></li>
     /// <li>
     /// <p>Outbound rule 2</p>
@@ -194,7 +201,7 @@ impl NetworkingBuilder {
     /// <li>
     /// <p>Ports: All</p></li>
     /// <li>
-    /// <p>Destination: 0.0.0.0/0 (IPv4)</p></li>
+    /// <p>Destination: 0.0.0.0/0 (IPv4) or ::/0 (IPv6)</p></li>
     /// </ul></li>
     /// <li>
     /// <p>Outbound rule 2</p>
@@ -232,7 +239,7 @@ impl NetworkingBuilder {
     /// <li>
     /// <p>Ports: All</p></li>
     /// <li>
-    /// <p>Destination: 0.0.0.0/0 (IPv4)</p></li>
+    /// <p>Destination: 0.0.0.0/0 (IPv4) or ::/0 (IPv6)</p></li>
     /// </ul></li>
     /// <li>
     /// <p>Outbound rule 2</p>
@@ -248,11 +255,26 @@ impl NetworkingBuilder {
     pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_group_ids
     }
+    /// <p>The IP address version the cluster uses. The default is <code>IPV4</code>.</p>
+    pub fn network_type(mut self, input: crate::types::NetworkType) -> Self {
+        self.network_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The IP address version the cluster uses. The default is <code>IPV4</code>.</p>
+    pub fn set_network_type(mut self, input: ::std::option::Option<crate::types::NetworkType>) -> Self {
+        self.network_type = input;
+        self
+    }
+    /// <p>The IP address version the cluster uses. The default is <code>IPV4</code>.</p>
+    pub fn get_network_type(&self) -> &::std::option::Option<crate::types::NetworkType> {
+        &self.network_type
+    }
     /// Consumes the builder and constructs a [`Networking`](crate::types::Networking).
     pub fn build(self) -> crate::types::Networking {
         crate::types::Networking {
             subnet_ids: self.subnet_ids,
             security_group_ids: self.security_group_ids,
+            network_type: self.network_type,
         }
     }
 }

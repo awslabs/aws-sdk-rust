@@ -260,6 +260,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetContainerA
 pub enum GetContainerAPIMetadataError {
     /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
+    /// <p>Lightsail throws this exception when an operation is performed on resources in an opt-in Region that is currently being set up.</p>
+    RegionSetupInProgressException(crate::types::error::RegionSetupInProgressException),
     /// <p>A general service exception.</p>
     ServiceException(crate::types::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
@@ -298,6 +300,7 @@ impl GetContainerAPIMetadataError {
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::AccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::RegionSetupInProgressException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ServiceException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::UnauthenticatedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
@@ -306,6 +309,10 @@ impl GetContainerAPIMetadataError {
     /// Returns `true` if the error kind is `GetContainerAPIMetadataError::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(self, Self::AccessDeniedException(_))
+    }
+    /// Returns `true` if the error kind is `GetContainerAPIMetadataError::RegionSetupInProgressException`.
+    pub fn is_region_setup_in_progress_exception(&self) -> bool {
+        matches!(self, Self::RegionSetupInProgressException(_))
     }
     /// Returns `true` if the error kind is `GetContainerAPIMetadataError::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
@@ -320,6 +327,7 @@ impl ::std::error::Error for GetContainerAPIMetadataError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
+            Self::RegionSetupInProgressException(_inner) => ::std::option::Option::Some(_inner),
             Self::ServiceException(_inner) => ::std::option::Option::Some(_inner),
             Self::UnauthenticatedException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
@@ -330,6 +338,7 @@ impl ::std::fmt::Display for GetContainerAPIMetadataError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             Self::AccessDeniedException(_inner) => _inner.fmt(f),
+            Self::RegionSetupInProgressException(_inner) => _inner.fmt(f),
             Self::ServiceException(_inner) => _inner.fmt(f),
             Self::UnauthenticatedException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
@@ -354,6 +363,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for GetContainerA
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::RegionSetupInProgressException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ServiceException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::UnauthenticatedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,

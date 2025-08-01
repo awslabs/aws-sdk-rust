@@ -5,7 +5,7 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`framework_id(impl Into<String>)`](crate::operation::get_assessment_framework::builders::GetAssessmentFrameworkFluentBuilder::framework_id) / [`set_framework_id(Option<String>)`](crate::operation::get_assessment_framework::builders::GetAssessmentFrameworkFluentBuilder::set_framework_id):<br>required: **true**<br><p>The identifier for the framework.</p><br>
     /// - On success, responds with [`GetAssessmentFrameworkOutput`](crate::operation::get_assessment_framework::GetAssessmentFrameworkOutput) with field(s):
-    ///   - [`framework(Option<Framework>)`](crate::operation::get_assessment_framework::GetAssessmentFrameworkOutput::framework): <p>The framework that the <code>GetAssessmentFramework</code> API returned.</p>
+    ///   - [`framework(Option<Framework>)`](crate::operation::get_assessment_framework::GetAssessmentFrameworkOutput::framework): <p>The framework that the <code>GetAssessmentFramework</code> API returned.</p><note>  <p>The <code>Controls</code> object returns a partial response when called through Framework APIs. For a complete <code>Controls</code> object, use <code>GetControl</code>.</p> </note>
     /// - On failure, responds with [`SdkError<GetAssessmentFrameworkError>`](crate::operation::get_assessment_framework::GetAssessmentFrameworkError)
     pub fn get_assessment_framework(&self) -> crate::operation::get_assessment_framework::builders::GetAssessmentFrameworkFluentBuilder {
         crate::operation::get_assessment_framework::builders::GetAssessmentFrameworkFluentBuilder::new(self.handle.clone())

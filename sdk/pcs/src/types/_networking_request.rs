@@ -11,6 +11,8 @@ pub struct NetworkingRequest {
     pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of security group IDs associated with the Elastic Network Interface (ENI) created in subnets.</p>
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The IP address version the cluster uses. The default is <code>IPV4</code>.</p>
+    pub network_type: ::std::option::Option<crate::types::NetworkType>,
 }
 impl NetworkingRequest {
     /// <p>The list of subnet IDs where Amazon Web Services PCS creates an Elastic Network Interface (ENI) to enable communication between managed controllers and Amazon Web Services PCS resources. Subnet IDs have the form <code>subnet-0123456789abcdef0</code>.</p>
@@ -28,6 +30,10 @@ impl NetworkingRequest {
     pub fn security_group_ids(&self) -> &[::std::string::String] {
         self.security_group_ids.as_deref().unwrap_or_default()
     }
+    /// <p>The IP address version the cluster uses. The default is <code>IPV4</code>.</p>
+    pub fn network_type(&self) -> ::std::option::Option<&crate::types::NetworkType> {
+        self.network_type.as_ref()
+    }
 }
 impl NetworkingRequest {
     /// Creates a new builder-style object to manufacture [`NetworkingRequest`](crate::types::NetworkingRequest).
@@ -42,6 +48,7 @@ impl NetworkingRequest {
 pub struct NetworkingRequestBuilder {
     pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) network_type: ::std::option::Option<crate::types::NetworkType>,
 }
 impl NetworkingRequestBuilder {
     /// Appends an item to `subnet_ids`.
@@ -93,11 +100,26 @@ impl NetworkingRequestBuilder {
     pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_group_ids
     }
+    /// <p>The IP address version the cluster uses. The default is <code>IPV4</code>.</p>
+    pub fn network_type(mut self, input: crate::types::NetworkType) -> Self {
+        self.network_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The IP address version the cluster uses. The default is <code>IPV4</code>.</p>
+    pub fn set_network_type(mut self, input: ::std::option::Option<crate::types::NetworkType>) -> Self {
+        self.network_type = input;
+        self
+    }
+    /// <p>The IP address version the cluster uses. The default is <code>IPV4</code>.</p>
+    pub fn get_network_type(&self) -> &::std::option::Option<crate::types::NetworkType> {
+        &self.network_type
+    }
     /// Consumes the builder and constructs a [`NetworkingRequest`](crate::types::NetworkingRequest).
     pub fn build(self) -> crate::types::NetworkingRequest {
         crate::types::NetworkingRequest {
             subnet_ids: self.subnet_ids,
             security_group_ids: self.security_group_ids,
+            network_type: self.network_type,
         }
     }
 }

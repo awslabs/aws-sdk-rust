@@ -17,6 +17,8 @@ pub use crate::types::_error_info::ErrorInfo;
 
 pub use crate::types::_networking::Networking;
 
+pub use crate::types::_network_type::NetworkType;
+
 pub use crate::types::_cluster_slurm_configuration::ClusterSlurmConfiguration;
 
 pub use crate::types::_accounting::Accounting;
@@ -112,6 +114,8 @@ mod _endpoint_type;
 mod _error_info;
 
 mod _instance_config;
+
+mod _network_type;
 
 mod _networking;
 

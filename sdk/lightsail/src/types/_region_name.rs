@@ -17,6 +17,7 @@
 ///     RegionName::ApSouth1 => { /* ... */ },
 ///     RegionName::ApSoutheast1 => { /* ... */ },
 ///     RegionName::ApSoutheast2 => { /* ... */ },
+///     RegionName::ApSoutheast3 => { /* ... */ },
 ///     RegionName::CaCentral1 => { /* ... */ },
 ///     RegionName::EuCentral1 => { /* ... */ },
 ///     RegionName::EuNorth1 => { /* ... */ },
@@ -66,6 +67,8 @@ pub enum RegionName {
     #[allow(missing_docs)] // documentation missing in model
     ApSoutheast2,
     #[allow(missing_docs)] // documentation missing in model
+    ApSoutheast3,
+    #[allow(missing_docs)] // documentation missing in model
     CaCentral1,
     #[allow(missing_docs)] // documentation missing in model
     EuCentral1,
@@ -97,6 +100,7 @@ impl ::std::convert::From<&str> for RegionName {
             "ap-south-1" => RegionName::ApSouth1,
             "ap-southeast-1" => RegionName::ApSoutheast1,
             "ap-southeast-2" => RegionName::ApSoutheast2,
+            "ap-southeast-3" => RegionName::ApSoutheast3,
             "ca-central-1" => RegionName::CaCentral1,
             "eu-central-1" => RegionName::EuCentral1,
             "eu-north-1" => RegionName::EuNorth1,
@@ -127,6 +131,7 @@ impl RegionName {
             RegionName::ApSouth1 => "ap-south-1",
             RegionName::ApSoutheast1 => "ap-southeast-1",
             RegionName::ApSoutheast2 => "ap-southeast-2",
+            RegionName::ApSoutheast3 => "ap-southeast-3",
             RegionName::CaCentral1 => "ca-central-1",
             RegionName::EuCentral1 => "eu-central-1",
             RegionName::EuNorth1 => "eu-north-1",
@@ -148,6 +153,7 @@ impl RegionName {
             "ap-south-1",
             "ap-southeast-1",
             "ap-southeast-2",
+            "ap-southeast-3",
             "ca-central-1",
             "eu-central-1",
             "eu-north-1",
@@ -186,6 +192,7 @@ impl ::std::fmt::Display for RegionName {
             RegionName::ApSouth1 => write!(f, "ap-south-1"),
             RegionName::ApSoutheast1 => write!(f, "ap-southeast-1"),
             RegionName::ApSoutheast2 => write!(f, "ap-southeast-2"),
+            RegionName::ApSoutheast3 => write!(f, "ap-southeast-3"),
             RegionName::CaCentral1 => write!(f, "ca-central-1"),
             RegionName::EuCentral1 => write!(f, "eu-central-1"),
             RegionName::EuNorth1 => write!(f, "eu-north-1"),

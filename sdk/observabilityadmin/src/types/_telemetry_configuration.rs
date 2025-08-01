@@ -8,7 +8,7 @@ pub struct TelemetryConfiguration {
     pub account_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The configuration state for the resource, for example <code>{ Logs: NotApplicable; Metrics: Enabled; Traces: NotApplicable; }</code>.</p>
     pub telemetry_configuration_state: ::std::option::Option<::std::collections::HashMap<crate::types::TelemetryType, crate::types::TelemetryState>>,
-    /// <p>The type of resource, for example <code>AWS::EC2::Instance</code>.</p>
+    /// <p>The type of resource, for example <code>Amazon Web Services::EC2::Instance</code>.</p>
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>The identifier of the resource, for example <code>i-0b22a22eec53b9321</code>.</p>
     pub resource_identifier: ::std::option::Option<::std::string::String>,
@@ -28,7 +28,7 @@ impl TelemetryConfiguration {
     ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::TelemetryType, crate::types::TelemetryState>> {
         self.telemetry_configuration_state.as_ref()
     }
-    /// <p>The type of resource, for example <code>AWS::EC2::Instance</code>.</p>
+    /// <p>The type of resource, for example <code>Amazon Web Services::EC2::Instance</code>.</p>
     pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
@@ -104,17 +104,17 @@ impl TelemetryConfigurationBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<crate::types::TelemetryType, crate::types::TelemetryState>> {
         &self.telemetry_configuration_state
     }
-    /// <p>The type of resource, for example <code>AWS::EC2::Instance</code>.</p>
+    /// <p>The type of resource, for example <code>Amazon Web Services::EC2::Instance</code>.</p>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of resource, for example <code>AWS::EC2::Instance</code>.</p>
+    /// <p>The type of resource, for example <code>Amazon Web Services::EC2::Instance</code>.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.resource_type = input;
         self
     }
-    /// <p>The type of resource, for example <code>AWS::EC2::Instance</code>.</p>
+    /// <p>The type of resource, for example <code>Amazon Web Services::EC2::Instance</code>.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
         &self.resource_type
     }

@@ -1027,6 +1027,8 @@ pub(crate) mod shape_boolean_filter_list;
 
 pub(crate) mod shape_classification_result;
 
+pub(crate) mod shape_code_repository_details;
+
 pub(crate) mod shape_code_vulnerabilities_file_path;
 
 pub(crate) mod shape_configuration_options;

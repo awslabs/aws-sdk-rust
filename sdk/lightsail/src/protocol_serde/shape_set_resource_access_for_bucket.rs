@@ -65,6 +65,26 @@ pub fn de_set_resource_access_for_bucket_http_error(
             }
             tmp
         }),
+        "RegionSetupInProgressException" => {
+            crate::operation::set_resource_access_for_bucket::SetResourceAccessForBucketError::RegionSetupInProgressException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::RegionSetupInProgressExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_region_setup_in_progress_exception::de_region_setup_in_progress_exception_json_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::set_resource_access_for_bucket::SetResourceAccessForBucketError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "ServiceException" => crate::operation::set_resource_access_for_bucket::SetResourceAccessForBucketError::ServiceException({
             #[allow(unused_mut)]
             let mut tmp = {

@@ -233,6 +233,8 @@ pub use crate::types::_resource::ResourceBuilder;
 
 pub use crate::types::_resource_details::ResourceDetailsBuilder;
 
+pub use crate::types::_code_repository_details::CodeRepositoryDetailsBuilder;
+
 pub use crate::types::_aws_ec2_client_vpn_endpoint_details::AwsEc2ClientVpnEndpointDetailsBuilder;
 
 pub use crate::types::_aws_ec2_client_vpn_endpoint_client_login_banner_options_details::AwsEc2ClientVpnEndpointClientLoginBannerOptionsDetailsBuilder;

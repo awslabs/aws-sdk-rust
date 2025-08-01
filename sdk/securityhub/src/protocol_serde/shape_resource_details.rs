@@ -625,6 +625,12 @@ pub fn ser_resource_details(
         crate::protocol_serde::shape_aws_ec2_client_vpn_endpoint_details::ser_aws_ec2_client_vpn_endpoint_details(&mut object_200, var_199)?;
         object_200.finish();
     }
+    if let Some(var_201) = &input.code_repository {
+        #[allow(unused_mut)]
+        let mut object_202 = object.key("CodeRepository").start_object();
+        crate::protocol_serde::shape_code_repository_details::ser_code_repository_details(&mut object_202, var_201)?;
+        object_202.finish();
+    }
     Ok(())
 }
 
@@ -1120,6 +1126,10 @@ where
                             builder = builder.set_aws_ec2_client_vpn_endpoint(
                                 crate::protocol_serde::shape_aws_ec2_client_vpn_endpoint_details::de_aws_ec2_client_vpn_endpoint_details(tokens)?,
                             );
+                        }
+                        "CodeRepository" => {
+                            builder = builder
+                                .set_code_repository(crate::protocol_serde::shape_code_repository_details::de_code_repository_details(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

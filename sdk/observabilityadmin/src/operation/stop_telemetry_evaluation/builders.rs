@@ -22,7 +22,7 @@ impl crate::operation::stop_telemetry_evaluation::builders::StopTelemetryEvaluat
 }
 /// Fluent builder constructing a request to `StopTelemetryEvaluation`.
 ///
-/// <p>This action begins offboarding the caller AWS account from the telemetry config feature.</p>
+/// <p>This action begins offboarding the caller Amazon Web Services account from the telemetry config feature.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StopTelemetryEvaluationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -22,7 +22,7 @@ impl crate::operation::get_telemetry_evaluation_status_for_organization::builder
 }
 /// Fluent builder constructing a request to `GetTelemetryEvaluationStatusForOrganization`.
 ///
-/// <p>This returns the onboarding status of the telemetry configuration feature for the organization. It can only be called by a Management Account of an AWS Organization or an assigned Delegated Admin Account of AWS CloudWatch telemetry config.</p>
+/// <p>This returns the onboarding status of the telemetry configuration feature for the organization. It can only be called by a Management Account of an Amazon Web Services Organization or an assigned Delegated Admin Account of Amazon CloudWatch telemetry config.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetTelemetryEvaluationStatusForOrganizationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -95,6 +95,24 @@ pub fn de_tag_resource_http_error(
             }
             tmp
         }),
+        "RegionSetupInProgressException" => crate::operation::tag_resource::TagResourceError::RegionSetupInProgressException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::RegionSetupInProgressExceptionBuilder::default();
+                output = crate::protocol_serde::shape_region_setup_in_progress_exception::de_region_setup_in_progress_exception_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::tag_resource::TagResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "ServiceException" => crate::operation::tag_resource::TagResourceError::ServiceException({
             #[allow(unused_mut)]
             let mut tmp = {

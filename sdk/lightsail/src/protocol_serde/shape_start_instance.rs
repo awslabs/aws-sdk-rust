@@ -95,6 +95,24 @@ pub fn de_start_instance_http_error(
             }
             tmp
         }),
+        "RegionSetupInProgressException" => crate::operation::start_instance::StartInstanceError::RegionSetupInProgressException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::RegionSetupInProgressExceptionBuilder::default();
+                output = crate::protocol_serde::shape_region_setup_in_progress_exception::de_region_setup_in_progress_exception_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::start_instance::StartInstanceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "ServiceException" => crate::operation::start_instance::StartInstanceError::ServiceException({
             #[allow(unused_mut)]
             let mut tmp = {

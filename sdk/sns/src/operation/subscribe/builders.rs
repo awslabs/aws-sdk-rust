@@ -137,7 +137,7 @@ impl SubscribeFluentBuilder {
     /// <li>
     /// <p><code>lambda</code> – delivery of JSON-encoded message to an Lambda function</p></li>
     /// <li>
-    /// <p><code>firehose</code> – delivery of JSON-encoded message to an Amazon Kinesis Data Firehose delivery stream.</p></li>
+    /// <p><code>firehose</code> – delivery of JSON-encoded message to an Amazon Data Firehose delivery stream.</p></li>
     /// </ul>
     pub fn protocol(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.protocol(input.into());
@@ -162,7 +162,7 @@ impl SubscribeFluentBuilder {
     /// <li>
     /// <p><code>lambda</code> – delivery of JSON-encoded message to an Lambda function</p></li>
     /// <li>
-    /// <p><code>firehose</code> – delivery of JSON-encoded message to an Amazon Kinesis Data Firehose delivery stream.</p></li>
+    /// <p><code>firehose</code> – delivery of JSON-encoded message to an Amazon Data Firehose delivery stream.</p></li>
     /// </ul>
     pub fn set_protocol(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_protocol(input);
@@ -187,7 +187,7 @@ impl SubscribeFluentBuilder {
     /// <li>
     /// <p><code>lambda</code> – delivery of JSON-encoded message to an Lambda function</p></li>
     /// <li>
-    /// <p><code>firehose</code> – delivery of JSON-encoded message to an Amazon Kinesis Data Firehose delivery stream.</p></li>
+    /// <p><code>firehose</code> – delivery of JSON-encoded message to an Amazon Data Firehose delivery stream.</p></li>
     /// </ul>
     pub fn get_protocol(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_protocol()
@@ -211,7 +211,7 @@ impl SubscribeFluentBuilder {
     /// <li>
     /// <p>For the <code>lambda</code> protocol, the endpoint is the ARN of an Lambda function.</p></li>
     /// <li>
-    /// <p>For the <code>firehose</code> protocol, the endpoint is the ARN of an Amazon Kinesis Data Firehose delivery stream.</p></li>
+    /// <p>For the <code>firehose</code> protocol, the endpoint is the ARN of an Amazon Data Firehose delivery stream.</p></li>
     /// </ul>
     pub fn endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.endpoint(input.into());
@@ -236,7 +236,7 @@ impl SubscribeFluentBuilder {
     /// <li>
     /// <p>For the <code>lambda</code> protocol, the endpoint is the ARN of an Lambda function.</p></li>
     /// <li>
-    /// <p>For the <code>firehose</code> protocol, the endpoint is the ARN of an Amazon Kinesis Data Firehose delivery stream.</p></li>
+    /// <p>For the <code>firehose</code> protocol, the endpoint is the ARN of an Amazon Data Firehose delivery stream.</p></li>
     /// </ul>
     pub fn set_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_endpoint(input);
@@ -261,7 +261,7 @@ impl SubscribeFluentBuilder {
     /// <li>
     /// <p>For the <code>lambda</code> protocol, the endpoint is the ARN of an Lambda function.</p></li>
     /// <li>
-    /// <p>For the <code>firehose</code> protocol, the endpoint is the ARN of an Amazon Kinesis Data Firehose delivery stream.</p></li>
+    /// <p>For the <code>firehose</code> protocol, the endpoint is the ARN of an Amazon Data Firehose delivery stream.</p></li>
     /// </ul>
     pub fn get_endpoint(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_endpoint()

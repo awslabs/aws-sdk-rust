@@ -11,7 +11,9 @@ pub struct UpdateAssessmentFrameworkInput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The compliance type that the new custom framework supports, such as CIS or HIPAA.</p>
     pub compliance_type: ::std::option::Option<::std::string::String>,
-    /// <p>The control sets that are associated with the framework.</p>
+    /// <p>The control sets that are associated with the framework.</p><note>
+    /// <p>The <code>Controls</code> object returns a partial response when called through Framework APIs. For a complete <code>Controls</code> object, use <code>GetControl</code>.</p>
+    /// </note>
     pub control_sets: ::std::option::Option<::std::vec::Vec<crate::types::UpdateAssessmentFrameworkControlSet>>,
 }
 impl UpdateAssessmentFrameworkInput {
@@ -31,7 +33,9 @@ impl UpdateAssessmentFrameworkInput {
     pub fn compliance_type(&self) -> ::std::option::Option<&str> {
         self.compliance_type.as_deref()
     }
-    /// <p>The control sets that are associated with the framework.</p>
+    /// <p>The control sets that are associated with the framework.</p><note>
+    /// <p>The <code>Controls</code> object returns a partial response when called through Framework APIs. For a complete <code>Controls</code> object, use <code>GetControl</code>.</p>
+    /// </note>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.control_sets.is_none()`.
     pub fn control_sets(&self) -> &[crate::types::UpdateAssessmentFrameworkControlSet] {
@@ -129,19 +133,25 @@ impl UpdateAssessmentFrameworkInputBuilder {
     ///
     /// To override the contents of this collection use [`set_control_sets`](Self::set_control_sets).
     ///
-    /// <p>The control sets that are associated with the framework.</p>
+    /// <p>The control sets that are associated with the framework.</p><note>
+    /// <p>The <code>Controls</code> object returns a partial response when called through Framework APIs. For a complete <code>Controls</code> object, use <code>GetControl</code>.</p>
+    /// </note>
     pub fn control_sets(mut self, input: crate::types::UpdateAssessmentFrameworkControlSet) -> Self {
         let mut v = self.control_sets.unwrap_or_default();
         v.push(input);
         self.control_sets = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The control sets that are associated with the framework.</p>
+    /// <p>The control sets that are associated with the framework.</p><note>
+    /// <p>The <code>Controls</code> object returns a partial response when called through Framework APIs. For a complete <code>Controls</code> object, use <code>GetControl</code>.</p>
+    /// </note>
     pub fn set_control_sets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UpdateAssessmentFrameworkControlSet>>) -> Self {
         self.control_sets = input;
         self
     }
-    /// <p>The control sets that are associated with the framework.</p>
+    /// <p>The control sets that are associated with the framework.</p><note>
+    /// <p>The <code>Controls</code> object returns a partial response when called through Framework APIs. For a complete <code>Controls</code> object, use <code>GetControl</code>.</p>
+    /// </note>
     pub fn get_control_sets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateAssessmentFrameworkControlSet>> {
         &self.control_sets
     }

@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EncryptionConfiguration {
-    /// <p>Displays whether investigation data is encrypted by a customer managed key or an Amazon Web Services owned kay.</p>
+    /// <p>Displays whether investigation data is encrypted by a customer managed key or an Amazon Web Services owned key.</p>
     pub r#type: ::std::option::Option<crate::types::EncryptionConfigurationType>,
     /// <p>If the investigation group uses a customer managed key for encryption, this field displays the ID of that key.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl EncryptionConfiguration {
-    /// <p>Displays whether investigation data is encrypted by a customer managed key or an Amazon Web Services owned kay.</p>
+    /// <p>Displays whether investigation data is encrypted by a customer managed key or an Amazon Web Services owned key.</p>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::EncryptionConfigurationType> {
         self.r#type.as_ref()
     }
@@ -34,17 +34,17 @@ pub struct EncryptionConfigurationBuilder {
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl EncryptionConfigurationBuilder {
-    /// <p>Displays whether investigation data is encrypted by a customer managed key or an Amazon Web Services owned kay.</p>
+    /// <p>Displays whether investigation data is encrypted by a customer managed key or an Amazon Web Services owned key.</p>
     pub fn r#type(mut self, input: crate::types::EncryptionConfigurationType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Displays whether investigation data is encrypted by a customer managed key or an Amazon Web Services owned kay.</p>
+    /// <p>Displays whether investigation data is encrypted by a customer managed key or an Amazon Web Services owned key.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::EncryptionConfigurationType>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>Displays whether investigation data is encrypted by a customer managed key or an Amazon Web Services owned kay.</p>
+    /// <p>Displays whether investigation data is encrypted by a customer managed key or an Amazon Web Services owned key.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::EncryptionConfigurationType> {
         &self.r#type
     }

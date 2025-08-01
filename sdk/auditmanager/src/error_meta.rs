@@ -1977,6 +1977,9 @@ impl From<crate::operation::update_assessment_framework::UpdateAssessmentFramewo
             crate::operation::update_assessment_framework::UpdateAssessmentFrameworkError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
+            crate::operation::update_assessment_framework::UpdateAssessmentFrameworkError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
             crate::operation::update_assessment_framework::UpdateAssessmentFrameworkError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }

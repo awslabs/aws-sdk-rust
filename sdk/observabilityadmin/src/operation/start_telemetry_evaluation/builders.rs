@@ -22,7 +22,7 @@ impl crate::operation::start_telemetry_evaluation::builders::StartTelemetryEvalu
 }
 /// Fluent builder constructing a request to `StartTelemetryEvaluation`.
 ///
-/// <p>This action begins onboarding onboarding the caller AWS account to the telemetry config feature.</p>
+/// <p>This action begins onboarding the caller Amazon Web Services account to the telemetry config feature.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartTelemetryEvaluationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

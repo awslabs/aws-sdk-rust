@@ -617,6 +617,8 @@ pub(crate) mod shape_reboot_instance_input;
 
 pub(crate) mod shape_reboot_relational_database_input;
 
+pub(crate) mod shape_region_setup_in_progress_exception;
+
 pub(crate) mod shape_register_container_image_input;
 
 pub(crate) mod shape_release_static_ip_input;

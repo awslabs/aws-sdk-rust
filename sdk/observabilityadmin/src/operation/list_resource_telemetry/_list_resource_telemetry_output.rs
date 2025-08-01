@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListResourceTelemetryOutput {
-    /// <p>A list of telemetry configurations for AWS resources supported by telemetry config in the caller's account.</p>
+    /// <p>A list of telemetry configurations for Amazon Web Services resources supported by telemetry config in the caller's account.</p>
     pub telemetry_configurations: ::std::option::Option<::std::vec::Vec<crate::types::TelemetryConfiguration>>,
     /// <p>The token for the next set of items to return. A previous call generates this token.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListResourceTelemetryOutput {
-    /// <p>A list of telemetry configurations for AWS resources supported by telemetry config in the caller's account.</p>
+    /// <p>A list of telemetry configurations for Amazon Web Services resources supported by telemetry config in the caller's account.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.telemetry_configurations.is_none()`.
     pub fn telemetry_configurations(&self) -> &[crate::types::TelemetryConfiguration] {
@@ -46,19 +46,19 @@ impl ListResourceTelemetryOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_telemetry_configurations`](Self::set_telemetry_configurations).
     ///
-    /// <p>A list of telemetry configurations for AWS resources supported by telemetry config in the caller's account.</p>
+    /// <p>A list of telemetry configurations for Amazon Web Services resources supported by telemetry config in the caller's account.</p>
     pub fn telemetry_configurations(mut self, input: crate::types::TelemetryConfiguration) -> Self {
         let mut v = self.telemetry_configurations.unwrap_or_default();
         v.push(input);
         self.telemetry_configurations = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of telemetry configurations for AWS resources supported by telemetry config in the caller's account.</p>
+    /// <p>A list of telemetry configurations for Amazon Web Services resources supported by telemetry config in the caller's account.</p>
     pub fn set_telemetry_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TelemetryConfiguration>>) -> Self {
         self.telemetry_configurations = input;
         self
     }
-    /// <p>A list of telemetry configurations for AWS resources supported by telemetry config in the caller's account.</p>
+    /// <p>A list of telemetry configurations for Amazon Web Services resources supported by telemetry config in the caller's account.</p>
     pub fn get_telemetry_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TelemetryConfiguration>> {
         &self.telemetry_configurations
     }

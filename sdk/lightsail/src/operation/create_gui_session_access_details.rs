@@ -276,6 +276,8 @@ pub enum CreateGUISessionAccessDetailsError {
     InvalidInputException(crate::types::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
     NotFoundException(crate::types::error::NotFoundException),
+    /// <p>Lightsail throws this exception when an operation is performed on resources in an opt-in Region that is currently being set up.</p>
+    RegionSetupInProgressException(crate::types::error::RegionSetupInProgressException),
     /// <p>A general service exception.</p>
     ServiceException(crate::types::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
@@ -316,6 +318,7 @@ impl CreateGUISessionAccessDetailsError {
             Self::AccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidInputException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::NotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::RegionSetupInProgressException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ServiceException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::UnauthenticatedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
@@ -333,6 +336,10 @@ impl CreateGUISessionAccessDetailsError {
     pub fn is_not_found_exception(&self) -> bool {
         matches!(self, Self::NotFoundException(_))
     }
+    /// Returns `true` if the error kind is `CreateGUISessionAccessDetailsError::RegionSetupInProgressException`.
+    pub fn is_region_setup_in_progress_exception(&self) -> bool {
+        matches!(self, Self::RegionSetupInProgressException(_))
+    }
     /// Returns `true` if the error kind is `CreateGUISessionAccessDetailsError::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(self, Self::ServiceException(_))
@@ -348,6 +355,7 @@ impl ::std::error::Error for CreateGUISessionAccessDetailsError {
             Self::AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidInputException(_inner) => ::std::option::Option::Some(_inner),
             Self::NotFoundException(_inner) => ::std::option::Option::Some(_inner),
+            Self::RegionSetupInProgressException(_inner) => ::std::option::Option::Some(_inner),
             Self::ServiceException(_inner) => ::std::option::Option::Some(_inner),
             Self::UnauthenticatedException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
@@ -360,6 +368,7 @@ impl ::std::fmt::Display for CreateGUISessionAccessDetailsError {
             Self::AccessDeniedException(_inner) => _inner.fmt(f),
             Self::InvalidInputException(_inner) => _inner.fmt(f),
             Self::NotFoundException(_inner) => _inner.fmt(f),
+            Self::RegionSetupInProgressException(_inner) => _inner.fmt(f),
             Self::ServiceException(_inner) => _inner.fmt(f),
             Self::UnauthenticatedException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
@@ -386,6 +395,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateGUISess
             Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidInputException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::NotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::RegionSetupInProgressException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ServiceException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::UnauthenticatedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,

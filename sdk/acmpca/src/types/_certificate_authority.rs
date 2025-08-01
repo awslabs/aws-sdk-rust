@@ -30,9 +30,11 @@ pub struct CertificateAuthority {
     pub revocation_configuration: ::std::option::Option<crate::types::RevocationConfiguration>,
     /// <p>The period during which a deleted CA can be restored. For more information, see the <code>PermanentDeletionTimeInDays</code> parameter of the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_DeleteCertificateAuthorityRequest.html">DeleteCertificateAuthorityRequest</a> action.</p>
     pub restorable_until: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>Defines a cryptographic key management compliance standard used for handling CA keys.</p>
-    /// <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p>
-    /// <p>Note: Amazon Web Services Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You must explicitly specify this parameter and value when creating a CA in that Region. Specifying a different value (or no value) results in an <code>InvalidArgsException</code> with the message "A certificate authority cannot be created in this region with the specified security standard."</p>
+    /// <p>Defines a cryptographic key management compliance standard for handling and protecting CA keys.</p>
+    /// <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p><note>
+    /// <p>Starting January 26, 2023, Amazon Web Services Private CA protects all CA private keys in non-China regions using hardware security modules (HSMs) that comply with FIPS PUB 140-2 Level 3.</p>
+    /// <p>For information about security standard support in different Amazon Web Services Regions, see <a href="https://docs.aws.amazon.com/privateca/latest/userguide/data-protection.html#private-keys">Storage and security compliance of Amazon Web Services Private CA private keys</a>.</p>
+    /// </note>
     pub key_storage_security_standard: ::std::option::Option<crate::types::KeyStorageSecurityStandard>,
     /// <p>Specifies whether the CA issues general-purpose certificates that typically require a revocation mechanism, or short-lived certificates that may optionally omit revocation because they expire quickly. Short-lived certificate validity is limited to seven days.</p>
     /// <p>The default value is GENERAL_PURPOSE.</p>
@@ -91,9 +93,11 @@ impl CertificateAuthority {
     pub fn restorable_until(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.restorable_until.as_ref()
     }
-    /// <p>Defines a cryptographic key management compliance standard used for handling CA keys.</p>
-    /// <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p>
-    /// <p>Note: Amazon Web Services Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You must explicitly specify this parameter and value when creating a CA in that Region. Specifying a different value (or no value) results in an <code>InvalidArgsException</code> with the message "A certificate authority cannot be created in this region with the specified security standard."</p>
+    /// <p>Defines a cryptographic key management compliance standard for handling and protecting CA keys.</p>
+    /// <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p><note>
+    /// <p>Starting January 26, 2023, Amazon Web Services Private CA protects all CA private keys in non-China regions using hardware security modules (HSMs) that comply with FIPS PUB 140-2 Level 3.</p>
+    /// <p>For information about security standard support in different Amazon Web Services Regions, see <a href="https://docs.aws.amazon.com/privateca/latest/userguide/data-protection.html#private-keys">Storage and security compliance of Amazon Web Services Private CA private keys</a>.</p>
+    /// </note>
     pub fn key_storage_security_standard(&self) -> ::std::option::Option<&crate::types::KeyStorageSecurityStandard> {
         self.key_storage_security_standard.as_ref()
     }
@@ -313,23 +317,29 @@ impl CertificateAuthorityBuilder {
     pub fn get_restorable_until(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.restorable_until
     }
-    /// <p>Defines a cryptographic key management compliance standard used for handling CA keys.</p>
-    /// <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p>
-    /// <p>Note: Amazon Web Services Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You must explicitly specify this parameter and value when creating a CA in that Region. Specifying a different value (or no value) results in an <code>InvalidArgsException</code> with the message "A certificate authority cannot be created in this region with the specified security standard."</p>
+    /// <p>Defines a cryptographic key management compliance standard for handling and protecting CA keys.</p>
+    /// <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p><note>
+    /// <p>Starting January 26, 2023, Amazon Web Services Private CA protects all CA private keys in non-China regions using hardware security modules (HSMs) that comply with FIPS PUB 140-2 Level 3.</p>
+    /// <p>For information about security standard support in different Amazon Web Services Regions, see <a href="https://docs.aws.amazon.com/privateca/latest/userguide/data-protection.html#private-keys">Storage and security compliance of Amazon Web Services Private CA private keys</a>.</p>
+    /// </note>
     pub fn key_storage_security_standard(mut self, input: crate::types::KeyStorageSecurityStandard) -> Self {
         self.key_storage_security_standard = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Defines a cryptographic key management compliance standard used for handling CA keys.</p>
-    /// <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p>
-    /// <p>Note: Amazon Web Services Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You must explicitly specify this parameter and value when creating a CA in that Region. Specifying a different value (or no value) results in an <code>InvalidArgsException</code> with the message "A certificate authority cannot be created in this region with the specified security standard."</p>
+    /// <p>Defines a cryptographic key management compliance standard for handling and protecting CA keys.</p>
+    /// <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p><note>
+    /// <p>Starting January 26, 2023, Amazon Web Services Private CA protects all CA private keys in non-China regions using hardware security modules (HSMs) that comply with FIPS PUB 140-2 Level 3.</p>
+    /// <p>For information about security standard support in different Amazon Web Services Regions, see <a href="https://docs.aws.amazon.com/privateca/latest/userguide/data-protection.html#private-keys">Storage and security compliance of Amazon Web Services Private CA private keys</a>.</p>
+    /// </note>
     pub fn set_key_storage_security_standard(mut self, input: ::std::option::Option<crate::types::KeyStorageSecurityStandard>) -> Self {
         self.key_storage_security_standard = input;
         self
     }
-    /// <p>Defines a cryptographic key management compliance standard used for handling CA keys.</p>
-    /// <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p>
-    /// <p>Note: Amazon Web Services Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You must explicitly specify this parameter and value when creating a CA in that Region. Specifying a different value (or no value) results in an <code>InvalidArgsException</code> with the message "A certificate authority cannot be created in this region with the specified security standard."</p>
+    /// <p>Defines a cryptographic key management compliance standard for handling and protecting CA keys.</p>
+    /// <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p><note>
+    /// <p>Starting January 26, 2023, Amazon Web Services Private CA protects all CA private keys in non-China regions using hardware security modules (HSMs) that comply with FIPS PUB 140-2 Level 3.</p>
+    /// <p>For information about security standard support in different Amazon Web Services Regions, see <a href="https://docs.aws.amazon.com/privateca/latest/userguide/data-protection.html#private-keys">Storage and security compliance of Amazon Web Services Private CA private keys</a>.</p>
+    /// </note>
     pub fn get_key_storage_security_standard(&self) -> &::std::option::Option<crate::types::KeyStorageSecurityStandard> {
         &self.key_storage_security_standard
     }

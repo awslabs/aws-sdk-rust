@@ -3,6 +3,8 @@ pub use crate::types::error::_unauthenticated_exception::UnauthenticatedExceptio
 
 pub use crate::types::error::_service_exception::ServiceException;
 
+pub use crate::types::error::_region_setup_in_progress_exception::RegionSetupInProgressException;
+
 pub use crate::types::error::_operation_failure_exception::OperationFailureException;
 
 pub use crate::types::error::_not_found_exception::NotFoundException;
@@ -22,6 +24,8 @@ mod _invalid_input_exception;
 mod _not_found_exception;
 
 mod _operation_failure_exception;
+
+mod _region_setup_in_progress_exception;
 
 mod _service_exception;
 

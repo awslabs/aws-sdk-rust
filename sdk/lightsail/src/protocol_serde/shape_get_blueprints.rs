@@ -95,6 +95,24 @@ pub fn de_get_blueprints_http_error(
             }
             tmp
         }),
+        "RegionSetupInProgressException" => crate::operation::get_blueprints::GetBlueprintsError::RegionSetupInProgressException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::RegionSetupInProgressExceptionBuilder::default();
+                output = crate::protocol_serde::shape_region_setup_in_progress_exception::de_region_setup_in_progress_exception_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::get_blueprints::GetBlueprintsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "ServiceException" => crate::operation::get_blueprints::GetBlueprintsError::ServiceException({
             #[allow(unused_mut)]
             let mut tmp = {

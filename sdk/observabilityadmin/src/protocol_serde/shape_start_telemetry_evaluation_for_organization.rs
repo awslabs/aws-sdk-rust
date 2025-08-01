@@ -76,6 +76,26 @@ pub fn de_start_telemetry_evaluation_for_organization_http_error(
                 tmp
             })
         }
+        "TooManyRequestsException" => {
+            crate::operation::start_telemetry_evaluation_for_organization::StartTelemetryEvaluationForOrganizationError::TooManyRequestsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
+                    output =
+                        crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(_response_body, output)
+                            .map_err(
+                            crate::operation::start_telemetry_evaluation_for_organization::StartTelemetryEvaluationForOrganizationError::unhandled,
+                        )?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "ValidationException" => {
             crate::operation::start_telemetry_evaluation_for_organization::StartTelemetryEvaluationForOrganizationError::ValidationException({
                 #[allow(unused_mut)]

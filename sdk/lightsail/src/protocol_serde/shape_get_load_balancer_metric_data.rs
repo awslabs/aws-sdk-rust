@@ -100,6 +100,26 @@ pub fn de_get_load_balancer_metric_data_http_error(
             }
             tmp
         }),
+        "RegionSetupInProgressException" => {
+            crate::operation::get_load_balancer_metric_data::GetLoadBalancerMetricDataError::RegionSetupInProgressException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::RegionSetupInProgressExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_region_setup_in_progress_exception::de_region_setup_in_progress_exception_json_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::get_load_balancer_metric_data::GetLoadBalancerMetricDataError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "ServiceException" => crate::operation::get_load_balancer_metric_data::GetLoadBalancerMetricDataError::ServiceException({
             #[allow(unused_mut)]
             let mut tmp = {

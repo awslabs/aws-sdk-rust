@@ -339,6 +339,8 @@ pub use crate::types::_resource::Resource;
 
 pub use crate::types::_resource_details::ResourceDetails;
 
+pub use crate::types::_code_repository_details::CodeRepositoryDetails;
+
 pub use crate::types::_aws_ec2_client_vpn_endpoint_details::AwsEc2ClientVpnEndpointDetails;
 
 pub use crate::types::_aws_ec2_client_vpn_endpoint_client_login_banner_options_details::AwsEc2ClientVpnEndpointClientLoginBannerOptionsDetails;
@@ -2674,6 +2676,8 @@ mod _classification_result;
 mod _classification_status;
 
 mod _cloud_watch_logs_log_group_arn_config_details;
+
+mod _code_repository_details;
 
 mod _code_vulnerabilities_file_path;
 

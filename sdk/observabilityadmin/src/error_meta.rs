@@ -3,10 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum Error {
-    /// <p>Indicates you don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access management for AWS resources</a> in the IAM user guide.</p>
+    /// <p>Indicates you don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access management for Amazon Web Services resources</a> in the IAM user guide.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
+    /// <p>The requested operation conflicts with the current state of the specified resource or with another request.</p>
+    ConflictException(crate::types::error::ConflictException),
     /// <p>Indicates the request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::types::error::InternalServerException),
+    /// <p>The specified resource (such as a telemetry rule) could not be found.</p>
+    ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
+    /// <p>The requested operation would exceed the allowed quota for the specified resource type.</p>
+    ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
+    /// <p>The request throughput limit was exceeded.</p>
+    TooManyRequestsException(crate::types::error::TooManyRequestsException),
     /// <p>Indicates input validation failed. Check your request parameters and retry the request.</p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -22,7 +30,11 @@ impl ::std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
             Error::AccessDeniedException(inner) => inner.fmt(f),
+            Error::ConflictException(inner) => inner.fmt(f),
             Error::InternalServerException(inner) => inner.fmt(f),
+            Error::ResourceNotFoundException(inner) => inner.fmt(f),
+            Error::ServiceQuotaExceededException(inner) => inner.fmt(f),
+            Error::TooManyRequestsException(inner) => inner.fmt(f),
             Error::ValidationException(inner) => inner.fmt(f),
             Error::Unhandled(_) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
@@ -46,9 +58,179 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
     fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
         match self {
             Self::AccessDeniedException(inner) => inner.meta(),
+            Self::ConflictException(inner) => inner.meta(),
             Self::InternalServerException(inner) => inner.meta(),
+            Self::ResourceNotFoundException(inner) => inner.meta(),
+            Self::ServiceQuotaExceededException(inner) => inner.meta(),
+            Self::TooManyRequestsException(inner) => inner.meta(),
             Self::ValidationException(inner) => inner.meta(),
             Self::Unhandled(inner) => &inner.meta,
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_telemetry_rule::CreateTelemetryRuleError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_telemetry_rule::CreateTelemetryRuleError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_telemetry_rule::CreateTelemetryRuleError> for Error {
+    fn from(err: crate::operation::create_telemetry_rule::CreateTelemetryRuleError) -> Self {
+        match err {
+            crate::operation::create_telemetry_rule::CreateTelemetryRuleError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_telemetry_rule::CreateTelemetryRuleError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_telemetry_rule::CreateTelemetryRuleError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_telemetry_rule::CreateTelemetryRuleError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_telemetry_rule::CreateTelemetryRuleError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::create_telemetry_rule::CreateTelemetryRuleError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_telemetry_rule::CreateTelemetryRuleError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_telemetry_rule_for_organization::CreateTelemetryRuleForOrganizationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_telemetry_rule_for_organization::CreateTelemetryRuleForOrganizationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_telemetry_rule_for_organization::CreateTelemetryRuleForOrganizationError> for Error {
+    fn from(err: crate::operation::create_telemetry_rule_for_organization::CreateTelemetryRuleForOrganizationError) -> Self {
+        match err {
+            crate::operation::create_telemetry_rule_for_organization::CreateTelemetryRuleForOrganizationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_telemetry_rule_for_organization::CreateTelemetryRuleForOrganizationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::create_telemetry_rule_for_organization::CreateTelemetryRuleForOrganizationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_telemetry_rule_for_organization::CreateTelemetryRuleForOrganizationError::ServiceQuotaExceededException(
+                inner,
+            ) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::create_telemetry_rule_for_organization::CreateTelemetryRuleForOrganizationError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::create_telemetry_rule_for_organization::CreateTelemetryRuleForOrganizationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::create_telemetry_rule_for_organization::CreateTelemetryRuleForOrganizationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_telemetry_rule::DeleteTelemetryRuleError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_telemetry_rule::DeleteTelemetryRuleError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_telemetry_rule::DeleteTelemetryRuleError> for Error {
+    fn from(err: crate::operation::delete_telemetry_rule::DeleteTelemetryRuleError) -> Self {
+        match err {
+            crate::operation::delete_telemetry_rule::DeleteTelemetryRuleError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_telemetry_rule::DeleteTelemetryRuleError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_telemetry_rule::DeleteTelemetryRuleError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_telemetry_rule::DeleteTelemetryRuleError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::delete_telemetry_rule::DeleteTelemetryRuleError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_telemetry_rule::DeleteTelemetryRuleError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_telemetry_rule_for_organization::DeleteTelemetryRuleForOrganizationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_telemetry_rule_for_organization::DeleteTelemetryRuleForOrganizationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_telemetry_rule_for_organization::DeleteTelemetryRuleForOrganizationError> for Error {
+    fn from(err: crate::operation::delete_telemetry_rule_for_organization::DeleteTelemetryRuleForOrganizationError) -> Self {
+        match err {
+            crate::operation::delete_telemetry_rule_for_organization::DeleteTelemetryRuleForOrganizationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_telemetry_rule_for_organization::DeleteTelemetryRuleForOrganizationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_telemetry_rule_for_organization::DeleteTelemetryRuleForOrganizationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_telemetry_rule_for_organization::DeleteTelemetryRuleForOrganizationError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::delete_telemetry_rule_for_organization::DeleteTelemetryRuleForOrganizationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_telemetry_rule_for_organization::DeleteTelemetryRuleForOrganizationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -81,6 +263,9 @@ impl From<crate::operation::get_telemetry_evaluation_status::GetTelemetryEvaluat
             }
             crate::operation::get_telemetry_evaluation_status::GetTelemetryEvaluationStatusError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
+            }
+            crate::operation::get_telemetry_evaluation_status::GetTelemetryEvaluationStatusError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
             }
             crate::operation::get_telemetry_evaluation_status::GetTelemetryEvaluationStatusError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -116,8 +301,82 @@ impl From<crate::operation::get_telemetry_evaluation_status_for_organization::Ge
         match err {
             crate::operation::get_telemetry_evaluation_status_for_organization::GetTelemetryEvaluationStatusForOrganizationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::get_telemetry_evaluation_status_for_organization::GetTelemetryEvaluationStatusForOrganizationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_telemetry_evaluation_status_for_organization::GetTelemetryEvaluationStatusForOrganizationError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::get_telemetry_evaluation_status_for_organization::GetTelemetryEvaluationStatusForOrganizationError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_telemetry_evaluation_status_for_organization::GetTelemetryEvaluationStatusForOrganizationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_telemetry_rule::GetTelemetryRuleError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_telemetry_rule::GetTelemetryRuleError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_telemetry_rule::GetTelemetryRuleError> for Error {
+    fn from(err: crate::operation::get_telemetry_rule::GetTelemetryRuleError) -> Self {
+        match err {
+            crate::operation::get_telemetry_rule::GetTelemetryRuleError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_telemetry_rule::GetTelemetryRuleError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_telemetry_rule::GetTelemetryRuleError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_telemetry_rule::GetTelemetryRuleError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::get_telemetry_rule::GetTelemetryRuleError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_telemetry_rule::GetTelemetryRuleError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_telemetry_rule_for_organization::GetTelemetryRuleForOrganizationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_telemetry_rule_for_organization::GetTelemetryRuleForOrganizationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_telemetry_rule_for_organization::GetTelemetryRuleForOrganizationError> for Error {
+    fn from(err: crate::operation::get_telemetry_rule_for_organization::GetTelemetryRuleForOrganizationError) -> Self {
+        match err {
+            crate::operation::get_telemetry_rule_for_organization::GetTelemetryRuleForOrganizationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_telemetry_rule_for_organization::GetTelemetryRuleForOrganizationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_telemetry_rule_for_organization::GetTelemetryRuleForOrganizationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_telemetry_rule_for_organization::GetTelemetryRuleForOrganizationError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::get_telemetry_rule_for_organization::GetTelemetryRuleForOrganizationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_telemetry_rule_for_organization::GetTelemetryRuleForOrganizationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -145,6 +404,9 @@ impl From<crate::operation::list_resource_telemetry::ListResourceTelemetryError>
             }
             crate::operation::list_resource_telemetry::ListResourceTelemetryError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
+            }
+            crate::operation::list_resource_telemetry::ListResourceTelemetryError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
             }
             crate::operation::list_resource_telemetry::ListResourceTelemetryError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_resource_telemetry::ListResourceTelemetryError::Unhandled(inner) => Error::Unhandled(inner),
@@ -185,10 +447,118 @@ impl From<crate::operation::list_resource_telemetry_for_organization::ListResour
             crate::operation::list_resource_telemetry_for_organization::ListResourceTelemetryForOrganizationError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
+            crate::operation::list_resource_telemetry_for_organization::ListResourceTelemetryForOrganizationError::TooManyRequestsException(
+                inner,
+            ) => Error::TooManyRequestsException(inner),
             crate::operation::list_resource_telemetry_for_organization::ListResourceTelemetryForOrganizationError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
             crate::operation::list_resource_telemetry_for_organization::ListResourceTelemetryForOrganizationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> for Error {
+    fn from(err: crate::operation::list_tags_for_resource::ListTagsForResourceError) -> Self {
+        match err {
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_telemetry_rules::ListTelemetryRulesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_telemetry_rules::ListTelemetryRulesError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_telemetry_rules::ListTelemetryRulesError> for Error {
+    fn from(err: crate::operation::list_telemetry_rules::ListTelemetryRulesError) -> Self {
+        match err {
+            crate::operation::list_telemetry_rules::ListTelemetryRulesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_telemetry_rules::ListTelemetryRulesError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_telemetry_rules::ListTelemetryRulesError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::list_telemetry_rules::ListTelemetryRulesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_telemetry_rules::ListTelemetryRulesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_telemetry_rules_for_organization::ListTelemetryRulesForOrganizationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_telemetry_rules_for_organization::ListTelemetryRulesForOrganizationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_telemetry_rules_for_organization::ListTelemetryRulesForOrganizationError> for Error {
+    fn from(err: crate::operation::list_telemetry_rules_for_organization::ListTelemetryRulesForOrganizationError) -> Self {
+        match err {
+            crate::operation::list_telemetry_rules_for_organization::ListTelemetryRulesForOrganizationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_telemetry_rules_for_organization::ListTelemetryRulesForOrganizationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_telemetry_rules_for_organization::ListTelemetryRulesForOrganizationError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::list_telemetry_rules_for_organization::ListTelemetryRulesForOrganizationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_telemetry_rules_for_organization::ListTelemetryRulesForOrganizationError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
         }
@@ -219,6 +589,9 @@ impl From<crate::operation::start_telemetry_evaluation::StartTelemetryEvaluation
             }
             crate::operation::start_telemetry_evaluation::StartTelemetryEvaluationError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
+            }
+            crate::operation::start_telemetry_evaluation::StartTelemetryEvaluationError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
             }
             crate::operation::start_telemetry_evaluation::StartTelemetryEvaluationError::ValidationException(inner) => {
                 Error::ValidationException(inner)
@@ -261,6 +634,9 @@ impl From<crate::operation::start_telemetry_evaluation_for_organization::StartTe
             crate::operation::start_telemetry_evaluation_for_organization::StartTelemetryEvaluationForOrganizationError::InternalServerException(
                 inner,
             ) => Error::InternalServerException(inner),
+            crate::operation::start_telemetry_evaluation_for_organization::StartTelemetryEvaluationForOrganizationError::TooManyRequestsException(
+                inner,
+            ) => Error::TooManyRequestsException(inner),
             crate::operation::start_telemetry_evaluation_for_organization::StartTelemetryEvaluationForOrganizationError::ValidationException(
                 inner,
             ) => Error::ValidationException(inner),
@@ -295,6 +671,9 @@ impl From<crate::operation::stop_telemetry_evaluation::StopTelemetryEvaluationEr
             }
             crate::operation::stop_telemetry_evaluation::StopTelemetryEvaluationError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
+            }
+            crate::operation::stop_telemetry_evaluation::StopTelemetryEvaluationError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
             }
             crate::operation::stop_telemetry_evaluation::StopTelemetryEvaluationError::ValidationException(inner) => {
                 Error::ValidationException(inner)
@@ -337,6 +716,9 @@ impl From<crate::operation::stop_telemetry_evaluation_for_organization::StopTele
             crate::operation::stop_telemetry_evaluation_for_organization::StopTelemetryEvaluationForOrganizationError::InternalServerException(
                 inner,
             ) => Error::InternalServerException(inner),
+            crate::operation::stop_telemetry_evaluation_for_organization::StopTelemetryEvaluationForOrganizationError::TooManyRequestsException(
+                inner,
+            ) => Error::TooManyRequestsException(inner),
             crate::operation::stop_telemetry_evaluation_for_organization::StopTelemetryEvaluationForOrganizationError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
@@ -346,11 +728,155 @@ impl From<crate::operation::stop_telemetry_evaluation_for_organization::StopTele
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::tag_resource::TagResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::tag_resource::TagResourceError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::tag_resource::TagResourceError> for Error {
+    fn from(err: crate::operation::tag_resource::TagResourceError) -> Self {
+        match err {
+            crate::operation::tag_resource::TagResourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::tag_resource::TagResourceError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::tag_resource::TagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::tag_resource::TagResourceError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::tag_resource::TagResourceError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::tag_resource::TagResourceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::tag_resource::TagResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::untag_resource::UntagResourceError> for Error {
+    fn from(err: crate::operation::untag_resource::UntagResourceError) -> Self {
+        match err {
+            crate::operation::untag_resource::UntagResourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::untag_resource::UntagResourceError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::untag_resource::UntagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::untag_resource::UntagResourceError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::untag_resource::UntagResourceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_telemetry_rule::UpdateTelemetryRuleError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_telemetry_rule::UpdateTelemetryRuleError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_telemetry_rule::UpdateTelemetryRuleError> for Error {
+    fn from(err: crate::operation::update_telemetry_rule::UpdateTelemetryRuleError) -> Self {
+        match err {
+            crate::operation::update_telemetry_rule::UpdateTelemetryRuleError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_telemetry_rule::UpdateTelemetryRuleError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_telemetry_rule::UpdateTelemetryRuleError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_telemetry_rule::UpdateTelemetryRuleError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::update_telemetry_rule::UpdateTelemetryRuleError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::update_telemetry_rule::UpdateTelemetryRuleError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_telemetry_rule::UpdateTelemetryRuleError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_telemetry_rule_for_organization::UpdateTelemetryRuleForOrganizationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_telemetry_rule_for_organization::UpdateTelemetryRuleForOrganizationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_telemetry_rule_for_organization::UpdateTelemetryRuleForOrganizationError> for Error {
+    fn from(err: crate::operation::update_telemetry_rule_for_organization::UpdateTelemetryRuleForOrganizationError) -> Self {
+        match err {
+            crate::operation::update_telemetry_rule_for_organization::UpdateTelemetryRuleForOrganizationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_telemetry_rule_for_organization::UpdateTelemetryRuleForOrganizationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_telemetry_rule_for_organization::UpdateTelemetryRuleForOrganizationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_telemetry_rule_for_organization::UpdateTelemetryRuleForOrganizationError::ServiceQuotaExceededException(
+                inner,
+            ) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::update_telemetry_rule_for_organization::UpdateTelemetryRuleForOrganizationError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::update_telemetry_rule_for_organization::UpdateTelemetryRuleForOrganizationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::update_telemetry_rule_for_organization::UpdateTelemetryRuleForOrganizationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl ::std::error::Error for Error {
     fn source(&self) -> std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Error::AccessDeniedException(inner) => inner.source(),
+            Error::ConflictException(inner) => inner.source(),
             Error::InternalServerException(inner) => inner.source(),
+            Error::ResourceNotFoundException(inner) => inner.source(),
+            Error::ServiceQuotaExceededException(inner) => inner.source(),
+            Error::TooManyRequestsException(inner) => inner.source(),
             Error::ValidationException(inner) => inner.source(),
             Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source),
         }
@@ -360,7 +886,11 @@ impl ::aws_types::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {
             Self::AccessDeniedException(e) => e.request_id(),
+            Self::ConflictException(e) => e.request_id(),
             Self::InternalServerException(e) => e.request_id(),
+            Self::ResourceNotFoundException(e) => e.request_id(),
+            Self::ServiceQuotaExceededException(e) => e.request_id(),
+            Self::TooManyRequestsException(e) => e.request_id(),
             Self::ValidationException(e) => e.request_id(),
             Self::Unhandled(e) => e.meta.request_id(),
         }
