@@ -7,7 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeExecutionOutput`](crate::operation::describe_execution::DescribeExecutionOutput) with field(s):
     ///   - [`execution_id(String)`](crate::operation::describe_execution::DescribeExecutionOutput::execution_id): <p>The ID of the execution.</p>
     ///   - [`action_type(Option<String>)`](crate::operation::describe_execution::DescribeExecutionOutput::action_type): <p>The type of action exectued.</p>
-    ///   - [`target_resource(Option<TargetResource>)`](crate::operation::describe_execution::DescribeExecutionOutput::target_resource): <p>The resource the action will be taken on.</p>
+    ///   - [`target_resource(Option<TargetResource>)`](crate::operation::describe_execution::DescribeExecutionOutput::target_resource): <p>The resource the action will be taken on. This can include asset-based resources and computation model resources.</p>
     ///   - [`target_resource_version(String)`](crate::operation::describe_execution::DescribeExecutionOutput::target_resource_version): <p>The version of the target resource.</p>
     ///   - [`resolve_to(Option<ResolveTo>)`](crate::operation::describe_execution::DescribeExecutionOutput::resolve_to): <p>The detailed resource this execution resolves to.</p>
     ///   - [`execution_start_time(DateTime)`](crate::operation::describe_execution::DescribeExecutionOutput::execution_start_time): <p>The time the process started.</p>

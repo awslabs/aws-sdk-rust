@@ -263,6 +263,8 @@ mod delete_asset_model;
 
 mod delete_asset_model_composite_model;
 
+mod delete_asset_model_interface_relationship;
+
 mod delete_computation_model;
 
 mod delete_dashboard;
@@ -288,6 +290,8 @@ mod describe_asset_composite_model;
 mod describe_asset_model;
 
 mod describe_asset_model_composite_model;
+
+mod describe_asset_model_interface_relationship;
 
 mod describe_asset_property;
 
@@ -373,6 +377,8 @@ mod list_executions;
 
 mod list_gateways;
 
+mod list_interface_relationships;
+
 mod list_portals;
 
 mod list_project_assets;
@@ -382,6 +388,8 @@ mod list_projects;
 mod list_tags_for_resource;
 
 mod list_time_series;
+
+mod put_asset_model_interface_relationship;
 
 mod put_default_encryption_configuration;
 

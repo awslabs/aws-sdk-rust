@@ -22,8 +22,8 @@ impl crate::operation::list_memory_records::builders::ListMemoryRecordsInputBuil
 }
 /// Fluent builder constructing a request to `ListMemoryRecords`.
 ///
-/// <p>Lists memory records in a memory store based on specified criteria. We recommend using pagination to ensure that the operation returns quickly and successfully.</p>
-/// <p>To use this operation, you must have the <code>genesismemory:ListMemoryRecords</code> permission.</p>
+/// <p>Lists memory records in an AgentCore Memory resource based on specified criteria. We recommend using pagination to ensure that the operation returns quickly and successfully.</p>
+/// <p>To use this operation, you must have the <code>bedrock-agentcore:ListMemoryRecords</code> permission.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListMemoryRecordsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -115,17 +115,17 @@ impl ListMemoryRecordsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_memory_records::paginator::ListMemoryRecordsPaginator {
         crate::operation::list_memory_records::paginator::ListMemoryRecordsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The identifier of the memory store for which to list memory records.</p>
+    /// <p>The identifier of the AgentCore Memory resource for which to list memory records.</p>
     pub fn memory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.memory_id(input.into());
         self
     }
-    /// <p>The identifier of the memory store for which to list memory records.</p>
+    /// <p>The identifier of the AgentCore Memory resource for which to list memory records.</p>
     pub fn set_memory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_memory_id(input);
         self
     }
-    /// <p>The identifier of the memory store for which to list memory records.</p>
+    /// <p>The identifier of the AgentCore Memory resource for which to list memory records.</p>
     pub fn get_memory_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_memory_id()
     }

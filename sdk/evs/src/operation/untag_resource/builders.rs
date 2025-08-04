@@ -22,6 +22,9 @@ impl crate::operation::untag_resource::builders::UntagResourceInputBuilder {
 }
 /// Fluent builder constructing a request to `UntagResource`.
 ///
+/// <note>
+/// <p>Amazon EVS is in public preview release and is subject to change.</p>
+/// </note>
 /// <p>Deletes specified tags from an Amazon EVS resource.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UntagResourceFluentBuilder {

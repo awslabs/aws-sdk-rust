@@ -22,6 +22,9 @@ impl crate::operation::list_environment_vlans::builders::ListEnvironmentVlansInp
 }
 /// Fluent builder constructing a request to `ListEnvironmentVlans`.
 ///
+/// <note>
+/// <p>Amazon EVS is in public preview release and is subject to change.</p>
+/// </note>
 /// <p>Lists environment VLANs that are associated with the specified environment.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListEnvironmentVlansFluentBuilder {

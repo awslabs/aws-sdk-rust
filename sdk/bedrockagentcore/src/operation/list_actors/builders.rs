@@ -22,8 +22,8 @@ impl crate::operation::list_actors::builders::ListActorsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListActors`.
 ///
-/// <p>Lists all actors in a memory store. We recommend using pagination to ensure that the operation returns quickly and successfully.</p>
-/// <p>To use this operation, you must have the <code>genesismemory:ListActors</code> permission.</p>
+/// <p>Lists all actors in an AgentCore Memory resource. We recommend using pagination to ensure that the operation returns quickly and successfully.</p>
+/// <p>To use this operation, you must have the <code>bedrock-agentcore:ListActors</code> permission.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListActorsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -115,17 +115,17 @@ impl ListActorsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_actors::paginator::ListActorsPaginator {
         crate::operation::list_actors::paginator::ListActorsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The identifier of the memory store for which to list actors.</p>
+    /// <p>The identifier of the AgentCore Memory resource for which to list actors.</p>
     pub fn memory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.memory_id(input.into());
         self
     }
-    /// <p>The identifier of the memory store for which to list actors.</p>
+    /// <p>The identifier of the AgentCore Memory resource for which to list actors.</p>
     pub fn set_memory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_memory_id(input);
         self
     }
-    /// <p>The identifier of the memory store for which to list actors.</p>
+    /// <p>The identifier of the AgentCore Memory resource for which to list actors.</p>
     pub fn get_memory_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_memory_id()
     }

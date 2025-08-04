@@ -8,3 +8,5 @@ pub use crate::types::error::_throttling_exception::ThrottlingExceptionBuilder;
 pub use crate::types::error::_tag_policy_exception::TagPolicyExceptionBuilder;
 
 pub use crate::types::error::_too_many_tags_exception::TooManyTagsExceptionBuilder;
+
+pub use crate::types::error::_service_quota_exceeded_exception::ServiceQuotaExceededExceptionBuilder;

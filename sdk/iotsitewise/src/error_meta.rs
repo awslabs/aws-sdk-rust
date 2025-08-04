@@ -935,6 +935,43 @@ impl From<crate::operation::delete_asset_model_composite_model::DeleteAssetModel
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_asset_model_interface_relationship::DeleteAssetModelInterfaceRelationshipError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_asset_model_interface_relationship::DeleteAssetModelInterfaceRelationshipError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_asset_model_interface_relationship::DeleteAssetModelInterfaceRelationshipError> for Error {
+    fn from(err: crate::operation::delete_asset_model_interface_relationship::DeleteAssetModelInterfaceRelationshipError) -> Self {
+        match err {
+            crate::operation::delete_asset_model_interface_relationship::DeleteAssetModelInterfaceRelationshipError::ConflictingOperationException(inner) => Error::ConflictingOperationException(inner),
+            crate::operation::delete_asset_model_interface_relationship::DeleteAssetModelInterfaceRelationshipError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::delete_asset_model_interface_relationship::DeleteAssetModelInterfaceRelationshipError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::delete_asset_model_interface_relationship::DeleteAssetModelInterfaceRelationshipError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_asset_model_interface_relationship::DeleteAssetModelInterfaceRelationshipError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_asset_model_interface_relationship::DeleteAssetModelInterfaceRelationshipError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_computation_model::DeleteComputationModelError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1320,6 +1357,42 @@ impl From<crate::operation::describe_asset_model_composite_model::DescribeAssetM
             crate::operation::describe_asset_model_composite_model::DescribeAssetModelCompositeModelError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_asset_model_interface_relationship::DescribeAssetModelInterfaceRelationshipError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_asset_model_interface_relationship::DescribeAssetModelInterfaceRelationshipError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_asset_model_interface_relationship::DescribeAssetModelInterfaceRelationshipError> for Error {
+    fn from(err: crate::operation::describe_asset_model_interface_relationship::DescribeAssetModelInterfaceRelationshipError) -> Self {
+        match err {
+            crate::operation::describe_asset_model_interface_relationship::DescribeAssetModelInterfaceRelationshipError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::describe_asset_model_interface_relationship::DescribeAssetModelInterfaceRelationshipError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::describe_asset_model_interface_relationship::DescribeAssetModelInterfaceRelationshipError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_asset_model_interface_relationship::DescribeAssetModelInterfaceRelationshipError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::describe_asset_model_interface_relationship::DescribeAssetModelInterfaceRelationshipError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2687,6 +2760,42 @@ impl From<crate::operation::list_gateways::ListGatewaysError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_interface_relationships::ListInterfaceRelationshipsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_interface_relationships::ListInterfaceRelationshipsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_interface_relationships::ListInterfaceRelationshipsError> for Error {
+    fn from(err: crate::operation::list_interface_relationships::ListInterfaceRelationshipsError) -> Self {
+        match err {
+            crate::operation::list_interface_relationships::ListInterfaceRelationshipsError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::operation::list_interface_relationships::ListInterfaceRelationshipsError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::list_interface_relationships::ListInterfaceRelationshipsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_interface_relationships::ListInterfaceRelationshipsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_interface_relationships::ListInterfaceRelationshipsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_portals::ListPortalsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2817,6 +2926,58 @@ impl From<crate::operation::list_time_series::ListTimeSeriesError> for Error {
             crate::operation::list_time_series::ListTimeSeriesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::list_time_series::ListTimeSeriesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_time_series::ListTimeSeriesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::put_asset_model_interface_relationship::PutAssetModelInterfaceRelationshipError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::put_asset_model_interface_relationship::PutAssetModelInterfaceRelationshipError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_asset_model_interface_relationship::PutAssetModelInterfaceRelationshipError> for Error {
+    fn from(err: crate::operation::put_asset_model_interface_relationship::PutAssetModelInterfaceRelationshipError) -> Self {
+        match err {
+            crate::operation::put_asset_model_interface_relationship::PutAssetModelInterfaceRelationshipError::ConflictingOperationException(
+                inner,
+            ) => Error::ConflictingOperationException(inner),
+            crate::operation::put_asset_model_interface_relationship::PutAssetModelInterfaceRelationshipError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::operation::put_asset_model_interface_relationship::PutAssetModelInterfaceRelationshipError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::put_asset_model_interface_relationship::PutAssetModelInterfaceRelationshipError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::put_asset_model_interface_relationship::PutAssetModelInterfaceRelationshipError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::put_asset_model_interface_relationship::PutAssetModelInterfaceRelationshipError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::put_asset_model_interface_relationship::PutAssetModelInterfaceRelationshipError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }

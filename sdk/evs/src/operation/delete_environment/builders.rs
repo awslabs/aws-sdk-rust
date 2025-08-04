@@ -22,6 +22,9 @@ impl crate::operation::delete_environment::builders::DeleteEnvironmentInputBuild
 }
 /// Fluent builder constructing a request to `DeleteEnvironment`.
 ///
+/// <note>
+/// <p>Amazon EVS is in public preview release and is subject to change.</p>
+/// </note>
 /// <p>Deletes an Amazon EVS environment.</p>
 /// <p>Amazon EVS environments will only be enabled for deletion once the hosts are deleted. You can delete hosts using the <code>DeleteEnvironmentHost</code> action.</p>
 /// <p>Environment deletion also deletes the associated Amazon EVS VLAN subnets. Other associated Amazon Web Services resources are not deleted. These resources may continue to incur costs.</p>

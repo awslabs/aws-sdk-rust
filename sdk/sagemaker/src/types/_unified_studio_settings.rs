@@ -33,7 +33,7 @@ pub struct UnifiedStudioSettings {
     pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>The location where Amazon S3 stores temporary execution data and other artifacts for the project that corresponds to the domain.</p>
     pub project_s3_path: ::std::option::Option<::std::string::String>,
-    /// <p>The ARN of the application managed by SageMaker AI and SageMaker Unified Studio in the Amazon Web Services IAM Identity Center.</p>
+    /// <p>The ARN of the Amazon DataZone application managed by Amazon SageMaker Unified Studio in the Amazon Web Services IAM Identity Center.</p>
     pub single_sign_on_application_arn: ::std::option::Option<::std::string::String>,
 }
 impl UnifiedStudioSettings {
@@ -80,7 +80,7 @@ impl UnifiedStudioSettings {
     pub fn project_s3_path(&self) -> ::std::option::Option<&str> {
         self.project_s3_path.as_deref()
     }
-    /// <p>The ARN of the application managed by SageMaker AI and SageMaker Unified Studio in the Amazon Web Services IAM Identity Center.</p>
+    /// <p>The ARN of the Amazon DataZone application managed by Amazon SageMaker Unified Studio in the Amazon Web Services IAM Identity Center.</p>
     pub fn single_sign_on_application_arn(&self) -> ::std::option::Option<&str> {
         self.single_sign_on_application_arn.as_deref()
     }
@@ -249,17 +249,17 @@ impl UnifiedStudioSettingsBuilder {
     pub fn get_project_s3_path(&self) -> &::std::option::Option<::std::string::String> {
         &self.project_s3_path
     }
-    /// <p>The ARN of the application managed by SageMaker AI and SageMaker Unified Studio in the Amazon Web Services IAM Identity Center.</p>
+    /// <p>The ARN of the Amazon DataZone application managed by Amazon SageMaker Unified Studio in the Amazon Web Services IAM Identity Center.</p>
     pub fn single_sign_on_application_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.single_sign_on_application_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the application managed by SageMaker AI and SageMaker Unified Studio in the Amazon Web Services IAM Identity Center.</p>
+    /// <p>The ARN of the Amazon DataZone application managed by Amazon SageMaker Unified Studio in the Amazon Web Services IAM Identity Center.</p>
     pub fn set_single_sign_on_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.single_sign_on_application_arn = input;
         self
     }
-    /// <p>The ARN of the application managed by SageMaker AI and SageMaker Unified Studio in the Amazon Web Services IAM Identity Center.</p>
+    /// <p>The ARN of the Amazon DataZone application managed by Amazon SageMaker Unified Studio in the Amazon Web Services IAM Identity Center.</p>
     pub fn get_single_sign_on_application_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.single_sign_on_application_arn
     }

@@ -365,6 +365,27 @@ pub(crate) fn delete_asset_model_composite_model_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn delete_asset_model_interface_relationship_output_output_correct_errors(
+    mut builder: crate::operation::delete_asset_model_interface_relationship::builders::DeleteAssetModelInterfaceRelationshipOutputBuilder,
+) -> crate::operation::delete_asset_model_interface_relationship::builders::DeleteAssetModelInterfaceRelationshipOutputBuilder {
+    if builder.asset_model_id.is_none() {
+        builder.asset_model_id = Some(Default::default())
+    }
+    if builder.interface_asset_model_id.is_none() {
+        builder.interface_asset_model_id = Some(Default::default())
+    }
+    if builder.asset_model_arn.is_none() {
+        builder.asset_model_arn = Some(Default::default())
+    }
+    if builder.asset_model_status.is_none() {
+        builder.asset_model_status = {
+            let builder = crate::types::builders::AssetModelStatusBuilder::default();
+            crate::serde_util::asset_model_status_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn delete_computation_model_output_output_correct_errors(
     mut builder: crate::operation::delete_computation_model::builders::DeleteComputationModelOutputBuilder,
 ) -> crate::operation::delete_computation_model::builders::DeleteComputationModelOutputBuilder {
@@ -589,6 +610,24 @@ pub(crate) fn describe_asset_model_composite_model_output_output_correct_errors(
     }
     if builder.asset_model_composite_model_summaries.is_none() {
         builder.asset_model_composite_model_summaries = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn describe_asset_model_interface_relationship_output_output_correct_errors(
+    mut builder: crate::operation::describe_asset_model_interface_relationship::builders::DescribeAssetModelInterfaceRelationshipOutputBuilder,
+) -> crate::operation::describe_asset_model_interface_relationship::builders::DescribeAssetModelInterfaceRelationshipOutputBuilder {
+    if builder.asset_model_id.is_none() {
+        builder.asset_model_id = Some(Default::default())
+    }
+    if builder.interface_asset_model_id.is_none() {
+        builder.interface_asset_model_id = Some(Default::default())
+    }
+    if builder.property_mappings.is_none() {
+        builder.property_mappings = Some(Default::default())
+    }
+    if builder.hierarchy_mappings.is_none() {
+        builder.hierarchy_mappings = Some(Default::default())
     }
     builder
 }
@@ -1166,6 +1205,15 @@ pub(crate) fn list_gateways_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_interface_relationships_output_output_correct_errors(
+    mut builder: crate::operation::list_interface_relationships::builders::ListInterfaceRelationshipsOutputBuilder,
+) -> crate::operation::list_interface_relationships::builders::ListInterfaceRelationshipsOutputBuilder {
+    if builder.interface_relationship_summaries.is_none() {
+        builder.interface_relationship_summaries = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_project_assets_output_output_correct_errors(
     mut builder: crate::operation::list_project_assets::builders::ListProjectAssetsOutputBuilder,
 ) -> crate::operation::list_project_assets::builders::ListProjectAssetsOutputBuilder {
@@ -1198,6 +1246,27 @@ pub(crate) fn list_time_series_output_output_correct_errors(
 ) -> crate::operation::list_time_series::builders::ListTimeSeriesOutputBuilder {
     if builder.time_series_summaries.is_none() {
         builder.time_series_summaries = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn put_asset_model_interface_relationship_output_output_correct_errors(
+    mut builder: crate::operation::put_asset_model_interface_relationship::builders::PutAssetModelInterfaceRelationshipOutputBuilder,
+) -> crate::operation::put_asset_model_interface_relationship::builders::PutAssetModelInterfaceRelationshipOutputBuilder {
+    if builder.asset_model_id.is_none() {
+        builder.asset_model_id = Some(Default::default())
+    }
+    if builder.interface_asset_model_id.is_none() {
+        builder.interface_asset_model_id = Some(Default::default())
+    }
+    if builder.asset_model_arn.is_none() {
+        builder.asset_model_arn = Some(Default::default())
+    }
+    if builder.asset_model_status.is_none() {
+        builder.asset_model_status = {
+            let builder = crate::types::builders::AssetModelStatusBuilder::default();
+            crate::serde_util::asset_model_status_correct_errors(builder).build().ok()
+        }
     }
     builder
 }
@@ -2192,6 +2261,18 @@ pub(crate) fn group_identity_correct_errors(
     builder
 }
 
+pub(crate) fn hierarchy_mapping_correct_errors(
+    mut builder: crate::types::builders::HierarchyMappingBuilder,
+) -> crate::types::builders::HierarchyMappingBuilder {
+    if builder.asset_model_hierarchy_id.is_none() {
+        builder.asset_model_hierarchy_id = Some(Default::default())
+    }
+    if builder.interface_asset_model_hierarchy_id.is_none() {
+        builder.interface_asset_model_hierarchy_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn iam_role_identity_correct_errors(
     mut builder: crate::types::builders::IamRoleIdentityBuilder,
 ) -> crate::types::builders::IamRoleIdentityBuilder {
@@ -2206,6 +2287,24 @@ pub(crate) fn iam_user_identity_correct_errors(
 ) -> crate::types::builders::IamUserIdentityBuilder {
     if builder.arn.is_none() {
         builder.arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn interface_relationship_correct_errors(
+    mut builder: crate::types::builders::InterfaceRelationshipBuilder,
+) -> crate::types::builders::InterfaceRelationshipBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn interface_relationship_summary_correct_errors(
+    mut builder: crate::types::builders::InterfaceRelationshipSummaryBuilder,
+) -> crate::types::builders::InterfaceRelationshipSummaryBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
     }
     builder
 }
@@ -2288,6 +2387,18 @@ pub(crate) fn project_summary_correct_errors(
     }
     if builder.name.is_none() {
         builder.name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn property_mapping_correct_errors(
+    mut builder: crate::types::builders::PropertyMappingBuilder,
+) -> crate::types::builders::PropertyMappingBuilder {
+    if builder.asset_model_property_id.is_none() {
+        builder.asset_model_property_id = Some(Default::default())
+    }
+    if builder.interface_asset_model_property_id.is_none() {
+        builder.interface_asset_model_property_id = Some(Default::default())
     }
     builder
 }
@@ -2447,12 +2558,6 @@ pub(crate) fn matched_data_binding_correct_errors(
 }
 
 pub(crate) fn metric_correct_errors(mut builder: crate::types::builders::MetricBuilder) -> crate::types::builders::MetricBuilder {
-    if builder.expression.is_none() {
-        builder.expression = Some(Default::default())
-    }
-    if builder.variables.is_none() {
-        builder.variables = Some(Default::default())
-    }
     if builder.window.is_none() {
         builder.window = {
             let builder = crate::types::builders::MetricWindowBuilder::default();
@@ -2504,6 +2609,18 @@ pub(crate) fn detailed_error_correct_errors(
     }
     if builder.message.is_none() {
         builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn interface_summary_correct_errors(
+    mut builder: crate::types::builders::InterfaceSummaryBuilder,
+) -> crate::types::builders::InterfaceSummaryBuilder {
+    if builder.interface_asset_model_id.is_none() {
+        builder.interface_asset_model_id = Some(Default::default())
+    }
+    if builder.interface_asset_model_property_id.is_none() {
+        builder.interface_asset_model_property_id = Some(Default::default())
     }
     builder
 }

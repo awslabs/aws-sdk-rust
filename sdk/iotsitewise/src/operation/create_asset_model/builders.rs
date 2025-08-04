@@ -23,12 +23,14 @@ impl crate::operation::create_asset_model::builders::CreateAssetModelInputBuilde
 /// Fluent builder constructing a request to `CreateAssetModel`.
 ///
 /// <p>Creates an asset model from specified property and hierarchy definitions. You create assets from asset models. With asset models, you can easily create assets of the same type that have standardized definitions. Each asset created from a model inherits the asset model's property and hierarchy definitions. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/define-models.html">Defining asset models</a> in the <i>IoT SiteWise User Guide</i>.</p>
-/// <p>You can create two types of asset models, <code>ASSET_MODEL</code> or <code>COMPONENT_MODEL</code>.</p>
+/// <p>You can create three types of asset models, <code>ASSET_MODEL</code>, <code>COMPONENT_MODEL</code>, or an <code>INTERFACE</code>.</p>
 /// <ul>
 /// <li>
 /// <p><b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a component in another asset model.</p></li>
 /// <li>
 /// <p><b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models. You can't create assets directly from this type of asset model.</p></li>
+/// <li>
+/// <p><b>INTERFACE</b> – An interface is a type of model that defines a standard structure that can be applied to different asset models.</p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateAssetModelFluentBuilder {

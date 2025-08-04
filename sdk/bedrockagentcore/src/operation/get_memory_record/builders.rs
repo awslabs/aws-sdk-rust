@@ -22,8 +22,8 @@ impl crate::operation::get_memory_record::builders::GetMemoryRecordInputBuilder 
 }
 /// Fluent builder constructing a request to `GetMemoryRecord`.
 ///
-/// <p>Retrieves a specific memory record from a memory store.</p>
-/// <p>To use this operation, you must have the <code>genesismemory:GetMemoryRecord</code> permission.</p>
+/// <p>Retrieves a specific memory record from an AgentCore Memory resource.</p>
+/// <p>To use this operation, you must have the <code>bedrock-agentcore:GetMemoryRecord</code> permission.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetMemoryRecordFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -109,17 +109,17 @@ impl GetMemoryRecordFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The identifier of the memory store containing the memory record.</p>
+    /// <p>The identifier of the AgentCore Memory resource containing the memory record.</p>
     pub fn memory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.memory_id(input.into());
         self
     }
-    /// <p>The identifier of the memory store containing the memory record.</p>
+    /// <p>The identifier of the AgentCore Memory resource containing the memory record.</p>
     pub fn set_memory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_memory_id(input);
         self
     }
-    /// <p>The identifier of the memory store containing the memory record.</p>
+    /// <p>The identifier of the AgentCore Memory resource containing the memory record.</p>
     pub fn get_memory_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_memory_id()
     }

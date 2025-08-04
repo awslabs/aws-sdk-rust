@@ -22,8 +22,8 @@ impl crate::operation::delete_memory_record::builders::DeleteMemoryRecordInputBu
 }
 /// Fluent builder constructing a request to `DeleteMemoryRecord`.
 ///
-/// <p>Deletes a memory record from a memory store. When you delete a memory record, it is permanently removed.</p>
-/// <p>To use this operation, you must have the <code>genesismemory:DeleteMemoryRecord</code> permission.</p>
+/// <p>Deletes a memory record from an AgentCore Memory resource. When you delete a memory record, it is permanently removed.</p>
+/// <p>To use this operation, you must have the <code>bedrock-agentcore:DeleteMemoryRecord</code> permission.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteMemoryRecordFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -109,17 +109,17 @@ impl DeleteMemoryRecordFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The identifier of the memory store from which to delete the memory record.</p>
+    /// <p>The identifier of the AgentCore Memory resource from which to delete the memory record.</p>
     pub fn memory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.memory_id(input.into());
         self
     }
-    /// <p>The identifier of the memory store from which to delete the memory record.</p>
+    /// <p>The identifier of the AgentCore Memory resource from which to delete the memory record.</p>
     pub fn set_memory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_memory_id(input);
         self
     }
-    /// <p>The identifier of the memory store from which to delete the memory record.</p>
+    /// <p>The identifier of the AgentCore Memory resource from which to delete the memory record.</p>
     pub fn get_memory_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_memory_id()
     }

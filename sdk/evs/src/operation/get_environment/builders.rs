@@ -22,6 +22,9 @@ impl crate::operation::get_environment::builders::GetEnvironmentInputBuilder {
 }
 /// Fluent builder constructing a request to `GetEnvironment`.
 ///
+/// <note>
+/// <p>Amazon EVS is in public preview release and is subject to change.</p>
+/// </note>
 /// <p>Returns a description of the specified environment.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetEnvironmentFluentBuilder {

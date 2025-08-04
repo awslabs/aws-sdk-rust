@@ -22,8 +22,8 @@ impl crate::operation::retrieve_memory_records::builders::RetrieveMemoryRecordsI
 }
 /// Fluent builder constructing a request to `RetrieveMemoryRecords`.
 ///
-/// <p>Searches for and retrieves memory records from a memory store based on specified search criteria. We recommend using pagination to ensure that the operation returns quickly and successfully.</p>
-/// <p>To use this operation, you must have the <code>genesismemory:RetrieveMemoryRecords</code> permission.</p>
+/// <p>Searches for and retrieves memory records from an AgentCore Memory resource based on specified search criteria. We recommend using pagination to ensure that the operation returns quickly and successfully.</p>
+/// <p>To use this operation, you must have the <code>bedrock-agentcore:RetrieveMemoryRecords</code> permission.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RetrieveMemoryRecordsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -115,17 +115,17 @@ impl RetrieveMemoryRecordsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::retrieve_memory_records::paginator::RetrieveMemoryRecordsPaginator {
         crate::operation::retrieve_memory_records::paginator::RetrieveMemoryRecordsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The identifier of the memory store from which to retrieve memory records.</p>
+    /// <p>The identifier of the AgentCore Memory resource from which to retrieve memory records.</p>
     pub fn memory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.memory_id(input.into());
         self
     }
-    /// <p>The identifier of the memory store from which to retrieve memory records.</p>
+    /// <p>The identifier of the AgentCore Memory resource from which to retrieve memory records.</p>
     pub fn set_memory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_memory_id(input);
         self
     }
-    /// <p>The identifier of the memory store from which to retrieve memory records.</p>
+    /// <p>The identifier of the AgentCore Memory resource from which to retrieve memory records.</p>
     pub fn get_memory_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_memory_id()
     }

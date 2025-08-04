@@ -22,8 +22,8 @@ impl crate::operation::get_event::builders::GetEventInputBuilder {
 }
 /// Fluent builder constructing a request to `GetEvent`.
 ///
-/// <p>Retrieves information about a specific event in a memory store.</p>
-/// <p>To use this operation, you must have the <code>genesismemory:GetEvent</code> permission.</p>
+/// <p>Retrieves information about a specific event in an AgentCore Memory resource.</p>
+/// <p>To use this operation, you must have the <code>bedrock-agentcore:GetEvent</code> permission.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetEventFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -100,17 +100,17 @@ impl GetEventFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The identifier of the memory store containing the event.</p>
+    /// <p>The identifier of the AgentCore Memory resource containing the event.</p>
     pub fn memory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.memory_id(input.into());
         self
     }
-    /// <p>The identifier of the memory store containing the event.</p>
+    /// <p>The identifier of the AgentCore Memory resource containing the event.</p>
     pub fn set_memory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_memory_id(input);
         self
     }
-    /// <p>The identifier of the memory store containing the event.</p>
+    /// <p>The identifier of the AgentCore Memory resource containing the event.</p>
     pub fn get_memory_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_memory_id()
     }

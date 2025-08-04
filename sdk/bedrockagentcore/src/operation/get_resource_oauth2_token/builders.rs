@@ -22,7 +22,7 @@ impl crate::operation::get_resource_oauth2_token::builders::GetResourceOauth2Tok
 }
 /// Fluent builder constructing a request to `GetResourceOauth2Token`.
 ///
-/// <p>Reaturns the Oauth2Token of the provided resource</p>
+/// <p>Returns the OAuth 2.0 token of the provided resource</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetResourceOauth2TokenFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -121,20 +121,6 @@ impl GetResourceOauth2TokenFluentBuilder {
     /// <p>The identity token of the workload you want to retrive the Oauth2 Token of.</p>
     pub fn get_workload_identity_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_workload_identity_token()
-    }
-    /// <p>The user ID of the user you're retrieving the token on behalf of.</p>
-    pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.user_id(input.into());
-        self
-    }
-    /// <p>The user ID of the user you're retrieving the token on behalf of.</p>
-    pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_user_id(input);
-        self
-    }
-    /// <p>The user ID of the user you're retrieving the token on behalf of.</p>
-    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_user_id()
     }
     /// <p>Reference to the credential provider</p>
     pub fn resource_credential_provider_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

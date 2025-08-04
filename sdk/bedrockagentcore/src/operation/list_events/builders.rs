@@ -22,8 +22,8 @@ impl crate::operation::list_events::builders::ListEventsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListEvents`.
 ///
-/// <p>Lists events in a memory store based on specified criteria. We recommend using pagination to ensure that the operation returns quickly and successfully.</p>
-/// <p>To use this operation, you must have the <code>genesismemory:ListEvents</code> permission.</p>
+/// <p>Lists events in an AgentCore Memory resource based on specified criteria. We recommend using pagination to ensure that the operation returns quickly and successfully.</p>
+/// <p>To use this operation, you must have the <code>bedrock-agentcore:ListEvents</code> permission.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListEventsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -115,17 +115,17 @@ impl ListEventsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_events::paginator::ListEventsPaginator {
         crate::operation::list_events::paginator::ListEventsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The identifier of the memory store for which to list events.</p>
+    /// <p>The identifier of the AgentCore Memory resource for which to list events.</p>
     pub fn memory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.memory_id(input.into());
         self
     }
-    /// <p>The identifier of the memory store for which to list events.</p>
+    /// <p>The identifier of the AgentCore Memory resource for which to list events.</p>
     pub fn set_memory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_memory_id(input);
         self
     }
-    /// <p>The identifier of the memory store for which to list events.</p>
+    /// <p>The identifier of the AgentCore Memory resource for which to list events.</p>
     pub fn get_memory_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_memory_id()
     }

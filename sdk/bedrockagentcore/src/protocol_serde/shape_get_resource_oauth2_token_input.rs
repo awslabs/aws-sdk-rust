@@ -34,11 +34,8 @@ pub fn ser_get_resource_oauth2_token_input_input(
         }
         array_10.finish();
     }
-    if let Some(var_12) = &input.user_id {
-        object.key("userId").string(var_12.as_str());
-    }
-    if let Some(var_13) = &input.workload_identity_token {
-        object.key("workloadIdentityToken").string(var_13.as_str());
+    if let Some(var_12) = &input.workload_identity_token {
+        object.key("workloadIdentityToken").string(var_12.as_str());
     }
     Ok(())
 }

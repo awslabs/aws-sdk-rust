@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMemoryRecordInput {
-    /// <p>The identifier of the memory store containing the memory record.</p>
+    /// <p>The identifier of the AgentCore Memory resource containing the memory record.</p>
     pub memory_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the memory record to retrieve.</p>
     pub memory_record_id: ::std::option::Option<::std::string::String>,
 }
 impl GetMemoryRecordInput {
-    /// <p>The identifier of the memory store containing the memory record.</p>
+    /// <p>The identifier of the AgentCore Memory resource containing the memory record.</p>
     pub fn memory_id(&self) -> ::std::option::Option<&str> {
         self.memory_id.as_deref()
     }
@@ -33,18 +33,18 @@ pub struct GetMemoryRecordInputBuilder {
     pub(crate) memory_record_id: ::std::option::Option<::std::string::String>,
 }
 impl GetMemoryRecordInputBuilder {
-    /// <p>The identifier of the memory store containing the memory record.</p>
+    /// <p>The identifier of the AgentCore Memory resource containing the memory record.</p>
     /// This field is required.
     pub fn memory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.memory_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the memory store containing the memory record.</p>
+    /// <p>The identifier of the AgentCore Memory resource containing the memory record.</p>
     pub fn set_memory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.memory_id = input;
         self
     }
-    /// <p>The identifier of the memory store containing the memory record.</p>
+    /// <p>The identifier of the AgentCore Memory resource containing the memory record.</p>
     pub fn get_memory_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.memory_id
     }

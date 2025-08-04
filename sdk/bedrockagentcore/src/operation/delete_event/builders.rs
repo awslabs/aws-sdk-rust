@@ -22,8 +22,8 @@ impl crate::operation::delete_event::builders::DeleteEventInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteEvent`.
 ///
-/// <p>Deletes an event from a memory store. When you delete an event, it is permanently removed.</p>
-/// <p>To use this operation, you must have the <code>genesismemory:DeleteEvent</code> permission.</p>
+/// <p>Deletes an event from an AgentCore Memory resource. When you delete an event, it is permanently removed.</p>
+/// <p>To use this operation, you must have the <code>bedrock-agentcore:DeleteEvent</code> permission.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteEventFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -109,17 +109,17 @@ impl DeleteEventFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The identifier of the memory store from which to delete the event.</p>
+    /// <p>The identifier of the AgentCore Memory resource from which to delete the event.</p>
     pub fn memory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.memory_id(input.into());
         self
     }
-    /// <p>The identifier of the memory store from which to delete the event.</p>
+    /// <p>The identifier of the AgentCore Memory resource from which to delete the event.</p>
     pub fn set_memory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_memory_id(input);
         self
     }
-    /// <p>The identifier of the memory store from which to delete the event.</p>
+    /// <p>The identifier of the AgentCore Memory resource from which to delete the event.</p>
     pub fn get_memory_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_memory_id()
     }

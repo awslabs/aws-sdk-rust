@@ -243,6 +243,8 @@ mod add_tags;
 
 mod associate_trial_component;
 
+mod attach_cluster_node_volume;
+
 mod batch_delete_cluster_nodes;
 
 mod batch_describe_model_package;
@@ -651,6 +653,8 @@ mod describe_user_profile;
 mod describe_workforce;
 
 mod describe_workteam;
+
+mod detach_cluster_node_volume;
 
 mod disable_sagemaker_servicecatalog_portfolio;
 

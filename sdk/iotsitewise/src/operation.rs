@@ -70,6 +70,9 @@ pub mod delete_asset_model;
 /// Types for the `DeleteAssetModelCompositeModel` operation.
 pub mod delete_asset_model_composite_model;
 
+/// Types for the `DeleteAssetModelInterfaceRelationship` operation.
+pub mod delete_asset_model_interface_relationship;
+
 /// Types for the `DeleteComputationModel` operation.
 pub mod delete_computation_model;
 
@@ -108,6 +111,9 @@ pub mod describe_asset_model;
 
 /// Types for the `DescribeAssetModelCompositeModel` operation.
 pub mod describe_asset_model_composite_model;
+
+/// Types for the `DescribeAssetModelInterfaceRelationship` operation.
+pub mod describe_asset_model_interface_relationship;
 
 /// Types for the `DescribeAssetProperty` operation.
 pub mod describe_asset_property;
@@ -235,6 +241,9 @@ pub mod list_executions;
 /// Types for the `ListGateways` operation.
 pub mod list_gateways;
 
+/// Types for the `ListInterfaceRelationships` operation.
+pub mod list_interface_relationships;
+
 /// Types for the `ListPortals` operation.
 pub mod list_portals;
 
@@ -249,6 +258,9 @@ pub mod list_tags_for_resource;
 
 /// Types for the `ListTimeSeries` operation.
 pub mod list_time_series;
+
+/// Types for the `PutAssetModelInterfaceRelationship` operation.
+pub mod put_asset_model_interface_relationship;
 
 /// Types for the `PutDefaultEncryptionConfiguration` operation.
 pub mod put_default_encryption_configuration;

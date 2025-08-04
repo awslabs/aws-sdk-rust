@@ -201,6 +201,9 @@ pub(crate) fn de_describe_asset_model(
                             .transpose()?,
                     );
                 }
+                "interfaceDetails" => {
+                    builder = builder.set_interface_details(crate::protocol_serde::shape_interface_details::de_interface_details(tokens)?);
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

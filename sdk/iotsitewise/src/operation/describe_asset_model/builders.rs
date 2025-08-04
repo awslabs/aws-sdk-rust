@@ -22,7 +22,7 @@ impl crate::operation::describe_asset_model::builders::DescribeAssetModelInputBu
 }
 /// Fluent builder constructing a request to `DescribeAssetModel`.
 ///
-/// <p>Retrieves information about an asset model.</p>
+/// <p>Retrieves information about an asset model. This includes details about the asset model's properties, hierarchies, composite models, and any interface relationships if the asset model implements interfaces.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeAssetModelFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteMemoryRecord`](crate::operation::delete_memory_record::builders::DeleteMemoryRecordFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`memory_id(impl Into<String>)`](crate::operation::delete_memory_record::builders::DeleteMemoryRecordFluentBuilder::memory_id) / [`set_memory_id(Option<String>)`](crate::operation::delete_memory_record::builders::DeleteMemoryRecordFluentBuilder::set_memory_id):<br>required: **true**<br><p>The identifier of the memory store from which to delete the memory record.</p><br>
+    ///   - [`memory_id(impl Into<String>)`](crate::operation::delete_memory_record::builders::DeleteMemoryRecordFluentBuilder::memory_id) / [`set_memory_id(Option<String>)`](crate::operation::delete_memory_record::builders::DeleteMemoryRecordFluentBuilder::set_memory_id):<br>required: **true**<br><p>The identifier of the AgentCore Memory resource from which to delete the memory record.</p><br>
     ///   - [`memory_record_id(impl Into<String>)`](crate::operation::delete_memory_record::builders::DeleteMemoryRecordFluentBuilder::memory_record_id) / [`set_memory_record_id(Option<String>)`](crate::operation::delete_memory_record::builders::DeleteMemoryRecordFluentBuilder::set_memory_record_id):<br>required: **true**<br><p>The identifier of the memory record to delete.</p><br>
     /// - On success, responds with [`DeleteMemoryRecordOutput`](crate::operation::delete_memory_record::DeleteMemoryRecordOutput) with field(s):
     ///   - [`memory_record_id(String)`](crate::operation::delete_memory_record::DeleteMemoryRecordOutput::memory_record_id): <p>The identifier of the memory record that was deleted.</p>

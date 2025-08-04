@@ -69,6 +69,8 @@ pub(crate) mod shape_delete_asset_model;
 
 pub(crate) mod shape_delete_asset_model_composite_model;
 
+pub(crate) mod shape_delete_asset_model_interface_relationship;
+
 pub(crate) mod shape_delete_computation_model;
 
 pub(crate) mod shape_delete_dashboard;
@@ -94,6 +96,8 @@ pub(crate) mod shape_describe_asset_composite_model;
 pub(crate) mod shape_describe_asset_model;
 
 pub(crate) mod shape_describe_asset_model_composite_model;
+
+pub(crate) mod shape_describe_asset_model_interface_relationship;
 
 pub(crate) mod shape_describe_asset_property;
 
@@ -179,6 +183,8 @@ pub(crate) mod shape_list_executions;
 
 pub(crate) mod shape_list_gateways;
 
+pub(crate) mod shape_list_interface_relationships;
+
 pub(crate) mod shape_list_portals;
 
 pub(crate) mod shape_list_project_assets;
@@ -188,6 +194,8 @@ pub(crate) mod shape_list_projects;
 pub(crate) mod shape_list_tags_for_resource;
 
 pub(crate) mod shape_list_time_series;
+
+pub(crate) mod shape_put_asset_model_interface_relationship;
 
 pub(crate) mod shape_put_default_encryption_configuration;
 
@@ -298,6 +306,8 @@ pub(crate) mod shape_limit_exceeded_exception;
 pub(crate) mod shape_list_computation_model_data_binding_usages_input;
 
 pub(crate) mod shape_precondition_failed_exception;
+
+pub(crate) mod shape_put_asset_model_interface_relationship_input;
 
 pub(crate) mod shape_put_default_encryption_configuration_input;
 
@@ -505,6 +515,8 @@ pub(crate) mod shape_gateway_platform;
 
 pub(crate) mod shape_gateway_summaries;
 
+pub(crate) mod shape_hierarchy_mappings;
+
 pub(crate) mod shape_identity;
 
 pub(crate) mod shape_image;
@@ -512,6 +524,10 @@ pub(crate) mod shape_image;
 pub(crate) mod shape_image_file;
 
 pub(crate) mod shape_image_location;
+
+pub(crate) mod shape_interface_details;
+
+pub(crate) mod shape_interface_relationship_summaries;
 
 pub(crate) mod shape_interpolated_asset_property_values;
 
@@ -534,6 +550,10 @@ pub(crate) mod shape_portal_type_entry;
 pub(crate) mod shape_project_summaries;
 
 pub(crate) mod shape_property;
+
+pub(crate) mod shape_property_mapping_configuration;
+
+pub(crate) mod shape_property_mappings;
 
 pub(crate) mod shape_put_asset_property_value_entry;
 
@@ -663,9 +683,15 @@ pub(crate) mod shape_greengrass_v2;
 
 pub(crate) mod shape_group_identity;
 
+pub(crate) mod shape_hierarchy_mapping;
+
 pub(crate) mod shape_iam_role_identity;
 
 pub(crate) mod shape_iam_user_identity;
+
+pub(crate) mod shape_interface_relationship;
+
+pub(crate) mod shape_interface_relationship_summary;
 
 pub(crate) mod shape_interpolated_asset_property_value;
 
@@ -682,6 +708,8 @@ pub(crate) mod shape_portal_summary;
 pub(crate) mod shape_project_resource;
 
 pub(crate) mod shape_project_summary;
+
+pub(crate) mod shape_property_mapping;
 
 pub(crate) mod shape_property_notification;
 
@@ -735,6 +763,8 @@ pub(crate) mod shape_datum_list;
 
 pub(crate) mod shape_detailed_errors;
 
+pub(crate) mod shape_interface_summaries;
+
 pub(crate) mod shape_kendra_source_detail;
 
 pub(crate) mod shape_matched_data_binding;
@@ -766,6 +796,8 @@ pub(crate) mod shape_detailed_error;
 pub(crate) mod shape_expression_variable;
 
 pub(crate) mod shape_expression_variables;
+
+pub(crate) mod shape_interface_summary;
 
 pub(crate) mod shape_measurement_processing_config;
 

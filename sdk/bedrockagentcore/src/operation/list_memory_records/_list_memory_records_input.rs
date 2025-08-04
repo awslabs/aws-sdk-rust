@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListMemoryRecordsInput {
-    /// <p>The identifier of the memory store for which to list memory records.</p>
+    /// <p>The identifier of the AgentCore Memory resource for which to list memory records.</p>
     pub memory_id: ::std::option::Option<::std::string::String>,
     /// <p>The namespace to filter memory records by. If specified, only memory records in this namespace are returned.</p>
     pub namespace: ::std::option::Option<::std::string::String>,
@@ -15,7 +15,7 @@ pub struct ListMemoryRecordsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListMemoryRecordsInput {
-    /// <p>The identifier of the memory store for which to list memory records.</p>
+    /// <p>The identifier of the AgentCore Memory resource for which to list memory records.</p>
     pub fn memory_id(&self) -> ::std::option::Option<&str> {
         self.memory_id.as_deref()
     }
@@ -54,18 +54,18 @@ pub struct ListMemoryRecordsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListMemoryRecordsInputBuilder {
-    /// <p>The identifier of the memory store for which to list memory records.</p>
+    /// <p>The identifier of the AgentCore Memory resource for which to list memory records.</p>
     /// This field is required.
     pub fn memory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.memory_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the memory store for which to list memory records.</p>
+    /// <p>The identifier of the AgentCore Memory resource for which to list memory records.</p>
     pub fn set_memory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.memory_id = input;
         self
     }
-    /// <p>The identifier of the memory store for which to list memory records.</p>
+    /// <p>The identifier of the AgentCore Memory resource for which to list memory records.</p>
     pub fn get_memory_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.memory_id
     }

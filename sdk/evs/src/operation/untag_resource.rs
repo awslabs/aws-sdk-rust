@@ -258,6 +258,9 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UntagResource
 pub enum UntagResourceError {
     /// <p>A service resource associated with the request could not be found. The resource might not be specified correctly, or it may have a <code>state</code> of <code>DELETED</code>.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
+    /// <note>
+    /// <p><code>TagPolicyException</code> is deprecated. See <a href="https://docs.aws.amazon.com/evs/latest/APIReference/API_ValidationException.html"> <code>ValidationException</code> </a> instead.</p>
+    /// </note>
     /// <p>The request doesn't comply with IAM tag policy. Correct your request and then retry it.</p>
     TagPolicyException(crate::types::error::TagPolicyException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).

@@ -12,6 +12,7 @@
 /// ```text
 /// # let providertype = unimplemented!();
 /// match providertype {
+///     ProviderType::AzureDevOps => { /* ... */ },
 ///     ProviderType::Bitbucket => { /* ... */ },
 ///     ProviderType::Github => { /* ... */ },
 ///     ProviderType::GithubEnterpriseServer => { /* ... */ },
@@ -46,6 +47,8 @@
 )]
 pub enum ProviderType {
     #[allow(missing_docs)] // documentation missing in model
+    AzureDevOps,
+    #[allow(missing_docs)] // documentation missing in model
     Bitbucket,
     #[allow(missing_docs)] // documentation missing in model
     Github,
@@ -62,6 +65,7 @@ pub enum ProviderType {
 impl ::std::convert::From<&str> for ProviderType {
     fn from(s: &str) -> Self {
         match s {
+            "AzureDevOps" => ProviderType::AzureDevOps,
             "Bitbucket" => ProviderType::Bitbucket,
             "GitHub" => ProviderType::Github,
             "GitHubEnterpriseServer" => ProviderType::GithubEnterpriseServer,
@@ -82,6 +86,7 @@ impl ProviderType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ProviderType::AzureDevOps => "AzureDevOps",
             ProviderType::Bitbucket => "Bitbucket",
             ProviderType::Github => "GitHub",
             ProviderType::GithubEnterpriseServer => "GitHubEnterpriseServer",
@@ -92,7 +97,14 @@ impl ProviderType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Bitbucket", "GitHub", "GitHubEnterpriseServer", "GitLab", "GitLabSelfManaged"]
+        &[
+            "AzureDevOps",
+            "Bitbucket",
+            "GitHub",
+            "GitHubEnterpriseServer",
+            "GitLab",
+            "GitLabSelfManaged",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for ProviderType {
@@ -115,6 +127,7 @@ impl ProviderType {
 impl ::std::fmt::Display for ProviderType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            ProviderType::AzureDevOps => write!(f, "AzureDevOps"),
             ProviderType::Bitbucket => write!(f, "Bitbucket"),
             ProviderType::Github => write!(f, "GitHub"),
             ProviderType::GithubEnterpriseServer => write!(f, "GitHubEnterpriseServer"),

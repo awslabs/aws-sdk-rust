@@ -105,11 +105,17 @@ pub use crate::types::_customer_managed_s3_storage::CustomerManagedS3StorageBuil
 
 pub use crate::types::_logging_options::LoggingOptionsBuilder;
 
+pub use crate::types::_property_mapping_configuration::PropertyMappingConfigurationBuilder;
+
+pub use crate::types::_property_mapping::PropertyMappingBuilder;
+
 pub use crate::types::_time_series_summary::TimeSeriesSummaryBuilder;
 
 pub use crate::types::_project_summary::ProjectSummaryBuilder;
 
 pub use crate::types::_portal_summary::PortalSummaryBuilder;
+
+pub use crate::types::_interface_relationship_summary::InterfaceRelationshipSummaryBuilder;
 
 pub use crate::types::_gateway_summary::GatewaySummaryBuilder;
 
@@ -179,6 +185,8 @@ pub use crate::types::_asset_model_summary::AssetModelSummaryBuilder;
 
 pub use crate::types::_asset_model_property_summary::AssetModelPropertySummaryBuilder;
 
+pub use crate::types::_interface_summary::InterfaceSummaryBuilder;
+
 pub use crate::types::_asset_model_composite_model_summary::AssetModelCompositeModelSummaryBuilder;
 
 pub use crate::types::_action_summary::ActionSummaryBuilder;
@@ -245,9 +253,13 @@ pub use crate::types::_composite_model_property::CompositeModelPropertyBuilder;
 
 pub use crate::types::_property::PropertyBuilder;
 
+pub use crate::types::_hierarchy_mapping::HierarchyMappingBuilder;
+
 pub use crate::types::_composition_details::CompositionDetailsBuilder;
 
 pub use crate::types::_composition_relationship_item::CompositionRelationshipItemBuilder;
+
+pub use crate::types::_interface_relationship::InterfaceRelationshipBuilder;
 
 pub use crate::types::_asset_composite_model_summary::AssetCompositeModelSummaryBuilder;
 

@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListEventsInput {
-    /// <p>The identifier of the memory store for which to list events.</p>
+    /// <p>The identifier of the AgentCore Memory resource for which to list events.</p>
     pub memory_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the session for which to list events. If specified, only events from this session are returned.</p>
     pub session_id: ::std::option::Option<::std::string::String>,
@@ -19,7 +19,7 @@ pub struct ListEventsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListEventsInput {
-    /// <p>The identifier of the memory store for which to list events.</p>
+    /// <p>The identifier of the AgentCore Memory resource for which to list events.</p>
     pub fn memory_id(&self) -> ::std::option::Option<&str> {
         self.memory_id.as_deref()
     }
@@ -68,18 +68,18 @@ pub struct ListEventsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListEventsInputBuilder {
-    /// <p>The identifier of the memory store for which to list events.</p>
+    /// <p>The identifier of the AgentCore Memory resource for which to list events.</p>
     /// This field is required.
     pub fn memory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.memory_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the memory store for which to list events.</p>
+    /// <p>The identifier of the AgentCore Memory resource for which to list events.</p>
     pub fn set_memory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.memory_id = input;
         self
     }
-    /// <p>The identifier of the memory store for which to list events.</p>
+    /// <p>The identifier of the AgentCore Memory resource for which to list events.</p>
     pub fn get_memory_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.memory_id
     }

@@ -128,6 +128,31 @@ impl From<crate::operation::associate_trial_component::AssociateTrialComponentEr
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::attach_cluster_node_volume::AttachClusterNodeVolumeError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::attach_cluster_node_volume::AttachClusterNodeVolumeError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::attach_cluster_node_volume::AttachClusterNodeVolumeError> for Error {
+    fn from(err: crate::operation::attach_cluster_node_volume::AttachClusterNodeVolumeError) -> Self {
+        match err {
+            crate::operation::attach_cluster_node_volume::AttachClusterNodeVolumeError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
+            crate::operation::attach_cluster_node_volume::AttachClusterNodeVolumeError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_delete_cluster_nodes::BatchDeleteClusterNodesError, R>>
     for Error
 where
@@ -4942,6 +4967,31 @@ impl From<crate::operation::describe_workteam::DescribeWorkteamError> for Error 
     fn from(err: crate::operation::describe_workteam::DescribeWorkteamError) -> Self {
         match err {
             crate::operation::describe_workteam::DescribeWorkteamError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::detach_cluster_node_volume::DetachClusterNodeVolumeError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::detach_cluster_node_volume::DetachClusterNodeVolumeError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::detach_cluster_node_volume::DetachClusterNodeVolumeError> for Error {
+    fn from(err: crate::operation::detach_cluster_node_volume::DetachClusterNodeVolumeError) -> Self {
+        match err {
+            crate::operation::detach_cluster_node_volume::DetachClusterNodeVolumeError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
+            crate::operation::detach_cluster_node_volume::DetachClusterNodeVolumeError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

@@ -1,6 +1,6 @@
 # aws-sdk-bedrockagentcore
 
-Data plane operations for Amazon Bedrock AgentCore.
+Welcome to the Amazon Bedrock AgentCore Data Plane API reference. Data Plane actions process and handle data or workloads within Amazon Web Services services.
 
 ## Getting Started
 
@@ -14,7 +14,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-aws-sdk-bedrockagentcore = "1.2.0"
+aws-sdk-bedrockagentcore = "1.3.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

@@ -5,8 +5,6 @@
 pub struct GetResourceOauth2TokenInput {
     /// <p>The identity token of the workload you want to retrive the Oauth2 Token of.</p>
     pub workload_identity_token: ::std::option::Option<::std::string::String>,
-    /// <p>The user ID of the user you're retrieving the token on behalf of.</p>
-    pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>Reference to the credential provider</p>
     pub resource_credential_provider_name: ::std::option::Option<::std::string::String>,
     /// <p>The OAuth scopes requested</p>
@@ -24,10 +22,6 @@ impl GetResourceOauth2TokenInput {
     /// <p>The identity token of the workload you want to retrive the Oauth2 Token of.</p>
     pub fn workload_identity_token(&self) -> ::std::option::Option<&str> {
         self.workload_identity_token.as_deref()
-    }
-    /// <p>The user ID of the user you're retrieving the token on behalf of.</p>
-    pub fn user_id(&self) -> ::std::option::Option<&str> {
-        self.user_id.as_deref()
     }
     /// <p>Reference to the credential provider</p>
     pub fn resource_credential_provider_name(&self) -> ::std::option::Option<&str> {
@@ -60,7 +54,6 @@ impl ::std::fmt::Debug for GetResourceOauth2TokenInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GetResourceOauth2TokenInput");
         formatter.field("workload_identity_token", &"*** Sensitive Data Redacted ***");
-        formatter.field("user_id", &self.user_id);
         formatter.field("resource_credential_provider_name", &self.resource_credential_provider_name);
         formatter.field("scopes", &self.scopes);
         formatter.field("oauth2_flow", &self.oauth2_flow);
@@ -82,7 +75,6 @@ impl GetResourceOauth2TokenInput {
 #[non_exhaustive]
 pub struct GetResourceOauth2TokenInputBuilder {
     pub(crate) workload_identity_token: ::std::option::Option<::std::string::String>,
-    pub(crate) user_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_credential_provider_name: ::std::option::Option<::std::string::String>,
     pub(crate) scopes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) oauth2_flow: ::std::option::Option<crate::types::Oauth2FlowType>,
@@ -105,20 +97,6 @@ impl GetResourceOauth2TokenInputBuilder {
     /// <p>The identity token of the workload you want to retrive the Oauth2 Token of.</p>
     pub fn get_workload_identity_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.workload_identity_token
-    }
-    /// <p>The user ID of the user you're retrieving the token on behalf of.</p>
-    pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.user_id = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The user ID of the user you're retrieving the token on behalf of.</p>
-    pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_id = input;
-        self
-    }
-    /// <p>The user ID of the user you're retrieving the token on behalf of.</p>
-    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
-        &self.user_id
     }
     /// <p>Reference to the credential provider</p>
     /// This field is required.
@@ -234,7 +212,6 @@ impl GetResourceOauth2TokenInputBuilder {
     > {
         ::std::result::Result::Ok(crate::operation::get_resource_oauth2_token::GetResourceOauth2TokenInput {
             workload_identity_token: self.workload_identity_token,
-            user_id: self.user_id,
             resource_credential_provider_name: self.resource_credential_provider_name,
             scopes: self.scopes,
             oauth2_flow: self.oauth2_flow,
@@ -248,7 +225,6 @@ impl ::std::fmt::Debug for GetResourceOauth2TokenInputBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GetResourceOauth2TokenInputBuilder");
         formatter.field("workload_identity_token", &"*** Sensitive Data Redacted ***");
-        formatter.field("user_id", &self.user_id);
         formatter.field("resource_credential_provider_name", &self.resource_credential_provider_name);
         formatter.field("scopes", &self.scopes);
         formatter.field("oauth2_flow", &self.oauth2_flow);

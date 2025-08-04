@@ -56,7 +56,6 @@ pub struct MetricBuilder {
 impl MetricBuilder {
     /// <p>The mathematical expression that defines the metric aggregation function. You can specify up to 10 variables per expression. You can specify up to 10 functions per expression.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    /// This field is required.
     pub fn expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expression = ::std::option::Option::Some(input.into());
         self
@@ -122,25 +121,12 @@ impl MetricBuilder {
         &self.processing_config
     }
     /// Consumes the builder and constructs a [`Metric`](crate::types::Metric).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`expression`](crate::types::builders::MetricBuilder::expression)
-    /// - [`variables`](crate::types::builders::MetricBuilder::variables)
-    pub fn build(self) -> ::std::result::Result<crate::types::Metric, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Metric {
-            expression: self.expression.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "expression",
-                    "expression was not specified but it is required when building Metric",
-                )
-            })?,
-            variables: self.variables.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "variables",
-                    "variables was not specified but it is required when building Metric",
-                )
-            })?,
+    pub fn build(self) -> crate::types::Metric {
+        crate::types::Metric {
+            expression: self.expression.unwrap_or_default(),
+            variables: self.variables.unwrap_or_default(),
             window: self.window,
             processing_config: self.processing_config,
-        })
+        }
     }
 }

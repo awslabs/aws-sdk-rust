@@ -22,8 +22,8 @@ impl crate::operation::create_event::builders::CreateEventInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateEvent`.
 ///
-/// <p>Creates an event in a memory store. Events represent interactions or activities that occur within a session and are associated with specific actors.</p>
-/// <p>To use this operation, you must have the <code>genesismemory:CreateEvent</code> permission.</p>
+/// <p>Creates an event in an AgentCore Memory resource. Events represent interactions or activities that occur within a session and are associated with specific actors.</p>
+/// <p>To use this operation, you must have the <code>bedrock-agentcore:CreateEvent</code> permission.</p>
 /// <p>This operation is subject to request rate limiting.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateEventFluentBuilder {
@@ -110,17 +110,17 @@ impl CreateEventFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The identifier of the memory store in which to create the event.</p>
+    /// <p>The identifier of the AgentCore Memory resource in which to create the event.</p>
     pub fn memory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.memory_id(input.into());
         self
     }
-    /// <p>The identifier of the memory store in which to create the event.</p>
+    /// <p>The identifier of the AgentCore Memory resource in which to create the event.</p>
     pub fn set_memory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_memory_id(input);
         self
     }
-    /// <p>The identifier of the memory store in which to create the event.</p>
+    /// <p>The identifier of the AgentCore Memory resource in which to create the event.</p>
     pub fn get_memory_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_memory_id()
     }

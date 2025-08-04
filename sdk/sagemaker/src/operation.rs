@@ -10,6 +10,9 @@ pub mod add_tags;
 /// Types for the `AssociateTrialComponent` operation.
 pub mod associate_trial_component;
 
+/// Types for the `AttachClusterNodeVolume` operation.
+pub mod attach_cluster_node_volume;
+
 /// Types for the `BatchDeleteClusterNodes` operation.
 pub mod batch_delete_cluster_nodes;
 
@@ -582,6 +585,9 @@ pub mod describe_workforce;
 
 /// Types for the `DescribeWorkteam` operation.
 pub mod describe_workteam;
+
+/// Types for the `DetachClusterNodeVolume` operation.
+pub mod detach_cluster_node_volume;
 
 /// Types for the `DisableSagemakerServicecatalogPortfolio` operation.
 pub mod disable_sagemaker_servicecatalog_portfolio;

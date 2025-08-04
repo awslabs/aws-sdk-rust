@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSessionsInput {
-    /// <p>The identifier of the memory store for which to list sessions.</p>
+    /// <p>The identifier of the AgentCore Memory resource for which to list sessions.</p>
     pub memory_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the actor for which to list sessions. If specified, only sessions involving this actor are returned.</p>
     pub actor_id: ::std::option::Option<::std::string::String>,
@@ -13,7 +13,7 @@ pub struct ListSessionsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListSessionsInput {
-    /// <p>The identifier of the memory store for which to list sessions.</p>
+    /// <p>The identifier of the AgentCore Memory resource for which to list sessions.</p>
     pub fn memory_id(&self) -> ::std::option::Option<&str> {
         self.memory_id.as_deref()
     }
@@ -47,18 +47,18 @@ pub struct ListSessionsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListSessionsInputBuilder {
-    /// <p>The identifier of the memory store for which to list sessions.</p>
+    /// <p>The identifier of the AgentCore Memory resource for which to list sessions.</p>
     /// This field is required.
     pub fn memory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.memory_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the memory store for which to list sessions.</p>
+    /// <p>The identifier of the AgentCore Memory resource for which to list sessions.</p>
     pub fn set_memory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.memory_id = input;
         self
     }
-    /// <p>The identifier of the memory store for which to list sessions.</p>
+    /// <p>The identifier of the AgentCore Memory resource for which to list sessions.</p>
     pub fn get_memory_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.memory_id
     }

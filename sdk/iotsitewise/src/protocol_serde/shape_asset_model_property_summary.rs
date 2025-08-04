@@ -71,6 +71,10 @@ where
                                 tokens,
                             )?);
                         }
+                        "interfaceSummaries" => {
+                            builder =
+                                builder.set_interface_summaries(crate::protocol_serde::shape_interface_summaries::de_interface_summaries(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

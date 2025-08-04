@@ -229,6 +229,16 @@ pub(crate) fn reflens_list_gateways_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_interface_relationships_output_output_next_token(
+    input: &crate::operation::list_interface_relationships::ListInterfaceRelationshipsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_portals_output_output_next_token(
     input: &crate::operation::list_portals::ListPortalsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -406,6 +416,13 @@ pub(crate) fn lens_list_gateways_output_output_gateway_summaries(
     input: crate::operation::list_gateways::ListGatewaysOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::GatewaySummary>> {
     let input = input.gateway_summaries;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_interface_relationships_output_output_interface_relationship_summaries(
+    input: crate::operation::list_interface_relationships::ListInterfaceRelationshipsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::InterfaceRelationshipSummary>> {
+    let input = input.interface_relationship_summaries;
     ::std::option::Option::Some(input)
 }
 

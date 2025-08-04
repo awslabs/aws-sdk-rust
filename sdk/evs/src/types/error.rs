@@ -9,7 +9,11 @@ pub use crate::types::error::_tag_policy_exception::TagPolicyException;
 
 pub use crate::types::error::_too_many_tags_exception::TooManyTagsException;
 
+pub use crate::types::error::_service_quota_exceeded_exception::ServiceQuotaExceededException;
+
 mod _resource_not_found_exception;
+
+mod _service_quota_exceeded_exception;
 
 mod _tag_policy_exception;
 

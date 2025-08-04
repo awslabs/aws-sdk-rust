@@ -155,6 +155,10 @@ pub use crate::types::_logging_level::LoggingLevel;
 
 pub use crate::types::_encryption_type::EncryptionType;
 
+pub use crate::types::_property_mapping_configuration::PropertyMappingConfiguration;
+
+pub use crate::types::_property_mapping::PropertyMapping;
+
 pub use crate::types::_time_series_summary::TimeSeriesSummary;
 
 pub use crate::types::_list_time_series_type::ListTimeSeriesType;
@@ -162,6 +166,8 @@ pub use crate::types::_list_time_series_type::ListTimeSeriesType;
 pub use crate::types::_project_summary::ProjectSummary;
 
 pub use crate::types::_portal_summary::PortalSummary;
+
+pub use crate::types::_interface_relationship_summary::InterfaceRelationshipSummary;
 
 pub use crate::types::_gateway_summary::GatewaySummary;
 
@@ -257,6 +263,8 @@ pub use crate::types::_asset_model_type::AssetModelType;
 
 pub use crate::types::_asset_model_property_summary::AssetModelPropertySummary;
 
+pub use crate::types::_interface_summary::InterfaceSummary;
+
 pub use crate::types::_list_asset_model_properties_filter::ListAssetModelPropertiesFilter;
 
 pub use crate::types::_asset_model_composite_model_summary::AssetModelCompositeModelSummary;
@@ -345,9 +353,13 @@ pub use crate::types::_composite_model_property::CompositeModelProperty;
 
 pub use crate::types::_property::Property;
 
+pub use crate::types::_hierarchy_mapping::HierarchyMapping;
+
 pub use crate::types::_composition_details::CompositionDetails;
 
 pub use crate::types::_composition_relationship_item::CompositionRelationshipItem;
+
+pub use crate::types::_interface_relationship::InterfaceRelationship;
 
 pub use crate::types::_asset_composite_model_summary::AssetCompositeModelSummary;
 
@@ -669,6 +681,8 @@ mod _greengrass_v2;
 
 mod _group_identity;
 
+mod _hierarchy_mapping;
+
 mod _iam_role_identity;
 
 mod _iam_user_identity;
@@ -684,6 +698,12 @@ mod _image_file;
 mod _image_file_type;
 
 mod _image_location;
+
+mod _interface_relationship;
+
+mod _interface_relationship_summary;
+
+mod _interface_summary;
 
 mod _interpolated_asset_property_value;
 
@@ -754,6 +774,10 @@ mod _project_summary;
 mod _property;
 
 mod _property_data_type;
+
+mod _property_mapping;
+
+mod _property_mapping_configuration;
 
 mod _property_notification;
 

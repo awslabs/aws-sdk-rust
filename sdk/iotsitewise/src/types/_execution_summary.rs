@@ -8,7 +8,7 @@ pub struct ExecutionSummary {
     pub execution_id: ::std::string::String,
     /// <p>The type of action exectued.</p>
     pub action_type: ::std::option::Option<::std::string::String>,
-    /// <p>The resource the action will be taken on.</p>
+    /// <p>The resource the action will be taken on. This can include asset-based resources and computation model resources.</p>
     pub target_resource: ::std::option::Option<crate::types::TargetResource>,
     /// <p>The version of the target resource.</p>
     pub target_resource_version: ::std::string::String,
@@ -33,7 +33,7 @@ impl ExecutionSummary {
     pub fn action_type(&self) -> ::std::option::Option<&str> {
         self.action_type.as_deref()
     }
-    /// <p>The resource the action will be taken on.</p>
+    /// <p>The resource the action will be taken on. This can include asset-based resources and computation model resources.</p>
     pub fn target_resource(&self) -> ::std::option::Option<&crate::types::TargetResource> {
         self.target_resource.as_ref()
     }
@@ -114,18 +114,18 @@ impl ExecutionSummaryBuilder {
     pub fn get_action_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.action_type
     }
-    /// <p>The resource the action will be taken on.</p>
+    /// <p>The resource the action will be taken on. This can include asset-based resources and computation model resources.</p>
     /// This field is required.
     pub fn target_resource(mut self, input: crate::types::TargetResource) -> Self {
         self.target_resource = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The resource the action will be taken on.</p>
+    /// <p>The resource the action will be taken on. This can include asset-based resources and computation model resources.</p>
     pub fn set_target_resource(mut self, input: ::std::option::Option<crate::types::TargetResource>) -> Self {
         self.target_resource = input;
         self
     }
-    /// <p>The resource the action will be taken on.</p>
+    /// <p>The resource the action will be taken on. This can include asset-based resources and computation model resources.</p>
     pub fn get_target_resource(&self) -> &::std::option::Option<crate::types::TargetResource> {
         &self.target_resource
     }

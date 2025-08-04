@@ -29,6 +29,8 @@ pub(crate) mod shape_add_tags;
 
 pub(crate) mod shape_associate_trial_component;
 
+pub(crate) mod shape_attach_cluster_node_volume;
+
 pub(crate) mod shape_batch_delete_cluster_nodes;
 
 pub(crate) mod shape_batch_describe_model_package;
@@ -411,6 +413,8 @@ pub(crate) mod shape_describe_workforce;
 
 pub(crate) mod shape_describe_workteam;
 
+pub(crate) mod shape_detach_cluster_node_volume;
+
 pub(crate) mod shape_disable_sagemaker_servicecatalog_portfolio;
 
 pub(crate) mod shape_disassociate_trial_component;
@@ -760,6 +764,8 @@ pub(crate) mod shape_add_association_input;
 pub(crate) mod shape_add_tags_input;
 
 pub(crate) mod shape_associate_trial_component_input;
+
+pub(crate) mod shape_attach_cluster_node_volume_input;
 
 pub(crate) mod shape_batch_delete_cluster_nodes_input;
 
@@ -1144,6 +1150,8 @@ pub(crate) mod shape_describe_user_profile_input;
 pub(crate) mod shape_describe_workforce_input;
 
 pub(crate) mod shape_describe_workteam_input;
+
+pub(crate) mod shape_detach_cluster_node_volume_input;
 
 pub(crate) mod shape_disassociate_trial_component_input;
 

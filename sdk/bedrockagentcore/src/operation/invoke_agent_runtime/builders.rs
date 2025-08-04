@@ -22,9 +22,12 @@ impl crate::operation::invoke_agent_runtime::builders::InvokeAgentRuntimeInputBu
 }
 /// Fluent builder constructing a request to `InvokeAgentRuntime`.
 ///
-/// <p>Sends a request to an agent runtime in Amazon Bedrock and receives responses in real-time. The agent processes the request using the configured foundation model and any associated knowledge bases or action groups.</p>
-/// <p>To invoke an agent runtime, you must specify the agent runtime ARN and provide a payload containing your request. You can optionally specify a qualifier to target a specific version or alias of the agent.</p>
+/// <p>Sends a request to an agent or tool hosted in an Amazon Bedrock AgentCore Runtime and receives responses in real-time.</p>
+/// <p>To invoke an agent you must specify the AgentCore Runtime ARN and provide a payload containing your request. You can optionally specify a qualifier to target a specific version or endpoint of the agent.</p>
 /// <p>This operation supports streaming responses, allowing you to receive partial responses as they become available. We recommend using pagination to ensure that the operation returns quickly and successfully when processing large responses.</p>
+/// <p>For example code, see <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/runtime-invoke-agent.html">Invoke an AgentCore Runtime agent</a>.</p>
+/// <p>If you're integrating your agent with OAuth, you can't use the Amazon Web Services SDK to call <code>InvokeAgentRuntime</code>. Instead, make a HTTPS request to <code>InvokeAgentRuntime</code>. For an example, see <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/runtime-oauth.html">Authenticate and authorize with Inbound Auth and Outbound Auth</a>.</p>
+/// <p>To use this operation, you must have the <code>bedrock-agentcore:InvokeAgentRuntime</code> permission.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct InvokeAgentRuntimeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -264,17 +267,17 @@ impl InvokeAgentRuntimeFluentBuilder {
     pub fn get_agent_runtime_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agent_runtime_arn()
     }
-    /// <p>The qualifier to use for the agent runtime. This can be a version number or an alias name that points to a specific version. If not specified, Amazon Bedrock uses the default version of the agent runtime.</p>
+    /// <p>The qualifier to use for the agent runtime. This can be a version number or an endpoint name that points to a specific version. If not specified, Amazon Bedrock uses the default version of the agent runtime.</p>
     pub fn qualifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.qualifier(input.into());
         self
     }
-    /// <p>The qualifier to use for the agent runtime. This can be a version number or an alias name that points to a specific version. If not specified, Amazon Bedrock uses the default version of the agent runtime.</p>
+    /// <p>The qualifier to use for the agent runtime. This can be a version number or an endpoint name that points to a specific version. If not specified, Amazon Bedrock uses the default version of the agent runtime.</p>
     pub fn set_qualifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_qualifier(input);
         self
     }
-    /// <p>The qualifier to use for the agent runtime. This can be a version number or an alias name that points to a specific version. If not specified, Amazon Bedrock uses the default version of the agent runtime.</p>
+    /// <p>The qualifier to use for the agent runtime. This can be a version number or an endpoint name that points to a specific version. If not specified, Amazon Bedrock uses the default version of the agent runtime.</p>
     pub fn get_qualifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_qualifier()
     }

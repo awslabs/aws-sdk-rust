@@ -1523,6 +1523,8 @@ pub use crate::types::_agent_version::AgentVersion;
 
 pub use crate::types::_device_stats::DeviceStats;
 
+pub use crate::types::_volume_attachment_status::VolumeAttachmentStatus;
+
 pub use crate::types::_infra_check_config::InfraCheckConfig;
 
 pub use crate::types::_remote_debug_config::RemoteDebugConfig;
@@ -3856,6 +3858,8 @@ mod _vendor_guidance;
 mod _vertex;
 
 mod _visibility_conditions;
+
+mod _volume_attachment_status;
 
 mod _vpc_config;
 

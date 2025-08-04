@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetMemoryRecord`](crate::operation::get_memory_record::builders::GetMemoryRecordFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`memory_id(impl Into<String>)`](crate::operation::get_memory_record::builders::GetMemoryRecordFluentBuilder::memory_id) / [`set_memory_id(Option<String>)`](crate::operation::get_memory_record::builders::GetMemoryRecordFluentBuilder::set_memory_id):<br>required: **true**<br><p>The identifier of the memory store containing the memory record.</p><br>
+    ///   - [`memory_id(impl Into<String>)`](crate::operation::get_memory_record::builders::GetMemoryRecordFluentBuilder::memory_id) / [`set_memory_id(Option<String>)`](crate::operation::get_memory_record::builders::GetMemoryRecordFluentBuilder::set_memory_id):<br>required: **true**<br><p>The identifier of the AgentCore Memory resource containing the memory record.</p><br>
     ///   - [`memory_record_id(impl Into<String>)`](crate::operation::get_memory_record::builders::GetMemoryRecordFluentBuilder::memory_record_id) / [`set_memory_record_id(Option<String>)`](crate::operation::get_memory_record::builders::GetMemoryRecordFluentBuilder::set_memory_record_id):<br>required: **true**<br><p>The identifier of the memory record to retrieve.</p><br>
     /// - On success, responds with [`GetMemoryRecordOutput`](crate::operation::get_memory_record::GetMemoryRecordOutput) with field(s):
     ///   - [`memory_record(Option<MemoryRecord>)`](crate::operation::get_memory_record::GetMemoryRecordOutput::memory_record): <p>The requested memory record.</p>

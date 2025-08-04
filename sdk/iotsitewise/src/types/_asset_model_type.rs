@@ -14,6 +14,7 @@
 /// match assetmodeltype {
 ///     AssetModelType::AssetModel => { /* ... */ },
 ///     AssetModelType::ComponentModel => { /* ... */ },
+///     AssetModelType::Interface => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -46,6 +47,8 @@ pub enum AssetModelType {
     AssetModel,
     #[allow(missing_docs)] // documentation missing in model
     ComponentModel,
+    #[allow(missing_docs)] // documentation missing in model
+    Interface,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -55,6 +58,7 @@ impl ::std::convert::From<&str> for AssetModelType {
         match s {
             "ASSET_MODEL" => AssetModelType::AssetModel,
             "COMPONENT_MODEL" => AssetModelType::ComponentModel,
+            "INTERFACE" => AssetModelType::Interface,
             other => AssetModelType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -72,12 +76,13 @@ impl AssetModelType {
         match self {
             AssetModelType::AssetModel => "ASSET_MODEL",
             AssetModelType::ComponentModel => "COMPONENT_MODEL",
+            AssetModelType::Interface => "INTERFACE",
             AssetModelType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ASSET_MODEL", "COMPONENT_MODEL"]
+        &["ASSET_MODEL", "COMPONENT_MODEL", "INTERFACE"]
     }
 }
 impl ::std::convert::AsRef<str> for AssetModelType {
@@ -102,6 +107,7 @@ impl ::std::fmt::Display for AssetModelType {
         match self {
             AssetModelType::AssetModel => write!(f, "ASSET_MODEL"),
             AssetModelType::ComponentModel => write!(f, "COMPONENT_MODEL"),
+            AssetModelType::Interface => write!(f, "INTERFACE"),
             AssetModelType::Unknown(value) => write!(f, "{}", value),
         }
     }

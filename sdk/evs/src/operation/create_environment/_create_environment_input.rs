@@ -26,28 +26,31 @@ pub struct CreateEnvironmentInput {
     /// </ul>
     /// <p>You should avoid modifying the security group rules after deployment, as this can break the persistent connection between the Amazon EVS control plane and VPC. This can cause future environment actions like adding or removing hosts to fail.</p>
     pub service_access_security_groups: ::std::option::Option<crate::types::ServiceAccessSecurityGroups>,
-    /// <p>A unique ID for the VPC that connects to the environment control plane for service access.</p>
+    /// <p>A unique ID for the VPC that the environment is deployed inside.</p>
     /// <p>Amazon EVS requires that all VPC subnets exist in a single Availability Zone in a Region where the service is available.</p>
-    /// <p>The VPC that you select must have a valid DHCP option set with domain name, at least two DNS servers, and an NTP server. These settings are used to configure your VCF appliances and hosts.</p>
-    /// <p>If you plan to use HCX over the internet, choose a VPC that has a primary CIDR block and a /28 secondary CIDR block from an IPAM pool. Make sure that your VPC also has an attached internet gateway.</p>
-    /// <p>Amazon EVS does not support the following Amazon Web Services networking options for NSX overlay connectivity: cross-Region VPC peering, Amazon S3 gateway endpoints, or Amazon Web Services Direct Connect virtual private gateway associations.</p>
+    /// <p>The VPC that you specify must have a valid DHCP option set with domain name, at least two DNS servers, and an NTP server. These settings are used to configure your VCF appliances and hosts. The VPC cannot be used with any other deployed Amazon EVS environment. Amazon EVS does not provide multi-VPC support for environments at this time.</p>
+    /// <p>Amazon EVS does not support the following Amazon Web Services networking options for NSX overlay connectivity: cross-Region VPC peering, Amazon S3 gateway endpoints, or Amazon Web Services Direct Connect virtual private gateway associations.</p><note>
+    /// <p>Ensure that you specify a VPC that is adequately sized to accommodate the {evws} subnets.</p>
+    /// </note>
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The subnet that is used to establish connectivity between the Amazon EVS control plane and VPC. Amazon EVS uses this subnet to validate mandatory DNS records for your VCF appliances and hosts and create the environment.</p>
     pub service_access_subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>The VCF version to use for the environment. Amazon EVS only supports VCF version 5.2.1 at this time.</p>
     pub vcf_version: ::std::option::Option<crate::types::VcfVersion>,
-    /// <p>Customer confirmation that the customer has purchased and maintains sufficient VCF software licenses to cover all physical processor cores in the environment, in compliance with VMware's licensing requirements and terms of use.</p>
+    /// <p>Customer confirmation that the customer has purchased and will continue to maintain the required number of VCF software licenses to cover all physical processor cores in the Amazon EVS environment. Information about your VCF software in Amazon EVS will be shared with Broadcom to verify license compliance. Amazon EVS does not validate license keys. To validate license keys, visit the Broadcom support portal.</p>
     pub terms_accepted: ::std::option::Option<bool>,
-    /// <p>The license information that Amazon EVS requires to create an environment. Amazon EVS requires two license keys: a VCF solution key and a vSAN license key. VCF licenses must have sufficient core entitlements to cover vCPU core and vSAN storage capacity needs.</p>
+    /// <p>The license information that Amazon EVS requires to create an environment. Amazon EVS requires two license keys: a VCF solution key and a vSAN license key. The VCF solution key must cover a minimum of 256 cores. The vSAN license key must provide at least 110 TiB of vSAN capacity.</p>
     /// <p>VCF licenses can be used for only one Amazon EVS environment. Amazon EVS does not support reuse of VCF licenses for multiple environments.</p>
     /// <p>VCF license information can be retrieved from the Broadcom portal.</p>
     pub license_info: ::std::option::Option<::std::vec::Vec<crate::types::LicenseInfo>>,
-    /// <p>The initial VLAN subnets for the environment. You must specify a non-overlapping CIDR block for each VLAN subnet.</p>
+    /// <p>The initial VLAN subnets for the Amazon EVS environment.</p><note>
+    /// <p>For each Amazon EVS VLAN subnet, you must specify a non-overlapping CIDR block. Amazon EVS VLAN subnets have a minimum CIDR block size of /28 and a maximum size of /24.</p>
+    /// </note>
     pub initial_vlans: ::std::option::Option<crate::types::InitialVlans>,
     /// <p>The ESXi hosts to add to the environment. Amazon EVS requires that you provide details for a minimum of 4 hosts during environment creation.</p>
-    /// <p>For each host, you must provide the desired hostname, EC2 SSH key, and EC2 instance type. Optionally, you can also provide a partition or cluster placement group to use, or use Amazon EC2 Dedicated Hosts.</p>
+    /// <p>For each host, you must provide the desired hostname, EC2 SSH keypair name, and EC2 instance type. Optionally, you can also provide a partition or cluster placement group to use, or use Amazon EC2 Dedicated Hosts.</p>
     pub hosts: ::std::option::Option<::std::vec::Vec<crate::types::HostInfoForCreate>>,
-    /// <p>The connectivity configuration for the environment. Amazon EVS requires that you specify two route server peer IDs. During environment creation, the route server endpoints peer with the NSX edges over the NSX, providing BGP dynamic routing for overlay networks.</p>
+    /// <p>The connectivity configuration for the environment. Amazon EVS requires that you specify two route server peer IDs. During environment creation, the route server endpoints peer with the NSX edges over the NSX uplink subnet, providing BGP-based dynamic routing for overlay networks.</p>
     pub connectivity_info: ::std::option::Option<crate::types::ConnectivityInfo>,
     /// <p>The DNS hostnames for the virtual machines that host the VCF management appliances. Amazon EVS requires that you provide DNS hostnames for the following appliances: vCenter, NSX Manager, SDDC Manager, and Cloud Builder.</p>
     pub vcf_hostnames: ::std::option::Option<crate::types::VcfHostnames>,
@@ -88,11 +91,12 @@ impl CreateEnvironmentInput {
     pub fn service_access_security_groups(&self) -> ::std::option::Option<&crate::types::ServiceAccessSecurityGroups> {
         self.service_access_security_groups.as_ref()
     }
-    /// <p>A unique ID for the VPC that connects to the environment control plane for service access.</p>
+    /// <p>A unique ID for the VPC that the environment is deployed inside.</p>
     /// <p>Amazon EVS requires that all VPC subnets exist in a single Availability Zone in a Region where the service is available.</p>
-    /// <p>The VPC that you select must have a valid DHCP option set with domain name, at least two DNS servers, and an NTP server. These settings are used to configure your VCF appliances and hosts.</p>
-    /// <p>If you plan to use HCX over the internet, choose a VPC that has a primary CIDR block and a /28 secondary CIDR block from an IPAM pool. Make sure that your VPC also has an attached internet gateway.</p>
-    /// <p>Amazon EVS does not support the following Amazon Web Services networking options for NSX overlay connectivity: cross-Region VPC peering, Amazon S3 gateway endpoints, or Amazon Web Services Direct Connect virtual private gateway associations.</p>
+    /// <p>The VPC that you specify must have a valid DHCP option set with domain name, at least two DNS servers, and an NTP server. These settings are used to configure your VCF appliances and hosts. The VPC cannot be used with any other deployed Amazon EVS environment. Amazon EVS does not provide multi-VPC support for environments at this time.</p>
+    /// <p>Amazon EVS does not support the following Amazon Web Services networking options for NSX overlay connectivity: cross-Region VPC peering, Amazon S3 gateway endpoints, or Amazon Web Services Direct Connect virtual private gateway associations.</p><note>
+    /// <p>Ensure that you specify a VPC that is adequately sized to accommodate the {evws} subnets.</p>
+    /// </note>
     pub fn vpc_id(&self) -> ::std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
@@ -104,11 +108,11 @@ impl CreateEnvironmentInput {
     pub fn vcf_version(&self) -> ::std::option::Option<&crate::types::VcfVersion> {
         self.vcf_version.as_ref()
     }
-    /// <p>Customer confirmation that the customer has purchased and maintains sufficient VCF software licenses to cover all physical processor cores in the environment, in compliance with VMware's licensing requirements and terms of use.</p>
+    /// <p>Customer confirmation that the customer has purchased and will continue to maintain the required number of VCF software licenses to cover all physical processor cores in the Amazon EVS environment. Information about your VCF software in Amazon EVS will be shared with Broadcom to verify license compliance. Amazon EVS does not validate license keys. To validate license keys, visit the Broadcom support portal.</p>
     pub fn terms_accepted(&self) -> ::std::option::Option<bool> {
         self.terms_accepted
     }
-    /// <p>The license information that Amazon EVS requires to create an environment. Amazon EVS requires two license keys: a VCF solution key and a vSAN license key. VCF licenses must have sufficient core entitlements to cover vCPU core and vSAN storage capacity needs.</p>
+    /// <p>The license information that Amazon EVS requires to create an environment. Amazon EVS requires two license keys: a VCF solution key and a vSAN license key. The VCF solution key must cover a minimum of 256 cores. The vSAN license key must provide at least 110 TiB of vSAN capacity.</p>
     /// <p>VCF licenses can be used for only one Amazon EVS environment. Amazon EVS does not support reuse of VCF licenses for multiple environments.</p>
     /// <p>VCF license information can be retrieved from the Broadcom portal.</p>
     ///
@@ -116,18 +120,20 @@ impl CreateEnvironmentInput {
     pub fn license_info(&self) -> &[crate::types::LicenseInfo] {
         self.license_info.as_deref().unwrap_or_default()
     }
-    /// <p>The initial VLAN subnets for the environment. You must specify a non-overlapping CIDR block for each VLAN subnet.</p>
+    /// <p>The initial VLAN subnets for the Amazon EVS environment.</p><note>
+    /// <p>For each Amazon EVS VLAN subnet, you must specify a non-overlapping CIDR block. Amazon EVS VLAN subnets have a minimum CIDR block size of /28 and a maximum size of /24.</p>
+    /// </note>
     pub fn initial_vlans(&self) -> ::std::option::Option<&crate::types::InitialVlans> {
         self.initial_vlans.as_ref()
     }
     /// <p>The ESXi hosts to add to the environment. Amazon EVS requires that you provide details for a minimum of 4 hosts during environment creation.</p>
-    /// <p>For each host, you must provide the desired hostname, EC2 SSH key, and EC2 instance type. Optionally, you can also provide a partition or cluster placement group to use, or use Amazon EC2 Dedicated Hosts.</p>
+    /// <p>For each host, you must provide the desired hostname, EC2 SSH keypair name, and EC2 instance type. Optionally, you can also provide a partition or cluster placement group to use, or use Amazon EC2 Dedicated Hosts.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.hosts.is_none()`.
     pub fn hosts(&self) -> &[crate::types::HostInfoForCreate] {
         self.hosts.as_deref().unwrap_or_default()
     }
-    /// <p>The connectivity configuration for the environment. Amazon EVS requires that you specify two route server peer IDs. During environment creation, the route server endpoints peer with the NSX edges over the NSX, providing BGP dynamic routing for overlay networks.</p>
+    /// <p>The connectivity configuration for the environment. Amazon EVS requires that you specify two route server peer IDs. During environment creation, the route server endpoints peer with the NSX edges over the NSX uplink subnet, providing BGP-based dynamic routing for overlay networks.</p>
     pub fn connectivity_info(&self) -> ::std::option::Option<&crate::types::ConnectivityInfo> {
         self.connectivity_info.as_ref()
     }
@@ -283,30 +289,33 @@ impl CreateEnvironmentInputBuilder {
     pub fn get_service_access_security_groups(&self) -> &::std::option::Option<crate::types::ServiceAccessSecurityGroups> {
         &self.service_access_security_groups
     }
-    /// <p>A unique ID for the VPC that connects to the environment control plane for service access.</p>
+    /// <p>A unique ID for the VPC that the environment is deployed inside.</p>
     /// <p>Amazon EVS requires that all VPC subnets exist in a single Availability Zone in a Region where the service is available.</p>
-    /// <p>The VPC that you select must have a valid DHCP option set with domain name, at least two DNS servers, and an NTP server. These settings are used to configure your VCF appliances and hosts.</p>
-    /// <p>If you plan to use HCX over the internet, choose a VPC that has a primary CIDR block and a /28 secondary CIDR block from an IPAM pool. Make sure that your VPC also has an attached internet gateway.</p>
-    /// <p>Amazon EVS does not support the following Amazon Web Services networking options for NSX overlay connectivity: cross-Region VPC peering, Amazon S3 gateway endpoints, or Amazon Web Services Direct Connect virtual private gateway associations.</p>
+    /// <p>The VPC that you specify must have a valid DHCP option set with domain name, at least two DNS servers, and an NTP server. These settings are used to configure your VCF appliances and hosts. The VPC cannot be used with any other deployed Amazon EVS environment. Amazon EVS does not provide multi-VPC support for environments at this time.</p>
+    /// <p>Amazon EVS does not support the following Amazon Web Services networking options for NSX overlay connectivity: cross-Region VPC peering, Amazon S3 gateway endpoints, or Amazon Web Services Direct Connect virtual private gateway associations.</p><note>
+    /// <p>Ensure that you specify a VPC that is adequately sized to accommodate the {evws} subnets.</p>
+    /// </note>
     /// This field is required.
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique ID for the VPC that connects to the environment control plane for service access.</p>
+    /// <p>A unique ID for the VPC that the environment is deployed inside.</p>
     /// <p>Amazon EVS requires that all VPC subnets exist in a single Availability Zone in a Region where the service is available.</p>
-    /// <p>The VPC that you select must have a valid DHCP option set with domain name, at least two DNS servers, and an NTP server. These settings are used to configure your VCF appliances and hosts.</p>
-    /// <p>If you plan to use HCX over the internet, choose a VPC that has a primary CIDR block and a /28 secondary CIDR block from an IPAM pool. Make sure that your VPC also has an attached internet gateway.</p>
-    /// <p>Amazon EVS does not support the following Amazon Web Services networking options for NSX overlay connectivity: cross-Region VPC peering, Amazon S3 gateway endpoints, or Amazon Web Services Direct Connect virtual private gateway associations.</p>
+    /// <p>The VPC that you specify must have a valid DHCP option set with domain name, at least two DNS servers, and an NTP server. These settings are used to configure your VCF appliances and hosts. The VPC cannot be used with any other deployed Amazon EVS environment. Amazon EVS does not provide multi-VPC support for environments at this time.</p>
+    /// <p>Amazon EVS does not support the following Amazon Web Services networking options for NSX overlay connectivity: cross-Region VPC peering, Amazon S3 gateway endpoints, or Amazon Web Services Direct Connect virtual private gateway associations.</p><note>
+    /// <p>Ensure that you specify a VPC that is adequately sized to accommodate the {evws} subnets.</p>
+    /// </note>
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
     }
-    /// <p>A unique ID for the VPC that connects to the environment control plane for service access.</p>
+    /// <p>A unique ID for the VPC that the environment is deployed inside.</p>
     /// <p>Amazon EVS requires that all VPC subnets exist in a single Availability Zone in a Region where the service is available.</p>
-    /// <p>The VPC that you select must have a valid DHCP option set with domain name, at least two DNS servers, and an NTP server. These settings are used to configure your VCF appliances and hosts.</p>
-    /// <p>If you plan to use HCX over the internet, choose a VPC that has a primary CIDR block and a /28 secondary CIDR block from an IPAM pool. Make sure that your VPC also has an attached internet gateway.</p>
-    /// <p>Amazon EVS does not support the following Amazon Web Services networking options for NSX overlay connectivity: cross-Region VPC peering, Amazon S3 gateway endpoints, or Amazon Web Services Direct Connect virtual private gateway associations.</p>
+    /// <p>The VPC that you specify must have a valid DHCP option set with domain name, at least two DNS servers, and an NTP server. These settings are used to configure your VCF appliances and hosts. The VPC cannot be used with any other deployed Amazon EVS environment. Amazon EVS does not provide multi-VPC support for environments at this time.</p>
+    /// <p>Amazon EVS does not support the following Amazon Web Services networking options for NSX overlay connectivity: cross-Region VPC peering, Amazon S3 gateway endpoints, or Amazon Web Services Direct Connect virtual private gateway associations.</p><note>
+    /// <p>Ensure that you specify a VPC that is adequately sized to accommodate the {evws} subnets.</p>
+    /// </note>
     pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.vpc_id
     }
@@ -340,18 +349,18 @@ impl CreateEnvironmentInputBuilder {
     pub fn get_vcf_version(&self) -> &::std::option::Option<crate::types::VcfVersion> {
         &self.vcf_version
     }
-    /// <p>Customer confirmation that the customer has purchased and maintains sufficient VCF software licenses to cover all physical processor cores in the environment, in compliance with VMware's licensing requirements and terms of use.</p>
+    /// <p>Customer confirmation that the customer has purchased and will continue to maintain the required number of VCF software licenses to cover all physical processor cores in the Amazon EVS environment. Information about your VCF software in Amazon EVS will be shared with Broadcom to verify license compliance. Amazon EVS does not validate license keys. To validate license keys, visit the Broadcom support portal.</p>
     /// This field is required.
     pub fn terms_accepted(mut self, input: bool) -> Self {
         self.terms_accepted = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Customer confirmation that the customer has purchased and maintains sufficient VCF software licenses to cover all physical processor cores in the environment, in compliance with VMware's licensing requirements and terms of use.</p>
+    /// <p>Customer confirmation that the customer has purchased and will continue to maintain the required number of VCF software licenses to cover all physical processor cores in the Amazon EVS environment. Information about your VCF software in Amazon EVS will be shared with Broadcom to verify license compliance. Amazon EVS does not validate license keys. To validate license keys, visit the Broadcom support portal.</p>
     pub fn set_terms_accepted(mut self, input: ::std::option::Option<bool>) -> Self {
         self.terms_accepted = input;
         self
     }
-    /// <p>Customer confirmation that the customer has purchased and maintains sufficient VCF software licenses to cover all physical processor cores in the environment, in compliance with VMware's licensing requirements and terms of use.</p>
+    /// <p>Customer confirmation that the customer has purchased and will continue to maintain the required number of VCF software licenses to cover all physical processor cores in the Amazon EVS environment. Information about your VCF software in Amazon EVS will be shared with Broadcom to verify license compliance. Amazon EVS does not validate license keys. To validate license keys, visit the Broadcom support portal.</p>
     pub fn get_terms_accepted(&self) -> &::std::option::Option<bool> {
         &self.terms_accepted
     }
@@ -359,7 +368,7 @@ impl CreateEnvironmentInputBuilder {
     ///
     /// To override the contents of this collection use [`set_license_info`](Self::set_license_info).
     ///
-    /// <p>The license information that Amazon EVS requires to create an environment. Amazon EVS requires two license keys: a VCF solution key and a vSAN license key. VCF licenses must have sufficient core entitlements to cover vCPU core and vSAN storage capacity needs.</p>
+    /// <p>The license information that Amazon EVS requires to create an environment. Amazon EVS requires two license keys: a VCF solution key and a vSAN license key. The VCF solution key must cover a minimum of 256 cores. The vSAN license key must provide at least 110 TiB of vSAN capacity.</p>
     /// <p>VCF licenses can be used for only one Amazon EVS environment. Amazon EVS does not support reuse of VCF licenses for multiple environments.</p>
     /// <p>VCF license information can be retrieved from the Broadcom portal.</p>
     pub fn license_info(mut self, input: crate::types::LicenseInfo) -> Self {
@@ -368,31 +377,37 @@ impl CreateEnvironmentInputBuilder {
         self.license_info = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The license information that Amazon EVS requires to create an environment. Amazon EVS requires two license keys: a VCF solution key and a vSAN license key. VCF licenses must have sufficient core entitlements to cover vCPU core and vSAN storage capacity needs.</p>
+    /// <p>The license information that Amazon EVS requires to create an environment. Amazon EVS requires two license keys: a VCF solution key and a vSAN license key. The VCF solution key must cover a minimum of 256 cores. The vSAN license key must provide at least 110 TiB of vSAN capacity.</p>
     /// <p>VCF licenses can be used for only one Amazon EVS environment. Amazon EVS does not support reuse of VCF licenses for multiple environments.</p>
     /// <p>VCF license information can be retrieved from the Broadcom portal.</p>
     pub fn set_license_info(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LicenseInfo>>) -> Self {
         self.license_info = input;
         self
     }
-    /// <p>The license information that Amazon EVS requires to create an environment. Amazon EVS requires two license keys: a VCF solution key and a vSAN license key. VCF licenses must have sufficient core entitlements to cover vCPU core and vSAN storage capacity needs.</p>
+    /// <p>The license information that Amazon EVS requires to create an environment. Amazon EVS requires two license keys: a VCF solution key and a vSAN license key. The VCF solution key must cover a minimum of 256 cores. The vSAN license key must provide at least 110 TiB of vSAN capacity.</p>
     /// <p>VCF licenses can be used for only one Amazon EVS environment. Amazon EVS does not support reuse of VCF licenses for multiple environments.</p>
     /// <p>VCF license information can be retrieved from the Broadcom portal.</p>
     pub fn get_license_info(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LicenseInfo>> {
         &self.license_info
     }
-    /// <p>The initial VLAN subnets for the environment. You must specify a non-overlapping CIDR block for each VLAN subnet.</p>
+    /// <p>The initial VLAN subnets for the Amazon EVS environment.</p><note>
+    /// <p>For each Amazon EVS VLAN subnet, you must specify a non-overlapping CIDR block. Amazon EVS VLAN subnets have a minimum CIDR block size of /28 and a maximum size of /24.</p>
+    /// </note>
     /// This field is required.
     pub fn initial_vlans(mut self, input: crate::types::InitialVlans) -> Self {
         self.initial_vlans = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The initial VLAN subnets for the environment. You must specify a non-overlapping CIDR block for each VLAN subnet.</p>
+    /// <p>The initial VLAN subnets for the Amazon EVS environment.</p><note>
+    /// <p>For each Amazon EVS VLAN subnet, you must specify a non-overlapping CIDR block. Amazon EVS VLAN subnets have a minimum CIDR block size of /28 and a maximum size of /24.</p>
+    /// </note>
     pub fn set_initial_vlans(mut self, input: ::std::option::Option<crate::types::InitialVlans>) -> Self {
         self.initial_vlans = input;
         self
     }
-    /// <p>The initial VLAN subnets for the environment. You must specify a non-overlapping CIDR block for each VLAN subnet.</p>
+    /// <p>The initial VLAN subnets for the Amazon EVS environment.</p><note>
+    /// <p>For each Amazon EVS VLAN subnet, you must specify a non-overlapping CIDR block. Amazon EVS VLAN subnets have a minimum CIDR block size of /28 and a maximum size of /24.</p>
+    /// </note>
     pub fn get_initial_vlans(&self) -> &::std::option::Option<crate::types::InitialVlans> {
         &self.initial_vlans
     }
@@ -401,7 +416,7 @@ impl CreateEnvironmentInputBuilder {
     /// To override the contents of this collection use [`set_hosts`](Self::set_hosts).
     ///
     /// <p>The ESXi hosts to add to the environment. Amazon EVS requires that you provide details for a minimum of 4 hosts during environment creation.</p>
-    /// <p>For each host, you must provide the desired hostname, EC2 SSH key, and EC2 instance type. Optionally, you can also provide a partition or cluster placement group to use, or use Amazon EC2 Dedicated Hosts.</p>
+    /// <p>For each host, you must provide the desired hostname, EC2 SSH keypair name, and EC2 instance type. Optionally, you can also provide a partition or cluster placement group to use, or use Amazon EC2 Dedicated Hosts.</p>
     pub fn hosts(mut self, input: crate::types::HostInfoForCreate) -> Self {
         let mut v = self.hosts.unwrap_or_default();
         v.push(input);
@@ -409,28 +424,28 @@ impl CreateEnvironmentInputBuilder {
         self
     }
     /// <p>The ESXi hosts to add to the environment. Amazon EVS requires that you provide details for a minimum of 4 hosts during environment creation.</p>
-    /// <p>For each host, you must provide the desired hostname, EC2 SSH key, and EC2 instance type. Optionally, you can also provide a partition or cluster placement group to use, or use Amazon EC2 Dedicated Hosts.</p>
+    /// <p>For each host, you must provide the desired hostname, EC2 SSH keypair name, and EC2 instance type. Optionally, you can also provide a partition or cluster placement group to use, or use Amazon EC2 Dedicated Hosts.</p>
     pub fn set_hosts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HostInfoForCreate>>) -> Self {
         self.hosts = input;
         self
     }
     /// <p>The ESXi hosts to add to the environment. Amazon EVS requires that you provide details for a minimum of 4 hosts during environment creation.</p>
-    /// <p>For each host, you must provide the desired hostname, EC2 SSH key, and EC2 instance type. Optionally, you can also provide a partition or cluster placement group to use, or use Amazon EC2 Dedicated Hosts.</p>
+    /// <p>For each host, you must provide the desired hostname, EC2 SSH keypair name, and EC2 instance type. Optionally, you can also provide a partition or cluster placement group to use, or use Amazon EC2 Dedicated Hosts.</p>
     pub fn get_hosts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HostInfoForCreate>> {
         &self.hosts
     }
-    /// <p>The connectivity configuration for the environment. Amazon EVS requires that you specify two route server peer IDs. During environment creation, the route server endpoints peer with the NSX edges over the NSX, providing BGP dynamic routing for overlay networks.</p>
+    /// <p>The connectivity configuration for the environment. Amazon EVS requires that you specify two route server peer IDs. During environment creation, the route server endpoints peer with the NSX edges over the NSX uplink subnet, providing BGP-based dynamic routing for overlay networks.</p>
     /// This field is required.
     pub fn connectivity_info(mut self, input: crate::types::ConnectivityInfo) -> Self {
         self.connectivity_info = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The connectivity configuration for the environment. Amazon EVS requires that you specify two route server peer IDs. During environment creation, the route server endpoints peer with the NSX edges over the NSX, providing BGP dynamic routing for overlay networks.</p>
+    /// <p>The connectivity configuration for the environment. Amazon EVS requires that you specify two route server peer IDs. During environment creation, the route server endpoints peer with the NSX edges over the NSX uplink subnet, providing BGP-based dynamic routing for overlay networks.</p>
     pub fn set_connectivity_info(mut self, input: ::std::option::Option<crate::types::ConnectivityInfo>) -> Self {
         self.connectivity_info = input;
         self
     }
-    /// <p>The connectivity configuration for the environment. Amazon EVS requires that you specify two route server peer IDs. During environment creation, the route server endpoints peer with the NSX edges over the NSX, providing BGP dynamic routing for overlay networks.</p>
+    /// <p>The connectivity configuration for the environment. Amazon EVS requires that you specify two route server peer IDs. During environment creation, the route server endpoints peer with the NSX edges over the NSX uplink subnet, providing BGP-based dynamic routing for overlay networks.</p>
     pub fn get_connectivity_info(&self) -> &::std::option::Option<crate::types::ConnectivityInfo> {
         &self.connectivity_info
     }

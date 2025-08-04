@@ -39,6 +39,8 @@ pub struct DescribeAssetModelOutput {
     pub asset_model_status: ::std::option::Option<crate::types::AssetModelStatus>,
     /// <p>The version of the asset model. See <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/model-active-version.html"> Asset model versions</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub asset_model_version: ::std::option::Option<::std::string::String>,
+    /// <p>A list of interface details that describe the interfaces implemented by this asset model, including interface asset model IDs and property mappings.</p>
+    pub interface_details: ::std::option::Option<::std::vec::Vec<crate::types::InterfaceRelationship>>,
     /// <p>The entity tag (ETag) is a hash of the retrieved version of the asset model. It's used to make concurrent updates safely to the resource. See <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/opt-locking-for-model.html">Optimistic locking for asset model writes</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// <p>See <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/opt-locking-for-model.html"> Optimistic locking for asset model writes</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub e_tag: ::std::option::Option<::std::string::String>,
@@ -119,6 +121,12 @@ impl DescribeAssetModelOutput {
     pub fn asset_model_version(&self) -> ::std::option::Option<&str> {
         self.asset_model_version.as_deref()
     }
+    /// <p>A list of interface details that describe the interfaces implemented by this asset model, including interface asset model IDs and property mappings.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.interface_details.is_none()`.
+    pub fn interface_details(&self) -> &[crate::types::InterfaceRelationship] {
+        self.interface_details.as_deref().unwrap_or_default()
+    }
     /// <p>The entity tag (ETag) is a hash of the retrieved version of the asset model. It's used to make concurrent updates safely to the resource. See <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/opt-locking-for-model.html">Optimistic locking for asset model writes</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// <p>See <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/opt-locking-for-model.html"> Optimistic locking for asset model writes</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn e_tag(&self) -> ::std::option::Option<&str> {
@@ -155,6 +163,7 @@ pub struct DescribeAssetModelOutputBuilder {
     pub(crate) asset_model_last_update_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) asset_model_status: ::std::option::Option<crate::types::AssetModelStatus>,
     pub(crate) asset_model_version: ::std::option::Option<::std::string::String>,
+    pub(crate) interface_details: ::std::option::Option<::std::vec::Vec<crate::types::InterfaceRelationship>>,
     pub(crate) e_tag: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -415,6 +424,26 @@ impl DescribeAssetModelOutputBuilder {
     pub fn get_asset_model_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.asset_model_version
     }
+    /// Appends an item to `interface_details`.
+    ///
+    /// To override the contents of this collection use [`set_interface_details`](Self::set_interface_details).
+    ///
+    /// <p>A list of interface details that describe the interfaces implemented by this asset model, including interface asset model IDs and property mappings.</p>
+    pub fn interface_details(mut self, input: crate::types::InterfaceRelationship) -> Self {
+        let mut v = self.interface_details.unwrap_or_default();
+        v.push(input);
+        self.interface_details = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of interface details that describe the interfaces implemented by this asset model, including interface asset model IDs and property mappings.</p>
+    pub fn set_interface_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InterfaceRelationship>>) -> Self {
+        self.interface_details = input;
+        self
+    }
+    /// <p>A list of interface details that describe the interfaces implemented by this asset model, including interface asset model IDs and property mappings.</p>
+    pub fn get_interface_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InterfaceRelationship>> {
+        &self.interface_details
+    }
     /// <p>The entity tag (ETag) is a hash of the retrieved version of the asset model. It's used to make concurrent updates safely to the resource. See <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/opt-locking-for-model.html">Optimistic locking for asset model writes</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// <p>See <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/opt-locking-for-model.html"> Optimistic locking for asset model writes</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn e_tag(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -510,6 +539,7 @@ impl DescribeAssetModelOutputBuilder {
             })?,
             asset_model_status: self.asset_model_status,
             asset_model_version: self.asset_model_version,
+            interface_details: self.interface_details,
             e_tag: self.e_tag,
             _request_id: self._request_id,
         })
