@@ -544,6 +544,7 @@ impl From<crate::operation::delete_cluster::DeleteClusterError> for Error {
     fn from(err: crate::operation::delete_cluster::DeleteClusterError) -> Self {
         match err {
             crate::operation::delete_cluster::DeleteClusterError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::delete_cluster::DeleteClusterError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::delete_cluster::DeleteClusterError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
             crate::operation::delete_cluster::DeleteClusterError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::delete_cluster::DeleteClusterError::ServerException(inner) => Error::ServerException(inner),

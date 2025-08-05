@@ -30,12 +30,12 @@ streaming-zip = "0.5.0"
 tempfile = "3.5.0"
 tokio-stream = "0.1.12"
 tracing = "0.1.37"
-aws-config= { version = "1.8.3", path = "../../../sdk/aws-config" }
-aws-sdk-dynamodb= { version = "1.86.0", path = "../../../sdk/dynamodb" }
-aws-sdk-rekognition= { version = "1.82.0", path = "../../../sdk/rekognition" }
-aws-sdk-s3= { version = "1.100.0", path = "../../../sdk/s3" }
-aws-sdk-sns= { version = "1.79.1", path = "../../../sdk/sns" }
-aws-smithy-runtime= { version = "1.8.5", path = "../../../sdk/aws-smithy-runtime" }
+aws-config= { version = "1.8.4", path = "../../../sdk/aws-config" }
+aws-sdk-dynamodb= { version = "1.87.0", path = "../../../sdk/dynamodb" }
+aws-sdk-rekognition= { version = "1.83.0", path = "../../../sdk/rekognition" }
+aws-sdk-s3= { version = "1.101.0", path = "../../../sdk/s3" }
+aws-sdk-sns= { version = "1.80.0", path = "../../../sdk/sns" }
+aws-smithy-runtime= { version = "1.8.6", path = "../../../sdk/aws-smithy-runtime" }
 aws-smithy-types-convert= { version = "0.60.9", path = "../../../sdk/aws-smithy-types-convert", features = ["convert-chrono"] }
 
 [dependencies.aws_lambda_events]

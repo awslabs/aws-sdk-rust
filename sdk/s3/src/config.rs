@@ -1501,7 +1501,7 @@ impl From<&::aws_types::sdk_config::SdkConfig> for Builder {
                 input
                     .service_config()
                     .and_then(|conf| {
-                        conf.load_config(service_config_key("AWS_ENDPOINT_URL", "endpoint_url"))
+                        conf.load_config(service_config_key("S3", "AWS_ENDPOINT_URL", "endpoint_url"))
                             .map(|it| it.parse().unwrap())
                     })
                     .or_else(|| input.endpoint_url().map(|s| s.to_string())),
@@ -1526,6 +1526,7 @@ impl From<&::aws_types::sdk_config::SdkConfig> for Builder {
         }
         builder.set_disable_s3_express_session_auth(input.service_config().and_then(|conf| {
             let str_config = conf.load_config(service_config_key(
+                "S3",
                 "AWS_S3_DISABLE_EXPRESS_SESSION_AUTH",
                 "s3_disable_express_session_auth",
             ));
@@ -1546,9 +1547,9 @@ impl From<&::aws_types::sdk_config::SdkConfig> for Config {
 pub use ::aws_types::app_name::AppName;
 
 #[allow(dead_code)]
-fn service_config_key<'a>(env: &'a str, profile: &'a str) -> aws_types::service_config::ServiceConfigKey<'a> {
+fn service_config_key<'a>(service_id: &'a str, env: &'a str, profile: &'a str) -> aws_types::service_config::ServiceConfigKey<'a> {
     ::aws_types::service_config::ServiceConfigKey::builder()
-        .service_id("S3")
+        .service_id(service_id)
         .env(env)
         .profile(profile)
         .build()

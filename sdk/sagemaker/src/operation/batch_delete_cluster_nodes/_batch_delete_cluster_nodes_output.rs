@@ -7,6 +7,10 @@ pub struct BatchDeleteClusterNodesOutput {
     pub failed: ::std::option::Option<::std::vec::Vec<crate::types::BatchDeleteClusterNodesError>>,
     /// <p>A list of node IDs that were successfully deleted from the specified cluster.</p>
     pub successful: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>A list of <code>NodeLogicalIds</code> that could not be deleted, along with error information explaining why the deletion failed.</p>
+    pub failed_node_logical_ids: ::std::option::Option<::std::vec::Vec<crate::types::BatchDeleteClusterNodeLogicalIdsError>>,
+    /// <p>A list of <code>NodeLogicalIds</code> that were successfully deleted from the cluster.</p>
+    pub successful_node_logical_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl BatchDeleteClusterNodesOutput {
@@ -21,6 +25,18 @@ impl BatchDeleteClusterNodesOutput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.successful.is_none()`.
     pub fn successful(&self) -> &[::std::string::String] {
         self.successful.as_deref().unwrap_or_default()
+    }
+    /// <p>A list of <code>NodeLogicalIds</code> that could not be deleted, along with error information explaining why the deletion failed.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failed_node_logical_ids.is_none()`.
+    pub fn failed_node_logical_ids(&self) -> &[crate::types::BatchDeleteClusterNodeLogicalIdsError] {
+        self.failed_node_logical_ids.as_deref().unwrap_or_default()
+    }
+    /// <p>A list of <code>NodeLogicalIds</code> that were successfully deleted from the cluster.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.successful_node_logical_ids.is_none()`.
+    pub fn successful_node_logical_ids(&self) -> &[::std::string::String] {
+        self.successful_node_logical_ids.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for BatchDeleteClusterNodesOutput {
@@ -41,6 +57,8 @@ impl BatchDeleteClusterNodesOutput {
 pub struct BatchDeleteClusterNodesOutputBuilder {
     pub(crate) failed: ::std::option::Option<::std::vec::Vec<crate::types::BatchDeleteClusterNodesError>>,
     pub(crate) successful: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) failed_node_logical_ids: ::std::option::Option<::std::vec::Vec<crate::types::BatchDeleteClusterNodeLogicalIdsError>>,
+    pub(crate) successful_node_logical_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl BatchDeleteClusterNodesOutputBuilder {
@@ -84,6 +102,49 @@ impl BatchDeleteClusterNodesOutputBuilder {
     pub fn get_successful(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.successful
     }
+    /// Appends an item to `failed_node_logical_ids`.
+    ///
+    /// To override the contents of this collection use [`set_failed_node_logical_ids`](Self::set_failed_node_logical_ids).
+    ///
+    /// <p>A list of <code>NodeLogicalIds</code> that could not be deleted, along with error information explaining why the deletion failed.</p>
+    pub fn failed_node_logical_ids(mut self, input: crate::types::BatchDeleteClusterNodeLogicalIdsError) -> Self {
+        let mut v = self.failed_node_logical_ids.unwrap_or_default();
+        v.push(input);
+        self.failed_node_logical_ids = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of <code>NodeLogicalIds</code> that could not be deleted, along with error information explaining why the deletion failed.</p>
+    pub fn set_failed_node_logical_ids(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::BatchDeleteClusterNodeLogicalIdsError>>,
+    ) -> Self {
+        self.failed_node_logical_ids = input;
+        self
+    }
+    /// <p>A list of <code>NodeLogicalIds</code> that could not be deleted, along with error information explaining why the deletion failed.</p>
+    pub fn get_failed_node_logical_ids(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchDeleteClusterNodeLogicalIdsError>> {
+        &self.failed_node_logical_ids
+    }
+    /// Appends an item to `successful_node_logical_ids`.
+    ///
+    /// To override the contents of this collection use [`set_successful_node_logical_ids`](Self::set_successful_node_logical_ids).
+    ///
+    /// <p>A list of <code>NodeLogicalIds</code> that were successfully deleted from the cluster.</p>
+    pub fn successful_node_logical_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.successful_node_logical_ids.unwrap_or_default();
+        v.push(input.into());
+        self.successful_node_logical_ids = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of <code>NodeLogicalIds</code> that were successfully deleted from the cluster.</p>
+    pub fn set_successful_node_logical_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.successful_node_logical_ids = input;
+        self
+    }
+    /// <p>A list of <code>NodeLogicalIds</code> that were successfully deleted from the cluster.</p>
+    pub fn get_successful_node_logical_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.successful_node_logical_ids
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -98,6 +159,8 @@ impl BatchDeleteClusterNodesOutputBuilder {
         crate::operation::batch_delete_cluster_nodes::BatchDeleteClusterNodesOutput {
             failed: self.failed,
             successful: self.successful,
+            failed_node_logical_ids: self.failed_node_logical_ids,
+            successful_node_logical_ids: self.successful_node_logical_ids,
             _request_id: self._request_id,
         }
     }

@@ -17,6 +17,7 @@
 ///     UpdateParamType::ClusterLogging => { /* ... */ },
 ///     UpdateParamType::ComputeConfig => { /* ... */ },
 ///     UpdateParamType::ConfigurationValues => { /* ... */ },
+///     UpdateParamType::DeletionProtection => { /* ... */ },
 ///     UpdateParamType::DesiredSize => { /* ... */ },
 ///     UpdateParamType::EncryptionConfig => { /* ... */ },
 ///     UpdateParamType::EndpointPrivateAccess => { /* ... */ },
@@ -86,6 +87,8 @@ pub enum UpdateParamType {
     ComputeConfig,
     #[allow(missing_docs)] // documentation missing in model
     ConfigurationValues,
+    #[allow(missing_docs)] // documentation missing in model
+    DeletionProtection,
     #[allow(missing_docs)] // documentation missing in model
     DesiredSize,
     #[allow(missing_docs)] // documentation missing in model
@@ -160,6 +163,7 @@ impl ::std::convert::From<&str> for UpdateParamType {
             "ClusterLogging" => UpdateParamType::ClusterLogging,
             "ComputeConfig" => UpdateParamType::ComputeConfig,
             "ConfigurationValues" => UpdateParamType::ConfigurationValues,
+            "DeletionProtection" => UpdateParamType::DeletionProtection,
             "DesiredSize" => UpdateParamType::DesiredSize,
             "EncryptionConfig" => UpdateParamType::EncryptionConfig,
             "EndpointPrivateAccess" => UpdateParamType::EndpointPrivateAccess,
@@ -211,6 +215,7 @@ impl UpdateParamType {
             UpdateParamType::ClusterLogging => "ClusterLogging",
             UpdateParamType::ComputeConfig => "ComputeConfig",
             UpdateParamType::ConfigurationValues => "ConfigurationValues",
+            UpdateParamType::DeletionProtection => "DeletionProtection",
             UpdateParamType::DesiredSize => "DesiredSize",
             UpdateParamType::EncryptionConfig => "EncryptionConfig",
             UpdateParamType::EndpointPrivateAccess => "EndpointPrivateAccess",
@@ -253,6 +258,7 @@ impl UpdateParamType {
             "ClusterLogging",
             "ComputeConfig",
             "ConfigurationValues",
+            "DeletionProtection",
             "DesiredSize",
             "EncryptionConfig",
             "EndpointPrivateAccess",
@@ -312,6 +318,7 @@ impl ::std::fmt::Display for UpdateParamType {
             UpdateParamType::ClusterLogging => write!(f, "ClusterLogging"),
             UpdateParamType::ComputeConfig => write!(f, "ComputeConfig"),
             UpdateParamType::ConfigurationValues => write!(f, "ConfigurationValues"),
+            UpdateParamType::DeletionProtection => write!(f, "DeletionProtection"),
             UpdateParamType::DesiredSize => write!(f, "DesiredSize"),
             UpdateParamType::EncryptionConfig => write!(f, "EncryptionConfig"),
             UpdateParamType::EndpointPrivateAccess => write!(f, "EndpointPrivateAccess"),

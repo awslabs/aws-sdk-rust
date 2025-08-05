@@ -9,5 +9,8 @@ pub fn ser_describe_cluster_node_input_input(
     if let Some(var_2) = &input.node_id {
         object.key("NodeId").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.node_logical_id {
+        object.key("NodeLogicalId").string(var_3.as_str());
+    }
     Ok(())
 }

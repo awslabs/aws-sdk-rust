@@ -66,5 +66,8 @@ pub fn ser_cluster_instance_group_specification(
         crate::protocol_serde::shape_scheduled_update_config::ser_scheduled_update_config(&mut object_19, var_18)?;
         object_19.finish();
     }
+    if let Some(var_20) = &input.image_id {
+        object.key("ImageId").string(var_20.as_str());
+    }
     Ok(())
 }

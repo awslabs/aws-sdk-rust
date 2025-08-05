@@ -28,6 +28,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "NodeLogicalId" => {
+                            builder = builder.set_node_logical_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "InstanceStatus" => {
                             builder = builder.set_instance_status(
                                 crate::protocol_serde::shape_cluster_instance_status_details::de_cluster_instance_status_details(tokens)?,
@@ -97,6 +104,20 @@ where
                             builder = builder.set_placement(crate::protocol_serde::shape_cluster_instance_placement::de_cluster_instance_placement(
                                 tokens,
                             )?);
+                        }
+                        "CurrentImageId" => {
+                            builder = builder.set_current_image_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "DesiredImageId" => {
+                            builder = builder.set_desired_image_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

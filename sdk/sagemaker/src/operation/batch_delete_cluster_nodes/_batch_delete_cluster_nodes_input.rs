@@ -14,6 +14,8 @@ pub struct BatchDeleteClusterNodesInput {
     /// </ul>
     /// </note>
     pub node_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>A list of <code>NodeLogicalIds</code> identifying the nodes to be deleted. You can specify up to 50 <code>NodeLogicalIds</code>. You must specify either <code>NodeLogicalIds</code>, <code>InstanceIds</code>, or both, with a combined maximum of 50 identifiers.</p>
+    pub node_logical_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchDeleteClusterNodesInput {
     /// <p>The name of the SageMaker HyperPod cluster from which to delete the specified nodes.</p>
@@ -33,6 +35,12 @@ impl BatchDeleteClusterNodesInput {
     pub fn node_ids(&self) -> &[::std::string::String] {
         self.node_ids.as_deref().unwrap_or_default()
     }
+    /// <p>A list of <code>NodeLogicalIds</code> identifying the nodes to be deleted. You can specify up to 50 <code>NodeLogicalIds</code>. You must specify either <code>NodeLogicalIds</code>, <code>InstanceIds</code>, or both, with a combined maximum of 50 identifiers.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.node_logical_ids.is_none()`.
+    pub fn node_logical_ids(&self) -> &[::std::string::String] {
+        self.node_logical_ids.as_deref().unwrap_or_default()
+    }
 }
 impl BatchDeleteClusterNodesInput {
     /// Creates a new builder-style object to manufacture [`BatchDeleteClusterNodesInput`](crate::operation::batch_delete_cluster_nodes::BatchDeleteClusterNodesInput).
@@ -47,6 +55,7 @@ impl BatchDeleteClusterNodesInput {
 pub struct BatchDeleteClusterNodesInputBuilder {
     pub(crate) cluster_name: ::std::option::Option<::std::string::String>,
     pub(crate) node_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) node_logical_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchDeleteClusterNodesInputBuilder {
     /// <p>The name of the SageMaker HyperPod cluster from which to delete the specified nodes.</p>
@@ -105,6 +114,26 @@ impl BatchDeleteClusterNodesInputBuilder {
     pub fn get_node_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.node_ids
     }
+    /// Appends an item to `node_logical_ids`.
+    ///
+    /// To override the contents of this collection use [`set_node_logical_ids`](Self::set_node_logical_ids).
+    ///
+    /// <p>A list of <code>NodeLogicalIds</code> identifying the nodes to be deleted. You can specify up to 50 <code>NodeLogicalIds</code>. You must specify either <code>NodeLogicalIds</code>, <code>InstanceIds</code>, or both, with a combined maximum of 50 identifiers.</p>
+    pub fn node_logical_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.node_logical_ids.unwrap_or_default();
+        v.push(input.into());
+        self.node_logical_ids = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of <code>NodeLogicalIds</code> identifying the nodes to be deleted. You can specify up to 50 <code>NodeLogicalIds</code>. You must specify either <code>NodeLogicalIds</code>, <code>InstanceIds</code>, or both, with a combined maximum of 50 identifiers.</p>
+    pub fn set_node_logical_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.node_logical_ids = input;
+        self
+    }
+    /// <p>A list of <code>NodeLogicalIds</code> identifying the nodes to be deleted. You can specify up to 50 <code>NodeLogicalIds</code>. You must specify either <code>NodeLogicalIds</code>, <code>InstanceIds</code>, or both, with a combined maximum of 50 identifiers.</p>
+    pub fn get_node_logical_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.node_logical_ids
+    }
     /// Consumes the builder and constructs a [`BatchDeleteClusterNodesInput`](crate::operation::batch_delete_cluster_nodes::BatchDeleteClusterNodesInput).
     pub fn build(
         self,
@@ -115,6 +144,7 @@ impl BatchDeleteClusterNodesInputBuilder {
         ::std::result::Result::Ok(crate::operation::batch_delete_cluster_nodes::BatchDeleteClusterNodesInput {
             cluster_name: self.cluster_name,
             node_ids: self.node_ids,
+            node_logical_ids: self.node_logical_ids,
         })
     }
 }

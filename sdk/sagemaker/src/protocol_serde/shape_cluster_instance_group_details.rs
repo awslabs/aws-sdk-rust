@@ -100,6 +100,20 @@ where
                                 crate::protocol_serde::shape_scheduled_update_config::de_scheduled_update_config(tokens)?,
                             );
                         }
+                        "CurrentImageId" => {
+                            builder = builder.set_current_image_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "DesiredImageId" => {
+                            builder = builder.set_desired_image_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

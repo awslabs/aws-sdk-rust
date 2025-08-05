@@ -260,6 +260,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeleteCluster
 pub enum DeleteClusterError {
     /// <p>These errors are usually caused by a client action. Actions can include using an action or resource on behalf of an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html">IAM principal</a> that doesn't have permissions to use the action or resource or specifying an identifier that is not valid.</p>
     ClientException(crate::types::error::ClientException),
+    /// <p>The request is invalid given the state of the cluster. Check the state of the cluster and the associated operations.</p>
+    InvalidRequestException(crate::types::error::InvalidRequestException),
     /// <p>The specified resource is in use.</p>
     ResourceInUseException(crate::types::error::ResourceInUseException),
     /// <p>The specified resource could not be found. You can view your available clusters with <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>. Amazon EKS clusters and node groups are Amazon Web Services Region specific.</p>
@@ -302,6 +304,7 @@ impl DeleteClusterError {
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::ClientException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidRequestException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceInUseException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ServerException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -312,6 +315,10 @@ impl DeleteClusterError {
     /// Returns `true` if the error kind is `DeleteClusterError::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(self, Self::ClientException(_))
+    }
+    /// Returns `true` if the error kind is `DeleteClusterError::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(self, Self::InvalidRequestException(_))
     }
     /// Returns `true` if the error kind is `DeleteClusterError::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
@@ -334,6 +341,7 @@ impl ::std::error::Error for DeleteClusterError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::ClientException(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidRequestException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceInUseException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::ServerException(_inner) => ::std::option::Option::Some(_inner),
@@ -346,6 +354,7 @@ impl ::std::fmt::Display for DeleteClusterError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             Self::ClientException(_inner) => _inner.fmt(f),
+            Self::InvalidRequestException(_inner) => _inner.fmt(f),
             Self::ResourceInUseException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::ServerException(_inner) => _inner.fmt(f),
@@ -372,6 +381,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DeleteCluster
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::ClientException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidRequestException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceInUseException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ServerException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

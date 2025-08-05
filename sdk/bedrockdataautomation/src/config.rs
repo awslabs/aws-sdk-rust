@@ -1360,7 +1360,7 @@ impl From<&::aws_types::sdk_config::SdkConfig> for Builder {
                 input
                     .service_config()
                     .and_then(|conf| {
-                        conf.load_config(service_config_key("AWS_ENDPOINT_URL", "endpoint_url"))
+                        conf.load_config(service_config_key("Bedrock Data Automation", "AWS_ENDPOINT_URL", "endpoint_url"))
                             .map(|it| it.parse().unwrap())
                     })
                     .or_else(|| input.endpoint_url().map(|s| s.to_string())),
@@ -1383,6 +1383,30 @@ impl From<&::aws_types::sdk_config::SdkConfig> for Builder {
         if let Some(cache) = input.identity_cache() {
             builder.set_identity_cache(cache);
         }
+        if let ::std::option::Option::Some(val) = input.service_config().and_then(|conf| {
+            // Passing an empty string for the last argument of `service_config_key`,
+            // since shared config/profile for environment token provider is not supported.
+            ::aws_types::service_config::LoadServiceConfig::load_config(conf, service_config_key("bedrock", "AWS_BEARER_TOKEN", ""))
+                .and_then(|it| it.parse::<::std::string::String>().ok())
+        }) {
+            if !input.get_origin("auth_scheme_preference").is_client_config() {
+                builder.set_auth_scheme_preference(::std::option::Option::Some(
+                    [::aws_smithy_runtime_api::client::auth::http::HTTP_BEARER_AUTH_SCHEME_ID].into(),
+                ));
+            }
+            if !input.get_origin("token_provider").is_client_config() {
+                let mut layer = ::aws_smithy_types::config_bag::Layer::new("AwsBearerTokenBedrock");
+                layer.store_append(::aws_credential_types::credential_feature::AwsCredentialFeature::BearerServiceEnvVars);
+                let identity = ::aws_smithy_runtime_api::client::identity::Identity::builder()
+                    .data(crate::config::Token::new(val, ::std::option::Option::None))
+                    .property(layer.freeze())
+                    .build()
+                    .expect("required fields set");
+                builder
+                    .runtime_components
+                    .set_identity_resolver(::aws_smithy_runtime_api::client::auth::http::HTTP_BEARER_AUTH_SCHEME_ID, identity);
+            }
+        }
         builder.set_app_name(input.app_name().cloned());
 
         builder
@@ -1398,9 +1422,9 @@ impl From<&::aws_types::sdk_config::SdkConfig> for Config {
 pub use ::aws_types::app_name::AppName;
 
 #[allow(dead_code)]
-fn service_config_key<'a>(env: &'a str, profile: &'a str) -> aws_types::service_config::ServiceConfigKey<'a> {
+fn service_config_key<'a>(service_id: &'a str, env: &'a str, profile: &'a str) -> aws_types::service_config::ServiceConfigKey<'a> {
     ::aws_types::service_config::ServiceConfigKey::builder()
-        .service_id("Bedrock Data Automation")
+        .service_id(service_id)
         .env(env)
         .profile(profile)
         .build()
@@ -1494,6 +1518,8 @@ pub use ::aws_credential_types::provider::ProvideCredentials;
 pub use ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin;
 
 pub use ::aws_smithy_types::config_bag::Layer;
+
+pub use ::aws_credential_types::Token;
 
 /// Types needed to configure endpoint resolution.
 pub mod endpoint;

@@ -9,6 +9,8 @@ pub enum Error {
     ConflictException(crate::types::error::ConflictException),
     /// <p>An internal server error occurred. Retry your request.</p>
     InternalServerException(crate::types::error::InternalServerException),
+    /// <p>Thrown when attempting to delete or modify a resource that is currently being used by other resources or operations. For example, trying to delete an Automated Reasoning policy that is referenced by an active guardrail.</p>
+    ResourceInUseException(crate::types::error::ResourceInUseException),
     /// <p>The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon Resource Name (ARN) and try your request again.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The number of requests exceeds the service quota. Resubmit your request later.</p>
@@ -36,6 +38,7 @@ impl ::std::fmt::Display for Error {
             Error::AccessDeniedException(inner) => inner.fmt(f),
             Error::ConflictException(inner) => inner.fmt(f),
             Error::InternalServerException(inner) => inner.fmt(f),
+            Error::ResourceInUseException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
             Error::ServiceQuotaExceededException(inner) => inner.fmt(f),
             Error::ServiceUnavailableException(inner) => inner.fmt(f),
@@ -66,6 +69,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::AccessDeniedException(inner) => inner.meta(),
             Self::ConflictException(inner) => inner.meta(),
             Self::InternalServerException(inner) => inner.meta(),
+            Self::ResourceInUseException(inner) => inner.meta(),
             Self::ResourceNotFoundException(inner) => inner.meta(),
             Self::ServiceQuotaExceededException(inner) => inner.meta(),
             Self::ServiceUnavailableException(inner) => inner.meta(),
@@ -113,6 +117,177 @@ impl From<crate::operation::batch_delete_evaluation_job::BatchDeleteEvaluationJo
                 Error::ValidationException(inner)
             }
             crate::operation::batch_delete_evaluation_job::BatchDeleteEvaluationJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::cancel_automated_reasoning_policy_build_workflow::CancelAutomatedReasoningPolicyBuildWorkflowError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::cancel_automated_reasoning_policy_build_workflow::CancelAutomatedReasoningPolicyBuildWorkflowError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::cancel_automated_reasoning_policy_build_workflow::CancelAutomatedReasoningPolicyBuildWorkflowError> for Error {
+    fn from(err: crate::operation::cancel_automated_reasoning_policy_build_workflow::CancelAutomatedReasoningPolicyBuildWorkflowError) -> Self {
+        match err {
+            crate::operation::cancel_automated_reasoning_policy_build_workflow::CancelAutomatedReasoningPolicyBuildWorkflowError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::cancel_automated_reasoning_policy_build_workflow::CancelAutomatedReasoningPolicyBuildWorkflowError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::cancel_automated_reasoning_policy_build_workflow::CancelAutomatedReasoningPolicyBuildWorkflowError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::cancel_automated_reasoning_policy_build_workflow::CancelAutomatedReasoningPolicyBuildWorkflowError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::cancel_automated_reasoning_policy_build_workflow::CancelAutomatedReasoningPolicyBuildWorkflowError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::cancel_automated_reasoning_policy_build_workflow::CancelAutomatedReasoningPolicyBuildWorkflowError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_automated_reasoning_policy::CreateAutomatedReasoningPolicyError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_automated_reasoning_policy::CreateAutomatedReasoningPolicyError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_automated_reasoning_policy::CreateAutomatedReasoningPolicyError> for Error {
+    fn from(err: crate::operation::create_automated_reasoning_policy::CreateAutomatedReasoningPolicyError) -> Self {
+        match err {
+            crate::operation::create_automated_reasoning_policy::CreateAutomatedReasoningPolicyError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_automated_reasoning_policy::CreateAutomatedReasoningPolicyError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::create_automated_reasoning_policy::CreateAutomatedReasoningPolicyError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_automated_reasoning_policy::CreateAutomatedReasoningPolicyError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_automated_reasoning_policy::CreateAutomatedReasoningPolicyError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_automated_reasoning_policy::CreateAutomatedReasoningPolicyError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::create_automated_reasoning_policy::CreateAutomatedReasoningPolicyError::TooManyTagsException(inner) => {
+                Error::TooManyTagsException(inner)
+            }
+            crate::operation::create_automated_reasoning_policy::CreateAutomatedReasoningPolicyError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::create_automated_reasoning_policy::CreateAutomatedReasoningPolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_automated_reasoning_policy_test_case::CreateAutomatedReasoningPolicyTestCaseError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_automated_reasoning_policy_test_case::CreateAutomatedReasoningPolicyTestCaseError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_automated_reasoning_policy_test_case::CreateAutomatedReasoningPolicyTestCaseError> for Error {
+    fn from(err: crate::operation::create_automated_reasoning_policy_test_case::CreateAutomatedReasoningPolicyTestCaseError) -> Self {
+        match err {
+            crate::operation::create_automated_reasoning_policy_test_case::CreateAutomatedReasoningPolicyTestCaseError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_automated_reasoning_policy_test_case::CreateAutomatedReasoningPolicyTestCaseError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_automated_reasoning_policy_test_case::CreateAutomatedReasoningPolicyTestCaseError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_automated_reasoning_policy_test_case::CreateAutomatedReasoningPolicyTestCaseError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_automated_reasoning_policy_test_case::CreateAutomatedReasoningPolicyTestCaseError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::create_automated_reasoning_policy_test_case::CreateAutomatedReasoningPolicyTestCaseError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_automated_reasoning_policy_test_case::CreateAutomatedReasoningPolicyTestCaseError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_automated_reasoning_policy_test_case::CreateAutomatedReasoningPolicyTestCaseError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_automated_reasoning_policy_version::CreateAutomatedReasoningPolicyVersionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_automated_reasoning_policy_version::CreateAutomatedReasoningPolicyVersionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_automated_reasoning_policy_version::CreateAutomatedReasoningPolicyVersionError> for Error {
+    fn from(err: crate::operation::create_automated_reasoning_policy_version::CreateAutomatedReasoningPolicyVersionError) -> Self {
+        match err {
+            crate::operation::create_automated_reasoning_policy_version::CreateAutomatedReasoningPolicyVersionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_automated_reasoning_policy_version::CreateAutomatedReasoningPolicyVersionError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_automated_reasoning_policy_version::CreateAutomatedReasoningPolicyVersionError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_automated_reasoning_policy_version::CreateAutomatedReasoningPolicyVersionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_automated_reasoning_policy_version::CreateAutomatedReasoningPolicyVersionError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::create_automated_reasoning_policy_version::CreateAutomatedReasoningPolicyVersionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_automated_reasoning_policy_version::CreateAutomatedReasoningPolicyVersionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_automated_reasoning_policy_version::CreateAutomatedReasoningPolicyVersionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -690,6 +865,146 @@ impl From<crate::operation::create_provisioned_model_throughput::CreateProvision
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_automated_reasoning_policy::DeleteAutomatedReasoningPolicyError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_automated_reasoning_policy::DeleteAutomatedReasoningPolicyError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_automated_reasoning_policy::DeleteAutomatedReasoningPolicyError> for Error {
+    fn from(err: crate::operation::delete_automated_reasoning_policy::DeleteAutomatedReasoningPolicyError) -> Self {
+        match err {
+            crate::operation::delete_automated_reasoning_policy::DeleteAutomatedReasoningPolicyError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_automated_reasoning_policy::DeleteAutomatedReasoningPolicyError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_automated_reasoning_policy::DeleteAutomatedReasoningPolicyError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_automated_reasoning_policy::DeleteAutomatedReasoningPolicyError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::delete_automated_reasoning_policy::DeleteAutomatedReasoningPolicyError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_automated_reasoning_policy::DeleteAutomatedReasoningPolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_automated_reasoning_policy_build_workflow::DeleteAutomatedReasoningPolicyBuildWorkflowError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_automated_reasoning_policy_build_workflow::DeleteAutomatedReasoningPolicyBuildWorkflowError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_automated_reasoning_policy_build_workflow::DeleteAutomatedReasoningPolicyBuildWorkflowError> for Error {
+    fn from(err: crate::operation::delete_automated_reasoning_policy_build_workflow::DeleteAutomatedReasoningPolicyBuildWorkflowError) -> Self {
+        match err {
+            crate::operation::delete_automated_reasoning_policy_build_workflow::DeleteAutomatedReasoningPolicyBuildWorkflowError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_automated_reasoning_policy_build_workflow::DeleteAutomatedReasoningPolicyBuildWorkflowError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_automated_reasoning_policy_build_workflow::DeleteAutomatedReasoningPolicyBuildWorkflowError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_automated_reasoning_policy_build_workflow::DeleteAutomatedReasoningPolicyBuildWorkflowError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_automated_reasoning_policy_build_workflow::DeleteAutomatedReasoningPolicyBuildWorkflowError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_automated_reasoning_policy_build_workflow::DeleteAutomatedReasoningPolicyBuildWorkflowError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_automated_reasoning_policy_build_workflow::DeleteAutomatedReasoningPolicyBuildWorkflowError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_automated_reasoning_policy_test_case::DeleteAutomatedReasoningPolicyTestCaseError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_automated_reasoning_policy_test_case::DeleteAutomatedReasoningPolicyTestCaseError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_automated_reasoning_policy_test_case::DeleteAutomatedReasoningPolicyTestCaseError> for Error {
+    fn from(err: crate::operation::delete_automated_reasoning_policy_test_case::DeleteAutomatedReasoningPolicyTestCaseError) -> Self {
+        match err {
+            crate::operation::delete_automated_reasoning_policy_test_case::DeleteAutomatedReasoningPolicyTestCaseError::AccessDeniedException(
+                inner,
+            ) => Error::AccessDeniedException(inner),
+            crate::operation::delete_automated_reasoning_policy_test_case::DeleteAutomatedReasoningPolicyTestCaseError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::delete_automated_reasoning_policy_test_case::DeleteAutomatedReasoningPolicyTestCaseError::InternalServerException(
+                inner,
+            ) => Error::InternalServerException(inner),
+            crate::operation::delete_automated_reasoning_policy_test_case::DeleteAutomatedReasoningPolicyTestCaseError::ResourceInUseException(
+                inner,
+            ) => Error::ResourceInUseException(inner),
+            crate::operation::delete_automated_reasoning_policy_test_case::DeleteAutomatedReasoningPolicyTestCaseError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_automated_reasoning_policy_test_case::DeleteAutomatedReasoningPolicyTestCaseError::ThrottlingException(
+                inner,
+            ) => Error::ThrottlingException(inner),
+            crate::operation::delete_automated_reasoning_policy_test_case::DeleteAutomatedReasoningPolicyTestCaseError::ValidationException(
+                inner,
+            ) => Error::ValidationException(inner),
+            crate::operation::delete_automated_reasoning_policy_test_case::DeleteAutomatedReasoningPolicyTestCaseError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_custom_model::DeleteCustomModelError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1115,6 +1430,360 @@ impl From<crate::operation::deregister_marketplace_model_endpoint::DeregisterMar
                 Error::ValidationException(inner)
             }
             crate::operation::deregister_marketplace_model_endpoint::DeregisterMarketplaceModelEndpointError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::export_automated_reasoning_policy_version::ExportAutomatedReasoningPolicyVersionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::export_automated_reasoning_policy_version::ExportAutomatedReasoningPolicyVersionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::export_automated_reasoning_policy_version::ExportAutomatedReasoningPolicyVersionError> for Error {
+    fn from(err: crate::operation::export_automated_reasoning_policy_version::ExportAutomatedReasoningPolicyVersionError) -> Self {
+        match err {
+            crate::operation::export_automated_reasoning_policy_version::ExportAutomatedReasoningPolicyVersionError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::export_automated_reasoning_policy_version::ExportAutomatedReasoningPolicyVersionError::InternalServerException(
+                inner,
+            ) => Error::InternalServerException(inner),
+            crate::operation::export_automated_reasoning_policy_version::ExportAutomatedReasoningPolicyVersionError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::export_automated_reasoning_policy_version::ExportAutomatedReasoningPolicyVersionError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::export_automated_reasoning_policy_version::ExportAutomatedReasoningPolicyVersionError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::export_automated_reasoning_policy_version::ExportAutomatedReasoningPolicyVersionError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_automated_reasoning_policy::GetAutomatedReasoningPolicyError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_automated_reasoning_policy::GetAutomatedReasoningPolicyError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_automated_reasoning_policy::GetAutomatedReasoningPolicyError> for Error {
+    fn from(err: crate::operation::get_automated_reasoning_policy::GetAutomatedReasoningPolicyError) -> Self {
+        match err {
+            crate::operation::get_automated_reasoning_policy::GetAutomatedReasoningPolicyError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_automated_reasoning_policy::GetAutomatedReasoningPolicyError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_automated_reasoning_policy::GetAutomatedReasoningPolicyError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_automated_reasoning_policy::GetAutomatedReasoningPolicyError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_automated_reasoning_policy::GetAutomatedReasoningPolicyError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_automated_reasoning_policy::GetAutomatedReasoningPolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_automated_reasoning_policy_annotations::GetAutomatedReasoningPolicyAnnotationsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_automated_reasoning_policy_annotations::GetAutomatedReasoningPolicyAnnotationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_automated_reasoning_policy_annotations::GetAutomatedReasoningPolicyAnnotationsError> for Error {
+    fn from(err: crate::operation::get_automated_reasoning_policy_annotations::GetAutomatedReasoningPolicyAnnotationsError) -> Self {
+        match err {
+            crate::operation::get_automated_reasoning_policy_annotations::GetAutomatedReasoningPolicyAnnotationsError::AccessDeniedException(
+                inner,
+            ) => Error::AccessDeniedException(inner),
+            crate::operation::get_automated_reasoning_policy_annotations::GetAutomatedReasoningPolicyAnnotationsError::InternalServerException(
+                inner,
+            ) => Error::InternalServerException(inner),
+            crate::operation::get_automated_reasoning_policy_annotations::GetAutomatedReasoningPolicyAnnotationsError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_automated_reasoning_policy_annotations::GetAutomatedReasoningPolicyAnnotationsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_automated_reasoning_policy_annotations::GetAutomatedReasoningPolicyAnnotationsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_automated_reasoning_policy_annotations::GetAutomatedReasoningPolicyAnnotationsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_automated_reasoning_policy_build_workflow::GetAutomatedReasoningPolicyBuildWorkflowError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_automated_reasoning_policy_build_workflow::GetAutomatedReasoningPolicyBuildWorkflowError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_automated_reasoning_policy_build_workflow::GetAutomatedReasoningPolicyBuildWorkflowError> for Error {
+    fn from(err: crate::operation::get_automated_reasoning_policy_build_workflow::GetAutomatedReasoningPolicyBuildWorkflowError) -> Self {
+        match err {
+            crate::operation::get_automated_reasoning_policy_build_workflow::GetAutomatedReasoningPolicyBuildWorkflowError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_automated_reasoning_policy_build_workflow::GetAutomatedReasoningPolicyBuildWorkflowError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_automated_reasoning_policy_build_workflow::GetAutomatedReasoningPolicyBuildWorkflowError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_automated_reasoning_policy_build_workflow::GetAutomatedReasoningPolicyBuildWorkflowError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_automated_reasoning_policy_build_workflow::GetAutomatedReasoningPolicyBuildWorkflowError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_automated_reasoning_policy_build_workflow::GetAutomatedReasoningPolicyBuildWorkflowError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_automated_reasoning_policy_build_workflow_result_assets::GetAutomatedReasoningPolicyBuildWorkflowResultAssetsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_automated_reasoning_policy_build_workflow_result_assets::GetAutomatedReasoningPolicyBuildWorkflowResultAssetsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_automated_reasoning_policy_build_workflow_result_assets::GetAutomatedReasoningPolicyBuildWorkflowResultAssetsError>
+    for Error
+{
+    fn from(
+        err: crate::operation::get_automated_reasoning_policy_build_workflow_result_assets::GetAutomatedReasoningPolicyBuildWorkflowResultAssetsError,
+    ) -> Self {
+        match err {
+            crate::operation::get_automated_reasoning_policy_build_workflow_result_assets::GetAutomatedReasoningPolicyBuildWorkflowResultAssetsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_automated_reasoning_policy_build_workflow_result_assets::GetAutomatedReasoningPolicyBuildWorkflowResultAssetsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_automated_reasoning_policy_build_workflow_result_assets::GetAutomatedReasoningPolicyBuildWorkflowResultAssetsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_automated_reasoning_policy_build_workflow_result_assets::GetAutomatedReasoningPolicyBuildWorkflowResultAssetsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_automated_reasoning_policy_build_workflow_result_assets::GetAutomatedReasoningPolicyBuildWorkflowResultAssetsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_automated_reasoning_policy_build_workflow_result_assets::GetAutomatedReasoningPolicyBuildWorkflowResultAssetsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_automated_reasoning_policy_next_scenario::GetAutomatedReasoningPolicyNextScenarioError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_automated_reasoning_policy_next_scenario::GetAutomatedReasoningPolicyNextScenarioError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_automated_reasoning_policy_next_scenario::GetAutomatedReasoningPolicyNextScenarioError> for Error {
+    fn from(err: crate::operation::get_automated_reasoning_policy_next_scenario::GetAutomatedReasoningPolicyNextScenarioError) -> Self {
+        match err {
+            crate::operation::get_automated_reasoning_policy_next_scenario::GetAutomatedReasoningPolicyNextScenarioError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_automated_reasoning_policy_next_scenario::GetAutomatedReasoningPolicyNextScenarioError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_automated_reasoning_policy_next_scenario::GetAutomatedReasoningPolicyNextScenarioError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_automated_reasoning_policy_next_scenario::GetAutomatedReasoningPolicyNextScenarioError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_automated_reasoning_policy_next_scenario::GetAutomatedReasoningPolicyNextScenarioError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_automated_reasoning_policy_next_scenario::GetAutomatedReasoningPolicyNextScenarioError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_automated_reasoning_policy_test_case::GetAutomatedReasoningPolicyTestCaseError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_automated_reasoning_policy_test_case::GetAutomatedReasoningPolicyTestCaseError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_automated_reasoning_policy_test_case::GetAutomatedReasoningPolicyTestCaseError> for Error {
+    fn from(err: crate::operation::get_automated_reasoning_policy_test_case::GetAutomatedReasoningPolicyTestCaseError) -> Self {
+        match err {
+            crate::operation::get_automated_reasoning_policy_test_case::GetAutomatedReasoningPolicyTestCaseError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_automated_reasoning_policy_test_case::GetAutomatedReasoningPolicyTestCaseError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_automated_reasoning_policy_test_case::GetAutomatedReasoningPolicyTestCaseError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_automated_reasoning_policy_test_case::GetAutomatedReasoningPolicyTestCaseError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_automated_reasoning_policy_test_case::GetAutomatedReasoningPolicyTestCaseError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_automated_reasoning_policy_test_case::GetAutomatedReasoningPolicyTestCaseError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_automated_reasoning_policy_test_result::GetAutomatedReasoningPolicyTestResultError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_automated_reasoning_policy_test_result::GetAutomatedReasoningPolicyTestResultError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_automated_reasoning_policy_test_result::GetAutomatedReasoningPolicyTestResultError> for Error {
+    fn from(err: crate::operation::get_automated_reasoning_policy_test_result::GetAutomatedReasoningPolicyTestResultError) -> Self {
+        match err {
+            crate::operation::get_automated_reasoning_policy_test_result::GetAutomatedReasoningPolicyTestResultError::AccessDeniedException(
+                inner,
+            ) => Error::AccessDeniedException(inner),
+            crate::operation::get_automated_reasoning_policy_test_result::GetAutomatedReasoningPolicyTestResultError::InternalServerException(
+                inner,
+            ) => Error::InternalServerException(inner),
+            crate::operation::get_automated_reasoning_policy_test_result::GetAutomatedReasoningPolicyTestResultError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_automated_reasoning_policy_test_result::GetAutomatedReasoningPolicyTestResultError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_automated_reasoning_policy_test_result::GetAutomatedReasoningPolicyTestResultError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_automated_reasoning_policy_test_result::GetAutomatedReasoningPolicyTestResultError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
         }
@@ -1684,6 +2353,177 @@ impl From<crate::operation::get_use_case_for_model_access::GetUseCaseForModelAcc
                 Error::ValidationException(inner)
             }
             crate::operation::get_use_case_for_model_access::GetUseCaseForModelAccessError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_automated_reasoning_policies::ListAutomatedReasoningPoliciesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_automated_reasoning_policies::ListAutomatedReasoningPoliciesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_automated_reasoning_policies::ListAutomatedReasoningPoliciesError> for Error {
+    fn from(err: crate::operation::list_automated_reasoning_policies::ListAutomatedReasoningPoliciesError) -> Self {
+        match err {
+            crate::operation::list_automated_reasoning_policies::ListAutomatedReasoningPoliciesError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_automated_reasoning_policies::ListAutomatedReasoningPoliciesError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_automated_reasoning_policies::ListAutomatedReasoningPoliciesError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_automated_reasoning_policies::ListAutomatedReasoningPoliciesError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_automated_reasoning_policies::ListAutomatedReasoningPoliciesError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_automated_reasoning_policies::ListAutomatedReasoningPoliciesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_automated_reasoning_policy_build_workflows::ListAutomatedReasoningPolicyBuildWorkflowsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_automated_reasoning_policy_build_workflows::ListAutomatedReasoningPolicyBuildWorkflowsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_automated_reasoning_policy_build_workflows::ListAutomatedReasoningPolicyBuildWorkflowsError> for Error {
+    fn from(err: crate::operation::list_automated_reasoning_policy_build_workflows::ListAutomatedReasoningPolicyBuildWorkflowsError) -> Self {
+        match err {
+            crate::operation::list_automated_reasoning_policy_build_workflows::ListAutomatedReasoningPolicyBuildWorkflowsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_automated_reasoning_policy_build_workflows::ListAutomatedReasoningPolicyBuildWorkflowsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_automated_reasoning_policy_build_workflows::ListAutomatedReasoningPolicyBuildWorkflowsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_automated_reasoning_policy_build_workflows::ListAutomatedReasoningPolicyBuildWorkflowsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_automated_reasoning_policy_build_workflows::ListAutomatedReasoningPolicyBuildWorkflowsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_automated_reasoning_policy_build_workflows::ListAutomatedReasoningPolicyBuildWorkflowsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_automated_reasoning_policy_test_cases::ListAutomatedReasoningPolicyTestCasesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_automated_reasoning_policy_test_cases::ListAutomatedReasoningPolicyTestCasesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_automated_reasoning_policy_test_cases::ListAutomatedReasoningPolicyTestCasesError> for Error {
+    fn from(err: crate::operation::list_automated_reasoning_policy_test_cases::ListAutomatedReasoningPolicyTestCasesError) -> Self {
+        match err {
+            crate::operation::list_automated_reasoning_policy_test_cases::ListAutomatedReasoningPolicyTestCasesError::AccessDeniedException(
+                inner,
+            ) => Error::AccessDeniedException(inner),
+            crate::operation::list_automated_reasoning_policy_test_cases::ListAutomatedReasoningPolicyTestCasesError::InternalServerException(
+                inner,
+            ) => Error::InternalServerException(inner),
+            crate::operation::list_automated_reasoning_policy_test_cases::ListAutomatedReasoningPolicyTestCasesError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_automated_reasoning_policy_test_cases::ListAutomatedReasoningPolicyTestCasesError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_automated_reasoning_policy_test_cases::ListAutomatedReasoningPolicyTestCasesError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_automated_reasoning_policy_test_cases::ListAutomatedReasoningPolicyTestCasesError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_automated_reasoning_policy_test_results::ListAutomatedReasoningPolicyTestResultsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_automated_reasoning_policy_test_results::ListAutomatedReasoningPolicyTestResultsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_automated_reasoning_policy_test_results::ListAutomatedReasoningPolicyTestResultsError> for Error {
+    fn from(err: crate::operation::list_automated_reasoning_policy_test_results::ListAutomatedReasoningPolicyTestResultsError) -> Self {
+        match err {
+            crate::operation::list_automated_reasoning_policy_test_results::ListAutomatedReasoningPolicyTestResultsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_automated_reasoning_policy_test_results::ListAutomatedReasoningPolicyTestResultsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_automated_reasoning_policy_test_results::ListAutomatedReasoningPolicyTestResultsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_automated_reasoning_policy_test_results::ListAutomatedReasoningPolicyTestResultsError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::list_automated_reasoning_policy_test_results::ListAutomatedReasoningPolicyTestResultsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_automated_reasoning_policy_test_results::ListAutomatedReasoningPolicyTestResultsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_automated_reasoning_policy_test_results::ListAutomatedReasoningPolicyTestResultsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2333,6 +3173,84 @@ impl From<crate::operation::register_marketplace_model_endpoint::RegisterMarketp
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::start_automated_reasoning_policy_build_workflow::StartAutomatedReasoningPolicyBuildWorkflowError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::start_automated_reasoning_policy_build_workflow::StartAutomatedReasoningPolicyBuildWorkflowError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_automated_reasoning_policy_build_workflow::StartAutomatedReasoningPolicyBuildWorkflowError> for Error {
+    fn from(err: crate::operation::start_automated_reasoning_policy_build_workflow::StartAutomatedReasoningPolicyBuildWorkflowError) -> Self {
+        match err {
+            crate::operation::start_automated_reasoning_policy_build_workflow::StartAutomatedReasoningPolicyBuildWorkflowError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::start_automated_reasoning_policy_build_workflow::StartAutomatedReasoningPolicyBuildWorkflowError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::start_automated_reasoning_policy_build_workflow::StartAutomatedReasoningPolicyBuildWorkflowError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::start_automated_reasoning_policy_build_workflow::StartAutomatedReasoningPolicyBuildWorkflowError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::operation::start_automated_reasoning_policy_build_workflow::StartAutomatedReasoningPolicyBuildWorkflowError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::start_automated_reasoning_policy_build_workflow::StartAutomatedReasoningPolicyBuildWorkflowError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::start_automated_reasoning_policy_build_workflow::StartAutomatedReasoningPolicyBuildWorkflowError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::start_automated_reasoning_policy_build_workflow::StartAutomatedReasoningPolicyBuildWorkflowError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::start_automated_reasoning_policy_build_workflow::StartAutomatedReasoningPolicyBuildWorkflowError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::start_automated_reasoning_policy_test_workflow::StartAutomatedReasoningPolicyTestWorkflowError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::start_automated_reasoning_policy_test_workflow::StartAutomatedReasoningPolicyTestWorkflowError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_automated_reasoning_policy_test_workflow::StartAutomatedReasoningPolicyTestWorkflowError> for Error {
+    fn from(err: crate::operation::start_automated_reasoning_policy_test_workflow::StartAutomatedReasoningPolicyTestWorkflowError) -> Self {
+        match err {
+            crate::operation::start_automated_reasoning_policy_test_workflow::StartAutomatedReasoningPolicyTestWorkflowError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::start_automated_reasoning_policy_test_workflow::StartAutomatedReasoningPolicyTestWorkflowError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::start_automated_reasoning_policy_test_workflow::StartAutomatedReasoningPolicyTestWorkflowError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::operation::start_automated_reasoning_policy_test_workflow::StartAutomatedReasoningPolicyTestWorkflowError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::start_automated_reasoning_policy_test_workflow::StartAutomatedReasoningPolicyTestWorkflowError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::start_automated_reasoning_policy_test_workflow::StartAutomatedReasoningPolicyTestWorkflowError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::start_automated_reasoning_policy_test_workflow::StartAutomatedReasoningPolicyTestWorkflowError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_evaluation_job::StopEvaluationJobError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2493,6 +3411,152 @@ impl From<crate::operation::untag_resource::UntagResourceError> for Error {
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_automated_reasoning_policy::UpdateAutomatedReasoningPolicyError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_automated_reasoning_policy::UpdateAutomatedReasoningPolicyError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_automated_reasoning_policy::UpdateAutomatedReasoningPolicyError> for Error {
+    fn from(err: crate::operation::update_automated_reasoning_policy::UpdateAutomatedReasoningPolicyError) -> Self {
+        match err {
+            crate::operation::update_automated_reasoning_policy::UpdateAutomatedReasoningPolicyError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_automated_reasoning_policy::UpdateAutomatedReasoningPolicyError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::update_automated_reasoning_policy::UpdateAutomatedReasoningPolicyError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_automated_reasoning_policy::UpdateAutomatedReasoningPolicyError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_automated_reasoning_policy::UpdateAutomatedReasoningPolicyError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_automated_reasoning_policy::UpdateAutomatedReasoningPolicyError::TooManyTagsException(inner) => {
+                Error::TooManyTagsException(inner)
+            }
+            crate::operation::update_automated_reasoning_policy::UpdateAutomatedReasoningPolicyError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::update_automated_reasoning_policy::UpdateAutomatedReasoningPolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_automated_reasoning_policy_annotations::UpdateAutomatedReasoningPolicyAnnotationsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_automated_reasoning_policy_annotations::UpdateAutomatedReasoningPolicyAnnotationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_automated_reasoning_policy_annotations::UpdateAutomatedReasoningPolicyAnnotationsError> for Error {
+    fn from(err: crate::operation::update_automated_reasoning_policy_annotations::UpdateAutomatedReasoningPolicyAnnotationsError) -> Self {
+        match err {
+            crate::operation::update_automated_reasoning_policy_annotations::UpdateAutomatedReasoningPolicyAnnotationsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_automated_reasoning_policy_annotations::UpdateAutomatedReasoningPolicyAnnotationsError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_automated_reasoning_policy_annotations::UpdateAutomatedReasoningPolicyAnnotationsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_automated_reasoning_policy_annotations::UpdateAutomatedReasoningPolicyAnnotationsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_automated_reasoning_policy_annotations::UpdateAutomatedReasoningPolicyAnnotationsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_automated_reasoning_policy_annotations::UpdateAutomatedReasoningPolicyAnnotationsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_automated_reasoning_policy_annotations::UpdateAutomatedReasoningPolicyAnnotationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_automated_reasoning_policy_test_case::UpdateAutomatedReasoningPolicyTestCaseError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_automated_reasoning_policy_test_case::UpdateAutomatedReasoningPolicyTestCaseError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_automated_reasoning_policy_test_case::UpdateAutomatedReasoningPolicyTestCaseError> for Error {
+    fn from(err: crate::operation::update_automated_reasoning_policy_test_case::UpdateAutomatedReasoningPolicyTestCaseError) -> Self {
+        match err {
+            crate::operation::update_automated_reasoning_policy_test_case::UpdateAutomatedReasoningPolicyTestCaseError::AccessDeniedException(
+                inner,
+            ) => Error::AccessDeniedException(inner),
+            crate::operation::update_automated_reasoning_policy_test_case::UpdateAutomatedReasoningPolicyTestCaseError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::update_automated_reasoning_policy_test_case::UpdateAutomatedReasoningPolicyTestCaseError::InternalServerException(
+                inner,
+            ) => Error::InternalServerException(inner),
+            crate::operation::update_automated_reasoning_policy_test_case::UpdateAutomatedReasoningPolicyTestCaseError::ResourceInUseException(
+                inner,
+            ) => Error::ResourceInUseException(inner),
+            crate::operation::update_automated_reasoning_policy_test_case::UpdateAutomatedReasoningPolicyTestCaseError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_automated_reasoning_policy_test_case::UpdateAutomatedReasoningPolicyTestCaseError::ThrottlingException(
+                inner,
+            ) => Error::ThrottlingException(inner),
+            crate::operation::update_automated_reasoning_policy_test_case::UpdateAutomatedReasoningPolicyTestCaseError::ValidationException(
+                inner,
+            ) => Error::ValidationException(inner),
+            crate::operation::update_automated_reasoning_policy_test_case::UpdateAutomatedReasoningPolicyTestCaseError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_guardrail::UpdateGuardrailError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2629,6 +3693,7 @@ impl ::std::error::Error for Error {
             Error::AccessDeniedException(inner) => inner.source(),
             Error::ConflictException(inner) => inner.source(),
             Error::InternalServerException(inner) => inner.source(),
+            Error::ResourceInUseException(inner) => inner.source(),
             Error::ResourceNotFoundException(inner) => inner.source(),
             Error::ServiceQuotaExceededException(inner) => inner.source(),
             Error::ServiceUnavailableException(inner) => inner.source(),
@@ -2645,6 +3710,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::AccessDeniedException(e) => e.request_id(),
             Self::ConflictException(e) => e.request_id(),
             Self::InternalServerException(e) => e.request_id(),
+            Self::ResourceInUseException(e) => e.request_id(),
             Self::ResourceNotFoundException(e) => e.request_id(),
             Self::ServiceQuotaExceededException(e) => e.request_id(),
             Self::ServiceUnavailableException(e) => e.request_id(),

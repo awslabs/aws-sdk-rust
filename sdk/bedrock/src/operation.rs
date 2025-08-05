@@ -4,6 +4,18 @@ pub use ::aws_types::request_id::RequestId;
 /// Types for the `BatchDeleteEvaluationJob` operation.
 pub mod batch_delete_evaluation_job;
 
+/// Types for the `CancelAutomatedReasoningPolicyBuildWorkflow` operation.
+pub mod cancel_automated_reasoning_policy_build_workflow;
+
+/// Types for the `CreateAutomatedReasoningPolicy` operation.
+pub mod create_automated_reasoning_policy;
+
+/// Types for the `CreateAutomatedReasoningPolicyTestCase` operation.
+pub mod create_automated_reasoning_policy_test_case;
+
+/// Types for the `CreateAutomatedReasoningPolicyVersion` operation.
+pub mod create_automated_reasoning_policy_version;
+
 /// Types for the `CreateCustomModel` operation.
 pub mod create_custom_model;
 
@@ -46,6 +58,15 @@ pub mod create_prompt_router;
 /// Types for the `CreateProvisionedModelThroughput` operation.
 pub mod create_provisioned_model_throughput;
 
+/// Types for the `DeleteAutomatedReasoningPolicy` operation.
+pub mod delete_automated_reasoning_policy;
+
+/// Types for the `DeleteAutomatedReasoningPolicyBuildWorkflow` operation.
+pub mod delete_automated_reasoning_policy_build_workflow;
+
+/// Types for the `DeleteAutomatedReasoningPolicyTestCase` operation.
+pub mod delete_automated_reasoning_policy_test_case;
+
 /// Types for the `DeleteCustomModel` operation.
 pub mod delete_custom_model;
 
@@ -78,6 +99,30 @@ pub mod delete_provisioned_model_throughput;
 
 /// Types for the `DeregisterMarketplaceModelEndpoint` operation.
 pub mod deregister_marketplace_model_endpoint;
+
+/// Types for the `ExportAutomatedReasoningPolicyVersion` operation.
+pub mod export_automated_reasoning_policy_version;
+
+/// Types for the `GetAutomatedReasoningPolicy` operation.
+pub mod get_automated_reasoning_policy;
+
+/// Types for the `GetAutomatedReasoningPolicyAnnotations` operation.
+pub mod get_automated_reasoning_policy_annotations;
+
+/// Types for the `GetAutomatedReasoningPolicyBuildWorkflow` operation.
+pub mod get_automated_reasoning_policy_build_workflow;
+
+/// Types for the `GetAutomatedReasoningPolicyBuildWorkflowResultAssets` operation.
+pub mod get_automated_reasoning_policy_build_workflow_result_assets;
+
+/// Types for the `GetAutomatedReasoningPolicyNextScenario` operation.
+pub mod get_automated_reasoning_policy_next_scenario;
+
+/// Types for the `GetAutomatedReasoningPolicyTestCase` operation.
+pub mod get_automated_reasoning_policy_test_case;
+
+/// Types for the `GetAutomatedReasoningPolicyTestResult` operation.
+pub mod get_automated_reasoning_policy_test_result;
 
 /// Types for the `GetCustomModel` operation.
 pub mod get_custom_model;
@@ -129,6 +174,18 @@ pub mod get_provisioned_model_throughput;
 
 /// Types for the `GetUseCaseForModelAccess` operation.
 pub mod get_use_case_for_model_access;
+
+/// Types for the `ListAutomatedReasoningPolicies` operation.
+pub mod list_automated_reasoning_policies;
+
+/// Types for the `ListAutomatedReasoningPolicyBuildWorkflows` operation.
+pub mod list_automated_reasoning_policy_build_workflows;
+
+/// Types for the `ListAutomatedReasoningPolicyTestCases` operation.
+pub mod list_automated_reasoning_policy_test_cases;
+
+/// Types for the `ListAutomatedReasoningPolicyTestResults` operation.
+pub mod list_automated_reasoning_policy_test_results;
 
 /// Types for the `ListCustomModelDeployments` operation.
 pub mod list_custom_model_deployments;
@@ -187,6 +244,12 @@ pub mod put_use_case_for_model_access;
 /// Types for the `RegisterMarketplaceModelEndpoint` operation.
 pub mod register_marketplace_model_endpoint;
 
+/// Types for the `StartAutomatedReasoningPolicyBuildWorkflow` operation.
+pub mod start_automated_reasoning_policy_build_workflow;
+
+/// Types for the `StartAutomatedReasoningPolicyTestWorkflow` operation.
+pub mod start_automated_reasoning_policy_test_workflow;
+
 /// Types for the `StopEvaluationJob` operation.
 pub mod stop_evaluation_job;
 
@@ -201,6 +264,15 @@ pub mod tag_resource;
 
 /// Types for the `UntagResource` operation.
 pub mod untag_resource;
+
+/// Types for the `UpdateAutomatedReasoningPolicy` operation.
+pub mod update_automated_reasoning_policy;
+
+/// Types for the `UpdateAutomatedReasoningPolicyAnnotations` operation.
+pub mod update_automated_reasoning_policy_annotations;
+
+/// Types for the `UpdateAutomatedReasoningPolicyTestCase` operation.
+pub mod update_automated_reasoning_policy_test_case;
 
 /// Types for the `UpdateGuardrail` operation.
 pub mod update_guardrail;

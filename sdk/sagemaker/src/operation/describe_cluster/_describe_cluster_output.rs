@@ -23,6 +23,8 @@ pub struct DescribeClusterOutput {
     pub orchestrator: ::std::option::Option<crate::types::ClusterOrchestrator>,
     /// <p>The node recovery mode configured for the SageMaker HyperPod cluster.</p>
     pub node_recovery: ::std::option::Option<crate::types::ClusterNodeRecovery>,
+    /// <p>The mode used for provisioning nodes in the cluster.</p>
+    pub node_provisioning_mode: ::std::option::Option<crate::types::ClusterNodeProvisioningMode>,
     _request_id: Option<String>,
 }
 impl DescribeClusterOutput {
@@ -70,6 +72,10 @@ impl DescribeClusterOutput {
     pub fn node_recovery(&self) -> ::std::option::Option<&crate::types::ClusterNodeRecovery> {
         self.node_recovery.as_ref()
     }
+    /// <p>The mode used for provisioning nodes in the cluster.</p>
+    pub fn node_provisioning_mode(&self) -> ::std::option::Option<&crate::types::ClusterNodeProvisioningMode> {
+        self.node_provisioning_mode.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for DescribeClusterOutput {
     fn request_id(&self) -> Option<&str> {
@@ -97,6 +103,7 @@ pub struct DescribeClusterOutputBuilder {
     pub(crate) vpc_config: ::std::option::Option<crate::types::VpcConfig>,
     pub(crate) orchestrator: ::std::option::Option<crate::types::ClusterOrchestrator>,
     pub(crate) node_recovery: ::std::option::Option<crate::types::ClusterNodeRecovery>,
+    pub(crate) node_provisioning_mode: ::std::option::Option<crate::types::ClusterNodeProvisioningMode>,
     _request_id: Option<String>,
 }
 impl DescribeClusterOutputBuilder {
@@ -257,6 +264,20 @@ impl DescribeClusterOutputBuilder {
     pub fn get_node_recovery(&self) -> &::std::option::Option<crate::types::ClusterNodeRecovery> {
         &self.node_recovery
     }
+    /// <p>The mode used for provisioning nodes in the cluster.</p>
+    pub fn node_provisioning_mode(mut self, input: crate::types::ClusterNodeProvisioningMode) -> Self {
+        self.node_provisioning_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The mode used for provisioning nodes in the cluster.</p>
+    pub fn set_node_provisioning_mode(mut self, input: ::std::option::Option<crate::types::ClusterNodeProvisioningMode>) -> Self {
+        self.node_provisioning_mode = input;
+        self
+    }
+    /// <p>The mode used for provisioning nodes in the cluster.</p>
+    pub fn get_node_provisioning_mode(&self) -> &::std::option::Option<crate::types::ClusterNodeProvisioningMode> {
+        &self.node_provisioning_mode
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -279,6 +300,7 @@ impl DescribeClusterOutputBuilder {
             vpc_config: self.vpc_config,
             orchestrator: self.orchestrator,
             node_recovery: self.node_recovery,
+            node_provisioning_mode: self.node_provisioning_mode,
             _request_id: self._request_id,
         }
     }

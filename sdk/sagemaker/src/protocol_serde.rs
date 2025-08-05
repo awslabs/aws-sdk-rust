@@ -31,6 +31,8 @@ pub(crate) mod shape_associate_trial_component;
 
 pub(crate) mod shape_attach_cluster_node_volume;
 
+pub(crate) mod shape_batch_add_cluster_nodes;
+
 pub(crate) mod shape_batch_delete_cluster_nodes;
 
 pub(crate) mod shape_batch_describe_model_package;
@@ -295,6 +297,8 @@ pub(crate) mod shape_describe_auto_ml_job_v2;
 
 pub(crate) mod shape_describe_cluster;
 
+pub(crate) mod shape_describe_cluster_event;
+
 pub(crate) mod shape_describe_cluster_node;
 
 pub(crate) mod shape_describe_cluster_scheduler_config;
@@ -452,6 +456,8 @@ pub(crate) mod shape_list_associations;
 pub(crate) mod shape_list_auto_ml_jobs;
 
 pub(crate) mod shape_list_candidates_for_auto_ml_job;
+
+pub(crate) mod shape_list_cluster_events;
 
 pub(crate) mod shape_list_cluster_nodes;
 
@@ -767,6 +773,8 @@ pub(crate) mod shape_associate_trial_component_input;
 
 pub(crate) mod shape_attach_cluster_node_volume_input;
 
+pub(crate) mod shape_batch_add_cluster_nodes_input;
+
 pub(crate) mod shape_batch_delete_cluster_nodes_input;
 
 pub(crate) mod shape_batch_describe_model_package_input;
@@ -1031,6 +1039,8 @@ pub(crate) mod shape_describe_auto_ml_job_input;
 
 pub(crate) mod shape_describe_auto_ml_job_v2_input;
 
+pub(crate) mod shape_describe_cluster_event_input;
+
 pub(crate) mod shape_describe_cluster_input;
 
 pub(crate) mod shape_describe_cluster_node_input;
@@ -1184,6 +1194,8 @@ pub(crate) mod shape_list_associations_input;
 pub(crate) mod shape_list_auto_ml_jobs_input;
 
 pub(crate) mod shape_list_candidates_for_auto_ml_job_input;
+
+pub(crate) mod shape_list_cluster_events_input;
 
 pub(crate) mod shape_list_cluster_nodes_input;
 
@@ -1493,6 +1505,8 @@ pub(crate) mod shape_action_source;
 
 pub(crate) mod shape_action_summaries;
 
+pub(crate) mod shape_add_cluster_node_specification;
+
 pub(crate) mod shape_additional_code_repository_names_or_urls;
 
 pub(crate) mod shape_additional_inference_specification_definition;
@@ -1561,7 +1575,11 @@ pub(crate) mod shape_auto_ml_security_config;
 
 pub(crate) mod shape_autotune;
 
+pub(crate) mod shape_batch_add_cluster_nodes_error_list;
+
 pub(crate) mod shape_batch_data_capture_config;
+
+pub(crate) mod shape_batch_delete_cluster_node_logical_ids_error_list;
 
 pub(crate) mod shape_batch_delete_cluster_nodes_error_list;
 
@@ -1571,6 +1589,10 @@ pub(crate) mod shape_channel;
 
 pub(crate) mod shape_checkpoint_config;
 
+pub(crate) mod shape_cluster_event_detail;
+
+pub(crate) mod shape_cluster_event_summaries;
+
 pub(crate) mod shape_cluster_instance_group_details_list;
 
 pub(crate) mod shape_cluster_instance_group_specification;
@@ -1578,6 +1600,8 @@ pub(crate) mod shape_cluster_instance_group_specification;
 pub(crate) mod shape_cluster_node_details;
 
 pub(crate) mod shape_cluster_node_ids;
+
+pub(crate) mod shape_cluster_node_logical_id_list;
 
 pub(crate) mod shape_cluster_node_summaries;
 
@@ -1935,6 +1959,8 @@ pub(crate) mod shape_neo_vpc_config;
 
 pub(crate) mod shape_network_config;
 
+pub(crate) mod shape_node_addition_result_list;
+
 pub(crate) mod shape_notebook_instance_accelerator_types;
 
 pub(crate) mod shape_notebook_instance_lifecycle_config_list;
@@ -2289,6 +2315,10 @@ pub(crate) mod shape_auto_ml_problem_type_resolved_attributes;
 
 pub(crate) mod shape_auto_rollback_config;
 
+pub(crate) mod shape_batch_add_cluster_nodes_error;
+
+pub(crate) mod shape_batch_delete_cluster_node_logical_ids_error;
+
 pub(crate) mod shape_batch_delete_cluster_nodes_error;
 
 pub(crate) mod shape_batch_describe_model_package_error;
@@ -2322,6 +2352,8 @@ pub(crate) mod shape_channel_specification;
 pub(crate) mod shape_channel_specifications;
 
 pub(crate) mod shape_clarify_explainer_config;
+
+pub(crate) mod shape_cluster_event_summary;
 
 pub(crate) mod shape_cluster_instance_group_details;
 
@@ -2452,6 +2484,8 @@ pub(crate) mod shape_endpoints;
 pub(crate) mod shape_environment_config;
 
 pub(crate) mod shape_environment_map;
+
+pub(crate) mod shape_event_details;
 
 pub(crate) mod shape_experiment_summary;
 
@@ -2644,6 +2678,8 @@ pub(crate) mod shape_neo_vpc_security_group_ids;
 pub(crate) mod shape_neo_vpc_subnets;
 
 pub(crate) mod shape_nested_filters;
+
+pub(crate) mod shape_node_addition_result;
 
 pub(crate) mod shape_notebook_instance_lifecycle_config_summary;
 
@@ -2983,6 +3019,8 @@ pub(crate) mod shape_environment_config_details;
 
 pub(crate) mod shape_environment_parameter_ranges;
 
+pub(crate) mod shape_event_metadata;
+
 pub(crate) mod shape_experiment;
 
 pub(crate) mod shape_f_sx_lustre_config;
@@ -3239,6 +3277,8 @@ pub(crate) mod shape_clarify_shap_baseline_config;
 
 pub(crate) mod shape_clarify_text_config;
 
+pub(crate) mod shape_cluster_metadata;
+
 pub(crate) mod shape_collection_parameters;
 
 pub(crate) mod shape_compression_types;
@@ -3276,6 +3316,12 @@ pub(crate) mod shape_idle_settings;
 pub(crate) mod shape_inference_hub_access_config;
 
 pub(crate) mod shape_input_modes;
+
+pub(crate) mod shape_instance_group_metadata;
+
+pub(crate) mod shape_instance_group_scaling_metadata;
+
+pub(crate) mod shape_instance_metadata;
 
 pub(crate) mod shape_integer_parameter_range_specification;
 
@@ -3333,17 +3379,23 @@ pub(crate) mod shape_trial_component_source_detail;
 
 pub(crate) mod shape_tuning_job_step_meta_data;
 
+pub(crate) mod shape_additional_enis;
+
 pub(crate) mod shape_attribute_names;
 
 pub(crate) mod shape_auto_ml_algorithms;
 
 pub(crate) mod shape_auto_rollback_alarms;
 
+pub(crate) mod shape_capacity_reservation;
+
 pub(crate) mod shape_categorical_parameters;
 
 pub(crate) mod shape_cfn_stack_parameter;
 
 pub(crate) mod shape_ec2_capacity_reservation;
+
+pub(crate) mod shape_eks_role_access_entries;
 
 pub(crate) mod shape_environment_parameter;
 
@@ -3374,6 +3426,8 @@ pub(crate) mod shape_trial_component_simple_summary;
 pub(crate) mod shape_version_aliases_list;
 
 pub(crate) mod shape_customized_metric_specification;
+
+pub(crate) mod shape_efa_enis;
 
 pub(crate) mod shape_predefined_metric_specification;
 

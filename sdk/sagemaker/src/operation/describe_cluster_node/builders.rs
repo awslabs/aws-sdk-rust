@@ -136,4 +136,18 @@ impl DescribeClusterNodeFluentBuilder {
     pub fn get_node_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_node_id()
     }
+    /// <p>The logical identifier of the node to describe. You can specify either <code>NodeLogicalId</code> or <code>InstanceId</code>, but not both. <code>NodeLogicalId</code> can be used to describe nodes that are still being provisioned and don't yet have an <code>InstanceId</code> assigned.</p>
+    pub fn node_logical_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.node_logical_id(input.into());
+        self
+    }
+    /// <p>The logical identifier of the node to describe. You can specify either <code>NodeLogicalId</code> or <code>InstanceId</code>, but not both. <code>NodeLogicalId</code> can be used to describe nodes that are still being provisioned and don't yet have an <code>InstanceId</code> assigned.</p>
+    pub fn set_node_logical_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_node_logical_id(input);
+        self
+    }
+    /// <p>The logical identifier of the node to describe. You can specify either <code>NodeLogicalId</code> or <code>InstanceId</code>, but not both. <code>NodeLogicalId</code> can be used to describe nodes that are still being provisioned and don't yet have an <code>InstanceId</code> assigned.</p>
+    pub fn get_node_logical_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_node_logical_id()
+    }
 }

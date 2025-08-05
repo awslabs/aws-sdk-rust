@@ -17,11 +17,15 @@ pub use crate::types::error::_service_quota_exceeded_exception::ServiceQuotaExce
 
 pub use crate::types::error::_service_unavailable_exception::ServiceUnavailableException;
 
+pub use crate::types::error::_resource_in_use_exception::ResourceInUseException;
+
 mod _access_denied_exception;
 
 mod _conflict_exception;
 
 mod _internal_server_exception;
+
+mod _resource_in_use_exception;
 
 mod _resource_not_found_exception;
 

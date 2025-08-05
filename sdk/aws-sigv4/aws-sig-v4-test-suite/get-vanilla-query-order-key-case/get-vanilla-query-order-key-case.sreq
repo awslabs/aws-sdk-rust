@@ -1,4 +1,0 @@
-GET /?Param2=value2&Param1=value1 HTTP/1.1
-Host:example.amazonaws.com
-X-Amz-Date:20150830T123600Z
-Authorization: AWS4-HMAC-SHA256 Credential=ANOTREAL/20150830/us-east-1/service/aws4_request, SignedHeaders=host;x-amz-date, Signature=5557820e7380d585310524bd93d51a08d7757fb5efd7344ee12088f2b0860947

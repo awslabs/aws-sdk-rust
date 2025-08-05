@@ -8,6 +8,8 @@ pub struct ClusterNodeSummary {
     pub instance_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
+    /// <p>A unique identifier for the node that persists throughout its lifecycle, from provisioning request to termination. This identifier can be used to track the node even before it has an assigned <code>InstanceId</code>. This field is only included when <code>IncludeNodeLogicalIds</code> is set to <code>True</code> in the <code>ListClusterNodes</code> request.</p>
+    pub node_logical_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of the instance.</p>
     pub instance_type: ::std::option::Option<crate::types::ClusterInstanceType>,
     /// <p>The time when the instance is launched.</p>
@@ -25,6 +27,10 @@ impl ClusterNodeSummary {
     /// <p>The ID of the instance.</p>
     pub fn instance_id(&self) -> ::std::option::Option<&str> {
         self.instance_id.as_deref()
+    }
+    /// <p>A unique identifier for the node that persists throughout its lifecycle, from provisioning request to termination. This identifier can be used to track the node even before it has an assigned <code>InstanceId</code>. This field is only included when <code>IncludeNodeLogicalIds</code> is set to <code>True</code> in the <code>ListClusterNodes</code> request.</p>
+    pub fn node_logical_id(&self) -> ::std::option::Option<&str> {
+        self.node_logical_id.as_deref()
     }
     /// <p>The type of the instance.</p>
     pub fn instance_type(&self) -> ::std::option::Option<&crate::types::ClusterInstanceType> {
@@ -56,6 +62,7 @@ impl ClusterNodeSummary {
 pub struct ClusterNodeSummaryBuilder {
     pub(crate) instance_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
+    pub(crate) node_logical_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_type: ::std::option::Option<crate::types::ClusterInstanceType>,
     pub(crate) launch_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_software_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -91,6 +98,20 @@ impl ClusterNodeSummaryBuilder {
     /// <p>The ID of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_id
+    }
+    /// <p>A unique identifier for the node that persists throughout its lifecycle, from provisioning request to termination. This identifier can be used to track the node even before it has an assigned <code>InstanceId</code>. This field is only included when <code>IncludeNodeLogicalIds</code> is set to <code>True</code> in the <code>ListClusterNodes</code> request.</p>
+    pub fn node_logical_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.node_logical_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A unique identifier for the node that persists throughout its lifecycle, from provisioning request to termination. This identifier can be used to track the node even before it has an assigned <code>InstanceId</code>. This field is only included when <code>IncludeNodeLogicalIds</code> is set to <code>True</code> in the <code>ListClusterNodes</code> request.</p>
+    pub fn set_node_logical_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.node_logical_id = input;
+        self
+    }
+    /// <p>A unique identifier for the node that persists throughout its lifecycle, from provisioning request to termination. This identifier can be used to track the node even before it has an assigned <code>InstanceId</code>. This field is only included when <code>IncludeNodeLogicalIds</code> is set to <code>True</code> in the <code>ListClusterNodes</code> request.</p>
+    pub fn get_node_logical_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.node_logical_id
     }
     /// <p>The type of the instance.</p>
     /// This field is required.
@@ -156,6 +177,7 @@ impl ClusterNodeSummaryBuilder {
         crate::types::ClusterNodeSummary {
             instance_group_name: self.instance_group_name,
             instance_id: self.instance_id,
+            node_logical_id: self.node_logical_id,
             instance_type: self.instance_type,
             launch_time: self.launch_time,
             last_software_update_time: self.last_software_update_time,

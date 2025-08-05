@@ -14,6 +14,8 @@ pub struct GuardrailAssessment {
     pub sensitive_information_policy: ::std::option::Option<crate::types::GuardrailSensitiveInformationPolicyAssessment>,
     /// <p>The contextual grounding policy used for the guardrail assessment.</p>
     pub contextual_grounding_policy: ::std::option::Option<crate::types::GuardrailContextualGroundingPolicyAssessment>,
+    /// <p>The automated reasoning policy assessment results, including logical validation findings for the input content.</p>
+    pub automated_reasoning_policy: ::std::option::Option<crate::types::GuardrailAutomatedReasoningPolicyAssessment>,
     /// <p>The invocation metrics for the guardrail assessment.</p>
     pub invocation_metrics: ::std::option::Option<crate::types::GuardrailInvocationMetrics>,
 }
@@ -38,6 +40,10 @@ impl GuardrailAssessment {
     pub fn contextual_grounding_policy(&self) -> ::std::option::Option<&crate::types::GuardrailContextualGroundingPolicyAssessment> {
         self.contextual_grounding_policy.as_ref()
     }
+    /// <p>The automated reasoning policy assessment results, including logical validation findings for the input content.</p>
+    pub fn automated_reasoning_policy(&self) -> ::std::option::Option<&crate::types::GuardrailAutomatedReasoningPolicyAssessment> {
+        self.automated_reasoning_policy.as_ref()
+    }
     /// <p>The invocation metrics for the guardrail assessment.</p>
     pub fn invocation_metrics(&self) -> ::std::option::Option<&crate::types::GuardrailInvocationMetrics> {
         self.invocation_metrics.as_ref()
@@ -59,6 +65,7 @@ pub struct GuardrailAssessmentBuilder {
     pub(crate) word_policy: ::std::option::Option<crate::types::GuardrailWordPolicyAssessment>,
     pub(crate) sensitive_information_policy: ::std::option::Option<crate::types::GuardrailSensitiveInformationPolicyAssessment>,
     pub(crate) contextual_grounding_policy: ::std::option::Option<crate::types::GuardrailContextualGroundingPolicyAssessment>,
+    pub(crate) automated_reasoning_policy: ::std::option::Option<crate::types::GuardrailAutomatedReasoningPolicyAssessment>,
     pub(crate) invocation_metrics: ::std::option::Option<crate::types::GuardrailInvocationMetrics>,
 }
 impl GuardrailAssessmentBuilder {
@@ -138,6 +145,20 @@ impl GuardrailAssessmentBuilder {
     pub fn get_contextual_grounding_policy(&self) -> &::std::option::Option<crate::types::GuardrailContextualGroundingPolicyAssessment> {
         &self.contextual_grounding_policy
     }
+    /// <p>The automated reasoning policy assessment results, including logical validation findings for the input content.</p>
+    pub fn automated_reasoning_policy(mut self, input: crate::types::GuardrailAutomatedReasoningPolicyAssessment) -> Self {
+        self.automated_reasoning_policy = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The automated reasoning policy assessment results, including logical validation findings for the input content.</p>
+    pub fn set_automated_reasoning_policy(mut self, input: ::std::option::Option<crate::types::GuardrailAutomatedReasoningPolicyAssessment>) -> Self {
+        self.automated_reasoning_policy = input;
+        self
+    }
+    /// <p>The automated reasoning policy assessment results, including logical validation findings for the input content.</p>
+    pub fn get_automated_reasoning_policy(&self) -> &::std::option::Option<crate::types::GuardrailAutomatedReasoningPolicyAssessment> {
+        &self.automated_reasoning_policy
+    }
     /// <p>The invocation metrics for the guardrail assessment.</p>
     pub fn invocation_metrics(mut self, input: crate::types::GuardrailInvocationMetrics) -> Self {
         self.invocation_metrics = ::std::option::Option::Some(input);
@@ -160,6 +181,7 @@ impl GuardrailAssessmentBuilder {
             word_policy: self.word_policy,
             sensitive_information_policy: self.sensitive_information_policy,
             contextual_grounding_policy: self.contextual_grounding_policy,
+            automated_reasoning_policy: self.automated_reasoning_policy,
             invocation_metrics: self.invocation_metrics,
         }
     }

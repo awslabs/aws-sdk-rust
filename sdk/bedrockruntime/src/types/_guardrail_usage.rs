@@ -18,6 +18,10 @@ pub struct GuardrailUsage {
     pub contextual_grounding_policy_units: i32,
     /// <p>The content policy image units processed by the guardrail.</p>
     pub content_policy_image_units: ::std::option::Option<i32>,
+    /// <p>The number of text units processed by the automated reasoning policy.</p>
+    pub automated_reasoning_policy_units: ::std::option::Option<i32>,
+    /// <p>The number of automated reasoning policies that were processed during the guardrail evaluation.</p>
+    pub automated_reasoning_policies: ::std::option::Option<i32>,
 }
 impl GuardrailUsage {
     /// <p>The topic policy units processed by the guardrail.</p>
@@ -48,6 +52,14 @@ impl GuardrailUsage {
     pub fn content_policy_image_units(&self) -> ::std::option::Option<i32> {
         self.content_policy_image_units
     }
+    /// <p>The number of text units processed by the automated reasoning policy.</p>
+    pub fn automated_reasoning_policy_units(&self) -> ::std::option::Option<i32> {
+        self.automated_reasoning_policy_units
+    }
+    /// <p>The number of automated reasoning policies that were processed during the guardrail evaluation.</p>
+    pub fn automated_reasoning_policies(&self) -> ::std::option::Option<i32> {
+        self.automated_reasoning_policies
+    }
 }
 impl GuardrailUsage {
     /// Creates a new builder-style object to manufacture [`GuardrailUsage`](crate::types::GuardrailUsage).
@@ -67,6 +79,8 @@ pub struct GuardrailUsageBuilder {
     pub(crate) sensitive_information_policy_free_units: ::std::option::Option<i32>,
     pub(crate) contextual_grounding_policy_units: ::std::option::Option<i32>,
     pub(crate) content_policy_image_units: ::std::option::Option<i32>,
+    pub(crate) automated_reasoning_policy_units: ::std::option::Option<i32>,
+    pub(crate) automated_reasoning_policies: ::std::option::Option<i32>,
 }
 impl GuardrailUsageBuilder {
     /// <p>The topic policy units processed by the guardrail.</p>
@@ -173,6 +187,34 @@ impl GuardrailUsageBuilder {
     pub fn get_content_policy_image_units(&self) -> &::std::option::Option<i32> {
         &self.content_policy_image_units
     }
+    /// <p>The number of text units processed by the automated reasoning policy.</p>
+    pub fn automated_reasoning_policy_units(mut self, input: i32) -> Self {
+        self.automated_reasoning_policy_units = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of text units processed by the automated reasoning policy.</p>
+    pub fn set_automated_reasoning_policy_units(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.automated_reasoning_policy_units = input;
+        self
+    }
+    /// <p>The number of text units processed by the automated reasoning policy.</p>
+    pub fn get_automated_reasoning_policy_units(&self) -> &::std::option::Option<i32> {
+        &self.automated_reasoning_policy_units
+    }
+    /// <p>The number of automated reasoning policies that were processed during the guardrail evaluation.</p>
+    pub fn automated_reasoning_policies(mut self, input: i32) -> Self {
+        self.automated_reasoning_policies = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of automated reasoning policies that were processed during the guardrail evaluation.</p>
+    pub fn set_automated_reasoning_policies(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.automated_reasoning_policies = input;
+        self
+    }
+    /// <p>The number of automated reasoning policies that were processed during the guardrail evaluation.</p>
+    pub fn get_automated_reasoning_policies(&self) -> &::std::option::Option<i32> {
+        &self.automated_reasoning_policies
+    }
     /// Consumes the builder and constructs a [`GuardrailUsage`](crate::types::GuardrailUsage).
     /// This method will fail if any of the following fields are not set:
     /// - [`topic_policy_units`](crate::types::builders::GuardrailUsageBuilder::topic_policy_units)
@@ -220,6 +262,8 @@ impl GuardrailUsageBuilder {
                 )
             })?,
             content_policy_image_units: self.content_policy_image_units,
+            automated_reasoning_policy_units: self.automated_reasoning_policy_units,
+            automated_reasoning_policies: self.automated_reasoning_policies,
         })
     }
 }

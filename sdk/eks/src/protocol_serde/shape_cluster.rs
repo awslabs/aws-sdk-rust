@@ -146,6 +146,9 @@ where
                             builder =
                                 builder.set_storage_config(crate::protocol_serde::shape_storage_config_response::de_storage_config_response(tokens)?);
                         }
+                        "deletionProtection" => {
+                            builder = builder.set_deletion_protection(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

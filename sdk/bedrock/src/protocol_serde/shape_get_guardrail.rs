@@ -128,6 +128,11 @@ pub(crate) fn de_get_guardrail(
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "automatedReasoningPolicy" => {
+                    builder = builder.set_automated_reasoning_policy(
+                        crate::protocol_serde::shape_guardrail_automated_reasoning_policy::de_guardrail_automated_reasoning_policy(tokens)?,
+                    );
+                }
                 "blockedInputMessaging" => {
                     builder = builder.set_blocked_input_messaging(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

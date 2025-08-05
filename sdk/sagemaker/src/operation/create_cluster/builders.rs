@@ -277,4 +277,30 @@ impl CreateClusterFluentBuilder {
     pub fn get_node_recovery(&self) -> &::std::option::Option<crate::types::ClusterNodeRecovery> {
         self.inner.get_node_recovery()
     }
+    /// <p>The mode for provisioning nodes in the cluster. You can specify the following modes:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b>Continuous</b>: Scaling behavior that enables 1) concurrent operation execution within instance groups, 2) continuous retry mechanisms for failed operations, 3) enhanced customer visibility into cluster events through detailed event streams, 4) partial provisioning capabilities. Your clusters and instance groups remain <code>InService</code> while scaling. This mode is only supported for EKS orchestrated clusters.</p></li>
+    /// </ul>
+    pub fn node_provisioning_mode(mut self, input: crate::types::ClusterNodeProvisioningMode) -> Self {
+        self.inner = self.inner.node_provisioning_mode(input);
+        self
+    }
+    /// <p>The mode for provisioning nodes in the cluster. You can specify the following modes:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b>Continuous</b>: Scaling behavior that enables 1) concurrent operation execution within instance groups, 2) continuous retry mechanisms for failed operations, 3) enhanced customer visibility into cluster events through detailed event streams, 4) partial provisioning capabilities. Your clusters and instance groups remain <code>InService</code> while scaling. This mode is only supported for EKS orchestrated clusters.</p></li>
+    /// </ul>
+    pub fn set_node_provisioning_mode(mut self, input: ::std::option::Option<crate::types::ClusterNodeProvisioningMode>) -> Self {
+        self.inner = self.inner.set_node_provisioning_mode(input);
+        self
+    }
+    /// <p>The mode for provisioning nodes in the cluster. You can specify the following modes:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b>Continuous</b>: Scaling behavior that enables 1) concurrent operation execution within instance groups, 2) continuous retry mechanisms for failed operations, 3) enhanced customer visibility into cluster events through detailed event streams, 4) partial provisioning capabilities. Your clusters and instance groups remain <code>InService</code> while scaling. This mode is only supported for EKS orchestrated clusters.</p></li>
+    /// </ul>
+    pub fn get_node_provisioning_mode(&self) -> &::std::option::Option<crate::types::ClusterNodeProvisioningMode> {
+        self.inner.get_node_provisioning_mode()
+    }
 }

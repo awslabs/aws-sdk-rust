@@ -262,4 +262,18 @@ impl ListClusterNodesFluentBuilder {
     pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
         self.inner.get_sort_order()
     }
+    /// <p>Specifies whether to include nodes that are still being provisioned in the response. When set to true, the response includes all nodes regardless of their provisioning status. When set to <code>False</code> (default), only nodes with assigned <code>InstanceIds</code> are returned.</p>
+    pub fn include_node_logical_ids(mut self, input: bool) -> Self {
+        self.inner = self.inner.include_node_logical_ids(input);
+        self
+    }
+    /// <p>Specifies whether to include nodes that are still being provisioned in the response. When set to true, the response includes all nodes regardless of their provisioning status. When set to <code>False</code> (default), only nodes with assigned <code>InstanceIds</code> are returned.</p>
+    pub fn set_include_node_logical_ids(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_include_node_logical_ids(input);
+        self
+    }
+    /// <p>Specifies whether to include nodes that are still being provisioned in the response. When set to true, the response includes all nodes regardless of their provisioning status. When set to <code>False</code> (default), only nodes with assigned <code>InstanceIds</code> are returned.</p>
+    pub fn get_include_node_logical_ids(&self) -> &::std::option::Option<bool> {
+        self.inner.get_include_node_logical_ids()
+    }
 }

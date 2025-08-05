@@ -652,9 +652,8 @@ pub(crate) mod test {
     use aws_smithy_runtime_api::client::interceptors::context::{
         Input, InterceptorContext, Output,
     };
-    use aws_smithy_runtime_api::client::orchestrator::{
-        HttpRequest, HttpResponse, OrchestratorError,
-    };
+    use aws_smithy_runtime_api::client::orchestrator::OrchestratorError;
+    use aws_smithy_runtime_api::client::orchestrator::{HttpRequest, HttpResponse};
     use aws_smithy_runtime_api::client::result::ConnectorError;
     use aws_smithy_runtime_api::client::retries::classifiers::{
         ClassifyRetry, RetryAction, SharedRetryClassifier,
@@ -690,6 +689,7 @@ pub(crate) mod test {
     const TOKEN_A: &str = "AQAEAFTNrA4eEGx0AQgJ1arIq_Cc-t4tWt3fB0Hd8RKhXlKc5ccvhg==";
     const TOKEN_B: &str = "alternatetoken==";
 
+    /// Create a simple token request
     pub(crate) fn token_request(base: &str, ttl: u32) -> HttpRequest {
         http::Request::builder()
             .uri(format!("{}/latest/api/token", base))
@@ -701,6 +701,7 @@ pub(crate) mod test {
             .unwrap()
     }
 
+    /// Create a simple token response
     pub(crate) fn token_response(ttl: u32, token: &'static str) -> HttpResponse {
         HttpResponse::try_from(
             http::Response::builder()
@@ -712,6 +713,7 @@ pub(crate) mod test {
         .unwrap()
     }
 
+    /// Create a simple IMDS request
     pub(crate) fn imds_request(path: &'static str, token: &str) -> HttpRequest {
         http::Request::builder()
             .uri(Uri::from_static(path))
@@ -723,6 +725,7 @@ pub(crate) mod test {
             .unwrap()
     }
 
+    /// Create a simple IMDS response
     pub(crate) fn imds_response(body: &'static str) -> HttpResponse {
         HttpResponse::try_from(
             http::Response::builder()
@@ -733,6 +736,7 @@ pub(crate) mod test {
         .unwrap()
     }
 
+    /// Create an IMDS client with an underlying [StaticReplayClient]
     pub(crate) fn make_imds_client(http_client: &StaticReplayClient) -> super::Client {
         tokio::time::pause();
         super::Client::builder()

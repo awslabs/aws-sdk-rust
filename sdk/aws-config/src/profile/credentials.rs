@@ -28,6 +28,7 @@ use crate::profile::profile_file::ProfileFiles;
 use crate::profile::Profile;
 use crate::profile::ProfileFileLoadError;
 use crate::provider_config::ProviderConfig;
+use aws_credential_types::credential_feature::AwsCredentialFeature;
 use aws_credential_types::{
     provider::{self, error::CredentialsError, future, ProvideCredentials},
     Credentials,
@@ -186,7 +187,12 @@ impl ProfileFileCredentialsProvider {
                 ),
             )
             .await?;
-        inner_provider.provide_credentials().await
+        inner_provider.provide_credentials().await.map(|mut creds| {
+            creds
+                .get_property_mut_or_default::<Vec<AwsCredentialFeature>>()
+                .push(AwsCredentialFeature::CredentialsProfile);
+            creds
+        })
     }
 }
 
@@ -626,6 +632,7 @@ mod test {
 #[cfg(all(test, feature = "sso"))]
 mod sso_tests {
     use crate::{profile::credentials::Builder, provider_config::ProviderConfig};
+    use aws_credential_types::credential_feature::AwsCredentialFeature;
     use aws_credential_types::provider::ProvideCredentials;
     use aws_sdk_sso::config::RuntimeComponents;
     use aws_smithy_runtime_api::client::{
@@ -639,50 +646,45 @@ mod sso_tests {
     use aws_types::os_shim_internal::{Env, Fs};
     use std::collections::HashMap;
 
-    // TODO(https://github.com/awslabs/aws-sdk-rust/issues/1117) This test is ignored on Windows because it uses Unix-style paths
-    #[cfg_attr(windows, ignore)]
-    // In order to preserve the SSO token cache, the inner provider must only
-    // be created once, rather than once per credential resolution.
-    #[tokio::test]
-    async fn create_inner_provider_exactly_once() {
-        #[derive(Debug)]
-        struct ClientInner {
-            expected_token: &'static str,
-        }
-        impl HttpConnector for ClientInner {
-            fn call(&self, request: HttpRequest) -> HttpConnectorFuture {
-                assert_eq!(
-                    self.expected_token,
-                    request.headers().get("x-amz-sso_bearer_token").unwrap()
-                );
-                HttpConnectorFuture::ready(Ok(HttpResponse::new(
+    #[derive(Debug)]
+    struct ClientInner {
+        expected_token: &'static str,
+    }
+    impl HttpConnector for ClientInner {
+        fn call(&self, request: HttpRequest) -> HttpConnectorFuture {
+            assert_eq!(
+                self.expected_token,
+                request.headers().get("x-amz-sso_bearer_token").unwrap()
+            );
+            HttpConnectorFuture::ready(Ok(HttpResponse::new(
                     200.try_into().unwrap(),
                     SdkBody::from("{\"roleCredentials\":{\"accessKeyId\":\"ASIARTESTID\",\"secretAccessKey\":\"TESTSECRETKEY\",\"sessionToken\":\"TESTSESSIONTOKEN\",\"expiration\": 1651516560000}}"),
                 )))
+        }
+    }
+    #[derive(Debug)]
+    struct Client {
+        inner: SharedHttpConnector,
+    }
+    impl Client {
+        fn new(expected_token: &'static str) -> Self {
+            Self {
+                inner: SharedHttpConnector::new(ClientInner { expected_token }),
             }
         }
-        #[derive(Debug)]
-        struct Client {
-            inner: SharedHttpConnector,
+    }
+    impl HttpClient for Client {
+        fn http_connector(
+            &self,
+            _settings: &HttpConnectorSettings,
+            _components: &RuntimeComponents,
+        ) -> SharedHttpConnector {
+            self.inner.clone()
         }
-        impl Client {
-            fn new(expected_token: &'static str) -> Self {
-                Self {
-                    inner: SharedHttpConnector::new(ClientInner { expected_token }),
-                }
-            }
-        }
-        impl HttpClient for Client {
-            fn http_connector(
-                &self,
-                _settings: &HttpConnectorSettings,
-                _components: &RuntimeComponents,
-            ) -> SharedHttpConnector {
-                self.inner.clone()
-            }
-        }
+    }
 
-        let fs = Fs::from_map({
+    fn create_test_fs() -> Fs {
+        Fs::from_map({
             let mut map = HashMap::new();
             map.insert(
                 "/home/.aws/config".to_string(),
@@ -716,7 +718,17 @@ sso_start_url = https://d-abc123.awsapps.com/start
                 .to_vec(),
             );
             map
-        });
+        })
+    }
+
+    // TODO(https://github.com/awslabs/aws-sdk-rust/issues/1117) This test is ignored on Windows because it uses Unix-style paths
+    #[cfg_attr(windows, ignore)]
+    // In order to preserve the SSO token cache, the inner provider must only
+    // be created once, rather than once per credential resolution.
+    #[tokio::test]
+    async fn create_inner_provider_exactly_once() {
+        let fs = create_test_fs();
+
         let provider_config = ProviderConfig::empty()
             .with_fs(fs.clone())
             .with_env(Env::from_slice(&[("HOME", "/home")]))
@@ -763,5 +775,27 @@ sso_start_url = https://d-abc123.awsapps.com/start
         let provider = Builder::default().configure(&provider_config).build();
         let third_creds = provider.provide_credentials().await.unwrap();
         assert_eq!(second_creds, third_creds);
+    }
+
+    #[cfg_attr(windows, ignore)]
+    #[tokio::test]
+    async fn credential_feature() {
+        let fs = create_test_fs();
+
+        let provider_config = ProviderConfig::empty()
+            .with_fs(fs.clone())
+            .with_env(Env::from_slice(&[("HOME", "/home")]))
+            .with_http_client(Client::new("secret-access-token"));
+        let provider = Builder::default().configure(&provider_config).build();
+
+        let creds = provider.provide_credentials().await.unwrap();
+
+        assert_eq!(
+            &vec![
+                AwsCredentialFeature::CredentialsSso,
+                AwsCredentialFeature::CredentialsProfile
+            ],
+            creds.get_property::<Vec<AwsCredentialFeature>>().unwrap()
+        )
     }
 }

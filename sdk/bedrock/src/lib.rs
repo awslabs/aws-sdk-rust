@@ -32,7 +32,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-bedrock = "1.106.0"
+//! aws-sdk-bedrock = "1.107.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -149,14 +149,14 @@ pub use config::Config;
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CreateCustomModel`](crate::operation::create_custom_model) operation has
-/// a [`Client::create_custom_model`], function which returns a builder for that operation.
+/// For example, the [`CancelAutomatedReasoningPolicyBuildWorkflow`](crate::operation::cancel_automated_reasoning_policy_build_workflow) operation has
+/// a [`Client::cancel_automated_reasoning_policy_build_workflow`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.create_custom_model()
-///     .model_name("example")
+/// let result = client.cancel_automated_reasoning_policy_build_workflow()
+///     .policy_arn("example")
 ///     .send()
 ///     .await;
 /// ```

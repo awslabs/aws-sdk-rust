@@ -31,6 +31,8 @@ pub struct ListClusterNodesInput {
     pub sort_by: ::std::option::Option<crate::types::ClusterSortBy>,
     /// <p>The sort order for results. The default value is <code>Ascending</code>.</p>
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
+    /// <p>Specifies whether to include nodes that are still being provisioned in the response. When set to true, the response includes all nodes regardless of their provisioning status. When set to <code>False</code> (default), only nodes with assigned <code>InstanceIds</code> are returned.</p>
+    pub include_node_logical_ids: ::std::option::Option<bool>,
 }
 impl ListClusterNodesInput {
     /// <p>The string name or the Amazon Resource Name (ARN) of the SageMaker HyperPod cluster in which you want to retrieve the list of nodes.</p>
@@ -77,6 +79,10 @@ impl ListClusterNodesInput {
     pub fn sort_order(&self) -> ::std::option::Option<&crate::types::SortOrder> {
         self.sort_order.as_ref()
     }
+    /// <p>Specifies whether to include nodes that are still being provisioned in the response. When set to true, the response includes all nodes regardless of their provisioning status. When set to <code>False</code> (default), only nodes with assigned <code>InstanceIds</code> are returned.</p>
+    pub fn include_node_logical_ids(&self) -> ::std::option::Option<bool> {
+        self.include_node_logical_ids
+    }
 }
 impl ListClusterNodesInput {
     /// Creates a new builder-style object to manufacture [`ListClusterNodesInput`](crate::operation::list_cluster_nodes::ListClusterNodesInput).
@@ -97,6 +103,7 @@ pub struct ListClusterNodesInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) sort_by: ::std::option::Option<crate::types::ClusterSortBy>,
     pub(crate) sort_order: ::std::option::Option<crate::types::SortOrder>,
+    pub(crate) include_node_logical_ids: ::std::option::Option<bool>,
 }
 impl ListClusterNodesInputBuilder {
     /// <p>The string name or the Amazon Resource Name (ARN) of the SageMaker HyperPod cluster in which you want to retrieve the list of nodes.</p>
@@ -248,6 +255,20 @@ impl ListClusterNodesInputBuilder {
     pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
         &self.sort_order
     }
+    /// <p>Specifies whether to include nodes that are still being provisioned in the response. When set to true, the response includes all nodes regardless of their provisioning status. When set to <code>False</code> (default), only nodes with assigned <code>InstanceIds</code> are returned.</p>
+    pub fn include_node_logical_ids(mut self, input: bool) -> Self {
+        self.include_node_logical_ids = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to include nodes that are still being provisioned in the response. When set to true, the response includes all nodes regardless of their provisioning status. When set to <code>False</code> (default), only nodes with assigned <code>InstanceIds</code> are returned.</p>
+    pub fn set_include_node_logical_ids(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.include_node_logical_ids = input;
+        self
+    }
+    /// <p>Specifies whether to include nodes that are still being provisioned in the response. When set to true, the response includes all nodes regardless of their provisioning status. When set to <code>False</code> (default), only nodes with assigned <code>InstanceIds</code> are returned.</p>
+    pub fn get_include_node_logical_ids(&self) -> &::std::option::Option<bool> {
+        &self.include_node_logical_ids
+    }
     /// Consumes the builder and constructs a [`ListClusterNodesInput`](crate::operation::list_cluster_nodes::ListClusterNodesInput).
     pub fn build(
         self,
@@ -261,6 +282,7 @@ impl ListClusterNodesInputBuilder {
             next_token: self.next_token,
             sort_by: self.sort_by,
             sort_order: self.sort_order,
+            include_node_logical_ids: self.include_node_logical_ids,
         })
     }
 }

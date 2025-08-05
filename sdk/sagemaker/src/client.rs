@@ -245,6 +245,8 @@ mod associate_trial_component;
 
 mod attach_cluster_node_volume;
 
+mod batch_add_cluster_nodes;
+
 mod batch_delete_cluster_nodes;
 
 mod batch_describe_model_package;
@@ -536,6 +538,8 @@ mod describe_auto_ml_job_v2;
 
 mod describe_cluster;
 
+mod describe_cluster_event;
+
 mod describe_cluster_node;
 
 mod describe_cluster_scheduler_config;
@@ -693,6 +697,8 @@ mod list_associations;
 mod list_auto_ml_jobs;
 
 mod list_candidates_for_auto_ml_job;
+
+mod list_cluster_events;
 
 mod list_cluster_nodes;
 

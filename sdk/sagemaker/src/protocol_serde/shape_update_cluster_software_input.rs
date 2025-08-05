@@ -24,5 +24,8 @@ pub fn ser_update_cluster_software_input_input(
         crate::protocol_serde::shape_deployment_configuration::ser_deployment_configuration(&mut object_7, var_6)?;
         object_7.finish();
     }
+    if let Some(var_8) = &input.image_id {
+        object.key("ImageId").string(var_8.as_str());
+    }
     Ok(())
 }

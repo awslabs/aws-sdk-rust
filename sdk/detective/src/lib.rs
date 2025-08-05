@@ -63,7 +63,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-detective = "1.79.0"
+//! aws-sdk-detective = "1.80.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

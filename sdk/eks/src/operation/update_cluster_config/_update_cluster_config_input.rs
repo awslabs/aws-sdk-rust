@@ -29,6 +29,8 @@ pub struct UpdateClusterConfigInput {
     pub storage_config: ::std::option::Option<crate::types::StorageConfigRequest>,
     /// <p>The configuration in the cluster for EKS Hybrid Nodes. You can add, change, or remove this configuration after the cluster is created.</p>
     pub remote_network_config: ::std::option::Option<crate::types::RemoteNetworkConfigRequest>,
+    /// <p>Specifies whether to enable or disable deletion protection for the cluster. When enabled (<code>true</code>), the cluster cannot be deleted until deletion protection is explicitly disabled. When disabled (<code>false</code>), the cluster can be deleted normally.</p>
+    pub deletion_protection: ::std::option::Option<bool>,
 }
 impl UpdateClusterConfigInput {
     /// <p>The name of the Amazon EKS cluster to update.</p>
@@ -79,6 +81,10 @@ impl UpdateClusterConfigInput {
     pub fn remote_network_config(&self) -> ::std::option::Option<&crate::types::RemoteNetworkConfigRequest> {
         self.remote_network_config.as_ref()
     }
+    /// <p>Specifies whether to enable or disable deletion protection for the cluster. When enabled (<code>true</code>), the cluster cannot be deleted until deletion protection is explicitly disabled. When disabled (<code>false</code>), the cluster can be deleted normally.</p>
+    pub fn deletion_protection(&self) -> ::std::option::Option<bool> {
+        self.deletion_protection
+    }
 }
 impl UpdateClusterConfigInput {
     /// Creates a new builder-style object to manufacture [`UpdateClusterConfigInput`](crate::operation::update_cluster_config::UpdateClusterConfigInput).
@@ -102,6 +108,7 @@ pub struct UpdateClusterConfigInputBuilder {
     pub(crate) kubernetes_network_config: ::std::option::Option<crate::types::KubernetesNetworkConfigRequest>,
     pub(crate) storage_config: ::std::option::Option<crate::types::StorageConfigRequest>,
     pub(crate) remote_network_config: ::std::option::Option<crate::types::RemoteNetworkConfigRequest>,
+    pub(crate) deletion_protection: ::std::option::Option<bool>,
 }
 impl UpdateClusterConfigInputBuilder {
     /// <p>The name of the Amazon EKS cluster to update.</p>
@@ -271,6 +278,20 @@ impl UpdateClusterConfigInputBuilder {
     pub fn get_remote_network_config(&self) -> &::std::option::Option<crate::types::RemoteNetworkConfigRequest> {
         &self.remote_network_config
     }
+    /// <p>Specifies whether to enable or disable deletion protection for the cluster. When enabled (<code>true</code>), the cluster cannot be deleted until deletion protection is explicitly disabled. When disabled (<code>false</code>), the cluster can be deleted normally.</p>
+    pub fn deletion_protection(mut self, input: bool) -> Self {
+        self.deletion_protection = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to enable or disable deletion protection for the cluster. When enabled (<code>true</code>), the cluster cannot be deleted until deletion protection is explicitly disabled. When disabled (<code>false</code>), the cluster can be deleted normally.</p>
+    pub fn set_deletion_protection(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.deletion_protection = input;
+        self
+    }
+    /// <p>Specifies whether to enable or disable deletion protection for the cluster. When enabled (<code>true</code>), the cluster cannot be deleted until deletion protection is explicitly disabled. When disabled (<code>false</code>), the cluster can be deleted normally.</p>
+    pub fn get_deletion_protection(&self) -> &::std::option::Option<bool> {
+        &self.deletion_protection
+    }
     /// Consumes the builder and constructs a [`UpdateClusterConfigInput`](crate::operation::update_cluster_config::UpdateClusterConfigInput).
     pub fn build(
         self,
@@ -288,6 +309,7 @@ impl UpdateClusterConfigInputBuilder {
             kubernetes_network_config: self.kubernetes_network_config,
             storage_config: self.storage_config,
             remote_network_config: self.remote_network_config,
+            deletion_protection: self.deletion_protection,
         })
     }
 }

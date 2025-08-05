@@ -14,6 +14,7 @@
 /// match clusterinstancestatus {
 ///     ClusterInstanceStatus::DeepHealthCheckInProgress => { /* ... */ },
 ///     ClusterInstanceStatus::Failure => { /* ... */ },
+///     ClusterInstanceStatus::NotFound => { /* ... */ },
 ///     ClusterInstanceStatus::Pending => { /* ... */ },
 ///     ClusterInstanceStatus::Running => { /* ... */ },
 ///     ClusterInstanceStatus::ShuttingDown => { /* ... */ },
@@ -51,6 +52,8 @@ pub enum ClusterInstanceStatus {
     #[allow(missing_docs)] // documentation missing in model
     Failure,
     #[allow(missing_docs)] // documentation missing in model
+    NotFound,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
     #[allow(missing_docs)] // documentation missing in model
     Running,
@@ -67,6 +70,7 @@ impl ::std::convert::From<&str> for ClusterInstanceStatus {
         match s {
             "DeepHealthCheckInProgress" => ClusterInstanceStatus::DeepHealthCheckInProgress,
             "Failure" => ClusterInstanceStatus::Failure,
+            "NotFound" => ClusterInstanceStatus::NotFound,
             "Pending" => ClusterInstanceStatus::Pending,
             "Running" => ClusterInstanceStatus::Running,
             "ShuttingDown" => ClusterInstanceStatus::ShuttingDown,
@@ -88,6 +92,7 @@ impl ClusterInstanceStatus {
         match self {
             ClusterInstanceStatus::DeepHealthCheckInProgress => "DeepHealthCheckInProgress",
             ClusterInstanceStatus::Failure => "Failure",
+            ClusterInstanceStatus::NotFound => "NotFound",
             ClusterInstanceStatus::Pending => "Pending",
             ClusterInstanceStatus::Running => "Running",
             ClusterInstanceStatus::ShuttingDown => "ShuttingDown",
@@ -100,6 +105,7 @@ impl ClusterInstanceStatus {
         &[
             "DeepHealthCheckInProgress",
             "Failure",
+            "NotFound",
             "Pending",
             "Running",
             "ShuttingDown",
@@ -129,6 +135,7 @@ impl ::std::fmt::Display for ClusterInstanceStatus {
         match self {
             ClusterInstanceStatus::DeepHealthCheckInProgress => write!(f, "DeepHealthCheckInProgress"),
             ClusterInstanceStatus::Failure => write!(f, "Failure"),
+            ClusterInstanceStatus::NotFound => write!(f, "NotFound"),
             ClusterInstanceStatus::Pending => write!(f, "Pending"),
             ClusterInstanceStatus::Running => write!(f, "Running"),
             ClusterInstanceStatus::ShuttingDown => write!(f, "ShuttingDown"),

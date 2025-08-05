@@ -25,6 +25,14 @@ pub fn parse_http_error_metadata(
 
 pub(crate) mod shape_batch_delete_evaluation_job;
 
+pub(crate) mod shape_cancel_automated_reasoning_policy_build_workflow;
+
+pub(crate) mod shape_create_automated_reasoning_policy;
+
+pub(crate) mod shape_create_automated_reasoning_policy_test_case;
+
+pub(crate) mod shape_create_automated_reasoning_policy_version;
+
 pub(crate) mod shape_create_custom_model;
 
 pub(crate) mod shape_create_custom_model_deployment;
@@ -53,6 +61,12 @@ pub(crate) mod shape_create_prompt_router;
 
 pub(crate) mod shape_create_provisioned_model_throughput;
 
+pub(crate) mod shape_delete_automated_reasoning_policy;
+
+pub(crate) mod shape_delete_automated_reasoning_policy_build_workflow;
+
+pub(crate) mod shape_delete_automated_reasoning_policy_test_case;
+
 pub(crate) mod shape_delete_custom_model;
 
 pub(crate) mod shape_delete_custom_model_deployment;
@@ -74,6 +88,22 @@ pub(crate) mod shape_delete_prompt_router;
 pub(crate) mod shape_delete_provisioned_model_throughput;
 
 pub(crate) mod shape_deregister_marketplace_model_endpoint;
+
+pub(crate) mod shape_export_automated_reasoning_policy_version;
+
+pub(crate) mod shape_get_automated_reasoning_policy;
+
+pub(crate) mod shape_get_automated_reasoning_policy_annotations;
+
+pub(crate) mod shape_get_automated_reasoning_policy_build_workflow;
+
+pub(crate) mod shape_get_automated_reasoning_policy_build_workflow_result_assets;
+
+pub(crate) mod shape_get_automated_reasoning_policy_next_scenario;
+
+pub(crate) mod shape_get_automated_reasoning_policy_test_case;
+
+pub(crate) mod shape_get_automated_reasoning_policy_test_result;
 
 pub(crate) mod shape_get_custom_model;
 
@@ -108,6 +138,14 @@ pub(crate) mod shape_get_prompt_router;
 pub(crate) mod shape_get_provisioned_model_throughput;
 
 pub(crate) mod shape_get_use_case_for_model_access;
+
+pub(crate) mod shape_list_automated_reasoning_policies;
+
+pub(crate) mod shape_list_automated_reasoning_policy_build_workflows;
+
+pub(crate) mod shape_list_automated_reasoning_policy_test_cases;
+
+pub(crate) mod shape_list_automated_reasoning_policy_test_results;
 
 pub(crate) mod shape_list_custom_model_deployments;
 
@@ -147,6 +185,16 @@ pub(crate) mod shape_put_use_case_for_model_access;
 
 pub(crate) mod shape_register_marketplace_model_endpoint;
 
+pub(crate) mod shape_start_automated_reasoning_policy_build_workflow;
+
+pub fn rest_json_unset_struct_payload() -> ::std::vec::Vec<u8> {
+    b"{}"[..].into()
+}
+
+pub(crate) mod shape_start_automated_reasoning_policy_build_workflow_input;
+
+pub(crate) mod shape_start_automated_reasoning_policy_test_workflow;
+
 pub(crate) mod shape_stop_evaluation_job;
 
 pub(crate) mod shape_stop_model_customization_job;
@@ -156,6 +204,12 @@ pub(crate) mod shape_stop_model_invocation_job;
 pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_untag_resource;
+
+pub(crate) mod shape_update_automated_reasoning_policy;
+
+pub(crate) mod shape_update_automated_reasoning_policy_annotations;
+
+pub(crate) mod shape_update_automated_reasoning_policy_test_case;
 
 pub(crate) mod shape_update_guardrail;
 
@@ -176,6 +230,12 @@ pub(crate) mod shape_access_denied_exception;
 pub(crate) mod shape_batch_delete_evaluation_job_input;
 
 pub(crate) mod shape_conflict_exception;
+
+pub(crate) mod shape_create_automated_reasoning_policy_input;
+
+pub(crate) mod shape_create_automated_reasoning_policy_test_case_input;
+
+pub(crate) mod shape_create_automated_reasoning_policy_version_input;
 
 pub(crate) mod shape_create_custom_model_deployment_input;
 
@@ -207,6 +267,8 @@ pub(crate) mod shape_create_provisioned_model_throughput_input;
 
 pub(crate) mod shape_delete_foundation_model_agreement_input;
 
+pub(crate) mod shape_export_automated_reasoning_policy_version_output;
+
 pub(crate) mod shape_internal_server_exception;
 
 pub(crate) mod shape_list_tags_for_resource_input;
@@ -217,11 +279,15 @@ pub(crate) mod shape_put_use_case_for_model_access_input;
 
 pub(crate) mod shape_register_marketplace_model_endpoint_input;
 
+pub(crate) mod shape_resource_in_use_exception;
+
 pub(crate) mod shape_resource_not_found_exception;
 
 pub(crate) mod shape_service_quota_exceeded_exception;
 
 pub(crate) mod shape_service_unavailable_exception;
+
+pub(crate) mod shape_start_automated_reasoning_policy_test_workflow_input;
 
 pub(crate) mod shape_tag_resource_input;
 
@@ -230,6 +296,12 @@ pub(crate) mod shape_throttling_exception;
 pub(crate) mod shape_too_many_tags_exception;
 
 pub(crate) mod shape_untag_resource_input;
+
+pub(crate) mod shape_update_automated_reasoning_policy_annotations_input;
+
+pub(crate) mod shape_update_automated_reasoning_policy_input;
+
+pub(crate) mod shape_update_automated_reasoning_policy_test_case_input;
 
 pub(crate) mod shape_update_guardrail_input;
 
@@ -240,6 +312,30 @@ pub(crate) mod shape_update_provisioned_model_throughput_input;
 pub(crate) mod shape_validation_exception;
 
 pub(crate) mod shape_agreement_availability;
+
+pub(crate) mod shape_automated_reasoning_policy_annotation;
+
+pub(crate) mod shape_automated_reasoning_policy_annotation_list;
+
+pub(crate) mod shape_automated_reasoning_policy_build_result_assets;
+
+pub(crate) mod shape_automated_reasoning_policy_build_workflow_source;
+
+pub(crate) mod shape_automated_reasoning_policy_build_workflow_summaries;
+
+pub(crate) mod shape_automated_reasoning_policy_definition;
+
+pub(crate) mod shape_automated_reasoning_policy_scenario;
+
+pub(crate) mod shape_automated_reasoning_policy_summaries;
+
+pub(crate) mod shape_automated_reasoning_policy_test_case;
+
+pub(crate) mod shape_automated_reasoning_policy_test_case_list;
+
+pub(crate) mod shape_automated_reasoning_policy_test_list;
+
+pub(crate) mod shape_automated_reasoning_policy_test_result;
 
 pub(crate) mod shape_batch_delete_evaluation_job_errors;
 
@@ -268,6 +364,10 @@ pub(crate) mod shape_evaluation_summaries;
 pub(crate) mod shape_foundation_model_details;
 
 pub(crate) mod shape_foundation_model_summary_list;
+
+pub(crate) mod shape_guardrail_automated_reasoning_policy;
+
+pub(crate) mod shape_guardrail_automated_reasoning_policy_config;
 
 pub(crate) mod shape_guardrail_content_policy;
 
@@ -360,6 +460,54 @@ pub(crate) mod shape_validation_metrics;
 pub(crate) mod shape_vpc_config;
 
 pub(crate) mod shape_automated_evaluation_config;
+
+pub(crate) mod shape_automated_reasoning_check_finding_list;
+
+pub(crate) mod shape_automated_reasoning_policy_add_rule_annotation;
+
+pub(crate) mod shape_automated_reasoning_policy_add_rule_from_natural_language_annotation;
+
+pub(crate) mod shape_automated_reasoning_policy_add_type_annotation;
+
+pub(crate) mod shape_automated_reasoning_policy_add_variable_annotation;
+
+pub(crate) mod shape_automated_reasoning_policy_arn_list;
+
+pub(crate) mod shape_automated_reasoning_policy_build_log;
+
+pub(crate) mod shape_automated_reasoning_policy_build_workflow_summary;
+
+pub(crate) mod shape_automated_reasoning_policy_definition_quality_report;
+
+pub(crate) mod shape_automated_reasoning_policy_definition_rule;
+
+pub(crate) mod shape_automated_reasoning_policy_definition_rule_id_list;
+
+pub(crate) mod shape_automated_reasoning_policy_definition_type;
+
+pub(crate) mod shape_automated_reasoning_policy_definition_variable;
+
+pub(crate) mod shape_automated_reasoning_policy_delete_rule_annotation;
+
+pub(crate) mod shape_automated_reasoning_policy_delete_type_annotation;
+
+pub(crate) mod shape_automated_reasoning_policy_delete_variable_annotation;
+
+pub(crate) mod shape_automated_reasoning_policy_ingest_content_annotation;
+
+pub(crate) mod shape_automated_reasoning_policy_summary;
+
+pub(crate) mod shape_automated_reasoning_policy_update_from_rule_feedback_annotation;
+
+pub(crate) mod shape_automated_reasoning_policy_update_from_scenario_feedback_annotation;
+
+pub(crate) mod shape_automated_reasoning_policy_update_rule_annotation;
+
+pub(crate) mod shape_automated_reasoning_policy_update_type_annotation;
+
+pub(crate) mod shape_automated_reasoning_policy_update_variable_annotation;
+
+pub(crate) mod shape_automated_reasoning_policy_workflow_type_content;
 
 pub(crate) mod shape_batch_delete_evaluation_job_error;
 
@@ -485,6 +633,34 @@ pub(crate) mod shape_validators;
 
 pub(crate) mod shape_automated_evaluation_custom_metric_config;
 
+pub(crate) mod shape_automated_reasoning_check_finding;
+
+pub(crate) mod shape_automated_reasoning_policy_build_log_entry_list;
+
+pub(crate) mod shape_automated_reasoning_policy_build_workflow_document;
+
+pub(crate) mod shape_automated_reasoning_policy_build_workflow_repair_content;
+
+pub(crate) mod shape_automated_reasoning_policy_conflicted_rule_id_list;
+
+pub(crate) mod shape_automated_reasoning_policy_definition_rule_list;
+
+pub(crate) mod shape_automated_reasoning_policy_definition_type_list;
+
+pub(crate) mod shape_automated_reasoning_policy_definition_type_name_list;
+
+pub(crate) mod shape_automated_reasoning_policy_definition_type_value;
+
+pub(crate) mod shape_automated_reasoning_policy_definition_type_value_pair_list;
+
+pub(crate) mod shape_automated_reasoning_policy_definition_variable_list;
+
+pub(crate) mod shape_automated_reasoning_policy_definition_variable_name_list;
+
+pub(crate) mod shape_automated_reasoning_policy_disjoint_rule_set_list;
+
+pub(crate) mod shape_automated_reasoning_policy_type_value_annotation;
+
 pub(crate) mod shape_evaluation_bedrock_knowledge_base_identifiers;
 
 pub(crate) mod shape_evaluation_bedrock_model;
@@ -541,6 +717,36 @@ pub(crate) mod shape_automated_evaluation_custom_metric_source;
 
 pub(crate) mod shape_automated_evaluation_custom_metrics;
 
+pub(crate) mod shape_automated_reasoning_check_impossible_finding;
+
+pub(crate) mod shape_automated_reasoning_check_invalid_finding;
+
+pub(crate) mod shape_automated_reasoning_check_no_translations_finding;
+
+pub(crate) mod shape_automated_reasoning_check_satisfiable_finding;
+
+pub(crate) mod shape_automated_reasoning_check_too_complex_finding;
+
+pub(crate) mod shape_automated_reasoning_check_translation_ambiguous_finding;
+
+pub(crate) mod shape_automated_reasoning_check_valid_finding;
+
+pub(crate) mod shape_automated_reasoning_policy_add_type_value;
+
+pub(crate) mod shape_automated_reasoning_policy_build_log_entry;
+
+pub(crate) mod shape_automated_reasoning_policy_definition_type_value_list;
+
+pub(crate) mod shape_automated_reasoning_policy_definition_type_value_pair;
+
+pub(crate) mod shape_automated_reasoning_policy_delete_type_value;
+
+pub(crate) mod shape_automated_reasoning_policy_disjoint_rule_set;
+
+pub(crate) mod shape_automated_reasoning_policy_type_value_annotation_list;
+
+pub(crate) mod shape_automated_reasoning_policy_update_type_value;
+
 pub(crate) mod shape_bedrock_evaluator_model;
 
 pub(crate) mod shape_bedrock_evaluator_models;
@@ -581,6 +787,22 @@ pub(crate) mod shape_support_term;
 
 pub(crate) mod shape_validity_term;
 
+pub(crate) mod shape_automated_reasoning_check_difference_scenario_list;
+
+pub(crate) mod shape_automated_reasoning_check_logic_warning;
+
+pub(crate) mod shape_automated_reasoning_check_rule_list;
+
+pub(crate) mod shape_automated_reasoning_check_scenario;
+
+pub(crate) mod shape_automated_reasoning_check_translation;
+
+pub(crate) mod shape_automated_reasoning_check_translation_option_list;
+
+pub(crate) mod shape_automated_reasoning_policy_build_step_list;
+
+pub(crate) mod shape_automated_reasoning_policy_disjointed_rule_id_list;
+
 pub(crate) mod shape_custom_metric_bedrock_evaluator_model;
 
 pub(crate) mod shape_custom_metric_bedrock_evaluator_models;
@@ -603,6 +825,16 @@ pub(crate) mod shape_knowledge_base_retrieve_and_generate_configuration;
 
 pub(crate) mod shape_rate_card;
 
+pub(crate) mod shape_automated_reasoning_check_input_text_reference_list;
+
+pub(crate) mod shape_automated_reasoning_check_rule;
+
+pub(crate) mod shape_automated_reasoning_check_translation_option;
+
+pub(crate) mod shape_automated_reasoning_logic_statement_list;
+
+pub(crate) mod shape_automated_reasoning_policy_build_step;
+
 pub(crate) mod shape_dimensional_price_rate;
 
 pub(crate) mod shape_external_source;
@@ -616,6 +848,18 @@ pub(crate) mod shape_knowledge_base_vector_search_configuration;
 pub(crate) mod shape_orchestration_configuration;
 
 pub(crate) mod shape_rating_scale_item;
+
+pub(crate) mod shape_automated_reasoning_check_input_text_reference;
+
+pub(crate) mod shape_automated_reasoning_check_translation_list;
+
+pub(crate) mod shape_automated_reasoning_logic_statement;
+
+pub(crate) mod shape_automated_reasoning_policy_build_step_context;
+
+pub(crate) mod shape_automated_reasoning_policy_build_step_message_list;
+
+pub(crate) mod shape_automated_reasoning_policy_definition_element;
 
 pub(crate) mod shape_byte_content_doc;
 
@@ -643,6 +887,12 @@ pub(crate) mod shape_vector_search_reranking_configuration;
 
 pub(crate) mod shape_additional_model_request_fields;
 
+pub(crate) mod shape_automated_reasoning_policy_build_step_message;
+
+pub(crate) mod shape_automated_reasoning_policy_mutation;
+
+pub(crate) mod shape_automated_reasoning_policy_planning;
+
 pub(crate) mod shape_filter_attribute;
 
 pub(crate) mod shape_metadata_attribute_schema;
@@ -650,6 +900,24 @@ pub(crate) mod shape_metadata_attribute_schema;
 pub(crate) mod shape_text_inference_config;
 
 pub(crate) mod shape_vector_search_bedrock_reranking_configuration;
+
+pub(crate) mod shape_automated_reasoning_policy_add_rule_mutation;
+
+pub(crate) mod shape_automated_reasoning_policy_add_type_mutation;
+
+pub(crate) mod shape_automated_reasoning_policy_add_variable_mutation;
+
+pub(crate) mod shape_automated_reasoning_policy_delete_rule_mutation;
+
+pub(crate) mod shape_automated_reasoning_policy_delete_type_mutation;
+
+pub(crate) mod shape_automated_reasoning_policy_delete_variable_mutation;
+
+pub(crate) mod shape_automated_reasoning_policy_update_rule_mutation;
+
+pub(crate) mod shape_automated_reasoning_policy_update_type_mutation;
+
+pub(crate) mod shape_automated_reasoning_policy_update_variable_mutation;
 
 pub(crate) mod shape_metadata_attribute_schema_list;
 

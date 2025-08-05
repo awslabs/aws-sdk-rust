@@ -11,6 +11,7 @@
 use crate::json_credentials::{parse_json_credentials, JsonCredentials, RefreshableCredentials};
 use crate::provider_config::ProviderConfig;
 use aws_credential_types::attributes::AccountId;
+use aws_credential_types::credential_feature::AwsCredentialFeature;
 use aws_credential_types::provider::{self, error::CredentialsError};
 use aws_credential_types::Credentials;
 use aws_smithy_runtime::client::metrics::MetricsRuntimePlugin;
@@ -54,7 +55,16 @@ impl HttpCredentialProvider {
     }
 
     pub(crate) async fn credentials(&self, auth: Option<HeaderValue>) -> provider::Result {
-        let credentials = self.operation.invoke(HttpProviderAuth { auth }).await;
+        let credentials =
+            self.operation
+                .invoke(HttpProviderAuth { auth })
+                .await
+                .map(|mut creds| {
+                    creds
+                        .get_property_mut_or_default::<Vec<AwsCredentialFeature>>()
+                        .push(AwsCredentialFeature::CredentialsHttp);
+                    creds
+                });
         match credentials {
             Ok(creds) => Ok(creds),
             Err(SdkError::ServiceError(context)) => Err(context.into_err()),
@@ -233,6 +243,7 @@ impl ClassifyRetry for HttpCredentialRetryClassifier {
 #[cfg(test)]
 mod test {
     use super::*;
+    use aws_credential_types::credential_feature::AwsCredentialFeature;
     use aws_credential_types::provider::error::CredentialsError;
     use aws_smithy_http_client::test_util::{ReplayEvent, StaticReplayClient};
     use aws_smithy_types::body::SdkBody;
@@ -345,5 +356,15 @@ mod test {
             "should be CredentialsError::ProviderError: {err}",
         );
         http_client.assert_requests_match(&[]);
+    }
+
+    #[tokio::test]
+    async fn credentials_feature() {
+        let http_client = StaticReplayClient::new(vec![successful_req_resp()]);
+        let creds = provide_creds(http_client.clone()).await.expect("success");
+        assert_eq!(
+            &vec![AwsCredentialFeature::CredentialsHttp],
+            creds.get_property::<Vec<AwsCredentialFeature>>().unwrap()
+        );
     }
 }

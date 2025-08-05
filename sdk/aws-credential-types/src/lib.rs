@@ -21,6 +21,8 @@
 )]
 
 pub mod attributes;
+#[doc(hidden)]
+pub mod credential_feature;
 pub mod credential_fn;
 mod credentials_impl;
 pub mod provider;

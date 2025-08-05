@@ -23,6 +23,18 @@ pub(crate) fn attach_cluster_node_volume_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn batch_add_cluster_nodes_output_output_correct_errors(
+    mut builder: crate::operation::batch_add_cluster_nodes::builders::BatchAddClusterNodesOutputBuilder,
+) -> crate::operation::batch_add_cluster_nodes::builders::BatchAddClusterNodesOutputBuilder {
+    if builder.successful.is_none() {
+        builder.successful = Some(Default::default())
+    }
+    if builder.failed.is_none() {
+        builder.failed = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn create_algorithm_output_output_correct_errors(
     mut builder: crate::operation::create_algorithm::builders::CreateAlgorithmOutputBuilder,
 ) -> crate::operation::create_algorithm::builders::CreateAlgorithmOutputBuilder {
@@ -2858,6 +2870,27 @@ pub(crate) fn checkpoint_config_correct_errors(
     builder
 }
 
+pub(crate) fn cluster_event_detail_correct_errors(
+    mut builder: crate::types::builders::ClusterEventDetailBuilder,
+) -> crate::types::builders::ClusterEventDetailBuilder {
+    if builder.event_id.is_none() {
+        builder.event_id = Some(Default::default())
+    }
+    if builder.cluster_arn.is_none() {
+        builder.cluster_arn = Some(Default::default())
+    }
+    if builder.cluster_name.is_none() {
+        builder.cluster_name = Some(Default::default())
+    }
+    if builder.resource_type.is_none() {
+        builder.resource_type = "no value was set".parse::<crate::types::ClusterEventResourceType>().ok()
+    }
+    if builder.event_time.is_none() {
+        builder.event_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn cluster_orchestrator_correct_errors(
     mut builder: crate::types::builders::ClusterOrchestratorBuilder,
 ) -> crate::types::builders::ClusterOrchestratorBuilder {
@@ -3587,6 +3620,36 @@ pub(crate) fn auto_ml_job_summary_correct_errors(
     builder
 }
 
+pub(crate) fn batch_add_cluster_nodes_error_correct_errors(
+    mut builder: crate::types::builders::BatchAddClusterNodesErrorBuilder,
+) -> crate::types::builders::BatchAddClusterNodesErrorBuilder {
+    if builder.instance_group_name.is_none() {
+        builder.instance_group_name = Some(Default::default())
+    }
+    if builder.error_code.is_none() {
+        builder.error_code = "no value was set".parse::<crate::types::BatchAddClusterNodesErrorCode>().ok()
+    }
+    if builder.failed_count.is_none() {
+        builder.failed_count = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn batch_delete_cluster_node_logical_ids_error_correct_errors(
+    mut builder: crate::types::builders::BatchDeleteClusterNodeLogicalIdsErrorBuilder,
+) -> crate::types::builders::BatchDeleteClusterNodeLogicalIdsErrorBuilder {
+    if builder.code.is_none() {
+        builder.code = "no value was set".parse::<crate::types::BatchDeleteClusterNodesErrorCode>().ok()
+    }
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    if builder.node_logical_id.is_none() {
+        builder.node_logical_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn batch_delete_cluster_nodes_error_correct_errors(
     mut builder: crate::types::builders::BatchDeleteClusterNodesErrorBuilder,
 ) -> crate::types::builders::BatchDeleteClusterNodesErrorBuilder {
@@ -3689,6 +3752,27 @@ pub(crate) fn clarify_explainer_config_correct_errors(
             let builder = crate::types::builders::ClarifyShapConfigBuilder::default();
             Some(crate::serde_util::clarify_shap_config_correct_errors(builder).build())
         }
+    }
+    builder
+}
+
+pub(crate) fn cluster_event_summary_correct_errors(
+    mut builder: crate::types::builders::ClusterEventSummaryBuilder,
+) -> crate::types::builders::ClusterEventSummaryBuilder {
+    if builder.event_id.is_none() {
+        builder.event_id = Some(Default::default())
+    }
+    if builder.cluster_arn.is_none() {
+        builder.cluster_arn = Some(Default::default())
+    }
+    if builder.cluster_name.is_none() {
+        builder.cluster_name = Some(Default::default())
+    }
+    if builder.resource_type.is_none() {
+        builder.resource_type = "no value was set".parse::<crate::types::ClusterEventResourceType>().ok()
+    }
+    if builder.event_time.is_none() {
+        builder.event_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }
@@ -4820,6 +4904,21 @@ pub(crate) fn monitoring_schedule_summary_correct_errors(
     }
     if builder.monitoring_schedule_status.is_none() {
         builder.monitoring_schedule_status = "no value was set".parse::<crate::types::ScheduleStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn node_addition_result_correct_errors(
+    mut builder: crate::types::builders::NodeAdditionResultBuilder,
+) -> crate::types::builders::NodeAdditionResultBuilder {
+    if builder.node_logical_id.is_none() {
+        builder.node_logical_id = Some(Default::default())
+    }
+    if builder.instance_group_name.is_none() {
+        builder.instance_group_name = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::ClusterInstanceStatus>().ok()
     }
     builder
 }

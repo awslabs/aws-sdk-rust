@@ -94,6 +94,16 @@ pub(crate) fn de_batch_delete_cluster_nodes(
                 "Successful" => {
                     builder = builder.set_successful(crate::protocol_serde::shape_cluster_node_ids::de_cluster_node_ids(tokens)?);
                 }
+                "FailedNodeLogicalIds" => {
+                    builder = builder.set_failed_node_logical_ids(
+                            crate::protocol_serde::shape_batch_delete_cluster_node_logical_ids_error_list::de_batch_delete_cluster_node_logical_ids_error_list(tokens)?
+                        );
+                }
+                "SuccessfulNodeLogicalIds" => {
+                    builder = builder.set_successful_node_logical_ids(
+                        crate::protocol_serde::shape_cluster_node_logical_id_list::de_cluster_node_logical_id_list(tokens)?,
+                    );
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

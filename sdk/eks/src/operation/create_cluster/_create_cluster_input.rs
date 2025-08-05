@@ -45,6 +45,8 @@ pub struct CreateClusterInput {
     pub compute_config: ::std::option::Option<crate::types::ComputeConfigRequest>,
     /// <p>Enable or disable the block storage capability of EKS Auto Mode when creating your EKS Auto Mode cluster. If the block storage capability is enabled, EKS Auto Mode will create and delete EBS volumes in your Amazon Web Services account.</p>
     pub storage_config: ::std::option::Option<crate::types::StorageConfigRequest>,
+    /// <p>Indicates whether to enable deletion protection for the cluster. When enabled, the cluster cannot be deleted unless deletion protection is first disabled. This helps prevent accidental cluster deletion. Default value is <code>false</code>.</p>
+    pub deletion_protection: ::std::option::Option<bool>,
 }
 impl CreateClusterInput {
     /// <p>The unique name to give to your cluster. The name can contain only alphanumeric characters (case-sensitive), hyphens, and underscores. It must start with an alphanumeric character and can't be longer than 100 characters. The name must be unique within the Amazon Web Services Region and Amazon Web Services account that you're creating the cluster in.</p>
@@ -125,6 +127,10 @@ impl CreateClusterInput {
     pub fn storage_config(&self) -> ::std::option::Option<&crate::types::StorageConfigRequest> {
         self.storage_config.as_ref()
     }
+    /// <p>Indicates whether to enable deletion protection for the cluster. When enabled, the cluster cannot be deleted unless deletion protection is first disabled. This helps prevent accidental cluster deletion. Default value is <code>false</code>.</p>
+    pub fn deletion_protection(&self) -> ::std::option::Option<bool> {
+        self.deletion_protection
+    }
 }
 impl CreateClusterInput {
     /// Creates a new builder-style object to manufacture [`CreateClusterInput`](crate::operation::create_cluster::CreateClusterInput).
@@ -154,6 +160,7 @@ pub struct CreateClusterInputBuilder {
     pub(crate) remote_network_config: ::std::option::Option<crate::types::RemoteNetworkConfigRequest>,
     pub(crate) compute_config: ::std::option::Option<crate::types::ComputeConfigRequest>,
     pub(crate) storage_config: ::std::option::Option<crate::types::StorageConfigRequest>,
+    pub(crate) deletion_protection: ::std::option::Option<bool>,
 }
 impl CreateClusterInputBuilder {
     /// <p>The unique name to give to your cluster. The name can contain only alphanumeric characters (case-sensitive), hyphens, and underscores. It must start with an alphanumeric character and can't be longer than 100 characters. The name must be unique within the Amazon Web Services Region and Amazon Web Services account that you're creating the cluster in.</p>
@@ -433,6 +440,20 @@ impl CreateClusterInputBuilder {
     pub fn get_storage_config(&self) -> &::std::option::Option<crate::types::StorageConfigRequest> {
         &self.storage_config
     }
+    /// <p>Indicates whether to enable deletion protection for the cluster. When enabled, the cluster cannot be deleted unless deletion protection is first disabled. This helps prevent accidental cluster deletion. Default value is <code>false</code>.</p>
+    pub fn deletion_protection(mut self, input: bool) -> Self {
+        self.deletion_protection = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether to enable deletion protection for the cluster. When enabled, the cluster cannot be deleted unless deletion protection is first disabled. This helps prevent accidental cluster deletion. Default value is <code>false</code>.</p>
+    pub fn set_deletion_protection(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.deletion_protection = input;
+        self
+    }
+    /// <p>Indicates whether to enable deletion protection for the cluster. When enabled, the cluster cannot be deleted unless deletion protection is first disabled. This helps prevent accidental cluster deletion. Default value is <code>false</code>.</p>
+    pub fn get_deletion_protection(&self) -> &::std::option::Option<bool> {
+        &self.deletion_protection
+    }
     /// Consumes the builder and constructs a [`CreateClusterInput`](crate::operation::create_cluster::CreateClusterInput).
     pub fn build(
         self,
@@ -455,6 +476,7 @@ impl CreateClusterInputBuilder {
             remote_network_config: self.remote_network_config,
             compute_config: self.compute_config,
             storage_config: self.storage_config,
+            deletion_protection: self.deletion_protection,
         })
     }
 }

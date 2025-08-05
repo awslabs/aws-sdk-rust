@@ -27,6 +27,36 @@ pub use crate::types::_guardrail_text_characters_coverage::GuardrailTextCharacte
 
 pub use crate::types::_guardrail_usage::GuardrailUsageBuilder;
 
+pub use crate::types::_guardrail_automated_reasoning_policy_assessment::GuardrailAutomatedReasoningPolicyAssessmentBuilder;
+
+pub use crate::types::_guardrail_automated_reasoning_no_translations_finding::GuardrailAutomatedReasoningNoTranslationsFindingBuilder;
+
+pub use crate::types::_guardrail_automated_reasoning_too_complex_finding::GuardrailAutomatedReasoningTooComplexFindingBuilder;
+
+pub use crate::types::_guardrail_automated_reasoning_translation_ambiguous_finding::GuardrailAutomatedReasoningTranslationAmbiguousFindingBuilder;
+
+pub use crate::types::_guardrail_automated_reasoning_scenario::GuardrailAutomatedReasoningScenarioBuilder;
+
+pub use crate::types::_guardrail_automated_reasoning_statement::GuardrailAutomatedReasoningStatementBuilder;
+
+pub use crate::types::_guardrail_automated_reasoning_translation_option::GuardrailAutomatedReasoningTranslationOptionBuilder;
+
+pub use crate::types::_guardrail_automated_reasoning_translation::GuardrailAutomatedReasoningTranslationBuilder;
+
+pub use crate::types::_guardrail_automated_reasoning_input_text_reference::GuardrailAutomatedReasoningInputTextReferenceBuilder;
+
+pub use crate::types::_guardrail_automated_reasoning_impossible_finding::GuardrailAutomatedReasoningImpossibleFindingBuilder;
+
+pub use crate::types::_guardrail_automated_reasoning_logic_warning::GuardrailAutomatedReasoningLogicWarningBuilder;
+
+pub use crate::types::_guardrail_automated_reasoning_rule::GuardrailAutomatedReasoningRuleBuilder;
+
+pub use crate::types::_guardrail_automated_reasoning_satisfiable_finding::GuardrailAutomatedReasoningSatisfiableFindingBuilder;
+
+pub use crate::types::_guardrail_automated_reasoning_invalid_finding::GuardrailAutomatedReasoningInvalidFindingBuilder;
+
+pub use crate::types::_guardrail_automated_reasoning_valid_finding::GuardrailAutomatedReasoningValidFindingBuilder;
+
 pub use crate::types::_guardrail_contextual_grounding_policy_assessment::GuardrailContextualGroundingPolicyAssessmentBuilder;
 
 pub use crate::types::_guardrail_contextual_grounding_filter::GuardrailContextualGroundingFilterBuilder;

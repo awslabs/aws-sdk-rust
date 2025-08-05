@@ -12,30 +12,52 @@ use std::sync::LazyLock;
 #[allow(dead_code)]
 static RE: LazyLock<Regex> = LazyLock::new(|| Regex::new(r"m/([A-Za-z0-9+/=_,-]+)").unwrap());
 
+/// Helper function to check metric values in user agent
+fn check_ua_metric_values(user_agent: &str, values: &[&str], should_contain: bool) {
+    match extract_ua_values(user_agent) {
+        Some(metrics) => {
+            let mut problematic_values = vec![];
+
+            for value in values.iter() {
+                let contains = metrics.contains(value);
+                if (should_contain && !contains) || (!should_contain && contains) {
+                    problematic_values.push(value);
+                }
+            }
+
+            if !problematic_values.is_empty() {
+                if should_contain {
+                    panic!("metric values {problematic_values:?} not found in `{user_agent}`");
+                } else {
+                    panic!(
+                        "metric values {problematic_values:?} unexpectedly found in `{user_agent}`"
+                    );
+                }
+            }
+        }
+        None => {
+            if should_contain {
+                panic!("the pattern for business-metrics `m/(metric_id) *(comma metric_id)` not found in `{user_agent}`");
+            }
+            // For "does not contain", no metrics pattern means the assertion passes
+        }
+    }
+}
+
 /// Asserts `user_agent` contains all metric values `values`
 ///
 /// Refer to the end of the parent module file `user_agent.rs` for the complete ABNF specification
 /// of `business-metrics`.
 pub fn assert_ua_contains_metric_values(user_agent: &str, values: &[&str]) {
-    match extract_ua_values(user_agent) {
-        Some(metrics) => {
-            let mut missed = vec![];
+    check_ua_metric_values(user_agent, values, true);
+}
 
-            for value in values.iter() {
-                if !metrics.contains(value) {
-                    missed.push(value);
-                }
-            }
-            assert!(
-                missed.is_empty(),
-                "{}",
-                format!("metric values {missed:?} not found in `{user_agent}`")
-            );
-        }
-        None => {
-            panic!("{}", format!("the pattern for business-metrics `m/(metric_id) *(comma metric_id)` not found in `{user_agent}`"))
-        }
-    }
+/// Asserts `user_agent` does NOT contain any of the metric values `values`
+///
+/// Refer to the end of the parent module file `user_agent.rs` for the complete ABNF specification
+/// of `business-metrics`.
+pub fn assert_ua_does_not_contain_metric_values(user_agent: &str, values: &[&str]) {
+    check_ua_metric_values(user_agent, values, false);
 }
 
 /// Extract the metric values from the `user_agent` string

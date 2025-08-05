@@ -10,6 +10,7 @@
 use crate::json_credentials::{json_parse_loop, InvalidJsonCredentials};
 use crate::sensitive_command::CommandWithSensitiveArgs;
 use aws_credential_types::attributes::AccountId;
+use aws_credential_types::credential_feature::AwsCredentialFeature;
 use aws_credential_types::provider::{self, error::CredentialsError, future, ProvideCredentials};
 use aws_credential_types::Credentials;
 use aws_smithy_json::deserialize::Token;
@@ -122,14 +123,19 @@ impl CredentialProcessProvider {
             ))
         })?;
 
-        parse_credential_process_json_credentials(output, self.profile_account_id.as_ref()).map_err(
-            |invalid| {
+        parse_credential_process_json_credentials(output, self.profile_account_id.as_ref())
+            .map(|mut creds| {
+                creds
+                    .get_property_mut_or_default::<Vec<AwsCredentialFeature>>()
+                    .push(AwsCredentialFeature::CredentialsProcess);
+                creds
+            })
+            .map_err(|invalid| {
                 CredentialsError::provider_error(format!(
                 "Error retrieving credentials from external process, could not parse response: {}",
                 invalid
             ))
-            },
-        )
+            })
     }
 }
 
@@ -264,6 +270,7 @@ fn parse_expiration(expiration: impl AsRef<str>) -> Result<SystemTime, InvalidJs
 mod test {
     use crate::credential_process::CredentialProcessProvider;
     use crate::sensitive_command::CommandWithSensitiveArgs;
+    use aws_credential_types::credential_feature::AwsCredentialFeature;
     use aws_credential_types::provider::ProvideCredentials;
     use std::time::{Duration, SystemTime};
     use time::format_description::well_known::Rfc3339;
@@ -338,5 +345,20 @@ mod test {
             .build();
         let creds = provider.provide_credentials().await.unwrap();
         assert_eq!("111122223333", creds.account_id().unwrap().as_str());
+    }
+
+    #[tokio::test]
+    async fn credential_feature() {
+        let provider = CredentialProcessProvider::builder()
+            .command(CommandWithSensitiveArgs::new(String::from(
+                r#"echo '{ "Version": 1, "AccessKeyId": "ASIARTESTID", "SecretAccessKey": "TESTSECRETKEY", "AccountId": "111122223333" }'"#,
+            )))
+            .account_id("012345678901")
+            .build();
+        let creds = provider.provide_credentials().await.unwrap();
+        assert_eq!(
+            &vec![AwsCredentialFeature::CredentialsProcess],
+            creds.get_property::<Vec<AwsCredentialFeature>>().unwrap()
+        );
     }
 }

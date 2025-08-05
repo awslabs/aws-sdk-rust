@@ -59,14 +59,14 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CreateCustomModel`](crate::operation::create_custom_model) operation has
-/// a [`Client::create_custom_model`], function which returns a builder for that operation.
+/// For example, the [`CancelAutomatedReasoningPolicyBuildWorkflow`](crate::operation::cancel_automated_reasoning_policy_build_workflow) operation has
+/// a [`Client::cancel_automated_reasoning_policy_build_workflow`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.create_custom_model()
-///     .model_name("example")
+/// let result = client.cancel_automated_reasoning_policy_build_workflow()
+///     .policy_arn("example")
 ///     .send()
 ///     .await;
 /// ```
@@ -138,6 +138,14 @@ impl Client {
 
 mod batch_delete_evaluation_job;
 
+mod cancel_automated_reasoning_policy_build_workflow;
+
+mod create_automated_reasoning_policy;
+
+mod create_automated_reasoning_policy_test_case;
+
+mod create_automated_reasoning_policy_version;
+
 mod create_custom_model;
 
 mod create_custom_model_deployment;
@@ -193,6 +201,12 @@ mod create_provisioned_model_throughput;
 /// ```
 pub mod customize;
 
+mod delete_automated_reasoning_policy;
+
+mod delete_automated_reasoning_policy_build_workflow;
+
+mod delete_automated_reasoning_policy_test_case;
+
 mod delete_custom_model;
 
 mod delete_custom_model_deployment;
@@ -214,6 +228,22 @@ mod delete_prompt_router;
 mod delete_provisioned_model_throughput;
 
 mod deregister_marketplace_model_endpoint;
+
+mod export_automated_reasoning_policy_version;
+
+mod get_automated_reasoning_policy;
+
+mod get_automated_reasoning_policy_annotations;
+
+mod get_automated_reasoning_policy_build_workflow;
+
+mod get_automated_reasoning_policy_build_workflow_result_assets;
+
+mod get_automated_reasoning_policy_next_scenario;
+
+mod get_automated_reasoning_policy_test_case;
+
+mod get_automated_reasoning_policy_test_result;
 
 mod get_custom_model;
 
@@ -248,6 +278,14 @@ mod get_prompt_router;
 mod get_provisioned_model_throughput;
 
 mod get_use_case_for_model_access;
+
+mod list_automated_reasoning_policies;
+
+mod list_automated_reasoning_policy_build_workflows;
+
+mod list_automated_reasoning_policy_test_cases;
+
+mod list_automated_reasoning_policy_test_results;
 
 mod list_custom_model_deployments;
 
@@ -287,6 +325,10 @@ mod put_use_case_for_model_access;
 
 mod register_marketplace_model_endpoint;
 
+mod start_automated_reasoning_policy_build_workflow;
+
+mod start_automated_reasoning_policy_test_workflow;
+
 mod stop_evaluation_job;
 
 mod stop_model_customization_job;
@@ -296,6 +338,12 @@ mod stop_model_invocation_job;
 mod tag_resource;
 
 mod untag_resource;
+
+mod update_automated_reasoning_policy;
+
+mod update_automated_reasoning_policy_annotations;
+
+mod update_automated_reasoning_policy_test_case;
 
 mod update_guardrail;
 

@@ -1,2 +1,0 @@
-GET /?Param2=value2&Param1=value1&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ANOTREAL%2F20150830%2Fus-east-1%2Fservice%2Faws4_request&X-Amz-Date=20150830T123600Z&X-Amz-Expires=35&X-Amz-SignedHeaders=host&X-Amz-Signature=ecce208e4b4f7d7e3a4cc22ced6acc2ad1d170ee8ba87d7165f6fa4b9aff09ab HTTP/1.1
-Host:example.amazonaws.com

@@ -225,6 +225,23 @@ impl CreateGuardrailFluentBuilder {
     pub fn get_contextual_grounding_policy_config(&self) -> &::std::option::Option<crate::types::GuardrailContextualGroundingPolicyConfig> {
         self.inner.get_contextual_grounding_policy_config()
     }
+    /// <p>Optional configuration for integrating Automated Reasoning policies with the new guardrail.</p>
+    pub fn automated_reasoning_policy_config(mut self, input: crate::types::GuardrailAutomatedReasoningPolicyConfig) -> Self {
+        self.inner = self.inner.automated_reasoning_policy_config(input);
+        self
+    }
+    /// <p>Optional configuration for integrating Automated Reasoning policies with the new guardrail.</p>
+    pub fn set_automated_reasoning_policy_config(
+        mut self,
+        input: ::std::option::Option<crate::types::GuardrailAutomatedReasoningPolicyConfig>,
+    ) -> Self {
+        self.inner = self.inner.set_automated_reasoning_policy_config(input);
+        self
+    }
+    /// <p>Optional configuration for integrating Automated Reasoning policies with the new guardrail.</p>
+    pub fn get_automated_reasoning_policy_config(&self) -> &::std::option::Option<crate::types::GuardrailAutomatedReasoningPolicyConfig> {
+        self.inner.get_automated_reasoning_policy_config()
+    }
     /// <p>The system-defined guardrail profile that you're using with your guardrail. Guardrail profiles define the destination Amazon Web Services Regions where guardrail inference requests can be automatically routed.</p>
     /// <p>For more information, see the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-cross-region.html">Amazon Bedrock User Guide</a>.</p>
     pub fn cross_region_config(mut self, input: crate::types::GuardrailCrossRegionConfig) -> Self {

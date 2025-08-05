@@ -32,7 +32,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-ssmquicksetup = "1.43.0"
+//! aws-sdk-ssmquicksetup = "1.44.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

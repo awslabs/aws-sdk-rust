@@ -60,5 +60,8 @@ pub fn ser_create_cluster_input_input(
     if let Some(var_18) = &input.node_recovery {
         object.key("NodeRecovery").string(var_18.as_str());
     }
+    if let Some(var_19) = &input.node_provisioning_mode {
+        object.key("NodeProvisioningMode").string(var_19.as_str());
+    }
     Ok(())
 }

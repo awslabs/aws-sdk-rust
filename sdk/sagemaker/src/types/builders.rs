@@ -917,6 +917,8 @@ pub use crate::types::_cluster_node_summary::ClusterNodeSummaryBuilder;
 
 pub use crate::types::_cluster_instance_status_details::ClusterInstanceStatusDetailsBuilder;
 
+pub use crate::types::_cluster_event_summary::ClusterEventSummaryBuilder;
+
 pub use crate::types::_auto_ml_candidate::AutoMlCandidateBuilder;
 
 pub use crate::types::_auto_ml_container_definition::AutoMlContainerDefinitionBuilder;
@@ -1187,6 +1189,22 @@ pub use crate::types::_cluster_node_details::ClusterNodeDetailsBuilder;
 
 pub use crate::types::_cluster_instance_placement::ClusterInstancePlacementBuilder;
 
+pub use crate::types::_cluster_event_detail::ClusterEventDetailBuilder;
+
+pub use crate::types::_event_details::EventDetailsBuilder;
+
+pub use crate::types::_instance_metadata::InstanceMetadataBuilder;
+
+pub use crate::types::_capacity_reservation::CapacityReservationBuilder;
+
+pub use crate::types::_additional_enis::AdditionalEnisBuilder;
+
+pub use crate::types::_instance_group_scaling_metadata::InstanceGroupScalingMetadataBuilder;
+
+pub use crate::types::_instance_group_metadata::InstanceGroupMetadataBuilder;
+
+pub use crate::types::_cluster_metadata::ClusterMetadataBuilder;
+
 pub use crate::types::_cluster_orchestrator::ClusterOrchestratorBuilder;
 
 pub use crate::types::_cluster_orchestrator_eks_config::ClusterOrchestratorEksConfigBuilder;
@@ -1307,4 +1325,12 @@ pub use crate::types::_batch_describe_model_package_error::BatchDescribeModelPac
 
 pub use crate::types::_batch_describe_model_package_summary::BatchDescribeModelPackageSummaryBuilder;
 
+pub use crate::types::_batch_delete_cluster_node_logical_ids_error::BatchDeleteClusterNodeLogicalIdsErrorBuilder;
+
 pub use crate::types::_batch_delete_cluster_nodes_error::BatchDeleteClusterNodesErrorBuilder;
+
+pub use crate::types::_batch_add_cluster_nodes_error::BatchAddClusterNodesErrorBuilder;
+
+pub use crate::types::_node_addition_result::NodeAdditionResultBuilder;
+
+pub use crate::types::_add_cluster_node_specification::AddClusterNodeSpecificationBuilder;

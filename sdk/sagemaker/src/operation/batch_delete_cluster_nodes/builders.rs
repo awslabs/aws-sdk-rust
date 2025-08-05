@@ -169,4 +169,23 @@ impl BatchDeleteClusterNodesFluentBuilder {
     pub fn get_node_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_node_ids()
     }
+    ///
+    /// Appends an item to `NodeLogicalIds`.
+    ///
+    /// To override the contents of this collection use [`set_node_logical_ids`](Self::set_node_logical_ids).
+    ///
+    /// <p>A list of <code>NodeLogicalIds</code> identifying the nodes to be deleted. You can specify up to 50 <code>NodeLogicalIds</code>. You must specify either <code>NodeLogicalIds</code>, <code>InstanceIds</code>, or both, with a combined maximum of 50 identifiers.</p>
+    pub fn node_logical_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.node_logical_ids(input.into());
+        self
+    }
+    /// <p>A list of <code>NodeLogicalIds</code> identifying the nodes to be deleted. You can specify up to 50 <code>NodeLogicalIds</code>. You must specify either <code>NodeLogicalIds</code>, <code>InstanceIds</code>, or both, with a combined maximum of 50 identifiers.</p>
+    pub fn set_node_logical_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_node_logical_ids(input);
+        self
+    }
+    /// <p>A list of <code>NodeLogicalIds</code> identifying the nodes to be deleted. You can specify up to 50 <code>NodeLogicalIds</code>. You must specify either <code>NodeLogicalIds</code>, <code>InstanceIds</code>, or both, with a combined maximum of 50 identifiers.</p>
+    pub fn get_node_logical_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_node_logical_ids()
+    }
 }

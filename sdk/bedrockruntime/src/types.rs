@@ -39,6 +39,40 @@ pub use crate::types::_guardrail_text_characters_coverage::GuardrailTextCharacte
 
 pub use crate::types::_guardrail_usage::GuardrailUsage;
 
+pub use crate::types::_guardrail_automated_reasoning_policy_assessment::GuardrailAutomatedReasoningPolicyAssessment;
+
+pub use crate::types::_guardrail_automated_reasoning_finding::GuardrailAutomatedReasoningFinding;
+
+pub use crate::types::_guardrail_automated_reasoning_no_translations_finding::GuardrailAutomatedReasoningNoTranslationsFinding;
+
+pub use crate::types::_guardrail_automated_reasoning_too_complex_finding::GuardrailAutomatedReasoningTooComplexFinding;
+
+pub use crate::types::_guardrail_automated_reasoning_translation_ambiguous_finding::GuardrailAutomatedReasoningTranslationAmbiguousFinding;
+
+pub use crate::types::_guardrail_automated_reasoning_scenario::GuardrailAutomatedReasoningScenario;
+
+pub use crate::types::_guardrail_automated_reasoning_statement::GuardrailAutomatedReasoningStatement;
+
+pub use crate::types::_guardrail_automated_reasoning_translation_option::GuardrailAutomatedReasoningTranslationOption;
+
+pub use crate::types::_guardrail_automated_reasoning_translation::GuardrailAutomatedReasoningTranslation;
+
+pub use crate::types::_guardrail_automated_reasoning_input_text_reference::GuardrailAutomatedReasoningInputTextReference;
+
+pub use crate::types::_guardrail_automated_reasoning_impossible_finding::GuardrailAutomatedReasoningImpossibleFinding;
+
+pub use crate::types::_guardrail_automated_reasoning_logic_warning::GuardrailAutomatedReasoningLogicWarning;
+
+pub use crate::types::_guardrail_automated_reasoning_logic_warning_type::GuardrailAutomatedReasoningLogicWarningType;
+
+pub use crate::types::_guardrail_automated_reasoning_rule::GuardrailAutomatedReasoningRule;
+
+pub use crate::types::_guardrail_automated_reasoning_satisfiable_finding::GuardrailAutomatedReasoningSatisfiableFinding;
+
+pub use crate::types::_guardrail_automated_reasoning_invalid_finding::GuardrailAutomatedReasoningInvalidFinding;
+
+pub use crate::types::_guardrail_automated_reasoning_valid_finding::GuardrailAutomatedReasoningValidFinding;
+
 pub use crate::types::_guardrail_contextual_grounding_policy_assessment::GuardrailContextualGroundingPolicyAssessment;
 
 pub use crate::types::_guardrail_contextual_grounding_filter::GuardrailContextualGroundingFilter;
@@ -342,6 +376,40 @@ mod _document_source;
 mod _guardrail_action;
 
 mod _guardrail_assessment;
+
+mod _guardrail_automated_reasoning_finding;
+
+mod _guardrail_automated_reasoning_impossible_finding;
+
+mod _guardrail_automated_reasoning_input_text_reference;
+
+mod _guardrail_automated_reasoning_invalid_finding;
+
+mod _guardrail_automated_reasoning_logic_warning;
+
+mod _guardrail_automated_reasoning_logic_warning_type;
+
+mod _guardrail_automated_reasoning_no_translations_finding;
+
+mod _guardrail_automated_reasoning_policy_assessment;
+
+mod _guardrail_automated_reasoning_rule;
+
+mod _guardrail_automated_reasoning_satisfiable_finding;
+
+mod _guardrail_automated_reasoning_scenario;
+
+mod _guardrail_automated_reasoning_statement;
+
+mod _guardrail_automated_reasoning_too_complex_finding;
+
+mod _guardrail_automated_reasoning_translation;
+
+mod _guardrail_automated_reasoning_translation_ambiguous_finding;
+
+mod _guardrail_automated_reasoning_translation_option;
+
+mod _guardrail_automated_reasoning_valid_finding;
 
 mod _guardrail_configuration;
 

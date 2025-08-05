@@ -34,5 +34,8 @@ pub fn ser_list_cluster_nodes_input_input(
     if let Some(var_8) = &input.sort_order {
         object.key("SortOrder").string(var_8.as_str());
     }
+    if let Some(var_9) = &input.include_node_logical_ids {
+        object.key("IncludeNodeLogicalIds").boolean(*var_9);
+    }
     Ok(())
 }

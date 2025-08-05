@@ -44,6 +44,26 @@ pub struct ClusterInstanceGroupSpecification {
     pub override_vpc_config: ::std::option::Option<crate::types::VpcConfig>,
     /// <p>The configuration object of the schedule that SageMaker uses to update the AMI.</p>
     pub scheduled_update_config: ::std::option::Option<crate::types::ScheduledUpdateConfig>,
+    /// <p>When configuring your HyperPod cluster, you can specify an image ID using one of the following options:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>HyperPodPublicAmiId</code>: Use a HyperPod public AMI</p></li>
+    /// <li>
+    /// <p><code>CustomAmiId</code>: Use your custom AMI</p></li>
+    /// <li>
+    /// <p><code>default</code>: Use the default latest system image</p></li>
+    /// </ul>
+    /// <p>f you choose to use a custom AMI (<code>CustomAmiId</code>), ensure it meets the following requirements:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Encryption: The custom AMI must be unencrypted.</p></li>
+    /// <li>
+    /// <p>Ownership: The custom AMI must be owned by the same Amazon Web Services account that is creating the HyperPod cluster.</p></li>
+    /// <li>
+    /// <p>Volume support: Only the primary AMI snapshot volume is supported; additional AMI volumes are not supported.</p></li>
+    /// </ul>
+    /// <p>When updating the instance group's AMI through the <code>UpdateClusterSoftware</code> operation, if an instance group uses a custom AMI, you must provide an <code>ImageId</code> or use the default as input.</p>
+    pub image_id: ::std::option::Option<::std::string::String>,
 }
 impl ClusterInstanceGroupSpecification {
     /// <p>Specifies the number of instances to add to the instance group of a SageMaker HyperPod cluster.</p>
@@ -112,6 +132,28 @@ impl ClusterInstanceGroupSpecification {
     pub fn scheduled_update_config(&self) -> ::std::option::Option<&crate::types::ScheduledUpdateConfig> {
         self.scheduled_update_config.as_ref()
     }
+    /// <p>When configuring your HyperPod cluster, you can specify an image ID using one of the following options:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>HyperPodPublicAmiId</code>: Use a HyperPod public AMI</p></li>
+    /// <li>
+    /// <p><code>CustomAmiId</code>: Use your custom AMI</p></li>
+    /// <li>
+    /// <p><code>default</code>: Use the default latest system image</p></li>
+    /// </ul>
+    /// <p>f you choose to use a custom AMI (<code>CustomAmiId</code>), ensure it meets the following requirements:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Encryption: The custom AMI must be unencrypted.</p></li>
+    /// <li>
+    /// <p>Ownership: The custom AMI must be owned by the same Amazon Web Services account that is creating the HyperPod cluster.</p></li>
+    /// <li>
+    /// <p>Volume support: Only the primary AMI snapshot volume is supported; additional AMI volumes are not supported.</p></li>
+    /// </ul>
+    /// <p>When updating the instance group's AMI through the <code>UpdateClusterSoftware</code> operation, if an instance group uses a custom AMI, you must provide an <code>ImageId</code> or use the default as input.</p>
+    pub fn image_id(&self) -> ::std::option::Option<&str> {
+        self.image_id.as_deref()
+    }
 }
 impl ClusterInstanceGroupSpecification {
     /// Creates a new builder-style object to manufacture [`ClusterInstanceGroupSpecification`](crate::types::ClusterInstanceGroupSpecification).
@@ -135,6 +177,7 @@ pub struct ClusterInstanceGroupSpecificationBuilder {
     pub(crate) training_plan_arn: ::std::option::Option<::std::string::String>,
     pub(crate) override_vpc_config: ::std::option::Option<crate::types::VpcConfig>,
     pub(crate) scheduled_update_config: ::std::option::Option<crate::types::ScheduledUpdateConfig>,
+    pub(crate) image_id: ::std::option::Option<::std::string::String>,
 }
 impl ClusterInstanceGroupSpecificationBuilder {
     /// <p>Specifies the number of instances to add to the instance group of a SageMaker HyperPod cluster.</p>
@@ -362,6 +405,74 @@ impl ClusterInstanceGroupSpecificationBuilder {
     pub fn get_scheduled_update_config(&self) -> &::std::option::Option<crate::types::ScheduledUpdateConfig> {
         &self.scheduled_update_config
     }
+    /// <p>When configuring your HyperPod cluster, you can specify an image ID using one of the following options:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>HyperPodPublicAmiId</code>: Use a HyperPod public AMI</p></li>
+    /// <li>
+    /// <p><code>CustomAmiId</code>: Use your custom AMI</p></li>
+    /// <li>
+    /// <p><code>default</code>: Use the default latest system image</p></li>
+    /// </ul>
+    /// <p>f you choose to use a custom AMI (<code>CustomAmiId</code>), ensure it meets the following requirements:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Encryption: The custom AMI must be unencrypted.</p></li>
+    /// <li>
+    /// <p>Ownership: The custom AMI must be owned by the same Amazon Web Services account that is creating the HyperPod cluster.</p></li>
+    /// <li>
+    /// <p>Volume support: Only the primary AMI snapshot volume is supported; additional AMI volumes are not supported.</p></li>
+    /// </ul>
+    /// <p>When updating the instance group's AMI through the <code>UpdateClusterSoftware</code> operation, if an instance group uses a custom AMI, you must provide an <code>ImageId</code> or use the default as input.</p>
+    pub fn image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.image_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>When configuring your HyperPod cluster, you can specify an image ID using one of the following options:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>HyperPodPublicAmiId</code>: Use a HyperPod public AMI</p></li>
+    /// <li>
+    /// <p><code>CustomAmiId</code>: Use your custom AMI</p></li>
+    /// <li>
+    /// <p><code>default</code>: Use the default latest system image</p></li>
+    /// </ul>
+    /// <p>f you choose to use a custom AMI (<code>CustomAmiId</code>), ensure it meets the following requirements:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Encryption: The custom AMI must be unencrypted.</p></li>
+    /// <li>
+    /// <p>Ownership: The custom AMI must be owned by the same Amazon Web Services account that is creating the HyperPod cluster.</p></li>
+    /// <li>
+    /// <p>Volume support: Only the primary AMI snapshot volume is supported; additional AMI volumes are not supported.</p></li>
+    /// </ul>
+    /// <p>When updating the instance group's AMI through the <code>UpdateClusterSoftware</code> operation, if an instance group uses a custom AMI, you must provide an <code>ImageId</code> or use the default as input.</p>
+    pub fn set_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.image_id = input;
+        self
+    }
+    /// <p>When configuring your HyperPod cluster, you can specify an image ID using one of the following options:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>HyperPodPublicAmiId</code>: Use a HyperPod public AMI</p></li>
+    /// <li>
+    /// <p><code>CustomAmiId</code>: Use your custom AMI</p></li>
+    /// <li>
+    /// <p><code>default</code>: Use the default latest system image</p></li>
+    /// </ul>
+    /// <p>f you choose to use a custom AMI (<code>CustomAmiId</code>), ensure it meets the following requirements:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Encryption: The custom AMI must be unencrypted.</p></li>
+    /// <li>
+    /// <p>Ownership: The custom AMI must be owned by the same Amazon Web Services account that is creating the HyperPod cluster.</p></li>
+    /// <li>
+    /// <p>Volume support: Only the primary AMI snapshot volume is supported; additional AMI volumes are not supported.</p></li>
+    /// </ul>
+    /// <p>When updating the instance group's AMI through the <code>UpdateClusterSoftware</code> operation, if an instance group uses a custom AMI, you must provide an <code>ImageId</code> or use the default as input.</p>
+    pub fn get_image_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_id
+    }
     /// Consumes the builder and constructs a [`ClusterInstanceGroupSpecification`](crate::types::ClusterInstanceGroupSpecification).
     pub fn build(self) -> crate::types::ClusterInstanceGroupSpecification {
         crate::types::ClusterInstanceGroupSpecification {
@@ -376,6 +487,7 @@ impl ClusterInstanceGroupSpecificationBuilder {
             training_plan_arn: self.training_plan_arn,
             override_vpc_config: self.override_vpc_config,
             scheduled_update_config: self.scheduled_update_config,
+            image_id: self.image_id,
         }
     }
 }

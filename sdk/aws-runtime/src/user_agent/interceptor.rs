@@ -8,6 +8,7 @@ use std::fmt;
 
 use http_02x::header::{HeaderName, HeaderValue, InvalidHeaderValue, USER_AGENT};
 
+use aws_credential_types::credential_feature::AwsCredentialFeature;
 use aws_smithy_runtime::client::sdk_feature::SmithySdkFeature;
 use aws_smithy_runtime_api::box_error::BoxError;
 use aws_smithy_runtime_api::client::http::HttpClient;
@@ -142,6 +143,13 @@ impl Intercept for UserAgentInterceptor {
         let aws_sdk_features = cfg.load::<AwsSdkFeature>();
         for aws_sdk_feature in aws_sdk_features {
             aws_sdk_feature
+                .provide_business_metric()
+                .map(|m| ua.add_business_metric(m));
+        }
+
+        let aws_credential_features = cfg.load::<AwsCredentialFeature>();
+        for aws_credential_feature in aws_credential_features {
+            aws_credential_feature
                 .provide_business_metric()
                 .map(|m| ua.add_business_metric(m));
         }

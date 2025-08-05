@@ -388,4 +388,18 @@ impl CreateClusterFluentBuilder {
     pub fn get_storage_config(&self) -> &::std::option::Option<crate::types::StorageConfigRequest> {
         self.inner.get_storage_config()
     }
+    /// <p>Indicates whether to enable deletion protection for the cluster. When enabled, the cluster cannot be deleted unless deletion protection is first disabled. This helps prevent accidental cluster deletion. Default value is <code>false</code>.</p>
+    pub fn deletion_protection(mut self, input: bool) -> Self {
+        self.inner = self.inner.deletion_protection(input);
+        self
+    }
+    /// <p>Indicates whether to enable deletion protection for the cluster. When enabled, the cluster cannot be deleted unless deletion protection is first disabled. This helps prevent accidental cluster deletion. Default value is <code>false</code>.</p>
+    pub fn set_deletion_protection(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_deletion_protection(input);
+        self
+    }
+    /// <p>Indicates whether to enable deletion protection for the cluster. When enabled, the cluster cannot be deleted unless deletion protection is first disabled. This helps prevent accidental cluster deletion. Default value is <code>false</code>.</p>
+    pub fn get_deletion_protection(&self) -> &::std::option::Option<bool> {
+        self.inner.get_deletion_protection()
+    }
 }

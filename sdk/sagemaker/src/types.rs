@@ -1413,6 +1413,12 @@ pub use crate::types::_cluster_instance_status_details::ClusterInstanceStatusDet
 
 pub use crate::types::_cluster_instance_status::ClusterInstanceStatus;
 
+pub use crate::types::_cluster_event_summary::ClusterEventSummary;
+
+pub use crate::types::_cluster_event_resource_type::ClusterEventResourceType;
+
+pub use crate::types::_event_sort_by::EventSortBy;
+
 pub use crate::types::_auto_ml_candidate::AutoMlCandidate;
 
 pub use crate::types::_auto_ml_container_definition::AutoMlContainerDefinition;
@@ -1789,6 +1795,28 @@ pub use crate::types::_cluster_node_details::ClusterNodeDetails;
 
 pub use crate::types::_cluster_instance_placement::ClusterInstancePlacement;
 
+pub use crate::types::_cluster_event_detail::ClusterEventDetail;
+
+pub use crate::types::_event_details::EventDetails;
+
+pub use crate::types::_event_metadata::EventMetadata;
+
+pub use crate::types::_instance_metadata::InstanceMetadata;
+
+pub use crate::types::_capacity_reservation::CapacityReservation;
+
+pub use crate::types::_capacity_reservation_type::CapacityReservationType;
+
+pub use crate::types::_additional_enis::AdditionalEnis;
+
+pub use crate::types::_instance_group_scaling_metadata::InstanceGroupScalingMetadata;
+
+pub use crate::types::_instance_group_metadata::InstanceGroupMetadata;
+
+pub use crate::types::_cluster_metadata::ClusterMetadata;
+
+pub use crate::types::_cluster_node_provisioning_mode::ClusterNodeProvisioningMode;
+
 pub use crate::types::_cluster_orchestrator::ClusterOrchestrator;
 
 pub use crate::types::_cluster_orchestrator_eks_config::ClusterOrchestratorEksConfig;
@@ -1937,9 +1965,19 @@ pub use crate::types::_batch_describe_model_package_error::BatchDescribeModelPac
 
 pub use crate::types::_batch_describe_model_package_summary::BatchDescribeModelPackageSummary;
 
-pub use crate::types::_batch_delete_cluster_nodes_error::BatchDeleteClusterNodesError;
+pub use crate::types::_batch_delete_cluster_node_logical_ids_error::BatchDeleteClusterNodeLogicalIdsError;
 
 pub use crate::types::_batch_delete_cluster_nodes_error_code::BatchDeleteClusterNodesErrorCode;
+
+pub use crate::types::_batch_delete_cluster_nodes_error::BatchDeleteClusterNodesError;
+
+pub use crate::types::_batch_add_cluster_nodes_error::BatchAddClusterNodesError;
+
+pub use crate::types::_batch_add_cluster_nodes_error_code::BatchAddClusterNodesErrorCode;
+
+pub use crate::types::_node_addition_result::NodeAdditionResult;
+
+pub use crate::types::_add_cluster_node_specification::AddClusterNodeSpecification;
 
 mod _action_source;
 
@@ -1948,6 +1986,10 @@ mod _action_status;
 mod _action_summary;
 
 mod _activation_state;
+
+mod _add_cluster_node_specification;
+
+mod _additional_enis;
 
 mod _additional_inference_specification_definition;
 
@@ -2125,7 +2167,13 @@ mod _autotune_mode;
 
 mod _aws_managed_human_loop_request_source;
 
+mod _batch_add_cluster_nodes_error;
+
+mod _batch_add_cluster_nodes_error_code;
+
 mod _batch_data_capture_config;
+
+mod _batch_delete_cluster_node_logical_ids_error;
 
 mod _batch_delete_cluster_nodes_error;
 
@@ -2165,7 +2213,11 @@ mod _candidate_step_type;
 
 mod _canvas_app_settings;
 
+mod _capacity_reservation;
+
 mod _capacity_reservation_preference;
+
+mod _capacity_reservation_type;
 
 mod _capacity_size;
 
@@ -2227,6 +2279,12 @@ mod _clarify_text_language;
 
 mod _cluster_ebs_volume_config;
 
+mod _cluster_event_detail;
+
+mod _cluster_event_resource_type;
+
+mod _cluster_event_summary;
+
 mod _cluster_instance_group_details;
 
 mod _cluster_instance_group_specification;
@@ -2243,7 +2301,11 @@ mod _cluster_instance_type;
 
 mod _cluster_life_cycle_config;
 
+mod _cluster_metadata;
+
 mod _cluster_node_details;
+
+mod _cluster_node_provisioning_mode;
 
 mod _cluster_node_recovery;
 
@@ -2523,6 +2585,12 @@ mod _environment_parameter_ranges;
 
 mod _error_info;
 
+mod _event_details;
+
+mod _event_metadata;
+
+mod _event_sort_by;
+
 mod _execution_role_identity_config;
 
 mod _execution_status;
@@ -2783,7 +2851,13 @@ mod _input_mode;
 
 mod _instance_group;
 
+mod _instance_group_metadata;
+
+mod _instance_group_scaling_metadata;
+
 mod _instance_group_status;
+
+mod _instance_metadata;
 
 mod _instance_metadata_service_configuration;
 
@@ -3126,6 +3200,8 @@ mod _neo_vpc_config;
 mod _nested_filters;
 
 mod _network_config;
+
+mod _node_addition_result;
 
 mod _node_unavailability_type;
 

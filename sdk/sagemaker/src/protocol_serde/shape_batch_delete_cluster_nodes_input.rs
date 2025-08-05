@@ -15,5 +15,14 @@ pub fn ser_batch_delete_cluster_nodes_input_input(
         }
         array_3.finish();
     }
+    if let Some(var_5) = &input.node_logical_ids {
+        let mut array_6 = object.key("NodeLogicalIds").start_array();
+        for item_7 in var_5 {
+            {
+                array_6.value().string(item_7.as_str());
+            }
+        }
+        array_6.finish();
+    }
     Ok(())
 }

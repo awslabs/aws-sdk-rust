@@ -160,4 +160,72 @@ impl UpdateClusterSoftwareFluentBuilder {
     pub fn get_deployment_config(&self) -> &::std::option::Option<crate::types::DeploymentConfiguration> {
         self.inner.get_deployment_config()
     }
+    /// <p>When configuring your HyperPod cluster, you can specify an image ID using one of the following options:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>HyperPodPublicAmiId</code>: Use a HyperPod public AMI</p></li>
+    /// <li>
+    /// <p><code>CustomAmiId</code>: Use your custom AMI</p></li>
+    /// <li>
+    /// <p><code>default</code>: Use the default latest system image</p></li>
+    /// </ul>
+    /// <p>f you choose to use a custom AMI (<code>CustomAmiId</code>), ensure it meets the following requirements:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Encryption: The custom AMI must be unencrypted.</p></li>
+    /// <li>
+    /// <p>Ownership: The custom AMI must be owned by the same Amazon Web Services account that is creating the HyperPod cluster.</p></li>
+    /// <li>
+    /// <p>Volume support: Only the primary AMI snapshot volume is supported; additional AMI volumes are not supported.</p></li>
+    /// </ul>
+    /// <p>When updating the instance group's AMI through the <code>UpdateClusterSoftware</code> operation, if an instance group uses a custom AMI, you must provide an <code>ImageId</code> or use the default as input.</p>
+    pub fn image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.image_id(input.into());
+        self
+    }
+    /// <p>When configuring your HyperPod cluster, you can specify an image ID using one of the following options:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>HyperPodPublicAmiId</code>: Use a HyperPod public AMI</p></li>
+    /// <li>
+    /// <p><code>CustomAmiId</code>: Use your custom AMI</p></li>
+    /// <li>
+    /// <p><code>default</code>: Use the default latest system image</p></li>
+    /// </ul>
+    /// <p>f you choose to use a custom AMI (<code>CustomAmiId</code>), ensure it meets the following requirements:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Encryption: The custom AMI must be unencrypted.</p></li>
+    /// <li>
+    /// <p>Ownership: The custom AMI must be owned by the same Amazon Web Services account that is creating the HyperPod cluster.</p></li>
+    /// <li>
+    /// <p>Volume support: Only the primary AMI snapshot volume is supported; additional AMI volumes are not supported.</p></li>
+    /// </ul>
+    /// <p>When updating the instance group's AMI through the <code>UpdateClusterSoftware</code> operation, if an instance group uses a custom AMI, you must provide an <code>ImageId</code> or use the default as input.</p>
+    pub fn set_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_image_id(input);
+        self
+    }
+    /// <p>When configuring your HyperPod cluster, you can specify an image ID using one of the following options:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>HyperPodPublicAmiId</code>: Use a HyperPod public AMI</p></li>
+    /// <li>
+    /// <p><code>CustomAmiId</code>: Use your custom AMI</p></li>
+    /// <li>
+    /// <p><code>default</code>: Use the default latest system image</p></li>
+    /// </ul>
+    /// <p>f you choose to use a custom AMI (<code>CustomAmiId</code>), ensure it meets the following requirements:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Encryption: The custom AMI must be unencrypted.</p></li>
+    /// <li>
+    /// <p>Ownership: The custom AMI must be owned by the same Amazon Web Services account that is creating the HyperPod cluster.</p></li>
+    /// <li>
+    /// <p>Volume support: Only the primary AMI snapshot volume is supported; additional AMI volumes are not supported.</p></li>
+    /// </ul>
+    /// <p>When updating the instance group's AMI through the <code>UpdateClusterSoftware</code> operation, if an instance group uses a custom AMI, you must provide an <code>ImageId</code> or use the default as input.</p>
+    pub fn get_image_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_image_id()
+    }
 }

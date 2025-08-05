@@ -28,6 +28,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "NodeLogicalId" => {
+                            builder = builder.set_node_logical_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "InstanceType" => {
                             builder = builder.set_instance_type(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

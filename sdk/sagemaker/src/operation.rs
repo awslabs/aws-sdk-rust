@@ -13,6 +13,9 @@ pub mod associate_trial_component;
 /// Types for the `AttachClusterNodeVolume` operation.
 pub mod attach_cluster_node_volume;
 
+/// Types for the `BatchAddClusterNodes` operation.
+pub mod batch_add_cluster_nodes;
+
 /// Types for the `BatchDeleteClusterNodes` operation.
 pub mod batch_delete_cluster_nodes;
 
@@ -409,6 +412,9 @@ pub mod describe_auto_ml_job_v2;
 /// Types for the `DescribeCluster` operation.
 pub mod describe_cluster;
 
+/// Types for the `DescribeClusterEvent` operation.
+pub mod describe_cluster_event;
+
 /// Types for the `DescribeClusterNode` operation.
 pub mod describe_cluster_node;
 
@@ -645,6 +651,9 @@ pub mod list_auto_ml_jobs;
 
 /// Types for the `ListCandidatesForAutoMLJob` operation.
 pub mod list_candidates_for_auto_ml_job;
+
+/// Types for the `ListClusterEvents` operation.
+pub mod list_cluster_events;
 
 /// Types for the `ListClusterNodes` operation.
 pub mod list_cluster_nodes;

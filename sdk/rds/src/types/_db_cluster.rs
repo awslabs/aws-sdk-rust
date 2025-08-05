@@ -189,6 +189,8 @@ pub struct DbCluster {
     /// <p>The scaling configuration for an Aurora Serverless v2 DB cluster.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub serverless_v2_scaling_configuration: ::std::option::Option<crate::types::ServerlessV2ScalingConfigurationInfo>,
+    /// <p>The version of the Aurora Serverless V2 platform used by the DB cluster. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub serverless_v2_platform_version: ::std::option::Option<::std::string::String>,
     /// <p>The network type of the DB instance.</p>
     /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i></p>
@@ -569,6 +571,10 @@ impl DbCluster {
     pub fn serverless_v2_scaling_configuration(&self) -> ::std::option::Option<&crate::types::ServerlessV2ScalingConfigurationInfo> {
         self.serverless_v2_scaling_configuration.as_ref()
     }
+    /// <p>The version of the Aurora Serverless V2 platform used by the DB cluster. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub fn serverless_v2_platform_version(&self) -> ::std::option::Option<&str> {
+        self.serverless_v2_platform_version.as_deref()
+    }
     /// <p>The network type of the DB instance.</p>
     /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i></p>
@@ -706,6 +712,7 @@ pub struct DbClusterBuilder {
     pub(crate) performance_insights_kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) performance_insights_retention_period: ::std::option::Option<i32>,
     pub(crate) serverless_v2_scaling_configuration: ::std::option::Option<crate::types::ServerlessV2ScalingConfigurationInfo>,
+    pub(crate) serverless_v2_platform_version: ::std::option::Option<::std::string::String>,
     pub(crate) network_type: ::std::option::Option<::std::string::String>,
     pub(crate) db_system_id: ::std::option::Option<::std::string::String>,
     pub(crate) master_user_secret: ::std::option::Option<crate::types::MasterUserSecret>,
@@ -1910,6 +1917,20 @@ impl DbClusterBuilder {
     pub fn get_serverless_v2_scaling_configuration(&self) -> &::std::option::Option<crate::types::ServerlessV2ScalingConfigurationInfo> {
         &self.serverless_v2_scaling_configuration
     }
+    /// <p>The version of the Aurora Serverless V2 platform used by the DB cluster. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub fn serverless_v2_platform_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.serverless_v2_platform_version = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The version of the Aurora Serverless V2 platform used by the DB cluster. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub fn set_serverless_v2_platform_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.serverless_v2_platform_version = input;
+        self
+    }
+    /// <p>The version of the Aurora Serverless V2 platform used by the DB cluster. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub fn get_serverless_v2_platform_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.serverless_v2_platform_version
+    }
     /// <p>The network type of the DB instance.</p>
     /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i></p>
@@ -2166,6 +2187,7 @@ impl DbClusterBuilder {
             performance_insights_kms_key_id: self.performance_insights_kms_key_id,
             performance_insights_retention_period: self.performance_insights_retention_period,
             serverless_v2_scaling_configuration: self.serverless_v2_scaling_configuration,
+            serverless_v2_platform_version: self.serverless_v2_platform_version,
             network_type: self.network_type,
             db_system_id: self.db_system_id,
             master_user_secret: self.master_user_secret,

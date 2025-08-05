@@ -5,6 +5,7 @@
 
 //! Assume credentials for a role through the AWS Security Token Service (STS).
 
+use aws_credential_types::credential_feature::AwsCredentialFeature;
 use aws_credential_types::provider::{
     self, error::CredentialsError, future, ProvideCredentials, SharedCredentialsProvider,
 };
@@ -285,7 +286,7 @@ impl Inner {
         tracing::debug!("retrieving assumed credentials");
 
         let assumed = self.fluent_builder.clone().send().in_current_span().await;
-        match assumed {
+        let assumed = match assumed {
             Ok(assumed) => {
                 tracing::debug!(
                     access_key_id = ?assumed.credentials.as_ref().map(|c| &c.access_key_id),
@@ -313,7 +314,14 @@ impl Inner {
                 Err(CredentialsError::provider_error(assumed.err().unwrap()))
             }
             Err(err) => Err(CredentialsError::provider_error(err)),
-        }
+        };
+
+        assumed.map(|mut creds| {
+            creds
+                .get_property_mut_or_default::<Vec<AwsCredentialFeature>>()
+                .push(AwsCredentialFeature::CredentialsStsAssumeRole);
+            creds
+        })
     }
 }
 
@@ -333,6 +341,7 @@ impl ProvideCredentials for AssumeRoleProvider {
 #[cfg(test)]
 mod test {
     use crate::sts::AssumeRoleProvider;
+    use aws_credential_types::credential_feature::AwsCredentialFeature;
     use aws_credential_types::credential_fn::provide_credentials_fn;
     use aws_credential_types::provider::{ProvideCredentials, SharedCredentialsProvider};
     use aws_credential_types::Credentials;
@@ -443,9 +452,8 @@ mod test {
         assert_eq!("https://sts-fips.us-west-17.api.aws/", req.uri())
     }
 
-    #[tokio::test]
-    async fn provider_does_not_cache_credentials_by_default() {
-        let http_client = StaticReplayClient::new(vec![
+    fn create_test_http_client() -> StaticReplayClient {
+        StaticReplayClient::new(vec![
             ReplayEvent::new(http::Request::new(SdkBody::from("request body")),
             http::Response::builder().status(200).body(SdkBody::from(
                 "<AssumeRoleResponse xmlns=\"https://sts.amazonaws.com/doc/2011-06-15/\">\n  <AssumeRoleResult>\n    <AssumedRoleUser>\n      <AssumedRoleId>AROAR42TAWARILN3MNKUT:assume-role-from-profile-1632246085998</AssumedRoleId>\n      <Arn>arn:aws:sts::130633740322:assumed-role/assume-provider-test/assume-role-from-profile-1632246085998</Arn>\n    </AssumedRoleUser>\n    <Credentials>\n      <AccessKeyId>ASIARCORRECT</AccessKeyId>\n      <SecretAccessKey>secretkeycorrect</SecretAccessKey>\n      <SessionToken>tokencorrect</SessionToken>\n      <Expiration>2009-02-13T23:31:30Z</Expiration>\n    </Credentials>\n  </AssumeRoleResult>\n  <ResponseMetadata>\n    <RequestId>d9d47248-fd55-4686-ad7c-0fb7cd1cddd7</RequestId>\n  </ResponseMetadata>\n</AssumeRoleResponse>\n"
@@ -454,7 +462,12 @@ mod test {
             http::Response::builder().status(200).body(SdkBody::from(
                 "<AssumeRoleResponse xmlns=\"https://sts.amazonaws.com/doc/2011-06-15/\">\n  <AssumeRoleResult>\n    <AssumedRoleUser>\n      <AssumedRoleId>AROAR42TAWARILN3MNKUT:assume-role-from-profile-1632246085998</AssumedRoleId>\n      <Arn>arn:aws:sts::130633740322:assumed-role/assume-provider-test/assume-role-from-profile-1632246085998</Arn>\n    </AssumedRoleUser>\n    <Credentials>\n      <AccessKeyId>ASIARCORRECT</AccessKeyId>\n      <SecretAccessKey>TESTSECRET</SecretAccessKey>\n      <SessionToken>tokencorrect</SessionToken>\n      <Expiration>2009-02-13T23:33:30Z</Expiration>\n    </Credentials>\n  </AssumeRoleResult>\n  <ResponseMetadata>\n    <RequestId>c2e971c2-702d-4124-9b1f-1670febbea18</RequestId>\n  </ResponseMetadata>\n</AssumeRoleResponse>\n"
             )).unwrap()),
-        ]);
+        ])
+    }
+
+    #[tokio::test]
+    async fn provider_does_not_cache_credentials_by_default() {
+        let http_client = create_test_http_client();
 
         let (testing_time_source, sleep) = instant_time_and_sleep(
             UNIX_EPOCH + Duration::from_secs(1234567890 - 120), // 1234567890 since UNIX_EPOCH is 2009-02-13T23:31:30Z
@@ -511,5 +524,43 @@ mod test {
             .expect("should return the second credentials");
         assert_ne!(creds_first, creds_second);
         assert!(credentials_list_cloned.lock().unwrap().is_empty());
+    }
+
+    #[tokio::test]
+    async fn credentials_feature() {
+        let http_client = create_test_http_client();
+
+        let (testing_time_source, sleep) = instant_time_and_sleep(
+            UNIX_EPOCH + Duration::from_secs(1234567890), // 1234567890 since UNIX_EPOCH is 2009-02-13T23:31:30Z
+        );
+
+        let sdk_config = SdkConfig::builder()
+            .sleep_impl(SharedAsyncSleep::new(sleep))
+            .time_source(testing_time_source.clone())
+            .http_client(http_client)
+            .behavior_version(crate::BehaviorVersion::latest())
+            .build();
+        let credentials = Credentials::new(
+            "test",
+            "test",
+            None,
+            Some(UNIX_EPOCH + Duration::from_secs(1234567890 + 1)),
+            "test",
+        );
+        let provider = AssumeRoleProvider::builder("myrole")
+            .configure(&sdk_config)
+            .region(Region::new("us-east-1"))
+            .build_from_provider(credentials)
+            .await;
+
+        let creds = provider
+            .provide_credentials()
+            .await
+            .expect("should return valid credentials");
+
+        assert_eq!(
+            &vec![AwsCredentialFeature::CredentialsStsAssumeRole],
+            creds.get_property::<Vec<AwsCredentialFeature>>().unwrap()
+        )
     }
 }

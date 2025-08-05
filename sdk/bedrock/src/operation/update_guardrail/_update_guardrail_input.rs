@@ -19,6 +19,8 @@ pub struct UpdateGuardrailInput {
     pub sensitive_information_policy_config: ::std::option::Option<crate::types::GuardrailSensitiveInformationPolicyConfig>,
     /// <p>The contextual grounding policy configuration used to update a guardrail.</p>
     pub contextual_grounding_policy_config: ::std::option::Option<crate::types::GuardrailContextualGroundingPolicyConfig>,
+    /// <p>Updated configuration for Automated Reasoning policies associated with the guardrail.</p>
+    pub automated_reasoning_policy_config: ::std::option::Option<crate::types::GuardrailAutomatedReasoningPolicyConfig>,
     /// <p>The system-defined guardrail profile that you're using with your guardrail. Guardrail profiles define the destination Amazon Web Services Regions where guardrail inference requests can be automatically routed.</p>
     /// <p>For more information, see the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-cross-region.html">Amazon Bedrock User Guide</a>.</p>
     pub cross_region_config: ::std::option::Option<crate::types::GuardrailCrossRegionConfig>,
@@ -62,6 +64,10 @@ impl UpdateGuardrailInput {
     pub fn contextual_grounding_policy_config(&self) -> ::std::option::Option<&crate::types::GuardrailContextualGroundingPolicyConfig> {
         self.contextual_grounding_policy_config.as_ref()
     }
+    /// <p>Updated configuration for Automated Reasoning policies associated with the guardrail.</p>
+    pub fn automated_reasoning_policy_config(&self) -> ::std::option::Option<&crate::types::GuardrailAutomatedReasoningPolicyConfig> {
+        self.automated_reasoning_policy_config.as_ref()
+    }
     /// <p>The system-defined guardrail profile that you're using with your guardrail. Guardrail profiles define the destination Amazon Web Services Regions where guardrail inference requests can be automatically routed.</p>
     /// <p>For more information, see the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-cross-region.html">Amazon Bedrock User Guide</a>.</p>
     pub fn cross_region_config(&self) -> ::std::option::Option<&crate::types::GuardrailCrossRegionConfig> {
@@ -91,6 +97,7 @@ impl ::std::fmt::Debug for UpdateGuardrailInput {
         formatter.field("word_policy_config", &self.word_policy_config);
         formatter.field("sensitive_information_policy_config", &self.sensitive_information_policy_config);
         formatter.field("contextual_grounding_policy_config", &self.contextual_grounding_policy_config);
+        formatter.field("automated_reasoning_policy_config", &self.automated_reasoning_policy_config);
         formatter.field("cross_region_config", &self.cross_region_config);
         formatter.field("blocked_input_messaging", &"*** Sensitive Data Redacted ***");
         formatter.field("blocked_outputs_messaging", &"*** Sensitive Data Redacted ***");
@@ -117,6 +124,7 @@ pub struct UpdateGuardrailInputBuilder {
     pub(crate) word_policy_config: ::std::option::Option<crate::types::GuardrailWordPolicyConfig>,
     pub(crate) sensitive_information_policy_config: ::std::option::Option<crate::types::GuardrailSensitiveInformationPolicyConfig>,
     pub(crate) contextual_grounding_policy_config: ::std::option::Option<crate::types::GuardrailContextualGroundingPolicyConfig>,
+    pub(crate) automated_reasoning_policy_config: ::std::option::Option<crate::types::GuardrailAutomatedReasoningPolicyConfig>,
     pub(crate) cross_region_config: ::std::option::Option<crate::types::GuardrailCrossRegionConfig>,
     pub(crate) blocked_input_messaging: ::std::option::Option<::std::string::String>,
     pub(crate) blocked_outputs_messaging: ::std::option::Option<::std::string::String>,
@@ -243,6 +251,23 @@ impl UpdateGuardrailInputBuilder {
     pub fn get_contextual_grounding_policy_config(&self) -> &::std::option::Option<crate::types::GuardrailContextualGroundingPolicyConfig> {
         &self.contextual_grounding_policy_config
     }
+    /// <p>Updated configuration for Automated Reasoning policies associated with the guardrail.</p>
+    pub fn automated_reasoning_policy_config(mut self, input: crate::types::GuardrailAutomatedReasoningPolicyConfig) -> Self {
+        self.automated_reasoning_policy_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Updated configuration for Automated Reasoning policies associated with the guardrail.</p>
+    pub fn set_automated_reasoning_policy_config(
+        mut self,
+        input: ::std::option::Option<crate::types::GuardrailAutomatedReasoningPolicyConfig>,
+    ) -> Self {
+        self.automated_reasoning_policy_config = input;
+        self
+    }
+    /// <p>Updated configuration for Automated Reasoning policies associated with the guardrail.</p>
+    pub fn get_automated_reasoning_policy_config(&self) -> &::std::option::Option<crate::types::GuardrailAutomatedReasoningPolicyConfig> {
+        &self.automated_reasoning_policy_config
+    }
     /// <p>The system-defined guardrail profile that you're using with your guardrail. Guardrail profiles define the destination Amazon Web Services Regions where guardrail inference requests can be automatically routed.</p>
     /// <p>For more information, see the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-cross-region.html">Amazon Bedrock User Guide</a>.</p>
     pub fn cross_region_config(mut self, input: crate::types::GuardrailCrossRegionConfig) -> Self {
@@ -317,6 +342,7 @@ impl UpdateGuardrailInputBuilder {
             word_policy_config: self.word_policy_config,
             sensitive_information_policy_config: self.sensitive_information_policy_config,
             contextual_grounding_policy_config: self.contextual_grounding_policy_config,
+            automated_reasoning_policy_config: self.automated_reasoning_policy_config,
             cross_region_config: self.cross_region_config,
             blocked_input_messaging: self.blocked_input_messaging,
             blocked_outputs_messaging: self.blocked_outputs_messaging,
@@ -335,6 +361,7 @@ impl ::std::fmt::Debug for UpdateGuardrailInputBuilder {
         formatter.field("word_policy_config", &self.word_policy_config);
         formatter.field("sensitive_information_policy_config", &self.sensitive_information_policy_config);
         formatter.field("contextual_grounding_policy_config", &self.contextual_grounding_policy_config);
+        formatter.field("automated_reasoning_policy_config", &self.automated_reasoning_policy_config);
         formatter.field("cross_region_config", &self.cross_region_config);
         formatter.field("blocked_input_messaging", &"*** Sensitive Data Redacted ***");
         formatter.field("blocked_outputs_messaging", &"*** Sensitive Data Redacted ***");

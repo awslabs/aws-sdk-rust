@@ -91,6 +91,8 @@ pub use crate::types::_inference_profile_summary::InferenceProfileSummaryBuilder
 
 pub use crate::types::_guardrail_cross_region_config::GuardrailCrossRegionConfigBuilder;
 
+pub use crate::types::_guardrail_automated_reasoning_policy_config::GuardrailAutomatedReasoningPolicyConfigBuilder;
+
 pub use crate::types::_guardrail_contextual_grounding_policy_config::GuardrailContextualGroundingPolicyConfigBuilder;
 
 pub use crate::types::_guardrail_contextual_grounding_filter_config::GuardrailContextualGroundingFilterConfigBuilder;
@@ -120,6 +122,8 @@ pub use crate::types::_guardrail_topics_tier_config::GuardrailTopicsTierConfigBu
 pub use crate::types::_guardrail_topic_config::GuardrailTopicConfigBuilder;
 
 pub use crate::types::_guardrail_cross_region_details::GuardrailCrossRegionDetailsBuilder;
+
+pub use crate::types::_guardrail_automated_reasoning_policy::GuardrailAutomatedReasoningPolicyBuilder;
 
 pub use crate::types::_guardrail_contextual_grounding_policy::GuardrailContextualGroundingPolicyBuilder;
 
@@ -258,3 +262,123 @@ pub use crate::types::_marketplace_model_endpoint::MarketplaceModelEndpointBuild
 pub use crate::types::_sage_maker_endpoint::SageMakerEndpointBuilder;
 
 pub use crate::types::_marketplace_model_endpoint_summary::MarketplaceModelEndpointSummaryBuilder;
+
+pub use crate::types::_automated_reasoning_policy_ingest_content_annotation::AutomatedReasoningPolicyIngestContentAnnotationBuilder;
+
+pub use crate::types::_automated_reasoning_policy_update_from_scenario_feedback_annotation::AutomatedReasoningPolicyUpdateFromScenarioFeedbackAnnotationBuilder;
+
+pub use crate::types::_automated_reasoning_policy_update_from_rule_feedback_annotation::AutomatedReasoningPolicyUpdateFromRuleFeedbackAnnotationBuilder;
+
+pub use crate::types::_automated_reasoning_policy_add_rule_from_natural_language_annotation::AutomatedReasoningPolicyAddRuleFromNaturalLanguageAnnotationBuilder;
+
+pub use crate::types::_automated_reasoning_policy_delete_rule_annotation::AutomatedReasoningPolicyDeleteRuleAnnotationBuilder;
+
+pub use crate::types::_automated_reasoning_policy_update_rule_annotation::AutomatedReasoningPolicyUpdateRuleAnnotationBuilder;
+
+pub use crate::types::_automated_reasoning_policy_add_rule_annotation::AutomatedReasoningPolicyAddRuleAnnotationBuilder;
+
+pub use crate::types::_automated_reasoning_policy_delete_variable_annotation::AutomatedReasoningPolicyDeleteVariableAnnotationBuilder;
+
+pub use crate::types::_automated_reasoning_policy_update_variable_annotation::AutomatedReasoningPolicyUpdateVariableAnnotationBuilder;
+
+pub use crate::types::_automated_reasoning_policy_add_variable_annotation::AutomatedReasoningPolicyAddVariableAnnotationBuilder;
+
+pub use crate::types::_automated_reasoning_policy_delete_type_annotation::AutomatedReasoningPolicyDeleteTypeAnnotationBuilder;
+
+pub use crate::types::_automated_reasoning_policy_update_type_annotation::AutomatedReasoningPolicyUpdateTypeAnnotationBuilder;
+
+pub use crate::types::_automated_reasoning_policy_delete_type_value::AutomatedReasoningPolicyDeleteTypeValueBuilder;
+
+pub use crate::types::_automated_reasoning_policy_update_type_value::AutomatedReasoningPolicyUpdateTypeValueBuilder;
+
+pub use crate::types::_automated_reasoning_policy_add_type_value::AutomatedReasoningPolicyAddTypeValueBuilder;
+
+pub use crate::types::_automated_reasoning_policy_add_type_annotation::AutomatedReasoningPolicyAddTypeAnnotationBuilder;
+
+pub use crate::types::_automated_reasoning_policy_definition_type_value::AutomatedReasoningPolicyDefinitionTypeValueBuilder;
+
+pub use crate::types::_automated_reasoning_policy_build_workflow_source::AutomatedReasoningPolicyBuildWorkflowSourceBuilder;
+
+pub use crate::types::_automated_reasoning_policy_build_workflow_repair_content::AutomatedReasoningPolicyBuildWorkflowRepairContentBuilder;
+
+pub use crate::types::_automated_reasoning_policy_build_workflow_document::AutomatedReasoningPolicyBuildWorkflowDocumentBuilder;
+
+pub use crate::types::_automated_reasoning_policy_definition::AutomatedReasoningPolicyDefinitionBuilder;
+
+pub use crate::types::_automated_reasoning_policy_definition_variable::AutomatedReasoningPolicyDefinitionVariableBuilder;
+
+pub use crate::types::_automated_reasoning_policy_definition_rule::AutomatedReasoningPolicyDefinitionRuleBuilder;
+
+pub use crate::types::_automated_reasoning_policy_definition_type::AutomatedReasoningPolicyDefinitionTypeBuilder;
+
+pub use crate::types::_automated_reasoning_policy_test_result::AutomatedReasoningPolicyTestResultBuilder;
+
+pub use crate::types::_automated_reasoning_check_no_translations_finding::AutomatedReasoningCheckNoTranslationsFindingBuilder;
+
+pub use crate::types::_automated_reasoning_check_too_complex_finding::AutomatedReasoningCheckTooComplexFindingBuilder;
+
+pub use crate::types::_automated_reasoning_check_translation_ambiguous_finding::AutomatedReasoningCheckTranslationAmbiguousFindingBuilder;
+
+pub use crate::types::_automated_reasoning_check_scenario::AutomatedReasoningCheckScenarioBuilder;
+
+pub use crate::types::_automated_reasoning_logic_statement::AutomatedReasoningLogicStatementBuilder;
+
+pub use crate::types::_automated_reasoning_check_translation_option::AutomatedReasoningCheckTranslationOptionBuilder;
+
+pub use crate::types::_automated_reasoning_check_translation::AutomatedReasoningCheckTranslationBuilder;
+
+pub use crate::types::_automated_reasoning_check_input_text_reference::AutomatedReasoningCheckInputTextReferenceBuilder;
+
+pub use crate::types::_automated_reasoning_check_impossible_finding::AutomatedReasoningCheckImpossibleFindingBuilder;
+
+pub use crate::types::_automated_reasoning_check_logic_warning::AutomatedReasoningCheckLogicWarningBuilder;
+
+pub use crate::types::_automated_reasoning_check_rule::AutomatedReasoningCheckRuleBuilder;
+
+pub use crate::types::_automated_reasoning_check_satisfiable_finding::AutomatedReasoningCheckSatisfiableFindingBuilder;
+
+pub use crate::types::_automated_reasoning_check_invalid_finding::AutomatedReasoningCheckInvalidFindingBuilder;
+
+pub use crate::types::_automated_reasoning_check_valid_finding::AutomatedReasoningCheckValidFindingBuilder;
+
+pub use crate::types::_automated_reasoning_policy_test_case::AutomatedReasoningPolicyTestCaseBuilder;
+
+pub use crate::types::_automated_reasoning_policy_build_workflow_summary::AutomatedReasoningPolicyBuildWorkflowSummaryBuilder;
+
+pub use crate::types::_automated_reasoning_policy_scenario::AutomatedReasoningPolicyScenarioBuilder;
+
+pub use crate::types::_automated_reasoning_policy_build_log::AutomatedReasoningPolicyBuildLogBuilder;
+
+pub use crate::types::_automated_reasoning_policy_build_log_entry::AutomatedReasoningPolicyBuildLogEntryBuilder;
+
+pub use crate::types::_automated_reasoning_policy_build_step::AutomatedReasoningPolicyBuildStepBuilder;
+
+pub use crate::types::_automated_reasoning_policy_build_step_message::AutomatedReasoningPolicyBuildStepMessageBuilder;
+
+pub use crate::types::_automated_reasoning_policy_delete_rule_mutation::AutomatedReasoningPolicyDeleteRuleMutationBuilder;
+
+pub use crate::types::_automated_reasoning_policy_update_rule_mutation::AutomatedReasoningPolicyUpdateRuleMutationBuilder;
+
+pub use crate::types::_automated_reasoning_policy_add_rule_mutation::AutomatedReasoningPolicyAddRuleMutationBuilder;
+
+pub use crate::types::_automated_reasoning_policy_delete_variable_mutation::AutomatedReasoningPolicyDeleteVariableMutationBuilder;
+
+pub use crate::types::_automated_reasoning_policy_update_variable_mutation::AutomatedReasoningPolicyUpdateVariableMutationBuilder;
+
+pub use crate::types::_automated_reasoning_policy_add_variable_mutation::AutomatedReasoningPolicyAddVariableMutationBuilder;
+
+pub use crate::types::_automated_reasoning_policy_delete_type_mutation::AutomatedReasoningPolicyDeleteTypeMutationBuilder;
+
+pub use crate::types::_automated_reasoning_policy_update_type_mutation::AutomatedReasoningPolicyUpdateTypeMutationBuilder;
+
+pub use crate::types::_automated_reasoning_policy_add_type_mutation::AutomatedReasoningPolicyAddTypeMutationBuilder;
+
+pub use crate::types::_automated_reasoning_policy_planning::AutomatedReasoningPolicyPlanningBuilder;
+
+pub use crate::types::_automated_reasoning_policy_definition_quality_report::AutomatedReasoningPolicyDefinitionQualityReportBuilder;
+
+pub use crate::types::_automated_reasoning_policy_disjoint_rule_set::AutomatedReasoningPolicyDisjointRuleSetBuilder;
+
+pub use crate::types::_automated_reasoning_policy_definition_type_value_pair::AutomatedReasoningPolicyDefinitionTypeValuePairBuilder;
+
+pub use crate::types::_automated_reasoning_policy_summary::AutomatedReasoningPolicySummaryBuilder;

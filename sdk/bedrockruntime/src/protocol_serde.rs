@@ -203,6 +203,8 @@ pub(crate) mod shape_guardrail_assessment_list_map;
 
 pub(crate) mod shape_guardrail_assessment_map;
 
+pub(crate) mod shape_guardrail_automated_reasoning_policy_assessment;
+
 pub(crate) mod shape_guardrail_content_policy_assessment;
 
 pub(crate) mod shape_guardrail_contextual_grounding_policy_assessment;
@@ -253,6 +255,8 @@ pub(crate) mod shape_converse_stream_trace;
 
 pub(crate) mod shape_document_source;
 
+pub(crate) mod shape_guardrail_automated_reasoning_finding_list;
+
 pub(crate) mod shape_guardrail_content_filter_list;
 
 pub(crate) mod shape_guardrail_contextual_grounding_filters;
@@ -286,6 +290,8 @@ pub(crate) mod shape_citation_source_content;
 pub(crate) mod shape_citations_delta;
 
 pub(crate) mod shape_document_content_block;
+
+pub(crate) mod shape_guardrail_automated_reasoning_finding;
 
 pub(crate) mod shape_guardrail_content_filter;
 
@@ -321,12 +327,52 @@ pub(crate) mod shape_document_chunk_location;
 
 pub(crate) mod shape_document_page_location;
 
+pub(crate) mod shape_guardrail_automated_reasoning_impossible_finding;
+
+pub(crate) mod shape_guardrail_automated_reasoning_invalid_finding;
+
+pub(crate) mod shape_guardrail_automated_reasoning_no_translations_finding;
+
+pub(crate) mod shape_guardrail_automated_reasoning_satisfiable_finding;
+
+pub(crate) mod shape_guardrail_automated_reasoning_too_complex_finding;
+
+pub(crate) mod shape_guardrail_automated_reasoning_translation_ambiguous_finding;
+
+pub(crate) mod shape_guardrail_automated_reasoning_valid_finding;
+
 pub(crate) mod shape_tool_result_content_blocks;
 
 pub(crate) mod shape_citation_source_content_delta;
 
 pub(crate) mod shape_document_content_blocks;
 
+pub(crate) mod shape_guardrail_automated_reasoning_difference_scenario_list;
+
+pub(crate) mod shape_guardrail_automated_reasoning_logic_warning;
+
+pub(crate) mod shape_guardrail_automated_reasoning_rule_list;
+
+pub(crate) mod shape_guardrail_automated_reasoning_scenario;
+
+pub(crate) mod shape_guardrail_automated_reasoning_translation;
+
+pub(crate) mod shape_guardrail_automated_reasoning_translation_option_list;
+
 pub(crate) mod shape_guardrail_converse_content_qualifier_list;
 
 pub(crate) mod shape_citation_source_content_list;
+
+pub(crate) mod shape_guardrail_automated_reasoning_input_text_reference_list;
+
+pub(crate) mod shape_guardrail_automated_reasoning_rule;
+
+pub(crate) mod shape_guardrail_automated_reasoning_statement_list;
+
+pub(crate) mod shape_guardrail_automated_reasoning_translation_option;
+
+pub(crate) mod shape_guardrail_automated_reasoning_input_text_reference;
+
+pub(crate) mod shape_guardrail_automated_reasoning_statement;
+
+pub(crate) mod shape_guardrail_automated_reasoning_translation_list;

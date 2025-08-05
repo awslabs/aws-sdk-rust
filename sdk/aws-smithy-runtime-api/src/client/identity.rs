@@ -317,6 +317,16 @@ impl Debug for Identity {
     }
 }
 
+impl ResolveIdentity for Identity {
+    fn resolve_identity<'a>(
+        &'a self,
+        _runtime_components: &'a RuntimeComponents,
+        _config_bag: &'a ConfigBag,
+    ) -> IdentityFuture<'a> {
+        IdentityFuture::ready(Ok(self.clone()))
+    }
+}
+
 #[derive(Debug)]
 enum ErrorKind {
     /// Field required to build the target type is missing.

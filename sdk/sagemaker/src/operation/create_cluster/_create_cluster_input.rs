@@ -34,6 +34,12 @@ pub struct CreateClusterInput {
     pub orchestrator: ::std::option::Option<crate::types::ClusterOrchestrator>,
     /// <p>The node recovery mode for the SageMaker HyperPod cluster. When set to <code>Automatic</code>, SageMaker HyperPod will automatically reboot or replace faulty nodes when issues are detected. When set to <code>None</code>, cluster administrators will need to manually manage any faulty cluster instances.</p>
     pub node_recovery: ::std::option::Option<crate::types::ClusterNodeRecovery>,
+    /// <p>The mode for provisioning nodes in the cluster. You can specify the following modes:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b>Continuous</b>: Scaling behavior that enables 1) concurrent operation execution within instance groups, 2) continuous retry mechanisms for failed operations, 3) enhanced customer visibility into cluster events through detailed event streams, 4) partial provisioning capabilities. Your clusters and instance groups remain <code>InService</code> while scaling. This mode is only supported for EKS orchestrated clusters.</p></li>
+    /// </ul>
+    pub node_provisioning_mode: ::std::option::Option<crate::types::ClusterNodeProvisioningMode>,
 }
 impl CreateClusterInput {
     /// <p>The name for the new SageMaker HyperPod cluster.</p>
@@ -87,6 +93,14 @@ impl CreateClusterInput {
     pub fn node_recovery(&self) -> ::std::option::Option<&crate::types::ClusterNodeRecovery> {
         self.node_recovery.as_ref()
     }
+    /// <p>The mode for provisioning nodes in the cluster. You can specify the following modes:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b>Continuous</b>: Scaling behavior that enables 1) concurrent operation execution within instance groups, 2) continuous retry mechanisms for failed operations, 3) enhanced customer visibility into cluster events through detailed event streams, 4) partial provisioning capabilities. Your clusters and instance groups remain <code>InService</code> while scaling. This mode is only supported for EKS orchestrated clusters.</p></li>
+    /// </ul>
+    pub fn node_provisioning_mode(&self) -> ::std::option::Option<&crate::types::ClusterNodeProvisioningMode> {
+        self.node_provisioning_mode.as_ref()
+    }
 }
 impl CreateClusterInput {
     /// Creates a new builder-style object to manufacture [`CreateClusterInput`](crate::operation::create_cluster::CreateClusterInput).
@@ -106,6 +120,7 @@ pub struct CreateClusterInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) orchestrator: ::std::option::Option<crate::types::ClusterOrchestrator>,
     pub(crate) node_recovery: ::std::option::Option<crate::types::ClusterNodeRecovery>,
+    pub(crate) node_provisioning_mode: ::std::option::Option<crate::types::ClusterNodeProvisioningMode>,
 }
 impl CreateClusterInputBuilder {
     /// <p>The name for the new SageMaker HyperPod cluster.</p>
@@ -281,6 +296,32 @@ impl CreateClusterInputBuilder {
     pub fn get_node_recovery(&self) -> &::std::option::Option<crate::types::ClusterNodeRecovery> {
         &self.node_recovery
     }
+    /// <p>The mode for provisioning nodes in the cluster. You can specify the following modes:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b>Continuous</b>: Scaling behavior that enables 1) concurrent operation execution within instance groups, 2) continuous retry mechanisms for failed operations, 3) enhanced customer visibility into cluster events through detailed event streams, 4) partial provisioning capabilities. Your clusters and instance groups remain <code>InService</code> while scaling. This mode is only supported for EKS orchestrated clusters.</p></li>
+    /// </ul>
+    pub fn node_provisioning_mode(mut self, input: crate::types::ClusterNodeProvisioningMode) -> Self {
+        self.node_provisioning_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The mode for provisioning nodes in the cluster. You can specify the following modes:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b>Continuous</b>: Scaling behavior that enables 1) concurrent operation execution within instance groups, 2) continuous retry mechanisms for failed operations, 3) enhanced customer visibility into cluster events through detailed event streams, 4) partial provisioning capabilities. Your clusters and instance groups remain <code>InService</code> while scaling. This mode is only supported for EKS orchestrated clusters.</p></li>
+    /// </ul>
+    pub fn set_node_provisioning_mode(mut self, input: ::std::option::Option<crate::types::ClusterNodeProvisioningMode>) -> Self {
+        self.node_provisioning_mode = input;
+        self
+    }
+    /// <p>The mode for provisioning nodes in the cluster. You can specify the following modes:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b>Continuous</b>: Scaling behavior that enables 1) concurrent operation execution within instance groups, 2) continuous retry mechanisms for failed operations, 3) enhanced customer visibility into cluster events through detailed event streams, 4) partial provisioning capabilities. Your clusters and instance groups remain <code>InService</code> while scaling. This mode is only supported for EKS orchestrated clusters.</p></li>
+    /// </ul>
+    pub fn get_node_provisioning_mode(&self) -> &::std::option::Option<crate::types::ClusterNodeProvisioningMode> {
+        &self.node_provisioning_mode
+    }
     /// Consumes the builder and constructs a [`CreateClusterInput`](crate::operation::create_cluster::CreateClusterInput).
     pub fn build(
         self,
@@ -293,6 +334,7 @@ impl CreateClusterInputBuilder {
             tags: self.tags,
             orchestrator: self.orchestrator,
             node_recovery: self.node_recovery,
+            node_provisioning_mode: self.node_provisioning_mode,
         })
     }
 }

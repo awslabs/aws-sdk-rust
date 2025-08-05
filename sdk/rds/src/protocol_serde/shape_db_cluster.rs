@@ -947,7 +947,7 @@ pub fn de_db_cluster(
                 builder = builder.set_serverless_v2_scaling_configuration(var_72);
             }
             ,
-            s if s.matches("NetworkType") /* NetworkType com.amazonaws.rds#DBCluster$NetworkType */ =>  {
+            s if s.matches("ServerlessV2PlatformVersion") /* ServerlessV2PlatformVersion com.amazonaws.rds#DBCluster$ServerlessV2PlatformVersion */ =>  {
                 let var_73 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -957,10 +957,10 @@ pub fn de_db_cluster(
                         ?
                     )
                 ;
-                builder = builder.set_network_type(var_73);
+                builder = builder.set_serverless_v2_platform_version(var_73);
             }
             ,
-            s if s.matches("DBSystemId") /* DBSystemId com.amazonaws.rds#DBCluster$DBSystemId */ =>  {
+            s if s.matches("NetworkType") /* NetworkType com.amazonaws.rds#DBCluster$NetworkType */ =>  {
                 let var_74 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -970,21 +970,34 @@ pub fn de_db_cluster(
                         ?
                     )
                 ;
-                builder = builder.set_db_system_id(var_74);
+                builder = builder.set_network_type(var_74);
+            }
+            ,
+            s if s.matches("DBSystemId") /* DBSystemId com.amazonaws.rds#DBCluster$DBSystemId */ =>  {
+                let var_75 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_db_system_id(var_75);
             }
             ,
             s if s.matches("MasterUserSecret") /* MasterUserSecret com.amazonaws.rds#DBCluster$MasterUserSecret */ =>  {
-                let var_75 =
+                let var_76 =
                     Some(
                         crate::protocol_serde::shape_master_user_secret::de_master_user_secret(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_master_user_secret(var_75);
+                builder = builder.set_master_user_secret(var_76);
             }
             ,
             s if s.matches("IOOptimizedNextAllowedModificationTime") /* IOOptimizedNextAllowedModificationTime com.amazonaws.rds#DBCluster$IOOptimizedNextAllowedModificationTime */ =>  {
-                let var_76 =
+                let var_77 =
                     Some(
                         ::aws_smithy_types::DateTime::from_str(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -994,11 +1007,11 @@ pub fn de_db_cluster(
                         ?
                     )
                 ;
-                builder = builder.set_io_optimized_next_allowed_modification_time(var_76);
+                builder = builder.set_io_optimized_next_allowed_modification_time(var_77);
             }
             ,
             s if s.matches("LocalWriteForwardingStatus") /* LocalWriteForwardingStatus com.amazonaws.rds#DBCluster$LocalWriteForwardingStatus */ =>  {
-                let var_77 =
+                let var_78 =
                     Some(
                         Result::<crate::types::LocalWriteForwardingStatus, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::LocalWriteForwardingStatus::from(
@@ -1008,11 +1021,11 @@ pub fn de_db_cluster(
                         ?
                     )
                 ;
-                builder = builder.set_local_write_forwarding_status(var_77);
+                builder = builder.set_local_write_forwarding_status(var_78);
             }
             ,
             s if s.matches("AwsBackupRecoveryPointArn") /* AwsBackupRecoveryPointArn com.amazonaws.rds#DBCluster$AwsBackupRecoveryPointArn */ =>  {
-                let var_78 =
+                let var_79 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1021,21 +1034,21 @@ pub fn de_db_cluster(
                         ?
                     )
                 ;
-                builder = builder.set_aws_backup_recovery_point_arn(var_78);
+                builder = builder.set_aws_backup_recovery_point_arn(var_79);
             }
             ,
             s if s.matches("LimitlessDatabase") /* LimitlessDatabase com.amazonaws.rds#DBCluster$LimitlessDatabase */ =>  {
-                let var_79 =
+                let var_80 =
                     Some(
                         crate::protocol_serde::shape_limitless_database::de_limitless_database(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_limitless_database(var_79);
+                builder = builder.set_limitless_database(var_80);
             }
             ,
             s if s.matches("StorageThroughput") /* StorageThroughput com.amazonaws.rds#DBCluster$StorageThroughput */ =>  {
-                let var_80 =
+                let var_81 =
                     Some(
                          {
                             <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -1046,11 +1059,11 @@ pub fn de_db_cluster(
                         ?
                     )
                 ;
-                builder = builder.set_storage_throughput(var_80);
+                builder = builder.set_storage_throughput(var_81);
             }
             ,
             s if s.matches("ClusterScalabilityType") /* ClusterScalabilityType com.amazonaws.rds#DBCluster$ClusterScalabilityType */ =>  {
-                let var_81 =
+                let var_82 =
                     Some(
                         Result::<crate::types::ClusterScalabilityType, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::ClusterScalabilityType::from(
@@ -1060,21 +1073,21 @@ pub fn de_db_cluster(
                         ?
                     )
                 ;
-                builder = builder.set_cluster_scalability_type(var_81);
+                builder = builder.set_cluster_scalability_type(var_82);
             }
             ,
             s if s.matches("CertificateDetails") /* CertificateDetails com.amazonaws.rds#DBCluster$CertificateDetails */ =>  {
-                let var_82 =
+                let var_83 =
                     Some(
                         crate::protocol_serde::shape_certificate_details::de_certificate_details(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_certificate_details(var_82);
+                builder = builder.set_certificate_details(var_83);
             }
             ,
             s if s.matches("EngineLifecycleSupport") /* EngineLifecycleSupport com.amazonaws.rds#DBCluster$EngineLifecycleSupport */ =>  {
-                let var_83 =
+                let var_84 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1083,7 +1096,7 @@ pub fn de_db_cluster(
                         ?
                     )
                 ;
-                builder = builder.set_engine_lifecycle_support(var_83);
+                builder = builder.set_engine_lifecycle_support(var_84);
             }
             ,
             _ => {}

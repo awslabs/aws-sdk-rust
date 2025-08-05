@@ -57,6 +57,8 @@ pub struct Cluster {
     pub compute_config: ::std::option::Option<crate::types::ComputeConfigResponse>,
     /// <p>Indicates the current configuration of the block storage capability on your EKS Auto Mode cluster. For example, if the capability is enabled or disabled. If the block storage capability is enabled, EKS Auto Mode will create and delete EBS volumes in your Amazon Web Services account. For more information, see EKS Auto Mode block storage capability in the <i>Amazon EKS User Guide</i>.</p>
     pub storage_config: ::std::option::Option<crate::types::StorageConfigResponse>,
+    /// <p>The current deletion protection setting for the cluster. When <code>true</code>, deletion protection is enabled and the cluster cannot be deleted until protection is disabled. When <code>false</code>, the cluster can be deleted normally. This setting only applies to clusters in an active state.</p>
+    pub deletion_protection: ::std::option::Option<bool>,
 }
 impl Cluster {
     /// <p>The name of your cluster.</p>
@@ -166,6 +168,10 @@ impl Cluster {
     pub fn storage_config(&self) -> ::std::option::Option<&crate::types::StorageConfigResponse> {
         self.storage_config.as_ref()
     }
+    /// <p>The current deletion protection setting for the cluster. When <code>true</code>, deletion protection is enabled and the cluster cannot be deleted until protection is disabled. When <code>false</code>, the cluster can be deleted normally. This setting only applies to clusters in an active state.</p>
+    pub fn deletion_protection(&self) -> ::std::option::Option<bool> {
+        self.deletion_protection
+    }
 }
 impl Cluster {
     /// Creates a new builder-style object to manufacture [`Cluster`](crate::types::Cluster).
@@ -204,6 +210,7 @@ pub struct ClusterBuilder {
     pub(crate) remote_network_config: ::std::option::Option<crate::types::RemoteNetworkConfigResponse>,
     pub(crate) compute_config: ::std::option::Option<crate::types::ComputeConfigResponse>,
     pub(crate) storage_config: ::std::option::Option<crate::types::StorageConfigResponse>,
+    pub(crate) deletion_protection: ::std::option::Option<bool>,
 }
 impl ClusterBuilder {
     /// <p>The name of your cluster.</p>
@@ -585,6 +592,20 @@ impl ClusterBuilder {
     pub fn get_storage_config(&self) -> &::std::option::Option<crate::types::StorageConfigResponse> {
         &self.storage_config
     }
+    /// <p>The current deletion protection setting for the cluster. When <code>true</code>, deletion protection is enabled and the cluster cannot be deleted until protection is disabled. When <code>false</code>, the cluster can be deleted normally. This setting only applies to clusters in an active state.</p>
+    pub fn deletion_protection(mut self, input: bool) -> Self {
+        self.deletion_protection = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The current deletion protection setting for the cluster. When <code>true</code>, deletion protection is enabled and the cluster cannot be deleted until protection is disabled. When <code>false</code>, the cluster can be deleted normally. This setting only applies to clusters in an active state.</p>
+    pub fn set_deletion_protection(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.deletion_protection = input;
+        self
+    }
+    /// <p>The current deletion protection setting for the cluster. When <code>true</code>, deletion protection is enabled and the cluster cannot be deleted until protection is disabled. When <code>false</code>, the cluster can be deleted normally. This setting only applies to clusters in an active state.</p>
+    pub fn get_deletion_protection(&self) -> &::std::option::Option<bool> {
+        &self.deletion_protection
+    }
     /// Consumes the builder and constructs a [`Cluster`](crate::types::Cluster).
     pub fn build(self) -> crate::types::Cluster {
         crate::types::Cluster {
@@ -614,6 +635,7 @@ impl ClusterBuilder {
             remote_network_config: self.remote_network_config,
             compute_config: self.compute_config,
             storage_config: self.storage_config,
+            deletion_protection: self.deletion_protection,
         }
     }
 }

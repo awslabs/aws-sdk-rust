@@ -39,6 +39,11 @@ where
                                     crate::protocol_serde::shape_guardrail_contextual_grounding_policy_assessment::de_guardrail_contextual_grounding_policy_assessment(tokens)?
                                 );
                         }
+                        "automatedReasoningPolicy" => {
+                            builder = builder.set_automated_reasoning_policy(
+                                    crate::protocol_serde::shape_guardrail_automated_reasoning_policy_assessment::de_guardrail_automated_reasoning_policy_assessment(tokens)?
+                                );
+                        }
                         "invocationMetrics" => {
                             builder = builder.set_invocation_metrics(
                                 crate::protocol_serde::shape_guardrail_invocation_metrics::de_guardrail_invocation_metrics(tokens)?,

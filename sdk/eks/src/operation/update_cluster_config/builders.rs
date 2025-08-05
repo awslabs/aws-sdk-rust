@@ -290,4 +290,18 @@ impl UpdateClusterConfigFluentBuilder {
     pub fn get_remote_network_config(&self) -> &::std::option::Option<crate::types::RemoteNetworkConfigRequest> {
         self.inner.get_remote_network_config()
     }
+    /// <p>Specifies whether to enable or disable deletion protection for the cluster. When enabled (<code>true</code>), the cluster cannot be deleted until deletion protection is explicitly disabled. When disabled (<code>false</code>), the cluster can be deleted normally.</p>
+    pub fn deletion_protection(mut self, input: bool) -> Self {
+        self.inner = self.inner.deletion_protection(input);
+        self
+    }
+    /// <p>Specifies whether to enable or disable deletion protection for the cluster. When enabled (<code>true</code>), the cluster cannot be deleted until deletion protection is explicitly disabled. When disabled (<code>false</code>), the cluster can be deleted normally.</p>
+    pub fn set_deletion_protection(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_deletion_protection(input);
+        self
+    }
+    /// <p>Specifies whether to enable or disable deletion protection for the cluster. When enabled (<code>true</code>), the cluster cannot be deleted until deletion protection is explicitly disabled. When disabled (<code>false</code>), the cluster can be deleted normally.</p>
+    pub fn get_deletion_protection(&self) -> &::std::option::Option<bool> {
+        self.inner.get_deletion_protection()
+    }
 }

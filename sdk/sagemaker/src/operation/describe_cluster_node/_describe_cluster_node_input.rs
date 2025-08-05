@@ -7,6 +7,8 @@ pub struct DescribeClusterNodeInput {
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the SageMaker HyperPod cluster node.</p>
     pub node_id: ::std::option::Option<::std::string::String>,
+    /// <p>The logical identifier of the node to describe. You can specify either <code>NodeLogicalId</code> or <code>InstanceId</code>, but not both. <code>NodeLogicalId</code> can be used to describe nodes that are still being provisioned and don't yet have an <code>InstanceId</code> assigned.</p>
+    pub node_logical_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeClusterNodeInput {
     /// <p>The string name or the Amazon Resource Name (ARN) of the SageMaker HyperPod cluster in which the node is.</p>
@@ -16,6 +18,10 @@ impl DescribeClusterNodeInput {
     /// <p>The ID of the SageMaker HyperPod cluster node.</p>
     pub fn node_id(&self) -> ::std::option::Option<&str> {
         self.node_id.as_deref()
+    }
+    /// <p>The logical identifier of the node to describe. You can specify either <code>NodeLogicalId</code> or <code>InstanceId</code>, but not both. <code>NodeLogicalId</code> can be used to describe nodes that are still being provisioned and don't yet have an <code>InstanceId</code> assigned.</p>
+    pub fn node_logical_id(&self) -> ::std::option::Option<&str> {
+        self.node_logical_id.as_deref()
     }
 }
 impl DescribeClusterNodeInput {
@@ -31,6 +37,7 @@ impl DescribeClusterNodeInput {
 pub struct DescribeClusterNodeInputBuilder {
     pub(crate) cluster_name: ::std::option::Option<::std::string::String>,
     pub(crate) node_id: ::std::option::Option<::std::string::String>,
+    pub(crate) node_logical_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeClusterNodeInputBuilder {
     /// <p>The string name or the Amazon Resource Name (ARN) of the SageMaker HyperPod cluster in which the node is.</p>
@@ -62,6 +69,20 @@ impl DescribeClusterNodeInputBuilder {
     pub fn get_node_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.node_id
     }
+    /// <p>The logical identifier of the node to describe. You can specify either <code>NodeLogicalId</code> or <code>InstanceId</code>, but not both. <code>NodeLogicalId</code> can be used to describe nodes that are still being provisioned and don't yet have an <code>InstanceId</code> assigned.</p>
+    pub fn node_logical_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.node_logical_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The logical identifier of the node to describe. You can specify either <code>NodeLogicalId</code> or <code>InstanceId</code>, but not both. <code>NodeLogicalId</code> can be used to describe nodes that are still being provisioned and don't yet have an <code>InstanceId</code> assigned.</p>
+    pub fn set_node_logical_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.node_logical_id = input;
+        self
+    }
+    /// <p>The logical identifier of the node to describe. You can specify either <code>NodeLogicalId</code> or <code>InstanceId</code>, but not both. <code>NodeLogicalId</code> can be used to describe nodes that are still being provisioned and don't yet have an <code>InstanceId</code> assigned.</p>
+    pub fn get_node_logical_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.node_logical_id
+    }
     /// Consumes the builder and constructs a [`DescribeClusterNodeInput`](crate::operation::describe_cluster_node::DescribeClusterNodeInput).
     pub fn build(
         self,
@@ -70,6 +91,7 @@ impl DescribeClusterNodeInputBuilder {
         ::std::result::Result::Ok(crate::operation::describe_cluster_node::DescribeClusterNodeInput {
             cluster_name: self.cluster_name,
             node_id: self.node_id,
+            node_logical_id: self.node_logical_id,
         })
     }
 }

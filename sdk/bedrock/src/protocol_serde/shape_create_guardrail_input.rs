@@ -3,77 +3,86 @@ pub fn ser_create_guardrail_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_guardrail::CreateGuardrailInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.blocked_input_messaging {
-        object.key("blockedInputMessaging").string(var_1.as_str());
-    }
-    if let Some(var_2) = &input.blocked_outputs_messaging {
-        object.key("blockedOutputsMessaging").string(var_2.as_str());
-    }
-    if let Some(var_3) = &input.client_request_token {
-        object.key("clientRequestToken").string(var_3.as_str());
-    }
-    if let Some(var_4) = &input.content_policy_config {
+    if let Some(var_1) = &input.automated_reasoning_policy_config {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("contentPolicyConfig").start_object();
-        crate::protocol_serde::shape_guardrail_content_policy_config::ser_guardrail_content_policy_config(&mut object_5, var_4)?;
-        object_5.finish();
-    }
-    if let Some(var_6) = &input.contextual_grounding_policy_config {
-        #[allow(unused_mut)]
-        let mut object_7 = object.key("contextualGroundingPolicyConfig").start_object();
-        crate::protocol_serde::shape_guardrail_contextual_grounding_policy_config::ser_guardrail_contextual_grounding_policy_config(
-            &mut object_7,
-            var_6,
+        let mut object_2 = object.key("automatedReasoningPolicyConfig").start_object();
+        crate::protocol_serde::shape_guardrail_automated_reasoning_policy_config::ser_guardrail_automated_reasoning_policy_config(
+            &mut object_2,
+            var_1,
         )?;
+        object_2.finish();
+    }
+    if let Some(var_3) = &input.blocked_input_messaging {
+        object.key("blockedInputMessaging").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.blocked_outputs_messaging {
+        object.key("blockedOutputsMessaging").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.client_request_token {
+        object.key("clientRequestToken").string(var_5.as_str());
+    }
+    if let Some(var_6) = &input.content_policy_config {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("contentPolicyConfig").start_object();
+        crate::protocol_serde::shape_guardrail_content_policy_config::ser_guardrail_content_policy_config(&mut object_7, var_6)?;
         object_7.finish();
     }
-    if let Some(var_8) = &input.cross_region_config {
+    if let Some(var_8) = &input.contextual_grounding_policy_config {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("crossRegionConfig").start_object();
-        crate::protocol_serde::shape_guardrail_cross_region_config::ser_guardrail_cross_region_config(&mut object_9, var_8)?;
+        let mut object_9 = object.key("contextualGroundingPolicyConfig").start_object();
+        crate::protocol_serde::shape_guardrail_contextual_grounding_policy_config::ser_guardrail_contextual_grounding_policy_config(
+            &mut object_9,
+            var_8,
+        )?;
         object_9.finish();
     }
-    if let Some(var_10) = &input.description {
-        object.key("description").string(var_10.as_str());
-    }
-    if let Some(var_11) = &input.kms_key_id {
-        object.key("kmsKeyId").string(var_11.as_str());
-    }
-    if let Some(var_12) = &input.name {
-        object.key("name").string(var_12.as_str());
-    }
-    if let Some(var_13) = &input.sensitive_information_policy_config {
+    if let Some(var_10) = &input.cross_region_config {
         #[allow(unused_mut)]
-        let mut object_14 = object.key("sensitiveInformationPolicyConfig").start_object();
-        crate::protocol_serde::shape_guardrail_sensitive_information_policy_config::ser_guardrail_sensitive_information_policy_config(
-            &mut object_14,
-            var_13,
-        )?;
-        object_14.finish();
+        let mut object_11 = object.key("crossRegionConfig").start_object();
+        crate::protocol_serde::shape_guardrail_cross_region_config::ser_guardrail_cross_region_config(&mut object_11, var_10)?;
+        object_11.finish();
     }
-    if let Some(var_15) = &input.tags {
-        let mut array_16 = object.key("tags").start_array();
-        for item_17 in var_15 {
+    if let Some(var_12) = &input.description {
+        object.key("description").string(var_12.as_str());
+    }
+    if let Some(var_13) = &input.kms_key_id {
+        object.key("kmsKeyId").string(var_13.as_str());
+    }
+    if let Some(var_14) = &input.name {
+        object.key("name").string(var_14.as_str());
+    }
+    if let Some(var_15) = &input.sensitive_information_policy_config {
+        #[allow(unused_mut)]
+        let mut object_16 = object.key("sensitiveInformationPolicyConfig").start_object();
+        crate::protocol_serde::shape_guardrail_sensitive_information_policy_config::ser_guardrail_sensitive_information_policy_config(
+            &mut object_16,
+            var_15,
+        )?;
+        object_16.finish();
+    }
+    if let Some(var_17) = &input.tags {
+        let mut array_18 = object.key("tags").start_array();
+        for item_19 in var_17 {
             {
                 #[allow(unused_mut)]
-                let mut object_18 = array_16.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_18, item_17)?;
-                object_18.finish();
+                let mut object_20 = array_18.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_20, item_19)?;
+                object_20.finish();
             }
         }
-        array_16.finish();
+        array_18.finish();
     }
-    if let Some(var_19) = &input.topic_policy_config {
+    if let Some(var_21) = &input.topic_policy_config {
         #[allow(unused_mut)]
-        let mut object_20 = object.key("topicPolicyConfig").start_object();
-        crate::protocol_serde::shape_guardrail_topic_policy_config::ser_guardrail_topic_policy_config(&mut object_20, var_19)?;
-        object_20.finish();
-    }
-    if let Some(var_21) = &input.word_policy_config {
-        #[allow(unused_mut)]
-        let mut object_22 = object.key("wordPolicyConfig").start_object();
-        crate::protocol_serde::shape_guardrail_word_policy_config::ser_guardrail_word_policy_config(&mut object_22, var_21)?;
+        let mut object_22 = object.key("topicPolicyConfig").start_object();
+        crate::protocol_serde::shape_guardrail_topic_policy_config::ser_guardrail_topic_policy_config(&mut object_22, var_21)?;
         object_22.finish();
+    }
+    if let Some(var_23) = &input.word_policy_config {
+        #[allow(unused_mut)]
+        let mut object_24 = object.key("wordPolicyConfig").start_object();
+        crate::protocol_serde::shape_guardrail_word_policy_config::ser_guardrail_word_policy_config(&mut object_24, var_23)?;
+        object_24.finish();
     }
     Ok(())
 }

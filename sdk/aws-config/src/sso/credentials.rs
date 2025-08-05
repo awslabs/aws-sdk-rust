@@ -14,6 +14,7 @@ use super::cache::load_cached_token;
 use crate::identity::IdentityCache;
 use crate::provider_config::ProviderConfig;
 use crate::sso::SsoTokenProvider;
+use aws_credential_types::credential_feature::AwsCredentialFeature;
 use aws_credential_types::provider::{self, error::CredentialsError, future, ProvideCredentials};
 use aws_credential_types::Credentials;
 use aws_sdk_sso::types::RoleCredentials;
@@ -88,6 +89,12 @@ impl SsoCredentialsProvider {
             self.time_source.clone(),
         )
         .await
+        .map(|mut creds| {
+            creds
+                .get_property_mut_or_default::<Vec<AwsCredentialFeature>>()
+                .push(AwsCredentialFeature::CredentialsSso);
+            creds
+        })
     }
 }
 

@@ -25,6 +25,8 @@ pub struct GetGuardrailOutput {
     pub sensitive_information_policy: ::std::option::Option<crate::types::GuardrailSensitiveInformationPolicy>,
     /// <p>The contextual grounding policy used in the guardrail.</p>
     pub contextual_grounding_policy: ::std::option::Option<crate::types::GuardrailContextualGroundingPolicy>,
+    /// <p>The current Automated Reasoning policy configuration for the guardrail, if any is configured.</p>
+    pub automated_reasoning_policy: ::std::option::Option<crate::types::GuardrailAutomatedReasoningPolicy>,
     /// <p>Details about the system-defined guardrail profile that you're using with your guardrail, including the guardrail profile ID and Amazon Resource Name (ARN).</p>
     pub cross_region_details: ::std::option::Option<crate::types::GuardrailCrossRegionDetails>,
     /// <p>The date and time at which the guardrail was created.</p>
@@ -92,6 +94,10 @@ impl GetGuardrailOutput {
     pub fn contextual_grounding_policy(&self) -> ::std::option::Option<&crate::types::GuardrailContextualGroundingPolicy> {
         self.contextual_grounding_policy.as_ref()
     }
+    /// <p>The current Automated Reasoning policy configuration for the guardrail, if any is configured.</p>
+    pub fn automated_reasoning_policy(&self) -> ::std::option::Option<&crate::types::GuardrailAutomatedReasoningPolicy> {
+        self.automated_reasoning_policy.as_ref()
+    }
     /// <p>Details about the system-defined guardrail profile that you're using with your guardrail, including the guardrail profile ID and Amazon Resource Name (ARN).</p>
     pub fn cross_region_details(&self) -> ::std::option::Option<&crate::types::GuardrailCrossRegionDetails> {
         self.cross_region_details.as_ref()
@@ -145,6 +151,7 @@ impl ::std::fmt::Debug for GetGuardrailOutput {
         formatter.field("word_policy", &self.word_policy);
         formatter.field("sensitive_information_policy", &self.sensitive_information_policy);
         formatter.field("contextual_grounding_policy", &self.contextual_grounding_policy);
+        formatter.field("automated_reasoning_policy", &self.automated_reasoning_policy);
         formatter.field("cross_region_details", &self.cross_region_details);
         formatter.field("created_at", &self.created_at);
         formatter.field("updated_at", &self.updated_at);
@@ -184,6 +191,7 @@ pub struct GetGuardrailOutputBuilder {
     pub(crate) word_policy: ::std::option::Option<crate::types::GuardrailWordPolicy>,
     pub(crate) sensitive_information_policy: ::std::option::Option<crate::types::GuardrailSensitiveInformationPolicy>,
     pub(crate) contextual_grounding_policy: ::std::option::Option<crate::types::GuardrailContextualGroundingPolicy>,
+    pub(crate) automated_reasoning_policy: ::std::option::Option<crate::types::GuardrailAutomatedReasoningPolicy>,
     pub(crate) cross_region_details: ::std::option::Option<crate::types::GuardrailCrossRegionDetails>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -353,6 +361,20 @@ impl GetGuardrailOutputBuilder {
     /// <p>The contextual grounding policy used in the guardrail.</p>
     pub fn get_contextual_grounding_policy(&self) -> &::std::option::Option<crate::types::GuardrailContextualGroundingPolicy> {
         &self.contextual_grounding_policy
+    }
+    /// <p>The current Automated Reasoning policy configuration for the guardrail, if any is configured.</p>
+    pub fn automated_reasoning_policy(mut self, input: crate::types::GuardrailAutomatedReasoningPolicy) -> Self {
+        self.automated_reasoning_policy = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The current Automated Reasoning policy configuration for the guardrail, if any is configured.</p>
+    pub fn set_automated_reasoning_policy(mut self, input: ::std::option::Option<crate::types::GuardrailAutomatedReasoningPolicy>) -> Self {
+        self.automated_reasoning_policy = input;
+        self
+    }
+    /// <p>The current Automated Reasoning policy configuration for the guardrail, if any is configured.</p>
+    pub fn get_automated_reasoning_policy(&self) -> &::std::option::Option<crate::types::GuardrailAutomatedReasoningPolicy> {
+        &self.automated_reasoning_policy
     }
     /// <p>Details about the system-defined guardrail profile that you're using with your guardrail, including the guardrail profile ID and Amazon Resource Name (ARN).</p>
     pub fn cross_region_details(mut self, input: crate::types::GuardrailCrossRegionDetails) -> Self {
@@ -542,6 +564,7 @@ impl GetGuardrailOutputBuilder {
             word_policy: self.word_policy,
             sensitive_information_policy: self.sensitive_information_policy,
             contextual_grounding_policy: self.contextual_grounding_policy,
+            automated_reasoning_policy: self.automated_reasoning_policy,
             cross_region_details: self.cross_region_details,
             created_at: self.created_at.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
@@ -588,6 +611,7 @@ impl ::std::fmt::Debug for GetGuardrailOutputBuilder {
         formatter.field("word_policy", &self.word_policy);
         formatter.field("sensitive_information_policy", &self.sensitive_information_policy);
         formatter.field("contextual_grounding_policy", &self.contextual_grounding_policy);
+        formatter.field("automated_reasoning_policy", &self.automated_reasoning_policy);
         formatter.field("cross_region_details", &self.cross_region_details);
         formatter.field("created_at", &self.created_at);
         formatter.field("updated_at", &self.updated_at);

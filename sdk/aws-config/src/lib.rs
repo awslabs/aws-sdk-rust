@@ -894,31 +894,13 @@ mod loader {
                 TriStateOption::ExplicitlyUnset => None,
             };
 
-            let token_provider = match self.token_provider {
-                Some(provider) => Some(provider),
-                None => {
-                    #[cfg(feature = "sso")]
-                    {
-                        let mut builder =
-                            crate::default_provider::token::DefaultTokenChain::builder()
-                                .configure(conf.clone());
-                        builder.set_region(region.clone());
-                        Some(SharedTokenProvider::new(builder.build().await))
-                    }
-                    #[cfg(not(feature = "sso"))]
-                    {
-                        None
-                    }
-                }
-            };
-
             let profiles = conf.profile().await;
             let service_config = EnvServiceConfig {
                 env: conf.env(),
                 env_config_sections: profiles.cloned().unwrap_or_default(),
             };
             let mut builder = SdkConfig::builder()
-                .region(region)
+                .region(region.clone())
                 .retry_config(retry_config)
                 .timeout_config(timeout_config)
                 .time_source(time_source)
@@ -947,6 +929,30 @@ mod loader {
                     let (v, origin) = endpoint_url::endpoint_url_provider_with_origin(&conf).await;
                     builder.insert_origin("endpoint_url", origin);
                     v
+                }
+            };
+
+            let token_provider = match self.token_provider {
+                Some(provider) => {
+                    builder.insert_origin("token_provider", Origin::shared_config());
+                    Some(provider)
+                }
+                None => {
+                    #[cfg(feature = "sso")]
+                    {
+                        let mut builder =
+                            crate::default_provider::token::DefaultTokenChain::builder()
+                                .configure(conf.clone());
+                        builder.set_region(region);
+                        Some(SharedTokenProvider::new(builder.build().await))
+                    }
+                    #[cfg(not(feature = "sso"))]
+                    {
+                        None
+                    }
+                    // Not setting `Origin` in this arm, and that's good for now as long as we know
+                    // it's not programmatically set in the shared config.
+                    // We can consider adding `Origin::Default` if needed.
                 }
             };
 
@@ -989,9 +995,12 @@ mod loader {
 
             let auth_scheme_preference =
                 if let Some(auth_scheme_preference) = self.auth_scheme_preference {
+                    builder.insert_origin("auth_scheme_preference", Origin::shared_config());
                     Some(auth_scheme_preference)
                 } else {
                     auth_scheme_preference::auth_scheme_preference_provider(&conf).await
+                    // Not setting `Origin` in this arm, and that's good for now as long as we know
+                    // it's not programmatically set in the shared config.
                 };
 
             builder.set_request_checksum_calculation(request_checksum_calculation);

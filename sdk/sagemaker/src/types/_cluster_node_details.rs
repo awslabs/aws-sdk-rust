@@ -8,6 +8,8 @@ pub struct ClusterNodeDetails {
     pub instance_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
+    /// <p>A unique identifier for the node that persists throughout its lifecycle, from provisioning request to termination. This identifier can be used to track the node even before it has an assigned <code>InstanceId</code>.</p>
+    pub node_logical_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the instance.</p>
     pub instance_status: ::std::option::Option<crate::types::ClusterInstanceStatusDetails>,
     /// <p>The type of the instance.</p>
@@ -32,6 +34,10 @@ pub struct ClusterNodeDetails {
     pub private_dns_hostname: ::std::option::Option<::std::string::String>,
     /// <p>The placement details of the SageMaker HyperPod cluster node.</p>
     pub placement: ::std::option::Option<crate::types::ClusterInstancePlacement>,
+    /// <p>The ID of the Amazon Machine Image (AMI) currently in use by the node.</p>
+    pub current_image_id: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the Amazon Machine Image (AMI) desired for the node.</p>
+    pub desired_image_id: ::std::option::Option<::std::string::String>,
 }
 impl ClusterNodeDetails {
     /// <p>The instance group name in which the instance is.</p>
@@ -41,6 +47,10 @@ impl ClusterNodeDetails {
     /// <p>The ID of the instance.</p>
     pub fn instance_id(&self) -> ::std::option::Option<&str> {
         self.instance_id.as_deref()
+    }
+    /// <p>A unique identifier for the node that persists throughout its lifecycle, from provisioning request to termination. This identifier can be used to track the node even before it has an assigned <code>InstanceId</code>.</p>
+    pub fn node_logical_id(&self) -> ::std::option::Option<&str> {
+        self.node_logical_id.as_deref()
     }
     /// <p>The status of the instance.</p>
     pub fn instance_status(&self) -> ::std::option::Option<&crate::types::ClusterInstanceStatusDetails> {
@@ -92,6 +102,14 @@ impl ClusterNodeDetails {
     pub fn placement(&self) -> ::std::option::Option<&crate::types::ClusterInstancePlacement> {
         self.placement.as_ref()
     }
+    /// <p>The ID of the Amazon Machine Image (AMI) currently in use by the node.</p>
+    pub fn current_image_id(&self) -> ::std::option::Option<&str> {
+        self.current_image_id.as_deref()
+    }
+    /// <p>The ID of the Amazon Machine Image (AMI) desired for the node.</p>
+    pub fn desired_image_id(&self) -> ::std::option::Option<&str> {
+        self.desired_image_id.as_deref()
+    }
 }
 impl ClusterNodeDetails {
     /// Creates a new builder-style object to manufacture [`ClusterNodeDetails`](crate::types::ClusterNodeDetails).
@@ -106,6 +124,7 @@ impl ClusterNodeDetails {
 pub struct ClusterNodeDetailsBuilder {
     pub(crate) instance_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
+    pub(crate) node_logical_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_status: ::std::option::Option<crate::types::ClusterInstanceStatusDetails>,
     pub(crate) instance_type: ::std::option::Option<crate::types::ClusterInstanceType>,
     pub(crate) launch_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -118,6 +137,8 @@ pub struct ClusterNodeDetailsBuilder {
     pub(crate) private_primary_ipv6: ::std::option::Option<::std::string::String>,
     pub(crate) private_dns_hostname: ::std::option::Option<::std::string::String>,
     pub(crate) placement: ::std::option::Option<crate::types::ClusterInstancePlacement>,
+    pub(crate) current_image_id: ::std::option::Option<::std::string::String>,
+    pub(crate) desired_image_id: ::std::option::Option<::std::string::String>,
 }
 impl ClusterNodeDetailsBuilder {
     /// <p>The instance group name in which the instance is.</p>
@@ -147,6 +168,20 @@ impl ClusterNodeDetailsBuilder {
     /// <p>The ID of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_id
+    }
+    /// <p>A unique identifier for the node that persists throughout its lifecycle, from provisioning request to termination. This identifier can be used to track the node even before it has an assigned <code>InstanceId</code>.</p>
+    pub fn node_logical_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.node_logical_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A unique identifier for the node that persists throughout its lifecycle, from provisioning request to termination. This identifier can be used to track the node even before it has an assigned <code>InstanceId</code>.</p>
+    pub fn set_node_logical_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.node_logical_id = input;
+        self
+    }
+    /// <p>A unique identifier for the node that persists throughout its lifecycle, from provisioning request to termination. This identifier can be used to track the node even before it has an assigned <code>InstanceId</code>.</p>
+    pub fn get_node_logical_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.node_logical_id
     }
     /// <p>The status of the instance.</p>
     pub fn instance_status(mut self, input: crate::types::ClusterInstanceStatusDetails) -> Self {
@@ -322,11 +357,40 @@ impl ClusterNodeDetailsBuilder {
     pub fn get_placement(&self) -> &::std::option::Option<crate::types::ClusterInstancePlacement> {
         &self.placement
     }
+    /// <p>The ID of the Amazon Machine Image (AMI) currently in use by the node.</p>
+    pub fn current_image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.current_image_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the Amazon Machine Image (AMI) currently in use by the node.</p>
+    pub fn set_current_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.current_image_id = input;
+        self
+    }
+    /// <p>The ID of the Amazon Machine Image (AMI) currently in use by the node.</p>
+    pub fn get_current_image_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.current_image_id
+    }
+    /// <p>The ID of the Amazon Machine Image (AMI) desired for the node.</p>
+    pub fn desired_image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.desired_image_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the Amazon Machine Image (AMI) desired for the node.</p>
+    pub fn set_desired_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.desired_image_id = input;
+        self
+    }
+    /// <p>The ID of the Amazon Machine Image (AMI) desired for the node.</p>
+    pub fn get_desired_image_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.desired_image_id
+    }
     /// Consumes the builder and constructs a [`ClusterNodeDetails`](crate::types::ClusterNodeDetails).
     pub fn build(self) -> crate::types::ClusterNodeDetails {
         crate::types::ClusterNodeDetails {
             instance_group_name: self.instance_group_name,
             instance_id: self.instance_id,
+            node_logical_id: self.node_logical_id,
             instance_status: self.instance_status,
             instance_type: self.instance_type,
             launch_time: self.launch_time,
@@ -339,6 +403,8 @@ impl ClusterNodeDetailsBuilder {
             private_primary_ipv6: self.private_primary_ipv6,
             private_dns_hostname: self.private_dns_hostname,
             placement: self.placement,
+            current_image_id: self.current_image_id,
+            desired_image_id: self.desired_image_id,
         }
     }
 }

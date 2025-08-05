@@ -159,6 +159,8 @@ pub use crate::types::_inference_profile_summary::InferenceProfileSummary;
 
 pub use crate::types::_guardrail_cross_region_config::GuardrailCrossRegionConfig;
 
+pub use crate::types::_guardrail_automated_reasoning_policy_config::GuardrailAutomatedReasoningPolicyConfig;
+
 pub use crate::types::_guardrail_contextual_grounding_policy_config::GuardrailContextualGroundingPolicyConfig;
 
 pub use crate::types::_guardrail_contextual_grounding_filter_config::GuardrailContextualGroundingFilterConfig;
@@ -216,6 +218,8 @@ pub use crate::types::_guardrail_topic_action::GuardrailTopicAction;
 pub use crate::types::_guardrail_topic_type::GuardrailTopicType;
 
 pub use crate::types::_guardrail_cross_region_details::GuardrailCrossRegionDetails;
+
+pub use crate::types::_guardrail_automated_reasoning_policy::GuardrailAutomatedReasoningPolicy;
 
 pub use crate::types::_guardrail_contextual_grounding_policy::GuardrailContextualGroundingPolicy;
 
@@ -413,6 +417,162 @@ pub use crate::types::_status::Status;
 
 pub use crate::types::_marketplace_model_endpoint_summary::MarketplaceModelEndpointSummary;
 
+pub use crate::types::_automated_reasoning_check_result::AutomatedReasoningCheckResult;
+
+pub use crate::types::_automated_reasoning_policy_annotation::AutomatedReasoningPolicyAnnotation;
+
+pub use crate::types::_automated_reasoning_policy_ingest_content_annotation::AutomatedReasoningPolicyIngestContentAnnotation;
+
+pub use crate::types::_automated_reasoning_policy_update_from_scenario_feedback_annotation::AutomatedReasoningPolicyUpdateFromScenarioFeedbackAnnotation;
+
+pub use crate::types::_automated_reasoning_policy_update_from_rule_feedback_annotation::AutomatedReasoningPolicyUpdateFromRuleFeedbackAnnotation;
+
+pub use crate::types::_automated_reasoning_policy_add_rule_from_natural_language_annotation::AutomatedReasoningPolicyAddRuleFromNaturalLanguageAnnotation;
+
+pub use crate::types::_automated_reasoning_policy_delete_rule_annotation::AutomatedReasoningPolicyDeleteRuleAnnotation;
+
+pub use crate::types::_automated_reasoning_policy_update_rule_annotation::AutomatedReasoningPolicyUpdateRuleAnnotation;
+
+pub use crate::types::_automated_reasoning_policy_add_rule_annotation::AutomatedReasoningPolicyAddRuleAnnotation;
+
+pub use crate::types::_automated_reasoning_policy_delete_variable_annotation::AutomatedReasoningPolicyDeleteVariableAnnotation;
+
+pub use crate::types::_automated_reasoning_policy_update_variable_annotation::AutomatedReasoningPolicyUpdateVariableAnnotation;
+
+pub use crate::types::_automated_reasoning_policy_add_variable_annotation::AutomatedReasoningPolicyAddVariableAnnotation;
+
+pub use crate::types::_automated_reasoning_policy_delete_type_annotation::AutomatedReasoningPolicyDeleteTypeAnnotation;
+
+pub use crate::types::_automated_reasoning_policy_update_type_annotation::AutomatedReasoningPolicyUpdateTypeAnnotation;
+
+pub use crate::types::_automated_reasoning_policy_type_value_annotation::AutomatedReasoningPolicyTypeValueAnnotation;
+
+pub use crate::types::_automated_reasoning_policy_delete_type_value::AutomatedReasoningPolicyDeleteTypeValue;
+
+pub use crate::types::_automated_reasoning_policy_update_type_value::AutomatedReasoningPolicyUpdateTypeValue;
+
+pub use crate::types::_automated_reasoning_policy_add_type_value::AutomatedReasoningPolicyAddTypeValue;
+
+pub use crate::types::_automated_reasoning_policy_add_type_annotation::AutomatedReasoningPolicyAddTypeAnnotation;
+
+pub use crate::types::_automated_reasoning_policy_definition_type_value::AutomatedReasoningPolicyDefinitionTypeValue;
+
+pub use crate::types::_automated_reasoning_policy_build_workflow_source::AutomatedReasoningPolicyBuildWorkflowSource;
+
+pub use crate::types::_automated_reasoning_policy_workflow_type_content::AutomatedReasoningPolicyWorkflowTypeContent;
+
+pub use crate::types::_automated_reasoning_policy_build_workflow_repair_content::AutomatedReasoningPolicyBuildWorkflowRepairContent;
+
+pub use crate::types::_automated_reasoning_policy_build_workflow_document::AutomatedReasoningPolicyBuildWorkflowDocument;
+
+pub use crate::types::_automated_reasoning_policy_build_document_content_type::AutomatedReasoningPolicyBuildDocumentContentType;
+
+pub use crate::types::_automated_reasoning_policy_definition::AutomatedReasoningPolicyDefinition;
+
+pub use crate::types::_automated_reasoning_policy_definition_variable::AutomatedReasoningPolicyDefinitionVariable;
+
+pub use crate::types::_automated_reasoning_policy_definition_rule::AutomatedReasoningPolicyDefinitionRule;
+
+pub use crate::types::_automated_reasoning_policy_definition_type::AutomatedReasoningPolicyDefinitionType;
+
+pub use crate::types::_automated_reasoning_policy_build_workflow_type::AutomatedReasoningPolicyBuildWorkflowType;
+
+pub use crate::types::_automated_reasoning_policy_test_result::AutomatedReasoningPolicyTestResult;
+
+pub use crate::types::_automated_reasoning_policy_test_run_result::AutomatedReasoningPolicyTestRunResult;
+
+pub use crate::types::_automated_reasoning_check_finding::AutomatedReasoningCheckFinding;
+
+pub use crate::types::_automated_reasoning_check_no_translations_finding::AutomatedReasoningCheckNoTranslationsFinding;
+
+pub use crate::types::_automated_reasoning_check_too_complex_finding::AutomatedReasoningCheckTooComplexFinding;
+
+pub use crate::types::_automated_reasoning_check_translation_ambiguous_finding::AutomatedReasoningCheckTranslationAmbiguousFinding;
+
+pub use crate::types::_automated_reasoning_check_scenario::AutomatedReasoningCheckScenario;
+
+pub use crate::types::_automated_reasoning_logic_statement::AutomatedReasoningLogicStatement;
+
+pub use crate::types::_automated_reasoning_check_translation_option::AutomatedReasoningCheckTranslationOption;
+
+pub use crate::types::_automated_reasoning_check_translation::AutomatedReasoningCheckTranslation;
+
+pub use crate::types::_automated_reasoning_check_input_text_reference::AutomatedReasoningCheckInputTextReference;
+
+pub use crate::types::_automated_reasoning_check_impossible_finding::AutomatedReasoningCheckImpossibleFinding;
+
+pub use crate::types::_automated_reasoning_check_logic_warning::AutomatedReasoningCheckLogicWarning;
+
+pub use crate::types::_automated_reasoning_check_logic_warning_type::AutomatedReasoningCheckLogicWarningType;
+
+pub use crate::types::_automated_reasoning_check_rule::AutomatedReasoningCheckRule;
+
+pub use crate::types::_automated_reasoning_check_satisfiable_finding::AutomatedReasoningCheckSatisfiableFinding;
+
+pub use crate::types::_automated_reasoning_check_invalid_finding::AutomatedReasoningCheckInvalidFinding;
+
+pub use crate::types::_automated_reasoning_check_valid_finding::AutomatedReasoningCheckValidFinding;
+
+pub use crate::types::_automated_reasoning_policy_test_run_status::AutomatedReasoningPolicyTestRunStatus;
+
+pub use crate::types::_automated_reasoning_policy_test_case::AutomatedReasoningPolicyTestCase;
+
+pub use crate::types::_automated_reasoning_policy_build_workflow_summary::AutomatedReasoningPolicyBuildWorkflowSummary;
+
+pub use crate::types::_automated_reasoning_policy_build_workflow_status::AutomatedReasoningPolicyBuildWorkflowStatus;
+
+pub use crate::types::_automated_reasoning_policy_scenario::AutomatedReasoningPolicyScenario;
+
+pub use crate::types::_automated_reasoning_policy_build_result_assets::AutomatedReasoningPolicyBuildResultAssets;
+
+pub use crate::types::_automated_reasoning_policy_build_log::AutomatedReasoningPolicyBuildLog;
+
+pub use crate::types::_automated_reasoning_policy_build_log_entry::AutomatedReasoningPolicyBuildLogEntry;
+
+pub use crate::types::_automated_reasoning_policy_build_step::AutomatedReasoningPolicyBuildStep;
+
+pub use crate::types::_automated_reasoning_policy_build_step_message::AutomatedReasoningPolicyBuildStepMessage;
+
+pub use crate::types::_automated_reasoning_policy_build_message_type::AutomatedReasoningPolicyBuildMessageType;
+
+pub use crate::types::_automated_reasoning_policy_definition_element::AutomatedReasoningPolicyDefinitionElement;
+
+pub use crate::types::_automated_reasoning_policy_build_step_context::AutomatedReasoningPolicyBuildStepContext;
+
+pub use crate::types::_automated_reasoning_policy_mutation::AutomatedReasoningPolicyMutation;
+
+pub use crate::types::_automated_reasoning_policy_delete_rule_mutation::AutomatedReasoningPolicyDeleteRuleMutation;
+
+pub use crate::types::_automated_reasoning_policy_update_rule_mutation::AutomatedReasoningPolicyUpdateRuleMutation;
+
+pub use crate::types::_automated_reasoning_policy_add_rule_mutation::AutomatedReasoningPolicyAddRuleMutation;
+
+pub use crate::types::_automated_reasoning_policy_delete_variable_mutation::AutomatedReasoningPolicyDeleteVariableMutation;
+
+pub use crate::types::_automated_reasoning_policy_update_variable_mutation::AutomatedReasoningPolicyUpdateVariableMutation;
+
+pub use crate::types::_automated_reasoning_policy_add_variable_mutation::AutomatedReasoningPolicyAddVariableMutation;
+
+pub use crate::types::_automated_reasoning_policy_delete_type_mutation::AutomatedReasoningPolicyDeleteTypeMutation;
+
+pub use crate::types::_automated_reasoning_policy_update_type_mutation::AutomatedReasoningPolicyUpdateTypeMutation;
+
+pub use crate::types::_automated_reasoning_policy_add_type_mutation::AutomatedReasoningPolicyAddTypeMutation;
+
+pub use crate::types::_automated_reasoning_policy_planning::AutomatedReasoningPolicyPlanning;
+
+pub use crate::types::_automated_reasoning_policy_annotation_status::AutomatedReasoningPolicyAnnotationStatus;
+
+pub use crate::types::_automated_reasoning_policy_definition_quality_report::AutomatedReasoningPolicyDefinitionQualityReport;
+
+pub use crate::types::_automated_reasoning_policy_disjoint_rule_set::AutomatedReasoningPolicyDisjointRuleSet;
+
+pub use crate::types::_automated_reasoning_policy_definition_type_value_pair::AutomatedReasoningPolicyDefinitionTypeValuePair;
+
+pub use crate::types::_automated_reasoning_policy_build_result_asset_type::AutomatedReasoningPolicyBuildResultAssetType;
+
+pub use crate::types::_automated_reasoning_policy_summary::AutomatedReasoningPolicySummary;
+
 mod _agreement_availability;
 
 mod _agreement_status;
@@ -428,6 +588,162 @@ mod _automated_evaluation_config;
 mod _automated_evaluation_custom_metric_config;
 
 mod _automated_evaluation_custom_metric_source;
+
+mod _automated_reasoning_check_finding;
+
+mod _automated_reasoning_check_impossible_finding;
+
+mod _automated_reasoning_check_input_text_reference;
+
+mod _automated_reasoning_check_invalid_finding;
+
+mod _automated_reasoning_check_logic_warning;
+
+mod _automated_reasoning_check_logic_warning_type;
+
+mod _automated_reasoning_check_no_translations_finding;
+
+mod _automated_reasoning_check_result;
+
+mod _automated_reasoning_check_rule;
+
+mod _automated_reasoning_check_satisfiable_finding;
+
+mod _automated_reasoning_check_scenario;
+
+mod _automated_reasoning_check_too_complex_finding;
+
+mod _automated_reasoning_check_translation;
+
+mod _automated_reasoning_check_translation_ambiguous_finding;
+
+mod _automated_reasoning_check_translation_option;
+
+mod _automated_reasoning_check_valid_finding;
+
+mod _automated_reasoning_logic_statement;
+
+mod _automated_reasoning_policy_add_rule_annotation;
+
+mod _automated_reasoning_policy_add_rule_from_natural_language_annotation;
+
+mod _automated_reasoning_policy_add_rule_mutation;
+
+mod _automated_reasoning_policy_add_type_annotation;
+
+mod _automated_reasoning_policy_add_type_mutation;
+
+mod _automated_reasoning_policy_add_type_value;
+
+mod _automated_reasoning_policy_add_variable_annotation;
+
+mod _automated_reasoning_policy_add_variable_mutation;
+
+mod _automated_reasoning_policy_annotation;
+
+mod _automated_reasoning_policy_annotation_status;
+
+mod _automated_reasoning_policy_build_document_content_type;
+
+mod _automated_reasoning_policy_build_log;
+
+mod _automated_reasoning_policy_build_log_entry;
+
+mod _automated_reasoning_policy_build_message_type;
+
+mod _automated_reasoning_policy_build_result_asset_type;
+
+mod _automated_reasoning_policy_build_result_assets;
+
+mod _automated_reasoning_policy_build_step;
+
+mod _automated_reasoning_policy_build_step_context;
+
+mod _automated_reasoning_policy_build_step_message;
+
+mod _automated_reasoning_policy_build_workflow_document;
+
+mod _automated_reasoning_policy_build_workflow_repair_content;
+
+mod _automated_reasoning_policy_build_workflow_source;
+
+mod _automated_reasoning_policy_build_workflow_status;
+
+mod _automated_reasoning_policy_build_workflow_summary;
+
+mod _automated_reasoning_policy_build_workflow_type;
+
+mod _automated_reasoning_policy_definition;
+
+mod _automated_reasoning_policy_definition_element;
+
+mod _automated_reasoning_policy_definition_quality_report;
+
+mod _automated_reasoning_policy_definition_rule;
+
+mod _automated_reasoning_policy_definition_type;
+
+mod _automated_reasoning_policy_definition_type_value;
+
+mod _automated_reasoning_policy_definition_type_value_pair;
+
+mod _automated_reasoning_policy_definition_variable;
+
+mod _automated_reasoning_policy_delete_rule_annotation;
+
+mod _automated_reasoning_policy_delete_rule_mutation;
+
+mod _automated_reasoning_policy_delete_type_annotation;
+
+mod _automated_reasoning_policy_delete_type_mutation;
+
+mod _automated_reasoning_policy_delete_type_value;
+
+mod _automated_reasoning_policy_delete_variable_annotation;
+
+mod _automated_reasoning_policy_delete_variable_mutation;
+
+mod _automated_reasoning_policy_disjoint_rule_set;
+
+mod _automated_reasoning_policy_ingest_content_annotation;
+
+mod _automated_reasoning_policy_mutation;
+
+mod _automated_reasoning_policy_planning;
+
+mod _automated_reasoning_policy_scenario;
+
+mod _automated_reasoning_policy_summary;
+
+mod _automated_reasoning_policy_test_case;
+
+mod _automated_reasoning_policy_test_result;
+
+mod _automated_reasoning_policy_test_run_result;
+
+mod _automated_reasoning_policy_test_run_status;
+
+mod _automated_reasoning_policy_type_value_annotation;
+
+mod _automated_reasoning_policy_update_from_rule_feedback_annotation;
+
+mod _automated_reasoning_policy_update_from_scenario_feedback_annotation;
+
+mod _automated_reasoning_policy_update_rule_annotation;
+
+mod _automated_reasoning_policy_update_rule_mutation;
+
+mod _automated_reasoning_policy_update_type_annotation;
+
+mod _automated_reasoning_policy_update_type_mutation;
+
+mod _automated_reasoning_policy_update_type_value;
+
+mod _automated_reasoning_policy_update_variable_annotation;
+
+mod _automated_reasoning_policy_update_variable_mutation;
+
+mod _automated_reasoning_policy_workflow_type_content;
 
 mod _batch_delete_evaluation_job_error;
 
@@ -532,6 +848,10 @@ mod _foundation_model_lifecycle_status;
 mod _foundation_model_summary;
 
 mod _generation_configuration;
+
+mod _guardrail_automated_reasoning_policy;
+
+mod _guardrail_automated_reasoning_policy_config;
 
 mod _guardrail_configuration;
 

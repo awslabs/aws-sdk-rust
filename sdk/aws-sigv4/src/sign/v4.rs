@@ -195,12 +195,14 @@ pub mod signing_params {
 mod tests {
     use super::{calculate_signature, generate_signing_key, sha256_hex_string};
     use crate::date_time::test_parsers::parse_date_time;
-    use crate::http_request::test;
 
     #[test]
     fn test_signature_calculation() {
         let secret = "wJalrXUtnFEMI/K7MDENG+bPxRfiCYEXAMPLEKEY";
-        let creq = test::v4::test_canonical_request("iam");
+        let creq = r#"AWS4-HMAC-SHA256
+20150830T123600Z
+20150830/us-east-1/iam/aws4_request
+f536975d06c0309214f805bb90ccff089219ecd68b2577efef23edd43b7e1a59"#;
         let time = parse_date_time("20150830T123600Z").unwrap();
 
         let derived_key = generate_signing_key(secret, time, "us-east-1", "iam");
