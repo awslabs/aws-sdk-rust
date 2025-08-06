@@ -15,6 +15,8 @@ pub struct BudgetPerformanceHistory {
     pub cost_types: ::std::option::Option<crate::types::CostTypes>,
     /// <p>The time unit of the budget, such as MONTHLY or QUARTERLY.</p>
     pub time_unit: ::std::option::Option<crate::types::TimeUnit>,
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies a specific billing view. The ARN is used to specify which particular billing view you want to interact with or retrieve information from when making API calls related to Amazon Web Services Billing and Cost Management features. The BillingViewArn can be retrieved by calling the ListBillingViews API.</p>
+    pub billing_view_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of amounts of cost or usage that you created budgets for, which are compared to your actual costs or usage.</p>
     pub budgeted_and_actual_amounts_list: ::std::option::Option<::std::vec::Vec<crate::types::BudgetedAndActualAmounts>>,
 }
@@ -40,6 +42,10 @@ impl BudgetPerformanceHistory {
     pub fn time_unit(&self) -> ::std::option::Option<&crate::types::TimeUnit> {
         self.time_unit.as_ref()
     }
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies a specific billing view. The ARN is used to specify which particular billing view you want to interact with or retrieve information from when making API calls related to Amazon Web Services Billing and Cost Management features. The BillingViewArn can be retrieved by calling the ListBillingViews API.</p>
+    pub fn billing_view_arn(&self) -> ::std::option::Option<&str> {
+        self.billing_view_arn.as_deref()
+    }
     /// <p>A list of amounts of cost or usage that you created budgets for, which are compared to your actual costs or usage.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.budgeted_and_actual_amounts_list.is_none()`.
@@ -63,6 +69,7 @@ pub struct BudgetPerformanceHistoryBuilder {
     pub(crate) cost_filters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     pub(crate) cost_types: ::std::option::Option<crate::types::CostTypes>,
     pub(crate) time_unit: ::std::option::Option<crate::types::TimeUnit>,
+    pub(crate) billing_view_arn: ::std::option::Option<::std::string::String>,
     pub(crate) budgeted_and_actual_amounts_list: ::std::option::Option<::std::vec::Vec<crate::types::BudgetedAndActualAmounts>>,
 }
 impl BudgetPerformanceHistoryBuilder {
@@ -150,6 +157,20 @@ impl BudgetPerformanceHistoryBuilder {
     pub fn get_time_unit(&self) -> &::std::option::Option<crate::types::TimeUnit> {
         &self.time_unit
     }
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies a specific billing view. The ARN is used to specify which particular billing view you want to interact with or retrieve information from when making API calls related to Amazon Web Services Billing and Cost Management features. The BillingViewArn can be retrieved by calling the ListBillingViews API.</p>
+    pub fn billing_view_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.billing_view_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies a specific billing view. The ARN is used to specify which particular billing view you want to interact with or retrieve information from when making API calls related to Amazon Web Services Billing and Cost Management features. The BillingViewArn can be retrieved by calling the ListBillingViews API.</p>
+    pub fn set_billing_view_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.billing_view_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies a specific billing view. The ARN is used to specify which particular billing view you want to interact with or retrieve information from when making API calls related to Amazon Web Services Billing and Cost Management features. The BillingViewArn can be retrieved by calling the ListBillingViews API.</p>
+    pub fn get_billing_view_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.billing_view_arn
+    }
     /// Appends an item to `budgeted_and_actual_amounts_list`.
     ///
     /// To override the contents of this collection use [`set_budgeted_and_actual_amounts_list`](Self::set_budgeted_and_actual_amounts_list).
@@ -181,6 +202,7 @@ impl BudgetPerformanceHistoryBuilder {
             cost_filters: self.cost_filters,
             cost_types: self.cost_types,
             time_unit: self.time_unit,
+            billing_view_arn: self.billing_view_arn,
             budgeted_and_actual_amounts_list: self.budgeted_and_actual_amounts_list,
         }
     }

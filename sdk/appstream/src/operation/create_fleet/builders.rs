@@ -236,6 +236,24 @@ impl CreateFleetFluentBuilder {
     /// <p>stream.graphics-pro.8xlarge</p></li>
     /// <li>
     /// <p>stream.graphics-pro.16xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6.xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6.2xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6.4xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6.8xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6.16xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6.12xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6.24xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.gr6.4xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.gr6.8xlarge</p></li>
     /// </ul>
     /// <p>The following instance types are available for Elastic fleets:</p>
     /// <ul>
@@ -340,6 +358,24 @@ impl CreateFleetFluentBuilder {
     /// <p>stream.graphics-pro.8xlarge</p></li>
     /// <li>
     /// <p>stream.graphics-pro.16xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6.xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6.2xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6.4xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6.8xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6.16xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6.12xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6.24xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.gr6.4xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.gr6.8xlarge</p></li>
     /// </ul>
     /// <p>The following instance types are available for Elastic fleets:</p>
     /// <ul>
@@ -444,6 +480,24 @@ impl CreateFleetFluentBuilder {
     /// <p>stream.graphics-pro.8xlarge</p></li>
     /// <li>
     /// <p>stream.graphics-pro.16xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6.xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6.2xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6.4xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6.8xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6.16xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6.12xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6.24xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.gr6.4xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.gr6.8xlarge</p></li>
     /// </ul>
     /// <p>The following instance types are available for Elastic fleets:</p>
     /// <ul>

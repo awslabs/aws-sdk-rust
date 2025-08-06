@@ -207,6 +207,8 @@ pub(crate) mod shape_cost_types;
 
 pub(crate) mod shape_expression;
 
+pub(crate) mod shape_health_status;
+
 pub(crate) mod shape_iam_action_definition;
 
 pub(crate) mod shape_metrics;

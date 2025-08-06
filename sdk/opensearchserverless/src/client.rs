@@ -148,6 +148,8 @@ mod create_access_policy;
 
 mod create_collection;
 
+mod create_index;
+
 mod create_lifecycle_policy;
 
 mod create_security_config;
@@ -187,6 +189,8 @@ mod delete_access_policy;
 
 mod delete_collection;
 
+mod delete_index;
+
 mod delete_lifecycle_policy;
 
 mod delete_security_config;
@@ -198,6 +202,8 @@ mod delete_vpc_endpoint;
 mod get_access_policy;
 
 mod get_account_settings;
+
+mod get_index;
 
 mod get_policies_stats;
 
@@ -228,6 +234,8 @@ mod update_access_policy;
 mod update_account_settings;
 
 mod update_collection;
+
+mod update_index;
 
 mod update_lifecycle_policy;
 

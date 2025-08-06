@@ -18,7 +18,7 @@ pub struct Image {
     pub visibility: ::std::option::Option<crate::types::VisibilityType>,
     /// <p>Indicates whether an image builder can be launched from this image.</p>
     pub image_builder_supported: ::std::option::Option<bool>,
-    /// <p>The name of the image builder that was used to create the private image. If the image is shared, this value is null.</p>
+    /// <p>The name of the image builder that was used to create the private image. If the image is shared, copied, or updated by using Managed Image Updates, this value is null.</p>
     pub image_builder_name: ::std::option::Option<::std::string::String>,
     /// <p>The operating system platform of the image.</p>
     pub platform: ::std::option::Option<crate::types::PlatformType>,
@@ -94,7 +94,7 @@ impl Image {
     pub fn image_builder_supported(&self) -> ::std::option::Option<bool> {
         self.image_builder_supported
     }
-    /// <p>The name of the image builder that was used to create the private image. If the image is shared, this value is null.</p>
+    /// <p>The name of the image builder that was used to create the private image. If the image is shared, copied, or updated by using Managed Image Updates, this value is null.</p>
     pub fn image_builder_name(&self) -> ::std::option::Option<&str> {
         self.image_builder_name.as_deref()
     }
@@ -308,17 +308,17 @@ impl ImageBuilder {
     pub fn get_image_builder_supported(&self) -> &::std::option::Option<bool> {
         &self.image_builder_supported
     }
-    /// <p>The name of the image builder that was used to create the private image. If the image is shared, this value is null.</p>
+    /// <p>The name of the image builder that was used to create the private image. If the image is shared, copied, or updated by using Managed Image Updates, this value is null.</p>
     pub fn image_builder_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_builder_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the image builder that was used to create the private image. If the image is shared, this value is null.</p>
+    /// <p>The name of the image builder that was used to create the private image. If the image is shared, copied, or updated by using Managed Image Updates, this value is null.</p>
     pub fn set_image_builder_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_builder_name = input;
         self
     }
-    /// <p>The name of the image builder that was used to create the private image. If the image is shared, this value is null.</p>
+    /// <p>The name of the image builder that was used to create the private image. If the image is shared, copied, or updated by using Managed Image Updates, this value is null.</p>
     pub fn get_image_builder_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.image_builder_name
     }

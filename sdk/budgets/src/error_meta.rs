@@ -106,6 +106,7 @@ impl From<crate::operation::create_budget::CreateBudgetError> for Error {
             crate::operation::create_budget::CreateBudgetError::DuplicateRecordException(inner) => Error::DuplicateRecordException(inner),
             crate::operation::create_budget::CreateBudgetError::InternalErrorException(inner) => Error::InternalErrorException(inner),
             crate::operation::create_budget::CreateBudgetError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::create_budget::CreateBudgetError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::create_budget::CreateBudgetError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
             crate::operation::create_budget::CreateBudgetError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::create_budget::CreateBudgetError::Unhandled(inner) => Error::Unhandled(inner),

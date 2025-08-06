@@ -97,6 +97,8 @@ pub(crate) mod shape_get_data_accessor;
 
 pub(crate) mod shape_get_data_source;
 
+pub(crate) mod shape_get_document_content;
+
 pub(crate) mod shape_get_group;
 
 pub(crate) mod shape_get_index;

@@ -128,6 +128,18 @@ pub(crate) fn create_data_accessor_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_document_content_output_output_correct_errors(
+    mut builder: crate::operation::get_document_content::builders::GetDocumentContentOutputBuilder,
+) -> crate::operation::get_document_content::builders::GetDocumentContentOutputBuilder {
+    if builder.presigned_url.is_none() {
+        builder.presigned_url = Some(Default::default())
+    }
+    if builder.mime_type.is_none() {
+        builder.mime_type = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn media_too_large_exception_correct_errors(
     mut builder: crate::types::error::builders::MediaTooLargeExceptionBuilder,
 ) -> crate::types::error::builders::MediaTooLargeExceptionBuilder {

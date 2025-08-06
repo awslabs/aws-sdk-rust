@@ -237,6 +237,31 @@ impl From<crate::operation::create_collection::CreateCollectionError> for Error 
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_index::CreateIndexError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_index::CreateIndexError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_index::CreateIndexError> for Error {
+    fn from(err: crate::operation::create_index::CreateIndexError) -> Self {
+        match err {
+            crate::operation::create_index::CreateIndexError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_index::CreateIndexError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_index::CreateIndexError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_index::CreateIndexError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_index::CreateIndexError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_lifecycle_policy::CreateLifecyclePolicyError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -405,6 +430,30 @@ impl From<crate::operation::delete_collection::DeleteCollectionError> for Error 
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_index::DeleteIndexError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_index::DeleteIndexError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_index::DeleteIndexError> for Error {
+    fn from(err: crate::operation::delete_index::DeleteIndexError) -> Self {
+        match err {
+            crate::operation::delete_index::DeleteIndexError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_index::DeleteIndexError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_index::DeleteIndexError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_index::DeleteIndexError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_lifecycle_policy::DeleteLifecyclePolicyError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -565,6 +614,30 @@ impl From<crate::operation::get_account_settings::GetAccountSettingsError> for E
             crate::operation::get_account_settings::GetAccountSettingsError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::get_account_settings::GetAccountSettingsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_account_settings::GetAccountSettingsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_index::GetIndexError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_index::GetIndexError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_index::GetIndexError> for Error {
+    fn from(err: crate::operation::get_index::GetIndexError) -> Self {
+        match err {
+            crate::operation::get_index::GetIndexError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_index::GetIndexError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_index::GetIndexError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_index::GetIndexError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -942,6 +1015,30 @@ impl From<crate::operation::update_collection::UpdateCollectionError> for Error 
             crate::operation::update_collection::UpdateCollectionError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::update_collection::UpdateCollectionError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_collection::UpdateCollectionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_index::UpdateIndexError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_index::UpdateIndexError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_index::UpdateIndexError> for Error {
+    fn from(err: crate::operation::update_index::UpdateIndexError) -> Self {
+        match err {
+            crate::operation::update_index::UpdateIndexError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_index::UpdateIndexError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_index::UpdateIndexError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_index::UpdateIndexError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

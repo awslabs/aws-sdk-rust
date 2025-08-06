@@ -421,6 +421,10 @@ impl RunInstancesFluentBuilder {
     /// <p>An elastic GPU to associate with the instance.</p><note>
     /// <p>Amazon Elastic Graphics reached end of life on January 8, 2024.</p>
     /// </note>
+    #[deprecated(
+        note = "Specifying Elastic Graphics accelerators is no longer supported on the RunInstances API.",
+        since = "2024-01-08"
+    )]
     pub fn elastic_gpu_specification(mut self, input: crate::types::ElasticGpuSpecification) -> Self {
         self.inner = self.inner.elastic_gpu_specification(input);
         self
@@ -428,6 +432,10 @@ impl RunInstancesFluentBuilder {
     /// <p>An elastic GPU to associate with the instance.</p><note>
     /// <p>Amazon Elastic Graphics reached end of life on January 8, 2024.</p>
     /// </note>
+    #[deprecated(
+        note = "Specifying Elastic Graphics accelerators is no longer supported on the RunInstances API.",
+        since = "2024-01-08"
+    )]
     pub fn set_elastic_gpu_specification(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ElasticGpuSpecification>>) -> Self {
         self.inner = self.inner.set_elastic_gpu_specification(input);
         self
@@ -435,6 +443,10 @@ impl RunInstancesFluentBuilder {
     /// <p>An elastic GPU to associate with the instance.</p><note>
     /// <p>Amazon Elastic Graphics reached end of life on January 8, 2024.</p>
     /// </note>
+    #[deprecated(
+        note = "Specifying Elastic Graphics accelerators is no longer supported on the RunInstances API.",
+        since = "2024-01-08"
+    )]
     pub fn get_elastic_gpu_specification(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ElasticGpuSpecification>> {
         self.inner.get_elastic_gpu_specification()
     }
@@ -446,6 +458,10 @@ impl RunInstancesFluentBuilder {
     /// <p>An elastic inference accelerator to associate with the instance.</p><note>
     /// <p>Amazon Elastic Inference is no longer available.</p>
     /// </note>
+    #[deprecated(
+        note = "Specifying Elastic Inference accelerators is no longer supported on the RunInstances API.",
+        since = "2024-01-08"
+    )]
     pub fn elastic_inference_accelerators(mut self, input: crate::types::ElasticInferenceAccelerator) -> Self {
         self.inner = self.inner.elastic_inference_accelerators(input);
         self
@@ -453,6 +469,10 @@ impl RunInstancesFluentBuilder {
     /// <p>An elastic inference accelerator to associate with the instance.</p><note>
     /// <p>Amazon Elastic Inference is no longer available.</p>
     /// </note>
+    #[deprecated(
+        note = "Specifying Elastic Inference accelerators is no longer supported on the RunInstances API.",
+        since = "2024-01-08"
+    )]
     pub fn set_elastic_inference_accelerators(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::ElasticInferenceAccelerator>>,
@@ -463,6 +483,10 @@ impl RunInstancesFluentBuilder {
     /// <p>An elastic inference accelerator to associate with the instance.</p><note>
     /// <p>Amazon Elastic Inference is no longer available.</p>
     /// </note>
+    #[deprecated(
+        note = "Specifying Elastic Inference accelerators is no longer supported on the RunInstances API.",
+        since = "2024-01-08"
+    )]
     pub fn get_elastic_inference_accelerators(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ElasticInferenceAccelerator>> {
         self.inner.get_elastic_inference_accelerators()
     }

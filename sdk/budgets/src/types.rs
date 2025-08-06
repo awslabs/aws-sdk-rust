@@ -35,6 +35,12 @@ pub use crate::types::_action_type::ActionType;
 
 pub use crate::types::_budget::Budget;
 
+pub use crate::types::_health_status::HealthStatus;
+
+pub use crate::types::_health_status_reason::HealthStatusReason;
+
+pub use crate::types::_health_status_value::HealthStatusValue;
+
 pub use crate::types::_metric::Metric;
 
 pub use crate::types::_expression::Expression;
@@ -134,6 +140,12 @@ mod _execution_type;
 mod _expression;
 
 mod _expression_dimension_values;
+
+mod _health_status;
+
+mod _health_status_reason;
+
+mod _health_status_value;
 
 mod _historical_options;
 

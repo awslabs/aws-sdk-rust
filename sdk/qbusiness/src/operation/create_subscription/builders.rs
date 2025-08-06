@@ -23,7 +23,9 @@ impl crate::operation::create_subscription::builders::CreateSubscriptionInputBui
 /// Fluent builder constructing a request to `CreateSubscription`.
 ///
 /// <p>Subscribes an IAM Identity Center user or a group to a pricing tier for an Amazon Q Business application.</p>
-/// <p>Amazon Q Business offers two subscription tiers: <code>Q_LITE</code> and <code>Q_BUSINESS</code>. Subscription tier determines feature access for the user. For more information on subscriptions and pricing tiers, see <a href="https://aws.amazon.com/q/business/pricing/">Amazon Q Business pricing</a>.</p>
+/// <p>Amazon Q Business offers two subscription tiers: <code>Q_LITE</code> and <code>Q_BUSINESS</code>. Subscription tier determines feature access for the user. For more information on subscriptions and pricing tiers, see <a href="https://aws.amazon.com/q/business/pricing/">Amazon Q Business pricing</a>.</p><note>
+/// <p>For an example IAM role policy for assigning subscriptions, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/setting-up.html#permissions">Set up required permissions</a> in the Amazon Q Business User Guide.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateSubscriptionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -91,6 +91,15 @@ pub fn ser_budget(
         }
         array_26.finish();
     }
+    if let Some(var_28) = &input.billing_view_arn {
+        object.key("BillingViewArn").string(var_28.as_str());
+    }
+    if let Some(var_29) = &input.health_status {
+        #[allow(unused_mut)]
+        let mut object_30 = object.key("HealthStatus").start_object();
+        crate::protocol_serde::shape_health_status::ser_health_status(&mut object_30, var_29)?;
+        object_30.finish();
+    }
     Ok(())
 }
 
@@ -163,6 +172,16 @@ where
                         }
                         "Metrics" => {
                             builder = builder.set_metrics(crate::protocol_serde::shape_metrics::de_metrics(tokens)?);
+                        }
+                        "BillingViewArn" => {
+                            builder = builder.set_billing_view_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "HealthStatus" => {
+                            builder = builder.set_health_status(crate::protocol_serde::shape_health_status::de_health_status(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

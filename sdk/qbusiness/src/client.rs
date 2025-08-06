@@ -237,6 +237,8 @@ mod get_data_accessor;
 
 mod get_data_source;
 
+mod get_document_content;
+
 mod get_group;
 
 mod get_index;

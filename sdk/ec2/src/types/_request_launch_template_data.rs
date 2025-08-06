@@ -81,12 +81,20 @@ pub struct RequestLaunchTemplateData {
     /// <p>Deprecated.</p><note>
     /// <p>Amazon Elastic Graphics reached end of life on January 8, 2024.</p>
     /// </note>
+    #[deprecated(
+        note = "Specifying Elastic Graphics accelerators is no longer supported on the RunInstances API.",
+        since = "2024-01-08"
+    )]
     pub elastic_gpu_specifications: ::std::option::Option<::std::vec::Vec<crate::types::ElasticGpuSpecification>>,
     /// <note>
     /// <p>Amazon Elastic Inference is no longer available.</p>
     /// </note>
     /// <p>An elastic inference accelerator to associate with the instance. Elastic inference accelerators are a resource you can attach to your Amazon EC2 instances to accelerate your Deep Learning (DL) inference workloads.</p>
     /// <p>You cannot specify accelerators from different generations in the same request.</p>
+    #[deprecated(
+        note = "Specifying Elastic Inference accelerators is no longer supported on the RunInstances API.",
+        since = "2024-01-08"
+    )]
     pub elastic_inference_accelerators: ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateElasticInferenceAccelerator>>,
     /// <p>The IDs of the security groups.</p>
     /// <p>If you specify a network interface, you must specify any security groups as part of the network interface instead of using this parameter.</p>
@@ -251,6 +259,10 @@ impl RequestLaunchTemplateData {
     /// </note>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.elastic_gpu_specifications.is_none()`.
+    #[deprecated(
+        note = "Specifying Elastic Graphics accelerators is no longer supported on the RunInstances API.",
+        since = "2024-01-08"
+    )]
     pub fn elastic_gpu_specifications(&self) -> &[crate::types::ElasticGpuSpecification] {
         self.elastic_gpu_specifications.as_deref().unwrap_or_default()
     }
@@ -261,6 +273,10 @@ impl RequestLaunchTemplateData {
     /// <p>You cannot specify accelerators from different generations in the same request.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.elastic_inference_accelerators.is_none()`.
+    #[deprecated(
+        note = "Specifying Elastic Inference accelerators is no longer supported on the RunInstances API.",
+        since = "2024-01-08"
+    )]
     pub fn elastic_inference_accelerators(&self) -> &[crate::types::LaunchTemplateElasticInferenceAccelerator] {
         self.elastic_inference_accelerators.as_deref().unwrap_or_default()
     }
@@ -811,6 +827,10 @@ impl RequestLaunchTemplateDataBuilder {
     /// <p>Deprecated.</p><note>
     /// <p>Amazon Elastic Graphics reached end of life on January 8, 2024.</p>
     /// </note>
+    #[deprecated(
+        note = "Specifying Elastic Graphics accelerators is no longer supported on the RunInstances API.",
+        since = "2024-01-08"
+    )]
     pub fn elastic_gpu_specifications(mut self, input: crate::types::ElasticGpuSpecification) -> Self {
         let mut v = self.elastic_gpu_specifications.unwrap_or_default();
         v.push(input);
@@ -820,6 +840,10 @@ impl RequestLaunchTemplateDataBuilder {
     /// <p>Deprecated.</p><note>
     /// <p>Amazon Elastic Graphics reached end of life on January 8, 2024.</p>
     /// </note>
+    #[deprecated(
+        note = "Specifying Elastic Graphics accelerators is no longer supported on the RunInstances API.",
+        since = "2024-01-08"
+    )]
     pub fn set_elastic_gpu_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ElasticGpuSpecification>>) -> Self {
         self.elastic_gpu_specifications = input;
         self
@@ -827,6 +851,10 @@ impl RequestLaunchTemplateDataBuilder {
     /// <p>Deprecated.</p><note>
     /// <p>Amazon Elastic Graphics reached end of life on January 8, 2024.</p>
     /// </note>
+    #[deprecated(
+        note = "Specifying Elastic Graphics accelerators is no longer supported on the RunInstances API.",
+        since = "2024-01-08"
+    )]
     pub fn get_elastic_gpu_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ElasticGpuSpecification>> {
         &self.elastic_gpu_specifications
     }
@@ -839,6 +867,10 @@ impl RequestLaunchTemplateDataBuilder {
     /// </note>
     /// <p>An elastic inference accelerator to associate with the instance. Elastic inference accelerators are a resource you can attach to your Amazon EC2 instances to accelerate your Deep Learning (DL) inference workloads.</p>
     /// <p>You cannot specify accelerators from different generations in the same request.</p>
+    #[deprecated(
+        note = "Specifying Elastic Inference accelerators is no longer supported on the RunInstances API.",
+        since = "2024-01-08"
+    )]
     pub fn elastic_inference_accelerators(mut self, input: crate::types::LaunchTemplateElasticInferenceAccelerator) -> Self {
         let mut v = self.elastic_inference_accelerators.unwrap_or_default();
         v.push(input);
@@ -850,6 +882,10 @@ impl RequestLaunchTemplateDataBuilder {
     /// </note>
     /// <p>An elastic inference accelerator to associate with the instance. Elastic inference accelerators are a resource you can attach to your Amazon EC2 instances to accelerate your Deep Learning (DL) inference workloads.</p>
     /// <p>You cannot specify accelerators from different generations in the same request.</p>
+    #[deprecated(
+        note = "Specifying Elastic Inference accelerators is no longer supported on the RunInstances API.",
+        since = "2024-01-08"
+    )]
     pub fn set_elastic_inference_accelerators(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateElasticInferenceAccelerator>>,
@@ -862,6 +898,10 @@ impl RequestLaunchTemplateDataBuilder {
     /// </note>
     /// <p>An elastic inference accelerator to associate with the instance. Elastic inference accelerators are a resource you can attach to your Amazon EC2 instances to accelerate your Deep Learning (DL) inference workloads.</p>
     /// <p>You cannot specify accelerators from different generations in the same request.</p>
+    #[deprecated(
+        note = "Specifying Elastic Inference accelerators is no longer supported on the RunInstances API.",
+        since = "2024-01-08"
+    )]
     pub fn get_elastic_inference_accelerators(
         &self,
     ) -> &::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateElasticInferenceAccelerator>> {

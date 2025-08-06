@@ -19,6 +19,9 @@ pub mod create_access_policy;
 /// Types for the `CreateCollection` operation.
 pub mod create_collection;
 
+/// Types for the `CreateIndex` operation.
+pub mod create_index;
+
 /// Types for the `CreateLifecyclePolicy` operation.
 pub mod create_lifecycle_policy;
 
@@ -37,6 +40,9 @@ pub mod delete_access_policy;
 /// Types for the `DeleteCollection` operation.
 pub mod delete_collection;
 
+/// Types for the `DeleteIndex` operation.
+pub mod delete_index;
+
 /// Types for the `DeleteLifecyclePolicy` operation.
 pub mod delete_lifecycle_policy;
 
@@ -54,6 +60,9 @@ pub mod get_access_policy;
 
 /// Types for the `GetAccountSettings` operation.
 pub mod get_account_settings;
+
+/// Types for the `GetIndex` operation.
+pub mod get_index;
 
 /// Types for the `GetPoliciesStats` operation.
 pub mod get_policies_stats;
@@ -99,6 +108,9 @@ pub mod update_account_settings;
 
 /// Types for the `UpdateCollection` operation.
 pub mod update_collection;
+
+/// Types for the `UpdateIndex` operation.
+pub mod update_index;
 
 /// Types for the `UpdateLifecyclePolicy` operation.
 pub mod update_lifecycle_policy;

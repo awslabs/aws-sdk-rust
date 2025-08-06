@@ -35,6 +35,8 @@ pub(crate) mod shape_create_access_policy;
 
 pub(crate) mod shape_create_collection;
 
+pub(crate) mod shape_create_index;
+
 pub(crate) mod shape_create_lifecycle_policy;
 
 pub(crate) mod shape_create_security_config;
@@ -47,6 +49,8 @@ pub(crate) mod shape_delete_access_policy;
 
 pub(crate) mod shape_delete_collection;
 
+pub(crate) mod shape_delete_index;
+
 pub(crate) mod shape_delete_lifecycle_policy;
 
 pub(crate) mod shape_delete_security_config;
@@ -58,6 +62,8 @@ pub(crate) mod shape_delete_vpc_endpoint;
 pub(crate) mod shape_get_access_policy;
 
 pub(crate) mod shape_get_account_settings;
+
+pub(crate) mod shape_get_index;
 
 pub(crate) mod shape_get_policies_stats;
 
@@ -89,6 +95,8 @@ pub(crate) mod shape_update_account_settings;
 
 pub(crate) mod shape_update_collection;
 
+pub(crate) mod shape_update_index;
+
 pub(crate) mod shape_update_lifecycle_policy;
 
 pub(crate) mod shape_update_security_config;
@@ -119,6 +127,8 @@ pub(crate) mod shape_create_access_policy_input;
 
 pub(crate) mod shape_create_collection_input;
 
+pub(crate) mod shape_create_index_input;
+
 pub(crate) mod shape_create_lifecycle_policy_input;
 
 pub(crate) mod shape_create_security_config_input;
@@ -131,6 +141,8 @@ pub(crate) mod shape_delete_access_policy_input;
 
 pub(crate) mod shape_delete_collection_input;
 
+pub(crate) mod shape_delete_index_input;
+
 pub(crate) mod shape_delete_lifecycle_policy_input;
 
 pub(crate) mod shape_delete_security_config_input;
@@ -140,6 +152,8 @@ pub(crate) mod shape_delete_security_policy_input;
 pub(crate) mod shape_delete_vpc_endpoint_input;
 
 pub(crate) mod shape_get_access_policy_input;
+
+pub(crate) mod shape_get_index_input;
 
 pub(crate) mod shape_get_security_config_input;
 
@@ -176,6 +190,8 @@ pub(crate) mod shape_update_access_policy_input;
 pub(crate) mod shape_update_account_settings_input;
 
 pub(crate) mod shape_update_collection_input;
+
+pub(crate) mod shape_update_index_input;
 
 pub(crate) mod shape_update_lifecycle_policy_input;
 

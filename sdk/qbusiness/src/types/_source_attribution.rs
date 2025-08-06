@@ -16,6 +16,12 @@ pub struct SourceAttribution {
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A text extract from a source document that is used for source attribution.</p>
     pub text_message_segments: ::std::option::Option<::std::vec::Vec<crate::types::TextSegment>>,
+    /// <p>The unique identifier of the source document used in the citation, obtained from the Amazon Q Business index during chat response generation. This ID is used as input to the <code>GetDocumentContent</code> API to retrieve the actual document content for user verification.</p>
+    pub document_id: ::std::option::Option<::std::string::String>,
+    /// <p>The identifier of the index containing the source document's metadata and access control information. This links the citation back to the specific Amazon Q Business index where the document's searchable content and permissions are stored.</p>
+    pub index_id: ::std::option::Option<::std::string::String>,
+    /// <p>The identifier of the data source from which the document was ingested. This field is not present if the document is ingested by directly calling the BatchPutDocument API (similar to checkDocumentAccess). If the document is from a file-upload data source, the datasource will be "uploaded-docs-file-stat-datasourceid".</p>
+    pub datasource_id: ::std::option::Option<::std::string::String>,
 }
 impl SourceAttribution {
     /// <p>The title of the document which is the source for the Amazon Q Business generated response.</p>
@@ -44,6 +50,18 @@ impl SourceAttribution {
     pub fn text_message_segments(&self) -> &[crate::types::TextSegment] {
         self.text_message_segments.as_deref().unwrap_or_default()
     }
+    /// <p>The unique identifier of the source document used in the citation, obtained from the Amazon Q Business index during chat response generation. This ID is used as input to the <code>GetDocumentContent</code> API to retrieve the actual document content for user verification.</p>
+    pub fn document_id(&self) -> ::std::option::Option<&str> {
+        self.document_id.as_deref()
+    }
+    /// <p>The identifier of the index containing the source document's metadata and access control information. This links the citation back to the specific Amazon Q Business index where the document's searchable content and permissions are stored.</p>
+    pub fn index_id(&self) -> ::std::option::Option<&str> {
+        self.index_id.as_deref()
+    }
+    /// <p>The identifier of the data source from which the document was ingested. This field is not present if the document is ingested by directly calling the BatchPutDocument API (similar to checkDocumentAccess). If the document is from a file-upload data source, the datasource will be "uploaded-docs-file-stat-datasourceid".</p>
+    pub fn datasource_id(&self) -> ::std::option::Option<&str> {
+        self.datasource_id.as_deref()
+    }
 }
 impl SourceAttribution {
     /// Creates a new builder-style object to manufacture [`SourceAttribution`](crate::types::SourceAttribution).
@@ -62,6 +80,9 @@ pub struct SourceAttributionBuilder {
     pub(crate) citation_number: ::std::option::Option<i32>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) text_message_segments: ::std::option::Option<::std::vec::Vec<crate::types::TextSegment>>,
+    pub(crate) document_id: ::std::option::Option<::std::string::String>,
+    pub(crate) index_id: ::std::option::Option<::std::string::String>,
+    pub(crate) datasource_id: ::std::option::Option<::std::string::String>,
 }
 impl SourceAttributionBuilder {
     /// <p>The title of the document which is the source for the Amazon Q Business generated response.</p>
@@ -154,6 +175,48 @@ impl SourceAttributionBuilder {
     pub fn get_text_message_segments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TextSegment>> {
         &self.text_message_segments
     }
+    /// <p>The unique identifier of the source document used in the citation, obtained from the Amazon Q Business index during chat response generation. This ID is used as input to the <code>GetDocumentContent</code> API to retrieve the actual document content for user verification.</p>
+    pub fn document_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.document_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique identifier of the source document used in the citation, obtained from the Amazon Q Business index during chat response generation. This ID is used as input to the <code>GetDocumentContent</code> API to retrieve the actual document content for user verification.</p>
+    pub fn set_document_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.document_id = input;
+        self
+    }
+    /// <p>The unique identifier of the source document used in the citation, obtained from the Amazon Q Business index during chat response generation. This ID is used as input to the <code>GetDocumentContent</code> API to retrieve the actual document content for user verification.</p>
+    pub fn get_document_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.document_id
+    }
+    /// <p>The identifier of the index containing the source document's metadata and access control information. This links the citation back to the specific Amazon Q Business index where the document's searchable content and permissions are stored.</p>
+    pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.index_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier of the index containing the source document's metadata and access control information. This links the citation back to the specific Amazon Q Business index where the document's searchable content and permissions are stored.</p>
+    pub fn set_index_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.index_id = input;
+        self
+    }
+    /// <p>The identifier of the index containing the source document's metadata and access control information. This links the citation back to the specific Amazon Q Business index where the document's searchable content and permissions are stored.</p>
+    pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.index_id
+    }
+    /// <p>The identifier of the data source from which the document was ingested. This field is not present if the document is ingested by directly calling the BatchPutDocument API (similar to checkDocumentAccess). If the document is from a file-upload data source, the datasource will be "uploaded-docs-file-stat-datasourceid".</p>
+    pub fn datasource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.datasource_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier of the data source from which the document was ingested. This field is not present if the document is ingested by directly calling the BatchPutDocument API (similar to checkDocumentAccess). If the document is from a file-upload data source, the datasource will be "uploaded-docs-file-stat-datasourceid".</p>
+    pub fn set_datasource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.datasource_id = input;
+        self
+    }
+    /// <p>The identifier of the data source from which the document was ingested. This field is not present if the document is ingested by directly calling the BatchPutDocument API (similar to checkDocumentAccess). If the document is from a file-upload data source, the datasource will be "uploaded-docs-file-stat-datasourceid".</p>
+    pub fn get_datasource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.datasource_id
+    }
     /// Consumes the builder and constructs a [`SourceAttribution`](crate::types::SourceAttribution).
     pub fn build(self) -> crate::types::SourceAttribution {
         crate::types::SourceAttribution {
@@ -163,6 +226,9 @@ impl SourceAttributionBuilder {
             citation_number: self.citation_number,
             updated_at: self.updated_at,
             text_message_segments: self.text_message_segments,
+            document_id: self.document_id,
+            index_id: self.index_id,
+            datasource_id: self.datasource_id,
         }
     }
 }

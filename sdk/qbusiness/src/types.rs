@@ -331,6 +331,8 @@ pub use crate::types::_group_status_detail::GroupStatusDetail;
 
 pub use crate::types::_group_status::GroupStatus;
 
+pub use crate::types::_output_format::OutputFormat;
+
 pub use crate::types::_chat_response_configuration_detail::ChatResponseConfigurationDetail;
 
 pub use crate::types::_applied_creator_mode_configuration::AppliedCreatorModeConfiguration;
@@ -710,6 +712,8 @@ mod _open_id_connect_provider_configuration;
 mod _orchestration_configuration;
 
 mod _orchestration_control;
+
+mod _output_format;
 
 mod _permission_condition;
 

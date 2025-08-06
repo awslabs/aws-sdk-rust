@@ -112,6 +112,9 @@ pub mod get_data_accessor;
 /// Types for the `GetDataSource` operation.
 pub mod get_data_source;
 
+/// Types for the `GetDocumentContent` operation.
+pub mod get_document_content;
+
 /// Types for the `GetGroup` operation.
 pub mod get_group;
 

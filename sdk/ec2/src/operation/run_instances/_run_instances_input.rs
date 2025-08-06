@@ -52,10 +52,18 @@ pub struct RunInstancesInput {
     /// <p>An elastic GPU to associate with the instance.</p><note>
     /// <p>Amazon Elastic Graphics reached end of life on January 8, 2024.</p>
     /// </note>
+    #[deprecated(
+        note = "Specifying Elastic Graphics accelerators is no longer supported on the RunInstances API.",
+        since = "2024-01-08"
+    )]
     pub elastic_gpu_specification: ::std::option::Option<::std::vec::Vec<crate::types::ElasticGpuSpecification>>,
     /// <p>An elastic inference accelerator to associate with the instance.</p><note>
     /// <p>Amazon Elastic Inference is no longer available.</p>
     /// </note>
+    #[deprecated(
+        note = "Specifying Elastic Inference accelerators is no longer supported on the RunInstances API.",
+        since = "2024-01-08"
+    )]
     pub elastic_inference_accelerators: ::std::option::Option<::std::vec::Vec<crate::types::ElasticInferenceAccelerator>>,
     /// <p>The tags to apply to the resources that are created during instance launch.</p>
     /// <p>You can specify tags for the following resources only:</p>
@@ -223,6 +231,10 @@ impl RunInstancesInput {
     /// </note>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.elastic_gpu_specification.is_none()`.
+    #[deprecated(
+        note = "Specifying Elastic Graphics accelerators is no longer supported on the RunInstances API.",
+        since = "2024-01-08"
+    )]
     pub fn elastic_gpu_specification(&self) -> &[crate::types::ElasticGpuSpecification] {
         self.elastic_gpu_specification.as_deref().unwrap_or_default()
     }
@@ -231,6 +243,10 @@ impl RunInstancesInput {
     /// </note>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.elastic_inference_accelerators.is_none()`.
+    #[deprecated(
+        note = "Specifying Elastic Inference accelerators is no longer supported on the RunInstances API.",
+        since = "2024-01-08"
+    )]
     pub fn elastic_inference_accelerators(&self) -> &[crate::types::ElasticInferenceAccelerator] {
         self.elastic_inference_accelerators.as_deref().unwrap_or_default()
     }
@@ -768,6 +784,10 @@ impl RunInstancesInputBuilder {
     /// <p>An elastic GPU to associate with the instance.</p><note>
     /// <p>Amazon Elastic Graphics reached end of life on January 8, 2024.</p>
     /// </note>
+    #[deprecated(
+        note = "Specifying Elastic Graphics accelerators is no longer supported on the RunInstances API.",
+        since = "2024-01-08"
+    )]
     pub fn elastic_gpu_specification(mut self, input: crate::types::ElasticGpuSpecification) -> Self {
         let mut v = self.elastic_gpu_specification.unwrap_or_default();
         v.push(input);
@@ -777,6 +797,10 @@ impl RunInstancesInputBuilder {
     /// <p>An elastic GPU to associate with the instance.</p><note>
     /// <p>Amazon Elastic Graphics reached end of life on January 8, 2024.</p>
     /// </note>
+    #[deprecated(
+        note = "Specifying Elastic Graphics accelerators is no longer supported on the RunInstances API.",
+        since = "2024-01-08"
+    )]
     pub fn set_elastic_gpu_specification(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ElasticGpuSpecification>>) -> Self {
         self.elastic_gpu_specification = input;
         self
@@ -784,6 +808,10 @@ impl RunInstancesInputBuilder {
     /// <p>An elastic GPU to associate with the instance.</p><note>
     /// <p>Amazon Elastic Graphics reached end of life on January 8, 2024.</p>
     /// </note>
+    #[deprecated(
+        note = "Specifying Elastic Graphics accelerators is no longer supported on the RunInstances API.",
+        since = "2024-01-08"
+    )]
     pub fn get_elastic_gpu_specification(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ElasticGpuSpecification>> {
         &self.elastic_gpu_specification
     }
@@ -794,6 +822,10 @@ impl RunInstancesInputBuilder {
     /// <p>An elastic inference accelerator to associate with the instance.</p><note>
     /// <p>Amazon Elastic Inference is no longer available.</p>
     /// </note>
+    #[deprecated(
+        note = "Specifying Elastic Inference accelerators is no longer supported on the RunInstances API.",
+        since = "2024-01-08"
+    )]
     pub fn elastic_inference_accelerators(mut self, input: crate::types::ElasticInferenceAccelerator) -> Self {
         let mut v = self.elastic_inference_accelerators.unwrap_or_default();
         v.push(input);
@@ -803,6 +835,10 @@ impl RunInstancesInputBuilder {
     /// <p>An elastic inference accelerator to associate with the instance.</p><note>
     /// <p>Amazon Elastic Inference is no longer available.</p>
     /// </note>
+    #[deprecated(
+        note = "Specifying Elastic Inference accelerators is no longer supported on the RunInstances API.",
+        since = "2024-01-08"
+    )]
     pub fn set_elastic_inference_accelerators(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::ElasticInferenceAccelerator>>,
@@ -813,6 +849,10 @@ impl RunInstancesInputBuilder {
     /// <p>An elastic inference accelerator to associate with the instance.</p><note>
     /// <p>Amazon Elastic Inference is no longer available.</p>
     /// </note>
+    #[deprecated(
+        note = "Specifying Elastic Inference accelerators is no longer supported on the RunInstances API.",
+        since = "2024-01-08"
+    )]
     pub fn get_elastic_inference_accelerators(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ElasticInferenceAccelerator>> {
         &self.elastic_inference_accelerators
     }

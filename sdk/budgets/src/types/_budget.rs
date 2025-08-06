@@ -65,6 +65,10 @@ pub struct Budget {
     pub filter_expression: ::std::option::Option<crate::types::Expression>,
     /// <p>The definition for how the budget data is aggregated.</p>
     pub metrics: ::std::option::Option<::std::vec::Vec<crate::types::Metric>>,
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies a specific billing view. The ARN is used to specify which particular billing view you want to interact with or retrieve information from when making API calls related to Amazon Web Services Billing and Cost Management features. The BillingViewArn can be retrieved by calling the ListBillingViews API.</p>
+    pub billing_view_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The current operational state of a Billing View derived resource.</p>
+    pub health_status: ::std::option::Option<crate::types::HealthStatus>,
 }
 impl Budget {
     /// <p>The name of a budget. The name must be unique within an account. The <code>:</code> and <code>\</code> characters, and the "/action/" substring, aren't allowed in <code>BudgetName</code>.</p>
@@ -155,6 +159,14 @@ impl Budget {
     pub fn metrics(&self) -> &[crate::types::Metric] {
         self.metrics.as_deref().unwrap_or_default()
     }
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies a specific billing view. The ARN is used to specify which particular billing view you want to interact with or retrieve information from when making API calls related to Amazon Web Services Billing and Cost Management features. The BillingViewArn can be retrieved by calling the ListBillingViews API.</p>
+    pub fn billing_view_arn(&self) -> ::std::option::Option<&str> {
+        self.billing_view_arn.as_deref()
+    }
+    /// <p>The current operational state of a Billing View derived resource.</p>
+    pub fn health_status(&self) -> ::std::option::Option<&crate::types::HealthStatus> {
+        self.health_status.as_ref()
+    }
 }
 impl Budget {
     /// Creates a new builder-style object to manufacture [`Budget`](crate::types::Budget).
@@ -180,6 +192,8 @@ pub struct BudgetBuilder {
     pub(crate) auto_adjust_data: ::std::option::Option<crate::types::AutoAdjustData>,
     pub(crate) filter_expression: ::std::option::Option<crate::types::Expression>,
     pub(crate) metrics: ::std::option::Option<::std::vec::Vec<crate::types::Metric>>,
+    pub(crate) billing_view_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) health_status: ::std::option::Option<crate::types::HealthStatus>,
 }
 impl BudgetBuilder {
     /// <p>The name of a budget. The name must be unique within an account. The <code>:</code> and <code>\</code> characters, and the "/action/" substring, aren't allowed in <code>BudgetName</code>.</p>
@@ -492,6 +506,34 @@ impl BudgetBuilder {
     pub fn get_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Metric>> {
         &self.metrics
     }
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies a specific billing view. The ARN is used to specify which particular billing view you want to interact with or retrieve information from when making API calls related to Amazon Web Services Billing and Cost Management features. The BillingViewArn can be retrieved by calling the ListBillingViews API.</p>
+    pub fn billing_view_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.billing_view_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies a specific billing view. The ARN is used to specify which particular billing view you want to interact with or retrieve information from when making API calls related to Amazon Web Services Billing and Cost Management features. The BillingViewArn can be retrieved by calling the ListBillingViews API.</p>
+    pub fn set_billing_view_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.billing_view_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies a specific billing view. The ARN is used to specify which particular billing view you want to interact with or retrieve information from when making API calls related to Amazon Web Services Billing and Cost Management features. The BillingViewArn can be retrieved by calling the ListBillingViews API.</p>
+    pub fn get_billing_view_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.billing_view_arn
+    }
+    /// <p>The current operational state of a Billing View derived resource.</p>
+    pub fn health_status(mut self, input: crate::types::HealthStatus) -> Self {
+        self.health_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The current operational state of a Billing View derived resource.</p>
+    pub fn set_health_status(mut self, input: ::std::option::Option<crate::types::HealthStatus>) -> Self {
+        self.health_status = input;
+        self
+    }
+    /// <p>The current operational state of a Billing View derived resource.</p>
+    pub fn get_health_status(&self) -> &::std::option::Option<crate::types::HealthStatus> {
+        &self.health_status
+    }
     /// Consumes the builder and constructs a [`Budget`](crate::types::Budget).
     /// This method will fail if any of the following fields are not set:
     /// - [`budget_name`](crate::types::builders::BudgetBuilder::budget_name)
@@ -527,6 +569,8 @@ impl BudgetBuilder {
             auto_adjust_data: self.auto_adjust_data,
             filter_expression: self.filter_expression,
             metrics: self.metrics,
+            billing_view_arn: self.billing_view_arn,
+            health_status: self.health_status,
         })
     }
 }

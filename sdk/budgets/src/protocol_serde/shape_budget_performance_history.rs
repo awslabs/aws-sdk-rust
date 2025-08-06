@@ -41,6 +41,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "BillingViewArn" => {
+                            builder = builder.set_billing_view_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "BudgetedAndActualAmountsList" => {
                             builder = builder.set_budgeted_and_actual_amounts_list(
                                 crate::protocol_serde::shape_budgeted_and_actual_amounts_list::de_budgeted_and_actual_amounts_list(tokens)?,
