@@ -427,6 +427,8 @@ pub use crate::types::_catalog_input::CatalogInputBuilder;
 
 pub use crate::types::_catalog_properties::CatalogPropertiesBuilder;
 
+pub use crate::types::_iceberg_optimization_properties::IcebergOptimizationPropertiesBuilder;
+
 pub use crate::types::_data_lake_access_properties::DataLakeAccessPropertiesBuilder;
 
 pub use crate::types::_target_redshift_catalog::TargetRedshiftCatalogBuilder;
@@ -728,6 +730,8 @@ pub use crate::types::_grok_classifier::GrokClassifierBuilder;
 pub use crate::types::_catalog::CatalogBuilder;
 
 pub use crate::types::_catalog_properties_output::CatalogPropertiesOutputBuilder;
+
+pub use crate::types::_iceberg_optimization_properties_output::IcebergOptimizationPropertiesOutputBuilder;
 
 pub use crate::types::_data_lake_access_properties_output::DataLakeAccessPropertiesOutputBuilder;
 

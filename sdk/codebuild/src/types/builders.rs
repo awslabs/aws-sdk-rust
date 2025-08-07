@@ -5,6 +5,8 @@ pub use crate::types::_scope_configuration::ScopeConfigurationBuilder;
 
 pub use crate::types::_webhook_filter::WebhookFilterBuilder;
 
+pub use crate::types::_pull_request_build_policy::PullRequestBuildPolicyBuilder;
+
 pub use crate::types::_report_group::ReportGroupBuilder;
 
 pub use crate::types::_tag::TagBuilder;

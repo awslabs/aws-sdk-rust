@@ -8,6 +8,8 @@ pub struct IcebergOrphanFileDeletionConfiguration {
     pub orphan_file_retention_period_in_days: ::std::option::Option<i32>,
     /// <p>Specifies a directory in which to look for files (defaults to the table's location). You may choose a sub-directory rather than the top-level table location.</p>
     pub location: ::std::option::Option<::std::string::String>,
+    /// <p>The interval in hours between orphan file deletion job runs. This parameter controls how frequently the orphan file deletion optimizer will run to clean up orphan files. The value must be between 3 and 168 hours (7 days). If an input is not provided, the default value 24 will be used.</p>
+    pub run_rate_in_hours: ::std::option::Option<i32>,
 }
 impl IcebergOrphanFileDeletionConfiguration {
     /// <p>The number of days that orphan files should be retained before file deletion. If an input is not provided, the default value 3 will be used.</p>
@@ -17,6 +19,10 @@ impl IcebergOrphanFileDeletionConfiguration {
     /// <p>Specifies a directory in which to look for files (defaults to the table's location). You may choose a sub-directory rather than the top-level table location.</p>
     pub fn location(&self) -> ::std::option::Option<&str> {
         self.location.as_deref()
+    }
+    /// <p>The interval in hours between orphan file deletion job runs. This parameter controls how frequently the orphan file deletion optimizer will run to clean up orphan files. The value must be between 3 and 168 hours (7 days). If an input is not provided, the default value 24 will be used.</p>
+    pub fn run_rate_in_hours(&self) -> ::std::option::Option<i32> {
+        self.run_rate_in_hours
     }
 }
 impl IcebergOrphanFileDeletionConfiguration {
@@ -32,6 +38,7 @@ impl IcebergOrphanFileDeletionConfiguration {
 pub struct IcebergOrphanFileDeletionConfigurationBuilder {
     pub(crate) orphan_file_retention_period_in_days: ::std::option::Option<i32>,
     pub(crate) location: ::std::option::Option<::std::string::String>,
+    pub(crate) run_rate_in_hours: ::std::option::Option<i32>,
 }
 impl IcebergOrphanFileDeletionConfigurationBuilder {
     /// <p>The number of days that orphan files should be retained before file deletion. If an input is not provided, the default value 3 will be used.</p>
@@ -62,11 +69,26 @@ impl IcebergOrphanFileDeletionConfigurationBuilder {
     pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
         &self.location
     }
+    /// <p>The interval in hours between orphan file deletion job runs. This parameter controls how frequently the orphan file deletion optimizer will run to clean up orphan files. The value must be between 3 and 168 hours (7 days). If an input is not provided, the default value 24 will be used.</p>
+    pub fn run_rate_in_hours(mut self, input: i32) -> Self {
+        self.run_rate_in_hours = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The interval in hours between orphan file deletion job runs. This parameter controls how frequently the orphan file deletion optimizer will run to clean up orphan files. The value must be between 3 and 168 hours (7 days). If an input is not provided, the default value 24 will be used.</p>
+    pub fn set_run_rate_in_hours(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.run_rate_in_hours = input;
+        self
+    }
+    /// <p>The interval in hours between orphan file deletion job runs. This parameter controls how frequently the orphan file deletion optimizer will run to clean up orphan files. The value must be between 3 and 168 hours (7 days). If an input is not provided, the default value 24 will be used.</p>
+    pub fn get_run_rate_in_hours(&self) -> &::std::option::Option<i32> {
+        &self.run_rate_in_hours
+    }
     /// Consumes the builder and constructs a [`IcebergOrphanFileDeletionConfiguration`](crate::types::IcebergOrphanFileDeletionConfiguration).
     pub fn build(self) -> crate::types::IcebergOrphanFileDeletionConfiguration {
         crate::types::IcebergOrphanFileDeletionConfiguration {
             orphan_file_retention_period_in_days: self.orphan_file_retention_period_in_days,
             location: self.location,
+            run_rate_in_hours: self.run_rate_in_hours,
         }
     }
 }

@@ -18,6 +18,7 @@
 ///     MinimumProtocolVersion::TlSv122018 => { /* ... */ },
 ///     MinimumProtocolVersion::TlSv122019 => { /* ... */ },
 ///     MinimumProtocolVersion::TlSv122021 => { /* ... */ },
+///     MinimumProtocolVersion::TlSv132025 => { /* ... */ },
 ///     MinimumProtocolVersion::TlSv12016 => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -60,6 +61,8 @@ pub enum MinimumProtocolVersion {
     #[allow(missing_docs)] // documentation missing in model
     TlSv122021,
     #[allow(missing_docs)] // documentation missing in model
+    TlSv132025,
+    #[allow(missing_docs)] // documentation missing in model
     TlSv12016,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -74,6 +77,7 @@ impl ::std::convert::From<&str> for MinimumProtocolVersion {
             "TLSv1.2_2018" => MinimumProtocolVersion::TlSv122018,
             "TLSv1.2_2019" => MinimumProtocolVersion::TlSv122019,
             "TLSv1.2_2021" => MinimumProtocolVersion::TlSv122021,
+            "TLSv1.3_2025" => MinimumProtocolVersion::TlSv132025,
             "TLSv1_2016" => MinimumProtocolVersion::TlSv12016,
             other => MinimumProtocolVersion::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -96,6 +100,7 @@ impl MinimumProtocolVersion {
             MinimumProtocolVersion::TlSv122018 => "TLSv1.2_2018",
             MinimumProtocolVersion::TlSv122019 => "TLSv1.2_2019",
             MinimumProtocolVersion::TlSv122021 => "TLSv1.2_2021",
+            MinimumProtocolVersion::TlSv132025 => "TLSv1.3_2025",
             MinimumProtocolVersion::TlSv12016 => "TLSv1_2016",
             MinimumProtocolVersion::Unknown(value) => value.as_str(),
         }
@@ -109,6 +114,7 @@ impl MinimumProtocolVersion {
             "TLSv1.2_2018",
             "TLSv1.2_2019",
             "TLSv1.2_2021",
+            "TLSv1.3_2025",
             "TLSv1_2016",
         ]
     }
@@ -139,6 +145,7 @@ impl ::std::fmt::Display for MinimumProtocolVersion {
             MinimumProtocolVersion::TlSv122018 => write!(f, "TLSv1.2_2018"),
             MinimumProtocolVersion::TlSv122019 => write!(f, "TLSv1.2_2019"),
             MinimumProtocolVersion::TlSv122021 => write!(f, "TLSv1.2_2021"),
+            MinimumProtocolVersion::TlSv132025 => write!(f, "TLSv1.3_2025"),
             MinimumProtocolVersion::TlSv12016 => write!(f, "TLSv1_2016"),
             MinimumProtocolVersion::Unknown(value) => write!(f, "{}", value),
         }

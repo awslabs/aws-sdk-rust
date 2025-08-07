@@ -33,5 +33,11 @@ pub fn ser_update_webhook_input_input(
     if let Some(var_10) = &input.build_type {
         object.key("buildType").string(var_10.as_str());
     }
+    if let Some(var_11) = &input.pull_request_build_policy {
+        #[allow(unused_mut)]
+        let mut object_12 = object.key("pullRequestBuildPolicy").start_object();
+        crate::protocol_serde::shape_pull_request_build_policy::ser_pull_request_build_policy(&mut object_12, var_11)?;
+        object_12.finish();
+    }
     Ok(())
 }

@@ -24,6 +24,8 @@ pub struct CreateWebhookInput {
     /// <p>Global or organization webhooks are only available for GitHub and Github Enterprise webhooks.</p>
     /// </note>
     pub scope_configuration: ::std::option::Option<crate::types::ScopeConfiguration>,
+    /// <p>A PullRequestBuildPolicy object that defines comment-based approval requirements for triggering builds on pull requests. This policy helps control when automated builds are executed based on contributor permissions and approval workflows.</p>
+    pub pull_request_build_policy: ::std::option::Option<crate::types::PullRequestBuildPolicy>,
 }
 impl CreateWebhookInput {
     /// <p>The name of the CodeBuild project.</p>
@@ -61,6 +63,10 @@ impl CreateWebhookInput {
     pub fn scope_configuration(&self) -> ::std::option::Option<&crate::types::ScopeConfiguration> {
         self.scope_configuration.as_ref()
     }
+    /// <p>A PullRequestBuildPolicy object that defines comment-based approval requirements for triggering builds on pull requests. This policy helps control when automated builds are executed based on contributor permissions and approval workflows.</p>
+    pub fn pull_request_build_policy(&self) -> ::std::option::Option<&crate::types::PullRequestBuildPolicy> {
+        self.pull_request_build_policy.as_ref()
+    }
 }
 impl CreateWebhookInput {
     /// Creates a new builder-style object to manufacture [`CreateWebhookInput`](crate::operation::create_webhook::CreateWebhookInput).
@@ -79,6 +85,7 @@ pub struct CreateWebhookInputBuilder {
     pub(crate) build_type: ::std::option::Option<crate::types::WebhookBuildType>,
     pub(crate) manual_creation: ::std::option::Option<bool>,
     pub(crate) scope_configuration: ::std::option::Option<crate::types::ScopeConfiguration>,
+    pub(crate) pull_request_build_policy: ::std::option::Option<crate::types::PullRequestBuildPolicy>,
 }
 impl CreateWebhookInputBuilder {
     /// <p>The name of the CodeBuild project.</p>
@@ -199,6 +206,20 @@ impl CreateWebhookInputBuilder {
     pub fn get_scope_configuration(&self) -> &::std::option::Option<crate::types::ScopeConfiguration> {
         &self.scope_configuration
     }
+    /// <p>A PullRequestBuildPolicy object that defines comment-based approval requirements for triggering builds on pull requests. This policy helps control when automated builds are executed based on contributor permissions and approval workflows.</p>
+    pub fn pull_request_build_policy(mut self, input: crate::types::PullRequestBuildPolicy) -> Self {
+        self.pull_request_build_policy = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A PullRequestBuildPolicy object that defines comment-based approval requirements for triggering builds on pull requests. This policy helps control when automated builds are executed based on contributor permissions and approval workflows.</p>
+    pub fn set_pull_request_build_policy(mut self, input: ::std::option::Option<crate::types::PullRequestBuildPolicy>) -> Self {
+        self.pull_request_build_policy = input;
+        self
+    }
+    /// <p>A PullRequestBuildPolicy object that defines comment-based approval requirements for triggering builds on pull requests. This policy helps control when automated builds are executed based on contributor permissions and approval workflows.</p>
+    pub fn get_pull_request_build_policy(&self) -> &::std::option::Option<crate::types::PullRequestBuildPolicy> {
+        &self.pull_request_build_policy
+    }
     /// Consumes the builder and constructs a [`CreateWebhookInput`](crate::operation::create_webhook::CreateWebhookInput).
     pub fn build(
         self,
@@ -210,6 +231,7 @@ impl CreateWebhookInputBuilder {
             build_type: self.build_type,
             manual_creation: self.manual_creation,
             scope_configuration: self.scope_configuration,
+            pull_request_build_policy: self.pull_request_build_policy,
         })
     }
 }

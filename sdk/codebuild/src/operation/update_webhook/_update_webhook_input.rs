@@ -17,6 +17,8 @@ pub struct UpdateWebhookInput {
     /// <p><code>RUNNER_BUILDKITE_BUILD</code> is only available for <code>NO_SOURCE</code> source type projects configured for Buildkite runner builds. For more information about CodeBuild-hosted Buildkite runner builds, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-runner-buildkite.html">Tutorial: Configure a CodeBuild-hosted Buildkite runner</a> in the <i>CodeBuild user guide</i>.</p>
     /// </note>
     pub build_type: ::std::option::Option<crate::types::WebhookBuildType>,
+    /// <p>A PullRequestBuildPolicy object that defines comment-based approval requirements for triggering builds on pull requests. This policy helps control when automated builds are executed based on contributor permissions and approval workflows.</p>
+    pub pull_request_build_policy: ::std::option::Option<crate::types::PullRequestBuildPolicy>,
 }
 impl UpdateWebhookInput {
     /// <p>The name of the CodeBuild project.</p>
@@ -45,6 +47,10 @@ impl UpdateWebhookInput {
     pub fn build_type(&self) -> ::std::option::Option<&crate::types::WebhookBuildType> {
         self.build_type.as_ref()
     }
+    /// <p>A PullRequestBuildPolicy object that defines comment-based approval requirements for triggering builds on pull requests. This policy helps control when automated builds are executed based on contributor permissions and approval workflows.</p>
+    pub fn pull_request_build_policy(&self) -> ::std::option::Option<&crate::types::PullRequestBuildPolicy> {
+        self.pull_request_build_policy.as_ref()
+    }
 }
 impl UpdateWebhookInput {
     /// Creates a new builder-style object to manufacture [`UpdateWebhookInput`](crate::operation::update_webhook::UpdateWebhookInput).
@@ -62,6 +68,7 @@ pub struct UpdateWebhookInputBuilder {
     pub(crate) rotate_secret: ::std::option::Option<bool>,
     pub(crate) filter_groups: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::WebhookFilter>>>,
     pub(crate) build_type: ::std::option::Option<crate::types::WebhookBuildType>,
+    pub(crate) pull_request_build_policy: ::std::option::Option<crate::types::PullRequestBuildPolicy>,
 }
 impl UpdateWebhookInputBuilder {
     /// <p>The name of the CodeBuild project.</p>
@@ -153,6 +160,20 @@ impl UpdateWebhookInputBuilder {
     pub fn get_build_type(&self) -> &::std::option::Option<crate::types::WebhookBuildType> {
         &self.build_type
     }
+    /// <p>A PullRequestBuildPolicy object that defines comment-based approval requirements for triggering builds on pull requests. This policy helps control when automated builds are executed based on contributor permissions and approval workflows.</p>
+    pub fn pull_request_build_policy(mut self, input: crate::types::PullRequestBuildPolicy) -> Self {
+        self.pull_request_build_policy = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A PullRequestBuildPolicy object that defines comment-based approval requirements for triggering builds on pull requests. This policy helps control when automated builds are executed based on contributor permissions and approval workflows.</p>
+    pub fn set_pull_request_build_policy(mut self, input: ::std::option::Option<crate::types::PullRequestBuildPolicy>) -> Self {
+        self.pull_request_build_policy = input;
+        self
+    }
+    /// <p>A PullRequestBuildPolicy object that defines comment-based approval requirements for triggering builds on pull requests. This policy helps control when automated builds are executed based on contributor permissions and approval workflows.</p>
+    pub fn get_pull_request_build_policy(&self) -> &::std::option::Option<crate::types::PullRequestBuildPolicy> {
+        &self.pull_request_build_policy
+    }
     /// Consumes the builder and constructs a [`UpdateWebhookInput`](crate::operation::update_webhook::UpdateWebhookInput).
     pub fn build(
         self,
@@ -163,6 +184,7 @@ impl UpdateWebhookInputBuilder {
             rotate_secret: self.rotate_secret,
             filter_groups: self.filter_groups,
             build_type: self.build_type,
+            pull_request_build_policy: self.pull_request_build_policy,
         })
     }
 }

@@ -18,6 +18,8 @@ pub struct TableOptimizer {
     pub configuration: ::std::option::Option<crate::types::TableOptimizerConfiguration>,
     /// <p>A <code>TableOptimizerRun</code> object representing the last run of the table optimizer.</p>
     pub last_run: ::std::option::Option<crate::types::TableOptimizerRun>,
+    /// <p>Specifies the source of the optimizer configuration. This indicates how the table optimizer was configured and which entity or service initiated the configuration.</p>
+    pub configuration_source: ::std::option::Option<crate::types::ConfigurationSource>,
 }
 impl TableOptimizer {
     /// <p>The type of table optimizer. The valid values are:</p>
@@ -40,6 +42,10 @@ impl TableOptimizer {
     pub fn last_run(&self) -> ::std::option::Option<&crate::types::TableOptimizerRun> {
         self.last_run.as_ref()
     }
+    /// <p>Specifies the source of the optimizer configuration. This indicates how the table optimizer was configured and which entity or service initiated the configuration.</p>
+    pub fn configuration_source(&self) -> ::std::option::Option<&crate::types::ConfigurationSource> {
+        self.configuration_source.as_ref()
+    }
 }
 impl TableOptimizer {
     /// Creates a new builder-style object to manufacture [`TableOptimizer`](crate::types::TableOptimizer).
@@ -55,6 +61,7 @@ pub struct TableOptimizerBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::TableOptimizerType>,
     pub(crate) configuration: ::std::option::Option<crate::types::TableOptimizerConfiguration>,
     pub(crate) last_run: ::std::option::Option<crate::types::TableOptimizerRun>,
+    pub(crate) configuration_source: ::std::option::Option<crate::types::ConfigurationSource>,
 }
 impl TableOptimizerBuilder {
     /// <p>The type of table optimizer. The valid values are:</p>
@@ -123,12 +130,27 @@ impl TableOptimizerBuilder {
     pub fn get_last_run(&self) -> &::std::option::Option<crate::types::TableOptimizerRun> {
         &self.last_run
     }
+    /// <p>Specifies the source of the optimizer configuration. This indicates how the table optimizer was configured and which entity or service initiated the configuration.</p>
+    pub fn configuration_source(mut self, input: crate::types::ConfigurationSource) -> Self {
+        self.configuration_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the source of the optimizer configuration. This indicates how the table optimizer was configured and which entity or service initiated the configuration.</p>
+    pub fn set_configuration_source(mut self, input: ::std::option::Option<crate::types::ConfigurationSource>) -> Self {
+        self.configuration_source = input;
+        self
+    }
+    /// <p>Specifies the source of the optimizer configuration. This indicates how the table optimizer was configured and which entity or service initiated the configuration.</p>
+    pub fn get_configuration_source(&self) -> &::std::option::Option<crate::types::ConfigurationSource> {
+        &self.configuration_source
+    }
     /// Consumes the builder and constructs a [`TableOptimizer`](crate::types::TableOptimizer).
     pub fn build(self) -> crate::types::TableOptimizer {
         crate::types::TableOptimizer {
             r#type: self.r#type,
             configuration: self.configuration,
             last_run: self.last_run,
+            configuration_source: self.configuration_source,
         }
     }
 }

@@ -120,9 +120,9 @@ pub struct CreateStreamGroupOutput {
     /// <p>A short description of the reason that the stream group is in <code>ERROR</code> status. The possible reasons can be one of the following:</p>
     /// <ul>
     /// <li>
-    /// <p><code>internalError</code>: The request can't process right now bcause of an issue with the server. Try again later. Reach out to the Amazon GameLift Streams team for more help.</p></li>
+    /// <p><code>internalError</code>: The request can't process right now because of an issue with the server. Try again later.</p></li>
     /// <li>
-    /// <p><code>noAvailableInstances</code>: Amazon GameLift Streams does not currently have enough available On-Demand capacity to fulfill your request. Wait a few minutes and retry the request as capacity can shift frequently. You can also try to make the request using a different stream class or in another region.</p></li>
+    /// <p><code>noAvailableInstances</code>: Amazon GameLift Streams does not currently have enough available on-demand capacity to fulfill your request. Wait a few minutes and retry the request as capacity can shift frequently. You can also try to make the request using a different stream class or in another region.</p></li>
     /// </ul>
     pub status_reason: ::std::option::Option<crate::types::StreamGroupStatusReason>,
     /// <p>A timestamp that indicates when this resource was last updated. Timestamps are expressed using in ISO8601 format, such as: <code>2022-12-27T22:29:40+00:00</code> (UTC).</p>
@@ -269,9 +269,9 @@ impl CreateStreamGroupOutput {
     /// <p>A short description of the reason that the stream group is in <code>ERROR</code> status. The possible reasons can be one of the following:</p>
     /// <ul>
     /// <li>
-    /// <p><code>internalError</code>: The request can't process right now bcause of an issue with the server. Try again later. Reach out to the Amazon GameLift Streams team for more help.</p></li>
+    /// <p><code>internalError</code>: The request can't process right now because of an issue with the server. Try again later.</p></li>
     /// <li>
-    /// <p><code>noAvailableInstances</code>: Amazon GameLift Streams does not currently have enough available On-Demand capacity to fulfill your request. Wait a few minutes and retry the request as capacity can shift frequently. You can also try to make the request using a different stream class or in another region.</p></li>
+    /// <p><code>noAvailableInstances</code>: Amazon GameLift Streams does not currently have enough available on-demand capacity to fulfill your request. Wait a few minutes and retry the request as capacity can shift frequently. You can also try to make the request using a different stream class or in another region.</p></li>
     /// </ul>
     pub fn status_reason(&self) -> ::std::option::Option<&crate::types::StreamGroupStatusReason> {
         self.status_reason.as_ref()
@@ -730,9 +730,9 @@ impl CreateStreamGroupOutputBuilder {
     /// <p>A short description of the reason that the stream group is in <code>ERROR</code> status. The possible reasons can be one of the following:</p>
     /// <ul>
     /// <li>
-    /// <p><code>internalError</code>: The request can't process right now bcause of an issue with the server. Try again later. Reach out to the Amazon GameLift Streams team for more help.</p></li>
+    /// <p><code>internalError</code>: The request can't process right now because of an issue with the server. Try again later.</p></li>
     /// <li>
-    /// <p><code>noAvailableInstances</code>: Amazon GameLift Streams does not currently have enough available On-Demand capacity to fulfill your request. Wait a few minutes and retry the request as capacity can shift frequently. You can also try to make the request using a different stream class or in another region.</p></li>
+    /// <p><code>noAvailableInstances</code>: Amazon GameLift Streams does not currently have enough available on-demand capacity to fulfill your request. Wait a few minutes and retry the request as capacity can shift frequently. You can also try to make the request using a different stream class or in another region.</p></li>
     /// </ul>
     pub fn status_reason(mut self, input: crate::types::StreamGroupStatusReason) -> Self {
         self.status_reason = ::std::option::Option::Some(input);
@@ -741,9 +741,9 @@ impl CreateStreamGroupOutputBuilder {
     /// <p>A short description of the reason that the stream group is in <code>ERROR</code> status. The possible reasons can be one of the following:</p>
     /// <ul>
     /// <li>
-    /// <p><code>internalError</code>: The request can't process right now bcause of an issue with the server. Try again later. Reach out to the Amazon GameLift Streams team for more help.</p></li>
+    /// <p><code>internalError</code>: The request can't process right now because of an issue with the server. Try again later.</p></li>
     /// <li>
-    /// <p><code>noAvailableInstances</code>: Amazon GameLift Streams does not currently have enough available On-Demand capacity to fulfill your request. Wait a few minutes and retry the request as capacity can shift frequently. You can also try to make the request using a different stream class or in another region.</p></li>
+    /// <p><code>noAvailableInstances</code>: Amazon GameLift Streams does not currently have enough available on-demand capacity to fulfill your request. Wait a few minutes and retry the request as capacity can shift frequently. You can also try to make the request using a different stream class or in another region.</p></li>
     /// </ul>
     pub fn set_status_reason(mut self, input: ::std::option::Option<crate::types::StreamGroupStatusReason>) -> Self {
         self.status_reason = input;
@@ -752,9 +752,9 @@ impl CreateStreamGroupOutputBuilder {
     /// <p>A short description of the reason that the stream group is in <code>ERROR</code> status. The possible reasons can be one of the following:</p>
     /// <ul>
     /// <li>
-    /// <p><code>internalError</code>: The request can't process right now bcause of an issue with the server. Try again later. Reach out to the Amazon GameLift Streams team for more help.</p></li>
+    /// <p><code>internalError</code>: The request can't process right now because of an issue with the server. Try again later.</p></li>
     /// <li>
-    /// <p><code>noAvailableInstances</code>: Amazon GameLift Streams does not currently have enough available On-Demand capacity to fulfill your request. Wait a few minutes and retry the request as capacity can shift frequently. You can also try to make the request using a different stream class or in another region.</p></li>
+    /// <p><code>noAvailableInstances</code>: Amazon GameLift Streams does not currently have enough available on-demand capacity to fulfill your request. Wait a few minutes and retry the request as capacity can shift frequently. You can also try to make the request using a different stream class or in another region.</p></li>
     /// </ul>
     pub fn get_status_reason(&self) -> &::std::option::Option<crate::types::StreamGroupStatusReason> {
         &self.status_reason

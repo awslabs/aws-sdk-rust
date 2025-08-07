@@ -117,6 +117,8 @@ pub struct CreateFilterInput {
     /// <li>
     /// <p>service.action.dnsRequestAction.domainWithSuffix</p></li>
     /// <li>
+    /// <p>service.action.dnsRequestAction.vpcOwnerAccountId</p></li>
+    /// <li>
     /// <p>service.action.networkConnectionAction.blocked</p></li>
     /// <li>
     /// <p>service.action.networkConnectionAction.connectionDirection</p></li>
@@ -351,6 +353,8 @@ impl CreateFilterInput {
     /// <p>service.action.dnsRequestAction.domain</p></li>
     /// <li>
     /// <p>service.action.dnsRequestAction.domainWithSuffix</p></li>
+    /// <li>
+    /// <p>service.action.dnsRequestAction.vpcOwnerAccountId</p></li>
     /// <li>
     /// <p>service.action.networkConnectionAction.blocked</p></li>
     /// <li>
@@ -667,6 +671,8 @@ impl CreateFilterInputBuilder {
     /// <li>
     /// <p>service.action.dnsRequestAction.domainWithSuffix</p></li>
     /// <li>
+    /// <p>service.action.dnsRequestAction.vpcOwnerAccountId</p></li>
+    /// <li>
     /// <p>service.action.networkConnectionAction.blocked</p></li>
     /// <li>
     /// <p>service.action.networkConnectionAction.connectionDirection</p></li>
@@ -879,6 +885,8 @@ impl CreateFilterInputBuilder {
     /// <li>
     /// <p>service.action.dnsRequestAction.domainWithSuffix</p></li>
     /// <li>
+    /// <p>service.action.dnsRequestAction.vpcOwnerAccountId</p></li>
+    /// <li>
     /// <p>service.action.networkConnectionAction.blocked</p></li>
     /// <li>
     /// <p>service.action.networkConnectionAction.connectionDirection</p></li>
@@ -1089,6 +1097,8 @@ impl CreateFilterInputBuilder {
     /// <p>service.action.dnsRequestAction.domain</p></li>
     /// <li>
     /// <p>service.action.dnsRequestAction.domainWithSuffix</p></li>
+    /// <li>
+    /// <p>service.action.dnsRequestAction.vpcOwnerAccountId</p></li>
     /// <li>
     /// <p>service.action.networkConnectionAction.blocked</p></li>
     /// <li>

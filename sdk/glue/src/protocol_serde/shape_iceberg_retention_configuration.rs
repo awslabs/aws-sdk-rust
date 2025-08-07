@@ -18,6 +18,12 @@ pub fn ser_iceberg_retention_configuration(
     if let Some(var_3) = &input.clean_expired_files {
         object.key("cleanExpiredFiles").boolean(*var_3);
     }
+    if let Some(var_4) = &input.run_rate_in_hours {
+        object.key("runRateInHours").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_4).into()),
+        );
+    }
     Ok(())
 }
 
@@ -52,6 +58,13 @@ where
                         }
                         "cleanExpiredFiles" => {
                             builder = builder.set_clean_expired_files(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "runRateInHours" => {
+                            builder = builder.set_run_rate_in_hours(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -345,6 +345,8 @@ pub(crate) mod shape_projects;
 
 pub(crate) mod shape_proxy_configuration;
 
+pub(crate) mod shape_pull_request_build_policy;
+
 pub(crate) mod shape_registry_credential;
 
 pub(crate) mod shape_report_arns;
