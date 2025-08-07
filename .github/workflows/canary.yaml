@@ -8,7 +8,7 @@ on:
       - "canary*"
 env:
   tool_rust_version: 1.86.0
-  rust_nightly_version: nightly-2025-05-04
+  rust_nightly_version: nightly-2025-08-06
 
 jobs:
   generate-canary-matrix:
