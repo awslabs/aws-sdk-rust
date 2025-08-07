@@ -197,4 +197,18 @@ impl UpdateWebhookFluentBuilder {
     pub fn get_build_type(&self) -> &::std::option::Option<crate::types::WebhookBuildType> {
         self.inner.get_build_type()
     }
+    /// <p>A PullRequestBuildPolicy object that defines comment-based approval requirements for triggering builds on pull requests. This policy helps control when automated builds are executed based on contributor permissions and approval workflows.</p>
+    pub fn pull_request_build_policy(mut self, input: crate::types::PullRequestBuildPolicy) -> Self {
+        self.inner = self.inner.pull_request_build_policy(input);
+        self
+    }
+    /// <p>A PullRequestBuildPolicy object that defines comment-based approval requirements for triggering builds on pull requests. This policy helps control when automated builds are executed based on contributor permissions and approval workflows.</p>
+    pub fn set_pull_request_build_policy(mut self, input: ::std::option::Option<crate::types::PullRequestBuildPolicy>) -> Self {
+        self.inner = self.inner.set_pull_request_build_policy(input);
+        self
+    }
+    /// <p>A PullRequestBuildPolicy object that defines comment-based approval requirements for triggering builds on pull requests. This policy helps control when automated builds are executed based on contributor permissions and approval workflows.</p>
+    pub fn get_pull_request_build_policy(&self) -> &::std::option::Option<crate::types::PullRequestBuildPolicy> {
+        self.inner.get_pull_request_build_policy()
+    }
 }

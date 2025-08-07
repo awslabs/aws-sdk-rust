@@ -6,6 +6,8 @@
 pub struct CatalogProperties {
     /// <p>A <code>DataLakeAccessProperties</code> object that specifies properties to configure data lake access for your catalog resource in the Glue Data Catalog.</p>
     pub data_lake_access_properties: ::std::option::Option<crate::types::DataLakeAccessProperties>,
+    /// <p>A structure that specifies Iceberg table optimization properties for the catalog. This includes configuration for compaction, retention, and orphan file deletion operations that can be applied to Iceberg tables in this catalog.</p>
+    pub iceberg_optimization_properties: ::std::option::Option<crate::types::IcebergOptimizationProperties>,
     /// <p>Additional key-value properties for the catalog, such as column statistics optimizations.</p>
     pub custom_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -13,6 +15,10 @@ impl CatalogProperties {
     /// <p>A <code>DataLakeAccessProperties</code> object that specifies properties to configure data lake access for your catalog resource in the Glue Data Catalog.</p>
     pub fn data_lake_access_properties(&self) -> ::std::option::Option<&crate::types::DataLakeAccessProperties> {
         self.data_lake_access_properties.as_ref()
+    }
+    /// <p>A structure that specifies Iceberg table optimization properties for the catalog. This includes configuration for compaction, retention, and orphan file deletion operations that can be applied to Iceberg tables in this catalog.</p>
+    pub fn iceberg_optimization_properties(&self) -> ::std::option::Option<&crate::types::IcebergOptimizationProperties> {
+        self.iceberg_optimization_properties.as_ref()
     }
     /// <p>Additional key-value properties for the catalog, such as column statistics optimizations.</p>
     pub fn custom_properties(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -31,6 +37,7 @@ impl CatalogProperties {
 #[non_exhaustive]
 pub struct CatalogPropertiesBuilder {
     pub(crate) data_lake_access_properties: ::std::option::Option<crate::types::DataLakeAccessProperties>,
+    pub(crate) iceberg_optimization_properties: ::std::option::Option<crate::types::IcebergOptimizationProperties>,
     pub(crate) custom_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CatalogPropertiesBuilder {
@@ -47,6 +54,20 @@ impl CatalogPropertiesBuilder {
     /// <p>A <code>DataLakeAccessProperties</code> object that specifies properties to configure data lake access for your catalog resource in the Glue Data Catalog.</p>
     pub fn get_data_lake_access_properties(&self) -> &::std::option::Option<crate::types::DataLakeAccessProperties> {
         &self.data_lake_access_properties
+    }
+    /// <p>A structure that specifies Iceberg table optimization properties for the catalog. This includes configuration for compaction, retention, and orphan file deletion operations that can be applied to Iceberg tables in this catalog.</p>
+    pub fn iceberg_optimization_properties(mut self, input: crate::types::IcebergOptimizationProperties) -> Self {
+        self.iceberg_optimization_properties = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A structure that specifies Iceberg table optimization properties for the catalog. This includes configuration for compaction, retention, and orphan file deletion operations that can be applied to Iceberg tables in this catalog.</p>
+    pub fn set_iceberg_optimization_properties(mut self, input: ::std::option::Option<crate::types::IcebergOptimizationProperties>) -> Self {
+        self.iceberg_optimization_properties = input;
+        self
+    }
+    /// <p>A structure that specifies Iceberg table optimization properties for the catalog. This includes configuration for compaction, retention, and orphan file deletion operations that can be applied to Iceberg tables in this catalog.</p>
+    pub fn get_iceberg_optimization_properties(&self) -> &::std::option::Option<crate::types::IcebergOptimizationProperties> {
+        &self.iceberg_optimization_properties
     }
     /// Adds a key-value pair to `custom_properties`.
     ///
@@ -79,6 +100,7 @@ impl CatalogPropertiesBuilder {
     pub fn build(self) -> crate::types::CatalogProperties {
         crate::types::CatalogProperties {
             data_lake_access_properties: self.data_lake_access_properties,
+            iceberg_optimization_properties: self.iceberg_optimization_properties,
             custom_properties: self.custom_properties,
         }
     }

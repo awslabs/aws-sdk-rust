@@ -12,6 +12,12 @@ pub fn ser_iceberg_orphan_file_deletion_configuration(
     if let Some(var_2) = &input.location {
         object.key("location").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.run_rate_in_hours {
+        object.key("runRateInHours").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_3).into()),
+        );
+    }
     Ok(())
 }
 
@@ -41,6 +47,13 @@ where
                             builder = builder.set_location(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "runRateInHours" => {
+                            builder = builder.set_run_rate_in_hours(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
                                     .transpose()?,
                             );
                         }

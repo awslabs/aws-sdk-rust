@@ -2081,6 +2081,10 @@ pub(crate) mod shape_hudi_target_list;
 
 pub(crate) mod shape_iceberg_compaction_configuration;
 
+pub(crate) mod shape_iceberg_optimization_properties;
+
+pub(crate) mod shape_iceberg_optimization_properties_output;
+
 pub(crate) mod shape_iceberg_orphan_file_deletion_configuration;
 
 pub(crate) mod shape_iceberg_retention_configuration;

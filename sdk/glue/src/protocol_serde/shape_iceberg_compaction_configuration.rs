@@ -6,6 +6,18 @@ pub fn ser_iceberg_compaction_configuration(
     if let Some(var_1) = &input.strategy {
         object.key("strategy").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.min_input_files {
+        object.key("minInputFiles").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
+        );
+    }
+    if let Some(var_3) = &input.delete_file_threshold {
+        object.key("deleteFileThreshold").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_3).into()),
+        );
+    }
     Ok(())
 }
 
@@ -28,6 +40,20 @@ where
                             builder = builder.set_strategy(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::CompactionStrategy::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "minInputFiles" => {
+                            builder = builder.set_min_input_files(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "deleteFileThreshold" => {
+                            builder = builder.set_delete_file_threshold(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
                                     .transpose()?,
                             );
                         }

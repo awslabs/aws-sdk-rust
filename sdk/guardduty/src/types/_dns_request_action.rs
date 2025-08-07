@@ -12,6 +12,8 @@ pub struct DnsRequestAction {
     pub blocked: ::std::option::Option<bool>,
     /// <p>The second and top level domain involved in the activity that potentially prompted GuardDuty to generate this finding. For a list of top-level and second-level domains, see <a href="https://publicsuffix.org/">public suffix list</a>.</p>
     pub domain_with_suffix: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Web Services account ID that owns the VPC through which the DNS request was made.</p>
+    pub vpc_owner_account_id: ::std::option::Option<::std::string::String>,
 }
 impl DnsRequestAction {
     /// <p>The domain information for the DNS query.</p>
@@ -30,6 +32,10 @@ impl DnsRequestAction {
     pub fn domain_with_suffix(&self) -> ::std::option::Option<&str> {
         self.domain_with_suffix.as_deref()
     }
+    /// <p>The Amazon Web Services account ID that owns the VPC through which the DNS request was made.</p>
+    pub fn vpc_owner_account_id(&self) -> ::std::option::Option<&str> {
+        self.vpc_owner_account_id.as_deref()
+    }
 }
 impl DnsRequestAction {
     /// Creates a new builder-style object to manufacture [`DnsRequestAction`](crate::types::DnsRequestAction).
@@ -46,6 +52,7 @@ pub struct DnsRequestActionBuilder {
     pub(crate) protocol: ::std::option::Option<::std::string::String>,
     pub(crate) blocked: ::std::option::Option<bool>,
     pub(crate) domain_with_suffix: ::std::option::Option<::std::string::String>,
+    pub(crate) vpc_owner_account_id: ::std::option::Option<::std::string::String>,
 }
 impl DnsRequestActionBuilder {
     /// <p>The domain information for the DNS query.</p>
@@ -104,6 +111,20 @@ impl DnsRequestActionBuilder {
     pub fn get_domain_with_suffix(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_with_suffix
     }
+    /// <p>The Amazon Web Services account ID that owns the VPC through which the DNS request was made.</p>
+    pub fn vpc_owner_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.vpc_owner_account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Web Services account ID that owns the VPC through which the DNS request was made.</p>
+    pub fn set_vpc_owner_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.vpc_owner_account_id = input;
+        self
+    }
+    /// <p>The Amazon Web Services account ID that owns the VPC through which the DNS request was made.</p>
+    pub fn get_vpc_owner_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_owner_account_id
+    }
     /// Consumes the builder and constructs a [`DnsRequestAction`](crate::types::DnsRequestAction).
     pub fn build(self) -> crate::types::DnsRequestAction {
         crate::types::DnsRequestAction {
@@ -111,6 +132,7 @@ impl DnsRequestActionBuilder {
             protocol: self.protocol,
             blocked: self.blocked,
             domain_with_suffix: self.domain_with_suffix,
+            vpc_owner_account_id: self.vpc_owner_account_id,
         }
     }
 }

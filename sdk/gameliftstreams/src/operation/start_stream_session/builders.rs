@@ -243,17 +243,17 @@ impl StartStreamSessionFluentBuilder {
     pub fn get_locations(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_locations()
     }
-    /// <p>Length of time (in seconds) that Amazon GameLift Streams should wait for a client to connect to the stream session. This time span starts when the stream session reaches <code>ACTIVE</code> status. If no client connects before the timeout, Amazon GameLift Streams stops the stream session with status of <code>TERMINATED</code>. Default value is 120.</p>
+    /// <p>Length of time (in seconds) that Amazon GameLift Streams should wait for a client to connect or reconnect to the stream session. This time span starts when the stream session reaches <code>ACTIVE</code> status. If no client connects before the timeout, Amazon GameLift Streams stops the stream session with status of <code>TERMINATED</code>. Default value is 120.</p>
     pub fn connection_timeout_seconds(mut self, input: i32) -> Self {
         self.inner = self.inner.connection_timeout_seconds(input);
         self
     }
-    /// <p>Length of time (in seconds) that Amazon GameLift Streams should wait for a client to connect to the stream session. This time span starts when the stream session reaches <code>ACTIVE</code> status. If no client connects before the timeout, Amazon GameLift Streams stops the stream session with status of <code>TERMINATED</code>. Default value is 120.</p>
+    /// <p>Length of time (in seconds) that Amazon GameLift Streams should wait for a client to connect or reconnect to the stream session. This time span starts when the stream session reaches <code>ACTIVE</code> status. If no client connects before the timeout, Amazon GameLift Streams stops the stream session with status of <code>TERMINATED</code>. Default value is 120.</p>
     pub fn set_connection_timeout_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_connection_timeout_seconds(input);
         self
     }
-    /// <p>Length of time (in seconds) that Amazon GameLift Streams should wait for a client to connect to the stream session. This time span starts when the stream session reaches <code>ACTIVE</code> status. If no client connects before the timeout, Amazon GameLift Streams stops the stream session with status of <code>TERMINATED</code>. Default value is 120.</p>
+    /// <p>Length of time (in seconds) that Amazon GameLift Streams should wait for a client to connect or reconnect to the stream session. This time span starts when the stream session reaches <code>ACTIVE</code> status. If no client connects before the timeout, Amazon GameLift Streams stops the stream session with status of <code>TERMINATED</code>. Default value is 120.</p>
     pub fn get_connection_timeout_seconds(&self) -> &::std::option::Option<i32> {
         self.inner.get_connection_timeout_seconds()
     }

@@ -19,6 +19,13 @@ where
                                 crate::protocol_serde::shape_data_lake_access_properties_output::de_data_lake_access_properties_output(tokens)?,
                             );
                         }
+                        "IcebergOptimizationProperties" => {
+                            builder = builder.set_iceberg_optimization_properties(
+                                crate::protocol_serde::shape_iceberg_optimization_properties_output::de_iceberg_optimization_properties_output(
+                                    tokens,
+                                )?,
+                            );
+                        }
                         "CustomProperties" => {
                             builder = builder.set_custom_properties(crate::protocol_serde::shape_parameters_map::de_parameters_map(tokens)?);
                         }

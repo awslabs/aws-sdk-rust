@@ -10,6 +10,8 @@ pub struct IcebergRetentionConfiguration {
     pub number_of_snapshots_to_retain: ::std::option::Option<i32>,
     /// <p>If set to false, snapshots are only deleted from table metadata, and the underlying data and metadata files are not deleted.</p>
     pub clean_expired_files: ::std::option::Option<bool>,
+    /// <p>The interval in hours between retention job runs. This parameter controls how frequently the retention optimizer will run to clean up expired snapshots. The value must be between 3 and 168 hours (7 days). If an input is not provided, the default value 24 will be used.</p>
+    pub run_rate_in_hours: ::std::option::Option<i32>,
 }
 impl IcebergRetentionConfiguration {
     /// <p>The number of days to retain the Iceberg snapshots. If an input is not provided, the corresponding Iceberg table configuration field will be used or if not present, the default value 5 will be used.</p>
@@ -23,6 +25,10 @@ impl IcebergRetentionConfiguration {
     /// <p>If set to false, snapshots are only deleted from table metadata, and the underlying data and metadata files are not deleted.</p>
     pub fn clean_expired_files(&self) -> ::std::option::Option<bool> {
         self.clean_expired_files
+    }
+    /// <p>The interval in hours between retention job runs. This parameter controls how frequently the retention optimizer will run to clean up expired snapshots. The value must be between 3 and 168 hours (7 days). If an input is not provided, the default value 24 will be used.</p>
+    pub fn run_rate_in_hours(&self) -> ::std::option::Option<i32> {
+        self.run_rate_in_hours
     }
 }
 impl IcebergRetentionConfiguration {
@@ -39,6 +45,7 @@ pub struct IcebergRetentionConfigurationBuilder {
     pub(crate) snapshot_retention_period_in_days: ::std::option::Option<i32>,
     pub(crate) number_of_snapshots_to_retain: ::std::option::Option<i32>,
     pub(crate) clean_expired_files: ::std::option::Option<bool>,
+    pub(crate) run_rate_in_hours: ::std::option::Option<i32>,
 }
 impl IcebergRetentionConfigurationBuilder {
     /// <p>The number of days to retain the Iceberg snapshots. If an input is not provided, the corresponding Iceberg table configuration field will be used or if not present, the default value 5 will be used.</p>
@@ -83,12 +90,27 @@ impl IcebergRetentionConfigurationBuilder {
     pub fn get_clean_expired_files(&self) -> &::std::option::Option<bool> {
         &self.clean_expired_files
     }
+    /// <p>The interval in hours between retention job runs. This parameter controls how frequently the retention optimizer will run to clean up expired snapshots. The value must be between 3 and 168 hours (7 days). If an input is not provided, the default value 24 will be used.</p>
+    pub fn run_rate_in_hours(mut self, input: i32) -> Self {
+        self.run_rate_in_hours = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The interval in hours between retention job runs. This parameter controls how frequently the retention optimizer will run to clean up expired snapshots. The value must be between 3 and 168 hours (7 days). If an input is not provided, the default value 24 will be used.</p>
+    pub fn set_run_rate_in_hours(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.run_rate_in_hours = input;
+        self
+    }
+    /// <p>The interval in hours between retention job runs. This parameter controls how frequently the retention optimizer will run to clean up expired snapshots. The value must be between 3 and 168 hours (7 days). If an input is not provided, the default value 24 will be used.</p>
+    pub fn get_run_rate_in_hours(&self) -> &::std::option::Option<i32> {
+        &self.run_rate_in_hours
+    }
     /// Consumes the builder and constructs a [`IcebergRetentionConfiguration`](crate::types::IcebergRetentionConfiguration).
     pub fn build(self) -> crate::types::IcebergRetentionConfiguration {
         crate::types::IcebergRetentionConfiguration {
             snapshot_retention_period_in_days: self.snapshot_retention_period_in_days,
             number_of_snapshots_to_retain: self.number_of_snapshots_to_retain,
             clean_expired_files: self.clean_expired_files,
+            run_rate_in_hours: self.run_rate_in_hours,
         }
     }
 }

@@ -15,6 +15,10 @@ pub struct IcebergCompactionConfiguration {
     /// </ul>
     /// <p>If an input is not provided, the default value 'binpack' will be used.</p>
     pub strategy: ::std::option::Option<crate::types::CompactionStrategy>,
+    /// <p>The minimum number of data files that must be present in a partition before compaction will actually compact files. This parameter helps control when compaction is triggered, preventing unnecessary compaction operations on partitions with few files. If an input is not provided, the default value 100 will be used.</p>
+    pub min_input_files: ::std::option::Option<i32>,
+    /// <p>The minimum number of deletes that must be present in a data file to make it eligible for compaction. This parameter helps optimize compaction by focusing on files that contain a significant number of delete operations, which can improve query performance by removing deleted records. If an input is not provided, the default value 1 will be used.</p>
+    pub delete_file_threshold: ::std::option::Option<i32>,
 }
 impl IcebergCompactionConfiguration {
     /// <p>The strategy to use for compaction. Valid values are:</p>
@@ -30,6 +34,14 @@ impl IcebergCompactionConfiguration {
     pub fn strategy(&self) -> ::std::option::Option<&crate::types::CompactionStrategy> {
         self.strategy.as_ref()
     }
+    /// <p>The minimum number of data files that must be present in a partition before compaction will actually compact files. This parameter helps control when compaction is triggered, preventing unnecessary compaction operations on partitions with few files. If an input is not provided, the default value 100 will be used.</p>
+    pub fn min_input_files(&self) -> ::std::option::Option<i32> {
+        self.min_input_files
+    }
+    /// <p>The minimum number of deletes that must be present in a data file to make it eligible for compaction. This parameter helps optimize compaction by focusing on files that contain a significant number of delete operations, which can improve query performance by removing deleted records. If an input is not provided, the default value 1 will be used.</p>
+    pub fn delete_file_threshold(&self) -> ::std::option::Option<i32> {
+        self.delete_file_threshold
+    }
 }
 impl IcebergCompactionConfiguration {
     /// Creates a new builder-style object to manufacture [`IcebergCompactionConfiguration`](crate::types::IcebergCompactionConfiguration).
@@ -43,6 +55,8 @@ impl IcebergCompactionConfiguration {
 #[non_exhaustive]
 pub struct IcebergCompactionConfigurationBuilder {
     pub(crate) strategy: ::std::option::Option<crate::types::CompactionStrategy>,
+    pub(crate) min_input_files: ::std::option::Option<i32>,
+    pub(crate) delete_file_threshold: ::std::option::Option<i32>,
 }
 impl IcebergCompactionConfigurationBuilder {
     /// <p>The strategy to use for compaction. Valid values are:</p>
@@ -86,8 +100,40 @@ impl IcebergCompactionConfigurationBuilder {
     pub fn get_strategy(&self) -> &::std::option::Option<crate::types::CompactionStrategy> {
         &self.strategy
     }
+    /// <p>The minimum number of data files that must be present in a partition before compaction will actually compact files. This parameter helps control when compaction is triggered, preventing unnecessary compaction operations on partitions with few files. If an input is not provided, the default value 100 will be used.</p>
+    pub fn min_input_files(mut self, input: i32) -> Self {
+        self.min_input_files = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The minimum number of data files that must be present in a partition before compaction will actually compact files. This parameter helps control when compaction is triggered, preventing unnecessary compaction operations on partitions with few files. If an input is not provided, the default value 100 will be used.</p>
+    pub fn set_min_input_files(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.min_input_files = input;
+        self
+    }
+    /// <p>The minimum number of data files that must be present in a partition before compaction will actually compact files. This parameter helps control when compaction is triggered, preventing unnecessary compaction operations on partitions with few files. If an input is not provided, the default value 100 will be used.</p>
+    pub fn get_min_input_files(&self) -> &::std::option::Option<i32> {
+        &self.min_input_files
+    }
+    /// <p>The minimum number of deletes that must be present in a data file to make it eligible for compaction. This parameter helps optimize compaction by focusing on files that contain a significant number of delete operations, which can improve query performance by removing deleted records. If an input is not provided, the default value 1 will be used.</p>
+    pub fn delete_file_threshold(mut self, input: i32) -> Self {
+        self.delete_file_threshold = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The minimum number of deletes that must be present in a data file to make it eligible for compaction. This parameter helps optimize compaction by focusing on files that contain a significant number of delete operations, which can improve query performance by removing deleted records. If an input is not provided, the default value 1 will be used.</p>
+    pub fn set_delete_file_threshold(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.delete_file_threshold = input;
+        self
+    }
+    /// <p>The minimum number of deletes that must be present in a data file to make it eligible for compaction. This parameter helps optimize compaction by focusing on files that contain a significant number of delete operations, which can improve query performance by removing deleted records. If an input is not provided, the default value 1 will be used.</p>
+    pub fn get_delete_file_threshold(&self) -> &::std::option::Option<i32> {
+        &self.delete_file_threshold
+    }
     /// Consumes the builder and constructs a [`IcebergCompactionConfiguration`](crate::types::IcebergCompactionConfiguration).
     pub fn build(self) -> crate::types::IcebergCompactionConfiguration {
-        crate::types::IcebergCompactionConfiguration { strategy: self.strategy }
+        crate::types::IcebergCompactionConfiguration {
+            strategy: self.strategy,
+            min_input_files: self.min_input_files,
+            delete_file_threshold: self.delete_file_threshold,
+        }
     }
 }

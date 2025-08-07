@@ -13,6 +13,12 @@ pub use crate::types::_webhook_filter::WebhookFilter;
 
 pub use crate::types::_webhook_filter_type::WebhookFilterType;
 
+pub use crate::types::_pull_request_build_policy::PullRequestBuildPolicy;
+
+pub use crate::types::_pull_request_build_approver_role::PullRequestBuildApproverRole;
+
+pub use crate::types::_pull_request_build_comment_approval::PullRequestBuildCommentApproval;
+
 pub use crate::types::_report_group::ReportGroup;
 
 pub use crate::types::_report_group_status_type::ReportGroupStatusType;
@@ -394,6 +400,12 @@ mod _project_source_version;
 mod _project_visibility_type;
 
 mod _proxy_configuration;
+
+mod _pull_request_build_approver_role;
+
+mod _pull_request_build_comment_approval;
+
+mod _pull_request_build_policy;
 
 mod _registry_credential;
 

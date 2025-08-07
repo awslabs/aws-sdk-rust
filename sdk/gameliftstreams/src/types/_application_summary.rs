@@ -43,6 +43,8 @@ pub struct ApplicationSummary {
     /// <li>
     /// <p>Microsoft Windows Server 2022 Base (<code>Type=WINDOWS, Version=2022</code>)</p></li>
     /// <li>
+    /// <p>Proton 9.0-2 (<code>Type=PROTON, Version=20250516</code>)</p></li>
+    /// <li>
     /// <p>Proton 8.0-5 (<code>Type=PROTON, Version=20241007</code>)</p></li>
     /// <li>
     /// <p>Proton 8.0-2c (<code>Type=PROTON, Version=20230704</code>)</p></li>
@@ -102,6 +104,8 @@ impl ApplicationSummary {
     /// <ul>
     /// <li>
     /// <p>Microsoft Windows Server 2022 Base (<code>Type=WINDOWS, Version=2022</code>)</p></li>
+    /// <li>
+    /// <p>Proton 9.0-2 (<code>Type=PROTON, Version=20250516</code>)</p></li>
     /// <li>
     /// <p>Proton 8.0-5 (<code>Type=PROTON, Version=20241007</code>)</p></li>
     /// <li>
@@ -268,6 +272,8 @@ impl ApplicationSummaryBuilder {
     /// <li>
     /// <p>Microsoft Windows Server 2022 Base (<code>Type=WINDOWS, Version=2022</code>)</p></li>
     /// <li>
+    /// <p>Proton 9.0-2 (<code>Type=PROTON, Version=20250516</code>)</p></li>
+    /// <li>
     /// <p>Proton 8.0-5 (<code>Type=PROTON, Version=20241007</code>)</p></li>
     /// <li>
     /// <p>Proton 8.0-2c (<code>Type=PROTON, Version=20230704</code>)</p></li>
@@ -292,6 +298,8 @@ impl ApplicationSummaryBuilder {
     /// <li>
     /// <p>Microsoft Windows Server 2022 Base (<code>Type=WINDOWS, Version=2022</code>)</p></li>
     /// <li>
+    /// <p>Proton 9.0-2 (<code>Type=PROTON, Version=20250516</code>)</p></li>
+    /// <li>
     /// <p>Proton 8.0-5 (<code>Type=PROTON, Version=20241007</code>)</p></li>
     /// <li>
     /// <p>Proton 8.0-2c (<code>Type=PROTON, Version=20230704</code>)</p></li>
@@ -315,6 +323,8 @@ impl ApplicationSummaryBuilder {
     /// <ul>
     /// <li>
     /// <p>Microsoft Windows Server 2022 Base (<code>Type=WINDOWS, Version=2022</code>)</p></li>
+    /// <li>
+    /// <p>Proton 9.0-2 (<code>Type=PROTON, Version=20250516</code>)</p></li>
     /// <li>
     /// <p>Proton 8.0-5 (<code>Type=PROTON, Version=20241007</code>)</p></li>
     /// <li>

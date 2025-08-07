@@ -559,6 +559,8 @@ pub use crate::types::_allow_full_table_external_data_access_enum::AllowFullTabl
 
 pub use crate::types::_catalog_properties::CatalogProperties;
 
+pub use crate::types::_iceberg_optimization_properties::IcebergOptimizationProperties;
+
 pub use crate::types::_data_lake_access_properties::DataLakeAccessProperties;
 
 pub use crate::types::_target_redshift_catalog::TargetRedshiftCatalog;
@@ -799,6 +801,8 @@ pub use crate::types::_table_attributes::TableAttributes;
 
 pub use crate::types::_table_optimizer::TableOptimizer;
 
+pub use crate::types::_configuration_source::ConfigurationSource;
+
 pub use crate::types::_security_configuration::SecurityConfiguration;
 
 pub use crate::types::_encryption_configuration::EncryptionConfiguration;
@@ -968,6 +972,8 @@ pub use crate::types::_grok_classifier::GrokClassifier;
 pub use crate::types::_catalog::Catalog;
 
 pub use crate::types::_catalog_properties_output::CatalogPropertiesOutput;
+
+pub use crate::types::_iceberg_optimization_properties_output::IcebergOptimizationPropertiesOutput;
 
 pub use crate::types::_data_lake_access_properties_output::DataLakeAccessPropertiesOutput;
 
@@ -1224,6 +1230,8 @@ mod _condition;
 mod _condition_expression;
 
 mod _configuration_object;
+
+mod _configuration_source;
 
 mod _confusion_matrix;
 
@@ -1518,6 +1526,10 @@ mod _iceberg_compaction_metrics;
 mod _iceberg_input;
 
 mod _iceberg_null_order;
+
+mod _iceberg_optimization_properties;
+
+mod _iceberg_optimization_properties_output;
 
 mod _iceberg_orphan_file_deletion_configuration;
 

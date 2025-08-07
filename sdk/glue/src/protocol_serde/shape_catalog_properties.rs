@@ -9,15 +9,21 @@ pub fn ser_catalog_properties(
         crate::protocol_serde::shape_data_lake_access_properties::ser_data_lake_access_properties(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.custom_properties {
+    if let Some(var_3) = &input.iceberg_optimization_properties {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("CustomProperties").start_object();
-        for (key_5, value_6) in var_3 {
+        let mut object_4 = object.key("IcebergOptimizationProperties").start_object();
+        crate::protocol_serde::shape_iceberg_optimization_properties::ser_iceberg_optimization_properties(&mut object_4, var_3)?;
+        object_4.finish();
+    }
+    if let Some(var_5) = &input.custom_properties {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("CustomProperties").start_object();
+        for (key_7, value_8) in var_5 {
             {
-                object_4.key(key_5.as_str()).string(value_6.as_str());
+                object_6.key(key_7.as_str()).string(value_8.as_str());
             }
         }
-        object_4.finish();
+        object_6.finish();
     }
     Ok(())
 }
