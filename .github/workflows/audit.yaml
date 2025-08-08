@@ -4,7 +4,7 @@ on:
     - cron: "0 0 * * *"
   workflow_dispatch:
 env:
-  rust_version: nightly-2024-09-04
+  rust_version: nightly-2025-08-06
 
   # RUSTSEC-2020-0071 , RUSTSEC-2020-0159
   # chrono, a Rust date-time crate we use for timestamp parsing was added
