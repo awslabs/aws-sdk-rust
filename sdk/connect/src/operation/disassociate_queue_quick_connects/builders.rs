@@ -22,7 +22,6 @@ impl crate::operation::disassociate_queue_quick_connects::builders::Disassociate
 }
 /// Fluent builder constructing a request to `DisassociateQueueQuickConnects`.
 ///
-/// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
 /// <p>Disassociates a set of quick connects from a queue.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateQueueQuickConnectsFluentBuilder {

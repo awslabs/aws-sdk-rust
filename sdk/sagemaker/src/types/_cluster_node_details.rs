@@ -38,6 +38,8 @@ pub struct ClusterNodeDetails {
     pub current_image_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Machine Image (AMI) desired for the node.</p>
     pub desired_image_id: ::std::option::Option<::std::string::String>,
+    /// <p>Contains information about the UltraServer.</p>
+    pub ultra_server_info: ::std::option::Option<crate::types::UltraServerInfo>,
 }
 impl ClusterNodeDetails {
     /// <p>The instance group name in which the instance is.</p>
@@ -110,6 +112,10 @@ impl ClusterNodeDetails {
     pub fn desired_image_id(&self) -> ::std::option::Option<&str> {
         self.desired_image_id.as_deref()
     }
+    /// <p>Contains information about the UltraServer.</p>
+    pub fn ultra_server_info(&self) -> ::std::option::Option<&crate::types::UltraServerInfo> {
+        self.ultra_server_info.as_ref()
+    }
 }
 impl ClusterNodeDetails {
     /// Creates a new builder-style object to manufacture [`ClusterNodeDetails`](crate::types::ClusterNodeDetails).
@@ -139,6 +145,7 @@ pub struct ClusterNodeDetailsBuilder {
     pub(crate) placement: ::std::option::Option<crate::types::ClusterInstancePlacement>,
     pub(crate) current_image_id: ::std::option::Option<::std::string::String>,
     pub(crate) desired_image_id: ::std::option::Option<::std::string::String>,
+    pub(crate) ultra_server_info: ::std::option::Option<crate::types::UltraServerInfo>,
 }
 impl ClusterNodeDetailsBuilder {
     /// <p>The instance group name in which the instance is.</p>
@@ -385,6 +392,20 @@ impl ClusterNodeDetailsBuilder {
     pub fn get_desired_image_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.desired_image_id
     }
+    /// <p>Contains information about the UltraServer.</p>
+    pub fn ultra_server_info(mut self, input: crate::types::UltraServerInfo) -> Self {
+        self.ultra_server_info = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains information about the UltraServer.</p>
+    pub fn set_ultra_server_info(mut self, input: ::std::option::Option<crate::types::UltraServerInfo>) -> Self {
+        self.ultra_server_info = input;
+        self
+    }
+    /// <p>Contains information about the UltraServer.</p>
+    pub fn get_ultra_server_info(&self) -> &::std::option::Option<crate::types::UltraServerInfo> {
+        &self.ultra_server_info
+    }
     /// Consumes the builder and constructs a [`ClusterNodeDetails`](crate::types::ClusterNodeDetails).
     pub fn build(self) -> crate::types::ClusterNodeDetails {
         crate::types::ClusterNodeDetails {
@@ -405,6 +426,7 @@ impl ClusterNodeDetailsBuilder {
             placement: self.placement,
             current_image_id: self.current_image_id,
             desired_image_id: self.desired_image_id,
+            ultra_server_info: self.ultra_server_info,
         }
     }
 }

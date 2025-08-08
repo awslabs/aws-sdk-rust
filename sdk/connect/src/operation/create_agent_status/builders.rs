@@ -22,7 +22,6 @@ impl crate::operation::create_agent_status::builders::CreateAgentStatusInputBuil
 }
 /// Fluent builder constructing a request to `CreateAgentStatus`.
 ///
-/// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
 /// <p>Creates an agent status for the specified Amazon Connect instance.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateAgentStatusFluentBuilder {

@@ -119,6 +119,9 @@ where
                                     .transpose()?,
                             );
                         }
+                        "UltraServerInfo" => {
+                            builder = builder.set_ultra_server_info(crate::protocol_serde::shape_ultra_server_info::de_ultra_server_info(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

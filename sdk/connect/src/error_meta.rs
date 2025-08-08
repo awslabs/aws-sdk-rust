@@ -41,7 +41,7 @@ pub enum Error {
     PropertyValidationException(crate::types::error::PropertyValidationException),
     /// <p>A resource already has that name.</p>
     ResourceConflictException(crate::types::error::ResourceConflictException),
-    /// <p>That resource is already in use. Please try another.</p>
+    /// <p>That resource is already in use (for example, you're trying to add a record with the same name as an existing record). If you are trying to delete a resource (for example, DeleteHoursOfOperation or DeletePredefinedAttribute), remove its reference from related resources and then try again.</p>
     ResourceInUseException(crate::types::error::ResourceInUseException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
@@ -4674,6 +4674,37 @@ impl From<crate::operation::get_contact_attributes::GetContactAttributesError> f
                 Error::ResourceNotFoundException(inner)
             }
             crate::operation::get_contact_attributes::GetContactAttributesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_contact_metrics::GetContactMetricsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_contact_metrics::GetContactMetricsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_contact_metrics::GetContactMetricsError> for Error {
+    fn from(err: crate::operation::get_contact_metrics::GetContactMetricsError) -> Self {
+        match err {
+            crate::operation::get_contact_metrics::GetContactMetricsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_contact_metrics::GetContactMetricsError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::get_contact_metrics::GetContactMetricsError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::get_contact_metrics::GetContactMetricsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::get_contact_metrics::GetContactMetricsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_contact_metrics::GetContactMetricsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_contact_metrics::GetContactMetricsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

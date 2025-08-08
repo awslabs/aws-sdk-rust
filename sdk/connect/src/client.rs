@@ -407,6 +407,8 @@ mod get_attached_file;
 
 mod get_contact_attributes;
 
+mod get_contact_metrics;
+
 mod get_current_metric_data;
 
 mod get_current_user_data;

@@ -36,6 +36,8 @@ pub struct ResourceConfig {
     pub instance_groups: ::std::option::Option<::std::vec::Vec<crate::types::InstanceGroup>>,
     /// <p>The Amazon Resource Name (ARN); of the training plan to use for this resource configuration.</p>
     pub training_plan_arn: ::std::option::Option<::std::string::String>,
+    /// <p>Configuration for how training job instances are placed and allocated within UltraServers. Only applicable for UltraServer capacity.</p>
+    pub instance_placement_config: ::std::option::Option<crate::types::InstancePlacementConfig>,
 }
 impl ResourceConfig {
     /// <p>The ML compute instance type.</p>
@@ -86,6 +88,10 @@ impl ResourceConfig {
     pub fn training_plan_arn(&self) -> ::std::option::Option<&str> {
         self.training_plan_arn.as_deref()
     }
+    /// <p>Configuration for how training job instances are placed and allocated within UltraServers. Only applicable for UltraServer capacity.</p>
+    pub fn instance_placement_config(&self) -> ::std::option::Option<&crate::types::InstancePlacementConfig> {
+        self.instance_placement_config.as_ref()
+    }
 }
 impl ResourceConfig {
     /// Creates a new builder-style object to manufacture [`ResourceConfig`](crate::types::ResourceConfig).
@@ -105,6 +111,7 @@ pub struct ResourceConfigBuilder {
     pub(crate) keep_alive_period_in_seconds: ::std::option::Option<i32>,
     pub(crate) instance_groups: ::std::option::Option<::std::vec::Vec<crate::types::InstanceGroup>>,
     pub(crate) training_plan_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) instance_placement_config: ::std::option::Option<crate::types::InstancePlacementConfig>,
 }
 impl ResourceConfigBuilder {
     /// <p>The ML compute instance type.</p>
@@ -266,6 +273,20 @@ impl ResourceConfigBuilder {
     pub fn get_training_plan_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.training_plan_arn
     }
+    /// <p>Configuration for how training job instances are placed and allocated within UltraServers. Only applicable for UltraServer capacity.</p>
+    pub fn instance_placement_config(mut self, input: crate::types::InstancePlacementConfig) -> Self {
+        self.instance_placement_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration for how training job instances are placed and allocated within UltraServers. Only applicable for UltraServer capacity.</p>
+    pub fn set_instance_placement_config(mut self, input: ::std::option::Option<crate::types::InstancePlacementConfig>) -> Self {
+        self.instance_placement_config = input;
+        self
+    }
+    /// <p>Configuration for how training job instances are placed and allocated within UltraServers. Only applicable for UltraServer capacity.</p>
+    pub fn get_instance_placement_config(&self) -> &::std::option::Option<crate::types::InstancePlacementConfig> {
+        &self.instance_placement_config
+    }
     /// Consumes the builder and constructs a [`ResourceConfig`](crate::types::ResourceConfig).
     pub fn build(self) -> crate::types::ResourceConfig {
         crate::types::ResourceConfig {
@@ -276,6 +297,7 @@ impl ResourceConfigBuilder {
             keep_alive_period_in_seconds: self.keep_alive_period_in_seconds,
             instance_groups: self.instance_groups,
             training_plan_arn: self.training_plan_arn,
+            instance_placement_config: self.instance_placement_config,
         }
     }
 }

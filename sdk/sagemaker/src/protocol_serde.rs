@@ -395,6 +395,8 @@ pub(crate) mod shape_describe_processing_job;
 
 pub(crate) mod shape_describe_project;
 
+pub(crate) mod shape_describe_reserved_capacity;
+
 pub(crate) mod shape_describe_space;
 
 pub(crate) mod shape_describe_studio_lifecycle_config;
@@ -598,6 +600,8 @@ pub(crate) mod shape_list_transform_jobs;
 pub(crate) mod shape_list_trial_components;
 
 pub(crate) mod shape_list_trials;
+
+pub(crate) mod shape_list_ultra_servers_by_reserved_capacity;
 
 pub(crate) mod shape_list_user_profiles;
 
@@ -1139,6 +1143,8 @@ pub(crate) mod shape_describe_processing_job_input;
 
 pub(crate) mod shape_describe_project_input;
 
+pub(crate) mod shape_describe_reserved_capacity_input;
+
 pub(crate) mod shape_describe_space_input;
 
 pub(crate) mod shape_describe_studio_lifecycle_config_input;
@@ -1336,6 +1342,8 @@ pub(crate) mod shape_list_transform_jobs_input;
 pub(crate) mod shape_list_trial_components_input;
 
 pub(crate) mod shape_list_trials_input;
+
+pub(crate) mod shape_list_ultra_servers_by_reserved_capacity_input;
 
 pub(crate) mod shape_list_user_profiles_input;
 
@@ -2223,6 +2231,10 @@ pub(crate) mod shape_ui_template;
 
 pub(crate) mod shape_ui_template_info;
 
+pub(crate) mod shape_ultra_server_summary;
+
+pub(crate) mod shape_ultra_servers;
+
 pub(crate) mod shape_update_cluster_software_instance_group_specification;
 
 pub(crate) mod shape_update_template_provider;
@@ -2569,6 +2581,8 @@ pub(crate) mod shape_instance_group;
 
 pub(crate) mod shape_instance_groups;
 
+pub(crate) mod shape_instance_placement_config;
+
 pub(crate) mod shape_jupyter_lab_app_settings;
 
 pub(crate) mod shape_jupyter_server_app_settings;
@@ -2897,6 +2911,10 @@ pub(crate) mod shape_tuning_job_completion_criteria;
 
 pub(crate) mod shape_ui_config;
 
+pub(crate) mod shape_ultra_server;
+
+pub(crate) mod shape_ultra_server_info;
+
 pub(crate) mod shape_unified_studio_settings;
 
 pub(crate) mod shape_user_profile_details;
@@ -3148,6 +3166,10 @@ pub(crate) mod shape_pipeline_execution;
 pub(crate) mod shape_pipeline_execution_step_metadata;
 
 pub(crate) mod shape_pipeline_version;
+
+pub(crate) mod shape_placement_specification;
+
+pub(crate) mod shape_placement_specifications;
 
 pub(crate) mod shape_processing_feature_store_output;
 

@@ -22,7 +22,7 @@ impl crate::operation::delete_hours_of_operation_override::builders::DeleteHours
 }
 /// Fluent builder constructing a request to `DeleteHoursOfOperationOverride`.
 ///
-/// <p>Deletes an hours of operation override in an Amazon Connect hours of operation resource</p>
+/// <p>Deletes an hours of operation override in an Amazon Connect hours of operation resource.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteHoursOfOperationOverrideFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

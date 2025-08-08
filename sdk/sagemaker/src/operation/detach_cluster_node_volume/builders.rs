@@ -22,7 +22,7 @@ impl crate::operation::detach_cluster_node_volume::builders::DetachClusterNodeVo
 }
 /// Fluent builder constructing a request to `DetachClusterNodeVolume`.
 ///
-/// <p>Detaches your Amazon Elastic Block Store (Amazon EBS) volume from a node in your EKS-orchestrated SageMaker HyperPod cluster.</p>
+/// <p>Detaches your Amazon Elastic Block Store (Amazon EBS) volume from a node in your EKS orchestrated SageMaker HyperPod cluster.</p>
 /// <p>This API works with the Amazon Elastic Block Store (Amazon EBS) Container Storage Interface (CSI) driver to manage the lifecycle of persistent storage in your HyperPod EKS clusters.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DetachClusterNodeVolumeFluentBuilder {

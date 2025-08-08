@@ -636,6 +636,8 @@ mod describe_processing_job;
 
 mod describe_project;
 
+mod describe_reserved_capacity;
+
 mod describe_space;
 
 mod describe_studio_lifecycle_config;
@@ -839,6 +841,8 @@ mod list_transform_jobs;
 mod list_trial_components;
 
 mod list_trials;
+
+mod list_ultra_servers_by_reserved_capacity;
 
 mod list_user_profiles;
 

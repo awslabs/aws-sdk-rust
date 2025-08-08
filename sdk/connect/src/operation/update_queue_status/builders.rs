@@ -22,7 +22,6 @@ impl crate::operation::update_queue_status::builders::UpdateQueueStatusInputBuil
 }
 /// Fluent builder constructing a request to `UpdateQueueStatus`.
 ///
-/// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
 /// <p>Updates the status of the queue.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateQueueStatusFluentBuilder {

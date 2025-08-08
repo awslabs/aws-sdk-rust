@@ -779,6 +779,16 @@ pub(crate) fn reflens_list_trials_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_ultra_servers_by_reserved_capacity_output_output_next_token(
+    input: &crate::operation::list_ultra_servers_by_reserved_capacity::ListUltraServersByReservedCapacityOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_user_profiles_output_output_next_token(
     input: &crate::operation::list_user_profiles::ListUserProfilesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -1365,6 +1375,13 @@ pub(crate) fn lens_list_trials_output_output_trial_summaries(
     input: crate::operation::list_trials::ListTrialsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::TrialSummary>> {
     let input = input.trial_summaries?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_ultra_servers_by_reserved_capacity_output_output_ultra_servers(
+    input: crate::operation::list_ultra_servers_by_reserved_capacity::ListUltraServersByReservedCapacityOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::UltraServer>> {
+    let input = input.ultra_servers?;
     ::std::option::Option::Some(input)
 }
 

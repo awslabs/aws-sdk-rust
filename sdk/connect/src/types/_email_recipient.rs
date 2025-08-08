@@ -5,24 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EmailRecipient {
     /// <p>Address of the email recipient.</p>
-    /// <p>Type: String</p>
-    /// <p>Length Constraints: Minimum length of 1. Maximum length of 256.</p>
     pub address: ::std::option::Option<::std::string::String>,
     /// <p>Display name of the email recipient.</p>
-    /// <p>Type: String</p>
-    /// <p>Length Constraints: Minimum length of 1. Maximum length of 256.</p>
     pub display_name: ::std::option::Option<::std::string::String>,
 }
 impl EmailRecipient {
     /// <p>Address of the email recipient.</p>
-    /// <p>Type: String</p>
-    /// <p>Length Constraints: Minimum length of 1. Maximum length of 256.</p>
     pub fn address(&self) -> ::std::option::Option<&str> {
         self.address.as_deref()
     }
     /// <p>Display name of the email recipient.</p>
-    /// <p>Type: String</p>
-    /// <p>Length Constraints: Minimum length of 1. Maximum length of 256.</p>
     pub fn display_name(&self) -> ::std::option::Option<&str> {
         self.display_name.as_deref()
     }
@@ -43,42 +35,30 @@ pub struct EmailRecipientBuilder {
 }
 impl EmailRecipientBuilder {
     /// <p>Address of the email recipient.</p>
-    /// <p>Type: String</p>
-    /// <p>Length Constraints: Minimum length of 1. Maximum length of 256.</p>
     pub fn address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Address of the email recipient.</p>
-    /// <p>Type: String</p>
-    /// <p>Length Constraints: Minimum length of 1. Maximum length of 256.</p>
     pub fn set_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.address = input;
         self
     }
     /// <p>Address of the email recipient.</p>
-    /// <p>Type: String</p>
-    /// <p>Length Constraints: Minimum length of 1. Maximum length of 256.</p>
     pub fn get_address(&self) -> &::std::option::Option<::std::string::String> {
         &self.address
     }
     /// <p>Display name of the email recipient.</p>
-    /// <p>Type: String</p>
-    /// <p>Length Constraints: Minimum length of 1. Maximum length of 256.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Display name of the email recipient.</p>
-    /// <p>Type: String</p>
-    /// <p>Length Constraints: Minimum length of 1. Maximum length of 256.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_name = input;
         self
     }
     /// <p>Display name of the email recipient.</p>
-    /// <p>Type: String</p>
-    /// <p>Length Constraints: Minimum length of 1. Maximum length of 256.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.display_name
     }

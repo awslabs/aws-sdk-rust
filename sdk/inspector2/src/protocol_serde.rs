@@ -671,6 +671,8 @@ pub(crate) mod shape_cvss2;
 
 pub(crate) mod shape_cvss3;
 
+pub(crate) mod shape_cvss4;
+
 pub(crate) mod shape_cwes;
 
 pub(crate) mod shape_detection_platforms;

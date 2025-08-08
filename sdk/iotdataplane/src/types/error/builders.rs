@@ -18,3 +18,5 @@ pub use crate::types::error::_internal_failure_exception::InternalFailureExcepti
 pub use crate::types::error::_conflict_exception::ConflictExceptionBuilder;
 
 pub use crate::types::error::_resource_not_found_exception::ResourceNotFoundExceptionBuilder;
+
+pub use crate::types::error::_forbidden_exception::ForbiddenExceptionBuilder;

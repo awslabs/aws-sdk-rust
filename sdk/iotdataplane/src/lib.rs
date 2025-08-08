@@ -38,7 +38,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-iotdataplane = "1.79.0"
+//! aws-sdk-iotdataplane = "1.80.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -155,14 +155,14 @@ pub use config::Config;
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`DeleteThingShadow`](crate::operation::delete_thing_shadow) operation has
-/// a [`Client::delete_thing_shadow`], function which returns a builder for that operation.
+/// For example, the [`DeleteConnection`](crate::operation::delete_connection) operation has
+/// a [`Client::delete_connection`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.delete_thing_shadow()
-///     .thing_name("example")
+/// let result = client.delete_connection()
+///     .client_id("example")
 ///     .send()
 ///     .await;
 /// ```

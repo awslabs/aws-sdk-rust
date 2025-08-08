@@ -22,7 +22,6 @@ impl crate::operation::list_queue_quick_connects::builders::ListQueueQuickConnec
 }
 /// Fluent builder constructing a request to `ListQueueQuickConnects`.
 ///
-/// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
 /// <p>Lists the quick connects associated with a queue.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListQueueQuickConnectsFluentBuilder {

@@ -40,28 +40,10 @@ pub struct StartTranscriptionJobInput {
     /// </ul>
     /// <p>If you specify the name of an Amazon S3 bucket sub-folder that doesn't exist, one is created for you.</p>
     pub output_key: ::std::option::Option<::std::string::String>,
-    /// <p>The KMS key you want to use to encrypt your transcription output.</p>
-    /// <p>If using a key located in the <b>current</b> Amazon Web Services account, you can specify your KMS key in one of four ways:</p>
-    /// <ol>
-    /// <li>
-    /// <p>Use the KMS key ID itself. For example, <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p></li>
-    /// <li>
-    /// <p>Use an alias for the KMS key ID. For example, <code>alias/ExampleAlias</code>.</p></li>
-    /// <li>
-    /// <p>Use the Amazon Resource Name (ARN) for the KMS key ID. For example, <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p></li>
-    /// <li>
-    /// <p>Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p></li>
-    /// </ol>
-    /// <p>If using a key located in a <b>different</b> Amazon Web Services account than the current Amazon Web Services account, you can specify your KMS key in one of two ways:</p>
-    /// <ol>
-    /// <li>
-    /// <p>Use the ARN for the KMS key ID. For example, <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p></li>
-    /// <li>
-    /// <p>Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p></li>
-    /// </ol>
+    /// <p>The Amazon Resource Name (ARN) of a KMS key that you want to use to encrypt your transcription output.</p>
+    /// <p>KMS key ARNs have the format <code>arn:partition:kms:region:account:key/key-id</code>. For example: <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN"> KMS key ARNs</a>.</p>
     /// <p>If you do not specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).</p>
-    /// <p>If you specify a KMS key to encrypt your output, you must also specify an output location using the <code>OutputLocation</code> parameter.</p>
-    /// <p>Note that the role making the request must have permission to use the specified KMS key.</p>
+    /// <p>Note that the role making the request and the role specified in the <code>DataAccessRoleArn</code> request parameter (if present) must have permission to use the specified KMS key.</p>
     pub output_encryption_kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>A map of plain text, non-secret key:value pairs, known as encryption context pairs, that provide an added layer of security for your data. For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/key-management.html#kms-context">KMS encryption context</a> and <a href="https://docs.aws.amazon.com/transcribe/latest/dg/symmetric-asymmetric.html">Asymmetric keys in KMS</a>.</p>
     pub kms_encryption_context: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -158,28 +140,10 @@ impl StartTranscriptionJobInput {
     pub fn output_key(&self) -> ::std::option::Option<&str> {
         self.output_key.as_deref()
     }
-    /// <p>The KMS key you want to use to encrypt your transcription output.</p>
-    /// <p>If using a key located in the <b>current</b> Amazon Web Services account, you can specify your KMS key in one of four ways:</p>
-    /// <ol>
-    /// <li>
-    /// <p>Use the KMS key ID itself. For example, <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p></li>
-    /// <li>
-    /// <p>Use an alias for the KMS key ID. For example, <code>alias/ExampleAlias</code>.</p></li>
-    /// <li>
-    /// <p>Use the Amazon Resource Name (ARN) for the KMS key ID. For example, <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p></li>
-    /// <li>
-    /// <p>Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p></li>
-    /// </ol>
-    /// <p>If using a key located in a <b>different</b> Amazon Web Services account than the current Amazon Web Services account, you can specify your KMS key in one of two ways:</p>
-    /// <ol>
-    /// <li>
-    /// <p>Use the ARN for the KMS key ID. For example, <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p></li>
-    /// <li>
-    /// <p>Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p></li>
-    /// </ol>
+    /// <p>The Amazon Resource Name (ARN) of a KMS key that you want to use to encrypt your transcription output.</p>
+    /// <p>KMS key ARNs have the format <code>arn:partition:kms:region:account:key/key-id</code>. For example: <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN"> KMS key ARNs</a>.</p>
     /// <p>If you do not specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).</p>
-    /// <p>If you specify a KMS key to encrypt your output, you must also specify an output location using the <code>OutputLocation</code> parameter.</p>
-    /// <p>Note that the role making the request must have permission to use the specified KMS key.</p>
+    /// <p>Note that the role making the request and the role specified in the <code>DataAccessRoleArn</code> request parameter (if present) must have permission to use the specified KMS key.</p>
     pub fn output_encryption_kms_key_id(&self) -> ::std::option::Option<&str> {
         self.output_encryption_kms_key_id.as_deref()
     }
@@ -460,80 +424,26 @@ impl StartTranscriptionJobInputBuilder {
     pub fn get_output_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.output_key
     }
-    /// <p>The KMS key you want to use to encrypt your transcription output.</p>
-    /// <p>If using a key located in the <b>current</b> Amazon Web Services account, you can specify your KMS key in one of four ways:</p>
-    /// <ol>
-    /// <li>
-    /// <p>Use the KMS key ID itself. For example, <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p></li>
-    /// <li>
-    /// <p>Use an alias for the KMS key ID. For example, <code>alias/ExampleAlias</code>.</p></li>
-    /// <li>
-    /// <p>Use the Amazon Resource Name (ARN) for the KMS key ID. For example, <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p></li>
-    /// <li>
-    /// <p>Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p></li>
-    /// </ol>
-    /// <p>If using a key located in a <b>different</b> Amazon Web Services account than the current Amazon Web Services account, you can specify your KMS key in one of two ways:</p>
-    /// <ol>
-    /// <li>
-    /// <p>Use the ARN for the KMS key ID. For example, <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p></li>
-    /// <li>
-    /// <p>Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p></li>
-    /// </ol>
+    /// <p>The Amazon Resource Name (ARN) of a KMS key that you want to use to encrypt your transcription output.</p>
+    /// <p>KMS key ARNs have the format <code>arn:partition:kms:region:account:key/key-id</code>. For example: <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN"> KMS key ARNs</a>.</p>
     /// <p>If you do not specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).</p>
-    /// <p>If you specify a KMS key to encrypt your output, you must also specify an output location using the <code>OutputLocation</code> parameter.</p>
-    /// <p>Note that the role making the request must have permission to use the specified KMS key.</p>
+    /// <p>Note that the role making the request and the role specified in the <code>DataAccessRoleArn</code> request parameter (if present) must have permission to use the specified KMS key.</p>
     pub fn output_encryption_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_encryption_kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The KMS key you want to use to encrypt your transcription output.</p>
-    /// <p>If using a key located in the <b>current</b> Amazon Web Services account, you can specify your KMS key in one of four ways:</p>
-    /// <ol>
-    /// <li>
-    /// <p>Use the KMS key ID itself. For example, <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p></li>
-    /// <li>
-    /// <p>Use an alias for the KMS key ID. For example, <code>alias/ExampleAlias</code>.</p></li>
-    /// <li>
-    /// <p>Use the Amazon Resource Name (ARN) for the KMS key ID. For example, <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p></li>
-    /// <li>
-    /// <p>Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p></li>
-    /// </ol>
-    /// <p>If using a key located in a <b>different</b> Amazon Web Services account than the current Amazon Web Services account, you can specify your KMS key in one of two ways:</p>
-    /// <ol>
-    /// <li>
-    /// <p>Use the ARN for the KMS key ID. For example, <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p></li>
-    /// <li>
-    /// <p>Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p></li>
-    /// </ol>
+    /// <p>The Amazon Resource Name (ARN) of a KMS key that you want to use to encrypt your transcription output.</p>
+    /// <p>KMS key ARNs have the format <code>arn:partition:kms:region:account:key/key-id</code>. For example: <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN"> KMS key ARNs</a>.</p>
     /// <p>If you do not specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).</p>
-    /// <p>If you specify a KMS key to encrypt your output, you must also specify an output location using the <code>OutputLocation</code> parameter.</p>
-    /// <p>Note that the role making the request must have permission to use the specified KMS key.</p>
+    /// <p>Note that the role making the request and the role specified in the <code>DataAccessRoleArn</code> request parameter (if present) must have permission to use the specified KMS key.</p>
     pub fn set_output_encryption_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.output_encryption_kms_key_id = input;
         self
     }
-    /// <p>The KMS key you want to use to encrypt your transcription output.</p>
-    /// <p>If using a key located in the <b>current</b> Amazon Web Services account, you can specify your KMS key in one of four ways:</p>
-    /// <ol>
-    /// <li>
-    /// <p>Use the KMS key ID itself. For example, <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p></li>
-    /// <li>
-    /// <p>Use an alias for the KMS key ID. For example, <code>alias/ExampleAlias</code>.</p></li>
-    /// <li>
-    /// <p>Use the Amazon Resource Name (ARN) for the KMS key ID. For example, <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p></li>
-    /// <li>
-    /// <p>Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p></li>
-    /// </ol>
-    /// <p>If using a key located in a <b>different</b> Amazon Web Services account than the current Amazon Web Services account, you can specify your KMS key in one of two ways:</p>
-    /// <ol>
-    /// <li>
-    /// <p>Use the ARN for the KMS key ID. For example, <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p></li>
-    /// <li>
-    /// <p>Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p></li>
-    /// </ol>
+    /// <p>The Amazon Resource Name (ARN) of a KMS key that you want to use to encrypt your transcription output.</p>
+    /// <p>KMS key ARNs have the format <code>arn:partition:kms:region:account:key/key-id</code>. For example: <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN"> KMS key ARNs</a>.</p>
     /// <p>If you do not specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).</p>
-    /// <p>If you specify a KMS key to encrypt your output, you must also specify an output location using the <code>OutputLocation</code> parameter.</p>
-    /// <p>Note that the role making the request must have permission to use the specified KMS key.</p>
+    /// <p>Note that the role making the request and the role specified in the <code>DataAccessRoleArn</code> request parameter (if present) must have permission to use the specified KMS key.</p>
     pub fn get_output_encryption_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.output_encryption_kms_key_id
     }

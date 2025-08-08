@@ -22,7 +22,7 @@ impl crate::operation::attach_cluster_node_volume::builders::AttachClusterNodeVo
 }
 /// Fluent builder constructing a request to `AttachClusterNodeVolume`.
 ///
-/// <p>Attaches your Amazon Elastic Block Store (Amazon EBS) volume to a node in your EKS-orchestrated HyperPod cluster.</p>
+/// <p>Attaches your Amazon Elastic Block Store (Amazon EBS) volume to a node in your EKS orchestrated HyperPod cluster.</p>
 /// <p>This API works with the Amazon Elastic Block Store (Amazon EBS) Container Storage Interface (CSI) driver to manage the lifecycle of persistent storage in your HyperPod EKS clusters.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AttachClusterNodeVolumeFluentBuilder {

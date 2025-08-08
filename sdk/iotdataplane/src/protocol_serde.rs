@@ -23,6 +23,8 @@ pub fn parse_http_error_metadata(
     crate::json_errors::parse_error_metadata(response_body, response_headers)
 }
 
+pub(crate) mod shape_delete_connection;
+
 pub(crate) mod shape_delete_thing_shadow;
 
 pub(crate) mod shape_get_retained_message;
@@ -52,6 +54,8 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
 pub(crate) mod shape_conflict_exception;
 
 pub(crate) mod shape_delete_thing_shadow_output;
+
+pub(crate) mod shape_forbidden_exception;
 
 pub(crate) mod shape_get_thing_shadow_output;
 

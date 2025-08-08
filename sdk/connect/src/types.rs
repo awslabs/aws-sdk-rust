@@ -801,6 +801,14 @@ pub use crate::types::_current_metric_name::CurrentMetricName;
 
 pub use crate::types::_current_metric_sort_criteria::CurrentMetricSortCriteria;
 
+pub use crate::types::_contact_metric_result::ContactMetricResult;
+
+pub use crate::types::_contact_metric_value::ContactMetricValue;
+
+pub use crate::types::_contact_metric_name::ContactMetricName;
+
+pub use crate::types::_contact_metric_info::ContactMetricInfo;
+
 pub use crate::types::_download_url_metadata::DownloadUrlMetadata;
 
 pub use crate::types::_user_proficiency_disassociate::UserProficiencyDisassociate;
@@ -1102,6 +1110,14 @@ mod _contact_flow_type;
 mod _contact_flow_version_summary;
 
 mod _contact_initiation_method;
+
+mod _contact_metric_info;
+
+mod _contact_metric_name;
+
+mod _contact_metric_result;
+
+mod _contact_metric_value;
 
 mod _contact_recording_type;
 

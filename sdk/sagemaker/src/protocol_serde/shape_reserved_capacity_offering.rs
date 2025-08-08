@@ -14,6 +14,27 @@ where
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "ReservedCapacityType" => {
+                            builder = builder.set_reserved_capacity_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ReservedCapacityType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "UltraServerType" => {
+                            builder = builder.set_ultra_server_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "UltraServerCount" => {
+                            builder = builder.set_ultra_server_count(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
                         "InstanceType" => {
                             builder = builder.set_instance_type(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

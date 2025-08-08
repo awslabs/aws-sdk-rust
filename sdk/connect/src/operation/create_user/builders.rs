@@ -23,7 +23,7 @@ impl crate::operation::create_user::builders::CreateUserInputBuilder {
 /// Fluent builder constructing a request to `CreateUser`.
 ///
 /// <p>Creates a user account for the specified Amazon Connect instance.</p><important>
-/// <p>Certain <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UserIdentityInfo.html">UserIdentityInfo</a> parameters are required in some situations. For example, <code>Email</code> is required if you are using SAML for identity management. <code>FirstName</code> and <code>LastName</code> are required if you are using Amazon Connect or SAML for identity management.</p>
+/// <p>Certain <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UserIdentityInfo.html">UserIdentityInfo</a> parameters are required in some situations. For example, <code>Email</code>, <code>FirstName</code> and <code>LastName</code> are required if you are using Amazon Connect or SAML for identity management.</p>
 /// </important>
 /// <p>For information about how to create users using the Amazon Connect admin website, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/user-management.html">Add Users</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

@@ -136,31 +136,31 @@ impl GetEffectiveHoursOfOperationsFluentBuilder {
     pub fn get_hours_of_operation_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_hours_of_operation_id()
     }
-    /// <p>The Date from when the hours of operation are listed.</p>
+    /// <p>The date from when the hours of operation are listed.</p>
     pub fn from_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.from_date(input.into());
         self
     }
-    /// <p>The Date from when the hours of operation are listed.</p>
+    /// <p>The date from when the hours of operation are listed.</p>
     pub fn set_from_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_from_date(input);
         self
     }
-    /// <p>The Date from when the hours of operation are listed.</p>
+    /// <p>The date from when the hours of operation are listed.</p>
     pub fn get_from_date(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_from_date()
     }
-    /// <p>The Date until when the hours of operation are listed.</p>
+    /// <p>The date until when the hours of operation are listed.</p>
     pub fn to_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.to_date(input.into());
         self
     }
-    /// <p>The Date until when the hours of operation are listed.</p>
+    /// <p>The date until when the hours of operation are listed.</p>
     pub fn set_to_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_to_date(input);
         self
     }
-    /// <p>The Date until when the hours of operation are listed.</p>
+    /// <p>The date until when the hours of operation are listed.</p>
     pub fn get_to_date(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_to_date()
     }

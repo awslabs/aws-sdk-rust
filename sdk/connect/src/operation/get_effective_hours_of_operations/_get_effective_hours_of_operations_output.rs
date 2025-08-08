@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetEffectiveHoursOfOperationsOutput {
-    /// <p>Information about the effective hours of operations</p>
+    /// <p>Information about the effective hours of operations.</p>
     pub effective_hours_of_operation_list: ::std::option::Option<::std::vec::Vec<crate::types::EffectiveHoursOfOperations>>,
     /// <p>The time zone for the hours of operation.</p>
     pub time_zone: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetEffectiveHoursOfOperationsOutput {
-    /// <p>Information about the effective hours of operations</p>
+    /// <p>Information about the effective hours of operations.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.effective_hours_of_operation_list.is_none()`.
     pub fn effective_hours_of_operation_list(&self) -> &[crate::types::EffectiveHoursOfOperations] {
@@ -46,14 +46,14 @@ impl GetEffectiveHoursOfOperationsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_effective_hours_of_operation_list`](Self::set_effective_hours_of_operation_list).
     ///
-    /// <p>Information about the effective hours of operations</p>
+    /// <p>Information about the effective hours of operations.</p>
     pub fn effective_hours_of_operation_list(mut self, input: crate::types::EffectiveHoursOfOperations) -> Self {
         let mut v = self.effective_hours_of_operation_list.unwrap_or_default();
         v.push(input);
         self.effective_hours_of_operation_list = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Information about the effective hours of operations</p>
+    /// <p>Information about the effective hours of operations.</p>
     pub fn set_effective_hours_of_operation_list(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::EffectiveHoursOfOperations>>,
@@ -61,7 +61,7 @@ impl GetEffectiveHoursOfOperationsOutputBuilder {
         self.effective_hours_of_operation_list = input;
         self
     }
-    /// <p>Information about the effective hours of operations</p>
+    /// <p>Information about the effective hours of operations.</p>
     pub fn get_effective_hours_of_operation_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EffectiveHoursOfOperations>> {
         &self.effective_hours_of_operation_list
     }

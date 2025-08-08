@@ -22,7 +22,6 @@ impl crate::operation::update_queue_hours_of_operation::builders::UpdateQueueHou
 }
 /// Fluent builder constructing a request to `UpdateQueueHoursOfOperation`.
 ///
-/// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
 /// <p>Updates the hours of operation for the specified queue.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateQueueHoursOfOperationFluentBuilder {

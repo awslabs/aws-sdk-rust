@@ -455,6 +455,10 @@ pub use crate::types::_hyper_parameter_tuning_instance_config::HyperParameterTun
 
 pub use crate::types::_resource_config::ResourceConfigBuilder;
 
+pub use crate::types::_instance_placement_config::InstancePlacementConfigBuilder;
+
+pub use crate::types::_placement_specification::PlacementSpecificationBuilder;
+
 pub use crate::types::_instance_group::InstanceGroupBuilder;
 
 pub use crate::types::_output_data_config::OutputDataConfigBuilder;
@@ -705,6 +709,8 @@ pub use crate::types::_query_filters::QueryFiltersBuilder;
 
 pub use crate::types::_user_profile_details::UserProfileDetailsBuilder;
 
+pub use crate::types::_ultra_server::UltraServerBuilder;
+
 pub use crate::types::_trial_summary::TrialSummaryBuilder;
 
 pub use crate::types::_trial_component_summary::TrialComponentSummaryBuilder;
@@ -915,6 +921,8 @@ pub use crate::types::_cluster_summary::ClusterSummaryBuilder;
 
 pub use crate::types::_cluster_node_summary::ClusterNodeSummaryBuilder;
 
+pub use crate::types::_ultra_server_info::UltraServerInfoBuilder;
+
 pub use crate::types::_cluster_instance_status_details::ClusterInstanceStatusDetailsBuilder;
 
 pub use crate::types::_cluster_event_summary::ClusterEventSummaryBuilder;
@@ -988,6 +996,8 @@ pub use crate::types::_profiler_rule_evaluation_status::ProfilerRuleEvaluationSt
 pub use crate::types::_space_sharing_settings::SpaceSharingSettingsBuilder;
 
 pub use crate::types::_ownership_settings::OwnershipSettingsBuilder;
+
+pub use crate::types::_ultra_server_summary::UltraServerSummaryBuilder;
 
 pub use crate::types::_error_info::ErrorInfoBuilder;
 

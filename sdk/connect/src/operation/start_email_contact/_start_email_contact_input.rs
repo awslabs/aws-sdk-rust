@@ -17,7 +17,7 @@ pub struct StartEmailContactInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The email message body to be sent to the newly created email.</p>
     pub email_message: ::std::option::Option<crate::types::InboundEmailContent>,
-    /// <p>The addtional recipients address of the email.</p>
+    /// <p>The additional recipients address of the email.</p>
     pub additional_recipients: ::std::option::Option<crate::types::InboundAdditionalRecipients>,
     /// <p>List of S3 presigned URLs of email attachments and their file name.</p>
     pub attachments: ::std::option::Option<::std::vec::Vec<crate::types::EmailAttachment>>,
@@ -67,7 +67,7 @@ impl StartEmailContactInput {
     pub fn email_message(&self) -> ::std::option::Option<&crate::types::InboundEmailContent> {
         self.email_message.as_ref()
     }
-    /// <p>The addtional recipients address of the email.</p>
+    /// <p>The additional recipients address of the email.</p>
     pub fn additional_recipients(&self) -> ::std::option::Option<&crate::types::InboundAdditionalRecipients> {
         self.additional_recipients.as_ref()
     }
@@ -264,17 +264,17 @@ impl StartEmailContactInputBuilder {
     pub fn get_email_message(&self) -> &::std::option::Option<crate::types::InboundEmailContent> {
         &self.email_message
     }
-    /// <p>The addtional recipients address of the email.</p>
+    /// <p>The additional recipients address of the email.</p>
     pub fn additional_recipients(mut self, input: crate::types::InboundAdditionalRecipients) -> Self {
         self.additional_recipients = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The addtional recipients address of the email.</p>
+    /// <p>The additional recipients address of the email.</p>
     pub fn set_additional_recipients(mut self, input: ::std::option::Option<crate::types::InboundAdditionalRecipients>) -> Self {
         self.additional_recipients = input;
         self
     }
-    /// <p>The addtional recipients address of the email.</p>
+    /// <p>The additional recipients address of the email.</p>
     pub fn get_additional_recipients(&self) -> &::std::option::Option<crate::types::InboundAdditionalRecipients> {
         &self.additional_recipients
     }

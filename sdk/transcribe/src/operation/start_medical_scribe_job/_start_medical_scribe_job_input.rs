@@ -12,27 +12,10 @@ pub struct StartMedicalScribeJobInput {
     /// <p>The name of the Amazon S3 bucket where you want your Medical Scribe output stored. Do not include the <code>S3://</code> prefix of the specified bucket.</p>
     /// <p>Note that the role specified in the <code>DataAccessRoleArn</code> request parameter must have permission to use the specified location. You can change Amazon S3 permissions using the <a href="https://console.aws.amazon.com/s3">Amazon Web Services Management Console</a>. See also <a href="https://docs.aws.amazon.com/transcribe/latest/dg/security_iam_id-based-policy-examples.html#auth-role-iam-user">Permissions Required for IAM User Roles</a>.</p>
     pub output_bucket_name: ::std::option::Option<::std::string::String>,
-    /// <p>The KMS key you want to use to encrypt your Medical Scribe output.</p>
-    /// <p>If using a key located in the <b>current</b> Amazon Web Services account, you can specify your KMS key in one of four ways:</p>
-    /// <ol>
-    /// <li>
-    /// <p>Use the KMS key ID itself. For example, <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p></li>
-    /// <li>
-    /// <p>Use an alias for the KMS key ID. For example, <code>alias/ExampleAlias</code>.</p></li>
-    /// <li>
-    /// <p>Use the Amazon Resource Name (ARN) for the KMS key ID. For example, <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p></li>
-    /// <li>
-    /// <p>Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p></li>
-    /// </ol>
-    /// <p>If using a key located in a <b>different</b> Amazon Web Services account than the current Amazon Web Services account, you can specify your KMS key in one of two ways:</p>
-    /// <ol>
-    /// <li>
-    /// <p>Use the ARN for the KMS key ID. For example, <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p></li>
-    /// <li>
-    /// <p>Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p></li>
-    /// </ol>
+    /// <p>The Amazon Resource Name (ARN) of a KMS key that you want to use to encrypt your Medical Scribe output.</p>
+    /// <p>KMS key ARNs have the format <code>arn:partition:kms:region:account:key/key-id</code>. For example: <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN"> KMS key ARNs</a>.</p>
     /// <p>If you do not specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).</p>
-    /// <p>Note that the role specified in the <code>DataAccessRoleArn</code> request parameter must have permission to use the specified KMS key.</p>
+    /// <p>Note that the role making the request and the role specified in the <code>DataAccessRoleArn</code> request parameter (if present) must have permission to use the specified KMS key.</p>
     pub output_encryption_kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>A map of plain text, non-secret key:value pairs, known as encryption context pairs, that provide an added layer of security for your data. For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/key-management.html#kms-context">KMS encryption context</a> and <a href="https://docs.aws.amazon.com/transcribe/latest/dg/symmetric-asymmetric.html">Asymmetric keys in KMS</a>.</p>
     pub kms_encryption_context: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -64,27 +47,10 @@ impl StartMedicalScribeJobInput {
     pub fn output_bucket_name(&self) -> ::std::option::Option<&str> {
         self.output_bucket_name.as_deref()
     }
-    /// <p>The KMS key you want to use to encrypt your Medical Scribe output.</p>
-    /// <p>If using a key located in the <b>current</b> Amazon Web Services account, you can specify your KMS key in one of four ways:</p>
-    /// <ol>
-    /// <li>
-    /// <p>Use the KMS key ID itself. For example, <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p></li>
-    /// <li>
-    /// <p>Use an alias for the KMS key ID. For example, <code>alias/ExampleAlias</code>.</p></li>
-    /// <li>
-    /// <p>Use the Amazon Resource Name (ARN) for the KMS key ID. For example, <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p></li>
-    /// <li>
-    /// <p>Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p></li>
-    /// </ol>
-    /// <p>If using a key located in a <b>different</b> Amazon Web Services account than the current Amazon Web Services account, you can specify your KMS key in one of two ways:</p>
-    /// <ol>
-    /// <li>
-    /// <p>Use the ARN for the KMS key ID. For example, <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p></li>
-    /// <li>
-    /// <p>Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p></li>
-    /// </ol>
+    /// <p>The Amazon Resource Name (ARN) of a KMS key that you want to use to encrypt your Medical Scribe output.</p>
+    /// <p>KMS key ARNs have the format <code>arn:partition:kms:region:account:key/key-id</code>. For example: <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN"> KMS key ARNs</a>.</p>
     /// <p>If you do not specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).</p>
-    /// <p>Note that the role specified in the <code>DataAccessRoleArn</code> request parameter must have permission to use the specified KMS key.</p>
+    /// <p>Note that the role making the request and the role specified in the <code>DataAccessRoleArn</code> request parameter (if present) must have permission to use the specified KMS key.</p>
     pub fn output_encryption_kms_key_id(&self) -> ::std::option::Option<&str> {
         self.output_encryption_kms_key_id.as_deref()
     }
@@ -192,77 +158,26 @@ impl StartMedicalScribeJobInputBuilder {
     pub fn get_output_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.output_bucket_name
     }
-    /// <p>The KMS key you want to use to encrypt your Medical Scribe output.</p>
-    /// <p>If using a key located in the <b>current</b> Amazon Web Services account, you can specify your KMS key in one of four ways:</p>
-    /// <ol>
-    /// <li>
-    /// <p>Use the KMS key ID itself. For example, <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p></li>
-    /// <li>
-    /// <p>Use an alias for the KMS key ID. For example, <code>alias/ExampleAlias</code>.</p></li>
-    /// <li>
-    /// <p>Use the Amazon Resource Name (ARN) for the KMS key ID. For example, <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p></li>
-    /// <li>
-    /// <p>Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p></li>
-    /// </ol>
-    /// <p>If using a key located in a <b>different</b> Amazon Web Services account than the current Amazon Web Services account, you can specify your KMS key in one of two ways:</p>
-    /// <ol>
-    /// <li>
-    /// <p>Use the ARN for the KMS key ID. For example, <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p></li>
-    /// <li>
-    /// <p>Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p></li>
-    /// </ol>
+    /// <p>The Amazon Resource Name (ARN) of a KMS key that you want to use to encrypt your Medical Scribe output.</p>
+    /// <p>KMS key ARNs have the format <code>arn:partition:kms:region:account:key/key-id</code>. For example: <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN"> KMS key ARNs</a>.</p>
     /// <p>If you do not specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).</p>
-    /// <p>Note that the role specified in the <code>DataAccessRoleArn</code> request parameter must have permission to use the specified KMS key.</p>
+    /// <p>Note that the role making the request and the role specified in the <code>DataAccessRoleArn</code> request parameter (if present) must have permission to use the specified KMS key.</p>
     pub fn output_encryption_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_encryption_kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The KMS key you want to use to encrypt your Medical Scribe output.</p>
-    /// <p>If using a key located in the <b>current</b> Amazon Web Services account, you can specify your KMS key in one of four ways:</p>
-    /// <ol>
-    /// <li>
-    /// <p>Use the KMS key ID itself. For example, <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p></li>
-    /// <li>
-    /// <p>Use an alias for the KMS key ID. For example, <code>alias/ExampleAlias</code>.</p></li>
-    /// <li>
-    /// <p>Use the Amazon Resource Name (ARN) for the KMS key ID. For example, <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p></li>
-    /// <li>
-    /// <p>Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p></li>
-    /// </ol>
-    /// <p>If using a key located in a <b>different</b> Amazon Web Services account than the current Amazon Web Services account, you can specify your KMS key in one of two ways:</p>
-    /// <ol>
-    /// <li>
-    /// <p>Use the ARN for the KMS key ID. For example, <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p></li>
-    /// <li>
-    /// <p>Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p></li>
-    /// </ol>
+    /// <p>The Amazon Resource Name (ARN) of a KMS key that you want to use to encrypt your Medical Scribe output.</p>
+    /// <p>KMS key ARNs have the format <code>arn:partition:kms:region:account:key/key-id</code>. For example: <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN"> KMS key ARNs</a>.</p>
     /// <p>If you do not specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).</p>
-    /// <p>Note that the role specified in the <code>DataAccessRoleArn</code> request parameter must have permission to use the specified KMS key.</p>
+    /// <p>Note that the role making the request and the role specified in the <code>DataAccessRoleArn</code> request parameter (if present) must have permission to use the specified KMS key.</p>
     pub fn set_output_encryption_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.output_encryption_kms_key_id = input;
         self
     }
-    /// <p>The KMS key you want to use to encrypt your Medical Scribe output.</p>
-    /// <p>If using a key located in the <b>current</b> Amazon Web Services account, you can specify your KMS key in one of four ways:</p>
-    /// <ol>
-    /// <li>
-    /// <p>Use the KMS key ID itself. For example, <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p></li>
-    /// <li>
-    /// <p>Use an alias for the KMS key ID. For example, <code>alias/ExampleAlias</code>.</p></li>
-    /// <li>
-    /// <p>Use the Amazon Resource Name (ARN) for the KMS key ID. For example, <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p></li>
-    /// <li>
-    /// <p>Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p></li>
-    /// </ol>
-    /// <p>If using a key located in a <b>different</b> Amazon Web Services account than the current Amazon Web Services account, you can specify your KMS key in one of two ways:</p>
-    /// <ol>
-    /// <li>
-    /// <p>Use the ARN for the KMS key ID. For example, <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p></li>
-    /// <li>
-    /// <p>Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p></li>
-    /// </ol>
+    /// <p>The Amazon Resource Name (ARN) of a KMS key that you want to use to encrypt your Medical Scribe output.</p>
+    /// <p>KMS key ARNs have the format <code>arn:partition:kms:region:account:key/key-id</code>. For example: <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN"> KMS key ARNs</a>.</p>
     /// <p>If you do not specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).</p>
-    /// <p>Note that the role specified in the <code>DataAccessRoleArn</code> request parameter must have permission to use the specified KMS key.</p>
+    /// <p>Note that the role making the request and the role specified in the <code>DataAccessRoleArn</code> request parameter (if present) must have permission to use the specified KMS key.</p>
     pub fn get_output_encryption_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.output_encryption_kms_key_id
     }

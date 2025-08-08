@@ -128,17 +128,17 @@ impl ListHoursOfOperationOverridesFluentBuilder {
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_instance_id()
     }
-    /// <p>The identifier for the hours of operation</p>
+    /// <p>The identifier for the hours of operation.</p>
     pub fn hours_of_operation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.hours_of_operation_id(input.into());
         self
     }
-    /// <p>The identifier for the hours of operation</p>
+    /// <p>The identifier for the hours of operation.</p>
     pub fn set_hours_of_operation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_hours_of_operation_id(input);
         self
     }
-    /// <p>The identifier for the hours of operation</p>
+    /// <p>The identifier for the hours of operation.</p>
     pub fn get_hours_of_operation_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_hours_of_operation_id()
     }
@@ -156,17 +156,17 @@ impl ListHoursOfOperationOverridesFluentBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// <p>The maximum number of results to return per page. The default MaxResult size is 100. Valid Range: Minimum value of 1. Maximum value of 1000.</p>
+    /// <p>The maximum number of results to return per page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>The maximum number of results to return per page. The default MaxResult size is 100. Valid Range: Minimum value of 1. Maximum value of 1000.</p>
+    /// <p>The maximum number of results to return per page.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>The maximum number of results to return per page. The default MaxResult size is 100. Valid Range: Minimum value of 1. Maximum value of 1000.</p>
+    /// <p>The maximum number of results to return per page.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }

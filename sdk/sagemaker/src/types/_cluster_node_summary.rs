@@ -18,6 +18,8 @@ pub struct ClusterNodeSummary {
     pub last_software_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the instance.</p>
     pub instance_status: ::std::option::Option<crate::types::ClusterInstanceStatusDetails>,
+    /// <p>Contains information about the UltraServer.</p>
+    pub ultra_server_info: ::std::option::Option<crate::types::UltraServerInfo>,
 }
 impl ClusterNodeSummary {
     /// <p>The name of the instance group in which the instance is.</p>
@@ -48,6 +50,10 @@ impl ClusterNodeSummary {
     pub fn instance_status(&self) -> ::std::option::Option<&crate::types::ClusterInstanceStatusDetails> {
         self.instance_status.as_ref()
     }
+    /// <p>Contains information about the UltraServer.</p>
+    pub fn ultra_server_info(&self) -> ::std::option::Option<&crate::types::UltraServerInfo> {
+        self.ultra_server_info.as_ref()
+    }
 }
 impl ClusterNodeSummary {
     /// Creates a new builder-style object to manufacture [`ClusterNodeSummary`](crate::types::ClusterNodeSummary).
@@ -67,6 +73,7 @@ pub struct ClusterNodeSummaryBuilder {
     pub(crate) launch_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_software_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) instance_status: ::std::option::Option<crate::types::ClusterInstanceStatusDetails>,
+    pub(crate) ultra_server_info: ::std::option::Option<crate::types::UltraServerInfo>,
 }
 impl ClusterNodeSummaryBuilder {
     /// <p>The name of the instance group in which the instance is.</p>
@@ -172,6 +179,20 @@ impl ClusterNodeSummaryBuilder {
     pub fn get_instance_status(&self) -> &::std::option::Option<crate::types::ClusterInstanceStatusDetails> {
         &self.instance_status
     }
+    /// <p>Contains information about the UltraServer.</p>
+    pub fn ultra_server_info(mut self, input: crate::types::UltraServerInfo) -> Self {
+        self.ultra_server_info = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains information about the UltraServer.</p>
+    pub fn set_ultra_server_info(mut self, input: ::std::option::Option<crate::types::UltraServerInfo>) -> Self {
+        self.ultra_server_info = input;
+        self
+    }
+    /// <p>Contains information about the UltraServer.</p>
+    pub fn get_ultra_server_info(&self) -> &::std::option::Option<crate::types::UltraServerInfo> {
+        &self.ultra_server_info
+    }
     /// Consumes the builder and constructs a [`ClusterNodeSummary`](crate::types::ClusterNodeSummary).
     pub fn build(self) -> crate::types::ClusterNodeSummary {
         crate::types::ClusterNodeSummary {
@@ -182,6 +203,7 @@ impl ClusterNodeSummaryBuilder {
             launch_time: self.launch_time,
             last_software_update_time: self.last_software_update_time,
             instance_status: self.instance_status,
+            ultra_server_info: self.ultra_server_info,
         }
     }
 }

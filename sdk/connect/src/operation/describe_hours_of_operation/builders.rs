@@ -22,7 +22,6 @@ impl crate::operation::describe_hours_of_operation::builders::DescribeHoursOfOpe
 }
 /// Fluent builder constructing a request to `DescribeHoursOfOperation`.
 ///
-/// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
 /// <p>Describes the hours of operation.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeHoursOfOperationFluentBuilder {

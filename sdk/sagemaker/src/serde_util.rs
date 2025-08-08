@@ -1538,6 +1538,21 @@ pub(crate) fn describe_project_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn describe_reserved_capacity_output_output_correct_errors(
+    mut builder: crate::operation::describe_reserved_capacity::builders::DescribeReservedCapacityOutputBuilder,
+) -> crate::operation::describe_reserved_capacity::builders::DescribeReservedCapacityOutputBuilder {
+    if builder.reserved_capacity_arn.is_none() {
+        builder.reserved_capacity_arn = Some(Default::default())
+    }
+    if builder.instance_type.is_none() {
+        builder.instance_type = "no value was set".parse::<crate::types::ReservedCapacityInstanceType>().ok()
+    }
+    if builder.total_instance_count.is_none() {
+        builder.total_instance_count = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn describe_subscribed_workteam_output_output_correct_errors(
     mut builder: crate::operation::describe_subscribed_workteam::builders::DescribeSubscribedWorkteamOutputBuilder,
 ) -> crate::operation::describe_subscribed_workteam::builders::DescribeSubscribedWorkteamOutputBuilder {
@@ -2125,6 +2140,15 @@ pub(crate) fn list_transform_jobs_output_output_correct_errors(
 ) -> crate::operation::list_transform_jobs::builders::ListTransformJobsOutputBuilder {
     if builder.transform_job_summaries.is_none() {
         builder.transform_job_summaries = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_ultra_servers_by_reserved_capacity_output_output_correct_errors(
+    mut builder: crate::operation::list_ultra_servers_by_reserved_capacity::builders::ListUltraServersByReservedCapacityOutputBuilder,
+) -> crate::operation::list_ultra_servers_by_reserved_capacity::builders::ListUltraServersByReservedCapacityOutputBuilder {
+    if builder.ultra_servers.is_none() {
+        builder.ultra_servers = Some(Default::default())
     }
     builder
 }
@@ -3452,6 +3476,18 @@ pub(crate) fn trial_component_source_correct_errors(
 pub(crate) fn trial_source_correct_errors(mut builder: crate::types::builders::TrialSourceBuilder) -> crate::types::builders::TrialSourceBuilder {
     if builder.source_arn.is_none() {
         builder.source_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn ultra_server_summary_correct_errors(
+    mut builder: crate::types::builders::UltraServerSummaryBuilder,
+) -> crate::types::builders::UltraServerSummaryBuilder {
+    if builder.ultra_server_type.is_none() {
+        builder.ultra_server_type = Some(Default::default())
+    }
+    if builder.instance_type.is_none() {
+        builder.instance_type = "no value was set".parse::<crate::types::ReservedCapacityInstanceType>().ok()
     }
     builder
 }
@@ -5333,6 +5369,25 @@ pub(crate) fn trial_component_artifact_correct_errors(
     builder
 }
 
+pub(crate) fn ultra_server_correct_errors(mut builder: crate::types::builders::UltraServerBuilder) -> crate::types::builders::UltraServerBuilder {
+    if builder.ultra_server_id.is_none() {
+        builder.ultra_server_id = Some(Default::default())
+    }
+    if builder.ultra_server_type.is_none() {
+        builder.ultra_server_type = Some(Default::default())
+    }
+    if builder.availability_zone.is_none() {
+        builder.availability_zone = Some(Default::default())
+    }
+    if builder.instance_type.is_none() {
+        builder.instance_type = "no value was set".parse::<crate::types::ReservedCapacityInstanceType>().ok()
+    }
+    if builder.total_instance_count.is_none() {
+        builder.total_instance_count = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn workforce_vpc_config_response_correct_errors(
     mut builder: crate::types::builders::WorkforceVpcConfigResponseBuilder,
 ) -> crate::types::builders::WorkforceVpcConfigResponseBuilder {
@@ -6287,6 +6342,15 @@ pub(crate) fn monitoring_s3_output_correct_errors(
     }
     if builder.local_path.is_none() {
         builder.local_path = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn placement_specification_correct_errors(
+    mut builder: crate::types::builders::PlacementSpecificationBuilder,
+) -> crate::types::builders::PlacementSpecificationBuilder {
+    if builder.instance_count.is_none() {
+        builder.instance_count = Some(Default::default())
     }
     builder
 }

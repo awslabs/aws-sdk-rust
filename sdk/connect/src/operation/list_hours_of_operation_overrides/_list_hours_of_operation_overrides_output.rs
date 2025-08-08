@@ -7,7 +7,7 @@ pub struct ListHoursOfOperationOverridesOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Information about the hours of operation override.</p>
     pub hours_of_operation_override_list: ::std::option::Option<::std::vec::Vec<crate::types::HoursOfOperationOverride>>,
-    /// <p>The AWS Region where this resource was last modified.</p>
+    /// <p>The Amazon Web Services Region where this resource was last modified.</p>
     pub last_modified_region: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when this resource was last modified.</p>
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -24,7 +24,7 @@ impl ListHoursOfOperationOverridesOutput {
     pub fn hours_of_operation_override_list(&self) -> &[crate::types::HoursOfOperationOverride] {
         self.hours_of_operation_override_list.as_deref().unwrap_or_default()
     }
-    /// <p>The AWS Region where this resource was last modified.</p>
+    /// <p>The Amazon Web Services Region where this resource was last modified.</p>
     pub fn last_modified_region(&self) -> ::std::option::Option<&str> {
         self.last_modified_region.as_deref()
     }
@@ -93,17 +93,17 @@ impl ListHoursOfOperationOverridesOutputBuilder {
     pub fn get_hours_of_operation_override_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HoursOfOperationOverride>> {
         &self.hours_of_operation_override_list
     }
-    /// <p>The AWS Region where this resource was last modified.</p>
+    /// <p>The Amazon Web Services Region where this resource was last modified.</p>
     pub fn last_modified_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_modified_region = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The AWS Region where this resource was last modified.</p>
+    /// <p>The Amazon Web Services Region where this resource was last modified.</p>
     pub fn set_last_modified_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_modified_region = input;
         self
     }
-    /// <p>The AWS Region where this resource was last modified.</p>
+    /// <p>The Amazon Web Services Region where this resource was last modified.</p>
     pub fn get_last_modified_region(&self) -> &::std::option::Option<::std::string::String> {
         &self.last_modified_region
     }

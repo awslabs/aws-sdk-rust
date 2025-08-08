@@ -5,7 +5,7 @@
 pub struct SearchHoursOfOperationOverridesOutput {
     /// <p>Information about the hours of operations overrides.</p>
     pub hours_of_operation_overrides: ::std::option::Option<::std::vec::Vec<crate::types::HoursOfOperationOverride>>,
-    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. Length Constraints: Minimum length of 1. Maximum length of 2500.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The total number of hours of operations which matched your search query.</p>
     pub approximate_total_count: ::std::option::Option<i64>,
@@ -18,7 +18,7 @@ impl SearchHoursOfOperationOverridesOutput {
     pub fn hours_of_operation_overrides(&self) -> &[crate::types::HoursOfOperationOverride] {
         self.hours_of_operation_overrides.as_deref().unwrap_or_default()
     }
-    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. Length Constraints: Minimum length of 1. Maximum length of 2500.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -69,17 +69,17 @@ impl SearchHoursOfOperationOverridesOutputBuilder {
     pub fn get_hours_of_operation_overrides(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HoursOfOperationOverride>> {
         &self.hours_of_operation_overrides
     }
-    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. Length Constraints: Minimum length of 1. Maximum length of 2500.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. Length Constraints: Minimum length of 1. Maximum length of 2500.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. Length Constraints: Minimum length of 1. Maximum length of 2500.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

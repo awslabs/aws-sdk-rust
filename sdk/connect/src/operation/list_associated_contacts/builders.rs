@@ -137,22 +137,16 @@ impl ListAssociatedContactsFluentBuilder {
         self.inner.get_contact_id()
     }
     /// <p>The maximum number of results to return per page.</p>
-    /// <p>The maximum number of results to return per page. The default MaxResult size is 25.</p>
-    /// <p>Valid Range: Minimum value of 1. Maximum value of 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
     /// <p>The maximum number of results to return per page.</p>
-    /// <p>The maximum number of results to return per page. The default MaxResult size is 25.</p>
-    /// <p>Valid Range: Minimum value of 1. Maximum value of 100.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
     /// <p>The maximum number of results to return per page.</p>
-    /// <p>The maximum number of results to return per page. The default MaxResult size is 25.</p>
-    /// <p>Valid Range: Minimum value of 1. Maximum value of 100.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }

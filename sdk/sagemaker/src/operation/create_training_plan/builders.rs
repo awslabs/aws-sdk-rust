@@ -166,6 +166,20 @@ impl CreateTrainingPlanFluentBuilder {
     pub fn get_training_plan_offering_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_training_plan_offering_id()
     }
+    /// <p>Number of spare instances to reserve per UltraServer for enhanced resiliency. Default is 1.</p>
+    pub fn spare_instance_count_per_ultra_server(mut self, input: i32) -> Self {
+        self.inner = self.inner.spare_instance_count_per_ultra_server(input);
+        self
+    }
+    /// <p>Number of spare instances to reserve per UltraServer for enhanced resiliency. Default is 1.</p>
+    pub fn set_spare_instance_count_per_ultra_server(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.inner = self.inner.set_spare_instance_count_per_ultra_server(input);
+        self
+    }
+    /// <p>Number of spare instances to reserve per UltraServer for enhanced resiliency. Default is 1.</p>
+    pub fn get_spare_instance_count_per_ultra_server(&self) -> &::std::option::Option<i32> {
+        self.inner.get_spare_instance_count_per_ultra_server()
+    }
     ///
     /// Appends an item to `Tags`.
     ///

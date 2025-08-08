@@ -19,7 +19,11 @@ pub use crate::types::error::_conflict_exception::ConflictException;
 
 pub use crate::types::error::_resource_not_found_exception::ResourceNotFoundException;
 
+pub use crate::types::error::_forbidden_exception::ForbiddenException;
+
 mod _conflict_exception;
+
+mod _forbidden_exception;
 
 mod _internal_failure_exception;
 

@@ -22,7 +22,6 @@ impl crate::operation::describe_agent_status::builders::DescribeAgentStatusInput
 }
 /// Fluent builder constructing a request to `DescribeAgentStatus`.
 ///
-/// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
 /// <p>Describes an agent status.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeAgentStatusFluentBuilder {

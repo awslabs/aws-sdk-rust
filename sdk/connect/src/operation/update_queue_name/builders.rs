@@ -22,7 +22,6 @@ impl crate::operation::update_queue_name::builders::UpdateQueueNameInputBuilder 
 }
 /// Fluent builder constructing a request to `UpdateQueueName`.
 ///
-/// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
 /// <p>Updates the name and description of a queue. At least <code>Name</code> or <code>Description</code> must be provided.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateQueueNameFluentBuilder {

@@ -5,6 +5,8 @@
 pub enum Error {
     /// <p>The specified version does not match the version of the document.</p>
     ConflictException(crate::types::error::ConflictException),
+    /// <p>The caller isn't authorized to make the request.</p>
+    ForbiddenException(crate::types::error::ForbiddenException),
     /// <p>An unexpected error has occurred.</p>
     InternalFailureException(crate::types::error::InternalFailureException),
     /// <p>The request is not valid.</p>
@@ -36,6 +38,7 @@ impl ::std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
             Error::ConflictException(inner) => inner.fmt(f),
+            Error::ForbiddenException(inner) => inner.fmt(f),
             Error::InternalFailureException(inner) => inner.fmt(f),
             Error::InvalidRequestException(inner) => inner.fmt(f),
             Error::MethodNotAllowedException(inner) => inner.fmt(f),
@@ -67,6 +70,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
     fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
         match self {
             Self::ConflictException(inner) => inner.meta(),
+            Self::ForbiddenException(inner) => inner.meta(),
             Self::InternalFailureException(inner) => inner.meta(),
             Self::InvalidRequestException(inner) => inner.meta(),
             Self::MethodNotAllowedException(inner) => inner.meta(),
@@ -77,6 +81,32 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::UnauthorizedException(inner) => inner.meta(),
             Self::UnsupportedDocumentEncodingException(inner) => inner.meta(),
             Self::Unhandled(inner) => &inner.meta,
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_connection::DeleteConnectionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_connection::DeleteConnectionError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_connection::DeleteConnectionError> for Error {
+    fn from(err: crate::operation::delete_connection::DeleteConnectionError) -> Self {
+        match err {
+            crate::operation::delete_connection::DeleteConnectionError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::delete_connection::DeleteConnectionError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::delete_connection::DeleteConnectionError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::delete_connection::DeleteConnectionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_connection::DeleteConnectionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_connection::DeleteConnectionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -332,6 +362,7 @@ impl ::std::error::Error for Error {
     fn source(&self) -> std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Error::ConflictException(inner) => inner.source(),
+            Error::ForbiddenException(inner) => inner.source(),
             Error::InternalFailureException(inner) => inner.source(),
             Error::InvalidRequestException(inner) => inner.source(),
             Error::MethodNotAllowedException(inner) => inner.source(),
@@ -349,6 +380,7 @@ impl ::aws_types::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {
             Self::ConflictException(e) => e.request_id(),
+            Self::ForbiddenException(e) => e.request_id(),
             Self::InternalFailureException(e) => e.request_id(),
             Self::InvalidRequestException(e) => e.request_id(),
             Self::MethodNotAllowedException(e) => e.request_id(),

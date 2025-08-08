@@ -22,7 +22,7 @@ impl crate::operation::create_hours_of_operation_override::builders::CreateHours
 }
 /// Fluent builder constructing a request to `CreateHoursOfOperationOverride`.
 ///
-/// <p>Creates an hours of operation override in an Amazon Connect hours of operation resource</p>
+/// <p>Creates an hours of operation override in an Amazon Connect hours of operation resource.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateHoursOfOperationOverrideFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -183,31 +183,31 @@ impl CreateHoursOfOperationOverrideFluentBuilder {
     pub fn get_config(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HoursOfOperationOverrideConfig>> {
         self.inner.get_config()
     }
-    /// <p>The date from when the hours of operation override would be effective.</p>
+    /// <p>The date from when the hours of operation override is effective.</p>
     pub fn effective_from(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.effective_from(input.into());
         self
     }
-    /// <p>The date from when the hours of operation override would be effective.</p>
+    /// <p>The date from when the hours of operation override is effective.</p>
     pub fn set_effective_from(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_effective_from(input);
         self
     }
-    /// <p>The date from when the hours of operation override would be effective.</p>
+    /// <p>The date from when the hours of operation override is effective.</p>
     pub fn get_effective_from(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_effective_from()
     }
-    /// <p>The date until when the hours of operation override would be effective.</p>
+    /// <p>The date until when the hours of operation override is effective.</p>
     pub fn effective_till(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.effective_till(input.into());
         self
     }
-    /// <p>The date until when the hours of operation override would be effective.</p>
+    /// <p>The date until when the hours of operation override is effective.</p>
     pub fn set_effective_till(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_effective_till(input);
         self
     }
-    /// <p>The date until when the hours of operation override would be effective.</p>
+    /// <p>The date until when the hours of operation override is effective.</p>
     pub fn get_effective_till(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_effective_till()
     }

@@ -22,7 +22,6 @@ impl crate::operation::delete_hours_of_operation::builders::DeleteHoursOfOperati
 }
 /// Fluent builder constructing a request to `DeleteHoursOfOperation`.
 ///
-/// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
 /// <p>Deletes an hours of operation.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteHoursOfOperationFluentBuilder {

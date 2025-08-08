@@ -7,6 +7,12 @@
 pub struct ReservedCapacitySummary {
     /// <p>The Amazon Resource Name (ARN); of the reserved capacity.</p>
     pub reserved_capacity_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The type of reserved capacity.</p>
+    pub reserved_capacity_type: ::std::option::Option<crate::types::ReservedCapacityType>,
+    /// <p>The type of UltraServer included in this reserved capacity, such as ml.u-p6e-gb200x72.</p>
+    pub ultra_server_type: ::std::option::Option<::std::string::String>,
+    /// <p>The number of UltraServers included in this reserved capacity.</p>
+    pub ultra_server_count: ::std::option::Option<i32>,
     /// <p>The instance type for the reserved capacity.</p>
     pub instance_type: ::std::option::Option<crate::types::ReservedCapacityInstanceType>,
     /// <p>The total number of instances in the reserved capacity.</p>
@@ -28,6 +34,18 @@ impl ReservedCapacitySummary {
     /// <p>The Amazon Resource Name (ARN); of the reserved capacity.</p>
     pub fn reserved_capacity_arn(&self) -> ::std::option::Option<&str> {
         self.reserved_capacity_arn.as_deref()
+    }
+    /// <p>The type of reserved capacity.</p>
+    pub fn reserved_capacity_type(&self) -> ::std::option::Option<&crate::types::ReservedCapacityType> {
+        self.reserved_capacity_type.as_ref()
+    }
+    /// <p>The type of UltraServer included in this reserved capacity, such as ml.u-p6e-gb200x72.</p>
+    pub fn ultra_server_type(&self) -> ::std::option::Option<&str> {
+        self.ultra_server_type.as_deref()
+    }
+    /// <p>The number of UltraServers included in this reserved capacity.</p>
+    pub fn ultra_server_count(&self) -> ::std::option::Option<i32> {
+        self.ultra_server_count
     }
     /// <p>The instance type for the reserved capacity.</p>
     pub fn instance_type(&self) -> ::std::option::Option<&crate::types::ReservedCapacityInstanceType> {
@@ -74,6 +92,9 @@ impl ReservedCapacitySummary {
 #[non_exhaustive]
 pub struct ReservedCapacitySummaryBuilder {
     pub(crate) reserved_capacity_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) reserved_capacity_type: ::std::option::Option<crate::types::ReservedCapacityType>,
+    pub(crate) ultra_server_type: ::std::option::Option<::std::string::String>,
+    pub(crate) ultra_server_count: ::std::option::Option<i32>,
     pub(crate) instance_type: ::std::option::Option<crate::types::ReservedCapacityInstanceType>,
     pub(crate) total_instance_count: ::std::option::Option<i32>,
     pub(crate) status: ::std::option::Option<crate::types::ReservedCapacityStatus>,
@@ -98,6 +119,48 @@ impl ReservedCapacitySummaryBuilder {
     /// <p>The Amazon Resource Name (ARN); of the reserved capacity.</p>
     pub fn get_reserved_capacity_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.reserved_capacity_arn
+    }
+    /// <p>The type of reserved capacity.</p>
+    pub fn reserved_capacity_type(mut self, input: crate::types::ReservedCapacityType) -> Self {
+        self.reserved_capacity_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of reserved capacity.</p>
+    pub fn set_reserved_capacity_type(mut self, input: ::std::option::Option<crate::types::ReservedCapacityType>) -> Self {
+        self.reserved_capacity_type = input;
+        self
+    }
+    /// <p>The type of reserved capacity.</p>
+    pub fn get_reserved_capacity_type(&self) -> &::std::option::Option<crate::types::ReservedCapacityType> {
+        &self.reserved_capacity_type
+    }
+    /// <p>The type of UltraServer included in this reserved capacity, such as ml.u-p6e-gb200x72.</p>
+    pub fn ultra_server_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ultra_server_type = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The type of UltraServer included in this reserved capacity, such as ml.u-p6e-gb200x72.</p>
+    pub fn set_ultra_server_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.ultra_server_type = input;
+        self
+    }
+    /// <p>The type of UltraServer included in this reserved capacity, such as ml.u-p6e-gb200x72.</p>
+    pub fn get_ultra_server_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ultra_server_type
+    }
+    /// <p>The number of UltraServers included in this reserved capacity.</p>
+    pub fn ultra_server_count(mut self, input: i32) -> Self {
+        self.ultra_server_count = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of UltraServers included in this reserved capacity.</p>
+    pub fn set_ultra_server_count(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.ultra_server_count = input;
+        self
+    }
+    /// <p>The number of UltraServers included in this reserved capacity.</p>
+    pub fn get_ultra_server_count(&self) -> &::std::option::Option<i32> {
+        &self.ultra_server_count
     }
     /// <p>The instance type for the reserved capacity.</p>
     /// This field is required.
@@ -218,6 +281,9 @@ impl ReservedCapacitySummaryBuilder {
     pub fn build(self) -> crate::types::ReservedCapacitySummary {
         crate::types::ReservedCapacitySummary {
             reserved_capacity_arn: self.reserved_capacity_arn,
+            reserved_capacity_type: self.reserved_capacity_type,
+            ultra_server_type: self.ultra_server_type,
+            ultra_server_count: self.ultra_server_count,
             instance_type: self.instance_type,
             total_instance_count: self.total_instance_count,
             status: self.status,

@@ -31,6 +31,8 @@ pub struct TrainingPlanSummary {
     pub available_instance_count: ::std::option::Option<i32>,
     /// <p>The number of instances currently in use from this training plan.</p>
     pub in_use_instance_count: ::std::option::Option<i32>,
+    /// <p>The total number of UltraServers allocated to this training plan.</p>
+    pub total_ultra_server_count: ::std::option::Option<i32>,
     /// <p>The target resources (e.g., training jobs, HyperPod clusters) that can use this training plan.</p>
     /// <p>Training plans are specific to their target resource.</p>
     /// <ul>
@@ -96,6 +98,10 @@ impl TrainingPlanSummary {
     pub fn in_use_instance_count(&self) -> ::std::option::Option<i32> {
         self.in_use_instance_count
     }
+    /// <p>The total number of UltraServers allocated to this training plan.</p>
+    pub fn total_ultra_server_count(&self) -> ::std::option::Option<i32> {
+        self.total_ultra_server_count
+    }
     /// <p>The target resources (e.g., training jobs, HyperPod clusters) that can use this training plan.</p>
     /// <p>Training plans are specific to their target resource.</p>
     /// <ul>
@@ -140,6 +146,7 @@ pub struct TrainingPlanSummaryBuilder {
     pub(crate) total_instance_count: ::std::option::Option<i32>,
     pub(crate) available_instance_count: ::std::option::Option<i32>,
     pub(crate) in_use_instance_count: ::std::option::Option<i32>,
+    pub(crate) total_ultra_server_count: ::std::option::Option<i32>,
     pub(crate) target_resources: ::std::option::Option<::std::vec::Vec<crate::types::SageMakerResourceName>>,
     pub(crate) reserved_capacity_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ReservedCapacitySummary>>,
 }
@@ -329,6 +336,20 @@ impl TrainingPlanSummaryBuilder {
     pub fn get_in_use_instance_count(&self) -> &::std::option::Option<i32> {
         &self.in_use_instance_count
     }
+    /// <p>The total number of UltraServers allocated to this training plan.</p>
+    pub fn total_ultra_server_count(mut self, input: i32) -> Self {
+        self.total_ultra_server_count = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The total number of UltraServers allocated to this training plan.</p>
+    pub fn set_total_ultra_server_count(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.total_ultra_server_count = input;
+        self
+    }
+    /// <p>The total number of UltraServers allocated to this training plan.</p>
+    pub fn get_total_ultra_server_count(&self) -> &::std::option::Option<i32> {
+        &self.total_ultra_server_count
+    }
     /// Appends an item to `target_resources`.
     ///
     /// To override the contents of this collection use [`set_target_resources`](Self::set_target_resources).
@@ -406,6 +427,7 @@ impl TrainingPlanSummaryBuilder {
             total_instance_count: self.total_instance_count,
             available_instance_count: self.available_instance_count,
             in_use_instance_count: self.in_use_instance_count,
+            total_ultra_server_count: self.total_ultra_server_count,
             target_resources: self.target_resources,
             reserved_capacity_summaries: self.reserved_capacity_summaries,
         }

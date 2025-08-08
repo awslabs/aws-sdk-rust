@@ -6,15 +6,15 @@
 pub struct ClusterEventDetail {
     /// <p>The unique identifier (UUID) of the event.</p>
     pub event_id: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the SageMaker HyperPod cluster associated with the event.</p>
+    /// <p>The Amazon Resource Name (ARN) of the HyperPod cluster associated with the event.</p>
     pub cluster_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the SageMaker HyperPod cluster associated with the event.</p>
+    /// <p>The name of the HyperPod cluster associated with the event.</p>
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the instance group associated with the event, if applicable.</p>
     pub instance_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The EC2 instance ID associated with the event, if applicable.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
-    /// <p>The type of resource associated with the event. Valid values are "Cluster", "InstanceGroup", or "Instance".</p>
+    /// <p>The type of resource associated with the event. Valid values are <code>Cluster</code>, <code>InstanceGroup</code>, or <code>Instance</code>.</p>
     pub resource_type: ::std::option::Option<crate::types::ClusterEventResourceType>,
     /// <p>The timestamp when the event occurred.</p>
     pub event_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -28,11 +28,11 @@ impl ClusterEventDetail {
     pub fn event_id(&self) -> ::std::option::Option<&str> {
         self.event_id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the SageMaker HyperPod cluster associated with the event.</p>
+    /// <p>The Amazon Resource Name (ARN) of the HyperPod cluster associated with the event.</p>
     pub fn cluster_arn(&self) -> ::std::option::Option<&str> {
         self.cluster_arn.as_deref()
     }
-    /// <p>The name of the SageMaker HyperPod cluster associated with the event.</p>
+    /// <p>The name of the HyperPod cluster associated with the event.</p>
     pub fn cluster_name(&self) -> ::std::option::Option<&str> {
         self.cluster_name.as_deref()
     }
@@ -44,7 +44,7 @@ impl ClusterEventDetail {
     pub fn instance_id(&self) -> ::std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>The type of resource associated with the event. Valid values are "Cluster", "InstanceGroup", or "Instance".</p>
+    /// <p>The type of resource associated with the event. Valid values are <code>Cluster</code>, <code>InstanceGroup</code>, or <code>Instance</code>.</p>
     pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ClusterEventResourceType> {
         self.resource_type.as_ref()
     }
@@ -98,33 +98,33 @@ impl ClusterEventDetailBuilder {
     pub fn get_event_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.event_id
     }
-    /// <p>The Amazon Resource Name (ARN) of the SageMaker HyperPod cluster associated with the event.</p>
+    /// <p>The Amazon Resource Name (ARN) of the HyperPod cluster associated with the event.</p>
     /// This field is required.
     pub fn cluster_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the SageMaker HyperPod cluster associated with the event.</p>
+    /// <p>The Amazon Resource Name (ARN) of the HyperPod cluster associated with the event.</p>
     pub fn set_cluster_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the SageMaker HyperPod cluster associated with the event.</p>
+    /// <p>The Amazon Resource Name (ARN) of the HyperPod cluster associated with the event.</p>
     pub fn get_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.cluster_arn
     }
-    /// <p>The name of the SageMaker HyperPod cluster associated with the event.</p>
+    /// <p>The name of the HyperPod cluster associated with the event.</p>
     /// This field is required.
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the SageMaker HyperPod cluster associated with the event.</p>
+    /// <p>The name of the HyperPod cluster associated with the event.</p>
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_name = input;
         self
     }
-    /// <p>The name of the SageMaker HyperPod cluster associated with the event.</p>
+    /// <p>The name of the HyperPod cluster associated with the event.</p>
     pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.cluster_name
     }
@@ -156,18 +156,18 @@ impl ClusterEventDetailBuilder {
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_id
     }
-    /// <p>The type of resource associated with the event. Valid values are "Cluster", "InstanceGroup", or "Instance".</p>
+    /// <p>The type of resource associated with the event. Valid values are <code>Cluster</code>, <code>InstanceGroup</code>, or <code>Instance</code>.</p>
     /// This field is required.
     pub fn resource_type(mut self, input: crate::types::ClusterEventResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of resource associated with the event. Valid values are "Cluster", "InstanceGroup", or "Instance".</p>
+    /// <p>The type of resource associated with the event. Valid values are <code>Cluster</code>, <code>InstanceGroup</code>, or <code>Instance</code>.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ClusterEventResourceType>) -> Self {
         self.resource_type = input;
         self
     }
-    /// <p>The type of resource associated with the event. Valid values are "Cluster", "InstanceGroup", or "Instance".</p>
+    /// <p>The type of resource associated with the event. Valid values are <code>Cluster</code>, <code>InstanceGroup</code>, or <code>Instance</code>.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ClusterEventResourceType> {
         &self.resource_type
     }

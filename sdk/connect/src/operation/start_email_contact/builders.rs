@@ -214,17 +214,17 @@ impl StartEmailContactFluentBuilder {
     pub fn get_email_message(&self) -> &::std::option::Option<crate::types::InboundEmailContent> {
         self.inner.get_email_message()
     }
-    /// <p>The addtional recipients address of the email.</p>
+    /// <p>The additional recipients address of the email.</p>
     pub fn additional_recipients(mut self, input: crate::types::InboundAdditionalRecipients) -> Self {
         self.inner = self.inner.additional_recipients(input);
         self
     }
-    /// <p>The addtional recipients address of the email.</p>
+    /// <p>The additional recipients address of the email.</p>
     pub fn set_additional_recipients(mut self, input: ::std::option::Option<crate::types::InboundAdditionalRecipients>) -> Self {
         self.inner = self.inner.set_additional_recipients(input);
         self
     }
-    /// <p>The addtional recipients address of the email.</p>
+    /// <p>The additional recipients address of the email.</p>
     pub fn get_additional_recipients(&self) -> &::std::option::Option<crate::types::InboundAdditionalRecipients> {
         self.inner.get_additional_recipients()
     }

@@ -24,7 +24,32 @@ impl crate::operation::get_metric_data_v2::builders::GetMetricDataV2InputBuilder
 ///
 /// <p>Gets metric data from the specified Amazon Connect instance.</p>
 /// <p><code>GetMetricDataV2</code> offers more features than <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_GetMetricData.html">GetMetricData</a>, the previous version of this API. It has new metrics, offers filtering at a metric level, and offers the ability to filter and group data by channels, queues, routing profiles, agents, and agent hierarchy levels. It can retrieve historical data for the last 3 months, at varying intervals. It does not support agent queues.</p>
-/// <p>For a description of the historical metrics that are supported by <code>GetMetricDataV2</code> and <code>GetMetricData</code>, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html">Metrics definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+/// <p>For a description of the historical metrics that are supported by <code>GetMetricDataV2</code> and <code>GetMetricData</code>, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html">Metrics definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p><note>
+/// <p>When you make a successful API request, you can expect the following metric values in the response:</p>
+/// <ol>
+/// <li>
+/// <p><b>Metric value is null</b>: The calculation cannot be performed due to divide by zero or insufficient data</p></li>
+/// <li>
+/// <p><b>Metric value is a number (including 0) of defined type</b>: The number provided is the calculation result</p></li>
+/// <li>
+/// <p><b>MetricResult list is empty</b>: The request cannot find any data in the system</p></li>
+/// </ol>
+/// <p>The following guidelines can help you work with the API:</p>
+/// <ul>
+/// <li>
+/// <p>Each dimension in the metric response must contain a value</p></li>
+/// <li>
+/// <p>Each item in MetricResult must include all requested metrics</p></li>
+/// <li>
+/// <p>If the response is slow due to large result sets, try these approaches:</p>
+/// <ul>
+/// <li>
+/// <p>Narrow the time range of your request</p></li>
+/// <li>
+/// <p>Add filters to reduce the amount of data returned</p></li>
+/// </ul></li>
+/// </ul>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetMetricDataV2FluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -585,6 +610,22 @@ impl GetMetricDataV2FluentBuilder {
     /// </note>
     /// </dd>
     /// <dt>
+    /// AVG_CONTACT_FIRST_RESPONSE_TIME_AGENT
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Seconds</p>
+    /// <p>Valid groupings and filters: Agent, Agent Hierarchy, Channel, contact/segmentAttributes/connect:Subtype, Disconnect Reason, Feature, RoutingStepExpression, Initiation method, Routing Profile, Queue, Q in Connect</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#agent-average-contact-first-response-wait-time">Agent average contact first response wait time</a></p>
+    /// </dd>
+    /// <dt>
+    /// AVG_CONVERSATION_CLOSE_TIME
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Seconds</p>
+    /// <p>Valid groupings and filters: Agent, Agent Hierarchy, Channel, contact/segmentAttributes/connect:Subtype, Disconnect Reason, Feature, RoutingStepExpression, Initiation method, Routing Profile, Queue, Q in Connect</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-conversation-close-time">Average conversation close time</a></p>
+    /// </dd>
+    /// <dt>
     /// AVG_CONVERSATION_DURATION
     /// </dt>
     /// <dd>
@@ -608,6 +649,14 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>Unit: Percent</p>
     /// <p>Valid groupings and filters: Agent, Agent Hierarchy, Channel, Evaluation Form ID, Evaluation Section ID, Evaluation Question ID, Evaluation Source, Form Version, Queue, Routing Profile</p>
     /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-evaluation-score">Average evaluation score</a></p>
+    /// </dd>
+    /// <dt>
+    /// AVG_FIRST_RESPONSE_TIME_AGENT
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Seconds</p>
+    /// <p>Valid groupings and filters: Agent, Agent Hierarchy, Channel, contact/segmentAttributes/connect:Subtype, Disconnect Reason, Feature, RoutingStepExpression, Initiation method, Routing Profile, Queue, Q in Connect</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-agent-first-response-time">Average agent first response time</a></p>
     /// </dd>
     /// <dt>
     /// AVG_FLOW_TIME
@@ -702,6 +751,54 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-agent-interruption-time">Average agent interruption time</a></p>
     /// </dd>
     /// <dt>
+    /// AVG_MESSAGE_LENGTH_AGENT
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Count</p>
+    /// <p>Valid groupings and filters: Agent, Agent Hierarchy, Channel, contact/segmentAttributes/connect:Subtype, Disconnect Reason, Feature, RoutingStepExpression, Initiation method, Routing Profile, Queue, Q in Connect</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-agent-message-length">Average agent message length</a></p>
+    /// </dd>
+    /// <dt>
+    /// AVG_MESSAGE_LENGTH_CUSTOMER
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Count</p>
+    /// <p>Valid groupings and filters: Agent, Agent Hierarchy, Channel, contact/segmentAttributes/connect:Subtype, Disconnect Reason, Feature, RoutingStepExpression, Initiation method, Routing Profile, Queue, Q in Connect</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-customer-message-length">Average customer message length</a></p>
+    /// </dd>
+    /// <dt>
+    /// AVG_MESSAGES
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Count</p>
+    /// <p>Valid groupings and filters: Agent, Agent Hierarchy, Channel, contact/segmentAttributes/connect:Subtype, Disconnect Reason, Feature, RoutingStepExpression, Initiation method, Routing Profile, Queue, Q in Connect</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-messages">Average messages</a></p>
+    /// </dd>
+    /// <dt>
+    /// AVG_MESSAGES_AGENT
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Count</p>
+    /// <p>Valid groupings and filters: Agent, Agent Hierarchy, Channel, contact/segmentAttributes/connect:Subtype, Disconnect Reason, Feature, RoutingStepExpression, Initiation method, Routing Profile, Queue, Q in Connect</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-agent-messages">Average agent messages</a></p>
+    /// </dd>
+    /// <dt>
+    /// AVG_MESSAGES_BOT
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Count</p>
+    /// <p>Valid groupings and filters: Agent, Agent Hierarchy, Channel, contact/segmentAttributes/connect:Subtype, Disconnect Reason, Feature, RoutingStepExpression, Initiation method, Routing Profile, Queue, Q in Connect</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-bot-messages">Average bot messages</a></p>
+    /// </dd>
+    /// <dt>
+    /// AVG_MESSAGES_CUSTOMER
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Count</p>
+    /// <p>Valid groupings and filters: Agent, Agent Hierarchy, Channel, contact/segmentAttributes/connect:Subtype, Disconnect Reason, Feature, RoutingStepExpression, Initiation method, Routing Profile, Queue, Q in Connect</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-customer-messages">Average customer messages</a></p>
+    /// </dd>
+    /// <dt>
     /// AVG_NON_TALK_TIME
     /// </dt>
     /// <dd>
@@ -719,6 +816,22 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-queue-answer-time">Average queue answer time</a></p><note>
     /// <p>Feature is a valid filter but not a valid grouping.</p>
     /// </note>
+    /// </dd>
+    /// <dt>
+    /// AVG_RESPONSE_TIME_AGENT
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Seconds</p>
+    /// <p>Valid groupings and filters: Agent, Agent Hierarchy, Channel, contact/segmentAttributes/connect:Subtype, Disconnect Reason, Feature, RoutingStepExpression, Initiation method, Routing Profile, Queue, Q in Connect</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-response-time-agent">Average agent response time</a></p>
+    /// </dd>
+    /// <dt>
+    /// AVG_RESPONSE_TIME_CUSTOMER
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Seconds</p>
+    /// <p>Valid groupings and filters: Agent, Agent Hierarchy, Channel, contact/segmentAttributes/connect:Subtype, Disconnect Reason, Feature, RoutingStepExpression, Initiation method, Routing Profile, Queue, Q in Connect</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-customer-time-agent">Average customer response time</a></p>
     /// </dd>
     /// <dt>
     /// AVG_RESOLUTION_TIME
@@ -1002,6 +1115,14 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>Required filter key: CASE_TEMPLATE_ARN</p>
     /// <p>Valid groupings and filters: CASE_TEMPLATE_ARN, CASE_STATUS</p>
     /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#current-cases">Current cases</a></p>
+    /// </dd>
+    /// <dt>
+    /// CONVERSATIONS_ABANDONED
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Count</p>
+    /// <p>Valid groupings and filters: Agent, Agent Hierarchy, Channel, contact/segmentAttributes/connect:Subtype, Disconnect Reason, Feature, RoutingStepExpression, Initiation method, Routing Profile, Queue, Q in Connect</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#conversations-abandoned">Conversations abandoned</a></p>
     /// </dd>
     /// <dt>
     /// DELIVERY_ATTEMPTS
@@ -1565,6 +1686,22 @@ impl GetMetricDataV2FluentBuilder {
     /// </note>
     /// </dd>
     /// <dt>
+    /// AVG_CONTACT_FIRST_RESPONSE_TIME_AGENT
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Seconds</p>
+    /// <p>Valid groupings and filters: Agent, Agent Hierarchy, Channel, contact/segmentAttributes/connect:Subtype, Disconnect Reason, Feature, RoutingStepExpression, Initiation method, Routing Profile, Queue, Q in Connect</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#agent-average-contact-first-response-wait-time">Agent average contact first response wait time</a></p>
+    /// </dd>
+    /// <dt>
+    /// AVG_CONVERSATION_CLOSE_TIME
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Seconds</p>
+    /// <p>Valid groupings and filters: Agent, Agent Hierarchy, Channel, contact/segmentAttributes/connect:Subtype, Disconnect Reason, Feature, RoutingStepExpression, Initiation method, Routing Profile, Queue, Q in Connect</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-conversation-close-time">Average conversation close time</a></p>
+    /// </dd>
+    /// <dt>
     /// AVG_CONVERSATION_DURATION
     /// </dt>
     /// <dd>
@@ -1588,6 +1725,14 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>Unit: Percent</p>
     /// <p>Valid groupings and filters: Agent, Agent Hierarchy, Channel, Evaluation Form ID, Evaluation Section ID, Evaluation Question ID, Evaluation Source, Form Version, Queue, Routing Profile</p>
     /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-evaluation-score">Average evaluation score</a></p>
+    /// </dd>
+    /// <dt>
+    /// AVG_FIRST_RESPONSE_TIME_AGENT
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Seconds</p>
+    /// <p>Valid groupings and filters: Agent, Agent Hierarchy, Channel, contact/segmentAttributes/connect:Subtype, Disconnect Reason, Feature, RoutingStepExpression, Initiation method, Routing Profile, Queue, Q in Connect</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-agent-first-response-time">Average agent first response time</a></p>
     /// </dd>
     /// <dt>
     /// AVG_FLOW_TIME
@@ -1682,6 +1827,54 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-agent-interruption-time">Average agent interruption time</a></p>
     /// </dd>
     /// <dt>
+    /// AVG_MESSAGE_LENGTH_AGENT
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Count</p>
+    /// <p>Valid groupings and filters: Agent, Agent Hierarchy, Channel, contact/segmentAttributes/connect:Subtype, Disconnect Reason, Feature, RoutingStepExpression, Initiation method, Routing Profile, Queue, Q in Connect</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-agent-message-length">Average agent message length</a></p>
+    /// </dd>
+    /// <dt>
+    /// AVG_MESSAGE_LENGTH_CUSTOMER
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Count</p>
+    /// <p>Valid groupings and filters: Agent, Agent Hierarchy, Channel, contact/segmentAttributes/connect:Subtype, Disconnect Reason, Feature, RoutingStepExpression, Initiation method, Routing Profile, Queue, Q in Connect</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-customer-message-length">Average customer message length</a></p>
+    /// </dd>
+    /// <dt>
+    /// AVG_MESSAGES
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Count</p>
+    /// <p>Valid groupings and filters: Agent, Agent Hierarchy, Channel, contact/segmentAttributes/connect:Subtype, Disconnect Reason, Feature, RoutingStepExpression, Initiation method, Routing Profile, Queue, Q in Connect</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-messages">Average messages</a></p>
+    /// </dd>
+    /// <dt>
+    /// AVG_MESSAGES_AGENT
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Count</p>
+    /// <p>Valid groupings and filters: Agent, Agent Hierarchy, Channel, contact/segmentAttributes/connect:Subtype, Disconnect Reason, Feature, RoutingStepExpression, Initiation method, Routing Profile, Queue, Q in Connect</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-agent-messages">Average agent messages</a></p>
+    /// </dd>
+    /// <dt>
+    /// AVG_MESSAGES_BOT
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Count</p>
+    /// <p>Valid groupings and filters: Agent, Agent Hierarchy, Channel, contact/segmentAttributes/connect:Subtype, Disconnect Reason, Feature, RoutingStepExpression, Initiation method, Routing Profile, Queue, Q in Connect</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-bot-messages">Average bot messages</a></p>
+    /// </dd>
+    /// <dt>
+    /// AVG_MESSAGES_CUSTOMER
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Count</p>
+    /// <p>Valid groupings and filters: Agent, Agent Hierarchy, Channel, contact/segmentAttributes/connect:Subtype, Disconnect Reason, Feature, RoutingStepExpression, Initiation method, Routing Profile, Queue, Q in Connect</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-customer-messages">Average customer messages</a></p>
+    /// </dd>
+    /// <dt>
     /// AVG_NON_TALK_TIME
     /// </dt>
     /// <dd>
@@ -1699,6 +1892,22 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-queue-answer-time">Average queue answer time</a></p><note>
     /// <p>Feature is a valid filter but not a valid grouping.</p>
     /// </note>
+    /// </dd>
+    /// <dt>
+    /// AVG_RESPONSE_TIME_AGENT
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Seconds</p>
+    /// <p>Valid groupings and filters: Agent, Agent Hierarchy, Channel, contact/segmentAttributes/connect:Subtype, Disconnect Reason, Feature, RoutingStepExpression, Initiation method, Routing Profile, Queue, Q in Connect</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-response-time-agent">Average agent response time</a></p>
+    /// </dd>
+    /// <dt>
+    /// AVG_RESPONSE_TIME_CUSTOMER
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Seconds</p>
+    /// <p>Valid groupings and filters: Agent, Agent Hierarchy, Channel, contact/segmentAttributes/connect:Subtype, Disconnect Reason, Feature, RoutingStepExpression, Initiation method, Routing Profile, Queue, Q in Connect</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-customer-time-agent">Average customer response time</a></p>
     /// </dd>
     /// <dt>
     /// AVG_RESOLUTION_TIME
@@ -1982,6 +2191,14 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>Required filter key: CASE_TEMPLATE_ARN</p>
     /// <p>Valid groupings and filters: CASE_TEMPLATE_ARN, CASE_STATUS</p>
     /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#current-cases">Current cases</a></p>
+    /// </dd>
+    /// <dt>
+    /// CONVERSATIONS_ABANDONED
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Count</p>
+    /// <p>Valid groupings and filters: Agent, Agent Hierarchy, Channel, contact/segmentAttributes/connect:Subtype, Disconnect Reason, Feature, RoutingStepExpression, Initiation method, Routing Profile, Queue, Q in Connect</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#conversations-abandoned">Conversations abandoned</a></p>
     /// </dd>
     /// <dt>
     /// DELIVERY_ATTEMPTS
@@ -2545,6 +2762,22 @@ impl GetMetricDataV2FluentBuilder {
     /// </note>
     /// </dd>
     /// <dt>
+    /// AVG_CONTACT_FIRST_RESPONSE_TIME_AGENT
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Seconds</p>
+    /// <p>Valid groupings and filters: Agent, Agent Hierarchy, Channel, contact/segmentAttributes/connect:Subtype, Disconnect Reason, Feature, RoutingStepExpression, Initiation method, Routing Profile, Queue, Q in Connect</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#agent-average-contact-first-response-wait-time">Agent average contact first response wait time</a></p>
+    /// </dd>
+    /// <dt>
+    /// AVG_CONVERSATION_CLOSE_TIME
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Seconds</p>
+    /// <p>Valid groupings and filters: Agent, Agent Hierarchy, Channel, contact/segmentAttributes/connect:Subtype, Disconnect Reason, Feature, RoutingStepExpression, Initiation method, Routing Profile, Queue, Q in Connect</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-conversation-close-time">Average conversation close time</a></p>
+    /// </dd>
+    /// <dt>
     /// AVG_CONVERSATION_DURATION
     /// </dt>
     /// <dd>
@@ -2568,6 +2801,14 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>Unit: Percent</p>
     /// <p>Valid groupings and filters: Agent, Agent Hierarchy, Channel, Evaluation Form ID, Evaluation Section ID, Evaluation Question ID, Evaluation Source, Form Version, Queue, Routing Profile</p>
     /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-evaluation-score">Average evaluation score</a></p>
+    /// </dd>
+    /// <dt>
+    /// AVG_FIRST_RESPONSE_TIME_AGENT
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Seconds</p>
+    /// <p>Valid groupings and filters: Agent, Agent Hierarchy, Channel, contact/segmentAttributes/connect:Subtype, Disconnect Reason, Feature, RoutingStepExpression, Initiation method, Routing Profile, Queue, Q in Connect</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-agent-first-response-time">Average agent first response time</a></p>
     /// </dd>
     /// <dt>
     /// AVG_FLOW_TIME
@@ -2662,6 +2903,54 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-agent-interruption-time">Average agent interruption time</a></p>
     /// </dd>
     /// <dt>
+    /// AVG_MESSAGE_LENGTH_AGENT
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Count</p>
+    /// <p>Valid groupings and filters: Agent, Agent Hierarchy, Channel, contact/segmentAttributes/connect:Subtype, Disconnect Reason, Feature, RoutingStepExpression, Initiation method, Routing Profile, Queue, Q in Connect</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-agent-message-length">Average agent message length</a></p>
+    /// </dd>
+    /// <dt>
+    /// AVG_MESSAGE_LENGTH_CUSTOMER
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Count</p>
+    /// <p>Valid groupings and filters: Agent, Agent Hierarchy, Channel, contact/segmentAttributes/connect:Subtype, Disconnect Reason, Feature, RoutingStepExpression, Initiation method, Routing Profile, Queue, Q in Connect</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-customer-message-length">Average customer message length</a></p>
+    /// </dd>
+    /// <dt>
+    /// AVG_MESSAGES
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Count</p>
+    /// <p>Valid groupings and filters: Agent, Agent Hierarchy, Channel, contact/segmentAttributes/connect:Subtype, Disconnect Reason, Feature, RoutingStepExpression, Initiation method, Routing Profile, Queue, Q in Connect</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-messages">Average messages</a></p>
+    /// </dd>
+    /// <dt>
+    /// AVG_MESSAGES_AGENT
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Count</p>
+    /// <p>Valid groupings and filters: Agent, Agent Hierarchy, Channel, contact/segmentAttributes/connect:Subtype, Disconnect Reason, Feature, RoutingStepExpression, Initiation method, Routing Profile, Queue, Q in Connect</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-agent-messages">Average agent messages</a></p>
+    /// </dd>
+    /// <dt>
+    /// AVG_MESSAGES_BOT
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Count</p>
+    /// <p>Valid groupings and filters: Agent, Agent Hierarchy, Channel, contact/segmentAttributes/connect:Subtype, Disconnect Reason, Feature, RoutingStepExpression, Initiation method, Routing Profile, Queue, Q in Connect</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-bot-messages">Average bot messages</a></p>
+    /// </dd>
+    /// <dt>
+    /// AVG_MESSAGES_CUSTOMER
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Count</p>
+    /// <p>Valid groupings and filters: Agent, Agent Hierarchy, Channel, contact/segmentAttributes/connect:Subtype, Disconnect Reason, Feature, RoutingStepExpression, Initiation method, Routing Profile, Queue, Q in Connect</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-customer-messages">Average customer messages</a></p>
+    /// </dd>
+    /// <dt>
     /// AVG_NON_TALK_TIME
     /// </dt>
     /// <dd>
@@ -2679,6 +2968,22 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-queue-answer-time">Average queue answer time</a></p><note>
     /// <p>Feature is a valid filter but not a valid grouping.</p>
     /// </note>
+    /// </dd>
+    /// <dt>
+    /// AVG_RESPONSE_TIME_AGENT
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Seconds</p>
+    /// <p>Valid groupings and filters: Agent, Agent Hierarchy, Channel, contact/segmentAttributes/connect:Subtype, Disconnect Reason, Feature, RoutingStepExpression, Initiation method, Routing Profile, Queue, Q in Connect</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-response-time-agent">Average agent response time</a></p>
+    /// </dd>
+    /// <dt>
+    /// AVG_RESPONSE_TIME_CUSTOMER
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Seconds</p>
+    /// <p>Valid groupings and filters: Agent, Agent Hierarchy, Channel, contact/segmentAttributes/connect:Subtype, Disconnect Reason, Feature, RoutingStepExpression, Initiation method, Routing Profile, Queue, Q in Connect</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-customer-time-agent">Average customer response time</a></p>
     /// </dd>
     /// <dt>
     /// AVG_RESOLUTION_TIME
@@ -2962,6 +3267,14 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>Required filter key: CASE_TEMPLATE_ARN</p>
     /// <p>Valid groupings and filters: CASE_TEMPLATE_ARN, CASE_STATUS</p>
     /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#current-cases">Current cases</a></p>
+    /// </dd>
+    /// <dt>
+    /// CONVERSATIONS_ABANDONED
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Count</p>
+    /// <p>Valid groupings and filters: Agent, Agent Hierarchy, Channel, contact/segmentAttributes/connect:Subtype, Disconnect Reason, Feature, RoutingStepExpression, Initiation method, Routing Profile, Queue, Q in Connect</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#conversations-abandoned">Conversations abandoned</a></p>
     /// </dd>
     /// <dt>
     /// DELIVERY_ATTEMPTS

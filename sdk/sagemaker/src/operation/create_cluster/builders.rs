@@ -249,17 +249,17 @@ impl CreateClusterFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }
-    /// <p>The type of orchestrator to use for the SageMaker HyperPod cluster. Currently, the only supported value is <code>"eks"</code>, which is to use an Amazon Elastic Kubernetes Service (EKS) cluster as the orchestrator.</p>
+    /// <p>The type of orchestrator to use for the SageMaker HyperPod cluster. Currently, the only supported value is <code>"eks"</code>, which is to use an Amazon Elastic Kubernetes Service cluster as the orchestrator.</p>
     pub fn orchestrator(mut self, input: crate::types::ClusterOrchestrator) -> Self {
         self.inner = self.inner.orchestrator(input);
         self
     }
-    /// <p>The type of orchestrator to use for the SageMaker HyperPod cluster. Currently, the only supported value is <code>"eks"</code>, which is to use an Amazon Elastic Kubernetes Service (EKS) cluster as the orchestrator.</p>
+    /// <p>The type of orchestrator to use for the SageMaker HyperPod cluster. Currently, the only supported value is <code>"eks"</code>, which is to use an Amazon Elastic Kubernetes Service cluster as the orchestrator.</p>
     pub fn set_orchestrator(mut self, input: ::std::option::Option<crate::types::ClusterOrchestrator>) -> Self {
         self.inner = self.inner.set_orchestrator(input);
         self
     }
-    /// <p>The type of orchestrator to use for the SageMaker HyperPod cluster. Currently, the only supported value is <code>"eks"</code>, which is to use an Amazon Elastic Kubernetes Service (EKS) cluster as the orchestrator.</p>
+    /// <p>The type of orchestrator to use for the SageMaker HyperPod cluster. Currently, the only supported value is <code>"eks"</code>, which is to use an Amazon Elastic Kubernetes Service cluster as the orchestrator.</p>
     pub fn get_orchestrator(&self) -> &::std::option::Option<crate::types::ClusterOrchestrator> {
         self.inner.get_orchestrator()
     }

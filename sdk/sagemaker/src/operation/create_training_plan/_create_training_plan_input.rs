@@ -7,6 +7,8 @@ pub struct CreateTrainingPlanInput {
     pub training_plan_name: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the training plan offering to use for creating this plan.</p>
     pub training_plan_offering_id: ::std::option::Option<::std::string::String>,
+    /// <p>Number of spare instances to reserve per UltraServer for enhanced resiliency. Default is 1.</p>
+    pub spare_instance_count_per_ultra_server: ::std::option::Option<i32>,
     /// <p>An array of key-value pairs to apply to this training plan.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
@@ -18,6 +20,10 @@ impl CreateTrainingPlanInput {
     /// <p>The unique identifier of the training plan offering to use for creating this plan.</p>
     pub fn training_plan_offering_id(&self) -> ::std::option::Option<&str> {
         self.training_plan_offering_id.as_deref()
+    }
+    /// <p>Number of spare instances to reserve per UltraServer for enhanced resiliency. Default is 1.</p>
+    pub fn spare_instance_count_per_ultra_server(&self) -> ::std::option::Option<i32> {
+        self.spare_instance_count_per_ultra_server
     }
     /// <p>An array of key-value pairs to apply to this training plan.</p>
     ///
@@ -39,6 +45,7 @@ impl CreateTrainingPlanInput {
 pub struct CreateTrainingPlanInputBuilder {
     pub(crate) training_plan_name: ::std::option::Option<::std::string::String>,
     pub(crate) training_plan_offering_id: ::std::option::Option<::std::string::String>,
+    pub(crate) spare_instance_count_per_ultra_server: ::std::option::Option<i32>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateTrainingPlanInputBuilder {
@@ -72,6 +79,20 @@ impl CreateTrainingPlanInputBuilder {
     pub fn get_training_plan_offering_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.training_plan_offering_id
     }
+    /// <p>Number of spare instances to reserve per UltraServer for enhanced resiliency. Default is 1.</p>
+    pub fn spare_instance_count_per_ultra_server(mut self, input: i32) -> Self {
+        self.spare_instance_count_per_ultra_server = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Number of spare instances to reserve per UltraServer for enhanced resiliency. Default is 1.</p>
+    pub fn set_spare_instance_count_per_ultra_server(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.spare_instance_count_per_ultra_server = input;
+        self
+    }
+    /// <p>Number of spare instances to reserve per UltraServer for enhanced resiliency. Default is 1.</p>
+    pub fn get_spare_instance_count_per_ultra_server(&self) -> &::std::option::Option<i32> {
+        &self.spare_instance_count_per_ultra_server
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -100,6 +121,7 @@ impl CreateTrainingPlanInputBuilder {
         ::std::result::Result::Ok(crate::operation::create_training_plan::CreateTrainingPlanInput {
             training_plan_name: self.training_plan_name,
             training_plan_offering_id: self.training_plan_offering_id,
+            spare_instance_count_per_ultra_server: self.spare_instance_count_per_ultra_server,
             tags: self.tags,
         })
     }

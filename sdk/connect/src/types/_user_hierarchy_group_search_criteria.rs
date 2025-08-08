@@ -12,6 +12,8 @@ pub struct UserHierarchyGroupSearchCriteria {
     /// <p>The currently supported values for <code>FieldName</code> are <code>name</code>,   <code>parentId</code>, <code>levelId</code>, and <code>resourceID</code>.</p>
     /// </note>
     pub string_condition: ::std::option::Option<crate::types::StringCondition>,
+    /// <p>A leaf node condition which can be used to specify a hierarchy group condition.</p>
+    pub hierarchy_group_condition: ::std::option::Option<crate::types::HierarchyGroupCondition>,
 }
 impl UserHierarchyGroupSearchCriteria {
     /// <p>A list of conditions which would be applied together with an OR condition.</p>
@@ -32,6 +34,10 @@ impl UserHierarchyGroupSearchCriteria {
     pub fn string_condition(&self) -> ::std::option::Option<&crate::types::StringCondition> {
         self.string_condition.as_ref()
     }
+    /// <p>A leaf node condition which can be used to specify a hierarchy group condition.</p>
+    pub fn hierarchy_group_condition(&self) -> ::std::option::Option<&crate::types::HierarchyGroupCondition> {
+        self.hierarchy_group_condition.as_ref()
+    }
 }
 impl UserHierarchyGroupSearchCriteria {
     /// Creates a new builder-style object to manufacture [`UserHierarchyGroupSearchCriteria`](crate::types::UserHierarchyGroupSearchCriteria).
@@ -47,6 +53,7 @@ pub struct UserHierarchyGroupSearchCriteriaBuilder {
     pub(crate) or_conditions: ::std::option::Option<::std::vec::Vec<crate::types::UserHierarchyGroupSearchCriteria>>,
     pub(crate) and_conditions: ::std::option::Option<::std::vec::Vec<crate::types::UserHierarchyGroupSearchCriteria>>,
     pub(crate) string_condition: ::std::option::Option<crate::types::StringCondition>,
+    pub(crate) hierarchy_group_condition: ::std::option::Option<crate::types::HierarchyGroupCondition>,
 }
 impl UserHierarchyGroupSearchCriteriaBuilder {
     /// Appends an item to `or_conditions`.
@@ -109,12 +116,27 @@ impl UserHierarchyGroupSearchCriteriaBuilder {
     pub fn get_string_condition(&self) -> &::std::option::Option<crate::types::StringCondition> {
         &self.string_condition
     }
+    /// <p>A leaf node condition which can be used to specify a hierarchy group condition.</p>
+    pub fn hierarchy_group_condition(mut self, input: crate::types::HierarchyGroupCondition) -> Self {
+        self.hierarchy_group_condition = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A leaf node condition which can be used to specify a hierarchy group condition.</p>
+    pub fn set_hierarchy_group_condition(mut self, input: ::std::option::Option<crate::types::HierarchyGroupCondition>) -> Self {
+        self.hierarchy_group_condition = input;
+        self
+    }
+    /// <p>A leaf node condition which can be used to specify a hierarchy group condition.</p>
+    pub fn get_hierarchy_group_condition(&self) -> &::std::option::Option<crate::types::HierarchyGroupCondition> {
+        &self.hierarchy_group_condition
+    }
     /// Consumes the builder and constructs a [`UserHierarchyGroupSearchCriteria`](crate::types::UserHierarchyGroupSearchCriteria).
     pub fn build(self) -> crate::types::UserHierarchyGroupSearchCriteria {
         crate::types::UserHierarchyGroupSearchCriteria {
             or_conditions: self.or_conditions,
             and_conditions: self.and_conditions,
             string_condition: self.string_condition,
+            hierarchy_group_condition: self.hierarchy_group_condition,
         }
     }
 }

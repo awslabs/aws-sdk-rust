@@ -22,7 +22,6 @@ impl crate::operation::update_queue_outbound_caller_config::builders::UpdateQueu
 }
 /// Fluent builder constructing a request to `UpdateQueueOutboundCallerConfig`.
 ///
-/// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
 /// <p>Updates the outbound caller ID name, number, and outbound whisper flow for a specified queue.</p><important>
 /// <ul>
 /// <li>

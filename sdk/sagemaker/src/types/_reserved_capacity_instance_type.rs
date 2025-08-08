@@ -18,6 +18,7 @@
 ///     ReservedCapacityInstanceType::MlP5E48Xlarge => { /* ... */ },
 ///     ReservedCapacityInstanceType::MlP5En48Xlarge => { /* ... */ },
 ///     ReservedCapacityInstanceType::MlP6B20048Xlarge => { /* ... */ },
+///     ReservedCapacityInstanceType::MlP6EGb20036Xlarge => { /* ... */ },
 ///     ReservedCapacityInstanceType::MlTrn132Xlarge => { /* ... */ },
 ///     ReservedCapacityInstanceType::MlTrn248Xlarge => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -61,6 +62,8 @@ pub enum ReservedCapacityInstanceType {
     #[allow(missing_docs)] // documentation missing in model
     MlP6B20048Xlarge,
     #[allow(missing_docs)] // documentation missing in model
+    MlP6EGb20036Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
     MlTrn132Xlarge,
     #[allow(missing_docs)] // documentation missing in model
     MlTrn248Xlarge,
@@ -77,6 +80,7 @@ impl ::std::convert::From<&str> for ReservedCapacityInstanceType {
             "ml.p5e.48xlarge" => ReservedCapacityInstanceType::MlP5E48Xlarge,
             "ml.p5en.48xlarge" => ReservedCapacityInstanceType::MlP5En48Xlarge,
             "ml.p6-b200.48xlarge" => ReservedCapacityInstanceType::MlP6B20048Xlarge,
+            "ml.p6e-gb200.36xlarge" => ReservedCapacityInstanceType::MlP6EGb20036Xlarge,
             "ml.trn1.32xlarge" => ReservedCapacityInstanceType::MlTrn132Xlarge,
             "ml.trn2.48xlarge" => ReservedCapacityInstanceType::MlTrn248Xlarge,
             other => ReservedCapacityInstanceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -100,6 +104,7 @@ impl ReservedCapacityInstanceType {
             ReservedCapacityInstanceType::MlP5E48Xlarge => "ml.p5e.48xlarge",
             ReservedCapacityInstanceType::MlP5En48Xlarge => "ml.p5en.48xlarge",
             ReservedCapacityInstanceType::MlP6B20048Xlarge => "ml.p6-b200.48xlarge",
+            ReservedCapacityInstanceType::MlP6EGb20036Xlarge => "ml.p6e-gb200.36xlarge",
             ReservedCapacityInstanceType::MlTrn132Xlarge => "ml.trn1.32xlarge",
             ReservedCapacityInstanceType::MlTrn248Xlarge => "ml.trn2.48xlarge",
             ReservedCapacityInstanceType::Unknown(value) => value.as_str(),
@@ -114,6 +119,7 @@ impl ReservedCapacityInstanceType {
             "ml.p5e.48xlarge",
             "ml.p5en.48xlarge",
             "ml.p6-b200.48xlarge",
+            "ml.p6e-gb200.36xlarge",
             "ml.trn1.32xlarge",
             "ml.trn2.48xlarge",
         ]
@@ -145,6 +151,7 @@ impl ::std::fmt::Display for ReservedCapacityInstanceType {
             ReservedCapacityInstanceType::MlP5E48Xlarge => write!(f, "ml.p5e.48xlarge"),
             ReservedCapacityInstanceType::MlP5En48Xlarge => write!(f, "ml.p5en.48xlarge"),
             ReservedCapacityInstanceType::MlP6B20048Xlarge => write!(f, "ml.p6-b200.48xlarge"),
+            ReservedCapacityInstanceType::MlP6EGb20036Xlarge => write!(f, "ml.p6e-gb200.36xlarge"),
             ReservedCapacityInstanceType::MlTrn132Xlarge => write!(f, "ml.trn1.32xlarge"),
             ReservedCapacityInstanceType::MlTrn248Xlarge => write!(f, "ml.trn2.48xlarge"),
             ReservedCapacityInstanceType::Unknown(value) => write!(f, "{}", value),

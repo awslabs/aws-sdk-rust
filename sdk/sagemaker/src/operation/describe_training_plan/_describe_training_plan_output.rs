@@ -29,6 +29,12 @@ pub struct DescribeTrainingPlanOutput {
     pub available_instance_count: ::std::option::Option<i32>,
     /// <p>The number of instances currently in use from this training plan.</p>
     pub in_use_instance_count: ::std::option::Option<i32>,
+    /// <p>The number of instances in the training plan that are currently in an unhealthy state.</p>
+    pub unhealthy_instance_count: ::std::option::Option<i32>,
+    /// <p>The number of available spare instances in the training plan.</p>
+    pub available_spare_instance_count: ::std::option::Option<i32>,
+    /// <p>The total number of UltraServers reserved to this training plan.</p>
+    pub total_ultra_server_count: ::std::option::Option<i32>,
     /// <p>The target resources (e.g., SageMaker Training Jobs, SageMaker HyperPod) that can use this training plan.</p>
     /// <p>Training plans are specific to their target resource.</p>
     /// <ul>
@@ -95,6 +101,18 @@ impl DescribeTrainingPlanOutput {
     pub fn in_use_instance_count(&self) -> ::std::option::Option<i32> {
         self.in_use_instance_count
     }
+    /// <p>The number of instances in the training plan that are currently in an unhealthy state.</p>
+    pub fn unhealthy_instance_count(&self) -> ::std::option::Option<i32> {
+        self.unhealthy_instance_count
+    }
+    /// <p>The number of available spare instances in the training plan.</p>
+    pub fn available_spare_instance_count(&self) -> ::std::option::Option<i32> {
+        self.available_spare_instance_count
+    }
+    /// <p>The total number of UltraServers reserved to this training plan.</p>
+    pub fn total_ultra_server_count(&self) -> ::std::option::Option<i32> {
+        self.total_ultra_server_count
+    }
     /// <p>The target resources (e.g., SageMaker Training Jobs, SageMaker HyperPod) that can use this training plan.</p>
     /// <p>Training plans are specific to their target resource.</p>
     /// <ul>
@@ -144,6 +162,9 @@ pub struct DescribeTrainingPlanOutputBuilder {
     pub(crate) total_instance_count: ::std::option::Option<i32>,
     pub(crate) available_instance_count: ::std::option::Option<i32>,
     pub(crate) in_use_instance_count: ::std::option::Option<i32>,
+    pub(crate) unhealthy_instance_count: ::std::option::Option<i32>,
+    pub(crate) available_spare_instance_count: ::std::option::Option<i32>,
+    pub(crate) total_ultra_server_count: ::std::option::Option<i32>,
     pub(crate) target_resources: ::std::option::Option<::std::vec::Vec<crate::types::SageMakerResourceName>>,
     pub(crate) reserved_capacity_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ReservedCapacitySummary>>,
     _request_id: Option<String>,
@@ -334,6 +355,48 @@ impl DescribeTrainingPlanOutputBuilder {
     pub fn get_in_use_instance_count(&self) -> &::std::option::Option<i32> {
         &self.in_use_instance_count
     }
+    /// <p>The number of instances in the training plan that are currently in an unhealthy state.</p>
+    pub fn unhealthy_instance_count(mut self, input: i32) -> Self {
+        self.unhealthy_instance_count = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of instances in the training plan that are currently in an unhealthy state.</p>
+    pub fn set_unhealthy_instance_count(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.unhealthy_instance_count = input;
+        self
+    }
+    /// <p>The number of instances in the training plan that are currently in an unhealthy state.</p>
+    pub fn get_unhealthy_instance_count(&self) -> &::std::option::Option<i32> {
+        &self.unhealthy_instance_count
+    }
+    /// <p>The number of available spare instances in the training plan.</p>
+    pub fn available_spare_instance_count(mut self, input: i32) -> Self {
+        self.available_spare_instance_count = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of available spare instances in the training plan.</p>
+    pub fn set_available_spare_instance_count(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.available_spare_instance_count = input;
+        self
+    }
+    /// <p>The number of available spare instances in the training plan.</p>
+    pub fn get_available_spare_instance_count(&self) -> &::std::option::Option<i32> {
+        &self.available_spare_instance_count
+    }
+    /// <p>The total number of UltraServers reserved to this training plan.</p>
+    pub fn total_ultra_server_count(mut self, input: i32) -> Self {
+        self.total_ultra_server_count = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The total number of UltraServers reserved to this training plan.</p>
+    pub fn set_total_ultra_server_count(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.total_ultra_server_count = input;
+        self
+    }
+    /// <p>The total number of UltraServers reserved to this training plan.</p>
+    pub fn get_total_ultra_server_count(&self) -> &::std::option::Option<i32> {
+        &self.total_ultra_server_count
+    }
     /// Appends an item to `target_resources`.
     ///
     /// To override the contents of this collection use [`set_target_resources`](Self::set_target_resources).
@@ -420,6 +483,9 @@ impl DescribeTrainingPlanOutputBuilder {
             total_instance_count: self.total_instance_count,
             available_instance_count: self.available_instance_count,
             in_use_instance_count: self.in_use_instance_count,
+            unhealthy_instance_count: self.unhealthy_instance_count,
+            available_spare_instance_count: self.available_spare_instance_count,
+            total_ultra_server_count: self.total_ultra_server_count,
             target_resources: self.target_resources,
             reserved_capacity_summaries: self.reserved_capacity_summaries,
             _request_id: self._request_id,

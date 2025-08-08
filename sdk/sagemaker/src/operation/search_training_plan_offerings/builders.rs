@@ -143,6 +143,34 @@ impl SearchTrainingPlanOfferingsFluentBuilder {
     pub fn get_instance_count(&self) -> &::std::option::Option<i32> {
         self.inner.get_instance_count()
     }
+    /// <p>The type of UltraServer to search for, such as ml.u-p6e-gb200x72.</p>
+    pub fn ultra_server_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.ultra_server_type(input.into());
+        self
+    }
+    /// <p>The type of UltraServer to search for, such as ml.u-p6e-gb200x72.</p>
+    pub fn set_ultra_server_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_ultra_server_type(input);
+        self
+    }
+    /// <p>The type of UltraServer to search for, such as ml.u-p6e-gb200x72.</p>
+    pub fn get_ultra_server_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ultra_server_type()
+    }
+    /// <p>The number of UltraServers to search for.</p>
+    pub fn ultra_server_count(mut self, input: i32) -> Self {
+        self.inner = self.inner.ultra_server_count(input);
+        self
+    }
+    /// <p>The number of UltraServers to search for.</p>
+    pub fn set_ultra_server_count(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.inner = self.inner.set_ultra_server_count(input);
+        self
+    }
+    /// <p>The number of UltraServers to search for.</p>
+    pub fn get_ultra_server_count(&self) -> &::std::option::Option<i32> {
+        self.inner.get_ultra_server_count()
+    }
     /// <p>A filter to search for training plan offerings with a start time after a specified date.</p>
     pub fn start_time_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.start_time_after(input);

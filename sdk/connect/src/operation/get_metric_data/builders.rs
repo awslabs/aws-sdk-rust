@@ -228,6 +228,7 @@ impl GetMetricDataFluentBuilder {
     /// <dd>
     /// <p>Unit: SECONDS</p>
     /// <p>Statistic: AVG</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-queue-abandon-time">Average queue abandon time</a></p>
     /// </dd>
     /// <dt>
     /// AFTER_CONTACT_WORK_TIME
@@ -235,6 +236,7 @@ impl GetMetricDataFluentBuilder {
     /// <dd>
     /// <p>Unit: SECONDS</p>
     /// <p>Statistic: AVG</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#after-contact-work-time">After contact work time</a></p>
     /// </dd>
     /// <dt>
     /// API_CONTACTS_HANDLED
@@ -242,6 +244,15 @@ impl GetMetricDataFluentBuilder {
     /// <dd>
     /// <p>Unit: COUNT</p>
     /// <p>Statistic: SUM</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#api-contacts-handled">API contacts handled</a></p>
+    /// </dd>
+    /// <dt>
+    /// AVG_HOLD_TIME
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: SECONDS</p>
+    /// <p>Statistic: AVG</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-customer-hold-time">Average customer hold time</a></p>
     /// </dd>
     /// <dt>
     /// CALLBACK_CONTACTS_HANDLED
@@ -249,6 +260,7 @@ impl GetMetricDataFluentBuilder {
     /// <dd>
     /// <p>Unit: COUNT</p>
     /// <p>Statistic: SUM</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#callback-contacts-handled">Callback contacts handled</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_ABANDONED
@@ -256,6 +268,7 @@ impl GetMetricDataFluentBuilder {
     /// <dd>
     /// <p>Unit: COUNT</p>
     /// <p>Statistic: SUM</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-abandoned">Contacts abandoned</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_AGENT_HUNG_UP_FIRST
@@ -263,6 +276,7 @@ impl GetMetricDataFluentBuilder {
     /// <dd>
     /// <p>Unit: COUNT</p>
     /// <p>Statistic: SUM</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-agent-hung-up-first">Contacts agent hung up first</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_CONSULTED
@@ -270,6 +284,7 @@ impl GetMetricDataFluentBuilder {
     /// <dd>
     /// <p>Unit: COUNT</p>
     /// <p>Statistic: SUM</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-consulted">Contacts consulted</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_HANDLED
@@ -277,6 +292,7 @@ impl GetMetricDataFluentBuilder {
     /// <dd>
     /// <p>Unit: COUNT</p>
     /// <p>Statistic: SUM</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-handled">Contacts handled</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_HANDLED_INCOMING
@@ -284,6 +300,7 @@ impl GetMetricDataFluentBuilder {
     /// <dd>
     /// <p>Unit: COUNT</p>
     /// <p>Statistic: SUM</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-handled-incoming">Contacts handled incoming</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_HANDLED_OUTBOUND
@@ -291,6 +308,7 @@ impl GetMetricDataFluentBuilder {
     /// <dd>
     /// <p>Unit: COUNT</p>
     /// <p>Statistic: SUM</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-handled-outbound">Contacts handled outbound</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_HOLD_ABANDONS
@@ -298,6 +316,7 @@ impl GetMetricDataFluentBuilder {
     /// <dd>
     /// <p>Unit: COUNT</p>
     /// <p>Statistic: SUM</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-hold-disconnect">Contacts hold disconnect</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_MISSED
@@ -305,6 +324,7 @@ impl GetMetricDataFluentBuilder {
     /// <dd>
     /// <p>Unit: COUNT</p>
     /// <p>Statistic: SUM</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#agent-non-response">AGENT_NON_RESPONSE</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_QUEUED
@@ -312,6 +332,7 @@ impl GetMetricDataFluentBuilder {
     /// <dd>
     /// <p>Unit: COUNT</p>
     /// <p>Statistic: SUM</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-queued">Contacts queued</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_TRANSFERRED_IN
@@ -319,6 +340,7 @@ impl GetMetricDataFluentBuilder {
     /// <dd>
     /// <p>Unit: COUNT</p>
     /// <p>Statistic: SUM</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-transferred-in">Contacts transferred in</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_TRANSFERRED_IN_FROM_QUEUE
@@ -326,6 +348,7 @@ impl GetMetricDataFluentBuilder {
     /// <dd>
     /// <p>Unit: COUNT</p>
     /// <p>Statistic: SUM</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-transferred-out-queue">Contacts transferred out queue</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_TRANSFERRED_OUT
@@ -333,6 +356,7 @@ impl GetMetricDataFluentBuilder {
     /// <dd>
     /// <p>Unit: COUNT</p>
     /// <p>Statistic: SUM</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-transferred-out">Contacts transferred out</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_TRANSFERRED_OUT_FROM_QUEUE
@@ -340,6 +364,7 @@ impl GetMetricDataFluentBuilder {
     /// <dd>
     /// <p>Unit: COUNT</p>
     /// <p>Statistic: SUM</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-transferred-out-queue">Contacts transferred out queue</a></p>
     /// </dd>
     /// <dt>
     /// HANDLE_TIME
@@ -347,13 +372,7 @@ impl GetMetricDataFluentBuilder {
     /// <dd>
     /// <p>Unit: SECONDS</p>
     /// <p>Statistic: AVG</p>
-    /// </dd>
-    /// <dt>
-    /// HOLD_TIME
-    /// </dt>
-    /// <dd>
-    /// <p>Unit: SECONDS</p>
-    /// <p>Statistic: AVG</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-handle-time">Average handle time</a></p>
     /// </dd>
     /// <dt>
     /// INTERACTION_AND_HOLD_TIME
@@ -361,6 +380,7 @@ impl GetMetricDataFluentBuilder {
     /// <dd>
     /// <p>Unit: SECONDS</p>
     /// <p>Statistic: AVG</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-agent-interaction-and-customer-hold-time">Average agent interaction and customer hold time</a></p>
     /// </dd>
     /// <dt>
     /// INTERACTION_TIME
@@ -368,6 +388,7 @@ impl GetMetricDataFluentBuilder {
     /// <dd>
     /// <p>Unit: SECONDS</p>
     /// <p>Statistic: AVG</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#aaverage-agent-interaction-time">Average agent interaction time</a></p>
     /// </dd>
     /// <dt>
     /// OCCUPANCY
@@ -375,6 +396,7 @@ impl GetMetricDataFluentBuilder {
     /// <dd>
     /// <p>Unit: PERCENT</p>
     /// <p>Statistic: AVG</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#occupancy">Occupancy</a></p>
     /// </dd>
     /// <dt>
     /// QUEUE_ANSWER_TIME
@@ -382,6 +404,7 @@ impl GetMetricDataFluentBuilder {
     /// <dd>
     /// <p>Unit: SECONDS</p>
     /// <p>Statistic: AVG</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html##average-queue-answer-time">Average queue answer time</a></p>
     /// </dd>
     /// <dt>
     /// QUEUED_TIME
@@ -389,6 +412,7 @@ impl GetMetricDataFluentBuilder {
     /// <dd>
     /// <p>Unit: SECONDS</p>
     /// <p>Statistic: MAX</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#minimum-flow-time">Minimum flow time</a></p>
     /// </dd>
     /// <dt>
     /// SERVICE_LEVEL
@@ -398,6 +422,7 @@ impl GetMetricDataFluentBuilder {
     /// <p>Unit: PERCENT</p>
     /// <p>Statistic: AVG</p>
     /// <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for "Less than").</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-queue-abandon-time">Average queue abandon time</a></p>
     /// </dd>
     /// </dl>
     pub fn historical_metrics(mut self, input: crate::types::HistoricalMetric) -> Self {
@@ -414,6 +439,7 @@ impl GetMetricDataFluentBuilder {
     /// <dd>
     /// <p>Unit: SECONDS</p>
     /// <p>Statistic: AVG</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-queue-abandon-time">Average queue abandon time</a></p>
     /// </dd>
     /// <dt>
     /// AFTER_CONTACT_WORK_TIME
@@ -421,6 +447,7 @@ impl GetMetricDataFluentBuilder {
     /// <dd>
     /// <p>Unit: SECONDS</p>
     /// <p>Statistic: AVG</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#after-contact-work-time">After contact work time</a></p>
     /// </dd>
     /// <dt>
     /// API_CONTACTS_HANDLED
@@ -428,6 +455,15 @@ impl GetMetricDataFluentBuilder {
     /// <dd>
     /// <p>Unit: COUNT</p>
     /// <p>Statistic: SUM</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#api-contacts-handled">API contacts handled</a></p>
+    /// </dd>
+    /// <dt>
+    /// AVG_HOLD_TIME
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: SECONDS</p>
+    /// <p>Statistic: AVG</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-customer-hold-time">Average customer hold time</a></p>
     /// </dd>
     /// <dt>
     /// CALLBACK_CONTACTS_HANDLED
@@ -435,6 +471,7 @@ impl GetMetricDataFluentBuilder {
     /// <dd>
     /// <p>Unit: COUNT</p>
     /// <p>Statistic: SUM</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#callback-contacts-handled">Callback contacts handled</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_ABANDONED
@@ -442,6 +479,7 @@ impl GetMetricDataFluentBuilder {
     /// <dd>
     /// <p>Unit: COUNT</p>
     /// <p>Statistic: SUM</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-abandoned">Contacts abandoned</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_AGENT_HUNG_UP_FIRST
@@ -449,6 +487,7 @@ impl GetMetricDataFluentBuilder {
     /// <dd>
     /// <p>Unit: COUNT</p>
     /// <p>Statistic: SUM</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-agent-hung-up-first">Contacts agent hung up first</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_CONSULTED
@@ -456,6 +495,7 @@ impl GetMetricDataFluentBuilder {
     /// <dd>
     /// <p>Unit: COUNT</p>
     /// <p>Statistic: SUM</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-consulted">Contacts consulted</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_HANDLED
@@ -463,6 +503,7 @@ impl GetMetricDataFluentBuilder {
     /// <dd>
     /// <p>Unit: COUNT</p>
     /// <p>Statistic: SUM</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-handled">Contacts handled</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_HANDLED_INCOMING
@@ -470,6 +511,7 @@ impl GetMetricDataFluentBuilder {
     /// <dd>
     /// <p>Unit: COUNT</p>
     /// <p>Statistic: SUM</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-handled-incoming">Contacts handled incoming</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_HANDLED_OUTBOUND
@@ -477,6 +519,7 @@ impl GetMetricDataFluentBuilder {
     /// <dd>
     /// <p>Unit: COUNT</p>
     /// <p>Statistic: SUM</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-handled-outbound">Contacts handled outbound</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_HOLD_ABANDONS
@@ -484,6 +527,7 @@ impl GetMetricDataFluentBuilder {
     /// <dd>
     /// <p>Unit: COUNT</p>
     /// <p>Statistic: SUM</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-hold-disconnect">Contacts hold disconnect</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_MISSED
@@ -491,6 +535,7 @@ impl GetMetricDataFluentBuilder {
     /// <dd>
     /// <p>Unit: COUNT</p>
     /// <p>Statistic: SUM</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#agent-non-response">AGENT_NON_RESPONSE</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_QUEUED
@@ -498,6 +543,7 @@ impl GetMetricDataFluentBuilder {
     /// <dd>
     /// <p>Unit: COUNT</p>
     /// <p>Statistic: SUM</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-queued">Contacts queued</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_TRANSFERRED_IN
@@ -505,6 +551,7 @@ impl GetMetricDataFluentBuilder {
     /// <dd>
     /// <p>Unit: COUNT</p>
     /// <p>Statistic: SUM</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-transferred-in">Contacts transferred in</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_TRANSFERRED_IN_FROM_QUEUE
@@ -512,6 +559,7 @@ impl GetMetricDataFluentBuilder {
     /// <dd>
     /// <p>Unit: COUNT</p>
     /// <p>Statistic: SUM</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-transferred-out-queue">Contacts transferred out queue</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_TRANSFERRED_OUT
@@ -519,6 +567,7 @@ impl GetMetricDataFluentBuilder {
     /// <dd>
     /// <p>Unit: COUNT</p>
     /// <p>Statistic: SUM</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-transferred-out">Contacts transferred out</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_TRANSFERRED_OUT_FROM_QUEUE
@@ -526,6 +575,7 @@ impl GetMetricDataFluentBuilder {
     /// <dd>
     /// <p>Unit: COUNT</p>
     /// <p>Statistic: SUM</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-transferred-out-queue">Contacts transferred out queue</a></p>
     /// </dd>
     /// <dt>
     /// HANDLE_TIME
@@ -533,13 +583,7 @@ impl GetMetricDataFluentBuilder {
     /// <dd>
     /// <p>Unit: SECONDS</p>
     /// <p>Statistic: AVG</p>
-    /// </dd>
-    /// <dt>
-    /// HOLD_TIME
-    /// </dt>
-    /// <dd>
-    /// <p>Unit: SECONDS</p>
-    /// <p>Statistic: AVG</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-handle-time">Average handle time</a></p>
     /// </dd>
     /// <dt>
     /// INTERACTION_AND_HOLD_TIME
@@ -547,6 +591,7 @@ impl GetMetricDataFluentBuilder {
     /// <dd>
     /// <p>Unit: SECONDS</p>
     /// <p>Statistic: AVG</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-agent-interaction-and-customer-hold-time">Average agent interaction and customer hold time</a></p>
     /// </dd>
     /// <dt>
     /// INTERACTION_TIME
@@ -554,6 +599,7 @@ impl GetMetricDataFluentBuilder {
     /// <dd>
     /// <p>Unit: SECONDS</p>
     /// <p>Statistic: AVG</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#aaverage-agent-interaction-time">Average agent interaction time</a></p>
     /// </dd>
     /// <dt>
     /// OCCUPANCY
@@ -561,6 +607,7 @@ impl GetMetricDataFluentBuilder {
     /// <dd>
     /// <p>Unit: PERCENT</p>
     /// <p>Statistic: AVG</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#occupancy">Occupancy</a></p>
     /// </dd>
     /// <dt>
     /// QUEUE_ANSWER_TIME
@@ -568,6 +615,7 @@ impl GetMetricDataFluentBuilder {
     /// <dd>
     /// <p>Unit: SECONDS</p>
     /// <p>Statistic: AVG</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html##average-queue-answer-time">Average queue answer time</a></p>
     /// </dd>
     /// <dt>
     /// QUEUED_TIME
@@ -575,6 +623,7 @@ impl GetMetricDataFluentBuilder {
     /// <dd>
     /// <p>Unit: SECONDS</p>
     /// <p>Statistic: MAX</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#minimum-flow-time">Minimum flow time</a></p>
     /// </dd>
     /// <dt>
     /// SERVICE_LEVEL
@@ -584,6 +633,7 @@ impl GetMetricDataFluentBuilder {
     /// <p>Unit: PERCENT</p>
     /// <p>Statistic: AVG</p>
     /// <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for "Less than").</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-queue-abandon-time">Average queue abandon time</a></p>
     /// </dd>
     /// </dl>
     pub fn set_historical_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HistoricalMetric>>) -> Self {
@@ -600,6 +650,7 @@ impl GetMetricDataFluentBuilder {
     /// <dd>
     /// <p>Unit: SECONDS</p>
     /// <p>Statistic: AVG</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-queue-abandon-time">Average queue abandon time</a></p>
     /// </dd>
     /// <dt>
     /// AFTER_CONTACT_WORK_TIME
@@ -607,6 +658,7 @@ impl GetMetricDataFluentBuilder {
     /// <dd>
     /// <p>Unit: SECONDS</p>
     /// <p>Statistic: AVG</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#after-contact-work-time">After contact work time</a></p>
     /// </dd>
     /// <dt>
     /// API_CONTACTS_HANDLED
@@ -614,6 +666,15 @@ impl GetMetricDataFluentBuilder {
     /// <dd>
     /// <p>Unit: COUNT</p>
     /// <p>Statistic: SUM</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#api-contacts-handled">API contacts handled</a></p>
+    /// </dd>
+    /// <dt>
+    /// AVG_HOLD_TIME
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: SECONDS</p>
+    /// <p>Statistic: AVG</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-customer-hold-time">Average customer hold time</a></p>
     /// </dd>
     /// <dt>
     /// CALLBACK_CONTACTS_HANDLED
@@ -621,6 +682,7 @@ impl GetMetricDataFluentBuilder {
     /// <dd>
     /// <p>Unit: COUNT</p>
     /// <p>Statistic: SUM</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#callback-contacts-handled">Callback contacts handled</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_ABANDONED
@@ -628,6 +690,7 @@ impl GetMetricDataFluentBuilder {
     /// <dd>
     /// <p>Unit: COUNT</p>
     /// <p>Statistic: SUM</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-abandoned">Contacts abandoned</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_AGENT_HUNG_UP_FIRST
@@ -635,6 +698,7 @@ impl GetMetricDataFluentBuilder {
     /// <dd>
     /// <p>Unit: COUNT</p>
     /// <p>Statistic: SUM</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-agent-hung-up-first">Contacts agent hung up first</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_CONSULTED
@@ -642,6 +706,7 @@ impl GetMetricDataFluentBuilder {
     /// <dd>
     /// <p>Unit: COUNT</p>
     /// <p>Statistic: SUM</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-consulted">Contacts consulted</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_HANDLED
@@ -649,6 +714,7 @@ impl GetMetricDataFluentBuilder {
     /// <dd>
     /// <p>Unit: COUNT</p>
     /// <p>Statistic: SUM</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-handled">Contacts handled</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_HANDLED_INCOMING
@@ -656,6 +722,7 @@ impl GetMetricDataFluentBuilder {
     /// <dd>
     /// <p>Unit: COUNT</p>
     /// <p>Statistic: SUM</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-handled-incoming">Contacts handled incoming</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_HANDLED_OUTBOUND
@@ -663,6 +730,7 @@ impl GetMetricDataFluentBuilder {
     /// <dd>
     /// <p>Unit: COUNT</p>
     /// <p>Statistic: SUM</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-handled-outbound">Contacts handled outbound</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_HOLD_ABANDONS
@@ -670,6 +738,7 @@ impl GetMetricDataFluentBuilder {
     /// <dd>
     /// <p>Unit: COUNT</p>
     /// <p>Statistic: SUM</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-hold-disconnect">Contacts hold disconnect</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_MISSED
@@ -677,6 +746,7 @@ impl GetMetricDataFluentBuilder {
     /// <dd>
     /// <p>Unit: COUNT</p>
     /// <p>Statistic: SUM</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#agent-non-response">AGENT_NON_RESPONSE</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_QUEUED
@@ -684,6 +754,7 @@ impl GetMetricDataFluentBuilder {
     /// <dd>
     /// <p>Unit: COUNT</p>
     /// <p>Statistic: SUM</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-queued">Contacts queued</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_TRANSFERRED_IN
@@ -691,6 +762,7 @@ impl GetMetricDataFluentBuilder {
     /// <dd>
     /// <p>Unit: COUNT</p>
     /// <p>Statistic: SUM</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-transferred-in">Contacts transferred in</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_TRANSFERRED_IN_FROM_QUEUE
@@ -698,6 +770,7 @@ impl GetMetricDataFluentBuilder {
     /// <dd>
     /// <p>Unit: COUNT</p>
     /// <p>Statistic: SUM</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-transferred-out-queue">Contacts transferred out queue</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_TRANSFERRED_OUT
@@ -705,6 +778,7 @@ impl GetMetricDataFluentBuilder {
     /// <dd>
     /// <p>Unit: COUNT</p>
     /// <p>Statistic: SUM</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-transferred-out">Contacts transferred out</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_TRANSFERRED_OUT_FROM_QUEUE
@@ -712,6 +786,7 @@ impl GetMetricDataFluentBuilder {
     /// <dd>
     /// <p>Unit: COUNT</p>
     /// <p>Statistic: SUM</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-transferred-out-queue">Contacts transferred out queue</a></p>
     /// </dd>
     /// <dt>
     /// HANDLE_TIME
@@ -719,13 +794,7 @@ impl GetMetricDataFluentBuilder {
     /// <dd>
     /// <p>Unit: SECONDS</p>
     /// <p>Statistic: AVG</p>
-    /// </dd>
-    /// <dt>
-    /// HOLD_TIME
-    /// </dt>
-    /// <dd>
-    /// <p>Unit: SECONDS</p>
-    /// <p>Statistic: AVG</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-handle-time">Average handle time</a></p>
     /// </dd>
     /// <dt>
     /// INTERACTION_AND_HOLD_TIME
@@ -733,6 +802,7 @@ impl GetMetricDataFluentBuilder {
     /// <dd>
     /// <p>Unit: SECONDS</p>
     /// <p>Statistic: AVG</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-agent-interaction-and-customer-hold-time">Average agent interaction and customer hold time</a></p>
     /// </dd>
     /// <dt>
     /// INTERACTION_TIME
@@ -740,6 +810,7 @@ impl GetMetricDataFluentBuilder {
     /// <dd>
     /// <p>Unit: SECONDS</p>
     /// <p>Statistic: AVG</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#aaverage-agent-interaction-time">Average agent interaction time</a></p>
     /// </dd>
     /// <dt>
     /// OCCUPANCY
@@ -747,6 +818,7 @@ impl GetMetricDataFluentBuilder {
     /// <dd>
     /// <p>Unit: PERCENT</p>
     /// <p>Statistic: AVG</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#occupancy">Occupancy</a></p>
     /// </dd>
     /// <dt>
     /// QUEUE_ANSWER_TIME
@@ -754,6 +826,7 @@ impl GetMetricDataFluentBuilder {
     /// <dd>
     /// <p>Unit: SECONDS</p>
     /// <p>Statistic: AVG</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html##average-queue-answer-time">Average queue answer time</a></p>
     /// </dd>
     /// <dt>
     /// QUEUED_TIME
@@ -761,6 +834,7 @@ impl GetMetricDataFluentBuilder {
     /// <dd>
     /// <p>Unit: SECONDS</p>
     /// <p>Statistic: MAX</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#minimum-flow-time">Minimum flow time</a></p>
     /// </dd>
     /// <dt>
     /// SERVICE_LEVEL
@@ -770,6 +844,7 @@ impl GetMetricDataFluentBuilder {
     /// <p>Unit: PERCENT</p>
     /// <p>Statistic: AVG</p>
     /// <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for "Less than").</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-queue-abandon-time">Average queue abandon time</a></p>
     /// </dd>
     /// </dl>
     pub fn get_historical_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HistoricalMetric>> {

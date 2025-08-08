@@ -59,14 +59,14 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`DeleteThingShadow`](crate::operation::delete_thing_shadow) operation has
-/// a [`Client::delete_thing_shadow`], function which returns a builder for that operation.
+/// For example, the [`DeleteConnection`](crate::operation::delete_connection) operation has
+/// a [`Client::delete_connection`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.delete_thing_shadow()
-///     .thing_name("example")
+/// let result = client.delete_connection()
+///     .client_id("example")
 ///     .send()
 ///     .await;
 /// ```
@@ -147,7 +147,7 @@ impl Client {
 /// # let client: aws_sdk_iotdataplane::Client = unimplemented!();
 /// use ::http::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.delete_thing_shadow()
+/// let result = client.delete_connection()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
@@ -162,6 +162,8 @@ impl Client {
 /// # }
 /// ```
 pub mod customize;
+
+mod delete_connection;
 
 mod delete_thing_shadow;
 

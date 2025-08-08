@@ -495,6 +495,8 @@ pub use crate::types::_reserved_capacity_offering::ReservedCapacityOffering;
 
 pub use crate::types::_reserved_capacity_instance_type::ReservedCapacityInstanceType;
 
+pub use crate::types::_reserved_capacity_type::ReservedCapacityType;
+
 pub use crate::types::_sage_maker_resource_name::SageMakerResourceName;
 
 pub use crate::types::_total_hits::TotalHits;
@@ -640,6 +642,10 @@ pub use crate::types::_training_instance_type::TrainingInstanceType;
 pub use crate::types::_hyper_parameter_tuning_allocation_strategy::HyperParameterTuningAllocationStrategy;
 
 pub use crate::types::_resource_config::ResourceConfig;
+
+pub use crate::types::_instance_placement_config::InstancePlacementConfig;
+
+pub use crate::types::_placement_specification::PlacementSpecification;
 
 pub use crate::types::_instance_group::InstanceGroup;
 
@@ -994,6 +1000,10 @@ pub use crate::types::_user_profile_details::UserProfileDetails;
 pub use crate::types::_user_profile_status::UserProfileStatus;
 
 pub use crate::types::_user_profile_sort_key::UserProfileSortKey;
+
+pub use crate::types::_ultra_server::UltraServer;
+
+pub use crate::types::_ultra_server_health_status::UltraServerHealthStatus;
 
 pub use crate::types::_trial_summary::TrialSummary;
 
@@ -1409,6 +1419,8 @@ pub use crate::types::_cluster_sort_by::ClusterSortBy;
 
 pub use crate::types::_cluster_node_summary::ClusterNodeSummary;
 
+pub use crate::types::_ultra_server_info::UltraServerInfo;
+
 pub use crate::types::_cluster_instance_status_details::ClusterInstanceStatusDetails;
 
 pub use crate::types::_cluster_instance_status::ClusterInstanceStatus;
@@ -1542,6 +1554,8 @@ pub use crate::types::_profiler_rule_evaluation_status::ProfilerRuleEvaluationSt
 pub use crate::types::_space_sharing_settings::SpaceSharingSettings;
 
 pub use crate::types::_ownership_settings::OwnershipSettings;
+
+pub use crate::types::_ultra_server_summary::UltraServerSummary;
 
 pub use crate::types::_error_info::ErrorInfo;
 
@@ -2861,6 +2875,8 @@ mod _instance_metadata;
 
 mod _instance_metadata_service_configuration;
 
+mod _instance_placement_config;
+
 mod _instance_type;
 
 mod _integer_parameter_range;
@@ -3341,6 +3357,8 @@ mod _pipeline_version;
 
 mod _pipeline_version_summary;
 
+mod _placement_specification;
+
 mod _predefined_metric_specification;
 
 mod _preempt_team_tasks;
@@ -3526,6 +3544,8 @@ mod _reserved_capacity_offering;
 mod _reserved_capacity_status;
 
 mod _reserved_capacity_summary;
+
+mod _reserved_capacity_type;
 
 mod _resolved_attributes;
 
@@ -3902,6 +3922,14 @@ mod _ui_config;
 mod _ui_template;
 
 mod _ui_template_info;
+
+mod _ultra_server;
+
+mod _ultra_server_health_status;
+
+mod _ultra_server_info;
+
+mod _ultra_server_summary;
 
 mod _unified_studio_settings;
 

@@ -103,6 +103,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "TotalUltraServerCount" => {
+                            builder = builder.set_total_ultra_server_count(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
                         "TargetResources" => {
                             builder = builder.set_target_resources(
                                 crate::protocol_serde::shape_sage_maker_resource_names::de_sage_maker_resource_names(tokens)?,

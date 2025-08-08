@@ -563,6 +563,10 @@ pub use crate::types::_current_metric::CurrentMetricBuilder;
 
 pub use crate::types::_current_metric_sort_criteria::CurrentMetricSortCriteriaBuilder;
 
+pub use crate::types::_contact_metric_result::ContactMetricResultBuilder;
+
+pub use crate::types::_contact_metric_info::ContactMetricInfoBuilder;
+
 pub use crate::types::_download_url_metadata::DownloadUrlMetadataBuilder;
 
 pub use crate::types::_user_proficiency_disassociate::UserProficiencyDisassociateBuilder;

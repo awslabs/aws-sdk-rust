@@ -12,30 +12,39 @@ pub fn ser_search_training_plan_offerings_input_input(
             ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if let Some(var_3) = &input.start_time_after {
-        object
-            .key("StartTimeAfter")
-            .date_time(var_3, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+    if let Some(var_3) = &input.ultra_server_type {
+        object.key("UltraServerType").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.end_time_before {
-        object
-            .key("EndTimeBefore")
-            .date_time(var_4, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
-    }
-    if let Some(var_5) = &input.duration_hours {
-        object.key("DurationHours").number(
+    if let Some(var_4) = &input.ultra_server_count {
+        object.key("UltraServerCount").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_5).into()),
+            ::aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
-    if let Some(var_6) = &input.target_resources {
-        let mut array_7 = object.key("TargetResources").start_array();
-        for item_8 in var_6 {
+    if let Some(var_5) = &input.start_time_after {
+        object
+            .key("StartTimeAfter")
+            .date_time(var_5, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+    }
+    if let Some(var_6) = &input.end_time_before {
+        object
+            .key("EndTimeBefore")
+            .date_time(var_6, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+    }
+    if let Some(var_7) = &input.duration_hours {
+        object.key("DurationHours").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_7).into()),
+        );
+    }
+    if let Some(var_8) = &input.target_resources {
+        let mut array_9 = object.key("TargetResources").start_array();
+        for item_10 in var_8 {
             {
-                array_7.value().string(item_8.as_str());
+                array_9.value().string(item_10.as_str());
             }
         }
-        array_7.finish();
+        array_9.finish();
     }
     Ok(())
 }

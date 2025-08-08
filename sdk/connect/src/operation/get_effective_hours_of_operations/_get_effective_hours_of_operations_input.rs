@@ -7,9 +7,9 @@ pub struct GetEffectiveHoursOfOperationsInput {
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for the hours of operation.</p>
     pub hours_of_operation_id: ::std::option::Option<::std::string::String>,
-    /// <p>The Date from when the hours of operation are listed.</p>
+    /// <p>The date from when the hours of operation are listed.</p>
     pub from_date: ::std::option::Option<::std::string::String>,
-    /// <p>The Date until when the hours of operation are listed.</p>
+    /// <p>The date until when the hours of operation are listed.</p>
     pub to_date: ::std::option::Option<::std::string::String>,
 }
 impl GetEffectiveHoursOfOperationsInput {
@@ -21,11 +21,11 @@ impl GetEffectiveHoursOfOperationsInput {
     pub fn hours_of_operation_id(&self) -> ::std::option::Option<&str> {
         self.hours_of_operation_id.as_deref()
     }
-    /// <p>The Date from when the hours of operation are listed.</p>
+    /// <p>The date from when the hours of operation are listed.</p>
     pub fn from_date(&self) -> ::std::option::Option<&str> {
         self.from_date.as_deref()
     }
-    /// <p>The Date until when the hours of operation are listed.</p>
+    /// <p>The date until when the hours of operation are listed.</p>
     pub fn to_date(&self) -> ::std::option::Option<&str> {
         self.to_date.as_deref()
     }
@@ -77,33 +77,33 @@ impl GetEffectiveHoursOfOperationsInputBuilder {
     pub fn get_hours_of_operation_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.hours_of_operation_id
     }
-    /// <p>The Date from when the hours of operation are listed.</p>
+    /// <p>The date from when the hours of operation are listed.</p>
     /// This field is required.
     pub fn from_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.from_date = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Date from when the hours of operation are listed.</p>
+    /// <p>The date from when the hours of operation are listed.</p>
     pub fn set_from_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.from_date = input;
         self
     }
-    /// <p>The Date from when the hours of operation are listed.</p>
+    /// <p>The date from when the hours of operation are listed.</p>
     pub fn get_from_date(&self) -> &::std::option::Option<::std::string::String> {
         &self.from_date
     }
-    /// <p>The Date until when the hours of operation are listed.</p>
+    /// <p>The date until when the hours of operation are listed.</p>
     /// This field is required.
     pub fn to_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.to_date = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Date until when the hours of operation are listed.</p>
+    /// <p>The date until when the hours of operation are listed.</p>
     pub fn set_to_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.to_date = input;
         self
     }
-    /// <p>The Date until when the hours of operation are listed.</p>
+    /// <p>The date until when the hours of operation are listed.</p>
     pub fn get_to_date(&self) -> &::std::option::Option<::std::string::String> {
         &self.to_date
     }

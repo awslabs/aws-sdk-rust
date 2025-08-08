@@ -22,7 +22,6 @@ impl crate::operation::update_queue_max_contacts::builders::UpdateQueueMaxContac
 }
 /// Fluent builder constructing a request to `UpdateQueueMaxContacts`.
 ///
-/// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
 /// <p>Updates the maximum number of contacts allowed in a queue before it is considered full.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateQueueMaxContactsFluentBuilder {

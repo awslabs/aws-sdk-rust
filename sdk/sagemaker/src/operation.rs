@@ -559,6 +559,9 @@ pub mod describe_processing_job;
 /// Types for the `DescribeProject` operation.
 pub mod describe_project;
 
+/// Types for the `DescribeReservedCapacity` operation.
+pub mod describe_reserved_capacity;
+
 /// Types for the `DescribeSpace` operation.
 pub mod describe_space;
 
@@ -864,6 +867,9 @@ pub mod list_trial_components;
 
 /// Types for the `ListTrials` operation.
 pub mod list_trials;
+
+/// Types for the `ListUltraServersByReservedCapacity` operation.
+pub mod list_ultra_servers_by_reserved_capacity;
 
 /// Types for the `ListUserProfiles` operation.
 pub mod list_user_profiles;

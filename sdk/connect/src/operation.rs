@@ -367,6 +367,9 @@ pub mod get_attached_file;
 /// Types for the `GetContactAttributes` operation.
 pub mod get_contact_attributes;
 
+/// Types for the `GetContactMetrics` operation.
+pub mod get_contact_metrics;
+
 /// Types for the `GetCurrentMetricData` operation.
 pub mod get_current_metric_data;
 

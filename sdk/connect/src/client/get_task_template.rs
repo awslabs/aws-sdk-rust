@@ -13,7 +13,7 @@ impl super::Client {
     ///   - [`name(String)`](crate::operation::get_task_template::GetTaskTemplateOutput::name): <p>The name of the task template.</p>
     ///   - [`description(Option<String>)`](crate::operation::get_task_template::GetTaskTemplateOutput::description): <p>The description of the task template.</p>
     ///   - [`contact_flow_id(Option<String>)`](crate::operation::get_task_template::GetTaskTemplateOutput::contact_flow_id): <p>The identifier of the flow that runs by default when a task is created by referencing this template.</p>
-    ///   - [`self_assign_flow_id(Option<String>)`](crate::operation::get_task_template::GetTaskTemplateOutput::self_assign_flow_id): <p>ContactFlowId for the flow that will be run if this template is used to create a self-assigned task</p>
+    ///   - [`self_assign_flow_id(Option<String>)`](crate::operation::get_task_template::GetTaskTemplateOutput::self_assign_flow_id): <p>The ContactFlowId for the flow that will be run if this template is used to create a self-assigned task.</p>
     ///   - [`constraints(Option<TaskTemplateConstraints>)`](crate::operation::get_task_template::GetTaskTemplateOutput::constraints): <p>Constraints that are applicable to the fields listed.</p>
     ///   - [`defaults(Option<TaskTemplateDefaults>)`](crate::operation::get_task_template::GetTaskTemplateOutput::defaults): <p>The default values for fields when a task is created by referencing this template.</p>
     ///   - [`fields(Option<Vec::<TaskTemplateField>>)`](crate::operation::get_task_template::GetTaskTemplateOutput::fields): <p>Fields that are part of the template.</p>

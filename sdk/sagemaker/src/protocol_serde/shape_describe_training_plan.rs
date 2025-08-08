@@ -171,6 +171,27 @@ pub(crate) fn de_describe_training_plan(
                             .transpose()?,
                     );
                 }
+                "UnhealthyInstanceCount" => {
+                    builder = builder.set_unhealthy_instance_count(
+                        ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                            .map(i32::try_from)
+                            .transpose()?,
+                    );
+                }
+                "AvailableSpareInstanceCount" => {
+                    builder = builder.set_available_spare_instance_count(
+                        ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                            .map(i32::try_from)
+                            .transpose()?,
+                    );
+                }
+                "TotalUltraServerCount" => {
+                    builder = builder.set_total_ultra_server_count(
+                        ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                            .map(i32::try_from)
+                            .transpose()?,
+                    );
+                }
                 "TargetResources" => {
                     builder = builder.set_target_resources(crate::protocol_serde::shape_sage_maker_resource_names::de_sage_maker_resource_names(
                         tokens,

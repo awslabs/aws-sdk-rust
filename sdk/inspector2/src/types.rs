@@ -109,6 +109,8 @@ pub use crate::types::_cvss2::Cvss2;
 
 pub use crate::types::_cvss3::Cvss3;
 
+pub use crate::types::_cvss4::Cvss4;
+
 pub use crate::types::_atig_data::AtigData;
 
 pub use crate::types::_vulnerability_source::VulnerabilitySource;
@@ -792,6 +794,8 @@ mod _currency;
 mod _cvss2;
 
 mod _cvss3;
+
+mod _cvss4;
 
 mod _cvss_score;
 

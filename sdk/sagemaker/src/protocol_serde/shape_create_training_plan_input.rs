@@ -9,17 +9,23 @@ pub fn ser_create_training_plan_input_input(
     if let Some(var_2) = &input.training_plan_offering_id {
         object.key("TrainingPlanOfferingId").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.tags {
-        let mut array_4 = object.key("Tags").start_array();
-        for item_5 in var_3 {
+    if let Some(var_3) = &input.spare_instance_count_per_ultra_server {
+        object.key("SpareInstanceCountPerUltraServer").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_3).into()),
+        );
+    }
+    if let Some(var_4) = &input.tags {
+        let mut array_5 = object.key("Tags").start_array();
+        for item_6 in var_4 {
             {
                 #[allow(unused_mut)]
-                let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_6, item_5)?;
-                object_6.finish();
+                let mut object_7 = array_5.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_7, item_6)?;
+                object_7.finish();
             }
         }
-        array_4.finish();
+        array_5.finish();
     }
     Ok(())
 }

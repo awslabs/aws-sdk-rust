@@ -42,6 +42,12 @@ pub fn ser_resource_config(
     if let Some(var_10) = &input.training_plan_arn {
         object.key("TrainingPlanArn").string(var_10.as_str());
     }
+    if let Some(var_11) = &input.instance_placement_config {
+        #[allow(unused_mut)]
+        let mut object_12 = object.key("InstancePlacementConfig").start_object();
+        crate::protocol_serde::shape_instance_placement_config::ser_instance_placement_config(&mut object_12, var_11)?;
+        object_12.finish();
+    }
     Ok(())
 }
 
@@ -103,6 +109,11 @@ where
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
+                            );
+                        }
+                        "InstancePlacementConfig" => {
+                            builder = builder.set_instance_placement_config(
+                                crate::protocol_serde::shape_instance_placement_config::de_instance_placement_config(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -59,6 +59,9 @@ where
                                 crate::protocol_serde::shape_cluster_instance_status_details::de_cluster_instance_status_details(tokens)?,
                             );
                         }
+                        "UltraServerInfo" => {
+                            builder = builder.set_ultra_server_info(crate::protocol_serde::shape_ultra_server_info::de_ultra_server_info(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

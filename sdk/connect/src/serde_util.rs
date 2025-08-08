@@ -545,6 +545,18 @@ pub(crate) fn attached_file_correct_errors(mut builder: crate::types::builders::
     builder
 }
 
+pub(crate) fn contact_metric_result_correct_errors(
+    mut builder: crate::types::builders::ContactMetricResultBuilder,
+) -> crate::types::builders::ContactMetricResultBuilder {
+    if builder.name.is_none() {
+        builder.name = "no value was set".parse::<crate::types::ContactMetricName>().ok()
+    }
+    if builder.value.is_none() {
+        builder.value = Some(crate::types::ContactMetricValue::Unknown)
+    }
+    builder
+}
+
 pub(crate) fn default_vocabulary_correct_errors(
     mut builder: crate::types::builders::DefaultVocabularyBuilder,
 ) -> crate::types::builders::DefaultVocabularyBuilder {

@@ -63,6 +63,8 @@ pub use crate::types::_cvss2::Cvss2Builder;
 
 pub use crate::types::_cvss3::Cvss3Builder;
 
+pub use crate::types::_cvss4::Cvss4Builder;
+
 pub use crate::types::_atig_data::AtigDataBuilder;
 
 pub use crate::types::_cisa_data::CisaDataBuilder;

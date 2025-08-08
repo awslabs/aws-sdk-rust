@@ -13,9 +13,9 @@ pub struct CreateHoursOfOperationOverrideInput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Configuration information for the hours of operation override: day, start time, and end time.</p>
     pub config: ::std::option::Option<::std::vec::Vec<crate::types::HoursOfOperationOverrideConfig>>,
-    /// <p>The date from when the hours of operation override would be effective.</p>
+    /// <p>The date from when the hours of operation override is effective.</p>
     pub effective_from: ::std::option::Option<::std::string::String>,
-    /// <p>The date until when the hours of operation override would be effective.</p>
+    /// <p>The date until when the hours of operation override is effective.</p>
     pub effective_till: ::std::option::Option<::std::string::String>,
 }
 impl CreateHoursOfOperationOverrideInput {
@@ -41,11 +41,11 @@ impl CreateHoursOfOperationOverrideInput {
     pub fn config(&self) -> &[crate::types::HoursOfOperationOverrideConfig] {
         self.config.as_deref().unwrap_or_default()
     }
-    /// <p>The date from when the hours of operation override would be effective.</p>
+    /// <p>The date from when the hours of operation override is effective.</p>
     pub fn effective_from(&self) -> ::std::option::Option<&str> {
         self.effective_from.as_deref()
     }
-    /// <p>The date until when the hours of operation override would be effective.</p>
+    /// <p>The date until when the hours of operation override is effective.</p>
     pub fn effective_till(&self) -> ::std::option::Option<&str> {
         self.effective_till.as_deref()
     }
@@ -149,33 +149,33 @@ impl CreateHoursOfOperationOverrideInputBuilder {
     pub fn get_config(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HoursOfOperationOverrideConfig>> {
         &self.config
     }
-    /// <p>The date from when the hours of operation override would be effective.</p>
+    /// <p>The date from when the hours of operation override is effective.</p>
     /// This field is required.
     pub fn effective_from(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.effective_from = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The date from when the hours of operation override would be effective.</p>
+    /// <p>The date from when the hours of operation override is effective.</p>
     pub fn set_effective_from(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.effective_from = input;
         self
     }
-    /// <p>The date from when the hours of operation override would be effective.</p>
+    /// <p>The date from when the hours of operation override is effective.</p>
     pub fn get_effective_from(&self) -> &::std::option::Option<::std::string::String> {
         &self.effective_from
     }
-    /// <p>The date until when the hours of operation override would be effective.</p>
+    /// <p>The date until when the hours of operation override is effective.</p>
     /// This field is required.
     pub fn effective_till(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.effective_till = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The date until when the hours of operation override would be effective.</p>
+    /// <p>The date until when the hours of operation override is effective.</p>
     pub fn set_effective_till(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.effective_till = input;
         self
     }
-    /// <p>The date until when the hours of operation override would be effective.</p>
+    /// <p>The date until when the hours of operation override is effective.</p>
     pub fn get_effective_till(&self) -> &::std::option::Option<::std::string::String> {
         &self.effective_till
     }

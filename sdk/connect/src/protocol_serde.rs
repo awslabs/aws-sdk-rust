@@ -267,6 +267,8 @@ pub(crate) mod shape_get_attached_file;
 
 pub(crate) mod shape_get_contact_attributes;
 
+pub(crate) mod shape_get_contact_metrics;
+
 pub(crate) mod shape_get_current_metric_data;
 
 pub(crate) mod shape_get_current_user_data;
@@ -723,6 +725,8 @@ pub(crate) mod shape_dismiss_user_contact_input;
 
 pub(crate) mod shape_duplicate_resource_exception;
 
+pub(crate) mod shape_get_contact_metrics_input;
+
 pub(crate) mod shape_get_current_metric_data_input;
 
 pub(crate) mod shape_get_current_user_data_input;
@@ -1050,6 +1054,10 @@ pub(crate) mod shape_contact_flow_search_summary_list;
 pub(crate) mod shape_contact_flow_summary_list;
 
 pub(crate) mod shape_contact_flow_version_summary_list;
+
+pub(crate) mod shape_contact_metric_info;
+
+pub(crate) mod shape_contact_metric_results;
 
 pub(crate) mod shape_contacts;
 
@@ -1445,6 +1453,8 @@ pub(crate) mod shape_contact_flow_summary;
 
 pub(crate) mod shape_contact_flow_version_summary;
 
+pub(crate) mod shape_contact_metric_result;
+
 pub(crate) mod shape_contact_search_summary;
 
 pub(crate) mod shape_contact_tag_map;
@@ -1730,6 +1740,8 @@ pub(crate) mod shape_common_attribute_and_condition;
 pub(crate) mod shape_condition;
 
 pub(crate) mod shape_contact_evaluation;
+
+pub(crate) mod shape_contact_metric_value;
 
 pub(crate) mod shape_contact_search_summary_agent_info;
 

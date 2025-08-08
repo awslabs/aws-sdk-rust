@@ -22,7 +22,6 @@ impl crate::operation::describe_queue::builders::DescribeQueueInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeQueue`.
 ///
-/// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
 /// <p>Describes the specified queue.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeQueueFluentBuilder {

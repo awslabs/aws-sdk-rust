@@ -7,6 +7,10 @@ pub struct SearchTrainingPlanOfferingsInput {
     pub instance_type: ::std::option::Option<crate::types::ReservedCapacityInstanceType>,
     /// <p>The number of instances you want to reserve in the training plan offerings. This allows you to specify the quantity of compute resources needed for your SageMaker training jobs or SageMaker HyperPod clusters, helping you find reserved capacity offerings that match your requirements.</p>
     pub instance_count: ::std::option::Option<i32>,
+    /// <p>The type of UltraServer to search for, such as ml.u-p6e-gb200x72.</p>
+    pub ultra_server_type: ::std::option::Option<::std::string::String>,
+    /// <p>The number of UltraServers to search for.</p>
+    pub ultra_server_count: ::std::option::Option<i32>,
     /// <p>A filter to search for training plan offerings with a start time after a specified date.</p>
     pub start_time_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A filter to search for reserved capacity offerings with an end time before a specified date.</p>
@@ -31,6 +35,14 @@ impl SearchTrainingPlanOfferingsInput {
     /// <p>The number of instances you want to reserve in the training plan offerings. This allows you to specify the quantity of compute resources needed for your SageMaker training jobs or SageMaker HyperPod clusters, helping you find reserved capacity offerings that match your requirements.</p>
     pub fn instance_count(&self) -> ::std::option::Option<i32> {
         self.instance_count
+    }
+    /// <p>The type of UltraServer to search for, such as ml.u-p6e-gb200x72.</p>
+    pub fn ultra_server_type(&self) -> ::std::option::Option<&str> {
+        self.ultra_server_type.as_deref()
+    }
+    /// <p>The number of UltraServers to search for.</p>
+    pub fn ultra_server_count(&self) -> ::std::option::Option<i32> {
+        self.ultra_server_count
     }
     /// <p>A filter to search for training plan offerings with a start time after a specified date.</p>
     pub fn start_time_after(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -71,6 +83,8 @@ impl SearchTrainingPlanOfferingsInput {
 pub struct SearchTrainingPlanOfferingsInputBuilder {
     pub(crate) instance_type: ::std::option::Option<crate::types::ReservedCapacityInstanceType>,
     pub(crate) instance_count: ::std::option::Option<i32>,
+    pub(crate) ultra_server_type: ::std::option::Option<::std::string::String>,
+    pub(crate) ultra_server_count: ::std::option::Option<i32>,
     pub(crate) start_time_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end_time_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) duration_hours: ::std::option::Option<i64>,
@@ -104,6 +118,34 @@ impl SearchTrainingPlanOfferingsInputBuilder {
     /// <p>The number of instances you want to reserve in the training plan offerings. This allows you to specify the quantity of compute resources needed for your SageMaker training jobs or SageMaker HyperPod clusters, helping you find reserved capacity offerings that match your requirements.</p>
     pub fn get_instance_count(&self) -> &::std::option::Option<i32> {
         &self.instance_count
+    }
+    /// <p>The type of UltraServer to search for, such as ml.u-p6e-gb200x72.</p>
+    pub fn ultra_server_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ultra_server_type = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The type of UltraServer to search for, such as ml.u-p6e-gb200x72.</p>
+    pub fn set_ultra_server_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.ultra_server_type = input;
+        self
+    }
+    /// <p>The type of UltraServer to search for, such as ml.u-p6e-gb200x72.</p>
+    pub fn get_ultra_server_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ultra_server_type
+    }
+    /// <p>The number of UltraServers to search for.</p>
+    pub fn ultra_server_count(mut self, input: i32) -> Self {
+        self.ultra_server_count = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of UltraServers to search for.</p>
+    pub fn set_ultra_server_count(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.ultra_server_count = input;
+        self
+    }
+    /// <p>The number of UltraServers to search for.</p>
+    pub fn get_ultra_server_count(&self) -> &::std::option::Option<i32> {
+        &self.ultra_server_count
     }
     /// <p>A filter to search for training plan offerings with a start time after a specified date.</p>
     pub fn start_time_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -199,6 +241,8 @@ impl SearchTrainingPlanOfferingsInputBuilder {
         ::std::result::Result::Ok(crate::operation::search_training_plan_offerings::SearchTrainingPlanOfferingsInput {
             instance_type: self.instance_type,
             instance_count: self.instance_count,
+            ultra_server_type: self.ultra_server_type,
+            ultra_server_count: self.ultra_server_count,
             start_time_after: self.start_time_after,
             end_time_before: self.end_time_before,
             duration_hours: self.duration_hours,

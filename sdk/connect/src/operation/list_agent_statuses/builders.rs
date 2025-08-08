@@ -22,7 +22,6 @@ impl crate::operation::list_agent_statuses::builders::ListAgentStatusesInputBuil
 }
 /// Fluent builder constructing a request to `ListAgentStatuses`.
 ///
-/// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
 /// <p>Lists agent statuses.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListAgentStatusesFluentBuilder {

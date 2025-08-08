@@ -22,7 +22,6 @@ impl crate::operation::associate_queue_quick_connects::builders::AssociateQueueQ
 }
 /// Fluent builder constructing a request to `AssociateQueueQuickConnects`.
 ///
-/// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
 /// <p>Associates a set of quick connects with a queue.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateQueueQuickConnectsFluentBuilder {
