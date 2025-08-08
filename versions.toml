@@ -2681,6 +2681,10 @@ source_hash = '6038d5fa0cdc1cbaf135a4fc397589d590670bce272512f531a3be337ebb2843'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '973d415332c81512404cd3f8df465735a4b6db024cbc3397e98a37dbc6089963'
+
+[release]
+tag = 'release-2025-08-08'
+
 [release.crates]
 aws-sdk-applicationsignals = '1.56.0'
 aws-sdk-backupsearch = '1.29.0'
