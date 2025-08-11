@@ -17,6 +17,8 @@ pub struct DescribeInstancesInput {
     /// <li>
     /// <p><code>availability-zone</code> - The Availability Zone of the instance.</p></li>
     /// <li>
+    /// <p><code>availability-zone-id</code> - The ID of the Availability Zone of the instance.</p></li>
+    /// <li>
     /// <p><code>block-device-mapping.attach-time</code> - The attach time for an EBS volume mapped to the instance, for example, <code>2022-09-15T17:15:20.000Z</code>.</p></li>
     /// <li>
     /// <p><code>block-device-mapping.delete-on-termination</code> - A Boolean that indicates whether the EBS volume is deleted on instance termination.</p></li>
@@ -308,6 +310,8 @@ impl DescribeInstancesInput {
     /// <p><code>architecture</code> - The instance architecture (<code>i386</code> | <code>x86_64</code> | <code>arm64</code>).</p></li>
     /// <li>
     /// <p><code>availability-zone</code> - The Availability Zone of the instance.</p></li>
+    /// <li>
+    /// <p><code>availability-zone-id</code> - The ID of the Availability Zone of the instance.</p></li>
     /// <li>
     /// <p><code>block-device-mapping.attach-time</code> - The attach time for an EBS volume mapped to the instance, for example, <code>2022-09-15T17:15:20.000Z</code>.</p></li>
     /// <li>
@@ -656,6 +660,8 @@ impl DescribeInstancesInputBuilder {
     /// <li>
     /// <p><code>availability-zone</code> - The Availability Zone of the instance.</p></li>
     /// <li>
+    /// <p><code>availability-zone-id</code> - The ID of the Availability Zone of the instance.</p></li>
+    /// <li>
     /// <p><code>block-device-mapping.attach-time</code> - The attach time for an EBS volume mapped to the instance, for example, <code>2022-09-15T17:15:20.000Z</code>.</p></li>
     /// <li>
     /// <p><code>block-device-mapping.delete-on-termination</code> - A Boolean that indicates whether the EBS volume is deleted on instance termination.</p></li>
@@ -935,6 +941,8 @@ impl DescribeInstancesInputBuilder {
     /// <li>
     /// <p><code>availability-zone</code> - The Availability Zone of the instance.</p></li>
     /// <li>
+    /// <p><code>availability-zone-id</code> - The ID of the Availability Zone of the instance.</p></li>
+    /// <li>
     /// <p><code>block-device-mapping.attach-time</code> - The attach time for an EBS volume mapped to the instance, for example, <code>2022-09-15T17:15:20.000Z</code>.</p></li>
     /// <li>
     /// <p><code>block-device-mapping.delete-on-termination</code> - A Boolean that indicates whether the EBS volume is deleted on instance termination.</p></li>
@@ -1211,6 +1219,8 @@ impl DescribeInstancesInputBuilder {
     /// <p><code>architecture</code> - The instance architecture (<code>i386</code> | <code>x86_64</code> | <code>arm64</code>).</p></li>
     /// <li>
     /// <p><code>availability-zone</code> - The Availability Zone of the instance.</p></li>
+    /// <li>
+    /// <p><code>availability-zone-id</code> - The ID of the Availability Zone of the instance.</p></li>
     /// <li>
     /// <p><code>block-device-mapping.attach-time</code> - The attach time for an EBS volume mapped to the instance, for example, <code>2022-09-15T17:15:20.000Z</code>.</p></li>
     /// <li>

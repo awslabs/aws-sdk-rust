@@ -14,6 +14,7 @@
 /// match ec2markettype {
 ///     Ec2MarketType::OnDemand => { /* ... */ },
 ///     Ec2MarketType::Spot => { /* ... */ },
+///     Ec2MarketType::WaitAndSave => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -46,6 +47,8 @@ pub enum Ec2MarketType {
     OnDemand,
     #[allow(missing_docs)] // documentation missing in model
     Spot,
+    #[allow(missing_docs)] // documentation missing in model
+    WaitAndSave,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -55,6 +58,7 @@ impl ::std::convert::From<&str> for Ec2MarketType {
         match s {
             "on-demand" => Ec2MarketType::OnDemand,
             "spot" => Ec2MarketType::Spot,
+            "wait-and-save" => Ec2MarketType::WaitAndSave,
             other => Ec2MarketType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -72,12 +76,13 @@ impl Ec2MarketType {
         match self {
             Ec2MarketType::OnDemand => "on-demand",
             Ec2MarketType::Spot => "spot",
+            Ec2MarketType::WaitAndSave => "wait-and-save",
             Ec2MarketType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["on-demand", "spot"]
+        &["on-demand", "spot", "wait-and-save"]
     }
 }
 impl ::std::convert::AsRef<str> for Ec2MarketType {
@@ -102,6 +107,7 @@ impl ::std::fmt::Display for Ec2MarketType {
         match self {
             Ec2MarketType::OnDemand => write!(f, "on-demand"),
             Ec2MarketType::Spot => write!(f, "spot"),
+            Ec2MarketType::WaitAndSave => write!(f, "wait-and-save"),
             Ec2MarketType::Unknown(value) => write!(f, "{}", value),
         }
     }

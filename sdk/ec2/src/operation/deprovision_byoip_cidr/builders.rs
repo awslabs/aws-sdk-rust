@@ -23,7 +23,7 @@ impl crate::operation::deprovision_byoip_cidr::builders::DeprovisionByoipCidrInp
 /// Fluent builder constructing a request to `DeprovisionByoipCidr`.
 ///
 /// <p>Releases the specified address range that you provisioned for use with your Amazon Web Services resources through bring your own IP addresses (BYOIP) and deletes the corresponding address pool.</p>
-/// <p>Before you can release an address range, you must stop advertising it and you must not have any IP addresses allocated from its address range.</p>
+/// <p>Before you can release an address range, you must stop advertising it using <code>WithdrawByoipCidr</code> and you must not have any IP addresses allocated from its address range.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeprovisionByoipCidrFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

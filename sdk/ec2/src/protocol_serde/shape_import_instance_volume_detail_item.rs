@@ -20,8 +20,21 @@ pub fn de_import_instance_volume_detail_item(
                 builder = builder.set_availability_zone(var_1);
             }
             ,
-            s if s.matches("bytesConverted") /* BytesConverted com.amazonaws.ec2#ImportInstanceVolumeDetailItem$BytesConverted */ =>  {
+            s if s.matches("availabilityZoneId") /* AvailabilityZoneId com.amazonaws.ec2#ImportInstanceVolumeDetailItem$AvailabilityZoneId */ =>  {
                 let var_2 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_availability_zone_id(var_2);
+            }
+            ,
+            s if s.matches("bytesConverted") /* BytesConverted com.amazonaws.ec2#ImportInstanceVolumeDetailItem$BytesConverted */ =>  {
+                let var_3 =
                     Some(
                          {
                             <i64 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -32,11 +45,11 @@ pub fn de_import_instance_volume_detail_item(
                         ?
                     )
                 ;
-                builder = builder.set_bytes_converted(var_2);
+                builder = builder.set_bytes_converted(var_3);
             }
             ,
             s if s.matches("description") /* Description com.amazonaws.ec2#ImportInstanceVolumeDetailItem$Description */ =>  {
-                let var_3 =
+                let var_4 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -45,33 +58,20 @@ pub fn de_import_instance_volume_detail_item(
                         ?
                     )
                 ;
-                builder = builder.set_description(var_3);
+                builder = builder.set_description(var_4);
             }
             ,
             s if s.matches("image") /* Image com.amazonaws.ec2#ImportInstanceVolumeDetailItem$Image */ =>  {
-                let var_4 =
+                let var_5 =
                     Some(
                         crate::protocol_serde::shape_disk_image_description::de_disk_image_description(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_image(var_4);
+                builder = builder.set_image(var_5);
             }
             ,
             s if s.matches("status") /* Status com.amazonaws.ec2#ImportInstanceVolumeDetailItem$Status */ =>  {
-                let var_5 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_status(var_5);
-            }
-            ,
-            s if s.matches("statusMessage") /* StatusMessage com.amazonaws.ec2#ImportInstanceVolumeDetailItem$StatusMessage */ =>  {
                 let var_6 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -81,17 +81,30 @@ pub fn de_import_instance_volume_detail_item(
                         ?
                     )
                 ;
-                builder = builder.set_status_message(var_6);
+                builder = builder.set_status(var_6);
+            }
+            ,
+            s if s.matches("statusMessage") /* StatusMessage com.amazonaws.ec2#ImportInstanceVolumeDetailItem$StatusMessage */ =>  {
+                let var_7 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_status_message(var_7);
             }
             ,
             s if s.matches("volume") /* Volume com.amazonaws.ec2#ImportInstanceVolumeDetailItem$Volume */ =>  {
-                let var_7 =
+                let var_8 =
                     Some(
                         crate::protocol_serde::shape_disk_image_volume_description::de_disk_image_volume_description(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_volume(var_7);
+                builder = builder.set_volume(var_8);
             }
             ,
             _ => {}

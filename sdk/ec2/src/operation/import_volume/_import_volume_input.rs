@@ -3,9 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportVolumeInput {
+    /// <p>The ID of the Availability Zone for the resulting EBS volume.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> must be specified, but not both.</p>
+    pub availability_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The Availability Zone for the resulting EBS volume.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> must be specified, but not both.</p>
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The disk image.</p>
     pub image: ::std::option::Option<crate::types::DiskImageDetail>,
@@ -15,11 +19,17 @@ pub struct ImportVolumeInput {
     pub volume: ::std::option::Option<crate::types::VolumeDetail>,
 }
 impl ImportVolumeInput {
+    /// <p>The ID of the Availability Zone for the resulting EBS volume.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> must be specified, but not both.</p>
+    pub fn availability_zone_id(&self) -> ::std::option::Option<&str> {
+        self.availability_zone_id.as_deref()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
     /// <p>The Availability Zone for the resulting EBS volume.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> must be specified, but not both.</p>
     pub fn availability_zone(&self) -> ::std::option::Option<&str> {
         self.availability_zone.as_deref()
     }
@@ -47,6 +57,7 @@ impl ImportVolumeInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct ImportVolumeInputBuilder {
+    pub(crate) availability_zone_id: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
     pub(crate) image: ::std::option::Option<crate::types::DiskImageDetail>,
@@ -54,6 +65,23 @@ pub struct ImportVolumeInputBuilder {
     pub(crate) volume: ::std::option::Option<crate::types::VolumeDetail>,
 }
 impl ImportVolumeInputBuilder {
+    /// <p>The ID of the Availability Zone for the resulting EBS volume.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> must be specified, but not both.</p>
+    pub fn availability_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.availability_zone_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the Availability Zone for the resulting EBS volume.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> must be specified, but not both.</p>
+    pub fn set_availability_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.availability_zone_id = input;
+        self
+    }
+    /// <p>The ID of the Availability Zone for the resulting EBS volume.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> must be specified, but not both.</p>
+    pub fn get_availability_zone_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone_id
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -69,17 +97,19 @@ impl ImportVolumeInputBuilder {
         &self.dry_run
     }
     /// <p>The Availability Zone for the resulting EBS volume.</p>
-    /// This field is required.
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> must be specified, but not both.</p>
     pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Availability Zone for the resulting EBS volume.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> must be specified, but not both.</p>
     pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone = input;
         self
     }
     /// <p>The Availability Zone for the resulting EBS volume.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> must be specified, but not both.</p>
     pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
         &self.availability_zone
     }
@@ -132,6 +162,7 @@ impl ImportVolumeInputBuilder {
         self,
     ) -> ::std::result::Result<crate::operation::import_volume::ImportVolumeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::import_volume::ImportVolumeInput {
+            availability_zone_id: self.availability_zone_id,
             dry_run: self.dry_run,
             availability_zone: self.availability_zone,
             image: self.image,

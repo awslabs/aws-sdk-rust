@@ -21,7 +21,11 @@ pub struct SpotInstanceRequest {
     /// <p>Additional information for launching instances.</p>
     pub launch_specification: ::std::option::Option<crate::types::LaunchSpecification>,
     /// <p>The Availability Zone in which the request is launched.</p>
+    /// <p>Either <code>launchedAvailabilityZone</code> or <code>launchedAvailabilityZoneId</code> can be specified, but not both</p>
     pub launched_availability_zone: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the Availability Zone in which the request is launched.</p>
+    /// <p>Either <code>launchedAvailabilityZone</code> or <code>launchedAvailabilityZoneId</code> can be specified, but not both</p>
+    pub launched_availability_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>The product description associated with the Spot Instance.</p>
     pub product_description: ::std::option::Option<crate::types::RiProductDescription>,
     /// <p>The ID of the Spot Instance request.</p>
@@ -85,8 +89,14 @@ impl SpotInstanceRequest {
         self.launch_specification.as_ref()
     }
     /// <p>The Availability Zone in which the request is launched.</p>
+    /// <p>Either <code>launchedAvailabilityZone</code> or <code>launchedAvailabilityZoneId</code> can be specified, but not both</p>
     pub fn launched_availability_zone(&self) -> ::std::option::Option<&str> {
         self.launched_availability_zone.as_deref()
+    }
+    /// <p>The ID of the Availability Zone in which the request is launched.</p>
+    /// <p>Either <code>launchedAvailabilityZone</code> or <code>launchedAvailabilityZoneId</code> can be specified, but not both</p>
+    pub fn launched_availability_zone_id(&self) -> ::std::option::Option<&str> {
+        self.launched_availability_zone_id.as_deref()
     }
     /// <p>The product description associated with the Spot Instance.</p>
     pub fn product_description(&self) -> ::std::option::Option<&crate::types::RiProductDescription> {
@@ -159,6 +169,7 @@ pub struct SpotInstanceRequestBuilder {
     pub(crate) launch_group: ::std::option::Option<::std::string::String>,
     pub(crate) launch_specification: ::std::option::Option<crate::types::LaunchSpecification>,
     pub(crate) launched_availability_zone: ::std::option::Option<::std::string::String>,
+    pub(crate) launched_availability_zone_id: ::std::option::Option<::std::string::String>,
     pub(crate) product_description: ::std::option::Option<crate::types::RiProductDescription>,
     pub(crate) spot_instance_request_id: ::std::option::Option<::std::string::String>,
     pub(crate) spot_price: ::std::option::Option<::std::string::String>,
@@ -284,18 +295,38 @@ impl SpotInstanceRequestBuilder {
         &self.launch_specification
     }
     /// <p>The Availability Zone in which the request is launched.</p>
+    /// <p>Either <code>launchedAvailabilityZone</code> or <code>launchedAvailabilityZoneId</code> can be specified, but not both</p>
     pub fn launched_availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.launched_availability_zone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Availability Zone in which the request is launched.</p>
+    /// <p>Either <code>launchedAvailabilityZone</code> or <code>launchedAvailabilityZoneId</code> can be specified, but not both</p>
     pub fn set_launched_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.launched_availability_zone = input;
         self
     }
     /// <p>The Availability Zone in which the request is launched.</p>
+    /// <p>Either <code>launchedAvailabilityZone</code> or <code>launchedAvailabilityZoneId</code> can be specified, but not both</p>
     pub fn get_launched_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
         &self.launched_availability_zone
+    }
+    /// <p>The ID of the Availability Zone in which the request is launched.</p>
+    /// <p>Either <code>launchedAvailabilityZone</code> or <code>launchedAvailabilityZoneId</code> can be specified, but not both</p>
+    pub fn launched_availability_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.launched_availability_zone_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the Availability Zone in which the request is launched.</p>
+    /// <p>Either <code>launchedAvailabilityZone</code> or <code>launchedAvailabilityZoneId</code> can be specified, but not both</p>
+    pub fn set_launched_availability_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.launched_availability_zone_id = input;
+        self
+    }
+    /// <p>The ID of the Availability Zone in which the request is launched.</p>
+    /// <p>Either <code>launchedAvailabilityZone</code> or <code>launchedAvailabilityZoneId</code> can be specified, but not both</p>
+    pub fn get_launched_availability_zone_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.launched_availability_zone_id
     }
     /// <p>The product description associated with the Spot Instance.</p>
     pub fn product_description(mut self, input: crate::types::RiProductDescription) -> Self {
@@ -479,6 +510,7 @@ impl SpotInstanceRequestBuilder {
             launch_group: self.launch_group,
             launch_specification: self.launch_specification,
             launched_availability_zone: self.launched_availability_zone,
+            launched_availability_zone_id: self.launched_availability_zone_id,
             product_description: self.product_description,
             spot_instance_request_id: self.spot_instance_request_id,
             spot_price: self.spot_price,

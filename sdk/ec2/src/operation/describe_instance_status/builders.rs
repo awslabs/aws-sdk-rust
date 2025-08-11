@@ -206,6 +206,8 @@ impl DescribeInstanceStatusFluentBuilder {
     /// <li>
     /// <p><code>availability-zone</code> - The Availability Zone of the instance.</p></li>
     /// <li>
+    /// <p><code>availability-zone-id</code> - The ID of the Availability Zone of the instance.</p></li>
+    /// <li>
     /// <p><code>event.code</code> - The code for the scheduled event (<code>instance-reboot</code> | <code>system-reboot</code> | <code>system-maintenance</code> | <code>instance-retirement</code> | <code>instance-stop</code>).</p></li>
     /// <li>
     /// <p><code>event.description</code> - A description of the event.</p></li>
@@ -245,6 +247,8 @@ impl DescribeInstanceStatusFluentBuilder {
     /// <li>
     /// <p><code>availability-zone</code> - The Availability Zone of the instance.</p></li>
     /// <li>
+    /// <p><code>availability-zone-id</code> - The ID of the Availability Zone of the instance.</p></li>
+    /// <li>
     /// <p><code>event.code</code> - The code for the scheduled event (<code>instance-reboot</code> | <code>system-reboot</code> | <code>system-maintenance</code> | <code>instance-retirement</code> | <code>instance-stop</code>).</p></li>
     /// <li>
     /// <p><code>event.description</code> - A description of the event.</p></li>
@@ -283,6 +287,8 @@ impl DescribeInstanceStatusFluentBuilder {
     /// <ul>
     /// <li>
     /// <p><code>availability-zone</code> - The Availability Zone of the instance.</p></li>
+    /// <li>
+    /// <p><code>availability-zone-id</code> - The ID of the Availability Zone of the instance.</p></li>
     /// <li>
     /// <p><code>event.code</code> - The code for the scheduled event (<code>instance-reboot</code> | <code>system-reboot</code> | <code>system-maintenance</code> | <code>instance-retirement</code> | <code>instance-stop</code>).</p></li>
     /// <li>

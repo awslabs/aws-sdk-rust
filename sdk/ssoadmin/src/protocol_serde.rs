@@ -97,6 +97,8 @@ pub(crate) mod shape_get_application_authentication_method;
 
 pub(crate) mod shape_get_application_grant;
 
+pub(crate) mod shape_get_application_session_configuration;
+
 pub(crate) mod shape_get_inline_policy_for_permission_set;
 
 pub(crate) mod shape_get_permissions_boundary_for_permission_set;
@@ -150,6 +152,8 @@ pub(crate) mod shape_put_application_assignment_configuration;
 pub(crate) mod shape_put_application_authentication_method;
 
 pub(crate) mod shape_put_application_grant;
+
+pub(crate) mod shape_put_application_session_configuration;
 
 pub(crate) mod shape_put_inline_policy_to_permission_set;
 
@@ -255,6 +259,8 @@ pub(crate) mod shape_get_application_authentication_method_input;
 
 pub(crate) mod shape_get_application_grant_input;
 
+pub(crate) mod shape_get_application_session_configuration_input;
+
 pub(crate) mod shape_get_inline_policy_for_permission_set_input;
 
 pub(crate) mod shape_get_permissions_boundary_for_permission_set_input;
@@ -310,6 +316,8 @@ pub(crate) mod shape_put_application_assignment_configuration_input;
 pub(crate) mod shape_put_application_authentication_method_input;
 
 pub(crate) mod shape_put_application_grant_input;
+
+pub(crate) mod shape_put_application_session_configuration_input;
 
 pub(crate) mod shape_put_inline_policy_to_permission_set_input;
 

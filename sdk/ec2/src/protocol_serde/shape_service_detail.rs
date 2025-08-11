@@ -56,41 +56,28 @@ pub fn de_service_detail(
                 builder = builder.set_service_region(var_4);
             }
             ,
-            s if s.matches("availabilityZoneSet") /* AvailabilityZones com.amazonaws.ec2#ServiceDetail$AvailabilityZones */ =>  {
+            s if s.matches("availabilityZoneIdSet") /* AvailabilityZoneIds com.amazonaws.ec2#ServiceDetail$AvailabilityZoneIds */ =>  {
                 let var_5 =
                     Some(
                         crate::protocol_serde::shape_value_string_list::de_value_string_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_availability_zones(var_5);
+                builder = builder.set_availability_zone_ids(var_5);
             }
             ,
-            s if s.matches("owner") /* Owner com.amazonaws.ec2#ServiceDetail$Owner */ =>  {
+            s if s.matches("availabilityZoneSet") /* AvailabilityZones com.amazonaws.ec2#ServiceDetail$AvailabilityZones */ =>  {
                 let var_6 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_owner(var_6);
-            }
-            ,
-            s if s.matches("baseEndpointDnsNameSet") /* BaseEndpointDnsNames com.amazonaws.ec2#ServiceDetail$BaseEndpointDnsNames */ =>  {
-                let var_7 =
                     Some(
                         crate::protocol_serde::shape_value_string_list::de_value_string_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_base_endpoint_dns_names(var_7);
+                builder = builder.set_availability_zones(var_6);
             }
             ,
-            s if s.matches("privateDnsName") /* PrivateDnsName com.amazonaws.ec2#ServiceDetail$PrivateDnsName */ =>  {
-                let var_8 =
+            s if s.matches("owner") /* Owner com.amazonaws.ec2#ServiceDetail$Owner */ =>  {
+                let var_7 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -99,35 +86,43 @@ pub fn de_service_detail(
                         ?
                     )
                 ;
-                builder = builder.set_private_dns_name(var_8);
+                builder = builder.set_owner(var_7);
+            }
+            ,
+            s if s.matches("baseEndpointDnsNameSet") /* BaseEndpointDnsNames com.amazonaws.ec2#ServiceDetail$BaseEndpointDnsNames */ =>  {
+                let var_8 =
+                    Some(
+                        crate::protocol_serde::shape_value_string_list::de_value_string_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_base_endpoint_dns_names(var_8);
+            }
+            ,
+            s if s.matches("privateDnsName") /* PrivateDnsName com.amazonaws.ec2#ServiceDetail$PrivateDnsName */ =>  {
+                let var_9 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_private_dns_name(var_9);
             }
             ,
             s if s.matches("privateDnsNameSet") /* PrivateDnsNames com.amazonaws.ec2#ServiceDetail$PrivateDnsNames */ =>  {
-                let var_9 =
+                let var_10 =
                     Some(
                         crate::protocol_serde::shape_private_dns_details_set::de_private_dns_details_set(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_private_dns_names(var_9);
+                builder = builder.set_private_dns_names(var_10);
             }
             ,
             s if s.matches("vpcEndpointPolicySupported") /* VpcEndpointPolicySupported com.amazonaws.ec2#ServiceDetail$VpcEndpointPolicySupported */ =>  {
-                let var_10 =
-                    Some(
-                         {
-                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_vpc_endpoint_policy_supported(var_10);
-            }
-            ,
-            s if s.matches("acceptanceRequired") /* AcceptanceRequired com.amazonaws.ec2#ServiceDetail$AcceptanceRequired */ =>  {
                 let var_11 =
                     Some(
                          {
@@ -139,10 +134,10 @@ pub fn de_service_detail(
                         ?
                     )
                 ;
-                builder = builder.set_acceptance_required(var_11);
+                builder = builder.set_vpc_endpoint_policy_supported(var_11);
             }
             ,
-            s if s.matches("managesVpcEndpoints") /* ManagesVpcEndpoints com.amazonaws.ec2#ServiceDetail$ManagesVpcEndpoints */ =>  {
+            s if s.matches("acceptanceRequired") /* AcceptanceRequired com.amazonaws.ec2#ServiceDetail$AcceptanceRequired */ =>  {
                 let var_12 =
                     Some(
                          {
@@ -154,11 +149,26 @@ pub fn de_service_detail(
                         ?
                     )
                 ;
-                builder = builder.set_manages_vpc_endpoints(var_12);
+                builder = builder.set_acceptance_required(var_12);
+            }
+            ,
+            s if s.matches("managesVpcEndpoints") /* ManagesVpcEndpoints com.amazonaws.ec2#ServiceDetail$ManagesVpcEndpoints */ =>  {
+                let var_13 =
+                    Some(
+                         {
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_manages_vpc_endpoints(var_13);
             }
             ,
             s if s.matches("payerResponsibility") /* PayerResponsibility com.amazonaws.ec2#ServiceDetail$PayerResponsibility */ =>  {
-                let var_13 =
+                let var_14 =
                     Some(
                         Result::<crate::types::PayerResponsibility, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::PayerResponsibility::from(
@@ -168,21 +178,21 @@ pub fn de_service_detail(
                         ?
                     )
                 ;
-                builder = builder.set_payer_responsibility(var_13);
+                builder = builder.set_payer_responsibility(var_14);
             }
             ,
             s if s.matches("tagSet") /* Tags com.amazonaws.ec2#ServiceDetail$Tags */ =>  {
-                let var_14 =
+                let var_15 =
                     Some(
                         crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_tags(var_14);
+                builder = builder.set_tags(var_15);
             }
             ,
             s if s.matches("privateDnsNameVerificationState") /* PrivateDnsNameVerificationState com.amazonaws.ec2#ServiceDetail$PrivateDnsNameVerificationState */ =>  {
-                let var_15 =
+                let var_16 =
                     Some(
                         Result::<crate::types::DnsNameState, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::DnsNameState::from(
@@ -192,17 +202,17 @@ pub fn de_service_detail(
                         ?
                     )
                 ;
-                builder = builder.set_private_dns_name_verification_state(var_15);
+                builder = builder.set_private_dns_name_verification_state(var_16);
             }
             ,
             s if s.matches("supportedIpAddressTypeSet") /* SupportedIpAddressTypes com.amazonaws.ec2#ServiceDetail$SupportedIpAddressTypes */ =>  {
-                let var_16 =
+                let var_17 =
                     Some(
                         crate::protocol_serde::shape_supported_ip_address_types::de_supported_ip_address_types(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_supported_ip_address_types(var_16);
+                builder = builder.set_supported_ip_address_types(var_17);
             }
             ,
             _ => {}

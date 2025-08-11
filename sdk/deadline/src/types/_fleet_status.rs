@@ -15,6 +15,7 @@
 ///     FleetStatus::Active => { /* ... */ },
 ///     FleetStatus::CreateFailed => { /* ... */ },
 ///     FleetStatus::CreateInProgress => { /* ... */ },
+///     FleetStatus::Suspended => { /* ... */ },
 ///     FleetStatus::UpdateFailed => { /* ... */ },
 ///     FleetStatus::UpdateInProgress => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -52,6 +53,8 @@ pub enum FleetStatus {
     #[allow(missing_docs)] // documentation missing in model
     CreateInProgress,
     #[allow(missing_docs)] // documentation missing in model
+    Suspended,
+    #[allow(missing_docs)] // documentation missing in model
     UpdateFailed,
     #[allow(missing_docs)] // documentation missing in model
     UpdateInProgress,
@@ -65,6 +68,7 @@ impl ::std::convert::From<&str> for FleetStatus {
             "ACTIVE" => FleetStatus::Active,
             "CREATE_FAILED" => FleetStatus::CreateFailed,
             "CREATE_IN_PROGRESS" => FleetStatus::CreateInProgress,
+            "SUSPENDED" => FleetStatus::Suspended,
             "UPDATE_FAILED" => FleetStatus::UpdateFailed,
             "UPDATE_IN_PROGRESS" => FleetStatus::UpdateInProgress,
             other => FleetStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -85,6 +89,7 @@ impl FleetStatus {
             FleetStatus::Active => "ACTIVE",
             FleetStatus::CreateFailed => "CREATE_FAILED",
             FleetStatus::CreateInProgress => "CREATE_IN_PROGRESS",
+            FleetStatus::Suspended => "SUSPENDED",
             FleetStatus::UpdateFailed => "UPDATE_FAILED",
             FleetStatus::UpdateInProgress => "UPDATE_IN_PROGRESS",
             FleetStatus::Unknown(value) => value.as_str(),
@@ -92,7 +97,14 @@ impl FleetStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "CREATE_FAILED", "CREATE_IN_PROGRESS", "UPDATE_FAILED", "UPDATE_IN_PROGRESS"]
+        &[
+            "ACTIVE",
+            "CREATE_FAILED",
+            "CREATE_IN_PROGRESS",
+            "SUSPENDED",
+            "UPDATE_FAILED",
+            "UPDATE_IN_PROGRESS",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for FleetStatus {
@@ -118,6 +130,7 @@ impl ::std::fmt::Display for FleetStatus {
             FleetStatus::Active => write!(f, "ACTIVE"),
             FleetStatus::CreateFailed => write!(f, "CREATE_FAILED"),
             FleetStatus::CreateInProgress => write!(f, "CREATE_IN_PROGRESS"),
+            FleetStatus::Suspended => write!(f, "SUSPENDED"),
             FleetStatus::UpdateFailed => write!(f, "UPDATE_FAILED"),
             FleetStatus::UpdateInProgress => write!(f, "UPDATE_IN_PROGRESS"),
             FleetStatus::Unknown(value) => write!(f, "{}", value),

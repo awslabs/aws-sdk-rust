@@ -14,6 +14,8 @@ pub struct PluginVisual {
     pub subtitle: ::std::option::Option<crate::types::VisualSubtitleLabelOptions>,
     /// <p>A description of the plugin field wells and their persisted properties.</p>
     pub chart_configuration: ::std::option::Option<crate::types::PluginVisualConfiguration>,
+    /// <p>The list of custom actions that are configured for a visual.</p>
+    pub actions: ::std::option::Option<::std::vec::Vec<crate::types::VisualCustomAction>>,
     /// <p>The alt text for the visual.</p>
     pub visual_content_alt_text: ::std::option::Option<::std::string::String>,
 }
@@ -40,6 +42,12 @@ impl PluginVisual {
     pub fn chart_configuration(&self) -> ::std::option::Option<&crate::types::PluginVisualConfiguration> {
         self.chart_configuration.as_ref()
     }
+    /// <p>The list of custom actions that are configured for a visual.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.actions.is_none()`.
+    pub fn actions(&self) -> &[crate::types::VisualCustomAction] {
+        self.actions.as_deref().unwrap_or_default()
+    }
     /// <p>The alt text for the visual.</p>
     pub fn visual_content_alt_text(&self) -> ::std::option::Option<&str> {
         self.visual_content_alt_text.as_deref()
@@ -61,6 +69,7 @@ pub struct PluginVisualBuilder {
     pub(crate) title: ::std::option::Option<crate::types::VisualTitleLabelOptions>,
     pub(crate) subtitle: ::std::option::Option<crate::types::VisualSubtitleLabelOptions>,
     pub(crate) chart_configuration: ::std::option::Option<crate::types::PluginVisualConfiguration>,
+    pub(crate) actions: ::std::option::Option<::std::vec::Vec<crate::types::VisualCustomAction>>,
     pub(crate) visual_content_alt_text: ::std::option::Option<::std::string::String>,
 }
 impl PluginVisualBuilder {
@@ -136,6 +145,26 @@ impl PluginVisualBuilder {
     pub fn get_chart_configuration(&self) -> &::std::option::Option<crate::types::PluginVisualConfiguration> {
         &self.chart_configuration
     }
+    /// Appends an item to `actions`.
+    ///
+    /// To override the contents of this collection use [`set_actions`](Self::set_actions).
+    ///
+    /// <p>The list of custom actions that are configured for a visual.</p>
+    pub fn actions(mut self, input: crate::types::VisualCustomAction) -> Self {
+        let mut v = self.actions.unwrap_or_default();
+        v.push(input);
+        self.actions = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The list of custom actions that are configured for a visual.</p>
+    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VisualCustomAction>>) -> Self {
+        self.actions = input;
+        self
+    }
+    /// <p>The list of custom actions that are configured for a visual.</p>
+    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VisualCustomAction>> {
+        &self.actions
+    }
     /// <p>The alt text for the visual.</p>
     pub fn visual_content_alt_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.visual_content_alt_text = ::std::option::Option::Some(input.into());
@@ -171,6 +200,7 @@ impl PluginVisualBuilder {
             title: self.title,
             subtitle: self.subtitle,
             chart_configuration: self.chart_configuration,
+            actions: self.actions,
             visual_content_alt_text: self.visual_content_alt_text,
         })
     }

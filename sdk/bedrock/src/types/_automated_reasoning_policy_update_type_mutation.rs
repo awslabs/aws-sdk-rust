@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutomatedReasoningPolicyUpdateTypeMutation {
-    /// <p>Represents a custom user-defined viarble type in an Automated Reasoning policy. Types are enum-based and provide additional context beyond predefined variable types.</p>
+    /// <p>The updated type definition containing the modified name, description, or values for the existing custom type.</p>
     pub r#type: ::std::option::Option<crate::types::AutomatedReasoningPolicyDefinitionType>,
 }
 impl AutomatedReasoningPolicyUpdateTypeMutation {
-    /// <p>Represents a custom user-defined viarble type in an Automated Reasoning policy. Types are enum-based and provide additional context beyond predefined variable types.</p>
+    /// <p>The updated type definition containing the modified name, description, or values for the existing custom type.</p>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::AutomatedReasoningPolicyDefinitionType> {
         self.r#type.as_ref()
     }
@@ -27,18 +27,18 @@ pub struct AutomatedReasoningPolicyUpdateTypeMutationBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::AutomatedReasoningPolicyDefinitionType>,
 }
 impl AutomatedReasoningPolicyUpdateTypeMutationBuilder {
-    /// <p>Represents a custom user-defined viarble type in an Automated Reasoning policy. Types are enum-based and provide additional context beyond predefined variable types.</p>
+    /// <p>The updated type definition containing the modified name, description, or values for the existing custom type.</p>
     /// This field is required.
     pub fn r#type(mut self, input: crate::types::AutomatedReasoningPolicyDefinitionType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Represents a custom user-defined viarble type in an Automated Reasoning policy. Types are enum-based and provide additional context beyond predefined variable types.</p>
+    /// <p>The updated type definition containing the modified name, description, or values for the existing custom type.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::AutomatedReasoningPolicyDefinitionType>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>Represents a custom user-defined viarble type in an Automated Reasoning policy. Types are enum-based and provide additional context beyond predefined variable types.</p>
+    /// <p>The updated type definition containing the modified name, description, or values for the existing custom type.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::AutomatedReasoningPolicyDefinitionType> {
         &self.r#type
     }

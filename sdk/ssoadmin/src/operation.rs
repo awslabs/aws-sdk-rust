@@ -112,6 +112,9 @@ pub mod get_application_authentication_method;
 /// Types for the `GetApplicationGrant` operation.
 pub mod get_application_grant;
 
+/// Types for the `GetApplicationSessionConfiguration` operation.
+pub mod get_application_session_configuration;
+
 /// Types for the `GetInlinePolicyForPermissionSet` operation.
 pub mod get_inline_policy_for_permission_set;
 
@@ -192,6 +195,9 @@ pub mod put_application_authentication_method;
 
 /// Types for the `PutApplicationGrant` operation.
 pub mod put_application_grant;
+
+/// Types for the `PutApplicationSessionConfiguration` operation.
+pub mod put_application_session_configuration;
 
 /// Types for the `PutInlinePolicyToPermissionSet` operation.
 pub mod put_inline_policy_to_permission_set;

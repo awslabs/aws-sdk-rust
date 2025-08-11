@@ -5,7 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LaunchTemplatePlacementRequest {
     /// <p>The Availability Zone for the instance.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> can be specified, but not both</p>
     pub availability_zone: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the Availability Zone for the instance.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> can be specified, but not both</p>
+    pub availability_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>The affinity setting for an instance on a Dedicated Host.</p>
     pub affinity: ::std::option::Option<::std::string::String>,
     /// <p>The name of the placement group for the instance.</p>
@@ -25,8 +29,14 @@ pub struct LaunchTemplatePlacementRequest {
 }
 impl LaunchTemplatePlacementRequest {
     /// <p>The Availability Zone for the instance.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> can be specified, but not both</p>
     pub fn availability_zone(&self) -> ::std::option::Option<&str> {
         self.availability_zone.as_deref()
+    }
+    /// <p>The ID of the Availability Zone for the instance.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> can be specified, but not both</p>
+    pub fn availability_zone_id(&self) -> ::std::option::Option<&str> {
+        self.availability_zone_id.as_deref()
     }
     /// <p>The affinity setting for an instance on a Dedicated Host.</p>
     pub fn affinity(&self) -> ::std::option::Option<&str> {
@@ -73,6 +83,7 @@ impl LaunchTemplatePlacementRequest {
 #[non_exhaustive]
 pub struct LaunchTemplatePlacementRequestBuilder {
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
+    pub(crate) availability_zone_id: ::std::option::Option<::std::string::String>,
     pub(crate) affinity: ::std::option::Option<::std::string::String>,
     pub(crate) group_name: ::std::option::Option<::std::string::String>,
     pub(crate) host_id: ::std::option::Option<::std::string::String>,
@@ -84,18 +95,38 @@ pub struct LaunchTemplatePlacementRequestBuilder {
 }
 impl LaunchTemplatePlacementRequestBuilder {
     /// <p>The Availability Zone for the instance.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> can be specified, but not both</p>
     pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Availability Zone for the instance.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> can be specified, but not both</p>
     pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone = input;
         self
     }
     /// <p>The Availability Zone for the instance.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> can be specified, but not both</p>
     pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
         &self.availability_zone
+    }
+    /// <p>The ID of the Availability Zone for the instance.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> can be specified, but not both</p>
+    pub fn availability_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.availability_zone_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the Availability Zone for the instance.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> can be specified, but not both</p>
+    pub fn set_availability_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.availability_zone_id = input;
+        self
+    }
+    /// <p>The ID of the Availability Zone for the instance.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> can be specified, but not both</p>
+    pub fn get_availability_zone_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone_id
     }
     /// <p>The affinity setting for an instance on a Dedicated Host.</p>
     pub fn affinity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -213,6 +244,7 @@ impl LaunchTemplatePlacementRequestBuilder {
     pub fn build(self) -> crate::types::LaunchTemplatePlacementRequest {
         crate::types::LaunchTemplatePlacementRequest {
             availability_zone: self.availability_zone,
+            availability_zone_id: self.availability_zone_id,
             affinity: self.affinity,
             group_name: self.group_name,
             host_id: self.host_id,

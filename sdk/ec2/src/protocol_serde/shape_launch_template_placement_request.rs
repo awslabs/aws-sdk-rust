@@ -10,47 +10,52 @@ pub fn ser_launch_template_placement_request(
         scope_1.string(var_2);
     }
     #[allow(unused_mut)]
-    let mut scope_3 = writer.prefix("Affinity");
-    if let Some(var_4) = &input.affinity {
+    let mut scope_3 = writer.prefix("AvailabilityZoneId");
+    if let Some(var_4) = &input.availability_zone_id {
         scope_3.string(var_4);
     }
     #[allow(unused_mut)]
-    let mut scope_5 = writer.prefix("GroupName");
-    if let Some(var_6) = &input.group_name {
+    let mut scope_5 = writer.prefix("Affinity");
+    if let Some(var_6) = &input.affinity {
         scope_5.string(var_6);
     }
     #[allow(unused_mut)]
-    let mut scope_7 = writer.prefix("HostId");
-    if let Some(var_8) = &input.host_id {
+    let mut scope_7 = writer.prefix("GroupName");
+    if let Some(var_8) = &input.group_name {
         scope_7.string(var_8);
     }
     #[allow(unused_mut)]
-    let mut scope_9 = writer.prefix("Tenancy");
-    if let Some(var_10) = &input.tenancy {
-        scope_9.string(var_10.as_str());
+    let mut scope_9 = writer.prefix("HostId");
+    if let Some(var_10) = &input.host_id {
+        scope_9.string(var_10);
     }
     #[allow(unused_mut)]
-    let mut scope_11 = writer.prefix("SpreadDomain");
-    if let Some(var_12) = &input.spread_domain {
-        scope_11.string(var_12);
+    let mut scope_11 = writer.prefix("Tenancy");
+    if let Some(var_12) = &input.tenancy {
+        scope_11.string(var_12.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_13 = writer.prefix("HostResourceGroupArn");
-    if let Some(var_14) = &input.host_resource_group_arn {
+    let mut scope_13 = writer.prefix("SpreadDomain");
+    if let Some(var_14) = &input.spread_domain {
         scope_13.string(var_14);
     }
     #[allow(unused_mut)]
-    let mut scope_15 = writer.prefix("PartitionNumber");
-    if let Some(var_16) = &input.partition_number {
-        scope_15.number(
+    let mut scope_15 = writer.prefix("HostResourceGroupArn");
+    if let Some(var_16) = &input.host_resource_group_arn {
+        scope_15.string(var_16);
+    }
+    #[allow(unused_mut)]
+    let mut scope_17 = writer.prefix("PartitionNumber");
+    if let Some(var_18) = &input.partition_number {
+        scope_17.number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_16).into()),
+            ::aws_smithy_types::Number::NegInt((*var_18).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_17 = writer.prefix("GroupId");
-    if let Some(var_18) = &input.group_id {
-        scope_17.string(var_18);
+    let mut scope_19 = writer.prefix("GroupId");
+    if let Some(var_20) = &input.group_id {
+        scope_19.string(var_20);
     }
     Ok(())
 }

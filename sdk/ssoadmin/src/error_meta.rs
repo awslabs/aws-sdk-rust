@@ -1512,6 +1512,55 @@ impl From<crate::operation::get_application_grant::GetApplicationGrantError> for
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_application_session_configuration::GetApplicationSessionConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_application_session_configuration::GetApplicationSessionConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_application_session_configuration::GetApplicationSessionConfigurationError> for Error {
+    fn from(err: crate::operation::get_application_session_configuration::GetApplicationSessionConfigurationError) -> Self {
+        match err {
+            crate::operation::get_application_session_configuration::GetApplicationSessionConfigurationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_application_session_configuration::GetApplicationSessionConfigurationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_application_session_configuration::GetApplicationSessionConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_application_session_configuration::GetApplicationSessionConfigurationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_application_session_configuration::GetApplicationSessionConfigurationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_application_session_configuration::GetApplicationSessionConfigurationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::get_inline_policy_for_permission_set::GetInlinePolicyForPermissionSetError,
             R,
         >,
@@ -2614,6 +2663,58 @@ impl From<crate::operation::put_application_grant::PutApplicationGrantError> for
             crate::operation::put_application_grant::PutApplicationGrantError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::put_application_grant::PutApplicationGrantError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::put_application_grant::PutApplicationGrantError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::put_application_session_configuration::PutApplicationSessionConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::put_application_session_configuration::PutApplicationSessionConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_application_session_configuration::PutApplicationSessionConfigurationError> for Error {
+    fn from(err: crate::operation::put_application_session_configuration::PutApplicationSessionConfigurationError) -> Self {
+        match err {
+            crate::operation::put_application_session_configuration::PutApplicationSessionConfigurationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::put_application_session_configuration::PutApplicationSessionConfigurationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::put_application_session_configuration::PutApplicationSessionConfigurationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::put_application_session_configuration::PutApplicationSessionConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::put_application_session_configuration::PutApplicationSessionConfigurationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::put_application_session_configuration::PutApplicationSessionConfigurationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::put_application_session_configuration::PutApplicationSessionConfigurationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }

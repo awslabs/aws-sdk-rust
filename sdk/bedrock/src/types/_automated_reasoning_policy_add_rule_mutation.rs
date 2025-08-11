@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutomatedReasoningPolicyAddRuleMutation {
-    /// <p>Represents a formal logic rule in an Automated Reasoning policy. For example, rules can be expressed as if-then statements that define logical constraints.</p>
+    /// <p>The rule definition that specifies the formal logical expression and metadata for the new rule being added to the policy.</p>
     pub rule: ::std::option::Option<crate::types::AutomatedReasoningPolicyDefinitionRule>,
 }
 impl AutomatedReasoningPolicyAddRuleMutation {
-    /// <p>Represents a formal logic rule in an Automated Reasoning policy. For example, rules can be expressed as if-then statements that define logical constraints.</p>
+    /// <p>The rule definition that specifies the formal logical expression and metadata for the new rule being added to the policy.</p>
     pub fn rule(&self) -> ::std::option::Option<&crate::types::AutomatedReasoningPolicyDefinitionRule> {
         self.rule.as_ref()
     }
@@ -27,18 +27,18 @@ pub struct AutomatedReasoningPolicyAddRuleMutationBuilder {
     pub(crate) rule: ::std::option::Option<crate::types::AutomatedReasoningPolicyDefinitionRule>,
 }
 impl AutomatedReasoningPolicyAddRuleMutationBuilder {
-    /// <p>Represents a formal logic rule in an Automated Reasoning policy. For example, rules can be expressed as if-then statements that define logical constraints.</p>
+    /// <p>The rule definition that specifies the formal logical expression and metadata for the new rule being added to the policy.</p>
     /// This field is required.
     pub fn rule(mut self, input: crate::types::AutomatedReasoningPolicyDefinitionRule) -> Self {
         self.rule = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Represents a formal logic rule in an Automated Reasoning policy. For example, rules can be expressed as if-then statements that define logical constraints.</p>
+    /// <p>The rule definition that specifies the formal logical expression and metadata for the new rule being added to the policy.</p>
     pub fn set_rule(mut self, input: ::std::option::Option<crate::types::AutomatedReasoningPolicyDefinitionRule>) -> Self {
         self.rule = input;
         self
     }
-    /// <p>Represents a formal logic rule in an Automated Reasoning policy. For example, rules can be expressed as if-then statements that define logical constraints.</p>
+    /// <p>The rule definition that specifies the formal logical expression and metadata for the new rule being added to the policy.</p>
     pub fn get_rule(&self) -> &::std::option::Option<crate::types::AutomatedReasoningPolicyDefinitionRule> {
         &self.rule
     }

@@ -51,6 +51,8 @@ pub use crate::types::_permissions_boundary::PermissionsBoundary;
 
 pub use crate::types::_customer_managed_policy_reference::CustomerManagedPolicyReference;
 
+pub use crate::types::_user_background_session_application_status::UserBackgroundSessionApplicationStatus;
+
 pub use crate::types::_permission_set_provisioning_status::PermissionSetProvisioningStatus;
 
 pub use crate::types::_status_values::StatusValues;
@@ -238,6 +240,8 @@ mod _trusted_token_issuer_type;
 mod _trusted_token_issuer_update_configuration;
 
 mod _update_application_portal_options;
+
+mod _user_background_session_application_status;
 
 /// Builders
 pub mod builders;

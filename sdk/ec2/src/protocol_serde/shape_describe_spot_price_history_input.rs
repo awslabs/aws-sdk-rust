@@ -6,76 +6,81 @@ pub fn ser_describe_spot_price_history_input_input_input(
     #[allow(unused_mut)]
     let mut writer = ::aws_smithy_query::QueryWriter::new(&mut out, "DescribeSpotPriceHistory", "2016-11-15");
     #[allow(unused_mut)]
-    let mut scope_1 = writer.prefix("DryRun");
-    if let Some(var_2) = &input.dry_run {
-        scope_1.boolean(*var_2);
+    let mut scope_1 = writer.prefix("AvailabilityZoneId");
+    if let Some(var_2) = &input.availability_zone_id {
+        scope_1.string(var_2);
     }
     #[allow(unused_mut)]
-    let mut scope_3 = writer.prefix("StartTime");
-    if let Some(var_4) = &input.start_time {
-        scope_3.date_time(var_4, ::aws_smithy_types::date_time::Format::DateTime)?;
+    let mut scope_3 = writer.prefix("DryRun");
+    if let Some(var_4) = &input.dry_run {
+        scope_3.boolean(*var_4);
     }
     #[allow(unused_mut)]
-    let mut scope_5 = writer.prefix("EndTime");
-    if let Some(var_6) = &input.end_time {
+    let mut scope_5 = writer.prefix("StartTime");
+    if let Some(var_6) = &input.start_time {
         scope_5.date_time(var_6, ::aws_smithy_types::date_time::Format::DateTime)?;
     }
     #[allow(unused_mut)]
-    let mut scope_7 = writer.prefix("InstanceType");
-    if let Some(var_8) = &input.instance_types {
-        if !var_8.is_empty() {
-            let mut list_10 = scope_7.start_list(true, None);
-            for item_9 in var_8 {
+    let mut scope_7 = writer.prefix("EndTime");
+    if let Some(var_8) = &input.end_time {
+        scope_7.date_time(var_8, ::aws_smithy_types::date_time::Format::DateTime)?;
+    }
+    #[allow(unused_mut)]
+    let mut scope_9 = writer.prefix("InstanceType");
+    if let Some(var_10) = &input.instance_types {
+        if !var_10.is_empty() {
+            let mut list_12 = scope_9.start_list(true, None);
+            for item_11 in var_10 {
                 #[allow(unused_mut)]
-                let mut entry_11 = list_10.entry();
-                entry_11.string(item_9.as_str());
+                let mut entry_13 = list_12.entry();
+                entry_13.string(item_11.as_str());
             }
-            list_10.finish();
+            list_12.finish();
         }
     }
     #[allow(unused_mut)]
-    let mut scope_12 = writer.prefix("ProductDescription");
-    if let Some(var_13) = &input.product_descriptions {
-        if !var_13.is_empty() {
-            let mut list_15 = scope_12.start_list(true, None);
-            for item_14 in var_13 {
+    let mut scope_14 = writer.prefix("ProductDescription");
+    if let Some(var_15) = &input.product_descriptions {
+        if !var_15.is_empty() {
+            let mut list_17 = scope_14.start_list(true, None);
+            for item_16 in var_15 {
                 #[allow(unused_mut)]
-                let mut entry_16 = list_15.entry();
-                entry_16.string(item_14);
+                let mut entry_18 = list_17.entry();
+                entry_18.string(item_16);
             }
-            list_15.finish();
+            list_17.finish();
         }
     }
     #[allow(unused_mut)]
-    let mut scope_17 = writer.prefix("Filter");
-    if let Some(var_18) = &input.filters {
-        if !var_18.is_empty() {
-            let mut list_20 = scope_17.start_list(true, Some("Filter"));
-            for item_19 in var_18 {
+    let mut scope_19 = writer.prefix("Filter");
+    if let Some(var_20) = &input.filters {
+        if !var_20.is_empty() {
+            let mut list_22 = scope_19.start_list(true, Some("Filter"));
+            for item_21 in var_20 {
                 #[allow(unused_mut)]
-                let mut entry_21 = list_20.entry();
-                crate::protocol_serde::shape_filter::ser_filter(entry_21, item_19)?;
+                let mut entry_23 = list_22.entry();
+                crate::protocol_serde::shape_filter::ser_filter(entry_23, item_21)?;
             }
-            list_20.finish();
+            list_22.finish();
         }
     }
     #[allow(unused_mut)]
-    let mut scope_22 = writer.prefix("AvailabilityZone");
-    if let Some(var_23) = &input.availability_zone {
-        scope_22.string(var_23);
+    let mut scope_24 = writer.prefix("AvailabilityZone");
+    if let Some(var_25) = &input.availability_zone {
+        scope_24.string(var_25);
     }
     #[allow(unused_mut)]
-    let mut scope_24 = writer.prefix("MaxResults");
-    if let Some(var_25) = &input.max_results {
-        scope_24.number(
+    let mut scope_26 = writer.prefix("MaxResults");
+    if let Some(var_27) = &input.max_results {
+        scope_26.number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_25).into()),
+            ::aws_smithy_types::Number::NegInt((*var_27).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_26 = writer.prefix("NextToken");
-    if let Some(var_27) = &input.next_token {
-        scope_26.string(var_27);
+    let mut scope_28 = writer.prefix("NextToken");
+    if let Some(var_29) = &input.next_token {
+        scope_28.string(var_29);
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

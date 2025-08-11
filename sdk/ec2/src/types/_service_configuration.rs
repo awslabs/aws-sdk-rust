@@ -12,7 +12,11 @@ pub struct ServiceConfiguration {
     pub service_name: ::std::option::Option<::std::string::String>,
     /// <p>The service state.</p>
     pub service_state: ::std::option::Option<crate::types::ServiceState>,
+    /// <p>The IDs of the Availability Zones in which the service is available.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> can be specified, but not both</p>
+    pub availability_zone_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Availability Zones in which the service is available.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> can be specified, but not both</p>
     pub availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Indicates whether requests from other Amazon Web Services accounts to create an endpoint to the service must first be accepted.</p>
     pub acceptance_required: ::std::option::Option<bool>,
@@ -58,7 +62,15 @@ impl ServiceConfiguration {
     pub fn service_state(&self) -> ::std::option::Option<&crate::types::ServiceState> {
         self.service_state.as_ref()
     }
+    /// <p>The IDs of the Availability Zones in which the service is available.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> can be specified, but not both</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.availability_zone_ids.is_none()`.
+    pub fn availability_zone_ids(&self) -> &[::std::string::String] {
+        self.availability_zone_ids.as_deref().unwrap_or_default()
+    }
     /// <p>The Availability Zones in which the service is available.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> can be specified, but not both</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.availability_zones.is_none()`.
     pub fn availability_zones(&self) -> &[::std::string::String] {
@@ -140,6 +152,7 @@ pub struct ServiceConfigurationBuilder {
     pub(crate) service_id: ::std::option::Option<::std::string::String>,
     pub(crate) service_name: ::std::option::Option<::std::string::String>,
     pub(crate) service_state: ::std::option::Option<crate::types::ServiceState>,
+    pub(crate) availability_zone_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) acceptance_required: ::std::option::Option<bool>,
     pub(crate) manages_vpc_endpoints: ::std::option::Option<bool>,
@@ -217,11 +230,35 @@ impl ServiceConfigurationBuilder {
     pub fn get_service_state(&self) -> &::std::option::Option<crate::types::ServiceState> {
         &self.service_state
     }
+    /// Appends an item to `availability_zone_ids`.
+    ///
+    /// To override the contents of this collection use [`set_availability_zone_ids`](Self::set_availability_zone_ids).
+    ///
+    /// <p>The IDs of the Availability Zones in which the service is available.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> can be specified, but not both</p>
+    pub fn availability_zone_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.availability_zone_ids.unwrap_or_default();
+        v.push(input.into());
+        self.availability_zone_ids = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The IDs of the Availability Zones in which the service is available.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> can be specified, but not both</p>
+    pub fn set_availability_zone_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.availability_zone_ids = input;
+        self
+    }
+    /// <p>The IDs of the Availability Zones in which the service is available.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> can be specified, but not both</p>
+    pub fn get_availability_zone_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.availability_zone_ids
+    }
     /// Appends an item to `availability_zones`.
     ///
     /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
     ///
     /// <p>The Availability Zones in which the service is available.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> can be specified, but not both</p>
     pub fn availability_zones(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.availability_zones.unwrap_or_default();
         v.push(input.into());
@@ -229,11 +266,13 @@ impl ServiceConfigurationBuilder {
         self
     }
     /// <p>The Availability Zones in which the service is available.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> can be specified, but not both</p>
     pub fn set_availability_zones(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.availability_zones = input;
         self
     }
     /// <p>The Availability Zones in which the service is available.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> can be specified, but not both</p>
     pub fn get_availability_zones(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.availability_zones
     }
@@ -448,6 +487,7 @@ impl ServiceConfigurationBuilder {
             service_id: self.service_id,
             service_name: self.service_name,
             service_state: self.service_state,
+            availability_zone_ids: self.availability_zone_ids,
             availability_zones: self.availability_zones,
             acceptance_required: self.acceptance_required,
             manages_vpc_endpoints: self.manages_vpc_endpoints,

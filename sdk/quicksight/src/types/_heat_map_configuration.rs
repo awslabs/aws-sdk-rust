@@ -8,8 +8,12 @@ pub struct HeatMapConfiguration {
     pub field_wells: ::std::option::Option<crate::types::HeatMapFieldWells>,
     /// <p>The sort configuration of a heat map.</p>
     pub sort_configuration: ::std::option::Option<crate::types::HeatMapSortConfiguration>,
+    /// <p>The options that determine the presentation of the row axis label.</p>
+    pub row_axis_display_options: ::std::option::Option<crate::types::AxisDisplayOptions>,
     /// <p>The label options of the row that is displayed in a <code>heat map</code>.</p>
     pub row_label_options: ::std::option::Option<crate::types::ChartAxisLabelOptions>,
+    /// <p>The options that determine the presentation of the row axis label.</p>
+    pub column_axis_display_options: ::std::option::Option<crate::types::AxisDisplayOptions>,
     /// <p>The label options of the column that is displayed in a heat map.</p>
     pub column_label_options: ::std::option::Option<crate::types::ChartAxisLabelOptions>,
     /// <p>The color options (gradient color, point of divergence) in a heat map.</p>
@@ -32,9 +36,17 @@ impl HeatMapConfiguration {
     pub fn sort_configuration(&self) -> ::std::option::Option<&crate::types::HeatMapSortConfiguration> {
         self.sort_configuration.as_ref()
     }
+    /// <p>The options that determine the presentation of the row axis label.</p>
+    pub fn row_axis_display_options(&self) -> ::std::option::Option<&crate::types::AxisDisplayOptions> {
+        self.row_axis_display_options.as_ref()
+    }
     /// <p>The label options of the row that is displayed in a <code>heat map</code>.</p>
     pub fn row_label_options(&self) -> ::std::option::Option<&crate::types::ChartAxisLabelOptions> {
         self.row_label_options.as_ref()
+    }
+    /// <p>The options that determine the presentation of the row axis label.</p>
+    pub fn column_axis_display_options(&self) -> ::std::option::Option<&crate::types::AxisDisplayOptions> {
+        self.column_axis_display_options.as_ref()
     }
     /// <p>The label options of the column that is displayed in a heat map.</p>
     pub fn column_label_options(&self) -> ::std::option::Option<&crate::types::ChartAxisLabelOptions> {
@@ -74,7 +86,9 @@ impl HeatMapConfiguration {
 pub struct HeatMapConfigurationBuilder {
     pub(crate) field_wells: ::std::option::Option<crate::types::HeatMapFieldWells>,
     pub(crate) sort_configuration: ::std::option::Option<crate::types::HeatMapSortConfiguration>,
+    pub(crate) row_axis_display_options: ::std::option::Option<crate::types::AxisDisplayOptions>,
     pub(crate) row_label_options: ::std::option::Option<crate::types::ChartAxisLabelOptions>,
+    pub(crate) column_axis_display_options: ::std::option::Option<crate::types::AxisDisplayOptions>,
     pub(crate) column_label_options: ::std::option::Option<crate::types::ChartAxisLabelOptions>,
     pub(crate) color_scale: ::std::option::Option<crate::types::ColorScale>,
     pub(crate) legend: ::std::option::Option<crate::types::LegendOptions>,
@@ -111,6 +125,20 @@ impl HeatMapConfigurationBuilder {
     pub fn get_sort_configuration(&self) -> &::std::option::Option<crate::types::HeatMapSortConfiguration> {
         &self.sort_configuration
     }
+    /// <p>The options that determine the presentation of the row axis label.</p>
+    pub fn row_axis_display_options(mut self, input: crate::types::AxisDisplayOptions) -> Self {
+        self.row_axis_display_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The options that determine the presentation of the row axis label.</p>
+    pub fn set_row_axis_display_options(mut self, input: ::std::option::Option<crate::types::AxisDisplayOptions>) -> Self {
+        self.row_axis_display_options = input;
+        self
+    }
+    /// <p>The options that determine the presentation of the row axis label.</p>
+    pub fn get_row_axis_display_options(&self) -> &::std::option::Option<crate::types::AxisDisplayOptions> {
+        &self.row_axis_display_options
+    }
     /// <p>The label options of the row that is displayed in a <code>heat map</code>.</p>
     pub fn row_label_options(mut self, input: crate::types::ChartAxisLabelOptions) -> Self {
         self.row_label_options = ::std::option::Option::Some(input);
@@ -124,6 +152,20 @@ impl HeatMapConfigurationBuilder {
     /// <p>The label options of the row that is displayed in a <code>heat map</code>.</p>
     pub fn get_row_label_options(&self) -> &::std::option::Option<crate::types::ChartAxisLabelOptions> {
         &self.row_label_options
+    }
+    /// <p>The options that determine the presentation of the row axis label.</p>
+    pub fn column_axis_display_options(mut self, input: crate::types::AxisDisplayOptions) -> Self {
+        self.column_axis_display_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The options that determine the presentation of the row axis label.</p>
+    pub fn set_column_axis_display_options(mut self, input: ::std::option::Option<crate::types::AxisDisplayOptions>) -> Self {
+        self.column_axis_display_options = input;
+        self
+    }
+    /// <p>The options that determine the presentation of the row axis label.</p>
+    pub fn get_column_axis_display_options(&self) -> &::std::option::Option<crate::types::AxisDisplayOptions> {
+        &self.column_axis_display_options
     }
     /// <p>The label options of the column that is displayed in a heat map.</p>
     pub fn column_label_options(mut self, input: crate::types::ChartAxisLabelOptions) -> Self {
@@ -214,7 +256,9 @@ impl HeatMapConfigurationBuilder {
         crate::types::HeatMapConfiguration {
             field_wells: self.field_wells,
             sort_configuration: self.sort_configuration,
+            row_axis_display_options: self.row_axis_display_options,
             row_label_options: self.row_label_options,
+            column_axis_display_options: self.column_axis_display_options,
             column_label_options: self.column_label_options,
             color_scale: self.color_scale,
             legend: self.legend,

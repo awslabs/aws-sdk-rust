@@ -237,6 +237,8 @@ mod get_application_authentication_method;
 
 mod get_application_grant;
 
+mod get_application_session_configuration;
+
 mod get_inline_policy_for_permission_set;
 
 mod get_permissions_boundary_for_permission_set;
@@ -290,6 +292,8 @@ mod put_application_assignment_configuration;
 mod put_application_authentication_method;
 
 mod put_application_grant;
+
+mod put_application_session_configuration;
 
 mod put_inline_policy_to_permission_set;
 

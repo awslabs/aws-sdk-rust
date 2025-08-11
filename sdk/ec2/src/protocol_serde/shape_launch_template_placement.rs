@@ -20,7 +20,7 @@ pub fn de_launch_template_placement(
                 builder = builder.set_availability_zone(var_1);
             }
             ,
-            s if s.matches("affinity") /* Affinity com.amazonaws.ec2#LaunchTemplatePlacement$Affinity */ =>  {
+            s if s.matches("availabilityZoneId") /* AvailabilityZoneId com.amazonaws.ec2#LaunchTemplatePlacement$AvailabilityZoneId */ =>  {
                 let var_2 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -30,10 +30,10 @@ pub fn de_launch_template_placement(
                         ?
                     )
                 ;
-                builder = builder.set_affinity(var_2);
+                builder = builder.set_availability_zone_id(var_2);
             }
             ,
-            s if s.matches("groupName") /* GroupName com.amazonaws.ec2#LaunchTemplatePlacement$GroupName */ =>  {
+            s if s.matches("affinity") /* Affinity com.amazonaws.ec2#LaunchTemplatePlacement$Affinity */ =>  {
                 let var_3 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -43,10 +43,10 @@ pub fn de_launch_template_placement(
                         ?
                     )
                 ;
-                builder = builder.set_group_name(var_3);
+                builder = builder.set_affinity(var_3);
             }
             ,
-            s if s.matches("hostId") /* HostId com.amazonaws.ec2#LaunchTemplatePlacement$HostId */ =>  {
+            s if s.matches("groupName") /* GroupName com.amazonaws.ec2#LaunchTemplatePlacement$GroupName */ =>  {
                 let var_4 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -56,11 +56,24 @@ pub fn de_launch_template_placement(
                         ?
                     )
                 ;
-                builder = builder.set_host_id(var_4);
+                builder = builder.set_group_name(var_4);
+            }
+            ,
+            s if s.matches("hostId") /* HostId com.amazonaws.ec2#LaunchTemplatePlacement$HostId */ =>  {
+                let var_5 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_host_id(var_5);
             }
             ,
             s if s.matches("tenancy") /* Tenancy com.amazonaws.ec2#LaunchTemplatePlacement$Tenancy */ =>  {
-                let var_5 =
+                let var_6 =
                     Some(
                         Result::<crate::types::Tenancy, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::Tenancy::from(
@@ -70,23 +83,10 @@ pub fn de_launch_template_placement(
                         ?
                     )
                 ;
-                builder = builder.set_tenancy(var_5);
+                builder = builder.set_tenancy(var_6);
             }
             ,
             s if s.matches("spreadDomain") /* SpreadDomain com.amazonaws.ec2#LaunchTemplatePlacement$SpreadDomain */ =>  {
-                let var_6 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_spread_domain(var_6);
-            }
-            ,
-            s if s.matches("hostResourceGroupArn") /* HostResourceGroupArn com.amazonaws.ec2#LaunchTemplatePlacement$HostResourceGroupArn */ =>  {
                 let var_7 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -96,11 +96,24 @@ pub fn de_launch_template_placement(
                         ?
                     )
                 ;
-                builder = builder.set_host_resource_group_arn(var_7);
+                builder = builder.set_spread_domain(var_7);
+            }
+            ,
+            s if s.matches("hostResourceGroupArn") /* HostResourceGroupArn com.amazonaws.ec2#LaunchTemplatePlacement$HostResourceGroupArn */ =>  {
+                let var_8 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_host_resource_group_arn(var_8);
             }
             ,
             s if s.matches("partitionNumber") /* PartitionNumber com.amazonaws.ec2#LaunchTemplatePlacement$PartitionNumber */ =>  {
-                let var_8 =
+                let var_9 =
                     Some(
                          {
                             <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -111,11 +124,11 @@ pub fn de_launch_template_placement(
                         ?
                     )
                 ;
-                builder = builder.set_partition_number(var_8);
+                builder = builder.set_partition_number(var_9);
             }
             ,
             s if s.matches("groupId") /* GroupId com.amazonaws.ec2#LaunchTemplatePlacement$GroupId */ =>  {
-                let var_9 =
+                let var_10 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -124,7 +137,7 @@ pub fn de_launch_template_placement(
                         ?
                     )
                 ;
-                builder = builder.set_group_id(var_9);
+                builder = builder.set_group_id(var_10);
             }
             ,
             _ => {}

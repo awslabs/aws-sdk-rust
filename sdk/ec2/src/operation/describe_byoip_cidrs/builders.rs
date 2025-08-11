@@ -22,7 +22,8 @@ impl crate::operation::describe_byoip_cidrs::builders::DescribeByoipCidrsInputBu
 }
 /// Fluent builder constructing a request to `DescribeByoipCidrs`.
 ///
-/// <p>Describes the IP address ranges that were provisioned for use with Amazon Web Services resources through through bring your own IP addresses (BYOIP).</p>
+/// <p>Describes the IP address ranges that were specified in calls to <code>ProvisionByoipCidr</code>.</p>
+/// <p>To describe the address pools that were created when you provisioned the address ranges, use <code>DescribePublicIpv4Pools</code> or <code>DescribeIpv6Pools</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeByoipCidrsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

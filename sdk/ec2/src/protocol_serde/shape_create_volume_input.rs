@@ -11,94 +11,99 @@ pub fn ser_create_volume_input_input_input(
         scope_1.string(var_2);
     }
     #[allow(unused_mut)]
-    let mut scope_3 = writer.prefix("Encrypted");
-    if let Some(var_4) = &input.encrypted {
-        scope_3.boolean(*var_4);
+    let mut scope_3 = writer.prefix("AvailabilityZoneId");
+    if let Some(var_4) = &input.availability_zone_id {
+        scope_3.string(var_4);
     }
     #[allow(unused_mut)]
-    let mut scope_5 = writer.prefix("Iops");
-    if let Some(var_6) = &input.iops {
-        scope_5.number(
+    let mut scope_5 = writer.prefix("Encrypted");
+    if let Some(var_6) = &input.encrypted {
+        scope_5.boolean(*var_6);
+    }
+    #[allow(unused_mut)]
+    let mut scope_7 = writer.prefix("Iops");
+    if let Some(var_8) = &input.iops {
+        scope_7.number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_6).into()),
+            ::aws_smithy_types::Number::NegInt((*var_8).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_7 = writer.prefix("KmsKeyId");
-    if let Some(var_8) = &input.kms_key_id {
-        scope_7.string(var_8);
-    }
-    #[allow(unused_mut)]
-    let mut scope_9 = writer.prefix("OutpostArn");
-    if let Some(var_10) = &input.outpost_arn {
+    let mut scope_9 = writer.prefix("KmsKeyId");
+    if let Some(var_10) = &input.kms_key_id {
         scope_9.string(var_10);
     }
     #[allow(unused_mut)]
-    let mut scope_11 = writer.prefix("Size");
-    if let Some(var_12) = &input.size {
-        scope_11.number(
+    let mut scope_11 = writer.prefix("OutpostArn");
+    if let Some(var_12) = &input.outpost_arn {
+        scope_11.string(var_12);
+    }
+    #[allow(unused_mut)]
+    let mut scope_13 = writer.prefix("Size");
+    if let Some(var_14) = &input.size {
+        scope_13.number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_12).into()),
+            ::aws_smithy_types::Number::NegInt((*var_14).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_13 = writer.prefix("SnapshotId");
-    if let Some(var_14) = &input.snapshot_id {
-        scope_13.string(var_14);
+    let mut scope_15 = writer.prefix("SnapshotId");
+    if let Some(var_16) = &input.snapshot_id {
+        scope_15.string(var_16);
     }
     #[allow(unused_mut)]
-    let mut scope_15 = writer.prefix("VolumeType");
-    if let Some(var_16) = &input.volume_type {
-        scope_15.string(var_16.as_str());
+    let mut scope_17 = writer.prefix("VolumeType");
+    if let Some(var_18) = &input.volume_type {
+        scope_17.string(var_18.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_17 = writer.prefix("TagSpecification");
-    if let Some(var_18) = &input.tag_specifications {
-        if !var_18.is_empty() {
-            let mut list_20 = scope_17.start_list(true, Some("item"));
-            for item_19 in var_18 {
+    let mut scope_19 = writer.prefix("TagSpecification");
+    if let Some(var_20) = &input.tag_specifications {
+        if !var_20.is_empty() {
+            let mut list_22 = scope_19.start_list(true, Some("item"));
+            for item_21 in var_20 {
                 #[allow(unused_mut)]
-                let mut entry_21 = list_20.entry();
-                crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_21, item_19)?;
+                let mut entry_23 = list_22.entry();
+                crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_23, item_21)?;
             }
-            list_20.finish();
+            list_22.finish();
         }
     }
     #[allow(unused_mut)]
-    let mut scope_22 = writer.prefix("MultiAttachEnabled");
-    if let Some(var_23) = &input.multi_attach_enabled {
-        scope_22.boolean(*var_23);
+    let mut scope_24 = writer.prefix("MultiAttachEnabled");
+    if let Some(var_25) = &input.multi_attach_enabled {
+        scope_24.boolean(*var_25);
     }
     #[allow(unused_mut)]
-    let mut scope_24 = writer.prefix("Throughput");
-    if let Some(var_25) = &input.throughput {
-        scope_24.number(
+    let mut scope_26 = writer.prefix("Throughput");
+    if let Some(var_27) = &input.throughput {
+        scope_26.number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_25).into()),
+            ::aws_smithy_types::Number::NegInt((*var_27).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_26 = writer.prefix("ClientToken");
-    if let Some(var_27) = &input.client_token {
-        scope_26.string(var_27);
+    let mut scope_28 = writer.prefix("ClientToken");
+    if let Some(var_29) = &input.client_token {
+        scope_28.string(var_29);
     }
     #[allow(unused_mut)]
-    let mut scope_28 = writer.prefix("VolumeInitializationRate");
-    if let Some(var_29) = &input.volume_initialization_rate {
-        scope_28.number(
+    let mut scope_30 = writer.prefix("VolumeInitializationRate");
+    if let Some(var_31) = &input.volume_initialization_rate {
+        scope_30.number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_29).into()),
+            ::aws_smithy_types::Number::NegInt((*var_31).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_30 = writer.prefix("Operator");
-    if let Some(var_31) = &input.operator {
-        crate::protocol_serde::shape_operator_request::ser_operator_request(scope_30, var_31)?;
+    let mut scope_32 = writer.prefix("Operator");
+    if let Some(var_33) = &input.operator {
+        crate::protocol_serde::shape_operator_request::ser_operator_request(scope_32, var_33)?;
     }
     #[allow(unused_mut)]
-    let mut scope_32 = writer.prefix("DryRun");
-    if let Some(var_33) = &input.dry_run {
-        scope_32.boolean(*var_33);
+    let mut scope_34 = writer.prefix("DryRun");
+    if let Some(var_35) = &input.dry_run {
+        scope_34.boolean(*var_35);
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

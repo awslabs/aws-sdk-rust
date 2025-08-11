@@ -20,7 +20,7 @@ pub fn de_instance_status(
                 builder = builder.set_availability_zone(var_1);
             }
             ,
-            s if s.matches("outpostArn") /* OutpostArn com.amazonaws.ec2#InstanceStatus$OutpostArn */ =>  {
+            s if s.matches("availabilityZoneId") /* AvailabilityZoneId com.amazonaws.ec2#InstanceStatus$AvailabilityZoneId */ =>  {
                 let var_2 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -30,31 +30,11 @@ pub fn de_instance_status(
                         ?
                     )
                 ;
-                builder = builder.set_outpost_arn(var_2);
+                builder = builder.set_availability_zone_id(var_2);
             }
             ,
-            s if s.matches("operator") /* Operator com.amazonaws.ec2#InstanceStatus$Operator */ =>  {
+            s if s.matches("outpostArn") /* OutpostArn com.amazonaws.ec2#InstanceStatus$OutpostArn */ =>  {
                 let var_3 =
-                    Some(
-                        crate::protocol_serde::shape_operator_response::de_operator_response(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_operator(var_3);
-            }
-            ,
-            s if s.matches("eventsSet") /* Events com.amazonaws.ec2#InstanceStatus$Events */ =>  {
-                let var_4 =
-                    Some(
-                        crate::protocol_serde::shape_instance_status_event_list::de_instance_status_event_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_events(var_4);
-            }
-            ,
-            s if s.matches("instanceId") /* InstanceId com.amazonaws.ec2#InstanceStatus$InstanceId */ =>  {
-                let var_5 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -63,47 +43,80 @@ pub fn de_instance_status(
                         ?
                     )
                 ;
-                builder = builder.set_instance_id(var_5);
+                builder = builder.set_outpost_arn(var_3);
+            }
+            ,
+            s if s.matches("operator") /* Operator com.amazonaws.ec2#InstanceStatus$Operator */ =>  {
+                let var_4 =
+                    Some(
+                        crate::protocol_serde::shape_operator_response::de_operator_response(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_operator(var_4);
+            }
+            ,
+            s if s.matches("eventsSet") /* Events com.amazonaws.ec2#InstanceStatus$Events */ =>  {
+                let var_5 =
+                    Some(
+                        crate::protocol_serde::shape_instance_status_event_list::de_instance_status_event_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_events(var_5);
+            }
+            ,
+            s if s.matches("instanceId") /* InstanceId com.amazonaws.ec2#InstanceStatus$InstanceId */ =>  {
+                let var_6 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_instance_id(var_6);
             }
             ,
             s if s.matches("instanceState") /* InstanceState com.amazonaws.ec2#InstanceStatus$InstanceState */ =>  {
-                let var_6 =
+                let var_7 =
                     Some(
                         crate::protocol_serde::shape_instance_state::de_instance_state(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_instance_state(var_6);
+                builder = builder.set_instance_state(var_7);
             }
             ,
             s if s.matches("instanceStatus") /* InstanceStatus com.amazonaws.ec2#InstanceStatus$InstanceStatus */ =>  {
-                let var_7 =
-                    Some(
-                        crate::protocol_serde::shape_instance_status_summary::de_instance_status_summary(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_instance_status(var_7);
-            }
-            ,
-            s if s.matches("systemStatus") /* SystemStatus com.amazonaws.ec2#InstanceStatus$SystemStatus */ =>  {
                 let var_8 =
                     Some(
                         crate::protocol_serde::shape_instance_status_summary::de_instance_status_summary(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_system_status(var_8);
+                builder = builder.set_instance_status(var_8);
+            }
+            ,
+            s if s.matches("systemStatus") /* SystemStatus com.amazonaws.ec2#InstanceStatus$SystemStatus */ =>  {
+                let var_9 =
+                    Some(
+                        crate::protocol_serde::shape_instance_status_summary::de_instance_status_summary(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_system_status(var_9);
             }
             ,
             s if s.matches("attachedEbsStatus") /* AttachedEbsStatus com.amazonaws.ec2#InstanceStatus$AttachedEbsStatus */ =>  {
-                let var_9 =
+                let var_10 =
                     Some(
                         crate::protocol_serde::shape_ebs_status_summary::de_ebs_status_summary(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_attached_ebs_status(var_9);
+                builder = builder.set_attached_ebs_status(var_10);
             }
             ,
             _ => {}

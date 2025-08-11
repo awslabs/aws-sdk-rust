@@ -419,6 +419,18 @@ pub use crate::types::_visual::VisualBuilder;
 
 pub use crate::types::_plugin_visual::PluginVisualBuilder;
 
+pub use crate::types::_visual_custom_action::VisualCustomActionBuilder;
+
+pub use crate::types::_visual_custom_action_operation::VisualCustomActionOperationBuilder;
+
+pub use crate::types::_custom_action_filter_operation::CustomActionFilterOperationBuilder;
+
+pub use crate::types::_filter_operation_target_visuals_configuration::FilterOperationTargetVisualsConfigurationBuilder;
+
+pub use crate::types::_same_sheet_target_visual_configuration::SameSheetTargetVisualConfigurationBuilder;
+
+pub use crate::types::_filter_operation_selected_fields_configuration::FilterOperationSelectedFieldsConfigurationBuilder;
+
 pub use crate::types::_plugin_visual_configuration::PluginVisualConfigurationBuilder;
 
 pub use crate::types::_plugin_visual_sort_configuration::PluginVisualSortConfigurationBuilder;
@@ -482,18 +494,6 @@ pub use crate::types::_numeric_equality_drill_down_filter::NumericEqualityDrillD
 pub use crate::types::_date_time_hierarchy::DateTimeHierarchyBuilder;
 
 pub use crate::types::_explicit_hierarchy::ExplicitHierarchyBuilder;
-
-pub use crate::types::_visual_custom_action::VisualCustomActionBuilder;
-
-pub use crate::types::_visual_custom_action_operation::VisualCustomActionOperationBuilder;
-
-pub use crate::types::_custom_action_filter_operation::CustomActionFilterOperationBuilder;
-
-pub use crate::types::_filter_operation_target_visuals_configuration::FilterOperationTargetVisualsConfigurationBuilder;
-
-pub use crate::types::_same_sheet_target_visual_configuration::SameSheetTargetVisualConfigurationBuilder;
-
-pub use crate::types::_filter_operation_selected_fields_configuration::FilterOperationSelectedFieldsConfigurationBuilder;
 
 pub use crate::types::_radar_chart_configuration::RadarChartConfigurationBuilder;
 

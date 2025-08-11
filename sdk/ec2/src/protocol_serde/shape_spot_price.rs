@@ -20,8 +20,21 @@ pub fn de_spot_price(
                 builder = builder.set_availability_zone(var_1);
             }
             ,
-            s if s.matches("instanceType") /* InstanceType com.amazonaws.ec2#SpotPrice$InstanceType */ =>  {
+            s if s.matches("availabilityZoneId") /* AvailabilityZoneId com.amazonaws.ec2#SpotPrice$AvailabilityZoneId */ =>  {
                 let var_2 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_availability_zone_id(var_2);
+            }
+            ,
+            s if s.matches("instanceType") /* InstanceType com.amazonaws.ec2#SpotPrice$InstanceType */ =>  {
+                let var_3 =
                     Some(
                         Result::<crate::types::InstanceType, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::InstanceType::from(
@@ -31,11 +44,11 @@ pub fn de_spot_price(
                         ?
                     )
                 ;
-                builder = builder.set_instance_type(var_2);
+                builder = builder.set_instance_type(var_3);
             }
             ,
             s if s.matches("productDescription") /* ProductDescription com.amazonaws.ec2#SpotPrice$ProductDescription */ =>  {
-                let var_3 =
+                let var_4 =
                     Some(
                         Result::<crate::types::RiProductDescription, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::RiProductDescription::from(
@@ -45,11 +58,11 @@ pub fn de_spot_price(
                         ?
                     )
                 ;
-                builder = builder.set_product_description(var_3);
+                builder = builder.set_product_description(var_4);
             }
             ,
             s if s.matches("spotPrice") /* SpotPrice com.amazonaws.ec2#SpotPrice$SpotPrice */ =>  {
-                let var_4 =
+                let var_5 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -58,11 +71,11 @@ pub fn de_spot_price(
                         ?
                     )
                 ;
-                builder = builder.set_spot_price(var_4);
+                builder = builder.set_spot_price(var_5);
             }
             ,
             s if s.matches("timestamp") /* Timestamp com.amazonaws.ec2#SpotPrice$Timestamp */ =>  {
-                let var_5 =
+                let var_6 =
                     Some(
                         ::aws_smithy_types::DateTime::from_str(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -72,7 +85,7 @@ pub fn de_spot_price(
                         ?
                     )
                 ;
-                builder = builder.set_timestamp(var_5);
+                builder = builder.set_timestamp(var_6);
             }
             ,
             _ => {}

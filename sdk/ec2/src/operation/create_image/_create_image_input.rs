@@ -49,7 +49,7 @@ pub struct CreateImageInput {
     /// <li>
     /// <p>You can't change the volume size using the VolumeSize parameter. If you want a different volume size, you must first change the volume size of the source instance.</p></li>
     /// <li>
-    /// <p>You can't modify the encryption status of existing volumes or snapshots. To create an AMI with volumes or snapshots that have a different encryption status (for example, where the source volume and snapshots are unencrypted, and you want to create an AMI with encrypted volumes or snapshots), copy the image instead.</p></li>
+    /// <p>You can't modify the encryption status of existing volumes or snapshots. To create an AMI with volumes or snapshots that have a different encryption status (for example, where the source volume and snapshots are unencrypted, and you want to create an AMI with encrypted volumes or snapshots), use the <code>CopyImage</code> action.</p></li>
     /// <li>
     /// <p>The only option that can be changed for existing mappings or snapshots is <code>DeleteOnTermination</code>.</p></li>
     /// </ul>
@@ -118,7 +118,7 @@ impl CreateImageInput {
     /// <li>
     /// <p>You can't change the volume size using the VolumeSize parameter. If you want a different volume size, you must first change the volume size of the source instance.</p></li>
     /// <li>
-    /// <p>You can't modify the encryption status of existing volumes or snapshots. To create an AMI with volumes or snapshots that have a different encryption status (for example, where the source volume and snapshots are unencrypted, and you want to create an AMI with encrypted volumes or snapshots), copy the image instead.</p></li>
+    /// <p>You can't modify the encryption status of existing volumes or snapshots. To create an AMI with volumes or snapshots that have a different encryption status (for example, where the source volume and snapshots are unencrypted, and you want to create an AMI with encrypted volumes or snapshots), use the <code>CopyImage</code> action.</p></li>
     /// <li>
     /// <p>The only option that can be changed for existing mappings or snapshots is <code>DeleteOnTermination</code>.</p></li>
     /// </ul>
@@ -343,7 +343,7 @@ impl CreateImageInputBuilder {
     /// <li>
     /// <p>You can't change the volume size using the VolumeSize parameter. If you want a different volume size, you must first change the volume size of the source instance.</p></li>
     /// <li>
-    /// <p>You can't modify the encryption status of existing volumes or snapshots. To create an AMI with volumes or snapshots that have a different encryption status (for example, where the source volume and snapshots are unencrypted, and you want to create an AMI with encrypted volumes or snapshots), copy the image instead.</p></li>
+    /// <p>You can't modify the encryption status of existing volumes or snapshots. To create an AMI with volumes or snapshots that have a different encryption status (for example, where the source volume and snapshots are unencrypted, and you want to create an AMI with encrypted volumes or snapshots), use the <code>CopyImage</code> action.</p></li>
     /// <li>
     /// <p>The only option that can be changed for existing mappings or snapshots is <code>DeleteOnTermination</code>.</p></li>
     /// </ul>
@@ -359,7 +359,7 @@ impl CreateImageInputBuilder {
     /// <li>
     /// <p>You can't change the volume size using the VolumeSize parameter. If you want a different volume size, you must first change the volume size of the source instance.</p></li>
     /// <li>
-    /// <p>You can't modify the encryption status of existing volumes or snapshots. To create an AMI with volumes or snapshots that have a different encryption status (for example, where the source volume and snapshots are unencrypted, and you want to create an AMI with encrypted volumes or snapshots), copy the image instead.</p></li>
+    /// <p>You can't modify the encryption status of existing volumes or snapshots. To create an AMI with volumes or snapshots that have a different encryption status (for example, where the source volume and snapshots are unencrypted, and you want to create an AMI with encrypted volumes or snapshots), use the <code>CopyImage</code> action.</p></li>
     /// <li>
     /// <p>The only option that can be changed for existing mappings or snapshots is <code>DeleteOnTermination</code>.</p></li>
     /// </ul>
@@ -373,7 +373,7 @@ impl CreateImageInputBuilder {
     /// <li>
     /// <p>You can't change the volume size using the VolumeSize parameter. If you want a different volume size, you must first change the volume size of the source instance.</p></li>
     /// <li>
-    /// <p>You can't modify the encryption status of existing volumes or snapshots. To create an AMI with volumes or snapshots that have a different encryption status (for example, where the source volume and snapshots are unencrypted, and you want to create an AMI with encrypted volumes or snapshots), copy the image instead.</p></li>
+    /// <p>You can't modify the encryption status of existing volumes or snapshots. To create an AMI with volumes or snapshots that have a different encryption status (for example, where the source volume and snapshots are unencrypted, and you want to create an AMI with encrypted volumes or snapshots), use the <code>CopyImage</code> action.</p></li>
     /// <li>
     /// <p>The only option that can be changed for existing mappings or snapshots is <code>DeleteOnTermination</code>.</p></li>
     /// </ul>

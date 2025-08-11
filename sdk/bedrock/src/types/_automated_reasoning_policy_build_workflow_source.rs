@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutomatedReasoningPolicyBuildWorkflowSource {
-    /// <p>Contains the formal logic rules, variables, and custom variable types that define an Automated Reasoning policy. The policy definition specifies the constraints used to validate foundation model responses for accuracy and logical consistency.</p>
+    /// <p>An existing policy definition that serves as the starting point for the build workflow, typically used in policy repair or update scenarios.</p>
     pub policy_definition: ::std::option::Option<crate::types::AutomatedReasoningPolicyDefinition>,
     /// <p>The actual content to be processed in the build workflow, such as documents to analyze or repair instructions to apply.</p>
     pub workflow_content: ::std::option::Option<crate::types::AutomatedReasoningPolicyWorkflowTypeContent>,
 }
 impl AutomatedReasoningPolicyBuildWorkflowSource {
-    /// <p>Contains the formal logic rules, variables, and custom variable types that define an Automated Reasoning policy. The policy definition specifies the constraints used to validate foundation model responses for accuracy and logical consistency.</p>
+    /// <p>An existing policy definition that serves as the starting point for the build workflow, typically used in policy repair or update scenarios.</p>
     pub fn policy_definition(&self) -> ::std::option::Option<&crate::types::AutomatedReasoningPolicyDefinition> {
         self.policy_definition.as_ref()
     }
@@ -34,17 +34,17 @@ pub struct AutomatedReasoningPolicyBuildWorkflowSourceBuilder {
     pub(crate) workflow_content: ::std::option::Option<crate::types::AutomatedReasoningPolicyWorkflowTypeContent>,
 }
 impl AutomatedReasoningPolicyBuildWorkflowSourceBuilder {
-    /// <p>Contains the formal logic rules, variables, and custom variable types that define an Automated Reasoning policy. The policy definition specifies the constraints used to validate foundation model responses for accuracy and logical consistency.</p>
+    /// <p>An existing policy definition that serves as the starting point for the build workflow, typically used in policy repair or update scenarios.</p>
     pub fn policy_definition(mut self, input: crate::types::AutomatedReasoningPolicyDefinition) -> Self {
         self.policy_definition = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Contains the formal logic rules, variables, and custom variable types that define an Automated Reasoning policy. The policy definition specifies the constraints used to validate foundation model responses for accuracy and logical consistency.</p>
+    /// <p>An existing policy definition that serves as the starting point for the build workflow, typically used in policy repair or update scenarios.</p>
     pub fn set_policy_definition(mut self, input: ::std::option::Option<crate::types::AutomatedReasoningPolicyDefinition>) -> Self {
         self.policy_definition = input;
         self
     }
-    /// <p>Contains the formal logic rules, variables, and custom variable types that define an Automated Reasoning policy. The policy definition specifies the constraints used to validate foundation model responses for accuracy and logical consistency.</p>
+    /// <p>An existing policy definition that serves as the starting point for the build workflow, typically used in policy repair or update scenarios.</p>
     pub fn get_policy_definition(&self) -> &::std::option::Option<crate::types::AutomatedReasoningPolicyDefinition> {
         &self.policy_definition
     }

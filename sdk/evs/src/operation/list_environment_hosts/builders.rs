@@ -22,9 +22,6 @@ impl crate::operation::list_environment_hosts::builders::ListEnvironmentHostsInp
 }
 /// Fluent builder constructing a request to `ListEnvironmentHosts`.
 ///
-/// <note>
-/// <p>Amazon EVS is in public preview release and is subject to change.</p>
-/// </note>
 /// <p>List the hosts within an environment.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListEnvironmentHostsFluentBuilder {

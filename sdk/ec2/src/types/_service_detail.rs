@@ -12,7 +12,11 @@ pub struct ServiceDetail {
     pub service_type: ::std::option::Option<::std::vec::Vec<crate::types::ServiceTypeDetail>>,
     /// <p>The Region where the service is hosted.</p>
     pub service_region: ::std::option::Option<::std::string::String>,
+    /// <p>The IDs of the Availability Zones in which the service is available.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> can be specified, but not both</p>
+    pub availability_zone_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Availability Zones in which the service is available.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> can be specified, but not both</p>
     pub availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Amazon Web Services account ID of the service owner.</p>
     pub owner: ::std::option::Option<::std::string::String>,
@@ -57,7 +61,15 @@ impl ServiceDetail {
     pub fn service_region(&self) -> ::std::option::Option<&str> {
         self.service_region.as_deref()
     }
+    /// <p>The IDs of the Availability Zones in which the service is available.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> can be specified, but not both</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.availability_zone_ids.is_none()`.
+    pub fn availability_zone_ids(&self) -> &[::std::string::String] {
+        self.availability_zone_ids.as_deref().unwrap_or_default()
+    }
     /// <p>The Availability Zones in which the service is available.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> can be specified, but not both</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.availability_zones.is_none()`.
     pub fn availability_zones(&self) -> &[::std::string::String] {
@@ -132,6 +144,7 @@ pub struct ServiceDetailBuilder {
     pub(crate) service_id: ::std::option::Option<::std::string::String>,
     pub(crate) service_type: ::std::option::Option<::std::vec::Vec<crate::types::ServiceTypeDetail>>,
     pub(crate) service_region: ::std::option::Option<::std::string::String>,
+    pub(crate) availability_zone_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) owner: ::std::option::Option<::std::string::String>,
     pub(crate) base_endpoint_dns_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -208,11 +221,35 @@ impl ServiceDetailBuilder {
     pub fn get_service_region(&self) -> &::std::option::Option<::std::string::String> {
         &self.service_region
     }
+    /// Appends an item to `availability_zone_ids`.
+    ///
+    /// To override the contents of this collection use [`set_availability_zone_ids`](Self::set_availability_zone_ids).
+    ///
+    /// <p>The IDs of the Availability Zones in which the service is available.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> can be specified, but not both</p>
+    pub fn availability_zone_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.availability_zone_ids.unwrap_or_default();
+        v.push(input.into());
+        self.availability_zone_ids = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The IDs of the Availability Zones in which the service is available.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> can be specified, but not both</p>
+    pub fn set_availability_zone_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.availability_zone_ids = input;
+        self
+    }
+    /// <p>The IDs of the Availability Zones in which the service is available.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> can be specified, but not both</p>
+    pub fn get_availability_zone_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.availability_zone_ids
+    }
     /// Appends an item to `availability_zones`.
     ///
     /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
     ///
     /// <p>The Availability Zones in which the service is available.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> can be specified, but not both</p>
     pub fn availability_zones(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.availability_zones.unwrap_or_default();
         v.push(input.into());
@@ -220,11 +257,13 @@ impl ServiceDetailBuilder {
         self
     }
     /// <p>The Availability Zones in which the service is available.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> can be specified, but not both</p>
     pub fn set_availability_zones(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.availability_zones = input;
         self
     }
     /// <p>The Availability Zones in which the service is available.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> can be specified, but not both</p>
     pub fn get_availability_zones(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.availability_zones
     }
@@ -416,6 +455,7 @@ impl ServiceDetailBuilder {
             service_id: self.service_id,
             service_type: self.service_type,
             service_region: self.service_region,
+            availability_zone_ids: self.availability_zone_ids,
             availability_zones: self.availability_zones,
             owner: self.owner,
             base_endpoint_dns_names: self.base_endpoint_dns_names,

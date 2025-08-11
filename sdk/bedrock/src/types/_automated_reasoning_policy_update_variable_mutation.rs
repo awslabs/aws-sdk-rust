@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutomatedReasoningPolicyUpdateVariableMutation {
-    /// <p>Represents a variable in an Automated Reasoning policy. Variables represent concepts that can have values assigned during natural language translation.</p>
+    /// <p>The updated variable definition containing the modified name, type, or description for the existing variable.</p>
     pub variable: ::std::option::Option<crate::types::AutomatedReasoningPolicyDefinitionVariable>,
 }
 impl AutomatedReasoningPolicyUpdateVariableMutation {
-    /// <p>Represents a variable in an Automated Reasoning policy. Variables represent concepts that can have values assigned during natural language translation.</p>
+    /// <p>The updated variable definition containing the modified name, type, or description for the existing variable.</p>
     pub fn variable(&self) -> ::std::option::Option<&crate::types::AutomatedReasoningPolicyDefinitionVariable> {
         self.variable.as_ref()
     }
@@ -27,18 +27,18 @@ pub struct AutomatedReasoningPolicyUpdateVariableMutationBuilder {
     pub(crate) variable: ::std::option::Option<crate::types::AutomatedReasoningPolicyDefinitionVariable>,
 }
 impl AutomatedReasoningPolicyUpdateVariableMutationBuilder {
-    /// <p>Represents a variable in an Automated Reasoning policy. Variables represent concepts that can have values assigned during natural language translation.</p>
+    /// <p>The updated variable definition containing the modified name, type, or description for the existing variable.</p>
     /// This field is required.
     pub fn variable(mut self, input: crate::types::AutomatedReasoningPolicyDefinitionVariable) -> Self {
         self.variable = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Represents a variable in an Automated Reasoning policy. Variables represent concepts that can have values assigned during natural language translation.</p>
+    /// <p>The updated variable definition containing the modified name, type, or description for the existing variable.</p>
     pub fn set_variable(mut self, input: ::std::option::Option<crate::types::AutomatedReasoningPolicyDefinitionVariable>) -> Self {
         self.variable = input;
         self
     }
-    /// <p>Represents a variable in an Automated Reasoning policy. Variables represent concepts that can have values assigned during natural language translation.</p>
+    /// <p>The updated variable definition containing the modified name, type, or description for the existing variable.</p>
     pub fn get_variable(&self) -> &::std::option::Option<crate::types::AutomatedReasoningPolicyDefinitionVariable> {
         &self.variable
     }

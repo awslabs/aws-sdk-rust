@@ -115,6 +115,23 @@ impl DescribeSpotPriceHistoryFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::describe_spot_price_history::paginator::DescribeSpotPriceHistoryPaginator {
         crate::operation::describe_spot_price_history::paginator::DescribeSpotPriceHistoryPaginator::new(self.handle, self.inner)
     }
+    /// <p>Filters the results by the specified ID of the Availability Zone.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> can be specified, but not both</p>
+    pub fn availability_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.availability_zone_id(input.into());
+        self
+    }
+    /// <p>Filters the results by the specified ID of the Availability Zone.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> can be specified, but not both</p>
+    pub fn set_availability_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_availability_zone_id(input);
+        self
+    }
+    /// <p>Filters the results by the specified ID of the Availability Zone.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> can be specified, but not both</p>
+    pub fn get_availability_zone_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_availability_zone_id()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -205,6 +222,8 @@ impl DescribeSpotPriceHistoryFluentBuilder {
     /// <li>
     /// <p><code>availability-zone</code> - The Availability Zone for which prices should be returned.</p></li>
     /// <li>
+    /// <p><code>availability-zone-id</code> - The ID of the Availability Zone for which prices should be returned.</p></li>
+    /// <li>
     /// <p><code>instance-type</code> - The type of instance (for example, <code>m3.medium</code>).</p></li>
     /// <li>
     /// <p><code>product-description</code> - The product description for the Spot price (<code>Linux/UNIX</code> | <code>Red Hat Enterprise Linux</code> | <code>SUSE Linux</code> | <code>Windows</code> | <code>Linux/UNIX (Amazon VPC)</code> | <code>Red Hat Enterprise Linux (Amazon VPC)</code> | <code>SUSE Linux (Amazon VPC)</code> | <code>Windows (Amazon VPC)</code>).</p></li>
@@ -221,6 +240,8 @@ impl DescribeSpotPriceHistoryFluentBuilder {
     /// <ul>
     /// <li>
     /// <p><code>availability-zone</code> - The Availability Zone for which prices should be returned.</p></li>
+    /// <li>
+    /// <p><code>availability-zone-id</code> - The ID of the Availability Zone for which prices should be returned.</p></li>
     /// <li>
     /// <p><code>instance-type</code> - The type of instance (for example, <code>m3.medium</code>).</p></li>
     /// <li>
@@ -239,6 +260,8 @@ impl DescribeSpotPriceHistoryFluentBuilder {
     /// <li>
     /// <p><code>availability-zone</code> - The Availability Zone for which prices should be returned.</p></li>
     /// <li>
+    /// <p><code>availability-zone-id</code> - The ID of the Availability Zone for which prices should be returned.</p></li>
+    /// <li>
     /// <p><code>instance-type</code> - The type of instance (for example, <code>m3.medium</code>).</p></li>
     /// <li>
     /// <p><code>product-description</code> - The product description for the Spot price (<code>Linux/UNIX</code> | <code>Red Hat Enterprise Linux</code> | <code>SUSE Linux</code> | <code>Windows</code> | <code>Linux/UNIX (Amazon VPC)</code> | <code>Red Hat Enterprise Linux (Amazon VPC)</code> | <code>SUSE Linux (Amazon VPC)</code> | <code>Windows (Amazon VPC)</code>).</p></li>
@@ -251,16 +274,19 @@ impl DescribeSpotPriceHistoryFluentBuilder {
         self.inner.get_filters()
     }
     /// <p>Filters the results by the specified Availability Zone.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> can be specified, but not both</p>
     pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.availability_zone(input.into());
         self
     }
     /// <p>Filters the results by the specified Availability Zone.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> can be specified, but not both</p>
     pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_availability_zone(input);
         self
     }
     /// <p>Filters the results by the specified Availability Zone.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> can be specified, but not both</p>
     pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_availability_zone()
     }

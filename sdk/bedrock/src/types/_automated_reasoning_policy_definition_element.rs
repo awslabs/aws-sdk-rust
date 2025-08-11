@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum AutomatedReasoningPolicyDefinitionElement {
-    /// <p>Represents a formal logic rule in an Automated Reasoning policy. For example, rules can be expressed as if-then statements that define logical constraints.</p>
+    /// <p>A rule element within the policy definition that contains a formal logical expression used for validation.</p>
     PolicyDefinitionRule(crate::types::AutomatedReasoningPolicyDefinitionRule),
-    /// <p>Represents a custom user-defined viarble type in an Automated Reasoning policy. Types are enum-based and provide additional context beyond predefined variable types.</p>
+    /// <p>A custom type element within the policy definition that defines a set of possible values for variables.</p>
     PolicyDefinitionType(crate::types::AutomatedReasoningPolicyDefinitionType),
-    /// <p>Represents a variable in an Automated Reasoning policy. Variables represent concepts that can have values assigned during natural language translation.</p>
+    /// <p>A variable element within the policy definition that represents a concept used in logical expressions and rules.</p>
     PolicyDefinitionVariable(crate::types::AutomatedReasoningPolicyDefinitionVariable),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant

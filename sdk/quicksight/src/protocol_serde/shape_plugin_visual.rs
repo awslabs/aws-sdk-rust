@@ -27,8 +27,20 @@ pub fn ser_plugin_visual(
         crate::protocol_serde::shape_plugin_visual_configuration::ser_plugin_visual_configuration(&mut object_6, var_5)?;
         object_6.finish();
     }
-    if let Some(var_7) = &input.visual_content_alt_text {
-        object.key("VisualContentAltText").string(var_7.as_str());
+    if let Some(var_7) = &input.actions {
+        let mut array_8 = object.key("Actions").start_array();
+        for item_9 in var_7 {
+            {
+                #[allow(unused_mut)]
+                let mut object_10 = array_8.value().start_object();
+                crate::protocol_serde::shape_visual_custom_action::ser_visual_custom_action(&mut object_10, item_9)?;
+                object_10.finish();
+            }
+        }
+        array_8.finish();
+    }
+    if let Some(var_11) = &input.visual_content_alt_text {
+        object.key("VisualContentAltText").string(var_11.as_str());
     }
     Ok(())
 }
@@ -75,6 +87,11 @@ where
                             builder = builder.set_chart_configuration(
                                 crate::protocol_serde::shape_plugin_visual_configuration::de_plugin_visual_configuration(tokens)?,
                             );
+                        }
+                        "Actions" => {
+                            builder = builder.set_actions(crate::protocol_serde::shape_visual_custom_action_list::de_visual_custom_action_list(
+                                tokens,
+                            )?);
                         }
                         "VisualContentAltText" => {
                             builder = builder.set_visual_content_alt_text(

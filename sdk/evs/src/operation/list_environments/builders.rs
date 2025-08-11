@@ -22,9 +22,6 @@ impl crate::operation::list_environments::builders::ListEnvironmentsInputBuilder
 }
 /// Fluent builder constructing a request to `ListEnvironments`.
 ///
-/// <note>
-/// <p>Amazon EVS is in public preview release and is subject to change.</p>
-/// </note>
 /// <p>Lists the Amazon EVS environments in your Amazon Web Services account in the specified Amazon Web Services Region.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListEnvironmentsFluentBuilder {

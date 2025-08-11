@@ -173,6 +173,8 @@ impl DescribeVolumesFluentBuilder {
     /// <li>
     /// <p><code>availability-zone</code> - The Availability Zone in which the volume was created.</p></li>
     /// <li>
+    /// <p><code>availability-zone-id</code> - The ID of the Availability Zone in which the volume was created.</p></li>
+    /// <li>
     /// <p><code>create-time</code> - The time stamp when the volume was created.</p></li>
     /// <li>
     /// <p><code>encrypted</code> - Indicates whether the volume is encrypted (<code>true</code> | <code>false</code>)</p></li>
@@ -224,6 +226,8 @@ impl DescribeVolumesFluentBuilder {
     /// <li>
     /// <p><code>availability-zone</code> - The Availability Zone in which the volume was created.</p></li>
     /// <li>
+    /// <p><code>availability-zone-id</code> - The ID of the Availability Zone in which the volume was created.</p></li>
+    /// <li>
     /// <p><code>create-time</code> - The time stamp when the volume was created.</p></li>
     /// <li>
     /// <p><code>encrypted</code> - Indicates whether the volume is encrypted (<code>true</code> | <code>false</code>)</p></li>
@@ -274,6 +278,8 @@ impl DescribeVolumesFluentBuilder {
     /// <p><code>attachment.status</code> - The attachment state (<code>attaching</code> | <code>attached</code> | <code>detaching</code>).</p></li>
     /// <li>
     /// <p><code>availability-zone</code> - The Availability Zone in which the volume was created.</p></li>
+    /// <li>
+    /// <p><code>availability-zone-id</code> - The ID of the Availability Zone in which the volume was created.</p></li>
     /// <li>
     /// <p><code>create-time</code> - The time stamp when the volume was created.</p></li>
     /// <li>

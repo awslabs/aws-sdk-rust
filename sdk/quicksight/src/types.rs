@@ -569,6 +569,24 @@ pub use crate::types::_visual::Visual;
 
 pub use crate::types::_plugin_visual::PluginVisual;
 
+pub use crate::types::_visual_custom_action::VisualCustomAction;
+
+pub use crate::types::_visual_custom_action_operation::VisualCustomActionOperation;
+
+pub use crate::types::_custom_action_filter_operation::CustomActionFilterOperation;
+
+pub use crate::types::_filter_operation_target_visuals_configuration::FilterOperationTargetVisualsConfiguration;
+
+pub use crate::types::_same_sheet_target_visual_configuration::SameSheetTargetVisualConfiguration;
+
+pub use crate::types::_target_visual_options::TargetVisualOptions;
+
+pub use crate::types::_filter_operation_selected_fields_configuration::FilterOperationSelectedFieldsConfiguration;
+
+pub use crate::types::_selected_field_options::SelectedFieldOptions;
+
+pub use crate::types::_visual_custom_action_trigger::VisualCustomActionTrigger;
+
 pub use crate::types::_plugin_visual_configuration::PluginVisualConfiguration;
 
 pub use crate::types::_plugin_visual_sort_configuration::PluginVisualSortConfiguration;
@@ -634,24 +652,6 @@ pub use crate::types::_numeric_equality_drill_down_filter::NumericEqualityDrillD
 pub use crate::types::_date_time_hierarchy::DateTimeHierarchy;
 
 pub use crate::types::_explicit_hierarchy::ExplicitHierarchy;
-
-pub use crate::types::_visual_custom_action::VisualCustomAction;
-
-pub use crate::types::_visual_custom_action_operation::VisualCustomActionOperation;
-
-pub use crate::types::_custom_action_filter_operation::CustomActionFilterOperation;
-
-pub use crate::types::_filter_operation_target_visuals_configuration::FilterOperationTargetVisualsConfiguration;
-
-pub use crate::types::_same_sheet_target_visual_configuration::SameSheetTargetVisualConfiguration;
-
-pub use crate::types::_target_visual_options::TargetVisualOptions;
-
-pub use crate::types::_filter_operation_selected_fields_configuration::FilterOperationSelectedFieldsConfiguration;
-
-pub use crate::types::_selected_field_options::SelectedFieldOptions;
-
-pub use crate::types::_visual_custom_action_trigger::VisualCustomActionTrigger;
 
 pub use crate::types::_radar_chart_configuration::RadarChartConfiguration;
 

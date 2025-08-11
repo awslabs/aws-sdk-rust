@@ -6,6 +6,8 @@
 pub struct InstanceStatus {
     /// <p>The Availability Zone of the instance.</p>
     pub availability_zone: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the Availability Zone of the instance.</p>
+    pub availability_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
     pub outpost_arn: ::std::option::Option<::std::string::String>,
     /// <p>The service provider that manages the instance.</p>
@@ -27,6 +29,10 @@ impl InstanceStatus {
     /// <p>The Availability Zone of the instance.</p>
     pub fn availability_zone(&self) -> ::std::option::Option<&str> {
         self.availability_zone.as_deref()
+    }
+    /// <p>The ID of the Availability Zone of the instance.</p>
+    pub fn availability_zone_id(&self) -> ::std::option::Option<&str> {
+        self.availability_zone_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
     pub fn outpost_arn(&self) -> ::std::option::Option<&str> {
@@ -75,6 +81,7 @@ impl InstanceStatus {
 #[non_exhaustive]
 pub struct InstanceStatusBuilder {
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
+    pub(crate) availability_zone_id: ::std::option::Option<::std::string::String>,
     pub(crate) outpost_arn: ::std::option::Option<::std::string::String>,
     pub(crate) operator: ::std::option::Option<crate::types::OperatorResponse>,
     pub(crate) events: ::std::option::Option<::std::vec::Vec<crate::types::InstanceStatusEvent>>,
@@ -98,6 +105,20 @@ impl InstanceStatusBuilder {
     /// <p>The Availability Zone of the instance.</p>
     pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
         &self.availability_zone
+    }
+    /// <p>The ID of the Availability Zone of the instance.</p>
+    pub fn availability_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.availability_zone_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the Availability Zone of the instance.</p>
+    pub fn set_availability_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.availability_zone_id = input;
+        self
+    }
+    /// <p>The ID of the Availability Zone of the instance.</p>
+    pub fn get_availability_zone_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone_id
     }
     /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
     pub fn outpost_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -221,6 +242,7 @@ impl InstanceStatusBuilder {
     pub fn build(self) -> crate::types::InstanceStatus {
         crate::types::InstanceStatus {
             availability_zone: self.availability_zone,
+            availability_zone_id: self.availability_zone_id,
             outpost_arn: self.outpost_arn,
             operator: self.operator,
             events: self.events,

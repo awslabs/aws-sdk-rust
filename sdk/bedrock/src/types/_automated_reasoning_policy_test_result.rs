@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutomatedReasoningPolicyTestResult {
-    /// <p>Represents a test for validating an Automated Reasoning policy. tests contain sample inputs and expected outcomes to verify policy behavior.</p>
+    /// <p>The test case that was executed, including the input content, expected results, and configuration parameters used during validation.</p>
     pub test_case: ::std::option::Option<crate::types::AutomatedReasoningPolicyTestCase>,
     /// <p>The Amazon Resource Name (ARN) of the Automated Reasoning policy that was tested.</p>
     pub policy_arn: ::std::string::String,
@@ -20,7 +20,7 @@ pub struct AutomatedReasoningPolicyTestResult {
     pub updated_at: ::aws_smithy_types::DateTime,
 }
 impl AutomatedReasoningPolicyTestResult {
-    /// <p>Represents a test for validating an Automated Reasoning policy. tests contain sample inputs and expected outcomes to verify policy behavior.</p>
+    /// <p>The test case that was executed, including the input content, expected results, and configuration parameters used during validation.</p>
     pub fn test_case(&self) -> ::std::option::Option<&crate::types::AutomatedReasoningPolicyTestCase> {
         self.test_case.as_ref()
     }
@@ -72,18 +72,18 @@ pub struct AutomatedReasoningPolicyTestResultBuilder {
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl AutomatedReasoningPolicyTestResultBuilder {
-    /// <p>Represents a test for validating an Automated Reasoning policy. tests contain sample inputs and expected outcomes to verify policy behavior.</p>
+    /// <p>The test case that was executed, including the input content, expected results, and configuration parameters used during validation.</p>
     /// This field is required.
     pub fn test_case(mut self, input: crate::types::AutomatedReasoningPolicyTestCase) -> Self {
         self.test_case = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Represents a test for validating an Automated Reasoning policy. tests contain sample inputs and expected outcomes to verify policy behavior.</p>
+    /// <p>The test case that was executed, including the input content, expected results, and configuration parameters used during validation.</p>
     pub fn set_test_case(mut self, input: ::std::option::Option<crate::types::AutomatedReasoningPolicyTestCase>) -> Self {
         self.test_case = input;
         self
     }
-    /// <p>Represents a test for validating an Automated Reasoning policy. tests contain sample inputs and expected outcomes to verify policy behavior.</p>
+    /// <p>The test case that was executed, including the input content, expected results, and configuration parameters used during validation.</p>
     pub fn get_test_case(&self) -> &::std::option::Option<crate::types::AutomatedReasoningPolicyTestCase> {
         &self.test_case
     }

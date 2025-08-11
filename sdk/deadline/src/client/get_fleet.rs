@@ -11,6 +11,7 @@ impl super::Client {
     ///   - [`display_name(String)`](crate::operation::get_fleet::GetFleetOutput::display_name): <p>The display name of the fleet.</p><important>  <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p> </important>
     ///   - [`description(Option<String>)`](crate::operation::get_fleet::GetFleetOutput::description): <p>The description of the fleet.</p><important>  <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p> </important>
     ///   - [`status(FleetStatus)`](crate::operation::get_fleet::GetFleetOutput::status): <p>The status of the fleet.</p>
+    ///   - [`status_message(Option<String>)`](crate::operation::get_fleet::GetFleetOutput::status_message): <p>A message that communicates a suspended status of the fleet.</p>
     ///   - [`auto_scaling_status(Option<AutoScalingStatus>)`](crate::operation::get_fleet::GetFleetOutput::auto_scaling_status): <p>The Auto Scaling status of the fleet. Either <code>GROWING</code>, <code>STEADY</code>, or <code>SHRINKING</code>.</p>
     ///   - [`target_worker_count(Option<i32>)`](crate::operation::get_fleet::GetFleetOutput::target_worker_count): <p>The number of target workers in the fleet.</p>
     ///   - [`worker_count(i32)`](crate::operation::get_fleet::GetFleetOutput::worker_count): <p>The number of workers in the fleet.</p>

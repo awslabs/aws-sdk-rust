@@ -20,6 +20,11 @@ pub fn ser_create_default_subnet_input_input_input(
     if let Some(var_6) = &input.ipv6_native {
         scope_5.boolean(*var_6);
     }
+    #[allow(unused_mut)]
+    let mut scope_7 = writer.prefix("AvailabilityZoneId");
+    if let Some(var_8) = &input.availability_zone_id {
+        scope_7.string(var_8);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

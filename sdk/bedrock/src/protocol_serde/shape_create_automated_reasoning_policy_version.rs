@@ -136,6 +136,25 @@ pub fn de_create_automated_reasoning_policy_version_http_error(
                 tmp
             })
         }
+        "TooManyTagsException" => {
+            crate::operation::create_automated_reasoning_policy_version::CreateAutomatedReasoningPolicyVersionError::TooManyTagsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::TooManyTagsExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_too_many_tags_exception::de_too_many_tags_exception_json_err(_response_body, output)
+                        .map_err(
+                            crate::operation::create_automated_reasoning_policy_version::CreateAutomatedReasoningPolicyVersionError::unhandled,
+                        )?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "ValidationException" => {
             crate::operation::create_automated_reasoning_policy_version::CreateAutomatedReasoningPolicyVersionError::ValidationException({
                 #[allow(unused_mut)]

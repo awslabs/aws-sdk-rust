@@ -133,6 +133,12 @@ impl Default for DefaultAuthSchemeResolver {
                     )],
                 ),
                 (
+                    "GetTokensFromRefreshToken",
+                    vec![::aws_smithy_runtime_api::client::auth::AuthSchemeOption::from(
+                        ::aws_smithy_runtime::client::auth::no_auth::NO_AUTH_SCHEME_ID,
+                    )],
+                ),
+                (
                     "GetUser",
                     vec![::aws_smithy_runtime_api::client::auth::AuthSchemeOption::from(
                         ::aws_smithy_runtime::client::auth::no_auth::NO_AUTH_SCHEME_ID,

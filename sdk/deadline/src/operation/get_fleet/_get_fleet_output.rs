@@ -17,6 +17,8 @@ pub struct GetFleetOutput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The status of the fleet.</p>
     pub status: crate::types::FleetStatus,
+    /// <p>A message that communicates a suspended status of the fleet.</p>
+    pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The Auto Scaling status of the fleet. Either <code>GROWING</code>, <code>STEADY</code>, or <code>SHRINKING</code>.</p>
     pub auto_scaling_status: ::std::option::Option<crate::types::AutoScalingStatus>,
     /// <p>The number of target workers in the fleet.</p>
@@ -72,6 +74,10 @@ impl GetFleetOutput {
     /// <p>The status of the fleet.</p>
     pub fn status(&self) -> &crate::types::FleetStatus {
         &self.status
+    }
+    /// <p>A message that communicates a suspended status of the fleet.</p>
+    pub fn status_message(&self) -> ::std::option::Option<&str> {
+        self.status_message.as_deref()
     }
     /// <p>The Auto Scaling status of the fleet. Either <code>GROWING</code>, <code>STEADY</code>, or <code>SHRINKING</code>.</p>
     pub fn auto_scaling_status(&self) -> ::std::option::Option<&crate::types::AutoScalingStatus> {
@@ -136,6 +142,7 @@ impl ::std::fmt::Debug for GetFleetOutput {
         formatter.field("display_name", &self.display_name);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("status", &self.status);
+        formatter.field("status_message", &self.status_message);
         formatter.field("auto_scaling_status", &self.auto_scaling_status);
         formatter.field("target_worker_count", &self.target_worker_count);
         formatter.field("worker_count", &self.worker_count);
@@ -174,6 +181,7 @@ pub struct GetFleetOutputBuilder {
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::FleetStatus>,
+    pub(crate) status_message: ::std::option::Option<::std::string::String>,
     pub(crate) auto_scaling_status: ::std::option::Option<crate::types::AutoScalingStatus>,
     pub(crate) target_worker_count: ::std::option::Option<i32>,
     pub(crate) worker_count: ::std::option::Option<i32>,
@@ -275,6 +283,20 @@ impl GetFleetOutputBuilder {
     /// <p>The status of the fleet.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::FleetStatus> {
         &self.status
+    }
+    /// <p>A message that communicates a suspended status of the fleet.</p>
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status_message = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A message that communicates a suspended status of the fleet.</p>
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.status_message = input;
+        self
+    }
+    /// <p>A message that communicates a suspended status of the fleet.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
     }
     /// <p>The Auto Scaling status of the fleet. Either <code>GROWING</code>, <code>STEADY</code>, or <code>SHRINKING</code>.</p>
     pub fn auto_scaling_status(mut self, input: crate::types::AutoScalingStatus) -> Self {
@@ -513,6 +535,7 @@ impl GetFleetOutputBuilder {
                     "status was not specified but it is required when building GetFleetOutput",
                 )
             })?,
+            status_message: self.status_message,
             auto_scaling_status: self.auto_scaling_status,
             target_worker_count: self.target_worker_count,
             worker_count: self.worker_count.ok_or_else(|| {
@@ -568,6 +591,7 @@ impl ::std::fmt::Debug for GetFleetOutputBuilder {
         formatter.field("display_name", &self.display_name);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("status", &self.status);
+        formatter.field("status_message", &self.status_message);
         formatter.field("auto_scaling_status", &self.auto_scaling_status);
         formatter.field("target_worker_count", &self.target_worker_count);
         formatter.field("worker_count", &self.worker_count);

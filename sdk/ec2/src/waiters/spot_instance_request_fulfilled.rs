@@ -213,6 +213,8 @@ impl SpotInstanceRequestFulfilledFluentBuilder {
     /// <li>
     /// <p><code>launched-availability-zone</code> - The Availability Zone in which the request is launched.</p></li>
     /// <li>
+    /// <p><code>launched-availability-zone-id</code> - The ID of the Availability Zone in which the request is launched.</p></li>
+    /// <li>
     /// <p><code>network-interface.addresses.primary</code> - Indicates whether the IP address is the primary private IP address.</p></li>
     /// <li>
     /// <p><code>network-interface.delete-on-termination</code> - Indicates whether the network interface is deleted when the instance is terminated.</p></li>
@@ -298,6 +300,8 @@ impl SpotInstanceRequestFulfilledFluentBuilder {
     /// <li>
     /// <p><code>launched-availability-zone</code> - The Availability Zone in which the request is launched.</p></li>
     /// <li>
+    /// <p><code>launched-availability-zone-id</code> - The ID of the Availability Zone in which the request is launched.</p></li>
+    /// <li>
     /// <p><code>network-interface.addresses.primary</code> - Indicates whether the IP address is the primary private IP address.</p></li>
     /// <li>
     /// <p><code>network-interface.delete-on-termination</code> - Indicates whether the network interface is deleted when the instance is terminated.</p></li>
@@ -382,6 +386,8 @@ impl SpotInstanceRequestFulfilledFluentBuilder {
     /// <p><code>launch.ramdisk-id</code> - The RAM disk ID.</p></li>
     /// <li>
     /// <p><code>launched-availability-zone</code> - The Availability Zone in which the request is launched.</p></li>
+    /// <li>
+    /// <p><code>launched-availability-zone-id</code> - The ID of the Availability Zone in which the request is launched.</p></li>
     /// <li>
     /// <p><code>network-interface.addresses.primary</code> - Indicates whether the IP address is the primary private IP address.</p></li>
     /// <li>

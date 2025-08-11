@@ -286,6 +286,7 @@ impl From<crate::operation::create_automated_reasoning_policy_version::CreateAut
             crate::operation::create_automated_reasoning_policy_version::CreateAutomatedReasoningPolicyVersionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::create_automated_reasoning_policy_version::CreateAutomatedReasoningPolicyVersionError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
             crate::operation::create_automated_reasoning_policy_version::CreateAutomatedReasoningPolicyVersionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_automated_reasoning_policy_version::CreateAutomatedReasoningPolicyVersionError::TooManyTagsException(inner) => Error::TooManyTagsException(inner),
             crate::operation::create_automated_reasoning_policy_version::CreateAutomatedReasoningPolicyVersionError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_automated_reasoning_policy_version::CreateAutomatedReasoningPolicyVersionError::Unhandled(inner) => Error::Unhandled(inner),
         }

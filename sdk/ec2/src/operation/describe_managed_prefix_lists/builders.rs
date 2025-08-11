@@ -23,6 +23,7 @@ impl crate::operation::describe_managed_prefix_lists::builders::DescribeManagedP
 /// Fluent builder constructing a request to `DescribeManagedPrefixLists`.
 ///
 /// <p>Describes your managed prefix lists and any Amazon Web Services-managed prefix lists.</p>
+/// <p>To view the entries for your prefix list, use <code>GetManagedPrefixListEntries</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeManagedPrefixListsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

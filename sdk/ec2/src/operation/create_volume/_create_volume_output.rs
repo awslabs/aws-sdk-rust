@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateVolumeOutput {
+    /// <p>The ID of the Availability Zone for the volume.</p>
+    pub availability_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
     pub outpost_arn: ::std::option::Option<::std::string::String>,
     /// <p>The number of I/O operations per second (IOPS). For <code>gp3</code>, <code>io1</code>, and <code>io2</code> volumes, this represents the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents the baseline performance of the volume and the rate at which the volume accumulates I/O credits for bursting.</p>
@@ -54,6 +56,10 @@ pub struct CreateVolumeOutput {
     _request_id: Option<String>,
 }
 impl CreateVolumeOutput {
+    /// <p>The ID of the Availability Zone for the volume.</p>
+    pub fn availability_zone_id(&self) -> ::std::option::Option<&str> {
+        self.availability_zone_id.as_deref()
+    }
     /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
     pub fn outpost_arn(&self) -> ::std::option::Option<&str> {
         self.outpost_arn.as_deref()
@@ -160,6 +166,7 @@ impl CreateVolumeOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct CreateVolumeOutputBuilder {
+    pub(crate) availability_zone_id: ::std::option::Option<::std::string::String>,
     pub(crate) outpost_arn: ::std::option::Option<::std::string::String>,
     pub(crate) iops: ::std::option::Option<i32>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -182,6 +189,20 @@ pub struct CreateVolumeOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateVolumeOutputBuilder {
+    /// <p>The ID of the Availability Zone for the volume.</p>
+    pub fn availability_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.availability_zone_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the Availability Zone for the volume.</p>
+    pub fn set_availability_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.availability_zone_id = input;
+        self
+    }
+    /// <p>The ID of the Availability Zone for the volume.</p>
+    pub fn get_availability_zone_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
     pub fn outpost_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.outpost_arn = ::std::option::Option::Some(input.into());
@@ -499,6 +520,7 @@ impl CreateVolumeOutputBuilder {
     /// Consumes the builder and constructs a [`CreateVolumeOutput`](crate::operation::create_volume::CreateVolumeOutput).
     pub fn build(self) -> crate::operation::create_volume::CreateVolumeOutput {
         crate::operation::create_volume::CreateVolumeOutput {
+            availability_zone_id: self.availability_zone_id,
             outpost_arn: self.outpost_arn,
             iops: self.iops,
             tags: self.tags,

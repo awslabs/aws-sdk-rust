@@ -4,6 +4,9 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSpotPriceHistoryInput {
+    /// <p>Filters the results by the specified ID of the Availability Zone.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> can be specified, but not both</p>
+    pub availability_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The date and time, up to the past 90 days, from which to start retrieving the price history data, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
@@ -19,6 +22,8 @@ pub struct DescribeSpotPriceHistoryInput {
     /// <li>
     /// <p><code>availability-zone</code> - The Availability Zone for which prices should be returned.</p></li>
     /// <li>
+    /// <p><code>availability-zone-id</code> - The ID of the Availability Zone for which prices should be returned.</p></li>
+    /// <li>
     /// <p><code>instance-type</code> - The type of instance (for example, <code>m3.medium</code>).</p></li>
     /// <li>
     /// <p><code>product-description</code> - The product description for the Spot price (<code>Linux/UNIX</code> | <code>Red Hat Enterprise Linux</code> | <code>SUSE Linux</code> | <code>Windows</code> | <code>Linux/UNIX (Amazon VPC)</code> | <code>Red Hat Enterprise Linux (Amazon VPC)</code> | <code>SUSE Linux (Amazon VPC)</code> | <code>Windows (Amazon VPC)</code>).</p></li>
@@ -29,6 +34,7 @@ pub struct DescribeSpotPriceHistoryInput {
     /// </ul>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>Filters the results by the specified Availability Zone.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> can be specified, but not both</p>
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
     pub max_results: ::std::option::Option<i32>,
@@ -36,6 +42,11 @@ pub struct DescribeSpotPriceHistoryInput {
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeSpotPriceHistoryInput {
+    /// <p>Filters the results by the specified ID of the Availability Zone.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> can be specified, but not both</p>
+    pub fn availability_zone_id(&self) -> ::std::option::Option<&str> {
+        self.availability_zone_id.as_deref()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
@@ -65,6 +76,8 @@ impl DescribeSpotPriceHistoryInput {
     /// <li>
     /// <p><code>availability-zone</code> - The Availability Zone for which prices should be returned.</p></li>
     /// <li>
+    /// <p><code>availability-zone-id</code> - The ID of the Availability Zone for which prices should be returned.</p></li>
+    /// <li>
     /// <p><code>instance-type</code> - The type of instance (for example, <code>m3.medium</code>).</p></li>
     /// <li>
     /// <p><code>product-description</code> - The product description for the Spot price (<code>Linux/UNIX</code> | <code>Red Hat Enterprise Linux</code> | <code>SUSE Linux</code> | <code>Windows</code> | <code>Linux/UNIX (Amazon VPC)</code> | <code>Red Hat Enterprise Linux (Amazon VPC)</code> | <code>SUSE Linux (Amazon VPC)</code> | <code>Windows (Amazon VPC)</code>).</p></li>
@@ -79,6 +92,7 @@ impl DescribeSpotPriceHistoryInput {
         self.filters.as_deref().unwrap_or_default()
     }
     /// <p>Filters the results by the specified Availability Zone.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> can be specified, but not both</p>
     pub fn availability_zone(&self) -> ::std::option::Option<&str> {
         self.availability_zone.as_deref()
     }
@@ -102,6 +116,7 @@ impl DescribeSpotPriceHistoryInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct DescribeSpotPriceHistoryInputBuilder {
+    pub(crate) availability_zone_id: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -113,6 +128,23 @@ pub struct DescribeSpotPriceHistoryInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeSpotPriceHistoryInputBuilder {
+    /// <p>Filters the results by the specified ID of the Availability Zone.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> can be specified, but not both</p>
+    pub fn availability_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.availability_zone_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Filters the results by the specified ID of the Availability Zone.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> can be specified, but not both</p>
+    pub fn set_availability_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.availability_zone_id = input;
+        self
+    }
+    /// <p>Filters the results by the specified ID of the Availability Zone.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> can be specified, but not both</p>
+    pub fn get_availability_zone_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone_id
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -204,6 +236,8 @@ impl DescribeSpotPriceHistoryInputBuilder {
     /// <li>
     /// <p><code>availability-zone</code> - The Availability Zone for which prices should be returned.</p></li>
     /// <li>
+    /// <p><code>availability-zone-id</code> - The ID of the Availability Zone for which prices should be returned.</p></li>
+    /// <li>
     /// <p><code>instance-type</code> - The type of instance (for example, <code>m3.medium</code>).</p></li>
     /// <li>
     /// <p><code>product-description</code> - The product description for the Spot price (<code>Linux/UNIX</code> | <code>Red Hat Enterprise Linux</code> | <code>SUSE Linux</code> | <code>Windows</code> | <code>Linux/UNIX (Amazon VPC)</code> | <code>Red Hat Enterprise Linux (Amazon VPC)</code> | <code>SUSE Linux (Amazon VPC)</code> | <code>Windows (Amazon VPC)</code>).</p></li>
@@ -223,6 +257,8 @@ impl DescribeSpotPriceHistoryInputBuilder {
     /// <li>
     /// <p><code>availability-zone</code> - The Availability Zone for which prices should be returned.</p></li>
     /// <li>
+    /// <p><code>availability-zone-id</code> - The ID of the Availability Zone for which prices should be returned.</p></li>
+    /// <li>
     /// <p><code>instance-type</code> - The type of instance (for example, <code>m3.medium</code>).</p></li>
     /// <li>
     /// <p><code>product-description</code> - The product description for the Spot price (<code>Linux/UNIX</code> | <code>Red Hat Enterprise Linux</code> | <code>SUSE Linux</code> | <code>Windows</code> | <code>Linux/UNIX (Amazon VPC)</code> | <code>Red Hat Enterprise Linux (Amazon VPC)</code> | <code>SUSE Linux (Amazon VPC)</code> | <code>Windows (Amazon VPC)</code>).</p></li>
@@ -240,6 +276,8 @@ impl DescribeSpotPriceHistoryInputBuilder {
     /// <li>
     /// <p><code>availability-zone</code> - The Availability Zone for which prices should be returned.</p></li>
     /// <li>
+    /// <p><code>availability-zone-id</code> - The ID of the Availability Zone for which prices should be returned.</p></li>
+    /// <li>
     /// <p><code>instance-type</code> - The type of instance (for example, <code>m3.medium</code>).</p></li>
     /// <li>
     /// <p><code>product-description</code> - The product description for the Spot price (<code>Linux/UNIX</code> | <code>Red Hat Enterprise Linux</code> | <code>SUSE Linux</code> | <code>Windows</code> | <code>Linux/UNIX (Amazon VPC)</code> | <code>Red Hat Enterprise Linux (Amazon VPC)</code> | <code>SUSE Linux (Amazon VPC)</code> | <code>Windows (Amazon VPC)</code>).</p></li>
@@ -252,16 +290,19 @@ impl DescribeSpotPriceHistoryInputBuilder {
         &self.filters
     }
     /// <p>Filters the results by the specified Availability Zone.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> can be specified, but not both</p>
     pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Filters the results by the specified Availability Zone.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> can be specified, but not both</p>
     pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone = input;
         self
     }
     /// <p>Filters the results by the specified Availability Zone.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> can be specified, but not both</p>
     pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
         &self.availability_zone
     }
@@ -301,6 +342,7 @@ impl DescribeSpotPriceHistoryInputBuilder {
         ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_spot_price_history::DescribeSpotPriceHistoryInput {
+            availability_zone_id: self.availability_zone_id,
             dry_run: self.dry_run,
             start_time: self.start_time,
             end_time: self.end_time,

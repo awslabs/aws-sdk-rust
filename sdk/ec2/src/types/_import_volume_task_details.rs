@@ -6,6 +6,8 @@
 pub struct ImportVolumeTaskDetails {
     /// <p>The Availability Zone where the resulting volume will reside.</p>
     pub availability_zone: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the Availability Zone where the resulting volume will reside.</p>
+    pub availability_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>The number of bytes converted so far.</p>
     pub bytes_converted: ::std::option::Option<i64>,
     /// <p>The description you provided when starting the import volume task.</p>
@@ -19,6 +21,10 @@ impl ImportVolumeTaskDetails {
     /// <p>The Availability Zone where the resulting volume will reside.</p>
     pub fn availability_zone(&self) -> ::std::option::Option<&str> {
         self.availability_zone.as_deref()
+    }
+    /// <p>The ID of the Availability Zone where the resulting volume will reside.</p>
+    pub fn availability_zone_id(&self) -> ::std::option::Option<&str> {
+        self.availability_zone_id.as_deref()
     }
     /// <p>The number of bytes converted so far.</p>
     pub fn bytes_converted(&self) -> ::std::option::Option<i64> {
@@ -49,6 +55,7 @@ impl ImportVolumeTaskDetails {
 #[non_exhaustive]
 pub struct ImportVolumeTaskDetailsBuilder {
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
+    pub(crate) availability_zone_id: ::std::option::Option<::std::string::String>,
     pub(crate) bytes_converted: ::std::option::Option<i64>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) image: ::std::option::Option<crate::types::DiskImageDescription>,
@@ -68,6 +75,20 @@ impl ImportVolumeTaskDetailsBuilder {
     /// <p>The Availability Zone where the resulting volume will reside.</p>
     pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
         &self.availability_zone
+    }
+    /// <p>The ID of the Availability Zone where the resulting volume will reside.</p>
+    pub fn availability_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.availability_zone_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the Availability Zone where the resulting volume will reside.</p>
+    pub fn set_availability_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.availability_zone_id = input;
+        self
+    }
+    /// <p>The ID of the Availability Zone where the resulting volume will reside.</p>
+    pub fn get_availability_zone_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone_id
     }
     /// <p>The number of bytes converted so far.</p>
     pub fn bytes_converted(mut self, input: i64) -> Self {
@@ -129,6 +150,7 @@ impl ImportVolumeTaskDetailsBuilder {
     pub fn build(self) -> crate::types::ImportVolumeTaskDetails {
         crate::types::ImportVolumeTaskDetails {
             availability_zone: self.availability_zone,
+            availability_zone_id: self.availability_zone_id,
             bytes_converted: self.bytes_converted,
             description: self.description,
             image: self.image,

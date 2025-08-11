@@ -8,6 +8,8 @@
 pub struct SpotPrice {
     /// <p>The Availability Zone.</p>
     pub availability_zone: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the Availability Zone.</p>
+    pub availability_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>The instance type.</p>
     pub instance_type: ::std::option::Option<crate::types::InstanceType>,
     /// <p>A general description of the AMI.</p>
@@ -23,6 +25,10 @@ impl SpotPrice {
     /// <p>The Availability Zone.</p>
     pub fn availability_zone(&self) -> ::std::option::Option<&str> {
         self.availability_zone.as_deref()
+    }
+    /// <p>The ID of the Availability Zone.</p>
+    pub fn availability_zone_id(&self) -> ::std::option::Option<&str> {
+        self.availability_zone_id.as_deref()
     }
     /// <p>The instance type.</p>
     pub fn instance_type(&self) -> ::std::option::Option<&crate::types::InstanceType> {
@@ -55,6 +61,7 @@ impl SpotPrice {
 #[non_exhaustive]
 pub struct SpotPriceBuilder {
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
+    pub(crate) availability_zone_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_type: ::std::option::Option<crate::types::InstanceType>,
     pub(crate) product_description: ::std::option::Option<crate::types::RiProductDescription>,
     pub(crate) spot_price: ::std::option::Option<::std::string::String>,
@@ -74,6 +81,20 @@ impl SpotPriceBuilder {
     /// <p>The Availability Zone.</p>
     pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
         &self.availability_zone
+    }
+    /// <p>The ID of the Availability Zone.</p>
+    pub fn availability_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.availability_zone_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the Availability Zone.</p>
+    pub fn set_availability_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.availability_zone_id = input;
+        self
+    }
+    /// <p>The ID of the Availability Zone.</p>
+    pub fn get_availability_zone_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone_id
     }
     /// <p>The instance type.</p>
     pub fn instance_type(mut self, input: crate::types::InstanceType) -> Self {
@@ -141,6 +162,7 @@ impl SpotPriceBuilder {
     pub fn build(self) -> crate::types::SpotPrice {
         crate::types::SpotPrice {
             availability_zone: self.availability_zone,
+            availability_zone_id: self.availability_zone_id,
             instance_type: self.instance_type,
             product_description: self.product_description,
             spot_price: self.spot_price,

@@ -216,6 +216,13 @@ pub(crate) fn de_get_fleet(
                             .transpose()?,
                     );
                 }
+                "statusMessage" => {
+                    builder = builder.set_status_message(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "targetWorkerCount" => {
                     builder = builder.set_target_worker_count(
                         ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?

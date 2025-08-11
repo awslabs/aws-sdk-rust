@@ -121,8 +121,21 @@ pub fn de_spot_instance_request(
                 builder = builder.set_launched_availability_zone(var_9);
             }
             ,
-            s if s.matches("productDescription") /* ProductDescription com.amazonaws.ec2#SpotInstanceRequest$ProductDescription */ =>  {
+            s if s.matches("launchedAvailabilityZoneId") /* LaunchedAvailabilityZoneId com.amazonaws.ec2#SpotInstanceRequest$LaunchedAvailabilityZoneId */ =>  {
                 let var_10 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_launched_availability_zone_id(var_10);
+            }
+            ,
+            s if s.matches("productDescription") /* ProductDescription com.amazonaws.ec2#SpotInstanceRequest$ProductDescription */ =>  {
+                let var_11 =
                     Some(
                         Result::<crate::types::RiProductDescription, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::RiProductDescription::from(
@@ -132,23 +145,10 @@ pub fn de_spot_instance_request(
                         ?
                     )
                 ;
-                builder = builder.set_product_description(var_10);
+                builder = builder.set_product_description(var_11);
             }
             ,
             s if s.matches("spotInstanceRequestId") /* SpotInstanceRequestId com.amazonaws.ec2#SpotInstanceRequest$SpotInstanceRequestId */ =>  {
-                let var_11 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_spot_instance_request_id(var_11);
-            }
-            ,
-            s if s.matches("spotPrice") /* SpotPrice com.amazonaws.ec2#SpotInstanceRequest$SpotPrice */ =>  {
                 let var_12 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -158,11 +158,24 @@ pub fn de_spot_instance_request(
                         ?
                     )
                 ;
-                builder = builder.set_spot_price(var_12);
+                builder = builder.set_spot_instance_request_id(var_12);
+            }
+            ,
+            s if s.matches("spotPrice") /* SpotPrice com.amazonaws.ec2#SpotInstanceRequest$SpotPrice */ =>  {
+                let var_13 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_spot_price(var_13);
             }
             ,
             s if s.matches("state") /* State com.amazonaws.ec2#SpotInstanceRequest$State */ =>  {
-                let var_13 =
+                let var_14 =
                     Some(
                         Result::<crate::types::SpotInstanceState, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::SpotInstanceState::from(
@@ -172,31 +185,31 @@ pub fn de_spot_instance_request(
                         ?
                     )
                 ;
-                builder = builder.set_state(var_13);
+                builder = builder.set_state(var_14);
             }
             ,
             s if s.matches("status") /* Status com.amazonaws.ec2#SpotInstanceRequest$Status */ =>  {
-                let var_14 =
+                let var_15 =
                     Some(
                         crate::protocol_serde::shape_spot_instance_status::de_spot_instance_status(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_status(var_14);
+                builder = builder.set_status(var_15);
             }
             ,
             s if s.matches("tagSet") /* Tags com.amazonaws.ec2#SpotInstanceRequest$Tags */ =>  {
-                let var_15 =
+                let var_16 =
                     Some(
                         crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_tags(var_15);
+                builder = builder.set_tags(var_16);
             }
             ,
             s if s.matches("type") /* Type com.amazonaws.ec2#SpotInstanceRequest$Type */ =>  {
-                let var_16 =
+                let var_17 =
                     Some(
                         Result::<crate::types::SpotInstanceType, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::SpotInstanceType::from(
@@ -206,24 +219,10 @@ pub fn de_spot_instance_request(
                         ?
                     )
                 ;
-                builder = builder.set_type(var_16);
+                builder = builder.set_type(var_17);
             }
             ,
             s if s.matches("validFrom") /* ValidFrom com.amazonaws.ec2#SpotInstanceRequest$ValidFrom */ =>  {
-                let var_17 =
-                    Some(
-                        ::aws_smithy_types::DateTime::from_str(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , ::aws_smithy_types::date_time::Format::DateTimeWithOffset
-                        )
-                        .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (timestamp: `com.amazonaws.ec2#DateTime`)"))
-                        ?
-                    )
-                ;
-                builder = builder.set_valid_from(var_17);
-            }
-            ,
-            s if s.matches("validUntil") /* ValidUntil com.amazonaws.ec2#SpotInstanceRequest$ValidUntil */ =>  {
                 let var_18 =
                     Some(
                         ::aws_smithy_types::DateTime::from_str(
@@ -234,11 +233,25 @@ pub fn de_spot_instance_request(
                         ?
                     )
                 ;
-                builder = builder.set_valid_until(var_18);
+                builder = builder.set_valid_from(var_18);
+            }
+            ,
+            s if s.matches("validUntil") /* ValidUntil com.amazonaws.ec2#SpotInstanceRequest$ValidUntil */ =>  {
+                let var_19 =
+                    Some(
+                        ::aws_smithy_types::DateTime::from_str(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            , ::aws_smithy_types::date_time::Format::DateTimeWithOffset
+                        )
+                        .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (timestamp: `com.amazonaws.ec2#DateTime`)"))
+                        ?
+                    )
+                ;
+                builder = builder.set_valid_until(var_19);
             }
             ,
             s if s.matches("instanceInterruptionBehavior") /* InstanceInterruptionBehavior com.amazonaws.ec2#SpotInstanceRequest$InstanceInterruptionBehavior */ =>  {
-                let var_19 =
+                let var_20 =
                     Some(
                         Result::<crate::types::InstanceInterruptionBehavior, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::InstanceInterruptionBehavior::from(
@@ -248,7 +261,7 @@ pub fn de_spot_instance_request(
                         ?
                     )
                 ;
-                builder = builder.set_instance_interruption_behavior(var_19);
+                builder = builder.set_instance_interruption_behavior(var_20);
             }
             ,
             _ => {}

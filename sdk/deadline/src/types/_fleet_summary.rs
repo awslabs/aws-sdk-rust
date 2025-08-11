@@ -14,6 +14,8 @@ pub struct FleetSummary {
     pub display_name: ::std::string::String,
     /// <p>The status of the fleet.</p>
     pub status: crate::types::FleetStatus,
+    /// <p>A message that communicates a suspended status of the fleet.</p>
+    pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The Auto Scaling status of a fleet.</p>
     pub auto_scaling_status: ::std::option::Option<crate::types::AutoScalingStatus>,
     /// <p>The target number of workers in a fleet.</p>
@@ -56,6 +58,10 @@ impl FleetSummary {
     /// <p>The status of the fleet.</p>
     pub fn status(&self) -> &crate::types::FleetStatus {
         &self.status
+    }
+    /// <p>A message that communicates a suspended status of the fleet.</p>
+    pub fn status_message(&self) -> ::std::option::Option<&str> {
+        self.status_message.as_deref()
     }
     /// <p>The Auto Scaling status of a fleet.</p>
     pub fn auto_scaling_status(&self) -> ::std::option::Option<&crate::types::AutoScalingStatus> {
@@ -114,6 +120,7 @@ pub struct FleetSummaryBuilder {
     pub(crate) farm_id: ::std::option::Option<::std::string::String>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::FleetStatus>,
+    pub(crate) status_message: ::std::option::Option<::std::string::String>,
     pub(crate) auto_scaling_status: ::std::option::Option<crate::types::AutoScalingStatus>,
     pub(crate) target_worker_count: ::std::option::Option<i32>,
     pub(crate) worker_count: ::std::option::Option<i32>,
@@ -191,6 +198,20 @@ impl FleetSummaryBuilder {
     /// <p>The status of the fleet.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::FleetStatus> {
         &self.status
+    }
+    /// <p>A message that communicates a suspended status of the fleet.</p>
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status_message = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A message that communicates a suspended status of the fleet.</p>
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.status_message = input;
+        self
+    }
+    /// <p>A message that communicates a suspended status of the fleet.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
     }
     /// <p>The Auto Scaling status of a fleet.</p>
     pub fn auto_scaling_status(mut self, input: crate::types::AutoScalingStatus) -> Self {
@@ -375,6 +396,7 @@ impl FleetSummaryBuilder {
                     "status was not specified but it is required when building FleetSummary",
                 )
             })?,
+            status_message: self.status_message,
             auto_scaling_status: self.auto_scaling_status,
             target_worker_count: self.target_worker_count,
             worker_count: self.worker_count.ok_or_else(|| {
