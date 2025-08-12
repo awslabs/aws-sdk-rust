@@ -47,6 +47,8 @@ pub struct MedicalScribeStreamDetails {
     pub post_stream_analytics_settings: ::std::option::Option<crate::types::MedicalScribePostStreamAnalyticsSettings>,
     /// <p>The result of post-stream analytics for the HealthScribe streaming session.</p>
     pub post_stream_analytics_result: ::std::option::Option<crate::types::MedicalScribePostStreamAnalyticsResult>,
+    /// <p>Indicates whether the <code>MedicalScribeContext</code> object was provided when the stream was started.</p>
+    pub medical_scribe_context_provided: ::std::option::Option<bool>,
 }
 impl MedicalScribeStreamDetails {
     /// <p>The identifier of the HealthScribe streaming session.</p>
@@ -124,6 +126,10 @@ impl MedicalScribeStreamDetails {
     pub fn post_stream_analytics_result(&self) -> ::std::option::Option<&crate::types::MedicalScribePostStreamAnalyticsResult> {
         self.post_stream_analytics_result.as_ref()
     }
+    /// <p>Indicates whether the <code>MedicalScribeContext</code> object was provided when the stream was started.</p>
+    pub fn medical_scribe_context_provided(&self) -> ::std::option::Option<bool> {
+        self.medical_scribe_context_provided
+    }
 }
 impl MedicalScribeStreamDetails {
     /// Creates a new builder-style object to manufacture [`MedicalScribeStreamDetails`](crate::types::MedicalScribeStreamDetails).
@@ -151,6 +157,7 @@ pub struct MedicalScribeStreamDetailsBuilder {
     pub(crate) stream_status: ::std::option::Option<crate::types::MedicalScribeStreamStatus>,
     pub(crate) post_stream_analytics_settings: ::std::option::Option<crate::types::MedicalScribePostStreamAnalyticsSettings>,
     pub(crate) post_stream_analytics_result: ::std::option::Option<crate::types::MedicalScribePostStreamAnalyticsResult>,
+    pub(crate) medical_scribe_context_provided: ::std::option::Option<bool>,
 }
 impl MedicalScribeStreamDetailsBuilder {
     /// <p>The identifier of the HealthScribe streaming session.</p>
@@ -411,6 +418,20 @@ impl MedicalScribeStreamDetailsBuilder {
     pub fn get_post_stream_analytics_result(&self) -> &::std::option::Option<crate::types::MedicalScribePostStreamAnalyticsResult> {
         &self.post_stream_analytics_result
     }
+    /// <p>Indicates whether the <code>MedicalScribeContext</code> object was provided when the stream was started.</p>
+    pub fn medical_scribe_context_provided(mut self, input: bool) -> Self {
+        self.medical_scribe_context_provided = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether the <code>MedicalScribeContext</code> object was provided when the stream was started.</p>
+    pub fn set_medical_scribe_context_provided(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.medical_scribe_context_provided = input;
+        self
+    }
+    /// <p>Indicates whether the <code>MedicalScribeContext</code> object was provided when the stream was started.</p>
+    pub fn get_medical_scribe_context_provided(&self) -> &::std::option::Option<bool> {
+        &self.medical_scribe_context_provided
+    }
     /// Consumes the builder and constructs a [`MedicalScribeStreamDetails`](crate::types::MedicalScribeStreamDetails).
     pub fn build(self) -> crate::types::MedicalScribeStreamDetails {
         crate::types::MedicalScribeStreamDetails {
@@ -429,6 +450,7 @@ impl MedicalScribeStreamDetailsBuilder {
             stream_status: self.stream_status,
             post_stream_analytics_settings: self.post_stream_analytics_settings,
             post_stream_analytics_result: self.post_stream_analytics_result,
+            medical_scribe_context_provided: self.medical_scribe_context_provided,
         }
     }
 }

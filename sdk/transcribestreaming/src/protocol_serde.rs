@@ -87,6 +87,8 @@ pub(crate) mod shape_medical_scribe_channel_definition;
 
 pub(crate) mod shape_medical_scribe_channel_definitions;
 
+pub(crate) mod shape_medical_scribe_context;
+
 pub(crate) mod shape_medical_scribe_encryption_settings;
 
 pub(crate) mod shape_medical_scribe_post_stream_analytics_result;
@@ -108,6 +110,8 @@ pub(crate) mod shape_clinical_note_generation_result;
 pub(crate) mod shape_clinical_note_generation_settings;
 
 pub(crate) mod shape_kms_encryption_context_map;
+
+pub(crate) mod shape_medical_scribe_patient_context;
 
 pub(crate) mod shape_call_analytics_entity_list;
 

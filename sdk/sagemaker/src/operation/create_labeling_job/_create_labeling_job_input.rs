@@ -13,7 +13,7 @@ pub struct CreateLabelingJobInput {
     /// <p>If you are using one of the following <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-task-types.html">built-in task types</a>, the attribute name <i>must</i> end with "-ref". If the task type you are using is not listed below, the attribute name <i>must not</i> end with "-ref".</p>
     /// <ul>
     /// <li>
-    /// <p>Image semantic segmentation (<code>SemanticSegmentation)</code>, and adjustment (<code>AdjustmentSemanticSegmentation</code>) and verification (<code>VerificationSemanticSegmentation</code>) labeling jobs for this task type.</p></li>
+    /// <p>Verification (<code>VerificationSemanticSegmentation</code>) labeling jobs for this task type.</p></li>
     /// <li>
     /// <p>Video frame object detection (<code>VideoObjectDetection</code>), and adjustment and verification (<code>AdjustmentVideoObjectDetection</code>) labeling jobs for this task type.</p></li>
     /// <li>
@@ -82,7 +82,7 @@ impl CreateLabelingJobInput {
     /// <p>If you are using one of the following <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-task-types.html">built-in task types</a>, the attribute name <i>must</i> end with "-ref". If the task type you are using is not listed below, the attribute name <i>must not</i> end with "-ref".</p>
     /// <ul>
     /// <li>
-    /// <p>Image semantic segmentation (<code>SemanticSegmentation)</code>, and adjustment (<code>AdjustmentSemanticSegmentation</code>) and verification (<code>VerificationSemanticSegmentation</code>) labeling jobs for this task type.</p></li>
+    /// <p>Verification (<code>VerificationSemanticSegmentation</code>) labeling jobs for this task type.</p></li>
     /// <li>
     /// <p>Video frame object detection (<code>VideoObjectDetection</code>), and adjustment and verification (<code>AdjustmentVideoObjectDetection</code>) labeling jobs for this task type.</p></li>
     /// <li>
@@ -204,7 +204,7 @@ impl CreateLabelingJobInputBuilder {
     /// <p>If you are using one of the following <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-task-types.html">built-in task types</a>, the attribute name <i>must</i> end with "-ref". If the task type you are using is not listed below, the attribute name <i>must not</i> end with "-ref".</p>
     /// <ul>
     /// <li>
-    /// <p>Image semantic segmentation (<code>SemanticSegmentation)</code>, and adjustment (<code>AdjustmentSemanticSegmentation</code>) and verification (<code>VerificationSemanticSegmentation</code>) labeling jobs for this task type.</p></li>
+    /// <p>Verification (<code>VerificationSemanticSegmentation</code>) labeling jobs for this task type.</p></li>
     /// <li>
     /// <p>Video frame object detection (<code>VideoObjectDetection</code>), and adjustment and verification (<code>AdjustmentVideoObjectDetection</code>) labeling jobs for this task type.</p></li>
     /// <li>
@@ -231,7 +231,7 @@ impl CreateLabelingJobInputBuilder {
     /// <p>If you are using one of the following <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-task-types.html">built-in task types</a>, the attribute name <i>must</i> end with "-ref". If the task type you are using is not listed below, the attribute name <i>must not</i> end with "-ref".</p>
     /// <ul>
     /// <li>
-    /// <p>Image semantic segmentation (<code>SemanticSegmentation)</code>, and adjustment (<code>AdjustmentSemanticSegmentation</code>) and verification (<code>VerificationSemanticSegmentation</code>) labeling jobs for this task type.</p></li>
+    /// <p>Verification (<code>VerificationSemanticSegmentation</code>) labeling jobs for this task type.</p></li>
     /// <li>
     /// <p>Video frame object detection (<code>VideoObjectDetection</code>), and adjustment and verification (<code>AdjustmentVideoObjectDetection</code>) labeling jobs for this task type.</p></li>
     /// <li>
@@ -257,7 +257,7 @@ impl CreateLabelingJobInputBuilder {
     /// <p>If you are using one of the following <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-task-types.html">built-in task types</a>, the attribute name <i>must</i> end with "-ref". If the task type you are using is not listed below, the attribute name <i>must not</i> end with "-ref".</p>
     /// <ul>
     /// <li>
-    /// <p>Image semantic segmentation (<code>SemanticSegmentation)</code>, and adjustment (<code>AdjustmentSemanticSegmentation</code>) and verification (<code>VerificationSemanticSegmentation</code>) labeling jobs for this task type.</p></li>
+    /// <p>Verification (<code>VerificationSemanticSegmentation</code>) labeling jobs for this task type.</p></li>
     /// <li>
     /// <p>Video frame object detection (<code>VideoObjectDetection</code>), and adjustment and verification (<code>AdjustmentVideoObjectDetection</code>) labeling jobs for this task type.</p></li>
     /// <li>

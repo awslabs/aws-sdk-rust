@@ -42,5 +42,11 @@ pub fn ser_medical_scribe_configuration_event(
         )?;
         object_11.finish();
     }
+    if let Some(var_12) = &input.medical_scribe_context {
+        #[allow(unused_mut)]
+        let mut object_13 = object.key("MedicalScribeContext").start_object();
+        crate::protocol_serde::shape_medical_scribe_context::ser_medical_scribe_context(&mut object_13, var_12)?;
+        object_13.finish();
+    }
     Ok(())
 }

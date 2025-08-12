@@ -89,6 +89,8 @@ pub(crate) mod shape_list_accounts;
 
 pub(crate) mod shape_list_accounts_for_parent;
 
+pub(crate) mod shape_list_accounts_with_invalid_effective_policy;
+
 pub(crate) mod shape_list_aws_service_access_for_organization;
 
 pub(crate) mod shape_list_children;
@@ -98,6 +100,8 @@ pub(crate) mod shape_list_create_account_status;
 pub(crate) mod shape_list_delegated_administrators;
 
 pub(crate) mod shape_list_delegated_services_for_account;
+
+pub(crate) mod shape_list_effective_policy_validation_errors;
 
 pub(crate) mod shape_list_handshakes_for_account;
 
@@ -249,6 +253,8 @@ pub(crate) mod shape_list_accounts_for_parent_input;
 
 pub(crate) mod shape_list_accounts_input;
 
+pub(crate) mod shape_list_accounts_with_invalid_effective_policy_input;
+
 pub(crate) mod shape_list_aws_service_access_for_organization_input;
 
 pub(crate) mod shape_list_children_input;
@@ -258,6 +264,8 @@ pub(crate) mod shape_list_create_account_status_input;
 pub(crate) mod shape_list_delegated_administrators_input;
 
 pub(crate) mod shape_list_delegated_services_for_account_input;
+
+pub(crate) mod shape_list_effective_policy_validation_errors_input;
 
 pub(crate) mod shape_list_handshakes_for_account_input;
 
@@ -349,6 +357,8 @@ pub(crate) mod shape_delegated_services;
 
 pub(crate) mod shape_effective_policy;
 
+pub(crate) mod shape_effective_policy_validation_errors;
+
 pub(crate) mod shape_enabled_service_principals;
 
 pub(crate) mod shape_handshake;
@@ -389,6 +399,8 @@ pub(crate) mod shape_delegated_administrator;
 
 pub(crate) mod shape_delegated_service;
 
+pub(crate) mod shape_effective_policy_validation_error;
+
 pub(crate) mod shape_enabled_service_principal;
 
 pub(crate) mod shape_handshake_parties;
@@ -406,5 +418,7 @@ pub(crate) mod shape_policy_types;
 pub(crate) mod shape_resource_policy_summary;
 
 pub(crate) mod shape_handshake_resource;
+
+pub(crate) mod shape_policy_ids;
 
 pub(crate) mod shape_policy_type_summary;

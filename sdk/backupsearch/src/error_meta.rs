@@ -314,6 +314,7 @@ impl From<crate::operation::start_search_job::StartSearchJobError> for Error {
     fn from(err: crate::operation::start_search_job::StartSearchJobError) -> Self {
         match err {
             crate::operation::start_search_job::StartSearchJobError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::start_search_job::StartSearchJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::start_search_job::StartSearchJobError::ServiceQuotaExceededException(inner) => {
                 Error::ServiceQuotaExceededException(inner)
             }

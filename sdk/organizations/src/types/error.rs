@@ -45,6 +45,8 @@ pub use crate::types::error::_child_not_found_exception::ChildNotFoundException;
 
 pub use crate::types::error::_parent_not_found_exception::ParentNotFoundException;
 
+pub use crate::types::error::_effective_policy_not_found_exception::EffectivePolicyNotFoundException;
+
 pub use crate::types::error::_account_not_registered_exception::AccountNotRegisteredException;
 
 pub use crate::types::error::_handshake_constraint_violation_exception::HandshakeConstraintViolationException;
@@ -68,8 +70,6 @@ pub use crate::types::error::_policy_not_attached_exception::PolicyNotAttachedEx
 pub use crate::types::error::_resource_policy_not_found_exception::ResourcePolicyNotFoundException;
 
 pub use crate::types::error::_handshake_not_found_exception::HandshakeNotFoundException;
-
-pub use crate::types::error::_effective_policy_not_found_exception::EffectivePolicyNotFoundException;
 
 pub use crate::types::error::_create_account_status_not_found_exception::CreateAccountStatusNotFoundException;
 

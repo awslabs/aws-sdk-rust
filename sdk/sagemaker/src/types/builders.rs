@@ -289,6 +289,8 @@ pub use crate::types::_amazon_q_settings::AmazonQSettingsBuilder;
 
 pub use crate::types::_docker_settings::DockerSettingsBuilder;
 
+pub use crate::types::_trusted_identity_propagation_settings::TrustedIdentityPropagationSettingsBuilder;
+
 pub use crate::types::_r_studio_server_pro_domain_settings_for_update::RStudioServerProDomainSettingsForUpdateBuilder;
 
 pub use crate::types::_device::DeviceBuilder;

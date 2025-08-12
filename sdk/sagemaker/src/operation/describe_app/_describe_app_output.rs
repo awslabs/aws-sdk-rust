@@ -17,6 +17,8 @@ pub struct DescribeAppOutput {
     pub space_name: ::std::option::Option<::std::string::String>,
     /// <p>The status.</p>
     pub status: ::std::option::Option<crate::types::AppStatus>,
+    /// <p>The effective status of Trusted Identity Propagation (TIP) for this application. When enabled, user identities from IAM Identity Center are being propagated through the application to TIP enabled Amazon Web Services services. When disabled, standard IAM role-based access is used.</p>
+    pub effective_trusted_identity_propagation_status: ::std::option::Option<crate::types::FeatureStatus>,
     /// <p>Indicates whether the application is launched in recovery mode.</p>
     pub recovery_mode: ::std::option::Option<bool>,
     /// <p>The timestamp of the last health check.</p>
@@ -63,6 +65,10 @@ impl DescribeAppOutput {
     /// <p>The status.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::AppStatus> {
         self.status.as_ref()
+    }
+    /// <p>The effective status of Trusted Identity Propagation (TIP) for this application. When enabled, user identities from IAM Identity Center are being propagated through the application to TIP enabled Amazon Web Services services. When disabled, standard IAM role-based access is used.</p>
+    pub fn effective_trusted_identity_propagation_status(&self) -> ::std::option::Option<&crate::types::FeatureStatus> {
+        self.effective_trusted_identity_propagation_status.as_ref()
     }
     /// <p>Indicates whether the application is launched in recovery mode.</p>
     pub fn recovery_mode(&self) -> ::std::option::Option<bool> {
@@ -118,6 +124,7 @@ pub struct DescribeAppOutputBuilder {
     pub(crate) user_profile_name: ::std::option::Option<::std::string::String>,
     pub(crate) space_name: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::AppStatus>,
+    pub(crate) effective_trusted_identity_propagation_status: ::std::option::Option<crate::types::FeatureStatus>,
     pub(crate) recovery_mode: ::std::option::Option<bool>,
     pub(crate) last_health_check_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_user_activity_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -225,6 +232,20 @@ impl DescribeAppOutputBuilder {
     /// <p>The status.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::AppStatus> {
         &self.status
+    }
+    /// <p>The effective status of Trusted Identity Propagation (TIP) for this application. When enabled, user identities from IAM Identity Center are being propagated through the application to TIP enabled Amazon Web Services services. When disabled, standard IAM role-based access is used.</p>
+    pub fn effective_trusted_identity_propagation_status(mut self, input: crate::types::FeatureStatus) -> Self {
+        self.effective_trusted_identity_propagation_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The effective status of Trusted Identity Propagation (TIP) for this application. When enabled, user identities from IAM Identity Center are being propagated through the application to TIP enabled Amazon Web Services services. When disabled, standard IAM role-based access is used.</p>
+    pub fn set_effective_trusted_identity_propagation_status(mut self, input: ::std::option::Option<crate::types::FeatureStatus>) -> Self {
+        self.effective_trusted_identity_propagation_status = input;
+        self
+    }
+    /// <p>The effective status of Trusted Identity Propagation (TIP) for this application. When enabled, user identities from IAM Identity Center are being propagated through the application to TIP enabled Amazon Web Services services. When disabled, standard IAM role-based access is used.</p>
+    pub fn get_effective_trusted_identity_propagation_status(&self) -> &::std::option::Option<crate::types::FeatureStatus> {
+        &self.effective_trusted_identity_propagation_status
     }
     /// <p>Indicates whether the application is launched in recovery mode.</p>
     pub fn recovery_mode(mut self, input: bool) -> Self {
@@ -349,6 +370,7 @@ impl DescribeAppOutputBuilder {
             user_profile_name: self.user_profile_name,
             space_name: self.space_name,
             status: self.status,
+            effective_trusted_identity_propagation_status: self.effective_trusted_identity_propagation_status,
             recovery_mode: self.recovery_mode,
             last_health_check_timestamp: self.last_health_check_timestamp,
             last_user_activity_timestamp: self.last_user_activity_timestamp,

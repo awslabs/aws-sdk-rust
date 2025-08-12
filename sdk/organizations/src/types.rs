@@ -47,6 +47,10 @@ pub use crate::types::_handshake_party_type::HandshakePartyType;
 
 pub use crate::types::_handshake_filter::HandshakeFilter;
 
+pub use crate::types::_effective_policy_validation_error::EffectivePolicyValidationError;
+
+pub use crate::types::_effective_policy_type::EffectivePolicyType;
+
 pub use crate::types::_delegated_service::DelegatedService;
 
 pub use crate::types::_delegated_administrator::DelegatedAdministrator;
@@ -76,8 +80,6 @@ pub use crate::types::_organization::Organization;
 pub use crate::types::_organization_feature_set::OrganizationFeatureSet;
 
 pub use crate::types::_effective_policy::EffectivePolicy;
-
-pub use crate::types::_effective_policy_type::EffectivePolicyType;
 
 pub use crate::types::_access_denied_for_dependency_exception_reason::AccessDeniedForDependencyExceptionReason;
 
@@ -112,6 +114,8 @@ mod _delegated_service;
 mod _effective_policy;
 
 mod _effective_policy_type;
+
+mod _effective_policy_validation_error;
 
 mod _enabled_service_principal;
 

@@ -19,6 +19,16 @@ pub(crate) fn reflens_list_accounts_for_parent_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_accounts_with_invalid_effective_policy_output_output_next_token(
+    input: &crate::operation::list_accounts_with_invalid_effective_policy::ListAccountsWithInvalidEffectivePolicyOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_aws_service_access_for_organization_output_output_next_token(
     input: &crate::operation::list_aws_service_access_for_organization::ListAwsServiceAccessForOrganizationOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -61,6 +71,16 @@ pub(crate) fn reflens_list_delegated_administrators_output_output_next_token(
 
 pub(crate) fn reflens_list_delegated_services_for_account_output_output_next_token(
     input: &crate::operation::list_delegated_services_for_account::ListDelegatedServicesForAccountOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_effective_policy_validation_errors_output_output_next_token(
+    input: &crate::operation::list_effective_policy_validation_errors::ListEffectivePolicyValidationErrorsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -159,6 +179,13 @@ pub(crate) fn reflens_list_targets_for_policy_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_list_accounts_with_invalid_effective_policy_output_output_accounts(
+    input: crate::operation::list_accounts_with_invalid_effective_policy::ListAccountsWithInvalidEffectivePolicyOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::Account>> {
+    let input = input.accounts?;
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_delegated_administrators_output_output_delegated_administrators(
     input: crate::operation::list_delegated_administrators::ListDelegatedAdministratorsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DelegatedAdministrator>> {
@@ -170,6 +197,13 @@ pub(crate) fn lens_list_delegated_services_for_account_output_output_delegated_s
     input: crate::operation::list_delegated_services_for_account::ListDelegatedServicesForAccountOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DelegatedService>> {
     let input = input.delegated_services?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_effective_policy_validation_errors_output_output_effective_policy_validation_errors(
+    input: crate::operation::list_effective_policy_validation_errors::ListEffectivePolicyValidationErrorsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::EffectivePolicyValidationError>> {
+    let input = input.effective_policy_validation_errors?;
     ::std::option::Option::Some(input)
 }
 

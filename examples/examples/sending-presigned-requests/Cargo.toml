@@ -9,8 +9,8 @@ publish = false
 [dependencies]
 hyper-tls = "0.6.0"
 reqwest = "0.12.9"
-aws-config= { version = "1.8.4", path = "../../../sdk/aws-config", features = ["behavior-version-latest"] }
-aws-sdk-s3= { version = "1.101.0", path = "../../../sdk/s3", features = ["http-1x"] }
+aws-config= { version = "1.8.5", path = "../../../sdk/aws-config", features = ["behavior-version-latest"] }
+aws-sdk-s3= { version = "1.102.0", path = "../../../sdk/s3", features = ["http-1x"] }
 
 [dependencies.clap]
 version = "4.5.20"

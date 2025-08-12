@@ -55,6 +55,10 @@ pub use crate::types::_clinical_note_generation_settings::ClinicalNoteGeneration
 
 pub use crate::types::_medical_scribe_output::MedicalScribeOutputBuilder;
 
+pub use crate::types::_medical_scribe_context::MedicalScribeContextBuilder;
+
+pub use crate::types::_medical_scribe_patient_context::MedicalScribePatientContextBuilder;
+
 pub use crate::types::_call_analytics_job::CallAnalyticsJobBuilder;
 
 pub use crate::types::_channel_definition::ChannelDefinitionBuilder;

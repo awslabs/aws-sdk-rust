@@ -99,6 +99,12 @@ pub use crate::types::_medical_scribe_language_code::MedicalScribeLanguageCode;
 
 pub use crate::types::_medical_scribe_job_status::MedicalScribeJobStatus;
 
+pub use crate::types::_medical_scribe_context::MedicalScribeContext;
+
+pub use crate::types::_medical_scribe_patient_context::MedicalScribePatientContext;
+
+pub use crate::types::_pronouns::Pronouns;
+
 pub use crate::types::_call_analytics_job::CallAnalyticsJob;
 
 pub use crate::types::_channel_definition::ChannelDefinition;
@@ -195,6 +201,8 @@ mod _medical_content_identification_type;
 
 mod _medical_scribe_channel_definition;
 
+mod _medical_scribe_context;
+
 mod _medical_scribe_job;
 
 mod _medical_scribe_job_status;
@@ -208,6 +216,8 @@ mod _medical_scribe_note_template;
 mod _medical_scribe_output;
 
 mod _medical_scribe_participant_role;
+
+mod _medical_scribe_patient_context;
 
 mod _medical_scribe_settings;
 
@@ -230,6 +240,8 @@ mod _output_location_type;
 mod _participant_role;
 
 mod _pii_entity_type;
+
+mod _pronouns;
 
 mod _redaction_output;
 

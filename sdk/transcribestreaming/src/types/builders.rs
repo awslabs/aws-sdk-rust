@@ -41,6 +41,10 @@ pub use crate::types::_medical_scribe_transcript_item::MedicalScribeTranscriptIt
 
 pub use crate::types::_medical_scribe_configuration_event::MedicalScribeConfigurationEventBuilder;
 
+pub use crate::types::_medical_scribe_context::MedicalScribeContextBuilder;
+
+pub use crate::types::_medical_scribe_patient_context::MedicalScribePatientContextBuilder;
+
 pub use crate::types::_medical_scribe_post_stream_analytics_settings::MedicalScribePostStreamAnalyticsSettingsBuilder;
 
 pub use crate::types::_clinical_note_generation_settings::ClinicalNoteGenerationSettingsBuilder;

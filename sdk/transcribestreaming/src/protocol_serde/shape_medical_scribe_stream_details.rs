@@ -112,6 +112,10 @@ where
                                     crate::protocol_serde::shape_medical_scribe_post_stream_analytics_result::de_medical_scribe_post_stream_analytics_result(tokens)?
                                 );
                         }
+                        "MedicalScribeContextProvided" => {
+                            builder = builder
+                                .set_medical_scribe_context_provided(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

@@ -23,7 +23,6 @@ impl crate::operation::describe_prefix_lists::builders::DescribePrefixListsInput
 /// Fluent builder constructing a request to `DescribePrefixLists`.
 ///
 /// <p>Describes available Amazon Web Services services in a prefix list format, which includes the prefix list name and prefix list ID of the service and the IP address range for the service.</p>
-/// <p>We recommend that you use <code>DescribeManagedPrefixLists</code> instead.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribePrefixListsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

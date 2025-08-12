@@ -397,6 +397,8 @@ pub use crate::types::_amazon_q_settings::AmazonQSettings;
 
 pub use crate::types::_docker_settings::DockerSettings;
 
+pub use crate::types::_trusted_identity_propagation_settings::TrustedIdentityPropagationSettings;
+
 pub use crate::types::_execution_role_identity_config::ExecutionRoleIdentityConfig;
 
 pub use crate::types::_r_studio_server_pro_domain_settings_for_update::RStudioServerProDomainSettingsForUpdate;
@@ -3908,6 +3910,8 @@ mod _trial_component_summary;
 mod _trial_source;
 
 mod _trial_summary;
+
+mod _trusted_identity_propagation_settings;
 
 mod _ttl_duration;
 

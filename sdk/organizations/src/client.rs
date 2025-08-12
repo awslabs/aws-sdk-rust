@@ -229,6 +229,8 @@ mod list_accounts;
 
 mod list_accounts_for_parent;
 
+mod list_accounts_with_invalid_effective_policy;
+
 mod list_aws_service_access_for_organization;
 
 mod list_children;
@@ -238,6 +240,8 @@ mod list_create_account_status;
 mod list_delegated_administrators;
 
 mod list_delegated_services_for_account;
+
+mod list_effective_policy_validation_errors;
 
 mod list_handshakes_for_account;
 

@@ -1,0 +1,7 @@
+{
+  "name": "invalid-sso-credentials-config",
+  "docs": "config was invalid due to missing sso_account_id and sso_role_name",
+  "result": {
+    "ErrorContains": "selected profile will resolve an access token instead of credentials"
+  }
+}

@@ -1761,6 +1761,46 @@ impl From<crate::operation::list_accounts_for_parent::ListAccountsForParentError
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_accounts_with_invalid_effective_policy::ListAccountsWithInvalidEffectivePolicyError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_accounts_with_invalid_effective_policy::ListAccountsWithInvalidEffectivePolicyError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_accounts_with_invalid_effective_policy::ListAccountsWithInvalidEffectivePolicyError> for Error {
+    fn from(err: crate::operation::list_accounts_with_invalid_effective_policy::ListAccountsWithInvalidEffectivePolicyError) -> Self {
+        match err {
+            crate::operation::list_accounts_with_invalid_effective_policy::ListAccountsWithInvalidEffectivePolicyError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_accounts_with_invalid_effective_policy::ListAccountsWithInvalidEffectivePolicyError::AwsOrganizationsNotInUseException(inner) => Error::AwsOrganizationsNotInUseException(inner),
+            crate::operation::list_accounts_with_invalid_effective_policy::ListAccountsWithInvalidEffectivePolicyError::ConstraintViolationException(inner) => Error::ConstraintViolationException(inner),
+            crate::operation::list_accounts_with_invalid_effective_policy::ListAccountsWithInvalidEffectivePolicyError::EffectivePolicyNotFoundException(inner) => Error::EffectivePolicyNotFoundException(inner),
+            crate::operation::list_accounts_with_invalid_effective_policy::ListAccountsWithInvalidEffectivePolicyError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::list_accounts_with_invalid_effective_policy::ListAccountsWithInvalidEffectivePolicyError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::list_accounts_with_invalid_effective_policy::ListAccountsWithInvalidEffectivePolicyError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::list_accounts_with_invalid_effective_policy::ListAccountsWithInvalidEffectivePolicyError::UnsupportedApiEndpointException(inner) => Error::UnsupportedApiEndpointException(inner),
+            crate::operation::list_accounts_with_invalid_effective_policy::ListAccountsWithInvalidEffectivePolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::list_aws_service_access_for_organization::ListAWSServiceAccessForOrganizationError,
             R,
         >,
@@ -1967,6 +2007,47 @@ impl From<crate::operation::list_delegated_services_for_account::ListDelegatedSe
                 Error::UnsupportedApiEndpointException(inner)
             }
             crate::operation::list_delegated_services_for_account::ListDelegatedServicesForAccountError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_effective_policy_validation_errors::ListEffectivePolicyValidationErrorsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_effective_policy_validation_errors::ListEffectivePolicyValidationErrorsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_effective_policy_validation_errors::ListEffectivePolicyValidationErrorsError> for Error {
+    fn from(err: crate::operation::list_effective_policy_validation_errors::ListEffectivePolicyValidationErrorsError) -> Self {
+        match err {
+            crate::operation::list_effective_policy_validation_errors::ListEffectivePolicyValidationErrorsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_effective_policy_validation_errors::ListEffectivePolicyValidationErrorsError::AccountNotFoundException(inner) => Error::AccountNotFoundException(inner),
+            crate::operation::list_effective_policy_validation_errors::ListEffectivePolicyValidationErrorsError::AwsOrganizationsNotInUseException(inner) => Error::AwsOrganizationsNotInUseException(inner),
+            crate::operation::list_effective_policy_validation_errors::ListEffectivePolicyValidationErrorsError::ConstraintViolationException(inner) => Error::ConstraintViolationException(inner),
+            crate::operation::list_effective_policy_validation_errors::ListEffectivePolicyValidationErrorsError::EffectivePolicyNotFoundException(inner) => Error::EffectivePolicyNotFoundException(inner),
+            crate::operation::list_effective_policy_validation_errors::ListEffectivePolicyValidationErrorsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::list_effective_policy_validation_errors::ListEffectivePolicyValidationErrorsError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::list_effective_policy_validation_errors::ListEffectivePolicyValidationErrorsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::list_effective_policy_validation_errors::ListEffectivePolicyValidationErrorsError::UnsupportedApiEndpointException(inner) => Error::UnsupportedApiEndpointException(inner),
+            crate::operation::list_effective_policy_validation_errors::ListEffectivePolicyValidationErrorsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

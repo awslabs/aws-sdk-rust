@@ -25,6 +25,8 @@ pub struct MedicalScribeConfigurationEvent {
     pub encryption_settings: ::std::option::Option<crate::types::MedicalScribeEncryptionSettings>,
     /// <p>Specify settings for post-stream analytics.</p>
     pub post_stream_analytics_settings: ::std::option::Option<crate::types::MedicalScribePostStreamAnalyticsSettings>,
+    /// <p>The <code>MedicalScribeContext</code> object that contains contextual information used to generate customized clinical notes.</p>
+    pub medical_scribe_context: ::std::option::Option<crate::types::MedicalScribeContext>,
 }
 impl MedicalScribeConfigurationEvent {
     /// <p>Specify the name of the custom vocabulary you want to use for your streaming session. Custom vocabulary names are case-sensitive.</p>
@@ -64,6 +66,10 @@ impl MedicalScribeConfigurationEvent {
     pub fn post_stream_analytics_settings(&self) -> ::std::option::Option<&crate::types::MedicalScribePostStreamAnalyticsSettings> {
         self.post_stream_analytics_settings.as_ref()
     }
+    /// <p>The <code>MedicalScribeContext</code> object that contains contextual information used to generate customized clinical notes.</p>
+    pub fn medical_scribe_context(&self) -> ::std::option::Option<&crate::types::MedicalScribeContext> {
+        self.medical_scribe_context.as_ref()
+    }
 }
 impl MedicalScribeConfigurationEvent {
     /// Creates a new builder-style object to manufacture [`MedicalScribeConfigurationEvent`](crate::types::MedicalScribeConfigurationEvent).
@@ -83,6 +89,7 @@ pub struct MedicalScribeConfigurationEventBuilder {
     pub(crate) channel_definitions: ::std::option::Option<::std::vec::Vec<crate::types::MedicalScribeChannelDefinition>>,
     pub(crate) encryption_settings: ::std::option::Option<crate::types::MedicalScribeEncryptionSettings>,
     pub(crate) post_stream_analytics_settings: ::std::option::Option<crate::types::MedicalScribePostStreamAnalyticsSettings>,
+    pub(crate) medical_scribe_context: ::std::option::Option<crate::types::MedicalScribeContext>,
 }
 impl MedicalScribeConfigurationEventBuilder {
     /// <p>Specify the name of the custom vocabulary you want to use for your streaming session. Custom vocabulary names are case-sensitive.</p>
@@ -212,6 +219,20 @@ impl MedicalScribeConfigurationEventBuilder {
     pub fn get_post_stream_analytics_settings(&self) -> &::std::option::Option<crate::types::MedicalScribePostStreamAnalyticsSettings> {
         &self.post_stream_analytics_settings
     }
+    /// <p>The <code>MedicalScribeContext</code> object that contains contextual information used to generate customized clinical notes.</p>
+    pub fn medical_scribe_context(mut self, input: crate::types::MedicalScribeContext) -> Self {
+        self.medical_scribe_context = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The <code>MedicalScribeContext</code> object that contains contextual information used to generate customized clinical notes.</p>
+    pub fn set_medical_scribe_context(mut self, input: ::std::option::Option<crate::types::MedicalScribeContext>) -> Self {
+        self.medical_scribe_context = input;
+        self
+    }
+    /// <p>The <code>MedicalScribeContext</code> object that contains contextual information used to generate customized clinical notes.</p>
+    pub fn get_medical_scribe_context(&self) -> &::std::option::Option<crate::types::MedicalScribeContext> {
+        &self.medical_scribe_context
+    }
     /// Consumes the builder and constructs a [`MedicalScribeConfigurationEvent`](crate::types::MedicalScribeConfigurationEvent).
     /// This method will fail if any of the following fields are not set:
     /// - [`resource_access_role_arn`](crate::types::builders::MedicalScribeConfigurationEventBuilder::resource_access_role_arn)
@@ -229,6 +250,7 @@ impl MedicalScribeConfigurationEventBuilder {
             channel_definitions: self.channel_definitions,
             encryption_settings: self.encryption_settings,
             post_stream_analytics_settings: self.post_stream_analytics_settings,
+            medical_scribe_context: self.medical_scribe_context,
         })
     }
 }

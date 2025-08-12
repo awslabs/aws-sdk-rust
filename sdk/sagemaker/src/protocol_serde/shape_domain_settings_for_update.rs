@@ -24,23 +24,29 @@ pub fn ser_domain_settings_for_update(
         }
         array_5.finish();
     }
-    if let Some(var_7) = &input.docker_settings {
+    if let Some(var_7) = &input.trusted_identity_propagation_settings {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("DockerSettings").start_object();
-        crate::protocol_serde::shape_docker_settings::ser_docker_settings(&mut object_8, var_7)?;
+        let mut object_8 = object.key("TrustedIdentityPropagationSettings").start_object();
+        crate::protocol_serde::shape_trusted_identity_propagation_settings::ser_trusted_identity_propagation_settings(&mut object_8, var_7)?;
         object_8.finish();
     }
-    if let Some(var_9) = &input.amazon_q_settings {
+    if let Some(var_9) = &input.docker_settings {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("AmazonQSettings").start_object();
-        crate::protocol_serde::shape_amazon_q_settings::ser_amazon_q_settings(&mut object_10, var_9)?;
+        let mut object_10 = object.key("DockerSettings").start_object();
+        crate::protocol_serde::shape_docker_settings::ser_docker_settings(&mut object_10, var_9)?;
         object_10.finish();
     }
-    if let Some(var_11) = &input.unified_studio_settings {
+    if let Some(var_11) = &input.amazon_q_settings {
         #[allow(unused_mut)]
-        let mut object_12 = object.key("UnifiedStudioSettings").start_object();
-        crate::protocol_serde::shape_unified_studio_settings::ser_unified_studio_settings(&mut object_12, var_11)?;
+        let mut object_12 = object.key("AmazonQSettings").start_object();
+        crate::protocol_serde::shape_amazon_q_settings::ser_amazon_q_settings(&mut object_12, var_11)?;
         object_12.finish();
+    }
+    if let Some(var_13) = &input.unified_studio_settings {
+        #[allow(unused_mut)]
+        let mut object_14 = object.key("UnifiedStudioSettings").start_object();
+        crate::protocol_serde::shape_unified_studio_settings::ser_unified_studio_settings(&mut object_14, var_13)?;
+        object_14.finish();
     }
     Ok(())
 }

@@ -81,6 +81,12 @@ pub use crate::types::_medical_scribe_input_stream::MedicalScribeInputStream;
 
 pub use crate::types::_medical_scribe_configuration_event::MedicalScribeConfigurationEvent;
 
+pub use crate::types::_medical_scribe_context::MedicalScribeContext;
+
+pub use crate::types::_medical_scribe_patient_context::MedicalScribePatientContext;
+
+pub use crate::types::_pronouns::Pronouns;
+
 pub use crate::types::_medical_scribe_post_stream_analytics_settings::MedicalScribePostStreamAnalyticsSettings;
 
 pub use crate::types::_clinical_note_generation_settings::ClinicalNoteGenerationSettings;
@@ -197,6 +203,8 @@ mod _medical_scribe_channel_definition;
 
 mod _medical_scribe_configuration_event;
 
+mod _medical_scribe_context;
+
 mod _medical_scribe_encryption_settings;
 
 mod _medical_scribe_input_stream;
@@ -208,6 +216,8 @@ mod _medical_scribe_media_encoding;
 mod _medical_scribe_note_template;
 
 mod _medical_scribe_participant_role;
+
+mod _medical_scribe_patient_context;
 
 mod _medical_scribe_post_stream_analytics_result;
 
@@ -246,6 +256,8 @@ mod _participant_role;
 mod _points_of_interest;
 
 mod _post_call_analytics_settings;
+
+mod _pronouns;
 
 mod _result;
 

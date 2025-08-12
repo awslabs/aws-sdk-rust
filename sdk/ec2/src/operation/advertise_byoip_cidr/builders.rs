@@ -26,7 +26,6 @@ impl crate::operation::advertise_byoip_cidr::builders::AdvertiseByoipCidrInputBu
 /// <p>You can perform this operation at most once every 10 seconds, even if you specify different address ranges each time.</p>
 /// <p>We recommend that you stop advertising the BYOIP CIDR from other locations when you advertise it from Amazon Web Services. To minimize down time, you can configure your Amazon Web Services resources to use an address from a BYOIP CIDR before it is advertised, and then simultaneously stop advertising it from the current location and start advertising it through Amazon Web Services.</p>
 /// <p>It can take a few minutes before traffic to the specified addresses starts routing to Amazon Web Services because of BGP propagation delays.</p>
-/// <p>To stop advertising the BYOIP CIDR, use <code>WithdrawByoipCidr</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AdvertiseByoipCidrFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

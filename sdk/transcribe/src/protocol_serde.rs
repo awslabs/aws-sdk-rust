@@ -239,6 +239,8 @@ pub(crate) mod shape_media;
 
 pub(crate) mod shape_medical_scribe_channel_definition;
 
+pub(crate) mod shape_medical_scribe_context;
+
 pub(crate) mod shape_medical_scribe_job;
 
 pub(crate) mod shape_medical_scribe_job_summaries;
@@ -296,6 +298,8 @@ pub(crate) mod shape_medical_scribe_channel_definitions;
 pub(crate) mod shape_medical_scribe_job_summary;
 
 pub(crate) mod shape_medical_scribe_output;
+
+pub(crate) mod shape_medical_scribe_patient_context;
 
 pub(crate) mod shape_medical_transcript;
 

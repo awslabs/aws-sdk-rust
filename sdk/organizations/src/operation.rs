@@ -100,6 +100,9 @@ pub mod list_accounts;
 /// Types for the `ListAccountsForParent` operation.
 pub mod list_accounts_for_parent;
 
+/// Types for the `ListAccountsWithInvalidEffectivePolicy` operation.
+pub mod list_accounts_with_invalid_effective_policy;
+
 /// Types for the `ListAWSServiceAccessForOrganization` operation.
 pub mod list_aws_service_access_for_organization;
 
@@ -114,6 +117,9 @@ pub mod list_delegated_administrators;
 
 /// Types for the `ListDelegatedServicesForAccount` operation.
 pub mod list_delegated_services_for_account;
+
+/// Types for the `ListEffectivePolicyValidationErrors` operation.
+pub mod list_effective_policy_validation_errors;
 
 /// Types for the `ListHandshakesForAccount` operation.
 pub mod list_handshakes_for_account;

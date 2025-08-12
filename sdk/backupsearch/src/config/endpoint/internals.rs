@@ -37,21 +37,12 @@ pub(super) fn resolve_endpoint(
                         let mut out = String::new();
                         out.push_str("https://backup-search-fips.");
                         #[allow(clippy::needless_borrow)]
-                        out.push_str(&partition_result.implicit_global_region());
+                        out.push_str(&region.as_ref() as &str);
                         out.push('.');
                         #[allow(clippy::needless_borrow)]
                         out.push_str(&partition_result.dual_stack_dns_suffix());
                         out
                     })
-                    .property(
-                        "authSchemes",
-                        vec![::aws_smithy_types::Document::from({
-                            let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                            out.insert("name".to_string(), "sigv4".to_string().into());
-                            out.insert("signingRegion".to_string(), partition_result.implicit_global_region().to_owned().into());
-                            out
-                        })],
-                    )
                     .build());
             }
             return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
@@ -59,21 +50,12 @@ pub(super) fn resolve_endpoint(
                     let mut out = String::new();
                     out.push_str("https://backup-search.");
                     #[allow(clippy::needless_borrow)]
-                    out.push_str(&partition_result.implicit_global_region());
+                    out.push_str(&region.as_ref() as &str);
                     out.push('.');
                     #[allow(clippy::needless_borrow)]
                     out.push_str(&partition_result.dual_stack_dns_suffix());
                     out
                 })
-                .property(
-                    "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingRegion".to_string(), partition_result.implicit_global_region().to_owned().into());
-                        out
-                    })],
-                )
                 .build());
         }
         #[allow(unreachable_code)]

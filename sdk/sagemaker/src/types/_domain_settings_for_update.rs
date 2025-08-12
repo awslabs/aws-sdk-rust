@@ -10,6 +10,8 @@ pub struct DomainSettingsForUpdate {
     pub execution_role_identity_config: ::std::option::Option<crate::types::ExecutionRoleIdentityConfig>,
     /// <p>The security groups for the Amazon Virtual Private Cloud that the <code>Domain</code> uses for communication between Domain-level apps and user apps.</p>
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The Trusted Identity Propagation (TIP) settings for the SageMaker domain. These settings determine how user identities from IAM Identity Center are propagated through the domain to TIP enabled Amazon Web Services services.</p>
+    pub trusted_identity_propagation_settings: ::std::option::Option<crate::types::TrustedIdentityPropagationSettings>,
     /// <p>A collection of settings that configure the domain's Docker interaction.</p>
     pub docker_settings: ::std::option::Option<crate::types::DockerSettings>,
     /// <p>A collection of settings that configure the Amazon Q experience within the domain.</p>
@@ -31,6 +33,10 @@ impl DomainSettingsForUpdate {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
     pub fn security_group_ids(&self) -> &[::std::string::String] {
         self.security_group_ids.as_deref().unwrap_or_default()
+    }
+    /// <p>The Trusted Identity Propagation (TIP) settings for the SageMaker domain. These settings determine how user identities from IAM Identity Center are propagated through the domain to TIP enabled Amazon Web Services services.</p>
+    pub fn trusted_identity_propagation_settings(&self) -> ::std::option::Option<&crate::types::TrustedIdentityPropagationSettings> {
+        self.trusted_identity_propagation_settings.as_ref()
     }
     /// <p>A collection of settings that configure the domain's Docker interaction.</p>
     pub fn docker_settings(&self) -> ::std::option::Option<&crate::types::DockerSettings> {
@@ -59,6 +65,7 @@ pub struct DomainSettingsForUpdateBuilder {
     pub(crate) r_studio_server_pro_domain_settings_for_update: ::std::option::Option<crate::types::RStudioServerProDomainSettingsForUpdate>,
     pub(crate) execution_role_identity_config: ::std::option::Option<crate::types::ExecutionRoleIdentityConfig>,
     pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) trusted_identity_propagation_settings: ::std::option::Option<crate::types::TrustedIdentityPropagationSettings>,
     pub(crate) docker_settings: ::std::option::Option<crate::types::DockerSettings>,
     pub(crate) amazon_q_settings: ::std::option::Option<crate::types::AmazonQSettings>,
     pub(crate) unified_studio_settings: ::std::option::Option<crate::types::UnifiedStudioSettings>,
@@ -117,6 +124,23 @@ impl DomainSettingsForUpdateBuilder {
     pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_group_ids
     }
+    /// <p>The Trusted Identity Propagation (TIP) settings for the SageMaker domain. These settings determine how user identities from IAM Identity Center are propagated through the domain to TIP enabled Amazon Web Services services.</p>
+    pub fn trusted_identity_propagation_settings(mut self, input: crate::types::TrustedIdentityPropagationSettings) -> Self {
+        self.trusted_identity_propagation_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Trusted Identity Propagation (TIP) settings for the SageMaker domain. These settings determine how user identities from IAM Identity Center are propagated through the domain to TIP enabled Amazon Web Services services.</p>
+    pub fn set_trusted_identity_propagation_settings(
+        mut self,
+        input: ::std::option::Option<crate::types::TrustedIdentityPropagationSettings>,
+    ) -> Self {
+        self.trusted_identity_propagation_settings = input;
+        self
+    }
+    /// <p>The Trusted Identity Propagation (TIP) settings for the SageMaker domain. These settings determine how user identities from IAM Identity Center are propagated through the domain to TIP enabled Amazon Web Services services.</p>
+    pub fn get_trusted_identity_propagation_settings(&self) -> &::std::option::Option<crate::types::TrustedIdentityPropagationSettings> {
+        &self.trusted_identity_propagation_settings
+    }
     /// <p>A collection of settings that configure the domain's Docker interaction.</p>
     pub fn docker_settings(mut self, input: crate::types::DockerSettings) -> Self {
         self.docker_settings = ::std::option::Option::Some(input);
@@ -165,6 +189,7 @@ impl DomainSettingsForUpdateBuilder {
             r_studio_server_pro_domain_settings_for_update: self.r_studio_server_pro_domain_settings_for_update,
             execution_role_identity_config: self.execution_role_identity_config,
             security_group_ids: self.security_group_ids,
+            trusted_identity_propagation_settings: self.trusted_identity_propagation_settings,
             docker_settings: self.docker_settings,
             amazon_q_settings: self.amazon_q_settings,
             unified_studio_settings: self.unified_studio_settings,

@@ -487,6 +487,8 @@ pub(crate) mod shape_fleet_proxy_rules;
 
 pub(crate) mod shape_project_cache_modes;
 
+pub(crate) mod shape_pull_request_build_approver_roles;
+
 pub(crate) mod shape_sandbox_session_phases;
 
 pub(crate) mod shape_security_group_ids;

@@ -36,7 +36,9 @@ pub struct MedicalScribeJob {
     pub data_access_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Makes it possible to specify which speaker is on which channel. For example, if the clinician is the first participant to speak, you would set <code>ChannelId</code> of the first <code>ChannelDefinition</code> in the list to <code>0</code> (to indicate the first channel) and <code>ParticipantRole</code> to <code>CLINICIAN</code> (to indicate that it's the clinician speaking). Then you would set the <code>ChannelId</code> of the second <code>ChannelDefinition</code> in the list to <code>1</code> (to indicate the second channel) and <code>ParticipantRole</code> to <code>PATIENT</code> (to indicate that it's the patient speaking).</p>
     pub channel_definitions: ::std::option::Option<::std::vec::Vec<crate::types::MedicalScribeChannelDefinition>>,
-    /// <p>Adds one or more custom tags, each in the form of a key:value pair, to the Medica Scribe job.</p>
+    /// <p>Indicates whether the <code>MedicalScribeContext</code> object was provided when the Medical Scribe job was started.</p>
+    pub medical_scribe_context_provided: ::std::option::Option<bool>,
+    /// <p>Adds one or more custom tags, each in the form of a key:value pair, to the Medical Scribe job.</p>
     /// <p>To learn more about using tags with Amazon Transcribe, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging resources</a>.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
@@ -98,7 +100,11 @@ impl MedicalScribeJob {
     pub fn channel_definitions(&self) -> &[crate::types::MedicalScribeChannelDefinition] {
         self.channel_definitions.as_deref().unwrap_or_default()
     }
-    /// <p>Adds one or more custom tags, each in the form of a key:value pair, to the Medica Scribe job.</p>
+    /// <p>Indicates whether the <code>MedicalScribeContext</code> object was provided when the Medical Scribe job was started.</p>
+    pub fn medical_scribe_context_provided(&self) -> ::std::option::Option<bool> {
+        self.medical_scribe_context_provided
+    }
+    /// <p>Adds one or more custom tags, each in the form of a key:value pair, to the Medical Scribe job.</p>
     /// <p>To learn more about using tags with Amazon Transcribe, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging resources</a>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
@@ -129,6 +135,7 @@ pub struct MedicalScribeJobBuilder {
     pub(crate) settings: ::std::option::Option<crate::types::MedicalScribeSettings>,
     pub(crate) data_access_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) channel_definitions: ::std::option::Option<::std::vec::Vec<crate::types::MedicalScribeChannelDefinition>>,
+    pub(crate) medical_scribe_context_provided: ::std::option::Option<bool>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl MedicalScribeJobBuilder {
@@ -327,11 +334,25 @@ impl MedicalScribeJobBuilder {
     pub fn get_channel_definitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MedicalScribeChannelDefinition>> {
         &self.channel_definitions
     }
+    /// <p>Indicates whether the <code>MedicalScribeContext</code> object was provided when the Medical Scribe job was started.</p>
+    pub fn medical_scribe_context_provided(mut self, input: bool) -> Self {
+        self.medical_scribe_context_provided = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether the <code>MedicalScribeContext</code> object was provided when the Medical Scribe job was started.</p>
+    pub fn set_medical_scribe_context_provided(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.medical_scribe_context_provided = input;
+        self
+    }
+    /// <p>Indicates whether the <code>MedicalScribeContext</code> object was provided when the Medical Scribe job was started.</p>
+    pub fn get_medical_scribe_context_provided(&self) -> &::std::option::Option<bool> {
+        &self.medical_scribe_context_provided
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>Adds one or more custom tags, each in the form of a key:value pair, to the Medica Scribe job.</p>
+    /// <p>Adds one or more custom tags, each in the form of a key:value pair, to the Medical Scribe job.</p>
     /// <p>To learn more about using tags with Amazon Transcribe, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging resources</a>.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
@@ -339,13 +360,13 @@ impl MedicalScribeJobBuilder {
         self.tags = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Adds one or more custom tags, each in the form of a key:value pair, to the Medica Scribe job.</p>
+    /// <p>Adds one or more custom tags, each in the form of a key:value pair, to the Medical Scribe job.</p>
     /// <p>To learn more about using tags with Amazon Transcribe, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging resources</a>.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>Adds one or more custom tags, each in the form of a key:value pair, to the Medica Scribe job.</p>
+    /// <p>Adds one or more custom tags, each in the form of a key:value pair, to the Medical Scribe job.</p>
     /// <p>To learn more about using tags with Amazon Transcribe, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging resources</a>.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
@@ -365,6 +386,7 @@ impl MedicalScribeJobBuilder {
             settings: self.settings,
             data_access_role_arn: self.data_access_role_arn,
             channel_definitions: self.channel_definitions,
+            medical_scribe_context_provided: self.medical_scribe_context_provided,
             tags: self.tags,
         }
     }

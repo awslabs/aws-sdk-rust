@@ -14,6 +14,8 @@ pub struct RouteTableAssociation {
     pub subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the internet gateway or virtual private gateway.</p>
     pub gateway_id: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of a public IPv4 pool. A public IPv4 pool is a pool of IPv4 addresses that you've brought to Amazon Web Services with BYOIP.</p>
+    pub public_ipv4_pool: ::std::option::Option<::std::string::String>,
     /// <p>The state of the association.</p>
     pub association_state: ::std::option::Option<crate::types::RouteTableAssociationState>,
 }
@@ -38,6 +40,10 @@ impl RouteTableAssociation {
     pub fn gateway_id(&self) -> ::std::option::Option<&str> {
         self.gateway_id.as_deref()
     }
+    /// <p>The ID of a public IPv4 pool. A public IPv4 pool is a pool of IPv4 addresses that you've brought to Amazon Web Services with BYOIP.</p>
+    pub fn public_ipv4_pool(&self) -> ::std::option::Option<&str> {
+        self.public_ipv4_pool.as_deref()
+    }
     /// <p>The state of the association.</p>
     pub fn association_state(&self) -> ::std::option::Option<&crate::types::RouteTableAssociationState> {
         self.association_state.as_ref()
@@ -59,6 +65,7 @@ pub struct RouteTableAssociationBuilder {
     pub(crate) route_table_id: ::std::option::Option<::std::string::String>,
     pub(crate) subnet_id: ::std::option::Option<::std::string::String>,
     pub(crate) gateway_id: ::std::option::Option<::std::string::String>,
+    pub(crate) public_ipv4_pool: ::std::option::Option<::std::string::String>,
     pub(crate) association_state: ::std::option::Option<crate::types::RouteTableAssociationState>,
 }
 impl RouteTableAssociationBuilder {
@@ -132,6 +139,20 @@ impl RouteTableAssociationBuilder {
     pub fn get_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.gateway_id
     }
+    /// <p>The ID of a public IPv4 pool. A public IPv4 pool is a pool of IPv4 addresses that you've brought to Amazon Web Services with BYOIP.</p>
+    pub fn public_ipv4_pool(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.public_ipv4_pool = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of a public IPv4 pool. A public IPv4 pool is a pool of IPv4 addresses that you've brought to Amazon Web Services with BYOIP.</p>
+    pub fn set_public_ipv4_pool(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.public_ipv4_pool = input;
+        self
+    }
+    /// <p>The ID of a public IPv4 pool. A public IPv4 pool is a pool of IPv4 addresses that you've brought to Amazon Web Services with BYOIP.</p>
+    pub fn get_public_ipv4_pool(&self) -> &::std::option::Option<::std::string::String> {
+        &self.public_ipv4_pool
+    }
     /// <p>The state of the association.</p>
     pub fn association_state(mut self, input: crate::types::RouteTableAssociationState) -> Self {
         self.association_state = ::std::option::Option::Some(input);
@@ -154,6 +175,7 @@ impl RouteTableAssociationBuilder {
             route_table_id: self.route_table_id,
             subnet_id: self.subnet_id,
             gateway_id: self.gateway_id,
+            public_ipv4_pool: self.public_ipv4_pool,
             association_state: self.association_state,
         }
     }

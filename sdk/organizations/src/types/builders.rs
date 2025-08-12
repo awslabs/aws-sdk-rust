@@ -27,6 +27,8 @@ pub use crate::types::_handshake_party::HandshakePartyBuilder;
 
 pub use crate::types::_handshake_filter::HandshakeFilterBuilder;
 
+pub use crate::types::_effective_policy_validation_error::EffectivePolicyValidationErrorBuilder;
+
 pub use crate::types::_delegated_service::DelegatedServiceBuilder;
 
 pub use crate::types::_delegated_administrator::DelegatedAdministratorBuilder;

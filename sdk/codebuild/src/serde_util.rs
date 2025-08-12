@@ -39,6 +39,15 @@ pub(crate) fn project_source_correct_errors(
     builder
 }
 
+pub(crate) fn pull_request_build_policy_correct_errors(
+    mut builder: crate::types::builders::PullRequestBuildPolicyBuilder,
+) -> crate::types::builders::PullRequestBuildPolicyBuilder {
+    if builder.requires_comment_approval.is_none() {
+        builder.requires_comment_approval = "no value was set".parse::<crate::types::PullRequestBuildCommentApproval>().ok()
+    }
+    builder
+}
+
 pub(crate) fn scope_configuration_correct_errors(
     mut builder: crate::types::builders::ScopeConfigurationBuilder,
 ) -> crate::types::builders::ScopeConfigurationBuilder {

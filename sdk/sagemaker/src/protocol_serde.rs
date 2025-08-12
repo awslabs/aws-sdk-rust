@@ -2905,6 +2905,8 @@ pub(crate) mod shape_trial_component_summary;
 
 pub(crate) mod shape_trial_summary;
 
+pub(crate) mod shape_trusted_identity_propagation_settings;
+
 pub(crate) mod shape_ttl_duration;
 
 pub(crate) mod shape_tuning_job_completion_criteria;

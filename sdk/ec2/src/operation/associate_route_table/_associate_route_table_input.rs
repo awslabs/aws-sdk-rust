@@ -5,6 +5,8 @@
 pub struct AssociateRouteTableInput {
     /// <p>The ID of the internet gateway or virtual private gateway.</p>
     pub gateway_id: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of a public IPv4 pool. A public IPv4 pool is a pool of IPv4 addresses that you've brought to Amazon Web Services with BYOIP.</p>
+    pub public_ipv4_pool: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The ID of the subnet.</p>
@@ -16,6 +18,10 @@ impl AssociateRouteTableInput {
     /// <p>The ID of the internet gateway or virtual private gateway.</p>
     pub fn gateway_id(&self) -> ::std::option::Option<&str> {
         self.gateway_id.as_deref()
+    }
+    /// <p>The ID of a public IPv4 pool. A public IPv4 pool is a pool of IPv4 addresses that you've brought to Amazon Web Services with BYOIP.</p>
+    pub fn public_ipv4_pool(&self) -> ::std::option::Option<&str> {
+        self.public_ipv4_pool.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
@@ -42,6 +48,7 @@ impl AssociateRouteTableInput {
 #[non_exhaustive]
 pub struct AssociateRouteTableInputBuilder {
     pub(crate) gateway_id: ::std::option::Option<::std::string::String>,
+    pub(crate) public_ipv4_pool: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) subnet_id: ::std::option::Option<::std::string::String>,
     pub(crate) route_table_id: ::std::option::Option<::std::string::String>,
@@ -60,6 +67,20 @@ impl AssociateRouteTableInputBuilder {
     /// <p>The ID of the internet gateway or virtual private gateway.</p>
     pub fn get_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.gateway_id
+    }
+    /// <p>The ID of a public IPv4 pool. A public IPv4 pool is a pool of IPv4 addresses that you've brought to Amazon Web Services with BYOIP.</p>
+    pub fn public_ipv4_pool(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.public_ipv4_pool = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of a public IPv4 pool. A public IPv4 pool is a pool of IPv4 addresses that you've brought to Amazon Web Services with BYOIP.</p>
+    pub fn set_public_ipv4_pool(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.public_ipv4_pool = input;
+        self
+    }
+    /// <p>The ID of a public IPv4 pool. A public IPv4 pool is a pool of IPv4 addresses that you've brought to Amazon Web Services with BYOIP.</p>
+    pub fn get_public_ipv4_pool(&self) -> &::std::option::Option<::std::string::String> {
+        &self.public_ipv4_pool
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -111,6 +132,7 @@ impl AssociateRouteTableInputBuilder {
     {
         ::std::result::Result::Ok(crate::operation::associate_route_table::AssociateRouteTableInput {
             gateway_id: self.gateway_id,
+            public_ipv4_pool: self.public_ipv4_pool,
             dry_run: self.dry_run,
             subnet_id: self.subnet_id,
             route_table_id: self.route_table_id,

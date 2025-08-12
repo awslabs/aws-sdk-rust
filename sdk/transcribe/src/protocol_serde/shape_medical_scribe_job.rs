@@ -82,6 +82,10 @@ where
                                 crate::protocol_serde::shape_medical_scribe_channel_definitions::de_medical_scribe_channel_definitions(tokens)?,
                             );
                         }
+                        "MedicalScribeContextProvided" => {
+                            builder = builder
+                                .set_medical_scribe_context_provided(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
                         "Tags" => {
                             builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens)?);
                         }

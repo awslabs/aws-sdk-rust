@@ -47,6 +47,8 @@ pub struct Webhook {
     pub status: ::std::option::Option<crate::types::WebhookStatus>,
     /// <p>A message associated with the status of a webhook.</p>
     pub status_message: ::std::option::Option<::std::string::String>,
+    /// <p>A PullRequestBuildPolicy object that defines comment-based approval requirements for triggering builds on pull requests. This policy helps control when automated builds are executed based on contributor permissions and approval workflows.</p>
+    pub pull_request_build_policy: ::std::option::Option<crate::types::PullRequestBuildPolicy>,
 }
 impl Webhook {
     /// <p>The URL to the webhook.</p>
@@ -116,6 +118,10 @@ impl Webhook {
     pub fn status_message(&self) -> ::std::option::Option<&str> {
         self.status_message.as_deref()
     }
+    /// <p>A PullRequestBuildPolicy object that defines comment-based approval requirements for triggering builds on pull requests. This policy helps control when automated builds are executed based on contributor permissions and approval workflows.</p>
+    pub fn pull_request_build_policy(&self) -> ::std::option::Option<&crate::types::PullRequestBuildPolicy> {
+        self.pull_request_build_policy.as_ref()
+    }
 }
 impl Webhook {
     /// Creates a new builder-style object to manufacture [`Webhook`](crate::types::Webhook).
@@ -139,6 +145,7 @@ pub struct WebhookBuilder {
     pub(crate) scope_configuration: ::std::option::Option<crate::types::ScopeConfiguration>,
     pub(crate) status: ::std::option::Option<crate::types::WebhookStatus>,
     pub(crate) status_message: ::std::option::Option<::std::string::String>,
+    pub(crate) pull_request_build_policy: ::std::option::Option<crate::types::PullRequestBuildPolicy>,
 }
 impl WebhookBuilder {
     /// <p>The URL to the webhook.</p>
@@ -364,6 +371,20 @@ impl WebhookBuilder {
     pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.status_message
     }
+    /// <p>A PullRequestBuildPolicy object that defines comment-based approval requirements for triggering builds on pull requests. This policy helps control when automated builds are executed based on contributor permissions and approval workflows.</p>
+    pub fn pull_request_build_policy(mut self, input: crate::types::PullRequestBuildPolicy) -> Self {
+        self.pull_request_build_policy = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A PullRequestBuildPolicy object that defines comment-based approval requirements for triggering builds on pull requests. This policy helps control when automated builds are executed based on contributor permissions and approval workflows.</p>
+    pub fn set_pull_request_build_policy(mut self, input: ::std::option::Option<crate::types::PullRequestBuildPolicy>) -> Self {
+        self.pull_request_build_policy = input;
+        self
+    }
+    /// <p>A PullRequestBuildPolicy object that defines comment-based approval requirements for triggering builds on pull requests. This policy helps control when automated builds are executed based on contributor permissions and approval workflows.</p>
+    pub fn get_pull_request_build_policy(&self) -> &::std::option::Option<crate::types::PullRequestBuildPolicy> {
+        &self.pull_request_build_policy
+    }
     /// Consumes the builder and constructs a [`Webhook`](crate::types::Webhook).
     pub fn build(self) -> crate::types::Webhook {
         crate::types::Webhook {
@@ -378,6 +399,7 @@ impl WebhookBuilder {
             scope_configuration: self.scope_configuration,
             status: self.status,
             status_message: self.status_message,
+            pull_request_build_policy: self.pull_request_build_policy,
         }
     }
 }

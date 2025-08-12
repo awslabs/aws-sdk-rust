@@ -5369,6 +5369,15 @@ pub(crate) fn trial_component_artifact_correct_errors(
     builder
 }
 
+pub(crate) fn trusted_identity_propagation_settings_correct_errors(
+    mut builder: crate::types::builders::TrustedIdentityPropagationSettingsBuilder,
+) -> crate::types::builders::TrustedIdentityPropagationSettingsBuilder {
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::FeatureStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn ultra_server_correct_errors(mut builder: crate::types::builders::UltraServerBuilder) -> crate::types::builders::UltraServerBuilder {
     if builder.ultra_server_id.is_none() {
         builder.ultra_server_id = Some(Default::default())

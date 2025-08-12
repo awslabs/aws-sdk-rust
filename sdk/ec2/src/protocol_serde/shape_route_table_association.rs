@@ -74,14 +74,27 @@ pub fn de_route_table_association(
                 builder = builder.set_gateway_id(var_5);
             }
             ,
-            s if s.matches("associationState") /* AssociationState com.amazonaws.ec2#RouteTableAssociation$AssociationState */ =>  {
+            s if s.matches("publicIpv4Pool") /* PublicIpv4Pool com.amazonaws.ec2#RouteTableAssociation$PublicIpv4Pool */ =>  {
                 let var_6 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_public_ipv4_pool(var_6);
+            }
+            ,
+            s if s.matches("associationState") /* AssociationState com.amazonaws.ec2#RouteTableAssociation$AssociationState */ =>  {
+                let var_7 =
                     Some(
                         crate::protocol_serde::shape_route_table_association_state::de_route_table_association_state(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_association_state(var_6);
+                builder = builder.set_association_state(var_7);
             }
             ,
             _ => {}

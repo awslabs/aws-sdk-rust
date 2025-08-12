@@ -79,6 +79,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "pullRequestBuildPolicy" => {
+                            builder = builder.set_pull_request_build_policy(
+                                crate::protocol_serde::shape_pull_request_build_policy::de_pull_request_build_policy(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

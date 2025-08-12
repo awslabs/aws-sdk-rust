@@ -364,13 +364,11 @@ impl Display for ProfileFileError {
                 write!(f, "profile `{profile}` has invalid SSO config: {message}")
             }
             ProfileFileError::TokenProviderConfig { .. } => {
-                // TODO(https://github.com/awslabs/aws-sdk-rust/issues/703): Update error message once token support is added
                 write!(
                     f,
                     "selected profile will resolve an access token instead of credentials \
-                     since it doesn't have `sso_account_id` and `sso_role_name` set. Access token \
-                     support for services such as Code Catalyst hasn't been implemented yet and is \
-                     being tracked in https://github.com/awslabs/aws-sdk-rust/issues/703"
+                     since it doesn't have `sso_account_id` and `sso_role_name` set. Specify both \
+                     `sso_account_id` and `sso_role_name` to let this profile resolve credentials."
                 )
             }
         }
@@ -618,6 +616,8 @@ mod test {
     make_test!(credential_process_invalid);
     #[cfg(feature = "sso")]
     make_test!(sso_credentials);
+    #[cfg(feature = "sso")]
+    make_test!(invalid_sso_credentials_config);
     #[cfg(feature = "sso")]
     make_test!(sso_override_global_env_url);
     #[cfg(feature = "sso")]

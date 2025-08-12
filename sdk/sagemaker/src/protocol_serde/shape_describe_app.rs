@@ -123,6 +123,13 @@ pub(crate) fn de_describe_app(
                             .transpose()?,
                     );
                 }
+                "EffectiveTrustedIdentityPropagationStatus" => {
+                    builder = builder.set_effective_trusted_identity_propagation_status(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::FeatureStatus::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 "RecoveryMode" => {
                     builder = builder.set_recovery_mode(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
