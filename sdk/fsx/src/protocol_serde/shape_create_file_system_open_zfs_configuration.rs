@@ -51,20 +51,23 @@ pub fn ser_create_file_system_open_zfs_configuration(
     if let Some(var_13) = &input.endpoint_ip_address_range {
         object.key("EndpointIpAddressRange").string(var_13.as_str());
     }
-    if let Some(var_14) = &input.route_table_ids {
-        let mut array_15 = object.key("RouteTableIds").start_array();
-        for item_16 in var_14 {
+    if let Some(var_14) = &input.endpoint_ipv6_address_range {
+        object.key("EndpointIpv6AddressRange").string(var_14.as_str());
+    }
+    if let Some(var_15) = &input.route_table_ids {
+        let mut array_16 = object.key("RouteTableIds").start_array();
+        for item_17 in var_15 {
             {
-                array_15.value().string(item_16.as_str());
+                array_16.value().string(item_17.as_str());
             }
         }
-        array_15.finish();
+        array_16.finish();
     }
-    if let Some(var_17) = &input.read_cache_configuration {
+    if let Some(var_18) = &input.read_cache_configuration {
         #[allow(unused_mut)]
-        let mut object_18 = object.key("ReadCacheConfiguration").start_object();
-        crate::protocol_serde::shape_open_zfs_read_cache_configuration::ser_open_zfs_read_cache_configuration(&mut object_18, var_17)?;
-        object_18.finish();
+        let mut object_19 = object.key("ReadCacheConfiguration").start_object();
+        crate::protocol_serde::shape_open_zfs_read_cache_configuration::ser_open_zfs_read_cache_configuration(&mut object_19, var_18)?;
+        object_19.finish();
     }
     Ok(())
 }

@@ -122,87 +122,87 @@ impl CreateQuantumTaskFluentBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
-    /// <p>The ARN of the device to run the task on.</p>
+    /// <p>The ARN of the device to run the quantum task on.</p>
     pub fn device_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.device_arn(input.into());
         self
     }
-    /// <p>The ARN of the device to run the task on.</p>
+    /// <p>The ARN of the device to run the quantum task on.</p>
     pub fn set_device_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_device_arn(input);
         self
     }
-    /// <p>The ARN of the device to run the task on.</p>
+    /// <p>The ARN of the device to run the quantum task on.</p>
     pub fn get_device_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_device_arn()
     }
-    /// <p>The parameters for the device to run the task on.</p>
+    /// <p>The parameters for the device to run the quantum task on.</p>
     pub fn device_parameters(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.device_parameters(input.into());
         self
     }
-    /// <p>The parameters for the device to run the task on.</p>
+    /// <p>The parameters for the device to run the quantum task on.</p>
     pub fn set_device_parameters(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_device_parameters(input);
         self
     }
-    /// <p>The parameters for the device to run the task on.</p>
+    /// <p>The parameters for the device to run the quantum task on.</p>
     pub fn get_device_parameters(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_device_parameters()
     }
-    /// <p>The number of shots to use for the task.</p>
+    /// <p>The number of shots to use for the quantum task.</p>
     pub fn shots(mut self, input: i64) -> Self {
         self.inner = self.inner.shots(input);
         self
     }
-    /// <p>The number of shots to use for the task.</p>
+    /// <p>The number of shots to use for the quantum task.</p>
     pub fn set_shots(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_shots(input);
         self
     }
-    /// <p>The number of shots to use for the task.</p>
+    /// <p>The number of shots to use for the quantum task.</p>
     pub fn get_shots(&self) -> &::std::option::Option<i64> {
         self.inner.get_shots()
     }
-    /// <p>The S3 bucket to store task result files in.</p>
+    /// <p>The S3 bucket to store quantum task result files in.</p>
     pub fn output_s3_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.output_s3_bucket(input.into());
         self
     }
-    /// <p>The S3 bucket to store task result files in.</p>
+    /// <p>The S3 bucket to store quantum task result files in.</p>
     pub fn set_output_s3_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_output_s3_bucket(input);
         self
     }
-    /// <p>The S3 bucket to store task result files in.</p>
+    /// <p>The S3 bucket to store quantum task result files in.</p>
     pub fn get_output_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_output_s3_bucket()
     }
-    /// <p>The key prefix for the location in the S3 bucket to store task results in.</p>
+    /// <p>The key prefix for the location in the S3 bucket to store quantum task results in.</p>
     pub fn output_s3_key_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.output_s3_key_prefix(input.into());
         self
     }
-    /// <p>The key prefix for the location in the S3 bucket to store task results in.</p>
+    /// <p>The key prefix for the location in the S3 bucket to store quantum task results in.</p>
     pub fn set_output_s3_key_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_output_s3_key_prefix(input);
         self
     }
-    /// <p>The key prefix for the location in the S3 bucket to store task results in.</p>
+    /// <p>The key prefix for the location in the S3 bucket to store quantum task results in.</p>
     pub fn get_output_s3_key_prefix(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_output_s3_key_prefix()
     }
-    /// <p>The action associated with the task.</p>
+    /// <p>The action associated with the quantum task.</p>
     pub fn action(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.action(input.into());
         self
     }
-    /// <p>The action associated with the task.</p>
+    /// <p>The action associated with the quantum task.</p>
     pub fn set_action(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_action(input);
         self
     }
-    /// <p>The action associated with the task.</p>
+    /// <p>The action associated with the quantum task.</p>
     pub fn get_action(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_action()
     }
@@ -225,17 +225,17 @@ impl CreateQuantumTaskFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
-    /// <p>The token for an Amazon Braket job that associates it with the quantum task.</p>
+    /// <p>The token for an Amazon Braket hybrid job that associates it with the quantum task.</p>
     pub fn job_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.job_token(input.into());
         self
     }
-    /// <p>The token for an Amazon Braket job that associates it with the quantum task.</p>
+    /// <p>The token for an Amazon Braket hybrid job that associates it with the quantum task.</p>
     pub fn set_job_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_job_token(input);
         self
     }
-    /// <p>The token for an Amazon Braket job that associates it with the quantum task.</p>
+    /// <p>The token for an Amazon Braket hybrid job that associates it with the quantum task.</p>
     pub fn get_job_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_job_token()
     }

@@ -22,7 +22,7 @@ impl crate::operation::create_membership::builders::CreateMembershipInputBuilder
 }
 /// Fluent builder constructing a request to `CreateMembership`.
 ///
-/// <p>Grants permissions to create a new membership.</p>
+/// <p>Creates a new membership.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateMembershipFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,37 @@ impl CreateMembershipFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>An optional element used in combination with CreateMembership.</p>
+    /// <note>
+    /// <p>The <code>clientToken</code> field is an idempotency key used to ensure that repeated attempts for a single action will be ignored by the server during retries. A caller supplied unique ID (typically a UUID) should be provided.</p>
+    /// </note>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
-    /// <p>An optional element used in combination with CreateMembership.</p>
+    /// <note>
+    /// <p>The <code>clientToken</code> field is an idempotency key used to ensure that repeated attempts for a single action will be ignored by the server during retries. A caller supplied unique ID (typically a UUID) should be provided.</p>
+    /// </note>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
-    /// <p>An optional element used in combination with CreateMembership.</p>
+    /// <note>
+    /// <p>The <code>clientToken</code> field is an idempotency key used to ensure that repeated attempts for a single action will be ignored by the server during retries. A caller supplied unique ID (typically a UUID) should be provided.</p>
+    /// </note>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
-    /// <p>Required element use in combination with CreateMembership to create a name for the membership.</p>
+    /// <p>Required element used in combination with CreateMembership to create a name for the membership.</p>
     pub fn membership_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.membership_name(input.into());
         self
     }
-    /// <p>Required element use in combination with CreateMembership to create a name for the membership.</p>
+    /// <p>Required element used in combination with CreateMembership to create a name for the membership.</p>
     pub fn set_membership_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_membership_name(input);
         self
     }
-    /// <p>Required element use in combination with CreateMembership to create a name for the membership.</p>
+    /// <p>Required element used in combination with CreateMembership to create a name for the membership.</p>
     pub fn get_membership_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_membership_name()
     }
@@ -141,17 +147,17 @@ impl CreateMembershipFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_incident_response_team`](Self::set_incident_response_team).
     ///
-    /// <p>Required element use in combination with CreateMembership to add customer incident response team members and trusted partners to the membership.</p>
+    /// <p>Required element used in combination with CreateMembership to add customer incident response team members and trusted partners to the membership.</p>
     pub fn incident_response_team(mut self, input: crate::types::IncidentResponder) -> Self {
         self.inner = self.inner.incident_response_team(input);
         self
     }
-    /// <p>Required element use in combination with CreateMembership to add customer incident response team members and trusted partners to the membership.</p>
+    /// <p>Required element used in combination with CreateMembership to add customer incident response team members and trusted partners to the membership.</p>
     pub fn set_incident_response_team(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IncidentResponder>>) -> Self {
         self.inner = self.inner.set_incident_response_team(input);
         self
     }
-    /// <p>Required element use in combination with CreateMembership to add customer incident response team members and trusted partners to the membership.</p>
+    /// <p>Required element used in combination with CreateMembership to add customer incident response team members and trusted partners to the membership.</p>
     pub fn get_incident_response_team(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IncidentResponder>> {
         self.inner.get_incident_response_team()
     }
@@ -192,5 +198,40 @@ impl CreateMembershipFluentBuilder {
     /// <p>Optional element for customer configured tags.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
+    }
+    /// <p>The <code>coverEntireOrganization</code> parameter is a boolean flag that determines whether the membership should be applied to the entire Amazon Web Services Organization. When set to true, the membership will be created for all accounts within the organization. When set to false, the membership will only be created for specified accounts.</p>
+    /// <p>This parameter is optional. If not specified, the default value is false.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If set to <i>true</i>: The membership will automatically include all existing and future accounts in the Amazon Web Services Organization.</p></li>
+    /// <li>
+    /// <p>If set to <i>false</i>: The membership will only apply to explicitly specified accounts.</p></li>
+    /// </ul>
+    pub fn cover_entire_organization(mut self, input: bool) -> Self {
+        self.inner = self.inner.cover_entire_organization(input);
+        self
+    }
+    /// <p>The <code>coverEntireOrganization</code> parameter is a boolean flag that determines whether the membership should be applied to the entire Amazon Web Services Organization. When set to true, the membership will be created for all accounts within the organization. When set to false, the membership will only be created for specified accounts.</p>
+    /// <p>This parameter is optional. If not specified, the default value is false.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If set to <i>true</i>: The membership will automatically include all existing and future accounts in the Amazon Web Services Organization.</p></li>
+    /// <li>
+    /// <p>If set to <i>false</i>: The membership will only apply to explicitly specified accounts.</p></li>
+    /// </ul>
+    pub fn set_cover_entire_organization(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_cover_entire_organization(input);
+        self
+    }
+    /// <p>The <code>coverEntireOrganization</code> parameter is a boolean flag that determines whether the membership should be applied to the entire Amazon Web Services Organization. When set to true, the membership will be created for all accounts within the organization. When set to false, the membership will only be created for specified accounts.</p>
+    /// <p>This parameter is optional. If not specified, the default value is false.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If set to <i>true</i>: The membership will automatically include all existing and future accounts in the Amazon Web Services Organization.</p></li>
+    /// <li>
+    /// <p>If set to <i>false</i>: The membership will only apply to explicitly specified accounts.</p></li>
+    /// </ul>
+    pub fn get_cover_entire_organization(&self) -> &::std::option::Option<bool> {
+        self.inner.get_cover_entire_organization()
     }
 }

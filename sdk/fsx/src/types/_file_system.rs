@@ -84,6 +84,8 @@ pub struct FileSystem {
     pub file_system_type_version: ::std::option::Option<::std::string::String>,
     /// <p>The configuration for this Amazon FSx for OpenZFS file system.</p>
     pub open_zfs_configuration: ::std::option::Option<crate::types::OpenZfsFileSystemConfiguration>,
+    /// <p>The network type of the file system.</p>
+    pub network_type: ::std::option::Option<crate::types::NetworkType>,
 }
 impl FileSystem {
     /// <p>The Amazon Web Services account that created the file system. If the file system was created by a user in IAM Identity Center, the Amazon Web Services account to which the IAM user belongs is the owner.</p>
@@ -216,6 +218,10 @@ impl FileSystem {
     pub fn open_zfs_configuration(&self) -> ::std::option::Option<&crate::types::OpenZfsFileSystemConfiguration> {
         self.open_zfs_configuration.as_ref()
     }
+    /// <p>The network type of the file system.</p>
+    pub fn network_type(&self) -> ::std::option::Option<&crate::types::NetworkType> {
+        self.network_type.as_ref()
+    }
 }
 impl FileSystem {
     /// Creates a new builder-style object to manufacture [`FileSystem`](crate::types::FileSystem).
@@ -249,6 +255,7 @@ pub struct FileSystemBuilder {
     pub(crate) ontap_configuration: ::std::option::Option<crate::types::OntapFileSystemConfiguration>,
     pub(crate) file_system_type_version: ::std::option::Option<::std::string::String>,
     pub(crate) open_zfs_configuration: ::std::option::Option<crate::types::OpenZfsFileSystemConfiguration>,
+    pub(crate) network_type: ::std::option::Option<crate::types::NetworkType>,
 }
 impl FileSystemBuilder {
     /// <p>The Amazon Web Services account that created the file system. If the file system was created by a user in IAM Identity Center, the Amazon Web Services account to which the IAM user belongs is the owner.</p>
@@ -683,6 +690,20 @@ impl FileSystemBuilder {
     pub fn get_open_zfs_configuration(&self) -> &::std::option::Option<crate::types::OpenZfsFileSystemConfiguration> {
         &self.open_zfs_configuration
     }
+    /// <p>The network type of the file system.</p>
+    pub fn network_type(mut self, input: crate::types::NetworkType) -> Self {
+        self.network_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The network type of the file system.</p>
+    pub fn set_network_type(mut self, input: ::std::option::Option<crate::types::NetworkType>) -> Self {
+        self.network_type = input;
+        self
+    }
+    /// <p>The network type of the file system.</p>
+    pub fn get_network_type(&self) -> &::std::option::Option<crate::types::NetworkType> {
+        &self.network_type
+    }
     /// Consumes the builder and constructs a [`FileSystem`](crate::types::FileSystem).
     pub fn build(self) -> crate::types::FileSystem {
         crate::types::FileSystem {
@@ -707,6 +728,7 @@ impl FileSystemBuilder {
             ontap_configuration: self.ontap_configuration,
             file_system_type_version: self.file_system_type_version,
             open_zfs_configuration: self.open_zfs_configuration,
+            network_type: self.network_type,
         }
     }
 }

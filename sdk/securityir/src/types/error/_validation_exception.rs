@@ -4,20 +4,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ValidationException {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The exception message.</p>
     pub message: ::std::string::String,
-    /// Element that provides the reason the request failed validation.
+    /// <p>The reason for the exception.</p>
     pub reason: crate::types::ValidationExceptionReason,
-    /// Element that provides the list of field(s) that caused the error, if applicable.
+    /// <p>The fields which lead to the exception.</p>
     pub field_list: ::std::option::Option<::std::vec::Vec<crate::types::ValidationExceptionField>>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl ValidationException {
-    /// Element that provides the reason the request failed validation.
+    /// <p>The reason for the exception.</p>
     pub fn reason(&self) -> &crate::types::ValidationExceptionReason {
         &self.reason
     }
-    /// Element that provides the list of field(s) that caused the error, if applicable.
+    /// <p>The fields which lead to the exception.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.field_list.is_none()`.
     pub fn field_list(&self) -> &[crate::types::ValidationExceptionField] {
@@ -68,33 +68,33 @@ pub struct ValidationExceptionBuilder {
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl ValidationExceptionBuilder {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The exception message.</p>
     /// This field is required.
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The exception message.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The exception message.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
     }
-    /// Element that provides the reason the request failed validation.
+    /// <p>The reason for the exception.</p>
     /// This field is required.
     pub fn reason(mut self, input: crate::types::ValidationExceptionReason) -> Self {
         self.reason = ::std::option::Option::Some(input);
         self
     }
-    /// Element that provides the reason the request failed validation.
+    /// <p>The reason for the exception.</p>
     pub fn set_reason(mut self, input: ::std::option::Option<crate::types::ValidationExceptionReason>) -> Self {
         self.reason = input;
         self
     }
-    /// Element that provides the reason the request failed validation.
+    /// <p>The reason for the exception.</p>
     pub fn get_reason(&self) -> &::std::option::Option<crate::types::ValidationExceptionReason> {
         &self.reason
     }
@@ -102,19 +102,19 @@ impl ValidationExceptionBuilder {
     ///
     /// To override the contents of this collection use [`set_field_list`](Self::set_field_list).
     ///
-    /// Element that provides the list of field(s) that caused the error, if applicable.
+    /// <p>The fields which lead to the exception.</p>
     pub fn field_list(mut self, input: crate::types::ValidationExceptionField) -> Self {
         let mut v = self.field_list.unwrap_or_default();
         v.push(input);
         self.field_list = ::std::option::Option::Some(v);
         self
     }
-    /// Element that provides the list of field(s) that caused the error, if applicable.
+    /// <p>The fields which lead to the exception.</p>
     pub fn set_field_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ValidationExceptionField>>) -> Self {
         self.field_list = input;
         self
     }
-    /// Element that provides the list of field(s) that caused the error, if applicable.
+    /// <p>The fields which lead to the exception.</p>
     pub fn get_field_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ValidationExceptionField>> {
         &self.field_list
     }

@@ -33,16 +33,25 @@ pub fn ser_environment_configuration(
         crate::protocol_serde::shape_aws_account::ser_aws_account(&mut object_7, var_6)?;
         object_7.finish();
     }
-    if let Some(var_8) = &input.aws_region {
-        #[allow(unused_mut)]
-        let mut object_9 = object.key("awsRegion").start_object();
-        crate::protocol_serde::shape_region::ser_region(&mut object_9, var_8)?;
-        object_9.finish();
+    if let Some(var_8) = &input.account_pools {
+        let mut array_9 = object.key("accountPools").start_array();
+        for item_10 in var_8 {
+            {
+                array_9.value().string(item_10.as_str());
+            }
+        }
+        array_9.finish();
     }
-    if let Some(var_10) = &input.deployment_order {
+    if let Some(var_11) = &input.aws_region {
+        #[allow(unused_mut)]
+        let mut object_12 = object.key("awsRegion").start_object();
+        crate::protocol_serde::shape_region::ser_region(&mut object_12, var_11)?;
+        object_12.finish();
+    }
+    if let Some(var_13) = &input.deployment_order {
         object.key("deploymentOrder").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_10).into()),
+            ::aws_smithy_types::Number::NegInt((*var_13).into()),
         );
     }
     Ok(())
@@ -105,6 +114,9 @@ where
                         }
                         "awsAccount" => {
                             builder = builder.set_aws_account(crate::protocol_serde::shape_aws_account::de_aws_account(tokens)?);
+                        }
+                        "accountPools" => {
+                            builder = builder.set_account_pools(crate::protocol_serde::shape_account_pool_list::de_account_pool_list(tokens)?);
                         }
                         "awsRegion" => {
                             builder = builder.set_aws_region(crate::protocol_serde::shape_region::de_region(tokens)?);

@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetQuantumTaskInput {
-    /// <p>The ARN of the task to retrieve.</p>
+    /// <p>The ARN of the quantum task to retrieve.</p>
     pub quantum_task_arn: ::std::option::Option<::std::string::String>,
-    /// <p>A list of attributes to return information for.</p>
+    /// <p>A list of attributes to return additional information for. Only the QueueInfo additional attribute name is currently supported.</p>
     pub additional_attribute_names: ::std::option::Option<::std::vec::Vec<crate::types::QuantumTaskAdditionalAttributeName>>,
 }
 impl GetQuantumTaskInput {
-    /// <p>The ARN of the task to retrieve.</p>
+    /// <p>The ARN of the quantum task to retrieve.</p>
     pub fn quantum_task_arn(&self) -> ::std::option::Option<&str> {
         self.quantum_task_arn.as_deref()
     }
-    /// <p>A list of attributes to return information for.</p>
+    /// <p>A list of attributes to return additional information for. Only the QueueInfo additional attribute name is currently supported.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_attribute_names.is_none()`.
     pub fn additional_attribute_names(&self) -> &[crate::types::QuantumTaskAdditionalAttributeName] {
@@ -35,18 +35,18 @@ pub struct GetQuantumTaskInputBuilder {
     pub(crate) additional_attribute_names: ::std::option::Option<::std::vec::Vec<crate::types::QuantumTaskAdditionalAttributeName>>,
 }
 impl GetQuantumTaskInputBuilder {
-    /// <p>The ARN of the task to retrieve.</p>
+    /// <p>The ARN of the quantum task to retrieve.</p>
     /// This field is required.
     pub fn quantum_task_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.quantum_task_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the task to retrieve.</p>
+    /// <p>The ARN of the quantum task to retrieve.</p>
     pub fn set_quantum_task_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.quantum_task_arn = input;
         self
     }
-    /// <p>The ARN of the task to retrieve.</p>
+    /// <p>The ARN of the quantum task to retrieve.</p>
     pub fn get_quantum_task_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.quantum_task_arn
     }
@@ -54,14 +54,14 @@ impl GetQuantumTaskInputBuilder {
     ///
     /// To override the contents of this collection use [`set_additional_attribute_names`](Self::set_additional_attribute_names).
     ///
-    /// <p>A list of attributes to return information for.</p>
+    /// <p>A list of attributes to return additional information for. Only the QueueInfo additional attribute name is currently supported.</p>
     pub fn additional_attribute_names(mut self, input: crate::types::QuantumTaskAdditionalAttributeName) -> Self {
         let mut v = self.additional_attribute_names.unwrap_or_default();
         v.push(input);
         self.additional_attribute_names = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of attributes to return information for.</p>
+    /// <p>A list of attributes to return additional information for. Only the QueueInfo additional attribute name is currently supported.</p>
     pub fn set_additional_attribute_names(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::QuantumTaskAdditionalAttributeName>>,
@@ -69,7 +69,7 @@ impl GetQuantumTaskInputBuilder {
         self.additional_attribute_names = input;
         self
     }
-    /// <p>A list of attributes to return information for.</p>
+    /// <p>A list of attributes to return additional information for. Only the QueueInfo additional attribute name is currently supported.</p>
     pub fn get_additional_attribute_names(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::QuantumTaskAdditionalAttributeName>> {
         &self.additional_attribute_names
     }

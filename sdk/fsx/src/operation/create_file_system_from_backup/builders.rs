@@ -416,4 +416,18 @@ impl CreateFileSystemFromBackupFluentBuilder {
     pub fn get_storage_capacity(&self) -> &::std::option::Option<i32> {
         self.inner.get_storage_capacity()
     }
+    /// <p>Sets the network type for the Amazon FSx for OpenZFS file system that you're creating from a backup.</p>
+    pub fn network_type(mut self, input: crate::types::NetworkType) -> Self {
+        self.inner = self.inner.network_type(input);
+        self
+    }
+    /// <p>Sets the network type for the Amazon FSx for OpenZFS file system that you're creating from a backup.</p>
+    pub fn set_network_type(mut self, input: ::std::option::Option<crate::types::NetworkType>) -> Self {
+        self.inner = self.inner.set_network_type(input);
+        self
+    }
+    /// <p>Sets the network type for the Amazon FSx for OpenZFS file system that you're creating from a backup.</p>
+    pub fn get_network_type(&self) -> &::std::option::Option<crate::types::NetworkType> {
+        self.inner.get_network_type()
+    }
 }

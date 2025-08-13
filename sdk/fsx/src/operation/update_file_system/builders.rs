@@ -113,6 +113,8 @@ impl crate::operation::update_file_system::builders::UpdateFileSystemInputBuilde
 /// <li>
 /// <p><code>DiskIopsConfiguration</code></p></li>
 /// <li>
+/// <p><code>EndpointIpv6AddressRange</code></p></li>
+/// <li>
 /// <p><code>ReadCacheConfiguration</code></p></li>
 /// <li>
 /// <p><code>RemoveRouteTableIds</code></p></li>
@@ -378,5 +380,19 @@ impl UpdateFileSystemFluentBuilder {
     /// <p>The Lustre version you are updating an FSx for Lustre file system to. Valid values are <code>2.12</code> and <code>2.15</code>. The value you choose must be newer than the file system's current Lustre version.</p>
     pub fn get_file_system_type_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_file_system_type_version()
+    }
+    /// <p>Changes the network type of an FSx for OpenZFS file system.</p>
+    pub fn network_type(mut self, input: crate::types::NetworkType) -> Self {
+        self.inner = self.inner.network_type(input);
+        self
+    }
+    /// <p>Changes the network type of an FSx for OpenZFS file system.</p>
+    pub fn set_network_type(mut self, input: ::std::option::Option<crate::types::NetworkType>) -> Self {
+        self.inner = self.inner.set_network_type(input);
+        self
+    }
+    /// <p>Changes the network type of an FSx for OpenZFS file system.</p>
+    pub fn get_network_type(&self) -> &::std::option::Option<crate::types::NetworkType> {
+        self.inner.get_network_type()
     }
 }

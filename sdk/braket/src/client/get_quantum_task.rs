@@ -3,23 +3,25 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetQuantumTask`](crate::operation::get_quantum_task::builders::GetQuantumTaskFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`quantum_task_arn(impl Into<String>)`](crate::operation::get_quantum_task::builders::GetQuantumTaskFluentBuilder::quantum_task_arn) / [`set_quantum_task_arn(Option<String>)`](crate::operation::get_quantum_task::builders::GetQuantumTaskFluentBuilder::set_quantum_task_arn):<br>required: **true**<br><p>The ARN of the task to retrieve.</p><br>
-    ///   - [`additional_attribute_names(QuantumTaskAdditionalAttributeName)`](crate::operation::get_quantum_task::builders::GetQuantumTaskFluentBuilder::additional_attribute_names) / [`set_additional_attribute_names(Option<Vec::<QuantumTaskAdditionalAttributeName>>)`](crate::operation::get_quantum_task::builders::GetQuantumTaskFluentBuilder::set_additional_attribute_names):<br>required: **false**<br><p>A list of attributes to return information for.</p><br>
+    ///   - [`quantum_task_arn(impl Into<String>)`](crate::operation::get_quantum_task::builders::GetQuantumTaskFluentBuilder::quantum_task_arn) / [`set_quantum_task_arn(Option<String>)`](crate::operation::get_quantum_task::builders::GetQuantumTaskFluentBuilder::set_quantum_task_arn):<br>required: **true**<br><p>The ARN of the quantum task to retrieve.</p><br>
+    ///   - [`additional_attribute_names(QuantumTaskAdditionalAttributeName)`](crate::operation::get_quantum_task::builders::GetQuantumTaskFluentBuilder::additional_attribute_names) / [`set_additional_attribute_names(Option<Vec::<QuantumTaskAdditionalAttributeName>>)`](crate::operation::get_quantum_task::builders::GetQuantumTaskFluentBuilder::set_additional_attribute_names):<br>required: **false**<br><p>A list of attributes to return additional information for. Only the QueueInfo additional attribute name is currently supported.</p><br>
     /// - On success, responds with [`GetQuantumTaskOutput`](crate::operation::get_quantum_task::GetQuantumTaskOutput) with field(s):
-    ///   - [`quantum_task_arn(String)`](crate::operation::get_quantum_task::GetQuantumTaskOutput::quantum_task_arn): <p>The ARN of the task.</p>
-    ///   - [`status(QuantumTaskStatus)`](crate::operation::get_quantum_task::GetQuantumTaskOutput::status): <p>The status of the task.</p>
-    ///   - [`failure_reason(Option<String>)`](crate::operation::get_quantum_task::GetQuantumTaskOutput::failure_reason): <p>The reason that a task failed.</p>
-    ///   - [`device_arn(String)`](crate::operation::get_quantum_task::GetQuantumTaskOutput::device_arn): <p>The ARN of the device the task was run on.</p>
-    ///   - [`device_parameters(String)`](crate::operation::get_quantum_task::GetQuantumTaskOutput::device_parameters): <p>The parameters for the device on which the task ran.</p>
-    ///   - [`shots(i64)`](crate::operation::get_quantum_task::GetQuantumTaskOutput::shots): <p>The number of shots used in the task.</p>
-    ///   - [`output_s3_bucket(String)`](crate::operation::get_quantum_task::GetQuantumTaskOutput::output_s3_bucket): <p>The S3 bucket where task results are stored.</p>
-    ///   - [`output_s3_directory(String)`](crate::operation::get_quantum_task::GetQuantumTaskOutput::output_s3_directory): <p>The folder in the S3 bucket where task results are stored.</p>
-    ///   - [`created_at(DateTime)`](crate::operation::get_quantum_task::GetQuantumTaskOutput::created_at): <p>The time at which the task was created.</p>
-    ///   - [`ended_at(Option<DateTime>)`](crate::operation::get_quantum_task::GetQuantumTaskOutput::ended_at): <p>The time at which the task ended.</p>
-    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_quantum_task::GetQuantumTaskOutput::tags): <p>The tags that belong to this task.</p>
+    ///   - [`quantum_task_arn(String)`](crate::operation::get_quantum_task::GetQuantumTaskOutput::quantum_task_arn): <p>The ARN of the quantum task.</p>
+    ///   - [`status(QuantumTaskStatus)`](crate::operation::get_quantum_task::GetQuantumTaskOutput::status): <p>The status of the quantum task.</p>
+    ///   - [`failure_reason(Option<String>)`](crate::operation::get_quantum_task::GetQuantumTaskOutput::failure_reason): <p>The reason that a quantum task failed.</p>
+    ///   - [`device_arn(String)`](crate::operation::get_quantum_task::GetQuantumTaskOutput::device_arn): <p>The ARN of the device the quantum task was run on.</p>
+    ///   - [`device_parameters(String)`](crate::operation::get_quantum_task::GetQuantumTaskOutput::device_parameters): <p>The parameters for the device on which the quantum task ran.</p>
+    ///   - [`shots(i64)`](crate::operation::get_quantum_task::GetQuantumTaskOutput::shots): <p>The number of shots used in the quantum task.</p>
+    ///   - [`output_s3_bucket(String)`](crate::operation::get_quantum_task::GetQuantumTaskOutput::output_s3_bucket): <p>The S3 bucket where quantum task results are stored.</p>
+    ///   - [`output_s3_directory(String)`](crate::operation::get_quantum_task::GetQuantumTaskOutput::output_s3_directory): <p>The folder in the S3 bucket where quantum task results are stored.</p>
+    ///   - [`created_at(DateTime)`](crate::operation::get_quantum_task::GetQuantumTaskOutput::created_at): <p>The time at which the quantum task was created.</p>
+    ///   - [`ended_at(Option<DateTime>)`](crate::operation::get_quantum_task::GetQuantumTaskOutput::ended_at): <p>The time at which the quantum task ended.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_quantum_task::GetQuantumTaskOutput::tags): <p>The tags that belong to this quantum task.</p>
     ///   - [`job_arn(Option<String>)`](crate::operation::get_quantum_task::GetQuantumTaskOutput::job_arn): <p>The ARN of the Amazon Braket job associated with the quantum task.</p>
     ///   - [`queue_info(Option<QuantumTaskQueueInfo>)`](crate::operation::get_quantum_task::GetQuantumTaskOutput::queue_info): <p>Queue information for the requested quantum task. Only returned if <code>QueueInfo</code> is specified in the <code>additionalAttributeNames"</code> field in the <code>GetQuantumTask</code> API request.</p>
     ///   - [`associations(Option<Vec::<Association>>)`](crate::operation::get_quantum_task::GetQuantumTaskOutput::associations): <p>The list of Amazon Braket resources associated with the quantum task.</p>
+    ///   - [`num_successful_shots(Option<i64>)`](crate::operation::get_quantum_task::GetQuantumTaskOutput::num_successful_shots): <p>The number of successful shots for the quantum task. This is available after a successfully completed quantum task.</p>
+    ///   - [`action_metadata(Option<ActionMetadata>)`](crate::operation::get_quantum_task::GetQuantumTaskOutput::action_metadata): <p>Metadata about the action performed by the quantum task, including information about the type of action and program counts.</p>
     /// - On failure, responds with [`SdkError<GetQuantumTaskError>`](crate::operation::get_quantum_task::GetQuantumTaskError)
     pub fn get_quantum_task(&self) -> crate::operation::get_quantum_task::builders::GetQuantumTaskFluentBuilder {
         crate::operation::get_quantum_task::builders::GetQuantumTaskFluentBuilder::new(self.handle.clone())

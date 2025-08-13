@@ -8,6 +8,12 @@ pub struct ComputeQuotaResourceConfig {
     pub instance_type: ::std::option::Option<crate::types::ClusterInstanceType>,
     /// <p>The number of instances to add to the instance group of a SageMaker HyperPod cluster.</p>
     pub count: ::std::option::Option<i32>,
+    /// <p>The number of accelerators to allocate. If you don't specify a value for vCPU and MemoryInGiB, SageMaker AI automatically allocates ratio-based values for those parameters based on the number of accelerators you provide. For example, if you allocate 16 out of 32 total accelerators, SageMaker AI uses the ratio of 0.5 and allocates values to vCPU and MemoryInGiB.</p>
+    pub accelerators: ::std::option::Option<i32>,
+    /// <p>The number of vCPU to allocate. If you specify a value only for vCPU, SageMaker AI automatically allocates ratio-based values for MemoryInGiB based on this vCPU parameter. For example, if you allocate 20 out of 40 total vCPU, SageMaker AI uses the ratio of 0.5 and allocates values to MemoryInGiB. Accelerators are set to 0.</p>
+    pub v_cpu: ::std::option::Option<f32>,
+    /// <p>The amount of memory in GiB to allocate. If you specify a value only for this parameter, SageMaker AI automatically allocates a ratio-based value for vCPU based on this memory that you provide. For example, if you allocate 200 out of 400 total memory in GiB, SageMaker AI uses the ratio of 0.5 and allocates values to vCPU. Accelerators are set to 0.</p>
+    pub memory_in_gib: ::std::option::Option<f32>,
 }
 impl ComputeQuotaResourceConfig {
     /// <p>The instance type of the instance group for the cluster.</p>
@@ -17,6 +23,18 @@ impl ComputeQuotaResourceConfig {
     /// <p>The number of instances to add to the instance group of a SageMaker HyperPod cluster.</p>
     pub fn count(&self) -> ::std::option::Option<i32> {
         self.count
+    }
+    /// <p>The number of accelerators to allocate. If you don't specify a value for vCPU and MemoryInGiB, SageMaker AI automatically allocates ratio-based values for those parameters based on the number of accelerators you provide. For example, if you allocate 16 out of 32 total accelerators, SageMaker AI uses the ratio of 0.5 and allocates values to vCPU and MemoryInGiB.</p>
+    pub fn accelerators(&self) -> ::std::option::Option<i32> {
+        self.accelerators
+    }
+    /// <p>The number of vCPU to allocate. If you specify a value only for vCPU, SageMaker AI automatically allocates ratio-based values for MemoryInGiB based on this vCPU parameter. For example, if you allocate 20 out of 40 total vCPU, SageMaker AI uses the ratio of 0.5 and allocates values to MemoryInGiB. Accelerators are set to 0.</p>
+    pub fn v_cpu(&self) -> ::std::option::Option<f32> {
+        self.v_cpu
+    }
+    /// <p>The amount of memory in GiB to allocate. If you specify a value only for this parameter, SageMaker AI automatically allocates a ratio-based value for vCPU based on this memory that you provide. For example, if you allocate 200 out of 400 total memory in GiB, SageMaker AI uses the ratio of 0.5 and allocates values to vCPU. Accelerators are set to 0.</p>
+    pub fn memory_in_gib(&self) -> ::std::option::Option<f32> {
+        self.memory_in_gib
     }
 }
 impl ComputeQuotaResourceConfig {
@@ -32,6 +50,9 @@ impl ComputeQuotaResourceConfig {
 pub struct ComputeQuotaResourceConfigBuilder {
     pub(crate) instance_type: ::std::option::Option<crate::types::ClusterInstanceType>,
     pub(crate) count: ::std::option::Option<i32>,
+    pub(crate) accelerators: ::std::option::Option<i32>,
+    pub(crate) v_cpu: ::std::option::Option<f32>,
+    pub(crate) memory_in_gib: ::std::option::Option<f32>,
 }
 impl ComputeQuotaResourceConfigBuilder {
     /// <p>The instance type of the instance group for the cluster.</p>
@@ -63,11 +84,56 @@ impl ComputeQuotaResourceConfigBuilder {
     pub fn get_count(&self) -> &::std::option::Option<i32> {
         &self.count
     }
+    /// <p>The number of accelerators to allocate. If you don't specify a value for vCPU and MemoryInGiB, SageMaker AI automatically allocates ratio-based values for those parameters based on the number of accelerators you provide. For example, if you allocate 16 out of 32 total accelerators, SageMaker AI uses the ratio of 0.5 and allocates values to vCPU and MemoryInGiB.</p>
+    pub fn accelerators(mut self, input: i32) -> Self {
+        self.accelerators = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of accelerators to allocate. If you don't specify a value for vCPU and MemoryInGiB, SageMaker AI automatically allocates ratio-based values for those parameters based on the number of accelerators you provide. For example, if you allocate 16 out of 32 total accelerators, SageMaker AI uses the ratio of 0.5 and allocates values to vCPU and MemoryInGiB.</p>
+    pub fn set_accelerators(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.accelerators = input;
+        self
+    }
+    /// <p>The number of accelerators to allocate. If you don't specify a value for vCPU and MemoryInGiB, SageMaker AI automatically allocates ratio-based values for those parameters based on the number of accelerators you provide. For example, if you allocate 16 out of 32 total accelerators, SageMaker AI uses the ratio of 0.5 and allocates values to vCPU and MemoryInGiB.</p>
+    pub fn get_accelerators(&self) -> &::std::option::Option<i32> {
+        &self.accelerators
+    }
+    /// <p>The number of vCPU to allocate. If you specify a value only for vCPU, SageMaker AI automatically allocates ratio-based values for MemoryInGiB based on this vCPU parameter. For example, if you allocate 20 out of 40 total vCPU, SageMaker AI uses the ratio of 0.5 and allocates values to MemoryInGiB. Accelerators are set to 0.</p>
+    pub fn v_cpu(mut self, input: f32) -> Self {
+        self.v_cpu = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of vCPU to allocate. If you specify a value only for vCPU, SageMaker AI automatically allocates ratio-based values for MemoryInGiB based on this vCPU parameter. For example, if you allocate 20 out of 40 total vCPU, SageMaker AI uses the ratio of 0.5 and allocates values to MemoryInGiB. Accelerators are set to 0.</p>
+    pub fn set_v_cpu(mut self, input: ::std::option::Option<f32>) -> Self {
+        self.v_cpu = input;
+        self
+    }
+    /// <p>The number of vCPU to allocate. If you specify a value only for vCPU, SageMaker AI automatically allocates ratio-based values for MemoryInGiB based on this vCPU parameter. For example, if you allocate 20 out of 40 total vCPU, SageMaker AI uses the ratio of 0.5 and allocates values to MemoryInGiB. Accelerators are set to 0.</p>
+    pub fn get_v_cpu(&self) -> &::std::option::Option<f32> {
+        &self.v_cpu
+    }
+    /// <p>The amount of memory in GiB to allocate. If you specify a value only for this parameter, SageMaker AI automatically allocates a ratio-based value for vCPU based on this memory that you provide. For example, if you allocate 200 out of 400 total memory in GiB, SageMaker AI uses the ratio of 0.5 and allocates values to vCPU. Accelerators are set to 0.</p>
+    pub fn memory_in_gib(mut self, input: f32) -> Self {
+        self.memory_in_gib = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The amount of memory in GiB to allocate. If you specify a value only for this parameter, SageMaker AI automatically allocates a ratio-based value for vCPU based on this memory that you provide. For example, if you allocate 200 out of 400 total memory in GiB, SageMaker AI uses the ratio of 0.5 and allocates values to vCPU. Accelerators are set to 0.</p>
+    pub fn set_memory_in_gib(mut self, input: ::std::option::Option<f32>) -> Self {
+        self.memory_in_gib = input;
+        self
+    }
+    /// <p>The amount of memory in GiB to allocate. If you specify a value only for this parameter, SageMaker AI automatically allocates a ratio-based value for vCPU based on this memory that you provide. For example, if you allocate 200 out of 400 total memory in GiB, SageMaker AI uses the ratio of 0.5 and allocates values to vCPU. Accelerators are set to 0.</p>
+    pub fn get_memory_in_gib(&self) -> &::std::option::Option<f32> {
+        &self.memory_in_gib
+    }
     /// Consumes the builder and constructs a [`ComputeQuotaResourceConfig`](crate::types::ComputeQuotaResourceConfig).
     pub fn build(self) -> crate::types::ComputeQuotaResourceConfig {
         crate::types::ComputeQuotaResourceConfig {
             instance_type: self.instance_type,
             count: self.count,
+            accelerators: self.accelerators,
+            v_cpu: self.v_cpu,
+            memory_in_gib: self.memory_in_gib,
         }
     }
 }

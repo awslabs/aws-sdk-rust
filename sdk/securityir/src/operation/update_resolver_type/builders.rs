@@ -22,10 +22,9 @@ impl crate::operation::update_resolver_type::builders::UpdateResolverTypeInputBu
 }
 /// Fluent builder constructing a request to `UpdateResolverType`.
 ///
-/// <p>Grants permission to update the resolver type for a case.</p><important>
+/// <p>Updates the resolver type for a case.</p><important>
 /// <p>This is a one-way action and cannot be reversed.</p>
 /// </important>
-/// <p>Options include self-supported &gt; AWS-supported.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateResolverTypeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

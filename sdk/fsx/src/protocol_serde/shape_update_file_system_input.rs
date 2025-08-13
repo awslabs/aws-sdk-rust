@@ -48,5 +48,8 @@ pub fn ser_update_file_system_input_input(
     if let Some(var_13) = &input.file_system_type_version {
         object.key("FileSystemTypeVersion").string(var_13.as_str());
     }
+    if let Some(var_14) = &input.network_type {
+        object.key("NetworkType").string(var_14.as_str());
+    }
     Ok(())
 }

@@ -31,6 +31,8 @@ pub use crate::types::_administrative_action_failure_details::AdministrativeActi
 
 pub use crate::types::_file_system::FileSystem;
 
+pub use crate::types::_network_type::NetworkType;
+
 pub use crate::types::_open_zfs_file_system_configuration::OpenZfsFileSystemConfiguration;
 
 pub use crate::types::_open_zfs_read_cache_configuration::OpenZfsReadCacheConfiguration;
@@ -542,6 +544,8 @@ mod _lustre_read_cache_sizing_mode;
 mod _lustre_root_squash_configuration;
 
 mod _metadata_configuration_mode;
+
+mod _network_type;
 
 mod _nfs_data_repository_configuration;
 

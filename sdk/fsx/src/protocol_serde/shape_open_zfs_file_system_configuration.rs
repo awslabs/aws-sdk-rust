@@ -81,11 +81,25 @@ where
                                     .transpose()?,
                             );
                         }
+                        "EndpointIpv6AddressRange" => {
+                            builder = builder.set_endpoint_ipv6_address_range(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "RouteTableIds" => {
                             builder = builder.set_route_table_ids(crate::protocol_serde::shape_route_table_ids::de_route_table_ids(tokens)?);
                         }
                         "EndpointIpAddress" => {
                             builder = builder.set_endpoint_ip_address(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "EndpointIpv6Address" => {
+                            builder = builder.set_endpoint_ipv6_address(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,

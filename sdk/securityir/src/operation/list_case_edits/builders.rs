@@ -22,7 +22,7 @@ impl crate::operation::list_case_edits::builders::ListCaseEditsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListCaseEdits`.
 ///
-/// <p>Grants permissions to view the aidt log for edits made to a designated case.</p>
+/// <p>Views the case history for edits made to a designated case.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListCaseEditsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,17 +114,17 @@ impl ListCaseEditsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_case_edits::paginator::ListCaseEditsPaginator {
         crate::operation::list_case_edits::paginator::ListCaseEditsPaginator::new(self.handle, self.inner)
     }
-    /// <p>Optional element for a customer provided token.</p>
+    /// <p>An optional string that, if supplied, must be copied from the output of a previous call to ListCaseEdits. When provided in this manner, the API fetches the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>Optional element for a customer provided token.</p>
+    /// <p>An optional string that, if supplied, must be copied from the output of a previous call to ListCaseEdits. When provided in this manner, the API fetches the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>Optional element for a customer provided token.</p>
+    /// <p>An optional string that, if supplied, must be copied from the output of a previous call to ListCaseEdits. When provided in this manner, the API fetches the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }

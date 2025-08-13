@@ -3,27 +3,40 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateMembershipInput {
-    /// <p>An optional element used in combination with CreateMembership.</p>
+    /// <note>
+    /// <p>The <code>clientToken</code> field is an idempotency key used to ensure that repeated attempts for a single action will be ignored by the server during retries. A caller supplied unique ID (typically a UUID) should be provided.</p>
+    /// </note>
     pub client_token: ::std::option::Option<::std::string::String>,
-    /// <p>Required element use in combination with CreateMembership to create a name for the membership.</p>
+    /// <p>Required element used in combination with CreateMembership to create a name for the membership.</p>
     pub membership_name: ::std::option::Option<::std::string::String>,
-    /// <p>Required element use in combination with CreateMembership to add customer incident response team members and trusted partners to the membership.</p>
+    /// <p>Required element used in combination with CreateMembership to add customer incident response team members and trusted partners to the membership.</p>
     pub incident_response_team: ::std::option::Option<::std::vec::Vec<crate::types::IncidentResponder>>,
     /// <p>Optional element to enable the monitoring and investigation opt-in features for the service.</p>
     pub opt_in_features: ::std::option::Option<::std::vec::Vec<crate::types::OptInFeature>>,
     /// <p>Optional element for customer configured tags.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The <code>coverEntireOrganization</code> parameter is a boolean flag that determines whether the membership should be applied to the entire Amazon Web Services Organization. When set to true, the membership will be created for all accounts within the organization. When set to false, the membership will only be created for specified accounts.</p>
+    /// <p>This parameter is optional. If not specified, the default value is false.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If set to <i>true</i>: The membership will automatically include all existing and future accounts in the Amazon Web Services Organization.</p></li>
+    /// <li>
+    /// <p>If set to <i>false</i>: The membership will only apply to explicitly specified accounts.</p></li>
+    /// </ul>
+    pub cover_entire_organization: ::std::option::Option<bool>,
 }
 impl CreateMembershipInput {
-    /// <p>An optional element used in combination with CreateMembership.</p>
+    /// <note>
+    /// <p>The <code>clientToken</code> field is an idempotency key used to ensure that repeated attempts for a single action will be ignored by the server during retries. A caller supplied unique ID (typically a UUID) should be provided.</p>
+    /// </note>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>Required element use in combination with CreateMembership to create a name for the membership.</p>
+    /// <p>Required element used in combination with CreateMembership to create a name for the membership.</p>
     pub fn membership_name(&self) -> ::std::option::Option<&str> {
         self.membership_name.as_deref()
     }
-    /// <p>Required element use in combination with CreateMembership to add customer incident response team members and trusted partners to the membership.</p>
+    /// <p>Required element used in combination with CreateMembership to add customer incident response team members and trusted partners to the membership.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.incident_response_team.is_none()`.
     pub fn incident_response_team(&self) -> &[crate::types::IncidentResponder] {
@@ -39,6 +52,17 @@ impl CreateMembershipInput {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
+    /// <p>The <code>coverEntireOrganization</code> parameter is a boolean flag that determines whether the membership should be applied to the entire Amazon Web Services Organization. When set to true, the membership will be created for all accounts within the organization. When set to false, the membership will only be created for specified accounts.</p>
+    /// <p>This parameter is optional. If not specified, the default value is false.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If set to <i>true</i>: The membership will automatically include all existing and future accounts in the Amazon Web Services Organization.</p></li>
+    /// <li>
+    /// <p>If set to <i>false</i>: The membership will only apply to explicitly specified accounts.</p></li>
+    /// </ul>
+    pub fn cover_entire_organization(&self) -> ::std::option::Option<bool> {
+        self.cover_entire_organization
+    }
 }
 impl ::std::fmt::Debug for CreateMembershipInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -48,6 +72,7 @@ impl ::std::fmt::Debug for CreateMembershipInput {
         formatter.field("incident_response_team", &self.incident_response_team);
         formatter.field("opt_in_features", &self.opt_in_features);
         formatter.field("tags", &self.tags);
+        formatter.field("cover_entire_organization", &self.cover_entire_organization);
         formatter.finish()
     }
 }
@@ -67,34 +92,41 @@ pub struct CreateMembershipInputBuilder {
     pub(crate) incident_response_team: ::std::option::Option<::std::vec::Vec<crate::types::IncidentResponder>>,
     pub(crate) opt_in_features: ::std::option::Option<::std::vec::Vec<crate::types::OptInFeature>>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) cover_entire_organization: ::std::option::Option<bool>,
 }
 impl CreateMembershipInputBuilder {
-    /// <p>An optional element used in combination with CreateMembership.</p>
+    /// <note>
+    /// <p>The <code>clientToken</code> field is an idempotency key used to ensure that repeated attempts for a single action will be ignored by the server during retries. A caller supplied unique ID (typically a UUID) should be provided.</p>
+    /// </note>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An optional element used in combination with CreateMembership.</p>
+    /// <note>
+    /// <p>The <code>clientToken</code> field is an idempotency key used to ensure that repeated attempts for a single action will be ignored by the server during retries. A caller supplied unique ID (typically a UUID) should be provided.</p>
+    /// </note>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
     }
-    /// <p>An optional element used in combination with CreateMembership.</p>
+    /// <note>
+    /// <p>The <code>clientToken</code> field is an idempotency key used to ensure that repeated attempts for a single action will be ignored by the server during retries. A caller supplied unique ID (typically a UUID) should be provided.</p>
+    /// </note>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
-    /// <p>Required element use in combination with CreateMembership to create a name for the membership.</p>
+    /// <p>Required element used in combination with CreateMembership to create a name for the membership.</p>
     /// This field is required.
     pub fn membership_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.membership_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Required element use in combination with CreateMembership to create a name for the membership.</p>
+    /// <p>Required element used in combination with CreateMembership to create a name for the membership.</p>
     pub fn set_membership_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.membership_name = input;
         self
     }
-    /// <p>Required element use in combination with CreateMembership to create a name for the membership.</p>
+    /// <p>Required element used in combination with CreateMembership to create a name for the membership.</p>
     pub fn get_membership_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.membership_name
     }
@@ -102,19 +134,19 @@ impl CreateMembershipInputBuilder {
     ///
     /// To override the contents of this collection use [`set_incident_response_team`](Self::set_incident_response_team).
     ///
-    /// <p>Required element use in combination with CreateMembership to add customer incident response team members and trusted partners to the membership.</p>
+    /// <p>Required element used in combination with CreateMembership to add customer incident response team members and trusted partners to the membership.</p>
     pub fn incident_response_team(mut self, input: crate::types::IncidentResponder) -> Self {
         let mut v = self.incident_response_team.unwrap_or_default();
         v.push(input);
         self.incident_response_team = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Required element use in combination with CreateMembership to add customer incident response team members and trusted partners to the membership.</p>
+    /// <p>Required element used in combination with CreateMembership to add customer incident response team members and trusted partners to the membership.</p>
     pub fn set_incident_response_team(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IncidentResponder>>) -> Self {
         self.incident_response_team = input;
         self
     }
-    /// <p>Required element use in combination with CreateMembership to add customer incident response team members and trusted partners to the membership.</p>
+    /// <p>Required element used in combination with CreateMembership to add customer incident response team members and trusted partners to the membership.</p>
     pub fn get_incident_response_team(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IncidentResponder>> {
         &self.incident_response_team
     }
@@ -158,6 +190,41 @@ impl CreateMembershipInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// <p>The <code>coverEntireOrganization</code> parameter is a boolean flag that determines whether the membership should be applied to the entire Amazon Web Services Organization. When set to true, the membership will be created for all accounts within the organization. When set to false, the membership will only be created for specified accounts.</p>
+    /// <p>This parameter is optional. If not specified, the default value is false.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If set to <i>true</i>: The membership will automatically include all existing and future accounts in the Amazon Web Services Organization.</p></li>
+    /// <li>
+    /// <p>If set to <i>false</i>: The membership will only apply to explicitly specified accounts.</p></li>
+    /// </ul>
+    pub fn cover_entire_organization(mut self, input: bool) -> Self {
+        self.cover_entire_organization = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The <code>coverEntireOrganization</code> parameter is a boolean flag that determines whether the membership should be applied to the entire Amazon Web Services Organization. When set to true, the membership will be created for all accounts within the organization. When set to false, the membership will only be created for specified accounts.</p>
+    /// <p>This parameter is optional. If not specified, the default value is false.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If set to <i>true</i>: The membership will automatically include all existing and future accounts in the Amazon Web Services Organization.</p></li>
+    /// <li>
+    /// <p>If set to <i>false</i>: The membership will only apply to explicitly specified accounts.</p></li>
+    /// </ul>
+    pub fn set_cover_entire_organization(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.cover_entire_organization = input;
+        self
+    }
+    /// <p>The <code>coverEntireOrganization</code> parameter is a boolean flag that determines whether the membership should be applied to the entire Amazon Web Services Organization. When set to true, the membership will be created for all accounts within the organization. When set to false, the membership will only be created for specified accounts.</p>
+    /// <p>This parameter is optional. If not specified, the default value is false.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If set to <i>true</i>: The membership will automatically include all existing and future accounts in the Amazon Web Services Organization.</p></li>
+    /// <li>
+    /// <p>If set to <i>false</i>: The membership will only apply to explicitly specified accounts.</p></li>
+    /// </ul>
+    pub fn get_cover_entire_organization(&self) -> &::std::option::Option<bool> {
+        &self.cover_entire_organization
+    }
     /// Consumes the builder and constructs a [`CreateMembershipInput`](crate::operation::create_membership::CreateMembershipInput).
     pub fn build(
         self,
@@ -168,6 +235,7 @@ impl CreateMembershipInputBuilder {
             incident_response_team: self.incident_response_team,
             opt_in_features: self.opt_in_features,
             tags: self.tags,
+            cover_entire_organization: self.cover_entire_organization,
         })
     }
 }
@@ -179,6 +247,7 @@ impl ::std::fmt::Debug for CreateMembershipInputBuilder {
         formatter.field("incident_response_team", &self.incident_response_team);
         formatter.field("opt_in_features", &self.opt_in_features);
         formatter.field("tags", &self.tags);
+        formatter.field("cover_entire_organization", &self.cover_entire_organization);
         formatter.finish()
     }
 }

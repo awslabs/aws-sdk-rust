@@ -262,11 +262,11 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for TagResourceEn
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum TagResourceError {
-    /// <p>The request processing has failed because of an unknown error, exception, or failure.</p>
+    /// <p>The request failed because of an unknown error.</p>
     InternalServiceException(crate::types::error::InternalServiceException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
+    /// <p>The input request failed to satisfy constraints expected by Amazon Braket.</p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

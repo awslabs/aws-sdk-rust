@@ -31,9 +31,13 @@ pub struct UpdateCaseInput {
     pub impacted_aws_regions_to_add: ::std::option::Option<::std::vec::Vec<crate::types::ImpactedAwsRegion>>,
     /// <p>Optional element for UpdateCase to provide content to remove regions impacted.</p>
     pub impacted_aws_regions_to_delete: ::std::option::Option<::std::vec::Vec<crate::types::ImpactedAwsRegion>>,
-    /// <p>Optional element for UpdateCase to provide content to add accounts impacted.</p>
+    /// <p>Optional element for UpdateCase to provide content to add accounts impacted.</p><note>
+    /// <p>AWS account ID's may appear less than 12 characters and need to be zero-prepended. An example would be <code>123123123</code> which is nine digits, and with zero-prepend would be <code>000123123123</code>. Not zero-prepending to 12 digits could result in errors.</p>
+    /// </note>
     pub impacted_accounts_to_add: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>Optional element for UpdateCase to provide content to add accounts impacted.</p>
+    /// <p>Optional element for UpdateCase to provide content to add accounts impacted.</p><note>
+    /// <p>AWS account ID's may appear less than 12 characters and need to be zero-prepended. An example would be <code>123123123</code> which is nine digits, and with zero-prepend would be <code>000123123123</code>. Not zero-prepending to 12 digits could result in errors.</p>
+    /// </note>
     pub impacted_accounts_to_delete: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateCaseInput {
@@ -109,13 +113,17 @@ impl UpdateCaseInput {
     pub fn impacted_aws_regions_to_delete(&self) -> &[crate::types::ImpactedAwsRegion] {
         self.impacted_aws_regions_to_delete.as_deref().unwrap_or_default()
     }
-    /// <p>Optional element for UpdateCase to provide content to add accounts impacted.</p>
+    /// <p>Optional element for UpdateCase to provide content to add accounts impacted.</p><note>
+    /// <p>AWS account ID's may appear less than 12 characters and need to be zero-prepended. An example would be <code>123123123</code> which is nine digits, and with zero-prepend would be <code>000123123123</code>. Not zero-prepending to 12 digits could result in errors.</p>
+    /// </note>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.impacted_accounts_to_add.is_none()`.
     pub fn impacted_accounts_to_add(&self) -> &[::std::string::String] {
         self.impacted_accounts_to_add.as_deref().unwrap_or_default()
     }
-    /// <p>Optional element for UpdateCase to provide content to add accounts impacted.</p>
+    /// <p>Optional element for UpdateCase to provide content to add accounts impacted.</p><note>
+    /// <p>AWS account ID's may appear less than 12 characters and need to be zero-prepended. An example would be <code>123123123</code> which is nine digits, and with zero-prepend would be <code>000123123123</code>. Not zero-prepending to 12 digits could result in errors.</p>
+    /// </note>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.impacted_accounts_to_delete.is_none()`.
     pub fn impacted_accounts_to_delete(&self) -> &[::std::string::String] {
@@ -422,19 +430,25 @@ impl UpdateCaseInputBuilder {
     ///
     /// To override the contents of this collection use [`set_impacted_accounts_to_add`](Self::set_impacted_accounts_to_add).
     ///
-    /// <p>Optional element for UpdateCase to provide content to add accounts impacted.</p>
+    /// <p>Optional element for UpdateCase to provide content to add accounts impacted.</p><note>
+    /// <p>AWS account ID's may appear less than 12 characters and need to be zero-prepended. An example would be <code>123123123</code> which is nine digits, and with zero-prepend would be <code>000123123123</code>. Not zero-prepending to 12 digits could result in errors.</p>
+    /// </note>
     pub fn impacted_accounts_to_add(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.impacted_accounts_to_add.unwrap_or_default();
         v.push(input.into());
         self.impacted_accounts_to_add = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Optional element for UpdateCase to provide content to add accounts impacted.</p>
+    /// <p>Optional element for UpdateCase to provide content to add accounts impacted.</p><note>
+    /// <p>AWS account ID's may appear less than 12 characters and need to be zero-prepended. An example would be <code>123123123</code> which is nine digits, and with zero-prepend would be <code>000123123123</code>. Not zero-prepending to 12 digits could result in errors.</p>
+    /// </note>
     pub fn set_impacted_accounts_to_add(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.impacted_accounts_to_add = input;
         self
     }
-    /// <p>Optional element for UpdateCase to provide content to add accounts impacted.</p>
+    /// <p>Optional element for UpdateCase to provide content to add accounts impacted.</p><note>
+    /// <p>AWS account ID's may appear less than 12 characters and need to be zero-prepended. An example would be <code>123123123</code> which is nine digits, and with zero-prepend would be <code>000123123123</code>. Not zero-prepending to 12 digits could result in errors.</p>
+    /// </note>
     pub fn get_impacted_accounts_to_add(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.impacted_accounts_to_add
     }
@@ -442,19 +456,25 @@ impl UpdateCaseInputBuilder {
     ///
     /// To override the contents of this collection use [`set_impacted_accounts_to_delete`](Self::set_impacted_accounts_to_delete).
     ///
-    /// <p>Optional element for UpdateCase to provide content to add accounts impacted.</p>
+    /// <p>Optional element for UpdateCase to provide content to add accounts impacted.</p><note>
+    /// <p>AWS account ID's may appear less than 12 characters and need to be zero-prepended. An example would be <code>123123123</code> which is nine digits, and with zero-prepend would be <code>000123123123</code>. Not zero-prepending to 12 digits could result in errors.</p>
+    /// </note>
     pub fn impacted_accounts_to_delete(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.impacted_accounts_to_delete.unwrap_or_default();
         v.push(input.into());
         self.impacted_accounts_to_delete = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Optional element for UpdateCase to provide content to add accounts impacted.</p>
+    /// <p>Optional element for UpdateCase to provide content to add accounts impacted.</p><note>
+    /// <p>AWS account ID's may appear less than 12 characters and need to be zero-prepended. An example would be <code>123123123</code> which is nine digits, and with zero-prepend would be <code>000123123123</code>. Not zero-prepending to 12 digits could result in errors.</p>
+    /// </note>
     pub fn set_impacted_accounts_to_delete(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.impacted_accounts_to_delete = input;
         self
     }
-    /// <p>Optional element for UpdateCase to provide content to add accounts impacted.</p>
+    /// <p>Optional element for UpdateCase to provide content to add accounts impacted.</p><note>
+    /// <p>AWS account ID's may appear less than 12 characters and need to be zero-prepended. An example would be <code>123123123</code> which is nine digits, and with zero-prepend would be <code>000123123123</code>. Not zero-prepending to 12 digits could result in errors.</p>
+    /// </note>
     pub fn get_impacted_accounts_to_delete(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.impacted_accounts_to_delete
     }

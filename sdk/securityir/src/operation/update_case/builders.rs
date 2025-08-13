@@ -22,7 +22,7 @@ impl crate::operation::update_case::builders::UpdateCaseInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateCase`.
 ///
-/// <p>Grants permission to update an existing case.</p>
+/// <p>Updates an existing case.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateCaseFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -349,17 +349,23 @@ impl UpdateCaseFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_impacted_accounts_to_add`](Self::set_impacted_accounts_to_add).
     ///
-    /// <p>Optional element for UpdateCase to provide content to add accounts impacted.</p>
+    /// <p>Optional element for UpdateCase to provide content to add accounts impacted.</p><note>
+    /// <p>AWS account ID's may appear less than 12 characters and need to be zero-prepended. An example would be <code>123123123</code> which is nine digits, and with zero-prepend would be <code>000123123123</code>. Not zero-prepending to 12 digits could result in errors.</p>
+    /// </note>
     pub fn impacted_accounts_to_add(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.impacted_accounts_to_add(input.into());
         self
     }
-    /// <p>Optional element for UpdateCase to provide content to add accounts impacted.</p>
+    /// <p>Optional element for UpdateCase to provide content to add accounts impacted.</p><note>
+    /// <p>AWS account ID's may appear less than 12 characters and need to be zero-prepended. An example would be <code>123123123</code> which is nine digits, and with zero-prepend would be <code>000123123123</code>. Not zero-prepending to 12 digits could result in errors.</p>
+    /// </note>
     pub fn set_impacted_accounts_to_add(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_impacted_accounts_to_add(input);
         self
     }
-    /// <p>Optional element for UpdateCase to provide content to add accounts impacted.</p>
+    /// <p>Optional element for UpdateCase to provide content to add accounts impacted.</p><note>
+    /// <p>AWS account ID's may appear less than 12 characters and need to be zero-prepended. An example would be <code>123123123</code> which is nine digits, and with zero-prepend would be <code>000123123123</code>. Not zero-prepending to 12 digits could result in errors.</p>
+    /// </note>
     pub fn get_impacted_accounts_to_add(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_impacted_accounts_to_add()
     }
@@ -368,17 +374,23 @@ impl UpdateCaseFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_impacted_accounts_to_delete`](Self::set_impacted_accounts_to_delete).
     ///
-    /// <p>Optional element for UpdateCase to provide content to add accounts impacted.</p>
+    /// <p>Optional element for UpdateCase to provide content to add accounts impacted.</p><note>
+    /// <p>AWS account ID's may appear less than 12 characters and need to be zero-prepended. An example would be <code>123123123</code> which is nine digits, and with zero-prepend would be <code>000123123123</code>. Not zero-prepending to 12 digits could result in errors.</p>
+    /// </note>
     pub fn impacted_accounts_to_delete(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.impacted_accounts_to_delete(input.into());
         self
     }
-    /// <p>Optional element for UpdateCase to provide content to add accounts impacted.</p>
+    /// <p>Optional element for UpdateCase to provide content to add accounts impacted.</p><note>
+    /// <p>AWS account ID's may appear less than 12 characters and need to be zero-prepended. An example would be <code>123123123</code> which is nine digits, and with zero-prepend would be <code>000123123123</code>. Not zero-prepending to 12 digits could result in errors.</p>
+    /// </note>
     pub fn set_impacted_accounts_to_delete(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_impacted_accounts_to_delete(input);
         self
     }
-    /// <p>Optional element for UpdateCase to provide content to add accounts impacted.</p>
+    /// <p>Optional element for UpdateCase to provide content to add accounts impacted.</p><note>
+    /// <p>AWS account ID's may appear less than 12 characters and need to be zero-prepended. An example would be <code>123123123</code> which is nine digits, and with zero-prepend would be <code>000123123123</code>. Not zero-prepending to 12 digits could result in errors.</p>
+    /// </note>
     pub fn get_impacted_accounts_to_delete(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_impacted_accounts_to_delete()
     }

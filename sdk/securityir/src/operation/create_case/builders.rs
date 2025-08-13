@@ -22,7 +22,7 @@ impl crate::operation::create_case::builders::CreateCaseInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateCase`.
 ///
-/// <p>Grants permission to create a new case.</p>
+/// <p>Creates a new case.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateCaseFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,37 @@ impl CreateCaseFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>Required element used in combination with CreateCase.</p>
+    /// <note>
+    /// <p>The <code>clientToken</code> field is an idempotency key used to ensure that repeated attempts for a single action will be ignored by the server during retries. A caller supplied unique ID (typically a UUID) should be provided.</p>
+    /// </note>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
-    /// <p>Required element used in combination with CreateCase.</p>
+    /// <note>
+    /// <p>The <code>clientToken</code> field is an idempotency key used to ensure that repeated attempts for a single action will be ignored by the server during retries. A caller supplied unique ID (typically a UUID) should be provided.</p>
+    /// </note>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
-    /// <p>Required element used in combination with CreateCase.</p>
+    /// <note>
+    /// <p>The <code>clientToken</code> field is an idempotency key used to ensure that repeated attempts for a single action will be ignored by the server during retries. A caller supplied unique ID (typically a UUID) should be provided.</p>
+    /// </note>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
-    /// <p>Required element used in combination with CreateCase to identify the resolver type. Available resolvers include self-supported | aws-supported.</p>
+    /// <p>Required element used in combination with CreateCase to identify the resolver type.</p>
     pub fn resolver_type(mut self, input: crate::types::ResolverType) -> Self {
         self.inner = self.inner.resolver_type(input);
         self
     }
-    /// <p>Required element used in combination with CreateCase to identify the resolver type. Available resolvers include self-supported | aws-supported.</p>
+    /// <p>Required element used in combination with CreateCase to identify the resolver type.</p>
     pub fn set_resolver_type(mut self, input: ::std::option::Option<crate::types::ResolverType>) -> Self {
         self.inner = self.inner.set_resolver_type(input);
         self
     }
-    /// <p>Required element used in combination with CreateCase to identify the resolver type. Available resolvers include self-supported | aws-supported.</p>
+    /// <p>Required element used in combination with CreateCase to identify the resolver type.</p>
     pub fn get_resolver_type(&self) -> &::std::option::Option<crate::types::ResolverType> {
         self.inner.get_resolver_type()
     }
@@ -150,17 +156,20 @@ impl CreateCaseFluentBuilder {
     pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_title()
     }
-    /// <p>Required element used in combination with CreateCase to provide a description for the new case.</p>
+    /// <p>Required element used in combination with CreateCase</p>
+    /// <p>to provide a description for the new case.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// <p>Required element used in combination with CreateCase to provide a description for the new case.</p>
+    /// <p>Required element used in combination with CreateCase</p>
+    /// <p>to provide a description for the new case.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// <p>Required element used in combination with CreateCase to provide a description for the new case.</p>
+    /// <p>Required element used in combination with CreateCase</p>
+    /// <p>to provide a description for the new case.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
@@ -197,17 +206,23 @@ impl CreateCaseFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_impacted_accounts`](Self::set_impacted_accounts).
     ///
-    /// <p>Required element used in combination with CreateCase to provide a list of impacted accounts.</p>
+    /// <p>Required element used in combination with CreateCase to provide a list of impacted accounts.</p><note>
+    /// <p>AWS account ID's may appear less than 12 characters and need to be zero-prepended. An example would be <code>123123123</code> which is nine digits, and with zero-prepend would be <code>000123123123</code>. Not zero-prepending to 12 digits could result in errors.</p>
+    /// </note>
     pub fn impacted_accounts(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.impacted_accounts(input.into());
         self
     }
-    /// <p>Required element used in combination with CreateCase to provide a list of impacted accounts.</p>
+    /// <p>Required element used in combination with CreateCase to provide a list of impacted accounts.</p><note>
+    /// <p>AWS account ID's may appear less than 12 characters and need to be zero-prepended. An example would be <code>123123123</code> which is nine digits, and with zero-prepend would be <code>000123123123</code>. Not zero-prepending to 12 digits could result in errors.</p>
+    /// </note>
     pub fn set_impacted_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_impacted_accounts(input);
         self
     }
-    /// <p>Required element used in combination with CreateCase to provide a list of impacted accounts.</p>
+    /// <p>Required element used in combination with CreateCase to provide a list of impacted accounts.</p><note>
+    /// <p>AWS account ID's may appear less than 12 characters and need to be zero-prepended. An example would be <code>123123123</code> which is nine digits, and with zero-prepend would be <code>000123123123</code>. Not zero-prepending to 12 digits could result in errors.</p>
+    /// </note>
     pub fn get_impacted_accounts(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_impacted_accounts()
     }

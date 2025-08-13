@@ -22,7 +22,7 @@ impl crate::operation::get_case_attachment_upload_url::builders::GetCaseAttachme
 }
 /// Fluent builder constructing a request to `GetCaseAttachmentUploadUrl`.
 ///
-/// <p>Grants permission to upload an attachment to a case.</p>
+/// <p>Uploads an attachment to a case.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetCaseAttachmentUploadUrlFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl GetCaseAttachmentUploadUrlFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>Required element for GetCaseAttachmentUploadUrl to identify the case ID for uploading an attachment to.</p>
+    /// <p>Required element for GetCaseAttachmentUploadUrl to identify the case ID for uploading an attachment.</p>
     pub fn case_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.case_id(input.into());
         self
     }
-    /// <p>Required element for GetCaseAttachmentUploadUrl to identify the case ID for uploading an attachment to.</p>
+    /// <p>Required element for GetCaseAttachmentUploadUrl to identify the case ID for uploading an attachment.</p>
     pub fn set_case_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_case_id(input);
         self
     }
-    /// <p>Required element for GetCaseAttachmentUploadUrl to identify the case ID for uploading an attachment to.</p>
+    /// <p>Required element for GetCaseAttachmentUploadUrl to identify the case ID for uploading an attachment.</p>
     pub fn get_case_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_case_id()
     }
@@ -136,31 +136,37 @@ impl GetCaseAttachmentUploadUrlFluentBuilder {
     pub fn get_file_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_file_name()
     }
-    /// <p>Required element for GetCaseAttachmentUploadUrl to identify the size od the file attachment.</p>
+    /// <p>Required element for GetCaseAttachmentUploadUrl to identify the size of the file attachment.</p>
     pub fn content_length(mut self, input: i64) -> Self {
         self.inner = self.inner.content_length(input);
         self
     }
-    /// <p>Required element for GetCaseAttachmentUploadUrl to identify the size od the file attachment.</p>
+    /// <p>Required element for GetCaseAttachmentUploadUrl to identify the size of the file attachment.</p>
     pub fn set_content_length(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_content_length(input);
         self
     }
-    /// <p>Required element for GetCaseAttachmentUploadUrl to identify the size od the file attachment.</p>
+    /// <p>Required element for GetCaseAttachmentUploadUrl to identify the size of the file attachment.</p>
     pub fn get_content_length(&self) -> &::std::option::Option<i64> {
         self.inner.get_content_length()
     }
-    /// <p>Optional element for customer provided token.</p>
+    /// <note>
+    /// <p>The <code>clientToken</code> field is an idempotency key used to ensure that repeated attempts for a single action will be ignored by the server during retries. A caller supplied unique ID (typically a UUID) should be provided.</p>
+    /// </note>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
-    /// <p>Optional element for customer provided token.</p>
+    /// <note>
+    /// <p>The <code>clientToken</code> field is an idempotency key used to ensure that repeated attempts for a single action will be ignored by the server during retries. A caller supplied unique ID (typically a UUID) should be provided.</p>
+    /// </note>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
-    /// <p>Optional element for customer provided token.</p>
+    /// <note>
+    /// <p>The <code>clientToken</code> field is an idempotency key used to ensure that repeated attempts for a single action will be ignored by the server during retries. A caller supplied unique ID (typically a UUID) should be provided.</p>
+    /// </note>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }

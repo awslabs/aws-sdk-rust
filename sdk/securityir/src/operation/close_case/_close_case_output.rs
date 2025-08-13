@@ -3,18 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CloseCaseOutput {
-    /// <p>A response element providing responses for requests to CloseCase. This element responds with the case status following the action.</p>
+    /// <p>A response element providing responses for requests to CloseCase. This element responds <code>Closed </code> if successful.</p>
     pub case_status: ::std::option::Option<crate::types::CaseStatus>,
-    /// <p>A response element providing responses for requests to CloseCase. This element responds with the case closure date following the action.</p>
+    /// <p>A response element providing responses for requests to CloseCase. This element responds with the ISO-8601 formatted timestamp of the moment when the case was closed.</p>
     pub closed_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
 impl CloseCaseOutput {
-    /// <p>A response element providing responses for requests to CloseCase. This element responds with the case status following the action.</p>
+    /// <p>A response element providing responses for requests to CloseCase. This element responds <code>Closed </code> if successful.</p>
     pub fn case_status(&self) -> ::std::option::Option<&crate::types::CaseStatus> {
         self.case_status.as_ref()
     }
-    /// <p>A response element providing responses for requests to CloseCase. This element responds with the case closure date following the action.</p>
+    /// <p>A response element providing responses for requests to CloseCase. This element responds with the ISO-8601 formatted timestamp of the moment when the case was closed.</p>
     pub fn closed_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.closed_date.as_ref()
     }
@@ -40,31 +40,31 @@ pub struct CloseCaseOutputBuilder {
     _request_id: Option<String>,
 }
 impl CloseCaseOutputBuilder {
-    /// <p>A response element providing responses for requests to CloseCase. This element responds with the case status following the action.</p>
+    /// <p>A response element providing responses for requests to CloseCase. This element responds <code>Closed </code> if successful.</p>
     pub fn case_status(mut self, input: crate::types::CaseStatus) -> Self {
         self.case_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A response element providing responses for requests to CloseCase. This element responds with the case status following the action.</p>
+    /// <p>A response element providing responses for requests to CloseCase. This element responds <code>Closed </code> if successful.</p>
     pub fn set_case_status(mut self, input: ::std::option::Option<crate::types::CaseStatus>) -> Self {
         self.case_status = input;
         self
     }
-    /// <p>A response element providing responses for requests to CloseCase. This element responds with the case status following the action.</p>
+    /// <p>A response element providing responses for requests to CloseCase. This element responds <code>Closed </code> if successful.</p>
     pub fn get_case_status(&self) -> &::std::option::Option<crate::types::CaseStatus> {
         &self.case_status
     }
-    /// <p>A response element providing responses for requests to CloseCase. This element responds with the case closure date following the action.</p>
+    /// <p>A response element providing responses for requests to CloseCase. This element responds with the ISO-8601 formatted timestamp of the moment when the case was closed.</p>
     pub fn closed_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.closed_date = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A response element providing responses for requests to CloseCase. This element responds with the case closure date following the action.</p>
+    /// <p>A response element providing responses for requests to CloseCase. This element responds with the ISO-8601 formatted timestamp of the moment when the case was closed.</p>
     pub fn set_closed_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.closed_date = input;
         self
     }
-    /// <p>A response element providing responses for requests to CloseCase. This element responds with the case closure date following the action.</p>
+    /// <p>A response element providing responses for requests to CloseCase. This element responds with the ISO-8601 formatted timestamp of the moment when the case was closed.</p>
     pub fn get_closed_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.closed_date
     }

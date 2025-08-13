@@ -22,7 +22,7 @@ impl crate::operation::get_case_attachment_download_url::builders::GetCaseAttach
 }
 /// Fluent builder constructing a request to `GetCaseAttachmentDownloadUrl`.
 ///
-/// <p>Grants permission to obtain an Amazon S3 presigned URL to download an attachment.</p>
+/// <p>Returns a Pre-Signed URL for uploading attachments into a case.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetCaseAttachmentDownloadUrlFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -22,7 +22,7 @@ impl crate::operation::list_memberships::builders::ListMembershipsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListMemberships`.
 ///
-/// <p>Grants permission to query the memberships a principal has access to.</p>
+/// <p>Returns the memberships that the calling principal can access.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListMembershipsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,17 +114,17 @@ impl ListMembershipsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_memberships::paginator::ListMembershipsPaginator {
         crate::operation::list_memberships::paginator::ListMembershipsPaginator::new(self.handle, self.inner)
     }
-    /// <p>Optional element.</p>
+    /// <p>An optional string that, if supplied, must be copied from the output of a previous call to ListMemberships. When provided in this manner, the API fetches the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>Optional element.</p>
+    /// <p>An optional string that, if supplied, must be copied from the output of a previous call to ListMemberships. When provided in this manner, the API fetches the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>Optional element.</p>
+    /// <p>An optional string that, if supplied, must be copied from the output of a previous call to ListMemberships. When provided in this manner, the API fetches the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }

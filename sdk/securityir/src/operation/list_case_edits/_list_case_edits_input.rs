@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListCaseEditsInput {
-    /// <p>Optional element for a customer provided token.</p>
+    /// <p>An optional string that, if supplied, must be copied from the output of a previous call to ListCaseEdits. When provided in this manner, the API fetches the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Optional element to identify how many results to obtain. There is a maximum value of 25.</p>
     pub max_results: ::std::option::Option<i32>,
@@ -11,7 +11,7 @@ pub struct ListCaseEditsInput {
     pub case_id: ::std::option::Option<::std::string::String>,
 }
 impl ListCaseEditsInput {
-    /// <p>Optional element for a customer provided token.</p>
+    /// <p>An optional string that, if supplied, must be copied from the output of a previous call to ListCaseEdits. When provided in this manner, the API fetches the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -40,17 +40,17 @@ pub struct ListCaseEditsInputBuilder {
     pub(crate) case_id: ::std::option::Option<::std::string::String>,
 }
 impl ListCaseEditsInputBuilder {
-    /// <p>Optional element for a customer provided token.</p>
+    /// <p>An optional string that, if supplied, must be copied from the output of a previous call to ListCaseEdits. When provided in this manner, the API fetches the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Optional element for a customer provided token.</p>
+    /// <p>An optional string that, if supplied, must be copied from the output of a previous call to ListCaseEdits. When provided in this manner, the API fetches the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>Optional element for a customer provided token.</p>
+    /// <p>An optional string that, if supplied, must be copied from the output of a previous call to ListCaseEdits. When provided in this manner, the API fetches the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

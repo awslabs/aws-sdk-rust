@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelQuantumTaskInput {
-    /// <p>The ARN of the task to cancel.</p>
+    /// <p>The ARN of the quantum task to cancel.</p>
     pub quantum_task_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The client token associated with the request.</p>
+    /// <p>The client token associated with the cancellation request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl CancelQuantumTaskInput {
-    /// <p>The ARN of the task to cancel.</p>
+    /// <p>The ARN of the quantum task to cancel.</p>
     pub fn quantum_task_arn(&self) -> ::std::option::Option<&str> {
         self.quantum_task_arn.as_deref()
     }
-    /// <p>The client token associated with the request.</p>
+    /// <p>The client token associated with the cancellation request.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -33,33 +33,33 @@ pub struct CancelQuantumTaskInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl CancelQuantumTaskInputBuilder {
-    /// <p>The ARN of the task to cancel.</p>
+    /// <p>The ARN of the quantum task to cancel.</p>
     /// This field is required.
     pub fn quantum_task_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.quantum_task_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the task to cancel.</p>
+    /// <p>The ARN of the quantum task to cancel.</p>
     pub fn set_quantum_task_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.quantum_task_arn = input;
         self
     }
-    /// <p>The ARN of the task to cancel.</p>
+    /// <p>The ARN of the quantum task to cancel.</p>
     pub fn get_quantum_task_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.quantum_task_arn
     }
-    /// <p>The client token associated with the request.</p>
+    /// <p>The client token associated with the cancellation request.</p>
     /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The client token associated with the request.</p>
+    /// <p>The client token associated with the cancellation request.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
     }
-    /// <p>The client token associated with the request.</p>
+    /// <p>The client token associated with the cancellation request.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }

@@ -3,75 +3,75 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetJobOutput {
-    /// <p>The status of the Amazon Braket job.</p>
+    /// <p>The status of the Amazon Braket hybrid job.</p>
     pub status: crate::types::JobPrimaryStatus,
-    /// <p>The ARN of the Amazon Braket job.</p>
+    /// <p>The ARN of the Amazon Braket hybrid job.</p>
     pub job_arn: ::std::string::String,
-    /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Braket can assume to perform tasks on behalf of a user. It can access user resources, run an Amazon Braket job container on behalf of user, and output resources to the s3 buckets of a user.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Braket can assume to perform tasks on behalf of a user. It can access user resources, run an Amazon Braket job container on behalf of user, and output results and other hybrid job details to the s3 buckets of a user.</p>
     pub role_arn: ::std::string::String,
-    /// <p>A description of the reason why an Amazon Braket job failed, if it failed.</p>
+    /// <p>A description of the reason why an Amazon Braket hybrid job failed, if it failed.</p>
     pub failure_reason: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the Amazon Braket job.</p>
+    /// <p>The name of the Amazon Braket hybrid job.</p>
     pub job_name: ::std::string::String,
-    /// <p>Algorithm-specific parameters used by an Amazon Braket job that influence the quality of the traiing job. The values are set with a string of JSON key:value pairs, where the key is the name of the hyperparameter and the value is the value of th hyperparameter.</p>
+    /// <p>Algorithm-specific parameters used by an Amazon Braket hybrid job that influence the quality of the traiing job. The values are set with a map of JSON key:value pairs, where the key is the name of the hyperparameter and the value is the value of th hyperparameter.</p>
     pub hyper_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A list of parameters that specify the name and type of input data and where it is located.</p>
     pub input_data_config: ::std::option::Option<::std::vec::Vec<crate::types::InputFileConfig>>,
-    /// <p>The path to the S3 location where job artifacts are stored and the encryption key used to store them there.</p>
+    /// <p>The path to the S3 location where hybrid job artifacts are stored and the encryption key used to store them there.</p>
     pub output_data_config: ::std::option::Option<crate::types::JobOutputDataConfig>,
-    /// <p>The user-defined criteria that specifies when to stop a job running.</p>
+    /// <p>The user-defined criteria that specifies when to stop a running hybrid job.</p>
     pub stopping_condition: ::std::option::Option<crate::types::JobStoppingCondition>,
-    /// <p>Information about the output locations for job checkpoint data.</p>
+    /// <p>Information about the output locations for hybrid job checkpoint data.</p>
     pub checkpoint_config: ::std::option::Option<crate::types::JobCheckpointConfig>,
-    /// <p>Definition of the Amazon Braket job created. Specifies the container image the job uses, information about the Python scripts used for entry and training, and the user-defined metrics used to evaluation the job.</p>
+    /// <p>Definition of the Amazon Braket hybrid job created. Provides information about the container image used, and the Python scripts used for training.</p>
     pub algorithm_specification: ::std::option::Option<crate::types::AlgorithmSpecification>,
     /// <p>The resource instances to use while running the hybrid job on Amazon Braket.</p>
     pub instance_config: ::std::option::Option<crate::types::InstanceConfig>,
-    /// <p>The date and time that the Amazon Braket job was created.</p>
+    /// <p>The time at which the Amazon Braket hybrid job was created.</p>
     pub created_at: ::aws_smithy_types::DateTime,
-    /// <p>The date and time that the Amazon Braket job was started.</p>
+    /// <p>The time at which the Amazon Braket hybrid job was started.</p>
     pub started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The date and time that the Amazon Braket job ended.</p>
+    /// <p>The time at which the Amazon Braket hybrid job ended.</p>
     pub ended_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The billable time the Amazon Braket job used to complete.</p>
+    /// <p>The billable time for which the Amazon Braket hybrid job used to complete.</p>
     pub billable_duration: ::std::option::Option<i32>,
-    /// <p>The quantum processing unit (QPU) or simulator used to run the Amazon Braket job.</p>
+    /// <p>The primary device used by the Amazon Braket hybrid job.</p>
     pub device_config: ::std::option::Option<crate::types::DeviceConfig>,
-    /// <p>Details about the type and time events occurred related to the Amazon Braket job.</p>
+    /// <p>Details about the time and type of events occurred related to the Amazon Braket hybrid job.</p>
     pub events: ::std::option::Option<::std::vec::Vec<crate::types::JobEventDetails>>,
-    /// <p>A tag object that consists of a key and an optional value, used to manage metadata for Amazon Braket resources.</p>
+    /// <p>The tags associated with this hybrid job.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p>Queue information for the requested job. Only returned if <code>QueueInfo</code> is specified in the <code>additionalAttributeNames"</code> field in the <code>GetJob</code> API request.</p>
+    /// <p>Queue information for the requested hybrid job. Only returned if <code>QueueInfo</code> is specified in the <code>additionalAttributeNames"</code> field in the <code>GetJob</code> API request.</p>
     pub queue_info: ::std::option::Option<crate::types::HybridJobQueueInfo>,
     /// <p>The list of Amazon Braket resources associated with the hybrid job.</p>
     pub associations: ::std::option::Option<::std::vec::Vec<crate::types::Association>>,
     _request_id: Option<String>,
 }
 impl GetJobOutput {
-    /// <p>The status of the Amazon Braket job.</p>
+    /// <p>The status of the Amazon Braket hybrid job.</p>
     pub fn status(&self) -> &crate::types::JobPrimaryStatus {
         &self.status
     }
-    /// <p>The ARN of the Amazon Braket job.</p>
+    /// <p>The ARN of the Amazon Braket hybrid job.</p>
     pub fn job_arn(&self) -> &str {
         use std::ops::Deref;
         self.job_arn.deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Braket can assume to perform tasks on behalf of a user. It can access user resources, run an Amazon Braket job container on behalf of user, and output resources to the s3 buckets of a user.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Braket can assume to perform tasks on behalf of a user. It can access user resources, run an Amazon Braket job container on behalf of user, and output results and other hybrid job details to the s3 buckets of a user.</p>
     pub fn role_arn(&self) -> &str {
         use std::ops::Deref;
         self.role_arn.deref()
     }
-    /// <p>A description of the reason why an Amazon Braket job failed, if it failed.</p>
+    /// <p>A description of the reason why an Amazon Braket hybrid job failed, if it failed.</p>
     pub fn failure_reason(&self) -> ::std::option::Option<&str> {
         self.failure_reason.as_deref()
     }
-    /// <p>The name of the Amazon Braket job.</p>
+    /// <p>The name of the Amazon Braket hybrid job.</p>
     pub fn job_name(&self) -> &str {
         use std::ops::Deref;
         self.job_name.deref()
     }
-    /// <p>Algorithm-specific parameters used by an Amazon Braket job that influence the quality of the traiing job. The values are set with a string of JSON key:value pairs, where the key is the name of the hyperparameter and the value is the value of th hyperparameter.</p>
+    /// <p>Algorithm-specific parameters used by an Amazon Braket hybrid job that influence the quality of the traiing job. The values are set with a map of JSON key:value pairs, where the key is the name of the hyperparameter and the value is the value of th hyperparameter.</p>
     pub fn hyper_parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.hyper_parameters.as_ref()
     }
@@ -81,19 +81,19 @@ impl GetJobOutput {
     pub fn input_data_config(&self) -> &[crate::types::InputFileConfig] {
         self.input_data_config.as_deref().unwrap_or_default()
     }
-    /// <p>The path to the S3 location where job artifacts are stored and the encryption key used to store them there.</p>
+    /// <p>The path to the S3 location where hybrid job artifacts are stored and the encryption key used to store them there.</p>
     pub fn output_data_config(&self) -> ::std::option::Option<&crate::types::JobOutputDataConfig> {
         self.output_data_config.as_ref()
     }
-    /// <p>The user-defined criteria that specifies when to stop a job running.</p>
+    /// <p>The user-defined criteria that specifies when to stop a running hybrid job.</p>
     pub fn stopping_condition(&self) -> ::std::option::Option<&crate::types::JobStoppingCondition> {
         self.stopping_condition.as_ref()
     }
-    /// <p>Information about the output locations for job checkpoint data.</p>
+    /// <p>Information about the output locations for hybrid job checkpoint data.</p>
     pub fn checkpoint_config(&self) -> ::std::option::Option<&crate::types::JobCheckpointConfig> {
         self.checkpoint_config.as_ref()
     }
-    /// <p>Definition of the Amazon Braket job created. Specifies the container image the job uses, information about the Python scripts used for entry and training, and the user-defined metrics used to evaluation the job.</p>
+    /// <p>Definition of the Amazon Braket hybrid job created. Provides information about the container image used, and the Python scripts used for training.</p>
     pub fn algorithm_specification(&self) -> ::std::option::Option<&crate::types::AlgorithmSpecification> {
         self.algorithm_specification.as_ref()
     }
@@ -101,37 +101,37 @@ impl GetJobOutput {
     pub fn instance_config(&self) -> ::std::option::Option<&crate::types::InstanceConfig> {
         self.instance_config.as_ref()
     }
-    /// <p>The date and time that the Amazon Braket job was created.</p>
+    /// <p>The time at which the Amazon Braket hybrid job was created.</p>
     pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
         &self.created_at
     }
-    /// <p>The date and time that the Amazon Braket job was started.</p>
+    /// <p>The time at which the Amazon Braket hybrid job was started.</p>
     pub fn started_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.started_at.as_ref()
     }
-    /// <p>The date and time that the Amazon Braket job ended.</p>
+    /// <p>The time at which the Amazon Braket hybrid job ended.</p>
     pub fn ended_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.ended_at.as_ref()
     }
-    /// <p>The billable time the Amazon Braket job used to complete.</p>
+    /// <p>The billable time for which the Amazon Braket hybrid job used to complete.</p>
     pub fn billable_duration(&self) -> ::std::option::Option<i32> {
         self.billable_duration
     }
-    /// <p>The quantum processing unit (QPU) or simulator used to run the Amazon Braket job.</p>
+    /// <p>The primary device used by the Amazon Braket hybrid job.</p>
     pub fn device_config(&self) -> ::std::option::Option<&crate::types::DeviceConfig> {
         self.device_config.as_ref()
     }
-    /// <p>Details about the type and time events occurred related to the Amazon Braket job.</p>
+    /// <p>Details about the time and type of events occurred related to the Amazon Braket hybrid job.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.events.is_none()`.
     pub fn events(&self) -> &[crate::types::JobEventDetails] {
         self.events.as_deref().unwrap_or_default()
     }
-    /// <p>A tag object that consists of a key and an optional value, used to manage metadata for Amazon Braket resources.</p>
+    /// <p>The tags associated with this hybrid job.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
-    /// <p>Queue information for the requested job. Only returned if <code>QueueInfo</code> is specified in the <code>additionalAttributeNames"</code> field in the <code>GetJob</code> API request.</p>
+    /// <p>Queue information for the requested hybrid job. Only returned if <code>QueueInfo</code> is specified in the <code>additionalAttributeNames"</code> field in the <code>GetJob</code> API request.</p>
     pub fn queue_info(&self) -> ::std::option::Option<&crate::types::HybridJobQueueInfo> {
         self.queue_info.as_ref()
     }
@@ -182,77 +182,77 @@ pub struct GetJobOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetJobOutputBuilder {
-    /// <p>The status of the Amazon Braket job.</p>
+    /// <p>The status of the Amazon Braket hybrid job.</p>
     /// This field is required.
     pub fn status(mut self, input: crate::types::JobPrimaryStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of the Amazon Braket job.</p>
+    /// <p>The status of the Amazon Braket hybrid job.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::JobPrimaryStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The status of the Amazon Braket job.</p>
+    /// <p>The status of the Amazon Braket hybrid job.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::JobPrimaryStatus> {
         &self.status
     }
-    /// <p>The ARN of the Amazon Braket job.</p>
+    /// <p>The ARN of the Amazon Braket hybrid job.</p>
     /// This field is required.
     pub fn job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the Amazon Braket job.</p>
+    /// <p>The ARN of the Amazon Braket hybrid job.</p>
     pub fn set_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_arn = input;
         self
     }
-    /// <p>The ARN of the Amazon Braket job.</p>
+    /// <p>The ARN of the Amazon Braket hybrid job.</p>
     pub fn get_job_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_arn
     }
-    /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Braket can assume to perform tasks on behalf of a user. It can access user resources, run an Amazon Braket job container on behalf of user, and output resources to the s3 buckets of a user.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Braket can assume to perform tasks on behalf of a user. It can access user resources, run an Amazon Braket job container on behalf of user, and output results and other hybrid job details to the s3 buckets of a user.</p>
     /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Braket can assume to perform tasks on behalf of a user. It can access user resources, run an Amazon Braket job container on behalf of user, and output resources to the s3 buckets of a user.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Braket can assume to perform tasks on behalf of a user. It can access user resources, run an Amazon Braket job container on behalf of user, and output results and other hybrid job details to the s3 buckets of a user.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Braket can assume to perform tasks on behalf of a user. It can access user resources, run an Amazon Braket job container on behalf of user, and output resources to the s3 buckets of a user.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Braket can assume to perform tasks on behalf of a user. It can access user resources, run an Amazon Braket job container on behalf of user, and output results and other hybrid job details to the s3 buckets of a user.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }
-    /// <p>A description of the reason why an Amazon Braket job failed, if it failed.</p>
+    /// <p>A description of the reason why an Amazon Braket hybrid job failed, if it failed.</p>
     pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_reason = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A description of the reason why an Amazon Braket job failed, if it failed.</p>
+    /// <p>A description of the reason why an Amazon Braket hybrid job failed, if it failed.</p>
     pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_reason = input;
         self
     }
-    /// <p>A description of the reason why an Amazon Braket job failed, if it failed.</p>
+    /// <p>A description of the reason why an Amazon Braket hybrid job failed, if it failed.</p>
     pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.failure_reason
     }
-    /// <p>The name of the Amazon Braket job.</p>
+    /// <p>The name of the Amazon Braket hybrid job.</p>
     /// This field is required.
     pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the Amazon Braket job.</p>
+    /// <p>The name of the Amazon Braket hybrid job.</p>
     pub fn set_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_name = input;
         self
     }
-    /// <p>The name of the Amazon Braket job.</p>
+    /// <p>The name of the Amazon Braket hybrid job.</p>
     pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_name
     }
@@ -260,7 +260,7 @@ impl GetJobOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_hyper_parameters`](Self::set_hyper_parameters).
     ///
-    /// <p>Algorithm-specific parameters used by an Amazon Braket job that influence the quality of the traiing job. The values are set with a string of JSON key:value pairs, where the key is the name of the hyperparameter and the value is the value of th hyperparameter.</p>
+    /// <p>Algorithm-specific parameters used by an Amazon Braket hybrid job that influence the quality of the traiing job. The values are set with a map of JSON key:value pairs, where the key is the name of the hyperparameter and the value is the value of th hyperparameter.</p>
     pub fn hyper_parameters(
         mut self,
         k: impl ::std::convert::Into<::std::string::String>,
@@ -271,7 +271,7 @@ impl GetJobOutputBuilder {
         self.hyper_parameters = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>Algorithm-specific parameters used by an Amazon Braket job that influence the quality of the traiing job. The values are set with a string of JSON key:value pairs, where the key is the name of the hyperparameter and the value is the value of th hyperparameter.</p>
+    /// <p>Algorithm-specific parameters used by an Amazon Braket hybrid job that influence the quality of the traiing job. The values are set with a map of JSON key:value pairs, where the key is the name of the hyperparameter and the value is the value of th hyperparameter.</p>
     pub fn set_hyper_parameters(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -279,7 +279,7 @@ impl GetJobOutputBuilder {
         self.hyper_parameters = input;
         self
     }
-    /// <p>Algorithm-specific parameters used by an Amazon Braket job that influence the quality of the traiing job. The values are set with a string of JSON key:value pairs, where the key is the name of the hyperparameter and the value is the value of th hyperparameter.</p>
+    /// <p>Algorithm-specific parameters used by an Amazon Braket hybrid job that influence the quality of the traiing job. The values are set with a map of JSON key:value pairs, where the key is the name of the hyperparameter and the value is the value of th hyperparameter.</p>
     pub fn get_hyper_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.hyper_parameters
     }
@@ -303,61 +303,61 @@ impl GetJobOutputBuilder {
     pub fn get_input_data_config(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InputFileConfig>> {
         &self.input_data_config
     }
-    /// <p>The path to the S3 location where job artifacts are stored and the encryption key used to store them there.</p>
+    /// <p>The path to the S3 location where hybrid job artifacts are stored and the encryption key used to store them there.</p>
     /// This field is required.
     pub fn output_data_config(mut self, input: crate::types::JobOutputDataConfig) -> Self {
         self.output_data_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The path to the S3 location where job artifacts are stored and the encryption key used to store them there.</p>
+    /// <p>The path to the S3 location where hybrid job artifacts are stored and the encryption key used to store them there.</p>
     pub fn set_output_data_config(mut self, input: ::std::option::Option<crate::types::JobOutputDataConfig>) -> Self {
         self.output_data_config = input;
         self
     }
-    /// <p>The path to the S3 location where job artifacts are stored and the encryption key used to store them there.</p>
+    /// <p>The path to the S3 location where hybrid job artifacts are stored and the encryption key used to store them there.</p>
     pub fn get_output_data_config(&self) -> &::std::option::Option<crate::types::JobOutputDataConfig> {
         &self.output_data_config
     }
-    /// <p>The user-defined criteria that specifies when to stop a job running.</p>
+    /// <p>The user-defined criteria that specifies when to stop a running hybrid job.</p>
     pub fn stopping_condition(mut self, input: crate::types::JobStoppingCondition) -> Self {
         self.stopping_condition = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The user-defined criteria that specifies when to stop a job running.</p>
+    /// <p>The user-defined criteria that specifies when to stop a running hybrid job.</p>
     pub fn set_stopping_condition(mut self, input: ::std::option::Option<crate::types::JobStoppingCondition>) -> Self {
         self.stopping_condition = input;
         self
     }
-    /// <p>The user-defined criteria that specifies when to stop a job running.</p>
+    /// <p>The user-defined criteria that specifies when to stop a running hybrid job.</p>
     pub fn get_stopping_condition(&self) -> &::std::option::Option<crate::types::JobStoppingCondition> {
         &self.stopping_condition
     }
-    /// <p>Information about the output locations for job checkpoint data.</p>
+    /// <p>Information about the output locations for hybrid job checkpoint data.</p>
     pub fn checkpoint_config(mut self, input: crate::types::JobCheckpointConfig) -> Self {
         self.checkpoint_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Information about the output locations for job checkpoint data.</p>
+    /// <p>Information about the output locations for hybrid job checkpoint data.</p>
     pub fn set_checkpoint_config(mut self, input: ::std::option::Option<crate::types::JobCheckpointConfig>) -> Self {
         self.checkpoint_config = input;
         self
     }
-    /// <p>Information about the output locations for job checkpoint data.</p>
+    /// <p>Information about the output locations for hybrid job checkpoint data.</p>
     pub fn get_checkpoint_config(&self) -> &::std::option::Option<crate::types::JobCheckpointConfig> {
         &self.checkpoint_config
     }
-    /// <p>Definition of the Amazon Braket job created. Specifies the container image the job uses, information about the Python scripts used for entry and training, and the user-defined metrics used to evaluation the job.</p>
+    /// <p>Definition of the Amazon Braket hybrid job created. Provides information about the container image used, and the Python scripts used for training.</p>
     /// This field is required.
     pub fn algorithm_specification(mut self, input: crate::types::AlgorithmSpecification) -> Self {
         self.algorithm_specification = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Definition of the Amazon Braket job created. Specifies the container image the job uses, information about the Python scripts used for entry and training, and the user-defined metrics used to evaluation the job.</p>
+    /// <p>Definition of the Amazon Braket hybrid job created. Provides information about the container image used, and the Python scripts used for training.</p>
     pub fn set_algorithm_specification(mut self, input: ::std::option::Option<crate::types::AlgorithmSpecification>) -> Self {
         self.algorithm_specification = input;
         self
     }
-    /// <p>Definition of the Amazon Braket job created. Specifies the container image the job uses, information about the Python scripts used for entry and training, and the user-defined metrics used to evaluation the job.</p>
+    /// <p>Definition of the Amazon Braket hybrid job created. Provides information about the container image used, and the Python scripts used for training.</p>
     pub fn get_algorithm_specification(&self) -> &::std::option::Option<crate::types::AlgorithmSpecification> {
         &self.algorithm_specification
     }
@@ -376,74 +376,74 @@ impl GetJobOutputBuilder {
     pub fn get_instance_config(&self) -> &::std::option::Option<crate::types::InstanceConfig> {
         &self.instance_config
     }
-    /// <p>The date and time that the Amazon Braket job was created.</p>
+    /// <p>The time at which the Amazon Braket hybrid job was created.</p>
     /// This field is required.
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date and time that the Amazon Braket job was created.</p>
+    /// <p>The time at which the Amazon Braket hybrid job was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
-    /// <p>The date and time that the Amazon Braket job was created.</p>
+    /// <p>The time at which the Amazon Braket hybrid job was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_at
     }
-    /// <p>The date and time that the Amazon Braket job was started.</p>
+    /// <p>The time at which the Amazon Braket hybrid job was started.</p>
     pub fn started_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.started_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date and time that the Amazon Braket job was started.</p>
+    /// <p>The time at which the Amazon Braket hybrid job was started.</p>
     pub fn set_started_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.started_at = input;
         self
     }
-    /// <p>The date and time that the Amazon Braket job was started.</p>
+    /// <p>The time at which the Amazon Braket hybrid job was started.</p>
     pub fn get_started_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.started_at
     }
-    /// <p>The date and time that the Amazon Braket job ended.</p>
+    /// <p>The time at which the Amazon Braket hybrid job ended.</p>
     pub fn ended_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.ended_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date and time that the Amazon Braket job ended.</p>
+    /// <p>The time at which the Amazon Braket hybrid job ended.</p>
     pub fn set_ended_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.ended_at = input;
         self
     }
-    /// <p>The date and time that the Amazon Braket job ended.</p>
+    /// <p>The time at which the Amazon Braket hybrid job ended.</p>
     pub fn get_ended_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.ended_at
     }
-    /// <p>The billable time the Amazon Braket job used to complete.</p>
+    /// <p>The billable time for which the Amazon Braket hybrid job used to complete.</p>
     pub fn billable_duration(mut self, input: i32) -> Self {
         self.billable_duration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The billable time the Amazon Braket job used to complete.</p>
+    /// <p>The billable time for which the Amazon Braket hybrid job used to complete.</p>
     pub fn set_billable_duration(mut self, input: ::std::option::Option<i32>) -> Self {
         self.billable_duration = input;
         self
     }
-    /// <p>The billable time the Amazon Braket job used to complete.</p>
+    /// <p>The billable time for which the Amazon Braket hybrid job used to complete.</p>
     pub fn get_billable_duration(&self) -> &::std::option::Option<i32> {
         &self.billable_duration
     }
-    /// <p>The quantum processing unit (QPU) or simulator used to run the Amazon Braket job.</p>
+    /// <p>The primary device used by the Amazon Braket hybrid job.</p>
     pub fn device_config(mut self, input: crate::types::DeviceConfig) -> Self {
         self.device_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The quantum processing unit (QPU) or simulator used to run the Amazon Braket job.</p>
+    /// <p>The primary device used by the Amazon Braket hybrid job.</p>
     pub fn set_device_config(mut self, input: ::std::option::Option<crate::types::DeviceConfig>) -> Self {
         self.device_config = input;
         self
     }
-    /// <p>The quantum processing unit (QPU) or simulator used to run the Amazon Braket job.</p>
+    /// <p>The primary device used by the Amazon Braket hybrid job.</p>
     pub fn get_device_config(&self) -> &::std::option::Option<crate::types::DeviceConfig> {
         &self.device_config
     }
@@ -451,19 +451,19 @@ impl GetJobOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_events`](Self::set_events).
     ///
-    /// <p>Details about the type and time events occurred related to the Amazon Braket job.</p>
+    /// <p>Details about the time and type of events occurred related to the Amazon Braket hybrid job.</p>
     pub fn events(mut self, input: crate::types::JobEventDetails) -> Self {
         let mut v = self.events.unwrap_or_default();
         v.push(input);
         self.events = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Details about the type and time events occurred related to the Amazon Braket job.</p>
+    /// <p>Details about the time and type of events occurred related to the Amazon Braket hybrid job.</p>
     pub fn set_events(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JobEventDetails>>) -> Self {
         self.events = input;
         self
     }
-    /// <p>Details about the type and time events occurred related to the Amazon Braket job.</p>
+    /// <p>Details about the time and type of events occurred related to the Amazon Braket hybrid job.</p>
     pub fn get_events(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JobEventDetails>> {
         &self.events
     }
@@ -471,33 +471,33 @@ impl GetJobOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>A tag object that consists of a key and an optional value, used to manage metadata for Amazon Braket resources.</p>
+    /// <p>The tags associated with this hybrid job.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>A tag object that consists of a key and an optional value, used to manage metadata for Amazon Braket resources.</p>
+    /// <p>The tags associated with this hybrid job.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>A tag object that consists of a key and an optional value, used to manage metadata for Amazon Braket resources.</p>
+    /// <p>The tags associated with this hybrid job.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
-    /// <p>Queue information for the requested job. Only returned if <code>QueueInfo</code> is specified in the <code>additionalAttributeNames"</code> field in the <code>GetJob</code> API request.</p>
+    /// <p>Queue information for the requested hybrid job. Only returned if <code>QueueInfo</code> is specified in the <code>additionalAttributeNames"</code> field in the <code>GetJob</code> API request.</p>
     pub fn queue_info(mut self, input: crate::types::HybridJobQueueInfo) -> Self {
         self.queue_info = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Queue information for the requested job. Only returned if <code>QueueInfo</code> is specified in the <code>additionalAttributeNames"</code> field in the <code>GetJob</code> API request.</p>
+    /// <p>Queue information for the requested hybrid job. Only returned if <code>QueueInfo</code> is specified in the <code>additionalAttributeNames"</code> field in the <code>GetJob</code> API request.</p>
     pub fn set_queue_info(mut self, input: ::std::option::Option<crate::types::HybridJobQueueInfo>) -> Self {
         self.queue_info = input;
         self
     }
-    /// <p>Queue information for the requested job. Only returned if <code>QueueInfo</code> is specified in the <code>additionalAttributeNames"</code> field in the <code>GetJob</code> API request.</p>
+    /// <p>Queue information for the requested hybrid job. Only returned if <code>QueueInfo</code> is specified in the <code>additionalAttributeNames"</code> field in the <code>GetJob</code> API request.</p>
     pub fn get_queue_info(&self) -> &::std::option::Option<crate::types::HybridJobQueueInfo> {
         &self.queue_info
     }

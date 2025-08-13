@@ -22,7 +22,9 @@ impl crate::operation::batch_get_member_account_details::builders::BatchGetMembe
 }
 /// Fluent builder constructing a request to `BatchGetMemberAccountDetails`.
 ///
-/// <p>Grants permission to view an existing membership.</p>
+/// <p>Provides information on whether the supplied account IDs are associated with a membership.</p><note>
+/// <p>AWS account ID's may appear less than 12 characters and need to be zero-prepended. An example would be <code>123123123</code> which is nine digits, and with zero-prepend would be <code>000123123123</code>. Not zero-prepending to 12 digits could result in errors.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchGetMemberAccountDetailsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -127,17 +129,23 @@ impl BatchGetMemberAccountDetailsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
     ///
-    /// <p>Optional element to query the membership relationship status to a provided list of account IDs.</p>
+    /// <p>Optional element to query the membership relationship status to a provided list of account IDs.</p><note>
+    /// <p>AWS account ID's may appear less than 12 characters and need to be zero-prepended. An example would be <code>123123123</code> which is nine digits, and with zero-prepend would be <code>000123123123</code>. Not zero-prepending to 12 digits could result in errors.</p>
+    /// </note>
     pub fn account_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.account_ids(input.into());
         self
     }
-    /// <p>Optional element to query the membership relationship status to a provided list of account IDs.</p>
+    /// <p>Optional element to query the membership relationship status to a provided list of account IDs.</p><note>
+    /// <p>AWS account ID's may appear less than 12 characters and need to be zero-prepended. An example would be <code>123123123</code> which is nine digits, and with zero-prepend would be <code>000123123123</code>. Not zero-prepending to 12 digits could result in errors.</p>
+    /// </note>
     pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_account_ids(input);
         self
     }
-    /// <p>Optional element to query the membership relationship status to a provided list of account IDs.</p>
+    /// <p>Optional element to query the membership relationship status to a provided list of account IDs.</p><note>
+    /// <p>AWS account ID's may appear less than 12 characters and need to be zero-prepended. An example would be <code>123123123</code> which is nine digits, and with zero-prepend would be <code>000123123123</code>. Not zero-prepending to 12 digits could result in errors.</p>
+    /// </note>
     pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_account_ids()
     }

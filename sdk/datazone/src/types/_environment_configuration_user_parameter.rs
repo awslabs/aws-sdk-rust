@@ -6,6 +6,8 @@
 pub struct EnvironmentConfigurationUserParameter {
     /// <p>The ID of the environment.</p>
     pub environment_id: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies the account/Region that is to be used during project creation for a particular blueprint.</p>
+    pub environment_resolved_account: ::std::option::Option<crate::types::EnvironmentResolvedAccount>,
     /// <p>The environment configuration name.</p>
     pub environment_configuration_name: ::std::option::Option<::std::string::String>,
     /// <p>The environment parameters.</p>
@@ -15,6 +17,10 @@ impl EnvironmentConfigurationUserParameter {
     /// <p>The ID of the environment.</p>
     pub fn environment_id(&self) -> ::std::option::Option<&str> {
         self.environment_id.as_deref()
+    }
+    /// <p>Specifies the account/Region that is to be used during project creation for a particular blueprint.</p>
+    pub fn environment_resolved_account(&self) -> ::std::option::Option<&crate::types::EnvironmentResolvedAccount> {
+        self.environment_resolved_account.as_ref()
     }
     /// <p>The environment configuration name.</p>
     pub fn environment_configuration_name(&self) -> ::std::option::Option<&str> {
@@ -31,6 +37,7 @@ impl ::std::fmt::Debug for EnvironmentConfigurationUserParameter {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("EnvironmentConfigurationUserParameter");
         formatter.field("environment_id", &self.environment_id);
+        formatter.field("environment_resolved_account", &self.environment_resolved_account);
         formatter.field("environment_configuration_name", &"*** Sensitive Data Redacted ***");
         formatter.field("environment_parameters", &self.environment_parameters);
         formatter.finish()
@@ -48,6 +55,7 @@ impl EnvironmentConfigurationUserParameter {
 #[non_exhaustive]
 pub struct EnvironmentConfigurationUserParameterBuilder {
     pub(crate) environment_id: ::std::option::Option<::std::string::String>,
+    pub(crate) environment_resolved_account: ::std::option::Option<crate::types::EnvironmentResolvedAccount>,
     pub(crate) environment_configuration_name: ::std::option::Option<::std::string::String>,
     pub(crate) environment_parameters: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentParameter>>,
 }
@@ -65,6 +73,20 @@ impl EnvironmentConfigurationUserParameterBuilder {
     /// <p>The ID of the environment.</p>
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.environment_id
+    }
+    /// <p>Specifies the account/Region that is to be used during project creation for a particular blueprint.</p>
+    pub fn environment_resolved_account(mut self, input: crate::types::EnvironmentResolvedAccount) -> Self {
+        self.environment_resolved_account = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the account/Region that is to be used during project creation for a particular blueprint.</p>
+    pub fn set_environment_resolved_account(mut self, input: ::std::option::Option<crate::types::EnvironmentResolvedAccount>) -> Self {
+        self.environment_resolved_account = input;
+        self
+    }
+    /// <p>Specifies the account/Region that is to be used during project creation for a particular blueprint.</p>
+    pub fn get_environment_resolved_account(&self) -> &::std::option::Option<crate::types::EnvironmentResolvedAccount> {
+        &self.environment_resolved_account
     }
     /// <p>The environment configuration name.</p>
     pub fn environment_configuration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -104,6 +126,7 @@ impl EnvironmentConfigurationUserParameterBuilder {
     pub fn build(self) -> crate::types::EnvironmentConfigurationUserParameter {
         crate::types::EnvironmentConfigurationUserParameter {
             environment_id: self.environment_id,
+            environment_resolved_account: self.environment_resolved_account,
             environment_configuration_name: self.environment_configuration_name,
             environment_parameters: self.environment_parameters,
         }
@@ -113,6 +136,7 @@ impl ::std::fmt::Debug for EnvironmentConfigurationUserParameterBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("EnvironmentConfigurationUserParameterBuilder");
         formatter.field("environment_id", &self.environment_id);
+        formatter.field("environment_resolved_account", &self.environment_resolved_account);
         formatter.field("environment_configuration_name", &"*** Sensitive Data Redacted ***");
         formatter.field("environment_parameters", &self.environment_parameters);
         formatter.finish()

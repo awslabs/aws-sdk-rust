@@ -22,7 +22,7 @@ impl crate::operation::cancel_job::builders::CancelJobInputBuilder {
 }
 /// Fluent builder constructing a request to `CancelJob`.
 ///
-/// <p>Cancels an Amazon Braket job.</p>
+/// <p>Cancels an Amazon Braket hybrid job.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CancelJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -102,17 +102,17 @@ impl CancelJobFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ARN of the Amazon Braket job to cancel.</p>
+    /// <p>The ARN of the Amazon Braket hybrid job to cancel.</p>
     pub fn job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.job_arn(input.into());
         self
     }
-    /// <p>The ARN of the Amazon Braket job to cancel.</p>
+    /// <p>The ARN of the Amazon Braket hybrid job to cancel.</p>
     pub fn set_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_job_arn(input);
         self
     }
-    /// <p>The ARN of the Amazon Braket job to cancel.</p>
+    /// <p>The ARN of the Amazon Braket hybrid job to cancel.</p>
     pub fn get_job_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_job_arn()
     }

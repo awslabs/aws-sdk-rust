@@ -22,7 +22,27 @@ impl crate::operation::update_case_status::builders::UpdateCaseStatusInputBuilde
 }
 /// Fluent builder constructing a request to `UpdateCaseStatus`.
 ///
-/// <p>Grants permission to update the status for a designated cases. Options include <code>Submitted | Detection and Analysis | Eradication, Containment and Recovery | Post-Incident Activities | Closed</code>.</p>
+/// <p>Updates the state transitions for a designated cases.</p>
+/// <p><b>Self-managed</b>: the following states are available for self-managed cases.</p>
+/// <ul>
+/// <li>
+/// <p>Submitted → Detection and Analysis</p></li>
+/// <li>
+/// <p>Detection and Analysis → Containment, Eradication, and Recovery</p></li>
+/// <li>
+/// <p>Detection and Analysis → Post-incident Activities</p></li>
+/// <li>
+/// <p>Containment, Eradication, and Recovery → Detection and Analysis</p></li>
+/// <li>
+/// <p>Containment, Eradication, and Recovery → Post-incident Activities</p></li>
+/// <li>
+/// <p>Post-incident Activities → Containment, Eradication, and Recovery</p></li>
+/// <li>
+/// <p>Post-incident Activities → Detection and Analysis</p></li>
+/// <li>
+/// <p>Any → Closed</p></li>
+/// </ul>
+/// <p><b>AWS supported</b>: You must use the <code>CloseCase</code> API to close.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateCaseStatusFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

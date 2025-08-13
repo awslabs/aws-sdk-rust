@@ -3,19 +3,24 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateCaseInput {
-    /// <p>Required element used in combination with CreateCase.</p>
+    /// <note>
+    /// <p>The <code>clientToken</code> field is an idempotency key used to ensure that repeated attempts for a single action will be ignored by the server during retries. A caller supplied unique ID (typically a UUID) should be provided.</p>
+    /// </note>
     pub client_token: ::std::option::Option<::std::string::String>,
-    /// <p>Required element used in combination with CreateCase to identify the resolver type. Available resolvers include self-supported | aws-supported.</p>
+    /// <p>Required element used in combination with CreateCase to identify the resolver type.</p>
     pub resolver_type: ::std::option::Option<crate::types::ResolverType>,
     /// <p>Required element used in combination with CreateCase to provide a title for the new case.</p>
     pub title: ::std::option::Option<::std::string::String>,
-    /// <p>Required element used in combination with CreateCase to provide a description for the new case.</p>
+    /// <p>Required element used in combination with CreateCase</p>
+    /// <p>to provide a description for the new case.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Required element used in combination with CreateCase to provide an engagement type for the new cases. Available engagement types include Security Incident | Investigation</p>
     pub engagement_type: ::std::option::Option<crate::types::EngagementType>,
     /// <p>Required element used in combination with CreateCase to provide an initial start date for the unauthorized activity.</p>
     pub reported_incident_start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>Required element used in combination with CreateCase to provide a list of impacted accounts.</p>
+    /// <p>Required element used in combination with CreateCase to provide a list of impacted accounts.</p><note>
+    /// <p>AWS account ID's may appear less than 12 characters and need to be zero-prepended. An example would be <code>123123123</code> which is nine digits, and with zero-prepend would be <code>000123123123</code>. Not zero-prepending to 12 digits could result in errors.</p>
+    /// </note>
     pub impacted_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Required element used in combination with CreateCase to provide a list of entities to receive notifications for case updates.</p>
     pub watchers: ::std::option::Option<::std::vec::Vec<crate::types::Watcher>>,
@@ -29,11 +34,13 @@ pub struct CreateCaseInput {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateCaseInput {
-    /// <p>Required element used in combination with CreateCase.</p>
+    /// <note>
+    /// <p>The <code>clientToken</code> field is an idempotency key used to ensure that repeated attempts for a single action will be ignored by the server during retries. A caller supplied unique ID (typically a UUID) should be provided.</p>
+    /// </note>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>Required element used in combination with CreateCase to identify the resolver type. Available resolvers include self-supported | aws-supported.</p>
+    /// <p>Required element used in combination with CreateCase to identify the resolver type.</p>
     pub fn resolver_type(&self) -> ::std::option::Option<&crate::types::ResolverType> {
         self.resolver_type.as_ref()
     }
@@ -41,7 +48,8 @@ impl CreateCaseInput {
     pub fn title(&self) -> ::std::option::Option<&str> {
         self.title.as_deref()
     }
-    /// <p>Required element used in combination with CreateCase to provide a description for the new case.</p>
+    /// <p>Required element used in combination with CreateCase</p>
+    /// <p>to provide a description for the new case.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -53,7 +61,9 @@ impl CreateCaseInput {
     pub fn reported_incident_start_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.reported_incident_start_date.as_ref()
     }
-    /// <p>Required element used in combination with CreateCase to provide a list of impacted accounts.</p>
+    /// <p>Required element used in combination with CreateCase to provide a list of impacted accounts.</p><note>
+    /// <p>AWS account ID's may appear less than 12 characters and need to be zero-prepended. An example would be <code>123123123</code> which is nine digits, and with zero-prepend would be <code>000123123123</code>. Not zero-prepending to 12 digits could result in errors.</p>
+    /// </note>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.impacted_accounts.is_none()`.
     pub fn impacted_accounts(&self) -> &[::std::string::String] {
@@ -131,32 +141,38 @@ pub struct CreateCaseInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateCaseInputBuilder {
-    /// <p>Required element used in combination with CreateCase.</p>
+    /// <note>
+    /// <p>The <code>clientToken</code> field is an idempotency key used to ensure that repeated attempts for a single action will be ignored by the server during retries. A caller supplied unique ID (typically a UUID) should be provided.</p>
+    /// </note>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Required element used in combination with CreateCase.</p>
+    /// <note>
+    /// <p>The <code>clientToken</code> field is an idempotency key used to ensure that repeated attempts for a single action will be ignored by the server during retries. A caller supplied unique ID (typically a UUID) should be provided.</p>
+    /// </note>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
     }
-    /// <p>Required element used in combination with CreateCase.</p>
+    /// <note>
+    /// <p>The <code>clientToken</code> field is an idempotency key used to ensure that repeated attempts for a single action will be ignored by the server during retries. A caller supplied unique ID (typically a UUID) should be provided.</p>
+    /// </note>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
-    /// <p>Required element used in combination with CreateCase to identify the resolver type. Available resolvers include self-supported | aws-supported.</p>
+    /// <p>Required element used in combination with CreateCase to identify the resolver type.</p>
     /// This field is required.
     pub fn resolver_type(mut self, input: crate::types::ResolverType) -> Self {
         self.resolver_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Required element used in combination with CreateCase to identify the resolver type. Available resolvers include self-supported | aws-supported.</p>
+    /// <p>Required element used in combination with CreateCase to identify the resolver type.</p>
     pub fn set_resolver_type(mut self, input: ::std::option::Option<crate::types::ResolverType>) -> Self {
         self.resolver_type = input;
         self
     }
-    /// <p>Required element used in combination with CreateCase to identify the resolver type. Available resolvers include self-supported | aws-supported.</p>
+    /// <p>Required element used in combination with CreateCase to identify the resolver type.</p>
     pub fn get_resolver_type(&self) -> &::std::option::Option<crate::types::ResolverType> {
         &self.resolver_type
     }
@@ -175,18 +191,21 @@ impl CreateCaseInputBuilder {
     pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
         &self.title
     }
-    /// <p>Required element used in combination with CreateCase to provide a description for the new case.</p>
+    /// <p>Required element used in combination with CreateCase</p>
+    /// <p>to provide a description for the new case.</p>
     /// This field is required.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Required element used in combination with CreateCase to provide a description for the new case.</p>
+    /// <p>Required element used in combination with CreateCase</p>
+    /// <p>to provide a description for the new case.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p>Required element used in combination with CreateCase to provide a description for the new case.</p>
+    /// <p>Required element used in combination with CreateCase</p>
+    /// <p>to provide a description for the new case.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
@@ -224,19 +243,25 @@ impl CreateCaseInputBuilder {
     ///
     /// To override the contents of this collection use [`set_impacted_accounts`](Self::set_impacted_accounts).
     ///
-    /// <p>Required element used in combination with CreateCase to provide a list of impacted accounts.</p>
+    /// <p>Required element used in combination with CreateCase to provide a list of impacted accounts.</p><note>
+    /// <p>AWS account ID's may appear less than 12 characters and need to be zero-prepended. An example would be <code>123123123</code> which is nine digits, and with zero-prepend would be <code>000123123123</code>. Not zero-prepending to 12 digits could result in errors.</p>
+    /// </note>
     pub fn impacted_accounts(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.impacted_accounts.unwrap_or_default();
         v.push(input.into());
         self.impacted_accounts = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Required element used in combination with CreateCase to provide a list of impacted accounts.</p>
+    /// <p>Required element used in combination with CreateCase to provide a list of impacted accounts.</p><note>
+    /// <p>AWS account ID's may appear less than 12 characters and need to be zero-prepended. An example would be <code>123123123</code> which is nine digits, and with zero-prepend would be <code>000123123123</code>. Not zero-prepending to 12 digits could result in errors.</p>
+    /// </note>
     pub fn set_impacted_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.impacted_accounts = input;
         self
     }
-    /// <p>Required element used in combination with CreateCase to provide a list of impacted accounts.</p>
+    /// <p>Required element used in combination with CreateCase to provide a list of impacted accounts.</p><note>
+    /// <p>AWS account ID's may appear less than 12 characters and need to be zero-prepended. An example would be <code>123123123</code> which is nine digits, and with zero-prepend would be <code>000123123123</code>. Not zero-prepending to 12 digits could result in errors.</p>
+    /// </note>
     pub fn get_impacted_accounts(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.impacted_accounts
     }

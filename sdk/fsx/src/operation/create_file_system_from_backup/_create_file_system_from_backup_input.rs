@@ -66,6 +66,8 @@ pub struct CreateFileSystemFromBackupInput {
     /// <p>Sets the storage capacity of the OpenZFS file system that you're creating from a backup, in gibibytes (GiB). Valid values are from 64 GiB up to 524,288 GiB (512 TiB). However, the value that you specify must be equal to or greater than the backup's storage capacity value. If you don't use the <code>StorageCapacity</code> parameter, the default is the backup's <code>StorageCapacity</code> value.</p>
     /// <p>If used to create a file system other than OpenZFS, you must provide a value that matches the backup's <code>StorageCapacity</code> value. If you provide any other value, Amazon FSx responds with an HTTP status code 400 Bad Request.</p>
     pub storage_capacity: ::std::option::Option<i32>,
+    /// <p>Sets the network type for the Amazon FSx for OpenZFS file system that you're creating from a backup.</p>
+    pub network_type: ::std::option::Option<crate::types::NetworkType>,
 }
 impl CreateFileSystemFromBackupInput {
     /// <p>The ID of the source backup. Specifies the backup that you are copying.</p>
@@ -160,6 +162,10 @@ impl CreateFileSystemFromBackupInput {
     pub fn storage_capacity(&self) -> ::std::option::Option<i32> {
         self.storage_capacity
     }
+    /// <p>Sets the network type for the Amazon FSx for OpenZFS file system that you're creating from a backup.</p>
+    pub fn network_type(&self) -> ::std::option::Option<&crate::types::NetworkType> {
+        self.network_type.as_ref()
+    }
 }
 impl CreateFileSystemFromBackupInput {
     /// Creates a new builder-style object to manufacture [`CreateFileSystemFromBackupInput`](crate::operation::create_file_system_from_backup::CreateFileSystemFromBackupInput).
@@ -184,6 +190,7 @@ pub struct CreateFileSystemFromBackupInputBuilder {
     pub(crate) file_system_type_version: ::std::option::Option<::std::string::String>,
     pub(crate) open_zfs_configuration: ::std::option::Option<crate::types::CreateFileSystemOpenZfsConfiguration>,
     pub(crate) storage_capacity: ::std::option::Option<i32>,
+    pub(crate) network_type: ::std::option::Option<crate::types::NetworkType>,
 }
 impl CreateFileSystemFromBackupInputBuilder {
     /// <p>The ID of the source backup. Specifies the backup that you are copying.</p>
@@ -487,6 +494,20 @@ impl CreateFileSystemFromBackupInputBuilder {
     pub fn get_storage_capacity(&self) -> &::std::option::Option<i32> {
         &self.storage_capacity
     }
+    /// <p>Sets the network type for the Amazon FSx for OpenZFS file system that you're creating from a backup.</p>
+    pub fn network_type(mut self, input: crate::types::NetworkType) -> Self {
+        self.network_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Sets the network type for the Amazon FSx for OpenZFS file system that you're creating from a backup.</p>
+    pub fn set_network_type(mut self, input: ::std::option::Option<crate::types::NetworkType>) -> Self {
+        self.network_type = input;
+        self
+    }
+    /// <p>Sets the network type for the Amazon FSx for OpenZFS file system that you're creating from a backup.</p>
+    pub fn get_network_type(&self) -> &::std::option::Option<crate::types::NetworkType> {
+        &self.network_type
+    }
     /// Consumes the builder and constructs a [`CreateFileSystemFromBackupInput`](crate::operation::create_file_system_from_backup::CreateFileSystemFromBackupInput).
     pub fn build(
         self,
@@ -507,6 +528,7 @@ impl CreateFileSystemFromBackupInputBuilder {
             file_system_type_version: self.file_system_type_version,
             open_zfs_configuration: self.open_zfs_configuration,
             storage_capacity: self.storage_capacity,
+            network_type: self.network_type,
         })
     }
 }

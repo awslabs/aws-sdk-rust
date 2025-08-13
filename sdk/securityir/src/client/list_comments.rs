@@ -4,11 +4,11 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_comments::builders::ListCommentsFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_comments::builders::ListCommentsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_comments::builders::ListCommentsFluentBuilder::set_next_token):<br>required: **false**<br><p>Optional element.</p><br>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::list_comments::builders::ListCommentsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_comments::builders::ListCommentsFluentBuilder::set_next_token):<br>required: **false**<br><p>An optional string that, if supplied, must be copied from the output of a previous call to ListComments. When provided in this manner, the API fetches the next page of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_comments::builders::ListCommentsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_comments::builders::ListCommentsFluentBuilder::set_max_results):<br>required: **false**<br><p>Optional element for ListComments to limit the number of responses.</p><br>
     ///   - [`case_id(impl Into<String>)`](crate::operation::list_comments::builders::ListCommentsFluentBuilder::case_id) / [`set_case_id(Option<String>)`](crate::operation::list_comments::builders::ListCommentsFluentBuilder::set_case_id):<br>required: **true**<br><p>Required element for ListComments to designate the case to query.</p><br>
     /// - On success, responds with [`ListCommentsOutput`](crate::operation::list_comments::ListCommentsOutput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::operation::list_comments::ListCommentsOutput::next_token): <p>Optional request elements.</p>
+    ///   - [`next_token(Option<String>)`](crate::operation::list_comments::ListCommentsOutput::next_token): <p>An optional string that, if supplied on subsequent calls to ListComments, allows the API to fetch the next page of results.</p>
     ///   - [`items(Option<Vec::<ListCommentsItem>>)`](crate::operation::list_comments::ListCommentsOutput::items): <p>Response element for ListComments providing the body, commentID, createDate, creator, lastUpdatedBy and lastUpdatedDate for each response.</p>
     ///   - [`total(Option<i32>)`](crate::operation::list_comments::ListCommentsOutput::total): <p>Response element for ListComments identifying the number of responses.</p>
     /// - On failure, responds with [`SdkError<ListCommentsError>`](crate::operation::list_comments::ListCommentsError)

@@ -72,5 +72,17 @@ pub fn ser_create_opportunity_input_input(
         }
         array_21.finish();
     }
+    if let Some(var_24) = &input.tags {
+        let mut array_25 = object.key("Tags").start_array();
+        for item_26 in var_24 {
+            {
+                #[allow(unused_mut)]
+                let mut object_27 = array_25.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_27, item_26)?;
+                object_27.finish();
+            }
+        }
+        array_25.finish();
+    }
     Ok(())
 }

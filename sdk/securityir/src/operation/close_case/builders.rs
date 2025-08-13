@@ -22,7 +22,7 @@ impl crate::operation::close_case::builders::CloseCaseInputBuilder {
 }
 /// Fluent builder constructing a request to `CloseCase`.
 ///
-/// <p>Grants permission to close an existing case.</p>
+/// <p>Closes an existing case.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CloseCaseFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -3,27 +3,27 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetQuantumTaskOutput {
-    /// <p>The ARN of the task.</p>
+    /// <p>The ARN of the quantum task.</p>
     pub quantum_task_arn: ::std::string::String,
-    /// <p>The status of the task.</p>
+    /// <p>The status of the quantum task.</p>
     pub status: crate::types::QuantumTaskStatus,
-    /// <p>The reason that a task failed.</p>
+    /// <p>The reason that a quantum task failed.</p>
     pub failure_reason: ::std::option::Option<::std::string::String>,
-    /// <p>The ARN of the device the task was run on.</p>
+    /// <p>The ARN of the device the quantum task was run on.</p>
     pub device_arn: ::std::string::String,
-    /// <p>The parameters for the device on which the task ran.</p>
+    /// <p>The parameters for the device on which the quantum task ran.</p>
     pub device_parameters: ::std::string::String,
-    /// <p>The number of shots used in the task.</p>
+    /// <p>The number of shots used in the quantum task.</p>
     pub shots: i64,
-    /// <p>The S3 bucket where task results are stored.</p>
+    /// <p>The S3 bucket where quantum task results are stored.</p>
     pub output_s3_bucket: ::std::string::String,
-    /// <p>The folder in the S3 bucket where task results are stored.</p>
+    /// <p>The folder in the S3 bucket where quantum task results are stored.</p>
     pub output_s3_directory: ::std::string::String,
-    /// <p>The time at which the task was created.</p>
+    /// <p>The time at which the quantum task was created.</p>
     pub created_at: ::aws_smithy_types::DateTime,
-    /// <p>The time at which the task ended.</p>
+    /// <p>The time at which the quantum task ended.</p>
     pub ended_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The tags that belong to this task.</p>
+    /// <p>The tags that belong to this quantum task.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The ARN of the Amazon Braket job associated with the quantum task.</p>
     pub job_arn: ::std::option::Option<::std::string::String>,
@@ -31,55 +31,59 @@ pub struct GetQuantumTaskOutput {
     pub queue_info: ::std::option::Option<crate::types::QuantumTaskQueueInfo>,
     /// <p>The list of Amazon Braket resources associated with the quantum task.</p>
     pub associations: ::std::option::Option<::std::vec::Vec<crate::types::Association>>,
+    /// <p>The number of successful shots for the quantum task. This is available after a successfully completed quantum task.</p>
+    pub num_successful_shots: ::std::option::Option<i64>,
+    /// <p>Metadata about the action performed by the quantum task, including information about the type of action and program counts.</p>
+    pub action_metadata: ::std::option::Option<crate::types::ActionMetadata>,
     _request_id: Option<String>,
 }
 impl GetQuantumTaskOutput {
-    /// <p>The ARN of the task.</p>
+    /// <p>The ARN of the quantum task.</p>
     pub fn quantum_task_arn(&self) -> &str {
         use std::ops::Deref;
         self.quantum_task_arn.deref()
     }
-    /// <p>The status of the task.</p>
+    /// <p>The status of the quantum task.</p>
     pub fn status(&self) -> &crate::types::QuantumTaskStatus {
         &self.status
     }
-    /// <p>The reason that a task failed.</p>
+    /// <p>The reason that a quantum task failed.</p>
     pub fn failure_reason(&self) -> ::std::option::Option<&str> {
         self.failure_reason.as_deref()
     }
-    /// <p>The ARN of the device the task was run on.</p>
+    /// <p>The ARN of the device the quantum task was run on.</p>
     pub fn device_arn(&self) -> &str {
         use std::ops::Deref;
         self.device_arn.deref()
     }
-    /// <p>The parameters for the device on which the task ran.</p>
+    /// <p>The parameters for the device on which the quantum task ran.</p>
     pub fn device_parameters(&self) -> &str {
         use std::ops::Deref;
         self.device_parameters.deref()
     }
-    /// <p>The number of shots used in the task.</p>
+    /// <p>The number of shots used in the quantum task.</p>
     pub fn shots(&self) -> i64 {
         self.shots
     }
-    /// <p>The S3 bucket where task results are stored.</p>
+    /// <p>The S3 bucket where quantum task results are stored.</p>
     pub fn output_s3_bucket(&self) -> &str {
         use std::ops::Deref;
         self.output_s3_bucket.deref()
     }
-    /// <p>The folder in the S3 bucket where task results are stored.</p>
+    /// <p>The folder in the S3 bucket where quantum task results are stored.</p>
     pub fn output_s3_directory(&self) -> &str {
         use std::ops::Deref;
         self.output_s3_directory.deref()
     }
-    /// <p>The time at which the task was created.</p>
+    /// <p>The time at which the quantum task was created.</p>
     pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
         &self.created_at
     }
-    /// <p>The time at which the task ended.</p>
+    /// <p>The time at which the quantum task ended.</p>
     pub fn ended_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.ended_at.as_ref()
     }
-    /// <p>The tags that belong to this task.</p>
+    /// <p>The tags that belong to this quantum task.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
@@ -96,6 +100,14 @@ impl GetQuantumTaskOutput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.associations.is_none()`.
     pub fn associations(&self) -> &[crate::types::Association] {
         self.associations.as_deref().unwrap_or_default()
+    }
+    /// <p>The number of successful shots for the quantum task. This is available after a successfully completed quantum task.</p>
+    pub fn num_successful_shots(&self) -> ::std::option::Option<i64> {
+        self.num_successful_shots
+    }
+    /// <p>Metadata about the action performed by the quantum task, including information about the type of action and program counts.</p>
+    pub fn action_metadata(&self) -> ::std::option::Option<&crate::types::ActionMetadata> {
+        self.action_metadata.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetQuantumTaskOutput {
@@ -128,154 +140,156 @@ pub struct GetQuantumTaskOutputBuilder {
     pub(crate) job_arn: ::std::option::Option<::std::string::String>,
     pub(crate) queue_info: ::std::option::Option<crate::types::QuantumTaskQueueInfo>,
     pub(crate) associations: ::std::option::Option<::std::vec::Vec<crate::types::Association>>,
+    pub(crate) num_successful_shots: ::std::option::Option<i64>,
+    pub(crate) action_metadata: ::std::option::Option<crate::types::ActionMetadata>,
     _request_id: Option<String>,
 }
 impl GetQuantumTaskOutputBuilder {
-    /// <p>The ARN of the task.</p>
+    /// <p>The ARN of the quantum task.</p>
     /// This field is required.
     pub fn quantum_task_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.quantum_task_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the task.</p>
+    /// <p>The ARN of the quantum task.</p>
     pub fn set_quantum_task_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.quantum_task_arn = input;
         self
     }
-    /// <p>The ARN of the task.</p>
+    /// <p>The ARN of the quantum task.</p>
     pub fn get_quantum_task_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.quantum_task_arn
     }
-    /// <p>The status of the task.</p>
+    /// <p>The status of the quantum task.</p>
     /// This field is required.
     pub fn status(mut self, input: crate::types::QuantumTaskStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of the task.</p>
+    /// <p>The status of the quantum task.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::QuantumTaskStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The status of the task.</p>
+    /// <p>The status of the quantum task.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::QuantumTaskStatus> {
         &self.status
     }
-    /// <p>The reason that a task failed.</p>
+    /// <p>The reason that a quantum task failed.</p>
     pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_reason = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The reason that a task failed.</p>
+    /// <p>The reason that a quantum task failed.</p>
     pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_reason = input;
         self
     }
-    /// <p>The reason that a task failed.</p>
+    /// <p>The reason that a quantum task failed.</p>
     pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.failure_reason
     }
-    /// <p>The ARN of the device the task was run on.</p>
+    /// <p>The ARN of the device the quantum task was run on.</p>
     /// This field is required.
     pub fn device_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the device the task was run on.</p>
+    /// <p>The ARN of the device the quantum task was run on.</p>
     pub fn set_device_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_arn = input;
         self
     }
-    /// <p>The ARN of the device the task was run on.</p>
+    /// <p>The ARN of the device the quantum task was run on.</p>
     pub fn get_device_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.device_arn
     }
-    /// <p>The parameters for the device on which the task ran.</p>
+    /// <p>The parameters for the device on which the quantum task ran.</p>
     /// This field is required.
     pub fn device_parameters(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_parameters = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The parameters for the device on which the task ran.</p>
+    /// <p>The parameters for the device on which the quantum task ran.</p>
     pub fn set_device_parameters(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_parameters = input;
         self
     }
-    /// <p>The parameters for the device on which the task ran.</p>
+    /// <p>The parameters for the device on which the quantum task ran.</p>
     pub fn get_device_parameters(&self) -> &::std::option::Option<::std::string::String> {
         &self.device_parameters
     }
-    /// <p>The number of shots used in the task.</p>
+    /// <p>The number of shots used in the quantum task.</p>
     /// This field is required.
     pub fn shots(mut self, input: i64) -> Self {
         self.shots = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of shots used in the task.</p>
+    /// <p>The number of shots used in the quantum task.</p>
     pub fn set_shots(mut self, input: ::std::option::Option<i64>) -> Self {
         self.shots = input;
         self
     }
-    /// <p>The number of shots used in the task.</p>
+    /// <p>The number of shots used in the quantum task.</p>
     pub fn get_shots(&self) -> &::std::option::Option<i64> {
         &self.shots
     }
-    /// <p>The S3 bucket where task results are stored.</p>
+    /// <p>The S3 bucket where quantum task results are stored.</p>
     /// This field is required.
     pub fn output_s3_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_s3_bucket = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The S3 bucket where task results are stored.</p>
+    /// <p>The S3 bucket where quantum task results are stored.</p>
     pub fn set_output_s3_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.output_s3_bucket = input;
         self
     }
-    /// <p>The S3 bucket where task results are stored.</p>
+    /// <p>The S3 bucket where quantum task results are stored.</p>
     pub fn get_output_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
         &self.output_s3_bucket
     }
-    /// <p>The folder in the S3 bucket where task results are stored.</p>
+    /// <p>The folder in the S3 bucket where quantum task results are stored.</p>
     /// This field is required.
     pub fn output_s3_directory(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_s3_directory = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The folder in the S3 bucket where task results are stored.</p>
+    /// <p>The folder in the S3 bucket where quantum task results are stored.</p>
     pub fn set_output_s3_directory(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.output_s3_directory = input;
         self
     }
-    /// <p>The folder in the S3 bucket where task results are stored.</p>
+    /// <p>The folder in the S3 bucket where quantum task results are stored.</p>
     pub fn get_output_s3_directory(&self) -> &::std::option::Option<::std::string::String> {
         &self.output_s3_directory
     }
-    /// <p>The time at which the task was created.</p>
+    /// <p>The time at which the quantum task was created.</p>
     /// This field is required.
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time at which the task was created.</p>
+    /// <p>The time at which the quantum task was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
-    /// <p>The time at which the task was created.</p>
+    /// <p>The time at which the quantum task was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_at
     }
-    /// <p>The time at which the task ended.</p>
+    /// <p>The time at which the quantum task ended.</p>
     pub fn ended_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.ended_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time at which the task ended.</p>
+    /// <p>The time at which the quantum task ended.</p>
     pub fn set_ended_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.ended_at = input;
         self
     }
-    /// <p>The time at which the task ended.</p>
+    /// <p>The time at which the quantum task ended.</p>
     pub fn get_ended_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.ended_at
     }
@@ -283,19 +297,19 @@ impl GetQuantumTaskOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>The tags that belong to this task.</p>
+    /// <p>The tags that belong to this quantum task.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>The tags that belong to this task.</p>
+    /// <p>The tags that belong to this quantum task.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>The tags that belong to this task.</p>
+    /// <p>The tags that belong to this quantum task.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
@@ -346,6 +360,34 @@ impl GetQuantumTaskOutputBuilder {
     /// <p>The list of Amazon Braket resources associated with the quantum task.</p>
     pub fn get_associations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Association>> {
         &self.associations
+    }
+    /// <p>The number of successful shots for the quantum task. This is available after a successfully completed quantum task.</p>
+    pub fn num_successful_shots(mut self, input: i64) -> Self {
+        self.num_successful_shots = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of successful shots for the quantum task. This is available after a successfully completed quantum task.</p>
+    pub fn set_num_successful_shots(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.num_successful_shots = input;
+        self
+    }
+    /// <p>The number of successful shots for the quantum task. This is available after a successfully completed quantum task.</p>
+    pub fn get_num_successful_shots(&self) -> &::std::option::Option<i64> {
+        &self.num_successful_shots
+    }
+    /// <p>Metadata about the action performed by the quantum task, including information about the type of action and program counts.</p>
+    pub fn action_metadata(mut self, input: crate::types::ActionMetadata) -> Self {
+        self.action_metadata = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Metadata about the action performed by the quantum task, including information about the type of action and program counts.</p>
+    pub fn set_action_metadata(mut self, input: ::std::option::Option<crate::types::ActionMetadata>) -> Self {
+        self.action_metadata = input;
+        self
+    }
+    /// <p>Metadata about the action performed by the quantum task, including information about the type of action and program counts.</p>
+    pub fn get_action_metadata(&self) -> &::std::option::Option<crate::types::ActionMetadata> {
+        &self.action_metadata
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
@@ -424,6 +466,8 @@ impl GetQuantumTaskOutputBuilder {
             job_arn: self.job_arn,
             queue_info: self.queue_info,
             associations: self.associations,
+            num_successful_shots: self.num_successful_shots,
+            action_metadata: self.action_metadata,
             _request_id: self._request_id,
         })
     }

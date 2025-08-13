@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelJobInput {
-    /// <p>The ARN of the Amazon Braket job to cancel.</p>
+    /// <p>The ARN of the Amazon Braket hybrid job to cancel.</p>
     pub job_arn: ::std::option::Option<::std::string::String>,
 }
 impl CancelJobInput {
-    /// <p>The ARN of the Amazon Braket job to cancel.</p>
+    /// <p>The ARN of the Amazon Braket hybrid job to cancel.</p>
     pub fn job_arn(&self) -> ::std::option::Option<&str> {
         self.job_arn.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct CancelJobInputBuilder {
     pub(crate) job_arn: ::std::option::Option<::std::string::String>,
 }
 impl CancelJobInputBuilder {
-    /// <p>The ARN of the Amazon Braket job to cancel.</p>
+    /// <p>The ARN of the Amazon Braket hybrid job to cancel.</p>
     /// This field is required.
     pub fn job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the Amazon Braket job to cancel.</p>
+    /// <p>The ARN of the Amazon Braket hybrid job to cancel.</p>
     pub fn set_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_arn = input;
         self
     }
-    /// <p>The ARN of the Amazon Braket job to cancel.</p>
+    /// <p>The ARN of the Amazon Braket hybrid job to cancel.</p>
     pub fn get_job_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_arn
     }

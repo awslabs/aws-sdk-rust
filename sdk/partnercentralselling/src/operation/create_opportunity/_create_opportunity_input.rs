@@ -60,6 +60,8 @@ pub struct CreateOpportunityInput {
     pub origin: ::std::option::Option<crate::types::OpportunityOrigin>,
     /// <p>Represents the internal team handling the opportunity. Specify collaborating members of this opportunity who are within the partner's organization.</p>
     pub opportunity_team: ::std::option::Option<::std::vec::Vec<crate::types::Contact>>,
+    /// <p>A map of the key-value pairs of the tag or tags to assign.</p>
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateOpportunityInput {
     /// <p>Specifies the catalog associated with the request. This field takes a string value from a predefined list: <code>AWS</code> or <code>Sandbox</code>. The catalog determines which environment the opportunity is created in. Use <code>AWS</code> to create opportunities in the Amazon Web Services catalog, and <code>Sandbox</code> for testing in secure, isolated environments.</p>
@@ -149,6 +151,12 @@ impl CreateOpportunityInput {
     pub fn opportunity_team(&self) -> &[crate::types::Contact] {
         self.opportunity_team.as_deref().unwrap_or_default()
     }
+    /// <p>A map of the key-value pairs of the tag or tags to assign.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
+    }
 }
 impl CreateOpportunityInput {
     /// Creates a new builder-style object to manufacture [`CreateOpportunityInput`](crate::operation::create_opportunity::CreateOpportunityInput).
@@ -174,6 +182,7 @@ pub struct CreateOpportunityInputBuilder {
     pub(crate) life_cycle: ::std::option::Option<crate::types::LifeCycle>,
     pub(crate) origin: ::std::option::Option<crate::types::OpportunityOrigin>,
     pub(crate) opportunity_team: ::std::option::Option<::std::vec::Vec<crate::types::Contact>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateOpportunityInputBuilder {
     /// <p>Specifies the catalog associated with the request. This field takes a string value from a predefined list: <code>AWS</code> or <code>Sandbox</code>. The catalog determines which environment the opportunity is created in. Use <code>AWS</code> to create opportunities in the Amazon Web Services catalog, and <code>Sandbox</code> for testing in secure, isolated environments.</p>
@@ -465,6 +474,26 @@ impl CreateOpportunityInputBuilder {
     pub fn get_opportunity_team(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Contact>> {
         &self.opportunity_team
     }
+    /// Appends an item to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>A map of the key-value pairs of the tag or tags to assign.</p>
+    pub fn tags(mut self, input: crate::types::Tag) -> Self {
+        let mut v = self.tags.unwrap_or_default();
+        v.push(input);
+        self.tags = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A map of the key-value pairs of the tag or tags to assign.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// <p>A map of the key-value pairs of the tag or tags to assign.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// Consumes the builder and constructs a [`CreateOpportunityInput`](crate::operation::create_opportunity::CreateOpportunityInput).
     pub fn build(
         self,
@@ -483,6 +512,7 @@ impl CreateOpportunityInputBuilder {
             life_cycle: self.life_cycle,
             origin: self.origin,
             opportunity_team: self.opportunity_team,
+            tags: self.tags,
         })
     }
 }

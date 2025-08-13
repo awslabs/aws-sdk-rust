@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateJobOutput {
-    /// <p>The ARN of the Amazon Braket job created.</p>
+    /// <p>The ARN of the Amazon Braket hybrid job created.</p>
     pub job_arn: ::std::string::String,
     _request_id: Option<String>,
 }
 impl CreateJobOutput {
-    /// <p>The ARN of the Amazon Braket job created.</p>
+    /// <p>The ARN of the Amazon Braket hybrid job created.</p>
     pub fn job_arn(&self) -> &str {
         use std::ops::Deref;
         self.job_arn.deref()
@@ -34,18 +34,18 @@ pub struct CreateJobOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateJobOutputBuilder {
-    /// <p>The ARN of the Amazon Braket job created.</p>
+    /// <p>The ARN of the Amazon Braket hybrid job created.</p>
     /// This field is required.
     pub fn job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the Amazon Braket job created.</p>
+    /// <p>The ARN of the Amazon Braket hybrid job created.</p>
     pub fn set_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_arn = input;
         self
     }
-    /// <p>The ARN of the Amazon Braket job created.</p>
+    /// <p>The ARN of the Amazon Braket hybrid job created.</p>
     pub fn get_job_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_arn
     }

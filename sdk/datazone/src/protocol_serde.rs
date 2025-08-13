@@ -37,6 +37,8 @@ pub(crate) mod shape_cancel_metadata_generation_run;
 
 pub(crate) mod shape_cancel_subscription;
 
+pub(crate) mod shape_create_account_pool;
+
 pub(crate) mod shape_create_asset;
 
 pub(crate) mod shape_create_asset_filter;
@@ -89,6 +91,8 @@ pub(crate) mod shape_create_subscription_target;
 
 pub(crate) mod shape_create_user_profile;
 
+pub(crate) mod shape_delete_account_pool;
+
 pub(crate) mod shape_delete_asset;
 
 pub(crate) mod shape_delete_asset_filter;
@@ -138,6 +142,8 @@ pub(crate) mod shape_delete_subscription_target;
 pub(crate) mod shape_delete_time_series_data_points;
 
 pub(crate) mod shape_disassociate_environment_role;
+
+pub(crate) mod shape_get_account_pool;
 
 pub(crate) mod shape_get_asset;
 
@@ -206,6 +212,10 @@ pub(crate) mod shape_get_subscription_target;
 pub(crate) mod shape_get_time_series_data_point;
 
 pub(crate) mod shape_get_user_profile;
+
+pub(crate) mod shape_list_account_pools;
+
+pub(crate) mod shape_list_accounts_in_account_pool;
 
 pub(crate) mod shape_list_asset_filters;
 
@@ -305,6 +315,8 @@ pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_untag_resource;
 
+pub(crate) mod shape_update_account_pool;
+
 pub(crate) mod shape_update_asset_filter;
 
 pub(crate) mod shape_update_connection;
@@ -360,6 +372,8 @@ pub(crate) mod shape_add_entity_owner_input;
 pub(crate) mod shape_add_policy_grant_input;
 
 pub(crate) mod shape_conflict_exception;
+
+pub(crate) mod shape_create_account_pool_input;
 
 pub(crate) mod shape_create_asset_filter_input;
 
@@ -457,6 +471,8 @@ pub(crate) mod shape_throttling_exception;
 
 pub(crate) mod shape_unauthorized_exception;
 
+pub(crate) mod shape_update_account_pool_input;
+
 pub(crate) mod shape_update_asset_filter_input;
 
 pub(crate) mod shape_update_connection_input;
@@ -500,6 +516,12 @@ pub(crate) mod shape_accept_choice;
 pub(crate) mod shape_accept_rule;
 
 pub(crate) mod shape_accepted_asset_scope;
+
+pub(crate) mod shape_account_info_list;
+
+pub(crate) mod shape_account_pool_summaries;
+
+pub(crate) mod shape_account_source;
 
 pub(crate) mod shape_action_parameters;
 
@@ -749,6 +771,10 @@ pub(crate) mod shape_user_profile_details;
 
 pub(crate) mod shape_user_profile_summaries;
 
+pub(crate) mod shape_account_info;
+
+pub(crate) mod shape_account_pool_summary;
+
 pub(crate) mod shape_add_to_project_member_pool_policy_grant_detail;
 
 pub(crate) mod shape_aggregation_output;
@@ -795,6 +821,8 @@ pub(crate) mod shape_create_project_from_project_profile_policy_grant_detail;
 
 pub(crate) mod shape_create_project_policy_grant_detail;
 
+pub(crate) mod shape_custom_account_pool_handler;
+
 pub(crate) mod shape_custom_parameter;
 
 pub(crate) mod shape_data_product_listing;
@@ -832,6 +860,8 @@ pub(crate) mod shape_environment_error;
 pub(crate) mod shape_environment_failure_reasons;
 
 pub(crate) mod shape_environment_profile_summary;
+
+pub(crate) mod shape_environment_resolved_account;
 
 pub(crate) mod shape_environment_summary;
 
@@ -995,6 +1025,8 @@ pub(crate) mod shape_user_policy_grant_principal;
 
 pub(crate) mod shape_user_profile_summary;
 
+pub(crate) mod shape_account_pool_list;
+
 pub(crate) mod shape_aggregation_output_items;
 
 pub(crate) mod shape_all_users_grant_filter;
@@ -1006,6 +1038,8 @@ pub(crate) mod shape_asset_listing_item;
 pub(crate) mod shape_asset_scope;
 
 pub(crate) mod shape_asset_type_item;
+
+pub(crate) mod shape_aws_region_list;
 
 pub(crate) mod shape_configurable_action_parameter_list;
 

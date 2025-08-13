@@ -4,35 +4,35 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServiceQuotaExceededException {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The exception message.</p>
     pub message: ::std::string::String,
-    /// Element that provides the ID of the resource affected.
+    /// <p>The ID of the requested resource which lead to the service quota exception.</p>
     pub resource_id: ::std::string::String,
-    /// Element that provides the type of the resource affected.
+    /// <p>The type of the requested resource which lead to the service quota exception.</p>
     pub resource_type: ::std::string::String,
-    /// Element that provides the originating service who made the call.
+    /// <p>The service code of the quota.</p>
     pub service_code: ::std::string::String,
-    /// Element that provides the quota that was exceeded.
+    /// <p>The code of the quota.</p>
     pub quota_code: ::std::string::String,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl ServiceQuotaExceededException {
-    /// Element that provides the ID of the resource affected.
+    /// <p>The ID of the requested resource which lead to the service quota exception.</p>
     pub fn resource_id(&self) -> &str {
         use std::ops::Deref;
         self.resource_id.deref()
     }
-    /// Element that provides the type of the resource affected.
+    /// <p>The type of the requested resource which lead to the service quota exception.</p>
     pub fn resource_type(&self) -> &str {
         use std::ops::Deref;
         self.resource_type.deref()
     }
-    /// Element that provides the originating service who made the call.
+    /// <p>The service code of the quota.</p>
     pub fn service_code(&self) -> &str {
         use std::ops::Deref;
         self.service_code.deref()
     }
-    /// Element that provides the quota that was exceeded.
+    /// <p>The code of the quota.</p>
     pub fn quota_code(&self) -> &str {
         use std::ops::Deref;
         self.quota_code.deref()
@@ -84,78 +84,78 @@ pub struct ServiceQuotaExceededExceptionBuilder {
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl ServiceQuotaExceededExceptionBuilder {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The exception message.</p>
     /// This field is required.
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The exception message.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The exception message.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
     }
-    /// Element that provides the ID of the resource affected.
+    /// <p>The ID of the requested resource which lead to the service quota exception.</p>
     /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// Element that provides the ID of the resource affected.
+    /// <p>The ID of the requested resource which lead to the service quota exception.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
     }
-    /// Element that provides the ID of the resource affected.
+    /// <p>The ID of the requested resource which lead to the service quota exception.</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_id
     }
-    /// Element that provides the type of the resource affected.
+    /// <p>The type of the requested resource which lead to the service quota exception.</p>
     /// This field is required.
     pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// Element that provides the type of the resource affected.
+    /// <p>The type of the requested resource which lead to the service quota exception.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_type = input;
         self
     }
-    /// Element that provides the type of the resource affected.
+    /// <p>The type of the requested resource which lead to the service quota exception.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_type
     }
-    /// Element that provides the originating service who made the call.
+    /// <p>The service code of the quota.</p>
     /// This field is required.
     pub fn service_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_code = ::std::option::Option::Some(input.into());
         self
     }
-    /// Element that provides the originating service who made the call.
+    /// <p>The service code of the quota.</p>
     pub fn set_service_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_code = input;
         self
     }
-    /// Element that provides the originating service who made the call.
+    /// <p>The service code of the quota.</p>
     pub fn get_service_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.service_code
     }
-    /// Element that provides the quota that was exceeded.
+    /// <p>The code of the quota.</p>
     /// This field is required.
     pub fn quota_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.quota_code = ::std::option::Option::Some(input.into());
         self
     }
-    /// Element that provides the quota that was exceeded.
+    /// <p>The code of the quota.</p>
     pub fn set_quota_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.quota_code = input;
         self
     }
-    /// Element that provides the quota that was exceeded.
+    /// <p>The code of the quota.</p>
     pub fn get_quota_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.quota_code
     }

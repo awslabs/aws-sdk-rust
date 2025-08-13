@@ -8,9 +8,9 @@ pub struct ExpectedCustomerSpend {
     pub amount: ::std::string::String,
     /// <p>Indicates the currency in which the revenue estimate is provided. This helps in understanding the financial impact across different markets.</p>
     pub currency_code: crate::types::CurrencyCode,
-    /// <p>Indicates how frequently the customer is expected to spend the projected amount. This can include values such as <code>Monthly</code>, <code>Quarterly</code>, or <code>Annually</code>. The default value is <code>Monthly</code>, representing recurring monthly spend.</p>
+    /// <p>Indicates how frequently the customer is expected to spend the projected amount. Only the value <code>Monthly</code> is allowed for the <code>Frequency</code> field, representing recurring monthly spend.</p>
     pub frequency: crate::types::PaymentFrequency,
-    /// <p>Specifies the name of the partner company that is expected to generate revenue from the opportunity. This field helps track the partner’s involvement in the opportunity.</p>
+    /// <p>Specifies the name of the partner company that is expected to generate revenue from the opportunity. This field helps track the partner’s involvement in the opportunity. This field only accepts the value <code>AWS</code>. If any other value is provided, the system will automatically set it to <code>AWS</code>.</p>
     pub target_company: ::std::string::String,
     /// <p>A URL providing additional information or context about the spend estimation.</p>
     pub estimation_url: ::std::option::Option<::std::string::String>,
@@ -25,11 +25,11 @@ impl ExpectedCustomerSpend {
     pub fn currency_code(&self) -> &crate::types::CurrencyCode {
         &self.currency_code
     }
-    /// <p>Indicates how frequently the customer is expected to spend the projected amount. This can include values such as <code>Monthly</code>, <code>Quarterly</code>, or <code>Annually</code>. The default value is <code>Monthly</code>, representing recurring monthly spend.</p>
+    /// <p>Indicates how frequently the customer is expected to spend the projected amount. Only the value <code>Monthly</code> is allowed for the <code>Frequency</code> field, representing recurring monthly spend.</p>
     pub fn frequency(&self) -> &crate::types::PaymentFrequency {
         &self.frequency
     }
-    /// <p>Specifies the name of the partner company that is expected to generate revenue from the opportunity. This field helps track the partner’s involvement in the opportunity.</p>
+    /// <p>Specifies the name of the partner company that is expected to generate revenue from the opportunity. This field helps track the partner’s involvement in the opportunity. This field only accepts the value <code>AWS</code>. If any other value is provided, the system will automatically set it to <code>AWS</code>.</p>
     pub fn target_company(&self) -> &str {
         use std::ops::Deref;
         self.target_company.deref()
@@ -42,7 +42,7 @@ impl ExpectedCustomerSpend {
 impl ::std::fmt::Debug for ExpectedCustomerSpend {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ExpectedCustomerSpend");
-        formatter.field("amount", &self.amount);
+        formatter.field("amount", &"*** Sensitive Data Redacted ***");
         formatter.field("currency_code", &"*** Sensitive Data Redacted ***");
         formatter.field("frequency", &self.frequency);
         formatter.field("target_company", &self.target_company);
@@ -98,33 +98,33 @@ impl ExpectedCustomerSpendBuilder {
     pub fn get_currency_code(&self) -> &::std::option::Option<crate::types::CurrencyCode> {
         &self.currency_code
     }
-    /// <p>Indicates how frequently the customer is expected to spend the projected amount. This can include values such as <code>Monthly</code>, <code>Quarterly</code>, or <code>Annually</code>. The default value is <code>Monthly</code>, representing recurring monthly spend.</p>
+    /// <p>Indicates how frequently the customer is expected to spend the projected amount. Only the value <code>Monthly</code> is allowed for the <code>Frequency</code> field, representing recurring monthly spend.</p>
     /// This field is required.
     pub fn frequency(mut self, input: crate::types::PaymentFrequency) -> Self {
         self.frequency = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates how frequently the customer is expected to spend the projected amount. This can include values such as <code>Monthly</code>, <code>Quarterly</code>, or <code>Annually</code>. The default value is <code>Monthly</code>, representing recurring monthly spend.</p>
+    /// <p>Indicates how frequently the customer is expected to spend the projected amount. Only the value <code>Monthly</code> is allowed for the <code>Frequency</code> field, representing recurring monthly spend.</p>
     pub fn set_frequency(mut self, input: ::std::option::Option<crate::types::PaymentFrequency>) -> Self {
         self.frequency = input;
         self
     }
-    /// <p>Indicates how frequently the customer is expected to spend the projected amount. This can include values such as <code>Monthly</code>, <code>Quarterly</code>, or <code>Annually</code>. The default value is <code>Monthly</code>, representing recurring monthly spend.</p>
+    /// <p>Indicates how frequently the customer is expected to spend the projected amount. Only the value <code>Monthly</code> is allowed for the <code>Frequency</code> field, representing recurring monthly spend.</p>
     pub fn get_frequency(&self) -> &::std::option::Option<crate::types::PaymentFrequency> {
         &self.frequency
     }
-    /// <p>Specifies the name of the partner company that is expected to generate revenue from the opportunity. This field helps track the partner’s involvement in the opportunity.</p>
+    /// <p>Specifies the name of the partner company that is expected to generate revenue from the opportunity. This field helps track the partner’s involvement in the opportunity. This field only accepts the value <code>AWS</code>. If any other value is provided, the system will automatically set it to <code>AWS</code>.</p>
     /// This field is required.
     pub fn target_company(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_company = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies the name of the partner company that is expected to generate revenue from the opportunity. This field helps track the partner’s involvement in the opportunity.</p>
+    /// <p>Specifies the name of the partner company that is expected to generate revenue from the opportunity. This field helps track the partner’s involvement in the opportunity. This field only accepts the value <code>AWS</code>. If any other value is provided, the system will automatically set it to <code>AWS</code>.</p>
     pub fn set_target_company(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_company = input;
         self
     }
-    /// <p>Specifies the name of the partner company that is expected to generate revenue from the opportunity. This field helps track the partner’s involvement in the opportunity.</p>
+    /// <p>Specifies the name of the partner company that is expected to generate revenue from the opportunity. This field helps track the partner’s involvement in the opportunity. This field only accepts the value <code>AWS</code>. If any other value is provided, the system will automatically set it to <code>AWS</code>.</p>
     pub fn get_target_company(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_company
     }
@@ -181,7 +181,7 @@ impl ExpectedCustomerSpendBuilder {
 impl ::std::fmt::Debug for ExpectedCustomerSpendBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ExpectedCustomerSpendBuilder");
-        formatter.field("amount", &self.amount);
+        formatter.field("amount", &"*** Sensitive Data Redacted ***");
         formatter.field("currency_code", &"*** Sensitive Data Redacted ***");
         formatter.field("frequency", &self.frequency);
         formatter.field("target_company", &self.target_company);

@@ -4,10 +4,10 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_memberships::builders::ListMembershipsFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_memberships::builders::ListMembershipsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_memberships::builders::ListMembershipsFluentBuilder::set_next_token):<br>required: **false**<br><p>Optional element.</p><br>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::list_memberships::builders::ListMembershipsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_memberships::builders::ListMembershipsFluentBuilder::set_next_token):<br>required: **false**<br><p>An optional string that, if supplied, must be copied from the output of a previous call to ListMemberships. When provided in this manner, the API fetches the next page of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_memberships::builders::ListMembershipsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_memberships::builders::ListMembershipsFluentBuilder::set_max_results):<br>required: **false**<br><p>Request element for ListMemberships to limit the number of responses.</p><br>
     /// - On success, responds with [`ListMembershipsOutput`](crate::operation::list_memberships::ListMembershipsOutput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::operation::list_memberships::ListMembershipsOutput::next_token): <p>Optional element.</p>
+    ///   - [`next_token(Option<String>)`](crate::operation::list_memberships::ListMembershipsOutput::next_token): <p>An optional string that, if supplied on subsequent calls to ListMemberships, allows the API to fetch the next page of results.</p>
     ///   - [`items(Option<Vec::<ListMembershipItem>>)`](crate::operation::list_memberships::ListMembershipsOutput::items): <p>Request element for ListMemberships including the accountID, membershipARN, membershipID, membershipStatus, and region for each response.</p>
     /// - On failure, responds with [`SdkError<ListMembershipsError>`](crate::operation::list_memberships::ListMembershipsError)
     pub fn list_memberships(&self) -> crate::operation::list_memberships::builders::ListMembershipsFluentBuilder {

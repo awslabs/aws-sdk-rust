@@ -4,15 +4,15 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InputFileConfig {
-    /// <p>A named input source that an Amazon Braket job can consume.</p>
+    /// <p>A named input source that an Amazon Braket hybrid job can consume.</p>
     pub channel_name: ::std::string::String,
     /// <p>The MIME type of the data.</p>
     pub content_type: ::std::option::Option<::std::string::String>,
-    /// <p>The location of the channel data.</p>
+    /// <p>The location of the input data.</p>
     pub data_source: ::std::option::Option<crate::types::DataSource>,
 }
 impl InputFileConfig {
-    /// <p>A named input source that an Amazon Braket job can consume.</p>
+    /// <p>A named input source that an Amazon Braket hybrid job can consume.</p>
     pub fn channel_name(&self) -> &str {
         use std::ops::Deref;
         self.channel_name.deref()
@@ -21,7 +21,7 @@ impl InputFileConfig {
     pub fn content_type(&self) -> ::std::option::Option<&str> {
         self.content_type.as_deref()
     }
-    /// <p>The location of the channel data.</p>
+    /// <p>The location of the input data.</p>
     pub fn data_source(&self) -> ::std::option::Option<&crate::types::DataSource> {
         self.data_source.as_ref()
     }
@@ -42,18 +42,18 @@ pub struct InputFileConfigBuilder {
     pub(crate) data_source: ::std::option::Option<crate::types::DataSource>,
 }
 impl InputFileConfigBuilder {
-    /// <p>A named input source that an Amazon Braket job can consume.</p>
+    /// <p>A named input source that an Amazon Braket hybrid job can consume.</p>
     /// This field is required.
     pub fn channel_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A named input source that an Amazon Braket job can consume.</p>
+    /// <p>A named input source that an Amazon Braket hybrid job can consume.</p>
     pub fn set_channel_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.channel_name = input;
         self
     }
-    /// <p>A named input source that an Amazon Braket job can consume.</p>
+    /// <p>A named input source that an Amazon Braket hybrid job can consume.</p>
     pub fn get_channel_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.channel_name
     }
@@ -71,18 +71,18 @@ impl InputFileConfigBuilder {
     pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.content_type
     }
-    /// <p>The location of the channel data.</p>
+    /// <p>The location of the input data.</p>
     /// This field is required.
     pub fn data_source(mut self, input: crate::types::DataSource) -> Self {
         self.data_source = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The location of the channel data.</p>
+    /// <p>The location of the input data.</p>
     pub fn set_data_source(mut self, input: ::std::option::Option<crate::types::DataSource>) -> Self {
         self.data_source = input;
         self
     }
-    /// <p>The location of the channel data.</p>
+    /// <p>The location of the input data.</p>
     pub fn get_data_source(&self) -> &::std::option::Option<crate::types::DataSource> {
         &self.data_source
     }

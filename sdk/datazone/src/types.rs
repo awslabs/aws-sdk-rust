@@ -241,6 +241,8 @@ pub use crate::types::_environment_configuration_user_parameter::EnvironmentConf
 
 pub use crate::types::_environment_parameter::EnvironmentParameter;
 
+pub use crate::types::_environment_resolved_account::EnvironmentResolvedAccount;
+
 pub use crate::types::_project_deletion_error::ProjectDeletionError;
 
 pub use crate::types::_project_status::ProjectStatus;
@@ -396,6 +398,14 @@ pub use crate::types::_equal_to_expression::EqualToExpression;
 pub use crate::types::_column_filter_configuration::ColumnFilterConfiguration;
 
 pub use crate::types::_filter_status::FilterStatus;
+
+pub use crate::types::_account_source::AccountSource;
+
+pub use crate::types::_custom_account_pool_handler::CustomAccountPoolHandler;
+
+pub use crate::types::_account_info::AccountInfo;
+
+pub use crate::types::_resolution_strategy::ResolutionStrategy;
 
 pub use crate::types::_user_profile_summary::UserProfileSummary;
 
@@ -647,6 +657,10 @@ pub use crate::types::_asset_revision::AssetRevision;
 
 pub use crate::types::_asset_filter_summary::AssetFilterSummary;
 
+pub use crate::types::_account_pool_summary::AccountPoolSummary;
+
+pub use crate::types::_sort_field_account_pool::SortFieldAccountPool;
+
 pub use crate::types::_lineage_node_reference::LineageNodeReference;
 
 pub use crate::types::_job_run_details::JobRunDetails;
@@ -716,6 +730,12 @@ mod _accept_rule;
 mod _accept_rule_behavior;
 
 mod _accepted_asset_scope;
+
+mod _account_info;
+
+mod _account_pool_summary;
+
+mod _account_source;
 
 mod _action_parameters;
 
@@ -829,6 +849,8 @@ mod _create_project_from_project_profile_policy_grant_detail;
 
 mod _create_project_policy_grant_detail;
 
+mod _custom_account_pool_handler;
+
 mod _custom_parameter;
 
 mod _data_asset_activity_status;
@@ -938,6 +960,8 @@ mod _environment_error;
 mod _environment_parameter;
 
 mod _environment_profile_summary;
+
+mod _environment_resolved_account;
 
 mod _environment_status;
 
@@ -1251,6 +1275,8 @@ mod _reject_rule_behavior;
 
 mod _relational_filter_configuration;
 
+mod _resolution_strategy;
+
 mod _resource;
 
 mod _row_filter;
@@ -1308,6 +1334,8 @@ mod _self_grant_status_detail;
 mod _self_grant_status_output;
 
 mod _single_sign_on;
+
+mod _sort_field_account_pool;
 
 mod _sort_field_connection;
 

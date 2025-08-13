@@ -21,7 +21,7 @@ pub struct GetCaseOutput {
     pub impacted_aws_regions: ::std::option::Option<::std::vec::Vec<crate::types::ImpactedAwsRegion>>,
     /// <p>Response element for GetCase that provides a list of suspicious IP addresses associated with unauthorized activity.</p>
     pub threat_actor_ip_addresses: ::std::option::Option<::std::vec::Vec<crate::types::ThreatActorIp>>,
-    /// <p>Response element for GetCase that provides identifies the case is waiting on customer input.</p>
+    /// <p>Response element for GetCase that identifies the case is waiting on customer input.</p>
     pub pending_action: ::std::option::Option<crate::types::PendingAction>,
     /// <p>Response element for GetCase that provides a list of impacted accounts.</p>
     pub impacted_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -33,7 +33,7 @@ pub struct GetCaseOutput {
     pub last_updated_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Response element for GetCase that provides the summary code for why a case was closed.</p>
     pub closure_code: ::std::option::Option<crate::types::ClosureCode>,
-    /// <p>Response element for GetCase that provides the current resolver types. Options include <code> self-supported | AWS-supported</code>.</p>
+    /// <p>Response element for GetCase that provides the current resolver types.</p>
     pub resolver_type: ::std::option::Option<crate::types::ResolverType>,
     /// <p>Response element for GetCase that provides a list of impacted services.</p>
     pub impacted_services: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -84,7 +84,7 @@ impl GetCaseOutput {
     pub fn threat_actor_ip_addresses(&self) -> &[crate::types::ThreatActorIp] {
         self.threat_actor_ip_addresses.as_deref().unwrap_or_default()
     }
-    /// <p>Response element for GetCase that provides identifies the case is waiting on customer input.</p>
+    /// <p>Response element for GetCase that identifies the case is waiting on customer input.</p>
     pub fn pending_action(&self) -> ::std::option::Option<&crate::types::PendingAction> {
         self.pending_action.as_ref()
     }
@@ -112,7 +112,7 @@ impl GetCaseOutput {
     pub fn closure_code(&self) -> ::std::option::Option<&crate::types::ClosureCode> {
         self.closure_code.as_ref()
     }
-    /// <p>Response element for GetCase that provides the current resolver types. Options include <code> self-supported | AWS-supported</code>.</p>
+    /// <p>Response element for GetCase that provides the current resolver types.</p>
     pub fn resolver_type(&self) -> ::std::option::Option<&crate::types::ResolverType> {
         self.resolver_type.as_ref()
     }
@@ -335,17 +335,17 @@ impl GetCaseOutputBuilder {
     pub fn get_threat_actor_ip_addresses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ThreatActorIp>> {
         &self.threat_actor_ip_addresses
     }
-    /// <p>Response element for GetCase that provides identifies the case is waiting on customer input.</p>
+    /// <p>Response element for GetCase that identifies the case is waiting on customer input.</p>
     pub fn pending_action(mut self, input: crate::types::PendingAction) -> Self {
         self.pending_action = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Response element for GetCase that provides identifies the case is waiting on customer input.</p>
+    /// <p>Response element for GetCase that identifies the case is waiting on customer input.</p>
     pub fn set_pending_action(mut self, input: ::std::option::Option<crate::types::PendingAction>) -> Self {
         self.pending_action = input;
         self
     }
-    /// <p>Response element for GetCase that provides identifies the case is waiting on customer input.</p>
+    /// <p>Response element for GetCase that identifies the case is waiting on customer input.</p>
     pub fn get_pending_action(&self) -> &::std::option::Option<crate::types::PendingAction> {
         &self.pending_action
     }
@@ -431,17 +431,17 @@ impl GetCaseOutputBuilder {
     pub fn get_closure_code(&self) -> &::std::option::Option<crate::types::ClosureCode> {
         &self.closure_code
     }
-    /// <p>Response element for GetCase that provides the current resolver types. Options include <code> self-supported | AWS-supported</code>.</p>
+    /// <p>Response element for GetCase that provides the current resolver types.</p>
     pub fn resolver_type(mut self, input: crate::types::ResolverType) -> Self {
         self.resolver_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Response element for GetCase that provides the current resolver types. Options include <code> self-supported | AWS-supported</code>.</p>
+    /// <p>Response element for GetCase that provides the current resolver types.</p>
     pub fn set_resolver_type(mut self, input: ::std::option::Option<crate::types::ResolverType>) -> Self {
         self.resolver_type = input;
         self
     }
-    /// <p>Response element for GetCase that provides the current resolver types. Options include <code> self-supported | AWS-supported</code>.</p>
+    /// <p>Response element for GetCase that provides the current resolver types.</p>
     pub fn get_resolver_type(&self) -> &::std::option::Option<crate::types::ResolverType> {
         &self.resolver_type
     }

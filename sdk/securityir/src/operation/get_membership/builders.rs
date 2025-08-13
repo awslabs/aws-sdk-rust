@@ -22,7 +22,7 @@ impl crate::operation::get_membership::builders::GetMembershipInputBuilder {
 }
 /// Fluent builder constructing a request to `GetMembership`.
 ///
-/// <p>Grants permission to get details of a designated service membership.</p>
+/// <p>Returns the attributes of a membership.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetMembershipFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

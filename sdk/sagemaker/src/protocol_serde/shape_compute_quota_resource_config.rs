@@ -12,6 +12,24 @@ pub fn ser_compute_quota_resource_config(
             ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
+    if let Some(var_3) = &input.accelerators {
+        object.key("Accelerators").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_3).into()),
+        );
+    }
+    if let Some(var_4) = &input.v_cpu {
+        object.key("VCpu").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::Float((*var_4).into()),
+        );
+    }
+    if let Some(var_5) = &input.memory_in_gib {
+        object.key("MemoryInGiB").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::Float((*var_5).into()),
+        );
+    }
     Ok(())
 }
 
@@ -42,6 +60,22 @@ where
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
                                     .transpose()?,
+                            );
+                        }
+                        "Accelerators" => {
+                            builder = builder.set_accelerators(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "VCpu" => {
+                            builder = builder
+                                .set_v_cpu(::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?.map(|v| v.to_f32_lossy()));
+                        }
+                        "MemoryInGiB" => {
+                            builder = builder.set_memory_in_gib(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?.map(|v| v.to_f32_lossy()),
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

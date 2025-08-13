@@ -11,11 +11,15 @@ pub use crate::types::_membership_account_relationship_type::MembershipAccountRe
 
 pub use crate::types::_membership_account_relationship_status::MembershipAccountRelationshipStatus;
 
+pub use crate::types::_membership_accounts_configurations_update::MembershipAccountsConfigurationsUpdate;
+
 pub use crate::types::_opt_in_feature::OptInFeature;
 
 pub use crate::types::_opt_in_feature_name::OptInFeatureName;
 
 pub use crate::types::_incident_responder::IncidentResponder;
+
+pub use crate::types::_membership_accounts_configurations::MembershipAccountsConfigurations;
 
 pub use crate::types::_customer_type::CustomerType;
 
@@ -86,6 +90,10 @@ mod _list_membership_item;
 mod _membership_account_relationship_status;
 
 mod _membership_account_relationship_type;
+
+mod _membership_accounts_configurations;
+
+mod _membership_accounts_configurations_update;
 
 mod _membership_status;
 

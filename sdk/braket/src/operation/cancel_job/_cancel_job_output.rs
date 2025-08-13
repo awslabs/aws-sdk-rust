@@ -5,7 +5,7 @@
 pub struct CancelJobOutput {
     /// <p>The ARN of the Amazon Braket job.</p>
     pub job_arn: ::std::string::String,
-    /// <p>The status of the job cancellation request.</p>
+    /// <p>The status of the hybrid job.</p>
     pub cancellation_status: crate::types::CancellationStatus,
     _request_id: Option<String>,
 }
@@ -15,7 +15,7 @@ impl CancelJobOutput {
         use std::ops::Deref;
         self.job_arn.deref()
     }
-    /// <p>The status of the job cancellation request.</p>
+    /// <p>The status of the hybrid job.</p>
     pub fn cancellation_status(&self) -> &crate::types::CancellationStatus {
         &self.cancellation_status
     }
@@ -56,18 +56,18 @@ impl CancelJobOutputBuilder {
     pub fn get_job_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_arn
     }
-    /// <p>The status of the job cancellation request.</p>
+    /// <p>The status of the hybrid job.</p>
     /// This field is required.
     pub fn cancellation_status(mut self, input: crate::types::CancellationStatus) -> Self {
         self.cancellation_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of the job cancellation request.</p>
+    /// <p>The status of the hybrid job.</p>
     pub fn set_cancellation_status(mut self, input: ::std::option::Option<crate::types::CancellationStatus>) -> Self {
         self.cancellation_status = input;
         self
     }
-    /// <p>The status of the job cancellation request.</p>
+    /// <p>The status of the hybrid job.</p>
     pub fn get_cancellation_status(&self) -> &::std::option::Option<crate::types::CancellationStatus> {
         &self.cancellation_status
     }

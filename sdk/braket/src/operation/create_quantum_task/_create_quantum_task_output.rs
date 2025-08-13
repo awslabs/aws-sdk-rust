@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateQuantumTaskOutput {
-    /// <p>The ARN of the task created by the request.</p>
+    /// <p>The ARN of the quantum task created by the request.</p>
     pub quantum_task_arn: ::std::string::String,
     _request_id: Option<String>,
 }
 impl CreateQuantumTaskOutput {
-    /// <p>The ARN of the task created by the request.</p>
+    /// <p>The ARN of the quantum task created by the request.</p>
     pub fn quantum_task_arn(&self) -> &str {
         use std::ops::Deref;
         self.quantum_task_arn.deref()
@@ -34,18 +34,18 @@ pub struct CreateQuantumTaskOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateQuantumTaskOutputBuilder {
-    /// <p>The ARN of the task created by the request.</p>
+    /// <p>The ARN of the quantum task created by the request.</p>
     /// This field is required.
     pub fn quantum_task_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.quantum_task_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the task created by the request.</p>
+    /// <p>The ARN of the quantum task created by the request.</p>
     pub fn set_quantum_task_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.quantum_task_arn = input;
         self
     }
-    /// <p>The ARN of the task created by the request.</p>
+    /// <p>The ARN of the quantum task created by the request.</p>
     pub fn get_quantum_task_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.quantum_task_arn
     }

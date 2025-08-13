@@ -22,7 +22,7 @@ impl crate::operation::get_job::builders::GetJobInputBuilder {
 }
 /// Fluent builder constructing a request to `GetJob`.
 ///
-/// <p>Retrieves the specified Amazon Braket job.</p>
+/// <p>Retrieves the specified Amazon Braket hybrid job.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -98,17 +98,17 @@ impl GetJobFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ARN of the job to retrieve.</p>
+    /// <p>The ARN of the hybrid job to retrieve.</p>
     pub fn job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.job_arn(input.into());
         self
     }
-    /// <p>The ARN of the job to retrieve.</p>
+    /// <p>The ARN of the hybrid job to retrieve.</p>
     pub fn set_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_job_arn(input);
         self
     }
-    /// <p>The ARN of the job to retrieve.</p>
+    /// <p>The ARN of the hybrid job to retrieve.</p>
     pub fn get_job_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_job_arn()
     }
@@ -117,12 +117,12 @@ impl GetJobFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_additional_attribute_names`](Self::set_additional_attribute_names).
     ///
-    /// <p>A list of attributes to return information for.</p>
+    /// <p>A list of attributes to return additional information for. Only the QueueInfo additional attribute name is currently supported.</p>
     pub fn additional_attribute_names(mut self, input: crate::types::HybridJobAdditionalAttributeName) -> Self {
         self.inner = self.inner.additional_attribute_names(input);
         self
     }
-    /// <p>A list of attributes to return information for.</p>
+    /// <p>A list of attributes to return additional information for. Only the QueueInfo additional attribute name is currently supported.</p>
     pub fn set_additional_attribute_names(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::HybridJobAdditionalAttributeName>>,
@@ -130,7 +130,7 @@ impl GetJobFluentBuilder {
         self.inner = self.inner.set_additional_attribute_names(input);
         self
     }
-    /// <p>A list of attributes to return information for.</p>
+    /// <p>A list of attributes to return additional information for. Only the QueueInfo additional attribute name is currently supported.</p>
     pub fn get_additional_attribute_names(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HybridJobAdditionalAttributeName>> {
         self.inner.get_additional_attribute_names()
     }

@@ -57,5 +57,8 @@ pub fn ser_update_file_system_open_zfs_configuration(
         crate::protocol_serde::shape_open_zfs_read_cache_configuration::ser_open_zfs_read_cache_configuration(&mut object_16, var_15)?;
         object_16.finish();
     }
+    if let Some(var_17) = &input.endpoint_ipv6_address_range {
+        object.key("EndpointIpv6AddressRange").string(var_17.as_str());
+    }
     Ok(())
 }

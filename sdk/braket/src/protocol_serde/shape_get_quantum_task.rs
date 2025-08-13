@@ -128,6 +128,9 @@ pub(crate) fn de_get_quantum_task(
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "actionMetadata" => {
+                    builder = builder.set_action_metadata(crate::protocol_serde::shape_action_metadata::de_action_metadata(tokens)?);
+                }
                 "associations" => {
                     builder = builder.set_associations(crate::protocol_serde::shape_associations::de_associations(tokens)?);
                 }
@@ -168,6 +171,13 @@ pub(crate) fn de_get_quantum_task(
                     builder = builder.set_job_arn(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "numSuccessfulShots" => {
+                    builder = builder.set_num_successful_shots(
+                        ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                            .map(i64::try_from)
                             .transpose()?,
                     );
                 }

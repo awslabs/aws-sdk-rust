@@ -22,7 +22,7 @@ impl crate::operation::update_case_comment::builders::UpdateCaseCommentInputBuil
 }
 /// Fluent builder constructing a request to `UpdateCaseComment`.
 ///
-/// <p>Grants permission to update an existing case comment.</p>
+/// <p>Updates an existing case comment.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateCaseCommentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

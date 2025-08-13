@@ -5,9 +5,13 @@ pub use crate::types::_get_membership_account_detail_error::GetMembershipAccount
 
 pub use crate::types::_get_membership_account_detail_item::GetMembershipAccountDetailItemBuilder;
 
+pub use crate::types::_membership_accounts_configurations_update::MembershipAccountsConfigurationsUpdateBuilder;
+
 pub use crate::types::_opt_in_feature::OptInFeatureBuilder;
 
 pub use crate::types::_incident_responder::IncidentResponderBuilder;
+
+pub use crate::types::_membership_accounts_configurations::MembershipAccountsConfigurationsBuilder;
 
 pub use crate::types::_list_membership_item::ListMembershipItemBuilder;
 

@@ -108,17 +108,17 @@ impl GetQuantumTaskFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ARN of the task to retrieve.</p>
+    /// <p>The ARN of the quantum task to retrieve.</p>
     pub fn quantum_task_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.quantum_task_arn(input.into());
         self
     }
-    /// <p>The ARN of the task to retrieve.</p>
+    /// <p>The ARN of the quantum task to retrieve.</p>
     pub fn set_quantum_task_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_quantum_task_arn(input);
         self
     }
-    /// <p>The ARN of the task to retrieve.</p>
+    /// <p>The ARN of the quantum task to retrieve.</p>
     pub fn get_quantum_task_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_quantum_task_arn()
     }
@@ -127,12 +127,12 @@ impl GetQuantumTaskFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_additional_attribute_names`](Self::set_additional_attribute_names).
     ///
-    /// <p>A list of attributes to return information for.</p>
+    /// <p>A list of attributes to return additional information for. Only the QueueInfo additional attribute name is currently supported.</p>
     pub fn additional_attribute_names(mut self, input: crate::types::QuantumTaskAdditionalAttributeName) -> Self {
         self.inner = self.inner.additional_attribute_names(input);
         self
     }
-    /// <p>A list of attributes to return information for.</p>
+    /// <p>A list of attributes to return additional information for. Only the QueueInfo additional attribute name is currently supported.</p>
     pub fn set_additional_attribute_names(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::QuantumTaskAdditionalAttributeName>>,
@@ -140,7 +140,7 @@ impl GetQuantumTaskFluentBuilder {
         self.inner = self.inner.set_additional_attribute_names(input);
         self
     }
-    /// <p>A list of attributes to return information for.</p>
+    /// <p>A list of attributes to return additional information for. Only the QueueInfo additional attribute name is currently supported.</p>
     pub fn get_additional_attribute_names(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::QuantumTaskAdditionalAttributeName>> {
         self.inner.get_additional_attribute_names()
     }

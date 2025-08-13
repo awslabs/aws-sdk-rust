@@ -182,6 +182,15 @@ pub(crate) fn instance_config_correct_errors(
     builder
 }
 
+pub(crate) fn action_metadata_correct_errors(
+    mut builder: crate::types::builders::ActionMetadataBuilder,
+) -> crate::types::builders::ActionMetadataBuilder {
+    if builder.action_type.is_none() {
+        builder.action_type = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn device_config_correct_errors(mut builder: crate::types::builders::DeviceConfigBuilder) -> crate::types::builders::DeviceConfigBuilder {
     if builder.device.is_none() {
         builder.device = Some(Default::default())
@@ -304,6 +313,15 @@ pub(crate) fn job_summary_correct_errors(mut builder: crate::types::builders::Jo
     }
     if builder.created_at.is_none() {
         builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn program_set_validation_failure_correct_errors(
+    mut builder: crate::types::builders::ProgramSetValidationFailureBuilder,
+) -> crate::types::builders::ProgramSetValidationFailureBuilder {
+    if builder.program_index.is_none() {
+        builder.program_index = Some(Default::default())
     }
     builder
 }

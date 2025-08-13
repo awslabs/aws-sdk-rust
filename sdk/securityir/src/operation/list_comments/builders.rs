@@ -22,7 +22,7 @@ impl crate::operation::list_comments::builders::ListCommentsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListComments`.
 ///
-/// <p>Grants permissions to list and view comments for a designated case.</p>
+/// <p>Returns comments for a designated case.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListCommentsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,17 +114,17 @@ impl ListCommentsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_comments::paginator::ListCommentsPaginator {
         crate::operation::list_comments::paginator::ListCommentsPaginator::new(self.handle, self.inner)
     }
-    /// <p>Optional element.</p>
+    /// <p>An optional string that, if supplied, must be copied from the output of a previous call to ListComments. When provided in this manner, the API fetches the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>Optional element.</p>
+    /// <p>An optional string that, if supplied, must be copied from the output of a previous call to ListComments. When provided in this manner, the API fetches the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>Optional element.</p>
+    /// <p>An optional string that, if supplied, must be copied from the output of a previous call to ListComments. When provided in this manner, the API fetches the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }

@@ -22,7 +22,7 @@ impl crate::operation::create_case_comment::builders::CreateCaseCommentInputBuil
 }
 /// Fluent builder constructing a request to `CreateCaseComment`.
 ///
-/// <p>Grants permission to add a comment to an existing case.</p>
+/// <p>Adds a comment to an existing case.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateCaseCommentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -122,17 +122,23 @@ impl CreateCaseCommentFluentBuilder {
     pub fn get_case_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_case_id()
     }
-    /// <p>An optional element used in combination with CreateCaseComment.</p>
+    /// <note>
+    /// <p>The <code>clientToken</code> field is an idempotency key used to ensure that repeated attempts for a single action will be ignored by the server during retries. A caller supplied unique ID (typically a UUID) should be provided.</p>
+    /// </note>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
-    /// <p>An optional element used in combination with CreateCaseComment.</p>
+    /// <note>
+    /// <p>The <code>clientToken</code> field is an idempotency key used to ensure that repeated attempts for a single action will be ignored by the server during retries. A caller supplied unique ID (typically a UUID) should be provided.</p>
+    /// </note>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
-    /// <p>An optional element used in combination with CreateCaseComment.</p>
+    /// <note>
+    /// <p>The <code>clientToken</code> field is an idempotency key used to ensure that repeated attempts for a single action will be ignored by the server during retries. A caller supplied unique ID (typically a UUID) should be provided.</p>
+    /// </note>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }

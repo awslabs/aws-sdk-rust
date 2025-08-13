@@ -150,6 +150,8 @@ mod cancel_metadata_generation_run;
 
 mod cancel_subscription;
 
+mod create_account_pool;
+
 mod create_asset;
 
 mod create_asset_filter;
@@ -229,6 +231,8 @@ mod create_user_profile;
 /// ```
 pub mod customize;
 
+mod delete_account_pool;
+
 mod delete_asset;
 
 mod delete_asset_filter;
@@ -278,6 +282,8 @@ mod delete_subscription_target;
 mod delete_time_series_data_points;
 
 mod disassociate_environment_role;
+
+mod get_account_pool;
 
 mod get_asset;
 
@@ -346,6 +352,10 @@ mod get_subscription_target;
 mod get_time_series_data_point;
 
 mod get_user_profile;
+
+mod list_account_pools;
+
+mod list_accounts_in_account_pool;
 
 mod list_asset_filters;
 
@@ -442,6 +452,8 @@ mod start_metadata_generation_run;
 mod tag_resource;
 
 mod untag_resource;
+
+mod update_account_pool;
 
 mod update_asset_filter;
 

@@ -3,17 +3,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetCaseAttachmentUploadUrlInput {
-    /// <p>Required element for GetCaseAttachmentUploadUrl to identify the case ID for uploading an attachment to.</p>
+    /// <p>Required element for GetCaseAttachmentUploadUrl to identify the case ID for uploading an attachment.</p>
     pub case_id: ::std::option::Option<::std::string::String>,
     /// <p>Required element for GetCaseAttachmentUploadUrl to identify the file name of the attachment to upload.</p>
     pub file_name: ::std::option::Option<::std::string::String>,
-    /// <p>Required element for GetCaseAttachmentUploadUrl to identify the size od the file attachment.</p>
+    /// <p>Required element for GetCaseAttachmentUploadUrl to identify the size of the file attachment.</p>
     pub content_length: ::std::option::Option<i64>,
-    /// <p>Optional element for customer provided token.</p>
+    /// <note>
+    /// <p>The <code>clientToken</code> field is an idempotency key used to ensure that repeated attempts for a single action will be ignored by the server during retries. A caller supplied unique ID (typically a UUID) should be provided.</p>
+    /// </note>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl GetCaseAttachmentUploadUrlInput {
-    /// <p>Required element for GetCaseAttachmentUploadUrl to identify the case ID for uploading an attachment to.</p>
+    /// <p>Required element for GetCaseAttachmentUploadUrl to identify the case ID for uploading an attachment.</p>
     pub fn case_id(&self) -> ::std::option::Option<&str> {
         self.case_id.as_deref()
     }
@@ -21,11 +23,13 @@ impl GetCaseAttachmentUploadUrlInput {
     pub fn file_name(&self) -> ::std::option::Option<&str> {
         self.file_name.as_deref()
     }
-    /// <p>Required element for GetCaseAttachmentUploadUrl to identify the size od the file attachment.</p>
+    /// <p>Required element for GetCaseAttachmentUploadUrl to identify the size of the file attachment.</p>
     pub fn content_length(&self) -> ::std::option::Option<i64> {
         self.content_length
     }
-    /// <p>Optional element for customer provided token.</p>
+    /// <note>
+    /// <p>The <code>clientToken</code> field is an idempotency key used to ensure that repeated attempts for a single action will be ignored by the server during retries. A caller supplied unique ID (typically a UUID) should be provided.</p>
+    /// </note>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -57,18 +61,18 @@ pub struct GetCaseAttachmentUploadUrlInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl GetCaseAttachmentUploadUrlInputBuilder {
-    /// <p>Required element for GetCaseAttachmentUploadUrl to identify the case ID for uploading an attachment to.</p>
+    /// <p>Required element for GetCaseAttachmentUploadUrl to identify the case ID for uploading an attachment.</p>
     /// This field is required.
     pub fn case_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.case_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Required element for GetCaseAttachmentUploadUrl to identify the case ID for uploading an attachment to.</p>
+    /// <p>Required element for GetCaseAttachmentUploadUrl to identify the case ID for uploading an attachment.</p>
     pub fn set_case_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.case_id = input;
         self
     }
-    /// <p>Required element for GetCaseAttachmentUploadUrl to identify the case ID for uploading an attachment to.</p>
+    /// <p>Required element for GetCaseAttachmentUploadUrl to identify the case ID for uploading an attachment.</p>
     pub fn get_case_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.case_id
     }
@@ -87,32 +91,38 @@ impl GetCaseAttachmentUploadUrlInputBuilder {
     pub fn get_file_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.file_name
     }
-    /// <p>Required element for GetCaseAttachmentUploadUrl to identify the size od the file attachment.</p>
+    /// <p>Required element for GetCaseAttachmentUploadUrl to identify the size of the file attachment.</p>
     /// This field is required.
     pub fn content_length(mut self, input: i64) -> Self {
         self.content_length = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Required element for GetCaseAttachmentUploadUrl to identify the size od the file attachment.</p>
+    /// <p>Required element for GetCaseAttachmentUploadUrl to identify the size of the file attachment.</p>
     pub fn set_content_length(mut self, input: ::std::option::Option<i64>) -> Self {
         self.content_length = input;
         self
     }
-    /// <p>Required element for GetCaseAttachmentUploadUrl to identify the size od the file attachment.</p>
+    /// <p>Required element for GetCaseAttachmentUploadUrl to identify the size of the file attachment.</p>
     pub fn get_content_length(&self) -> &::std::option::Option<i64> {
         &self.content_length
     }
-    /// <p>Optional element for customer provided token.</p>
+    /// <note>
+    /// <p>The <code>clientToken</code> field is an idempotency key used to ensure that repeated attempts for a single action will be ignored by the server during retries. A caller supplied unique ID (typically a UUID) should be provided.</p>
+    /// </note>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Optional element for customer provided token.</p>
+    /// <note>
+    /// <p>The <code>clientToken</code> field is an idempotency key used to ensure that repeated attempts for a single action will be ignored by the server during retries. A caller supplied unique ID (typically a UUID) should be provided.</p>
+    /// </note>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
     }
-    /// <p>Optional element for customer provided token.</p>
+    /// <note>
+    /// <p>The <code>clientToken</code> field is an idempotency key used to ensure that repeated attempts for a single action will be ignored by the server during retries. A caller supplied unique ID (typically a UUID) should be provided.</p>
+    /// </note>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }

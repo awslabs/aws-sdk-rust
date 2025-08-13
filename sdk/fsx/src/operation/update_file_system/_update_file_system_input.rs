@@ -37,6 +37,8 @@ pub struct UpdateFileSystemInput {
     pub storage_type: ::std::option::Option<crate::types::StorageType>,
     /// <p>The Lustre version you are updating an FSx for Lustre file system to. Valid values are <code>2.12</code> and <code>2.15</code>. The value you choose must be newer than the file system's current Lustre version.</p>
     pub file_system_type_version: ::std::option::Option<::std::string::String>,
+    /// <p>Changes the network type of an FSx for OpenZFS file system.</p>
+    pub network_type: ::std::option::Option<crate::types::NetworkType>,
 }
 impl UpdateFileSystemInput {
     /// <p>The ID of the file system that you are updating.</p>
@@ -90,6 +92,10 @@ impl UpdateFileSystemInput {
     pub fn file_system_type_version(&self) -> ::std::option::Option<&str> {
         self.file_system_type_version.as_deref()
     }
+    /// <p>Changes the network type of an FSx for OpenZFS file system.</p>
+    pub fn network_type(&self) -> ::std::option::Option<&crate::types::NetworkType> {
+        self.network_type.as_ref()
+    }
 }
 impl UpdateFileSystemInput {
     /// Creates a new builder-style object to manufacture [`UpdateFileSystemInput`](crate::operation::update_file_system::UpdateFileSystemInput).
@@ -111,6 +117,7 @@ pub struct UpdateFileSystemInputBuilder {
     pub(crate) open_zfs_configuration: ::std::option::Option<crate::types::UpdateFileSystemOpenZfsConfiguration>,
     pub(crate) storage_type: ::std::option::Option<crate::types::StorageType>,
     pub(crate) file_system_type_version: ::std::option::Option<::std::string::String>,
+    pub(crate) network_type: ::std::option::Option<crate::types::NetworkType>,
 }
 impl UpdateFileSystemInputBuilder {
     /// <p>The ID of the file system that you are updating.</p>
@@ -285,6 +292,20 @@ impl UpdateFileSystemInputBuilder {
     pub fn get_file_system_type_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.file_system_type_version
     }
+    /// <p>Changes the network type of an FSx for OpenZFS file system.</p>
+    pub fn network_type(mut self, input: crate::types::NetworkType) -> Self {
+        self.network_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Changes the network type of an FSx for OpenZFS file system.</p>
+    pub fn set_network_type(mut self, input: ::std::option::Option<crate::types::NetworkType>) -> Self {
+        self.network_type = input;
+        self
+    }
+    /// <p>Changes the network type of an FSx for OpenZFS file system.</p>
+    pub fn get_network_type(&self) -> &::std::option::Option<crate::types::NetworkType> {
+        &self.network_type
+    }
     /// Consumes the builder and constructs a [`UpdateFileSystemInput`](crate::operation::update_file_system::UpdateFileSystemInput).
     pub fn build(
         self,
@@ -299,6 +320,7 @@ impl UpdateFileSystemInputBuilder {
             open_zfs_configuration: self.open_zfs_configuration,
             storage_type: self.storage_type,
             file_system_type_version: self.file_system_type_version,
+            network_type: self.network_type,
         })
     }
 }

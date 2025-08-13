@@ -18,6 +18,8 @@ pub struct EnvironmentConfiguration {
     pub configuration_parameters: ::std::option::Option<crate::types::EnvironmentConfigurationParametersDetails>,
     /// <p>The Amazon Web Services account of the environment.</p>
     pub aws_account: ::std::option::Option<crate::types::AwsAccount>,
+    /// <p>The account pools used by a custom project profile.</p>
+    pub account_pools: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Amazon Web Services Region of the environment.</p>
     pub aws_region: ::std::option::Option<crate::types::Region>,
     /// <p>The deployment order of the environment.</p>
@@ -54,6 +56,12 @@ impl EnvironmentConfiguration {
     pub fn aws_account(&self) -> ::std::option::Option<&crate::types::AwsAccount> {
         self.aws_account.as_ref()
     }
+    /// <p>The account pools used by a custom project profile.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_pools.is_none()`.
+    pub fn account_pools(&self) -> &[::std::string::String] {
+        self.account_pools.as_deref().unwrap_or_default()
+    }
     /// <p>The Amazon Web Services Region of the environment.</p>
     pub fn aws_region(&self) -> ::std::option::Option<&crate::types::Region> {
         self.aws_region.as_ref()
@@ -73,6 +81,7 @@ impl ::std::fmt::Debug for EnvironmentConfiguration {
         formatter.field("deployment_mode", &self.deployment_mode);
         formatter.field("configuration_parameters", &self.configuration_parameters);
         formatter.field("aws_account", &self.aws_account);
+        formatter.field("account_pools", &self.account_pools);
         formatter.field("aws_region", &self.aws_region);
         formatter.field("deployment_order", &self.deployment_order);
         formatter.finish()
@@ -96,6 +105,7 @@ pub struct EnvironmentConfigurationBuilder {
     pub(crate) deployment_mode: ::std::option::Option<crate::types::DeploymentMode>,
     pub(crate) configuration_parameters: ::std::option::Option<crate::types::EnvironmentConfigurationParametersDetails>,
     pub(crate) aws_account: ::std::option::Option<crate::types::AwsAccount>,
+    pub(crate) account_pools: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) aws_region: ::std::option::Option<crate::types::Region>,
     pub(crate) deployment_order: ::std::option::Option<i32>,
 }
@@ -187,7 +197,6 @@ impl EnvironmentConfigurationBuilder {
         &self.configuration_parameters
     }
     /// <p>The Amazon Web Services account of the environment.</p>
-    /// This field is required.
     pub fn aws_account(mut self, input: crate::types::AwsAccount) -> Self {
         self.aws_account = ::std::option::Option::Some(input);
         self
@@ -201,8 +210,27 @@ impl EnvironmentConfigurationBuilder {
     pub fn get_aws_account(&self) -> &::std::option::Option<crate::types::AwsAccount> {
         &self.aws_account
     }
+    /// Appends an item to `account_pools`.
+    ///
+    /// To override the contents of this collection use [`set_account_pools`](Self::set_account_pools).
+    ///
+    /// <p>The account pools used by a custom project profile.</p>
+    pub fn account_pools(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.account_pools.unwrap_or_default();
+        v.push(input.into());
+        self.account_pools = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The account pools used by a custom project profile.</p>
+    pub fn set_account_pools(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.account_pools = input;
+        self
+    }
+    /// <p>The account pools used by a custom project profile.</p>
+    pub fn get_account_pools(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.account_pools
+    }
     /// <p>The Amazon Web Services Region of the environment.</p>
-    /// This field is required.
     pub fn aws_region(mut self, input: crate::types::Region) -> Self {
         self.aws_region = ::std::option::Option::Some(input);
         self
@@ -253,6 +281,7 @@ impl EnvironmentConfigurationBuilder {
             deployment_mode: self.deployment_mode,
             configuration_parameters: self.configuration_parameters,
             aws_account: self.aws_account,
+            account_pools: self.account_pools,
             aws_region: self.aws_region,
             deployment_order: self.deployment_order,
         })
@@ -268,6 +297,7 @@ impl ::std::fmt::Debug for EnvironmentConfigurationBuilder {
         formatter.field("deployment_mode", &self.deployment_mode);
         formatter.field("configuration_parameters", &self.configuration_parameters);
         formatter.field("aws_account", &self.aws_account);
+        formatter.field("account_pools", &self.account_pools);
         formatter.field("aws_region", &self.aws_region);
         formatter.field("deployment_order", &self.deployment_order);
         formatter.finish()

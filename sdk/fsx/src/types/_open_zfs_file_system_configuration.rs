@@ -27,10 +27,14 @@ pub struct OpenZfsFileSystemConfiguration {
     pub preferred_subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>(Multi-AZ only) Specifies the IP address range in which the endpoints to access your file system will be created. By default in the Amazon FSx API and Amazon FSx console, Amazon FSx selects an available /28 IP address range for you from one of the VPC's CIDR ranges. You can have overlapping endpoint IP addresses for file systems deployed in the same VPC/route tables.</p>
     pub endpoint_ip_address_range: ::std::option::Option<::std::string::String>,
+    /// <p>(Multi-AZ only) Specifies the IP address range in which the endpoints to access your file system will be created. By default in the Amazon FSx API and Amazon FSx console, Amazon FSx selects an available /118 IP address range for you from one of the VPC's CIDR ranges. You can have overlapping endpoint IP addresses for file systems deployed in the same VPC/route tables, as long as they don't overlap with any subnet.</p>
+    pub endpoint_ipv6_address_range: ::std::option::Option<::std::string::String>,
     /// <p>(Multi-AZ only) The VPC route tables in which your file system's endpoints are created.</p>
     pub route_table_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The IP address of the endpoint that is used to access data or to manage the file system.</p>
     pub endpoint_ip_address: ::std::option::Option<::std::string::String>,
+    /// <p>The IPv6 address of the endpoint that is used to access data or to manage the file system.</p>
+    pub endpoint_ipv6_address: ::std::option::Option<::std::string::String>,
     /// <p>Required when <code>StorageType</code> is set to <code>INTELLIGENT_TIERING</code>. Specifies the optional provisioned SSD read cache.</p>
     pub read_cache_configuration: ::std::option::Option<crate::types::OpenZfsReadCacheConfiguration>,
 }
@@ -80,6 +84,10 @@ impl OpenZfsFileSystemConfiguration {
     pub fn endpoint_ip_address_range(&self) -> ::std::option::Option<&str> {
         self.endpoint_ip_address_range.as_deref()
     }
+    /// <p>(Multi-AZ only) Specifies the IP address range in which the endpoints to access your file system will be created. By default in the Amazon FSx API and Amazon FSx console, Amazon FSx selects an available /118 IP address range for you from one of the VPC's CIDR ranges. You can have overlapping endpoint IP addresses for file systems deployed in the same VPC/route tables, as long as they don't overlap with any subnet.</p>
+    pub fn endpoint_ipv6_address_range(&self) -> ::std::option::Option<&str> {
+        self.endpoint_ipv6_address_range.as_deref()
+    }
     /// <p>(Multi-AZ only) The VPC route tables in which your file system's endpoints are created.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.route_table_ids.is_none()`.
@@ -89,6 +97,10 @@ impl OpenZfsFileSystemConfiguration {
     /// <p>The IP address of the endpoint that is used to access data or to manage the file system.</p>
     pub fn endpoint_ip_address(&self) -> ::std::option::Option<&str> {
         self.endpoint_ip_address.as_deref()
+    }
+    /// <p>The IPv6 address of the endpoint that is used to access data or to manage the file system.</p>
+    pub fn endpoint_ipv6_address(&self) -> ::std::option::Option<&str> {
+        self.endpoint_ipv6_address.as_deref()
     }
     /// <p>Required when <code>StorageType</code> is set to <code>INTELLIGENT_TIERING</code>. Specifies the optional provisioned SSD read cache.</p>
     pub fn read_cache_configuration(&self) -> ::std::option::Option<&crate::types::OpenZfsReadCacheConfiguration> {
@@ -117,8 +129,10 @@ pub struct OpenZfsFileSystemConfigurationBuilder {
     pub(crate) root_volume_id: ::std::option::Option<::std::string::String>,
     pub(crate) preferred_subnet_id: ::std::option::Option<::std::string::String>,
     pub(crate) endpoint_ip_address_range: ::std::option::Option<::std::string::String>,
+    pub(crate) endpoint_ipv6_address_range: ::std::option::Option<::std::string::String>,
     pub(crate) route_table_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) endpoint_ip_address: ::std::option::Option<::std::string::String>,
+    pub(crate) endpoint_ipv6_address: ::std::option::Option<::std::string::String>,
     pub(crate) read_cache_configuration: ::std::option::Option<crate::types::OpenZfsReadCacheConfiguration>,
 }
 impl OpenZfsFileSystemConfigurationBuilder {
@@ -279,6 +293,20 @@ impl OpenZfsFileSystemConfigurationBuilder {
     pub fn get_endpoint_ip_address_range(&self) -> &::std::option::Option<::std::string::String> {
         &self.endpoint_ip_address_range
     }
+    /// <p>(Multi-AZ only) Specifies the IP address range in which the endpoints to access your file system will be created. By default in the Amazon FSx API and Amazon FSx console, Amazon FSx selects an available /118 IP address range for you from one of the VPC's CIDR ranges. You can have overlapping endpoint IP addresses for file systems deployed in the same VPC/route tables, as long as they don't overlap with any subnet.</p>
+    pub fn endpoint_ipv6_address_range(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.endpoint_ipv6_address_range = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>(Multi-AZ only) Specifies the IP address range in which the endpoints to access your file system will be created. By default in the Amazon FSx API and Amazon FSx console, Amazon FSx selects an available /118 IP address range for you from one of the VPC's CIDR ranges. You can have overlapping endpoint IP addresses for file systems deployed in the same VPC/route tables, as long as they don't overlap with any subnet.</p>
+    pub fn set_endpoint_ipv6_address_range(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.endpoint_ipv6_address_range = input;
+        self
+    }
+    /// <p>(Multi-AZ only) Specifies the IP address range in which the endpoints to access your file system will be created. By default in the Amazon FSx API and Amazon FSx console, Amazon FSx selects an available /118 IP address range for you from one of the VPC's CIDR ranges. You can have overlapping endpoint IP addresses for file systems deployed in the same VPC/route tables, as long as they don't overlap with any subnet.</p>
+    pub fn get_endpoint_ipv6_address_range(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_ipv6_address_range
+    }
     /// Appends an item to `route_table_ids`.
     ///
     /// To override the contents of this collection use [`set_route_table_ids`](Self::set_route_table_ids).
@@ -313,6 +341,20 @@ impl OpenZfsFileSystemConfigurationBuilder {
     pub fn get_endpoint_ip_address(&self) -> &::std::option::Option<::std::string::String> {
         &self.endpoint_ip_address
     }
+    /// <p>The IPv6 address of the endpoint that is used to access data or to manage the file system.</p>
+    pub fn endpoint_ipv6_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.endpoint_ipv6_address = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The IPv6 address of the endpoint that is used to access data or to manage the file system.</p>
+    pub fn set_endpoint_ipv6_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.endpoint_ipv6_address = input;
+        self
+    }
+    /// <p>The IPv6 address of the endpoint that is used to access data or to manage the file system.</p>
+    pub fn get_endpoint_ipv6_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_ipv6_address
+    }
     /// <p>Required when <code>StorageType</code> is set to <code>INTELLIGENT_TIERING</code>. Specifies the optional provisioned SSD read cache.</p>
     pub fn read_cache_configuration(mut self, input: crate::types::OpenZfsReadCacheConfiguration) -> Self {
         self.read_cache_configuration = ::std::option::Option::Some(input);
@@ -341,8 +383,10 @@ impl OpenZfsFileSystemConfigurationBuilder {
             root_volume_id: self.root_volume_id,
             preferred_subnet_id: self.preferred_subnet_id,
             endpoint_ip_address_range: self.endpoint_ip_address_range,
+            endpoint_ipv6_address_range: self.endpoint_ipv6_address_range,
             route_table_ids: self.route_table_ids,
             endpoint_ip_address: self.endpoint_ip_address,
+            endpoint_ipv6_address: self.endpoint_ipv6_address,
             read_cache_configuration: self.read_cache_configuration,
         }
     }

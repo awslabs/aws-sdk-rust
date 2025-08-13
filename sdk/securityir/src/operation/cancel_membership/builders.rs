@@ -22,7 +22,7 @@ impl crate::operation::cancel_membership::builders::CancelMembershipInputBuilder
 }
 /// Fluent builder constructing a request to `CancelMembership`.
 ///
-/// <p>Grants permissions to cancel an existing membership.</p>
+/// <p>Cancels an existing membership.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CancelMembershipFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

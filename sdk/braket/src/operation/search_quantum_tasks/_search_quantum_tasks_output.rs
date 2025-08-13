@@ -3,19 +3,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchQuantumTasksOutput {
-    /// <p>An array of <code>QuantumTaskSummary</code> objects for tasks that match the specified filters.</p>
+    /// <p>An array of <code>QuantumTaskSummary</code> objects for quantum tasks that match the specified filters.</p>
     pub quantum_tasks: ::std::vec::Vec<crate::types::QuantumTaskSummary>,
-    /// <p>A token used for pagination of results, or null if there are no additional results. Use the token value in a subsequent request to continue results where the previous request ended.</p>
+    /// <p>A token used for pagination of results, or null if there are no additional results. Use the token value in a subsequent request to continue search where the previous request ended.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl SearchQuantumTasksOutput {
-    /// <p>An array of <code>QuantumTaskSummary</code> objects for tasks that match the specified filters.</p>
+    /// <p>An array of <code>QuantumTaskSummary</code> objects for quantum tasks that match the specified filters.</p>
     pub fn quantum_tasks(&self) -> &[crate::types::QuantumTaskSummary] {
         use std::ops::Deref;
         self.quantum_tasks.deref()
     }
-    /// <p>A token used for pagination of results, or null if there are no additional results. Use the token value in a subsequent request to continue results where the previous request ended.</p>
+    /// <p>A token used for pagination of results, or null if there are no additional results. Use the token value in a subsequent request to continue search where the previous request ended.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -45,33 +45,33 @@ impl SearchQuantumTasksOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_quantum_tasks`](Self::set_quantum_tasks).
     ///
-    /// <p>An array of <code>QuantumTaskSummary</code> objects for tasks that match the specified filters.</p>
+    /// <p>An array of <code>QuantumTaskSummary</code> objects for quantum tasks that match the specified filters.</p>
     pub fn quantum_tasks(mut self, input: crate::types::QuantumTaskSummary) -> Self {
         let mut v = self.quantum_tasks.unwrap_or_default();
         v.push(input);
         self.quantum_tasks = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of <code>QuantumTaskSummary</code> objects for tasks that match the specified filters.</p>
+    /// <p>An array of <code>QuantumTaskSummary</code> objects for quantum tasks that match the specified filters.</p>
     pub fn set_quantum_tasks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::QuantumTaskSummary>>) -> Self {
         self.quantum_tasks = input;
         self
     }
-    /// <p>An array of <code>QuantumTaskSummary</code> objects for tasks that match the specified filters.</p>
+    /// <p>An array of <code>QuantumTaskSummary</code> objects for quantum tasks that match the specified filters.</p>
     pub fn get_quantum_tasks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::QuantumTaskSummary>> {
         &self.quantum_tasks
     }
-    /// <p>A token used for pagination of results, or null if there are no additional results. Use the token value in a subsequent request to continue results where the previous request ended.</p>
+    /// <p>A token used for pagination of results, or null if there are no additional results. Use the token value in a subsequent request to continue search where the previous request ended.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A token used for pagination of results, or null if there are no additional results. Use the token value in a subsequent request to continue results where the previous request ended.</p>
+    /// <p>A token used for pagination of results, or null if there are no additional results. Use the token value in a subsequent request to continue search where the previous request ended.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>A token used for pagination of results, or null if there are no additional results. Use the token value in a subsequent request to continue results where the previous request ended.</p>
+    /// <p>A token used for pagination of results, or null if there are no additional results. Use the token value in a subsequent request to continue search where the previous request ended.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

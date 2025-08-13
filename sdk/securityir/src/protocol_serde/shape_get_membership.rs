@@ -211,6 +211,11 @@ pub(crate) fn de_get_membership(
                     builder =
                         builder.set_incident_response_team(crate::protocol_serde::shape_incident_response_team::de_incident_response_team(tokens)?);
                 }
+                "membershipAccountsConfigurations" => {
+                    builder = builder.set_membership_accounts_configurations(
+                        crate::protocol_serde::shape_membership_accounts_configurations::de_membership_accounts_configurations(tokens)?,
+                    );
+                }
                 "membershipActivationTimestamp" => {
                     builder = builder.set_membership_activation_timestamp(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                         tokens.next(),

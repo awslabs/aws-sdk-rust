@@ -22,7 +22,7 @@ impl crate::operation::search_jobs::builders::SearchJobsInputBuilder {
 }
 /// Fluent builder constructing a request to `SearchJobs`.
 ///
-/// <p>Searches for Amazon Braket jobs that match the specified filter values.</p>
+/// <p>Searches for Amazon Braket hybrid jobs that match the specified filter values.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SearchJobsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,17 +114,17 @@ impl SearchJobsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::search_jobs::paginator::SearchJobsPaginator {
         crate::operation::search_jobs::paginator::SearchJobsPaginator::new(self.handle, self.inner)
     }
-    /// <p>A token used for pagination of results returned in the response. Use the token returned from the previous request to continue results where the previous request ended.</p>
+    /// <p>A token used for pagination of results returned in the response. Use the token returned from the previous request to continue search where the previous request ended.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>A token used for pagination of results returned in the response. Use the token returned from the previous request to continue results where the previous request ended.</p>
+    /// <p>A token used for pagination of results returned in the response. Use the token returned from the previous request to continue search where the previous request ended.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>A token used for pagination of results returned in the response. Use the token returned from the previous request to continue results where the previous request ended.</p>
+    /// <p>A token used for pagination of results returned in the response. Use the token returned from the previous request to continue search where the previous request ended.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
@@ -147,17 +147,17 @@ impl SearchJobsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>The filter values to use when searching for a job.</p>
+    /// <p>Array of SearchJobsFilter objects to use when searching for hybrid jobs.</p>
     pub fn filters(mut self, input: crate::types::SearchJobsFilter) -> Self {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p>The filter values to use when searching for a job.</p>
+    /// <p>Array of SearchJobsFilter objects to use when searching for hybrid jobs.</p>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SearchJobsFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
-    /// <p>The filter values to use when searching for a job.</p>
+    /// <p>Array of SearchJobsFilter objects to use when searching for hybrid jobs.</p>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SearchJobsFilter>> {
         self.inner.get_filters()
     }

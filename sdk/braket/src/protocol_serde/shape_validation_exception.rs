@@ -17,6 +17,18 @@ pub(crate) fn de_validation_exception_json_err(
                             .transpose()?,
                     );
                 }
+                "reason" => {
+                    builder = builder.set_reason(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::ValidationExceptionReason::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
+                "programSetValidationFailures" => {
+                    builder = builder.set_program_set_validation_failures(
+                        crate::protocol_serde::shape_program_set_validation_failures_list::de_program_set_validation_failures_list(tokens)?,
+                    );
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

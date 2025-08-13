@@ -108,31 +108,31 @@ impl CancelQuantumTaskFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ARN of the task to cancel.</p>
+    /// <p>The ARN of the quantum task to cancel.</p>
     pub fn quantum_task_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.quantum_task_arn(input.into());
         self
     }
-    /// <p>The ARN of the task to cancel.</p>
+    /// <p>The ARN of the quantum task to cancel.</p>
     pub fn set_quantum_task_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_quantum_task_arn(input);
         self
     }
-    /// <p>The ARN of the task to cancel.</p>
+    /// <p>The ARN of the quantum task to cancel.</p>
     pub fn get_quantum_task_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_quantum_task_arn()
     }
-    /// <p>The client token associated with the request.</p>
+    /// <p>The client token associated with the cancellation request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
-    /// <p>The client token associated with the request.</p>
+    /// <p>The client token associated with the cancellation request.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
-    /// <p>The client token associated with the request.</p>
+    /// <p>The client token associated with the cancellation request.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }

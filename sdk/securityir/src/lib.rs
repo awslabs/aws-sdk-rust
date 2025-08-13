@@ -18,7 +18,7 @@
 #![forbid(unsafe_code)]
 #![warn(missing_docs)]
 #![cfg_attr(docsrs, feature(doc_auto_cfg))]
-//! This guide provides documents the action and response elements for customer use of the service.
+//! This guide documents the action and response elements for use of the service.
 //!
 //! ## Getting Started
 //!
@@ -32,7 +32,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-securityir = "1.33.0"
+//! aws-sdk-securityir = "1.34.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

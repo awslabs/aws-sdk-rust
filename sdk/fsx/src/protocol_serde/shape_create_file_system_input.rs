@@ -81,5 +81,8 @@ pub fn ser_create_file_system_input_input(
         )?;
         object_24.finish();
     }
+    if let Some(var_25) = &input.network_type {
+        object.key("NetworkType").string(var_25.as_str());
+    }
     Ok(())
 }

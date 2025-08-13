@@ -23,7 +23,7 @@ impl crate::operation::list_opportunities::builders::ListOpportunitiesInputBuild
 /// Fluent builder constructing a request to `ListOpportunities`.
 ///
 /// <p>This request accepts a list of filters that retrieve opportunity subsets as well as sort options. This feature is available to partners from <a href="https://partnercentral.awspartner.com/">Partner Central</a> using the <code>ListOpportunities</code> API action.</p>
-/// <p>To synchronize your system with Amazon Web Services, only list the opportunities that were newly created or updated. We recommend you rely on events emitted by the service into your Amazon Web Services account’s Amazon EventBridge default event bus, you can also use the <code>ListOpportunities</code> action.</p>
+/// <p>To synchronize your system with Amazon Web Services, list only the opportunities that were newly created or updated. We recommend you rely on events emitted by the service into your Amazon Web Services account’s Amazon EventBridge default event bus. You can also use the <code>ListOpportunities</code> action.</p>
 /// <p>We recommend the following approach:</p>
 /// <ol>
 /// <li>

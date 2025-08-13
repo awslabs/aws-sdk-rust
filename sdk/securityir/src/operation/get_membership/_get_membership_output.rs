@@ -5,9 +5,9 @@
 pub struct GetMembershipOutput {
     /// <p>Response element for GetMembership that provides the queried membership ID.</p>
     pub membership_id: ::std::string::String,
-    /// <p>Response element for GetMembership that provides the configured account for managing the membership.</p>
+    /// <p>Response element for GetMembership that provides the account configured to manage the membership.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
-    /// <p>Response element for GetMembership that provides the configured region for managing the membership.</p>
+    /// <p>Response element for GetMembership that provides the region configured to manage the membership.</p>
     pub region: ::std::option::Option<crate::types::AwsRegion>,
     /// <p>Response element for GetMembership that provides the configured membership name.</p>
     pub membership_name: ::std::option::Option<::std::string::String>,
@@ -27,6 +27,17 @@ pub struct GetMembershipOutput {
     pub incident_response_team: ::std::option::Option<::std::vec::Vec<crate::types::IncidentResponder>>,
     /// <p>Response element for GetMembership that provides the if opt-in features have been enabled.</p>
     pub opt_in_features: ::std::option::Option<::std::vec::Vec<crate::types::OptInFeature>>,
+    /// <p>The <code>membershipAccountsConfigurations</code> field contains the configuration details for member accounts within the Amazon Web Services Organizations membership structure.</p>
+    /// <p>This field returns a structure containing information about:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Account configurations for member accounts</p></li>
+    /// <li>
+    /// <p>Membership settings and preferences</p></li>
+    /// <li>
+    /// <p>Account-level permissions and roles</p></li>
+    /// </ul>
+    pub membership_accounts_configurations: ::std::option::Option<crate::types::MembershipAccountsConfigurations>,
     _request_id: Option<String>,
 }
 impl GetMembershipOutput {
@@ -35,11 +46,11 @@ impl GetMembershipOutput {
         use std::ops::Deref;
         self.membership_id.deref()
     }
-    /// <p>Response element for GetMembership that provides the configured account for managing the membership.</p>
+    /// <p>Response element for GetMembership that provides the account configured to manage the membership.</p>
     pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
-    /// <p>Response element for GetMembership that provides the configured region for managing the membership.</p>
+    /// <p>Response element for GetMembership that provides the region configured to manage the membership.</p>
     pub fn region(&self) -> ::std::option::Option<&crate::types::AwsRegion> {
         self.region.as_ref()
     }
@@ -83,6 +94,19 @@ impl GetMembershipOutput {
     pub fn opt_in_features(&self) -> &[crate::types::OptInFeature] {
         self.opt_in_features.as_deref().unwrap_or_default()
     }
+    /// <p>The <code>membershipAccountsConfigurations</code> field contains the configuration details for member accounts within the Amazon Web Services Organizations membership structure.</p>
+    /// <p>This field returns a structure containing information about:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Account configurations for member accounts</p></li>
+    /// <li>
+    /// <p>Membership settings and preferences</p></li>
+    /// <li>
+    /// <p>Account-level permissions and roles</p></li>
+    /// </ul>
+    pub fn membership_accounts_configurations(&self) -> ::std::option::Option<&crate::types::MembershipAccountsConfigurations> {
+        self.membership_accounts_configurations.as_ref()
+    }
 }
 impl ::std::fmt::Debug for GetMembershipOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -99,6 +123,7 @@ impl ::std::fmt::Debug for GetMembershipOutput {
         formatter.field("number_of_accounts_covered", &self.number_of_accounts_covered);
         formatter.field("incident_response_team", &self.incident_response_team);
         formatter.field("opt_in_features", &self.opt_in_features);
+        formatter.field("membership_accounts_configurations", &self.membership_accounts_configurations);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -131,6 +156,7 @@ pub struct GetMembershipOutputBuilder {
     pub(crate) number_of_accounts_covered: ::std::option::Option<i64>,
     pub(crate) incident_response_team: ::std::option::Option<::std::vec::Vec<crate::types::IncidentResponder>>,
     pub(crate) opt_in_features: ::std::option::Option<::std::vec::Vec<crate::types::OptInFeature>>,
+    pub(crate) membership_accounts_configurations: ::std::option::Option<crate::types::MembershipAccountsConfigurations>,
     _request_id: Option<String>,
 }
 impl GetMembershipOutputBuilder {
@@ -149,31 +175,31 @@ impl GetMembershipOutputBuilder {
     pub fn get_membership_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.membership_id
     }
-    /// <p>Response element for GetMembership that provides the configured account for managing the membership.</p>
+    /// <p>Response element for GetMembership that provides the account configured to manage the membership.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Response element for GetMembership that provides the configured account for managing the membership.</p>
+    /// <p>Response element for GetMembership that provides the account configured to manage the membership.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
     }
-    /// <p>Response element for GetMembership that provides the configured account for managing the membership.</p>
+    /// <p>Response element for GetMembership that provides the account configured to manage the membership.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_id
     }
-    /// <p>Response element for GetMembership that provides the configured region for managing the membership.</p>
+    /// <p>Response element for GetMembership that provides the region configured to manage the membership.</p>
     pub fn region(mut self, input: crate::types::AwsRegion) -> Self {
         self.region = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Response element for GetMembership that provides the configured region for managing the membership.</p>
+    /// <p>Response element for GetMembership that provides the region configured to manage the membership.</p>
     pub fn set_region(mut self, input: ::std::option::Option<crate::types::AwsRegion>) -> Self {
         self.region = input;
         self
     }
-    /// <p>Response element for GetMembership that provides the configured region for managing the membership.</p>
+    /// <p>Response element for GetMembership that provides the region configured to manage the membership.</p>
     pub fn get_region(&self) -> &::std::option::Option<crate::types::AwsRegion> {
         &self.region
     }
@@ -315,6 +341,47 @@ impl GetMembershipOutputBuilder {
     pub fn get_opt_in_features(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OptInFeature>> {
         &self.opt_in_features
     }
+    /// <p>The <code>membershipAccountsConfigurations</code> field contains the configuration details for member accounts within the Amazon Web Services Organizations membership structure.</p>
+    /// <p>This field returns a structure containing information about:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Account configurations for member accounts</p></li>
+    /// <li>
+    /// <p>Membership settings and preferences</p></li>
+    /// <li>
+    /// <p>Account-level permissions and roles</p></li>
+    /// </ul>
+    pub fn membership_accounts_configurations(mut self, input: crate::types::MembershipAccountsConfigurations) -> Self {
+        self.membership_accounts_configurations = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The <code>membershipAccountsConfigurations</code> field contains the configuration details for member accounts within the Amazon Web Services Organizations membership structure.</p>
+    /// <p>This field returns a structure containing information about:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Account configurations for member accounts</p></li>
+    /// <li>
+    /// <p>Membership settings and preferences</p></li>
+    /// <li>
+    /// <p>Account-level permissions and roles</p></li>
+    /// </ul>
+    pub fn set_membership_accounts_configurations(mut self, input: ::std::option::Option<crate::types::MembershipAccountsConfigurations>) -> Self {
+        self.membership_accounts_configurations = input;
+        self
+    }
+    /// <p>The <code>membershipAccountsConfigurations</code> field contains the configuration details for member accounts within the Amazon Web Services Organizations membership structure.</p>
+    /// <p>This field returns a structure containing information about:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Account configurations for member accounts</p></li>
+    /// <li>
+    /// <p>Membership settings and preferences</p></li>
+    /// <li>
+    /// <p>Account-level permissions and roles</p></li>
+    /// </ul>
+    pub fn get_membership_accounts_configurations(&self) -> &::std::option::Option<crate::types::MembershipAccountsConfigurations> {
+        &self.membership_accounts_configurations
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -348,6 +415,7 @@ impl GetMembershipOutputBuilder {
             number_of_accounts_covered: self.number_of_accounts_covered,
             incident_response_team: self.incident_response_team,
             opt_in_features: self.opt_in_features,
+            membership_accounts_configurations: self.membership_accounts_configurations,
             _request_id: self._request_id,
         })
     }
@@ -367,6 +435,7 @@ impl ::std::fmt::Debug for GetMembershipOutputBuilder {
         formatter.field("number_of_accounts_covered", &self.number_of_accounts_covered);
         formatter.field("incident_response_team", &self.incident_response_team);
         formatter.field("opt_in_features", &self.opt_in_features);
+        formatter.field("membership_accounts_configurations", &self.membership_accounts_configurations);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

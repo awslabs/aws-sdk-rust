@@ -22,6 +22,9 @@ pub mod cancel_metadata_generation_run;
 /// Types for the `CancelSubscription` operation.
 pub mod cancel_subscription;
 
+/// Types for the `CreateAccountPool` operation.
+pub mod create_account_pool;
+
 /// Types for the `CreateAsset` operation.
 pub mod create_asset;
 
@@ -100,6 +103,9 @@ pub mod create_subscription_target;
 /// Types for the `CreateUserProfile` operation.
 pub mod create_user_profile;
 
+/// Types for the `DeleteAccountPool` operation.
+pub mod delete_account_pool;
+
 /// Types for the `DeleteAsset` operation.
 pub mod delete_asset;
 
@@ -174,6 +180,9 @@ pub mod delete_time_series_data_points;
 
 /// Types for the `DisassociateEnvironmentRole` operation.
 pub mod disassociate_environment_role;
+
+/// Types for the `GetAccountPool` operation.
+pub mod get_account_pool;
 
 /// Types for the `GetAsset` operation.
 pub mod get_asset;
@@ -276,6 +285,12 @@ pub mod get_time_series_data_point;
 
 /// Types for the `GetUserProfile` operation.
 pub mod get_user_profile;
+
+/// Types for the `ListAccountPools` operation.
+pub mod list_account_pools;
+
+/// Types for the `ListAccountsInAccountPool` operation.
+pub mod list_accounts_in_account_pool;
 
 /// Types for the `ListAssetFilters` operation.
 pub mod list_asset_filters;
@@ -420,6 +435,9 @@ pub mod tag_resource;
 
 /// Types for the `UntagResource` operation.
 pub mod untag_resource;
+
+/// Types for the `UpdateAccountPool` operation.
+pub mod update_account_pool;
 
 /// Types for the `UpdateAssetFilter` operation.
 pub mod update_asset_filter;

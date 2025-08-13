@@ -5,7 +5,7 @@
 pub struct BatchGetMemberAccountDetailsOutput {
     /// <p>The response element providing responses for requests to GetMembershipAccountDetails.</p>
     pub items: ::std::option::Option<::std::vec::Vec<crate::types::GetMembershipAccountDetailItem>>,
-    /// <p>The response element providing errors messages for requests to GetMembershipAccountDetails.</p>
+    /// <p>The response element providing error messages for requests to GetMembershipAccountDetails.</p>
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::GetMembershipAccountDetailError>>,
     _request_id: Option<String>,
 }
@@ -16,7 +16,7 @@ impl BatchGetMemberAccountDetailsOutput {
     pub fn items(&self) -> &[crate::types::GetMembershipAccountDetailItem] {
         self.items.as_deref().unwrap_or_default()
     }
-    /// <p>The response element providing errors messages for requests to GetMembershipAccountDetails.</p>
+    /// <p>The response element providing error messages for requests to GetMembershipAccountDetails.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.errors.is_none()`.
     pub fn errors(&self) -> &[crate::types::GetMembershipAccountDetailError] {
@@ -68,19 +68,19 @@ impl BatchGetMemberAccountDetailsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_errors`](Self::set_errors).
     ///
-    /// <p>The response element providing errors messages for requests to GetMembershipAccountDetails.</p>
+    /// <p>The response element providing error messages for requests to GetMembershipAccountDetails.</p>
     pub fn errors(mut self, input: crate::types::GetMembershipAccountDetailError) -> Self {
         let mut v = self.errors.unwrap_or_default();
         v.push(input);
         self.errors = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The response element providing errors messages for requests to GetMembershipAccountDetails.</p>
+    /// <p>The response element providing error messages for requests to GetMembershipAccountDetails.</p>
     pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GetMembershipAccountDetailError>>) -> Self {
         self.errors = input;
         self
     }
-    /// <p>The response element providing errors messages for requests to GetMembershipAccountDetails.</p>
+    /// <p>The response element providing error messages for requests to GetMembershipAccountDetails.</p>
     pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GetMembershipAccountDetailError>> {
         &self.errors
     }

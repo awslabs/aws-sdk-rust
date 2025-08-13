@@ -11,6 +11,18 @@ pub struct UpdateMembershipInput {
     pub incident_response_team: ::std::option::Option<::std::vec::Vec<crate::types::IncidentResponder>>,
     /// <p>Optional element for UpdateMembership to enable or disable opt-in features for the service.</p>
     pub opt_in_features: ::std::option::Option<::std::vec::Vec<crate::types::OptInFeature>>,
+    /// <p>The <code>membershipAccountsConfigurationsUpdate</code> field in the <code>UpdateMembershipRequest</code> structure allows you to update the configuration settings for accounts within a membership.</p>
+    /// <p>This field is optional and contains a structure of type <code>MembershipAccountsConfigurationsUpdate </code> that specifies the updated account configurations for the membership.</p>
+    pub membership_accounts_configurations_update: ::std::option::Option<crate::types::MembershipAccountsConfigurationsUpdate>,
+    /// <p>The <code>undoMembershipCancellation</code> parameter is a boolean flag that indicates whether to reverse a previously requested membership cancellation. When set to true, this will revoke the cancellation request and maintain the membership status.</p>
+    /// <p>This parameter is optional and can be used in scenarios where you need to restore a membership that was marked for cancellation but hasn't been fully terminated yet.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If set to <code>true</code>, the cancellation request will be revoked</p></li>
+    /// <li>
+    /// <p>If set to <code>false</code> the service will throw a ValidationException.</p></li>
+    /// </ul>
+    pub undo_membership_cancellation: ::std::option::Option<bool>,
 }
 impl UpdateMembershipInput {
     /// <p>Required element for UpdateMembership to identify the membership to update.</p>
@@ -33,6 +45,22 @@ impl UpdateMembershipInput {
     pub fn opt_in_features(&self) -> &[crate::types::OptInFeature] {
         self.opt_in_features.as_deref().unwrap_or_default()
     }
+    /// <p>The <code>membershipAccountsConfigurationsUpdate</code> field in the <code>UpdateMembershipRequest</code> structure allows you to update the configuration settings for accounts within a membership.</p>
+    /// <p>This field is optional and contains a structure of type <code>MembershipAccountsConfigurationsUpdate </code> that specifies the updated account configurations for the membership.</p>
+    pub fn membership_accounts_configurations_update(&self) -> ::std::option::Option<&crate::types::MembershipAccountsConfigurationsUpdate> {
+        self.membership_accounts_configurations_update.as_ref()
+    }
+    /// <p>The <code>undoMembershipCancellation</code> parameter is a boolean flag that indicates whether to reverse a previously requested membership cancellation. When set to true, this will revoke the cancellation request and maintain the membership status.</p>
+    /// <p>This parameter is optional and can be used in scenarios where you need to restore a membership that was marked for cancellation but hasn't been fully terminated yet.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If set to <code>true</code>, the cancellation request will be revoked</p></li>
+    /// <li>
+    /// <p>If set to <code>false</code> the service will throw a ValidationException.</p></li>
+    /// </ul>
+    pub fn undo_membership_cancellation(&self) -> ::std::option::Option<bool> {
+        self.undo_membership_cancellation
+    }
 }
 impl ::std::fmt::Debug for UpdateMembershipInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -41,6 +69,11 @@ impl ::std::fmt::Debug for UpdateMembershipInput {
         formatter.field("membership_name", &"*** Sensitive Data Redacted ***");
         formatter.field("incident_response_team", &self.incident_response_team);
         formatter.field("opt_in_features", &self.opt_in_features);
+        formatter.field(
+            "membership_accounts_configurations_update",
+            &self.membership_accounts_configurations_update,
+        );
+        formatter.field("undo_membership_cancellation", &self.undo_membership_cancellation);
         formatter.finish()
     }
 }
@@ -59,6 +92,8 @@ pub struct UpdateMembershipInputBuilder {
     pub(crate) membership_name: ::std::option::Option<::std::string::String>,
     pub(crate) incident_response_team: ::std::option::Option<::std::vec::Vec<crate::types::IncidentResponder>>,
     pub(crate) opt_in_features: ::std::option::Option<::std::vec::Vec<crate::types::OptInFeature>>,
+    pub(crate) membership_accounts_configurations_update: ::std::option::Option<crate::types::MembershipAccountsConfigurationsUpdate>,
+    pub(crate) undo_membership_cancellation: ::std::option::Option<bool>,
 }
 impl UpdateMembershipInputBuilder {
     /// <p>Required element for UpdateMembership to identify the membership to update.</p>
@@ -130,6 +165,61 @@ impl UpdateMembershipInputBuilder {
     pub fn get_opt_in_features(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OptInFeature>> {
         &self.opt_in_features
     }
+    /// <p>The <code>membershipAccountsConfigurationsUpdate</code> field in the <code>UpdateMembershipRequest</code> structure allows you to update the configuration settings for accounts within a membership.</p>
+    /// <p>This field is optional and contains a structure of type <code>MembershipAccountsConfigurationsUpdate </code> that specifies the updated account configurations for the membership.</p>
+    pub fn membership_accounts_configurations_update(mut self, input: crate::types::MembershipAccountsConfigurationsUpdate) -> Self {
+        self.membership_accounts_configurations_update = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The <code>membershipAccountsConfigurationsUpdate</code> field in the <code>UpdateMembershipRequest</code> structure allows you to update the configuration settings for accounts within a membership.</p>
+    /// <p>This field is optional and contains a structure of type <code>MembershipAccountsConfigurationsUpdate </code> that specifies the updated account configurations for the membership.</p>
+    pub fn set_membership_accounts_configurations_update(
+        mut self,
+        input: ::std::option::Option<crate::types::MembershipAccountsConfigurationsUpdate>,
+    ) -> Self {
+        self.membership_accounts_configurations_update = input;
+        self
+    }
+    /// <p>The <code>membershipAccountsConfigurationsUpdate</code> field in the <code>UpdateMembershipRequest</code> structure allows you to update the configuration settings for accounts within a membership.</p>
+    /// <p>This field is optional and contains a structure of type <code>MembershipAccountsConfigurationsUpdate </code> that specifies the updated account configurations for the membership.</p>
+    pub fn get_membership_accounts_configurations_update(&self) -> &::std::option::Option<crate::types::MembershipAccountsConfigurationsUpdate> {
+        &self.membership_accounts_configurations_update
+    }
+    /// <p>The <code>undoMembershipCancellation</code> parameter is a boolean flag that indicates whether to reverse a previously requested membership cancellation. When set to true, this will revoke the cancellation request and maintain the membership status.</p>
+    /// <p>This parameter is optional and can be used in scenarios where you need to restore a membership that was marked for cancellation but hasn't been fully terminated yet.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If set to <code>true</code>, the cancellation request will be revoked</p></li>
+    /// <li>
+    /// <p>If set to <code>false</code> the service will throw a ValidationException.</p></li>
+    /// </ul>
+    pub fn undo_membership_cancellation(mut self, input: bool) -> Self {
+        self.undo_membership_cancellation = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The <code>undoMembershipCancellation</code> parameter is a boolean flag that indicates whether to reverse a previously requested membership cancellation. When set to true, this will revoke the cancellation request and maintain the membership status.</p>
+    /// <p>This parameter is optional and can be used in scenarios where you need to restore a membership that was marked for cancellation but hasn't been fully terminated yet.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If set to <code>true</code>, the cancellation request will be revoked</p></li>
+    /// <li>
+    /// <p>If set to <code>false</code> the service will throw a ValidationException.</p></li>
+    /// </ul>
+    pub fn set_undo_membership_cancellation(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.undo_membership_cancellation = input;
+        self
+    }
+    /// <p>The <code>undoMembershipCancellation</code> parameter is a boolean flag that indicates whether to reverse a previously requested membership cancellation. When set to true, this will revoke the cancellation request and maintain the membership status.</p>
+    /// <p>This parameter is optional and can be used in scenarios where you need to restore a membership that was marked for cancellation but hasn't been fully terminated yet.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If set to <code>true</code>, the cancellation request will be revoked</p></li>
+    /// <li>
+    /// <p>If set to <code>false</code> the service will throw a ValidationException.</p></li>
+    /// </ul>
+    pub fn get_undo_membership_cancellation(&self) -> &::std::option::Option<bool> {
+        &self.undo_membership_cancellation
+    }
     /// Consumes the builder and constructs a [`UpdateMembershipInput`](crate::operation::update_membership::UpdateMembershipInput).
     pub fn build(
         self,
@@ -139,6 +229,8 @@ impl UpdateMembershipInputBuilder {
             membership_name: self.membership_name,
             incident_response_team: self.incident_response_team,
             opt_in_features: self.opt_in_features,
+            membership_accounts_configurations_update: self.membership_accounts_configurations_update,
+            undo_membership_cancellation: self.undo_membership_cancellation,
         })
     }
 }
@@ -149,6 +241,11 @@ impl ::std::fmt::Debug for UpdateMembershipInputBuilder {
         formatter.field("membership_name", &"*** Sensitive Data Redacted ***");
         formatter.field("incident_response_team", &self.incident_response_team);
         formatter.field("opt_in_features", &self.opt_in_features);
+        formatter.field(
+            "membership_accounts_configurations_update",
+            &self.membership_accounts_configurations_update,
+        );
+        formatter.field("undo_membership_cancellation", &self.undo_membership_cancellation);
         formatter.finish()
     }
 }

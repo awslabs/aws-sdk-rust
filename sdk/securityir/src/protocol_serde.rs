@@ -149,6 +149,10 @@ pub(crate) mod shape_list_comments_items;
 
 pub(crate) mod shape_list_membership_items;
 
+pub(crate) mod shape_membership_accounts_configurations;
+
+pub(crate) mod shape_membership_accounts_configurations_update;
+
 pub(crate) mod shape_opt_in_feature;
 
 pub(crate) mod shape_opt_in_features;
@@ -178,5 +182,7 @@ pub(crate) mod shape_list_cases_item;
 pub(crate) mod shape_list_comments_item;
 
 pub(crate) mod shape_list_membership_item;
+
+pub(crate) mod shape_organizational_units;
 
 pub(crate) mod shape_validation_exception_field;

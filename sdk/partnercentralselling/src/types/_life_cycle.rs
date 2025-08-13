@@ -113,9 +113,9 @@ pub struct LifeCycle {
     /// <p>Rejected: Disqualified (read-only).</p></li>
     /// </ul>
     pub review_status: ::std::option::Option<crate::types::ReviewStatus>,
-    /// <p>Indicates why an opportunity was sent back for further details. Partners must take corrective action based on the <code>ReviewComments</code>.</p>
+    /// <p>Contains detailed feedback from Amazon Web Services when requesting additional information from partners. Provides specific guidance on what partners need to provide or clarify for opportunity validation, complementing the <code>ReviewStatusReason</code> field.</p>
     pub review_comments: ::std::option::Option<::std::string::String>,
-    /// <p>Indicates the reason a decision was made during the opportunity review process. This field combines the reasons for both disqualified and action required statuses, and provide clarity for why an opportunity was disqualified or requires further action.</p>
+    /// <p>Code indicating the validation decision during the Amazon Web Services opportunity review. Applies when status is <code>Rejected</code> or <code>Action Required</code>. Used to document validation results for AWS Partner Referrals and indicate when additional information is needed from partners as part of the APN Customer Engagement (ACE) program.</p>
     pub review_status_reason: ::std::option::Option<::std::string::String>,
     /// <p>Captures a chronological record of the next steps or actions planned or taken for the current opportunity, along with the timestamp.</p>
     pub next_steps_history: ::std::option::Option<::std::vec::Vec<crate::types::NextStepsHistory>>,
@@ -240,11 +240,11 @@ impl LifeCycle {
     pub fn review_status(&self) -> ::std::option::Option<&crate::types::ReviewStatus> {
         self.review_status.as_ref()
     }
-    /// <p>Indicates why an opportunity was sent back for further details. Partners must take corrective action based on the <code>ReviewComments</code>.</p>
+    /// <p>Contains detailed feedback from Amazon Web Services when requesting additional information from partners. Provides specific guidance on what partners need to provide or clarify for opportunity validation, complementing the <code>ReviewStatusReason</code> field.</p>
     pub fn review_comments(&self) -> ::std::option::Option<&str> {
         self.review_comments.as_deref()
     }
-    /// <p>Indicates the reason a decision was made during the opportunity review process. This field combines the reasons for both disqualified and action required statuses, and provide clarity for why an opportunity was disqualified or requires further action.</p>
+    /// <p>Code indicating the validation decision during the Amazon Web Services opportunity review. Applies when status is <code>Rejected</code> or <code>Action Required</code>. Used to document validation results for AWS Partner Referrals and indicate when additional information is needed from partners as part of the APN Customer Engagement (ACE) program.</p>
     pub fn review_status_reason(&self) -> ::std::option::Option<&str> {
         self.review_status_reason.as_deref()
     }
@@ -657,31 +657,31 @@ impl LifeCycleBuilder {
     pub fn get_review_status(&self) -> &::std::option::Option<crate::types::ReviewStatus> {
         &self.review_status
     }
-    /// <p>Indicates why an opportunity was sent back for further details. Partners must take corrective action based on the <code>ReviewComments</code>.</p>
+    /// <p>Contains detailed feedback from Amazon Web Services when requesting additional information from partners. Provides specific guidance on what partners need to provide or clarify for opportunity validation, complementing the <code>ReviewStatusReason</code> field.</p>
     pub fn review_comments(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.review_comments = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Indicates why an opportunity was sent back for further details. Partners must take corrective action based on the <code>ReviewComments</code>.</p>
+    /// <p>Contains detailed feedback from Amazon Web Services when requesting additional information from partners. Provides specific guidance on what partners need to provide or clarify for opportunity validation, complementing the <code>ReviewStatusReason</code> field.</p>
     pub fn set_review_comments(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.review_comments = input;
         self
     }
-    /// <p>Indicates why an opportunity was sent back for further details. Partners must take corrective action based on the <code>ReviewComments</code>.</p>
+    /// <p>Contains detailed feedback from Amazon Web Services when requesting additional information from partners. Provides specific guidance on what partners need to provide or clarify for opportunity validation, complementing the <code>ReviewStatusReason</code> field.</p>
     pub fn get_review_comments(&self) -> &::std::option::Option<::std::string::String> {
         &self.review_comments
     }
-    /// <p>Indicates the reason a decision was made during the opportunity review process. This field combines the reasons for both disqualified and action required statuses, and provide clarity for why an opportunity was disqualified or requires further action.</p>
+    /// <p>Code indicating the validation decision during the Amazon Web Services opportunity review. Applies when status is <code>Rejected</code> or <code>Action Required</code>. Used to document validation results for AWS Partner Referrals and indicate when additional information is needed from partners as part of the APN Customer Engagement (ACE) program.</p>
     pub fn review_status_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.review_status_reason = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Indicates the reason a decision was made during the opportunity review process. This field combines the reasons for both disqualified and action required statuses, and provide clarity for why an opportunity was disqualified or requires further action.</p>
+    /// <p>Code indicating the validation decision during the Amazon Web Services opportunity review. Applies when status is <code>Rejected</code> or <code>Action Required</code>. Used to document validation results for AWS Partner Referrals and indicate when additional information is needed from partners as part of the APN Customer Engagement (ACE) program.</p>
     pub fn set_review_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.review_status_reason = input;
         self
     }
-    /// <p>Indicates the reason a decision was made during the opportunity review process. This field combines the reasons for both disqualified and action required statuses, and provide clarity for why an opportunity was disqualified or requires further action.</p>
+    /// <p>Code indicating the validation decision during the Amazon Web Services opportunity review. Applies when status is <code>Rejected</code> or <code>Action Required</code>. Used to document validation results for AWS Partner Referrals and indicate when additional information is needed from partners as part of the APN Customer Engagement (ACE) program.</p>
     pub fn get_review_status_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.review_status_reason
     }

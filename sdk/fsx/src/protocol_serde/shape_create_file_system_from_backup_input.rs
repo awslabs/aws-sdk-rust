@@ -75,5 +75,8 @@ pub fn ser_create_file_system_from_backup_input_input(
             ::aws_smithy_types::Number::NegInt((*var_22).into()),
         );
     }
+    if let Some(var_23) = &input.network_type {
+        object.key("NetworkType").string(var_23.as_str());
+    }
     Ok(())
 }

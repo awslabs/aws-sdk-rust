@@ -13,6 +13,7 @@
 /// # let membershipaccountrelationshiptype = unimplemented!();
 /// match membershipaccountrelationshiptype {
 ///     MembershipAccountRelationshipType::Organization => { /* ... */ },
+///     MembershipAccountRelationshipType::Unrelated => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -43,6 +44,8 @@
 pub enum MembershipAccountRelationshipType {
     #[allow(missing_docs)] // documentation missing in model
     Organization,
+    #[allow(missing_docs)] // documentation missing in model
+    Unrelated,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -51,6 +54,7 @@ impl ::std::convert::From<&str> for MembershipAccountRelationshipType {
     fn from(s: &str) -> Self {
         match s {
             "Organization" => MembershipAccountRelationshipType::Organization,
+            "Unrelated" => MembershipAccountRelationshipType::Unrelated,
             other => MembershipAccountRelationshipType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -67,12 +71,13 @@ impl MembershipAccountRelationshipType {
     pub fn as_str(&self) -> &str {
         match self {
             MembershipAccountRelationshipType::Organization => "Organization",
+            MembershipAccountRelationshipType::Unrelated => "Unrelated",
             MembershipAccountRelationshipType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Organization"]
+        &["Organization", "Unrelated"]
     }
 }
 impl ::std::convert::AsRef<str> for MembershipAccountRelationshipType {
@@ -96,6 +101,7 @@ impl ::std::fmt::Display for MembershipAccountRelationshipType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             MembershipAccountRelationshipType::Organization => write!(f, "Organization"),
+            MembershipAccountRelationshipType::Unrelated => write!(f, "Unrelated"),
             MembershipAccountRelationshipType::Unknown(value) => write!(f, "{}", value),
         }
     }

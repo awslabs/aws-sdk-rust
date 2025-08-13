@@ -5,8 +5,8 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`case_id(impl Into<String>)`](crate::operation::close_case::builders::CloseCaseFluentBuilder::case_id) / [`set_case_id(Option<String>)`](crate::operation::close_case::builders::CloseCaseFluentBuilder::set_case_id):<br>required: **true**<br><p>Required element used in combination with CloseCase to identify the case ID to close.</p><br>
     /// - On success, responds with [`CloseCaseOutput`](crate::operation::close_case::CloseCaseOutput) with field(s):
-    ///   - [`case_status(Option<CaseStatus>)`](crate::operation::close_case::CloseCaseOutput::case_status): <p>A response element providing responses for requests to CloseCase. This element responds with the case status following the action.</p>
-    ///   - [`closed_date(Option<DateTime>)`](crate::operation::close_case::CloseCaseOutput::closed_date): <p>A response element providing responses for requests to CloseCase. This element responds with the case closure date following the action.</p>
+    ///   - [`case_status(Option<CaseStatus>)`](crate::operation::close_case::CloseCaseOutput::case_status): <p>A response element providing responses for requests to CloseCase. This element responds <code>Closed </code> if successful.</p>
+    ///   - [`closed_date(Option<DateTime>)`](crate::operation::close_case::CloseCaseOutput::closed_date): <p>A response element providing responses for requests to CloseCase. This element responds with the ISO-8601 formatted timestamp of the moment when the case was closed.</p>
     /// - On failure, responds with [`SdkError<CloseCaseError>`](crate::operation::close_case::CloseCaseError)
     pub fn close_case(&self) -> crate::operation::close_case::builders::CloseCaseFluentBuilder {
         crate::operation::close_case::builders::CloseCaseFluentBuilder::new(self.handle.clone())

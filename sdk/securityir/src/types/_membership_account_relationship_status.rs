@@ -14,6 +14,7 @@
 /// match membershipaccountrelationshipstatus {
 ///     MembershipAccountRelationshipStatus::Associated => { /* ... */ },
 ///     MembershipAccountRelationshipStatus::Disassociated => { /* ... */ },
+///     MembershipAccountRelationshipStatus::Unassociated => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -46,6 +47,8 @@ pub enum MembershipAccountRelationshipStatus {
     Associated,
     #[allow(missing_docs)] // documentation missing in model
     Disassociated,
+    #[allow(missing_docs)] // documentation missing in model
+    Unassociated,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -55,6 +58,7 @@ impl ::std::convert::From<&str> for MembershipAccountRelationshipStatus {
         match s {
             "Associated" => MembershipAccountRelationshipStatus::Associated,
             "Disassociated" => MembershipAccountRelationshipStatus::Disassociated,
+            "Unassociated" => MembershipAccountRelationshipStatus::Unassociated,
             other => MembershipAccountRelationshipStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -72,12 +76,13 @@ impl MembershipAccountRelationshipStatus {
         match self {
             MembershipAccountRelationshipStatus::Associated => "Associated",
             MembershipAccountRelationshipStatus::Disassociated => "Disassociated",
+            MembershipAccountRelationshipStatus::Unassociated => "Unassociated",
             MembershipAccountRelationshipStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Associated", "Disassociated"]
+        &["Associated", "Disassociated", "Unassociated"]
     }
 }
 impl ::std::convert::AsRef<str> for MembershipAccountRelationshipStatus {
@@ -102,6 +107,7 @@ impl ::std::fmt::Display for MembershipAccountRelationshipStatus {
         match self {
             MembershipAccountRelationshipStatus::Associated => write!(f, "Associated"),
             MembershipAccountRelationshipStatus::Disassociated => write!(f, "Disassociated"),
+            MembershipAccountRelationshipStatus::Unassociated => write!(f, "Unassociated"),
             MembershipAccountRelationshipStatus::Unknown(value) => write!(f, "{}", value),
         }
     }

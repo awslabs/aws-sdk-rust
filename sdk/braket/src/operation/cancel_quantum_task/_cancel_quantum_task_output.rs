@@ -3,19 +3,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelQuantumTaskOutput {
-    /// <p>The ARN of the task.</p>
+    /// <p>The ARN of the quantum task.</p>
     pub quantum_task_arn: ::std::string::String,
-    /// <p>The status of the cancellation request.</p>
+    /// <p>The status of the quantum task.</p>
     pub cancellation_status: crate::types::CancellationStatus,
     _request_id: Option<String>,
 }
 impl CancelQuantumTaskOutput {
-    /// <p>The ARN of the task.</p>
+    /// <p>The ARN of the quantum task.</p>
     pub fn quantum_task_arn(&self) -> &str {
         use std::ops::Deref;
         self.quantum_task_arn.deref()
     }
-    /// <p>The status of the cancellation request.</p>
+    /// <p>The status of the quantum task.</p>
     pub fn cancellation_status(&self) -> &crate::types::CancellationStatus {
         &self.cancellation_status
     }
@@ -41,33 +41,33 @@ pub struct CancelQuantumTaskOutputBuilder {
     _request_id: Option<String>,
 }
 impl CancelQuantumTaskOutputBuilder {
-    /// <p>The ARN of the task.</p>
+    /// <p>The ARN of the quantum task.</p>
     /// This field is required.
     pub fn quantum_task_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.quantum_task_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the task.</p>
+    /// <p>The ARN of the quantum task.</p>
     pub fn set_quantum_task_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.quantum_task_arn = input;
         self
     }
-    /// <p>The ARN of the task.</p>
+    /// <p>The ARN of the quantum task.</p>
     pub fn get_quantum_task_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.quantum_task_arn
     }
-    /// <p>The status of the cancellation request.</p>
+    /// <p>The status of the quantum task.</p>
     /// This field is required.
     pub fn cancellation_status(mut self, input: crate::types::CancellationStatus) -> Self {
         self.cancellation_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of the cancellation request.</p>
+    /// <p>The status of the quantum task.</p>
     pub fn set_cancellation_status(mut self, input: ::std::option::Option<crate::types::CancellationStatus>) -> Self {
         self.cancellation_status = input;
         self
     }
-    /// <p>The status of the cancellation request.</p>
+    /// <p>The status of the quantum task.</p>
     pub fn get_cancellation_status(&self) -> &::std::option::Option<crate::types::CancellationStatus> {
         &self.cancellation_status
     }

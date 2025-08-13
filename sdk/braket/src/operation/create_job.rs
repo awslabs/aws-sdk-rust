@@ -256,7 +256,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateJobEndp
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum CreateJobError {
-    /// <p>You do not have sufficient access to perform this action.</p>
+    /// <p>You do not have sufficient permissions to perform this action.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>An error occurred due to a conflict.</p>
     ConflictException(crate::types::error::ConflictException),
@@ -264,13 +264,13 @@ pub enum CreateJobError {
     DeviceOfflineException(crate::types::error::DeviceOfflineException),
     /// <p>The specified device has been retired.</p>
     DeviceRetiredException(crate::types::error::DeviceRetiredException),
-    /// <p>The request processing has failed because of an unknown error, exception, or failure.</p>
+    /// <p>The request failed because of an unknown error.</p>
     InternalServiceException(crate::types::error::InternalServiceException),
     /// <p>The request failed because a service quota is exceeded.</p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
-    /// <p>The throttling rate limit is met.</p>
+    /// <p>The API throttling rate limit is exceeded.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
+    /// <p>The input request failed to satisfy constraints expected by Amazon Braket.</p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

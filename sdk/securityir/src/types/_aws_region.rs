@@ -14,6 +14,7 @@
 /// match awsregion {
 ///     AwsRegion::AfSouth1 => { /* ... */ },
 ///     AwsRegion::ApEast1 => { /* ... */ },
+///     AwsRegion::ApEast2 => { /* ... */ },
 ///     AwsRegion::ApNortheast1 => { /* ... */ },
 ///     AwsRegion::ApNortheast2 => { /* ... */ },
 ///     AwsRegion::ApNortheast3 => { /* ... */ },
@@ -78,6 +79,8 @@ pub enum AwsRegion {
     AfSouth1,
     #[allow(missing_docs)] // documentation missing in model
     ApEast1,
+    #[allow(missing_docs)] // documentation missing in model
+    ApEast2,
     #[allow(missing_docs)] // documentation missing in model
     ApNortheast1,
     #[allow(missing_docs)] // documentation missing in model
@@ -151,6 +154,7 @@ impl ::std::convert::From<&str> for AwsRegion {
         match s {
             "af-south-1" => AwsRegion::AfSouth1,
             "ap-east-1" => AwsRegion::ApEast1,
+            "ap-east-2" => AwsRegion::ApEast2,
             "ap-northeast-1" => AwsRegion::ApNortheast1,
             "ap-northeast-2" => AwsRegion::ApNortheast2,
             "ap-northeast-3" => AwsRegion::ApNortheast3,
@@ -200,6 +204,7 @@ impl AwsRegion {
         match self {
             AwsRegion::AfSouth1 => "af-south-1",
             AwsRegion::ApEast1 => "ap-east-1",
+            AwsRegion::ApEast2 => "ap-east-2",
             AwsRegion::ApNortheast1 => "ap-northeast-1",
             AwsRegion::ApNortheast2 => "ap-northeast-2",
             AwsRegion::ApNortheast3 => "ap-northeast-3",
@@ -240,6 +245,7 @@ impl AwsRegion {
         &[
             "af-south-1",
             "ap-east-1",
+            "ap-east-2",
             "ap-northeast-1",
             "ap-northeast-2",
             "ap-northeast-3",
@@ -297,6 +303,7 @@ impl ::std::fmt::Display for AwsRegion {
         match self {
             AwsRegion::AfSouth1 => write!(f, "af-south-1"),
             AwsRegion::ApEast1 => write!(f, "ap-east-1"),
+            AwsRegion::ApEast2 => write!(f, "ap-east-2"),
             AwsRegion::ApNortheast1 => write!(f, "ap-northeast-1"),
             AwsRegion::ApNortheast2 => write!(f, "ap-northeast-2"),
             AwsRegion::ApNortheast3 => write!(f, "ap-northeast-3"),

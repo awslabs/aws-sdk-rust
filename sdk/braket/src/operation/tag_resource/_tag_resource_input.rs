@@ -5,7 +5,7 @@
 pub struct TagResourceInput {
     /// <p>Specify the <code>resourceArn</code> of the resource to which a tag will be added.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
-    /// <p>Specify the tags to add to the resource.</p>
+    /// <p>Specify the tags to add to the resource. Tags can be specified as a key-value map.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl TagResourceInput {
@@ -13,7 +13,7 @@ impl TagResourceInput {
     pub fn resource_arn(&self) -> ::std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>Specify the tags to add to the resource.</p>
+    /// <p>Specify the tags to add to the resource. Tags can be specified as a key-value map.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
@@ -52,19 +52,19 @@ impl TagResourceInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>Specify the tags to add to the resource.</p>
+    /// <p>Specify the tags to add to the resource. Tags can be specified as a key-value map.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>Specify the tags to add to the resource.</p>
+    /// <p>Specify the tags to add to the resource. Tags can be specified as a key-value map.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>Specify the tags to add to the resource.</p>
+    /// <p>Specify the tags to add to the resource. Tags can be specified as a key-value map.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }

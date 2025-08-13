@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetCaseAttachmentUploadUrlOutput {
-    /// <p>Response element providing the Amazon S3 presigned UTL to upload the attachment.</p>
+    /// <p>Response element providing the Amazon S3 presigned URL to upload the attachment.</p>
     pub attachment_presigned_url: ::std::string::String,
     _request_id: Option<String>,
 }
 impl GetCaseAttachmentUploadUrlOutput {
-    /// <p>Response element providing the Amazon S3 presigned UTL to upload the attachment.</p>
+    /// <p>Response element providing the Amazon S3 presigned URL to upload the attachment.</p>
     pub fn attachment_presigned_url(&self) -> &str {
         use std::ops::Deref;
         self.attachment_presigned_url.deref()
@@ -42,18 +42,18 @@ pub struct GetCaseAttachmentUploadUrlOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetCaseAttachmentUploadUrlOutputBuilder {
-    /// <p>Response element providing the Amazon S3 presigned UTL to upload the attachment.</p>
+    /// <p>Response element providing the Amazon S3 presigned URL to upload the attachment.</p>
     /// This field is required.
     pub fn attachment_presigned_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attachment_presigned_url = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Response element providing the Amazon S3 presigned UTL to upload the attachment.</p>
+    /// <p>Response element providing the Amazon S3 presigned URL to upload the attachment.</p>
     pub fn set_attachment_presigned_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.attachment_presigned_url = input;
         self
     }
-    /// <p>Response element providing the Amazon S3 presigned UTL to upload the attachment.</p>
+    /// <p>Response element providing the Amazon S3 presigned URL to upload the attachment.</p>
     pub fn get_attachment_presigned_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.attachment_presigned_url
     }

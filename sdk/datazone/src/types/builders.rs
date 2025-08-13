@@ -141,6 +141,8 @@ pub use crate::types::_environment_configuration_user_parameter::EnvironmentConf
 
 pub use crate::types::_environment_parameter::EnvironmentParameterBuilder;
 
+pub use crate::types::_environment_resolved_account::EnvironmentResolvedAccountBuilder;
+
 pub use crate::types::_project_deletion_error::ProjectDeletionErrorBuilder;
 
 pub use crate::types::_custom_parameter::CustomParameterBuilder;
@@ -248,6 +250,10 @@ pub use crate::types::_not_equal_to_expression::NotEqualToExpressionBuilder;
 pub use crate::types::_equal_to_expression::EqualToExpressionBuilder;
 
 pub use crate::types::_column_filter_configuration::ColumnFilterConfigurationBuilder;
+
+pub use crate::types::_custom_account_pool_handler::CustomAccountPoolHandlerBuilder;
+
+pub use crate::types::_account_info::AccountInfoBuilder;
 
 pub use crate::types::_user_profile_summary::UserProfileSummaryBuilder;
 
@@ -410,6 +416,8 @@ pub use crate::types::_connection_summary::ConnectionSummaryBuilder;
 pub use crate::types::_asset_revision::AssetRevisionBuilder;
 
 pub use crate::types::_asset_filter_summary::AssetFilterSummaryBuilder;
+
+pub use crate::types::_account_pool_summary::AccountPoolSummaryBuilder;
 
 pub use crate::types::_lineage_node_reference::LineageNodeReferenceBuilder;
 

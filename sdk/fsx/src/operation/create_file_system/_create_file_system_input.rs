@@ -99,6 +99,8 @@ pub struct CreateFileSystemInput {
     pub file_system_type_version: ::std::option::Option<::std::string::String>,
     /// <p>The OpenZFS configuration for the file system that's being created.</p>
     pub open_zfs_configuration: ::std::option::Option<crate::types::CreateFileSystemOpenZfsConfiguration>,
+    /// <p>The network type of the Amazon FSx file system that you are creating. Valid values are <code>IPV4</code> (which supports IPv4 only) and <code>DUAL</code> (for dual-stack mode, which supports both IPv4 and IPv6). The default is <code>IPV4</code>. Supported only for Amazon FSx for OpenZFS file systems.</p>
+    pub network_type: ::std::option::Option<crate::types::NetworkType>,
 }
 impl CreateFileSystemInput {
     /// <p>A string of up to 63 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
@@ -228,6 +230,10 @@ impl CreateFileSystemInput {
     pub fn open_zfs_configuration(&self) -> ::std::option::Option<&crate::types::CreateFileSystemOpenZfsConfiguration> {
         self.open_zfs_configuration.as_ref()
     }
+    /// <p>The network type of the Amazon FSx file system that you are creating. Valid values are <code>IPV4</code> (which supports IPv4 only) and <code>DUAL</code> (for dual-stack mode, which supports both IPv4 and IPv6). The default is <code>IPV4</code>. Supported only for Amazon FSx for OpenZFS file systems.</p>
+    pub fn network_type(&self) -> ::std::option::Option<&crate::types::NetworkType> {
+        self.network_type.as_ref()
+    }
 }
 impl CreateFileSystemInput {
     /// Creates a new builder-style object to manufacture [`CreateFileSystemInput`](crate::operation::create_file_system::CreateFileSystemInput).
@@ -253,6 +259,7 @@ pub struct CreateFileSystemInputBuilder {
     pub(crate) ontap_configuration: ::std::option::Option<crate::types::CreateFileSystemOntapConfiguration>,
     pub(crate) file_system_type_version: ::std::option::Option<::std::string::String>,
     pub(crate) open_zfs_configuration: ::std::option::Option<crate::types::CreateFileSystemOpenZfsConfiguration>,
+    pub(crate) network_type: ::std::option::Option<crate::types::NetworkType>,
 }
 impl CreateFileSystemInputBuilder {
     /// <p>A string of up to 63 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
@@ -663,6 +670,20 @@ impl CreateFileSystemInputBuilder {
     pub fn get_open_zfs_configuration(&self) -> &::std::option::Option<crate::types::CreateFileSystemOpenZfsConfiguration> {
         &self.open_zfs_configuration
     }
+    /// <p>The network type of the Amazon FSx file system that you are creating. Valid values are <code>IPV4</code> (which supports IPv4 only) and <code>DUAL</code> (for dual-stack mode, which supports both IPv4 and IPv6). The default is <code>IPV4</code>. Supported only for Amazon FSx for OpenZFS file systems.</p>
+    pub fn network_type(mut self, input: crate::types::NetworkType) -> Self {
+        self.network_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The network type of the Amazon FSx file system that you are creating. Valid values are <code>IPV4</code> (which supports IPv4 only) and <code>DUAL</code> (for dual-stack mode, which supports both IPv4 and IPv6). The default is <code>IPV4</code>. Supported only for Amazon FSx for OpenZFS file systems.</p>
+    pub fn set_network_type(mut self, input: ::std::option::Option<crate::types::NetworkType>) -> Self {
+        self.network_type = input;
+        self
+    }
+    /// <p>The network type of the Amazon FSx file system that you are creating. Valid values are <code>IPV4</code> (which supports IPv4 only) and <code>DUAL</code> (for dual-stack mode, which supports both IPv4 and IPv6). The default is <code>IPV4</code>. Supported only for Amazon FSx for OpenZFS file systems.</p>
+    pub fn get_network_type(&self) -> &::std::option::Option<crate::types::NetworkType> {
+        &self.network_type
+    }
     /// Consumes the builder and constructs a [`CreateFileSystemInput`](crate::operation::create_file_system::CreateFileSystemInput).
     pub fn build(
         self,
@@ -681,6 +702,7 @@ impl CreateFileSystemInputBuilder {
             ontap_configuration: self.ontap_configuration,
             file_system_type_version: self.file_system_type_version,
             open_zfs_configuration: self.open_zfs_configuration,
+            network_type: self.network_type,
         })
     }
 }

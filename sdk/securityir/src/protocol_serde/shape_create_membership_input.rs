@@ -6,42 +6,45 @@ pub fn ser_create_membership_input_input(
     if let Some(var_1) = &input.client_token {
         object.key("clientToken").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.incident_response_team {
-        let mut array_3 = object.key("incidentResponseTeam").start_array();
-        for item_4 in var_2 {
+    if let Some(var_2) = &input.cover_entire_organization {
+        object.key("coverEntireOrganization").boolean(*var_2);
+    }
+    if let Some(var_3) = &input.incident_response_team {
+        let mut array_4 = object.key("incidentResponseTeam").start_array();
+        for item_5 in var_3 {
             {
                 #[allow(unused_mut)]
-                let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_incident_responder::ser_incident_responder(&mut object_5, item_4)?;
-                object_5.finish();
+                let mut object_6 = array_4.value().start_object();
+                crate::protocol_serde::shape_incident_responder::ser_incident_responder(&mut object_6, item_5)?;
+                object_6.finish();
             }
         }
-        array_3.finish();
+        array_4.finish();
     }
-    if let Some(var_6) = &input.membership_name {
-        object.key("membershipName").string(var_6.as_str());
+    if let Some(var_7) = &input.membership_name {
+        object.key("membershipName").string(var_7.as_str());
     }
-    if let Some(var_7) = &input.opt_in_features {
-        let mut array_8 = object.key("optInFeatures").start_array();
-        for item_9 in var_7 {
+    if let Some(var_8) = &input.opt_in_features {
+        let mut array_9 = object.key("optInFeatures").start_array();
+        for item_10 in var_8 {
             {
                 #[allow(unused_mut)]
-                let mut object_10 = array_8.value().start_object();
-                crate::protocol_serde::shape_opt_in_feature::ser_opt_in_feature(&mut object_10, item_9)?;
-                object_10.finish();
+                let mut object_11 = array_9.value().start_object();
+                crate::protocol_serde::shape_opt_in_feature::ser_opt_in_feature(&mut object_11, item_10)?;
+                object_11.finish();
             }
         }
-        array_8.finish();
+        array_9.finish();
     }
-    if let Some(var_11) = &input.tags {
+    if let Some(var_12) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_12 = object.key("tags").start_object();
-        for (key_13, value_14) in var_11 {
+        let mut object_13 = object.key("tags").start_object();
+        for (key_14, value_15) in var_12 {
             {
-                object_12.key(key_13.as_str()).string(value_14.as_str());
+                object_13.key(key_14.as_str()).string(value_15.as_str());
             }
         }
-        object_12.finish();
+        object_13.finish();
     }
     Ok(())
 }

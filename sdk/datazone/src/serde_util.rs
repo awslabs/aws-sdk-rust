@@ -152,6 +152,18 @@ pub(crate) fn cancel_subscription_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_account_pool_output_output_correct_errors(
+    mut builder: crate::operation::create_account_pool::builders::CreateAccountPoolOutputBuilder,
+) -> crate::operation::create_account_pool::builders::CreateAccountPoolOutputBuilder {
+    if builder.account_source.is_none() {
+        builder.account_source = Some(crate::types::AccountSource::Unknown)
+    }
+    if builder.created_by.is_none() {
+        builder.created_by = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn create_asset_output_output_correct_errors(
     mut builder: crate::operation::create_asset::builders::CreateAssetOutputBuilder,
 ) -> crate::operation::create_asset::builders::CreateAssetOutputBuilder {
@@ -733,6 +745,18 @@ pub(crate) fn delete_subscription_grant_output_output_correct_errors(
     }
     if builder.status.is_none() {
         builder.status = "no value was set".parse::<crate::types::SubscriptionGrantOverallStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn get_account_pool_output_output_correct_errors(
+    mut builder: crate::operation::get_account_pool::builders::GetAccountPoolOutputBuilder,
+) -> crate::operation::get_account_pool::builders::GetAccountPoolOutputBuilder {
+    if builder.account_source.is_none() {
+        builder.account_source = Some(crate::types::AccountSource::Unknown)
+    }
+    if builder.created_by.is_none() {
+        builder.created_by = Some(Default::default())
     }
     builder
 }
@@ -1670,6 +1694,18 @@ pub(crate) fn start_metadata_generation_run_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn update_account_pool_output_output_correct_errors(
+    mut builder: crate::operation::update_account_pool::builders::UpdateAccountPoolOutputBuilder,
+) -> crate::operation::update_account_pool::builders::UpdateAccountPoolOutputBuilder {
+    if builder.account_source.is_none() {
+        builder.account_source = Some(crate::types::AccountSource::Unknown)
+    }
+    if builder.created_by.is_none() {
+        builder.created_by = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn update_asset_filter_output_output_correct_errors(
     mut builder: crate::operation::update_asset_filter::builders::UpdateAssetFilterOutputBuilder,
 ) -> crate::operation::update_asset_filter::builders::UpdateAssetFilterOutputBuilder {
@@ -2124,6 +2160,16 @@ pub(crate) fn time_series_data_point_form_output_correct_errors(
     builder
 }
 
+pub(crate) fn account_info_correct_errors(mut builder: crate::types::builders::AccountInfoBuilder) -> crate::types::builders::AccountInfoBuilder {
+    if builder.aws_account_id.is_none() {
+        builder.aws_account_id = Some(Default::default())
+    }
+    if builder.supported_regions.is_none() {
+        builder.supported_regions = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn asset_filter_summary_correct_errors(
     mut builder: crate::types::builders::AssetFilterSummaryBuilder,
 ) -> crate::types::builders::AssetFilterSummaryBuilder {
@@ -2192,6 +2238,15 @@ pub(crate) fn connection_summary_correct_errors(
     }
     if builder.r#type.is_none() {
         builder.r#type = "no value was set".parse::<crate::types::ConnectionType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn custom_account_pool_handler_correct_errors(
+    mut builder: crate::types::builders::CustomAccountPoolHandlerBuilder,
+) -> crate::types::builders::CustomAccountPoolHandlerBuilder {
+    if builder.lambda_function_arn.is_none() {
+        builder.lambda_function_arn = Some(Default::default())
     }
     builder
 }
@@ -2399,12 +2454,6 @@ pub(crate) fn environment_configuration_correct_errors(
     }
     if builder.environment_blueprint_id.is_none() {
         builder.environment_blueprint_id = Some(Default::default())
-    }
-    if builder.aws_account.is_none() {
-        builder.aws_account = Some(crate::types::AwsAccount::Unknown)
-    }
-    if builder.aws_region.is_none() {
-        builder.aws_region = Some(crate::types::Region::Unknown)
     }
     builder
 }
@@ -2959,6 +3008,18 @@ pub(crate) fn data_product_result_item_correct_errors(
     }
     if builder.owning_project_id.is_none() {
         builder.owning_project_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn environment_resolved_account_correct_errors(
+    mut builder: crate::types::builders::EnvironmentResolvedAccountBuilder,
+) -> crate::types::builders::EnvironmentResolvedAccountBuilder {
+    if builder.aws_account_id.is_none() {
+        builder.aws_account_id = Some(Default::default())
+    }
+    if builder.region_name.is_none() {
+        builder.region_name = Some(Default::default())
     }
     builder
 }

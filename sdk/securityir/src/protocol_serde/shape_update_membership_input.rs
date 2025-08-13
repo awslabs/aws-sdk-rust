@@ -15,20 +15,29 @@ pub fn ser_update_membership_input_input(
         }
         array_2.finish();
     }
-    if let Some(var_5) = &input.membership_name {
-        object.key("membershipName").string(var_5.as_str());
+    if let Some(var_5) = &input.membership_accounts_configurations_update {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("membershipAccountsConfigurationsUpdate").start_object();
+        crate::protocol_serde::shape_membership_accounts_configurations_update::ser_membership_accounts_configurations_update(&mut object_6, var_5)?;
+        object_6.finish();
     }
-    if let Some(var_6) = &input.opt_in_features {
-        let mut array_7 = object.key("optInFeatures").start_array();
-        for item_8 in var_6 {
+    if let Some(var_7) = &input.membership_name {
+        object.key("membershipName").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.opt_in_features {
+        let mut array_9 = object.key("optInFeatures").start_array();
+        for item_10 in var_8 {
             {
                 #[allow(unused_mut)]
-                let mut object_9 = array_7.value().start_object();
-                crate::protocol_serde::shape_opt_in_feature::ser_opt_in_feature(&mut object_9, item_8)?;
-                object_9.finish();
+                let mut object_11 = array_9.value().start_object();
+                crate::protocol_serde::shape_opt_in_feature::ser_opt_in_feature(&mut object_11, item_10)?;
+                object_11.finish();
             }
         }
-        array_7.finish();
+        array_9.finish();
+    }
+    if let Some(var_12) = &input.undo_membership_cancellation {
+        object.key("undoMembershipCancellation").boolean(*var_12);
     }
     Ok(())
 }

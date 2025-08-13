@@ -22,7 +22,7 @@ impl crate::operation::get_case::builders::GetCaseInputBuilder {
 }
 /// Fluent builder constructing a request to `GetCase`.
 ///
-/// <p>Grant permission to view a designated case.</p>
+/// <p>Returns the attributes of a case.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetCaseFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

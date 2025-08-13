@@ -3,20 +3,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListCaseEditsOutput {
-    /// <p>Optional element.</p>
+    /// <p>An optional string that, if supplied on subsequent calls to ListCaseEdits, allows the API to fetch the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>Response element for ListCaseEdits that includes the action, eventtimestamp, message, and principal for the response.</p>
+    /// <p>Response element for ListCaseEdits that includes the action, event timestamp, message, and principal for the response.</p>
     pub items: ::std::option::Option<::std::vec::Vec<crate::types::CaseEditItem>>,
     /// <p>Response element for ListCaseEdits that identifies the total number of edits.</p>
     pub total: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }
 impl ListCaseEditsOutput {
-    /// <p>Optional element.</p>
+    /// <p>An optional string that, if supplied on subsequent calls to ListCaseEdits, allows the API to fetch the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>Response element for ListCaseEdits that includes the action, eventtimestamp, message, and principal for the response.</p>
+    /// <p>Response element for ListCaseEdits that includes the action, event timestamp, message, and principal for the response.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
     pub fn items(&self) -> &[crate::types::CaseEditItem] {
@@ -49,17 +49,17 @@ pub struct ListCaseEditsOutputBuilder {
     _request_id: Option<String>,
 }
 impl ListCaseEditsOutputBuilder {
-    /// <p>Optional element.</p>
+    /// <p>An optional string that, if supplied on subsequent calls to ListCaseEdits, allows the API to fetch the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Optional element.</p>
+    /// <p>An optional string that, if supplied on subsequent calls to ListCaseEdits, allows the API to fetch the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>Optional element.</p>
+    /// <p>An optional string that, if supplied on subsequent calls to ListCaseEdits, allows the API to fetch the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
@@ -67,19 +67,19 @@ impl ListCaseEditsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_items`](Self::set_items).
     ///
-    /// <p>Response element for ListCaseEdits that includes the action, eventtimestamp, message, and principal for the response.</p>
+    /// <p>Response element for ListCaseEdits that includes the action, event timestamp, message, and principal for the response.</p>
     pub fn items(mut self, input: crate::types::CaseEditItem) -> Self {
         let mut v = self.items.unwrap_or_default();
         v.push(input);
         self.items = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Response element for ListCaseEdits that includes the action, eventtimestamp, message, and principal for the response.</p>
+    /// <p>Response element for ListCaseEdits that includes the action, event timestamp, message, and principal for the response.</p>
     pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CaseEditItem>>) -> Self {
         self.items = input;
         self
     }
-    /// <p>Response element for ListCaseEdits that includes the action, eventtimestamp, message, and principal for the response.</p>
+    /// <p>Response element for ListCaseEdits that includes the action, event timestamp, message, and principal for the response.</p>
     pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CaseEditItem>> {
         &self.items
     }

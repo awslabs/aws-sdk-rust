@@ -89,6 +89,8 @@ pub(crate) mod shape_throttling_exception;
 
 pub(crate) mod shape_validation_exception;
 
+pub(crate) mod shape_action_metadata;
+
 pub(crate) mod shape_algorithm_specification;
 
 pub(crate) mod shape_association;
@@ -121,6 +123,8 @@ pub(crate) mod shape_job_stopping_condition;
 
 pub(crate) mod shape_job_summary_list;
 
+pub(crate) mod shape_program_set_validation_failures_list;
+
 pub(crate) mod shape_quantum_task_queue_info;
 
 pub(crate) mod shape_quantum_task_summary_list;
@@ -145,8 +149,12 @@ pub(crate) mod shape_job_event_details;
 
 pub(crate) mod shape_job_summary;
 
+pub(crate) mod shape_program_set_validation_failure;
+
 pub(crate) mod shape_quantum_task_summary;
 
 pub(crate) mod shape_script_mode_config;
+
+pub(crate) mod shape_program_validation_failures_list;
 
 pub(crate) mod shape_s3_data_source;

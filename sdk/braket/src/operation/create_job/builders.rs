@@ -22,7 +22,7 @@ impl crate::operation::create_job::builders::CreateJobInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateJob`.
 ///
-/// <p>Creates an Amazon Braket job.</p>
+/// <p>Creates an Amazon Braket hybrid job.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -102,17 +102,17 @@ impl CreateJobFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>A unique token that guarantees that the call to this API is idempotent.</p>
+    /// <p>The client token associated with this request that guarantees that the request is idempotent.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
-    /// <p>A unique token that guarantees that the call to this API is idempotent.</p>
+    /// <p>The client token associated with this request that guarantees that the request is idempotent.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
-    /// <p>A unique token that guarantees that the call to this API is idempotent.</p>
+    /// <p>The client token associated with this request that guarantees that the request is idempotent.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
@@ -149,73 +149,73 @@ impl CreateJobFluentBuilder {
     pub fn get_input_data_config(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InputFileConfig>> {
         self.inner.get_input_data_config()
     }
-    /// <p>The path to the S3 location where you want to store job artifacts and the encryption key used to store them.</p>
+    /// <p>The path to the S3 location where you want to store hybrid job artifacts and the encryption key used to store them.</p>
     pub fn output_data_config(mut self, input: crate::types::JobOutputDataConfig) -> Self {
         self.inner = self.inner.output_data_config(input);
         self
     }
-    /// <p>The path to the S3 location where you want to store job artifacts and the encryption key used to store them.</p>
+    /// <p>The path to the S3 location where you want to store hybrid job artifacts and the encryption key used to store them.</p>
     pub fn set_output_data_config(mut self, input: ::std::option::Option<crate::types::JobOutputDataConfig>) -> Self {
         self.inner = self.inner.set_output_data_config(input);
         self
     }
-    /// <p>The path to the S3 location where you want to store job artifacts and the encryption key used to store them.</p>
+    /// <p>The path to the S3 location where you want to store hybrid job artifacts and the encryption key used to store them.</p>
     pub fn get_output_data_config(&self) -> &::std::option::Option<crate::types::JobOutputDataConfig> {
         self.inner.get_output_data_config()
     }
-    /// <p>Information about the output locations for job checkpoint data.</p>
+    /// <p>Information about the output locations for hybrid job checkpoint data.</p>
     pub fn checkpoint_config(mut self, input: crate::types::JobCheckpointConfig) -> Self {
         self.inner = self.inner.checkpoint_config(input);
         self
     }
-    /// <p>Information about the output locations for job checkpoint data.</p>
+    /// <p>Information about the output locations for hybrid job checkpoint data.</p>
     pub fn set_checkpoint_config(mut self, input: ::std::option::Option<crate::types::JobCheckpointConfig>) -> Self {
         self.inner = self.inner.set_checkpoint_config(input);
         self
     }
-    /// <p>Information about the output locations for job checkpoint data.</p>
+    /// <p>Information about the output locations for hybrid job checkpoint data.</p>
     pub fn get_checkpoint_config(&self) -> &::std::option::Option<crate::types::JobCheckpointConfig> {
         self.inner.get_checkpoint_config()
     }
-    /// <p>The name of the Amazon Braket job.</p>
+    /// <p>The name of the Amazon Braket hybrid job.</p>
     pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.job_name(input.into());
         self
     }
-    /// <p>The name of the Amazon Braket job.</p>
+    /// <p>The name of the Amazon Braket hybrid job.</p>
     pub fn set_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_job_name(input);
         self
     }
-    /// <p>The name of the Amazon Braket job.</p>
+    /// <p>The name of the Amazon Braket hybrid job.</p>
     pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_job_name()
     }
-    /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Braket can assume to perform tasks on behalf of a user. It can access user resources, run an Amazon Braket job container on behalf of user, and output resources to the users' s3 buckets.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Braket can assume to perform tasks on behalf of a user. It can access user resources, run an Amazon Braket job container on behalf of user, and output results and hybrid job details to the users' s3 buckets.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Braket can assume to perform tasks on behalf of a user. It can access user resources, run an Amazon Braket job container on behalf of user, and output resources to the users' s3 buckets.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Braket can assume to perform tasks on behalf of a user. It can access user resources, run an Amazon Braket job container on behalf of user, and output results and hybrid job details to the users' s3 buckets.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Braket can assume to perform tasks on behalf of a user. It can access user resources, run an Amazon Braket job container on behalf of user, and output resources to the users' s3 buckets.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Braket can assume to perform tasks on behalf of a user. It can access user resources, run an Amazon Braket job container on behalf of user, and output results and hybrid job details to the users' s3 buckets.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_role_arn()
     }
-    /// <p>The user-defined criteria that specifies when a job stops running.</p>
+    /// <p>The user-defined criteria that specifies when a hybrid job stops running.</p>
     pub fn stopping_condition(mut self, input: crate::types::JobStoppingCondition) -> Self {
         self.inner = self.inner.stopping_condition(input);
         self
     }
-    /// <p>The user-defined criteria that specifies when a job stops running.</p>
+    /// <p>The user-defined criteria that specifies when a hybrid job stops running.</p>
     pub fn set_stopping_condition(mut self, input: ::std::option::Option<crate::types::JobStoppingCondition>) -> Self {
         self.inner = self.inner.set_stopping_condition(input);
         self
     }
-    /// <p>The user-defined criteria that specifies when a job stops running.</p>
+    /// <p>The user-defined criteria that specifies when a hybrid job stops running.</p>
     pub fn get_stopping_condition(&self) -> &::std::option::Option<crate::types::JobStoppingCondition> {
         self.inner.get_stopping_condition()
     }
@@ -238,7 +238,9 @@ impl CreateJobFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_hyper_parameters`](Self::set_hyper_parameters).
     ///
-    /// <p>Algorithm-specific parameters used by an Amazon Braket job that influence the quality of the training job. The values are set with a string of JSON key:value pairs, where the key is the name of the hyperparameter and the value is the value of th hyperparameter.</p>
+    /// <p>Algorithm-specific parameters used by an Amazon Braket hybrid job that influence the quality of the training job. The values are set with a map of JSON key:value pairs, where the key is the name of the hyperparameter and the value is the value of the hyperparameter.</p><important>
+    /// <p>Do not include any security-sensitive information including account access IDs, secrets, or tokens in any hyperparameter fields. As part of the shared responsibility model, you are responsible for any potential exposure, unauthorized access, or compromise of your sensitive data if caused by security-sensitive information included in the request hyperparameter variable or plain text fields.</p>
+    /// </important>
     pub fn hyper_parameters(
         mut self,
         k: impl ::std::convert::Into<::std::string::String>,
@@ -247,7 +249,9 @@ impl CreateJobFluentBuilder {
         self.inner = self.inner.hyper_parameters(k.into(), v.into());
         self
     }
-    /// <p>Algorithm-specific parameters used by an Amazon Braket job that influence the quality of the training job. The values are set with a string of JSON key:value pairs, where the key is the name of the hyperparameter and the value is the value of th hyperparameter.</p>
+    /// <p>Algorithm-specific parameters used by an Amazon Braket hybrid job that influence the quality of the training job. The values are set with a map of JSON key:value pairs, where the key is the name of the hyperparameter and the value is the value of the hyperparameter.</p><important>
+    /// <p>Do not include any security-sensitive information including account access IDs, secrets, or tokens in any hyperparameter fields. As part of the shared responsibility model, you are responsible for any potential exposure, unauthorized access, or compromise of your sensitive data if caused by security-sensitive information included in the request hyperparameter variable or plain text fields.</p>
+    /// </important>
     pub fn set_hyper_parameters(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -255,21 +259,23 @@ impl CreateJobFluentBuilder {
         self.inner = self.inner.set_hyper_parameters(input);
         self
     }
-    /// <p>Algorithm-specific parameters used by an Amazon Braket job that influence the quality of the training job. The values are set with a string of JSON key:value pairs, where the key is the name of the hyperparameter and the value is the value of th hyperparameter.</p>
+    /// <p>Algorithm-specific parameters used by an Amazon Braket hybrid job that influence the quality of the training job. The values are set with a map of JSON key:value pairs, where the key is the name of the hyperparameter and the value is the value of the hyperparameter.</p><important>
+    /// <p>Do not include any security-sensitive information including account access IDs, secrets, or tokens in any hyperparameter fields. As part of the shared responsibility model, you are responsible for any potential exposure, unauthorized access, or compromise of your sensitive data if caused by security-sensitive information included in the request hyperparameter variable or plain text fields.</p>
+    /// </important>
     pub fn get_hyper_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_hyper_parameters()
     }
-    /// <p>The quantum processing unit (QPU) or simulator used to create an Amazon Braket job.</p>
+    /// <p>The quantum processing unit (QPU) or simulator used to create an Amazon Braket hybrid job.</p>
     pub fn device_config(mut self, input: crate::types::DeviceConfig) -> Self {
         self.inner = self.inner.device_config(input);
         self
     }
-    /// <p>The quantum processing unit (QPU) or simulator used to create an Amazon Braket job.</p>
+    /// <p>The quantum processing unit (QPU) or simulator used to create an Amazon Braket hybrid job.</p>
     pub fn set_device_config(mut self, input: ::std::option::Option<crate::types::DeviceConfig>) -> Self {
         self.inner = self.inner.set_device_config(input);
         self
     }
-    /// <p>The quantum processing unit (QPU) or simulator used to create an Amazon Braket job.</p>
+    /// <p>The quantum processing unit (QPU) or simulator used to create an Amazon Braket hybrid job.</p>
     pub fn get_device_config(&self) -> &::std::option::Option<crate::types::DeviceConfig> {
         self.inner.get_device_config()
     }
@@ -278,17 +284,17 @@ impl CreateJobFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>A tag object that consists of a key and an optional value, used to manage metadata for Amazon Braket resources.</p>
+    /// <p>Tags to be added to the hybrid job you're creating.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
-    /// <p>A tag object that consists of a key and an optional value, used to manage metadata for Amazon Braket resources.</p>
+    /// <p>Tags to be added to the hybrid job you're creating.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p>A tag object that consists of a key and an optional value, used to manage metadata for Amazon Braket resources.</p>
+    /// <p>Tags to be added to the hybrid job you're creating.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }

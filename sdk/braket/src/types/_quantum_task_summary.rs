@@ -4,59 +4,59 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QuantumTaskSummary {
-    /// <p>The ARN of the task.</p>
+    /// <p>The ARN of the quantum task.</p>
     pub quantum_task_arn: ::std::string::String,
-    /// <p>The status of the task.</p>
+    /// <p>The status of the quantum task.</p>
     pub status: crate::types::QuantumTaskStatus,
-    /// <p>The ARN of the device the task ran on.</p>
+    /// <p>The ARN of the device the quantum task ran on.</p>
     pub device_arn: ::std::string::String,
-    /// <p>The shots used for the task.</p>
+    /// <p>The shots used for the quantum task.</p>
     pub shots: i64,
-    /// <p>The S3 bucket where the task result file is stored..</p>
+    /// <p>The S3 bucket where the quantum task result file is stored.</p>
     pub output_s3_bucket: ::std::string::String,
-    /// <p>The folder in the S3 bucket where the task result file is stored.</p>
+    /// <p>The folder in the S3 bucket where the quantum task result file is stored.</p>
     pub output_s3_directory: ::std::string::String,
-    /// <p>The time at which the task was created.</p>
+    /// <p>The time at which the quantum task was created.</p>
     pub created_at: ::aws_smithy_types::DateTime,
-    /// <p>The time at which the task finished.</p>
+    /// <p>The time at which the quantum task finished.</p>
     pub ended_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Displays the key, value pairs of tags associated with this quantum task.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl QuantumTaskSummary {
-    /// <p>The ARN of the task.</p>
+    /// <p>The ARN of the quantum task.</p>
     pub fn quantum_task_arn(&self) -> &str {
         use std::ops::Deref;
         self.quantum_task_arn.deref()
     }
-    /// <p>The status of the task.</p>
+    /// <p>The status of the quantum task.</p>
     pub fn status(&self) -> &crate::types::QuantumTaskStatus {
         &self.status
     }
-    /// <p>The ARN of the device the task ran on.</p>
+    /// <p>The ARN of the device the quantum task ran on.</p>
     pub fn device_arn(&self) -> &str {
         use std::ops::Deref;
         self.device_arn.deref()
     }
-    /// <p>The shots used for the task.</p>
+    /// <p>The shots used for the quantum task.</p>
     pub fn shots(&self) -> i64 {
         self.shots
     }
-    /// <p>The S3 bucket where the task result file is stored..</p>
+    /// <p>The S3 bucket where the quantum task result file is stored.</p>
     pub fn output_s3_bucket(&self) -> &str {
         use std::ops::Deref;
         self.output_s3_bucket.deref()
     }
-    /// <p>The folder in the S3 bucket where the task result file is stored.</p>
+    /// <p>The folder in the S3 bucket where the quantum task result file is stored.</p>
     pub fn output_s3_directory(&self) -> &str {
         use std::ops::Deref;
         self.output_s3_directory.deref()
     }
-    /// <p>The time at which the task was created.</p>
+    /// <p>The time at which the quantum task was created.</p>
     pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
         &self.created_at
     }
-    /// <p>The time at which the task finished.</p>
+    /// <p>The time at which the quantum task finished.</p>
     pub fn ended_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.ended_at.as_ref()
     }
@@ -87,122 +87,122 @@ pub struct QuantumTaskSummaryBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl QuantumTaskSummaryBuilder {
-    /// <p>The ARN of the task.</p>
+    /// <p>The ARN of the quantum task.</p>
     /// This field is required.
     pub fn quantum_task_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.quantum_task_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the task.</p>
+    /// <p>The ARN of the quantum task.</p>
     pub fn set_quantum_task_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.quantum_task_arn = input;
         self
     }
-    /// <p>The ARN of the task.</p>
+    /// <p>The ARN of the quantum task.</p>
     pub fn get_quantum_task_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.quantum_task_arn
     }
-    /// <p>The status of the task.</p>
+    /// <p>The status of the quantum task.</p>
     /// This field is required.
     pub fn status(mut self, input: crate::types::QuantumTaskStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of the task.</p>
+    /// <p>The status of the quantum task.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::QuantumTaskStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The status of the task.</p>
+    /// <p>The status of the quantum task.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::QuantumTaskStatus> {
         &self.status
     }
-    /// <p>The ARN of the device the task ran on.</p>
+    /// <p>The ARN of the device the quantum task ran on.</p>
     /// This field is required.
     pub fn device_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the device the task ran on.</p>
+    /// <p>The ARN of the device the quantum task ran on.</p>
     pub fn set_device_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_arn = input;
         self
     }
-    /// <p>The ARN of the device the task ran on.</p>
+    /// <p>The ARN of the device the quantum task ran on.</p>
     pub fn get_device_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.device_arn
     }
-    /// <p>The shots used for the task.</p>
+    /// <p>The shots used for the quantum task.</p>
     /// This field is required.
     pub fn shots(mut self, input: i64) -> Self {
         self.shots = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The shots used for the task.</p>
+    /// <p>The shots used for the quantum task.</p>
     pub fn set_shots(mut self, input: ::std::option::Option<i64>) -> Self {
         self.shots = input;
         self
     }
-    /// <p>The shots used for the task.</p>
+    /// <p>The shots used for the quantum task.</p>
     pub fn get_shots(&self) -> &::std::option::Option<i64> {
         &self.shots
     }
-    /// <p>The S3 bucket where the task result file is stored..</p>
+    /// <p>The S3 bucket where the quantum task result file is stored.</p>
     /// This field is required.
     pub fn output_s3_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_s3_bucket = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The S3 bucket where the task result file is stored..</p>
+    /// <p>The S3 bucket where the quantum task result file is stored.</p>
     pub fn set_output_s3_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.output_s3_bucket = input;
         self
     }
-    /// <p>The S3 bucket where the task result file is stored..</p>
+    /// <p>The S3 bucket where the quantum task result file is stored.</p>
     pub fn get_output_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
         &self.output_s3_bucket
     }
-    /// <p>The folder in the S3 bucket where the task result file is stored.</p>
+    /// <p>The folder in the S3 bucket where the quantum task result file is stored.</p>
     /// This field is required.
     pub fn output_s3_directory(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_s3_directory = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The folder in the S3 bucket where the task result file is stored.</p>
+    /// <p>The folder in the S3 bucket where the quantum task result file is stored.</p>
     pub fn set_output_s3_directory(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.output_s3_directory = input;
         self
     }
-    /// <p>The folder in the S3 bucket where the task result file is stored.</p>
+    /// <p>The folder in the S3 bucket where the quantum task result file is stored.</p>
     pub fn get_output_s3_directory(&self) -> &::std::option::Option<::std::string::String> {
         &self.output_s3_directory
     }
-    /// <p>The time at which the task was created.</p>
+    /// <p>The time at which the quantum task was created.</p>
     /// This field is required.
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time at which the task was created.</p>
+    /// <p>The time at which the quantum task was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
-    /// <p>The time at which the task was created.</p>
+    /// <p>The time at which the quantum task was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_at
     }
-    /// <p>The time at which the task finished.</p>
+    /// <p>The time at which the quantum task finished.</p>
     pub fn ended_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.ended_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time at which the task finished.</p>
+    /// <p>The time at which the quantum task finished.</p>
     pub fn set_ended_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.ended_at = input;
         self
     }
-    /// <p>The time at which the task finished.</p>
+    /// <p>The time at which the quantum task finished.</p>
     pub fn get_ended_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.ended_at
     }

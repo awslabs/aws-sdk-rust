@@ -22,7 +22,7 @@ impl crate::operation::update_membership::builders::UpdateMembershipInputBuilder
 }
 /// Fluent builder constructing a request to `UpdateMembership`.
 ///
-/// <p>Grants access to UpdateMembership to change membership configuration.</p>
+/// <p>Updates membership configuration.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateMembershipFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -173,5 +173,60 @@ impl UpdateMembershipFluentBuilder {
     /// <p>Optional element for UpdateMembership to enable or disable opt-in features for the service.</p>
     pub fn get_opt_in_features(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OptInFeature>> {
         self.inner.get_opt_in_features()
+    }
+    /// <p>The <code>membershipAccountsConfigurationsUpdate</code> field in the <code>UpdateMembershipRequest</code> structure allows you to update the configuration settings for accounts within a membership.</p>
+    /// <p>This field is optional and contains a structure of type <code>MembershipAccountsConfigurationsUpdate </code> that specifies the updated account configurations for the membership.</p>
+    pub fn membership_accounts_configurations_update(mut self, input: crate::types::MembershipAccountsConfigurationsUpdate) -> Self {
+        self.inner = self.inner.membership_accounts_configurations_update(input);
+        self
+    }
+    /// <p>The <code>membershipAccountsConfigurationsUpdate</code> field in the <code>UpdateMembershipRequest</code> structure allows you to update the configuration settings for accounts within a membership.</p>
+    /// <p>This field is optional and contains a structure of type <code>MembershipAccountsConfigurationsUpdate </code> that specifies the updated account configurations for the membership.</p>
+    pub fn set_membership_accounts_configurations_update(
+        mut self,
+        input: ::std::option::Option<crate::types::MembershipAccountsConfigurationsUpdate>,
+    ) -> Self {
+        self.inner = self.inner.set_membership_accounts_configurations_update(input);
+        self
+    }
+    /// <p>The <code>membershipAccountsConfigurationsUpdate</code> field in the <code>UpdateMembershipRequest</code> structure allows you to update the configuration settings for accounts within a membership.</p>
+    /// <p>This field is optional and contains a structure of type <code>MembershipAccountsConfigurationsUpdate </code> that specifies the updated account configurations for the membership.</p>
+    pub fn get_membership_accounts_configurations_update(&self) -> &::std::option::Option<crate::types::MembershipAccountsConfigurationsUpdate> {
+        self.inner.get_membership_accounts_configurations_update()
+    }
+    /// <p>The <code>undoMembershipCancellation</code> parameter is a boolean flag that indicates whether to reverse a previously requested membership cancellation. When set to true, this will revoke the cancellation request and maintain the membership status.</p>
+    /// <p>This parameter is optional and can be used in scenarios where you need to restore a membership that was marked for cancellation but hasn't been fully terminated yet.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If set to <code>true</code>, the cancellation request will be revoked</p></li>
+    /// <li>
+    /// <p>If set to <code>false</code> the service will throw a ValidationException.</p></li>
+    /// </ul>
+    pub fn undo_membership_cancellation(mut self, input: bool) -> Self {
+        self.inner = self.inner.undo_membership_cancellation(input);
+        self
+    }
+    /// <p>The <code>undoMembershipCancellation</code> parameter is a boolean flag that indicates whether to reverse a previously requested membership cancellation. When set to true, this will revoke the cancellation request and maintain the membership status.</p>
+    /// <p>This parameter is optional and can be used in scenarios where you need to restore a membership that was marked for cancellation but hasn't been fully terminated yet.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If set to <code>true</code>, the cancellation request will be revoked</p></li>
+    /// <li>
+    /// <p>If set to <code>false</code> the service will throw a ValidationException.</p></li>
+    /// </ul>
+    pub fn set_undo_membership_cancellation(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_undo_membership_cancellation(input);
+        self
+    }
+    /// <p>The <code>undoMembershipCancellation</code> parameter is a boolean flag that indicates whether to reverse a previously requested membership cancellation. When set to true, this will revoke the cancellation request and maintain the membership status.</p>
+    /// <p>This parameter is optional and can be used in scenarios where you need to restore a membership that was marked for cancellation but hasn't been fully terminated yet.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If set to <code>true</code>, the cancellation request will be revoked</p></li>
+    /// <li>
+    /// <p>If set to <code>false</code> the service will throw a ValidationException.</p></li>
+    /// </ul>
+    pub fn get_undo_membership_cancellation(&self) -> &::std::option::Option<bool> {
+        self.inner.get_undo_membership_cancellation()
     }
 }

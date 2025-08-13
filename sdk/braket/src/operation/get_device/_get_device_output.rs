@@ -15,7 +15,7 @@ pub struct GetDeviceOutput {
     pub device_status: crate::types::DeviceStatus,
     /// <p>Details about the capabilities of the device.</p>
     pub device_capabilities: ::std::string::String,
-    /// <p>List of information about tasks and jobs queued on a device.</p>
+    /// <p>The number of quantum tasks and hybrid jobs currently queued on the device.</p>
     pub device_queue_info: ::std::option::Option<::std::vec::Vec<crate::types::DeviceQueueInfo>>,
     _request_id: Option<String>,
 }
@@ -48,7 +48,7 @@ impl GetDeviceOutput {
         use std::ops::Deref;
         self.device_capabilities.deref()
     }
-    /// <p>List of information about tasks and jobs queued on a device.</p>
+    /// <p>The number of quantum tasks and hybrid jobs currently queued on the device.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.device_queue_info.is_none()`.
     pub fn device_queue_info(&self) -> &[crate::types::DeviceQueueInfo] {
@@ -175,19 +175,19 @@ impl GetDeviceOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_device_queue_info`](Self::set_device_queue_info).
     ///
-    /// <p>List of information about tasks and jobs queued on a device.</p>
+    /// <p>The number of quantum tasks and hybrid jobs currently queued on the device.</p>
     pub fn device_queue_info(mut self, input: crate::types::DeviceQueueInfo) -> Self {
         let mut v = self.device_queue_info.unwrap_or_default();
         v.push(input);
         self.device_queue_info = ::std::option::Option::Some(v);
         self
     }
-    /// <p>List of information about tasks and jobs queued on a device.</p>
+    /// <p>The number of quantum tasks and hybrid jobs currently queued on the device.</p>
     pub fn set_device_queue_info(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeviceQueueInfo>>) -> Self {
         self.device_queue_info = input;
         self
     }
-    /// <p>List of information about tasks and jobs queued on a device.</p>
+    /// <p>The number of quantum tasks and hybrid jobs currently queued on the device.</p>
     pub fn get_device_queue_info(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeviceQueueInfo>> {
         &self.device_queue_info
     }

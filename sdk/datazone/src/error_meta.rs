@@ -328,6 +328,39 @@ impl From<crate::operation::cancel_subscription::CancelSubscriptionError> for Er
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_account_pool::CreateAccountPoolError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_account_pool::CreateAccountPoolError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_account_pool::CreateAccountPoolError> for Error {
+    fn from(err: crate::operation::create_account_pool::CreateAccountPoolError) -> Self {
+        match err {
+            crate::operation::create_account_pool::CreateAccountPoolError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_account_pool::CreateAccountPoolError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_account_pool::CreateAccountPoolError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_account_pool::CreateAccountPoolError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_account_pool::CreateAccountPoolError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_account_pool::CreateAccountPoolError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_account_pool::CreateAccountPoolError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_account_pool::CreateAccountPoolError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::create_account_pool::CreateAccountPoolError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_asset::CreateAssetError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1227,6 +1260,35 @@ impl From<crate::operation::create_user_profile::CreateUserProfileError> for Err
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_account_pool::DeleteAccountPoolError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_account_pool::DeleteAccountPoolError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_account_pool::DeleteAccountPoolError> for Error {
+    fn from(err: crate::operation::delete_account_pool::DeleteAccountPoolError) -> Self {
+        match err {
+            crate::operation::delete_account_pool::DeleteAccountPoolError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_account_pool::DeleteAccountPoolError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_account_pool::DeleteAccountPoolError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_account_pool::DeleteAccountPoolError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_account_pool::DeleteAccountPoolError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_account_pool::DeleteAccountPoolError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::delete_account_pool::DeleteAccountPoolError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_asset::DeleteAssetError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2078,6 +2140,33 @@ impl From<crate::operation::disassociate_environment_role::DisassociateEnvironme
                 Error::UnauthorizedException(inner)
             }
             crate::operation::disassociate_environment_role::DisassociateEnvironmentRoleError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_account_pool::GetAccountPoolError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_account_pool::GetAccountPoolError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_account_pool::GetAccountPoolError> for Error {
+    fn from(err: crate::operation::get_account_pool::GetAccountPoolError) -> Self {
+        match err {
+            crate::operation::get_account_pool::GetAccountPoolError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_account_pool::GetAccountPoolError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_account_pool::GetAccountPoolError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_account_pool::GetAccountPoolError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_account_pool::GetAccountPoolError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_account_pool::GetAccountPoolError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::get_account_pool::GetAccountPoolError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -3151,6 +3240,74 @@ impl From<crate::operation::get_user_profile::GetUserProfileError> for Error {
             crate::operation::get_user_profile::GetUserProfileError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_user_profile::GetUserProfileError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::get_user_profile::GetUserProfileError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_account_pools::ListAccountPoolsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_account_pools::ListAccountPoolsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_account_pools::ListAccountPoolsError> for Error {
+    fn from(err: crate::operation::list_account_pools::ListAccountPoolsError) -> Self {
+        match err {
+            crate::operation::list_account_pools::ListAccountPoolsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_account_pools::ListAccountPoolsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_account_pools::ListAccountPoolsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_account_pools::ListAccountPoolsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_account_pools::ListAccountPoolsError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::list_account_pools::ListAccountPoolsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_accounts_in_account_pool::ListAccountsInAccountPoolError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_accounts_in_account_pool::ListAccountsInAccountPoolError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_accounts_in_account_pool::ListAccountsInAccountPoolError> for Error {
+    fn from(err: crate::operation::list_accounts_in_account_pool::ListAccountsInAccountPoolError) -> Self {
+        match err {
+            crate::operation::list_accounts_in_account_pool::ListAccountsInAccountPoolError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_accounts_in_account_pool::ListAccountsInAccountPoolError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_accounts_in_account_pool::ListAccountsInAccountPoolError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_accounts_in_account_pool::ListAccountsInAccountPoolError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_accounts_in_account_pool::ListAccountsInAccountPoolError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_accounts_in_account_pool::ListAccountsInAccountPoolError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::list_accounts_in_account_pool::ListAccountsInAccountPoolError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -4767,6 +4924,39 @@ impl From<crate::operation::untag_resource::UntagResourceError> for Error {
             crate::operation::untag_resource::UntagResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::untag_resource::UntagResourceError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_account_pool::UpdateAccountPoolError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_account_pool::UpdateAccountPoolError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_account_pool::UpdateAccountPoolError> for Error {
+    fn from(err: crate::operation::update_account_pool::UpdateAccountPoolError) -> Self {
+        match err {
+            crate::operation::update_account_pool::UpdateAccountPoolError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_account_pool::UpdateAccountPoolError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_account_pool::UpdateAccountPoolError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_account_pool::UpdateAccountPoolError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_account_pool::UpdateAccountPoolError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::update_account_pool::UpdateAccountPoolError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_account_pool::UpdateAccountPoolError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_account_pool::UpdateAccountPoolError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::update_account_pool::UpdateAccountPoolError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
