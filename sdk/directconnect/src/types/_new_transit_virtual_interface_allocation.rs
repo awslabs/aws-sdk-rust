@@ -8,9 +8,27 @@ pub struct NewTransitVirtualInterfaceAllocation {
     pub virtual_interface_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the VLAN.</p>
     pub vlan: i32,
-    /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
-    /// <p>The valid values are 1-2147483647.</p>
+    /// <p>The autonomous system number (ASN). The valid range is from 1 to 2147483646 for Border Gateway Protocol (BGP) configuration. If you provide a number greater than the maximum, an error is returned. Use <code>asnLong</code> instead.</p><note>
+    /// <p>You can use <code>asnLong</code> or <code>asn</code>, but not both. We recommend using <code>asnLong</code> as it supports a greater pool of numbers.</p>
+    /// <ul>
+    /// <li>
+    /// <p>The <code>asnLong</code> attribute accepts both ASN and long ASN ranges.</p></li>
+    /// <li>
+    /// <p>If you provide a value in the same API call for both <code>asn</code> and <code>asnLong</code>, the API will only accept the value for <code>asnLong</code>.</p></li>
+    /// </ul>
+    /// </note>
+    /// <p>The valid values are 1-2147483646.</p>
     pub asn: i32,
+    /// <p>The ASN when allocating a new transit virtual interface. The valid range is from 1 to 4294967294 for BGP configuration.</p><note>
+    /// <p>You can use <code>asnLong</code> or <code>asn</code>, but not both. We recommend using <code>asnLong</code> as it supports a greater pool of numbers.</p>
+    /// <ul>
+    /// <li>
+    /// <p>The <code>asnLong</code> attribute accepts both ASN and long ASN ranges.</p></li>
+    /// <li>
+    /// <p>If you provide a value in the same API call for both <code>asn</code> and <code>asnLong</code>, the API will only accept the value for <code>asnLong</code>.</p></li>
+    /// </ul>
+    /// </note>
+    pub asn_long: ::std::option::Option<i64>,
     /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 8500. The default value is 1500</p>
     pub mtu: ::std::option::Option<i32>,
     /// <p>The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun lenth of 80 characters.</p>
@@ -33,10 +51,30 @@ impl NewTransitVirtualInterfaceAllocation {
     pub fn vlan(&self) -> i32 {
         self.vlan
     }
-    /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
-    /// <p>The valid values are 1-2147483647.</p>
+    /// <p>The autonomous system number (ASN). The valid range is from 1 to 2147483646 for Border Gateway Protocol (BGP) configuration. If you provide a number greater than the maximum, an error is returned. Use <code>asnLong</code> instead.</p><note>
+    /// <p>You can use <code>asnLong</code> or <code>asn</code>, but not both. We recommend using <code>asnLong</code> as it supports a greater pool of numbers.</p>
+    /// <ul>
+    /// <li>
+    /// <p>The <code>asnLong</code> attribute accepts both ASN and long ASN ranges.</p></li>
+    /// <li>
+    /// <p>If you provide a value in the same API call for both <code>asn</code> and <code>asnLong</code>, the API will only accept the value for <code>asnLong</code>.</p></li>
+    /// </ul>
+    /// </note>
+    /// <p>The valid values are 1-2147483646.</p>
     pub fn asn(&self) -> i32 {
         self.asn
+    }
+    /// <p>The ASN when allocating a new transit virtual interface. The valid range is from 1 to 4294967294 for BGP configuration.</p><note>
+    /// <p>You can use <code>asnLong</code> or <code>asn</code>, but not both. We recommend using <code>asnLong</code> as it supports a greater pool of numbers.</p>
+    /// <ul>
+    /// <li>
+    /// <p>The <code>asnLong</code> attribute accepts both ASN and long ASN ranges.</p></li>
+    /// <li>
+    /// <p>If you provide a value in the same API call for both <code>asn</code> and <code>asnLong</code>, the API will only accept the value for <code>asnLong</code>.</p></li>
+    /// </ul>
+    /// </note>
+    pub fn asn_long(&self) -> ::std::option::Option<i64> {
+        self.asn_long
     }
     /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 8500. The default value is 1500</p>
     pub fn mtu(&self) -> ::std::option::Option<i32> {
@@ -79,6 +117,7 @@ pub struct NewTransitVirtualInterfaceAllocationBuilder {
     pub(crate) virtual_interface_name: ::std::option::Option<::std::string::String>,
     pub(crate) vlan: ::std::option::Option<i32>,
     pub(crate) asn: ::std::option::Option<i32>,
+    pub(crate) asn_long: ::std::option::Option<i64>,
     pub(crate) mtu: ::std::option::Option<i32>,
     pub(crate) auth_key: ::std::option::Option<::std::string::String>,
     pub(crate) amazon_address: ::std::option::Option<::std::string::String>,
@@ -115,22 +154,84 @@ impl NewTransitVirtualInterfaceAllocationBuilder {
     pub fn get_vlan(&self) -> &::std::option::Option<i32> {
         &self.vlan
     }
-    /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
-    /// <p>The valid values are 1-2147483647.</p>
+    /// <p>The autonomous system number (ASN). The valid range is from 1 to 2147483646 for Border Gateway Protocol (BGP) configuration. If you provide a number greater than the maximum, an error is returned. Use <code>asnLong</code> instead.</p><note>
+    /// <p>You can use <code>asnLong</code> or <code>asn</code>, but not both. We recommend using <code>asnLong</code> as it supports a greater pool of numbers.</p>
+    /// <ul>
+    /// <li>
+    /// <p>The <code>asnLong</code> attribute accepts both ASN and long ASN ranges.</p></li>
+    /// <li>
+    /// <p>If you provide a value in the same API call for both <code>asn</code> and <code>asnLong</code>, the API will only accept the value for <code>asnLong</code>.</p></li>
+    /// </ul>
+    /// </note>
+    /// <p>The valid values are 1-2147483646.</p>
     pub fn asn(mut self, input: i32) -> Self {
         self.asn = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
-    /// <p>The valid values are 1-2147483647.</p>
+    /// <p>The autonomous system number (ASN). The valid range is from 1 to 2147483646 for Border Gateway Protocol (BGP) configuration. If you provide a number greater than the maximum, an error is returned. Use <code>asnLong</code> instead.</p><note>
+    /// <p>You can use <code>asnLong</code> or <code>asn</code>, but not both. We recommend using <code>asnLong</code> as it supports a greater pool of numbers.</p>
+    /// <ul>
+    /// <li>
+    /// <p>The <code>asnLong</code> attribute accepts both ASN and long ASN ranges.</p></li>
+    /// <li>
+    /// <p>If you provide a value in the same API call for both <code>asn</code> and <code>asnLong</code>, the API will only accept the value for <code>asnLong</code>.</p></li>
+    /// </ul>
+    /// </note>
+    /// <p>The valid values are 1-2147483646.</p>
     pub fn set_asn(mut self, input: ::std::option::Option<i32>) -> Self {
         self.asn = input;
         self
     }
-    /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
-    /// <p>The valid values are 1-2147483647.</p>
+    /// <p>The autonomous system number (ASN). The valid range is from 1 to 2147483646 for Border Gateway Protocol (BGP) configuration. If you provide a number greater than the maximum, an error is returned. Use <code>asnLong</code> instead.</p><note>
+    /// <p>You can use <code>asnLong</code> or <code>asn</code>, but not both. We recommend using <code>asnLong</code> as it supports a greater pool of numbers.</p>
+    /// <ul>
+    /// <li>
+    /// <p>The <code>asnLong</code> attribute accepts both ASN and long ASN ranges.</p></li>
+    /// <li>
+    /// <p>If you provide a value in the same API call for both <code>asn</code> and <code>asnLong</code>, the API will only accept the value for <code>asnLong</code>.</p></li>
+    /// </ul>
+    /// </note>
+    /// <p>The valid values are 1-2147483646.</p>
     pub fn get_asn(&self) -> &::std::option::Option<i32> {
         &self.asn
+    }
+    /// <p>The ASN when allocating a new transit virtual interface. The valid range is from 1 to 4294967294 for BGP configuration.</p><note>
+    /// <p>You can use <code>asnLong</code> or <code>asn</code>, but not both. We recommend using <code>asnLong</code> as it supports a greater pool of numbers.</p>
+    /// <ul>
+    /// <li>
+    /// <p>The <code>asnLong</code> attribute accepts both ASN and long ASN ranges.</p></li>
+    /// <li>
+    /// <p>If you provide a value in the same API call for both <code>asn</code> and <code>asnLong</code>, the API will only accept the value for <code>asnLong</code>.</p></li>
+    /// </ul>
+    /// </note>
+    pub fn asn_long(mut self, input: i64) -> Self {
+        self.asn_long = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ASN when allocating a new transit virtual interface. The valid range is from 1 to 4294967294 for BGP configuration.</p><note>
+    /// <p>You can use <code>asnLong</code> or <code>asn</code>, but not both. We recommend using <code>asnLong</code> as it supports a greater pool of numbers.</p>
+    /// <ul>
+    /// <li>
+    /// <p>The <code>asnLong</code> attribute accepts both ASN and long ASN ranges.</p></li>
+    /// <li>
+    /// <p>If you provide a value in the same API call for both <code>asn</code> and <code>asnLong</code>, the API will only accept the value for <code>asnLong</code>.</p></li>
+    /// </ul>
+    /// </note>
+    pub fn set_asn_long(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.asn_long = input;
+        self
+    }
+    /// <p>The ASN when allocating a new transit virtual interface. The valid range is from 1 to 4294967294 for BGP configuration.</p><note>
+    /// <p>You can use <code>asnLong</code> or <code>asn</code>, but not both. We recommend using <code>asnLong</code> as it supports a greater pool of numbers.</p>
+    /// <ul>
+    /// <li>
+    /// <p>The <code>asnLong</code> attribute accepts both ASN and long ASN ranges.</p></li>
+    /// <li>
+    /// <p>If you provide a value in the same API call for both <code>asn</code> and <code>asnLong</code>, the API will only accept the value for <code>asnLong</code>.</p></li>
+    /// </ul>
+    /// </note>
+    pub fn get_asn_long(&self) -> &::std::option::Option<i64> {
+        &self.asn_long
     }
     /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 8500. The default value is 1500</p>
     pub fn mtu(mut self, input: i32) -> Self {
@@ -228,6 +329,7 @@ impl NewTransitVirtualInterfaceAllocationBuilder {
             virtual_interface_name: self.virtual_interface_name,
             vlan: self.vlan.unwrap_or_default(),
             asn: self.asn.unwrap_or_default(),
+            asn_long: self.asn_long,
             mtu: self.mtu,
             auth_key: self.auth_key,
             amazon_address: self.amazon_address,

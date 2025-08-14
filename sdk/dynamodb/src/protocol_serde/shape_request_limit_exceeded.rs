@@ -17,6 +17,9 @@ pub(crate) fn de_request_limit_exceeded_json_err(
                             .transpose()?,
                     );
                 }
+                "ThrottlingReasons" => {
+                    builder = builder.set_throttling_reasons(crate::protocol_serde::shape_throttling_reason_list::de_throttling_reason_list(tokens)?);
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

@@ -43,7 +43,11 @@ pub(crate) mod shape_create_publishing_destination;
 
 pub(crate) mod shape_create_sample_findings;
 
+pub(crate) mod shape_create_threat_entity_set;
+
 pub(crate) mod shape_create_threat_intel_set;
+
+pub(crate) mod shape_create_trusted_entity_set;
 
 pub(crate) mod shape_decline_invitations;
 
@@ -61,7 +65,11 @@ pub(crate) mod shape_delete_members;
 
 pub(crate) mod shape_delete_publishing_destination;
 
+pub(crate) mod shape_delete_threat_entity_set;
+
 pub(crate) mod shape_delete_threat_intel_set;
+
+pub(crate) mod shape_delete_trusted_entity_set;
 
 pub(crate) mod shape_describe_malware_scans;
 
@@ -109,7 +117,11 @@ pub(crate) mod shape_get_organization_statistics;
 
 pub(crate) mod shape_get_remaining_free_trial_days;
 
+pub(crate) mod shape_get_threat_entity_set;
+
 pub(crate) mod shape_get_threat_intel_set;
+
+pub(crate) mod shape_get_trusted_entity_set;
 
 pub(crate) mod shape_get_usage_statistics;
 
@@ -137,7 +149,11 @@ pub(crate) mod shape_list_publishing_destinations;
 
 pub(crate) mod shape_list_tags_for_resource;
 
+pub(crate) mod shape_list_threat_entity_sets;
+
 pub(crate) mod shape_list_threat_intel_sets;
+
+pub(crate) mod shape_list_trusted_entity_sets;
 
 pub(crate) mod shape_start_malware_scan;
 
@@ -169,7 +185,11 @@ pub(crate) mod shape_update_organization_configuration;
 
 pub(crate) mod shape_update_publishing_destination;
 
+pub(crate) mod shape_update_threat_entity_set;
+
 pub(crate) mod shape_update_threat_intel_set;
+
+pub(crate) mod shape_update_trusted_entity_set;
 
 pub(crate) mod shape_accept_administrator_invitation_input;
 
@@ -205,7 +225,11 @@ pub(crate) mod shape_create_publishing_destination_input;
 
 pub(crate) mod shape_create_sample_findings_input;
 
+pub(crate) mod shape_create_threat_entity_set_input;
+
 pub(crate) mod shape_create_threat_intel_set_input;
+
+pub(crate) mod shape_create_trusted_entity_set_input;
 
 pub(crate) mod shape_decline_invitations_input;
 
@@ -273,7 +297,11 @@ pub(crate) mod shape_update_organization_configuration_input;
 
 pub(crate) mod shape_update_publishing_destination_input;
 
+pub(crate) mod shape_update_threat_entity_set_input;
+
 pub(crate) mod shape_update_threat_intel_set_input;
+
+pub(crate) mod shape_update_trusted_entity_set_input;
 
 pub(crate) mod shape_account_detail;
 
@@ -355,7 +383,11 @@ pub(crate) mod shape_sort_criteria;
 
 pub(crate) mod shape_tag_map;
 
+pub(crate) mod shape_threat_entity_set_ids;
+
 pub(crate) mod shape_threat_intel_set_ids;
+
+pub(crate) mod shape_trusted_entity_set_ids;
 
 pub(crate) mod shape_unprocessed_accounts;
 

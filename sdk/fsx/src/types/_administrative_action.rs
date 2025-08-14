@@ -81,6 +81,8 @@ pub struct AdministrativeAction {
     pub total_transfer_bytes: ::std::option::Option<i64>,
     /// <p>The remaining bytes to transfer for the FSx for OpenZFS snapshot that you're copying.</p>
     pub remaining_transfer_bytes: ::std::option::Option<i64>,
+    /// <p>A detailed error message.</p>
+    pub message: ::std::option::Option<::std::string::String>,
 }
 impl AdministrativeAction {
     /// <p>Describes the type of administrative action, as follows:</p>
@@ -180,6 +182,10 @@ impl AdministrativeAction {
     pub fn remaining_transfer_bytes(&self) -> ::std::option::Option<i64> {
         self.remaining_transfer_bytes
     }
+    /// <p>A detailed error message.</p>
+    pub fn message(&self) -> ::std::option::Option<&str> {
+        self.message.as_deref()
+    }
 }
 impl AdministrativeAction {
     /// Creates a new builder-style object to manufacture [`AdministrativeAction`](crate::types::AdministrativeAction).
@@ -202,6 +208,7 @@ pub struct AdministrativeActionBuilder {
     pub(crate) target_snapshot_values: ::std::option::Option<crate::types::Snapshot>,
     pub(crate) total_transfer_bytes: ::std::option::Option<i64>,
     pub(crate) remaining_transfer_bytes: ::std::option::Option<i64>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
 }
 impl AdministrativeActionBuilder {
     /// <p>Describes the type of administrative action, as follows:</p>
@@ -515,6 +522,20 @@ impl AdministrativeActionBuilder {
     pub fn get_remaining_transfer_bytes(&self) -> &::std::option::Option<i64> {
         &self.remaining_transfer_bytes
     }
+    /// <p>A detailed error message.</p>
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A detailed error message.</p>
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.message = input;
+        self
+    }
+    /// <p>A detailed error message.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// Consumes the builder and constructs a [`AdministrativeAction`](crate::types::AdministrativeAction).
     pub fn build(self) -> crate::types::AdministrativeAction {
         crate::types::AdministrativeAction {
@@ -528,6 +549,7 @@ impl AdministrativeActionBuilder {
             target_snapshot_values: self.target_snapshot_values,
             total_transfer_bytes: self.total_transfer_bytes,
             remaining_transfer_bytes: self.remaining_transfer_bytes,
+            message: self.message,
         }
     }
 }

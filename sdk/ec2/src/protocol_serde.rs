@@ -2251,6 +2251,10 @@ pub(crate) mod shape_modify_instance_capacity_reservation_attributes;
 
 pub(crate) mod shape_modify_instance_capacity_reservation_attributes_input;
 
+pub(crate) mod shape_modify_instance_connect_endpoint;
+
+pub(crate) mod shape_modify_instance_connect_endpoint_input;
+
 pub(crate) mod shape_modify_instance_cpu_options;
 
 pub(crate) mod shape_modify_instance_cpu_options_input;
@@ -4173,6 +4177,8 @@ pub(crate) mod shape_instance;
 
 pub(crate) mod shape_instance_block_device_mapping;
 
+pub(crate) mod shape_instance_connect_endpoint_public_dns_names;
+
 pub(crate) mod shape_instance_credit_specification;
 
 pub(crate) mod shape_instance_event_window_association_target;
@@ -4706,6 +4712,8 @@ pub(crate) mod shape_inference_accelerator_info;
 pub(crate) mod shape_initialization_status_details;
 
 pub(crate) mod shape_inside_cidr_blocks_string_list;
+
+pub(crate) mod shape_instance_connect_endpoint_dns_names;
 
 pub(crate) mod shape_instance_count_list;
 

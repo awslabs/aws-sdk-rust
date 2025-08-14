@@ -14970,6 +14970,35 @@ impl From<crate::operation::modify_instance_capacity_reservation_attributes::Mod
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::modify_instance_connect_endpoint::ModifyInstanceConnectEndpointError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::modify_instance_connect_endpoint::ModifyInstanceConnectEndpointError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::modify_instance_connect_endpoint::ModifyInstanceConnectEndpointError> for Error {
+    fn from(err: crate::operation::modify_instance_connect_endpoint::ModifyInstanceConnectEndpointError) -> Self {
+        match err {
+            crate::operation::modify_instance_connect_endpoint::ModifyInstanceConnectEndpointError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::modify_instance_cpu_options::ModifyInstanceCpuOptionsError, R>>
     for Error
 where

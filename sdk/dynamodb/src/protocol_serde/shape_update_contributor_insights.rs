@@ -122,6 +122,13 @@ pub(crate) fn de_update_contributor_insights(
                             .transpose()?,
                     );
                 }
+                "ContributorInsightsMode" => {
+                    builder = builder.set_contributor_insights_mode(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::ContributorInsightsMode::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

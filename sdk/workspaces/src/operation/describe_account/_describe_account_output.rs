@@ -10,6 +10,8 @@ pub struct DescribeAccountOutput {
     pub dedicated_tenancy_management_cidr_range: ::std::option::Option<::std::string::String>,
     /// <p>The type of linked account.</p>
     pub dedicated_tenancy_account_type: ::std::option::Option<crate::types::DedicatedTenancyAccountType>,
+    /// <p>The text message to describe the status of BYOL.</p>
+    pub message: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeAccountOutput {
@@ -25,6 +27,10 @@ impl DescribeAccountOutput {
     /// <p>The type of linked account.</p>
     pub fn dedicated_tenancy_account_type(&self) -> ::std::option::Option<&crate::types::DedicatedTenancyAccountType> {
         self.dedicated_tenancy_account_type.as_ref()
+    }
+    /// <p>The text message to describe the status of BYOL.</p>
+    pub fn message(&self) -> ::std::option::Option<&str> {
+        self.message.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeAccountOutput {
@@ -46,6 +52,7 @@ pub struct DescribeAccountOutputBuilder {
     pub(crate) dedicated_tenancy_support: ::std::option::Option<crate::types::DedicatedTenancySupportResultEnum>,
     pub(crate) dedicated_tenancy_management_cidr_range: ::std::option::Option<::std::string::String>,
     pub(crate) dedicated_tenancy_account_type: ::std::option::Option<crate::types::DedicatedTenancyAccountType>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeAccountOutputBuilder {
@@ -94,6 +101,20 @@ impl DescribeAccountOutputBuilder {
     pub fn get_dedicated_tenancy_account_type(&self) -> &::std::option::Option<crate::types::DedicatedTenancyAccountType> {
         &self.dedicated_tenancy_account_type
     }
+    /// <p>The text message to describe the status of BYOL.</p>
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The text message to describe the status of BYOL.</p>
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.message = input;
+        self
+    }
+    /// <p>The text message to describe the status of BYOL.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -109,6 +130,7 @@ impl DescribeAccountOutputBuilder {
             dedicated_tenancy_support: self.dedicated_tenancy_support,
             dedicated_tenancy_management_cidr_range: self.dedicated_tenancy_management_cidr_range,
             dedicated_tenancy_account_type: self.dedicated_tenancy_account_type,
+            message: self.message,
             _request_id: self._request_id,
         }
     }

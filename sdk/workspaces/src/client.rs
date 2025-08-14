@@ -237,6 +237,8 @@ mod describe_connection_alias_permissions;
 
 mod describe_connection_aliases;
 
+mod describe_custom_workspace_image_import;
+
 mod describe_image_associations;
 
 mod describe_ip_groups;
@@ -272,6 +274,8 @@ mod disassociate_workspace_application;
 mod get_account_link;
 
 mod import_client_branding;
+
+mod import_custom_workspace_image;
 
 mod import_workspace_image;
 

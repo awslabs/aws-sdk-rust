@@ -1672,6 +1672,9 @@ pub mod modify_instance_attribute;
 /// Types for the `ModifyInstanceCapacityReservationAttributes` operation.
 pub mod modify_instance_capacity_reservation_attributes;
 
+/// Types for the `ModifyInstanceConnectEndpoint` operation.
+pub mod modify_instance_connect_endpoint;
+
 /// Types for the `ModifyInstanceCpuOptions` operation.
 pub mod modify_instance_cpu_options;
 

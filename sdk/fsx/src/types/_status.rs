@@ -12,10 +12,12 @@
 /// ```text
 /// # let status = unimplemented!();
 /// match status {
+///     Status::Cancelled => { /* ... */ },
 ///     Status::Completed => { /* ... */ },
 ///     Status::Failed => { /* ... */ },
 ///     Status::InProgress => { /* ... */ },
 ///     Status::Optimizing => { /* ... */ },
+///     Status::Paused => { /* ... */ },
 ///     Status::Pending => { /* ... */ },
 ///     Status::UpdatedOptimizing => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -47,6 +49,8 @@
 )]
 pub enum Status {
     #[allow(missing_docs)] // documentation missing in model
+    Cancelled,
+    #[allow(missing_docs)] // documentation missing in model
     Completed,
     #[allow(missing_docs)] // documentation missing in model
     Failed,
@@ -54,6 +58,8 @@ pub enum Status {
     InProgress,
     #[allow(missing_docs)] // documentation missing in model
     Optimizing,
+    #[allow(missing_docs)] // documentation missing in model
+    Paused,
     #[allow(missing_docs)] // documentation missing in model
     Pending,
     #[allow(missing_docs)] // documentation missing in model
@@ -65,10 +71,12 @@ pub enum Status {
 impl ::std::convert::From<&str> for Status {
     fn from(s: &str) -> Self {
         match s {
+            "CANCELLED" => Status::Cancelled,
             "COMPLETED" => Status::Completed,
             "FAILED" => Status::Failed,
             "IN_PROGRESS" => Status::InProgress,
             "OPTIMIZING" => Status::Optimizing,
+            "PAUSED" => Status::Paused,
             "PENDING" => Status::Pending,
             "UPDATED_OPTIMIZING" => Status::UpdatedOptimizing,
             other => Status::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -86,10 +94,12 @@ impl Status {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            Status::Cancelled => "CANCELLED",
             Status::Completed => "COMPLETED",
             Status::Failed => "FAILED",
             Status::InProgress => "IN_PROGRESS",
             Status::Optimizing => "OPTIMIZING",
+            Status::Paused => "PAUSED",
             Status::Pending => "PENDING",
             Status::UpdatedOptimizing => "UPDATED_OPTIMIZING",
             Status::Unknown(value) => value.as_str(),
@@ -97,7 +107,16 @@ impl Status {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["COMPLETED", "FAILED", "IN_PROGRESS", "OPTIMIZING", "PENDING", "UPDATED_OPTIMIZING"]
+        &[
+            "CANCELLED",
+            "COMPLETED",
+            "FAILED",
+            "IN_PROGRESS",
+            "OPTIMIZING",
+            "PAUSED",
+            "PENDING",
+            "UPDATED_OPTIMIZING",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for Status {
@@ -120,10 +139,12 @@ impl Status {
 impl ::std::fmt::Display for Status {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            Status::Cancelled => write!(f, "CANCELLED"),
             Status::Completed => write!(f, "COMPLETED"),
             Status::Failed => write!(f, "FAILED"),
             Status::InProgress => write!(f, "IN_PROGRESS"),
             Status::Optimizing => write!(f, "OPTIMIZING"),
+            Status::Paused => write!(f, "PAUSED"),
             Status::Pending => write!(f, "PENDING"),
             Status::UpdatedOptimizing => write!(f, "UPDATED_OPTIMIZING"),
             Status::Unknown(value) => write!(f, "{}", value),

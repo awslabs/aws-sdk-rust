@@ -59,6 +59,8 @@ pub struct InstanceSummary {
     /// </dd>
     /// </dl>
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The ID of the Amazon Web Services account that registered the instance. If this isn't your account ID, it's the ID of the account that shared the namespace with your account or the ID of another account with which the namespace has been shared. For more information about shared namespaces, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html">Cross-account Cloud Map namespace sharing</a> in the <i>Cloud Map Developer Guide</i>.</p>
+    pub created_by_account: ::std::option::Option<::std::string::String>,
 }
 impl InstanceSummary {
     /// <p>The ID for an instance that you created by using a specified service.</p>
@@ -120,6 +122,10 @@ impl InstanceSummary {
     pub fn attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.attributes.as_ref()
     }
+    /// <p>The ID of the Amazon Web Services account that registered the instance. If this isn't your account ID, it's the ID of the account that shared the namespace with your account or the ID of another account with which the namespace has been shared. For more information about shared namespaces, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html">Cross-account Cloud Map namespace sharing</a> in the <i>Cloud Map Developer Guide</i>.</p>
+    pub fn created_by_account(&self) -> ::std::option::Option<&str> {
+        self.created_by_account.as_deref()
+    }
 }
 impl InstanceSummary {
     /// Creates a new builder-style object to manufacture [`InstanceSummary`](crate::types::InstanceSummary).
@@ -134,6 +140,7 @@ impl InstanceSummary {
 pub struct InstanceSummaryBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) created_by_account: ::std::option::Option<::std::string::String>,
 }
 impl InstanceSummaryBuilder {
     /// <p>The ID for an instance that you created by using a specified service.</p>
@@ -323,11 +330,26 @@ impl InstanceSummaryBuilder {
     pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.attributes
     }
+    /// <p>The ID of the Amazon Web Services account that registered the instance. If this isn't your account ID, it's the ID of the account that shared the namespace with your account or the ID of another account with which the namespace has been shared. For more information about shared namespaces, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html">Cross-account Cloud Map namespace sharing</a> in the <i>Cloud Map Developer Guide</i>.</p>
+    pub fn created_by_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.created_by_account = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the Amazon Web Services account that registered the instance. If this isn't your account ID, it's the ID of the account that shared the namespace with your account or the ID of another account with which the namespace has been shared. For more information about shared namespaces, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html">Cross-account Cloud Map namespace sharing</a> in the <i>Cloud Map Developer Guide</i>.</p>
+    pub fn set_created_by_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.created_by_account = input;
+        self
+    }
+    /// <p>The ID of the Amazon Web Services account that registered the instance. If this isn't your account ID, it's the ID of the account that shared the namespace with your account or the ID of another account with which the namespace has been shared. For more information about shared namespaces, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html">Cross-account Cloud Map namespace sharing</a> in the <i>Cloud Map Developer Guide</i>.</p>
+    pub fn get_created_by_account(&self) -> &::std::option::Option<::std::string::String> {
+        &self.created_by_account
+    }
     /// Consumes the builder and constructs a [`InstanceSummary`](crate::types::InstanceSummary).
     pub fn build(self) -> crate::types::InstanceSummary {
         crate::types::InstanceSummary {
             id: self.id,
             attributes: self.attributes,
+            created_by_account: self.created_by_account,
         }
     }
 }

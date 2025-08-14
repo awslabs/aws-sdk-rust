@@ -12,11 +12,17 @@ pub fn ser_delete_bgp_peer_input_input(
             ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if let Some(var_3) = &input.customer_address {
-        object.key("customerAddress").string(var_3.as_str());
+    if let Some(var_3) = &input.asn_long {
+        object.key("asnLong").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_3).into()),
+        );
     }
-    if let Some(var_4) = &input.bgp_peer_id {
-        object.key("bgpPeerId").string(var_4.as_str());
+    if let Some(var_4) = &input.customer_address {
+        object.key("customerAddress").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.bgp_peer_id {
+        object.key("bgpPeerId").string(var_5.as_str());
     }
     Ok(())
 }

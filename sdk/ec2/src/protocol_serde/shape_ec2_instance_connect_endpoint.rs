@@ -211,6 +211,16 @@ pub fn de_ec2_instance_connect_endpoint(
                 builder = builder.set_ip_address_type(var_16);
             }
             ,
+            s if s.matches("publicDnsNames") /* PublicDnsNames com.amazonaws.ec2#Ec2InstanceConnectEndpoint$PublicDnsNames */ =>  {
+                let var_17 =
+                    Some(
+                        crate::protocol_serde::shape_instance_connect_endpoint_public_dns_names::de_instance_connect_endpoint_public_dns_names(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_public_dns_names(var_17);
+            }
+            ,
             _ => {}
         }
     }

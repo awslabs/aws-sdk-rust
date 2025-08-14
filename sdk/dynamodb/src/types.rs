@@ -129,6 +129,8 @@ pub use crate::types::_approximate_creation_date_time_precision::ApproximateCrea
 
 pub use crate::types::_destination_status::DestinationStatus;
 
+pub use crate::types::_throttling_reason::ThrottlingReason;
+
 pub use crate::types::_attribute_value::AttributeValue;
 
 pub use crate::types::_item_collection_metrics::ItemCollectionMetrics;
@@ -174,6 +176,8 @@ pub use crate::types::_replica_update::ReplicaUpdate;
 pub use crate::types::_delete_replica_action::DeleteReplicaAction;
 
 pub use crate::types::_create_replica_action::CreateReplicaAction;
+
+pub use crate::types::_contributor_insights_mode::ContributorInsightsMode;
 
 pub use crate::types::_contributor_insights_status::ContributorInsightsStatus;
 
@@ -374,6 +378,8 @@ mod _continuous_backups_description;
 mod _continuous_backups_status;
 
 mod _contributor_insights_action;
+
+mod _contributor_insights_mode;
 
 mod _contributor_insights_status;
 
@@ -590,6 +596,8 @@ mod _table_status;
 mod _table_warm_throughput_description;
 
 mod _tag;
+
+mod _throttling_reason;
 
 mod _time_to_live_description;
 

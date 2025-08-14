@@ -72,6 +72,18 @@ pub fn ser_cmaf_ingest_group_settings(
     if let Some(var_20) = &input.timed_metadata_passthrough {
         object.key("timedMetadataPassthrough").string(var_20.as_str());
     }
+    if let Some(var_21) = &input.additional_destinations {
+        let mut array_22 = object.key("additionalDestinations").start_array();
+        for item_23 in var_21 {
+            {
+                #[allow(unused_mut)]
+                let mut object_24 = array_22.value().start_object();
+                crate::protocol_serde::shape_additional_destinations::ser_additional_destinations(&mut object_24, item_23)?;
+                object_24.finish();
+            }
+        }
+        array_22.finish();
+    }
     Ok(())
 }
 
@@ -194,6 +206,11 @@ where
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::CmafTimedMetadataPassthrough::from(u.as_ref())))
                                     .transpose()?,
+                            );
+                        }
+                        "additionalDestinations" => {
+                            builder = builder.set_additional_destinations(
+                                crate::protocol_serde::shape_list_of_additional_destinations::de_list_of_additional_destinations(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

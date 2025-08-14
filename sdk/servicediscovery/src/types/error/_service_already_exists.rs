@@ -10,6 +10,8 @@ pub struct ServiceAlreadyExists {
     pub creator_request_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the existing service.</p>
     pub service_id: ::std::option::Option<::std::string::String>,
+    /// <p>The ARN of the existing service.</p>
+    pub service_arn: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl ServiceAlreadyExists {
@@ -20,6 +22,10 @@ impl ServiceAlreadyExists {
     /// <p>The ID of the existing service.</p>
     pub fn service_id(&self) -> ::std::option::Option<&str> {
         self.service_id.as_deref()
+    }
+    /// <p>The ARN of the existing service.</p>
+    pub fn service_arn(&self) -> ::std::option::Option<&str> {
+        self.service_arn.as_deref()
     }
 }
 impl ServiceAlreadyExists {
@@ -65,6 +71,7 @@ pub struct ServiceAlreadyExistsBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) creator_request_id: ::std::option::Option<::std::string::String>,
     pub(crate) service_id: ::std::option::Option<::std::string::String>,
+    pub(crate) service_arn: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl ServiceAlreadyExistsBuilder {
@@ -110,6 +117,20 @@ impl ServiceAlreadyExistsBuilder {
     pub fn get_service_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.service_id
     }
+    /// <p>The ARN of the existing service.</p>
+    pub fn service_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.service_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN of the existing service.</p>
+    pub fn set_service_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.service_arn = input;
+        self
+    }
+    /// <p>The ARN of the existing service.</p>
+    pub fn get_service_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_arn
+    }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
         self.meta = Some(meta);
@@ -127,6 +148,7 @@ impl ServiceAlreadyExistsBuilder {
             message: self.message,
             creator_request_id: self.creator_request_id,
             service_id: self.service_id,
+            service_arn: self.service_arn,
             meta: self.meta.unwrap_or_default(),
         }
     }

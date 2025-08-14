@@ -995,6 +995,8 @@ pub(crate) mod shape_wav_settings;
 
 pub(crate) mod shape_webvtt_destination_settings;
 
+pub(crate) mod shape_additional_destinations;
+
 pub(crate) mod shape_ancillary_source_settings;
 
 pub(crate) mod shape_archive_cdn_settings;
@@ -1128,6 +1130,8 @@ pub(crate) mod shape_hls_s3_settings;
 pub(crate) mod shape_hls_settings;
 
 pub(crate) mod shape_hls_webdav_settings;
+
+pub(crate) mod shape_list_of_additional_destinations;
 
 pub(crate) mod shape_list_of_caption_language_mapping;
 

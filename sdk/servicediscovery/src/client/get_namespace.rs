@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetNamespace`](crate::operation::get_namespace::builders::GetNamespaceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::get_namespace::builders::GetNamespaceFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_namespace::builders::GetNamespaceFluentBuilder::set_id):<br>required: **true**<br><p>The ID of the namespace that you want to get information about.</p><br>
+    ///   - [`id(impl Into<String>)`](crate::operation::get_namespace::builders::GetNamespaceFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_namespace::builders::GetNamespaceFluentBuilder::set_id):<br>required: **true**<br><p>The ID or Amazon Resource Name (ARN) of the namespace that you want to get information about. For namespaces shared with your Amazon Web Services account, specify the namespace ARN. For more information about shared namespaces, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html">Cross-account Cloud Map namespace sharing</a> in the <i>Cloud Map Developer Guide</i></p><br>
     /// - On success, responds with [`GetNamespaceOutput`](crate::operation::get_namespace::GetNamespaceOutput) with field(s):
     ///   - [`namespace(Option<Namespace>)`](crate::operation::get_namespace::GetNamespaceOutput::namespace): <p>A complex type that contains information about the specified namespace.</p>
     /// - On failure, responds with [`SdkError<GetNamespaceError>`](crate::operation::get_namespace::GetNamespaceError)

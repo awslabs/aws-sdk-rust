@@ -112,6 +112,9 @@ pub mod describe_connection_alias_permissions;
 /// Types for the `DescribeConnectionAliases` operation.
 pub mod describe_connection_aliases;
 
+/// Types for the `DescribeCustomWorkspaceImageImport` operation.
+pub mod describe_custom_workspace_image_import;
+
 /// Types for the `DescribeImageAssociations` operation.
 pub mod describe_image_associations;
 
@@ -165,6 +168,9 @@ pub mod get_account_link;
 
 /// Types for the `ImportClientBranding` operation.
 pub mod import_client_branding;
+
+/// Types for the `ImportCustomWorkspaceImage` operation.
+pub mod import_custom_workspace_image;
 
 /// Types for the `ImportWorkspaceImage` operation.
 pub mod import_workspace_image;

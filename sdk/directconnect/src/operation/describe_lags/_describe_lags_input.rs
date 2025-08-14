@@ -5,11 +5,25 @@
 pub struct DescribeLagsInput {
     /// <p>The ID of the LAG.</p>
     pub lag_id: ::std::option::Option<::std::string::String>,
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are returned.</p>
+    pub max_results: ::std::option::Option<i32>,
+    /// <p>The token for the next page of results.</p>
+    pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeLagsInput {
     /// <p>The ID of the LAG.</p>
     pub fn lag_id(&self) -> ::std::option::Option<&str> {
         self.lag_id.as_deref()
+    }
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are returned.</p>
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
+        self.next_token.as_deref()
     }
 }
 impl DescribeLagsInput {
@@ -24,6 +38,8 @@ impl DescribeLagsInput {
 #[non_exhaustive]
 pub struct DescribeLagsInputBuilder {
     pub(crate) lag_id: ::std::option::Option<::std::string::String>,
+    pub(crate) max_results: ::std::option::Option<i32>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeLagsInputBuilder {
     /// <p>The ID of the LAG.</p>
@@ -40,10 +56,45 @@ impl DescribeLagsInputBuilder {
     pub fn get_lag_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.lag_id
     }
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are returned.</p>
+    pub fn max_results(mut self, input: i32) -> Self {
+        self.max_results = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are returned.</p>
+    pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.max_results = input;
+        self
+    }
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are returned.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.next_token = input;
+        self
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Consumes the builder and constructs a [`DescribeLagsInput`](crate::operation::describe_lags::DescribeLagsInput).
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::describe_lags::DescribeLagsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_lags::DescribeLagsInput { lag_id: self.lag_id })
+        ::std::result::Result::Ok(crate::operation::describe_lags::DescribeLagsInput {
+            lag_id: self.lag_id,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

@@ -681,6 +681,8 @@ pub use crate::types::_input_loss_action_for_udp_out::InputLossActionForUdpOut;
 
 pub use crate::types::_cmaf_ingest_group_settings::CmafIngestGroupSettings;
 
+pub use crate::types::_additional_destinations::AdditionalDestinations;
+
 pub use crate::types::_cmaf_timed_metadata_passthrough::CmafTimedMetadataPassthrough;
 
 pub use crate::types::_cmaf_timed_metadata_id3_frame::CmafTimedMetadataId3Frame;
@@ -1314,6 +1316,8 @@ mod _accept_header;
 mod _accessibility_type;
 
 mod _account_configuration;
+
+mod _additional_destinations;
 
 mod _afd_signaling;
 

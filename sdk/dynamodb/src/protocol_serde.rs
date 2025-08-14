@@ -293,6 +293,8 @@ pub(crate) mod shape_table_not_found_exception;
 
 pub(crate) mod shape_tag_resource_input;
 
+pub(crate) mod shape_throttling_exception;
+
 pub(crate) mod shape_transact_get_items_input;
 
 pub(crate) mod shape_transact_write_items_input;
@@ -453,6 +455,8 @@ pub(crate) mod shape_tag;
 
 pub(crate) mod shape_tag_list;
 
+pub(crate) mod shape_throttling_reason_list;
+
 pub(crate) mod shape_time_to_live_description;
 
 pub(crate) mod shape_time_to_live_specification;
@@ -570,6 +574,8 @@ pub(crate) mod shape_sse_description;
 pub(crate) mod shape_table_class_summary;
 
 pub(crate) mod shape_table_warm_throughput_description;
+
+pub(crate) mod shape_throttling_reason;
 
 pub(crate) mod shape_update;
 

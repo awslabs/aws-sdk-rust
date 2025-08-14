@@ -6,6 +6,8 @@
 pub struct Operation {
     /// <p>The ID of the operation that you want to get information about.</p>
     pub id: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the Amazon Web Services account that owns the namespace associated with the operation.</p>
+    pub owner_account: ::std::option::Option<::std::string::String>,
     /// <p>The name of the operation that's associated with the specified ID.</p>
     pub r#type: ::std::option::Option<crate::types::OperationType>,
     /// <p>The status of the operation. Values include the following:</p>
@@ -87,6 +89,10 @@ impl Operation {
     /// <p>The ID of the operation that you want to get information about.</p>
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
+    }
+    /// <p>The ID of the Amazon Web Services account that owns the namespace associated with the operation.</p>
+    pub fn owner_account(&self) -> ::std::option::Option<&str> {
+        self.owner_account.as_deref()
     }
     /// <p>The name of the operation that's associated with the specified ID.</p>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::OperationType> {
@@ -191,6 +197,7 @@ impl Operation {
 #[non_exhaustive]
 pub struct OperationBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) owner_account: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::OperationType>,
     pub(crate) status: ::std::option::Option<crate::types::OperationStatus>,
     pub(crate) error_message: ::std::option::Option<::std::string::String>,
@@ -213,6 +220,20 @@ impl OperationBuilder {
     /// <p>The ID of the operation that you want to get information about.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
+    }
+    /// <p>The ID of the Amazon Web Services account that owns the namespace associated with the operation.</p>
+    pub fn owner_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.owner_account = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the Amazon Web Services account that owns the namespace associated with the operation.</p>
+    pub fn set_owner_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.owner_account = input;
+        self
+    }
+    /// <p>The ID of the Amazon Web Services account that owns the namespace associated with the operation.</p>
+    pub fn get_owner_account(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_account
     }
     /// <p>The name of the operation that's associated with the specified ID.</p>
     pub fn r#type(mut self, input: crate::types::OperationType) -> Self {
@@ -511,6 +532,7 @@ impl OperationBuilder {
     pub fn build(self) -> crate::types::Operation {
         crate::types::Operation {
             id: self.id,
+            owner_account: self.owner_account,
             r#type: self.r#type,
             status: self.status,
             error_message: self.error_message,

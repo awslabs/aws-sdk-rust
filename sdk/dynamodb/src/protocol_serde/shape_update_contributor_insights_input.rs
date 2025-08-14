@@ -12,5 +12,8 @@ pub fn ser_update_contributor_insights_input_input(
     if let Some(var_3) = &input.contributor_insights_action {
         object.key("ContributorInsightsAction").string(var_3.as_str());
     }
+    if let Some(var_4) = &input.contributor_insights_mode {
+        object.key("ContributorInsightsMode").string(var_4.as_str());
+    }
     Ok(())
 }

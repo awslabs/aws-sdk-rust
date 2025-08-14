@@ -6,5 +6,14 @@ pub fn ser_describe_interconnects_input_input(
     if let Some(var_1) = &input.interconnect_id {
         object.key("interconnectId").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.max_results {
+        object.key("maxResults").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
+        );
+    }
+    if let Some(var_3) = &input.next_token {
+        object.key("nextToken").string(var_3.as_str());
+    }
     Ok(())
 }

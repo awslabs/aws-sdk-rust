@@ -202,6 +202,8 @@ mod create_database;
 
 mod create_dev_endpoint;
 
+mod create_glue_identity_center_configuration;
+
 mod create_integration;
 
 mod create_integration_resource_property;
@@ -288,6 +290,8 @@ mod delete_data_quality_ruleset;
 mod delete_database;
 
 mod delete_dev_endpoint;
+
+mod delete_glue_identity_center_configuration;
 
 mod delete_integration;
 
@@ -398,6 +402,8 @@ mod get_dev_endpoint;
 mod get_dev_endpoints;
 
 mod get_entity_records;
+
+mod get_glue_identity_center_configuration;
 
 mod get_integration_resource_property;
 
@@ -638,6 +644,8 @@ mod update_data_quality_ruleset;
 mod update_database;
 
 mod update_dev_endpoint;
+
+mod update_glue_identity_center_configuration;
 
 mod update_integration_resource_property;
 

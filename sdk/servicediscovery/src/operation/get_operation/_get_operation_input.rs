@@ -5,11 +5,17 @@
 pub struct GetOperationInput {
     /// <p>The ID of the operation that you want to get more information about.</p>
     pub operation_id: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the Amazon Web Services account that owns the namespace associated with the operation, as specified in the namespace <code>ResourceOwner</code> field. For operations associated with namespaces that are shared with your account, you must specify an <code>OwnerAccount</code>.</p>
+    pub owner_account: ::std::option::Option<::std::string::String>,
 }
 impl GetOperationInput {
     /// <p>The ID of the operation that you want to get more information about.</p>
     pub fn operation_id(&self) -> ::std::option::Option<&str> {
         self.operation_id.as_deref()
+    }
+    /// <p>The ID of the Amazon Web Services account that owns the namespace associated with the operation, as specified in the namespace <code>ResourceOwner</code> field. For operations associated with namespaces that are shared with your account, you must specify an <code>OwnerAccount</code>.</p>
+    pub fn owner_account(&self) -> ::std::option::Option<&str> {
+        self.owner_account.as_deref()
     }
 }
 impl GetOperationInput {
@@ -24,6 +30,7 @@ impl GetOperationInput {
 #[non_exhaustive]
 pub struct GetOperationInputBuilder {
     pub(crate) operation_id: ::std::option::Option<::std::string::String>,
+    pub(crate) owner_account: ::std::option::Option<::std::string::String>,
 }
 impl GetOperationInputBuilder {
     /// <p>The ID of the operation that you want to get more information about.</p>
@@ -41,12 +48,27 @@ impl GetOperationInputBuilder {
     pub fn get_operation_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.operation_id
     }
+    /// <p>The ID of the Amazon Web Services account that owns the namespace associated with the operation, as specified in the namespace <code>ResourceOwner</code> field. For operations associated with namespaces that are shared with your account, you must specify an <code>OwnerAccount</code>.</p>
+    pub fn owner_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.owner_account = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the Amazon Web Services account that owns the namespace associated with the operation, as specified in the namespace <code>ResourceOwner</code> field. For operations associated with namespaces that are shared with your account, you must specify an <code>OwnerAccount</code>.</p>
+    pub fn set_owner_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.owner_account = input;
+        self
+    }
+    /// <p>The ID of the Amazon Web Services account that owns the namespace associated with the operation, as specified in the namespace <code>ResourceOwner</code> field. For operations associated with namespaces that are shared with your account, you must specify an <code>OwnerAccount</code>.</p>
+    pub fn get_owner_account(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_account
+    }
     /// Consumes the builder and constructs a [`GetOperationInput`](crate::operation::get_operation::GetOperationInput).
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::get_operation::GetOperationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_operation::GetOperationInput {
             operation_id: self.operation_id,
+            owner_account: self.owner_account,
         })
     }
 }

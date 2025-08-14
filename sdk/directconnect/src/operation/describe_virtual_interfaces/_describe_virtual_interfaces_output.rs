@@ -5,6 +5,8 @@
 pub struct DescribeVirtualInterfacesOutput {
     /// <p>The virtual interfaces</p>
     pub virtual_interfaces: ::std::option::Option<::std::vec::Vec<crate::types::VirtualInterface>>,
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeVirtualInterfacesOutput {
@@ -13,6 +15,10 @@ impl DescribeVirtualInterfacesOutput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.virtual_interfaces.is_none()`.
     pub fn virtual_interfaces(&self) -> &[crate::types::VirtualInterface] {
         self.virtual_interfaces.as_deref().unwrap_or_default()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
+        self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeVirtualInterfacesOutput {
@@ -32,6 +38,7 @@ impl DescribeVirtualInterfacesOutput {
 #[non_exhaustive]
 pub struct DescribeVirtualInterfacesOutputBuilder {
     pub(crate) virtual_interfaces: ::std::option::Option<::std::vec::Vec<crate::types::VirtualInterface>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeVirtualInterfacesOutputBuilder {
@@ -55,6 +62,20 @@ impl DescribeVirtualInterfacesOutputBuilder {
     pub fn get_virtual_interfaces(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VirtualInterface>> {
         &self.virtual_interfaces
     }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.next_token = input;
+        self
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -68,6 +89,7 @@ impl DescribeVirtualInterfacesOutputBuilder {
     pub fn build(self) -> crate::operation::describe_virtual_interfaces::DescribeVirtualInterfacesOutput {
         crate::operation::describe_virtual_interfaces::DescribeVirtualInterfacesOutput {
             virtual_interfaces: self.virtual_interfaces,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

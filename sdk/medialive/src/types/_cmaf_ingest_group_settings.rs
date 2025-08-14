@@ -36,6 +36,8 @@ pub struct CmafIngestGroupSettings {
     pub timed_metadata_id3_period: ::std::option::Option<i32>,
     /// Set to enabled to pass through ID3 metadata from the input sources.
     pub timed_metadata_passthrough: ::std::option::Option<crate::types::CmafTimedMetadataPassthrough>,
+    /// Optional an array of additional destinational HTTP destinations for the OutputGroup outputs
+    pub additional_destinations: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalDestinations>>,
 }
 impl CmafIngestGroupSettings {
     /// A HTTP destination for the tracks
@@ -104,6 +106,12 @@ impl CmafIngestGroupSettings {
     pub fn timed_metadata_passthrough(&self) -> ::std::option::Option<&crate::types::CmafTimedMetadataPassthrough> {
         self.timed_metadata_passthrough.as_ref()
     }
+    /// Optional an array of additional destinational HTTP destinations for the OutputGroup outputs
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_destinations.is_none()`.
+    pub fn additional_destinations(&self) -> &[crate::types::AdditionalDestinations] {
+        self.additional_destinations.as_deref().unwrap_or_default()
+    }
 }
 impl CmafIngestGroupSettings {
     /// Creates a new builder-style object to manufacture [`CmafIngestGroupSettings`](crate::types::CmafIngestGroupSettings).
@@ -132,6 +140,7 @@ pub struct CmafIngestGroupSettingsBuilder {
     pub(crate) timed_metadata_id3_frame: ::std::option::Option<crate::types::CmafTimedMetadataId3Frame>,
     pub(crate) timed_metadata_id3_period: ::std::option::Option<i32>,
     pub(crate) timed_metadata_passthrough: ::std::option::Option<crate::types::CmafTimedMetadataPassthrough>,
+    pub(crate) additional_destinations: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalDestinations>>,
 }
 impl CmafIngestGroupSettingsBuilder {
     /// A HTTP destination for the tracks
@@ -368,6 +377,26 @@ impl CmafIngestGroupSettingsBuilder {
     pub fn get_timed_metadata_passthrough(&self) -> &::std::option::Option<crate::types::CmafTimedMetadataPassthrough> {
         &self.timed_metadata_passthrough
     }
+    /// Appends an item to `additional_destinations`.
+    ///
+    /// To override the contents of this collection use [`set_additional_destinations`](Self::set_additional_destinations).
+    ///
+    /// Optional an array of additional destinational HTTP destinations for the OutputGroup outputs
+    pub fn additional_destinations(mut self, input: crate::types::AdditionalDestinations) -> Self {
+        let mut v = self.additional_destinations.unwrap_or_default();
+        v.push(input);
+        self.additional_destinations = ::std::option::Option::Some(v);
+        self
+    }
+    /// Optional an array of additional destinational HTTP destinations for the OutputGroup outputs
+    pub fn set_additional_destinations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalDestinations>>) -> Self {
+        self.additional_destinations = input;
+        self
+    }
+    /// Optional an array of additional destinational HTTP destinations for the OutputGroup outputs
+    pub fn get_additional_destinations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AdditionalDestinations>> {
+        &self.additional_destinations
+    }
     /// Consumes the builder and constructs a [`CmafIngestGroupSettings`](crate::types::CmafIngestGroupSettings).
     pub fn build(self) -> crate::types::CmafIngestGroupSettings {
         crate::types::CmafIngestGroupSettings {
@@ -387,6 +416,7 @@ impl CmafIngestGroupSettingsBuilder {
             timed_metadata_id3_frame: self.timed_metadata_id3_frame,
             timed_metadata_id3_period: self.timed_metadata_id3_period,
             timed_metadata_passthrough: self.timed_metadata_passthrough,
+            additional_destinations: self.additional_destinations,
         }
     }
 }

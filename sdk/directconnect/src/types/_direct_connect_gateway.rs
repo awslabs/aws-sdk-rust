@@ -8,7 +8,7 @@ pub struct DirectConnectGateway {
     pub direct_connect_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Direct Connect gateway.</p>
     pub direct_connect_gateway_name: ::std::option::Option<::std::string::String>,
-    /// <p>The autonomous system number (ASN) for the Amazon side of the connection.</p>
+    /// <p>The autonomous system number (AS) for the Amazon side of the connection.</p>
     pub amazon_side_asn: ::std::option::Option<i64>,
     /// <p>The ID of the Amazon Web Services account that owns the Direct Connect gateway.</p>
     pub owner_account: ::std::option::Option<::std::string::String>,
@@ -38,7 +38,7 @@ impl DirectConnectGateway {
     pub fn direct_connect_gateway_name(&self) -> ::std::option::Option<&str> {
         self.direct_connect_gateway_name.as_deref()
     }
-    /// <p>The autonomous system number (ASN) for the Amazon side of the connection.</p>
+    /// <p>The autonomous system number (AS) for the Amazon side of the connection.</p>
     pub fn amazon_side_asn(&self) -> ::std::option::Option<i64> {
         self.amazon_side_asn
     }
@@ -119,17 +119,17 @@ impl DirectConnectGatewayBuilder {
     pub fn get_direct_connect_gateway_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.direct_connect_gateway_name
     }
-    /// <p>The autonomous system number (ASN) for the Amazon side of the connection.</p>
+    /// <p>The autonomous system number (AS) for the Amazon side of the connection.</p>
     pub fn amazon_side_asn(mut self, input: i64) -> Self {
         self.amazon_side_asn = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The autonomous system number (ASN) for the Amazon side of the connection.</p>
+    /// <p>The autonomous system number (AS) for the Amazon side of the connection.</p>
     pub fn set_amazon_side_asn(mut self, input: ::std::option::Option<i64>) -> Self {
         self.amazon_side_asn = input;
         self
     }
-    /// <p>The autonomous system number (ASN) for the Amazon side of the connection.</p>
+    /// <p>The autonomous system number (AS) for the Amazon side of the connection.</p>
     pub fn get_amazon_side_asn(&self) -> &::std::option::Option<i64> {
         &self.amazon_side_asn
     }

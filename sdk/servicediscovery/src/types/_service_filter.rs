@@ -4,23 +4,47 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServiceFilter {
-    /// <p>Specify <code>NAMESPACE_ID</code>.</p>
+    /// <p>Specify the services that you want to get using one of the following.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>NAMESPACE_ID</code>: Gets the services associated with the specified namespace.</p></li>
+    /// <li>
+    /// <p><code>RESOURCE_OWNER</code>: Gets the services associated with the namespaces created by your Amazon Web Services account or by other accounts. This can be used to filter for services created in a shared namespace. For more information about shared namespaces, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html">Cross-account Cloud Map namespace sharing</a> in the <i>Cloud Map Developer Guide</i>.</p></li>
+    /// </ul>
     pub name: crate::types::ServiceFilterName,
     /// <p>The values that are applicable to the value that you specify for <code>Condition</code> to filter the list of services.</p>
+    /// <ul>
+    /// <li>
+    /// <p><b>NAMESPACE_ID</b>: Specify one namespace ID or ARN. Specify the namespace ARN for namespaces that are shared with your Amazon Web Services account.</p></li>
+    /// <li>
+    /// <p><b>RESOURCE_OWNER</b>: Specify one of <code>SELF</code> or <code>OTHER_ACCOUNTS</code>. <code>SELF</code> can be used to filter services associated with namespaces created by you and <code>OTHER_ACCOUNTS</code> can be used to filter services associated with namespaces that were shared with you.</p></li>
+    /// </ul>
     pub values: ::std::vec::Vec<::std::string::String>,
     /// <p>The operator that you want to use to determine whether a service is returned by <code>ListServices</code>. Valid values for <code>Condition</code> include the following:</p>
     /// <ul>
     /// <li>
-    /// <p><code>EQ</code>: When you specify <code>EQ</code>, specify one namespace ID for <code>Values</code>. <code>EQ</code> is the default condition and can be omitted.</p></li>
+    /// <p><code>EQ</code>: When you specify <code>EQ</code>, specify one value. <code>EQ</code> is the default condition and can be omitted.</p></li>
     /// </ul>
     pub condition: ::std::option::Option<crate::types::FilterCondition>,
 }
 impl ServiceFilter {
-    /// <p>Specify <code>NAMESPACE_ID</code>.</p>
+    /// <p>Specify the services that you want to get using one of the following.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>NAMESPACE_ID</code>: Gets the services associated with the specified namespace.</p></li>
+    /// <li>
+    /// <p><code>RESOURCE_OWNER</code>: Gets the services associated with the namespaces created by your Amazon Web Services account or by other accounts. This can be used to filter for services created in a shared namespace. For more information about shared namespaces, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html">Cross-account Cloud Map namespace sharing</a> in the <i>Cloud Map Developer Guide</i>.</p></li>
+    /// </ul>
     pub fn name(&self) -> &crate::types::ServiceFilterName {
         &self.name
     }
     /// <p>The values that are applicable to the value that you specify for <code>Condition</code> to filter the list of services.</p>
+    /// <ul>
+    /// <li>
+    /// <p><b>NAMESPACE_ID</b>: Specify one namespace ID or ARN. Specify the namespace ARN for namespaces that are shared with your Amazon Web Services account.</p></li>
+    /// <li>
+    /// <p><b>RESOURCE_OWNER</b>: Specify one of <code>SELF</code> or <code>OTHER_ACCOUNTS</code>. <code>SELF</code> can be used to filter services associated with namespaces created by you and <code>OTHER_ACCOUNTS</code> can be used to filter services associated with namespaces that were shared with you.</p></li>
+    /// </ul>
     pub fn values(&self) -> &[::std::string::String] {
         use std::ops::Deref;
         self.values.deref()
@@ -28,7 +52,7 @@ impl ServiceFilter {
     /// <p>The operator that you want to use to determine whether a service is returned by <code>ListServices</code>. Valid values for <code>Condition</code> include the following:</p>
     /// <ul>
     /// <li>
-    /// <p><code>EQ</code>: When you specify <code>EQ</code>, specify one namespace ID for <code>Values</code>. <code>EQ</code> is the default condition and can be omitted.</p></li>
+    /// <p><code>EQ</code>: When you specify <code>EQ</code>, specify one value. <code>EQ</code> is the default condition and can be omitted.</p></li>
     /// </ul>
     pub fn condition(&self) -> ::std::option::Option<&crate::types::FilterCondition> {
         self.condition.as_ref()
@@ -50,18 +74,36 @@ pub struct ServiceFilterBuilder {
     pub(crate) condition: ::std::option::Option<crate::types::FilterCondition>,
 }
 impl ServiceFilterBuilder {
-    /// <p>Specify <code>NAMESPACE_ID</code>.</p>
+    /// <p>Specify the services that you want to get using one of the following.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>NAMESPACE_ID</code>: Gets the services associated with the specified namespace.</p></li>
+    /// <li>
+    /// <p><code>RESOURCE_OWNER</code>: Gets the services associated with the namespaces created by your Amazon Web Services account or by other accounts. This can be used to filter for services created in a shared namespace. For more information about shared namespaces, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html">Cross-account Cloud Map namespace sharing</a> in the <i>Cloud Map Developer Guide</i>.</p></li>
+    /// </ul>
     /// This field is required.
     pub fn name(mut self, input: crate::types::ServiceFilterName) -> Self {
         self.name = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specify <code>NAMESPACE_ID</code>.</p>
+    /// <p>Specify the services that you want to get using one of the following.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>NAMESPACE_ID</code>: Gets the services associated with the specified namespace.</p></li>
+    /// <li>
+    /// <p><code>RESOURCE_OWNER</code>: Gets the services associated with the namespaces created by your Amazon Web Services account or by other accounts. This can be used to filter for services created in a shared namespace. For more information about shared namespaces, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html">Cross-account Cloud Map namespace sharing</a> in the <i>Cloud Map Developer Guide</i>.</p></li>
+    /// </ul>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::ServiceFilterName>) -> Self {
         self.name = input;
         self
     }
-    /// <p>Specify <code>NAMESPACE_ID</code>.</p>
+    /// <p>Specify the services that you want to get using one of the following.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>NAMESPACE_ID</code>: Gets the services associated with the specified namespace.</p></li>
+    /// <li>
+    /// <p><code>RESOURCE_OWNER</code>: Gets the services associated with the namespaces created by your Amazon Web Services account or by other accounts. This can be used to filter for services created in a shared namespace. For more information about shared namespaces, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html">Cross-account Cloud Map namespace sharing</a> in the <i>Cloud Map Developer Guide</i>.</p></li>
+    /// </ul>
     pub fn get_name(&self) -> &::std::option::Option<crate::types::ServiceFilterName> {
         &self.name
     }
@@ -70,6 +112,12 @@ impl ServiceFilterBuilder {
     /// To override the contents of this collection use [`set_values`](Self::set_values).
     ///
     /// <p>The values that are applicable to the value that you specify for <code>Condition</code> to filter the list of services.</p>
+    /// <ul>
+    /// <li>
+    /// <p><b>NAMESPACE_ID</b>: Specify one namespace ID or ARN. Specify the namespace ARN for namespaces that are shared with your Amazon Web Services account.</p></li>
+    /// <li>
+    /// <p><b>RESOURCE_OWNER</b>: Specify one of <code>SELF</code> or <code>OTHER_ACCOUNTS</code>. <code>SELF</code> can be used to filter services associated with namespaces created by you and <code>OTHER_ACCOUNTS</code> can be used to filter services associated with namespaces that were shared with you.</p></li>
+    /// </ul>
     pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
         v.push(input.into());
@@ -77,18 +125,30 @@ impl ServiceFilterBuilder {
         self
     }
     /// <p>The values that are applicable to the value that you specify for <code>Condition</code> to filter the list of services.</p>
+    /// <ul>
+    /// <li>
+    /// <p><b>NAMESPACE_ID</b>: Specify one namespace ID or ARN. Specify the namespace ARN for namespaces that are shared with your Amazon Web Services account.</p></li>
+    /// <li>
+    /// <p><b>RESOURCE_OWNER</b>: Specify one of <code>SELF</code> or <code>OTHER_ACCOUNTS</code>. <code>SELF</code> can be used to filter services associated with namespaces created by you and <code>OTHER_ACCOUNTS</code> can be used to filter services associated with namespaces that were shared with you.</p></li>
+    /// </ul>
     pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.values = input;
         self
     }
     /// <p>The values that are applicable to the value that you specify for <code>Condition</code> to filter the list of services.</p>
+    /// <ul>
+    /// <li>
+    /// <p><b>NAMESPACE_ID</b>: Specify one namespace ID or ARN. Specify the namespace ARN for namespaces that are shared with your Amazon Web Services account.</p></li>
+    /// <li>
+    /// <p><b>RESOURCE_OWNER</b>: Specify one of <code>SELF</code> or <code>OTHER_ACCOUNTS</code>. <code>SELF</code> can be used to filter services associated with namespaces created by you and <code>OTHER_ACCOUNTS</code> can be used to filter services associated with namespaces that were shared with you.</p></li>
+    /// </ul>
     pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.values
     }
     /// <p>The operator that you want to use to determine whether a service is returned by <code>ListServices</code>. Valid values for <code>Condition</code> include the following:</p>
     /// <ul>
     /// <li>
-    /// <p><code>EQ</code>: When you specify <code>EQ</code>, specify one namespace ID for <code>Values</code>. <code>EQ</code> is the default condition and can be omitted.</p></li>
+    /// <p><code>EQ</code>: When you specify <code>EQ</code>, specify one value. <code>EQ</code> is the default condition and can be omitted.</p></li>
     /// </ul>
     pub fn condition(mut self, input: crate::types::FilterCondition) -> Self {
         self.condition = ::std::option::Option::Some(input);
@@ -97,7 +157,7 @@ impl ServiceFilterBuilder {
     /// <p>The operator that you want to use to determine whether a service is returned by <code>ListServices</code>. Valid values for <code>Condition</code> include the following:</p>
     /// <ul>
     /// <li>
-    /// <p><code>EQ</code>: When you specify <code>EQ</code>, specify one namespace ID for <code>Values</code>. <code>EQ</code> is the default condition and can be omitted.</p></li>
+    /// <p><code>EQ</code>: When you specify <code>EQ</code>, specify one value. <code>EQ</code> is the default condition and can be omitted.</p></li>
     /// </ul>
     pub fn set_condition(mut self, input: ::std::option::Option<crate::types::FilterCondition>) -> Self {
         self.condition = input;
@@ -106,7 +166,7 @@ impl ServiceFilterBuilder {
     /// <p>The operator that you want to use to determine whether a service is returned by <code>ListServices</code>. Valid values for <code>Condition</code> include the following:</p>
     /// <ul>
     /// <li>
-    /// <p><code>EQ</code>: When you specify <code>EQ</code>, specify one namespace ID for <code>Values</code>. <code>EQ</code> is the default condition and can be omitted.</p></li>
+    /// <p><code>EQ</code>: When you specify <code>EQ</code>, specify one value. <code>EQ</code> is the default condition and can be omitted.</p></li>
     /// </ul>
     pub fn get_condition(&self) -> &::std::option::Option<crate::types::FilterCondition> {
         &self.condition

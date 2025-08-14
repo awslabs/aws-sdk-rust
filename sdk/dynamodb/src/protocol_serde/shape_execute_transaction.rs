@@ -102,6 +102,21 @@ pub fn de_execute_transaction_http_error(
             }
             tmp
         }),
+        "ThrottlingException" => crate::operation::execute_transaction::ExecuteTransactionError::ThrottlingException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::execute_transaction::ExecuteTransactionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "TransactionCanceledException" => crate::operation::execute_transaction::ExecuteTransactionError::TransactionCanceledException({
             #[allow(unused_mut)]
             let mut tmp = {

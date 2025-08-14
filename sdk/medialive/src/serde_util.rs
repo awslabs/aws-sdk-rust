@@ -746,6 +746,18 @@ pub(crate) fn timecode_burnin_settings_correct_errors(
     builder
 }
 
+pub(crate) fn additional_destinations_correct_errors(
+    mut builder: crate::types::builders::AdditionalDestinationsBuilder,
+) -> crate::types::builders::AdditionalDestinationsBuilder {
+    if builder.destination.is_none() {
+        builder.destination = {
+            let builder = crate::types::builders::OutputLocationRefBuilder::default();
+            Some(builder.build())
+        }
+    }
+    builder
+}
+
 pub(crate) fn archive_output_settings_correct_errors(
     mut builder: crate::types::builders::ArchiveOutputSettingsBuilder,
 ) -> crate::types::builders::ArchiveOutputSettingsBuilder {

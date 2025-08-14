@@ -1307,6 +1307,10 @@ pub use crate::types::_instance_credit_specification::InstanceCreditSpecificatio
 
 pub use crate::types::_ec2_instance_connect_endpoint::Ec2InstanceConnectEndpointBuilder;
 
+pub use crate::types::_instance_connect_endpoint_public_dns_names::InstanceConnectEndpointPublicDnsNamesBuilder;
+
+pub use crate::types::_instance_connect_endpoint_dns_names::InstanceConnectEndpointDnsNamesBuilder;
+
 pub use crate::types::_import_snapshot_task::ImportSnapshotTaskBuilder;
 
 pub use crate::types::_import_image_task::ImportImageTaskBuilder;

@@ -165,9 +165,17 @@ pub use crate::types::_usage_criteria::UsageCriteria;
 
 pub use crate::types::_usage_statistic_type::UsageStatisticType;
 
+pub use crate::types::_trusted_entity_set_status::TrustedEntitySetStatus;
+
+pub use crate::types::_trusted_entity_set_format::TrustedEntitySetFormat;
+
 pub use crate::types::_threat_intel_set_status::ThreatIntelSetStatus;
 
 pub use crate::types::_threat_intel_set_format::ThreatIntelSetFormat;
+
+pub use crate::types::_threat_entity_set_status::ThreatEntitySetStatus;
+
+pub use crate::types::_threat_entity_set_format::ThreatEntitySetFormat;
 
 pub use crate::types::_account_free_trial_info::AccountFreeTrialInfo;
 
@@ -1049,6 +1057,10 @@ mod _threat;
 
 mod _threat_detected_by_name;
 
+mod _threat_entity_set_format;
+
+mod _threat_entity_set_status;
+
 mod _threat_intel_set_format;
 
 mod _threat_intel_set_status;
@@ -1060,6 +1072,10 @@ mod _threats_detected_item_count;
 mod _total;
 
 mod _trigger_details;
+
+mod _trusted_entity_set_format;
+
+mod _trusted_entity_set_status;
 
 mod _unprocessed_account;
 

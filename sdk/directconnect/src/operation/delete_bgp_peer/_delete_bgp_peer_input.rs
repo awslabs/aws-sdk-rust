@@ -5,8 +5,26 @@
 pub struct DeleteBgpPeerInput {
     /// <p>The ID of the virtual interface.</p>
     pub virtual_interface_id: ::std::option::Option<::std::string::String>,
-    /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
+    /// <p>The autonomous system number (ASN). The valid range is from 1 to 2147483646 for Border Gateway Protocol (BGP) configuration. If you provide a number greater than the maximum, an error is returned. Use <code>asnLong</code> instead.</p><note>
+    /// <p>You can use <code>asnLong</code> or <code>asn</code>, but not both. We recommend using <code>asnLong</code> as it supports a greater pool of numbers.</p>
+    /// <ul>
+    /// <li>
+    /// <p>The <code>asnLong</code> attribute accepts both ASN and long ASN ranges.</p></li>
+    /// <li>
+    /// <p>If you provide a value in the same API call for both <code>asn</code> and <code>asnLong</code>, the API will only accept the value for <code>asnLong</code>.</p></li>
+    /// </ul>
+    /// </note>
     pub asn: ::std::option::Option<i32>,
+    /// <p>The long ASN for the BGP peer to be deleted from a Direct Connect virtual interface. The valid range is from 1 to 4294967294 for BGP configuration.</p><note>
+    /// <p>You can use <code>asnLong</code> or <code>asn</code>, but not both. We recommend using <code>asnLong</code> as it supports a greater pool of numbers.</p>
+    /// <ul>
+    /// <li>
+    /// <p>The <code>asnLong</code> attribute accepts both ASN and long ASN ranges.</p></li>
+    /// <li>
+    /// <p>If you provide a value in the same API call for both <code>asn</code> and <code>asnLong</code>, the API will only accept the value for <code>asnLong</code>.</p></li>
+    /// </ul>
+    /// </note>
+    pub asn_long: ::std::option::Option<i64>,
     /// <p>The IP address assigned to the customer interface.</p>
     pub customer_address: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the BGP peer.</p>
@@ -17,9 +35,29 @@ impl DeleteBgpPeerInput {
     pub fn virtual_interface_id(&self) -> ::std::option::Option<&str> {
         self.virtual_interface_id.as_deref()
     }
-    /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
+    /// <p>The autonomous system number (ASN). The valid range is from 1 to 2147483646 for Border Gateway Protocol (BGP) configuration. If you provide a number greater than the maximum, an error is returned. Use <code>asnLong</code> instead.</p><note>
+    /// <p>You can use <code>asnLong</code> or <code>asn</code>, but not both. We recommend using <code>asnLong</code> as it supports a greater pool of numbers.</p>
+    /// <ul>
+    /// <li>
+    /// <p>The <code>asnLong</code> attribute accepts both ASN and long ASN ranges.</p></li>
+    /// <li>
+    /// <p>If you provide a value in the same API call for both <code>asn</code> and <code>asnLong</code>, the API will only accept the value for <code>asnLong</code>.</p></li>
+    /// </ul>
+    /// </note>
     pub fn asn(&self) -> ::std::option::Option<i32> {
         self.asn
+    }
+    /// <p>The long ASN for the BGP peer to be deleted from a Direct Connect virtual interface. The valid range is from 1 to 4294967294 for BGP configuration.</p><note>
+    /// <p>You can use <code>asnLong</code> or <code>asn</code>, but not both. We recommend using <code>asnLong</code> as it supports a greater pool of numbers.</p>
+    /// <ul>
+    /// <li>
+    /// <p>The <code>asnLong</code> attribute accepts both ASN and long ASN ranges.</p></li>
+    /// <li>
+    /// <p>If you provide a value in the same API call for both <code>asn</code> and <code>asnLong</code>, the API will only accept the value for <code>asnLong</code>.</p></li>
+    /// </ul>
+    /// </note>
+    pub fn asn_long(&self) -> ::std::option::Option<i64> {
+        self.asn_long
     }
     /// <p>The IP address assigned to the customer interface.</p>
     pub fn customer_address(&self) -> ::std::option::Option<&str> {
@@ -43,6 +81,7 @@ impl DeleteBgpPeerInput {
 pub struct DeleteBgpPeerInputBuilder {
     pub(crate) virtual_interface_id: ::std::option::Option<::std::string::String>,
     pub(crate) asn: ::std::option::Option<i32>,
+    pub(crate) asn_long: ::std::option::Option<i64>,
     pub(crate) customer_address: ::std::option::Option<::std::string::String>,
     pub(crate) bgp_peer_id: ::std::option::Option<::std::string::String>,
 }
@@ -61,19 +100,81 @@ impl DeleteBgpPeerInputBuilder {
     pub fn get_virtual_interface_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.virtual_interface_id
     }
-    /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
+    /// <p>The autonomous system number (ASN). The valid range is from 1 to 2147483646 for Border Gateway Protocol (BGP) configuration. If you provide a number greater than the maximum, an error is returned. Use <code>asnLong</code> instead.</p><note>
+    /// <p>You can use <code>asnLong</code> or <code>asn</code>, but not both. We recommend using <code>asnLong</code> as it supports a greater pool of numbers.</p>
+    /// <ul>
+    /// <li>
+    /// <p>The <code>asnLong</code> attribute accepts both ASN and long ASN ranges.</p></li>
+    /// <li>
+    /// <p>If you provide a value in the same API call for both <code>asn</code> and <code>asnLong</code>, the API will only accept the value for <code>asnLong</code>.</p></li>
+    /// </ul>
+    /// </note>
     pub fn asn(mut self, input: i32) -> Self {
         self.asn = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
+    /// <p>The autonomous system number (ASN). The valid range is from 1 to 2147483646 for Border Gateway Protocol (BGP) configuration. If you provide a number greater than the maximum, an error is returned. Use <code>asnLong</code> instead.</p><note>
+    /// <p>You can use <code>asnLong</code> or <code>asn</code>, but not both. We recommend using <code>asnLong</code> as it supports a greater pool of numbers.</p>
+    /// <ul>
+    /// <li>
+    /// <p>The <code>asnLong</code> attribute accepts both ASN and long ASN ranges.</p></li>
+    /// <li>
+    /// <p>If you provide a value in the same API call for both <code>asn</code> and <code>asnLong</code>, the API will only accept the value for <code>asnLong</code>.</p></li>
+    /// </ul>
+    /// </note>
     pub fn set_asn(mut self, input: ::std::option::Option<i32>) -> Self {
         self.asn = input;
         self
     }
-    /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
+    /// <p>The autonomous system number (ASN). The valid range is from 1 to 2147483646 for Border Gateway Protocol (BGP) configuration. If you provide a number greater than the maximum, an error is returned. Use <code>asnLong</code> instead.</p><note>
+    /// <p>You can use <code>asnLong</code> or <code>asn</code>, but not both. We recommend using <code>asnLong</code> as it supports a greater pool of numbers.</p>
+    /// <ul>
+    /// <li>
+    /// <p>The <code>asnLong</code> attribute accepts both ASN and long ASN ranges.</p></li>
+    /// <li>
+    /// <p>If you provide a value in the same API call for both <code>asn</code> and <code>asnLong</code>, the API will only accept the value for <code>asnLong</code>.</p></li>
+    /// </ul>
+    /// </note>
     pub fn get_asn(&self) -> &::std::option::Option<i32> {
         &self.asn
+    }
+    /// <p>The long ASN for the BGP peer to be deleted from a Direct Connect virtual interface. The valid range is from 1 to 4294967294 for BGP configuration.</p><note>
+    /// <p>You can use <code>asnLong</code> or <code>asn</code>, but not both. We recommend using <code>asnLong</code> as it supports a greater pool of numbers.</p>
+    /// <ul>
+    /// <li>
+    /// <p>The <code>asnLong</code> attribute accepts both ASN and long ASN ranges.</p></li>
+    /// <li>
+    /// <p>If you provide a value in the same API call for both <code>asn</code> and <code>asnLong</code>, the API will only accept the value for <code>asnLong</code>.</p></li>
+    /// </ul>
+    /// </note>
+    pub fn asn_long(mut self, input: i64) -> Self {
+        self.asn_long = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The long ASN for the BGP peer to be deleted from a Direct Connect virtual interface. The valid range is from 1 to 4294967294 for BGP configuration.</p><note>
+    /// <p>You can use <code>asnLong</code> or <code>asn</code>, but not both. We recommend using <code>asnLong</code> as it supports a greater pool of numbers.</p>
+    /// <ul>
+    /// <li>
+    /// <p>The <code>asnLong</code> attribute accepts both ASN and long ASN ranges.</p></li>
+    /// <li>
+    /// <p>If you provide a value in the same API call for both <code>asn</code> and <code>asnLong</code>, the API will only accept the value for <code>asnLong</code>.</p></li>
+    /// </ul>
+    /// </note>
+    pub fn set_asn_long(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.asn_long = input;
+        self
+    }
+    /// <p>The long ASN for the BGP peer to be deleted from a Direct Connect virtual interface. The valid range is from 1 to 4294967294 for BGP configuration.</p><note>
+    /// <p>You can use <code>asnLong</code> or <code>asn</code>, but not both. We recommend using <code>asnLong</code> as it supports a greater pool of numbers.</p>
+    /// <ul>
+    /// <li>
+    /// <p>The <code>asnLong</code> attribute accepts both ASN and long ASN ranges.</p></li>
+    /// <li>
+    /// <p>If you provide a value in the same API call for both <code>asn</code> and <code>asnLong</code>, the API will only accept the value for <code>asnLong</code>.</p></li>
+    /// </ul>
+    /// </note>
+    pub fn get_asn_long(&self) -> &::std::option::Option<i64> {
+        &self.asn_long
     }
     /// <p>The IP address assigned to the customer interface.</p>
     pub fn customer_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -110,6 +211,7 @@ impl DeleteBgpPeerInputBuilder {
         ::std::result::Result::Ok(crate::operation::delete_bgp_peer::DeleteBgpPeerInput {
             virtual_interface_id: self.virtual_interface_id,
             asn: self.asn,
+            asn_long: self.asn_long,
             customer_address: self.customer_address,
             bgp_peer_id: self.bgp_peer_id,
         })

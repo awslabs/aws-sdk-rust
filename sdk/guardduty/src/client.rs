@@ -156,7 +156,11 @@ mod create_publishing_destination;
 
 mod create_sample_findings;
 
+mod create_threat_entity_set;
+
 mod create_threat_intel_set;
+
+mod create_trusted_entity_set;
 
 /// Operation customization and supporting types.
 ///
@@ -201,7 +205,11 @@ mod delete_members;
 
 mod delete_publishing_destination;
 
+mod delete_threat_entity_set;
+
 mod delete_threat_intel_set;
+
+mod delete_trusted_entity_set;
 
 mod describe_malware_scans;
 
@@ -249,7 +257,11 @@ mod get_organization_statistics;
 
 mod get_remaining_free_trial_days;
 
+mod get_threat_entity_set;
+
 mod get_threat_intel_set;
+
+mod get_trusted_entity_set;
 
 mod get_usage_statistics;
 
@@ -277,7 +289,11 @@ mod list_publishing_destinations;
 
 mod list_tags_for_resource;
 
+mod list_threat_entity_sets;
+
 mod list_threat_intel_sets;
+
+mod list_trusted_entity_sets;
 
 mod start_malware_scan;
 
@@ -309,4 +325,8 @@ mod update_organization_configuration;
 
 mod update_publishing_destination;
 
+mod update_threat_entity_set;
+
 mod update_threat_intel_set;
+
+mod update_trusted_entity_set;

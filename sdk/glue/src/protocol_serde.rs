@@ -89,6 +89,8 @@ pub(crate) mod shape_create_database;
 
 pub(crate) mod shape_create_dev_endpoint;
 
+pub(crate) mod shape_create_glue_identity_center_configuration;
+
 pub(crate) mod shape_create_integration;
 
 pub(crate) mod shape_create_integration_resource_property;
@@ -148,6 +150,8 @@ pub(crate) mod shape_delete_data_quality_ruleset;
 pub(crate) mod shape_delete_database;
 
 pub(crate) mod shape_delete_dev_endpoint;
+
+pub(crate) mod shape_delete_glue_identity_center_configuration;
 
 pub(crate) mod shape_delete_integration;
 
@@ -258,6 +262,8 @@ pub(crate) mod shape_get_dev_endpoint;
 pub(crate) mod shape_get_dev_endpoints;
 
 pub(crate) mod shape_get_entity_records;
+
+pub(crate) mod shape_get_glue_identity_center_configuration;
 
 pub(crate) mod shape_get_integration_resource_property;
 
@@ -499,6 +505,8 @@ pub(crate) mod shape_update_database;
 
 pub(crate) mod shape_update_dev_endpoint;
 
+pub(crate) mod shape_update_glue_identity_center_configuration;
+
 pub(crate) mod shape_update_integration_resource_property;
 
 pub(crate) mod shape_update_integration_table_properties;
@@ -626,6 +634,8 @@ pub(crate) mod shape_create_data_quality_ruleset_input;
 pub(crate) mod shape_create_database_input;
 
 pub(crate) mod shape_create_dev_endpoint_input;
+
+pub(crate) mod shape_create_glue_identity_center_configuration_input;
 
 pub(crate) mod shape_create_integration_input;
 
@@ -1099,6 +1109,8 @@ pub(crate) mod shape_update_database_input;
 
 pub(crate) mod shape_update_dev_endpoint_input;
 
+pub(crate) mod shape_update_glue_identity_center_configuration_input;
+
 pub(crate) mod shape_update_integration_resource_property_input;
 
 pub(crate) mod shape_update_integration_table_properties_input;
@@ -1388,6 +1400,8 @@ pub(crate) mod shape_node_id_list;
 pub(crate) mod shape_notification_property;
 
 pub(crate) mod shape_open_table_format_input;
+
+pub(crate) mod shape_orchestration_string_list;
 
 pub(crate) mod shape_partition;
 
@@ -2124,8 +2138,6 @@ pub(crate) mod shape_null_value_field;
 pub(crate) mod shape_o_auth2_properties;
 
 pub(crate) mod shape_o_auth2_properties_input;
-
-pub(crate) mod shape_orchestration_string_list;
 
 pub(crate) mod shape_order;
 

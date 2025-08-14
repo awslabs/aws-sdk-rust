@@ -1,14 +1,14 @@
 [workspace]
 resolver = "2"
 exclude = [
-    "examples/test-utils",
     "examples/examples",
+    "examples/cross_service",
     "examples/lambda",
     "examples/webassembly",
-    "examples/cross_service",
+    "examples/test-utils",
     "tests/no-default-features",
-    "tests/telemetry",
-    "tests/webassembly"
+    "tests/webassembly",
+    "tests/telemetry"
 ]
 members = [
     "sdk/accessanalyzer",
@@ -86,6 +86,7 @@ members = [
     "sdk/batch",
     "sdk/bcmdataexports",
     "sdk/bcmpricingcalculator",
+    "sdk/bcmrecommendedactions",
     "sdk/bedrock",
     "sdk/bedrockagent",
     "sdk/bedrockagentcore",

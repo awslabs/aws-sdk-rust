@@ -1292,6 +1292,44 @@ impl From<crate::operation::create_dev_endpoint::CreateDevEndpointError> for Err
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_glue_identity_center_configuration::CreateGlueIdentityCenterConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_glue_identity_center_configuration::CreateGlueIdentityCenterConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_glue_identity_center_configuration::CreateGlueIdentityCenterConfigurationError> for Error {
+    fn from(err: crate::operation::create_glue_identity_center_configuration::CreateGlueIdentityCenterConfigurationError) -> Self {
+        match err {
+            crate::operation::create_glue_identity_center_configuration::CreateGlueIdentityCenterConfigurationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_glue_identity_center_configuration::CreateGlueIdentityCenterConfigurationError::AlreadyExistsException(inner) => Error::AlreadyExistsException(inner),
+            crate::operation::create_glue_identity_center_configuration::CreateGlueIdentityCenterConfigurationError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::operation::create_glue_identity_center_configuration::CreateGlueIdentityCenterConfigurationError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::create_glue_identity_center_configuration::CreateGlueIdentityCenterConfigurationError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::create_glue_identity_center_configuration::CreateGlueIdentityCenterConfigurationError::OperationTimeoutException(inner) => Error::OperationTimeoutException(inner),
+            crate::operation::create_glue_identity_center_configuration::CreateGlueIdentityCenterConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_integration::CreateIntegrationError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2351,6 +2389,44 @@ impl From<crate::operation::delete_dev_endpoint::DeleteDevEndpointError> for Err
                 Error::OperationTimeoutException(inner)
             }
             crate::operation::delete_dev_endpoint::DeleteDevEndpointError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_glue_identity_center_configuration::DeleteGlueIdentityCenterConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_glue_identity_center_configuration::DeleteGlueIdentityCenterConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_glue_identity_center_configuration::DeleteGlueIdentityCenterConfigurationError> for Error {
+    fn from(err: crate::operation::delete_glue_identity_center_configuration::DeleteGlueIdentityCenterConfigurationError) -> Self {
+        match err {
+            crate::operation::delete_glue_identity_center_configuration::DeleteGlueIdentityCenterConfigurationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_glue_identity_center_configuration::DeleteGlueIdentityCenterConfigurationError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::operation::delete_glue_identity_center_configuration::DeleteGlueIdentityCenterConfigurationError::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
+            crate::operation::delete_glue_identity_center_configuration::DeleteGlueIdentityCenterConfigurationError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::delete_glue_identity_center_configuration::DeleteGlueIdentityCenterConfigurationError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::delete_glue_identity_center_configuration::DeleteGlueIdentityCenterConfigurationError::OperationTimeoutException(inner) => Error::OperationTimeoutException(inner),
+            crate::operation::delete_glue_identity_center_configuration::DeleteGlueIdentityCenterConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -4081,6 +4157,58 @@ impl From<crate::operation::get_entity_records::GetEntityRecordsError> for Error
             crate::operation::get_entity_records::GetEntityRecordsError::OperationTimeoutException(inner) => Error::OperationTimeoutException(inner),
             crate::operation::get_entity_records::GetEntityRecordsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_entity_records::GetEntityRecordsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_glue_identity_center_configuration::GetGlueIdentityCenterConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_glue_identity_center_configuration::GetGlueIdentityCenterConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_glue_identity_center_configuration::GetGlueIdentityCenterConfigurationError> for Error {
+    fn from(err: crate::operation::get_glue_identity_center_configuration::GetGlueIdentityCenterConfigurationError) -> Self {
+        match err {
+            crate::operation::get_glue_identity_center_configuration::GetGlueIdentityCenterConfigurationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_glue_identity_center_configuration::GetGlueIdentityCenterConfigurationError::ConcurrentModificationException(
+                inner,
+            ) => Error::ConcurrentModificationException(inner),
+            crate::operation::get_glue_identity_center_configuration::GetGlueIdentityCenterConfigurationError::EntityNotFoundException(inner) => {
+                Error::EntityNotFoundException(inner)
+            }
+            crate::operation::get_glue_identity_center_configuration::GetGlueIdentityCenterConfigurationError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::get_glue_identity_center_configuration::GetGlueIdentityCenterConfigurationError::InvalidInputException(inner) => {
+                Error::InvalidInputException(inner)
+            }
+            crate::operation::get_glue_identity_center_configuration::GetGlueIdentityCenterConfigurationError::OperationTimeoutException(inner) => {
+                Error::OperationTimeoutException(inner)
+            }
+            crate::operation::get_glue_identity_center_configuration::GetGlueIdentityCenterConfigurationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -7945,6 +8073,44 @@ impl From<crate::operation::update_dev_endpoint::UpdateDevEndpointError> for Err
             }
             crate::operation::update_dev_endpoint::UpdateDevEndpointError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_dev_endpoint::UpdateDevEndpointError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_glue_identity_center_configuration::UpdateGlueIdentityCenterConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_glue_identity_center_configuration::UpdateGlueIdentityCenterConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_glue_identity_center_configuration::UpdateGlueIdentityCenterConfigurationError> for Error {
+    fn from(err: crate::operation::update_glue_identity_center_configuration::UpdateGlueIdentityCenterConfigurationError) -> Self {
+        match err {
+            crate::operation::update_glue_identity_center_configuration::UpdateGlueIdentityCenterConfigurationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_glue_identity_center_configuration::UpdateGlueIdentityCenterConfigurationError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::operation::update_glue_identity_center_configuration::UpdateGlueIdentityCenterConfigurationError::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
+            crate::operation::update_glue_identity_center_configuration::UpdateGlueIdentityCenterConfigurationError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::update_glue_identity_center_configuration::UpdateGlueIdentityCenterConfigurationError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::update_glue_identity_center_configuration::UpdateGlueIdentityCenterConfigurationError::OperationTimeoutException(inner) => Error::OperationTimeoutException(inner),
+            crate::operation::update_glue_identity_center_configuration::UpdateGlueIdentityCenterConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

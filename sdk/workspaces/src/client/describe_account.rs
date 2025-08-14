@@ -7,6 +7,7 @@ impl super::Client {
     ///   - [`dedicated_tenancy_support(Option<DedicatedTenancySupportResultEnum>)`](crate::operation::describe_account::DescribeAccountOutput::dedicated_tenancy_support): <p>The status of BYOL (whether BYOL is enabled or disabled).</p>
     ///   - [`dedicated_tenancy_management_cidr_range(Option<String>)`](crate::operation::describe_account::DescribeAccountOutput::dedicated_tenancy_management_cidr_range): <p>The IP address range, specified as an IPv4 CIDR block, used for the management network interface.</p> <p>The management network interface is connected to a secure Amazon WorkSpaces management network. It is used for interactive streaming of the WorkSpace desktop to Amazon WorkSpaces clients, and to allow Amazon WorkSpaces to manage the WorkSpace.</p>
     ///   - [`dedicated_tenancy_account_type(Option<DedicatedTenancyAccountType>)`](crate::operation::describe_account::DescribeAccountOutput::dedicated_tenancy_account_type): <p>The type of linked account.</p>
+    ///   - [`message(Option<String>)`](crate::operation::describe_account::DescribeAccountOutput::message): <p>The text message to describe the status of BYOL.</p>
     /// - On failure, responds with [`SdkError<DescribeAccountError>`](crate::operation::describe_account::DescribeAccountError)
     pub fn describe_account(&self) -> crate::operation::describe_account::builders::DescribeAccountFluentBuilder {
         crate::operation::describe_account::builders::DescribeAccountFluentBuilder::new(self.handle.clone())

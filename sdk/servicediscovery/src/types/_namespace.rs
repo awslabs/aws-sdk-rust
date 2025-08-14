@@ -8,6 +8,8 @@ pub struct Namespace {
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) that Cloud Map assigns to the namespace when you create it.</p>
     pub arn: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the Amazon Web Services account that created the namespace. If this isn't your account ID, it's the ID of the account that shared the namespace with your account. For more information about shared namespaces, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html">Cross-account Cloud Map namespace sharing</a> in the <i>Cloud Map Developer Guide</i>.</p>
+    pub resource_owner: ::std::option::Option<::std::string::String>,
     /// <p>The name of the namespace, such as <code>example.com</code>.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of the namespace. The methods for discovering instances depends on the value that you specify:</p>
@@ -51,6 +53,10 @@ impl Namespace {
     /// <p>The Amazon Resource Name (ARN) that Cloud Map assigns to the namespace when you create it.</p>
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
+    }
+    /// <p>The ID of the Amazon Web Services account that created the namespace. If this isn't your account ID, it's the ID of the account that shared the namespace with your account. For more information about shared namespaces, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html">Cross-account Cloud Map namespace sharing</a> in the <i>Cloud Map Developer Guide</i>.</p>
+    pub fn resource_owner(&self) -> ::std::option::Option<&str> {
+        self.resource_owner.as_deref()
     }
     /// <p>The name of the namespace, such as <code>example.com</code>.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -114,6 +120,7 @@ impl Namespace {
 pub struct NamespaceBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) resource_owner: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::NamespaceType>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -150,6 +157,20 @@ impl NamespaceBuilder {
     /// <p>The Amazon Resource Name (ARN) that Cloud Map assigns to the namespace when you create it.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
+    }
+    /// <p>The ID of the Amazon Web Services account that created the namespace. If this isn't your account ID, it's the ID of the account that shared the namespace with your account. For more information about shared namespaces, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html">Cross-account Cloud Map namespace sharing</a> in the <i>Cloud Map Developer Guide</i>.</p>
+    pub fn resource_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource_owner = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the Amazon Web Services account that created the namespace. If this isn't your account ID, it's the ID of the account that shared the namespace with your account. For more information about shared namespaces, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html">Cross-account Cloud Map namespace sharing</a> in the <i>Cloud Map Developer Guide</i>.</p>
+    pub fn set_resource_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.resource_owner = input;
+        self
+    }
+    /// <p>The ID of the Amazon Web Services account that created the namespace. If this isn't your account ID, it's the ID of the account that shared the namespace with your account. For more information about shared namespaces, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html">Cross-account Cloud Map namespace sharing</a> in the <i>Cloud Map Developer Guide</i>.</p>
+    pub fn get_resource_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_owner
     }
     /// <p>The name of the namespace, such as <code>example.com</code>.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -314,6 +335,7 @@ impl NamespaceBuilder {
         crate::types::Namespace {
             id: self.id,
             arn: self.arn,
+            resource_owner: self.resource_owner,
             name: self.name,
             r#type: self.r#type,
             description: self.description,

@@ -4,8 +4,10 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NewBgpPeer {
-    /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
+    /// <p>The autonomous system number (ASN). The valid range is from 1 to 2147483646 for Border Gateway Protocol (BGP) configuration. If you provide a number greater than the maximum, an error is returned. Use <code>asnLong</code> instead.</p>
     pub asn: i32,
+    /// <p>The long ASN for a new BGP peer. The valid range is from 1 to 4294967294.</p>
+    pub asn_long: ::std::option::Option<i64>,
     /// <p>The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun lenth of 80 characters.</p>
     pub auth_key: ::std::option::Option<::std::string::String>,
     /// <p>The address family for the BGP peer.</p>
@@ -16,9 +18,13 @@ pub struct NewBgpPeer {
     pub customer_address: ::std::option::Option<::std::string::String>,
 }
 impl NewBgpPeer {
-    /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
+    /// <p>The autonomous system number (ASN). The valid range is from 1 to 2147483646 for Border Gateway Protocol (BGP) configuration. If you provide a number greater than the maximum, an error is returned. Use <code>asnLong</code> instead.</p>
     pub fn asn(&self) -> i32 {
         self.asn
+    }
+    /// <p>The long ASN for a new BGP peer. The valid range is from 1 to 4294967294.</p>
+    pub fn asn_long(&self) -> ::std::option::Option<i64> {
+        self.asn_long
     }
     /// <p>The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun lenth of 80 characters.</p>
     pub fn auth_key(&self) -> ::std::option::Option<&str> {
@@ -49,25 +55,40 @@ impl NewBgpPeer {
 #[non_exhaustive]
 pub struct NewBgpPeerBuilder {
     pub(crate) asn: ::std::option::Option<i32>,
+    pub(crate) asn_long: ::std::option::Option<i64>,
     pub(crate) auth_key: ::std::option::Option<::std::string::String>,
     pub(crate) address_family: ::std::option::Option<crate::types::AddressFamily>,
     pub(crate) amazon_address: ::std::option::Option<::std::string::String>,
     pub(crate) customer_address: ::std::option::Option<::std::string::String>,
 }
 impl NewBgpPeerBuilder {
-    /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
+    /// <p>The autonomous system number (ASN). The valid range is from 1 to 2147483646 for Border Gateway Protocol (BGP) configuration. If you provide a number greater than the maximum, an error is returned. Use <code>asnLong</code> instead.</p>
     pub fn asn(mut self, input: i32) -> Self {
         self.asn = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
+    /// <p>The autonomous system number (ASN). The valid range is from 1 to 2147483646 for Border Gateway Protocol (BGP) configuration. If you provide a number greater than the maximum, an error is returned. Use <code>asnLong</code> instead.</p>
     pub fn set_asn(mut self, input: ::std::option::Option<i32>) -> Self {
         self.asn = input;
         self
     }
-    /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
+    /// <p>The autonomous system number (ASN). The valid range is from 1 to 2147483646 for Border Gateway Protocol (BGP) configuration. If you provide a number greater than the maximum, an error is returned. Use <code>asnLong</code> instead.</p>
     pub fn get_asn(&self) -> &::std::option::Option<i32> {
         &self.asn
+    }
+    /// <p>The long ASN for a new BGP peer. The valid range is from 1 to 4294967294.</p>
+    pub fn asn_long(mut self, input: i64) -> Self {
+        self.asn_long = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The long ASN for a new BGP peer. The valid range is from 1 to 4294967294.</p>
+    pub fn set_asn_long(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.asn_long = input;
+        self
+    }
+    /// <p>The long ASN for a new BGP peer. The valid range is from 1 to 4294967294.</p>
+    pub fn get_asn_long(&self) -> &::std::option::Option<i64> {
+        &self.asn_long
     }
     /// <p>The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun lenth of 80 characters.</p>
     pub fn auth_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -129,6 +150,7 @@ impl NewBgpPeerBuilder {
     pub fn build(self) -> crate::types::NewBgpPeer {
         crate::types::NewBgpPeer {
             asn: self.asn.unwrap_or_default(),
+            asn_long: self.asn_long,
             auth_key: self.auth_key,
             address_family: self.address_family,
             amazon_address: self.amazon_address,

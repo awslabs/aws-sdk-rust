@@ -31,8 +31,14 @@ pub mod create_publishing_destination;
 /// Types for the `CreateSampleFindings` operation.
 pub mod create_sample_findings;
 
+/// Types for the `CreateThreatEntitySet` operation.
+pub mod create_threat_entity_set;
+
 /// Types for the `CreateThreatIntelSet` operation.
 pub mod create_threat_intel_set;
+
+/// Types for the `CreateTrustedEntitySet` operation.
+pub mod create_trusted_entity_set;
 
 /// Types for the `DeclineInvitations` operation.
 pub mod decline_invitations;
@@ -58,8 +64,14 @@ pub mod delete_members;
 /// Types for the `DeletePublishingDestination` operation.
 pub mod delete_publishing_destination;
 
+/// Types for the `DeleteThreatEntitySet` operation.
+pub mod delete_threat_entity_set;
+
 /// Types for the `DeleteThreatIntelSet` operation.
 pub mod delete_threat_intel_set;
+
+/// Types for the `DeleteTrustedEntitySet` operation.
+pub mod delete_trusted_entity_set;
 
 /// Types for the `DescribeMalwareScans` operation.
 pub mod describe_malware_scans;
@@ -130,8 +142,14 @@ pub mod get_organization_statistics;
 /// Types for the `GetRemainingFreeTrialDays` operation.
 pub mod get_remaining_free_trial_days;
 
+/// Types for the `GetThreatEntitySet` operation.
+pub mod get_threat_entity_set;
+
 /// Types for the `GetThreatIntelSet` operation.
 pub mod get_threat_intel_set;
+
+/// Types for the `GetTrustedEntitySet` operation.
+pub mod get_trusted_entity_set;
 
 /// Types for the `GetUsageStatistics` operation.
 pub mod get_usage_statistics;
@@ -172,8 +190,14 @@ pub mod list_publishing_destinations;
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
 
+/// Types for the `ListThreatEntitySets` operation.
+pub mod list_threat_entity_sets;
+
 /// Types for the `ListThreatIntelSets` operation.
 pub mod list_threat_intel_sets;
+
+/// Types for the `ListTrustedEntitySets` operation.
+pub mod list_trusted_entity_sets;
 
 /// Types for the `StartMalwareScan` operation.
 pub mod start_malware_scan;
@@ -220,5 +244,11 @@ pub mod update_organization_configuration;
 /// Types for the `UpdatePublishingDestination` operation.
 pub mod update_publishing_destination;
 
+/// Types for the `UpdateThreatEntitySet` operation.
+pub mod update_threat_entity_set;
+
 /// Types for the `UpdateThreatIntelSet` operation.
 pub mod update_threat_intel_set;
+
+/// Types for the `UpdateTrustedEntitySet` operation.
+pub mod update_trusted_entity_set;

@@ -28,6 +28,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "asnLong" => {
+                            builder = builder.set_asn_long(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i64::try_from)
+                                    .transpose()?,
+                            );
+                        }
                         "authKey" => {
                             builder = builder.set_auth_key(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

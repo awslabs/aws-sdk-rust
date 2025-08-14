@@ -127,6 +127,8 @@ pub use crate::types::_workspaces_ip_group::WorkspacesIpGroupBuilder;
 
 pub use crate::types::_image_resource_association::ImageResourceAssociationBuilder;
 
+pub use crate::types::_custom_workspace_image_import_error_details::CustomWorkspaceImageImportErrorDetailsBuilder;
+
 pub use crate::types::_connection_alias::ConnectionAliasBuilder;
 
 pub use crate::types::_connection_alias_association::ConnectionAliasAssociationBuilder;

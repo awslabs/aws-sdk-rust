@@ -4,8 +4,11 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`lag_id(impl Into<String>)`](crate::operation::describe_lags::builders::DescribeLagsFluentBuilder::lag_id) / [`set_lag_id(Option<String>)`](crate::operation::describe_lags::builders::DescribeLagsFluentBuilder::set_lag_id):<br>required: **false**<br><p>The ID of the LAG.</p><br>
+    ///   - [`max_results(i32)`](crate::operation::describe_lags::builders::DescribeLagsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_lags::builders::DescribeLagsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p> <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are returned.</p><br>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::describe_lags::builders::DescribeLagsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_lags::builders::DescribeLagsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next page of results.</p><br>
     /// - On success, responds with [`DescribeLagsOutput`](crate::operation::describe_lags::DescribeLagsOutput) with field(s):
     ///   - [`lags(Option<Vec::<Lag>>)`](crate::operation::describe_lags::DescribeLagsOutput::lags): <p>The LAGs.</p>
+    ///   - [`next_token(Option<String>)`](crate::operation::describe_lags::DescribeLagsOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<DescribeLagsError>`](crate::operation::describe_lags::DescribeLagsError)
     pub fn describe_lags(&self) -> crate::operation::describe_lags::builders::DescribeLagsFluentBuilder {
         crate::operation::describe_lags::builders::DescribeLagsFluentBuilder::new(self.handle.clone())

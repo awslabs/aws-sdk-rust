@@ -4,6 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`operation_id(impl Into<String>)`](crate::operation::get_operation::builders::GetOperationFluentBuilder::operation_id) / [`set_operation_id(Option<String>)`](crate::operation::get_operation::builders::GetOperationFluentBuilder::set_operation_id):<br>required: **true**<br><p>The ID of the operation that you want to get more information about.</p><br>
+    ///   - [`owner_account(impl Into<String>)`](crate::operation::get_operation::builders::GetOperationFluentBuilder::owner_account) / [`set_owner_account(Option<String>)`](crate::operation::get_operation::builders::GetOperationFluentBuilder::set_owner_account):<br>required: **false**<br><p>The ID of the Amazon Web Services account that owns the namespace associated with the operation, as specified in the namespace <code>ResourceOwner</code> field. For operations associated with namespaces that are shared with your account, you must specify an <code>OwnerAccount</code>.</p><br>
     /// - On success, responds with [`GetOperationOutput`](crate::operation::get_operation::GetOperationOutput) with field(s):
     ///   - [`operation(Option<Operation>)`](crate::operation::get_operation::GetOperationOutput::operation): <p>A complex type that contains information about the operation.</p>
     /// - On failure, responds with [`SdkError<GetOperationError>`](crate::operation::get_operation::GetOperationError)

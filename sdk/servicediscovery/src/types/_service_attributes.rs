@@ -6,6 +6,8 @@
 pub struct ServiceAttributes {
     /// <p>The ARN of the service that the attributes are associated with.</p>
     pub service_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the Amazon Web Services account that created the namespace with which the service is associated. If this isn't your account ID, it is the ID of the account that shared the namespace with your account. For more information about shared namespaces, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html">Cross-account Cloud Map namespace sharing</a> in the <i>Cloud Map Developer Guide</i>.</p>
+    pub resource_owner: ::std::option::Option<::std::string::String>,
     /// <p>A string map that contains the following information for the service that you specify in <code>ServiceArn</code>:</p>
     /// <ul>
     /// <li>
@@ -20,6 +22,10 @@ impl ServiceAttributes {
     /// <p>The ARN of the service that the attributes are associated with.</p>
     pub fn service_arn(&self) -> ::std::option::Option<&str> {
         self.service_arn.as_deref()
+    }
+    /// <p>The ID of the Amazon Web Services account that created the namespace with which the service is associated. If this isn't your account ID, it is the ID of the account that shared the namespace with your account. For more information about shared namespaces, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html">Cross-account Cloud Map namespace sharing</a> in the <i>Cloud Map Developer Guide</i>.</p>
+    pub fn resource_owner(&self) -> ::std::option::Option<&str> {
+        self.resource_owner.as_deref()
     }
     /// <p>A string map that contains the following information for the service that you specify in <code>ServiceArn</code>:</p>
     /// <ul>
@@ -45,6 +51,7 @@ impl ServiceAttributes {
 #[non_exhaustive]
 pub struct ServiceAttributesBuilder {
     pub(crate) service_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) resource_owner: ::std::option::Option<::std::string::String>,
     pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ServiceAttributesBuilder {
@@ -61,6 +68,20 @@ impl ServiceAttributesBuilder {
     /// <p>The ARN of the service that the attributes are associated with.</p>
     pub fn get_service_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.service_arn
+    }
+    /// <p>The ID of the Amazon Web Services account that created the namespace with which the service is associated. If this isn't your account ID, it is the ID of the account that shared the namespace with your account. For more information about shared namespaces, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html">Cross-account Cloud Map namespace sharing</a> in the <i>Cloud Map Developer Guide</i>.</p>
+    pub fn resource_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource_owner = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the Amazon Web Services account that created the namespace with which the service is associated. If this isn't your account ID, it is the ID of the account that shared the namespace with your account. For more information about shared namespaces, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html">Cross-account Cloud Map namespace sharing</a> in the <i>Cloud Map Developer Guide</i>.</p>
+    pub fn set_resource_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.resource_owner = input;
+        self
+    }
+    /// <p>The ID of the Amazon Web Services account that created the namespace with which the service is associated. If this isn't your account ID, it is the ID of the account that shared the namespace with your account. For more information about shared namespaces, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html">Cross-account Cloud Map namespace sharing</a> in the <i>Cloud Map Developer Guide</i>.</p>
+    pub fn get_resource_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_owner
     }
     /// Adds a key-value pair to `attributes`.
     ///
@@ -107,6 +128,7 @@ impl ServiceAttributesBuilder {
     pub fn build(self) -> crate::types::ServiceAttributes {
         crate::types::ServiceAttributes {
             service_arn: self.service_arn,
+            resource_owner: self.resource_owner,
             attributes: self.attributes,
         }
     }

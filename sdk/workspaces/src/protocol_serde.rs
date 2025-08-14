@@ -97,6 +97,8 @@ pub(crate) mod shape_describe_connection_alias_permissions;
 
 pub(crate) mod shape_describe_connection_aliases;
 
+pub(crate) mod shape_describe_custom_workspace_image_import;
+
 pub(crate) mod shape_describe_image_associations;
 
 pub(crate) mod shape_describe_ip_groups;
@@ -132,6 +134,8 @@ pub(crate) mod shape_disassociate_workspace_application;
 pub(crate) mod shape_get_account_link;
 
 pub(crate) mod shape_import_client_branding;
+
+pub(crate) mod shape_import_custom_workspace_image;
 
 pub(crate) mod shape_import_workspace_image;
 
@@ -289,6 +293,8 @@ pub(crate) mod shape_describe_connection_alias_permissions_input;
 
 pub(crate) mod shape_describe_connection_aliases_input;
 
+pub(crate) mod shape_describe_custom_workspace_image_import_input;
+
 pub(crate) mod shape_describe_image_associations_input;
 
 pub(crate) mod shape_describe_ip_groups_input;
@@ -324,6 +330,8 @@ pub(crate) mod shape_disassociate_workspace_application_input;
 pub(crate) mod shape_get_account_link_input;
 
 pub(crate) mod shape_import_client_branding_input;
+
+pub(crate) mod shape_import_custom_workspace_image_input;
 
 pub(crate) mod shape_import_workspace_image_input;
 
@@ -465,6 +473,8 @@ pub(crate) mod shape_connection_alias_permission;
 
 pub(crate) mod shape_connection_alias_permissions;
 
+pub(crate) mod shape_custom_workspace_image_import_error_details_list;
+
 pub(crate) mod shape_dedicated_tenancy_cidr_range_list;
 
 pub(crate) mod shape_default_client_branding_attributes;
@@ -494,6 +504,8 @@ pub(crate) mod shape_failed_terminate_workspace_requests;
 pub(crate) mod shape_image_permissions;
 
 pub(crate) mod shape_image_resource_association_list;
+
+pub(crate) mod shape_image_source_identifier;
 
 pub(crate) mod shape_ios_client_branding_attributes;
 
@@ -588,6 +600,8 @@ pub(crate) mod shape_client_properties_result;
 pub(crate) mod shape_connect_client_add_in;
 
 pub(crate) mod shape_connection_alias;
+
+pub(crate) mod shape_custom_workspace_image_import_error_details;
 
 pub(crate) mod shape_failed_create_standby_workspaces_request;
 

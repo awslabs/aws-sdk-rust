@@ -152,161 +152,9 @@ mod test {
         );
     }
 
-    /// For region us-iso-east-1 with FIPS enabled and DualStack enabled
-    #[test]
-    fn test_9() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("us-iso-east-1".to_string())
-            .use_fips(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://arc-region-switch-fips.us-iso-east-1.c2s.ic.gov");
-        assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://arc-region-switch-fips.us-iso-east-1.c2s.ic.gov")
-                .build()
-        );
-    }
-
-    /// For region us-iso-east-1 with FIPS disabled and DualStack enabled
-    #[test]
-    fn test_10() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("us-iso-east-1".to_string())
-            .use_fips(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://arc-region-switch.us-iso-east-1.c2s.ic.gov");
-        assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://arc-region-switch.us-iso-east-1.c2s.ic.gov")
-                .build()
-        );
-    }
-
-    /// For region us-isob-east-1 with FIPS enabled and DualStack enabled
-    #[test]
-    fn test_11() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("us-isob-east-1".to_string())
-            .use_fips(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://arc-region-switch-fips.us-isob-east-1.sc2s.sgov.gov");
-        assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://arc-region-switch-fips.us-isob-east-1.sc2s.sgov.gov")
-                .build()
-        );
-    }
-
-    /// For region us-isob-east-1 with FIPS disabled and DualStack enabled
-    #[test]
-    fn test_12() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("us-isob-east-1".to_string())
-            .use_fips(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://arc-region-switch.us-isob-east-1.sc2s.sgov.gov");
-        assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://arc-region-switch.us-isob-east-1.sc2s.sgov.gov")
-                .build()
-        );
-    }
-
-    /// For region eu-isoe-west-1 with FIPS enabled and DualStack enabled
-    #[test]
-    fn test_13() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("eu-isoe-west-1".to_string())
-            .use_fips(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://arc-region-switch-fips.eu-isoe-west-1.cloud.adc-e.uk");
-        assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://arc-region-switch-fips.eu-isoe-west-1.cloud.adc-e.uk")
-                .build()
-        );
-    }
-
-    /// For region eu-isoe-west-1 with FIPS disabled and DualStack enabled
-    #[test]
-    fn test_14() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("eu-isoe-west-1".to_string())
-            .use_fips(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://arc-region-switch.eu-isoe-west-1.cloud.adc-e.uk");
-        assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://arc-region-switch.eu-isoe-west-1.cloud.adc-e.uk")
-                .build()
-        );
-    }
-
-    /// For region us-isof-south-1 with FIPS enabled and DualStack enabled
-    #[test]
-    fn test_15() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("us-isof-south-1".to_string())
-            .use_fips(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://arc-region-switch-fips.us-isof-south-1.csp.hci.ic.gov");
-        assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://arc-region-switch-fips.us-isof-south-1.csp.hci.ic.gov")
-                .build()
-        );
-    }
-
-    /// For region us-isof-south-1 with FIPS disabled and DualStack enabled
-    #[test]
-    fn test_16() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("us-isof-south-1".to_string())
-            .use_fips(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://arc-region-switch.us-isof-south-1.csp.hci.ic.gov");
-        assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://arc-region-switch.us-isof-south-1.csp.hci.ic.gov")
-                .build()
-        );
-    }
-
     /// Missing region
     #[test]
-    fn test_17() {
+    fn test_9() {
         let params = crate::config::endpoint::Params::builder().build().expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -316,7 +164,7 @@ mod test {
 
     /// Control plane operation with DualStack in us-west-2 routes to us-east-1 DualStack endpoint
     #[test]
-    fn test_18() {
+    fn test_10() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .use_control_plane_endpoint(true)
@@ -346,7 +194,7 @@ mod test {
 
     /// Control plane operation with endpoint set in us-east-1 routes to provided endpoint
     #[test]
-    fn test_19() {
+    fn test_11() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_control_plane_endpoint(true)
@@ -364,7 +212,7 @@ mod test {
 
     /// Control plane operation with endpoint set in us-west-2 routes to provided endpoint
     #[test]
-    fn test_20() {
+    fn test_12() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .use_control_plane_endpoint(true)
@@ -382,7 +230,7 @@ mod test {
 
     /// Control plane operation in us-west-2 (standard partition) routes to us-east-1
     #[test]
-    fn test_21() {
+    fn test_13() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .use_control_plane_endpoint(true)
@@ -412,7 +260,7 @@ mod test {
 
     /// Control plane operation in cn-north-1 (China partition) routes to cn-north-1 with China DNS suffix
     #[test]
-    fn test_22() {
+    fn test_14() {
         let params = crate::config::endpoint::Params::builder()
             .region("cn-north-1".to_string())
             .use_control_plane_endpoint(true)
@@ -442,7 +290,7 @@ mod test {
 
     /// Control plane operation in cn-northwest-1 (China partition) routes to cn-north-1 with China DNS suffix
     #[test]
-    fn test_23() {
+    fn test_15() {
         let params = crate::config::endpoint::Params::builder()
             .region("cn-northwest-1".to_string())
             .use_control_plane_endpoint(true)
@@ -472,7 +320,7 @@ mod test {
 
     /// Control plane operation in us-gov-west-1 (GovCloud partition) routes to us-gov-west-1 with GovCloud DNS suffix
     #[test]
-    fn test_24() {
+    fn test_16() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-gov-west-1".to_string())
             .use_control_plane_endpoint(true)
@@ -502,7 +350,7 @@ mod test {
 
     /// Control plane operation in us-gov-east-1 (GovCloud partition) routes to us-gov-west-1 with GovCloud DNS suffix
     #[test]
-    fn test_25() {
+    fn test_17() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-gov-east-1".to_string())
             .use_control_plane_endpoint(true)
@@ -532,7 +380,7 @@ mod test {
 
     /// Control plane operation with FIPS in us-west-2 routes to us-east-1 FIPS endpoint
     #[test]
-    fn test_26() {
+    fn test_18() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .use_control_plane_endpoint(true)
@@ -563,7 +411,7 @@ mod test {
 
     /// Control plane operation with FIPS in us-east-1 routes to us-east-1 FIPS endpoint
     #[test]
-    fn test_27() {
+    fn test_19() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_control_plane_endpoint(true)
@@ -594,7 +442,7 @@ mod test {
 
     /// Control plane operation with FIPS in CN returns an error
     #[test]
-    fn test_28() {
+    fn test_20() {
         let params = crate::config::endpoint::Params::builder()
             .region("cn-north-1".to_string())
             .use_control_plane_endpoint(true)
@@ -609,7 +457,7 @@ mod test {
 
     /// Control plane operation with endpoint set using FIPS in us-east-1 errors
     #[test]
-    fn test_29() {
+    fn test_21() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_control_plane_endpoint(true)
@@ -625,7 +473,7 @@ mod test {
 
     /// Control plane operation with endpoint set using FIPS in us-west-2 routes to provided endpoint
     #[test]
-    fn test_30() {
+    fn test_22() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .use_control_plane_endpoint(true)

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteNamespace`](crate::operation::delete_namespace::builders::DeleteNamespaceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::delete_namespace::builders::DeleteNamespaceFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_namespace::builders::DeleteNamespaceFluentBuilder::set_id):<br>required: **true**<br><p>The ID of the namespace that you want to delete.</p><br>
+    ///   - [`id(impl Into<String>)`](crate::operation::delete_namespace::builders::DeleteNamespaceFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_namespace::builders::DeleteNamespaceFluentBuilder::set_id):<br>required: **true**<br><p>The ID or Amazon Resource Name (ARN) of the namespace that you want to delete.</p><br>
     /// - On success, responds with [`DeleteNamespaceOutput`](crate::operation::delete_namespace::DeleteNamespaceOutput) with field(s):
     ///   - [`operation_id(Option<String>)`](crate::operation::delete_namespace::DeleteNamespaceOutput::operation_id): <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
     /// - On failure, responds with [`SdkError<DeleteNamespaceError>`](crate::operation::delete_namespace::DeleteNamespaceError)

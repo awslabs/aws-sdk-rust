@@ -9,6 +9,8 @@ pub struct UpdateContributorInsightsOutput {
     pub index_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of contributor insights</p>
     pub contributor_insights_status: ::std::option::Option<crate::types::ContributorInsightsStatus>,
+    /// <p>The updated mode of CloudWatch Contributor Insights that determines whether to monitor all access and throttled events or to track throttled events exclusively.</p>
+    pub contributor_insights_mode: ::std::option::Option<crate::types::ContributorInsightsMode>,
     _request_id: Option<String>,
 }
 impl UpdateContributorInsightsOutput {
@@ -23,6 +25,10 @@ impl UpdateContributorInsightsOutput {
     /// <p>The status of contributor insights</p>
     pub fn contributor_insights_status(&self) -> ::std::option::Option<&crate::types::ContributorInsightsStatus> {
         self.contributor_insights_status.as_ref()
+    }
+    /// <p>The updated mode of CloudWatch Contributor Insights that determines whether to monitor all access and throttled events or to track throttled events exclusively.</p>
+    pub fn contributor_insights_mode(&self) -> ::std::option::Option<&crate::types::ContributorInsightsMode> {
+        self.contributor_insights_mode.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateContributorInsightsOutput {
@@ -44,6 +50,7 @@ pub struct UpdateContributorInsightsOutputBuilder {
     pub(crate) table_name: ::std::option::Option<::std::string::String>,
     pub(crate) index_name: ::std::option::Option<::std::string::String>,
     pub(crate) contributor_insights_status: ::std::option::Option<crate::types::ContributorInsightsStatus>,
+    pub(crate) contributor_insights_mode: ::std::option::Option<crate::types::ContributorInsightsMode>,
     _request_id: Option<String>,
 }
 impl UpdateContributorInsightsOutputBuilder {
@@ -89,6 +96,20 @@ impl UpdateContributorInsightsOutputBuilder {
     pub fn get_contributor_insights_status(&self) -> &::std::option::Option<crate::types::ContributorInsightsStatus> {
         &self.contributor_insights_status
     }
+    /// <p>The updated mode of CloudWatch Contributor Insights that determines whether to monitor all access and throttled events or to track throttled events exclusively.</p>
+    pub fn contributor_insights_mode(mut self, input: crate::types::ContributorInsightsMode) -> Self {
+        self.contributor_insights_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The updated mode of CloudWatch Contributor Insights that determines whether to monitor all access and throttled events or to track throttled events exclusively.</p>
+    pub fn set_contributor_insights_mode(mut self, input: ::std::option::Option<crate::types::ContributorInsightsMode>) -> Self {
+        self.contributor_insights_mode = input;
+        self
+    }
+    /// <p>The updated mode of CloudWatch Contributor Insights that determines whether to monitor all access and throttled events or to track throttled events exclusively.</p>
+    pub fn get_contributor_insights_mode(&self) -> &::std::option::Option<crate::types::ContributorInsightsMode> {
+        &self.contributor_insights_mode
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -104,6 +125,7 @@ impl UpdateContributorInsightsOutputBuilder {
             table_name: self.table_name,
             index_name: self.index_name,
             contributor_insights_status: self.contributor_insights_status,
+            contributor_insights_mode: self.contributor_insights_mode,
             _request_id: self._request_id,
         }
     }

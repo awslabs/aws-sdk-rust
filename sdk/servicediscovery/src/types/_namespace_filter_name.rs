@@ -14,6 +14,7 @@
 /// match namespacefiltername {
 ///     NamespaceFilterName::HttpName => { /* ... */ },
 ///     NamespaceFilterName::Name => { /* ... */ },
+///     NamespaceFilterName::ResourceOwner => { /* ... */ },
 ///     NamespaceFilterName::Type => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -48,6 +49,8 @@ pub enum NamespaceFilterName {
     #[allow(missing_docs)] // documentation missing in model
     Name,
     #[allow(missing_docs)] // documentation missing in model
+    ResourceOwner,
+    #[allow(missing_docs)] // documentation missing in model
     Type,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -58,6 +61,7 @@ impl ::std::convert::From<&str> for NamespaceFilterName {
         match s {
             "HTTP_NAME" => NamespaceFilterName::HttpName,
             "NAME" => NamespaceFilterName::Name,
+            "RESOURCE_OWNER" => NamespaceFilterName::ResourceOwner,
             "TYPE" => NamespaceFilterName::Type,
             other => NamespaceFilterName::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -76,13 +80,14 @@ impl NamespaceFilterName {
         match self {
             NamespaceFilterName::HttpName => "HTTP_NAME",
             NamespaceFilterName::Name => "NAME",
+            NamespaceFilterName::ResourceOwner => "RESOURCE_OWNER",
             NamespaceFilterName::Type => "TYPE",
             NamespaceFilterName::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["HTTP_NAME", "NAME", "TYPE"]
+        &["HTTP_NAME", "NAME", "RESOURCE_OWNER", "TYPE"]
     }
 }
 impl ::std::convert::AsRef<str> for NamespaceFilterName {
@@ -107,6 +112,7 @@ impl ::std::fmt::Display for NamespaceFilterName {
         match self {
             NamespaceFilterName::HttpName => write!(f, "HTTP_NAME"),
             NamespaceFilterName::Name => write!(f, "NAME"),
+            NamespaceFilterName::ResourceOwner => write!(f, "RESOURCE_OWNER"),
             NamespaceFilterName::Type => write!(f, "TYPE"),
             NamespaceFilterName::Unknown(value) => write!(f, "{}", value),
         }

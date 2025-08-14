@@ -163,6 +163,13 @@ pub(crate) fn de_update_virtual_interface_attributes(
                             .transpose()?,
                     );
                 }
+                "asnLong" => {
+                    builder = builder.set_asn_long(
+                        ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                            .map(i64::try_from)
+                            .transpose()?,
+                    );
+                }
                 "amazonSideAsn" => {
                     builder = builder.set_amazon_side_asn(
                         ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?

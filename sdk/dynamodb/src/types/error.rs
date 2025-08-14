@@ -11,6 +11,8 @@ pub use crate::types::error::_internal_server_error::InternalServerError;
 
 pub use crate::types::error::_transaction_conflict_exception::TransactionConflictException;
 
+pub use crate::types::error::_throttling_exception::ThrottlingException;
+
 pub use crate::types::error::_request_limit_exceeded::RequestLimitExceeded;
 
 pub use crate::types::error::_replicated_write_conflict_exception::ReplicatedWriteConflictException;
@@ -128,6 +130,8 @@ mod _table_already_exists_exception;
 mod _table_in_use_exception;
 
 mod _table_not_found_exception;
+
+mod _throttling_exception;
 
 mod _transaction_canceled_exception;
 

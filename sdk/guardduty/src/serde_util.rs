@@ -35,11 +35,29 @@ pub(crate) fn create_publishing_destination_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_threat_entity_set_output_output_correct_errors(
+    mut builder: crate::operation::create_threat_entity_set::builders::CreateThreatEntitySetOutputBuilder,
+) -> crate::operation::create_threat_entity_set::builders::CreateThreatEntitySetOutputBuilder {
+    if builder.threat_entity_set_id.is_none() {
+        builder.threat_entity_set_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn create_threat_intel_set_output_output_correct_errors(
     mut builder: crate::operation::create_threat_intel_set::builders::CreateThreatIntelSetOutputBuilder,
 ) -> crate::operation::create_threat_intel_set::builders::CreateThreatIntelSetOutputBuilder {
     if builder.threat_intel_set_id.is_none() {
         builder.threat_intel_set_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn create_trusted_entity_set_output_output_correct_errors(
+    mut builder: crate::operation::create_trusted_entity_set::builders::CreateTrustedEntitySetOutputBuilder,
+) -> crate::operation::create_trusted_entity_set::builders::CreateTrustedEntitySetOutputBuilder {
+    if builder.trusted_entity_set_id.is_none() {
+        builder.trusted_entity_set_id = Some(Default::default())
     }
     builder
 }
@@ -239,6 +257,24 @@ pub(crate) fn get_members_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_threat_entity_set_output_output_correct_errors(
+    mut builder: crate::operation::get_threat_entity_set::builders::GetThreatEntitySetOutputBuilder,
+) -> crate::operation::get_threat_entity_set::builders::GetThreatEntitySetOutputBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.format.is_none() {
+        builder.format = "no value was set".parse::<crate::types::ThreatEntitySetFormat>().ok()
+    }
+    if builder.location.is_none() {
+        builder.location = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::ThreatEntitySetStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn get_threat_intel_set_output_output_correct_errors(
     mut builder: crate::operation::get_threat_intel_set::builders::GetThreatIntelSetOutputBuilder,
 ) -> crate::operation::get_threat_intel_set::builders::GetThreatIntelSetOutputBuilder {
@@ -253,6 +289,24 @@ pub(crate) fn get_threat_intel_set_output_output_correct_errors(
     }
     if builder.status.is_none() {
         builder.status = "no value was set".parse::<crate::types::ThreatIntelSetStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn get_trusted_entity_set_output_output_correct_errors(
+    mut builder: crate::operation::get_trusted_entity_set::builders::GetTrustedEntitySetOutputBuilder,
+) -> crate::operation::get_trusted_entity_set::builders::GetTrustedEntitySetOutputBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.format.is_none() {
+        builder.format = "no value was set".parse::<crate::types::TrustedEntitySetFormat>().ok()
+    }
+    if builder.location.is_none() {
+        builder.location = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::TrustedEntitySetStatus>().ok()
     }
     builder
 }
@@ -320,11 +374,29 @@ pub(crate) fn list_publishing_destinations_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_threat_entity_sets_output_output_correct_errors(
+    mut builder: crate::operation::list_threat_entity_sets::builders::ListThreatEntitySetsOutputBuilder,
+) -> crate::operation::list_threat_entity_sets::builders::ListThreatEntitySetsOutputBuilder {
+    if builder.threat_entity_set_ids.is_none() {
+        builder.threat_entity_set_ids = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_threat_intel_sets_output_output_correct_errors(
     mut builder: crate::operation::list_threat_intel_sets::builders::ListThreatIntelSetsOutputBuilder,
 ) -> crate::operation::list_threat_intel_sets::builders::ListThreatIntelSetsOutputBuilder {
     if builder.threat_intel_set_ids.is_none() {
         builder.threat_intel_set_ids = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_trusted_entity_sets_output_output_correct_errors(
+    mut builder: crate::operation::list_trusted_entity_sets::builders::ListTrustedEntitySetsOutputBuilder,
+) -> crate::operation::list_trusted_entity_sets::builders::ListTrustedEntitySetsOutputBuilder {
+    if builder.trusted_entity_set_ids.is_none() {
+        builder.trusted_entity_set_ids = Some(Default::default())
     }
     builder
 }

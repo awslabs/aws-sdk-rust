@@ -9,6 +9,8 @@ pub struct UpdateContributorInsightsInput {
     pub index_name: ::std::option::Option<::std::string::String>,
     /// <p>Represents the contributor insights action.</p>
     pub contributor_insights_action: ::std::option::Option<crate::types::ContributorInsightsAction>,
+    /// <p>Specifies whether to track all access and throttled events or throttled events only for the DynamoDB table or index.</p>
+    pub contributor_insights_mode: ::std::option::Option<crate::types::ContributorInsightsMode>,
 }
 impl UpdateContributorInsightsInput {
     /// <p>The name of the table. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</p>
@@ -22,6 +24,10 @@ impl UpdateContributorInsightsInput {
     /// <p>Represents the contributor insights action.</p>
     pub fn contributor_insights_action(&self) -> ::std::option::Option<&crate::types::ContributorInsightsAction> {
         self.contributor_insights_action.as_ref()
+    }
+    /// <p>Specifies whether to track all access and throttled events or throttled events only for the DynamoDB table or index.</p>
+    pub fn contributor_insights_mode(&self) -> ::std::option::Option<&crate::types::ContributorInsightsMode> {
+        self.contributor_insights_mode.as_ref()
     }
 }
 impl UpdateContributorInsightsInput {
@@ -38,6 +44,7 @@ pub struct UpdateContributorInsightsInputBuilder {
     pub(crate) table_name: ::std::option::Option<::std::string::String>,
     pub(crate) index_name: ::std::option::Option<::std::string::String>,
     pub(crate) contributor_insights_action: ::std::option::Option<crate::types::ContributorInsightsAction>,
+    pub(crate) contributor_insights_mode: ::std::option::Option<crate::types::ContributorInsightsMode>,
 }
 impl UpdateContributorInsightsInputBuilder {
     /// <p>The name of the table. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</p>
@@ -84,6 +91,20 @@ impl UpdateContributorInsightsInputBuilder {
     pub fn get_contributor_insights_action(&self) -> &::std::option::Option<crate::types::ContributorInsightsAction> {
         &self.contributor_insights_action
     }
+    /// <p>Specifies whether to track all access and throttled events or throttled events only for the DynamoDB table or index.</p>
+    pub fn contributor_insights_mode(mut self, input: crate::types::ContributorInsightsMode) -> Self {
+        self.contributor_insights_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to track all access and throttled events or throttled events only for the DynamoDB table or index.</p>
+    pub fn set_contributor_insights_mode(mut self, input: ::std::option::Option<crate::types::ContributorInsightsMode>) -> Self {
+        self.contributor_insights_mode = input;
+        self
+    }
+    /// <p>Specifies whether to track all access and throttled events or throttled events only for the DynamoDB table or index.</p>
+    pub fn get_contributor_insights_mode(&self) -> &::std::option::Option<crate::types::ContributorInsightsMode> {
+        &self.contributor_insights_mode
+    }
     /// Consumes the builder and constructs a [`UpdateContributorInsightsInput`](crate::operation::update_contributor_insights::UpdateContributorInsightsInput).
     pub fn build(
         self,
@@ -95,6 +116,7 @@ impl UpdateContributorInsightsInputBuilder {
             table_name: self.table_name,
             index_name: self.index_name,
             contributor_insights_action: self.contributor_insights_action,
+            contributor_insights_mode: self.contributor_insights_mode,
         })
     }
 }

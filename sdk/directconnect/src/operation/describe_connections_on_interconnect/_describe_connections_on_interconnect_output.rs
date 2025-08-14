@@ -5,6 +5,8 @@
 pub struct DescribeConnectionsOnInterconnectOutput {
     /// <p>The connections.</p>
     pub connections: ::std::option::Option<::std::vec::Vec<crate::types::Connection>>,
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeConnectionsOnInterconnectOutput {
@@ -13,6 +15,10 @@ impl DescribeConnectionsOnInterconnectOutput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.connections.is_none()`.
     pub fn connections(&self) -> &[crate::types::Connection] {
         self.connections.as_deref().unwrap_or_default()
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
+        self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeConnectionsOnInterconnectOutput {
@@ -32,6 +38,7 @@ impl DescribeConnectionsOnInterconnectOutput {
 #[non_exhaustive]
 pub struct DescribeConnectionsOnInterconnectOutputBuilder {
     pub(crate) connections: ::std::option::Option<::std::vec::Vec<crate::types::Connection>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeConnectionsOnInterconnectOutputBuilder {
@@ -55,6 +62,20 @@ impl DescribeConnectionsOnInterconnectOutputBuilder {
     pub fn get_connections(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Connection>> {
         &self.connections
     }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.next_token = input;
+        self
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -68,6 +89,7 @@ impl DescribeConnectionsOnInterconnectOutputBuilder {
     pub fn build(self) -> crate::operation::describe_connections_on_interconnect::DescribeConnectionsOnInterconnectOutput {
         crate::operation::describe_connections_on_interconnect::DescribeConnectionsOnInterconnectOutput {
             connections: self.connections,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

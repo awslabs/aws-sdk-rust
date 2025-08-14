@@ -119,8 +119,28 @@ pub(crate) fn reflens_list_publishing_destinations_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_threat_entity_sets_output_output_next_token(
+    input: &crate::operation::list_threat_entity_sets::ListThreatEntitySetsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_threat_intel_sets_output_output_next_token(
     input: &crate::operation::list_threat_intel_sets::ListThreatIntelSetsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_trusted_entity_sets_output_output_next_token(
+    input: &crate::operation::list_trusted_entity_sets::ListTrustedEntitySetsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -192,9 +212,23 @@ pub(crate) fn lens_list_organization_admin_accounts_output_output_admin_accounts
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_list_threat_entity_sets_output_output_threat_entity_set_ids(
+    input: crate::operation::list_threat_entity_sets::ListThreatEntitySetsOutput,
+) -> ::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    let input = input.threat_entity_set_ids?;
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_threat_intel_sets_output_output_threat_intel_set_ids(
     input: crate::operation::list_threat_intel_sets::ListThreatIntelSetsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<::std::string::String>> {
     let input = input.threat_intel_set_ids?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_trusted_entity_sets_output_output_trusted_entity_set_ids(
+    input: crate::operation::list_trusted_entity_sets::ListTrustedEntitySetsOutput,
+) -> ::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    let input = input.trusted_entity_set_ids?;
     ::std::option::Option::Some(input)
 }

@@ -38,5 +38,8 @@ pub fn ser_discover_instances_input_input(
     if let Some(var_12) = &input.health_status {
         object.key("HealthStatus").string(var_12.as_str());
     }
+    if let Some(var_13) = &input.owner_account {
+        object.key("OwnerAccount").string(var_13.as_str());
+    }
     Ok(())
 }

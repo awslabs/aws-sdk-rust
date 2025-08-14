@@ -18,6 +18,9 @@
 ///     Ec2InstanceConnectEndpointState::DeleteComplete => { /* ... */ },
 ///     Ec2InstanceConnectEndpointState::DeleteFailed => { /* ... */ },
 ///     Ec2InstanceConnectEndpointState::DeleteInProgress => { /* ... */ },
+///     Ec2InstanceConnectEndpointState::UpdateComplete => { /* ... */ },
+///     Ec2InstanceConnectEndpointState::UpdateFailed => { /* ... */ },
+///     Ec2InstanceConnectEndpointState::UpdateInProgress => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -58,6 +61,12 @@ pub enum Ec2InstanceConnectEndpointState {
     DeleteFailed,
     #[allow(missing_docs)] // documentation missing in model
     DeleteInProgress,
+    #[allow(missing_docs)] // documentation missing in model
+    UpdateComplete,
+    #[allow(missing_docs)] // documentation missing in model
+    UpdateFailed,
+    #[allow(missing_docs)] // documentation missing in model
+    UpdateInProgress,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -71,6 +80,9 @@ impl ::std::convert::From<&str> for Ec2InstanceConnectEndpointState {
             "delete-complete" => Ec2InstanceConnectEndpointState::DeleteComplete,
             "delete-failed" => Ec2InstanceConnectEndpointState::DeleteFailed,
             "delete-in-progress" => Ec2InstanceConnectEndpointState::DeleteInProgress,
+            "update-complete" => Ec2InstanceConnectEndpointState::UpdateComplete,
+            "update-failed" => Ec2InstanceConnectEndpointState::UpdateFailed,
+            "update-in-progress" => Ec2InstanceConnectEndpointState::UpdateInProgress,
             other => Ec2InstanceConnectEndpointState::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -92,6 +104,9 @@ impl Ec2InstanceConnectEndpointState {
             Ec2InstanceConnectEndpointState::DeleteComplete => "delete-complete",
             Ec2InstanceConnectEndpointState::DeleteFailed => "delete-failed",
             Ec2InstanceConnectEndpointState::DeleteInProgress => "delete-in-progress",
+            Ec2InstanceConnectEndpointState::UpdateComplete => "update-complete",
+            Ec2InstanceConnectEndpointState::UpdateFailed => "update-failed",
+            Ec2InstanceConnectEndpointState::UpdateInProgress => "update-in-progress",
             Ec2InstanceConnectEndpointState::Unknown(value) => value.as_str(),
         }
     }
@@ -104,6 +119,9 @@ impl Ec2InstanceConnectEndpointState {
             "delete-complete",
             "delete-failed",
             "delete-in-progress",
+            "update-complete",
+            "update-failed",
+            "update-in-progress",
         ]
     }
 }
@@ -133,6 +151,9 @@ impl ::std::fmt::Display for Ec2InstanceConnectEndpointState {
             Ec2InstanceConnectEndpointState::DeleteComplete => write!(f, "delete-complete"),
             Ec2InstanceConnectEndpointState::DeleteFailed => write!(f, "delete-failed"),
             Ec2InstanceConnectEndpointState::DeleteInProgress => write!(f, "delete-in-progress"),
+            Ec2InstanceConnectEndpointState::UpdateComplete => write!(f, "update-complete"),
+            Ec2InstanceConnectEndpointState::UpdateFailed => write!(f, "update-failed"),
+            Ec2InstanceConnectEndpointState::UpdateInProgress => write!(f, "update-in-progress"),
             Ec2InstanceConnectEndpointState::Unknown(value) => write!(f, "{}", value),
         }
     }

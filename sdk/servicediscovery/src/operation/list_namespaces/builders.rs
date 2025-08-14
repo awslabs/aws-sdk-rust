@@ -22,7 +22,7 @@ impl crate::operation::list_namespaces::builders::ListNamespacesInputBuilder {
 }
 /// Fluent builder constructing a request to `ListNamespaces`.
 ///
-/// <p>Lists summary information about the namespaces that were created by the current Amazon Web Services account.</p>
+/// <p>Lists summary information about the namespaces that were created by the current Amazon Web Services account and shared with the current Amazon Web Services account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListNamespacesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -4,8 +4,11 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`connection_id(impl Into<String>)`](crate::operation::describe_connections::builders::DescribeConnectionsFluentBuilder::connection_id) / [`set_connection_id(Option<String>)`](crate::operation::describe_connections::builders::DescribeConnectionsFluentBuilder::set_connection_id):<br>required: **false**<br><p>The ID of the connection.</p><br>
+    ///   - [`max_results(i32)`](crate::operation::describe_connections::builders::DescribeConnectionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_connections::builders::DescribeConnectionsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p> <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are returned.</p><br>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::describe_connections::builders::DescribeConnectionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_connections::builders::DescribeConnectionsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next page of results.</p><br>
     /// - On success, responds with [`DescribeConnectionsOutput`](crate::operation::describe_connections::DescribeConnectionsOutput) with field(s):
     ///   - [`connections(Option<Vec::<Connection>>)`](crate::operation::describe_connections::DescribeConnectionsOutput::connections): <p>The connections.</p>
+    ///   - [`next_token(Option<String>)`](crate::operation::describe_connections::DescribeConnectionsOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<DescribeConnectionsError>`](crate::operation::describe_connections::DescribeConnectionsError)
     pub fn describe_connections(&self) -> crate::operation::describe_connections::builders::DescribeConnectionsFluentBuilder {
         crate::operation::describe_connections::builders::DescribeConnectionsFluentBuilder::new(self.handle.clone())

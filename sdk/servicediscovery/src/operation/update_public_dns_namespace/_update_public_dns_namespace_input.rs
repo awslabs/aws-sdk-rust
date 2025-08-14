@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdatePublicDnsNamespaceInput {
-    /// <p>The ID of the namespace being updated.</p>
+    /// <p>The ID or Amazon Resource Name (ARN) of the namespace being updated.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>A unique string that identifies the request and that allows failed <code>UpdatePublicDnsNamespace</code> requests to be retried without the risk of running the operation twice. <code>UpdaterRequestId</code> can be any unique string (for example, a date/timestamp).</p>
     pub updater_request_id: ::std::option::Option<::std::string::String>,
@@ -11,7 +11,7 @@ pub struct UpdatePublicDnsNamespaceInput {
     pub namespace: ::std::option::Option<crate::types::PublicDnsNamespaceChange>,
 }
 impl UpdatePublicDnsNamespaceInput {
-    /// <p>The ID of the namespace being updated.</p>
+    /// <p>The ID or Amazon Resource Name (ARN) of the namespace being updated.</p>
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -40,18 +40,18 @@ pub struct UpdatePublicDnsNamespaceInputBuilder {
     pub(crate) namespace: ::std::option::Option<crate::types::PublicDnsNamespaceChange>,
 }
 impl UpdatePublicDnsNamespaceInputBuilder {
-    /// <p>The ID of the namespace being updated.</p>
+    /// <p>The ID or Amazon Resource Name (ARN) of the namespace being updated.</p>
     /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the namespace being updated.</p>
+    /// <p>The ID or Amazon Resource Name (ARN) of the namespace being updated.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
-    /// <p>The ID of the namespace being updated.</p>
+    /// <p>The ID or Amazon Resource Name (ARN) of the namespace being updated.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }

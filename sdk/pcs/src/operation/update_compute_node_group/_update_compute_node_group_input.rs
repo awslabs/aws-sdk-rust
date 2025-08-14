@@ -19,14 +19,7 @@ pub struct UpdateComputeNodeGroupInput {
     pub spot_options: ::std::option::Option<crate::types::SpotOptions>,
     /// <p>Specifies the boundaries of the compute node group auto scaling.</p>
     pub scaling_configuration: ::std::option::Option<crate::types::ScalingConfigurationRequest>,
-    /// <p>The Amazon Resource Name (ARN) of the IAM instance profile used to pass an IAM role when launching EC2 instances. The role contained in your instance profile must have the <code>pcs:RegisterComputeNodeGroupInstance</code> permission. The resource identifier of the ARN must start with <code>AWSPCS</code> or it must have <code>/aws-pcs/</code> in its path.</p>
-    /// <p class="title"><b>Examples</b></p>
-    /// <ul>
-    /// <li>
-    /// <p><code>arn:aws:iam::111122223333:instance-profile/AWSPCS-example-role-1</code></p></li>
-    /// <li>
-    /// <p><code>arn:aws:iam::111122223333:instance-profile/aws-pcs/example-role-2</code></p></li>
-    /// </ul>
+    /// <p>The Amazon Resource Name (ARN) of the IAM instance profile used to pass an IAM role when launching EC2 instances. The role contained in your instance profile must have the <code>pcs:RegisterComputeNodeGroupInstance</code> permission and the role name must start with <code>AWSPCS</code> or must have the path <code>/aws-pcs/</code>. For more information, see <a href="https://docs.aws.amazon.com/pcs/latest/userguide/security-instance-profiles.html">IAM instance profiles for PCS</a> in the <i>PCS User Guide</i>.</p>
     pub iam_instance_profile_arn: ::std::option::Option<::std::string::String>,
     /// <p>Additional options related to the Slurm scheduler.</p>
     pub slurm_configuration: ::std::option::Option<crate::types::UpdateComputeNodeGroupSlurmConfigurationRequest>,
@@ -68,14 +61,7 @@ impl UpdateComputeNodeGroupInput {
     pub fn scaling_configuration(&self) -> ::std::option::Option<&crate::types::ScalingConfigurationRequest> {
         self.scaling_configuration.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM instance profile used to pass an IAM role when launching EC2 instances. The role contained in your instance profile must have the <code>pcs:RegisterComputeNodeGroupInstance</code> permission. The resource identifier of the ARN must start with <code>AWSPCS</code> or it must have <code>/aws-pcs/</code> in its path.</p>
-    /// <p class="title"><b>Examples</b></p>
-    /// <ul>
-    /// <li>
-    /// <p><code>arn:aws:iam::111122223333:instance-profile/AWSPCS-example-role-1</code></p></li>
-    /// <li>
-    /// <p><code>arn:aws:iam::111122223333:instance-profile/aws-pcs/example-role-2</code></p></li>
-    /// </ul>
+    /// <p>The Amazon Resource Name (ARN) of the IAM instance profile used to pass an IAM role when launching EC2 instances. The role contained in your instance profile must have the <code>pcs:RegisterComputeNodeGroupInstance</code> permission and the role name must start with <code>AWSPCS</code> or must have the path <code>/aws-pcs/</code>. For more information, see <a href="https://docs.aws.amazon.com/pcs/latest/userguide/security-instance-profiles.html">IAM instance profiles for PCS</a> in the <i>PCS User Guide</i>.</p>
     pub fn iam_instance_profile_arn(&self) -> ::std::option::Option<&str> {
         self.iam_instance_profile_arn.as_deref()
     }
@@ -232,38 +218,17 @@ impl UpdateComputeNodeGroupInputBuilder {
     pub fn get_scaling_configuration(&self) -> &::std::option::Option<crate::types::ScalingConfigurationRequest> {
         &self.scaling_configuration
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM instance profile used to pass an IAM role when launching EC2 instances. The role contained in your instance profile must have the <code>pcs:RegisterComputeNodeGroupInstance</code> permission. The resource identifier of the ARN must start with <code>AWSPCS</code> or it must have <code>/aws-pcs/</code> in its path.</p>
-    /// <p class="title"><b>Examples</b></p>
-    /// <ul>
-    /// <li>
-    /// <p><code>arn:aws:iam::111122223333:instance-profile/AWSPCS-example-role-1</code></p></li>
-    /// <li>
-    /// <p><code>arn:aws:iam::111122223333:instance-profile/aws-pcs/example-role-2</code></p></li>
-    /// </ul>
+    /// <p>The Amazon Resource Name (ARN) of the IAM instance profile used to pass an IAM role when launching EC2 instances. The role contained in your instance profile must have the <code>pcs:RegisterComputeNodeGroupInstance</code> permission and the role name must start with <code>AWSPCS</code> or must have the path <code>/aws-pcs/</code>. For more information, see <a href="https://docs.aws.amazon.com/pcs/latest/userguide/security-instance-profiles.html">IAM instance profiles for PCS</a> in the <i>PCS User Guide</i>.</p>
     pub fn iam_instance_profile_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iam_instance_profile_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM instance profile used to pass an IAM role when launching EC2 instances. The role contained in your instance profile must have the <code>pcs:RegisterComputeNodeGroupInstance</code> permission. The resource identifier of the ARN must start with <code>AWSPCS</code> or it must have <code>/aws-pcs/</code> in its path.</p>
-    /// <p class="title"><b>Examples</b></p>
-    /// <ul>
-    /// <li>
-    /// <p><code>arn:aws:iam::111122223333:instance-profile/AWSPCS-example-role-1</code></p></li>
-    /// <li>
-    /// <p><code>arn:aws:iam::111122223333:instance-profile/aws-pcs/example-role-2</code></p></li>
-    /// </ul>
+    /// <p>The Amazon Resource Name (ARN) of the IAM instance profile used to pass an IAM role when launching EC2 instances. The role contained in your instance profile must have the <code>pcs:RegisterComputeNodeGroupInstance</code> permission and the role name must start with <code>AWSPCS</code> or must have the path <code>/aws-pcs/</code>. For more information, see <a href="https://docs.aws.amazon.com/pcs/latest/userguide/security-instance-profiles.html">IAM instance profiles for PCS</a> in the <i>PCS User Guide</i>.</p>
     pub fn set_iam_instance_profile_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.iam_instance_profile_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM instance profile used to pass an IAM role when launching EC2 instances. The role contained in your instance profile must have the <code>pcs:RegisterComputeNodeGroupInstance</code> permission. The resource identifier of the ARN must start with <code>AWSPCS</code> or it must have <code>/aws-pcs/</code> in its path.</p>
-    /// <p class="title"><b>Examples</b></p>
-    /// <ul>
-    /// <li>
-    /// <p><code>arn:aws:iam::111122223333:instance-profile/AWSPCS-example-role-1</code></p></li>
-    /// <li>
-    /// <p><code>arn:aws:iam::111122223333:instance-profile/aws-pcs/example-role-2</code></p></li>
-    /// </ul>
+    /// <p>The Amazon Resource Name (ARN) of the IAM instance profile used to pass an IAM role when launching EC2 instances. The role contained in your instance profile must have the <code>pcs:RegisterComputeNodeGroupInstance</code> permission and the role name must start with <code>AWSPCS</code> or must have the path <code>/aws-pcs/</code>. For more information, see <a href="https://docs.aws.amazon.com/pcs/latest/userguide/security-instance-profiles.html">IAM instance profiles for PCS</a> in the <i>PCS User Guide</i>.</p>
     pub fn get_iam_instance_profile_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.iam_instance_profile_arn
     }

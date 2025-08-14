@@ -99,6 +99,8 @@ pub use crate::types::_update_global_secondary_index_action::UpdateGlobalSeconda
 
 pub use crate::types::_update_kinesis_streaming_configuration::UpdateKinesisStreamingConfigurationBuilder;
 
+pub use crate::types::_throttling_reason::ThrottlingReasonBuilder;
+
 pub use crate::types::_item_collection_metrics::ItemCollectionMetricsBuilder;
 
 pub use crate::types::_consumed_capacity::ConsumedCapacityBuilder;

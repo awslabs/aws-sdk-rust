@@ -139,6 +139,18 @@ pub use crate::types::_application::Application;
 
 pub use crate::types::_workspace_image_ingestion_process::WorkspaceImageIngestionProcess;
 
+pub use crate::types::_custom_workspace_image_import_state::CustomWorkspaceImageImportState;
+
+pub use crate::types::_os_version::OsVersion;
+
+pub use crate::types::_platform::Platform;
+
+pub use crate::types::_image_source_identifier::ImageSourceIdentifier;
+
+pub use crate::types::_custom_image_protocol::CustomImageProtocol;
+
+pub use crate::types::_image_compute_type::ImageComputeType;
+
 pub use crate::types::_default_client_branding_attributes::DefaultClientBrandingAttributes;
 
 pub use crate::types::_ios_client_branding_attributes::IosClientBrandingAttributes;
@@ -244,6 +256,8 @@ pub use crate::types::_workspaces_ip_group::WorkspacesIpGroup;
 pub use crate::types::_image_resource_association::ImageResourceAssociation;
 
 pub use crate::types::_image_associated_resource_type::ImageAssociatedResourceType;
+
+pub use crate::types::_custom_workspace_image_import_error_details::CustomWorkspaceImageImportErrorDetails;
 
 pub use crate::types::_connection_alias::ConnectionAlias;
 
@@ -375,6 +389,12 @@ mod _connection_alias_state;
 
 mod _connection_state;
 
+mod _custom_image_protocol;
+
+mod _custom_workspace_image_import_error_details;
+
+mod _custom_workspace_image_import_state;
+
 mod _data_replication;
 
 mod _data_replication_settings;
@@ -425,9 +445,13 @@ mod _idc_config;
 
 mod _image_associated_resource_type;
 
+mod _image_compute_type;
+
 mod _image_permission;
 
 mod _image_resource_association;
+
+mod _image_source_identifier;
 
 mod _image_type;
 
@@ -457,7 +481,11 @@ mod _operating_system_name;
 
 mod _operating_system_type;
 
+mod _os_version;
+
 mod _pending_create_standby_workspaces_request;
+
+mod _platform;
 
 mod _pools_running_mode;
 

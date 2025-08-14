@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetService`](crate::operation::get_service::builders::GetServiceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::get_service::builders::GetServiceFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_service::builders::GetServiceFluentBuilder::set_id):<br>required: **true**<br><p>The ID of the service that you want to get settings for.</p><br>
+    ///   - [`id(impl Into<String>)`](crate::operation::get_service::builders::GetServiceFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_service::builders::GetServiceFluentBuilder::set_id):<br>required: **true**<br><p>The ID or Amazon Resource Name (ARN) of the service that you want to get settings for. For services created by consumers in a shared namespace, specify the service ARN. For more information about shared namespaces, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html">Cross-account Cloud Map namespace sharing</a> in the <i>Cloud Map Developer Guide</i>.</p><br>
     /// - On success, responds with [`GetServiceOutput`](crate::operation::get_service::GetServiceOutput) with field(s):
     ///   - [`service(Option<Service>)`](crate::operation::get_service::GetServiceOutput::service): <p>A complex type that contains information about the service.</p>
     /// - On failure, responds with [`SdkError<GetServiceError>`](crate::operation::get_service::GetServiceError)

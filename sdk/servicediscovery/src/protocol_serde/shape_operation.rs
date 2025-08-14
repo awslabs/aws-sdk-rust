@@ -21,6 +21,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "OwnerAccount" => {
+                            builder = builder.set_owner_account(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "Type" => {
                             builder = builder.set_type(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

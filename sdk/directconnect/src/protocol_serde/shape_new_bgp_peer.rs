@@ -9,17 +9,23 @@ pub fn ser_new_bgp_peer(
             ::aws_smithy_types::Number::NegInt((input.asn).into()),
         );
     }
-    if let Some(var_1) = &input.auth_key {
-        object.key("authKey").string(var_1.as_str());
+    if let Some(var_1) = &input.asn_long {
+        object.key("asnLong").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
+        );
     }
-    if let Some(var_2) = &input.address_family {
-        object.key("addressFamily").string(var_2.as_str());
+    if let Some(var_2) = &input.auth_key {
+        object.key("authKey").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.amazon_address {
-        object.key("amazonAddress").string(var_3.as_str());
+    if let Some(var_3) = &input.address_family {
+        object.key("addressFamily").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.customer_address {
-        object.key("customerAddress").string(var_4.as_str());
+    if let Some(var_4) = &input.amazon_address {
+        object.key("amazonAddress").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.customer_address {
+        object.key("customerAddress").string(var_5.as_str());
     }
     Ok(())
 }

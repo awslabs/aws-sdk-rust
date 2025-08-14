@@ -52,7 +52,7 @@ pub enum Error {
     /// <p>The operation tried to access a nonexistent resource-based policy.</p>
     /// <p>If you specified an <code>ExpectedRevisionId</code>, it's possible that a policy is present for the resource but its revision ID didn't match the expected value.</p>
     PolicyNotFoundException(crate::types::error::PolicyNotFoundException),
-    /// <p>Your request rate is too high. The Amazon Web Services SDKs for DynamoDB automatically retry requests that receive this exception. Your request is eventually successful, unless your retry queue is too large to finish. Reduce the frequency of requests and use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    /// <p>The request was denied due to request throttling. For detailed information about why the request was throttled and the ARN of the impacted resource, find the <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a> field in the returned exception. The Amazon Web Services SDKs for DynamoDB automatically retry requests that receive this exception. Your request is eventually successful, unless your retry queue is too large to finish. Reduce the frequency of requests and use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     ProvisionedThroughputExceededException(crate::types::error::ProvisionedThroughputExceededException),
     /// <p>The specified replica is already part of the global table.</p>
     ReplicaAlreadyExistsException(crate::types::error::ReplicaAlreadyExistsException),
@@ -60,7 +60,7 @@ pub enum Error {
     ReplicaNotFoundException(crate::types::error::ReplicaNotFoundException),
     /// <p>The request was rejected because one or more items in the request are being modified by a request in another Region.</p>
     ReplicatedWriteConflictException(crate::types::error::ReplicatedWriteConflictException),
-    /// <p>Throughput exceeds the current throughput quota for your account. Please contact <a href="https://aws.amazon.com/support">Amazon Web ServicesSupport</a> to request a quota increase.</p>
+    /// <p>Throughput exceeds the current throughput quota for your account. For detailed information about why the request was throttled and the ARN of the impacted resource, find the <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a> field in the returned exception. Contact <a href="https://aws.amazon.com/support">Amazon Web ServicesSupport</a> to request a quota increase.</p>
     RequestLimitExceeded(crate::types::error::RequestLimitExceeded),
     /// <p>The operation conflicts with the resource's availability. For example:</p>
     /// <ul>
@@ -81,6 +81,8 @@ pub enum Error {
     TableInUseException(crate::types::error::TableInUseException),
     /// <p>A source table with the name <code>TableName</code> does not currently exist within the subscriber's account or the subscriber is operating in the wrong Amazon Web Services Region.</p>
     TableNotFoundException(crate::types::error::TableNotFoundException),
+    /// <p>The request was denied due to request throttling. For detailed information about why the request was throttled and the ARN of the impacted resource, find the <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a> field in the returned exception.</p>
+    ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>The entire transaction request was canceled.</p>
     /// <p>DynamoDB cancels a <code>TransactWriteItems</code> request under the following circumstances:</p>
     /// <ul>
@@ -292,6 +294,7 @@ impl ::std::fmt::Display for Error {
             Error::TableAlreadyExistsException(inner) => inner.fmt(f),
             Error::TableInUseException(inner) => inner.fmt(f),
             Error::TableNotFoundException(inner) => inner.fmt(f),
+            Error::ThrottlingException(inner) => inner.fmt(f),
             Error::TransactionCanceledException(inner) => inner.fmt(f),
             Error::TransactionConflictException(inner) => inner.fmt(f),
             Error::TransactionInProgressException(inner) => inner.fmt(f),
@@ -347,6 +350,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::TableAlreadyExistsException(inner) => inner.meta(),
             Self::TableInUseException(inner) => inner.meta(),
             Self::TableNotFoundException(inner) => inner.meta(),
+            Self::ThrottlingException(inner) => inner.meta(),
             Self::TransactionCanceledException(inner) => inner.meta(),
             Self::TransactionConflictException(inner) => inner.meta(),
             Self::TransactionInProgressException(inner) => inner.meta(),
@@ -375,6 +379,7 @@ impl From<crate::operation::batch_execute_statement::BatchExecuteStatementError>
         match err {
             crate::operation::batch_execute_statement::BatchExecuteStatementError::InternalServerError(inner) => Error::InternalServerError(inner),
             crate::operation::batch_execute_statement::BatchExecuteStatementError::RequestLimitExceeded(inner) => Error::RequestLimitExceeded(inner),
+            crate::operation::batch_execute_statement::BatchExecuteStatementError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::batch_execute_statement::BatchExecuteStatementError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -403,6 +408,7 @@ impl From<crate::operation::batch_get_item::BatchGetItemError> for Error {
             }
             crate::operation::batch_get_item::BatchGetItemError::RequestLimitExceeded(inner) => Error::RequestLimitExceeded(inner),
             crate::operation::batch_get_item::BatchGetItemError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::batch_get_item::BatchGetItemError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::batch_get_item::BatchGetItemError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -437,6 +443,7 @@ impl From<crate::operation::batch_write_item::BatchWriteItemError> for Error {
             }
             crate::operation::batch_write_item::BatchWriteItemError::RequestLimitExceeded(inner) => Error::RequestLimitExceeded(inner),
             crate::operation::batch_write_item::BatchWriteItemError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::batch_write_item::BatchWriteItemError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::batch_write_item::BatchWriteItemError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -579,6 +586,7 @@ impl From<crate::operation::delete_item::DeleteItemError> for Error {
             crate::operation::delete_item::DeleteItemError::ReplicatedWriteConflictException(inner) => Error::ReplicatedWriteConflictException(inner),
             crate::operation::delete_item::DeleteItemError::RequestLimitExceeded(inner) => Error::RequestLimitExceeded(inner),
             crate::operation::delete_item::DeleteItemError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_item::DeleteItemError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::delete_item::DeleteItemError::TransactionConflictException(inner) => Error::TransactionConflictException(inner),
             crate::operation::delete_item::DeleteItemError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -1150,6 +1158,7 @@ impl From<crate::operation::execute_statement::ExecuteStatementError> for Error 
             }
             crate::operation::execute_statement::ExecuteStatementError::RequestLimitExceeded(inner) => Error::RequestLimitExceeded(inner),
             crate::operation::execute_statement::ExecuteStatementError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::execute_statement::ExecuteStatementError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::execute_statement::ExecuteStatementError::TransactionConflictException(inner) => {
                 Error::TransactionConflictException(inner)
             }
@@ -1185,6 +1194,7 @@ impl From<crate::operation::execute_transaction::ExecuteTransactionError> for Er
             crate::operation::execute_transaction::ExecuteTransactionError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
+            crate::operation::execute_transaction::ExecuteTransactionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::execute_transaction::ExecuteTransactionError::TransactionCanceledException(inner) => {
                 Error::TransactionCanceledException(inner)
             }
@@ -1261,6 +1271,7 @@ impl From<crate::operation::get_item::GetItemError> for Error {
             }
             crate::operation::get_item::GetItemError::RequestLimitExceeded(inner) => Error::RequestLimitExceeded(inner),
             crate::operation::get_item::GetItemError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_item::GetItemError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_item::GetItemError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1517,6 +1528,7 @@ impl From<crate::operation::put_item::PutItemError> for Error {
             crate::operation::put_item::PutItemError::ReplicatedWriteConflictException(inner) => Error::ReplicatedWriteConflictException(inner),
             crate::operation::put_item::PutItemError::RequestLimitExceeded(inner) => Error::RequestLimitExceeded(inner),
             crate::operation::put_item::PutItemError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::put_item::PutItemError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::put_item::PutItemError::TransactionConflictException(inner) => Error::TransactionConflictException(inner),
             crate::operation::put_item::PutItemError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -1575,6 +1587,7 @@ impl From<crate::operation::query::QueryError> for Error {
             }
             crate::operation::query::QueryError::RequestLimitExceeded(inner) => Error::RequestLimitExceeded(inner),
             crate::operation::query::QueryError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::query::QueryError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::query::QueryError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1690,6 +1703,7 @@ impl From<crate::operation::scan::ScanError> for Error {
             crate::operation::scan::ScanError::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
             crate::operation::scan::ScanError::RequestLimitExceeded(inner) => Error::RequestLimitExceeded(inner),
             crate::operation::scan::ScanError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::scan::ScanError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::scan::ScanError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1744,6 +1758,7 @@ impl From<crate::operation::transact_get_items::TransactGetItemsError> for Error
             }
             crate::operation::transact_get_items::TransactGetItemsError::RequestLimitExceeded(inner) => Error::RequestLimitExceeded(inner),
             crate::operation::transact_get_items::TransactGetItemsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::transact_get_items::TransactGetItemsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::transact_get_items::TransactGetItemsError::TransactionCanceledException(inner) => {
                 Error::TransactionCanceledException(inner)
             }
@@ -1782,6 +1797,7 @@ impl From<crate::operation::transact_write_items::TransactWriteItemsError> for E
             crate::operation::transact_write_items::TransactWriteItemsError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
+            crate::operation::transact_write_items::TransactWriteItemsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::transact_write_items::TransactWriteItemsError::TransactionCanceledException(inner) => {
                 Error::TransactionCanceledException(inner)
             }
@@ -1989,6 +2005,7 @@ impl From<crate::operation::update_item::UpdateItemError> for Error {
             crate::operation::update_item::UpdateItemError::ReplicatedWriteConflictException(inner) => Error::ReplicatedWriteConflictException(inner),
             crate::operation::update_item::UpdateItemError::RequestLimitExceeded(inner) => Error::RequestLimitExceeded(inner),
             crate::operation::update_item::UpdateItemError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_item::UpdateItemError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_item::UpdateItemError::TransactionConflictException(inner) => Error::TransactionConflictException(inner),
             crate::operation::update_item::UpdateItemError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -2185,6 +2202,7 @@ impl ::std::error::Error for Error {
             Error::TableAlreadyExistsException(inner) => inner.source(),
             Error::TableInUseException(inner) => inner.source(),
             Error::TableNotFoundException(inner) => inner.source(),
+            Error::ThrottlingException(inner) => inner.source(),
             Error::TransactionCanceledException(inner) => inner.source(),
             Error::TransactionConflictException(inner) => inner.source(),
             Error::TransactionInProgressException(inner) => inner.source(),
@@ -2226,6 +2244,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::TableAlreadyExistsException(e) => e.request_id(),
             Self::TableInUseException(e) => e.request_id(),
             Self::TableNotFoundException(e) => e.request_id(),
+            Self::ThrottlingException(e) => e.request_id(),
             Self::TransactionCanceledException(e) => e.request_id(),
             Self::TransactionConflictException(e) => e.request_id(),
             Self::TransactionInProgressException(e) => e.request_id(),

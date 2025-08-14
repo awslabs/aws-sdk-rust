@@ -150,4 +150,18 @@ impl UpdateContributorInsightsFluentBuilder {
     pub fn get_contributor_insights_action(&self) -> &::std::option::Option<crate::types::ContributorInsightsAction> {
         self.inner.get_contributor_insights_action()
     }
+    /// <p>Specifies whether to track all access and throttled events or throttled events only for the DynamoDB table or index.</p>
+    pub fn contributor_insights_mode(mut self, input: crate::types::ContributorInsightsMode) -> Self {
+        self.inner = self.inner.contributor_insights_mode(input);
+        self
+    }
+    /// <p>Specifies whether to track all access and throttled events or throttled events only for the DynamoDB table or index.</p>
+    pub fn set_contributor_insights_mode(mut self, input: ::std::option::Option<crate::types::ContributorInsightsMode>) -> Self {
+        self.inner = self.inner.set_contributor_insights_mode(input);
+        self
+    }
+    /// <p>Specifies whether to track all access and throttled events or throttled events only for the DynamoDB table or index.</p>
+    pub fn get_contributor_insights_mode(&self) -> &::std::option::Option<crate::types::ContributorInsightsMode> {
+        self.inner.get_contributor_insights_mode()
+    }
 }

@@ -1483,6 +1483,46 @@ impl From<crate::operation::describe_connection_alias_permissions::DescribeConne
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_custom_workspace_image_import::DescribeCustomWorkspaceImageImportError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_custom_workspace_image_import::DescribeCustomWorkspaceImageImportError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_custom_workspace_image_import::DescribeCustomWorkspaceImageImportError> for Error {
+    fn from(err: crate::operation::describe_custom_workspace_image_import::DescribeCustomWorkspaceImageImportError) -> Self {
+        match err {
+            crate::operation::describe_custom_workspace_image_import::DescribeCustomWorkspaceImageImportError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::describe_custom_workspace_image_import::DescribeCustomWorkspaceImageImportError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_custom_workspace_image_import::DescribeCustomWorkspaceImageImportError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_image_associations::DescribeImageAssociationsError, R>>
     for Error
 where
@@ -2078,6 +2118,48 @@ impl From<crate::operation::import_client_branding::ImportClientBrandingError> f
                 Error::ResourceNotFoundException(inner)
             }
             crate::operation::import_client_branding::ImportClientBrandingError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::import_custom_workspace_image::ImportCustomWorkspaceImageError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::import_custom_workspace_image::ImportCustomWorkspaceImageError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::import_custom_workspace_image::ImportCustomWorkspaceImageError> for Error {
+    fn from(err: crate::operation::import_custom_workspace_image::ImportCustomWorkspaceImageError) -> Self {
+        match err {
+            crate::operation::import_custom_workspace_image::ImportCustomWorkspaceImageError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::import_custom_workspace_image::ImportCustomWorkspaceImageError::InvalidParameterValuesException(inner) => {
+                Error::InvalidParameterValuesException(inner)
+            }
+            crate::operation::import_custom_workspace_image::ImportCustomWorkspaceImageError::OperationNotSupportedException(inner) => {
+                Error::OperationNotSupportedException(inner)
+            }
+            crate::operation::import_custom_workspace_image::ImportCustomWorkspaceImageError::ResourceAlreadyExistsException(inner) => {
+                Error::ResourceAlreadyExistsException(inner)
+            }
+            crate::operation::import_custom_workspace_image::ImportCustomWorkspaceImageError::ResourceLimitExceededException(inner) => {
+                Error::ResourceLimitExceededException(inner)
+            }
+            crate::operation::import_custom_workspace_image::ImportCustomWorkspaceImageError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::import_custom_workspace_image::ImportCustomWorkspaceImageError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

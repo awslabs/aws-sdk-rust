@@ -3,6 +3,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListInstancesOutput {
+    /// <p>The ID of the Amazon Web Services account that created the namespace that contains the specified service. If this isn't your account ID, it's the ID of the account that shared the namespace with your account.</p>
+    pub resource_owner: ::std::option::Option<::std::string::String>,
     /// <p>Summary information about the instances that are associated with the specified service.</p>
     pub instances: ::std::option::Option<::std::vec::Vec<crate::types::InstanceSummary>>,
     /// <p>If more than <code>MaxResults</code> instances match the specified criteria, you can submit another <code>ListInstances</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p>
@@ -10,6 +12,10 @@ pub struct ListInstancesOutput {
     _request_id: Option<String>,
 }
 impl ListInstancesOutput {
+    /// <p>The ID of the Amazon Web Services account that created the namespace that contains the specified service. If this isn't your account ID, it's the ID of the account that shared the namespace with your account.</p>
+    pub fn resource_owner(&self) -> ::std::option::Option<&str> {
+        self.resource_owner.as_deref()
+    }
     /// <p>Summary information about the instances that are associated with the specified service.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instances.is_none()`.
@@ -37,11 +43,26 @@ impl ListInstancesOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct ListInstancesOutputBuilder {
+    pub(crate) resource_owner: ::std::option::Option<::std::string::String>,
     pub(crate) instances: ::std::option::Option<::std::vec::Vec<crate::types::InstanceSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListInstancesOutputBuilder {
+    /// <p>The ID of the Amazon Web Services account that created the namespace that contains the specified service. If this isn't your account ID, it's the ID of the account that shared the namespace with your account.</p>
+    pub fn resource_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource_owner = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the Amazon Web Services account that created the namespace that contains the specified service. If this isn't your account ID, it's the ID of the account that shared the namespace with your account.</p>
+    pub fn set_resource_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.resource_owner = input;
+        self
+    }
+    /// <p>The ID of the Amazon Web Services account that created the namespace that contains the specified service. If this isn't your account ID, it's the ID of the account that shared the namespace with your account.</p>
+    pub fn get_resource_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_owner
+    }
     /// Appends an item to `instances`.
     ///
     /// To override the contents of this collection use [`set_instances`](Self::set_instances).
@@ -88,6 +109,7 @@ impl ListInstancesOutputBuilder {
     /// Consumes the builder and constructs a [`ListInstancesOutput`](crate::operation::list_instances::ListInstancesOutput).
     pub fn build(self) -> crate::operation::list_instances::ListInstancesOutput {
         crate::operation::list_instances::ListInstancesOutput {
+            resource_owner: self.resource_owner,
             instances: self.instances,
             next_token: self.next_token,
             _request_id: self._request_id,

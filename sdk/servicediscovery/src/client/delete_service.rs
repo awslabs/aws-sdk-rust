@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteService`](crate::operation::delete_service::builders::DeleteServiceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::delete_service::builders::DeleteServiceFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_service::builders::DeleteServiceFluentBuilder::set_id):<br>required: **true**<br><p>The ID of the service that you want to delete.</p><br>
+    ///   - [`id(impl Into<String>)`](crate::operation::delete_service::builders::DeleteServiceFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_service::builders::DeleteServiceFluentBuilder::set_id):<br>required: **true**<br><p>The ID or Amazon Resource Name (ARN) of the service that you want to delete. If the namespace associated with the service is shared with your Amazon Web Services account, specify the service ARN. For more information about shared namespaces, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html">Cross-account Cloud Map namespace sharing</a>.</p><br>
     /// - On success, responds with [`DeleteServiceOutput`](crate::operation::delete_service::DeleteServiceOutput)
     /// - On failure, responds with [`SdkError<DeleteServiceError>`](crate::operation::delete_service::DeleteServiceError)
     pub fn delete_service(&self) -> crate::operation::delete_service::builders::DeleteServiceFluentBuilder {

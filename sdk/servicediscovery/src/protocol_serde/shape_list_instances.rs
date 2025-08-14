@@ -91,6 +91,13 @@ pub(crate) fn de_list_instances(
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "ResourceOwner" => {
+                    builder = builder.set_resource_owner(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "Instances" => {
                     builder = builder.set_instances(crate::protocol_serde::shape_instance_summary_list::de_instance_summary_list(tokens)?);
                 }

@@ -108,17 +108,17 @@ impl DeleteNamespaceFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ID of the namespace that you want to delete.</p>
+    /// <p>The ID or Amazon Resource Name (ARN) of the namespace that you want to delete.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.id(input.into());
         self
     }
-    /// <p>The ID of the namespace that you want to delete.</p>
+    /// <p>The ID or Amazon Resource Name (ARN) of the namespace that you want to delete.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_id(input);
         self
     }
-    /// <p>The ID of the namespace that you want to delete.</p>
+    /// <p>The ID or Amazon Resource Name (ARN) of the namespace that you want to delete.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_id()
     }

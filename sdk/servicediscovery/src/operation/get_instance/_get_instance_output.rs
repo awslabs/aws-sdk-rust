@@ -3,11 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetInstanceOutput {
+    /// <p>The ID of the Amazon Web Services account that created the namespace that contains the service that the instance is associated with. If this isn't your account ID, it's the ID of the account that shared the namespace with your account.</p>
+    pub resource_owner: ::std::option::Option<::std::string::String>,
     /// <p>A complex type that contains information about a specified instance.</p>
     pub instance: ::std::option::Option<crate::types::Instance>,
     _request_id: Option<String>,
 }
 impl GetInstanceOutput {
+    /// <p>The ID of the Amazon Web Services account that created the namespace that contains the service that the instance is associated with. If this isn't your account ID, it's the ID of the account that shared the namespace with your account.</p>
+    pub fn resource_owner(&self) -> ::std::option::Option<&str> {
+        self.resource_owner.as_deref()
+    }
     /// <p>A complex type that contains information about a specified instance.</p>
     pub fn instance(&self) -> ::std::option::Option<&crate::types::Instance> {
         self.instance.as_ref()
@@ -29,10 +35,25 @@ impl GetInstanceOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct GetInstanceOutputBuilder {
+    pub(crate) resource_owner: ::std::option::Option<::std::string::String>,
     pub(crate) instance: ::std::option::Option<crate::types::Instance>,
     _request_id: Option<String>,
 }
 impl GetInstanceOutputBuilder {
+    /// <p>The ID of the Amazon Web Services account that created the namespace that contains the service that the instance is associated with. If this isn't your account ID, it's the ID of the account that shared the namespace with your account.</p>
+    pub fn resource_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource_owner = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the Amazon Web Services account that created the namespace that contains the service that the instance is associated with. If this isn't your account ID, it's the ID of the account that shared the namespace with your account.</p>
+    pub fn set_resource_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.resource_owner = input;
+        self
+    }
+    /// <p>The ID of the Amazon Web Services account that created the namespace that contains the service that the instance is associated with. If this isn't your account ID, it's the ID of the account that shared the namespace with your account.</p>
+    pub fn get_resource_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_owner
+    }
     /// <p>A complex type that contains information about a specified instance.</p>
     pub fn instance(mut self, input: crate::types::Instance) -> Self {
         self.instance = ::std::option::Option::Some(input);
@@ -59,6 +80,7 @@ impl GetInstanceOutputBuilder {
     /// Consumes the builder and constructs a [`GetInstanceOutput`](crate::operation::get_instance::GetInstanceOutput).
     pub fn build(self) -> crate::operation::get_instance::GetInstanceOutput {
         crate::operation::get_instance::GetInstanceOutput {
+            resource_owner: self.resource_owner,
             instance: self.instance,
             _request_id: self._request_id,
         }

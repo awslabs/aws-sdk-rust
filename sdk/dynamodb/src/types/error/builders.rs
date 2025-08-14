@@ -11,6 +11,8 @@ pub use crate::types::error::_internal_server_error::InternalServerErrorBuilder;
 
 pub use crate::types::error::_transaction_conflict_exception::TransactionConflictExceptionBuilder;
 
+pub use crate::types::error::_throttling_exception::ThrottlingExceptionBuilder;
+
 pub use crate::types::error::_request_limit_exceeded::RequestLimitExceededBuilder;
 
 pub use crate::types::error::_replicated_write_conflict_exception::ReplicatedWriteConflictExceptionBuilder;

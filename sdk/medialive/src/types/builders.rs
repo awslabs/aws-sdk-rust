@@ -331,6 +331,8 @@ pub use crate::types::_srt_group_settings::SrtGroupSettingsBuilder;
 
 pub use crate::types::_cmaf_ingest_group_settings::CmafIngestGroupSettingsBuilder;
 
+pub use crate::types::_additional_destinations::AdditionalDestinationsBuilder;
+
 pub use crate::types::_cmaf_ingest_caption_language_mapping::CmafIngestCaptionLanguageMappingBuilder;
 
 pub use crate::types::_udp_group_settings::UdpGroupSettingsBuilder;

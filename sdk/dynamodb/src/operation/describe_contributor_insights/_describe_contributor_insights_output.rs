@@ -26,6 +26,8 @@ pub struct DescribeContributorInsightsOutput {
     /// <p>InternalServerError - Failed to create Amazon CloudWatch Contributor Insights rules. Please retry request.</p></li>
     /// </ul>
     pub failure_exception: ::std::option::Option<crate::types::FailureException>,
+    /// <p>The mode of CloudWatch Contributor Insights for DynamoDB that determines which events are emitted. Can be set to track all access and throttled events or throttled events only.</p>
+    pub contributor_insights_mode: ::std::option::Option<crate::types::ContributorInsightsMode>,
     _request_id: Option<String>,
 }
 impl DescribeContributorInsightsOutput {
@@ -66,6 +68,10 @@ impl DescribeContributorInsightsOutput {
     pub fn failure_exception(&self) -> ::std::option::Option<&crate::types::FailureException> {
         self.failure_exception.as_ref()
     }
+    /// <p>The mode of CloudWatch Contributor Insights for DynamoDB that determines which events are emitted. Can be set to track all access and throttled events or throttled events only.</p>
+    pub fn contributor_insights_mode(&self) -> ::std::option::Option<&crate::types::ContributorInsightsMode> {
+        self.contributor_insights_mode.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for DescribeContributorInsightsOutput {
     fn request_id(&self) -> Option<&str> {
@@ -89,6 +95,7 @@ pub struct DescribeContributorInsightsOutputBuilder {
     pub(crate) contributor_insights_status: ::std::option::Option<crate::types::ContributorInsightsStatus>,
     pub(crate) last_update_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) failure_exception: ::std::option::Option<crate::types::FailureException>,
+    pub(crate) contributor_insights_mode: ::std::option::Option<crate::types::ContributorInsightsMode>,
     _request_id: Option<String>,
 }
 impl DescribeContributorInsightsOutputBuilder {
@@ -215,6 +222,20 @@ impl DescribeContributorInsightsOutputBuilder {
     pub fn get_failure_exception(&self) -> &::std::option::Option<crate::types::FailureException> {
         &self.failure_exception
     }
+    /// <p>The mode of CloudWatch Contributor Insights for DynamoDB that determines which events are emitted. Can be set to track all access and throttled events or throttled events only.</p>
+    pub fn contributor_insights_mode(mut self, input: crate::types::ContributorInsightsMode) -> Self {
+        self.contributor_insights_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The mode of CloudWatch Contributor Insights for DynamoDB that determines which events are emitted. Can be set to track all access and throttled events or throttled events only.</p>
+    pub fn set_contributor_insights_mode(mut self, input: ::std::option::Option<crate::types::ContributorInsightsMode>) -> Self {
+        self.contributor_insights_mode = input;
+        self
+    }
+    /// <p>The mode of CloudWatch Contributor Insights for DynamoDB that determines which events are emitted. Can be set to track all access and throttled events or throttled events only.</p>
+    pub fn get_contributor_insights_mode(&self) -> &::std::option::Option<crate::types::ContributorInsightsMode> {
+        &self.contributor_insights_mode
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -233,6 +254,7 @@ impl DescribeContributorInsightsOutputBuilder {
             contributor_insights_status: self.contributor_insights_status,
             last_update_date_time: self.last_update_date_time,
             failure_exception: self.failure_exception,
+            contributor_insights_mode: self.contributor_insights_mode,
             _request_id: self._request_id,
         }
     }

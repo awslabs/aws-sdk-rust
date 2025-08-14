@@ -100,6 +100,9 @@ pub mod create_database;
 /// Types for the `CreateDevEndpoint` operation.
 pub mod create_dev_endpoint;
 
+/// Types for the `CreateGlueIdentityCenterConfiguration` operation.
+pub mod create_glue_identity_center_configuration;
+
 /// Types for the `CreateIntegration` operation.
 pub mod create_integration;
 
@@ -189,6 +192,9 @@ pub mod delete_database;
 
 /// Types for the `DeleteDevEndpoint` operation.
 pub mod delete_dev_endpoint;
+
+/// Types for the `DeleteGlueIdentityCenterConfiguration` operation.
+pub mod delete_glue_identity_center_configuration;
 
 /// Types for the `DeleteIntegration` operation.
 pub mod delete_integration;
@@ -354,6 +360,9 @@ pub mod get_dev_endpoints;
 
 /// Types for the `GetEntityRecords` operation.
 pub mod get_entity_records;
+
+/// Types for the `GetGlueIdentityCenterConfiguration` operation.
+pub mod get_glue_identity_center_configuration;
 
 /// Types for the `GetIntegrationResourceProperty` operation.
 pub mod get_integration_resource_property;
@@ -714,6 +723,9 @@ pub mod update_database;
 
 /// Types for the `UpdateDevEndpoint` operation.
 pub mod update_dev_endpoint;
+
+/// Types for the `UpdateGlueIdentityCenterConfiguration` operation.
+pub mod update_glue_identity_center_configuration;
 
 /// Types for the `UpdateIntegrationResourceProperty` operation.
 pub mod update_integration_resource_property;

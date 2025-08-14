@@ -1973,6 +1973,10 @@ pub use crate::types::_instance_credit_specification::InstanceCreditSpecificatio
 
 pub use crate::types::_ec2_instance_connect_endpoint::Ec2InstanceConnectEndpoint;
 
+pub use crate::types::_instance_connect_endpoint_public_dns_names::InstanceConnectEndpointPublicDnsNames;
+
+pub use crate::types::_instance_connect_endpoint_dns_names::InstanceConnectEndpointDnsNames;
+
 pub use crate::types::_ec2_instance_connect_endpoint_state::Ec2InstanceConnectEndpointState;
 
 pub use crate::types::_import_snapshot_task::ImportSnapshotTask;
@@ -3304,6 +3308,10 @@ mod _instance_block_device_mapping_specification;
 mod _instance_boot_mode_values;
 
 mod _instance_capacity;
+
+mod _instance_connect_endpoint_dns_names;
+
+mod _instance_connect_endpoint_public_dns_names;
 
 mod _instance_count;
 

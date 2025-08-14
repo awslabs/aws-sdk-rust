@@ -93,6 +93,21 @@ pub fn de_transact_get_items_http_error(
             }
             tmp
         }),
+        "ThrottlingException" => crate::operation::transact_get_items::TransactGetItemsError::ThrottlingException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::transact_get_items::TransactGetItemsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "TransactionCanceledException" => crate::operation::transact_get_items::TransactGetItemsError::TransactionCanceledException({
             #[allow(unused_mut)]
             let mut tmp = {

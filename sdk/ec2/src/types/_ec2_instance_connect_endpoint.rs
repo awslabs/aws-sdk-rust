@@ -43,6 +43,8 @@ pub struct Ec2InstanceConnectEndpoint {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The IP address type of the endpoint.</p>
     pub ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
+    /// <p>The public DNS names of the endpoint.</p>
+    pub public_dns_names: ::std::option::Option<crate::types::InstanceConnectEndpointPublicDnsNames>,
 }
 impl Ec2InstanceConnectEndpoint {
     /// <p>The ID of the Amazon Web Services account that created the EC2 Instance Connect Endpoint.</p>
@@ -122,6 +124,10 @@ impl Ec2InstanceConnectEndpoint {
     pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::IpAddressType> {
         self.ip_address_type.as_ref()
     }
+    /// <p>The public DNS names of the endpoint.</p>
+    pub fn public_dns_names(&self) -> ::std::option::Option<&crate::types::InstanceConnectEndpointPublicDnsNames> {
+        self.public_dns_names.as_ref()
+    }
 }
 impl Ec2InstanceConnectEndpoint {
     /// Creates a new builder-style object to manufacture [`Ec2InstanceConnectEndpoint`](crate::types::Ec2InstanceConnectEndpoint).
@@ -150,6 +156,7 @@ pub struct Ec2InstanceConnectEndpointBuilder {
     pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
+    pub(crate) public_dns_names: ::std::option::Option<crate::types::InstanceConnectEndpointPublicDnsNames>,
 }
 impl Ec2InstanceConnectEndpointBuilder {
     /// <p>The ID of the Amazon Web Services account that created the EC2 Instance Connect Endpoint.</p>
@@ -415,6 +422,20 @@ impl Ec2InstanceConnectEndpointBuilder {
     pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::IpAddressType> {
         &self.ip_address_type
     }
+    /// <p>The public DNS names of the endpoint.</p>
+    pub fn public_dns_names(mut self, input: crate::types::InstanceConnectEndpointPublicDnsNames) -> Self {
+        self.public_dns_names = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The public DNS names of the endpoint.</p>
+    pub fn set_public_dns_names(mut self, input: ::std::option::Option<crate::types::InstanceConnectEndpointPublicDnsNames>) -> Self {
+        self.public_dns_names = input;
+        self
+    }
+    /// <p>The public DNS names of the endpoint.</p>
+    pub fn get_public_dns_names(&self) -> &::std::option::Option<crate::types::InstanceConnectEndpointPublicDnsNames> {
+        &self.public_dns_names
+    }
     /// Consumes the builder and constructs a [`Ec2InstanceConnectEndpoint`](crate::types::Ec2InstanceConnectEndpoint).
     pub fn build(self) -> crate::types::Ec2InstanceConnectEndpoint {
         crate::types::Ec2InstanceConnectEndpoint {
@@ -434,6 +455,7 @@ impl Ec2InstanceConnectEndpointBuilder {
             security_group_ids: self.security_group_ids,
             tags: self.tags,
             ip_address_type: self.ip_address_type,
+            public_dns_names: self.public_dns_names,
         }
     }
 }

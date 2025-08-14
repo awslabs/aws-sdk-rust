@@ -8,6 +8,8 @@ pub struct ServiceSummary {
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) that Cloud Map assigns to the service when you create it.</p>
     pub arn: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the Amazon Web Services account that created the namespace with which the service is associated. If this isn't your account ID, it is the ID of the account that shared the namespace with your account. For more information about shared namespaces, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html">Cross-account Cloud Map namespace sharing</a> in the <i>Cloud Map Developer Guide</i>.</p>
+    pub resource_owner: ::std::option::Option<::std::string::String>,
     /// <p>The name of the service.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Describes the systems that can be used to discover the service instances.</p>
@@ -52,6 +54,8 @@ pub struct ServiceSummary {
     pub health_check_custom_config: ::std::option::Option<crate::types::HealthCheckCustomConfig>,
     /// <p>The date and time that the service was created.</p>
     pub create_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The ID of the Amazon Web Services account that created the service. If this isn't your account ID, it is the account ID of the namespace owner or of another account with which the namespace has been shared. For more information about shared namespaces, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html">Cross-account Cloud Map namespace sharing</a> in the <i>Cloud Map Developer Guide</i>.</p>
+    pub created_by_account: ::std::option::Option<::std::string::String>,
 }
 impl ServiceSummary {
     /// <p>The ID that Cloud Map assigned to the service when you created it.</p>
@@ -61,6 +65,10 @@ impl ServiceSummary {
     /// <p>The Amazon Resource Name (ARN) that Cloud Map assigns to the service when you create it.</p>
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
+    }
+    /// <p>The ID of the Amazon Web Services account that created the namespace with which the service is associated. If this isn't your account ID, it is the ID of the account that shared the namespace with your account. For more information about shared namespaces, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html">Cross-account Cloud Map namespace sharing</a> in the <i>Cloud Map Developer Guide</i>.</p>
+    pub fn resource_owner(&self) -> ::std::option::Option<&str> {
+        self.resource_owner.as_deref()
     }
     /// <p>The name of the service.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -122,6 +130,10 @@ impl ServiceSummary {
     pub fn create_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.create_date.as_ref()
     }
+    /// <p>The ID of the Amazon Web Services account that created the service. If this isn't your account ID, it is the account ID of the namespace owner or of another account with which the namespace has been shared. For more information about shared namespaces, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html">Cross-account Cloud Map namespace sharing</a> in the <i>Cloud Map Developer Guide</i>.</p>
+    pub fn created_by_account(&self) -> ::std::option::Option<&str> {
+        self.created_by_account.as_deref()
+    }
 }
 impl ServiceSummary {
     /// Creates a new builder-style object to manufacture [`ServiceSummary`](crate::types::ServiceSummary).
@@ -136,6 +148,7 @@ impl ServiceSummary {
 pub struct ServiceSummaryBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) resource_owner: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::ServiceType>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -144,6 +157,7 @@ pub struct ServiceSummaryBuilder {
     pub(crate) health_check_config: ::std::option::Option<crate::types::HealthCheckConfig>,
     pub(crate) health_check_custom_config: ::std::option::Option<crate::types::HealthCheckCustomConfig>,
     pub(crate) create_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) created_by_account: ::std::option::Option<::std::string::String>,
 }
 impl ServiceSummaryBuilder {
     /// <p>The ID that Cloud Map assigned to the service when you created it.</p>
@@ -173,6 +187,20 @@ impl ServiceSummaryBuilder {
     /// <p>The Amazon Resource Name (ARN) that Cloud Map assigns to the service when you create it.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
+    }
+    /// <p>The ID of the Amazon Web Services account that created the namespace with which the service is associated. If this isn't your account ID, it is the ID of the account that shared the namespace with your account. For more information about shared namespaces, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html">Cross-account Cloud Map namespace sharing</a> in the <i>Cloud Map Developer Guide</i>.</p>
+    pub fn resource_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource_owner = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the Amazon Web Services account that created the namespace with which the service is associated. If this isn't your account ID, it is the ID of the account that shared the namespace with your account. For more information about shared namespaces, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html">Cross-account Cloud Map namespace sharing</a> in the <i>Cloud Map Developer Guide</i>.</p>
+    pub fn set_resource_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.resource_owner = input;
+        self
+    }
+    /// <p>The ID of the Amazon Web Services account that created the namespace with which the service is associated. If this isn't your account ID, it is the ID of the account that shared the namespace with your account. For more information about shared namespaces, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html">Cross-account Cloud Map namespace sharing</a> in the <i>Cloud Map Developer Guide</i>.</p>
+    pub fn get_resource_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_owner
     }
     /// <p>The name of the service.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -370,11 +398,26 @@ impl ServiceSummaryBuilder {
     pub fn get_create_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.create_date
     }
+    /// <p>The ID of the Amazon Web Services account that created the service. If this isn't your account ID, it is the account ID of the namespace owner or of another account with which the namespace has been shared. For more information about shared namespaces, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html">Cross-account Cloud Map namespace sharing</a> in the <i>Cloud Map Developer Guide</i>.</p>
+    pub fn created_by_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.created_by_account = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the Amazon Web Services account that created the service. If this isn't your account ID, it is the account ID of the namespace owner or of another account with which the namespace has been shared. For more information about shared namespaces, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html">Cross-account Cloud Map namespace sharing</a> in the <i>Cloud Map Developer Guide</i>.</p>
+    pub fn set_created_by_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.created_by_account = input;
+        self
+    }
+    /// <p>The ID of the Amazon Web Services account that created the service. If this isn't your account ID, it is the account ID of the namespace owner or of another account with which the namespace has been shared. For more information about shared namespaces, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html">Cross-account Cloud Map namespace sharing</a> in the <i>Cloud Map Developer Guide</i>.</p>
+    pub fn get_created_by_account(&self) -> &::std::option::Option<::std::string::String> {
+        &self.created_by_account
+    }
     /// Consumes the builder and constructs a [`ServiceSummary`](crate::types::ServiceSummary).
     pub fn build(self) -> crate::types::ServiceSummary {
         crate::types::ServiceSummary {
             id: self.id,
             arn: self.arn,
+            resource_owner: self.resource_owner,
             name: self.name,
             r#type: self.r#type,
             description: self.description,
@@ -383,6 +426,7 @@ impl ServiceSummaryBuilder {
             health_check_config: self.health_check_config,
             health_check_custom_config: self.health_check_custom_config,
             create_date: self.create_date,
+            created_by_account: self.created_by_account,
         }
     }
 }

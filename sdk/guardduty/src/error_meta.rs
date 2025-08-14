@@ -332,6 +332,33 @@ impl From<crate::operation::create_sample_findings::CreateSampleFindingsError> f
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_threat_entity_set::CreateThreatEntitySetError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_threat_entity_set::CreateThreatEntitySetError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_threat_entity_set::CreateThreatEntitySetError> for Error {
+    fn from(err: crate::operation::create_threat_entity_set::CreateThreatEntitySetError) -> Self {
+        match err {
+            crate::operation::create_threat_entity_set::CreateThreatEntitySetError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::create_threat_entity_set::CreateThreatEntitySetError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::create_threat_entity_set::CreateThreatEntitySetError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_threat_intel_set::CreateThreatIntelSetError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -357,6 +384,34 @@ impl From<crate::operation::create_threat_intel_set::CreateThreatIntelSetError> 
                 Error::InternalServerErrorException(inner)
             }
             crate::operation::create_threat_intel_set::CreateThreatIntelSetError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_trusted_entity_set::CreateTrustedEntitySetError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_trusted_entity_set::CreateTrustedEntitySetError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_trusted_entity_set::CreateTrustedEntitySetError> for Error {
+    fn from(err: crate::operation::create_trusted_entity_set::CreateTrustedEntitySetError) -> Self {
+        match err {
+            crate::operation::create_trusted_entity_set::CreateTrustedEntitySetError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::create_trusted_entity_set::CreateTrustedEntitySetError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::create_trusted_entity_set::CreateTrustedEntitySetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -572,6 +627,33 @@ impl From<crate::operation::delete_publishing_destination::DeletePublishingDesti
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_threat_entity_set::DeleteThreatEntitySetError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_threat_entity_set::DeleteThreatEntitySetError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_threat_entity_set::DeleteThreatEntitySetError> for Error {
+    fn from(err: crate::operation::delete_threat_entity_set::DeleteThreatEntitySetError) -> Self {
+        match err {
+            crate::operation::delete_threat_entity_set::DeleteThreatEntitySetError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::delete_threat_entity_set::DeleteThreatEntitySetError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::delete_threat_entity_set::DeleteThreatEntitySetError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_threat_intel_set::DeleteThreatIntelSetError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -596,6 +678,34 @@ impl From<crate::operation::delete_threat_intel_set::DeleteThreatIntelSetError> 
                 Error::InternalServerErrorException(inner)
             }
             crate::operation::delete_threat_intel_set::DeleteThreatIntelSetError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_trusted_entity_set::DeleteTrustedEntitySetError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_trusted_entity_set::DeleteTrustedEntitySetError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_trusted_entity_set::DeleteTrustedEntitySetError> for Error {
+    fn from(err: crate::operation::delete_trusted_entity_set::DeleteTrustedEntitySetError) -> Self {
+        match err {
+            crate::operation::delete_trusted_entity_set::DeleteTrustedEntitySetError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::delete_trusted_entity_set::DeleteTrustedEntitySetError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::delete_trusted_entity_set::DeleteTrustedEntitySetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1272,6 +1382,31 @@ impl From<crate::operation::get_remaining_free_trial_days::GetRemainingFreeTrial
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_threat_entity_set::GetThreatEntitySetError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_threat_entity_set::GetThreatEntitySetError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_threat_entity_set::GetThreatEntitySetError> for Error {
+    fn from(err: crate::operation::get_threat_entity_set::GetThreatEntitySetError) -> Self {
+        match err {
+            crate::operation::get_threat_entity_set::GetThreatEntitySetError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_threat_entity_set::GetThreatEntitySetError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::get_threat_entity_set::GetThreatEntitySetError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_threat_intel_set::GetThreatIntelSetError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1294,6 +1429,31 @@ impl From<crate::operation::get_threat_intel_set::GetThreatIntelSetError> for Er
                 Error::InternalServerErrorException(inner)
             }
             crate::operation::get_threat_intel_set::GetThreatIntelSetError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_trusted_entity_set::GetTrustedEntitySetError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_trusted_entity_set::GetTrustedEntitySetError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_trusted_entity_set::GetTrustedEntitySetError> for Error {
+    fn from(err: crate::operation::get_trusted_entity_set::GetTrustedEntitySetError) -> Self {
+        match err {
+            crate::operation::get_trusted_entity_set::GetTrustedEntitySetError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_trusted_entity_set::GetTrustedEntitySetError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::get_trusted_entity_set::GetTrustedEntitySetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1632,6 +1792,33 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_threat_entity_sets::ListThreatEntitySetsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_threat_entity_sets::ListThreatEntitySetsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_threat_entity_sets::ListThreatEntitySetsError> for Error {
+    fn from(err: crate::operation::list_threat_entity_sets::ListThreatEntitySetsError) -> Self {
+        match err {
+            crate::operation::list_threat_entity_sets::ListThreatEntitySetsError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::list_threat_entity_sets::ListThreatEntitySetsError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::list_threat_entity_sets::ListThreatEntitySetsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_threat_intel_sets::ListThreatIntelSetsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1654,6 +1841,33 @@ impl From<crate::operation::list_threat_intel_sets::ListThreatIntelSetsError> fo
                 Error::InternalServerErrorException(inner)
             }
             crate::operation::list_threat_intel_sets::ListThreatIntelSetsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_trusted_entity_sets::ListTrustedEntitySetsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_trusted_entity_sets::ListTrustedEntitySetsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_trusted_entity_sets::ListTrustedEntitySetsError> for Error {
+    fn from(err: crate::operation::list_trusted_entity_sets::ListTrustedEntitySetsError) -> Self {
+        match err {
+            crate::operation::list_trusted_entity_sets::ListTrustedEntitySetsError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::list_trusted_entity_sets::ListTrustedEntitySetsError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::list_trusted_entity_sets::ListTrustedEntitySetsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2072,6 +2286,33 @@ impl From<crate::operation::update_publishing_destination::UpdatePublishingDesti
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_threat_entity_set::UpdateThreatEntitySetError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_threat_entity_set::UpdateThreatEntitySetError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_threat_entity_set::UpdateThreatEntitySetError> for Error {
+    fn from(err: crate::operation::update_threat_entity_set::UpdateThreatEntitySetError) -> Self {
+        match err {
+            crate::operation::update_threat_entity_set::UpdateThreatEntitySetError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::update_threat_entity_set::UpdateThreatEntitySetError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::update_threat_entity_set::UpdateThreatEntitySetError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_threat_intel_set::UpdateThreatIntelSetError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2097,6 +2338,34 @@ impl From<crate::operation::update_threat_intel_set::UpdateThreatIntelSetError> 
                 Error::InternalServerErrorException(inner)
             }
             crate::operation::update_threat_intel_set::UpdateThreatIntelSetError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_trusted_entity_set::UpdateTrustedEntitySetError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_trusted_entity_set::UpdateTrustedEntitySetError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_trusted_entity_set::UpdateTrustedEntitySetError> for Error {
+    fn from(err: crate::operation::update_trusted_entity_set::UpdateTrustedEntitySetError) -> Self {
+        match err {
+            crate::operation::update_trusted_entity_set::UpdateTrustedEntitySetError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::update_trusted_entity_set::UpdateTrustedEntitySetError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::update_trusted_entity_set::UpdateTrustedEntitySetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
