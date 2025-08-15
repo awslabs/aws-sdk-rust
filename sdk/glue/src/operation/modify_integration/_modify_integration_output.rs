@@ -44,6 +44,8 @@ pub struct ModifyIntegrationOutput {
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::IntegrationError>>,
     /// <p>Selects source tables for the integration using Maxwell filter syntax.</p>
     pub data_filter: ::std::option::Option<::std::string::String>,
+    /// <p>Properties associated with the integration.</p>
+    pub integration_config: ::std::option::Option<crate::types::IntegrationConfig>,
     _request_id: Option<String>,
 }
 impl ModifyIntegrationOutput {
@@ -120,6 +122,10 @@ impl ModifyIntegrationOutput {
     pub fn data_filter(&self) -> ::std::option::Option<&str> {
         self.data_filter.as_deref()
     }
+    /// <p>Properties associated with the integration.</p>
+    pub fn integration_config(&self) -> ::std::option::Option<&crate::types::IntegrationConfig> {
+        self.integration_config.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for ModifyIntegrationOutput {
     fn request_id(&self) -> Option<&str> {
@@ -149,6 +155,7 @@ pub struct ModifyIntegrationOutputBuilder {
     pub(crate) create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::IntegrationError>>,
     pub(crate) data_filter: ::std::option::Option<::std::string::String>,
+    pub(crate) integration_config: ::std::option::Option<crate::types::IntegrationConfig>,
     _request_id: Option<String>,
 }
 impl ModifyIntegrationOutputBuilder {
@@ -404,6 +411,20 @@ impl ModifyIntegrationOutputBuilder {
     pub fn get_data_filter(&self) -> &::std::option::Option<::std::string::String> {
         &self.data_filter
     }
+    /// <p>Properties associated with the integration.</p>
+    pub fn integration_config(mut self, input: crate::types::IntegrationConfig) -> Self {
+        self.integration_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Properties associated with the integration.</p>
+    pub fn set_integration_config(mut self, input: ::std::option::Option<crate::types::IntegrationConfig>) -> Self {
+        self.integration_config = input;
+        self
+    }
+    /// <p>Properties associated with the integration.</p>
+    pub fn get_integration_config(&self) -> &::std::option::Option<crate::types::IntegrationConfig> {
+        &self.integration_config
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -467,6 +488,7 @@ impl ModifyIntegrationOutputBuilder {
             })?,
             errors: self.errors,
             data_filter: self.data_filter,
+            integration_config: self.integration_config,
             _request_id: self._request_id,
         })
     }

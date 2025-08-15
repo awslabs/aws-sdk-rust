@@ -42,9 +42,7 @@ where
                 }
             }
             Ok(Some(
-                crate::serde_util::storage_flow_node_s3_configuration_correct_errors(builder)
-                    .build()
-                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+                crate::serde_util::storage_flow_node_s3_configuration_correct_errors(builder).build(),
             ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(

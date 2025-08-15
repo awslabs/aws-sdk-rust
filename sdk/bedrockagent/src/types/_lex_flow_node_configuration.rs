@@ -67,23 +67,10 @@ impl LexFlowNodeConfigurationBuilder {
         &self.locale_id
     }
     /// Consumes the builder and constructs a [`LexFlowNodeConfiguration`](crate::types::LexFlowNodeConfiguration).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`bot_alias_arn`](crate::types::builders::LexFlowNodeConfigurationBuilder::bot_alias_arn)
-    /// - [`locale_id`](crate::types::builders::LexFlowNodeConfigurationBuilder::locale_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::LexFlowNodeConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::LexFlowNodeConfiguration {
-            bot_alias_arn: self.bot_alias_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "bot_alias_arn",
-                    "bot_alias_arn was not specified but it is required when building LexFlowNodeConfiguration",
-                )
-            })?,
-            locale_id: self.locale_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "locale_id",
-                    "locale_id was not specified but it is required when building LexFlowNodeConfiguration",
-                )
-            })?,
-        })
+    pub fn build(self) -> crate::types::LexFlowNodeConfiguration {
+        crate::types::LexFlowNodeConfiguration {
+            bot_alias_arn: self.bot_alias_arn.unwrap_or_default(),
+            locale_id: self.locale_id.unwrap_or_default(),
+        }
     }
 }

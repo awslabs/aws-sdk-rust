@@ -42,9 +42,7 @@ where
                 }
             }
             Ok(Some(
-                crate::serde_util::prompt_flow_node_resource_configuration_correct_errors(builder)
-                    .build()
-                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+                crate::serde_util::prompt_flow_node_resource_configuration_correct_errors(builder).build(),
             ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(

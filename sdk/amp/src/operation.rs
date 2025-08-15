@@ -28,6 +28,9 @@ pub mod delete_logging_configuration;
 /// Types for the `DeleteQueryLoggingConfiguration` operation.
 pub mod delete_query_logging_configuration;
 
+/// Types for the `DeleteResourcePolicy` operation.
+pub mod delete_resource_policy;
+
 /// Types for the `DeleteRuleGroupsNamespace` operation.
 pub mod delete_rule_groups_namespace;
 
@@ -45,6 +48,9 @@ pub mod describe_logging_configuration;
 
 /// Types for the `DescribeQueryLoggingConfiguration` operation.
 pub mod describe_query_logging_configuration;
+
+/// Types for the `DescribeResourcePolicy` operation.
+pub mod describe_resource_policy;
 
 /// Types for the `DescribeRuleGroupsNamespace` operation.
 pub mod describe_rule_groups_namespace;
@@ -75,6 +81,9 @@ pub mod list_workspaces;
 
 /// Types for the `PutAlertManagerDefinition` operation.
 pub mod put_alert_manager_definition;
+
+/// Types for the `PutResourcePolicy` operation.
+pub mod put_resource_policy;
 
 /// Types for the `PutRuleGroupsNamespace` operation.
 pub mod put_rule_groups_namespace;

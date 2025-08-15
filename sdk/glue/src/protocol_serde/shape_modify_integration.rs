@@ -308,6 +308,9 @@ pub(crate) fn de_modify_integration(
                                 .transpose()?,
                         );
                     }
+                    "IntegrationConfig" => {
+                        builder = builder.set_integration_config(crate::protocol_serde::shape_integration_config::de_integration_config(tokens)?);
+                    }
                     _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }

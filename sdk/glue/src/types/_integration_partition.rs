@@ -6,7 +6,19 @@
 pub struct IntegrationPartition {
     /// <p>The field name used to partition data on the target. Avoid using columns that have unique values for each row (for example, `LastModifiedTimestamp`, `SystemModTimeStamp`) as the partition column. These columns are not suitable for partitioning because they create a large number of small partitions, which can lead to performance issues.</p>
     pub field_name: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the function used to partition data on the target. The only accepted value for this parameter is `'identity'` (string). The `'identity'` function ensures that the data partitioning on the target follows the same scheme as the source. In other words, the partitioning structure of the source data is preserved in the target destination.</p>
+    /// <p>Specifies the function used to partition data on the target. The accepted values for this parameter are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>identity</code> - Uses source values directly without transformation</p></li>
+    /// <li>
+    /// <p><code>year</code> - Extracts the year from timestamp values (e.g., 2023)</p></li>
+    /// <li>
+    /// <p><code>month</code> - Extracts the month from timestamp values (e.g., 2023-01)</p></li>
+    /// <li>
+    /// <p><code>day</code> - Extracts the day from timestamp values (e.g., 2023-01-15)</p></li>
+    /// <li>
+    /// <p><code>hour</code> - Extracts the hour from timestamp values (e.g., 2023-01-15-14)</p></li>
+    /// </ul>
     pub function_spec: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the timestamp format of the source data. Valid values are:</p>
     /// <ul>
@@ -36,7 +48,19 @@ impl IntegrationPartition {
     pub fn field_name(&self) -> ::std::option::Option<&str> {
         self.field_name.as_deref()
     }
-    /// <p>Specifies the function used to partition data on the target. The only accepted value for this parameter is `'identity'` (string). The `'identity'` function ensures that the data partitioning on the target follows the same scheme as the source. In other words, the partitioning structure of the source data is preserved in the target destination.</p>
+    /// <p>Specifies the function used to partition data on the target. The accepted values for this parameter are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>identity</code> - Uses source values directly without transformation</p></li>
+    /// <li>
+    /// <p><code>year</code> - Extracts the year from timestamp values (e.g., 2023)</p></li>
+    /// <li>
+    /// <p><code>month</code> - Extracts the month from timestamp values (e.g., 2023-01)</p></li>
+    /// <li>
+    /// <p><code>day</code> - Extracts the day from timestamp values (e.g., 2023-01-15)</p></li>
+    /// <li>
+    /// <p><code>hour</code> - Extracts the hour from timestamp values (e.g., 2023-01-15-14)</p></li>
+    /// </ul>
     pub fn function_spec(&self) -> ::std::option::Option<&str> {
         self.function_spec.as_deref()
     }
@@ -95,17 +119,53 @@ impl IntegrationPartitionBuilder {
     pub fn get_field_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.field_name
     }
-    /// <p>Specifies the function used to partition data on the target. The only accepted value for this parameter is `'identity'` (string). The `'identity'` function ensures that the data partitioning on the target follows the same scheme as the source. In other words, the partitioning structure of the source data is preserved in the target destination.</p>
+    /// <p>Specifies the function used to partition data on the target. The accepted values for this parameter are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>identity</code> - Uses source values directly without transformation</p></li>
+    /// <li>
+    /// <p><code>year</code> - Extracts the year from timestamp values (e.g., 2023)</p></li>
+    /// <li>
+    /// <p><code>month</code> - Extracts the month from timestamp values (e.g., 2023-01)</p></li>
+    /// <li>
+    /// <p><code>day</code> - Extracts the day from timestamp values (e.g., 2023-01-15)</p></li>
+    /// <li>
+    /// <p><code>hour</code> - Extracts the hour from timestamp values (e.g., 2023-01-15-14)</p></li>
+    /// </ul>
     pub fn function_spec(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.function_spec = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies the function used to partition data on the target. The only accepted value for this parameter is `'identity'` (string). The `'identity'` function ensures that the data partitioning on the target follows the same scheme as the source. In other words, the partitioning structure of the source data is preserved in the target destination.</p>
+    /// <p>Specifies the function used to partition data on the target. The accepted values for this parameter are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>identity</code> - Uses source values directly without transformation</p></li>
+    /// <li>
+    /// <p><code>year</code> - Extracts the year from timestamp values (e.g., 2023)</p></li>
+    /// <li>
+    /// <p><code>month</code> - Extracts the month from timestamp values (e.g., 2023-01)</p></li>
+    /// <li>
+    /// <p><code>day</code> - Extracts the day from timestamp values (e.g., 2023-01-15)</p></li>
+    /// <li>
+    /// <p><code>hour</code> - Extracts the hour from timestamp values (e.g., 2023-01-15-14)</p></li>
+    /// </ul>
     pub fn set_function_spec(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.function_spec = input;
         self
     }
-    /// <p>Specifies the function used to partition data on the target. The only accepted value for this parameter is `'identity'` (string). The `'identity'` function ensures that the data partitioning on the target follows the same scheme as the source. In other words, the partitioning structure of the source data is preserved in the target destination.</p>
+    /// <p>Specifies the function used to partition data on the target. The accepted values for this parameter are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>identity</code> - Uses source values directly without transformation</p></li>
+    /// <li>
+    /// <p><code>year</code> - Extracts the year from timestamp values (e.g., 2023)</p></li>
+    /// <li>
+    /// <p><code>month</code> - Extracts the month from timestamp values (e.g., 2023-01)</p></li>
+    /// <li>
+    /// <p><code>day</code> - Extracts the day from timestamp values (e.g., 2023-01-15)</p></li>
+    /// <li>
+    /// <p><code>hour</code> - Extracts the hour from timestamp values (e.g., 2023-01-15-14)</p></li>
+    /// </ul>
     pub fn get_function_spec(&self) -> &::std::option::Option<::std::string::String> {
         &self.function_spec
     }

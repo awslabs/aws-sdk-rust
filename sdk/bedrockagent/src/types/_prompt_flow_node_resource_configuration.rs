@@ -44,16 +44,9 @@ impl PromptFlowNodeResourceConfigurationBuilder {
         &self.prompt_arn
     }
     /// Consumes the builder and constructs a [`PromptFlowNodeResourceConfiguration`](crate::types::PromptFlowNodeResourceConfiguration).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`prompt_arn`](crate::types::builders::PromptFlowNodeResourceConfigurationBuilder::prompt_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::PromptFlowNodeResourceConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PromptFlowNodeResourceConfiguration {
-            prompt_arn: self.prompt_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "prompt_arn",
-                    "prompt_arn was not specified but it is required when building PromptFlowNodeResourceConfiguration",
-                )
-            })?,
-        })
+    pub fn build(self) -> crate::types::PromptFlowNodeResourceConfiguration {
+        crate::types::PromptFlowNodeResourceConfiguration {
+            prompt_arn: self.prompt_arn.unwrap_or_default(),
+        }
     }
 }

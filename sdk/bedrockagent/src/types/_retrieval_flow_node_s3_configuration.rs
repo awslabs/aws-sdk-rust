@@ -44,16 +44,9 @@ impl RetrievalFlowNodeS3ConfigurationBuilder {
         &self.bucket_name
     }
     /// Consumes the builder and constructs a [`RetrievalFlowNodeS3Configuration`](crate::types::RetrievalFlowNodeS3Configuration).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`bucket_name`](crate::types::builders::RetrievalFlowNodeS3ConfigurationBuilder::bucket_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::RetrievalFlowNodeS3Configuration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RetrievalFlowNodeS3Configuration {
-            bucket_name: self.bucket_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "bucket_name",
-                    "bucket_name was not specified but it is required when building RetrievalFlowNodeS3Configuration",
-                )
-            })?,
-        })
+    pub fn build(self) -> crate::types::RetrievalFlowNodeS3Configuration {
+        crate::types::RetrievalFlowNodeS3Configuration {
+            bucket_name: self.bucket_name.unwrap_or_default(),
+        }
     }
 }

@@ -9,6 +9,8 @@ pub struct ModifyIntegrationInput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Selects source tables for the integration using Maxwell filter syntax.</p>
     pub data_filter: ::std::option::Option<::std::string::String>,
+    /// <p>Properties associated with the integration.</p>
+    pub integration_config: ::std::option::Option<crate::types::IntegrationConfig>,
     /// <p>A unique name for an integration in Glue.</p>
     pub integration_name: ::std::option::Option<::std::string::String>,
 }
@@ -24,6 +26,10 @@ impl ModifyIntegrationInput {
     /// <p>Selects source tables for the integration using Maxwell filter syntax.</p>
     pub fn data_filter(&self) -> ::std::option::Option<&str> {
         self.data_filter.as_deref()
+    }
+    /// <p>Properties associated with the integration.</p>
+    pub fn integration_config(&self) -> ::std::option::Option<&crate::types::IntegrationConfig> {
+        self.integration_config.as_ref()
     }
     /// <p>A unique name for an integration in Glue.</p>
     pub fn integration_name(&self) -> ::std::option::Option<&str> {
@@ -44,6 +50,7 @@ pub struct ModifyIntegrationInputBuilder {
     pub(crate) integration_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) data_filter: ::std::option::Option<::std::string::String>,
+    pub(crate) integration_config: ::std::option::Option<crate::types::IntegrationConfig>,
     pub(crate) integration_name: ::std::option::Option<::std::string::String>,
 }
 impl ModifyIntegrationInputBuilder {
@@ -90,6 +97,20 @@ impl ModifyIntegrationInputBuilder {
     pub fn get_data_filter(&self) -> &::std::option::Option<::std::string::String> {
         &self.data_filter
     }
+    /// <p>Properties associated with the integration.</p>
+    pub fn integration_config(mut self, input: crate::types::IntegrationConfig) -> Self {
+        self.integration_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Properties associated with the integration.</p>
+    pub fn set_integration_config(mut self, input: ::std::option::Option<crate::types::IntegrationConfig>) -> Self {
+        self.integration_config = input;
+        self
+    }
+    /// <p>Properties associated with the integration.</p>
+    pub fn get_integration_config(&self) -> &::std::option::Option<crate::types::IntegrationConfig> {
+        &self.integration_config
+    }
     /// <p>A unique name for an integration in Glue.</p>
     pub fn integration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.integration_name = ::std::option::Option::Some(input.into());
@@ -112,6 +133,7 @@ impl ModifyIntegrationInputBuilder {
             integration_identifier: self.integration_identifier,
             description: self.description,
             data_filter: self.data_filter,
+            integration_config: self.integration_config,
             integration_name: self.integration_name,
         })
     }

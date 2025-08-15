@@ -130,26 +130,17 @@ impl PromptFlowNodeInlineConfigurationBuilder {
         &self.additional_model_request_fields
     }
     /// Consumes the builder and constructs a [`PromptFlowNodeInlineConfiguration`](crate::types::PromptFlowNodeInlineConfiguration).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`template_type`](crate::types::builders::PromptFlowNodeInlineConfigurationBuilder::template_type)
-    /// - [`model_id`](crate::types::builders::PromptFlowNodeInlineConfigurationBuilder::model_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::PromptFlowNodeInlineConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PromptFlowNodeInlineConfiguration {
-            template_type: self.template_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "template_type",
-                    "template_type was not specified but it is required when building PromptFlowNodeInlineConfiguration",
-                )
-            })?,
+    pub fn build(self) -> crate::types::PromptFlowNodeInlineConfiguration {
+        crate::types::PromptFlowNodeInlineConfiguration {
+            template_type: self.template_type.unwrap_or(
+                "TEXT"
+                    .parse::<crate::types::PromptTemplateType>()
+                    .expect("static value validated to member"),
+            ),
             template_configuration: self.template_configuration,
-            model_id: self.model_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "model_id",
-                    "model_id was not specified but it is required when building PromptFlowNodeInlineConfiguration",
-                )
-            })?,
+            model_id: self.model_id.unwrap_or_default(),
             inference_configuration: self.inference_configuration,
             additional_model_request_fields: self.additional_model_request_fields,
-        })
+        }
     }
 }

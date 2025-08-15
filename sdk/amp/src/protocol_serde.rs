@@ -41,6 +41,8 @@ pub(crate) mod shape_delete_logging_configuration;
 
 pub(crate) mod shape_delete_query_logging_configuration;
 
+pub(crate) mod shape_delete_resource_policy;
+
 pub(crate) mod shape_delete_rule_groups_namespace;
 
 pub(crate) mod shape_delete_scraper;
@@ -52,6 +54,8 @@ pub(crate) mod shape_describe_alert_manager_definition;
 pub(crate) mod shape_describe_logging_configuration;
 
 pub(crate) mod shape_describe_query_logging_configuration;
+
+pub(crate) mod shape_describe_resource_policy;
 
 pub(crate) mod shape_describe_rule_groups_namespace;
 
@@ -72,6 +76,8 @@ pub(crate) mod shape_list_tags_for_resource;
 pub(crate) mod shape_list_workspaces;
 
 pub(crate) mod shape_put_alert_manager_definition;
+
+pub(crate) mod shape_put_resource_policy;
 
 pub(crate) mod shape_put_rule_groups_namespace;
 
@@ -116,6 +122,8 @@ pub(crate) mod shape_create_workspace_input;
 pub(crate) mod shape_internal_server_exception;
 
 pub(crate) mod shape_put_alert_manager_definition_input;
+
+pub(crate) mod shape_put_resource_policy_input;
 
 pub(crate) mod shape_put_rule_groups_namespace_input;
 

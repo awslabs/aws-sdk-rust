@@ -12,8 +12,14 @@ pub fn ser_modify_integration_input_input(
     if let Some(var_3) = &input.data_filter {
         object.key("DataFilter").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.integration_name {
-        object.key("IntegrationName").string(var_4.as_str());
+    if let Some(var_4) = &input.integration_config {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("IntegrationConfig").start_object();
+        crate::protocol_serde::shape_integration_config::ser_integration_config(&mut object_5, var_4)?;
+        object_5.finish();
+    }
+    if let Some(var_6) = &input.integration_name {
+        object.key("IntegrationName").string(var_6.as_str());
     }
     Ok(())
 }

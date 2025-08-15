@@ -191,16 +191,9 @@ impl KnowledgeBaseFlowNodeConfigurationBuilder {
         &self.orchestration_configuration
     }
     /// Consumes the builder and constructs a [`KnowledgeBaseFlowNodeConfiguration`](crate::types::KnowledgeBaseFlowNodeConfiguration).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`knowledge_base_id`](crate::types::builders::KnowledgeBaseFlowNodeConfigurationBuilder::knowledge_base_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::KnowledgeBaseFlowNodeConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::KnowledgeBaseFlowNodeConfiguration {
-            knowledge_base_id: self.knowledge_base_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "knowledge_base_id",
-                    "knowledge_base_id was not specified but it is required when building KnowledgeBaseFlowNodeConfiguration",
-                )
-            })?,
+    pub fn build(self) -> crate::types::KnowledgeBaseFlowNodeConfiguration {
+        crate::types::KnowledgeBaseFlowNodeConfiguration {
+            knowledge_base_id: self.knowledge_base_id.unwrap_or_default(),
             model_id: self.model_id,
             guardrail_configuration: self.guardrail_configuration,
             number_of_results: self.number_of_results,
@@ -208,6 +201,6 @@ impl KnowledgeBaseFlowNodeConfigurationBuilder {
             inference_configuration: self.inference_configuration,
             reranking_configuration: self.reranking_configuration,
             orchestration_configuration: self.orchestration_configuration,
-        })
+        }
     }
 }

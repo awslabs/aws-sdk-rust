@@ -629,6 +629,8 @@ pub use crate::types::_encryption_at_rest::EncryptionAtRest;
 
 pub use crate::types::_catalog_encryption_mode::CatalogEncryptionMode;
 
+pub use crate::types::_integration_config::IntegrationConfig;
+
 pub use crate::types::_integration_error::IntegrationError;
 
 pub use crate::types::_integration_status::IntegrationStatus;
@@ -990,8 +992,6 @@ pub use crate::types::_last_active_definition::LastActiveDefinition;
 pub use crate::types::_blueprint_status::BlueprintStatus;
 
 pub use crate::types::_integration::Integration;
-
-pub use crate::types::_integration_config::IntegrationConfig;
 
 pub use crate::types::_integration_filter::IntegrationFilter;
 

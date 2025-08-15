@@ -84,24 +84,15 @@ impl InlineCodeFlowNodeConfigurationBuilder {
         &self.language
     }
     /// Consumes the builder and constructs a [`InlineCodeFlowNodeConfiguration`](crate::types::InlineCodeFlowNodeConfiguration).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`code`](crate::types::builders::InlineCodeFlowNodeConfigurationBuilder::code)
-    /// - [`language`](crate::types::builders::InlineCodeFlowNodeConfigurationBuilder::language)
-    pub fn build(self) -> ::std::result::Result<crate::types::InlineCodeFlowNodeConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::InlineCodeFlowNodeConfiguration {
-            code: self.code.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "code",
-                    "code was not specified but it is required when building InlineCodeFlowNodeConfiguration",
-                )
-            })?,
-            language: self.language.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "language",
-                    "language was not specified but it is required when building InlineCodeFlowNodeConfiguration",
-                )
-            })?,
-        })
+    pub fn build(self) -> crate::types::InlineCodeFlowNodeConfiguration {
+        crate::types::InlineCodeFlowNodeConfiguration {
+            code: self.code.unwrap_or_default(),
+            language: self.language.unwrap_or(
+                "Python_3"
+                    .parse::<crate::types::SupportedLanguages>()
+                    .expect("static value validated to member"),
+            ),
+        }
     }
 }
 impl ::std::fmt::Debug for InlineCodeFlowNodeConfigurationBuilder {

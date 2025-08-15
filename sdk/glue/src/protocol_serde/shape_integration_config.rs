@@ -26,6 +26,9 @@ where
                                 crate::protocol_serde::shape_integration_source_properties_map::de_integration_source_properties_map(tokens)?,
                             );
                         }
+                        "ContinuousSync" => {
+                            builder = builder.set_continuous_sync(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -60,6 +63,9 @@ pub fn ser_integration_config(
             }
         }
         object_3.finish();
+    }
+    if let Some(var_6) = &input.continuous_sync {
+        object.key("ContinuousSync").boolean(*var_6);
     }
     Ok(())
 }

@@ -475,6 +475,8 @@ pub use crate::types::_connection_password_encryption::ConnectionPasswordEncrypt
 
 pub use crate::types::_encryption_at_rest::EncryptionAtRestBuilder;
 
+pub use crate::types::_integration_config::IntegrationConfigBuilder;
+
 pub use crate::types::_integration_error::IntegrationErrorBuilder;
 
 pub use crate::types::_tag::TagBuilder;
@@ -744,8 +746,6 @@ pub use crate::types::_blueprint::BlueprintBuilder;
 pub use crate::types::_last_active_definition::LastActiveDefinitionBuilder;
 
 pub use crate::types::_integration::IntegrationBuilder;
-
-pub use crate::types::_integration_config::IntegrationConfigBuilder;
 
 pub use crate::types::_integration_filter::IntegrationFilterBuilder;
 

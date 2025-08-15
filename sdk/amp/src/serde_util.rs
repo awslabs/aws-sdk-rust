@@ -234,6 +234,21 @@ pub(crate) fn describe_query_logging_configuration_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn describe_resource_policy_output_output_correct_errors(
+    mut builder: crate::operation::describe_resource_policy::builders::DescribeResourcePolicyOutputBuilder,
+) -> crate::operation::describe_resource_policy::builders::DescribeResourcePolicyOutputBuilder {
+    if builder.policy_document.is_none() {
+        builder.policy_document = Some(Default::default())
+    }
+    if builder.policy_status.is_none() {
+        builder.policy_status = "no value was set".parse::<crate::types::WorkspacePolicyStatusCode>().ok()
+    }
+    if builder.revision_id.is_none() {
+        builder.revision_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn describe_rule_groups_namespace_output_output_correct_errors(
     mut builder: crate::operation::describe_rule_groups_namespace::builders::DescribeRuleGroupsNamespaceOutputBuilder,
 ) -> crate::operation::describe_rule_groups_namespace::builders::DescribeRuleGroupsNamespaceOutputBuilder {
@@ -326,6 +341,18 @@ pub(crate) fn put_alert_manager_definition_output_output_correct_errors(
             let builder = crate::types::builders::AlertManagerDefinitionStatusBuilder::default();
             crate::serde_util::alert_manager_definition_status_correct_errors(builder).build().ok()
         }
+    }
+    builder
+}
+
+pub(crate) fn put_resource_policy_output_output_correct_errors(
+    mut builder: crate::operation::put_resource_policy::builders::PutResourcePolicyOutputBuilder,
+) -> crate::operation::put_resource_policy::builders::PutResourcePolicyOutputBuilder {
+    if builder.policy_status.is_none() {
+        builder.policy_status = "no value was set".parse::<crate::types::WorkspacePolicyStatusCode>().ok()
+    }
+    if builder.revision_id.is_none() {
+        builder.revision_id = Some(Default::default())
     }
     builder
 }

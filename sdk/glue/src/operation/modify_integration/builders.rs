@@ -150,6 +150,20 @@ impl ModifyIntegrationFluentBuilder {
     pub fn get_data_filter(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_data_filter()
     }
+    /// <p>Properties associated with the integration.</p>
+    pub fn integration_config(mut self, input: crate::types::IntegrationConfig) -> Self {
+        self.inner = self.inner.integration_config(input);
+        self
+    }
+    /// <p>Properties associated with the integration.</p>
+    pub fn set_integration_config(mut self, input: ::std::option::Option<crate::types::IntegrationConfig>) -> Self {
+        self.inner = self.inner.set_integration_config(input);
+        self
+    }
+    /// <p>Properties associated with the integration.</p>
+    pub fn get_integration_config(&self) -> &::std::option::Option<crate::types::IntegrationConfig> {
+        self.inner.get_integration_config()
+    }
     /// <p>A unique name for an integration in Glue.</p>
     pub fn integration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.integration_name(input.into());

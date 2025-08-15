@@ -11,6 +11,8 @@ pub use crate::types::_workspace_status_code::WorkspaceStatusCode;
 
 pub use crate::types::_workspace_summary::WorkspaceSummary;
 
+pub use crate::types::_workspace_policy_status_code::WorkspacePolicyStatusCode;
+
 pub use crate::types::_workspace_configuration_status::WorkspaceConfigurationStatus;
 
 pub use crate::types::_workspace_configuration_status_code::WorkspaceConfigurationStatusCode;
@@ -140,6 +142,8 @@ mod _workspace_configuration_status;
 mod _workspace_configuration_status_code;
 
 mod _workspace_description;
+
+mod _workspace_policy_status_code;
 
 mod _workspace_status;
 

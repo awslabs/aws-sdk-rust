@@ -44,16 +44,9 @@ impl LambdaFunctionFlowNodeConfigurationBuilder {
         &self.lambda_arn
     }
     /// Consumes the builder and constructs a [`LambdaFunctionFlowNodeConfiguration`](crate::types::LambdaFunctionFlowNodeConfiguration).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`lambda_arn`](crate::types::builders::LambdaFunctionFlowNodeConfigurationBuilder::lambda_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::LambdaFunctionFlowNodeConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::LambdaFunctionFlowNodeConfiguration {
-            lambda_arn: self.lambda_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "lambda_arn",
-                    "lambda_arn was not specified but it is required when building LambdaFunctionFlowNodeConfiguration",
-                )
-            })?,
-        })
+    pub fn build(self) -> crate::types::LambdaFunctionFlowNodeConfiguration {
+        crate::types::LambdaFunctionFlowNodeConfiguration {
+            lambda_arn: self.lambda_arn.unwrap_or_default(),
+        }
     }
 }
