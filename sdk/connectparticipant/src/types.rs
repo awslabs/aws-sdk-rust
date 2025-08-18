@@ -27,6 +27,20 @@ pub use crate::types::_view::View;
 
 pub use crate::types::_view_content::ViewContent;
 
+pub use crate::types::_connection_data::ConnectionData;
+
+pub use crate::types::_meeting::Meeting;
+
+pub use crate::types::_meeting_features_configuration::MeetingFeaturesConfiguration;
+
+pub use crate::types::_audio_features::AudioFeatures;
+
+pub use crate::types::_meeting_feature_status::MeetingFeatureStatus;
+
+pub use crate::types::_media_placement::MediaPlacement;
+
+pub use crate::types::_attendee::Attendee;
+
 pub use crate::types::_connection_credentials::ConnectionCredentials;
 
 pub use crate::types::_websocket::Websocket;
@@ -37,13 +51,27 @@ mod _artifact_status;
 
 mod _attachment_item;
 
+mod _attendee;
+
+mod _audio_features;
+
 mod _chat_item_type;
 
 mod _connection_credentials;
 
+mod _connection_data;
+
 mod _connection_type;
 
 mod _item;
+
+mod _media_placement;
+
+mod _meeting;
+
+mod _meeting_feature_status;
+
+mod _meeting_features_configuration;
 
 mod _message_metadata;
 

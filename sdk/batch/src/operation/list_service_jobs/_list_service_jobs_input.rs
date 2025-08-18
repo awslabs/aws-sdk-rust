@@ -13,15 +13,27 @@ pub struct ListServiceJobsInput {
     /// <p>Treat this token as an opaque identifier that's only used to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>The filters to apply to the service job list query. The filter names and values can be:</p>
-    /// <ul>
-    /// <li>
-    /// <p>name: <code>JOB_STATUS</code></p>
-    /// <p>values: <code>SUBMITTED | PENDING | RUNNABLE | STARTING | RUNNING | SUCCEEDED | FAILED | SCHEDULED</code></p></li>
-    /// <li>
-    /// <p>name: <code>JOB_NAME</code></p>
-    /// <p>values: case-insensitive matches for the job name. If a filter value ends with an asterisk (*), it matches any job name that begins with the string before the '*'.</p></li>
-    /// </ul>
+    /// <p>The filter to apply to the query. Only one filter can be used at a time. When the filter is used, <code>jobStatus</code> is ignored. The results are sorted by the <code>createdAt</code> field, with the most recent jobs being first.</p>
+    /// <dl>
+    /// <dt>
+    /// JOB_NAME
+    /// </dt>
+    /// <dd>
+    /// <p>The value of the filter is a case-insensitive match for the job name. If the value ends with an asterisk (*), the filter matches any job name that begins with the string before the '*'. This corresponds to the <code>jobName</code> value. For example, <code>test1</code> matches both <code>Test1</code> and <code>test1</code>, and <code>test1*</code> matches both <code>test1</code> and <code>Test10</code>. When the <code>JOB_NAME</code> filter is used, the results are grouped by the job name and version.</p>
+    /// </dd>
+    /// <dt>
+    /// BEFORE_CREATED_AT
+    /// </dt>
+    /// <dd>
+    /// <p>The value for the filter is the time that's before the job was created. This corresponds to the <code>createdAt</code> value. The value is a string representation of the number of milliseconds since 00:00:00 UTC (midnight) on January 1, 1970.</p>
+    /// </dd>
+    /// <dt>
+    /// AFTER_CREATED_AT
+    /// </dt>
+    /// <dd>
+    /// <p>The value for the filter is the time that's after the job was created. This corresponds to the <code>createdAt</code> value. The value is a string representation of the number of milliseconds since 00:00:00 UTC (midnight) on January 1, 1970.</p>
+    /// </dd>
+    /// </dl>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::KeyValuesPair>>,
 }
 impl ListServiceJobsInput {
@@ -43,15 +55,27 @@ impl ListServiceJobsInput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The filters to apply to the service job list query. The filter names and values can be:</p>
-    /// <ul>
-    /// <li>
-    /// <p>name: <code>JOB_STATUS</code></p>
-    /// <p>values: <code>SUBMITTED | PENDING | RUNNABLE | STARTING | RUNNING | SUCCEEDED | FAILED | SCHEDULED</code></p></li>
-    /// <li>
-    /// <p>name: <code>JOB_NAME</code></p>
-    /// <p>values: case-insensitive matches for the job name. If a filter value ends with an asterisk (*), it matches any job name that begins with the string before the '*'.</p></li>
-    /// </ul>
+    /// <p>The filter to apply to the query. Only one filter can be used at a time. When the filter is used, <code>jobStatus</code> is ignored. The results are sorted by the <code>createdAt</code> field, with the most recent jobs being first.</p>
+    /// <dl>
+    /// <dt>
+    /// JOB_NAME
+    /// </dt>
+    /// <dd>
+    /// <p>The value of the filter is a case-insensitive match for the job name. If the value ends with an asterisk (*), the filter matches any job name that begins with the string before the '*'. This corresponds to the <code>jobName</code> value. For example, <code>test1</code> matches both <code>Test1</code> and <code>test1</code>, and <code>test1*</code> matches both <code>test1</code> and <code>Test10</code>. When the <code>JOB_NAME</code> filter is used, the results are grouped by the job name and version.</p>
+    /// </dd>
+    /// <dt>
+    /// BEFORE_CREATED_AT
+    /// </dt>
+    /// <dd>
+    /// <p>The value for the filter is the time that's before the job was created. This corresponds to the <code>createdAt</code> value. The value is a string representation of the number of milliseconds since 00:00:00 UTC (midnight) on January 1, 1970.</p>
+    /// </dd>
+    /// <dt>
+    /// AFTER_CREATED_AT
+    /// </dt>
+    /// <dd>
+    /// <p>The value for the filter is the time that's after the job was created. This corresponds to the <code>createdAt</code> value. The value is a string representation of the number of milliseconds since 00:00:00 UTC (midnight) on January 1, 1970.</p>
+    /// </dd>
+    /// </dl>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
     pub fn filters(&self) -> &[crate::types::KeyValuesPair] {
@@ -142,43 +166,79 @@ impl ListServiceJobsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>The filters to apply to the service job list query. The filter names and values can be:</p>
-    /// <ul>
-    /// <li>
-    /// <p>name: <code>JOB_STATUS</code></p>
-    /// <p>values: <code>SUBMITTED | PENDING | RUNNABLE | STARTING | RUNNING | SUCCEEDED | FAILED | SCHEDULED</code></p></li>
-    /// <li>
-    /// <p>name: <code>JOB_NAME</code></p>
-    /// <p>values: case-insensitive matches for the job name. If a filter value ends with an asterisk (*), it matches any job name that begins with the string before the '*'.</p></li>
-    /// </ul>
+    /// <p>The filter to apply to the query. Only one filter can be used at a time. When the filter is used, <code>jobStatus</code> is ignored. The results are sorted by the <code>createdAt</code> field, with the most recent jobs being first.</p>
+    /// <dl>
+    /// <dt>
+    /// JOB_NAME
+    /// </dt>
+    /// <dd>
+    /// <p>The value of the filter is a case-insensitive match for the job name. If the value ends with an asterisk (*), the filter matches any job name that begins with the string before the '*'. This corresponds to the <code>jobName</code> value. For example, <code>test1</code> matches both <code>Test1</code> and <code>test1</code>, and <code>test1*</code> matches both <code>test1</code> and <code>Test10</code>. When the <code>JOB_NAME</code> filter is used, the results are grouped by the job name and version.</p>
+    /// </dd>
+    /// <dt>
+    /// BEFORE_CREATED_AT
+    /// </dt>
+    /// <dd>
+    /// <p>The value for the filter is the time that's before the job was created. This corresponds to the <code>createdAt</code> value. The value is a string representation of the number of milliseconds since 00:00:00 UTC (midnight) on January 1, 1970.</p>
+    /// </dd>
+    /// <dt>
+    /// AFTER_CREATED_AT
+    /// </dt>
+    /// <dd>
+    /// <p>The value for the filter is the time that's after the job was created. This corresponds to the <code>createdAt</code> value. The value is a string representation of the number of milliseconds since 00:00:00 UTC (midnight) on January 1, 1970.</p>
+    /// </dd>
+    /// </dl>
     pub fn filters(mut self, input: crate::types::KeyValuesPair) -> Self {
         let mut v = self.filters.unwrap_or_default();
         v.push(input);
         self.filters = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The filters to apply to the service job list query. The filter names and values can be:</p>
-    /// <ul>
-    /// <li>
-    /// <p>name: <code>JOB_STATUS</code></p>
-    /// <p>values: <code>SUBMITTED | PENDING | RUNNABLE | STARTING | RUNNING | SUCCEEDED | FAILED | SCHEDULED</code></p></li>
-    /// <li>
-    /// <p>name: <code>JOB_NAME</code></p>
-    /// <p>values: case-insensitive matches for the job name. If a filter value ends with an asterisk (*), it matches any job name that begins with the string before the '*'.</p></li>
-    /// </ul>
+    /// <p>The filter to apply to the query. Only one filter can be used at a time. When the filter is used, <code>jobStatus</code> is ignored. The results are sorted by the <code>createdAt</code> field, with the most recent jobs being first.</p>
+    /// <dl>
+    /// <dt>
+    /// JOB_NAME
+    /// </dt>
+    /// <dd>
+    /// <p>The value of the filter is a case-insensitive match for the job name. If the value ends with an asterisk (*), the filter matches any job name that begins with the string before the '*'. This corresponds to the <code>jobName</code> value. For example, <code>test1</code> matches both <code>Test1</code> and <code>test1</code>, and <code>test1*</code> matches both <code>test1</code> and <code>Test10</code>. When the <code>JOB_NAME</code> filter is used, the results are grouped by the job name and version.</p>
+    /// </dd>
+    /// <dt>
+    /// BEFORE_CREATED_AT
+    /// </dt>
+    /// <dd>
+    /// <p>The value for the filter is the time that's before the job was created. This corresponds to the <code>createdAt</code> value. The value is a string representation of the number of milliseconds since 00:00:00 UTC (midnight) on January 1, 1970.</p>
+    /// </dd>
+    /// <dt>
+    /// AFTER_CREATED_AT
+    /// </dt>
+    /// <dd>
+    /// <p>The value for the filter is the time that's after the job was created. This corresponds to the <code>createdAt</code> value. The value is a string representation of the number of milliseconds since 00:00:00 UTC (midnight) on January 1, 1970.</p>
+    /// </dd>
+    /// </dl>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KeyValuesPair>>) -> Self {
         self.filters = input;
         self
     }
-    /// <p>The filters to apply to the service job list query. The filter names and values can be:</p>
-    /// <ul>
-    /// <li>
-    /// <p>name: <code>JOB_STATUS</code></p>
-    /// <p>values: <code>SUBMITTED | PENDING | RUNNABLE | STARTING | RUNNING | SUCCEEDED | FAILED | SCHEDULED</code></p></li>
-    /// <li>
-    /// <p>name: <code>JOB_NAME</code></p>
-    /// <p>values: case-insensitive matches for the job name. If a filter value ends with an asterisk (*), it matches any job name that begins with the string before the '*'.</p></li>
-    /// </ul>
+    /// <p>The filter to apply to the query. Only one filter can be used at a time. When the filter is used, <code>jobStatus</code> is ignored. The results are sorted by the <code>createdAt</code> field, with the most recent jobs being first.</p>
+    /// <dl>
+    /// <dt>
+    /// JOB_NAME
+    /// </dt>
+    /// <dd>
+    /// <p>The value of the filter is a case-insensitive match for the job name. If the value ends with an asterisk (*), the filter matches any job name that begins with the string before the '*'. This corresponds to the <code>jobName</code> value. For example, <code>test1</code> matches both <code>Test1</code> and <code>test1</code>, and <code>test1*</code> matches both <code>test1</code> and <code>Test10</code>. When the <code>JOB_NAME</code> filter is used, the results are grouped by the job name and version.</p>
+    /// </dd>
+    /// <dt>
+    /// BEFORE_CREATED_AT
+    /// </dt>
+    /// <dd>
+    /// <p>The value for the filter is the time that's before the job was created. This corresponds to the <code>createdAt</code> value. The value is a string representation of the number of milliseconds since 00:00:00 UTC (midnight) on January 1, 1970.</p>
+    /// </dd>
+    /// <dt>
+    /// AFTER_CREATED_AT
+    /// </dt>
+    /// <dd>
+    /// <p>The value for the filter is the time that's after the job was created. This corresponds to the <code>createdAt</code> value. The value is a string representation of the number of milliseconds since 00:00:00 UTC (midnight) on January 1, 1970.</p>
+    /// </dd>
+    /// </dl>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KeyValuesPair>> {
         &self.filters
     }

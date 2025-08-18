@@ -36,7 +36,9 @@ impl crate::operation::associate_access_grants_identity_center::builders::Associ
 /// <dd>
 /// <p>You must also have the following permissions: <code>sso:CreateApplication</code>, <code>sso:PutApplicationGrant</code>, and <code>sso:PutApplicationAuthenticationMethod</code>.</p>
 /// </dd>
-/// </dl>
+/// </dl><important>
+/// <p>You must URL encode any signed header values that contain spaces. For example, if your header value is <code>my file.txt</code>, containing two spaces after <code>my</code>, you must URL encode this value to <code>my%20%20file.txt</code>.</p>
+/// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateAccessGrantsIdentityCenterFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

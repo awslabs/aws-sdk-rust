@@ -43,8 +43,6 @@ impl crate::operation::get_current_metric_data::builders::GetCurrentMetricDataIn
 /// <p>If the response is slow due to large result sets, try these approaches:</p>
 /// <ul>
 /// <li>
-/// <p>Narrow the time range of your request</p></li>
-/// <li>
 /// <p>Add filters to reduce the amount of data returned</p></li>
 /// </ul></li>
 /// </ul>

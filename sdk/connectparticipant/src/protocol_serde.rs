@@ -89,6 +89,8 @@ pub(crate) mod shape_validation_exception;
 
 pub(crate) mod shape_connection_credentials;
 
+pub(crate) mod shape_connection_data;
+
 pub(crate) mod shape_start_position;
 
 pub(crate) mod shape_transcript;
@@ -99,7 +101,11 @@ pub(crate) mod shape_view;
 
 pub(crate) mod shape_websocket;
 
+pub(crate) mod shape_attendee;
+
 pub(crate) mod shape_item;
+
+pub(crate) mod shape_meeting;
 
 pub(crate) mod shape_upload_metadata_signed_headers;
 
@@ -107,11 +113,17 @@ pub(crate) mod shape_view_content;
 
 pub(crate) mod shape_attachments;
 
+pub(crate) mod shape_media_placement;
+
+pub(crate) mod shape_meeting_features_configuration;
+
 pub(crate) mod shape_message_metadata;
 
 pub(crate) mod shape_view_actions;
 
 pub(crate) mod shape_attachment_item;
+
+pub(crate) mod shape_audio_features;
 
 pub(crate) mod shape_receipts;
 

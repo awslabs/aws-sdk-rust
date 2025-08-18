@@ -1489,6 +1489,7 @@ where
 impl From<crate::operation::create_participant::CreateParticipantError> for Error {
     fn from(err: crate::operation::create_participant::CreateParticipantError) -> Self {
         match err {
+            crate::operation::create_participant::CreateParticipantError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::create_participant::CreateParticipantError::InternalServiceException(inner) => Error::InternalServiceException(inner),
             crate::operation::create_participant::CreateParticipantError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::create_participant::CreateParticipantError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),

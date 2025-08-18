@@ -30,7 +30,7 @@ pub struct LaunchTemplateSpecificationOverride {
     /// <li>
     /// <p>Must be a valid Amazon EC2 instance type or family.</p></li>
     /// <li>
-    /// <p><code>optimal</code> isn't allowed.</p></li>
+    /// <p>The following Batch <code>InstanceTypes</code> are not allowed: <code>optimal</code>, <code>default_x86_64</code>, and <code>default_arm64</code>.</p></li>
     /// <li>
     /// <p><code>targetInstanceTypes</code> can target only instance types and families that are included within the <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_ComputeResource.html#Batch-Type-ComputeResource-instanceTypes"> <code>ComputeResource.instanceTypes</code> </a> set. <code>targetInstanceTypes</code> doesn't need to include all of the instances from the <code>instanceType</code> set, but at least a subset. For example, if <code>ComputeResource.instanceTypes</code> includes <code>\[m5, g5\]</code>, <code>targetInstanceTypes</code> can include <code>\[m5.2xlarge\]</code> and <code>\[m5.large\]</code> but not <code>\[c5.large\]</code>.</p></li>
     /// <li>
@@ -67,7 +67,7 @@ impl LaunchTemplateSpecificationOverride {
     /// <li>
     /// <p>Must be a valid Amazon EC2 instance type or family.</p></li>
     /// <li>
-    /// <p><code>optimal</code> isn't allowed.</p></li>
+    /// <p>The following Batch <code>InstanceTypes</code> are not allowed: <code>optimal</code>, <code>default_x86_64</code>, and <code>default_arm64</code>.</p></li>
     /// <li>
     /// <p><code>targetInstanceTypes</code> can target only instance types and families that are included within the <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_ComputeResource.html#Batch-Type-ComputeResource-instanceTypes"> <code>ComputeResource.instanceTypes</code> </a> set. <code>targetInstanceTypes</code> doesn't need to include all of the instances from the <code>instanceType</code> set, but at least a subset. For example, if <code>ComputeResource.instanceTypes</code> includes <code>\[m5, g5\]</code>, <code>targetInstanceTypes</code> can include <code>\[m5.2xlarge\]</code> and <code>\[m5.large\]</code> but not <code>\[c5.large\]</code>.</p></li>
     /// <li>
@@ -175,7 +175,7 @@ impl LaunchTemplateSpecificationOverrideBuilder {
     /// <li>
     /// <p>Must be a valid Amazon EC2 instance type or family.</p></li>
     /// <li>
-    /// <p><code>optimal</code> isn't allowed.</p></li>
+    /// <p>The following Batch <code>InstanceTypes</code> are not allowed: <code>optimal</code>, <code>default_x86_64</code>, and <code>default_arm64</code>.</p></li>
     /// <li>
     /// <p><code>targetInstanceTypes</code> can target only instance types and families that are included within the <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_ComputeResource.html#Batch-Type-ComputeResource-instanceTypes"> <code>ComputeResource.instanceTypes</code> </a> set. <code>targetInstanceTypes</code> doesn't need to include all of the instances from the <code>instanceType</code> set, but at least a subset. For example, if <code>ComputeResource.instanceTypes</code> includes <code>\[m5, g5\]</code>, <code>targetInstanceTypes</code> can include <code>\[m5.2xlarge\]</code> and <code>\[m5.large\]</code> but not <code>\[c5.large\]</code>.</p></li>
     /// <li>
@@ -194,7 +194,7 @@ impl LaunchTemplateSpecificationOverrideBuilder {
     /// <li>
     /// <p>Must be a valid Amazon EC2 instance type or family.</p></li>
     /// <li>
-    /// <p><code>optimal</code> isn't allowed.</p></li>
+    /// <p>The following Batch <code>InstanceTypes</code> are not allowed: <code>optimal</code>, <code>default_x86_64</code>, and <code>default_arm64</code>.</p></li>
     /// <li>
     /// <p><code>targetInstanceTypes</code> can target only instance types and families that are included within the <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_ComputeResource.html#Batch-Type-ComputeResource-instanceTypes"> <code>ComputeResource.instanceTypes</code> </a> set. <code>targetInstanceTypes</code> doesn't need to include all of the instances from the <code>instanceType</code> set, but at least a subset. For example, if <code>ComputeResource.instanceTypes</code> includes <code>\[m5, g5\]</code>, <code>targetInstanceTypes</code> can include <code>\[m5.2xlarge\]</code> and <code>\[m5.large\]</code> but not <code>\[c5.large\]</code>.</p></li>
     /// <li>
@@ -211,7 +211,7 @@ impl LaunchTemplateSpecificationOverrideBuilder {
     /// <li>
     /// <p>Must be a valid Amazon EC2 instance type or family.</p></li>
     /// <li>
-    /// <p><code>optimal</code> isn't allowed.</p></li>
+    /// <p>The following Batch <code>InstanceTypes</code> are not allowed: <code>optimal</code>, <code>default_x86_64</code>, and <code>default_arm64</code>.</p></li>
     /// <li>
     /// <p><code>targetInstanceTypes</code> can target only instance types and families that are included within the <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_ComputeResource.html#Batch-Type-ComputeResource-instanceTypes"> <code>ComputeResource.instanceTypes</code> </a> set. <code>targetInstanceTypes</code> doesn't need to include all of the instances from the <code>instanceType</code> set, but at least a subset. For example, if <code>ComputeResource.instanceTypes</code> includes <code>\[m5, g5\]</code>, <code>targetInstanceTypes</code> can include <code>\[m5.2xlarge\]</code> and <code>\[m5.large\]</code> but not <code>\[c5.large\]</code>.</p></li>
     /// <li>

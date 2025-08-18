@@ -7,6 +7,8 @@ pub struct CreateParticipantConnectionOutput {
     pub websocket: ::std::option::Option<crate::types::Websocket>,
     /// <p>Creates the participant's connection credentials. The authentication token associated with the participant's connection.</p>
     pub connection_credentials: ::std::option::Option<crate::types::ConnectionCredentials>,
+    /// <p>Creates the participant's WebRTC connection data required for the client application (mobile application or website) to connect to the call.</p>
+    pub web_rtc_connection: ::std::option::Option<crate::types::ConnectionData>,
     _request_id: Option<String>,
 }
 impl CreateParticipantConnectionOutput {
@@ -17,6 +19,10 @@ impl CreateParticipantConnectionOutput {
     /// <p>Creates the participant's connection credentials. The authentication token associated with the participant's connection.</p>
     pub fn connection_credentials(&self) -> ::std::option::Option<&crate::types::ConnectionCredentials> {
         self.connection_credentials.as_ref()
+    }
+    /// <p>Creates the participant's WebRTC connection data required for the client application (mobile application or website) to connect to the call.</p>
+    pub fn web_rtc_connection(&self) -> ::std::option::Option<&crate::types::ConnectionData> {
+        self.web_rtc_connection.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateParticipantConnectionOutput {
@@ -37,6 +43,7 @@ impl CreateParticipantConnectionOutput {
 pub struct CreateParticipantConnectionOutputBuilder {
     pub(crate) websocket: ::std::option::Option<crate::types::Websocket>,
     pub(crate) connection_credentials: ::std::option::Option<crate::types::ConnectionCredentials>,
+    pub(crate) web_rtc_connection: ::std::option::Option<crate::types::ConnectionData>,
     _request_id: Option<String>,
 }
 impl CreateParticipantConnectionOutputBuilder {
@@ -68,6 +75,20 @@ impl CreateParticipantConnectionOutputBuilder {
     pub fn get_connection_credentials(&self) -> &::std::option::Option<crate::types::ConnectionCredentials> {
         &self.connection_credentials
     }
+    /// <p>Creates the participant's WebRTC connection data required for the client application (mobile application or website) to connect to the call.</p>
+    pub fn web_rtc_connection(mut self, input: crate::types::ConnectionData) -> Self {
+        self.web_rtc_connection = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Creates the participant's WebRTC connection data required for the client application (mobile application or website) to connect to the call.</p>
+    pub fn set_web_rtc_connection(mut self, input: ::std::option::Option<crate::types::ConnectionData>) -> Self {
+        self.web_rtc_connection = input;
+        self
+    }
+    /// <p>Creates the participant's WebRTC connection data required for the client application (mobile application or website) to connect to the call.</p>
+    pub fn get_web_rtc_connection(&self) -> &::std::option::Option<crate::types::ConnectionData> {
+        &self.web_rtc_connection
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -82,6 +103,7 @@ impl CreateParticipantConnectionOutputBuilder {
         crate::operation::create_participant_connection::CreateParticipantConnectionOutput {
             websocket: self.websocket,
             connection_credentials: self.connection_credentials,
+            web_rtc_connection: self.web_rtc_connection,
             _request_id: self._request_id,
         }
     }

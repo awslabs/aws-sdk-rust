@@ -461,6 +461,8 @@ pub(crate) mod shape_replication_rule;
 
 pub(crate) mod shape_replication_rules;
 
+pub(crate) mod shape_s3_compute_object_checksum_operation;
+
 pub(crate) mod shape_s3_copy_object_operation;
 
 pub(crate) mod shape_s3_generated_manifest_descriptor;

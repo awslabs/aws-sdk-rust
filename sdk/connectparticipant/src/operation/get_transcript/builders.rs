@@ -27,9 +27,11 @@ impl crate::operation::get_transcript::builders::GetTranscriptInputBuilder {
 /// <p>If you have a process that consumes events in the transcript of an chat that has ended, note that chat transcripts contain the following event content types if the event has occurred during the chat session:</p>
 /// <ul>
 /// <li>
-/// <p><code>application/vnd.amazonaws.connect.event.participant.left</code></p></li>
+/// <p><code>application/vnd.amazonaws.connect.event.participant.invited</code></p></li>
 /// <li>
 /// <p><code>application/vnd.amazonaws.connect.event.participant.joined</code></p></li>
+/// <li>
+/// <p><code>application/vnd.amazonaws.connect.event.participant.left</code></p></li>
 /// <li>
 /// <p><code>application/vnd.amazonaws.connect.event.chat.ended</code></p></li>
 /// <li>

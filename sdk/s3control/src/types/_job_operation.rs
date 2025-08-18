@@ -36,6 +36,8 @@ pub struct JobOperation {
     /// <p>This functionality is not supported by directory buckets.</p>
     /// </note>
     pub s3_replicate_object: ::std::option::Option<crate::types::S3ReplicateObjectOperation>,
+    /// <p>Directs the specified job to compute checksum values for every object in the manifest.</p>
+    pub s3_compute_object_checksum: ::std::option::Option<crate::types::S3ComputeObjectChecksumOperation>,
 }
 impl JobOperation {
     /// <p>Directs the specified job to invoke an Lambda function on every object in the manifest.</p>
@@ -88,6 +90,10 @@ impl JobOperation {
     pub fn s3_replicate_object(&self) -> ::std::option::Option<&crate::types::S3ReplicateObjectOperation> {
         self.s3_replicate_object.as_ref()
     }
+    /// <p>Directs the specified job to compute checksum values for every object in the manifest.</p>
+    pub fn s3_compute_object_checksum(&self) -> ::std::option::Option<&crate::types::S3ComputeObjectChecksumOperation> {
+        self.s3_compute_object_checksum.as_ref()
+    }
 }
 impl JobOperation {
     /// Creates a new builder-style object to manufacture [`JobOperation`](crate::types::JobOperation).
@@ -109,6 +115,7 @@ pub struct JobOperationBuilder {
     pub(crate) s3_put_object_legal_hold: ::std::option::Option<crate::types::S3SetObjectLegalHoldOperation>,
     pub(crate) s3_put_object_retention: ::std::option::Option<crate::types::S3SetObjectRetentionOperation>,
     pub(crate) s3_replicate_object: ::std::option::Option<crate::types::S3ReplicateObjectOperation>,
+    pub(crate) s3_compute_object_checksum: ::std::option::Option<crate::types::S3ComputeObjectChecksumOperation>,
 }
 impl JobOperationBuilder {
     /// <p>Directs the specified job to invoke an Lambda function on every object in the manifest.</p>
@@ -279,6 +286,20 @@ impl JobOperationBuilder {
     pub fn get_s3_replicate_object(&self) -> &::std::option::Option<crate::types::S3ReplicateObjectOperation> {
         &self.s3_replicate_object
     }
+    /// <p>Directs the specified job to compute checksum values for every object in the manifest.</p>
+    pub fn s3_compute_object_checksum(mut self, input: crate::types::S3ComputeObjectChecksumOperation) -> Self {
+        self.s3_compute_object_checksum = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Directs the specified job to compute checksum values for every object in the manifest.</p>
+    pub fn set_s3_compute_object_checksum(mut self, input: ::std::option::Option<crate::types::S3ComputeObjectChecksumOperation>) -> Self {
+        self.s3_compute_object_checksum = input;
+        self
+    }
+    /// <p>Directs the specified job to compute checksum values for every object in the manifest.</p>
+    pub fn get_s3_compute_object_checksum(&self) -> &::std::option::Option<crate::types::S3ComputeObjectChecksumOperation> {
+        &self.s3_compute_object_checksum
+    }
     /// Consumes the builder and constructs a [`JobOperation`](crate::types::JobOperation).
     pub fn build(self) -> crate::types::JobOperation {
         crate::types::JobOperation {
@@ -291,6 +312,7 @@ impl JobOperationBuilder {
             s3_put_object_legal_hold: self.s3_put_object_legal_hold,
             s3_put_object_retention: self.s3_put_object_retention,
             s3_replicate_object: self.s3_replicate_object,
+            s3_compute_object_checksum: self.s3_compute_object_checksum,
         }
     }
 }

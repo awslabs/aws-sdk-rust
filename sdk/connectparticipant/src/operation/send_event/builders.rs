@@ -23,7 +23,7 @@ impl crate::operation::send_event::builders::SendEventInputBuilder {
 /// Fluent builder constructing a request to `SendEvent`.
 ///
 /// <note>
-/// <p>The <code>application/vnd.amazonaws.connect.event.connection.acknowledged</code> ContentType will no longer be supported starting December 31, 2024. This event has been migrated to the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a> API using the <code>ConnectParticipant</code> field.</p>
+/// <p>The <code>application/vnd.amazonaws.connect.event.connection.acknowledged</code> ContentType is no longer maintained since December 31, 2024. This event has been migrated to the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a> API using the <code>ConnectParticipant</code> field.</p>
 /// </note>
 /// <p>Sends an event. Message receipts are not supported when there are more than two active participants in the chat. Using the SendEvent API for message receipts when a supervisor is barged-in will result in a conflict exception.</p>
 /// <p>For security recommendations, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon Connect Chat security best practices</a>.</p><note>
@@ -114,7 +114,7 @@ impl SendEventFluentBuilder {
     /// <li>
     /// <p>application/vnd.amazonaws.connect.event.typing</p></li>
     /// <li>
-    /// <p>application/vnd.amazonaws.connect.event.connection.acknowledged (will be deprecated on December 31, 2024)</p></li>
+    /// <p>application/vnd.amazonaws.connect.event.connection.acknowledged (is no longer maintained since December 31, 2024)</p></li>
     /// <li>
     /// <p>application/vnd.amazonaws.connect.event.message.delivered</p></li>
     /// <li>
@@ -129,7 +129,7 @@ impl SendEventFluentBuilder {
     /// <li>
     /// <p>application/vnd.amazonaws.connect.event.typing</p></li>
     /// <li>
-    /// <p>application/vnd.amazonaws.connect.event.connection.acknowledged (will be deprecated on December 31, 2024)</p></li>
+    /// <p>application/vnd.amazonaws.connect.event.connection.acknowledged (is no longer maintained since December 31, 2024)</p></li>
     /// <li>
     /// <p>application/vnd.amazonaws.connect.event.message.delivered</p></li>
     /// <li>
@@ -144,7 +144,7 @@ impl SendEventFluentBuilder {
     /// <li>
     /// <p>application/vnd.amazonaws.connect.event.typing</p></li>
     /// <li>
-    /// <p>application/vnd.amazonaws.connect.event.connection.acknowledged (will be deprecated on December 31, 2024)</p></li>
+    /// <p>application/vnd.amazonaws.connect.event.connection.acknowledged (is no longer maintained since December 31, 2024)</p></li>
     /// <li>
     /// <p>application/vnd.amazonaws.connect.event.message.delivered</p></li>
     /// <li>

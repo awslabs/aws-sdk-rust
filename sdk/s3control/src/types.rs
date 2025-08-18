@@ -289,6 +289,12 @@ pub use crate::types::_job_failure::JobFailure;
 
 pub use crate::types::_job_operation::JobOperation;
 
+pub use crate::types::_s3_compute_object_checksum_operation::S3ComputeObjectChecksumOperation;
+
+pub use crate::types::_compute_object_checksum_type::ComputeObjectChecksumType;
+
+pub use crate::types::_compute_object_checksum_algorithm::ComputeObjectChecksumAlgorithm;
+
 pub use crate::types::_s3_replicate_object_operation::S3ReplicateObjectOperation;
 
 pub use crate::types::_s3_set_object_retention_operation::S3SetObjectRetentionOperation;
@@ -394,6 +400,10 @@ mod _bucket_location_constraint;
 mod _bucket_versioning_status;
 
 mod _cloud_watch_metrics;
+
+mod _compute_object_checksum_algorithm;
+
+mod _compute_object_checksum_type;
 
 mod _create_bucket_configuration;
 
@@ -604,6 +614,8 @@ mod _s3_bucket_destination;
 mod _s3_canned_access_control_list;
 
 mod _s3_checksum_algorithm;
+
+mod _s3_compute_object_checksum_operation;
 
 mod _s3_copy_object_operation;
 

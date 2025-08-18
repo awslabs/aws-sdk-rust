@@ -15,6 +15,18 @@ pub use crate::types::_view::ViewBuilder;
 
 pub use crate::types::_view_content::ViewContentBuilder;
 
+pub use crate::types::_connection_data::ConnectionDataBuilder;
+
+pub use crate::types::_meeting::MeetingBuilder;
+
+pub use crate::types::_meeting_features_configuration::MeetingFeaturesConfigurationBuilder;
+
+pub use crate::types::_audio_features::AudioFeaturesBuilder;
+
+pub use crate::types::_media_placement::MediaPlacementBuilder;
+
+pub use crate::types::_attendee::AttendeeBuilder;
+
 pub use crate::types::_connection_credentials::ConnectionCredentialsBuilder;
 
 pub use crate::types::_websocket::WebsocketBuilder;

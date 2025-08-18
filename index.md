@@ -25,6 +25,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | AWS Backup Search | [aws-sdk-backupsearch](https://crates.io/crates/aws-sdk-backupsearch) ([docs](https://docs.rs/aws-sdk-backupsearch)) |
 | AWS Batch | [aws-sdk-batch](https://crates.io/crates/aws-sdk-batch) ([docs](https://docs.rs/aws-sdk-batch)) |
 | AWS Billing | [aws-sdk-billing](https://crates.io/crates/aws-sdk-billing) ([docs](https://docs.rs/aws-sdk-billing)) |
+| AWS Billing and Cost Management Dashboards | [aws-sdk-bcmdashboards](https://crates.io/crates/aws-sdk-bcmdashboards) ([docs](https://docs.rs/aws-sdk-bcmdashboards)) |
 | AWS Billing and Cost Management Data Exports | [aws-sdk-bcmdataexports](https://crates.io/crates/aws-sdk-bcmdataexports) ([docs](https://docs.rs/aws-sdk-bcmdataexports)) |
 | AWS Billing and Cost Management Pricing Calculator | [aws-sdk-bcmpricingcalculator](https://crates.io/crates/aws-sdk-bcmpricingcalculator) ([docs](https://docs.rs/aws-sdk-bcmpricingcalculator)) |
 | AWS Billing and Cost Management Recommended Actions | [aws-sdk-bcmrecommendedactions](https://crates.io/crates/aws-sdk-bcmrecommendedactions) ([docs](https://docs.rs/aws-sdk-bcmrecommendedactions)) |

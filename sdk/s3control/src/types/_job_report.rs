@@ -21,6 +21,8 @@ pub struct JobReport {
     pub prefix: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the job-completion report will include details of all tasks or only failed tasks.</p>
     pub report_scope: ::std::option::Option<crate::types::JobReportScope>,
+    /// <p>Lists the Amazon Web Services account ID that owns the target bucket, where the completion report is received.</p>
+    pub expected_bucket_owner: ::std::option::Option<::std::string::String>,
 }
 impl JobReport {
     /// <p>The Amazon Resource Name (ARN) for the bucket where specified job-completion report will be stored.</p><note>
@@ -50,6 +52,10 @@ impl JobReport {
     pub fn report_scope(&self) -> ::std::option::Option<&crate::types::JobReportScope> {
         self.report_scope.as_ref()
     }
+    /// <p>Lists the Amazon Web Services account ID that owns the target bucket, where the completion report is received.</p>
+    pub fn expected_bucket_owner(&self) -> ::std::option::Option<&str> {
+        self.expected_bucket_owner.as_deref()
+    }
 }
 impl JobReport {
     /// Creates a new builder-style object to manufacture [`JobReport`](crate::types::JobReport).
@@ -67,6 +73,7 @@ pub struct JobReportBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) prefix: ::std::option::Option<::std::string::String>,
     pub(crate) report_scope: ::std::option::Option<crate::types::JobReportScope>,
+    pub(crate) expected_bucket_owner: ::std::option::Option<::std::string::String>,
 }
 impl JobReportBuilder {
     /// <p>The Amazon Resource Name (ARN) for the bucket where specified job-completion report will be stored.</p><note>
@@ -161,6 +168,20 @@ impl JobReportBuilder {
     pub fn get_report_scope(&self) -> &::std::option::Option<crate::types::JobReportScope> {
         &self.report_scope
     }
+    /// <p>Lists the Amazon Web Services account ID that owns the target bucket, where the completion report is received.</p>
+    pub fn expected_bucket_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.expected_bucket_owner = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Lists the Amazon Web Services account ID that owns the target bucket, where the completion report is received.</p>
+    pub fn set_expected_bucket_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.expected_bucket_owner = input;
+        self
+    }
+    /// <p>Lists the Amazon Web Services account ID that owns the target bucket, where the completion report is received.</p>
+    pub fn get_expected_bucket_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expected_bucket_owner
+    }
     /// Consumes the builder and constructs a [`JobReport`](crate::types::JobReport).
     pub fn build(self) -> crate::types::JobReport {
         crate::types::JobReport {
@@ -169,6 +190,7 @@ impl JobReportBuilder {
             enabled: self.enabled.unwrap_or_default(),
             prefix: self.prefix,
             report_scope: self.report_scope,
+            expected_bucket_owner: self.expected_bucket_owner,
         }
     }
 }

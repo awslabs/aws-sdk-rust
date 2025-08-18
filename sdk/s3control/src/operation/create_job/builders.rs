@@ -45,7 +45,9 @@ impl crate::operation::create_job::builders::CreateJobInputBuilder {
 /// <p><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UpdateJobStatus.html">UpdateJobStatus</a></p></li>
 /// <li>
 /// <p><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_JobOperation.html">JobOperation</a></p></li>
-/// </ul>
+/// </ul><important>
+/// <p>You must URL encode any signed header values that contain spaces. For example, if your header value is <code>my file.txt</code>, containing two spaces after <code>my</code>, you must URL encode this value to <code>my%20%20file.txt</code>.</p>
+/// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

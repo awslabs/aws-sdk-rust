@@ -8,7 +8,7 @@ pub struct SendEventInput {
     /// <li>
     /// <p>application/vnd.amazonaws.connect.event.typing</p></li>
     /// <li>
-    /// <p>application/vnd.amazonaws.connect.event.connection.acknowledged (will be deprecated on December 31, 2024)</p></li>
+    /// <p>application/vnd.amazonaws.connect.event.connection.acknowledged (is no longer maintained since December 31, 2024)</p></li>
     /// <li>
     /// <p>application/vnd.amazonaws.connect.event.message.delivered</p></li>
     /// <li>
@@ -29,7 +29,7 @@ impl SendEventInput {
     /// <li>
     /// <p>application/vnd.amazonaws.connect.event.typing</p></li>
     /// <li>
-    /// <p>application/vnd.amazonaws.connect.event.connection.acknowledged (will be deprecated on December 31, 2024)</p></li>
+    /// <p>application/vnd.amazonaws.connect.event.connection.acknowledged (is no longer maintained since December 31, 2024)</p></li>
     /// <li>
     /// <p>application/vnd.amazonaws.connect.event.message.delivered</p></li>
     /// <li>
@@ -74,7 +74,7 @@ impl SendEventInputBuilder {
     /// <li>
     /// <p>application/vnd.amazonaws.connect.event.typing</p></li>
     /// <li>
-    /// <p>application/vnd.amazonaws.connect.event.connection.acknowledged (will be deprecated on December 31, 2024)</p></li>
+    /// <p>application/vnd.amazonaws.connect.event.connection.acknowledged (is no longer maintained since December 31, 2024)</p></li>
     /// <li>
     /// <p>application/vnd.amazonaws.connect.event.message.delivered</p></li>
     /// <li>
@@ -90,7 +90,7 @@ impl SendEventInputBuilder {
     /// <li>
     /// <p>application/vnd.amazonaws.connect.event.typing</p></li>
     /// <li>
-    /// <p>application/vnd.amazonaws.connect.event.connection.acknowledged (will be deprecated on December 31, 2024)</p></li>
+    /// <p>application/vnd.amazonaws.connect.event.connection.acknowledged (is no longer maintained since December 31, 2024)</p></li>
     /// <li>
     /// <p>application/vnd.amazonaws.connect.event.message.delivered</p></li>
     /// <li>
@@ -105,7 +105,7 @@ impl SendEventInputBuilder {
     /// <li>
     /// <p>application/vnd.amazonaws.connect.event.typing</p></li>
     /// <li>
-    /// <p>application/vnd.amazonaws.connect.event.connection.acknowledged (will be deprecated on December 31, 2024)</p></li>
+    /// <p>application/vnd.amazonaws.connect.event.connection.acknowledged (is no longer maintained since December 31, 2024)</p></li>
     /// <li>
     /// <p>application/vnd.amazonaws.connect.event.message.delivered</p></li>
     /// <li>

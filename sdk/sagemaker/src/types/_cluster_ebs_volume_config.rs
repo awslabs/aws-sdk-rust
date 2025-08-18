@@ -6,11 +6,57 @@
 pub struct ClusterEbsVolumeConfig {
     /// <p>The size in gigabytes (GB) of the additional EBS volume to be attached to the instances in the SageMaker HyperPod cluster instance group. The additional EBS volume is attached to each instance within the SageMaker HyperPod cluster instance group and mounted to <code>/opt/sagemaker</code>.</p>
     pub volume_size_in_gb: ::std::option::Option<i32>,
+    /// <p>The ID of a KMS key to encrypt the Amazon EBS volume.</p>
+    pub volume_kms_key_id: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies whether the configuration is for the cluster's root or secondary Amazon EBS volume. You can specify two <code>ClusterEbsVolumeConfig</code> fields to configure both the root and secondary volumes. Set the value to <code>True</code> if you'd like to provide your own customer managed Amazon Web Services KMS key to encrypt the root volume. When <code>True</code>:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The configuration is applied to the root volume.</p></li>
+    /// <li>
+    /// <p>You can't specify the <code>VolumeSizeInGB</code> field. The size of the root volume is determined for you.</p></li>
+    /// <li>
+    /// <p>You must specify a KMS key ID for <code>VolumeKmsKeyId</code> to encrypt the root volume with your own KMS key instead of an Amazon Web Services owned KMS key.</p></li>
+    /// </ul>
+    /// <p>Otherwise, by default, the value is <code>False</code>, and the following applies:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The configuration is applied to the secondary volume, while the root volume is encrypted with an Amazon Web Services owned key.</p></li>
+    /// <li>
+    /// <p>You must specify the <code>VolumeSizeInGB</code> field.</p></li>
+    /// <li>
+    /// <p>You can optionally specify the <code>VolumeKmsKeyId</code> to encrypt the secondary volume with your own KMS key instead of an Amazon Web Services owned KMS key.</p></li>
+    /// </ul>
+    pub root_volume: ::std::option::Option<bool>,
 }
 impl ClusterEbsVolumeConfig {
     /// <p>The size in gigabytes (GB) of the additional EBS volume to be attached to the instances in the SageMaker HyperPod cluster instance group. The additional EBS volume is attached to each instance within the SageMaker HyperPod cluster instance group and mounted to <code>/opt/sagemaker</code>.</p>
     pub fn volume_size_in_gb(&self) -> ::std::option::Option<i32> {
         self.volume_size_in_gb
+    }
+    /// <p>The ID of a KMS key to encrypt the Amazon EBS volume.</p>
+    pub fn volume_kms_key_id(&self) -> ::std::option::Option<&str> {
+        self.volume_kms_key_id.as_deref()
+    }
+    /// <p>Specifies whether the configuration is for the cluster's root or secondary Amazon EBS volume. You can specify two <code>ClusterEbsVolumeConfig</code> fields to configure both the root and secondary volumes. Set the value to <code>True</code> if you'd like to provide your own customer managed Amazon Web Services KMS key to encrypt the root volume. When <code>True</code>:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The configuration is applied to the root volume.</p></li>
+    /// <li>
+    /// <p>You can't specify the <code>VolumeSizeInGB</code> field. The size of the root volume is determined for you.</p></li>
+    /// <li>
+    /// <p>You must specify a KMS key ID for <code>VolumeKmsKeyId</code> to encrypt the root volume with your own KMS key instead of an Amazon Web Services owned KMS key.</p></li>
+    /// </ul>
+    /// <p>Otherwise, by default, the value is <code>False</code>, and the following applies:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The configuration is applied to the secondary volume, while the root volume is encrypted with an Amazon Web Services owned key.</p></li>
+    /// <li>
+    /// <p>You must specify the <code>VolumeSizeInGB</code> field.</p></li>
+    /// <li>
+    /// <p>You can optionally specify the <code>VolumeKmsKeyId</code> to encrypt the secondary volume with your own KMS key instead of an Amazon Web Services owned KMS key.</p></li>
+    /// </ul>
+    pub fn root_volume(&self) -> ::std::option::Option<bool> {
+        self.root_volume
     }
 }
 impl ClusterEbsVolumeConfig {
@@ -25,6 +71,8 @@ impl ClusterEbsVolumeConfig {
 #[non_exhaustive]
 pub struct ClusterEbsVolumeConfigBuilder {
     pub(crate) volume_size_in_gb: ::std::option::Option<i32>,
+    pub(crate) volume_kms_key_id: ::std::option::Option<::std::string::String>,
+    pub(crate) root_volume: ::std::option::Option<bool>,
 }
 impl ClusterEbsVolumeConfigBuilder {
     /// <p>The size in gigabytes (GB) of the additional EBS volume to be attached to the instances in the SageMaker HyperPod cluster instance group. The additional EBS volume is attached to each instance within the SageMaker HyperPod cluster instance group and mounted to <code>/opt/sagemaker</code>.</p>
@@ -41,10 +89,91 @@ impl ClusterEbsVolumeConfigBuilder {
     pub fn get_volume_size_in_gb(&self) -> &::std::option::Option<i32> {
         &self.volume_size_in_gb
     }
+    /// <p>The ID of a KMS key to encrypt the Amazon EBS volume.</p>
+    pub fn volume_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.volume_kms_key_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of a KMS key to encrypt the Amazon EBS volume.</p>
+    pub fn set_volume_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.volume_kms_key_id = input;
+        self
+    }
+    /// <p>The ID of a KMS key to encrypt the Amazon EBS volume.</p>
+    pub fn get_volume_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.volume_kms_key_id
+    }
+    /// <p>Specifies whether the configuration is for the cluster's root or secondary Amazon EBS volume. You can specify two <code>ClusterEbsVolumeConfig</code> fields to configure both the root and secondary volumes. Set the value to <code>True</code> if you'd like to provide your own customer managed Amazon Web Services KMS key to encrypt the root volume. When <code>True</code>:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The configuration is applied to the root volume.</p></li>
+    /// <li>
+    /// <p>You can't specify the <code>VolumeSizeInGB</code> field. The size of the root volume is determined for you.</p></li>
+    /// <li>
+    /// <p>You must specify a KMS key ID for <code>VolumeKmsKeyId</code> to encrypt the root volume with your own KMS key instead of an Amazon Web Services owned KMS key.</p></li>
+    /// </ul>
+    /// <p>Otherwise, by default, the value is <code>False</code>, and the following applies:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The configuration is applied to the secondary volume, while the root volume is encrypted with an Amazon Web Services owned key.</p></li>
+    /// <li>
+    /// <p>You must specify the <code>VolumeSizeInGB</code> field.</p></li>
+    /// <li>
+    /// <p>You can optionally specify the <code>VolumeKmsKeyId</code> to encrypt the secondary volume with your own KMS key instead of an Amazon Web Services owned KMS key.</p></li>
+    /// </ul>
+    pub fn root_volume(mut self, input: bool) -> Self {
+        self.root_volume = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether the configuration is for the cluster's root or secondary Amazon EBS volume. You can specify two <code>ClusterEbsVolumeConfig</code> fields to configure both the root and secondary volumes. Set the value to <code>True</code> if you'd like to provide your own customer managed Amazon Web Services KMS key to encrypt the root volume. When <code>True</code>:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The configuration is applied to the root volume.</p></li>
+    /// <li>
+    /// <p>You can't specify the <code>VolumeSizeInGB</code> field. The size of the root volume is determined for you.</p></li>
+    /// <li>
+    /// <p>You must specify a KMS key ID for <code>VolumeKmsKeyId</code> to encrypt the root volume with your own KMS key instead of an Amazon Web Services owned KMS key.</p></li>
+    /// </ul>
+    /// <p>Otherwise, by default, the value is <code>False</code>, and the following applies:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The configuration is applied to the secondary volume, while the root volume is encrypted with an Amazon Web Services owned key.</p></li>
+    /// <li>
+    /// <p>You must specify the <code>VolumeSizeInGB</code> field.</p></li>
+    /// <li>
+    /// <p>You can optionally specify the <code>VolumeKmsKeyId</code> to encrypt the secondary volume with your own KMS key instead of an Amazon Web Services owned KMS key.</p></li>
+    /// </ul>
+    pub fn set_root_volume(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.root_volume = input;
+        self
+    }
+    /// <p>Specifies whether the configuration is for the cluster's root or secondary Amazon EBS volume. You can specify two <code>ClusterEbsVolumeConfig</code> fields to configure both the root and secondary volumes. Set the value to <code>True</code> if you'd like to provide your own customer managed Amazon Web Services KMS key to encrypt the root volume. When <code>True</code>:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The configuration is applied to the root volume.</p></li>
+    /// <li>
+    /// <p>You can't specify the <code>VolumeSizeInGB</code> field. The size of the root volume is determined for you.</p></li>
+    /// <li>
+    /// <p>You must specify a KMS key ID for <code>VolumeKmsKeyId</code> to encrypt the root volume with your own KMS key instead of an Amazon Web Services owned KMS key.</p></li>
+    /// </ul>
+    /// <p>Otherwise, by default, the value is <code>False</code>, and the following applies:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The configuration is applied to the secondary volume, while the root volume is encrypted with an Amazon Web Services owned key.</p></li>
+    /// <li>
+    /// <p>You must specify the <code>VolumeSizeInGB</code> field.</p></li>
+    /// <li>
+    /// <p>You can optionally specify the <code>VolumeKmsKeyId</code> to encrypt the secondary volume with your own KMS key instead of an Amazon Web Services owned KMS key.</p></li>
+    /// </ul>
+    pub fn get_root_volume(&self) -> &::std::option::Option<bool> {
+        &self.root_volume
+    }
     /// Consumes the builder and constructs a [`ClusterEbsVolumeConfig`](crate::types::ClusterEbsVolumeConfig).
     pub fn build(self) -> crate::types::ClusterEbsVolumeConfig {
         crate::types::ClusterEbsVolumeConfig {
             volume_size_in_gb: self.volume_size_in_gb,
+            volume_kms_key_id: self.volume_kms_key_id,
+            root_volume: self.root_volume,
         }
     }
 }

@@ -25,6 +25,10 @@ pub fn ser_job_report(
         let mut inner_writer = scope.start_el("ReportScope").finish();
         inner_writer.data(var_4.as_str());
     }
+    if let Some(var_5) = &input.expected_bucket_owner {
+        let mut inner_writer = scope.start_el("ExpectedBucketOwner").finish();
+        inner_writer.data(var_5.as_str());
+    }
     scope.finish();
     Ok(())
 }
@@ -38,7 +42,7 @@ pub fn de_job_report(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Bucket") /* Bucket com.amazonaws.s3control#JobReport$Bucket */ =>  {
-                let var_5 =
+                let var_6 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -47,11 +51,11 @@ pub fn de_job_report(
                         ?
                     )
                 ;
-                builder = builder.set_bucket(var_5);
+                builder = builder.set_bucket(var_6);
             }
             ,
             s if s.matches("Format") /* Format com.amazonaws.s3control#JobReport$Format */ =>  {
-                let var_6 =
+                let var_7 =
                     Some(
                         Result::<crate::types::JobReportFormat, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::JobReportFormat::from(
@@ -61,11 +65,11 @@ pub fn de_job_report(
                         ?
                     )
                 ;
-                builder = builder.set_format(var_6);
+                builder = builder.set_format(var_7);
             }
             ,
             s if s.matches("Enabled") /* Enabled com.amazonaws.s3control#JobReport$Enabled */ =>  {
-                let var_7 =
+                let var_8 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -76,11 +80,11 @@ pub fn de_job_report(
                         ?
                     )
                 ;
-                builder = builder.set_enabled(var_7);
+                builder = builder.set_enabled(var_8);
             }
             ,
             s if s.matches("Prefix") /* Prefix com.amazonaws.s3control#JobReport$Prefix */ =>  {
-                let var_8 =
+                let var_9 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -89,11 +93,11 @@ pub fn de_job_report(
                         ?
                     )
                 ;
-                builder = builder.set_prefix(var_8);
+                builder = builder.set_prefix(var_9);
             }
             ,
             s if s.matches("ReportScope") /* ReportScope com.amazonaws.s3control#JobReport$ReportScope */ =>  {
-                let var_9 =
+                let var_10 =
                     Some(
                         Result::<crate::types::JobReportScope, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::JobReportScope::from(
@@ -103,7 +107,20 @@ pub fn de_job_report(
                         ?
                     )
                 ;
-                builder = builder.set_report_scope(var_9);
+                builder = builder.set_report_scope(var_10);
+            }
+            ,
+            s if s.matches("ExpectedBucketOwner") /* ExpectedBucketOwner com.amazonaws.s3control#JobReport$ExpectedBucketOwner */ =>  {
+                let var_11 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_expected_bucket_owner(var_11);
             }
             ,
             _ => {}

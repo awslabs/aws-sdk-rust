@@ -24,7 +24,10 @@ impl crate::operation::cancel_participant_authentication::builders::CancelPartic
 ///
 /// <p>Cancels the authentication session. The opted out branch of the Authenticate Customer flow block will be taken.</p><note>
 /// <p>The current supported channel is chat. This API is not supported for Apple Messages for Business, WhatsApp, or SMS chats.</p>
+/// </note> <note>
+/// <p><code>ConnectionToken</code> is used for invoking this API instead of <code>ParticipantToken</code>.</p>
 /// </note>
+/// <p>The Amazon Connect Participant Service APIs do not use <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 authentication</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CancelParticipantAuthenticationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

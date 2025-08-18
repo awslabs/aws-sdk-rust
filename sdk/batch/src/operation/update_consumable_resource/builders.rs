@@ -183,17 +183,17 @@ impl UpdateConsumableResourceFluentBuilder {
     pub fn get_quantity(&self) -> &::std::option::Option<i64> {
         self.inner.get_quantity()
     }
-    /// <p>If this parameter is specified and two update requests with identical payloads and <code>clientToken</code>s are received, these requests are considered the same request and the second request is rejected. A <code>clientToken</code> is valid for 8 hours or until one hour after the consumable resource is deleted, whichever is less.</p>
+    /// <p>If this parameter is specified and two update requests with identical payloads and <code>clientToken</code>s are received, these requests are considered the same request. Both requests will succeed, but the update will only happen once. A <code>clientToken</code> is valid for 8 hours.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
-    /// <p>If this parameter is specified and two update requests with identical payloads and <code>clientToken</code>s are received, these requests are considered the same request and the second request is rejected. A <code>clientToken</code> is valid for 8 hours or until one hour after the consumable resource is deleted, whichever is less.</p>
+    /// <p>If this parameter is specified and two update requests with identical payloads and <code>clientToken</code>s are received, these requests are considered the same request. Both requests will succeed, but the update will only happen once. A <code>clientToken</code> is valid for 8 hours.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
-    /// <p>If this parameter is specified and two update requests with identical payloads and <code>clientToken</code>s are received, these requests are considered the same request and the second request is rejected. A <code>clientToken</code> is valid for 8 hours or until one hour after the consumable resource is deleted, whichever is less.</p>
+    /// <p>If this parameter is specified and two update requests with identical payloads and <code>clientToken</code>s are received, these requests are considered the same request. Both requests will succeed, but the update will only happen once. A <code>clientToken</code> is valid for 8 hours.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }

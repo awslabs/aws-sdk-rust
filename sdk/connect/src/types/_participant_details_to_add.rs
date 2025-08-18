@@ -8,6 +8,8 @@ pub struct ParticipantDetailsToAdd {
     pub participant_role: ::std::option::Option<crate::types::ParticipantRole>,
     /// <p>The display name of the participant.</p>
     pub display_name: ::std::option::Option<::std::string::String>,
+    /// <p>The configuration for the allowed video and screen sharing capabilities for participants present over the call. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/inapp-calling.html">Set up in-app, web, video calling, and screen sharing capabilities</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    pub participant_capabilities: ::std::option::Option<crate::types::ParticipantCapabilities>,
 }
 impl ParticipantDetailsToAdd {
     /// <p>The role of the participant being added.</p>
@@ -17,6 +19,10 @@ impl ParticipantDetailsToAdd {
     /// <p>The display name of the participant.</p>
     pub fn display_name(&self) -> ::std::option::Option<&str> {
         self.display_name.as_deref()
+    }
+    /// <p>The configuration for the allowed video and screen sharing capabilities for participants present over the call. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/inapp-calling.html">Set up in-app, web, video calling, and screen sharing capabilities</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    pub fn participant_capabilities(&self) -> ::std::option::Option<&crate::types::ParticipantCapabilities> {
+        self.participant_capabilities.as_ref()
     }
 }
 impl ParticipantDetailsToAdd {
@@ -32,6 +38,7 @@ impl ParticipantDetailsToAdd {
 pub struct ParticipantDetailsToAddBuilder {
     pub(crate) participant_role: ::std::option::Option<crate::types::ParticipantRole>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
+    pub(crate) participant_capabilities: ::std::option::Option<crate::types::ParticipantCapabilities>,
 }
 impl ParticipantDetailsToAddBuilder {
     /// <p>The role of the participant being added.</p>
@@ -62,11 +69,26 @@ impl ParticipantDetailsToAddBuilder {
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.display_name
     }
+    /// <p>The configuration for the allowed video and screen sharing capabilities for participants present over the call. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/inapp-calling.html">Set up in-app, web, video calling, and screen sharing capabilities</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    pub fn participant_capabilities(mut self, input: crate::types::ParticipantCapabilities) -> Self {
+        self.participant_capabilities = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration for the allowed video and screen sharing capabilities for participants present over the call. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/inapp-calling.html">Set up in-app, web, video calling, and screen sharing capabilities</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    pub fn set_participant_capabilities(mut self, input: ::std::option::Option<crate::types::ParticipantCapabilities>) -> Self {
+        self.participant_capabilities = input;
+        self
+    }
+    /// <p>The configuration for the allowed video and screen sharing capabilities for participants present over the call. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/inapp-calling.html">Set up in-app, web, video calling, and screen sharing capabilities</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    pub fn get_participant_capabilities(&self) -> &::std::option::Option<crate::types::ParticipantCapabilities> {
+        &self.participant_capabilities
+    }
     /// Consumes the builder and constructs a [`ParticipantDetailsToAdd`](crate::types::ParticipantDetailsToAdd).
     pub fn build(self) -> crate::types::ParticipantDetailsToAdd {
         crate::types::ParticipantDetailsToAdd {
             participant_role: self.participant_role,
             display_name: self.display_name,
+            participant_capabilities: self.participant_capabilities,
         }
     }
 }

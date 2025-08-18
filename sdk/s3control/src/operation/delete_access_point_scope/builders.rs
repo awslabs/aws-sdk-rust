@@ -26,7 +26,9 @@ impl crate::operation::delete_access_point_scope::builders::DeleteAccessPointSco
 /// <p>When you delete the scope of an access point, all prefixes and permissions are deleted.</p>
 /// </note>
 /// <p>To use this operation, you must have the permission to perform the <code>s3express:DeleteAccessPointScope</code> action.</p>
-/// <p>For information about REST API errors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#RESTErrorResponses">REST error responses</a>.</p>
+/// <p>For information about REST API errors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#RESTErrorResponses">REST error responses</a>.</p><important>
+/// <p>You must URL encode any signed header values that contain spaces. For example, if your header value is <code>my file.txt</code>, containing two spaces after <code>my</code>, you must URL encode this value to <code>my%20%20file.txt</code>.</p>
+/// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteAccessPointScopeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

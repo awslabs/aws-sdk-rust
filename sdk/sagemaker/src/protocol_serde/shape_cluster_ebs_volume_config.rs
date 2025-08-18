@@ -9,6 +9,12 @@ pub fn ser_cluster_ebs_volume_config(
             ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
+    if let Some(var_2) = &input.volume_kms_key_id {
+        object.key("VolumeKmsKeyId").string(var_2.as_str());
+    }
+    if let Some(var_3) = &input.root_volume {
+        object.key("RootVolume").boolean(*var_3);
+    }
     Ok(())
 }
 
@@ -33,6 +39,16 @@ where
                                     .map(i32::try_from)
                                     .transpose()?,
                             );
+                        }
+                        "VolumeKmsKeyId" => {
+                            builder = builder.set_volume_kms_key_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "RootVolume" => {
+                            builder = builder.set_root_volume(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

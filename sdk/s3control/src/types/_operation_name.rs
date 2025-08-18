@@ -13,6 +13,7 @@
 /// # let operationname = unimplemented!();
 /// match operationname {
 ///     OperationName::LambdaInvoke => { /* ... */ },
+///     OperationName::S3ComputeObjectChecksum => { /* ... */ },
 ///     OperationName::S3DeleteObjectTagging => { /* ... */ },
 ///     OperationName::S3InitiateRestoreObject => { /* ... */ },
 ///     OperationName::S3PutObjectAcl => { /* ... */ },
@@ -52,6 +53,8 @@ pub enum OperationName {
     #[allow(missing_docs)] // documentation missing in model
     LambdaInvoke,
     #[allow(missing_docs)] // documentation missing in model
+    S3ComputeObjectChecksum,
+    #[allow(missing_docs)] // documentation missing in model
     S3DeleteObjectTagging,
     #[allow(missing_docs)] // documentation missing in model
     S3InitiateRestoreObject,
@@ -75,6 +78,7 @@ impl ::std::convert::From<&str> for OperationName {
     fn from(s: &str) -> Self {
         match s {
             "LambdaInvoke" => OperationName::LambdaInvoke,
+            "S3ComputeObjectChecksum" => OperationName::S3ComputeObjectChecksum,
             "S3DeleteObjectTagging" => OperationName::S3DeleteObjectTagging,
             "S3InitiateRestoreObject" => OperationName::S3InitiateRestoreObject,
             "S3PutObjectAcl" => OperationName::S3PutObjectAcl,
@@ -99,6 +103,7 @@ impl OperationName {
     pub fn as_str(&self) -> &str {
         match self {
             OperationName::LambdaInvoke => "LambdaInvoke",
+            OperationName::S3ComputeObjectChecksum => "S3ComputeObjectChecksum",
             OperationName::S3DeleteObjectTagging => "S3DeleteObjectTagging",
             OperationName::S3InitiateRestoreObject => "S3InitiateRestoreObject",
             OperationName::S3PutObjectAcl => "S3PutObjectAcl",
@@ -114,6 +119,7 @@ impl OperationName {
     pub const fn values() -> &'static [&'static str] {
         &[
             "LambdaInvoke",
+            "S3ComputeObjectChecksum",
             "S3DeleteObjectTagging",
             "S3InitiateRestoreObject",
             "S3PutObjectAcl",
@@ -146,6 +152,7 @@ impl ::std::fmt::Display for OperationName {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             OperationName::LambdaInvoke => write!(f, "LambdaInvoke"),
+            OperationName::S3ComputeObjectChecksum => write!(f, "S3ComputeObjectChecksum"),
             OperationName::S3DeleteObjectTagging => write!(f, "S3DeleteObjectTagging"),
             OperationName::S3InitiateRestoreObject => write!(f, "S3InitiateRestoreObject"),
             OperationName::S3PutObjectAcl => write!(f, "S3PutObjectAcl"),

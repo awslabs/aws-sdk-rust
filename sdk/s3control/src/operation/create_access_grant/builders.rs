@@ -38,7 +38,9 @@ impl crate::operation::create_access_grant::builders::CreateAccessGrantInputBuil
 /// <p>For directory users - <code>identitystore:DescribeUser</code></p>
 /// <p>For directory groups - <code>identitystore:DescribeGroup</code></p>
 /// </dd>
-/// </dl>
+/// </dl><important>
+/// <p>You must URL encode any signed header values that contain spaces. For example, if your header value is <code>my file.txt</code>, containing two spaces after <code>my</code>, you must URL encode this value to <code>my%20%20file.txt</code>.</p>
+/// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateAccessGrantFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -36,7 +36,9 @@ impl crate::operation::get_access_grants_instance_for_prefix::builders::GetAcces
 /// <dd>
 /// <p>The prefix owner account must grant you the following permissions to their S3 Access Grants instance: <code>s3:GetAccessGrantsInstanceForPrefix</code>.</p>
 /// </dd>
-/// </dl>
+/// </dl><important>
+/// <p>You must URL encode any signed header values that contain spaces. For example, if your header value is <code>my file.txt</code>, containing two spaces after <code>my</code>, you must URL encode this value to <code>my%20%20file.txt</code>.</p>
+/// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetAccessGrantsInstanceForPrefixFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

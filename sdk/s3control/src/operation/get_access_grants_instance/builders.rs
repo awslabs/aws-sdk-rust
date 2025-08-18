@@ -32,7 +32,9 @@ impl crate::operation::get_access_grants_instance::builders::GetAccessGrantsInst
 /// </dd>
 /// </dl><note>
 /// <p><code>GetAccessGrantsInstance</code> is not supported for cross-account access. You can only call the API from the account that owns the S3 Access Grants instance.</p>
-/// </note>
+/// </note> <important>
+/// <p>You must URL encode any signed header values that contain spaces. For example, if your header value is <code>my file.txt</code>, containing two spaces after <code>my</code>, you must URL encode this value to <code>my%20%20file.txt</code>.</p>
+/// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetAccessGrantsInstanceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

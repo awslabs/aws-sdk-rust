@@ -20,7 +20,7 @@ pub struct UpdateConsumableResourceInput {
     pub operation: ::std::option::Option<::std::string::String>,
     /// <p>The change in the total quantity of the consumable resource. The <code>operation</code> parameter determines whether the value specified here will be the new total quantity, or the amount by which the total quantity will be increased or reduced. Must be a non-negative value.</p>
     pub quantity: ::std::option::Option<i64>,
-    /// <p>If this parameter is specified and two update requests with identical payloads and <code>clientToken</code>s are received, these requests are considered the same request and the second request is rejected. A <code>clientToken</code> is valid for 8 hours or until one hour after the consumable resource is deleted, whichever is less.</p>
+    /// <p>If this parameter is specified and two update requests with identical payloads and <code>clientToken</code>s are received, these requests are considered the same request. Both requests will succeed, but the update will only happen once. A <code>clientToken</code> is valid for 8 hours.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdateConsumableResourceInput {
@@ -47,7 +47,7 @@ impl UpdateConsumableResourceInput {
     pub fn quantity(&self) -> ::std::option::Option<i64> {
         self.quantity
     }
-    /// <p>If this parameter is specified and two update requests with identical payloads and <code>clientToken</code>s are received, these requests are considered the same request and the second request is rejected. A <code>clientToken</code> is valid for 8 hours or until one hour after the consumable resource is deleted, whichever is less.</p>
+    /// <p>If this parameter is specified and two update requests with identical payloads and <code>clientToken</code>s are received, these requests are considered the same request. Both requests will succeed, but the update will only happen once. A <code>clientToken</code> is valid for 8 hours.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -145,17 +145,17 @@ impl UpdateConsumableResourceInputBuilder {
     pub fn get_quantity(&self) -> &::std::option::Option<i64> {
         &self.quantity
     }
-    /// <p>If this parameter is specified and two update requests with identical payloads and <code>clientToken</code>s are received, these requests are considered the same request and the second request is rejected. A <code>clientToken</code> is valid for 8 hours or until one hour after the consumable resource is deleted, whichever is less.</p>
+    /// <p>If this parameter is specified and two update requests with identical payloads and <code>clientToken</code>s are received, these requests are considered the same request. Both requests will succeed, but the update will only happen once. A <code>clientToken</code> is valid for 8 hours.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>If this parameter is specified and two update requests with identical payloads and <code>clientToken</code>s are received, these requests are considered the same request and the second request is rejected. A <code>clientToken</code> is valid for 8 hours or until one hour after the consumable resource is deleted, whichever is less.</p>
+    /// <p>If this parameter is specified and two update requests with identical payloads and <code>clientToken</code>s are received, these requests are considered the same request. Both requests will succeed, but the update will only happen once. A <code>clientToken</code> is valid for 8 hours.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
     }
-    /// <p>If this parameter is specified and two update requests with identical payloads and <code>clientToken</code>s are received, these requests are considered the same request and the second request is rejected. A <code>clientToken</code> is valid for 8 hours or until one hour after the consumable resource is deleted, whichever is less.</p>
+    /// <p>If this parameter is specified and two update requests with identical payloads and <code>clientToken</code>s are received, these requests are considered the same request. Both requests will succeed, but the update will only happen once. A <code>clientToken</code> is valid for 8 hours.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }

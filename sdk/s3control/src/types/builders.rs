@@ -215,6 +215,8 @@ pub use crate::types::_job_failure::JobFailureBuilder;
 
 pub use crate::types::_job_operation::JobOperationBuilder;
 
+pub use crate::types::_s3_compute_object_checksum_operation::S3ComputeObjectChecksumOperationBuilder;
+
 pub use crate::types::_s3_replicate_object_operation::S3ReplicateObjectOperationBuilder;
 
 pub use crate::types::_s3_set_object_retention_operation::S3SetObjectRetentionOperationBuilder;

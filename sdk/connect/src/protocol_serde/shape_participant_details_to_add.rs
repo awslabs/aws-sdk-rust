@@ -9,5 +9,11 @@ pub fn ser_participant_details_to_add(
     if let Some(var_2) = &input.display_name {
         object.key("DisplayName").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.participant_capabilities {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("ParticipantCapabilities").start_object();
+        crate::protocol_serde::shape_participant_capabilities::ser_participant_capabilities(&mut object_4, var_3)?;
+        object_4.finish();
+    }
     Ok(())
 }

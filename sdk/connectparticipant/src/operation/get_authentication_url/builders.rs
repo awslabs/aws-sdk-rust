@@ -30,7 +30,10 @@ impl crate::operation::get_authentication_url::builders::GetAuthenticationUrlInp
 /// <li>
 /// <p>The current supported channel is chat. This API is not supported for Apple Messages for Business, WhatsApp, or SMS chats.</p></li>
 /// </ul>
+/// </note> <note>
+/// <p><code>ConnectionToken</code> is used for invoking this API instead of <code>ParticipantToken</code>.</p>
 /// </note>
+/// <p>The Amazon Connect Participant Service APIs do not use <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 authentication</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetAuthenticationUrlFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

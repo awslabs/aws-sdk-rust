@@ -5,13 +5,12 @@
 pub struct CreateParticipantInput {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
-    /// <p>The identifier of the contact in this instance of Amazon Connect. Only contacts in the CHAT channel are supported.</p>
+    /// <p>The identifier of the contact in this instance of Amazon Connect. Supports contacts in the CHAT channel and VOICE (WebRTC) channels. For WebRTC calls, this should be the initial contact ID that was generated when the contact was first created (from the StartWebRTCContact API) in the VOICE channel</p>
     pub contact_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Information identifying the participant.</p><important>
-    /// <p>The only Valid value for <code>ParticipantRole</code> is <code>CUSTOM_BOT</code>.</p>
-    /// <p><code>DisplayName</code> is <b>Required</b>.</p>
+    /// <p>The only valid value for <code>ParticipantRole</code> is <code>CUSTOM_BOT</code> for chat contact and <code>CUSTOMER</code> for voice contact.</p>
     /// </important>
     pub participant_details: ::std::option::Option<crate::types::ParticipantDetailsToAdd>,
 }
@@ -20,7 +19,7 @@ impl CreateParticipantInput {
     pub fn instance_id(&self) -> ::std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>The identifier of the contact in this instance of Amazon Connect. Only contacts in the CHAT channel are supported.</p>
+    /// <p>The identifier of the contact in this instance of Amazon Connect. Supports contacts in the CHAT channel and VOICE (WebRTC) channels. For WebRTC calls, this should be the initial contact ID that was generated when the contact was first created (from the StartWebRTCContact API) in the VOICE channel</p>
     pub fn contact_id(&self) -> ::std::option::Option<&str> {
         self.contact_id.as_deref()
     }
@@ -29,8 +28,7 @@ impl CreateParticipantInput {
         self.client_token.as_deref()
     }
     /// <p>Information identifying the participant.</p><important>
-    /// <p>The only Valid value for <code>ParticipantRole</code> is <code>CUSTOM_BOT</code>.</p>
-    /// <p><code>DisplayName</code> is <b>Required</b>.</p>
+    /// <p>The only valid value for <code>ParticipantRole</code> is <code>CUSTOM_BOT</code> for chat contact and <code>CUSTOMER</code> for voice contact.</p>
     /// </important>
     pub fn participant_details(&self) -> ::std::option::Option<&crate::types::ParticipantDetailsToAdd> {
         self.participant_details.as_ref()
@@ -68,18 +66,18 @@ impl CreateParticipantInputBuilder {
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_id
     }
-    /// <p>The identifier of the contact in this instance of Amazon Connect. Only contacts in the CHAT channel are supported.</p>
+    /// <p>The identifier of the contact in this instance of Amazon Connect. Supports contacts in the CHAT channel and VOICE (WebRTC) channels. For WebRTC calls, this should be the initial contact ID that was generated when the contact was first created (from the StartWebRTCContact API) in the VOICE channel</p>
     /// This field is required.
     pub fn contact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the contact in this instance of Amazon Connect. Only contacts in the CHAT channel are supported.</p>
+    /// <p>The identifier of the contact in this instance of Amazon Connect. Supports contacts in the CHAT channel and VOICE (WebRTC) channels. For WebRTC calls, this should be the initial contact ID that was generated when the contact was first created (from the StartWebRTCContact API) in the VOICE channel</p>
     pub fn set_contact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.contact_id = input;
         self
     }
-    /// <p>The identifier of the contact in this instance of Amazon Connect. Only contacts in the CHAT channel are supported.</p>
+    /// <p>The identifier of the contact in this instance of Amazon Connect. Supports contacts in the CHAT channel and VOICE (WebRTC) channels. For WebRTC calls, this should be the initial contact ID that was generated when the contact was first created (from the StartWebRTCContact API) in the VOICE channel</p>
     pub fn get_contact_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.contact_id
     }
@@ -98,8 +96,7 @@ impl CreateParticipantInputBuilder {
         &self.client_token
     }
     /// <p>Information identifying the participant.</p><important>
-    /// <p>The only Valid value for <code>ParticipantRole</code> is <code>CUSTOM_BOT</code>.</p>
-    /// <p><code>DisplayName</code> is <b>Required</b>.</p>
+    /// <p>The only valid value for <code>ParticipantRole</code> is <code>CUSTOM_BOT</code> for chat contact and <code>CUSTOMER</code> for voice contact.</p>
     /// </important>
     /// This field is required.
     pub fn participant_details(mut self, input: crate::types::ParticipantDetailsToAdd) -> Self {
@@ -107,16 +104,14 @@ impl CreateParticipantInputBuilder {
         self
     }
     /// <p>Information identifying the participant.</p><important>
-    /// <p>The only Valid value for <code>ParticipantRole</code> is <code>CUSTOM_BOT</code>.</p>
-    /// <p><code>DisplayName</code> is <b>Required</b>.</p>
+    /// <p>The only valid value for <code>ParticipantRole</code> is <code>CUSTOM_BOT</code> for chat contact and <code>CUSTOMER</code> for voice contact.</p>
     /// </important>
     pub fn set_participant_details(mut self, input: ::std::option::Option<crate::types::ParticipantDetailsToAdd>) -> Self {
         self.participant_details = input;
         self
     }
     /// <p>Information identifying the participant.</p><important>
-    /// <p>The only Valid value for <code>ParticipantRole</code> is <code>CUSTOM_BOT</code>.</p>
-    /// <p><code>DisplayName</code> is <b>Required</b>.</p>
+    /// <p>The only valid value for <code>ParticipantRole</code> is <code>CUSTOM_BOT</code> for chat contact and <code>CUSTOMER</code> for voice contact.</p>
     /// </important>
     pub fn get_participant_details(&self) -> &::std::option::Option<crate::types::ParticipantDetailsToAdd> {
         &self.participant_details
