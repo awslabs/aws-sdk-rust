@@ -375,6 +375,10 @@ pub use crate::types::_collaboration_configured_audience_model_association::Coll
 
 pub use crate::types::_collaboration_analysis_template::CollaborationAnalysisTemplate;
 
+pub use crate::types::_error_message_configuration::ErrorMessageConfiguration;
+
+pub use crate::types::_error_message_type::ErrorMessageType;
+
 pub use crate::types::_analysis_template_validation_status_detail::AnalysisTemplateValidationStatusDetail;
 
 pub use crate::types::_analysis_template_validation_status_reason::AnalysisTemplateValidationStatusReason;
@@ -616,6 +620,10 @@ mod _differential_privacy_template_parameters_output;
 mod _differential_privacy_template_update_parameters;
 
 mod _direct_analysis_configuration_details;
+
+mod _error_message_configuration;
+
+mod _error_message_type;
 
 mod _filterable_member_status;
 

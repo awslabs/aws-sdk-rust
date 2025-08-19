@@ -1966,6 +1966,15 @@ pub(crate) fn differential_privacy_privacy_impact_correct_errors(
     builder
 }
 
+pub(crate) fn error_message_configuration_correct_errors(
+    mut builder: crate::types::builders::ErrorMessageConfigurationBuilder,
+) -> crate::types::builders::ErrorMessageConfigurationBuilder {
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::ErrorMessageType>().ok()
+    }
+    builder
+}
+
 pub(crate) fn id_mapping_config_correct_errors(
     mut builder: crate::types::builders::IdMappingConfigBuilder,
 ) -> crate::types::builders::IdMappingConfigBuilder {

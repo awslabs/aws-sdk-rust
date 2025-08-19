@@ -19,6 +19,8 @@ pub struct CreateAnalysisTemplateInput {
     pub analysis_parameters: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisParameter>>,
     /// <p>A relation within an analysis.</p>
     pub schema: ::std::option::Option<crate::types::AnalysisSchema>,
+    /// <p>The configuration that specifies the level of detail in error messages returned by analyses using this template. When set to <code>DETAILED</code>, error messages include more information to help troubleshoot issues with PySpark jobs. Detailed error messages may expose underlying data, including sensitive information. Recommended for faster troubleshooting in development and testing environments.</p>
+    pub error_message_configuration: ::std::option::Option<crate::types::ErrorMessageConfiguration>,
 }
 impl CreateAnalysisTemplateInput {
     /// <p>The description of the analysis template.</p>
@@ -55,6 +57,10 @@ impl CreateAnalysisTemplateInput {
     pub fn schema(&self) -> ::std::option::Option<&crate::types::AnalysisSchema> {
         self.schema.as_ref()
     }
+    /// <p>The configuration that specifies the level of detail in error messages returned by analyses using this template. When set to <code>DETAILED</code>, error messages include more information to help troubleshoot issues with PySpark jobs. Detailed error messages may expose underlying data, including sensitive information. Recommended for faster troubleshooting in development and testing environments.</p>
+    pub fn error_message_configuration(&self) -> ::std::option::Option<&crate::types::ErrorMessageConfiguration> {
+        self.error_message_configuration.as_ref()
+    }
 }
 impl CreateAnalysisTemplateInput {
     /// Creates a new builder-style object to manufacture [`CreateAnalysisTemplateInput`](crate::operation::create_analysis_template::CreateAnalysisTemplateInput).
@@ -75,6 +81,7 @@ pub struct CreateAnalysisTemplateInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) analysis_parameters: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisParameter>>,
     pub(crate) schema: ::std::option::Option<crate::types::AnalysisSchema>,
+    pub(crate) error_message_configuration: ::std::option::Option<crate::types::ErrorMessageConfiguration>,
 }
 impl CreateAnalysisTemplateInputBuilder {
     /// <p>The description of the analysis template.</p>
@@ -205,6 +212,20 @@ impl CreateAnalysisTemplateInputBuilder {
     pub fn get_schema(&self) -> &::std::option::Option<crate::types::AnalysisSchema> {
         &self.schema
     }
+    /// <p>The configuration that specifies the level of detail in error messages returned by analyses using this template. When set to <code>DETAILED</code>, error messages include more information to help troubleshoot issues with PySpark jobs. Detailed error messages may expose underlying data, including sensitive information. Recommended for faster troubleshooting in development and testing environments.</p>
+    pub fn error_message_configuration(mut self, input: crate::types::ErrorMessageConfiguration) -> Self {
+        self.error_message_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration that specifies the level of detail in error messages returned by analyses using this template. When set to <code>DETAILED</code>, error messages include more information to help troubleshoot issues with PySpark jobs. Detailed error messages may expose underlying data, including sensitive information. Recommended for faster troubleshooting in development and testing environments.</p>
+    pub fn set_error_message_configuration(mut self, input: ::std::option::Option<crate::types::ErrorMessageConfiguration>) -> Self {
+        self.error_message_configuration = input;
+        self
+    }
+    /// <p>The configuration that specifies the level of detail in error messages returned by analyses using this template. When set to <code>DETAILED</code>, error messages include more information to help troubleshoot issues with PySpark jobs. Detailed error messages may expose underlying data, including sensitive information. Recommended for faster troubleshooting in development and testing environments.</p>
+    pub fn get_error_message_configuration(&self) -> &::std::option::Option<crate::types::ErrorMessageConfiguration> {
+        &self.error_message_configuration
+    }
     /// Consumes the builder and constructs a [`CreateAnalysisTemplateInput`](crate::operation::create_analysis_template::CreateAnalysisTemplateInput).
     pub fn build(
         self,
@@ -221,6 +242,7 @@ impl CreateAnalysisTemplateInputBuilder {
             tags: self.tags,
             analysis_parameters: self.analysis_parameters,
             schema: self.schema,
+            error_message_configuration: self.error_message_configuration,
         })
     }
 }

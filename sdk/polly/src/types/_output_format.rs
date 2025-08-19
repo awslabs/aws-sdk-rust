@@ -14,6 +14,7 @@
 /// match outputformat {
 ///     OutputFormat::Json => { /* ... */ },
 ///     OutputFormat::Mp3 => { /* ... */ },
+///     OutputFormat::OggOpus => { /* ... */ },
 ///     OutputFormat::OggVorbis => { /* ... */ },
 ///     OutputFormat::Pcm => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -49,6 +50,8 @@ pub enum OutputFormat {
     #[allow(missing_docs)] // documentation missing in model
     Mp3,
     #[allow(missing_docs)] // documentation missing in model
+    OggOpus,
+    #[allow(missing_docs)] // documentation missing in model
     OggVorbis,
     #[allow(missing_docs)] // documentation missing in model
     Pcm,
@@ -61,6 +64,7 @@ impl ::std::convert::From<&str> for OutputFormat {
         match s {
             "json" => OutputFormat::Json,
             "mp3" => OutputFormat::Mp3,
+            "ogg_opus" => OutputFormat::OggOpus,
             "ogg_vorbis" => OutputFormat::OggVorbis,
             "pcm" => OutputFormat::Pcm,
             other => OutputFormat::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -80,6 +84,7 @@ impl OutputFormat {
         match self {
             OutputFormat::Json => "json",
             OutputFormat::Mp3 => "mp3",
+            OutputFormat::OggOpus => "ogg_opus",
             OutputFormat::OggVorbis => "ogg_vorbis",
             OutputFormat::Pcm => "pcm",
             OutputFormat::Unknown(value) => value.as_str(),
@@ -87,7 +92,7 @@ impl OutputFormat {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["json", "mp3", "ogg_vorbis", "pcm"]
+        &["json", "mp3", "ogg_opus", "ogg_vorbis", "pcm"]
     }
 }
 impl ::std::convert::AsRef<str> for OutputFormat {
@@ -112,6 +117,7 @@ impl ::std::fmt::Display for OutputFormat {
         match self {
             OutputFormat::Json => write!(f, "json"),
             OutputFormat::Mp3 => write!(f, "mp3"),
+            OutputFormat::OggOpus => write!(f, "ogg_opus"),
             OutputFormat::OggVorbis => write!(f, "ogg_vorbis"),
             OutputFormat::Pcm => write!(f, "pcm"),
             OutputFormat::Unknown(value) => write!(f, "{}", value),

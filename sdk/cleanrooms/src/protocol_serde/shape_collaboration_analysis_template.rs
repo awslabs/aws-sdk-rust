@@ -102,6 +102,11 @@ where
                                     crate::protocol_serde::shape_analysis_template_validation_status_detail_list::de_analysis_template_validation_status_detail_list(tokens)?
                                 );
                         }
+                        "errorMessageConfiguration" => {
+                            builder = builder.set_error_message_configuration(
+                                crate::protocol_serde::shape_error_message_configuration::de_error_message_configuration(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

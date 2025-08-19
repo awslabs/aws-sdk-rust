@@ -239,6 +239,8 @@ pub use crate::types::_collaboration_configured_audience_model_association::Coll
 
 pub use crate::types::_collaboration_analysis_template::CollaborationAnalysisTemplateBuilder;
 
+pub use crate::types::_error_message_configuration::ErrorMessageConfigurationBuilder;
+
 pub use crate::types::_analysis_template_validation_status_detail::AnalysisTemplateValidationStatusDetailBuilder;
 
 pub use crate::types::_analysis_template_validation_status_reason::AnalysisTemplateValidationStatusReasonBuilder;

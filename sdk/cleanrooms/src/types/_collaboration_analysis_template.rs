@@ -34,6 +34,8 @@ pub struct CollaborationAnalysisTemplate {
     pub analysis_parameters: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisParameter>>,
     /// <p>The validations that were performed.</p>
     pub validations: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisTemplateValidationStatusDetail>>,
+    /// <p>The configuration that specifies the level of detail in error messages returned by analyses using this template. When set to <code>DETAILED</code>, error messages include more information to help troubleshoot issues with PySpark jobs. Detailed error messages may expose underlying data, including sensitive information. Recommended for faster troubleshooting in development and testing environments.</p>
+    pub error_message_configuration: ::std::option::Option<crate::types::ErrorMessageConfiguration>,
 }
 impl CollaborationAnalysisTemplate {
     /// <p>The identifier of the analysis template.</p>
@@ -106,6 +108,10 @@ impl CollaborationAnalysisTemplate {
     pub fn validations(&self) -> &[crate::types::AnalysisTemplateValidationStatusDetail] {
         self.validations.as_deref().unwrap_or_default()
     }
+    /// <p>The configuration that specifies the level of detail in error messages returned by analyses using this template. When set to <code>DETAILED</code>, error messages include more information to help troubleshoot issues with PySpark jobs. Detailed error messages may expose underlying data, including sensitive information. Recommended for faster troubleshooting in development and testing environments.</p>
+    pub fn error_message_configuration(&self) -> ::std::option::Option<&crate::types::ErrorMessageConfiguration> {
+        self.error_message_configuration.as_ref()
+    }
 }
 impl CollaborationAnalysisTemplate {
     /// Creates a new builder-style object to manufacture [`CollaborationAnalysisTemplate`](crate::types::CollaborationAnalysisTemplate).
@@ -133,6 +139,7 @@ pub struct CollaborationAnalysisTemplateBuilder {
     pub(crate) source_metadata: ::std::option::Option<crate::types::AnalysisSourceMetadata>,
     pub(crate) analysis_parameters: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisParameter>>,
     pub(crate) validations: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisTemplateValidationStatusDetail>>,
+    pub(crate) error_message_configuration: ::std::option::Option<crate::types::ErrorMessageConfiguration>,
 }
 impl CollaborationAnalysisTemplateBuilder {
     /// <p>The identifier of the analysis template.</p>
@@ -367,6 +374,20 @@ impl CollaborationAnalysisTemplateBuilder {
     pub fn get_validations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalysisTemplateValidationStatusDetail>> {
         &self.validations
     }
+    /// <p>The configuration that specifies the level of detail in error messages returned by analyses using this template. When set to <code>DETAILED</code>, error messages include more information to help troubleshoot issues with PySpark jobs. Detailed error messages may expose underlying data, including sensitive information. Recommended for faster troubleshooting in development and testing environments.</p>
+    pub fn error_message_configuration(mut self, input: crate::types::ErrorMessageConfiguration) -> Self {
+        self.error_message_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration that specifies the level of detail in error messages returned by analyses using this template. When set to <code>DETAILED</code>, error messages include more information to help troubleshoot issues with PySpark jobs. Detailed error messages may expose underlying data, including sensitive information. Recommended for faster troubleshooting in development and testing environments.</p>
+    pub fn set_error_message_configuration(mut self, input: ::std::option::Option<crate::types::ErrorMessageConfiguration>) -> Self {
+        self.error_message_configuration = input;
+        self
+    }
+    /// <p>The configuration that specifies the level of detail in error messages returned by analyses using this template. When set to <code>DETAILED</code>, error messages include more information to help troubleshoot issues with PySpark jobs. Detailed error messages may expose underlying data, including sensitive information. Recommended for faster troubleshooting in development and testing environments.</p>
+    pub fn get_error_message_configuration(&self) -> &::std::option::Option<crate::types::ErrorMessageConfiguration> {
+        &self.error_message_configuration
+    }
     /// Consumes the builder and constructs a [`CollaborationAnalysisTemplate`](crate::types::CollaborationAnalysisTemplate).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::CollaborationAnalysisTemplateBuilder::id)
@@ -440,6 +461,7 @@ impl CollaborationAnalysisTemplateBuilder {
             source_metadata: self.source_metadata,
             analysis_parameters: self.analysis_parameters,
             validations: self.validations,
+            error_message_configuration: self.error_message_configuration,
         })
     }
 }

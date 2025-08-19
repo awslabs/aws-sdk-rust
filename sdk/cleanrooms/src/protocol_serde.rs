@@ -341,6 +341,8 @@ pub(crate) mod shape_configured_table_summary_list;
 
 pub(crate) mod shape_data_encryption_metadata;
 
+pub(crate) mod shape_error_message_configuration;
+
 pub(crate) mod shape_id_mapping_config;
 
 pub(crate) mod shape_id_mapping_table;

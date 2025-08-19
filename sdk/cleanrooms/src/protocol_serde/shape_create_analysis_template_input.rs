@@ -18,33 +18,39 @@ pub fn ser_create_analysis_template_input_input(
     if let Some(var_5) = &input.description {
         object.key("description").string(var_5.as_str());
     }
-    if let Some(var_6) = &input.format {
-        object.key("format").string(var_6.as_str());
-    }
-    if let Some(var_7) = &input.name {
-        object.key("name").string(var_7.as_str());
-    }
-    if let Some(var_8) = &input.schema {
+    if let Some(var_6) = &input.error_message_configuration {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("schema").start_object();
-        crate::protocol_serde::shape_analysis_schema::ser_analysis_schema(&mut object_9, var_8)?;
-        object_9.finish();
+        let mut object_7 = object.key("errorMessageConfiguration").start_object();
+        crate::protocol_serde::shape_error_message_configuration::ser_error_message_configuration(&mut object_7, var_6)?;
+        object_7.finish();
     }
-    if let Some(var_10) = &input.source {
+    if let Some(var_8) = &input.format {
+        object.key("format").string(var_8.as_str());
+    }
+    if let Some(var_9) = &input.name {
+        object.key("name").string(var_9.as_str());
+    }
+    if let Some(var_10) = &input.schema {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("source").start_object();
-        crate::protocol_serde::shape_analysis_source::ser_analysis_source(&mut object_11, var_10)?;
+        let mut object_11 = object.key("schema").start_object();
+        crate::protocol_serde::shape_analysis_schema::ser_analysis_schema(&mut object_11, var_10)?;
         object_11.finish();
     }
-    if let Some(var_12) = &input.tags {
+    if let Some(var_12) = &input.source {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("tags").start_object();
-        for (key_14, value_15) in var_12 {
+        let mut object_13 = object.key("source").start_object();
+        crate::protocol_serde::shape_analysis_source::ser_analysis_source(&mut object_13, var_12)?;
+        object_13.finish();
+    }
+    if let Some(var_14) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_15 = object.key("tags").start_object();
+        for (key_16, value_17) in var_14 {
             {
-                object_13.key(key_14.as_str()).string(value_15.as_str());
+                object_15.key(key_16.as_str()).string(value_17.as_str());
             }
         }
-        object_13.finish();
+        object_15.finish();
     }
     Ok(())
 }

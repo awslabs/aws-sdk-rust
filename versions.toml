@@ -412,9 +412,9 @@ model_hash = '753e9196d4f77066996750f280dd235602ef8ec708d1236abb99be8f3c07bd43'
 
 [crates.aws-sdk-cleanrooms]
 category = 'AwsSdk'
-version = '1.93.0'
-source_hash = 'df3f64b5fcb70efca7093a7ced6eb86fa75df7ed6b24d6d2f9692d850afbed00'
-model_hash = '1d68762aad2a0e55ecd0f1e368cdeca71416c0d83bda84ba566daab7e6e07678'
+version = '1.94.0'
+source_hash = 'f3099f635d9900812e621abcf7d9c36c945ad8ef972fbe9800337149471ba31a'
+model_hash = '6cadc18540fa55aacece25a4e6c36d38b8e75078d75cba986ad582a7cbf6af2a'
 
 [crates.aws-sdk-cleanroomsml]
 category = 'AwsSdk'
@@ -832,9 +832,9 @@ model_hash = '5ec7004d46e2bb30c8d974da3846e960c6d52a00307ee4cc8a62b95566a1fc84'
 
 [crates.aws-sdk-ec2]
 category = 'AwsSdk'
-version = '1.159.0'
-source_hash = 'dde5cd86ca08b2ccd2fdafe73e3cbd077cf364e6503d6f8a8a0c67ee14aee068'
-model_hash = 'b535c110388f690b29091e25328c0931c547f7b651e6ecf20fb40ec3ae6bc296'
+version = '1.160.0'
+source_hash = '6988b81f0937cd5628c65fd6df1ca41af8197111e0682dfd9721572a71a44e16'
+model_hash = '5f28062a1019677cc694f2fdb1e5fe969947988deddce6029a292f0d6325f1a4'
 
 [crates.aws-sdk-ec2instanceconnect]
 category = 'AwsSdk'
@@ -1864,9 +1864,9 @@ model_hash = '0d5e27417d05239d1df3e2a728cd52b1d4926795f9b7c6b4e9d9d9d73c49f39e'
 
 [crates.aws-sdk-polly]
 category = 'AwsSdk'
-version = '1.85.0'
-source_hash = '2509bf4e7a181e88d2eca2e561d00a0d481e31a1f904ebb0f8ce0c87d715373a'
-model_hash = '4b3365d51426efca32fd3fca1b7a0b8941c108eda967658d1a9999e499255d75'
+version = '1.86.0'
+source_hash = '81325d8f27c03fd0c9c74ce3c485468e9db06641ee1ff640e3e1ec13dabec61a'
+model_hash = 'e7f2a79a7d22792d3852e7c3e2a06ba3bf5f9b9ef7f9cac626e7e3553ba7e082'
 
 [crates.aws-sdk-pricing]
 category = 'AwsSdk'
@@ -2693,14 +2693,7 @@ source_hash = '6038d5fa0cdc1cbaf135a4fc397589d590670bce272512f531a3be337ebb2843'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '670815a3e9f5d0e83589d550f2f1bd496ade9666a58e74f49eac19d84b5663e4'
-
-[release]
-tag = 'release-2025-08-18'
-
 [release.crates]
-aws-sdk-batch = '1.93.1'
-aws-sdk-bcmdashboards = '1.0.0'
-aws-sdk-connect = '1.123.0'
-aws-sdk-connectparticipant = '1.84.0'
-aws-sdk-s3control = '1.95.0'
-aws-sdk-sagemaker = '1.151.0'
+aws-sdk-cleanrooms = '1.94.0'
+aws-sdk-ec2 = '1.160.0'
+aws-sdk-polly = '1.86.0'

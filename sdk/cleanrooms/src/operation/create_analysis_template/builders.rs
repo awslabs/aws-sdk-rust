@@ -230,4 +230,18 @@ impl CreateAnalysisTemplateFluentBuilder {
     pub fn get_schema(&self) -> &::std::option::Option<crate::types::AnalysisSchema> {
         self.inner.get_schema()
     }
+    /// <p>The configuration that specifies the level of detail in error messages returned by analyses using this template. When set to <code>DETAILED</code>, error messages include more information to help troubleshoot issues with PySpark jobs. Detailed error messages may expose underlying data, including sensitive information. Recommended for faster troubleshooting in development and testing environments.</p>
+    pub fn error_message_configuration(mut self, input: crate::types::ErrorMessageConfiguration) -> Self {
+        self.inner = self.inner.error_message_configuration(input);
+        self
+    }
+    /// <p>The configuration that specifies the level of detail in error messages returned by analyses using this template. When set to <code>DETAILED</code>, error messages include more information to help troubleshoot issues with PySpark jobs. Detailed error messages may expose underlying data, including sensitive information. Recommended for faster troubleshooting in development and testing environments.</p>
+    pub fn set_error_message_configuration(mut self, input: ::std::option::Option<crate::types::ErrorMessageConfiguration>) -> Self {
+        self.inner = self.inner.set_error_message_configuration(input);
+        self
+    }
+    /// <p>The configuration that specifies the level of detail in error messages returned by analyses using this template. When set to <code>DETAILED</code>, error messages include more information to help troubleshoot issues with PySpark jobs. Detailed error messages may expose underlying data, including sensitive information. Recommended for faster troubleshooting in development and testing environments.</p>
+    pub fn get_error_message_configuration(&self) -> &::std::option::Option<crate::types::ErrorMessageConfiguration> {
+        self.inner.get_error_message_configuration()
+    }
 }
