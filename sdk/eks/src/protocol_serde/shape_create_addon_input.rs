@@ -15,33 +15,39 @@ pub fn ser_create_addon_input_input(
     if let Some(var_4) = &input.configuration_values {
         object.key("configurationValues").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.pod_identity_associations {
-        let mut array_6 = object.key("podIdentityAssociations").start_array();
-        for item_7 in var_5 {
+    if let Some(var_5) = &input.namespace_config {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("namespaceConfig").start_object();
+        crate::protocol_serde::shape_addon_namespace_config_request::ser_addon_namespace_config_request(&mut object_6, var_5)?;
+        object_6.finish();
+    }
+    if let Some(var_7) = &input.pod_identity_associations {
+        let mut array_8 = object.key("podIdentityAssociations").start_array();
+        for item_9 in var_7 {
             {
                 #[allow(unused_mut)]
-                let mut object_8 = array_6.value().start_object();
-                crate::protocol_serde::shape_addon_pod_identity_associations::ser_addon_pod_identity_associations(&mut object_8, item_7)?;
-                object_8.finish();
+                let mut object_10 = array_8.value().start_object();
+                crate::protocol_serde::shape_addon_pod_identity_associations::ser_addon_pod_identity_associations(&mut object_10, item_9)?;
+                object_10.finish();
             }
         }
-        array_6.finish();
+        array_8.finish();
     }
-    if let Some(var_9) = &input.resolve_conflicts {
-        object.key("resolveConflicts").string(var_9.as_str());
+    if let Some(var_11) = &input.resolve_conflicts {
+        object.key("resolveConflicts").string(var_11.as_str());
     }
-    if let Some(var_10) = &input.service_account_role_arn {
-        object.key("serviceAccountRoleArn").string(var_10.as_str());
+    if let Some(var_12) = &input.service_account_role_arn {
+        object.key("serviceAccountRoleArn").string(var_12.as_str());
     }
-    if let Some(var_11) = &input.tags {
+    if let Some(var_13) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_12 = object.key("tags").start_object();
-        for (key_13, value_14) in var_11 {
+        let mut object_14 = object.key("tags").start_object();
+        for (key_15, value_16) in var_13 {
             {
-                object_12.key(key_13.as_str()).string(value_14.as_str());
+                object_14.key(key_15.as_str()).string(value_16.as_str());
             }
         }
-        object_12.finish();
+        object_14.finish();
     }
     Ok(())
 }

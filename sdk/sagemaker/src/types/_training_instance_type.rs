@@ -112,6 +112,7 @@
 ///     TrainingInstanceType::MlP4D24Xlarge => { /* ... */ },
 ///     TrainingInstanceType::MlP4De24Xlarge => { /* ... */ },
 ///     TrainingInstanceType::MlP548Xlarge => { /* ... */ },
+///     TrainingInstanceType::MlP54Xlarge => { /* ... */ },
 ///     TrainingInstanceType::MlP5E48Xlarge => { /* ... */ },
 ///     TrainingInstanceType::MlP5En48Xlarge => { /* ... */ },
 ///     TrainingInstanceType::MlP6B20048Xlarge => { /* ... */ },
@@ -378,6 +379,8 @@ pub enum TrainingInstanceType {
     #[allow(missing_docs)] // documentation missing in model
     MlP548Xlarge,
     #[allow(missing_docs)] // documentation missing in model
+    MlP54Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
     MlP5E48Xlarge,
     #[allow(missing_docs)] // documentation missing in model
     MlP5En48Xlarge,
@@ -558,6 +561,7 @@ impl ::std::convert::From<&str> for TrainingInstanceType {
             "ml.p4d.24xlarge" => TrainingInstanceType::MlP4D24Xlarge,
             "ml.p4de.24xlarge" => TrainingInstanceType::MlP4De24Xlarge,
             "ml.p5.48xlarge" => TrainingInstanceType::MlP548Xlarge,
+            "ml.p5.4xlarge" => TrainingInstanceType::MlP54Xlarge,
             "ml.p5e.48xlarge" => TrainingInstanceType::MlP5E48Xlarge,
             "ml.p5en.48xlarge" => TrainingInstanceType::MlP5En48Xlarge,
             "ml.p6-b200.48xlarge" => TrainingInstanceType::MlP6B20048Xlarge,
@@ -710,6 +714,7 @@ impl TrainingInstanceType {
             TrainingInstanceType::MlP4D24Xlarge => "ml.p4d.24xlarge",
             TrainingInstanceType::MlP4De24Xlarge => "ml.p4de.24xlarge",
             TrainingInstanceType::MlP548Xlarge => "ml.p5.48xlarge",
+            TrainingInstanceType::MlP54Xlarge => "ml.p5.4xlarge",
             TrainingInstanceType::MlP5E48Xlarge => "ml.p5e.48xlarge",
             TrainingInstanceType::MlP5En48Xlarge => "ml.p5en.48xlarge",
             TrainingInstanceType::MlP6B20048Xlarge => "ml.p6-b200.48xlarge",
@@ -853,6 +858,7 @@ impl TrainingInstanceType {
             "ml.p4d.24xlarge",
             "ml.p4de.24xlarge",
             "ml.p5.48xlarge",
+            "ml.p5.4xlarge",
             "ml.p5e.48xlarge",
             "ml.p5en.48xlarge",
             "ml.p6-b200.48xlarge",
@@ -1013,6 +1019,7 @@ impl ::std::fmt::Display for TrainingInstanceType {
             TrainingInstanceType::MlP4D24Xlarge => write!(f, "ml.p4d.24xlarge"),
             TrainingInstanceType::MlP4De24Xlarge => write!(f, "ml.p4de.24xlarge"),
             TrainingInstanceType::MlP548Xlarge => write!(f, "ml.p5.48xlarge"),
+            TrainingInstanceType::MlP54Xlarge => write!(f, "ml.p5.4xlarge"),
             TrainingInstanceType::MlP5E48Xlarge => write!(f, "ml.p5e.48xlarge"),
             TrainingInstanceType::MlP5En48Xlarge => write!(f, "ml.p5en.48xlarge"),
             TrainingInstanceType::MlP6B20048Xlarge => write!(f, "ml.p6-b200.48xlarge"),

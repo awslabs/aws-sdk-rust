@@ -7,7 +7,7 @@ pub struct DeleteApplicationVpcConfigurationOutput {
     pub application_arn: ::std::option::Option<::std::string::String>,
     /// <p>The updated version ID of the application.</p>
     pub application_version_id: ::std::option::Option<i64>,
-    /// Operation ID for tracking DeleteApplicationVpcConfiguration request
+    /// <p>The operation ID that can be used to track the request.</p>
     pub operation_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -20,7 +20,7 @@ impl DeleteApplicationVpcConfigurationOutput {
     pub fn application_version_id(&self) -> ::std::option::Option<i64> {
         self.application_version_id
     }
-    /// Operation ID for tracking DeleteApplicationVpcConfiguration request
+    /// <p>The operation ID that can be used to track the request.</p>
     pub fn operation_id(&self) -> ::std::option::Option<&str> {
         self.operation_id.as_deref()
     }
@@ -75,17 +75,17 @@ impl DeleteApplicationVpcConfigurationOutputBuilder {
     pub fn get_application_version_id(&self) -> &::std::option::Option<i64> {
         &self.application_version_id
     }
-    /// Operation ID for tracking DeleteApplicationVpcConfiguration request
+    /// <p>The operation ID that can be used to track the request.</p>
     pub fn operation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.operation_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// Operation ID for tracking DeleteApplicationVpcConfiguration request
+    /// <p>The operation ID that can be used to track the request.</p>
     pub fn set_operation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.operation_id = input;
         self
     }
-    /// Operation ID for tracking DeleteApplicationVpcConfiguration request
+    /// <p>The operation ID that can be used to track the request.</p>
     pub fn get_operation_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.operation_id
     }

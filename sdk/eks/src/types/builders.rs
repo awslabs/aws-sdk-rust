@@ -165,6 +165,8 @@ pub use crate::types::_addon_pod_identity_configuration::AddonPodIdentityConfigu
 
 pub use crate::types::_addon::AddonBuilder;
 
+pub use crate::types::_addon_namespace_config_response::AddonNamespaceConfigResponseBuilder;
+
 pub use crate::types::_addon_health::AddonHealthBuilder;
 
 pub use crate::types::_addon_issue::AddonIssueBuilder;
@@ -174,5 +176,7 @@ pub use crate::types::_create_access_config_request::CreateAccessConfigRequestBu
 pub use crate::types::_outpost_config_request::OutpostConfigRequestBuilder;
 
 pub use crate::types::_control_plane_placement_request::ControlPlanePlacementRequestBuilder;
+
+pub use crate::types::_addon_namespace_config_request::AddonNamespaceConfigRequestBuilder;
 
 pub use crate::types::_oidc_identity_provider_config_request::OidcIdentityProviderConfigRequestBuilder;

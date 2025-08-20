@@ -8,7 +8,7 @@ pub struct UpdateUserPoolDomainInput {
     pub domain: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the user pool that is associated with the domain you're updating.</p>
     pub user_pool_id: ::std::option::Option<::std::string::String>,
-    /// <p>A version number that indicates the state of managed login for your domain. Version <code>1</code> is hosted UI (classic). Version <code>2</code> is the newer managed login with the branding designer. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managed-login.html">Managed login</a>.</p>
+    /// <p>A version number that indicates the state of managed login for your domain. Version <code>1</code> is hosted UI (classic). Version <code>2</code> is the newer managed login with the branding editor. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managed-login.html">Managed login</a>.</p>
     pub managed_login_version: ::std::option::Option<i32>,
     /// <p>The configuration for a custom domain that hosts managed login for your application. In an <code>UpdateUserPoolDomain</code> request, this parameter specifies an SSL certificate for the managed login hosted webserver. The certificate must be an ACM ARN in <code>us-east-1</code>.</p>
     /// <p>When you create a custom domain, the passkey RP ID defaults to the custom domain. If you had a prefix domain active, this will cause passkey integration for your prefix domain to stop working due to a mismatch in RP ID. To keep the prefix domain passkey integration working, you can explicitly set RP ID to the prefix domain.</p>
@@ -23,7 +23,7 @@ impl UpdateUserPoolDomainInput {
     pub fn user_pool_id(&self) -> ::std::option::Option<&str> {
         self.user_pool_id.as_deref()
     }
-    /// <p>A version number that indicates the state of managed login for your domain. Version <code>1</code> is hosted UI (classic). Version <code>2</code> is the newer managed login with the branding designer. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managed-login.html">Managed login</a>.</p>
+    /// <p>A version number that indicates the state of managed login for your domain. Version <code>1</code> is hosted UI (classic). Version <code>2</code> is the newer managed login with the branding editor. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managed-login.html">Managed login</a>.</p>
     pub fn managed_login_version(&self) -> ::std::option::Option<i32> {
         self.managed_login_version
     }
@@ -80,17 +80,17 @@ impl UpdateUserPoolDomainInputBuilder {
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_pool_id
     }
-    /// <p>A version number that indicates the state of managed login for your domain. Version <code>1</code> is hosted UI (classic). Version <code>2</code> is the newer managed login with the branding designer. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managed-login.html">Managed login</a>.</p>
+    /// <p>A version number that indicates the state of managed login for your domain. Version <code>1</code> is hosted UI (classic). Version <code>2</code> is the newer managed login with the branding editor. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managed-login.html">Managed login</a>.</p>
     pub fn managed_login_version(mut self, input: i32) -> Self {
         self.managed_login_version = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A version number that indicates the state of managed login for your domain. Version <code>1</code> is hosted UI (classic). Version <code>2</code> is the newer managed login with the branding designer. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managed-login.html">Managed login</a>.</p>
+    /// <p>A version number that indicates the state of managed login for your domain. Version <code>1</code> is hosted UI (classic). Version <code>2</code> is the newer managed login with the branding editor. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managed-login.html">Managed login</a>.</p>
     pub fn set_managed_login_version(mut self, input: ::std::option::Option<i32>) -> Self {
         self.managed_login_version = input;
         self
     }
-    /// <p>A version number that indicates the state of managed login for your domain. Version <code>1</code> is hosted UI (classic). Version <code>2</code> is the newer managed login with the branding designer. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managed-login.html">Managed login</a>.</p>
+    /// <p>A version number that indicates the state of managed login for your domain. Version <code>1</code> is hosted UI (classic). Version <code>2</code> is the newer managed login with the branding editor. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managed-login.html">Managed login</a>.</p>
     pub fn get_managed_login_version(&self) -> &::std::option::Option<i32> {
         &self.managed_login_version
     }

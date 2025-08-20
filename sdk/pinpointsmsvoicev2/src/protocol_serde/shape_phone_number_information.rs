@@ -102,6 +102,10 @@ where
                                     .transpose()?,
                             );
                         }
+                        "InternationalSendingEnabled" => {
+                            builder =
+                                builder.set_international_sending_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
                         "DeletionProtectionEnabled" => {
                             builder =
                                 builder.set_deletion_protection_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);

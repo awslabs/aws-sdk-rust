@@ -6,14 +6,17 @@ pub fn ser_remove_policy_grant_input_input(
     if let Some(var_1) = &input.client_token {
         object.key("clientToken").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.policy_type {
-        object.key("policyType").string(var_2.as_str());
+    if let Some(var_2) = &input.grant_identifier {
+        object.key("grantIdentifier").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.principal {
+    if let Some(var_3) = &input.policy_type {
+        object.key("policyType").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.principal {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("principal").start_object();
-        crate::protocol_serde::shape_policy_grant_principal::ser_policy_grant_principal(&mut object_4, var_3)?;
-        object_4.finish();
+        let mut object_5 = object.key("principal").start_object();
+        crate::protocol_serde::shape_policy_grant_principal::ser_policy_grant_principal(&mut object_5, var_4)?;
+        object_5.finish();
     }
     Ok(())
 }

@@ -60,6 +60,11 @@ where
                                     crate::protocol_serde::shape_zeppelin_application_configuration_description::de_zeppelin_application_configuration_description(tokens)?
                                 );
                             }
+                            "ApplicationEncryptionConfigurationDescription" => {
+                                builder = builder.set_application_encryption_configuration_description(
+                                    crate::protocol_serde::shape_application_encryption_configuration_description::de_application_encryption_configuration_description(tokens)?
+                                );
+                            }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

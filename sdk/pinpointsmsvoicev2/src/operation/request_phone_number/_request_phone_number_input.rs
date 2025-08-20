@@ -22,6 +22,8 @@ pub struct RequestPhoneNumberInput {
     pub pool_id: ::std::option::Option<::std::string::String>,
     /// <p>Use this field to attach your phone number for an external registration process.</p>
     pub registration_id: ::std::option::Option<::std::string::String>,
+    /// <p>By default this is set to false. When set to true the international sending of phone number is Enabled.</p>
+    pub international_sending_enabled: ::std::option::Option<bool>,
     /// <p>By default this is set to false. When set to true the phone number can't be deleted.</p>
     pub deletion_protection_enabled: ::std::option::Option<bool>,
     /// <p>An array of tags (key and value pairs) associate with the requested phone number.</p>
@@ -65,6 +67,10 @@ impl RequestPhoneNumberInput {
     pub fn registration_id(&self) -> ::std::option::Option<&str> {
         self.registration_id.as_deref()
     }
+    /// <p>By default this is set to false. When set to true the international sending of phone number is Enabled.</p>
+    pub fn international_sending_enabled(&self) -> ::std::option::Option<bool> {
+        self.international_sending_enabled
+    }
     /// <p>By default this is set to false. When set to true the phone number can't be deleted.</p>
     pub fn deletion_protection_enabled(&self) -> ::std::option::Option<bool> {
         self.deletion_protection_enabled
@@ -98,6 +104,7 @@ pub struct RequestPhoneNumberInputBuilder {
     pub(crate) opt_out_list_name: ::std::option::Option<::std::string::String>,
     pub(crate) pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) registration_id: ::std::option::Option<::std::string::String>,
+    pub(crate) international_sending_enabled: ::std::option::Option<bool>,
     pub(crate) deletion_protection_enabled: ::std::option::Option<bool>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
@@ -225,6 +232,20 @@ impl RequestPhoneNumberInputBuilder {
     pub fn get_registration_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.registration_id
     }
+    /// <p>By default this is set to false. When set to true the international sending of phone number is Enabled.</p>
+    pub fn international_sending_enabled(mut self, input: bool) -> Self {
+        self.international_sending_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>By default this is set to false. When set to true the international sending of phone number is Enabled.</p>
+    pub fn set_international_sending_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.international_sending_enabled = input;
+        self
+    }
+    /// <p>By default this is set to false. When set to true the international sending of phone number is Enabled.</p>
+    pub fn get_international_sending_enabled(&self) -> &::std::option::Option<bool> {
+        &self.international_sending_enabled
+    }
     /// <p>By default this is set to false. When set to true the phone number can't be deleted.</p>
     pub fn deletion_protection_enabled(mut self, input: bool) -> Self {
         self.deletion_protection_enabled = ::std::option::Option::Some(input);
@@ -286,6 +307,7 @@ impl RequestPhoneNumberInputBuilder {
             opt_out_list_name: self.opt_out_list_name,
             pool_id: self.pool_id,
             registration_id: self.registration_id,
+            international_sending_enabled: self.international_sending_enabled,
             deletion_protection_enabled: self.deletion_protection_enabled,
             tags: self.tags,
             client_token: self.client_token,

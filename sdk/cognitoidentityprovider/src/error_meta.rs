@@ -65,6 +65,8 @@ pub enum Error {
     ScopeDoesNotExistException(crate::types::error::ScopeDoesNotExistException),
     /// <p>This exception is thrown when the software token time-based one-time password (TOTP) multi-factor authentication (MFA) isn't activated for the user pool.</p>
     SoftwareTokenMfaNotFoundException(crate::types::error::SoftwareTokenMfaNotFoundException),
+    /// <p>Terms document names must be unique to the app client. This exception is thrown when you attempt to create terms documents with a duplicate <code>TermsName</code>.</p>
+    TermsExistsException(crate::types::error::TermsExistsException),
     /// <p>This exception is thrown when you've attempted to change your feature plan but the operation isn't permitted.</p>
     TierChangeNotAllowedException(crate::types::error::TierChangeNotAllowedException),
     /// <p>This exception is thrown when the user has made too many failed attempts for a given action, such as sign-in.</p>
@@ -154,6 +156,7 @@ impl ::std::fmt::Display for Error {
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
             Error::ScopeDoesNotExistException(inner) => inner.fmt(f),
             Error::SoftwareTokenMfaNotFoundException(inner) => inner.fmt(f),
+            Error::TermsExistsException(inner) => inner.fmt(f),
             Error::TierChangeNotAllowedException(inner) => inner.fmt(f),
             Error::TooManyFailedAttemptsException(inner) => inner.fmt(f),
             Error::TooManyRequestsException(inner) => inner.fmt(f),
@@ -229,6 +232,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::ResourceNotFoundException(inner) => inner.meta(),
             Self::ScopeDoesNotExistException(inner) => inner.meta(),
             Self::SoftwareTokenMfaNotFoundException(inner) => inner.meta(),
+            Self::TermsExistsException(inner) => inner.meta(),
             Self::TierChangeNotAllowedException(inner) => inner.meta(),
             Self::TooManyFailedAttemptsException(inner) => inner.meta(),
             Self::TooManyRequestsException(inner) => inner.meta(),
@@ -1894,6 +1898,35 @@ impl From<crate::operation::create_resource_server::CreateResourceServerError> f
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_terms::CreateTermsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_terms::CreateTermsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_terms::CreateTermsError> for Error {
+    fn from(err: crate::operation::create_terms::CreateTermsError) -> Self {
+        match err {
+            crate::operation::create_terms::CreateTermsError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::operation::create_terms::CreateTermsError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::create_terms::CreateTermsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::create_terms::CreateTermsError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::create_terms::CreateTermsError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::create_terms::CreateTermsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_terms::CreateTermsError::TermsExistsException(inner) => Error::TermsExistsException(inner),
+            crate::operation::create_terms::CreateTermsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::create_terms::CreateTermsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_user_import_job::CreateUserImportJobError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2211,6 +2244,33 @@ impl From<crate::operation::delete_resource_server::DeleteResourceServerError> f
                 Error::TooManyRequestsException(inner)
             }
             crate::operation::delete_resource_server::DeleteResourceServerError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_terms::DeleteTermsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_terms::DeleteTermsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_terms::DeleteTermsError> for Error {
+    fn from(err: crate::operation::delete_terms::DeleteTermsError) -> Self {
+        match err {
+            crate::operation::delete_terms::DeleteTermsError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::operation::delete_terms::DeleteTermsError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::delete_terms::DeleteTermsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::delete_terms::DeleteTermsError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::delete_terms::DeleteTermsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_terms::DeleteTermsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::delete_terms::DeleteTermsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2649,6 +2709,32 @@ impl From<crate::operation::describe_risk_configuration::DescribeRiskConfigurati
                 Error::UserPoolAddOnNotEnabledException(inner)
             }
             crate::operation::describe_risk_configuration::DescribeRiskConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_terms::DescribeTermsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_terms::DescribeTermsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_terms::DescribeTermsError> for Error {
+    fn from(err: crate::operation::describe_terms::DescribeTermsError) -> Self {
+        match err {
+            crate::operation::describe_terms::DescribeTermsError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::describe_terms::DescribeTermsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::describe_terms::DescribeTermsError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::describe_terms::DescribeTermsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_terms::DescribeTermsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::describe_terms::DescribeTermsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -3559,6 +3645,32 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
                 Error::TooManyRequestsException(inner)
             }
             crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_terms::ListTermsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_terms::ListTermsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_terms::ListTermsError> for Error {
+    fn from(err: crate::operation::list_terms::ListTermsError) -> Self {
+        match err {
+            crate::operation::list_terms::ListTermsError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::list_terms::ListTermsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::list_terms::ListTermsError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::list_terms::ListTermsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_terms::ListTermsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::list_terms::ListTermsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -4620,6 +4732,34 @@ impl From<crate::operation::update_resource_server::UpdateResourceServerError> f
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_terms::UpdateTermsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_terms::UpdateTermsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_terms::UpdateTermsError> for Error {
+    fn from(err: crate::operation::update_terms::UpdateTermsError) -> Self {
+        match err {
+            crate::operation::update_terms::UpdateTermsError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::operation::update_terms::UpdateTermsError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::update_terms::UpdateTermsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::update_terms::UpdateTermsError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::update_terms::UpdateTermsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_terms::UpdateTermsError::TermsExistsException(inner) => Error::TermsExistsException(inner),
+            crate::operation::update_terms::UpdateTermsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::update_terms::UpdateTermsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_user_attributes::UpdateUserAttributesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -4958,6 +5098,7 @@ impl ::std::error::Error for Error {
             Error::ResourceNotFoundException(inner) => inner.source(),
             Error::ScopeDoesNotExistException(inner) => inner.source(),
             Error::SoftwareTokenMfaNotFoundException(inner) => inner.source(),
+            Error::TermsExistsException(inner) => inner.source(),
             Error::TierChangeNotAllowedException(inner) => inner.source(),
             Error::TooManyFailedAttemptsException(inner) => inner.source(),
             Error::TooManyRequestsException(inner) => inner.source(),
@@ -5019,6 +5160,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::ResourceNotFoundException(e) => e.request_id(),
             Self::ScopeDoesNotExistException(e) => e.request_id(),
             Self::SoftwareTokenMfaNotFoundException(e) => e.request_id(),
+            Self::TermsExistsException(e) => e.request_id(),
             Self::TierChangeNotAllowedException(e) => e.request_id(),
             Self::TooManyFailedAttemptsException(e) => e.request_id(),
             Self::TooManyRequestsException(e) => e.request_id(),

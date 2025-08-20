@@ -142,6 +142,8 @@ mod converse;
 
 mod converse_stream;
 
+mod count_tokens;
+
 /// Operation customization and supporting types.
 ///
 /// The underlying HTTP requests made during an operation can be customized

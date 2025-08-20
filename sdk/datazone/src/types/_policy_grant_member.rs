@@ -12,6 +12,8 @@ pub struct PolicyGrantMember {
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Specifies the user who created the policy grant member.</p>
     pub created_by: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the policy grant.</p>
+    pub grant_id: ::std::option::Option<::std::string::String>,
 }
 impl PolicyGrantMember {
     /// <p>The principal of the policy grant member.</p>
@@ -30,6 +32,10 @@ impl PolicyGrantMember {
     pub fn created_by(&self) -> ::std::option::Option<&str> {
         self.created_by.as_deref()
     }
+    /// <p>The ID of the policy grant.</p>
+    pub fn grant_id(&self) -> ::std::option::Option<&str> {
+        self.grant_id.as_deref()
+    }
 }
 impl PolicyGrantMember {
     /// Creates a new builder-style object to manufacture [`PolicyGrantMember`](crate::types::PolicyGrantMember).
@@ -46,6 +52,7 @@ pub struct PolicyGrantMemberBuilder {
     pub(crate) detail: ::std::option::Option<crate::types::PolicyGrantDetail>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) created_by: ::std::option::Option<::std::string::String>,
+    pub(crate) grant_id: ::std::option::Option<::std::string::String>,
 }
 impl PolicyGrantMemberBuilder {
     /// <p>The principal of the policy grant member.</p>
@@ -104,6 +111,20 @@ impl PolicyGrantMemberBuilder {
     pub fn get_created_by(&self) -> &::std::option::Option<::std::string::String> {
         &self.created_by
     }
+    /// <p>The ID of the policy grant.</p>
+    pub fn grant_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.grant_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the policy grant.</p>
+    pub fn set_grant_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.grant_id = input;
+        self
+    }
+    /// <p>The ID of the policy grant.</p>
+    pub fn get_grant_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.grant_id
+    }
     /// Consumes the builder and constructs a [`PolicyGrantMember`](crate::types::PolicyGrantMember).
     pub fn build(self) -> crate::types::PolicyGrantMember {
         crate::types::PolicyGrantMember {
@@ -111,6 +132,7 @@ impl PolicyGrantMemberBuilder {
             detail: self.detail,
             created_at: self.created_at,
             created_by: self.created_by,
+            grant_id: self.grant_id,
         }
     }
 }

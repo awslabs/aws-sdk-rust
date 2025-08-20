@@ -9,7 +9,7 @@ pub struct DeleteApplicationCloudWatchLoggingOptionOutput {
     pub application_version_id: ::std::option::Option<i64>,
     /// <p>The descriptions of the remaining CloudWatch logging options for the application.</p>
     pub cloud_watch_logging_option_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchLoggingOptionDescription>>,
-    /// Operation ID for tracking DeleteApplicationCloudWatchLoggingOption request
+    /// <p>The operation ID that can be used to track the request.</p>
     pub operation_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -28,7 +28,7 @@ impl DeleteApplicationCloudWatchLoggingOptionOutput {
     pub fn cloud_watch_logging_option_descriptions(&self) -> &[crate::types::CloudWatchLoggingOptionDescription] {
         self.cloud_watch_logging_option_descriptions.as_deref().unwrap_or_default()
     }
-    /// Operation ID for tracking DeleteApplicationCloudWatchLoggingOption request
+    /// <p>The operation ID that can be used to track the request.</p>
     pub fn operation_id(&self) -> ::std::option::Option<&str> {
         self.operation_id.as_deref()
     }
@@ -110,17 +110,17 @@ impl DeleteApplicationCloudWatchLoggingOptionOutputBuilder {
     ) -> &::std::option::Option<::std::vec::Vec<crate::types::CloudWatchLoggingOptionDescription>> {
         &self.cloud_watch_logging_option_descriptions
     }
-    /// Operation ID for tracking DeleteApplicationCloudWatchLoggingOption request
+    /// <p>The operation ID that can be used to track the request.</p>
     pub fn operation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.operation_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// Operation ID for tracking DeleteApplicationCloudWatchLoggingOption request
+    /// <p>The operation ID that can be used to track the request.</p>
     pub fn set_operation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.operation_id = input;
         self
     }
-    /// Operation ID for tracking DeleteApplicationCloudWatchLoggingOption request
+    /// <p>The operation ID that can be used to track the request.</p>
     pub fn get_operation_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.operation_id
     }

@@ -6,15 +6,15 @@
 pub struct BillingViewElement {
     /// <p>The Amazon Resource Name (ARN) that can be used to uniquely identify the billing view.</p>
     pub arn: ::std::option::Option<::std::string::String>,
-    /// <p>A list of names of the billing view.</p>
+    /// <p>The account name of the billing view.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the billing view.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The type of billing group.</p>
     pub billing_view_type: ::std::option::Option<crate::types::BillingViewType>,
-    /// <p>The list of owners of the billing view.</p>
+    /// <p>The account owner of the billing view.</p>
     pub owner_account_id: ::std::option::Option<::std::string::String>,
-    /// <p>See <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>. Billing view only supports <code>LINKED_ACCOUNT</code> and <code>Tags</code>.</p>
+    /// <p>See <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_billing_Expression.html">Expression</a>. Billing view only supports <code>LINKED_ACCOUNT</code> and <code>Tags</code>.</p>
     pub data_filter_expression: ::std::option::Option<crate::types::Expression>,
     /// <p>The time when the billing view was created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -26,7 +26,7 @@ impl BillingViewElement {
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>A list of names of the billing view.</p>
+    /// <p>The account name of the billing view.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -38,11 +38,11 @@ impl BillingViewElement {
     pub fn billing_view_type(&self) -> ::std::option::Option<&crate::types::BillingViewType> {
         self.billing_view_type.as_ref()
     }
-    /// <p>The list of owners of the billing view.</p>
+    /// <p>The account owner of the billing view.</p>
     pub fn owner_account_id(&self) -> ::std::option::Option<&str> {
         self.owner_account_id.as_deref()
     }
-    /// <p>See <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>. Billing view only supports <code>LINKED_ACCOUNT</code> and <code>Tags</code>.</p>
+    /// <p>See <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_billing_Expression.html">Expression</a>. Billing view only supports <code>LINKED_ACCOUNT</code> and <code>Tags</code>.</p>
     pub fn data_filter_expression(&self) -> ::std::option::Option<&crate::types::Expression> {
         self.data_filter_expression.as_ref()
     }
@@ -104,17 +104,17 @@ impl BillingViewElementBuilder {
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
-    /// <p>A list of names of the billing view.</p>
+    /// <p>The account name of the billing view.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A list of names of the billing view.</p>
+    /// <p>The account name of the billing view.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>A list of names of the billing view.</p>
+    /// <p>The account name of the billing view.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
@@ -146,31 +146,31 @@ impl BillingViewElementBuilder {
     pub fn get_billing_view_type(&self) -> &::std::option::Option<crate::types::BillingViewType> {
         &self.billing_view_type
     }
-    /// <p>The list of owners of the billing view.</p>
+    /// <p>The account owner of the billing view.</p>
     pub fn owner_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_account_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The list of owners of the billing view.</p>
+    /// <p>The account owner of the billing view.</p>
     pub fn set_owner_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner_account_id = input;
         self
     }
-    /// <p>The list of owners of the billing view.</p>
+    /// <p>The account owner of the billing view.</p>
     pub fn get_owner_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.owner_account_id
     }
-    /// <p>See <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>. Billing view only supports <code>LINKED_ACCOUNT</code> and <code>Tags</code>.</p>
+    /// <p>See <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_billing_Expression.html">Expression</a>. Billing view only supports <code>LINKED_ACCOUNT</code> and <code>Tags</code>.</p>
     pub fn data_filter_expression(mut self, input: crate::types::Expression) -> Self {
         self.data_filter_expression = ::std::option::Option::Some(input);
         self
     }
-    /// <p>See <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>. Billing view only supports <code>LINKED_ACCOUNT</code> and <code>Tags</code>.</p>
+    /// <p>See <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_billing_Expression.html">Expression</a>. Billing view only supports <code>LINKED_ACCOUNT</code> and <code>Tags</code>.</p>
     pub fn set_data_filter_expression(mut self, input: ::std::option::Option<crate::types::Expression>) -> Self {
         self.data_filter_expression = input;
         self
     }
-    /// <p>See <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>. Billing view only supports <code>LINKED_ACCOUNT</code> and <code>Tags</code>.</p>
+    /// <p>See <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_billing_Expression.html">Expression</a>. Billing view only supports <code>LINKED_ACCOUNT</code> and <code>Tags</code>.</p>
     pub fn get_data_filter_expression(&self) -> &::std::option::Option<crate::types::Expression> {
         &self.data_filter_expression
     }

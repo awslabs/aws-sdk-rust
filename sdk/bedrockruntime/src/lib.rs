@@ -32,7 +32,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-bedrockruntime = "1.102.0"
+//! aws-sdk-bedrockruntime = "1.103.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

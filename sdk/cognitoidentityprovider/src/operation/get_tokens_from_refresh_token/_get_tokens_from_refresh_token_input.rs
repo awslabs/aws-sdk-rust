@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetTokensFromRefreshTokenInput {
-    /// <p>A valid refresh token that can authorize the request for new tokens. When refresh token rotation is active in the requested app client, this token is invalidated after the request is complete.</p>
+    /// <p>A valid refresh token that can authorize the request for new tokens. When refresh token rotation is active in the requested app client, this token is invalidated after the request is complete and after an optional grace period.</p>
     pub refresh_token: ::std::option::Option<::std::string::String>,
     /// <p>The app client that issued the refresh token to the user who wants to request new tokens.</p>
     pub client_id: ::std::option::Option<::std::string::String>,
@@ -28,7 +28,7 @@ pub struct GetTokensFromRefreshTokenInput {
     pub client_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl GetTokensFromRefreshTokenInput {
-    /// <p>A valid refresh token that can authorize the request for new tokens. When refresh token rotation is active in the requested app client, this token is invalidated after the request is complete.</p>
+    /// <p>A valid refresh token that can authorize the request for new tokens. When refresh token rotation is active in the requested app client, this token is invalidated after the request is complete and after an optional grace period.</p>
     pub fn refresh_token(&self) -> ::std::option::Option<&str> {
         self.refresh_token.as_deref()
     }
@@ -91,18 +91,18 @@ pub struct GetTokensFromRefreshTokenInputBuilder {
     pub(crate) client_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl GetTokensFromRefreshTokenInputBuilder {
-    /// <p>A valid refresh token that can authorize the request for new tokens. When refresh token rotation is active in the requested app client, this token is invalidated after the request is complete.</p>
+    /// <p>A valid refresh token that can authorize the request for new tokens. When refresh token rotation is active in the requested app client, this token is invalidated after the request is complete and after an optional grace period.</p>
     /// This field is required.
     pub fn refresh_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.refresh_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A valid refresh token that can authorize the request for new tokens. When refresh token rotation is active in the requested app client, this token is invalidated after the request is complete.</p>
+    /// <p>A valid refresh token that can authorize the request for new tokens. When refresh token rotation is active in the requested app client, this token is invalidated after the request is complete and after an optional grace period.</p>
     pub fn set_refresh_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.refresh_token = input;
         self
     }
-    /// <p>A valid refresh token that can authorize the request for new tokens. When refresh token rotation is active in the requested app client, this token is invalidated after the request is complete.</p>
+    /// <p>A valid refresh token that can authorize the request for new tokens. When refresh token rotation is active in the requested app client, this token is invalidated after the request is complete and after an optional grace period.</p>
     pub fn get_refresh_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.refresh_token
     }

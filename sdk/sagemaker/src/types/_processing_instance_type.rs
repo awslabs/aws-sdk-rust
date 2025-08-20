@@ -103,6 +103,7 @@
 ///     ProcessingInstanceType::MlP316Xlarge => { /* ... */ },
 ///     ProcessingInstanceType::MlP32Xlarge => { /* ... */ },
 ///     ProcessingInstanceType::MlP38Xlarge => { /* ... */ },
+///     ProcessingInstanceType::MlP54Xlarge => { /* ... */ },
 ///     ProcessingInstanceType::MlR512Xlarge => { /* ... */ },
 ///     ProcessingInstanceType::MlR516Xlarge => { /* ... */ },
 ///     ProcessingInstanceType::MlR524Xlarge => { /* ... */ },
@@ -343,6 +344,8 @@ pub enum ProcessingInstanceType {
     #[allow(missing_docs)] // documentation missing in model
     MlP38Xlarge,
     #[allow(missing_docs)] // documentation missing in model
+    MlP54Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
     MlR512Xlarge,
     #[allow(missing_docs)] // documentation missing in model
     MlR516Xlarge,
@@ -498,6 +501,7 @@ impl ::std::convert::From<&str> for ProcessingInstanceType {
             "ml.p3.16xlarge" => ProcessingInstanceType::MlP316Xlarge,
             "ml.p3.2xlarge" => ProcessingInstanceType::MlP32Xlarge,
             "ml.p3.8xlarge" => ProcessingInstanceType::MlP38Xlarge,
+            "ml.p5.4xlarge" => ProcessingInstanceType::MlP54Xlarge,
             "ml.r5.12xlarge" => ProcessingInstanceType::MlR512Xlarge,
             "ml.r5.16xlarge" => ProcessingInstanceType::MlR516Xlarge,
             "ml.r5.24xlarge" => ProcessingInstanceType::MlR524Xlarge,
@@ -633,6 +637,7 @@ impl ProcessingInstanceType {
             ProcessingInstanceType::MlP316Xlarge => "ml.p3.16xlarge",
             ProcessingInstanceType::MlP32Xlarge => "ml.p3.2xlarge",
             ProcessingInstanceType::MlP38Xlarge => "ml.p3.8xlarge",
+            ProcessingInstanceType::MlP54Xlarge => "ml.p5.4xlarge",
             ProcessingInstanceType::MlR512Xlarge => "ml.r5.12xlarge",
             ProcessingInstanceType::MlR516Xlarge => "ml.r5.16xlarge",
             ProcessingInstanceType::MlR524Xlarge => "ml.r5.24xlarge",
@@ -759,6 +764,7 @@ impl ProcessingInstanceType {
             "ml.p3.16xlarge",
             "ml.p3.2xlarge",
             "ml.p3.8xlarge",
+            "ml.p5.4xlarge",
             "ml.r5.12xlarge",
             "ml.r5.16xlarge",
             "ml.r5.24xlarge",
@@ -902,6 +908,7 @@ impl ::std::fmt::Display for ProcessingInstanceType {
             ProcessingInstanceType::MlP316Xlarge => write!(f, "ml.p3.16xlarge"),
             ProcessingInstanceType::MlP32Xlarge => write!(f, "ml.p3.2xlarge"),
             ProcessingInstanceType::MlP38Xlarge => write!(f, "ml.p3.8xlarge"),
+            ProcessingInstanceType::MlP54Xlarge => write!(f, "ml.p5.4xlarge"),
             ProcessingInstanceType::MlR512Xlarge => write!(f, "ml.r5.12xlarge"),
             ProcessingInstanceType::MlR516Xlarge => write!(f, "ml.r5.16xlarge"),
             ProcessingInstanceType::MlR524Xlarge => write!(f, "ml.r5.24xlarge"),

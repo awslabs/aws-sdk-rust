@@ -16,6 +16,8 @@ pub struct AddonInfo {
     pub owner: ::std::option::Option<::std::string::String>,
     /// <p>Information about the add-on from the Amazon Web Services Marketplace.</p>
     pub marketplace_information: ::std::option::Option<crate::types::MarketplaceInformation>,
+    /// <p>The default Kubernetes namespace where this addon is typically installed if no custom namespace is specified.</p>
+    pub default_namespace: ::std::option::Option<::std::string::String>,
 }
 impl AddonInfo {
     /// <p>The name of the add-on.</p>
@@ -44,6 +46,10 @@ impl AddonInfo {
     pub fn marketplace_information(&self) -> ::std::option::Option<&crate::types::MarketplaceInformation> {
         self.marketplace_information.as_ref()
     }
+    /// <p>The default Kubernetes namespace where this addon is typically installed if no custom namespace is specified.</p>
+    pub fn default_namespace(&self) -> ::std::option::Option<&str> {
+        self.default_namespace.as_deref()
+    }
 }
 impl AddonInfo {
     /// Creates a new builder-style object to manufacture [`AddonInfo`](crate::types::AddonInfo).
@@ -62,6 +68,7 @@ pub struct AddonInfoBuilder {
     pub(crate) publisher: ::std::option::Option<::std::string::String>,
     pub(crate) owner: ::std::option::Option<::std::string::String>,
     pub(crate) marketplace_information: ::std::option::Option<crate::types::MarketplaceInformation>,
+    pub(crate) default_namespace: ::std::option::Option<::std::string::String>,
 }
 impl AddonInfoBuilder {
     /// <p>The name of the add-on.</p>
@@ -154,6 +161,20 @@ impl AddonInfoBuilder {
     pub fn get_marketplace_information(&self) -> &::std::option::Option<crate::types::MarketplaceInformation> {
         &self.marketplace_information
     }
+    /// <p>The default Kubernetes namespace where this addon is typically installed if no custom namespace is specified.</p>
+    pub fn default_namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.default_namespace = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The default Kubernetes namespace where this addon is typically installed if no custom namespace is specified.</p>
+    pub fn set_default_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.default_namespace = input;
+        self
+    }
+    /// <p>The default Kubernetes namespace where this addon is typically installed if no custom namespace is specified.</p>
+    pub fn get_default_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_namespace
+    }
     /// Consumes the builder and constructs a [`AddonInfo`](crate::types::AddonInfo).
     pub fn build(self) -> crate::types::AddonInfo {
         crate::types::AddonInfo {
@@ -163,6 +184,7 @@ impl AddonInfoBuilder {
             publisher: self.publisher,
             owner: self.owner,
             marketplace_information: self.marketplace_information,
+            default_namespace: self.default_namespace,
         }
     }
 }

@@ -49,6 +49,8 @@ pub use crate::types::_code_delivery_details_type::CodeDeliveryDetailsTypeBuilde
 
 pub use crate::types::_attribute_type::AttributeTypeBuilder;
 
+pub use crate::types::_terms_type::TermsTypeBuilder;
+
 pub use crate::types::_resource_server_type::ResourceServerTypeBuilder;
 
 pub use crate::types::_resource_server_scope_type::ResourceServerScopeTypeBuilder;
@@ -124,6 +126,8 @@ pub use crate::types::_user_type::UserTypeBuilder;
 pub use crate::types::_user_pool_description_type::UserPoolDescriptionTypeBuilder;
 
 pub use crate::types::_user_pool_client_description::UserPoolClientDescriptionBuilder;
+
+pub use crate::types::_terms_description_type::TermsDescriptionTypeBuilder;
 
 pub use crate::types::_provider_description::ProviderDescriptionBuilder;
 

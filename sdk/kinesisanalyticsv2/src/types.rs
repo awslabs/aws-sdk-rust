@@ -11,6 +11,10 @@ pub use crate::types::_cloud_watch_logging_option_description::CloudWatchLogging
 
 pub use crate::types::_application_configuration_description::ApplicationConfigurationDescription;
 
+pub use crate::types::_application_encryption_configuration_description::ApplicationEncryptionConfigurationDescription;
+
+pub use crate::types::_key_type::KeyType;
+
 pub use crate::types::_zeppelin_application_configuration_description::ZeppelinApplicationConfigurationDescription;
 
 pub use crate::types::_custom_artifact_configuration_description::CustomArtifactConfigurationDescription;
@@ -127,6 +131,8 @@ pub use crate::types::_run_configuration_update::RunConfigurationUpdate;
 
 pub use crate::types::_application_configuration_update::ApplicationConfigurationUpdate;
 
+pub use crate::types::_application_encryption_configuration_update::ApplicationEncryptionConfigurationUpdate;
+
 pub use crate::types::_zeppelin_application_configuration_update::ZeppelinApplicationConfigurationUpdate;
 
 pub use crate::types::_custom_artifact_configuration::CustomArtifactConfiguration;
@@ -229,6 +235,8 @@ pub use crate::types::_cloud_watch_logging_option::CloudWatchLoggingOption;
 
 pub use crate::types::_application_configuration::ApplicationConfiguration;
 
+pub use crate::types::_application_encryption_configuration::ApplicationEncryptionConfiguration;
+
 pub use crate::types::_zeppelin_application_configuration::ZeppelinApplicationConfiguration;
 
 pub use crate::types::_deploy_as_application_configuration::DeployAsApplicationConfiguration;
@@ -294,6 +302,12 @@ mod _application_configuration_description;
 mod _application_configuration_update;
 
 mod _application_detail;
+
+mod _application_encryption_configuration;
+
+mod _application_encryption_configuration_description;
+
+mod _application_encryption_configuration_update;
 
 mod _application_maintenance_configuration_description;
 
@@ -424,6 +438,8 @@ mod _input_starting_position_configuration;
 mod _input_update;
 
 mod _json_mapping_parameters;
+
+mod _key_type;
 
 mod _kinesis_firehose_input;
 

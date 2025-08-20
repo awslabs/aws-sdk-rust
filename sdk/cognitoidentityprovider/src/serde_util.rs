@@ -155,6 +155,15 @@ pub(crate) fn list_resource_servers_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_terms_output_output_correct_errors(
+    mut builder: crate::operation::list_terms::builders::ListTermsOutputBuilder,
+) -> crate::operation::list_terms::builders::ListTermsOutputBuilder {
+    if builder.terms.is_none() {
+        builder.terms = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_web_authn_credentials_output_output_correct_errors(
     mut builder: crate::operation::list_web_authn_credentials::builders::ListWebAuthnCredentialsOutputBuilder,
 ) -> crate::operation::list_web_authn_credentials::builders::ListWebAuthnCredentialsOutputBuilder {
@@ -245,6 +254,37 @@ pub(crate) fn log_delivery_configuration_type_correct_errors(
     builder
 }
 
+pub(crate) fn terms_type_correct_errors(mut builder: crate::types::builders::TermsTypeBuilder) -> crate::types::builders::TermsTypeBuilder {
+    if builder.terms_id.is_none() {
+        builder.terms_id = Some(Default::default())
+    }
+    if builder.user_pool_id.is_none() {
+        builder.user_pool_id = Some(Default::default())
+    }
+    if builder.client_id.is_none() {
+        builder.client_id = Some(Default::default())
+    }
+    if builder.terms_name.is_none() {
+        builder.terms_name = Some(Default::default())
+    }
+    if builder.terms_source.is_none() {
+        builder.terms_source = "no value was set".parse::<crate::types::TermsSourceType>().ok()
+    }
+    if builder.enforcement.is_none() {
+        builder.enforcement = "no value was set".parse::<crate::types::TermsEnforcementType>().ok()
+    }
+    if builder.links.is_none() {
+        builder.links = Some(Default::default())
+    }
+    if builder.creation_date.is_none() {
+        builder.creation_date = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.last_modified_date.is_none() {
+        builder.last_modified_date = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn account_takeover_risk_configuration_type_correct_errors(
     mut builder: crate::types::builders::AccountTakeoverRiskConfigurationTypeBuilder,
 ) -> crate::types::builders::AccountTakeoverRiskConfigurationTypeBuilder {
@@ -303,6 +343,27 @@ pub(crate) fn sms_configuration_type_correct_errors(
 ) -> crate::types::builders::SmsConfigurationTypeBuilder {
     if builder.sns_caller_arn.is_none() {
         builder.sns_caller_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn terms_description_type_correct_errors(
+    mut builder: crate::types::builders::TermsDescriptionTypeBuilder,
+) -> crate::types::builders::TermsDescriptionTypeBuilder {
+    if builder.terms_id.is_none() {
+        builder.terms_id = Some(Default::default())
+    }
+    if builder.terms_name.is_none() {
+        builder.terms_name = Some(Default::default())
+    }
+    if builder.enforcement.is_none() {
+        builder.enforcement = "no value was set".parse::<crate::types::TermsEnforcementType>().ok()
+    }
+    if builder.creation_date.is_none() {
+        builder.creation_date = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.last_modified_date.is_none() {
+        builder.last_modified_date = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }

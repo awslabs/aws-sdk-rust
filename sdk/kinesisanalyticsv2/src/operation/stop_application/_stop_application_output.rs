@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopApplicationOutput {
-    /// Operation ID for tracking StopApplication request
+    /// <p>The operation ID that can be used to track the request.</p>
     pub operation_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl StopApplicationOutput {
-    /// Operation ID for tracking StopApplication request
+    /// <p>The operation ID that can be used to track the request.</p>
     pub fn operation_id(&self) -> ::std::option::Option<&str> {
         self.operation_id.as_deref()
     }
@@ -33,17 +33,17 @@ pub struct StopApplicationOutputBuilder {
     _request_id: Option<String>,
 }
 impl StopApplicationOutputBuilder {
-    /// Operation ID for tracking StopApplication request
+    /// <p>The operation ID that can be used to track the request.</p>
     pub fn operation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.operation_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// Operation ID for tracking StopApplication request
+    /// <p>The operation ID that can be used to track the request.</p>
     pub fn set_operation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.operation_id = input;
         self
     }
-    /// Operation ID for tracking StopApplication request
+    /// <p>The operation ID that can be used to track the request.</p>
     pub fn get_operation_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.operation_id
     }

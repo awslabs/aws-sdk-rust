@@ -49,6 +49,7 @@ impl S3FileSystemConfigBuilder {
         &self.mount_path
     }
     /// <p>The Amazon S3 URI of the S3 file system configuration.</p>
+    /// This field is required.
     pub fn s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_uri = ::std::option::Option::Some(input.into());
         self

@@ -263,6 +263,12 @@ pub(crate) mod shape_application_code_configuration_update;
 
 pub(crate) mod shape_application_configuration_description;
 
+pub(crate) mod shape_application_encryption_configuration;
+
+pub(crate) mod shape_application_encryption_configuration_description;
+
+pub(crate) mod shape_application_encryption_configuration_update;
+
 pub(crate) mod shape_application_operation_info;
 
 pub(crate) mod shape_application_restore_configuration;

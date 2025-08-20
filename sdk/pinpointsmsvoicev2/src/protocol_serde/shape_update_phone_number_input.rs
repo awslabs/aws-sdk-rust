@@ -21,8 +21,11 @@ pub fn ser_update_phone_number_input_input(
     if let Some(var_6) = &input.opt_out_list_name {
         object.key("OptOutListName").string(var_6.as_str());
     }
-    if let Some(var_7) = &input.deletion_protection_enabled {
-        object.key("DeletionProtectionEnabled").boolean(*var_7);
+    if let Some(var_7) = &input.international_sending_enabled {
+        object.key("InternationalSendingEnabled").boolean(*var_7);
+    }
+    if let Some(var_8) = &input.deletion_protection_enabled {
+        object.key("DeletionProtectionEnabled").boolean(*var_8);
     }
     Ok(())
 }

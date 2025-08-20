@@ -59,6 +59,8 @@ pub use crate::types::error::_invalid_lambda_response_exception::InvalidLambdaRe
 
 pub use crate::types::error::_code_delivery_failure_exception::CodeDeliveryFailureExceptionBuilder;
 
+pub use crate::types::error::_terms_exists_exception::TermsExistsExceptionBuilder;
+
 pub use crate::types::error::_unsupported_identity_provider_exception::UnsupportedIdentityProviderExceptionBuilder;
 
 pub use crate::types::error::_user_pool_add_on_not_enabled_exception::UserPoolAddOnNotEnabledExceptionBuilder;

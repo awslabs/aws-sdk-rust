@@ -6,7 +6,7 @@ impl super::Client {
     ///   - [`application_name(impl Into<String>)`](crate::operation::start_application::builders::StartApplicationFluentBuilder::application_name) / [`set_application_name(Option<String>)`](crate::operation::start_application::builders::StartApplicationFluentBuilder::set_application_name):<br>required: **true**<br><p>The name of the application.</p><br>
     ///   - [`run_configuration(RunConfiguration)`](crate::operation::start_application::builders::StartApplicationFluentBuilder::run_configuration) / [`set_run_configuration(Option<RunConfiguration>)`](crate::operation::start_application::builders::StartApplicationFluentBuilder::set_run_configuration):<br>required: **false**<br><p>Identifies the run configuration (start parameters) of a Managed Service for Apache Flink application.</p><br>
     /// - On success, responds with [`StartApplicationOutput`](crate::operation::start_application::StartApplicationOutput) with field(s):
-    ///   - [`operation_id(Option<String>)`](crate::operation::start_application::StartApplicationOutput::operation_id): Operation ID for tracking StartApplication request
+    ///   - [`operation_id(Option<String>)`](crate::operation::start_application::StartApplicationOutput::operation_id): <p>The operation ID that can be used to track the request.</p>
     /// - On failure, responds with [`SdkError<StartApplicationError>`](crate::operation::start_application::StartApplicationError)
     pub fn start_application(&self) -> crate::operation::start_application::builders::StartApplicationFluentBuilder {
         crate::operation::start_application::builders::StartApplicationFluentBuilder::new(self.handle.clone())

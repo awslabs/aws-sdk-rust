@@ -4,19 +4,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum GuardrailAutomatedReasoningFinding {
-    /// <p>Indicates that no valid claims can be made due to logical contradictions in the premises or rules.</p>
+    /// <p>Contains the result when the automated reasoning evaluation determines that no valid logical conclusions can be drawn due to contradictions in the premises or policy rules themselves.</p>
     Impossible(crate::types::GuardrailAutomatedReasoningImpossibleFinding),
-    /// <p>Indicates that the claims are logically false and contradictory to the established rules or premises.</p>
+    /// <p>Contains the result when the automated reasoning evaluation determines that the claims in the input are logically invalid and contradict the established premises or policy rules.</p>
     Invalid(crate::types::GuardrailAutomatedReasoningInvalidFinding),
-    /// <p>Indicates that no relevant logical information could be extracted from the input for validation.</p>
+    /// <p>Contains the result when the automated reasoning evaluation cannot extract any relevant logical information from the input that can be validated against the policy rules.</p>
     NoTranslations(crate::types::GuardrailAutomatedReasoningNoTranslationsFinding),
-    /// <p>Indicates that the claims could be either true or false depending on additional assumptions not provided in the input.</p>
+    /// <p>Contains the result when the automated reasoning evaluation determines that the claims in the input could be either true or false depending on additional assumptions not provided in the input context.</p>
     Satisfiable(crate::types::GuardrailAutomatedReasoningSatisfiableFinding),
-    /// <p>Indicates that the input exceeds the processing capacity due to the volume or complexity of the logical information.</p>
+    /// <p>Contains the result when the automated reasoning evaluation cannot process the input due to its complexity or volume exceeding the system's processing capacity for logical analysis.</p>
     TooComplex(crate::types::GuardrailAutomatedReasoningTooComplexFinding),
-    /// <p>Indicates that the input has multiple valid logical interpretations, requiring additional context or clarification.</p>
+    /// <p>Contains the result when the automated reasoning evaluation detects that the input has multiple valid logical interpretations, requiring additional context or clarification to proceed with validation.</p>
     TranslationAmbiguous(crate::types::GuardrailAutomatedReasoningTranslationAmbiguousFinding),
-    /// <p>Indicates that the claims are definitively true and logically implied by the premises, with no possible alternative interpretations.</p>
+    /// <p>Contains the result when the automated reasoning evaluation determines that the claims in the input are logically valid and definitively true based on the provided premises and policy rules.</p>
     Valid(crate::types::GuardrailAutomatedReasoningValidFinding),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant

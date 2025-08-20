@@ -59,6 +59,8 @@ pub use crate::types::error::_invalid_lambda_response_exception::InvalidLambdaRe
 
 pub use crate::types::error::_code_delivery_failure_exception::CodeDeliveryFailureException;
 
+pub use crate::types::error::_terms_exists_exception::TermsExistsException;
+
 pub use crate::types::error::_unsupported_identity_provider_exception::UnsupportedIdentityProviderException;
 
 pub use crate::types::error::_user_pool_add_on_not_enabled_exception::UserPoolAddOnNotEnabledException;
@@ -168,6 +170,8 @@ mod _resource_not_found_exception;
 mod _scope_does_not_exist_exception;
 
 mod _software_token_mfa_not_found_exception;
+
+mod _terms_exists_exception;
 
 mod _tier_change_not_allowed_exception;
 

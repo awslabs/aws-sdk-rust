@@ -17,6 +17,8 @@ pub struct UpdatePhoneNumberInput {
     pub self_managed_opt_outs_enabled: ::std::option::Option<bool>,
     /// <p>The OptOutList to add the phone number to. Valid values for this field can be either the OutOutListName or OutOutListArn.</p>
     pub opt_out_list_name: ::std::option::Option<::std::string::String>,
+    /// <p>By default this is set to false. When set to true the international sending of phone number is Enabled.</p>
+    pub international_sending_enabled: ::std::option::Option<bool>,
     /// <p>By default this is set to false. When set to true the phone number can't be deleted.</p>
     pub deletion_protection_enabled: ::std::option::Option<bool>,
 }
@@ -47,6 +49,10 @@ impl UpdatePhoneNumberInput {
     pub fn opt_out_list_name(&self) -> ::std::option::Option<&str> {
         self.opt_out_list_name.as_deref()
     }
+    /// <p>By default this is set to false. When set to true the international sending of phone number is Enabled.</p>
+    pub fn international_sending_enabled(&self) -> ::std::option::Option<bool> {
+        self.international_sending_enabled
+    }
     /// <p>By default this is set to false. When set to true the phone number can't be deleted.</p>
     pub fn deletion_protection_enabled(&self) -> ::std::option::Option<bool> {
         self.deletion_protection_enabled
@@ -69,6 +75,7 @@ pub struct UpdatePhoneNumberInputBuilder {
     pub(crate) two_way_channel_role: ::std::option::Option<::std::string::String>,
     pub(crate) self_managed_opt_outs_enabled: ::std::option::Option<bool>,
     pub(crate) opt_out_list_name: ::std::option::Option<::std::string::String>,
+    pub(crate) international_sending_enabled: ::std::option::Option<bool>,
     pub(crate) deletion_protection_enabled: ::std::option::Option<bool>,
 }
 impl UpdatePhoneNumberInputBuilder {
@@ -163,6 +170,20 @@ impl UpdatePhoneNumberInputBuilder {
     pub fn get_opt_out_list_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.opt_out_list_name
     }
+    /// <p>By default this is set to false. When set to true the international sending of phone number is Enabled.</p>
+    pub fn international_sending_enabled(mut self, input: bool) -> Self {
+        self.international_sending_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>By default this is set to false. When set to true the international sending of phone number is Enabled.</p>
+    pub fn set_international_sending_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.international_sending_enabled = input;
+        self
+    }
+    /// <p>By default this is set to false. When set to true the international sending of phone number is Enabled.</p>
+    pub fn get_international_sending_enabled(&self) -> &::std::option::Option<bool> {
+        &self.international_sending_enabled
+    }
     /// <p>By default this is set to false. When set to true the phone number can't be deleted.</p>
     pub fn deletion_protection_enabled(mut self, input: bool) -> Self {
         self.deletion_protection_enabled = ::std::option::Option::Some(input);
@@ -188,6 +209,7 @@ impl UpdatePhoneNumberInputBuilder {
             two_way_channel_role: self.two_way_channel_role,
             self_managed_opt_outs_enabled: self.self_managed_opt_outs_enabled,
             opt_out_list_name: self.opt_out_list_name,
+            international_sending_enabled: self.international_sending_enabled,
             deletion_protection_enabled: self.deletion_protection_enabled,
         })
     }

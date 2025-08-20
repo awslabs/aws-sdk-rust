@@ -10,6 +10,9 @@ pub mod converse;
 /// Types for the `ConverseStream` operation.
 pub mod converse_stream;
 
+/// Types for the `CountTokens` operation.
+pub mod count_tokens;
+
 /// Types for the `GetAsyncInvoke` operation.
 pub mod get_async_invoke;
 

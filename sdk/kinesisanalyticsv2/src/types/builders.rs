@@ -9,6 +9,8 @@ pub use crate::types::_cloud_watch_logging_option_description::CloudWatchLogging
 
 pub use crate::types::_application_configuration_description::ApplicationConfigurationDescriptionBuilder;
 
+pub use crate::types::_application_encryption_configuration_description::ApplicationEncryptionConfigurationDescriptionBuilder;
+
 pub use crate::types::_zeppelin_application_configuration_description::ZeppelinApplicationConfigurationDescriptionBuilder;
 
 pub use crate::types::_custom_artifact_configuration_description::CustomArtifactConfigurationDescriptionBuilder;
@@ -105,6 +107,8 @@ pub use crate::types::_run_configuration_update::RunConfigurationUpdateBuilder;
 
 pub use crate::types::_application_configuration_update::ApplicationConfigurationUpdateBuilder;
 
+pub use crate::types::_application_encryption_configuration_update::ApplicationEncryptionConfigurationUpdateBuilder;
+
 pub use crate::types::_zeppelin_application_configuration_update::ZeppelinApplicationConfigurationUpdateBuilder;
 
 pub use crate::types::_custom_artifact_configuration::CustomArtifactConfigurationBuilder;
@@ -200,6 +204,8 @@ pub use crate::types::_application_version_change_details::ApplicationVersionCha
 pub use crate::types::_cloud_watch_logging_option::CloudWatchLoggingOptionBuilder;
 
 pub use crate::types::_application_configuration::ApplicationConfigurationBuilder;
+
+pub use crate::types::_application_encryption_configuration::ApplicationEncryptionConfigurationBuilder;
 
 pub use crate::types::_zeppelin_application_configuration::ZeppelinApplicationConfigurationBuilder;
 

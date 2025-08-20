@@ -3,7 +3,15 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddPolicyGrantOutput {
+    /// <p>The ID of the policy grant that was added to a specified entity.</p>
+    pub grant_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
+}
+impl AddPolicyGrantOutput {
+    /// <p>The ID of the policy grant that was added to a specified entity.</p>
+    pub fn grant_id(&self) -> ::std::option::Option<&str> {
+        self.grant_id.as_deref()
+    }
 }
 impl ::aws_types::request_id::RequestId for AddPolicyGrantOutput {
     fn request_id(&self) -> Option<&str> {
@@ -21,9 +29,24 @@ impl AddPolicyGrantOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct AddPolicyGrantOutputBuilder {
+    pub(crate) grant_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl AddPolicyGrantOutputBuilder {
+    /// <p>The ID of the policy grant that was added to a specified entity.</p>
+    pub fn grant_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.grant_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the policy grant that was added to a specified entity.</p>
+    pub fn set_grant_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.grant_id = input;
+        self
+    }
+    /// <p>The ID of the policy grant that was added to a specified entity.</p>
+    pub fn get_grant_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.grant_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -36,6 +59,7 @@ impl AddPolicyGrantOutputBuilder {
     /// Consumes the builder and constructs a [`AddPolicyGrantOutput`](crate::operation::add_policy_grant::AddPolicyGrantOutput).
     pub fn build(self) -> crate::operation::add_policy_grant::AddPolicyGrantOutput {
         crate::operation::add_policy_grant::AddPolicyGrantOutput {
+            grant_id: self.grant_id,
             _request_id: self._request_id,
         }
     }

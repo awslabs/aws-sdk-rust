@@ -10,7 +10,8 @@ impl super::Client {
     ///   - [`principal(PolicyGrantPrincipal)`](crate::operation::add_policy_grant::builders::AddPolicyGrantFluentBuilder::principal) / [`set_principal(Option<PolicyGrantPrincipal>)`](crate::operation::add_policy_grant::builders::AddPolicyGrantFluentBuilder::set_principal):<br>required: **true**<br><p>The principal to whom the permissions are granted.</p><br>
     ///   - [`detail(PolicyGrantDetail)`](crate::operation::add_policy_grant::builders::AddPolicyGrantFluentBuilder::detail) / [`set_detail(Option<PolicyGrantDetail>)`](crate::operation::add_policy_grant::builders::AddPolicyGrantFluentBuilder::set_detail):<br>required: **true**<br><p>The details of the policy grant.</p><br>
     ///   - [`client_token(impl Into<String>)`](crate::operation::add_policy_grant::builders::AddPolicyGrantFluentBuilder::client_token) / [`set_client_token(Option<String>)`](crate::operation::add_policy_grant::builders::AddPolicyGrantFluentBuilder::set_client_token):<br>required: **false**<br><p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p><br>
-    /// - On success, responds with [`AddPolicyGrantOutput`](crate::operation::add_policy_grant::AddPolicyGrantOutput)
+    /// - On success, responds with [`AddPolicyGrantOutput`](crate::operation::add_policy_grant::AddPolicyGrantOutput) with field(s):
+    ///   - [`grant_id(Option<String>)`](crate::operation::add_policy_grant::AddPolicyGrantOutput::grant_id): <p>The ID of the policy grant that was added to a specified entity.</p>
     /// - On failure, responds with [`SdkError<AddPolicyGrantError>`](crate::operation::add_policy_grant::AddPolicyGrantError)
     pub fn add_policy_grant(&self) -> crate::operation::add_policy_grant::builders::AddPolicyGrantFluentBuilder {
         crate::operation::add_policy_grant::builders::AddPolicyGrantFluentBuilder::new(self.handle.clone())

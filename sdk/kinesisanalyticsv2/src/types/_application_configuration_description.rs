@@ -16,12 +16,14 @@ pub struct ApplicationConfigurationDescription {
     pub environment_property_descriptions: ::std::option::Option<crate::types::EnvironmentPropertyDescriptions>,
     /// <p>Describes whether snapshots are enabled for a Managed Service for Apache Flink application.</p>
     pub application_snapshot_configuration_description: ::std::option::Option<crate::types::ApplicationSnapshotConfigurationDescription>,
-    /// Describes system rollback configuration for a Managed Service for Apache Flink application
+    /// <p>Describes whether system rollbacks are enabled for a Managed Service for Apache Flink application.</p>
     pub application_system_rollback_configuration_description: ::std::option::Option<crate::types::ApplicationSystemRollbackConfigurationDescription>,
     /// <p>The array of descriptions of VPC configurations available to the application.</p>
     pub vpc_configuration_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::VpcConfigurationDescription>>,
     /// <p>The configuration parameters for a Managed Service for Apache Flink Studio notebook.</p>
     pub zeppelin_application_configuration_description: ::std::option::Option<crate::types::ZeppelinApplicationConfigurationDescription>,
+    /// <p>Describes the encryption at rest configuration.</p>
+    pub application_encryption_configuration_description: ::std::option::Option<crate::types::ApplicationEncryptionConfigurationDescription>,
 }
 impl ApplicationConfigurationDescription {
     /// <p>The details about inputs, outputs, and reference data sources for a SQL-based Kinesis Data Analytics application.</p>
@@ -50,7 +52,7 @@ impl ApplicationConfigurationDescription {
     ) -> ::std::option::Option<&crate::types::ApplicationSnapshotConfigurationDescription> {
         self.application_snapshot_configuration_description.as_ref()
     }
-    /// Describes system rollback configuration for a Managed Service for Apache Flink application
+    /// <p>Describes whether system rollbacks are enabled for a Managed Service for Apache Flink application.</p>
     pub fn application_system_rollback_configuration_description(
         &self,
     ) -> ::std::option::Option<&crate::types::ApplicationSystemRollbackConfigurationDescription> {
@@ -67,6 +69,12 @@ impl ApplicationConfigurationDescription {
         &self,
     ) -> ::std::option::Option<&crate::types::ZeppelinApplicationConfigurationDescription> {
         self.zeppelin_application_configuration_description.as_ref()
+    }
+    /// <p>Describes the encryption at rest configuration.</p>
+    pub fn application_encryption_configuration_description(
+        &self,
+    ) -> ::std::option::Option<&crate::types::ApplicationEncryptionConfigurationDescription> {
+        self.application_encryption_configuration_description.as_ref()
     }
 }
 impl ApplicationConfigurationDescription {
@@ -90,6 +98,7 @@ pub struct ApplicationConfigurationDescriptionBuilder {
         ::std::option::Option<crate::types::ApplicationSystemRollbackConfigurationDescription>,
     pub(crate) vpc_configuration_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::VpcConfigurationDescription>>,
     pub(crate) zeppelin_application_configuration_description: ::std::option::Option<crate::types::ZeppelinApplicationConfigurationDescription>,
+    pub(crate) application_encryption_configuration_description: ::std::option::Option<crate::types::ApplicationEncryptionConfigurationDescription>,
 }
 impl ApplicationConfigurationDescriptionBuilder {
     /// <p>The details about inputs, outputs, and reference data sources for a SQL-based Kinesis Data Analytics application.</p>
@@ -190,7 +199,7 @@ impl ApplicationConfigurationDescriptionBuilder {
     ) -> &::std::option::Option<crate::types::ApplicationSnapshotConfigurationDescription> {
         &self.application_snapshot_configuration_description
     }
-    /// Describes system rollback configuration for a Managed Service for Apache Flink application
+    /// <p>Describes whether system rollbacks are enabled for a Managed Service for Apache Flink application.</p>
     pub fn application_system_rollback_configuration_description(
         mut self,
         input: crate::types::ApplicationSystemRollbackConfigurationDescription,
@@ -198,7 +207,7 @@ impl ApplicationConfigurationDescriptionBuilder {
         self.application_system_rollback_configuration_description = ::std::option::Option::Some(input);
         self
     }
-    /// Describes system rollback configuration for a Managed Service for Apache Flink application
+    /// <p>Describes whether system rollbacks are enabled for a Managed Service for Apache Flink application.</p>
     pub fn set_application_system_rollback_configuration_description(
         mut self,
         input: ::std::option::Option<crate::types::ApplicationSystemRollbackConfigurationDescription>,
@@ -206,7 +215,7 @@ impl ApplicationConfigurationDescriptionBuilder {
         self.application_system_rollback_configuration_description = input;
         self
     }
-    /// Describes system rollback configuration for a Managed Service for Apache Flink application
+    /// <p>Describes whether system rollbacks are enabled for a Managed Service for Apache Flink application.</p>
     pub fn get_application_system_rollback_configuration_description(
         &self,
     ) -> &::std::option::Option<crate::types::ApplicationSystemRollbackConfigurationDescription> {
@@ -254,6 +263,25 @@ impl ApplicationConfigurationDescriptionBuilder {
     ) -> &::std::option::Option<crate::types::ZeppelinApplicationConfigurationDescription> {
         &self.zeppelin_application_configuration_description
     }
+    /// <p>Describes the encryption at rest configuration.</p>
+    pub fn application_encryption_configuration_description(mut self, input: crate::types::ApplicationEncryptionConfigurationDescription) -> Self {
+        self.application_encryption_configuration_description = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Describes the encryption at rest configuration.</p>
+    pub fn set_application_encryption_configuration_description(
+        mut self,
+        input: ::std::option::Option<crate::types::ApplicationEncryptionConfigurationDescription>,
+    ) -> Self {
+        self.application_encryption_configuration_description = input;
+        self
+    }
+    /// <p>Describes the encryption at rest configuration.</p>
+    pub fn get_application_encryption_configuration_description(
+        &self,
+    ) -> &::std::option::Option<crate::types::ApplicationEncryptionConfigurationDescription> {
+        &self.application_encryption_configuration_description
+    }
     /// Consumes the builder and constructs a [`ApplicationConfigurationDescription`](crate::types::ApplicationConfigurationDescription).
     pub fn build(self) -> crate::types::ApplicationConfigurationDescription {
         crate::types::ApplicationConfigurationDescription {
@@ -266,6 +294,7 @@ impl ApplicationConfigurationDescriptionBuilder {
             application_system_rollback_configuration_description: self.application_system_rollback_configuration_description,
             vpc_configuration_descriptions: self.vpc_configuration_descriptions,
             zeppelin_application_configuration_description: self.zeppelin_application_configuration_description,
+            application_encryption_configuration_description: self.application_encryption_configuration_description,
         }
     }
 }

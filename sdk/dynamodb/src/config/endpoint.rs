@@ -877,27 +877,9 @@ mod test {
         );
     }
 
-    /// For region us-iso-east-1 with FIPS enabled and DualStack enabled
-    #[test]
-    fn test_44() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("us-iso-east-1".to_string())
-            .use_fips(true)
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err("expected error: FIPS and DualStack are enabled, but this partition does not support one or both [For region us-iso-east-1 with FIPS enabled and DualStack enabled]");
-        assert_eq!(
-            format!("{}", error),
-            "FIPS and DualStack are enabled, but this partition does not support one or both"
-        )
-    }
-
     /// For region us-iso-east-1 with FIPS enabled and DualStack disabled
     #[test]
-    fn test_45() {
+    fn test_44() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-iso-east-1".to_string())
             .use_fips(true)
@@ -915,24 +897,9 @@ mod test {
         );
     }
 
-    /// For region us-iso-east-1 with FIPS disabled and DualStack enabled
-    #[test]
-    fn test_46() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("us-iso-east-1".to_string())
-            .use_fips(false)
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err("expected error: DualStack is enabled but this partition does not support DualStack [For region us-iso-east-1 with FIPS disabled and DualStack enabled]");
-        assert_eq!(format!("{}", error), "DualStack is enabled but this partition does not support DualStack")
-    }
-
     /// For region us-isob-east-1 with FIPS disabled and DualStack disabled
     #[test]
-    fn test_47() {
+    fn test_45() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-isob-east-1".to_string())
             .use_fips(false)
@@ -950,27 +917,9 @@ mod test {
         );
     }
 
-    /// For region us-isob-east-1 with FIPS enabled and DualStack enabled
-    #[test]
-    fn test_48() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("us-isob-east-1".to_string())
-            .use_fips(true)
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err("expected error: FIPS and DualStack are enabled, but this partition does not support one or both [For region us-isob-east-1 with FIPS enabled and DualStack enabled]");
-        assert_eq!(
-            format!("{}", error),
-            "FIPS and DualStack are enabled, but this partition does not support one or both"
-        )
-    }
-
     /// For region us-isob-east-1 with FIPS enabled and DualStack disabled
     #[test]
-    fn test_49() {
+    fn test_46() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-isob-east-1".to_string())
             .use_fips(true)
@@ -988,24 +937,9 @@ mod test {
         );
     }
 
-    /// For region us-isob-east-1 with FIPS disabled and DualStack enabled
-    #[test]
-    fn test_50() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("us-isob-east-1".to_string())
-            .use_fips(false)
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err("expected error: DualStack is enabled but this partition does not support DualStack [For region us-isob-east-1 with FIPS disabled and DualStack enabled]");
-        assert_eq!(format!("{}", error), "DualStack is enabled but this partition does not support DualStack")
-    }
-
     /// For custom endpoint with region set and fips disabled and dualstack disabled
     #[test]
-    fn test_51() {
+    fn test_47() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(false)
@@ -1024,7 +958,7 @@ mod test {
 
     /// For custom endpoint with region not set and fips disabled and dualstack disabled
     #[test]
-    fn test_52() {
+    fn test_48() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -1042,7 +976,7 @@ mod test {
 
     /// For custom endpoint with fips enabled and dualstack disabled
     #[test]
-    fn test_53() {
+    fn test_49() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(true)
@@ -1058,7 +992,7 @@ mod test {
 
     /// For custom endpoint with fips disabled and dualstack enabled
     #[test]
-    fn test_54() {
+    fn test_50() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(false)
@@ -1077,7 +1011,7 @@ mod test {
 
     /// Missing region
     #[test]
-    fn test_55() {
+    fn test_51() {
         let params = crate::config::endpoint::Params::builder().build().expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1087,7 +1021,7 @@ mod test {
 
     /// {UseFIPS=true, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=us-east-1, Endpoint=https://example.com}
     #[test]
-    fn test_56() {
+    fn test_52() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(true)
             .use_dual_stack(true)
@@ -1105,7 +1039,7 @@ mod test {
 
     /// {UseFIPS=true, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=us-east-1, Endpoint=https://example.com}
     #[test]
-    fn test_57() {
+    fn test_53() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(true)
             .use_dual_stack(false)
@@ -1123,7 +1057,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=us-east-1, Endpoint=https://example.com}
     #[test]
-    fn test_58() {
+    fn test_54() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(true)
@@ -1144,7 +1078,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=us-east-1, Endpoint=https://example.com}
     #[test]
-    fn test_59() {
+    fn test_55() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -1165,7 +1099,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-east-1, Endpoint=https://example.com}
     #[test]
-    fn test_60() {
+    fn test_56() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -1187,7 +1121,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-east-1, Endpoint=https://example.com}
     #[test]
-    fn test_61() {
+    fn test_57() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -1210,7 +1144,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-east-1, Endpoint=https://example.com}
     #[test]
-    fn test_62() {
+    fn test_58() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -1233,7 +1167,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-east-1, Endpoint=https://example.com}
     #[test]
-    fn test_63() {
+    fn test_59() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -1256,7 +1190,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-west-2:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-east-1, Endpoint=https://example.com}
     #[test]
-    fn test_64() {
+    fn test_60() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -1279,7 +1213,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, ResourceArnList=[arn:aws:s3:us-east-1:333333333333:stream/testStream], AccountIdEndpointMode=preferred, Region=us-east-1, Endpoint=https://example.com}
     #[test]
-    fn test_65() {
+    fn test_61() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -1302,7 +1236,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=, AccountIdEndpointMode=preferred, Region=us-east-1, Endpoint=https://example.com}
     #[test]
-    fn test_66() {
+    fn test_62() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -1323,7 +1257,7 @@ mod test {
 
     /// {UseFIPS=true, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-east-1, Endpoint=https://example.com}
     #[test]
-    fn test_67() {
+    fn test_63() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(true)
             .use_dual_stack(true)
@@ -1341,7 +1275,7 @@ mod test {
 
     /// {UseFIPS=true, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-east-1, Endpoint=https://example.com}
     #[test]
-    fn test_68() {
+    fn test_64() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(true)
             .use_dual_stack(false)
@@ -1359,7 +1293,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-east-1, Endpoint=https://example.com}
     #[test]
-    fn test_69() {
+    fn test_65() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(true)
@@ -1380,7 +1314,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-east-1, Endpoint=https://example.com}
     #[test]
-    fn test_70() {
+    fn test_66() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -1401,7 +1335,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-east-1, Endpoint=https://example.com}
     #[test]
-    fn test_71() {
+    fn test_67() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -1422,7 +1356,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, AccountIdEndpointMode=preferred, Region=us-east-1, Endpoint=https://example.com}
     #[test]
-    fn test_72() {
+    fn test_68() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -1443,7 +1377,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArn=, AccountIdEndpointMode=preferred, Region=us-east-1, Endpoint=https://example.com}
     #[test]
-    fn test_73() {
+    fn test_69() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -1464,7 +1398,7 @@ mod test {
 
     /// {UseFIPS=true, UseDualStack=true, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-east-1, Endpoint=https://example.com}
     #[test]
-    fn test_74() {
+    fn test_70() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(true)
             .use_dual_stack(true)
@@ -1482,7 +1416,7 @@ mod test {
 
     /// {UseFIPS=true, UseDualStack=false, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-east-1, Endpoint=https://example.com}
     #[test]
-    fn test_75() {
+    fn test_71() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(true)
             .use_dual_stack(false)
@@ -1500,7 +1434,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=true, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-east-1, Endpoint=https://example.com}
     #[test]
-    fn test_76() {
+    fn test_72() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(true)
@@ -1521,7 +1455,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-east-1, Endpoint=https://example.com}
     #[test]
-    fn test_77() {
+    fn test_73() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -1542,7 +1476,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-east-1, Endpoint=https://example.com}
     #[test]
-    fn test_78() {
+    fn test_74() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -1564,7 +1498,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountIdEndpointMode=preferred, Region=us-east-1, Endpoint=https://example.com}
     #[test]
-    fn test_79() {
+    fn test_75() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -1584,7 +1518,7 @@ mod test {
 
     /// {UseFIPS=true, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=disabled, Region=us-east-1, Endpoint=https://example.com}
     #[test]
-    fn test_80() {
+    fn test_76() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(true)
             .use_dual_stack(true)
@@ -1602,7 +1536,7 @@ mod test {
 
     /// {UseFIPS=true, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=disabled, Region=us-east-1, Endpoint=https://example.com}
     #[test]
-    fn test_81() {
+    fn test_77() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(true)
             .use_dual_stack(false)
@@ -1620,7 +1554,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=disabled, Region=us-east-1, Endpoint=https://example.com}
     #[test]
-    fn test_82() {
+    fn test_78() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(true)
@@ -1641,7 +1575,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=disabled, Region=us-east-1, Endpoint=https://example.com}
     #[test]
-    fn test_83() {
+    fn test_79() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -1662,7 +1596,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=disabled, Region=us-east-1, Endpoint=https://example.com}
     #[test]
-    fn test_84() {
+    fn test_80() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -1684,7 +1618,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=disabled, Region=us-east-1, Endpoint=https://example.com}
     #[test]
-    fn test_85() {
+    fn test_81() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -1707,7 +1641,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=disabled, Region=us-east-1, Endpoint=https://example.com}
     #[test]
-    fn test_86() {
+    fn test_82() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -1730,7 +1664,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=disabled, Region=us-east-1, Endpoint=https://example.com}
     #[test]
-    fn test_87() {
+    fn test_83() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -1753,7 +1687,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-west-2:333333333333:table/table_name], AccountIdEndpointMode=disabled, Region=us-east-1, Endpoint=https://example.com}
     #[test]
-    fn test_88() {
+    fn test_84() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -1776,7 +1710,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, ResourceArnList=[arn:aws:s3:us-east-1:333333333333:stream/testStream], AccountIdEndpointMode=disabled, Region=us-east-1, Endpoint=https://example.com}
     #[test]
-    fn test_89() {
+    fn test_85() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -1799,7 +1733,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=, AccountIdEndpointMode=disabled, Region=us-east-1, Endpoint=https://example.com}
     #[test]
-    fn test_90() {
+    fn test_86() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -1820,7 +1754,7 @@ mod test {
 
     /// {UseFIPS=true, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=disabled, Region=us-east-1, Endpoint=https://example.com}
     #[test]
-    fn test_91() {
+    fn test_87() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(true)
             .use_dual_stack(true)
@@ -1838,7 +1772,7 @@ mod test {
 
     /// {UseFIPS=true, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=disabled, Region=us-east-1, Endpoint=https://example.com}
     #[test]
-    fn test_92() {
+    fn test_88() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(true)
             .use_dual_stack(false)
@@ -1856,7 +1790,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=disabled, Region=us-east-1, Endpoint=https://example.com}
     #[test]
-    fn test_93() {
+    fn test_89() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(true)
@@ -1877,7 +1811,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=disabled, Region=us-east-1, Endpoint=https://example.com}
     #[test]
-    fn test_94() {
+    fn test_90() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -1898,7 +1832,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, AccountIdEndpointMode=disabled, Region=us-east-1, Endpoint=https://example.com}
     #[test]
-    fn test_95() {
+    fn test_91() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -1919,7 +1853,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, AccountIdEndpointMode=disabled, Region=us-east-1, Endpoint=https://example.com}
     #[test]
-    fn test_96() {
+    fn test_92() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -1940,7 +1874,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArn=, AccountIdEndpointMode=disabled, Region=us-east-1, Endpoint=https://example.com}
     #[test]
-    fn test_97() {
+    fn test_93() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -1961,7 +1895,7 @@ mod test {
 
     /// {UseFIPS=true, UseDualStack=true, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=disabled, Region=us-east-1, Endpoint=https://example.com}
     #[test]
-    fn test_98() {
+    fn test_94() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(true)
             .use_dual_stack(true)
@@ -1979,7 +1913,7 @@ mod test {
 
     /// {UseFIPS=true, UseDualStack=false, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=disabled, Region=us-east-1, Endpoint=https://example.com}
     #[test]
-    fn test_99() {
+    fn test_95() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(true)
             .use_dual_stack(false)
@@ -1997,7 +1931,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=true, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=disabled, Region=us-east-1, Endpoint=https://example.com}
     #[test]
-    fn test_100() {
+    fn test_96() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(true)
@@ -2018,7 +1952,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=disabled, Region=us-east-1, Endpoint=https://example.com}
     #[test]
-    fn test_101() {
+    fn test_97() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -2039,7 +1973,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=disabled, Region=us-east-1, Endpoint=https://example.com}
     #[test]
-    fn test_102() {
+    fn test_98() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -2061,7 +1995,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountIdEndpointMode=disabled, Region=us-east-1, Endpoint=https://example.com}
     #[test]
-    fn test_103() {
+    fn test_99() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -2081,7 +2015,7 @@ mod test {
 
     /// {UseFIPS=true, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=required, Region=us-east-1, Endpoint=https://example.com}
     #[test]
-    fn test_104() {
+    fn test_100() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(true)
             .use_dual_stack(true)
@@ -2099,7 +2033,7 @@ mod test {
 
     /// {UseFIPS=true, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=required, Region=us-east-1, Endpoint=https://example.com}
     #[test]
-    fn test_105() {
+    fn test_101() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(true)
             .use_dual_stack(false)
@@ -2117,7 +2051,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=required, Region=us-east-1, Endpoint=https://example.com}
     #[test]
-    fn test_106() {
+    fn test_102() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(true)
@@ -2138,7 +2072,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=required, Region=us-east-1, Endpoint=https://example.com}
     #[test]
-    fn test_107() {
+    fn test_103() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -2159,7 +2093,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=us-east-1, Endpoint=https://example.com}
     #[test]
-    fn test_108() {
+    fn test_104() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -2181,7 +2115,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=us-east-1, Endpoint=https://example.com}
     #[test]
-    fn test_109() {
+    fn test_105() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -2204,7 +2138,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=us-east-1, Endpoint=https://example.com}
     #[test]
-    fn test_110() {
+    fn test_106() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -2227,7 +2161,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=us-east-1, Endpoint=https://example.com}
     #[test]
-    fn test_111() {
+    fn test_107() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -2250,7 +2184,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-west-2:333333333333:table/table_name], AccountIdEndpointMode=required, Region=us-east-1, Endpoint=https://example.com}
     #[test]
-    fn test_112() {
+    fn test_108() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -2273,7 +2207,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, ResourceArnList=[arn:aws:s3:us-east-1:333333333333:stream/testStream], AccountIdEndpointMode=required, Region=us-east-1, Endpoint=https://example.com}
     #[test]
-    fn test_113() {
+    fn test_109() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -2296,7 +2230,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=, AccountIdEndpointMode=required, Region=us-east-1, Endpoint=https://example.com}
     #[test]
-    fn test_114() {
+    fn test_110() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -2317,7 +2251,7 @@ mod test {
 
     /// {UseFIPS=true, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=required, Region=us-east-1, Endpoint=https://example.com}
     #[test]
-    fn test_115() {
+    fn test_111() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(true)
             .use_dual_stack(true)
@@ -2335,7 +2269,7 @@ mod test {
 
     /// {UseFIPS=true, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=required, Region=us-east-1, Endpoint=https://example.com}
     #[test]
-    fn test_116() {
+    fn test_112() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(true)
             .use_dual_stack(false)
@@ -2353,7 +2287,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=required, Region=us-east-1, Endpoint=https://example.com}
     #[test]
-    fn test_117() {
+    fn test_113() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(true)
@@ -2374,7 +2308,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=required, Region=us-east-1, Endpoint=https://example.com}
     #[test]
-    fn test_118() {
+    fn test_114() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -2395,7 +2329,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, AccountIdEndpointMode=required, Region=us-east-1, Endpoint=https://example.com}
     #[test]
-    fn test_119() {
+    fn test_115() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -2416,7 +2350,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, AccountIdEndpointMode=required, Region=us-east-1, Endpoint=https://example.com}
     #[test]
-    fn test_120() {
+    fn test_116() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -2437,7 +2371,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArn=, AccountIdEndpointMode=required, Region=us-east-1, Endpoint=https://example.com}
     #[test]
-    fn test_121() {
+    fn test_117() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -2458,7 +2392,7 @@ mod test {
 
     /// {UseFIPS=true, UseDualStack=true, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=us-east-1, Endpoint=https://example.com}
     #[test]
-    fn test_122() {
+    fn test_118() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(true)
             .use_dual_stack(true)
@@ -2476,7 +2410,7 @@ mod test {
 
     /// {UseFIPS=true, UseDualStack=false, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=us-east-1, Endpoint=https://example.com}
     #[test]
-    fn test_123() {
+    fn test_119() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(true)
             .use_dual_stack(false)
@@ -2494,7 +2428,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=true, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=us-east-1, Endpoint=https://example.com}
     #[test]
-    fn test_124() {
+    fn test_120() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(true)
@@ -2515,7 +2449,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=us-east-1, Endpoint=https://example.com}
     #[test]
-    fn test_125() {
+    fn test_121() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -2536,7 +2470,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=us-east-1, Endpoint=https://example.com}
     #[test]
-    fn test_126() {
+    fn test_122() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -2558,7 +2492,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountIdEndpointMode=required, Region=us-east-1, Endpoint=https://example.com}
     #[test]
-    fn test_127() {
+    fn test_123() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -2578,7 +2512,7 @@ mod test {
 
     /// {UseFIPS=true, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=local}
     #[test]
-    fn test_128() {
+    fn test_124() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(true)
             .use_dual_stack(true)
@@ -2595,7 +2529,7 @@ mod test {
 
     /// {UseFIPS=true, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=local}
     #[test]
-    fn test_129() {
+    fn test_125() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(true)
             .use_dual_stack(false)
@@ -2612,7 +2546,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=local}
     #[test]
-    fn test_130() {
+    fn test_126() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(true)
@@ -2632,7 +2566,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=local}
     #[test]
-    fn test_131() {
+    fn test_127() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -2652,9 +2586,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -2665,7 +2599,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=local}
     #[test]
-    fn test_132() {
+    fn test_128() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -2686,9 +2620,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -2699,7 +2633,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=local}
     #[test]
-    fn test_133() {
+    fn test_129() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -2721,9 +2655,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -2734,7 +2668,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=local}
     #[test]
-    fn test_134() {
+    fn test_130() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -2756,9 +2690,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -2769,7 +2703,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=local}
     #[test]
-    fn test_135() {
+    fn test_131() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -2791,9 +2725,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -2804,7 +2738,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-west-2:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=local}
     #[test]
-    fn test_136() {
+    fn test_132() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -2826,9 +2760,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -2839,7 +2773,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, ResourceArnList=[arn:aws:s3:us-east-1:333333333333:stream/testStream], AccountIdEndpointMode=preferred, Region=local}
     #[test]
-    fn test_137() {
+    fn test_133() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -2861,9 +2795,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -2874,7 +2808,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=, AccountIdEndpointMode=preferred, Region=local}
     #[test]
-    fn test_138() {
+    fn test_134() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -2894,9 +2828,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -2907,7 +2841,7 @@ mod test {
 
     /// {UseFIPS=true, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=local}
     #[test]
-    fn test_139() {
+    fn test_135() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(true)
             .use_dual_stack(true)
@@ -2924,7 +2858,7 @@ mod test {
 
     /// {UseFIPS=true, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=local}
     #[test]
-    fn test_140() {
+    fn test_136() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(true)
             .use_dual_stack(false)
@@ -2941,7 +2875,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=local}
     #[test]
-    fn test_141() {
+    fn test_137() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(true)
@@ -2961,7 +2895,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=local}
     #[test]
-    fn test_142() {
+    fn test_138() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -2981,9 +2915,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -2994,7 +2928,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=local}
     #[test]
-    fn test_143() {
+    fn test_139() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -3014,9 +2948,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -3027,7 +2961,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, AccountIdEndpointMode=preferred, Region=local}
     #[test]
-    fn test_144() {
+    fn test_140() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -3047,9 +2981,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -3060,7 +2994,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArn=, AccountIdEndpointMode=preferred, Region=local}
     #[test]
-    fn test_145() {
+    fn test_141() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -3080,9 +3014,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -3093,7 +3027,7 @@ mod test {
 
     /// {UseFIPS=true, UseDualStack=true, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=local}
     #[test]
-    fn test_146() {
+    fn test_142() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(true)
             .use_dual_stack(true)
@@ -3110,7 +3044,7 @@ mod test {
 
     /// {UseFIPS=true, UseDualStack=false, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=local}
     #[test]
-    fn test_147() {
+    fn test_143() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(true)
             .use_dual_stack(false)
@@ -3127,7 +3061,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=true, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=local}
     #[test]
-    fn test_148() {
+    fn test_144() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(true)
@@ -3147,7 +3081,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=local}
     #[test]
-    fn test_149() {
+    fn test_145() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -3167,9 +3101,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -3180,7 +3114,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=local}
     #[test]
-    fn test_150() {
+    fn test_146() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -3201,9 +3135,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -3214,7 +3148,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountIdEndpointMode=preferred, Region=local}
     #[test]
-    fn test_151() {
+    fn test_147() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -3233,9 +3167,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -3246,7 +3180,7 @@ mod test {
 
     /// {UseFIPS=true, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=disabled, Region=local}
     #[test]
-    fn test_152() {
+    fn test_148() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(true)
             .use_dual_stack(true)
@@ -3263,7 +3197,7 @@ mod test {
 
     /// {UseFIPS=true, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=disabled, Region=local}
     #[test]
-    fn test_153() {
+    fn test_149() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(true)
             .use_dual_stack(false)
@@ -3280,7 +3214,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=disabled, Region=local}
     #[test]
-    fn test_154() {
+    fn test_150() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(true)
@@ -3300,7 +3234,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=disabled, Region=local}
     #[test]
-    fn test_155() {
+    fn test_151() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -3320,9 +3254,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -3333,7 +3267,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=disabled, Region=local}
     #[test]
-    fn test_156() {
+    fn test_152() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -3354,9 +3288,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -3367,7 +3301,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=disabled, Region=local}
     #[test]
-    fn test_157() {
+    fn test_153() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -3389,9 +3323,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -3402,7 +3336,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=disabled, Region=local}
     #[test]
-    fn test_158() {
+    fn test_154() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -3424,9 +3358,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -3437,7 +3371,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=disabled, Region=local}
     #[test]
-    fn test_159() {
+    fn test_155() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -3459,9 +3393,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -3472,7 +3406,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-west-2:333333333333:table/table_name], AccountIdEndpointMode=disabled, Region=local}
     #[test]
-    fn test_160() {
+    fn test_156() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -3494,9 +3428,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -3507,7 +3441,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, ResourceArnList=[arn:aws:s3:us-east-1:333333333333:stream/testStream], AccountIdEndpointMode=disabled, Region=local}
     #[test]
-    fn test_161() {
+    fn test_157() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -3529,9 +3463,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -3542,7 +3476,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=, AccountIdEndpointMode=disabled, Region=local}
     #[test]
-    fn test_162() {
+    fn test_158() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -3562,9 +3496,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -3575,7 +3509,7 @@ mod test {
 
     /// {UseFIPS=true, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=disabled, Region=local}
     #[test]
-    fn test_163() {
+    fn test_159() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(true)
             .use_dual_stack(true)
@@ -3592,7 +3526,7 @@ mod test {
 
     /// {UseFIPS=true, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=disabled, Region=local}
     #[test]
-    fn test_164() {
+    fn test_160() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(true)
             .use_dual_stack(false)
@@ -3609,7 +3543,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=disabled, Region=local}
     #[test]
-    fn test_165() {
+    fn test_161() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(true)
@@ -3629,7 +3563,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=disabled, Region=local}
     #[test]
-    fn test_166() {
+    fn test_162() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -3649,9 +3583,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -3662,7 +3596,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, AccountIdEndpointMode=disabled, Region=local}
     #[test]
-    fn test_167() {
+    fn test_163() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -3682,9 +3616,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -3695,7 +3629,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, AccountIdEndpointMode=disabled, Region=local}
     #[test]
-    fn test_168() {
+    fn test_164() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -3715,9 +3649,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -3728,7 +3662,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArn=, AccountIdEndpointMode=disabled, Region=local}
     #[test]
-    fn test_169() {
+    fn test_165() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -3748,9 +3682,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -3761,7 +3695,7 @@ mod test {
 
     /// {UseFIPS=true, UseDualStack=true, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=disabled, Region=local}
     #[test]
-    fn test_170() {
+    fn test_166() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(true)
             .use_dual_stack(true)
@@ -3778,7 +3712,7 @@ mod test {
 
     /// {UseFIPS=true, UseDualStack=false, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=disabled, Region=local}
     #[test]
-    fn test_171() {
+    fn test_167() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(true)
             .use_dual_stack(false)
@@ -3795,7 +3729,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=true, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=disabled, Region=local}
     #[test]
-    fn test_172() {
+    fn test_168() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(true)
@@ -3815,7 +3749,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=disabled, Region=local}
     #[test]
-    fn test_173() {
+    fn test_169() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -3835,9 +3769,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -3848,7 +3782,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=disabled, Region=local}
     #[test]
-    fn test_174() {
+    fn test_170() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -3869,9 +3803,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -3882,7 +3816,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountIdEndpointMode=disabled, Region=local}
     #[test]
-    fn test_175() {
+    fn test_171() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -3901,9 +3835,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -3914,7 +3848,7 @@ mod test {
 
     /// {UseFIPS=true, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=required, Region=local}
     #[test]
-    fn test_176() {
+    fn test_172() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(true)
             .use_dual_stack(true)
@@ -3931,7 +3865,7 @@ mod test {
 
     /// {UseFIPS=true, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=required, Region=local}
     #[test]
-    fn test_177() {
+    fn test_173() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(true)
             .use_dual_stack(false)
@@ -3948,7 +3882,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=required, Region=local}
     #[test]
-    fn test_178() {
+    fn test_174() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(true)
@@ -3968,7 +3902,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=required, Region=local}
     #[test]
-    fn test_179() {
+    fn test_175() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -3988,9 +3922,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -4001,7 +3935,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=local}
     #[test]
-    fn test_180() {
+    fn test_176() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -4022,9 +3956,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -4035,7 +3969,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=local}
     #[test]
-    fn test_181() {
+    fn test_177() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -4057,9 +3991,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -4070,7 +4004,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=local}
     #[test]
-    fn test_182() {
+    fn test_178() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -4092,9 +4026,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -4105,7 +4039,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=local}
     #[test]
-    fn test_183() {
+    fn test_179() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -4127,9 +4061,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -4140,7 +4074,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-west-2:333333333333:table/table_name], AccountIdEndpointMode=required, Region=local}
     #[test]
-    fn test_184() {
+    fn test_180() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -4162,9 +4096,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -4175,7 +4109,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, ResourceArnList=[arn:aws:s3:us-east-1:333333333333:stream/testStream], AccountIdEndpointMode=required, Region=local}
     #[test]
-    fn test_185() {
+    fn test_181() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -4197,9 +4131,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -4210,7 +4144,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=, AccountIdEndpointMode=required, Region=local}
     #[test]
-    fn test_186() {
+    fn test_182() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -4230,9 +4164,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -4243,7 +4177,7 @@ mod test {
 
     /// {UseFIPS=true, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=required, Region=local}
     #[test]
-    fn test_187() {
+    fn test_183() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(true)
             .use_dual_stack(true)
@@ -4260,7 +4194,7 @@ mod test {
 
     /// {UseFIPS=true, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=required, Region=local}
     #[test]
-    fn test_188() {
+    fn test_184() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(true)
             .use_dual_stack(false)
@@ -4277,7 +4211,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=required, Region=local}
     #[test]
-    fn test_189() {
+    fn test_185() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(true)
@@ -4297,7 +4231,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=required, Region=local}
     #[test]
-    fn test_190() {
+    fn test_186() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -4317,9 +4251,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -4330,7 +4264,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, AccountIdEndpointMode=required, Region=local}
     #[test]
-    fn test_191() {
+    fn test_187() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -4350,9 +4284,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -4363,7 +4297,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, AccountIdEndpointMode=required, Region=local}
     #[test]
-    fn test_192() {
+    fn test_188() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -4383,9 +4317,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -4396,7 +4330,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArn=, AccountIdEndpointMode=required, Region=local}
     #[test]
-    fn test_193() {
+    fn test_189() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -4416,9 +4350,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -4429,7 +4363,7 @@ mod test {
 
     /// {UseFIPS=true, UseDualStack=true, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=local}
     #[test]
-    fn test_194() {
+    fn test_190() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(true)
             .use_dual_stack(true)
@@ -4446,7 +4380,7 @@ mod test {
 
     /// {UseFIPS=true, UseDualStack=false, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=local}
     #[test]
-    fn test_195() {
+    fn test_191() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(true)
             .use_dual_stack(false)
@@ -4463,7 +4397,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=true, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=local}
     #[test]
-    fn test_196() {
+    fn test_192() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(true)
@@ -4483,7 +4417,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=local}
     #[test]
-    fn test_197() {
+    fn test_193() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -4503,9 +4437,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -4516,7 +4450,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=local}
     #[test]
-    fn test_198() {
+    fn test_194() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -4537,9 +4471,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -4550,7 +4484,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountIdEndpointMode=required, Region=local}
     #[test]
-    fn test_199() {
+    fn test_195() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -4569,9 +4503,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "dynamodb".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -4582,7 +4516,7 @@ mod test {
 
     /// {UseFIPS=true, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=us-east-1}
     #[test]
-    fn test_200() {
+    fn test_196() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(true)
             .use_dual_stack(true)
@@ -4604,7 +4538,7 @@ mod test {
 
     /// {UseFIPS=true, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=us-east-1}
     #[test]
-    fn test_201() {
+    fn test_197() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(true)
             .use_dual_stack(false)
@@ -4626,7 +4560,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=us-east-1}
     #[test]
-    fn test_202() {
+    fn test_198() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(true)
@@ -4648,7 +4582,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=us-east-1}
     #[test]
-    fn test_203() {
+    fn test_199() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -4670,7 +4604,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-east-1}
     #[test]
-    fn test_204() {
+    fn test_200() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -4693,7 +4627,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-east-1}
     #[test]
-    fn test_205() {
+    fn test_201() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -4717,7 +4651,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-east-1}
     #[test]
-    fn test_206() {
+    fn test_202() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -4741,7 +4675,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-east-1}
     #[test]
-    fn test_207() {
+    fn test_203() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -4765,7 +4699,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-west-2:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-east-1}
     #[test]
-    fn test_208() {
+    fn test_204() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -4789,7 +4723,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, ResourceArnList=[arn:aws:s3:us-east-1:333333333333:stream/testStream], AccountIdEndpointMode=preferred, Region=us-east-1}
     #[test]
-    fn test_209() {
+    fn test_205() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -4813,7 +4747,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=, AccountIdEndpointMode=preferred, Region=us-east-1}
     #[test]
-    fn test_210() {
+    fn test_206() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -4830,7 +4764,7 @@ mod test {
 
     /// {UseFIPS=true, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-east-1}
     #[test]
-    fn test_211() {
+    fn test_207() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(true)
             .use_dual_stack(true)
@@ -4852,7 +4786,7 @@ mod test {
 
     /// {UseFIPS=true, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-east-1}
     #[test]
-    fn test_212() {
+    fn test_208() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(true)
             .use_dual_stack(false)
@@ -4874,7 +4808,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-east-1}
     #[test]
-    fn test_213() {
+    fn test_209() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(true)
@@ -4896,7 +4830,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-east-1}
     #[test]
-    fn test_214() {
+    fn test_210() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -4918,7 +4852,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-east-1}
     #[test]
-    fn test_215() {
+    fn test_211() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -4940,7 +4874,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, AccountIdEndpointMode=preferred, Region=us-east-1}
     #[test]
-    fn test_216() {
+    fn test_212() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -4962,7 +4896,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArn=, AccountIdEndpointMode=preferred, Region=us-east-1}
     #[test]
-    fn test_217() {
+    fn test_213() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -4984,7 +4918,7 @@ mod test {
 
     /// {UseFIPS=true, UseDualStack=true, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-east-1}
     #[test]
-    fn test_218() {
+    fn test_214() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(true)
             .use_dual_stack(true)
@@ -5006,7 +4940,7 @@ mod test {
 
     /// {UseFIPS=true, UseDualStack=false, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-east-1}
     #[test]
-    fn test_219() {
+    fn test_215() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(true)
             .use_dual_stack(false)
@@ -5028,7 +4962,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=true, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-east-1}
     #[test]
-    fn test_220() {
+    fn test_216() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(true)
@@ -5050,7 +4984,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-east-1}
     #[test]
-    fn test_221() {
+    fn test_217() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -5072,7 +5006,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-east-1}
     #[test]
-    fn test_222() {
+    fn test_218() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -5095,7 +5029,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountIdEndpointMode=preferred, Region=us-east-1}
     #[test]
-    fn test_223() {
+    fn test_219() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -5116,7 +5050,7 @@ mod test {
 
     /// {UseFIPS=true, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=required, Region=us-east-1}
     #[test]
-    fn test_224() {
+    fn test_220() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(true)
             .use_dual_stack(true)
@@ -5136,7 +5070,7 @@ mod test {
 
     /// {UseFIPS=true, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=required, Region=us-east-1}
     #[test]
-    fn test_225() {
+    fn test_221() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(true)
             .use_dual_stack(false)
@@ -5156,7 +5090,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=required, Region=us-east-1}
     #[test]
-    fn test_226() {
+    fn test_222() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(true)
@@ -5176,7 +5110,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=required, Region=us-east-1}
     #[test]
-    fn test_227() {
+    fn test_223() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -5198,7 +5132,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=us-east-1}
     #[test]
-    fn test_228() {
+    fn test_224() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -5221,7 +5155,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=us-east-1}
     #[test]
-    fn test_229() {
+    fn test_225() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -5245,7 +5179,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=us-east-1}
     #[test]
-    fn test_230() {
+    fn test_226() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -5269,7 +5203,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=us-east-1}
     #[test]
-    fn test_231() {
+    fn test_227() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -5293,7 +5227,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-west-2:333333333333:table/table_name], AccountIdEndpointMode=required, Region=us-east-1}
     #[test]
-    fn test_232() {
+    fn test_228() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -5317,7 +5251,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, ResourceArnList=[arn:aws:s3:us-east-1:333333333333:stream/testStream], AccountIdEndpointMode=required, Region=us-east-1}
     #[test]
-    fn test_233() {
+    fn test_229() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -5341,7 +5275,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=, AccountIdEndpointMode=required, Region=us-east-1}
     #[test]
-    fn test_234() {
+    fn test_230() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -5358,7 +5292,7 @@ mod test {
 
     /// {UseFIPS=true, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=required, Region=us-east-1}
     #[test]
-    fn test_235() {
+    fn test_231() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(true)
             .use_dual_stack(true)
@@ -5378,7 +5312,7 @@ mod test {
 
     /// {UseFIPS=true, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=required, Region=us-east-1}
     #[test]
-    fn test_236() {
+    fn test_232() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(true)
             .use_dual_stack(false)
@@ -5398,7 +5332,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=required, Region=us-east-1}
     #[test]
-    fn test_237() {
+    fn test_233() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(true)
@@ -5418,7 +5352,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=required, Region=us-east-1}
     #[test]
-    fn test_238() {
+    fn test_234() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -5440,7 +5374,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, AccountIdEndpointMode=required, Region=us-east-1}
     #[test]
-    fn test_239() {
+    fn test_235() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -5460,7 +5394,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, AccountIdEndpointMode=required, Region=us-east-1}
     #[test]
-    fn test_240() {
+    fn test_236() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -5480,7 +5414,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArn=, AccountIdEndpointMode=required, Region=us-east-1}
     #[test]
-    fn test_241() {
+    fn test_237() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -5500,7 +5434,7 @@ mod test {
 
     /// {UseFIPS=true, UseDualStack=true, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=us-east-1}
     #[test]
-    fn test_242() {
+    fn test_238() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(true)
             .use_dual_stack(true)
@@ -5520,7 +5454,7 @@ mod test {
 
     /// {UseFIPS=true, UseDualStack=false, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=us-east-1}
     #[test]
-    fn test_243() {
+    fn test_239() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(true)
             .use_dual_stack(false)
@@ -5540,7 +5474,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=true, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=us-east-1}
     #[test]
-    fn test_244() {
+    fn test_240() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(true)
@@ -5560,7 +5494,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=us-east-1}
     #[test]
-    fn test_245() {
+    fn test_241() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -5582,7 +5516,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=us-east-1}
     #[test]
-    fn test_246() {
+    fn test_242() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -5605,7 +5539,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountIdEndpointMode=required, Region=us-east-1}
     #[test]
-    fn test_247() {
+    fn test_243() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -5624,7 +5558,7 @@ mod test {
 
     /// {UseFIPS=true, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=required, Region=cn-north-1}
     #[test]
-    fn test_248() {
+    fn test_244() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(true)
             .use_dual_stack(true)
@@ -5644,7 +5578,7 @@ mod test {
 
     /// {UseFIPS=true, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=required, Region=cn-north-1}
     #[test]
-    fn test_249() {
+    fn test_245() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(true)
             .use_dual_stack(false)
@@ -5664,7 +5598,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=required, Region=cn-north-1}
     #[test]
-    fn test_250() {
+    fn test_246() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(true)
@@ -5684,7 +5618,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=required, Region=cn-north-1}
     #[test]
-    fn test_251() {
+    fn test_247() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -5704,7 +5638,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=cn-north-1}
     #[test]
-    fn test_252() {
+    fn test_248() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -5725,7 +5659,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=cn-north-1}
     #[test]
-    fn test_253() {
+    fn test_249() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -5747,7 +5681,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=cn-north-1}
     #[test]
-    fn test_254() {
+    fn test_250() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -5769,7 +5703,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=cn-north-1}
     #[test]
-    fn test_255() {
+    fn test_251() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -5791,7 +5725,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-west-2:333333333333:table/table_name], AccountIdEndpointMode=required, Region=cn-north-1}
     #[test]
-    fn test_256() {
+    fn test_252() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -5813,7 +5747,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, ResourceArnList=[arn:aws:s3:us-east-1:333333333333:stream/testStream], AccountIdEndpointMode=required, Region=cn-north-1}
     #[test]
-    fn test_257() {
+    fn test_253() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -5835,7 +5769,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=, AccountIdEndpointMode=required, Region=cn-north-1}
     #[test]
-    fn test_258() {
+    fn test_254() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -5855,7 +5789,7 @@ mod test {
 
     /// {UseFIPS=true, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=required, Region=cn-north-1}
     #[test]
-    fn test_259() {
+    fn test_255() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(true)
             .use_dual_stack(true)
@@ -5875,7 +5809,7 @@ mod test {
 
     /// {UseFIPS=true, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=required, Region=cn-north-1}
     #[test]
-    fn test_260() {
+    fn test_256() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(true)
             .use_dual_stack(false)
@@ -5895,7 +5829,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=required, Region=cn-north-1}
     #[test]
-    fn test_261() {
+    fn test_257() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(true)
@@ -5915,7 +5849,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=required, Region=cn-north-1}
     #[test]
-    fn test_262() {
+    fn test_258() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -5935,7 +5869,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, AccountIdEndpointMode=required, Region=cn-north-1}
     #[test]
-    fn test_263() {
+    fn test_259() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -5955,7 +5889,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, AccountIdEndpointMode=required, Region=cn-north-1}
     #[test]
-    fn test_264() {
+    fn test_260() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -5975,7 +5909,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArn=, AccountIdEndpointMode=required, Region=cn-north-1}
     #[test]
-    fn test_265() {
+    fn test_261() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -5995,7 +5929,7 @@ mod test {
 
     /// {UseFIPS=true, UseDualStack=true, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=cn-north-1}
     #[test]
-    fn test_266() {
+    fn test_262() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(true)
             .use_dual_stack(true)
@@ -6015,7 +5949,7 @@ mod test {
 
     /// {UseFIPS=true, UseDualStack=false, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=cn-north-1}
     #[test]
-    fn test_267() {
+    fn test_263() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(true)
             .use_dual_stack(false)
@@ -6035,7 +5969,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=true, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=cn-north-1}
     #[test]
-    fn test_268() {
+    fn test_264() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(true)
@@ -6055,7 +5989,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=cn-north-1}
     #[test]
-    fn test_269() {
+    fn test_265() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -6075,7 +6009,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=cn-north-1}
     #[test]
-    fn test_270() {
+    fn test_266() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -6096,7 +6030,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountIdEndpointMode=required, Region=cn-north-1}
     #[test]
-    fn test_271() {
+    fn test_267() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -6115,7 +6049,7 @@ mod test {
 
     /// {UseFIPS=true, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=disabled, Region=us-east-1}
     #[test]
-    fn test_272() {
+    fn test_268() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(true)
             .use_dual_stack(true)
@@ -6137,7 +6071,7 @@ mod test {
 
     /// {UseFIPS=true, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=disabled, Region=us-east-1}
     #[test]
-    fn test_273() {
+    fn test_269() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(true)
             .use_dual_stack(false)
@@ -6159,7 +6093,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=disabled, Region=us-east-1}
     #[test]
-    fn test_274() {
+    fn test_270() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(true)
@@ -6181,7 +6115,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=disabled, Region=us-east-1}
     #[test]
-    fn test_275() {
+    fn test_271() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -6203,7 +6137,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=disabled, Region=us-east-1}
     #[test]
-    fn test_276() {
+    fn test_272() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -6226,7 +6160,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=disabled, Region=us-east-1}
     #[test]
-    fn test_277() {
+    fn test_273() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -6250,7 +6184,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=disabled, Region=us-east-1}
     #[test]
-    fn test_278() {
+    fn test_274() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -6274,7 +6208,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=disabled, Region=us-east-1}
     #[test]
-    fn test_279() {
+    fn test_275() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -6298,7 +6232,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-west-2:333333333333:table/table_name], AccountIdEndpointMode=disabled, Region=us-east-1}
     #[test]
-    fn test_280() {
+    fn test_276() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -6322,7 +6256,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, ResourceArnList=[arn:aws:s3:us-east-1:333333333333:stream/testStream], AccountIdEndpointMode=disabled, Region=us-east-1}
     #[test]
-    fn test_281() {
+    fn test_277() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -6346,7 +6280,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=, AccountIdEndpointMode=disabled, Region=us-east-1}
     #[test]
-    fn test_282() {
+    fn test_278() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -6368,7 +6302,7 @@ mod test {
 
     /// {UseFIPS=true, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=disabled, Region=us-east-1}
     #[test]
-    fn test_283() {
+    fn test_279() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(true)
             .use_dual_stack(true)
@@ -6390,7 +6324,7 @@ mod test {
 
     /// {UseFIPS=true, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=disabled, Region=us-east-1}
     #[test]
-    fn test_284() {
+    fn test_280() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(true)
             .use_dual_stack(false)
@@ -6412,7 +6346,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=disabled, Region=us-east-1}
     #[test]
-    fn test_285() {
+    fn test_281() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(true)
@@ -6434,7 +6368,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=disabled, Region=us-east-1}
     #[test]
-    fn test_286() {
+    fn test_282() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -6456,7 +6390,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, AccountIdEndpointMode=disabled, Region=us-east-1}
     #[test]
-    fn test_287() {
+    fn test_283() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -6478,7 +6412,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, AccountIdEndpointMode=disabled, Region=us-east-1}
     #[test]
-    fn test_288() {
+    fn test_284() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -6500,7 +6434,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArn=, AccountIdEndpointMode=disabled, Region=us-east-1}
     #[test]
-    fn test_289() {
+    fn test_285() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -6522,7 +6456,7 @@ mod test {
 
     /// {UseFIPS=true, UseDualStack=true, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=disabled, Region=us-east-1}
     #[test]
-    fn test_290() {
+    fn test_286() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(true)
             .use_dual_stack(true)
@@ -6544,7 +6478,7 @@ mod test {
 
     /// {UseFIPS=true, UseDualStack=false, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=disabled, Region=us-east-1}
     #[test]
-    fn test_291() {
+    fn test_287() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(true)
             .use_dual_stack(false)
@@ -6566,7 +6500,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=true, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=disabled, Region=us-east-1}
     #[test]
-    fn test_292() {
+    fn test_288() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(true)
@@ -6588,7 +6522,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=disabled, Region=us-east-1}
     #[test]
-    fn test_293() {
+    fn test_289() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -6610,7 +6544,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=disabled, Region=us-east-1}
     #[test]
-    fn test_294() {
+    fn test_290() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -6633,7 +6567,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountIdEndpointMode=disabled, Region=us-east-1}
     #[test]
-    fn test_295() {
+    fn test_291() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -6654,7 +6588,7 @@ mod test {
 
     /// {UseFIPS=true, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=cn-north-1}
     #[test]
-    fn test_296() {
+    fn test_292() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(true)
             .use_dual_stack(true)
@@ -6676,7 +6610,7 @@ mod test {
 
     /// {UseFIPS=true, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=cn-north-1}
     #[test]
-    fn test_297() {
+    fn test_293() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(true)
             .use_dual_stack(false)
@@ -6698,7 +6632,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=cn-north-1}
     #[test]
-    fn test_298() {
+    fn test_294() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(true)
@@ -6720,7 +6654,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=cn-north-1}
     #[test]
-    fn test_299() {
+    fn test_295() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -6742,7 +6676,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=cn-north-1}
     #[test]
-    fn test_300() {
+    fn test_296() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -6765,7 +6699,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=cn-north-1}
     #[test]
-    fn test_301() {
+    fn test_297() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -6789,7 +6723,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=cn-north-1}
     #[test]
-    fn test_302() {
+    fn test_298() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -6813,7 +6747,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=cn-north-1}
     #[test]
-    fn test_303() {
+    fn test_299() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -6837,7 +6771,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-west-2:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=cn-north-1}
     #[test]
-    fn test_304() {
+    fn test_300() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -6861,7 +6795,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, ResourceArnList=[arn:aws:s3:us-east-1:333333333333:stream/testStream], AccountIdEndpointMode=preferred, Region=cn-north-1}
     #[test]
-    fn test_305() {
+    fn test_301() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -6885,7 +6819,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=, AccountIdEndpointMode=preferred, Region=cn-north-1}
     #[test]
-    fn test_306() {
+    fn test_302() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -6907,7 +6841,7 @@ mod test {
 
     /// {UseFIPS=true, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=cn-north-1}
     #[test]
-    fn test_307() {
+    fn test_303() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(true)
             .use_dual_stack(true)
@@ -6929,7 +6863,7 @@ mod test {
 
     /// {UseFIPS=true, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=cn-north-1}
     #[test]
-    fn test_308() {
+    fn test_304() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(true)
             .use_dual_stack(false)
@@ -6951,7 +6885,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=cn-north-1}
     #[test]
-    fn test_309() {
+    fn test_305() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(true)
@@ -6973,7 +6907,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=cn-north-1}
     #[test]
-    fn test_310() {
+    fn test_306() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -6995,7 +6929,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=cn-north-1}
     #[test]
-    fn test_311() {
+    fn test_307() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -7017,7 +6951,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, AccountIdEndpointMode=preferred, Region=cn-north-1}
     #[test]
-    fn test_312() {
+    fn test_308() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -7039,7 +6973,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArn=, AccountIdEndpointMode=preferred, Region=cn-north-1}
     #[test]
-    fn test_313() {
+    fn test_309() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -7061,7 +6995,7 @@ mod test {
 
     /// {UseFIPS=true, UseDualStack=true, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=cn-north-1}
     #[test]
-    fn test_314() {
+    fn test_310() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(true)
             .use_dual_stack(true)
@@ -7083,7 +7017,7 @@ mod test {
 
     /// {UseFIPS=true, UseDualStack=false, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=cn-north-1}
     #[test]
-    fn test_315() {
+    fn test_311() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(true)
             .use_dual_stack(false)
@@ -7105,7 +7039,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=true, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=cn-north-1}
     #[test]
-    fn test_316() {
+    fn test_312() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(true)
@@ -7127,7 +7061,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=cn-north-1}
     #[test]
-    fn test_317() {
+    fn test_313() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -7149,7 +7083,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=cn-north-1}
     #[test]
-    fn test_318() {
+    fn test_314() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -7172,7 +7106,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountIdEndpointMode=preferred, Region=cn-north-1}
     #[test]
-    fn test_319() {
+    fn test_315() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -7193,7 +7127,7 @@ mod test {
 
     /// {UseFIPS=true, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=us-iso-east-1}
     #[test]
-    fn test_320() {
+    fn test_316() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(true)
             .use_dual_stack(true)
@@ -7213,7 +7147,7 @@ mod test {
 
     /// {UseFIPS=true, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=us-iso-east-1}
     #[test]
-    fn test_321() {
+    fn test_317() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(true)
             .use_dual_stack(false)
@@ -7235,7 +7169,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=us-iso-east-1}
     #[test]
-    fn test_322() {
+    fn test_318() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(true)
@@ -7252,7 +7186,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=us-iso-east-1}
     #[test]
-    fn test_323() {
+    fn test_319() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -7274,7 +7208,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-iso-east-1}
     #[test]
-    fn test_324() {
+    fn test_320() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -7297,7 +7231,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-iso-east-1}
     #[test]
-    fn test_325() {
+    fn test_321() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -7321,7 +7255,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-iso-east-1}
     #[test]
-    fn test_326() {
+    fn test_322() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -7345,7 +7279,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-iso-east-1}
     #[test]
-    fn test_327() {
+    fn test_323() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -7369,7 +7303,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-west-2:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-iso-east-1}
     #[test]
-    fn test_328() {
+    fn test_324() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -7393,7 +7327,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, ResourceArnList=[arn:aws:s3:us-east-1:333333333333:stream/testStream], AccountIdEndpointMode=preferred, Region=us-iso-east-1}
     #[test]
-    fn test_329() {
+    fn test_325() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -7417,7 +7351,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=, AccountIdEndpointMode=preferred, Region=us-iso-east-1}
     #[test]
-    fn test_330() {
+    fn test_326() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -7439,7 +7373,7 @@ mod test {
 
     /// {UseFIPS=true, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-iso-east-1}
     #[test]
-    fn test_331() {
+    fn test_327() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(true)
             .use_dual_stack(true)
@@ -7459,7 +7393,7 @@ mod test {
 
     /// {UseFIPS=true, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-iso-east-1}
     #[test]
-    fn test_332() {
+    fn test_328() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(true)
             .use_dual_stack(false)
@@ -7481,7 +7415,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-iso-east-1}
     #[test]
-    fn test_333() {
+    fn test_329() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(true)
@@ -7498,7 +7432,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-iso-east-1}
     #[test]
-    fn test_334() {
+    fn test_330() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -7520,7 +7454,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-iso-east-1}
     #[test]
-    fn test_335() {
+    fn test_331() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -7542,7 +7476,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, AccountIdEndpointMode=preferred, Region=us-iso-east-1}
     #[test]
-    fn test_336() {
+    fn test_332() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -7564,7 +7498,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArn=, AccountIdEndpointMode=preferred, Region=us-iso-east-1}
     #[test]
-    fn test_337() {
+    fn test_333() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -7586,7 +7520,7 @@ mod test {
 
     /// {UseFIPS=true, UseDualStack=true, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-iso-east-1}
     #[test]
-    fn test_338() {
+    fn test_334() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(true)
             .use_dual_stack(true)
@@ -7606,7 +7540,7 @@ mod test {
 
     /// {UseFIPS=true, UseDualStack=false, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-iso-east-1}
     #[test]
-    fn test_339() {
+    fn test_335() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(true)
             .use_dual_stack(false)
@@ -7628,7 +7562,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=true, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-iso-east-1}
     #[test]
-    fn test_340() {
+    fn test_336() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(true)
@@ -7645,7 +7579,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-iso-east-1}
     #[test]
-    fn test_341() {
+    fn test_337() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -7667,7 +7601,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-iso-east-1}
     #[test]
-    fn test_342() {
+    fn test_338() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -7690,7 +7624,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountIdEndpointMode=preferred, Region=us-iso-east-1}
     #[test]
-    fn test_343() {
+    fn test_339() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -7711,7 +7645,7 @@ mod test {
 
     /// {UseFIPS=true, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=us-gov-east-1}
     #[test]
-    fn test_344() {
+    fn test_340() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(true)
             .use_dual_stack(true)
@@ -7733,7 +7667,7 @@ mod test {
 
     /// {UseFIPS=true, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=us-gov-east-1}
     #[test]
-    fn test_345() {
+    fn test_341() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(true)
             .use_dual_stack(false)
@@ -7755,7 +7689,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=us-gov-east-1}
     #[test]
-    fn test_346() {
+    fn test_342() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(true)
@@ -7777,7 +7711,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=us-gov-east-1}
     #[test]
-    fn test_347() {
+    fn test_343() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -7799,7 +7733,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-gov-east-1}
     #[test]
-    fn test_348() {
+    fn test_344() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -7822,7 +7756,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-gov-east-1}
     #[test]
-    fn test_349() {
+    fn test_345() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -7846,7 +7780,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-gov-east-1}
     #[test]
-    fn test_350() {
+    fn test_346() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -7870,7 +7804,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-gov-east-1}
     #[test]
-    fn test_351() {
+    fn test_347() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -7894,7 +7828,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-west-2:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-gov-east-1}
     #[test]
-    fn test_352() {
+    fn test_348() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -7918,7 +7852,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, ResourceArnList=[arn:aws:s3:us-east-1:333333333333:stream/testStream], AccountIdEndpointMode=preferred, Region=us-gov-east-1}
     #[test]
-    fn test_353() {
+    fn test_349() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -7942,7 +7876,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountId=, AccountIdEndpointMode=preferred, Region=us-gov-east-1}
     #[test]
-    fn test_354() {
+    fn test_350() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -7964,7 +7898,7 @@ mod test {
 
     /// {UseFIPS=true, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-gov-east-1}
     #[test]
-    fn test_355() {
+    fn test_351() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(true)
             .use_dual_stack(true)
@@ -7986,7 +7920,7 @@ mod test {
 
     /// {UseFIPS=true, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-gov-east-1}
     #[test]
-    fn test_356() {
+    fn test_352() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(true)
             .use_dual_stack(false)
@@ -8008,7 +7942,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-gov-east-1}
     #[test]
-    fn test_357() {
+    fn test_353() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(true)
@@ -8030,7 +7964,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-gov-east-1}
     #[test]
-    fn test_358() {
+    fn test_354() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -8052,7 +7986,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-gov-east-1}
     #[test]
-    fn test_359() {
+    fn test_355() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -8074,7 +8008,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, AccountIdEndpointMode=preferred, Region=us-gov-east-1}
     #[test]
-    fn test_360() {
+    fn test_356() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -8096,7 +8030,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArn=, AccountIdEndpointMode=preferred, Region=us-gov-east-1}
     #[test]
-    fn test_361() {
+    fn test_357() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -8118,7 +8052,7 @@ mod test {
 
     /// {UseFIPS=true, UseDualStack=true, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-gov-east-1}
     #[test]
-    fn test_362() {
+    fn test_358() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(true)
             .use_dual_stack(true)
@@ -8140,7 +8074,7 @@ mod test {
 
     /// {UseFIPS=true, UseDualStack=false, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-gov-east-1}
     #[test]
-    fn test_363() {
+    fn test_359() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(true)
             .use_dual_stack(false)
@@ -8162,7 +8096,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=true, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-gov-east-1}
     #[test]
-    fn test_364() {
+    fn test_360() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(true)
@@ -8184,7 +8118,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-gov-east-1}
     #[test]
-    fn test_365() {
+    fn test_361() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -8206,7 +8140,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-gov-east-1}
     #[test]
-    fn test_366() {
+    fn test_362() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -8229,7 +8163,7 @@ mod test {
 
     /// {UseFIPS=false, UseDualStack=false, AccountIdEndpointMode=preferred, Region=us-gov-east-1}
     #[test]
-    fn test_367() {
+    fn test_363() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)

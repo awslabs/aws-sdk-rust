@@ -6455,6 +6455,22 @@ pub(crate) fn s3_data_source_correct_errors(mut builder: crate::types::builders:
     builder
 }
 
+pub(crate) fn s3_file_system_correct_errors(mut builder: crate::types::builders::S3FileSystemBuilder) -> crate::types::builders::S3FileSystemBuilder {
+    if builder.s3_uri.is_none() {
+        builder.s3_uri = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn s3_file_system_config_correct_errors(
+    mut builder: crate::types::builders::S3FileSystemConfigBuilder,
+) -> crate::types::builders::S3FileSystemConfigBuilder {
+    if builder.s3_uri.is_none() {
+        builder.s3_uri = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn training_job_definition_correct_errors(
     mut builder: crate::types::builders::TrainingJobDefinitionBuilder,
 ) -> crate::types::builders::TrainingJobDefinitionBuilder {

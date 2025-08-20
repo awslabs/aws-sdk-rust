@@ -44,6 +44,15 @@ pub(crate) fn converse_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn count_tokens_output_output_correct_errors(
+    mut builder: crate::operation::count_tokens::builders::CountTokensOutputBuilder,
+) -> crate::operation::count_tokens::builders::CountTokensOutputBuilder {
+    if builder.input_tokens.is_none() {
+        builder.input_tokens = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn get_async_invoke_output_output_correct_errors(
     mut builder: crate::operation::get_async_invoke::builders::GetAsyncInvokeOutputBuilder,
 ) -> crate::operation::get_async_invoke::builders::GetAsyncInvokeOutputBuilder {

@@ -178,6 +178,33 @@ impl From<crate::operation::converse_stream::ConverseStreamError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::count_tokens::CountTokensError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::count_tokens::CountTokensError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::count_tokens::CountTokensError> for Error {
+    fn from(err: crate::operation::count_tokens::CountTokensError) -> Self {
+        match err {
+            crate::operation::count_tokens::CountTokensError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::count_tokens::CountTokensError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::count_tokens::CountTokensError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::count_tokens::CountTokensError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::count_tokens::CountTokensError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::count_tokens::CountTokensError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::count_tokens::CountTokensError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_async_invoke::GetAsyncInvokeError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

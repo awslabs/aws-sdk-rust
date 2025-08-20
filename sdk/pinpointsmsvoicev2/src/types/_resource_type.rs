@@ -17,6 +17,7 @@
 ///     ResourceType::EventDestination => { /* ... */ },
 ///     ResourceType::Keyword => { /* ... */ },
 ///     ResourceType::Message => { /* ... */ },
+///     ResourceType::MessageTemplate => { /* ... */ },
 ///     ResourceType::OptOutList => { /* ... */ },
 ///     ResourceType::OptedOutNumber => { /* ... */ },
 ///     ResourceType::PhoneNumber => { /* ... */ },
@@ -66,6 +67,8 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     Message,
     #[allow(missing_docs)] // documentation missing in model
+    MessageTemplate,
+    #[allow(missing_docs)] // documentation missing in model
     OptOutList,
     #[allow(missing_docs)] // documentation missing in model
     OptedOutNumber,
@@ -97,6 +100,7 @@ impl ::std::convert::From<&str> for ResourceType {
             "event-destination" => ResourceType::EventDestination,
             "keyword" => ResourceType::Keyword,
             "message" => ResourceType::Message,
+            "message-template" => ResourceType::MessageTemplate,
             "opt-out-list" => ResourceType::OptOutList,
             "opted-out-number" => ResourceType::OptedOutNumber,
             "phone-number" => ResourceType::PhoneNumber,
@@ -127,6 +131,7 @@ impl ResourceType {
             ResourceType::EventDestination => "event-destination",
             ResourceType::Keyword => "keyword",
             ResourceType::Message => "message",
+            ResourceType::MessageTemplate => "message-template",
             ResourceType::OptOutList => "opt-out-list",
             ResourceType::OptedOutNumber => "opted-out-number",
             ResourceType::PhoneNumber => "phone-number",
@@ -148,6 +153,7 @@ impl ResourceType {
             "event-destination",
             "keyword",
             "message",
+            "message-template",
             "opt-out-list",
             "opted-out-number",
             "phone-number",
@@ -186,6 +192,7 @@ impl ::std::fmt::Display for ResourceType {
             ResourceType::EventDestination => write!(f, "event-destination"),
             ResourceType::Keyword => write!(f, "keyword"),
             ResourceType::Message => write!(f, "message"),
+            ResourceType::MessageTemplate => write!(f, "message-template"),
             ResourceType::OptOutList => write!(f, "opt-out-list"),
             ResourceType::OptedOutNumber => write!(f, "opted-out-number"),
             ResourceType::PhoneNumber => write!(f, "phone-number"),

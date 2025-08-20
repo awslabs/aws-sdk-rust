@@ -89,6 +89,12 @@ pub use crate::types::_delivery_medium_type::DeliveryMediumType;
 
 pub use crate::types::_attribute_type::AttributeType;
 
+pub use crate::types::_terms_type::TermsType;
+
+pub use crate::types::_terms_enforcement_type::TermsEnforcementType;
+
+pub use crate::types::_terms_source_type::TermsSourceType;
+
 pub use crate::types::_resource_server_type::ResourceServerType;
 
 pub use crate::types::_resource_server_scope_type::ResourceServerScopeType;
@@ -196,6 +202,8 @@ pub use crate::types::_user_pool_description_type::UserPoolDescriptionType;
 pub use crate::types::_status_type::StatusType;
 
 pub use crate::types::_user_pool_client_description::UserPoolClientDescription;
+
+pub use crate::types::_terms_description_type::TermsDescriptionType;
 
 pub use crate::types::_provider_description::ProviderDescription;
 
@@ -460,6 +468,14 @@ mod _software_token_mfa_settings_type;
 mod _status_type;
 
 mod _string_attribute_constraints_type;
+
+mod _terms_description_type;
+
+mod _terms_enforcement_type;
+
+mod _terms_source_type;
+
+mod _terms_type;
 
 mod _time_units_type;
 

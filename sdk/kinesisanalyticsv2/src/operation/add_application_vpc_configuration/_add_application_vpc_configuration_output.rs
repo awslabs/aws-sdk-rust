@@ -9,7 +9,7 @@ pub struct AddApplicationVpcConfigurationOutput {
     pub application_version_id: ::std::option::Option<i64>,
     /// <p>The parameters of the new VPC configuration.</p>
     pub vpc_configuration_description: ::std::option::Option<crate::types::VpcConfigurationDescription>,
-    /// Operation ID for tracking AddApplicationVpcConfiguration request
+    /// <p>The operation ID that can be used to track the request.</p>
     pub operation_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -26,7 +26,7 @@ impl AddApplicationVpcConfigurationOutput {
     pub fn vpc_configuration_description(&self) -> ::std::option::Option<&crate::types::VpcConfigurationDescription> {
         self.vpc_configuration_description.as_ref()
     }
-    /// Operation ID for tracking AddApplicationVpcConfiguration request
+    /// <p>The operation ID that can be used to track the request.</p>
     pub fn operation_id(&self) -> ::std::option::Option<&str> {
         self.operation_id.as_deref()
     }
@@ -96,17 +96,17 @@ impl AddApplicationVpcConfigurationOutputBuilder {
     pub fn get_vpc_configuration_description(&self) -> &::std::option::Option<crate::types::VpcConfigurationDescription> {
         &self.vpc_configuration_description
     }
-    /// Operation ID for tracking AddApplicationVpcConfiguration request
+    /// <p>The operation ID that can be used to track the request.</p>
     pub fn operation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.operation_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// Operation ID for tracking AddApplicationVpcConfiguration request
+    /// <p>The operation ID that can be used to track the request.</p>
     pub fn set_operation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.operation_id = input;
         self
     }
-    /// Operation ID for tracking AddApplicationVpcConfiguration request
+    /// <p>The operation ID that can be used to track the request.</p>
     pub fn get_operation_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.operation_id
     }

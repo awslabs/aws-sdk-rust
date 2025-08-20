@@ -229,6 +229,8 @@ pub(crate) mod shape_access_scope;
 
 pub(crate) mod shape_addon;
 
+pub(crate) mod shape_addon_namespace_config_request;
+
 pub(crate) mod shape_addon_pod_identity_associations;
 
 pub(crate) mod shape_addon_pod_identity_configuration_list;
@@ -330,6 +332,8 @@ pub(crate) mod shape_additional_info_map;
 pub(crate) mod shape_addon_health;
 
 pub(crate) mod shape_addon_info;
+
+pub(crate) mod shape_addon_namespace_config_response;
 
 pub(crate) mod shape_addon_pod_identity_configuration;
 

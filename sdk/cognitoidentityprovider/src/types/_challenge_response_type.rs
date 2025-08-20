@@ -29,6 +29,25 @@
 /// </ul>
 /// </dd>
 /// <dt>
+/// WEB_AUTHN
+/// </dt>
+/// <dd>
+/// <p><code>"ChallengeName": "WEB_AUTHN", "ChallengeResponses": { "USERNAME": "\[username\]", "CREDENTIAL": "\[AuthenticationResponseJSON\]"}</code></p>
+/// <p>See <a href="https://www.w3.org/TR/WebAuthn-3/#dictdef-authenticationresponsejson"> AuthenticationResponseJSON</a>.</p>
+/// </dd>
+/// <dt>
+/// PASSWORD
+/// </dt>
+/// <dd>
+/// <p><code>"ChallengeName": "PASSWORD", "ChallengeResponses": { "USERNAME": "\[username\]", "PASSWORD": "\[password\]"}</code></p>
+/// </dd>
+/// <dt>
+/// PASSWORD_SRP
+/// </dt>
+/// <dd>
+/// <p><code>"ChallengeName": "PASSWORD_SRP", "ChallengeResponses": { "USERNAME": "\[username\]", "SRP_A": "\[SRP_A\]"}</code></p>
+/// </dd>
+/// <dt>
 /// SMS_OTP
 /// </dt>
 /// <dd>
@@ -52,14 +71,12 @@
 /// <dd>
 /// <p>This challenge response is part of the SRP flow. Amazon Cognito requires that your application respond to this challenge within a few seconds. When the response time exceeds this period, your user pool returns a <code>NotAuthorizedException</code> error.</p>
 /// <p><code>"ChallengeName": "PASSWORD_VERIFIER", "ChallengeResponses": {"PASSWORD_CLAIM_SIGNATURE": "\[claim_signature\]", "PASSWORD_CLAIM_SECRET_BLOCK": "\[secret_block\]", "TIMESTAMP": \[timestamp\], "USERNAME": "\[username\]"}</code></p>
-/// <p>Add <code>"DEVICE_KEY"</code> when you sign in with a remembered device.</p>
 /// </dd>
 /// <dt>
 /// CUSTOM_CHALLENGE
 /// </dt>
 /// <dd>
 /// <p><code>"ChallengeName": "CUSTOM_CHALLENGE", "ChallengeResponses": {"USERNAME": "\[username\]", "ANSWER": "\[challenge_answer\]"}</code></p>
-/// <p>Add <code>"DEVICE_KEY"</code> when you sign in with a remembered device.</p>
 /// </dd>
 /// <dt>
 /// NEW_PASSWORD_REQUIRED
@@ -98,7 +115,7 @@
 /// SELECT_MFA_TYPE
 /// </dt>
 /// <dd>
-/// <p><code>"ChallengeName": "SELECT_MFA_TYPE", "ChallengeResponses": {"USERNAME": "\[username\]", "ANSWER": "\[SMS_MFA or SOFTWARE_TOKEN_MFA\]"}</code></p>
+/// <p><code>"ChallengeName": "SELECT_MFA_TYPE", "ChallengeResponses": {"USERNAME": "\[username\]", "ANSWER": "\[SMS_MFA|EMAIL_MFA|SOFTWARE_TOKEN_MFA\]"}</code></p>
 /// </dd>
 /// </dl>
 /// <p>For more information about <code>SECRET_HASH</code>, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash">Computing secret hash values</a>. For information about <code>DEVICE_KEY</code>, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">Working with user devices in your user pool</a>.</p>

@@ -97,6 +97,8 @@ pub(crate) mod shape_create_managed_login_branding;
 
 pub(crate) mod shape_create_resource_server;
 
+pub(crate) mod shape_create_terms;
+
 pub(crate) mod shape_create_user_import_job;
 
 pub(crate) mod shape_create_user_pool;
@@ -112,6 +114,8 @@ pub(crate) mod shape_delete_identity_provider;
 pub(crate) mod shape_delete_managed_login_branding;
 
 pub(crate) mod shape_delete_resource_server;
+
+pub(crate) mod shape_delete_terms;
 
 pub(crate) mod shape_delete_user;
 
@@ -134,6 +138,8 @@ pub(crate) mod shape_describe_managed_login_branding_by_client;
 pub(crate) mod shape_describe_resource_server;
 
 pub(crate) mod shape_describe_risk_configuration;
+
+pub(crate) mod shape_describe_terms;
 
 pub(crate) mod shape_describe_user_import_job;
 
@@ -184,6 +190,8 @@ pub(crate) mod shape_list_identity_providers;
 pub(crate) mod shape_list_resource_servers;
 
 pub(crate) mod shape_list_tags_for_resource;
+
+pub(crate) mod shape_list_terms;
 
 pub(crate) mod shape_list_user_import_jobs;
 
@@ -238,6 +246,8 @@ pub(crate) mod shape_update_identity_provider;
 pub(crate) mod shape_update_managed_login_branding;
 
 pub(crate) mod shape_update_resource_server;
+
+pub(crate) mod shape_update_terms;
 
 pub(crate) mod shape_update_user_attributes;
 
@@ -341,6 +351,8 @@ pub(crate) mod shape_create_managed_login_branding_input;
 
 pub(crate) mod shape_create_resource_server_input;
 
+pub(crate) mod shape_create_terms_input;
+
 pub(crate) mod shape_create_user_import_job_input;
 
 pub(crate) mod shape_create_user_pool_client_input;
@@ -356,6 +368,8 @@ pub(crate) mod shape_delete_identity_provider_input;
 pub(crate) mod shape_delete_managed_login_branding_input;
 
 pub(crate) mod shape_delete_resource_server_input;
+
+pub(crate) mod shape_delete_terms_input;
 
 pub(crate) mod shape_delete_user_attributes_input;
 
@@ -378,6 +392,8 @@ pub(crate) mod shape_describe_managed_login_branding_input;
 pub(crate) mod shape_describe_resource_server_input;
 
 pub(crate) mod shape_describe_risk_configuration_input;
+
+pub(crate) mod shape_describe_terms_input;
 
 pub(crate) mod shape_describe_user_import_job_input;
 
@@ -463,6 +479,8 @@ pub(crate) mod shape_list_resource_servers_input;
 
 pub(crate) mod shape_list_tags_for_resource_input;
 
+pub(crate) mod shape_list_terms_input;
+
 pub(crate) mod shape_list_user_import_jobs_input;
 
 pub(crate) mod shape_list_user_pool_clients_input;
@@ -523,6 +541,8 @@ pub(crate) mod shape_stop_user_import_job_input;
 
 pub(crate) mod shape_tag_resource_input;
 
+pub(crate) mod shape_terms_exists_exception;
+
 pub(crate) mod shape_tier_change_not_allowed_exception;
 
 pub(crate) mod shape_too_many_failed_attempts_exception;
@@ -554,6 +574,8 @@ pub(crate) mod shape_update_identity_provider_input;
 pub(crate) mod shape_update_managed_login_branding_input;
 
 pub(crate) mod shape_update_resource_server_input;
+
+pub(crate) mod shape_update_terms_input;
 
 pub(crate) mod shape_update_user_attributes_input;
 
@@ -695,6 +717,10 @@ pub(crate) mod shape_software_token_mfa_config_type;
 
 pub(crate) mod shape_software_token_mfa_settings_type;
 
+pub(crate) mod shape_terms_description_list_type;
+
+pub(crate) mod shape_terms_type;
+
 pub(crate) mod shape_token_validity_units_type;
 
 pub(crate) mod shape_ui_customization_type;
@@ -767,6 +793,8 @@ pub(crate) mod shape_http_header;
 
 pub(crate) mod shape_idp_identifiers_list_type;
 
+pub(crate) mod shape_links_type;
+
 pub(crate) mod shape_log_configuration_list_type;
 
 pub(crate) mod shape_logout_urls_list_type;
@@ -804,6 +832,8 @@ pub(crate) mod shape_sign_in_policy_type;
 pub(crate) mod shape_string_attribute_constraints_type;
 
 pub(crate) mod shape_supported_identity_providers_list_type;
+
+pub(crate) mod shape_terms_description_type;
 
 pub(crate) mod shape_user_pool_client_description;
 

@@ -28,6 +28,7 @@ pub struct S3FileSystemBuilder {
 }
 impl S3FileSystemBuilder {
     /// <p>The Amazon S3 URI that specifies the location in S3 where files are stored, which is mounted within the Studio environment. For example: <code>s3://&lt;bucket-name&gt;/&lt;prefix&gt;/</code>.</p>
+    /// This field is required.
     pub fn s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_uri = ::std::option::Option::Some(input.into());
         self

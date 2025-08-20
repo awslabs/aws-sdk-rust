@@ -11,7 +11,7 @@ impl super::Client {
     ///   - [`application_arn(Option<String>)`](crate::operation::add_application_vpc_configuration::AddApplicationVpcConfigurationOutput::application_arn): <p>The ARN of the application.</p>
     ///   - [`application_version_id(Option<i64>)`](crate::operation::add_application_vpc_configuration::AddApplicationVpcConfigurationOutput::application_version_id): <p>Provides the current application version. Managed Service for Apache Flink updates the ApplicationVersionId each time you update the application.</p>
     ///   - [`vpc_configuration_description(Option<VpcConfigurationDescription>)`](crate::operation::add_application_vpc_configuration::AddApplicationVpcConfigurationOutput::vpc_configuration_description): <p>The parameters of the new VPC configuration.</p>
-    ///   - [`operation_id(Option<String>)`](crate::operation::add_application_vpc_configuration::AddApplicationVpcConfigurationOutput::operation_id): Operation ID for tracking AddApplicationVpcConfiguration request
+    ///   - [`operation_id(Option<String>)`](crate::operation::add_application_vpc_configuration::AddApplicationVpcConfigurationOutput::operation_id): <p>The operation ID that can be used to track the request.</p>
     /// - On failure, responds with [`SdkError<AddApplicationVpcConfigurationError>`](crate::operation::add_application_vpc_configuration::AddApplicationVpcConfigurationError)
     pub fn add_application_vpc_configuration(
         &self,

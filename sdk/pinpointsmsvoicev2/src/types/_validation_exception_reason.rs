@@ -18,6 +18,7 @@
 ///     ValidationExceptionReason::CountryCodeMismatch => { /* ... */ },
 ///     ValidationExceptionReason::DestinationCountryBlocked => { /* ... */ },
 ///     ValidationExceptionReason::FieldValidationFailed => { /* ... */ },
+///     ValidationExceptionReason::InternationalSendingNotSupported => { /* ... */ },
 ///     ValidationExceptionReason::InvalidArn => { /* ... */ },
 ///     ValidationExceptionReason::InvalidFilterValues => { /* ... */ },
 ///     ValidationExceptionReason::InvalidIdentityForDestinationCountry => { /* ... */ },
@@ -92,6 +93,8 @@ pub enum ValidationExceptionReason {
     DestinationCountryBlocked,
     #[allow(missing_docs)] // documentation missing in model
     FieldValidationFailed,
+    #[allow(missing_docs)] // documentation missing in model
+    InternationalSendingNotSupported,
     #[allow(missing_docs)] // documentation missing in model
     InvalidArn,
     #[allow(missing_docs)] // documentation missing in model
@@ -173,6 +176,7 @@ impl ::std::convert::From<&str> for ValidationExceptionReason {
             "COUNTRY_CODE_MISMATCH" => ValidationExceptionReason::CountryCodeMismatch,
             "DESTINATION_COUNTRY_BLOCKED" => ValidationExceptionReason::DestinationCountryBlocked,
             "FIELD_VALIDATION_FAILED" => ValidationExceptionReason::FieldValidationFailed,
+            "INTERNATIONAL_SENDING_NOT_SUPPORTED" => ValidationExceptionReason::InternationalSendingNotSupported,
             "INVALID_ARN" => ValidationExceptionReason::InvalidArn,
             "INVALID_FILTER_VALUES" => ValidationExceptionReason::InvalidFilterValues,
             "INVALID_IDENTITY_FOR_DESTINATION_COUNTRY" => ValidationExceptionReason::InvalidIdentityForDestinationCountry,
@@ -228,6 +232,7 @@ impl ValidationExceptionReason {
             ValidationExceptionReason::CountryCodeMismatch => "COUNTRY_CODE_MISMATCH",
             ValidationExceptionReason::DestinationCountryBlocked => "DESTINATION_COUNTRY_BLOCKED",
             ValidationExceptionReason::FieldValidationFailed => "FIELD_VALIDATION_FAILED",
+            ValidationExceptionReason::InternationalSendingNotSupported => "INTERNATIONAL_SENDING_NOT_SUPPORTED",
             ValidationExceptionReason::InvalidArn => "INVALID_ARN",
             ValidationExceptionReason::InvalidFilterValues => "INVALID_FILTER_VALUES",
             ValidationExceptionReason::InvalidIdentityForDestinationCountry => "INVALID_IDENTITY_FOR_DESTINATION_COUNTRY",
@@ -274,6 +279,7 @@ impl ValidationExceptionReason {
             "COUNTRY_CODE_MISMATCH",
             "DESTINATION_COUNTRY_BLOCKED",
             "FIELD_VALIDATION_FAILED",
+            "INTERNATIONAL_SENDING_NOT_SUPPORTED",
             "INVALID_ARN",
             "INVALID_FILTER_VALUES",
             "INVALID_IDENTITY_FOR_DESTINATION_COUNTRY",
@@ -337,6 +343,7 @@ impl ::std::fmt::Display for ValidationExceptionReason {
             ValidationExceptionReason::CountryCodeMismatch => write!(f, "COUNTRY_CODE_MISMATCH"),
             ValidationExceptionReason::DestinationCountryBlocked => write!(f, "DESTINATION_COUNTRY_BLOCKED"),
             ValidationExceptionReason::FieldValidationFailed => write!(f, "FIELD_VALIDATION_FAILED"),
+            ValidationExceptionReason::InternationalSendingNotSupported => write!(f, "INTERNATIONAL_SENDING_NOT_SUPPORTED"),
             ValidationExceptionReason::InvalidArn => write!(f, "INVALID_ARN"),
             ValidationExceptionReason::InvalidFilterValues => write!(f, "INVALID_FILTER_VALUES"),
             ValidationExceptionReason::InvalidIdentityForDestinationCountry => write!(f, "INVALID_IDENTITY_FOR_DESTINATION_COUNTRY"),

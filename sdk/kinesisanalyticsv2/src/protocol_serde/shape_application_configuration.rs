@@ -60,5 +60,11 @@ pub fn ser_application_configuration(
         crate::protocol_serde::shape_zeppelin_application_configuration::ser_zeppelin_application_configuration(&mut object_18, var_17)?;
         object_18.finish();
     }
+    if let Some(var_19) = &input.application_encryption_configuration {
+        #[allow(unused_mut)]
+        let mut object_20 = object.key("ApplicationEncryptionConfiguration").start_object();
+        crate::protocol_serde::shape_application_encryption_configuration::ser_application_encryption_configuration(&mut object_20, var_19)?;
+        object_20.finish();
+    }
     Ok(())
 }

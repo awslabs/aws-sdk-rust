@@ -418,27 +418,9 @@ mod test {
         );
     }
 
-    /// For region us-iso-east-1 with FIPS enabled and DualStack enabled
-    #[test]
-    fn test_16() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("us-iso-east-1".to_string())
-            .use_fips(true)
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err("expected error: FIPS and DualStack are enabled, but this partition does not support one or both [For region us-iso-east-1 with FIPS enabled and DualStack enabled]");
-        assert_eq!(
-            format!("{}", error),
-            "FIPS and DualStack are enabled, but this partition does not support one or both"
-        )
-    }
-
     /// For region us-iso-east-1 with FIPS enabled and DualStack disabled
     #[test]
-    fn test_17() {
+    fn test_16() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-iso-east-1".to_string())
             .use_fips(true)
@@ -466,24 +448,9 @@ mod test {
         );
     }
 
-    /// For region us-iso-east-1 with FIPS disabled and DualStack enabled
-    #[test]
-    fn test_18() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("us-iso-east-1".to_string())
-            .use_fips(false)
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err("expected error: DualStack is enabled but this partition does not support DualStack [For region us-iso-east-1 with FIPS disabled and DualStack enabled]");
-        assert_eq!(format!("{}", error), "DualStack is enabled but this partition does not support DualStack")
-    }
-
     /// For region us-iso-east-1 with FIPS disabled and DualStack disabled
     #[test]
-    fn test_19() {
+    fn test_17() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-iso-east-1".to_string())
             .use_fips(false)
@@ -511,27 +478,9 @@ mod test {
         );
     }
 
-    /// For region us-isob-east-1 with FIPS enabled and DualStack enabled
-    #[test]
-    fn test_20() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("us-isob-east-1".to_string())
-            .use_fips(true)
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err("expected error: FIPS and DualStack are enabled, but this partition does not support one or both [For region us-isob-east-1 with FIPS enabled and DualStack enabled]");
-        assert_eq!(
-            format!("{}", error),
-            "FIPS and DualStack are enabled, but this partition does not support one or both"
-        )
-    }
-
     /// For region us-isob-east-1 with FIPS enabled and DualStack disabled
     #[test]
-    fn test_21() {
+    fn test_18() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-isob-east-1".to_string())
             .use_fips(true)
@@ -559,24 +508,9 @@ mod test {
         );
     }
 
-    /// For region us-isob-east-1 with FIPS disabled and DualStack enabled
-    #[test]
-    fn test_22() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("us-isob-east-1".to_string())
-            .use_fips(false)
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err("expected error: DualStack is enabled but this partition does not support DualStack [For region us-isob-east-1 with FIPS disabled and DualStack enabled]");
-        assert_eq!(format!("{}", error), "DualStack is enabled but this partition does not support DualStack")
-    }
-
     /// For region us-isob-east-1 with FIPS disabled and DualStack disabled
     #[test]
-    fn test_23() {
+    fn test_19() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-isob-east-1".to_string())
             .use_fips(false)
@@ -604,27 +538,9 @@ mod test {
         );
     }
 
-    /// For region eu-isoe-west-1 with FIPS enabled and DualStack enabled
-    #[test]
-    fn test_24() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("eu-isoe-west-1".to_string())
-            .use_fips(true)
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err("expected error: FIPS and DualStack are enabled, but this partition does not support one or both [For region eu-isoe-west-1 with FIPS enabled and DualStack enabled]");
-        assert_eq!(
-            format!("{}", error),
-            "FIPS and DualStack are enabled, but this partition does not support one or both"
-        )
-    }
-
     /// For region eu-isoe-west-1 with FIPS enabled and DualStack disabled
     #[test]
-    fn test_25() {
+    fn test_20() {
         let params = crate::config::endpoint::Params::builder()
             .region("eu-isoe-west-1".to_string())
             .use_fips(true)
@@ -652,24 +568,9 @@ mod test {
         );
     }
 
-    /// For region eu-isoe-west-1 with FIPS disabled and DualStack enabled
-    #[test]
-    fn test_26() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("eu-isoe-west-1".to_string())
-            .use_fips(false)
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err("expected error: DualStack is enabled but this partition does not support DualStack [For region eu-isoe-west-1 with FIPS disabled and DualStack enabled]");
-        assert_eq!(format!("{}", error), "DualStack is enabled but this partition does not support DualStack")
-    }
-
     /// For region eu-isoe-west-1 with FIPS disabled and DualStack disabled
     #[test]
-    fn test_27() {
+    fn test_21() {
         let params = crate::config::endpoint::Params::builder()
             .region("eu-isoe-west-1".to_string())
             .use_fips(false)
@@ -697,27 +598,9 @@ mod test {
         );
     }
 
-    /// For region us-isof-south-1 with FIPS enabled and DualStack enabled
-    #[test]
-    fn test_28() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("us-isof-south-1".to_string())
-            .use_fips(true)
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err("expected error: FIPS and DualStack are enabled, but this partition does not support one or both [For region us-isof-south-1 with FIPS enabled and DualStack enabled]");
-        assert_eq!(
-            format!("{}", error),
-            "FIPS and DualStack are enabled, but this partition does not support one or both"
-        )
-    }
-
     /// For region us-isof-south-1 with FIPS enabled and DualStack disabled
     #[test]
-    fn test_29() {
+    fn test_22() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-isof-south-1".to_string())
             .use_fips(true)
@@ -745,24 +628,9 @@ mod test {
         );
     }
 
-    /// For region us-isof-south-1 with FIPS disabled and DualStack enabled
-    #[test]
-    fn test_30() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("us-isof-south-1".to_string())
-            .use_fips(false)
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err("expected error: DualStack is enabled but this partition does not support DualStack [For region us-isof-south-1 with FIPS disabled and DualStack enabled]");
-        assert_eq!(format!("{}", error), "DualStack is enabled but this partition does not support DualStack")
-    }
-
     /// For region us-isof-south-1 with FIPS disabled and DualStack disabled
     #[test]
-    fn test_31() {
+    fn test_23() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-isof-south-1".to_string())
             .use_fips(false)
@@ -790,9 +658,69 @@ mod test {
         );
     }
 
+    /// For region eusc-de-east-1 with FIPS enabled and DualStack disabled
+    #[test]
+    fn test_24() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("eusc-de-east-1".to_string())
+            .use_fips(true)
+            .use_dual_stack(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://route53-recovery-control-config-fips.eusc-de-east-1.amazonaws.eu");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://route53-recovery-control-config-fips.eusc-de-east-1.amazonaws.eu")
+                .property(
+                    "authSchemes",
+                    vec![{
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingRegion".to_string(), "eusc-de-east-1".to_string().into());
+                        out
+                    }
+                    .into()]
+                )
+                .build()
+        );
+    }
+
+    /// For region eusc-de-east-1 with FIPS disabled and DualStack disabled
+    #[test]
+    fn test_25() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("eusc-de-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://route53-recovery-control-config.eusc-de-east-1.amazonaws.eu");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://route53-recovery-control-config.eusc-de-east-1.amazonaws.eu")
+                .property(
+                    "authSchemes",
+                    vec![{
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingRegion".to_string(), "eusc-de-east-1".to_string().into());
+                        out
+                    }
+                    .into()]
+                )
+                .build()
+        );
+    }
+
     /// Missing region
     #[test]
-    fn test_32() {
+    fn test_26() {
         let params = crate::config::endpoint::Params::builder().build().expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);

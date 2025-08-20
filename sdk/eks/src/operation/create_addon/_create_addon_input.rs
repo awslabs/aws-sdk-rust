@@ -33,6 +33,8 @@ pub struct CreateAddonInput {
     /// <p>An array of EKS Pod Identity associations to be created. Each association maps a Kubernetes service account to an IAM role.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/add-ons-iam.html">Attach an IAM Role to an Amazon EKS add-on using EKS Pod Identity</a> in the <i>Amazon EKS User Guide</i>.</p>
     pub pod_identity_associations: ::std::option::Option<::std::vec::Vec<crate::types::AddonPodIdentityAssociations>>,
+    /// <p>The namespace configuration for the addon. If specified, this will override the default namespace for the addon.</p>
+    pub namespace_config: ::std::option::Option<crate::types::AddonNamespaceConfigRequest>,
 }
 impl CreateAddonInput {
     /// <p>The name of your cluster.</p>
@@ -85,6 +87,10 @@ impl CreateAddonInput {
     pub fn pod_identity_associations(&self) -> &[crate::types::AddonPodIdentityAssociations] {
         self.pod_identity_associations.as_deref().unwrap_or_default()
     }
+    /// <p>The namespace configuration for the addon. If specified, this will override the default namespace for the addon.</p>
+    pub fn namespace_config(&self) -> ::std::option::Option<&crate::types::AddonNamespaceConfigRequest> {
+        self.namespace_config.as_ref()
+    }
 }
 impl CreateAddonInput {
     /// Creates a new builder-style object to manufacture [`CreateAddonInput`](crate::operation::create_addon::CreateAddonInput).
@@ -106,6 +112,7 @@ pub struct CreateAddonInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) configuration_values: ::std::option::Option<::std::string::String>,
     pub(crate) pod_identity_associations: ::std::option::Option<::std::vec::Vec<crate::types::AddonPodIdentityAssociations>>,
+    pub(crate) namespace_config: ::std::option::Option<crate::types::AddonNamespaceConfigRequest>,
 }
 impl CreateAddonInputBuilder {
     /// <p>The name of your cluster.</p>
@@ -287,6 +294,20 @@ impl CreateAddonInputBuilder {
     pub fn get_pod_identity_associations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AddonPodIdentityAssociations>> {
         &self.pod_identity_associations
     }
+    /// <p>The namespace configuration for the addon. If specified, this will override the default namespace for the addon.</p>
+    pub fn namespace_config(mut self, input: crate::types::AddonNamespaceConfigRequest) -> Self {
+        self.namespace_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The namespace configuration for the addon. If specified, this will override the default namespace for the addon.</p>
+    pub fn set_namespace_config(mut self, input: ::std::option::Option<crate::types::AddonNamespaceConfigRequest>) -> Self {
+        self.namespace_config = input;
+        self
+    }
+    /// <p>The namespace configuration for the addon. If specified, this will override the default namespace for the addon.</p>
+    pub fn get_namespace_config(&self) -> &::std::option::Option<crate::types::AddonNamespaceConfigRequest> {
+        &self.namespace_config
+    }
     /// Consumes the builder and constructs a [`CreateAddonInput`](crate::operation::create_addon::CreateAddonInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_addon::CreateAddonInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_addon::CreateAddonInput {
@@ -299,6 +320,7 @@ impl CreateAddonInputBuilder {
             tags: self.tags,
             configuration_values: self.configuration_values,
             pod_identity_associations: self.pod_identity_associations,
+            namespace_config: self.namespace_config,
         })
     }
 }

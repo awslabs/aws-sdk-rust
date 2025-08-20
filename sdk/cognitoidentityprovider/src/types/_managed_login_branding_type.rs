@@ -8,10 +8,21 @@ pub struct ManagedLoginBrandingType {
     pub managed_login_branding_id: ::std::option::Option<::std::string::String>,
     /// <p>The user pool where the branding style is assigned.</p>
     pub user_pool_id: ::std::option::Option<::std::string::String>,
-    /// <p>When true, applies the default branding style options. This option reverts to default style options that are managed by Amazon Cognito. You can modify them later in the branding designer.</p>
+    /// <p>When true, applies the default branding style options. This option reverts to default style options that are managed by Amazon Cognito. You can modify them later in the branding editor.</p>
     /// <p>When you specify <code>true</code> for this option, you must also omit values for <code>Settings</code> and <code>Assets</code> in the request.</p>
     pub use_cognito_provided_values: bool,
     /// <p>A JSON file, encoded as a <code>Document</code> type, with the the settings that you want to apply to your style.</p>
+    /// <p>The following components are not currently implemented and reserved for future use:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>signUp</code></p></li>
+    /// <li>
+    /// <p><code>instructions</code></p></li>
+    /// <li>
+    /// <p><code>sessionTimerDisplay</code></p></li>
+    /// <li>
+    /// <p><code>languageSelector</code> (for localization, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managed-login.html#managed-login-localization">Managed login localization)</a></p></li>
+    /// </ul>
     pub settings: ::std::option::Option<::aws_smithy_types::Document>,
     /// <p>An array of image files that you want to apply to roles like backgrounds, logos, and icons. Each object must also indicate whether it is for dark mode, light mode, or browser-adaptive mode.</p>
     pub assets: ::std::option::Option<::std::vec::Vec<crate::types::AssetType>>,
@@ -29,12 +40,23 @@ impl ManagedLoginBrandingType {
     pub fn user_pool_id(&self) -> ::std::option::Option<&str> {
         self.user_pool_id.as_deref()
     }
-    /// <p>When true, applies the default branding style options. This option reverts to default style options that are managed by Amazon Cognito. You can modify them later in the branding designer.</p>
+    /// <p>When true, applies the default branding style options. This option reverts to default style options that are managed by Amazon Cognito. You can modify them later in the branding editor.</p>
     /// <p>When you specify <code>true</code> for this option, you must also omit values for <code>Settings</code> and <code>Assets</code> in the request.</p>
     pub fn use_cognito_provided_values(&self) -> bool {
         self.use_cognito_provided_values
     }
     /// <p>A JSON file, encoded as a <code>Document</code> type, with the the settings that you want to apply to your style.</p>
+    /// <p>The following components are not currently implemented and reserved for future use:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>signUp</code></p></li>
+    /// <li>
+    /// <p><code>instructions</code></p></li>
+    /// <li>
+    /// <p><code>sessionTimerDisplay</code></p></li>
+    /// <li>
+    /// <p><code>languageSelector</code> (for localization, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managed-login.html#managed-login-localization">Managed login localization)</a></p></li>
+    /// </ul>
     pub fn settings(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
         self.settings.as_ref()
     }
@@ -101,34 +123,67 @@ impl ManagedLoginBrandingTypeBuilder {
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_pool_id
     }
-    /// <p>When true, applies the default branding style options. This option reverts to default style options that are managed by Amazon Cognito. You can modify them later in the branding designer.</p>
+    /// <p>When true, applies the default branding style options. This option reverts to default style options that are managed by Amazon Cognito. You can modify them later in the branding editor.</p>
     /// <p>When you specify <code>true</code> for this option, you must also omit values for <code>Settings</code> and <code>Assets</code> in the request.</p>
     pub fn use_cognito_provided_values(mut self, input: bool) -> Self {
         self.use_cognito_provided_values = ::std::option::Option::Some(input);
         self
     }
-    /// <p>When true, applies the default branding style options. This option reverts to default style options that are managed by Amazon Cognito. You can modify them later in the branding designer.</p>
+    /// <p>When true, applies the default branding style options. This option reverts to default style options that are managed by Amazon Cognito. You can modify them later in the branding editor.</p>
     /// <p>When you specify <code>true</code> for this option, you must also omit values for <code>Settings</code> and <code>Assets</code> in the request.</p>
     pub fn set_use_cognito_provided_values(mut self, input: ::std::option::Option<bool>) -> Self {
         self.use_cognito_provided_values = input;
         self
     }
-    /// <p>When true, applies the default branding style options. This option reverts to default style options that are managed by Amazon Cognito. You can modify them later in the branding designer.</p>
+    /// <p>When true, applies the default branding style options. This option reverts to default style options that are managed by Amazon Cognito. You can modify them later in the branding editor.</p>
     /// <p>When you specify <code>true</code> for this option, you must also omit values for <code>Settings</code> and <code>Assets</code> in the request.</p>
     pub fn get_use_cognito_provided_values(&self) -> &::std::option::Option<bool> {
         &self.use_cognito_provided_values
     }
     /// <p>A JSON file, encoded as a <code>Document</code> type, with the the settings that you want to apply to your style.</p>
+    /// <p>The following components are not currently implemented and reserved for future use:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>signUp</code></p></li>
+    /// <li>
+    /// <p><code>instructions</code></p></li>
+    /// <li>
+    /// <p><code>sessionTimerDisplay</code></p></li>
+    /// <li>
+    /// <p><code>languageSelector</code> (for localization, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managed-login.html#managed-login-localization">Managed login localization)</a></p></li>
+    /// </ul>
     pub fn settings(mut self, input: ::aws_smithy_types::Document) -> Self {
         self.settings = ::std::option::Option::Some(input);
         self
     }
     /// <p>A JSON file, encoded as a <code>Document</code> type, with the the settings that you want to apply to your style.</p>
+    /// <p>The following components are not currently implemented and reserved for future use:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>signUp</code></p></li>
+    /// <li>
+    /// <p><code>instructions</code></p></li>
+    /// <li>
+    /// <p><code>sessionTimerDisplay</code></p></li>
+    /// <li>
+    /// <p><code>languageSelector</code> (for localization, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managed-login.html#managed-login-localization">Managed login localization)</a></p></li>
+    /// </ul>
     pub fn set_settings(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
         self.settings = input;
         self
     }
     /// <p>A JSON file, encoded as a <code>Document</code> type, with the the settings that you want to apply to your style.</p>
+    /// <p>The following components are not currently implemented and reserved for future use:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>signUp</code></p></li>
+    /// <li>
+    /// <p><code>instructions</code></p></li>
+    /// <li>
+    /// <p><code>sessionTimerDisplay</code></p></li>
+    /// <li>
+    /// <p><code>languageSelector</code> (for localization, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managed-login.html#managed-login-localization">Managed login localization)</a></p></li>
+    /// </ul>
     pub fn get_settings(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
         &self.settings
     }

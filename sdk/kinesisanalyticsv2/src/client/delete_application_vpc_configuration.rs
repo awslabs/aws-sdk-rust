@@ -10,7 +10,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteApplicationVpcConfigurationOutput`](crate::operation::delete_application_vpc_configuration::DeleteApplicationVpcConfigurationOutput) with field(s):
     ///   - [`application_arn(Option<String>)`](crate::operation::delete_application_vpc_configuration::DeleteApplicationVpcConfigurationOutput::application_arn): <p>The ARN of the Managed Service for Apache Flink application.</p>
     ///   - [`application_version_id(Option<i64>)`](crate::operation::delete_application_vpc_configuration::DeleteApplicationVpcConfigurationOutput::application_version_id): <p>The updated version ID of the application.</p>
-    ///   - [`operation_id(Option<String>)`](crate::operation::delete_application_vpc_configuration::DeleteApplicationVpcConfigurationOutput::operation_id): Operation ID for tracking DeleteApplicationVpcConfiguration request
+    ///   - [`operation_id(Option<String>)`](crate::operation::delete_application_vpc_configuration::DeleteApplicationVpcConfigurationOutput::operation_id): <p>The operation ID that can be used to track the request.</p>
     /// - On failure, responds with [`SdkError<DeleteApplicationVpcConfigurationError>`](crate::operation::delete_application_vpc_configuration::DeleteApplicationVpcConfigurationError)
     pub fn delete_application_vpc_configuration(
         &self,

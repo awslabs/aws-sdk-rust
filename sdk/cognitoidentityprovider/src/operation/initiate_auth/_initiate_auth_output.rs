@@ -6,25 +6,29 @@
 pub struct InitiateAuthOutput {
     /// <p>The name of an additional authentication challenge that you must respond to.</p>
     /// <p>Possible challenges include the following:</p><note>
-    /// <p>All of the following challenges require <code>USERNAME</code> and, when the app client has a client secret, <code>SECRET_HASH</code> in the parameters.</p>
+    /// <p>All of the following challenges require <code>USERNAME</code> and, when the app client has a client secret, <code>SECRET_HASH</code> in the parameters. Include a <code>DEVICE_KEY</code> for device authentication.</p>
     /// </note>
     /// <ul>
     /// <li>
-    /// <p><code>WEB_AUTHN</code>: Respond to the challenge with the results of a successful authentication with a WebAuthn authenticator, or passkey. Examples of WebAuthn authenticators include biometric devices and security keys.</p></li>
+    /// <p><code>WEB_AUTHN</code>: Respond to the challenge with the results of a successful authentication with a WebAuthn authenticator, or passkey, as <code>CREDENTIAL</code>. Examples of WebAuthn authenticators include biometric devices and security keys.</p></li>
     /// <li>
-    /// <p><code>PASSWORD</code>: Respond with <code>USER_PASSWORD_AUTH</code> parameters: <code>USERNAME</code> (required), <code>PASSWORD</code> (required), <code>SECRET_HASH</code> (required if the app client is configured with a client secret), <code>DEVICE_KEY</code>.</p></li>
+    /// <p><code>PASSWORD</code>: Respond with the user's password as <code>PASSWORD</code>.</p></li>
     /// <li>
-    /// <p><code>PASSWORD_SRP</code>: Respond with <code>USER_SRP_AUTH</code> parameters: <code>USERNAME</code> (required), <code>SRP_A</code> (required), <code>SECRET_HASH</code> (required if the app client is configured with a client secret), <code>DEVICE_KEY</code>.</p></li>
+    /// <p><code>PASSWORD_SRP</code>: Respond with the initial SRP secret as <code>SRP_A</code>.</p></li>
     /// <li>
-    /// <p><code>SELECT_CHALLENGE</code>: Respond to the challenge with <code>USERNAME</code> and an <code>ANSWER</code> that matches one of the challenge types in the <code>AvailableChallenges</code> response parameter.</p></li>
+    /// <p><code>SELECT_CHALLENGE</code>: Respond with a challenge selection as <code>ANSWER</code>. It must be one of the challenge types in the <code>AvailableChallenges</code> response parameter. Add the parameters of the selected challenge, for example <code>USERNAME</code> and <code>SMS_OTP</code>.</p></li>
     /// <li>
-    /// <p><code>SMS_MFA</code>: Respond with an <code>SMS_MFA_CODE</code> that your user pool delivered in an SMS message.</p></li>
+    /// <p><code>SMS_MFA</code>: Respond with the code that your user pool delivered in an SMS message, as <code>SMS_MFA_CODE</code></p></li>
     /// <li>
-    /// <p><code>EMAIL_OTP</code>: Respond with an <code>EMAIL_OTP_CODE</code> that your user pool delivered in an email message.</p></li>
+    /// <p><code>EMAIL_MFA</code>: Respond with the code that your user pool delivered in an email message, as <code>EMAIL_MFA_CODE</code></p></li>
     /// <li>
-    /// <p><code>PASSWORD_VERIFIER</code>: Respond with <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, and <code>TIMESTAMP</code> after client-side SRP calculations.</p></li>
+    /// <p><code>EMAIL_OTP</code>: Respond with the code that your user pool delivered in an email message, as <code>EMAIL_OTP_CODE</code> .</p></li>
     /// <li>
-    /// <p><code>CUSTOM_CHALLENGE</code>: This is returned if your custom authentication flow determines that the user should pass another challenge before tokens are issued. The parameters of the challenge are determined by your Lambda function.</p></li>
+    /// <p><code>SMS_OTP</code>: Respond with the code that your user pool delivered in an SMS message, as <code>SMS_OTP_CODE</code>.</p></li>
+    /// <li>
+    /// <p><code>PASSWORD_VERIFIER</code>: Respond with the second stage of SRP secrets as <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, and <code>TIMESTAMP</code>.</p></li>
+    /// <li>
+    /// <p><code>CUSTOM_CHALLENGE</code>: This is returned if your custom authentication flow determines that the user should pass another challenge before tokens are issued. The parameters of the challenge are determined by your Lambda function and issued in the <code>ChallengeParameters</code> of a challenge response.</p></li>
     /// <li>
     /// <p><code>DEVICE_SRP_AUTH</code>: Respond with the initial parameters of device SRP authentication. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html#user-pools-remembered-devices-signing-in-with-a-device">Signing in with a device</a>.</p></li>
     /// <li>
@@ -54,25 +58,29 @@ pub struct InitiateAuthOutput {
 impl InitiateAuthOutput {
     /// <p>The name of an additional authentication challenge that you must respond to.</p>
     /// <p>Possible challenges include the following:</p><note>
-    /// <p>All of the following challenges require <code>USERNAME</code> and, when the app client has a client secret, <code>SECRET_HASH</code> in the parameters.</p>
+    /// <p>All of the following challenges require <code>USERNAME</code> and, when the app client has a client secret, <code>SECRET_HASH</code> in the parameters. Include a <code>DEVICE_KEY</code> for device authentication.</p>
     /// </note>
     /// <ul>
     /// <li>
-    /// <p><code>WEB_AUTHN</code>: Respond to the challenge with the results of a successful authentication with a WebAuthn authenticator, or passkey. Examples of WebAuthn authenticators include biometric devices and security keys.</p></li>
+    /// <p><code>WEB_AUTHN</code>: Respond to the challenge with the results of a successful authentication with a WebAuthn authenticator, or passkey, as <code>CREDENTIAL</code>. Examples of WebAuthn authenticators include biometric devices and security keys.</p></li>
     /// <li>
-    /// <p><code>PASSWORD</code>: Respond with <code>USER_PASSWORD_AUTH</code> parameters: <code>USERNAME</code> (required), <code>PASSWORD</code> (required), <code>SECRET_HASH</code> (required if the app client is configured with a client secret), <code>DEVICE_KEY</code>.</p></li>
+    /// <p><code>PASSWORD</code>: Respond with the user's password as <code>PASSWORD</code>.</p></li>
     /// <li>
-    /// <p><code>PASSWORD_SRP</code>: Respond with <code>USER_SRP_AUTH</code> parameters: <code>USERNAME</code> (required), <code>SRP_A</code> (required), <code>SECRET_HASH</code> (required if the app client is configured with a client secret), <code>DEVICE_KEY</code>.</p></li>
+    /// <p><code>PASSWORD_SRP</code>: Respond with the initial SRP secret as <code>SRP_A</code>.</p></li>
     /// <li>
-    /// <p><code>SELECT_CHALLENGE</code>: Respond to the challenge with <code>USERNAME</code> and an <code>ANSWER</code> that matches one of the challenge types in the <code>AvailableChallenges</code> response parameter.</p></li>
+    /// <p><code>SELECT_CHALLENGE</code>: Respond with a challenge selection as <code>ANSWER</code>. It must be one of the challenge types in the <code>AvailableChallenges</code> response parameter. Add the parameters of the selected challenge, for example <code>USERNAME</code> and <code>SMS_OTP</code>.</p></li>
     /// <li>
-    /// <p><code>SMS_MFA</code>: Respond with an <code>SMS_MFA_CODE</code> that your user pool delivered in an SMS message.</p></li>
+    /// <p><code>SMS_MFA</code>: Respond with the code that your user pool delivered in an SMS message, as <code>SMS_MFA_CODE</code></p></li>
     /// <li>
-    /// <p><code>EMAIL_OTP</code>: Respond with an <code>EMAIL_OTP_CODE</code> that your user pool delivered in an email message.</p></li>
+    /// <p><code>EMAIL_MFA</code>: Respond with the code that your user pool delivered in an email message, as <code>EMAIL_MFA_CODE</code></p></li>
     /// <li>
-    /// <p><code>PASSWORD_VERIFIER</code>: Respond with <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, and <code>TIMESTAMP</code> after client-side SRP calculations.</p></li>
+    /// <p><code>EMAIL_OTP</code>: Respond with the code that your user pool delivered in an email message, as <code>EMAIL_OTP_CODE</code> .</p></li>
     /// <li>
-    /// <p><code>CUSTOM_CHALLENGE</code>: This is returned if your custom authentication flow determines that the user should pass another challenge before tokens are issued. The parameters of the challenge are determined by your Lambda function.</p></li>
+    /// <p><code>SMS_OTP</code>: Respond with the code that your user pool delivered in an SMS message, as <code>SMS_OTP_CODE</code>.</p></li>
+    /// <li>
+    /// <p><code>PASSWORD_VERIFIER</code>: Respond with the second stage of SRP secrets as <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, and <code>TIMESTAMP</code>.</p></li>
+    /// <li>
+    /// <p><code>CUSTOM_CHALLENGE</code>: This is returned if your custom authentication flow determines that the user should pass another challenge before tokens are issued. The parameters of the challenge are determined by your Lambda function and issued in the <code>ChallengeParameters</code> of a challenge response.</p></li>
     /// <li>
     /// <p><code>DEVICE_SRP_AUTH</code>: Respond with the initial parameters of device SRP authentication. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html#user-pools-remembered-devices-signing-in-with-a-device">Signing in with a device</a>.</p></li>
     /// <li>
@@ -148,25 +156,29 @@ pub struct InitiateAuthOutputBuilder {
 impl InitiateAuthOutputBuilder {
     /// <p>The name of an additional authentication challenge that you must respond to.</p>
     /// <p>Possible challenges include the following:</p><note>
-    /// <p>All of the following challenges require <code>USERNAME</code> and, when the app client has a client secret, <code>SECRET_HASH</code> in the parameters.</p>
+    /// <p>All of the following challenges require <code>USERNAME</code> and, when the app client has a client secret, <code>SECRET_HASH</code> in the parameters. Include a <code>DEVICE_KEY</code> for device authentication.</p>
     /// </note>
     /// <ul>
     /// <li>
-    /// <p><code>WEB_AUTHN</code>: Respond to the challenge with the results of a successful authentication with a WebAuthn authenticator, or passkey. Examples of WebAuthn authenticators include biometric devices and security keys.</p></li>
+    /// <p><code>WEB_AUTHN</code>: Respond to the challenge with the results of a successful authentication with a WebAuthn authenticator, or passkey, as <code>CREDENTIAL</code>. Examples of WebAuthn authenticators include biometric devices and security keys.</p></li>
     /// <li>
-    /// <p><code>PASSWORD</code>: Respond with <code>USER_PASSWORD_AUTH</code> parameters: <code>USERNAME</code> (required), <code>PASSWORD</code> (required), <code>SECRET_HASH</code> (required if the app client is configured with a client secret), <code>DEVICE_KEY</code>.</p></li>
+    /// <p><code>PASSWORD</code>: Respond with the user's password as <code>PASSWORD</code>.</p></li>
     /// <li>
-    /// <p><code>PASSWORD_SRP</code>: Respond with <code>USER_SRP_AUTH</code> parameters: <code>USERNAME</code> (required), <code>SRP_A</code> (required), <code>SECRET_HASH</code> (required if the app client is configured with a client secret), <code>DEVICE_KEY</code>.</p></li>
+    /// <p><code>PASSWORD_SRP</code>: Respond with the initial SRP secret as <code>SRP_A</code>.</p></li>
     /// <li>
-    /// <p><code>SELECT_CHALLENGE</code>: Respond to the challenge with <code>USERNAME</code> and an <code>ANSWER</code> that matches one of the challenge types in the <code>AvailableChallenges</code> response parameter.</p></li>
+    /// <p><code>SELECT_CHALLENGE</code>: Respond with a challenge selection as <code>ANSWER</code>. It must be one of the challenge types in the <code>AvailableChallenges</code> response parameter. Add the parameters of the selected challenge, for example <code>USERNAME</code> and <code>SMS_OTP</code>.</p></li>
     /// <li>
-    /// <p><code>SMS_MFA</code>: Respond with an <code>SMS_MFA_CODE</code> that your user pool delivered in an SMS message.</p></li>
+    /// <p><code>SMS_MFA</code>: Respond with the code that your user pool delivered in an SMS message, as <code>SMS_MFA_CODE</code></p></li>
     /// <li>
-    /// <p><code>EMAIL_OTP</code>: Respond with an <code>EMAIL_OTP_CODE</code> that your user pool delivered in an email message.</p></li>
+    /// <p><code>EMAIL_MFA</code>: Respond with the code that your user pool delivered in an email message, as <code>EMAIL_MFA_CODE</code></p></li>
     /// <li>
-    /// <p><code>PASSWORD_VERIFIER</code>: Respond with <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, and <code>TIMESTAMP</code> after client-side SRP calculations.</p></li>
+    /// <p><code>EMAIL_OTP</code>: Respond with the code that your user pool delivered in an email message, as <code>EMAIL_OTP_CODE</code> .</p></li>
     /// <li>
-    /// <p><code>CUSTOM_CHALLENGE</code>: This is returned if your custom authentication flow determines that the user should pass another challenge before tokens are issued. The parameters of the challenge are determined by your Lambda function.</p></li>
+    /// <p><code>SMS_OTP</code>: Respond with the code that your user pool delivered in an SMS message, as <code>SMS_OTP_CODE</code>.</p></li>
+    /// <li>
+    /// <p><code>PASSWORD_VERIFIER</code>: Respond with the second stage of SRP secrets as <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, and <code>TIMESTAMP</code>.</p></li>
+    /// <li>
+    /// <p><code>CUSTOM_CHALLENGE</code>: This is returned if your custom authentication flow determines that the user should pass another challenge before tokens are issued. The parameters of the challenge are determined by your Lambda function and issued in the <code>ChallengeParameters</code> of a challenge response.</p></li>
     /// <li>
     /// <p><code>DEVICE_SRP_AUTH</code>: Respond with the initial parameters of device SRP authentication. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html#user-pools-remembered-devices-signing-in-with-a-device">Signing in with a device</a>.</p></li>
     /// <li>
@@ -187,25 +199,29 @@ impl InitiateAuthOutputBuilder {
     }
     /// <p>The name of an additional authentication challenge that you must respond to.</p>
     /// <p>Possible challenges include the following:</p><note>
-    /// <p>All of the following challenges require <code>USERNAME</code> and, when the app client has a client secret, <code>SECRET_HASH</code> in the parameters.</p>
+    /// <p>All of the following challenges require <code>USERNAME</code> and, when the app client has a client secret, <code>SECRET_HASH</code> in the parameters. Include a <code>DEVICE_KEY</code> for device authentication.</p>
     /// </note>
     /// <ul>
     /// <li>
-    /// <p><code>WEB_AUTHN</code>: Respond to the challenge with the results of a successful authentication with a WebAuthn authenticator, or passkey. Examples of WebAuthn authenticators include biometric devices and security keys.</p></li>
+    /// <p><code>WEB_AUTHN</code>: Respond to the challenge with the results of a successful authentication with a WebAuthn authenticator, or passkey, as <code>CREDENTIAL</code>. Examples of WebAuthn authenticators include biometric devices and security keys.</p></li>
     /// <li>
-    /// <p><code>PASSWORD</code>: Respond with <code>USER_PASSWORD_AUTH</code> parameters: <code>USERNAME</code> (required), <code>PASSWORD</code> (required), <code>SECRET_HASH</code> (required if the app client is configured with a client secret), <code>DEVICE_KEY</code>.</p></li>
+    /// <p><code>PASSWORD</code>: Respond with the user's password as <code>PASSWORD</code>.</p></li>
     /// <li>
-    /// <p><code>PASSWORD_SRP</code>: Respond with <code>USER_SRP_AUTH</code> parameters: <code>USERNAME</code> (required), <code>SRP_A</code> (required), <code>SECRET_HASH</code> (required if the app client is configured with a client secret), <code>DEVICE_KEY</code>.</p></li>
+    /// <p><code>PASSWORD_SRP</code>: Respond with the initial SRP secret as <code>SRP_A</code>.</p></li>
     /// <li>
-    /// <p><code>SELECT_CHALLENGE</code>: Respond to the challenge with <code>USERNAME</code> and an <code>ANSWER</code> that matches one of the challenge types in the <code>AvailableChallenges</code> response parameter.</p></li>
+    /// <p><code>SELECT_CHALLENGE</code>: Respond with a challenge selection as <code>ANSWER</code>. It must be one of the challenge types in the <code>AvailableChallenges</code> response parameter. Add the parameters of the selected challenge, for example <code>USERNAME</code> and <code>SMS_OTP</code>.</p></li>
     /// <li>
-    /// <p><code>SMS_MFA</code>: Respond with an <code>SMS_MFA_CODE</code> that your user pool delivered in an SMS message.</p></li>
+    /// <p><code>SMS_MFA</code>: Respond with the code that your user pool delivered in an SMS message, as <code>SMS_MFA_CODE</code></p></li>
     /// <li>
-    /// <p><code>EMAIL_OTP</code>: Respond with an <code>EMAIL_OTP_CODE</code> that your user pool delivered in an email message.</p></li>
+    /// <p><code>EMAIL_MFA</code>: Respond with the code that your user pool delivered in an email message, as <code>EMAIL_MFA_CODE</code></p></li>
     /// <li>
-    /// <p><code>PASSWORD_VERIFIER</code>: Respond with <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, and <code>TIMESTAMP</code> after client-side SRP calculations.</p></li>
+    /// <p><code>EMAIL_OTP</code>: Respond with the code that your user pool delivered in an email message, as <code>EMAIL_OTP_CODE</code> .</p></li>
     /// <li>
-    /// <p><code>CUSTOM_CHALLENGE</code>: This is returned if your custom authentication flow determines that the user should pass another challenge before tokens are issued. The parameters of the challenge are determined by your Lambda function.</p></li>
+    /// <p><code>SMS_OTP</code>: Respond with the code that your user pool delivered in an SMS message, as <code>SMS_OTP_CODE</code>.</p></li>
+    /// <li>
+    /// <p><code>PASSWORD_VERIFIER</code>: Respond with the second stage of SRP secrets as <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, and <code>TIMESTAMP</code>.</p></li>
+    /// <li>
+    /// <p><code>CUSTOM_CHALLENGE</code>: This is returned if your custom authentication flow determines that the user should pass another challenge before tokens are issued. The parameters of the challenge are determined by your Lambda function and issued in the <code>ChallengeParameters</code> of a challenge response.</p></li>
     /// <li>
     /// <p><code>DEVICE_SRP_AUTH</code>: Respond with the initial parameters of device SRP authentication. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html#user-pools-remembered-devices-signing-in-with-a-device">Signing in with a device</a>.</p></li>
     /// <li>
@@ -226,25 +242,29 @@ impl InitiateAuthOutputBuilder {
     }
     /// <p>The name of an additional authentication challenge that you must respond to.</p>
     /// <p>Possible challenges include the following:</p><note>
-    /// <p>All of the following challenges require <code>USERNAME</code> and, when the app client has a client secret, <code>SECRET_HASH</code> in the parameters.</p>
+    /// <p>All of the following challenges require <code>USERNAME</code> and, when the app client has a client secret, <code>SECRET_HASH</code> in the parameters. Include a <code>DEVICE_KEY</code> for device authentication.</p>
     /// </note>
     /// <ul>
     /// <li>
-    /// <p><code>WEB_AUTHN</code>: Respond to the challenge with the results of a successful authentication with a WebAuthn authenticator, or passkey. Examples of WebAuthn authenticators include biometric devices and security keys.</p></li>
+    /// <p><code>WEB_AUTHN</code>: Respond to the challenge with the results of a successful authentication with a WebAuthn authenticator, or passkey, as <code>CREDENTIAL</code>. Examples of WebAuthn authenticators include biometric devices and security keys.</p></li>
     /// <li>
-    /// <p><code>PASSWORD</code>: Respond with <code>USER_PASSWORD_AUTH</code> parameters: <code>USERNAME</code> (required), <code>PASSWORD</code> (required), <code>SECRET_HASH</code> (required if the app client is configured with a client secret), <code>DEVICE_KEY</code>.</p></li>
+    /// <p><code>PASSWORD</code>: Respond with the user's password as <code>PASSWORD</code>.</p></li>
     /// <li>
-    /// <p><code>PASSWORD_SRP</code>: Respond with <code>USER_SRP_AUTH</code> parameters: <code>USERNAME</code> (required), <code>SRP_A</code> (required), <code>SECRET_HASH</code> (required if the app client is configured with a client secret), <code>DEVICE_KEY</code>.</p></li>
+    /// <p><code>PASSWORD_SRP</code>: Respond with the initial SRP secret as <code>SRP_A</code>.</p></li>
     /// <li>
-    /// <p><code>SELECT_CHALLENGE</code>: Respond to the challenge with <code>USERNAME</code> and an <code>ANSWER</code> that matches one of the challenge types in the <code>AvailableChallenges</code> response parameter.</p></li>
+    /// <p><code>SELECT_CHALLENGE</code>: Respond with a challenge selection as <code>ANSWER</code>. It must be one of the challenge types in the <code>AvailableChallenges</code> response parameter. Add the parameters of the selected challenge, for example <code>USERNAME</code> and <code>SMS_OTP</code>.</p></li>
     /// <li>
-    /// <p><code>SMS_MFA</code>: Respond with an <code>SMS_MFA_CODE</code> that your user pool delivered in an SMS message.</p></li>
+    /// <p><code>SMS_MFA</code>: Respond with the code that your user pool delivered in an SMS message, as <code>SMS_MFA_CODE</code></p></li>
     /// <li>
-    /// <p><code>EMAIL_OTP</code>: Respond with an <code>EMAIL_OTP_CODE</code> that your user pool delivered in an email message.</p></li>
+    /// <p><code>EMAIL_MFA</code>: Respond with the code that your user pool delivered in an email message, as <code>EMAIL_MFA_CODE</code></p></li>
     /// <li>
-    /// <p><code>PASSWORD_VERIFIER</code>: Respond with <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, and <code>TIMESTAMP</code> after client-side SRP calculations.</p></li>
+    /// <p><code>EMAIL_OTP</code>: Respond with the code that your user pool delivered in an email message, as <code>EMAIL_OTP_CODE</code> .</p></li>
     /// <li>
-    /// <p><code>CUSTOM_CHALLENGE</code>: This is returned if your custom authentication flow determines that the user should pass another challenge before tokens are issued. The parameters of the challenge are determined by your Lambda function.</p></li>
+    /// <p><code>SMS_OTP</code>: Respond with the code that your user pool delivered in an SMS message, as <code>SMS_OTP_CODE</code>.</p></li>
+    /// <li>
+    /// <p><code>PASSWORD_VERIFIER</code>: Respond with the second stage of SRP secrets as <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, and <code>TIMESTAMP</code>.</p></li>
+    /// <li>
+    /// <p><code>CUSTOM_CHALLENGE</code>: This is returned if your custom authentication flow determines that the user should pass another challenge before tokens are issued. The parameters of the challenge are determined by your Lambda function and issued in the <code>ChallengeParameters</code> of a challenge response.</p></li>
     /// <li>
     /// <p><code>DEVICE_SRP_AUTH</code>: Respond with the initial parameters of device SRP authentication. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html#user-pools-remembered-devices-signing-in-with-a-device">Signing in with a device</a>.</p></li>
     /// <li>

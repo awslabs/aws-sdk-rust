@@ -32,7 +32,7 @@ pub struct ApplicationDetail {
     pub application_version_updated_from: ::std::option::Option<i64>,
     /// <p>If you reverted the application using <code>RollbackApplication</code>, the application version when <code>RollbackApplication</code> was called.</p>
     pub application_version_rolled_back_from: ::std::option::Option<i64>,
-    /// The current timestamp when the application version was created.
+    /// <p>The timestamp that indicates when the application version was created.</p>
     pub application_version_create_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A value you use to implement strong concurrency for application updates.</p>
     pub conditional_token: ::std::option::Option<::std::string::String>,
@@ -104,7 +104,7 @@ impl ApplicationDetail {
     pub fn application_version_rolled_back_from(&self) -> ::std::option::Option<i64> {
         self.application_version_rolled_back_from
     }
-    /// The current timestamp when the application version was created.
+    /// <p>The timestamp that indicates when the application version was created.</p>
     pub fn application_version_create_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.application_version_create_timestamp.as_ref()
     }
@@ -372,17 +372,17 @@ impl ApplicationDetailBuilder {
     pub fn get_application_version_rolled_back_from(&self) -> &::std::option::Option<i64> {
         &self.application_version_rolled_back_from
     }
-    /// The current timestamp when the application version was created.
+    /// <p>The timestamp that indicates when the application version was created.</p>
     pub fn application_version_create_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.application_version_create_timestamp = ::std::option::Option::Some(input);
         self
     }
-    /// The current timestamp when the application version was created.
+    /// <p>The timestamp that indicates when the application version was created.</p>
     pub fn set_application_version_create_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.application_version_create_timestamp = input;
         self
     }
-    /// The current timestamp when the application version was created.
+    /// <p>The timestamp that indicates when the application version was created.</p>
     pub fn get_application_version_create_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.application_version_create_timestamp
     }

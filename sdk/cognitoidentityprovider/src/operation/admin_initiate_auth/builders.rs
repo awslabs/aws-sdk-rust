@@ -263,19 +263,65 @@ impl AdminInitiateAuthFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_auth_parameters`](Self::set_auth_parameters).
     ///
-    /// <p>The authentication parameters. These are inputs corresponding to the <code>AuthFlow</code> that you're invoking. The required values depend on the value of <code>AuthFlow</code> for example:</p>
+    /// <p>The authentication parameters. These are inputs corresponding to the <code>AuthFlow</code> that you're invoking.</p>
+    /// <p>The following are some authentication flows and their parameters. Add a <code>SECRET_HASH</code> parameter if your app client has a client secret. Add <code>DEVICE_KEY</code> if you want to bypass multi-factor authentication with a remembered device.</p>
+    /// <dl>
+    /// <dt>
+    /// USER_AUTH
+    /// </dt>
+    /// <dd>
     /// <ul>
     /// <li>
-    /// <p>For <code>USER_AUTH</code>: <code>USERNAME</code> (required), <code>PREFERRED_CHALLENGE</code>. If you don't provide a value for <code>PREFERRED_CHALLENGE</code>, Amazon Cognito responds with the <code>AvailableChallenges</code> parameter that specifies the available sign-in methods.</p></li>
+    /// <p><code>USERNAME</code> (required)</p></li>
     /// <li>
-    /// <p>For <code>USER_SRP_AUTH</code>: <code>USERNAME</code> (required), <code>SRP_A</code> (required), <code>SECRET_HASH</code> (required if the app client is configured with a client secret), <code>DEVICE_KEY</code>.</p></li>
-    /// <li>
-    /// <p>For <code>ADMIN_USER_PASSWORD_AUTH</code>: <code>USERNAME</code> (required), <code>PASSWORD</code> (required), <code>SECRET_HASH</code> (required if the app client is configured with a client secret), <code>DEVICE_KEY</code>.</p></li>
-    /// <li>
-    /// <p>For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code> (required), <code>SECRET_HASH</code> (required if the app client is configured with a client secret), <code>DEVICE_KEY</code>.</p></li>
-    /// <li>
-    /// <p>For <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required), <code>SECRET_HASH</code> (if app client is configured with client secret), <code>DEVICE_KEY</code>. To start the authentication flow with password verification, include <code>ChallengeName: SRP_A</code> and <code>SRP_A: (The SRP_A Value)</code>.</p></li>
+    /// <p><code>PREFERRED_CHALLENGE</code>. If you don't provide a value for <code>PREFERRED_CHALLENGE</code>, Amazon Cognito responds with the <code>AvailableChallenges</code> parameter that specifies the available sign-in methods.</p></li>
     /// </ul>
+    /// </dd>
+    /// <dt>
+    /// USER_SRP_AUTH
+    /// </dt>
+    /// <dd>
+    /// <ul>
+    /// <li>
+    /// <p><code>USERNAME</code> (required)</p></li>
+    /// <li>
+    /// <p><code>SRP_A</code> (required)</p></li>
+    /// </ul>
+    /// </dd>
+    /// <dt>
+    /// ADMIN_USER_PASSWORD_AUTH
+    /// </dt>
+    /// <dd>
+    /// <ul>
+    /// <li>
+    /// <p><code>USERNAME</code> (required)</p></li>
+    /// <li>
+    /// <p><code>PASSWORD</code> (required)</p></li>
+    /// </ul>
+    /// </dd>
+    /// <dt>
+    /// REFRESH_TOKEN_AUTH/REFRESH_TOKEN
+    /// </dt>
+    /// <dd>
+    /// <ul>
+    /// <li>
+    /// <p><code>REFRESH_TOKEN</code>(required)</p></li>
+    /// </ul>
+    /// </dd>
+    /// <dt>
+    /// CUSTOM_AUTH
+    /// </dt>
+    /// <dd>
+    /// <ul>
+    /// <li>
+    /// <p><code>USERNAME</code> (required)</p></li>
+    /// <li>
+    /// <p><code>ChallengeName: SRP_A</code> (when preceding custom authentication with SRP authentication)</p></li>
+    /// <li>
+    /// <p><code>SRP_A: (An SRP_A value)</code> (when preceding custom authentication with SRP authentication)</p></li>
+    /// </ul>
+    /// </dd>
+    /// </dl>
     /// <p>For more information about <code>SECRET_HASH</code>, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash">Computing secret hash values</a>. For information about <code>DEVICE_KEY</code>, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">Working with user devices in your user pool</a>.</p>
     pub fn auth_parameters(
         mut self,
@@ -285,19 +331,65 @@ impl AdminInitiateAuthFluentBuilder {
         self.inner = self.inner.auth_parameters(k.into(), v.into());
         self
     }
-    /// <p>The authentication parameters. These are inputs corresponding to the <code>AuthFlow</code> that you're invoking. The required values depend on the value of <code>AuthFlow</code> for example:</p>
+    /// <p>The authentication parameters. These are inputs corresponding to the <code>AuthFlow</code> that you're invoking.</p>
+    /// <p>The following are some authentication flows and their parameters. Add a <code>SECRET_HASH</code> parameter if your app client has a client secret. Add <code>DEVICE_KEY</code> if you want to bypass multi-factor authentication with a remembered device.</p>
+    /// <dl>
+    /// <dt>
+    /// USER_AUTH
+    /// </dt>
+    /// <dd>
     /// <ul>
     /// <li>
-    /// <p>For <code>USER_AUTH</code>: <code>USERNAME</code> (required), <code>PREFERRED_CHALLENGE</code>. If you don't provide a value for <code>PREFERRED_CHALLENGE</code>, Amazon Cognito responds with the <code>AvailableChallenges</code> parameter that specifies the available sign-in methods.</p></li>
+    /// <p><code>USERNAME</code> (required)</p></li>
     /// <li>
-    /// <p>For <code>USER_SRP_AUTH</code>: <code>USERNAME</code> (required), <code>SRP_A</code> (required), <code>SECRET_HASH</code> (required if the app client is configured with a client secret), <code>DEVICE_KEY</code>.</p></li>
-    /// <li>
-    /// <p>For <code>ADMIN_USER_PASSWORD_AUTH</code>: <code>USERNAME</code> (required), <code>PASSWORD</code> (required), <code>SECRET_HASH</code> (required if the app client is configured with a client secret), <code>DEVICE_KEY</code>.</p></li>
-    /// <li>
-    /// <p>For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code> (required), <code>SECRET_HASH</code> (required if the app client is configured with a client secret), <code>DEVICE_KEY</code>.</p></li>
-    /// <li>
-    /// <p>For <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required), <code>SECRET_HASH</code> (if app client is configured with client secret), <code>DEVICE_KEY</code>. To start the authentication flow with password verification, include <code>ChallengeName: SRP_A</code> and <code>SRP_A: (The SRP_A Value)</code>.</p></li>
+    /// <p><code>PREFERRED_CHALLENGE</code>. If you don't provide a value for <code>PREFERRED_CHALLENGE</code>, Amazon Cognito responds with the <code>AvailableChallenges</code> parameter that specifies the available sign-in methods.</p></li>
     /// </ul>
+    /// </dd>
+    /// <dt>
+    /// USER_SRP_AUTH
+    /// </dt>
+    /// <dd>
+    /// <ul>
+    /// <li>
+    /// <p><code>USERNAME</code> (required)</p></li>
+    /// <li>
+    /// <p><code>SRP_A</code> (required)</p></li>
+    /// </ul>
+    /// </dd>
+    /// <dt>
+    /// ADMIN_USER_PASSWORD_AUTH
+    /// </dt>
+    /// <dd>
+    /// <ul>
+    /// <li>
+    /// <p><code>USERNAME</code> (required)</p></li>
+    /// <li>
+    /// <p><code>PASSWORD</code> (required)</p></li>
+    /// </ul>
+    /// </dd>
+    /// <dt>
+    /// REFRESH_TOKEN_AUTH/REFRESH_TOKEN
+    /// </dt>
+    /// <dd>
+    /// <ul>
+    /// <li>
+    /// <p><code>REFRESH_TOKEN</code>(required)</p></li>
+    /// </ul>
+    /// </dd>
+    /// <dt>
+    /// CUSTOM_AUTH
+    /// </dt>
+    /// <dd>
+    /// <ul>
+    /// <li>
+    /// <p><code>USERNAME</code> (required)</p></li>
+    /// <li>
+    /// <p><code>ChallengeName: SRP_A</code> (when preceding custom authentication with SRP authentication)</p></li>
+    /// <li>
+    /// <p><code>SRP_A: (An SRP_A value)</code> (when preceding custom authentication with SRP authentication)</p></li>
+    /// </ul>
+    /// </dd>
+    /// </dl>
     /// <p>For more information about <code>SECRET_HASH</code>, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash">Computing secret hash values</a>. For information about <code>DEVICE_KEY</code>, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">Working with user devices in your user pool</a>.</p>
     pub fn set_auth_parameters(
         mut self,
@@ -306,19 +398,65 @@ impl AdminInitiateAuthFluentBuilder {
         self.inner = self.inner.set_auth_parameters(input);
         self
     }
-    /// <p>The authentication parameters. These are inputs corresponding to the <code>AuthFlow</code> that you're invoking. The required values depend on the value of <code>AuthFlow</code> for example:</p>
+    /// <p>The authentication parameters. These are inputs corresponding to the <code>AuthFlow</code> that you're invoking.</p>
+    /// <p>The following are some authentication flows and their parameters. Add a <code>SECRET_HASH</code> parameter if your app client has a client secret. Add <code>DEVICE_KEY</code> if you want to bypass multi-factor authentication with a remembered device.</p>
+    /// <dl>
+    /// <dt>
+    /// USER_AUTH
+    /// </dt>
+    /// <dd>
     /// <ul>
     /// <li>
-    /// <p>For <code>USER_AUTH</code>: <code>USERNAME</code> (required), <code>PREFERRED_CHALLENGE</code>. If you don't provide a value for <code>PREFERRED_CHALLENGE</code>, Amazon Cognito responds with the <code>AvailableChallenges</code> parameter that specifies the available sign-in methods.</p></li>
+    /// <p><code>USERNAME</code> (required)</p></li>
     /// <li>
-    /// <p>For <code>USER_SRP_AUTH</code>: <code>USERNAME</code> (required), <code>SRP_A</code> (required), <code>SECRET_HASH</code> (required if the app client is configured with a client secret), <code>DEVICE_KEY</code>.</p></li>
-    /// <li>
-    /// <p>For <code>ADMIN_USER_PASSWORD_AUTH</code>: <code>USERNAME</code> (required), <code>PASSWORD</code> (required), <code>SECRET_HASH</code> (required if the app client is configured with a client secret), <code>DEVICE_KEY</code>.</p></li>
-    /// <li>
-    /// <p>For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code> (required), <code>SECRET_HASH</code> (required if the app client is configured with a client secret), <code>DEVICE_KEY</code>.</p></li>
-    /// <li>
-    /// <p>For <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required), <code>SECRET_HASH</code> (if app client is configured with client secret), <code>DEVICE_KEY</code>. To start the authentication flow with password verification, include <code>ChallengeName: SRP_A</code> and <code>SRP_A: (The SRP_A Value)</code>.</p></li>
+    /// <p><code>PREFERRED_CHALLENGE</code>. If you don't provide a value for <code>PREFERRED_CHALLENGE</code>, Amazon Cognito responds with the <code>AvailableChallenges</code> parameter that specifies the available sign-in methods.</p></li>
     /// </ul>
+    /// </dd>
+    /// <dt>
+    /// USER_SRP_AUTH
+    /// </dt>
+    /// <dd>
+    /// <ul>
+    /// <li>
+    /// <p><code>USERNAME</code> (required)</p></li>
+    /// <li>
+    /// <p><code>SRP_A</code> (required)</p></li>
+    /// </ul>
+    /// </dd>
+    /// <dt>
+    /// ADMIN_USER_PASSWORD_AUTH
+    /// </dt>
+    /// <dd>
+    /// <ul>
+    /// <li>
+    /// <p><code>USERNAME</code> (required)</p></li>
+    /// <li>
+    /// <p><code>PASSWORD</code> (required)</p></li>
+    /// </ul>
+    /// </dd>
+    /// <dt>
+    /// REFRESH_TOKEN_AUTH/REFRESH_TOKEN
+    /// </dt>
+    /// <dd>
+    /// <ul>
+    /// <li>
+    /// <p><code>REFRESH_TOKEN</code>(required)</p></li>
+    /// </ul>
+    /// </dd>
+    /// <dt>
+    /// CUSTOM_AUTH
+    /// </dt>
+    /// <dd>
+    /// <ul>
+    /// <li>
+    /// <p><code>USERNAME</code> (required)</p></li>
+    /// <li>
+    /// <p><code>ChallengeName: SRP_A</code> (when preceding custom authentication with SRP authentication)</p></li>
+    /// <li>
+    /// <p><code>SRP_A: (An SRP_A value)</code> (when preceding custom authentication with SRP authentication)</p></li>
+    /// </ul>
+    /// </dd>
+    /// </dl>
     /// <p>For more information about <code>SECRET_HASH</code>, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash">Computing secret hash values</a>. For information about <code>DEVICE_KEY</code>, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">Working with user devices in your user pool</a>.</p>
     pub fn get_auth_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_auth_parameters()

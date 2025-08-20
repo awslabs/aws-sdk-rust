@@ -223,6 +223,8 @@ pub use crate::types::_addon_pod_identity_configuration::AddonPodIdentityConfigu
 
 pub use crate::types::_addon::Addon;
 
+pub use crate::types::_addon_namespace_config_response::AddonNamespaceConfigResponse;
+
 pub use crate::types::_addon_health::AddonHealth;
 
 pub use crate::types::_addon_issue::AddonIssue;
@@ -236,6 +238,8 @@ pub use crate::types::_create_access_config_request::CreateAccessConfigRequest;
 pub use crate::types::_outpost_config_request::OutpostConfigRequest;
 
 pub use crate::types::_control_plane_placement_request::ControlPlanePlacementRequest;
+
+pub use crate::types::_addon_namespace_config_request::AddonNamespaceConfigRequest;
 
 pub use crate::types::_oidc_identity_provider_config_request::OidcIdentityProviderConfigRequest;
 
@@ -260,6 +264,10 @@ mod _addon_info;
 mod _addon_issue;
 
 mod _addon_issue_code;
+
+mod _addon_namespace_config_request;
+
+mod _addon_namespace_config_response;
 
 mod _addon_pod_identity_associations;
 

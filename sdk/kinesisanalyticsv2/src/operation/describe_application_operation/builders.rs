@@ -22,7 +22,9 @@ impl crate::operation::describe_application_operation::builders::DescribeApplica
 }
 /// Fluent builder constructing a request to `DescribeApplicationOperation`.
 ///
-/// Returns information about a specific operation performed on a Managed Service for Apache Flink application
+/// <p>Provides a detailed description of a specified application operation. To see a list of all the operations of an application, invoke the <code>ListApplicationOperations</code> operation.</p><note>
+/// <p>This operation is supported only for Managed Service for Apache Flink.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeApplicationOperationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +110,31 @@ impl DescribeApplicationOperationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// The name of the application
+    /// <p>The name of the application.</p>
     pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_name(input.into());
         self
     }
-    /// The name of the application
+    /// <p>The name of the application.</p>
     pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_name(input);
         self
     }
-    /// The name of the application
+    /// <p>The name of the application.</p>
     pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_application_name()
     }
-    /// Identifier of the Operation
+    /// <p>The operation ID of the request.</p>
     pub fn operation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.operation_id(input.into());
         self
     }
-    /// Identifier of the Operation
+    /// <p>The operation ID of the request.</p>
     pub fn set_operation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_operation_id(input);
         self
     }
-    /// Identifier of the Operation
+    /// <p>The operation ID of the request.</p>
     pub fn get_operation_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_operation_id()
     }

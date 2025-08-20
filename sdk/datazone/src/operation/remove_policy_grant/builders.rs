@@ -178,6 +178,20 @@ impl RemovePolicyGrantFluentBuilder {
     pub fn get_principal(&self) -> &::std::option::Option<crate::types::PolicyGrantPrincipal> {
         self.inner.get_principal()
     }
+    /// <p>The ID of the policy grant that is to be removed from a specified entity.</p>
+    pub fn grant_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.grant_identifier(input.into());
+        self
+    }
+    /// <p>The ID of the policy grant that is to be removed from a specified entity.</p>
+    pub fn set_grant_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_grant_identifier(input);
+        self
+    }
+    /// <p>The ID of the policy grant that is to be removed from a specified entity.</p>
+    pub fn get_grant_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_grant_identifier()
+    }
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());

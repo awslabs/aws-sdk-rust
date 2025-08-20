@@ -13,6 +13,8 @@ pub struct RemovePolicyGrantInput {
     pub policy_type: ::std::option::Option<crate::types::ManagedPolicyType>,
     /// <p>The principal from which you want to remove a policy grant.</p>
     pub principal: ::std::option::Option<crate::types::PolicyGrantPrincipal>,
+    /// <p>The ID of the policy grant that is to be removed from a specified entity.</p>
+    pub grant_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
@@ -37,6 +39,10 @@ impl RemovePolicyGrantInput {
     pub fn principal(&self) -> ::std::option::Option<&crate::types::PolicyGrantPrincipal> {
         self.principal.as_ref()
     }
+    /// <p>The ID of the policy grant that is to be removed from a specified entity.</p>
+    pub fn grant_identifier(&self) -> ::std::option::Option<&str> {
+        self.grant_identifier.as_deref()
+    }
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
@@ -58,6 +64,7 @@ pub struct RemovePolicyGrantInputBuilder {
     pub(crate) entity_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) policy_type: ::std::option::Option<crate::types::ManagedPolicyType>,
     pub(crate) principal: ::std::option::Option<crate::types::PolicyGrantPrincipal>,
+    pub(crate) grant_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl RemovePolicyGrantInputBuilder {
@@ -136,6 +143,20 @@ impl RemovePolicyGrantInputBuilder {
     pub fn get_principal(&self) -> &::std::option::Option<crate::types::PolicyGrantPrincipal> {
         &self.principal
     }
+    /// <p>The ID of the policy grant that is to be removed from a specified entity.</p>
+    pub fn grant_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.grant_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the policy grant that is to be removed from a specified entity.</p>
+    pub fn set_grant_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.grant_identifier = input;
+        self
+    }
+    /// <p>The ID of the policy grant that is to be removed from a specified entity.</p>
+    pub fn get_grant_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.grant_identifier
+    }
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -160,6 +181,7 @@ impl RemovePolicyGrantInputBuilder {
             entity_identifier: self.entity_identifier,
             policy_type: self.policy_type,
             principal: self.principal,
+            grant_identifier: self.grant_identifier,
             client_token: self.client_token,
         })
     }

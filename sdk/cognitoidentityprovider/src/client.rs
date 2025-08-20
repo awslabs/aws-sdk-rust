@@ -210,6 +210,8 @@ mod create_managed_login_branding;
 
 mod create_resource_server;
 
+mod create_terms;
+
 mod create_user_import_job;
 
 mod create_user_pool;
@@ -253,6 +255,8 @@ mod delete_managed_login_branding;
 
 mod delete_resource_server;
 
+mod delete_terms;
+
 mod delete_user;
 
 mod delete_user_attributes;
@@ -274,6 +278,8 @@ mod describe_managed_login_branding_by_client;
 mod describe_resource_server;
 
 mod describe_risk_configuration;
+
+mod describe_terms;
 
 mod describe_user_import_job;
 
@@ -324,6 +330,8 @@ mod list_identity_providers;
 mod list_resource_servers;
 
 mod list_tags_for_resource;
+
+mod list_terms;
 
 mod list_user_import_jobs;
 
@@ -378,6 +386,8 @@ mod update_identity_provider;
 mod update_managed_login_branding;
 
 mod update_resource_server;
+
+mod update_terms;
 
 mod update_user_attributes;
 

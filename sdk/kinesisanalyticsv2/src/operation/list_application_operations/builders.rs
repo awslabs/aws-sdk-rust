@@ -22,7 +22,10 @@ impl crate::operation::list_application_operations::builders::ListApplicationOpe
 }
 /// Fluent builder constructing a request to `ListApplicationOperations`.
 ///
-/// Lists information about operations performed on a Managed Service for Apache Flink application
+/// <p>Lists all the operations performed for the specified application such as UpdateApplication, StartApplication etc. The response also includes a summary of the operation.</p>
+/// <p>To get the complete description of a specific operation, invoke the <code>DescribeApplicationOperation</code> operation.</p><note>
+/// <p>This operation is supported only for Managed Service for Apache Flink.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListApplicationOperationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,73 +117,73 @@ impl ListApplicationOperationsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_application_operations::paginator::ListApplicationOperationsPaginator {
         crate::operation::list_application_operations::paginator::ListApplicationOperationsPaginator::new(self.handle, self.inner)
     }
-    /// The name of the application
+    /// <p>The name of the application.</p>
     pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_name(input.into());
         self
     }
-    /// The name of the application
+    /// <p>The name of the application.</p>
     pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_name(input);
         self
     }
-    /// The name of the application
+    /// <p>The name of the application.</p>
     pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_application_name()
     }
-    /// Limit on the number of records returned in the response
+    /// <p>The limit on the number of records to be returned in the response.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.inner = self.inner.limit(input);
         self
     }
-    /// Limit on the number of records returned in the response
+    /// <p>The limit on the number of records to be returned in the response.</p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_limit(input);
         self
     }
-    /// Limit on the number of records returned in the response
+    /// <p>The limit on the number of records to be returned in the response.</p>
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
         self.inner.get_limit()
     }
-    /// If a previous command returned a pagination token, pass it into this value to retrieve the next set of results
+    /// <p>A pagination token that can be used in a subsequent request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// If a previous command returned a pagination token, pass it into this value to retrieve the next set of results
+    /// <p>A pagination token that can be used in a subsequent request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// If a previous command returned a pagination token, pass it into this value to retrieve the next set of results
+    /// <p>A pagination token that can be used in a subsequent request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// Type of operation performed on an application
+    /// <p>The type of operation that is performed on an application.</p>
     pub fn operation(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.operation(input.into());
         self
     }
-    /// Type of operation performed on an application
+    /// <p>The type of operation that is performed on an application.</p>
     pub fn set_operation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_operation(input);
         self
     }
-    /// Type of operation performed on an application
+    /// <p>The type of operation that is performed on an application.</p>
     pub fn get_operation(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_operation()
     }
-    /// Status of the operation performed on an application
+    /// <p>The status of the operation.</p>
     pub fn operation_status(mut self, input: crate::types::OperationStatus) -> Self {
         self.inner = self.inner.operation_status(input);
         self
     }
-    /// Status of the operation performed on an application
+    /// <p>The status of the operation.</p>
     pub fn set_operation_status(mut self, input: ::std::option::Option<crate::types::OperationStatus>) -> Self {
         self.inner = self.inner.set_operation_status(input);
         self
     }
-    /// Status of the operation performed on an application
+    /// <p>The status of the operation.</p>
     pub fn get_operation_status(&self) -> &::std::option::Option<crate::types::OperationStatus> {
         self.inner.get_operation_status()
     }

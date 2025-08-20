@@ -14,12 +14,14 @@ pub struct ApplicationConfigurationUpdate {
     pub environment_property_updates: ::std::option::Option<crate::types::EnvironmentPropertyUpdates>,
     /// <p>Describes whether snapshots are enabled for a Managed Service for Apache Flink application.</p>
     pub application_snapshot_configuration_update: ::std::option::Option<crate::types::ApplicationSnapshotConfigurationUpdate>,
-    /// Describes system rollback configuration for a Managed Service for Apache Flink application
+    /// <p>Describes whether system rollbacks are enabled for a Managed Service for Apache Flink application.</p>
     pub application_system_rollback_configuration_update: ::std::option::Option<crate::types::ApplicationSystemRollbackConfigurationUpdate>,
     /// <p>Updates to the array of descriptions of VPC configurations available to the application.</p>
     pub vpc_configuration_updates: ::std::option::Option<::std::vec::Vec<crate::types::VpcConfigurationUpdate>>,
     /// <p>Updates to the configuration of a Managed Service for Apache Flink Studio notebook.</p>
     pub zeppelin_application_configuration_update: ::std::option::Option<crate::types::ZeppelinApplicationConfigurationUpdate>,
+    /// <p>Represents an update for encryption at rest configuration.</p>
+    pub application_encryption_configuration_update: ::std::option::Option<crate::types::ApplicationEncryptionConfigurationUpdate>,
 }
 impl ApplicationConfigurationUpdate {
     /// <p>Describes updates to a SQL-based Kinesis Data Analytics application's configuration.</p>
@@ -42,7 +44,7 @@ impl ApplicationConfigurationUpdate {
     pub fn application_snapshot_configuration_update(&self) -> ::std::option::Option<&crate::types::ApplicationSnapshotConfigurationUpdate> {
         self.application_snapshot_configuration_update.as_ref()
     }
-    /// Describes system rollback configuration for a Managed Service for Apache Flink application
+    /// <p>Describes whether system rollbacks are enabled for a Managed Service for Apache Flink application.</p>
     pub fn application_system_rollback_configuration_update(
         &self,
     ) -> ::std::option::Option<&crate::types::ApplicationSystemRollbackConfigurationUpdate> {
@@ -57,6 +59,10 @@ impl ApplicationConfigurationUpdate {
     /// <p>Updates to the configuration of a Managed Service for Apache Flink Studio notebook.</p>
     pub fn zeppelin_application_configuration_update(&self) -> ::std::option::Option<&crate::types::ZeppelinApplicationConfigurationUpdate> {
         self.zeppelin_application_configuration_update.as_ref()
+    }
+    /// <p>Represents an update for encryption at rest configuration.</p>
+    pub fn application_encryption_configuration_update(&self) -> ::std::option::Option<&crate::types::ApplicationEncryptionConfigurationUpdate> {
+        self.application_encryption_configuration_update.as_ref()
     }
 }
 impl ApplicationConfigurationUpdate {
@@ -78,6 +84,7 @@ pub struct ApplicationConfigurationUpdateBuilder {
     pub(crate) application_system_rollback_configuration_update: ::std::option::Option<crate::types::ApplicationSystemRollbackConfigurationUpdate>,
     pub(crate) vpc_configuration_updates: ::std::option::Option<::std::vec::Vec<crate::types::VpcConfigurationUpdate>>,
     pub(crate) zeppelin_application_configuration_update: ::std::option::Option<crate::types::ZeppelinApplicationConfigurationUpdate>,
+    pub(crate) application_encryption_configuration_update: ::std::option::Option<crate::types::ApplicationEncryptionConfigurationUpdate>,
 }
 impl ApplicationConfigurationUpdateBuilder {
     /// <p>Describes updates to a SQL-based Kinesis Data Analytics application's configuration.</p>
@@ -159,12 +166,12 @@ impl ApplicationConfigurationUpdateBuilder {
     pub fn get_application_snapshot_configuration_update(&self) -> &::std::option::Option<crate::types::ApplicationSnapshotConfigurationUpdate> {
         &self.application_snapshot_configuration_update
     }
-    /// Describes system rollback configuration for a Managed Service for Apache Flink application
+    /// <p>Describes whether system rollbacks are enabled for a Managed Service for Apache Flink application.</p>
     pub fn application_system_rollback_configuration_update(mut self, input: crate::types::ApplicationSystemRollbackConfigurationUpdate) -> Self {
         self.application_system_rollback_configuration_update = ::std::option::Option::Some(input);
         self
     }
-    /// Describes system rollback configuration for a Managed Service for Apache Flink application
+    /// <p>Describes whether system rollbacks are enabled for a Managed Service for Apache Flink application.</p>
     pub fn set_application_system_rollback_configuration_update(
         mut self,
         input: ::std::option::Option<crate::types::ApplicationSystemRollbackConfigurationUpdate>,
@@ -172,7 +179,7 @@ impl ApplicationConfigurationUpdateBuilder {
         self.application_system_rollback_configuration_update = input;
         self
     }
-    /// Describes system rollback configuration for a Managed Service for Apache Flink application
+    /// <p>Describes whether system rollbacks are enabled for a Managed Service for Apache Flink application.</p>
     pub fn get_application_system_rollback_configuration_update(
         &self,
     ) -> &::std::option::Option<crate::types::ApplicationSystemRollbackConfigurationUpdate> {
@@ -215,6 +222,23 @@ impl ApplicationConfigurationUpdateBuilder {
     pub fn get_zeppelin_application_configuration_update(&self) -> &::std::option::Option<crate::types::ZeppelinApplicationConfigurationUpdate> {
         &self.zeppelin_application_configuration_update
     }
+    /// <p>Represents an update for encryption at rest configuration.</p>
+    pub fn application_encryption_configuration_update(mut self, input: crate::types::ApplicationEncryptionConfigurationUpdate) -> Self {
+        self.application_encryption_configuration_update = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Represents an update for encryption at rest configuration.</p>
+    pub fn set_application_encryption_configuration_update(
+        mut self,
+        input: ::std::option::Option<crate::types::ApplicationEncryptionConfigurationUpdate>,
+    ) -> Self {
+        self.application_encryption_configuration_update = input;
+        self
+    }
+    /// <p>Represents an update for encryption at rest configuration.</p>
+    pub fn get_application_encryption_configuration_update(&self) -> &::std::option::Option<crate::types::ApplicationEncryptionConfigurationUpdate> {
+        &self.application_encryption_configuration_update
+    }
     /// Consumes the builder and constructs a [`ApplicationConfigurationUpdate`](crate::types::ApplicationConfigurationUpdate).
     pub fn build(self) -> crate::types::ApplicationConfigurationUpdate {
         crate::types::ApplicationConfigurationUpdate {
@@ -226,6 +250,7 @@ impl ApplicationConfigurationUpdateBuilder {
             application_system_rollback_configuration_update: self.application_system_rollback_configuration_update,
             vpc_configuration_updates: self.vpc_configuration_updates,
             zeppelin_application_configuration_update: self.zeppelin_application_configuration_update,
+            application_encryption_configuration_update: self.application_encryption_configuration_update,
         }
     }
 }

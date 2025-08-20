@@ -22,8 +22,8 @@ impl crate::operation::forgot_password::builders::ForgotPasswordInputBuilder {
 }
 /// Fluent builder constructing a request to `ForgotPassword`.
 ///
-/// <p>Sends a password-reset confirmation code for the currently signed-in user.</p>
-/// <p>For the <code>Username</code> parameter, you can use the username or user alias.</p>
+/// <p>Sends a password-reset confirmation code to the email address or phone number of the requested username. The message delivery method is determined by the user's available attributes and the <code>AccountRecoverySetting</code> configuration of the user pool.</p>
+/// <p>For the <code>Username</code> parameter, you can use the username or an email, phone, or preferred username alias.</p>
 /// <p>If neither a verified phone number nor a verified email exists, Amazon Cognito responds with an <code>InvalidParameterException</code> error . If your app client has a client secret and you don't provide a <code>SECRET_HASH</code> parameter, this API returns <code>NotAuthorizedException</code>.</p><note>
 /// <p>Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you can't use IAM credentials to authorize requests, and you can't grant IAM permissions in policies. For more information about authorization models in Amazon Cognito, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using the Amazon Cognito user pools API and user pool endpoints</a>.</p>
 /// </note> <note>

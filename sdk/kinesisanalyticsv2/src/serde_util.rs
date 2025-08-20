@@ -165,6 +165,15 @@ pub(crate) fn vpc_configuration_description_correct_errors(
     builder
 }
 
+pub(crate) fn application_encryption_configuration_description_correct_errors(
+    mut builder: crate::types::builders::ApplicationEncryptionConfigurationDescriptionBuilder,
+) -> crate::types::builders::ApplicationEncryptionConfigurationDescriptionBuilder {
+    if builder.key_type.is_none() {
+        builder.key_type = "no value was set".parse::<crate::types::KeyType>().ok()
+    }
+    builder
+}
+
 pub(crate) fn application_summary_correct_errors(
     mut builder: crate::types::builders::ApplicationSummaryBuilder,
 ) -> crate::types::builders::ApplicationSummaryBuilder {

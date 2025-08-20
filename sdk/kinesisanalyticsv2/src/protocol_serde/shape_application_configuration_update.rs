@@ -63,5 +63,14 @@ pub fn ser_application_configuration_update(
         )?;
         object_18.finish();
     }
+    if let Some(var_19) = &input.application_encryption_configuration_update {
+        #[allow(unused_mut)]
+        let mut object_20 = object.key("ApplicationEncryptionConfigurationUpdate").start_object();
+        crate::protocol_serde::shape_application_encryption_configuration_update::ser_application_encryption_configuration_update(
+            &mut object_20,
+            var_19,
+        )?;
+        object_20.finish();
+    }
     Ok(())
 }

@@ -284,4 +284,18 @@ impl CreateAddonFluentBuilder {
     pub fn get_pod_identity_associations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AddonPodIdentityAssociations>> {
         self.inner.get_pod_identity_associations()
     }
+    /// <p>The namespace configuration for the addon. If specified, this will override the default namespace for the addon.</p>
+    pub fn namespace_config(mut self, input: crate::types::AddonNamespaceConfigRequest) -> Self {
+        self.inner = self.inner.namespace_config(input);
+        self
+    }
+    /// <p>The namespace configuration for the addon. If specified, this will override the default namespace for the addon.</p>
+    pub fn set_namespace_config(mut self, input: ::std::option::Option<crate::types::AddonNamespaceConfigRequest>) -> Self {
+        self.inner = self.inner.set_namespace_config(input);
+        self
+    }
+    /// <p>The namespace configuration for the addon. If specified, this will override the default namespace for the addon.</p>
+    pub fn get_namespace_config(&self) -> &::std::option::Option<crate::types::AddonNamespaceConfigRequest> {
+        self.inner.get_namespace_config()
+    }
 }

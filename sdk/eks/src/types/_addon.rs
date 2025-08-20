@@ -35,6 +35,8 @@ pub struct Addon {
     /// <p>An array of EKS Pod Identity associations owned by the add-on. Each association maps a role to a service account in a namespace in the cluster.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/add-ons-iam.html">Attach an IAM Role to an Amazon EKS add-on using EKS Pod Identity</a> in the <i>Amazon EKS User Guide</i>.</p>
     pub pod_identity_associations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The namespace configuration for the addon. This specifies the Kubernetes namespace where the addon is installed.</p>
+    pub namespace_config: ::std::option::Option<crate::types::AddonNamespaceConfigResponse>,
 }
 impl Addon {
     /// <p>The name of the add-on.</p>
@@ -100,6 +102,10 @@ impl Addon {
     pub fn pod_identity_associations(&self) -> &[::std::string::String] {
         self.pod_identity_associations.as_deref().unwrap_or_default()
     }
+    /// <p>The namespace configuration for the addon. This specifies the Kubernetes namespace where the addon is installed.</p>
+    pub fn namespace_config(&self) -> ::std::option::Option<&crate::types::AddonNamespaceConfigResponse> {
+        self.namespace_config.as_ref()
+    }
 }
 impl Addon {
     /// Creates a new builder-style object to manufacture [`Addon`](crate::types::Addon).
@@ -127,6 +133,7 @@ pub struct AddonBuilder {
     pub(crate) marketplace_information: ::std::option::Option<crate::types::MarketplaceInformation>,
     pub(crate) configuration_values: ::std::option::Option<::std::string::String>,
     pub(crate) pod_identity_associations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) namespace_config: ::std::option::Option<crate::types::AddonNamespaceConfigResponse>,
 }
 impl AddonBuilder {
     /// <p>The name of the add-on.</p>
@@ -354,6 +361,20 @@ impl AddonBuilder {
     pub fn get_pod_identity_associations(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.pod_identity_associations
     }
+    /// <p>The namespace configuration for the addon. This specifies the Kubernetes namespace where the addon is installed.</p>
+    pub fn namespace_config(mut self, input: crate::types::AddonNamespaceConfigResponse) -> Self {
+        self.namespace_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The namespace configuration for the addon. This specifies the Kubernetes namespace where the addon is installed.</p>
+    pub fn set_namespace_config(mut self, input: ::std::option::Option<crate::types::AddonNamespaceConfigResponse>) -> Self {
+        self.namespace_config = input;
+        self
+    }
+    /// <p>The namespace configuration for the addon. This specifies the Kubernetes namespace where the addon is installed.</p>
+    pub fn get_namespace_config(&self) -> &::std::option::Option<crate::types::AddonNamespaceConfigResponse> {
+        &self.namespace_config
+    }
     /// Consumes the builder and constructs a [`Addon`](crate::types::Addon).
     pub fn build(self) -> crate::types::Addon {
         crate::types::Addon {
@@ -372,6 +393,7 @@ impl AddonBuilder {
             marketplace_information: self.marketplace_information,
             configuration_values: self.configuration_values,
             pod_identity_associations: self.pod_identity_associations,
+            namespace_config: self.namespace_config,
         }
     }
 }

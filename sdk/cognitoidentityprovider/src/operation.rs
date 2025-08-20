@@ -112,6 +112,9 @@ pub mod create_managed_login_branding;
 /// Types for the `CreateResourceServer` operation.
 pub mod create_resource_server;
 
+/// Types for the `CreateTerms` operation.
+pub mod create_terms;
+
 /// Types for the `CreateUserImportJob` operation.
 pub mod create_user_import_job;
 
@@ -135,6 +138,9 @@ pub mod delete_managed_login_branding;
 
 /// Types for the `DeleteResourceServer` operation.
 pub mod delete_resource_server;
+
+/// Types for the `DeleteTerms` operation.
+pub mod delete_terms;
 
 /// Types for the `DeleteUser` operation.
 pub mod delete_user;
@@ -168,6 +174,9 @@ pub mod describe_resource_server;
 
 /// Types for the `DescribeRiskConfiguration` operation.
 pub mod describe_risk_configuration;
+
+/// Types for the `DescribeTerms` operation.
+pub mod describe_terms;
 
 /// Types for the `DescribeUserImportJob` operation.
 pub mod describe_user_import_job;
@@ -243,6 +252,9 @@ pub mod list_resource_servers;
 
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
+
+/// Types for the `ListTerms` operation.
+pub mod list_terms;
 
 /// Types for the `ListUserImportJobs` operation.
 pub mod list_user_import_jobs;
@@ -324,6 +336,9 @@ pub mod update_managed_login_branding;
 
 /// Types for the `UpdateResourceServer` operation.
 pub mod update_resource_server;
+
+/// Types for the `UpdateTerms` operation.
+pub mod update_terms;
 
 /// Types for the `UpdateUserAttributes` operation.
 pub mod update_user_attributes;

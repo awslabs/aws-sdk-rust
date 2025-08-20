@@ -29,6 +29,8 @@ pub(crate) mod shape_converse;
 
 pub(crate) mod shape_converse_stream;
 
+pub(crate) mod shape_count_tokens;
+
 pub(crate) mod shape_get_async_invoke;
 
 pub(crate) mod shape_invoke_model;
@@ -64,6 +66,8 @@ pub(crate) mod shape_converse_input;
 pub(crate) mod shape_converse_stream_input;
 
 pub(crate) mod shape_converse_stream_output;
+
+pub(crate) mod shape_count_tokens_input;
 
 pub(crate) mod shape_internal_server_exception;
 
@@ -161,6 +165,8 @@ pub(crate) mod shape_content_block_stop_event;
 
 pub(crate) mod shape_converse_stream_metadata_event;
 
+pub(crate) mod shape_converse_tokens_request;
+
 pub(crate) mod shape_guardrail_assessment;
 
 pub(crate) mod shape_guardrail_converse_content_block;
@@ -176,6 +182,8 @@ pub(crate) mod shape_guardrail_text_block;
 pub(crate) mod shape_guardrail_text_characters_coverage;
 
 pub(crate) mod shape_guardrail_trace_assessment;
+
+pub(crate) mod shape_invoke_model_tokens_request;
 
 pub(crate) mod shape_message_start_event;
 

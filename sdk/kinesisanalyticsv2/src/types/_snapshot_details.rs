@@ -14,6 +14,8 @@ pub struct SnapshotDetails {
     pub snapshot_creation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Flink Runtime for the application snapshot.</p>
     pub runtime_environment: ::std::option::Option<crate::types::RuntimeEnvironment>,
+    /// <p>Specifies the encryption settings of data at rest for the application snapshot.</p>
+    pub application_encryption_configuration_description: ::std::option::Option<crate::types::ApplicationEncryptionConfigurationDescription>,
 }
 impl SnapshotDetails {
     /// <p>The identifier for the application snapshot.</p>
@@ -37,6 +39,12 @@ impl SnapshotDetails {
     pub fn runtime_environment(&self) -> ::std::option::Option<&crate::types::RuntimeEnvironment> {
         self.runtime_environment.as_ref()
     }
+    /// <p>Specifies the encryption settings of data at rest for the application snapshot.</p>
+    pub fn application_encryption_configuration_description(
+        &self,
+    ) -> ::std::option::Option<&crate::types::ApplicationEncryptionConfigurationDescription> {
+        self.application_encryption_configuration_description.as_ref()
+    }
 }
 impl SnapshotDetails {
     /// Creates a new builder-style object to manufacture [`SnapshotDetails`](crate::types::SnapshotDetails).
@@ -54,6 +62,7 @@ pub struct SnapshotDetailsBuilder {
     pub(crate) application_version_id: ::std::option::Option<i64>,
     pub(crate) snapshot_creation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) runtime_environment: ::std::option::Option<crate::types::RuntimeEnvironment>,
+    pub(crate) application_encryption_configuration_description: ::std::option::Option<crate::types::ApplicationEncryptionConfigurationDescription>,
 }
 impl SnapshotDetailsBuilder {
     /// <p>The identifier for the application snapshot.</p>
@@ -129,6 +138,25 @@ impl SnapshotDetailsBuilder {
     pub fn get_runtime_environment(&self) -> &::std::option::Option<crate::types::RuntimeEnvironment> {
         &self.runtime_environment
     }
+    /// <p>Specifies the encryption settings of data at rest for the application snapshot.</p>
+    pub fn application_encryption_configuration_description(mut self, input: crate::types::ApplicationEncryptionConfigurationDescription) -> Self {
+        self.application_encryption_configuration_description = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the encryption settings of data at rest for the application snapshot.</p>
+    pub fn set_application_encryption_configuration_description(
+        mut self,
+        input: ::std::option::Option<crate::types::ApplicationEncryptionConfigurationDescription>,
+    ) -> Self {
+        self.application_encryption_configuration_description = input;
+        self
+    }
+    /// <p>Specifies the encryption settings of data at rest for the application snapshot.</p>
+    pub fn get_application_encryption_configuration_description(
+        &self,
+    ) -> &::std::option::Option<crate::types::ApplicationEncryptionConfigurationDescription> {
+        &self.application_encryption_configuration_description
+    }
     /// Consumes the builder and constructs a [`SnapshotDetails`](crate::types::SnapshotDetails).
     /// This method will fail if any of the following fields are not set:
     /// - [`snapshot_name`](crate::types::builders::SnapshotDetailsBuilder::snapshot_name)
@@ -156,6 +184,7 @@ impl SnapshotDetailsBuilder {
             })?,
             snapshot_creation_timestamp: self.snapshot_creation_timestamp,
             runtime_environment: self.runtime_environment,
+            application_encryption_configuration_description: self.application_encryption_configuration_description,
         })
     }
 }

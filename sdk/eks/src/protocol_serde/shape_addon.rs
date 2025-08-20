@@ -103,6 +103,11 @@ where
                         "podIdentityAssociations" => {
                             builder = builder.set_pod_identity_associations(crate::protocol_serde::shape_string_list::de_string_list(tokens)?);
                         }
+                        "namespaceConfig" => {
+                            builder = builder.set_namespace_config(
+                                crate::protocol_serde::shape_addon_namespace_config_response::de_addon_namespace_config_response(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
