@@ -3,20 +3,23 @@ pub fn ser_update_stream_group_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_stream_group::UpdateStreamGroupInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.description {
-        object.key("Description").string(var_1.as_str());
+    if let Some(var_1) = &input.default_application_identifier {
+        object.key("DefaultApplicationIdentifier").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.location_configurations {
-        let mut array_3 = object.key("LocationConfigurations").start_array();
-        for item_4 in var_2 {
+    if let Some(var_2) = &input.description {
+        object.key("Description").string(var_2.as_str());
+    }
+    if let Some(var_3) = &input.location_configurations {
+        let mut array_4 = object.key("LocationConfigurations").start_array();
+        for item_5 in var_3 {
             {
                 #[allow(unused_mut)]
-                let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_location_configuration::ser_location_configuration(&mut object_5, item_4)?;
-                object_5.finish();
+                let mut object_6 = array_4.value().start_object();
+                crate::protocol_serde::shape_location_configuration::ser_location_configuration(&mut object_6, item_5)?;
+                object_6.finish();
             }
         }
-        array_3.finish();
+        array_4.finish();
     }
     Ok(())
 }

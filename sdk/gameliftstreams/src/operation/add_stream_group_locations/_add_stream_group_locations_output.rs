@@ -9,13 +9,13 @@ pub struct AddStreamGroupLocationsOutput {
     /// <p>A location can be in one of the following states:</p>
     /// <ul>
     /// <li>
-    /// <p><b>ACTIVATING</b>: Amazon GameLift Streams is preparing the location. You cannot stream from, scale the capacity of, or remove this location yet.</p></li>
+    /// <p><code>ACTIVATING</code>: Amazon GameLift Streams is preparing the location. You cannot stream from, scale the capacity of, or remove this location yet.</p></li>
     /// <li>
-    /// <p><b>ACTIVE</b>: The location is provisioned with initial capacity. You can now stream from, scale the capacity of, or remove this location.</p></li>
+    /// <p><code>ACTIVE</code>: The location is provisioned with initial capacity. You can now stream from, scale the capacity of, or remove this location.</p></li>
     /// <li>
-    /// <p><b>ERROR</b>: Amazon GameLift Streams failed to set up this location. The StatusReason field describes the error. You can remove this location and try to add it again.</p></li>
+    /// <p><code>ERROR</code>: Amazon GameLift Streams failed to set up this location. The <code>StatusReason</code> field describes the error. You can remove this location and try to add it again.</p></li>
     /// <li>
-    /// <p><b>REMOVING</b>: Amazon GameLift Streams is working to remove this location. It releases all provisioned capacity for this location in this stream group.</p></li>
+    /// <p><code>REMOVING</code>: Amazon GameLift Streams is working to remove this location. This will release all provisioned capacity for this location in this stream group.</p></li>
     /// </ul>
     pub locations: ::std::vec::Vec<crate::types::LocationState>,
     _request_id: Option<String>,
@@ -30,13 +30,13 @@ impl AddStreamGroupLocationsOutput {
     /// <p>A location can be in one of the following states:</p>
     /// <ul>
     /// <li>
-    /// <p><b>ACTIVATING</b>: Amazon GameLift Streams is preparing the location. You cannot stream from, scale the capacity of, or remove this location yet.</p></li>
+    /// <p><code>ACTIVATING</code>: Amazon GameLift Streams is preparing the location. You cannot stream from, scale the capacity of, or remove this location yet.</p></li>
     /// <li>
-    /// <p><b>ACTIVE</b>: The location is provisioned with initial capacity. You can now stream from, scale the capacity of, or remove this location.</p></li>
+    /// <p><code>ACTIVE</code>: The location is provisioned with initial capacity. You can now stream from, scale the capacity of, or remove this location.</p></li>
     /// <li>
-    /// <p><b>ERROR</b>: Amazon GameLift Streams failed to set up this location. The StatusReason field describes the error. You can remove this location and try to add it again.</p></li>
+    /// <p><code>ERROR</code>: Amazon GameLift Streams failed to set up this location. The <code>StatusReason</code> field describes the error. You can remove this location and try to add it again.</p></li>
     /// <li>
-    /// <p><b>REMOVING</b>: Amazon GameLift Streams is working to remove this location. It releases all provisioned capacity for this location in this stream group.</p></li>
+    /// <p><code>REMOVING</code>: Amazon GameLift Streams is working to remove this location. This will release all provisioned capacity for this location in this stream group.</p></li>
     /// </ul>
     pub fn locations(&self) -> &[crate::types::LocationState] {
         use std::ops::Deref;
@@ -87,13 +87,13 @@ impl AddStreamGroupLocationsOutputBuilder {
     /// <p>A location can be in one of the following states:</p>
     /// <ul>
     /// <li>
-    /// <p><b>ACTIVATING</b>: Amazon GameLift Streams is preparing the location. You cannot stream from, scale the capacity of, or remove this location yet.</p></li>
+    /// <p><code>ACTIVATING</code>: Amazon GameLift Streams is preparing the location. You cannot stream from, scale the capacity of, or remove this location yet.</p></li>
     /// <li>
-    /// <p><b>ACTIVE</b>: The location is provisioned with initial capacity. You can now stream from, scale the capacity of, or remove this location.</p></li>
+    /// <p><code>ACTIVE</code>: The location is provisioned with initial capacity. You can now stream from, scale the capacity of, or remove this location.</p></li>
     /// <li>
-    /// <p><b>ERROR</b>: Amazon GameLift Streams failed to set up this location. The StatusReason field describes the error. You can remove this location and try to add it again.</p></li>
+    /// <p><code>ERROR</code>: Amazon GameLift Streams failed to set up this location. The <code>StatusReason</code> field describes the error. You can remove this location and try to add it again.</p></li>
     /// <li>
-    /// <p><b>REMOVING</b>: Amazon GameLift Streams is working to remove this location. It releases all provisioned capacity for this location in this stream group.</p></li>
+    /// <p><code>REMOVING</code>: Amazon GameLift Streams is working to remove this location. This will release all provisioned capacity for this location in this stream group.</p></li>
     /// </ul>
     pub fn locations(mut self, input: crate::types::LocationState) -> Self {
         let mut v = self.locations.unwrap_or_default();
@@ -105,13 +105,13 @@ impl AddStreamGroupLocationsOutputBuilder {
     /// <p>A location can be in one of the following states:</p>
     /// <ul>
     /// <li>
-    /// <p><b>ACTIVATING</b>: Amazon GameLift Streams is preparing the location. You cannot stream from, scale the capacity of, or remove this location yet.</p></li>
+    /// <p><code>ACTIVATING</code>: Amazon GameLift Streams is preparing the location. You cannot stream from, scale the capacity of, or remove this location yet.</p></li>
     /// <li>
-    /// <p><b>ACTIVE</b>: The location is provisioned with initial capacity. You can now stream from, scale the capacity of, or remove this location.</p></li>
+    /// <p><code>ACTIVE</code>: The location is provisioned with initial capacity. You can now stream from, scale the capacity of, or remove this location.</p></li>
     /// <li>
-    /// <p><b>ERROR</b>: Amazon GameLift Streams failed to set up this location. The StatusReason field describes the error. You can remove this location and try to add it again.</p></li>
+    /// <p><code>ERROR</code>: Amazon GameLift Streams failed to set up this location. The <code>StatusReason</code> field describes the error. You can remove this location and try to add it again.</p></li>
     /// <li>
-    /// <p><b>REMOVING</b>: Amazon GameLift Streams is working to remove this location. It releases all provisioned capacity for this location in this stream group.</p></li>
+    /// <p><code>REMOVING</code>: Amazon GameLift Streams is working to remove this location. This will release all provisioned capacity for this location in this stream group.</p></li>
     /// </ul>
     pub fn set_locations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LocationState>>) -> Self {
         self.locations = input;
@@ -121,13 +121,13 @@ impl AddStreamGroupLocationsOutputBuilder {
     /// <p>A location can be in one of the following states:</p>
     /// <ul>
     /// <li>
-    /// <p><b>ACTIVATING</b>: Amazon GameLift Streams is preparing the location. You cannot stream from, scale the capacity of, or remove this location yet.</p></li>
+    /// <p><code>ACTIVATING</code>: Amazon GameLift Streams is preparing the location. You cannot stream from, scale the capacity of, or remove this location yet.</p></li>
     /// <li>
-    /// <p><b>ACTIVE</b>: The location is provisioned with initial capacity. You can now stream from, scale the capacity of, or remove this location.</p></li>
+    /// <p><code>ACTIVE</code>: The location is provisioned with initial capacity. You can now stream from, scale the capacity of, or remove this location.</p></li>
     /// <li>
-    /// <p><b>ERROR</b>: Amazon GameLift Streams failed to set up this location. The StatusReason field describes the error. You can remove this location and try to add it again.</p></li>
+    /// <p><code>ERROR</code>: Amazon GameLift Streams failed to set up this location. The <code>StatusReason</code> field describes the error. You can remove this location and try to add it again.</p></li>
     /// <li>
-    /// <p><b>REMOVING</b>: Amazon GameLift Streams is working to remove this location. It releases all provisioned capacity for this location in this stream group.</p></li>
+    /// <p><code>REMOVING</code>: Amazon GameLift Streams is working to remove this location. This will release all provisioned capacity for this location in this stream group.</p></li>
     /// </ul>
     pub fn get_locations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LocationState>> {
         &self.locations

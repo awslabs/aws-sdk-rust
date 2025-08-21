@@ -9,7 +9,7 @@ pub struct GetContactOutput {
     pub alias: ::std::string::String,
     /// <p>The full name of the contact or escalation plan.</p>
     pub display_name: ::std::option::Option<::std::string::String>,
-    /// <p>The type of contact, either <code>PERSONAL</code> or <code>ESCALATION</code>.</p>
+    /// <p>The type of contact.</p>
     pub r#type: crate::types::ContactType,
     /// <p>Details about the specific timing or stages and targets of the escalation plan or engagement plan.</p>
     pub plan: ::std::option::Option<crate::types::Plan>,
@@ -30,7 +30,7 @@ impl GetContactOutput {
     pub fn display_name(&self) -> ::std::option::Option<&str> {
         self.display_name.as_deref()
     }
-    /// <p>The type of contact, either <code>PERSONAL</code> or <code>ESCALATION</code>.</p>
+    /// <p>The type of contact.</p>
     pub fn r#type(&self) -> &crate::types::ContactType {
         &self.r#type
     }
@@ -107,18 +107,18 @@ impl GetContactOutputBuilder {
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.display_name
     }
-    /// <p>The type of contact, either <code>PERSONAL</code> or <code>ESCALATION</code>.</p>
+    /// <p>The type of contact.</p>
     /// This field is required.
     pub fn r#type(mut self, input: crate::types::ContactType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of contact, either <code>PERSONAL</code> or <code>ESCALATION</code>.</p>
+    /// <p>The type of contact.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ContactType>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>The type of contact, either <code>PERSONAL</code> or <code>ESCALATION</code>.</p>
+    /// <p>The type of contact.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ContactType> {
         &self.r#type
     }

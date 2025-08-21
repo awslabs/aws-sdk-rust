@@ -136,17 +136,41 @@ impl CreateContactFluentBuilder {
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_display_name()
     }
-    /// <p>To create an escalation plan use <code>ESCALATION</code>. To create a contact use <code>PERSONAL</code>.</p>
+    /// <p>The type of contact to create.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>PERSONAL</code>: A single, individual contact.</p></li>
+    /// <li>
+    /// <p><code>ESCALATION</code>: An escalation plan.</p></li>
+    /// <li>
+    /// <p><code>ONCALL_SCHEDULE</code>: An on-call schedule.</p></li>
+    /// </ul>
     pub fn r#type(mut self, input: crate::types::ContactType) -> Self {
         self.inner = self.inner.r#type(input);
         self
     }
-    /// <p>To create an escalation plan use <code>ESCALATION</code>. To create a contact use <code>PERSONAL</code>.</p>
+    /// <p>The type of contact to create.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>PERSONAL</code>: A single, individual contact.</p></li>
+    /// <li>
+    /// <p><code>ESCALATION</code>: An escalation plan.</p></li>
+    /// <li>
+    /// <p><code>ONCALL_SCHEDULE</code>: An on-call schedule.</p></li>
+    /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ContactType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }
-    /// <p>To create an escalation plan use <code>ESCALATION</code>. To create a contact use <code>PERSONAL</code>.</p>
+    /// <p>The type of contact to create.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>PERSONAL</code>: A single, individual contact.</p></li>
+    /// <li>
+    /// <p><code>ESCALATION</code>: An escalation plan.</p></li>
+    /// <li>
+    /// <p><code>ONCALL_SCHEDULE</code>: An on-call schedule.</p></li>
+    /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ContactType> {
         self.inner.get_type()
     }

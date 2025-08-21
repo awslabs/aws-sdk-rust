@@ -22,10 +22,39 @@ impl crate::operation::create_stream_session_connection::builders::CreateStreamS
 }
 /// Fluent builder constructing a request to `CreateStreamSessionConnection`.
 ///
-/// <p>Allows clients to reconnect to a recently disconnected stream session without losing any data from the last session.</p>
-/// <p>A client can reconnect to a stream session that's in <code>PENDING_CLIENT_RECONNECTION</code> or <code>ACTIVE</code> status. In the stream session life cycle, when the client disconnects from the stream session, the stream session transitions from <code>CONNECTED</code> to <code>PENDING_CLIENT_RECONNECTION</code> status. When a client requests to reconnect by calling <code>CreateStreamSessionConnection</code>, the stream session transitions to <code>RECONNECTING</code> status. When the reconnection is successful, the stream session transitions to <code>ACTIVE</code> status. After a stream session is disconnected for longer than <code>ConnectionTimeoutSeconds</code>, the stream session transitions to the <code>TERMINATED</code> status.</p>
-/// <p>To connect to an existing stream session, specify the stream group ID and stream session ID that you want to reconnect to, as well as the signal request settings to use with the stream.</p>
-/// <p><code>ConnectionTimeoutSeconds</code> defines the amount of time after the stream session disconnects that a reconnection is allowed. If a client is disconnected from the stream for longer than <code>ConnectionTimeoutSeconds</code>, the stream session ends.</p>
+/// <p>Enables clients to reconnect to a stream session while preserving all session state and data in the disconnected session. This reconnection process can be initiated when a stream session is in either <code>PENDING_CLIENT_RECONNECTION</code> or <code>ACTIVE</code> status. The process works as follows:</p>
+/// <ol>
+/// <li>
+/// <p>Initial disconnect:</p>
+/// <ul>
+/// <li>
+/// <p>When a client disconnects or loses connection, the stream session transitions from <code>CONNECTED</code> to <code>PENDING_CLIENT_RECONNECTION</code></p></li>
+/// </ul></li>
+/// <li>
+/// <p>Reconnection time window:</p>
+/// <ul>
+/// <li>
+/// <p>Clients have <code>ConnectionTimeoutSeconds</code> (defined in <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_StartStreamSession.html">StartStreamSession</a>) to reconnect before session termination</p></li>
+/// <li>
+/// <p>Your backend server must call <b>CreateStreamSessionConnection</b> to initiate reconnection</p></li>
+/// <li>
+/// <p>Session transitions to <code>RECONNECTING</code> status</p></li>
+/// </ul></li>
+/// <li>
+/// <p>Reconnection completion:</p>
+/// <ul>
+/// <li>
+/// <p>On successful <b>CreateStreamSessionConnection</b>, session status changes to <code>ACTIVE</code></p></li>
+/// <li>
+/// <p>Provide the new connection information to the requesting client</p></li>
+/// <li>
+/// <p>Client must establish connection within <code>ConnectionTimeoutSeconds</code></p></li>
+/// <li>
+/// <p>Session terminates automatically if client fails to connect in time</p></li>
+/// </ul></li>
+/// </ol>
+/// <p>For more information about the stream session lifecycle, see <a href="https://docs.aws.amazon.com/gameliftstreams/latest/developerguide/stream-sessions.html">Stream sessions</a> in the <i>Amazon GameLift Streams Developer Guide</i>.</p>
+/// <p>To begin re-connecting to an existing stream session, specify the stream group ID and stream session ID that you want to reconnect to, and the signal request to use with the stream.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateStreamSessionConnectionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -126,19 +155,19 @@ impl CreateStreamSessionConnectionFluentBuilder {
         self.inner.get_client_token()
     }
     /// <p><a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> or ID that uniquely identifies the stream group resource. Example ARN: <code>arn:aws:gameliftstreams:us-west-2:111122223333:streamgroup/sg-1AB2C3De4</code>. Example ID: <code>sg-1AB2C3De4</code>.</p>
-    /// <p>The stream group that you want to run this stream session with. The stream group must be in <code>ACTIVE</code> status and have idle stream capacity.</p>
+    /// <p>The stream group that you want to run this stream session with. The stream group must be in <code>ACTIVE</code> status.</p>
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identifier(input.into());
         self
     }
     /// <p><a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> or ID that uniquely identifies the stream group resource. Example ARN: <code>arn:aws:gameliftstreams:us-west-2:111122223333:streamgroup/sg-1AB2C3De4</code>. Example ID: <code>sg-1AB2C3De4</code>.</p>
-    /// <p>The stream group that you want to run this stream session with. The stream group must be in <code>ACTIVE</code> status and have idle stream capacity.</p>
+    /// <p>The stream group that you want to run this stream session with. The stream group must be in <code>ACTIVE</code> status.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_identifier(input);
         self
     }
     /// <p><a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> or ID that uniquely identifies the stream group resource. Example ARN: <code>arn:aws:gameliftstreams:us-west-2:111122223333:streamgroup/sg-1AB2C3De4</code>. Example ID: <code>sg-1AB2C3De4</code>.</p>
-    /// <p>The stream group that you want to run this stream session with. The stream group must be in <code>ACTIVE</code> status and have idle stream capacity.</p>
+    /// <p>The stream group that you want to run this stream session with. The stream group must be in <code>ACTIVE</code> status.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_identifier()
     }

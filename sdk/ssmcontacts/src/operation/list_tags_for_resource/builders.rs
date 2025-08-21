@@ -22,7 +22,7 @@ impl crate::operation::list_tags_for_resource::builders::ListTagsForResourceInpu
 }
 /// Fluent builder constructing a request to `ListTagsForResource`.
 ///
-/// <p>Lists the tags of an escalation plan or contact.</p>
+/// <p>Lists the tags of a contact, escalation plan, rotation, or on-call schedule.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListTagsForResourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl ListTagsForResourceFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
+    /// <p>The Amazon Resource Name (ARN) of the contact, escalation plan, rotation, or on-call schedule.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
+    /// <p>The Amazon Resource Name (ARN) of the contact, escalation plan, rotation, or on-call schedule.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
+    /// <p>The Amazon Resource Name (ARN) of the contact, escalation plan, rotation, or on-call schedule.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_arn()
     }

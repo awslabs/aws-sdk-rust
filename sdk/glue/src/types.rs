@@ -571,6 +571,8 @@ pub use crate::types::_test_connection_input::TestConnectionInput;
 
 pub use crate::types::_data_source::DataSource;
 
+pub use crate::types::_data_quality_glue_table::DataQualityGlueTable;
+
 pub use crate::types::_glue_table::GlueTable;
 
 pub use crate::types::_data_quality_evaluation_run_additional_run_options::DataQualityEvaluationRunAdditionalRunOptions;
@@ -1320,6 +1322,8 @@ mod _data_quality_encryption;
 mod _data_quality_encryption_mode;
 
 mod _data_quality_evaluation_run_additional_run_options;
+
+mod _data_quality_glue_table;
 
 mod _data_quality_metric_values;
 

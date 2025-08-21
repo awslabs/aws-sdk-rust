@@ -6,7 +6,7 @@ pub struct CreateStreamSessionConnectionInput {
     /// <p>A unique identifier that represents a client request. The request is idempotent, which ensures that an API request completes only once. When users send a request, Amazon GameLift Streams automatically populates this field.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p><a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> or ID that uniquely identifies the stream group resource. Example ARN: <code>arn:aws:gameliftstreams:us-west-2:111122223333:streamgroup/sg-1AB2C3De4</code>. Example ID: <code>sg-1AB2C3De4</code>.</p>
-    /// <p>The stream group that you want to run this stream session with. The stream group must be in <code>ACTIVE</code> status and have idle stream capacity.</p>
+    /// <p>The stream group that you want to run this stream session with. The stream group must be in <code>ACTIVE</code> status.</p>
     pub identifier: ::std::option::Option<::std::string::String>,
     /// <p><a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> or ID that uniquely identifies the stream session resource. Example ARN: <code>arn:aws:gameliftstreams:us-west-2:111122223333:streamsession/sg-1AB2C3De4/ABC123def4567</code>. Example ID: <code>ABC123def4567</code>.</p>
     /// <p>The stream session must be in <code>PENDING_CLIENT_RECONNECTION</code> or <code>ACTIVE</code> status.</p>
@@ -20,7 +20,7 @@ impl CreateStreamSessionConnectionInput {
         self.client_token.as_deref()
     }
     /// <p><a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> or ID that uniquely identifies the stream group resource. Example ARN: <code>arn:aws:gameliftstreams:us-west-2:111122223333:streamgroup/sg-1AB2C3De4</code>. Example ID: <code>sg-1AB2C3De4</code>.</p>
-    /// <p>The stream group that you want to run this stream session with. The stream group must be in <code>ACTIVE</code> status and have idle stream capacity.</p>
+    /// <p>The stream group that you want to run this stream session with. The stream group must be in <code>ACTIVE</code> status.</p>
     pub fn identifier(&self) -> ::std::option::Option<&str> {
         self.identifier.as_deref()
     }
@@ -76,20 +76,20 @@ impl CreateStreamSessionConnectionInputBuilder {
         &self.client_token
     }
     /// <p><a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> or ID that uniquely identifies the stream group resource. Example ARN: <code>arn:aws:gameliftstreams:us-west-2:111122223333:streamgroup/sg-1AB2C3De4</code>. Example ID: <code>sg-1AB2C3De4</code>.</p>
-    /// <p>The stream group that you want to run this stream session with. The stream group must be in <code>ACTIVE</code> status and have idle stream capacity.</p>
+    /// <p>The stream group that you want to run this stream session with. The stream group must be in <code>ACTIVE</code> status.</p>
     /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p><a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> or ID that uniquely identifies the stream group resource. Example ARN: <code>arn:aws:gameliftstreams:us-west-2:111122223333:streamgroup/sg-1AB2C3De4</code>. Example ID: <code>sg-1AB2C3De4</code>.</p>
-    /// <p>The stream group that you want to run this stream session with. The stream group must be in <code>ACTIVE</code> status and have idle stream capacity.</p>
+    /// <p>The stream group that you want to run this stream session with. The stream group must be in <code>ACTIVE</code> status.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identifier = input;
         self
     }
     /// <p><a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> or ID that uniquely identifies the stream group resource. Example ARN: <code>arn:aws:gameliftstreams:us-west-2:111122223333:streamgroup/sg-1AB2C3De4</code>. Example ID: <code>sg-1AB2C3De4</code>.</p>
-    /// <p>The stream group that you want to run this stream session with. The stream group must be in <code>ACTIVE</code> status and have idle stream capacity.</p>
+    /// <p>The stream group that you want to run this stream session with. The stream group must be in <code>ACTIVE</code> status.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.identifier
     }

@@ -6,11 +6,17 @@
 pub struct DataSource {
     /// <p>An Glue table.</p>
     pub glue_table: ::std::option::Option<crate::types::GlueTable>,
+    /// <p>An Glue table for Data Quality Operations.</p>
+    pub data_quality_glue_table: ::std::option::Option<crate::types::DataQualityGlueTable>,
 }
 impl DataSource {
     /// <p>An Glue table.</p>
     pub fn glue_table(&self) -> ::std::option::Option<&crate::types::GlueTable> {
         self.glue_table.as_ref()
+    }
+    /// <p>An Glue table for Data Quality Operations.</p>
+    pub fn data_quality_glue_table(&self) -> ::std::option::Option<&crate::types::DataQualityGlueTable> {
+        self.data_quality_glue_table.as_ref()
     }
 }
 impl DataSource {
@@ -25,10 +31,10 @@ impl DataSource {
 #[non_exhaustive]
 pub struct DataSourceBuilder {
     pub(crate) glue_table: ::std::option::Option<crate::types::GlueTable>,
+    pub(crate) data_quality_glue_table: ::std::option::Option<crate::types::DataQualityGlueTable>,
 }
 impl DataSourceBuilder {
     /// <p>An Glue table.</p>
-    /// This field is required.
     pub fn glue_table(mut self, input: crate::types::GlueTable) -> Self {
         self.glue_table = ::std::option::Option::Some(input);
         self
@@ -42,8 +48,25 @@ impl DataSourceBuilder {
     pub fn get_glue_table(&self) -> &::std::option::Option<crate::types::GlueTable> {
         &self.glue_table
     }
+    /// <p>An Glue table for Data Quality Operations.</p>
+    pub fn data_quality_glue_table(mut self, input: crate::types::DataQualityGlueTable) -> Self {
+        self.data_quality_glue_table = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An Glue table for Data Quality Operations.</p>
+    pub fn set_data_quality_glue_table(mut self, input: ::std::option::Option<crate::types::DataQualityGlueTable>) -> Self {
+        self.data_quality_glue_table = input;
+        self
+    }
+    /// <p>An Glue table for Data Quality Operations.</p>
+    pub fn get_data_quality_glue_table(&self) -> &::std::option::Option<crate::types::DataQualityGlueTable> {
+        &self.data_quality_glue_table
+    }
     /// Consumes the builder and constructs a [`DataSource`](crate::types::DataSource).
     pub fn build(self) -> crate::types::DataSource {
-        crate::types::DataSource { glue_table: self.glue_table }
+        crate::types::DataSource {
+            glue_table: self.glue_table,
+            data_quality_glue_table: self.data_quality_glue_table,
+        }
     }
 }

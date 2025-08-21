@@ -10,9 +10,9 @@ pub struct RecurrenceSettings {
     pub weekly_settings: ::std::option::Option<::std::vec::Vec<crate::types::WeeklySetting>>,
     /// <p>Information about on-call rotations that recur daily.</p>
     pub daily_settings: ::std::option::Option<::std::vec::Vec<crate::types::HandOffTime>>,
-    /// <p>The number of contacts, or shift team members designated to be on call concurrently during a shift. For example, in an on-call schedule containing ten contacts, a value of <code>2</code> designates that two of them are on call at any given time.</p>
+    /// <p>The number of contacts, or shift team members designated to be on call concurrently during a shift. For example, in an on-call schedule that contains ten contacts, a value of <code>2</code> designates that two of them are on call at any given time.</p>
     pub number_of_on_calls: i32,
-    /// <p>Information about the days of the week included in on-call rotation coverage.</p>
+    /// <p>Information about the days of the week that the on-call rotation coverage includes.</p>
     pub shift_coverages: ::std::option::Option<::std::collections::HashMap<crate::types::DayOfWeek, ::std::vec::Vec<crate::types::CoverageTime>>>,
     /// <p>The number of days, weeks, or months a single rotation lasts.</p>
     pub recurrence_multiplier: i32,
@@ -36,11 +36,11 @@ impl RecurrenceSettings {
     pub fn daily_settings(&self) -> &[crate::types::HandOffTime] {
         self.daily_settings.as_deref().unwrap_or_default()
     }
-    /// <p>The number of contacts, or shift team members designated to be on call concurrently during a shift. For example, in an on-call schedule containing ten contacts, a value of <code>2</code> designates that two of them are on call at any given time.</p>
+    /// <p>The number of contacts, or shift team members designated to be on call concurrently during a shift. For example, in an on-call schedule that contains ten contacts, a value of <code>2</code> designates that two of them are on call at any given time.</p>
     pub fn number_of_on_calls(&self) -> i32 {
         self.number_of_on_calls
     }
-    /// <p>Information about the days of the week included in on-call rotation coverage.</p>
+    /// <p>Information about the days of the week that the on-call rotation coverage includes.</p>
     pub fn shift_coverages(
         &self,
     ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::DayOfWeek, ::std::vec::Vec<crate::types::CoverageTime>>> {
@@ -131,18 +131,18 @@ impl RecurrenceSettingsBuilder {
     pub fn get_daily_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HandOffTime>> {
         &self.daily_settings
     }
-    /// <p>The number of contacts, or shift team members designated to be on call concurrently during a shift. For example, in an on-call schedule containing ten contacts, a value of <code>2</code> designates that two of them are on call at any given time.</p>
+    /// <p>The number of contacts, or shift team members designated to be on call concurrently during a shift. For example, in an on-call schedule that contains ten contacts, a value of <code>2</code> designates that two of them are on call at any given time.</p>
     /// This field is required.
     pub fn number_of_on_calls(mut self, input: i32) -> Self {
         self.number_of_on_calls = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of contacts, or shift team members designated to be on call concurrently during a shift. For example, in an on-call schedule containing ten contacts, a value of <code>2</code> designates that two of them are on call at any given time.</p>
+    /// <p>The number of contacts, or shift team members designated to be on call concurrently during a shift. For example, in an on-call schedule that contains ten contacts, a value of <code>2</code> designates that two of them are on call at any given time.</p>
     pub fn set_number_of_on_calls(mut self, input: ::std::option::Option<i32>) -> Self {
         self.number_of_on_calls = input;
         self
     }
-    /// <p>The number of contacts, or shift team members designated to be on call concurrently during a shift. For example, in an on-call schedule containing ten contacts, a value of <code>2</code> designates that two of them are on call at any given time.</p>
+    /// <p>The number of contacts, or shift team members designated to be on call concurrently during a shift. For example, in an on-call schedule that contains ten contacts, a value of <code>2</code> designates that two of them are on call at any given time.</p>
     pub fn get_number_of_on_calls(&self) -> &::std::option::Option<i32> {
         &self.number_of_on_calls
     }
@@ -150,14 +150,14 @@ impl RecurrenceSettingsBuilder {
     ///
     /// To override the contents of this collection use [`set_shift_coverages`](Self::set_shift_coverages).
     ///
-    /// <p>Information about the days of the week included in on-call rotation coverage.</p>
+    /// <p>Information about the days of the week that the on-call rotation coverage includes.</p>
     pub fn shift_coverages(mut self, k: crate::types::DayOfWeek, v: ::std::vec::Vec<crate::types::CoverageTime>) -> Self {
         let mut hash_map = self.shift_coverages.unwrap_or_default();
         hash_map.insert(k, v);
         self.shift_coverages = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>Information about the days of the week included in on-call rotation coverage.</p>
+    /// <p>Information about the days of the week that the on-call rotation coverage includes.</p>
     pub fn set_shift_coverages(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<crate::types::DayOfWeek, ::std::vec::Vec<crate::types::CoverageTime>>>,
@@ -165,7 +165,7 @@ impl RecurrenceSettingsBuilder {
         self.shift_coverages = input;
         self
     }
-    /// <p>Information about the days of the week included in on-call rotation coverage.</p>
+    /// <p>Information about the days of the week that the on-call rotation coverage includes.</p>
     pub fn get_shift_coverages(
         &self,
     ) -> &::std::option::Option<::std::collections::HashMap<crate::types::DayOfWeek, ::std::vec::Vec<crate::types::CoverageTime>>> {

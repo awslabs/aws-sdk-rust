@@ -6,7 +6,7 @@
 pub struct ChannelTargetInfo {
     /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
     pub contact_channel_id: ::std::string::String,
-    /// <p>The number of minutes to wait to retry sending engagement in the case the engagement initially fails.</p>
+    /// <p>The number of minutes to wait before retrying to send engagement if the engagement initially failed.</p>
     pub retry_interval_in_minutes: ::std::option::Option<i32>,
 }
 impl ChannelTargetInfo {
@@ -15,7 +15,7 @@ impl ChannelTargetInfo {
         use std::ops::Deref;
         self.contact_channel_id.deref()
     }
-    /// <p>The number of minutes to wait to retry sending engagement in the case the engagement initially fails.</p>
+    /// <p>The number of minutes to wait before retrying to send engagement if the engagement initially failed.</p>
     pub fn retry_interval_in_minutes(&self) -> ::std::option::Option<i32> {
         self.retry_interval_in_minutes
     }
@@ -50,17 +50,17 @@ impl ChannelTargetInfoBuilder {
     pub fn get_contact_channel_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.contact_channel_id
     }
-    /// <p>The number of minutes to wait to retry sending engagement in the case the engagement initially fails.</p>
+    /// <p>The number of minutes to wait before retrying to send engagement if the engagement initially failed.</p>
     pub fn retry_interval_in_minutes(mut self, input: i32) -> Self {
         self.retry_interval_in_minutes = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of minutes to wait to retry sending engagement in the case the engagement initially fails.</p>
+    /// <p>The number of minutes to wait before retrying to send engagement if the engagement initially failed.</p>
     pub fn set_retry_interval_in_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.retry_interval_in_minutes = input;
         self
     }
-    /// <p>The number of minutes to wait to retry sending engagement in the case the engagement initially fails.</p>
+    /// <p>The number of minutes to wait before retrying to send engagement if the engagement initially failed.</p>
     pub fn get_retry_interval_in_minutes(&self) -> &::std::option::Option<i32> {
         &self.retry_interval_in_minutes
     }

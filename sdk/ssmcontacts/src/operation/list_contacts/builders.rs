@@ -156,17 +156,17 @@ impl ListContactsFluentBuilder {
     pub fn get_alias_prefix(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_alias_prefix()
     }
-    /// <p>The type of contact. A contact is type <code>PERSONAL</code> and an escalation plan is type <code>ESCALATION</code>.</p>
+    /// <p>The type of contact.</p>
     pub fn r#type(mut self, input: crate::types::ContactType) -> Self {
         self.inner = self.inner.r#type(input);
         self
     }
-    /// <p>The type of contact. A contact is type <code>PERSONAL</code> and an escalation plan is type <code>ESCALATION</code>.</p>
+    /// <p>The type of contact.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ContactType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }
-    /// <p>The type of contact. A contact is type <code>PERSONAL</code> and an escalation plan is type <code>ESCALATION</code>.</p>
+    /// <p>The type of contact.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ContactType> {
         self.inner.get_type()
     }

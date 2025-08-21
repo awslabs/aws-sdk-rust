@@ -7,7 +7,15 @@ pub struct CreateContactInput {
     pub alias: ::std::option::Option<::std::string::String>,
     /// <p>The full name of the contact or escalation plan.</p>
     pub display_name: ::std::option::Option<::std::string::String>,
-    /// <p>To create an escalation plan use <code>ESCALATION</code>. To create a contact use <code>PERSONAL</code>.</p>
+    /// <p>The type of contact to create.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>PERSONAL</code>: A single, individual contact.</p></li>
+    /// <li>
+    /// <p><code>ESCALATION</code>: An escalation plan.</p></li>
+    /// <li>
+    /// <p><code>ONCALL_SCHEDULE</code>: An on-call schedule.</p></li>
+    /// </ul>
     pub r#type: ::std::option::Option<crate::types::ContactType>,
     /// <p>A list of stages. A contact has an engagement plan with stages that contact specified contact channels. An escalation plan uses stages that contact specified contacts.</p>
     pub plan: ::std::option::Option<crate::types::Plan>,
@@ -25,7 +33,15 @@ impl CreateContactInput {
     pub fn display_name(&self) -> ::std::option::Option<&str> {
         self.display_name.as_deref()
     }
-    /// <p>To create an escalation plan use <code>ESCALATION</code>. To create a contact use <code>PERSONAL</code>.</p>
+    /// <p>The type of contact to create.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>PERSONAL</code>: A single, individual contact.</p></li>
+    /// <li>
+    /// <p><code>ESCALATION</code>: An escalation plan.</p></li>
+    /// <li>
+    /// <p><code>ONCALL_SCHEDULE</code>: An on-call schedule.</p></li>
+    /// </ul>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::ContactType> {
         self.r#type.as_ref()
     }
@@ -92,18 +108,42 @@ impl CreateContactInputBuilder {
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.display_name
     }
-    /// <p>To create an escalation plan use <code>ESCALATION</code>. To create a contact use <code>PERSONAL</code>.</p>
+    /// <p>The type of contact to create.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>PERSONAL</code>: A single, individual contact.</p></li>
+    /// <li>
+    /// <p><code>ESCALATION</code>: An escalation plan.</p></li>
+    /// <li>
+    /// <p><code>ONCALL_SCHEDULE</code>: An on-call schedule.</p></li>
+    /// </ul>
     /// This field is required.
     pub fn r#type(mut self, input: crate::types::ContactType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>To create an escalation plan use <code>ESCALATION</code>. To create a contact use <code>PERSONAL</code>.</p>
+    /// <p>The type of contact to create.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>PERSONAL</code>: A single, individual contact.</p></li>
+    /// <li>
+    /// <p><code>ESCALATION</code>: An escalation plan.</p></li>
+    /// <li>
+    /// <p><code>ONCALL_SCHEDULE</code>: An on-call schedule.</p></li>
+    /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ContactType>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>To create an escalation plan use <code>ESCALATION</code>. To create a contact use <code>PERSONAL</code>.</p>
+    /// <p>The type of contact to create.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>PERSONAL</code>: A single, individual contact.</p></li>
+    /// <li>
+    /// <p><code>ESCALATION</code>: An escalation plan.</p></li>
+    /// <li>
+    /// <p><code>ONCALL_SCHEDULE</code>: An on-call schedule.</p></li>
+    /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ContactType> {
         &self.r#type
     }

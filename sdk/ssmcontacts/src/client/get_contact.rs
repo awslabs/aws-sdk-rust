@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`contact_arn(String)`](crate::operation::get_contact::GetContactOutput::contact_arn): <p>The ARN of the contact or escalation plan.</p>
     ///   - [`alias(String)`](crate::operation::get_contact::GetContactOutput::alias): <p>The alias of the contact or escalation plan. The alias is unique and identifiable.</p>
     ///   - [`display_name(Option<String>)`](crate::operation::get_contact::GetContactOutput::display_name): <p>The full name of the contact or escalation plan.</p>
-    ///   - [`r#type(ContactType)`](crate::operation::get_contact::GetContactOutput::type): <p>The type of contact, either <code>PERSONAL</code> or <code>ESCALATION</code>.</p>
+    ///   - [`r#type(ContactType)`](crate::operation::get_contact::GetContactOutput::type): <p>The type of contact.</p>
     ///   - [`plan(Option<Plan>)`](crate::operation::get_contact::GetContactOutput::plan): <p>Details about the specific timing or stages and targets of the escalation plan or engagement plan.</p>
     /// - On failure, responds with [`SdkError<GetContactError>`](crate::operation::get_contact::GetContactError)
     pub fn get_contact(&self) -> crate::operation::get_contact::builders::GetContactFluentBuilder {

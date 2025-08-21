@@ -1689,6 +1689,8 @@ pub(crate) mod shape_data_quality_analyzer_result;
 
 pub(crate) mod shape_data_quality_encryption;
 
+pub(crate) mod shape_data_quality_glue_table;
+
 pub(crate) mod shape_data_quality_observation;
 
 pub(crate) mod shape_data_quality_result;

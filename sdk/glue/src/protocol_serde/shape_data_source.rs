@@ -17,6 +17,11 @@ where
                         "GlueTable" => {
                             builder = builder.set_glue_table(crate::protocol_serde::shape_glue_table::de_glue_table(tokens)?);
                         }
+                        "DataQualityGlueTable" => {
+                            builder = builder.set_data_quality_glue_table(
+                                crate::protocol_serde::shape_data_quality_glue_table::de_data_quality_glue_table(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -27,7 +32,7 @@ where
                     }
                 }
             }
-            Ok(Some(crate::serde_util::data_source_correct_errors(builder).build()))
+            Ok(Some(builder.build()))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -44,6 +49,12 @@ pub fn ser_data_source(
         let mut object_2 = object.key("GlueTable").start_object();
         crate::protocol_serde::shape_glue_table::ser_glue_table(&mut object_2, var_1)?;
         object_2.finish();
+    }
+    if let Some(var_3) = &input.data_quality_glue_table {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("DataQualityGlueTable").start_object();
+        crate::protocol_serde::shape_data_quality_glue_table::ser_data_quality_glue_table(&mut object_4, var_3)?;
+        object_4.finish();
     }
     Ok(())
 }

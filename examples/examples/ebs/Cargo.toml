@@ -10,7 +10,7 @@ publish = false
 base64 = "0.13.0"
 sha2 = "0.9.5"
 aws-config= { version = "1.8.5", path = "../../../sdk/aws-config", features = ["behavior-version-latest"] }
-aws-sdk-ebs= { version = "1.81.0", path = "../../../sdk/ebs" }
+aws-sdk-ebs= { version = "1.82.0", path = "../../../sdk/ebs" }
 aws-sdk-ec2= { version = "1.160.0", path = "../../../sdk/ec2" }
 
 [dependencies.tokio]

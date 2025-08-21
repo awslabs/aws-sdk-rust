@@ -9,7 +9,7 @@ pub struct UpdateThreatEntitySetInput {
     /// <p>The ID returned by GuardDuty after updating the threat entity set resource.</p>
     pub threat_entity_set_id: ::std::option::Option<::std::string::String>,
     /// <p>A user-friendly name to identify the trusted entity set.</p>
-    /// <p><b>List naming constraints</b> - The name of your list can include lowercase letters, uppercase letters, numbers, dash (-), and underscore (_).</p>
+    /// <p>The name of your list can include lowercase letters, uppercase letters, numbers, dash (-), and underscore (_).</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The URI of the file that contains the trusted entity set.</p>
     pub location: ::std::option::Option<::std::string::String>,
@@ -29,7 +29,7 @@ impl UpdateThreatEntitySetInput {
         self.threat_entity_set_id.as_deref()
     }
     /// <p>A user-friendly name to identify the trusted entity set.</p>
-    /// <p><b>List naming constraints</b> - The name of your list can include lowercase letters, uppercase letters, numbers, dash (-), and underscore (_).</p>
+    /// <p>The name of your list can include lowercase letters, uppercase letters, numbers, dash (-), and underscore (_).</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -99,19 +99,19 @@ impl UpdateThreatEntitySetInputBuilder {
         &self.threat_entity_set_id
     }
     /// <p>A user-friendly name to identify the trusted entity set.</p>
-    /// <p><b>List naming constraints</b> - The name of your list can include lowercase letters, uppercase letters, numbers, dash (-), and underscore (_).</p>
+    /// <p>The name of your list can include lowercase letters, uppercase letters, numbers, dash (-), and underscore (_).</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A user-friendly name to identify the trusted entity set.</p>
-    /// <p><b>List naming constraints</b> - The name of your list can include lowercase letters, uppercase letters, numbers, dash (-), and underscore (_).</p>
+    /// <p>The name of your list can include lowercase letters, uppercase letters, numbers, dash (-), and underscore (_).</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>A user-friendly name to identify the trusted entity set.</p>
-    /// <p><b>List naming constraints</b> - The name of your list can include lowercase letters, uppercase letters, numbers, dash (-), and underscore (_).</p>
+    /// <p>The name of your list can include lowercase letters, uppercase letters, numbers, dash (-), and underscore (_).</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }

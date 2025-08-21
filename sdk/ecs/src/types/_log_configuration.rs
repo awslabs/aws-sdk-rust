@@ -113,7 +113,7 @@ pub struct LogConfiguration {
     /// </dt>
     /// <dd>
     /// <p>Required: No</p>
-    /// <p>Default value: <code>1m</code></p>
+    /// <p>Default value: <code>10m</code></p>
     /// <p>When <code>non-blocking</code> mode is used, the <code>max-buffer-size</code> log option controls the size of the buffer that's used for intermediate message storage. Make sure to specify an adequate buffer size based on your application. When the buffer fills up, further logs cannot be stored. Logs that cannot be stored are lost.</p>
     /// </dd>
     /// </dl>
@@ -226,7 +226,7 @@ impl LogConfiguration {
     /// </dt>
     /// <dd>
     /// <p>Required: No</p>
-    /// <p>Default value: <code>1m</code></p>
+    /// <p>Default value: <code>10m</code></p>
     /// <p>When <code>non-blocking</code> mode is used, the <code>max-buffer-size</code> log option controls the size of the buffer that's used for intermediate message storage. Make sure to specify an adequate buffer size based on your application. When the buffer fills up, further logs cannot be stored. Logs that cannot be stored are lost.</p>
     /// </dd>
     /// </dl>
@@ -387,7 +387,7 @@ impl LogConfigurationBuilder {
     /// </dt>
     /// <dd>
     /// <p>Required: No</p>
-    /// <p>Default value: <code>1m</code></p>
+    /// <p>Default value: <code>10m</code></p>
     /// <p>When <code>non-blocking</code> mode is used, the <code>max-buffer-size</code> log option controls the size of the buffer that's used for intermediate message storage. Make sure to specify an adequate buffer size based on your application. When the buffer fills up, further logs cannot be stored. Logs that cannot be stored are lost.</p>
     /// </dd>
     /// </dl>
@@ -491,7 +491,7 @@ impl LogConfigurationBuilder {
     /// </dt>
     /// <dd>
     /// <p>Required: No</p>
-    /// <p>Default value: <code>1m</code></p>
+    /// <p>Default value: <code>10m</code></p>
     /// <p>When <code>non-blocking</code> mode is used, the <code>max-buffer-size</code> log option controls the size of the buffer that's used for intermediate message storage. Make sure to specify an adequate buffer size based on your application. When the buffer fills up, further logs cannot be stored. Logs that cannot be stored are lost.</p>
     /// </dd>
     /// </dl>
@@ -593,7 +593,7 @@ impl LogConfigurationBuilder {
     /// </dt>
     /// <dd>
     /// <p>Required: No</p>
-    /// <p>Default value: <code>1m</code></p>
+    /// <p>Default value: <code>10m</code></p>
     /// <p>When <code>non-blocking</code> mode is used, the <code>max-buffer-size</code> log option controls the size of the buffer that's used for intermediate message storage. Make sure to specify an adequate buffer size based on your application. When the buffer fills up, further logs cannot be stored. Logs that cannot be stored are lost.</p>
     /// </dd>
     /// </dl>

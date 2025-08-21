@@ -23,6 +23,7 @@ impl crate::operation::associate_applications::builders::AssociateApplicationsIn
 /// Fluent builder constructing a request to `AssociateApplications`.
 ///
 /// <p>When you associate, or link, an application with a stream group, then Amazon GameLift Streams can launch the application using the stream group's allocated compute resources. The stream group must be in <code>ACTIVE</code> status. You can reverse this action by using <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_DisassociateApplications.html">DisassociateApplications</a>.</p>
+/// <p>If a stream group does not already have a linked application, Amazon GameLift Streams will automatically assign the first application provided in <code>ApplicationIdentifiers</code> as the default.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateApplicationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -439,6 +439,8 @@ pub use crate::types::_test_connection_input::TestConnectionInputBuilder;
 
 pub use crate::types::_data_source::DataSourceBuilder;
 
+pub use crate::types::_data_quality_glue_table::DataQualityGlueTableBuilder;
+
 pub use crate::types::_glue_table::GlueTableBuilder;
 
 pub use crate::types::_data_quality_evaluation_run_additional_run_options::DataQualityEvaluationRunAdditionalRunOptionsBuilder;

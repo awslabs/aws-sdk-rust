@@ -9,7 +9,7 @@ pub struct ListContactsInput {
     pub max_results: ::std::option::Option<i32>,
     /// <p>Used to list only contacts who's aliases start with the specified prefix.</p>
     pub alias_prefix: ::std::option::Option<::std::string::String>,
-    /// <p>The type of contact. A contact is type <code>PERSONAL</code> and an escalation plan is type <code>ESCALATION</code>.</p>
+    /// <p>The type of contact.</p>
     pub r#type: ::std::option::Option<crate::types::ContactType>,
 }
 impl ListContactsInput {
@@ -25,7 +25,7 @@ impl ListContactsInput {
     pub fn alias_prefix(&self) -> ::std::option::Option<&str> {
         self.alias_prefix.as_deref()
     }
-    /// <p>The type of contact. A contact is type <code>PERSONAL</code> and an escalation plan is type <code>ESCALATION</code>.</p>
+    /// <p>The type of contact.</p>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::ContactType> {
         self.r#type.as_ref()
     }
@@ -89,17 +89,17 @@ impl ListContactsInputBuilder {
     pub fn get_alias_prefix(&self) -> &::std::option::Option<::std::string::String> {
         &self.alias_prefix
     }
-    /// <p>The type of contact. A contact is type <code>PERSONAL</code> and an escalation plan is type <code>ESCALATION</code>.</p>
+    /// <p>The type of contact.</p>
     pub fn r#type(mut self, input: crate::types::ContactType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of contact. A contact is type <code>PERSONAL</code> and an escalation plan is type <code>ESCALATION</code>.</p>
+    /// <p>The type of contact.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ContactType>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>The type of contact. A contact is type <code>PERSONAL</code> and an escalation plan is type <code>ESCALATION</code>.</p>
+    /// <p>The type of contact.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ContactType> {
         &self.r#type
     }

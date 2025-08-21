@@ -22,7 +22,7 @@ impl crate::operation::batch_put_data_quality_statistic_annotation::builders::Ba
 }
 /// Fluent builder constructing a request to `BatchPutDataQualityStatisticAnnotation`.
 ///
-/// <p>Annotate datapoints over time for a specific data quality statistic.</p>
+/// <p>Annotate datapoints over time for a specific data quality statistic. The API requires both profileID and statisticID as part of the InclusionAnnotation input. The API only works for a single statisticId across multiple profiles.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchPutDataQualityStatisticAnnotationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -117,17 +117,17 @@ impl BatchPutDataQualityStatisticAnnotationFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_inclusion_annotations`](Self::set_inclusion_annotations).
     ///
-    /// <p>A list of <code>DatapointInclusionAnnotation</code>'s.</p>
+    /// <p>A list of <code>DatapointInclusionAnnotation</code>'s. The InclusionAnnotations must contain a profileId and statisticId. If there are multiple InclusionAnnotations, the list must refer to a single statisticId across multiple profileIds.</p>
     pub fn inclusion_annotations(mut self, input: crate::types::DatapointInclusionAnnotation) -> Self {
         self.inner = self.inner.inclusion_annotations(input);
         self
     }
-    /// <p>A list of <code>DatapointInclusionAnnotation</code>'s.</p>
+    /// <p>A list of <code>DatapointInclusionAnnotation</code>'s. The InclusionAnnotations must contain a profileId and statisticId. If there are multiple InclusionAnnotations, the list must refer to a single statisticId across multiple profileIds.</p>
     pub fn set_inclusion_annotations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DatapointInclusionAnnotation>>) -> Self {
         self.inner = self.inner.set_inclusion_annotations(input);
         self
     }
-    /// <p>A list of <code>DatapointInclusionAnnotation</code>'s.</p>
+    /// <p>A list of <code>DatapointInclusionAnnotation</code>'s. The InclusionAnnotations must contain a profileId and statisticId. If there are multiple InclusionAnnotations, the list must refer to a single statisticId across multiple profileIds.</p>
     pub fn get_inclusion_annotations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DatapointInclusionAnnotation>> {
         self.inner.get_inclusion_annotations()
     }

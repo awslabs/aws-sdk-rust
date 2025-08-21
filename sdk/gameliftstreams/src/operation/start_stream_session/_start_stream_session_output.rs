@@ -11,22 +11,39 @@ pub struct StartStreamSessionOutput {
     pub stream_group_id: ::std::option::Option<::std::string::String>,
     /// <p>An opaque, unique identifier for an end-user, defined by the developer.</p>
     pub user_id: ::std::option::Option<::std::string::String>,
-    /// <p>The current status of the stream session. A stream session can host clients when in <code>ACTIVE</code> status.</p>
+    /// <p>The current status of the stream session. A stream session is ready for a client to connect when in <code>ACTIVE</code> status.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ACTIVATING</code>: The stream session is starting and preparing to stream.</p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code>: The stream session is ready and waiting for a client connection. A client has <code>ConnectionTimeoutSeconds</code> (specified in <code>StartStreamSession</code>) from when the session reaches <code>ACTIVE</code> state to establish a connection. If no client connects within this timeframe, the session automatically terminates.</p></li>
+    /// <li>
+    /// <p><code>CONNECTED</code>: The stream session has a connected client. A session will automatically terminate if there is no user input for 60 minutes, or if the maximum length of a session specified by <code>SessionLengthSeconds</code> in <code>StartStreamSession</code> is exceeded.</p></li>
+    /// <li>
+    /// <p><code>ERROR</code>: The stream session failed to activate.</p></li>
+    /// <li>
+    /// <p><code>PENDING_CLIENT_RECONNECTION</code>: A client has recently disconnected and the stream session is waiting for the client to reconnect. A client has <code>ConnectionTimeoutSeconds</code> (specified in <code>StartStreamSession</code>) from when the session reaches <code>PENDING_CLIENT_RECONNECTION</code> state to re-establish a connection. If no client connects within this timeframe, the session automatically terminates.</p></li>
+    /// <li>
+    /// <p><code>RECONNECTING</code>: A client has initiated a reconnect to a session that was in <code>PENDING_CLIENT_RECONNECTION</code> state.</p></li>
+    /// <li>
+    /// <p><code>TERMINATING</code>: The stream session is ending.</p></li>
+    /// <li>
+    /// <p><code>TERMINATED</code>: The stream session has ended.</p></li>
+    /// </ul>
     pub status: ::std::option::Option<crate::types::StreamSessionStatus>,
     /// <p>A short description of the reason the stream session is in <code>ERROR</code> status.</p>
     pub status_reason: ::std::option::Option<crate::types::StreamSessionStatusReason>,
     /// <p>The data transfer protocol in use with the stream session.</p>
     pub protocol: ::std::option::Option<crate::types::Protocol>,
-    /// <p>The location where Amazon GameLift Streams is streaming your application from.</p>
-    /// <p>A location's name. For example, <code>us-east-1</code>. For a complete list of locations that Amazon GameLift Streams supports, refer to <a href="https://docs.aws.amazon.com/gameliftstreams/latest/developerguide/regions-quotas.html">Regions, quotas, and limitations</a> in the <i>Amazon GameLift Streams Developer Guide</i>.</p>
+    /// <p>The location where Amazon GameLift Streams hosts and streams your application. For example, <code>us-east-1</code>. For a complete list of locations that Amazon GameLift Streams supports, refer to <a href="https://docs.aws.amazon.com/gameliftstreams/latest/developerguide/regions-quotas.html">Regions, quotas, and limitations</a> in the <i>Amazon GameLift Streams Developer Guide</i>.</p>
     pub location: ::std::option::Option<::std::string::String>,
     /// <p>The WebRTC ICE offer string that a client generates to initiate a connection to the stream session.</p>
     pub signal_request: ::std::option::Option<::std::string::String>,
     /// <p>The WebRTC answer string that the stream server generates in response to the <code>SignalRequest</code>.</p>
     pub signal_response: ::std::option::Option<::std::string::String>,
-    /// <p>The maximum length of time (in seconds) that Amazon GameLift Streams keeps the stream session open. At this point, Amazon GameLift Streams ends the stream session regardless of any existing client connections.</p>
+    /// <p>The length of time that Amazon GameLift Streams should wait for a client to connect or reconnect to the stream session. This time span starts when the stream session reaches <code>ACTIVE</code> or <code>PENDING_CLIENT_RECONNECTION</code> state. If no client connects (or reconnects) before the timeout, Amazon GameLift Streams terminates the stream session.</p>
     pub connection_timeout_seconds: ::std::option::Option<i32>,
-    /// <p>The length of time that Amazon GameLift Streams keeps the game session open.</p>
+    /// <p>The maximum duration of a session. Amazon GameLift Streams will automatically terminate a session after this amount of time has elapsed, regardless of any existing client connections.</p>
     pub session_length_seconds: ::std::option::Option<i32>,
     /// <p>A list of CLI arguments that are sent to the streaming server when a stream session launches. You can use this to configure the application or stream session details. You can also provide custom arguments that Amazon GameLift Streams passes to your game client.</p>
     /// <p><code>AdditionalEnvironmentVariables</code> and <code>AdditionalLaunchArgs</code> have similar purposes. <code>AdditionalEnvironmentVariables</code> passes data using environment variables; while <code>AdditionalLaunchArgs</code> passes data using command-line arguments.</p>
@@ -44,7 +61,8 @@ pub struct StartStreamSessionOutput {
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A timestamp that indicates when this resource was created. Timestamps are expressed using in ISO8601 format, such as: <code>2022-12-27T22:29:40+00:00</code> (UTC).</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>An <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> that uniquely identifies the application resource. Example ARN: <code>arn:aws:gameliftstreams:us-west-2:111122223333:application/a-9ZY8X7Wv6</code>.</p>
+    /// <p>The application streaming in this session.</p>
+    /// <p>This value is an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> that uniquely identifies the application resource. Example ARN: <code>arn:aws:gameliftstreams:us-west-2:111122223333:application/a-9ZY8X7Wv6</code>.</p>
     pub application_arn: ::std::option::Option<::std::string::String>,
     /// <p>Provides details about the stream session's exported files.</p>
     pub export_files_metadata: ::std::option::Option<crate::types::ExportFilesMetadata>,
@@ -67,7 +85,25 @@ impl StartStreamSessionOutput {
     pub fn user_id(&self) -> ::std::option::Option<&str> {
         self.user_id.as_deref()
     }
-    /// <p>The current status of the stream session. A stream session can host clients when in <code>ACTIVE</code> status.</p>
+    /// <p>The current status of the stream session. A stream session is ready for a client to connect when in <code>ACTIVE</code> status.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ACTIVATING</code>: The stream session is starting and preparing to stream.</p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code>: The stream session is ready and waiting for a client connection. A client has <code>ConnectionTimeoutSeconds</code> (specified in <code>StartStreamSession</code>) from when the session reaches <code>ACTIVE</code> state to establish a connection. If no client connects within this timeframe, the session automatically terminates.</p></li>
+    /// <li>
+    /// <p><code>CONNECTED</code>: The stream session has a connected client. A session will automatically terminate if there is no user input for 60 minutes, or if the maximum length of a session specified by <code>SessionLengthSeconds</code> in <code>StartStreamSession</code> is exceeded.</p></li>
+    /// <li>
+    /// <p><code>ERROR</code>: The stream session failed to activate.</p></li>
+    /// <li>
+    /// <p><code>PENDING_CLIENT_RECONNECTION</code>: A client has recently disconnected and the stream session is waiting for the client to reconnect. A client has <code>ConnectionTimeoutSeconds</code> (specified in <code>StartStreamSession</code>) from when the session reaches <code>PENDING_CLIENT_RECONNECTION</code> state to re-establish a connection. If no client connects within this timeframe, the session automatically terminates.</p></li>
+    /// <li>
+    /// <p><code>RECONNECTING</code>: A client has initiated a reconnect to a session that was in <code>PENDING_CLIENT_RECONNECTION</code> state.</p></li>
+    /// <li>
+    /// <p><code>TERMINATING</code>: The stream session is ending.</p></li>
+    /// <li>
+    /// <p><code>TERMINATED</code>: The stream session has ended.</p></li>
+    /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::StreamSessionStatus> {
         self.status.as_ref()
     }
@@ -79,8 +115,7 @@ impl StartStreamSessionOutput {
     pub fn protocol(&self) -> ::std::option::Option<&crate::types::Protocol> {
         self.protocol.as_ref()
     }
-    /// <p>The location where Amazon GameLift Streams is streaming your application from.</p>
-    /// <p>A location's name. For example, <code>us-east-1</code>. For a complete list of locations that Amazon GameLift Streams supports, refer to <a href="https://docs.aws.amazon.com/gameliftstreams/latest/developerguide/regions-quotas.html">Regions, quotas, and limitations</a> in the <i>Amazon GameLift Streams Developer Guide</i>.</p>
+    /// <p>The location where Amazon GameLift Streams hosts and streams your application. For example, <code>us-east-1</code>. For a complete list of locations that Amazon GameLift Streams supports, refer to <a href="https://docs.aws.amazon.com/gameliftstreams/latest/developerguide/regions-quotas.html">Regions, quotas, and limitations</a> in the <i>Amazon GameLift Streams Developer Guide</i>.</p>
     pub fn location(&self) -> ::std::option::Option<&str> {
         self.location.as_deref()
     }
@@ -92,11 +127,11 @@ impl StartStreamSessionOutput {
     pub fn signal_response(&self) -> ::std::option::Option<&str> {
         self.signal_response.as_deref()
     }
-    /// <p>The maximum length of time (in seconds) that Amazon GameLift Streams keeps the stream session open. At this point, Amazon GameLift Streams ends the stream session regardless of any existing client connections.</p>
+    /// <p>The length of time that Amazon GameLift Streams should wait for a client to connect or reconnect to the stream session. This time span starts when the stream session reaches <code>ACTIVE</code> or <code>PENDING_CLIENT_RECONNECTION</code> state. If no client connects (or reconnects) before the timeout, Amazon GameLift Streams terminates the stream session.</p>
     pub fn connection_timeout_seconds(&self) -> ::std::option::Option<i32> {
         self.connection_timeout_seconds
     }
-    /// <p>The length of time that Amazon GameLift Streams keeps the game session open.</p>
+    /// <p>The maximum duration of a session. Amazon GameLift Streams will automatically terminate a session after this amount of time has elapsed, regardless of any existing client connections.</p>
     pub fn session_length_seconds(&self) -> ::std::option::Option<i32> {
         self.session_length_seconds
     }
@@ -132,7 +167,8 @@ impl StartStreamSessionOutput {
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p>An <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> that uniquely identifies the application resource. Example ARN: <code>arn:aws:gameliftstreams:us-west-2:111122223333:application/a-9ZY8X7Wv6</code>.</p>
+    /// <p>The application streaming in this session.</p>
+    /// <p>This value is an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> that uniquely identifies the application resource. Example ARN: <code>arn:aws:gameliftstreams:us-west-2:111122223333:application/a-9ZY8X7Wv6</code>.</p>
     pub fn application_arn(&self) -> ::std::option::Option<&str> {
         self.application_arn.as_deref()
     }
@@ -263,17 +299,71 @@ impl StartStreamSessionOutputBuilder {
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_id
     }
-    /// <p>The current status of the stream session. A stream session can host clients when in <code>ACTIVE</code> status.</p>
+    /// <p>The current status of the stream session. A stream session is ready for a client to connect when in <code>ACTIVE</code> status.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ACTIVATING</code>: The stream session is starting and preparing to stream.</p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code>: The stream session is ready and waiting for a client connection. A client has <code>ConnectionTimeoutSeconds</code> (specified in <code>StartStreamSession</code>) from when the session reaches <code>ACTIVE</code> state to establish a connection. If no client connects within this timeframe, the session automatically terminates.</p></li>
+    /// <li>
+    /// <p><code>CONNECTED</code>: The stream session has a connected client. A session will automatically terminate if there is no user input for 60 minutes, or if the maximum length of a session specified by <code>SessionLengthSeconds</code> in <code>StartStreamSession</code> is exceeded.</p></li>
+    /// <li>
+    /// <p><code>ERROR</code>: The stream session failed to activate.</p></li>
+    /// <li>
+    /// <p><code>PENDING_CLIENT_RECONNECTION</code>: A client has recently disconnected and the stream session is waiting for the client to reconnect. A client has <code>ConnectionTimeoutSeconds</code> (specified in <code>StartStreamSession</code>) from when the session reaches <code>PENDING_CLIENT_RECONNECTION</code> state to re-establish a connection. If no client connects within this timeframe, the session automatically terminates.</p></li>
+    /// <li>
+    /// <p><code>RECONNECTING</code>: A client has initiated a reconnect to a session that was in <code>PENDING_CLIENT_RECONNECTION</code> state.</p></li>
+    /// <li>
+    /// <p><code>TERMINATING</code>: The stream session is ending.</p></li>
+    /// <li>
+    /// <p><code>TERMINATED</code>: The stream session has ended.</p></li>
+    /// </ul>
     pub fn status(mut self, input: crate::types::StreamSessionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The current status of the stream session. A stream session can host clients when in <code>ACTIVE</code> status.</p>
+    /// <p>The current status of the stream session. A stream session is ready for a client to connect when in <code>ACTIVE</code> status.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ACTIVATING</code>: The stream session is starting and preparing to stream.</p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code>: The stream session is ready and waiting for a client connection. A client has <code>ConnectionTimeoutSeconds</code> (specified in <code>StartStreamSession</code>) from when the session reaches <code>ACTIVE</code> state to establish a connection. If no client connects within this timeframe, the session automatically terminates.</p></li>
+    /// <li>
+    /// <p><code>CONNECTED</code>: The stream session has a connected client. A session will automatically terminate if there is no user input for 60 minutes, or if the maximum length of a session specified by <code>SessionLengthSeconds</code> in <code>StartStreamSession</code> is exceeded.</p></li>
+    /// <li>
+    /// <p><code>ERROR</code>: The stream session failed to activate.</p></li>
+    /// <li>
+    /// <p><code>PENDING_CLIENT_RECONNECTION</code>: A client has recently disconnected and the stream session is waiting for the client to reconnect. A client has <code>ConnectionTimeoutSeconds</code> (specified in <code>StartStreamSession</code>) from when the session reaches <code>PENDING_CLIENT_RECONNECTION</code> state to re-establish a connection. If no client connects within this timeframe, the session automatically terminates.</p></li>
+    /// <li>
+    /// <p><code>RECONNECTING</code>: A client has initiated a reconnect to a session that was in <code>PENDING_CLIENT_RECONNECTION</code> state.</p></li>
+    /// <li>
+    /// <p><code>TERMINATING</code>: The stream session is ending.</p></li>
+    /// <li>
+    /// <p><code>TERMINATED</code>: The stream session has ended.</p></li>
+    /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::StreamSessionStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The current status of the stream session. A stream session can host clients when in <code>ACTIVE</code> status.</p>
+    /// <p>The current status of the stream session. A stream session is ready for a client to connect when in <code>ACTIVE</code> status.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ACTIVATING</code>: The stream session is starting and preparing to stream.</p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code>: The stream session is ready and waiting for a client connection. A client has <code>ConnectionTimeoutSeconds</code> (specified in <code>StartStreamSession</code>) from when the session reaches <code>ACTIVE</code> state to establish a connection. If no client connects within this timeframe, the session automatically terminates.</p></li>
+    /// <li>
+    /// <p><code>CONNECTED</code>: The stream session has a connected client. A session will automatically terminate if there is no user input for 60 minutes, or if the maximum length of a session specified by <code>SessionLengthSeconds</code> in <code>StartStreamSession</code> is exceeded.</p></li>
+    /// <li>
+    /// <p><code>ERROR</code>: The stream session failed to activate.</p></li>
+    /// <li>
+    /// <p><code>PENDING_CLIENT_RECONNECTION</code>: A client has recently disconnected and the stream session is waiting for the client to reconnect. A client has <code>ConnectionTimeoutSeconds</code> (specified in <code>StartStreamSession</code>) from when the session reaches <code>PENDING_CLIENT_RECONNECTION</code> state to re-establish a connection. If no client connects within this timeframe, the session automatically terminates.</p></li>
+    /// <li>
+    /// <p><code>RECONNECTING</code>: A client has initiated a reconnect to a session that was in <code>PENDING_CLIENT_RECONNECTION</code> state.</p></li>
+    /// <li>
+    /// <p><code>TERMINATING</code>: The stream session is ending.</p></li>
+    /// <li>
+    /// <p><code>TERMINATED</code>: The stream session has ended.</p></li>
+    /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::StreamSessionStatus> {
         &self.status
     }
@@ -305,20 +395,17 @@ impl StartStreamSessionOutputBuilder {
     pub fn get_protocol(&self) -> &::std::option::Option<crate::types::Protocol> {
         &self.protocol
     }
-    /// <p>The location where Amazon GameLift Streams is streaming your application from.</p>
-    /// <p>A location's name. For example, <code>us-east-1</code>. For a complete list of locations that Amazon GameLift Streams supports, refer to <a href="https://docs.aws.amazon.com/gameliftstreams/latest/developerguide/regions-quotas.html">Regions, quotas, and limitations</a> in the <i>Amazon GameLift Streams Developer Guide</i>.</p>
+    /// <p>The location where Amazon GameLift Streams hosts and streams your application. For example, <code>us-east-1</code>. For a complete list of locations that Amazon GameLift Streams supports, refer to <a href="https://docs.aws.amazon.com/gameliftstreams/latest/developerguide/regions-quotas.html">Regions, quotas, and limitations</a> in the <i>Amazon GameLift Streams Developer Guide</i>.</p>
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The location where Amazon GameLift Streams is streaming your application from.</p>
-    /// <p>A location's name. For example, <code>us-east-1</code>. For a complete list of locations that Amazon GameLift Streams supports, refer to <a href="https://docs.aws.amazon.com/gameliftstreams/latest/developerguide/regions-quotas.html">Regions, quotas, and limitations</a> in the <i>Amazon GameLift Streams Developer Guide</i>.</p>
+    /// <p>The location where Amazon GameLift Streams hosts and streams your application. For example, <code>us-east-1</code>. For a complete list of locations that Amazon GameLift Streams supports, refer to <a href="https://docs.aws.amazon.com/gameliftstreams/latest/developerguide/regions-quotas.html">Regions, quotas, and limitations</a> in the <i>Amazon GameLift Streams Developer Guide</i>.</p>
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location = input;
         self
     }
-    /// <p>The location where Amazon GameLift Streams is streaming your application from.</p>
-    /// <p>A location's name. For example, <code>us-east-1</code>. For a complete list of locations that Amazon GameLift Streams supports, refer to <a href="https://docs.aws.amazon.com/gameliftstreams/latest/developerguide/regions-quotas.html">Regions, quotas, and limitations</a> in the <i>Amazon GameLift Streams Developer Guide</i>.</p>
+    /// <p>The location where Amazon GameLift Streams hosts and streams your application. For example, <code>us-east-1</code>. For a complete list of locations that Amazon GameLift Streams supports, refer to <a href="https://docs.aws.amazon.com/gameliftstreams/latest/developerguide/regions-quotas.html">Regions, quotas, and limitations</a> in the <i>Amazon GameLift Streams Developer Guide</i>.</p>
     pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
         &self.location
     }
@@ -350,31 +437,31 @@ impl StartStreamSessionOutputBuilder {
     pub fn get_signal_response(&self) -> &::std::option::Option<::std::string::String> {
         &self.signal_response
     }
-    /// <p>The maximum length of time (in seconds) that Amazon GameLift Streams keeps the stream session open. At this point, Amazon GameLift Streams ends the stream session regardless of any existing client connections.</p>
+    /// <p>The length of time that Amazon GameLift Streams should wait for a client to connect or reconnect to the stream session. This time span starts when the stream session reaches <code>ACTIVE</code> or <code>PENDING_CLIENT_RECONNECTION</code> state. If no client connects (or reconnects) before the timeout, Amazon GameLift Streams terminates the stream session.</p>
     pub fn connection_timeout_seconds(mut self, input: i32) -> Self {
         self.connection_timeout_seconds = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum length of time (in seconds) that Amazon GameLift Streams keeps the stream session open. At this point, Amazon GameLift Streams ends the stream session regardless of any existing client connections.</p>
+    /// <p>The length of time that Amazon GameLift Streams should wait for a client to connect or reconnect to the stream session. This time span starts when the stream session reaches <code>ACTIVE</code> or <code>PENDING_CLIENT_RECONNECTION</code> state. If no client connects (or reconnects) before the timeout, Amazon GameLift Streams terminates the stream session.</p>
     pub fn set_connection_timeout_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.connection_timeout_seconds = input;
         self
     }
-    /// <p>The maximum length of time (in seconds) that Amazon GameLift Streams keeps the stream session open. At this point, Amazon GameLift Streams ends the stream session regardless of any existing client connections.</p>
+    /// <p>The length of time that Amazon GameLift Streams should wait for a client to connect or reconnect to the stream session. This time span starts when the stream session reaches <code>ACTIVE</code> or <code>PENDING_CLIENT_RECONNECTION</code> state. If no client connects (or reconnects) before the timeout, Amazon GameLift Streams terminates the stream session.</p>
     pub fn get_connection_timeout_seconds(&self) -> &::std::option::Option<i32> {
         &self.connection_timeout_seconds
     }
-    /// <p>The length of time that Amazon GameLift Streams keeps the game session open.</p>
+    /// <p>The maximum duration of a session. Amazon GameLift Streams will automatically terminate a session after this amount of time has elapsed, regardless of any existing client connections.</p>
     pub fn session_length_seconds(mut self, input: i32) -> Self {
         self.session_length_seconds = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The length of time that Amazon GameLift Streams keeps the game session open.</p>
+    /// <p>The maximum duration of a session. Amazon GameLift Streams will automatically terminate a session after this amount of time has elapsed, regardless of any existing client connections.</p>
     pub fn set_session_length_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.session_length_seconds = input;
         self
     }
-    /// <p>The length of time that Amazon GameLift Streams keeps the game session open.</p>
+    /// <p>The maximum duration of a session. Amazon GameLift Streams will automatically terminate a session after this amount of time has elapsed, regardless of any existing client connections.</p>
     pub fn get_session_length_seconds(&self) -> &::std::option::Option<i32> {
         &self.session_length_seconds
     }
@@ -495,17 +582,20 @@ impl StartStreamSessionOutputBuilder {
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_at
     }
-    /// <p>An <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> that uniquely identifies the application resource. Example ARN: <code>arn:aws:gameliftstreams:us-west-2:111122223333:application/a-9ZY8X7Wv6</code>.</p>
+    /// <p>The application streaming in this session.</p>
+    /// <p>This value is an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> that uniquely identifies the application resource. Example ARN: <code>arn:aws:gameliftstreams:us-west-2:111122223333:application/a-9ZY8X7Wv6</code>.</p>
     pub fn application_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> that uniquely identifies the application resource. Example ARN: <code>arn:aws:gameliftstreams:us-west-2:111122223333:application/a-9ZY8X7Wv6</code>.</p>
+    /// <p>The application streaming in this session.</p>
+    /// <p>This value is an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> that uniquely identifies the application resource. Example ARN: <code>arn:aws:gameliftstreams:us-west-2:111122223333:application/a-9ZY8X7Wv6</code>.</p>
     pub fn set_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_arn = input;
         self
     }
-    /// <p>An <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> that uniquely identifies the application resource. Example ARN: <code>arn:aws:gameliftstreams:us-west-2:111122223333:application/a-9ZY8X7Wv6</code>.</p>
+    /// <p>The application streaming in this session.</p>
+    /// <p>This value is an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> that uniquely identifies the application resource. Example ARN: <code>arn:aws:gameliftstreams:us-west-2:111122223333:application/a-9ZY8X7Wv6</code>.</p>
     pub fn get_application_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_arn
     }

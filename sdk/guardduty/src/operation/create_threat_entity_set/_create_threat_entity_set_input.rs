@@ -7,7 +7,7 @@ pub struct CreateThreatEntitySetInput {
     /// <p>To find the <code>detectorId</code> in the current Region, see the Settings page in the GuardDuty console, or run the <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_ListDetectors.html">ListDetectors</a> API.</p>
     pub detector_id: ::std::option::Option<::std::string::String>,
     /// <p>A user-friendly name to identify the threat entity set.</p>
-    /// <p><b>List naming constraints</b> - The name of your list can include lowercase letters, uppercase letters, numbers, dash (-), and underscore (_).</p>
+    /// <p>The name of your list can include lowercase letters, uppercase letters, numbers, dash (-), and underscore (_).</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The format of the file that contains the threat entity set.</p>
     pub format: ::std::option::Option<crate::types::ThreatEntitySetFormat>,
@@ -29,7 +29,7 @@ impl CreateThreatEntitySetInput {
         self.detector_id.as_deref()
     }
     /// <p>A user-friendly name to identify the threat entity set.</p>
-    /// <p><b>List naming constraints</b> - The name of your list can include lowercase letters, uppercase letters, numbers, dash (-), and underscore (_).</p>
+    /// <p>The name of your list can include lowercase letters, uppercase letters, numbers, dash (-), and underscore (_).</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -98,20 +98,20 @@ impl CreateThreatEntitySetInputBuilder {
         &self.detector_id
     }
     /// <p>A user-friendly name to identify the threat entity set.</p>
-    /// <p><b>List naming constraints</b> - The name of your list can include lowercase letters, uppercase letters, numbers, dash (-), and underscore (_).</p>
+    /// <p>The name of your list can include lowercase letters, uppercase letters, numbers, dash (-), and underscore (_).</p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A user-friendly name to identify the threat entity set.</p>
-    /// <p><b>List naming constraints</b> - The name of your list can include lowercase letters, uppercase letters, numbers, dash (-), and underscore (_).</p>
+    /// <p>The name of your list can include lowercase letters, uppercase letters, numbers, dash (-), and underscore (_).</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>A user-friendly name to identify the threat entity set.</p>
-    /// <p><b>List naming constraints</b> - The name of your list can include lowercase letters, uppercase letters, numbers, dash (-), and underscore (_).</p>
+    /// <p>The name of your list can include lowercase letters, uppercase letters, numbers, dash (-), and underscore (_).</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }

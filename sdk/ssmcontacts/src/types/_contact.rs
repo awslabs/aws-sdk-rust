@@ -10,7 +10,15 @@ pub struct Contact {
     pub alias: ::std::string::String,
     /// <p>The full name of the contact or escalation plan.</p>
     pub display_name: ::std::option::Option<::std::string::String>,
-    /// <p>Refers to the type of contact. A single contact is type <code>PERSONAL</code> and an escalation plan is type <code>ESCALATION</code>.</p>
+    /// <p>The type of contact.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>PERSONAL</code>: A single, individual contact.</p></li>
+    /// <li>
+    /// <p><code>ESCALATION</code>: An escalation plan.</p></li>
+    /// <li>
+    /// <p><code>ONCALL_SCHEDULE</code>: An on-call schedule.</p></li>
+    /// </ul>
     pub r#type: crate::types::ContactType,
 }
 impl Contact {
@@ -28,7 +36,15 @@ impl Contact {
     pub fn display_name(&self) -> ::std::option::Option<&str> {
         self.display_name.as_deref()
     }
-    /// <p>Refers to the type of contact. A single contact is type <code>PERSONAL</code> and an escalation plan is type <code>ESCALATION</code>.</p>
+    /// <p>The type of contact.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>PERSONAL</code>: A single, individual contact.</p></li>
+    /// <li>
+    /// <p><code>ESCALATION</code>: An escalation plan.</p></li>
+    /// <li>
+    /// <p><code>ONCALL_SCHEDULE</code>: An on-call schedule.</p></li>
+    /// </ul>
     pub fn r#type(&self) -> &crate::types::ContactType {
         &self.r#type
     }
@@ -94,18 +110,42 @@ impl ContactBuilder {
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.display_name
     }
-    /// <p>Refers to the type of contact. A single contact is type <code>PERSONAL</code> and an escalation plan is type <code>ESCALATION</code>.</p>
+    /// <p>The type of contact.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>PERSONAL</code>: A single, individual contact.</p></li>
+    /// <li>
+    /// <p><code>ESCALATION</code>: An escalation plan.</p></li>
+    /// <li>
+    /// <p><code>ONCALL_SCHEDULE</code>: An on-call schedule.</p></li>
+    /// </ul>
     /// This field is required.
     pub fn r#type(mut self, input: crate::types::ContactType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Refers to the type of contact. A single contact is type <code>PERSONAL</code> and an escalation plan is type <code>ESCALATION</code>.</p>
+    /// <p>The type of contact.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>PERSONAL</code>: A single, individual contact.</p></li>
+    /// <li>
+    /// <p><code>ESCALATION</code>: An escalation plan.</p></li>
+    /// <li>
+    /// <p><code>ONCALL_SCHEDULE</code>: An on-call schedule.</p></li>
+    /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ContactType>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>Refers to the type of contact. A single contact is type <code>PERSONAL</code> and an escalation plan is type <code>ESCALATION</code>.</p>
+    /// <p>The type of contact.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>PERSONAL</code>: A single, individual contact.</p></li>
+    /// <li>
+    /// <p><code>ESCALATION</code>: An escalation plan.</p></li>
+    /// <li>
+    /// <p><code>ONCALL_SCHEDULE</code>: An on-call schedule.</p></li>
+    /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ContactType> {
         &self.r#type
     }

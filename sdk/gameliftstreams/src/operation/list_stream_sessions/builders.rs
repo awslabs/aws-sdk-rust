@@ -134,11 +134,11 @@ impl ListStreamSessionsFluentBuilder {
     /// <p>Exported files can be in one of the following states:</p>
     /// <ul>
     /// <li>
-    /// <p><b>SUCCEEDED</b>: The exported files are successfully stored in S3 bucket.</p></li>
+    /// <p><code>SUCCEEDED</code>: The exported files are successfully stored in an S3 bucket.</p></li>
     /// <li>
-    /// <p><b>FAILED</b>: The session ended but Amazon GameLift Streams couldn't collect and upload the to S3.</p></li>
+    /// <p><code>FAILED</code>: The session ended but Amazon GameLift Streams couldn't collect and upload the files to S3.</p></li>
     /// <li>
-    /// <p><b>PENDING</b>: Either the stream session is still in progress, or uploading the exported files to the S3 bucket is in progress.</p></li>
+    /// <p><code>PENDING</code>: Either the stream session is still in progress, or uploading the exported files to the S3 bucket is in progress.</p></li>
     /// </ul>
     pub fn export_files_status(mut self, input: crate::types::ExportFilesStatus) -> Self {
         self.inner = self.inner.export_files_status(input);
@@ -148,11 +148,11 @@ impl ListStreamSessionsFluentBuilder {
     /// <p>Exported files can be in one of the following states:</p>
     /// <ul>
     /// <li>
-    /// <p><b>SUCCEEDED</b>: The exported files are successfully stored in S3 bucket.</p></li>
+    /// <p><code>SUCCEEDED</code>: The exported files are successfully stored in an S3 bucket.</p></li>
     /// <li>
-    /// <p><b>FAILED</b>: The session ended but Amazon GameLift Streams couldn't collect and upload the to S3.</p></li>
+    /// <p><code>FAILED</code>: The session ended but Amazon GameLift Streams couldn't collect and upload the files to S3.</p></li>
     /// <li>
-    /// <p><b>PENDING</b>: Either the stream session is still in progress, or uploading the exported files to the S3 bucket is in progress.</p></li>
+    /// <p><code>PENDING</code>: Either the stream session is still in progress, or uploading the exported files to the S3 bucket is in progress.</p></li>
     /// </ul>
     pub fn set_export_files_status(mut self, input: ::std::option::Option<crate::types::ExportFilesStatus>) -> Self {
         self.inner = self.inner.set_export_files_status(input);
@@ -162,11 +162,11 @@ impl ListStreamSessionsFluentBuilder {
     /// <p>Exported files can be in one of the following states:</p>
     /// <ul>
     /// <li>
-    /// <p><b>SUCCEEDED</b>: The exported files are successfully stored in S3 bucket.</p></li>
+    /// <p><code>SUCCEEDED</code>: The exported files are successfully stored in an S3 bucket.</p></li>
     /// <li>
-    /// <p><b>FAILED</b>: The session ended but Amazon GameLift Streams couldn't collect and upload the to S3.</p></li>
+    /// <p><code>FAILED</code>: The session ended but Amazon GameLift Streams couldn't collect and upload the files to S3.</p></li>
     /// <li>
-    /// <p><b>PENDING</b>: Either the stream session is still in progress, or uploading the exported files to the S3 bucket is in progress.</p></li>
+    /// <p><code>PENDING</code>: Either the stream session is still in progress, or uploading the exported files to the S3 bucket is in progress.</p></li>
     /// </ul>
     pub fn get_export_files_status(&self) -> &::std::option::Option<crate::types::ExportFilesStatus> {
         self.inner.get_export_files_status()

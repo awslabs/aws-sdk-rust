@@ -9,11 +9,11 @@ pub struct ListStreamSessionsInput {
     /// <p>Exported files can be in one of the following states:</p>
     /// <ul>
     /// <li>
-    /// <p><b>SUCCEEDED</b>: The exported files are successfully stored in S3 bucket.</p></li>
+    /// <p><code>SUCCEEDED</code>: The exported files are successfully stored in an S3 bucket.</p></li>
     /// <li>
-    /// <p><b>FAILED</b>: The session ended but Amazon GameLift Streams couldn't collect and upload the to S3.</p></li>
+    /// <p><code>FAILED</code>: The session ended but Amazon GameLift Streams couldn't collect and upload the files to S3.</p></li>
     /// <li>
-    /// <p><b>PENDING</b>: Either the stream session is still in progress, or uploading the exported files to the S3 bucket is in progress.</p></li>
+    /// <p><code>PENDING</code>: Either the stream session is still in progress, or uploading the exported files to the S3 bucket is in progress.</p></li>
     /// </ul>
     pub export_files_status: ::std::option::Option<crate::types::ExportFilesStatus>,
     /// <p>The token that marks the start of the next set of results. Use this token when you retrieve results as sequential pages. To get the first page of results, omit a token value. To get the remaining pages, provide the token returned with the previous result set.</p>
@@ -32,11 +32,11 @@ impl ListStreamSessionsInput {
     /// <p>Exported files can be in one of the following states:</p>
     /// <ul>
     /// <li>
-    /// <p><b>SUCCEEDED</b>: The exported files are successfully stored in S3 bucket.</p></li>
+    /// <p><code>SUCCEEDED</code>: The exported files are successfully stored in an S3 bucket.</p></li>
     /// <li>
-    /// <p><b>FAILED</b>: The session ended but Amazon GameLift Streams couldn't collect and upload the to S3.</p></li>
+    /// <p><code>FAILED</code>: The session ended but Amazon GameLift Streams couldn't collect and upload the files to S3.</p></li>
     /// <li>
-    /// <p><b>PENDING</b>: Either the stream session is still in progress, or uploading the exported files to the S3 bucket is in progress.</p></li>
+    /// <p><code>PENDING</code>: Either the stream session is still in progress, or uploading the exported files to the S3 bucket is in progress.</p></li>
     /// </ul>
     pub fn export_files_status(&self) -> ::std::option::Option<&crate::types::ExportFilesStatus> {
         self.export_files_status.as_ref()
@@ -90,11 +90,11 @@ impl ListStreamSessionsInputBuilder {
     /// <p>Exported files can be in one of the following states:</p>
     /// <ul>
     /// <li>
-    /// <p><b>SUCCEEDED</b>: The exported files are successfully stored in S3 bucket.</p></li>
+    /// <p><code>SUCCEEDED</code>: The exported files are successfully stored in an S3 bucket.</p></li>
     /// <li>
-    /// <p><b>FAILED</b>: The session ended but Amazon GameLift Streams couldn't collect and upload the to S3.</p></li>
+    /// <p><code>FAILED</code>: The session ended but Amazon GameLift Streams couldn't collect and upload the files to S3.</p></li>
     /// <li>
-    /// <p><b>PENDING</b>: Either the stream session is still in progress, or uploading the exported files to the S3 bucket is in progress.</p></li>
+    /// <p><code>PENDING</code>: Either the stream session is still in progress, or uploading the exported files to the S3 bucket is in progress.</p></li>
     /// </ul>
     pub fn export_files_status(mut self, input: crate::types::ExportFilesStatus) -> Self {
         self.export_files_status = ::std::option::Option::Some(input);
@@ -104,11 +104,11 @@ impl ListStreamSessionsInputBuilder {
     /// <p>Exported files can be in one of the following states:</p>
     /// <ul>
     /// <li>
-    /// <p><b>SUCCEEDED</b>: The exported files are successfully stored in S3 bucket.</p></li>
+    /// <p><code>SUCCEEDED</code>: The exported files are successfully stored in an S3 bucket.</p></li>
     /// <li>
-    /// <p><b>FAILED</b>: The session ended but Amazon GameLift Streams couldn't collect and upload the to S3.</p></li>
+    /// <p><code>FAILED</code>: The session ended but Amazon GameLift Streams couldn't collect and upload the files to S3.</p></li>
     /// <li>
-    /// <p><b>PENDING</b>: Either the stream session is still in progress, or uploading the exported files to the S3 bucket is in progress.</p></li>
+    /// <p><code>PENDING</code>: Either the stream session is still in progress, or uploading the exported files to the S3 bucket is in progress.</p></li>
     /// </ul>
     pub fn set_export_files_status(mut self, input: ::std::option::Option<crate::types::ExportFilesStatus>) -> Self {
         self.export_files_status = input;
@@ -118,11 +118,11 @@ impl ListStreamSessionsInputBuilder {
     /// <p>Exported files can be in one of the following states:</p>
     /// <ul>
     /// <li>
-    /// <p><b>SUCCEEDED</b>: The exported files are successfully stored in S3 bucket.</p></li>
+    /// <p><code>SUCCEEDED</code>: The exported files are successfully stored in an S3 bucket.</p></li>
     /// <li>
-    /// <p><b>FAILED</b>: The session ended but Amazon GameLift Streams couldn't collect and upload the to S3.</p></li>
+    /// <p><code>FAILED</code>: The session ended but Amazon GameLift Streams couldn't collect and upload the files to S3.</p></li>
     /// <li>
-    /// <p><b>PENDING</b>: Either the stream session is still in progress, or uploading the exported files to the S3 bucket is in progress.</p></li>
+    /// <p><code>PENDING</code>: Either the stream session is still in progress, or uploading the exported files to the S3 bucket is in progress.</p></li>
     /// </ul>
     pub fn get_export_files_status(&self) -> &::std::option::Option<crate::types::ExportFilesStatus> {
         &self.export_files_status

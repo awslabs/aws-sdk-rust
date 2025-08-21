@@ -9,6 +9,11 @@ pub struct UpdateStreamGroupInput {
     pub location_configurations: ::std::option::Option<::std::vec::Vec<crate::types::LocationConfiguration>>,
     /// <p>A descriptive label for the stream group.</p>
     pub description: ::std::option::Option<::std::string::String>,
+    /// <p>The unique identifier of the Amazon GameLift Streams application that you want to set as the default application in a stream group. The application that you specify must be in <code>READY</code> status. The default application is pre-cached on always-on compute resources, reducing stream startup times. Other applications are automatically cached as needed.</p>
+    /// <p>Note that this parameter only sets the default application in a stream group. To associate a new application to an existing stream group, you must use <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_AssociateApplications.html">AssociateApplications</a>.</p>
+    /// <p>When you switch default applications in a stream group, it can take up to a few hours for the new default application to be pre-cached.</p>
+    /// <p>This value is an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> or ID that uniquely identifies the application resource. Example ARN: <code>arn:aws:gameliftstreams:us-west-2:111122223333:application/a-9ZY8X7Wv6</code>. Example ID: <code>a-9ZY8X7Wv6</code>.</p>
+    pub default_application_identifier: ::std::option::Option<::std::string::String>,
 }
 impl UpdateStreamGroupInput {
     /// <p>An <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> or ID that uniquely identifies the stream group resource. Example ARN: <code>arn:aws:gameliftstreams:us-west-2:111122223333:streamgroup/sg-1AB2C3De4</code>. Example ID: <code>sg-1AB2C3De4</code>.</p>
@@ -25,6 +30,13 @@ impl UpdateStreamGroupInput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
+    /// <p>The unique identifier of the Amazon GameLift Streams application that you want to set as the default application in a stream group. The application that you specify must be in <code>READY</code> status. The default application is pre-cached on always-on compute resources, reducing stream startup times. Other applications are automatically cached as needed.</p>
+    /// <p>Note that this parameter only sets the default application in a stream group. To associate a new application to an existing stream group, you must use <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_AssociateApplications.html">AssociateApplications</a>.</p>
+    /// <p>When you switch default applications in a stream group, it can take up to a few hours for the new default application to be pre-cached.</p>
+    /// <p>This value is an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> or ID that uniquely identifies the application resource. Example ARN: <code>arn:aws:gameliftstreams:us-west-2:111122223333:application/a-9ZY8X7Wv6</code>. Example ID: <code>a-9ZY8X7Wv6</code>.</p>
+    pub fn default_application_identifier(&self) -> ::std::option::Option<&str> {
+        self.default_application_identifier.as_deref()
+    }
 }
 impl UpdateStreamGroupInput {
     /// Creates a new builder-style object to manufacture [`UpdateStreamGroupInput`](crate::operation::update_stream_group::UpdateStreamGroupInput).
@@ -40,6 +52,7 @@ pub struct UpdateStreamGroupInputBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
     pub(crate) location_configurations: ::std::option::Option<::std::vec::Vec<crate::types::LocationConfiguration>>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) default_application_identifier: ::std::option::Option<::std::string::String>,
 }
 impl UpdateStreamGroupInputBuilder {
     /// <p>An <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> or ID that uniquely identifies the stream group resource. Example ARN: <code>arn:aws:gameliftstreams:us-west-2:111122223333:streamgroup/sg-1AB2C3De4</code>. Example ID: <code>sg-1AB2C3De4</code>.</p>
@@ -91,6 +104,29 @@ impl UpdateStreamGroupInputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
+    /// <p>The unique identifier of the Amazon GameLift Streams application that you want to set as the default application in a stream group. The application that you specify must be in <code>READY</code> status. The default application is pre-cached on always-on compute resources, reducing stream startup times. Other applications are automatically cached as needed.</p>
+    /// <p>Note that this parameter only sets the default application in a stream group. To associate a new application to an existing stream group, you must use <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_AssociateApplications.html">AssociateApplications</a>.</p>
+    /// <p>When you switch default applications in a stream group, it can take up to a few hours for the new default application to be pre-cached.</p>
+    /// <p>This value is an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> or ID that uniquely identifies the application resource. Example ARN: <code>arn:aws:gameliftstreams:us-west-2:111122223333:application/a-9ZY8X7Wv6</code>. Example ID: <code>a-9ZY8X7Wv6</code>.</p>
+    pub fn default_application_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.default_application_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique identifier of the Amazon GameLift Streams application that you want to set as the default application in a stream group. The application that you specify must be in <code>READY</code> status. The default application is pre-cached on always-on compute resources, reducing stream startup times. Other applications are automatically cached as needed.</p>
+    /// <p>Note that this parameter only sets the default application in a stream group. To associate a new application to an existing stream group, you must use <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_AssociateApplications.html">AssociateApplications</a>.</p>
+    /// <p>When you switch default applications in a stream group, it can take up to a few hours for the new default application to be pre-cached.</p>
+    /// <p>This value is an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> or ID that uniquely identifies the application resource. Example ARN: <code>arn:aws:gameliftstreams:us-west-2:111122223333:application/a-9ZY8X7Wv6</code>. Example ID: <code>a-9ZY8X7Wv6</code>.</p>
+    pub fn set_default_application_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.default_application_identifier = input;
+        self
+    }
+    /// <p>The unique identifier of the Amazon GameLift Streams application that you want to set as the default application in a stream group. The application that you specify must be in <code>READY</code> status. The default application is pre-cached on always-on compute resources, reducing stream startup times. Other applications are automatically cached as needed.</p>
+    /// <p>Note that this parameter only sets the default application in a stream group. To associate a new application to an existing stream group, you must use <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_AssociateApplications.html">AssociateApplications</a>.</p>
+    /// <p>When you switch default applications in a stream group, it can take up to a few hours for the new default application to be pre-cached.</p>
+    /// <p>This value is an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> or ID that uniquely identifies the application resource. Example ARN: <code>arn:aws:gameliftstreams:us-west-2:111122223333:application/a-9ZY8X7Wv6</code>. Example ID: <code>a-9ZY8X7Wv6</code>.</p>
+    pub fn get_default_application_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_application_identifier
+    }
     /// Consumes the builder and constructs a [`UpdateStreamGroupInput`](crate::operation::update_stream_group::UpdateStreamGroupInput).
     pub fn build(
         self,
@@ -99,6 +135,7 @@ impl UpdateStreamGroupInputBuilder {
             identifier: self.identifier,
             location_configurations: self.location_configurations,
             description: self.description,
+            default_application_identifier: self.default_application_identifier,
         })
     }
 }

@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTasksInput {
-    /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the task or tasks to describe. If you do not specify a cluster, the default cluster is assumed. If you do not specify a value, the <code>default</code> cluster is used.</p>
+    /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the task or tasks to describe. If you do not specify a cluster, the default cluster is assumed.</p>
     pub cluster: ::std::option::Option<::std::string::String>,
     /// <p>A list of up to 100 task IDs or full ARN entries.</p>
     pub tasks: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -11,7 +11,7 @@ pub struct DescribeTasksInput {
     pub include: ::std::option::Option<::std::vec::Vec<crate::types::TaskField>>,
 }
 impl DescribeTasksInput {
-    /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the task or tasks to describe. If you do not specify a cluster, the default cluster is assumed. If you do not specify a value, the <code>default</code> cluster is used.</p>
+    /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the task or tasks to describe. If you do not specify a cluster, the default cluster is assumed.</p>
     pub fn cluster(&self) -> ::std::option::Option<&str> {
         self.cluster.as_deref()
     }
@@ -44,17 +44,17 @@ pub struct DescribeTasksInputBuilder {
     pub(crate) include: ::std::option::Option<::std::vec::Vec<crate::types::TaskField>>,
 }
 impl DescribeTasksInputBuilder {
-    /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the task or tasks to describe. If you do not specify a cluster, the default cluster is assumed. If you do not specify a value, the <code>default</code> cluster is used.</p>
+    /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the task or tasks to describe. If you do not specify a cluster, the default cluster is assumed.</p>
     pub fn cluster(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the task or tasks to describe. If you do not specify a cluster, the default cluster is assumed. If you do not specify a value, the <code>default</code> cluster is used.</p>
+    /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the task or tasks to describe. If you do not specify a cluster, the default cluster is assumed.</p>
     pub fn set_cluster(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster = input;
         self
     }
-    /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the task or tasks to describe. If you do not specify a cluster, the default cluster is assumed. If you do not specify a value, the <code>default</code> cluster is used.</p>
+    /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the task or tasks to describe. If you do not specify a cluster, the default cluster is assumed.</p>
     pub fn get_cluster(&self) -> &::std::option::Option<::std::string::String> {
         &self.cluster
     }

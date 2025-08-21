@@ -187,16 +187,6 @@ pub(crate) fn data_quality_target_table_correct_errors(
     builder
 }
 
-pub(crate) fn data_source_correct_errors(mut builder: crate::types::builders::DataSourceBuilder) -> crate::types::builders::DataSourceBuilder {
-    if builder.glue_table.is_none() {
-        builder.glue_table = {
-            let builder = crate::types::builders::GlueTableBuilder::default();
-            crate::serde_util::glue_table_correct_errors(builder).build().ok()
-        }
-    }
-    builder
-}
-
 pub(crate) fn database_correct_errors(mut builder: crate::types::builders::DatabaseBuilder) -> crate::types::builders::DatabaseBuilder {
     if builder.name.is_none() {
         builder.name = Some(Default::default())
@@ -329,6 +319,18 @@ pub(crate) fn custom_entity_type_correct_errors(
     }
     if builder.regex_string.is_none() {
         builder.regex_string = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn data_quality_glue_table_correct_errors(
+    mut builder: crate::types::builders::DataQualityGlueTableBuilder,
+) -> crate::types::builders::DataQualityGlueTableBuilder {
+    if builder.database_name.is_none() {
+        builder.database_name = Some(Default::default())
+    }
+    if builder.table_name.is_none() {
+        builder.table_name = Some(Default::default())
     }
     builder
 }
