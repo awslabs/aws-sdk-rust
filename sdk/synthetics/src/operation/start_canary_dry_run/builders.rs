@@ -309,4 +309,54 @@ impl StartCanaryDryRunFluentBuilder {
     pub fn get_provisioned_resource_cleanup(&self) -> &::std::option::Option<crate::types::ProvisionedResourceCleanupSetting> {
         self.inner.get_provisioned_resource_cleanup()
     }
+    ///
+    /// Appends an item to `BrowserConfigs`.
+    ///
+    /// To override the contents of this collection use [`set_browser_configs`](Self::set_browser_configs).
+    ///
+    /// <p>A structure that specifies the browser type to use for a canary run. CloudWatch Synthetics supports running canaries on both <code>CHROME</code> and <code>FIREFOX</code> browsers.</p><note>
+    /// <p>If not specified, <code>browserConfigs</code> defaults to Chrome.</p>
+    /// </note>
+    pub fn browser_configs(mut self, input: crate::types::BrowserConfig) -> Self {
+        self.inner = self.inner.browser_configs(input);
+        self
+    }
+    /// <p>A structure that specifies the browser type to use for a canary run. CloudWatch Synthetics supports running canaries on both <code>CHROME</code> and <code>FIREFOX</code> browsers.</p><note>
+    /// <p>If not specified, <code>browserConfigs</code> defaults to Chrome.</p>
+    /// </note>
+    pub fn set_browser_configs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BrowserConfig>>) -> Self {
+        self.inner = self.inner.set_browser_configs(input);
+        self
+    }
+    /// <p>A structure that specifies the browser type to use for a canary run. CloudWatch Synthetics supports running canaries on both <code>CHROME</code> and <code>FIREFOX</code> browsers.</p><note>
+    /// <p>If not specified, <code>browserConfigs</code> defaults to Chrome.</p>
+    /// </note>
+    pub fn get_browser_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BrowserConfig>> {
+        self.inner.get_browser_configs()
+    }
+    ///
+    /// Appends an item to `VisualReferences`.
+    ///
+    /// To override the contents of this collection use [`set_visual_references`](Self::set_visual_references).
+    ///
+    /// <p>A list of visual reference configurations for the canary, one for each browser type that the canary is configured to run on. Visual references are used for visual monitoring comparisons.</p>
+    /// <p><code>syn-nodejs-puppeteer-11.0</code> and above, and <code>syn-nodejs-playwright-3.0</code> and above, only supports <code>visualReferences</code>. <code>visualReference</code> field is not supported.</p>
+    /// <p>Versions older than <code>syn-nodejs-puppeteer-11.0</code> supports both <code>visualReference</code> and <code>visualReferences</code> for backward compatibility. It is recommended to use <code>visualReferences</code> for consistency and future compatibility.</p>
+    pub fn visual_references(mut self, input: crate::types::VisualReferenceInput) -> Self {
+        self.inner = self.inner.visual_references(input);
+        self
+    }
+    /// <p>A list of visual reference configurations for the canary, one for each browser type that the canary is configured to run on. Visual references are used for visual monitoring comparisons.</p>
+    /// <p><code>syn-nodejs-puppeteer-11.0</code> and above, and <code>syn-nodejs-playwright-3.0</code> and above, only supports <code>visualReferences</code>. <code>visualReference</code> field is not supported.</p>
+    /// <p>Versions older than <code>syn-nodejs-puppeteer-11.0</code> supports both <code>visualReference</code> and <code>visualReferences</code> for backward compatibility. It is recommended to use <code>visualReferences</code> for consistency and future compatibility.</p>
+    pub fn set_visual_references(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VisualReferenceInput>>) -> Self {
+        self.inner = self.inner.set_visual_references(input);
+        self
+    }
+    /// <p>A list of visual reference configurations for the canary, one for each browser type that the canary is configured to run on. Visual references are used for visual monitoring comparisons.</p>
+    /// <p><code>syn-nodejs-puppeteer-11.0</code> and above, and <code>syn-nodejs-playwright-3.0</code> and above, only supports <code>visualReferences</code>. <code>visualReference</code> field is not supported.</p>
+    /// <p>Versions older than <code>syn-nodejs-puppeteer-11.0</code> supports both <code>visualReference</code> and <code>visualReferences</code> for backward compatibility. It is recommended to use <code>visualReferences</code> for consistency and future compatibility.</p>
+    pub fn get_visual_references(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VisualReferenceInput>> {
+        self.inner.get_visual_references()
+    }
 }

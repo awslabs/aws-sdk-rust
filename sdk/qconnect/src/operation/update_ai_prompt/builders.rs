@@ -192,4 +192,24 @@ impl UpdateAIPromptFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
+    /// <p>The identifier of the model used for this AI Prompt.</p><note>
+    /// <p>For more information on supported models, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-ai-prompts.html#cli-create-aiprompt">Supported models for system and custom prompts</a>.</p>
+    /// </note>
+    pub fn model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.model_id(input.into());
+        self
+    }
+    /// <p>The identifier of the model used for this AI Prompt.</p><note>
+    /// <p>For more information on supported models, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-ai-prompts.html#cli-create-aiprompt">Supported models for system and custom prompts</a>.</p>
+    /// </note>
+    pub fn set_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_model_id(input);
+        self
+    }
+    /// <p>The identifier of the model used for this AI Prompt.</p><note>
+    /// <p>For more information on supported models, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-ai-prompts.html#cli-create-aiprompt">Supported models for system and custom prompts</a>.</p>
+    /// </note>
+    pub fn get_model_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_model_id()
+    }
 }

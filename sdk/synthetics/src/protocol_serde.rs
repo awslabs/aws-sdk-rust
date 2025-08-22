@@ -127,6 +127,8 @@ pub(crate) mod shape_validation_exception;
 
 pub(crate) mod shape_artifact_config_input;
 
+pub(crate) mod shape_browser_config;
+
 pub(crate) mod shape_canaries;
 
 pub(crate) mod shape_canaries_last_run;
@@ -161,6 +163,8 @@ pub(crate) mod shape_artifact_config_output;
 
 pub(crate) mod shape_base_screenshot;
 
+pub(crate) mod shape_browser_configs;
+
 pub(crate) mod shape_canary_code_output;
 
 pub(crate) mod shape_canary_last_run;
@@ -177,6 +181,8 @@ pub(crate) mod shape_canary_timeline;
 
 pub(crate) mod shape_dependency;
 
+pub(crate) mod shape_engine_configs;
+
 pub(crate) mod shape_group_summary;
 
 pub(crate) mod shape_retry_config_input;
@@ -186,6 +192,8 @@ pub(crate) mod shape_runtime_version;
 pub(crate) mod shape_s3_encryption_config;
 
 pub(crate) mod shape_visual_reference_output;
+
+pub(crate) mod shape_visual_references_output;
 
 pub(crate) mod shape_vpc_config_output;
 
@@ -198,6 +206,8 @@ pub(crate) mod shape_canary_run_status;
 pub(crate) mod shape_canary_run_timeline;
 
 pub(crate) mod shape_dependencies;
+
+pub(crate) mod shape_engine_config;
 
 pub(crate) mod shape_retry_config_output;
 

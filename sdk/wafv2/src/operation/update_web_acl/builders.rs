@@ -411,4 +411,39 @@ impl UpdateWebACLFluentBuilder {
     pub fn get_on_source_d_do_s_protection_config(&self) -> &::std::option::Option<crate::types::OnSourceDDoSProtectionConfig> {
         self.inner.get_on_source_d_do_s_protection_config()
     }
+    /// <p>Configures the ability for the WAF console to store and retrieve application attributes. Application attributes help WAF give recommendations for protection packs.</p>
+    /// <p>When using <code>UpdateWebACL</code>, <code>ApplicationConfig</code> follows these rules:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If you omit <code>ApplicationConfig</code> from the request, all existing entries in the web ACL are retained.</p></li>
+    /// <li>
+    /// <p>If you include <code>ApplicationConfig</code>, entries must match the existing values exactly. Any attempt to modify existing entries will result in an error.</p></li>
+    /// </ul>
+    pub fn application_config(mut self, input: crate::types::ApplicationConfig) -> Self {
+        self.inner = self.inner.application_config(input);
+        self
+    }
+    /// <p>Configures the ability for the WAF console to store and retrieve application attributes. Application attributes help WAF give recommendations for protection packs.</p>
+    /// <p>When using <code>UpdateWebACL</code>, <code>ApplicationConfig</code> follows these rules:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If you omit <code>ApplicationConfig</code> from the request, all existing entries in the web ACL are retained.</p></li>
+    /// <li>
+    /// <p>If you include <code>ApplicationConfig</code>, entries must match the existing values exactly. Any attempt to modify existing entries will result in an error.</p></li>
+    /// </ul>
+    pub fn set_application_config(mut self, input: ::std::option::Option<crate::types::ApplicationConfig>) -> Self {
+        self.inner = self.inner.set_application_config(input);
+        self
+    }
+    /// <p>Configures the ability for the WAF console to store and retrieve application attributes. Application attributes help WAF give recommendations for protection packs.</p>
+    /// <p>When using <code>UpdateWebACL</code>, <code>ApplicationConfig</code> follows these rules:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If you omit <code>ApplicationConfig</code> from the request, all existing entries in the web ACL are retained.</p></li>
+    /// <li>
+    /// <p>If you include <code>ApplicationConfig</code>, entries must match the existing values exactly. Any attempt to modify existing entries will result in an error.</p></li>
+    /// </ul>
+    pub fn get_application_config(&self) -> &::std::option::Option<crate::types::ApplicationConfig> {
+        self.inner.get_application_config()
+    }
 }

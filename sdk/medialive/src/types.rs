@@ -905,6 +905,8 @@ pub use crate::types::_ebu_tt_d_fill_line_gap_control::EbuTtDFillLineGapControl;
 
 pub use crate::types::_dvb_sub_destination_settings::DvbSubDestinationSettings;
 
+pub use crate::types::_dvb_sub_destination_subtitle_rows::DvbSubDestinationSubtitleRows;
+
 pub use crate::types::_dvb_sub_destination_teletext_grid_control::DvbSubDestinationTeletextGridControl;
 
 pub use crate::types::_dvb_sub_destination_shadow_color::DvbSubDestinationShadowColor;
@@ -918,6 +920,8 @@ pub use crate::types::_dvb_sub_destination_background_color::DvbSubDestinationBa
 pub use crate::types::_dvb_sub_destination_alignment::DvbSubDestinationAlignment;
 
 pub use crate::types::_burn_in_destination_settings::BurnInDestinationSettings;
+
+pub use crate::types::_burn_in_destination_subtitle_rows::BurnInDestinationSubtitleRows;
 
 pub use crate::types::_burn_in_teletext_grid_control::BurnInTeletextGridControl;
 
@@ -1443,6 +1447,8 @@ mod _burn_in_background_color;
 
 mod _burn_in_destination_settings;
 
+mod _burn_in_destination_subtitle_rows;
+
 mod _burn_in_font_color;
 
 mod _burn_in_outline_color;
@@ -1576,6 +1582,8 @@ mod _dvb_sub_destination_outline_color;
 mod _dvb_sub_destination_settings;
 
 mod _dvb_sub_destination_shadow_color;
+
+mod _dvb_sub_destination_subtitle_rows;
 
 mod _dvb_sub_destination_teletext_grid_control;
 

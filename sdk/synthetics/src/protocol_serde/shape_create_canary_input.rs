@@ -12,72 +12,84 @@ pub fn ser_create_canary_input_input(
     if let Some(var_3) = &input.artifact_s3_location {
         object.key("ArtifactS3Location").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.code {
+    if let Some(var_4) = &input.browser_configs {
+        let mut array_5 = object.key("BrowserConfigs").start_array();
+        for item_6 in var_4 {
+            {
+                #[allow(unused_mut)]
+                let mut object_7 = array_5.value().start_object();
+                crate::protocol_serde::shape_browser_config::ser_browser_config(&mut object_7, item_6)?;
+                object_7.finish();
+            }
+        }
+        array_5.finish();
+    }
+    if let Some(var_8) = &input.code {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("Code").start_object();
-        crate::protocol_serde::shape_canary_code_input::ser_canary_code_input(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_9 = object.key("Code").start_object();
+        crate::protocol_serde::shape_canary_code_input::ser_canary_code_input(&mut object_9, var_8)?;
+        object_9.finish();
     }
-    if let Some(var_6) = &input.execution_role_arn {
-        object.key("ExecutionRoleArn").string(var_6.as_str());
+    if let Some(var_10) = &input.execution_role_arn {
+        object.key("ExecutionRoleArn").string(var_10.as_str());
     }
-    if let Some(var_7) = &input.failure_retention_period_in_days {
+    if let Some(var_11) = &input.failure_retention_period_in_days {
         object.key("FailureRetentionPeriodInDays").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_7).into()),
+            ::aws_smithy_types::Number::NegInt((*var_11).into()),
         );
     }
-    if let Some(var_8) = &input.name {
-        object.key("Name").string(var_8.as_str());
+    if let Some(var_12) = &input.name {
+        object.key("Name").string(var_12.as_str());
     }
-    if let Some(var_9) = &input.provisioned_resource_cleanup {
-        object.key("ProvisionedResourceCleanup").string(var_9.as_str());
+    if let Some(var_13) = &input.provisioned_resource_cleanup {
+        object.key("ProvisionedResourceCleanup").string(var_13.as_str());
     }
-    if let Some(var_10) = &input.resources_to_replicate_tags {
-        let mut array_11 = object.key("ResourcesToReplicateTags").start_array();
-        for item_12 in var_10 {
+    if let Some(var_14) = &input.resources_to_replicate_tags {
+        let mut array_15 = object.key("ResourcesToReplicateTags").start_array();
+        for item_16 in var_14 {
             {
-                array_11.value().string(item_12.as_str());
+                array_15.value().string(item_16.as_str());
             }
         }
-        array_11.finish();
+        array_15.finish();
     }
-    if let Some(var_13) = &input.run_config {
+    if let Some(var_17) = &input.run_config {
         #[allow(unused_mut)]
-        let mut object_14 = object.key("RunConfig").start_object();
-        crate::protocol_serde::shape_canary_run_config_input::ser_canary_run_config_input(&mut object_14, var_13)?;
-        object_14.finish();
+        let mut object_18 = object.key("RunConfig").start_object();
+        crate::protocol_serde::shape_canary_run_config_input::ser_canary_run_config_input(&mut object_18, var_17)?;
+        object_18.finish();
     }
-    if let Some(var_15) = &input.runtime_version {
-        object.key("RuntimeVersion").string(var_15.as_str());
+    if let Some(var_19) = &input.runtime_version {
+        object.key("RuntimeVersion").string(var_19.as_str());
     }
-    if let Some(var_16) = &input.schedule {
+    if let Some(var_20) = &input.schedule {
         #[allow(unused_mut)]
-        let mut object_17 = object.key("Schedule").start_object();
-        crate::protocol_serde::shape_canary_schedule_input::ser_canary_schedule_input(&mut object_17, var_16)?;
-        object_17.finish();
+        let mut object_21 = object.key("Schedule").start_object();
+        crate::protocol_serde::shape_canary_schedule_input::ser_canary_schedule_input(&mut object_21, var_20)?;
+        object_21.finish();
     }
-    if let Some(var_18) = &input.success_retention_period_in_days {
+    if let Some(var_22) = &input.success_retention_period_in_days {
         object.key("SuccessRetentionPeriodInDays").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_18).into()),
+            ::aws_smithy_types::Number::NegInt((*var_22).into()),
         );
     }
-    if let Some(var_19) = &input.tags {
+    if let Some(var_23) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_20 = object.key("Tags").start_object();
-        for (key_21, value_22) in var_19 {
+        let mut object_24 = object.key("Tags").start_object();
+        for (key_25, value_26) in var_23 {
             {
-                object_20.key(key_21.as_str()).string(value_22.as_str());
+                object_24.key(key_25.as_str()).string(value_26.as_str());
             }
         }
-        object_20.finish();
-    }
-    if let Some(var_23) = &input.vpc_config {
-        #[allow(unused_mut)]
-        let mut object_24 = object.key("VpcConfig").start_object();
-        crate::protocol_serde::shape_vpc_config_input::ser_vpc_config_input(&mut object_24, var_23)?;
         object_24.finish();
+    }
+    if let Some(var_27) = &input.vpc_config {
+        #[allow(unused_mut)]
+        let mut object_28 = object.key("VpcConfig").start_object();
+        crate::protocol_serde::shape_vpc_config_input::ser_vpc_config_input(&mut object_28, var_27)?;
+        object_28.finish();
     }
     Ok(())
 }

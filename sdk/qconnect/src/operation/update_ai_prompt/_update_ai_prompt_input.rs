@@ -15,6 +15,10 @@ pub struct UpdateAiPromptInput {
     pub template_configuration: ::std::option::Option<crate::types::AiPromptTemplateConfiguration>,
     /// <p>The description of the Amazon Q in Connect AI Prompt.</p>
     pub description: ::std::option::Option<::std::string::String>,
+    /// <p>The identifier of the model used for this AI Prompt.</p><note>
+    /// <p>For more information on supported models, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-ai-prompts.html#cli-create-aiprompt">Supported models for system and custom prompts</a>.</p>
+    /// </note>
+    pub model_id: ::std::option::Option<::std::string::String>,
 }
 impl UpdateAiPromptInput {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="http://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>..</p>
@@ -41,6 +45,12 @@ impl UpdateAiPromptInput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
+    /// <p>The identifier of the model used for this AI Prompt.</p><note>
+    /// <p>For more information on supported models, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-ai-prompts.html#cli-create-aiprompt">Supported models for system and custom prompts</a>.</p>
+    /// </note>
+    pub fn model_id(&self) -> ::std::option::Option<&str> {
+        self.model_id.as_deref()
+    }
 }
 impl UpdateAiPromptInput {
     /// Creates a new builder-style object to manufacture [`UpdateAiPromptInput`](crate::operation::update_ai_prompt::UpdateAiPromptInput).
@@ -59,6 +69,7 @@ pub struct UpdateAiPromptInputBuilder {
     pub(crate) visibility_status: ::std::option::Option<crate::types::VisibilityStatus>,
     pub(crate) template_configuration: ::std::option::Option<crate::types::AiPromptTemplateConfiguration>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) model_id: ::std::option::Option<::std::string::String>,
 }
 impl UpdateAiPromptInputBuilder {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="http://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>..</p>
@@ -148,6 +159,26 @@ impl UpdateAiPromptInputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
+    /// <p>The identifier of the model used for this AI Prompt.</p><note>
+    /// <p>For more information on supported models, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-ai-prompts.html#cli-create-aiprompt">Supported models for system and custom prompts</a>.</p>
+    /// </note>
+    pub fn model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.model_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier of the model used for this AI Prompt.</p><note>
+    /// <p>For more information on supported models, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-ai-prompts.html#cli-create-aiprompt">Supported models for system and custom prompts</a>.</p>
+    /// </note>
+    pub fn set_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.model_id = input;
+        self
+    }
+    /// <p>The identifier of the model used for this AI Prompt.</p><note>
+    /// <p>For more information on supported models, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-ai-prompts.html#cli-create-aiprompt">Supported models for system and custom prompts</a>.</p>
+    /// </note>
+    pub fn get_model_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_id
+    }
     /// Consumes the builder and constructs a [`UpdateAiPromptInput`](crate::operation::update_ai_prompt::UpdateAiPromptInput).
     pub fn build(
         self,
@@ -159,6 +190,7 @@ impl UpdateAiPromptInputBuilder {
             visibility_status: self.visibility_status,
             template_configuration: self.template_configuration,
             description: self.description,
+            model_id: self.model_id,
         })
     }
 }

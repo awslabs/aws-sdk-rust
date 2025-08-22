@@ -22,7 +22,9 @@ impl crate::operation::create_ai_prompt::builders::CreateAiPromptInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateAIPrompt`.
 ///
-/// <p>Creates an Amazon Q in Connect AI Prompt.</p>
+/// <p>Creates an Amazon Q in Connect AI Prompt.</p><note>
+/// <p>For more information on supported models, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-ai-prompts.html#cli-create-aiprompt">Supported models for system and custom prompts</a>.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateAIPromptFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

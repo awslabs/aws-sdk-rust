@@ -18,7 +18,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-aws-sdk-networkmonitor = "1.72.0"
+aws-sdk-networkmonitor = "1.73.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

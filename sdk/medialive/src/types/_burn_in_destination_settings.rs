@@ -38,6 +38,8 @@ pub struct BurnInDestinationSettings {
     pub x_position: ::std::option::Option<i32>,
     /// Specifies the vertical position of the caption relative to the top of the output in pixels. A value of 10 would result in the captions starting 10 pixels from the top of the output. If no explicit yPosition is provided, the caption will be positioned towards the bottom of the output. All burn-in and DVB-Sub font settings must match.
     pub y_position: ::std::option::Option<i32>,
+    /// Applies only when the input captions are Teletext and the output captions are DVB-Sub or Burn-In. Choose the number of lines for the captions bitmap. The captions bitmap is 700 wide × 576 high and will be laid over the video. For example, a value of 16 divides the bitmap into 16 lines, with each line 36 pixels high (16 × 36 = 576). The default is 24 (24 pixels high). Enter the same number in every encode in every output that converts the same Teletext source to DVB-Sub or Burn-in.
+    pub subtitle_rows: ::std::option::Option<crate::types::BurnInDestinationSubtitleRows>,
 }
 impl BurnInDestinationSettings {
     /// If no explicit xPosition or yPosition is provided, setting alignment to centered will place the captions at the bottom center of the output. Similarly, setting a left alignment will align captions to the bottom left of the output. If x and y positions are given in conjunction with the alignment parameter, the font will be justified (either left or centered) relative to those coordinates. Selecting "smart" justification will left-justify live subtitles and center-justify pre-recorded subtitles. All burn-in and DVB-Sub font settings must match.
@@ -108,6 +110,10 @@ impl BurnInDestinationSettings {
     pub fn y_position(&self) -> ::std::option::Option<i32> {
         self.y_position
     }
+    /// Applies only when the input captions are Teletext and the output captions are DVB-Sub or Burn-In. Choose the number of lines for the captions bitmap. The captions bitmap is 700 wide × 576 high and will be laid over the video. For example, a value of 16 divides the bitmap into 16 lines, with each line 36 pixels high (16 × 36 = 576). The default is 24 (24 pixels high). Enter the same number in every encode in every output that converts the same Teletext source to DVB-Sub or Burn-in.
+    pub fn subtitle_rows(&self) -> ::std::option::Option<&crate::types::BurnInDestinationSubtitleRows> {
+        self.subtitle_rows.as_ref()
+    }
 }
 impl BurnInDestinationSettings {
     /// Creates a new builder-style object to manufacture [`BurnInDestinationSettings`](crate::types::BurnInDestinationSettings).
@@ -137,6 +143,7 @@ pub struct BurnInDestinationSettingsBuilder {
     pub(crate) teletext_grid_control: ::std::option::Option<crate::types::BurnInTeletextGridControl>,
     pub(crate) x_position: ::std::option::Option<i32>,
     pub(crate) y_position: ::std::option::Option<i32>,
+    pub(crate) subtitle_rows: ::std::option::Option<crate::types::BurnInDestinationSubtitleRows>,
 }
 impl BurnInDestinationSettingsBuilder {
     /// If no explicit xPosition or yPosition is provided, setting alignment to centered will place the captions at the bottom center of the output. Similarly, setting a left alignment will align captions to the bottom left of the output. If x and y positions are given in conjunction with the alignment parameter, the font will be justified (either left or centered) relative to those coordinates. Selecting "smart" justification will left-justify live subtitles and center-justify pre-recorded subtitles. All burn-in and DVB-Sub font settings must match.
@@ -377,6 +384,20 @@ impl BurnInDestinationSettingsBuilder {
     pub fn get_y_position(&self) -> &::std::option::Option<i32> {
         &self.y_position
     }
+    /// Applies only when the input captions are Teletext and the output captions are DVB-Sub or Burn-In. Choose the number of lines for the captions bitmap. The captions bitmap is 700 wide × 576 high and will be laid over the video. For example, a value of 16 divides the bitmap into 16 lines, with each line 36 pixels high (16 × 36 = 576). The default is 24 (24 pixels high). Enter the same number in every encode in every output that converts the same Teletext source to DVB-Sub or Burn-in.
+    pub fn subtitle_rows(mut self, input: crate::types::BurnInDestinationSubtitleRows) -> Self {
+        self.subtitle_rows = ::std::option::Option::Some(input);
+        self
+    }
+    /// Applies only when the input captions are Teletext and the output captions are DVB-Sub or Burn-In. Choose the number of lines for the captions bitmap. The captions bitmap is 700 wide × 576 high and will be laid over the video. For example, a value of 16 divides the bitmap into 16 lines, with each line 36 pixels high (16 × 36 = 576). The default is 24 (24 pixels high). Enter the same number in every encode in every output that converts the same Teletext source to DVB-Sub or Burn-in.
+    pub fn set_subtitle_rows(mut self, input: ::std::option::Option<crate::types::BurnInDestinationSubtitleRows>) -> Self {
+        self.subtitle_rows = input;
+        self
+    }
+    /// Applies only when the input captions are Teletext and the output captions are DVB-Sub or Burn-In. Choose the number of lines for the captions bitmap. The captions bitmap is 700 wide × 576 high and will be laid over the video. For example, a value of 16 divides the bitmap into 16 lines, with each line 36 pixels high (16 × 36 = 576). The default is 24 (24 pixels high). Enter the same number in every encode in every output that converts the same Teletext source to DVB-Sub or Burn-in.
+    pub fn get_subtitle_rows(&self) -> &::std::option::Option<crate::types::BurnInDestinationSubtitleRows> {
+        &self.subtitle_rows
+    }
     /// Consumes the builder and constructs a [`BurnInDestinationSettings`](crate::types::BurnInDestinationSettings).
     pub fn build(self) -> crate::types::BurnInDestinationSettings {
         crate::types::BurnInDestinationSettings {
@@ -397,6 +418,7 @@ impl BurnInDestinationSettingsBuilder {
             teletext_grid_control: self.teletext_grid_control,
             x_position: self.x_position,
             y_position: self.y_position,
+            subtitle_rows: self.subtitle_rows,
         }
     }
 }

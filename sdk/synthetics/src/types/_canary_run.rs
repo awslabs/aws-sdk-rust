@@ -20,6 +20,8 @@ pub struct CanaryRun {
     pub artifact_s3_location: ::std::option::Option<::std::string::String>,
     /// <p>Returns the dry run configurations for a canary.</p>
     pub dry_run_config: ::std::option::Option<crate::types::CanaryDryRunConfigOutput>,
+    /// <p>The browser type associated with this canary run.</p>
+    pub browser_type: ::std::option::Option<crate::types::BrowserType>,
 }
 impl CanaryRun {
     /// <p>A unique ID that identifies this canary run.</p>
@@ -54,6 +56,10 @@ impl CanaryRun {
     pub fn dry_run_config(&self) -> ::std::option::Option<&crate::types::CanaryDryRunConfigOutput> {
         self.dry_run_config.as_ref()
     }
+    /// <p>The browser type associated with this canary run.</p>
+    pub fn browser_type(&self) -> ::std::option::Option<&crate::types::BrowserType> {
+        self.browser_type.as_ref()
+    }
 }
 impl CanaryRun {
     /// Creates a new builder-style object to manufacture [`CanaryRun`](crate::types::CanaryRun).
@@ -74,6 +80,7 @@ pub struct CanaryRunBuilder {
     pub(crate) timeline: ::std::option::Option<crate::types::CanaryRunTimeline>,
     pub(crate) artifact_s3_location: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run_config: ::std::option::Option<crate::types::CanaryDryRunConfigOutput>,
+    pub(crate) browser_type: ::std::option::Option<crate::types::BrowserType>,
 }
 impl CanaryRunBuilder {
     /// <p>A unique ID that identifies this canary run.</p>
@@ -188,6 +195,20 @@ impl CanaryRunBuilder {
     pub fn get_dry_run_config(&self) -> &::std::option::Option<crate::types::CanaryDryRunConfigOutput> {
         &self.dry_run_config
     }
+    /// <p>The browser type associated with this canary run.</p>
+    pub fn browser_type(mut self, input: crate::types::BrowserType) -> Self {
+        self.browser_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The browser type associated with this canary run.</p>
+    pub fn set_browser_type(mut self, input: ::std::option::Option<crate::types::BrowserType>) -> Self {
+        self.browser_type = input;
+        self
+    }
+    /// <p>The browser type associated with this canary run.</p>
+    pub fn get_browser_type(&self) -> &::std::option::Option<crate::types::BrowserType> {
+        &self.browser_type
+    }
     /// Consumes the builder and constructs a [`CanaryRun`](crate::types::CanaryRun).
     pub fn build(self) -> crate::types::CanaryRun {
         crate::types::CanaryRun {
@@ -199,6 +220,7 @@ impl CanaryRunBuilder {
             timeline: self.timeline,
             artifact_s3_location: self.artifact_s3_location,
             dry_run_config: self.dry_run_config,
+            browser_type: self.browser_type,
         }
     }
 }

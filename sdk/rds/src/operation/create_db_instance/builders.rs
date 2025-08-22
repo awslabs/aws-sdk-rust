@@ -1633,37 +1633,19 @@ impl CreateDBInstanceFluentBuilder {
         self.inner.get_port()
     }
     /// <p>Specifies whether the DB instance is a Multi-AZ deployment. You can't set the <code>AvailabilityZone</code> parameter if the DB instance is a Multi-AZ deployment.</p>
-    /// <p>This setting doesn't apply to the following DB instances:</p>
-    /// <ul>
-    /// <li>
-    /// <p>Amazon Aurora (DB instance Availability Zones (AZs) are managed by the DB cluster.)</p></li>
-    /// <li>
-    /// <p>RDS Custom</p></li>
-    /// </ul>
+    /// <p>This setting doesn't apply to Amazon Aurora because the DB instance Availability Zones (AZs) are managed by the DB cluster.</p>
     pub fn multi_az(mut self, input: bool) -> Self {
         self.inner = self.inner.multi_az(input);
         self
     }
     /// <p>Specifies whether the DB instance is a Multi-AZ deployment. You can't set the <code>AvailabilityZone</code> parameter if the DB instance is a Multi-AZ deployment.</p>
-    /// <p>This setting doesn't apply to the following DB instances:</p>
-    /// <ul>
-    /// <li>
-    /// <p>Amazon Aurora (DB instance Availability Zones (AZs) are managed by the DB cluster.)</p></li>
-    /// <li>
-    /// <p>RDS Custom</p></li>
-    /// </ul>
+    /// <p>This setting doesn't apply to Amazon Aurora because the DB instance Availability Zones (AZs) are managed by the DB cluster.</p>
     pub fn set_multi_az(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_multi_az(input);
         self
     }
     /// <p>Specifies whether the DB instance is a Multi-AZ deployment. You can't set the <code>AvailabilityZone</code> parameter if the DB instance is a Multi-AZ deployment.</p>
-    /// <p>This setting doesn't apply to the following DB instances:</p>
-    /// <ul>
-    /// <li>
-    /// <p>Amazon Aurora (DB instance Availability Zones (AZs) are managed by the DB cluster.)</p></li>
-    /// <li>
-    /// <p>RDS Custom</p></li>
-    /// </ul>
+    /// <p>This setting doesn't apply to Amazon Aurora because the DB instance Availability Zones (AZs) are managed by the DB cluster.</p>
     pub fn get_multi_az(&self) -> &::std::option::Option<bool> {
         self.inner.get_multi_az()
     }
@@ -1861,7 +1843,7 @@ impl CreateDBInstanceFluentBuilder {
         self.inner.get_auto_minor_version_upgrade()
     }
     /// <p>The license model information for this DB instance.</p><note>
-    /// <p>License models for RDS for Db2 require additional configuration. The Bring Your Own License (BYOL) model requires a custom parameter group and an Amazon Web Services License Manager self-managed license. The Db2 license through Amazon Web Services Marketplace model requires an Amazon Web Services Marketplace subscription. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-licensing.html">Amazon RDS for Db2 licensing options</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>License models for RDS for Db2 require additional configuration. The bring your own license (BYOL) model requires a custom parameter group and an Amazon Web Services License Manager self-managed license. The Db2 license through Amazon Web Services Marketplace model requires an Amazon Web Services Marketplace subscription. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-licensing.html">Amazon RDS for Db2 licensing options</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>The default for RDS for Db2 is <code>bring-your-own-license</code>.</p>
     /// </note>
     /// <p>This setting doesn't apply to Amazon Aurora or RDS Custom DB instances.</p>
@@ -1885,7 +1867,7 @@ impl CreateDBInstanceFluentBuilder {
         self
     }
     /// <p>The license model information for this DB instance.</p><note>
-    /// <p>License models for RDS for Db2 require additional configuration. The Bring Your Own License (BYOL) model requires a custom parameter group and an Amazon Web Services License Manager self-managed license. The Db2 license through Amazon Web Services Marketplace model requires an Amazon Web Services Marketplace subscription. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-licensing.html">Amazon RDS for Db2 licensing options</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>License models for RDS for Db2 require additional configuration. The bring your own license (BYOL) model requires a custom parameter group and an Amazon Web Services License Manager self-managed license. The Db2 license through Amazon Web Services Marketplace model requires an Amazon Web Services Marketplace subscription. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-licensing.html">Amazon RDS for Db2 licensing options</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>The default for RDS for Db2 is <code>bring-your-own-license</code>.</p>
     /// </note>
     /// <p>This setting doesn't apply to Amazon Aurora or RDS Custom DB instances.</p>
@@ -1909,7 +1891,7 @@ impl CreateDBInstanceFluentBuilder {
         self
     }
     /// <p>The license model information for this DB instance.</p><note>
-    /// <p>License models for RDS for Db2 require additional configuration. The Bring Your Own License (BYOL) model requires a custom parameter group and an Amazon Web Services License Manager self-managed license. The Db2 license through Amazon Web Services Marketplace model requires an Amazon Web Services Marketplace subscription. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-licensing.html">Amazon RDS for Db2 licensing options</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>License models for RDS for Db2 require additional configuration. The bring your own license (BYOL) model requires a custom parameter group and an Amazon Web Services License Manager self-managed license. The Db2 license through Amazon Web Services Marketplace model requires an Amazon Web Services Marketplace subscription. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-licensing.html">Amazon RDS for Db2 licensing options</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>The default for RDS for Db2 is <code>bring-your-own-license</code>.</p>
     /// </note>
     /// <p>This setting doesn't apply to Amazon Aurora or RDS Custom DB instances.</p>

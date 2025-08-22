@@ -56,6 +56,16 @@ pub struct UpdateCanaryInput {
     /// <p>When you use the <code>dryRunId</code> field when updating a canary, the only other field you can provide is the <code>Schedule</code>. Adding any other field will thrown an exception.</p>
     /// </note>
     pub dry_run_id: ::std::option::Option<::std::string::String>,
+    /// <p>A list of visual reference configurations for the canary, one for each browser type that the canary is configured to run on. Visual references are used for visual monitoring comparisons.</p>
+    /// <p><code>syn-nodejs-puppeteer-11.0</code> and above, and <code>syn-nodejs-playwright-3.0</code> and above, only supports <code>visualReferences</code>. <code>visualReference</code> field is not supported.</p>
+    /// <p>Versions older than <code>syn-nodejs-puppeteer-11.0</code> supports both <code>visualReference</code> and <code>visualReferences</code> for backward compatibility. It is recommended to use <code>visualReferences</code> for consistency and future compatibility.</p>
+    /// <p>For multibrowser visual monitoring, you can update the baseline for all configured browsers in a single update call by specifying a list of VisualReference objects, one per browser. Each VisualReference object maps to a specific browser configuration, allowing you to manage visual baselines for multiple browsers simultaneously.</p>
+    /// <p>For single configuration canaries using Chrome browser (default browser), use visualReferences for <code>syn-nodejs-puppeteer-11.0</code> and above, and <code>syn-nodejs-playwright-3.0</code> and above canaries. The browserType in the visualReference object is not mandatory.</p>
+    pub visual_references: ::std::option::Option<::std::vec::Vec<crate::types::VisualReferenceInput>>,
+    /// <p>A structure that specifies the browser type to use for a canary run. CloudWatch Synthetics supports running canaries on both <code>CHROME</code> and <code>FIREFOX</code> browsers.</p><note>
+    /// <p>If not specified, <code>browserConfigs</code> defaults to Chrome.</p>
+    /// </note>
+    pub browser_configs: ::std::option::Option<::std::vec::Vec<crate::types::BrowserConfig>>,
 }
 impl UpdateCanaryInput {
     /// <p>The name of the canary that you want to update. To find the names of your canaries, use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html">DescribeCanaries</a>.</p>
@@ -139,6 +149,24 @@ impl UpdateCanaryInput {
     pub fn dry_run_id(&self) -> ::std::option::Option<&str> {
         self.dry_run_id.as_deref()
     }
+    /// <p>A list of visual reference configurations for the canary, one for each browser type that the canary is configured to run on. Visual references are used for visual monitoring comparisons.</p>
+    /// <p><code>syn-nodejs-puppeteer-11.0</code> and above, and <code>syn-nodejs-playwright-3.0</code> and above, only supports <code>visualReferences</code>. <code>visualReference</code> field is not supported.</p>
+    /// <p>Versions older than <code>syn-nodejs-puppeteer-11.0</code> supports both <code>visualReference</code> and <code>visualReferences</code> for backward compatibility. It is recommended to use <code>visualReferences</code> for consistency and future compatibility.</p>
+    /// <p>For multibrowser visual monitoring, you can update the baseline for all configured browsers in a single update call by specifying a list of VisualReference objects, one per browser. Each VisualReference object maps to a specific browser configuration, allowing you to manage visual baselines for multiple browsers simultaneously.</p>
+    /// <p>For single configuration canaries using Chrome browser (default browser), use visualReferences for <code>syn-nodejs-puppeteer-11.0</code> and above, and <code>syn-nodejs-playwright-3.0</code> and above canaries. The browserType in the visualReference object is not mandatory.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.visual_references.is_none()`.
+    pub fn visual_references(&self) -> &[crate::types::VisualReferenceInput] {
+        self.visual_references.as_deref().unwrap_or_default()
+    }
+    /// <p>A structure that specifies the browser type to use for a canary run. CloudWatch Synthetics supports running canaries on both <code>CHROME</code> and <code>FIREFOX</code> browsers.</p><note>
+    /// <p>If not specified, <code>browserConfigs</code> defaults to Chrome.</p>
+    /// </note>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.browser_configs.is_none()`.
+    pub fn browser_configs(&self) -> &[crate::types::BrowserConfig] {
+        self.browser_configs.as_deref().unwrap_or_default()
+    }
 }
 impl UpdateCanaryInput {
     /// Creates a new builder-style object to manufacture [`UpdateCanaryInput`](crate::operation::update_canary::UpdateCanaryInput).
@@ -165,6 +193,8 @@ pub struct UpdateCanaryInputBuilder {
     pub(crate) artifact_config: ::std::option::Option<crate::types::ArtifactConfigInput>,
     pub(crate) provisioned_resource_cleanup: ::std::option::Option<crate::types::ProvisionedResourceCleanupSetting>,
     pub(crate) dry_run_id: ::std::option::Option<::std::string::String>,
+    pub(crate) visual_references: ::std::option::Option<::std::vec::Vec<crate::types::VisualReferenceInput>>,
+    pub(crate) browser_configs: ::std::option::Option<::std::vec::Vec<crate::types::BrowserConfig>>,
 }
 impl UpdateCanaryInputBuilder {
     /// <p>The name of the canary that you want to update. To find the names of your canaries, use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html">DescribeCanaries</a>.</p>
@@ -439,6 +469,64 @@ impl UpdateCanaryInputBuilder {
     pub fn get_dry_run_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.dry_run_id
     }
+    /// Appends an item to `visual_references`.
+    ///
+    /// To override the contents of this collection use [`set_visual_references`](Self::set_visual_references).
+    ///
+    /// <p>A list of visual reference configurations for the canary, one for each browser type that the canary is configured to run on. Visual references are used for visual monitoring comparisons.</p>
+    /// <p><code>syn-nodejs-puppeteer-11.0</code> and above, and <code>syn-nodejs-playwright-3.0</code> and above, only supports <code>visualReferences</code>. <code>visualReference</code> field is not supported.</p>
+    /// <p>Versions older than <code>syn-nodejs-puppeteer-11.0</code> supports both <code>visualReference</code> and <code>visualReferences</code> for backward compatibility. It is recommended to use <code>visualReferences</code> for consistency and future compatibility.</p>
+    /// <p>For multibrowser visual monitoring, you can update the baseline for all configured browsers in a single update call by specifying a list of VisualReference objects, one per browser. Each VisualReference object maps to a specific browser configuration, allowing you to manage visual baselines for multiple browsers simultaneously.</p>
+    /// <p>For single configuration canaries using Chrome browser (default browser), use visualReferences for <code>syn-nodejs-puppeteer-11.0</code> and above, and <code>syn-nodejs-playwright-3.0</code> and above canaries. The browserType in the visualReference object is not mandatory.</p>
+    pub fn visual_references(mut self, input: crate::types::VisualReferenceInput) -> Self {
+        let mut v = self.visual_references.unwrap_or_default();
+        v.push(input);
+        self.visual_references = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of visual reference configurations for the canary, one for each browser type that the canary is configured to run on. Visual references are used for visual monitoring comparisons.</p>
+    /// <p><code>syn-nodejs-puppeteer-11.0</code> and above, and <code>syn-nodejs-playwright-3.0</code> and above, only supports <code>visualReferences</code>. <code>visualReference</code> field is not supported.</p>
+    /// <p>Versions older than <code>syn-nodejs-puppeteer-11.0</code> supports both <code>visualReference</code> and <code>visualReferences</code> for backward compatibility. It is recommended to use <code>visualReferences</code> for consistency and future compatibility.</p>
+    /// <p>For multibrowser visual monitoring, you can update the baseline for all configured browsers in a single update call by specifying a list of VisualReference objects, one per browser. Each VisualReference object maps to a specific browser configuration, allowing you to manage visual baselines for multiple browsers simultaneously.</p>
+    /// <p>For single configuration canaries using Chrome browser (default browser), use visualReferences for <code>syn-nodejs-puppeteer-11.0</code> and above, and <code>syn-nodejs-playwright-3.0</code> and above canaries. The browserType in the visualReference object is not mandatory.</p>
+    pub fn set_visual_references(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VisualReferenceInput>>) -> Self {
+        self.visual_references = input;
+        self
+    }
+    /// <p>A list of visual reference configurations for the canary, one for each browser type that the canary is configured to run on. Visual references are used for visual monitoring comparisons.</p>
+    /// <p><code>syn-nodejs-puppeteer-11.0</code> and above, and <code>syn-nodejs-playwright-3.0</code> and above, only supports <code>visualReferences</code>. <code>visualReference</code> field is not supported.</p>
+    /// <p>Versions older than <code>syn-nodejs-puppeteer-11.0</code> supports both <code>visualReference</code> and <code>visualReferences</code> for backward compatibility. It is recommended to use <code>visualReferences</code> for consistency and future compatibility.</p>
+    /// <p>For multibrowser visual monitoring, you can update the baseline for all configured browsers in a single update call by specifying a list of VisualReference objects, one per browser. Each VisualReference object maps to a specific browser configuration, allowing you to manage visual baselines for multiple browsers simultaneously.</p>
+    /// <p>For single configuration canaries using Chrome browser (default browser), use visualReferences for <code>syn-nodejs-puppeteer-11.0</code> and above, and <code>syn-nodejs-playwright-3.0</code> and above canaries. The browserType in the visualReference object is not mandatory.</p>
+    pub fn get_visual_references(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VisualReferenceInput>> {
+        &self.visual_references
+    }
+    /// Appends an item to `browser_configs`.
+    ///
+    /// To override the contents of this collection use [`set_browser_configs`](Self::set_browser_configs).
+    ///
+    /// <p>A structure that specifies the browser type to use for a canary run. CloudWatch Synthetics supports running canaries on both <code>CHROME</code> and <code>FIREFOX</code> browsers.</p><note>
+    /// <p>If not specified, <code>browserConfigs</code> defaults to Chrome.</p>
+    /// </note>
+    pub fn browser_configs(mut self, input: crate::types::BrowserConfig) -> Self {
+        let mut v = self.browser_configs.unwrap_or_default();
+        v.push(input);
+        self.browser_configs = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A structure that specifies the browser type to use for a canary run. CloudWatch Synthetics supports running canaries on both <code>CHROME</code> and <code>FIREFOX</code> browsers.</p><note>
+    /// <p>If not specified, <code>browserConfigs</code> defaults to Chrome.</p>
+    /// </note>
+    pub fn set_browser_configs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BrowserConfig>>) -> Self {
+        self.browser_configs = input;
+        self
+    }
+    /// <p>A structure that specifies the browser type to use for a canary run. CloudWatch Synthetics supports running canaries on both <code>CHROME</code> and <code>FIREFOX</code> browsers.</p><note>
+    /// <p>If not specified, <code>browserConfigs</code> defaults to Chrome.</p>
+    /// </note>
+    pub fn get_browser_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BrowserConfig>> {
+        &self.browser_configs
+    }
     /// Consumes the builder and constructs a [`UpdateCanaryInput`](crate::operation::update_canary::UpdateCanaryInput).
     pub fn build(
         self,
@@ -458,6 +546,8 @@ impl UpdateCanaryInputBuilder {
             artifact_config: self.artifact_config,
             provisioned_resource_cleanup: self.provisioned_resource_cleanup,
             dry_run_id: self.dry_run_id,
+            visual_references: self.visual_references,
+            browser_configs: self.browser_configs,
         })
     }
 }

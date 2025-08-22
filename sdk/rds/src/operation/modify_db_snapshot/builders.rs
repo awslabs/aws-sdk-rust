@@ -23,7 +23,7 @@ impl crate::operation::modify_db_snapshot::builders::ModifyDbSnapshotInputBuilde
 /// Fluent builder constructing a request to `ModifyDBSnapshot`.
 ///
 /// <p>Updates a manual DB snapshot with a new engine version. The snapshot can be encrypted or unencrypted, but not shared or public.</p>
-/// <p>Amazon RDS supports upgrading DB snapshots for MySQL, PostgreSQL, and Oracle. This operation doesn't apply to RDS Custom or RDS for Db2.</p>
+/// <p>Amazon RDS supports upgrading DB snapshots for MariaDB, MySQL, PostgreSQL, and Oracle. This operation doesn't apply to RDS Custom or RDS for Db2.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyDBSnapshotFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -125,10 +125,16 @@ impl ModifyDBSnapshotFluentBuilder {
     }
     /// <p>The engine version to upgrade the DB snapshot to.</p>
     /// <p>The following are the database engines and engine versions that are available when you upgrade a DB snapshot.</p>
+    /// <p><b>MariaDB</b></p>
+    /// <p>For the list of engine versions that are available for upgrading a DB snapshot, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/mariadb-upgrade-snapshot.html"> Upgrading a MariaDB DB snapshot engine version</a> in the <i>Amazon RDS User Guide.</i></p>
     /// <p><b>MySQL</b></p>
     /// <p>For the list of engine versions that are available for upgrading a DB snapshot, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/mysql-upgrade-snapshot.html"> Upgrading a MySQL DB snapshot engine version</a> in the <i>Amazon RDS User Guide.</i></p>
     /// <p><b>Oracle</b></p>
     /// <ul>
+    /// <li>
+    /// <p><code>21.0.0.0.ru-2025-04.rur-2025-04.r1</code> (supported for 21.0.0.0.ru-2022-01.rur-2022-01.r1, 21.0.0.0.ru-2022-04.rur-2022-04.r1, 21.0.0.0.ru-2022-07.rur-2022-07.r1, 21.0.0.0.ru-2022-10.rur-2022-10.r1, 21.0.0.0.ru-2023-01.rur-2023-01.r1 and 21.0.0.0.ru-2023-01.rur-2023-01.r2 DB snapshots)</p></li>
+    /// <li>
+    /// <p><code>19.0.0.0.ru-2025-04.rur-2025-04.r1</code> (supported for 19.0.0.0.ru-2019-07.rur-2019-07.r1, 19.0.0.0.ru-2019-10.rur-2019-10.r1 and 0.0.0.ru-2020-01.rur-2020-01.r1 DB snapshots)</p></li>
     /// <li>
     /// <p><code>19.0.0.0.ru-2022-01.rur-2022-01.r1</code> (supported for 12.2.0.1 DB snapshots)</p></li>
     /// <li>
@@ -148,10 +154,16 @@ impl ModifyDBSnapshotFluentBuilder {
     }
     /// <p>The engine version to upgrade the DB snapshot to.</p>
     /// <p>The following are the database engines and engine versions that are available when you upgrade a DB snapshot.</p>
+    /// <p><b>MariaDB</b></p>
+    /// <p>For the list of engine versions that are available for upgrading a DB snapshot, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/mariadb-upgrade-snapshot.html"> Upgrading a MariaDB DB snapshot engine version</a> in the <i>Amazon RDS User Guide.</i></p>
     /// <p><b>MySQL</b></p>
     /// <p>For the list of engine versions that are available for upgrading a DB snapshot, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/mysql-upgrade-snapshot.html"> Upgrading a MySQL DB snapshot engine version</a> in the <i>Amazon RDS User Guide.</i></p>
     /// <p><b>Oracle</b></p>
     /// <ul>
+    /// <li>
+    /// <p><code>21.0.0.0.ru-2025-04.rur-2025-04.r1</code> (supported for 21.0.0.0.ru-2022-01.rur-2022-01.r1, 21.0.0.0.ru-2022-04.rur-2022-04.r1, 21.0.0.0.ru-2022-07.rur-2022-07.r1, 21.0.0.0.ru-2022-10.rur-2022-10.r1, 21.0.0.0.ru-2023-01.rur-2023-01.r1 and 21.0.0.0.ru-2023-01.rur-2023-01.r2 DB snapshots)</p></li>
+    /// <li>
+    /// <p><code>19.0.0.0.ru-2025-04.rur-2025-04.r1</code> (supported for 19.0.0.0.ru-2019-07.rur-2019-07.r1, 19.0.0.0.ru-2019-10.rur-2019-10.r1 and 0.0.0.ru-2020-01.rur-2020-01.r1 DB snapshots)</p></li>
     /// <li>
     /// <p><code>19.0.0.0.ru-2022-01.rur-2022-01.r1</code> (supported for 12.2.0.1 DB snapshots)</p></li>
     /// <li>
@@ -171,10 +183,16 @@ impl ModifyDBSnapshotFluentBuilder {
     }
     /// <p>The engine version to upgrade the DB snapshot to.</p>
     /// <p>The following are the database engines and engine versions that are available when you upgrade a DB snapshot.</p>
+    /// <p><b>MariaDB</b></p>
+    /// <p>For the list of engine versions that are available for upgrading a DB snapshot, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/mariadb-upgrade-snapshot.html"> Upgrading a MariaDB DB snapshot engine version</a> in the <i>Amazon RDS User Guide.</i></p>
     /// <p><b>MySQL</b></p>
     /// <p>For the list of engine versions that are available for upgrading a DB snapshot, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/mysql-upgrade-snapshot.html"> Upgrading a MySQL DB snapshot engine version</a> in the <i>Amazon RDS User Guide.</i></p>
     /// <p><b>Oracle</b></p>
     /// <ul>
+    /// <li>
+    /// <p><code>21.0.0.0.ru-2025-04.rur-2025-04.r1</code> (supported for 21.0.0.0.ru-2022-01.rur-2022-01.r1, 21.0.0.0.ru-2022-04.rur-2022-04.r1, 21.0.0.0.ru-2022-07.rur-2022-07.r1, 21.0.0.0.ru-2022-10.rur-2022-10.r1, 21.0.0.0.ru-2023-01.rur-2023-01.r1 and 21.0.0.0.ru-2023-01.rur-2023-01.r2 DB snapshots)</p></li>
+    /// <li>
+    /// <p><code>19.0.0.0.ru-2025-04.rur-2025-04.r1</code> (supported for 19.0.0.0.ru-2019-07.rur-2019-07.r1, 19.0.0.0.ru-2019-10.rur-2019-10.r1 and 0.0.0.ru-2020-01.rur-2020-01.r1 DB snapshots)</p></li>
     /// <li>
     /// <p><code>19.0.0.0.ru-2022-01.rur-2022-01.r1</code> (supported for 12.2.0.1 DB snapshots)</p></li>
     /// <li>

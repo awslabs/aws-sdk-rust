@@ -22,8 +22,7 @@ impl crate::operation::create_db_instance_read_replica::builders::CreateDbInstan
 }
 /// Fluent builder constructing a request to `CreateDBInstanceReadReplica`.
 ///
-/// <p>Creates a new DB instance that acts as a read replica for an existing source DB instance or Multi-AZ DB cluster. You can create a read replica for a DB instance running MariaDB, MySQL, Oracle, PostgreSQL, or SQL Server. You can create a read replica for a Multi-AZ DB cluster running MySQL or PostgreSQL. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html">Working with read replicas</a> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html#multi-az-db-clusters-migrating-to-instance-with-read-replica">Migrating from a Multi-AZ DB cluster to a DB instance using a read replica</a> in the <i>Amazon RDS User Guide</i>.</p>
-/// <p>Amazon RDS for Db2 supports this operation for standby replicas. To create a standby replica for a DB instance running Db2, you must set <code>ReplicaMode</code> to <code>mounted</code>.</p>
+/// <p>Creates a new DB instance that acts as a read replica for an existing source DB instance or Multi-AZ DB cluster. You can create a read replica for a DB instance running Db2, MariaDB, MySQL, Oracle, PostgreSQL, or SQL Server. You can create a read replica for a Multi-AZ DB cluster running MySQL or PostgreSQL. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html">Working with read replicas</a> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html#multi-az-db-clusters-migrating-to-instance-with-read-replica">Migrating from a Multi-AZ DB cluster to a DB instance using a read replica</a> in the <i>Amazon RDS User Guide</i>.</p>
 /// <p>Amazon Aurora doesn't support this operation. To create a DB instance for an Aurora DB cluster, use the <code>CreateDBInstance</code> operation.</p>
 /// <p>RDS creates read replicas with backups disabled. All other attributes (including DB security groups and DB parameter groups) are inherited from the source DB instance or cluster, except as specified.</p><important>
 /// <p>Your source DB instance or cluster must have backup retention enabled.</p>
@@ -1084,16 +1083,15 @@ impl CreateDBInstanceReadReplicaFluentBuilder {
     pub fn get_domain_dns_ips(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_domain_dns_ips()
     }
-    /// <p>The open mode of the replica database.</p><note>
+    /// <p>The open mode of the replica database.</p>
     /// <p>This parameter is only supported for Db2 DB instances and Oracle DB instances.</p>
-    /// </note>
     /// <dl>
     /// <dt>
     /// Db2
     /// </dt>
     /// <dd>
     /// <p>Standby DB replicas are included in Db2 Advanced Edition (AE) and Db2 Standard Edition (SE). The main use case for standby replicas is cross-Region disaster recovery. Because it doesn't accept user connections, a standby replica can't serve a read-only workload.</p>
-    /// <p>You can create a combination of standby and read-only DB replicas for the same primary DB instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-replication.html">Working with read replicas for Amazon RDS for Db2</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>You can create a combination of standby and read-only DB replicas for the same primary DB instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-replication.html">Working with replicas for Amazon RDS for Db2</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>To create standby DB replicas for RDS for Db2, set this parameter to <code>mounted</code>.</p>
     /// </dd>
     /// <dt>
@@ -1109,16 +1107,15 @@ impl CreateDBInstanceReadReplicaFluentBuilder {
         self.inner = self.inner.replica_mode(input);
         self
     }
-    /// <p>The open mode of the replica database.</p><note>
+    /// <p>The open mode of the replica database.</p>
     /// <p>This parameter is only supported for Db2 DB instances and Oracle DB instances.</p>
-    /// </note>
     /// <dl>
     /// <dt>
     /// Db2
     /// </dt>
     /// <dd>
     /// <p>Standby DB replicas are included in Db2 Advanced Edition (AE) and Db2 Standard Edition (SE). The main use case for standby replicas is cross-Region disaster recovery. Because it doesn't accept user connections, a standby replica can't serve a read-only workload.</p>
-    /// <p>You can create a combination of standby and read-only DB replicas for the same primary DB instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-replication.html">Working with read replicas for Amazon RDS for Db2</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>You can create a combination of standby and read-only DB replicas for the same primary DB instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-replication.html">Working with replicas for Amazon RDS for Db2</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>To create standby DB replicas for RDS for Db2, set this parameter to <code>mounted</code>.</p>
     /// </dd>
     /// <dt>
@@ -1134,16 +1131,15 @@ impl CreateDBInstanceReadReplicaFluentBuilder {
         self.inner = self.inner.set_replica_mode(input);
         self
     }
-    /// <p>The open mode of the replica database.</p><note>
+    /// <p>The open mode of the replica database.</p>
     /// <p>This parameter is only supported for Db2 DB instances and Oracle DB instances.</p>
-    /// </note>
     /// <dl>
     /// <dt>
     /// Db2
     /// </dt>
     /// <dd>
     /// <p>Standby DB replicas are included in Db2 Advanced Edition (AE) and Db2 Standard Edition (SE). The main use case for standby replicas is cross-Region disaster recovery. Because it doesn't accept user connections, a standby replica can't serve a read-only workload.</p>
-    /// <p>You can create a combination of standby and read-only DB replicas for the same primary DB instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-replication.html">Working with read replicas for Amazon RDS for Db2</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>You can create a combination of standby and read-only DB replicas for the same primary DB instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-replication.html">Working with replicas for Amazon RDS for Db2</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>To create standby DB replicas for RDS for Db2, set this parameter to <code>mounted</code>.</p>
     /// </dd>
     /// <dt>

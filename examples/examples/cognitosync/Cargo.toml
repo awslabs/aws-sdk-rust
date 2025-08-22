@@ -9,7 +9,7 @@ publish = false
 [dependencies]
 thiserror = "1.0"
 aws-config= { version = "1.8.5", path = "../../../sdk/aws-config", features = ["behavior-version-latest"] }
-aws-sdk-cognitosync= { version = "1.81.0", path = "../../../sdk/cognitosync" }
+aws-sdk-cognitosync= { version = "1.82.0", path = "../../../sdk/cognitosync" }
 aws-smithy-types-convert= { version = "0.60.9", path = "../../../sdk/aws-smithy-types-convert", features = ["convert-chrono"] }
 
 [dependencies.clap]

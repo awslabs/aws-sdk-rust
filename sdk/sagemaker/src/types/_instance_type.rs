@@ -138,6 +138,7 @@
 ///     InstanceType::MlP4D24Xlarge => { /* ... */ },
 ///     InstanceType::MlP4De24Xlarge => { /* ... */ },
 ///     InstanceType::MlP548Xlarge => { /* ... */ },
+///     InstanceType::MlP6B20048Xlarge => { /* ... */ },
 ///     InstanceType::MlR512Xlarge => { /* ... */ },
 ///     InstanceType::MlR516Xlarge => { /* ... */ },
 ///     InstanceType::MlR524Xlarge => { /* ... */ },
@@ -465,6 +466,8 @@ pub enum InstanceType {
     #[allow(missing_docs)] // documentation missing in model
     MlP548Xlarge,
     #[allow(missing_docs)] // documentation missing in model
+    MlP6B20048Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
     MlR512Xlarge,
     #[allow(missing_docs)] // documentation missing in model
     MlR516Xlarge,
@@ -689,6 +692,7 @@ impl ::std::convert::From<&str> for InstanceType {
             "ml.p4d.24xlarge" => InstanceType::MlP4D24Xlarge,
             "ml.p4de.24xlarge" => InstanceType::MlP4De24Xlarge,
             "ml.p5.48xlarge" => InstanceType::MlP548Xlarge,
+            "ml.p6-b200.48xlarge" => InstanceType::MlP6B20048Xlarge,
             "ml.r5.12xlarge" => InstanceType::MlR512Xlarge,
             "ml.r5.16xlarge" => InstanceType::MlR516Xlarge,
             "ml.r5.24xlarge" => InstanceType::MlR524Xlarge,
@@ -876,6 +880,7 @@ impl InstanceType {
             InstanceType::MlP4D24Xlarge => "ml.p4d.24xlarge",
             InstanceType::MlP4De24Xlarge => "ml.p4de.24xlarge",
             InstanceType::MlP548Xlarge => "ml.p5.48xlarge",
+            InstanceType::MlP6B20048Xlarge => "ml.p6-b200.48xlarge",
             InstanceType::MlR512Xlarge => "ml.r5.12xlarge",
             InstanceType::MlR516Xlarge => "ml.r5.16xlarge",
             InstanceType::MlR524Xlarge => "ml.r5.24xlarge",
@@ -1054,6 +1059,7 @@ impl InstanceType {
             "ml.p4d.24xlarge",
             "ml.p4de.24xlarge",
             "ml.p5.48xlarge",
+            "ml.p6-b200.48xlarge",
             "ml.r5.12xlarge",
             "ml.r5.16xlarge",
             "ml.r5.24xlarge",
@@ -1249,6 +1255,7 @@ impl ::std::fmt::Display for InstanceType {
             InstanceType::MlP4D24Xlarge => write!(f, "ml.p4d.24xlarge"),
             InstanceType::MlP4De24Xlarge => write!(f, "ml.p4de.24xlarge"),
             InstanceType::MlP548Xlarge => write!(f, "ml.p5.48xlarge"),
+            InstanceType::MlP6B20048Xlarge => write!(f, "ml.p6-b200.48xlarge"),
             InstanceType::MlR512Xlarge => write!(f, "ml.r5.12xlarge"),
             InstanceType::MlR516Xlarge => write!(f, "ml.r5.16xlarge"),
             InstanceType::MlR524Xlarge => write!(f, "ml.r5.24xlarge"),

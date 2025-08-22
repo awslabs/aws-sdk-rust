@@ -9,6 +9,8 @@ pub struct VisualReferenceInput {
     pub base_screenshots: ::std::option::Option<::std::vec::Vec<crate::types::BaseScreenshot>>,
     /// <p>Specifies which canary run to use the screenshots from as the baseline for future visual monitoring with this canary. Valid values are <code>nextrun</code> to use the screenshots from the next run after this update is made, <code>lastrun</code> to use the screenshots from the most recent run before this update was made, or the value of <code>Id</code> in the <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_CanaryRun.html"> CanaryRun</a> from a run of this a canary in the past 31 days. If you specify the <code>Id</code> of a canary run older than 31 days, the operation returns a 400 validation exception error..</p>
     pub base_canary_run_id: ::std::string::String,
+    /// <p>The browser type associated with this visual reference.</p>
+    pub browser_type: ::std::option::Option<crate::types::BrowserType>,
 }
 impl VisualReferenceInput {
     /// <p>An array of screenshots that will be used as the baseline for visual monitoring in future runs of this canary. If there is a screenshot that you don't want to be used for visual monitoring, remove it from this array.</p>
@@ -21,6 +23,10 @@ impl VisualReferenceInput {
     pub fn base_canary_run_id(&self) -> &str {
         use std::ops::Deref;
         self.base_canary_run_id.deref()
+    }
+    /// <p>The browser type associated with this visual reference.</p>
+    pub fn browser_type(&self) -> ::std::option::Option<&crate::types::BrowserType> {
+        self.browser_type.as_ref()
     }
 }
 impl VisualReferenceInput {
@@ -36,6 +42,7 @@ impl VisualReferenceInput {
 pub struct VisualReferenceInputBuilder {
     pub(crate) base_screenshots: ::std::option::Option<::std::vec::Vec<crate::types::BaseScreenshot>>,
     pub(crate) base_canary_run_id: ::std::option::Option<::std::string::String>,
+    pub(crate) browser_type: ::std::option::Option<crate::types::BrowserType>,
 }
 impl VisualReferenceInputBuilder {
     /// Appends an item to `base_screenshots`.
@@ -73,6 +80,20 @@ impl VisualReferenceInputBuilder {
     pub fn get_base_canary_run_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.base_canary_run_id
     }
+    /// <p>The browser type associated with this visual reference.</p>
+    pub fn browser_type(mut self, input: crate::types::BrowserType) -> Self {
+        self.browser_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The browser type associated with this visual reference.</p>
+    pub fn set_browser_type(mut self, input: ::std::option::Option<crate::types::BrowserType>) -> Self {
+        self.browser_type = input;
+        self
+    }
+    /// <p>The browser type associated with this visual reference.</p>
+    pub fn get_browser_type(&self) -> &::std::option::Option<crate::types::BrowserType> {
+        &self.browser_type
+    }
     /// Consumes the builder and constructs a [`VisualReferenceInput`](crate::types::VisualReferenceInput).
     /// This method will fail if any of the following fields are not set:
     /// - [`base_canary_run_id`](crate::types::builders::VisualReferenceInputBuilder::base_canary_run_id)
@@ -85,6 +106,7 @@ impl VisualReferenceInputBuilder {
                     "base_canary_run_id was not specified but it is required when building VisualReferenceInput",
                 )
             })?,
+            browser_type: self.browser_type,
         })
     }
 }

@@ -9,6 +9,8 @@ pub struct VisualReferenceOutput {
     pub base_screenshots: ::std::option::Option<::std::vec::Vec<crate::types::BaseScreenshot>>,
     /// <p>The ID of the canary run that produced the baseline screenshots that are used for visual monitoring comparisons by this canary.</p>
     pub base_canary_run_id: ::std::option::Option<::std::string::String>,
+    /// <p>The browser type associated with this visual reference.</p>
+    pub browser_type: ::std::option::Option<crate::types::BrowserType>,
 }
 impl VisualReferenceOutput {
     /// <p>An array of screenshots that are used as the baseline for comparisons during visual monitoring.</p>
@@ -20,6 +22,10 @@ impl VisualReferenceOutput {
     /// <p>The ID of the canary run that produced the baseline screenshots that are used for visual monitoring comparisons by this canary.</p>
     pub fn base_canary_run_id(&self) -> ::std::option::Option<&str> {
         self.base_canary_run_id.as_deref()
+    }
+    /// <p>The browser type associated with this visual reference.</p>
+    pub fn browser_type(&self) -> ::std::option::Option<&crate::types::BrowserType> {
+        self.browser_type.as_ref()
     }
 }
 impl VisualReferenceOutput {
@@ -35,6 +41,7 @@ impl VisualReferenceOutput {
 pub struct VisualReferenceOutputBuilder {
     pub(crate) base_screenshots: ::std::option::Option<::std::vec::Vec<crate::types::BaseScreenshot>>,
     pub(crate) base_canary_run_id: ::std::option::Option<::std::string::String>,
+    pub(crate) browser_type: ::std::option::Option<crate::types::BrowserType>,
 }
 impl VisualReferenceOutputBuilder {
     /// Appends an item to `base_screenshots`.
@@ -71,11 +78,26 @@ impl VisualReferenceOutputBuilder {
     pub fn get_base_canary_run_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.base_canary_run_id
     }
+    /// <p>The browser type associated with this visual reference.</p>
+    pub fn browser_type(mut self, input: crate::types::BrowserType) -> Self {
+        self.browser_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The browser type associated with this visual reference.</p>
+    pub fn set_browser_type(mut self, input: ::std::option::Option<crate::types::BrowserType>) -> Self {
+        self.browser_type = input;
+        self
+    }
+    /// <p>The browser type associated with this visual reference.</p>
+    pub fn get_browser_type(&self) -> &::std::option::Option<crate::types::BrowserType> {
+        &self.browser_type
+    }
     /// Consumes the builder and constructs a [`VisualReferenceOutput`](crate::types::VisualReferenceOutput).
     pub fn build(self) -> crate::types::VisualReferenceOutput {
         crate::types::VisualReferenceOutput {
             base_screenshots: self.base_screenshots,
             base_canary_run_id: self.base_canary_run_id,
+            browser_type: self.browser_type,
         }
     }
 }

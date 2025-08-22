@@ -49,6 +49,15 @@ pub struct UpdateWebAclInput {
     pub association_config: ::std::option::Option<crate::types::AssociationConfig>,
     /// <p>Specifies the type of DDoS protection to apply to web request data for a web ACL. For most scenarios, it is recommended to use the default protection level, <code>ACTIVE_UNDER_DDOS</code>. If a web ACL is associated with multiple Application Load Balancers, the changes you make to DDoS protection in that web ACL will apply to all associated Application Load Balancers.</p>
     pub on_source_d_do_s_protection_config: ::std::option::Option<crate::types::OnSourceDDoSProtectionConfig>,
+    /// <p>Configures the ability for the WAF console to store and retrieve application attributes. Application attributes help WAF give recommendations for protection packs.</p>
+    /// <p>When using <code>UpdateWebACL</code>, <code>ApplicationConfig</code> follows these rules:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If you omit <code>ApplicationConfig</code> from the request, all existing entries in the web ACL are retained.</p></li>
+    /// <li>
+    /// <p>If you include <code>ApplicationConfig</code>, entries must match the existing values exactly. Any attempt to modify existing entries will result in an error.</p></li>
+    /// </ul>
+    pub application_config: ::std::option::Option<crate::types::ApplicationConfig>,
 }
 impl UpdateWebAclInput {
     /// <p>The name of the web ACL. You cannot change the name of a web ACL after you create it.</p>
@@ -133,6 +142,17 @@ impl UpdateWebAclInput {
     pub fn on_source_d_do_s_protection_config(&self) -> ::std::option::Option<&crate::types::OnSourceDDoSProtectionConfig> {
         self.on_source_d_do_s_protection_config.as_ref()
     }
+    /// <p>Configures the ability for the WAF console to store and retrieve application attributes. Application attributes help WAF give recommendations for protection packs.</p>
+    /// <p>When using <code>UpdateWebACL</code>, <code>ApplicationConfig</code> follows these rules:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If you omit <code>ApplicationConfig</code> from the request, all existing entries in the web ACL are retained.</p></li>
+    /// <li>
+    /// <p>If you include <code>ApplicationConfig</code>, entries must match the existing values exactly. Any attempt to modify existing entries will result in an error.</p></li>
+    /// </ul>
+    pub fn application_config(&self) -> ::std::option::Option<&crate::types::ApplicationConfig> {
+        self.application_config.as_ref()
+    }
 }
 impl UpdateWebAclInput {
     /// Creates a new builder-style object to manufacture [`UpdateWebAclInput`](crate::operation::update_web_acl::UpdateWebAclInput).
@@ -160,6 +180,7 @@ pub struct UpdateWebAclInputBuilder {
     pub(crate) token_domains: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) association_config: ::std::option::Option<crate::types::AssociationConfig>,
     pub(crate) on_source_d_do_s_protection_config: ::std::option::Option<crate::types::OnSourceDDoSProtectionConfig>,
+    pub(crate) application_config: ::std::option::Option<crate::types::ApplicationConfig>,
 }
 impl UpdateWebAclInputBuilder {
     /// <p>The name of the web ACL. You cannot change the name of a web ACL after you create it.</p>
@@ -449,6 +470,41 @@ impl UpdateWebAclInputBuilder {
     pub fn get_on_source_d_do_s_protection_config(&self) -> &::std::option::Option<crate::types::OnSourceDDoSProtectionConfig> {
         &self.on_source_d_do_s_protection_config
     }
+    /// <p>Configures the ability for the WAF console to store and retrieve application attributes. Application attributes help WAF give recommendations for protection packs.</p>
+    /// <p>When using <code>UpdateWebACL</code>, <code>ApplicationConfig</code> follows these rules:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If you omit <code>ApplicationConfig</code> from the request, all existing entries in the web ACL are retained.</p></li>
+    /// <li>
+    /// <p>If you include <code>ApplicationConfig</code>, entries must match the existing values exactly. Any attempt to modify existing entries will result in an error.</p></li>
+    /// </ul>
+    pub fn application_config(mut self, input: crate::types::ApplicationConfig) -> Self {
+        self.application_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configures the ability for the WAF console to store and retrieve application attributes. Application attributes help WAF give recommendations for protection packs.</p>
+    /// <p>When using <code>UpdateWebACL</code>, <code>ApplicationConfig</code> follows these rules:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If you omit <code>ApplicationConfig</code> from the request, all existing entries in the web ACL are retained.</p></li>
+    /// <li>
+    /// <p>If you include <code>ApplicationConfig</code>, entries must match the existing values exactly. Any attempt to modify existing entries will result in an error.</p></li>
+    /// </ul>
+    pub fn set_application_config(mut self, input: ::std::option::Option<crate::types::ApplicationConfig>) -> Self {
+        self.application_config = input;
+        self
+    }
+    /// <p>Configures the ability for the WAF console to store and retrieve application attributes. Application attributes help WAF give recommendations for protection packs.</p>
+    /// <p>When using <code>UpdateWebACL</code>, <code>ApplicationConfig</code> follows these rules:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If you omit <code>ApplicationConfig</code> from the request, all existing entries in the web ACL are retained.</p></li>
+    /// <li>
+    /// <p>If you include <code>ApplicationConfig</code>, entries must match the existing values exactly. Any attempt to modify existing entries will result in an error.</p></li>
+    /// </ul>
+    pub fn get_application_config(&self) -> &::std::option::Option<crate::types::ApplicationConfig> {
+        &self.application_config
+    }
     /// Consumes the builder and constructs a [`UpdateWebAclInput`](crate::operation::update_web_acl::UpdateWebAclInput).
     pub fn build(
         self,
@@ -469,6 +525,7 @@ impl UpdateWebAclInputBuilder {
             token_domains: self.token_domains,
             association_config: self.association_config,
             on_source_d_do_s_protection_config: self.on_source_d_do_s_protection_config,
+            application_config: self.application_config,
         })
     }
 }

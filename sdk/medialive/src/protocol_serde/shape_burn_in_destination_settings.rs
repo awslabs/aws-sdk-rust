@@ -84,6 +84,9 @@ pub fn ser_burn_in_destination_settings(
             ::aws_smithy_types::Number::NegInt((*var_18).into()),
         );
     }
+    if let Some(var_19) = &input.subtitle_rows {
+        object.key("subtitleRows").string(var_19.as_str());
+    }
     Ok(())
 }
 
@@ -214,6 +217,13 @@ where
                             builder = builder.set_y_position(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "subtitleRows" => {
+                            builder = builder.set_subtitle_rows(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::BurnInDestinationSubtitleRows::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

@@ -354,6 +354,31 @@ impl CreateCanaryFluentBuilder {
         self.inner.get_provisioned_resource_cleanup()
     }
     ///
+    /// Appends an item to `BrowserConfigs`.
+    ///
+    /// To override the contents of this collection use [`set_browser_configs`](Self::set_browser_configs).
+    ///
+    /// <p>CloudWatch Synthetics now supports multibrowser canaries for <code>syn-nodejs-puppeteer-11.0</code> and <code>syn-nodejs-playwright-3.0</code> runtimes. This feature allows you to run your canaries on both Firefox and Chrome browsers. To create a multibrowser canary, you need to specify the BrowserConfigs with a list of browsers you want to use.</p><note>
+    /// <p>If not specified, <code>browserConfigs</code> defaults to Chrome.</p>
+    /// </note>
+    pub fn browser_configs(mut self, input: crate::types::BrowserConfig) -> Self {
+        self.inner = self.inner.browser_configs(input);
+        self
+    }
+    /// <p>CloudWatch Synthetics now supports multibrowser canaries for <code>syn-nodejs-puppeteer-11.0</code> and <code>syn-nodejs-playwright-3.0</code> runtimes. This feature allows you to run your canaries on both Firefox and Chrome browsers. To create a multibrowser canary, you need to specify the BrowserConfigs with a list of browsers you want to use.</p><note>
+    /// <p>If not specified, <code>browserConfigs</code> defaults to Chrome.</p>
+    /// </note>
+    pub fn set_browser_configs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BrowserConfig>>) -> Self {
+        self.inner = self.inner.set_browser_configs(input);
+        self
+    }
+    /// <p>CloudWatch Synthetics now supports multibrowser canaries for <code>syn-nodejs-puppeteer-11.0</code> and <code>syn-nodejs-playwright-3.0</code> runtimes. This feature allows you to run your canaries on both Firefox and Chrome browsers. To create a multibrowser canary, you need to specify the BrowserConfigs with a list of browsers you want to use.</p><note>
+    /// <p>If not specified, <code>browserConfigs</code> defaults to Chrome.</p>
+    /// </note>
+    pub fn get_browser_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BrowserConfig>> {
+        self.inner.get_browser_configs()
+    }
+    ///
     /// Adds a key-value pair to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

@@ -18,5 +18,8 @@ pub fn ser_visual_reference_input(
     {
         object.key("BaseCanaryRunId").string(input.base_canary_run_id.as_str());
     }
+    if let Some(var_5) = &input.browser_type {
+        object.key("BrowserType").string(var_5.as_str());
+    }
     Ok(())
 }

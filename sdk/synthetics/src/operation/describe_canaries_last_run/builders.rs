@@ -169,4 +169,18 @@ impl DescribeCanariesLastRunFluentBuilder {
     pub fn get_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_names()
     }
+    /// <p>The type of browser to use for the canary run.</p>
+    pub fn browser_type(mut self, input: crate::types::BrowserType) -> Self {
+        self.inner = self.inner.browser_type(input);
+        self
+    }
+    /// <p>The type of browser to use for the canary run.</p>
+    pub fn set_browser_type(mut self, input: ::std::option::Option<crate::types::BrowserType>) -> Self {
+        self.inner = self.inner.set_browser_type(input);
+        self
+    }
+    /// <p>The type of browser to use for the canary run.</p>
+    pub fn get_browser_type(&self) -> &::std::option::Option<crate::types::BrowserType> {
+        self.inner.get_browser_type()
+    }
 }

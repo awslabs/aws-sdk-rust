@@ -225,16 +225,15 @@ pub struct CreateDbInstanceReadReplicaInput {
     /// </ul>
     /// <p>Example: <code>123.124.125.126,234.235.236.237</code></p>
     pub domain_dns_ips: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The open mode of the replica database.</p><note>
+    /// <p>The open mode of the replica database.</p>
     /// <p>This parameter is only supported for Db2 DB instances and Oracle DB instances.</p>
-    /// </note>
     /// <dl>
     /// <dt>
     /// Db2
     /// </dt>
     /// <dd>
     /// <p>Standby DB replicas are included in Db2 Advanced Edition (AE) and Db2 Standard Edition (SE). The main use case for standby replicas is cross-Region disaster recovery. Because it doesn't accept user connections, a standby replica can't serve a read-only workload.</p>
-    /// <p>You can create a combination of standby and read-only DB replicas for the same primary DB instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-replication.html">Working with read replicas for Amazon RDS for Db2</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>You can create a combination of standby and read-only DB replicas for the same primary DB instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-replication.html">Working with replicas for Amazon RDS for Db2</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>To create standby DB replicas for RDS for Db2, set this parameter to <code>mounted</code>.</p>
     /// </dd>
     /// <dt>
@@ -620,16 +619,15 @@ impl CreateDbInstanceReadReplicaInput {
     pub fn domain_dns_ips(&self) -> &[::std::string::String] {
         self.domain_dns_ips.as_deref().unwrap_or_default()
     }
-    /// <p>The open mode of the replica database.</p><note>
+    /// <p>The open mode of the replica database.</p>
     /// <p>This parameter is only supported for Db2 DB instances and Oracle DB instances.</p>
-    /// </note>
     /// <dl>
     /// <dt>
     /// Db2
     /// </dt>
     /// <dd>
     /// <p>Standby DB replicas are included in Db2 Advanced Edition (AE) and Db2 Standard Edition (SE). The main use case for standby replicas is cross-Region disaster recovery. Because it doesn't accept user connections, a standby replica can't serve a read-only workload.</p>
-    /// <p>You can create a combination of standby and read-only DB replicas for the same primary DB instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-replication.html">Working with read replicas for Amazon RDS for Db2</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>You can create a combination of standby and read-only DB replicas for the same primary DB instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-replication.html">Working with replicas for Amazon RDS for Db2</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>To create standby DB replicas for RDS for Db2, set this parameter to <code>mounted</code>.</p>
     /// </dd>
     /// <dt>
@@ -1773,16 +1771,15 @@ impl CreateDbInstanceReadReplicaInputBuilder {
     pub fn get_domain_dns_ips(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.domain_dns_ips
     }
-    /// <p>The open mode of the replica database.</p><note>
+    /// <p>The open mode of the replica database.</p>
     /// <p>This parameter is only supported for Db2 DB instances and Oracle DB instances.</p>
-    /// </note>
     /// <dl>
     /// <dt>
     /// Db2
     /// </dt>
     /// <dd>
     /// <p>Standby DB replicas are included in Db2 Advanced Edition (AE) and Db2 Standard Edition (SE). The main use case for standby replicas is cross-Region disaster recovery. Because it doesn't accept user connections, a standby replica can't serve a read-only workload.</p>
-    /// <p>You can create a combination of standby and read-only DB replicas for the same primary DB instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-replication.html">Working with read replicas for Amazon RDS for Db2</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>You can create a combination of standby and read-only DB replicas for the same primary DB instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-replication.html">Working with replicas for Amazon RDS for Db2</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>To create standby DB replicas for RDS for Db2, set this parameter to <code>mounted</code>.</p>
     /// </dd>
     /// <dt>
@@ -1798,16 +1795,15 @@ impl CreateDbInstanceReadReplicaInputBuilder {
         self.replica_mode = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The open mode of the replica database.</p><note>
+    /// <p>The open mode of the replica database.</p>
     /// <p>This parameter is only supported for Db2 DB instances and Oracle DB instances.</p>
-    /// </note>
     /// <dl>
     /// <dt>
     /// Db2
     /// </dt>
     /// <dd>
     /// <p>Standby DB replicas are included in Db2 Advanced Edition (AE) and Db2 Standard Edition (SE). The main use case for standby replicas is cross-Region disaster recovery. Because it doesn't accept user connections, a standby replica can't serve a read-only workload.</p>
-    /// <p>You can create a combination of standby and read-only DB replicas for the same primary DB instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-replication.html">Working with read replicas for Amazon RDS for Db2</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>You can create a combination of standby and read-only DB replicas for the same primary DB instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-replication.html">Working with replicas for Amazon RDS for Db2</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>To create standby DB replicas for RDS for Db2, set this parameter to <code>mounted</code>.</p>
     /// </dd>
     /// <dt>
@@ -1823,16 +1819,15 @@ impl CreateDbInstanceReadReplicaInputBuilder {
         self.replica_mode = input;
         self
     }
-    /// <p>The open mode of the replica database.</p><note>
+    /// <p>The open mode of the replica database.</p>
     /// <p>This parameter is only supported for Db2 DB instances and Oracle DB instances.</p>
-    /// </note>
     /// <dl>
     /// <dt>
     /// Db2
     /// </dt>
     /// <dd>
     /// <p>Standby DB replicas are included in Db2 Advanced Edition (AE) and Db2 Standard Edition (SE). The main use case for standby replicas is cross-Region disaster recovery. Because it doesn't accept user connections, a standby replica can't serve a read-only workload.</p>
-    /// <p>You can create a combination of standby and read-only DB replicas for the same primary DB instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-replication.html">Working with read replicas for Amazon RDS for Db2</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>You can create a combination of standby and read-only DB replicas for the same primary DB instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-replication.html">Working with replicas for Amazon RDS for Db2</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>To create standby DB replicas for RDS for Db2, set this parameter to <code>mounted</code>.</p>
     /// </dd>
     /// <dt>

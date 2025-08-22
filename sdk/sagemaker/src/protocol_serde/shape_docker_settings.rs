@@ -15,6 +15,9 @@ pub fn ser_docker_settings(
         }
         array_3.finish();
     }
+    if let Some(var_5) = &input.rootless_docker {
+        object.key("RootlessDocker").string(var_5.as_str());
+    }
     Ok(())
 }
 
@@ -43,6 +46,13 @@ where
                         "VpcOnlyTrustedAccounts" => {
                             builder = builder.set_vpc_only_trusted_accounts(
                                 crate::protocol_serde::shape_vpc_only_trusted_accounts::de_vpc_only_trusted_accounts(tokens)?,
+                            );
+                        }
+                        "RootlessDocker" => {
+                            builder = builder.set_rootless_docker(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::FeatureStatus::from(u.as_ref())))
+                                    .transpose()?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

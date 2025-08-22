@@ -12,50 +12,74 @@ pub fn ser_start_canary_dry_run_input_input(
     if let Some(var_3) = &input.artifact_s3_location {
         object.key("ArtifactS3Location").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.code {
+    if let Some(var_4) = &input.browser_configs {
+        let mut array_5 = object.key("BrowserConfigs").start_array();
+        for item_6 in var_4 {
+            {
+                #[allow(unused_mut)]
+                let mut object_7 = array_5.value().start_object();
+                crate::protocol_serde::shape_browser_config::ser_browser_config(&mut object_7, item_6)?;
+                object_7.finish();
+            }
+        }
+        array_5.finish();
+    }
+    if let Some(var_8) = &input.code {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("Code").start_object();
-        crate::protocol_serde::shape_canary_code_input::ser_canary_code_input(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_9 = object.key("Code").start_object();
+        crate::protocol_serde::shape_canary_code_input::ser_canary_code_input(&mut object_9, var_8)?;
+        object_9.finish();
     }
-    if let Some(var_6) = &input.execution_role_arn {
-        object.key("ExecutionRoleArn").string(var_6.as_str());
+    if let Some(var_10) = &input.execution_role_arn {
+        object.key("ExecutionRoleArn").string(var_10.as_str());
     }
-    if let Some(var_7) = &input.failure_retention_period_in_days {
+    if let Some(var_11) = &input.failure_retention_period_in_days {
         object.key("FailureRetentionPeriodInDays").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_7).into()),
+            ::aws_smithy_types::Number::NegInt((*var_11).into()),
         );
     }
-    if let Some(var_8) = &input.provisioned_resource_cleanup {
-        object.key("ProvisionedResourceCleanup").string(var_8.as_str());
+    if let Some(var_12) = &input.provisioned_resource_cleanup {
+        object.key("ProvisionedResourceCleanup").string(var_12.as_str());
     }
-    if let Some(var_9) = &input.run_config {
+    if let Some(var_13) = &input.run_config {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("RunConfig").start_object();
-        crate::protocol_serde::shape_canary_run_config_input::ser_canary_run_config_input(&mut object_10, var_9)?;
-        object_10.finish();
-    }
-    if let Some(var_11) = &input.runtime_version {
-        object.key("RuntimeVersion").string(var_11.as_str());
-    }
-    if let Some(var_12) = &input.success_retention_period_in_days {
-        object.key("SuccessRetentionPeriodInDays").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_12).into()),
-        );
-    }
-    if let Some(var_13) = &input.visual_reference {
-        #[allow(unused_mut)]
-        let mut object_14 = object.key("VisualReference").start_object();
-        crate::protocol_serde::shape_visual_reference_input::ser_visual_reference_input(&mut object_14, var_13)?;
+        let mut object_14 = object.key("RunConfig").start_object();
+        crate::protocol_serde::shape_canary_run_config_input::ser_canary_run_config_input(&mut object_14, var_13)?;
         object_14.finish();
     }
-    if let Some(var_15) = &input.vpc_config {
+    if let Some(var_15) = &input.runtime_version {
+        object.key("RuntimeVersion").string(var_15.as_str());
+    }
+    if let Some(var_16) = &input.success_retention_period_in_days {
+        object.key("SuccessRetentionPeriodInDays").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_16).into()),
+        );
+    }
+    if let Some(var_17) = &input.visual_reference {
         #[allow(unused_mut)]
-        let mut object_16 = object.key("VpcConfig").start_object();
-        crate::protocol_serde::shape_vpc_config_input::ser_vpc_config_input(&mut object_16, var_15)?;
-        object_16.finish();
+        let mut object_18 = object.key("VisualReference").start_object();
+        crate::protocol_serde::shape_visual_reference_input::ser_visual_reference_input(&mut object_18, var_17)?;
+        object_18.finish();
+    }
+    if let Some(var_19) = &input.visual_references {
+        let mut array_20 = object.key("VisualReferences").start_array();
+        for item_21 in var_19 {
+            {
+                #[allow(unused_mut)]
+                let mut object_22 = array_20.value().start_object();
+                crate::protocol_serde::shape_visual_reference_input::ser_visual_reference_input(&mut object_22, item_21)?;
+                object_22.finish();
+            }
+        }
+        array_20.finish();
+    }
+    if let Some(var_23) = &input.vpc_config {
+        #[allow(unused_mut)]
+        let mut object_24 = object.key("VpcConfig").start_object();
+        crate::protocol_serde::shape_vpc_config_input::ser_vpc_config_input(&mut object_24, var_23)?;
+        object_24.finish();
     }
     Ok(())
 }

@@ -53,7 +53,7 @@ pub struct ClusterInstanceGroupSpecification {
     /// <li>
     /// <p><code>default</code>: Use the default latest system image</p></li>
     /// </ul>
-    /// <p>f you choose to use a custom AMI (<code>CustomAmiId</code>), ensure it meets the following requirements:</p>
+    /// <p>If you choose to use a custom AMI (<code>CustomAmiId</code>), ensure it meets the following requirements:</p>
     /// <ul>
     /// <li>
     /// <p>Encryption: The custom AMI must be unencrypted.</p></li>
@@ -62,7 +62,7 @@ pub struct ClusterInstanceGroupSpecification {
     /// <li>
     /// <p>Volume support: Only the primary AMI snapshot volume is supported; additional AMI volumes are not supported.</p></li>
     /// </ul>
-    /// <p>When updating the instance group's AMI through the <code>UpdateClusterSoftware</code> operation, if an instance group uses a custom AMI, you must provide an <code>ImageId</code> or use the default as input.</p>
+    /// <p>When updating the instance group's AMI through the <code>UpdateClusterSoftware</code> operation, if an instance group uses a custom AMI, you must provide an <code>ImageId</code> or use the default as input. Note that if you don't specify an instance group in your <code>UpdateClusterSoftware</code> request, then all of the instance groups are patched with the specified image.</p>
     pub image_id: ::std::option::Option<::std::string::String>,
 }
 impl ClusterInstanceGroupSpecification {
@@ -141,7 +141,7 @@ impl ClusterInstanceGroupSpecification {
     /// <li>
     /// <p><code>default</code>: Use the default latest system image</p></li>
     /// </ul>
-    /// <p>f you choose to use a custom AMI (<code>CustomAmiId</code>), ensure it meets the following requirements:</p>
+    /// <p>If you choose to use a custom AMI (<code>CustomAmiId</code>), ensure it meets the following requirements:</p>
     /// <ul>
     /// <li>
     /// <p>Encryption: The custom AMI must be unencrypted.</p></li>
@@ -150,7 +150,7 @@ impl ClusterInstanceGroupSpecification {
     /// <li>
     /// <p>Volume support: Only the primary AMI snapshot volume is supported; additional AMI volumes are not supported.</p></li>
     /// </ul>
-    /// <p>When updating the instance group's AMI through the <code>UpdateClusterSoftware</code> operation, if an instance group uses a custom AMI, you must provide an <code>ImageId</code> or use the default as input.</p>
+    /// <p>When updating the instance group's AMI through the <code>UpdateClusterSoftware</code> operation, if an instance group uses a custom AMI, you must provide an <code>ImageId</code> or use the default as input. Note that if you don't specify an instance group in your <code>UpdateClusterSoftware</code> request, then all of the instance groups are patched with the specified image.</p>
     pub fn image_id(&self) -> ::std::option::Option<&str> {
         self.image_id.as_deref()
     }
@@ -414,7 +414,7 @@ impl ClusterInstanceGroupSpecificationBuilder {
     /// <li>
     /// <p><code>default</code>: Use the default latest system image</p></li>
     /// </ul>
-    /// <p>f you choose to use a custom AMI (<code>CustomAmiId</code>), ensure it meets the following requirements:</p>
+    /// <p>If you choose to use a custom AMI (<code>CustomAmiId</code>), ensure it meets the following requirements:</p>
     /// <ul>
     /// <li>
     /// <p>Encryption: The custom AMI must be unencrypted.</p></li>
@@ -423,7 +423,7 @@ impl ClusterInstanceGroupSpecificationBuilder {
     /// <li>
     /// <p>Volume support: Only the primary AMI snapshot volume is supported; additional AMI volumes are not supported.</p></li>
     /// </ul>
-    /// <p>When updating the instance group's AMI through the <code>UpdateClusterSoftware</code> operation, if an instance group uses a custom AMI, you must provide an <code>ImageId</code> or use the default as input.</p>
+    /// <p>When updating the instance group's AMI through the <code>UpdateClusterSoftware</code> operation, if an instance group uses a custom AMI, you must provide an <code>ImageId</code> or use the default as input. Note that if you don't specify an instance group in your <code>UpdateClusterSoftware</code> request, then all of the instance groups are patched with the specified image.</p>
     pub fn image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_id = ::std::option::Option::Some(input.into());
         self
@@ -437,7 +437,7 @@ impl ClusterInstanceGroupSpecificationBuilder {
     /// <li>
     /// <p><code>default</code>: Use the default latest system image</p></li>
     /// </ul>
-    /// <p>f you choose to use a custom AMI (<code>CustomAmiId</code>), ensure it meets the following requirements:</p>
+    /// <p>If you choose to use a custom AMI (<code>CustomAmiId</code>), ensure it meets the following requirements:</p>
     /// <ul>
     /// <li>
     /// <p>Encryption: The custom AMI must be unencrypted.</p></li>
@@ -446,7 +446,7 @@ impl ClusterInstanceGroupSpecificationBuilder {
     /// <li>
     /// <p>Volume support: Only the primary AMI snapshot volume is supported; additional AMI volumes are not supported.</p></li>
     /// </ul>
-    /// <p>When updating the instance group's AMI through the <code>UpdateClusterSoftware</code> operation, if an instance group uses a custom AMI, you must provide an <code>ImageId</code> or use the default as input.</p>
+    /// <p>When updating the instance group's AMI through the <code>UpdateClusterSoftware</code> operation, if an instance group uses a custom AMI, you must provide an <code>ImageId</code> or use the default as input. Note that if you don't specify an instance group in your <code>UpdateClusterSoftware</code> request, then all of the instance groups are patched with the specified image.</p>
     pub fn set_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_id = input;
         self
@@ -460,7 +460,7 @@ impl ClusterInstanceGroupSpecificationBuilder {
     /// <li>
     /// <p><code>default</code>: Use the default latest system image</p></li>
     /// </ul>
-    /// <p>f you choose to use a custom AMI (<code>CustomAmiId</code>), ensure it meets the following requirements:</p>
+    /// <p>If you choose to use a custom AMI (<code>CustomAmiId</code>), ensure it meets the following requirements:</p>
     /// <ul>
     /// <li>
     /// <p>Encryption: The custom AMI must be unencrypted.</p></li>
@@ -469,7 +469,7 @@ impl ClusterInstanceGroupSpecificationBuilder {
     /// <li>
     /// <p>Volume support: Only the primary AMI snapshot volume is supported; additional AMI volumes are not supported.</p></li>
     /// </ul>
-    /// <p>When updating the instance group's AMI through the <code>UpdateClusterSoftware</code> operation, if an instance group uses a custom AMI, you must provide an <code>ImageId</code> or use the default as input.</p>
+    /// <p>When updating the instance group's AMI through the <code>UpdateClusterSoftware</code> operation, if an instance group uses a custom AMI, you must provide an <code>ImageId</code> or use the default as input. Note that if you don't specify an instance group in your <code>UpdateClusterSoftware</code> request, then all of the instance groups are patched with the specified image.</p>
     pub fn get_image_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.image_id
     }

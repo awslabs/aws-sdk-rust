@@ -39,6 +39,18 @@ pub struct Canary {
     /// <p>Specifies whether to also delete the Lambda functions and layers used by this canary when the canary is deleted. If it is <code>AUTOMATIC</code>, the Lambda functions and layers will be deleted when the canary is deleted.</p>
     /// <p>If the value of this parameter is <code>OFF</code>, then the value of the <code>DeleteLambda</code> parameter of the <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DeleteCanary.html">DeleteCanary</a> operation determines whether the Lambda functions and layers will be deleted.</p>
     pub provisioned_resource_cleanup: ::std::option::Option<crate::types::ProvisionedResourceCleanupSetting>,
+    /// <p>A structure that specifies the browser type to use for a canary run. CloudWatch Synthetics supports running canaries on both <code>CHROME</code> and <code>FIREFOX</code> browsers.</p><note>
+    /// <p>If not specified, <code>browserConfigs</code> defaults to Chrome.</p>
+    /// </note>
+    pub browser_configs: ::std::option::Option<::std::vec::Vec<crate::types::BrowserConfig>>,
+    /// <p>A list of engine configurations for the canary, one for each browser type that the canary is configured to run on.</p>
+    /// <p>All runtime versions <code>syn-nodejs-puppeteer-11.0</code> and above, and <code>syn-nodejs-playwright-3.0</code> and above, use <code>engineConfigs</code> only. You can no longer use <code>engineArn</code> in these versions.</p>
+    /// <p>Runtime versions older than <code>syn-nodejs-puppeteer-11.0</code> and <code>syn-nodejs-playwright-3.0</code> continue to support <code>engineArn</code> to ensure backward compatibility.</p>
+    pub engine_configs: ::std::option::Option<::std::vec::Vec<crate::types::EngineConfig>>,
+    /// <p>A list of visual reference configurations for the canary, one for each browser type that the canary is configured to run on. Visual references are used for visual monitoring comparisons.</p>
+    /// <p><code>syn-nodejs-puppeteer-11.0</code> and above, and <code>syn-nodejs-playwright-3.0</code> and above, only supports <code>visualReferences</code>. <code>visualReference</code> field is not supported.</p>
+    /// <p>Versions older than <code>syn-nodejs-puppeteer-11.0</code> supports both <code>visualReference</code> and <code>visualReferences</code> for backward compatibility. It is recommended to use <code>visualReferences</code> for consistency and future compatibility.</p>
+    pub visual_references: ::std::option::Option<::std::vec::Vec<crate::types::VisualReferenceOutput>>,
     /// <p>The list of key-value pairs that are associated with the canary.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A structure that contains the configuration for canary artifacts, including the encryption-at-rest settings for artifacts that the canary uploads to Amazon S3.</p>
@@ -114,6 +126,30 @@ impl Canary {
     pub fn provisioned_resource_cleanup(&self) -> ::std::option::Option<&crate::types::ProvisionedResourceCleanupSetting> {
         self.provisioned_resource_cleanup.as_ref()
     }
+    /// <p>A structure that specifies the browser type to use for a canary run. CloudWatch Synthetics supports running canaries on both <code>CHROME</code> and <code>FIREFOX</code> browsers.</p><note>
+    /// <p>If not specified, <code>browserConfigs</code> defaults to Chrome.</p>
+    /// </note>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.browser_configs.is_none()`.
+    pub fn browser_configs(&self) -> &[crate::types::BrowserConfig] {
+        self.browser_configs.as_deref().unwrap_or_default()
+    }
+    /// <p>A list of engine configurations for the canary, one for each browser type that the canary is configured to run on.</p>
+    /// <p>All runtime versions <code>syn-nodejs-puppeteer-11.0</code> and above, and <code>syn-nodejs-playwright-3.0</code> and above, use <code>engineConfigs</code> only. You can no longer use <code>engineArn</code> in these versions.</p>
+    /// <p>Runtime versions older than <code>syn-nodejs-puppeteer-11.0</code> and <code>syn-nodejs-playwright-3.0</code> continue to support <code>engineArn</code> to ensure backward compatibility.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.engine_configs.is_none()`.
+    pub fn engine_configs(&self) -> &[crate::types::EngineConfig] {
+        self.engine_configs.as_deref().unwrap_or_default()
+    }
+    /// <p>A list of visual reference configurations for the canary, one for each browser type that the canary is configured to run on. Visual references are used for visual monitoring comparisons.</p>
+    /// <p><code>syn-nodejs-puppeteer-11.0</code> and above, and <code>syn-nodejs-playwright-3.0</code> and above, only supports <code>visualReferences</code>. <code>visualReference</code> field is not supported.</p>
+    /// <p>Versions older than <code>syn-nodejs-puppeteer-11.0</code> supports both <code>visualReference</code> and <code>visualReferences</code> for backward compatibility. It is recommended to use <code>visualReferences</code> for consistency and future compatibility.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.visual_references.is_none()`.
+    pub fn visual_references(&self) -> &[crate::types::VisualReferenceOutput] {
+        self.visual_references.as_deref().unwrap_or_default()
+    }
     /// <p>The list of key-value pairs that are associated with the canary.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
@@ -154,6 +190,9 @@ pub struct CanaryBuilder {
     pub(crate) vpc_config: ::std::option::Option<crate::types::VpcConfigOutput>,
     pub(crate) visual_reference: ::std::option::Option<crate::types::VisualReferenceOutput>,
     pub(crate) provisioned_resource_cleanup: ::std::option::Option<crate::types::ProvisionedResourceCleanupSetting>,
+    pub(crate) browser_configs: ::std::option::Option<::std::vec::Vec<crate::types::BrowserConfig>>,
+    pub(crate) engine_configs: ::std::option::Option<::std::vec::Vec<crate::types::EngineConfig>>,
+    pub(crate) visual_references: ::std::option::Option<::std::vec::Vec<crate::types::VisualReferenceOutput>>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) artifact_config: ::std::option::Option<crate::types::ArtifactConfigOutput>,
     pub(crate) dry_run_config: ::std::option::Option<crate::types::DryRunConfigOutput>,
@@ -392,6 +431,84 @@ impl CanaryBuilder {
     pub fn get_provisioned_resource_cleanup(&self) -> &::std::option::Option<crate::types::ProvisionedResourceCleanupSetting> {
         &self.provisioned_resource_cleanup
     }
+    /// Appends an item to `browser_configs`.
+    ///
+    /// To override the contents of this collection use [`set_browser_configs`](Self::set_browser_configs).
+    ///
+    /// <p>A structure that specifies the browser type to use for a canary run. CloudWatch Synthetics supports running canaries on both <code>CHROME</code> and <code>FIREFOX</code> browsers.</p><note>
+    /// <p>If not specified, <code>browserConfigs</code> defaults to Chrome.</p>
+    /// </note>
+    pub fn browser_configs(mut self, input: crate::types::BrowserConfig) -> Self {
+        let mut v = self.browser_configs.unwrap_or_default();
+        v.push(input);
+        self.browser_configs = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A structure that specifies the browser type to use for a canary run. CloudWatch Synthetics supports running canaries on both <code>CHROME</code> and <code>FIREFOX</code> browsers.</p><note>
+    /// <p>If not specified, <code>browserConfigs</code> defaults to Chrome.</p>
+    /// </note>
+    pub fn set_browser_configs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BrowserConfig>>) -> Self {
+        self.browser_configs = input;
+        self
+    }
+    /// <p>A structure that specifies the browser type to use for a canary run. CloudWatch Synthetics supports running canaries on both <code>CHROME</code> and <code>FIREFOX</code> browsers.</p><note>
+    /// <p>If not specified, <code>browserConfigs</code> defaults to Chrome.</p>
+    /// </note>
+    pub fn get_browser_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BrowserConfig>> {
+        &self.browser_configs
+    }
+    /// Appends an item to `engine_configs`.
+    ///
+    /// To override the contents of this collection use [`set_engine_configs`](Self::set_engine_configs).
+    ///
+    /// <p>A list of engine configurations for the canary, one for each browser type that the canary is configured to run on.</p>
+    /// <p>All runtime versions <code>syn-nodejs-puppeteer-11.0</code> and above, and <code>syn-nodejs-playwright-3.0</code> and above, use <code>engineConfigs</code> only. You can no longer use <code>engineArn</code> in these versions.</p>
+    /// <p>Runtime versions older than <code>syn-nodejs-puppeteer-11.0</code> and <code>syn-nodejs-playwright-3.0</code> continue to support <code>engineArn</code> to ensure backward compatibility.</p>
+    pub fn engine_configs(mut self, input: crate::types::EngineConfig) -> Self {
+        let mut v = self.engine_configs.unwrap_or_default();
+        v.push(input);
+        self.engine_configs = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of engine configurations for the canary, one for each browser type that the canary is configured to run on.</p>
+    /// <p>All runtime versions <code>syn-nodejs-puppeteer-11.0</code> and above, and <code>syn-nodejs-playwright-3.0</code> and above, use <code>engineConfigs</code> only. You can no longer use <code>engineArn</code> in these versions.</p>
+    /// <p>Runtime versions older than <code>syn-nodejs-puppeteer-11.0</code> and <code>syn-nodejs-playwright-3.0</code> continue to support <code>engineArn</code> to ensure backward compatibility.</p>
+    pub fn set_engine_configs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EngineConfig>>) -> Self {
+        self.engine_configs = input;
+        self
+    }
+    /// <p>A list of engine configurations for the canary, one for each browser type that the canary is configured to run on.</p>
+    /// <p>All runtime versions <code>syn-nodejs-puppeteer-11.0</code> and above, and <code>syn-nodejs-playwright-3.0</code> and above, use <code>engineConfigs</code> only. You can no longer use <code>engineArn</code> in these versions.</p>
+    /// <p>Runtime versions older than <code>syn-nodejs-puppeteer-11.0</code> and <code>syn-nodejs-playwright-3.0</code> continue to support <code>engineArn</code> to ensure backward compatibility.</p>
+    pub fn get_engine_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EngineConfig>> {
+        &self.engine_configs
+    }
+    /// Appends an item to `visual_references`.
+    ///
+    /// To override the contents of this collection use [`set_visual_references`](Self::set_visual_references).
+    ///
+    /// <p>A list of visual reference configurations for the canary, one for each browser type that the canary is configured to run on. Visual references are used for visual monitoring comparisons.</p>
+    /// <p><code>syn-nodejs-puppeteer-11.0</code> and above, and <code>syn-nodejs-playwright-3.0</code> and above, only supports <code>visualReferences</code>. <code>visualReference</code> field is not supported.</p>
+    /// <p>Versions older than <code>syn-nodejs-puppeteer-11.0</code> supports both <code>visualReference</code> and <code>visualReferences</code> for backward compatibility. It is recommended to use <code>visualReferences</code> for consistency and future compatibility.</p>
+    pub fn visual_references(mut self, input: crate::types::VisualReferenceOutput) -> Self {
+        let mut v = self.visual_references.unwrap_or_default();
+        v.push(input);
+        self.visual_references = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of visual reference configurations for the canary, one for each browser type that the canary is configured to run on. Visual references are used for visual monitoring comparisons.</p>
+    /// <p><code>syn-nodejs-puppeteer-11.0</code> and above, and <code>syn-nodejs-playwright-3.0</code> and above, only supports <code>visualReferences</code>. <code>visualReference</code> field is not supported.</p>
+    /// <p>Versions older than <code>syn-nodejs-puppeteer-11.0</code> supports both <code>visualReference</code> and <code>visualReferences</code> for backward compatibility. It is recommended to use <code>visualReferences</code> for consistency and future compatibility.</p>
+    pub fn set_visual_references(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VisualReferenceOutput>>) -> Self {
+        self.visual_references = input;
+        self
+    }
+    /// <p>A list of visual reference configurations for the canary, one for each browser type that the canary is configured to run on. Visual references are used for visual monitoring comparisons.</p>
+    /// <p><code>syn-nodejs-puppeteer-11.0</code> and above, and <code>syn-nodejs-playwright-3.0</code> and above, only supports <code>visualReferences</code>. <code>visualReference</code> field is not supported.</p>
+    /// <p>Versions older than <code>syn-nodejs-puppeteer-11.0</code> supports both <code>visualReference</code> and <code>visualReferences</code> for backward compatibility. It is recommended to use <code>visualReferences</code> for consistency and future compatibility.</p>
+    pub fn get_visual_references(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VisualReferenceOutput>> {
+        &self.visual_references
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -459,6 +576,9 @@ impl CanaryBuilder {
             vpc_config: self.vpc_config,
             visual_reference: self.visual_reference,
             provisioned_resource_cleanup: self.provisioned_resource_cleanup,
+            browser_configs: self.browser_configs,
+            engine_configs: self.engine_configs,
+            visual_references: self.visual_references,
             tags: self.tags,
             artifact_config: self.artifact_config,
             dry_run_config: self.dry_run_config,

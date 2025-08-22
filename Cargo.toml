@@ -2,13 +2,13 @@
 resolver = "2"
 exclude = [
     "examples/cross_service",
-    "examples/examples",
-    "examples/webassembly",
     "examples/lambda",
+    "examples/webassembly",
+    "examples/examples",
     "examples/test-utils",
+    "tests/no-default-features",
     "tests/webassembly",
-    "tests/telemetry",
-    "tests/no-default-features"
+    "tests/telemetry"
 ]
 members = [
     "sdk/accessanalyzer",

@@ -104,6 +104,17 @@ where
                                     .transpose()?,
                             );
                         }
+                        "BrowserConfigs" => {
+                            builder = builder.set_browser_configs(crate::protocol_serde::shape_browser_configs::de_browser_configs(tokens)?);
+                        }
+                        "EngineConfigs" => {
+                            builder = builder.set_engine_configs(crate::protocol_serde::shape_engine_configs::de_engine_configs(tokens)?);
+                        }
+                        "VisualReferences" => {
+                            builder = builder.set_visual_references(
+                                crate::protocol_serde::shape_visual_references_output::de_visual_references_output(tokens)?,
+                            );
+                        }
                         "Tags" => {
                             builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens)?);
                         }

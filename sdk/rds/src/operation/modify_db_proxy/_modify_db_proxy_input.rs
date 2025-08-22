@@ -13,7 +13,7 @@ pub struct ModifyDbProxyInput {
     pub require_tls: ::std::option::Option<bool>,
     /// <p>The number of seconds that a connection to the proxy can be inactive before the proxy disconnects it. You can set this value higher or lower than the connection timeout limit for the associated database.</p>
     pub idle_client_timeout: ::std::option::Option<i32>,
-    /// <p>Whether the proxy includes detailed information about SQL statements in its logs. This information helps you to debug issues involving SQL behavior or the performance and scalability of the proxy connections. The debug information includes the text of SQL statements that you submit through the proxy. Thus, only enable this setting when needed for debugging, and only when you have security measures in place to safeguard any sensitive information that appears in the logs.</p>
+    /// <p>Specifies whether the proxy logs detailed connection and query information. When you enable <code>DebugLogging</code>, the proxy captures connection details and connection pool behavior from your queries. Debug logging increases CloudWatch costs and can impact proxy performance. Enable this option only when you need to troubleshoot connection or performance issues.</p>
     pub debug_logging: ::std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access secrets in Amazon Web Services Secrets Manager.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
@@ -43,7 +43,7 @@ impl ModifyDbProxyInput {
     pub fn idle_client_timeout(&self) -> ::std::option::Option<i32> {
         self.idle_client_timeout
     }
-    /// <p>Whether the proxy includes detailed information about SQL statements in its logs. This information helps you to debug issues involving SQL behavior or the performance and scalability of the proxy connections. The debug information includes the text of SQL statements that you submit through the proxy. Thus, only enable this setting when needed for debugging, and only when you have security measures in place to safeguard any sensitive information that appears in the logs.</p>
+    /// <p>Specifies whether the proxy logs detailed connection and query information. When you enable <code>DebugLogging</code>, the proxy captures connection details and connection pool behavior from your queries. Debug logging increases CloudWatch costs and can impact proxy performance. Enable this option only when you need to troubleshoot connection or performance issues.</p>
     pub fn debug_logging(&self) -> ::std::option::Option<bool> {
         self.debug_logging
     }
@@ -156,17 +156,17 @@ impl ModifyDbProxyInputBuilder {
     pub fn get_idle_client_timeout(&self) -> &::std::option::Option<i32> {
         &self.idle_client_timeout
     }
-    /// <p>Whether the proxy includes detailed information about SQL statements in its logs. This information helps you to debug issues involving SQL behavior or the performance and scalability of the proxy connections. The debug information includes the text of SQL statements that you submit through the proxy. Thus, only enable this setting when needed for debugging, and only when you have security measures in place to safeguard any sensitive information that appears in the logs.</p>
+    /// <p>Specifies whether the proxy logs detailed connection and query information. When you enable <code>DebugLogging</code>, the proxy captures connection details and connection pool behavior from your queries. Debug logging increases CloudWatch costs and can impact proxy performance. Enable this option only when you need to troubleshoot connection or performance issues.</p>
     pub fn debug_logging(mut self, input: bool) -> Self {
         self.debug_logging = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Whether the proxy includes detailed information about SQL statements in its logs. This information helps you to debug issues involving SQL behavior or the performance and scalability of the proxy connections. The debug information includes the text of SQL statements that you submit through the proxy. Thus, only enable this setting when needed for debugging, and only when you have security measures in place to safeguard any sensitive information that appears in the logs.</p>
+    /// <p>Specifies whether the proxy logs detailed connection and query information. When you enable <code>DebugLogging</code>, the proxy captures connection details and connection pool behavior from your queries. Debug logging increases CloudWatch costs and can impact proxy performance. Enable this option only when you need to troubleshoot connection or performance issues.</p>
     pub fn set_debug_logging(mut self, input: ::std::option::Option<bool>) -> Self {
         self.debug_logging = input;
         self
     }
-    /// <p>Whether the proxy includes detailed information about SQL statements in its logs. This information helps you to debug issues involving SQL behavior or the performance and scalability of the proxy connections. The debug information includes the text of SQL statements that you submit through the proxy. Thus, only enable this setting when needed for debugging, and only when you have security measures in place to safeguard any sensitive information that appears in the logs.</p>
+    /// <p>Specifies whether the proxy logs detailed connection and query information. When you enable <code>DebugLogging</code>, the proxy captures connection details and connection pool behavior from your queries. Debug logging increases CloudWatch costs and can impact proxy performance. Enable this option only when you need to troubleshoot connection or performance issues.</p>
     pub fn get_debug_logging(&self) -> &::std::option::Option<bool> {
         &self.debug_logging
     }

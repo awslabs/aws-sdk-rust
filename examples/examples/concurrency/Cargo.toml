@@ -27,4 +27,4 @@ features = ["env-filter"]
 fastrand = "1.8.0"
 aws-config= { version = "1.8.5", path = "../../../sdk/aws-config" }
 aws-sdk-s3= { version = "1.103.0", path = "../../../sdk/s3" }
-aws-sdk-sqs= { version = "1.81.0", path = "../../../sdk/sqs" }
+aws-sdk-sqs= { version = "1.82.0", path = "../../../sdk/sqs" }

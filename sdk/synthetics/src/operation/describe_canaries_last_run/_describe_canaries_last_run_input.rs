@@ -11,6 +11,8 @@ pub struct DescribeCanariesLastRunInput {
     /// <p>If you specify this parameter, the operation is successful only if you have authorization to view all the canaries that you specify in your request. If you do not have permission to view any of the canaries, the request fails with a 403 response.</p>
     /// <p>You are required to use the <code>Names</code> parameter if you are logged on to a user or role that has an IAM policy that restricts which canaries that you are allowed to view. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Restricted.html"> Limiting a user to viewing specific canaries</a>.</p>
     pub names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The type of browser to use for the canary run.</p>
+    pub browser_type: ::std::option::Option<crate::types::BrowserType>,
 }
 impl DescribeCanariesLastRunInput {
     /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeCanariesLastRun</code> operation to retrieve the next set of results.</p>
@@ -29,6 +31,10 @@ impl DescribeCanariesLastRunInput {
     pub fn names(&self) -> &[::std::string::String] {
         self.names.as_deref().unwrap_or_default()
     }
+    /// <p>The type of browser to use for the canary run.</p>
+    pub fn browser_type(&self) -> ::std::option::Option<&crate::types::BrowserType> {
+        self.browser_type.as_ref()
+    }
 }
 impl DescribeCanariesLastRunInput {
     /// Creates a new builder-style object to manufacture [`DescribeCanariesLastRunInput`](crate::operation::describe_canaries_last_run::DescribeCanariesLastRunInput).
@@ -44,6 +50,7 @@ pub struct DescribeCanariesLastRunInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) browser_type: ::std::option::Option<crate::types::BrowserType>,
 }
 impl DescribeCanariesLastRunInputBuilder {
     /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeCanariesLastRun</code> operation to retrieve the next set of results.</p>
@@ -100,6 +107,20 @@ impl DescribeCanariesLastRunInputBuilder {
     pub fn get_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.names
     }
+    /// <p>The type of browser to use for the canary run.</p>
+    pub fn browser_type(mut self, input: crate::types::BrowserType) -> Self {
+        self.browser_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of browser to use for the canary run.</p>
+    pub fn set_browser_type(mut self, input: ::std::option::Option<crate::types::BrowserType>) -> Self {
+        self.browser_type = input;
+        self
+    }
+    /// <p>The type of browser to use for the canary run.</p>
+    pub fn get_browser_type(&self) -> &::std::option::Option<crate::types::BrowserType> {
+        &self.browser_type
+    }
     /// Consumes the builder and constructs a [`DescribeCanariesLastRunInput`](crate::operation::describe_canaries_last_run::DescribeCanariesLastRunInput).
     pub fn build(
         self,
@@ -111,6 +132,7 @@ impl DescribeCanariesLastRunInputBuilder {
             next_token: self.next_token,
             max_results: self.max_results,
             names: self.names,
+            browser_type: self.browser_type,
         })
     }
 }

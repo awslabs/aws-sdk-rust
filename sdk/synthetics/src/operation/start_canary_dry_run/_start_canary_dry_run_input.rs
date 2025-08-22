@@ -38,6 +38,14 @@ pub struct StartCanaryDryRunInput {
     /// <p>Specifies whether to also delete the Lambda functions and layers used by this canary when the canary is deleted. If you omit this parameter, the default of <code>AUTOMATIC</code> is used, which means that the Lambda functions and layers will be deleted when the canary is deleted.</p>
     /// <p>If the value of this parameter is <code>OFF</code>, then the value of the <code>DeleteLambda</code> parameter of the <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DeleteCanary.html">DeleteCanary</a> operation determines whether the Lambda functions and layers will be deleted.</p>
     pub provisioned_resource_cleanup: ::std::option::Option<crate::types::ProvisionedResourceCleanupSetting>,
+    /// <p>A structure that specifies the browser type to use for a canary run. CloudWatch Synthetics supports running canaries on both <code>CHROME</code> and <code>FIREFOX</code> browsers.</p><note>
+    /// <p>If not specified, <code>browserConfigs</code> defaults to Chrome.</p>
+    /// </note>
+    pub browser_configs: ::std::option::Option<::std::vec::Vec<crate::types::BrowserConfig>>,
+    /// <p>A list of visual reference configurations for the canary, one for each browser type that the canary is configured to run on. Visual references are used for visual monitoring comparisons.</p>
+    /// <p><code>syn-nodejs-puppeteer-11.0</code> and above, and <code>syn-nodejs-playwright-3.0</code> and above, only supports <code>visualReferences</code>. <code>visualReference</code> field is not supported.</p>
+    /// <p>Versions older than <code>syn-nodejs-puppeteer-11.0</code> supports both <code>visualReference</code> and <code>visualReferences</code> for backward compatibility. It is recommended to use <code>visualReferences</code> for consistency and future compatibility.</p>
+    pub visual_references: ::std::option::Option<::std::vec::Vec<crate::types::VisualReferenceInput>>,
 }
 impl StartCanaryDryRunInput {
     /// <p>The name of the canary that you want to dry run. To find canary names, use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html">DescribeCanaries</a>.</p>
@@ -99,6 +107,22 @@ impl StartCanaryDryRunInput {
     pub fn provisioned_resource_cleanup(&self) -> ::std::option::Option<&crate::types::ProvisionedResourceCleanupSetting> {
         self.provisioned_resource_cleanup.as_ref()
     }
+    /// <p>A structure that specifies the browser type to use for a canary run. CloudWatch Synthetics supports running canaries on both <code>CHROME</code> and <code>FIREFOX</code> browsers.</p><note>
+    /// <p>If not specified, <code>browserConfigs</code> defaults to Chrome.</p>
+    /// </note>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.browser_configs.is_none()`.
+    pub fn browser_configs(&self) -> &[crate::types::BrowserConfig] {
+        self.browser_configs.as_deref().unwrap_or_default()
+    }
+    /// <p>A list of visual reference configurations for the canary, one for each browser type that the canary is configured to run on. Visual references are used for visual monitoring comparisons.</p>
+    /// <p><code>syn-nodejs-puppeteer-11.0</code> and above, and <code>syn-nodejs-playwright-3.0</code> and above, only supports <code>visualReferences</code>. <code>visualReference</code> field is not supported.</p>
+    /// <p>Versions older than <code>syn-nodejs-puppeteer-11.0</code> supports both <code>visualReference</code> and <code>visualReferences</code> for backward compatibility. It is recommended to use <code>visualReferences</code> for consistency and future compatibility.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.visual_references.is_none()`.
+    pub fn visual_references(&self) -> &[crate::types::VisualReferenceInput] {
+        self.visual_references.as_deref().unwrap_or_default()
+    }
 }
 impl StartCanaryDryRunInput {
     /// Creates a new builder-style object to manufacture [`StartCanaryDryRunInput`](crate::operation::start_canary_dry_run::StartCanaryDryRunInput).
@@ -123,6 +147,8 @@ pub struct StartCanaryDryRunInputBuilder {
     pub(crate) artifact_s3_location: ::std::option::Option<::std::string::String>,
     pub(crate) artifact_config: ::std::option::Option<crate::types::ArtifactConfigInput>,
     pub(crate) provisioned_resource_cleanup: ::std::option::Option<crate::types::ProvisionedResourceCleanupSetting>,
+    pub(crate) browser_configs: ::std::option::Option<::std::vec::Vec<crate::types::BrowserConfig>>,
+    pub(crate) visual_references: ::std::option::Option<::std::vec::Vec<crate::types::VisualReferenceInput>>,
 }
 impl StartCanaryDryRunInputBuilder {
     /// <p>The name of the canary that you want to dry run. To find canary names, use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html">DescribeCanaries</a>.</p>
@@ -327,6 +353,58 @@ impl StartCanaryDryRunInputBuilder {
     pub fn get_provisioned_resource_cleanup(&self) -> &::std::option::Option<crate::types::ProvisionedResourceCleanupSetting> {
         &self.provisioned_resource_cleanup
     }
+    /// Appends an item to `browser_configs`.
+    ///
+    /// To override the contents of this collection use [`set_browser_configs`](Self::set_browser_configs).
+    ///
+    /// <p>A structure that specifies the browser type to use for a canary run. CloudWatch Synthetics supports running canaries on both <code>CHROME</code> and <code>FIREFOX</code> browsers.</p><note>
+    /// <p>If not specified, <code>browserConfigs</code> defaults to Chrome.</p>
+    /// </note>
+    pub fn browser_configs(mut self, input: crate::types::BrowserConfig) -> Self {
+        let mut v = self.browser_configs.unwrap_or_default();
+        v.push(input);
+        self.browser_configs = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A structure that specifies the browser type to use for a canary run. CloudWatch Synthetics supports running canaries on both <code>CHROME</code> and <code>FIREFOX</code> browsers.</p><note>
+    /// <p>If not specified, <code>browserConfigs</code> defaults to Chrome.</p>
+    /// </note>
+    pub fn set_browser_configs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BrowserConfig>>) -> Self {
+        self.browser_configs = input;
+        self
+    }
+    /// <p>A structure that specifies the browser type to use for a canary run. CloudWatch Synthetics supports running canaries on both <code>CHROME</code> and <code>FIREFOX</code> browsers.</p><note>
+    /// <p>If not specified, <code>browserConfigs</code> defaults to Chrome.</p>
+    /// </note>
+    pub fn get_browser_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BrowserConfig>> {
+        &self.browser_configs
+    }
+    /// Appends an item to `visual_references`.
+    ///
+    /// To override the contents of this collection use [`set_visual_references`](Self::set_visual_references).
+    ///
+    /// <p>A list of visual reference configurations for the canary, one for each browser type that the canary is configured to run on. Visual references are used for visual monitoring comparisons.</p>
+    /// <p><code>syn-nodejs-puppeteer-11.0</code> and above, and <code>syn-nodejs-playwright-3.0</code> and above, only supports <code>visualReferences</code>. <code>visualReference</code> field is not supported.</p>
+    /// <p>Versions older than <code>syn-nodejs-puppeteer-11.0</code> supports both <code>visualReference</code> and <code>visualReferences</code> for backward compatibility. It is recommended to use <code>visualReferences</code> for consistency and future compatibility.</p>
+    pub fn visual_references(mut self, input: crate::types::VisualReferenceInput) -> Self {
+        let mut v = self.visual_references.unwrap_or_default();
+        v.push(input);
+        self.visual_references = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of visual reference configurations for the canary, one for each browser type that the canary is configured to run on. Visual references are used for visual monitoring comparisons.</p>
+    /// <p><code>syn-nodejs-puppeteer-11.0</code> and above, and <code>syn-nodejs-playwright-3.0</code> and above, only supports <code>visualReferences</code>. <code>visualReference</code> field is not supported.</p>
+    /// <p>Versions older than <code>syn-nodejs-puppeteer-11.0</code> supports both <code>visualReference</code> and <code>visualReferences</code> for backward compatibility. It is recommended to use <code>visualReferences</code> for consistency and future compatibility.</p>
+    pub fn set_visual_references(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VisualReferenceInput>>) -> Self {
+        self.visual_references = input;
+        self
+    }
+    /// <p>A list of visual reference configurations for the canary, one for each browser type that the canary is configured to run on. Visual references are used for visual monitoring comparisons.</p>
+    /// <p><code>syn-nodejs-puppeteer-11.0</code> and above, and <code>syn-nodejs-playwright-3.0</code> and above, only supports <code>visualReferences</code>. <code>visualReference</code> field is not supported.</p>
+    /// <p>Versions older than <code>syn-nodejs-puppeteer-11.0</code> supports both <code>visualReference</code> and <code>visualReferences</code> for backward compatibility. It is recommended to use <code>visualReferences</code> for consistency and future compatibility.</p>
+    pub fn get_visual_references(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VisualReferenceInput>> {
+        &self.visual_references
+    }
     /// Consumes the builder and constructs a [`StartCanaryDryRunInput`](crate::operation::start_canary_dry_run::StartCanaryDryRunInput).
     pub fn build(
         self,
@@ -344,6 +422,8 @@ impl StartCanaryDryRunInputBuilder {
             artifact_s3_location: self.artifact_s3_location,
             artifact_config: self.artifact_config,
             provisioned_resource_cleanup: self.provisioned_resource_cleanup,
+            browser_configs: self.browser_configs,
+            visual_references: self.visual_references,
         })
     }
 }
