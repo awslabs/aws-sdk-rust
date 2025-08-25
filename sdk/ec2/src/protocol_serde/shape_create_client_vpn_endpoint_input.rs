@@ -143,6 +143,16 @@ pub fn ser_create_client_vpn_endpoint_input_input_input(
     if let Some(var_52) = &input.disconnect_on_session_timeout {
         scope_51.boolean(*var_52);
     }
+    #[allow(unused_mut)]
+    let mut scope_53 = writer.prefix("EndpointIpAddressType");
+    if let Some(var_54) = &input.endpoint_ip_address_type {
+        scope_53.string(var_54.as_str());
+    }
+    #[allow(unused_mut)]
+    let mut scope_55 = writer.prefix("TrafficIpAddressType");
+    if let Some(var_56) = &input.traffic_ip_address_type {
+        scope_55.string(var_56.as_str());
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

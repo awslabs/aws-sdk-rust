@@ -22,7 +22,7 @@ impl crate::operation::unsubscribe::builders::UnsubscribeInputBuilder {
 }
 /// Fluent builder constructing a request to `Unsubscribe`.
 ///
-/// <p>Removes an association between a notification rule and an Chatbot topic so that subscribers to that topic stop receiving notifications when the events described in the rule are triggered.</p>
+/// <p>Removes an association between a notification rule and an Amazon Q Developer in chat applications topic so that subscribers to that topic stop receiving notifications when the events described in the rule are triggered.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UnsubscribeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -122,17 +122,17 @@ impl UnsubscribeFluentBuilder {
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_arn()
     }
-    /// <p>The ARN of the Chatbot topic to unsubscribe from the notification rule.</p>
+    /// <p>The ARN of the Amazon Q Developer in chat applications topic to unsubscribe from the notification rule.</p>
     pub fn target_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target_address(input.into());
         self
     }
-    /// <p>The ARN of the Chatbot topic to unsubscribe from the notification rule.</p>
+    /// <p>The ARN of the Amazon Q Developer in chat applications topic to unsubscribe from the notification rule.</p>
     pub fn set_target_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_target_address(input);
         self
     }
-    /// <p>The ARN of the Chatbot topic to unsubscribe from the notification rule.</p>
+    /// <p>The ARN of the Amazon Q Developer in chat applications topic to unsubscribe from the notification rule.</p>
     pub fn get_target_address(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_target_address()
     }

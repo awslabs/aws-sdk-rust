@@ -11,7 +11,7 @@ pub struct GetDocumentContentInput {
     pub data_source_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the document that is indexed via BatchPutDocument API or file-upload or connector sync. It is also found in chat or chatSync response.</p>
     pub document_id: ::std::option::Option<::std::string::String>,
-    /// <p>Raw document outputFormat.</p>
+    /// <p>Document outputFormat. Defaults to RAW if not selected.</p>
     pub output_format: ::std::option::Option<crate::types::OutputFormat>,
 }
 impl GetDocumentContentInput {
@@ -31,7 +31,7 @@ impl GetDocumentContentInput {
     pub fn document_id(&self) -> ::std::option::Option<&str> {
         self.document_id.as_deref()
     }
-    /// <p>Raw document outputFormat.</p>
+    /// <p>Document outputFormat. Defaults to RAW if not selected.</p>
     pub fn output_format(&self) -> ::std::option::Option<&crate::types::OutputFormat> {
         self.output_format.as_ref()
     }
@@ -113,17 +113,17 @@ impl GetDocumentContentInputBuilder {
     pub fn get_document_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.document_id
     }
-    /// <p>Raw document outputFormat.</p>
+    /// <p>Document outputFormat. Defaults to RAW if not selected.</p>
     pub fn output_format(mut self, input: crate::types::OutputFormat) -> Self {
         self.output_format = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Raw document outputFormat.</p>
+    /// <p>Document outputFormat. Defaults to RAW if not selected.</p>
     pub fn set_output_format(mut self, input: ::std::option::Option<crate::types::OutputFormat>) -> Self {
         self.output_format = input;
         self
     }
-    /// <p>Raw document outputFormat.</p>
+    /// <p>Document outputFormat. Defaults to RAW if not selected.</p>
     pub fn get_output_format(&self) -> &::std::option::Option<crate::types::OutputFormat> {
         &self.output_format
     }

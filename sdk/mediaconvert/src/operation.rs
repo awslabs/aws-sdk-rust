@@ -19,6 +19,9 @@ pub mod create_preset;
 /// Types for the `CreateQueue` operation.
 pub mod create_queue;
 
+/// Types for the `CreateResourceShare` operation.
+pub mod create_resource_share;
+
 /// Types for the `DeleteJobTemplate` operation.
 pub mod delete_job_template;
 

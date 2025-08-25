@@ -146,6 +146,8 @@ mod add_policy_grant;
 
 mod associate_environment_role;
 
+mod associate_governed_terms;
+
 mod cancel_metadata_generation_run;
 
 mod cancel_subscription;
@@ -282,6 +284,8 @@ mod delete_subscription_target;
 mod delete_time_series_data_points;
 
 mod disassociate_environment_role;
+
+mod disassociate_governed_terms;
 
 mod get_account_pool;
 

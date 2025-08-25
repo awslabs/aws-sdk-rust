@@ -312,6 +312,34 @@ pub fn de_client_vpn_endpoint(
                 builder = builder.set_disconnect_on_session_timeout(var_25);
             }
             ,
+            s if s.matches("endpointIpAddressType") /* EndpointIpAddressType com.amazonaws.ec2#ClientVpnEndpoint$EndpointIpAddressType */ =>  {
+                let var_26 =
+                    Some(
+                        Result::<crate::types::EndpointIpAddressType, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::EndpointIpAddressType::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_endpoint_ip_address_type(var_26);
+            }
+            ,
+            s if s.matches("trafficIpAddressType") /* TrafficIpAddressType com.amazonaws.ec2#ClientVpnEndpoint$TrafficIpAddressType */ =>  {
+                let var_27 =
+                    Some(
+                        Result::<crate::types::TrafficIpAddressType, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::TrafficIpAddressType::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_traffic_ip_address_type(var_27);
+            }
+            ,
             _ => {}
         }
     }

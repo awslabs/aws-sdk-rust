@@ -24,6 +24,8 @@ pub struct ClientVpnConnection {
     pub egress_packets: ::std::option::Option<::std::string::String>,
     /// <p>The IP address of the client.</p>
     pub client_ip: ::std::option::Option<::std::string::String>,
+    /// <p>The IPv6 address assigned to the client connection when using a dual-stack Client VPN endpoint. This field is only populated when the endpoint is configured for dual-stack addressing, and the client is using IPv6 for connectivity.</p>
+    pub client_ipv6_address: ::std::option::Option<::std::string::String>,
     /// <p>The common name associated with the client. This is either the name of the client certificate, or the Active Directory user name.</p>
     pub common_name: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the client connection.</p>
@@ -74,6 +76,10 @@ impl ClientVpnConnection {
     pub fn client_ip(&self) -> ::std::option::Option<&str> {
         self.client_ip.as_deref()
     }
+    /// <p>The IPv6 address assigned to the client connection when using a dual-stack Client VPN endpoint. This field is only populated when the endpoint is configured for dual-stack addressing, and the client is using IPv6 for connectivity.</p>
+    pub fn client_ipv6_address(&self) -> ::std::option::Option<&str> {
+        self.client_ipv6_address.as_deref()
+    }
     /// <p>The common name associated with the client. This is either the name of the client certificate, or the Active Directory user name.</p>
     pub fn common_name(&self) -> ::std::option::Option<&str> {
         self.common_name.as_deref()
@@ -114,6 +120,7 @@ pub struct ClientVpnConnectionBuilder {
     pub(crate) ingress_packets: ::std::option::Option<::std::string::String>,
     pub(crate) egress_packets: ::std::option::Option<::std::string::String>,
     pub(crate) client_ip: ::std::option::Option<::std::string::String>,
+    pub(crate) client_ipv6_address: ::std::option::Option<::std::string::String>,
     pub(crate) common_name: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ClientVpnConnectionStatus>,
     pub(crate) connection_end_time: ::std::option::Option<::std::string::String>,
@@ -260,6 +267,20 @@ impl ClientVpnConnectionBuilder {
     pub fn get_client_ip(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_ip
     }
+    /// <p>The IPv6 address assigned to the client connection when using a dual-stack Client VPN endpoint. This field is only populated when the endpoint is configured for dual-stack addressing, and the client is using IPv6 for connectivity.</p>
+    pub fn client_ipv6_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.client_ipv6_address = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The IPv6 address assigned to the client connection when using a dual-stack Client VPN endpoint. This field is only populated when the endpoint is configured for dual-stack addressing, and the client is using IPv6 for connectivity.</p>
+    pub fn set_client_ipv6_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.client_ipv6_address = input;
+        self
+    }
+    /// <p>The IPv6 address assigned to the client connection when using a dual-stack Client VPN endpoint. This field is only populated when the endpoint is configured for dual-stack addressing, and the client is using IPv6 for connectivity.</p>
+    pub fn get_client_ipv6_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_ipv6_address
+    }
     /// <p>The common name associated with the client. This is either the name of the client certificate, or the Active Directory user name.</p>
     pub fn common_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.common_name = ::std::option::Option::Some(input.into());
@@ -335,6 +356,7 @@ impl ClientVpnConnectionBuilder {
             ingress_packets: self.ingress_packets,
             egress_packets: self.egress_packets,
             client_ip: self.client_ip,
+            client_ipv6_address: self.client_ipv6_address,
             common_name: self.common_name,
             status: self.status,
             connection_end_time: self.connection_end_time,

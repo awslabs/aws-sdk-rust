@@ -14,6 +14,7 @@
 /// match hlsiframeonlymanifest {
 ///     HlsIFrameOnlyManifest::Exclude => { /* ... */ },
 ///     HlsIFrameOnlyManifest::Include => { /* ... */ },
+///     HlsIFrameOnlyManifest::IncludeAsTs => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -36,7 +37,7 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-/// Choose Include to have MediaConvert generate a child manifest that lists only the I-frames for this rendition, in addition to your regular manifest for this rendition. You might use this manifest as part of a workflow that creates preview functions for your video. MediaConvert adds both the I-frame only child manifest and the regular child manifest to the parent manifest. When you don't need the I-frame only child manifest, keep the default value Exclude.
+/// Generate a variant manifest that lists only the I-frames for this rendition. You might use this manifest as part of a workflow that creates preview functions for your video. MediaConvert adds both the I-frame only variant manifest and the regular variant manifest to the multivariant manifest. To have MediaConvert write a variant manifest that references I-frames from your output content using EXT-X-BYTERANGE tags: Choose Include. To have MediaConvert output I-frames as single frame TS files and a corresponding variant manifest that references them: Choose Include as TS. When you don't need the I-frame only variant manifest: Keep the default value, Exclude.
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
@@ -46,6 +47,8 @@ pub enum HlsIFrameOnlyManifest {
     Exclude,
     #[allow(missing_docs)] // documentation missing in model
     Include,
+    #[allow(missing_docs)] // documentation missing in model
+    IncludeAsTs,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -55,6 +58,7 @@ impl ::std::convert::From<&str> for HlsIFrameOnlyManifest {
         match s {
             "EXCLUDE" => HlsIFrameOnlyManifest::Exclude,
             "INCLUDE" => HlsIFrameOnlyManifest::Include,
+            "INCLUDE_AS_TS" => HlsIFrameOnlyManifest::IncludeAsTs,
             other => HlsIFrameOnlyManifest::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -72,12 +76,13 @@ impl HlsIFrameOnlyManifest {
         match self {
             HlsIFrameOnlyManifest::Exclude => "EXCLUDE",
             HlsIFrameOnlyManifest::Include => "INCLUDE",
+            HlsIFrameOnlyManifest::IncludeAsTs => "INCLUDE_AS_TS",
             HlsIFrameOnlyManifest::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["EXCLUDE", "INCLUDE"]
+        &["EXCLUDE", "INCLUDE", "INCLUDE_AS_TS"]
     }
 }
 impl ::std::convert::AsRef<str> for HlsIFrameOnlyManifest {
@@ -102,6 +107,7 @@ impl ::std::fmt::Display for HlsIFrameOnlyManifest {
         match self {
             HlsIFrameOnlyManifest::Exclude => write!(f, "EXCLUDE"),
             HlsIFrameOnlyManifest::Include => write!(f, "INCLUDE"),
+            HlsIFrameOnlyManifest::IncludeAsTs => write!(f, "INCLUDE_AS_TS"),
             HlsIFrameOnlyManifest::Unknown(value) => write!(f, "{}", value),
         }
     }

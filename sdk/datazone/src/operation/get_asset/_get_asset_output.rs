@@ -27,6 +27,8 @@ pub struct GetAssetOutput {
     pub first_revision_created_by: ::std::option::Option<::std::string::String>,
     /// <p>The business glossary terms attached to the asset.</p>
     pub glossary_terms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The restricted glossary terms attached to an asset.</p>
+    pub governed_glossary_terms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ID of the project that owns the asset.</p>
     pub owning_project_id: ::std::string::String,
     /// <p>The ID of the Amazon DataZone domain to which the asset belongs.</p>
@@ -97,6 +99,12 @@ impl GetAssetOutput {
     pub fn glossary_terms(&self) -> &[::std::string::String] {
         self.glossary_terms.as_deref().unwrap_or_default()
     }
+    /// <p>The restricted glossary terms attached to an asset.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.governed_glossary_terms.is_none()`.
+    pub fn governed_glossary_terms(&self) -> &[::std::string::String] {
+        self.governed_glossary_terms.as_deref().unwrap_or_default()
+    }
     /// <p>The ID of the project that owns the asset.</p>
     pub fn owning_project_id(&self) -> &str {
         use std::ops::Deref;
@@ -144,6 +152,7 @@ impl ::std::fmt::Debug for GetAssetOutput {
         formatter.field("first_revision_created_at", &self.first_revision_created_at);
         formatter.field("first_revision_created_by", &self.first_revision_created_by);
         formatter.field("glossary_terms", &self.glossary_terms);
+        formatter.field("governed_glossary_terms", &self.governed_glossary_terms);
         formatter.field("owning_project_id", &self.owning_project_id);
         formatter.field("domain_id", &self.domain_id);
         formatter.field("listing", &self.listing);
@@ -185,6 +194,7 @@ pub struct GetAssetOutputBuilder {
     pub(crate) first_revision_created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) first_revision_created_by: ::std::option::Option<::std::string::String>,
     pub(crate) glossary_terms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) governed_glossary_terms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) owning_project_id: ::std::option::Option<::std::string::String>,
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) listing: ::std::option::Option<crate::types::AssetListingDetails>,
@@ -373,6 +383,26 @@ impl GetAssetOutputBuilder {
     pub fn get_glossary_terms(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.glossary_terms
     }
+    /// Appends an item to `governed_glossary_terms`.
+    ///
+    /// To override the contents of this collection use [`set_governed_glossary_terms`](Self::set_governed_glossary_terms).
+    ///
+    /// <p>The restricted glossary terms attached to an asset.</p>
+    pub fn governed_glossary_terms(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.governed_glossary_terms.unwrap_or_default();
+        v.push(input.into());
+        self.governed_glossary_terms = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The restricted glossary terms attached to an asset.</p>
+    pub fn set_governed_glossary_terms(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.governed_glossary_terms = input;
+        self
+    }
+    /// <p>The restricted glossary terms attached to an asset.</p>
+    pub fn get_governed_glossary_terms(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.governed_glossary_terms
+    }
     /// <p>The ID of the project that owns the asset.</p>
     /// This field is required.
     pub fn owning_project_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -540,6 +570,7 @@ impl GetAssetOutputBuilder {
             first_revision_created_at: self.first_revision_created_at,
             first_revision_created_by: self.first_revision_created_by,
             glossary_terms: self.glossary_terms,
+            governed_glossary_terms: self.governed_glossary_terms,
             owning_project_id: self.owning_project_id.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "owning_project_id",
@@ -580,6 +611,7 @@ impl ::std::fmt::Debug for GetAssetOutputBuilder {
         formatter.field("first_revision_created_at", &self.first_revision_created_at);
         formatter.field("first_revision_created_by", &self.first_revision_created_by);
         formatter.field("glossary_terms", &self.glossary_terms);
+        formatter.field("governed_glossary_terms", &self.governed_glossary_terms);
         formatter.field("owning_project_id", &self.owning_project_id);
         formatter.field("domain_id", &self.domain_id);
         formatter.field("listing", &self.listing);

@@ -260,11 +260,11 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for TagResourceEn
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum TagResourceError {
-    /// <p>AWS CodeStar Notifications can't complete the request because the resource is being modified by another process. Wait a few minutes and try again.</p>
+    /// <p>CodeStar Notifications can't complete the request because the resource is being modified by another process. Wait a few minutes and try again.</p>
     ConcurrentModificationException(crate::types::error::ConcurrentModificationException),
-    /// <p>One of the AWS CodeStar Notifications limits has been exceeded. Limits apply to accounts, notification rules, notifications, resources, and targets. For more information, see Limits.</p>
+    /// <p>One of the CodeStar Notifications limits has been exceeded. Limits apply to accounts, notification rules, notifications, resources, and targets. For more information, see Limits.</p>
     LimitExceededException(crate::types::error::LimitExceededException),
-    /// <p>AWS CodeStar Notifications can't find a resource that matches the provided ARN.</p>
+    /// <p>CodeStar Notifications can't find a resource that matches the provided ARN.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>One or more parameter values are not valid.</p>
     ValidationException(crate::types::error::ValidationException),

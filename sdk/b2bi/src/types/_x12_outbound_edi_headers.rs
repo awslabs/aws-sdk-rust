@@ -10,7 +10,7 @@ pub struct X12OutboundEdiHeaders {
     pub functional_group_headers: ::std::option::Option<crate::types::X12FunctionalGroupHeaders>,
     /// <p>The delimiters, for example semicolon (<code>;</code>), that separates sections of the headers for the X12 object.</p>
     pub delimiters: ::std::option::Option<crate::types::X12Delimiters>,
-    /// <p>Specifies whether or not to validate the EDI for this X12 object: <code>TRUE</code> or <code>FALSE</code>.</p>
+    /// <p>Specifies whether or not to validate the EDI for this X12 object: <code>TRUE</code> or <code>FALSE</code>. When enabled, this performs both standard EDI validation and applies any configured custom validation rules including element length constraints, code list validations, and element requirement checks. Validation results are returned in the response validation messages.</p>
     pub validate_edi: ::std::option::Option<bool>,
     /// <p>Specifies control number configuration for outbound X12 EDI headers. These settings determine the starting values for interchange, functional group, and transaction set control numbers.</p>
     pub control_numbers: ::std::option::Option<crate::types::X12ControlNumbers>,
@@ -49,7 +49,7 @@ impl X12OutboundEdiHeaders {
     pub fn delimiters(&self) -> ::std::option::Option<&crate::types::X12Delimiters> {
         self.delimiters.as_ref()
     }
-    /// <p>Specifies whether or not to validate the EDI for this X12 object: <code>TRUE</code> or <code>FALSE</code>.</p>
+    /// <p>Specifies whether or not to validate the EDI for this X12 object: <code>TRUE</code> or <code>FALSE</code>. When enabled, this performs both standard EDI validation and applies any configured custom validation rules including element length constraints, code list validations, and element requirement checks. Validation results are returned in the response validation messages.</p>
     pub fn validate_edi(&self) -> ::std::option::Option<bool> {
         self.validate_edi
     }
@@ -142,17 +142,17 @@ impl X12OutboundEdiHeadersBuilder {
     pub fn get_delimiters(&self) -> &::std::option::Option<crate::types::X12Delimiters> {
         &self.delimiters
     }
-    /// <p>Specifies whether or not to validate the EDI for this X12 object: <code>TRUE</code> or <code>FALSE</code>.</p>
+    /// <p>Specifies whether or not to validate the EDI for this X12 object: <code>TRUE</code> or <code>FALSE</code>. When enabled, this performs both standard EDI validation and applies any configured custom validation rules including element length constraints, code list validations, and element requirement checks. Validation results are returned in the response validation messages.</p>
     pub fn validate_edi(mut self, input: bool) -> Self {
         self.validate_edi = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether or not to validate the EDI for this X12 object: <code>TRUE</code> or <code>FALSE</code>.</p>
+    /// <p>Specifies whether or not to validate the EDI for this X12 object: <code>TRUE</code> or <code>FALSE</code>. When enabled, this performs both standard EDI validation and applies any configured custom validation rules including element length constraints, code list validations, and element requirement checks. Validation results are returned in the response validation messages.</p>
     pub fn set_validate_edi(mut self, input: ::std::option::Option<bool>) -> Self {
         self.validate_edi = input;
         self
     }
-    /// <p>Specifies whether or not to validate the EDI for this X12 object: <code>TRUE</code> or <code>FALSE</code>.</p>
+    /// <p>Specifies whether or not to validate the EDI for this X12 object: <code>TRUE</code> or <code>FALSE</code>. When enabled, this performs both standard EDI validation and applies any configured custom validation rules including element length constraints, code list validations, and element requirement checks. Validation results are returned in the response validation messages.</p>
     pub fn get_validate_edi(&self) -> &::std::option::Option<bool> {
         &self.validate_edi
     }

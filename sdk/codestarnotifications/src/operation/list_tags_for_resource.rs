@@ -262,7 +262,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListTagsForRe
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum ListTagsForResourceError {
-    /// <p>AWS CodeStar Notifications can't find a resource that matches the provided ARN.</p>
+    /// <p>CodeStar Notifications can't find a resource that matches the provided ARN.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>One or more parameter values are not valid.</p>
     ValidationException(crate::types::error::ValidationException),

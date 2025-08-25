@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeviceConfiguration {
-    /// <p>Returns information about the device configuration for an Snowcone job.</p>
+    /// <p>Returns information about the device configuration for an Snowball Edge job.</p>
     pub snowcone_device_configuration: ::std::option::Option<crate::types::SnowconeDeviceConfiguration>,
 }
 impl DeviceConfiguration {
-    /// <p>Returns information about the device configuration for an Snowcone job.</p>
+    /// <p>Returns information about the device configuration for an Snowball Edge job.</p>
     pub fn snowcone_device_configuration(&self) -> ::std::option::Option<&crate::types::SnowconeDeviceConfiguration> {
         self.snowcone_device_configuration.as_ref()
     }
@@ -27,17 +27,17 @@ pub struct DeviceConfigurationBuilder {
     pub(crate) snowcone_device_configuration: ::std::option::Option<crate::types::SnowconeDeviceConfiguration>,
 }
 impl DeviceConfigurationBuilder {
-    /// <p>Returns information about the device configuration for an Snowcone job.</p>
+    /// <p>Returns information about the device configuration for an Snowball Edge job.</p>
     pub fn snowcone_device_configuration(mut self, input: crate::types::SnowconeDeviceConfiguration) -> Self {
         self.snowcone_device_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Returns information about the device configuration for an Snowcone job.</p>
+    /// <p>Returns information about the device configuration for an Snowball Edge job.</p>
     pub fn set_snowcone_device_configuration(mut self, input: ::std::option::Option<crate::types::SnowconeDeviceConfiguration>) -> Self {
         self.snowcone_device_configuration = input;
         self
     }
-    /// <p>Returns information about the device configuration for an Snowcone job.</p>
+    /// <p>Returns information about the device configuration for an Snowball Edge job.</p>
     pub fn get_snowcone_device_configuration(&self) -> &::std::option::Option<crate::types::SnowconeDeviceConfiguration> {
         &self.snowcone_device_configuration
     }

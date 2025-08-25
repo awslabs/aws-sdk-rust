@@ -151,17 +151,23 @@ impl BatchPutDocumentFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_documents`](Self::set_documents).
     ///
-    /// <p>One or more documents to add to the index.</p>
+    /// <p>One or more documents to add to the index.</p><important>
+    /// <p>Ensure that the name of your document doesn't contain any confidential information. Amazon Q Business returns document names in chat responses and citations when relevant.</p>
+    /// </important>
     pub fn documents(mut self, input: crate::types::Document) -> Self {
         self.inner = self.inner.documents(input);
         self
     }
-    /// <p>One or more documents to add to the index.</p>
+    /// <p>One or more documents to add to the index.</p><important>
+    /// <p>Ensure that the name of your document doesn't contain any confidential information. Amazon Q Business returns document names in chat responses and citations when relevant.</p>
+    /// </important>
     pub fn set_documents(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Document>>) -> Self {
         self.inner = self.inner.set_documents(input);
         self
     }
-    /// <p>One or more documents to add to the index.</p>
+    /// <p>One or more documents to add to the index.</p><important>
+    /// <p>Ensure that the name of your document doesn't contain any confidential information. Amazon Q Business returns document names in chat responses and citations when relevant.</p>
+    /// </important>
     pub fn get_documents(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Document>> {
         self.inner.get_documents()
     }

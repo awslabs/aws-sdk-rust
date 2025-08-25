@@ -703,6 +703,8 @@ pub use crate::types::_mp3_rate_control_mode::Mp3RateControlMode;
 
 pub use crate::types::_mp2_settings::Mp2Settings;
 
+pub use crate::types::_mp2_audio_description_mix::Mp2AudioDescriptionMix;
+
 pub use crate::types::_flac_settings::FlacSettings;
 
 pub use crate::types::_eac3_settings::Eac3Settings;
@@ -1069,6 +1071,8 @@ pub use crate::types::_input_template::InputTemplate;
 
 pub use crate::types::_video_selector::VideoSelector;
 
+pub use crate::types::_video_selector_type::VideoSelectorType;
+
 pub use crate::types::_input_sample_range::InputSampleRange;
 
 pub use crate::types::_input_rotate::InputRotate;
@@ -1208,6 +1212,8 @@ pub use crate::types::_timing::Timing;
 pub use crate::types::_job_status::JobStatus;
 
 pub use crate::types::_simulate_reserved_queue::SimulateReservedQueue;
+
+pub use crate::types::_share_status::ShareStatus;
 
 pub use crate::types::_job_settings::JobSettings;
 
@@ -2127,6 +2133,8 @@ mod _mov_reference;
 
 mod _mov_settings;
 
+mod _mp2_audio_description_mix;
+
 mod _mp2_settings;
 
 mod _mp3_rate_control_mode;
@@ -2367,6 +2375,8 @@ mod _scc_destination_settings;
 
 mod _service_override;
 
+mod _share_status;
+
 mod _simulate_reserved_queue;
 
 mod _speke_key_provider;
@@ -2486,6 +2496,8 @@ mod _video_preprocessor;
 mod _video_properties;
 
 mod _video_selector;
+
+mod _video_selector_type;
 
 mod _video_timecode_insertion;
 

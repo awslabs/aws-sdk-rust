@@ -10,6 +10,8 @@ pub struct ConversionTarget {
     pub format_details: ::std::option::Option<crate::types::ConversionTargetFormatDetails>,
     /// Customer uses this to provide a sample on what should file look like after conversion X12 EDI use case around this would be discovering the file syntax
     pub output_sample_file: ::std::option::Option<crate::types::OutputSampleFileSource>,
+    /// <p>A structure that contains advanced options for EDI processing. Currently, only X12 advanced options are supported.</p>
+    pub advanced_options: ::std::option::Option<crate::types::AdvancedOptions>,
 }
 impl ConversionTarget {
     /// <p>Currently, only X12 format is supported.</p>
@@ -23,6 +25,10 @@ impl ConversionTarget {
     /// Customer uses this to provide a sample on what should file look like after conversion X12 EDI use case around this would be discovering the file syntax
     pub fn output_sample_file(&self) -> ::std::option::Option<&crate::types::OutputSampleFileSource> {
         self.output_sample_file.as_ref()
+    }
+    /// <p>A structure that contains advanced options for EDI processing. Currently, only X12 advanced options are supported.</p>
+    pub fn advanced_options(&self) -> ::std::option::Option<&crate::types::AdvancedOptions> {
+        self.advanced_options.as_ref()
     }
 }
 impl ConversionTarget {
@@ -39,6 +45,7 @@ pub struct ConversionTargetBuilder {
     pub(crate) file_format: ::std::option::Option<crate::types::ConversionTargetFormat>,
     pub(crate) format_details: ::std::option::Option<crate::types::ConversionTargetFormatDetails>,
     pub(crate) output_sample_file: ::std::option::Option<crate::types::OutputSampleFileSource>,
+    pub(crate) advanced_options: ::std::option::Option<crate::types::AdvancedOptions>,
 }
 impl ConversionTargetBuilder {
     /// <p>Currently, only X12 format is supported.</p>
@@ -84,6 +91,20 @@ impl ConversionTargetBuilder {
     pub fn get_output_sample_file(&self) -> &::std::option::Option<crate::types::OutputSampleFileSource> {
         &self.output_sample_file
     }
+    /// <p>A structure that contains advanced options for EDI processing. Currently, only X12 advanced options are supported.</p>
+    pub fn advanced_options(mut self, input: crate::types::AdvancedOptions) -> Self {
+        self.advanced_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A structure that contains advanced options for EDI processing. Currently, only X12 advanced options are supported.</p>
+    pub fn set_advanced_options(mut self, input: ::std::option::Option<crate::types::AdvancedOptions>) -> Self {
+        self.advanced_options = input;
+        self
+    }
+    /// <p>A structure that contains advanced options for EDI processing. Currently, only X12 advanced options are supported.</p>
+    pub fn get_advanced_options(&self) -> &::std::option::Option<crate::types::AdvancedOptions> {
+        &self.advanced_options
+    }
     /// Consumes the builder and constructs a [`ConversionTarget`](crate::types::ConversionTarget).
     /// This method will fail if any of the following fields are not set:
     /// - [`file_format`](crate::types::builders::ConversionTargetBuilder::file_format)
@@ -97,6 +118,7 @@ impl ConversionTargetBuilder {
             })?,
             format_details: self.format_details,
             output_sample_file: self.output_sample_file,
+            advanced_options: self.advanced_options,
         })
     }
 }

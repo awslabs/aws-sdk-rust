@@ -12,7 +12,7 @@ tracing = "0.1.40"
 async-recursion = "1.0.5"
 futures = "0.3.30"
 aws-config= { version = "1.8.5", path = "../../../sdk/aws-config", features = ["behavior-version-latest"] }
-aws-sdk-cloudwatchlogs= { version = "1.99.0", path = "../../../sdk/cloudwatchlogs", features = ["test-util"] }
+aws-sdk-cloudwatchlogs= { version = "1.100.0", path = "../../../sdk/cloudwatchlogs", features = ["test-util"] }
 aws-types= { version = "1.3.8", path = "../../../sdk/aws-types" }
 
 [dependencies.tokio]

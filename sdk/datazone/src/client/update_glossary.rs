@@ -16,6 +16,7 @@ impl super::Client {
     ///   - [`owning_project_id(String)`](crate::operation::update_glossary::UpdateGlossaryOutput::owning_project_id): <p>The identifier of the project in which to update a business glossary.</p>
     ///   - [`description(Option<String>)`](crate::operation::update_glossary::UpdateGlossaryOutput::description): <p>The description to be updated as part of the <code>UpdateGlossary</code> action.</p>
     ///   - [`status(Option<GlossaryStatus>)`](crate::operation::update_glossary::UpdateGlossaryOutput::status): <p>The status to be updated as part of the <code>UpdateGlossary</code> action.</p>
+    ///   - [`usage_restrictions(Option<Vec::<GlossaryUsageRestriction>>)`](crate::operation::update_glossary::UpdateGlossaryOutput::usage_restrictions): <p>The usage restriction of the restricted glossary.</p>
     /// - On failure, responds with [`SdkError<UpdateGlossaryError>`](crate::operation::update_glossary::UpdateGlossaryError)
     pub fn update_glossary(&self) -> crate::operation::update_glossary::builders::UpdateGlossaryFluentBuilder {
         crate::operation::update_glossary::builders::UpdateGlossaryFluentBuilder::new(self.handle.clone())

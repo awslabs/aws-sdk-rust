@@ -32,6 +32,8 @@ pub struct AssetItem {
     pub owning_project_id: ::std::string::String,
     /// <p>The additional attributes of a Amazon DataZone inventory asset.</p>
     pub additional_attributes: ::std::option::Option<crate::types::AssetItemAdditionalAttributes>,
+    /// <p>The restricted glossary terms accociated with an asset.</p>
+    pub governed_glossary_terms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AssetItem {
     /// <p>The identifier of the Amazon DataZone domain in which the inventory asset exists.</p>
@@ -98,6 +100,12 @@ impl AssetItem {
     pub fn additional_attributes(&self) -> ::std::option::Option<&crate::types::AssetItemAdditionalAttributes> {
         self.additional_attributes.as_ref()
     }
+    /// <p>The restricted glossary terms accociated with an asset.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.governed_glossary_terms.is_none()`.
+    pub fn governed_glossary_terms(&self) -> &[::std::string::String] {
+        self.governed_glossary_terms.as_deref().unwrap_or_default()
+    }
 }
 impl ::std::fmt::Debug for AssetItem {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -116,6 +124,7 @@ impl ::std::fmt::Debug for AssetItem {
         formatter.field("glossary_terms", &self.glossary_terms);
         formatter.field("owning_project_id", &self.owning_project_id);
         formatter.field("additional_attributes", &self.additional_attributes);
+        formatter.field("governed_glossary_terms", &self.governed_glossary_terms);
         formatter.finish()
     }
 }
@@ -144,6 +153,7 @@ pub struct AssetItemBuilder {
     pub(crate) glossary_terms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) owning_project_id: ::std::option::Option<::std::string::String>,
     pub(crate) additional_attributes: ::std::option::Option<crate::types::AssetItemAdditionalAttributes>,
+    pub(crate) governed_glossary_terms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AssetItemBuilder {
     /// <p>The identifier of the Amazon DataZone domain in which the inventory asset exists.</p>
@@ -354,6 +364,26 @@ impl AssetItemBuilder {
     pub fn get_additional_attributes(&self) -> &::std::option::Option<crate::types::AssetItemAdditionalAttributes> {
         &self.additional_attributes
     }
+    /// Appends an item to `governed_glossary_terms`.
+    ///
+    /// To override the contents of this collection use [`set_governed_glossary_terms`](Self::set_governed_glossary_terms).
+    ///
+    /// <p>The restricted glossary terms accociated with an asset.</p>
+    pub fn governed_glossary_terms(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.governed_glossary_terms.unwrap_or_default();
+        v.push(input.into());
+        self.governed_glossary_terms = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The restricted glossary terms accociated with an asset.</p>
+    pub fn set_governed_glossary_terms(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.governed_glossary_terms = input;
+        self
+    }
+    /// <p>The restricted glossary terms accociated with an asset.</p>
+    pub fn get_governed_glossary_terms(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.governed_glossary_terms
+    }
     /// Consumes the builder and constructs a [`AssetItem`](crate::types::AssetItem).
     /// This method will fail if any of the following fields are not set:
     /// - [`domain_id`](crate::types::builders::AssetItemBuilder::domain_id)
@@ -408,6 +438,7 @@ impl AssetItemBuilder {
                 )
             })?,
             additional_attributes: self.additional_attributes,
+            governed_glossary_terms: self.governed_glossary_terms,
         })
     }
 }
@@ -428,6 +459,7 @@ impl ::std::fmt::Debug for AssetItemBuilder {
         formatter.field("glossary_terms", &self.glossary_terms);
         formatter.field("owning_project_id", &self.owning_project_id);
         formatter.field("additional_attributes", &self.additional_attributes);
+        formatter.field("governed_glossary_terms", &self.governed_glossary_terms);
         formatter.finish()
     }
 }

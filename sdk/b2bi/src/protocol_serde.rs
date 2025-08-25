@@ -247,16 +247,30 @@ pub(crate) mod shape_x12_inbound_edi_options;
 
 pub(crate) mod shape_x12_split_options;
 
+pub(crate) mod shape_x12_validation_options;
+
 pub(crate) mod shape_wrap_options;
 
 pub(crate) mod shape_x12_acknowledgment_options;
 
 pub(crate) mod shape_x12_outbound_edi_headers;
 
+pub(crate) mod shape_x12_validation_rule;
+
+pub(crate) mod shape_x12_code_list_validation_rule;
+
 pub(crate) mod shape_x12_control_numbers;
 
 pub(crate) mod shape_x12_delimiters;
 
+pub(crate) mod shape_x12_element_length_validation_rule;
+
+pub(crate) mod shape_x12_element_requirement_validation_rule;
+
 pub(crate) mod shape_x12_functional_group_headers;
 
 pub(crate) mod shape_x12_interchange_control_headers;
+
+pub(crate) mod shape_x12_validation_rules;
+
+pub(crate) mod shape_code_list;

@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InvokeEndpointAsyncOutput {
-    /// <p>Identifier for an inference request. This will be the same as the <code>InferenceId</code> specified in the input. Amazon SageMaker will generate an identifier for you if you do not specify one.</p>
+    /// <p>Identifier for an inference request. This will be the same as the <code>InferenceId</code> specified in the input. Amazon SageMaker AI will generate an identifier for you if you do not specify one.</p>
     pub inference_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 URI where the inference response payload is stored.</p>
     pub output_location: ::std::option::Option<::std::string::String>,
@@ -12,7 +12,7 @@ pub struct InvokeEndpointAsyncOutput {
     _request_id: Option<String>,
 }
 impl InvokeEndpointAsyncOutput {
-    /// <p>Identifier for an inference request. This will be the same as the <code>InferenceId</code> specified in the input. Amazon SageMaker will generate an identifier for you if you do not specify one.</p>
+    /// <p>Identifier for an inference request. This will be the same as the <code>InferenceId</code> specified in the input. Amazon SageMaker AI will generate an identifier for you if you do not specify one.</p>
     pub fn inference_id(&self) -> ::std::option::Option<&str> {
         self.inference_id.as_deref()
     }
@@ -47,17 +47,17 @@ pub struct InvokeEndpointAsyncOutputBuilder {
     _request_id: Option<String>,
 }
 impl InvokeEndpointAsyncOutputBuilder {
-    /// <p>Identifier for an inference request. This will be the same as the <code>InferenceId</code> specified in the input. Amazon SageMaker will generate an identifier for you if you do not specify one.</p>
+    /// <p>Identifier for an inference request. This will be the same as the <code>InferenceId</code> specified in the input. Amazon SageMaker AI will generate an identifier for you if you do not specify one.</p>
     pub fn inference_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inference_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Identifier for an inference request. This will be the same as the <code>InferenceId</code> specified in the input. Amazon SageMaker will generate an identifier for you if you do not specify one.</p>
+    /// <p>Identifier for an inference request. This will be the same as the <code>InferenceId</code> specified in the input. Amazon SageMaker AI will generate an identifier for you if you do not specify one.</p>
     pub fn set_inference_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inference_id = input;
         self
     }
-    /// <p>Identifier for an inference request. This will be the same as the <code>InferenceId</code> specified in the input. Amazon SageMaker will generate an identifier for you if you do not specify one.</p>
+    /// <p>Identifier for an inference request. This will be the same as the <code>InferenceId</code> specified in the input. Amazon SageMaker AI will generate an identifier for you if you do not specify one.</p>
     pub fn get_inference_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.inference_id
     }

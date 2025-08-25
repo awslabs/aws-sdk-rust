@@ -468,4 +468,32 @@ impl CreateClientVpnEndpointFluentBuilder {
     pub fn get_disconnect_on_session_timeout(&self) -> &::std::option::Option<bool> {
         self.inner.get_disconnect_on_session_timeout()
     }
+    /// <p>The IP address type for the Client VPN endpoint. Valid values are <code>ipv4</code> (default) for IPv4 addressing only, <code>ipv6</code> for IPv6 addressing only, or <code>dual-stack</code> for both IPv4 and IPv6 addressing. When set to <code>dual-stack,</code> clients can connect to the endpoint using either IPv4 or IPv6 addresses..</p>
+    pub fn endpoint_ip_address_type(mut self, input: crate::types::EndpointIpAddressType) -> Self {
+        self.inner = self.inner.endpoint_ip_address_type(input);
+        self
+    }
+    /// <p>The IP address type for the Client VPN endpoint. Valid values are <code>ipv4</code> (default) for IPv4 addressing only, <code>ipv6</code> for IPv6 addressing only, or <code>dual-stack</code> for both IPv4 and IPv6 addressing. When set to <code>dual-stack,</code> clients can connect to the endpoint using either IPv4 or IPv6 addresses..</p>
+    pub fn set_endpoint_ip_address_type(mut self, input: ::std::option::Option<crate::types::EndpointIpAddressType>) -> Self {
+        self.inner = self.inner.set_endpoint_ip_address_type(input);
+        self
+    }
+    /// <p>The IP address type for the Client VPN endpoint. Valid values are <code>ipv4</code> (default) for IPv4 addressing only, <code>ipv6</code> for IPv6 addressing only, or <code>dual-stack</code> for both IPv4 and IPv6 addressing. When set to <code>dual-stack,</code> clients can connect to the endpoint using either IPv4 or IPv6 addresses..</p>
+    pub fn get_endpoint_ip_address_type(&self) -> &::std::option::Option<crate::types::EndpointIpAddressType> {
+        self.inner.get_endpoint_ip_address_type()
+    }
+    /// <p>The IP address type for traffic within the Client VPN tunnel. Valid values are <code>ipv4</code> (default) for IPv4 traffic only, <code>ipv6</code> for IPv6 addressing only, or <code>dual-stack</code> for both IPv4 and IPv6 traffic. When set to <code>dual-stack</code>, clients can access both IPv4 and IPv6 resources through the VPN .</p>
+    pub fn traffic_ip_address_type(mut self, input: crate::types::TrafficIpAddressType) -> Self {
+        self.inner = self.inner.traffic_ip_address_type(input);
+        self
+    }
+    /// <p>The IP address type for traffic within the Client VPN tunnel. Valid values are <code>ipv4</code> (default) for IPv4 traffic only, <code>ipv6</code> for IPv6 addressing only, or <code>dual-stack</code> for both IPv4 and IPv6 traffic. When set to <code>dual-stack</code>, clients can access both IPv4 and IPv6 resources through the VPN .</p>
+    pub fn set_traffic_ip_address_type(mut self, input: ::std::option::Option<crate::types::TrafficIpAddressType>) -> Self {
+        self.inner = self.inner.set_traffic_ip_address_type(input);
+        self
+    }
+    /// <p>The IP address type for traffic within the Client VPN tunnel. Valid values are <code>ipv4</code> (default) for IPv4 traffic only, <code>ipv6</code> for IPv6 addressing only, or <code>dual-stack</code> for both IPv4 and IPv6 traffic. When set to <code>dual-stack</code>, clients can access both IPv4 and IPv6 resources through the VPN .</p>
+    pub fn get_traffic_ip_address_type(&self) -> &::std::option::Option<crate::types::TrafficIpAddressType> {
+        self.inner.get_traffic_ip_address_type()
+    }
 }

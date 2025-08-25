@@ -9,6 +9,12 @@ pub fn ser_x12_advanced_options(
         crate::protocol_serde::shape_x12_split_options::ser_x12_split_options(&mut object_2, var_1)?;
         object_2.finish();
     }
+    if let Some(var_3) = &input.validation_options {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("validationOptions").start_object();
+        crate::protocol_serde::shape_x12_validation_options::ser_x12_validation_options(&mut object_4, var_3)?;
+        object_4.finish();
+    }
     Ok(())
 }
 
@@ -29,6 +35,10 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "splitOptions" => {
                             builder = builder.set_split_options(crate::protocol_serde::shape_x12_split_options::de_x12_split_options(tokens)?);
+                        }
+                        "validationOptions" => {
+                            builder = builder
+                                .set_validation_options(crate::protocol_serde::shape_x12_validation_options::de_x12_validation_options(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

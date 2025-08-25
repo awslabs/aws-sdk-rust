@@ -48,6 +48,21 @@ pub fn ser_video_selector(
     if let Some(var_12) = &input.sample_range {
         object.key("sampleRange").string(var_12.as_str());
     }
+    if let Some(var_13) = &input.selector_type {
+        object.key("selectorType").string(var_13.as_str());
+    }
+    if let Some(var_14) = &input.streams {
+        let mut array_15 = object.key("streams").start_array();
+        for item_16 in var_14 {
+            {
+                array_15.value().number(
+                    #[allow(clippy::useless_conversion)]
+                    ::aws_smithy_types::Number::NegInt((*item_16).into()),
+                );
+            }
+        }
+        array_15.finish();
+    }
     Ok(())
 }
 
@@ -137,6 +152,18 @@ where
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::InputSampleRange::from(u.as_ref())))
                                     .transpose()?,
+                            );
+                        }
+                        "selectorType" => {
+                            builder = builder.set_selector_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::VideoSelectorType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "streams" => {
+                            builder = builder.set_streams(
+                                crate::protocol_serde::shape_list_of_integer_min1_max2147483647::de_list_of_integer_min1_max2147483647(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

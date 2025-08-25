@@ -5,6 +5,26 @@ pub use crate::types::_sample_document_keys::SampleDocumentKeys;
 
 pub use crate::types::_output_conversion::OutputConversion;
 
+pub use crate::types::_advanced_options::AdvancedOptions;
+
+pub use crate::types::_x12_advanced_options::X12AdvancedOptions;
+
+pub use crate::types::_x12_validation_options::X12ValidationOptions;
+
+pub use crate::types::_x12_validation_rule::X12ValidationRule;
+
+pub use crate::types::_x12_element_requirement_validation_rule::X12ElementRequirementValidationRule;
+
+pub use crate::types::_element_requirement::ElementRequirement;
+
+pub use crate::types::_x12_element_length_validation_rule::X12ElementLengthValidationRule;
+
+pub use crate::types::_x12_code_list_validation_rule::X12CodeListValidationRule;
+
+pub use crate::types::_x12_split_options::X12SplitOptions;
+
+pub use crate::types::_x12_split_by::X12SplitBy;
+
 pub use crate::types::_format_options::FormatOptions;
 
 pub use crate::types::_x12_details::X12Details;
@@ -20,14 +40,6 @@ pub use crate::types::_mapping::Mapping;
 pub use crate::types::_mapping_template_language::MappingTemplateLanguage;
 
 pub use crate::types::_input_conversion::InputConversion;
-
-pub use crate::types::_advanced_options::AdvancedOptions;
-
-pub use crate::types::_x12_advanced_options::X12AdvancedOptions;
-
-pub use crate::types::_x12_split_options::X12SplitOptions;
-
-pub use crate::types::_x12_split_by::X12SplitBy;
 
 pub use crate::types::_from_format::FromFormat;
 
@@ -139,6 +151,8 @@ mod _edi_configuration;
 
 mod _edi_type;
 
+mod _element_requirement;
+
 mod _file_format;
 
 mod _format_options;
@@ -197,11 +211,17 @@ mod _x12_acknowledgment_options;
 
 mod _x12_advanced_options;
 
+mod _x12_code_list_validation_rule;
+
 mod _x12_control_numbers;
 
 mod _x12_delimiters;
 
 mod _x12_details;
+
+mod _x12_element_length_validation_rule;
+
+mod _x12_element_requirement_validation_rule;
 
 mod _x12_envelope;
 
@@ -224,6 +244,10 @@ mod _x12_split_options;
 mod _x12_technical_acknowledgment;
 
 mod _x12_transaction_set;
+
+mod _x12_validation_options;
+
+mod _x12_validation_rule;
 
 mod _x12_version;
 

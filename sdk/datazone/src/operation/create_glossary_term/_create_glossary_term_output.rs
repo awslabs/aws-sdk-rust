@@ -19,6 +19,8 @@ pub struct CreateGlossaryTermOutput {
     pub long_description: ::std::option::Option<::std::string::String>,
     /// <p>The term relations of this business glossary term.</p>
     pub term_relations: ::std::option::Option<crate::types::TermRelations>,
+    /// <p>The usage restriction of the restricted glossary.</p>
+    pub usage_restrictions: ::std::option::Option<::std::vec::Vec<crate::types::GlossaryUsageRestriction>>,
     _request_id: Option<String>,
 }
 impl CreateGlossaryTermOutput {
@@ -58,6 +60,12 @@ impl CreateGlossaryTermOutput {
     pub fn term_relations(&self) -> ::std::option::Option<&crate::types::TermRelations> {
         self.term_relations.as_ref()
     }
+    /// <p>The usage restriction of the restricted glossary.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.usage_restrictions.is_none()`.
+    pub fn usage_restrictions(&self) -> &[crate::types::GlossaryUsageRestriction] {
+        self.usage_restrictions.as_deref().unwrap_or_default()
+    }
 }
 impl ::std::fmt::Debug for CreateGlossaryTermOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -70,6 +78,7 @@ impl ::std::fmt::Debug for CreateGlossaryTermOutput {
         formatter.field("short_description", &"*** Sensitive Data Redacted ***");
         formatter.field("long_description", &"*** Sensitive Data Redacted ***");
         formatter.field("term_relations", &self.term_relations);
+        formatter.field("usage_restrictions", &self.usage_restrictions);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -98,6 +107,7 @@ pub struct CreateGlossaryTermOutputBuilder {
     pub(crate) short_description: ::std::option::Option<::std::string::String>,
     pub(crate) long_description: ::std::option::Option<::std::string::String>,
     pub(crate) term_relations: ::std::option::Option<crate::types::TermRelations>,
+    pub(crate) usage_restrictions: ::std::option::Option<::std::vec::Vec<crate::types::GlossaryUsageRestriction>>,
     _request_id: Option<String>,
 }
 impl CreateGlossaryTermOutputBuilder {
@@ -218,6 +228,26 @@ impl CreateGlossaryTermOutputBuilder {
     pub fn get_term_relations(&self) -> &::std::option::Option<crate::types::TermRelations> {
         &self.term_relations
     }
+    /// Appends an item to `usage_restrictions`.
+    ///
+    /// To override the contents of this collection use [`set_usage_restrictions`](Self::set_usage_restrictions).
+    ///
+    /// <p>The usage restriction of the restricted glossary.</p>
+    pub fn usage_restrictions(mut self, input: crate::types::GlossaryUsageRestriction) -> Self {
+        let mut v = self.usage_restrictions.unwrap_or_default();
+        v.push(input);
+        self.usage_restrictions = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The usage restriction of the restricted glossary.</p>
+    pub fn set_usage_restrictions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GlossaryUsageRestriction>>) -> Self {
+        self.usage_restrictions = input;
+        self
+    }
+    /// <p>The usage restriction of the restricted glossary.</p>
+    pub fn get_usage_restrictions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GlossaryUsageRestriction>> {
+        &self.usage_restrictions
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -272,6 +302,7 @@ impl CreateGlossaryTermOutputBuilder {
             short_description: self.short_description,
             long_description: self.long_description,
             term_relations: self.term_relations,
+            usage_restrictions: self.usage_restrictions,
             _request_id: self._request_id,
         })
     }
@@ -287,6 +318,7 @@ impl ::std::fmt::Debug for CreateGlossaryTermOutputBuilder {
         formatter.field("short_description", &"*** Sensitive Data Redacted ***");
         formatter.field("long_description", &"*** Sensitive Data Redacted ***");
         formatter.field("term_relations", &self.term_relations);
+        formatter.field("usage_restrictions", &self.usage_restrictions);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

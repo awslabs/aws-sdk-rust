@@ -129,7 +129,7 @@ impl SendMessageFluentBuilder {
     pub fn get_queue_url(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_queue_url()
     }
-    /// <p>The message to send. The minimum size is one character. The maximum size is 256 KiB.</p><important>
+    /// <p>The message to send. The minimum size is one character. The maximum size is 1 MiB or 1,048,576 bytes</p><important>
     /// <p>A message can include only XML, JSON, and unformatted text. The following Unicode characters are allowed. For more information, see the <a href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for characters</a>.</p>
     /// <p><code>#x9</code> | <code>#xA</code> | <code>#xD</code> | <code>#x20</code> to <code>#xD7FF</code> | <code>#xE000</code> to <code>#xFFFD</code> | <code>#x10000</code> to <code>#x10FFFF</code></p>
     /// <p>Amazon SQS does not throw an exception or completely reject the message if it contains invalid characters. Instead, it replaces those invalid characters with U+FFFD before storing the message in the queue, as long as the message body contains at least one valid character.</p>
@@ -138,7 +138,7 @@ impl SendMessageFluentBuilder {
         self.inner = self.inner.message_body(input.into());
         self
     }
-    /// <p>The message to send. The minimum size is one character. The maximum size is 256 KiB.</p><important>
+    /// <p>The message to send. The minimum size is one character. The maximum size is 1 MiB or 1,048,576 bytes</p><important>
     /// <p>A message can include only XML, JSON, and unformatted text. The following Unicode characters are allowed. For more information, see the <a href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for characters</a>.</p>
     /// <p><code>#x9</code> | <code>#xA</code> | <code>#xD</code> | <code>#x20</code> to <code>#xD7FF</code> | <code>#xE000</code> to <code>#xFFFD</code> | <code>#x10000</code> to <code>#x10FFFF</code></p>
     /// <p>Amazon SQS does not throw an exception or completely reject the message if it contains invalid characters. Instead, it replaces those invalid characters with U+FFFD before storing the message in the queue, as long as the message body contains at least one valid character.</p>
@@ -147,7 +147,7 @@ impl SendMessageFluentBuilder {
         self.inner = self.inner.set_message_body(input);
         self
     }
-    /// <p>The message to send. The minimum size is one character. The maximum size is 256 KiB.</p><important>
+    /// <p>The message to send. The minimum size is one character. The maximum size is 1 MiB or 1,048,576 bytes</p><important>
     /// <p>A message can include only XML, JSON, and unformatted text. The following Unicode characters are allowed. For more information, see the <a href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for characters</a>.</p>
     /// <p><code>#x9</code> | <code>#xA</code> | <code>#xD</code> | <code>#x20</code> to <code>#xD7FF</code> | <code>#xE000</code> to <code>#xFFFD</code> | <code>#x10000</code> to <code>#x10FFFF</code></p>
     /// <p>Amazon SQS does not throw an exception or completely reject the message if it contains invalid characters. Instead, it replaces those invalid characters with U+FFFD before storing the message in the queue, as long as the message body contains at least one valid character.</p>

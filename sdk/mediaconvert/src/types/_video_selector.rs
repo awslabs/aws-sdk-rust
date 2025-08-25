@@ -26,6 +26,10 @@ pub struct VideoSelector {
     pub rotate: ::std::option::Option<crate::types::InputRotate>,
     /// If the sample range metadata in your input video is accurate, or if you don't know about sample range, keep the default value, Follow, for this setting. When you do, the service automatically detects your input sample range. If your input video has metadata indicating the wrong sample range, specify the accurate sample range here. When you do, MediaConvert ignores any sample range information in the input metadata. Regardless of whether MediaConvert uses the input sample range or the sample range that you specify, MediaConvert uses the sample range for transcoding and also writes it to the output metadata.
     pub sample_range: ::std::option::Option<crate::types::InputSampleRange>,
+    /// Choose the video selector type for your HLS input. Use to specify which video rendition MediaConvert uses from your HLS input. To have MediaConvert automatically use the highest bitrate rendition from your HLS input: Keep the default value, Auto. To manually specify a rendition: Choose Stream. Then enter the unique stream number in the Streams array, starting at 1, corresponding to the stream order in the manifest.
+    pub selector_type: ::std::option::Option<crate::types::VideoSelectorType>,
+    /// Specify a stream for MediaConvert to use from your HLS input. Enter an integer corresponding to the stream order in your HLS manifest.
+    pub streams: ::std::option::Option<::std::vec::Vec<i32>>,
 }
 impl VideoSelector {
     /// Ignore this setting unless this input is a QuickTime animation with an alpha channel. Use this setting to create separate Key and Fill outputs. In each output, specify which part of the input MediaConvert uses. Leave this setting at the default value DISCARD to delete the alpha channel and preserve the video. Set it to REMAP_TO_LUMA to delete the video and map the alpha channel to the luma channel of your outputs.
@@ -72,6 +76,16 @@ impl VideoSelector {
     pub fn sample_range(&self) -> ::std::option::Option<&crate::types::InputSampleRange> {
         self.sample_range.as_ref()
     }
+    /// Choose the video selector type for your HLS input. Use to specify which video rendition MediaConvert uses from your HLS input. To have MediaConvert automatically use the highest bitrate rendition from your HLS input: Keep the default value, Auto. To manually specify a rendition: Choose Stream. Then enter the unique stream number in the Streams array, starting at 1, corresponding to the stream order in the manifest.
+    pub fn selector_type(&self) -> ::std::option::Option<&crate::types::VideoSelectorType> {
+        self.selector_type.as_ref()
+    }
+    /// Specify a stream for MediaConvert to use from your HLS input. Enter an integer corresponding to the stream order in your HLS manifest.
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.streams.is_none()`.
+    pub fn streams(&self) -> &[i32] {
+        self.streams.as_deref().unwrap_or_default()
+    }
 }
 impl VideoSelector {
     /// Creates a new builder-style object to manufacture [`VideoSelector`](crate::types::VideoSelector).
@@ -95,6 +109,8 @@ pub struct VideoSelectorBuilder {
     pub(crate) program_number: ::std::option::Option<i32>,
     pub(crate) rotate: ::std::option::Option<crate::types::InputRotate>,
     pub(crate) sample_range: ::std::option::Option<crate::types::InputSampleRange>,
+    pub(crate) selector_type: ::std::option::Option<crate::types::VideoSelectorType>,
+    pub(crate) streams: ::std::option::Option<::std::vec::Vec<i32>>,
 }
 impl VideoSelectorBuilder {
     /// Ignore this setting unless this input is a QuickTime animation with an alpha channel. Use this setting to create separate Key and Fill outputs. In each output, specify which part of the input MediaConvert uses. Leave this setting at the default value DISCARD to delete the alpha channel and preserve the video. Set it to REMAP_TO_LUMA to delete the video and map the alpha channel to the luma channel of your outputs.
@@ -251,6 +267,40 @@ impl VideoSelectorBuilder {
     pub fn get_sample_range(&self) -> &::std::option::Option<crate::types::InputSampleRange> {
         &self.sample_range
     }
+    /// Choose the video selector type for your HLS input. Use to specify which video rendition MediaConvert uses from your HLS input. To have MediaConvert automatically use the highest bitrate rendition from your HLS input: Keep the default value, Auto. To manually specify a rendition: Choose Stream. Then enter the unique stream number in the Streams array, starting at 1, corresponding to the stream order in the manifest.
+    pub fn selector_type(mut self, input: crate::types::VideoSelectorType) -> Self {
+        self.selector_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// Choose the video selector type for your HLS input. Use to specify which video rendition MediaConvert uses from your HLS input. To have MediaConvert automatically use the highest bitrate rendition from your HLS input: Keep the default value, Auto. To manually specify a rendition: Choose Stream. Then enter the unique stream number in the Streams array, starting at 1, corresponding to the stream order in the manifest.
+    pub fn set_selector_type(mut self, input: ::std::option::Option<crate::types::VideoSelectorType>) -> Self {
+        self.selector_type = input;
+        self
+    }
+    /// Choose the video selector type for your HLS input. Use to specify which video rendition MediaConvert uses from your HLS input. To have MediaConvert automatically use the highest bitrate rendition from your HLS input: Keep the default value, Auto. To manually specify a rendition: Choose Stream. Then enter the unique stream number in the Streams array, starting at 1, corresponding to the stream order in the manifest.
+    pub fn get_selector_type(&self) -> &::std::option::Option<crate::types::VideoSelectorType> {
+        &self.selector_type
+    }
+    /// Appends an item to `streams`.
+    ///
+    /// To override the contents of this collection use [`set_streams`](Self::set_streams).
+    ///
+    /// Specify a stream for MediaConvert to use from your HLS input. Enter an integer corresponding to the stream order in your HLS manifest.
+    pub fn streams(mut self, input: i32) -> Self {
+        let mut v = self.streams.unwrap_or_default();
+        v.push(input);
+        self.streams = ::std::option::Option::Some(v);
+        self
+    }
+    /// Specify a stream for MediaConvert to use from your HLS input. Enter an integer corresponding to the stream order in your HLS manifest.
+    pub fn set_streams(mut self, input: ::std::option::Option<::std::vec::Vec<i32>>) -> Self {
+        self.streams = input;
+        self
+    }
+    /// Specify a stream for MediaConvert to use from your HLS input. Enter an integer corresponding to the stream order in your HLS manifest.
+    pub fn get_streams(&self) -> &::std::option::Option<::std::vec::Vec<i32>> {
+        &self.streams
+    }
     /// Consumes the builder and constructs a [`VideoSelector`](crate::types::VideoSelector).
     pub fn build(self) -> crate::types::VideoSelector {
         crate::types::VideoSelector {
@@ -265,6 +315,8 @@ impl VideoSelectorBuilder {
             program_number: self.program_number,
             rotate: self.rotate,
             sample_range: self.sample_range,
+            selector_type: self.selector_type,
+            streams: self.streams,
         }
     }
 }

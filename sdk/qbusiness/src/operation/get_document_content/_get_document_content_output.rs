@@ -5,7 +5,7 @@
 pub struct GetDocumentContentOutput {
     /// <p>A pre-signed URL that provides temporary access to download the document content directly from Amazon Q Business. The URL expires after 5 minutes for security purposes. This URL is generated only after successful ACL validation.</p>
     pub presigned_url: ::std::string::String,
-    /// <p>The MIME type of the document content (e.g., application/pdf, text/plain, application/vnd.openxmlformats-officedocument.wordprocessingml.document).</p>
+    /// <p>The MIME type of the document content. When outputFormat is RAW, this corresponds to the original document's MIME type (e.g., application/pdf, text/plain, application/vnd.openxmlformats-officedocument.wordprocessingml.document). When outputFormat is EXTRACTED, the MIME type is always application/json.</p>
     pub mime_type: ::std::string::String,
     _request_id: Option<String>,
 }
@@ -15,7 +15,7 @@ impl GetDocumentContentOutput {
         use std::ops::Deref;
         self.presigned_url.deref()
     }
-    /// <p>The MIME type of the document content (e.g., application/pdf, text/plain, application/vnd.openxmlformats-officedocument.wordprocessingml.document).</p>
+    /// <p>The MIME type of the document content. When outputFormat is RAW, this corresponds to the original document's MIME type (e.g., application/pdf, text/plain, application/vnd.openxmlformats-officedocument.wordprocessingml.document). When outputFormat is EXTRACTED, the MIME type is always application/json.</p>
     pub fn mime_type(&self) -> &str {
         use std::ops::Deref;
         self.mime_type.deref()
@@ -57,18 +57,18 @@ impl GetDocumentContentOutputBuilder {
     pub fn get_presigned_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.presigned_url
     }
-    /// <p>The MIME type of the document content (e.g., application/pdf, text/plain, application/vnd.openxmlformats-officedocument.wordprocessingml.document).</p>
+    /// <p>The MIME type of the document content. When outputFormat is RAW, this corresponds to the original document's MIME type (e.g., application/pdf, text/plain, application/vnd.openxmlformats-officedocument.wordprocessingml.document). When outputFormat is EXTRACTED, the MIME type is always application/json.</p>
     /// This field is required.
     pub fn mime_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mime_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The MIME type of the document content (e.g., application/pdf, text/plain, application/vnd.openxmlformats-officedocument.wordprocessingml.document).</p>
+    /// <p>The MIME type of the document content. When outputFormat is RAW, this corresponds to the original document's MIME type (e.g., application/pdf, text/plain, application/vnd.openxmlformats-officedocument.wordprocessingml.document). When outputFormat is EXTRACTED, the MIME type is always application/json.</p>
     pub fn set_mime_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.mime_type = input;
         self
     }
-    /// <p>The MIME type of the document content (e.g., application/pdf, text/plain, application/vnd.openxmlformats-officedocument.wordprocessingml.document).</p>
+    /// <p>The MIME type of the document content. When outputFormat is RAW, this corresponds to the original document's MIME type (e.g., application/pdf, text/plain, application/vnd.openxmlformats-officedocument.wordprocessingml.document). When outputFormat is EXTRACTED, the MIME type is always application/json.</p>
     pub fn get_mime_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.mime_type
     }

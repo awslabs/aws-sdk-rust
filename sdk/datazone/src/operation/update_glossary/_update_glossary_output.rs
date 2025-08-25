@@ -15,6 +15,8 @@ pub struct UpdateGlossaryOutput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The status to be updated as part of the <code>UpdateGlossary</code> action.</p>
     pub status: ::std::option::Option<crate::types::GlossaryStatus>,
+    /// <p>The usage restriction of the restricted glossary.</p>
+    pub usage_restrictions: ::std::option::Option<::std::vec::Vec<crate::types::GlossaryUsageRestriction>>,
     _request_id: Option<String>,
 }
 impl UpdateGlossaryOutput {
@@ -46,6 +48,12 @@ impl UpdateGlossaryOutput {
     pub fn status(&self) -> ::std::option::Option<&crate::types::GlossaryStatus> {
         self.status.as_ref()
     }
+    /// <p>The usage restriction of the restricted glossary.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.usage_restrictions.is_none()`.
+    pub fn usage_restrictions(&self) -> &[crate::types::GlossaryUsageRestriction] {
+        self.usage_restrictions.as_deref().unwrap_or_default()
+    }
 }
 impl ::std::fmt::Debug for UpdateGlossaryOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -56,6 +64,7 @@ impl ::std::fmt::Debug for UpdateGlossaryOutput {
         formatter.field("owning_project_id", &self.owning_project_id);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("status", &self.status);
+        formatter.field("usage_restrictions", &self.usage_restrictions);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -82,6 +91,7 @@ pub struct UpdateGlossaryOutputBuilder {
     pub(crate) owning_project_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::GlossaryStatus>,
+    pub(crate) usage_restrictions: ::std::option::Option<::std::vec::Vec<crate::types::GlossaryUsageRestriction>>,
     _request_id: Option<String>,
 }
 impl UpdateGlossaryOutputBuilder {
@@ -173,6 +183,26 @@ impl UpdateGlossaryOutputBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::GlossaryStatus> {
         &self.status
     }
+    /// Appends an item to `usage_restrictions`.
+    ///
+    /// To override the contents of this collection use [`set_usage_restrictions`](Self::set_usage_restrictions).
+    ///
+    /// <p>The usage restriction of the restricted glossary.</p>
+    pub fn usage_restrictions(mut self, input: crate::types::GlossaryUsageRestriction) -> Self {
+        let mut v = self.usage_restrictions.unwrap_or_default();
+        v.push(input);
+        self.usage_restrictions = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The usage restriction of the restricted glossary.</p>
+    pub fn set_usage_restrictions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GlossaryUsageRestriction>>) -> Self {
+        self.usage_restrictions = input;
+        self
+    }
+    /// <p>The usage restriction of the restricted glossary.</p>
+    pub fn get_usage_restrictions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GlossaryUsageRestriction>> {
+        &self.usage_restrictions
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -218,6 +248,7 @@ impl UpdateGlossaryOutputBuilder {
             })?,
             description: self.description,
             status: self.status,
+            usage_restrictions: self.usage_restrictions,
             _request_id: self._request_id,
         })
     }
@@ -231,6 +262,7 @@ impl ::std::fmt::Debug for UpdateGlossaryOutputBuilder {
         formatter.field("owning_project_id", &self.owning_project_id);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("status", &self.status);
+        formatter.field("usage_restrictions", &self.usage_restrictions);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

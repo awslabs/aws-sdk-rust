@@ -16,7 +16,7 @@ pub struct ClusterMetadata {
     pub cluster_state: ::std::option::Option<crate::types::ClusterState>,
     /// <p>The type of job for this cluster. Currently, the only job type supported for clusters is <code>LOCAL_USE</code>.</p>
     pub job_type: ::std::option::Option<crate::types::JobType>,
-    /// <p>The type of Snowcone device to use for this cluster.</p><note>
+    /// <p>The type of Snowball Edge device to use for this cluster.</p><note>
     /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p>
     /// </note>
     pub snowball_type: ::std::option::Option<crate::types::SnowballType>,
@@ -72,7 +72,7 @@ impl ClusterMetadata {
     pub fn job_type(&self) -> ::std::option::Option<&crate::types::JobType> {
         self.job_type.as_ref()
     }
-    /// <p>The type of Snowcone device to use for this cluster.</p><note>
+    /// <p>The type of Snowball Edge device to use for this cluster.</p><note>
     /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p>
     /// </note>
     pub fn snowball_type(&self) -> ::std::option::Option<&crate::types::SnowballType> {
@@ -233,21 +233,21 @@ impl ClusterMetadataBuilder {
     pub fn get_job_type(&self) -> &::std::option::Option<crate::types::JobType> {
         &self.job_type
     }
-    /// <p>The type of Snowcone device to use for this cluster.</p><note>
+    /// <p>The type of Snowball Edge device to use for this cluster.</p><note>
     /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p>
     /// </note>
     pub fn snowball_type(mut self, input: crate::types::SnowballType) -> Self {
         self.snowball_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of Snowcone device to use for this cluster.</p><note>
+    /// <p>The type of Snowball Edge device to use for this cluster.</p><note>
     /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p>
     /// </note>
     pub fn set_snowball_type(mut self, input: ::std::option::Option<crate::types::SnowballType>) -> Self {
         self.snowball_type = input;
         self
     }
-    /// <p>The type of Snowcone device to use for this cluster.</p><note>
+    /// <p>The type of Snowball Edge device to use for this cluster.</p><note>
     /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p>
     /// </note>
     pub fn get_snowball_type(&self) -> &::std::option::Option<crate::types::SnowballType> {

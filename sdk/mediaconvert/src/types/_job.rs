@@ -34,6 +34,8 @@ pub struct Job {
     pub job_percent_complete: ::std::option::Option<i32>,
     /// The job template that the job is created from, if it is created from a job template.
     pub job_template: ::std::option::Option<::std::string::String>,
+    /// Contains information about the most recent share attempt for the job. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/creating-resource-share.html
+    pub last_share_details: ::std::option::Option<::std::string::String>,
     /// Provides messages from the service about jobs that you have already successfully submitted.
     pub messages: ::std::option::Option<crate::types::JobMessages>,
     /// List of output group details
@@ -50,6 +52,8 @@ pub struct Job {
     pub role: ::std::option::Option<::std::string::String>,
     /// JobSettings contains all the transcode settings for a job.
     pub settings: ::std::option::Option<crate::types::JobSettings>,
+    /// A job's share status can be NOT_SHARED, INITIATED, or SHARED
+    pub share_status: ::std::option::Option<crate::types::ShareStatus>,
     /// Enable this setting when you run a test job to estimate how many reserved transcoding slots (RTS) you need. When this is enabled, MediaConvert runs your job from an on-demand queue with similar performance to what you will see with one RTS in a reserved queue. This setting is disabled by default.
     pub simulate_reserved_queue: ::std::option::Option<crate::types::SimulateReservedQueue>,
     /// A job's status can be SUBMITTED, PROGRESSING, COMPLETE, CANCELED, or ERROR.
@@ -126,6 +130,10 @@ impl Job {
     pub fn job_template(&self) -> ::std::option::Option<&str> {
         self.job_template.as_deref()
     }
+    /// Contains information about the most recent share attempt for the job. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/creating-resource-share.html
+    pub fn last_share_details(&self) -> ::std::option::Option<&str> {
+        self.last_share_details.as_deref()
+    }
     /// Provides messages from the service about jobs that you have already successfully submitted.
     pub fn messages(&self) -> ::std::option::Option<&crate::types::JobMessages> {
         self.messages.as_ref()
@@ -161,6 +169,10 @@ impl Job {
     /// JobSettings contains all the transcode settings for a job.
     pub fn settings(&self) -> ::std::option::Option<&crate::types::JobSettings> {
         self.settings.as_ref()
+    }
+    /// A job's share status can be NOT_SHARED, INITIATED, or SHARED
+    pub fn share_status(&self) -> ::std::option::Option<&crate::types::ShareStatus> {
+        self.share_status.as_ref()
     }
     /// Enable this setting when you run a test job to estimate how many reserved transcoding slots (RTS) you need. When this is enabled, MediaConvert runs your job from an on-demand queue with similar performance to what you will see with one RTS in a reserved queue. This setting is disabled by default.
     pub fn simulate_reserved_queue(&self) -> ::std::option::Option<&crate::types::SimulateReservedQueue> {
@@ -215,6 +227,7 @@ pub struct JobBuilder {
     pub(crate) job_engine_version_used: ::std::option::Option<::std::string::String>,
     pub(crate) job_percent_complete: ::std::option::Option<i32>,
     pub(crate) job_template: ::std::option::Option<::std::string::String>,
+    pub(crate) last_share_details: ::std::option::Option<::std::string::String>,
     pub(crate) messages: ::std::option::Option<crate::types::JobMessages>,
     pub(crate) output_group_details: ::std::option::Option<::std::vec::Vec<crate::types::OutputGroupDetail>>,
     pub(crate) priority: ::std::option::Option<i32>,
@@ -223,6 +236,7 @@ pub struct JobBuilder {
     pub(crate) retry_count: ::std::option::Option<i32>,
     pub(crate) role: ::std::option::Option<::std::string::String>,
     pub(crate) settings: ::std::option::Option<crate::types::JobSettings>,
+    pub(crate) share_status: ::std::option::Option<crate::types::ShareStatus>,
     pub(crate) simulate_reserved_queue: ::std::option::Option<crate::types::SimulateReservedQueue>,
     pub(crate) status: ::std::option::Option<crate::types::JobStatus>,
     pub(crate) status_update_interval: ::std::option::Option<crate::types::StatusUpdateInterval>,
@@ -447,6 +461,20 @@ impl JobBuilder {
     pub fn get_job_template(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_template
     }
+    /// Contains information about the most recent share attempt for the job. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/creating-resource-share.html
+    pub fn last_share_details(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.last_share_details = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// Contains information about the most recent share attempt for the job. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/creating-resource-share.html
+    pub fn set_last_share_details(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.last_share_details = input;
+        self
+    }
+    /// Contains information about the most recent share attempt for the job. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/creating-resource-share.html
+    pub fn get_last_share_details(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_share_details
+    }
     /// Provides messages from the service about jobs that you have already successfully submitted.
     pub fn messages(mut self, input: crate::types::JobMessages) -> Self {
         self.messages = ::std::option::Option::Some(input);
@@ -573,6 +601,20 @@ impl JobBuilder {
     pub fn get_settings(&self) -> &::std::option::Option<crate::types::JobSettings> {
         &self.settings
     }
+    /// A job's share status can be NOT_SHARED, INITIATED, or SHARED
+    pub fn share_status(mut self, input: crate::types::ShareStatus) -> Self {
+        self.share_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// A job's share status can be NOT_SHARED, INITIATED, or SHARED
+    pub fn set_share_status(mut self, input: ::std::option::Option<crate::types::ShareStatus>) -> Self {
+        self.share_status = input;
+        self
+    }
+    /// A job's share status can be NOT_SHARED, INITIATED, or SHARED
+    pub fn get_share_status(&self) -> &::std::option::Option<crate::types::ShareStatus> {
+        &self.share_status
+    }
     /// Enable this setting when you run a test job to estimate how many reserved transcoding slots (RTS) you need. When this is enabled, MediaConvert runs your job from an on-demand queue with similar performance to what you will see with one RTS in a reserved queue. This setting is disabled by default.
     pub fn simulate_reserved_queue(mut self, input: crate::types::SimulateReservedQueue) -> Self {
         self.simulate_reserved_queue = ::std::option::Option::Some(input);
@@ -690,6 +732,7 @@ impl JobBuilder {
             job_engine_version_used: self.job_engine_version_used,
             job_percent_complete: self.job_percent_complete,
             job_template: self.job_template,
+            last_share_details: self.last_share_details,
             messages: self.messages,
             output_group_details: self.output_group_details,
             priority: self.priority,
@@ -698,6 +741,7 @@ impl JobBuilder {
             retry_count: self.retry_count,
             role: self.role,
             settings: self.settings,
+            share_status: self.share_status,
             simulate_reserved_queue: self.simulate_reserved_queue,
             status: self.status,
             status_update_interval: self.status_update_interval,

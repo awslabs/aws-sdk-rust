@@ -33,6 +33,8 @@ pub(crate) mod shape_add_policy_grant;
 
 pub(crate) mod shape_associate_environment_role;
 
+pub(crate) mod shape_associate_governed_terms;
+
 pub(crate) mod shape_cancel_metadata_generation_run;
 
 pub(crate) mod shape_cancel_subscription;
@@ -142,6 +144,8 @@ pub(crate) mod shape_delete_subscription_target;
 pub(crate) mod shape_delete_time_series_data_points;
 
 pub(crate) mod shape_disassociate_environment_role;
+
+pub(crate) mod shape_disassociate_governed_terms;
 
 pub(crate) mod shape_get_account_pool;
 
@@ -371,6 +375,8 @@ pub(crate) mod shape_add_entity_owner_input;
 
 pub(crate) mod shape_add_policy_grant_input;
 
+pub(crate) mod shape_associate_governed_terms_input;
+
 pub(crate) mod shape_conflict_exception;
 
 pub(crate) mod shape_create_account_pool_input;
@@ -428,6 +434,8 @@ pub(crate) mod shape_create_subscription_target_input;
 pub(crate) mod shape_create_user_profile_input;
 
 pub(crate) mod shape_delete_project_membership_input;
+
+pub(crate) mod shape_disassociate_governed_terms_input;
 
 pub(crate) mod shape_get_lineage_event_output;
 
@@ -632,6 +640,10 @@ pub(crate) mod shape_form_output_list;
 pub(crate) mod shape_forms_output_map;
 
 pub(crate) mod shape_glossary_terms;
+
+pub(crate) mod shape_glossary_usage_restrictions;
+
+pub(crate) mod shape_governed_glossary_terms;
 
 pub(crate) mod shape_granted_entity;
 

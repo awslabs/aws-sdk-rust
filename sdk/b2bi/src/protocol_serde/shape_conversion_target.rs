@@ -18,5 +18,11 @@ pub fn ser_conversion_target(
         crate::protocol_serde::shape_output_sample_file_source::ser_output_sample_file_source(&mut object_4, var_3)?;
         object_4.finish();
     }
+    if let Some(var_5) = &input.advanced_options {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("advancedOptions").start_object();
+        crate::protocol_serde::shape_advanced_options::ser_advanced_options(&mut object_6, var_5)?;
+        object_6.finish();
+    }
     Ok(())
 }

@@ -16,6 +16,8 @@ pub struct GlossaryItem {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The business glossary status.</p>
     pub status: crate::types::GlossaryStatus,
+    /// <p>The usage restrictions associated with a goverened glossary term.</p>
+    pub usage_restrictions: ::std::option::Option<::std::vec::Vec<crate::types::GlossaryUsageRestriction>>,
     /// <p>The timestamp of when the glossary was created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon DataZone user who created the glossary.</p>
@@ -56,6 +58,12 @@ impl GlossaryItem {
     pub fn status(&self) -> &crate::types::GlossaryStatus {
         &self.status
     }
+    /// <p>The usage restrictions associated with a goverened glossary term.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.usage_restrictions.is_none()`.
+    pub fn usage_restrictions(&self) -> &[crate::types::GlossaryUsageRestriction] {
+        self.usage_restrictions.as_deref().unwrap_or_default()
+    }
     /// <p>The timestamp of when the glossary was created.</p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
@@ -86,6 +94,7 @@ impl ::std::fmt::Debug for GlossaryItem {
         formatter.field("owning_project_id", &self.owning_project_id);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("status", &self.status);
+        formatter.field("usage_restrictions", &self.usage_restrictions);
         formatter.field("created_at", &self.created_at);
         formatter.field("created_by", &self.created_by);
         formatter.field("updated_at", &self.updated_at);
@@ -111,6 +120,7 @@ pub struct GlossaryItemBuilder {
     pub(crate) owning_project_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::GlossaryStatus>,
+    pub(crate) usage_restrictions: ::std::option::Option<::std::vec::Vec<crate::types::GlossaryUsageRestriction>>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) created_by: ::std::option::Option<::std::string::String>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -206,6 +216,26 @@ impl GlossaryItemBuilder {
     /// <p>The business glossary status.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::GlossaryStatus> {
         &self.status
+    }
+    /// Appends an item to `usage_restrictions`.
+    ///
+    /// To override the contents of this collection use [`set_usage_restrictions`](Self::set_usage_restrictions).
+    ///
+    /// <p>The usage restrictions associated with a goverened glossary term.</p>
+    pub fn usage_restrictions(mut self, input: crate::types::GlossaryUsageRestriction) -> Self {
+        let mut v = self.usage_restrictions.unwrap_or_default();
+        v.push(input);
+        self.usage_restrictions = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The usage restrictions associated with a goverened glossary term.</p>
+    pub fn set_usage_restrictions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GlossaryUsageRestriction>>) -> Self {
+        self.usage_restrictions = input;
+        self
+    }
+    /// <p>The usage restrictions associated with a goverened glossary term.</p>
+    pub fn get_usage_restrictions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GlossaryUsageRestriction>> {
+        &self.usage_restrictions
     }
     /// <p>The timestamp of when the glossary was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -317,6 +347,7 @@ impl GlossaryItemBuilder {
                     "status was not specified but it is required when building GlossaryItem",
                 )
             })?,
+            usage_restrictions: self.usage_restrictions,
             created_at: self.created_at,
             created_by: self.created_by,
             updated_at: self.updated_at,
@@ -334,6 +365,7 @@ impl ::std::fmt::Debug for GlossaryItemBuilder {
         formatter.field("owning_project_id", &self.owning_project_id);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("status", &self.status);
+        formatter.field("usage_restrictions", &self.usage_restrictions);
         formatter.field("created_at", &self.created_at);
         formatter.field("created_by", &self.created_by);
         formatter.field("updated_at", &self.updated_at);

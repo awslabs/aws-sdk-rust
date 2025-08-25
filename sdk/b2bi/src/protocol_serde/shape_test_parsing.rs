@@ -143,6 +143,9 @@ pub(crate) fn de_test_parsing(
                         crate::protocol_serde::shape_parsed_split_file_contents_list::de_parsed_split_file_contents_list(tokens)?,
                     );
                 }
+                "validationMessages" => {
+                    builder = builder.set_validation_messages(crate::protocol_serde::shape_validation_messages::de_validation_messages(tokens)?);
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

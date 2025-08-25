@@ -20,6 +20,7 @@ impl super::Client {
     ///   - [`short_description(Option<String>)`](crate::operation::create_glossary_term::CreateGlossaryTermOutput::short_description): <p>The short description of this business glossary term.</p>
     ///   - [`long_description(Option<String>)`](crate::operation::create_glossary_term::CreateGlossaryTermOutput::long_description): <p>The long description of this business glossary term.</p>
     ///   - [`term_relations(Option<TermRelations>)`](crate::operation::create_glossary_term::CreateGlossaryTermOutput::term_relations): <p>The term relations of this business glossary term.</p>
+    ///   - [`usage_restrictions(Option<Vec::<GlossaryUsageRestriction>>)`](crate::operation::create_glossary_term::CreateGlossaryTermOutput::usage_restrictions): <p>The usage restriction of the restricted glossary.</p>
     /// - On failure, responds with [`SdkError<CreateGlossaryTermError>`](crate::operation::create_glossary_term::CreateGlossaryTermError)
     pub fn create_glossary_term(&self) -> crate::operation::create_glossary_term::builders::CreateGlossaryTermFluentBuilder {
         crate::operation::create_glossary_term::builders::CreateGlossaryTermFluentBuilder::new(self.handle.clone())

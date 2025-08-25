@@ -49,6 +49,8 @@ pub use crate::types::_asset_listing::AssetListing;
 
 pub use crate::types::_time_series_data_point_summary_form_output::TimeSeriesDataPointSummaryFormOutput;
 
+pub use crate::types::_glossary_usage_restriction::GlossaryUsageRestriction;
+
 pub use crate::types::_term_relations::TermRelations;
 
 pub use crate::types::_glossary_term_status::GlossaryTermStatus;
@@ -671,6 +673,8 @@ pub use crate::types::_lineage_sql_query_run_details::LineageSqlQueryRunDetails;
 
 pub use crate::types::_connection_credentials::ConnectionCredentials;
 
+pub use crate::types::_governed_entity_type::GovernedEntityType;
+
 pub use crate::types::_member::Member;
 
 pub use crate::types::_user_type::UserType;
@@ -1007,6 +1011,8 @@ mod _glossary_term_item_additional_attributes;
 
 mod _glossary_term_status;
 
+mod _glossary_usage_restriction;
+
 mod _glue_connection;
 
 mod _glue_connection_input;
@@ -1030,6 +1036,8 @@ mod _glue_run_configuration_output;
 mod _glue_self_grant_status_output;
 
 mod _governance_type;
+
+mod _governed_entity_type;
 
 mod _granted_entity;
 

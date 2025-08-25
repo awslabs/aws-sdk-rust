@@ -6,7 +6,7 @@
 /// ModelInvocationTimeExceeded
 /// </dt>
 /// <dd>
-/// <p>The model failed to finish sending the response within the timeout period allowed by Amazon SageMaker.</p>
+/// <p>The model failed to finish sending the response within the timeout period allowed by Amazon SageMaker AI.</p>
 /// </dd>
 /// <dt>
 /// StreamBroken
@@ -26,7 +26,7 @@ pub struct ModelStreamError {
     /// ModelInvocationTimeExceeded
     /// </dt>
     /// <dd>
-    /// <p>The model failed to finish sending the response within the timeout period allowed by Amazon SageMaker.</p>
+    /// <p>The model failed to finish sending the response within the timeout period allowed by Amazon SageMaker AI.</p>
     /// </dd>
     /// <dt>
     /// StreamBroken
@@ -45,7 +45,7 @@ impl ModelStreamError {
     /// ModelInvocationTimeExceeded
     /// </dt>
     /// <dd>
-    /// <p>The model failed to finish sending the response within the timeout period allowed by Amazon SageMaker.</p>
+    /// <p>The model failed to finish sending the response within the timeout period allowed by Amazon SageMaker AI.</p>
     /// </dd>
     /// <dt>
     /// StreamBroken
@@ -123,7 +123,7 @@ impl ModelStreamErrorBuilder {
     /// ModelInvocationTimeExceeded
     /// </dt>
     /// <dd>
-    /// <p>The model failed to finish sending the response within the timeout period allowed by Amazon SageMaker.</p>
+    /// <p>The model failed to finish sending the response within the timeout period allowed by Amazon SageMaker AI.</p>
     /// </dd>
     /// <dt>
     /// StreamBroken
@@ -142,7 +142,7 @@ impl ModelStreamErrorBuilder {
     /// ModelInvocationTimeExceeded
     /// </dt>
     /// <dd>
-    /// <p>The model failed to finish sending the response within the timeout period allowed by Amazon SageMaker.</p>
+    /// <p>The model failed to finish sending the response within the timeout period allowed by Amazon SageMaker AI.</p>
     /// </dd>
     /// <dt>
     /// StreamBroken
@@ -161,7 +161,7 @@ impl ModelStreamErrorBuilder {
     /// ModelInvocationTimeExceeded
     /// </dt>
     /// <dd>
-    /// <p>The model failed to finish sending the response within the timeout period allowed by Amazon SageMaker.</p>
+    /// <p>The model failed to finish sending the response within the timeout period allowed by Amazon SageMaker AI.</p>
     /// </dd>
     /// <dt>
     /// StreamBroken

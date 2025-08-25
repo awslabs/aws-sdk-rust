@@ -17,6 +17,7 @@
 ///     Status::Deleted => { /* ... */ },
 ///     Status::Deleting => { /* ... */ },
 ///     Status::Failed => { /* ... */ },
+///     Status::Maintenance => { /* ... */ },
 ///     Status::Modifying => { /* ... */ },
 ///     Status::Updating => { /* ... */ },
 ///     Status::UpdatingDeploymentType => { /* ... */ },
@@ -60,6 +61,8 @@ pub enum Status {
     #[allow(missing_docs)] // documentation missing in model
     Failed,
     #[allow(missing_docs)] // documentation missing in model
+    Maintenance,
+    #[allow(missing_docs)] // documentation missing in model
     Modifying,
     #[allow(missing_docs)] // documentation missing in model
     Updating,
@@ -79,6 +82,7 @@ impl ::std::convert::From<&str> for Status {
             "DELETED" => Status::Deleted,
             "DELETING" => Status::Deleting,
             "FAILED" => Status::Failed,
+            "MAINTENANCE" => Status::Maintenance,
             "MODIFYING" => Status::Modifying,
             "UPDATING" => Status::Updating,
             "UPDATING_DEPLOYMENT_TYPE" => Status::UpdatingDeploymentType,
@@ -103,6 +107,7 @@ impl Status {
             Status::Deleted => "DELETED",
             Status::Deleting => "DELETING",
             Status::Failed => "FAILED",
+            Status::Maintenance => "MAINTENANCE",
             Status::Modifying => "MODIFYING",
             Status::Updating => "UPDATING",
             Status::UpdatingDeploymentType => "UPDATING_DEPLOYMENT_TYPE",
@@ -118,6 +123,7 @@ impl Status {
             "DELETED",
             "DELETING",
             "FAILED",
+            "MAINTENANCE",
             "MODIFYING",
             "UPDATING",
             "UPDATING_DEPLOYMENT_TYPE",
@@ -150,6 +156,7 @@ impl ::std::fmt::Display for Status {
             Status::Deleted => write!(f, "DELETED"),
             Status::Deleting => write!(f, "DELETING"),
             Status::Failed => write!(f, "FAILED"),
+            Status::Maintenance => write!(f, "MAINTENANCE"),
             Status::Modifying => write!(f, "MODIFYING"),
             Status::Updating => write!(f, "UPDATING"),
             Status::UpdatingDeploymentType => write!(f, "UPDATING_DEPLOYMENT_TYPE"),

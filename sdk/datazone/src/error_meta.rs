@@ -249,6 +249,44 @@ impl From<crate::operation::associate_environment_role::AssociateEnvironmentRole
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_governed_terms::AssociateGovernedTermsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_governed_terms::AssociateGovernedTermsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::associate_governed_terms::AssociateGovernedTermsError> for Error {
+    fn from(err: crate::operation::associate_governed_terms::AssociateGovernedTermsError) -> Self {
+        match err {
+            crate::operation::associate_governed_terms::AssociateGovernedTermsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::associate_governed_terms::AssociateGovernedTermsError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::associate_governed_terms::AssociateGovernedTermsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::associate_governed_terms::AssociateGovernedTermsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::associate_governed_terms::AssociateGovernedTermsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::associate_governed_terms::AssociateGovernedTermsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::associate_governed_terms::AssociateGovernedTermsError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::associate_governed_terms::AssociateGovernedTermsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_metadata_generation_run::CancelMetadataGenerationRunError, R>>
     for Error
@@ -2140,6 +2178,51 @@ impl From<crate::operation::disassociate_environment_role::DisassociateEnvironme
                 Error::UnauthorizedException(inner)
             }
             crate::operation::disassociate_environment_role::DisassociateEnvironmentRoleError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::disassociate_governed_terms::DisassociateGovernedTermsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::disassociate_governed_terms::DisassociateGovernedTermsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::disassociate_governed_terms::DisassociateGovernedTermsError> for Error {
+    fn from(err: crate::operation::disassociate_governed_terms::DisassociateGovernedTermsError) -> Self {
+        match err {
+            crate::operation::disassociate_governed_terms::DisassociateGovernedTermsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::disassociate_governed_terms::DisassociateGovernedTermsError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::disassociate_governed_terms::DisassociateGovernedTermsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::disassociate_governed_terms::DisassociateGovernedTermsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::disassociate_governed_terms::DisassociateGovernedTermsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::disassociate_governed_terms::DisassociateGovernedTermsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::disassociate_governed_terms::DisassociateGovernedTermsError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::disassociate_governed_terms::DisassociateGovernedTermsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

@@ -148,6 +148,8 @@ mod create_preset;
 
 mod create_queue;
 
+mod create_resource_share;
+
 /// Operation customization and supporting types.
 ///
 /// The underlying HTTP requests made during an operation can be customized

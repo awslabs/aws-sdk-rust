@@ -35,6 +35,8 @@ pub(crate) mod shape_create_preset;
 
 pub(crate) mod shape_create_queue;
 
+pub(crate) mod shape_create_resource_share;
+
 pub(crate) mod shape_delete_job_template;
 
 pub(crate) mod shape_delete_policy;
@@ -106,6 +108,8 @@ pub(crate) mod shape_create_job_template_input;
 pub(crate) mod shape_create_preset_input;
 
 pub(crate) mod shape_create_queue_input;
+
+pub(crate) mod shape_create_resource_share_input;
 
 pub(crate) mod shape_describe_endpoints_input;
 
@@ -581,6 +585,8 @@ pub(crate) mod shape_list_of_frame_metric_type;
 
 pub(crate) mod shape_list_of_insertable_image;
 
+pub(crate) mod shape_list_of_integer_min1_max2147483647;
+
 pub(crate) mod shape_min_bottom_rendition_size;
 
 pub(crate) mod shape_min_top_rendition_size;
@@ -614,8 +620,6 @@ pub(crate) mod shape_list_of_hls_ad_markers;
 pub(crate) mod shape_list_of_hls_additional_manifest;
 
 pub(crate) mod shape_list_of_hls_caption_language_mapping;
-
-pub(crate) mod shape_list_of_integer_min1_max2147483647;
 
 pub(crate) mod shape_list_of_ms_smooth_additional_manifest;
 

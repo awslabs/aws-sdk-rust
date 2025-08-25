@@ -830,6 +830,7 @@ impl From<crate::operation::delete_conversation::DeleteConversationError> for Er
     fn from(err: crate::operation::delete_conversation::DeleteConversationError) -> Self {
         match err {
             crate::operation::delete_conversation::DeleteConversationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_conversation::DeleteConversationError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::delete_conversation::DeleteConversationError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::delete_conversation::DeleteConversationError::LicenseNotFoundException(inner) => Error::LicenseNotFoundException(inner),
             crate::operation::delete_conversation::DeleteConversationError::ResourceNotFoundException(inner) => {

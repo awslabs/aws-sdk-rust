@@ -19,6 +19,7 @@ impl super::Client {
     ///   - [`first_revision_created_at(Option<DateTime>)`](crate::operation::get_asset::GetAssetOutput::first_revision_created_at): <p>The timestamp of when the first revision of the asset was created.</p>
     ///   - [`first_revision_created_by(Option<String>)`](crate::operation::get_asset::GetAssetOutput::first_revision_created_by): <p>The Amazon DataZone user who created the first revision of the asset.</p>
     ///   - [`glossary_terms(Option<Vec::<String>>)`](crate::operation::get_asset::GetAssetOutput::glossary_terms): <p>The business glossary terms attached to the asset.</p>
+    ///   - [`governed_glossary_terms(Option<Vec::<String>>)`](crate::operation::get_asset::GetAssetOutput::governed_glossary_terms): <p>The restricted glossary terms attached to an asset.</p>
     ///   - [`owning_project_id(String)`](crate::operation::get_asset::GetAssetOutput::owning_project_id): <p>The ID of the project that owns the asset.</p>
     ///   - [`domain_id(String)`](crate::operation::get_asset::GetAssetOutput::domain_id): <p>The ID of the Amazon DataZone domain to which the asset belongs.</p>
     ///   - [`listing(Option<AssetListingDetails>)`](crate::operation::get_asset::GetAssetOutput::listing): <p>The listing of the asset.</p>

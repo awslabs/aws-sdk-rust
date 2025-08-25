@@ -49,7 +49,7 @@ pub struct CreateJobInput {
     pub forwarding_address_id: ::std::option::Option<::std::string::String>,
     /// <p>The tax documents required in your Amazon Web Services Region.</p>
     pub tax_documents: ::std::option::Option<crate::types::TaxDocuments>,
-    /// <p>Defines the device configuration for an Snowcone job.</p>
+    /// <p>Defines the device configuration for an Snowball Edge job.</p>
     /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
     pub device_configuration: ::std::option::Option<crate::types::DeviceConfiguration>,
     /// <p>Allows you to securely operate and manage Snowcone devices remotely from outside of your internal network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the device arrives at your location. Otherwise, you need to use the Snowball Edge client to manage the device. When set to <code>NOT_INSTALLED</code>, remote management will not be available on the device.</p>
@@ -136,7 +136,7 @@ impl CreateJobInput {
     pub fn tax_documents(&self) -> ::std::option::Option<&crate::types::TaxDocuments> {
         self.tax_documents.as_ref()
     }
-    /// <p>Defines the device configuration for an Snowcone job.</p>
+    /// <p>Defines the device configuration for an Snowball Edge job.</p>
     /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
     pub fn device_configuration(&self) -> ::std::option::Option<&crate::types::DeviceConfiguration> {
         self.device_configuration.as_ref()
@@ -440,19 +440,19 @@ impl CreateJobInputBuilder {
     pub fn get_tax_documents(&self) -> &::std::option::Option<crate::types::TaxDocuments> {
         &self.tax_documents
     }
-    /// <p>Defines the device configuration for an Snowcone job.</p>
+    /// <p>Defines the device configuration for an Snowball Edge job.</p>
     /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
     pub fn device_configuration(mut self, input: crate::types::DeviceConfiguration) -> Self {
         self.device_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Defines the device configuration for an Snowcone job.</p>
+    /// <p>Defines the device configuration for an Snowball Edge job.</p>
     /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
     pub fn set_device_configuration(mut self, input: ::std::option::Option<crate::types::DeviceConfiguration>) -> Self {
         self.device_configuration = input;
         self
     }
-    /// <p>Defines the device configuration for an Snowcone job.</p>
+    /// <p>Defines the device configuration for an Snowball Edge job.</p>
     /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
     pub fn get_device_configuration(&self) -> &::std::option::Option<crate::types::DeviceConfiguration> {
         &self.device_configuration

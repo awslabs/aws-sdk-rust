@@ -27,6 +27,8 @@ pub struct GetGlossaryTermOutput {
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon DataZone user who updated the business glossary term.</p>
     pub updated_by: ::std::option::Option<::std::string::String>,
+    /// <p>The usage restriction of a term within a restricted glossary.</p>
+    pub usage_restrictions: ::std::option::Option<::std::vec::Vec<crate::types::GlossaryUsageRestriction>>,
     _request_id: Option<String>,
 }
 impl GetGlossaryTermOutput {
@@ -82,6 +84,12 @@ impl GetGlossaryTermOutput {
     pub fn updated_by(&self) -> ::std::option::Option<&str> {
         self.updated_by.as_deref()
     }
+    /// <p>The usage restriction of a term within a restricted glossary.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.usage_restrictions.is_none()`.
+    pub fn usage_restrictions(&self) -> &[crate::types::GlossaryUsageRestriction] {
+        self.usage_restrictions.as_deref().unwrap_or_default()
+    }
 }
 impl ::std::fmt::Debug for GetGlossaryTermOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -98,6 +106,7 @@ impl ::std::fmt::Debug for GetGlossaryTermOutput {
         formatter.field("created_by", &self.created_by);
         formatter.field("updated_at", &self.updated_at);
         formatter.field("updated_by", &self.updated_by);
+        formatter.field("usage_restrictions", &self.usage_restrictions);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -130,6 +139,7 @@ pub struct GetGlossaryTermOutputBuilder {
     pub(crate) created_by: ::std::option::Option<::std::string::String>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_by: ::std::option::Option<::std::string::String>,
+    pub(crate) usage_restrictions: ::std::option::Option<::std::vec::Vec<crate::types::GlossaryUsageRestriction>>,
     _request_id: Option<String>,
 }
 impl GetGlossaryTermOutputBuilder {
@@ -306,6 +316,26 @@ impl GetGlossaryTermOutputBuilder {
     pub fn get_updated_by(&self) -> &::std::option::Option<::std::string::String> {
         &self.updated_by
     }
+    /// Appends an item to `usage_restrictions`.
+    ///
+    /// To override the contents of this collection use [`set_usage_restrictions`](Self::set_usage_restrictions).
+    ///
+    /// <p>The usage restriction of a term within a restricted glossary.</p>
+    pub fn usage_restrictions(mut self, input: crate::types::GlossaryUsageRestriction) -> Self {
+        let mut v = self.usage_restrictions.unwrap_or_default();
+        v.push(input);
+        self.usage_restrictions = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The usage restriction of a term within a restricted glossary.</p>
+    pub fn set_usage_restrictions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GlossaryUsageRestriction>>) -> Self {
+        self.usage_restrictions = input;
+        self
+    }
+    /// <p>The usage restriction of a term within a restricted glossary.</p>
+    pub fn get_usage_restrictions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GlossaryUsageRestriction>> {
+        &self.usage_restrictions
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -363,6 +393,7 @@ impl GetGlossaryTermOutputBuilder {
             created_by: self.created_by,
             updated_at: self.updated_at,
             updated_by: self.updated_by,
+            usage_restrictions: self.usage_restrictions,
             _request_id: self._request_id,
         })
     }
@@ -382,6 +413,7 @@ impl ::std::fmt::Debug for GetGlossaryTermOutputBuilder {
         formatter.field("created_by", &self.created_by);
         formatter.field("updated_at", &self.updated_at);
         formatter.field("updated_by", &self.updated_by);
+        formatter.field("usage_restrictions", &self.usage_restrictions);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

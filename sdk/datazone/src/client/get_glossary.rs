@@ -16,6 +16,7 @@ impl super::Client {
     ///   - [`created_by(Option<String>)`](crate::operation::get_glossary::GetGlossaryOutput::created_by): <p>The Amazon DataZone user who created this business glossary.</p>
     ///   - [`updated_at(Option<DateTime>)`](crate::operation::get_glossary::GetGlossaryOutput::updated_at): <p>The timestamp of when the business glossary was updated.</p>
     ///   - [`updated_by(Option<String>)`](crate::operation::get_glossary::GetGlossaryOutput::updated_by): <p>The Amazon DataZone user who updated the business glossary.</p>
+    ///   - [`usage_restrictions(Option<Vec::<GlossaryUsageRestriction>>)`](crate::operation::get_glossary::GetGlossaryOutput::usage_restrictions): <p>The usage restriction of the restricted glossary.</p>
     /// - On failure, responds with [`SdkError<GetGlossaryError>`](crate::operation::get_glossary::GetGlossaryError)
     pub fn get_glossary(&self) -> crate::operation::get_glossary::builders::GetGlossaryFluentBuilder {
         crate::operation::get_glossary::builders::GetGlossaryFluentBuilder::new(self.handle.clone())

@@ -187,6 +187,10 @@ pub(crate) fn de_get_asset(
                 "glossaryTerms" => {
                     builder = builder.set_glossary_terms(crate::protocol_serde::shape_glossary_terms::de_glossary_terms(tokens)?);
                 }
+                "governedGlossaryTerms" => {
+                    builder = builder
+                        .set_governed_glossary_terms(crate::protocol_serde::shape_governed_glossary_terms::de_governed_glossary_terms(tokens)?);
+                }
                 "id" => {
                     builder = builder.set_id(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

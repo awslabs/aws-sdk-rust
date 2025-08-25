@@ -104,6 +104,11 @@ where
                                 crate::protocol_serde::shape_asset_item_additional_attributes::de_asset_item_additional_attributes(tokens)?,
                             );
                         }
+                        "governedGlossaryTerms" => {
+                            builder = builder.set_governed_glossary_terms(
+                                crate::protocol_serde::shape_governed_glossary_terms::de_governed_glossary_terms(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

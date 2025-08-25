@@ -5,7 +5,7 @@
 pub struct SubscribeInput {
     /// <p>The Amazon Resource Name (ARN) of the notification rule for which you want to create the association.</p>
     pub arn: ::std::option::Option<::std::string::String>,
-    /// <p>Information about the Chatbot topics or Chatbot clients associated with a notification rule.</p>
+    /// <p>Information about the Amazon Q Developer in chat applications topics or Amazon Q Developer in chat applications clients associated with a notification rule.</p>
     pub target: ::std::option::Option<crate::types::Target>,
     /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
     pub client_request_token: ::std::option::Option<::std::string::String>,
@@ -15,7 +15,7 @@ impl SubscribeInput {
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>Information about the Chatbot topics or Chatbot clients associated with a notification rule.</p>
+    /// <p>Information about the Amazon Q Developer in chat applications topics or Amazon Q Developer in chat applications clients associated with a notification rule.</p>
     pub fn target(&self) -> ::std::option::Option<&crate::types::Target> {
         self.target.as_ref()
     }
@@ -55,18 +55,18 @@ impl SubscribeInputBuilder {
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
-    /// <p>Information about the Chatbot topics or Chatbot clients associated with a notification rule.</p>
+    /// <p>Information about the Amazon Q Developer in chat applications topics or Amazon Q Developer in chat applications clients associated with a notification rule.</p>
     /// This field is required.
     pub fn target(mut self, input: crate::types::Target) -> Self {
         self.target = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Information about the Chatbot topics or Chatbot clients associated with a notification rule.</p>
+    /// <p>Information about the Amazon Q Developer in chat applications topics or Amazon Q Developer in chat applications clients associated with a notification rule.</p>
     pub fn set_target(mut self, input: ::std::option::Option<crate::types::Target>) -> Self {
         self.target = input;
         self
     }
-    /// <p>Information about the Chatbot topics or Chatbot clients associated with a notification rule.</p>
+    /// <p>Information about the Amazon Q Developer in chat applications topics or Amazon Q Developer in chat applications clients associated with a notification rule.</p>
     pub fn get_target(&self) -> &::std::option::Option<crate::types::Target> {
         &self.target
     }

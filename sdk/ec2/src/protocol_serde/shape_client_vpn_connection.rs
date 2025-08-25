@@ -137,7 +137,7 @@ pub fn de_client_vpn_connection(
                 builder = builder.set_client_ip(var_10);
             }
             ,
-            s if s.matches("commonName") /* CommonName com.amazonaws.ec2#ClientVpnConnection$CommonName */ =>  {
+            s if s.matches("clientIpv6Address") /* ClientIpv6Address com.amazonaws.ec2#ClientVpnConnection$ClientIpv6Address */ =>  {
                 let var_11 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -147,21 +147,11 @@ pub fn de_client_vpn_connection(
                         ?
                     )
                 ;
-                builder = builder.set_common_name(var_11);
+                builder = builder.set_client_ipv6_address(var_11);
             }
             ,
-            s if s.matches("status") /* Status com.amazonaws.ec2#ClientVpnConnection$Status */ =>  {
+            s if s.matches("commonName") /* CommonName com.amazonaws.ec2#ClientVpnConnection$CommonName */ =>  {
                 let var_12 =
-                    Some(
-                        crate::protocol_serde::shape_client_vpn_connection_status::de_client_vpn_connection_status(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_status(var_12);
-            }
-            ,
-            s if s.matches("connectionEndTime") /* ConnectionEndTime com.amazonaws.ec2#ClientVpnConnection$ConnectionEndTime */ =>  {
-                let var_13 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -170,17 +160,40 @@ pub fn de_client_vpn_connection(
                         ?
                     )
                 ;
-                builder = builder.set_connection_end_time(var_13);
+                builder = builder.set_common_name(var_12);
+            }
+            ,
+            s if s.matches("status") /* Status com.amazonaws.ec2#ClientVpnConnection$Status */ =>  {
+                let var_13 =
+                    Some(
+                        crate::protocol_serde::shape_client_vpn_connection_status::de_client_vpn_connection_status(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_status(var_13);
+            }
+            ,
+            s if s.matches("connectionEndTime") /* ConnectionEndTime com.amazonaws.ec2#ClientVpnConnection$ConnectionEndTime */ =>  {
+                let var_14 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_connection_end_time(var_14);
             }
             ,
             s if s.matches("postureComplianceStatusSet") /* PostureComplianceStatuses com.amazonaws.ec2#ClientVpnConnection$PostureComplianceStatuses */ =>  {
-                let var_14 =
+                let var_15 =
                     Some(
                         crate::protocol_serde::shape_value_string_list::de_value_string_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_posture_compliance_statuses(var_14);
+                builder = builder.set_posture_compliance_statuses(var_15);
             }
             ,
             _ => {}

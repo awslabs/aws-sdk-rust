@@ -34,6 +34,20 @@ pub fn de_delete_conversation_http_error(
             };
             tmp
         }),
+        "ConflictException" => crate::operation::delete_conversation::DeleteConversationError::ConflictException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
+                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::delete_conversation::DeleteConversationError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::conflict_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::delete_conversation::DeleteConversationError::unhandled)?
+            };
+            tmp
+        }),
         "InternalServerException" => crate::operation::delete_conversation::DeleteConversationError::InternalServerException({
             #[allow(unused_mut)]
             let mut tmp = {

@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`arn(impl Into<String>)`](crate::operation::unsubscribe::builders::UnsubscribeFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::unsubscribe::builders::UnsubscribeFluentBuilder::set_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the notification rule.</p><br>
-    ///   - [`target_address(impl Into<String>)`](crate::operation::unsubscribe::builders::UnsubscribeFluentBuilder::target_address) / [`set_target_address(Option<String>)`](crate::operation::unsubscribe::builders::UnsubscribeFluentBuilder::set_target_address):<br>required: **true**<br><p>The ARN of the Chatbot topic to unsubscribe from the notification rule.</p><br>
+    ///   - [`target_address(impl Into<String>)`](crate::operation::unsubscribe::builders::UnsubscribeFluentBuilder::target_address) / [`set_target_address(Option<String>)`](crate::operation::unsubscribe::builders::UnsubscribeFluentBuilder::set_target_address):<br>required: **true**<br><p>The ARN of the Amazon Q Developer in chat applications topic to unsubscribe from the notification rule.</p><br>
     /// - On success, responds with [`UnsubscribeOutput`](crate::operation::unsubscribe::UnsubscribeOutput) with field(s):
     ///   - [`arn(String)`](crate::operation::unsubscribe::UnsubscribeOutput::arn): <p>The Amazon Resource Name (ARN) of the the notification rule from which you have removed a subscription.</p>
     /// - On failure, responds with [`SdkError<UnsubscribeError>`](crate::operation::unsubscribe::UnsubscribeError)

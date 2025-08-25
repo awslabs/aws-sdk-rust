@@ -3,19 +3,19 @@
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum Error {
-    /// <p>AWS CodeStar Notifications can't create the notification rule because you do not have sufficient permissions.</p>
+    /// <p>CodeStar Notifications can't create the notification rule because you do not have sufficient permissions.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p>AWS CodeStar Notifications can't complete the request because the resource is being modified by another process. Wait a few minutes and try again.</p>
+    /// <p>CodeStar Notifications can't complete the request because the resource is being modified by another process. Wait a few minutes and try again.</p>
     ConcurrentModificationException(crate::types::error::ConcurrentModificationException),
     /// <p>Some or all of the configuration is incomplete, missing, or not valid.</p>
     ConfigurationException(crate::types::error::ConfigurationException),
     /// <p>The value for the enumeration token used in the request to return the next batch of the results is not valid.</p>
     InvalidNextTokenException(crate::types::error::InvalidNextTokenException),
-    /// <p>One of the AWS CodeStar Notifications limits has been exceeded. Limits apply to accounts, notification rules, notifications, resources, and targets. For more information, see Limits.</p>
+    /// <p>One of the CodeStar Notifications limits has been exceeded. Limits apply to accounts, notification rules, notifications, resources, and targets. For more information, see Limits.</p>
     LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>A resource with the same name or ID already exists. Notification rule names must be unique in your Amazon Web Services account.</p>
     ResourceAlreadyExistsException(crate::types::error::ResourceAlreadyExistsException),
-    /// <p>AWS CodeStar Notifications can't find a resource that matches the provided ARN.</p>
+    /// <p>CodeStar Notifications can't find a resource that matches the provided ARN.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>One or more parameter values are not valid.</p>
     ValidationException(crate::types::error::ValidationException),

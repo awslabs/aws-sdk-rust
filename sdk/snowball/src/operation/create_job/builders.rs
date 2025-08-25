@@ -454,19 +454,19 @@ impl CreateJobFluentBuilder {
     pub fn get_tax_documents(&self) -> &::std::option::Option<crate::types::TaxDocuments> {
         self.inner.get_tax_documents()
     }
-    /// <p>Defines the device configuration for an Snowcone job.</p>
+    /// <p>Defines the device configuration for an Snowball Edge job.</p>
     /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
     pub fn device_configuration(mut self, input: crate::types::DeviceConfiguration) -> Self {
         self.inner = self.inner.device_configuration(input);
         self
     }
-    /// <p>Defines the device configuration for an Snowcone job.</p>
+    /// <p>Defines the device configuration for an Snowball Edge job.</p>
     /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
     pub fn set_device_configuration(mut self, input: ::std::option::Option<crate::types::DeviceConfiguration>) -> Self {
         self.inner = self.inner.set_device_configuration(input);
         self
     }
-    /// <p>Defines the device configuration for an Snowcone job.</p>
+    /// <p>Defines the device configuration for an Snowball Edge job.</p>
     /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
     pub fn get_device_configuration(&self) -> &::std::option::Option<crate::types::DeviceConfiguration> {
         self.inner.get_device_configuration()

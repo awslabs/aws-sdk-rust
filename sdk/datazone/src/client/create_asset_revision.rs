@@ -25,6 +25,7 @@ impl super::Client {
     ///   - [`first_revision_created_at(Option<DateTime>)`](crate::operation::create_asset_revision::CreateAssetRevisionOutput::first_revision_created_at): <p>The timestamp of when the first asset revision occured.</p>
     ///   - [`first_revision_created_by(Option<String>)`](crate::operation::create_asset_revision::CreateAssetRevisionOutput::first_revision_created_by): <p>The Amazon DataZone user who performed the first asset revision.</p>
     ///   - [`glossary_terms(Option<Vec::<String>>)`](crate::operation::create_asset_revision::CreateAssetRevisionOutput::glossary_terms): <p>The glossary terms that were attached to the asset as part of asset revision.</p>
+    ///   - [`governed_glossary_terms(Option<Vec::<String>>)`](crate::operation::create_asset_revision::CreateAssetRevisionOutput::governed_glossary_terms): <p>The glossary terms in a restricted glossary.</p>
     ///   - [`owning_project_id(String)`](crate::operation::create_asset_revision::CreateAssetRevisionOutput::owning_project_id): <p>The unique identifier of the revised project that owns the asset.</p>
     ///   - [`domain_id(String)`](crate::operation::create_asset_revision::CreateAssetRevisionOutput::domain_id): <p>The unique identifier of the Amazon DataZone domain where the asset was revised.</p>
     ///   - [`listing(Option<AssetListingDetails>)`](crate::operation::create_asset_revision::CreateAssetRevisionOutput::listing): <p>The details of an asset published in an Amazon DataZone catalog.</p>

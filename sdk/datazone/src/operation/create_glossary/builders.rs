@@ -178,6 +178,25 @@ impl CreateGlossaryFluentBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::GlossaryStatus> {
         self.inner.get_status()
     }
+    ///
+    /// Appends an item to `usageRestrictions`.
+    ///
+    /// To override the contents of this collection use [`set_usage_restrictions`](Self::set_usage_restrictions).
+    ///
+    /// <p>The usage restriction of the restricted glossary.</p>
+    pub fn usage_restrictions(mut self, input: crate::types::GlossaryUsageRestriction) -> Self {
+        self.inner = self.inner.usage_restrictions(input);
+        self
+    }
+    /// <p>The usage restriction of the restricted glossary.</p>
+    pub fn set_usage_restrictions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GlossaryUsageRestriction>>) -> Self {
+        self.inner = self.inner.set_usage_restrictions(input);
+        self
+    }
+    /// <p>The usage restriction of the restricted glossary.</p>
+    pub fn get_usage_restrictions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GlossaryUsageRestriction>> {
+        self.inner.get_usage_restrictions()
+    }
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());

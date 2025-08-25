@@ -14,6 +14,8 @@ pub struct GlossaryTermItem {
     pub name: ::std::string::String,
     /// <p>The short description of the business glossary term.</p>
     pub short_description: ::std::option::Option<::std::string::String>,
+    /// <p>The usage restrictions associated with a goverened glossary term.</p>
+    pub usage_restrictions: ::std::option::Option<::std::vec::Vec<crate::types::GlossaryUsageRestriction>>,
     /// <p>The long description of the business glossary term.</p>
     pub long_description: ::std::option::Option<::std::string::String>,
     /// <p>The relations of the business glossary term.</p>
@@ -56,6 +58,12 @@ impl GlossaryTermItem {
     pub fn short_description(&self) -> ::std::option::Option<&str> {
         self.short_description.as_deref()
     }
+    /// <p>The usage restrictions associated with a goverened glossary term.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.usage_restrictions.is_none()`.
+    pub fn usage_restrictions(&self) -> &[crate::types::GlossaryUsageRestriction] {
+        self.usage_restrictions.as_deref().unwrap_or_default()
+    }
     /// <p>The long description of the business glossary term.</p>
     pub fn long_description(&self) -> ::std::option::Option<&str> {
         self.long_description.as_deref()
@@ -97,6 +105,7 @@ impl ::std::fmt::Debug for GlossaryTermItem {
         formatter.field("id", &self.id);
         formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("short_description", &"*** Sensitive Data Redacted ***");
+        formatter.field("usage_restrictions", &self.usage_restrictions);
         formatter.field("long_description", &"*** Sensitive Data Redacted ***");
         formatter.field("term_relations", &self.term_relations);
         formatter.field("status", &self.status);
@@ -124,6 +133,7 @@ pub struct GlossaryTermItemBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) short_description: ::std::option::Option<::std::string::String>,
+    pub(crate) usage_restrictions: ::std::option::Option<::std::vec::Vec<crate::types::GlossaryUsageRestriction>>,
     pub(crate) long_description: ::std::option::Option<::std::string::String>,
     pub(crate) term_relations: ::std::option::Option<crate::types::TermRelations>,
     pub(crate) status: ::std::option::Option<crate::types::GlossaryTermStatus>,
@@ -207,6 +217,26 @@ impl GlossaryTermItemBuilder {
     /// <p>The short description of the business glossary term.</p>
     pub fn get_short_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.short_description
+    }
+    /// Appends an item to `usage_restrictions`.
+    ///
+    /// To override the contents of this collection use [`set_usage_restrictions`](Self::set_usage_restrictions).
+    ///
+    /// <p>The usage restrictions associated with a goverened glossary term.</p>
+    pub fn usage_restrictions(mut self, input: crate::types::GlossaryUsageRestriction) -> Self {
+        let mut v = self.usage_restrictions.unwrap_or_default();
+        v.push(input);
+        self.usage_restrictions = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The usage restrictions associated with a goverened glossary term.</p>
+    pub fn set_usage_restrictions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GlossaryUsageRestriction>>) -> Self {
+        self.usage_restrictions = input;
+        self
+    }
+    /// <p>The usage restrictions associated with a goverened glossary term.</p>
+    pub fn get_usage_restrictions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GlossaryUsageRestriction>> {
+        &self.usage_restrictions
     }
     /// <p>The long description of the business glossary term.</p>
     pub fn long_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -355,6 +385,7 @@ impl GlossaryTermItemBuilder {
                 )
             })?,
             short_description: self.short_description,
+            usage_restrictions: self.usage_restrictions,
             long_description: self.long_description,
             term_relations: self.term_relations,
             status: self.status.ok_or_else(|| {
@@ -379,6 +410,7 @@ impl ::std::fmt::Debug for GlossaryTermItemBuilder {
         formatter.field("id", &self.id);
         formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("short_description", &"*** Sensitive Data Redacted ***");
+        formatter.field("usage_restrictions", &self.usage_restrictions);
         formatter.field("long_description", &"*** Sensitive Data Redacted ***");
         formatter.field("term_relations", &self.term_relations);
         formatter.field("status", &self.status);

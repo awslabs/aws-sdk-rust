@@ -5,17 +5,25 @@ pub use crate::types::_sample_document_keys::SampleDocumentKeysBuilder;
 
 pub use crate::types::_output_conversion::OutputConversionBuilder;
 
+pub use crate::types::_advanced_options::AdvancedOptionsBuilder;
+
+pub use crate::types::_x12_advanced_options::X12AdvancedOptionsBuilder;
+
+pub use crate::types::_x12_validation_options::X12ValidationOptionsBuilder;
+
+pub use crate::types::_x12_element_requirement_validation_rule::X12ElementRequirementValidationRuleBuilder;
+
+pub use crate::types::_x12_element_length_validation_rule::X12ElementLengthValidationRuleBuilder;
+
+pub use crate::types::_x12_code_list_validation_rule::X12CodeListValidationRuleBuilder;
+
+pub use crate::types::_x12_split_options::X12SplitOptionsBuilder;
+
 pub use crate::types::_x12_details::X12DetailsBuilder;
 
 pub use crate::types::_mapping::MappingBuilder;
 
 pub use crate::types::_input_conversion::InputConversionBuilder;
-
-pub use crate::types::_advanced_options::AdvancedOptionsBuilder;
-
-pub use crate::types::_x12_advanced_options::X12AdvancedOptionsBuilder;
-
-pub use crate::types::_x12_split_options::X12SplitOptionsBuilder;
 
 pub use crate::types::_tag::TagBuilder;
 

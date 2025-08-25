@@ -7,7 +7,9 @@ pub struct BatchPutDocumentInput {
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the Amazon Q Business index to add the documents to.</p>
     pub index_id: ::std::option::Option<::std::string::String>,
-    /// <p>One or more documents to add to the index.</p>
+    /// <p>One or more documents to add to the index.</p><important>
+    /// <p>Ensure that the name of your document doesn't contain any confidential information. Amazon Q Business returns document names in chat responses and citations when relevant.</p>
+    /// </important>
     pub documents: ::std::option::Option<::std::vec::Vec<crate::types::Document>>,
     /// <p>The Amazon Resource Name (ARN) of an IAM role with permission to access your S3 bucket.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
@@ -23,7 +25,9 @@ impl BatchPutDocumentInput {
     pub fn index_id(&self) -> ::std::option::Option<&str> {
         self.index_id.as_deref()
     }
-    /// <p>One or more documents to add to the index.</p>
+    /// <p>One or more documents to add to the index.</p><important>
+    /// <p>Ensure that the name of your document doesn't contain any confidential information. Amazon Q Business returns document names in chat responses and citations when relevant.</p>
+    /// </important>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.documents.is_none()`.
     pub fn documents(&self) -> &[crate::types::Document] {
@@ -90,19 +94,25 @@ impl BatchPutDocumentInputBuilder {
     ///
     /// To override the contents of this collection use [`set_documents`](Self::set_documents).
     ///
-    /// <p>One or more documents to add to the index.</p>
+    /// <p>One or more documents to add to the index.</p><important>
+    /// <p>Ensure that the name of your document doesn't contain any confidential information. Amazon Q Business returns document names in chat responses and citations when relevant.</p>
+    /// </important>
     pub fn documents(mut self, input: crate::types::Document) -> Self {
         let mut v = self.documents.unwrap_or_default();
         v.push(input);
         self.documents = ::std::option::Option::Some(v);
         self
     }
-    /// <p>One or more documents to add to the index.</p>
+    /// <p>One or more documents to add to the index.</p><important>
+    /// <p>Ensure that the name of your document doesn't contain any confidential information. Amazon Q Business returns document names in chat responses and citations when relevant.</p>
+    /// </important>
     pub fn set_documents(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Document>>) -> Self {
         self.documents = input;
         self
     }
-    /// <p>One or more documents to add to the index.</p>
+    /// <p>One or more documents to add to the index.</p><important>
+    /// <p>Ensure that the name of your document doesn't contain any confidential information. Amazon Q Business returns document names in chat responses and citations when relevant.</p>
+    /// </important>
     pub fn get_documents(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Document>> {
         &self.documents
     }

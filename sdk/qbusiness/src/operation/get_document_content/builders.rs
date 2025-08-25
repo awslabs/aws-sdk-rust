@@ -164,17 +164,17 @@ impl GetDocumentContentFluentBuilder {
     pub fn get_document_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_document_id()
     }
-    /// <p>Raw document outputFormat.</p>
+    /// <p>Document outputFormat. Defaults to RAW if not selected.</p>
     pub fn output_format(mut self, input: crate::types::OutputFormat) -> Self {
         self.inner = self.inner.output_format(input);
         self
     }
-    /// <p>Raw document outputFormat.</p>
+    /// <p>Document outputFormat. Defaults to RAW if not selected.</p>
     pub fn set_output_format(mut self, input: ::std::option::Option<crate::types::OutputFormat>) -> Self {
         self.inner = self.inner.set_output_format(input);
         self
     }
-    /// <p>Raw document outputFormat.</p>
+    /// <p>Document outputFormat. Defaults to RAW if not selected.</p>
     pub fn get_output_format(&self) -> &::std::option::Option<crate::types::OutputFormat> {
         self.inner.get_output_format()
     }

@@ -22,7 +22,7 @@ impl crate::operation::subscribe::builders::SubscribeInputBuilder {
 }
 /// Fluent builder constructing a request to `Subscribe`.
 ///
-/// <p>Creates an association between a notification rule and an Chatbot topic or Chatbot client so that the associated target can receive notifications when the events described in the rule are triggered.</p>
+/// <p>Creates an association between a notification rule and an Amazon Q Developer in chat applications topic or Amazon Q Developer in chat applications client so that the associated target can receive notifications when the events described in the rule are triggered.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SubscribeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -116,17 +116,17 @@ impl SubscribeFluentBuilder {
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_arn()
     }
-    /// <p>Information about the Chatbot topics or Chatbot clients associated with a notification rule.</p>
+    /// <p>Information about the Amazon Q Developer in chat applications topics or Amazon Q Developer in chat applications clients associated with a notification rule.</p>
     pub fn target(mut self, input: crate::types::Target) -> Self {
         self.inner = self.inner.target(input);
         self
     }
-    /// <p>Information about the Chatbot topics or Chatbot clients associated with a notification rule.</p>
+    /// <p>Information about the Amazon Q Developer in chat applications topics or Amazon Q Developer in chat applications clients associated with a notification rule.</p>
     pub fn set_target(mut self, input: ::std::option::Option<crate::types::Target>) -> Self {
         self.inner = self.inner.set_target(input);
         self
     }
-    /// <p>Information about the Chatbot topics or Chatbot clients associated with a notification rule.</p>
+    /// <p>Information about the Amazon Q Developer in chat applications topics or Amazon Q Developer in chat applications clients associated with a notification rule.</p>
     pub fn get_target(&self) -> &::std::option::Option<crate::types::Target> {
         self.inner.get_target()
     }

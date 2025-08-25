@@ -56,6 +56,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "usageRestrictions" => {
+                            builder = builder.set_usage_restrictions(
+                                crate::protocol_serde::shape_glossary_usage_restrictions::de_glossary_usage_restrictions(tokens)?,
+                            );
+                        }
                         "createdAt" => {
                             builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),

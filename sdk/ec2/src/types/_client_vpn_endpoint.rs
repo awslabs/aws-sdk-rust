@@ -61,6 +61,10 @@ pub struct ClientVpnEndpoint {
     pub client_route_enforcement_options: ::std::option::Option<crate::types::ClientRouteEnforcementResponseOptions>,
     /// <p>Indicates whether the client VPN session is disconnected after the maximum <code>sessionTimeoutHours</code> is reached. If <code>true</code>, users are prompted to reconnect client VPN. If <code>false</code>, client VPN attempts to reconnect automatically. The default value is <code>true</code>.</p>
     pub disconnect_on_session_timeout: ::std::option::Option<bool>,
+    /// <p>The IP address type of the Client VPN endpoint. Possible values are <code>ipv4</code> for IPv4 addressing only, <code>ipv6</code> for IPv6 addressing only, or <code>dual-stack </code>for both IPv4 and IPv6 addressing.</p>
+    pub endpoint_ip_address_type: ::std::option::Option<crate::types::EndpointIpAddressType>,
+    /// <p>The IP address type of the Client VPN endpoint. Possible values are either <code>ipv4</code> for IPv4 addressing only, <code>ipv6</code> for IPv6 addressing only, or <code>dual-stack</code> for both IPv4 and IPv6 addressing.</p>
+    pub traffic_ip_address_type: ::std::option::Option<crate::types::TrafficIpAddressType>,
 }
 impl ClientVpnEndpoint {
     /// <p>The ID of the Client VPN endpoint.</p>
@@ -180,6 +184,14 @@ impl ClientVpnEndpoint {
     pub fn disconnect_on_session_timeout(&self) -> ::std::option::Option<bool> {
         self.disconnect_on_session_timeout
     }
+    /// <p>The IP address type of the Client VPN endpoint. Possible values are <code>ipv4</code> for IPv4 addressing only, <code>ipv6</code> for IPv6 addressing only, or <code>dual-stack </code>for both IPv4 and IPv6 addressing.</p>
+    pub fn endpoint_ip_address_type(&self) -> ::std::option::Option<&crate::types::EndpointIpAddressType> {
+        self.endpoint_ip_address_type.as_ref()
+    }
+    /// <p>The IP address type of the Client VPN endpoint. Possible values are either <code>ipv4</code> for IPv4 addressing only, <code>ipv6</code> for IPv6 addressing only, or <code>dual-stack</code> for both IPv4 and IPv6 addressing.</p>
+    pub fn traffic_ip_address_type(&self) -> ::std::option::Option<&crate::types::TrafficIpAddressType> {
+        self.traffic_ip_address_type.as_ref()
+    }
 }
 impl ClientVpnEndpoint {
     /// Creates a new builder-style object to manufacture [`ClientVpnEndpoint`](crate::types::ClientVpnEndpoint).
@@ -217,6 +229,8 @@ pub struct ClientVpnEndpointBuilder {
     pub(crate) client_login_banner_options: ::std::option::Option<crate::types::ClientLoginBannerResponseOptions>,
     pub(crate) client_route_enforcement_options: ::std::option::Option<crate::types::ClientRouteEnforcementResponseOptions>,
     pub(crate) disconnect_on_session_timeout: ::std::option::Option<bool>,
+    pub(crate) endpoint_ip_address_type: ::std::option::Option<crate::types::EndpointIpAddressType>,
+    pub(crate) traffic_ip_address_type: ::std::option::Option<crate::types::TrafficIpAddressType>,
 }
 impl ClientVpnEndpointBuilder {
     /// <p>The ID of the Client VPN endpoint.</p>
@@ -620,6 +634,34 @@ impl ClientVpnEndpointBuilder {
     pub fn get_disconnect_on_session_timeout(&self) -> &::std::option::Option<bool> {
         &self.disconnect_on_session_timeout
     }
+    /// <p>The IP address type of the Client VPN endpoint. Possible values are <code>ipv4</code> for IPv4 addressing only, <code>ipv6</code> for IPv6 addressing only, or <code>dual-stack </code>for both IPv4 and IPv6 addressing.</p>
+    pub fn endpoint_ip_address_type(mut self, input: crate::types::EndpointIpAddressType) -> Self {
+        self.endpoint_ip_address_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The IP address type of the Client VPN endpoint. Possible values are <code>ipv4</code> for IPv4 addressing only, <code>ipv6</code> for IPv6 addressing only, or <code>dual-stack </code>for both IPv4 and IPv6 addressing.</p>
+    pub fn set_endpoint_ip_address_type(mut self, input: ::std::option::Option<crate::types::EndpointIpAddressType>) -> Self {
+        self.endpoint_ip_address_type = input;
+        self
+    }
+    /// <p>The IP address type of the Client VPN endpoint. Possible values are <code>ipv4</code> for IPv4 addressing only, <code>ipv6</code> for IPv6 addressing only, or <code>dual-stack </code>for both IPv4 and IPv6 addressing.</p>
+    pub fn get_endpoint_ip_address_type(&self) -> &::std::option::Option<crate::types::EndpointIpAddressType> {
+        &self.endpoint_ip_address_type
+    }
+    /// <p>The IP address type of the Client VPN endpoint. Possible values are either <code>ipv4</code> for IPv4 addressing only, <code>ipv6</code> for IPv6 addressing only, or <code>dual-stack</code> for both IPv4 and IPv6 addressing.</p>
+    pub fn traffic_ip_address_type(mut self, input: crate::types::TrafficIpAddressType) -> Self {
+        self.traffic_ip_address_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The IP address type of the Client VPN endpoint. Possible values are either <code>ipv4</code> for IPv4 addressing only, <code>ipv6</code> for IPv6 addressing only, or <code>dual-stack</code> for both IPv4 and IPv6 addressing.</p>
+    pub fn set_traffic_ip_address_type(mut self, input: ::std::option::Option<crate::types::TrafficIpAddressType>) -> Self {
+        self.traffic_ip_address_type = input;
+        self
+    }
+    /// <p>The IP address type of the Client VPN endpoint. Possible values are either <code>ipv4</code> for IPv4 addressing only, <code>ipv6</code> for IPv6 addressing only, or <code>dual-stack</code> for both IPv4 and IPv6 addressing.</p>
+    pub fn get_traffic_ip_address_type(&self) -> &::std::option::Option<crate::types::TrafficIpAddressType> {
+        &self.traffic_ip_address_type
+    }
     /// Consumes the builder and constructs a [`ClientVpnEndpoint`](crate::types::ClientVpnEndpoint).
     pub fn build(self) -> crate::types::ClientVpnEndpoint {
         crate::types::ClientVpnEndpoint {
@@ -648,6 +690,8 @@ impl ClientVpnEndpointBuilder {
             client_login_banner_options: self.client_login_banner_options,
             client_route_enforcement_options: self.client_route_enforcement_options,
             disconnect_on_session_timeout: self.disconnect_on_session_timeout,
+            endpoint_ip_address_type: self.endpoint_ip_address_type,
+            traffic_ip_address_type: self.traffic_ip_address_type,
         }
     }
 }

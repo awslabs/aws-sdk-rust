@@ -604,3 +604,39 @@ pub(crate) fn x12_split_options_correct_errors(
     }
     builder
 }
+
+pub(crate) fn x12_code_list_validation_rule_correct_errors(
+    mut builder: crate::types::builders::X12CodeListValidationRuleBuilder,
+) -> crate::types::builders::X12CodeListValidationRuleBuilder {
+    if builder.element_id.is_none() {
+        builder.element_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn x12_element_length_validation_rule_correct_errors(
+    mut builder: crate::types::builders::X12ElementLengthValidationRuleBuilder,
+) -> crate::types::builders::X12ElementLengthValidationRuleBuilder {
+    if builder.element_id.is_none() {
+        builder.element_id = Some(Default::default())
+    }
+    if builder.max_length.is_none() {
+        builder.max_length = Some(Default::default())
+    }
+    if builder.min_length.is_none() {
+        builder.min_length = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn x12_element_requirement_validation_rule_correct_errors(
+    mut builder: crate::types::builders::X12ElementRequirementValidationRuleBuilder,
+) -> crate::types::builders::X12ElementRequirementValidationRuleBuilder {
+    if builder.element_position.is_none() {
+        builder.element_position = Some(Default::default())
+    }
+    if builder.requirement.is_none() {
+        builder.requirement = "no value was set".parse::<crate::types::ElementRequirement>().ok()
+    }
+    builder
+}

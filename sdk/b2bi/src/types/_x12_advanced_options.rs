@@ -6,11 +6,17 @@
 pub struct X12AdvancedOptions {
     /// <p>Specifies options for splitting X12 EDI files. These options control how large X12 files are divided into smaller, more manageable units.</p>
     pub split_options: ::std::option::Option<crate::types::X12SplitOptions>,
+    /// <p>Specifies validation options for X12 EDI processing. These options control how validation rules are applied during EDI document processing, including custom validation rules for element length constraints, code list validations, and element requirement checks.</p>
+    pub validation_options: ::std::option::Option<crate::types::X12ValidationOptions>,
 }
 impl X12AdvancedOptions {
     /// <p>Specifies options for splitting X12 EDI files. These options control how large X12 files are divided into smaller, more manageable units.</p>
     pub fn split_options(&self) -> ::std::option::Option<&crate::types::X12SplitOptions> {
         self.split_options.as_ref()
+    }
+    /// <p>Specifies validation options for X12 EDI processing. These options control how validation rules are applied during EDI document processing, including custom validation rules for element length constraints, code list validations, and element requirement checks.</p>
+    pub fn validation_options(&self) -> ::std::option::Option<&crate::types::X12ValidationOptions> {
+        self.validation_options.as_ref()
     }
 }
 impl X12AdvancedOptions {
@@ -25,6 +31,7 @@ impl X12AdvancedOptions {
 #[non_exhaustive]
 pub struct X12AdvancedOptionsBuilder {
     pub(crate) split_options: ::std::option::Option<crate::types::X12SplitOptions>,
+    pub(crate) validation_options: ::std::option::Option<crate::types::X12ValidationOptions>,
 }
 impl X12AdvancedOptionsBuilder {
     /// <p>Specifies options for splitting X12 EDI files. These options control how large X12 files are divided into smaller, more manageable units.</p>
@@ -41,10 +48,25 @@ impl X12AdvancedOptionsBuilder {
     pub fn get_split_options(&self) -> &::std::option::Option<crate::types::X12SplitOptions> {
         &self.split_options
     }
+    /// <p>Specifies validation options for X12 EDI processing. These options control how validation rules are applied during EDI document processing, including custom validation rules for element length constraints, code list validations, and element requirement checks.</p>
+    pub fn validation_options(mut self, input: crate::types::X12ValidationOptions) -> Self {
+        self.validation_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies validation options for X12 EDI processing. These options control how validation rules are applied during EDI document processing, including custom validation rules for element length constraints, code list validations, and element requirement checks.</p>
+    pub fn set_validation_options(mut self, input: ::std::option::Option<crate::types::X12ValidationOptions>) -> Self {
+        self.validation_options = input;
+        self
+    }
+    /// <p>Specifies validation options for X12 EDI processing. These options control how validation rules are applied during EDI document processing, including custom validation rules for element length constraints, code list validations, and element requirement checks.</p>
+    pub fn get_validation_options(&self) -> &::std::option::Option<crate::types::X12ValidationOptions> {
+        &self.validation_options
+    }
     /// Consumes the builder and constructs a [`X12AdvancedOptions`](crate::types::X12AdvancedOptions).
     pub fn build(self) -> crate::types::X12AdvancedOptions {
         crate::types::X12AdvancedOptions {
             split_options: self.split_options,
+            validation_options: self.validation_options,
         }
     }
 }

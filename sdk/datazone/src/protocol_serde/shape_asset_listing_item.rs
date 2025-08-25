@@ -88,6 +88,11 @@ where
                                 builder = builder
                                     .set_glossary_terms(crate::protocol_serde::shape_detailed_glossary_terms::de_detailed_glossary_terms(tokens)?);
                             }
+                            "governedGlossaryTerms" => {
+                                builder = builder.set_governed_glossary_terms(
+                                    crate::protocol_serde::shape_detailed_glossary_terms::de_detailed_glossary_terms(tokens)?,
+                                );
+                            }
                             "owningProjectId" => {
                                 builder = builder.set_owning_project_id(
                                     ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

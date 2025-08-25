@@ -22,7 +22,7 @@ impl crate::operation::create_notification_rule::builders::CreateNotificationRul
 }
 /// Fluent builder constructing a request to `CreateNotificationRule`.
 ///
-/// <p>Creates a notification rule for a resource. The rule specifies the events you want notifications about and the targets (such as Chatbot topics or Chatbot clients configured for Slack) where you want to receive them.</p>
+/// <p>Creates a notification rule for a resource. The rule specifies the events you want notifications about and the targets (such as Amazon Q Developer in chat applications topics or Amazon Q Developer in chat applications clients configured for Slack) where you want to receive them.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateNotificationRuleFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -160,31 +160,31 @@ impl CreateNotificationRuleFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_targets`](Self::set_targets).
     ///
-    /// <p>A list of Amazon Resource Names (ARNs) of Amazon Simple Notification Service topics and Chatbot clients to associate with the notification rule.</p>
+    /// <p>A list of Amazon Resource Names (ARNs) of Amazon Simple Notification Service topics and Amazon Q Developer in chat applications clients to associate with the notification rule.</p>
     pub fn targets(mut self, input: crate::types::Target) -> Self {
         self.inner = self.inner.targets(input);
         self
     }
-    /// <p>A list of Amazon Resource Names (ARNs) of Amazon Simple Notification Service topics and Chatbot clients to associate with the notification rule.</p>
+    /// <p>A list of Amazon Resource Names (ARNs) of Amazon Simple Notification Service topics and Amazon Q Developer in chat applications clients to associate with the notification rule.</p>
     pub fn set_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Target>>) -> Self {
         self.inner = self.inner.set_targets(input);
         self
     }
-    /// <p>A list of Amazon Resource Names (ARNs) of Amazon Simple Notification Service topics and Chatbot clients to associate with the notification rule.</p>
+    /// <p>A list of Amazon Resource Names (ARNs) of Amazon Simple Notification Service topics and Amazon Q Developer in chat applications clients to associate with the notification rule.</p>
     pub fn get_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Target>> {
         self.inner.get_targets()
     }
-    /// <p>The level of detail to include in the notifications for this resource. <code>BASIC</code> will include only the contents of the event as it would appear in Amazon CloudWatch. <code>FULL</code> will include any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
+    /// <p>The level of detail to include in the notifications for this resource. <code>BASIC</code> will include only the contents of the event as it would appear in Amazon CloudWatch. <code>FULL</code> will include any supplemental information provided by CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
     pub fn detail_type(mut self, input: crate::types::DetailType) -> Self {
         self.inner = self.inner.detail_type(input);
         self
     }
-    /// <p>The level of detail to include in the notifications for this resource. <code>BASIC</code> will include only the contents of the event as it would appear in Amazon CloudWatch. <code>FULL</code> will include any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
+    /// <p>The level of detail to include in the notifications for this resource. <code>BASIC</code> will include only the contents of the event as it would appear in Amazon CloudWatch. <code>FULL</code> will include any supplemental information provided by CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
     pub fn set_detail_type(mut self, input: ::std::option::Option<crate::types::DetailType>) -> Self {
         self.inner = self.inner.set_detail_type(input);
         self
     }
-    /// <p>The level of detail to include in the notifications for this resource. <code>BASIC</code> will include only the contents of the event as it would appear in Amazon CloudWatch. <code>FULL</code> will include any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
+    /// <p>The level of detail to include in the notifications for this resource. <code>BASIC</code> will include only the contents of the event as it would appear in Amazon CloudWatch. <code>FULL</code> will include any supplemental information provided by CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
     pub fn get_detail_type(&self) -> &::std::option::Option<crate::types::DetailType> {
         self.inner.get_detail_type()
     }

@@ -11,9 +11,9 @@ pub struct DescribeNotificationRuleOutput {
     pub event_types: ::std::option::Option<::std::vec::Vec<crate::types::EventTypeSummary>>,
     /// <p>The Amazon Resource Name (ARN) of the resource associated with the notification rule.</p>
     pub resource: ::std::option::Option<::std::string::String>,
-    /// <p>A list of the Chatbot topics and Chatbot clients associated with the notification rule.</p>
+    /// <p>A list of the Amazon Q Developer in chat applications topics and Amazon Q Developer in chat applications clients associated with the notification rule.</p>
     pub targets: ::std::option::Option<::std::vec::Vec<crate::types::TargetSummary>>,
-    /// <p>The level of detail included in the notifications for this resource. BASIC will include only the contents of the event as it would appear in Amazon CloudWatch. FULL will include any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
+    /// <p>The level of detail included in the notifications for this resource. BASIC will include only the contents of the event as it would appear in Amazon CloudWatch. FULL will include any supplemental information provided by CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
     pub detail_type: ::std::option::Option<crate::types::DetailType>,
     /// <p>The name or email alias of the person who created the notification rule.</p>
     pub created_by: ::std::option::Option<::std::string::String>,
@@ -47,13 +47,13 @@ impl DescribeNotificationRuleOutput {
     pub fn resource(&self) -> ::std::option::Option<&str> {
         self.resource.as_deref()
     }
-    /// <p>A list of the Chatbot topics and Chatbot clients associated with the notification rule.</p>
+    /// <p>A list of the Amazon Q Developer in chat applications topics and Amazon Q Developer in chat applications clients associated with the notification rule.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.targets.is_none()`.
     pub fn targets(&self) -> &[crate::types::TargetSummary] {
         self.targets.as_deref().unwrap_or_default()
     }
-    /// <p>The level of detail included in the notifications for this resource. BASIC will include only the contents of the event as it would appear in Amazon CloudWatch. FULL will include any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
+    /// <p>The level of detail included in the notifications for this resource. BASIC will include only the contents of the event as it would appear in Amazon CloudWatch. FULL will include any supplemental information provided by CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
     pub fn detail_type(&self) -> ::std::option::Option<&crate::types::DetailType> {
         self.detail_type.as_ref()
     }
@@ -193,33 +193,33 @@ impl DescribeNotificationRuleOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_targets`](Self::set_targets).
     ///
-    /// <p>A list of the Chatbot topics and Chatbot clients associated with the notification rule.</p>
+    /// <p>A list of the Amazon Q Developer in chat applications topics and Amazon Q Developer in chat applications clients associated with the notification rule.</p>
     pub fn targets(mut self, input: crate::types::TargetSummary) -> Self {
         let mut v = self.targets.unwrap_or_default();
         v.push(input);
         self.targets = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of the Chatbot topics and Chatbot clients associated with the notification rule.</p>
+    /// <p>A list of the Amazon Q Developer in chat applications topics and Amazon Q Developer in chat applications clients associated with the notification rule.</p>
     pub fn set_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TargetSummary>>) -> Self {
         self.targets = input;
         self
     }
-    /// <p>A list of the Chatbot topics and Chatbot clients associated with the notification rule.</p>
+    /// <p>A list of the Amazon Q Developer in chat applications topics and Amazon Q Developer in chat applications clients associated with the notification rule.</p>
     pub fn get_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetSummary>> {
         &self.targets
     }
-    /// <p>The level of detail included in the notifications for this resource. BASIC will include only the contents of the event as it would appear in Amazon CloudWatch. FULL will include any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
+    /// <p>The level of detail included in the notifications for this resource. BASIC will include only the contents of the event as it would appear in Amazon CloudWatch. FULL will include any supplemental information provided by CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
     pub fn detail_type(mut self, input: crate::types::DetailType) -> Self {
         self.detail_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The level of detail included in the notifications for this resource. BASIC will include only the contents of the event as it would appear in Amazon CloudWatch. FULL will include any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
+    /// <p>The level of detail included in the notifications for this resource. BASIC will include only the contents of the event as it would appear in Amazon CloudWatch. FULL will include any supplemental information provided by CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
     pub fn set_detail_type(mut self, input: ::std::option::Option<crate::types::DetailType>) -> Self {
         self.detail_type = input;
         self
     }
-    /// <p>The level of detail included in the notifications for this resource. BASIC will include only the contents of the event as it would appear in Amazon CloudWatch. FULL will include any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
+    /// <p>The level of detail included in the notifications for this resource. BASIC will include only the contents of the event as it would appear in Amazon CloudWatch. FULL will include any supplemental information provided by CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
     pub fn get_detail_type(&self) -> &::std::option::Option<crate::types::DetailType> {
         &self.detail_type
     }

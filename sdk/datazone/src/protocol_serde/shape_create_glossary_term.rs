@@ -236,6 +236,11 @@ pub(crate) fn de_create_glossary_term(
                 "termRelations" => {
                     builder = builder.set_term_relations(crate::protocol_serde::shape_term_relations::de_term_relations(tokens)?);
                 }
+                "usageRestrictions" => {
+                    builder = builder.set_usage_restrictions(
+                        crate::protocol_serde::shape_glossary_usage_restrictions::de_glossary_usage_restrictions(tokens)?,
+                    );
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

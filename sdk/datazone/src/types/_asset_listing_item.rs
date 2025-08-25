@@ -26,6 +26,8 @@ pub struct AssetListingItem {
     pub listing_updated_by: ::std::option::Option<::std::string::String>,
     /// <p>Glossary terms attached to the inventory asset.</p>
     pub glossary_terms: ::std::option::Option<::std::vec::Vec<crate::types::DetailedGlossaryTerm>>,
+    /// <p>The restricted glossary terms associated with an asset.</p>
+    pub governed_glossary_terms: ::std::option::Option<::std::vec::Vec<crate::types::DetailedGlossaryTerm>>,
     /// <p>The identifier of the project that owns the inventory asset.</p>
     pub owning_project_id: ::std::option::Option<::std::string::String>,
     /// <p>The additional attributes of an asset published in an Amazon DataZone catalog.</p>
@@ -78,6 +80,12 @@ impl AssetListingItem {
     pub fn glossary_terms(&self) -> &[crate::types::DetailedGlossaryTerm] {
         self.glossary_terms.as_deref().unwrap_or_default()
     }
+    /// <p>The restricted glossary terms associated with an asset.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.governed_glossary_terms.is_none()`.
+    pub fn governed_glossary_terms(&self) -> &[crate::types::DetailedGlossaryTerm] {
+        self.governed_glossary_terms.as_deref().unwrap_or_default()
+    }
     /// <p>The identifier of the project that owns the inventory asset.</p>
     pub fn owning_project_id(&self) -> ::std::option::Option<&str> {
         self.owning_project_id.as_deref()
@@ -101,6 +109,7 @@ impl ::std::fmt::Debug for AssetListingItem {
         formatter.field("listing_created_by", &self.listing_created_by);
         formatter.field("listing_updated_by", &self.listing_updated_by);
         formatter.field("glossary_terms", &self.glossary_terms);
+        formatter.field("governed_glossary_terms", &self.governed_glossary_terms);
         formatter.field("owning_project_id", &self.owning_project_id);
         formatter.field("additional_attributes", &self.additional_attributes);
         formatter.finish()
@@ -128,6 +137,7 @@ pub struct AssetListingItemBuilder {
     pub(crate) listing_created_by: ::std::option::Option<::std::string::String>,
     pub(crate) listing_updated_by: ::std::option::Option<::std::string::String>,
     pub(crate) glossary_terms: ::std::option::Option<::std::vec::Vec<crate::types::DetailedGlossaryTerm>>,
+    pub(crate) governed_glossary_terms: ::std::option::Option<::std::vec::Vec<crate::types::DetailedGlossaryTerm>>,
     pub(crate) owning_project_id: ::std::option::Option<::std::string::String>,
     pub(crate) additional_attributes: ::std::option::Option<crate::types::AssetListingItemAdditionalAttributes>,
 }
@@ -292,6 +302,26 @@ impl AssetListingItemBuilder {
     pub fn get_glossary_terms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DetailedGlossaryTerm>> {
         &self.glossary_terms
     }
+    /// Appends an item to `governed_glossary_terms`.
+    ///
+    /// To override the contents of this collection use [`set_governed_glossary_terms`](Self::set_governed_glossary_terms).
+    ///
+    /// <p>The restricted glossary terms associated with an asset.</p>
+    pub fn governed_glossary_terms(mut self, input: crate::types::DetailedGlossaryTerm) -> Self {
+        let mut v = self.governed_glossary_terms.unwrap_or_default();
+        v.push(input);
+        self.governed_glossary_terms = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The restricted glossary terms associated with an asset.</p>
+    pub fn set_governed_glossary_terms(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DetailedGlossaryTerm>>) -> Self {
+        self.governed_glossary_terms = input;
+        self
+    }
+    /// <p>The restricted glossary terms associated with an asset.</p>
+    pub fn get_governed_glossary_terms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DetailedGlossaryTerm>> {
+        &self.governed_glossary_terms
+    }
     /// <p>The identifier of the project that owns the inventory asset.</p>
     pub fn owning_project_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owning_project_id = ::std::option::Option::Some(input.into());
@@ -334,6 +364,7 @@ impl AssetListingItemBuilder {
             listing_created_by: self.listing_created_by,
             listing_updated_by: self.listing_updated_by,
             glossary_terms: self.glossary_terms,
+            governed_glossary_terms: self.governed_glossary_terms,
             owning_project_id: self.owning_project_id,
             additional_attributes: self.additional_attributes,
         }
@@ -353,6 +384,7 @@ impl ::std::fmt::Debug for AssetListingItemBuilder {
         formatter.field("listing_created_by", &self.listing_created_by);
         formatter.field("listing_updated_by", &self.listing_updated_by);
         formatter.field("glossary_terms", &self.glossary_terms);
+        formatter.field("governed_glossary_terms", &self.governed_glossary_terms);
         formatter.field("owning_project_id", &self.owning_project_id);
         formatter.field("additional_attributes", &self.additional_attributes);
         formatter.finish()

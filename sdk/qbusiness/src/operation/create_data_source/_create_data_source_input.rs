@@ -34,7 +34,7 @@ pub struct CreateDataSourceInput {
     /// <p>Sets the frequency for Amazon Q Business to check the documents in your data source repository and update your index. If you don't set a schedule, Amazon Q Business won't periodically update the index.</p>
     /// <p>Specify a <code>cron-</code> format schedule string or an empty string to indicate that the index is updated on demand. You can't specify the <code>Schedule</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>
     pub sync_schedule: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of an IAM role with permission to access the data source and required resources.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role with permission to access the data source and required resources. This field is required for all connector types except custom connectors, where it is optional.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>A token you provide to identify a request to create a data source connector. Multiple calls to the <code>CreateDataSource</code> API with the same client token will create only one data source connector.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
@@ -94,7 +94,7 @@ impl CreateDataSourceInput {
     pub fn sync_schedule(&self) -> ::std::option::Option<&str> {
         self.sync_schedule.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of an IAM role with permission to access the data source and required resources.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role with permission to access the data source and required resources. This field is required for all connector types except custom connectors, where it is optional.</p>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -304,17 +304,17 @@ impl CreateDataSourceInputBuilder {
     pub fn get_sync_schedule(&self) -> &::std::option::Option<::std::string::String> {
         &self.sync_schedule
     }
-    /// <p>The Amazon Resource Name (ARN) of an IAM role with permission to access the data source and required resources.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role with permission to access the data source and required resources. This field is required for all connector types except custom connectors, where it is optional.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of an IAM role with permission to access the data source and required resources.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role with permission to access the data source and required resources. This field is required for all connector types except custom connectors, where it is optional.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of an IAM role with permission to access the data source and required resources.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role with permission to access the data source and required resources. This field is required for all connector types except custom connectors, where it is optional.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }

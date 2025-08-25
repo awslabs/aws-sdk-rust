@@ -18,7 +18,7 @@
 #![forbid(unsafe_code)]
 #![warn(missing_docs)]
 #![cfg_attr(docsrs, feature(doc_auto_cfg))]
-//! This AWS CodeStar Notifications API Reference provides descriptions and usage examples of the operations and data types for the AWS CodeStar Notifications API. You can use the AWS CodeStar Notifications API to work with the following objects:
+//! This CodeStar Notifications API Reference provides descriptions and usage examples of the operations and data types for the CodeStar Notifications API. You can use the CodeStar Notifications API to work with the following objects:
 //!
 //! Notification rules, by calling the following:
 //!   - CreateNotificationRule, which creates a notification rule for a resource in your account.
@@ -41,7 +41,7 @@
 //!   - TagResource, which associates a tag you provide with a notification rule in your account.
 //!   - UntagResource, which removes a tag from a notification rule in your account.
 //!
-//! For information about how to use AWS CodeStar Notifications, see the [Amazon Web Services Developer Tools Console User Guide](https://docs.aws.amazon.com/dtconsole/latest/userguide/what-is-dtconsole.html).
+//! For information about how to use CodeStar Notifications, see the [Amazon Web Services Developer Tools Console User Guide](https://docs.aws.amazon.com/dtconsole/latest/userguide/what-is-dtconsole.html).
 //!
 //! ## Getting Started
 //!
@@ -55,7 +55,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-codestarnotifications = "1.81.0"
+//! aws-sdk-codestarnotifications = "1.82.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

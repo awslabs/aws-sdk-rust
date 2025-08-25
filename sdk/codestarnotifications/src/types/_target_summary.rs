@@ -4,30 +4,30 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct TargetSummary {
-    /// <p>The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Q Developer in chat applications topic or Amazon Q Developer in chat applications client.</p>
     pub target_address: ::std::option::Option<::std::string::String>,
     /// <p>The type of the target (for example, <code>SNS</code>).</p>
     /// <ul>
     /// <li>
-    /// <p>Chatbot topics are specified as <code>SNS</code>.</p></li>
+    /// <p>Amazon Q Developer in chat applications topics are specified as <code>SNS</code>.</p></li>
     /// <li>
-    /// <p>Chatbot clients are specified as <code>AWSChatbotSlack</code>.</p></li>
+    /// <p>Amazon Q Developer in chat applications clients are specified as <code>AWSChatbotSlack</code>.</p></li>
     /// </ul>
     pub target_type: ::std::option::Option<::std::string::String>,
     /// <p>The status of the target.</p>
     pub target_status: ::std::option::Option<crate::types::TargetStatus>,
 }
 impl TargetSummary {
-    /// <p>The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Q Developer in chat applications topic or Amazon Q Developer in chat applications client.</p>
     pub fn target_address(&self) -> ::std::option::Option<&str> {
         self.target_address.as_deref()
     }
     /// <p>The type of the target (for example, <code>SNS</code>).</p>
     /// <ul>
     /// <li>
-    /// <p>Chatbot topics are specified as <code>SNS</code>.</p></li>
+    /// <p>Amazon Q Developer in chat applications topics are specified as <code>SNS</code>.</p></li>
     /// <li>
-    /// <p>Chatbot clients are specified as <code>AWSChatbotSlack</code>.</p></li>
+    /// <p>Amazon Q Developer in chat applications clients are specified as <code>AWSChatbotSlack</code>.</p></li>
     /// </ul>
     pub fn target_type(&self) -> ::std::option::Option<&str> {
         self.target_type.as_deref()
@@ -62,26 +62,26 @@ pub struct TargetSummaryBuilder {
     pub(crate) target_status: ::std::option::Option<crate::types::TargetStatus>,
 }
 impl TargetSummaryBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Q Developer in chat applications topic or Amazon Q Developer in chat applications client.</p>
     pub fn target_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_address = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Q Developer in chat applications topic or Amazon Q Developer in chat applications client.</p>
     pub fn set_target_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_address = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Q Developer in chat applications topic or Amazon Q Developer in chat applications client.</p>
     pub fn get_target_address(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_address
     }
     /// <p>The type of the target (for example, <code>SNS</code>).</p>
     /// <ul>
     /// <li>
-    /// <p>Chatbot topics are specified as <code>SNS</code>.</p></li>
+    /// <p>Amazon Q Developer in chat applications topics are specified as <code>SNS</code>.</p></li>
     /// <li>
-    /// <p>Chatbot clients are specified as <code>AWSChatbotSlack</code>.</p></li>
+    /// <p>Amazon Q Developer in chat applications clients are specified as <code>AWSChatbotSlack</code>.</p></li>
     /// </ul>
     pub fn target_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_type = ::std::option::Option::Some(input.into());
@@ -90,9 +90,9 @@ impl TargetSummaryBuilder {
     /// <p>The type of the target (for example, <code>SNS</code>).</p>
     /// <ul>
     /// <li>
-    /// <p>Chatbot topics are specified as <code>SNS</code>.</p></li>
+    /// <p>Amazon Q Developer in chat applications topics are specified as <code>SNS</code>.</p></li>
     /// <li>
-    /// <p>Chatbot clients are specified as <code>AWSChatbotSlack</code>.</p></li>
+    /// <p>Amazon Q Developer in chat applications clients are specified as <code>AWSChatbotSlack</code>.</p></li>
     /// </ul>
     pub fn set_target_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_type = input;
@@ -101,9 +101,9 @@ impl TargetSummaryBuilder {
     /// <p>The type of the target (for example, <code>SNS</code>).</p>
     /// <ul>
     /// <li>
-    /// <p>Chatbot topics are specified as <code>SNS</code>.</p></li>
+    /// <p>Amazon Q Developer in chat applications topics are specified as <code>SNS</code>.</p></li>
     /// <li>
-    /// <p>Chatbot clients are specified as <code>AWSChatbotSlack</code>.</p></li>
+    /// <p>Amazon Q Developer in chat applications clients are specified as <code>AWSChatbotSlack</code>.</p></li>
     /// </ul>
     pub fn get_target_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_type

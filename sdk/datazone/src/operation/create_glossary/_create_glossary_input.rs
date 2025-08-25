@@ -13,6 +13,8 @@ pub struct CreateGlossaryInput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The status of this business glossary.</p>
     pub status: ::std::option::Option<crate::types::GlossaryStatus>,
+    /// <p>The usage restriction of the restricted glossary.</p>
+    pub usage_restrictions: ::std::option::Option<::std::vec::Vec<crate::types::GlossaryUsageRestriction>>,
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
@@ -37,6 +39,12 @@ impl CreateGlossaryInput {
     pub fn status(&self) -> ::std::option::Option<&crate::types::GlossaryStatus> {
         self.status.as_ref()
     }
+    /// <p>The usage restriction of the restricted glossary.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.usage_restrictions.is_none()`.
+    pub fn usage_restrictions(&self) -> &[crate::types::GlossaryUsageRestriction] {
+        self.usage_restrictions.as_deref().unwrap_or_default()
+    }
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
@@ -50,6 +58,7 @@ impl ::std::fmt::Debug for CreateGlossaryInput {
         formatter.field("owning_project_identifier", &self.owning_project_identifier);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("status", &self.status);
+        formatter.field("usage_restrictions", &self.usage_restrictions);
         formatter.field("client_token", &self.client_token);
         formatter.finish()
     }
@@ -70,6 +79,7 @@ pub struct CreateGlossaryInputBuilder {
     pub(crate) owning_project_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::GlossaryStatus>,
+    pub(crate) usage_restrictions: ::std::option::Option<::std::vec::Vec<crate::types::GlossaryUsageRestriction>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateGlossaryInputBuilder {
@@ -146,6 +156,26 @@ impl CreateGlossaryInputBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::GlossaryStatus> {
         &self.status
     }
+    /// Appends an item to `usage_restrictions`.
+    ///
+    /// To override the contents of this collection use [`set_usage_restrictions`](Self::set_usage_restrictions).
+    ///
+    /// <p>The usage restriction of the restricted glossary.</p>
+    pub fn usage_restrictions(mut self, input: crate::types::GlossaryUsageRestriction) -> Self {
+        let mut v = self.usage_restrictions.unwrap_or_default();
+        v.push(input);
+        self.usage_restrictions = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The usage restriction of the restricted glossary.</p>
+    pub fn set_usage_restrictions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GlossaryUsageRestriction>>) -> Self {
+        self.usage_restrictions = input;
+        self
+    }
+    /// <p>The usage restriction of the restricted glossary.</p>
+    pub fn get_usage_restrictions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GlossaryUsageRestriction>> {
+        &self.usage_restrictions
+    }
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -170,6 +200,7 @@ impl CreateGlossaryInputBuilder {
             owning_project_identifier: self.owning_project_identifier,
             description: self.description,
             status: self.status,
+            usage_restrictions: self.usage_restrictions,
             client_token: self.client_token,
         })
     }
@@ -182,6 +213,7 @@ impl ::std::fmt::Debug for CreateGlossaryInputBuilder {
         formatter.field("owning_project_identifier", &self.owning_project_identifier);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("status", &self.status);
+        formatter.field("usage_restrictions", &self.usage_restrictions);
         formatter.field("client_token", &self.client_token);
         formatter.finish()
     }

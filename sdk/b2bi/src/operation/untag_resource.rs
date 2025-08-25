@@ -275,7 +275,7 @@ pub enum UntagResourceError {
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>Occurs when the requested resource does not exist, or cannot be found. In some cases, the resource exists in a region other than the region specified in the API call.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// <p>Occurs when a B2BI object cannot be validated against a request from another object.</p>
+    /// <p>Occurs when a B2BI object cannot be validated against a request from another object. This exception can be thrown during standard EDI validation or when custom validation rules fail, such as when element length constraints are violated, invalid codes are used in code list validations, or required elements are missing based on configured element requirement rules.</p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

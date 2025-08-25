@@ -8,6 +8,8 @@ pub struct OutputConversion {
     pub to_format: crate::types::ToFormat,
     /// <p>A structure that contains the X12 transaction set and version for the transformer output.</p>
     pub format_options: ::std::option::Option<crate::types::FormatOptions>,
+    /// <p>A structure that contains advanced options for EDI processing. Currently, only X12 advanced options are supported.</p>
+    pub advanced_options: ::std::option::Option<crate::types::AdvancedOptions>,
 }
 impl OutputConversion {
     /// <p>The format for the output from an outbound transformer: only X12 is currently supported.</p>
@@ -17,6 +19,10 @@ impl OutputConversion {
     /// <p>A structure that contains the X12 transaction set and version for the transformer output.</p>
     pub fn format_options(&self) -> ::std::option::Option<&crate::types::FormatOptions> {
         self.format_options.as_ref()
+    }
+    /// <p>A structure that contains advanced options for EDI processing. Currently, only X12 advanced options are supported.</p>
+    pub fn advanced_options(&self) -> ::std::option::Option<&crate::types::AdvancedOptions> {
+        self.advanced_options.as_ref()
     }
 }
 impl OutputConversion {
@@ -32,6 +38,7 @@ impl OutputConversion {
 pub struct OutputConversionBuilder {
     pub(crate) to_format: ::std::option::Option<crate::types::ToFormat>,
     pub(crate) format_options: ::std::option::Option<crate::types::FormatOptions>,
+    pub(crate) advanced_options: ::std::option::Option<crate::types::AdvancedOptions>,
 }
 impl OutputConversionBuilder {
     /// <p>The format for the output from an outbound transformer: only X12 is currently supported.</p>
@@ -63,6 +70,20 @@ impl OutputConversionBuilder {
     pub fn get_format_options(&self) -> &::std::option::Option<crate::types::FormatOptions> {
         &self.format_options
     }
+    /// <p>A structure that contains advanced options for EDI processing. Currently, only X12 advanced options are supported.</p>
+    pub fn advanced_options(mut self, input: crate::types::AdvancedOptions) -> Self {
+        self.advanced_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A structure that contains advanced options for EDI processing. Currently, only X12 advanced options are supported.</p>
+    pub fn set_advanced_options(mut self, input: ::std::option::Option<crate::types::AdvancedOptions>) -> Self {
+        self.advanced_options = input;
+        self
+    }
+    /// <p>A structure that contains advanced options for EDI processing. Currently, only X12 advanced options are supported.</p>
+    pub fn get_advanced_options(&self) -> &::std::option::Option<crate::types::AdvancedOptions> {
+        &self.advanced_options
+    }
     /// Consumes the builder and constructs a [`OutputConversion`](crate::types::OutputConversion).
     /// This method will fail if any of the following fields are not set:
     /// - [`to_format`](crate::types::builders::OutputConversionBuilder::to_format)
@@ -75,6 +96,7 @@ impl OutputConversionBuilder {
                 )
             })?,
             format_options: self.format_options,
+            advanced_options: self.advanced_options,
         })
     }
 }

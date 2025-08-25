@@ -2127,6 +2127,10 @@ pub use crate::types::_client_vpn_route_status_code::ClientVpnRouteStatusCode;
 
 pub use crate::types::_client_vpn_endpoint::ClientVpnEndpoint;
 
+pub use crate::types::_traffic_ip_address_type::TrafficIpAddressType;
+
+pub use crate::types::_endpoint_ip_address_type::EndpointIpAddressType;
+
 pub use crate::types::_client_route_enforcement_response_options::ClientRouteEnforcementResponseOptions;
 
 pub use crate::types::_client_login_banner_response_options::ClientLoginBannerResponseOptions;
@@ -3048,6 +3052,8 @@ mod _enclave_options;
 mod _enclave_options_request;
 
 mod _end_date_type;
+
+mod _endpoint_ip_address_type;
 
 mod _ephemeral_nvme_support;
 
@@ -4500,6 +4506,8 @@ mod _total_local_storage_gb_request;
 mod _tpm_support_values;
 
 mod _traffic_direction;
+
+mod _traffic_ip_address_type;
 
 mod _traffic_mirror_filter;
 

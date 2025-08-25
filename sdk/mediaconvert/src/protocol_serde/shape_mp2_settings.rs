@@ -3,22 +3,25 @@ pub fn ser_mp2_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Mp2Settings,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.bitrate {
-        object.key("bitrate").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_1).into()),
-        );
+    if let Some(var_1) = &input.audio_description_mix {
+        object.key("audioDescriptionMix").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.channels {
-        object.key("channels").number(
+    if let Some(var_2) = &input.bitrate {
+        object.key("bitrate").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if let Some(var_3) = &input.sample_rate {
-        object.key("sampleRate").number(
+    if let Some(var_3) = &input.channels {
+        object.key("channels").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_3).into()),
+        );
+    }
+    if let Some(var_4) = &input.sample_rate {
+        object.key("sampleRate").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
     Ok(())
@@ -39,6 +42,13 @@ where
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "audioDescriptionMix" => {
+                            builder = builder.set_audio_description_mix(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::Mp2AudioDescriptionMix::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "bitrate" => {
                             builder = builder.set_bitrate(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?

@@ -5,7 +5,7 @@
 pub struct UnsubscribeInput {
     /// <p>The Amazon Resource Name (ARN) of the notification rule.</p>
     pub arn: ::std::option::Option<::std::string::String>,
-    /// <p>The ARN of the Chatbot topic to unsubscribe from the notification rule.</p>
+    /// <p>The ARN of the Amazon Q Developer in chat applications topic to unsubscribe from the notification rule.</p>
     pub target_address: ::std::option::Option<::std::string::String>,
 }
 impl UnsubscribeInput {
@@ -13,7 +13,7 @@ impl UnsubscribeInput {
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The ARN of the Chatbot topic to unsubscribe from the notification rule.</p>
+    /// <p>The ARN of the Amazon Q Developer in chat applications topic to unsubscribe from the notification rule.</p>
     pub fn target_address(&self) -> ::std::option::Option<&str> {
         self.target_address.as_deref()
     }
@@ -56,18 +56,18 @@ impl UnsubscribeInputBuilder {
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
-    /// <p>The ARN of the Chatbot topic to unsubscribe from the notification rule.</p>
+    /// <p>The ARN of the Amazon Q Developer in chat applications topic to unsubscribe from the notification rule.</p>
     /// This field is required.
     pub fn target_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_address = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the Chatbot topic to unsubscribe from the notification rule.</p>
+    /// <p>The ARN of the Amazon Q Developer in chat applications topic to unsubscribe from the notification rule.</p>
     pub fn set_target_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_address = input;
         self
     }
-    /// <p>The ARN of the Chatbot topic to unsubscribe from the notification rule.</p>
+    /// <p>The ARN of the Amazon Q Developer in chat applications topic to unsubscribe from the notification rule.</p>
     pub fn get_target_address(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_address
     }

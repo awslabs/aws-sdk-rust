@@ -18,6 +18,8 @@ pub struct AssetListing {
     pub latest_time_series_data_point_forms: ::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesDataPointSummaryFormOutput>>,
     /// <p>The glossary terms attached to an asset published in an Amazon DataZone catalog.</p>
     pub glossary_terms: ::std::option::Option<::std::vec::Vec<crate::types::DetailedGlossaryTerm>>,
+    /// <p>The restricted glossary terms associated with an asset.</p>
+    pub governed_glossary_terms: ::std::option::Option<::std::vec::Vec<crate::types::DetailedGlossaryTerm>>,
     /// <p>The identifier of the project where an asset published in an Amazon DataZone catalog exists.</p>
     pub owning_project_id: ::std::option::Option<::std::string::String>,
 }
@@ -54,6 +56,12 @@ impl AssetListing {
     pub fn glossary_terms(&self) -> &[crate::types::DetailedGlossaryTerm] {
         self.glossary_terms.as_deref().unwrap_or_default()
     }
+    /// <p>The restricted glossary terms associated with an asset.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.governed_glossary_terms.is_none()`.
+    pub fn governed_glossary_terms(&self) -> &[crate::types::DetailedGlossaryTerm] {
+        self.governed_glossary_terms.as_deref().unwrap_or_default()
+    }
     /// <p>The identifier of the project where an asset published in an Amazon DataZone catalog exists.</p>
     pub fn owning_project_id(&self) -> ::std::option::Option<&str> {
         self.owning_project_id.as_deref()
@@ -77,6 +85,7 @@ pub struct AssetListingBuilder {
     pub(crate) forms: ::std::option::Option<::std::string::String>,
     pub(crate) latest_time_series_data_point_forms: ::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesDataPointSummaryFormOutput>>,
     pub(crate) glossary_terms: ::std::option::Option<::std::vec::Vec<crate::types::DetailedGlossaryTerm>>,
+    pub(crate) governed_glossary_terms: ::std::option::Option<::std::vec::Vec<crate::types::DetailedGlossaryTerm>>,
     pub(crate) owning_project_id: ::std::option::Option<::std::string::String>,
 }
 impl AssetListingBuilder {
@@ -195,6 +204,26 @@ impl AssetListingBuilder {
     pub fn get_glossary_terms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DetailedGlossaryTerm>> {
         &self.glossary_terms
     }
+    /// Appends an item to `governed_glossary_terms`.
+    ///
+    /// To override the contents of this collection use [`set_governed_glossary_terms`](Self::set_governed_glossary_terms).
+    ///
+    /// <p>The restricted glossary terms associated with an asset.</p>
+    pub fn governed_glossary_terms(mut self, input: crate::types::DetailedGlossaryTerm) -> Self {
+        let mut v = self.governed_glossary_terms.unwrap_or_default();
+        v.push(input);
+        self.governed_glossary_terms = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The restricted glossary terms associated with an asset.</p>
+    pub fn set_governed_glossary_terms(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DetailedGlossaryTerm>>) -> Self {
+        self.governed_glossary_terms = input;
+        self
+    }
+    /// <p>The restricted glossary terms associated with an asset.</p>
+    pub fn get_governed_glossary_terms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DetailedGlossaryTerm>> {
+        &self.governed_glossary_terms
+    }
     /// <p>The identifier of the project where an asset published in an Amazon DataZone catalog exists.</p>
     pub fn owning_project_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owning_project_id = ::std::option::Option::Some(input.into());
@@ -219,6 +248,7 @@ impl AssetListingBuilder {
             forms: self.forms,
             latest_time_series_data_point_forms: self.latest_time_series_data_point_forms,
             glossary_terms: self.glossary_terms,
+            governed_glossary_terms: self.governed_glossary_terms,
             owning_project_id: self.owning_project_id,
         }
     }

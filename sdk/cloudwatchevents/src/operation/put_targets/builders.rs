@@ -54,7 +54,7 @@ impl crate::operation::put_targets::builders::PutTargetsInputBuilder {
 /// <p>Event bus in a different Amazon Web Services account or Region.</p>
 /// <p>You can use an event bus in the US East (N. Virginia) us-east-1, US West (Oregon) us-west-2, or Europe (Ireland) eu-west-1 Regions as a target for a rule.</p></li>
 /// <li>
-/// <p>Firehose delivery stream (Kinesis Data Firehose)</p></li>
+/// <p>Firehose delivery stream (Firehose)</p></li>
 /// <li>
 /// <p>Inspector assessment template (Amazon Inspector)</p></li>
 /// <li>

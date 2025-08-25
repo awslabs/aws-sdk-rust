@@ -5,7 +5,7 @@
 pub struct TestConversionOutput {
     /// <p>Returns the converted file content.</p>
     pub converted_file_content: ::std::string::String,
-    /// <p>Returns an array of strings, each containing a message that Amazon Web Services B2B Data Interchange generates during the conversion.</p>
+    /// <p>Returns an array of validation messages that Amazon Web Services B2B Data Interchange generates during the conversion process. These messages include both standard EDI validation results and custom validation messages when custom validation rules are configured. Custom validation messages provide detailed feedback on element length constraints, code list validations, and element requirement checks applied during the outbound EDI generation process.</p>
     pub validation_messages: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
@@ -15,7 +15,7 @@ impl TestConversionOutput {
         use std::ops::Deref;
         self.converted_file_content.deref()
     }
-    /// <p>Returns an array of strings, each containing a message that Amazon Web Services B2B Data Interchange generates during the conversion.</p>
+    /// <p>Returns an array of validation messages that Amazon Web Services B2B Data Interchange generates during the conversion process. These messages include both standard EDI validation results and custom validation messages when custom validation rules are configured. Custom validation messages provide detailed feedback on element length constraints, code list validations, and element requirement checks applied during the outbound EDI generation process.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.validation_messages.is_none()`.
     pub fn validation_messages(&self) -> &[::std::string::String] {
@@ -62,19 +62,19 @@ impl TestConversionOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_validation_messages`](Self::set_validation_messages).
     ///
-    /// <p>Returns an array of strings, each containing a message that Amazon Web Services B2B Data Interchange generates during the conversion.</p>
+    /// <p>Returns an array of validation messages that Amazon Web Services B2B Data Interchange generates during the conversion process. These messages include both standard EDI validation results and custom validation messages when custom validation rules are configured. Custom validation messages provide detailed feedback on element length constraints, code list validations, and element requirement checks applied during the outbound EDI generation process.</p>
     pub fn validation_messages(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.validation_messages.unwrap_or_default();
         v.push(input.into());
         self.validation_messages = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Returns an array of strings, each containing a message that Amazon Web Services B2B Data Interchange generates during the conversion.</p>
+    /// <p>Returns an array of validation messages that Amazon Web Services B2B Data Interchange generates during the conversion process. These messages include both standard EDI validation results and custom validation messages when custom validation rules are configured. Custom validation messages provide detailed feedback on element length constraints, code list validations, and element requirement checks applied during the outbound EDI generation process.</p>
     pub fn set_validation_messages(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.validation_messages = input;
         self
     }
-    /// <p>Returns an array of strings, each containing a message that Amazon Web Services B2B Data Interchange generates during the conversion.</p>
+    /// <p>Returns an array of validation messages that Amazon Web Services B2B Data Interchange generates during the conversion process. These messages include both standard EDI validation results and custom validation messages when custom validation rules are configured. Custom validation messages provide detailed feedback on element length constraints, code list validations, and element requirement checks applied during the outbound EDI generation process.</p>
     pub fn get_validation_messages(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.validation_messages
     }

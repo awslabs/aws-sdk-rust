@@ -16,6 +16,9 @@ pub mod add_policy_grant;
 /// Types for the `AssociateEnvironmentRole` operation.
 pub mod associate_environment_role;
 
+/// Types for the `AssociateGovernedTerms` operation.
+pub mod associate_governed_terms;
+
 /// Types for the `CancelMetadataGenerationRun` operation.
 pub mod cancel_metadata_generation_run;
 
@@ -180,6 +183,9 @@ pub mod delete_time_series_data_points;
 
 /// Types for the `DisassociateEnvironmentRole` operation.
 pub mod disassociate_environment_role;
+
+/// Types for the `DisassociateGovernedTerms` operation.
+pub mod disassociate_governed_terms;
 
 /// Types for the `GetAccountPool` operation.
 pub mod get_account_pool;

@@ -269,13 +269,13 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateNotific
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum CreateNotificationRuleError {
-    /// <p>AWS CodeStar Notifications can't create the notification rule because you do not have sufficient permissions.</p>
+    /// <p>CodeStar Notifications can't create the notification rule because you do not have sufficient permissions.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p>AWS CodeStar Notifications can't complete the request because the resource is being modified by another process. Wait a few minutes and try again.</p>
+    /// <p>CodeStar Notifications can't complete the request because the resource is being modified by another process. Wait a few minutes and try again.</p>
     ConcurrentModificationException(crate::types::error::ConcurrentModificationException),
     /// <p>Some or all of the configuration is incomplete, missing, or not valid.</p>
     ConfigurationException(crate::types::error::ConfigurationException),
-    /// <p>One of the AWS CodeStar Notifications limits has been exceeded. Limits apply to accounts, notification rules, notifications, resources, and targets. For more information, see Limits.</p>
+    /// <p>One of the CodeStar Notifications limits has been exceeded. Limits apply to accounts, notification rules, notifications, resources, and targets. For more information, see Limits.</p>
     LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>A resource with the same name or ID already exists. Notification rule names must be unique in your Amazon Web Services account.</p>
     ResourceAlreadyExistsException(crate::types::error::ResourceAlreadyExistsException),

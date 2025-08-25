@@ -7,6 +7,8 @@ pub struct TestParsingOutput {
     pub parsed_file_content: ::std::string::String,
     /// <p>Returns an array of parsed file contents when the input file is split according to the specified split options. Each element in the array represents a separate split file's parsed content.</p>
     pub parsed_split_file_contents: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Returns an array of validation messages generated during EDI validation. These messages provide detailed information about validation errors, warnings, or confirmations based on the configured X12 validation rules such as element length constraints, code list validations, and element requirement checks. This field is populated when the <code>TestParsing</code> API validates EDI documents.</p>
+    pub validation_messages: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl TestParsingOutput {
@@ -20,6 +22,12 @@ impl TestParsingOutput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parsed_split_file_contents.is_none()`.
     pub fn parsed_split_file_contents(&self) -> &[::std::string::String] {
         self.parsed_split_file_contents.as_deref().unwrap_or_default()
+    }
+    /// <p>Returns an array of validation messages generated during EDI validation. These messages provide detailed information about validation errors, warnings, or confirmations based on the configured X12 validation rules such as element length constraints, code list validations, and element requirement checks. This field is populated when the <code>TestParsing</code> API validates EDI documents.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.validation_messages.is_none()`.
+    pub fn validation_messages(&self) -> &[::std::string::String] {
+        self.validation_messages.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for TestParsingOutput {
@@ -40,6 +48,7 @@ impl TestParsingOutput {
 pub struct TestParsingOutputBuilder {
     pub(crate) parsed_file_content: ::std::option::Option<::std::string::String>,
     pub(crate) parsed_split_file_contents: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) validation_messages: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl TestParsingOutputBuilder {
@@ -78,6 +87,26 @@ impl TestParsingOutputBuilder {
     pub fn get_parsed_split_file_contents(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.parsed_split_file_contents
     }
+    /// Appends an item to `validation_messages`.
+    ///
+    /// To override the contents of this collection use [`set_validation_messages`](Self::set_validation_messages).
+    ///
+    /// <p>Returns an array of validation messages generated during EDI validation. These messages provide detailed information about validation errors, warnings, or confirmations based on the configured X12 validation rules such as element length constraints, code list validations, and element requirement checks. This field is populated when the <code>TestParsing</code> API validates EDI documents.</p>
+    pub fn validation_messages(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.validation_messages.unwrap_or_default();
+        v.push(input.into());
+        self.validation_messages = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Returns an array of validation messages generated during EDI validation. These messages provide detailed information about validation errors, warnings, or confirmations based on the configured X12 validation rules such as element length constraints, code list validations, and element requirement checks. This field is populated when the <code>TestParsing</code> API validates EDI documents.</p>
+    pub fn set_validation_messages(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.validation_messages = input;
+        self
+    }
+    /// <p>Returns an array of validation messages generated during EDI validation. These messages provide detailed information about validation errors, warnings, or confirmations based on the configured X12 validation rules such as element length constraints, code list validations, and element requirement checks. This field is populated when the <code>TestParsing</code> API validates EDI documents.</p>
+    pub fn get_validation_messages(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.validation_messages
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -99,6 +128,7 @@ impl TestParsingOutputBuilder {
                 )
             })?,
             parsed_split_file_contents: self.parsed_split_file_contents,
+            validation_messages: self.validation_messages,
             _request_id: self._request_id,
         })
     }

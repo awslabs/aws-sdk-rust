@@ -112,6 +112,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "lastShareDetails" => {
+                            builder = builder.set_last_share_details(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "messages" => {
                             builder = builder.set_messages(crate::protocol_serde::shape_job_messages::de_job_messages(tokens)?);
                         }
@@ -155,6 +162,13 @@ where
                         }
                         "settings" => {
                             builder = builder.set_settings(crate::protocol_serde::shape_job_settings::de_job_settings(tokens)?);
+                        }
+                        "shareStatus" => {
+                            builder = builder.set_share_status(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ShareStatus::from(u.as_ref())))
+                                    .transpose()?,
+                            );
                         }
                         "simulateReservedQueue" => {
                             builder = builder.set_simulate_reserved_queue(

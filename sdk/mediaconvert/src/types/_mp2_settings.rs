@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Mp2Settings {
+    /// Choose BROADCASTER_MIXED_AD when the input contains pre-mixed main audio + audio description (AD) as a stereo pair. The value for AudioType will be set to 3, which signals to downstream systems that this stream contains "broadcaster mixed AD". Note that the input received by the encoder must contain pre-mixed audio; the encoder does not perform the mixing. When you choose BROADCASTER_MIXED_AD, the encoder ignores any values you provide in AudioType and FollowInputAudioType. Choose NONE when the input does not contain pre-mixed audio + audio description (AD). In this case, the encoder will use any values you provide for AudioType and FollowInputAudioType.
+    pub audio_description_mix: ::std::option::Option<crate::types::Mp2AudioDescriptionMix>,
     /// Specify the average bitrate in bits per second.
     pub bitrate: ::std::option::Option<i32>,
     /// Set Channels to specify the number of channels in this output audio track. Choosing Mono in will give you 1 output channel; choosing Stereo will give you 2. In the API, valid values are 1 and 2.
@@ -12,6 +14,10 @@ pub struct Mp2Settings {
     pub sample_rate: ::std::option::Option<i32>,
 }
 impl Mp2Settings {
+    /// Choose BROADCASTER_MIXED_AD when the input contains pre-mixed main audio + audio description (AD) as a stereo pair. The value for AudioType will be set to 3, which signals to downstream systems that this stream contains "broadcaster mixed AD". Note that the input received by the encoder must contain pre-mixed audio; the encoder does not perform the mixing. When you choose BROADCASTER_MIXED_AD, the encoder ignores any values you provide in AudioType and FollowInputAudioType. Choose NONE when the input does not contain pre-mixed audio + audio description (AD). In this case, the encoder will use any values you provide for AudioType and FollowInputAudioType.
+    pub fn audio_description_mix(&self) -> ::std::option::Option<&crate::types::Mp2AudioDescriptionMix> {
+        self.audio_description_mix.as_ref()
+    }
     /// Specify the average bitrate in bits per second.
     pub fn bitrate(&self) -> ::std::option::Option<i32> {
         self.bitrate
@@ -36,11 +42,26 @@ impl Mp2Settings {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct Mp2SettingsBuilder {
+    pub(crate) audio_description_mix: ::std::option::Option<crate::types::Mp2AudioDescriptionMix>,
     pub(crate) bitrate: ::std::option::Option<i32>,
     pub(crate) channels: ::std::option::Option<i32>,
     pub(crate) sample_rate: ::std::option::Option<i32>,
 }
 impl Mp2SettingsBuilder {
+    /// Choose BROADCASTER_MIXED_AD when the input contains pre-mixed main audio + audio description (AD) as a stereo pair. The value for AudioType will be set to 3, which signals to downstream systems that this stream contains "broadcaster mixed AD". Note that the input received by the encoder must contain pre-mixed audio; the encoder does not perform the mixing. When you choose BROADCASTER_MIXED_AD, the encoder ignores any values you provide in AudioType and FollowInputAudioType. Choose NONE when the input does not contain pre-mixed audio + audio description (AD). In this case, the encoder will use any values you provide for AudioType and FollowInputAudioType.
+    pub fn audio_description_mix(mut self, input: crate::types::Mp2AudioDescriptionMix) -> Self {
+        self.audio_description_mix = ::std::option::Option::Some(input);
+        self
+    }
+    /// Choose BROADCASTER_MIXED_AD when the input contains pre-mixed main audio + audio description (AD) as a stereo pair. The value for AudioType will be set to 3, which signals to downstream systems that this stream contains "broadcaster mixed AD". Note that the input received by the encoder must contain pre-mixed audio; the encoder does not perform the mixing. When you choose BROADCASTER_MIXED_AD, the encoder ignores any values you provide in AudioType and FollowInputAudioType. Choose NONE when the input does not contain pre-mixed audio + audio description (AD). In this case, the encoder will use any values you provide for AudioType and FollowInputAudioType.
+    pub fn set_audio_description_mix(mut self, input: ::std::option::Option<crate::types::Mp2AudioDescriptionMix>) -> Self {
+        self.audio_description_mix = input;
+        self
+    }
+    /// Choose BROADCASTER_MIXED_AD when the input contains pre-mixed main audio + audio description (AD) as a stereo pair. The value for AudioType will be set to 3, which signals to downstream systems that this stream contains "broadcaster mixed AD". Note that the input received by the encoder must contain pre-mixed audio; the encoder does not perform the mixing. When you choose BROADCASTER_MIXED_AD, the encoder ignores any values you provide in AudioType and FollowInputAudioType. Choose NONE when the input does not contain pre-mixed audio + audio description (AD). In this case, the encoder will use any values you provide for AudioType and FollowInputAudioType.
+    pub fn get_audio_description_mix(&self) -> &::std::option::Option<crate::types::Mp2AudioDescriptionMix> {
+        &self.audio_description_mix
+    }
     /// Specify the average bitrate in bits per second.
     pub fn bitrate(mut self, input: i32) -> Self {
         self.bitrate = ::std::option::Option::Some(input);
@@ -86,6 +107,7 @@ impl Mp2SettingsBuilder {
     /// Consumes the builder and constructs a [`Mp2Settings`](crate::types::Mp2Settings).
     pub fn build(self) -> crate::types::Mp2Settings {
         crate::types::Mp2Settings {
+            audio_description_mix: self.audio_description_mix,
             bitrate: self.bitrate,
             channels: self.channels,
             sample_rate: self.sample_rate,

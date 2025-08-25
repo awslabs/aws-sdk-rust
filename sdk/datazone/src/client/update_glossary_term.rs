@@ -20,6 +20,7 @@ impl super::Client {
     ///   - [`short_description(Option<String>)`](crate::operation::update_glossary_term::UpdateGlossaryTermOutput::short_description): <p>The short description to be updated as part of the <code>UpdateGlossaryTerm</code> action.</p>
     ///   - [`long_description(Option<String>)`](crate::operation::update_glossary_term::UpdateGlossaryTermOutput::long_description): <p>The long description to be updated as part of the <code>UpdateGlossaryTerm</code> action.</p>
     ///   - [`term_relations(Option<TermRelations>)`](crate::operation::update_glossary_term::UpdateGlossaryTermOutput::term_relations): <p>The term relations to be updated as part of the <code>UpdateGlossaryTerm</code> action.</p>
+    ///   - [`usage_restrictions(Option<Vec::<GlossaryUsageRestriction>>)`](crate::operation::update_glossary_term::UpdateGlossaryTermOutput::usage_restrictions): <p>The usage restriction of a term within a restricted glossary.</p>
     /// - On failure, responds with [`SdkError<UpdateGlossaryTermError>`](crate::operation::update_glossary_term::UpdateGlossaryTermError)
     pub fn update_glossary_term(&self) -> crate::operation::update_glossary_term::builders::UpdateGlossaryTermFluentBuilder {
         crate::operation::update_glossary_term::builders::UpdateGlossaryTermFluentBuilder::new(self.handle.clone())
