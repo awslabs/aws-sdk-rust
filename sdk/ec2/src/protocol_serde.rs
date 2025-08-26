@@ -335,6 +335,10 @@ pub(crate) mod shape_create_image;
 
 pub(crate) mod shape_create_image_input;
 
+pub(crate) mod shape_create_image_usage_report;
+
+pub(crate) mod shape_create_image_usage_report_input;
+
 pub(crate) mod shape_create_instance_connect_endpoint;
 
 pub(crate) mod shape_create_instance_connect_endpoint_input;
@@ -674,6 +678,10 @@ pub(crate) mod shape_delete_flow_logs_input;
 pub(crate) mod shape_delete_fpga_image;
 
 pub(crate) mod shape_delete_fpga_image_input;
+
+pub(crate) mod shape_delete_image_usage_report;
+
+pub(crate) mod shape_delete_image_usage_report_input;
 
 pub(crate) mod shape_delete_instance_connect_endpoint;
 
@@ -1178,6 +1186,18 @@ pub(crate) mod shape_describe_identity_id_format_input;
 pub(crate) mod shape_describe_image_attribute;
 
 pub(crate) mod shape_describe_image_attribute_input;
+
+pub(crate) mod shape_describe_image_references;
+
+pub(crate) mod shape_describe_image_references_input;
+
+pub(crate) mod shape_describe_image_usage_report_entries;
+
+pub(crate) mod shape_describe_image_usage_report_entries_input;
+
+pub(crate) mod shape_describe_image_usage_reports;
+
+pub(crate) mod shape_describe_image_usage_reports_input;
 
 pub(crate) mod shape_describe_images;
 
@@ -2887,6 +2907,8 @@ pub(crate) mod shape_image_criterion_request;
 
 pub(crate) mod shape_image_disk_container;
 
+pub(crate) mod shape_image_usage_resource_type_request;
+
 pub(crate) mod shape_import_image_license_configuration_request;
 
 pub(crate) mod shape_import_instance_launch_specification;
@@ -3006,6 +3028,8 @@ pub(crate) mod shape_reservation_fleet_instance_specification;
 pub(crate) mod shape_reserved_instance_limit_price;
 
 pub(crate) mod shape_reserved_instances_configuration;
+
+pub(crate) mod shape_resource_type_request;
 
 pub(crate) mod shape_route_server_bgp_options_request;
 
@@ -3322,6 +3346,14 @@ pub(crate) mod shape_image_criterion_list;
 pub(crate) mod shape_image_list;
 
 pub(crate) mod shape_image_recycle_bin_info_list;
+
+pub(crate) mod shape_image_reference_list;
+
+pub(crate) mod shape_image_usage_report_entry_list;
+
+pub(crate) mod shape_image_usage_report_list;
+
+pub(crate) mod shape_image_usage_resource_type_option_request;
 
 pub(crate) mod shape_import_image_license_specification_list_response;
 
@@ -3646,6 +3678,8 @@ pub(crate) mod shape_reserved_instances_listing_list;
 pub(crate) mod shape_reserved_instances_modification_list;
 
 pub(crate) mod shape_reserved_instances_offering_list;
+
+pub(crate) mod shape_resource_type_option;
 
 pub(crate) mod shape_response_host_id_list;
 
@@ -4162,6 +4196,12 @@ pub(crate) mod shape_image;
 pub(crate) mod shape_image_criterion;
 
 pub(crate) mod shape_image_recycle_bin_info;
+
+pub(crate) mod shape_image_reference;
+
+pub(crate) mod shape_image_usage_report;
+
+pub(crate) mod shape_image_usage_report_entry;
 
 pub(crate) mod shape_import_image_license_configuration_response;
 
@@ -4705,6 +4745,8 @@ pub(crate) mod shape_image_metadata;
 
 pub(crate) mod shape_image_provider_list;
 
+pub(crate) mod shape_image_usage_resource_type_list;
+
 pub(crate) mod shape_import_instance_volume_detail_set;
 
 pub(crate) mod shape_inference_accelerator_info;
@@ -4915,6 +4957,8 @@ pub(crate) mod shape_usage_class_type_list;
 
 pub(crate) mod shape_user_id_group_pair_list;
 
+pub(crate) mod shape_user_id_list;
+
 pub(crate) mod shape_v_cpu_count_range;
 
 pub(crate) mod shape_v_cpu_info;
@@ -5038,6 +5082,8 @@ pub(crate) mod shape_gpu_device_info_list;
 pub(crate) mod shape_group_id_string_list;
 
 pub(crate) mod shape_host_instance;
+
+pub(crate) mod shape_image_usage_resource_type;
 
 pub(crate) mod shape_import_instance_volume_detail_item;
 
@@ -5179,6 +5225,8 @@ pub(crate) mod shape_gpu_device_info;
 
 pub(crate) mod shape_ike_versions_list;
 
+pub(crate) mod shape_image_usage_resource_type_option_list;
+
 pub(crate) mod shape_inference_device_info;
 
 pub(crate) mod shape_instance_capacity;
@@ -5257,6 +5305,8 @@ pub(crate) mod shape_gpu_device_memory_info;
 
 pub(crate) mod shape_ike_versions_list_value;
 
+pub(crate) mod shape_image_usage_resource_type_option;
+
 pub(crate) mod shape_inference_device_memory_info;
 
 pub(crate) mod shape_instance_attachment_ena_srd_specification;
@@ -5306,6 +5356,8 @@ pub(crate) mod shape_spot_fleet_tag_specification_list;
 pub(crate) mod shape_target_groups;
 
 pub(crate) mod shape_ebs_block_device_response;
+
+pub(crate) mod shape_image_usage_resource_type_option_values_list;
 
 pub(crate) mod shape_instance_attachment_ena_srd_udp_specification;
 

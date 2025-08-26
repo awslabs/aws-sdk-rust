@@ -2,7 +2,7 @@
 
 /// <p>Specifies options for areas to avoid. This is a best-effort avoidance setting, meaning the router will try to honor the avoidance preferences but may still include restricted areas if no feasible alternative route exists. If avoidance options are not followed, the response will indicate that the avoidance criteria were violated.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct WaypointOptimizationAvoidanceOptions {
     /// <p>Areas to be avoided.</p>
     pub areas: ::std::option::Option<::std::vec::Vec<crate::types::WaypointOptimizationAvoidanceArea>>,
@@ -57,6 +57,20 @@ impl WaypointOptimizationAvoidanceOptions {
         self.u_turns
     }
 }
+impl ::std::fmt::Debug for WaypointOptimizationAvoidanceOptions {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("WaypointOptimizationAvoidanceOptions");
+        formatter.field("areas", &self.areas);
+        formatter.field("car_shuttle_trains", &"*** Sensitive Data Redacted ***");
+        formatter.field("controlled_access_highways", &"*** Sensitive Data Redacted ***");
+        formatter.field("dirt_roads", &"*** Sensitive Data Redacted ***");
+        formatter.field("ferries", &"*** Sensitive Data Redacted ***");
+        formatter.field("toll_roads", &"*** Sensitive Data Redacted ***");
+        formatter.field("tunnels", &"*** Sensitive Data Redacted ***");
+        formatter.field("u_turns", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl WaypointOptimizationAvoidanceOptions {
     /// Creates a new builder-style object to manufacture [`WaypointOptimizationAvoidanceOptions`](crate::types::WaypointOptimizationAvoidanceOptions).
     pub fn builder() -> crate::types::builders::WaypointOptimizationAvoidanceOptionsBuilder {
@@ -65,7 +79,7 @@ impl WaypointOptimizationAvoidanceOptions {
 }
 
 /// A builder for [`WaypointOptimizationAvoidanceOptions`](crate::types::WaypointOptimizationAvoidanceOptions).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct WaypointOptimizationAvoidanceOptionsBuilder {
     pub(crate) areas: ::std::option::Option<::std::vec::Vec<crate::types::WaypointOptimizationAvoidanceArea>>,
@@ -208,5 +222,19 @@ impl WaypointOptimizationAvoidanceOptionsBuilder {
             tunnels: self.tunnels,
             u_turns: self.u_turns,
         }
+    }
+}
+impl ::std::fmt::Debug for WaypointOptimizationAvoidanceOptionsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("WaypointOptimizationAvoidanceOptionsBuilder");
+        formatter.field("areas", &self.areas);
+        formatter.field("car_shuttle_trains", &"*** Sensitive Data Redacted ***");
+        formatter.field("controlled_access_highways", &"*** Sensitive Data Redacted ***");
+        formatter.field("dirt_roads", &"*** Sensitive Data Redacted ***");
+        formatter.field("ferries", &"*** Sensitive Data Redacted ***");
+        formatter.field("toll_roads", &"*** Sensitive Data Redacted ***");
+        formatter.field("tunnels", &"*** Sensitive Data Redacted ***");
+        formatter.field("u_turns", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

@@ -2,7 +2,7 @@
 
 /// <p>Origin related options.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RouteOriginOptions {
     /// <p>Avoids actions for the provided distance. This is typically to consider for users in moving vehicles who may not have sufficient time to make an action at an origin or a destination.</p>
     pub avoid_actions_for_distance: i64,
@@ -37,6 +37,17 @@ impl RouteOriginOptions {
         self.side_of_street.as_ref()
     }
 }
+impl ::std::fmt::Debug for RouteOriginOptions {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteOriginOptions");
+        formatter.field("avoid_actions_for_distance", &"*** Sensitive Data Redacted ***");
+        formatter.field("avoid_u_turns", &"*** Sensitive Data Redacted ***");
+        formatter.field("heading", &"*** Sensitive Data Redacted ***");
+        formatter.field("matching", &self.matching);
+        formatter.field("side_of_street", &self.side_of_street);
+        formatter.finish()
+    }
+}
 impl RouteOriginOptions {
     /// Creates a new builder-style object to manufacture [`RouteOriginOptions`](crate::types::RouteOriginOptions).
     pub fn builder() -> crate::types::builders::RouteOriginOptionsBuilder {
@@ -45,7 +56,7 @@ impl RouteOriginOptions {
 }
 
 /// A builder for [`RouteOriginOptions`](crate::types::RouteOriginOptions).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct RouteOriginOptionsBuilder {
     pub(crate) avoid_actions_for_distance: ::std::option::Option<i64>,
@@ -134,5 +145,16 @@ impl RouteOriginOptionsBuilder {
             matching: self.matching,
             side_of_street: self.side_of_street,
         }
+    }
+}
+impl ::std::fmt::Debug for RouteOriginOptionsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteOriginOptionsBuilder");
+        formatter.field("avoid_actions_for_distance", &"*** Sensitive Data Redacted ***");
+        formatter.field("avoid_u_turns", &"*** Sensitive Data Redacted ***");
+        formatter.field("heading", &"*** Sensitive Data Redacted ***");
+        formatter.field("matching", &self.matching);
+        formatter.field("side_of_street", &self.side_of_street);
+        formatter.finish()
     }
 }

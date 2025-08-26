@@ -158,6 +158,8 @@ pub trait Waiters {
     fn wait_until_image_available(&self) -> crate::waiters::image_available::ImageAvailableFluentBuilder;
     /// Wait for `image_exists`
     fn wait_until_image_exists(&self) -> crate::waiters::image_exists::ImageExistsFluentBuilder;
+    /// Wait for `image_usage_report_available`
+    fn wait_until_image_usage_report_available(&self) -> crate::waiters::image_usage_report_available::ImageUsageReportAvailableFluentBuilder;
     /// Wait for `snapshot_imported`
     fn wait_until_snapshot_imported(&self) -> crate::waiters::snapshot_imported::SnapshotImportedFluentBuilder;
     /// Wait for `instance_exists`
@@ -250,6 +252,9 @@ impl Waiters for Client {
     }
     fn wait_until_image_exists(&self) -> crate::waiters::image_exists::ImageExistsFluentBuilder {
         crate::waiters::image_exists::ImageExistsFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_image_usage_report_available(&self) -> crate::waiters::image_usage_report_available::ImageUsageReportAvailableFluentBuilder {
+        crate::waiters::image_usage_report_available::ImageUsageReportAvailableFluentBuilder::new(self.handle.clone())
     }
     fn wait_until_snapshot_imported(&self) -> crate::waiters::snapshot_imported::SnapshotImportedFluentBuilder {
         crate::waiters::snapshot_imported::SnapshotImportedFluentBuilder::new(self.handle.clone())
@@ -518,6 +523,8 @@ mod create_fpga_image;
 
 mod create_image;
 
+mod create_image_usage_report;
+
 mod create_instance_connect_endpoint;
 
 mod create_instance_event_window;
@@ -714,6 +721,8 @@ mod delete_fleets;
 mod delete_flow_logs;
 
 mod delete_fpga_image;
+
+mod delete_image_usage_report;
 
 mod delete_instance_connect_endpoint;
 
@@ -966,6 +975,12 @@ mod describe_id_format;
 mod describe_identity_id_format;
 
 mod describe_image_attribute;
+
+mod describe_image_references;
+
+mod describe_image_usage_report_entries;
+
+mod describe_image_usage_reports;
 
 mod describe_images;
 

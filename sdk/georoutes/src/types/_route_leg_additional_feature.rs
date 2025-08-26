@@ -45,9 +45,7 @@
 ///
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::hash::Hash)]
 pub enum RouteLegAdditionalFeature {
     #[allow(missing_docs)] // documentation missing in model
     Elevation,
@@ -156,5 +154,10 @@ impl ::std::fmt::Display for RouteLegAdditionalFeature {
             RouteLegAdditionalFeature::Zones => write!(f, "Zones"),
             RouteLegAdditionalFeature::Unknown(value) => write!(f, "{}", value),
         }
+    }
+}
+impl ::std::fmt::Debug for RouteLegAdditionalFeature {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        ::std::write!(f, "*** Sensitive Data Redacted ***")
     }
 }

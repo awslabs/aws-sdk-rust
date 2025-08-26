@@ -2,7 +2,7 @@
 
 /// <p>The vehicle license plate.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct IsolineVehicleLicensePlate {
     /// <p>The last character of the License Plate.</p>
     pub last_character: ::std::option::Option<::std::string::String>,
@@ -13,6 +13,13 @@ impl IsolineVehicleLicensePlate {
         self.last_character.as_deref()
     }
 }
+impl ::std::fmt::Debug for IsolineVehicleLicensePlate {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("IsolineVehicleLicensePlate");
+        formatter.field("last_character", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl IsolineVehicleLicensePlate {
     /// Creates a new builder-style object to manufacture [`IsolineVehicleLicensePlate`](crate::types::IsolineVehicleLicensePlate).
     pub fn builder() -> crate::types::builders::IsolineVehicleLicensePlateBuilder {
@@ -21,7 +28,7 @@ impl IsolineVehicleLicensePlate {
 }
 
 /// A builder for [`IsolineVehicleLicensePlate`](crate::types::IsolineVehicleLicensePlate).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct IsolineVehicleLicensePlateBuilder {
     pub(crate) last_character: ::std::option::Option<::std::string::String>,
@@ -46,5 +53,12 @@ impl IsolineVehicleLicensePlateBuilder {
         crate::types::IsolineVehicleLicensePlate {
             last_character: self.last_character,
         }
+    }
+}
+impl ::std::fmt::Debug for IsolineVehicleLicensePlateBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("IsolineVehicleLicensePlateBuilder");
+        formatter.field("last_character", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

@@ -38,9 +38,7 @@
 ///
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::hash::Hash)]
 pub enum WaypointOptimizationTruckType {
     #[allow(missing_docs)] // documentation missing in model
     StraightTruck,
@@ -104,5 +102,10 @@ impl ::std::fmt::Display for WaypointOptimizationTruckType {
             WaypointOptimizationTruckType::Tractor => write!(f, "Tractor"),
             WaypointOptimizationTruckType::Unknown(value) => write!(f, "{}", value),
         }
+    }
+}
+impl ::std::fmt::Debug for WaypointOptimizationTruckType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        ::std::write!(f, "*** Sensitive Data Redacted ***")
     }
 }

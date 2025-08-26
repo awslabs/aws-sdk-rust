@@ -2,7 +2,7 @@
 
 /// <p>Options related to the pedestrian.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RoutePedestrianOptions {
     /// <p>Walking speed in Kilometers per hour.</p>
     pub speed: ::std::option::Option<f64>,
@@ -13,6 +13,13 @@ impl RoutePedestrianOptions {
         self.speed
     }
 }
+impl ::std::fmt::Debug for RoutePedestrianOptions {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RoutePedestrianOptions");
+        formatter.field("speed", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl RoutePedestrianOptions {
     /// Creates a new builder-style object to manufacture [`RoutePedestrianOptions`](crate::types::RoutePedestrianOptions).
     pub fn builder() -> crate::types::builders::RoutePedestrianOptionsBuilder {
@@ -21,7 +28,7 @@ impl RoutePedestrianOptions {
 }
 
 /// A builder for [`RoutePedestrianOptions`](crate::types::RoutePedestrianOptions).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct RoutePedestrianOptionsBuilder {
     pub(crate) speed: ::std::option::Option<f64>,
@@ -44,5 +51,12 @@ impl RoutePedestrianOptionsBuilder {
     /// Consumes the builder and constructs a [`RoutePedestrianOptions`](crate::types::RoutePedestrianOptions).
     pub fn build(self) -> crate::types::RoutePedestrianOptions {
         crate::types::RoutePedestrianOptions { speed: self.speed }
+    }
+}
+impl ::std::fmt::Debug for RoutePedestrianOptionsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RoutePedestrianOptionsBuilder");
+        formatter.field("speed", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

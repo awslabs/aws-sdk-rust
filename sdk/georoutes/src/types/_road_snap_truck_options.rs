@@ -2,7 +2,7 @@
 
 /// <p>Travel mode options when the provided travel mode is "Truck".</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RoadSnapTruckOptions {
     /// <p>Gross weight of the vehicle including trailers, and goods at capacity.</p>
     /// <p><b>Unit</b>: <code>Kilograms</code></p>
@@ -127,6 +127,19 @@ impl RoadSnapTruckOptions {
         self.width
     }
 }
+impl ::std::fmt::Debug for RoadSnapTruckOptions {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RoadSnapTruckOptions");
+        formatter.field("gross_weight", &"*** Sensitive Data Redacted ***");
+        formatter.field("hazardous_cargos", &"*** Sensitive Data Redacted ***");
+        formatter.field("height", &"*** Sensitive Data Redacted ***");
+        formatter.field("length", &"*** Sensitive Data Redacted ***");
+        formatter.field("trailer", &self.trailer);
+        formatter.field("tunnel_restriction_code", &"*** Sensitive Data Redacted ***");
+        formatter.field("width", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl RoadSnapTruckOptions {
     /// Creates a new builder-style object to manufacture [`RoadSnapTruckOptions`](crate::types::RoadSnapTruckOptions).
     pub fn builder() -> crate::types::builders::RoadSnapTruckOptionsBuilder {
@@ -135,7 +148,7 @@ impl RoadSnapTruckOptions {
 }
 
 /// A builder for [`RoadSnapTruckOptions`](crate::types::RoadSnapTruckOptions).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct RoadSnapTruckOptionsBuilder {
     pub(crate) gross_weight: ::std::option::Option<i64>,
@@ -376,5 +389,18 @@ impl RoadSnapTruckOptionsBuilder {
             tunnel_restriction_code: self.tunnel_restriction_code,
             width: self.width.unwrap_or_default(),
         }
+    }
+}
+impl ::std::fmt::Debug for RoadSnapTruckOptionsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RoadSnapTruckOptionsBuilder");
+        formatter.field("gross_weight", &"*** Sensitive Data Redacted ***");
+        formatter.field("hazardous_cargos", &"*** Sensitive Data Redacted ***");
+        formatter.field("height", &"*** Sensitive Data Redacted ***");
+        formatter.field("length", &"*** Sensitive Data Redacted ***");
+        formatter.field("trailer", &self.trailer);
+        formatter.field("tunnel_restriction_code", &"*** Sensitive Data Redacted ***");
+        formatter.field("width", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

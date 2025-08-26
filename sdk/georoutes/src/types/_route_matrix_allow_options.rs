@@ -2,7 +2,7 @@
 
 /// <p>Allow Options related to the route matrix.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RouteMatrixAllowOptions {
     /// <p>Allow Hot (High Occupancy Toll) lanes while calculating the route.</p>
     /// <p>Default value: <code>false</code></p>
@@ -23,6 +23,14 @@ impl RouteMatrixAllowOptions {
         self.hov
     }
 }
+impl ::std::fmt::Debug for RouteMatrixAllowOptions {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteMatrixAllowOptions");
+        formatter.field("hot", &"*** Sensitive Data Redacted ***");
+        formatter.field("hov", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl RouteMatrixAllowOptions {
     /// Creates a new builder-style object to manufacture [`RouteMatrixAllowOptions`](crate::types::RouteMatrixAllowOptions).
     pub fn builder() -> crate::types::builders::RouteMatrixAllowOptionsBuilder {
@@ -31,7 +39,7 @@ impl RouteMatrixAllowOptions {
 }
 
 /// A builder for [`RouteMatrixAllowOptions`](crate::types::RouteMatrixAllowOptions).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct RouteMatrixAllowOptionsBuilder {
     pub(crate) hot: ::std::option::Option<bool>,
@@ -78,5 +86,13 @@ impl RouteMatrixAllowOptionsBuilder {
             hot: self.hot,
             hov: self.hov,
         }
+    }
+}
+impl ::std::fmt::Debug for RouteMatrixAllowOptionsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteMatrixAllowOptionsBuilder");
+        formatter.field("hot", &"*** Sensitive Data Redacted ***");
+        formatter.field("hov", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

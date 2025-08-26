@@ -18,7 +18,9 @@
 ///     ValidationExceptionReason::InvalidAz => { /* ... */ },
 ///     ValidationExceptionReason::InvalidConditionType => { /* ... */ },
 ///     ValidationExceptionReason::InvalidExpiresIn => { /* ... */ },
+///     ValidationExceptionReason::InvalidPracticeAllowedWindow => { /* ... */ },
 ///     ValidationExceptionReason::InvalidPracticeBlocker => { /* ... */ },
+///     ValidationExceptionReason::ConflictingPracticeWindows => { /* ... */ },
 ///     ValidationExceptionReason::InvalidResourceIdentifier => { /* ... */ },
 ///     ValidationExceptionReason::InvalidStatus => { /* ... */ },
 ///     ValidationExceptionReason::InvalidToken => { /* ... */ },
@@ -66,7 +68,11 @@ pub enum ValidationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     InvalidExpiresIn,
     #[allow(missing_docs)] // documentation missing in model
+    InvalidPracticeAllowedWindow,
+    #[allow(missing_docs)] // documentation missing in model
     InvalidPracticeBlocker,
+    #[allow(missing_docs)] // documentation missing in model
+    ConflictingPracticeWindows,
     #[allow(missing_docs)] // documentation missing in model
     InvalidResourceIdentifier,
     #[allow(missing_docs)] // documentation missing in model
@@ -92,7 +98,9 @@ impl ::std::convert::From<&str> for ValidationExceptionReason {
             "InvalidAz" => ValidationExceptionReason::InvalidAz,
             "InvalidConditionType" => ValidationExceptionReason::InvalidConditionType,
             "InvalidExpiresIn" => ValidationExceptionReason::InvalidExpiresIn,
+            "InvalidPracticeAllowedWindow" => ValidationExceptionReason::InvalidPracticeAllowedWindow,
             "InvalidPracticeBlocker" => ValidationExceptionReason::InvalidPracticeBlocker,
+            "InvalidPracticeWindows" => ValidationExceptionReason::ConflictingPracticeWindows,
             "InvalidResourceIdentifier" => ValidationExceptionReason::InvalidResourceIdentifier,
             "InvalidStatus" => ValidationExceptionReason::InvalidStatus,
             "InvalidToken" => ValidationExceptionReason::InvalidToken,
@@ -120,7 +128,9 @@ impl ValidationExceptionReason {
             ValidationExceptionReason::InvalidAz => "InvalidAz",
             ValidationExceptionReason::InvalidConditionType => "InvalidConditionType",
             ValidationExceptionReason::InvalidExpiresIn => "InvalidExpiresIn",
+            ValidationExceptionReason::InvalidPracticeAllowedWindow => "InvalidPracticeAllowedWindow",
             ValidationExceptionReason::InvalidPracticeBlocker => "InvalidPracticeBlocker",
+            ValidationExceptionReason::ConflictingPracticeWindows => "InvalidPracticeWindows",
             ValidationExceptionReason::InvalidResourceIdentifier => "InvalidResourceIdentifier",
             ValidationExceptionReason::InvalidStatus => "InvalidStatus",
             ValidationExceptionReason::InvalidToken => "InvalidToken",
@@ -139,7 +149,9 @@ impl ValidationExceptionReason {
             "InvalidAz",
             "InvalidConditionType",
             "InvalidExpiresIn",
+            "InvalidPracticeAllowedWindow",
             "InvalidPracticeBlocker",
+            "InvalidPracticeWindows",
             "InvalidResourceIdentifier",
             "InvalidStatus",
             "InvalidToken",
@@ -175,7 +187,9 @@ impl ::std::fmt::Display for ValidationExceptionReason {
             ValidationExceptionReason::InvalidAz => write!(f, "InvalidAz"),
             ValidationExceptionReason::InvalidConditionType => write!(f, "InvalidConditionType"),
             ValidationExceptionReason::InvalidExpiresIn => write!(f, "InvalidExpiresIn"),
+            ValidationExceptionReason::InvalidPracticeAllowedWindow => write!(f, "InvalidPracticeAllowedWindow"),
             ValidationExceptionReason::InvalidPracticeBlocker => write!(f, "InvalidPracticeBlocker"),
+            ValidationExceptionReason::ConflictingPracticeWindows => write!(f, "InvalidPracticeWindows"),
             ValidationExceptionReason::InvalidResourceIdentifier => write!(f, "InvalidResourceIdentifier"),
             ValidationExceptionReason::InvalidStatus => write!(f, "InvalidStatus"),
             ValidationExceptionReason::InvalidToken => write!(f, "InvalidToken"),

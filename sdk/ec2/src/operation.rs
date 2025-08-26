@@ -235,6 +235,9 @@ pub mod create_fpga_image;
 /// Types for the `CreateImage` operation.
 pub mod create_image;
 
+/// Types for the `CreateImageUsageReport` operation.
+pub mod create_image_usage_report;
+
 /// Types for the `CreateInstanceConnectEndpoint` operation.
 pub mod create_instance_connect_endpoint;
 
@@ -489,6 +492,9 @@ pub mod delete_flow_logs;
 
 /// Types for the `DeleteFpgaImage` operation.
 pub mod delete_fpga_image;
+
+/// Types for the `DeleteImageUsageReport` operation.
+pub mod delete_image_usage_report;
 
 /// Types for the `DeleteInstanceConnectEndpoint` operation.
 pub mod delete_instance_connect_endpoint;
@@ -867,6 +873,15 @@ pub mod describe_identity_id_format;
 
 /// Types for the `DescribeImageAttribute` operation.
 pub mod describe_image_attribute;
+
+/// Types for the `DescribeImageReferences` operation.
+pub mod describe_image_references;
+
+/// Types for the `DescribeImageUsageReportEntries` operation.
+pub mod describe_image_usage_report_entries;
+
+/// Types for the `DescribeImageUsageReports` operation.
+pub mod describe_image_usage_reports;
 
 /// Types for the `DescribeImages` operation.
 pub mod describe_images;

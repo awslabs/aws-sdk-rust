@@ -2,7 +2,7 @@
 
 /// <p>The road on the route.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RouteRoad {
     /// <p>Name of the road (localized).</p>
     pub road_name: ::std::vec::Vec<crate::types::LocalizedString>,
@@ -34,6 +34,16 @@ impl RouteRoad {
         self.r#type.as_ref()
     }
 }
+impl ::std::fmt::Debug for RouteRoad {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteRoad");
+        formatter.field("road_name", &self.road_name);
+        formatter.field("route_number", &self.route_number);
+        formatter.field("towards", &self.towards);
+        formatter.field("r#type", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl RouteRoad {
     /// Creates a new builder-style object to manufacture [`RouteRoad`](crate::types::RouteRoad).
     pub fn builder() -> crate::types::builders::RouteRoadBuilder {
@@ -42,7 +52,7 @@ impl RouteRoad {
 }
 
 /// A builder for [`RouteRoad`](crate::types::RouteRoad).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct RouteRoadBuilder {
     pub(crate) road_name: ::std::option::Option<::std::vec::Vec<crate::types::LocalizedString>>,
@@ -152,5 +162,15 @@ impl RouteRoadBuilder {
             })?,
             r#type: self.r#type,
         })
+    }
+}
+impl ::std::fmt::Debug for RouteRoadBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteRoadBuilder");
+        formatter.field("road_name", &self.road_name);
+        formatter.field("route_number", &self.route_number);
+        formatter.field("towards", &self.towards);
+        formatter.field("r#type", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

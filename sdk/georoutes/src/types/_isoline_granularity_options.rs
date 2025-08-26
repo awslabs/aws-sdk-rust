@@ -2,7 +2,7 @@
 
 /// <p>Isoline granularity related options.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct IsolineGranularityOptions {
     /// <p>Maximum number of points of returned Isoline.</p>
     pub max_points: ::std::option::Option<i32>,
@@ -21,6 +21,14 @@ impl IsolineGranularityOptions {
         self.max_resolution
     }
 }
+impl ::std::fmt::Debug for IsolineGranularityOptions {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("IsolineGranularityOptions");
+        formatter.field("max_points", &self.max_points);
+        formatter.field("max_resolution", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl IsolineGranularityOptions {
     /// Creates a new builder-style object to manufacture [`IsolineGranularityOptions`](crate::types::IsolineGranularityOptions).
     pub fn builder() -> crate::types::builders::IsolineGranularityOptionsBuilder {
@@ -29,7 +37,7 @@ impl IsolineGranularityOptions {
 }
 
 /// A builder for [`IsolineGranularityOptions`](crate::types::IsolineGranularityOptions).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct IsolineGranularityOptionsBuilder {
     pub(crate) max_points: ::std::option::Option<i32>,
@@ -73,5 +81,13 @@ impl IsolineGranularityOptionsBuilder {
             max_points: self.max_points,
             max_resolution: self.max_resolution.unwrap_or_default(),
         }
+    }
+}
+impl ::std::fmt::Debug for IsolineGranularityOptionsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("IsolineGranularityOptionsBuilder");
+        formatter.field("max_points", &self.max_points);
+        formatter.field("max_resolution", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

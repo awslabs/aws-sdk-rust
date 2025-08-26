@@ -2,7 +2,7 @@
 
 /// <p>Pre defined rest profiles for a driver schedule. The only currently supported profile is EU.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct WaypointOptimizationRestProfile {
     /// <p>Pre defined rest profiles for a driver schedule. The only currently supported profile is EU.</p>
     pub profile: ::std::string::String,
@@ -14,6 +14,13 @@ impl WaypointOptimizationRestProfile {
         self.profile.deref()
     }
 }
+impl ::std::fmt::Debug for WaypointOptimizationRestProfile {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("WaypointOptimizationRestProfile");
+        formatter.field("profile", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl WaypointOptimizationRestProfile {
     /// Creates a new builder-style object to manufacture [`WaypointOptimizationRestProfile`](crate::types::WaypointOptimizationRestProfile).
     pub fn builder() -> crate::types::builders::WaypointOptimizationRestProfileBuilder {
@@ -22,7 +29,7 @@ impl WaypointOptimizationRestProfile {
 }
 
 /// A builder for [`WaypointOptimizationRestProfile`](crate::types::WaypointOptimizationRestProfile).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct WaypointOptimizationRestProfileBuilder {
     pub(crate) profile: ::std::option::Option<::std::string::String>,
@@ -55,5 +62,12 @@ impl WaypointOptimizationRestProfileBuilder {
                 )
             })?,
         })
+    }
+}
+impl ::std::fmt::Debug for WaypointOptimizationRestProfileBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("WaypointOptimizationRestProfileBuilder");
+        formatter.field("profile", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

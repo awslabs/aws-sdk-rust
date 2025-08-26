@@ -2,7 +2,7 @@
 
 /// <p>The toll rate.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RouteTollRate {
     /// <p>Time when the rate is valid.</p>
     pub applicable_times: ::std::option::Option<::std::string::String>,
@@ -59,6 +59,20 @@ impl RouteTollRate {
         self.transponders.deref()
     }
 }
+impl ::std::fmt::Debug for RouteTollRate {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteTollRate");
+        formatter.field("applicable_times", &"*** Sensitive Data Redacted ***");
+        formatter.field("converted_price", &self.converted_price);
+        formatter.field("id", &"*** Sensitive Data Redacted ***");
+        formatter.field("local_price", &self.local_price);
+        formatter.field("name", &"*** Sensitive Data Redacted ***");
+        formatter.field("pass", &self.pass);
+        formatter.field("payment_methods", &"*** Sensitive Data Redacted ***");
+        formatter.field("transponders", &self.transponders);
+        formatter.finish()
+    }
+}
 impl RouteTollRate {
     /// Creates a new builder-style object to manufacture [`RouteTollRate`](crate::types::RouteTollRate).
     pub fn builder() -> crate::types::builders::RouteTollRateBuilder {
@@ -67,7 +81,7 @@ impl RouteTollRate {
 }
 
 /// A builder for [`RouteTollRate`](crate::types::RouteTollRate).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct RouteTollRateBuilder {
     pub(crate) applicable_times: ::std::option::Option<::std::string::String>,
@@ -244,5 +258,19 @@ impl RouteTollRateBuilder {
                 )
             })?,
         })
+    }
+}
+impl ::std::fmt::Debug for RouteTollRateBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteTollRateBuilder");
+        formatter.field("applicable_times", &"*** Sensitive Data Redacted ***");
+        formatter.field("converted_price", &self.converted_price);
+        formatter.field("id", &"*** Sensitive Data Redacted ***");
+        formatter.field("local_price", &self.local_price);
+        formatter.field("name", &"*** Sensitive Data Redacted ***");
+        formatter.field("pass", &self.pass);
+        formatter.field("payment_methods", &"*** Sensitive Data Redacted ***");
+        formatter.field("transponders", &self.transponders);
+        formatter.finish()
     }
 }

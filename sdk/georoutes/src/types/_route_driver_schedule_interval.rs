@@ -2,7 +2,7 @@
 
 /// <p>Interval of the driver work-rest schedule. Stops are added to fulfil the provided rest schedule.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RouteDriverScheduleInterval {
     /// <p>Maximum allowed driving time before stopping to rest.</p>
     /// <p><b>Unit</b>: <code>seconds</code></p>
@@ -23,6 +23,14 @@ impl RouteDriverScheduleInterval {
         self.rest_duration
     }
 }
+impl ::std::fmt::Debug for RouteDriverScheduleInterval {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteDriverScheduleInterval");
+        formatter.field("drive_duration", &"*** Sensitive Data Redacted ***");
+        formatter.field("rest_duration", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl RouteDriverScheduleInterval {
     /// Creates a new builder-style object to manufacture [`RouteDriverScheduleInterval`](crate::types::RouteDriverScheduleInterval).
     pub fn builder() -> crate::types::builders::RouteDriverScheduleIntervalBuilder {
@@ -31,7 +39,7 @@ impl RouteDriverScheduleInterval {
 }
 
 /// A builder for [`RouteDriverScheduleInterval`](crate::types::RouteDriverScheduleInterval).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct RouteDriverScheduleIntervalBuilder {
     pub(crate) drive_duration: ::std::option::Option<i64>,
@@ -80,5 +88,13 @@ impl RouteDriverScheduleIntervalBuilder {
             drive_duration: self.drive_duration.unwrap_or_default(),
             rest_duration: self.rest_duration.unwrap_or_default(),
         }
+    }
+}
+impl ::std::fmt::Debug for RouteDriverScheduleIntervalBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteDriverScheduleIntervalBuilder");
+        formatter.field("drive_duration", &"*** Sensitive Data Redacted ***");
+        formatter.field("rest_duration", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

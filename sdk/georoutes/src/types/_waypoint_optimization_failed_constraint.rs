@@ -2,7 +2,7 @@
 
 /// <p>The failed constraint.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct WaypointOptimizationFailedConstraint {
     /// <p>The failed constraint.</p>
     pub constraint: ::std::option::Option<crate::types::WaypointOptimizationConstraint>,
@@ -19,6 +19,14 @@ impl WaypointOptimizationFailedConstraint {
         self.reason.as_deref()
     }
 }
+impl ::std::fmt::Debug for WaypointOptimizationFailedConstraint {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("WaypointOptimizationFailedConstraint");
+        formatter.field("constraint", &"*** Sensitive Data Redacted ***");
+        formatter.field("reason", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl WaypointOptimizationFailedConstraint {
     /// Creates a new builder-style object to manufacture [`WaypointOptimizationFailedConstraint`](crate::types::WaypointOptimizationFailedConstraint).
     pub fn builder() -> crate::types::builders::WaypointOptimizationFailedConstraintBuilder {
@@ -27,7 +35,7 @@ impl WaypointOptimizationFailedConstraint {
 }
 
 /// A builder for [`WaypointOptimizationFailedConstraint`](crate::types::WaypointOptimizationFailedConstraint).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct WaypointOptimizationFailedConstraintBuilder {
     pub(crate) constraint: ::std::option::Option<crate::types::WaypointOptimizationConstraint>,
@@ -68,5 +76,13 @@ impl WaypointOptimizationFailedConstraintBuilder {
             constraint: self.constraint,
             reason: self.reason,
         }
+    }
+}
+impl ::std::fmt::Debug for WaypointOptimizationFailedConstraintBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("WaypointOptimizationFailedConstraintBuilder");
+        formatter.field("constraint", &"*** Sensitive Data Redacted ***");
+        formatter.field("reason", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

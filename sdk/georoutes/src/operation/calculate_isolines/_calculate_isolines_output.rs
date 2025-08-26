@@ -76,8 +76,8 @@ impl CalculateIsolinesOutput {
 impl ::std::fmt::Debug for CalculateIsolinesOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CalculateIsolinesOutput");
-        formatter.field("arrival_time", &self.arrival_time);
-        formatter.field("departure_time", &self.departure_time);
+        formatter.field("arrival_time", &"*** Sensitive Data Redacted ***");
+        formatter.field("departure_time", &"*** Sensitive Data Redacted ***");
         formatter.field("isoline_geometry_format", &self.isoline_geometry_format);
         formatter.field("isolines", &self.isolines);
         formatter.field("pricing_bucket", &self.pricing_bucket);
@@ -305,8 +305,8 @@ impl CalculateIsolinesOutputBuilder {
 impl ::std::fmt::Debug for CalculateIsolinesOutputBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CalculateIsolinesOutputBuilder");
-        formatter.field("arrival_time", &self.arrival_time);
-        formatter.field("departure_time", &self.departure_time);
+        formatter.field("arrival_time", &"*** Sensitive Data Redacted ***");
+        formatter.field("departure_time", &"*** Sensitive Data Redacted ***");
         formatter.field("isoline_geometry_format", &self.isoline_geometry_format);
         formatter.field("isolines", &self.isolines);
         formatter.field("pricing_bucket", &self.pricing_bucket);

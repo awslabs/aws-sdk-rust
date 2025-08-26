@@ -2,7 +2,7 @@
 
 /// <p>Driving distance related options.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct WaypointOptimizationDrivingDistanceOptions {
     /// <p>DrivingDistance assigns all the waypoints that are within driving distance of each other into a single cluster.</p>
     pub driving_distance: i64,
@@ -13,6 +13,13 @@ impl WaypointOptimizationDrivingDistanceOptions {
         self.driving_distance
     }
 }
+impl ::std::fmt::Debug for WaypointOptimizationDrivingDistanceOptions {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("WaypointOptimizationDrivingDistanceOptions");
+        formatter.field("driving_distance", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl WaypointOptimizationDrivingDistanceOptions {
     /// Creates a new builder-style object to manufacture [`WaypointOptimizationDrivingDistanceOptions`](crate::types::WaypointOptimizationDrivingDistanceOptions).
     pub fn builder() -> crate::types::builders::WaypointOptimizationDrivingDistanceOptionsBuilder {
@@ -21,7 +28,7 @@ impl WaypointOptimizationDrivingDistanceOptions {
 }
 
 /// A builder for [`WaypointOptimizationDrivingDistanceOptions`](crate::types::WaypointOptimizationDrivingDistanceOptions).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct WaypointOptimizationDrivingDistanceOptionsBuilder {
     pub(crate) driving_distance: ::std::option::Option<i64>,
@@ -47,5 +54,12 @@ impl WaypointOptimizationDrivingDistanceOptionsBuilder {
         crate::types::WaypointOptimizationDrivingDistanceOptions {
             driving_distance: self.driving_distance.unwrap_or_default(),
         }
+    }
+}
+impl ::std::fmt::Debug for WaypointOptimizationDrivingDistanceOptionsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("WaypointOptimizationDrivingDistanceOptionsBuilder");
+        formatter.field("driving_distance", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

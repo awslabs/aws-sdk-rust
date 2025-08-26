@@ -3,8 +3,8 @@ pub fn ser_create_practice_run_configuration_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_practice_run_configuration::CreatePracticeRunConfigurationInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.blocked_dates {
-        let mut array_2 = object.key("blockedDates").start_array();
+    if let Some(var_1) = &input.allowed_windows {
+        let mut array_2 = object.key("allowedWindows").start_array();
         for item_3 in var_1 {
             {
                 array_2.value().string(item_3.as_str());
@@ -12,8 +12,8 @@ pub fn ser_create_practice_run_configuration_input_input(
         }
         array_2.finish();
     }
-    if let Some(var_4) = &input.blocked_windows {
-        let mut array_5 = object.key("blockedWindows").start_array();
+    if let Some(var_4) = &input.blocked_dates {
+        let mut array_5 = object.key("blockedDates").start_array();
         for item_6 in var_4 {
             {
                 array_5.value().string(item_6.as_str());
@@ -21,32 +21,41 @@ pub fn ser_create_practice_run_configuration_input_input(
         }
         array_5.finish();
     }
-    if let Some(var_7) = &input.blocking_alarms {
-        let mut array_8 = object.key("blockingAlarms").start_array();
+    if let Some(var_7) = &input.blocked_windows {
+        let mut array_8 = object.key("blockedWindows").start_array();
         for item_9 in var_7 {
             {
-                #[allow(unused_mut)]
-                let mut object_10 = array_8.value().start_object();
-                crate::protocol_serde::shape_control_condition::ser_control_condition(&mut object_10, item_9)?;
-                object_10.finish();
+                array_8.value().string(item_9.as_str());
             }
         }
         array_8.finish();
     }
-    if let Some(var_11) = &input.outcome_alarms {
-        let mut array_12 = object.key("outcomeAlarms").start_array();
-        for item_13 in var_11 {
+    if let Some(var_10) = &input.blocking_alarms {
+        let mut array_11 = object.key("blockingAlarms").start_array();
+        for item_12 in var_10 {
             {
                 #[allow(unused_mut)]
-                let mut object_14 = array_12.value().start_object();
-                crate::protocol_serde::shape_control_condition::ser_control_condition(&mut object_14, item_13)?;
-                object_14.finish();
+                let mut object_13 = array_11.value().start_object();
+                crate::protocol_serde::shape_control_condition::ser_control_condition(&mut object_13, item_12)?;
+                object_13.finish();
             }
         }
-        array_12.finish();
+        array_11.finish();
     }
-    if let Some(var_15) = &input.resource_identifier {
-        object.key("resourceIdentifier").string(var_15.as_str());
+    if let Some(var_14) = &input.outcome_alarms {
+        let mut array_15 = object.key("outcomeAlarms").start_array();
+        for item_16 in var_14 {
+            {
+                #[allow(unused_mut)]
+                let mut object_17 = array_15.value().start_object();
+                crate::protocol_serde::shape_control_condition::ser_control_condition(&mut object_17, item_16)?;
+                object_17.finish();
+            }
+        }
+        array_15.finish();
+    }
+    if let Some(var_18) = &input.resource_identifier {
+        object.key("resourceIdentifier").string(var_18.as_str());
     }
     Ok(())
 }

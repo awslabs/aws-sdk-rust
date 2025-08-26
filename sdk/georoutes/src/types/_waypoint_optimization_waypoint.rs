@@ -64,12 +64,12 @@ impl ::std::fmt::Debug for WaypointOptimizationWaypoint {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("WaypointOptimizationWaypoint");
         formatter.field("access_hours", &self.access_hours);
-        formatter.field("appointment_time", &self.appointment_time);
+        formatter.field("appointment_time", &"*** Sensitive Data Redacted ***");
         formatter.field("before", &self.before);
-        formatter.field("heading", &self.heading);
+        formatter.field("heading", &"*** Sensitive Data Redacted ***");
         formatter.field("id", &self.id);
         formatter.field("position", &"*** Sensitive Data Redacted ***");
-        formatter.field("service_duration", &self.service_duration);
+        formatter.field("service_duration", &"*** Sensitive Data Redacted ***");
         formatter.field("side_of_street", &self.side_of_street);
         formatter.finish()
     }
@@ -247,12 +247,12 @@ impl ::std::fmt::Debug for WaypointOptimizationWaypointBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("WaypointOptimizationWaypointBuilder");
         formatter.field("access_hours", &self.access_hours);
-        formatter.field("appointment_time", &self.appointment_time);
+        formatter.field("appointment_time", &"*** Sensitive Data Redacted ***");
         formatter.field("before", &self.before);
-        formatter.field("heading", &self.heading);
+        formatter.field("heading", &"*** Sensitive Data Redacted ***");
         formatter.field("id", &self.id);
         formatter.field("position", &"*** Sensitive Data Redacted ***");
-        formatter.field("service_duration", &self.service_duration);
+        formatter.field("service_duration", &"*** Sensitive Data Redacted ***");
         formatter.field("side_of_street", &self.side_of_street);
         formatter.finish()
     }

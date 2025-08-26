@@ -2,7 +2,7 @@
 
 /// <p>Options related to Tolls on a route.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RouteTollOptions {
     /// <p>Specifies if the user has valid transponder with access to all toll systems. This impacts toll calculation, and if true the price with transponders is used.</p>
     pub all_transponders: ::std::option::Option<bool>,
@@ -39,6 +39,17 @@ impl RouteTollOptions {
         self.vehicle_category.as_ref()
     }
 }
+impl ::std::fmt::Debug for RouteTollOptions {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteTollOptions");
+        formatter.field("all_transponders", &"*** Sensitive Data Redacted ***");
+        formatter.field("all_vignettes", &"*** Sensitive Data Redacted ***");
+        formatter.field("currency", &self.currency);
+        formatter.field("emission_type", &self.emission_type);
+        formatter.field("vehicle_category", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl RouteTollOptions {
     /// Creates a new builder-style object to manufacture [`RouteTollOptions`](crate::types::RouteTollOptions).
     pub fn builder() -> crate::types::builders::RouteTollOptionsBuilder {
@@ -47,7 +58,7 @@ impl RouteTollOptions {
 }
 
 /// A builder for [`RouteTollOptions`](crate::types::RouteTollOptions).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct RouteTollOptionsBuilder {
     pub(crate) all_transponders: ::std::option::Option<bool>,
@@ -139,5 +150,16 @@ impl RouteTollOptionsBuilder {
             emission_type: self.emission_type,
             vehicle_category: self.vehicle_category,
         }
+    }
+}
+impl ::std::fmt::Debug for RouteTollOptionsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteTollOptionsBuilder");
+        formatter.field("all_transponders", &"*** Sensitive Data Redacted ***");
+        formatter.field("all_vignettes", &"*** Sensitive Data Redacted ***");
+        formatter.field("currency", &self.currency);
+        formatter.field("emission_type", &self.emission_type);
+        formatter.field("vehicle_category", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

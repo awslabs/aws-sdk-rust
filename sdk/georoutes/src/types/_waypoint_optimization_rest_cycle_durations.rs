@@ -3,7 +3,7 @@
 /// <p>Driver work-rest schedules defined by a short and long cycle. A rest needs to be taken after the short work duration. The short cycle can be repeated until you hit the long work duration, at which point the long rest duration should be taken before restarting.</p>
 /// <p><b>Unit</b>: <code>seconds</code></p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct WaypointOptimizationRestCycleDurations {
     /// <p>Resting phase of the cycle.</p>
     /// <p><b>Unit</b>: <code>seconds</code></p>
@@ -24,6 +24,14 @@ impl WaypointOptimizationRestCycleDurations {
         self.work_duration
     }
 }
+impl ::std::fmt::Debug for WaypointOptimizationRestCycleDurations {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("WaypointOptimizationRestCycleDurations");
+        formatter.field("rest_duration", &"*** Sensitive Data Redacted ***");
+        formatter.field("work_duration", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl WaypointOptimizationRestCycleDurations {
     /// Creates a new builder-style object to manufacture [`WaypointOptimizationRestCycleDurations`](crate::types::WaypointOptimizationRestCycleDurations).
     pub fn builder() -> crate::types::builders::WaypointOptimizationRestCycleDurationsBuilder {
@@ -32,7 +40,7 @@ impl WaypointOptimizationRestCycleDurations {
 }
 
 /// A builder for [`WaypointOptimizationRestCycleDurations`](crate::types::WaypointOptimizationRestCycleDurations).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct WaypointOptimizationRestCycleDurationsBuilder {
     pub(crate) rest_duration: ::std::option::Option<i64>,
@@ -81,5 +89,13 @@ impl WaypointOptimizationRestCycleDurationsBuilder {
             rest_duration: self.rest_duration.unwrap_or_default(),
             work_duration: self.work_duration.unwrap_or_default(),
         }
+    }
+}
+impl ::std::fmt::Debug for WaypointOptimizationRestCycleDurationsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("WaypointOptimizationRestCycleDurationsBuilder");
+        formatter.field("rest_duration", &"*** Sensitive Data Redacted ***");
+        formatter.field("work_duration", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

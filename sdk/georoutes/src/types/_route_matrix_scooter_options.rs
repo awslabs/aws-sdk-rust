@@ -2,7 +2,7 @@
 
 /// <p>Travel mode options when the provided travel mode is <code>Scooter</code></p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RouteMatrixScooterOptions {
     /// <p>The vehicle License Plate.</p>
     pub license_plate: ::std::option::Option<crate::types::RouteMatrixVehicleLicensePlate>,
@@ -29,6 +29,15 @@ impl RouteMatrixScooterOptions {
         self.occupancy
     }
 }
+impl ::std::fmt::Debug for RouteMatrixScooterOptions {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteMatrixScooterOptions");
+        formatter.field("license_plate", &"*** Sensitive Data Redacted ***");
+        formatter.field("max_speed", &"*** Sensitive Data Redacted ***");
+        formatter.field("occupancy", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl RouteMatrixScooterOptions {
     /// Creates a new builder-style object to manufacture [`RouteMatrixScooterOptions`](crate::types::RouteMatrixScooterOptions).
     pub fn builder() -> crate::types::builders::RouteMatrixScooterOptionsBuilder {
@@ -37,7 +46,7 @@ impl RouteMatrixScooterOptions {
 }
 
 /// A builder for [`RouteMatrixScooterOptions`](crate::types::RouteMatrixScooterOptions).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct RouteMatrixScooterOptionsBuilder {
     pub(crate) license_plate: ::std::option::Option<crate::types::RouteMatrixVehicleLicensePlate>,
@@ -100,5 +109,14 @@ impl RouteMatrixScooterOptionsBuilder {
             max_speed: self.max_speed,
             occupancy: self.occupancy,
         }
+    }
+}
+impl ::std::fmt::Debug for RouteMatrixScooterOptionsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteMatrixScooterOptionsBuilder");
+        formatter.field("license_plate", &"*** Sensitive Data Redacted ***");
+        formatter.field("max_speed", &"*** Sensitive Data Redacted ***");
+        formatter.field("occupancy", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

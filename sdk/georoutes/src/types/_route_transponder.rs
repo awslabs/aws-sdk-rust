@@ -2,7 +2,7 @@
 
 /// <p>Transponders for which this toll can be applied.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RouteTransponder {
     /// <p>Names of the toll system collecting the toll.</p>
     pub system_name: ::std::option::Option<::std::string::String>,
@@ -13,6 +13,13 @@ impl RouteTransponder {
         self.system_name.as_deref()
     }
 }
+impl ::std::fmt::Debug for RouteTransponder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteTransponder");
+        formatter.field("system_name", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl RouteTransponder {
     /// Creates a new builder-style object to manufacture [`RouteTransponder`](crate::types::RouteTransponder).
     pub fn builder() -> crate::types::builders::RouteTransponderBuilder {
@@ -21,7 +28,7 @@ impl RouteTransponder {
 }
 
 /// A builder for [`RouteTransponder`](crate::types::RouteTransponder).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct RouteTransponderBuilder {
     pub(crate) system_name: ::std::option::Option<::std::string::String>,
@@ -46,5 +53,12 @@ impl RouteTransponderBuilder {
         crate::types::RouteTransponder {
             system_name: self.system_name,
         }
+    }
+}
+impl ::std::fmt::Debug for RouteTransponderBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteTransponderBuilder");
+        formatter.field("system_name", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

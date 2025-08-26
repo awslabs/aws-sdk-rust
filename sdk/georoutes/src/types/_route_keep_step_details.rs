@@ -2,7 +2,7 @@
 
 /// <p>Details that are specific to a Keep step.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RouteKeepStepDetails {
     /// <p>Name of the intersection, if applicable to the step.</p>
     pub intersection: ::std::vec::Vec<crate::types::LocalizedString>,
@@ -32,6 +32,16 @@ impl RouteKeepStepDetails {
         self.turn_intensity.as_ref()
     }
 }
+impl ::std::fmt::Debug for RouteKeepStepDetails {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteKeepStepDetails");
+        formatter.field("intersection", &self.intersection);
+        formatter.field("steering_direction", &"*** Sensitive Data Redacted ***");
+        formatter.field("turn_angle", &self.turn_angle);
+        formatter.field("turn_intensity", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl RouteKeepStepDetails {
     /// Creates a new builder-style object to manufacture [`RouteKeepStepDetails`](crate::types::RouteKeepStepDetails).
     pub fn builder() -> crate::types::builders::RouteKeepStepDetailsBuilder {
@@ -40,7 +50,7 @@ impl RouteKeepStepDetails {
 }
 
 /// A builder for [`RouteKeepStepDetails`](crate::types::RouteKeepStepDetails).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct RouteKeepStepDetailsBuilder {
     pub(crate) intersection: ::std::option::Option<::std::vec::Vec<crate::types::LocalizedString>>,
@@ -126,5 +136,15 @@ impl RouteKeepStepDetailsBuilder {
             turn_angle: self.turn_angle.unwrap_or_default(),
             turn_intensity: self.turn_intensity,
         })
+    }
+}
+impl ::std::fmt::Debug for RouteKeepStepDetailsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteKeepStepDetailsBuilder");
+        formatter.field("intersection", &self.intersection);
+        formatter.field("steering_direction", &"*** Sensitive Data Redacted ***");
+        formatter.field("turn_angle", &self.turn_angle);
+        formatter.field("turn_intensity", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

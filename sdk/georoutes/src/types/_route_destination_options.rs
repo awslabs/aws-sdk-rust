@@ -2,7 +2,7 @@
 
 /// <p>Options related to the destination.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RouteDestinationOptions {
     /// <p>Avoids actions for the provided distance. This is typically to consider for users in moving vehicles who may not have sufficient time to make an action at an origin or a destination.</p>
     pub avoid_actions_for_distance: i64,
@@ -45,6 +45,18 @@ impl RouteDestinationOptions {
         self.stop_duration
     }
 }
+impl ::std::fmt::Debug for RouteDestinationOptions {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteDestinationOptions");
+        formatter.field("avoid_actions_for_distance", &"*** Sensitive Data Redacted ***");
+        formatter.field("avoid_u_turns", &"*** Sensitive Data Redacted ***");
+        formatter.field("heading", &"*** Sensitive Data Redacted ***");
+        formatter.field("matching", &self.matching);
+        formatter.field("side_of_street", &self.side_of_street);
+        formatter.field("stop_duration", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl RouteDestinationOptions {
     /// Creates a new builder-style object to manufacture [`RouteDestinationOptions`](crate::types::RouteDestinationOptions).
     pub fn builder() -> crate::types::builders::RouteDestinationOptionsBuilder {
@@ -53,7 +65,7 @@ impl RouteDestinationOptions {
 }
 
 /// A builder for [`RouteDestinationOptions`](crate::types::RouteDestinationOptions).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct RouteDestinationOptionsBuilder {
     pub(crate) avoid_actions_for_distance: ::std::option::Option<i64>,
@@ -161,5 +173,17 @@ impl RouteDestinationOptionsBuilder {
             side_of_street: self.side_of_street,
             stop_duration: self.stop_duration.unwrap_or_default(),
         }
+    }
+}
+impl ::std::fmt::Debug for RouteDestinationOptionsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteDestinationOptionsBuilder");
+        formatter.field("avoid_actions_for_distance", &"*** Sensitive Data Redacted ***");
+        formatter.field("avoid_u_turns", &"*** Sensitive Data Redacted ***");
+        formatter.field("heading", &"*** Sensitive Data Redacted ***");
+        formatter.field("matching", &self.matching);
+        formatter.field("side_of_street", &self.side_of_street);
+        formatter.field("stop_duration", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

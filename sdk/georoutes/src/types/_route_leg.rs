@@ -2,7 +2,7 @@
 
 /// <p>A leg is a section of a route from one waypoint to the next. A leg could be of type Vehicle, Pedestrian or Ferry. Legs of different types could occur together within a single route. For example, a car employing the use of a Ferry will contain Vehicle legs corresponding to journey on land, and Ferry legs corresponding to the journey via Ferry.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RouteLeg {
     /// <p>FerryLegDetails is populated when the Leg type is Ferry, and provides additional information that is specific</p>
     pub ferry_leg_details: ::std::option::Option<crate::types::RouteFerryLegDetails>,
@@ -51,6 +51,19 @@ impl RouteLeg {
         self.vehicle_leg_details.as_ref()
     }
 }
+impl ::std::fmt::Debug for RouteLeg {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteLeg");
+        formatter.field("ferry_leg_details", &self.ferry_leg_details);
+        formatter.field("geometry", &self.geometry);
+        formatter.field("language", &self.language);
+        formatter.field("pedestrian_leg_details", &self.pedestrian_leg_details);
+        formatter.field("travel_mode", &"*** Sensitive Data Redacted ***");
+        formatter.field("r#type", &"*** Sensitive Data Redacted ***");
+        formatter.field("vehicle_leg_details", &self.vehicle_leg_details);
+        formatter.finish()
+    }
+}
 impl RouteLeg {
     /// Creates a new builder-style object to manufacture [`RouteLeg`](crate::types::RouteLeg).
     pub fn builder() -> crate::types::builders::RouteLegBuilder {
@@ -59,7 +72,7 @@ impl RouteLeg {
 }
 
 /// A builder for [`RouteLeg`](crate::types::RouteLeg).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct RouteLegBuilder {
     pub(crate) ferry_leg_details: ::std::option::Option<crate::types::RouteFerryLegDetails>,
@@ -199,5 +212,18 @@ impl RouteLegBuilder {
             })?,
             vehicle_leg_details: self.vehicle_leg_details,
         })
+    }
+}
+impl ::std::fmt::Debug for RouteLegBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteLegBuilder");
+        formatter.field("ferry_leg_details", &self.ferry_leg_details);
+        formatter.field("geometry", &self.geometry);
+        formatter.field("language", &self.language);
+        formatter.field("pedestrian_leg_details", &self.pedestrian_leg_details);
+        formatter.field("travel_mode", &"*** Sensitive Data Redacted ***");
+        formatter.field("r#type", &"*** Sensitive Data Redacted ***");
+        formatter.field("vehicle_leg_details", &self.vehicle_leg_details);
+        formatter.finish()
     }
 }

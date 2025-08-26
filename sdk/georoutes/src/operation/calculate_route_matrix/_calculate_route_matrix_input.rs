@@ -115,10 +115,10 @@ impl CalculateRouteMatrixInput {
 impl ::std::fmt::Debug for CalculateRouteMatrixInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CalculateRouteMatrixInput");
-        formatter.field("allow", &self.allow);
+        formatter.field("allow", &"*** Sensitive Data Redacted ***");
         formatter.field("avoid", &self.avoid);
-        formatter.field("depart_now", &self.depart_now);
-        formatter.field("departure_time", &self.departure_time);
+        formatter.field("depart_now", &"*** Sensitive Data Redacted ***");
+        formatter.field("departure_time", &"*** Sensitive Data Redacted ***");
         formatter.field("destinations", &self.destinations);
         formatter.field("exclude", &self.exclude);
         formatter.field("key", &"*** Sensitive Data Redacted ***");
@@ -413,10 +413,10 @@ impl CalculateRouteMatrixInputBuilder {
 impl ::std::fmt::Debug for CalculateRouteMatrixInputBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CalculateRouteMatrixInputBuilder");
-        formatter.field("allow", &self.allow);
+        formatter.field("allow", &"*** Sensitive Data Redacted ***");
         formatter.field("avoid", &self.avoid);
-        formatter.field("depart_now", &self.depart_now);
-        formatter.field("departure_time", &self.departure_time);
+        formatter.field("depart_now", &"*** Sensitive Data Redacted ***");
+        formatter.field("departure_time", &"*** Sensitive Data Redacted ***");
         formatter.field("destinations", &self.destinations);
         formatter.field("exclude", &self.exclude);
         formatter.field("key", &"*** Sensitive Data Redacted ***");

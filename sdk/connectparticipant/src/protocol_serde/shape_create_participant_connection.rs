@@ -146,7 +146,7 @@ pub(crate) fn de_create_participant_connection(
                         builder.set_connection_credentials(crate::protocol_serde::shape_connection_credentials::de_connection_credentials(tokens)?);
                 }
                 "WebRTCConnection" => {
-                    builder = builder.set_web_rtc_connection(crate::protocol_serde::shape_connection_data::de_connection_data(tokens)?);
+                    builder = builder.set_web_rtc_connection(crate::protocol_serde::shape_web_rtc_connection::de_web_rtc_connection(tokens)?);
                 }
                 "Websocket" => {
                     builder = builder.set_websocket(crate::protocol_serde::shape_websocket::de_websocket(tokens)?);

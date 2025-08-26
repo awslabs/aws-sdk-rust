@@ -42,7 +42,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-socialmessaging = "1.36.0"
+//! aws-sdk-socialmessaging = "1.37.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

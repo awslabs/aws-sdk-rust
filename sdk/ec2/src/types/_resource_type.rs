@@ -31,6 +31,7 @@
 ///     ResourceType::FpgaImage => { /* ... */ },
 ///     ResourceType::HostReservation => { /* ... */ },
 ///     ResourceType::Image => { /* ... */ },
+///     ResourceType::ImageUsageReport => { /* ... */ },
 ///     ResourceType::ImportImageTask => { /* ... */ },
 ///     ResourceType::ImportSnapshotTask => { /* ... */ },
 ///     ResourceType::Instance => { /* ... */ },
@@ -174,6 +175,8 @@ pub enum ResourceType {
     HostReservation,
     #[allow(missing_docs)] // documentation missing in model
     Image,
+    #[allow(missing_docs)] // documentation missing in model
+    ImageUsageReport,
     #[allow(missing_docs)] // documentation missing in model
     ImportImageTask,
     #[allow(missing_docs)] // documentation missing in model
@@ -354,6 +357,7 @@ impl ::std::convert::From<&str> for ResourceType {
             "fpga-image" => ResourceType::FpgaImage,
             "host-reservation" => ResourceType::HostReservation,
             "image" => ResourceType::Image,
+            "image-usage-report" => ResourceType::ImageUsageReport,
             "import-image-task" => ResourceType::ImportImageTask,
             "import-snapshot-task" => ResourceType::ImportSnapshotTask,
             "instance" => ResourceType::Instance,
@@ -465,6 +469,7 @@ impl ResourceType {
             ResourceType::FpgaImage => "fpga-image",
             ResourceType::HostReservation => "host-reservation",
             ResourceType::Image => "image",
+            ResourceType::ImageUsageReport => "image-usage-report",
             ResourceType::ImportImageTask => "import-image-task",
             ResourceType::ImportSnapshotTask => "import-snapshot-task",
             ResourceType::Instance => "instance",
@@ -567,6 +572,7 @@ impl ResourceType {
             "fpga-image",
             "host-reservation",
             "image",
+            "image-usage-report",
             "import-image-task",
             "import-snapshot-task",
             "instance",
@@ -686,6 +692,7 @@ impl ::std::fmt::Display for ResourceType {
             ResourceType::FpgaImage => write!(f, "fpga-image"),
             ResourceType::HostReservation => write!(f, "host-reservation"),
             ResourceType::Image => write!(f, "image"),
+            ResourceType::ImageUsageReport => write!(f, "image-usage-report"),
             ResourceType::ImportImageTask => write!(f, "import-image-task"),
             ResourceType::ImportSnapshotTask => write!(f, "import-snapshot-task"),
             ResourceType::Instance => write!(f, "instance"),

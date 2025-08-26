@@ -103,6 +103,8 @@ pub(crate) mod shape_zonal_shift_summaries;
 
 pub(crate) mod shape_zonal_shifts_in_resource;
 
+pub(crate) mod shape_allowed_windows;
+
 pub(crate) mod shape_autoshift_in_resource;
 
 pub(crate) mod shape_autoshift_summary;
@@ -111,9 +113,11 @@ pub(crate) mod shape_blocked_dates;
 
 pub(crate) mod shape_blocked_windows;
 
-pub(crate) mod shape_control_conditions;
+pub(crate) mod shape_blocking_alarms;
 
 pub(crate) mod shape_managed_resource_summary;
+
+pub(crate) mod shape_outcome_alarms;
 
 pub(crate) mod shape_zonal_shift_in_resource;
 

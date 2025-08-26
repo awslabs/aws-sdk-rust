@@ -2,7 +2,7 @@
 
 /// <p>Steps of a leg that correspond to the travel portion of the leg.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RouteVehicleTravelStep {
     /// <p>Details that are specific to a Continue Highway step.</p>
     pub continue_highway_step_details: ::std::option::Option<crate::types::RouteContinueHighwayStepDetails>,
@@ -135,6 +135,32 @@ impl RouteVehicleTravelStep {
         self.u_turn_step_details.as_ref()
     }
 }
+impl ::std::fmt::Debug for RouteVehicleTravelStep {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteVehicleTravelStep");
+        formatter.field("continue_highway_step_details", &self.continue_highway_step_details);
+        formatter.field("continue_step_details", &self.continue_step_details);
+        formatter.field("current_road", &self.current_road);
+        formatter.field("distance", &"*** Sensitive Data Redacted ***");
+        formatter.field("duration", &"*** Sensitive Data Redacted ***");
+        formatter.field("enter_highway_step_details", &self.enter_highway_step_details);
+        formatter.field("exit_number", &self.exit_number);
+        formatter.field("exit_step_details", &self.exit_step_details);
+        formatter.field("geometry_offset", &self.geometry_offset);
+        formatter.field("instruction", &"*** Sensitive Data Redacted ***");
+        formatter.field("keep_step_details", &self.keep_step_details);
+        formatter.field("next_road", &self.next_road);
+        formatter.field("ramp_step_details", &self.ramp_step_details);
+        formatter.field("roundabout_enter_step_details", &self.roundabout_enter_step_details);
+        formatter.field("roundabout_exit_step_details", &self.roundabout_exit_step_details);
+        formatter.field("roundabout_pass_step_details", &self.roundabout_pass_step_details);
+        formatter.field("signpost", &self.signpost);
+        formatter.field("turn_step_details", &self.turn_step_details);
+        formatter.field("r#type", &"*** Sensitive Data Redacted ***");
+        formatter.field("u_turn_step_details", &self.u_turn_step_details);
+        formatter.finish()
+    }
+}
 impl RouteVehicleTravelStep {
     /// Creates a new builder-style object to manufacture [`RouteVehicleTravelStep`](crate::types::RouteVehicleTravelStep).
     pub fn builder() -> crate::types::builders::RouteVehicleTravelStepBuilder {
@@ -143,7 +169,7 @@ impl RouteVehicleTravelStep {
 }
 
 /// A builder for [`RouteVehicleTravelStep`](crate::types::RouteVehicleTravelStep).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct RouteVehicleTravelStepBuilder {
     pub(crate) continue_highway_step_details: ::std::option::Option<crate::types::RouteContinueHighwayStepDetails>,
@@ -496,5 +522,31 @@ impl RouteVehicleTravelStepBuilder {
             })?,
             u_turn_step_details: self.u_turn_step_details,
         })
+    }
+}
+impl ::std::fmt::Debug for RouteVehicleTravelStepBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteVehicleTravelStepBuilder");
+        formatter.field("continue_highway_step_details", &self.continue_highway_step_details);
+        formatter.field("continue_step_details", &self.continue_step_details);
+        formatter.field("current_road", &self.current_road);
+        formatter.field("distance", &"*** Sensitive Data Redacted ***");
+        formatter.field("duration", &"*** Sensitive Data Redacted ***");
+        formatter.field("enter_highway_step_details", &self.enter_highway_step_details);
+        formatter.field("exit_number", &self.exit_number);
+        formatter.field("exit_step_details", &self.exit_step_details);
+        formatter.field("geometry_offset", &self.geometry_offset);
+        formatter.field("instruction", &"*** Sensitive Data Redacted ***");
+        formatter.field("keep_step_details", &self.keep_step_details);
+        formatter.field("next_road", &self.next_road);
+        formatter.field("ramp_step_details", &self.ramp_step_details);
+        formatter.field("roundabout_enter_step_details", &self.roundabout_enter_step_details);
+        formatter.field("roundabout_exit_step_details", &self.roundabout_exit_step_details);
+        formatter.field("roundabout_pass_step_details", &self.roundabout_pass_step_details);
+        formatter.field("signpost", &self.signpost);
+        formatter.field("turn_step_details", &self.turn_step_details);
+        formatter.field("r#type", &"*** Sensitive Data Redacted ***");
+        formatter.field("u_turn_step_details", &self.u_turn_step_details);
+        formatter.finish()
     }
 }

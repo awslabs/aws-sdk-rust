@@ -319,6 +319,36 @@ pub(crate) fn reflens_describe_iam_instance_profile_associations_output_output_n
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_describe_image_references_output_output_next_token(
+    input: &crate::operation::describe_image_references::DescribeImageReferencesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_describe_image_usage_report_entries_output_output_next_token(
+    input: &crate::operation::describe_image_usage_report_entries::DescribeImageUsageReportEntriesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_describe_image_usage_reports_output_output_next_token(
+    input: &crate::operation::describe_image_usage_reports::DescribeImageUsageReportsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_describe_images_output_output_next_token(
     input: &crate::operation::describe_images::DescribeImagesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -1730,6 +1760,27 @@ pub(crate) fn lens_describe_iam_instance_profile_associations_output_output_iam_
     input: crate::operation::describe_iam_instance_profile_associations::DescribeIamInstanceProfileAssociationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::IamInstanceProfileAssociation>> {
     let input = input.iam_instance_profile_associations?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_describe_image_references_output_output_image_references(
+    input: crate::operation::describe_image_references::DescribeImageReferencesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ImageReference>> {
+    let input = input.image_references?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_describe_image_usage_report_entries_output_output_image_usage_report_entries(
+    input: crate::operation::describe_image_usage_report_entries::DescribeImageUsageReportEntriesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ImageUsageReportEntry>> {
+    let input = input.image_usage_report_entries?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_describe_image_usage_reports_output_output_image_usage_reports(
+    input: crate::operation::describe_image_usage_reports::DescribeImageUsageReportsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ImageUsageReport>> {
+    let input = input.image_usage_reports?;
     ::std::option::Option::Some(input)
 }
 

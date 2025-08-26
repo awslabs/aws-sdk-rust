@@ -39,9 +39,7 @@
 ///
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::hash::Hash)]
 pub enum RouteZoneCategory {
     #[allow(missing_docs)] // documentation missing in model
     CongestionPricing,
@@ -110,5 +108,10 @@ impl ::std::fmt::Display for RouteZoneCategory {
             RouteZoneCategory::Vignette => write!(f, "Vignette"),
             RouteZoneCategory::Unknown(value) => write!(f, "{}", value),
         }
+    }
+}
+impl ::std::fmt::Debug for RouteZoneCategory {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        ::std::write!(f, "*** Sensitive Data Redacted ***")
     }
 }

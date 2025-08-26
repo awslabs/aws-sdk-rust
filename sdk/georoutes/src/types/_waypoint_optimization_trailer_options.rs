@@ -2,7 +2,7 @@
 
 /// <p>Trailer options corresponding to the vehicle.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct WaypointOptimizationTrailerOptions {
     /// <p>Number of trailers attached to the vehicle.</p>
     /// <p>Default Value: <code>0</code></p>
@@ -15,6 +15,13 @@ impl WaypointOptimizationTrailerOptions {
         self.trailer_count
     }
 }
+impl ::std::fmt::Debug for WaypointOptimizationTrailerOptions {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("WaypointOptimizationTrailerOptions");
+        formatter.field("trailer_count", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl WaypointOptimizationTrailerOptions {
     /// Creates a new builder-style object to manufacture [`WaypointOptimizationTrailerOptions`](crate::types::WaypointOptimizationTrailerOptions).
     pub fn builder() -> crate::types::builders::WaypointOptimizationTrailerOptionsBuilder {
@@ -23,7 +30,7 @@ impl WaypointOptimizationTrailerOptions {
 }
 
 /// A builder for [`WaypointOptimizationTrailerOptions`](crate::types::WaypointOptimizationTrailerOptions).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct WaypointOptimizationTrailerOptionsBuilder {
     pub(crate) trailer_count: ::std::option::Option<i32>,
@@ -51,5 +58,12 @@ impl WaypointOptimizationTrailerOptionsBuilder {
         crate::types::WaypointOptimizationTrailerOptions {
             trailer_count: self.trailer_count,
         }
+    }
+}
+impl ::std::fmt::Debug for WaypointOptimizationTrailerOptionsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("WaypointOptimizationTrailerOptionsBuilder");
+        formatter.field("trailer_count", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

@@ -2,7 +2,7 @@
 
 /// <p>Trailer options corresponding to the vehicle.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RoadSnapTrailerOptions {
     /// <p>Number of trailers attached to the vehicle.</p>
     /// <p>Default Value: <code>0</code></p>
@@ -15,6 +15,13 @@ impl RoadSnapTrailerOptions {
         self.trailer_count
     }
 }
+impl ::std::fmt::Debug for RoadSnapTrailerOptions {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RoadSnapTrailerOptions");
+        formatter.field("trailer_count", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl RoadSnapTrailerOptions {
     /// Creates a new builder-style object to manufacture [`RoadSnapTrailerOptions`](crate::types::RoadSnapTrailerOptions).
     pub fn builder() -> crate::types::builders::RoadSnapTrailerOptionsBuilder {
@@ -23,7 +30,7 @@ impl RoadSnapTrailerOptions {
 }
 
 /// A builder for [`RoadSnapTrailerOptions`](crate::types::RoadSnapTrailerOptions).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct RoadSnapTrailerOptionsBuilder {
     pub(crate) trailer_count: ::std::option::Option<i32>,
@@ -51,5 +58,12 @@ impl RoadSnapTrailerOptionsBuilder {
         crate::types::RoadSnapTrailerOptions {
             trailer_count: self.trailer_count,
         }
+    }
+}
+impl ::std::fmt::Debug for RoadSnapTrailerOptionsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RoadSnapTrailerOptionsBuilder");
+        formatter.field("trailer_count", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

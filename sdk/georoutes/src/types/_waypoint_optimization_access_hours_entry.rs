@@ -2,7 +2,7 @@
 
 /// <p>Hours of entry.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct WaypointOptimizationAccessHoursEntry {
     /// <p>Day of the week.</p>
     pub day_of_week: crate::types::DayOfWeek,
@@ -20,6 +20,14 @@ impl WaypointOptimizationAccessHoursEntry {
         self.time_of_day.deref()
     }
 }
+impl ::std::fmt::Debug for WaypointOptimizationAccessHoursEntry {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("WaypointOptimizationAccessHoursEntry");
+        formatter.field("day_of_week", &"*** Sensitive Data Redacted ***");
+        formatter.field("time_of_day", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl WaypointOptimizationAccessHoursEntry {
     /// Creates a new builder-style object to manufacture [`WaypointOptimizationAccessHoursEntry`](crate::types::WaypointOptimizationAccessHoursEntry).
     pub fn builder() -> crate::types::builders::WaypointOptimizationAccessHoursEntryBuilder {
@@ -28,7 +36,7 @@ impl WaypointOptimizationAccessHoursEntry {
 }
 
 /// A builder for [`WaypointOptimizationAccessHoursEntry`](crate::types::WaypointOptimizationAccessHoursEntry).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct WaypointOptimizationAccessHoursEntryBuilder {
     pub(crate) day_of_week: ::std::option::Option<crate::types::DayOfWeek>,
@@ -86,5 +94,13 @@ impl WaypointOptimizationAccessHoursEntryBuilder {
                 )
             })?,
         })
+    }
+}
+impl ::std::fmt::Debug for WaypointOptimizationAccessHoursEntryBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("WaypointOptimizationAccessHoursEntryBuilder");
+        formatter.field("day_of_week", &"*** Sensitive Data Redacted ***");
+        formatter.field("time_of_day", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

@@ -2,7 +2,7 @@
 
 /// <p>Summary of the route and toll price.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RouteTollPriceSummary {
     /// <p>Currency code corresponding to the price. This is the same as Currency specified in the request.</p>
     pub currency: ::std::string::String,
@@ -38,6 +38,17 @@ impl RouteTollPriceSummary {
         self.value
     }
 }
+impl ::std::fmt::Debug for RouteTollPriceSummary {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteTollPriceSummary");
+        formatter.field("currency", &self.currency);
+        formatter.field("estimate", &"*** Sensitive Data Redacted ***");
+        formatter.field("range", &"*** Sensitive Data Redacted ***");
+        formatter.field("range_value", &self.range_value);
+        formatter.field("value", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl RouteTollPriceSummary {
     /// Creates a new builder-style object to manufacture [`RouteTollPriceSummary`](crate::types::RouteTollPriceSummary).
     pub fn builder() -> crate::types::builders::RouteTollPriceSummaryBuilder {
@@ -46,7 +57,7 @@ impl RouteTollPriceSummary {
 }
 
 /// A builder for [`RouteTollPriceSummary`](crate::types::RouteTollPriceSummary).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct RouteTollPriceSummaryBuilder {
     pub(crate) currency: ::std::option::Option<::std::string::String>,
@@ -164,5 +175,16 @@ impl RouteTollPriceSummaryBuilder {
                 )
             })?,
         })
+    }
+}
+impl ::std::fmt::Debug for RouteTollPriceSummaryBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteTollPriceSummaryBuilder");
+        formatter.field("currency", &self.currency);
+        formatter.field("estimate", &"*** Sensitive Data Redacted ***");
+        formatter.field("range", &"*** Sensitive Data Redacted ***");
+        formatter.field("range_value", &self.range_value);
+        formatter.field("value", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

@@ -3,19 +3,17 @@
 /// <p>A set of endpoints used by clients to connect to the media service group for an Amazon Chime SDK meeting.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MediaPlacement {
+pub struct WebRtcMediaPlacement {
     /// <p>The audio host URL.</p>
     pub audio_host_url: ::std::option::Option<::std::string::String>,
     /// <p>The audio fallback URL.</p>
     pub audio_fallback_url: ::std::option::Option<::std::string::String>,
     /// <p>The signaling URL.</p>
     pub signaling_url: ::std::option::Option<::std::string::String>,
-    /// <p>The turn control URL.</p>
-    pub turn_control_url: ::std::option::Option<::std::string::String>,
     /// <p>The event ingestion URL to which you send client meeting events.</p>
     pub event_ingestion_url: ::std::option::Option<::std::string::String>,
 }
-impl MediaPlacement {
+impl WebRtcMediaPlacement {
     /// <p>The audio host URL.</p>
     pub fn audio_host_url(&self) -> ::std::option::Option<&str> {
         self.audio_host_url.as_deref()
@@ -28,33 +26,28 @@ impl MediaPlacement {
     pub fn signaling_url(&self) -> ::std::option::Option<&str> {
         self.signaling_url.as_deref()
     }
-    /// <p>The turn control URL.</p>
-    pub fn turn_control_url(&self) -> ::std::option::Option<&str> {
-        self.turn_control_url.as_deref()
-    }
     /// <p>The event ingestion URL to which you send client meeting events.</p>
     pub fn event_ingestion_url(&self) -> ::std::option::Option<&str> {
         self.event_ingestion_url.as_deref()
     }
 }
-impl MediaPlacement {
-    /// Creates a new builder-style object to manufacture [`MediaPlacement`](crate::types::MediaPlacement).
-    pub fn builder() -> crate::types::builders::MediaPlacementBuilder {
-        crate::types::builders::MediaPlacementBuilder::default()
+impl WebRtcMediaPlacement {
+    /// Creates a new builder-style object to manufacture [`WebRtcMediaPlacement`](crate::types::WebRtcMediaPlacement).
+    pub fn builder() -> crate::types::builders::WebRtcMediaPlacementBuilder {
+        crate::types::builders::WebRtcMediaPlacementBuilder::default()
     }
 }
 
-/// A builder for [`MediaPlacement`](crate::types::MediaPlacement).
+/// A builder for [`WebRtcMediaPlacement`](crate::types::WebRtcMediaPlacement).
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
-pub struct MediaPlacementBuilder {
+pub struct WebRtcMediaPlacementBuilder {
     pub(crate) audio_host_url: ::std::option::Option<::std::string::String>,
     pub(crate) audio_fallback_url: ::std::option::Option<::std::string::String>,
     pub(crate) signaling_url: ::std::option::Option<::std::string::String>,
-    pub(crate) turn_control_url: ::std::option::Option<::std::string::String>,
     pub(crate) event_ingestion_url: ::std::option::Option<::std::string::String>,
 }
-impl MediaPlacementBuilder {
+impl WebRtcMediaPlacementBuilder {
     /// <p>The audio host URL.</p>
     pub fn audio_host_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.audio_host_url = ::std::option::Option::Some(input.into());
@@ -97,20 +90,6 @@ impl MediaPlacementBuilder {
     pub fn get_signaling_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.signaling_url
     }
-    /// <p>The turn control URL.</p>
-    pub fn turn_control_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.turn_control_url = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The turn control URL.</p>
-    pub fn set_turn_control_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.turn_control_url = input;
-        self
-    }
-    /// <p>The turn control URL.</p>
-    pub fn get_turn_control_url(&self) -> &::std::option::Option<::std::string::String> {
-        &self.turn_control_url
-    }
     /// <p>The event ingestion URL to which you send client meeting events.</p>
     pub fn event_ingestion_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_ingestion_url = ::std::option::Option::Some(input.into());
@@ -125,13 +104,12 @@ impl MediaPlacementBuilder {
     pub fn get_event_ingestion_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.event_ingestion_url
     }
-    /// Consumes the builder and constructs a [`MediaPlacement`](crate::types::MediaPlacement).
-    pub fn build(self) -> crate::types::MediaPlacement {
-        crate::types::MediaPlacement {
+    /// Consumes the builder and constructs a [`WebRtcMediaPlacement`](crate::types::WebRtcMediaPlacement).
+    pub fn build(self) -> crate::types::WebRtcMediaPlacement {
+        crate::types::WebRtcMediaPlacement {
             audio_host_url: self.audio_host_url,
             audio_fallback_url: self.audio_fallback_url,
             signaling_url: self.signaling_url,
-            turn_control_url: self.turn_control_url,
             event_ingestion_url: self.event_ingestion_url,
         }
     }

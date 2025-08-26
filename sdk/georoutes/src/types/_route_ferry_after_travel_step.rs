@@ -2,7 +2,7 @@
 
 /// <p>Steps of a leg that must be performed after the travel portion of the leg.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RouteFerryAfterTravelStep {
     /// <p>Duration of the step.</p>
     /// <p><b>Unit</b>: <code>seconds</code></p>
@@ -31,6 +31,15 @@ impl RouteFerryAfterTravelStep {
         &self.r#type
     }
 }
+impl ::std::fmt::Debug for RouteFerryAfterTravelStep {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteFerryAfterTravelStep");
+        formatter.field("duration", &"*** Sensitive Data Redacted ***");
+        formatter.field("instruction", &"*** Sensitive Data Redacted ***");
+        formatter.field("r#type", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl RouteFerryAfterTravelStep {
     /// Creates a new builder-style object to manufacture [`RouteFerryAfterTravelStep`](crate::types::RouteFerryAfterTravelStep).
     pub fn builder() -> crate::types::builders::RouteFerryAfterTravelStepBuilder {
@@ -39,7 +48,7 @@ impl RouteFerryAfterTravelStep {
 }
 
 /// A builder for [`RouteFerryAfterTravelStep`](crate::types::RouteFerryAfterTravelStep).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct RouteFerryAfterTravelStepBuilder {
     pub(crate) duration: ::std::option::Option<i64>,
@@ -114,5 +123,14 @@ impl RouteFerryAfterTravelStepBuilder {
                 )
             })?,
         })
+    }
+}
+impl ::std::fmt::Debug for RouteFerryAfterTravelStepBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteFerryAfterTravelStepBuilder");
+        formatter.field("duration", &"*** Sensitive Data Redacted ***");
+        formatter.field("instruction", &"*** Sensitive Data Redacted ***");
+        formatter.field("r#type", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

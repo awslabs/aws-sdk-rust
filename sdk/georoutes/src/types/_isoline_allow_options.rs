@@ -2,7 +2,7 @@
 
 /// <p>Features that are allowed while calculating an isoline.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct IsolineAllowOptions {
     /// <p>Allow Hot (High Occupancy Toll) lanes while calculating an isoline.</p>
     /// <p>Default value: <code>false</code></p>
@@ -23,6 +23,14 @@ impl IsolineAllowOptions {
         self.hov
     }
 }
+impl ::std::fmt::Debug for IsolineAllowOptions {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("IsolineAllowOptions");
+        formatter.field("hot", &"*** Sensitive Data Redacted ***");
+        formatter.field("hov", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl IsolineAllowOptions {
     /// Creates a new builder-style object to manufacture [`IsolineAllowOptions`](crate::types::IsolineAllowOptions).
     pub fn builder() -> crate::types::builders::IsolineAllowOptionsBuilder {
@@ -31,7 +39,7 @@ impl IsolineAllowOptions {
 }
 
 /// A builder for [`IsolineAllowOptions`](crate::types::IsolineAllowOptions).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct IsolineAllowOptionsBuilder {
     pub(crate) hot: ::std::option::Option<bool>,
@@ -78,5 +86,13 @@ impl IsolineAllowOptionsBuilder {
             hot: self.hot,
             hov: self.hov,
         }
+    }
+}
+impl ::std::fmt::Debug for IsolineAllowOptionsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("IsolineAllowOptionsBuilder");
+        formatter.field("hot", &"*** Sensitive Data Redacted ***");
+        formatter.field("hov", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

@@ -2,7 +2,7 @@
 
 /// <p>The route number.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RouteNumber {
     /// <p>Directional identifier of the route.</p>
     pub direction: ::std::option::Option<crate::types::RouteDirection>,
@@ -26,6 +26,15 @@ impl RouteNumber {
         self.value.deref()
     }
 }
+impl ::std::fmt::Debug for RouteNumber {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteNumber");
+        formatter.field("direction", &"*** Sensitive Data Redacted ***");
+        formatter.field("language", &self.language);
+        formatter.field("value", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl RouteNumber {
     /// Creates a new builder-style object to manufacture [`RouteNumber`](crate::types::RouteNumber).
     pub fn builder() -> crate::types::builders::RouteNumberBuilder {
@@ -34,7 +43,7 @@ impl RouteNumber {
 }
 
 /// A builder for [`RouteNumber`](crate::types::RouteNumber).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct RouteNumberBuilder {
     pub(crate) direction: ::std::option::Option<crate::types::RouteDirection>,
@@ -99,5 +108,14 @@ impl RouteNumberBuilder {
                 )
             })?,
         })
+    }
+}
+impl ::std::fmt::Debug for RouteNumberBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteNumberBuilder");
+        formatter.field("direction", &"*** Sensitive Data Redacted ***");
+        formatter.field("language", &self.language);
+        formatter.field("value", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

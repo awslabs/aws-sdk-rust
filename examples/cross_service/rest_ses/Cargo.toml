@@ -31,7 +31,7 @@ tracing-log = "0.1.3"
 xlsxwriter = "0.6.0"
 aws-config= { version = "1.8.5", path = "../../../sdk/aws-config" }
 aws-sdk-cloudwatchlogs= { version = "1.100.0", path = "../../../sdk/cloudwatchlogs" }
-aws-sdk-rdsdata= { version = "1.83.0", path = "../../../sdk/rdsdata" }
+aws-sdk-rdsdata= { version = "1.84.0", path = "../../../sdk/rdsdata" }
 aws-sdk-ses= { version = "1.84.0", path = "../../../sdk/ses" }
 aws-smithy-types= { version = "1.3.2", path = "../../../sdk/aws-smithy-types" }
 aws-smithy-runtime= { version = "1.8.6", path = "../../../sdk/aws-smithy-runtime" }

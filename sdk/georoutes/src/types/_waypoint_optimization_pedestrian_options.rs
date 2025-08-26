@@ -2,7 +2,7 @@
 
 /// <p>Options related to a pedestrian.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct WaypointOptimizationPedestrianOptions {
     /// <p>Walking speed.</p>
     /// <p><b>Unit</b>: <code>KilometersPerHour</code></p>
@@ -15,6 +15,13 @@ impl WaypointOptimizationPedestrianOptions {
         self.speed
     }
 }
+impl ::std::fmt::Debug for WaypointOptimizationPedestrianOptions {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("WaypointOptimizationPedestrianOptions");
+        formatter.field("speed", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl WaypointOptimizationPedestrianOptions {
     /// Creates a new builder-style object to manufacture [`WaypointOptimizationPedestrianOptions`](crate::types::WaypointOptimizationPedestrianOptions).
     pub fn builder() -> crate::types::builders::WaypointOptimizationPedestrianOptionsBuilder {
@@ -23,7 +30,7 @@ impl WaypointOptimizationPedestrianOptions {
 }
 
 /// A builder for [`WaypointOptimizationPedestrianOptions`](crate::types::WaypointOptimizationPedestrianOptions).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct WaypointOptimizationPedestrianOptionsBuilder {
     pub(crate) speed: ::std::option::Option<f64>,
@@ -49,5 +56,12 @@ impl WaypointOptimizationPedestrianOptionsBuilder {
     /// Consumes the builder and constructs a [`WaypointOptimizationPedestrianOptions`](crate::types::WaypointOptimizationPedestrianOptions).
     pub fn build(self) -> crate::types::WaypointOptimizationPedestrianOptions {
         crate::types::WaypointOptimizationPedestrianOptions { speed: self.speed }
+    }
+}
+impl ::std::fmt::Debug for WaypointOptimizationPedestrianOptionsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("WaypointOptimizationPedestrianOptionsBuilder");
+        formatter.field("speed", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

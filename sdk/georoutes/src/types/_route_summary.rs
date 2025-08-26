@@ -2,7 +2,7 @@
 
 /// <p>Summarized details for the leg including travel steps only. The Distance for the travel only portion of the journey is the same as the Distance within the Overview summary.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RouteSummary {
     /// <p>Distance of the route.</p>
     pub distance: i64,
@@ -27,6 +27,15 @@ impl RouteSummary {
         self.tolls.as_ref()
     }
 }
+impl ::std::fmt::Debug for RouteSummary {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteSummary");
+        formatter.field("distance", &"*** Sensitive Data Redacted ***");
+        formatter.field("duration", &"*** Sensitive Data Redacted ***");
+        formatter.field("tolls", &self.tolls);
+        formatter.finish()
+    }
+}
 impl RouteSummary {
     /// Creates a new builder-style object to manufacture [`RouteSummary`](crate::types::RouteSummary).
     pub fn builder() -> crate::types::builders::RouteSummaryBuilder {
@@ -35,7 +44,7 @@ impl RouteSummary {
 }
 
 /// A builder for [`RouteSummary`](crate::types::RouteSummary).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct RouteSummaryBuilder {
     pub(crate) distance: ::std::option::Option<i64>,
@@ -95,5 +104,14 @@ impl RouteSummaryBuilder {
             duration: self.duration.unwrap_or_default(),
             tolls: self.tolls,
         }
+    }
+}
+impl ::std::fmt::Debug for RouteSummaryBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteSummaryBuilder");
+        formatter.field("distance", &"*** Sensitive Data Redacted ***");
+        formatter.field("duration", &"*** Sensitive Data Redacted ***");
+        formatter.field("tolls", &self.tolls);
+        formatter.finish()
     }
 }

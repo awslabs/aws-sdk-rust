@@ -2,7 +2,7 @@
 
 /// <p>Period for which the pass is valid.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RouteTollPassValidityPeriod {
     /// <p>Validity period.</p>
     pub period: crate::types::RouteTollPassValidityPeriodType,
@@ -19,6 +19,14 @@ impl RouteTollPassValidityPeriod {
         self.period_count
     }
 }
+impl ::std::fmt::Debug for RouteTollPassValidityPeriod {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteTollPassValidityPeriod");
+        formatter.field("period", &"*** Sensitive Data Redacted ***");
+        formatter.field("period_count", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl RouteTollPassValidityPeriod {
     /// Creates a new builder-style object to manufacture [`RouteTollPassValidityPeriod`](crate::types::RouteTollPassValidityPeriod).
     pub fn builder() -> crate::types::builders::RouteTollPassValidityPeriodBuilder {
@@ -27,7 +35,7 @@ impl RouteTollPassValidityPeriod {
 }
 
 /// A builder for [`RouteTollPassValidityPeriod`](crate::types::RouteTollPassValidityPeriod).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct RouteTollPassValidityPeriodBuilder {
     pub(crate) period: ::std::option::Option<crate::types::RouteTollPassValidityPeriodType>,
@@ -76,5 +84,13 @@ impl RouteTollPassValidityPeriodBuilder {
             })?,
             period_count: self.period_count,
         })
+    }
+}
+impl ::std::fmt::Debug for RouteTollPassValidityPeriodBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteTollPassValidityPeriodBuilder");
+        formatter.field("period", &"*** Sensitive Data Redacted ***");
+        formatter.field("period_count", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

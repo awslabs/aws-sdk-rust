@@ -2,7 +2,7 @@
 
 /// <p>Span computed for the requested SpanAdditionalFeatures.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RouteFerrySpan {
     /// <p>3 letter Country code corresponding to the Span.</p>
     pub country: ::std::option::Option<::std::string::String>,
@@ -49,6 +49,18 @@ impl RouteFerrySpan {
         self.region.as_deref()
     }
 }
+impl ::std::fmt::Debug for RouteFerrySpan {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteFerrySpan");
+        formatter.field("country", &"*** Sensitive Data Redacted ***");
+        formatter.field("distance", &"*** Sensitive Data Redacted ***");
+        formatter.field("duration", &"*** Sensitive Data Redacted ***");
+        formatter.field("geometry_offset", &self.geometry_offset);
+        formatter.field("names", &self.names);
+        formatter.field("region", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl RouteFerrySpan {
     /// Creates a new builder-style object to manufacture [`RouteFerrySpan`](crate::types::RouteFerrySpan).
     pub fn builder() -> crate::types::builders::RouteFerrySpanBuilder {
@@ -57,7 +69,7 @@ impl RouteFerrySpan {
 }
 
 /// A builder for [`RouteFerrySpan`](crate::types::RouteFerrySpan).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct RouteFerrySpanBuilder {
     pub(crate) country: ::std::option::Option<::std::string::String>,
@@ -174,5 +186,17 @@ impl RouteFerrySpanBuilder {
             names: self.names,
             region: self.region,
         }
+    }
+}
+impl ::std::fmt::Debug for RouteFerrySpanBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteFerrySpanBuilder");
+        formatter.field("country", &"*** Sensitive Data Redacted ***");
+        formatter.field("distance", &"*** Sensitive Data Redacted ***");
+        formatter.field("duration", &"*** Sensitive Data Redacted ***");
+        formatter.field("geometry_offset", &self.geometry_offset);
+        formatter.field("names", &self.names);
+        formatter.field("region", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

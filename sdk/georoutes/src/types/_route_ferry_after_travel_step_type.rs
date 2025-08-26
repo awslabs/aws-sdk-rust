@@ -37,9 +37,7 @@
 ///
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::hash::Hash)]
 pub enum RouteFerryAfterTravelStepType {
     #[allow(missing_docs)] // documentation missing in model
     Deboard,
@@ -98,5 +96,10 @@ impl ::std::fmt::Display for RouteFerryAfterTravelStepType {
             RouteFerryAfterTravelStepType::Deboard => write!(f, "Deboard"),
             RouteFerryAfterTravelStepType::Unknown(value) => write!(f, "{}", value),
         }
+    }
+}
+impl ::std::fmt::Debug for RouteFerryAfterTravelStepType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        ::std::write!(f, "*** Sensitive Data Redacted ***")
     }
 }

@@ -2,7 +2,7 @@
 
 /// <p>This property contains a summary of violated constraints.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RouteViolatedConstraints {
     /// <p>This restriction applies to truck cargo, where the resulting route excludes roads on which hazardous materials are prohibited from being transported.</p>
     pub all_hazards_restricted: ::std::option::Option<bool>,
@@ -210,6 +210,31 @@ impl RouteViolatedConstraints {
         self.tunnel_restriction_code.as_deref()
     }
 }
+impl ::std::fmt::Debug for RouteViolatedConstraints {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteViolatedConstraints");
+        formatter.field("all_hazards_restricted", &"*** Sensitive Data Redacted ***");
+        formatter.field("axle_count", &self.axle_count);
+        formatter.field("hazardous_cargos", &"*** Sensitive Data Redacted ***");
+        formatter.field("max_height", &"*** Sensitive Data Redacted ***");
+        formatter.field("max_kpra_length", &"*** Sensitive Data Redacted ***");
+        formatter.field("max_length", &"*** Sensitive Data Redacted ***");
+        formatter.field("max_payload_capacity", &"*** Sensitive Data Redacted ***");
+        formatter.field("max_weight", &self.max_weight);
+        formatter.field("max_weight_per_axle", &"*** Sensitive Data Redacted ***");
+        formatter.field("max_weight_per_axle_group", &self.max_weight_per_axle_group);
+        formatter.field("max_width", &"*** Sensitive Data Redacted ***");
+        formatter.field("occupancy", &self.occupancy);
+        formatter.field("restricted_times", &self.restricted_times);
+        formatter.field("time_dependent", &"*** Sensitive Data Redacted ***");
+        formatter.field("trailer_count", &self.trailer_count);
+        formatter.field("travel_mode", &"*** Sensitive Data Redacted ***");
+        formatter.field("truck_road_type", &self.truck_road_type);
+        formatter.field("truck_type", &"*** Sensitive Data Redacted ***");
+        formatter.field("tunnel_restriction_code", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl RouteViolatedConstraints {
     /// Creates a new builder-style object to manufacture [`RouteViolatedConstraints`](crate::types::RouteViolatedConstraints).
     pub fn builder() -> crate::types::builders::RouteViolatedConstraintsBuilder {
@@ -218,7 +243,7 @@ impl RouteViolatedConstraints {
 }
 
 /// A builder for [`RouteViolatedConstraints`](crate::types::RouteViolatedConstraints).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct RouteViolatedConstraintsBuilder {
     pub(crate) all_hazards_restricted: ::std::option::Option<bool>,
@@ -676,5 +701,30 @@ impl RouteViolatedConstraintsBuilder {
             truck_type: self.truck_type,
             tunnel_restriction_code: self.tunnel_restriction_code,
         })
+    }
+}
+impl ::std::fmt::Debug for RouteViolatedConstraintsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteViolatedConstraintsBuilder");
+        formatter.field("all_hazards_restricted", &"*** Sensitive Data Redacted ***");
+        formatter.field("axle_count", &self.axle_count);
+        formatter.field("hazardous_cargos", &"*** Sensitive Data Redacted ***");
+        formatter.field("max_height", &"*** Sensitive Data Redacted ***");
+        formatter.field("max_kpra_length", &"*** Sensitive Data Redacted ***");
+        formatter.field("max_length", &"*** Sensitive Data Redacted ***");
+        formatter.field("max_payload_capacity", &"*** Sensitive Data Redacted ***");
+        formatter.field("max_weight", &self.max_weight);
+        formatter.field("max_weight_per_axle", &"*** Sensitive Data Redacted ***");
+        formatter.field("max_weight_per_axle_group", &self.max_weight_per_axle_group);
+        formatter.field("max_width", &"*** Sensitive Data Redacted ***");
+        formatter.field("occupancy", &self.occupancy);
+        formatter.field("restricted_times", &self.restricted_times);
+        formatter.field("time_dependent", &"*** Sensitive Data Redacted ***");
+        formatter.field("trailer_count", &self.trailer_count);
+        formatter.field("travel_mode", &"*** Sensitive Data Redacted ***");
+        formatter.field("truck_road_type", &self.truck_road_type);
+        formatter.field("truck_type", &"*** Sensitive Data Redacted ***");
+        formatter.field("tunnel_restriction_code", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

@@ -2,7 +2,7 @@
 
 /// <p>Driver related options.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct WaypointOptimizationDriverOptions {
     /// <p>Driver work-rest schedules defined by a short and long cycle. A rest needs to be taken after the short work duration. The short cycle can be repeated until you hit the long work duration, at which point the long rest duration should be taken before restarting.</p>
     pub rest_cycles: ::std::option::Option<crate::types::WaypointOptimizationRestCycles>,
@@ -25,6 +25,15 @@ impl WaypointOptimizationDriverOptions {
         self.treat_service_time_as.as_ref()
     }
 }
+impl ::std::fmt::Debug for WaypointOptimizationDriverOptions {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("WaypointOptimizationDriverOptions");
+        formatter.field("rest_cycles", &self.rest_cycles);
+        formatter.field("rest_profile", &self.rest_profile);
+        formatter.field("treat_service_time_as", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl WaypointOptimizationDriverOptions {
     /// Creates a new builder-style object to manufacture [`WaypointOptimizationDriverOptions`](crate::types::WaypointOptimizationDriverOptions).
     pub fn builder() -> crate::types::builders::WaypointOptimizationDriverOptionsBuilder {
@@ -33,7 +42,7 @@ impl WaypointOptimizationDriverOptions {
 }
 
 /// A builder for [`WaypointOptimizationDriverOptions`](crate::types::WaypointOptimizationDriverOptions).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct WaypointOptimizationDriverOptionsBuilder {
     pub(crate) rest_cycles: ::std::option::Option<crate::types::WaypointOptimizationRestCycles>,
@@ -90,5 +99,14 @@ impl WaypointOptimizationDriverOptionsBuilder {
             rest_profile: self.rest_profile,
             treat_service_time_as: self.treat_service_time_as,
         }
+    }
+}
+impl ::std::fmt::Debug for WaypointOptimizationDriverOptionsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("WaypointOptimizationDriverOptionsBuilder");
+        formatter.field("rest_cycles", &self.rest_cycles);
+        formatter.field("rest_profile", &self.rest_profile);
+        formatter.field("treat_service_time_as", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

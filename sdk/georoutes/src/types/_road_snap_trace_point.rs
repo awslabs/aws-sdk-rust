@@ -37,10 +37,10 @@ impl RoadSnapTracePoint {
 impl ::std::fmt::Debug for RoadSnapTracePoint {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("RoadSnapTracePoint");
-        formatter.field("heading", &self.heading);
+        formatter.field("heading", &"*** Sensitive Data Redacted ***");
         formatter.field("position", &"*** Sensitive Data Redacted ***");
-        formatter.field("speed", &self.speed);
-        formatter.field("timestamp", &self.timestamp);
+        formatter.field("speed", &"*** Sensitive Data Redacted ***");
+        formatter.field("timestamp", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -146,10 +146,10 @@ impl RoadSnapTracePointBuilder {
 impl ::std::fmt::Debug for RoadSnapTracePointBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("RoadSnapTracePointBuilder");
-        formatter.field("heading", &self.heading);
+        formatter.field("heading", &"*** Sensitive Data Redacted ***");
         formatter.field("position", &"*** Sensitive Data Redacted ***");
-        formatter.field("speed", &self.speed);
-        formatter.field("timestamp", &self.timestamp);
+        formatter.field("speed", &"*** Sensitive Data Redacted ***");
+        formatter.field("timestamp", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

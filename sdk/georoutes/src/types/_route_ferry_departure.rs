@@ -2,7 +2,7 @@
 
 /// <p>Details corresponding to the departure for the leg.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RouteFerryDeparture {
     /// <p>The place details.</p>
     pub place: ::std::option::Option<crate::types::RouteFerryPlace>,
@@ -19,6 +19,14 @@ impl RouteFerryDeparture {
         self.time.as_deref()
     }
 }
+impl ::std::fmt::Debug for RouteFerryDeparture {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteFerryDeparture");
+        formatter.field("place", &self.place);
+        formatter.field("time", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl RouteFerryDeparture {
     /// Creates a new builder-style object to manufacture [`RouteFerryDeparture`](crate::types::RouteFerryDeparture).
     pub fn builder() -> crate::types::builders::RouteFerryDepartureBuilder {
@@ -27,7 +35,7 @@ impl RouteFerryDeparture {
 }
 
 /// A builder for [`RouteFerryDeparture`](crate::types::RouteFerryDeparture).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct RouteFerryDepartureBuilder {
     pub(crate) place: ::std::option::Option<crate::types::RouteFerryPlace>,
@@ -69,5 +77,13 @@ impl RouteFerryDepartureBuilder {
             place: self.place,
             time: self.time,
         }
+    }
+}
+impl ::std::fmt::Debug for RouteFerryDepartureBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteFerryDepartureBuilder");
+        formatter.field("place", &self.place);
+        formatter.field("time", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

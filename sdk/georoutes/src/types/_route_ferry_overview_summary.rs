@@ -2,7 +2,7 @@
 
 /// <p>Summarized details of the leg.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RouteFerryOverviewSummary {
     /// <p>Distance of the step.</p>
     pub distance: i64,
@@ -21,6 +21,14 @@ impl RouteFerryOverviewSummary {
         self.duration
     }
 }
+impl ::std::fmt::Debug for RouteFerryOverviewSummary {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteFerryOverviewSummary");
+        formatter.field("distance", &"*** Sensitive Data Redacted ***");
+        formatter.field("duration", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl RouteFerryOverviewSummary {
     /// Creates a new builder-style object to manufacture [`RouteFerryOverviewSummary`](crate::types::RouteFerryOverviewSummary).
     pub fn builder() -> crate::types::builders::RouteFerryOverviewSummaryBuilder {
@@ -29,7 +37,7 @@ impl RouteFerryOverviewSummary {
 }
 
 /// A builder for [`RouteFerryOverviewSummary`](crate::types::RouteFerryOverviewSummary).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct RouteFerryOverviewSummaryBuilder {
     pub(crate) distance: ::std::option::Option<i64>,
@@ -75,5 +83,13 @@ impl RouteFerryOverviewSummaryBuilder {
             distance: self.distance.unwrap_or_default(),
             duration: self.duration.unwrap_or_default(),
         }
+    }
+}
+impl ::std::fmt::Debug for RouteFerryOverviewSummaryBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteFerryOverviewSummaryBuilder");
+        formatter.field("distance", &"*** Sensitive Data Redacted ***");
+        formatter.field("duration", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

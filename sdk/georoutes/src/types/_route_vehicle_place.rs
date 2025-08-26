@@ -43,11 +43,11 @@ impl RouteVehiclePlace {
 impl ::std::fmt::Debug for RouteVehiclePlace {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("RouteVehiclePlace");
-        formatter.field("name", &self.name);
+        formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("original_position", &"*** Sensitive Data Redacted ***");
         formatter.field("position", &"*** Sensitive Data Redacted ***");
-        formatter.field("side_of_street", &self.side_of_street);
-        formatter.field("waypoint_index", &self.waypoint_index);
+        formatter.field("side_of_street", &"*** Sensitive Data Redacted ***");
+        formatter.field("waypoint_index", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -172,11 +172,11 @@ impl RouteVehiclePlaceBuilder {
 impl ::std::fmt::Debug for RouteVehiclePlaceBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("RouteVehiclePlaceBuilder");
-        formatter.field("name", &self.name);
+        formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("original_position", &"*** Sensitive Data Redacted ***");
         formatter.field("position", &"*** Sensitive Data Redacted ***");
-        formatter.field("side_of_street", &self.side_of_street);
-        formatter.field("waypoint_index", &self.waypoint_index);
+        formatter.field("side_of_street", &"*** Sensitive Data Redacted ***");
+        formatter.field("waypoint_index", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

@@ -2,7 +2,7 @@
 
 /// <p>Traffic related options.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RouteMatrixTrafficOptions {
     /// <p>Duration for which flow traffic is considered valid. For this period, the flow traffic is used over historical traffic data. Flow traffic refers to congestion, which changes very quickly. Duration in seconds for which flow traffic event would be considered valid. While flow traffic event is valid it will be used over the historical traffic data.</p>
     pub flow_event_threshold_override: i64,
@@ -21,6 +21,14 @@ impl RouteMatrixTrafficOptions {
         self.usage.as_ref()
     }
 }
+impl ::std::fmt::Debug for RouteMatrixTrafficOptions {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteMatrixTrafficOptions");
+        formatter.field("flow_event_threshold_override", &"*** Sensitive Data Redacted ***");
+        formatter.field("usage", &self.usage);
+        formatter.finish()
+    }
+}
 impl RouteMatrixTrafficOptions {
     /// Creates a new builder-style object to manufacture [`RouteMatrixTrafficOptions`](crate::types::RouteMatrixTrafficOptions).
     pub fn builder() -> crate::types::builders::RouteMatrixTrafficOptionsBuilder {
@@ -29,7 +37,7 @@ impl RouteMatrixTrafficOptions {
 }
 
 /// A builder for [`RouteMatrixTrafficOptions`](crate::types::RouteMatrixTrafficOptions).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct RouteMatrixTrafficOptionsBuilder {
     pub(crate) flow_event_threshold_override: ::std::option::Option<i64>,
@@ -73,5 +81,13 @@ impl RouteMatrixTrafficOptionsBuilder {
             flow_event_threshold_override: self.flow_event_threshold_override.unwrap_or_default(),
             usage: self.usage,
         }
+    }
+}
+impl ::std::fmt::Debug for RouteMatrixTrafficOptionsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteMatrixTrafficOptionsBuilder");
+        formatter.field("flow_event_threshold_override", &"*** Sensitive Data Redacted ***");
+        formatter.field("usage", &self.usage);
+        formatter.finish()
     }
 }

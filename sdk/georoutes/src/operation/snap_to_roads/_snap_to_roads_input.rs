@@ -57,7 +57,7 @@ impl ::std::fmt::Debug for SnapToRoadsInput {
         let mut formatter = f.debug_struct("SnapToRoadsInput");
         formatter.field("key", &"*** Sensitive Data Redacted ***");
         formatter.field("snapped_geometry_format", &self.snapped_geometry_format);
-        formatter.field("snap_radius", &self.snap_radius);
+        formatter.field("snap_radius", &"*** Sensitive Data Redacted ***");
         formatter.field("trace_points", &self.trace_points);
         formatter.field("travel_mode", &self.travel_mode);
         formatter.field("travel_mode_options", &self.travel_mode_options);
@@ -202,7 +202,7 @@ impl ::std::fmt::Debug for SnapToRoadsInputBuilder {
         let mut formatter = f.debug_struct("SnapToRoadsInputBuilder");
         formatter.field("key", &"*** Sensitive Data Redacted ***");
         formatter.field("snapped_geometry_format", &self.snapped_geometry_format);
-        formatter.field("snap_radius", &self.snap_radius);
+        formatter.field("snap_radius", &"*** Sensitive Data Redacted ***");
         formatter.field("trace_points", &self.trace_points);
         formatter.field("travel_mode", &self.travel_mode);
         formatter.field("travel_mode_options", &self.travel_mode_options);

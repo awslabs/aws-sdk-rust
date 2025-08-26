@@ -3,7 +3,7 @@
 /// <p>Details about the dynamic speed.</p>
 /// <p><b>Unit</b>: <code>KilometersPerHour</code></p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RouteSpanDynamicSpeedDetails {
     /// <p>Estimated speed while traversing the span without traffic congestion.</p>
     /// <p><b>Unit</b>: <code>KilometersPerHour</code></p>
@@ -32,6 +32,15 @@ impl RouteSpanDynamicSpeedDetails {
         self.typical_speed
     }
 }
+impl ::std::fmt::Debug for RouteSpanDynamicSpeedDetails {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteSpanDynamicSpeedDetails");
+        formatter.field("best_case_speed", &"*** Sensitive Data Redacted ***");
+        formatter.field("turn_duration", &"*** Sensitive Data Redacted ***");
+        formatter.field("typical_speed", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl RouteSpanDynamicSpeedDetails {
     /// Creates a new builder-style object to manufacture [`RouteSpanDynamicSpeedDetails`](crate::types::RouteSpanDynamicSpeedDetails).
     pub fn builder() -> crate::types::builders::RouteSpanDynamicSpeedDetailsBuilder {
@@ -40,7 +49,7 @@ impl RouteSpanDynamicSpeedDetails {
 }
 
 /// A builder for [`RouteSpanDynamicSpeedDetails`](crate::types::RouteSpanDynamicSpeedDetails).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct RouteSpanDynamicSpeedDetailsBuilder {
     pub(crate) best_case_speed: ::std::option::Option<f64>,
@@ -106,5 +115,14 @@ impl RouteSpanDynamicSpeedDetailsBuilder {
             turn_duration: self.turn_duration.unwrap_or_default(),
             typical_speed: self.typical_speed.unwrap_or_default(),
         }
+    }
+}
+impl ::std::fmt::Debug for RouteSpanDynamicSpeedDetailsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteSpanDynamicSpeedDetailsBuilder");
+        formatter.field("best_case_speed", &"*** Sensitive Data Redacted ***");
+        formatter.field("turn_duration", &"*** Sensitive Data Redacted ***");
+        formatter.field("typical_speed", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

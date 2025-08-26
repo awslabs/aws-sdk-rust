@@ -2,7 +2,7 @@
 
 /// <p>Details about the roundabout leg.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RouteRoundaboutEnterStepDetails {
     /// <p>Name of the intersection, if applicable to the step.</p>
     pub intersection: ::std::vec::Vec<crate::types::LocalizedString>,
@@ -32,6 +32,16 @@ impl RouteRoundaboutEnterStepDetails {
         self.turn_intensity.as_ref()
     }
 }
+impl ::std::fmt::Debug for RouteRoundaboutEnterStepDetails {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteRoundaboutEnterStepDetails");
+        formatter.field("intersection", &self.intersection);
+        formatter.field("steering_direction", &"*** Sensitive Data Redacted ***");
+        formatter.field("turn_angle", &self.turn_angle);
+        formatter.field("turn_intensity", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl RouteRoundaboutEnterStepDetails {
     /// Creates a new builder-style object to manufacture [`RouteRoundaboutEnterStepDetails`](crate::types::RouteRoundaboutEnterStepDetails).
     pub fn builder() -> crate::types::builders::RouteRoundaboutEnterStepDetailsBuilder {
@@ -40,7 +50,7 @@ impl RouteRoundaboutEnterStepDetails {
 }
 
 /// A builder for [`RouteRoundaboutEnterStepDetails`](crate::types::RouteRoundaboutEnterStepDetails).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct RouteRoundaboutEnterStepDetailsBuilder {
     pub(crate) intersection: ::std::option::Option<::std::vec::Vec<crate::types::LocalizedString>>,
@@ -126,5 +136,15 @@ impl RouteRoundaboutEnterStepDetailsBuilder {
             turn_angle: self.turn_angle.unwrap_or_default(),
             turn_intensity: self.turn_intensity,
         })
+    }
+}
+impl ::std::fmt::Debug for RouteRoundaboutEnterStepDetailsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteRoundaboutEnterStepDetailsBuilder");
+        formatter.field("intersection", &self.intersection);
+        formatter.field("steering_direction", &"*** Sensitive Data Redacted ***");
+        formatter.field("turn_angle", &self.turn_angle);
+        formatter.field("turn_intensity", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

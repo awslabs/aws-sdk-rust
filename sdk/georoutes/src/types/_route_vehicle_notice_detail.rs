@@ -2,7 +2,7 @@
 
 /// <p>Additional details of the notice.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RouteVehicleNoticeDetail {
     /// <p>The notice title.</p>
     pub title: ::std::option::Option<::std::string::String>,
@@ -19,6 +19,14 @@ impl RouteVehicleNoticeDetail {
         self.violated_constraints.as_ref()
     }
 }
+impl ::std::fmt::Debug for RouteVehicleNoticeDetail {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteVehicleNoticeDetail");
+        formatter.field("title", &"*** Sensitive Data Redacted ***");
+        formatter.field("violated_constraints", &self.violated_constraints);
+        formatter.finish()
+    }
+}
 impl RouteVehicleNoticeDetail {
     /// Creates a new builder-style object to manufacture [`RouteVehicleNoticeDetail`](crate::types::RouteVehicleNoticeDetail).
     pub fn builder() -> crate::types::builders::RouteVehicleNoticeDetailBuilder {
@@ -27,7 +35,7 @@ impl RouteVehicleNoticeDetail {
 }
 
 /// A builder for [`RouteVehicleNoticeDetail`](crate::types::RouteVehicleNoticeDetail).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct RouteVehicleNoticeDetailBuilder {
     pub(crate) title: ::std::option::Option<::std::string::String>,
@@ -68,5 +76,13 @@ impl RouteVehicleNoticeDetailBuilder {
             title: self.title,
             violated_constraints: self.violated_constraints,
         }
+    }
+}
+impl ::std::fmt::Debug for RouteVehicleNoticeDetailBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteVehicleNoticeDetailBuilder");
+        formatter.field("title", &"*** Sensitive Data Redacted ***");
+        formatter.field("violated_constraints", &self.violated_constraints);
+        formatter.finish()
     }
 }

@@ -2,7 +2,7 @@
 
 /// <p>Price range with a minimum and maximum value, if a range.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RouteTollPriceValueRange {
     /// <p>Minimum price.</p>
     pub min: f64,
@@ -19,6 +19,14 @@ impl RouteTollPriceValueRange {
         self.max
     }
 }
+impl ::std::fmt::Debug for RouteTollPriceValueRange {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteTollPriceValueRange");
+        formatter.field("min", &"*** Sensitive Data Redacted ***");
+        formatter.field("max", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl RouteTollPriceValueRange {
     /// Creates a new builder-style object to manufacture [`RouteTollPriceValueRange`](crate::types::RouteTollPriceValueRange).
     pub fn builder() -> crate::types::builders::RouteTollPriceValueRangeBuilder {
@@ -27,7 +35,7 @@ impl RouteTollPriceValueRange {
 }
 
 /// A builder for [`RouteTollPriceValueRange`](crate::types::RouteTollPriceValueRange).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct RouteTollPriceValueRangeBuilder {
     pub(crate) min: ::std::option::Option<f64>,
@@ -83,5 +91,13 @@ impl RouteTollPriceValueRangeBuilder {
                 )
             })?,
         })
+    }
+}
+impl ::std::fmt::Debug for RouteTollPriceValueRangeBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteTollPriceValueRangeBuilder");
+        formatter.field("min", &"*** Sensitive Data Redacted ***");
+        formatter.field("max", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

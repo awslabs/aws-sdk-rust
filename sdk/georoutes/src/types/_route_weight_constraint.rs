@@ -3,7 +3,7 @@
 /// <p>The weight constraint for the route.</p>
 /// <p><b>Unit</b>: <code>Kilograms</code></p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RouteWeightConstraint {
     /// <p>The type of constraint.</p>
     pub r#type: crate::types::RouteWeightConstraintType,
@@ -22,6 +22,14 @@ impl RouteWeightConstraint {
         self.value
     }
 }
+impl ::std::fmt::Debug for RouteWeightConstraint {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteWeightConstraint");
+        formatter.field("r#type", &self.r#type);
+        formatter.field("value", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl RouteWeightConstraint {
     /// Creates a new builder-style object to manufacture [`RouteWeightConstraint`](crate::types::RouteWeightConstraint).
     pub fn builder() -> crate::types::builders::RouteWeightConstraintBuilder {
@@ -30,7 +38,7 @@ impl RouteWeightConstraint {
 }
 
 /// A builder for [`RouteWeightConstraint`](crate::types::RouteWeightConstraint).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct RouteWeightConstraintBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::RouteWeightConstraintType>,
@@ -83,5 +91,13 @@ impl RouteWeightConstraintBuilder {
             })?,
             value: self.value.unwrap_or_default(),
         })
+    }
+}
+impl ::std::fmt::Debug for RouteWeightConstraintBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteWeightConstraintBuilder");
+        formatter.field("r#type", &self.r#type);
+        formatter.field("value", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

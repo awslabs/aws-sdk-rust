@@ -2,7 +2,7 @@
 
 /// <p>Notices provide information around factors that may have influenced snapping in a manner atypical to the standard use cases.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RoadSnapNotice {
     /// <p>Code corresponding to the issue.</p>
     pub code: crate::types::RoadSnapNoticeCode,
@@ -27,6 +27,15 @@ impl RoadSnapNotice {
         self.trace_point_indexes.deref()
     }
 }
+impl ::std::fmt::Debug for RoadSnapNotice {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RoadSnapNotice");
+        formatter.field("code", &"*** Sensitive Data Redacted ***");
+        formatter.field("title", &"*** Sensitive Data Redacted ***");
+        formatter.field("trace_point_indexes", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl RoadSnapNotice {
     /// Creates a new builder-style object to manufacture [`RoadSnapNotice`](crate::types::RoadSnapNotice).
     pub fn builder() -> crate::types::builders::RoadSnapNoticeBuilder {
@@ -35,7 +44,7 @@ impl RoadSnapNotice {
 }
 
 /// A builder for [`RoadSnapNotice`](crate::types::RoadSnapNotice).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct RoadSnapNoticeBuilder {
     pub(crate) code: ::std::option::Option<crate::types::RoadSnapNoticeCode>,
@@ -119,5 +128,14 @@ impl RoadSnapNoticeBuilder {
                 )
             })?,
         })
+    }
+}
+impl ::std::fmt::Debug for RoadSnapNoticeBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RoadSnapNoticeBuilder");
+        formatter.field("code", &"*** Sensitive Data Redacted ***");
+        formatter.field("title", &"*** Sensitive Data Redacted ***");
+        formatter.field("trace_point_indexes", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

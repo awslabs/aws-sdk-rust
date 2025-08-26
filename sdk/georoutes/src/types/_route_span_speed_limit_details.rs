@@ -3,7 +3,7 @@
 /// <p>Details about the speed limit corresponding to the span.</p>
 /// <p><b>Unit</b>: <code>KilometersPerHour</code></p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RouteSpanSpeedLimitDetails {
     /// <p>Maximum speed.</p>
     /// <p><b>Unit</b>: <code>KilometersPerHour</code></p>
@@ -22,6 +22,14 @@ impl RouteSpanSpeedLimitDetails {
         self.unlimited
     }
 }
+impl ::std::fmt::Debug for RouteSpanSpeedLimitDetails {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteSpanSpeedLimitDetails");
+        formatter.field("max_speed", &"*** Sensitive Data Redacted ***");
+        formatter.field("unlimited", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl RouteSpanSpeedLimitDetails {
     /// Creates a new builder-style object to manufacture [`RouteSpanSpeedLimitDetails`](crate::types::RouteSpanSpeedLimitDetails).
     pub fn builder() -> crate::types::builders::RouteSpanSpeedLimitDetailsBuilder {
@@ -30,7 +38,7 @@ impl RouteSpanSpeedLimitDetails {
 }
 
 /// A builder for [`RouteSpanSpeedLimitDetails`](crate::types::RouteSpanSpeedLimitDetails).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct RouteSpanSpeedLimitDetailsBuilder {
     pub(crate) max_speed: ::std::option::Option<f64>,
@@ -74,5 +82,13 @@ impl RouteSpanSpeedLimitDetailsBuilder {
             max_speed: self.max_speed.unwrap_or_default(),
             unlimited: self.unlimited,
         }
+    }
+}
+impl ::std::fmt::Debug for RouteSpanSpeedLimitDetailsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteSpanSpeedLimitDetailsBuilder");
+        formatter.field("max_speed", &"*** Sensitive Data Redacted ***");
+        formatter.field("unlimited", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

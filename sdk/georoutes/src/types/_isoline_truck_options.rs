@@ -2,7 +2,7 @@
 
 /// <p>Travel mode options when the provided travel mode is "Truck"</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct IsolineTruckOptions {
     /// <p>Total number of axles of the vehicle.</p>
     pub axle_count: ::std::option::Option<i32>,
@@ -215,6 +215,31 @@ impl IsolineTruckOptions {
         self.width
     }
 }
+impl ::std::fmt::Debug for IsolineTruckOptions {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("IsolineTruckOptions");
+        formatter.field("axle_count", &"*** Sensitive Data Redacted ***");
+        formatter.field("engine_type", &"*** Sensitive Data Redacted ***");
+        formatter.field("gross_weight", &"*** Sensitive Data Redacted ***");
+        formatter.field("hazardous_cargos", &"*** Sensitive Data Redacted ***");
+        formatter.field("height", &"*** Sensitive Data Redacted ***");
+        formatter.field("height_above_first_axle", &"*** Sensitive Data Redacted ***");
+        formatter.field("kpra_length", &"*** Sensitive Data Redacted ***");
+        formatter.field("length", &"*** Sensitive Data Redacted ***");
+        formatter.field("license_plate", &"*** Sensitive Data Redacted ***");
+        formatter.field("max_speed", &"*** Sensitive Data Redacted ***");
+        formatter.field("occupancy", &"*** Sensitive Data Redacted ***");
+        formatter.field("payload_capacity", &"*** Sensitive Data Redacted ***");
+        formatter.field("tire_count", &"*** Sensitive Data Redacted ***");
+        formatter.field("trailer", &self.trailer);
+        formatter.field("truck_type", &self.truck_type);
+        formatter.field("tunnel_restriction_code", &"*** Sensitive Data Redacted ***");
+        formatter.field("weight_per_axle", &"*** Sensitive Data Redacted ***");
+        formatter.field("weight_per_axle_group", &self.weight_per_axle_group);
+        formatter.field("width", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl IsolineTruckOptions {
     /// Creates a new builder-style object to manufacture [`IsolineTruckOptions`](crate::types::IsolineTruckOptions).
     pub fn builder() -> crate::types::builders::IsolineTruckOptionsBuilder {
@@ -223,7 +248,7 @@ impl IsolineTruckOptions {
 }
 
 /// A builder for [`IsolineTruckOptions`](crate::types::IsolineTruckOptions).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct IsolineTruckOptionsBuilder {
     pub(crate) axle_count: ::std::option::Option<i32>,
@@ -680,5 +705,30 @@ impl IsolineTruckOptionsBuilder {
             weight_per_axle_group: self.weight_per_axle_group,
             width: self.width.unwrap_or_default(),
         }
+    }
+}
+impl ::std::fmt::Debug for IsolineTruckOptionsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("IsolineTruckOptionsBuilder");
+        formatter.field("axle_count", &"*** Sensitive Data Redacted ***");
+        formatter.field("engine_type", &"*** Sensitive Data Redacted ***");
+        formatter.field("gross_weight", &"*** Sensitive Data Redacted ***");
+        formatter.field("hazardous_cargos", &"*** Sensitive Data Redacted ***");
+        formatter.field("height", &"*** Sensitive Data Redacted ***");
+        formatter.field("height_above_first_axle", &"*** Sensitive Data Redacted ***");
+        formatter.field("kpra_length", &"*** Sensitive Data Redacted ***");
+        formatter.field("length", &"*** Sensitive Data Redacted ***");
+        formatter.field("license_plate", &"*** Sensitive Data Redacted ***");
+        formatter.field("max_speed", &"*** Sensitive Data Redacted ***");
+        formatter.field("occupancy", &"*** Sensitive Data Redacted ***");
+        formatter.field("payload_capacity", &"*** Sensitive Data Redacted ***");
+        formatter.field("tire_count", &"*** Sensitive Data Redacted ***");
+        formatter.field("trailer", &self.trailer);
+        formatter.field("truck_type", &self.truck_type);
+        formatter.field("tunnel_restriction_code", &"*** Sensitive Data Redacted ***");
+        formatter.field("weight_per_axle", &"*** Sensitive Data Redacted ***");
+        formatter.field("weight_per_axle_group", &self.weight_per_axle_group);
+        formatter.field("width", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

@@ -15,13 +15,16 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "blockingAlarms" => {
-                            builder = builder.set_blocking_alarms(crate::protocol_serde::shape_control_conditions::de_control_conditions(tokens)?);
+                            builder = builder.set_blocking_alarms(crate::protocol_serde::shape_blocking_alarms::de_blocking_alarms(tokens)?);
                         }
                         "outcomeAlarms" => {
-                            builder = builder.set_outcome_alarms(crate::protocol_serde::shape_control_conditions::de_control_conditions(tokens)?);
+                            builder = builder.set_outcome_alarms(crate::protocol_serde::shape_outcome_alarms::de_outcome_alarms(tokens)?);
                         }
                         "blockedWindows" => {
                             builder = builder.set_blocked_windows(crate::protocol_serde::shape_blocked_windows::de_blocked_windows(tokens)?);
+                        }
+                        "allowedWindows" => {
+                            builder = builder.set_allowed_windows(crate::protocol_serde::shape_allowed_windows::de_allowed_windows(tokens)?);
                         }
                         "blockedDates" => {
                             builder = builder.set_blocked_dates(crate::protocol_serde::shape_blocked_dates::de_blocked_dates(tokens)?);

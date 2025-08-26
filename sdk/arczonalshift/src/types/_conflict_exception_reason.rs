@@ -19,6 +19,7 @@
 ///     ConflictExceptionReason::PracticeInBlockedDates => { /* ... */ },
 ///     ConflictExceptionReason::PracticeInBlockedWindows => { /* ... */ },
 ///     ConflictExceptionReason::PracticeOutcomeAlarmsRed => { /* ... */ },
+///     ConflictExceptionReason::PracticeOutsideAllowedWindows => { /* ... */ },
 ///     ConflictExceptionReason::SimultaneousZonalShiftsConflict => { /* ... */ },
 ///     ConflictExceptionReason::ZonalAutoshiftActive => { /* ... */ },
 ///     ConflictExceptionReason::ZonalShiftAlreadyExists => { /* ... */ },
@@ -66,6 +67,8 @@ pub enum ConflictExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     PracticeOutcomeAlarmsRed,
     #[allow(missing_docs)] // documentation missing in model
+    PracticeOutsideAllowedWindows,
+    #[allow(missing_docs)] // documentation missing in model
     SimultaneousZonalShiftsConflict,
     #[allow(missing_docs)] // documentation missing in model
     ZonalAutoshiftActive,
@@ -87,6 +90,7 @@ impl ::std::convert::From<&str> for ConflictExceptionReason {
             "PracticeInBlockedDates" => ConflictExceptionReason::PracticeInBlockedDates,
             "PracticeInBlockedWindows" => ConflictExceptionReason::PracticeInBlockedWindows,
             "PracticeOutcomeAlarmsRed" => ConflictExceptionReason::PracticeOutcomeAlarmsRed,
+            "PracticeOutsideAllowedWindows" => ConflictExceptionReason::PracticeOutsideAllowedWindows,
             "SimultaneousZonalShiftsConflict" => ConflictExceptionReason::SimultaneousZonalShiftsConflict,
             "ZonalAutoshiftActive" => ConflictExceptionReason::ZonalAutoshiftActive,
             "ZonalShiftAlreadyExists" => ConflictExceptionReason::ZonalShiftAlreadyExists,
@@ -113,6 +117,7 @@ impl ConflictExceptionReason {
             ConflictExceptionReason::PracticeInBlockedDates => "PracticeInBlockedDates",
             ConflictExceptionReason::PracticeInBlockedWindows => "PracticeInBlockedWindows",
             ConflictExceptionReason::PracticeOutcomeAlarmsRed => "PracticeOutcomeAlarmsRed",
+            ConflictExceptionReason::PracticeOutsideAllowedWindows => "PracticeOutsideAllowedWindows",
             ConflictExceptionReason::SimultaneousZonalShiftsConflict => "SimultaneousZonalShiftsConflict",
             ConflictExceptionReason::ZonalAutoshiftActive => "ZonalAutoshiftActive",
             ConflictExceptionReason::ZonalShiftAlreadyExists => "ZonalShiftAlreadyExists",
@@ -130,6 +135,7 @@ impl ConflictExceptionReason {
             "PracticeInBlockedDates",
             "PracticeInBlockedWindows",
             "PracticeOutcomeAlarmsRed",
+            "PracticeOutsideAllowedWindows",
             "SimultaneousZonalShiftsConflict",
             "ZonalAutoshiftActive",
             "ZonalShiftAlreadyExists",
@@ -164,6 +170,7 @@ impl ::std::fmt::Display for ConflictExceptionReason {
             ConflictExceptionReason::PracticeInBlockedDates => write!(f, "PracticeInBlockedDates"),
             ConflictExceptionReason::PracticeInBlockedWindows => write!(f, "PracticeInBlockedWindows"),
             ConflictExceptionReason::PracticeOutcomeAlarmsRed => write!(f, "PracticeOutcomeAlarmsRed"),
+            ConflictExceptionReason::PracticeOutsideAllowedWindows => write!(f, "PracticeOutsideAllowedWindows"),
             ConflictExceptionReason::SimultaneousZonalShiftsConflict => write!(f, "SimultaneousZonalShiftsConflict"),
             ConflictExceptionReason::ZonalAutoshiftActive => write!(f, "ZonalAutoshiftActive"),
             ConflictExceptionReason::ZonalShiftAlreadyExists => write!(f, "ZonalShiftAlreadyExists"),

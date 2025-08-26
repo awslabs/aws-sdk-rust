@@ -2,7 +2,7 @@
 
 /// <p>Summarized details of the route.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RouteVehicleTravelOnlySummary {
     /// <p>Total duration in free flowing traffic, which is the best case or shortest duration possible to cover the leg.</p>
     /// <p><b>Unit</b>: <code>seconds</code></p>
@@ -31,6 +31,15 @@ impl RouteVehicleTravelOnlySummary {
         self.typical_duration
     }
 }
+impl ::std::fmt::Debug for RouteVehicleTravelOnlySummary {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteVehicleTravelOnlySummary");
+        formatter.field("best_case_duration", &"*** Sensitive Data Redacted ***");
+        formatter.field("duration", &"*** Sensitive Data Redacted ***");
+        formatter.field("typical_duration", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl RouteVehicleTravelOnlySummary {
     /// Creates a new builder-style object to manufacture [`RouteVehicleTravelOnlySummary`](crate::types::RouteVehicleTravelOnlySummary).
     pub fn builder() -> crate::types::builders::RouteVehicleTravelOnlySummaryBuilder {
@@ -39,7 +48,7 @@ impl RouteVehicleTravelOnlySummary {
 }
 
 /// A builder for [`RouteVehicleTravelOnlySummary`](crate::types::RouteVehicleTravelOnlySummary).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct RouteVehicleTravelOnlySummaryBuilder {
     pub(crate) best_case_duration: ::std::option::Option<i64>,
@@ -106,5 +115,14 @@ impl RouteVehicleTravelOnlySummaryBuilder {
             duration: self.duration.unwrap_or_default(),
             typical_duration: self.typical_duration.unwrap_or_default(),
         }
+    }
+}
+impl ::std::fmt::Debug for RouteVehicleTravelOnlySummaryBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteVehicleTravelOnlySummaryBuilder");
+        formatter.field("best_case_duration", &"*** Sensitive Data Redacted ***");
+        formatter.field("duration", &"*** Sensitive Data Redacted ***");
+        formatter.field("typical_duration", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

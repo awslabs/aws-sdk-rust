@@ -2,7 +2,7 @@
 
 /// <p>Features that are avoided while calculating isolines. Avoidance is on a best-case basis. If an avoidance can't be satisfied for a particular case, it violates the avoidance and the returned response produces a notice for the violation.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct IsolineAvoidanceOptions {
     /// <p>Areas to be avoided.</p>
     pub areas: ::std::option::Option<::std::vec::Vec<crate::types::IsolineAvoidanceArea>>,
@@ -89,6 +89,24 @@ impl IsolineAvoidanceOptions {
         self.zone_categories.as_deref().unwrap_or_default()
     }
 }
+impl ::std::fmt::Debug for IsolineAvoidanceOptions {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("IsolineAvoidanceOptions");
+        formatter.field("areas", &self.areas);
+        formatter.field("car_shuttle_trains", &"*** Sensitive Data Redacted ***");
+        formatter.field("controlled_access_highways", &"*** Sensitive Data Redacted ***");
+        formatter.field("dirt_roads", &"*** Sensitive Data Redacted ***");
+        formatter.field("ferries", &"*** Sensitive Data Redacted ***");
+        formatter.field("seasonal_closure", &"*** Sensitive Data Redacted ***");
+        formatter.field("toll_roads", &"*** Sensitive Data Redacted ***");
+        formatter.field("toll_transponders", &"*** Sensitive Data Redacted ***");
+        formatter.field("truck_road_types", &"*** Sensitive Data Redacted ***");
+        formatter.field("tunnels", &"*** Sensitive Data Redacted ***");
+        formatter.field("u_turns", &"*** Sensitive Data Redacted ***");
+        formatter.field("zone_categories", &self.zone_categories);
+        formatter.finish()
+    }
+}
 impl IsolineAvoidanceOptions {
     /// Creates a new builder-style object to manufacture [`IsolineAvoidanceOptions`](crate::types::IsolineAvoidanceOptions).
     pub fn builder() -> crate::types::builders::IsolineAvoidanceOptionsBuilder {
@@ -97,7 +115,7 @@ impl IsolineAvoidanceOptions {
 }
 
 /// A builder for [`IsolineAvoidanceOptions`](crate::types::IsolineAvoidanceOptions).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct IsolineAvoidanceOptionsBuilder {
     pub(crate) areas: ::std::option::Option<::std::vec::Vec<crate::types::IsolineAvoidanceArea>>,
@@ -322,5 +340,23 @@ impl IsolineAvoidanceOptionsBuilder {
             u_turns: self.u_turns,
             zone_categories: self.zone_categories,
         }
+    }
+}
+impl ::std::fmt::Debug for IsolineAvoidanceOptionsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("IsolineAvoidanceOptionsBuilder");
+        formatter.field("areas", &self.areas);
+        formatter.field("car_shuttle_trains", &"*** Sensitive Data Redacted ***");
+        formatter.field("controlled_access_highways", &"*** Sensitive Data Redacted ***");
+        formatter.field("dirt_roads", &"*** Sensitive Data Redacted ***");
+        formatter.field("ferries", &"*** Sensitive Data Redacted ***");
+        formatter.field("seasonal_closure", &"*** Sensitive Data Redacted ***");
+        formatter.field("toll_roads", &"*** Sensitive Data Redacted ***");
+        formatter.field("toll_transponders", &"*** Sensitive Data Redacted ***");
+        formatter.field("truck_road_types", &"*** Sensitive Data Redacted ***");
+        formatter.field("tunnels", &"*** Sensitive Data Redacted ***");
+        formatter.field("u_turns", &"*** Sensitive Data Redacted ***");
+        formatter.field("zone_categories", &self.zone_categories);
+        formatter.finish()
     }
 }

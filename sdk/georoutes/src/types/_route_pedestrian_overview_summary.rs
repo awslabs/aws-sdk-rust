@@ -2,7 +2,7 @@
 
 /// <p>Provides a summary of a pedestrian route step.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RoutePedestrianOverviewSummary {
     /// <p>Distance of the step.</p>
     pub distance: i64,
@@ -19,6 +19,14 @@ impl RoutePedestrianOverviewSummary {
         self.duration
     }
 }
+impl ::std::fmt::Debug for RoutePedestrianOverviewSummary {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RoutePedestrianOverviewSummary");
+        formatter.field("distance", &"*** Sensitive Data Redacted ***");
+        formatter.field("duration", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl RoutePedestrianOverviewSummary {
     /// Creates a new builder-style object to manufacture [`RoutePedestrianOverviewSummary`](crate::types::RoutePedestrianOverviewSummary).
     pub fn builder() -> crate::types::builders::RoutePedestrianOverviewSummaryBuilder {
@@ -27,7 +35,7 @@ impl RoutePedestrianOverviewSummary {
 }
 
 /// A builder for [`RoutePedestrianOverviewSummary`](crate::types::RoutePedestrianOverviewSummary).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct RoutePedestrianOverviewSummaryBuilder {
     pub(crate) distance: ::std::option::Option<i64>,
@@ -70,5 +78,13 @@ impl RoutePedestrianOverviewSummaryBuilder {
             distance: self.distance.unwrap_or_default(),
             duration: self.duration.unwrap_or_default(),
         }
+    }
+}
+impl ::std::fmt::Debug for RoutePedestrianOverviewSummaryBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RoutePedestrianOverviewSummaryBuilder");
+        formatter.field("distance", &"*** Sensitive Data Redacted ***");
+        formatter.field("duration", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

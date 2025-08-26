@@ -2,7 +2,7 @@
 
 /// <p>Provides details about toll information along a route, including the payment sites, applicable toll rates, toll systems, and the country associated with the toll collection.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RouteToll {
     /// <p>The alpha-2 or alpha-3 character code for the country.</p>
     pub country: ::std::option::Option<::std::string::String>,
@@ -34,6 +34,16 @@ impl RouteToll {
         self.systems.deref()
     }
 }
+impl ::std::fmt::Debug for RouteToll {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteToll");
+        formatter.field("country", &"*** Sensitive Data Redacted ***");
+        formatter.field("payment_sites", &self.payment_sites);
+        formatter.field("rates", &self.rates);
+        formatter.field("systems", &self.systems);
+        formatter.finish()
+    }
+}
 impl RouteToll {
     /// Creates a new builder-style object to manufacture [`RouteToll`](crate::types::RouteToll).
     pub fn builder() -> crate::types::builders::RouteTollBuilder {
@@ -42,7 +52,7 @@ impl RouteToll {
 }
 
 /// A builder for [`RouteToll`](crate::types::RouteToll).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct RouteTollBuilder {
     pub(crate) country: ::std::option::Option<::std::string::String>,
@@ -152,5 +162,15 @@ impl RouteTollBuilder {
                 )
             })?,
         })
+    }
+}
+impl ::std::fmt::Debug for RouteTollBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteTollBuilder");
+        formatter.field("country", &"*** Sensitive Data Redacted ***");
+        formatter.field("payment_sites", &self.payment_sites);
+        formatter.field("rates", &self.rates);
+        formatter.field("systems", &self.systems);
+        formatter.finish()
     }
 }

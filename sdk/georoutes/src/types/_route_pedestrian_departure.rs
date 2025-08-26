@@ -6,7 +6,7 @@
 /// <p><code>2020-04-22T17:57:24Z</code></p>
 /// <p><code>2020-04-22T17:57:24+02:00</code></p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RoutePedestrianDeparture {
     /// <p>The place details.</p>
     pub place: ::std::option::Option<crate::types::RoutePedestrianPlace>,
@@ -23,6 +23,14 @@ impl RoutePedestrianDeparture {
         self.time.as_deref()
     }
 }
+impl ::std::fmt::Debug for RoutePedestrianDeparture {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RoutePedestrianDeparture");
+        formatter.field("place", &self.place);
+        formatter.field("time", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl RoutePedestrianDeparture {
     /// Creates a new builder-style object to manufacture [`RoutePedestrianDeparture`](crate::types::RoutePedestrianDeparture).
     pub fn builder() -> crate::types::builders::RoutePedestrianDepartureBuilder {
@@ -31,7 +39,7 @@ impl RoutePedestrianDeparture {
 }
 
 /// A builder for [`RoutePedestrianDeparture`](crate::types::RoutePedestrianDeparture).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct RoutePedestrianDepartureBuilder {
     pub(crate) place: ::std::option::Option<crate::types::RoutePedestrianPlace>,
@@ -73,5 +81,13 @@ impl RoutePedestrianDepartureBuilder {
             place: self.place,
             time: self.time,
         }
+    }
+}
+impl ::std::fmt::Debug for RoutePedestrianDepartureBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RoutePedestrianDepartureBuilder");
+        formatter.field("place", &self.place);
+        formatter.field("time", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

@@ -2,7 +2,7 @@
 
 /// <p>Steps of a leg that must be performed during the travel portion of the leg.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RouteFerryTravelStep {
     /// <p>Distance of the step.</p>
     pub distance: i64,
@@ -43,6 +43,17 @@ impl RouteFerryTravelStep {
         &self.r#type
     }
 }
+impl ::std::fmt::Debug for RouteFerryTravelStep {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteFerryTravelStep");
+        formatter.field("distance", &"*** Sensitive Data Redacted ***");
+        formatter.field("duration", &"*** Sensitive Data Redacted ***");
+        formatter.field("geometry_offset", &self.geometry_offset);
+        formatter.field("instruction", &"*** Sensitive Data Redacted ***");
+        formatter.field("r#type", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl RouteFerryTravelStep {
     /// Creates a new builder-style object to manufacture [`RouteFerryTravelStep`](crate::types::RouteFerryTravelStep).
     pub fn builder() -> crate::types::builders::RouteFerryTravelStepBuilder {
@@ -51,7 +62,7 @@ impl RouteFerryTravelStep {
 }
 
 /// A builder for [`RouteFerryTravelStep`](crate::types::RouteFerryTravelStep).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct RouteFerryTravelStepBuilder {
     pub(crate) distance: ::std::option::Option<i64>,
@@ -158,5 +169,16 @@ impl RouteFerryTravelStepBuilder {
                 )
             })?,
         })
+    }
+}
+impl ::std::fmt::Debug for RouteFerryTravelStepBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteFerryTravelStepBuilder");
+        formatter.field("distance", &"*** Sensitive Data Redacted ***");
+        formatter.field("duration", &"*** Sensitive Data Redacted ***");
+        formatter.field("geometry_offset", &self.geometry_offset);
+        formatter.field("instruction", &"*** Sensitive Data Redacted ***");
+        formatter.field("r#type", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

@@ -3,7 +3,7 @@
 /// <p>Specifies the total weight for the specified axle group. Meant for usage in countries that have different regulations based on the axle group type.</p>
 /// <p><b>Unit</b>: <code>Kilograms</code></p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct WeightPerAxleGroup {
     /// <p>Weight for single axle group.</p>
     /// <p><b>Unit</b>: <code>Kilograms</code></p>
@@ -48,6 +48,17 @@ impl WeightPerAxleGroup {
         self.quint
     }
 }
+impl ::std::fmt::Debug for WeightPerAxleGroup {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("WeightPerAxleGroup");
+        formatter.field("single", &"*** Sensitive Data Redacted ***");
+        formatter.field("tandem", &"*** Sensitive Data Redacted ***");
+        formatter.field("triple", &"*** Sensitive Data Redacted ***");
+        formatter.field("quad", &"*** Sensitive Data Redacted ***");
+        formatter.field("quint", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl WeightPerAxleGroup {
     /// Creates a new builder-style object to manufacture [`WeightPerAxleGroup`](crate::types::WeightPerAxleGroup).
     pub fn builder() -> crate::types::builders::WeightPerAxleGroupBuilder {
@@ -56,7 +67,7 @@ impl WeightPerAxleGroup {
 }
 
 /// A builder for [`WeightPerAxleGroup`](crate::types::WeightPerAxleGroup).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct WeightPerAxleGroupBuilder {
     pub(crate) single: ::std::option::Option<i64>,
@@ -160,5 +171,16 @@ impl WeightPerAxleGroupBuilder {
             quad: self.quad.unwrap_or_default(),
             quint: self.quint.unwrap_or_default(),
         }
+    }
+}
+impl ::std::fmt::Debug for WeightPerAxleGroupBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("WeightPerAxleGroupBuilder");
+        formatter.field("single", &"*** Sensitive Data Redacted ***");
+        formatter.field("tandem", &"*** Sensitive Data Redacted ***");
+        formatter.field("triple", &"*** Sensitive Data Redacted ***");
+        formatter.field("quad", &"*** Sensitive Data Redacted ***");
+        formatter.field("quint", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

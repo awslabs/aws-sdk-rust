@@ -2,7 +2,7 @@
 
 /// <p>Span computed for the requested SpanAdditionalFeatures.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RoutePedestrianSpan {
     /// <p>Duration of the computed span without traffic congestion.</p>
     /// <p><b>Unit</b>: <code>seconds</code></p>
@@ -117,6 +117,27 @@ impl RoutePedestrianSpan {
         self.typical_duration
     }
 }
+impl ::std::fmt::Debug for RoutePedestrianSpan {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RoutePedestrianSpan");
+        formatter.field("best_case_duration", &"*** Sensitive Data Redacted ***");
+        formatter.field("country", &"*** Sensitive Data Redacted ***");
+        formatter.field("distance", &"*** Sensitive Data Redacted ***");
+        formatter.field("duration", &"*** Sensitive Data Redacted ***");
+        formatter.field("dynamic_speed", &self.dynamic_speed);
+        formatter.field("functional_classification", &"*** Sensitive Data Redacted ***");
+        formatter.field("geometry_offset", &self.geometry_offset);
+        formatter.field("incidents", &self.incidents);
+        formatter.field("names", &self.names);
+        formatter.field("pedestrian_access", &"*** Sensitive Data Redacted ***");
+        formatter.field("region", &"*** Sensitive Data Redacted ***");
+        formatter.field("road_attributes", &"*** Sensitive Data Redacted ***");
+        formatter.field("route_numbers", &self.route_numbers);
+        formatter.field("speed_limit", &self.speed_limit);
+        formatter.field("typical_duration", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl RoutePedestrianSpan {
     /// Creates a new builder-style object to manufacture [`RoutePedestrianSpan`](crate::types::RoutePedestrianSpan).
     pub fn builder() -> crate::types::builders::RoutePedestrianSpanBuilder {
@@ -125,7 +146,7 @@ impl RoutePedestrianSpan {
 }
 
 /// A builder for [`RoutePedestrianSpan`](crate::types::RoutePedestrianSpan).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct RoutePedestrianSpanBuilder {
     pub(crate) best_case_duration: ::std::option::Option<i64>,
@@ -419,5 +440,26 @@ impl RoutePedestrianSpanBuilder {
             speed_limit: self.speed_limit,
             typical_duration: self.typical_duration.unwrap_or_default(),
         }
+    }
+}
+impl ::std::fmt::Debug for RoutePedestrianSpanBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RoutePedestrianSpanBuilder");
+        formatter.field("best_case_duration", &"*** Sensitive Data Redacted ***");
+        formatter.field("country", &"*** Sensitive Data Redacted ***");
+        formatter.field("distance", &"*** Sensitive Data Redacted ***");
+        formatter.field("duration", &"*** Sensitive Data Redacted ***");
+        formatter.field("dynamic_speed", &self.dynamic_speed);
+        formatter.field("functional_classification", &"*** Sensitive Data Redacted ***");
+        formatter.field("geometry_offset", &self.geometry_offset);
+        formatter.field("incidents", &self.incidents);
+        formatter.field("names", &self.names);
+        formatter.field("pedestrian_access", &"*** Sensitive Data Redacted ***");
+        formatter.field("region", &"*** Sensitive Data Redacted ***");
+        formatter.field("road_attributes", &"*** Sensitive Data Redacted ***");
+        formatter.field("route_numbers", &self.route_numbers);
+        formatter.field("speed_limit", &self.speed_limit);
+        formatter.field("typical_duration", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

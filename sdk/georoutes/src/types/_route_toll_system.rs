@@ -2,7 +2,7 @@
 
 /// <p>Toll systems are authorities that collect payments for the toll.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RouteTollSystem {
     /// <p>The toll system name.</p>
     pub name: ::std::option::Option<::std::string::String>,
@@ -13,6 +13,13 @@ impl RouteTollSystem {
         self.name.as_deref()
     }
 }
+impl ::std::fmt::Debug for RouteTollSystem {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteTollSystem");
+        formatter.field("name", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl RouteTollSystem {
     /// Creates a new builder-style object to manufacture [`RouteTollSystem`](crate::types::RouteTollSystem).
     pub fn builder() -> crate::types::builders::RouteTollSystemBuilder {
@@ -21,7 +28,7 @@ impl RouteTollSystem {
 }
 
 /// A builder for [`RouteTollSystem`](crate::types::RouteTollSystem).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct RouteTollSystemBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -44,5 +51,12 @@ impl RouteTollSystemBuilder {
     /// Consumes the builder and constructs a [`RouteTollSystem`](crate::types::RouteTollSystem).
     pub fn build(self) -> crate::types::RouteTollSystem {
         crate::types::RouteTollSystem { name: self.name }
+    }
+}
+impl ::std::fmt::Debug for RouteTollSystemBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteTollSystemBuilder");
+        formatter.field("name", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

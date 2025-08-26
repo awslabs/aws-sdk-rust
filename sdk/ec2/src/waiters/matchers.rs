@@ -585,6 +585,85 @@ pub(crate) fn match_describe_images_da0ba75c4a3b70507(
     false
 }
 
+/// Matcher union: {"output":{"path":"ImageUsageReports[].State","expected":"available","comparator":"allStringEquals"}}
+pub(crate) fn match_describe_image_usage_reports_aed9ba9e6d7822b30(
+    _result: ::std::result::Result<
+        &crate::operation::describe_image_usage_reports::DescribeImageUsageReportsOutput,
+        &crate::operation::describe_image_usage_reports::DescribeImageUsageReportsError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::describe_image_usage_reports::DescribeImageUsageReportsOutput,
+    ) -> ::std::option::Option<::std::vec::Vec<&'a ::std::string::String>> {
+        let _fld_1 = _output.image_usage_reports.as_ref()?;
+        let _prj_3 = _fld_1
+            .iter()
+            .flat_map(|v| {
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::ImageUsageReport) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.state.as_ref();
+                    _fld_2
+                }
+                map(v)
+            })
+            .collect::<::std::vec::Vec<_>>();
+        ::std::option::Option::Some(_prj_3)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            !value.is_empty()
+                && value.iter().all(|value| {
+                    let _tmp_2 = value.as_str();
+                    let right = "available";
+                    let _cmp_1 = _tmp_2 == right;
+                    _cmp_1
+                })
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"output":{"path":"ImageUsageReports[].State","expected":"failed","comparator":"anyStringEquals"}}
+pub(crate) fn match_describe_image_usage_reports_9bae9b0fa5ea9f50d(
+    _result: ::std::result::Result<
+        &crate::operation::describe_image_usage_reports::DescribeImageUsageReportsOutput,
+        &crate::operation::describe_image_usage_reports::DescribeImageUsageReportsError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::describe_image_usage_reports::DescribeImageUsageReportsOutput,
+    ) -> ::std::option::Option<::std::vec::Vec<&'a ::std::string::String>> {
+        let _fld_1 = _output.image_usage_reports.as_ref()?;
+        let _prj_3 = _fld_1
+            .iter()
+            .flat_map(|v| {
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::ImageUsageReport) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.state.as_ref();
+                    _fld_2
+                }
+                map(v)
+            })
+            .collect::<::std::vec::Vec<_>>();
+        ::std::option::Option::Some(_prj_3)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            value.iter().any(|value| {
+                let _tmp_2 = value.as_str();
+                let right = "failed";
+                let _cmp_1 = _tmp_2 == right;
+                _cmp_1
+            })
+        })
+        .unwrap_or_default()
+}
+
 /// Matcher union: {"output":{"path":"length(Reservations[]) > `0`","expected":"true","comparator":"booleanEquals"}}
 pub(crate) fn match_describe_instances_1c820128f4b43851a(
     _result: ::std::result::Result<

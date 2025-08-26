@@ -2,7 +2,7 @@
 
 /// <p>This contains information such as distance and duration from one waypoint to the next waypoint in the sequence.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct WaypointOptimizationConnection {
     /// <p>Distance of the step.</p>
     pub distance: i64,
@@ -49,6 +49,18 @@ impl WaypointOptimizationConnection {
         self.wait_duration
     }
 }
+impl ::std::fmt::Debug for WaypointOptimizationConnection {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("WaypointOptimizationConnection");
+        formatter.field("distance", &"*** Sensitive Data Redacted ***");
+        formatter.field("from", &self.from);
+        formatter.field("rest_duration", &"*** Sensitive Data Redacted ***");
+        formatter.field("to", &self.to);
+        formatter.field("travel_duration", &"*** Sensitive Data Redacted ***");
+        formatter.field("wait_duration", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl WaypointOptimizationConnection {
     /// Creates a new builder-style object to manufacture [`WaypointOptimizationConnection`](crate::types::WaypointOptimizationConnection).
     pub fn builder() -> crate::types::builders::WaypointOptimizationConnectionBuilder {
@@ -57,7 +69,7 @@ impl WaypointOptimizationConnection {
 }
 
 /// A builder for [`WaypointOptimizationConnection`](crate::types::WaypointOptimizationConnection).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct WaypointOptimizationConnectionBuilder {
     pub(crate) distance: ::std::option::Option<i64>,
@@ -187,5 +199,17 @@ impl WaypointOptimizationConnectionBuilder {
             travel_duration: self.travel_duration.unwrap_or_default(),
             wait_duration: self.wait_duration.unwrap_or_default(),
         })
+    }
+}
+impl ::std::fmt::Debug for WaypointOptimizationConnectionBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("WaypointOptimizationConnectionBuilder");
+        formatter.field("distance", &"*** Sensitive Data Redacted ***");
+        formatter.field("from", &self.from);
+        formatter.field("rest_duration", &"*** Sensitive Data Redacted ***");
+        formatter.field("to", &self.to);
+        formatter.field("travel_duration", &"*** Sensitive Data Redacted ***");
+        formatter.field("wait_duration", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

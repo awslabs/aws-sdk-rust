@@ -2,7 +2,7 @@
 
 /// <p>Travel mode options when the provided travel mode is <code>Car</code>.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RouteCarOptions {
     /// <p>Engine type of the vehicle.</p>
     pub engine_type: ::std::option::Option<crate::types::RouteEngineType>,
@@ -35,6 +35,16 @@ impl RouteCarOptions {
         self.occupancy
     }
 }
+impl ::std::fmt::Debug for RouteCarOptions {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteCarOptions");
+        formatter.field("engine_type", &"*** Sensitive Data Redacted ***");
+        formatter.field("license_plate", &self.license_plate);
+        formatter.field("max_speed", &"*** Sensitive Data Redacted ***");
+        formatter.field("occupancy", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl RouteCarOptions {
     /// Creates a new builder-style object to manufacture [`RouteCarOptions`](crate::types::RouteCarOptions).
     pub fn builder() -> crate::types::builders::RouteCarOptionsBuilder {
@@ -43,7 +53,7 @@ impl RouteCarOptions {
 }
 
 /// A builder for [`RouteCarOptions`](crate::types::RouteCarOptions).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct RouteCarOptionsBuilder {
     pub(crate) engine_type: ::std::option::Option<crate::types::RouteEngineType>,
@@ -122,5 +132,15 @@ impl RouteCarOptionsBuilder {
             max_speed: self.max_speed,
             occupancy: self.occupancy,
         }
+    }
+}
+impl ::std::fmt::Debug for RouteCarOptionsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteCarOptionsBuilder");
+        formatter.field("engine_type", &"*** Sensitive Data Redacted ***");
+        formatter.field("license_plate", &self.license_plate);
+        formatter.field("max_speed", &"*** Sensitive Data Redacted ***");
+        formatter.field("occupancy", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

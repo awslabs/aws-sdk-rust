@@ -15,15 +15,15 @@ pub use crate::types::_view::ViewBuilder;
 
 pub use crate::types::_view_content::ViewContentBuilder;
 
-pub use crate::types::_connection_data::ConnectionDataBuilder;
+pub use crate::types::_web_rtc_connection::WebRtcConnectionBuilder;
 
-pub use crate::types::_meeting::MeetingBuilder;
+pub use crate::types::_web_rtc_meeting::WebRtcMeetingBuilder;
 
 pub use crate::types::_meeting_features_configuration::MeetingFeaturesConfigurationBuilder;
 
 pub use crate::types::_audio_features::AudioFeaturesBuilder;
 
-pub use crate::types::_media_placement::MediaPlacementBuilder;
+pub use crate::types::_web_rtc_media_placement::WebRtcMediaPlacementBuilder;
 
 pub use crate::types::_attendee::AttendeeBuilder;
 

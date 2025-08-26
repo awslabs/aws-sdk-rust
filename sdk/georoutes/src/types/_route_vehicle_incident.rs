@@ -2,7 +2,7 @@
 
 /// <p>Incidents corresponding to this leg of the route.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RouteVehicleIncident {
     /// <p>Brief readable description of the incident.</p>
     pub description: ::std::option::Option<::std::string::String>,
@@ -37,6 +37,17 @@ impl RouteVehicleIncident {
         self.r#type.as_ref()
     }
 }
+impl ::std::fmt::Debug for RouteVehicleIncident {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteVehicleIncident");
+        formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("end_time", &"*** Sensitive Data Redacted ***");
+        formatter.field("severity", &"*** Sensitive Data Redacted ***");
+        formatter.field("start_time", &"*** Sensitive Data Redacted ***");
+        formatter.field("r#type", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl RouteVehicleIncident {
     /// Creates a new builder-style object to manufacture [`RouteVehicleIncident`](crate::types::RouteVehicleIncident).
     pub fn builder() -> crate::types::builders::RouteVehicleIncidentBuilder {
@@ -45,7 +56,7 @@ impl RouteVehicleIncident {
 }
 
 /// A builder for [`RouteVehicleIncident`](crate::types::RouteVehicleIncident).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct RouteVehicleIncidentBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -134,5 +145,16 @@ impl RouteVehicleIncidentBuilder {
             start_time: self.start_time,
             r#type: self.r#type,
         }
+    }
+}
+impl ::std::fmt::Debug for RouteVehicleIncidentBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteVehicleIncidentBuilder");
+        formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("end_time", &"*** Sensitive Data Redacted ***");
+        formatter.field("severity", &"*** Sensitive Data Redacted ***");
+        formatter.field("start_time", &"*** Sensitive Data Redacted ***");
+        formatter.field("r#type", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

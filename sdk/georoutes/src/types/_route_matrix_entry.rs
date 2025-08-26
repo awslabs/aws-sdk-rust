@@ -2,7 +2,7 @@
 
 /// <p>The calculated route matrix containing the results for all pairs of Origins to Destination positions. Each row corresponds to one entry in Origins. Each entry in the row corresponds to the route from that entry in Origins to an entry in Destination positions.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RouteMatrixEntry {
     /// <p>The total distance of travel for the route.</p>
     pub distance: i64,
@@ -27,6 +27,15 @@ impl RouteMatrixEntry {
         self.error.as_ref()
     }
 }
+impl ::std::fmt::Debug for RouteMatrixEntry {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteMatrixEntry");
+        formatter.field("distance", &"*** Sensitive Data Redacted ***");
+        formatter.field("duration", &"*** Sensitive Data Redacted ***");
+        formatter.field("error", &self.error);
+        formatter.finish()
+    }
+}
 impl RouteMatrixEntry {
     /// Creates a new builder-style object to manufacture [`RouteMatrixEntry`](crate::types::RouteMatrixEntry).
     pub fn builder() -> crate::types::builders::RouteMatrixEntryBuilder {
@@ -35,7 +44,7 @@ impl RouteMatrixEntry {
 }
 
 /// A builder for [`RouteMatrixEntry`](crate::types::RouteMatrixEntry).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct RouteMatrixEntryBuilder {
     pub(crate) distance: ::std::option::Option<i64>,
@@ -97,5 +106,14 @@ impl RouteMatrixEntryBuilder {
             duration: self.duration.unwrap_or_default(),
             error: self.error,
         }
+    }
+}
+impl ::std::fmt::Debug for RouteMatrixEntryBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteMatrixEntryBuilder");
+        formatter.field("distance", &"*** Sensitive Data Redacted ***");
+        formatter.field("duration", &"*** Sensitive Data Redacted ***");
+        formatter.field("error", &self.error);
+        formatter.finish()
     }
 }

@@ -2,7 +2,7 @@
 
 /// <p>Travel mode options when the provided travel mode is "Truck"</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct WaypointOptimizationTruckOptions {
     /// <p>Gross weight of the vehicle including trailers, and goods at capacity.</p>
     /// <p><b>Unit</b>: <code>Kilograms</code></p>
@@ -143,6 +143,21 @@ impl WaypointOptimizationTruckOptions {
         self.width
     }
 }
+impl ::std::fmt::Debug for WaypointOptimizationTruckOptions {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("WaypointOptimizationTruckOptions");
+        formatter.field("gross_weight", &"*** Sensitive Data Redacted ***");
+        formatter.field("hazardous_cargos", &"*** Sensitive Data Redacted ***");
+        formatter.field("height", &"*** Sensitive Data Redacted ***");
+        formatter.field("length", &"*** Sensitive Data Redacted ***");
+        formatter.field("trailer", &self.trailer);
+        formatter.field("truck_type", &"*** Sensitive Data Redacted ***");
+        formatter.field("tunnel_restriction_code", &"*** Sensitive Data Redacted ***");
+        formatter.field("weight_per_axle", &"*** Sensitive Data Redacted ***");
+        formatter.field("width", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl WaypointOptimizationTruckOptions {
     /// Creates a new builder-style object to manufacture [`WaypointOptimizationTruckOptions`](crate::types::WaypointOptimizationTruckOptions).
     pub fn builder() -> crate::types::builders::WaypointOptimizationTruckOptionsBuilder {
@@ -151,7 +166,7 @@ impl WaypointOptimizationTruckOptions {
 }
 
 /// A builder for [`WaypointOptimizationTruckOptions`](crate::types::WaypointOptimizationTruckOptions).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct WaypointOptimizationTruckOptionsBuilder {
     pub(crate) gross_weight: ::std::option::Option<i64>,
@@ -433,5 +448,20 @@ impl WaypointOptimizationTruckOptionsBuilder {
             weight_per_axle: self.weight_per_axle.unwrap_or_default(),
             width: self.width.unwrap_or_default(),
         }
+    }
+}
+impl ::std::fmt::Debug for WaypointOptimizationTruckOptionsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("WaypointOptimizationTruckOptionsBuilder");
+        formatter.field("gross_weight", &"*** Sensitive Data Redacted ***");
+        formatter.field("hazardous_cargos", &"*** Sensitive Data Redacted ***");
+        formatter.field("height", &"*** Sensitive Data Redacted ***");
+        formatter.field("length", &"*** Sensitive Data Redacted ***");
+        formatter.field("trailer", &self.trailer);
+        formatter.field("truck_type", &"*** Sensitive Data Redacted ***");
+        formatter.field("tunnel_restriction_code", &"*** Sensitive Data Redacted ***");
+        formatter.field("weight_per_axle", &"*** Sensitive Data Redacted ***");
+        formatter.field("width", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

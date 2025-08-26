@@ -2,7 +2,7 @@
 
 /// <p>The vehicle License Plate.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RouteMatrixVehicleLicensePlate {
     /// <p>The last character of the License Plate.</p>
     pub last_character: ::std::option::Option<::std::string::String>,
@@ -13,6 +13,13 @@ impl RouteMatrixVehicleLicensePlate {
         self.last_character.as_deref()
     }
 }
+impl ::std::fmt::Debug for RouteMatrixVehicleLicensePlate {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteMatrixVehicleLicensePlate");
+        formatter.field("last_character", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl RouteMatrixVehicleLicensePlate {
     /// Creates a new builder-style object to manufacture [`RouteMatrixVehicleLicensePlate`](crate::types::RouteMatrixVehicleLicensePlate).
     pub fn builder() -> crate::types::builders::RouteMatrixVehicleLicensePlateBuilder {
@@ -21,7 +28,7 @@ impl RouteMatrixVehicleLicensePlate {
 }
 
 /// A builder for [`RouteMatrixVehicleLicensePlate`](crate::types::RouteMatrixVehicleLicensePlate).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct RouteMatrixVehicleLicensePlateBuilder {
     pub(crate) last_character: ::std::option::Option<::std::string::String>,
@@ -46,5 +53,12 @@ impl RouteMatrixVehicleLicensePlateBuilder {
         crate::types::RouteMatrixVehicleLicensePlate {
             last_character: self.last_character,
         }
+    }
+}
+impl ::std::fmt::Debug for RouteMatrixVehicleLicensePlateBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteMatrixVehicleLicensePlateBuilder");
+        formatter.field("last_character", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

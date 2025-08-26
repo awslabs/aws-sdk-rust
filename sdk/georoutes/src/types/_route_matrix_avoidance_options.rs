@@ -2,7 +2,7 @@
 
 /// <p>Specifies options for areas to avoid when calculating the route. This is a best-effort avoidance setting, meaning the router will try to honor the avoidance preferences but may still include restricted areas if no feasible alternative route exists. If avoidance options are not followed, the response will indicate that the avoidance criteria were violated.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RouteMatrixAvoidanceOptions {
     /// <p>Areas to be avoided.</p>
     pub areas: ::std::option::Option<::std::vec::Vec<crate::types::RouteMatrixAvoidanceArea>>,
@@ -83,6 +83,23 @@ impl RouteMatrixAvoidanceOptions {
         self.zone_categories.as_deref().unwrap_or_default()
     }
 }
+impl ::std::fmt::Debug for RouteMatrixAvoidanceOptions {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteMatrixAvoidanceOptions");
+        formatter.field("areas", &self.areas);
+        formatter.field("car_shuttle_trains", &"*** Sensitive Data Redacted ***");
+        formatter.field("controlled_access_highways", &"*** Sensitive Data Redacted ***");
+        formatter.field("dirt_roads", &"*** Sensitive Data Redacted ***");
+        formatter.field("ferries", &"*** Sensitive Data Redacted ***");
+        formatter.field("toll_roads", &"*** Sensitive Data Redacted ***");
+        formatter.field("toll_transponders", &"*** Sensitive Data Redacted ***");
+        formatter.field("truck_road_types", &"*** Sensitive Data Redacted ***");
+        formatter.field("tunnels", &"*** Sensitive Data Redacted ***");
+        formatter.field("u_turns", &"*** Sensitive Data Redacted ***");
+        formatter.field("zone_categories", &self.zone_categories);
+        formatter.finish()
+    }
+}
 impl RouteMatrixAvoidanceOptions {
     /// Creates a new builder-style object to manufacture [`RouteMatrixAvoidanceOptions`](crate::types::RouteMatrixAvoidanceOptions).
     pub fn builder() -> crate::types::builders::RouteMatrixAvoidanceOptionsBuilder {
@@ -91,7 +108,7 @@ impl RouteMatrixAvoidanceOptions {
 }
 
 /// A builder for [`RouteMatrixAvoidanceOptions`](crate::types::RouteMatrixAvoidanceOptions).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct RouteMatrixAvoidanceOptionsBuilder {
     pub(crate) areas: ::std::option::Option<::std::vec::Vec<crate::types::RouteMatrixAvoidanceArea>>,
@@ -300,5 +317,22 @@ impl RouteMatrixAvoidanceOptionsBuilder {
             u_turns: self.u_turns,
             zone_categories: self.zone_categories,
         }
+    }
+}
+impl ::std::fmt::Debug for RouteMatrixAvoidanceOptionsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteMatrixAvoidanceOptionsBuilder");
+        formatter.field("areas", &self.areas);
+        formatter.field("car_shuttle_trains", &"*** Sensitive Data Redacted ***");
+        formatter.field("controlled_access_highways", &"*** Sensitive Data Redacted ***");
+        formatter.field("dirt_roads", &"*** Sensitive Data Redacted ***");
+        formatter.field("ferries", &"*** Sensitive Data Redacted ***");
+        formatter.field("toll_roads", &"*** Sensitive Data Redacted ***");
+        formatter.field("toll_transponders", &"*** Sensitive Data Redacted ***");
+        formatter.field("truck_road_types", &"*** Sensitive Data Redacted ***");
+        formatter.field("tunnels", &"*** Sensitive Data Redacted ***");
+        formatter.field("u_turns", &"*** Sensitive Data Redacted ***");
+        formatter.field("zone_categories", &self.zone_categories);
+        formatter.finish()
     }
 }

@@ -2,7 +2,7 @@
 
 /// <p>Destination related options.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct WaypointOptimizationDestinationOptions {
     /// <p>Access hours corresponding to when a waypoint can be visited.</p>
     pub access_hours: ::std::option::Option<crate::types::WaypointOptimizationAccessHours>,
@@ -45,6 +45,18 @@ impl WaypointOptimizationDestinationOptions {
         self.side_of_street.as_ref()
     }
 }
+impl ::std::fmt::Debug for WaypointOptimizationDestinationOptions {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("WaypointOptimizationDestinationOptions");
+        formatter.field("access_hours", &self.access_hours);
+        formatter.field("appointment_time", &"*** Sensitive Data Redacted ***");
+        formatter.field("heading", &"*** Sensitive Data Redacted ***");
+        formatter.field("id", &self.id);
+        formatter.field("service_duration", &"*** Sensitive Data Redacted ***");
+        formatter.field("side_of_street", &self.side_of_street);
+        formatter.finish()
+    }
+}
 impl WaypointOptimizationDestinationOptions {
     /// Creates a new builder-style object to manufacture [`WaypointOptimizationDestinationOptions`](crate::types::WaypointOptimizationDestinationOptions).
     pub fn builder() -> crate::types::builders::WaypointOptimizationDestinationOptionsBuilder {
@@ -53,7 +65,7 @@ impl WaypointOptimizationDestinationOptions {
 }
 
 /// A builder for [`WaypointOptimizationDestinationOptions`](crate::types::WaypointOptimizationDestinationOptions).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct WaypointOptimizationDestinationOptionsBuilder {
     pub(crate) access_hours: ::std::option::Option<crate::types::WaypointOptimizationAccessHours>,
@@ -161,5 +173,17 @@ impl WaypointOptimizationDestinationOptionsBuilder {
             service_duration: self.service_duration.unwrap_or_default(),
             side_of_street: self.side_of_street,
         }
+    }
+}
+impl ::std::fmt::Debug for WaypointOptimizationDestinationOptionsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("WaypointOptimizationDestinationOptionsBuilder");
+        formatter.field("access_hours", &self.access_hours);
+        formatter.field("appointment_time", &"*** Sensitive Data Redacted ***");
+        formatter.field("heading", &"*** Sensitive Data Redacted ***");
+        formatter.field("id", &self.id);
+        formatter.field("service_duration", &"*** Sensitive Data Redacted ***");
+        formatter.field("side_of_street", &self.side_of_street);
+        formatter.finish()
     }
 }

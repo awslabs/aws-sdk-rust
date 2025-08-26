@@ -61,14 +61,14 @@ impl RouteWaypoint {
 impl ::std::fmt::Debug for RouteWaypoint {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("RouteWaypoint");
-        formatter.field("avoid_actions_for_distance", &self.avoid_actions_for_distance);
-        formatter.field("avoid_u_turns", &self.avoid_u_turns);
-        formatter.field("heading", &self.heading);
+        formatter.field("avoid_actions_for_distance", &"*** Sensitive Data Redacted ***");
+        formatter.field("avoid_u_turns", &"*** Sensitive Data Redacted ***");
+        formatter.field("heading", &"*** Sensitive Data Redacted ***");
         formatter.field("matching", &self.matching);
-        formatter.field("pass_through", &self.pass_through);
+        formatter.field("pass_through", &"*** Sensitive Data Redacted ***");
         formatter.field("position", &"*** Sensitive Data Redacted ***");
         formatter.field("side_of_street", &self.side_of_street);
-        formatter.field("stop_duration", &self.stop_duration);
+        formatter.field("stop_duration", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -238,14 +238,14 @@ impl RouteWaypointBuilder {
 impl ::std::fmt::Debug for RouteWaypointBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("RouteWaypointBuilder");
-        formatter.field("avoid_actions_for_distance", &self.avoid_actions_for_distance);
-        formatter.field("avoid_u_turns", &self.avoid_u_turns);
-        formatter.field("heading", &self.heading);
+        formatter.field("avoid_actions_for_distance", &"*** Sensitive Data Redacted ***");
+        formatter.field("avoid_u_turns", &"*** Sensitive Data Redacted ***");
+        formatter.field("heading", &"*** Sensitive Data Redacted ***");
         formatter.field("matching", &self.matching);
-        formatter.field("pass_through", &self.pass_through);
+        formatter.field("pass_through", &"*** Sensitive Data Redacted ***");
         formatter.field("position", &"*** Sensitive Data Redacted ***");
         formatter.field("side_of_street", &self.side_of_street);
-        formatter.field("stop_duration", &self.stop_duration);
+        formatter.field("stop_duration", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

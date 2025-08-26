@@ -2,7 +2,7 @@
 
 /// <p>Travel mode options when the provided travel mode is <code>Scooter</code></p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct IsolineScooterOptions {
     /// <p>Engine type of the vehicle.</p>
     pub engine_type: ::std::option::Option<crate::types::IsolineEngineType>,
@@ -35,6 +35,16 @@ impl IsolineScooterOptions {
         self.occupancy
     }
 }
+impl ::std::fmt::Debug for IsolineScooterOptions {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("IsolineScooterOptions");
+        formatter.field("engine_type", &"*** Sensitive Data Redacted ***");
+        formatter.field("license_plate", &"*** Sensitive Data Redacted ***");
+        formatter.field("max_speed", &"*** Sensitive Data Redacted ***");
+        formatter.field("occupancy", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl IsolineScooterOptions {
     /// Creates a new builder-style object to manufacture [`IsolineScooterOptions`](crate::types::IsolineScooterOptions).
     pub fn builder() -> crate::types::builders::IsolineScooterOptionsBuilder {
@@ -43,7 +53,7 @@ impl IsolineScooterOptions {
 }
 
 /// A builder for [`IsolineScooterOptions`](crate::types::IsolineScooterOptions).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct IsolineScooterOptionsBuilder {
     pub(crate) engine_type: ::std::option::Option<crate::types::IsolineEngineType>,
@@ -122,5 +132,15 @@ impl IsolineScooterOptionsBuilder {
             max_speed: self.max_speed,
             occupancy: self.occupancy,
         }
+    }
+}
+impl ::std::fmt::Debug for IsolineScooterOptionsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("IsolineScooterOptionsBuilder");
+        formatter.field("engine_type", &"*** Sensitive Data Redacted ***");
+        formatter.field("license_plate", &"*** Sensitive Data Redacted ***");
+        formatter.field("max_speed", &"*** Sensitive Data Redacted ***");
+        formatter.field("occupancy", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

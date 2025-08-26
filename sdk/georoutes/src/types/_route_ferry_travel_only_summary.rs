@@ -2,7 +2,7 @@
 
 /// <p>Summarized details for the leg including travel steps only. The Distance for the travel only portion of the journey is the same as the Distance within the Overview summary.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RouteFerryTravelOnlySummary {
     /// <p>Total duration in free flowing traffic, which is the best case or shortest duration possible to cover the leg.</p>
     /// <p><b>Unit</b>: <code>seconds</code></p>
@@ -15,6 +15,13 @@ impl RouteFerryTravelOnlySummary {
         self.duration
     }
 }
+impl ::std::fmt::Debug for RouteFerryTravelOnlySummary {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteFerryTravelOnlySummary");
+        formatter.field("duration", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl RouteFerryTravelOnlySummary {
     /// Creates a new builder-style object to manufacture [`RouteFerryTravelOnlySummary`](crate::types::RouteFerryTravelOnlySummary).
     pub fn builder() -> crate::types::builders::RouteFerryTravelOnlySummaryBuilder {
@@ -23,7 +30,7 @@ impl RouteFerryTravelOnlySummary {
 }
 
 /// A builder for [`RouteFerryTravelOnlySummary`](crate::types::RouteFerryTravelOnlySummary).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct RouteFerryTravelOnlySummaryBuilder {
     pub(crate) duration: ::std::option::Option<i64>,
@@ -52,5 +59,12 @@ impl RouteFerryTravelOnlySummaryBuilder {
         crate::types::RouteFerryTravelOnlySummary {
             duration: self.duration.unwrap_or_default(),
         }
+    }
+}
+impl ::std::fmt::Debug for RouteFerryTravelOnlySummaryBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteFerryTravelOnlySummaryBuilder");
+        formatter.field("duration", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

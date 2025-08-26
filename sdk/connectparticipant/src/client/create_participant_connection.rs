@@ -9,7 +9,7 @@ impl super::Client {
     /// - On success, responds with [`CreateParticipantConnectionOutput`](crate::operation::create_participant_connection::CreateParticipantConnectionOutput) with field(s):
     ///   - [`websocket(Option<Websocket>)`](crate::operation::create_participant_connection::CreateParticipantConnectionOutput::websocket): <p>Creates the participant's websocket connection.</p>
     ///   - [`connection_credentials(Option<ConnectionCredentials>)`](crate::operation::create_participant_connection::CreateParticipantConnectionOutput::connection_credentials): <p>Creates the participant's connection credentials. The authentication token associated with the participant's connection.</p>
-    ///   - [`web_rtc_connection(Option<ConnectionData>)`](crate::operation::create_participant_connection::CreateParticipantConnectionOutput::web_rtc_connection): <p>Creates the participant's WebRTC connection data required for the client application (mobile application or website) to connect to the call.</p>
+    ///   - [`web_rtc_connection(Option<WebRtcConnection>)`](crate::operation::create_participant_connection::CreateParticipantConnectionOutput::web_rtc_connection): <p>Creates the participant's WebRTC connection data required for the client application (mobile application or website) to connect to the call.</p>
     /// - On failure, responds with [`SdkError<CreateParticipantConnectionError>`](crate::operation::create_participant_connection::CreateParticipantConnectionError)
     pub fn create_participant_connection(
         &self,

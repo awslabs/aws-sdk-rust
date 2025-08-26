@@ -2,7 +2,7 @@
 
 /// <p>Calculated isolines and associated properties.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Isoline {
     /// <p>Isolines may contain multiple components, if these components are connected by ferry links. These components are returned as separate polygons while the ferry links are returned as connections.</p>
     pub connections: ::std::vec::Vec<crate::types::IsolineConnection>,
@@ -33,6 +33,16 @@ impl Isoline {
         self.time_threshold
     }
 }
+impl ::std::fmt::Debug for Isoline {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("Isoline");
+        formatter.field("connections", &self.connections);
+        formatter.field("distance_threshold", &"*** Sensitive Data Redacted ***");
+        formatter.field("geometries", &self.geometries);
+        formatter.field("time_threshold", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl Isoline {
     /// Creates a new builder-style object to manufacture [`Isoline`](crate::types::Isoline).
     pub fn builder() -> crate::types::builders::IsolineBuilder {
@@ -41,7 +51,7 @@ impl Isoline {
 }
 
 /// A builder for [`Isoline`](crate::types::Isoline).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct IsolineBuilder {
     pub(crate) connections: ::std::option::Option<::std::vec::Vec<crate::types::IsolineConnection>>,
@@ -139,5 +149,15 @@ impl IsolineBuilder {
             })?,
             time_threshold: self.time_threshold.unwrap_or_default(),
         })
+    }
+}
+impl ::std::fmt::Debug for IsolineBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("IsolineBuilder");
+        formatter.field("connections", &self.connections);
+        formatter.field("distance_threshold", &"*** Sensitive Data Redacted ***");
+        formatter.field("geometries", &self.geometries);
+        formatter.field("time_threshold", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

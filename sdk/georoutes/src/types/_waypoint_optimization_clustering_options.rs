@@ -2,7 +2,7 @@
 
 /// <p>Options for WaypointOptimizationClustering.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct WaypointOptimizationClusteringOptions {
     /// <p>The algorithm to be used. <code>DrivingDistance</code> assigns all the waypoints that are within driving distance of each other into a single cluster. <code>TopologySegment</code> assigns all the waypoints that are within the same topology segment into a single cluster. A Topology segment is a linear stretch of road between two junctions.</p>
     pub algorithm: crate::types::WaypointOptimizationClusteringAlgorithm,
@@ -19,6 +19,14 @@ impl WaypointOptimizationClusteringOptions {
         self.driving_distance_options.as_ref()
     }
 }
+impl ::std::fmt::Debug for WaypointOptimizationClusteringOptions {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("WaypointOptimizationClusteringOptions");
+        formatter.field("algorithm", &"*** Sensitive Data Redacted ***");
+        formatter.field("driving_distance_options", &self.driving_distance_options);
+        formatter.finish()
+    }
+}
 impl WaypointOptimizationClusteringOptions {
     /// Creates a new builder-style object to manufacture [`WaypointOptimizationClusteringOptions`](crate::types::WaypointOptimizationClusteringOptions).
     pub fn builder() -> crate::types::builders::WaypointOptimizationClusteringOptionsBuilder {
@@ -27,7 +35,7 @@ impl WaypointOptimizationClusteringOptions {
 }
 
 /// A builder for [`WaypointOptimizationClusteringOptions`](crate::types::WaypointOptimizationClusteringOptions).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct WaypointOptimizationClusteringOptionsBuilder {
     pub(crate) algorithm: ::std::option::Option<crate::types::WaypointOptimizationClusteringAlgorithm>,
@@ -78,5 +86,13 @@ impl WaypointOptimizationClusteringOptionsBuilder {
             })?,
             driving_distance_options: self.driving_distance_options,
         })
+    }
+}
+impl ::std::fmt::Debug for WaypointOptimizationClusteringOptionsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("WaypointOptimizationClusteringOptionsBuilder");
+        formatter.field("algorithm", &"*** Sensitive Data Redacted ***");
+        formatter.field("driving_distance_options", &self.driving_distance_options);
+        formatter.finish()
     }
 }

@@ -2,7 +2,7 @@
 
 /// <p>Span computed for the requested SpanAdditionalFeatures.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RouteVehicleSpan {
     /// <p>Duration of the computed span without traffic congestion.</p>
     /// <p><b>Unit</b>: <code>seconds</code></p>
@@ -181,6 +181,35 @@ impl RouteVehicleSpan {
         self.zones.as_deref().unwrap_or_default()
     }
 }
+impl ::std::fmt::Debug for RouteVehicleSpan {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteVehicleSpan");
+        formatter.field("best_case_duration", &"*** Sensitive Data Redacted ***");
+        formatter.field("car_access", &"*** Sensitive Data Redacted ***");
+        formatter.field("country", &"*** Sensitive Data Redacted ***");
+        formatter.field("distance", &"*** Sensitive Data Redacted ***");
+        formatter.field("duration", &"*** Sensitive Data Redacted ***");
+        formatter.field("dynamic_speed", &self.dynamic_speed);
+        formatter.field("functional_classification", &"*** Sensitive Data Redacted ***");
+        formatter.field("gate", &"*** Sensitive Data Redacted ***");
+        formatter.field("geometry_offset", &self.geometry_offset);
+        formatter.field("incidents", &self.incidents);
+        formatter.field("names", &self.names);
+        formatter.field("notices", &self.notices);
+        formatter.field("railway_crossing", &"*** Sensitive Data Redacted ***");
+        formatter.field("region", &"*** Sensitive Data Redacted ***");
+        formatter.field("road_attributes", &"*** Sensitive Data Redacted ***");
+        formatter.field("route_numbers", &self.route_numbers);
+        formatter.field("scooter_access", &"*** Sensitive Data Redacted ***");
+        formatter.field("speed_limit", &self.speed_limit);
+        formatter.field("toll_systems", &self.toll_systems);
+        formatter.field("truck_access", &"*** Sensitive Data Redacted ***");
+        formatter.field("truck_road_types", &self.truck_road_types);
+        formatter.field("typical_duration", &"*** Sensitive Data Redacted ***");
+        formatter.field("zones", &self.zones);
+        formatter.finish()
+    }
+}
 impl RouteVehicleSpan {
     /// Creates a new builder-style object to manufacture [`RouteVehicleSpan`](crate::types::RouteVehicleSpan).
     pub fn builder() -> crate::types::builders::RouteVehicleSpanBuilder {
@@ -189,7 +218,7 @@ impl RouteVehicleSpan {
 }
 
 /// A builder for [`RouteVehicleSpan`](crate::types::RouteVehicleSpan).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct RouteVehicleSpanBuilder {
     pub(crate) best_case_duration: ::std::option::Option<i64>,
@@ -653,5 +682,34 @@ impl RouteVehicleSpanBuilder {
             typical_duration: self.typical_duration.unwrap_or_default(),
             zones: self.zones,
         }
+    }
+}
+impl ::std::fmt::Debug for RouteVehicleSpanBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteVehicleSpanBuilder");
+        formatter.field("best_case_duration", &"*** Sensitive Data Redacted ***");
+        formatter.field("car_access", &"*** Sensitive Data Redacted ***");
+        formatter.field("country", &"*** Sensitive Data Redacted ***");
+        formatter.field("distance", &"*** Sensitive Data Redacted ***");
+        formatter.field("duration", &"*** Sensitive Data Redacted ***");
+        formatter.field("dynamic_speed", &self.dynamic_speed);
+        formatter.field("functional_classification", &"*** Sensitive Data Redacted ***");
+        formatter.field("gate", &"*** Sensitive Data Redacted ***");
+        formatter.field("geometry_offset", &self.geometry_offset);
+        formatter.field("incidents", &self.incidents);
+        formatter.field("names", &self.names);
+        formatter.field("notices", &self.notices);
+        formatter.field("railway_crossing", &"*** Sensitive Data Redacted ***");
+        formatter.field("region", &"*** Sensitive Data Redacted ***");
+        formatter.field("road_attributes", &"*** Sensitive Data Redacted ***");
+        formatter.field("route_numbers", &self.route_numbers);
+        formatter.field("scooter_access", &"*** Sensitive Data Redacted ***");
+        formatter.field("speed_limit", &self.speed_limit);
+        formatter.field("toll_systems", &self.toll_systems);
+        formatter.field("truck_access", &"*** Sensitive Data Redacted ***");
+        formatter.field("truck_road_types", &self.truck_road_types);
+        formatter.field("typical_duration", &"*** Sensitive Data Redacted ***");
+        formatter.field("zones", &self.zones);
+        formatter.finish()
     }
 }

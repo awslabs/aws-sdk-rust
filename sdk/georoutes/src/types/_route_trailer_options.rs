@@ -2,7 +2,7 @@
 
 /// <p>Trailer options corresponding to the vehicle.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RouteTrailerOptions {
     /// <p>Total number of axles of the vehicle.</p>
     pub axle_count: ::std::option::Option<i32>,
@@ -21,6 +21,14 @@ impl RouteTrailerOptions {
         self.trailer_count
     }
 }
+impl ::std::fmt::Debug for RouteTrailerOptions {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteTrailerOptions");
+        formatter.field("axle_count", &"*** Sensitive Data Redacted ***");
+        formatter.field("trailer_count", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl RouteTrailerOptions {
     /// Creates a new builder-style object to manufacture [`RouteTrailerOptions`](crate::types::RouteTrailerOptions).
     pub fn builder() -> crate::types::builders::RouteTrailerOptionsBuilder {
@@ -29,7 +37,7 @@ impl RouteTrailerOptions {
 }
 
 /// A builder for [`RouteTrailerOptions`](crate::types::RouteTrailerOptions).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct RouteTrailerOptionsBuilder {
     pub(crate) axle_count: ::std::option::Option<i32>,
@@ -73,5 +81,13 @@ impl RouteTrailerOptionsBuilder {
             axle_count: self.axle_count,
             trailer_count: self.trailer_count,
         }
+    }
+}
+impl ::std::fmt::Debug for RouteTrailerOptionsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteTrailerOptionsBuilder");
+        formatter.field("axle_count", &"*** Sensitive Data Redacted ***");
+        formatter.field("trailer_count", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

@@ -1983,9 +1983,27 @@ pub use crate::types::_import_snapshot_task::ImportSnapshotTask;
 
 pub use crate::types::_import_image_task::ImportImageTask;
 
+pub use crate::types::_image_usage_report::ImageUsageReport;
+
+pub use crate::types::_image_usage_resource_type::ImageUsageResourceType;
+
+pub use crate::types::_image_usage_resource_type_option::ImageUsageResourceTypeOption;
+
+pub use crate::types::_image_usage_report_entry::ImageUsageReportEntry;
+
 pub use crate::types::_image::Image;
 
 pub use crate::types::_image_type_values::ImageTypeValues;
+
+pub use crate::types::_image_reference::ImageReference;
+
+pub use crate::types::_image_reference_resource_type::ImageReferenceResourceType;
+
+pub use crate::types::_resource_type_request::ResourceTypeRequest;
+
+pub use crate::types::_resource_type_option::ResourceTypeOption;
+
+pub use crate::types::_image_reference_option_name::ImageReferenceOptionName;
 
 pub use crate::types::_image_attribute_name::ImageAttributeName;
 
@@ -2388,6 +2406,10 @@ pub use crate::types::_key_format::KeyFormat;
 pub use crate::types::_ipam_pool_source_resource_request::IpamPoolSourceResourceRequest;
 
 pub use crate::types::_export_to_s3_task_specification::ExportToS3TaskSpecification;
+
+pub use crate::types::_image_usage_resource_type_request::ImageUsageResourceTypeRequest;
+
+pub use crate::types::_image_usage_resource_type_option_request::ImageUsageResourceTypeOptionRequest;
 
 pub use crate::types::_storage_location::StorageLocation;
 
@@ -3263,9 +3285,27 @@ mod _image_metadata;
 
 mod _image_recycle_bin_info;
 
+mod _image_reference;
+
+mod _image_reference_option_name;
+
+mod _image_reference_resource_type;
+
 mod _image_state;
 
 mod _image_type_values;
+
+mod _image_usage_report;
+
+mod _image_usage_report_entry;
+
+mod _image_usage_resource_type;
+
+mod _image_usage_resource_type_option;
+
+mod _image_usage_resource_type_option_request;
+
+mod _image_usage_resource_type_request;
 
 mod _imds_support_values;
 
@@ -4170,6 +4210,10 @@ mod _resource_statement;
 mod _resource_statement_request;
 
 mod _resource_type;
+
+mod _resource_type_option;
+
+mod _resource_type_request;
 
 mod _response_error;
 

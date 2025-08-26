@@ -2,7 +2,7 @@
 
 /// <p>Travel mode options when the provided travel mode is "Truck"</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RouteMatrixTruckOptions {
     /// <p>Total number of axles of the vehicle.</p>
     pub axle_count: ::std::option::Option<i32>,
@@ -193,6 +193,28 @@ impl RouteMatrixTruckOptions {
         self.width
     }
 }
+impl ::std::fmt::Debug for RouteMatrixTruckOptions {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteMatrixTruckOptions");
+        formatter.field("axle_count", &"*** Sensitive Data Redacted ***");
+        formatter.field("gross_weight", &"*** Sensitive Data Redacted ***");
+        formatter.field("hazardous_cargos", &"*** Sensitive Data Redacted ***");
+        formatter.field("height", &"*** Sensitive Data Redacted ***");
+        formatter.field("kpra_length", &"*** Sensitive Data Redacted ***");
+        formatter.field("length", &"*** Sensitive Data Redacted ***");
+        formatter.field("license_plate", &"*** Sensitive Data Redacted ***");
+        formatter.field("max_speed", &"*** Sensitive Data Redacted ***");
+        formatter.field("occupancy", &"*** Sensitive Data Redacted ***");
+        formatter.field("payload_capacity", &"*** Sensitive Data Redacted ***");
+        formatter.field("trailer", &self.trailer);
+        formatter.field("truck_type", &"*** Sensitive Data Redacted ***");
+        formatter.field("tunnel_restriction_code", &"*** Sensitive Data Redacted ***");
+        formatter.field("weight_per_axle", &"*** Sensitive Data Redacted ***");
+        formatter.field("weight_per_axle_group", &self.weight_per_axle_group);
+        formatter.field("width", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl RouteMatrixTruckOptions {
     /// Creates a new builder-style object to manufacture [`RouteMatrixTruckOptions`](crate::types::RouteMatrixTruckOptions).
     pub fn builder() -> crate::types::builders::RouteMatrixTruckOptionsBuilder {
@@ -201,7 +223,7 @@ impl RouteMatrixTruckOptions {
 }
 
 /// A builder for [`RouteMatrixTruckOptions`](crate::types::RouteMatrixTruckOptions).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct RouteMatrixTruckOptionsBuilder {
     pub(crate) axle_count: ::std::option::Option<i32>,
@@ -604,5 +626,27 @@ impl RouteMatrixTruckOptionsBuilder {
             weight_per_axle_group: self.weight_per_axle_group,
             width: self.width.unwrap_or_default(),
         }
+    }
+}
+impl ::std::fmt::Debug for RouteMatrixTruckOptionsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteMatrixTruckOptionsBuilder");
+        formatter.field("axle_count", &"*** Sensitive Data Redacted ***");
+        formatter.field("gross_weight", &"*** Sensitive Data Redacted ***");
+        formatter.field("hazardous_cargos", &"*** Sensitive Data Redacted ***");
+        formatter.field("height", &"*** Sensitive Data Redacted ***");
+        formatter.field("kpra_length", &"*** Sensitive Data Redacted ***");
+        formatter.field("length", &"*** Sensitive Data Redacted ***");
+        formatter.field("license_plate", &"*** Sensitive Data Redacted ***");
+        formatter.field("max_speed", &"*** Sensitive Data Redacted ***");
+        formatter.field("occupancy", &"*** Sensitive Data Redacted ***");
+        formatter.field("payload_capacity", &"*** Sensitive Data Redacted ***");
+        formatter.field("trailer", &self.trailer);
+        formatter.field("truck_type", &"*** Sensitive Data Redacted ***");
+        formatter.field("tunnel_restriction_code", &"*** Sensitive Data Redacted ***");
+        formatter.field("weight_per_axle", &"*** Sensitive Data Redacted ***");
+        formatter.field("weight_per_axle_group", &self.weight_per_axle_group);
+        formatter.field("width", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

@@ -8,7 +8,7 @@ pub struct CreateParticipantConnectionOutput {
     /// <p>Creates the participant's connection credentials. The authentication token associated with the participant's connection.</p>
     pub connection_credentials: ::std::option::Option<crate::types::ConnectionCredentials>,
     /// <p>Creates the participant's WebRTC connection data required for the client application (mobile application or website) to connect to the call.</p>
-    pub web_rtc_connection: ::std::option::Option<crate::types::ConnectionData>,
+    pub web_rtc_connection: ::std::option::Option<crate::types::WebRtcConnection>,
     _request_id: Option<String>,
 }
 impl CreateParticipantConnectionOutput {
@@ -21,7 +21,7 @@ impl CreateParticipantConnectionOutput {
         self.connection_credentials.as_ref()
     }
     /// <p>Creates the participant's WebRTC connection data required for the client application (mobile application or website) to connect to the call.</p>
-    pub fn web_rtc_connection(&self) -> ::std::option::Option<&crate::types::ConnectionData> {
+    pub fn web_rtc_connection(&self) -> ::std::option::Option<&crate::types::WebRtcConnection> {
         self.web_rtc_connection.as_ref()
     }
 }
@@ -43,7 +43,7 @@ impl CreateParticipantConnectionOutput {
 pub struct CreateParticipantConnectionOutputBuilder {
     pub(crate) websocket: ::std::option::Option<crate::types::Websocket>,
     pub(crate) connection_credentials: ::std::option::Option<crate::types::ConnectionCredentials>,
-    pub(crate) web_rtc_connection: ::std::option::Option<crate::types::ConnectionData>,
+    pub(crate) web_rtc_connection: ::std::option::Option<crate::types::WebRtcConnection>,
     _request_id: Option<String>,
 }
 impl CreateParticipantConnectionOutputBuilder {
@@ -76,17 +76,17 @@ impl CreateParticipantConnectionOutputBuilder {
         &self.connection_credentials
     }
     /// <p>Creates the participant's WebRTC connection data required for the client application (mobile application or website) to connect to the call.</p>
-    pub fn web_rtc_connection(mut self, input: crate::types::ConnectionData) -> Self {
+    pub fn web_rtc_connection(mut self, input: crate::types::WebRtcConnection) -> Self {
         self.web_rtc_connection = ::std::option::Option::Some(input);
         self
     }
     /// <p>Creates the participant's WebRTC connection data required for the client application (mobile application or website) to connect to the call.</p>
-    pub fn set_web_rtc_connection(mut self, input: ::std::option::Option<crate::types::ConnectionData>) -> Self {
+    pub fn set_web_rtc_connection(mut self, input: ::std::option::Option<crate::types::WebRtcConnection>) -> Self {
         self.web_rtc_connection = input;
         self
     }
     /// <p>Creates the participant's WebRTC connection data required for the client application (mobile application or website) to connect to the call.</p>
-    pub fn get_web_rtc_connection(&self) -> &::std::option::Option<crate::types::ConnectionData> {
+    pub fn get_web_rtc_connection(&self) -> &::std::option::Option<crate::types::WebRtcConnection> {
         &self.web_rtc_connection
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -2,7 +2,7 @@
 
 /// <p>Provides the circle that was used while calculating the route.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RouteMatrixAutoCircle {
     /// <p>The margin provided for the calculation.</p>
     pub margin: i64,
@@ -19,6 +19,14 @@ impl RouteMatrixAutoCircle {
         self.max_radius
     }
 }
+impl ::std::fmt::Debug for RouteMatrixAutoCircle {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteMatrixAutoCircle");
+        formatter.field("margin", &"*** Sensitive Data Redacted ***");
+        formatter.field("max_radius", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl RouteMatrixAutoCircle {
     /// Creates a new builder-style object to manufacture [`RouteMatrixAutoCircle`](crate::types::RouteMatrixAutoCircle).
     pub fn builder() -> crate::types::builders::RouteMatrixAutoCircleBuilder {
@@ -27,7 +35,7 @@ impl RouteMatrixAutoCircle {
 }
 
 /// A builder for [`RouteMatrixAutoCircle`](crate::types::RouteMatrixAutoCircle).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct RouteMatrixAutoCircleBuilder {
     pub(crate) margin: ::std::option::Option<i64>,
@@ -68,5 +76,13 @@ impl RouteMatrixAutoCircleBuilder {
             margin: self.margin.unwrap_or_default(),
             max_radius: self.max_radius.unwrap_or_default(),
         }
+    }
+}
+impl ::std::fmt::Debug for RouteMatrixAutoCircleBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteMatrixAutoCircleBuilder");
+        formatter.field("margin", &"*** Sensitive Data Redacted ***");
+        formatter.field("max_radius", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

@@ -177,36 +177,67 @@ impl UpdatePracticeRunConfigurationFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_blocking_alarms`](Self::set_blocking_alarms).
     ///
-    /// <p>Add, change, or remove the Amazon CloudWatch alarm that you optionally specify as the blocking alarm for practice runs.</p>
+    /// <p>Add, change, or remove the Amazon CloudWatch alarms that you optionally specify as the blocking alarms for practice runs.</p>
     pub fn blocking_alarms(mut self, input: crate::types::ControlCondition) -> Self {
         self.inner = self.inner.blocking_alarms(input);
         self
     }
-    /// <p>Add, change, or remove the Amazon CloudWatch alarm that you optionally specify as the blocking alarm for practice runs.</p>
+    /// <p>Add, change, or remove the Amazon CloudWatch alarms that you optionally specify as the blocking alarms for practice runs.</p>
     pub fn set_blocking_alarms(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ControlCondition>>) -> Self {
         self.inner = self.inner.set_blocking_alarms(input);
         self
     }
-    /// <p>Add, change, or remove the Amazon CloudWatch alarm that you optionally specify as the blocking alarm for practice runs.</p>
+    /// <p>Add, change, or remove the Amazon CloudWatch alarms that you optionally specify as the blocking alarms for practice runs.</p>
     pub fn get_blocking_alarms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ControlCondition>> {
         self.inner.get_blocking_alarms()
+    }
+    ///
+    /// Appends an item to `allowedWindows`.
+    ///
+    /// To override the contents of this collection use [`set_allowed_windows`](Self::set_allowed_windows).
+    ///
+    /// <p>Add, change, or remove windows of days and times for when you can, optionally, allow ARC to start a practice run for a resource.</p>
+    /// <p>The format for allowed windows is: DAY:HH:SS-DAY:HH:SS. Keep in mind, when you specify dates, that dates and times for practice runs are in UTC. Also, be aware of potential time adjustments that might be required for daylight saving time differences. Separate multiple allowed windows with spaces.</p>
+    /// <p>For example, say you want to allow practice runs only on Wednesdays and Fridays from noon to 5 p.m. For this scenario, you could set the following recurring days and times as allowed windows, for example: <code>Wed-12:00-Wed:17:00 Fri-12:00-Fri:17:00</code>.</p><important>
+    /// <p>The <code>allowedWindows</code> have to start and end on the same day. Windows that span multiple days aren't supported.</p>
+    /// </important>
+    pub fn allowed_windows(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.allowed_windows(input.into());
+        self
+    }
+    /// <p>Add, change, or remove windows of days and times for when you can, optionally, allow ARC to start a practice run for a resource.</p>
+    /// <p>The format for allowed windows is: DAY:HH:SS-DAY:HH:SS. Keep in mind, when you specify dates, that dates and times for practice runs are in UTC. Also, be aware of potential time adjustments that might be required for daylight saving time differences. Separate multiple allowed windows with spaces.</p>
+    /// <p>For example, say you want to allow practice runs only on Wednesdays and Fridays from noon to 5 p.m. For this scenario, you could set the following recurring days and times as allowed windows, for example: <code>Wed-12:00-Wed:17:00 Fri-12:00-Fri:17:00</code>.</p><important>
+    /// <p>The <code>allowedWindows</code> have to start and end on the same day. Windows that span multiple days aren't supported.</p>
+    /// </important>
+    pub fn set_allowed_windows(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_allowed_windows(input);
+        self
+    }
+    /// <p>Add, change, or remove windows of days and times for when you can, optionally, allow ARC to start a practice run for a resource.</p>
+    /// <p>The format for allowed windows is: DAY:HH:SS-DAY:HH:SS. Keep in mind, when you specify dates, that dates and times for practice runs are in UTC. Also, be aware of potential time adjustments that might be required for daylight saving time differences. Separate multiple allowed windows with spaces.</p>
+    /// <p>For example, say you want to allow practice runs only on Wednesdays and Fridays from noon to 5 p.m. For this scenario, you could set the following recurring days and times as allowed windows, for example: <code>Wed-12:00-Wed:17:00 Fri-12:00-Fri:17:00</code>.</p><important>
+    /// <p>The <code>allowedWindows</code> have to start and end on the same day. Windows that span multiple days aren't supported.</p>
+    /// </important>
+    pub fn get_allowed_windows(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_allowed_windows()
     }
     ///
     /// Appends an item to `outcomeAlarms`.
     ///
     /// To override the contents of this collection use [`set_outcome_alarms`](Self::set_outcome_alarms).
     ///
-    /// <p>Specify a new the Amazon CloudWatch alarm as the outcome alarm for practice runs.</p>
+    /// <p>Specify one or more Amazon CloudWatch alarms as the outcome alarms for practice runs.</p>
     pub fn outcome_alarms(mut self, input: crate::types::ControlCondition) -> Self {
         self.inner = self.inner.outcome_alarms(input);
         self
     }
-    /// <p>Specify a new the Amazon CloudWatch alarm as the outcome alarm for practice runs.</p>
+    /// <p>Specify one or more Amazon CloudWatch alarms as the outcome alarms for practice runs.</p>
     pub fn set_outcome_alarms(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ControlCondition>>) -> Self {
         self.inner = self.inner.set_outcome_alarms(input);
         self
     }
-    /// <p>Specify a new the Amazon CloudWatch alarm as the outcome alarm for practice runs.</p>
+    /// <p>Specify one or more Amazon CloudWatch alarms as the outcome alarms for practice runs.</p>
     pub fn get_outcome_alarms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ControlCondition>> {
         self.inner.get_outcome_alarms()
     }

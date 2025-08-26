@@ -1315,7 +1315,21 @@ pub use crate::types::_import_snapshot_task::ImportSnapshotTaskBuilder;
 
 pub use crate::types::_import_image_task::ImportImageTaskBuilder;
 
+pub use crate::types::_image_usage_report::ImageUsageReportBuilder;
+
+pub use crate::types::_image_usage_resource_type::ImageUsageResourceTypeBuilder;
+
+pub use crate::types::_image_usage_resource_type_option::ImageUsageResourceTypeOptionBuilder;
+
+pub use crate::types::_image_usage_report_entry::ImageUsageReportEntryBuilder;
+
 pub use crate::types::_image::ImageBuilder;
+
+pub use crate::types::_image_reference::ImageReferenceBuilder;
+
+pub use crate::types::_resource_type_request::ResourceTypeRequestBuilder;
+
+pub use crate::types::_resource_type_option::ResourceTypeOptionBuilder;
 
 pub use crate::types::_host::HostBuilder;
 
@@ -1612,6 +1626,10 @@ pub use crate::types::_launch_template_iam_instance_profile_specification_reques
 pub use crate::types::_ipam_pool_source_resource_request::IpamPoolSourceResourceRequestBuilder;
 
 pub use crate::types::_export_to_s3_task_specification::ExportToS3TaskSpecificationBuilder;
+
+pub use crate::types::_image_usage_resource_type_request::ImageUsageResourceTypeRequestBuilder;
+
+pub use crate::types::_image_usage_resource_type_option_request::ImageUsageResourceTypeOptionRequestBuilder;
 
 pub use crate::types::_storage_location::StorageLocationBuilder;
 

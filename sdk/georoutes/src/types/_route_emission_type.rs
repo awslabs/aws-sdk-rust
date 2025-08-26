@@ -3,7 +3,7 @@
 /// <p>Type of the emission.</p>
 /// <p><b>Valid values</b>: <code>Euro1, Euro2, Euro3, Euro4, Euro5, Euro6, EuroEev</code></p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RouteEmissionType {
     /// <p>The CO 2 emission classes.</p>
     pub co2_emission_class: ::std::option::Option<::std::string::String>,
@@ -23,6 +23,14 @@ impl RouteEmissionType {
         self.r#type.deref()
     }
 }
+impl ::std::fmt::Debug for RouteEmissionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteEmissionType");
+        formatter.field("co2_emission_class", &"*** Sensitive Data Redacted ***");
+        formatter.field("r#type", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl RouteEmissionType {
     /// Creates a new builder-style object to manufacture [`RouteEmissionType`](crate::types::RouteEmissionType).
     pub fn builder() -> crate::types::builders::RouteEmissionTypeBuilder {
@@ -31,7 +39,7 @@ impl RouteEmissionType {
 }
 
 /// A builder for [`RouteEmissionType`](crate::types::RouteEmissionType).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct RouteEmissionTypeBuilder {
     pub(crate) co2_emission_class: ::std::option::Option<::std::string::String>,
@@ -83,5 +91,13 @@ impl RouteEmissionTypeBuilder {
                 )
             })?,
         })
+    }
+}
+impl ::std::fmt::Debug for RouteEmissionTypeBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteEmissionTypeBuilder");
+        formatter.field("co2_emission_class", &"*** Sensitive Data Redacted ***");
+        formatter.field("r#type", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

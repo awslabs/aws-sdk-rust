@@ -2,7 +2,7 @@
 
 /// <p>Zone categories to be avoided.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RouteMatrixAvoidanceZoneCategory {
     /// <p>Zone category to be avoided.</p>
     pub category: ::std::option::Option<crate::types::RouteMatrixZoneCategory>,
@@ -13,6 +13,13 @@ impl RouteMatrixAvoidanceZoneCategory {
         self.category.as_ref()
     }
 }
+impl ::std::fmt::Debug for RouteMatrixAvoidanceZoneCategory {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteMatrixAvoidanceZoneCategory");
+        formatter.field("category", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl RouteMatrixAvoidanceZoneCategory {
     /// Creates a new builder-style object to manufacture [`RouteMatrixAvoidanceZoneCategory`](crate::types::RouteMatrixAvoidanceZoneCategory).
     pub fn builder() -> crate::types::builders::RouteMatrixAvoidanceZoneCategoryBuilder {
@@ -21,7 +28,7 @@ impl RouteMatrixAvoidanceZoneCategory {
 }
 
 /// A builder for [`RouteMatrixAvoidanceZoneCategory`](crate::types::RouteMatrixAvoidanceZoneCategory).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct RouteMatrixAvoidanceZoneCategoryBuilder {
     pub(crate) category: ::std::option::Option<crate::types::RouteMatrixZoneCategory>,
@@ -44,5 +51,12 @@ impl RouteMatrixAvoidanceZoneCategoryBuilder {
     /// Consumes the builder and constructs a [`RouteMatrixAvoidanceZoneCategory`](crate::types::RouteMatrixAvoidanceZoneCategory).
     pub fn build(self) -> crate::types::RouteMatrixAvoidanceZoneCategory {
         crate::types::RouteMatrixAvoidanceZoneCategory { category: self.category }
+    }
+}
+impl ::std::fmt::Debug for RouteMatrixAvoidanceZoneCategoryBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteMatrixAvoidanceZoneCategoryBuilder");
+        formatter.field("category", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

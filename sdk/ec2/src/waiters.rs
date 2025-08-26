@@ -27,6 +27,9 @@ pub mod image_available;
 /// Supporting types for the `image_exists` waiter.
 pub mod image_exists;
 
+/// Supporting types for the `image_usage_report_available` waiter.
+pub mod image_usage_report_available;
+
 /// Supporting types for the `instance_exists` waiter.
 pub mod instance_exists;
 

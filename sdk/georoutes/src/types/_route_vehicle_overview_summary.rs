@@ -2,7 +2,7 @@
 
 /// <p>Summarized details of the leg.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RouteVehicleOverviewSummary {
     /// <p>Total duration in free flowing traffic, which is the best case or shortest duration possible to cover the leg.</p>
     /// <p><b>Unit</b>: <code>seconds</code></p>
@@ -37,6 +37,16 @@ impl RouteVehicleOverviewSummary {
         self.typical_duration
     }
 }
+impl ::std::fmt::Debug for RouteVehicleOverviewSummary {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteVehicleOverviewSummary");
+        formatter.field("best_case_duration", &"*** Sensitive Data Redacted ***");
+        formatter.field("distance", &"*** Sensitive Data Redacted ***");
+        formatter.field("duration", &"*** Sensitive Data Redacted ***");
+        formatter.field("typical_duration", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl RouteVehicleOverviewSummary {
     /// Creates a new builder-style object to manufacture [`RouteVehicleOverviewSummary`](crate::types::RouteVehicleOverviewSummary).
     pub fn builder() -> crate::types::builders::RouteVehicleOverviewSummaryBuilder {
@@ -45,7 +55,7 @@ impl RouteVehicleOverviewSummary {
 }
 
 /// A builder for [`RouteVehicleOverviewSummary`](crate::types::RouteVehicleOverviewSummary).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct RouteVehicleOverviewSummaryBuilder {
     pub(crate) best_case_duration: ::std::option::Option<i64>,
@@ -129,5 +139,15 @@ impl RouteVehicleOverviewSummaryBuilder {
             duration: self.duration.unwrap_or_default(),
             typical_duration: self.typical_duration.unwrap_or_default(),
         }
+    }
+}
+impl ::std::fmt::Debug for RouteVehicleOverviewSummaryBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteVehicleOverviewSummaryBuilder");
+        formatter.field("best_case_duration", &"*** Sensitive Data Redacted ***");
+        formatter.field("distance", &"*** Sensitive Data Redacted ***");
+        formatter.field("duration", &"*** Sensitive Data Redacted ***");
+        formatter.field("typical_duration", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

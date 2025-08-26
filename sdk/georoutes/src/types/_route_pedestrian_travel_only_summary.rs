@@ -2,7 +2,7 @@
 
 /// <p>Summarized details for the leg including travel steps.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RoutePedestrianTravelOnlySummary {
     /// <p>Duration of the step.</p>
     /// <p><b>Unit</b>: <code>seconds</code></p>
@@ -15,6 +15,13 @@ impl RoutePedestrianTravelOnlySummary {
         self.duration
     }
 }
+impl ::std::fmt::Debug for RoutePedestrianTravelOnlySummary {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RoutePedestrianTravelOnlySummary");
+        formatter.field("duration", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl RoutePedestrianTravelOnlySummary {
     /// Creates a new builder-style object to manufacture [`RoutePedestrianTravelOnlySummary`](crate::types::RoutePedestrianTravelOnlySummary).
     pub fn builder() -> crate::types::builders::RoutePedestrianTravelOnlySummaryBuilder {
@@ -23,7 +30,7 @@ impl RoutePedestrianTravelOnlySummary {
 }
 
 /// A builder for [`RoutePedestrianTravelOnlySummary`](crate::types::RoutePedestrianTravelOnlySummary).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct RoutePedestrianTravelOnlySummaryBuilder {
     pub(crate) duration: ::std::option::Option<i64>,
@@ -52,5 +59,12 @@ impl RoutePedestrianTravelOnlySummaryBuilder {
         crate::types::RoutePedestrianTravelOnlySummary {
             duration: self.duration.unwrap_or_default(),
         }
+    }
+}
+impl ::std::fmt::Debug for RoutePedestrianTravelOnlySummaryBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RoutePedestrianTravelOnlySummaryBuilder");
+        formatter.field("duration", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

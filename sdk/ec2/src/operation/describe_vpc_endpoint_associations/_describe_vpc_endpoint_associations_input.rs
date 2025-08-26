@@ -21,6 +21,8 @@ pub struct DescribeVpcEndpointAssociationsInput {
     /// <p><code>service-network-arn</code> - The Amazon Resource Name (ARN) of the associated service network. Only VPC endpoints of type service network will be returned.</p></li>
     /// <li>
     /// <p><code>resource-configuration-group-arn</code> - The Amazon Resource Name (ARN) of the resource configuration of type GROUP.</p></li>
+    /// <li>
+    /// <p><code>service-network-resource-association-id</code> - The ID of the association.</p></li>
     /// </ul>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>The maximum page size.</p>
@@ -53,6 +55,8 @@ impl DescribeVpcEndpointAssociationsInput {
     /// <p><code>service-network-arn</code> - The Amazon Resource Name (ARN) of the associated service network. Only VPC endpoints of type service network will be returned.</p></li>
     /// <li>
     /// <p><code>resource-configuration-group-arn</code> - The Amazon Resource Name (ARN) of the resource configuration of type GROUP.</p></li>
+    /// <li>
+    /// <p><code>service-network-resource-association-id</code> - The ID of the association.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
@@ -138,6 +142,8 @@ impl DescribeVpcEndpointAssociationsInputBuilder {
     /// <p><code>service-network-arn</code> - The Amazon Resource Name (ARN) of the associated service network. Only VPC endpoints of type service network will be returned.</p></li>
     /// <li>
     /// <p><code>resource-configuration-group-arn</code> - The Amazon Resource Name (ARN) of the resource configuration of type GROUP.</p></li>
+    /// <li>
+    /// <p><code>service-network-resource-association-id</code> - The ID of the association.</p></li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
@@ -159,6 +165,8 @@ impl DescribeVpcEndpointAssociationsInputBuilder {
     /// <p><code>service-network-arn</code> - The Amazon Resource Name (ARN) of the associated service network. Only VPC endpoints of type service network will be returned.</p></li>
     /// <li>
     /// <p><code>resource-configuration-group-arn</code> - The Amazon Resource Name (ARN) of the resource configuration of type GROUP.</p></li>
+    /// <li>
+    /// <p><code>service-network-resource-association-id</code> - The ID of the association.</p></li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
@@ -178,6 +186,8 @@ impl DescribeVpcEndpointAssociationsInputBuilder {
     /// <p><code>service-network-arn</code> - The Amazon Resource Name (ARN) of the associated service network. Only VPC endpoints of type service network will be returned.</p></li>
     /// <li>
     /// <p><code>resource-configuration-group-arn</code> - The Amazon Resource Name (ARN) of the resource configuration of type GROUP.</p></li>
+    /// <li>
+    /// <p><code>service-network-resource-association-id</code> - The ID of the association.</p></li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         &self.filters

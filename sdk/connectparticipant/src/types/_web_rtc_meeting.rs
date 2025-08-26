@@ -3,23 +3,17 @@
 /// <p>A meeting created using the Amazon Chime SDK.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Meeting {
-    /// <p>The Amazon Web Services Region in which you create the meeting.</p>
-    pub media_region: ::std::option::Option<::std::string::String>,
+pub struct WebRtcMeeting {
     /// <p>The media placement for the meeting.</p>
-    pub media_placement: ::std::option::Option<crate::types::MediaPlacement>,
+    pub media_placement: ::std::option::Option<crate::types::WebRtcMediaPlacement>,
     /// <p>The configuration settings of the features available to a meeting.</p>
     pub meeting_features: ::std::option::Option<crate::types::MeetingFeaturesConfiguration>,
     /// <p>The Amazon Chime SDK meeting ID.</p>
     pub meeting_id: ::std::option::Option<::std::string::String>,
 }
-impl Meeting {
-    /// <p>The Amazon Web Services Region in which you create the meeting.</p>
-    pub fn media_region(&self) -> ::std::option::Option<&str> {
-        self.media_region.as_deref()
-    }
+impl WebRtcMeeting {
     /// <p>The media placement for the meeting.</p>
-    pub fn media_placement(&self) -> ::std::option::Option<&crate::types::MediaPlacement> {
+    pub fn media_placement(&self) -> ::std::option::Option<&crate::types::WebRtcMediaPlacement> {
         self.media_placement.as_ref()
     }
     /// <p>The configuration settings of the features available to a meeting.</p>
@@ -31,49 +25,34 @@ impl Meeting {
         self.meeting_id.as_deref()
     }
 }
-impl Meeting {
-    /// Creates a new builder-style object to manufacture [`Meeting`](crate::types::Meeting).
-    pub fn builder() -> crate::types::builders::MeetingBuilder {
-        crate::types::builders::MeetingBuilder::default()
+impl WebRtcMeeting {
+    /// Creates a new builder-style object to manufacture [`WebRtcMeeting`](crate::types::WebRtcMeeting).
+    pub fn builder() -> crate::types::builders::WebRtcMeetingBuilder {
+        crate::types::builders::WebRtcMeetingBuilder::default()
     }
 }
 
-/// A builder for [`Meeting`](crate::types::Meeting).
+/// A builder for [`WebRtcMeeting`](crate::types::WebRtcMeeting).
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
-pub struct MeetingBuilder {
-    pub(crate) media_region: ::std::option::Option<::std::string::String>,
-    pub(crate) media_placement: ::std::option::Option<crate::types::MediaPlacement>,
+pub struct WebRtcMeetingBuilder {
+    pub(crate) media_placement: ::std::option::Option<crate::types::WebRtcMediaPlacement>,
     pub(crate) meeting_features: ::std::option::Option<crate::types::MeetingFeaturesConfiguration>,
     pub(crate) meeting_id: ::std::option::Option<::std::string::String>,
 }
-impl MeetingBuilder {
-    /// <p>The Amazon Web Services Region in which you create the meeting.</p>
-    pub fn media_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.media_region = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The Amazon Web Services Region in which you create the meeting.</p>
-    pub fn set_media_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.media_region = input;
-        self
-    }
-    /// <p>The Amazon Web Services Region in which you create the meeting.</p>
-    pub fn get_media_region(&self) -> &::std::option::Option<::std::string::String> {
-        &self.media_region
-    }
+impl WebRtcMeetingBuilder {
     /// <p>The media placement for the meeting.</p>
-    pub fn media_placement(mut self, input: crate::types::MediaPlacement) -> Self {
+    pub fn media_placement(mut self, input: crate::types::WebRtcMediaPlacement) -> Self {
         self.media_placement = ::std::option::Option::Some(input);
         self
     }
     /// <p>The media placement for the meeting.</p>
-    pub fn set_media_placement(mut self, input: ::std::option::Option<crate::types::MediaPlacement>) -> Self {
+    pub fn set_media_placement(mut self, input: ::std::option::Option<crate::types::WebRtcMediaPlacement>) -> Self {
         self.media_placement = input;
         self
     }
     /// <p>The media placement for the meeting.</p>
-    pub fn get_media_placement(&self) -> &::std::option::Option<crate::types::MediaPlacement> {
+    pub fn get_media_placement(&self) -> &::std::option::Option<crate::types::WebRtcMediaPlacement> {
         &self.media_placement
     }
     /// <p>The configuration settings of the features available to a meeting.</p>
@@ -104,10 +83,9 @@ impl MeetingBuilder {
     pub fn get_meeting_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.meeting_id
     }
-    /// Consumes the builder and constructs a [`Meeting`](crate::types::Meeting).
-    pub fn build(self) -> crate::types::Meeting {
-        crate::types::Meeting {
-            media_region: self.media_region,
+    /// Consumes the builder and constructs a [`WebRtcMeeting`](crate::types::WebRtcMeeting).
+    pub fn build(self) -> crate::types::WebRtcMeeting {
+        crate::types::WebRtcMeeting {
             media_placement: self.media_placement,
             meeting_features: self.meeting_features,
             meeting_id: self.meeting_id,

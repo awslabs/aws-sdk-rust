@@ -2,7 +2,7 @@
 
 /// <p>License plate information of the vehicle. Currently, only the last character is used where license plate based controlled access is enforced.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RouteVehicleLicensePlate {
     /// <p>The last character of the License Plate.</p>
     pub last_character: ::std::option::Option<::std::string::String>,
@@ -13,6 +13,13 @@ impl RouteVehicleLicensePlate {
         self.last_character.as_deref()
     }
 }
+impl ::std::fmt::Debug for RouteVehicleLicensePlate {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteVehicleLicensePlate");
+        formatter.field("last_character", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl RouteVehicleLicensePlate {
     /// Creates a new builder-style object to manufacture [`RouteVehicleLicensePlate`](crate::types::RouteVehicleLicensePlate).
     pub fn builder() -> crate::types::builders::RouteVehicleLicensePlateBuilder {
@@ -21,7 +28,7 @@ impl RouteVehicleLicensePlate {
 }
 
 /// A builder for [`RouteVehicleLicensePlate`](crate::types::RouteVehicleLicensePlate).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct RouteVehicleLicensePlateBuilder {
     pub(crate) last_character: ::std::option::Option<::std::string::String>,
@@ -46,5 +53,12 @@ impl RouteVehicleLicensePlateBuilder {
         crate::types::RouteVehicleLicensePlate {
             last_character: self.last_character,
         }
+    }
+}
+impl ::std::fmt::Debug for RouteVehicleLicensePlateBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteVehicleLicensePlateBuilder");
+        formatter.field("last_character", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

@@ -2,7 +2,7 @@
 
 /// <p>Details if the toll rate can be a pass that supports multiple trips.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RouteTollPass {
     /// <p>If the pass includes the rate for the return leg of the trip.</p>
     pub includes_return_trip: ::std::option::Option<bool>,
@@ -37,6 +37,17 @@ impl RouteTollPass {
         self.validity_period.as_ref()
     }
 }
+impl ::std::fmt::Debug for RouteTollPass {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteTollPass");
+        formatter.field("includes_return_trip", &"*** Sensitive Data Redacted ***");
+        formatter.field("senior_pass", &"*** Sensitive Data Redacted ***");
+        formatter.field("transfer_count", &"*** Sensitive Data Redacted ***");
+        formatter.field("trip_count", &"*** Sensitive Data Redacted ***");
+        formatter.field("validity_period", &self.validity_period);
+        formatter.finish()
+    }
+}
 impl RouteTollPass {
     /// Creates a new builder-style object to manufacture [`RouteTollPass`](crate::types::RouteTollPass).
     pub fn builder() -> crate::types::builders::RouteTollPassBuilder {
@@ -45,7 +56,7 @@ impl RouteTollPass {
 }
 
 /// A builder for [`RouteTollPass`](crate::types::RouteTollPass).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct RouteTollPassBuilder {
     pub(crate) includes_return_trip: ::std::option::Option<bool>,
@@ -134,5 +145,16 @@ impl RouteTollPassBuilder {
             trip_count: self.trip_count,
             validity_period: self.validity_period,
         }
+    }
+}
+impl ::std::fmt::Debug for RouteTollPassBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteTollPassBuilder");
+        formatter.field("includes_return_trip", &"*** Sensitive Data Redacted ***");
+        formatter.field("senior_pass", &"*** Sensitive Data Redacted ***");
+        formatter.field("transfer_count", &"*** Sensitive Data Redacted ***");
+        formatter.field("trip_count", &"*** Sensitive Data Redacted ***");
+        formatter.field("validity_period", &self.validity_period);
+        formatter.finish()
     }
 }

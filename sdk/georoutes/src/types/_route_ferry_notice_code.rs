@@ -15,6 +15,7 @@
 ///     RouteFerryNoticeCode::AccuratePolylineUnavailable => { /* ... */ },
 ///     RouteFerryNoticeCode::NoSchedule => { /* ... */ },
 ///     RouteFerryNoticeCode::Other => { /* ... */ },
+///     RouteFerryNoticeCode::PotentialViolatedVehicleRestrictionUsage => { /* ... */ },
 ///     RouteFerryNoticeCode::SeasonalClosure => { /* ... */ },
 ///     RouteFerryNoticeCode::ViolatedAvoidFerry => { /* ... */ },
 ///     RouteFerryNoticeCode::ViolatedAvoidRailFerry => { /* ... */ },
@@ -53,6 +54,8 @@ pub enum RouteFerryNoticeCode {
     #[allow(missing_docs)] // documentation missing in model
     Other,
     #[allow(missing_docs)] // documentation missing in model
+    PotentialViolatedVehicleRestrictionUsage,
+    #[allow(missing_docs)] // documentation missing in model
     SeasonalClosure,
     #[allow(missing_docs)] // documentation missing in model
     ViolatedAvoidFerry,
@@ -68,6 +71,7 @@ impl ::std::convert::From<&str> for RouteFerryNoticeCode {
             "AccuratePolylineUnavailable" => RouteFerryNoticeCode::AccuratePolylineUnavailable,
             "NoSchedule" => RouteFerryNoticeCode::NoSchedule,
             "Other" => RouteFerryNoticeCode::Other,
+            "PotentialViolatedVehicleRestrictionUsage" => RouteFerryNoticeCode::PotentialViolatedVehicleRestrictionUsage,
             "SeasonalClosure" => RouteFerryNoticeCode::SeasonalClosure,
             "ViolatedAvoidFerry" => RouteFerryNoticeCode::ViolatedAvoidFerry,
             "ViolatedAvoidRailFerry" => RouteFerryNoticeCode::ViolatedAvoidRailFerry,
@@ -89,6 +93,7 @@ impl RouteFerryNoticeCode {
             RouteFerryNoticeCode::AccuratePolylineUnavailable => "AccuratePolylineUnavailable",
             RouteFerryNoticeCode::NoSchedule => "NoSchedule",
             RouteFerryNoticeCode::Other => "Other",
+            RouteFerryNoticeCode::PotentialViolatedVehicleRestrictionUsage => "PotentialViolatedVehicleRestrictionUsage",
             RouteFerryNoticeCode::SeasonalClosure => "SeasonalClosure",
             RouteFerryNoticeCode::ViolatedAvoidFerry => "ViolatedAvoidFerry",
             RouteFerryNoticeCode::ViolatedAvoidRailFerry => "ViolatedAvoidRailFerry",
@@ -101,6 +106,7 @@ impl RouteFerryNoticeCode {
             "AccuratePolylineUnavailable",
             "NoSchedule",
             "Other",
+            "PotentialViolatedVehicleRestrictionUsage",
             "SeasonalClosure",
             "ViolatedAvoidFerry",
             "ViolatedAvoidRailFerry",
@@ -130,6 +136,7 @@ impl ::std::fmt::Display for RouteFerryNoticeCode {
             RouteFerryNoticeCode::AccuratePolylineUnavailable => write!(f, "AccuratePolylineUnavailable"),
             RouteFerryNoticeCode::NoSchedule => write!(f, "NoSchedule"),
             RouteFerryNoticeCode::Other => write!(f, "Other"),
+            RouteFerryNoticeCode::PotentialViolatedVehicleRestrictionUsage => write!(f, "PotentialViolatedVehicleRestrictionUsage"),
             RouteFerryNoticeCode::SeasonalClosure => write!(f, "SeasonalClosure"),
             RouteFerryNoticeCode::ViolatedAvoidFerry => write!(f, "ViolatedAvoidFerry"),
             RouteFerryNoticeCode::ViolatedAvoidRailFerry => write!(f, "ViolatedAvoidRailFerry"),

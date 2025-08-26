@@ -59,9 +59,9 @@ impl WaypointOptimizationOptimizedWaypoint {
 impl ::std::fmt::Debug for WaypointOptimizationOptimizedWaypoint {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("WaypointOptimizationOptimizedWaypoint");
-        formatter.field("arrival_time", &self.arrival_time);
+        formatter.field("arrival_time", &"*** Sensitive Data Redacted ***");
         formatter.field("cluster_index", &self.cluster_index);
-        formatter.field("departure_time", &self.departure_time);
+        formatter.field("departure_time", &"*** Sensitive Data Redacted ***");
         formatter.field("id", &self.id);
         formatter.field("position", &"*** Sensitive Data Redacted ***");
         formatter.finish()
@@ -222,9 +222,9 @@ impl WaypointOptimizationOptimizedWaypointBuilder {
 impl ::std::fmt::Debug for WaypointOptimizationOptimizedWaypointBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("WaypointOptimizationOptimizedWaypointBuilder");
-        formatter.field("arrival_time", &self.arrival_time);
+        formatter.field("arrival_time", &"*** Sensitive Data Redacted ***");
         formatter.field("cluster_index", &self.cluster_index);
-        formatter.field("departure_time", &self.departure_time);
+        formatter.field("departure_time", &"*** Sensitive Data Redacted ***");
         formatter.field("id", &self.id);
         formatter.field("position", &"*** Sensitive Data Redacted ***");
         formatter.finish()

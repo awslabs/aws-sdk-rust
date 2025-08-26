@@ -119,7 +119,7 @@ impl ::std::fmt::Debug for OptimizeWaypointsInput {
         let mut formatter = f.debug_struct("OptimizeWaypointsInput");
         formatter.field("avoid", &self.avoid);
         formatter.field("clustering", &self.clustering);
-        formatter.field("departure_time", &self.departure_time);
+        formatter.field("departure_time", &"*** Sensitive Data Redacted ***");
         formatter.field("destination", &"*** Sensitive Data Redacted ***");
         formatter.field("destination_options", &self.destination_options);
         formatter.field("driver", &self.driver);
@@ -437,7 +437,7 @@ impl ::std::fmt::Debug for OptimizeWaypointsInputBuilder {
         let mut formatter = f.debug_struct("OptimizeWaypointsInputBuilder");
         formatter.field("avoid", &self.avoid);
         formatter.field("clustering", &self.clustering);
-        formatter.field("departure_time", &self.departure_time);
+        formatter.field("departure_time", &"*** Sensitive Data Redacted ***");
         formatter.field("destination", &"*** Sensitive Data Redacted ***");
         formatter.field("destination_options", &self.destination_options);
         formatter.field("driver", &self.driver);

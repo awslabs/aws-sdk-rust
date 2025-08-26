@@ -2,7 +2,7 @@
 
 /// <p>Features that are allowed while calculating a route.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RouteAllowOptions {
     /// <p>Allow Hot (High Occupancy Toll) lanes while calculating the route.</p>
     /// <p>Default value: <code>false</code></p>
@@ -23,6 +23,14 @@ impl RouteAllowOptions {
         self.hov
     }
 }
+impl ::std::fmt::Debug for RouteAllowOptions {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteAllowOptions");
+        formatter.field("hot", &"*** Sensitive Data Redacted ***");
+        formatter.field("hov", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl RouteAllowOptions {
     /// Creates a new builder-style object to manufacture [`RouteAllowOptions`](crate::types::RouteAllowOptions).
     pub fn builder() -> crate::types::builders::RouteAllowOptionsBuilder {
@@ -31,7 +39,7 @@ impl RouteAllowOptions {
 }
 
 /// A builder for [`RouteAllowOptions`](crate::types::RouteAllowOptions).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct RouteAllowOptionsBuilder {
     pub(crate) hot: ::std::option::Option<bool>,
@@ -78,5 +86,13 @@ impl RouteAllowOptionsBuilder {
             hot: self.hot,
             hov: self.hov,
         }
+    }
+}
+impl ::std::fmt::Debug for RouteAllowOptionsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteAllowOptionsBuilder");
+        formatter.field("hot", &"*** Sensitive Data Redacted ***");
+        formatter.field("hov", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

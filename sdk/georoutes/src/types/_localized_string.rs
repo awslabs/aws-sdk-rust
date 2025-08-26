@@ -2,7 +2,7 @@
 
 /// <p>The localized string.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct LocalizedString {
     /// <p>A list of BCP 47 compliant language codes for the results to be rendered in. The request uses the regional default as the fallback if the requested language can't be provided.</p>
     pub language: ::std::option::Option<::std::string::String>,
@@ -20,6 +20,14 @@ impl LocalizedString {
         self.value.deref()
     }
 }
+impl ::std::fmt::Debug for LocalizedString {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("LocalizedString");
+        formatter.field("language", &self.language);
+        formatter.field("value", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl LocalizedString {
     /// Creates a new builder-style object to manufacture [`LocalizedString`](crate::types::LocalizedString).
     pub fn builder() -> crate::types::builders::LocalizedStringBuilder {
@@ -28,7 +36,7 @@ impl LocalizedString {
 }
 
 /// A builder for [`LocalizedString`](crate::types::LocalizedString).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct LocalizedStringBuilder {
     pub(crate) language: ::std::option::Option<::std::string::String>,
@@ -77,5 +85,13 @@ impl LocalizedStringBuilder {
                 )
             })?,
         })
+    }
+}
+impl ::std::fmt::Debug for LocalizedStringBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("LocalizedStringBuilder");
+        formatter.field("language", &self.language);
+        formatter.field("value", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

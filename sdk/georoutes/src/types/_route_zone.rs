@@ -2,7 +2,7 @@
 
 /// <p>The zone.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RouteZone {
     /// <p>The zone category.</p>
     pub category: ::std::option::Option<crate::types::RouteZoneCategory>,
@@ -19,6 +19,14 @@ impl RouteZone {
         self.name.as_deref()
     }
 }
+impl ::std::fmt::Debug for RouteZone {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteZone");
+        formatter.field("category", &"*** Sensitive Data Redacted ***");
+        formatter.field("name", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl RouteZone {
     /// Creates a new builder-style object to manufacture [`RouteZone`](crate::types::RouteZone).
     pub fn builder() -> crate::types::builders::RouteZoneBuilder {
@@ -27,7 +35,7 @@ impl RouteZone {
 }
 
 /// A builder for [`RouteZone`](crate::types::RouteZone).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct RouteZoneBuilder {
     pub(crate) category: ::std::option::Option<crate::types::RouteZoneCategory>,
@@ -68,5 +76,13 @@ impl RouteZoneBuilder {
             category: self.category,
             name: self.name,
         }
+    }
+}
+impl ::std::fmt::Debug for RouteZoneBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteZoneBuilder");
+        formatter.field("category", &"*** Sensitive Data Redacted ***");
+        formatter.field("name", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

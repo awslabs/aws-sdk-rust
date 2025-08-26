@@ -152,10 +152,10 @@ impl ::std::fmt::Debug for CalculateIsolinesInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CalculateIsolinesInput");
         formatter.field("allow", &self.allow);
-        formatter.field("arrival_time", &self.arrival_time);
+        formatter.field("arrival_time", &"*** Sensitive Data Redacted ***");
         formatter.field("avoid", &self.avoid);
-        formatter.field("depart_now", &self.depart_now);
-        formatter.field("departure_time", &self.departure_time);
+        formatter.field("depart_now", &"*** Sensitive Data Redacted ***");
+        formatter.field("departure_time", &"*** Sensitive Data Redacted ***");
         formatter.field("destination", &"*** Sensitive Data Redacted ***");
         formatter.field("destination_options", &self.destination_options);
         formatter.field("isoline_geometry_format", &self.isoline_geometry_format);
@@ -543,10 +543,10 @@ impl ::std::fmt::Debug for CalculateIsolinesInputBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CalculateIsolinesInputBuilder");
         formatter.field("allow", &self.allow);
-        formatter.field("arrival_time", &self.arrival_time);
+        formatter.field("arrival_time", &"*** Sensitive Data Redacted ***");
         formatter.field("avoid", &self.avoid);
-        formatter.field("depart_now", &self.depart_now);
-        formatter.field("departure_time", &self.departure_time);
+        formatter.field("depart_now", &"*** Sensitive Data Redacted ***");
+        formatter.field("departure_time", &"*** Sensitive Data Redacted ***");
         formatter.field("destination", &"*** Sensitive Data Redacted ***");
         formatter.field("destination_options", &self.destination_options);
         formatter.field("isoline_geometry_format", &self.isoline_geometry_format);

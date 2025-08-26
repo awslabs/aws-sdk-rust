@@ -39,8 +39,8 @@ impl ::std::fmt::Debug for IsolineMatchingOptions {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("IsolineMatchingOptions");
         formatter.field("name_hint", &"*** Sensitive Data Redacted ***");
-        formatter.field("on_road_threshold", &self.on_road_threshold);
-        formatter.field("radius", &self.radius);
+        formatter.field("on_road_threshold", &"*** Sensitive Data Redacted ***");
+        formatter.field("radius", &"*** Sensitive Data Redacted ***");
         formatter.field("strategy", &self.strategy);
         formatter.finish()
     }
@@ -138,8 +138,8 @@ impl ::std::fmt::Debug for IsolineMatchingOptionsBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("IsolineMatchingOptionsBuilder");
         formatter.field("name_hint", &"*** Sensitive Data Redacted ***");
-        formatter.field("on_road_threshold", &self.on_road_threshold);
-        formatter.field("radius", &self.radius);
+        formatter.field("on_road_threshold", &"*** Sensitive Data Redacted ***");
+        formatter.field("radius", &"*** Sensitive Data Redacted ***");
         formatter.field("strategy", &self.strategy);
         formatter.finish()
     }

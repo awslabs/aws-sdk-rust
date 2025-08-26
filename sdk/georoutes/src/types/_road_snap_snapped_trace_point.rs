@@ -30,7 +30,7 @@ impl RoadSnapSnappedTracePoint {
 impl ::std::fmt::Debug for RoadSnapSnappedTracePoint {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("RoadSnapSnappedTracePoint");
-        formatter.field("confidence", &self.confidence);
+        formatter.field("confidence", &"*** Sensitive Data Redacted ***");
         formatter.field("original_position", &"*** Sensitive Data Redacted ***");
         formatter.field("snapped_position", &"*** Sensitive Data Redacted ***");
         formatter.finish()
@@ -138,7 +138,7 @@ impl RoadSnapSnappedTracePointBuilder {
 impl ::std::fmt::Debug for RoadSnapSnappedTracePointBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("RoadSnapSnappedTracePointBuilder");
-        formatter.field("confidence", &self.confidence);
+        formatter.field("confidence", &"*** Sensitive Data Redacted ***");
         formatter.field("original_position", &"*** Sensitive Data Redacted ***");
         formatter.field("snapped_position", &"*** Sensitive Data Redacted ***");
         formatter.finish()

@@ -2,7 +2,7 @@
 
 /// <p>Boundary within which the matrix is to be calculated. All data, origins and destinations outside the boundary are considered invalid.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RouteMatrixBoundary {
     /// <p>Geometry of the area to be avoided.</p>
     pub geometry: ::std::option::Option<crate::types::RouteMatrixBoundaryGeometry>,
@@ -19,6 +19,14 @@ impl RouteMatrixBoundary {
         self.unbounded
     }
 }
+impl ::std::fmt::Debug for RouteMatrixBoundary {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteMatrixBoundary");
+        formatter.field("geometry", &self.geometry);
+        formatter.field("unbounded", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl RouteMatrixBoundary {
     /// Creates a new builder-style object to manufacture [`RouteMatrixBoundary`](crate::types::RouteMatrixBoundary).
     pub fn builder() -> crate::types::builders::RouteMatrixBoundaryBuilder {
@@ -27,7 +35,7 @@ impl RouteMatrixBoundary {
 }
 
 /// A builder for [`RouteMatrixBoundary`](crate::types::RouteMatrixBoundary).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct RouteMatrixBoundaryBuilder {
     pub(crate) geometry: ::std::option::Option<crate::types::RouteMatrixBoundaryGeometry>,
@@ -68,5 +76,13 @@ impl RouteMatrixBoundaryBuilder {
             geometry: self.geometry,
             unbounded: self.unbounded,
         }
+    }
+}
+impl ::std::fmt::Debug for RouteMatrixBoundaryBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteMatrixBoundaryBuilder");
+        formatter.field("geometry", &self.geometry);
+        formatter.field("unbounded", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

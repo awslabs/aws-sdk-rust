@@ -2,7 +2,7 @@
 
 /// <p>FerryLegDetails is populated when the Leg type is Ferry, and provides additional information that is specific</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RouteFerryLegDetails {
     /// <p>Steps of a leg that must be performed after the travel portion of the leg.</p>
     pub after_travel_steps: ::std::vec::Vec<crate::types::RouteFerryAfterTravelStep>,
@@ -73,6 +73,22 @@ impl RouteFerryLegDetails {
         self.travel_steps.deref()
     }
 }
+impl ::std::fmt::Debug for RouteFerryLegDetails {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteFerryLegDetails");
+        formatter.field("after_travel_steps", &self.after_travel_steps);
+        formatter.field("arrival", &self.arrival);
+        formatter.field("before_travel_steps", &self.before_travel_steps);
+        formatter.field("departure", &self.departure);
+        formatter.field("notices", &self.notices);
+        formatter.field("pass_through_waypoints", &self.pass_through_waypoints);
+        formatter.field("route_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("spans", &self.spans);
+        formatter.field("summary", &self.summary);
+        formatter.field("travel_steps", &self.travel_steps);
+        formatter.finish()
+    }
+}
 impl RouteFerryLegDetails {
     /// Creates a new builder-style object to manufacture [`RouteFerryLegDetails`](crate::types::RouteFerryLegDetails).
     pub fn builder() -> crate::types::builders::RouteFerryLegDetailsBuilder {
@@ -81,7 +97,7 @@ impl RouteFerryLegDetails {
 }
 
 /// A builder for [`RouteFerryLegDetails`](crate::types::RouteFerryLegDetails).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct RouteFerryLegDetailsBuilder {
     pub(crate) after_travel_steps: ::std::option::Option<::std::vec::Vec<crate::types::RouteFerryAfterTravelStep>>,
@@ -325,5 +341,21 @@ impl RouteFerryLegDetailsBuilder {
                 )
             })?,
         })
+    }
+}
+impl ::std::fmt::Debug for RouteFerryLegDetailsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteFerryLegDetailsBuilder");
+        formatter.field("after_travel_steps", &self.after_travel_steps);
+        formatter.field("arrival", &self.arrival);
+        formatter.field("before_travel_steps", &self.before_travel_steps);
+        formatter.field("departure", &self.departure);
+        formatter.field("notices", &self.notices);
+        formatter.field("pass_through_waypoints", &self.pass_through_waypoints);
+        formatter.field("route_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("spans", &self.spans);
+        formatter.field("summary", &self.summary);
+        formatter.field("travel_steps", &self.travel_steps);
+        formatter.finish()
     }
 }

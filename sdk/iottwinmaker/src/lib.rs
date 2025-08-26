@@ -32,7 +32,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-iottwinmaker = "1.81.0"
+//! aws-sdk-iottwinmaker = "1.82.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

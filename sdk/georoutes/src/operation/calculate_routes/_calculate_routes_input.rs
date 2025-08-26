@@ -240,10 +240,10 @@ impl ::std::fmt::Debug for CalculateRoutesInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CalculateRoutesInput");
         formatter.field("allow", &self.allow);
-        formatter.field("arrival_time", &self.arrival_time);
+        formatter.field("arrival_time", &"*** Sensitive Data Redacted ***");
         formatter.field("avoid", &self.avoid);
-        formatter.field("depart_now", &self.depart_now);
-        formatter.field("departure_time", &self.departure_time);
+        formatter.field("depart_now", &"*** Sensitive Data Redacted ***");
+        formatter.field("departure_time", &"*** Sensitive Data Redacted ***");
         formatter.field("destination", &"*** Sensitive Data Redacted ***");
         formatter.field("destination_options", &self.destination_options);
         formatter.field("driver", &self.driver);
@@ -251,7 +251,7 @@ impl ::std::fmt::Debug for CalculateRoutesInput {
         formatter.field("instructions_measurement_system", &self.instructions_measurement_system);
         formatter.field("key", &"*** Sensitive Data Redacted ***");
         formatter.field("languages", &self.languages);
-        formatter.field("leg_additional_features", &self.leg_additional_features);
+        formatter.field("leg_additional_features", &"*** Sensitive Data Redacted ***");
         formatter.field("leg_geometry_format", &self.leg_geometry_format);
         formatter.field("max_alternatives", &self.max_alternatives);
         formatter.field("optimize_routing_for", &self.optimize_routing_for);
@@ -830,10 +830,10 @@ impl ::std::fmt::Debug for CalculateRoutesInputBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CalculateRoutesInputBuilder");
         formatter.field("allow", &self.allow);
-        formatter.field("arrival_time", &self.arrival_time);
+        formatter.field("arrival_time", &"*** Sensitive Data Redacted ***");
         formatter.field("avoid", &self.avoid);
-        formatter.field("depart_now", &self.depart_now);
-        formatter.field("departure_time", &self.departure_time);
+        formatter.field("depart_now", &"*** Sensitive Data Redacted ***");
+        formatter.field("departure_time", &"*** Sensitive Data Redacted ***");
         formatter.field("destination", &"*** Sensitive Data Redacted ***");
         formatter.field("destination_options", &self.destination_options);
         formatter.field("driver", &self.driver);
@@ -841,7 +841,7 @@ impl ::std::fmt::Debug for CalculateRoutesInputBuilder {
         formatter.field("instructions_measurement_system", &self.instructions_measurement_system);
         formatter.field("key", &"*** Sensitive Data Redacted ***");
         formatter.field("languages", &self.languages);
-        formatter.field("leg_additional_features", &self.leg_additional_features);
+        formatter.field("leg_additional_features", &"*** Sensitive Data Redacted ***");
         formatter.field("leg_geometry_format", &self.leg_geometry_format);
         formatter.field("max_alternatives", &self.max_alternatives);
         formatter.field("optimize_routing_for", &self.optimize_routing_for);

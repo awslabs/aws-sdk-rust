@@ -386,27 +386,9 @@ mod test {
         );
     }
 
-    /// For region us-iso-east-1 with FIPS enabled and DualStack enabled
-    #[test]
-    fn test_20() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("us-iso-east-1".to_string())
-            .use_fips(true)
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err("expected error: FIPS and DualStack are enabled, but this partition does not support one or both [For region us-iso-east-1 with FIPS enabled and DualStack enabled]");
-        assert_eq!(
-            format!("{}", error),
-            "FIPS and DualStack are enabled, but this partition does not support one or both"
-        )
-    }
-
     /// For region us-iso-east-1 with FIPS enabled and DualStack disabled
     #[test]
-    fn test_21() {
+    fn test_20() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-iso-east-1".to_string())
             .use_fips(true)
@@ -424,24 +406,9 @@ mod test {
         );
     }
 
-    /// For region us-iso-east-1 with FIPS disabled and DualStack enabled
-    #[test]
-    fn test_22() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("us-iso-east-1".to_string())
-            .use_fips(false)
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err("expected error: DualStack is enabled but this partition does not support DualStack [For region us-iso-east-1 with FIPS disabled and DualStack enabled]");
-        assert_eq!(format!("{}", error), "DualStack is enabled but this partition does not support DualStack")
-    }
-
     /// For region us-iso-east-1 with FIPS disabled and DualStack disabled
     #[test]
-    fn test_23() {
+    fn test_21() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-iso-east-1".to_string())
             .use_fips(false)
@@ -459,27 +426,9 @@ mod test {
         );
     }
 
-    /// For region us-isob-east-1 with FIPS enabled and DualStack enabled
-    #[test]
-    fn test_24() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("us-isob-east-1".to_string())
-            .use_fips(true)
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err("expected error: FIPS and DualStack are enabled, but this partition does not support one or both [For region us-isob-east-1 with FIPS enabled and DualStack enabled]");
-        assert_eq!(
-            format!("{}", error),
-            "FIPS and DualStack are enabled, but this partition does not support one or both"
-        )
-    }
-
     /// For region us-isob-east-1 with FIPS enabled and DualStack disabled
     #[test]
-    fn test_25() {
+    fn test_22() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-isob-east-1".to_string())
             .use_fips(true)
@@ -497,24 +446,9 @@ mod test {
         );
     }
 
-    /// For region us-isob-east-1 with FIPS disabled and DualStack enabled
-    #[test]
-    fn test_26() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("us-isob-east-1".to_string())
-            .use_fips(false)
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err("expected error: DualStack is enabled but this partition does not support DualStack [For region us-isob-east-1 with FIPS disabled and DualStack enabled]");
-        assert_eq!(format!("{}", error), "DualStack is enabled but this partition does not support DualStack")
-    }
-
     /// For region us-isob-east-1 with FIPS disabled and DualStack disabled
     #[test]
-    fn test_27() {
+    fn test_23() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-isob-east-1".to_string())
             .use_fips(false)
@@ -534,7 +468,7 @@ mod test {
 
     /// For custom endpoint with region set and fips disabled and dualstack disabled
     #[test]
-    fn test_28() {
+    fn test_24() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(false)
@@ -553,7 +487,7 @@ mod test {
 
     /// For custom endpoint with region not set and fips disabled and dualstack disabled
     #[test]
-    fn test_29() {
+    fn test_25() {
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
             .use_dual_stack(false)
@@ -571,7 +505,7 @@ mod test {
 
     /// For custom endpoint with fips enabled and dualstack disabled
     #[test]
-    fn test_30() {
+    fn test_26() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(true)
@@ -587,7 +521,7 @@ mod test {
 
     /// For custom endpoint with fips disabled and dualstack enabled
     #[test]
-    fn test_31() {
+    fn test_27() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(false)
@@ -606,7 +540,7 @@ mod test {
 
     /// Missing region
     #[test]
-    fn test_32() {
+    fn test_28() {
         let params = crate::config::endpoint::Params::builder().build().expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);

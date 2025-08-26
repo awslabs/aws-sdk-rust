@@ -37,10 +37,10 @@ impl RouteFerryPlace {
 impl ::std::fmt::Debug for RouteFerryPlace {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("RouteFerryPlace");
-        formatter.field("name", &self.name);
+        formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("original_position", &"*** Sensitive Data Redacted ***");
         formatter.field("position", &"*** Sensitive Data Redacted ***");
-        formatter.field("waypoint_index", &self.waypoint_index);
+        formatter.field("waypoint_index", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -149,10 +149,10 @@ impl RouteFerryPlaceBuilder {
 impl ::std::fmt::Debug for RouteFerryPlaceBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("RouteFerryPlaceBuilder");
-        formatter.field("name", &self.name);
+        formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("original_position", &"*** Sensitive Data Redacted ***");
         formatter.field("position", &"*** Sensitive Data Redacted ***");
-        formatter.field("waypoint_index", &self.waypoint_index);
+        formatter.field("waypoint_index", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

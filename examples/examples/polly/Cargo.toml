@@ -9,7 +9,7 @@ publish = false
 [dependencies]
 bytes = "1"
 aws-config= { version = "1.8.5", path = "../../../sdk/aws-config", features = ["behavior-version-latest"] }
-aws-sdk-polly= { version = "1.86.0", path = "../../../sdk/polly" }
+aws-sdk-polly= { version = "1.87.0", path = "../../../sdk/polly" }
 
 [dependencies.tokio]
 version = "1.20.1"

@@ -49,9 +49,7 @@
 ///
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::hash::Hash)]
 pub enum RouteVehicleTravelStepType {
     #[allow(missing_docs)] // documentation missing in model
     Arrive,
@@ -184,5 +182,10 @@ impl ::std::fmt::Display for RouteVehicleTravelStepType {
             RouteVehicleTravelStepType::UTurn => write!(f, "UTurn"),
             RouteVehicleTravelStepType::Unknown(value) => write!(f, "{}", value),
         }
+    }
+}
+impl ::std::fmt::Debug for RouteVehicleTravelStepType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        ::std::write!(f, "*** Sensitive Data Redacted ***")
     }
 }

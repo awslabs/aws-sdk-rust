@@ -160,6 +160,8 @@ impl DescribeVpcEndpointAssociationsFluentBuilder {
     /// <p><code>service-network-arn</code> - The Amazon Resource Name (ARN) of the associated service network. Only VPC endpoints of type service network will be returned.</p></li>
     /// <li>
     /// <p><code>resource-configuration-group-arn</code> - The Amazon Resource Name (ARN) of the resource configuration of type GROUP.</p></li>
+    /// <li>
+    /// <p><code>service-network-resource-association-id</code> - The ID of the association.</p></li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filters(input);
@@ -179,6 +181,8 @@ impl DescribeVpcEndpointAssociationsFluentBuilder {
     /// <p><code>service-network-arn</code> - The Amazon Resource Name (ARN) of the associated service network. Only VPC endpoints of type service network will be returned.</p></li>
     /// <li>
     /// <p><code>resource-configuration-group-arn</code> - The Amazon Resource Name (ARN) of the resource configuration of type GROUP.</p></li>
+    /// <li>
+    /// <p><code>service-network-resource-association-id</code> - The ID of the association.</p></li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
@@ -198,6 +202,8 @@ impl DescribeVpcEndpointAssociationsFluentBuilder {
     /// <p><code>service-network-arn</code> - The Amazon Resource Name (ARN) of the associated service network. Only VPC endpoints of type service network will be returned.</p></li>
     /// <li>
     /// <p><code>resource-configuration-group-arn</code> - The Amazon Resource Name (ARN) of the resource configuration of type GROUP.</p></li>
+    /// <li>
+    /// <p><code>service-network-resource-association-id</code> - The ID of the association.</p></li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filters()

@@ -33,7 +33,7 @@ impl ::std::fmt::Debug for RoutePassThroughPlace {
         let mut formatter = f.debug_struct("RoutePassThroughPlace");
         formatter.field("original_position", &"*** Sensitive Data Redacted ***");
         formatter.field("position", &"*** Sensitive Data Redacted ***");
-        formatter.field("waypoint_index", &self.waypoint_index);
+        formatter.field("waypoint_index", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -128,7 +128,7 @@ impl ::std::fmt::Debug for RoutePassThroughPlaceBuilder {
         let mut formatter = f.debug_struct("RoutePassThroughPlaceBuilder");
         formatter.field("original_position", &"*** Sensitive Data Redacted ***");
         formatter.field("position", &"*** Sensitive Data Redacted ***");
-        formatter.field("waypoint_index", &self.waypoint_index);
+        formatter.field("waypoint_index", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

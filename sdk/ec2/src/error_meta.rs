@@ -2045,6 +2045,30 @@ impl From<crate::operation::create_image::CreateImageError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_image_usage_report::CreateImageUsageReportError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_image_usage_report::CreateImageUsageReportError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_image_usage_report::CreateImageUsageReportError> for Error {
+    fn from(err: crate::operation::create_image_usage_report::CreateImageUsageReportError) -> Self {
+        match err {
+            crate::operation::create_image_usage_report::CreateImageUsageReportError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_instance_connect_endpoint::CreateInstanceConnectEndpointError, R>,
@@ -4236,6 +4260,30 @@ impl From<crate::operation::delete_fpga_image::DeleteFpgaImageError> for Error {
     fn from(err: crate::operation::delete_fpga_image::DeleteFpgaImageError) -> Self {
         match err {
             crate::operation::delete_fpga_image::DeleteFpgaImageError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_image_usage_report::DeleteImageUsageReportError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_image_usage_report::DeleteImageUsageReportError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_image_usage_report::DeleteImageUsageReportError> for Error {
+    fn from(err: crate::operation::delete_image_usage_report::DeleteImageUsageReportError) -> Self {
+        match err {
+            crate::operation::delete_image_usage_report::DeleteImageUsageReportError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -7555,6 +7603,30 @@ impl From<crate::operation::describe_image_attribute::DescribeImageAttributeErro
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_image_references::DescribeImageReferencesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_image_references::DescribeImageReferencesError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_image_references::DescribeImageReferencesError> for Error {
+    fn from(err: crate::operation::describe_image_references::DescribeImageReferencesError) -> Self {
+        match err {
+            crate::operation::describe_image_references::DescribeImageReferencesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_images::DescribeImagesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -7573,6 +7645,62 @@ impl From<crate::operation::describe_images::DescribeImagesError> for Error {
     fn from(err: crate::operation::describe_images::DescribeImagesError) -> Self {
         match err {
             crate::operation::describe_images::DescribeImagesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_image_usage_report_entries::DescribeImageUsageReportEntriesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_image_usage_report_entries::DescribeImageUsageReportEntriesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_image_usage_report_entries::DescribeImageUsageReportEntriesError> for Error {
+    fn from(err: crate::operation::describe_image_usage_report_entries::DescribeImageUsageReportEntriesError) -> Self {
+        match err {
+            crate::operation::describe_image_usage_report_entries::DescribeImageUsageReportEntriesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_image_usage_reports::DescribeImageUsageReportsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_image_usage_reports::DescribeImageUsageReportsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_image_usage_reports::DescribeImageUsageReportsError> for Error {
+    fn from(err: crate::operation::describe_image_usage_reports::DescribeImageUsageReportsError) -> Self {
+        match err {
+            crate::operation::describe_image_usage_reports::DescribeImageUsageReportsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

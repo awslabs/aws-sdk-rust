@@ -2,7 +2,7 @@
 
 /// <p>Details related to the exit step.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RouteExitStepDetails {
     /// <p>Name of the intersection, if applicable to the step.</p>
     pub intersection: ::std::vec::Vec<crate::types::LocalizedString>,
@@ -38,6 +38,17 @@ impl RouteExitStepDetails {
         self.turn_intensity.as_ref()
     }
 }
+impl ::std::fmt::Debug for RouteExitStepDetails {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteExitStepDetails");
+        formatter.field("intersection", &self.intersection);
+        formatter.field("relative_exit", &"*** Sensitive Data Redacted ***");
+        formatter.field("steering_direction", &"*** Sensitive Data Redacted ***");
+        formatter.field("turn_angle", &self.turn_angle);
+        formatter.field("turn_intensity", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl RouteExitStepDetails {
     /// Creates a new builder-style object to manufacture [`RouteExitStepDetails`](crate::types::RouteExitStepDetails).
     pub fn builder() -> crate::types::builders::RouteExitStepDetailsBuilder {
@@ -46,7 +57,7 @@ impl RouteExitStepDetails {
 }
 
 /// A builder for [`RouteExitStepDetails`](crate::types::RouteExitStepDetails).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct RouteExitStepDetailsBuilder {
     pub(crate) intersection: ::std::option::Option<::std::vec::Vec<crate::types::LocalizedString>>,
@@ -148,5 +159,16 @@ impl RouteExitStepDetailsBuilder {
             turn_angle: self.turn_angle.unwrap_or_default(),
             turn_intensity: self.turn_intensity,
         })
+    }
+}
+impl ::std::fmt::Debug for RouteExitStepDetailsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteExitStepDetailsBuilder");
+        formatter.field("intersection", &self.intersection);
+        formatter.field("relative_exit", &"*** Sensitive Data Redacted ***");
+        formatter.field("steering_direction", &"*** Sensitive Data Redacted ***");
+        formatter.field("turn_angle", &self.turn_angle);
+        formatter.field("turn_intensity", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

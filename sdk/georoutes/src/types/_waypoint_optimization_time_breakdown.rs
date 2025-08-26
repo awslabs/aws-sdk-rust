@@ -2,7 +2,7 @@
 
 /// <p>Time breakdown for the sequence.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct WaypointOptimizationTimeBreakdown {
     /// <p>Resting phase of the cycle.</p>
     /// <p><b>Unit</b>: <code>seconds</code></p>
@@ -39,6 +39,16 @@ impl WaypointOptimizationTimeBreakdown {
         self.wait_duration
     }
 }
+impl ::std::fmt::Debug for WaypointOptimizationTimeBreakdown {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("WaypointOptimizationTimeBreakdown");
+        formatter.field("rest_duration", &"*** Sensitive Data Redacted ***");
+        formatter.field("service_duration", &"*** Sensitive Data Redacted ***");
+        formatter.field("travel_duration", &"*** Sensitive Data Redacted ***");
+        formatter.field("wait_duration", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl WaypointOptimizationTimeBreakdown {
     /// Creates a new builder-style object to manufacture [`WaypointOptimizationTimeBreakdown`](crate::types::WaypointOptimizationTimeBreakdown).
     pub fn builder() -> crate::types::builders::WaypointOptimizationTimeBreakdownBuilder {
@@ -47,7 +57,7 @@ impl WaypointOptimizationTimeBreakdown {
 }
 
 /// A builder for [`WaypointOptimizationTimeBreakdown`](crate::types::WaypointOptimizationTimeBreakdown).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct WaypointOptimizationTimeBreakdownBuilder {
     pub(crate) rest_duration: ::std::option::Option<i64>,
@@ -136,5 +146,15 @@ impl WaypointOptimizationTimeBreakdownBuilder {
             travel_duration: self.travel_duration.unwrap_or_default(),
             wait_duration: self.wait_duration.unwrap_or_default(),
         }
+    }
+}
+impl ::std::fmt::Debug for WaypointOptimizationTimeBreakdownBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("WaypointOptimizationTimeBreakdownBuilder");
+        formatter.field("rest_duration", &"*** Sensitive Data Redacted ***");
+        formatter.field("service_duration", &"*** Sensitive Data Redacted ***");
+        formatter.field("travel_duration", &"*** Sensitive Data Redacted ***");
+        formatter.field("wait_duration", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }
