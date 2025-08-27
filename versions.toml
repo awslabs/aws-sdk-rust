@@ -2693,6 +2693,10 @@ source_hash = '6038d5fa0cdc1cbaf135a4fc397589d590670bce272512f531a3be337ebb2843'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '670815a3e9f5d0e83589d550f2f1bd496ade9666a58e74f49eac19d84b5663e4'
+
+[release]
+tag = 'release-2025-08-27'
+
 [release.crates]
 aws-sdk-acmpca = '1.87.0'
 aws-sdk-amplifybackend = '1.82.0'
