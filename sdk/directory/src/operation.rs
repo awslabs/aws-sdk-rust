@@ -73,6 +73,9 @@ pub mod deregister_event_topic;
 /// Types for the `DescribeADAssessment` operation.
 pub mod describe_ad_assessment;
 
+/// Types for the `DescribeCAEnrollmentPolicy` operation.
+pub mod describe_ca_enrollment_policy;
+
 /// Types for the `DescribeCertificate` operation.
 pub mod describe_certificate;
 
@@ -118,6 +121,9 @@ pub mod describe_trusts;
 /// Types for the `DescribeUpdateDirectory` operation.
 pub mod describe_update_directory;
 
+/// Types for the `DisableCAEnrollmentPolicy` operation.
+pub mod disable_ca_enrollment_policy;
+
 /// Types for the `DisableClientAuthentication` operation.
 pub mod disable_client_authentication;
 
@@ -132,6 +138,9 @@ pub mod disable_radius;
 
 /// Types for the `DisableSso` operation.
 pub mod disable_sso;
+
+/// Types for the `EnableCAEnrollmentPolicy` operation.
+pub mod enable_ca_enrollment_policy;
 
 /// Types for the `EnableClientAuthentication` operation.
 pub mod enable_client_authentication;

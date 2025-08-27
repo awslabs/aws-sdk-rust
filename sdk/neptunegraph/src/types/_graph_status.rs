@@ -19,6 +19,9 @@
 ///     GraphStatus::Importing => { /* ... */ },
 ///     GraphStatus::Resetting => { /* ... */ },
 ///     GraphStatus::Snapshotting => { /* ... */ },
+///     GraphStatus::Starting => { /* ... */ },
+///     GraphStatus::Stopped => { /* ... */ },
+///     GraphStatus::Stopping => { /* ... */ },
 ///     GraphStatus::Updating => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -63,6 +66,12 @@ pub enum GraphStatus {
     #[allow(missing_docs)] // documentation missing in model
     Snapshotting,
     #[allow(missing_docs)] // documentation missing in model
+    Starting,
+    #[allow(missing_docs)] // documentation missing in model
+    Stopped,
+    #[allow(missing_docs)] // documentation missing in model
+    Stopping,
+    #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -78,6 +87,9 @@ impl ::std::convert::From<&str> for GraphStatus {
             "IMPORTING" => GraphStatus::Importing,
             "RESETTING" => GraphStatus::Resetting,
             "SNAPSHOTTING" => GraphStatus::Snapshotting,
+            "STARTING" => GraphStatus::Starting,
+            "STOPPED" => GraphStatus::Stopped,
+            "STOPPING" => GraphStatus::Stopping,
             "UPDATING" => GraphStatus::Updating,
             other => GraphStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -101,6 +113,9 @@ impl GraphStatus {
             GraphStatus::Importing => "IMPORTING",
             GraphStatus::Resetting => "RESETTING",
             GraphStatus::Snapshotting => "SNAPSHOTTING",
+            GraphStatus::Starting => "STARTING",
+            GraphStatus::Stopped => "STOPPED",
+            GraphStatus::Stopping => "STOPPING",
             GraphStatus::Updating => "UPDATING",
             GraphStatus::Unknown(value) => value.as_str(),
         }
@@ -115,6 +130,9 @@ impl GraphStatus {
             "IMPORTING",
             "RESETTING",
             "SNAPSHOTTING",
+            "STARTING",
+            "STOPPED",
+            "STOPPING",
             "UPDATING",
         ]
     }
@@ -146,6 +164,9 @@ impl ::std::fmt::Display for GraphStatus {
             GraphStatus::Importing => write!(f, "IMPORTING"),
             GraphStatus::Resetting => write!(f, "RESETTING"),
             GraphStatus::Snapshotting => write!(f, "SNAPSHOTTING"),
+            GraphStatus::Starting => write!(f, "STARTING"),
+            GraphStatus::Stopped => write!(f, "STOPPED"),
+            GraphStatus::Stopping => write!(f, "STOPPING"),
             GraphStatus::Updating => write!(f, "UPDATING"),
             GraphStatus::Unknown(value) => write!(f, "{}", value),
         }

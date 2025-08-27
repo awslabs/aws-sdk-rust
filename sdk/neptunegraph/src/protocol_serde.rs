@@ -79,7 +79,11 @@ pub(crate) mod shape_restore_graph_from_snapshot;
 
 pub(crate) mod shape_start_export_task;
 
+pub(crate) mod shape_start_graph;
+
 pub(crate) mod shape_start_import_task;
+
+pub(crate) mod shape_stop_graph;
 
 pub(crate) mod shape_tag_resource;
 

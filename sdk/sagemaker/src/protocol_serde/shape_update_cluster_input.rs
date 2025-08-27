@@ -45,5 +45,14 @@ pub fn ser_update_cluster_input_input(
         }
         array_12.finish();
     }
+    if let Some(var_14) = &input.cluster_role {
+        object.key("ClusterRole").string(var_14.as_str());
+    }
+    if let Some(var_15) = &input.auto_scaling {
+        #[allow(unused_mut)]
+        let mut object_16 = object.key("AutoScaling").start_object();
+        crate::protocol_serde::shape_cluster_auto_scaling_config::ser_cluster_auto_scaling_config(&mut object_16, var_15)?;
+        object_16.finish();
+    }
     Ok(())
 }

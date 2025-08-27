@@ -148,6 +148,8 @@ pub trait Waiters {
     fn wait_until_graph_available(&self) -> crate::waiters::graph_available::GraphAvailableFluentBuilder;
     /// Wait until Graph is Deleted
     fn wait_until_graph_deleted(&self) -> crate::waiters::graph_deleted::GraphDeletedFluentBuilder;
+    /// Wait until Graph is Stopped
+    fn wait_until_graph_stopped(&self) -> crate::waiters::graph_stopped::GraphStoppedFluentBuilder;
     /// Wait until GraphSnapshot is Available
     fn wait_until_graph_snapshot_available(&self) -> crate::waiters::graph_snapshot_available::GraphSnapshotAvailableFluentBuilder;
     /// Wait until GraphSnapshot is Deleted
@@ -175,6 +177,9 @@ impl Waiters for Client {
     }
     fn wait_until_graph_deleted(&self) -> crate::waiters::graph_deleted::GraphDeletedFluentBuilder {
         crate::waiters::graph_deleted::GraphDeletedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_graph_stopped(&self) -> crate::waiters::graph_stopped::GraphStoppedFluentBuilder {
+        crate::waiters::graph_stopped::GraphStoppedFluentBuilder::new(self.handle.clone())
     }
     fn wait_until_graph_snapshot_available(&self) -> crate::waiters::graph_snapshot_available::GraphSnapshotAvailableFluentBuilder {
         crate::waiters::graph_snapshot_available::GraphSnapshotAvailableFluentBuilder::new(self.handle.clone())
@@ -297,7 +302,11 @@ mod restore_graph_from_snapshot;
 
 mod start_export_task;
 
+mod start_graph;
+
 mod start_import_task;
+
+mod stop_graph;
 
 mod tag_resource;
 

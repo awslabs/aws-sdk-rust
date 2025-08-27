@@ -337,6 +337,50 @@ pub(crate) fn match_get_graph_snapshot_1cce2c05524fb92d4(
     false
 }
 
+/// Matcher union: {"output":{"path":"status","expected":"STOPPED","comparator":"stringEquals"}}
+pub(crate) fn match_get_graph_752e7f99f3bc7dc47(
+    _result: ::std::result::Result<&crate::operation::get_graph::GetGraphOutput, &crate::operation::get_graph::GetGraphError>,
+) -> bool {
+    fn path_traversal<'a>(_output: &'a crate::operation::get_graph::GetGraphOutput) -> ::std::option::Option<&'a crate::types::GraphStatus> {
+        let _fld_1 = _output.status.as_ref()?;
+        ::std::option::Option::Some(_fld_1)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let _tmp_2 = value.as_str();
+            let right = "STOPPED";
+            let _cmp_1 = _tmp_2 == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"output":{"path":"status != 'STOPPING'","expected":"true","comparator":"booleanEquals"}}
+pub(crate) fn match_get_graph_51e3423ce4acc8538(
+    _result: ::std::result::Result<&crate::operation::get_graph::GetGraphOutput, &crate::operation::get_graph::GetGraphError>,
+) -> bool {
+    fn path_traversal<'a>(_output: &'a crate::operation::get_graph::GetGraphOutput) -> ::std::option::Option<bool> {
+        let _fld_1 = _output.status.as_ref()?;
+        let _tmp_4 = _fld_1.as_str();
+        const _LIT_2: &str = "STOPPING";
+        let _cmp_3 = _tmp_4 != _LIT_2;
+        ::std::option::Option::Some(_cmp_3)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let right = true;
+            let _cmp_1 = value == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
+}
+
 /// Matcher union: {"output":{"path":"status != 'CANCELLING' && status != 'CANCELLED'","expected":"true","comparator":"booleanEquals"}}
 pub(crate) fn match_get_import_task_3f820f817a7d877c1(
     _result: ::std::result::Result<&crate::operation::get_import_task::GetImportTaskOutput, &crate::operation::get_import_task::GetImportTaskError>,

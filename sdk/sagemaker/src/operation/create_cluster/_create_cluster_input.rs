@@ -40,6 +40,10 @@ pub struct CreateClusterInput {
     /// <p><b>Continuous</b>: Scaling behavior that enables 1) concurrent operation execution within instance groups, 2) continuous retry mechanisms for failed operations, 3) enhanced customer visibility into cluster events through detailed event streams, 4) partial provisioning capabilities. Your clusters and instance groups remain <code>InService</code> while scaling. This mode is only supported for EKS orchestrated clusters.</p></li>
     /// </ul>
     pub node_provisioning_mode: ::std::option::Option<crate::types::ClusterNodeProvisioningMode>,
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that HyperPod assumes to perform cluster autoscaling operations. This role must have permissions for <code>sagemaker:BatchAddClusterNodes</code> and <code>sagemaker:BatchDeleteClusterNodes</code>. This is only required when autoscaling is enabled and when HyperPod is performing autoscaling operations.</p>
+    pub cluster_role: ::std::option::Option<::std::string::String>,
+    /// <p>The autoscaling configuration for the cluster. Enables automatic scaling of cluster nodes based on workload demand using a Karpenter-based system.</p>
+    pub auto_scaling: ::std::option::Option<crate::types::ClusterAutoScalingConfig>,
 }
 impl CreateClusterInput {
     /// <p>The name for the new SageMaker HyperPod cluster.</p>
@@ -101,6 +105,14 @@ impl CreateClusterInput {
     pub fn node_provisioning_mode(&self) -> ::std::option::Option<&crate::types::ClusterNodeProvisioningMode> {
         self.node_provisioning_mode.as_ref()
     }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that HyperPod assumes to perform cluster autoscaling operations. This role must have permissions for <code>sagemaker:BatchAddClusterNodes</code> and <code>sagemaker:BatchDeleteClusterNodes</code>. This is only required when autoscaling is enabled and when HyperPod is performing autoscaling operations.</p>
+    pub fn cluster_role(&self) -> ::std::option::Option<&str> {
+        self.cluster_role.as_deref()
+    }
+    /// <p>The autoscaling configuration for the cluster. Enables automatic scaling of cluster nodes based on workload demand using a Karpenter-based system.</p>
+    pub fn auto_scaling(&self) -> ::std::option::Option<&crate::types::ClusterAutoScalingConfig> {
+        self.auto_scaling.as_ref()
+    }
 }
 impl CreateClusterInput {
     /// Creates a new builder-style object to manufacture [`CreateClusterInput`](crate::operation::create_cluster::CreateClusterInput).
@@ -121,6 +133,8 @@ pub struct CreateClusterInputBuilder {
     pub(crate) orchestrator: ::std::option::Option<crate::types::ClusterOrchestrator>,
     pub(crate) node_recovery: ::std::option::Option<crate::types::ClusterNodeRecovery>,
     pub(crate) node_provisioning_mode: ::std::option::Option<crate::types::ClusterNodeProvisioningMode>,
+    pub(crate) cluster_role: ::std::option::Option<::std::string::String>,
+    pub(crate) auto_scaling: ::std::option::Option<crate::types::ClusterAutoScalingConfig>,
 }
 impl CreateClusterInputBuilder {
     /// <p>The name for the new SageMaker HyperPod cluster.</p>
@@ -322,6 +336,34 @@ impl CreateClusterInputBuilder {
     pub fn get_node_provisioning_mode(&self) -> &::std::option::Option<crate::types::ClusterNodeProvisioningMode> {
         &self.node_provisioning_mode
     }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that HyperPod assumes to perform cluster autoscaling operations. This role must have permissions for <code>sagemaker:BatchAddClusterNodes</code> and <code>sagemaker:BatchDeleteClusterNodes</code>. This is only required when autoscaling is enabled and when HyperPod is performing autoscaling operations.</p>
+    pub fn cluster_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cluster_role = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that HyperPod assumes to perform cluster autoscaling operations. This role must have permissions for <code>sagemaker:BatchAddClusterNodes</code> and <code>sagemaker:BatchDeleteClusterNodes</code>. This is only required when autoscaling is enabled and when HyperPod is performing autoscaling operations.</p>
+    pub fn set_cluster_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.cluster_role = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that HyperPod assumes to perform cluster autoscaling operations. This role must have permissions for <code>sagemaker:BatchAddClusterNodes</code> and <code>sagemaker:BatchDeleteClusterNodes</code>. This is only required when autoscaling is enabled and when HyperPod is performing autoscaling operations.</p>
+    pub fn get_cluster_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_role
+    }
+    /// <p>The autoscaling configuration for the cluster. Enables automatic scaling of cluster nodes based on workload demand using a Karpenter-based system.</p>
+    pub fn auto_scaling(mut self, input: crate::types::ClusterAutoScalingConfig) -> Self {
+        self.auto_scaling = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The autoscaling configuration for the cluster. Enables automatic scaling of cluster nodes based on workload demand using a Karpenter-based system.</p>
+    pub fn set_auto_scaling(mut self, input: ::std::option::Option<crate::types::ClusterAutoScalingConfig>) -> Self {
+        self.auto_scaling = input;
+        self
+    }
+    /// <p>The autoscaling configuration for the cluster. Enables automatic scaling of cluster nodes based on workload demand using a Karpenter-based system.</p>
+    pub fn get_auto_scaling(&self) -> &::std::option::Option<crate::types::ClusterAutoScalingConfig> {
+        &self.auto_scaling
+    }
     /// Consumes the builder and constructs a [`CreateClusterInput`](crate::operation::create_cluster::CreateClusterInput).
     pub fn build(
         self,
@@ -335,6 +377,8 @@ impl CreateClusterInputBuilder {
             orchestrator: self.orchestrator,
             node_recovery: self.node_recovery,
             node_provisioning_mode: self.node_provisioning_mode,
+            cluster_role: self.cluster_role,
+            auto_scaling: self.auto_scaling,
         })
     }
 }

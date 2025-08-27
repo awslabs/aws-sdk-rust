@@ -321,6 +321,8 @@ pub use crate::types::_scheduler_config::SchedulerConfigBuilder;
 
 pub use crate::types::_priority_class::PriorityClassBuilder;
 
+pub use crate::types::_cluster_auto_scaling_config::ClusterAutoScalingConfigBuilder;
+
 pub use crate::types::_cluster_restricted_instance_group_specification::ClusterRestrictedInstanceGroupSpecificationBuilder;
 
 pub use crate::types::_environment_config::EnvironmentConfigBuilder;
@@ -1216,6 +1218,8 @@ pub use crate::types::_instance_group_scaling_metadata::InstanceGroupScalingMeta
 pub use crate::types::_instance_group_metadata::InstanceGroupMetadataBuilder;
 
 pub use crate::types::_cluster_metadata::ClusterMetadataBuilder;
+
+pub use crate::types::_cluster_auto_scaling_config_output::ClusterAutoScalingConfigOutputBuilder;
 
 pub use crate::types::_cluster_orchestrator::ClusterOrchestratorBuilder;
 

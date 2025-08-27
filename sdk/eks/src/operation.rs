@@ -85,6 +85,9 @@ pub mod describe_identity_provider_config;
 /// Types for the `DescribeInsight` operation.
 pub mod describe_insight;
 
+/// Types for the `DescribeInsightsRefresh` operation.
+pub mod describe_insights_refresh;
+
 /// Types for the `DescribeNodegroup` operation.
 pub mod describe_nodegroup;
 
@@ -141,6 +144,9 @@ pub mod list_updates;
 
 /// Types for the `RegisterCluster` operation.
 pub mod register_cluster;
+
+/// Types for the `StartInsightsRefresh` operation.
+pub mod start_insights_refresh;
 
 /// Types for the `TagResource` operation.
 pub mod tag_resource;

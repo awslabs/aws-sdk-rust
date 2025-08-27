@@ -25,6 +25,10 @@ pub struct DescribeClusterOutput {
     pub node_recovery: ::std::option::Option<crate::types::ClusterNodeRecovery>,
     /// <p>The mode used for provisioning nodes in the cluster.</p>
     pub node_provisioning_mode: ::std::option::Option<crate::types::ClusterNodeProvisioningMode>,
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that HyperPod uses for cluster autoscaling operations.</p>
+    pub cluster_role: ::std::option::Option<::std::string::String>,
+    /// <p>The current autoscaling configuration and status for the autoscaler.</p>
+    pub auto_scaling: ::std::option::Option<crate::types::ClusterAutoScalingConfigOutput>,
     _request_id: Option<String>,
 }
 impl DescribeClusterOutput {
@@ -76,6 +80,14 @@ impl DescribeClusterOutput {
     pub fn node_provisioning_mode(&self) -> ::std::option::Option<&crate::types::ClusterNodeProvisioningMode> {
         self.node_provisioning_mode.as_ref()
     }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that HyperPod uses for cluster autoscaling operations.</p>
+    pub fn cluster_role(&self) -> ::std::option::Option<&str> {
+        self.cluster_role.as_deref()
+    }
+    /// <p>The current autoscaling configuration and status for the autoscaler.</p>
+    pub fn auto_scaling(&self) -> ::std::option::Option<&crate::types::ClusterAutoScalingConfigOutput> {
+        self.auto_scaling.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for DescribeClusterOutput {
     fn request_id(&self) -> Option<&str> {
@@ -104,6 +116,8 @@ pub struct DescribeClusterOutputBuilder {
     pub(crate) orchestrator: ::std::option::Option<crate::types::ClusterOrchestrator>,
     pub(crate) node_recovery: ::std::option::Option<crate::types::ClusterNodeRecovery>,
     pub(crate) node_provisioning_mode: ::std::option::Option<crate::types::ClusterNodeProvisioningMode>,
+    pub(crate) cluster_role: ::std::option::Option<::std::string::String>,
+    pub(crate) auto_scaling: ::std::option::Option<crate::types::ClusterAutoScalingConfigOutput>,
     _request_id: Option<String>,
 }
 impl DescribeClusterOutputBuilder {
@@ -278,6 +292,34 @@ impl DescribeClusterOutputBuilder {
     pub fn get_node_provisioning_mode(&self) -> &::std::option::Option<crate::types::ClusterNodeProvisioningMode> {
         &self.node_provisioning_mode
     }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that HyperPod uses for cluster autoscaling operations.</p>
+    pub fn cluster_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cluster_role = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that HyperPod uses for cluster autoscaling operations.</p>
+    pub fn set_cluster_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.cluster_role = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that HyperPod uses for cluster autoscaling operations.</p>
+    pub fn get_cluster_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_role
+    }
+    /// <p>The current autoscaling configuration and status for the autoscaler.</p>
+    pub fn auto_scaling(mut self, input: crate::types::ClusterAutoScalingConfigOutput) -> Self {
+        self.auto_scaling = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The current autoscaling configuration and status for the autoscaler.</p>
+    pub fn set_auto_scaling(mut self, input: ::std::option::Option<crate::types::ClusterAutoScalingConfigOutput>) -> Self {
+        self.auto_scaling = input;
+        self
+    }
+    /// <p>The current autoscaling configuration and status for the autoscaler.</p>
+    pub fn get_auto_scaling(&self) -> &::std::option::Option<crate::types::ClusterAutoScalingConfigOutput> {
+        &self.auto_scaling
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -301,6 +343,8 @@ impl DescribeClusterOutputBuilder {
             orchestrator: self.orchestrator,
             node_recovery: self.node_recovery,
             node_provisioning_mode: self.node_provisioning_mode,
+            cluster_role: self.cluster_role,
+            auto_scaling: self.auto_scaling,
             _request_id: self._request_id,
         }
     }

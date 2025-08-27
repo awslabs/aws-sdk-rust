@@ -283,6 +283,8 @@ mod describe_identity_provider_config;
 
 mod describe_insight;
 
+mod describe_insights_refresh;
+
 mod describe_nodegroup;
 
 mod describe_pod_identity_association;
@@ -320,6 +322,8 @@ mod list_tags_for_resource;
 mod list_updates;
 
 mod register_cluster;
+
+mod start_insights_refresh;
 
 mod tag_resource;
 

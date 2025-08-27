@@ -85,8 +85,14 @@ pub mod restore_graph_from_snapshot;
 /// Types for the `StartExportTask` operation.
 pub mod start_export_task;
 
+/// Types for the `StartGraph` operation.
+pub mod start_graph;
+
 /// Types for the `StartImportTask` operation.
 pub mod start_import_task;
+
+/// Types for the `StopGraph` operation.
+pub mod stop_graph;
 
 /// Types for the `TagResource` operation.
 pub mod tag_resource;

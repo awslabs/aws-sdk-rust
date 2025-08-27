@@ -428,6 +428,21 @@ pub(crate) fn start_export_task_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn start_graph_output_output_correct_errors(
+    mut builder: crate::operation::start_graph::builders::StartGraphOutputBuilder,
+) -> crate::operation::start_graph::builders::StartGraphOutputBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn start_import_task_output_output_correct_errors(
     mut builder: crate::operation::start_import_task::builders::StartImportTaskOutputBuilder,
 ) -> crate::operation::start_import_task::builders::StartImportTaskOutputBuilder {
@@ -442,6 +457,21 @@ pub(crate) fn start_import_task_output_output_correct_errors(
     }
     if builder.status.is_none() {
         builder.status = "no value was set".parse::<crate::types::ImportTaskStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn stop_graph_output_output_correct_errors(
+    mut builder: crate::operation::stop_graph::builders::StopGraphOutputBuilder,
+) -> crate::operation::stop_graph::builders::StopGraphOutputBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
     }
     builder
 }

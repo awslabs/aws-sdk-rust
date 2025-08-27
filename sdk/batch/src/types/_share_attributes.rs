@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ShareAttributes {
-    /// <p>A share identifier or share identifier prefix. If the string ends with an asterisk (*), this entry specifies the weight factor to use for share identifiers that start with that prefix. The list of share identifiers in a fair-share policy can't overlap. For example, you can't have one that specifies a <code>shareIdentifier</code> of <code>UserA*</code> and another that specifies a <code>shareIdentifier</code> of <code>UserA-1</code>.</p>
+    /// <p>A share identifier or share identifier prefix. If the string ends with an asterisk (*), this entry specifies the weight factor to use for share identifiers that start with that prefix. The list of share identifiers in a fair-share policy can't overlap. For example, you can't have one that specifies a <code>shareIdentifier</code> of <code>UserA*</code> and another that specifies a <code>shareIdentifier</code> of <code>UserA1</code>.</p>
     /// <p>There can be no more than 500 share identifiers active in a job queue.</p>
     /// <p>The string is limited to 255 alphanumeric characters, and can be followed by an asterisk (*).</p>
     pub share_identifier: ::std::option::Option<::std::string::String>,
@@ -13,7 +13,7 @@ pub struct ShareAttributes {
     pub weight_factor: ::std::option::Option<f32>,
 }
 impl ShareAttributes {
-    /// <p>A share identifier or share identifier prefix. If the string ends with an asterisk (*), this entry specifies the weight factor to use for share identifiers that start with that prefix. The list of share identifiers in a fair-share policy can't overlap. For example, you can't have one that specifies a <code>shareIdentifier</code> of <code>UserA*</code> and another that specifies a <code>shareIdentifier</code> of <code>UserA-1</code>.</p>
+    /// <p>A share identifier or share identifier prefix. If the string ends with an asterisk (*), this entry specifies the weight factor to use for share identifiers that start with that prefix. The list of share identifiers in a fair-share policy can't overlap. For example, you can't have one that specifies a <code>shareIdentifier</code> of <code>UserA*</code> and another that specifies a <code>shareIdentifier</code> of <code>UserA1</code>.</p>
     /// <p>There can be no more than 500 share identifiers active in a job queue.</p>
     /// <p>The string is limited to 255 alphanumeric characters, and can be followed by an asterisk (*).</p>
     pub fn share_identifier(&self) -> ::std::option::Option<&str> {
@@ -40,7 +40,7 @@ pub struct ShareAttributesBuilder {
     pub(crate) weight_factor: ::std::option::Option<f32>,
 }
 impl ShareAttributesBuilder {
-    /// <p>A share identifier or share identifier prefix. If the string ends with an asterisk (*), this entry specifies the weight factor to use for share identifiers that start with that prefix. The list of share identifiers in a fair-share policy can't overlap. For example, you can't have one that specifies a <code>shareIdentifier</code> of <code>UserA*</code> and another that specifies a <code>shareIdentifier</code> of <code>UserA-1</code>.</p>
+    /// <p>A share identifier or share identifier prefix. If the string ends with an asterisk (*), this entry specifies the weight factor to use for share identifiers that start with that prefix. The list of share identifiers in a fair-share policy can't overlap. For example, you can't have one that specifies a <code>shareIdentifier</code> of <code>UserA*</code> and another that specifies a <code>shareIdentifier</code> of <code>UserA1</code>.</p>
     /// <p>There can be no more than 500 share identifiers active in a job queue.</p>
     /// <p>The string is limited to 255 alphanumeric characters, and can be followed by an asterisk (*).</p>
     /// This field is required.
@@ -48,14 +48,14 @@ impl ShareAttributesBuilder {
         self.share_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A share identifier or share identifier prefix. If the string ends with an asterisk (*), this entry specifies the weight factor to use for share identifiers that start with that prefix. The list of share identifiers in a fair-share policy can't overlap. For example, you can't have one that specifies a <code>shareIdentifier</code> of <code>UserA*</code> and another that specifies a <code>shareIdentifier</code> of <code>UserA-1</code>.</p>
+    /// <p>A share identifier or share identifier prefix. If the string ends with an asterisk (*), this entry specifies the weight factor to use for share identifiers that start with that prefix. The list of share identifiers in a fair-share policy can't overlap. For example, you can't have one that specifies a <code>shareIdentifier</code> of <code>UserA*</code> and another that specifies a <code>shareIdentifier</code> of <code>UserA1</code>.</p>
     /// <p>There can be no more than 500 share identifiers active in a job queue.</p>
     /// <p>The string is limited to 255 alphanumeric characters, and can be followed by an asterisk (*).</p>
     pub fn set_share_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.share_identifier = input;
         self
     }
-    /// <p>A share identifier or share identifier prefix. If the string ends with an asterisk (*), this entry specifies the weight factor to use for share identifiers that start with that prefix. The list of share identifiers in a fair-share policy can't overlap. For example, you can't have one that specifies a <code>shareIdentifier</code> of <code>UserA*</code> and another that specifies a <code>shareIdentifier</code> of <code>UserA-1</code>.</p>
+    /// <p>A share identifier or share identifier prefix. If the string ends with an asterisk (*), this entry specifies the weight factor to use for share identifiers that start with that prefix. The list of share identifiers in a fair-share policy can't overlap. For example, you can't have one that specifies a <code>shareIdentifier</code> of <code>UserA*</code> and another that specifies a <code>shareIdentifier</code> of <code>UserA1</code>.</p>
     /// <p>There can be no more than 500 share identifiers active in a job queue.</p>
     /// <p>The string is limited to 255 alphanumeric characters, and can be followed by an asterisk (*).</p>
     pub fn get_share_identifier(&self) -> &::std::option::Option<::std::string::String> {

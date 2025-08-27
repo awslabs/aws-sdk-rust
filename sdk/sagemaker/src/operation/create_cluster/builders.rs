@@ -303,4 +303,32 @@ impl CreateClusterFluentBuilder {
     pub fn get_node_provisioning_mode(&self) -> &::std::option::Option<crate::types::ClusterNodeProvisioningMode> {
         self.inner.get_node_provisioning_mode()
     }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that HyperPod assumes to perform cluster autoscaling operations. This role must have permissions for <code>sagemaker:BatchAddClusterNodes</code> and <code>sagemaker:BatchDeleteClusterNodes</code>. This is only required when autoscaling is enabled and when HyperPod is performing autoscaling operations.</p>
+    pub fn cluster_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.cluster_role(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that HyperPod assumes to perform cluster autoscaling operations. This role must have permissions for <code>sagemaker:BatchAddClusterNodes</code> and <code>sagemaker:BatchDeleteClusterNodes</code>. This is only required when autoscaling is enabled and when HyperPod is performing autoscaling operations.</p>
+    pub fn set_cluster_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_cluster_role(input);
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that HyperPod assumes to perform cluster autoscaling operations. This role must have permissions for <code>sagemaker:BatchAddClusterNodes</code> and <code>sagemaker:BatchDeleteClusterNodes</code>. This is only required when autoscaling is enabled and when HyperPod is performing autoscaling operations.</p>
+    pub fn get_cluster_role(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster_role()
+    }
+    /// <p>The autoscaling configuration for the cluster. Enables automatic scaling of cluster nodes based on workload demand using a Karpenter-based system.</p>
+    pub fn auto_scaling(mut self, input: crate::types::ClusterAutoScalingConfig) -> Self {
+        self.inner = self.inner.auto_scaling(input);
+        self
+    }
+    /// <p>The autoscaling configuration for the cluster. Enables automatic scaling of cluster nodes based on workload demand using a Karpenter-based system.</p>
+    pub fn set_auto_scaling(mut self, input: ::std::option::Option<crate::types::ClusterAutoScalingConfig>) -> Self {
+        self.inner = self.inner.set_auto_scaling(input);
+        self
+    }
+    /// <p>The autoscaling configuration for the cluster. Enables automatic scaling of cluster nodes based on workload demand using a Karpenter-based system.</p>
+    pub fn get_auto_scaling(&self) -> &::std::option::Option<crate::types::ClusterAutoScalingConfig> {
+        self.inner.get_auto_scaling()
+    }
 }

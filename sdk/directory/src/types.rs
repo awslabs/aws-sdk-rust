@@ -145,6 +145,8 @@ pub use crate::types::_client_authentication_status::ClientAuthenticationStatus;
 
 pub use crate::types::_certificate::Certificate;
 
+pub use crate::types::_ca_enrollment_policy_status::CaEnrollmentPolicyStatus;
+
 pub use crate::types::_assessment_report::AssessmentReport;
 
 pub use crate::types::_assessment_validation::AssessmentValidation;
@@ -170,6 +172,8 @@ mod _assessment_summary;
 mod _assessment_validation;
 
 mod _attribute;
+
+mod _ca_enrollment_policy_status;
 
 mod _certificate;
 

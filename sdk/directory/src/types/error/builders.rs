@@ -61,6 +61,10 @@ pub use crate::types::error::_invalid_ldaps_status_exception::InvalidLdapsStatus
 
 pub use crate::types::error::_invalid_client_auth_status_exception::InvalidClientAuthStatusExceptionBuilder;
 
+pub use crate::types::error::_enable_already_in_progress_exception::EnableAlreadyInProgressExceptionBuilder;
+
+pub use crate::types::error::_disable_already_in_progress_exception::DisableAlreadyInProgressExceptionBuilder;
+
 pub use crate::types::error::_certificate_does_not_exist_exception::CertificateDoesNotExistExceptionBuilder;
 
 pub use crate::types::error::_certificate_in_use_exception::CertificateInUseExceptionBuilder;

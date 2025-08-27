@@ -445,6 +445,12 @@ pub use crate::types::_fair_share::FairShare;
 
 pub use crate::types::_priority_class::PriorityClass;
 
+pub use crate::types::_cluster_auto_scaling_config::ClusterAutoScalingConfig;
+
+pub use crate::types::_cluster_auto_scaler_type::ClusterAutoScalerType;
+
+pub use crate::types::_cluster_auto_scaling_mode::ClusterAutoScalingMode;
+
 pub use crate::types::_cluster_node_recovery::ClusterNodeRecovery;
 
 pub use crate::types::_cluster_restricted_instance_group_specification::ClusterRestrictedInstanceGroupSpecification;
@@ -1831,6 +1837,10 @@ pub use crate::types::_instance_group_metadata::InstanceGroupMetadata;
 
 pub use crate::types::_cluster_metadata::ClusterMetadata;
 
+pub use crate::types::_cluster_auto_scaling_config_output::ClusterAutoScalingConfigOutput;
+
+pub use crate::types::_cluster_auto_scaling_status::ClusterAutoScalingStatus;
+
 pub use crate::types::_cluster_node_provisioning_mode::ClusterNodeProvisioningMode;
 
 pub use crate::types::_cluster_orchestrator::ClusterOrchestrator;
@@ -2292,6 +2302,16 @@ mod _clarify_text_config;
 mod _clarify_text_granularity;
 
 mod _clarify_text_language;
+
+mod _cluster_auto_scaler_type;
+
+mod _cluster_auto_scaling_config;
+
+mod _cluster_auto_scaling_config_output;
+
+mod _cluster_auto_scaling_mode;
+
+mod _cluster_auto_scaling_status;
 
 mod _cluster_ebs_volume_config;
 

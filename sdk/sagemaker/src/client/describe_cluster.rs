@@ -16,6 +16,8 @@ impl super::Client {
     ///   - [`orchestrator(Option<ClusterOrchestrator>)`](crate::operation::describe_cluster::DescribeClusterOutput::orchestrator): <p>The type of orchestrator used for the SageMaker HyperPod cluster.</p>
     ///   - [`node_recovery(Option<ClusterNodeRecovery>)`](crate::operation::describe_cluster::DescribeClusterOutput::node_recovery): <p>The node recovery mode configured for the SageMaker HyperPod cluster.</p>
     ///   - [`node_provisioning_mode(Option<ClusterNodeProvisioningMode>)`](crate::operation::describe_cluster::DescribeClusterOutput::node_provisioning_mode): <p>The mode used for provisioning nodes in the cluster.</p>
+    ///   - [`cluster_role(Option<String>)`](crate::operation::describe_cluster::DescribeClusterOutput::cluster_role): <p>The Amazon Resource Name (ARN) of the IAM role that HyperPod uses for cluster autoscaling operations.</p>
+    ///   - [`auto_scaling(Option<ClusterAutoScalingConfigOutput>)`](crate::operation::describe_cluster::DescribeClusterOutput::auto_scaling): <p>The current autoscaling configuration and status for the autoscaler.</p>
     /// - On failure, responds with [`SdkError<DescribeClusterError>`](crate::operation::describe_cluster::DescribeClusterError)
     pub fn describe_cluster(&self) -> crate::operation::describe_cluster::builders::DescribeClusterFluentBuilder {
         crate::operation::describe_cluster::builders::DescribeClusterFluentBuilder::new(self.handle.clone())

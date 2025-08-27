@@ -198,4 +198,32 @@ impl UpdateClusterFluentBuilder {
     pub fn get_instance_groups_to_delete(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_instance_groups_to_delete()
     }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that HyperPod assumes for cluster autoscaling operations. Cannot be updated while autoscaling is enabled.</p>
+    pub fn cluster_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.cluster_role(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that HyperPod assumes for cluster autoscaling operations. Cannot be updated while autoscaling is enabled.</p>
+    pub fn set_cluster_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_cluster_role(input);
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that HyperPod assumes for cluster autoscaling operations. Cannot be updated while autoscaling is enabled.</p>
+    pub fn get_cluster_role(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster_role()
+    }
+    /// <p>Updates the autoscaling configuration for the cluster. Use to enable or disable automatic node scaling.</p>
+    pub fn auto_scaling(mut self, input: crate::types::ClusterAutoScalingConfig) -> Self {
+        self.inner = self.inner.auto_scaling(input);
+        self
+    }
+    /// <p>Updates the autoscaling configuration for the cluster. Use to enable or disable automatic node scaling.</p>
+    pub fn set_auto_scaling(mut self, input: ::std::option::Option<crate::types::ClusterAutoScalingConfig>) -> Self {
+        self.inner = self.inner.set_auto_scaling(input);
+        self
+    }
+    /// <p>Updates the autoscaling configuration for the cluster. Use to enable or disable automatic node scaling.</p>
+    pub fn get_auto_scaling(&self) -> &::std::option::Option<crate::types::ClusterAutoScalingConfig> {
+        self.inner.get_auto_scaling()
+    }
 }

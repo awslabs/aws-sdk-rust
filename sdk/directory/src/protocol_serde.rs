@@ -71,6 +71,8 @@ pub(crate) mod shape_deregister_event_topic;
 
 pub(crate) mod shape_describe_ad_assessment;
 
+pub(crate) mod shape_describe_ca_enrollment_policy;
+
 pub(crate) mod shape_describe_certificate;
 
 pub(crate) mod shape_describe_client_authentication_settings;
@@ -101,6 +103,8 @@ pub(crate) mod shape_describe_trusts;
 
 pub(crate) mod shape_describe_update_directory;
 
+pub(crate) mod shape_disable_ca_enrollment_policy;
+
 pub(crate) mod shape_disable_client_authentication;
 
 pub(crate) mod shape_disable_directory_data_access;
@@ -110,6 +114,8 @@ pub(crate) mod shape_disable_ldaps;
 pub(crate) mod shape_disable_radius;
 
 pub(crate) mod shape_disable_sso;
+
+pub(crate) mod shape_enable_ca_enrollment_policy;
 
 pub(crate) mod shape_enable_client_authentication;
 
@@ -249,6 +255,8 @@ pub(crate) mod shape_deregister_event_topic_input;
 
 pub(crate) mod shape_describe_ad_assessment_input;
 
+pub(crate) mod shape_describe_ca_enrollment_policy_input;
+
 pub(crate) mod shape_describe_certificate_input;
 
 pub(crate) mod shape_describe_client_authentication_settings_input;
@@ -293,6 +301,10 @@ pub(crate) mod shape_directory_not_shared_exception;
 
 pub(crate) mod shape_directory_unavailable_exception;
 
+pub(crate) mod shape_disable_already_in_progress_exception;
+
+pub(crate) mod shape_disable_ca_enrollment_policy_input;
+
 pub(crate) mod shape_disable_client_authentication_input;
 
 pub(crate) mod shape_disable_directory_data_access_input;
@@ -304,6 +316,10 @@ pub(crate) mod shape_disable_radius_input;
 pub(crate) mod shape_disable_sso_input;
 
 pub(crate) mod shape_domain_controller_limit_exceeded_exception;
+
+pub(crate) mod shape_enable_already_in_progress_exception;
+
+pub(crate) mod shape_enable_ca_enrollment_policy_input;
 
 pub(crate) mod shape_enable_client_authentication_input;
 

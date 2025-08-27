@@ -1597,6 +1597,10 @@ pub(crate) mod shape_channel;
 
 pub(crate) mod shape_checkpoint_config;
 
+pub(crate) mod shape_cluster_auto_scaling_config;
+
+pub(crate) mod shape_cluster_auto_scaling_config_output;
+
 pub(crate) mod shape_cluster_event_detail;
 
 pub(crate) mod shape_cluster_event_summaries;

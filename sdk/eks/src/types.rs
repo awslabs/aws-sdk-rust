@@ -85,6 +85,8 @@ pub use crate::types::_resolve_conflicts::ResolveConflicts;
 
 pub use crate::types::_access_entry::AccessEntry;
 
+pub use crate::types::_insights_refresh_status::InsightsRefreshStatus;
+
 pub use crate::types::_cluster::Cluster;
 
 pub use crate::types::_storage_config_response::StorageConfigResponse;
@@ -380,6 +382,8 @@ mod _insight_status_value;
 mod _insight_summary;
 
 mod _insights_filter;
+
+mod _insights_refresh_status;
 
 mod _ip_family;
 

@@ -883,6 +883,32 @@ impl From<crate::operation::start_export_task::StartExportTaskError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_graph::StartGraphError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_graph::StartGraphError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_graph::StartGraphError> for Error {
+    fn from(err: crate::operation::start_graph::StartGraphError) -> Self {
+        match err {
+            crate::operation::start_graph::StartGraphError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::start_graph::StartGraphError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::start_graph::StartGraphError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::start_graph::StartGraphError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::start_graph::StartGraphError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::start_graph::StartGraphError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_import_task::StartImportTaskError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -906,6 +932,32 @@ impl From<crate::operation::start_import_task::StartImportTaskError> for Error {
             crate::operation::start_import_task::StartImportTaskError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::start_import_task::StartImportTaskError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::start_import_task::StartImportTaskError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_graph::StopGraphError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_graph::StopGraphError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::stop_graph::StopGraphError> for Error {
+    fn from(err: crate::operation::stop_graph::StopGraphError) -> Self {
+        match err {
+            crate::operation::stop_graph::StopGraphError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::stop_graph::StopGraphError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::stop_graph::StopGraphError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::stop_graph::StopGraphError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::stop_graph::StopGraphError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::stop_graph::StopGraphError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

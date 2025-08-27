@@ -13,6 +13,10 @@ pub struct UpdateClusterInput {
     pub node_recovery: ::std::option::Option<crate::types::ClusterNodeRecovery>,
     /// <p>Specify the names of the instance groups to delete. Use a single <code>,</code> as the separator between multiple names.</p>
     pub instance_groups_to_delete: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that HyperPod assumes for cluster autoscaling operations. Cannot be updated while autoscaling is enabled.</p>
+    pub cluster_role: ::std::option::Option<::std::string::String>,
+    /// <p>Updates the autoscaling configuration for the cluster. Use to enable or disable automatic node scaling.</p>
+    pub auto_scaling: ::std::option::Option<crate::types::ClusterAutoScalingConfig>,
 }
 impl UpdateClusterInput {
     /// <p>Specify the name of the SageMaker HyperPod cluster you want to update.</p>
@@ -41,6 +45,14 @@ impl UpdateClusterInput {
     pub fn instance_groups_to_delete(&self) -> &[::std::string::String] {
         self.instance_groups_to_delete.as_deref().unwrap_or_default()
     }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that HyperPod assumes for cluster autoscaling operations. Cannot be updated while autoscaling is enabled.</p>
+    pub fn cluster_role(&self) -> ::std::option::Option<&str> {
+        self.cluster_role.as_deref()
+    }
+    /// <p>Updates the autoscaling configuration for the cluster. Use to enable or disable automatic node scaling.</p>
+    pub fn auto_scaling(&self) -> ::std::option::Option<&crate::types::ClusterAutoScalingConfig> {
+        self.auto_scaling.as_ref()
+    }
 }
 impl UpdateClusterInput {
     /// Creates a new builder-style object to manufacture [`UpdateClusterInput`](crate::operation::update_cluster::UpdateClusterInput).
@@ -58,6 +70,8 @@ pub struct UpdateClusterInputBuilder {
     pub(crate) restricted_instance_groups: ::std::option::Option<::std::vec::Vec<crate::types::ClusterRestrictedInstanceGroupSpecification>>,
     pub(crate) node_recovery: ::std::option::Option<crate::types::ClusterNodeRecovery>,
     pub(crate) instance_groups_to_delete: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) cluster_role: ::std::option::Option<::std::string::String>,
+    pub(crate) auto_scaling: ::std::option::Option<crate::types::ClusterAutoScalingConfig>,
 }
 impl UpdateClusterInputBuilder {
     /// <p>Specify the name of the SageMaker HyperPod cluster you want to update.</p>
@@ -154,6 +168,34 @@ impl UpdateClusterInputBuilder {
     pub fn get_instance_groups_to_delete(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.instance_groups_to_delete
     }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that HyperPod assumes for cluster autoscaling operations. Cannot be updated while autoscaling is enabled.</p>
+    pub fn cluster_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cluster_role = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that HyperPod assumes for cluster autoscaling operations. Cannot be updated while autoscaling is enabled.</p>
+    pub fn set_cluster_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.cluster_role = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that HyperPod assumes for cluster autoscaling operations. Cannot be updated while autoscaling is enabled.</p>
+    pub fn get_cluster_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_role
+    }
+    /// <p>Updates the autoscaling configuration for the cluster. Use to enable or disable automatic node scaling.</p>
+    pub fn auto_scaling(mut self, input: crate::types::ClusterAutoScalingConfig) -> Self {
+        self.auto_scaling = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Updates the autoscaling configuration for the cluster. Use to enable or disable automatic node scaling.</p>
+    pub fn set_auto_scaling(mut self, input: ::std::option::Option<crate::types::ClusterAutoScalingConfig>) -> Self {
+        self.auto_scaling = input;
+        self
+    }
+    /// <p>Updates the autoscaling configuration for the cluster. Use to enable or disable automatic node scaling.</p>
+    pub fn get_auto_scaling(&self) -> &::std::option::Option<crate::types::ClusterAutoScalingConfig> {
+        &self.auto_scaling
+    }
     /// Consumes the builder and constructs a [`UpdateClusterInput`](crate::operation::update_cluster::UpdateClusterInput).
     pub fn build(
         self,
@@ -164,6 +206,8 @@ impl UpdateClusterInputBuilder {
             restricted_instance_groups: self.restricted_instance_groups,
             node_recovery: self.node_recovery,
             instance_groups_to_delete: self.instance_groups_to_delete,
+            cluster_role: self.cluster_role,
+            auto_scaling: self.auto_scaling,
         })
     }
 }

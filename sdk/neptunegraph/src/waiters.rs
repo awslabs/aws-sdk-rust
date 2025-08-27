@@ -18,6 +18,9 @@ pub mod graph_snapshot_available;
 /// Supporting types for the `graph_snapshot_deleted` waiter.
 pub mod graph_snapshot_deleted;
 
+/// Supporting types for the `graph_stopped` waiter.
+pub mod graph_stopped;
+
 /// Supporting types for the `import_task_cancelled` waiter.
 pub mod import_task_cancelled;
 

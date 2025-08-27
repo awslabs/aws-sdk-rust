@@ -35,8 +35,12 @@ pub enum Error {
     DirectoryNotSharedException(crate::types::error::DirectoryNotSharedException),
     /// <p>The specified directory is unavailable.</p>
     DirectoryUnavailableException(crate::types::error::DirectoryUnavailableException),
+    /// <p>A disable operation for CA enrollment policy is already in progress for this directory.</p>
+    DisableAlreadyInProgressException(crate::types::error::DisableAlreadyInProgressException),
     /// <p>The maximum allowed number of domain controllers per directory was exceeded. The default limit per directory is 20 domain controllers.</p>
     DomainControllerLimitExceededException(crate::types::error::DomainControllerLimitExceededException),
+    /// <p>An enable operation for CA enrollment policy is already in progress for this directory.</p>
+    EnableAlreadyInProgressException(crate::types::error::EnableAlreadyInProgressException),
     /// <p>The specified entity already exists.</p>
     EntityAlreadyExistsException(crate::types::error::EntityAlreadyExistsException),
     /// <p>The specified entity could not be found.</p>
@@ -108,7 +112,9 @@ impl ::std::fmt::Display for Error {
             Error::DirectoryLimitExceededException(inner) => inner.fmt(f),
             Error::DirectoryNotSharedException(inner) => inner.fmt(f),
             Error::DirectoryUnavailableException(inner) => inner.fmt(f),
+            Error::DisableAlreadyInProgressException(inner) => inner.fmt(f),
             Error::DomainControllerLimitExceededException(inner) => inner.fmt(f),
+            Error::EnableAlreadyInProgressException(inner) => inner.fmt(f),
             Error::EntityAlreadyExistsException(inner) => inner.fmt(f),
             Error::EntityDoesNotExistException(inner) => inner.fmt(f),
             Error::IncompatibleSettingsException(inner) => inner.fmt(f),
@@ -167,7 +173,9 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::DirectoryLimitExceededException(inner) => inner.meta(),
             Self::DirectoryNotSharedException(inner) => inner.meta(),
             Self::DirectoryUnavailableException(inner) => inner.meta(),
+            Self::DisableAlreadyInProgressException(inner) => inner.meta(),
             Self::DomainControllerLimitExceededException(inner) => inner.meta(),
+            Self::EnableAlreadyInProgressException(inner) => inner.meta(),
             Self::EntityAlreadyExistsException(inner) => inner.meta(),
             Self::EntityDoesNotExistException(inner) => inner.meta(),
             Self::IncompatibleSettingsException(inner) => inner.meta(),
@@ -945,6 +953,40 @@ impl From<crate::operation::describe_ad_assessment::DescribeADAssessmentError> f
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_ca_enrollment_policy::DescribeCAEnrollmentPolicyError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_ca_enrollment_policy::DescribeCAEnrollmentPolicyError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_ca_enrollment_policy::DescribeCAEnrollmentPolicyError> for Error {
+    fn from(err: crate::operation::describe_ca_enrollment_policy::DescribeCAEnrollmentPolicyError) -> Self {
+        match err {
+            crate::operation::describe_ca_enrollment_policy::DescribeCAEnrollmentPolicyError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::describe_ca_enrollment_policy::DescribeCAEnrollmentPolicyError::DirectoryDoesNotExistException(inner) => {
+                Error::DirectoryDoesNotExistException(inner)
+            }
+            crate::operation::describe_ca_enrollment_policy::DescribeCAEnrollmentPolicyError::ServiceException(inner) => {
+                Error::ServiceException(inner)
+            }
+            crate::operation::describe_ca_enrollment_policy::DescribeCAEnrollmentPolicyError::UnsupportedOperationException(inner) => {
+                Error::UnsupportedOperationException(inner)
+            }
+            crate::operation::describe_ca_enrollment_policy::DescribeCAEnrollmentPolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_certificate::DescribeCertificateError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1491,6 +1533,50 @@ impl From<crate::operation::describe_update_directory::DescribeUpdateDirectoryEr
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::disable_ca_enrollment_policy::DisableCAEnrollmentPolicyError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::disable_ca_enrollment_policy::DisableCAEnrollmentPolicyError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::disable_ca_enrollment_policy::DisableCAEnrollmentPolicyError> for Error {
+    fn from(err: crate::operation::disable_ca_enrollment_policy::DisableCAEnrollmentPolicyError) -> Self {
+        match err {
+            crate::operation::disable_ca_enrollment_policy::DisableCAEnrollmentPolicyError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::disable_ca_enrollment_policy::DisableCAEnrollmentPolicyError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::disable_ca_enrollment_policy::DisableCAEnrollmentPolicyError::DirectoryDoesNotExistException(inner) => {
+                Error::DirectoryDoesNotExistException(inner)
+            }
+            crate::operation::disable_ca_enrollment_policy::DisableCAEnrollmentPolicyError::DirectoryUnavailableException(inner) => {
+                Error::DirectoryUnavailableException(inner)
+            }
+            crate::operation::disable_ca_enrollment_policy::DisableCAEnrollmentPolicyError::DisableAlreadyInProgressException(inner) => {
+                Error::DisableAlreadyInProgressException(inner)
+            }
+            crate::operation::disable_ca_enrollment_policy::DisableCAEnrollmentPolicyError::EntityDoesNotExistException(inner) => {
+                Error::EntityDoesNotExistException(inner)
+            }
+            crate::operation::disable_ca_enrollment_policy::DisableCAEnrollmentPolicyError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::disable_ca_enrollment_policy::DisableCAEnrollmentPolicyError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::disable_ca_enrollment_policy::DisableCAEnrollmentPolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::disable_client_authentication::DisableClientAuthenticationError, R>>
     for Error
 where
@@ -1651,6 +1737,53 @@ impl From<crate::operation::disable_sso::DisableSsoError> for Error {
             crate::operation::disable_sso::DisableSsoError::InsufficientPermissionsException(inner) => Error::InsufficientPermissionsException(inner),
             crate::operation::disable_sso::DisableSsoError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::disable_sso::DisableSsoError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::enable_ca_enrollment_policy::EnableCAEnrollmentPolicyError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::enable_ca_enrollment_policy::EnableCAEnrollmentPolicyError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::enable_ca_enrollment_policy::EnableCAEnrollmentPolicyError> for Error {
+    fn from(err: crate::operation::enable_ca_enrollment_policy::EnableCAEnrollmentPolicyError) -> Self {
+        match err {
+            crate::operation::enable_ca_enrollment_policy::EnableCAEnrollmentPolicyError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::enable_ca_enrollment_policy::EnableCAEnrollmentPolicyError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::enable_ca_enrollment_policy::EnableCAEnrollmentPolicyError::DirectoryDoesNotExistException(inner) => {
+                Error::DirectoryDoesNotExistException(inner)
+            }
+            crate::operation::enable_ca_enrollment_policy::EnableCAEnrollmentPolicyError::DirectoryUnavailableException(inner) => {
+                Error::DirectoryUnavailableException(inner)
+            }
+            crate::operation::enable_ca_enrollment_policy::EnableCAEnrollmentPolicyError::EnableAlreadyInProgressException(inner) => {
+                Error::EnableAlreadyInProgressException(inner)
+            }
+            crate::operation::enable_ca_enrollment_policy::EnableCAEnrollmentPolicyError::EntityAlreadyExistsException(inner) => {
+                Error::EntityAlreadyExistsException(inner)
+            }
+            crate::operation::enable_ca_enrollment_policy::EnableCAEnrollmentPolicyError::EntityDoesNotExistException(inner) => {
+                Error::EntityDoesNotExistException(inner)
+            }
+            crate::operation::enable_ca_enrollment_policy::EnableCAEnrollmentPolicyError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::enable_ca_enrollment_policy::EnableCAEnrollmentPolicyError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::enable_ca_enrollment_policy::EnableCAEnrollmentPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2755,7 +2888,9 @@ impl ::std::error::Error for Error {
             Error::DirectoryLimitExceededException(inner) => inner.source(),
             Error::DirectoryNotSharedException(inner) => inner.source(),
             Error::DirectoryUnavailableException(inner) => inner.source(),
+            Error::DisableAlreadyInProgressException(inner) => inner.source(),
             Error::DomainControllerLimitExceededException(inner) => inner.source(),
+            Error::EnableAlreadyInProgressException(inner) => inner.source(),
             Error::EntityAlreadyExistsException(inner) => inner.source(),
             Error::EntityDoesNotExistException(inner) => inner.source(),
             Error::IncompatibleSettingsException(inner) => inner.source(),
@@ -2800,7 +2935,9 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::DirectoryLimitExceededException(e) => e.request_id(),
             Self::DirectoryNotSharedException(e) => e.request_id(),
             Self::DirectoryUnavailableException(e) => e.request_id(),
+            Self::DisableAlreadyInProgressException(e) => e.request_id(),
             Self::DomainControllerLimitExceededException(e) => e.request_id(),
+            Self::EnableAlreadyInProgressException(e) => e.request_id(),
             Self::EntityAlreadyExistsException(e) => e.request_id(),
             Self::EntityDoesNotExistException(e) => e.request_id(),
             Self::IncompatibleSettingsException(e) => e.request_id(),

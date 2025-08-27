@@ -79,6 +79,8 @@ pub(crate) mod shape_describe_identity_provider_config;
 
 pub(crate) mod shape_describe_insight;
 
+pub(crate) mod shape_describe_insights_refresh;
+
 pub(crate) mod shape_describe_nodegroup;
 
 pub(crate) mod shape_describe_pod_identity_association;
@@ -116,6 +118,8 @@ pub(crate) mod shape_list_tags_for_resource;
 pub(crate) mod shape_list_updates;
 
 pub(crate) mod shape_register_cluster;
+
+pub(crate) mod shape_start_insights_refresh;
 
 pub(crate) mod shape_tag_resource;
 

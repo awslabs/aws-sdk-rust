@@ -2894,6 +2894,18 @@ pub(crate) fn checkpoint_config_correct_errors(
     builder
 }
 
+pub(crate) fn cluster_auto_scaling_config_output_correct_errors(
+    mut builder: crate::types::builders::ClusterAutoScalingConfigOutputBuilder,
+) -> crate::types::builders::ClusterAutoScalingConfigOutputBuilder {
+    if builder.mode.is_none() {
+        builder.mode = "no value was set".parse::<crate::types::ClusterAutoScalingMode>().ok()
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::ClusterAutoScalingStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn cluster_event_detail_correct_errors(
     mut builder: crate::types::builders::ClusterEventDetailBuilder,
 ) -> crate::types::builders::ClusterEventDetailBuilder {

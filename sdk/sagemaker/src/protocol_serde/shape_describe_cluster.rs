@@ -140,6 +140,18 @@ pub(crate) fn de_describe_cluster(
                             .transpose()?,
                     );
                 }
+                "ClusterRole" => {
+                    builder = builder.set_cluster_role(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "AutoScaling" => {
+                    builder = builder.set_auto_scaling(
+                        crate::protocol_serde::shape_cluster_auto_scaling_config_output::de_cluster_auto_scaling_config_output(tokens)?,
+                    );
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

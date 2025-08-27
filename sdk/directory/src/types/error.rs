@@ -61,6 +61,10 @@ pub use crate::types::error::_invalid_ldaps_status_exception::InvalidLdapsStatus
 
 pub use crate::types::error::_invalid_client_auth_status_exception::InvalidClientAuthStatusException;
 
+pub use crate::types::error::_enable_already_in_progress_exception::EnableAlreadyInProgressException;
+
+pub use crate::types::error::_disable_already_in_progress_exception::DisableAlreadyInProgressException;
+
 pub use crate::types::error::_certificate_does_not_exist_exception::CertificateDoesNotExistException;
 
 pub use crate::types::error::_certificate_in_use_exception::CertificateInUseException;
@@ -105,7 +109,11 @@ mod _directory_not_shared_exception;
 
 mod _directory_unavailable_exception;
 
+mod _disable_already_in_progress_exception;
+
 mod _domain_controller_limit_exceeded_exception;
+
+mod _enable_already_in_progress_exception;
 
 mod _entity_already_exists_exception;
 
