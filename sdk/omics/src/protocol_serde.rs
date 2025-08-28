@@ -361,6 +361,8 @@ pub(crate) mod shape_annotation_store_version_items;
 
 pub(crate) mod shape_complete_read_set_upload_part_list_item;
 
+pub(crate) mod shape_container_registry_map;
+
 pub(crate) mod shape_definition_repository;
 
 pub(crate) mod shape_definition_repository_details;
@@ -378,6 +380,8 @@ pub(crate) mod shape_export_read_set_job_detail_list;
 pub(crate) mod shape_filter;
 
 pub(crate) mod shape_format_options;
+
+pub(crate) mod shape_image_details;
 
 pub(crate) mod shape_import_read_set_filter;
 
@@ -507,6 +511,10 @@ pub(crate) mod shape_export_read_set_job_detail;
 
 pub(crate) mod shape_file_information;
 
+pub(crate) mod shape_image_mapping;
+
+pub(crate) mod shape_image_mappings_list;
+
 pub(crate) mod shape_import_read_set_job_item;
 
 pub(crate) mod shape_import_read_set_source_item;
@@ -526,6 +534,10 @@ pub(crate) mod shape_read_set_upload_part_list_item;
 pub(crate) mod shape_reference_list_item;
 
 pub(crate) mod shape_reference_store_detail;
+
+pub(crate) mod shape_registry_mapping;
+
+pub(crate) mod shape_registry_mappings_list;
 
 pub(crate) mod shape_run_cache_list_item;
 

@@ -55,6 +55,8 @@ pub(crate) mod shape_get_tile_output;
 
 pub(crate) mod shape_internal_server_exception;
 
+pub(crate) mod shape_resource_not_found_exception;
+
 pub(crate) mod shape_throttling_exception;
 
 pub(crate) mod shape_validation_exception;

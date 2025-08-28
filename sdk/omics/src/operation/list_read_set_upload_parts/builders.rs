@@ -22,7 +22,7 @@ impl crate::operation::list_read_set_upload_parts::builders::ListReadSetUploadPa
 }
 /// Fluent builder constructing a request to `ListReadSetUploadParts`.
 ///
-/// <p>This operation will list all parts in a requested multipart upload for a sequence store.</p>
+/// <p>Lists all parts in a multipart read set upload for a sequence store and returns the metadata in a JSON formatted output.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListReadSetUploadPartsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

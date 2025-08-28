@@ -22,7 +22,7 @@ impl crate::operation::get_reference_metadata::builders::GetReferenceMetadataInp
 }
 /// Fluent builder constructing a request to `GetReferenceMetadata`.
 ///
-/// <p>Gets information about a genome reference's metadata.</p>
+/// <p>Retrieves metadata for a reference genome. This operation returns the number of parts, part size, and MD5 of an entire file. This operation does not return tags. To retrieve the list of tags for a read set, use the <code>ListTagsForResource</code> API operation.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetReferenceMetadataFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

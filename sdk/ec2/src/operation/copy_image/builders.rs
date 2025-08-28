@@ -22,10 +22,56 @@ impl crate::operation::copy_image::builders::CopyImageInputBuilder {
 }
 /// Fluent builder constructing a request to `CopyImage`.
 ///
-/// <p>Initiates an AMI copy operation. You can copy an AMI from one Region to another, or from a Region to an Outpost. You can't copy an AMI from an Outpost to a Region, from one Outpost to another, or within the same Outpost. To copy an AMI to another partition, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateStoreImageTask.html">CreateStoreImageTask</a>.</p>
-/// <p>When you copy an AMI from one Region to another, the destination Region is the current Region.</p>
-/// <p>When you copy an AMI from a Region to an Outpost, specify the ARN of the Outpost as the destination. Backing snapshots copied to an Outpost are encrypted by default using the default encryption key for the Region or the key that you specify. Outposts do not support unencrypted snapshots.</p>
-/// <p>For information about the prerequisites when copying an AMI, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html">Copy an Amazon EC2 AMI</a> in the <i>Amazon EC2 User Guide</i>.</p>
+/// <p>Initiates an AMI copy operation. You must specify the source AMI ID and both the source and destination locations. The copy operation must be initiated in the destination Region.</p>
+/// <p class="title"><b>CopyImage supports the following source to destination copies:</b></p>
+/// <ul>
+/// <li>
+/// <p>Region to Region</p></li>
+/// <li>
+/// <p>Region to Outpost</p></li>
+/// <li>
+/// <p>Parent Region to Local Zone</p></li>
+/// <li>
+/// <p>Local Zone to parent Region</p></li>
+/// <li>
+/// <p>Between Local Zones with the same parent Region (only supported for certain Local Zones)</p></li>
+/// </ul>
+/// <p class="title"><b>CopyImage does not support the following source to destination copies:</b></p>
+/// <ul>
+/// <li>
+/// <p>Local Zone to non-parent Regions</p></li>
+/// <li>
+/// <p>Between Local Zones with different parent Regions</p></li>
+/// <li>
+/// <p>Local Zone to Outpost</p></li>
+/// <li>
+/// <p>Outpost to Local Zone</p></li>
+/// <li>
+/// <p>Outpost to Region</p></li>
+/// <li>
+/// <p>Between Outposts</p></li>
+/// <li>
+/// <p>Within same Outpost</p></li>
+/// <li>
+/// <p>Cross-partition copies (use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateStoreImageTask.html">CreateStoreImageTask</a> instead)</p></li>
+/// </ul>
+/// <p class="title"><b>Destination specification</b></p>
+/// <ul>
+/// <li>
+/// <p>Region to Region: The destination Region is the Region in which you initiate the copy operation.</p></li>
+/// <li>
+/// <p>Region to Outpost: Specify the destination using the <code>DestinationOutpostArn</code> parameter (the ARN of the Outpost)</p></li>
+/// <li>
+/// <p>Region to Local Zone, and Local Zone to Local Zone copies: Specify the destination using the <code>DestinationAvailabilityZone</code> parameter (the name of the destination Local Zone) or <code>DestinationAvailabilityZoneId</code> parameter (the ID of the destination Local Zone).</p></li>
+/// </ul>
+/// <p class="title"><b>Snapshot encryption</b></p>
+/// <ul>
+/// <li>
+/// <p>Region to Outpost: Backing snapshots copied to an Outpost are encrypted by default using the default encryption key for the Region or the key that you specify. Outposts do not support unencrypted snapshots.</p></li>
+/// <li>
+/// <p>Region to Local Zone, and Local Zone to Local Zone: Not all Local Zones require encrypted snapshots. In Local Zones that require encrypted snapshots, backing snapshots are automatically encrypted during copy. In Local Zones where encryption is not required, snapshots retain their original encryption state (encrypted or unencrypted) by default.</p></li>
+/// </ul>
+/// <p>For more information, including the required permissions for copying an AMI, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html">Copy an Amazon EC2 AMI</a> in the <i>Amazon EC2 User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CopyImageFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -119,31 +165,34 @@ impl CopyImageFluentBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
-    /// <p>A description for the new AMI in the destination Region.</p>
+    /// <p>A description for the new AMI.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// <p>A description for the new AMI in the destination Region.</p>
+    /// <p>A description for the new AMI.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// <p>A description for the new AMI in the destination Region.</p>
+    /// <p>A description for the new AMI.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
-    /// <p>Specifies whether the destination snapshots of the copied image should be encrypted. You can encrypt a copy of an unencrypted snapshot, but you cannot create an unencrypted copy of an encrypted snapshot. The default KMS key for Amazon EBS is used unless you specify a non-default Key Management Service (KMS) KMS key using <code>KmsKeyId</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIEncryption.html">Use encryption with EBS-backed AMIs</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>Specifies whether to encrypt the snapshots of the copied image.</p>
+    /// <p>You can encrypt a copy of an unencrypted snapshot, but you cannot create an unencrypted copy of an encrypted snapshot. The default KMS key for Amazon EBS is used unless you specify a non-default Key Management Service (KMS) KMS key using <code>KmsKeyId</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIEncryption.html">Use encryption with EBS-backed AMIs</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn encrypted(mut self, input: bool) -> Self {
         self.inner = self.inner.encrypted(input);
         self
     }
-    /// <p>Specifies whether the destination snapshots of the copied image should be encrypted. You can encrypt a copy of an unencrypted snapshot, but you cannot create an unencrypted copy of an encrypted snapshot. The default KMS key for Amazon EBS is used unless you specify a non-default Key Management Service (KMS) KMS key using <code>KmsKeyId</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIEncryption.html">Use encryption with EBS-backed AMIs</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>Specifies whether to encrypt the snapshots of the copied image.</p>
+    /// <p>You can encrypt a copy of an unencrypted snapshot, but you cannot create an unencrypted copy of an encrypted snapshot. The default KMS key for Amazon EBS is used unless you specify a non-default Key Management Service (KMS) KMS key using <code>KmsKeyId</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIEncryption.html">Use encryption with EBS-backed AMIs</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn set_encrypted(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_encrypted(input);
         self
     }
-    /// <p>Specifies whether the destination snapshots of the copied image should be encrypted. You can encrypt a copy of an unencrypted snapshot, but you cannot create an unencrypted copy of an encrypted snapshot. The default KMS key for Amazon EBS is used unless you specify a non-default Key Management Service (KMS) KMS key using <code>KmsKeyId</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIEncryption.html">Use encryption with EBS-backed AMIs</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>Specifies whether to encrypt the snapshots of the copied image.</p>
+    /// <p>You can encrypt a copy of an unencrypted snapshot, but you cannot create an unencrypted copy of an encrypted snapshot. The default KMS key for Amazon EBS is used unless you specify a non-default Key Management Service (KMS) KMS key using <code>KmsKeyId</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIEncryption.html">Use encryption with EBS-backed AMIs</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn get_encrypted(&self) -> &::std::option::Option<bool> {
         self.inner.get_encrypted()
     }
@@ -203,17 +252,17 @@ impl CopyImageFluentBuilder {
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_kms_key_id()
     }
-    /// <p>The name of the new AMI in the destination Region.</p>
+    /// <p>The name of the new AMI.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p>The name of the new AMI in the destination Region.</p>
+    /// <p>The name of the new AMI.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>The name of the new AMI in the destination Region.</p>
+    /// <p>The name of the new AMI.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
@@ -245,25 +294,31 @@ impl CopyImageFluentBuilder {
     pub fn get_source_region(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_source_region()
     }
-    /// <p>The Amazon Resource Name (ARN) of the Outpost to which to copy the AMI. Only specify this parameter when copying an AMI from an Amazon Web Services Region to an Outpost. The AMI must be in the Region of the destination Outpost. You cannot copy an AMI from an Outpost to a Region, from one Outpost to another, or within the same Outpost.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Outpost for the new AMI.</p>
+    /// <p>Only specify this parameter when copying an AMI from an Amazon Web Services Region to an Outpost. The AMI must be in the Region of the destination Outpost. You can't copy an AMI from an Outpost to a Region, from one Outpost to another, or within the same Outpost.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#copy-amis">Copy AMIs from an Amazon Web Services Region to an Outpost</a> in the <i>Amazon EBS User Guide</i>.</p>
+    /// <p>Only one of <code>DestinationAvailabilityZone</code>, <code>DestinationAvailabilityZoneId</code>, or <code>DestinationOutpostArn</code> can be specified.</p>
     pub fn destination_outpost_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.destination_outpost_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Outpost to which to copy the AMI. Only specify this parameter when copying an AMI from an Amazon Web Services Region to an Outpost. The AMI must be in the Region of the destination Outpost. You cannot copy an AMI from an Outpost to a Region, from one Outpost to another, or within the same Outpost.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Outpost for the new AMI.</p>
+    /// <p>Only specify this parameter when copying an AMI from an Amazon Web Services Region to an Outpost. The AMI must be in the Region of the destination Outpost. You can't copy an AMI from an Outpost to a Region, from one Outpost to another, or within the same Outpost.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#copy-amis">Copy AMIs from an Amazon Web Services Region to an Outpost</a> in the <i>Amazon EBS User Guide</i>.</p>
+    /// <p>Only one of <code>DestinationAvailabilityZone</code>, <code>DestinationAvailabilityZoneId</code>, or <code>DestinationOutpostArn</code> can be specified.</p>
     pub fn set_destination_outpost_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_destination_outpost_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Outpost to which to copy the AMI. Only specify this parameter when copying an AMI from an Amazon Web Services Region to an Outpost. The AMI must be in the Region of the destination Outpost. You cannot copy an AMI from an Outpost to a Region, from one Outpost to another, or within the same Outpost.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Outpost for the new AMI.</p>
+    /// <p>Only specify this parameter when copying an AMI from an Amazon Web Services Region to an Outpost. The AMI must be in the Region of the destination Outpost. You can't copy an AMI from an Outpost to a Region, from one Outpost to another, or within the same Outpost.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#copy-amis">Copy AMIs from an Amazon Web Services Region to an Outpost</a> in the <i>Amazon EBS User Guide</i>.</p>
+    /// <p>Only one of <code>DestinationAvailabilityZone</code>, <code>DestinationAvailabilityZoneId</code>, or <code>DestinationOutpostArn</code> can be specified.</p>
     pub fn get_destination_outpost_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_destination_outpost_arn()
     }
-    /// <p>Indicates whether to include your user-defined AMI tags when copying the AMI.</p>
-    /// <p>The following tags will not be copied:</p>
+    /// <p>Specifies whether to copy your user-defined AMI tags to the new AMI.</p>
+    /// <p>The following tags are not be copied:</p>
     /// <ul>
     /// <li>
     /// <p>System tags (prefixed with <code>aws:</code>)</p></li>
@@ -275,8 +330,8 @@ impl CopyImageFluentBuilder {
         self.inner = self.inner.copy_image_tags(input);
         self
     }
-    /// <p>Indicates whether to include your user-defined AMI tags when copying the AMI.</p>
-    /// <p>The following tags will not be copied:</p>
+    /// <p>Specifies whether to copy your user-defined AMI tags to the new AMI.</p>
+    /// <p>The following tags are not be copied:</p>
     /// <ul>
     /// <li>
     /// <p>System tags (prefixed with <code>aws:</code>)</p></li>
@@ -288,8 +343,8 @@ impl CopyImageFluentBuilder {
         self.inner = self.inner.set_copy_image_tags(input);
         self
     }
-    /// <p>Indicates whether to include your user-defined AMI tags when copying the AMI.</p>
-    /// <p>The following tags will not be copied:</p>
+    /// <p>Specifies whether to copy your user-defined AMI tags to the new AMI.</p>
+    /// <p>The following tags are not be copied:</p>
     /// <ul>
     /// <li>
     /// <p>System tags (prefixed with <code>aws:</code>)</p></li>
@@ -344,24 +399,64 @@ impl CopyImageFluentBuilder {
         self.inner.get_tag_specifications()
     }
     /// <p>Specify a completion duration, in 15 minute increments, to initiate a time-based AMI copy. The specified completion duration applies to each of the snapshots associated with the AMI. Each snapshot associated with the AMI will be completed within the specified completion duration, with copy throughput automatically adjusted for each snapshot based on its size to meet the timing target.</p>
-    /// <p>If you do not specify a value, the AMI copy operation is completed on a best-effort basis.</p>
+    /// <p>If you do not specify a value, the AMI copy operation is completed on a best-effort basis.</p><note>
+    /// <p>This parameter is not supported when copying an AMI to or from a Local Zone, or to an Outpost.</p>
+    /// </note>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/time-based-copies.html">Time-based copies for Amazon EBS snapshots and EBS-backed AMIs</a>.</p>
     pub fn snapshot_copy_completion_duration_minutes(mut self, input: i64) -> Self {
         self.inner = self.inner.snapshot_copy_completion_duration_minutes(input);
         self
     }
     /// <p>Specify a completion duration, in 15 minute increments, to initiate a time-based AMI copy. The specified completion duration applies to each of the snapshots associated with the AMI. Each snapshot associated with the AMI will be completed within the specified completion duration, with copy throughput automatically adjusted for each snapshot based on its size to meet the timing target.</p>
-    /// <p>If you do not specify a value, the AMI copy operation is completed on a best-effort basis.</p>
+    /// <p>If you do not specify a value, the AMI copy operation is completed on a best-effort basis.</p><note>
+    /// <p>This parameter is not supported when copying an AMI to or from a Local Zone, or to an Outpost.</p>
+    /// </note>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/time-based-copies.html">Time-based copies for Amazon EBS snapshots and EBS-backed AMIs</a>.</p>
     pub fn set_snapshot_copy_completion_duration_minutes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_snapshot_copy_completion_duration_minutes(input);
         self
     }
     /// <p>Specify a completion duration, in 15 minute increments, to initiate a time-based AMI copy. The specified completion duration applies to each of the snapshots associated with the AMI. Each snapshot associated with the AMI will be completed within the specified completion duration, with copy throughput automatically adjusted for each snapshot based on its size to meet the timing target.</p>
-    /// <p>If you do not specify a value, the AMI copy operation is completed on a best-effort basis.</p>
+    /// <p>If you do not specify a value, the AMI copy operation is completed on a best-effort basis.</p><note>
+    /// <p>This parameter is not supported when copying an AMI to or from a Local Zone, or to an Outpost.</p>
+    /// </note>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/time-based-copies.html">Time-based copies for Amazon EBS snapshots and EBS-backed AMIs</a>.</p>
     pub fn get_snapshot_copy_completion_duration_minutes(&self) -> &::std::option::Option<i64> {
         self.inner.get_snapshot_copy_completion_duration_minutes()
+    }
+    /// <p>The Local Zone for the new AMI (for example, <code>cn-north-1-pkx-1a</code>).</p>
+    /// <p>Only one of <code>DestinationAvailabilityZone</code>, <code>DestinationAvailabilityZoneId</code>, or <code>DestinationOutpostArn</code> can be specified.</p>
+    pub fn destination_availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.destination_availability_zone(input.into());
+        self
+    }
+    /// <p>The Local Zone for the new AMI (for example, <code>cn-north-1-pkx-1a</code>).</p>
+    /// <p>Only one of <code>DestinationAvailabilityZone</code>, <code>DestinationAvailabilityZoneId</code>, or <code>DestinationOutpostArn</code> can be specified.</p>
+    pub fn set_destination_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_destination_availability_zone(input);
+        self
+    }
+    /// <p>The Local Zone for the new AMI (for example, <code>cn-north-1-pkx-1a</code>).</p>
+    /// <p>Only one of <code>DestinationAvailabilityZone</code>, <code>DestinationAvailabilityZoneId</code>, or <code>DestinationOutpostArn</code> can be specified.</p>
+    pub fn get_destination_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_destination_availability_zone()
+    }
+    /// <p>The ID of the Local Zone for the new AMI (for example, <code>cnn1-pkx1-az1</code>).</p>
+    /// <p>Only one of <code>DestinationAvailabilityZone</code>, <code>DestinationAvailabilityZoneId</code>, or <code>DestinationOutpostArn</code> can be specified.</p>
+    pub fn destination_availability_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.destination_availability_zone_id(input.into());
+        self
+    }
+    /// <p>The ID of the Local Zone for the new AMI (for example, <code>cnn1-pkx1-az1</code>).</p>
+    /// <p>Only one of <code>DestinationAvailabilityZone</code>, <code>DestinationAvailabilityZoneId</code>, or <code>DestinationOutpostArn</code> can be specified.</p>
+    pub fn set_destination_availability_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_destination_availability_zone_id(input);
+        self
+    }
+    /// <p>The ID of the Local Zone for the new AMI (for example, <code>cnn1-pkx1-az1</code>).</p>
+    /// <p>Only one of <code>DestinationAvailabilityZone</code>, <code>DestinationAvailabilityZoneId</code>, or <code>DestinationOutpostArn</code> can be specified.</p>
+    pub fn get_destination_availability_zone_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_destination_availability_zone_id()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {

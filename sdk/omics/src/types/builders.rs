@@ -3,6 +3,12 @@ pub use crate::types::_definition_repository_details::DefinitionRepositoryDetail
 
 pub use crate::types::_source_reference::SourceReferenceBuilder;
 
+pub use crate::types::_container_registry_map::ContainerRegistryMapBuilder;
+
+pub use crate::types::_image_mapping::ImageMappingBuilder;
+
+pub use crate::types::_registry_mapping::RegistryMappingBuilder;
+
 pub use crate::types::_workflow_parameter::WorkflowParameterBuilder;
 
 pub use crate::types::_definition_repository::DefinitionRepositoryBuilder;
@@ -90,6 +96,8 @@ pub use crate::types::_read_set_filter::ReadSetFilterBuilder;
 pub use crate::types::_run_log_location::RunLogLocationBuilder;
 
 pub use crate::types::_run_list_item::RunListItemBuilder;
+
+pub use crate::types::_image_details::ImageDetailsBuilder;
 
 pub use crate::types::_task_list_item::TaskListItemBuilder;
 

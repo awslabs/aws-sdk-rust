@@ -22,7 +22,7 @@ impl crate::operation::delete_workflow::builders::DeleteWorkflowInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteWorkflow`.
 ///
-/// <p>Deletes a workflow by specifying its ID. No response is returned if the deletion is successful.</p>
+/// <p>Deletes a workflow by specifying its ID. This operation returns a response with no body if the deletion is successful.</p>
 /// <p>To verify that the workflow is deleted:</p>
 /// <ul>
 /// <li>

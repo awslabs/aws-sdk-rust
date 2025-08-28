@@ -171,6 +171,8 @@ mod get_application;
 
 mod get_component;
 
+mod get_configuration_check_operation;
+
 mod get_database;
 
 mod get_operation;
@@ -181,11 +183,19 @@ mod list_applications;
 
 mod list_components;
 
+mod list_configuration_check_definitions;
+
+mod list_configuration_check_operations;
+
 mod list_databases;
 
 mod list_operation_events;
 
 mod list_operations;
+
+mod list_sub_check_results;
+
+mod list_sub_check_rule_results;
 
 mod list_tags_for_resource;
 
@@ -196,6 +206,8 @@ mod register_application;
 mod start_application;
 
 mod start_application_refresh;
+
+mod start_configuration_checks;
 
 mod stop_application;
 

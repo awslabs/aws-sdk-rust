@@ -42,9 +42,9 @@ impl ::std::fmt::Debug for GetTileInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GetTileInput");
         formatter.field("tileset", &self.tileset);
-        formatter.field("z", &self.z);
-        formatter.field("x", &self.x);
-        formatter.field("y", &self.y);
+        formatter.field("z", &"*** Sensitive Data Redacted ***");
+        formatter.field("x", &"*** Sensitive Data Redacted ***");
+        formatter.field("y", &"*** Sensitive Data Redacted ***");
         formatter.field("key", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
@@ -159,9 +159,9 @@ impl ::std::fmt::Debug for GetTileInputBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GetTileInputBuilder");
         formatter.field("tileset", &self.tileset);
-        formatter.field("z", &self.z);
-        formatter.field("x", &self.x);
-        formatter.field("y", &self.y);
+        formatter.field("z", &"*** Sensitive Data Redacted ***");
+        formatter.field("x", &"*** Sensitive Data Redacted ***");
+        formatter.field("y", &"*** Sensitive Data Redacted ***");
         formatter.field("key", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }

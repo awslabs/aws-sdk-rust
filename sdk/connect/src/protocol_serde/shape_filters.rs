@@ -39,5 +39,14 @@ pub fn ser_filters(
         }
         array_11.finish();
     }
+    if let Some(var_13) = &input.agent_statuses {
+        let mut array_14 = object.key("AgentStatuses").start_array();
+        for item_15 in var_13 {
+            {
+                array_14.value().string(item_15.as_str());
+            }
+        }
+        array_14.finish();
+    }
     Ok(())
 }

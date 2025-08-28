@@ -312,6 +312,7 @@ impl StartRunInputBuilder {
         &self.storage_capacity
     }
     /// <p>An output S3 URI for the run. The S3 bucket must be in the same region as the workflow. The role ARN must have permission to write to this S3 bucket.</p>
+    /// This field is required.
     pub fn output_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_uri = ::std::option::Option::Some(input.into());
         self

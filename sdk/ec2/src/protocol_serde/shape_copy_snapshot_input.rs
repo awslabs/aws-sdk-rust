@@ -67,9 +67,14 @@ pub fn ser_copy_snapshot_input_input_input(
         );
     }
     #[allow(unused_mut)]
-    let mut scope_24 = writer.prefix("DryRun");
-    if let Some(var_25) = &input.dry_run {
-        scope_24.boolean(*var_25);
+    let mut scope_24 = writer.prefix("DestinationAvailabilityZone");
+    if let Some(var_25) = &input.destination_availability_zone {
+        scope_24.string(var_25);
+    }
+    #[allow(unused_mut)]
+    let mut scope_26 = writer.prefix("DryRun");
+    if let Some(var_27) = &input.dry_run {
+        scope_26.boolean(*var_27);
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

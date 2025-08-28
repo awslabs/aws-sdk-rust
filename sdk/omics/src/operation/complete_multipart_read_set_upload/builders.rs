@@ -22,7 +22,8 @@ impl crate::operation::complete_multipart_read_set_upload::builders::CompleteMul
 }
 /// Fluent builder constructing a request to `CompleteMultipartReadSetUpload`.
 ///
-/// <p>Concludes a multipart upload once you have uploaded all the components.</p>
+/// <p>Completes a multipart read set upload into a sequence store after you have initiated the upload process with <code>CreateMultipartReadSetUpload</code> and uploaded all read set parts using <code>UploadReadSetPart</code>. You must specify the parts you uploaded using the parts parameter. If the operation is successful, it returns the read set ID(s) of the uploaded read set(s).</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/synchronous-uploads.html">Direct upload to a sequence store</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CompleteMultipartReadSetUploadFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

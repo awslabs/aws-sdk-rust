@@ -201,6 +201,9 @@ pub(crate) fn de_get_run_task(
                             .transpose()?,
                     );
                 }
+                "imageDetails" => {
+                    builder = builder.set_image_details(crate::protocol_serde::shape_image_details::de_image_details(tokens)?);
+                }
                 "instanceType" => {
                     builder = builder.set_instance_type(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

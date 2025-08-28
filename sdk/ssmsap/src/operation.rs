@@ -13,6 +13,9 @@ pub mod get_application;
 /// Types for the `GetComponent` operation.
 pub mod get_component;
 
+/// Types for the `GetConfigurationCheckOperation` operation.
+pub mod get_configuration_check_operation;
+
 /// Types for the `GetDatabase` operation.
 pub mod get_database;
 
@@ -28,6 +31,12 @@ pub mod list_applications;
 /// Types for the `ListComponents` operation.
 pub mod list_components;
 
+/// Types for the `ListConfigurationCheckDefinitions` operation.
+pub mod list_configuration_check_definitions;
+
+/// Types for the `ListConfigurationCheckOperations` operation.
+pub mod list_configuration_check_operations;
+
 /// Types for the `ListDatabases` operation.
 pub mod list_databases;
 
@@ -36,6 +45,12 @@ pub mod list_operation_events;
 
 /// Types for the `ListOperations` operation.
 pub mod list_operations;
+
+/// Types for the `ListSubCheckResults` operation.
+pub mod list_sub_check_results;
+
+/// Types for the `ListSubCheckRuleResults` operation.
+pub mod list_sub_check_rule_results;
 
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
@@ -51,6 +66,9 @@ pub mod start_application;
 
 /// Types for the `StartApplicationRefresh` operation.
 pub mod start_application_refresh;
+
+/// Types for the `StartConfigurationChecks` operation.
+pub mod start_configuration_checks;
 
 /// Types for the `StopApplication` operation.
 pub mod stop_application;

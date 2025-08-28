@@ -25,7 +25,7 @@ impl crate::operation::create_workflow_version::builders::CreateWorkflowVersionI
 /// <p>Creates a new workflow version for the workflow that you specify with the <code>workflowId</code> parameter.</p>
 /// <p>When you create a new version of a workflow, you need to specify the configuration for the new version. It doesn't inherit any configuration values from the workflow.</p>
 /// <p>Provide a version name that is unique for this workflow. You cannot change the name after HealthOmics creates the version.</p><note>
-/// <p>Don’t include any personally identifiable information (PII) in the version name. Version names appear in the workflow version ARN.</p>
+/// <p>Don't include any personally identifiable information (PII) in the version name. Version names appear in the workflow version ARN.</p>
 /// </note>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/workflow-versions.html">Workflow versioning in Amazon Web Services HealthOmics</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -113,17 +113,17 @@ impl CreateWorkflowVersionFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ID of the workflow where you are creating the new version.</p>
+    /// <p>The ID of the workflow where you are creating the new version. The <code>workflowId</code> is not the UUID.</p>
     pub fn workflow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.workflow_id(input.into());
         self
     }
-    /// <p>The ID of the workflow where you are creating the new version.</p>
+    /// <p>The ID of the workflow where you are creating the new version. The <code>workflowId</code> is not the UUID.</p>
     pub fn set_workflow_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_workflow_id(input);
         self
     }
-    /// <p>The ID of the workflow where you are creating the new version.</p>
+    /// <p>The ID of the workflow where you are creating the new version. The <code>workflowId</code> is not the UUID.</p>
     pub fn get_workflow_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_workflow_id()
     }
@@ -144,31 +144,31 @@ impl CreateWorkflowVersionFluentBuilder {
     pub fn get_version_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_version_name()
     }
-    /// <p>A zip archive containing the workflow definition for this workflow version.</p>
+    /// <p>A ZIP archive containing the main workflow definition file and dependencies that it imports for this workflow version. You can use a file with a ://fileb prefix instead of the Base64 string. For more information, see Workflow definition requirements in the <i>Amazon Web Services HealthOmics User Guide</i>.</p>
     pub fn definition_zip(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.inner = self.inner.definition_zip(input);
         self
     }
-    /// <p>A zip archive containing the workflow definition for this workflow version.</p>
+    /// <p>A ZIP archive containing the main workflow definition file and dependencies that it imports for this workflow version. You can use a file with a ://fileb prefix instead of the Base64 string. For more information, see Workflow definition requirements in the <i>Amazon Web Services HealthOmics User Guide</i>.</p>
     pub fn set_definition_zip(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.inner = self.inner.set_definition_zip(input);
         self
     }
-    /// <p>A zip archive containing the workflow definition for this workflow version.</p>
+    /// <p>A ZIP archive containing the main workflow definition file and dependencies that it imports for this workflow version. You can use a file with a ://fileb prefix instead of the Base64 string. For more information, see Workflow definition requirements in the <i>Amazon Web Services HealthOmics User Guide</i>.</p>
     pub fn get_definition_zip(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
         self.inner.get_definition_zip()
     }
-    /// <p>The URI specifies the location of the workflow definition for this workflow version.</p>
+    /// <p>The S3 URI of a definition for this workflow version. The S3 bucket must be in the same region as this workflow version.</p>
     pub fn definition_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.definition_uri(input.into());
         self
     }
-    /// <p>The URI specifies the location of the workflow definition for this workflow version.</p>
+    /// <p>The S3 URI of a definition for this workflow version. The S3 bucket must be in the same region as this workflow version.</p>
     pub fn set_definition_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_definition_uri(input);
         self
     }
-    /// <p>The URI specifies the location of the workflow definition for this workflow version.</p>
+    /// <p>The S3 URI of a definition for this workflow version. The S3 bucket must be in the same region as this workflow version.</p>
     pub fn get_definition_uri(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_definition_uri()
     }
@@ -200,31 +200,31 @@ impl CreateWorkflowVersionFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
-    /// <p>The workflow engine for this workflow version.</p>
+    /// <p>The workflow engine for this workflow version. This is only required if you have workflow definition files from more than one engine in your zip file. Otherwise, the service can detect the engine automatically from your workflow definition.</p>
     pub fn engine(mut self, input: crate::types::WorkflowEngine) -> Self {
         self.inner = self.inner.engine(input);
         self
     }
-    /// <p>The workflow engine for this workflow version.</p>
+    /// <p>The workflow engine for this workflow version. This is only required if you have workflow definition files from more than one engine in your zip file. Otherwise, the service can detect the engine automatically from your workflow definition.</p>
     pub fn set_engine(mut self, input: ::std::option::Option<crate::types::WorkflowEngine>) -> Self {
         self.inner = self.inner.set_engine(input);
         self
     }
-    /// <p>The workflow engine for this workflow version.</p>
+    /// <p>The workflow engine for this workflow version. This is only required if you have workflow definition files from more than one engine in your zip file. Otherwise, the service can detect the engine automatically from your workflow definition.</p>
     pub fn get_engine(&self) -> &::std::option::Option<crate::types::WorkflowEngine> {
         self.inner.get_engine()
     }
-    /// <p>The path of the main definition file for this workflow version.</p>
+    /// <p>The path of the main definition file for this workflow version. This parameter is not required if the ZIP archive contains only one workflow definition file, or if the main definition file is named “main”. An example path is: <code>workflow-definition/main-file.wdl</code>.</p>
     pub fn main(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.main(input.into());
         self
     }
-    /// <p>The path of the main definition file for this workflow version.</p>
+    /// <p>The path of the main definition file for this workflow version. This parameter is not required if the ZIP archive contains only one workflow definition file, or if the main definition file is named “main”. An example path is: <code>workflow-definition/main-file.wdl</code>.</p>
     pub fn set_main(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_main(input);
         self
     }
-    /// <p>The path of the main definition file for this workflow version.</p>
+    /// <p>The path of the main definition file for this workflow version. This parameter is not required if the ZIP archive contains only one workflow definition file, or if the main definition file is named “main”. An example path is: <code>workflow-definition/main-file.wdl</code>.</p>
     pub fn get_main(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_main()
     }
@@ -233,12 +233,12 @@ impl CreateWorkflowVersionFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_parameter_template`](Self::set_parameter_template).
     ///
-    /// <p>The parameter template defines the input parameters for runs that use this workflow version.</p>
+    /// <p>A parameter template for this workflow version. If this field is blank, Amazon Web Services HealthOmics will automatically parse the parameter template values from your workflow definition file. To override these service generated default values, provide a parameter template. To view an example of a parameter template, see <a href="https://docs.aws.amazon.com/omics/latest/dev/parameter-templates.html">Parameter template files</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.</p>
     pub fn parameter_template(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::WorkflowParameter) -> Self {
         self.inner = self.inner.parameter_template(k.into(), v);
         self
     }
-    /// <p>The parameter template defines the input parameters for runs that use this workflow version.</p>
+    /// <p>A parameter template for this workflow version. If this field is blank, Amazon Web Services HealthOmics will automatically parse the parameter template values from your workflow definition file. To override these service generated default values, provide a parameter template. To view an example of a parameter template, see <a href="https://docs.aws.amazon.com/omics/latest/dev/parameter-templates.html">Parameter template files</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.</p>
     pub fn set_parameter_template(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::WorkflowParameter>>,
@@ -246,51 +246,51 @@ impl CreateWorkflowVersionFluentBuilder {
         self.inner = self.inner.set_parameter_template(input);
         self
     }
-    /// <p>The parameter template defines the input parameters for runs that use this workflow version.</p>
+    /// <p>A parameter template for this workflow version. If this field is blank, Amazon Web Services HealthOmics will automatically parse the parameter template values from your workflow definition file. To override these service generated default values, provide a parameter template. To view an example of a parameter template, see <a href="https://docs.aws.amazon.com/omics/latest/dev/parameter-templates.html">Parameter template files</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.</p>
     pub fn get_parameter_template(
         &self,
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::WorkflowParameter>> {
         self.inner.get_parameter_template()
     }
-    /// <p>To ensure that requests don't run multiple times, specify a unique ID for each request.</p>
+    /// <p>An idempotency token to ensure that duplicate workflows are not created when Amazon Web Services HealthOmics submits retry requests.</p>
     pub fn request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.request_id(input.into());
         self
     }
-    /// <p>To ensure that requests don't run multiple times, specify a unique ID for each request.</p>
+    /// <p>An idempotency token to ensure that duplicate workflows are not created when Amazon Web Services HealthOmics submits retry requests.</p>
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_request_id(input);
         self
     }
-    /// <p>To ensure that requests don't run multiple times, specify a unique ID for each request.</p>
+    /// <p>An idempotency token to ensure that duplicate workflows are not created when Amazon Web Services HealthOmics submits retry requests.</p>
     pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_request_id()
     }
-    /// <p>The default storage type for runs that use this workflow. STATIC storage allocates a fixed amount of storage. DYNAMIC storage dynamically scales the storage up or down, based on file system utilization. For more information about static and dynamic storage, see <a href="https://docs.aws.amazon.com/omics/latest/dev/Using-workflows.html">Running workflows</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.</p>
+    /// <p>The default storage type for runs that use this workflow version. The <code>storageType</code> can be overridden at run time. <code>DYNAMIC</code> storage dynamically scales the storage up or down, based on file system utilization. STATIC storage allocates a fixed amount of storage. For more information about dynamic and static storage types, see <a href="https://docs.aws.amazon.com/omics/latest/dev/workflows-run-types.html">Run storage types</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.</p>
     pub fn storage_type(mut self, input: crate::types::StorageType) -> Self {
         self.inner = self.inner.storage_type(input);
         self
     }
-    /// <p>The default storage type for runs that use this workflow. STATIC storage allocates a fixed amount of storage. DYNAMIC storage dynamically scales the storage up or down, based on file system utilization. For more information about static and dynamic storage, see <a href="https://docs.aws.amazon.com/omics/latest/dev/Using-workflows.html">Running workflows</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.</p>
+    /// <p>The default storage type for runs that use this workflow version. The <code>storageType</code> can be overridden at run time. <code>DYNAMIC</code> storage dynamically scales the storage up or down, based on file system utilization. STATIC storage allocates a fixed amount of storage. For more information about dynamic and static storage types, see <a href="https://docs.aws.amazon.com/omics/latest/dev/workflows-run-types.html">Run storage types</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.</p>
     pub fn set_storage_type(mut self, input: ::std::option::Option<crate::types::StorageType>) -> Self {
         self.inner = self.inner.set_storage_type(input);
         self
     }
-    /// <p>The default storage type for runs that use this workflow. STATIC storage allocates a fixed amount of storage. DYNAMIC storage dynamically scales the storage up or down, based on file system utilization. For more information about static and dynamic storage, see <a href="https://docs.aws.amazon.com/omics/latest/dev/Using-workflows.html">Running workflows</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.</p>
+    /// <p>The default storage type for runs that use this workflow version. The <code>storageType</code> can be overridden at run time. <code>DYNAMIC</code> storage dynamically scales the storage up or down, based on file system utilization. STATIC storage allocates a fixed amount of storage. For more information about dynamic and static storage types, see <a href="https://docs.aws.amazon.com/omics/latest/dev/workflows-run-types.html">Run storage types</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.</p>
     pub fn get_storage_type(&self) -> &::std::option::Option<crate::types::StorageType> {
         self.inner.get_storage_type()
     }
-    /// <p>The default static storage capacity (in gibibytes) for runs that use this workflow or workflow version.</p>
+    /// <p>The default static storage capacity (in gibibytes) for runs that use this workflow version. The <code>storageCapacity</code> can be overwritten at run time. The storage capacity is not required for runs with a <code>DYNAMIC</code> storage type.</p>
     pub fn storage_capacity(mut self, input: i32) -> Self {
         self.inner = self.inner.storage_capacity(input);
         self
     }
-    /// <p>The default static storage capacity (in gibibytes) for runs that use this workflow or workflow version.</p>
+    /// <p>The default static storage capacity (in gibibytes) for runs that use this workflow version. The <code>storageCapacity</code> can be overwritten at run time. The storage capacity is not required for runs with a <code>DYNAMIC</code> storage type.</p>
     pub fn set_storage_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_storage_capacity(input);
         self
     }
-    /// <p>The default static storage capacity (in gibibytes) for runs that use this workflow or workflow version.</p>
+    /// <p>The default static storage capacity (in gibibytes) for runs that use this workflow version. The <code>storageCapacity</code> can be overwritten at run time. The storage capacity is not required for runs with a <code>DYNAMIC</code> storage type.</p>
     pub fn get_storage_capacity(&self) -> &::std::option::Option<i32> {
         self.inner.get_storage_capacity()
     }
@@ -299,17 +299,17 @@ impl CreateWorkflowVersionFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>Optional tags to associate with this workflow version.</p>
+    /// <p>Tags for this workflow version. You can define up to 50 tags for the workflow. For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/add-a-tag.html">Adding a tag</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
-    /// <p>Optional tags to associate with this workflow version.</p>
+    /// <p>Tags for this workflow version. You can define up to 50 tags for the workflow. For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/add-a-tag.html">Adding a tag</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p>Optional tags to associate with this workflow version.</p>
+    /// <p>Tags for this workflow version. You can define up to 50 tags for the workflow. For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/add-a-tag.html">Adding a tag</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
@@ -326,6 +326,34 @@ impl CreateWorkflowVersionFluentBuilder {
     /// <p>Amazon Web Services Id of the owner of the S3 bucket that contains the workflow definition. You need to specify this parameter if your account is not the bucket owner.</p>
     pub fn get_workflow_bucket_owner_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_workflow_bucket_owner_id()
+    }
+    /// <p>(Optional) Use a container registry map to specify mappings between the ECR private repository and one or more upstream registries. For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/workflows-ecr.html">Container images</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.</p>
+    pub fn container_registry_map(mut self, input: crate::types::ContainerRegistryMap) -> Self {
+        self.inner = self.inner.container_registry_map(input);
+        self
+    }
+    /// <p>(Optional) Use a container registry map to specify mappings between the ECR private repository and one or more upstream registries. For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/workflows-ecr.html">Container images</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.</p>
+    pub fn set_container_registry_map(mut self, input: ::std::option::Option<crate::types::ContainerRegistryMap>) -> Self {
+        self.inner = self.inner.set_container_registry_map(input);
+        self
+    }
+    /// <p>(Optional) Use a container registry map to specify mappings between the ECR private repository and one or more upstream registries. For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/workflows-ecr.html">Container images</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.</p>
+    pub fn get_container_registry_map(&self) -> &::std::option::Option<crate::types::ContainerRegistryMap> {
+        self.inner.get_container_registry_map()
+    }
+    /// <p>(Optional) URI of the S3 location for the registry mapping file.</p>
+    pub fn container_registry_map_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.container_registry_map_uri(input.into());
+        self
+    }
+    /// <p>(Optional) URI of the S3 location for the registry mapping file.</p>
+    pub fn set_container_registry_map_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_container_registry_map_uri(input);
+        self
+    }
+    /// <p>(Optional) URI of the S3 location for the registry mapping file.</p>
+    pub fn get_container_registry_map_uri(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_container_registry_map_uri()
     }
     /// <p>The markdown content for the workflow version's README file. This provides documentation and usage information for users of this specific workflow version.</p>
     pub fn readme_markdown(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

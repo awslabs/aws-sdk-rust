@@ -22,7 +22,7 @@ impl crate::operation::start_fhir_export_job::builders::StartFhirExportJobInputB
 }
 /// Fluent builder constructing a request to `StartFHIRExportJob`.
 ///
-/// <p>Begins a FHIR export job.</p>
+/// <p>Start a FHIR export job.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartFHIRExportJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,73 +108,73 @@ impl StartFHIRExportJobFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The user generated name for an export job.</p>
+    /// <p>The export job name.</p>
     pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.job_name(input.into());
         self
     }
-    /// <p>The user generated name for an export job.</p>
+    /// <p>The export job name.</p>
     pub fn set_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_job_name(input);
         self
     }
-    /// <p>The user generated name for an export job.</p>
+    /// <p>The export job name.</p>
     pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_job_name()
     }
-    /// <p>The output data configuration that was supplied when the export job was created.</p>
+    /// <p>The output data configuration supplied when the export job was started.</p>
     pub fn output_data_config(mut self, input: crate::types::OutputDataConfig) -> Self {
         self.inner = self.inner.output_data_config(input);
         self
     }
-    /// <p>The output data configuration that was supplied when the export job was created.</p>
+    /// <p>The output data configuration supplied when the export job was started.</p>
     pub fn set_output_data_config(mut self, input: ::std::option::Option<crate::types::OutputDataConfig>) -> Self {
         self.inner = self.inner.set_output_data_config(input);
         self
     }
-    /// <p>The output data configuration that was supplied when the export job was created.</p>
+    /// <p>The output data configuration supplied when the export job was started.</p>
     pub fn get_output_data_config(&self) -> &::std::option::Option<crate::types::OutputDataConfig> {
         self.inner.get_output_data_config()
     }
-    /// <p>The AWS generated ID for the data store from which files are being exported for an export job.</p>
+    /// <p>The data store identifier from which files are being exported.</p>
     pub fn datastore_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.datastore_id(input.into());
         self
     }
-    /// <p>The AWS generated ID for the data store from which files are being exported for an export job.</p>
+    /// <p>The data store identifier from which files are being exported.</p>
     pub fn set_datastore_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_datastore_id(input);
         self
     }
-    /// <p>The AWS generated ID for the data store from which files are being exported for an export job.</p>
+    /// <p>The data store identifier from which files are being exported.</p>
     pub fn get_datastore_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_datastore_id()
     }
-    /// <p>The Amazon Resource Name used during the initiation of the job.</p>
+    /// <p>The Amazon Resource Name (ARN) used during initiation of the export job.</p>
     pub fn data_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.data_access_role_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name used during the initiation of the job.</p>
+    /// <p>The Amazon Resource Name (ARN) used during initiation of the export job.</p>
     pub fn set_data_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_data_access_role_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name used during the initiation of the job.</p>
+    /// <p>The Amazon Resource Name (ARN) used during initiation of the export job.</p>
     pub fn get_data_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_data_access_role_arn()
     }
-    /// <p>An optional user provided token used for ensuring idempotency.</p>
+    /// <p>An optional user provided token used for ensuring API idempotency.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
-    /// <p>An optional user provided token used for ensuring idempotency.</p>
+    /// <p>An optional user provided token used for ensuring API idempotency.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
-    /// <p>An optional user provided token used for ensuring idempotency.</p>
+    /// <p>An optional user provided token used for ensuring API idempotency.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }

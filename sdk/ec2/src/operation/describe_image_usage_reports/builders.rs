@@ -23,7 +23,7 @@ impl crate::operation::describe_image_usage_reports::builders::DescribeImageUsag
 /// Fluent builder constructing a request to `DescribeImageUsageReports`.
 ///
 /// <p>Describes the configuration and status of image usage reports, filtered by report IDs or image IDs.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-ami-usage.html">View your AMI usage</a> in the <i>Amazon EC2 User Guide</i>.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/your-ec2-ami-usage.html">View your AMI usage</a> in the <i>Amazon EC2 User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeImageUsageReportsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

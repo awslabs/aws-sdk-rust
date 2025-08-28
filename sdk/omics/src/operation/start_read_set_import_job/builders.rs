@@ -22,7 +22,7 @@ impl crate::operation::start_read_set_import_job::builders::StartReadSetImportJo
 }
 /// Fluent builder constructing a request to `StartReadSetImportJob`.
 ///
-/// <p>Starts a read set import job.</p>
+/// <p>Imports a read set from the sequence store. Read set import jobs support a maximum of 100 read sets of different types. Monitor the progress of your read set import job by calling the <code>GetReadSetImportJob</code> API operation.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartReadSetImportJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeFhirImportJobInput {
-    /// <p>The AWS-generated ID of the data store.</p>
+    /// <p>The data store identifier.</p>
     pub datastore_id: ::std::option::Option<::std::string::String>,
-    /// <p>The AWS-generated job ID.</p>
+    /// <p>The import job identifier.</p>
     pub job_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeFhirImportJobInput {
-    /// <p>The AWS-generated ID of the data store.</p>
+    /// <p>The data store identifier.</p>
     pub fn datastore_id(&self) -> ::std::option::Option<&str> {
         self.datastore_id.as_deref()
     }
-    /// <p>The AWS-generated job ID.</p>
+    /// <p>The import job identifier.</p>
     pub fn job_id(&self) -> ::std::option::Option<&str> {
         self.job_id.as_deref()
     }
@@ -33,33 +33,33 @@ pub struct DescribeFhirImportJobInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeFhirImportJobInputBuilder {
-    /// <p>The AWS-generated ID of the data store.</p>
+    /// <p>The data store identifier.</p>
     /// This field is required.
     pub fn datastore_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.datastore_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The AWS-generated ID of the data store.</p>
+    /// <p>The data store identifier.</p>
     pub fn set_datastore_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.datastore_id = input;
         self
     }
-    /// <p>The AWS-generated ID of the data store.</p>
+    /// <p>The data store identifier.</p>
     pub fn get_datastore_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.datastore_id
     }
-    /// <p>The AWS-generated job ID.</p>
+    /// <p>The import job identifier.</p>
     /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The AWS-generated job ID.</p>
+    /// <p>The import job identifier.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_id = input;
         self
     }
-    /// <p>The AWS-generated job ID.</p>
+    /// <p>The import job identifier.</p>
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_id
     }

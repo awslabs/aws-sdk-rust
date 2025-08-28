@@ -527,26 +527,26 @@ impl GetStaticMapInput {
 impl ::std::fmt::Debug for GetStaticMapInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GetStaticMapInput");
-        formatter.field("bounding_box", &self.bounding_box);
-        formatter.field("bounded_positions", &self.bounded_positions);
-        formatter.field("center", &self.center);
+        formatter.field("bounding_box", &"*** Sensitive Data Redacted ***");
+        formatter.field("bounded_positions", &"*** Sensitive Data Redacted ***");
+        formatter.field("center", &"*** Sensitive Data Redacted ***");
         formatter.field("color_scheme", &self.color_scheme);
-        formatter.field("compact_overlay", &self.compact_overlay);
+        formatter.field("compact_overlay", &"*** Sensitive Data Redacted ***");
         formatter.field("crop_labels", &self.crop_labels);
-        formatter.field("geo_json_overlay", &self.geo_json_overlay);
-        formatter.field("height", &self.height);
+        formatter.field("geo_json_overlay", &"*** Sensitive Data Redacted ***");
+        formatter.field("height", &"*** Sensitive Data Redacted ***");
         formatter.field("key", &"*** Sensitive Data Redacted ***");
         formatter.field("label_size", &self.label_size);
         formatter.field("language", &self.language);
-        formatter.field("padding", &self.padding);
-        formatter.field("political_view", &self.political_view);
+        formatter.field("padding", &"*** Sensitive Data Redacted ***");
+        formatter.field("political_view", &"*** Sensitive Data Redacted ***");
         formatter.field("points_of_interests", &self.points_of_interests);
-        formatter.field("radius", &self.radius);
+        formatter.field("radius", &"*** Sensitive Data Redacted ***");
         formatter.field("file_name", &self.file_name);
         formatter.field("scale_bar_unit", &self.scale_bar_unit);
         formatter.field("style", &self.style);
-        formatter.field("width", &self.width);
-        formatter.field("zoom", &self.zoom);
+        formatter.field("width", &"*** Sensitive Data Redacted ***");
+        formatter.field("zoom", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -1494,26 +1494,26 @@ impl GetStaticMapInputBuilder {
 impl ::std::fmt::Debug for GetStaticMapInputBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GetStaticMapInputBuilder");
-        formatter.field("bounding_box", &self.bounding_box);
-        formatter.field("bounded_positions", &self.bounded_positions);
-        formatter.field("center", &self.center);
+        formatter.field("bounding_box", &"*** Sensitive Data Redacted ***");
+        formatter.field("bounded_positions", &"*** Sensitive Data Redacted ***");
+        formatter.field("center", &"*** Sensitive Data Redacted ***");
         formatter.field("color_scheme", &self.color_scheme);
-        formatter.field("compact_overlay", &self.compact_overlay);
+        formatter.field("compact_overlay", &"*** Sensitive Data Redacted ***");
         formatter.field("crop_labels", &self.crop_labels);
-        formatter.field("geo_json_overlay", &self.geo_json_overlay);
-        formatter.field("height", &self.height);
+        formatter.field("geo_json_overlay", &"*** Sensitive Data Redacted ***");
+        formatter.field("height", &"*** Sensitive Data Redacted ***");
         formatter.field("key", &"*** Sensitive Data Redacted ***");
         formatter.field("label_size", &self.label_size);
         formatter.field("language", &self.language);
-        formatter.field("padding", &self.padding);
-        formatter.field("political_view", &self.political_view);
+        formatter.field("padding", &"*** Sensitive Data Redacted ***");
+        formatter.field("political_view", &"*** Sensitive Data Redacted ***");
         formatter.field("points_of_interests", &self.points_of_interests);
-        formatter.field("radius", &self.radius);
+        formatter.field("radius", &"*** Sensitive Data Redacted ***");
         formatter.field("file_name", &self.file_name);
         formatter.field("scale_bar_unit", &self.scale_bar_unit);
         formatter.field("style", &self.style);
-        formatter.field("width", &self.width);
-        formatter.field("zoom", &self.zoom);
+        formatter.field("width", &"*** Sensitive Data Redacted ***");
+        formatter.field("zoom", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

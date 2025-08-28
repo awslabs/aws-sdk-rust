@@ -3,6 +3,8 @@ pub use crate::types::_tag::Tag;
 
 pub use crate::types::_job_status::JobStatus;
 
+pub use crate::types::_validation_level::ValidationLevel;
+
 pub use crate::types::_output_data_config::OutputDataConfig;
 
 pub use crate::types::_s3_configuration::S3Configuration;
@@ -82,6 +84,8 @@ mod _s3_configuration;
 mod _sse_configuration;
 
 mod _tag;
+
+mod _validation_level;
 
 /// Builders
 pub mod builders;

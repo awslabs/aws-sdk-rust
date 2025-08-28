@@ -1050,21 +1050,6 @@ mod test {
             "Invalid Configuration: FIPS is not supported with multi-region endpoints"
         )
     }
-
-    /// Valid EndpointId with DualStack enabled and partition does not support DualStack
-    #[test]
-    fn test_53() {
-        let params = crate::config::endpoint::Params::builder()
-            .endpoint_id("abc123.456def".to_string())
-            .use_dual_stack(true)
-            .region("us-isob-east-1".to_string())
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err("expected error: DualStack is enabled but this partition does not support DualStack [Valid EndpointId with DualStack enabled and partition does not support DualStack]");
-        assert_eq!(format!("{}", error), "DualStack is enabled but this partition does not support DualStack")
-    }
 }
 
 /// Endpoint resolver trait specific to Amazon Simple Email Service

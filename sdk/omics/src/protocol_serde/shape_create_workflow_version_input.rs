@@ -6,79 +6,88 @@ pub fn ser_create_workflow_version_input_input(
     if let Some(var_1) = &input.accelerators {
         object.key("accelerators").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.definition_repository {
+    if let Some(var_2) = &input.container_registry_map {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("definitionRepository").start_object();
-        crate::protocol_serde::shape_definition_repository::ser_definition_repository(&mut object_3, var_2)?;
+        let mut object_3 = object.key("containerRegistryMap").start_object();
+        crate::protocol_serde::shape_container_registry_map::ser_container_registry_map(&mut object_3, var_2)?;
         object_3.finish();
     }
-    if let Some(var_4) = &input.definition_uri {
-        object.key("definitionUri").string(var_4.as_str());
+    if let Some(var_4) = &input.container_registry_map_uri {
+        object.key("containerRegistryMapUri").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.definition_zip {
-        object.key("definitionZip").string_unchecked(&::aws_smithy_types::base64::encode(var_5));
-    }
-    if let Some(var_6) = &input.description {
-        object.key("description").string(var_6.as_str());
-    }
-    if let Some(var_7) = &input.engine {
-        object.key("engine").string(var_7.as_str());
-    }
-    if let Some(var_8) = &input.main {
-        object.key("main").string(var_8.as_str());
-    }
-    if let Some(var_9) = &input.parameter_template {
+    if let Some(var_5) = &input.definition_repository {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("parameterTemplate").start_object();
-        for (key_11, value_12) in var_9 {
+        let mut object_6 = object.key("definitionRepository").start_object();
+        crate::protocol_serde::shape_definition_repository::ser_definition_repository(&mut object_6, var_5)?;
+        object_6.finish();
+    }
+    if let Some(var_7) = &input.definition_uri {
+        object.key("definitionUri").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.definition_zip {
+        object.key("definitionZip").string_unchecked(&::aws_smithy_types::base64::encode(var_8));
+    }
+    if let Some(var_9) = &input.description {
+        object.key("description").string(var_9.as_str());
+    }
+    if let Some(var_10) = &input.engine {
+        object.key("engine").string(var_10.as_str());
+    }
+    if let Some(var_11) = &input.main {
+        object.key("main").string(var_11.as_str());
+    }
+    if let Some(var_12) = &input.parameter_template {
+        #[allow(unused_mut)]
+        let mut object_13 = object.key("parameterTemplate").start_object();
+        for (key_14, value_15) in var_12 {
             {
                 #[allow(unused_mut)]
-                let mut object_13 = object_10.key(key_11.as_str()).start_object();
-                crate::protocol_serde::shape_workflow_parameter::ser_workflow_parameter(&mut object_13, value_12)?;
-                object_13.finish();
+                let mut object_16 = object_13.key(key_14.as_str()).start_object();
+                crate::protocol_serde::shape_workflow_parameter::ser_workflow_parameter(&mut object_16, value_15)?;
+                object_16.finish();
             }
         }
-        object_10.finish();
+        object_13.finish();
     }
-    if let Some(var_14) = &input.parameter_template_path {
-        object.key("parameterTemplatePath").string(var_14.as_str());
+    if let Some(var_17) = &input.parameter_template_path {
+        object.key("parameterTemplatePath").string(var_17.as_str());
     }
-    if let Some(var_15) = &input.readme_markdown {
-        object.key("readmeMarkdown").string(var_15.as_str());
+    if let Some(var_18) = &input.readme_markdown {
+        object.key("readmeMarkdown").string(var_18.as_str());
     }
-    if let Some(var_16) = &input.readme_path {
-        object.key("readmePath").string(var_16.as_str());
+    if let Some(var_19) = &input.readme_path {
+        object.key("readmePath").string(var_19.as_str());
     }
-    if let Some(var_17) = &input.readme_uri {
-        object.key("readmeUri").string(var_17.as_str());
+    if let Some(var_20) = &input.readme_uri {
+        object.key("readmeUri").string(var_20.as_str());
     }
-    if let Some(var_18) = &input.request_id {
-        object.key("requestId").string(var_18.as_str());
+    if let Some(var_21) = &input.request_id {
+        object.key("requestId").string(var_21.as_str());
     }
-    if let Some(var_19) = &input.storage_capacity {
+    if let Some(var_22) = &input.storage_capacity {
         object.key("storageCapacity").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_19).into()),
+            ::aws_smithy_types::Number::NegInt((*var_22).into()),
         );
     }
-    if let Some(var_20) = &input.storage_type {
-        object.key("storageType").string(var_20.as_str());
+    if let Some(var_23) = &input.storage_type {
+        object.key("storageType").string(var_23.as_str());
     }
-    if let Some(var_21) = &input.tags {
+    if let Some(var_24) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_22 = object.key("tags").start_object();
-        for (key_23, value_24) in var_21 {
+        let mut object_25 = object.key("tags").start_object();
+        for (key_26, value_27) in var_24 {
             {
-                object_22.key(key_23.as_str()).string(value_24.as_str());
+                object_25.key(key_26.as_str()).string(value_27.as_str());
             }
         }
-        object_22.finish();
+        object_25.finish();
     }
-    if let Some(var_25) = &input.version_name {
-        object.key("versionName").string(var_25.as_str());
+    if let Some(var_28) = &input.version_name {
+        object.key("versionName").string(var_28.as_str());
     }
-    if let Some(var_26) = &input.workflow_bucket_owner_id {
-        object.key("workflowBucketOwnerId").string(var_26.as_str());
+    if let Some(var_29) = &input.workflow_bucket_owner_id {
+        object.key("workflowBucketOwnerId").string(var_29.as_str());
     }
     Ok(())
 }

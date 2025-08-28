@@ -22,7 +22,7 @@ impl crate::operation::batch_delete_read_set::builders::BatchDeleteReadSetInputB
 }
 /// Fluent builder constructing a request to `BatchDeleteReadSet`.
 ///
-/// <p>Deletes one or more read sets.</p>
+/// <p>Deletes one or more read sets. If the operation is successful, it returns a response with no body. If there is an error with deleting one of the read sets, the operation returns an error list. If the operation successfully deletes only a subset of files, it will return an error list for the remaining files that fail to be deleted. There is a limit of 100 read sets that can be deleted in each <code>BatchDeleteReadSet</code> API call.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchDeleteReadSetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

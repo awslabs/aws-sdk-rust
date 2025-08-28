@@ -261,7 +261,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DescribeFHIRE
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum DescribeFHIRExportJobError {
-    /// <p>Unknown error occurs in the service.</p>
+    /// <p>An unknown internal error occurred in the service.</p>
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>The requested data store was not found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),

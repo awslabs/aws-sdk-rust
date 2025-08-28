@@ -270,7 +270,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateFHIRDat
 pub enum CreateFHIRDatastoreError {
     /// <p>Access is denied. Your account is not authorized to perform this operation.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p>Unknown error occurs in the service.</p>
+    /// <p>An unknown internal error occurred in the service.</p>
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>The user has exceeded their maximum number of allowed calls to the given API.</p>
     ThrottlingException(crate::types::error::ThrottlingException),

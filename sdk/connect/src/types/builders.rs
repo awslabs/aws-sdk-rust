@@ -527,6 +527,8 @@ pub use crate::types::_threshold::ThresholdBuilder;
 
 pub use crate::types::_dimensions::DimensionsBuilder;
 
+pub use crate::types::_agent_status_identifier::AgentStatusIdentifierBuilder;
+
 pub use crate::types::_routing_profile_reference::RoutingProfileReferenceBuilder;
 
 pub use crate::types::_queue_reference::QueueReferenceBuilder;

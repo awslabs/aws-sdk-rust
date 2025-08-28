@@ -22,7 +22,7 @@ impl crate::operation::abort_multipart_read_set_upload::builders::AbortMultipart
 }
 /// Fluent builder constructing a request to `AbortMultipartReadSetUpload`.
 ///
-/// <p>Stops a multipart upload.</p>
+/// <p>Stops a multipart read set upload into a sequence store and returns a response with no body if the operation is successful. To confirm that a multipart read set upload has been stopped, use the <code>ListMultipartReadSetUploads</code> API operation to view all active multipart read set uploads.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AbortMultipartReadSetUploadFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

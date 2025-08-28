@@ -19,6 +19,26 @@ pub(crate) fn reflens_list_components_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_configuration_check_definitions_output_output_next_token(
+    input: &crate::operation::list_configuration_check_definitions::ListConfigurationCheckDefinitionsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_configuration_check_operations_output_output_next_token(
+    input: &crate::operation::list_configuration_check_operations::ListConfigurationCheckOperationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_databases_output_output_next_token(
     input: &crate::operation::list_databases::ListDatabasesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -49,6 +69,26 @@ pub(crate) fn reflens_list_operations_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_sub_check_results_output_output_next_token(
+    input: &crate::operation::list_sub_check_results::ListSubCheckResultsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_sub_check_rule_results_output_output_next_token(
+    input: &crate::operation::list_sub_check_rule_results::ListSubCheckRuleResultsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_applications_output_output_applications(
     input: crate::operation::list_applications::ListApplicationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ApplicationSummary>> {
@@ -60,6 +100,20 @@ pub(crate) fn lens_list_components_output_output_components(
     input: crate::operation::list_components::ListComponentsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ComponentSummary>> {
     let input = input.components?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_configuration_check_definitions_output_output_configuration_checks(
+    input: crate::operation::list_configuration_check_definitions::ListConfigurationCheckDefinitionsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationCheckDefinition>> {
+    let input = input.configuration_checks?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_configuration_check_operations_output_output_configuration_check_operations(
+    input: crate::operation::list_configuration_check_operations::ListConfigurationCheckOperationsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationCheckOperation>> {
+    let input = input.configuration_check_operations?;
     ::std::option::Option::Some(input)
 }
 
@@ -81,5 +135,19 @@ pub(crate) fn lens_list_operations_output_output_operations(
     input: crate::operation::list_operations::ListOperationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Operation>> {
     let input = input.operations?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_sub_check_results_output_output_sub_check_results(
+    input: crate::operation::list_sub_check_results::ListSubCheckResultsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::SubCheckResult>> {
+    let input = input.sub_check_results?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_sub_check_rule_results_output_output_rule_results(
+    input: crate::operation::list_sub_check_rule_results::ListSubCheckRuleResultsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::RuleResult>> {
+    let input = input.rule_results?;
     ::std::option::Option::Some(input)
 }

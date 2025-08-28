@@ -168,6 +168,44 @@ impl From<crate::operation::get_component::GetComponentError> for Error {
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_configuration_check_operation::GetConfigurationCheckOperationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_configuration_check_operation::GetConfigurationCheckOperationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_configuration_check_operation::GetConfigurationCheckOperationError> for Error {
+    fn from(err: crate::operation::get_configuration_check_operation::GetConfigurationCheckOperationError) -> Self {
+        match err {
+            crate::operation::get_configuration_check_operation::GetConfigurationCheckOperationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_configuration_check_operation::GetConfigurationCheckOperationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_configuration_check_operation::GetConfigurationCheckOperationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_database::GetDatabaseError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -293,6 +331,87 @@ impl From<crate::operation::list_components::ListComponentsError> for Error {
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_configuration_check_definitions::ListConfigurationCheckDefinitionsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_configuration_check_definitions::ListConfigurationCheckDefinitionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_configuration_check_definitions::ListConfigurationCheckDefinitionsError> for Error {
+    fn from(err: crate::operation::list_configuration_check_definitions::ListConfigurationCheckDefinitionsError) -> Self {
+        match err {
+            crate::operation::list_configuration_check_definitions::ListConfigurationCheckDefinitionsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_configuration_check_definitions::ListConfigurationCheckDefinitionsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_configuration_check_definitions::ListConfigurationCheckDefinitionsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_configuration_check_operations::ListConfigurationCheckOperationsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_configuration_check_operations::ListConfigurationCheckOperationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_configuration_check_operations::ListConfigurationCheckOperationsError> for Error {
+    fn from(err: crate::operation::list_configuration_check_operations::ListConfigurationCheckOperationsError) -> Self {
+        match err {
+            crate::operation::list_configuration_check_operations::ListConfigurationCheckOperationsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_configuration_check_operations::ListConfigurationCheckOperationsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_configuration_check_operations::ListConfigurationCheckOperationsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_configuration_check_operations::ListConfigurationCheckOperationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_databases::ListDatabasesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -362,6 +481,61 @@ impl From<crate::operation::list_operations::ListOperationsError> for Error {
             crate::operation::list_operations::ListOperationsError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::list_operations::ListOperationsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_operations::ListOperationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_sub_check_results::ListSubCheckResultsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_sub_check_results::ListSubCheckResultsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_sub_check_results::ListSubCheckResultsError> for Error {
+    fn from(err: crate::operation::list_sub_check_results::ListSubCheckResultsError) -> Self {
+        match err {
+            crate::operation::list_sub_check_results::ListSubCheckResultsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_sub_check_results::ListSubCheckResultsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_sub_check_results::ListSubCheckResultsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_sub_check_rule_results::ListSubCheckRuleResultsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_sub_check_rule_results::ListSubCheckRuleResultsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_sub_check_rule_results::ListSubCheckRuleResultsError> for Error {
+    fn from(err: crate::operation::list_sub_check_rule_results::ListSubCheckRuleResultsError) -> Self {
+        match err {
+            crate::operation::list_sub_check_rule_results::ListSubCheckRuleResultsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_sub_check_rule_results::ListSubCheckRuleResultsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_sub_check_rule_results::ListSubCheckRuleResultsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -507,6 +681,40 @@ impl From<crate::operation::start_application_refresh::StartApplicationRefreshEr
                 Error::ValidationException(inner)
             }
             crate::operation::start_application_refresh::StartApplicationRefreshError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_configuration_checks::StartConfigurationChecksError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_configuration_checks::StartConfigurationChecksError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_configuration_checks::StartConfigurationChecksError> for Error {
+    fn from(err: crate::operation::start_configuration_checks::StartConfigurationChecksError) -> Self {
+        match err {
+            crate::operation::start_configuration_checks::StartConfigurationChecksError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::start_configuration_checks::StartConfigurationChecksError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::start_configuration_checks::StartConfigurationChecksError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::start_configuration_checks::StartConfigurationChecksError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::start_configuration_checks::StartConfigurationChecksError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

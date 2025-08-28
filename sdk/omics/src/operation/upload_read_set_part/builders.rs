@@ -22,7 +22,8 @@ impl crate::operation::upload_read_set_part::builders::UploadReadSetPartInputBui
 }
 /// Fluent builder constructing a request to `UploadReadSetPart`.
 ///
-/// <p>This operation uploads a specific part of a read set. If you upload a new part using a previously used part number, the previously uploaded part will be overwritten.</p>
+/// <p>Uploads a specific part of a read set into a sequence store. When you a upload a read set part with a part number that already exists, the new part replaces the existing one. This operation returns a JSON formatted response containing a string identifier that is used to confirm that parts are being added to the intended upload.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/synchronous-uploads.html">Direct upload to a sequence store</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.</p>
 #[derive(::std::fmt::Debug)]
 pub struct UploadReadSetPartFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

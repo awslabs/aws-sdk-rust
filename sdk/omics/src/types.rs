@@ -7,6 +7,12 @@ pub use crate::types::_source_reference::SourceReference;
 
 pub use crate::types::_source_reference_type::SourceReferenceType;
 
+pub use crate::types::_container_registry_map::ContainerRegistryMap;
+
+pub use crate::types::_image_mapping::ImageMapping;
+
+pub use crate::types::_registry_mapping::RegistryMapping;
+
 pub use crate::types::_accelerators::Accelerators;
 
 pub use crate::types::_workflow_parameter::WorkflowParameter;
@@ -157,6 +163,8 @@ pub use crate::types::_run_export::RunExport;
 
 pub use crate::types::_run_list_item::RunListItem;
 
+pub use crate::types::_image_details::ImageDetails;
+
 pub use crate::types::_task_status::TaskStatus;
 
 pub use crate::types::_task_list_item::TaskListItem;
@@ -265,6 +273,8 @@ mod _cache_behavior;
 
 mod _complete_read_set_upload_part_list_item;
 
+mod _container_registry_map;
+
 mod _creation_type;
 
 mod _definition_repository;
@@ -296,6 +306,10 @@ mod _filter;
 mod _format_options;
 
 mod _format_to_header_key;
+
+mod _image_details;
+
+mod _image_mapping;
 
 mod _import_read_set_filter;
 
@@ -378,6 +392,8 @@ mod _reference_status;
 mod _reference_store_detail;
 
 mod _reference_store_filter;
+
+mod _registry_mapping;
 
 mod _resource_owner;
 

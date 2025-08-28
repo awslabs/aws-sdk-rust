@@ -270,7 +270,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for StartFHIRImpo
 pub enum StartFHIRImportJobError {
     /// <p>Access is denied. Your account is not authorized to perform this operation.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p>Unknown error occurs in the service.</p>
+    /// <p>An unknown internal error occurred in the service.</p>
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>The requested data store was not found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),

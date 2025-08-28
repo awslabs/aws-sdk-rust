@@ -43,6 +43,8 @@ pub struct GetWorkflowVersionOutput {
     pub uuid: ::std::option::Option<::std::string::String>,
     /// <p>Amazon Web Services Id of the owner of the bucket.</p>
     pub workflow_bucket_owner_id: ::std::option::Option<::std::string::String>,
+    /// <p>The registry map that this workflow version uses.</p>
+    pub container_registry_map: ::std::option::Option<crate::types::ContainerRegistryMap>,
     /// <p>The README content for the workflow version, providing documentation and usage information specific to this version.</p>
     pub readme: ::std::option::Option<::std::string::String>,
     /// <p>Details about the source code repository that hosts the workflow version definition files.</p>
@@ -132,6 +134,10 @@ impl GetWorkflowVersionOutput {
     pub fn workflow_bucket_owner_id(&self) -> ::std::option::Option<&str> {
         self.workflow_bucket_owner_id.as_deref()
     }
+    /// <p>The registry map that this workflow version uses.</p>
+    pub fn container_registry_map(&self) -> ::std::option::Option<&crate::types::ContainerRegistryMap> {
+        self.container_registry_map.as_ref()
+    }
     /// <p>The README content for the workflow version, providing documentation and usage information specific to this version.</p>
     pub fn readme(&self) -> ::std::option::Option<&str> {
         self.readme.as_deref()
@@ -181,6 +187,7 @@ pub struct GetWorkflowVersionOutputBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) uuid: ::std::option::Option<::std::string::String>,
     pub(crate) workflow_bucket_owner_id: ::std::option::Option<::std::string::String>,
+    pub(crate) container_registry_map: ::std::option::Option<crate::types::ContainerRegistryMap>,
     pub(crate) readme: ::std::option::Option<::std::string::String>,
     pub(crate) definition_repository_details: ::std::option::Option<crate::types::DefinitionRepositoryDetails>,
     pub(crate) readme_path: ::std::option::Option<::std::string::String>,
@@ -490,6 +497,20 @@ impl GetWorkflowVersionOutputBuilder {
     pub fn get_workflow_bucket_owner_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.workflow_bucket_owner_id
     }
+    /// <p>The registry map that this workflow version uses.</p>
+    pub fn container_registry_map(mut self, input: crate::types::ContainerRegistryMap) -> Self {
+        self.container_registry_map = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The registry map that this workflow version uses.</p>
+    pub fn set_container_registry_map(mut self, input: ::std::option::Option<crate::types::ContainerRegistryMap>) -> Self {
+        self.container_registry_map = input;
+        self
+    }
+    /// <p>The registry map that this workflow version uses.</p>
+    pub fn get_container_registry_map(&self) -> &::std::option::Option<crate::types::ContainerRegistryMap> {
+        &self.container_registry_map
+    }
     /// <p>The README content for the workflow version, providing documentation and usage information specific to this version.</p>
     pub fn readme(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.readme = ::std::option::Option::Some(input.into());
@@ -564,6 +585,7 @@ impl GetWorkflowVersionOutputBuilder {
             tags: self.tags,
             uuid: self.uuid,
             workflow_bucket_owner_id: self.workflow_bucket_owner_id,
+            container_registry_map: self.container_registry_map,
             readme: self.readme,
             definition_repository_details: self.definition_repository_details,
             readme_path: self.readme_path,

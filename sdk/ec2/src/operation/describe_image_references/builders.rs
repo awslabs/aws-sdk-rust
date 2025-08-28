@@ -23,7 +23,7 @@ impl crate::operation::describe_image_references::builders::DescribeImageReferen
 /// Fluent builder constructing a request to `DescribeImageReferences`.
 ///
 /// <p>Describes your Amazon Web Services resources that are referencing the specified images.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-ami-references.html">Identiy your resources referencing selected AMIs</a> in the <i>Amazon EC2 User Guide</i>.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-ami-references.html">Identify your resources referencing specified AMIs</a> in the <i>Amazon EC2 User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeImageReferencesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

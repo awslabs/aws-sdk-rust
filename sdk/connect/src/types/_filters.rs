@@ -12,6 +12,8 @@ pub struct Filters {
     pub routing_profiles: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of expressions as a filter, in which an expression is an object of a step in a routing criteria.</p>
     pub routing_step_expressions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>A list of up to 50 agent status IDs or ARNs.</p>
+    pub agent_statuses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl Filters {
     /// <p>The queues to use to filter the metrics. You should specify at least one queue, and can specify up to 100 queues per request. The <code>GetCurrentMetricsData</code> API in particular requires a queue when you include a <code>Filter</code> in your request.</p>
@@ -38,6 +40,12 @@ impl Filters {
     pub fn routing_step_expressions(&self) -> &[::std::string::String] {
         self.routing_step_expressions.as_deref().unwrap_or_default()
     }
+    /// <p>A list of up to 50 agent status IDs or ARNs.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.agent_statuses.is_none()`.
+    pub fn agent_statuses(&self) -> &[::std::string::String] {
+        self.agent_statuses.as_deref().unwrap_or_default()
+    }
 }
 impl Filters {
     /// Creates a new builder-style object to manufacture [`Filters`](crate::types::Filters).
@@ -54,6 +62,7 @@ pub struct FiltersBuilder {
     pub(crate) channels: ::std::option::Option<::std::vec::Vec<crate::types::Channel>>,
     pub(crate) routing_profiles: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) routing_step_expressions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) agent_statuses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl FiltersBuilder {
     /// Appends an item to `queues`.
@@ -136,6 +145,26 @@ impl FiltersBuilder {
     pub fn get_routing_step_expressions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.routing_step_expressions
     }
+    /// Appends an item to `agent_statuses`.
+    ///
+    /// To override the contents of this collection use [`set_agent_statuses`](Self::set_agent_statuses).
+    ///
+    /// <p>A list of up to 50 agent status IDs or ARNs.</p>
+    pub fn agent_statuses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.agent_statuses.unwrap_or_default();
+        v.push(input.into());
+        self.agent_statuses = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of up to 50 agent status IDs or ARNs.</p>
+    pub fn set_agent_statuses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.agent_statuses = input;
+        self
+    }
+    /// <p>A list of up to 50 agent status IDs or ARNs.</p>
+    pub fn get_agent_statuses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.agent_statuses
+    }
     /// Consumes the builder and constructs a [`Filters`](crate::types::Filters).
     pub fn build(self) -> crate::types::Filters {
         crate::types::Filters {
@@ -143,6 +172,7 @@ impl FiltersBuilder {
             channels: self.channels,
             routing_profiles: self.routing_profiles,
             routing_step_expressions: self.routing_step_expressions,
+            agent_statuses: self.agent_statuses,
         }
     }
 }

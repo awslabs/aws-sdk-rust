@@ -22,7 +22,7 @@ impl crate::operation::list_authentication_profiles::builders::ListAuthenticatio
 }
 /// Fluent builder constructing a request to `ListAuthenticationProfiles`.
 ///
-/// <p>This API is in preview release for Amazon Connect and is subject to change. To request access to this API, contact Amazon Web ServicesSupport.</p>
+/// <p>This API is in preview release for Amazon Connect and is subject to change. To request access to this API, contact Amazon Web Services Support.</p>
 /// <p>Provides summary information about the authentication profiles in a specified Amazon Connect instance.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListAuthenticationProfilesFluentBuilder {

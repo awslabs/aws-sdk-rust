@@ -29,7 +29,7 @@ impl crate::operation::create_workflow::builders::CreateWorkflowInputBuilder {
 /// <li>
 /// <p>(Optional) <i>Parameter template</i>: You can create a parameter template file that defines the run parameters, or Amazon Web Services HealthOmics can generate the parameter template for you.</p></li>
 /// <li>
-/// <p><i>ECR container images</i>: Create one or more container images for the workflow. Store the images in a private ECR repository.</p></li>
+/// <p><i>ECR container images</i>: Create container images for the workflow in a private ECR repository, or synchronize images from a supported upstream registry with your Amazon ECR private repository.</p></li>
 /// <li>
 /// <p>(Optional) <i>Sentieon licenses</i>: Request a Sentieon license if using the Sentieon software in a private workflow.</p></li>
 /// </ul>
@@ -301,6 +301,34 @@ impl CreateWorkflowFluentBuilder {
     /// <p>The default storage type for runs that use this workflow. The <code>storageType</code> can be overridden at run time. <code>DYNAMIC</code> storage dynamically scales the storage up or down, based on file system utilization. <code>STATIC</code> storage allocates a fixed amount of storage. For more information about dynamic and static storage types, see <a href="https://docs.aws.amazon.com/omics/latest/dev/workflows-run-types.html">Run storage types</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.</p>
     pub fn get_storage_type(&self) -> &::std::option::Option<crate::types::StorageType> {
         self.inner.get_storage_type()
+    }
+    /// <p>(Optional) Use a container registry map to specify mappings between the ECR private repository and one or more upstream registries. For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/workflows-ecr.html">Container images</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.</p>
+    pub fn container_registry_map(mut self, input: crate::types::ContainerRegistryMap) -> Self {
+        self.inner = self.inner.container_registry_map(input);
+        self
+    }
+    /// <p>(Optional) Use a container registry map to specify mappings between the ECR private repository and one or more upstream registries. For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/workflows-ecr.html">Container images</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.</p>
+    pub fn set_container_registry_map(mut self, input: ::std::option::Option<crate::types::ContainerRegistryMap>) -> Self {
+        self.inner = self.inner.set_container_registry_map(input);
+        self
+    }
+    /// <p>(Optional) Use a container registry map to specify mappings between the ECR private repository and one or more upstream registries. For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/workflows-ecr.html">Container images</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.</p>
+    pub fn get_container_registry_map(&self) -> &::std::option::Option<crate::types::ContainerRegistryMap> {
+        self.inner.get_container_registry_map()
+    }
+    /// <p>(Optional) URI of the S3 location for the registry mapping file.</p>
+    pub fn container_registry_map_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.container_registry_map_uri(input.into());
+        self
+    }
+    /// <p>(Optional) URI of the S3 location for the registry mapping file.</p>
+    pub fn set_container_registry_map_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_container_registry_map_uri(input);
+        self
+    }
+    /// <p>(Optional) URI of the S3 location for the registry mapping file.</p>
+    pub fn get_container_registry_map_uri(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_container_registry_map_uri()
     }
     /// <p>The markdown content for the workflow's README file. This provides documentation and usage information for users of the workflow.</p>
     pub fn readme_markdown(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

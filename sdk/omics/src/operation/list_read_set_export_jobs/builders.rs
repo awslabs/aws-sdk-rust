@@ -22,7 +22,7 @@ impl crate::operation::list_read_set_export_jobs::builders::ListReadSetExportJob
 }
 /// Fluent builder constructing a request to `ListReadSetExportJobs`.
 ///
-/// <p>Retrieves a list of read set export jobs.</p>
+/// <p>Retrieves a list of read set export jobs in a JSON formatted response. This API operation is used to check the status of a read set export job initiated by the <code>StartReadSetExportJob</code> API operation.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListReadSetExportJobsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

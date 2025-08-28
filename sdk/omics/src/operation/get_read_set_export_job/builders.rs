@@ -22,7 +22,7 @@ impl crate::operation::get_read_set_export_job::builders::GetReadSetExportJobInp
 }
 /// Fluent builder constructing a request to `GetReadSetExportJob`.
 ///
-/// <p>Gets information about a read set export job.</p>
+/// <p>Retrieves status information about a read set export job and returns the data in JSON format. Use this operation to actively monitor the progress of an export job.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetReadSetExportJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -41,6 +41,8 @@ pub struct GetWorkflowOutput {
     pub storage_type: ::std::option::Option<crate::types::StorageType>,
     /// <p>The universally unique identifier (UUID) value for this workflow.</p>
     pub uuid: ::std::option::Option<::std::string::String>,
+    /// <p>The registry map that this workflow is using.</p>
+    pub container_registry_map: ::std::option::Option<crate::types::ContainerRegistryMap>,
     /// <p>The README content for the workflow, providing documentation and usage information.</p>
     pub readme: ::std::option::Option<::std::string::String>,
     /// <p>Details about the source code repository that hosts the workflow definition files.</p>
@@ -126,6 +128,10 @@ impl GetWorkflowOutput {
     pub fn uuid(&self) -> ::std::option::Option<&str> {
         self.uuid.as_deref()
     }
+    /// <p>The registry map that this workflow is using.</p>
+    pub fn container_registry_map(&self) -> ::std::option::Option<&crate::types::ContainerRegistryMap> {
+        self.container_registry_map.as_ref()
+    }
     /// <p>The README content for the workflow, providing documentation and usage information.</p>
     pub fn readme(&self) -> ::std::option::Option<&str> {
         self.readme.as_deref()
@@ -174,6 +180,7 @@ pub struct GetWorkflowOutputBuilder {
     pub(crate) accelerators: ::std::option::Option<crate::types::Accelerators>,
     pub(crate) storage_type: ::std::option::Option<crate::types::StorageType>,
     pub(crate) uuid: ::std::option::Option<::std::string::String>,
+    pub(crate) container_registry_map: ::std::option::Option<crate::types::ContainerRegistryMap>,
     pub(crate) readme: ::std::option::Option<::std::string::String>,
     pub(crate) definition_repository_details: ::std::option::Option<crate::types::DefinitionRepositoryDetails>,
     pub(crate) readme_path: ::std::option::Option<::std::string::String>,
@@ -469,6 +476,20 @@ impl GetWorkflowOutputBuilder {
     pub fn get_uuid(&self) -> &::std::option::Option<::std::string::String> {
         &self.uuid
     }
+    /// <p>The registry map that this workflow is using.</p>
+    pub fn container_registry_map(mut self, input: crate::types::ContainerRegistryMap) -> Self {
+        self.container_registry_map = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The registry map that this workflow is using.</p>
+    pub fn set_container_registry_map(mut self, input: ::std::option::Option<crate::types::ContainerRegistryMap>) -> Self {
+        self.container_registry_map = input;
+        self
+    }
+    /// <p>The registry map that this workflow is using.</p>
+    pub fn get_container_registry_map(&self) -> &::std::option::Option<crate::types::ContainerRegistryMap> {
+        &self.container_registry_map
+    }
     /// <p>The README content for the workflow, providing documentation and usage information.</p>
     pub fn readme(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.readme = ::std::option::Option::Some(input.into());
@@ -542,6 +563,7 @@ impl GetWorkflowOutputBuilder {
             accelerators: self.accelerators,
             storage_type: self.storage_type,
             uuid: self.uuid,
+            container_registry_map: self.container_registry_map,
             readme: self.readme,
             definition_repository_details: self.definition_repository_details,
             readme_path: self.readme_path,

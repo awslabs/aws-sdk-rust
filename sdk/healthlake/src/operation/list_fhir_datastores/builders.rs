@@ -22,7 +22,7 @@ impl crate::operation::list_fhir_datastores::builders::ListFhirDatastoresInputBu
 }
 /// Fluent builder constructing a request to `ListFHIRDatastores`.
 ///
-/// <p>Lists all FHIR data stores that are in the user’s account, regardless of data store status.</p>
+/// <p>List all FHIR-enabled data stores in a user’s account, regardless of data store status.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListFHIRDatastoresFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,45 +114,45 @@ impl ListFHIRDatastoresFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_fhir_datastores::paginator::ListFhirDatastoresPaginator {
         crate::operation::list_fhir_datastores::paginator::ListFhirDatastoresPaginator::new(self.handle, self.inner)
     }
-    /// <p>Lists all filters associated with a FHIR data store request.</p>
+    /// <p>List all filters associated with a FHIR data store request.</p>
     pub fn filter(mut self, input: crate::types::DatastoreFilter) -> Self {
         self.inner = self.inner.filter(input);
         self
     }
-    /// <p>Lists all filters associated with a FHIR data store request.</p>
+    /// <p>List all filters associated with a FHIR data store request.</p>
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::DatastoreFilter>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
     }
-    /// <p>Lists all filters associated with a FHIR data store request.</p>
+    /// <p>List all filters associated with a FHIR data store request.</p>
     pub fn get_filter(&self) -> &::std::option::Option<crate::types::DatastoreFilter> {
         self.inner.get_filter()
     }
-    /// <p>Fetches the next page of data stores when results are paginated.</p>
+    /// <p>The token used to retrieve the next page of data stores when results are paginated.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>Fetches the next page of data stores when results are paginated.</p>
+    /// <p>The token used to retrieve the next page of data stores when results are paginated.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>Fetches the next page of data stores when results are paginated.</p>
+    /// <p>The token used to retrieve the next page of data stores when results are paginated.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// <p>The maximum number of data stores returned in a single page of a ListFHIRDatastoresRequest call.</p>
+    /// <p>The maximum number of data stores returned on a page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>The maximum number of data stores returned in a single page of a ListFHIRDatastoresRequest call.</p>
+    /// <p>The maximum number of data stores returned on a page.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>The maximum number of data stores returned in a single page of a ListFHIRDatastoresRequest call.</p>
+    /// <p>The maximum number of data stores returned on a page.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }

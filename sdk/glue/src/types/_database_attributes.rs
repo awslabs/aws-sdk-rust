@@ -13,6 +13,7 @@
 /// # let databaseattributes = unimplemented!();
 /// match databaseattributes {
 ///     DatabaseAttributes::Name => { /* ... */ },
+///     DatabaseAttributes::TargetDatabase => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -43,6 +44,8 @@
 pub enum DatabaseAttributes {
     #[allow(missing_docs)] // documentation missing in model
     Name,
+    #[allow(missing_docs)] // documentation missing in model
+    TargetDatabase,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -51,6 +54,7 @@ impl ::std::convert::From<&str> for DatabaseAttributes {
     fn from(s: &str) -> Self {
         match s {
             "NAME" => DatabaseAttributes::Name,
+            "TARGET_DATABASE" => DatabaseAttributes::TargetDatabase,
             other => DatabaseAttributes::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -67,12 +71,13 @@ impl DatabaseAttributes {
     pub fn as_str(&self) -> &str {
         match self {
             DatabaseAttributes::Name => "NAME",
+            DatabaseAttributes::TargetDatabase => "TARGET_DATABASE",
             DatabaseAttributes::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["NAME"]
+        &["NAME", "TARGET_DATABASE"]
     }
 }
 impl ::std::convert::AsRef<str> for DatabaseAttributes {
@@ -96,6 +101,7 @@ impl ::std::fmt::Display for DatabaseAttributes {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             DatabaseAttributes::Name => write!(f, "NAME"),
+            DatabaseAttributes::TargetDatabase => write!(f, "TARGET_DATABASE"),
             DatabaseAttributes::Unknown(value) => write!(f, "{}", value),
         }
     }

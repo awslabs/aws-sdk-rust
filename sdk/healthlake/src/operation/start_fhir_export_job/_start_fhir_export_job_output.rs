@@ -3,25 +3,25 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartFhirExportJobOutput {
-    /// <p>The AWS generated ID for an export job.</p>
+    /// <p>The export job identifier.</p>
     pub job_id: ::std::string::String,
-    /// <p>The status of a FHIR export job. Possible statuses are SUBMITTED, IN_PROGRESS, COMPLETED, or FAILED.</p>
+    /// <p>The export job status.</p>
     pub job_status: crate::types::JobStatus,
-    /// <p>The AWS generated ID for the data store from which files are being exported for an export job.</p>
+    /// <p>The data store identifier from which files are being exported.</p>
     pub datastore_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl StartFhirExportJobOutput {
-    /// <p>The AWS generated ID for an export job.</p>
+    /// <p>The export job identifier.</p>
     pub fn job_id(&self) -> &str {
         use std::ops::Deref;
         self.job_id.deref()
     }
-    /// <p>The status of a FHIR export job. Possible statuses are SUBMITTED, IN_PROGRESS, COMPLETED, or FAILED.</p>
+    /// <p>The export job status.</p>
     pub fn job_status(&self) -> &crate::types::JobStatus {
         &self.job_status
     }
-    /// <p>The AWS generated ID for the data store from which files are being exported for an export job.</p>
+    /// <p>The data store identifier from which files are being exported.</p>
     pub fn datastore_id(&self) -> ::std::option::Option<&str> {
         self.datastore_id.as_deref()
     }
@@ -48,47 +48,47 @@ pub struct StartFhirExportJobOutputBuilder {
     _request_id: Option<String>,
 }
 impl StartFhirExportJobOutputBuilder {
-    /// <p>The AWS generated ID for an export job.</p>
+    /// <p>The export job identifier.</p>
     /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The AWS generated ID for an export job.</p>
+    /// <p>The export job identifier.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_id = input;
         self
     }
-    /// <p>The AWS generated ID for an export job.</p>
+    /// <p>The export job identifier.</p>
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_id
     }
-    /// <p>The status of a FHIR export job. Possible statuses are SUBMITTED, IN_PROGRESS, COMPLETED, or FAILED.</p>
+    /// <p>The export job status.</p>
     /// This field is required.
     pub fn job_status(mut self, input: crate::types::JobStatus) -> Self {
         self.job_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of a FHIR export job. Possible statuses are SUBMITTED, IN_PROGRESS, COMPLETED, or FAILED.</p>
+    /// <p>The export job status.</p>
     pub fn set_job_status(mut self, input: ::std::option::Option<crate::types::JobStatus>) -> Self {
         self.job_status = input;
         self
     }
-    /// <p>The status of a FHIR export job. Possible statuses are SUBMITTED, IN_PROGRESS, COMPLETED, or FAILED.</p>
+    /// <p>The export job status.</p>
     pub fn get_job_status(&self) -> &::std::option::Option<crate::types::JobStatus> {
         &self.job_status
     }
-    /// <p>The AWS generated ID for the data store from which files are being exported for an export job.</p>
+    /// <p>The data store identifier from which files are being exported.</p>
     pub fn datastore_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.datastore_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The AWS generated ID for the data store from which files are being exported for an export job.</p>
+    /// <p>The data store identifier from which files are being exported.</p>
     pub fn set_datastore_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.datastore_id = input;
         self
     }
-    /// <p>The AWS generated ID for the data store from which files are being exported for an export job.</p>
+    /// <p>The data store identifier from which files are being exported.</p>
     pub fn get_datastore_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.datastore_id
     }

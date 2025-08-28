@@ -5,7 +5,9 @@
 pub struct CopySnapshotInput {
     /// <p>A description for the EBS snapshot.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the Outpost to which to copy the snapshot. Only specify this parameter when copying a snapshot from an Amazon Web Services Region to an Outpost. The snapshot must be in the Region for the destination Outpost. You cannot copy a snapshot from an Outpost to a Region, from one Outpost to another, or within the same Outpost.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Outpost to which to copy the snapshot.</p><note>
+    /// <p>Only supported when copying a snapshot to an Outpost.</p>
+    /// </note>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#copy-snapshots"> Copy snapshots from an Amazon Web Services Region to an Outpost</a> in the <i>Amazon EBS User Guide</i>.</p>
     pub destination_outpost_arn: ::std::option::Option<::std::string::String>,
     /// <p>The destination Region to use in the <code>PresignedUrl</code> parameter of a snapshot copy operation. This parameter is only valid for specifying the destination Region in a <code>PresignedUrl</code> parameter, where it is required.</p>
@@ -36,9 +38,16 @@ pub struct CopySnapshotInput {
     pub source_snapshot_id: ::std::option::Option<::std::string::String>,
     /// <p>The tags to apply to the new snapshot.</p>
     pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    /// <note>
+    /// <p>Not supported when copying snapshots to or from Local Zones or Outposts.</p>
+    /// </note>
     /// <p>Specify a completion duration, in 15 minute increments, to initiate a time-based snapshot copy. Time-based snapshot copy operations complete within the specified duration. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/time-based-copies.html"> Time-based copies</a>.</p>
     /// <p>If you do not specify a value, the snapshot copy operation is completed on a best-effort basis.</p>
     pub completion_duration_minutes: ::std::option::Option<i32>,
+    /// <p>The Local Zone, for example, <code>cn-north-1-pkx-1a</code> to which to copy the snapshot.</p><note>
+    /// <p>Only supported when copying a snapshot to a Local Zone.</p>
+    /// </note>
+    pub destination_availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
 }
@@ -47,7 +56,9 @@ impl CopySnapshotInput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the Outpost to which to copy the snapshot. Only specify this parameter when copying a snapshot from an Amazon Web Services Region to an Outpost. The snapshot must be in the Region for the destination Outpost. You cannot copy a snapshot from an Outpost to a Region, from one Outpost to another, or within the same Outpost.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Outpost to which to copy the snapshot.</p><note>
+    /// <p>Only supported when copying a snapshot to an Outpost.</p>
+    /// </note>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#copy-snapshots"> Copy snapshots from an Amazon Web Services Region to an Outpost</a> in the <i>Amazon EBS User Guide</i>.</p>
     pub fn destination_outpost_arn(&self) -> ::std::option::Option<&str> {
         self.destination_outpost_arn.as_deref()
@@ -96,10 +107,19 @@ impl CopySnapshotInput {
     pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
         self.tag_specifications.as_deref().unwrap_or_default()
     }
+    /// <note>
+    /// <p>Not supported when copying snapshots to or from Local Zones or Outposts.</p>
+    /// </note>
     /// <p>Specify a completion duration, in 15 minute increments, to initiate a time-based snapshot copy. Time-based snapshot copy operations complete within the specified duration. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/time-based-copies.html"> Time-based copies</a>.</p>
     /// <p>If you do not specify a value, the snapshot copy operation is completed on a best-effort basis.</p>
     pub fn completion_duration_minutes(&self) -> ::std::option::Option<i32> {
         self.completion_duration_minutes
+    }
+    /// <p>The Local Zone, for example, <code>cn-north-1-pkx-1a</code> to which to copy the snapshot.</p><note>
+    /// <p>Only supported when copying a snapshot to a Local Zone.</p>
+    /// </note>
+    pub fn destination_availability_zone(&self) -> ::std::option::Option<&str> {
+        self.destination_availability_zone.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
@@ -119,6 +139,7 @@ impl ::std::fmt::Debug for CopySnapshotInput {
         formatter.field("source_snapshot_id", &self.source_snapshot_id);
         formatter.field("tag_specifications", &self.tag_specifications);
         formatter.field("completion_duration_minutes", &self.completion_duration_minutes);
+        formatter.field("destination_availability_zone", &self.destination_availability_zone);
         formatter.field("dry_run", &self.dry_run);
         formatter.finish()
     }
@@ -144,6 +165,7 @@ pub struct CopySnapshotInputBuilder {
     pub(crate) source_snapshot_id: ::std::option::Option<::std::string::String>,
     pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     pub(crate) completion_duration_minutes: ::std::option::Option<i32>,
+    pub(crate) destination_availability_zone: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl CopySnapshotInputBuilder {
@@ -161,19 +183,25 @@ impl CopySnapshotInputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>The Amazon Resource Name (ARN) of the Outpost to which to copy the snapshot. Only specify this parameter when copying a snapshot from an Amazon Web Services Region to an Outpost. The snapshot must be in the Region for the destination Outpost. You cannot copy a snapshot from an Outpost to a Region, from one Outpost to another, or within the same Outpost.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Outpost to which to copy the snapshot.</p><note>
+    /// <p>Only supported when copying a snapshot to an Outpost.</p>
+    /// </note>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#copy-snapshots"> Copy snapshots from an Amazon Web Services Region to an Outpost</a> in the <i>Amazon EBS User Guide</i>.</p>
     pub fn destination_outpost_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_outpost_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Outpost to which to copy the snapshot. Only specify this parameter when copying a snapshot from an Amazon Web Services Region to an Outpost. The snapshot must be in the Region for the destination Outpost. You cannot copy a snapshot from an Outpost to a Region, from one Outpost to another, or within the same Outpost.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Outpost to which to copy the snapshot.</p><note>
+    /// <p>Only supported when copying a snapshot to an Outpost.</p>
+    /// </note>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#copy-snapshots"> Copy snapshots from an Amazon Web Services Region to an Outpost</a> in the <i>Amazon EBS User Guide</i>.</p>
     pub fn set_destination_outpost_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_outpost_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Outpost to which to copy the snapshot. Only specify this parameter when copying a snapshot from an Amazon Web Services Region to an Outpost. The snapshot must be in the Region for the destination Outpost. You cannot copy a snapshot from an Outpost to a Region, from one Outpost to another, or within the same Outpost.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Outpost to which to copy the snapshot.</p><note>
+    /// <p>Only supported when copying a snapshot to an Outpost.</p>
+    /// </note>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#copy-snapshots"> Copy snapshots from an Amazon Web Services Region to an Outpost</a> in the <i>Amazon EBS User Guide</i>.</p>
     pub fn get_destination_outpost_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.destination_outpost_arn
@@ -326,22 +354,51 @@ impl CopySnapshotInputBuilder {
     pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         &self.tag_specifications
     }
+    /// <note>
+    /// <p>Not supported when copying snapshots to or from Local Zones or Outposts.</p>
+    /// </note>
     /// <p>Specify a completion duration, in 15 minute increments, to initiate a time-based snapshot copy. Time-based snapshot copy operations complete within the specified duration. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/time-based-copies.html"> Time-based copies</a>.</p>
     /// <p>If you do not specify a value, the snapshot copy operation is completed on a best-effort basis.</p>
     pub fn completion_duration_minutes(mut self, input: i32) -> Self {
         self.completion_duration_minutes = ::std::option::Option::Some(input);
         self
     }
+    /// <note>
+    /// <p>Not supported when copying snapshots to or from Local Zones or Outposts.</p>
+    /// </note>
     /// <p>Specify a completion duration, in 15 minute increments, to initiate a time-based snapshot copy. Time-based snapshot copy operations complete within the specified duration. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/time-based-copies.html"> Time-based copies</a>.</p>
     /// <p>If you do not specify a value, the snapshot copy operation is completed on a best-effort basis.</p>
     pub fn set_completion_duration_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.completion_duration_minutes = input;
         self
     }
+    /// <note>
+    /// <p>Not supported when copying snapshots to or from Local Zones or Outposts.</p>
+    /// </note>
     /// <p>Specify a completion duration, in 15 minute increments, to initiate a time-based snapshot copy. Time-based snapshot copy operations complete within the specified duration. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/time-based-copies.html"> Time-based copies</a>.</p>
     /// <p>If you do not specify a value, the snapshot copy operation is completed on a best-effort basis.</p>
     pub fn get_completion_duration_minutes(&self) -> &::std::option::Option<i32> {
         &self.completion_duration_minutes
+    }
+    /// <p>The Local Zone, for example, <code>cn-north-1-pkx-1a</code> to which to copy the snapshot.</p><note>
+    /// <p>Only supported when copying a snapshot to a Local Zone.</p>
+    /// </note>
+    pub fn destination_availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.destination_availability_zone = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Local Zone, for example, <code>cn-north-1-pkx-1a</code> to which to copy the snapshot.</p><note>
+    /// <p>Only supported when copying a snapshot to a Local Zone.</p>
+    /// </note>
+    pub fn set_destination_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.destination_availability_zone = input;
+        self
+    }
+    /// <p>The Local Zone, for example, <code>cn-north-1-pkx-1a</code> to which to copy the snapshot.</p><note>
+    /// <p>Only supported when copying a snapshot to a Local Zone.</p>
+    /// </note>
+    pub fn get_destination_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_availability_zone
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -372,6 +429,7 @@ impl CopySnapshotInputBuilder {
             source_snapshot_id: self.source_snapshot_id,
             tag_specifications: self.tag_specifications,
             completion_duration_minutes: self.completion_duration_minutes,
+            destination_availability_zone: self.destination_availability_zone,
             dry_run: self.dry_run,
         })
     }
@@ -389,6 +447,7 @@ impl ::std::fmt::Debug for CopySnapshotInputBuilder {
         formatter.field("source_snapshot_id", &self.source_snapshot_id);
         formatter.field("tag_specifications", &self.tag_specifications);
         formatter.field("completion_duration_minutes", &self.completion_duration_minutes);
+        formatter.field("destination_availability_zone", &self.destination_availability_zone);
         formatter.field("dry_run", &self.dry_run);
         formatter.finish()
     }

@@ -3,25 +3,25 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartFhirImportJobOutput {
-    /// <p>The AWS-generated job ID.</p>
+    /// <p>The import job identifier.</p>
     pub job_id: ::std::string::String,
-    /// <p>The status of an import job.</p>
+    /// <p>The import job status.</p>
     pub job_status: crate::types::JobStatus,
-    /// <p>The AWS-generated data store ID.</p>
+    /// <p>The data store identifier.</p>
     pub datastore_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl StartFhirImportJobOutput {
-    /// <p>The AWS-generated job ID.</p>
+    /// <p>The import job identifier.</p>
     pub fn job_id(&self) -> &str {
         use std::ops::Deref;
         self.job_id.deref()
     }
-    /// <p>The status of an import job.</p>
+    /// <p>The import job status.</p>
     pub fn job_status(&self) -> &crate::types::JobStatus {
         &self.job_status
     }
-    /// <p>The AWS-generated data store ID.</p>
+    /// <p>The data store identifier.</p>
     pub fn datastore_id(&self) -> ::std::option::Option<&str> {
         self.datastore_id.as_deref()
     }
@@ -48,47 +48,47 @@ pub struct StartFhirImportJobOutputBuilder {
     _request_id: Option<String>,
 }
 impl StartFhirImportJobOutputBuilder {
-    /// <p>The AWS-generated job ID.</p>
+    /// <p>The import job identifier.</p>
     /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The AWS-generated job ID.</p>
+    /// <p>The import job identifier.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_id = input;
         self
     }
-    /// <p>The AWS-generated job ID.</p>
+    /// <p>The import job identifier.</p>
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_id
     }
-    /// <p>The status of an import job.</p>
+    /// <p>The import job status.</p>
     /// This field is required.
     pub fn job_status(mut self, input: crate::types::JobStatus) -> Self {
         self.job_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of an import job.</p>
+    /// <p>The import job status.</p>
     pub fn set_job_status(mut self, input: ::std::option::Option<crate::types::JobStatus>) -> Self {
         self.job_status = input;
         self
     }
-    /// <p>The status of an import job.</p>
+    /// <p>The import job status.</p>
     pub fn get_job_status(&self) -> &::std::option::Option<crate::types::JobStatus> {
         &self.job_status
     }
-    /// <p>The AWS-generated data store ID.</p>
+    /// <p>The data store identifier.</p>
     pub fn datastore_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.datastore_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The AWS-generated data store ID.</p>
+    /// <p>The data store identifier.</p>
     pub fn set_datastore_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.datastore_id = input;
         self
     }
-    /// <p>The AWS-generated data store ID.</p>
+    /// <p>The data store identifier.</p>
     pub fn get_datastore_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.datastore_id
     }

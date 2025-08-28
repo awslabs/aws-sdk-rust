@@ -22,7 +22,8 @@ impl crate::operation::delete_reference_store::builders::DeleteReferenceStoreInp
 }
 /// Fluent builder constructing a request to `DeleteReferenceStore`.
 ///
-/// <p>Deletes a genome reference store.</p>
+/// <p>Deletes a reference store and returns a response with no body if the operation is successful. You can only delete a reference store when it does not contain any reference genomes. To empty a reference store, use <code>DeleteReference</code>.</p>
+/// <p>For more information about your workflow status, see <a href="https://docs.aws.amazon.com/omics/latest/dev/deleting-reference-and-sequence-stores.html">Deleting HealthOmics reference and sequence stores</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteReferenceStoreFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

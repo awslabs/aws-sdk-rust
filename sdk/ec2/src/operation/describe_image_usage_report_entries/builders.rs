@@ -23,7 +23,7 @@ impl crate::operation::describe_image_usage_report_entries::builders::DescribeIm
 /// Fluent builder constructing a request to `DescribeImageUsageReportEntries`.
 ///
 /// <p>Describes the entries in image usage reports, showing how your images are used across other Amazon Web Services accounts.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-ami-usage.html">View your AMI usage</a> in the <i>Amazon EC2 User Guide</i>.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/your-ec2-ami-usage.html">View your AMI usage</a> in the <i>Amazon EC2 User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeImageUsageReportEntriesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

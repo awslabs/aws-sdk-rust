@@ -22,7 +22,7 @@ impl crate::operation::delete_fhir_datastore::builders::DeleteFhirDatastoreInput
 }
 /// Fluent builder constructing a request to `DeleteFHIRDatastore`.
 ///
-/// <p>Deletes a data store.</p>
+/// <p>Delete a FHIR-enabled data store.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteFHIRDatastoreFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl DeleteFHIRDatastoreFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The AWS-generated ID for the data store to be deleted.</p>
+    /// <p>The AWS-generated identifier for the data store to be deleted.</p>
     pub fn datastore_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.datastore_id(input.into());
         self
     }
-    /// <p>The AWS-generated ID for the data store to be deleted.</p>
+    /// <p>The AWS-generated identifier for the data store to be deleted.</p>
     pub fn set_datastore_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_datastore_id(input);
         self
     }
-    /// <p>The AWS-generated ID for the data store to be deleted.</p>
+    /// <p>The AWS-generated identifier for the data store to be deleted.</p>
     pub fn get_datastore_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_datastore_id()
     }

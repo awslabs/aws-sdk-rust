@@ -1119,31 +1119,9 @@ mod test {
         assert_eq!(format!("{}", error), "Invalid ARN: Kinesis ARNs don't support `accesspoint` arn types.")
     }
 
-    /// Dual Stack not supported region.
-    #[test]
-    fn test_59() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("us-iso-west-1".to_string())
-            .use_fips(true)
-            .use_dual_stack(true)
-            .stream_arn("arn:aws-iso:kinesis:us-iso-west-1:123456789012:stream/testStream".to_string())
-            .operation_type("control".to_string())
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err(
-            "expected error: FIPS and DualStack are enabled, but this partition does not support one or both [Dual Stack not supported region.]",
-        );
-        assert_eq!(
-            format!("{}", error),
-            "FIPS and DualStack are enabled, but this partition does not support one or both"
-        )
-    }
-
     /// OperationType not set
     #[test]
-    fn test_60() {
+    fn test_59() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(false)
@@ -1163,7 +1141,7 @@ mod test {
 
     /// Custom Endpoint is specified
     #[test]
-    fn test_61() {
+    fn test_60() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(false)
@@ -1184,7 +1162,7 @@ mod test {
 
     /// Account endpoint targeting control operation type
     #[test]
-    fn test_62() {
+    fn test_61() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(false)
@@ -1206,7 +1184,7 @@ mod test {
 
     /// Account endpoint targeting data operation type
     #[test]
-    fn test_63() {
+    fn test_62() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(false)
@@ -1228,7 +1206,7 @@ mod test {
 
     /// Account endpoint with fips targeting data operation type
     #[test]
-    fn test_64() {
+    fn test_63() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(true)
@@ -1250,7 +1228,7 @@ mod test {
 
     /// Account endpoint with fips targeting control operation type
     #[test]
-    fn test_65() {
+    fn test_64() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(true)
@@ -1272,7 +1250,7 @@ mod test {
 
     /// Account endpoint with Dual Stack and FIPS enabled
     #[test]
-    fn test_66() {
+    fn test_65() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(true)
@@ -1294,7 +1272,7 @@ mod test {
 
     /// Account endpoint with Dual Stack enabled
     #[test]
-    fn test_67() {
+    fn test_66() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-1".to_string())
             .use_fips(false)
@@ -1316,7 +1294,7 @@ mod test {
 
     /// Account endpoint with FIPS and DualStack disabled
     #[test]
-    fn test_68() {
+    fn test_67() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-1".to_string())
             .use_fips(false)
@@ -1338,7 +1316,7 @@ mod test {
 
     /// RegionMismatch: client region should be used for endpoint region
     #[test]
-    fn test_69() {
+    fn test_68() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(false)
@@ -1360,7 +1338,7 @@ mod test {
 
     /// Account endpoint with FIPS enabled
     #[test]
-    fn test_70() {
+    fn test_69() {
         let params = crate::config::endpoint::Params::builder()
             .region("cn-northwest-1".to_string())
             .use_fips(true)
@@ -1382,7 +1360,7 @@ mod test {
 
     /// Account endpoint with FIPS and DualStack enabled for cn regions.
     #[test]
-    fn test_71() {
+    fn test_70() {
         let params = crate::config::endpoint::Params::builder()
             .region("cn-northwest-1".to_string())
             .use_fips(true)
@@ -1404,7 +1382,7 @@ mod test {
 
     /// Account endpoint targeting control operation type in ADC regions
     #[test]
-    fn test_72() {
+    fn test_71() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-iso-east-1".to_string())
             .use_fips(false)
@@ -1426,7 +1404,7 @@ mod test {
 
     /// Account endpoint targeting control operation type in ADC regions
     #[test]
-    fn test_73() {
+    fn test_72() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-iso-west-1".to_string())
             .use_fips(false)
@@ -1448,7 +1426,7 @@ mod test {
 
     /// Account endpoint targeting data operation type in ADC regions
     #[test]
-    fn test_74() {
+    fn test_73() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-isob-east-1".to_string())
             .use_fips(false)
@@ -1470,7 +1448,7 @@ mod test {
 
     /// Account endpoint with fips targeting control operation type in ADC regions
     #[test]
-    fn test_75() {
+    fn test_74() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-iso-east-1".to_string())
             .use_fips(true)
@@ -1492,7 +1470,7 @@ mod test {
 
     /// Account endpoint with fips targeting data operation type in ADC regions
     #[test]
-    fn test_76() {
+    fn test_75() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-isob-east-1".to_string())
             .use_fips(true)
@@ -1514,7 +1492,7 @@ mod test {
 
     /// Invalid ConsumerARN: Failed to parse ARN.
     #[test]
-    fn test_77() {
+    fn test_76() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(false)
@@ -1530,7 +1508,7 @@ mod test {
 
     /// Invalid ConsumerARN: partition missing from ARN.
     #[test]
-    fn test_78() {
+    fn test_77() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(false)
@@ -1546,7 +1524,7 @@ mod test {
 
     /// Invalid ARN: partitions mismatch.
     #[test]
-    fn test_79() {
+    fn test_78() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-gov-west-1".to_string())
             .use_fips(false)
@@ -1566,7 +1544,7 @@ mod test {
 
     /// Invalid ARN: Not Kinesis
     #[test]
-    fn test_80() {
+    fn test_79() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(false)
@@ -1583,7 +1561,7 @@ mod test {
 
     /// Invalid ARN: Region is missing in ARN
     #[test]
-    fn test_81() {
+    fn test_80() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(false)
@@ -1599,7 +1577,7 @@ mod test {
 
     /// Invalid ARN: Region is empty string in ARN
     #[test]
-    fn test_82() {
+    fn test_81() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(false)
@@ -1615,7 +1593,7 @@ mod test {
 
     /// Invalid ARN: Invalid account id
     #[test]
-    fn test_83() {
+    fn test_82() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(false)
@@ -1632,7 +1610,7 @@ mod test {
 
     /// Invalid ARN: Invalid account id
     #[test]
-    fn test_84() {
+    fn test_83() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(false)
@@ -1649,7 +1627,7 @@ mod test {
 
     /// Invalid ARN: Kinesis ARNs only support stream arn/consumer arn types
     #[test]
-    fn test_85() {
+    fn test_84() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(false)
@@ -1663,31 +1641,9 @@ mod test {
         assert_eq!(format!("{}", error), "Invalid ARN: Kinesis ARNs don't support `accesspoint` arn types.")
     }
 
-    /// Dual Stack not supported region.
-    #[test]
-    fn test_86() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("us-iso-west-1".to_string())
-            .use_fips(true)
-            .use_dual_stack(true)
-            .consumer_arn("arn:aws-iso:kinesis:us-iso-west-1:123456789012:stream/testStream/consumer/test-consumer:1525898737".to_string())
-            .operation_type("control".to_string())
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err(
-            "expected error: FIPS and DualStack are enabled, but this partition does not support one or both [Dual Stack not supported region.]",
-        );
-        assert_eq!(
-            format!("{}", error),
-            "FIPS and DualStack are enabled, but this partition does not support one or both"
-        )
-    }
-
     /// OperationType not set
     #[test]
-    fn test_87() {
+    fn test_85() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(false)
@@ -1707,7 +1663,7 @@ mod test {
 
     /// Custom Endpoint is specified
     #[test]
-    fn test_88() {
+    fn test_86() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(false)
@@ -1728,7 +1684,7 @@ mod test {
 
     /// Account endpoint targeting control operation type
     #[test]
-    fn test_89() {
+    fn test_87() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(false)
@@ -1750,7 +1706,7 @@ mod test {
 
     /// Account endpoint targeting data operation type
     #[test]
-    fn test_90() {
+    fn test_88() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(false)
@@ -1772,7 +1728,7 @@ mod test {
 
     /// Account endpoint with fips targeting data operation type
     #[test]
-    fn test_91() {
+    fn test_89() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(true)
@@ -1794,7 +1750,7 @@ mod test {
 
     /// Account endpoint with fips targeting control operation type
     #[test]
-    fn test_92() {
+    fn test_90() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(true)
@@ -1816,7 +1772,7 @@ mod test {
 
     /// Account endpoint with Dual Stack and FIPS enabled
     #[test]
-    fn test_93() {
+    fn test_91() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(true)
@@ -1838,7 +1794,7 @@ mod test {
 
     /// Account endpoint with Dual Stack enabled
     #[test]
-    fn test_94() {
+    fn test_92() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-1".to_string())
             .use_fips(false)
@@ -1860,7 +1816,7 @@ mod test {
 
     /// Account endpoint with FIPS and DualStack disabled
     #[test]
-    fn test_95() {
+    fn test_93() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-1".to_string())
             .use_fips(false)
@@ -1882,7 +1838,7 @@ mod test {
 
     /// RegionMismatch: client region should be used for endpoint region
     #[test]
-    fn test_96() {
+    fn test_94() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(false)
@@ -1904,7 +1860,7 @@ mod test {
 
     /// Account endpoint with FIPS enabled
     #[test]
-    fn test_97() {
+    fn test_95() {
         let params = crate::config::endpoint::Params::builder()
             .region("cn-northwest-1".to_string())
             .use_fips(true)
@@ -1926,7 +1882,7 @@ mod test {
 
     /// Account endpoint with FIPS and DualStack enabled for cn regions.
     #[test]
-    fn test_98() {
+    fn test_96() {
         let params = crate::config::endpoint::Params::builder()
             .region("cn-northwest-1".to_string())
             .use_fips(true)
@@ -1948,7 +1904,7 @@ mod test {
 
     /// Account endpoint targeting control operation type in ADC regions
     #[test]
-    fn test_99() {
+    fn test_97() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-iso-east-1".to_string())
             .use_fips(false)
@@ -1970,7 +1926,7 @@ mod test {
 
     /// Account endpoint targeting control operation type in ADC regions
     #[test]
-    fn test_100() {
+    fn test_98() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-iso-west-1".to_string())
             .use_fips(false)
@@ -1992,7 +1948,7 @@ mod test {
 
     /// Account endpoint targeting data operation type in ADC regions
     #[test]
-    fn test_101() {
+    fn test_99() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-isob-east-1".to_string())
             .use_fips(false)
@@ -2014,7 +1970,7 @@ mod test {
 
     /// Account endpoint with fips targeting control operation type in ADC regions
     #[test]
-    fn test_102() {
+    fn test_100() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-iso-east-1".to_string())
             .use_fips(true)
@@ -2036,7 +1992,7 @@ mod test {
 
     /// Account endpoint with fips targeting data operation type in ADC regions
     #[test]
-    fn test_103() {
+    fn test_101() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-isob-east-1".to_string())
             .use_fips(true)
@@ -2058,7 +2014,7 @@ mod test {
 
     /// ConsumerARN targeting US-EAST-1
     #[test]
-    fn test_104() {
+    fn test_102() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(false)
@@ -2080,7 +2036,7 @@ mod test {
 
     /// Both StreamARN and ConsumerARN specified. StreamARN should take precedence
     #[test]
-    fn test_105() {
+    fn test_103() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(false)
@@ -2103,7 +2059,7 @@ mod test {
 
     /// ResourceARN test: Invalid ARN: Failed to parse ARN.
     #[test]
-    fn test_106() {
+    fn test_104() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(false)
@@ -2119,7 +2075,7 @@ mod test {
 
     /// ResourceARN as StreamARN test: Invalid ARN: partition missing from ARN.
     #[test]
-    fn test_107() {
+    fn test_105() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(false)
@@ -2137,7 +2093,7 @@ mod test {
 
     /// ResourceARN as StreamARN test: Invalid ARN: partitions mismatch.
     #[test]
-    fn test_108() {
+    fn test_106() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-gov-west-1".to_string())
             .use_fips(false)
@@ -2156,7 +2112,7 @@ mod test {
 
     /// ResourceARN as StreamARN test: Invalid ARN: Not Kinesis
     #[test]
-    fn test_109() {
+    fn test_107() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(false)
@@ -2172,7 +2128,7 @@ mod test {
 
     /// ResourceARN as StreamARN test: Invalid ARN: Region is missing in ARN
     #[test]
-    fn test_110() {
+    fn test_108() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(false)
@@ -2189,7 +2145,7 @@ mod test {
 
     /// ResourceARN as StreamARN test: Invalid ARN: Region is empty string in ARN
     #[test]
-    fn test_111() {
+    fn test_109() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(false)
@@ -2206,7 +2162,7 @@ mod test {
 
     /// ResourceARN as StreamARN test: Invalid ARN: Invalid account id
     #[test]
-    fn test_112() {
+    fn test_110() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(false)
@@ -2224,7 +2180,7 @@ mod test {
 
     /// ResourceARN as StreamARN test: Invalid ARN: Invalid account id
     #[test]
-    fn test_113() {
+    fn test_111() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(false)
@@ -2242,7 +2198,7 @@ mod test {
 
     /// ResourceARN as StreamARN test: Invalid ARN: Kinesis ARNs only support stream arn types
     #[test]
-    fn test_114() {
+    fn test_112() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(false)
@@ -2256,29 +2212,9 @@ mod test {
         assert_eq!(format!("{}", error), "Invalid ARN: Kinesis ARNs don't support `accesspoint` arn types.")
     }
 
-    /// ResourceARN as StreamARN test: Dual Stack not supported region.
-    #[test]
-    fn test_115() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("us-iso-west-1".to_string())
-            .use_fips(true)
-            .use_dual_stack(true)
-            .resource_arn("arn:aws-iso:kinesis:us-iso-west-1:123456789012:stream/testStream".to_string())
-            .operation_type("control".to_string())
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err("expected error: FIPS and DualStack are enabled, but this partition does not support one or both [ResourceARN as StreamARN test: Dual Stack not supported region.]");
-        assert_eq!(
-            format!("{}", error),
-            "FIPS and DualStack are enabled, but this partition does not support one or both"
-        )
-    }
-
     /// ResourceARN as StreamARN test: OperationType not set
     #[test]
-    fn test_116() {
+    fn test_113() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(false)
@@ -2297,7 +2233,7 @@ mod test {
 
     /// ResourceARN as StreamARN test: Custom Endpoint is specified
     #[test]
-    fn test_117() {
+    fn test_114() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(false)
@@ -2318,7 +2254,7 @@ mod test {
 
     /// ResourceARN as StreamARN test: Account endpoint targeting control operation type
     #[test]
-    fn test_118() {
+    fn test_115() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(false)
@@ -2340,7 +2276,7 @@ mod test {
 
     /// ResourceARN as StreamARN test: Account endpoint targeting data operation type
     #[test]
-    fn test_119() {
+    fn test_116() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(false)
@@ -2362,7 +2298,7 @@ mod test {
 
     /// ResourceARN as StreamARN test: Account endpoint with fips targeting data operation type
     #[test]
-    fn test_120() {
+    fn test_117() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(true)
@@ -2384,7 +2320,7 @@ mod test {
 
     /// ResourceARN as StreamARN test: Account endpoint with fips targeting control operation type
     #[test]
-    fn test_121() {
+    fn test_118() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(true)
@@ -2406,7 +2342,7 @@ mod test {
 
     /// ResourceARN as StreamARN test: Account endpoint with Dual Stack and FIPS enabled
     #[test]
-    fn test_122() {
+    fn test_119() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(true)
@@ -2428,7 +2364,7 @@ mod test {
 
     /// ResourceARN as StreamARN test: Account endpoint with Dual Stack enabled
     #[test]
-    fn test_123() {
+    fn test_120() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-1".to_string())
             .use_fips(false)
@@ -2450,7 +2386,7 @@ mod test {
 
     /// ResourceARN as StreamARN test: Account endpoint with FIPS and DualStack disabled
     #[test]
-    fn test_124() {
+    fn test_121() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-1".to_string())
             .use_fips(false)
@@ -2472,7 +2408,7 @@ mod test {
 
     /// ResourceARN as StreamARN test: RegionMismatch: client region should be used for endpoint region
     #[test]
-    fn test_125() {
+    fn test_122() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(false)
@@ -2494,7 +2430,7 @@ mod test {
 
     /// ResourceARN as StreamARN test: Account endpoint with FIPS enabled
     #[test]
-    fn test_126() {
+    fn test_123() {
         let params = crate::config::endpoint::Params::builder()
             .region("cn-northwest-1".to_string())
             .use_fips(true)
@@ -2516,7 +2452,7 @@ mod test {
 
     /// ResourceARN as StreamARN test: Account endpoint with FIPS and DualStack enabled for cn regions.
     #[test]
-    fn test_127() {
+    fn test_124() {
         let params = crate::config::endpoint::Params::builder()
             .region("cn-northwest-1".to_string())
             .use_fips(true)
@@ -2538,7 +2474,7 @@ mod test {
 
     /// ResourceARN as StreamARN test: Account endpoint targeting control operation type in ADC regions
     #[test]
-    fn test_128() {
+    fn test_125() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-iso-east-1".to_string())
             .use_fips(false)
@@ -2560,7 +2496,7 @@ mod test {
 
     /// ResourceARN as StreamARN test: Account endpoint targeting control operation type in ADC regions
     #[test]
-    fn test_129() {
+    fn test_126() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-iso-west-1".to_string())
             .use_fips(false)
@@ -2582,7 +2518,7 @@ mod test {
 
     /// ResourceARN as StreamARN test: Account endpoint targeting data operation type in ADC regions
     #[test]
-    fn test_130() {
+    fn test_127() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-isob-east-1".to_string())
             .use_fips(false)
@@ -2604,7 +2540,7 @@ mod test {
 
     /// ResourceARN as StreamARN test: Account endpoint with fips targeting control operation type in ADC regions
     #[test]
-    fn test_131() {
+    fn test_128() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-iso-east-1".to_string())
             .use_fips(true)
@@ -2626,7 +2562,7 @@ mod test {
 
     /// ResourceARN as StreamARN test: Account endpoint with fips targeting data operation type in ADC regions
     #[test]
-    fn test_132() {
+    fn test_129() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-isob-east-1".to_string())
             .use_fips(true)
@@ -2648,7 +2584,7 @@ mod test {
 
     /// ResourceARN as ConsumerARN test: Invalid ARN: partition missing from ARN.
     #[test]
-    fn test_133() {
+    fn test_130() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(false)
@@ -2666,7 +2602,7 @@ mod test {
 
     /// ResourceARN as ConsumerARN test: Invalid ARN: partitions mismatch.
     #[test]
-    fn test_134() {
+    fn test_131() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-gov-west-1".to_string())
             .use_fips(false)
@@ -2685,7 +2621,7 @@ mod test {
 
     /// ResourceARN as ConsumerARN test: Invalid ARN: Not Kinesis
     #[test]
-    fn test_135() {
+    fn test_132() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(false)
@@ -2701,7 +2637,7 @@ mod test {
 
     /// ResourceARN as ConsumerARN test: Invalid ARN: Region is missing in ARN
     #[test]
-    fn test_136() {
+    fn test_133() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(false)
@@ -2718,7 +2654,7 @@ mod test {
 
     /// ResourceARN as ConsumerARN test: Invalid ARN: Region is empty string in ARN
     #[test]
-    fn test_137() {
+    fn test_134() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(false)
@@ -2735,7 +2671,7 @@ mod test {
 
     /// ResourceARN as ConsumerARN test: Invalid ARN: Invalid account id
     #[test]
-    fn test_138() {
+    fn test_135() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(false)
@@ -2753,7 +2689,7 @@ mod test {
 
     /// ResourceARN as ConsumerARN test: Invalid ARN: Invalid account id
     #[test]
-    fn test_139() {
+    fn test_136() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(false)
@@ -2771,7 +2707,7 @@ mod test {
 
     /// ResourceARN as ConsumerARN test: Invalid ARN: Kinesis ARNs only support stream arn/consumer arn types
     #[test]
-    fn test_140() {
+    fn test_137() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(false)
@@ -2785,29 +2721,9 @@ mod test {
         assert_eq!(format!("{}", error), "Invalid ARN: Kinesis ARNs don't support `accesspoint` arn types.")
     }
 
-    /// ResourceARN as ConsumerARN test: Dual Stack not supported region.
-    #[test]
-    fn test_141() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("us-iso-west-1".to_string())
-            .use_fips(true)
-            .use_dual_stack(true)
-            .resource_arn("arn:aws-iso:kinesis:us-iso-west-1:123456789012:stream/testStream/consumer/test-consumer:1525898737".to_string())
-            .operation_type("control".to_string())
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err("expected error: FIPS and DualStack are enabled, but this partition does not support one or both [ResourceARN as ConsumerARN test: Dual Stack not supported region.]");
-        assert_eq!(
-            format!("{}", error),
-            "FIPS and DualStack are enabled, but this partition does not support one or both"
-        )
-    }
-
     /// ResourceARN as ConsumerARN test: OperationType not set
     #[test]
-    fn test_142() {
+    fn test_138() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(false)
@@ -2826,7 +2742,7 @@ mod test {
 
     /// ResourceARN as ConsumerARN test: Custom Endpoint is specified
     #[test]
-    fn test_143() {
+    fn test_139() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(false)
@@ -2847,7 +2763,7 @@ mod test {
 
     /// ResourceARN as ConsumerARN test: Account endpoint targeting control operation type
     #[test]
-    fn test_144() {
+    fn test_140() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(false)
@@ -2869,7 +2785,7 @@ mod test {
 
     /// ResourceARN as ConsumerARN test: Account endpoint targeting data operation type
     #[test]
-    fn test_145() {
+    fn test_141() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(false)
@@ -2891,7 +2807,7 @@ mod test {
 
     /// ResourceARN as ConsumerARN test: Account endpoint with fips targeting data operation type
     #[test]
-    fn test_146() {
+    fn test_142() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(true)
@@ -2913,7 +2829,7 @@ mod test {
 
     /// ResourceARN as ConsumerARN test: Account endpoint with fips targeting control operation type
     #[test]
-    fn test_147() {
+    fn test_143() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(true)
@@ -2935,7 +2851,7 @@ mod test {
 
     /// ResourceARN as ConsumerARN test: Account endpoint with Dual Stack and FIPS enabled
     #[test]
-    fn test_148() {
+    fn test_144() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(true)
@@ -2957,7 +2873,7 @@ mod test {
 
     /// ResourceARN as ConsumerARN test: Account endpoint with Dual Stack enabled
     #[test]
-    fn test_149() {
+    fn test_145() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-1".to_string())
             .use_fips(false)
@@ -2979,7 +2895,7 @@ mod test {
 
     /// ResourceARN as ConsumerARN test: Account endpoint with FIPS and DualStack disabled
     #[test]
-    fn test_150() {
+    fn test_146() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-1".to_string())
             .use_fips(false)
@@ -3001,7 +2917,7 @@ mod test {
 
     /// ResourceARN as ConsumerARN test: RegionMismatch: client region should be used for endpoint region
     #[test]
-    fn test_151() {
+    fn test_147() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(false)
@@ -3023,7 +2939,7 @@ mod test {
 
     /// ResourceARN as ConsumerARN test: Account endpoint with FIPS enabled
     #[test]
-    fn test_152() {
+    fn test_148() {
         let params = crate::config::endpoint::Params::builder()
             .region("cn-northwest-1".to_string())
             .use_fips(true)
@@ -3045,7 +2961,7 @@ mod test {
 
     /// ResourceARN as ConsumerARN test: Account endpoint with FIPS and DualStack enabled for cn regions.
     #[test]
-    fn test_153() {
+    fn test_149() {
         let params = crate::config::endpoint::Params::builder()
             .region("cn-northwest-1".to_string())
             .use_fips(true)
@@ -3067,7 +2983,7 @@ mod test {
 
     /// ResourceARN as ConsumerARN test: Account endpoint targeting control operation type in ADC regions
     #[test]
-    fn test_154() {
+    fn test_150() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-iso-east-1".to_string())
             .use_fips(false)
@@ -3089,7 +3005,7 @@ mod test {
 
     /// ResourceARN as ConsumerARN test: Account endpoint targeting control operation type in ADC regions
     #[test]
-    fn test_155() {
+    fn test_151() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-iso-west-1".to_string())
             .use_fips(false)
@@ -3111,7 +3027,7 @@ mod test {
 
     /// ResourceARN as ConsumerARN test: Account endpoint targeting data operation type in ADC regions
     #[test]
-    fn test_156() {
+    fn test_152() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-isob-east-1".to_string())
             .use_fips(false)
@@ -3133,7 +3049,7 @@ mod test {
 
     /// ResourceARN as ConsumerARN test: Account endpoint with fips targeting control operation type in ADC regions
     #[test]
-    fn test_157() {
+    fn test_153() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-iso-east-1".to_string())
             .use_fips(true)
@@ -3155,7 +3071,7 @@ mod test {
 
     /// ResourceARN as ConsumerARN test: Account endpoint with fips targeting data operation type in ADC regions
     #[test]
-    fn test_158() {
+    fn test_154() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-isob-east-1".to_string())
             .use_fips(true)

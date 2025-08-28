@@ -3,32 +3,32 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteFhirDatastoreOutput {
-    /// <p>The AWS-generated ID for the data store to be deleted.</p>
+    /// <p>The AWS-generated ID for the deleted data store.</p>
     pub datastore_id: ::std::string::String,
-    /// <p>The Amazon Resource Name (ARN) that gives AWS HealthLake access permission.</p>
+    /// <p>The Amazon Resource Name (ARN) that grants access permission to AWS HealthLake.</p>
     pub datastore_arn: ::std::string::String,
-    /// <p>The status of the data store that the user has requested to be deleted.</p>
+    /// <p>The data store status.</p>
     pub datastore_status: crate::types::DatastoreStatus,
-    /// <p>The AWS endpoint for the data store the user has requested to be deleted.</p>
+    /// <p>The AWS endpoint of the data store to be deleted.</p>
     pub datastore_endpoint: ::std::string::String,
     _request_id: Option<String>,
 }
 impl DeleteFhirDatastoreOutput {
-    /// <p>The AWS-generated ID for the data store to be deleted.</p>
+    /// <p>The AWS-generated ID for the deleted data store.</p>
     pub fn datastore_id(&self) -> &str {
         use std::ops::Deref;
         self.datastore_id.deref()
     }
-    /// <p>The Amazon Resource Name (ARN) that gives AWS HealthLake access permission.</p>
+    /// <p>The Amazon Resource Name (ARN) that grants access permission to AWS HealthLake.</p>
     pub fn datastore_arn(&self) -> &str {
         use std::ops::Deref;
         self.datastore_arn.deref()
     }
-    /// <p>The status of the data store that the user has requested to be deleted.</p>
+    /// <p>The data store status.</p>
     pub fn datastore_status(&self) -> &crate::types::DatastoreStatus {
         &self.datastore_status
     }
-    /// <p>The AWS endpoint for the data store the user has requested to be deleted.</p>
+    /// <p>The AWS endpoint of the data store to be deleted.</p>
     pub fn datastore_endpoint(&self) -> &str {
         use std::ops::Deref;
         self.datastore_endpoint.deref()
@@ -57,63 +57,63 @@ pub struct DeleteFhirDatastoreOutputBuilder {
     _request_id: Option<String>,
 }
 impl DeleteFhirDatastoreOutputBuilder {
-    /// <p>The AWS-generated ID for the data store to be deleted.</p>
+    /// <p>The AWS-generated ID for the deleted data store.</p>
     /// This field is required.
     pub fn datastore_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.datastore_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The AWS-generated ID for the data store to be deleted.</p>
+    /// <p>The AWS-generated ID for the deleted data store.</p>
     pub fn set_datastore_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.datastore_id = input;
         self
     }
-    /// <p>The AWS-generated ID for the data store to be deleted.</p>
+    /// <p>The AWS-generated ID for the deleted data store.</p>
     pub fn get_datastore_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.datastore_id
     }
-    /// <p>The Amazon Resource Name (ARN) that gives AWS HealthLake access permission.</p>
+    /// <p>The Amazon Resource Name (ARN) that grants access permission to AWS HealthLake.</p>
     /// This field is required.
     pub fn datastore_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.datastore_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) that gives AWS HealthLake access permission.</p>
+    /// <p>The Amazon Resource Name (ARN) that grants access permission to AWS HealthLake.</p>
     pub fn set_datastore_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.datastore_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) that gives AWS HealthLake access permission.</p>
+    /// <p>The Amazon Resource Name (ARN) that grants access permission to AWS HealthLake.</p>
     pub fn get_datastore_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.datastore_arn
     }
-    /// <p>The status of the data store that the user has requested to be deleted.</p>
+    /// <p>The data store status.</p>
     /// This field is required.
     pub fn datastore_status(mut self, input: crate::types::DatastoreStatus) -> Self {
         self.datastore_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of the data store that the user has requested to be deleted.</p>
+    /// <p>The data store status.</p>
     pub fn set_datastore_status(mut self, input: ::std::option::Option<crate::types::DatastoreStatus>) -> Self {
         self.datastore_status = input;
         self
     }
-    /// <p>The status of the data store that the user has requested to be deleted.</p>
+    /// <p>The data store status.</p>
     pub fn get_datastore_status(&self) -> &::std::option::Option<crate::types::DatastoreStatus> {
         &self.datastore_status
     }
-    /// <p>The AWS endpoint for the data store the user has requested to be deleted.</p>
+    /// <p>The AWS endpoint of the data store to be deleted.</p>
     /// This field is required.
     pub fn datastore_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.datastore_endpoint = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The AWS endpoint for the data store the user has requested to be deleted.</p>
+    /// <p>The AWS endpoint of the data store to be deleted.</p>
     pub fn set_datastore_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.datastore_endpoint = input;
         self
     }
-    /// <p>The AWS endpoint for the data store the user has requested to be deleted.</p>
+    /// <p>The AWS endpoint of the data store to be deleted.</p>
     pub fn get_datastore_endpoint(&self) -> &::std::option::Option<::std::string::String> {
         &self.datastore_endpoint
     }

@@ -22,7 +22,7 @@ impl crate::operation::get_reference_import_job::builders::GetReferenceImportJob
 }
 /// Fluent builder constructing a request to `GetReferenceImportJob`.
 ///
-/// <p>Gets information about a reference import job.</p>
+/// <p>Monitors the status of a reference import job. This operation can be called after calling the <code>StartReferenceImportJob</code> operation.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetReferenceImportJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

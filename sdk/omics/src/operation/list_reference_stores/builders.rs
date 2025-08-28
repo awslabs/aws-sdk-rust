@@ -22,7 +22,8 @@ impl crate::operation::list_reference_stores::builders::ListReferenceStoresInput
 }
 /// Fluent builder constructing a request to `ListReferenceStores`.
 ///
-/// <p>Retrieves a list of reference stores.</p>
+/// <p>Retrieves a list of reference stores linked to your account and returns their metadata in JSON format.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/create-reference-store.html">Creating a reference store</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListReferenceStoresFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

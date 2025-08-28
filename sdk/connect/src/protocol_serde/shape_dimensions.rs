@@ -36,6 +36,10 @@ where
                                     .transpose()?,
                             );
                         }
+                        "AgentStatus" => {
+                            builder =
+                                builder.set_agent_status(crate::protocol_serde::shape_agent_status_identifier::de_agent_status_identifier(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

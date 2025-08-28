@@ -3,9 +3,17 @@ pub use crate::types::_backint_config::BackintConfigBuilder;
 
 pub use crate::types::_application_credential::ApplicationCredentialBuilder;
 
+pub use crate::types::_configuration_check_operation::ConfigurationCheckOperationBuilder;
+
+pub use crate::types::_rule_status_counts::RuleStatusCountsBuilder;
+
 pub use crate::types::_application::ApplicationBuilder;
 
 pub use crate::types::_component_info::ComponentInfoBuilder;
+
+pub use crate::types::_rule_result::RuleResultBuilder;
+
+pub use crate::types::_sub_check_result::SubCheckResultBuilder;
 
 pub use crate::types::_operation::OperationBuilder;
 
@@ -16,6 +24,8 @@ pub use crate::types::_operation_event::OperationEventBuilder;
 pub use crate::types::_resource::ResourceBuilder;
 
 pub use crate::types::_database_summary::DatabaseSummaryBuilder;
+
+pub use crate::types::_configuration_check_definition::ConfigurationCheckDefinitionBuilder;
 
 pub use crate::types::_component_summary::ComponentSummaryBuilder;
 

@@ -22,7 +22,7 @@ impl crate::operation::get_sequence_store::builders::GetSequenceStoreInputBuilde
 }
 /// Fluent builder constructing a request to `GetSequenceStore`.
 ///
-/// <p>Gets information about a sequence store.</p>
+/// <p>Retrieves metadata for a sequence store using its ID and returns it in JSON format.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetSequenceStoreFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

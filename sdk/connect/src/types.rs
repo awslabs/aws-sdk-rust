@@ -757,6 +757,8 @@ pub use crate::types::_historical_metric_name::HistoricalMetricName;
 
 pub use crate::types::_dimensions::Dimensions;
 
+pub use crate::types::_agent_status_identifier::AgentStatusIdentifier;
+
 pub use crate::types::_routing_profile_reference::RoutingProfileReference;
 
 pub use crate::types::_queue_reference::QueueReference;
@@ -972,6 +974,8 @@ mod _agent_info;
 mod _agent_quality_metrics;
 
 mod _agent_status;
+
+mod _agent_status_identifier;
 
 mod _agent_status_reference;
 

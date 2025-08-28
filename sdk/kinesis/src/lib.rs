@@ -32,7 +32,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-kinesis = "1.86.0"
+//! aws-sdk-kinesis = "1.87.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

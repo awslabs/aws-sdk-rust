@@ -22,11 +22,20 @@ impl crate::operation::copy_snapshot::builders::CopySnapshotInputBuilder {
 }
 /// Fluent builder constructing a request to `CopySnapshot`.
 ///
-/// <p>Copies a point-in-time snapshot of an EBS volume and stores it in Amazon S3. You can copy a snapshot within the same Region, from one Region to another, or from a Region to an Outpost. You can't copy a snapshot from an Outpost to a Region, from one Outpost to another, or within the same Outpost.</p>
-/// <p>You can use the snapshot to create EBS volumes or Amazon Machine Images (AMIs).</p>
+/// <p>Creates an exact copy of an Amazon EBS snapshot.</p>
+/// <p>The location of the source snapshot determines whether you can copy it or not, and the allowed destinations for the snapshot copy.</p>
+/// <ul>
+/// <li>
+/// <p>If the source snapshot is in a Region, you can copy it within that Region, to another Region, to an Outpost associated with that Region, or to a Local Zone in that Region.</p></li>
+/// <li>
+/// <p>If the source snapshot is in a Local Zone, you can copy it within that Local Zone, to another Local Zone in the same zone group, or to the parent Region of the Local Zone.</p></li>
+/// <li>
+/// <p>If the source snapshot is on an Outpost, you can't copy it.</p></li>
+/// </ul>
 /// <p>When copying snapshots to a Region, copies of encrypted EBS snapshots remain encrypted. Copies of unencrypted snapshots remain unencrypted, unless you enable encryption for the snapshot copy operation. By default, encrypted snapshot copies use the default KMS key; however, you can specify a different KMS key. To copy an encrypted snapshot that has been shared from another account, you must have permissions for the KMS key used to encrypt the snapshot.</p>
-/// <p>Snapshots copied to an Outpost are encrypted by default using the default encryption key for the Region, or a different key that you specify in the request using <b>KmsKeyId</b>. Outposts do not support unencrypted snapshots. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#ami">Amazon EBS local snapshots on Outposts</a> in the <i>Amazon EBS User Guide</i>.</p>
-/// <p>Snapshots created by copying another snapshot have an arbitrary volume ID that should not be used for any purpose.</p>
+/// <p>Snapshots copied to an Outpost are encrypted by default using the default encryption key for the Region, or a different key that you specify in the request using <b>KmsKeyId</b>. Outposts do not support unencrypted snapshots. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#ami">Amazon EBS local snapshots on Outposts</a> in the <i>Amazon EBS User Guide</i>.</p><note>
+/// <p>Snapshots copies have an arbitrary source volume ID. Do not use this volume ID for any purpose.</p>
+/// </note>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-copy-snapshot.html">Copy an Amazon EBS snapshot</a> in the <i>Amazon EBS User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CopySnapshotFluentBuilder {
@@ -127,19 +136,25 @@ impl CopySnapshotFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
-    /// <p>The Amazon Resource Name (ARN) of the Outpost to which to copy the snapshot. Only specify this parameter when copying a snapshot from an Amazon Web Services Region to an Outpost. The snapshot must be in the Region for the destination Outpost. You cannot copy a snapshot from an Outpost to a Region, from one Outpost to another, or within the same Outpost.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Outpost to which to copy the snapshot.</p><note>
+    /// <p>Only supported when copying a snapshot to an Outpost.</p>
+    /// </note>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#copy-snapshots"> Copy snapshots from an Amazon Web Services Region to an Outpost</a> in the <i>Amazon EBS User Guide</i>.</p>
     pub fn destination_outpost_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.destination_outpost_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Outpost to which to copy the snapshot. Only specify this parameter when copying a snapshot from an Amazon Web Services Region to an Outpost. The snapshot must be in the Region for the destination Outpost. You cannot copy a snapshot from an Outpost to a Region, from one Outpost to another, or within the same Outpost.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Outpost to which to copy the snapshot.</p><note>
+    /// <p>Only supported when copying a snapshot to an Outpost.</p>
+    /// </note>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#copy-snapshots"> Copy snapshots from an Amazon Web Services Region to an Outpost</a> in the <i>Amazon EBS User Guide</i>.</p>
     pub fn set_destination_outpost_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_destination_outpost_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Outpost to which to copy the snapshot. Only specify this parameter when copying a snapshot from an Amazon Web Services Region to an Outpost. The snapshot must be in the Region for the destination Outpost. You cannot copy a snapshot from an Outpost to a Region, from one Outpost to another, or within the same Outpost.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Outpost to which to copy the snapshot.</p><note>
+    /// <p>Only supported when copying a snapshot to an Outpost.</p>
+    /// </note>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#copy-snapshots"> Copy snapshots from an Amazon Web Services Region to an Outpost</a> in the <i>Amazon EBS User Guide</i>.</p>
     pub fn get_destination_outpost_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_destination_outpost_arn()
@@ -289,22 +304,51 @@ impl CopySnapshotFluentBuilder {
     pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         self.inner.get_tag_specifications()
     }
+    /// <note>
+    /// <p>Not supported when copying snapshots to or from Local Zones or Outposts.</p>
+    /// </note>
     /// <p>Specify a completion duration, in 15 minute increments, to initiate a time-based snapshot copy. Time-based snapshot copy operations complete within the specified duration. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/time-based-copies.html"> Time-based copies</a>.</p>
     /// <p>If you do not specify a value, the snapshot copy operation is completed on a best-effort basis.</p>
     pub fn completion_duration_minutes(mut self, input: i32) -> Self {
         self.inner = self.inner.completion_duration_minutes(input);
         self
     }
+    /// <note>
+    /// <p>Not supported when copying snapshots to or from Local Zones or Outposts.</p>
+    /// </note>
     /// <p>Specify a completion duration, in 15 minute increments, to initiate a time-based snapshot copy. Time-based snapshot copy operations complete within the specified duration. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/time-based-copies.html"> Time-based copies</a>.</p>
     /// <p>If you do not specify a value, the snapshot copy operation is completed on a best-effort basis.</p>
     pub fn set_completion_duration_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_completion_duration_minutes(input);
         self
     }
+    /// <note>
+    /// <p>Not supported when copying snapshots to or from Local Zones or Outposts.</p>
+    /// </note>
     /// <p>Specify a completion duration, in 15 minute increments, to initiate a time-based snapshot copy. Time-based snapshot copy operations complete within the specified duration. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/time-based-copies.html"> Time-based copies</a>.</p>
     /// <p>If you do not specify a value, the snapshot copy operation is completed on a best-effort basis.</p>
     pub fn get_completion_duration_minutes(&self) -> &::std::option::Option<i32> {
         self.inner.get_completion_duration_minutes()
+    }
+    /// <p>The Local Zone, for example, <code>cn-north-1-pkx-1a</code> to which to copy the snapshot.</p><note>
+    /// <p>Only supported when copying a snapshot to a Local Zone.</p>
+    /// </note>
+    pub fn destination_availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.destination_availability_zone(input.into());
+        self
+    }
+    /// <p>The Local Zone, for example, <code>cn-north-1-pkx-1a</code> to which to copy the snapshot.</p><note>
+    /// <p>Only supported when copying a snapshot to a Local Zone.</p>
+    /// </note>
+    pub fn set_destination_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_destination_availability_zone(input);
+        self
+    }
+    /// <p>The Local Zone, for example, <code>cn-north-1-pkx-1a</code> to which to copy the snapshot.</p><note>
+    /// <p>Only supported when copying a snapshot to a Local Zone.</p>
+    /// </note>
+    pub fn get_destination_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_destination_availability_zone()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {

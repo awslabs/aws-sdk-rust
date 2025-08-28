@@ -50,6 +50,15 @@ pub(crate) fn get_static_map_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn resource_not_found_exception_correct_errors(
+    mut builder: crate::types::error::builders::ResourceNotFoundExceptionBuilder,
+) -> crate::types::error::builders::ResourceNotFoundExceptionBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn get_tile_output_output_correct_errors(
     mut builder: crate::operation::get_tile::builders::GetTileOutputBuilder,
 ) -> crate::operation::get_tile::builders::GetTileOutputBuilder {

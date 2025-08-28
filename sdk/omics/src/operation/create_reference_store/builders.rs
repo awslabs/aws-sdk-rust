@@ -22,7 +22,8 @@ impl crate::operation::create_reference_store::builders::CreateReferenceStoreInp
 }
 /// Fluent builder constructing a request to `CreateReferenceStore`.
 ///
-/// <p>Creates a reference store.</p>
+/// <p>Creates a reference store and returns metadata in JSON format. Reference stores are used to store reference genomes in FASTA format. A reference store is created when the first reference genome is imported. To import additional reference genomes from an Amazon S3 bucket, use the <code>StartReferenceImportJob</code> API operation.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/create-reference-store.html">Creating a HealthOmics reference store</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateReferenceStoreFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

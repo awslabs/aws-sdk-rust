@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListWorkflowVersionsInput {
-    /// <p>The workflow's ID.</p>
+    /// <p>The workflow's ID. The <code>workflowId</code> is not the UUID.</p>
     pub workflow_id: ::std::option::Option<::std::string::String>,
     /// <p>The workflow type.</p>
     pub r#type: ::std::option::Option<crate::types::WorkflowType>,
-    /// <p>Amazon Web Services Id of the owner of the workflow.</p>
+    /// <p>The 12-digit account ID of the workflow owner. The workflow owner ID can be retrieved using the <code>GetShare</code> API operation. If you are the workflow owner, you do not need to include this ID.</p>
     pub workflow_owner_id: ::std::option::Option<::std::string::String>,
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub starting_token: ::std::option::Option<::std::string::String>,
@@ -15,7 +15,7 @@ pub struct ListWorkflowVersionsInput {
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListWorkflowVersionsInput {
-    /// <p>The workflow's ID.</p>
+    /// <p>The workflow's ID. The <code>workflowId</code> is not the UUID.</p>
     pub fn workflow_id(&self) -> ::std::option::Option<&str> {
         self.workflow_id.as_deref()
     }
@@ -23,7 +23,7 @@ impl ListWorkflowVersionsInput {
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::WorkflowType> {
         self.r#type.as_ref()
     }
-    /// <p>Amazon Web Services Id of the owner of the workflow.</p>
+    /// <p>The 12-digit account ID of the workflow owner. The workflow owner ID can be retrieved using the <code>GetShare</code> API operation. If you are the workflow owner, you do not need to include this ID.</p>
     pub fn workflow_owner_id(&self) -> ::std::option::Option<&str> {
         self.workflow_owner_id.as_deref()
     }
@@ -54,18 +54,18 @@ pub struct ListWorkflowVersionsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
 }
 impl ListWorkflowVersionsInputBuilder {
-    /// <p>The workflow's ID.</p>
+    /// <p>The workflow's ID. The <code>workflowId</code> is not the UUID.</p>
     /// This field is required.
     pub fn workflow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The workflow's ID.</p>
+    /// <p>The workflow's ID. The <code>workflowId</code> is not the UUID.</p>
     pub fn set_workflow_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workflow_id = input;
         self
     }
-    /// <p>The workflow's ID.</p>
+    /// <p>The workflow's ID. The <code>workflowId</code> is not the UUID.</p>
     pub fn get_workflow_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.workflow_id
     }
@@ -83,17 +83,17 @@ impl ListWorkflowVersionsInputBuilder {
     pub fn get_type(&self) -> &::std::option::Option<crate::types::WorkflowType> {
         &self.r#type
     }
-    /// <p>Amazon Web Services Id of the owner of the workflow.</p>
+    /// <p>The 12-digit account ID of the workflow owner. The workflow owner ID can be retrieved using the <code>GetShare</code> API operation. If you are the workflow owner, you do not need to include this ID.</p>
     pub fn workflow_owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_owner_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Amazon Web Services Id of the owner of the workflow.</p>
+    /// <p>The 12-digit account ID of the workflow owner. The workflow owner ID can be retrieved using the <code>GetShare</code> API operation. If you are the workflow owner, you do not need to include this ID.</p>
     pub fn set_workflow_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workflow_owner_id = input;
         self
     }
-    /// <p>Amazon Web Services Id of the owner of the workflow.</p>
+    /// <p>The 12-digit account ID of the workflow owner. The workflow owner ID can be retrieved using the <code>GetShare</code> API operation. If you are the workflow owner, you do not need to include this ID.</p>
     pub fn get_workflow_owner_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.workflow_owner_id
     }

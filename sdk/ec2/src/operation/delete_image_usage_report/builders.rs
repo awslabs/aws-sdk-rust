@@ -23,7 +23,7 @@ impl crate::operation::delete_image_usage_report::builders::DeleteImageUsageRepo
 /// Fluent builder constructing a request to `DeleteImageUsageReport`.
 ///
 /// <p>Deletes the specified image usage report.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-ami-usage.html">View your AMI usage</a> in the <i>Amazon EC2 User Guide</i>.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/your-ec2-ami-usage.html">View your AMI usage</a> in the <i>Amazon EC2 User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteImageUsageReportFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

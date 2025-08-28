@@ -9,6 +9,14 @@ pub use crate::types::_credential_type::CredentialType;
 
 pub use crate::types::_connected_entity_type::ConnectedEntityType;
 
+pub use crate::types::_configuration_check_operation::ConfigurationCheckOperation;
+
+pub use crate::types::_rule_status_counts::RuleStatusCounts;
+
+pub use crate::types::_configuration_check_type::ConfigurationCheckType;
+
+pub use crate::types::_operation_status::OperationStatus;
+
 pub use crate::types::_application::Application;
 
 pub use crate::types::_application_discovery_status::ApplicationDiscoveryStatus;
@@ -23,9 +31,13 @@ pub use crate::types::_component_type::ComponentType;
 
 pub use crate::types::_permission_action_type::PermissionActionType;
 
-pub use crate::types::_operation::Operation;
+pub use crate::types::_rule_result::RuleResult;
 
-pub use crate::types::_operation_status::OperationStatus;
+pub use crate::types::_rule_result_status::RuleResultStatus;
+
+pub use crate::types::_sub_check_result::SubCheckResult;
+
+pub use crate::types::_operation::Operation;
 
 pub use crate::types::_filter::Filter;
 
@@ -40,6 +52,10 @@ pub use crate::types::_resource::Resource;
 pub use crate::types::_database_summary::DatabaseSummary;
 
 pub use crate::types::_database_type::DatabaseType;
+
+pub use crate::types::_configuration_check_operation_listing_mode::ConfigurationCheckOperationListingMode;
+
+pub use crate::types::_configuration_check_definition::ConfigurationCheckDefinition;
 
 pub use crate::types::_component_summary::ComponentSummary;
 
@@ -107,6 +123,14 @@ mod _component_summary;
 
 mod _component_type;
 
+mod _configuration_check_definition;
+
+mod _configuration_check_operation;
+
+mod _configuration_check_operation_listing_mode;
+
+mod _configuration_check_type;
+
 mod _connected_entity_type;
 
 mod _credential_type;
@@ -150,6 +174,14 @@ mod _replication_mode;
 mod _resilience;
 
 mod _resource;
+
+mod _rule_result;
+
+mod _rule_result_status;
+
+mod _rule_status_counts;
+
+mod _sub_check_result;
 
 /// Builders
 pub mod builders;

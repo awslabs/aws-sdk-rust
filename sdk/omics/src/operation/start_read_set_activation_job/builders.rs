@@ -22,7 +22,8 @@ impl crate::operation::start_read_set_activation_job::builders::StartReadSetActi
 }
 /// Fluent builder constructing a request to `StartReadSetActivationJob`.
 ///
-/// <p>Activates an archived read set. To reduce storage charges, Amazon Omics archives unused read sets after 30 days.</p>
+/// <p>Activates an archived read set and returns its metadata in a JSON formatted output. AWS HealthOmics automatically archives unused read sets after 30 days. To monitor the status of your read set activation job, use the <code>GetReadSetActivationJob</code> operation.</p>
+/// <p>To learn more, see <a href="https://docs.aws.amazon.com/omics/latest/dev/activating-read-sets.html">Activating read sets</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartReadSetActivationJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

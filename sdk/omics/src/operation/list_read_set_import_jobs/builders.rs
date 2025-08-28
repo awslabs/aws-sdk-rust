@@ -22,7 +22,7 @@ impl crate::operation::list_read_set_import_jobs::builders::ListReadSetImportJob
 }
 /// Fluent builder constructing a request to `ListReadSetImportJobs`.
 ///
-/// <p>Retrieves a list of read set import jobs.</p>
+/// <p>Retrieves a list of read set import jobs and returns the data in JSON format.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListReadSetImportJobsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

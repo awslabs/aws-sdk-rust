@@ -27,6 +27,10 @@ pub struct CreateWorkflowInput {
     pub accelerators: ::std::option::Option<crate::types::Accelerators>,
     /// <p>The default storage type for runs that use this workflow. The <code>storageType</code> can be overridden at run time. <code>DYNAMIC</code> storage dynamically scales the storage up or down, based on file system utilization. <code>STATIC</code> storage allocates a fixed amount of storage. For more information about dynamic and static storage types, see <a href="https://docs.aws.amazon.com/omics/latest/dev/workflows-run-types.html">Run storage types</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.</p>
     pub storage_type: ::std::option::Option<crate::types::StorageType>,
+    /// <p>(Optional) Use a container registry map to specify mappings between the ECR private repository and one or more upstream registries. For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/workflows-ecr.html">Container images</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.</p>
+    pub container_registry_map: ::std::option::Option<crate::types::ContainerRegistryMap>,
+    /// <p>(Optional) URI of the S3 location for the registry mapping file.</p>
+    pub container_registry_map_uri: ::std::option::Option<::std::string::String>,
     /// <p>The markdown content for the workflow's README file. This provides documentation and usage information for users of the workflow.</p>
     pub readme_markdown: ::std::option::Option<::std::string::String>,
     /// <p>The path to the workflow parameter template JSON file within the repository. This file defines the input parameters for runs that use this workflow. If not specified, the workflow will be created without a parameter template.</p>
@@ -97,6 +101,14 @@ impl CreateWorkflowInput {
     pub fn storage_type(&self) -> ::std::option::Option<&crate::types::StorageType> {
         self.storage_type.as_ref()
     }
+    /// <p>(Optional) Use a container registry map to specify mappings between the ECR private repository and one or more upstream registries. For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/workflows-ecr.html">Container images</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.</p>
+    pub fn container_registry_map(&self) -> ::std::option::Option<&crate::types::ContainerRegistryMap> {
+        self.container_registry_map.as_ref()
+    }
+    /// <p>(Optional) URI of the S3 location for the registry mapping file.</p>
+    pub fn container_registry_map_uri(&self) -> ::std::option::Option<&str> {
+        self.container_registry_map_uri.as_deref()
+    }
     /// <p>The markdown content for the workflow's README file. This provides documentation and usage information for users of the workflow.</p>
     pub fn readme_markdown(&self) -> ::std::option::Option<&str> {
         self.readme_markdown.as_deref()
@@ -153,6 +165,8 @@ pub struct CreateWorkflowInputBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) accelerators: ::std::option::Option<crate::types::Accelerators>,
     pub(crate) storage_type: ::std::option::Option<crate::types::StorageType>,
+    pub(crate) container_registry_map: ::std::option::Option<crate::types::ContainerRegistryMap>,
+    pub(crate) container_registry_map_uri: ::std::option::Option<::std::string::String>,
     pub(crate) readme_markdown: ::std::option::Option<::std::string::String>,
     pub(crate) parameter_template_path: ::std::option::Option<::std::string::String>,
     pub(crate) readme_path: ::std::option::Option<::std::string::String>,
@@ -347,6 +361,34 @@ impl CreateWorkflowInputBuilder {
     pub fn get_storage_type(&self) -> &::std::option::Option<crate::types::StorageType> {
         &self.storage_type
     }
+    /// <p>(Optional) Use a container registry map to specify mappings between the ECR private repository and one or more upstream registries. For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/workflows-ecr.html">Container images</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.</p>
+    pub fn container_registry_map(mut self, input: crate::types::ContainerRegistryMap) -> Self {
+        self.container_registry_map = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>(Optional) Use a container registry map to specify mappings between the ECR private repository and one or more upstream registries. For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/workflows-ecr.html">Container images</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.</p>
+    pub fn set_container_registry_map(mut self, input: ::std::option::Option<crate::types::ContainerRegistryMap>) -> Self {
+        self.container_registry_map = input;
+        self
+    }
+    /// <p>(Optional) Use a container registry map to specify mappings between the ECR private repository and one or more upstream registries. For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/workflows-ecr.html">Container images</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.</p>
+    pub fn get_container_registry_map(&self) -> &::std::option::Option<crate::types::ContainerRegistryMap> {
+        &self.container_registry_map
+    }
+    /// <p>(Optional) URI of the S3 location for the registry mapping file.</p>
+    pub fn container_registry_map_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.container_registry_map_uri = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>(Optional) URI of the S3 location for the registry mapping file.</p>
+    pub fn set_container_registry_map_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.container_registry_map_uri = input;
+        self
+    }
+    /// <p>(Optional) URI of the S3 location for the registry mapping file.</p>
+    pub fn get_container_registry_map_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.container_registry_map_uri
+    }
     /// <p>The markdown content for the workflow's README file. This provides documentation and usage information for users of the workflow.</p>
     pub fn readme_markdown(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.readme_markdown = ::std::option::Option::Some(input.into());
@@ -472,6 +514,8 @@ impl CreateWorkflowInputBuilder {
             request_id: self.request_id,
             accelerators: self.accelerators,
             storage_type: self.storage_type,
+            container_registry_map: self.container_registry_map,
+            container_registry_map_uri: self.container_registry_map_uri,
             readme_markdown: self.readme_markdown,
             parameter_template_path: self.parameter_template_path,
             readme_path: self.readme_path,

@@ -3,19 +3,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListFhirDatastoresOutput {
-    /// <p>All properties associated with the listed data stores.</p>
+    /// <p>The properties associated with all listed data stores.</p>
     pub datastore_properties_list: ::std::vec::Vec<crate::types::DatastoreProperties>,
-    /// <p>Pagination token that can be used to retrieve the next page of results.</p>
+    /// <p>The pagination token used to retrieve the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListFhirDatastoresOutput {
-    /// <p>All properties associated with the listed data stores.</p>
+    /// <p>The properties associated with all listed data stores.</p>
     pub fn datastore_properties_list(&self) -> &[crate::types::DatastoreProperties] {
         use std::ops::Deref;
         self.datastore_properties_list.deref()
     }
-    /// <p>Pagination token that can be used to retrieve the next page of results.</p>
+    /// <p>The pagination token used to retrieve the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -45,33 +45,33 @@ impl ListFhirDatastoresOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_datastore_properties_list`](Self::set_datastore_properties_list).
     ///
-    /// <p>All properties associated with the listed data stores.</p>
+    /// <p>The properties associated with all listed data stores.</p>
     pub fn datastore_properties_list(mut self, input: crate::types::DatastoreProperties) -> Self {
         let mut v = self.datastore_properties_list.unwrap_or_default();
         v.push(input);
         self.datastore_properties_list = ::std::option::Option::Some(v);
         self
     }
-    /// <p>All properties associated with the listed data stores.</p>
+    /// <p>The properties associated with all listed data stores.</p>
     pub fn set_datastore_properties_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DatastoreProperties>>) -> Self {
         self.datastore_properties_list = input;
         self
     }
-    /// <p>All properties associated with the listed data stores.</p>
+    /// <p>The properties associated with all listed data stores.</p>
     pub fn get_datastore_properties_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DatastoreProperties>> {
         &self.datastore_properties_list
     }
-    /// <p>Pagination token that can be used to retrieve the next page of results.</p>
+    /// <p>The pagination token used to retrieve the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Pagination token that can be used to retrieve the next page of results.</p>
+    /// <p>The pagination token used to retrieve the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>Pagination token that can be used to retrieve the next page of results.</p>
+    /// <p>The pagination token used to retrieve the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

@@ -22,7 +22,7 @@ impl crate::operation::describe_fhir_datastore::builders::DescribeFhirDatastoreI
 }
 /// Fluent builder constructing a request to `DescribeFHIRDatastore`.
 ///
-/// <p>Gets the properties associated with the FHIR data store, including the data store ID, data store ARN, data store name, data store status, when the data store was created, data store type version, and the data store's endpoint.</p>
+/// <p>Get properties for a FHIR-enabled data store.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeFHIRDatastoreFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl DescribeFHIRDatastoreFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The AWS-generated data store ID.</p>
+    /// <p>The data store identifier.</p>
     pub fn datastore_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.datastore_id(input.into());
         self
     }
-    /// <p>The AWS-generated data store ID.</p>
+    /// <p>The data store identifier.</p>
     pub fn set_datastore_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_datastore_id(input);
         self
     }
-    /// <p>The AWS-generated data store ID.</p>
+    /// <p>The data store identifier.</p>
     pub fn get_datastore_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_datastore_id()
     }

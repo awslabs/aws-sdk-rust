@@ -1857,6 +1857,8 @@ pub(crate) mod shape_agent_contact_reference;
 
 pub(crate) mod shape_agent_hierarchy_group;
 
+pub(crate) mod shape_agent_status_identifier;
+
 pub(crate) mod shape_attribute_condition;
 
 pub(crate) mod shape_audio_features;

@@ -178,6 +178,10 @@ pub(crate) fn de_get_workflow(
                             .transpose()?,
                     );
                 }
+                "containerRegistryMap" => {
+                    builder =
+                        builder.set_container_registry_map(crate::protocol_serde::shape_container_registry_map::de_container_registry_map(tokens)?);
+                }
                 "creationTime" => {
                     builder = builder.set_creation_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                         tokens.next(),

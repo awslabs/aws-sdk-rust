@@ -12,6 +12,7 @@
 /// ```text
 /// # let grouping = unimplemented!();
 /// match grouping {
+///     Grouping::AgentStatus => { /* ... */ },
 ///     Grouping::Channel => { /* ... */ },
 ///     Grouping::Queue => { /* ... */ },
 ///     Grouping::RoutingProfile => { /* ... */ },
@@ -45,6 +46,8 @@
 )]
 pub enum Grouping {
     #[allow(missing_docs)] // documentation missing in model
+    AgentStatus,
+    #[allow(missing_docs)] // documentation missing in model
     Channel,
     #[allow(missing_docs)] // documentation missing in model
     Queue,
@@ -59,6 +62,7 @@ pub enum Grouping {
 impl ::std::convert::From<&str> for Grouping {
     fn from(s: &str) -> Self {
         match s {
+            "AGENT_STATUS" => Grouping::AgentStatus,
             "CHANNEL" => Grouping::Channel,
             "QUEUE" => Grouping::Queue,
             "ROUTING_PROFILE" => Grouping::RoutingProfile,
@@ -78,6 +82,7 @@ impl Grouping {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            Grouping::AgentStatus => "AGENT_STATUS",
             Grouping::Channel => "CHANNEL",
             Grouping::Queue => "QUEUE",
             Grouping::RoutingProfile => "ROUTING_PROFILE",
@@ -87,7 +92,7 @@ impl Grouping {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CHANNEL", "QUEUE", "ROUTING_PROFILE", "ROUTING_STEP_EXPRESSION"]
+        &["AGENT_STATUS", "CHANNEL", "QUEUE", "ROUTING_PROFILE", "ROUTING_STEP_EXPRESSION"]
     }
 }
 impl ::std::convert::AsRef<str> for Grouping {
@@ -110,6 +115,7 @@ impl Grouping {
 impl ::std::fmt::Display for Grouping {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            Grouping::AgentStatus => write!(f, "AGENT_STATUS"),
             Grouping::Channel => write!(f, "CHANNEL"),
             Grouping::Queue => write!(f, "QUEUE"),
             Grouping::RoutingProfile => write!(f, "ROUTING_PROFILE"),

@@ -33,6 +33,8 @@ pub struct GetRunTaskOutput {
     pub instance_type: ::std::option::Option<::std::string::String>,
     /// <p>The reason a task has failed.</p>
     pub failure_reason: ::std::option::Option<::std::string::String>,
+    /// <p>Details about the container image that this task uses.</p>
+    pub image_details: ::std::option::Option<crate::types::ImageDetails>,
     _request_id: Option<String>,
 }
 impl GetRunTaskOutput {
@@ -96,6 +98,10 @@ impl GetRunTaskOutput {
     pub fn failure_reason(&self) -> ::std::option::Option<&str> {
         self.failure_reason.as_deref()
     }
+    /// <p>Details about the container image that this task uses.</p>
+    pub fn image_details(&self) -> ::std::option::Option<&crate::types::ImageDetails> {
+        self.image_details.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetRunTaskOutput {
     fn request_id(&self) -> Option<&str> {
@@ -128,6 +134,7 @@ pub struct GetRunTaskOutputBuilder {
     pub(crate) gpus: ::std::option::Option<i32>,
     pub(crate) instance_type: ::std::option::Option<::std::string::String>,
     pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
+    pub(crate) image_details: ::std::option::Option<crate::types::ImageDetails>,
     _request_id: Option<String>,
 }
 impl GetRunTaskOutputBuilder {
@@ -341,6 +348,20 @@ impl GetRunTaskOutputBuilder {
     pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.failure_reason
     }
+    /// <p>Details about the container image that this task uses.</p>
+    pub fn image_details(mut self, input: crate::types::ImageDetails) -> Self {
+        self.image_details = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Details about the container image that this task uses.</p>
+    pub fn set_image_details(mut self, input: ::std::option::Option<crate::types::ImageDetails>) -> Self {
+        self.image_details = input;
+        self
+    }
+    /// <p>Details about the container image that this task uses.</p>
+    pub fn get_image_details(&self) -> &::std::option::Option<crate::types::ImageDetails> {
+        &self.image_details
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -368,6 +389,7 @@ impl GetRunTaskOutputBuilder {
             gpus: self.gpus,
             instance_type: self.instance_type,
             failure_reason: self.failure_reason,
+            image_details: self.image_details,
             _request_id: self._request_id,
         }
     }

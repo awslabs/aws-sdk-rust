@@ -22,7 +22,7 @@ impl crate::operation::get_read_set_metadata::builders::GetReadSetMetadataInputB
 }
 /// Fluent builder constructing a request to `GetReadSetMetadata`.
 ///
-/// <p>Gets details about a read set.</p>
+/// <p>Retrieves the metadata for a read set from a sequence store in JSON format. This operation does not return tags. To retrieve the list of tags for a read set, use the <code>ListTagsForResource</code> API operation.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetReadSetMetadataFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

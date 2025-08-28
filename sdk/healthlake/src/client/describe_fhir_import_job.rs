@@ -3,10 +3,10 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeFHIRImportJob`](crate::operation::describe_fhir_import_job::builders::DescribeFHIRImportJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`datastore_id(impl Into<String>)`](crate::operation::describe_fhir_import_job::builders::DescribeFHIRImportJobFluentBuilder::datastore_id) / [`set_datastore_id(Option<String>)`](crate::operation::describe_fhir_import_job::builders::DescribeFHIRImportJobFluentBuilder::set_datastore_id):<br>required: **true**<br><p>The AWS-generated ID of the data store.</p><br>
-    ///   - [`job_id(impl Into<String>)`](crate::operation::describe_fhir_import_job::builders::DescribeFHIRImportJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::describe_fhir_import_job::builders::DescribeFHIRImportJobFluentBuilder::set_job_id):<br>required: **true**<br><p>The AWS-generated job ID.</p><br>
+    ///   - [`datastore_id(impl Into<String>)`](crate::operation::describe_fhir_import_job::builders::DescribeFHIRImportJobFluentBuilder::datastore_id) / [`set_datastore_id(Option<String>)`](crate::operation::describe_fhir_import_job::builders::DescribeFHIRImportJobFluentBuilder::set_datastore_id):<br>required: **true**<br><p>The data store identifier.</p><br>
+    ///   - [`job_id(impl Into<String>)`](crate::operation::describe_fhir_import_job::builders::DescribeFHIRImportJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::describe_fhir_import_job::builders::DescribeFHIRImportJobFluentBuilder::set_job_id):<br>required: **true**<br><p>The import job identifier.</p><br>
     /// - On success, responds with [`DescribeFhirImportJobOutput`](crate::operation::describe_fhir_import_job::DescribeFhirImportJobOutput) with field(s):
-    ///   - [`import_job_properties(Option<ImportJobProperties>)`](crate::operation::describe_fhir_import_job::DescribeFhirImportJobOutput::import_job_properties): <p>The properties of the Import job request, including the ID, ARN, name, status of the job, and the progress report of the job.</p>
+    ///   - [`import_job_properties(Option<ImportJobProperties>)`](crate::operation::describe_fhir_import_job::DescribeFhirImportJobOutput::import_job_properties): <p>The import job properties.</p>
     /// - On failure, responds with [`SdkError<DescribeFHIRImportJobError>`](crate::operation::describe_fhir_import_job::DescribeFHIRImportJobError)
     pub fn describe_fhir_import_job(&self) -> crate::operation::describe_fhir_import_job::builders::DescribeFHIRImportJobFluentBuilder {
         crate::operation::describe_fhir_import_job::builders::DescribeFHIRImportJobFluentBuilder::new(self.handle.clone())

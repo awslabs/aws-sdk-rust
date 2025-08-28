@@ -31,6 +31,8 @@ pub(crate) mod shape_get_application;
 
 pub(crate) mod shape_get_component;
 
+pub(crate) mod shape_get_configuration_check_operation;
+
 pub(crate) mod shape_get_database;
 
 pub(crate) mod shape_get_operation;
@@ -41,11 +43,19 @@ pub(crate) mod shape_list_applications;
 
 pub(crate) mod shape_list_components;
 
+pub(crate) mod shape_list_configuration_check_definitions;
+
+pub(crate) mod shape_list_configuration_check_operations;
+
 pub(crate) mod shape_list_databases;
 
 pub(crate) mod shape_list_operation_events;
 
 pub(crate) mod shape_list_operations;
+
+pub(crate) mod shape_list_sub_check_results;
+
+pub(crate) mod shape_list_sub_check_rule_results;
 
 pub(crate) mod shape_list_tags_for_resource;
 
@@ -56,6 +66,8 @@ pub(crate) mod shape_register_application;
 pub(crate) mod shape_start_application;
 
 pub(crate) mod shape_start_application_refresh;
+
+pub(crate) mod shape_start_configuration_checks;
 
 pub(crate) mod shape_stop_application;
 
@@ -83,6 +95,8 @@ pub(crate) mod shape_get_application_input;
 
 pub(crate) mod shape_get_component_input;
 
+pub(crate) mod shape_get_configuration_check_operation_input;
+
 pub(crate) mod shape_get_database_input;
 
 pub(crate) mod shape_get_operation_input;
@@ -95,11 +109,19 @@ pub(crate) mod shape_list_applications_input;
 
 pub(crate) mod shape_list_components_input;
 
+pub(crate) mod shape_list_configuration_check_definitions_input;
+
+pub(crate) mod shape_list_configuration_check_operations_input;
+
 pub(crate) mod shape_list_databases_input;
 
 pub(crate) mod shape_list_operation_events_input;
 
 pub(crate) mod shape_list_operations_input;
+
+pub(crate) mod shape_list_sub_check_results_input;
+
+pub(crate) mod shape_list_sub_check_rule_results_input;
 
 pub(crate) mod shape_put_resource_permission_input;
 
@@ -110,6 +132,8 @@ pub(crate) mod shape_resource_not_found_exception;
 pub(crate) mod shape_start_application_input;
 
 pub(crate) mod shape_start_application_refresh_input;
+
+pub(crate) mod shape_start_configuration_checks_input;
 
 pub(crate) mod shape_stop_application_input;
 
@@ -135,6 +159,12 @@ pub(crate) mod shape_component_info;
 
 pub(crate) mod shape_component_summary_list;
 
+pub(crate) mod shape_configuration_check_definition_list;
+
+pub(crate) mod shape_configuration_check_operation;
+
+pub(crate) mod shape_configuration_check_operation_list;
+
 pub(crate) mod shape_database;
 
 pub(crate) mod shape_database_summary_list;
@@ -148,6 +178,10 @@ pub(crate) mod shape_operation_event_list;
 pub(crate) mod shape_operation_id_list;
 
 pub(crate) mod shape_operation_list;
+
+pub(crate) mod shape_rule_result_list;
+
+pub(crate) mod shape_sub_check_result_list;
 
 pub(crate) mod shape_tag_map;
 
@@ -165,6 +199,8 @@ pub(crate) mod shape_component_id_list;
 
 pub(crate) mod shape_component_summary;
 
+pub(crate) mod shape_configuration_check_definition;
+
 pub(crate) mod shape_database_connection;
 
 pub(crate) mod shape_database_id_list;
@@ -179,10 +215,22 @@ pub(crate) mod shape_operation_properties;
 
 pub(crate) mod shape_resilience;
 
+pub(crate) mod shape_rule_result;
+
+pub(crate) mod shape_rule_status_counts;
+
+pub(crate) mod shape_sub_check_result;
+
+pub(crate) mod shape_application_type_list;
+
 pub(crate) mod shape_host;
 
 pub(crate) mod shape_ip_address_list;
 
 pub(crate) mod shape_resource;
+
+pub(crate) mod shape_rule_result_metadata;
+
+pub(crate) mod shape_sub_check_references_list;
 
 pub(crate) mod shape_ip_address_member;

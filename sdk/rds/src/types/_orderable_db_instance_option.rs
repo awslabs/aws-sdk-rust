@@ -81,6 +81,8 @@ pub struct OrderableDbInstanceOption {
     pub max_storage_throughput_per_iops: ::std::option::Option<f64>,
     /// <p>Indicates whether a DB instance supports using a dedicated log volume (DLV).</p>
     pub supports_dedicated_log_volume: ::std::option::Option<bool>,
+    /// <p>Indicates whether a DB instance supports HTTP endpoints.</p>
+    pub supports_http_endpoint: ::std::option::Option<bool>,
 }
 impl OrderableDbInstanceOption {
     /// <p>The engine type of a DB instance.</p>
@@ -241,6 +243,10 @@ impl OrderableDbInstanceOption {
     pub fn supports_dedicated_log_volume(&self) -> ::std::option::Option<bool> {
         self.supports_dedicated_log_volume
     }
+    /// <p>Indicates whether a DB instance supports HTTP endpoints.</p>
+    pub fn supports_http_endpoint(&self) -> ::std::option::Option<bool> {
+        self.supports_http_endpoint
+    }
 }
 impl OrderableDbInstanceOption {
     /// Creates a new builder-style object to manufacture [`OrderableDbInstanceOption`](crate::types::OrderableDbInstanceOption).
@@ -289,6 +295,7 @@ pub struct OrderableDbInstanceOptionBuilder {
     pub(crate) min_storage_throughput_per_iops: ::std::option::Option<f64>,
     pub(crate) max_storage_throughput_per_iops: ::std::option::Option<f64>,
     pub(crate) supports_dedicated_log_volume: ::std::option::Option<bool>,
+    pub(crate) supports_http_endpoint: ::std::option::Option<bool>,
 }
 impl OrderableDbInstanceOptionBuilder {
     /// <p>The engine type of a DB instance.</p>
@@ -840,6 +847,20 @@ impl OrderableDbInstanceOptionBuilder {
     pub fn get_supports_dedicated_log_volume(&self) -> &::std::option::Option<bool> {
         &self.supports_dedicated_log_volume
     }
+    /// <p>Indicates whether a DB instance supports HTTP endpoints.</p>
+    pub fn supports_http_endpoint(mut self, input: bool) -> Self {
+        self.supports_http_endpoint = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether a DB instance supports HTTP endpoints.</p>
+    pub fn set_supports_http_endpoint(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.supports_http_endpoint = input;
+        self
+    }
+    /// <p>Indicates whether a DB instance supports HTTP endpoints.</p>
+    pub fn get_supports_http_endpoint(&self) -> &::std::option::Option<bool> {
+        &self.supports_http_endpoint
+    }
     /// Consumes the builder and constructs a [`OrderableDbInstanceOption`](crate::types::OrderableDbInstanceOption).
     pub fn build(self) -> crate::types::OrderableDbInstanceOption {
         crate::types::OrderableDbInstanceOption {
@@ -879,6 +900,7 @@ impl OrderableDbInstanceOptionBuilder {
             min_storage_throughput_per_iops: self.min_storage_throughput_per_iops,
             max_storage_throughput_per_iops: self.max_storage_throughput_per_iops,
             supports_dedicated_log_volume: self.supports_dedicated_log_volume,
+            supports_http_endpoint: self.supports_http_endpoint,
         }
     }
 }

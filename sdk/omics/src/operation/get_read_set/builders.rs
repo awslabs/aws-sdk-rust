@@ -22,7 +22,7 @@ impl crate::operation::get_read_set::builders::GetReadSetInputBuilder {
 }
 /// Fluent builder constructing a request to `GetReadSet`.
 ///
-/// <p>Gets a file from a read set.</p>
+/// <p>Retrieves detailed information from parts of a read set and returns the read set in the same format that it was uploaded. You must have read sets uploaded to your sequence store in order to run this operation.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetReadSetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

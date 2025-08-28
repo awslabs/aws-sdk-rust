@@ -9,17 +9,17 @@ pub struct CreateSequenceStoreInput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Server-side encryption (SSE) settings for the store.</p>
     pub sse_config: ::std::option::Option<crate::types::SseConfig>,
-    /// <p>Tags for the store.</p>
+    /// <p>Tags for the store. You can configure up to 50 tags.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p>To ensure that requests don't run multiple times, specify a unique token for each request.</p>
+    /// <p>An idempotency token used to dedupe retry requests so that duplicate runs are not created.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
-    /// <p>An S3 location that is used to store files that have failed a direct upload.</p>
+    /// <p>An S3 location that is used to store files that have failed a direct upload. You can add or change the <code>fallbackLocation</code> after creating a sequence store. This is not required if you are uploading files from a different S3 bucket.</p>
     pub fallback_location: ::std::option::Option<::std::string::String>,
-    /// <p>The ETag algorithm family to use for ingested read sets.</p>
+    /// <p>The ETag algorithm family to use for ingested read sets. The default value is MD5up. For more information on ETags, see <a href="https://docs.aws.amazon.com/omics/latest/dev/etags-and-provenance.html">ETags and data provenance</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.</p>
     pub e_tag_algorithm_family: ::std::option::Option<crate::types::ETagAlgorithmFamily>,
-    /// <p>The tags keys to propagate to the S3 objects associated with read sets in the sequence store.</p>
+    /// <p>The tags keys to propagate to the S3 objects associated with read sets in the sequence store. These tags can be used as input to add metadata to your read sets.</p>
     pub propagated_set_level_tags: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>S3 access configuration parameters</p>
+    /// <p>S3 access configuration parameters. This specifies the parameters needed to access logs stored in S3 buckets. The S3 bucket must be in the same region and account as the sequence store.</p>
     pub s3_access_config: ::std::option::Option<crate::types::S3AccessConfig>,
 }
 impl CreateSequenceStoreInput {
@@ -35,29 +35,29 @@ impl CreateSequenceStoreInput {
     pub fn sse_config(&self) -> ::std::option::Option<&crate::types::SseConfig> {
         self.sse_config.as_ref()
     }
-    /// <p>Tags for the store.</p>
+    /// <p>Tags for the store. You can configure up to 50 tags.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
-    /// <p>To ensure that requests don't run multiple times, specify a unique token for each request.</p>
+    /// <p>An idempotency token used to dedupe retry requests so that duplicate runs are not created.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>An S3 location that is used to store files that have failed a direct upload.</p>
+    /// <p>An S3 location that is used to store files that have failed a direct upload. You can add or change the <code>fallbackLocation</code> after creating a sequence store. This is not required if you are uploading files from a different S3 bucket.</p>
     pub fn fallback_location(&self) -> ::std::option::Option<&str> {
         self.fallback_location.as_deref()
     }
-    /// <p>The ETag algorithm family to use for ingested read sets.</p>
+    /// <p>The ETag algorithm family to use for ingested read sets. The default value is MD5up. For more information on ETags, see <a href="https://docs.aws.amazon.com/omics/latest/dev/etags-and-provenance.html">ETags and data provenance</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.</p>
     pub fn e_tag_algorithm_family(&self) -> ::std::option::Option<&crate::types::ETagAlgorithmFamily> {
         self.e_tag_algorithm_family.as_ref()
     }
-    /// <p>The tags keys to propagate to the S3 objects associated with read sets in the sequence store.</p>
+    /// <p>The tags keys to propagate to the S3 objects associated with read sets in the sequence store. These tags can be used as input to add metadata to your read sets.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.propagated_set_level_tags.is_none()`.
     pub fn propagated_set_level_tags(&self) -> &[::std::string::String] {
         self.propagated_set_level_tags.as_deref().unwrap_or_default()
     }
-    /// <p>S3 access configuration parameters</p>
+    /// <p>S3 access configuration parameters. This specifies the parameters needed to access logs stored in S3 buckets. The S3 bucket must be in the same region and account as the sequence store.</p>
     pub fn s3_access_config(&self) -> ::std::option::Option<&crate::types::S3AccessConfig> {
         self.s3_access_config.as_ref()
     }
@@ -131,61 +131,61 @@ impl CreateSequenceStoreInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>Tags for the store.</p>
+    /// <p>Tags for the store. You can configure up to 50 tags.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>Tags for the store.</p>
+    /// <p>Tags for the store. You can configure up to 50 tags.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>Tags for the store.</p>
+    /// <p>Tags for the store. You can configure up to 50 tags.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
-    /// <p>To ensure that requests don't run multiple times, specify a unique token for each request.</p>
+    /// <p>An idempotency token used to dedupe retry requests so that duplicate runs are not created.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>To ensure that requests don't run multiple times, specify a unique token for each request.</p>
+    /// <p>An idempotency token used to dedupe retry requests so that duplicate runs are not created.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
     }
-    /// <p>To ensure that requests don't run multiple times, specify a unique token for each request.</p>
+    /// <p>An idempotency token used to dedupe retry requests so that duplicate runs are not created.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
-    /// <p>An S3 location that is used to store files that have failed a direct upload.</p>
+    /// <p>An S3 location that is used to store files that have failed a direct upload. You can add or change the <code>fallbackLocation</code> after creating a sequence store. This is not required if you are uploading files from a different S3 bucket.</p>
     pub fn fallback_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fallback_location = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An S3 location that is used to store files that have failed a direct upload.</p>
+    /// <p>An S3 location that is used to store files that have failed a direct upload. You can add or change the <code>fallbackLocation</code> after creating a sequence store. This is not required if you are uploading files from a different S3 bucket.</p>
     pub fn set_fallback_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fallback_location = input;
         self
     }
-    /// <p>An S3 location that is used to store files that have failed a direct upload.</p>
+    /// <p>An S3 location that is used to store files that have failed a direct upload. You can add or change the <code>fallbackLocation</code> after creating a sequence store. This is not required if you are uploading files from a different S3 bucket.</p>
     pub fn get_fallback_location(&self) -> &::std::option::Option<::std::string::String> {
         &self.fallback_location
     }
-    /// <p>The ETag algorithm family to use for ingested read sets.</p>
+    /// <p>The ETag algorithm family to use for ingested read sets. The default value is MD5up. For more information on ETags, see <a href="https://docs.aws.amazon.com/omics/latest/dev/etags-and-provenance.html">ETags and data provenance</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.</p>
     pub fn e_tag_algorithm_family(mut self, input: crate::types::ETagAlgorithmFamily) -> Self {
         self.e_tag_algorithm_family = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The ETag algorithm family to use for ingested read sets.</p>
+    /// <p>The ETag algorithm family to use for ingested read sets. The default value is MD5up. For more information on ETags, see <a href="https://docs.aws.amazon.com/omics/latest/dev/etags-and-provenance.html">ETags and data provenance</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.</p>
     pub fn set_e_tag_algorithm_family(mut self, input: ::std::option::Option<crate::types::ETagAlgorithmFamily>) -> Self {
         self.e_tag_algorithm_family = input;
         self
     }
-    /// <p>The ETag algorithm family to use for ingested read sets.</p>
+    /// <p>The ETag algorithm family to use for ingested read sets. The default value is MD5up. For more information on ETags, see <a href="https://docs.aws.amazon.com/omics/latest/dev/etags-and-provenance.html">ETags and data provenance</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.</p>
     pub fn get_e_tag_algorithm_family(&self) -> &::std::option::Option<crate::types::ETagAlgorithmFamily> {
         &self.e_tag_algorithm_family
     }
@@ -193,33 +193,33 @@ impl CreateSequenceStoreInputBuilder {
     ///
     /// To override the contents of this collection use [`set_propagated_set_level_tags`](Self::set_propagated_set_level_tags).
     ///
-    /// <p>The tags keys to propagate to the S3 objects associated with read sets in the sequence store.</p>
+    /// <p>The tags keys to propagate to the S3 objects associated with read sets in the sequence store. These tags can be used as input to add metadata to your read sets.</p>
     pub fn propagated_set_level_tags(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.propagated_set_level_tags.unwrap_or_default();
         v.push(input.into());
         self.propagated_set_level_tags = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The tags keys to propagate to the S3 objects associated with read sets in the sequence store.</p>
+    /// <p>The tags keys to propagate to the S3 objects associated with read sets in the sequence store. These tags can be used as input to add metadata to your read sets.</p>
     pub fn set_propagated_set_level_tags(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.propagated_set_level_tags = input;
         self
     }
-    /// <p>The tags keys to propagate to the S3 objects associated with read sets in the sequence store.</p>
+    /// <p>The tags keys to propagate to the S3 objects associated with read sets in the sequence store. These tags can be used as input to add metadata to your read sets.</p>
     pub fn get_propagated_set_level_tags(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.propagated_set_level_tags
     }
-    /// <p>S3 access configuration parameters</p>
+    /// <p>S3 access configuration parameters. This specifies the parameters needed to access logs stored in S3 buckets. The S3 bucket must be in the same region and account as the sequence store.</p>
     pub fn s3_access_config(mut self, input: crate::types::S3AccessConfig) -> Self {
         self.s3_access_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>S3 access configuration parameters</p>
+    /// <p>S3 access configuration parameters. This specifies the parameters needed to access logs stored in S3 buckets. The S3 bucket must be in the same region and account as the sequence store.</p>
     pub fn set_s3_access_config(mut self, input: ::std::option::Option<crate::types::S3AccessConfig>) -> Self {
         self.s3_access_config = input;
         self
     }
-    /// <p>S3 access configuration parameters</p>
+    /// <p>S3 access configuration parameters. This specifies the parameters needed to access logs stored in S3 buckets. The S3 bucket must be in the same region and account as the sequence store.</p>
     pub fn get_s3_access_config(&self) -> &::std::option::Option<crate::types::S3AccessConfig> {
         &self.s3_access_config
     }

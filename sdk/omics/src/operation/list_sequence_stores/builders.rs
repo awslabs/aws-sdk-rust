@@ -22,7 +22,8 @@ impl crate::operation::list_sequence_stores::builders::ListSequenceStoresInputBu
 }
 /// Fluent builder constructing a request to `ListSequenceStores`.
 ///
-/// <p>Retrieves a list of sequence stores.</p>
+/// <p>Retrieves a list of sequence stores and returns each sequence store's metadata.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/create-sequence-store.html">Creating a HealthOmics sequence store</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListSequenceStoresFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

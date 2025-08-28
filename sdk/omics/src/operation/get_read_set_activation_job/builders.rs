@@ -22,7 +22,7 @@ impl crate::operation::get_read_set_activation_job::builders::GetReadSetActivati
 }
 /// Fluent builder constructing a request to `GetReadSetActivationJob`.
 ///
-/// <p>Gets information about a read set activation job.</p>
+/// <p>Returns detailed information about the status of a read set activation job in JSON format.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetReadSetActivationJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

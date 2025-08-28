@@ -21,6 +21,7 @@ impl super::Client {
     ///   - [`gpus(Option<i32>)`](crate::operation::get_run_task::GetRunTaskOutput::gpus): <p>The number of Graphics Processing Units (GPU) specified in the task.</p>
     ///   - [`instance_type(Option<String>)`](crate::operation::get_run_task::GetRunTaskOutput::instance_type): <p>The instance type for a task.</p>
     ///   - [`failure_reason(Option<String>)`](crate::operation::get_run_task::GetRunTaskOutput::failure_reason): <p>The reason a task has failed.</p>
+    ///   - [`image_details(Option<ImageDetails>)`](crate::operation::get_run_task::GetRunTaskOutput::image_details): <p>Details about the container image that this task uses.</p>
     /// - On failure, responds with [`SdkError<GetRunTaskError>`](crate::operation::get_run_task::GetRunTaskError)
     pub fn get_run_task(&self) -> crate::operation::get_run_task::builders::GetRunTaskFluentBuilder {
         crate::operation::get_run_task::builders::GetRunTaskFluentBuilder::new(self.handle.clone())

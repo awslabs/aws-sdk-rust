@@ -22,7 +22,7 @@ impl crate::operation::list_reference_import_jobs::builders::ListReferenceImport
 }
 /// Fluent builder constructing a request to `ListReferenceImportJobs`.
 ///
-/// <p>Retrieves a list of reference import jobs.</p>
+/// <p>Retrieves the metadata of one or more reference import jobs for a reference store.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListReferenceImportJobsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

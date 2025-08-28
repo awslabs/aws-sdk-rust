@@ -22,7 +22,7 @@ impl crate::operation::get_read_set_import_job::builders::GetReadSetImportJobInp
 }
 /// Fluent builder constructing a request to `GetReadSetImportJob`.
 ///
-/// <p>Gets information about a read set import job.</p>
+/// <p>Gets detailed and status information about a read set import job and returns the data in JSON format.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetReadSetImportJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -22,7 +22,7 @@ impl crate::operation::describe_fhir_import_job::builders::DescribeFhirImportJob
 }
 /// Fluent builder constructing a request to `DescribeFHIRImportJob`.
 ///
-/// <p>Displays the properties of a FHIR import job, including the ID, ARN, name, and the status of the job.</p>
+/// <p>Get the import job properties to learn more about the job or job progress.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeFHIRImportJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl DescribeFHIRImportJobFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The AWS-generated ID of the data store.</p>
+    /// <p>The data store identifier.</p>
     pub fn datastore_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.datastore_id(input.into());
         self
     }
-    /// <p>The AWS-generated ID of the data store.</p>
+    /// <p>The data store identifier.</p>
     pub fn set_datastore_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_datastore_id(input);
         self
     }
-    /// <p>The AWS-generated ID of the data store.</p>
+    /// <p>The data store identifier.</p>
     pub fn get_datastore_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_datastore_id()
     }
-    /// <p>The AWS-generated job ID.</p>
+    /// <p>The import job identifier.</p>
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.job_id(input.into());
         self
     }
-    /// <p>The AWS-generated job ID.</p>
+    /// <p>The import job identifier.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_job_id(input);
         self
     }
-    /// <p>The AWS-generated job ID.</p>
+    /// <p>The import job identifier.</p>
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_job_id()
     }

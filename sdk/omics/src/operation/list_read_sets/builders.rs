@@ -22,7 +22,7 @@ impl crate::operation::list_read_sets::builders::ListReadSetsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListReadSets`.
 ///
-/// <p>Retrieves a list of read sets.</p>
+/// <p>Retrieves a list of read sets from a sequence store ID and returns the metadata in JSON format.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListReadSetsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

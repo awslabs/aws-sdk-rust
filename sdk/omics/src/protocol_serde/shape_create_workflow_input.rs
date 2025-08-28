@@ -6,79 +6,88 @@ pub fn ser_create_workflow_input_input(
     if let Some(var_1) = &input.accelerators {
         object.key("accelerators").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.definition_repository {
+    if let Some(var_2) = &input.container_registry_map {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("definitionRepository").start_object();
-        crate::protocol_serde::shape_definition_repository::ser_definition_repository(&mut object_3, var_2)?;
+        let mut object_3 = object.key("containerRegistryMap").start_object();
+        crate::protocol_serde::shape_container_registry_map::ser_container_registry_map(&mut object_3, var_2)?;
         object_3.finish();
     }
-    if let Some(var_4) = &input.definition_uri {
-        object.key("definitionUri").string(var_4.as_str());
+    if let Some(var_4) = &input.container_registry_map_uri {
+        object.key("containerRegistryMapUri").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.definition_zip {
-        object.key("definitionZip").string_unchecked(&::aws_smithy_types::base64::encode(var_5));
-    }
-    if let Some(var_6) = &input.description {
-        object.key("description").string(var_6.as_str());
-    }
-    if let Some(var_7) = &input.engine {
-        object.key("engine").string(var_7.as_str());
-    }
-    if let Some(var_8) = &input.main {
-        object.key("main").string(var_8.as_str());
-    }
-    if let Some(var_9) = &input.name {
-        object.key("name").string(var_9.as_str());
-    }
-    if let Some(var_10) = &input.parameter_template {
+    if let Some(var_5) = &input.definition_repository {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("parameterTemplate").start_object();
-        for (key_12, value_13) in var_10 {
+        let mut object_6 = object.key("definitionRepository").start_object();
+        crate::protocol_serde::shape_definition_repository::ser_definition_repository(&mut object_6, var_5)?;
+        object_6.finish();
+    }
+    if let Some(var_7) = &input.definition_uri {
+        object.key("definitionUri").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.definition_zip {
+        object.key("definitionZip").string_unchecked(&::aws_smithy_types::base64::encode(var_8));
+    }
+    if let Some(var_9) = &input.description {
+        object.key("description").string(var_9.as_str());
+    }
+    if let Some(var_10) = &input.engine {
+        object.key("engine").string(var_10.as_str());
+    }
+    if let Some(var_11) = &input.main {
+        object.key("main").string(var_11.as_str());
+    }
+    if let Some(var_12) = &input.name {
+        object.key("name").string(var_12.as_str());
+    }
+    if let Some(var_13) = &input.parameter_template {
+        #[allow(unused_mut)]
+        let mut object_14 = object.key("parameterTemplate").start_object();
+        for (key_15, value_16) in var_13 {
             {
                 #[allow(unused_mut)]
-                let mut object_14 = object_11.key(key_12.as_str()).start_object();
-                crate::protocol_serde::shape_workflow_parameter::ser_workflow_parameter(&mut object_14, value_13)?;
-                object_14.finish();
+                let mut object_17 = object_14.key(key_15.as_str()).start_object();
+                crate::protocol_serde::shape_workflow_parameter::ser_workflow_parameter(&mut object_17, value_16)?;
+                object_17.finish();
             }
         }
-        object_11.finish();
+        object_14.finish();
     }
-    if let Some(var_15) = &input.parameter_template_path {
-        object.key("parameterTemplatePath").string(var_15.as_str());
+    if let Some(var_18) = &input.parameter_template_path {
+        object.key("parameterTemplatePath").string(var_18.as_str());
     }
-    if let Some(var_16) = &input.readme_markdown {
-        object.key("readmeMarkdown").string(var_16.as_str());
+    if let Some(var_19) = &input.readme_markdown {
+        object.key("readmeMarkdown").string(var_19.as_str());
     }
-    if let Some(var_17) = &input.readme_path {
-        object.key("readmePath").string(var_17.as_str());
+    if let Some(var_20) = &input.readme_path {
+        object.key("readmePath").string(var_20.as_str());
     }
-    if let Some(var_18) = &input.readme_uri {
-        object.key("readmeUri").string(var_18.as_str());
+    if let Some(var_21) = &input.readme_uri {
+        object.key("readmeUri").string(var_21.as_str());
     }
-    if let Some(var_19) = &input.request_id {
-        object.key("requestId").string(var_19.as_str());
+    if let Some(var_22) = &input.request_id {
+        object.key("requestId").string(var_22.as_str());
     }
-    if let Some(var_20) = &input.storage_capacity {
+    if let Some(var_23) = &input.storage_capacity {
         object.key("storageCapacity").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_20).into()),
+            ::aws_smithy_types::Number::NegInt((*var_23).into()),
         );
     }
-    if let Some(var_21) = &input.storage_type {
-        object.key("storageType").string(var_21.as_str());
+    if let Some(var_24) = &input.storage_type {
+        object.key("storageType").string(var_24.as_str());
     }
-    if let Some(var_22) = &input.tags {
+    if let Some(var_25) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_23 = object.key("tags").start_object();
-        for (key_24, value_25) in var_22 {
+        let mut object_26 = object.key("tags").start_object();
+        for (key_27, value_28) in var_25 {
             {
-                object_23.key(key_24.as_str()).string(value_25.as_str());
+                object_26.key(key_27.as_str()).string(value_28.as_str());
             }
         }
-        object_23.finish();
+        object_26.finish();
     }
-    if let Some(var_26) = &input.workflow_bucket_owner_id {
-        object.key("workflowBucketOwnerId").string(var_26.as_str());
+    if let Some(var_29) = &input.workflow_bucket_owner_id {
+        object.key("workflowBucketOwnerId").string(var_29.as_str());
     }
     Ok(())
 }

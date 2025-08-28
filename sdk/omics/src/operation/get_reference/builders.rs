@@ -22,7 +22,8 @@ impl crate::operation::get_reference::builders::GetReferenceInputBuilder {
 }
 /// Fluent builder constructing a request to `GetReference`.
 ///
-/// <p>Gets a reference file.</p>
+/// <p>Downloads parts of data from a reference genome and returns the reference file in the same format that it was uploaded.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/create-reference-store.html">Creating a HealthOmics reference store</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetReferenceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

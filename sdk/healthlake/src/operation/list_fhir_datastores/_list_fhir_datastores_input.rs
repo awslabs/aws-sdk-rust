@@ -3,23 +3,23 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListFhirDatastoresInput {
-    /// <p>Lists all filters associated with a FHIR data store request.</p>
+    /// <p>List all filters associated with a FHIR data store request.</p>
     pub filter: ::std::option::Option<crate::types::DatastoreFilter>,
-    /// <p>Fetches the next page of data stores when results are paginated.</p>
+    /// <p>The token used to retrieve the next page of data stores when results are paginated.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>The maximum number of data stores returned in a single page of a ListFHIRDatastoresRequest call.</p>
+    /// <p>The maximum number of data stores returned on a page.</p>
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListFhirDatastoresInput {
-    /// <p>Lists all filters associated with a FHIR data store request.</p>
+    /// <p>List all filters associated with a FHIR data store request.</p>
     pub fn filter(&self) -> ::std::option::Option<&crate::types::DatastoreFilter> {
         self.filter.as_ref()
     }
-    /// <p>Fetches the next page of data stores when results are paginated.</p>
+    /// <p>The token used to retrieve the next page of data stores when results are paginated.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of data stores returned in a single page of a ListFHIRDatastoresRequest call.</p>
+    /// <p>The maximum number of data stores returned on a page.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -40,45 +40,45 @@ pub struct ListFhirDatastoresInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
 }
 impl ListFhirDatastoresInputBuilder {
-    /// <p>Lists all filters associated with a FHIR data store request.</p>
+    /// <p>List all filters associated with a FHIR data store request.</p>
     pub fn filter(mut self, input: crate::types::DatastoreFilter) -> Self {
         self.filter = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Lists all filters associated with a FHIR data store request.</p>
+    /// <p>List all filters associated with a FHIR data store request.</p>
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::DatastoreFilter>) -> Self {
         self.filter = input;
         self
     }
-    /// <p>Lists all filters associated with a FHIR data store request.</p>
+    /// <p>List all filters associated with a FHIR data store request.</p>
     pub fn get_filter(&self) -> &::std::option::Option<crate::types::DatastoreFilter> {
         &self.filter
     }
-    /// <p>Fetches the next page of data stores when results are paginated.</p>
+    /// <p>The token used to retrieve the next page of data stores when results are paginated.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Fetches the next page of data stores when results are paginated.</p>
+    /// <p>The token used to retrieve the next page of data stores when results are paginated.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>Fetches the next page of data stores when results are paginated.</p>
+    /// <p>The token used to retrieve the next page of data stores when results are paginated.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
-    /// <p>The maximum number of data stores returned in a single page of a ListFHIRDatastoresRequest call.</p>
+    /// <p>The maximum number of data stores returned on a page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of data stores returned in a single page of a ListFHIRDatastoresRequest call.</p>
+    /// <p>The maximum number of data stores returned on a page.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>The maximum number of data stores returned in a single page of a ListFHIRDatastoresRequest call.</p>
+    /// <p>The maximum number of data stores returned on a page.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }

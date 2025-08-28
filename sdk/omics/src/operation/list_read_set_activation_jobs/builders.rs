@@ -22,7 +22,7 @@ impl crate::operation::list_read_set_activation_jobs::builders::ListReadSetActiv
 }
 /// Fluent builder constructing a request to `ListReadSetActivationJobs`.
 ///
-/// <p>Retrieves a list of read set activation jobs.</p>
+/// <p>Retrieves a list of read set activation jobs and returns the metadata in a JSON formatted output. To extract metadata from a read set activation job, use the <code>GetReadSetActivationJob</code> API operation.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListReadSetActivationJobsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

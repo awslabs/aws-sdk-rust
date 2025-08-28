@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeFHIRDatastore`](crate::operation::describe_fhir_datastore::builders::DescribeFHIRDatastoreFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`datastore_id(impl Into<String>)`](crate::operation::describe_fhir_datastore::builders::DescribeFHIRDatastoreFluentBuilder::datastore_id) / [`set_datastore_id(Option<String>)`](crate::operation::describe_fhir_datastore::builders::DescribeFHIRDatastoreFluentBuilder::set_datastore_id):<br>required: **true**<br><p>The AWS-generated data store ID.</p><br>
+    ///   - [`datastore_id(impl Into<String>)`](crate::operation::describe_fhir_datastore::builders::DescribeFHIRDatastoreFluentBuilder::datastore_id) / [`set_datastore_id(Option<String>)`](crate::operation::describe_fhir_datastore::builders::DescribeFHIRDatastoreFluentBuilder::set_datastore_id):<br>required: **true**<br><p>The data store identifier.</p><br>
     /// - On success, responds with [`DescribeFhirDatastoreOutput`](crate::operation::describe_fhir_datastore::DescribeFhirDatastoreOutput) with field(s):
-    ///   - [`datastore_properties(Option<DatastoreProperties>)`](crate::operation::describe_fhir_datastore::DescribeFhirDatastoreOutput::datastore_properties): <p>All properties associated with a data store, including the data store ID, data store ARN, data store name, data store status, when the data store was created, data store type version, and the data store's endpoint.</p>
+    ///   - [`datastore_properties(Option<DatastoreProperties>)`](crate::operation::describe_fhir_datastore::DescribeFhirDatastoreOutput::datastore_properties): <p>The data store properties.</p>
     /// - On failure, responds with [`SdkError<DescribeFHIRDatastoreError>`](crate::operation::describe_fhir_datastore::DescribeFHIRDatastoreError)
     pub fn describe_fhir_datastore(&self) -> crate::operation::describe_fhir_datastore::builders::DescribeFHIRDatastoreFluentBuilder {
         crate::operation::describe_fhir_datastore::builders::DescribeFHIRDatastoreFluentBuilder::new(self.handle.clone())

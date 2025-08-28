@@ -105,7 +105,7 @@ impl ::std::fmt::Debug for GetStyleDescriptorInput {
         let mut formatter = f.debug_struct("GetStyleDescriptorInput");
         formatter.field("style", &self.style);
         formatter.field("color_scheme", &self.color_scheme);
-        formatter.field("political_view", &self.political_view);
+        formatter.field("political_view", &"*** Sensitive Data Redacted ***");
         formatter.field("key", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
@@ -307,7 +307,7 @@ impl ::std::fmt::Debug for GetStyleDescriptorInputBuilder {
         let mut formatter = f.debug_struct("GetStyleDescriptorInputBuilder");
         formatter.field("style", &self.style);
         formatter.field("color_scheme", &self.color_scheme);
-        formatter.field("political_view", &self.political_view);
+        formatter.field("political_view", &"*** Sensitive Data Redacted ***");
         formatter.field("key", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }

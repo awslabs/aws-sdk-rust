@@ -11,7 +11,7 @@ pub struct CreateSequenceStoreOutput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The store's description.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The store's SSE settings.</p>
+    /// <p>Server-side encryption (SSE) settings for the store. This contains the KMS key ARN that is used to encrypt read set objects.</p>
     pub sse_config: ::std::option::Option<crate::types::SseConfig>,
     /// <p>When the store was created.</p>
     pub creation_time: ::aws_smithy_types::DateTime,
@@ -48,7 +48,7 @@ impl CreateSequenceStoreOutput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The store's SSE settings.</p>
+    /// <p>Server-side encryption (SSE) settings for the store. This contains the KMS key ARN that is used to encrypt read set objects.</p>
     pub fn sse_config(&self) -> ::std::option::Option<&crate::types::SseConfig> {
         self.sse_config.as_ref()
     }
@@ -172,17 +172,17 @@ impl CreateSequenceStoreOutputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>The store's SSE settings.</p>
+    /// <p>Server-side encryption (SSE) settings for the store. This contains the KMS key ARN that is used to encrypt read set objects.</p>
     pub fn sse_config(mut self, input: crate::types::SseConfig) -> Self {
         self.sse_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The store's SSE settings.</p>
+    /// <p>Server-side encryption (SSE) settings for the store. This contains the KMS key ARN that is used to encrypt read set objects.</p>
     pub fn set_sse_config(mut self, input: ::std::option::Option<crate::types::SseConfig>) -> Self {
         self.sse_config = input;
         self
     }
-    /// <p>The store's SSE settings.</p>
+    /// <p>Server-side encryption (SSE) settings for the store. This contains the KMS key ARN that is used to encrypt read set objects.</p>
     pub fn get_sse_config(&self) -> &::std::option::Option<crate::types::SseConfig> {
         &self.sse_config
     }

@@ -22,7 +22,7 @@ impl crate::operation::describe_fhir_export_job::builders::DescribeFhirExportJob
 }
 /// Fluent builder constructing a request to `DescribeFHIRExportJob`.
 ///
-/// <p>Displays the properties of a FHIR export job, including the ID, ARN, name, and the status of the job.</p>
+/// <p>Get FHIR export job properties.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeFHIRExportJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl DescribeFHIRExportJobFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The AWS generated ID for the data store from which files are being exported from for an export job.</p>
+    /// <p>The data store identifier from which FHIR data is being exported from.</p>
     pub fn datastore_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.datastore_id(input.into());
         self
     }
-    /// <p>The AWS generated ID for the data store from which files are being exported from for an export job.</p>
+    /// <p>The data store identifier from which FHIR data is being exported from.</p>
     pub fn set_datastore_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_datastore_id(input);
         self
     }
-    /// <p>The AWS generated ID for the data store from which files are being exported from for an export job.</p>
+    /// <p>The data store identifier from which FHIR data is being exported from.</p>
     pub fn get_datastore_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_datastore_id()
     }
-    /// <p>The AWS generated ID for an export job.</p>
+    /// <p>The export job identifier.</p>
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.job_id(input.into());
         self
     }
-    /// <p>The AWS generated ID for an export job.</p>
+    /// <p>The export job identifier.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_job_id(input);
         self
     }
-    /// <p>The AWS generated ID for an export job.</p>
+    /// <p>The export job identifier.</p>
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_job_id()
     }

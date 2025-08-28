@@ -3,19 +3,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListFhirExportJobsOutput {
-    /// <p>The properties of listed FHIR export jobs, including the ID, ARN, name, and the status of the job.</p>
+    /// <p>The properties of listed FHIR export jobs.</p>
     pub export_job_properties_list: ::std::vec::Vec<crate::types::ExportJobProperties>,
-    /// <p>A pagination token used to identify the next page of results to return for a ListFHIRExportJobs query.</p>
+    /// <p>The pagination token used to identify the next page of results to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListFhirExportJobsOutput {
-    /// <p>The properties of listed FHIR export jobs, including the ID, ARN, name, and the status of the job.</p>
+    /// <p>The properties of listed FHIR export jobs.</p>
     pub fn export_job_properties_list(&self) -> &[crate::types::ExportJobProperties] {
         use std::ops::Deref;
         self.export_job_properties_list.deref()
     }
-    /// <p>A pagination token used to identify the next page of results to return for a ListFHIRExportJobs query.</p>
+    /// <p>The pagination token used to identify the next page of results to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -45,33 +45,33 @@ impl ListFhirExportJobsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_export_job_properties_list`](Self::set_export_job_properties_list).
     ///
-    /// <p>The properties of listed FHIR export jobs, including the ID, ARN, name, and the status of the job.</p>
+    /// <p>The properties of listed FHIR export jobs.</p>
     pub fn export_job_properties_list(mut self, input: crate::types::ExportJobProperties) -> Self {
         let mut v = self.export_job_properties_list.unwrap_or_default();
         v.push(input);
         self.export_job_properties_list = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The properties of listed FHIR export jobs, including the ID, ARN, name, and the status of the job.</p>
+    /// <p>The properties of listed FHIR export jobs.</p>
     pub fn set_export_job_properties_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExportJobProperties>>) -> Self {
         self.export_job_properties_list = input;
         self
     }
-    /// <p>The properties of listed FHIR export jobs, including the ID, ARN, name, and the status of the job.</p>
+    /// <p>The properties of listed FHIR export jobs.</p>
     pub fn get_export_job_properties_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExportJobProperties>> {
         &self.export_job_properties_list
     }
-    /// <p>A pagination token used to identify the next page of results to return for a ListFHIRExportJobs query.</p>
+    /// <p>The pagination token used to identify the next page of results to return.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A pagination token used to identify the next page of results to return for a ListFHIRExportJobs query.</p>
+    /// <p>The pagination token used to identify the next page of results to return.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>A pagination token used to identify the next page of results to return for a ListFHIRExportJobs query.</p>
+    /// <p>The pagination token used to identify the next page of results to return.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

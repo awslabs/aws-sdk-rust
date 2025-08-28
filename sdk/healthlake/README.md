@@ -1,6 +1,6 @@
 # aws-sdk-healthlake
 
-AWS HealthLake is a HIPAA eligibile service that allows customers to store, transform, query, and analyze their FHIR-formatted data in a consistent fashion in the cloud.
+This is the _AWS HealthLake API Reference_. For an introduction to the service, see [What is AWS HealthLake?](https://docs.aws.amazon.com/healthlake/latest/devguide/what-is.html) in the _AWS HealthLake Developer Guide_.
 
 ## Getting Started
 
@@ -14,7 +14,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-aws-sdk-healthlake = "1.84.0"
+aws-sdk-healthlake = "1.85.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

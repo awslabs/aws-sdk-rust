@@ -22,7 +22,8 @@ impl crate::operation::start_read_set_export_job::builders::StartReadSetExportJo
 }
 /// Fluent builder constructing a request to `StartReadSetExportJob`.
 ///
-/// <p>Exports a read set to Amazon S3.</p>
+/// <p>Starts a read set export job. When the export job is finished, the read set is exported to an Amazon S3 bucket which can be retrieved using the <code>GetReadSetExportJob</code> API operation.</p>
+/// <p>To monitor the status of the export job, use the <code>ListReadSetExportJobs</code> API operation.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartReadSetExportJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

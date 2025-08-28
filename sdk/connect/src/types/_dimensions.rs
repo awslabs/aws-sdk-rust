@@ -12,6 +12,8 @@ pub struct Dimensions {
     pub routing_profile: ::std::option::Option<crate::types::RoutingProfileReference>,
     /// <p>The expression of a step in a routing criteria.</p>
     pub routing_step_expression: ::std::option::Option<::std::string::String>,
+    /// <p>Information about the agent status assigned to the user.</p>
+    pub agent_status: ::std::option::Option<crate::types::AgentStatusIdentifier>,
 }
 impl Dimensions {
     /// <p>Information about the queue for which metrics are returned.</p>
@@ -30,6 +32,10 @@ impl Dimensions {
     pub fn routing_step_expression(&self) -> ::std::option::Option<&str> {
         self.routing_step_expression.as_deref()
     }
+    /// <p>Information about the agent status assigned to the user.</p>
+    pub fn agent_status(&self) -> ::std::option::Option<&crate::types::AgentStatusIdentifier> {
+        self.agent_status.as_ref()
+    }
 }
 impl Dimensions {
     /// Creates a new builder-style object to manufacture [`Dimensions`](crate::types::Dimensions).
@@ -46,6 +52,7 @@ pub struct DimensionsBuilder {
     pub(crate) channel: ::std::option::Option<crate::types::Channel>,
     pub(crate) routing_profile: ::std::option::Option<crate::types::RoutingProfileReference>,
     pub(crate) routing_step_expression: ::std::option::Option<::std::string::String>,
+    pub(crate) agent_status: ::std::option::Option<crate::types::AgentStatusIdentifier>,
 }
 impl DimensionsBuilder {
     /// <p>Information about the queue for which metrics are returned.</p>
@@ -104,6 +111,20 @@ impl DimensionsBuilder {
     pub fn get_routing_step_expression(&self) -> &::std::option::Option<::std::string::String> {
         &self.routing_step_expression
     }
+    /// <p>Information about the agent status assigned to the user.</p>
+    pub fn agent_status(mut self, input: crate::types::AgentStatusIdentifier) -> Self {
+        self.agent_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Information about the agent status assigned to the user.</p>
+    pub fn set_agent_status(mut self, input: ::std::option::Option<crate::types::AgentStatusIdentifier>) -> Self {
+        self.agent_status = input;
+        self
+    }
+    /// <p>Information about the agent status assigned to the user.</p>
+    pub fn get_agent_status(&self) -> &::std::option::Option<crate::types::AgentStatusIdentifier> {
+        &self.agent_status
+    }
     /// Consumes the builder and constructs a [`Dimensions`](crate::types::Dimensions).
     pub fn build(self) -> crate::types::Dimensions {
         crate::types::Dimensions {
@@ -111,6 +132,7 @@ impl DimensionsBuilder {
             channel: self.channel,
             routing_profile: self.routing_profile,
             routing_step_expression: self.routing_step_expression,
+            agent_status: self.agent_status,
         }
     }
 }
