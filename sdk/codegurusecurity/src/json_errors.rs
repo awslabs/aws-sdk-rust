@@ -36,7 +36,7 @@ struct ErrorBody<'a> {
     message: Option<Cow<'a, str>>,
 }
 
-fn parse_error_body(bytes: &[u8]) -> Result<ErrorBody, DeserializeError> {
+fn parse_error_body(bytes: &[u8]) -> Result<ErrorBody<'_>, DeserializeError> {
     let mut tokens = json_token_iter(bytes).peekable();
     let (mut typ, mut code, mut message) = (None, None, None);
     if let Some(Token::StartObject { .. }) = tokens.next().transpose()? {

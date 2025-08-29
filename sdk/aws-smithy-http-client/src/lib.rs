@@ -43,7 +43,7 @@ pub mod hyper_014 {
 #[cfg(feature = "default-client")]
 pub(crate) mod client;
 #[cfg(feature = "default-client")]
-pub use client::{default_connector, tls, Builder, Connector, ConnectorBuilder};
+pub use client::{default_connector, proxy, tls, Builder, Connector, ConnectorBuilder};
 
 #[cfg(feature = "test-util")]
 pub mod test_util;

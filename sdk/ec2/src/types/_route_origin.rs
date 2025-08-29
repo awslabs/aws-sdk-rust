@@ -12,6 +12,7 @@
 /// ```text
 /// # let routeorigin = unimplemented!();
 /// match routeorigin {
+///     RouteOrigin::Advertisement => { /* ... */ },
 ///     RouteOrigin::CreateRoute => { /* ... */ },
 ///     RouteOrigin::CreateRouteTable => { /* ... */ },
 ///     RouteOrigin::EnableVgwRoutePropagation => { /* ... */ },
@@ -44,6 +45,8 @@
 )]
 pub enum RouteOrigin {
     #[allow(missing_docs)] // documentation missing in model
+    Advertisement,
+    #[allow(missing_docs)] // documentation missing in model
     CreateRoute,
     #[allow(missing_docs)] // documentation missing in model
     CreateRouteTable,
@@ -56,6 +59,7 @@ pub enum RouteOrigin {
 impl ::std::convert::From<&str> for RouteOrigin {
     fn from(s: &str) -> Self {
         match s {
+            "Advertisement" => RouteOrigin::Advertisement,
             "CreateRoute" => RouteOrigin::CreateRoute,
             "CreateRouteTable" => RouteOrigin::CreateRouteTable,
             "EnableVgwRoutePropagation" => RouteOrigin::EnableVgwRoutePropagation,
@@ -74,6 +78,7 @@ impl RouteOrigin {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            RouteOrigin::Advertisement => "Advertisement",
             RouteOrigin::CreateRoute => "CreateRoute",
             RouteOrigin::CreateRouteTable => "CreateRouteTable",
             RouteOrigin::EnableVgwRoutePropagation => "EnableVgwRoutePropagation",
@@ -82,7 +87,7 @@ impl RouteOrigin {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CreateRoute", "CreateRouteTable", "EnableVgwRoutePropagation"]
+        &["Advertisement", "CreateRoute", "CreateRouteTable", "EnableVgwRoutePropagation"]
     }
 }
 impl ::std::convert::AsRef<str> for RouteOrigin {
@@ -105,6 +110,7 @@ impl RouteOrigin {
 impl ::std::fmt::Display for RouteOrigin {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            RouteOrigin::Advertisement => write!(f, "Advertisement"),
             RouteOrigin::CreateRoute => write!(f, "CreateRoute"),
             RouteOrigin::CreateRouteTable => write!(f, "CreateRouteTable"),
             RouteOrigin::EnableVgwRoutePropagation => write!(f, "EnableVgwRoutePropagation"),

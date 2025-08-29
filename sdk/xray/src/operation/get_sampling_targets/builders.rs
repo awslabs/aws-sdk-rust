@@ -130,4 +130,26 @@ impl GetSamplingTargetsFluentBuilder {
     pub fn get_sampling_statistics_documents(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SamplingStatisticsDocument>> {
         self.inner.get_sampling_statistics_documents()
     }
+    ///
+    /// Appends an item to `SamplingBoostStatisticsDocuments`.
+    ///
+    /// To override the contents of this collection use [`set_sampling_boost_statistics_documents`](Self::set_sampling_boost_statistics_documents).
+    ///
+    /// <p>Information about rules that the service is using to boost sampling rate.</p>
+    pub fn sampling_boost_statistics_documents(mut self, input: crate::types::SamplingBoostStatisticsDocument) -> Self {
+        self.inner = self.inner.sampling_boost_statistics_documents(input);
+        self
+    }
+    /// <p>Information about rules that the service is using to boost sampling rate.</p>
+    pub fn set_sampling_boost_statistics_documents(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::SamplingBoostStatisticsDocument>>,
+    ) -> Self {
+        self.inner = self.inner.set_sampling_boost_statistics_documents(input);
+        self
+    }
+    /// <p>Information about rules that the service is using to boost sampling rate.</p>
+    pub fn get_sampling_boost_statistics_documents(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SamplingBoostStatisticsDocument>> {
+        self.inner.get_sampling_boost_statistics_documents()
+    }
 }

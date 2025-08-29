@@ -9,9 +9,9 @@ publish = false
 [dependencies]
 base64 = "0.13.0"
 sha2 = "0.9.5"
-aws-config= { version = "1.8.5", path = "../../../sdk/aws-config", features = ["behavior-version-latest"] }
-aws-sdk-ebs= { version = "1.82.0", path = "../../../sdk/ebs" }
-aws-sdk-ec2= { version = "1.163.0", path = "../../../sdk/ec2" }
+aws-config= { version = "1.8.6", path = "../../../sdk/aws-config", features = ["behavior-version-latest"] }
+aws-sdk-ebs= { version = "1.83.0", path = "../../../sdk/ebs" }
+aws-sdk-ec2= { version = "1.164.0", path = "../../../sdk/ec2" }
 
 [dependencies.tokio]
 version = "1.20.1"

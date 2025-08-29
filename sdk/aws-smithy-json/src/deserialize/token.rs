@@ -135,6 +135,8 @@ expect_fn!(
 macro_rules! expect_value_or_null_fn {
     ($name:ident, $token:ident, $typ:ident, $doc:tt) => {
         #[doc=$doc]
+        #[allow(unknown_lints)]
+        #[allow(mismatched_lifetime_syntaxes)]
         pub fn $name(token: Option<Result<Token<'_>, Error>>) -> Result<Option<$typ>, Error> {
             match token.transpose()? {
                 Some(Token::ValueNull { .. }) => Ok(None),

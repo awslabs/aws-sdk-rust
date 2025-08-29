@@ -108,6 +108,11 @@ pub(crate) fn de_get_sampling_targets(
                         crate::protocol_serde::shape_sampling_target_document_list::de_sampling_target_document_list(tokens)?,
                     );
                 }
+                "UnprocessedBoostStatistics" => {
+                    builder = builder.set_unprocessed_boost_statistics(
+                        crate::protocol_serde::shape_unprocessed_statistics_list::de_unprocessed_statistics_list(tokens)?,
+                    );
+                }
                 "UnprocessedStatistics" => {
                     builder = builder.set_unprocessed_statistics(
                         crate::protocol_serde::shape_unprocessed_statistics_list::de_unprocessed_statistics_list(tokens)?,

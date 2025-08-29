@@ -21,6 +21,7 @@ enum Inner {
     V2023_11_09,
     V2024_03_28,
     V2025_01_17,
+    V2025_08_07,
 }
 
 impl BehaviorVersion {
@@ -33,9 +34,19 @@ impl BehaviorVersion {
     /// If, however, you're writing a service that is very latency sensitive, or that has written
     /// code to tune Rust SDK behaviors, consider pinning to a specific major version.
     ///
-    /// The latest version is currently [`BehaviorVersion::v2025_01_17`]
+    /// The latest version is currently [`BehaviorVersion::v2025_08_07`]
     pub fn latest() -> Self {
-        Self::v2025_01_17()
+        Self::v2025_08_07()
+    }
+
+    /// Behavior version for August 7th, 2025.
+    ///
+    /// This version updates the default HTTPS client to support proxy environment variables
+    /// (e.g. `HTTP_PROXY`, `HTTPS_PROXY`, `NO_PROXY`) by default.
+    pub fn v2025_08_07() -> Self {
+        Self {
+            inner: Inner::V2025_08_07,
+        }
     }
 
     /// Behavior version for January 17th, 2025
@@ -49,6 +60,10 @@ impl BehaviorVersion {
     /// feature flags manually to keep the legacy Hyper stack as the default. Specifically the
     /// `aws-smithy-runtime/tls-rustls` feature flag combined with an older behavior version.
     /// </div>
+    #[deprecated(
+        since = "1.9.0",
+        note = "Superseded by v2025_08_07, which enables automatic HTTP(S) proxy support from environment variables in the default HTTPS client."
+    )]
     pub fn v2025_01_17() -> Self {
         Self {
             inner: Inner::V2025_01_17,
@@ -112,5 +127,6 @@ mod tests {
         assert!(Inner::V2024_03_28 > Inner::V2023_11_09);
         assert!(Inner::V2023_11_09 < Inner::V2024_03_28);
         assert!(Inner::V2024_03_28 < Inner::V2025_01_17);
+        assert!(Inner::V2025_01_17 < Inner::V2025_08_07);
     }
 }

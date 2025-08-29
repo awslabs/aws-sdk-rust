@@ -30,6 +30,8 @@ pub struct SamplingRule {
     pub version: i32,
     /// <p>Matches attributes derived from the request.</p>
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>Specifies the multiplier applied to the base sampling rate. This boost allows you to temporarily increase sampling without changing the rule's configuration.</p>
+    pub sampling_rate_boost: ::std::option::Option<crate::types::SamplingRateBoost>,
 }
 impl SamplingRule {
     /// <p>The name of the sampling rule. Specify a rule by either name or ARN, but not both.</p>
@@ -90,6 +92,10 @@ impl SamplingRule {
     pub fn attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.attributes.as_ref()
     }
+    /// <p>Specifies the multiplier applied to the base sampling rate. This boost allows you to temporarily increase sampling without changing the rule's configuration.</p>
+    pub fn sampling_rate_boost(&self) -> ::std::option::Option<&crate::types::SamplingRateBoost> {
+        self.sampling_rate_boost.as_ref()
+    }
 }
 impl SamplingRule {
     /// Creates a new builder-style object to manufacture [`SamplingRule`](crate::types::SamplingRule).
@@ -115,6 +121,7 @@ pub struct SamplingRuleBuilder {
     pub(crate) url_path: ::std::option::Option<::std::string::String>,
     pub(crate) version: ::std::option::Option<i32>,
     pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) sampling_rate_boost: ::std::option::Option<crate::types::SamplingRateBoost>,
 }
 impl SamplingRuleBuilder {
     /// <p>The name of the sampling rule. Specify a rule by either name or ARN, but not both.</p>
@@ -315,6 +322,20 @@ impl SamplingRuleBuilder {
     pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.attributes
     }
+    /// <p>Specifies the multiplier applied to the base sampling rate. This boost allows you to temporarily increase sampling without changing the rule's configuration.</p>
+    pub fn sampling_rate_boost(mut self, input: crate::types::SamplingRateBoost) -> Self {
+        self.sampling_rate_boost = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the multiplier applied to the base sampling rate. This boost allows you to temporarily increase sampling without changing the rule's configuration.</p>
+    pub fn set_sampling_rate_boost(mut self, input: ::std::option::Option<crate::types::SamplingRateBoost>) -> Self {
+        self.sampling_rate_boost = input;
+        self
+    }
+    /// <p>Specifies the multiplier applied to the base sampling rate. This boost allows you to temporarily increase sampling without changing the rule's configuration.</p>
+    pub fn get_sampling_rate_boost(&self) -> &::std::option::Option<crate::types::SamplingRateBoost> {
+        &self.sampling_rate_boost
+    }
     /// Consumes the builder and constructs a [`SamplingRule`](crate::types::SamplingRule).
     /// This method will fail if any of the following fields are not set:
     /// - [`resource_arn`](crate::types::builders::SamplingRuleBuilder::resource_arn)
@@ -380,6 +401,7 @@ impl SamplingRuleBuilder {
                 )
             })?,
             attributes: self.attributes,
+            sampling_rate_boost: self.sampling_rate_boost,
         })
     }
 }

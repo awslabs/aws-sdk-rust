@@ -6,7 +6,7 @@
 pub struct Trace {
     /// <p>The unique identifier for the request that generated the trace's segments and subsegments.</p>
     pub id: ::std::option::Option<::std::string::String>,
-    /// <p>The length of time in seconds between the start time of the root segment and the end time of the last segment that completed.</p>
+    /// <p>The length of time in seconds between the start time of the earliest segment that started and the end time of the last segment that completed.</p>
     pub duration: ::std::option::Option<f64>,
     /// <p>LimitExceeded is set to true when the trace has exceeded the <code>Trace document size</code> limit. For more information about this limit and other X-Ray limits and quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/xray.html">Amazon Web Services X-Ray endpoints and quotas</a>.</p>
     pub limit_exceeded: ::std::option::Option<bool>,
@@ -18,7 +18,7 @@ impl Trace {
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The length of time in seconds between the start time of the root segment and the end time of the last segment that completed.</p>
+    /// <p>The length of time in seconds between the start time of the earliest segment that started and the end time of the last segment that completed.</p>
     pub fn duration(&self) -> ::std::option::Option<f64> {
         self.duration
     }
@@ -64,17 +64,17 @@ impl TraceBuilder {
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
-    /// <p>The length of time in seconds between the start time of the root segment and the end time of the last segment that completed.</p>
+    /// <p>The length of time in seconds between the start time of the earliest segment that started and the end time of the last segment that completed.</p>
     pub fn duration(mut self, input: f64) -> Self {
         self.duration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The length of time in seconds between the start time of the root segment and the end time of the last segment that completed.</p>
+    /// <p>The length of time in seconds between the start time of the earliest segment that started and the end time of the last segment that completed.</p>
     pub fn set_duration(mut self, input: ::std::option::Option<f64>) -> Self {
         self.duration = input;
         self
     }
-    /// <p>The length of time in seconds between the start time of the root segment and the end time of the last segment that completed.</p>
+    /// <p>The length of time in seconds between the start time of the earliest segment that started and the end time of the last segment that completed.</p>
     pub fn get_duration(&self) -> &::std::option::Option<f64> {
         &self.duration
     }

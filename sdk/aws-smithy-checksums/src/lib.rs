@@ -324,23 +324,27 @@ impl Checksum for Sha256 {
     }
 }
 
+#[allow(dead_code)]
 #[derive(Debug, Default)]
 struct Md5 {
     hasher: md5::Md5,
 }
 
 impl Md5 {
+    #[warn(dead_code)]
     fn update(&mut self, bytes: &[u8]) {
         use md5::Digest;
         self.hasher.update(bytes);
     }
 
+    #[warn(dead_code)]
     fn finalize(self) -> Bytes {
         use md5::Digest;
         Bytes::copy_from_slice(self.hasher.finalize().as_slice())
     }
 
     // Size of the checksum in bytes
+    #[warn(dead_code)]
     fn size() -> u64 {
         use md5::Digest;
         md5::Md5::output_size() as u64

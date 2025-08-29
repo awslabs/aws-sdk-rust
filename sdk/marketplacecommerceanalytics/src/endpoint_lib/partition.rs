@@ -111,7 +111,7 @@ impl PartitionResolver {
     /// 4. After matching the identifier to a partition using one of the previous steps, the partition function should return a
     ///    typed data structure containing the fields in `outputs` in the matched partition. **Important:** If a specific region
     ///    was matched, the properties associated with that region **MUST** be merged with the `outputs` field.
-    pub(crate) fn resolve_partition(&self, region: &str, e: &mut DiagnosticCollector) -> Option<Partition> {
+    pub(crate) fn resolve_partition(&self, region: &str, e: &mut DiagnosticCollector) -> Option<Partition<'_>> {
         let mut explicit_match_partition = self.partitions.iter().flat_map(|part| part.explicit_match(region));
         let mut regex_match_partition = self.partitions.iter().flat_map(|part| part.regex_match(region));
 

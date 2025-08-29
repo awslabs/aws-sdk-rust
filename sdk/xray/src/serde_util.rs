@@ -51,3 +51,27 @@ pub(crate) fn probabilistic_rule_value_correct_errors(
     }
     builder
 }
+
+pub(crate) fn sampling_boost_correct_errors(
+    mut builder: crate::types::builders::SamplingBoostBuilder,
+) -> crate::types::builders::SamplingBoostBuilder {
+    if builder.boost_rate.is_none() {
+        builder.boost_rate = Some(Default::default())
+    }
+    if builder.boost_rate_ttl.is_none() {
+        builder.boost_rate_ttl = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn sampling_rate_boost_correct_errors(
+    mut builder: crate::types::builders::SamplingRateBoostBuilder,
+) -> crate::types::builders::SamplingRateBoostBuilder {
+    if builder.max_rate.is_none() {
+        builder.max_rate = Some(Default::default())
+    }
+    if builder.cooldown_window_minutes.is_none() {
+        builder.cooldown_window_minutes = Some(Default::default())
+    }
+    builder
+}

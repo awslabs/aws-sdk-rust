@@ -4,9 +4,13 @@
  */
 
 mod dns;
+/// Proxy configuration
+pub mod proxy;
 mod timeout;
 /// TLS connector(s)
 pub mod tls;
+
+pub(crate) mod connect;
 
 use crate::cfg::cfg_tls;
 use crate::tls::TlsContext;
@@ -39,7 +43,8 @@ use hyper_util::client::legacy::connect::dns::GaiResolver;
 use hyper_util::client::legacy::connect::{
     capture_connection, CaptureConnection, Connect, HttpConnector as HyperHttpConnector, HttpInfo,
 };
-use hyper_util::rt::TokioExecutor;
+use hyper_util::client::proxy::matcher::Matcher;
+use hyper_util::rt::{TokioExecutor, TokioTimer};
 use std::borrow::Cow;
 use std::collections::HashMap;
 use std::error::Error;
@@ -103,23 +108,25 @@ impl HttpConnector for Connector {
 }
 
 /// Builder for [`Connector`].
-#[derive(Default, Debug)]
+#[derive(Default, Debug, Clone)]
 pub struct ConnectorBuilder<Tls = TlsUnset> {
     connector_settings: Option<HttpConnectorSettings>,
     sleep_impl: Option<SharedAsyncSleep>,
     client_builder: Option<hyper_util::client::legacy::Builder>,
     enable_tcp_nodelay: bool,
     interface: Option<String>,
+    proxy_config: Option<proxy::ProxyConfig>,
     #[allow(unused)]
     tls: Tls,
 }
 
 /// Initial builder state, `TlsProvider` choice required
-#[derive(Default)]
+#[derive(Default, Debug, Clone)]
 #[non_exhaustive]
 pub struct TlsUnset {}
 
 /// TLS implementation selected
+#[derive(Debug, Clone)]
 pub struct TlsProviderSelected {
     #[allow(unused)]
     provider: tls::Provider,
@@ -136,6 +143,7 @@ impl ConnectorBuilder<TlsUnset> {
             client_builder: self.client_builder,
             enable_tcp_nodelay: self.enable_tcp_nodelay,
             interface: self.interface,
+            proxy_config: self.proxy_config,
             tls: TlsProviderSelected {
                 provider,
                 context: TlsContext::default(),
@@ -146,8 +154,30 @@ impl ConnectorBuilder<TlsUnset> {
     /// Build an HTTP connector sans TLS
     #[doc(hidden)]
     pub fn build_http(self) -> Connector {
+        if let Some(ref proxy_config) = self.proxy_config {
+            if proxy_config.requires_tls() {
+                tracing::warn!(
+                    "HTTPS proxy configured but no TLS provider set. \
+                     Connections to HTTPS proxy servers will fail. \
+                     Consider configuring a TLS provider to enable TLS support."
+                );
+            }
+        }
+
         let base = self.base_connector();
-        self.wrap_connector(base)
+
+        // Wrap with HTTP proxy support if proxy is configured
+        let proxy_config = self
+            .proxy_config
+            .clone()
+            .unwrap_or_else(proxy::ProxyConfig::disabled);
+
+        if !proxy_config.is_disabled() {
+            let http_proxy_connector = connect::HttpProxyConnector::new(base, proxy_config);
+            self.wrap_connector(http_proxy_connector)
+        } else {
+            self.wrap_connector(base)
+        }
     }
 }
 
@@ -163,11 +193,13 @@ impl<Any> ConnectorBuilder<Any> {
         C::Future: Unpin + Send + 'static,
         C::Error: Into<BoxError>,
     {
-        let client_builder =
-            self.client_builder
-                .unwrap_or(hyper_util::client::legacy::Builder::new(
-                    TokioExecutor::new(),
-                ));
+        let client_builder = self.client_builder.unwrap_or_else(|| {
+            let mut builder = hyper_util::client::legacy::Builder::new(TokioExecutor::new());
+            // Explicitly setting the pool_timer is required for connection timeouts to work.
+            builder.pool_timer(TokioTimer::new());
+
+            builder
+        });
         let sleep_impl = self.sleep_impl.or_else(default_async_sleep);
         let (connect_timeout, read_timeout) = self
             .connector_settings
@@ -193,9 +225,16 @@ impl<Any> ConnectorBuilder<Any> {
             ),
             None => timeout::HttpReadTimeout::no_timeout(base),
         };
+
+        let proxy_matcher = self
+            .proxy_config
+            .as_ref()
+            .map(|config| config.clone().into_hyper_util_matcher());
+
         Connector {
             adapter: Box::new(Adapter {
                 client: read_timeout,
+                proxy_matcher,
             }),
         }
     }
@@ -281,6 +320,40 @@ impl<Any> ConnectorBuilder<Any> {
         self
     }
 
+    /// Configure proxy settings for this connector
+    ///
+    /// This method allows you to set explicit proxy configuration for the HTTP client.
+    /// The proxy configuration will be used to determine whether requests should be
+    /// routed through a proxy server or connect directly.
+    ///
+    /// # Examples
+    ///
+    /// ```rust
+    /// # #[cfg(feature = "rustls-aws-lc")]
+    /// # {
+    /// use aws_smithy_http_client::{Connector, proxy::ProxyConfig, tls};
+    ///
+    /// let proxy_config = ProxyConfig::http("http://proxy.example.com:8080")?;
+    /// let connector = Connector::builder()
+    ///     .proxy_config(proxy_config)
+    ///     .tls_provider(tls::Provider::Rustls(tls::rustls_provider::CryptoMode::AwsLc))
+    ///     .build();
+    /// # }
+    /// # Ok::<(), Box<dyn std::error::Error>>(())
+    /// ```
+    pub fn proxy_config(mut self, config: proxy::ProxyConfig) -> Self {
+        self.proxy_config = Some(config);
+        self
+    }
+
+    /// Configure proxy settings for this connector
+    ///
+    /// This is the mutable version of [`proxy_config`](Self::proxy_config).
+    pub fn set_proxy_config(&mut self, config: Option<proxy::ProxyConfig>) -> &mut Self {
+        self.proxy_config = config;
+        self
+    }
+
     /// Override the Hyper client [`Builder`](hyper_util::client::legacy::Builder) used to construct this client.
     ///
     /// This enables changing settings like forcing HTTP2 and modifying other default client behavior.
@@ -311,12 +384,14 @@ struct Adapter<C> {
     client: timeout::HttpReadTimeout<
         hyper_util::client::legacy::Client<timeout::ConnectTimeout<C>, SdkBody>,
     >,
+    proxy_matcher: Option<Matcher>,
 }
 
 impl<C> fmt::Debug for Adapter<C> {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         f.debug_struct("Adapter")
             .field("client", &"** hyper client **")
+            .field("proxy_matcher", &self.proxy_matcher.is_some())
             .finish()
     }
 }
@@ -347,6 +422,36 @@ fn extract_smithy_connection(capture_conn: &CaptureConnection) -> Option<Connect
     }
 }
 
+impl<C> Adapter<C> {
+    /// Add proxy authentication header to the request if needed
+    fn add_proxy_auth_header(&self, request: &mut http_1x::Request<SdkBody>) {
+        // Only add auth for HTTP requests (not HTTPS which uses CONNECT tunneling)
+        if request.uri().scheme() != Some(&http_1x::uri::Scheme::HTTP) {
+            return;
+        }
+
+        // Don't override existing proxy authorization header
+        if request
+            .headers()
+            .contains_key(http_1x::header::PROXY_AUTHORIZATION)
+        {
+            return;
+        }
+
+        if let Some(ref matcher) = self.proxy_matcher {
+            if let Some(intercept) = matcher.intercept(request.uri()) {
+                // Add basic auth header if available
+                if let Some(auth_header) = intercept.basic_auth() {
+                    request
+                        .headers_mut()
+                        .insert(http_1x::header::PROXY_AUTHORIZATION, auth_header.clone());
+                    tracing::debug!("added proxy authentication header for {}", request.uri());
+                }
+            }
+        }
+    }
+}
+
 impl<C> HttpConnector for Adapter<C>
 where
     C: Clone + Send + Sync + 'static,
@@ -363,6 +468,9 @@ where
                 return HttpConnectorFuture::ready(Err(ConnectorError::user(err.into())));
             }
         };
+
+        self.add_proxy_auth_header(&mut request);
+
         let capture_connection = capture_connection(&mut request);
         if let Some(capture_smithy_connection) =
             request.extensions().get::<CaptureSmithyConnection>()
@@ -614,16 +722,27 @@ cfg_tls! {
                     feature = "rustls-ring"
                 ))]
                 tls::Provider::Rustls(crypto_mode) => {
+                    let proxy_config = self.proxy_config.clone()
+                        .unwrap_or_else(proxy::ProxyConfig::disabled);
+
                     let https_connector = tls::rustls_provider::build_connector::wrap_connector(
                         http_connector,
                         crypto_mode.clone(),
                         &self.tls.context,
+                        proxy_config,
                     );
                     self.wrap_connector(https_connector)
                 },
                 #[cfg(feature = "s2n-tls")]
                 tls::Provider::S2nTls  => {
-                    let https_connector = tls::s2n_tls_provider::build_connector::wrap_connector(http_connector, &self.tls.context);
+                    let proxy_config = self.proxy_config.clone()
+                        .unwrap_or_else(proxy::ProxyConfig::disabled);
+
+                    let https_connector = tls::s2n_tls_provider::build_connector::wrap_connector(
+                        http_connector,
+                        &self.tls.context,
+                        proxy_config,
+                    );
                     self.wrap_connector(https_connector)
                 }
             }
@@ -675,6 +794,23 @@ impl Builder<TlsUnset> {
     /// Creates a new builder.
     pub fn new() -> Self {
         Self::default()
+    }
+
+    /// Returns a [`SharedHttpClient`] that calls the given `connector` function to select an HTTP(S) connector.
+    #[doc(hidden)]
+    pub fn build_with_connector_fn<F>(self, connector_fn: F) -> SharedHttpClient
+    where
+        F: Fn(Option<&HttpConnectorSettings>, Option<&RuntimeComponents>) -> Connector
+            + Send
+            + Sync
+            + 'static,
+    {
+        build_with_conn_fn(
+            self.client_builder,
+            move |_builder, settings, runtime_components| {
+                connector_fn(settings, runtime_components)
+            },
+        )
     }
 
     /// Build a new HTTP client without TLS enabled
@@ -993,7 +1129,7 @@ mod test {
             .build();
 
         let resolver = HyperUtilResolver {
-            resolver: TestResolver::default(),
+            resolver: TestResolver,
         };
         let connector = Connector::builder().base_connector_with_resolver(resolver);
 

@@ -42,7 +42,7 @@ const SCALE_CONSTANT: f64 = 0.4;
 /// Rate limiter for adaptive retry.
 #[derive(Clone, Debug)]
 pub struct ClientRateLimiter {
-    inner: Arc<Mutex<Inner>>,
+    pub(crate) inner: Arc<Mutex<Inner>>,
 }
 
 #[derive(Debug)]
@@ -51,7 +51,7 @@ pub(crate) struct Inner {
     fill_rate: f64,
     /// The maximum capacity allowed in the token bucket.
     max_capacity: f64,
-    /// The current capacity of the token bucket.
+    /// The current capacity of the token bucket. The minimum this can be is 1.0
     current_capacity: f64,
     /// The last time the token bucket was refilled.
     last_timestamp: Option<f64>,
@@ -77,6 +77,12 @@ pub(crate) enum RequestReason {
     InitialRequest,
 }
 
+impl Default for ClientRateLimiter {
+    fn default() -> Self {
+        Self::builder().build()
+    }
+}
+
 impl ClientRateLimiter {
     /// Creates a new `ClientRateLimiter`
     pub fn new(seconds_since_unix_epoch: f64) -> Self {
@@ -87,8 +93,9 @@ impl ClientRateLimiter {
             .build()
     }
 
-    fn builder() -> Builder {
-        Builder::new()
+    /// Creates a new `ClientRateLimiterBuilder`
+    pub fn builder() -> ClientRateLimiterBuilder {
+        ClientRateLimiterBuilder::new()
     }
 
     pub(crate) fn acquire_permission_to_send_a_request(
@@ -231,13 +238,14 @@ fn cubic_throttle(rate_to_use: f64) -> f64 {
     rate_to_use * BETA
 }
 
+/// Builder for `ClientRateLimiter`.
 #[derive(Clone, Debug, Default)]
-struct Builder {
+pub struct ClientRateLimiterBuilder {
     ///The rate at which token are replenished.
     token_refill_rate: Option<f64>,
     ///The maximum capacity allowed in the token bucket.
     maximum_bucket_capacity: Option<f64>,
-    ///The current capacity of the token bucket. The minimum this can be is 1.0
+    ///The current capacity of the token bucket.
     current_bucket_capacity: Option<f64>,
     ///The last time the token bucket was refilled.
     time_of_last_refill: Option<f64>,
@@ -255,94 +263,119 @@ struct Builder {
     time_of_last_throttle: Option<f64>,
 }
 
-impl Builder {
-    fn new() -> Self {
-        Builder::default()
+impl ClientRateLimiterBuilder {
+    /// Create a new `ClientRateLimiterBuilder`.
+    pub fn new() -> Self {
+        ClientRateLimiterBuilder::default()
     }
-    ///The rate at which token are replenished.
-    fn set_token_refill_rate(&mut self, token_refill_rate: Option<f64>) -> &mut Self {
+    /// The rate at which token are replenished.
+    pub fn token_refill_rate(mut self, token_refill_rate: f64) -> Self {
+        self.set_token_refill_rate(Some(token_refill_rate));
+        self
+    }
+    /// The rate at which token are replenished.
+    pub fn set_token_refill_rate(&mut self, token_refill_rate: Option<f64>) -> &mut Self {
         self.token_refill_rate = token_refill_rate;
         self
     }
-    ///The rate at which token are replenished.
-    fn token_refill_rate(mut self, token_refill_rate: f64) -> Self {
-        self.token_refill_rate = Some(token_refill_rate);
+    /// The maximum capacity allowed in the token bucket
+    ///
+    /// The implementation of [`ClientRateLimiter`] guarantees that `current_capacity` never exceeds this value.
+    pub fn maximum_bucket_capacity(mut self, maximum_bucket_capacity: f64) -> Self {
+        self.set_maximum_bucket_capacity(Some(maximum_bucket_capacity));
         self
     }
-    ///The maximum capacity allowed in the token bucket.
-    fn set_maximum_bucket_capacity(&mut self, maximum_bucket_capacity: Option<f64>) -> &mut Self {
+    /// The maximum capacity allowed in the token bucket
+    ///
+    /// The implementation of [`ClientRateLimiter`] guarantees that `current_capacity` never exceeds this value.
+    pub fn set_maximum_bucket_capacity(
+        &mut self,
+        maximum_bucket_capacity: Option<f64>,
+    ) -> &mut Self {
         self.maximum_bucket_capacity = maximum_bucket_capacity;
         self
     }
-    ///The maximum capacity allowed in the token bucket.
-    fn maximum_bucket_capacity(mut self, maximum_bucket_capacity: f64) -> Self {
-        self.maximum_bucket_capacity = Some(maximum_bucket_capacity);
+    /// The current capacity of the token bucket
+    ///
+    /// The implementation of [`ClientRateLimiter`] guarantees that this value is always at least `1.0` when it's enabled.
+    pub fn current_bucket_capacity(mut self, current_bucket_capacity: f64) -> Self {
+        self.set_current_bucket_capacity(Some(current_bucket_capacity));
         self
     }
-    ///The current capacity of the token bucket. The minimum this can be is 1.0
-    fn set_current_bucket_capacity(&mut self, current_bucket_capacity: Option<f64>) -> &mut Self {
+    /// The current capacity of the token bucket
+    ///
+    /// The implementation of [`ClientRateLimiter`] guarantees that this value is always at least `1.0` when it's enabled.
+    pub fn set_current_bucket_capacity(
+        &mut self,
+        current_bucket_capacity: Option<f64>,
+    ) -> &mut Self {
         self.current_bucket_capacity = current_bucket_capacity;
         self
     }
-    ///The current capacity of the token bucket. The minimum this can be is 1.0
-    fn current_bucket_capacity(mut self, current_bucket_capacity: f64) -> Self {
-        self.current_bucket_capacity = Some(current_bucket_capacity);
+    // The last time the token bucket was refilled.
+    fn time_of_last_refill(mut self, time_of_last_refill: f64) -> Self {
+        self.set_time_of_last_refill(Some(time_of_last_refill));
         self
     }
-    ///The last time the token bucket was refilled.
+    // The last time the token bucket was refilled.
     fn set_time_of_last_refill(&mut self, time_of_last_refill: Option<f64>) -> &mut Self {
         self.time_of_last_refill = time_of_last_refill;
         self
     }
-    ///The last time the token bucket was refilled.
-    fn time_of_last_refill(mut self, time_of_last_refill: f64) -> Self {
-        self.time_of_last_refill = Some(time_of_last_refill);
+    /// The smoothed rate which tokens are being retrieved.
+    pub fn tokens_retrieved_per_second(mut self, tokens_retrieved_per_second: f64) -> Self {
+        self.set_tokens_retrieved_per_second(Some(tokens_retrieved_per_second));
         self
     }
-    ///The smoothed rate which tokens are being retrieved.
-    fn set_tokens_retrieved_per_second(
+    /// The smoothed rate which tokens are being retrieved.
+    pub fn set_tokens_retrieved_per_second(
         &mut self,
         tokens_retrieved_per_second: Option<f64>,
     ) -> &mut Self {
         self.tokens_retrieved_per_second = tokens_retrieved_per_second;
         self
     }
-    ///The smoothed rate which tokens are being retrieved.
-    fn tokens_retrieved_per_second(mut self, tokens_retrieved_per_second: f64) -> Self {
-        self.tokens_retrieved_per_second = Some(tokens_retrieved_per_second);
+    // The last half second time bucket used.
+    fn previous_time_bucket(mut self, previous_time_bucket: f64) -> Self {
+        self.set_previous_time_bucket(Some(previous_time_bucket));
         self
     }
-    ///The last half second time bucket used.
+    // The last half second time bucket used.
     fn set_previous_time_bucket(&mut self, previous_time_bucket: Option<f64>) -> &mut Self {
         self.previous_time_bucket = previous_time_bucket;
         self
     }
-    ///The last half second time bucket used.
-    fn previous_time_bucket(mut self, previous_time_bucket: f64) -> Self {
-        self.previous_time_bucket = Some(previous_time_bucket);
+    // The number of requests seen within the current time bucket.
+    fn request_count(mut self, request_count: u64) -> Self {
+        self.set_request_count(Some(request_count));
         self
     }
-    ///The number of requests seen within the current time bucket.
+    // The number of requests seen within the current time bucket.
     fn set_request_count(&mut self, request_count: Option<u64>) -> &mut Self {
         self.request_count = request_count;
         self
     }
-    ///The number of requests seen within the current time bucket.
-    fn request_count(mut self, request_count: u64) -> Self {
-        self.request_count = Some(request_count);
+    // Boolean indicating if the token bucket is enabled. The token bucket is initially disabled. When a throttling error is encountered it is enabled.
+    fn enable_throttling(mut self, enable_throttling: bool) -> Self {
+        self.set_enable_throttling(Some(enable_throttling));
         self
     }
-    ///Boolean indicating if the token bucket is enabled. The token bucket is initially disabled. When a throttling error is encountered it is enabled.
+    // Boolean indicating if the token bucket is enabled. The token bucket is initially disabled. When a throttling error is encountered it is enabled.
     fn set_enable_throttling(&mut self, enable_throttling: Option<bool>) -> &mut Self {
         self.enable_throttling = enable_throttling;
         self
     }
-    ///Boolean indicating if the token bucket is enabled. The token bucket is initially disabled. When a throttling error is encountered it is enabled.
-    fn enable_throttling(mut self, enable_throttling: bool) -> Self {
-        self.enable_throttling = Some(enable_throttling);
+    // The maximum rate when the client was last throttled.
+    fn tokens_retrieved_per_second_at_time_of_last_throttle(
+        mut self,
+        tokens_retrieved_per_second_at_time_of_last_throttle: f64,
+    ) -> Self {
+        self.set_tokens_retrieved_per_second_at_time_of_last_throttle(Some(
+            tokens_retrieved_per_second_at_time_of_last_throttle,
+        ));
         self
     }
-    ///The maximum rate when the client was last throttled.
+    // The maximum rate when the client was last throttled.
     fn set_tokens_retrieved_per_second_at_time_of_last_throttle(
         &mut self,
         tokens_retrieved_per_second_at_time_of_last_throttle: Option<f64>,
@@ -351,27 +384,18 @@ impl Builder {
             tokens_retrieved_per_second_at_time_of_last_throttle;
         self
     }
-    ///The maximum rate when the client was last throttled.
-    fn tokens_retrieved_per_second_at_time_of_last_throttle(
-        mut self,
-        tokens_retrieved_per_second_at_time_of_last_throttle: f64,
-    ) -> Self {
-        self.tokens_retrieved_per_second_at_time_of_last_throttle =
-            Some(tokens_retrieved_per_second_at_time_of_last_throttle);
+    // The last time when the client was throttled.
+    fn time_of_last_throttle(mut self, time_of_last_throttle: f64) -> Self {
+        self.set_time_of_last_throttle(Some(time_of_last_throttle));
         self
     }
-    ///The last time when the client was throttled.
+    // The last time when the client was throttled.
     fn set_time_of_last_throttle(&mut self, time_of_last_throttle: Option<f64>) -> &mut Self {
         self.time_of_last_throttle = time_of_last_throttle;
         self
     }
-    ///The last time when the client was throttled.
-    fn time_of_last_throttle(mut self, time_of_last_throttle: f64) -> Self {
-        self.time_of_last_throttle = Some(time_of_last_throttle);
-        self
-    }
-
-    fn build(self) -> ClientRateLimiter {
+    /// Build the ClientRateLimiter.
+    pub fn build(self) -> ClientRateLimiter {
         ClientRateLimiter {
             inner: Arc::new(Mutex::new(Inner {
                 fill_rate: self.token_refill_rate.unwrap_or_default(),

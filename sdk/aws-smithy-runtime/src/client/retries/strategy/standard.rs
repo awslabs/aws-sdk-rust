@@ -26,7 +26,7 @@ use crate::client::retries::strategy::standard::ReleaseResult::{
     APermitWasReleased, NoPermitWasReleased,
 };
 use crate::client::retries::token_bucket::TokenBucket;
-use crate::client::retries::{ClientRateLimiterPartition, RetryPartition};
+use crate::client::retries::{ClientRateLimiterPartition, RetryPartition, RetryPartitionInner};
 use crate::static_partition_map::StaticPartitionMap;
 
 static CLIENT_RATE_LIMITER: StaticPartitionMap<ClientRateLimiterPartition, ClientRateLimiter> =
@@ -85,12 +85,19 @@ impl StandardRetryStrategy {
                     .duration_since(SystemTime::UNIX_EPOCH)
                     .expect("the present takes place after the UNIX_EPOCH")
                     .as_secs_f64();
-                let client_rate_limiter_partition =
-                    ClientRateLimiterPartition::new(retry_partition.clone());
-                let client_rate_limiter = CLIENT_RATE_LIMITER
-                    .get_or_init(client_rate_limiter_partition, || {
-                        ClientRateLimiter::new(seconds_since_unix_epoch)
-                    });
+                let client_rate_limiter = match &retry_partition.inner {
+                    RetryPartitionInner::Default(_) => {
+                        let client_rate_limiter_partition =
+                            ClientRateLimiterPartition::new(retry_partition.clone());
+                        CLIENT_RATE_LIMITER.get_or_init(client_rate_limiter_partition, || {
+                            ClientRateLimiter::new(seconds_since_unix_epoch)
+                        })
+                    }
+                    RetryPartitionInner::Custom {
+                        client_rate_limiter,
+                        ..
+                    } => client_rate_limiter.clone(),
+                };
                 return Some(client_rate_limiter);
             }
         }
@@ -378,14 +385,19 @@ impl Intercept for TokenBucketProvider {
     ) -> Result<(), BoxError> {
         let retry_partition = cfg.load::<RetryPartition>().expect("set in default config");
 
-        // we store the original retry partition configured and associated token bucket
-        // for the client when created so that we can avoid locking on _every_ request
-        // from _every_ client
-        let tb = if *retry_partition != self.default_partition {
-            TOKEN_BUCKET.get_or_init_default(retry_partition.clone())
-        } else {
-            // avoid contention on the global lock
-            self.token_bucket.clone()
+        let tb = match &retry_partition.inner {
+            RetryPartitionInner::Default(name) => {
+                // we store the original retry partition configured and associated token bucket
+                // for the client when created so that we can avoid locking on _every_ request
+                // from _every_ client
+                if name == self.default_partition.name() {
+                    // avoid contention on the global lock
+                    self.token_bucket.clone()
+                } else {
+                    TOKEN_BUCKET.get_or_init_default(retry_partition.clone())
+                }
+            }
+            RetryPartitionInner::Custom { token_bucket, .. } => token_bucket.clone(),
         };
 
         trace!("token bucket for {retry_partition:?} added to config bag");
@@ -403,6 +415,7 @@ mod tests {
     use std::sync::Mutex;
     use std::time::Duration;
 
+    use aws_smithy_async::time::SystemTimeSource;
     use aws_smithy_runtime_api::client::interceptors::context::{
         Input, InterceptorContext, Output,
     };
@@ -420,7 +433,7 @@ mod tests {
     use aws_smithy_types::retry::{ErrorKind, RetryConfig};
 
     use super::{calculate_exponential_backoff, StandardRetryStrategy};
-    use crate::client::retries::TokenBucket;
+    use crate::client::retries::{ClientRateLimiter, RetryPartition, TokenBucket};
 
     #[test]
     fn no_retry_necessary_for_ok_result() {
@@ -532,6 +545,36 @@ mod tests {
             .should_attempt_retry(&ctx, &rc, &cfg)
             .expect("method is infallible for this use");
         assert_eq!(ShouldAttempt::YesAfterDelay(MAX_BACKOFF), actual);
+    }
+
+    #[test]
+    fn should_yield_client_rate_limiter_from_custom_partition() {
+        let expected = ClientRateLimiter::builder().token_refill_rate(3.14).build();
+        let cfg = ConfigBag::of_layers(vec![
+            // Emulate default config layer overriden by a user config layer
+            {
+                let mut layer = Layer::new("default");
+                layer.store_put(RetryPartition::new("default"));
+                layer
+            },
+            {
+                let mut layer = Layer::new("user");
+                layer.store_put(RetryConfig::adaptive());
+                layer.store_put(
+                    RetryPartition::custom("user")
+                        .client_rate_limiter(expected.clone())
+                        .build(),
+                );
+                layer
+            },
+        ]);
+        let rc = RuntimeComponentsBuilder::for_tests()
+            .with_time_source(Some(SystemTimeSource::new()))
+            .build()
+            .unwrap();
+        let actual = StandardRetryStrategy::adaptive_retry_rate_limiter(&rc, &cfg)
+            .expect("should yield client rate limiter from custom partition");
+        assert!(std::sync::Arc::ptr_eq(&expected.inner, &actual.inner));
     }
 
     #[allow(dead_code)] // will be unused with `--no-default-features --features client`

@@ -3,6 +3,8 @@ pub use crate::types::_sampling_rule_record::SamplingRuleRecordBuilder;
 
 pub use crate::types::_sampling_rule::SamplingRuleBuilder;
 
+pub use crate::types::_sampling_rate_boost::SamplingRateBoostBuilder;
+
 pub use crate::types::_sampling_rule_update::SamplingRuleUpdateBuilder;
 
 pub use crate::types::_indexing_rule::IndexingRuleBuilder;
@@ -92,6 +94,10 @@ pub use crate::types::_forecast_statistics::ForecastStatisticsBuilder;
 pub use crate::types::_unprocessed_statistics::UnprocessedStatisticsBuilder;
 
 pub use crate::types::_sampling_target_document::SamplingTargetDocumentBuilder;
+
+pub use crate::types::_sampling_boost::SamplingBoostBuilder;
+
+pub use crate::types::_sampling_boost_statistics_document::SamplingBoostStatisticsDocumentBuilder;
 
 pub use crate::types::_sampling_statistics_document::SamplingStatisticsDocumentBuilder;
 

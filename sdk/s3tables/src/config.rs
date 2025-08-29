@@ -674,15 +674,55 @@ impl Builder {
         self
     }
     /// Set the partition for retry-related state. When clients share a retry partition, they will
-    /// also share things like token buckets and client rate limiters. By default, all clients
-    /// for the same service will share a partition.
+    /// also share components such as token buckets and client rate limiters.
+    /// See the [`RetryPartition`](::aws_smithy_runtime::client::retries::RetryPartition) documentation for more details.
+    ///
+    /// # Default Behavior
+    ///
+    /// When no retry partition is explicitly set, the SDK automatically creates a default retry partition named `s3tables`
+    /// (or `s3tables-<region>` if a region is configured).
+    /// All S3Tables clients without an explicit retry partition will share this default partition.
+    ///
+    /// # Notes
+    ///
+    /// - This is an advanced setting — most users won't need to modify it.
+    /// - A configured client rate limiter has no effect unless [`RetryConfig::adaptive`](::aws_smithy_types::retry::RetryConfig::adaptive) is used.
+    ///
+    /// # Examples
+    ///
+    /// Creating a custom retry partition with a token bucket:
+    /// ```no_run
+    /// use aws_sdk_s3tables::config::Config;
+    /// use aws_sdk_s3tables::config::retry::{RetryPartition, TokenBucket};
+    ///
+    /// let token_bucket = TokenBucket::new(10);
+    /// let config = Config::builder()
+    ///     .retry_partition(RetryPartition::custom("custom")
+    ///         .token_bucket(token_bucket)
+    ///         .build()
+    ///     )
+    ///     .build();
+    /// ```
+    ///
+    /// Configuring a client rate limiter with adaptive retry mode:
+    /// ```no_run
+    /// use aws_sdk_s3tables::config::Config;
+    /// use aws_sdk_s3tables::config::retry::{ClientRateLimiter, RetryConfig, RetryPartition};
+    ///
+    /// let client_rate_limiter = ClientRateLimiter::new(10.0);
+    /// let config = Config::builder()
+    ///     .retry_partition(RetryPartition::custom("custom")
+    ///         .client_rate_limiter(client_rate_limiter)
+    ///         .build()
+    ///     )
+    ///     .retry_config(RetryConfig::adaptive())
+    ///     .build();
+    /// ```
     pub fn retry_partition(mut self, retry_partition: ::aws_smithy_runtime::client::retries::RetryPartition) -> Self {
         self.set_retry_partition(Some(retry_partition));
         self
     }
-    /// Set the partition for retry-related state. When clients share a retry partition, they will
-    /// also share things like token buckets and client rate limiters. By default, all clients
-    /// for the same service will share a partition.
+    /// Like [`Self::retry_partition`], but takes a mutable reference to the builder and an optional `RetryPartition`
     pub fn set_retry_partition(
         &mut self,
         retry_partition: ::std::option::Option<::aws_smithy_runtime::client::retries::RetryPartition>,

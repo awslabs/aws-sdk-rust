@@ -21,11 +21,11 @@ http = "0.2.8"
 futures = "0.3.28"
 async_once = "0.2.6"
 lazy_static = "1.4.0"
-aws-config= { version = "1.8.5", path = "../../../sdk/aws-config", features = ["behavior-version-latest"] }
-aws-credential-types= { version = "1.2.5", path = "../../../sdk/aws-credential-types", features = ["hardcoded-credentials"] }
-aws-sdk-iam= { version = "1.87.0", path = "../../../sdk/iam" }
-aws-sdk-s3= { version = "1.103.0", path = "../../../sdk/s3" }
-aws-sdk-sts= { version = "1.84.0", path = "../../../sdk/sts" }
+aws-config= { version = "1.8.6", path = "../../../sdk/aws-config", features = ["behavior-version-latest"] }
+aws-credential-types= { version = "1.2.6", path = "../../../sdk/aws-credential-types", features = ["hardcoded-credentials"] }
+aws-sdk-iam= { version = "1.88.0", path = "../../../sdk/iam" }
+aws-sdk-s3= { version = "1.104.0", path = "../../../sdk/s3" }
+aws-sdk-sts= { version = "1.85.0", path = "../../../sdk/sts" }
 
 [dependencies.sdk-examples-test-utils]
 path = "../../test-utils"

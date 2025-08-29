@@ -60,13 +60,13 @@ pub mod body;
 /// Configuration options for the default HTTPS client
 #[derive(Debug, Clone)]
 pub(crate) struct DefaultClientOptions {
-    _behavior_version: BehaviorVersion,
+    behavior_version: BehaviorVersion,
 }
 
 impl Default for DefaultClientOptions {
     fn default() -> Self {
         DefaultClientOptions {
-            _behavior_version: BehaviorVersion::latest(),
+            behavior_version: BehaviorVersion::latest(),
         }
     }
 }
@@ -75,21 +75,39 @@ impl DefaultClientOptions {
     /// Set the behavior version to use
     #[allow(unused)]
     pub(crate) fn with_behavior_version(mut self, behavior_version: BehaviorVersion) -> Self {
-        self._behavior_version = behavior_version;
+        self.behavior_version = behavior_version;
         self
     }
 }
 
 /// Creates an HTTPS client using the default TLS provider
 #[cfg(feature = "default-https-client")]
-pub(crate) fn default_https_client(_options: DefaultClientOptions) -> Option<SharedHttpClient> {
-    use aws_smithy_http_client::{tls, Builder};
+pub(crate) fn default_https_client(options: DefaultClientOptions) -> Option<SharedHttpClient> {
+    use aws_smithy_http_client::proxy::ProxyConfig;
+    use aws_smithy_http_client::{tls, Builder, ConnectorBuilder};
     tracing::trace!("creating a new default hyper 1.x client using rustls<aws-lc>");
-    Some(
-        Builder::new()
-            .tls_provider(tls::Provider::Rustls(
-                tls::rustls_provider::CryptoMode::AwsLc,
-            ))
-            .build_https(),
-    )
+
+    let client = Builder::new().build_with_connector_fn(move |settings, runtime_components| {
+        let mut conn_builder = ConnectorBuilder::default().tls_provider(tls::Provider::Rustls(
+            tls::rustls_provider::CryptoMode::AwsLc,
+        ));
+
+        conn_builder.set_connector_settings(settings.cloned());
+        if let Some(components) = runtime_components {
+            conn_builder.set_sleep_impl(components.sleep_impl());
+        }
+
+        if options
+            .behavior_version
+            .is_at_least(BehaviorVersion::v2025_08_07())
+        {
+            conn_builder.set_proxy_config(Some(ProxyConfig::from_env()));
+        } else {
+            conn_builder.set_proxy_config(Some(ProxyConfig::disabled()));
+        }
+
+        conn_builder.build()
+    });
+
+    Some(client)
 }

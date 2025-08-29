@@ -9,6 +9,8 @@ pub struct GetSamplingTargetsOutput {
     pub last_rule_modification: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Information about <a href="https://docs.aws.amazon.com/xray/latest/api/API_SamplingStatisticsDocument.html">SamplingStatisticsDocument</a> that X-Ray could not process.</p>
     pub unprocessed_statistics: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedStatistics>>,
+    /// <p>Information about <a href="https://docs.aws.amazon.com/xray/latest/api/API_SamplingBoostStatisticsDocument.html">SamplingBoostStatisticsDocument</a> that X-Ray could not process.</p>
+    pub unprocessed_boost_statistics: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedStatistics>>,
     _request_id: Option<String>,
 }
 impl GetSamplingTargetsOutput {
@@ -27,6 +29,12 @@ impl GetSamplingTargetsOutput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.unprocessed_statistics.is_none()`.
     pub fn unprocessed_statistics(&self) -> &[crate::types::UnprocessedStatistics] {
         self.unprocessed_statistics.as_deref().unwrap_or_default()
+    }
+    /// <p>Information about <a href="https://docs.aws.amazon.com/xray/latest/api/API_SamplingBoostStatisticsDocument.html">SamplingBoostStatisticsDocument</a> that X-Ray could not process.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.unprocessed_boost_statistics.is_none()`.
+    pub fn unprocessed_boost_statistics(&self) -> &[crate::types::UnprocessedStatistics] {
+        self.unprocessed_boost_statistics.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for GetSamplingTargetsOutput {
@@ -48,6 +56,7 @@ pub struct GetSamplingTargetsOutputBuilder {
     pub(crate) sampling_target_documents: ::std::option::Option<::std::vec::Vec<crate::types::SamplingTargetDocument>>,
     pub(crate) last_rule_modification: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) unprocessed_statistics: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedStatistics>>,
+    pub(crate) unprocessed_boost_statistics: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedStatistics>>,
     _request_id: Option<String>,
 }
 impl GetSamplingTargetsOutputBuilder {
@@ -105,6 +114,26 @@ impl GetSamplingTargetsOutputBuilder {
     pub fn get_unprocessed_statistics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UnprocessedStatistics>> {
         &self.unprocessed_statistics
     }
+    /// Appends an item to `unprocessed_boost_statistics`.
+    ///
+    /// To override the contents of this collection use [`set_unprocessed_boost_statistics`](Self::set_unprocessed_boost_statistics).
+    ///
+    /// <p>Information about <a href="https://docs.aws.amazon.com/xray/latest/api/API_SamplingBoostStatisticsDocument.html">SamplingBoostStatisticsDocument</a> that X-Ray could not process.</p>
+    pub fn unprocessed_boost_statistics(mut self, input: crate::types::UnprocessedStatistics) -> Self {
+        let mut v = self.unprocessed_boost_statistics.unwrap_or_default();
+        v.push(input);
+        self.unprocessed_boost_statistics = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Information about <a href="https://docs.aws.amazon.com/xray/latest/api/API_SamplingBoostStatisticsDocument.html">SamplingBoostStatisticsDocument</a> that X-Ray could not process.</p>
+    pub fn set_unprocessed_boost_statistics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedStatistics>>) -> Self {
+        self.unprocessed_boost_statistics = input;
+        self
+    }
+    /// <p>Information about <a href="https://docs.aws.amazon.com/xray/latest/api/API_SamplingBoostStatisticsDocument.html">SamplingBoostStatisticsDocument</a> that X-Ray could not process.</p>
+    pub fn get_unprocessed_boost_statistics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UnprocessedStatistics>> {
+        &self.unprocessed_boost_statistics
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -120,6 +149,7 @@ impl GetSamplingTargetsOutputBuilder {
             sampling_target_documents: self.sampling_target_documents,
             last_rule_modification: self.last_rule_modification,
             unprocessed_statistics: self.unprocessed_statistics,
+            unprocessed_boost_statistics: self.unprocessed_boost_statistics,
             _request_id: self._request_id,
         }
     }

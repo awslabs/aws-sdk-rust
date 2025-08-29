@@ -1,14 +1,14 @@
 [workspace]
 resolver = "2"
 exclude = [
-    "examples/cross_service",
-    "examples/test-utils",
-    "examples/lambda",
     "examples/webassembly",
     "examples/examples",
+    "examples/cross_service",
+    "examples/lambda",
+    "examples/test-utils",
+    "tests/webassembly",
     "tests/no-default-features",
-    "tests/telemetry",
-    "tests/webassembly"
+    "tests/telemetry"
 ]
 members = [
     "sdk/accessanalyzer",
@@ -59,6 +59,7 @@ members = [
     "sdk/aws-smithy-checksums",
     "sdk/aws-smithy-client",
     "sdk/aws-smithy-compression",
+    "sdk/aws-smithy-dns",
     "sdk/aws-smithy-eventstream",
     "sdk/aws-smithy-experimental",
     "sdk/aws-smithy-http",

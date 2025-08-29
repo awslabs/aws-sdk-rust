@@ -5,6 +5,8 @@
 pub struct GetSamplingTargetsInput {
     /// <p>Information about rules that the service is using to sample requests.</p>
     pub sampling_statistics_documents: ::std::option::Option<::std::vec::Vec<crate::types::SamplingStatisticsDocument>>,
+    /// <p>Information about rules that the service is using to boost sampling rate.</p>
+    pub sampling_boost_statistics_documents: ::std::option::Option<::std::vec::Vec<crate::types::SamplingBoostStatisticsDocument>>,
 }
 impl GetSamplingTargetsInput {
     /// <p>Information about rules that the service is using to sample requests.</p>
@@ -12,6 +14,12 @@ impl GetSamplingTargetsInput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sampling_statistics_documents.is_none()`.
     pub fn sampling_statistics_documents(&self) -> &[crate::types::SamplingStatisticsDocument] {
         self.sampling_statistics_documents.as_deref().unwrap_or_default()
+    }
+    /// <p>Information about rules that the service is using to boost sampling rate.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sampling_boost_statistics_documents.is_none()`.
+    pub fn sampling_boost_statistics_documents(&self) -> &[crate::types::SamplingBoostStatisticsDocument] {
+        self.sampling_boost_statistics_documents.as_deref().unwrap_or_default()
     }
 }
 impl GetSamplingTargetsInput {
@@ -26,6 +34,7 @@ impl GetSamplingTargetsInput {
 #[non_exhaustive]
 pub struct GetSamplingTargetsInputBuilder {
     pub(crate) sampling_statistics_documents: ::std::option::Option<::std::vec::Vec<crate::types::SamplingStatisticsDocument>>,
+    pub(crate) sampling_boost_statistics_documents: ::std::option::Option<::std::vec::Vec<crate::types::SamplingBoostStatisticsDocument>>,
 }
 impl GetSamplingTargetsInputBuilder {
     /// Appends an item to `sampling_statistics_documents`.
@@ -51,6 +60,29 @@ impl GetSamplingTargetsInputBuilder {
     pub fn get_sampling_statistics_documents(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SamplingStatisticsDocument>> {
         &self.sampling_statistics_documents
     }
+    /// Appends an item to `sampling_boost_statistics_documents`.
+    ///
+    /// To override the contents of this collection use [`set_sampling_boost_statistics_documents`](Self::set_sampling_boost_statistics_documents).
+    ///
+    /// <p>Information about rules that the service is using to boost sampling rate.</p>
+    pub fn sampling_boost_statistics_documents(mut self, input: crate::types::SamplingBoostStatisticsDocument) -> Self {
+        let mut v = self.sampling_boost_statistics_documents.unwrap_or_default();
+        v.push(input);
+        self.sampling_boost_statistics_documents = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Information about rules that the service is using to boost sampling rate.</p>
+    pub fn set_sampling_boost_statistics_documents(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::SamplingBoostStatisticsDocument>>,
+    ) -> Self {
+        self.sampling_boost_statistics_documents = input;
+        self
+    }
+    /// <p>Information about rules that the service is using to boost sampling rate.</p>
+    pub fn get_sampling_boost_statistics_documents(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SamplingBoostStatisticsDocument>> {
+        &self.sampling_boost_statistics_documents
+    }
     /// Consumes the builder and constructs a [`GetSamplingTargetsInput`](crate::operation::get_sampling_targets::GetSamplingTargetsInput).
     pub fn build(
         self,
@@ -58,6 +90,7 @@ impl GetSamplingTargetsInputBuilder {
     {
         ::std::result::Result::Ok(crate::operation::get_sampling_targets::GetSamplingTargetsInput {
             sampling_statistics_documents: self.sampling_statistics_documents,
+            sampling_boost_statistics_documents: self.sampling_boost_statistics_documents,
         })
     }
 }

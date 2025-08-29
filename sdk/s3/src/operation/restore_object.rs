@@ -161,7 +161,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Restore
 
                     // If the request is presigned we do not set a default.
                     // If the RequestChecksumCalculation is WhenSupported and the user has not set a checksum value or algo
-                    // we default to Crc32. If it is WhenRequired and a checksum is required by the trait and the user has not
+                    // we set the default. If it is WhenRequired and a checksum is required by the trait and the user has not
                     // set a checksum value or algo we also set the default. In all other cases we do nothing.
                     match (
                         request_checksum_calculation,

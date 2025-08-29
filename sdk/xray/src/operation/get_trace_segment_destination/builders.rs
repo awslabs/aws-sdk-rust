@@ -22,7 +22,7 @@ impl crate::operation::get_trace_segment_destination::builders::GetTraceSegmentD
 }
 /// Fluent builder constructing a request to `GetTraceSegmentDestination`.
 ///
-/// <p>Retrieves the current destination of data sent to <code>PutTraceSegments</code> and <i>OpenTelemetry</i> API. The Transaction Search feature requires a CloudWatchLogs destination. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Transaction-Search.html">Transaction Search</a> and <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-OpenTelemetry-Sections.html">OpenTelemetry</a>.</p>
+/// <p>Retrieves the current destination of data sent to <code>PutTraceSegments</code> and <i>OpenTelemetry protocol (OTLP)</i> endpoint. The Transaction Search feature requires a CloudWatchLogs destination. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Transaction-Search.html">Transaction Search</a> and <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-OpenTelemetry-Sections.html">OpenTelemetry</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetTraceSegmentDestinationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

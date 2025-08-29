@@ -3,17 +3,29 @@ pub fn ser_get_sampling_targets_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_sampling_targets::GetSamplingTargetsInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.sampling_statistics_documents {
-        let mut array_2 = object.key("SamplingStatisticsDocuments").start_array();
+    if let Some(var_1) = &input.sampling_boost_statistics_documents {
+        let mut array_2 = object.key("SamplingBoostStatisticsDocuments").start_array();
         for item_3 in var_1 {
             {
                 #[allow(unused_mut)]
                 let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_sampling_statistics_document::ser_sampling_statistics_document(&mut object_4, item_3)?;
+                crate::protocol_serde::shape_sampling_boost_statistics_document::ser_sampling_boost_statistics_document(&mut object_4, item_3)?;
                 object_4.finish();
             }
         }
         array_2.finish();
+    }
+    if let Some(var_5) = &input.sampling_statistics_documents {
+        let mut array_6 = object.key("SamplingStatisticsDocuments").start_array();
+        for item_7 in var_5 {
+            {
+                #[allow(unused_mut)]
+                let mut object_8 = array_6.value().start_object();
+                crate::protocol_serde::shape_sampling_statistics_document::ser_sampling_statistics_document(&mut object_8, item_7)?;
+                object_8.finish();
+            }
+        }
+        array_6.finish();
     }
     Ok(())
 }

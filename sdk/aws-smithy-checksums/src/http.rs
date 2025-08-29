@@ -21,6 +21,7 @@ pub const SHA_256_HEADER_NAME: &str = "x-amz-checksum-sha256";
 pub const CRC_64_NVME_HEADER_NAME: &str = "x-amz-checksum-crc64nvme";
 
 // Preserved for compatibility purposes. This should never be used by users, only within smithy-rs
+#[warn(dead_code)]
 pub(crate) static MD5_HEADER_NAME: &str = "content-md5";
 
 /// When a response has to be checksum-verified, we have to check possible headers until we find the

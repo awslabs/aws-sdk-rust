@@ -8,7 +8,7 @@ pub struct TraceSummary {
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The start time of a trace, based on the earliest trace segment start time.</p>
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The length of time in seconds between the start time of the root segment and the end time of the last segment that completed.</p>
+    /// <p>The length of time in seconds between the start time of the earliest segment that started and the end time of the last segment that completed.</p>
     pub duration: ::std::option::Option<f64>,
     /// <p>The length of time in seconds between the start and end times of the root segment. If the service performs work asynchronously, the response time measures the time before the response is sent to the user, while the duration measures the amount of time before the last traced activity completes.</p>
     pub response_time: ::std::option::Option<f64>,
@@ -56,7 +56,7 @@ impl TraceSummary {
     pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
-    /// <p>The length of time in seconds between the start time of the root segment and the end time of the last segment that completed.</p>
+    /// <p>The length of time in seconds between the start time of the earliest segment that started and the end time of the last segment that completed.</p>
     pub fn duration(&self) -> ::std::option::Option<f64> {
         self.duration
     }
@@ -214,17 +214,17 @@ impl TraceSummaryBuilder {
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.start_time
     }
-    /// <p>The length of time in seconds between the start time of the root segment and the end time of the last segment that completed.</p>
+    /// <p>The length of time in seconds between the start time of the earliest segment that started and the end time of the last segment that completed.</p>
     pub fn duration(mut self, input: f64) -> Self {
         self.duration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The length of time in seconds between the start time of the root segment and the end time of the last segment that completed.</p>
+    /// <p>The length of time in seconds between the start time of the earliest segment that started and the end time of the last segment that completed.</p>
     pub fn set_duration(mut self, input: ::std::option::Option<f64>) -> Self {
         self.duration = input;
         self
     }
-    /// <p>The length of time in seconds between the start time of the root segment and the end time of the last segment that completed.</p>
+    /// <p>The length of time in seconds between the start time of the earliest segment that started and the end time of the last segment that completed.</p>
     pub fn get_duration(&self) -> &::std::option::Option<f64> {
         &self.duration
     }

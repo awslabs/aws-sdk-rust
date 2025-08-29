@@ -61,6 +61,12 @@ pub fn ser_sampling_rule(
         }
         object_4.finish();
     }
+    if let Some(var_7) = &input.sampling_rate_boost {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("SamplingRateBoost").start_object();
+        crate::protocol_serde::shape_sampling_rate_boost::ser_sampling_rate_boost(&mut object_8, var_7)?;
+        object_8.finish();
+    }
     Ok(())
 }
 
@@ -163,6 +169,10 @@ where
                         }
                         "Attributes" => {
                             builder = builder.set_attributes(crate::protocol_serde::shape_attribute_map::de_attribute_map(tokens)?);
+                        }
+                        "SamplingRateBoost" => {
+                            builder =
+                                builder.set_sampling_rate_boost(crate::protocol_serde::shape_sampling_rate_boost::de_sampling_rate_boost(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

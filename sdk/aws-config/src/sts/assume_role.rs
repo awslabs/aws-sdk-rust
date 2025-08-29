@@ -203,7 +203,7 @@ impl AssumeRoleProviderBuilder {
     /// This enables overriding the connection used to communicate with STS in addition to other internal
     /// fields like the time source and sleep implementation used for caching.
     ///
-    /// If this field is not provided, configuration from [`aws_config::load_from_env().await`] is used.
+    /// If this field is not provided, configuration from [`crate::load_from_env()`] is used.
     ///
     /// # Examples
     /// ```rust

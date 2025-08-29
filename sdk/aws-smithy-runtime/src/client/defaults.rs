@@ -67,6 +67,7 @@ pub fn default_http_client_plugin_v2(
 ) -> Option<SharedRuntimePlugin> {
     let mut _default: Option<SharedHttpClient> = None;
 
+    #[allow(deprecated)]
     if behavior_version.is_at_least(BehaviorVersion::v2025_01_17()) {
         // the latest https stack takes precedence if the config flag
         // is enabled otherwise try to fall back to the legacy connector

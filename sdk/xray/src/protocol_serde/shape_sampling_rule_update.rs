@@ -55,5 +55,11 @@ pub fn ser_sampling_rule_update(
         }
         object_13.finish();
     }
+    if let Some(var_16) = &input.sampling_rate_boost {
+        #[allow(unused_mut)]
+        let mut object_17 = object.key("SamplingRateBoost").start_object();
+        crate::protocol_serde::shape_sampling_rate_boost::ser_sampling_rate_boost(&mut object_17, var_16)?;
+        object_17.finish();
+    }
     Ok(())
 }

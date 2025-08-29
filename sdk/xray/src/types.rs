@@ -7,6 +7,8 @@ pub use crate::types::_sampling_rule_record::SamplingRuleRecord;
 
 pub use crate::types::_sampling_rule::SamplingRule;
 
+pub use crate::types::_sampling_rate_boost::SamplingRateBoost;
+
 pub use crate::types::_sampling_rule_update::SamplingRuleUpdate;
 
 pub use crate::types::_indexing_rule::IndexingRule;
@@ -114,6 +116,10 @@ pub use crate::types::_forecast_statistics::ForecastStatistics;
 pub use crate::types::_unprocessed_statistics::UnprocessedStatistics;
 
 pub use crate::types::_sampling_target_document::SamplingTargetDocument;
+
+pub use crate::types::_sampling_boost::SamplingBoost;
+
+pub use crate::types::_sampling_boost_statistics_document::SamplingBoostStatisticsDocument;
 
 pub use crate::types::_sampling_statistics_document::SamplingStatisticsDocument;
 
@@ -242,6 +248,12 @@ mod _retrieved_service;
 mod _retrieved_trace;
 
 mod _root_cause_exception;
+
+mod _sampling_boost;
+
+mod _sampling_boost_statistics_document;
+
+mod _sampling_rate_boost;
 
 mod _sampling_rule;
 

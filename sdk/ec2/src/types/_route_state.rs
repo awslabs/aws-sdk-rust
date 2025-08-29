@@ -14,6 +14,7 @@
 /// match routestate {
 ///     RouteState::Active => { /* ... */ },
 ///     RouteState::Blackhole => { /* ... */ },
+///     RouteState::Filtered => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -46,6 +47,8 @@ pub enum RouteState {
     Active,
     #[allow(missing_docs)] // documentation missing in model
     Blackhole,
+    #[allow(missing_docs)] // documentation missing in model
+    Filtered,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -55,6 +58,7 @@ impl ::std::convert::From<&str> for RouteState {
         match s {
             "active" => RouteState::Active,
             "blackhole" => RouteState::Blackhole,
+            "filtered" => RouteState::Filtered,
             other => RouteState::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -72,12 +76,13 @@ impl RouteState {
         match self {
             RouteState::Active => "active",
             RouteState::Blackhole => "blackhole",
+            RouteState::Filtered => "filtered",
             RouteState::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["active", "blackhole"]
+        &["active", "blackhole", "filtered"]
     }
 }
 impl ::std::convert::AsRef<str> for RouteState {
@@ -102,6 +107,7 @@ impl ::std::fmt::Display for RouteState {
         match self {
             RouteState::Active => write!(f, "active"),
             RouteState::Blackhole => write!(f, "blackhole"),
+            RouteState::Filtered => write!(f, "filtered"),
             RouteState::Unknown(value) => write!(f, "{}", value),
         }
     }

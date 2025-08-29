@@ -227,6 +227,8 @@ pub(crate) mod shape_resource_policy_list;
 
 pub(crate) mod shape_retrieved_services_list;
 
+pub(crate) mod shape_sampling_boost_statistics_document;
+
 pub(crate) mod shape_sampling_rule;
 
 pub(crate) mod shape_sampling_rule_record;
@@ -289,6 +291,8 @@ pub(crate) mod shape_retrieved_service;
 
 pub(crate) mod shape_retrieved_trace;
 
+pub(crate) mod shape_sampling_rate_boost;
+
 pub(crate) mod shape_sampling_statistic_summary;
 
 pub(crate) mod shape_sampling_target_document;
@@ -334,6 +338,8 @@ pub(crate) mod shape_links_list;
 pub(crate) mod shape_probabilistic_rule_value;
 
 pub(crate) mod shape_response_time_root_causes;
+
+pub(crate) mod shape_sampling_boost;
 
 pub(crate) mod shape_segment_list;
 

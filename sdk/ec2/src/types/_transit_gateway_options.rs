@@ -10,11 +10,11 @@ pub struct TransitGatewayOptions {
     pub transit_gateway_cidr_blocks: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Indicates whether attachment requests are automatically accepted.</p>
     pub auto_accept_shared_attachments: ::std::option::Option<crate::types::AutoAcceptSharedAttachmentsValue>,
-    /// <p>Indicates whether resource attachments are automatically associated with the default association route table. Enabled by default. If <code>defaultRouteTableAssociation</code> is set to <code>enable</code>, Amazon Web Services Transit Gateway will create the default transit gateway route table.</p>
+    /// <p>Indicates whether resource attachments are automatically associated with the default association route table. Enabled by default. Either <code>defaultRouteTableAssociation</code> or <code>defaultRouteTablePropagation</code> must be set to <code>enable</code> for Amazon Web Services Transit Gateway to create the default transit gateway route table.</p>
     pub default_route_table_association: ::std::option::Option<crate::types::DefaultRouteTableAssociationValue>,
     /// <p>The ID of the default association route table.</p>
     pub association_default_route_table_id: ::std::option::Option<::std::string::String>,
-    /// <p>Indicates whether resource attachments automatically propagate routes to the default propagation route table. Enabled by default. If <code>defaultRouteTablePropagation</code> is set to <code>enable</code>, Amazon Web Services Transit Gateway will create the default transit gateway route table.</p>
+    /// <p>Indicates whether resource attachments automatically propagate routes to the default propagation route table. Enabled by default. If <code>defaultRouteTablePropagation</code> is set to <code>enable</code>, Amazon Web Services Transit Gateway creates the default transit gateway route table.</p>
     pub default_route_table_propagation: ::std::option::Option<crate::types::DefaultRouteTablePropagationValue>,
     /// <p>The ID of the default propagation route table.</p>
     pub propagation_default_route_table_id: ::std::option::Option<::std::string::String>,
@@ -43,7 +43,7 @@ impl TransitGatewayOptions {
     pub fn auto_accept_shared_attachments(&self) -> ::std::option::Option<&crate::types::AutoAcceptSharedAttachmentsValue> {
         self.auto_accept_shared_attachments.as_ref()
     }
-    /// <p>Indicates whether resource attachments are automatically associated with the default association route table. Enabled by default. If <code>defaultRouteTableAssociation</code> is set to <code>enable</code>, Amazon Web Services Transit Gateway will create the default transit gateway route table.</p>
+    /// <p>Indicates whether resource attachments are automatically associated with the default association route table. Enabled by default. Either <code>defaultRouteTableAssociation</code> or <code>defaultRouteTablePropagation</code> must be set to <code>enable</code> for Amazon Web Services Transit Gateway to create the default transit gateway route table.</p>
     pub fn default_route_table_association(&self) -> ::std::option::Option<&crate::types::DefaultRouteTableAssociationValue> {
         self.default_route_table_association.as_ref()
     }
@@ -51,7 +51,7 @@ impl TransitGatewayOptions {
     pub fn association_default_route_table_id(&self) -> ::std::option::Option<&str> {
         self.association_default_route_table_id.as_deref()
     }
-    /// <p>Indicates whether resource attachments automatically propagate routes to the default propagation route table. Enabled by default. If <code>defaultRouteTablePropagation</code> is set to <code>enable</code>, Amazon Web Services Transit Gateway will create the default transit gateway route table.</p>
+    /// <p>Indicates whether resource attachments automatically propagate routes to the default propagation route table. Enabled by default. If <code>defaultRouteTablePropagation</code> is set to <code>enable</code>, Amazon Web Services Transit Gateway creates the default transit gateway route table.</p>
     pub fn default_route_table_propagation(&self) -> ::std::option::Option<&crate::types::DefaultRouteTablePropagationValue> {
         self.default_route_table_propagation.as_ref()
     }
@@ -149,17 +149,17 @@ impl TransitGatewayOptionsBuilder {
     pub fn get_auto_accept_shared_attachments(&self) -> &::std::option::Option<crate::types::AutoAcceptSharedAttachmentsValue> {
         &self.auto_accept_shared_attachments
     }
-    /// <p>Indicates whether resource attachments are automatically associated with the default association route table. Enabled by default. If <code>defaultRouteTableAssociation</code> is set to <code>enable</code>, Amazon Web Services Transit Gateway will create the default transit gateway route table.</p>
+    /// <p>Indicates whether resource attachments are automatically associated with the default association route table. Enabled by default. Either <code>defaultRouteTableAssociation</code> or <code>defaultRouteTablePropagation</code> must be set to <code>enable</code> for Amazon Web Services Transit Gateway to create the default transit gateway route table.</p>
     pub fn default_route_table_association(mut self, input: crate::types::DefaultRouteTableAssociationValue) -> Self {
         self.default_route_table_association = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether resource attachments are automatically associated with the default association route table. Enabled by default. If <code>defaultRouteTableAssociation</code> is set to <code>enable</code>, Amazon Web Services Transit Gateway will create the default transit gateway route table.</p>
+    /// <p>Indicates whether resource attachments are automatically associated with the default association route table. Enabled by default. Either <code>defaultRouteTableAssociation</code> or <code>defaultRouteTablePropagation</code> must be set to <code>enable</code> for Amazon Web Services Transit Gateway to create the default transit gateway route table.</p>
     pub fn set_default_route_table_association(mut self, input: ::std::option::Option<crate::types::DefaultRouteTableAssociationValue>) -> Self {
         self.default_route_table_association = input;
         self
     }
-    /// <p>Indicates whether resource attachments are automatically associated with the default association route table. Enabled by default. If <code>defaultRouteTableAssociation</code> is set to <code>enable</code>, Amazon Web Services Transit Gateway will create the default transit gateway route table.</p>
+    /// <p>Indicates whether resource attachments are automatically associated with the default association route table. Enabled by default. Either <code>defaultRouteTableAssociation</code> or <code>defaultRouteTablePropagation</code> must be set to <code>enable</code> for Amazon Web Services Transit Gateway to create the default transit gateway route table.</p>
     pub fn get_default_route_table_association(&self) -> &::std::option::Option<crate::types::DefaultRouteTableAssociationValue> {
         &self.default_route_table_association
     }
@@ -177,17 +177,17 @@ impl TransitGatewayOptionsBuilder {
     pub fn get_association_default_route_table_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.association_default_route_table_id
     }
-    /// <p>Indicates whether resource attachments automatically propagate routes to the default propagation route table. Enabled by default. If <code>defaultRouteTablePropagation</code> is set to <code>enable</code>, Amazon Web Services Transit Gateway will create the default transit gateway route table.</p>
+    /// <p>Indicates whether resource attachments automatically propagate routes to the default propagation route table. Enabled by default. If <code>defaultRouteTablePropagation</code> is set to <code>enable</code>, Amazon Web Services Transit Gateway creates the default transit gateway route table.</p>
     pub fn default_route_table_propagation(mut self, input: crate::types::DefaultRouteTablePropagationValue) -> Self {
         self.default_route_table_propagation = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether resource attachments automatically propagate routes to the default propagation route table. Enabled by default. If <code>defaultRouteTablePropagation</code> is set to <code>enable</code>, Amazon Web Services Transit Gateway will create the default transit gateway route table.</p>
+    /// <p>Indicates whether resource attachments automatically propagate routes to the default propagation route table. Enabled by default. If <code>defaultRouteTablePropagation</code> is set to <code>enable</code>, Amazon Web Services Transit Gateway creates the default transit gateway route table.</p>
     pub fn set_default_route_table_propagation(mut self, input: ::std::option::Option<crate::types::DefaultRouteTablePropagationValue>) -> Self {
         self.default_route_table_propagation = input;
         self
     }
-    /// <p>Indicates whether resource attachments automatically propagate routes to the default propagation route table. Enabled by default. If <code>defaultRouteTablePropagation</code> is set to <code>enable</code>, Amazon Web Services Transit Gateway will create the default transit gateway route table.</p>
+    /// <p>Indicates whether resource attachments automatically propagate routes to the default propagation route table. Enabled by default. If <code>defaultRouteTablePropagation</code> is set to <code>enable</code>, Amazon Web Services Transit Gateway creates the default transit gateway route table.</p>
     pub fn get_default_route_table_propagation(&self) -> &::std::option::Option<crate::types::DefaultRouteTablePropagationValue> {
         &self.default_route_table_propagation
     }

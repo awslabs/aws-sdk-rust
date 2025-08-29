@@ -14,6 +14,8 @@ pub struct SamplingTargetDocument {
     pub reservoir_quota_ttl: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The number of seconds for the service to wait before getting sampling targets again.</p>
     pub interval: ::std::option::Option<i32>,
+    /// <p>The sampling boost that X-Ray allocated for this service.</p>
+    pub sampling_boost: ::std::option::Option<crate::types::SamplingBoost>,
 }
 impl SamplingTargetDocument {
     /// <p>The name of the sampling rule.</p>
@@ -36,6 +38,10 @@ impl SamplingTargetDocument {
     pub fn interval(&self) -> ::std::option::Option<i32> {
         self.interval
     }
+    /// <p>The sampling boost that X-Ray allocated for this service.</p>
+    pub fn sampling_boost(&self) -> ::std::option::Option<&crate::types::SamplingBoost> {
+        self.sampling_boost.as_ref()
+    }
 }
 impl SamplingTargetDocument {
     /// Creates a new builder-style object to manufacture [`SamplingTargetDocument`](crate::types::SamplingTargetDocument).
@@ -53,6 +59,7 @@ pub struct SamplingTargetDocumentBuilder {
     pub(crate) reservoir_quota: ::std::option::Option<i32>,
     pub(crate) reservoir_quota_ttl: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) interval: ::std::option::Option<i32>,
+    pub(crate) sampling_boost: ::std::option::Option<crate::types::SamplingBoost>,
 }
 impl SamplingTargetDocumentBuilder {
     /// <p>The name of the sampling rule.</p>
@@ -125,6 +132,20 @@ impl SamplingTargetDocumentBuilder {
     pub fn get_interval(&self) -> &::std::option::Option<i32> {
         &self.interval
     }
+    /// <p>The sampling boost that X-Ray allocated for this service.</p>
+    pub fn sampling_boost(mut self, input: crate::types::SamplingBoost) -> Self {
+        self.sampling_boost = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The sampling boost that X-Ray allocated for this service.</p>
+    pub fn set_sampling_boost(mut self, input: ::std::option::Option<crate::types::SamplingBoost>) -> Self {
+        self.sampling_boost = input;
+        self
+    }
+    /// <p>The sampling boost that X-Ray allocated for this service.</p>
+    pub fn get_sampling_boost(&self) -> &::std::option::Option<crate::types::SamplingBoost> {
+        &self.sampling_boost
+    }
     /// Consumes the builder and constructs a [`SamplingTargetDocument`](crate::types::SamplingTargetDocument).
     pub fn build(self) -> crate::types::SamplingTargetDocument {
         crate::types::SamplingTargetDocument {
@@ -133,6 +154,7 @@ impl SamplingTargetDocumentBuilder {
             reservoir_quota: self.reservoir_quota,
             reservoir_quota_ttl: self.reservoir_quota_ttl,
             interval: self.interval,
+            sampling_boost: self.sampling_boost,
         }
     }
 }

@@ -46,6 +46,9 @@ where
                                     .transpose()?,
                             );
                         }
+                        "SamplingBoost" => {
+                            builder = builder.set_sampling_boost(crate::protocol_serde::shape_sampling_boost::de_sampling_boost(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
