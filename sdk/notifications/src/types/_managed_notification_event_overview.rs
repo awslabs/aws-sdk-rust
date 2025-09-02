@@ -12,7 +12,7 @@ pub struct ManagedNotificationEventOverview {
     pub related_account: ::std::string::String,
     /// <p>The creation time of the <code>ManagedNotificationEvent</code>.</p>
     pub creation_time: ::aws_smithy_types::DateTime,
-    /// <p>A short summary of a <code>ManagedNotificationEvent</code>. This is only used when listing managed notification events.</p>
+    /// <p></p>
     pub notification_event: ::std::option::Option<crate::types::ManagedNotificationEventSummary>,
     /// <p>The notifications aggregation type.</p>
     /// <ul>
@@ -67,7 +67,7 @@ impl ManagedNotificationEventOverview {
     pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
         &self.creation_time
     }
-    /// <p>A short summary of a <code>ManagedNotificationEvent</code>. This is only used when listing managed notification events.</p>
+    /// <p></p>
     pub fn notification_event(&self) -> ::std::option::Option<&crate::types::ManagedNotificationEventSummary> {
         self.notification_event.as_ref()
     }
@@ -196,18 +196,18 @@ impl ManagedNotificationEventOverviewBuilder {
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_time
     }
-    /// <p>A short summary of a <code>ManagedNotificationEvent</code>. This is only used when listing managed notification events.</p>
+    /// <p></p>
     /// This field is required.
     pub fn notification_event(mut self, input: crate::types::ManagedNotificationEventSummary) -> Self {
         self.notification_event = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A short summary of a <code>ManagedNotificationEvent</code>. This is only used when listing managed notification events.</p>
+    /// <p></p>
     pub fn set_notification_event(mut self, input: ::std::option::Option<crate::types::ManagedNotificationEventSummary>) -> Self {
         self.notification_event = input;
         self
     }
-    /// <p>A short summary of a <code>ManagedNotificationEvent</code>. This is only used when listing managed notification events.</p>
+    /// <p></p>
     pub fn get_notification_event(&self) -> &::std::option::Option<crate::types::ManagedNotificationEventSummary> {
         &self.notification_event
     }

@@ -14,7 +14,7 @@ serde_json = "1.0.94"
 anyhow = "1.0.71"
 serde = "1.0.164"
 aws-config= { version = "1.8.6", path = "../../../sdk/aws-config" }
-aws-sdk-ec2= { version = "1.164.0", path = "../../../sdk/ec2" }
+aws-sdk-ec2= { version = "1.165.0", path = "../../../sdk/ec2" }
 aws-sdk-lambda= { version = "1.96.0", path = "../../../sdk/lambda" }
 aws-sdk-s3= { version = "1.104.0", path = "../../../sdk/s3" }
 

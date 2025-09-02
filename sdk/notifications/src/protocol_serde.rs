@@ -29,6 +29,8 @@ pub(crate) mod shape_associate_managed_notification_account_contact;
 
 pub(crate) mod shape_associate_managed_notification_additional_channel;
 
+pub(crate) mod shape_associate_organizational_unit;
+
 pub(crate) mod shape_create_event_rule;
 
 pub(crate) mod shape_create_notification_configuration;
@@ -46,6 +48,8 @@ pub(crate) mod shape_disassociate_channel;
 pub(crate) mod shape_disassociate_managed_notification_account_contact;
 
 pub(crate) mod shape_disassociate_managed_notification_additional_channel;
+
+pub(crate) mod shape_disassociate_organizational_unit;
 
 pub(crate) mod shape_enable_notifications_access_for_organization;
 
@@ -75,11 +79,15 @@ pub(crate) mod shape_list_managed_notification_configurations;
 
 pub(crate) mod shape_list_managed_notification_events;
 
+pub(crate) mod shape_list_member_accounts;
+
 pub(crate) mod shape_list_notification_configurations;
 
 pub(crate) mod shape_list_notification_events;
 
 pub(crate) mod shape_list_notification_hubs;
+
+pub(crate) mod shape_list_organizational_units;
 
 pub(crate) mod shape_list_tags_for_resource;
 
@@ -109,6 +117,8 @@ pub(crate) mod shape_associate_managed_notification_account_contact_input;
 
 pub(crate) mod shape_associate_managed_notification_additional_channel_input;
 
+pub(crate) mod shape_associate_organizational_unit_input;
+
 pub(crate) mod shape_conflict_exception;
 
 pub(crate) mod shape_create_event_rule_input;
@@ -120,6 +130,8 @@ pub(crate) mod shape_disassociate_channel_input;
 pub(crate) mod shape_disassociate_managed_notification_account_contact_input;
 
 pub(crate) mod shape_disassociate_managed_notification_additional_channel_input;
+
+pub(crate) mod shape_disassociate_organizational_unit_input;
 
 pub(crate) mod shape_internal_server_exception;
 
@@ -157,6 +169,8 @@ pub(crate) mod shape_managed_notification_events;
 
 pub(crate) mod shape_managed_rule_arns;
 
+pub(crate) mod shape_member_accounts;
+
 pub(crate) mod shape_notification_configurations;
 
 pub(crate) mod shape_notification_event_schema;
@@ -168,6 +182,8 @@ pub(crate) mod shape_notification_hub_status_summary;
 pub(crate) mod shape_notification_hubs;
 
 pub(crate) mod shape_notifications_access_for_organization;
+
+pub(crate) mod shape_organizational_units;
 
 pub(crate) mod shape_regions;
 
@@ -194,6 +210,8 @@ pub(crate) mod shape_managed_notification_configuration_structure;
 pub(crate) mod shape_managed_notification_event_overview;
 
 pub(crate) mod shape_media;
+
+pub(crate) mod shape_member_account;
 
 pub(crate) mod shape_message_components;
 

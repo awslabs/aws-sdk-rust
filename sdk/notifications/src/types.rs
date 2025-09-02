@@ -55,6 +55,8 @@ pub use crate::types::_message_components_summary::MessageComponentsSummary;
 
 pub use crate::types::_source_event_metadata_summary::SourceEventMetadataSummary;
 
+pub use crate::types::_notification_configuration_subtype::NotificationConfigurationSubtype;
+
 pub use crate::types::_aggregation_duration::AggregationDuration;
 
 pub use crate::types::_notification_configuration_status::NotificationConfigurationStatus;
@@ -88,6 +90,10 @@ pub use crate::types::_event_rule_status_summary::EventRuleStatusSummary;
 pub use crate::types::_event_rule_status::EventRuleStatus;
 
 pub use crate::types::_event_rule_structure::EventRuleStructure;
+
+pub use crate::types::_member_account::MemberAccount;
+
+pub use crate::types::_member_account_notification_configuration_status::MemberAccountNotificationConfigurationStatus;
 
 pub use crate::types::_managed_notification_channel_association_summary::ManagedNotificationChannelAssociationSummary;
 
@@ -147,6 +153,10 @@ mod _media_element;
 
 mod _media_element_type;
 
+mod _member_account;
+
+mod _member_account_notification_configuration_status;
+
 mod _message_components;
 
 mod _message_components_summary;
@@ -154,6 +164,8 @@ mod _message_components_summary;
 mod _notification_configuration_status;
 
 mod _notification_configuration_structure;
+
+mod _notification_configuration_subtype;
 
 mod _notification_event_overview;
 

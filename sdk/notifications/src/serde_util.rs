@@ -319,6 +319,15 @@ pub(crate) fn list_managed_notification_events_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_member_accounts_output_output_correct_errors(
+    mut builder: crate::operation::list_member_accounts::builders::ListMemberAccountsOutputBuilder,
+) -> crate::operation::list_member_accounts::builders::ListMemberAccountsOutputBuilder {
+    if builder.member_accounts.is_none() {
+        builder.member_accounts = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_notification_configurations_output_output_correct_errors(
     mut builder: crate::operation::list_notification_configurations::builders::ListNotificationConfigurationsOutputBuilder,
 ) -> crate::operation::list_notification_configurations::builders::ListNotificationConfigurationsOutputBuilder {
@@ -342,6 +351,15 @@ pub(crate) fn list_notification_hubs_output_output_correct_errors(
 ) -> crate::operation::list_notification_hubs::builders::ListNotificationHubsOutputBuilder {
     if builder.notification_hubs.is_none() {
         builder.notification_hubs = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_organizational_units_output_output_correct_errors(
+    mut builder: crate::operation::list_organizational_units::builders::ListOrganizationalUnitsOutputBuilder,
+) -> crate::operation::list_organizational_units::builders::ListOrganizationalUnitsOutputBuilder {
+    if builder.organizational_units.is_none() {
+        builder.organizational_units = Some(Default::default())
     }
     builder
 }
@@ -665,6 +683,26 @@ pub(crate) fn managed_notification_event_overview_correct_errors(
             let builder = crate::types::builders::ManagedNotificationEventSummaryBuilder::default();
             crate::serde_util::managed_notification_event_summary_correct_errors(builder).build().ok()
         }
+    }
+    builder
+}
+
+pub(crate) fn member_account_correct_errors(
+    mut builder: crate::types::builders::MemberAccountBuilder,
+) -> crate::types::builders::MemberAccountBuilder {
+    if builder.account_id.is_none() {
+        builder.account_id = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set"
+            .parse::<crate::types::MemberAccountNotificationConfigurationStatus>()
+            .ok()
+    }
+    if builder.status_reason.is_none() {
+        builder.status_reason = Some(Default::default())
+    }
+    if builder.organizational_unit_id.is_none() {
+        builder.organizational_unit_id = Some(Default::default())
     }
     builder
 }

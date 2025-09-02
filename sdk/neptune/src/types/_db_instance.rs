@@ -65,8 +65,9 @@ pub struct DbInstance {
     pub character_set_name: ::std::option::Option<::std::string::String>,
     /// <p>If present, specifies the name of the secondary Availability Zone for a DB instance with multi-AZ support.</p>
     pub secondary_availability_zone: ::std::option::Option<::std::string::String>,
-    /// <p>This flag should no longer be used.</p>
-    #[deprecated]
+    /// <p>Indicates whether the DB instance is publicly accessible.</p>
+    /// <p>When the DB instance is publicly accessible and you connect from outside of the DB instance's virtual private cloud (VPC), its Domain Name System (DNS) endpoint resolves to the public IP address. When you connect from within the same VPC as the DB instance, the endpoint resolves to the private IP address. Access to the DB instance is ultimately controlled by the security group it uses. That public access isn't permitted if the security group assigned to the DB cluster doesn't permit it.</p>
+    /// <p>When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a private IP address.</p>
     pub publicly_accessible: ::std::option::Option<bool>,
     /// <p>The status of a Read Replica. If the instance is not a Read Replica, this is blank.</p>
     pub status_infos: ::std::option::Option<::std::vec::Vec<crate::types::DbInstanceStatusInfo>>,
@@ -246,8 +247,9 @@ impl DbInstance {
     pub fn secondary_availability_zone(&self) -> ::std::option::Option<&str> {
         self.secondary_availability_zone.as_deref()
     }
-    /// <p>This flag should no longer be used.</p>
-    #[deprecated]
+    /// <p>Indicates whether the DB instance is publicly accessible.</p>
+    /// <p>When the DB instance is publicly accessible and you connect from outside of the DB instance's virtual private cloud (VPC), its Domain Name System (DNS) endpoint resolves to the public IP address. When you connect from within the same VPC as the DB instance, the endpoint resolves to the private IP address. Access to the DB instance is ultimately controlled by the security group it uses. That public access isn't permitted if the security group assigned to the DB cluster doesn't permit it.</p>
+    /// <p>When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a private IP address.</p>
     pub fn publicly_accessible(&self) -> ::std::option::Option<bool> {
         self.publicly_accessible
     }
@@ -868,20 +870,23 @@ impl DbInstanceBuilder {
     pub fn get_secondary_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
         &self.secondary_availability_zone
     }
-    /// <p>This flag should no longer be used.</p>
-    #[deprecated]
+    /// <p>Indicates whether the DB instance is publicly accessible.</p>
+    /// <p>When the DB instance is publicly accessible and you connect from outside of the DB instance's virtual private cloud (VPC), its Domain Name System (DNS) endpoint resolves to the public IP address. When you connect from within the same VPC as the DB instance, the endpoint resolves to the private IP address. Access to the DB instance is ultimately controlled by the security group it uses. That public access isn't permitted if the security group assigned to the DB cluster doesn't permit it.</p>
+    /// <p>When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a private IP address.</p>
     pub fn publicly_accessible(mut self, input: bool) -> Self {
         self.publicly_accessible = ::std::option::Option::Some(input);
         self
     }
-    /// <p>This flag should no longer be used.</p>
-    #[deprecated]
+    /// <p>Indicates whether the DB instance is publicly accessible.</p>
+    /// <p>When the DB instance is publicly accessible and you connect from outside of the DB instance's virtual private cloud (VPC), its Domain Name System (DNS) endpoint resolves to the public IP address. When you connect from within the same VPC as the DB instance, the endpoint resolves to the private IP address. Access to the DB instance is ultimately controlled by the security group it uses. That public access isn't permitted if the security group assigned to the DB cluster doesn't permit it.</p>
+    /// <p>When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a private IP address.</p>
     pub fn set_publicly_accessible(mut self, input: ::std::option::Option<bool>) -> Self {
         self.publicly_accessible = input;
         self
     }
-    /// <p>This flag should no longer be used.</p>
-    #[deprecated]
+    /// <p>Indicates whether the DB instance is publicly accessible.</p>
+    /// <p>When the DB instance is publicly accessible and you connect from outside of the DB instance's virtual private cloud (VPC), its Domain Name System (DNS) endpoint resolves to the public IP address. When you connect from within the same VPC as the DB instance, the endpoint resolves to the private IP address. Access to the DB instance is ultimately controlled by the security group it uses. That public access isn't permitted if the security group assigned to the DB cluster doesn't permit it.</p>
+    /// <p>When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a private IP address.</p>
     pub fn get_publicly_accessible(&self) -> &::std::option::Option<bool> {
         &self.publicly_accessible
     }

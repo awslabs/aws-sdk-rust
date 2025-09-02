@@ -61,4 +61,6 @@ pub use crate::types::_event_rule_status_summary::EventRuleStatusSummaryBuilder;
 
 pub use crate::types::_event_rule_structure::EventRuleStructureBuilder;
 
+pub use crate::types::_member_account::MemberAccountBuilder;
+
 pub use crate::types::_managed_notification_channel_association_summary::ManagedNotificationChannelAssociationSummaryBuilder;

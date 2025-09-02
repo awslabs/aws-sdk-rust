@@ -10,6 +10,9 @@ pub mod associate_managed_notification_account_contact;
 /// Types for the `AssociateManagedNotificationAdditionalChannel` operation.
 pub mod associate_managed_notification_additional_channel;
 
+/// Types for the `AssociateOrganizationalUnit` operation.
+pub mod associate_organizational_unit;
+
 /// Types for the `CreateEventRule` operation.
 pub mod create_event_rule;
 
@@ -36,6 +39,9 @@ pub mod disassociate_managed_notification_account_contact;
 
 /// Types for the `DisassociateManagedNotificationAdditionalChannel` operation.
 pub mod disassociate_managed_notification_additional_channel;
+
+/// Types for the `DisassociateOrganizationalUnit` operation.
+pub mod disassociate_organizational_unit;
 
 /// Types for the `EnableNotificationsAccessForOrganization` operation.
 pub mod enable_notifications_access_for_organization;
@@ -79,6 +85,9 @@ pub mod list_managed_notification_configurations;
 /// Types for the `ListManagedNotificationEvents` operation.
 pub mod list_managed_notification_events;
 
+/// Types for the `ListMemberAccounts` operation.
+pub mod list_member_accounts;
+
 /// Types for the `ListNotificationConfigurations` operation.
 pub mod list_notification_configurations;
 
@@ -87,6 +96,9 @@ pub mod list_notification_events;
 
 /// Types for the `ListNotificationHubs` operation.
 pub mod list_notification_hubs;
+
+/// Types for the `ListOrganizationalUnits` operation.
+pub mod list_organizational_units;
 
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;

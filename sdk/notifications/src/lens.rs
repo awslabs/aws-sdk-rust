@@ -59,6 +59,16 @@ pub(crate) fn reflens_list_managed_notification_events_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_member_accounts_output_output_next_token(
+    input: &crate::operation::list_member_accounts::ListMemberAccountsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_notification_configurations_output_output_next_token(
     input: &crate::operation::list_notification_configurations::ListNotificationConfigurationsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -81,6 +91,16 @@ pub(crate) fn reflens_list_notification_events_output_output_next_token(
 
 pub(crate) fn reflens_list_notification_hubs_output_output_next_token(
     input: &crate::operation::list_notification_hubs::ListNotificationHubsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_organizational_units_output_output_next_token(
+    input: &crate::operation::list_organizational_units::ListOrganizationalUnitsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -131,6 +151,13 @@ pub(crate) fn lens_list_managed_notification_events_output_output_managed_notifi
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_list_member_accounts_output_output_member_accounts(
+    input: crate::operation::list_member_accounts::ListMemberAccountsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::MemberAccount>> {
+    let input = input.member_accounts;
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_notification_configurations_output_output_notification_configurations(
     input: crate::operation::list_notification_configurations::ListNotificationConfigurationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::NotificationConfigurationStructure>> {
@@ -149,5 +176,12 @@ pub(crate) fn lens_list_notification_hubs_output_output_notification_hubs(
     input: crate::operation::list_notification_hubs::ListNotificationHubsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::NotificationHubOverview>> {
     let input = input.notification_hubs;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_organizational_units_output_output_organizational_units(
+    input: crate::operation::list_organizational_units::ListOrganizationalUnitsOutput,
+) -> ::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    let input = input.organizational_units;
     ::std::option::Option::Some(input)
 }

@@ -1907,6 +1907,8 @@ pub use crate::types::_network_card_info::NetworkCardInfo;
 
 pub use crate::types::_ebs_info::EbsInfo;
 
+pub use crate::types::_attachment_limit_type::AttachmentLimitType;
+
 pub use crate::types::_ebs_nvme_support::EbsNvmeSupport;
 
 pub use crate::types::_ebs_optimized_info::EbsOptimizedInfo;
@@ -2586,6 +2588,8 @@ mod _athena_integration;
 mod _attachment_ena_srd_specification;
 
 mod _attachment_ena_srd_udp_specification;
+
+mod _attachment_limit_type;
 
 mod _attachment_status;
 

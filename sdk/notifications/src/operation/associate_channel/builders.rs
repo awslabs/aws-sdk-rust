@@ -22,7 +22,7 @@ impl crate::operation::associate_channel::builders::AssociateChannelInputBuilder
 }
 /// Fluent builder constructing a request to `AssociateChannel`.
 ///
-/// <p>Associates a delivery <a href="https://docs.aws.amazon.com/notifications/latest/userguide/managing-delivery-channels.html">Channel</a> with a particular <code>NotificationConfiguration</code>. Supported Channels include Chatbot, the Console Mobile Application, and emails (notifications-contacts).</p>
+/// <p>Associates a delivery <a href="https://docs.aws.amazon.com/notifications/latest/userguide/managing-delivery-channels.html">Channel</a> with a particular <code>NotificationConfiguration</code>. Supported Channels include Amazon Q Developer in chat applications, the Console Mobile Application, and emails (notifications-contacts).</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateChannelFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -109,19 +109,19 @@ impl AssociateChannelFluentBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Channel to associate with the <code>NotificationConfiguration</code>.</p>
-    /// <p>Supported ARNs include Chatbot, the Console Mobile Application, and notifications-contacts.</p>
+    /// <p>Supported ARNs include Amazon Q Developer in chat applications, the Console Mobile Application, and notifications-contacts.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Channel to associate with the <code>NotificationConfiguration</code>.</p>
-    /// <p>Supported ARNs include Chatbot, the Console Mobile Application, and notifications-contacts.</p>
+    /// <p>Supported ARNs include Amazon Q Developer in chat applications, the Console Mobile Application, and notifications-contacts.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_arn(input);
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Channel to associate with the <code>NotificationConfiguration</code>.</p>
-    /// <p>Supported ARNs include Chatbot, the Console Mobile Application, and notifications-contacts.</p>
+    /// <p>Supported ARNs include Amazon Q Developer in chat applications, the Console Mobile Application, and notifications-contacts.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_arn()
     }

@@ -40,6 +40,8 @@ pub struct NotificationConfigurationStructure {
     /// </ul></li>
     /// </ul>
     pub aggregation_duration: ::std::option::Option<crate::types::AggregationDuration>,
+    /// <p>The subtype of the notification configuration.</p>
+    pub subtype: ::std::option::Option<crate::types::NotificationConfigurationSubtype>,
 }
 impl NotificationConfigurationStructure {
     /// <p>The Amazon Resource Name (ARN) of the <code>NotificationConfiguration</code> resource.</p>
@@ -93,6 +95,10 @@ impl NotificationConfigurationStructure {
     pub fn aggregation_duration(&self) -> ::std::option::Option<&crate::types::AggregationDuration> {
         self.aggregation_duration.as_ref()
     }
+    /// <p>The subtype of the notification configuration.</p>
+    pub fn subtype(&self) -> ::std::option::Option<&crate::types::NotificationConfigurationSubtype> {
+        self.subtype.as_ref()
+    }
 }
 impl NotificationConfigurationStructure {
     /// Creates a new builder-style object to manufacture [`NotificationConfigurationStructure`](crate::types::NotificationConfigurationStructure).
@@ -111,6 +117,7 @@ pub struct NotificationConfigurationStructureBuilder {
     pub(crate) status: ::std::option::Option<crate::types::NotificationConfigurationStatus>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) aggregation_duration: ::std::option::Option<crate::types::AggregationDuration>,
+    pub(crate) subtype: ::std::option::Option<crate::types::NotificationConfigurationSubtype>,
 }
 impl NotificationConfigurationStructureBuilder {
     /// <p>The Amazon Resource Name (ARN) of the <code>NotificationConfiguration</code> resource.</p>
@@ -274,6 +281,20 @@ impl NotificationConfigurationStructureBuilder {
     pub fn get_aggregation_duration(&self) -> &::std::option::Option<crate::types::AggregationDuration> {
         &self.aggregation_duration
     }
+    /// <p>The subtype of the notification configuration.</p>
+    pub fn subtype(mut self, input: crate::types::NotificationConfigurationSubtype) -> Self {
+        self.subtype = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The subtype of the notification configuration.</p>
+    pub fn set_subtype(mut self, input: ::std::option::Option<crate::types::NotificationConfigurationSubtype>) -> Self {
+        self.subtype = input;
+        self
+    }
+    /// <p>The subtype of the notification configuration.</p>
+    pub fn get_subtype(&self) -> &::std::option::Option<crate::types::NotificationConfigurationSubtype> {
+        &self.subtype
+    }
     /// Consumes the builder and constructs a [`NotificationConfigurationStructure`](crate::types::NotificationConfigurationStructure).
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::types::builders::NotificationConfigurationStructureBuilder::arn)
@@ -314,6 +335,7 @@ impl NotificationConfigurationStructureBuilder {
                 )
             })?,
             aggregation_duration: self.aggregation_duration,
+            subtype: self.subtype,
         })
     }
 }

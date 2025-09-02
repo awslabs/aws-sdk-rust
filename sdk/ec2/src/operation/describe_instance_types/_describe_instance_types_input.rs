@@ -20,6 +20,10 @@ pub struct DescribeInstanceTypesInput {
     /// <li>
     /// <p><code>dedicated-hosts-supported</code> - Indicates whether the instance type supports Dedicated Hosts. (<code>true</code> | <code>false</code>)</p></li>
     /// <li>
+    /// <p><code>ebs-info.attachment-limit-type</code> - The type of Amazon EBS volume attachment limit (<code>shared</code> | <code>dedicated</code>).</p></li>
+    /// <li>
+    /// <p><code>ebs-info.maximum-ebs-attachments</code> - The maximum number of Amazon EBS volumes that can be attached to the instance type.</p></li>
+    /// <li>
     /// <p><code>ebs-info.ebs-optimized-info.baseline-bandwidth-in-mbps</code> - The baseline bandwidth performance for an EBS-optimized instance type, in Mbps.</p></li>
     /// <li>
     /// <p><code>ebs-info.ebs-optimized-info.baseline-iops</code> - The baseline input/output storage operations per second for an EBS-optimized instance type.</p></li>
@@ -147,6 +151,10 @@ impl DescribeInstanceTypesInput {
     /// <p><code>current-generation</code> - Indicates whether this instance type is the latest generation instance type of an instance family (<code>true</code> | <code>false</code>).</p></li>
     /// <li>
     /// <p><code>dedicated-hosts-supported</code> - Indicates whether the instance type supports Dedicated Hosts. (<code>true</code> | <code>false</code>)</p></li>
+    /// <li>
+    /// <p><code>ebs-info.attachment-limit-type</code> - The type of Amazon EBS volume attachment limit (<code>shared</code> | <code>dedicated</code>).</p></li>
+    /// <li>
+    /// <p><code>ebs-info.maximum-ebs-attachments</code> - The maximum number of Amazon EBS volumes that can be attached to the instance type.</p></li>
     /// <li>
     /// <p><code>ebs-info.ebs-optimized-info.baseline-bandwidth-in-mbps</code> - The baseline bandwidth performance for an EBS-optimized instance type, in Mbps.</p></li>
     /// <li>
@@ -329,6 +337,10 @@ impl DescribeInstanceTypesInputBuilder {
     /// <li>
     /// <p><code>dedicated-hosts-supported</code> - Indicates whether the instance type supports Dedicated Hosts. (<code>true</code> | <code>false</code>)</p></li>
     /// <li>
+    /// <p><code>ebs-info.attachment-limit-type</code> - The type of Amazon EBS volume attachment limit (<code>shared</code> | <code>dedicated</code>).</p></li>
+    /// <li>
+    /// <p><code>ebs-info.maximum-ebs-attachments</code> - The maximum number of Amazon EBS volumes that can be attached to the instance type.</p></li>
+    /// <li>
     /// <p><code>ebs-info.ebs-optimized-info.baseline-bandwidth-in-mbps</code> - The baseline bandwidth performance for an EBS-optimized instance type, in Mbps.</p></li>
     /// <li>
     /// <p><code>ebs-info.ebs-optimized-info.baseline-iops</code> - The baseline input/output storage operations per second for an EBS-optimized instance type.</p></li>
@@ -446,6 +458,10 @@ impl DescribeInstanceTypesInputBuilder {
     /// <li>
     /// <p><code>dedicated-hosts-supported</code> - Indicates whether the instance type supports Dedicated Hosts. (<code>true</code> | <code>false</code>)</p></li>
     /// <li>
+    /// <p><code>ebs-info.attachment-limit-type</code> - The type of Amazon EBS volume attachment limit (<code>shared</code> | <code>dedicated</code>).</p></li>
+    /// <li>
+    /// <p><code>ebs-info.maximum-ebs-attachments</code> - The maximum number of Amazon EBS volumes that can be attached to the instance type.</p></li>
+    /// <li>
     /// <p><code>ebs-info.ebs-optimized-info.baseline-bandwidth-in-mbps</code> - The baseline bandwidth performance for an EBS-optimized instance type, in Mbps.</p></li>
     /// <li>
     /// <p><code>ebs-info.ebs-optimized-info.baseline-iops</code> - The baseline input/output storage operations per second for an EBS-optimized instance type.</p></li>
@@ -560,6 +576,10 @@ impl DescribeInstanceTypesInputBuilder {
     /// <p><code>current-generation</code> - Indicates whether this instance type is the latest generation instance type of an instance family (<code>true</code> | <code>false</code>).</p></li>
     /// <li>
     /// <p><code>dedicated-hosts-supported</code> - Indicates whether the instance type supports Dedicated Hosts. (<code>true</code> | <code>false</code>)</p></li>
+    /// <li>
+    /// <p><code>ebs-info.attachment-limit-type</code> - The type of Amazon EBS volume attachment limit (<code>shared</code> | <code>dedicated</code>).</p></li>
+    /// <li>
+    /// <p><code>ebs-info.maximum-ebs-attachments</code> - The maximum number of Amazon EBS volumes that can be attached to the instance type.</p></li>
     /// <li>
     /// <p><code>ebs-info.ebs-optimized-info.baseline-bandwidth-in-mbps</code> - The baseline bandwidth performance for an EBS-optimized instance type, in Mbps.</p></li>
     /// <li>

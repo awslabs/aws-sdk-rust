@@ -14,6 +14,7 @@
 /// match accessstatus {
 ///     AccessStatus::Disabled => { /* ... */ },
 ///     AccessStatus::Enabled => { /* ... */ },
+///     AccessStatus::Failed => { /* ... */ },
 ///     AccessStatus::Pending => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -48,6 +49,8 @@ pub enum AccessStatus {
     #[allow(missing_docs)] // documentation missing in model
     Enabled,
     #[allow(missing_docs)] // documentation missing in model
+    Failed,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -58,6 +61,7 @@ impl ::std::convert::From<&str> for AccessStatus {
         match s {
             "DISABLED" => AccessStatus::Disabled,
             "ENABLED" => AccessStatus::Enabled,
+            "FAILED" => AccessStatus::Failed,
             "PENDING" => AccessStatus::Pending,
             other => AccessStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -76,13 +80,14 @@ impl AccessStatus {
         match self {
             AccessStatus::Disabled => "DISABLED",
             AccessStatus::Enabled => "ENABLED",
+            AccessStatus::Failed => "FAILED",
             AccessStatus::Pending => "PENDING",
             AccessStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DISABLED", "ENABLED", "PENDING"]
+        &["DISABLED", "ENABLED", "FAILED", "PENDING"]
     }
 }
 impl ::std::convert::AsRef<str> for AccessStatus {
@@ -107,6 +112,7 @@ impl ::std::fmt::Display for AccessStatus {
         match self {
             AccessStatus::Disabled => write!(f, "DISABLED"),
             AccessStatus::Enabled => write!(f, "ENABLED"),
+            AccessStatus::Failed => write!(f, "FAILED"),
             AccessStatus::Pending => write!(f, "PENDING"),
             AccessStatus::Unknown(value) => write!(f, "{}", value),
         }

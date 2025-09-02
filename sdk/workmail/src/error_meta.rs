@@ -2909,6 +2909,9 @@ impl From<crate::operation::register_to_work_mail::RegisterToWorkMailError> for 
             crate::operation::register_to_work_mail::RegisterToWorkMailError::OrganizationStateException(inner) => {
                 Error::OrganizationStateException(inner)
             }
+            crate::operation::register_to_work_mail::RegisterToWorkMailError::UnsupportedOperationException(inner) => {
+                Error::UnsupportedOperationException(inner)
+            }
             crate::operation::register_to_work_mail::RegisterToWorkMailError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }

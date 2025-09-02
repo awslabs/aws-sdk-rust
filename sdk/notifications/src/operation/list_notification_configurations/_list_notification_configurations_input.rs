@@ -44,6 +44,8 @@ pub struct ListNotificationConfigurationsInput {
     /// </ul></li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::NotificationConfigurationStatus>,
+    /// <p>The subtype used to filter the notification configurations in the request.</p>
+    pub subtype: ::std::option::Option<crate::types::NotificationConfigurationSubtype>,
     /// <p>The maximum number of results to be returned in this call. Defaults to 20.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The start token for paginated calls. Retrieved from the response of a previous <code>ListEventRules</code> call. Next token uses Base64 encoding.</p>
@@ -97,6 +99,10 @@ impl ListNotificationConfigurationsInput {
     pub fn status(&self) -> ::std::option::Option<&crate::types::NotificationConfigurationStatus> {
         self.status.as_ref()
     }
+    /// <p>The subtype used to filter the notification configurations in the request.</p>
+    pub fn subtype(&self) -> ::std::option::Option<&crate::types::NotificationConfigurationSubtype> {
+        self.subtype.as_ref()
+    }
     /// <p>The maximum number of results to be returned in this call. Defaults to 20.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
@@ -120,6 +126,7 @@ pub struct ListNotificationConfigurationsInputBuilder {
     pub(crate) event_rule_source: ::std::option::Option<::std::string::String>,
     pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::NotificationConfigurationStatus>,
+    pub(crate) subtype: ::std::option::Option<crate::types::NotificationConfigurationSubtype>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -271,6 +278,20 @@ impl ListNotificationConfigurationsInputBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::NotificationConfigurationStatus> {
         &self.status
     }
+    /// <p>The subtype used to filter the notification configurations in the request.</p>
+    pub fn subtype(mut self, input: crate::types::NotificationConfigurationSubtype) -> Self {
+        self.subtype = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The subtype used to filter the notification configurations in the request.</p>
+    pub fn set_subtype(mut self, input: ::std::option::Option<crate::types::NotificationConfigurationSubtype>) -> Self {
+        self.subtype = input;
+        self
+    }
+    /// <p>The subtype used to filter the notification configurations in the request.</p>
+    pub fn get_subtype(&self) -> &::std::option::Option<crate::types::NotificationConfigurationSubtype> {
+        &self.subtype
+    }
     /// <p>The maximum number of results to be returned in this call. Defaults to 20.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -310,6 +331,7 @@ impl ListNotificationConfigurationsInputBuilder {
             event_rule_source: self.event_rule_source,
             channel_arn: self.channel_arn,
             status: self.status,
+            subtype: self.subtype,
             max_results: self.max_results,
             next_token: self.next_token,
         })

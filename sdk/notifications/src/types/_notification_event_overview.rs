@@ -45,6 +45,8 @@ pub struct NotificationEventOverview {
     pub aggregate_notification_event_arn: ::std::option::Option<::std::string::String>,
     /// <p>Provides an aggregated summary data for notification events.</p>
     pub aggregation_summary: ::std::option::Option<crate::types::AggregationSummary>,
+    /// <p>The unique identifier of the organizational unit in the notification event overview.</p>
+    pub organizational_unit_id: ::std::option::Option<::std::string::String>,
 }
 impl NotificationEventOverview {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -107,6 +109,10 @@ impl NotificationEventOverview {
     pub fn aggregation_summary(&self) -> ::std::option::Option<&crate::types::AggregationSummary> {
         self.aggregation_summary.as_ref()
     }
+    /// <p>The unique identifier of the organizational unit in the notification event overview.</p>
+    pub fn organizational_unit_id(&self) -> ::std::option::Option<&str> {
+        self.organizational_unit_id.as_deref()
+    }
 }
 impl NotificationEventOverview {
     /// Creates a new builder-style object to manufacture [`NotificationEventOverview`](crate::types::NotificationEventOverview).
@@ -127,6 +133,7 @@ pub struct NotificationEventOverviewBuilder {
     pub(crate) aggregation_event_type: ::std::option::Option<crate::types::AggregationEventType>,
     pub(crate) aggregate_notification_event_arn: ::std::option::Option<::std::string::String>,
     pub(crate) aggregation_summary: ::std::option::Option<crate::types::AggregationSummary>,
+    pub(crate) organizational_unit_id: ::std::option::Option<::std::string::String>,
 }
 impl NotificationEventOverviewBuilder {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -321,6 +328,20 @@ impl NotificationEventOverviewBuilder {
     pub fn get_aggregation_summary(&self) -> &::std::option::Option<crate::types::AggregationSummary> {
         &self.aggregation_summary
     }
+    /// <p>The unique identifier of the organizational unit in the notification event overview.</p>
+    pub fn organizational_unit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.organizational_unit_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique identifier of the organizational unit in the notification event overview.</p>
+    pub fn set_organizational_unit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.organizational_unit_id = input;
+        self
+    }
+    /// <p>The unique identifier of the organizational unit in the notification event overview.</p>
+    pub fn get_organizational_unit_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organizational_unit_id
+    }
     /// Consumes the builder and constructs a [`NotificationEventOverview`](crate::types::NotificationEventOverview).
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::types::builders::NotificationEventOverviewBuilder::arn)
@@ -357,6 +378,7 @@ impl NotificationEventOverviewBuilder {
             aggregation_event_type: self.aggregation_event_type,
             aggregate_notification_event_arn: self.aggregate_notification_event_arn,
             aggregation_summary: self.aggregation_summary,
+            organizational_unit_id: self.organizational_unit_id,
         })
     }
 }

@@ -142,6 +142,8 @@ mod associate_managed_notification_account_contact;
 
 mod associate_managed_notification_additional_channel;
 
+mod associate_organizational_unit;
+
 mod create_event_rule;
 
 mod create_notification_configuration;
@@ -187,6 +189,8 @@ mod disassociate_managed_notification_account_contact;
 
 mod disassociate_managed_notification_additional_channel;
 
+mod disassociate_organizational_unit;
+
 mod enable_notifications_access_for_organization;
 
 mod get_event_rule;
@@ -215,11 +219,15 @@ mod list_managed_notification_configurations;
 
 mod list_managed_notification_events;
 
+mod list_member_accounts;
+
 mod list_notification_configurations;
 
 mod list_notification_events;
 
 mod list_notification_hubs;
+
+mod list_organizational_units;
 
 mod list_tags_for_resource;
 

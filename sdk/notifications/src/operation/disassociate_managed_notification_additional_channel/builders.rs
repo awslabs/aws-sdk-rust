@@ -23,7 +23,7 @@ impl crate::operation::disassociate_managed_notification_additional_channel::bui
 /// Fluent builder constructing a request to `DisassociateManagedNotificationAdditionalChannel`.
 ///
 /// <p>Disassociates an additional Channel from a particular <code>ManagedNotificationConfiguration</code>.</p>
-/// <p>Supported Channels include Chatbot, the Console Mobile Application, and emails (notifications-contacts).</p>
+/// <p>Supported Channels include Amazon Q Developer in chat applications, the Console Mobile Application, and emails (notifications-contacts).</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateManagedNotificationAdditionalChannelFluentBuilder {
                 handle: ::std::sync::Arc<crate::client::Handle>,

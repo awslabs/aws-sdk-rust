@@ -261,6 +261,20 @@ impl ListNotificationConfigurationsFluentBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::NotificationConfigurationStatus> {
         self.inner.get_status()
     }
+    /// <p>The subtype used to filter the notification configurations in the request.</p>
+    pub fn subtype(mut self, input: crate::types::NotificationConfigurationSubtype) -> Self {
+        self.inner = self.inner.subtype(input);
+        self
+    }
+    /// <p>The subtype used to filter the notification configurations in the request.</p>
+    pub fn set_subtype(mut self, input: ::std::option::Option<crate::types::NotificationConfigurationSubtype>) -> Self {
+        self.inner = self.inner.set_subtype(input);
+        self
+    }
+    /// <p>The subtype used to filter the notification configurations in the request.</p>
+    pub fn get_subtype(&self) -> &::std::option::Option<crate::types::NotificationConfigurationSubtype> {
+        self.inner.get_subtype()
+    }
     /// <p>The maximum number of results to be returned in this call. Defaults to 20.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);

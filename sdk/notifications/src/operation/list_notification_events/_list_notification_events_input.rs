@@ -20,6 +20,8 @@ pub struct ListNotificationEventsInput {
     pub max_results: ::std::option::Option<i32>,
     /// <p>The start token for paginated calls. Retrieved from the response of a previous <code>ListEventRules</code> call. Next token uses Base64 encoding.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
+    /// <p>The unique identifier of the organizational unit used to filter notification events.</p>
+    pub organizational_unit_id: ::std::option::Option<::std::string::String>,
 }
 impl ListNotificationEventsInput {
     /// <p>The earliest time of events to return from this call.</p>
@@ -55,6 +57,10 @@ impl ListNotificationEventsInput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
+    /// <p>The unique identifier of the organizational unit used to filter notification events.</p>
+    pub fn organizational_unit_id(&self) -> ::std::option::Option<&str> {
+        self.organizational_unit_id.as_deref()
+    }
 }
 impl ListNotificationEventsInput {
     /// Creates a new builder-style object to manufacture [`ListNotificationEventsInput`](crate::operation::list_notification_events::ListNotificationEventsInput).
@@ -75,6 +81,7 @@ pub struct ListNotificationEventsInputBuilder {
     pub(crate) aggregate_notification_event_arn: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
+    pub(crate) organizational_unit_id: ::std::option::Option<::std::string::String>,
 }
 impl ListNotificationEventsInputBuilder {
     /// <p>The earliest time of events to return from this call.</p>
@@ -192,6 +199,20 @@ impl ListNotificationEventsInputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
+    /// <p>The unique identifier of the organizational unit used to filter notification events.</p>
+    pub fn organizational_unit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.organizational_unit_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique identifier of the organizational unit used to filter notification events.</p>
+    pub fn set_organizational_unit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.organizational_unit_id = input;
+        self
+    }
+    /// <p>The unique identifier of the organizational unit used to filter notification events.</p>
+    pub fn get_organizational_unit_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organizational_unit_id
+    }
     /// Consumes the builder and constructs a [`ListNotificationEventsInput`](crate::operation::list_notification_events::ListNotificationEventsInput).
     pub fn build(
         self,
@@ -208,6 +229,7 @@ impl ListNotificationEventsInputBuilder {
             aggregate_notification_event_arn: self.aggregate_notification_event_arn,
             max_results: self.max_results,
             next_token: self.next_token,
+            organizational_unit_id: self.organizational_unit_id,
         })
     }
 }

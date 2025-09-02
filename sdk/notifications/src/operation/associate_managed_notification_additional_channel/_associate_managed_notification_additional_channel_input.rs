@@ -4,14 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateManagedNotificationAdditionalChannelInput {
     /// <p>The Amazon Resource Name (ARN) of the Channel to associate with the <code>ManagedNotificationConfiguration</code>.</p>
-    /// <p>Supported ARNs include Chatbot, the Console Mobile Application, and email (notifications-contacts).</p>
+    /// <p>Supported ARNs include Amazon Q Developer in chat applications, the Console Mobile Application, and email (notifications-contacts).</p>
     pub channel_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the <code>ManagedNotificationConfiguration</code> to associate with the additional Channel.</p>
     pub managed_notification_configuration_arn: ::std::option::Option<::std::string::String>,
 }
 impl AssociateManagedNotificationAdditionalChannelInput {
     /// <p>The Amazon Resource Name (ARN) of the Channel to associate with the <code>ManagedNotificationConfiguration</code>.</p>
-    /// <p>Supported ARNs include Chatbot, the Console Mobile Application, and email (notifications-contacts).</p>
+    /// <p>Supported ARNs include Amazon Q Developer in chat applications, the Console Mobile Application, and email (notifications-contacts).</p>
     pub fn channel_arn(&self) -> ::std::option::Option<&str> {
         self.channel_arn.as_deref()
     }
@@ -38,20 +38,20 @@ pub struct AssociateManagedNotificationAdditionalChannelInputBuilder {
 }
 impl AssociateManagedNotificationAdditionalChannelInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Channel to associate with the <code>ManagedNotificationConfiguration</code>.</p>
-    /// <p>Supported ARNs include Chatbot, the Console Mobile Application, and email (notifications-contacts).</p>
+    /// <p>Supported ARNs include Amazon Q Developer in chat applications, the Console Mobile Application, and email (notifications-contacts).</p>
     /// This field is required.
     pub fn channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Channel to associate with the <code>ManagedNotificationConfiguration</code>.</p>
-    /// <p>Supported ARNs include Chatbot, the Console Mobile Application, and email (notifications-contacts).</p>
+    /// <p>Supported ARNs include Amazon Q Developer in chat applications, the Console Mobile Application, and email (notifications-contacts).</p>
     pub fn set_channel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.channel_arn = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Channel to associate with the <code>ManagedNotificationConfiguration</code>.</p>
-    /// <p>Supported ARNs include Chatbot, the Console Mobile Application, and email (notifications-contacts).</p>
+    /// <p>Supported ARNs include Amazon Q Developer in chat applications, the Console Mobile Application, and email (notifications-contacts).</p>
     pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.channel_arn
     }

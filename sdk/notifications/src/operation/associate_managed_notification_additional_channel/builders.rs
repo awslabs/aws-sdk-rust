@@ -23,7 +23,7 @@ impl crate::operation::associate_managed_notification_additional_channel::builde
 /// Fluent builder constructing a request to `AssociateManagedNotificationAdditionalChannel`.
 ///
 /// <p>Associates an additional Channel with a particular <code>ManagedNotificationConfiguration</code>.</p>
-/// <p>Supported Channels include Chatbot, the Console Mobile Application, and emails (notifications-contacts).</p>
+/// <p>Supported Channels include Amazon Q Developer in chat applications, the Console Mobile Application, and emails (notifications-contacts).</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateManagedNotificationAdditionalChannelFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -117,19 +117,19 @@ impl AssociateManagedNotificationAdditionalChannelFluentBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Channel to associate with the <code>ManagedNotificationConfiguration</code>.</p>
-    /// <p>Supported ARNs include Chatbot, the Console Mobile Application, and email (notifications-contacts).</p>
+    /// <p>Supported ARNs include Amazon Q Developer in chat applications, the Console Mobile Application, and email (notifications-contacts).</p>
     pub fn channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.channel_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Channel to associate with the <code>ManagedNotificationConfiguration</code>.</p>
-    /// <p>Supported ARNs include Chatbot, the Console Mobile Application, and email (notifications-contacts).</p>
+    /// <p>Supported ARNs include Amazon Q Developer in chat applications, the Console Mobile Application, and email (notifications-contacts).</p>
     pub fn set_channel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_channel_arn(input);
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Channel to associate with the <code>ManagedNotificationConfiguration</code>.</p>
-    /// <p>Supported ARNs include Chatbot, the Console Mobile Application, and email (notifications-contacts).</p>
+    /// <p>Supported ARNs include Amazon Q Developer in chat applications, the Console Mobile Application, and email (notifications-contacts).</p>
     pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_channel_arn()
     }

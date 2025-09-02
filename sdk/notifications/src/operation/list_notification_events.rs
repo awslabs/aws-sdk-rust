@@ -245,6 +245,11 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListNotifica
                         query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_8));
                     }
                 }
+                if let ::std::option::Option::Some(inner_9) = &_input.organizational_unit_id {
+                    {
+                        query.push_kv("organizationalUnitId", &::aws_smithy_http::query::fmt_string(inner_9));
+                    }
+                }
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

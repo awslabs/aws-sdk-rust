@@ -231,4 +231,18 @@ impl ListNotificationEventsFluentBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
+    /// <p>The unique identifier of the organizational unit used to filter notification events.</p>
+    pub fn organizational_unit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.organizational_unit_id(input.into());
+        self
+    }
+    /// <p>The unique identifier of the organizational unit used to filter notification events.</p>
+    pub fn set_organizational_unit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_organizational_unit_id(input);
+        self
+    }
+    /// <p>The unique identifier of the organizational unit used to filter notification events.</p>
+    pub fn get_organizational_unit_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_organizational_unit_id()
+    }
 }

@@ -59,6 +59,35 @@ pub fn de_ebs_info(
                 builder = builder.set_nvme_support(var_4);
             }
             ,
+            s if s.matches("maximumEbsAttachments") /* MaximumEbsAttachments com.amazonaws.ec2#EbsInfo$MaximumEbsAttachments */ =>  {
+                let var_5 =
+                    Some(
+                         {
+                            <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.ec2#MaximumEbsAttachments`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_maximum_ebs_attachments(var_5);
+            }
+            ,
+            s if s.matches("attachmentLimitType") /* AttachmentLimitType com.amazonaws.ec2#EbsInfo$AttachmentLimitType */ =>  {
+                let var_6 =
+                    Some(
+                        Result::<crate::types::AttachmentLimitType, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::AttachmentLimitType::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_attachment_limit_type(var_6);
+            }
+            ,
             _ => {}
         }
     }

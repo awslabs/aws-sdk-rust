@@ -27,7 +27,7 @@ pub struct ManagedNotificationChannelAssociationSummary {
     /// <p><code>CHATBOT</code></p>
     /// <ul>
     /// <li>
-    /// <p>Delivers notifications through Chatbot to collaboration platforms (Slack, Chime).</p></li>
+    /// <p>Delivers notifications through Amazon Q Developer in chat applications to collaboration platforms (Slack, Chime).</p></li>
     /// </ul></li>
     /// <li>
     /// <p><code>EMAIL</code></p>
@@ -86,7 +86,7 @@ impl ManagedNotificationChannelAssociationSummary {
     /// <p><code>CHATBOT</code></p>
     /// <ul>
     /// <li>
-    /// <p>Delivers notifications through Chatbot to collaboration platforms (Slack, Chime).</p></li>
+    /// <p>Delivers notifications through Amazon Q Developer in chat applications to collaboration platforms (Slack, Chime).</p></li>
     /// </ul></li>
     /// <li>
     /// <p><code>EMAIL</code></p>
@@ -174,7 +174,7 @@ impl ManagedNotificationChannelAssociationSummaryBuilder {
     /// <p><code>CHATBOT</code></p>
     /// <ul>
     /// <li>
-    /// <p>Delivers notifications through Chatbot to collaboration platforms (Slack, Chime).</p></li>
+    /// <p>Delivers notifications through Amazon Q Developer in chat applications to collaboration platforms (Slack, Chime).</p></li>
     /// </ul></li>
     /// <li>
     /// <p><code>EMAIL</code></p>
@@ -210,7 +210,7 @@ impl ManagedNotificationChannelAssociationSummaryBuilder {
     /// <p><code>CHATBOT</code></p>
     /// <ul>
     /// <li>
-    /// <p>Delivers notifications through Chatbot to collaboration platforms (Slack, Chime).</p></li>
+    /// <p>Delivers notifications through Amazon Q Developer in chat applications to collaboration platforms (Slack, Chime).</p></li>
     /// </ul></li>
     /// <li>
     /// <p><code>EMAIL</code></p>
@@ -245,7 +245,7 @@ impl ManagedNotificationChannelAssociationSummaryBuilder {
     /// <p><code>CHATBOT</code></p>
     /// <ul>
     /// <li>
-    /// <p>Delivers notifications through Chatbot to collaboration platforms (Slack, Chime).</p></li>
+    /// <p>Delivers notifications through Amazon Q Developer in chat applications to collaboration platforms (Slack, Chime).</p></li>
     /// </ul></li>
     /// <li>
     /// <p><code>EMAIL</code></p>

@@ -107,6 +107,8 @@ pub struct NotificationEventSchema {
     pub text_parts: ::std::collections::HashMap<::std::string::String, crate::types::TextPartValue>,
     /// <p>A list of media elements.</p>
     pub media: ::std::vec::Vec<crate::types::MediaElement>,
+    /// <p>The unique identifier of the organizational unit associated with the notification event.</p>
+    pub organizational_unit_id: ::std::option::Option<::std::string::String>,
 }
 impl NotificationEventSchema {
     /// <p>The schema version of the Notification Event.</p>
@@ -244,6 +246,10 @@ impl NotificationEventSchema {
         use std::ops::Deref;
         self.media.deref()
     }
+    /// <p>The unique identifier of the organizational unit associated with the notification event.</p>
+    pub fn organizational_unit_id(&self) -> ::std::option::Option<&str> {
+        self.organizational_unit_id.as_deref()
+    }
 }
 impl NotificationEventSchema {
     /// Creates a new builder-style object to manufacture [`NotificationEventSchema`](crate::types::NotificationEventSchema).
@@ -271,6 +277,7 @@ pub struct NotificationEventSchemaBuilder {
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) text_parts: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::TextPartValue>>,
     pub(crate) media: ::std::option::Option<::std::vec::Vec<crate::types::MediaElement>>,
+    pub(crate) organizational_unit_id: ::std::option::Option<::std::string::String>,
 }
 impl NotificationEventSchemaBuilder {
     /// <p>The schema version of the Notification Event.</p>
@@ -722,6 +729,20 @@ impl NotificationEventSchemaBuilder {
     pub fn get_media(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MediaElement>> {
         &self.media
     }
+    /// <p>The unique identifier of the organizational unit associated with the notification event.</p>
+    pub fn organizational_unit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.organizational_unit_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique identifier of the organizational unit associated with the notification event.</p>
+    pub fn set_organizational_unit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.organizational_unit_id = input;
+        self
+    }
+    /// <p>The unique identifier of the organizational unit associated with the notification event.</p>
+    pub fn get_organizational_unit_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organizational_unit_id
+    }
     /// Consumes the builder and constructs a [`NotificationEventSchema`](crate::types::NotificationEventSchema).
     /// This method will fail if any of the following fields are not set:
     /// - [`schema_version`](crate::types::builders::NotificationEventSchemaBuilder::schema_version)
@@ -771,6 +792,7 @@ impl NotificationEventSchemaBuilder {
                     "media was not specified but it is required when building NotificationEventSchema",
                 )
             })?,
+            organizational_unit_id: self.organizational_unit_id,
         })
     }
 }

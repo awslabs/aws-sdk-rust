@@ -22,7 +22,7 @@ impl crate::operation::disassociate_channel::builders::DisassociateChannelInputB
 }
 /// Fluent builder constructing a request to `DisassociateChannel`.
 ///
-/// <p>Disassociates a Channel from a specified <code>NotificationConfiguration</code>. Supported Channels include Chatbot, the Console Mobile Application, and emails (notifications-contacts).</p>
+/// <p>Disassociates a Channel from a specified <code>NotificationConfiguration</code>. Supported Channels include Amazon Q Developer in chat applications, the Console Mobile Application, and emails (notifications-contacts).</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateChannelFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

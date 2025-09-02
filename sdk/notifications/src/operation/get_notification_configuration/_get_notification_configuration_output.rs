@@ -39,6 +39,8 @@ pub struct GetNotificationConfigurationOutput {
     /// </ul></li>
     /// </ul>
     pub aggregation_duration: ::std::option::Option<crate::types::AggregationDuration>,
+    /// <p>The subtype of the notification configuration returned in the response.</p>
+    pub subtype: ::std::option::Option<crate::types::NotificationConfigurationSubtype>,
     _request_id: Option<String>,
 }
 impl GetNotificationConfigurationOutput {
@@ -93,6 +95,10 @@ impl GetNotificationConfigurationOutput {
     pub fn aggregation_duration(&self) -> ::std::option::Option<&crate::types::AggregationDuration> {
         self.aggregation_duration.as_ref()
     }
+    /// <p>The subtype of the notification configuration returned in the response.</p>
+    pub fn subtype(&self) -> ::std::option::Option<&crate::types::NotificationConfigurationSubtype> {
+        self.subtype.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetNotificationConfigurationOutput {
     fn request_id(&self) -> Option<&str> {
@@ -116,6 +122,7 @@ pub struct GetNotificationConfigurationOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::NotificationConfigurationStatus>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) aggregation_duration: ::std::option::Option<crate::types::AggregationDuration>,
+    pub(crate) subtype: ::std::option::Option<crate::types::NotificationConfigurationSubtype>,
     _request_id: Option<String>,
 }
 impl GetNotificationConfigurationOutputBuilder {
@@ -280,6 +287,20 @@ impl GetNotificationConfigurationOutputBuilder {
     pub fn get_aggregation_duration(&self) -> &::std::option::Option<crate::types::AggregationDuration> {
         &self.aggregation_duration
     }
+    /// <p>The subtype of the notification configuration returned in the response.</p>
+    pub fn subtype(mut self, input: crate::types::NotificationConfigurationSubtype) -> Self {
+        self.subtype = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The subtype of the notification configuration returned in the response.</p>
+    pub fn set_subtype(mut self, input: ::std::option::Option<crate::types::NotificationConfigurationSubtype>) -> Self {
+        self.subtype = input;
+        self
+    }
+    /// <p>The subtype of the notification configuration returned in the response.</p>
+    pub fn get_subtype(&self) -> &::std::option::Option<crate::types::NotificationConfigurationSubtype> {
+        &self.subtype
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -334,6 +355,7 @@ impl GetNotificationConfigurationOutputBuilder {
                 )
             })?,
             aggregation_duration: self.aggregation_duration,
+            subtype: self.subtype,
             _request_id: self._request_id,
         })
     }

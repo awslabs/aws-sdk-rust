@@ -12,6 +12,10 @@ pub struct EbsInfo {
     pub ebs_optimized_info: ::std::option::Option<crate::types::EbsOptimizedInfo>,
     /// <p>Indicates whether non-volatile memory express (NVMe) is supported.</p>
     pub nvme_support: ::std::option::Option<crate::types::EbsNvmeSupport>,
+    /// <p>Indicates the maximum number of Amazon EBS volumes that can be attached to the instance type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/volume_limits.html">Amazon EBS volume limits for Amazon EC2 instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub maximum_ebs_attachments: ::std::option::Option<i32>,
+    /// <p>Indicates whether the instance type features a shared or dedicated Amazon EBS volume attachment limit. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/volume_limits.html">Amazon EBS volume limits for Amazon EC2 instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub attachment_limit_type: ::std::option::Option<crate::types::AttachmentLimitType>,
 }
 impl EbsInfo {
     /// <p>Indicates whether the instance type is Amazon EBS-optimized. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon EBS-optimized instances</a> in <i>Amazon EC2 User Guide</i>.</p>
@@ -30,6 +34,14 @@ impl EbsInfo {
     pub fn nvme_support(&self) -> ::std::option::Option<&crate::types::EbsNvmeSupport> {
         self.nvme_support.as_ref()
     }
+    /// <p>Indicates the maximum number of Amazon EBS volumes that can be attached to the instance type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/volume_limits.html">Amazon EBS volume limits for Amazon EC2 instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn maximum_ebs_attachments(&self) -> ::std::option::Option<i32> {
+        self.maximum_ebs_attachments
+    }
+    /// <p>Indicates whether the instance type features a shared or dedicated Amazon EBS volume attachment limit. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/volume_limits.html">Amazon EBS volume limits for Amazon EC2 instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn attachment_limit_type(&self) -> ::std::option::Option<&crate::types::AttachmentLimitType> {
+        self.attachment_limit_type.as_ref()
+    }
 }
 impl EbsInfo {
     /// Creates a new builder-style object to manufacture [`EbsInfo`](crate::types::EbsInfo).
@@ -46,6 +58,8 @@ pub struct EbsInfoBuilder {
     pub(crate) encryption_support: ::std::option::Option<crate::types::EbsEncryptionSupport>,
     pub(crate) ebs_optimized_info: ::std::option::Option<crate::types::EbsOptimizedInfo>,
     pub(crate) nvme_support: ::std::option::Option<crate::types::EbsNvmeSupport>,
+    pub(crate) maximum_ebs_attachments: ::std::option::Option<i32>,
+    pub(crate) attachment_limit_type: ::std::option::Option<crate::types::AttachmentLimitType>,
 }
 impl EbsInfoBuilder {
     /// <p>Indicates whether the instance type is Amazon EBS-optimized. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon EBS-optimized instances</a> in <i>Amazon EC2 User Guide</i>.</p>
@@ -104,6 +118,34 @@ impl EbsInfoBuilder {
     pub fn get_nvme_support(&self) -> &::std::option::Option<crate::types::EbsNvmeSupport> {
         &self.nvme_support
     }
+    /// <p>Indicates the maximum number of Amazon EBS volumes that can be attached to the instance type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/volume_limits.html">Amazon EBS volume limits for Amazon EC2 instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn maximum_ebs_attachments(mut self, input: i32) -> Self {
+        self.maximum_ebs_attachments = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates the maximum number of Amazon EBS volumes that can be attached to the instance type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/volume_limits.html">Amazon EBS volume limits for Amazon EC2 instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn set_maximum_ebs_attachments(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.maximum_ebs_attachments = input;
+        self
+    }
+    /// <p>Indicates the maximum number of Amazon EBS volumes that can be attached to the instance type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/volume_limits.html">Amazon EBS volume limits for Amazon EC2 instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn get_maximum_ebs_attachments(&self) -> &::std::option::Option<i32> {
+        &self.maximum_ebs_attachments
+    }
+    /// <p>Indicates whether the instance type features a shared or dedicated Amazon EBS volume attachment limit. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/volume_limits.html">Amazon EBS volume limits for Amazon EC2 instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn attachment_limit_type(mut self, input: crate::types::AttachmentLimitType) -> Self {
+        self.attachment_limit_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether the instance type features a shared or dedicated Amazon EBS volume attachment limit. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/volume_limits.html">Amazon EBS volume limits for Amazon EC2 instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn set_attachment_limit_type(mut self, input: ::std::option::Option<crate::types::AttachmentLimitType>) -> Self {
+        self.attachment_limit_type = input;
+        self
+    }
+    /// <p>Indicates whether the instance type features a shared or dedicated Amazon EBS volume attachment limit. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/volume_limits.html">Amazon EBS volume limits for Amazon EC2 instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn get_attachment_limit_type(&self) -> &::std::option::Option<crate::types::AttachmentLimitType> {
+        &self.attachment_limit_type
+    }
     /// Consumes the builder and constructs a [`EbsInfo`](crate::types::EbsInfo).
     pub fn build(self) -> crate::types::EbsInfo {
         crate::types::EbsInfo {
@@ -111,6 +153,8 @@ impl EbsInfoBuilder {
             encryption_support: self.encryption_support,
             ebs_optimized_info: self.ebs_optimized_info,
             nvme_support: self.nvme_support,
+            maximum_ebs_attachments: self.maximum_ebs_attachments,
+            attachment_limit_type: self.attachment_limit_type,
         }
     }
 }

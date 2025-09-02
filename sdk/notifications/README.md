@@ -1,6 +1,6 @@
 # aws-sdk-notifications
 
-The _Amazon Web Services User Notifications API Reference_ provides descriptions, API request parameters, and the JSON response for each of the User Notification API actions.
+The _User Notifications API Reference_ provides descriptions, API request parameters, and the JSON response for each of the User Notifications API actions.
 
 User Notification control plane APIs are currently available in US East (Virginia) - us-east-1.
 
@@ -20,7 +20,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-aws-sdk-notifications = "1.35.0"
+aws-sdk-notifications = "1.36.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

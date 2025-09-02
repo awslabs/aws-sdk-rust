@@ -214,14 +214,19 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListNotifica
                         query.push_kv("status", &::aws_smithy_http::query::fmt_string(inner_3));
                     }
                 }
-                if let ::std::option::Option::Some(inner_4) = &_input.max_results {
+                if let ::std::option::Option::Some(inner_4) = &_input.subtype {
                     {
-                        query.push_kv("maxResults", ::aws_smithy_types::primitive::Encoder::from(*inner_4).encode());
+                        query.push_kv("subtype", &::aws_smithy_http::query::fmt_string(inner_4));
                     }
                 }
-                if let ::std::option::Option::Some(inner_5) = &_input.next_token {
+                if let ::std::option::Option::Some(inner_5) = &_input.max_results {
                     {
-                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_5));
+                        query.push_kv("maxResults", ::aws_smithy_types::primitive::Encoder::from(*inner_5).encode());
+                    }
+                }
+                if let ::std::option::Option::Some(inner_6) = &_input.next_token {
+                    {
+                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_6));
                     }
                 }
                 ::std::result::Result::Ok(())

@@ -176,6 +176,51 @@ impl From<crate::operation::associate_managed_notification_additional_channel::A
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_organizational_unit::AssociateOrganizationalUnitError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_organizational_unit::AssociateOrganizationalUnitError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::associate_organizational_unit::AssociateOrganizationalUnitError> for Error {
+    fn from(err: crate::operation::associate_organizational_unit::AssociateOrganizationalUnitError) -> Self {
+        match err {
+            crate::operation::associate_organizational_unit::AssociateOrganizationalUnitError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::associate_organizational_unit::AssociateOrganizationalUnitError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::associate_organizational_unit::AssociateOrganizationalUnitError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::associate_organizational_unit::AssociateOrganizationalUnitError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::associate_organizational_unit::AssociateOrganizationalUnitError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::associate_organizational_unit::AssociateOrganizationalUnitError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::associate_organizational_unit::AssociateOrganizationalUnitError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::associate_organizational_unit::AssociateOrganizationalUnitError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_event_rule::CreateEventRuleError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -516,6 +561,53 @@ impl From<crate::operation::disassociate_managed_notification_additional_channel
             crate::operation::disassociate_managed_notification_additional_channel::DisassociateManagedNotificationAdditionalChannelError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::disassociate_managed_notification_additional_channel::DisassociateManagedNotificationAdditionalChannelError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::disassociate_managed_notification_additional_channel::DisassociateManagedNotificationAdditionalChannelError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::disassociate_organizational_unit::DisassociateOrganizationalUnitError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::disassociate_organizational_unit::DisassociateOrganizationalUnitError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::disassociate_organizational_unit::DisassociateOrganizationalUnitError> for Error {
+    fn from(err: crate::operation::disassociate_organizational_unit::DisassociateOrganizationalUnitError) -> Self {
+        match err {
+            crate::operation::disassociate_organizational_unit::DisassociateOrganizationalUnitError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::disassociate_organizational_unit::DisassociateOrganizationalUnitError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::disassociate_organizational_unit::DisassociateOrganizationalUnitError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::disassociate_organizational_unit::DisassociateOrganizationalUnitError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::disassociate_organizational_unit::DisassociateOrganizationalUnitError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::disassociate_organizational_unit::DisassociateOrganizationalUnitError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1066,6 +1158,34 @@ impl From<crate::operation::list_managed_notification_events::ListManagedNotific
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_member_accounts::ListMemberAccountsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_member_accounts::ListMemberAccountsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_member_accounts::ListMemberAccountsError> for Error {
+    fn from(err: crate::operation::list_member_accounts::ListMemberAccountsError) -> Self {
+        match err {
+            crate::operation::list_member_accounts::ListMemberAccountsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_member_accounts::ListMemberAccountsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_member_accounts::ListMemberAccountsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_member_accounts::ListMemberAccountsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_member_accounts::ListMemberAccountsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_member_accounts::ListMemberAccountsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
@@ -1165,6 +1285,45 @@ impl From<crate::operation::list_notification_hubs::ListNotificationHubsError> f
             crate::operation::list_notification_hubs::ListNotificationHubsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_notification_hubs::ListNotificationHubsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_notification_hubs::ListNotificationHubsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_organizational_units::ListOrganizationalUnitsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_organizational_units::ListOrganizationalUnitsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_organizational_units::ListOrganizationalUnitsError> for Error {
+    fn from(err: crate::operation::list_organizational_units::ListOrganizationalUnitsError) -> Self {
+        match err {
+            crate::operation::list_organizational_units::ListOrganizationalUnitsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_organizational_units::ListOrganizationalUnitsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_organizational_units::ListOrganizationalUnitsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_organizational_units::ListOrganizationalUnitsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_organizational_units::ListOrganizationalUnitsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_organizational_units::ListOrganizationalUnitsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

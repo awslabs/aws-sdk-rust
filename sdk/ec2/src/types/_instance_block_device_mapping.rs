@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceBlockDeviceMapping {
-    /// <p>The device name (for example, <code>/dev/sdh</code> or <code>xvdh</code>).</p>
+    /// <p>The device name.</p>
     pub device_name: ::std::option::Option<::std::string::String>,
     /// <p>Parameters used to automatically set up EBS volumes when the instance is launched.</p>
     pub ebs: ::std::option::Option<crate::types::EbsInstanceBlockDevice>,
 }
 impl InstanceBlockDeviceMapping {
-    /// <p>The device name (for example, <code>/dev/sdh</code> or <code>xvdh</code>).</p>
+    /// <p>The device name.</p>
     pub fn device_name(&self) -> ::std::option::Option<&str> {
         self.device_name.as_deref()
     }
@@ -34,17 +34,17 @@ pub struct InstanceBlockDeviceMappingBuilder {
     pub(crate) ebs: ::std::option::Option<crate::types::EbsInstanceBlockDevice>,
 }
 impl InstanceBlockDeviceMappingBuilder {
-    /// <p>The device name (for example, <code>/dev/sdh</code> or <code>xvdh</code>).</p>
+    /// <p>The device name.</p>
     pub fn device_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The device name (for example, <code>/dev/sdh</code> or <code>xvdh</code>).</p>
+    /// <p>The device name.</p>
     pub fn set_device_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_name = input;
         self
     }
-    /// <p>The device name (for example, <code>/dev/sdh</code> or <code>xvdh</code>).</p>
+    /// <p>The device name.</p>
     pub fn get_device_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.device_name
     }

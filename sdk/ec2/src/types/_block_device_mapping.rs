@@ -8,7 +8,7 @@ pub struct BlockDeviceMapping {
     pub ebs: ::std::option::Option<crate::types::EbsBlockDevice>,
     /// <p>To omit the device from the block device mapping, specify an empty string. When this property is specified, the device is removed from the block device mapping regardless of the assigned value.</p>
     pub no_device: ::std::option::Option<::std::string::String>,
-    /// <p>The device name (for example, <code>/dev/sdh</code> or <code>xvdh</code>).</p>
+    /// <p>The device name. For available device names, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/device_naming.html">Device names for volumes</a>.</p>
     pub device_name: ::std::option::Option<::std::string::String>,
     /// <p>The virtual device name (<code>ephemeral</code>N). Instance store volumes are numbered starting from 0. An instance type with 2 available instance store volumes can specify mappings for <code>ephemeral0</code> and <code>ephemeral1</code>. The number of available instance store volumes depends on the instance type. After you connect to the instance, you must mount the volume.</p>
     /// <p>NVMe instance store volumes are automatically enumerated and assigned a device name. Including them in your block device mapping has no effect.</p>
@@ -24,7 +24,7 @@ impl BlockDeviceMapping {
     pub fn no_device(&self) -> ::std::option::Option<&str> {
         self.no_device.as_deref()
     }
-    /// <p>The device name (for example, <code>/dev/sdh</code> or <code>xvdh</code>).</p>
+    /// <p>The device name. For available device names, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/device_naming.html">Device names for volumes</a>.</p>
     pub fn device_name(&self) -> ::std::option::Option<&str> {
         self.device_name.as_deref()
     }
@@ -80,17 +80,17 @@ impl BlockDeviceMappingBuilder {
     pub fn get_no_device(&self) -> &::std::option::Option<::std::string::String> {
         &self.no_device
     }
-    /// <p>The device name (for example, <code>/dev/sdh</code> or <code>xvdh</code>).</p>
+    /// <p>The device name. For available device names, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/device_naming.html">Device names for volumes</a>.</p>
     pub fn device_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The device name (for example, <code>/dev/sdh</code> or <code>xvdh</code>).</p>
+    /// <p>The device name. For available device names, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/device_naming.html">Device names for volumes</a>.</p>
     pub fn set_device_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_name = input;
         self
     }
-    /// <p>The device name (for example, <code>/dev/sdh</code> or <code>xvdh</code>).</p>
+    /// <p>The device name. For available device names, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/device_naming.html">Device names for volumes</a>.</p>
     pub fn get_device_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.device_name
     }
