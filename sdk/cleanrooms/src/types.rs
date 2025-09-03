@@ -325,6 +325,20 @@ pub use crate::types::_collaboration_id_namespace_association_summary::Collabora
 
 pub use crate::types::_collaboration_configured_audience_model_association_summary::CollaborationConfiguredAudienceModelAssociationSummary;
 
+pub use crate::types::_collaboration_change_request_summary::CollaborationChangeRequestSummary;
+
+pub use crate::types::_change::Change;
+
+pub use crate::types::_change_type::ChangeType;
+
+pub use crate::types::_change_specification::ChangeSpecification;
+
+pub use crate::types::_member_change_specification::MemberChangeSpecification;
+
+pub use crate::types::_change_specification_type::ChangeSpecificationType;
+
+pub use crate::types::_change_request_status::ChangeRequestStatus;
+
 pub use crate::types::_collaboration_analysis_template_summary::CollaborationAnalysisTemplateSummary;
 
 pub use crate::types::_analysis_rule::AnalysisRule;
@@ -373,6 +387,8 @@ pub use crate::types::_collaboration_id_namespace_association::CollaborationIdNa
 
 pub use crate::types::_collaboration_configured_audience_model_association::CollaborationConfiguredAudienceModelAssociation;
 
+pub use crate::types::_collaboration_change_request::CollaborationChangeRequest;
+
 pub use crate::types::_collaboration_analysis_template::CollaborationAnalysisTemplate;
 
 pub use crate::types::_error_message_configuration::ErrorMessageConfiguration;
@@ -409,6 +425,8 @@ pub use crate::types::_analysis_format::AnalysisFormat;
 
 pub use crate::types::_analysis_schema::AnalysisSchema;
 
+pub use crate::types::_change_input::ChangeInput;
+
 pub use crate::types::_batch_get_schema_analysis_rule_error::BatchGetSchemaAnalysisRuleError;
 
 pub use crate::types::_schema_analysis_rule_request::SchemaAnalysisRuleRequest;
@@ -418,6 +436,8 @@ pub use crate::types::_batch_get_schema_error::BatchGetSchemaError;
 pub use crate::types::_batch_get_collaboration_analysis_template_error::BatchGetCollaborationAnalysisTemplateError;
 
 pub use crate::types::_collaboration::Collaboration;
+
+pub use crate::types::_auto_approved_change_type::AutoApprovedChangeType;
 
 pub use crate::types::_analytics_engine::AnalyticsEngine;
 
@@ -501,6 +521,8 @@ mod _analytics_engine;
 
 mod _athena_table_reference;
 
+mod _auto_approved_change_type;
+
 mod _batch_get_collaboration_analysis_template_error;
 
 mod _batch_get_schema_analysis_rule_error;
@@ -511,11 +533,27 @@ mod _billed_job_resource_utilization;
 
 mod _billed_resource_utilization;
 
+mod _change;
+
+mod _change_input;
+
+mod _change_request_status;
+
+mod _change_specification;
+
+mod _change_specification_type;
+
+mod _change_type;
+
 mod _collaboration;
 
 mod _collaboration_analysis_template;
 
 mod _collaboration_analysis_template_summary;
+
+mod _collaboration_change_request;
+
+mod _collaboration_change_request_summary;
 
 mod _collaboration_configured_audience_model_association;
 
@@ -664,6 +702,8 @@ mod _join_operator;
 mod _join_required_option;
 
 mod _member_ability;
+
+mod _member_change_specification;
 
 mod _member_specification;
 

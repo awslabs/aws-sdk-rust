@@ -26,7 +26,7 @@ impl crate::operation::start_call_analytics_stream_transcription::builders::Star
 /// <p>The following parameters are required:</p>
 /// <ul>
 /// <li>
-/// <p><code>language-code</code></p></li>
+/// <p><code>language-code</code> or <code>identify-language</code></p></li>
 /// <li>
 /// <p><code>media-encoding</code></p></li>
 /// <li>
@@ -317,6 +317,127 @@ impl StartCallAnalyticsStreamTranscriptionFluentBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-language-models.html">Custom language models</a>.</p>
     pub fn get_language_model_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_language_model_name()
+    }
+    /// <p>Enables automatic language identification for your Call Analytics transcription.</p>
+    /// <p>If you include <code>IdentifyLanguage</code>, you must include a list of language codes, using <code>LanguageOptions</code>, that you think may be present in your audio stream. You must provide a minimum of two language selections.</p>
+    /// <p>You can also include a preferred language using <code>PreferredLanguage</code>. Adding a preferred language can help Amazon Transcribe identify the language faster than if you omit this parameter.</p>
+    /// <p>Note that you must include either <code>LanguageCode</code> or <code>IdentifyLanguage</code> in your request. If you include both parameters, your transcription job fails.</p>
+    pub fn identify_language(mut self, input: bool) -> Self {
+        self.inner = self.inner.identify_language(input);
+        self
+    }
+    /// <p>Enables automatic language identification for your Call Analytics transcription.</p>
+    /// <p>If you include <code>IdentifyLanguage</code>, you must include a list of language codes, using <code>LanguageOptions</code>, that you think may be present in your audio stream. You must provide a minimum of two language selections.</p>
+    /// <p>You can also include a preferred language using <code>PreferredLanguage</code>. Adding a preferred language can help Amazon Transcribe identify the language faster than if you omit this parameter.</p>
+    /// <p>Note that you must include either <code>LanguageCode</code> or <code>IdentifyLanguage</code> in your request. If you include both parameters, your transcription job fails.</p>
+    pub fn set_identify_language(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_identify_language(input);
+        self
+    }
+    /// <p>Enables automatic language identification for your Call Analytics transcription.</p>
+    /// <p>If you include <code>IdentifyLanguage</code>, you must include a list of language codes, using <code>LanguageOptions</code>, that you think may be present in your audio stream. You must provide a minimum of two language selections.</p>
+    /// <p>You can also include a preferred language using <code>PreferredLanguage</code>. Adding a preferred language can help Amazon Transcribe identify the language faster than if you omit this parameter.</p>
+    /// <p>Note that you must include either <code>LanguageCode</code> or <code>IdentifyLanguage</code> in your request. If you include both parameters, your transcription job fails.</p>
+    pub fn get_identify_language(&self) -> &::std::option::Option<bool> {
+        self.inner.get_identify_language()
+    }
+    /// <p>Specify two or more language codes that represent the languages you think may be present in your media.</p>
+    /// <p>Including language options can improve the accuracy of language identification.</p>
+    /// <p>If you include <code>LanguageOptions</code> in your request, you must also include <code>IdentifyLanguage</code>.</p>
+    /// <p>For a list of languages supported with Call Analytics streaming, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.</p><important>
+    /// <p>You can only include one language dialect per language per stream. For example, you cannot include <code>en-US</code> and <code>en-AU</code> in the same request.</p>
+    /// </important>
+    pub fn language_options(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.language_options(input.into());
+        self
+    }
+    /// <p>Specify two or more language codes that represent the languages you think may be present in your media.</p>
+    /// <p>Including language options can improve the accuracy of language identification.</p>
+    /// <p>If you include <code>LanguageOptions</code> in your request, you must also include <code>IdentifyLanguage</code>.</p>
+    /// <p>For a list of languages supported with Call Analytics streaming, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.</p><important>
+    /// <p>You can only include one language dialect per language per stream. For example, you cannot include <code>en-US</code> and <code>en-AU</code> in the same request.</p>
+    /// </important>
+    pub fn set_language_options(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_language_options(input);
+        self
+    }
+    /// <p>Specify two or more language codes that represent the languages you think may be present in your media.</p>
+    /// <p>Including language options can improve the accuracy of language identification.</p>
+    /// <p>If you include <code>LanguageOptions</code> in your request, you must also include <code>IdentifyLanguage</code>.</p>
+    /// <p>For a list of languages supported with Call Analytics streaming, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.</p><important>
+    /// <p>You can only include one language dialect per language per stream. For example, you cannot include <code>en-US</code> and <code>en-AU</code> in the same request.</p>
+    /// </important>
+    pub fn get_language_options(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_language_options()
+    }
+    /// <p>Specify a preferred language from the subset of languages codes you specified in <code>LanguageOptions</code>.</p>
+    /// <p>You can only use this parameter if you've included <code>IdentifyLanguage</code> and <code>LanguageOptions</code> in your request.</p>
+    pub fn preferred_language(mut self, input: crate::types::CallAnalyticsLanguageCode) -> Self {
+        self.inner = self.inner.preferred_language(input);
+        self
+    }
+    /// <p>Specify a preferred language from the subset of languages codes you specified in <code>LanguageOptions</code>.</p>
+    /// <p>You can only use this parameter if you've included <code>IdentifyLanguage</code> and <code>LanguageOptions</code> in your request.</p>
+    pub fn set_preferred_language(mut self, input: ::std::option::Option<crate::types::CallAnalyticsLanguageCode>) -> Self {
+        self.inner = self.inner.set_preferred_language(input);
+        self
+    }
+    /// <p>Specify a preferred language from the subset of languages codes you specified in <code>LanguageOptions</code>.</p>
+    /// <p>You can only use this parameter if you've included <code>IdentifyLanguage</code> and <code>LanguageOptions</code> in your request.</p>
+    pub fn get_preferred_language(&self) -> &::std::option::Option<crate::types::CallAnalyticsLanguageCode> {
+        self.inner.get_preferred_language()
+    }
+    /// <p>Specify the names of the custom vocabularies that you want to use when processing your Call Analytics transcription. Note that vocabulary names are case sensitive.</p>
+    /// <p>If the custom vocabulary's language doesn't match the identified media language, it won't be applied to the transcription.</p><important>
+    /// <p>This parameter is only intended for use <b>with</b> the <code>IdentifyLanguage</code> parameter. If you're <b>not</b> including <code>IdentifyLanguage</code> in your request and want to use a custom vocabulary with your transcription, use the <code>VocabularyName</code> parameter instead.</p>
+    /// </important>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html">Custom vocabularies</a>.</p>
+    pub fn vocabulary_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.vocabulary_names(input.into());
+        self
+    }
+    /// <p>Specify the names of the custom vocabularies that you want to use when processing your Call Analytics transcription. Note that vocabulary names are case sensitive.</p>
+    /// <p>If the custom vocabulary's language doesn't match the identified media language, it won't be applied to the transcription.</p><important>
+    /// <p>This parameter is only intended for use <b>with</b> the <code>IdentifyLanguage</code> parameter. If you're <b>not</b> including <code>IdentifyLanguage</code> in your request and want to use a custom vocabulary with your transcription, use the <code>VocabularyName</code> parameter instead.</p>
+    /// </important>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html">Custom vocabularies</a>.</p>
+    pub fn set_vocabulary_names(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_vocabulary_names(input);
+        self
+    }
+    /// <p>Specify the names of the custom vocabularies that you want to use when processing your Call Analytics transcription. Note that vocabulary names are case sensitive.</p>
+    /// <p>If the custom vocabulary's language doesn't match the identified media language, it won't be applied to the transcription.</p><important>
+    /// <p>This parameter is only intended for use <b>with</b> the <code>IdentifyLanguage</code> parameter. If you're <b>not</b> including <code>IdentifyLanguage</code> in your request and want to use a custom vocabulary with your transcription, use the <code>VocabularyName</code> parameter instead.</p>
+    /// </important>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html">Custom vocabularies</a>.</p>
+    pub fn get_vocabulary_names(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_vocabulary_names()
+    }
+    /// <p>Specify the names of the custom vocabulary filters that you want to use when processing your Call Analytics transcription. Note that vocabulary filter names are case sensitive.</p>
+    /// <p>These filters serve to customize the transcript output.</p><important>
+    /// <p>This parameter is only intended for use <b>with</b> the <code>IdentifyLanguage</code> parameter. If you're <b>not</b> including <code>IdentifyLanguage</code> in your request and want to use a custom vocabulary filter with your transcription, use the <code>VocabularyFilterName</code> parameter instead.</p>
+    /// </important>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-filtering.html">Using vocabulary filtering with unwanted words</a>.</p>
+    pub fn vocabulary_filter_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.vocabulary_filter_names(input.into());
+        self
+    }
+    /// <p>Specify the names of the custom vocabulary filters that you want to use when processing your Call Analytics transcription. Note that vocabulary filter names are case sensitive.</p>
+    /// <p>These filters serve to customize the transcript output.</p><important>
+    /// <p>This parameter is only intended for use <b>with</b> the <code>IdentifyLanguage</code> parameter. If you're <b>not</b> including <code>IdentifyLanguage</code> in your request and want to use a custom vocabulary filter with your transcription, use the <code>VocabularyFilterName</code> parameter instead.</p>
+    /// </important>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-filtering.html">Using vocabulary filtering with unwanted words</a>.</p>
+    pub fn set_vocabulary_filter_names(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_vocabulary_filter_names(input);
+        self
+    }
+    /// <p>Specify the names of the custom vocabulary filters that you want to use when processing your Call Analytics transcription. Note that vocabulary filter names are case sensitive.</p>
+    /// <p>These filters serve to customize the transcript output.</p><important>
+    /// <p>This parameter is only intended for use <b>with</b> the <code>IdentifyLanguage</code> parameter. If you're <b>not</b> including <code>IdentifyLanguage</code> in your request and want to use a custom vocabulary filter with your transcription, use the <code>VocabularyFilterName</code> parameter instead.</p>
+    /// </important>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-filtering.html">Using vocabulary filtering with unwanted words</a>.</p>
+    pub fn get_vocabulary_filter_names(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_vocabulary_filter_names()
     }
     /// <p>Enables partial result stabilization for your transcription. Partial result stabilization can reduce latency in your output, but may impact accuracy. For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html#streaming-partial-result-stabilization">Partial-result stabilization</a>.</p>
     pub fn enable_partial_results_stabilization(mut self, input: bool) -> Self {

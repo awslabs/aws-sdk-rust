@@ -27,6 +27,8 @@ pub struct CustomOriginConfig {
     /// <p>Specifies how long, in seconds, CloudFront persists its connection to the origin. The minimum timeout is 1 second, the maximum is 120 seconds, and the default (if you don't specify otherwise) is 5 seconds.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DownloadDistValuesOrigin.html#DownloadDistValuesOriginKeepaliveTimeout">Keep-alive timeout (custom origins only)</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     pub origin_keepalive_timeout: ::std::option::Option<i32>,
+    /// <p>Specifies which IP protocol CloudFront uses when connecting to your origin. If your origin uses both IPv4 and IPv6 protocols, you can choose <code>dualstack</code> to help optimize reliability.</p>
+    pub ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
 }
 impl CustomOriginConfig {
     /// <p>The HTTP port that CloudFront uses to connect to the origin. Specify the HTTP port that the origin listens on.</p>
@@ -64,6 +66,10 @@ impl CustomOriginConfig {
     pub fn origin_keepalive_timeout(&self) -> ::std::option::Option<i32> {
         self.origin_keepalive_timeout
     }
+    /// <p>Specifies which IP protocol CloudFront uses when connecting to your origin. If your origin uses both IPv4 and IPv6 protocols, you can choose <code>dualstack</code> to help optimize reliability.</p>
+    pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::IpAddressType> {
+        self.ip_address_type.as_ref()
+    }
 }
 impl CustomOriginConfig {
     /// Creates a new builder-style object to manufacture [`CustomOriginConfig`](crate::types::CustomOriginConfig).
@@ -82,6 +88,7 @@ pub struct CustomOriginConfigBuilder {
     pub(crate) origin_ssl_protocols: ::std::option::Option<crate::types::OriginSslProtocols>,
     pub(crate) origin_read_timeout: ::std::option::Option<i32>,
     pub(crate) origin_keepalive_timeout: ::std::option::Option<i32>,
+    pub(crate) ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
 }
 impl CustomOriginConfigBuilder {
     /// <p>The HTTP port that CloudFront uses to connect to the origin. Specify the HTTP port that the origin listens on.</p>
@@ -204,6 +211,20 @@ impl CustomOriginConfigBuilder {
     pub fn get_origin_keepalive_timeout(&self) -> &::std::option::Option<i32> {
         &self.origin_keepalive_timeout
     }
+    /// <p>Specifies which IP protocol CloudFront uses when connecting to your origin. If your origin uses both IPv4 and IPv6 protocols, you can choose <code>dualstack</code> to help optimize reliability.</p>
+    pub fn ip_address_type(mut self, input: crate::types::IpAddressType) -> Self {
+        self.ip_address_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies which IP protocol CloudFront uses when connecting to your origin. If your origin uses both IPv4 and IPv6 protocols, you can choose <code>dualstack</code> to help optimize reliability.</p>
+    pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::IpAddressType>) -> Self {
+        self.ip_address_type = input;
+        self
+    }
+    /// <p>Specifies which IP protocol CloudFront uses when connecting to your origin. If your origin uses both IPv4 and IPv6 protocols, you can choose <code>dualstack</code> to help optimize reliability.</p>
+    pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::IpAddressType> {
+        &self.ip_address_type
+    }
     /// Consumes the builder and constructs a [`CustomOriginConfig`](crate::types::CustomOriginConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`http_port`](crate::types::builders::CustomOriginConfigBuilder::http_port)
@@ -232,6 +253,7 @@ impl CustomOriginConfigBuilder {
             origin_ssl_protocols: self.origin_ssl_protocols,
             origin_read_timeout: self.origin_read_timeout,
             origin_keepalive_timeout: self.origin_keepalive_timeout,
+            ip_address_type: self.ip_address_type,
         })
     }
 }

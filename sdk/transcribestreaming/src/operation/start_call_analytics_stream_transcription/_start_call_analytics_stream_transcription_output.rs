@@ -26,6 +26,16 @@ pub struct StartCallAnalyticsStreamTranscriptionOutput {
     pub vocabulary_filter_method: ::std::option::Option<crate::types::VocabularyFilterMethod>,
     /// <p>Provides the name of the custom language model that you specified in your Call Analytics request.</p>
     pub language_model_name: ::std::option::Option<::std::string::String>,
+    /// <p>Shows whether automatic language identification was enabled for your Call Analytics transcription.</p>
+    pub identify_language: bool,
+    /// <p>Provides the language codes that you specified in your Call Analytics request.</p>
+    pub language_options: ::std::option::Option<::std::string::String>,
+    /// <p>Provides the preferred language that you specified in your Call Analytics request.</p>
+    pub preferred_language: ::std::option::Option<crate::types::CallAnalyticsLanguageCode>,
+    /// <p>Provides the names of the custom vocabularies that you specified in your Call Analytics request.</p>
+    pub vocabulary_names: ::std::option::Option<::std::string::String>,
+    /// <p>Provides the names of the custom vocabulary filters that you specified in your Call Analytics request.</p>
+    pub vocabulary_filter_names: ::std::option::Option<::std::string::String>,
     /// <p>Shows whether partial results stabilization was enabled for your Call Analytics transcription.</p>
     pub enable_partial_results_stabilization: bool,
     /// <p>Provides the stabilization level used for your transcription.</p>
@@ -84,6 +94,26 @@ impl StartCallAnalyticsStreamTranscriptionOutput {
     pub fn language_model_name(&self) -> ::std::option::Option<&str> {
         self.language_model_name.as_deref()
     }
+    /// <p>Shows whether automatic language identification was enabled for your Call Analytics transcription.</p>
+    pub fn identify_language(&self) -> bool {
+        self.identify_language
+    }
+    /// <p>Provides the language codes that you specified in your Call Analytics request.</p>
+    pub fn language_options(&self) -> ::std::option::Option<&str> {
+        self.language_options.as_deref()
+    }
+    /// <p>Provides the preferred language that you specified in your Call Analytics request.</p>
+    pub fn preferred_language(&self) -> ::std::option::Option<&crate::types::CallAnalyticsLanguageCode> {
+        self.preferred_language.as_ref()
+    }
+    /// <p>Provides the names of the custom vocabularies that you specified in your Call Analytics request.</p>
+    pub fn vocabulary_names(&self) -> ::std::option::Option<&str> {
+        self.vocabulary_names.as_deref()
+    }
+    /// <p>Provides the names of the custom vocabulary filters that you specified in your Call Analytics request.</p>
+    pub fn vocabulary_filter_names(&self) -> ::std::option::Option<&str> {
+        self.vocabulary_filter_names.as_deref()
+    }
     /// <p>Shows whether partial results stabilization was enabled for your Call Analytics transcription.</p>
     pub fn enable_partial_results_stabilization(&self) -> bool {
         self.enable_partial_results_stabilization
@@ -136,6 +166,11 @@ pub struct StartCallAnalyticsStreamTranscriptionOutputBuilder {
     pub(crate) vocabulary_filter_name: ::std::option::Option<::std::string::String>,
     pub(crate) vocabulary_filter_method: ::std::option::Option<crate::types::VocabularyFilterMethod>,
     pub(crate) language_model_name: ::std::option::Option<::std::string::String>,
+    pub(crate) identify_language: ::std::option::Option<bool>,
+    pub(crate) language_options: ::std::option::Option<::std::string::String>,
+    pub(crate) preferred_language: ::std::option::Option<crate::types::CallAnalyticsLanguageCode>,
+    pub(crate) vocabulary_names: ::std::option::Option<::std::string::String>,
+    pub(crate) vocabulary_filter_names: ::std::option::Option<::std::string::String>,
     pub(crate) enable_partial_results_stabilization: ::std::option::Option<bool>,
     pub(crate) partial_results_stability: ::std::option::Option<crate::types::PartialResultsStability>,
     pub(crate) content_identification_type: ::std::option::Option<crate::types::ContentIdentificationType>,
@@ -305,6 +340,76 @@ impl StartCallAnalyticsStreamTranscriptionOutputBuilder {
     pub fn get_language_model_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.language_model_name
     }
+    /// <p>Shows whether automatic language identification was enabled for your Call Analytics transcription.</p>
+    pub fn identify_language(mut self, input: bool) -> Self {
+        self.identify_language = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Shows whether automatic language identification was enabled for your Call Analytics transcription.</p>
+    pub fn set_identify_language(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.identify_language = input;
+        self
+    }
+    /// <p>Shows whether automatic language identification was enabled for your Call Analytics transcription.</p>
+    pub fn get_identify_language(&self) -> &::std::option::Option<bool> {
+        &self.identify_language
+    }
+    /// <p>Provides the language codes that you specified in your Call Analytics request.</p>
+    pub fn language_options(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.language_options = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Provides the language codes that you specified in your Call Analytics request.</p>
+    pub fn set_language_options(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.language_options = input;
+        self
+    }
+    /// <p>Provides the language codes that you specified in your Call Analytics request.</p>
+    pub fn get_language_options(&self) -> &::std::option::Option<::std::string::String> {
+        &self.language_options
+    }
+    /// <p>Provides the preferred language that you specified in your Call Analytics request.</p>
+    pub fn preferred_language(mut self, input: crate::types::CallAnalyticsLanguageCode) -> Self {
+        self.preferred_language = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Provides the preferred language that you specified in your Call Analytics request.</p>
+    pub fn set_preferred_language(mut self, input: ::std::option::Option<crate::types::CallAnalyticsLanguageCode>) -> Self {
+        self.preferred_language = input;
+        self
+    }
+    /// <p>Provides the preferred language that you specified in your Call Analytics request.</p>
+    pub fn get_preferred_language(&self) -> &::std::option::Option<crate::types::CallAnalyticsLanguageCode> {
+        &self.preferred_language
+    }
+    /// <p>Provides the names of the custom vocabularies that you specified in your Call Analytics request.</p>
+    pub fn vocabulary_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.vocabulary_names = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Provides the names of the custom vocabularies that you specified in your Call Analytics request.</p>
+    pub fn set_vocabulary_names(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.vocabulary_names = input;
+        self
+    }
+    /// <p>Provides the names of the custom vocabularies that you specified in your Call Analytics request.</p>
+    pub fn get_vocabulary_names(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vocabulary_names
+    }
+    /// <p>Provides the names of the custom vocabulary filters that you specified in your Call Analytics request.</p>
+    pub fn vocabulary_filter_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.vocabulary_filter_names = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Provides the names of the custom vocabulary filters that you specified in your Call Analytics request.</p>
+    pub fn set_vocabulary_filter_names(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.vocabulary_filter_names = input;
+        self
+    }
+    /// <p>Provides the names of the custom vocabulary filters that you specified in your Call Analytics request.</p>
+    pub fn get_vocabulary_filter_names(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vocabulary_filter_names
+    }
     /// <p>Shows whether partial results stabilization was enabled for your Call Analytics transcription.</p>
     pub fn enable_partial_results_stabilization(mut self, input: bool) -> Self {
         self.enable_partial_results_stabilization = ::std::option::Option::Some(input);
@@ -417,6 +522,17 @@ impl StartCallAnalyticsStreamTranscriptionOutputBuilder {
                 vocabulary_filter_method: self.vocabulary_filter_method
                 ,
                 language_model_name: self.language_model_name
+                ,
+                identify_language: self.identify_language
+                    .unwrap_or_default()
+                ,
+                language_options: self.language_options
+                ,
+                preferred_language: self.preferred_language
+                ,
+                vocabulary_names: self.vocabulary_names
+                ,
+                vocabulary_filter_names: self.vocabulary_filter_names
                 ,
                 enable_partial_results_stabilization: self.enable_partial_results_stabilization
                     .unwrap_or_default()

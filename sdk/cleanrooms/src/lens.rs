@@ -19,6 +19,16 @@ pub(crate) fn reflens_list_collaboration_analysis_templates_output_output_next_t
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_collaboration_change_requests_output_output_next_token(
+    input: &crate::operation::list_collaboration_change_requests::ListCollaborationChangeRequestsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_collaboration_configured_audience_model_associations_output_output_next_token(
     input: &crate::operation::list_collaboration_configured_audience_model_associations::ListCollaborationConfiguredAudienceModelAssociationsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -200,6 +210,13 @@ pub(crate) fn lens_list_collaboration_analysis_templates_output_output_collabora
     input: crate::operation::list_collaboration_analysis_templates::ListCollaborationAnalysisTemplatesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::CollaborationAnalysisTemplateSummary>> {
     let input = input.collaboration_analysis_template_summaries;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_collaboration_change_requests_output_output_collaboration_change_request_summaries(
+    input: crate::operation::list_collaboration_change_requests::ListCollaborationChangeRequestsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::CollaborationChangeRequestSummary>> {
+    let input = input.collaboration_change_request_summaries;
     ::std::option::Option::Some(input)
 }
 

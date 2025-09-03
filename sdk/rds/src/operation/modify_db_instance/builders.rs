@@ -2221,4 +2221,42 @@ impl ModifyDBInstanceFluentBuilder {
     pub fn get_multi_tenant(&self) -> &::std::option::Option<bool> {
         self.inner.get_multi_tenant()
     }
+    /// <p>Specifies the authentication type for the master user. With IAM master user authentication, you can change the master DB user to use IAM database authentication.</p>
+    /// <p>You can specify one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>password</code> - Use standard database authentication with a password.</p></li>
+    /// <li>
+    /// <p><code>iam-db-auth</code> - Use IAM database authentication for the master user.</p></li>
+    /// </ul>
+    /// <p>This option is only valid for RDS for PostgreSQL and Aurora PostgreSQL engines.</p>
+    pub fn master_user_authentication_type(mut self, input: crate::types::MasterUserAuthenticationType) -> Self {
+        self.inner = self.inner.master_user_authentication_type(input);
+        self
+    }
+    /// <p>Specifies the authentication type for the master user. With IAM master user authentication, you can change the master DB user to use IAM database authentication.</p>
+    /// <p>You can specify one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>password</code> - Use standard database authentication with a password.</p></li>
+    /// <li>
+    /// <p><code>iam-db-auth</code> - Use IAM database authentication for the master user.</p></li>
+    /// </ul>
+    /// <p>This option is only valid for RDS for PostgreSQL and Aurora PostgreSQL engines.</p>
+    pub fn set_master_user_authentication_type(mut self, input: ::std::option::Option<crate::types::MasterUserAuthenticationType>) -> Self {
+        self.inner = self.inner.set_master_user_authentication_type(input);
+        self
+    }
+    /// <p>Specifies the authentication type for the master user. With IAM master user authentication, you can change the master DB user to use IAM database authentication.</p>
+    /// <p>You can specify one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>password</code> - Use standard database authentication with a password.</p></li>
+    /// <li>
+    /// <p><code>iam-db-auth</code> - Use IAM database authentication for the master user.</p></li>
+    /// </ul>
+    /// <p>This option is only valid for RDS for PostgreSQL and Aurora PostgreSQL engines.</p>
+    pub fn get_master_user_authentication_type(&self) -> &::std::option::Option<crate::types::MasterUserAuthenticationType> {
+        self.inner.get_master_user_authentication_type()
+    }
 }

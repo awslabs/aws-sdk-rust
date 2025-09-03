@@ -207,6 +207,12 @@ pub use crate::types::_collaboration_id_namespace_association_summary::Collabora
 
 pub use crate::types::_collaboration_configured_audience_model_association_summary::CollaborationConfiguredAudienceModelAssociationSummaryBuilder;
 
+pub use crate::types::_collaboration_change_request_summary::CollaborationChangeRequestSummaryBuilder;
+
+pub use crate::types::_change::ChangeBuilder;
+
+pub use crate::types::_member_change_specification::MemberChangeSpecificationBuilder;
+
 pub use crate::types::_collaboration_analysis_template_summary::CollaborationAnalysisTemplateSummaryBuilder;
 
 pub use crate::types::_analysis_rule::AnalysisRuleBuilder;
@@ -237,6 +243,8 @@ pub use crate::types::_collaboration_id_namespace_association::CollaborationIdNa
 
 pub use crate::types::_collaboration_configured_audience_model_association::CollaborationConfiguredAudienceModelAssociationBuilder;
 
+pub use crate::types::_collaboration_change_request::CollaborationChangeRequestBuilder;
+
 pub use crate::types::_collaboration_analysis_template::CollaborationAnalysisTemplateBuilder;
 
 pub use crate::types::_error_message_configuration::ErrorMessageConfigurationBuilder;
@@ -258,6 +266,8 @@ pub use crate::types::_analysis_template_artifact::AnalysisTemplateArtifactBuild
 pub use crate::types::_s3_location::S3LocationBuilder;
 
 pub use crate::types::_analysis_schema::AnalysisSchemaBuilder;
+
+pub use crate::types::_change_input::ChangeInputBuilder;
 
 pub use crate::types::_batch_get_schema_analysis_rule_error::BatchGetSchemaAnalysisRuleErrorBuilder;
 

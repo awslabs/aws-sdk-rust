@@ -107,6 +107,8 @@ pub use crate::types::_medical_scribe_session_control_event_type::MedicalScribeS
 
 pub use crate::types::_medical_scribe_audio_event::MedicalScribeAudioEvent;
 
+pub use crate::types::_call_analytics_language_code::CallAnalyticsLanguageCode;
+
 pub use crate::types::_call_analytics_transcript_result_stream::CallAnalyticsTranscriptResultStream;
 
 pub use crate::types::_category_event::CategoryEvent;
@@ -117,6 +119,8 @@ pub use crate::types::_timestamp_range::TimestampRange;
 
 pub use crate::types::_utterance_event::UtteranceEvent;
 
+pub use crate::types::_call_analytics_language_with_score::CallAnalyticsLanguageWithScore;
+
 pub use crate::types::_issue_detected::IssueDetected;
 
 pub use crate::types::_character_offsets::CharacterOffsets;
@@ -126,8 +130,6 @@ pub use crate::types::_sentiment::Sentiment;
 pub use crate::types::_call_analytics_entity::CallAnalyticsEntity;
 
 pub use crate::types::_call_analytics_item::CallAnalyticsItem;
-
-pub use crate::types::_call_analytics_language_code::CallAnalyticsLanguageCode;
 
 pub use crate::types::_medical_scribe_stream_details::MedicalScribeStreamDetails;
 
@@ -150,6 +152,8 @@ mod _call_analytics_entity;
 mod _call_analytics_item;
 
 mod _call_analytics_language_code;
+
+mod _call_analytics_language_with_score;
 
 mod _call_analytics_transcript_result_stream;
 

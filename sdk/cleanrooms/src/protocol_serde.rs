@@ -33,6 +33,8 @@ pub(crate) mod shape_create_analysis_template;
 
 pub(crate) mod shape_create_collaboration;
 
+pub(crate) mod shape_create_collaboration_change_request;
+
 pub(crate) mod shape_create_configured_audience_model_association;
 
 pub(crate) mod shape_create_configured_table;
@@ -81,6 +83,8 @@ pub(crate) mod shape_get_collaboration;
 
 pub(crate) mod shape_get_collaboration_analysis_template;
 
+pub(crate) mod shape_get_collaboration_change_request;
+
 pub(crate) mod shape_get_collaboration_configured_audience_model_association;
 
 pub(crate) mod shape_get_collaboration_id_namespace_association;
@@ -116,6 +120,8 @@ pub(crate) mod shape_get_schema_analysis_rule;
 pub(crate) mod shape_list_analysis_templates;
 
 pub(crate) mod shape_list_collaboration_analysis_templates;
+
+pub(crate) mod shape_list_collaboration_change_requests;
 
 pub(crate) mod shape_list_collaboration_configured_audience_model_associations;
 
@@ -211,6 +217,8 @@ pub(crate) mod shape_conflict_exception;
 
 pub(crate) mod shape_create_analysis_template_input;
 
+pub(crate) mod shape_create_collaboration_change_request_input;
+
 pub(crate) mod shape_create_collaboration_input;
 
 pub(crate) mod shape_create_configured_audience_model_association_input;
@@ -293,6 +301,8 @@ pub(crate) mod shape_batch_get_schema_analysis_rule_error_list;
 
 pub(crate) mod shape_batch_get_schema_error_list;
 
+pub(crate) mod shape_change_input;
+
 pub(crate) mod shape_collaboration;
 
 pub(crate) mod shape_collaboration_analysis_template;
@@ -300,6 +310,10 @@ pub(crate) mod shape_collaboration_analysis_template;
 pub(crate) mod shape_collaboration_analysis_template_list;
 
 pub(crate) mod shape_collaboration_analysis_template_summary_list;
+
+pub(crate) mod shape_collaboration_change_request;
+
+pub(crate) mod shape_collaboration_change_request_summary_list;
 
 pub(crate) mod shape_collaboration_configured_audience_model_association;
 
@@ -439,13 +453,21 @@ pub(crate) mod shape_analysis_template_validation_status_detail_list;
 
 pub(crate) mod shape_athena_table_reference;
 
+pub(crate) mod shape_auto_approved_change_type_list;
+
 pub(crate) mod shape_batch_get_collaboration_analysis_template_error;
 
 pub(crate) mod shape_batch_get_schema_analysis_rule_error;
 
 pub(crate) mod shape_batch_get_schema_error;
 
+pub(crate) mod shape_change_list;
+
+pub(crate) mod shape_change_specification;
+
 pub(crate) mod shape_collaboration_analysis_template_summary;
+
+pub(crate) mod shape_collaboration_change_request_summary;
 
 pub(crate) mod shape_collaboration_configured_audience_model_association_summary;
 
@@ -577,6 +599,8 @@ pub(crate) mod shape_billed_job_resource_utilization;
 
 pub(crate) mod shape_billed_resource_utilization;
 
+pub(crate) mod shape_change;
+
 pub(crate) mod shape_column;
 
 pub(crate) mod shape_configured_table_association_analysis_rule_aggregation;
@@ -602,6 +626,8 @@ pub(crate) mod shape_id_mapping_table_schema_type_properties;
 pub(crate) mod shape_id_mapping_workflows_supported;
 
 pub(crate) mod shape_id_namespace_association_input_reference_properties_summary;
+
+pub(crate) mod shape_member_change_specification;
 
 pub(crate) mod shape_membership_model_inference_payment_config;
 
@@ -650,6 +676,8 @@ pub(crate) mod shape_analysis_rule_id_mapping_table;
 pub(crate) mod shape_analysis_template_artifact_list;
 
 pub(crate) mod shape_analysis_template_validation_status_reason_list;
+
+pub(crate) mod shape_change_type_list;
 
 pub(crate) mod shape_consolidated_policy_aggregation;
 

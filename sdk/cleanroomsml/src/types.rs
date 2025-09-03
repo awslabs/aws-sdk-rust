@@ -101,6 +101,14 @@ pub use crate::types::_trained_model_inference_max_output_size_unit_type::Traine
 
 pub use crate::types::_logs_configuration_policy::LogsConfigurationPolicy;
 
+pub use crate::types::_log_redaction_configuration::LogRedactionConfiguration;
+
+pub use crate::types::_custom_entity_config::CustomEntityConfig;
+
+pub use crate::types::_entity_type::EntityType;
+
+pub use crate::types::_log_type::LogType;
+
 pub use crate::types::_trained_model_exports_configuration_policy::TrainedModelExportsConfigurationPolicy;
 
 pub use crate::types::_trained_model_export_file_type::TrainedModelExportFileType;
@@ -231,6 +239,8 @@ mod _configured_model_algorithm_summary;
 
 mod _container_config;
 
+mod _custom_entity_config;
+
 mod _data_source;
 
 mod _dataset;
@@ -240,6 +250,8 @@ mod _dataset_input_config;
 mod _dataset_type;
 
 mod _destination;
+
+mod _entity_type;
 
 mod _glue_data_source;
 
@@ -264,6 +276,10 @@ mod _input_channel;
 mod _input_channel_data_source;
 
 mod _instance_type;
+
+mod _log_redaction_configuration;
+
+mod _log_type;
 
 mod _logs_configuration_policy;
 

@@ -6,69 +6,78 @@ pub fn ser_create_collaboration_input_input(
     if let Some(var_1) = &input.analytics_engine {
         object.key("analyticsEngine").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.creator_display_name {
-        object.key("creatorDisplayName").string(var_2.as_str());
-    }
-    if let Some(var_3) = &input.creator_ml_member_abilities {
-        #[allow(unused_mut)]
-        let mut object_4 = object.key("creatorMLMemberAbilities").start_object();
-        crate::protocol_serde::shape_ml_member_abilities::ser_ml_member_abilities(&mut object_4, var_3)?;
-        object_4.finish();
-    }
-    if let Some(var_5) = &input.creator_member_abilities {
-        let mut array_6 = object.key("creatorMemberAbilities").start_array();
-        for item_7 in var_5 {
+    if let Some(var_2) = &input.auto_approved_change_request_types {
+        let mut array_3 = object.key("autoApprovedChangeRequestTypes").start_array();
+        for item_4 in var_2 {
             {
-                array_6.value().string(item_7.as_str());
+                array_3.value().string(item_4.as_str());
             }
         }
-        array_6.finish();
+        array_3.finish();
     }
-    if let Some(var_8) = &input.creator_payment_configuration {
+    if let Some(var_5) = &input.creator_display_name {
+        object.key("creatorDisplayName").string(var_5.as_str());
+    }
+    if let Some(var_6) = &input.creator_ml_member_abilities {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("creatorPaymentConfiguration").start_object();
-        crate::protocol_serde::shape_payment_configuration::ser_payment_configuration(&mut object_9, var_8)?;
-        object_9.finish();
+        let mut object_7 = object.key("creatorMLMemberAbilities").start_object();
+        crate::protocol_serde::shape_ml_member_abilities::ser_ml_member_abilities(&mut object_7, var_6)?;
+        object_7.finish();
     }
-    if let Some(var_10) = &input.data_encryption_metadata {
+    if let Some(var_8) = &input.creator_member_abilities {
+        let mut array_9 = object.key("creatorMemberAbilities").start_array();
+        for item_10 in var_8 {
+            {
+                array_9.value().string(item_10.as_str());
+            }
+        }
+        array_9.finish();
+    }
+    if let Some(var_11) = &input.creator_payment_configuration {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("dataEncryptionMetadata").start_object();
-        crate::protocol_serde::shape_data_encryption_metadata::ser_data_encryption_metadata(&mut object_11, var_10)?;
-        object_11.finish();
+        let mut object_12 = object.key("creatorPaymentConfiguration").start_object();
+        crate::protocol_serde::shape_payment_configuration::ser_payment_configuration(&mut object_12, var_11)?;
+        object_12.finish();
     }
-    if let Some(var_12) = &input.description {
-        object.key("description").string(var_12.as_str());
+    if let Some(var_13) = &input.data_encryption_metadata {
+        #[allow(unused_mut)]
+        let mut object_14 = object.key("dataEncryptionMetadata").start_object();
+        crate::protocol_serde::shape_data_encryption_metadata::ser_data_encryption_metadata(&mut object_14, var_13)?;
+        object_14.finish();
     }
-    if let Some(var_13) = &input.job_log_status {
-        object.key("jobLogStatus").string(var_13.as_str());
+    if let Some(var_15) = &input.description {
+        object.key("description").string(var_15.as_str());
     }
-    if let Some(var_14) = &input.members {
-        let mut array_15 = object.key("members").start_array();
-        for item_16 in var_14 {
+    if let Some(var_16) = &input.job_log_status {
+        object.key("jobLogStatus").string(var_16.as_str());
+    }
+    if let Some(var_17) = &input.members {
+        let mut array_18 = object.key("members").start_array();
+        for item_19 in var_17 {
             {
                 #[allow(unused_mut)]
-                let mut object_17 = array_15.value().start_object();
-                crate::protocol_serde::shape_member_specification::ser_member_specification(&mut object_17, item_16)?;
-                object_17.finish();
+                let mut object_20 = array_18.value().start_object();
+                crate::protocol_serde::shape_member_specification::ser_member_specification(&mut object_20, item_19)?;
+                object_20.finish();
             }
         }
-        array_15.finish();
+        array_18.finish();
     }
-    if let Some(var_18) = &input.name {
-        object.key("name").string(var_18.as_str());
+    if let Some(var_21) = &input.name {
+        object.key("name").string(var_21.as_str());
     }
-    if let Some(var_19) = &input.query_log_status {
-        object.key("queryLogStatus").string(var_19.as_str());
+    if let Some(var_22) = &input.query_log_status {
+        object.key("queryLogStatus").string(var_22.as_str());
     }
-    if let Some(var_20) = &input.tags {
+    if let Some(var_23) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_21 = object.key("tags").start_object();
-        for (key_22, value_23) in var_20 {
+        let mut object_24 = object.key("tags").start_object();
+        for (key_25, value_26) in var_23 {
             {
-                object_21.key(key_22.as_str()).string(value_23.as_str());
+                object_24.key(key_25.as_str()).string(value_26.as_str());
             }
         }
-        object_21.finish();
+        object_24.finish();
     }
     Ok(())
 }

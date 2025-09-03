@@ -235,7 +235,7 @@ pub struct ModifyDbClusterInput {
     pub monitoring_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the mode of Database Insights to enable for the DB cluster.</p>
     /// <p>If you change the value from <code>standard</code> to <code>advanced</code>, you must set the <code>PerformanceInsightsEnabled</code> parameter to <code>true</code> and the <code>PerformanceInsightsRetentionPeriod</code> parameter to 465.</p>
-    /// <p>If you change the value from <code>advanced</code> to <code>standard</code>, you must set the <code>PerformanceInsightsEnabled</code> parameter to <code>false</code>.</p>
+    /// <p>If you change the value from <code>advanced</code> to <code>standard</code>, you can set the <code>PerformanceInsightsEnabled</code> parameter to <code>true</code> to collect detailed database counter and per-query metrics.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub database_insights_mode: ::std::option::Option<crate::types::DatabaseInsightsMode>,
     /// <p>Specifies whether to turn on Performance Insights for the DB cluster.</p>
@@ -328,6 +328,17 @@ pub struct ModifyDbClusterInput {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>Valid for Cluster Type: Multi-AZ DB clusters</p>
     pub ca_certificate_identifier: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies the authentication type for the master user. With IAM master user authentication, you can change the master DB user to use IAM database authentication.</p>
+    /// <p>You can specify one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>password</code> - Use standard database authentication with a password.</p></li>
+    /// <li>
+    /// <p><code>iam-db-auth</code> - Use IAM database authentication for the master user.</p></li>
+    /// </ul>
+    /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
+    /// <p>This option is only valid for RDS for PostgreSQL and Aurora PostgreSQL engines.</p>
+    pub master_user_authentication_type: ::std::option::Option<crate::types::MasterUserAuthenticationType>,
 }
 impl ModifyDbClusterInput {
     /// <p>The DB cluster identifier for the cluster being modified. This parameter isn't case-sensitive.</p>
@@ -625,7 +636,7 @@ impl ModifyDbClusterInput {
     }
     /// <p>Specifies the mode of Database Insights to enable for the DB cluster.</p>
     /// <p>If you change the value from <code>standard</code> to <code>advanced</code>, you must set the <code>PerformanceInsightsEnabled</code> parameter to <code>true</code> and the <code>PerformanceInsightsRetentionPeriod</code> parameter to 465.</p>
-    /// <p>If you change the value from <code>advanced</code> to <code>standard</code>, you must set the <code>PerformanceInsightsEnabled</code> parameter to <code>false</code>.</p>
+    /// <p>If you change the value from <code>advanced</code> to <code>standard</code>, you can set the <code>PerformanceInsightsEnabled</code> parameter to <code>true</code> to collect detailed database counter and per-query metrics.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn database_insights_mode(&self) -> ::std::option::Option<&crate::types::DatabaseInsightsMode> {
         self.database_insights_mode.as_ref()
@@ -748,6 +759,19 @@ impl ModifyDbClusterInput {
     pub fn ca_certificate_identifier(&self) -> ::std::option::Option<&str> {
         self.ca_certificate_identifier.as_deref()
     }
+    /// <p>Specifies the authentication type for the master user. With IAM master user authentication, you can change the master DB user to use IAM database authentication.</p>
+    /// <p>You can specify one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>password</code> - Use standard database authentication with a password.</p></li>
+    /// <li>
+    /// <p><code>iam-db-auth</code> - Use IAM database authentication for the master user.</p></li>
+    /// </ul>
+    /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
+    /// <p>This option is only valid for RDS for PostgreSQL and Aurora PostgreSQL engines.</p>
+    pub fn master_user_authentication_type(&self) -> ::std::option::Option<&crate::types::MasterUserAuthenticationType> {
+        self.master_user_authentication_type.as_ref()
+    }
 }
 impl ModifyDbClusterInput {
     /// Creates a new builder-style object to manufacture [`ModifyDbClusterInput`](crate::operation::modify_db_cluster::ModifyDbClusterInput).
@@ -806,6 +830,7 @@ pub struct ModifyDbClusterInputBuilder {
     pub(crate) aws_backup_recovery_point_arn: ::std::option::Option<::std::string::String>,
     pub(crate) enable_limitless_database: ::std::option::Option<bool>,
     pub(crate) ca_certificate_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) master_user_authentication_type: ::std::option::Option<crate::types::MasterUserAuthenticationType>,
 }
 impl ModifyDbClusterInputBuilder {
     /// <p>The DB cluster identifier for the cluster being modified. This parameter isn't case-sensitive.</p>
@@ -1752,7 +1777,7 @@ impl ModifyDbClusterInputBuilder {
     }
     /// <p>Specifies the mode of Database Insights to enable for the DB cluster.</p>
     /// <p>If you change the value from <code>standard</code> to <code>advanced</code>, you must set the <code>PerformanceInsightsEnabled</code> parameter to <code>true</code> and the <code>PerformanceInsightsRetentionPeriod</code> parameter to 465.</p>
-    /// <p>If you change the value from <code>advanced</code> to <code>standard</code>, you must set the <code>PerformanceInsightsEnabled</code> parameter to <code>false</code>.</p>
+    /// <p>If you change the value from <code>advanced</code> to <code>standard</code>, you can set the <code>PerformanceInsightsEnabled</code> parameter to <code>true</code> to collect detailed database counter and per-query metrics.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn database_insights_mode(mut self, input: crate::types::DatabaseInsightsMode) -> Self {
         self.database_insights_mode = ::std::option::Option::Some(input);
@@ -1760,7 +1785,7 @@ impl ModifyDbClusterInputBuilder {
     }
     /// <p>Specifies the mode of Database Insights to enable for the DB cluster.</p>
     /// <p>If you change the value from <code>standard</code> to <code>advanced</code>, you must set the <code>PerformanceInsightsEnabled</code> parameter to <code>true</code> and the <code>PerformanceInsightsRetentionPeriod</code> parameter to 465.</p>
-    /// <p>If you change the value from <code>advanced</code> to <code>standard</code>, you must set the <code>PerformanceInsightsEnabled</code> parameter to <code>false</code>.</p>
+    /// <p>If you change the value from <code>advanced</code> to <code>standard</code>, you can set the <code>PerformanceInsightsEnabled</code> parameter to <code>true</code> to collect detailed database counter and per-query metrics.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn set_database_insights_mode(mut self, input: ::std::option::Option<crate::types::DatabaseInsightsMode>) -> Self {
         self.database_insights_mode = input;
@@ -1768,7 +1793,7 @@ impl ModifyDbClusterInputBuilder {
     }
     /// <p>Specifies the mode of Database Insights to enable for the DB cluster.</p>
     /// <p>If you change the value from <code>standard</code> to <code>advanced</code>, you must set the <code>PerformanceInsightsEnabled</code> parameter to <code>true</code> and the <code>PerformanceInsightsRetentionPeriod</code> parameter to 465.</p>
-    /// <p>If you change the value from <code>advanced</code> to <code>standard</code>, you must set the <code>PerformanceInsightsEnabled</code> parameter to <code>false</code>.</p>
+    /// <p>If you change the value from <code>advanced</code> to <code>standard</code>, you can set the <code>PerformanceInsightsEnabled</code> parameter to <code>true</code> to collect detailed database counter and per-query metrics.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn get_database_insights_mode(&self) -> &::std::option::Option<crate::types::DatabaseInsightsMode> {
         &self.database_insights_mode
@@ -2155,6 +2180,47 @@ impl ModifyDbClusterInputBuilder {
     pub fn get_ca_certificate_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.ca_certificate_identifier
     }
+    /// <p>Specifies the authentication type for the master user. With IAM master user authentication, you can change the master DB user to use IAM database authentication.</p>
+    /// <p>You can specify one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>password</code> - Use standard database authentication with a password.</p></li>
+    /// <li>
+    /// <p><code>iam-db-auth</code> - Use IAM database authentication for the master user.</p></li>
+    /// </ul>
+    /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
+    /// <p>This option is only valid for RDS for PostgreSQL and Aurora PostgreSQL engines.</p>
+    pub fn master_user_authentication_type(mut self, input: crate::types::MasterUserAuthenticationType) -> Self {
+        self.master_user_authentication_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the authentication type for the master user. With IAM master user authentication, you can change the master DB user to use IAM database authentication.</p>
+    /// <p>You can specify one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>password</code> - Use standard database authentication with a password.</p></li>
+    /// <li>
+    /// <p><code>iam-db-auth</code> - Use IAM database authentication for the master user.</p></li>
+    /// </ul>
+    /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
+    /// <p>This option is only valid for RDS for PostgreSQL and Aurora PostgreSQL engines.</p>
+    pub fn set_master_user_authentication_type(mut self, input: ::std::option::Option<crate::types::MasterUserAuthenticationType>) -> Self {
+        self.master_user_authentication_type = input;
+        self
+    }
+    /// <p>Specifies the authentication type for the master user. With IAM master user authentication, you can change the master DB user to use IAM database authentication.</p>
+    /// <p>You can specify one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>password</code> - Use standard database authentication with a password.</p></li>
+    /// <li>
+    /// <p><code>iam-db-auth</code> - Use IAM database authentication for the master user.</p></li>
+    /// </ul>
+    /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
+    /// <p>This option is only valid for RDS for PostgreSQL and Aurora PostgreSQL engines.</p>
+    pub fn get_master_user_authentication_type(&self) -> &::std::option::Option<crate::types::MasterUserAuthenticationType> {
+        &self.master_user_authentication_type
+    }
     /// Consumes the builder and constructs a [`ModifyDbClusterInput`](crate::operation::modify_db_cluster::ModifyDbClusterInput).
     pub fn build(
         self,
@@ -2206,6 +2272,7 @@ impl ModifyDbClusterInputBuilder {
             aws_backup_recovery_point_arn: self.aws_backup_recovery_point_arn,
             enable_limitless_database: self.enable_limitless_database,
             ca_certificate_identifier: self.ca_certificate_identifier,
+            master_user_authentication_type: self.master_user_authentication_type,
         })
     }
 }

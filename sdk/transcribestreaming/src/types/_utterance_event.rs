@@ -24,6 +24,10 @@ pub struct UtteranceEvent {
     pub sentiment: ::std::option::Option<crate::types::Sentiment>,
     /// <p>Provides the issue that was detected in the specified segment.</p>
     pub issues_detected: ::std::option::Option<::std::vec::Vec<crate::types::IssueDetected>>,
+    /// <p>The language code that represents the language spoken in your audio stream.</p>
+    pub language_code: ::std::option::Option<crate::types::CallAnalyticsLanguageCode>,
+    /// <p>The language code of the dominant language identified in your stream.</p>
+    pub language_identification: ::std::option::Option<::std::vec::Vec<crate::types::CallAnalyticsLanguageWithScore>>,
 }
 impl UtteranceEvent {
     /// <p>The unique identifier that is associated with the specified <code>UtteranceEvent</code>.</p>
@@ -72,6 +76,16 @@ impl UtteranceEvent {
     pub fn issues_detected(&self) -> &[crate::types::IssueDetected] {
         self.issues_detected.as_deref().unwrap_or_default()
     }
+    /// <p>The language code that represents the language spoken in your audio stream.</p>
+    pub fn language_code(&self) -> ::std::option::Option<&crate::types::CallAnalyticsLanguageCode> {
+        self.language_code.as_ref()
+    }
+    /// <p>The language code of the dominant language identified in your stream.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.language_identification.is_none()`.
+    pub fn language_identification(&self) -> &[crate::types::CallAnalyticsLanguageWithScore] {
+        self.language_identification.as_deref().unwrap_or_default()
+    }
 }
 impl UtteranceEvent {
     /// Creates a new builder-style object to manufacture [`UtteranceEvent`](crate::types::UtteranceEvent).
@@ -94,6 +108,8 @@ pub struct UtteranceEventBuilder {
     pub(crate) entities: ::std::option::Option<::std::vec::Vec<crate::types::CallAnalyticsEntity>>,
     pub(crate) sentiment: ::std::option::Option<crate::types::Sentiment>,
     pub(crate) issues_detected: ::std::option::Option<::std::vec::Vec<crate::types::IssueDetected>>,
+    pub(crate) language_code: ::std::option::Option<crate::types::CallAnalyticsLanguageCode>,
+    pub(crate) language_identification: ::std::option::Option<::std::vec::Vec<crate::types::CallAnalyticsLanguageWithScore>>,
 }
 impl UtteranceEventBuilder {
     /// <p>The unique identifier that is associated with the specified <code>UtteranceEvent</code>.</p>
@@ -254,6 +270,43 @@ impl UtteranceEventBuilder {
     pub fn get_issues_detected(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IssueDetected>> {
         &self.issues_detected
     }
+    /// <p>The language code that represents the language spoken in your audio stream.</p>
+    pub fn language_code(mut self, input: crate::types::CallAnalyticsLanguageCode) -> Self {
+        self.language_code = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The language code that represents the language spoken in your audio stream.</p>
+    pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::CallAnalyticsLanguageCode>) -> Self {
+        self.language_code = input;
+        self
+    }
+    /// <p>The language code that represents the language spoken in your audio stream.</p>
+    pub fn get_language_code(&self) -> &::std::option::Option<crate::types::CallAnalyticsLanguageCode> {
+        &self.language_code
+    }
+    /// Appends an item to `language_identification`.
+    ///
+    /// To override the contents of this collection use [`set_language_identification`](Self::set_language_identification).
+    ///
+    /// <p>The language code of the dominant language identified in your stream.</p>
+    pub fn language_identification(mut self, input: crate::types::CallAnalyticsLanguageWithScore) -> Self {
+        let mut v = self.language_identification.unwrap_or_default();
+        v.push(input);
+        self.language_identification = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The language code of the dominant language identified in your stream.</p>
+    pub fn set_language_identification(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::CallAnalyticsLanguageWithScore>>,
+    ) -> Self {
+        self.language_identification = input;
+        self
+    }
+    /// <p>The language code of the dominant language identified in your stream.</p>
+    pub fn get_language_identification(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CallAnalyticsLanguageWithScore>> {
+        &self.language_identification
+    }
     /// Consumes the builder and constructs a [`UtteranceEvent`](crate::types::UtteranceEvent).
     pub fn build(self) -> crate::types::UtteranceEvent {
         crate::types::UtteranceEvent {
@@ -267,6 +320,8 @@ impl UtteranceEventBuilder {
             entities: self.entities,
             sentiment: self.sentiment,
             issues_detected: self.issues_detected,
+            language_code: self.language_code,
+            language_identification: self.language_identification,
         }
     }
 }

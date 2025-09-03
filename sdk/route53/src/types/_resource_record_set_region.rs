@@ -25,6 +25,7 @@
 ///     ResourceRecordSetRegion::ApSoutheast3 => { /* ... */ },
 ///     ResourceRecordSetRegion::ApSoutheast4 => { /* ... */ },
 ///     ResourceRecordSetRegion::ApSoutheast5 => { /* ... */ },
+///     ResourceRecordSetRegion::ApSoutheast6 => { /* ... */ },
 ///     ResourceRecordSetRegion::ApSoutheast7 => { /* ... */ },
 ///     ResourceRecordSetRegion::CaCentral1 => { /* ... */ },
 ///     ResourceRecordSetRegion::CaWest1 => { /* ... */ },
@@ -104,6 +105,8 @@ pub enum ResourceRecordSetRegion {
     #[allow(missing_docs)] // documentation missing in model
     ApSoutheast5,
     #[allow(missing_docs)] // documentation missing in model
+    ApSoutheast6,
+    #[allow(missing_docs)] // documentation missing in model
     ApSoutheast7,
     #[allow(missing_docs)] // documentation missing in model
     CaCentral1,
@@ -171,6 +174,7 @@ impl ::std::convert::From<&str> for ResourceRecordSetRegion {
             "ap-southeast-3" => ResourceRecordSetRegion::ApSoutheast3,
             "ap-southeast-4" => ResourceRecordSetRegion::ApSoutheast4,
             "ap-southeast-5" => ResourceRecordSetRegion::ApSoutheast5,
+            "ap-southeast-6" => ResourceRecordSetRegion::ApSoutheast6,
             "ap-southeast-7" => ResourceRecordSetRegion::ApSoutheast7,
             "ca-central-1" => ResourceRecordSetRegion::CaCentral1,
             "ca-west-1" => ResourceRecordSetRegion::CaWest1,
@@ -223,6 +227,7 @@ impl ResourceRecordSetRegion {
             ResourceRecordSetRegion::ApSoutheast3 => "ap-southeast-3",
             ResourceRecordSetRegion::ApSoutheast4 => "ap-southeast-4",
             ResourceRecordSetRegion::ApSoutheast5 => "ap-southeast-5",
+            ResourceRecordSetRegion::ApSoutheast6 => "ap-southeast-6",
             ResourceRecordSetRegion::ApSoutheast7 => "ap-southeast-7",
             ResourceRecordSetRegion::CaCentral1 => "ca-central-1",
             ResourceRecordSetRegion::CaWest1 => "ca-west-1",
@@ -266,6 +271,7 @@ impl ResourceRecordSetRegion {
             "ap-southeast-3",
             "ap-southeast-4",
             "ap-southeast-5",
+            "ap-southeast-6",
             "ap-southeast-7",
             "ca-central-1",
             "ca-west-1",
@@ -326,6 +332,7 @@ impl ::std::fmt::Display for ResourceRecordSetRegion {
             ResourceRecordSetRegion::ApSoutheast3 => write!(f, "ap-southeast-3"),
             ResourceRecordSetRegion::ApSoutheast4 => write!(f, "ap-southeast-4"),
             ResourceRecordSetRegion::ApSoutheast5 => write!(f, "ap-southeast-5"),
+            ResourceRecordSetRegion::ApSoutheast6 => write!(f, "ap-southeast-6"),
             ResourceRecordSetRegion::ApSoutheast7 => write!(f, "ap-southeast-7"),
             ResourceRecordSetRegion::CaCentral1 => write!(f, "ca-central-1"),
             ResourceRecordSetRegion::CaWest1 => write!(f, "ca-west-1"),

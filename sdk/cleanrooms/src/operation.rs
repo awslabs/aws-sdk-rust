@@ -16,6 +16,9 @@ pub mod create_analysis_template;
 /// Types for the `CreateCollaboration` operation.
 pub mod create_collaboration;
 
+/// Types for the `CreateCollaborationChangeRequest` operation.
+pub mod create_collaboration_change_request;
+
 /// Types for the `CreateConfiguredAudienceModelAssociation` operation.
 pub mod create_configured_audience_model_association;
 
@@ -88,6 +91,9 @@ pub mod get_collaboration;
 /// Types for the `GetCollaborationAnalysisTemplate` operation.
 pub mod get_collaboration_analysis_template;
 
+/// Types for the `GetCollaborationChangeRequest` operation.
+pub mod get_collaboration_change_request;
+
 /// Types for the `GetCollaborationConfiguredAudienceModelAssociation` operation.
 pub mod get_collaboration_configured_audience_model_association;
 
@@ -141,6 +147,9 @@ pub mod list_analysis_templates;
 
 /// Types for the `ListCollaborationAnalysisTemplates` operation.
 pub mod list_collaboration_analysis_templates;
+
+/// Types for the `ListCollaborationChangeRequests` operation.
+pub mod list_collaboration_change_requests;
 
 /// Types for the `ListCollaborationConfiguredAudienceModelAssociations` operation.
 pub mod list_collaboration_configured_audience_model_associations;

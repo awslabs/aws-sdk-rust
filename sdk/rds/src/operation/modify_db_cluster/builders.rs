@@ -1052,7 +1052,7 @@ impl ModifyDBClusterFluentBuilder {
     }
     /// <p>Specifies the mode of Database Insights to enable for the DB cluster.</p>
     /// <p>If you change the value from <code>standard</code> to <code>advanced</code>, you must set the <code>PerformanceInsightsEnabled</code> parameter to <code>true</code> and the <code>PerformanceInsightsRetentionPeriod</code> parameter to 465.</p>
-    /// <p>If you change the value from <code>advanced</code> to <code>standard</code>, you must set the <code>PerformanceInsightsEnabled</code> parameter to <code>false</code>.</p>
+    /// <p>If you change the value from <code>advanced</code> to <code>standard</code>, you can set the <code>PerformanceInsightsEnabled</code> parameter to <code>true</code> to collect detailed database counter and per-query metrics.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn database_insights_mode(mut self, input: crate::types::DatabaseInsightsMode) -> Self {
         self.inner = self.inner.database_insights_mode(input);
@@ -1060,7 +1060,7 @@ impl ModifyDBClusterFluentBuilder {
     }
     /// <p>Specifies the mode of Database Insights to enable for the DB cluster.</p>
     /// <p>If you change the value from <code>standard</code> to <code>advanced</code>, you must set the <code>PerformanceInsightsEnabled</code> parameter to <code>true</code> and the <code>PerformanceInsightsRetentionPeriod</code> parameter to 465.</p>
-    /// <p>If you change the value from <code>advanced</code> to <code>standard</code>, you must set the <code>PerformanceInsightsEnabled</code> parameter to <code>false</code>.</p>
+    /// <p>If you change the value from <code>advanced</code> to <code>standard</code>, you can set the <code>PerformanceInsightsEnabled</code> parameter to <code>true</code> to collect detailed database counter and per-query metrics.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn set_database_insights_mode(mut self, input: ::std::option::Option<crate::types::DatabaseInsightsMode>) -> Self {
         self.inner = self.inner.set_database_insights_mode(input);
@@ -1068,7 +1068,7 @@ impl ModifyDBClusterFluentBuilder {
     }
     /// <p>Specifies the mode of Database Insights to enable for the DB cluster.</p>
     /// <p>If you change the value from <code>standard</code> to <code>advanced</code>, you must set the <code>PerformanceInsightsEnabled</code> parameter to <code>true</code> and the <code>PerformanceInsightsRetentionPeriod</code> parameter to 465.</p>
-    /// <p>If you change the value from <code>advanced</code> to <code>standard</code>, you must set the <code>PerformanceInsightsEnabled</code> parameter to <code>false</code>.</p>
+    /// <p>If you change the value from <code>advanced</code> to <code>standard</code>, you can set the <code>PerformanceInsightsEnabled</code> parameter to <code>true</code> to collect detailed database counter and per-query metrics.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn get_database_insights_mode(&self) -> &::std::option::Option<crate::types::DatabaseInsightsMode> {
         self.inner.get_database_insights_mode()
@@ -1454,5 +1454,46 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>Valid for Cluster Type: Multi-AZ DB clusters</p>
     pub fn get_ca_certificate_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_ca_certificate_identifier()
+    }
+    /// <p>Specifies the authentication type for the master user. With IAM master user authentication, you can change the master DB user to use IAM database authentication.</p>
+    /// <p>You can specify one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>password</code> - Use standard database authentication with a password.</p></li>
+    /// <li>
+    /// <p><code>iam-db-auth</code> - Use IAM database authentication for the master user.</p></li>
+    /// </ul>
+    /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
+    /// <p>This option is only valid for RDS for PostgreSQL and Aurora PostgreSQL engines.</p>
+    pub fn master_user_authentication_type(mut self, input: crate::types::MasterUserAuthenticationType) -> Self {
+        self.inner = self.inner.master_user_authentication_type(input);
+        self
+    }
+    /// <p>Specifies the authentication type for the master user. With IAM master user authentication, you can change the master DB user to use IAM database authentication.</p>
+    /// <p>You can specify one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>password</code> - Use standard database authentication with a password.</p></li>
+    /// <li>
+    /// <p><code>iam-db-auth</code> - Use IAM database authentication for the master user.</p></li>
+    /// </ul>
+    /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
+    /// <p>This option is only valid for RDS for PostgreSQL and Aurora PostgreSQL engines.</p>
+    pub fn set_master_user_authentication_type(mut self, input: ::std::option::Option<crate::types::MasterUserAuthenticationType>) -> Self {
+        self.inner = self.inner.set_master_user_authentication_type(input);
+        self
+    }
+    /// <p>Specifies the authentication type for the master user. With IAM master user authentication, you can change the master DB user to use IAM database authentication.</p>
+    /// <p>You can specify one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>password</code> - Use standard database authentication with a password.</p></li>
+    /// <li>
+    /// <p><code>iam-db-auth</code> - Use IAM database authentication for the master user.</p></li>
+    /// </ul>
+    /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
+    /// <p>This option is only valid for RDS for PostgreSQL and Aurora PostgreSQL engines.</p>
+    pub fn get_master_user_authentication_type(&self) -> &::std::option::Option<crate::types::MasterUserAuthenticationType> {
+        self.inner.get_master_user_authentication_type()
     }
 }

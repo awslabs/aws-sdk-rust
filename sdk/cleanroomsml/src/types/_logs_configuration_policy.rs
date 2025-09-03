@@ -8,6 +8,10 @@ pub struct LogsConfigurationPolicy {
     pub allowed_account_ids: ::std::vec::Vec<::std::string::String>,
     /// <p>A regular expression pattern that is used to parse the logs and return information that matches the pattern.</p>
     pub filter_pattern: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies the type of log this policy applies to. The currently supported policies are ALL or ERROR_SUMMARY.</p>
+    pub log_type: crate::types::LogType,
+    /// <p>Specifies the log redaction configuration for this policy.</p>
+    pub log_redaction_configuration: ::std::option::Option<crate::types::LogRedactionConfiguration>,
 }
 impl LogsConfigurationPolicy {
     /// <p>A list of account IDs that are allowed to access the logs.</p>
@@ -18,6 +22,14 @@ impl LogsConfigurationPolicy {
     /// <p>A regular expression pattern that is used to parse the logs and return information that matches the pattern.</p>
     pub fn filter_pattern(&self) -> ::std::option::Option<&str> {
         self.filter_pattern.as_deref()
+    }
+    /// <p>Specifies the type of log this policy applies to. The currently supported policies are ALL or ERROR_SUMMARY.</p>
+    pub fn log_type(&self) -> &crate::types::LogType {
+        &self.log_type
+    }
+    /// <p>Specifies the log redaction configuration for this policy.</p>
+    pub fn log_redaction_configuration(&self) -> ::std::option::Option<&crate::types::LogRedactionConfiguration> {
+        self.log_redaction_configuration.as_ref()
     }
 }
 impl LogsConfigurationPolicy {
@@ -33,6 +45,8 @@ impl LogsConfigurationPolicy {
 pub struct LogsConfigurationPolicyBuilder {
     pub(crate) allowed_account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) filter_pattern: ::std::option::Option<::std::string::String>,
+    pub(crate) log_type: ::std::option::Option<crate::types::LogType>,
+    pub(crate) log_redaction_configuration: ::std::option::Option<crate::types::LogRedactionConfiguration>,
 }
 impl LogsConfigurationPolicyBuilder {
     /// Appends an item to `allowed_account_ids`.
@@ -69,6 +83,34 @@ impl LogsConfigurationPolicyBuilder {
     pub fn get_filter_pattern(&self) -> &::std::option::Option<::std::string::String> {
         &self.filter_pattern
     }
+    /// <p>Specifies the type of log this policy applies to. The currently supported policies are ALL or ERROR_SUMMARY.</p>
+    pub fn log_type(mut self, input: crate::types::LogType) -> Self {
+        self.log_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the type of log this policy applies to. The currently supported policies are ALL or ERROR_SUMMARY.</p>
+    pub fn set_log_type(mut self, input: ::std::option::Option<crate::types::LogType>) -> Self {
+        self.log_type = input;
+        self
+    }
+    /// <p>Specifies the type of log this policy applies to. The currently supported policies are ALL or ERROR_SUMMARY.</p>
+    pub fn get_log_type(&self) -> &::std::option::Option<crate::types::LogType> {
+        &self.log_type
+    }
+    /// <p>Specifies the log redaction configuration for this policy.</p>
+    pub fn log_redaction_configuration(mut self, input: crate::types::LogRedactionConfiguration) -> Self {
+        self.log_redaction_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the log redaction configuration for this policy.</p>
+    pub fn set_log_redaction_configuration(mut self, input: ::std::option::Option<crate::types::LogRedactionConfiguration>) -> Self {
+        self.log_redaction_configuration = input;
+        self
+    }
+    /// <p>Specifies the log redaction configuration for this policy.</p>
+    pub fn get_log_redaction_configuration(&self) -> &::std::option::Option<crate::types::LogRedactionConfiguration> {
+        &self.log_redaction_configuration
+    }
     /// Consumes the builder and constructs a [`LogsConfigurationPolicy`](crate::types::LogsConfigurationPolicy).
     /// This method will fail if any of the following fields are not set:
     /// - [`allowed_account_ids`](crate::types::builders::LogsConfigurationPolicyBuilder::allowed_account_ids)
@@ -81,6 +123,10 @@ impl LogsConfigurationPolicyBuilder {
                 )
             })?,
             filter_pattern: self.filter_pattern,
+            log_type: self
+                .log_type
+                .unwrap_or("ALL".parse::<crate::types::LogType>().expect("static value validated to member")),
+            log_redaction_configuration: self.log_redaction_configuration,
         })
     }
 }

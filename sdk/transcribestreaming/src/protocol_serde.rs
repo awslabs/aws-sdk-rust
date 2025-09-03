@@ -117,6 +117,8 @@ pub(crate) mod shape_call_analytics_entity_list;
 
 pub(crate) mod shape_call_analytics_item_list;
 
+pub(crate) mod shape_call_analytics_language_identification;
+
 pub(crate) mod shape_issues_detected;
 
 pub(crate) mod shape_matched_category_details;
@@ -132,6 +134,8 @@ pub(crate) mod shape_transcript;
 pub(crate) mod shape_call_analytics_entity;
 
 pub(crate) mod shape_call_analytics_item;
+
+pub(crate) mod shape_call_analytics_language_with_score;
 
 pub(crate) mod shape_issue_detected;
 

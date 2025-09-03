@@ -15,6 +15,15 @@ pub fn ser_logs_configuration_policy(
     if let Some(var_3) = &input.filter_pattern {
         object.key("filterPattern").string(var_3.as_str());
     }
+    {
+        object.key("logType").string(input.log_type.as_str());
+    }
+    if let Some(var_4) = &input.log_redaction_configuration {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("logRedactionConfiguration").start_object();
+        crate::protocol_serde::shape_log_redaction_configuration::ser_log_redaction_configuration(&mut object_5, var_4)?;
+        object_5.finish();
+    }
     Ok(())
 }
 
@@ -41,6 +50,18 @@ where
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
+                            );
+                        }
+                        "logType" => {
+                            builder = builder.set_log_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::LogType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "logRedactionConfiguration" => {
+                            builder = builder.set_log_redaction_configuration(
+                                crate::protocol_serde::shape_log_redaction_configuration::de_log_redaction_configuration(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

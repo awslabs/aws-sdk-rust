@@ -87,6 +87,20 @@ where
                         "IssuesDetected" => {
                             builder = builder.set_issues_detected(crate::protocol_serde::shape_issues_detected::de_issues_detected(tokens)?);
                         }
+                        "LanguageCode" => {
+                            builder = builder.set_language_code(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CallAnalyticsLanguageCode::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "LanguageIdentification" => {
+                            builder = builder.set_language_identification(
+                                crate::protocol_serde::shape_call_analytics_language_identification::de_call_analytics_language_identification(
+                                    tokens,
+                                )?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

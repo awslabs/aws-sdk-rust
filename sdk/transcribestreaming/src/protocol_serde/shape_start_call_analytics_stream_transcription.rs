@@ -47,6 +47,15 @@ pub fn de_start_call_analytics_stream_transcription_http_response(
                 )
             })?,
         );
+        output = output.set_identify_language(
+            crate::protocol_serde::shape_start_call_analytics_stream_transcription_output::de_identify_language_header(_response_headers).map_err(
+                |_| {
+                    crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError::unhandled(
+                        "Failed to parse IdentifyLanguage from header `x-amzn-transcribe-identify-language",
+                    )
+                },
+            )?,
+        );
         output = output.set_language_code(
             crate::protocol_serde::shape_start_call_analytics_stream_transcription_output::de_language_code_header(_response_headers).map_err(
                 |_| {
@@ -61,6 +70,15 @@ pub fn de_start_call_analytics_stream_transcription_http_response(
                 |_| {
                     crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError::unhandled(
                         "Failed to parse LanguageModelName from header `x-amzn-transcribe-language-model-name",
+                    )
+                },
+            )?,
+        );
+        output = output.set_language_options(
+            crate::protocol_serde::shape_start_call_analytics_stream_transcription_output::de_language_options_header(_response_headers).map_err(
+                |_| {
+                    crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError::unhandled(
+                        "Failed to parse LanguageOptions from header `x-amzn-transcribe-language-options",
                     )
                 },
             )?,
@@ -99,6 +117,15 @@ pub fn de_start_call_analytics_stream_transcription_http_response(
                 },
             )?,
         );
+        output = output.set_preferred_language(
+            crate::protocol_serde::shape_start_call_analytics_stream_transcription_output::de_preferred_language_header(_response_headers).map_err(
+                |_| {
+                    crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError::unhandled(
+                        "Failed to parse PreferredLanguage from header `x-amzn-transcribe-preferred-language",
+                    )
+                },
+            )?,
+        );
         output = output.set_request_id(
             crate::protocol_serde::shape_start_call_analytics_stream_transcription_output::de_request_id_header(_response_headers).map_err(|_| {
                 crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError::unhandled(
@@ -129,11 +156,28 @@ pub fn de_start_call_analytics_stream_transcription_http_response(
                     )
                 })?,
         );
+        output = output.set_vocabulary_filter_names(
+            crate::protocol_serde::shape_start_call_analytics_stream_transcription_output::de_vocabulary_filter_names_header(_response_headers)
+                .map_err(|_| {
+                    crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError::unhandled(
+                        "Failed to parse VocabularyFilterNames from header `x-amzn-transcribe-vocabulary-filter-names",
+                    )
+                })?,
+        );
         output = output.set_vocabulary_name(
             crate::protocol_serde::shape_start_call_analytics_stream_transcription_output::de_vocabulary_name_header(_response_headers).map_err(
                 |_| {
                     crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError::unhandled(
                         "Failed to parse VocabularyName from header `x-amzn-transcribe-vocabulary-name",
+                    )
+                },
+            )?,
+        );
+        output = output.set_vocabulary_names(
+            crate::protocol_serde::shape_start_call_analytics_stream_transcription_output::de_vocabulary_names_header(_response_headers).map_err(
+                |_| {
+                    crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError::unhandled(
+                        "Failed to parse VocabularyNames from header `x-amzn-transcribe-vocabulary-names",
                     )
                 },
             )?,
@@ -359,10 +403,66 @@ pub fn ser_start_call_analytics_stream_transcription_headers(
         })?;
         builder = builder.header("x-amzn-transcribe-language-model-name", header_value);
     }
-    if let ::std::option::Option::Some(inner_17) = &input.enable_partial_results_stabilization {
+    if let ::std::option::Option::Some(inner_17) = &input.identify_language {
         let mut encoder = ::aws_smithy_types::primitive::Encoder::from(*inner_17);
         let formatted_18 = encoder.encode();
         let header_value = formatted_18;
+        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+            ::aws_smithy_types::error::operation::BuildError::invalid_field(
+                "identify_language",
+                format!("`{}` cannot be used as a header value: {}", &header_value, err),
+            )
+        })?;
+        builder = builder.header("x-amzn-transcribe-identify-language", header_value);
+    }
+    if let ::std::option::Option::Some(inner_19) = &input.language_options {
+        let formatted_20 = inner_19.as_str();
+        let header_value = formatted_20;
+        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+            ::aws_smithy_types::error::operation::BuildError::invalid_field(
+                "language_options",
+                format!("`{}` cannot be used as a header value: {}", &header_value, err),
+            )
+        })?;
+        builder = builder.header("x-amzn-transcribe-language-options", header_value);
+    }
+    if let ::std::option::Option::Some(inner_21) = &input.preferred_language {
+        let formatted_22 = inner_21.as_str();
+        let header_value = formatted_22;
+        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+            ::aws_smithy_types::error::operation::BuildError::invalid_field(
+                "preferred_language",
+                format!("`{}` cannot be used as a header value: {}", &header_value, err),
+            )
+        })?;
+        builder = builder.header("x-amzn-transcribe-preferred-language", header_value);
+    }
+    if let ::std::option::Option::Some(inner_23) = &input.vocabulary_names {
+        let formatted_24 = inner_23.as_str();
+        let header_value = formatted_24;
+        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+            ::aws_smithy_types::error::operation::BuildError::invalid_field(
+                "vocabulary_names",
+                format!("`{}` cannot be used as a header value: {}", &header_value, err),
+            )
+        })?;
+        builder = builder.header("x-amzn-transcribe-vocabulary-names", header_value);
+    }
+    if let ::std::option::Option::Some(inner_25) = &input.vocabulary_filter_names {
+        let formatted_26 = inner_25.as_str();
+        let header_value = formatted_26;
+        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+            ::aws_smithy_types::error::operation::BuildError::invalid_field(
+                "vocabulary_filter_names",
+                format!("`{}` cannot be used as a header value: {}", &header_value, err),
+            )
+        })?;
+        builder = builder.header("x-amzn-transcribe-vocabulary-filter-names", header_value);
+    }
+    if let ::std::option::Option::Some(inner_27) = &input.enable_partial_results_stabilization {
+        let mut encoder = ::aws_smithy_types::primitive::Encoder::from(*inner_27);
+        let formatted_28 = encoder.encode();
+        let header_value = formatted_28;
         let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "enable_partial_results_stabilization",
@@ -371,9 +471,9 @@ pub fn ser_start_call_analytics_stream_transcription_headers(
         })?;
         builder = builder.header("x-amzn-transcribe-enable-partial-results-stabilization", header_value);
     }
-    if let ::std::option::Option::Some(inner_19) = &input.partial_results_stability {
-        let formatted_20 = inner_19.as_str();
-        let header_value = formatted_20;
+    if let ::std::option::Option::Some(inner_29) = &input.partial_results_stability {
+        let formatted_30 = inner_29.as_str();
+        let header_value = formatted_30;
         let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "partial_results_stability",
@@ -382,9 +482,9 @@ pub fn ser_start_call_analytics_stream_transcription_headers(
         })?;
         builder = builder.header("x-amzn-transcribe-partial-results-stability", header_value);
     }
-    if let ::std::option::Option::Some(inner_21) = &input.content_identification_type {
-        let formatted_22 = inner_21.as_str();
-        let header_value = formatted_22;
+    if let ::std::option::Option::Some(inner_31) = &input.content_identification_type {
+        let formatted_32 = inner_31.as_str();
+        let header_value = formatted_32;
         let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "content_identification_type",
@@ -393,9 +493,9 @@ pub fn ser_start_call_analytics_stream_transcription_headers(
         })?;
         builder = builder.header("x-amzn-transcribe-content-identification-type", header_value);
     }
-    if let ::std::option::Option::Some(inner_23) = &input.content_redaction_type {
-        let formatted_24 = inner_23.as_str();
-        let header_value = formatted_24;
+    if let ::std::option::Option::Some(inner_33) = &input.content_redaction_type {
+        let formatted_34 = inner_33.as_str();
+        let header_value = formatted_34;
         let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "content_redaction_type",
@@ -404,9 +504,9 @@ pub fn ser_start_call_analytics_stream_transcription_headers(
         })?;
         builder = builder.header("x-amzn-transcribe-content-redaction-type", header_value);
     }
-    if let ::std::option::Option::Some(inner_25) = &input.pii_entity_types {
-        let formatted_26 = inner_25.as_str();
-        let header_value = formatted_26;
+    if let ::std::option::Option::Some(inner_35) = &input.pii_entity_types {
+        let formatted_36 = inner_35.as_str();
+        let header_value = formatted_36;
         let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "pii_entity_types",

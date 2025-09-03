@@ -12,9 +12,12 @@
 /// ```text
 /// # let extraparamname = unimplemented!();
 /// match extraparamname {
+///     ExtraParamName::AuEligibilityType => { /* ... */ },
 ///     ExtraParamName::AuIdNumber => { /* ... */ },
 ///     ExtraParamName::AuIdType => { /* ... */ },
+///     ExtraParamName::AuPolicyReason => { /* ... */ },
 ///     ExtraParamName::AuPriorityToken => { /* ... */ },
+///     ExtraParamName::AuRegistrantName => { /* ... */ },
 ///     ExtraParamName::BirthCity => { /* ... */ },
 ///     ExtraParamName::BirthCountry => { /* ... */ },
 ///     ExtraParamName::BirthDateInYyyyMmDd => { /* ... */ },
@@ -72,11 +75,17 @@
 )]
 pub enum ExtraParamName {
     #[allow(missing_docs)] // documentation missing in model
+    AuEligibilityType,
+    #[allow(missing_docs)] // documentation missing in model
     AuIdNumber,
     #[allow(missing_docs)] // documentation missing in model
     AuIdType,
     #[allow(missing_docs)] // documentation missing in model
+    AuPolicyReason,
+    #[allow(missing_docs)] // documentation missing in model
     AuPriorityToken,
+    #[allow(missing_docs)] // documentation missing in model
+    AuRegistrantName,
     #[allow(missing_docs)] // documentation missing in model
     BirthCity,
     #[allow(missing_docs)] // documentation missing in model
@@ -140,9 +149,12 @@ pub enum ExtraParamName {
 impl ::std::convert::From<&str> for ExtraParamName {
     fn from(s: &str) -> Self {
         match s {
+            "AU_ELIGIBILITY_TYPE" => ExtraParamName::AuEligibilityType,
             "AU_ID_NUMBER" => ExtraParamName::AuIdNumber,
             "AU_ID_TYPE" => ExtraParamName::AuIdType,
+            "AU_POLICY_REASON" => ExtraParamName::AuPolicyReason,
             "AU_PRIORITY_TOKEN" => ExtraParamName::AuPriorityToken,
+            "AU_REGISTRANT_NAME" => ExtraParamName::AuRegistrantName,
             "BIRTH_CITY" => ExtraParamName::BirthCity,
             "BIRTH_COUNTRY" => ExtraParamName::BirthCountry,
             "BIRTH_DATE_IN_YYYY_MM_DD" => ExtraParamName::BirthDateInYyyyMmDd,
@@ -186,9 +198,12 @@ impl ExtraParamName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ExtraParamName::AuEligibilityType => "AU_ELIGIBILITY_TYPE",
             ExtraParamName::AuIdNumber => "AU_ID_NUMBER",
             ExtraParamName::AuIdType => "AU_ID_TYPE",
+            ExtraParamName::AuPolicyReason => "AU_POLICY_REASON",
             ExtraParamName::AuPriorityToken => "AU_PRIORITY_TOKEN",
+            ExtraParamName::AuRegistrantName => "AU_REGISTRANT_NAME",
             ExtraParamName::BirthCity => "BIRTH_CITY",
             ExtraParamName::BirthCountry => "BIRTH_COUNTRY",
             ExtraParamName::BirthDateInYyyyMmDd => "BIRTH_DATE_IN_YYYY_MM_DD",
@@ -223,9 +238,12 @@ impl ExtraParamName {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "AU_ELIGIBILITY_TYPE",
             "AU_ID_NUMBER",
             "AU_ID_TYPE",
+            "AU_POLICY_REASON",
             "AU_PRIORITY_TOKEN",
+            "AU_REGISTRANT_NAME",
             "BIRTH_CITY",
             "BIRTH_COUNTRY",
             "BIRTH_DATE_IN_YYYY_MM_DD",
@@ -277,9 +295,12 @@ impl ExtraParamName {
 impl ::std::fmt::Display for ExtraParamName {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            ExtraParamName::AuEligibilityType => write!(f, "AU_ELIGIBILITY_TYPE"),
             ExtraParamName::AuIdNumber => write!(f, "AU_ID_NUMBER"),
             ExtraParamName::AuIdType => write!(f, "AU_ID_TYPE"),
+            ExtraParamName::AuPolicyReason => write!(f, "AU_POLICY_REASON"),
             ExtraParamName::AuPriorityToken => write!(f, "AU_PRIORITY_TOKEN"),
+            ExtraParamName::AuRegistrantName => write!(f, "AU_REGISTRANT_NAME"),
             ExtraParamName::BirthCity => write!(f, "BIRTH_CITY"),
             ExtraParamName::BirthCountry => write!(f, "BIRTH_COUNTRY"),
             ExtraParamName::BirthDateInYyyyMmDd => write!(f, "BIRTH_DATE_IN_YYYY_MM_DD"),

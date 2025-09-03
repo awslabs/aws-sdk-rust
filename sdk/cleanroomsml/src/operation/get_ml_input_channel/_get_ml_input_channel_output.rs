@@ -3,18 +3,10 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMlInputChannelOutput {
-    /// <p>The time at which the ML input channel was created.</p>
-    pub create_time: ::aws_smithy_types::DateTime,
-    /// <p>The most recent time at which the ML input channel was updated.</p>
-    pub update_time: ::aws_smithy_types::DateTime,
     /// <p>The membership ID of the membership that contains the ML input channel.</p>
     pub membership_identifier: ::std::string::String,
     /// <p>The collaboration ID of the collaboration that contains the ML input channel.</p>
     pub collaboration_identifier: ::std::string::String,
-    /// <p>The input channel that was used to create the ML input channel.</p>
-    pub input_channel: ::std::option::Option<crate::types::InputChannel>,
-    /// <p>The ID of the protected query that was used to create the ML input channel.</p>
-    pub protected_query_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the ML input channel.</p>
     pub ml_input_channel_arn: ::std::string::String,
     /// <p>The name of the ML input channel.</p>
@@ -29,12 +21,20 @@ pub struct GetMlInputChannelOutput {
     pub retention_in_days: i32,
     /// <p>The number of records in the ML input channel.</p>
     pub number_of_records: ::std::option::Option<i64>,
+    /// <p>The description of the ML input channel.</p>
+    pub description: ::std::option::Option<::std::string::String>,
+    /// <p>The time at which the ML input channel was created.</p>
+    pub create_time: ::aws_smithy_types::DateTime,
+    /// <p>The most recent time at which the ML input channel was updated.</p>
+    pub update_time: ::aws_smithy_types::DateTime,
+    /// <p>The input channel that was used to create the ML input channel.</p>
+    pub input_channel: ::std::option::Option<crate::types::InputChannel>,
+    /// <p>The ID of the protected query that was used to create the ML input channel.</p>
+    pub protected_query_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The number of files in the ML input channel.</p>
     pub number_of_files: ::std::option::Option<f64>,
     /// <p>The size, in GB, of the ML input channel.</p>
     pub size_in_gb: ::std::option::Option<f64>,
-    /// <p>The description of the ML input channel.</p>
-    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the KMS key that was used to create the ML input channel.</p>
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>The optional metadata that you applied to the resource to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
@@ -59,14 +59,6 @@ pub struct GetMlInputChannelOutput {
     _request_id: Option<String>,
 }
 impl GetMlInputChannelOutput {
-    /// <p>The time at which the ML input channel was created.</p>
-    pub fn create_time(&self) -> &::aws_smithy_types::DateTime {
-        &self.create_time
-    }
-    /// <p>The most recent time at which the ML input channel was updated.</p>
-    pub fn update_time(&self) -> &::aws_smithy_types::DateTime {
-        &self.update_time
-    }
     /// <p>The membership ID of the membership that contains the ML input channel.</p>
     pub fn membership_identifier(&self) -> &str {
         use std::ops::Deref;
@@ -76,14 +68,6 @@ impl GetMlInputChannelOutput {
     pub fn collaboration_identifier(&self) -> &str {
         use std::ops::Deref;
         self.collaboration_identifier.deref()
-    }
-    /// <p>The input channel that was used to create the ML input channel.</p>
-    pub fn input_channel(&self) -> ::std::option::Option<&crate::types::InputChannel> {
-        self.input_channel.as_ref()
-    }
-    /// <p>The ID of the protected query that was used to create the ML input channel.</p>
-    pub fn protected_query_identifier(&self) -> ::std::option::Option<&str> {
-        self.protected_query_identifier.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the ML input channel.</p>
     pub fn ml_input_channel_arn(&self) -> &str {
@@ -116,6 +100,26 @@ impl GetMlInputChannelOutput {
     pub fn number_of_records(&self) -> ::std::option::Option<i64> {
         self.number_of_records
     }
+    /// <p>The description of the ML input channel.</p>
+    pub fn description(&self) -> ::std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The time at which the ML input channel was created.</p>
+    pub fn create_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.create_time
+    }
+    /// <p>The most recent time at which the ML input channel was updated.</p>
+    pub fn update_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.update_time
+    }
+    /// <p>The input channel that was used to create the ML input channel.</p>
+    pub fn input_channel(&self) -> ::std::option::Option<&crate::types::InputChannel> {
+        self.input_channel.as_ref()
+    }
+    /// <p>The ID of the protected query that was used to create the ML input channel.</p>
+    pub fn protected_query_identifier(&self) -> ::std::option::Option<&str> {
+        self.protected_query_identifier.as_deref()
+    }
     /// <p>The number of files in the ML input channel.</p>
     pub fn number_of_files(&self) -> ::std::option::Option<f64> {
         self.number_of_files
@@ -123,10 +127,6 @@ impl GetMlInputChannelOutput {
     /// <p>The size, in GB, of the ML input channel.</p>
     pub fn size_in_gb(&self) -> ::std::option::Option<f64> {
         self.size_in_gb
-    }
-    /// <p>The description of the ML input channel.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
-        self.description.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the KMS key that was used to create the ML input channel.</p>
     pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
@@ -170,12 +170,8 @@ impl GetMlInputChannelOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct GetMlInputChannelOutputBuilder {
-    pub(crate) create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) membership_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) collaboration_identifier: ::std::option::Option<::std::string::String>,
-    pub(crate) input_channel: ::std::option::Option<crate::types::InputChannel>,
-    pub(crate) protected_query_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) ml_input_channel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) configured_model_algorithm_associations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -183,44 +179,18 @@ pub struct GetMlInputChannelOutputBuilder {
     pub(crate) status_details: ::std::option::Option<crate::types::StatusDetails>,
     pub(crate) retention_in_days: ::std::option::Option<i32>,
     pub(crate) number_of_records: ::std::option::Option<i64>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) input_channel: ::std::option::Option<crate::types::InputChannel>,
+    pub(crate) protected_query_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) number_of_files: ::std::option::Option<f64>,
     pub(crate) size_in_gb: ::std::option::Option<f64>,
-    pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetMlInputChannelOutputBuilder {
-    /// <p>The time at which the ML input channel was created.</p>
-    /// This field is required.
-    pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
-        self.create_time = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The time at which the ML input channel was created.</p>
-    pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.create_time = input;
-        self
-    }
-    /// <p>The time at which the ML input channel was created.</p>
-    pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
-        &self.create_time
-    }
-    /// <p>The most recent time at which the ML input channel was updated.</p>
-    /// This field is required.
-    pub fn update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
-        self.update_time = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The most recent time at which the ML input channel was updated.</p>
-    pub fn set_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.update_time = input;
-        self
-    }
-    /// <p>The most recent time at which the ML input channel was updated.</p>
-    pub fn get_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
-        &self.update_time
-    }
     /// <p>The membership ID of the membership that contains the ML input channel.</p>
     /// This field is required.
     pub fn membership_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -250,35 +220,6 @@ impl GetMlInputChannelOutputBuilder {
     /// <p>The collaboration ID of the collaboration that contains the ML input channel.</p>
     pub fn get_collaboration_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.collaboration_identifier
-    }
-    /// <p>The input channel that was used to create the ML input channel.</p>
-    /// This field is required.
-    pub fn input_channel(mut self, input: crate::types::InputChannel) -> Self {
-        self.input_channel = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The input channel that was used to create the ML input channel.</p>
-    pub fn set_input_channel(mut self, input: ::std::option::Option<crate::types::InputChannel>) -> Self {
-        self.input_channel = input;
-        self
-    }
-    /// <p>The input channel that was used to create the ML input channel.</p>
-    pub fn get_input_channel(&self) -> &::std::option::Option<crate::types::InputChannel> {
-        &self.input_channel
-    }
-    /// <p>The ID of the protected query that was used to create the ML input channel.</p>
-    pub fn protected_query_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.protected_query_identifier = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The ID of the protected query that was used to create the ML input channel.</p>
-    pub fn set_protected_query_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.protected_query_identifier = input;
-        self
-    }
-    /// <p>The ID of the protected query that was used to create the ML input channel.</p>
-    pub fn get_protected_query_identifier(&self) -> &::std::option::Option<::std::string::String> {
-        &self.protected_query_identifier
     }
     /// <p>The Amazon Resource Name (ARN) of the ML input channel.</p>
     /// This field is required.
@@ -388,6 +329,79 @@ impl GetMlInputChannelOutputBuilder {
     pub fn get_number_of_records(&self) -> &::std::option::Option<i64> {
         &self.number_of_records
     }
+    /// <p>The description of the ML input channel.</p>
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The description of the ML input channel.</p>
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.description = input;
+        self
+    }
+    /// <p>The description of the ML input channel.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
+    /// <p>The time at which the ML input channel was created.</p>
+    /// This field is required.
+    pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.create_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The time at which the ML input channel was created.</p>
+    pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.create_time = input;
+        self
+    }
+    /// <p>The time at which the ML input channel was created.</p>
+    pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.create_time
+    }
+    /// <p>The most recent time at which the ML input channel was updated.</p>
+    /// This field is required.
+    pub fn update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.update_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The most recent time at which the ML input channel was updated.</p>
+    pub fn set_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.update_time = input;
+        self
+    }
+    /// <p>The most recent time at which the ML input channel was updated.</p>
+    pub fn get_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.update_time
+    }
+    /// <p>The input channel that was used to create the ML input channel.</p>
+    /// This field is required.
+    pub fn input_channel(mut self, input: crate::types::InputChannel) -> Self {
+        self.input_channel = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The input channel that was used to create the ML input channel.</p>
+    pub fn set_input_channel(mut self, input: ::std::option::Option<crate::types::InputChannel>) -> Self {
+        self.input_channel = input;
+        self
+    }
+    /// <p>The input channel that was used to create the ML input channel.</p>
+    pub fn get_input_channel(&self) -> &::std::option::Option<crate::types::InputChannel> {
+        &self.input_channel
+    }
+    /// <p>The ID of the protected query that was used to create the ML input channel.</p>
+    pub fn protected_query_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.protected_query_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the protected query that was used to create the ML input channel.</p>
+    pub fn set_protected_query_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.protected_query_identifier = input;
+        self
+    }
+    /// <p>The ID of the protected query that was used to create the ML input channel.</p>
+    pub fn get_protected_query_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.protected_query_identifier
+    }
     /// <p>The number of files in the ML input channel.</p>
     pub fn number_of_files(mut self, input: f64) -> Self {
         self.number_of_files = ::std::option::Option::Some(input);
@@ -415,20 +429,6 @@ impl GetMlInputChannelOutputBuilder {
     /// <p>The size, in GB, of the ML input channel.</p>
     pub fn get_size_in_gb(&self) -> &::std::option::Option<f64> {
         &self.size_in_gb
-    }
-    /// <p>The description of the ML input channel.</p>
-    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.description = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The description of the ML input channel.</p>
-    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
-    }
-    /// <p>The description of the ML input channel.</p>
-    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
-        &self.description
     }
     /// <p>The Amazon Resource Name (ARN) of the KMS key that was used to create the ML input channel.</p>
     pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -526,8 +526,6 @@ impl GetMlInputChannelOutputBuilder {
     }
     /// Consumes the builder and constructs a [`GetMlInputChannelOutput`](crate::operation::get_ml_input_channel::GetMlInputChannelOutput).
     /// This method will fail if any of the following fields are not set:
-    /// - [`create_time`](crate::operation::get_ml_input_channel::builders::GetMlInputChannelOutputBuilder::create_time)
-    /// - [`update_time`](crate::operation::get_ml_input_channel::builders::GetMlInputChannelOutputBuilder::update_time)
     /// - [`membership_identifier`](crate::operation::get_ml_input_channel::builders::GetMlInputChannelOutputBuilder::membership_identifier)
     /// - [`collaboration_identifier`](crate::operation::get_ml_input_channel::builders::GetMlInputChannelOutputBuilder::collaboration_identifier)
     /// - [`ml_input_channel_arn`](crate::operation::get_ml_input_channel::builders::GetMlInputChannelOutputBuilder::ml_input_channel_arn)
@@ -535,23 +533,13 @@ impl GetMlInputChannelOutputBuilder {
     /// - [`configured_model_algorithm_associations`](crate::operation::get_ml_input_channel::builders::GetMlInputChannelOutputBuilder::configured_model_algorithm_associations)
     /// - [`status`](crate::operation::get_ml_input_channel::builders::GetMlInputChannelOutputBuilder::status)
     /// - [`retention_in_days`](crate::operation::get_ml_input_channel::builders::GetMlInputChannelOutputBuilder::retention_in_days)
+    /// - [`create_time`](crate::operation::get_ml_input_channel::builders::GetMlInputChannelOutputBuilder::create_time)
+    /// - [`update_time`](crate::operation::get_ml_input_channel::builders::GetMlInputChannelOutputBuilder::update_time)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::get_ml_input_channel::GetMlInputChannelOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_ml_input_channel::GetMlInputChannelOutput {
-            create_time: self.create_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "create_time",
-                    "create_time was not specified but it is required when building GetMlInputChannelOutput",
-                )
-            })?,
-            update_time: self.update_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "update_time",
-                    "update_time was not specified but it is required when building GetMlInputChannelOutput",
-                )
-            })?,
             membership_identifier: self.membership_identifier.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "membership_identifier",
@@ -564,8 +552,6 @@ impl GetMlInputChannelOutputBuilder {
                     "collaboration_identifier was not specified but it is required when building GetMlInputChannelOutput",
                 )
             })?,
-            input_channel: self.input_channel,
-            protected_query_identifier: self.protected_query_identifier,
             ml_input_channel_arn: self.ml_input_channel_arn.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "ml_input_channel_arn",
@@ -598,9 +584,23 @@ impl GetMlInputChannelOutputBuilder {
                 )
             })?,
             number_of_records: self.number_of_records,
+            description: self.description,
+            create_time: self.create_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "create_time",
+                    "create_time was not specified but it is required when building GetMlInputChannelOutput",
+                )
+            })?,
+            update_time: self.update_time.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "update_time",
+                    "update_time was not specified but it is required when building GetMlInputChannelOutput",
+                )
+            })?,
+            input_channel: self.input_channel,
+            protected_query_identifier: self.protected_query_identifier,
             number_of_files: self.number_of_files,
             size_in_gb: self.size_in_gb,
-            description: self.description,
             kms_key_arn: self.kms_key_arn,
             tags: self.tags,
             _request_id: self._request_id,

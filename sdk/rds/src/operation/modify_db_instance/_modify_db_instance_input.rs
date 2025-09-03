@@ -539,6 +539,16 @@ pub struct ModifyDbInstanceInput {
     /// <p>The conversion to the multi-tenant configuration is permanent and irreversible, so you can't later convert back to the single-tenant configuration. When you specify this parameter, you must also specify <code>ApplyImmediately</code>.</p>
     /// </important>
     pub multi_tenant: ::std::option::Option<bool>,
+    /// <p>Specifies the authentication type for the master user. With IAM master user authentication, you can change the master DB user to use IAM database authentication.</p>
+    /// <p>You can specify one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>password</code> - Use standard database authentication with a password.</p></li>
+    /// <li>
+    /// <p><code>iam-db-auth</code> - Use IAM database authentication for the master user.</p></li>
+    /// </ul>
+    /// <p>This option is only valid for RDS for PostgreSQL and Aurora PostgreSQL engines.</p>
+    pub master_user_authentication_type: ::std::option::Option<crate::types::MasterUserAuthenticationType>,
 }
 impl ModifyDbInstanceInput {
     /// <p>The identifier of DB instance to modify. This value is stored as a lowercase string.</p>
@@ -1206,6 +1216,18 @@ impl ModifyDbInstanceInput {
     pub fn multi_tenant(&self) -> ::std::option::Option<bool> {
         self.multi_tenant
     }
+    /// <p>Specifies the authentication type for the master user. With IAM master user authentication, you can change the master DB user to use IAM database authentication.</p>
+    /// <p>You can specify one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>password</code> - Use standard database authentication with a password.</p></li>
+    /// <li>
+    /// <p><code>iam-db-auth</code> - Use IAM database authentication for the master user.</p></li>
+    /// </ul>
+    /// <p>This option is only valid for RDS for PostgreSQL and Aurora PostgreSQL engines.</p>
+    pub fn master_user_authentication_type(&self) -> ::std::option::Option<&crate::types::MasterUserAuthenticationType> {
+        self.master_user_authentication_type.as_ref()
+    }
 }
 impl ModifyDbInstanceInput {
     /// Creates a new builder-style object to manufacture [`ModifyDbInstanceInput`](crate::operation::modify_db_instance::ModifyDbInstanceInput).
@@ -1279,6 +1301,7 @@ pub struct ModifyDbInstanceInputBuilder {
     pub(crate) engine: ::std::option::Option<::std::string::String>,
     pub(crate) dedicated_log_volume: ::std::option::Option<bool>,
     pub(crate) multi_tenant: ::std::option::Option<bool>,
+    pub(crate) master_user_authentication_type: ::std::option::Option<crate::types::MasterUserAuthenticationType>,
 }
 impl ModifyDbInstanceInputBuilder {
     /// <p>The identifier of DB instance to modify. This value is stored as a lowercase string.</p>
@@ -3399,6 +3422,44 @@ impl ModifyDbInstanceInputBuilder {
     pub fn get_multi_tenant(&self) -> &::std::option::Option<bool> {
         &self.multi_tenant
     }
+    /// <p>Specifies the authentication type for the master user. With IAM master user authentication, you can change the master DB user to use IAM database authentication.</p>
+    /// <p>You can specify one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>password</code> - Use standard database authentication with a password.</p></li>
+    /// <li>
+    /// <p><code>iam-db-auth</code> - Use IAM database authentication for the master user.</p></li>
+    /// </ul>
+    /// <p>This option is only valid for RDS for PostgreSQL and Aurora PostgreSQL engines.</p>
+    pub fn master_user_authentication_type(mut self, input: crate::types::MasterUserAuthenticationType) -> Self {
+        self.master_user_authentication_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the authentication type for the master user. With IAM master user authentication, you can change the master DB user to use IAM database authentication.</p>
+    /// <p>You can specify one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>password</code> - Use standard database authentication with a password.</p></li>
+    /// <li>
+    /// <p><code>iam-db-auth</code> - Use IAM database authentication for the master user.</p></li>
+    /// </ul>
+    /// <p>This option is only valid for RDS for PostgreSQL and Aurora PostgreSQL engines.</p>
+    pub fn set_master_user_authentication_type(mut self, input: ::std::option::Option<crate::types::MasterUserAuthenticationType>) -> Self {
+        self.master_user_authentication_type = input;
+        self
+    }
+    /// <p>Specifies the authentication type for the master user. With IAM master user authentication, you can change the master DB user to use IAM database authentication.</p>
+    /// <p>You can specify one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>password</code> - Use standard database authentication with a password.</p></li>
+    /// <li>
+    /// <p><code>iam-db-auth</code> - Use IAM database authentication for the master user.</p></li>
+    /// </ul>
+    /// <p>This option is only valid for RDS for PostgreSQL and Aurora PostgreSQL engines.</p>
+    pub fn get_master_user_authentication_type(&self) -> &::std::option::Option<crate::types::MasterUserAuthenticationType> {
+        &self.master_user_authentication_type
+    }
     /// Consumes the builder and constructs a [`ModifyDbInstanceInput`](crate::operation::modify_db_instance::ModifyDbInstanceInput).
     pub fn build(
         self,
@@ -3465,6 +3526,7 @@ impl ModifyDbInstanceInputBuilder {
             engine: self.engine,
             dedicated_log_volume: self.dedicated_log_volume,
             multi_tenant: self.multi_tenant,
+            master_user_authentication_type: self.master_user_authentication_type,
         })
     }
 }

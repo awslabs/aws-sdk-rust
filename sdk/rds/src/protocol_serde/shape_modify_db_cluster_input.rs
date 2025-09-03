@@ -262,6 +262,11 @@ pub fn ser_modify_db_cluster_input_input_input(
     if let Some(var_95) = &input.ca_certificate_identifier {
         scope_94.string(var_95);
     }
+    #[allow(unused_mut)]
+    let mut scope_96 = writer.prefix("MasterUserAuthenticationType");
+    if let Some(var_97) = &input.master_user_authentication_type {
+        scope_96.string(var_97.as_str());
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

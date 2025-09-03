@@ -281,10 +281,13 @@ pub enum InferenceInstanceType {
     #[allow(missing_docs)] // documentation missing in model
     MlP2Xlarge,
     #[allow(missing_docs)] // documentation missing in model
+    #[deprecated]
     MlP316Xlarge,
     #[allow(missing_docs)] // documentation missing in model
+    #[deprecated]
     MlP32Xlarge,
     #[allow(missing_docs)] // documentation missing in model
+    #[deprecated]
     MlP38Xlarge,
     #[allow(missing_docs)] // documentation missing in model
     MlR6I12Xlarge,

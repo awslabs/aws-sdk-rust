@@ -388,6 +388,11 @@ pub fn ser_create_db_instance_input_input_input(
     if let Some(var_146) = &input.engine_lifecycle_support {
         scope_145.string(var_146);
     }
+    #[allow(unused_mut)]
+    let mut scope_147 = writer.prefix("MasterUserAuthenticationType");
+    if let Some(var_148) = &input.master_user_authentication_type {
+        scope_147.string(var_148.as_str());
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

@@ -204,15 +204,6 @@ pub(crate) fn get_collaboration_configured_model_algorithm_association_output_ou
 pub(crate) fn get_collaboration_ml_input_channel_output_output_correct_errors(
     mut builder: crate::operation::get_collaboration_ml_input_channel::builders::GetCollaborationMlInputChannelOutputBuilder,
 ) -> crate::operation::get_collaboration_ml_input_channel::builders::GetCollaborationMlInputChannelOutputBuilder {
-    if builder.create_time.is_none() {
-        builder.create_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
-    }
-    if builder.update_time.is_none() {
-        builder.update_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
-    }
-    if builder.creator_account_id.is_none() {
-        builder.creator_account_id = Some(Default::default())
-    }
     if builder.membership_identifier.is_none() {
         builder.membership_identifier = Some(Default::default())
     }
@@ -233,6 +224,15 @@ pub(crate) fn get_collaboration_ml_input_channel_output_output_correct_errors(
     }
     if builder.retention_in_days.is_none() {
         builder.retention_in_days = Some(Default::default())
+    }
+    if builder.create_time.is_none() {
+        builder.create_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.update_time.is_none() {
+        builder.update_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.creator_account_id.is_none() {
+        builder.creator_account_id = Some(Default::default())
     }
     builder
 }
@@ -392,23 +392,11 @@ pub(crate) fn get_ml_configuration_output_output_correct_errors(
 pub(crate) fn get_ml_input_channel_output_output_correct_errors(
     mut builder: crate::operation::get_ml_input_channel::builders::GetMlInputChannelOutputBuilder,
 ) -> crate::operation::get_ml_input_channel::builders::GetMlInputChannelOutputBuilder {
-    if builder.create_time.is_none() {
-        builder.create_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
-    }
-    if builder.update_time.is_none() {
-        builder.update_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
-    }
     if builder.membership_identifier.is_none() {
         builder.membership_identifier = Some(Default::default())
     }
     if builder.collaboration_identifier.is_none() {
         builder.collaboration_identifier = Some(Default::default())
-    }
-    if builder.input_channel.is_none() {
-        builder.input_channel = {
-            let builder = crate::types::builders::InputChannelBuilder::default();
-            crate::serde_util::input_channel_correct_errors(builder).build().ok()
-        }
     }
     if builder.ml_input_channel_arn.is_none() {
         builder.ml_input_channel_arn = Some(Default::default())
@@ -424,6 +412,18 @@ pub(crate) fn get_ml_input_channel_output_output_correct_errors(
     }
     if builder.retention_in_days.is_none() {
         builder.retention_in_days = Some(Default::default())
+    }
+    if builder.create_time.is_none() {
+        builder.create_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.update_time.is_none() {
+        builder.update_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.input_channel.is_none() {
+        builder.input_channel = {
+            let builder = crate::types::builders::InputChannelBuilder::default();
+            crate::serde_util::input_channel_correct_errors(builder).build().ok()
+        }
     }
     builder
 }
@@ -1551,6 +1551,24 @@ pub(crate) fn trained_model_export_receiver_member_correct_errors(
 ) -> crate::types::builders::TrainedModelExportReceiverMemberBuilder {
     if builder.account_id.is_none() {
         builder.account_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn log_redaction_configuration_correct_errors(
+    mut builder: crate::types::builders::LogRedactionConfigurationBuilder,
+) -> crate::types::builders::LogRedactionConfigurationBuilder {
+    if builder.entities_to_redact.is_none() {
+        builder.entities_to_redact = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn custom_entity_config_correct_errors(
+    mut builder: crate::types::builders::CustomEntityConfigBuilder,
+) -> crate::types::builders::CustomEntityConfigBuilder {
+    if builder.custom_data_identifiers.is_none() {
+        builder.custom_data_identifiers = Some(Default::default())
     }
     builder
 }

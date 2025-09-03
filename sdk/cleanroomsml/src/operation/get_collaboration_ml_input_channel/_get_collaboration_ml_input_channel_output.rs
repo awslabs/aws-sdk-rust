@@ -3,12 +3,6 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCollaborationMlInputChannelOutput {
-    /// <p>The time at which the ML input channel was created.</p>
-    pub create_time: ::aws_smithy_types::DateTime,
-    /// <p>The most recent time at which the ML input channel was updated.</p>
-    pub update_time: ::aws_smithy_types::DateTime,
-    /// <p>The account ID of the member who created the ML input channel.</p>
-    pub creator_account_id: ::std::string::String,
     /// <p>The membership ID of the membership that contains the ML input channel.</p>
     pub membership_identifier: ::std::string::String,
     /// <p>The collaboration ID of the collaboration that contains the ML input channel.</p>
@@ -29,22 +23,15 @@ pub struct GetCollaborationMlInputChannelOutput {
     pub number_of_records: ::std::option::Option<i64>,
     /// <p>The description of the ML input channel.</p>
     pub description: ::std::option::Option<::std::string::String>,
+    /// <p>The time at which the ML input channel was created.</p>
+    pub create_time: ::aws_smithy_types::DateTime,
+    /// <p>The most recent time at which the ML input channel was updated.</p>
+    pub update_time: ::aws_smithy_types::DateTime,
+    /// <p>The account ID of the member who created the ML input channel.</p>
+    pub creator_account_id: ::std::string::String,
     _request_id: Option<String>,
 }
 impl GetCollaborationMlInputChannelOutput {
-    /// <p>The time at which the ML input channel was created.</p>
-    pub fn create_time(&self) -> &::aws_smithy_types::DateTime {
-        &self.create_time
-    }
-    /// <p>The most recent time at which the ML input channel was updated.</p>
-    pub fn update_time(&self) -> &::aws_smithy_types::DateTime {
-        &self.update_time
-    }
-    /// <p>The account ID of the member who created the ML input channel.</p>
-    pub fn creator_account_id(&self) -> &str {
-        use std::ops::Deref;
-        self.creator_account_id.deref()
-    }
     /// <p>The membership ID of the membership that contains the ML input channel.</p>
     pub fn membership_identifier(&self) -> &str {
         use std::ops::Deref;
@@ -90,6 +77,19 @@ impl GetCollaborationMlInputChannelOutput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
+    /// <p>The time at which the ML input channel was created.</p>
+    pub fn create_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.create_time
+    }
+    /// <p>The most recent time at which the ML input channel was updated.</p>
+    pub fn update_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.update_time
+    }
+    /// <p>The account ID of the member who created the ML input channel.</p>
+    pub fn creator_account_id(&self) -> &str {
+        use std::ops::Deref;
+        self.creator_account_id.deref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetCollaborationMlInputChannelOutput {
     fn request_id(&self) -> Option<&str> {
@@ -107,9 +107,6 @@ impl GetCollaborationMlInputChannelOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct GetCollaborationMlInputChannelOutputBuilder {
-    pub(crate) create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) creator_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) membership_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) collaboration_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) ml_input_channel_arn: ::std::option::Option<::std::string::String>,
@@ -120,54 +117,12 @@ pub struct GetCollaborationMlInputChannelOutputBuilder {
     pub(crate) retention_in_days: ::std::option::Option<i32>,
     pub(crate) number_of_records: ::std::option::Option<i64>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) creator_account_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetCollaborationMlInputChannelOutputBuilder {
-    /// <p>The time at which the ML input channel was created.</p>
-    /// This field is required.
-    pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
-        self.create_time = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The time at which the ML input channel was created.</p>
-    pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.create_time = input;
-        self
-    }
-    /// <p>The time at which the ML input channel was created.</p>
-    pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
-        &self.create_time
-    }
-    /// <p>The most recent time at which the ML input channel was updated.</p>
-    /// This field is required.
-    pub fn update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
-        self.update_time = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The most recent time at which the ML input channel was updated.</p>
-    pub fn set_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.update_time = input;
-        self
-    }
-    /// <p>The most recent time at which the ML input channel was updated.</p>
-    pub fn get_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
-        &self.update_time
-    }
-    /// <p>The account ID of the member who created the ML input channel.</p>
-    /// This field is required.
-    pub fn creator_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.creator_account_id = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The account ID of the member who created the ML input channel.</p>
-    pub fn set_creator_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.creator_account_id = input;
-        self
-    }
-    /// <p>The account ID of the member who created the ML input channel.</p>
-    pub fn get_creator_account_id(&self) -> &::std::option::Option<::std::string::String> {
-        &self.creator_account_id
-    }
     /// <p>The membership ID of the membership that contains the ML input channel.</p>
     /// This field is required.
     pub fn membership_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -320,6 +275,51 @@ impl GetCollaborationMlInputChannelOutputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
+    /// <p>The time at which the ML input channel was created.</p>
+    /// This field is required.
+    pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.create_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The time at which the ML input channel was created.</p>
+    pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.create_time = input;
+        self
+    }
+    /// <p>The time at which the ML input channel was created.</p>
+    pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.create_time
+    }
+    /// <p>The most recent time at which the ML input channel was updated.</p>
+    /// This field is required.
+    pub fn update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.update_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The most recent time at which the ML input channel was updated.</p>
+    pub fn set_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.update_time = input;
+        self
+    }
+    /// <p>The most recent time at which the ML input channel was updated.</p>
+    pub fn get_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.update_time
+    }
+    /// <p>The account ID of the member who created the ML input channel.</p>
+    /// This field is required.
+    pub fn creator_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.creator_account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The account ID of the member who created the ML input channel.</p>
+    pub fn set_creator_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.creator_account_id = input;
+        self
+    }
+    /// <p>The account ID of the member who created the ML input channel.</p>
+    pub fn get_creator_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.creator_account_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -331,9 +331,6 @@ impl GetCollaborationMlInputChannelOutputBuilder {
     }
     /// Consumes the builder and constructs a [`GetCollaborationMlInputChannelOutput`](crate::operation::get_collaboration_ml_input_channel::GetCollaborationMlInputChannelOutput).
     /// This method will fail if any of the following fields are not set:
-    /// - [`create_time`](crate::operation::get_collaboration_ml_input_channel::builders::GetCollaborationMlInputChannelOutputBuilder::create_time)
-    /// - [`update_time`](crate::operation::get_collaboration_ml_input_channel::builders::GetCollaborationMlInputChannelOutputBuilder::update_time)
-    /// - [`creator_account_id`](crate::operation::get_collaboration_ml_input_channel::builders::GetCollaborationMlInputChannelOutputBuilder::creator_account_id)
     /// - [`membership_identifier`](crate::operation::get_collaboration_ml_input_channel::builders::GetCollaborationMlInputChannelOutputBuilder::membership_identifier)
     /// - [`collaboration_identifier`](crate::operation::get_collaboration_ml_input_channel::builders::GetCollaborationMlInputChannelOutputBuilder::collaboration_identifier)
     /// - [`ml_input_channel_arn`](crate::operation::get_collaboration_ml_input_channel::builders::GetCollaborationMlInputChannelOutputBuilder::ml_input_channel_arn)
@@ -341,6 +338,9 @@ impl GetCollaborationMlInputChannelOutputBuilder {
     /// - [`configured_model_algorithm_associations`](crate::operation::get_collaboration_ml_input_channel::builders::GetCollaborationMlInputChannelOutputBuilder::configured_model_algorithm_associations)
     /// - [`status`](crate::operation::get_collaboration_ml_input_channel::builders::GetCollaborationMlInputChannelOutputBuilder::status)
     /// - [`retention_in_days`](crate::operation::get_collaboration_ml_input_channel::builders::GetCollaborationMlInputChannelOutputBuilder::retention_in_days)
+    /// - [`create_time`](crate::operation::get_collaboration_ml_input_channel::builders::GetCollaborationMlInputChannelOutputBuilder::create_time)
+    /// - [`update_time`](crate::operation::get_collaboration_ml_input_channel::builders::GetCollaborationMlInputChannelOutputBuilder::update_time)
+    /// - [`creator_account_id`](crate::operation::get_collaboration_ml_input_channel::builders::GetCollaborationMlInputChannelOutputBuilder::creator_account_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -349,21 +349,6 @@ impl GetCollaborationMlInputChannelOutputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::get_collaboration_ml_input_channel::GetCollaborationMlInputChannelOutput {
-                create_time: self.create_time
-                    .ok_or_else(||
-                        ::aws_smithy_types::error::operation::BuildError::missing_field("create_time", "create_time was not specified but it is required when building GetCollaborationMlInputChannelOutput")
-                    )?
-                ,
-                update_time: self.update_time
-                    .ok_or_else(||
-                        ::aws_smithy_types::error::operation::BuildError::missing_field("update_time", "update_time was not specified but it is required when building GetCollaborationMlInputChannelOutput")
-                    )?
-                ,
-                creator_account_id: self.creator_account_id
-                    .ok_or_else(||
-                        ::aws_smithy_types::error::operation::BuildError::missing_field("creator_account_id", "creator_account_id was not specified but it is required when building GetCollaborationMlInputChannelOutput")
-                    )?
-                ,
                 membership_identifier: self.membership_identifier
                     .ok_or_else(||
                         ::aws_smithy_types::error::operation::BuildError::missing_field("membership_identifier", "membership_identifier was not specified but it is required when building GetCollaborationMlInputChannelOutput")
@@ -404,6 +389,21 @@ impl GetCollaborationMlInputChannelOutputBuilder {
                 number_of_records: self.number_of_records
                 ,
                 description: self.description
+                ,
+                create_time: self.create_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("create_time", "create_time was not specified but it is required when building GetCollaborationMlInputChannelOutput")
+                    )?
+                ,
+                update_time: self.update_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("update_time", "update_time was not specified but it is required when building GetCollaborationMlInputChannelOutput")
+                    )?
+                ,
+                creator_account_id: self.creator_account_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("creator_account_id", "creator_account_id was not specified but it is required when building GetCollaborationMlInputChannelOutput")
+                    )?
                 ,
                 _request_id: self._request_id,
             }

@@ -115,6 +115,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "autoApprovedChangeTypes" => {
+                            builder = builder.set_auto_approved_change_types(
+                                crate::protocol_serde::shape_auto_approved_change_type_list::de_auto_approved_change_type_list(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

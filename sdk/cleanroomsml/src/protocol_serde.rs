@@ -387,6 +387,14 @@ pub(crate) mod shape_trained_model_exports_max_size;
 
 pub(crate) mod shape_trained_model_inference_max_output_size;
 
+pub(crate) mod shape_log_redaction_configuration;
+
 pub(crate) mod shape_account_id_list;
 
 pub(crate) mod shape_column_type_list;
+
+pub(crate) mod shape_custom_entity_config;
+
+pub(crate) mod shape_entity_type_list;
+
+pub(crate) mod shape_custom_data_identifier_list;

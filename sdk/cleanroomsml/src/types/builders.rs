@@ -67,6 +67,10 @@ pub use crate::types::_trained_model_inference_max_output_size::TrainedModelInfe
 
 pub use crate::types::_logs_configuration_policy::LogsConfigurationPolicyBuilder;
 
+pub use crate::types::_log_redaction_configuration::LogRedactionConfigurationBuilder;
+
+pub use crate::types::_custom_entity_config::CustomEntityConfigBuilder;
+
 pub use crate::types::_trained_model_exports_configuration_policy::TrainedModelExportsConfigurationPolicyBuilder;
 
 pub use crate::types::_trained_model_exports_max_size::TrainedModelExportsMaxSizeBuilder;

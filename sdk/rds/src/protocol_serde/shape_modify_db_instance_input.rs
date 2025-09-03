@@ -364,6 +364,11 @@ pub fn ser_modify_db_instance_input_input_input(
     if let Some(var_134) = &input.multi_tenant {
         scope_133.boolean(*var_134);
     }
+    #[allow(unused_mut)]
+    let mut scope_135 = writer.prefix("MasterUserAuthenticationType");
+    if let Some(var_136) = &input.master_user_authentication_type {
+        scope_135.string(var_136.as_str());
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

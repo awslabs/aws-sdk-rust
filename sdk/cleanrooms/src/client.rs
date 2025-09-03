@@ -146,6 +146,8 @@ mod create_analysis_template;
 
 mod create_collaboration;
 
+mod create_collaboration_change_request;
+
 mod create_configured_audience_model_association;
 
 mod create_configured_table;
@@ -221,6 +223,8 @@ mod get_collaboration;
 
 mod get_collaboration_analysis_template;
 
+mod get_collaboration_change_request;
+
 mod get_collaboration_configured_audience_model_association;
 
 mod get_collaboration_id_namespace_association;
@@ -256,6 +260,8 @@ mod get_schema_analysis_rule;
 mod list_analysis_templates;
 
 mod list_collaboration_analysis_templates;
+
+mod list_collaboration_change_requests;
 
 mod list_collaboration_configured_audience_model_associations;
 

@@ -32,6 +32,8 @@ pub struct CreateCollaborationInput {
     /// <p>After July 16, 2025, the <code>CLEAN_ROOMS_SQL</code> parameter will no longer be available.</p>
     /// </note>
     pub analytics_engine: ::std::option::Option<crate::types::AnalyticsEngine>,
+    /// <p>The types of change requests that are automatically approved for this collaboration.</p>
+    pub auto_approved_change_request_types: ::std::option::Option<::std::vec::Vec<crate::types::AutoApprovedChangeType>>,
 }
 impl CreateCollaborationInput {
     /// <p>A list of initial members, not including the creator. This list is immutable.</p>
@@ -91,6 +93,12 @@ impl CreateCollaborationInput {
     pub fn analytics_engine(&self) -> ::std::option::Option<&crate::types::AnalyticsEngine> {
         self.analytics_engine.as_ref()
     }
+    /// <p>The types of change requests that are automatically approved for this collaboration.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.auto_approved_change_request_types.is_none()`.
+    pub fn auto_approved_change_request_types(&self) -> &[crate::types::AutoApprovedChangeType] {
+        self.auto_approved_change_request_types.as_deref().unwrap_or_default()
+    }
 }
 impl CreateCollaborationInput {
     /// Creates a new builder-style object to manufacture [`CreateCollaborationInput`](crate::operation::create_collaboration::CreateCollaborationInput).
@@ -115,6 +123,7 @@ pub struct CreateCollaborationInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) creator_payment_configuration: ::std::option::Option<crate::types::PaymentConfiguration>,
     pub(crate) analytics_engine: ::std::option::Option<crate::types::AnalyticsEngine>,
+    pub(crate) auto_approved_change_request_types: ::std::option::Option<::std::vec::Vec<crate::types::AutoApprovedChangeType>>,
 }
 impl CreateCollaborationInputBuilder {
     /// Appends an item to `members`.
@@ -322,6 +331,29 @@ impl CreateCollaborationInputBuilder {
     pub fn get_analytics_engine(&self) -> &::std::option::Option<crate::types::AnalyticsEngine> {
         &self.analytics_engine
     }
+    /// Appends an item to `auto_approved_change_request_types`.
+    ///
+    /// To override the contents of this collection use [`set_auto_approved_change_request_types`](Self::set_auto_approved_change_request_types).
+    ///
+    /// <p>The types of change requests that are automatically approved for this collaboration.</p>
+    pub fn auto_approved_change_request_types(mut self, input: crate::types::AutoApprovedChangeType) -> Self {
+        let mut v = self.auto_approved_change_request_types.unwrap_or_default();
+        v.push(input);
+        self.auto_approved_change_request_types = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The types of change requests that are automatically approved for this collaboration.</p>
+    pub fn set_auto_approved_change_request_types(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AutoApprovedChangeType>>,
+    ) -> Self {
+        self.auto_approved_change_request_types = input;
+        self
+    }
+    /// <p>The types of change requests that are automatically approved for this collaboration.</p>
+    pub fn get_auto_approved_change_request_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AutoApprovedChangeType>> {
+        &self.auto_approved_change_request_types
+    }
     /// Consumes the builder and constructs a [`CreateCollaborationInput`](crate::operation::create_collaboration::CreateCollaborationInput).
     pub fn build(
         self,
@@ -340,6 +372,7 @@ impl CreateCollaborationInputBuilder {
             tags: self.tags,
             creator_payment_configuration: self.creator_payment_configuration,
             analytics_engine: self.analytics_engine,
+            auto_approved_change_request_types: self.auto_approved_change_request_types,
         })
     }
 }

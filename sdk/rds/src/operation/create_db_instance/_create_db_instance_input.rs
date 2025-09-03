@@ -843,6 +843,16 @@ pub struct CreateDbInstanceInput {
     /// <p>Valid Values: <code>open-source-rds-extended-support | open-source-rds-extended-support-disabled</code></p>
     /// <p>Default: <code>open-source-rds-extended-support</code></p>
     pub engine_lifecycle_support: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies the authentication type for the master user. With IAM master user authentication, you can configure the master DB user with IAM database authentication when you create a DB instance.</p>
+    /// <p>You can specify one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>password</code> - Use standard database authentication with a password.</p></li>
+    /// <li>
+    /// <p><code>iam-db-auth</code> - Use IAM database authentication for the master user.</p></li>
+    /// </ul>
+    /// <p>This option is only valid for RDS for PostgreSQL and Aurora PostgreSQL engines.</p>
+    pub master_user_authentication_type: ::std::option::Option<crate::types::MasterUserAuthenticationType>,
 }
 impl CreateDbInstanceInput {
     /// <p>The meaning of this parameter differs according to the database engine you use.</p>
@@ -1824,6 +1834,18 @@ impl CreateDbInstanceInput {
     pub fn engine_lifecycle_support(&self) -> ::std::option::Option<&str> {
         self.engine_lifecycle_support.as_deref()
     }
+    /// <p>Specifies the authentication type for the master user. With IAM master user authentication, you can configure the master DB user with IAM database authentication when you create a DB instance.</p>
+    /// <p>You can specify one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>password</code> - Use standard database authentication with a password.</p></li>
+    /// <li>
+    /// <p><code>iam-db-auth</code> - Use IAM database authentication for the master user.</p></li>
+    /// </ul>
+    /// <p>This option is only valid for RDS for PostgreSQL and Aurora PostgreSQL engines.</p>
+    pub fn master_user_authentication_type(&self) -> ::std::option::Option<&crate::types::MasterUserAuthenticationType> {
+        self.master_user_authentication_type.as_ref()
+    }
 }
 impl CreateDbInstanceInput {
     /// Creates a new builder-style object to manufacture [`CreateDbInstanceInput`](crate::operation::create_db_instance::CreateDbInstanceInput).
@@ -1900,6 +1922,7 @@ pub struct CreateDbInstanceInputBuilder {
     pub(crate) dedicated_log_volume: ::std::option::Option<bool>,
     pub(crate) multi_tenant: ::std::option::Option<bool>,
     pub(crate) engine_lifecycle_support: ::std::option::Option<::std::string::String>,
+    pub(crate) master_user_authentication_type: ::std::option::Option<crate::types::MasterUserAuthenticationType>,
 }
 impl CreateDbInstanceInputBuilder {
     /// <p>The meaning of this parameter differs according to the database engine you use.</p>
@@ -4970,6 +4993,44 @@ impl CreateDbInstanceInputBuilder {
     pub fn get_engine_lifecycle_support(&self) -> &::std::option::Option<::std::string::String> {
         &self.engine_lifecycle_support
     }
+    /// <p>Specifies the authentication type for the master user. With IAM master user authentication, you can configure the master DB user with IAM database authentication when you create a DB instance.</p>
+    /// <p>You can specify one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>password</code> - Use standard database authentication with a password.</p></li>
+    /// <li>
+    /// <p><code>iam-db-auth</code> - Use IAM database authentication for the master user.</p></li>
+    /// </ul>
+    /// <p>This option is only valid for RDS for PostgreSQL and Aurora PostgreSQL engines.</p>
+    pub fn master_user_authentication_type(mut self, input: crate::types::MasterUserAuthenticationType) -> Self {
+        self.master_user_authentication_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the authentication type for the master user. With IAM master user authentication, you can configure the master DB user with IAM database authentication when you create a DB instance.</p>
+    /// <p>You can specify one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>password</code> - Use standard database authentication with a password.</p></li>
+    /// <li>
+    /// <p><code>iam-db-auth</code> - Use IAM database authentication for the master user.</p></li>
+    /// </ul>
+    /// <p>This option is only valid for RDS for PostgreSQL and Aurora PostgreSQL engines.</p>
+    pub fn set_master_user_authentication_type(mut self, input: ::std::option::Option<crate::types::MasterUserAuthenticationType>) -> Self {
+        self.master_user_authentication_type = input;
+        self
+    }
+    /// <p>Specifies the authentication type for the master user. With IAM master user authentication, you can configure the master DB user with IAM database authentication when you create a DB instance.</p>
+    /// <p>You can specify one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>password</code> - Use standard database authentication with a password.</p></li>
+    /// <li>
+    /// <p><code>iam-db-auth</code> - Use IAM database authentication for the master user.</p></li>
+    /// </ul>
+    /// <p>This option is only valid for RDS for PostgreSQL and Aurora PostgreSQL engines.</p>
+    pub fn get_master_user_authentication_type(&self) -> &::std::option::Option<crate::types::MasterUserAuthenticationType> {
+        &self.master_user_authentication_type
+    }
     /// Consumes the builder and constructs a [`CreateDbInstanceInput`](crate::operation::create_db_instance::CreateDbInstanceInput).
     pub fn build(
         self,
@@ -5039,6 +5100,7 @@ impl CreateDbInstanceInputBuilder {
             dedicated_log_volume: self.dedicated_log_volume,
             multi_tenant: self.multi_tenant,
             engine_lifecycle_support: self.engine_lifecycle_support,
+            master_user_authentication_type: self.master_user_authentication_type,
         })
     }
 }

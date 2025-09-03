@@ -25,6 +25,7 @@
 ///     CloudWatchRegion::ApSoutheast3 => { /* ... */ },
 ///     CloudWatchRegion::ApSoutheast4 => { /* ... */ },
 ///     CloudWatchRegion::ApSoutheast5 => { /* ... */ },
+///     CloudWatchRegion::ApSoutheast6 => { /* ... */ },
 ///     CloudWatchRegion::ApSoutheast7 => { /* ... */ },
 ///     CloudWatchRegion::CaCentral1 => { /* ... */ },
 ///     CloudWatchRegion::CaWest1 => { /* ... */ },
@@ -110,6 +111,8 @@ pub enum CloudWatchRegion {
     #[allow(missing_docs)] // documentation missing in model
     ApSoutheast5,
     #[allow(missing_docs)] // documentation missing in model
+    ApSoutheast6,
+    #[allow(missing_docs)] // documentation missing in model
     ApSoutheast7,
     #[allow(missing_docs)] // documentation missing in model
     CaCentral1,
@@ -189,6 +192,7 @@ impl ::std::convert::From<&str> for CloudWatchRegion {
             "ap-southeast-3" => CloudWatchRegion::ApSoutheast3,
             "ap-southeast-4" => CloudWatchRegion::ApSoutheast4,
             "ap-southeast-5" => CloudWatchRegion::ApSoutheast5,
+            "ap-southeast-6" => CloudWatchRegion::ApSoutheast6,
             "ap-southeast-7" => CloudWatchRegion::ApSoutheast7,
             "ca-central-1" => CloudWatchRegion::CaCentral1,
             "ca-west-1" => CloudWatchRegion::CaWest1,
@@ -247,6 +251,7 @@ impl CloudWatchRegion {
             CloudWatchRegion::ApSoutheast3 => "ap-southeast-3",
             CloudWatchRegion::ApSoutheast4 => "ap-southeast-4",
             CloudWatchRegion::ApSoutheast5 => "ap-southeast-5",
+            CloudWatchRegion::ApSoutheast6 => "ap-southeast-6",
             CloudWatchRegion::ApSoutheast7 => "ap-southeast-7",
             CloudWatchRegion::CaCentral1 => "ca-central-1",
             CloudWatchRegion::CaWest1 => "ca-west-1",
@@ -296,6 +301,7 @@ impl CloudWatchRegion {
             "ap-southeast-3",
             "ap-southeast-4",
             "ap-southeast-5",
+            "ap-southeast-6",
             "ap-southeast-7",
             "ca-central-1",
             "ca-west-1",
@@ -362,6 +368,7 @@ impl ::std::fmt::Display for CloudWatchRegion {
             CloudWatchRegion::ApSoutheast3 => write!(f, "ap-southeast-3"),
             CloudWatchRegion::ApSoutheast4 => write!(f, "ap-southeast-4"),
             CloudWatchRegion::ApSoutheast5 => write!(f, "ap-southeast-5"),
+            CloudWatchRegion::ApSoutheast6 => write!(f, "ap-southeast-6"),
             CloudWatchRegion::ApSoutheast7 => write!(f, "ap-southeast-7"),
             CloudWatchRegion::CaCentral1 => write!(f, "ca-central-1"),
             CloudWatchRegion::CaWest1 => write!(f, "ca-west-1"),

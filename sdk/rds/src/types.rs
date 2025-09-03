@@ -211,6 +211,8 @@ pub use crate::types::_db_proxy_status::DbProxyStatus;
 
 pub use crate::types::_user_auth_config::UserAuthConfig;
 
+pub use crate::types::_master_user_authentication_type::MasterUserAuthenticationType;
+
 pub use crate::types::_cloudwatch_logs_export_configuration::CloudwatchLogsExportConfiguration;
 
 pub use crate::types::_db_cluster_snapshot_attributes_result::DbClusterSnapshotAttributesResult;
@@ -486,6 +488,8 @@ mod _limitless_database;
 mod _limitless_database_status;
 
 mod _local_write_forwarding_status;
+
+mod _master_user_authentication_type;
 
 mod _master_user_secret;
 

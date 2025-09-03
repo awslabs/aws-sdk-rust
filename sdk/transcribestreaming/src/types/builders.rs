@@ -65,6 +65,8 @@ pub use crate::types::_timestamp_range::TimestampRangeBuilder;
 
 pub use crate::types::_utterance_event::UtteranceEventBuilder;
 
+pub use crate::types::_call_analytics_language_with_score::CallAnalyticsLanguageWithScoreBuilder;
+
 pub use crate::types::_issue_detected::IssueDetectedBuilder;
 
 pub use crate::types::_character_offsets::CharacterOffsetsBuilder;

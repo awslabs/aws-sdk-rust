@@ -269,6 +269,8 @@ pub use crate::types::_vpc_origin_config::VpcOriginConfig;
 
 pub use crate::types::_custom_origin_config::CustomOriginConfig;
 
+pub use crate::types::_ip_address_type::IpAddressType;
+
 pub use crate::types::_s3_origin_config::S3OriginConfig;
 
 pub use crate::types::_custom_headers::CustomHeaders;
@@ -686,6 +688,8 @@ mod _invalidation_batch;
 mod _invalidation_list;
 
 mod _invalidation_summary;
+
+mod _ip_address_type;
 
 mod _item_selection;
 

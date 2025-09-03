@@ -89,6 +89,18 @@ pub(crate) fn create_collaboration_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_collaboration_change_request_output_output_correct_errors(
+    mut builder: crate::operation::create_collaboration_change_request::builders::CreateCollaborationChangeRequestOutputBuilder,
+) -> crate::operation::create_collaboration_change_request::builders::CreateCollaborationChangeRequestOutputBuilder {
+    if builder.collaboration_change_request.is_none() {
+        builder.collaboration_change_request = {
+            let builder = crate::types::builders::CollaborationChangeRequestBuilder::default();
+            crate::serde_util::collaboration_change_request_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn create_configured_audience_model_association_output_output_correct_errors(
     mut builder: crate::operation::create_configured_audience_model_association::builders::CreateConfiguredAudienceModelAssociationOutputBuilder,
 ) -> crate::operation::create_configured_audience_model_association::builders::CreateConfiguredAudienceModelAssociationOutputBuilder {
@@ -232,6 +244,18 @@ pub(crate) fn get_collaboration_analysis_template_output_output_correct_errors(
         builder.collaboration_analysis_template = {
             let builder = crate::types::builders::CollaborationAnalysisTemplateBuilder::default();
             crate::serde_util::collaboration_analysis_template_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn get_collaboration_change_request_output_output_correct_errors(
+    mut builder: crate::operation::get_collaboration_change_request::builders::GetCollaborationChangeRequestOutputBuilder,
+) -> crate::operation::get_collaboration_change_request::builders::GetCollaborationChangeRequestOutputBuilder {
+    if builder.collaboration_change_request.is_none() {
+        builder.collaboration_change_request = {
+            let builder = crate::types::builders::CollaborationChangeRequestBuilder::default();
+            crate::serde_util::collaboration_change_request_correct_errors(builder).build().ok()
         }
     }
     builder
@@ -451,6 +475,15 @@ pub(crate) fn list_collaboration_analysis_templates_output_output_correct_errors
 ) -> crate::operation::list_collaboration_analysis_templates::builders::ListCollaborationAnalysisTemplatesOutputBuilder {
     if builder.collaboration_analysis_template_summaries.is_none() {
         builder.collaboration_analysis_template_summaries = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_collaboration_change_requests_output_output_correct_errors(
+    mut builder: crate::operation::list_collaboration_change_requests::builders::ListCollaborationChangeRequestsOutputBuilder,
+) -> crate::operation::list_collaboration_change_requests::builders::ListCollaborationChangeRequestsOutputBuilder {
+    if builder.collaboration_change_request_summaries.is_none() {
+        builder.collaboration_change_request_summaries = Some(Default::default())
     }
     builder
 }
@@ -891,6 +924,33 @@ pub(crate) fn collaboration_correct_errors(
     }
     if builder.query_log_status.is_none() {
         builder.query_log_status = "no value was set".parse::<crate::types::CollaborationQueryLogStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn collaboration_change_request_correct_errors(
+    mut builder: crate::types::builders::CollaborationChangeRequestBuilder,
+) -> crate::types::builders::CollaborationChangeRequestBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.collaboration_id.is_none() {
+        builder.collaboration_id = Some(Default::default())
+    }
+    if builder.create_time.is_none() {
+        builder.create_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.update_time.is_none() {
+        builder.update_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::ChangeRequestStatus>().ok()
+    }
+    if builder.is_auto_approved.is_none() {
+        builder.is_auto_approved = Some(Default::default())
+    }
+    if builder.changes.is_none() {
+        builder.changes = Some(Default::default())
     }
     builder
 }
@@ -1661,6 +1721,33 @@ pub(crate) fn collaboration_analysis_template_summary_correct_errors(
     }
     if builder.creator_account_id.is_none() {
         builder.creator_account_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn collaboration_change_request_summary_correct_errors(
+    mut builder: crate::types::builders::CollaborationChangeRequestSummaryBuilder,
+) -> crate::types::builders::CollaborationChangeRequestSummaryBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.collaboration_id.is_none() {
+        builder.collaboration_id = Some(Default::default())
+    }
+    if builder.create_time.is_none() {
+        builder.create_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.update_time.is_none() {
+        builder.update_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::ChangeRequestStatus>().ok()
+    }
+    if builder.is_auto_approved.is_none() {
+        builder.is_auto_approved = Some(Default::default())
+    }
+    if builder.changes.is_none() {
+        builder.changes = Some(Default::default())
     }
     builder
 }
@@ -2494,6 +2581,19 @@ pub(crate) fn billed_resource_utilization_correct_errors(
     builder
 }
 
+pub(crate) fn change_correct_errors(mut builder: crate::types::builders::ChangeBuilder) -> crate::types::builders::ChangeBuilder {
+    if builder.specification_type.is_none() {
+        builder.specification_type = "no value was set".parse::<crate::types::ChangeSpecificationType>().ok()
+    }
+    if builder.specification.is_none() {
+        builder.specification = Some(crate::types::ChangeSpecification::Unknown)
+    }
+    if builder.types.is_none() {
+        builder.types = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn column_correct_errors(mut builder: crate::types::builders::ColumnBuilder) -> crate::types::builders::ColumnBuilder {
     if builder.name.is_none() {
         builder.name = Some(Default::default())
@@ -2905,6 +3005,18 @@ pub(crate) fn differential_privacy_configuration_correct_errors(
 ) -> crate::types::builders::DifferentialPrivacyConfigurationBuilder {
     if builder.columns.is_none() {
         builder.columns = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn member_change_specification_correct_errors(
+    mut builder: crate::types::builders::MemberChangeSpecificationBuilder,
+) -> crate::types::builders::MemberChangeSpecificationBuilder {
+    if builder.account_id.is_none() {
+        builder.account_id = Some(Default::default())
+    }
+    if builder.member_abilities.is_none() {
+        builder.member_abilities = Some(Default::default())
     }
     builder
 }

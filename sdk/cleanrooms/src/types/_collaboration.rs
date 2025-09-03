@@ -38,6 +38,8 @@ pub struct Collaboration {
     /// <p>After July 16, 2025, the <code>CLEAN_ROOMS_SQL</code> parameter will no longer be available.</p>
     /// </note>
     pub analytics_engine: ::std::option::Option<crate::types::AnalyticsEngine>,
+    /// <p>The types of change requests that are automatically approved for this collaboration.</p>
+    pub auto_approved_change_types: ::std::option::Option<::std::vec::Vec<crate::types::AutoApprovedChangeType>>,
 }
 impl Collaboration {
     /// <p>The unique ID for the collaboration.</p>
@@ -109,6 +111,12 @@ impl Collaboration {
     pub fn analytics_engine(&self) -> ::std::option::Option<&crate::types::AnalyticsEngine> {
         self.analytics_engine.as_ref()
     }
+    /// <p>The types of change requests that are automatically approved for this collaboration.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.auto_approved_change_types.is_none()`.
+    pub fn auto_approved_change_types(&self) -> &[crate::types::AutoApprovedChangeType] {
+        self.auto_approved_change_types.as_deref().unwrap_or_default()
+    }
 }
 impl Collaboration {
     /// Creates a new builder-style object to manufacture [`Collaboration`](crate::types::Collaboration).
@@ -136,6 +144,7 @@ pub struct CollaborationBuilder {
     pub(crate) query_log_status: ::std::option::Option<crate::types::CollaborationQueryLogStatus>,
     pub(crate) job_log_status: ::std::option::Option<crate::types::CollaborationJobLogStatus>,
     pub(crate) analytics_engine: ::std::option::Option<crate::types::AnalyticsEngine>,
+    pub(crate) auto_approved_change_types: ::std::option::Option<::std::vec::Vec<crate::types::AutoApprovedChangeType>>,
 }
 impl CollaborationBuilder {
     /// <p>The unique ID for the collaboration.</p>
@@ -369,6 +378,26 @@ impl CollaborationBuilder {
     pub fn get_analytics_engine(&self) -> &::std::option::Option<crate::types::AnalyticsEngine> {
         &self.analytics_engine
     }
+    /// Appends an item to `auto_approved_change_types`.
+    ///
+    /// To override the contents of this collection use [`set_auto_approved_change_types`](Self::set_auto_approved_change_types).
+    ///
+    /// <p>The types of change requests that are automatically approved for this collaboration.</p>
+    pub fn auto_approved_change_types(mut self, input: crate::types::AutoApprovedChangeType) -> Self {
+        let mut v = self.auto_approved_change_types.unwrap_or_default();
+        v.push(input);
+        self.auto_approved_change_types = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The types of change requests that are automatically approved for this collaboration.</p>
+    pub fn set_auto_approved_change_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AutoApprovedChangeType>>) -> Self {
+        self.auto_approved_change_types = input;
+        self
+    }
+    /// <p>The types of change requests that are automatically approved for this collaboration.</p>
+    pub fn get_auto_approved_change_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AutoApprovedChangeType>> {
+        &self.auto_approved_change_types
+    }
     /// Consumes the builder and constructs a [`Collaboration`](crate::types::Collaboration).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::CollaborationBuilder::id)
@@ -442,6 +471,7 @@ impl CollaborationBuilder {
             })?,
             job_log_status: self.job_log_status,
             analytics_engine: self.analytics_engine,
+            auto_approved_change_types: self.auto_approved_change_types,
         })
     }
 }

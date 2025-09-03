@@ -46,6 +46,22 @@ pub(crate) fn de_enable_partial_results_stabilization_header(
     }
 }
 
+pub(crate) fn de_identify_language_header(
+    header_map: &::aws_smithy_runtime_api::http::Headers,
+) -> ::std::result::Result<::std::option::Option<bool>, ::aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("x-amzn-transcribe-identify-language");
+    let var_2 = ::aws_smithy_http::header::read_many_primitive::<bool>(headers)?;
+    if var_2.len() > 1 {
+        Err(::aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_2.len()
+        )))
+    } else {
+        let mut var_2 = var_2;
+        Ok(var_2.pop())
+    }
+}
+
 pub(crate) fn de_language_code_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<crate::types::CallAnalyticsLanguageCode>, ::aws_smithy_http::header::ParseError> {
@@ -60,6 +76,13 @@ pub(crate) fn de_language_model_name_header(
     ::aws_smithy_http::header::one_or_none(headers)
 }
 
+pub(crate) fn de_language_options_header(
+    header_map: &::aws_smithy_runtime_api::http::Headers,
+) -> ::std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("x-amzn-transcribe-language-options");
+    ::aws_smithy_http::header::one_or_none(headers)
+}
+
 pub(crate) fn de_media_encoding_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<crate::types::MediaEncoding>, ::aws_smithy_http::header::ParseError> {
@@ -71,15 +94,15 @@ pub(crate) fn de_media_sample_rate_hertz_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<i32>, ::aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("x-amzn-transcribe-sample-rate");
-    let var_2 = ::aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
-    if var_2.len() > 1 {
+    let var_3 = ::aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
+    if var_3.len() > 1 {
         Err(::aws_smithy_http::header::ParseError::new(format!(
             "expected one item but found {}",
-            var_2.len()
+            var_3.len()
         )))
     } else {
-        let mut var_2 = var_2;
-        Ok(var_2.pop())
+        let mut var_3 = var_3;
+        Ok(var_3.pop())
     }
 }
 
@@ -94,6 +117,13 @@ pub(crate) fn de_pii_entity_types_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("x-amzn-transcribe-pii-entity-types");
+    ::aws_smithy_http::header::one_or_none(headers)
+}
+
+pub(crate) fn de_preferred_language_header(
+    header_map: &::aws_smithy_runtime_api::http::Headers,
+) -> ::std::result::Result<::std::option::Option<crate::types::CallAnalyticsLanguageCode>, ::aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("x-amzn-transcribe-preferred-language");
     ::aws_smithy_http::header::one_or_none(headers)
 }
 
@@ -125,9 +155,23 @@ pub(crate) fn de_vocabulary_filter_name_header(
     ::aws_smithy_http::header::one_or_none(headers)
 }
 
+pub(crate) fn de_vocabulary_filter_names_header(
+    header_map: &::aws_smithy_runtime_api::http::Headers,
+) -> ::std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("x-amzn-transcribe-vocabulary-filter-names");
+    ::aws_smithy_http::header::one_or_none(headers)
+}
+
 pub(crate) fn de_vocabulary_name_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("x-amzn-transcribe-vocabulary-name");
+    ::aws_smithy_http::header::one_or_none(headers)
+}
+
+pub(crate) fn de_vocabulary_names_header(
+    header_map: &::aws_smithy_runtime_api::http::Headers,
+) -> ::std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("x-amzn-transcribe-vocabulary-names");
     ::aws_smithy_http::header::one_or_none(headers)
 }

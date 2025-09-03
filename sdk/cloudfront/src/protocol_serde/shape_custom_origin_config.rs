@@ -29,6 +29,10 @@ pub fn ser_custom_origin_config(
         let mut inner_writer = scope.start_el("OriginKeepaliveTimeout").finish();
         inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_3).encode());
     }
+    if let Some(var_4) = &input.ip_address_type {
+        let mut inner_writer = scope.start_el("IpAddressType").finish();
+        inner_writer.data(var_4.as_str());
+    }
     scope.finish();
     Ok(())
 }
@@ -42,21 +46,6 @@ pub fn de_custom_origin_config(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("HTTPPort") /* HTTPPort com.amazonaws.cloudfront#CustomOriginConfig$HTTPPort */ =>  {
-                let var_4 =
-                    Some(
-                         {
-                            <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.cloudfront#integer`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_http_port(var_4);
-            }
-            ,
-            s if s.matches("HTTPSPort") /* HTTPSPort com.amazonaws.cloudfront#CustomOriginConfig$HTTPSPort */ =>  {
                 let var_5 =
                     Some(
                          {
@@ -68,35 +57,11 @@ pub fn de_custom_origin_config(
                         ?
                     )
                 ;
-                builder = builder.set_https_port(var_5);
+                builder = builder.set_http_port(var_5);
             }
             ,
-            s if s.matches("OriginProtocolPolicy") /* OriginProtocolPolicy com.amazonaws.cloudfront#CustomOriginConfig$OriginProtocolPolicy */ =>  {
+            s if s.matches("HTTPSPort") /* HTTPSPort com.amazonaws.cloudfront#CustomOriginConfig$HTTPSPort */ =>  {
                 let var_6 =
-                    Some(
-                        Result::<crate::types::OriginProtocolPolicy, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::types::OriginProtocolPolicy::from(
-                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_origin_protocol_policy(var_6);
-            }
-            ,
-            s if s.matches("OriginSslProtocols") /* OriginSslProtocols com.amazonaws.cloudfront#CustomOriginConfig$OriginSslProtocols */ =>  {
-                let var_7 =
-                    Some(
-                        crate::protocol_serde::shape_origin_ssl_protocols::de_origin_ssl_protocols(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_origin_ssl_protocols(var_7);
-            }
-            ,
-            s if s.matches("OriginReadTimeout") /* OriginReadTimeout com.amazonaws.cloudfront#CustomOriginConfig$OriginReadTimeout */ =>  {
-                let var_8 =
                     Some(
                          {
                             <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -107,10 +72,34 @@ pub fn de_custom_origin_config(
                         ?
                     )
                 ;
-                builder = builder.set_origin_read_timeout(var_8);
+                builder = builder.set_https_port(var_6);
             }
             ,
-            s if s.matches("OriginKeepaliveTimeout") /* OriginKeepaliveTimeout com.amazonaws.cloudfront#CustomOriginConfig$OriginKeepaliveTimeout */ =>  {
+            s if s.matches("OriginProtocolPolicy") /* OriginProtocolPolicy com.amazonaws.cloudfront#CustomOriginConfig$OriginProtocolPolicy */ =>  {
+                let var_7 =
+                    Some(
+                        Result::<crate::types::OriginProtocolPolicy, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::OriginProtocolPolicy::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_origin_protocol_policy(var_7);
+            }
+            ,
+            s if s.matches("OriginSslProtocols") /* OriginSslProtocols com.amazonaws.cloudfront#CustomOriginConfig$OriginSslProtocols */ =>  {
+                let var_8 =
+                    Some(
+                        crate::protocol_serde::shape_origin_ssl_protocols::de_origin_ssl_protocols(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_origin_ssl_protocols(var_8);
+            }
+            ,
+            s if s.matches("OriginReadTimeout") /* OriginReadTimeout com.amazonaws.cloudfront#CustomOriginConfig$OriginReadTimeout */ =>  {
                 let var_9 =
                     Some(
                          {
@@ -122,7 +111,36 @@ pub fn de_custom_origin_config(
                         ?
                     )
                 ;
-                builder = builder.set_origin_keepalive_timeout(var_9);
+                builder = builder.set_origin_read_timeout(var_9);
+            }
+            ,
+            s if s.matches("OriginKeepaliveTimeout") /* OriginKeepaliveTimeout com.amazonaws.cloudfront#CustomOriginConfig$OriginKeepaliveTimeout */ =>  {
+                let var_10 =
+                    Some(
+                         {
+                            <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.cloudfront#integer`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_origin_keepalive_timeout(var_10);
+            }
+            ,
+            s if s.matches("IpAddressType") /* IpAddressType com.amazonaws.cloudfront#CustomOriginConfig$IpAddressType */ =>  {
+                let var_11 =
+                    Some(
+                        Result::<crate::types::IpAddressType, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::IpAddressType::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_ip_address_type(var_11);
             }
             ,
             _ => {}

@@ -12,6 +12,7 @@
 /// ```text
 /// # let authenticationstrategy = unimplemented!();
 /// match authenticationstrategy {
+///     AuthenticationStrategy::ConfigManaged => { /* ... */ },
 ///     AuthenticationStrategy::Ldap => { /* ... */ },
 ///     AuthenticationStrategy::Simple => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -43,6 +44,8 @@
 )]
 pub enum AuthenticationStrategy {
     #[allow(missing_docs)] // documentation missing in model
+    ConfigManaged,
+    #[allow(missing_docs)] // documentation missing in model
     Ldap,
     #[allow(missing_docs)] // documentation missing in model
     Simple,
@@ -53,6 +56,7 @@ pub enum AuthenticationStrategy {
 impl ::std::convert::From<&str> for AuthenticationStrategy {
     fn from(s: &str) -> Self {
         match s {
+            "CONFIG_MANAGED" => AuthenticationStrategy::ConfigManaged,
             "LDAP" => AuthenticationStrategy::Ldap,
             "SIMPLE" => AuthenticationStrategy::Simple,
             other => AuthenticationStrategy::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -70,6 +74,7 @@ impl AuthenticationStrategy {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            AuthenticationStrategy::ConfigManaged => "CONFIG_MANAGED",
             AuthenticationStrategy::Ldap => "LDAP",
             AuthenticationStrategy::Simple => "SIMPLE",
             AuthenticationStrategy::Unknown(value) => value.as_str(),
@@ -77,7 +82,7 @@ impl AuthenticationStrategy {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["LDAP", "SIMPLE"]
+        &["CONFIG_MANAGED", "LDAP", "SIMPLE"]
     }
 }
 impl ::std::convert::AsRef<str> for AuthenticationStrategy {
@@ -100,6 +105,7 @@ impl AuthenticationStrategy {
 impl ::std::fmt::Display for AuthenticationStrategy {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            AuthenticationStrategy::ConfigManaged => write!(f, "CONFIG_MANAGED"),
             AuthenticationStrategy::Ldap => write!(f, "LDAP"),
             AuthenticationStrategy::Simple => write!(f, "SIMPLE"),
             AuthenticationStrategy::Unknown(value) => write!(f, "{}", value),
