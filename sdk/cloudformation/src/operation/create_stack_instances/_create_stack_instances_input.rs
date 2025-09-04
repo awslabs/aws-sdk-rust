@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateStackInstancesInput {
-    /// <p>The name or unique ID of the stack set that you want to create stack instances from.</p>
+    /// <p>The name or unique ID of the StackSet that you want to create stack instances from.</p>
     pub stack_set_name: ::std::option::Option<::std::string::String>,
     /// <p>\[Self-managed permissions\] The account IDs of one or more Amazon Web Services accounts that you want to create stack instances in the specified Region(s) for.</p>
     /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
     pub accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>\[Service-managed permissions\] The Organizations accounts for which to create stack instances in the specified Amazon Web Services Regions.</p>
+    /// <p>\[Service-managed permissions\] The Organizations accounts in which to create stack instances in the specified Amazon Web Services Regions.</p>
     /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
     pub deployment_targets: ::std::option::Option<crate::types::DeploymentTargets>,
     /// <p>The names of one or more Amazon Web Services Regions where you want to create stack instances using the specified Amazon Web Services accounts.</p>
     pub regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>A list of stack set parameters whose values you want to override in the selected stack instances.</p>
+    /// <p>A list of StackSet parameters whose values you want to override in the selected stack instances.</p>
     /// <p>Any overridden parameter values will be applied to all stack instances in the specified accounts and Amazon Web Services Regions. When specifying parameters and their values, be aware of how CloudFormation sets parameter values during stack instance operations:</p>
     /// <ul>
     /// <li>
@@ -21,22 +21,22 @@ pub struct CreateStackInstancesInput {
     /// <li>
     /// <p>To leave an overridden parameter set to its present value, include the parameter and specify <code>UsePreviousValue</code> as <code>true</code>. (You can't specify both a value and set <code>UsePreviousValue</code> to <code>true</code>.)</p></li>
     /// <li>
-    /// <p>To set an overridden parameter back to the value specified in the stack set, specify a parameter list but don't include the parameter in the list.</p></li>
+    /// <p>To set an overridden parameter back to the value specified in the StackSet, specify a parameter list but don't include the parameter in the list.</p></li>
     /// <li>
     /// <p>To leave all parameters set to their present values, don't specify this property at all.</p></li>
     /// </ul>
-    /// <p>During stack set updates, any parameter values overridden for a stack instance aren't updated, but retain their overridden value.</p>
-    /// <p>You can only override the parameter <i>values</i> that are specified in the stack set; to add or delete a parameter itself, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a> to update the stack set template.</p>
+    /// <p>During StackSet updates, any parameter values overridden for a stack instance aren't updated, but retain their overridden value.</p>
+    /// <p>You can only override the parameter <i>values</i> that are specified in the StackSet; to add or delete a parameter itself, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a> to update the StackSet template.</p>
     pub parameter_overrides: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
-    /// <p>Preferences for how CloudFormation performs this stack set operation.</p>
+    /// <p>Preferences for how CloudFormation performs this StackSet operation.</p>
     pub operation_preferences: ::std::option::Option<crate::types::StackSetOperationPreferences>,
-    /// <p>The unique identifier for this stack set operation.</p>
-    /// <p>The operation ID also functions as an idempotency token, to ensure that CloudFormation performs the stack set operation only once, even if you retry the request multiple times. You might retry stack set operation requests to ensure that CloudFormation successfully received them.</p>
+    /// <p>The unique identifier for this StackSet operation.</p>
+    /// <p>The operation ID also functions as an idempotency token, to ensure that CloudFormation performs the StackSet operation only once, even if you retry the request multiple times. You might retry StackSet operation requests to ensure that CloudFormation successfully received them.</p>
     /// <p>If you don't specify an operation ID, the SDK generates one automatically.</p>
-    /// <p>Repeating this stack set operation with a new operation ID retries all stack instances whose status is <code>OUTDATED</code>.</p>
+    /// <p>Repeating this StackSet operation with a new operation ID retries all stack instances whose status is <code>OUTDATED</code>.</p>
     pub operation_id: ::std::option::Option<::std::string::String>,
     /// <p>\[Service-managed permissions\] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
-    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
+    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for StackSets with self-managed permissions.</p>
     /// <ul>
     /// <li>
     /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p></li>
@@ -47,7 +47,7 @@ pub struct CreateStackInstancesInput {
     pub call_as: ::std::option::Option<crate::types::CallAs>,
 }
 impl CreateStackInstancesInput {
-    /// <p>The name or unique ID of the stack set that you want to create stack instances from.</p>
+    /// <p>The name or unique ID of the StackSet that you want to create stack instances from.</p>
     pub fn stack_set_name(&self) -> ::std::option::Option<&str> {
         self.stack_set_name.as_deref()
     }
@@ -58,7 +58,7 @@ impl CreateStackInstancesInput {
     pub fn accounts(&self) -> &[::std::string::String] {
         self.accounts.as_deref().unwrap_or_default()
     }
-    /// <p>\[Service-managed permissions\] The Organizations accounts for which to create stack instances in the specified Amazon Web Services Regions.</p>
+    /// <p>\[Service-managed permissions\] The Organizations accounts in which to create stack instances in the specified Amazon Web Services Regions.</p>
     /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
     pub fn deployment_targets(&self) -> ::std::option::Option<&crate::types::DeploymentTargets> {
         self.deployment_targets.as_ref()
@@ -69,7 +69,7 @@ impl CreateStackInstancesInput {
     pub fn regions(&self) -> &[::std::string::String] {
         self.regions.as_deref().unwrap_or_default()
     }
-    /// <p>A list of stack set parameters whose values you want to override in the selected stack instances.</p>
+    /// <p>A list of StackSet parameters whose values you want to override in the selected stack instances.</p>
     /// <p>Any overridden parameter values will be applied to all stack instances in the specified accounts and Amazon Web Services Regions. When specifying parameters and their values, be aware of how CloudFormation sets parameter values during stack instance operations:</p>
     /// <ul>
     /// <li>
@@ -77,30 +77,30 @@ impl CreateStackInstancesInput {
     /// <li>
     /// <p>To leave an overridden parameter set to its present value, include the parameter and specify <code>UsePreviousValue</code> as <code>true</code>. (You can't specify both a value and set <code>UsePreviousValue</code> to <code>true</code>.)</p></li>
     /// <li>
-    /// <p>To set an overridden parameter back to the value specified in the stack set, specify a parameter list but don't include the parameter in the list.</p></li>
+    /// <p>To set an overridden parameter back to the value specified in the StackSet, specify a parameter list but don't include the parameter in the list.</p></li>
     /// <li>
     /// <p>To leave all parameters set to their present values, don't specify this property at all.</p></li>
     /// </ul>
-    /// <p>During stack set updates, any parameter values overridden for a stack instance aren't updated, but retain their overridden value.</p>
-    /// <p>You can only override the parameter <i>values</i> that are specified in the stack set; to add or delete a parameter itself, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a> to update the stack set template.</p>
+    /// <p>During StackSet updates, any parameter values overridden for a stack instance aren't updated, but retain their overridden value.</p>
+    /// <p>You can only override the parameter <i>values</i> that are specified in the StackSet; to add or delete a parameter itself, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a> to update the StackSet template.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameter_overrides.is_none()`.
     pub fn parameter_overrides(&self) -> &[crate::types::Parameter] {
         self.parameter_overrides.as_deref().unwrap_or_default()
     }
-    /// <p>Preferences for how CloudFormation performs this stack set operation.</p>
+    /// <p>Preferences for how CloudFormation performs this StackSet operation.</p>
     pub fn operation_preferences(&self) -> ::std::option::Option<&crate::types::StackSetOperationPreferences> {
         self.operation_preferences.as_ref()
     }
-    /// <p>The unique identifier for this stack set operation.</p>
-    /// <p>The operation ID also functions as an idempotency token, to ensure that CloudFormation performs the stack set operation only once, even if you retry the request multiple times. You might retry stack set operation requests to ensure that CloudFormation successfully received them.</p>
+    /// <p>The unique identifier for this StackSet operation.</p>
+    /// <p>The operation ID also functions as an idempotency token, to ensure that CloudFormation performs the StackSet operation only once, even if you retry the request multiple times. You might retry StackSet operation requests to ensure that CloudFormation successfully received them.</p>
     /// <p>If you don't specify an operation ID, the SDK generates one automatically.</p>
-    /// <p>Repeating this stack set operation with a new operation ID retries all stack instances whose status is <code>OUTDATED</code>.</p>
+    /// <p>Repeating this StackSet operation with a new operation ID retries all stack instances whose status is <code>OUTDATED</code>.</p>
     pub fn operation_id(&self) -> ::std::option::Option<&str> {
         self.operation_id.as_deref()
     }
     /// <p>\[Service-managed permissions\] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
-    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
+    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for StackSets with self-managed permissions.</p>
     /// <ul>
     /// <li>
     /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p></li>
@@ -133,18 +133,18 @@ pub struct CreateStackInstancesInputBuilder {
     pub(crate) call_as: ::std::option::Option<crate::types::CallAs>,
 }
 impl CreateStackInstancesInputBuilder {
-    /// <p>The name or unique ID of the stack set that you want to create stack instances from.</p>
+    /// <p>The name or unique ID of the StackSet that you want to create stack instances from.</p>
     /// This field is required.
     pub fn stack_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_set_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name or unique ID of the stack set that you want to create stack instances from.</p>
+    /// <p>The name or unique ID of the StackSet that you want to create stack instances from.</p>
     pub fn set_stack_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stack_set_name = input;
         self
     }
-    /// <p>The name or unique ID of the stack set that you want to create stack instances from.</p>
+    /// <p>The name or unique ID of the StackSet that you want to create stack instances from.</p>
     pub fn get_stack_set_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.stack_set_name
     }
@@ -171,19 +171,19 @@ impl CreateStackInstancesInputBuilder {
     pub fn get_accounts(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.accounts
     }
-    /// <p>\[Service-managed permissions\] The Organizations accounts for which to create stack instances in the specified Amazon Web Services Regions.</p>
+    /// <p>\[Service-managed permissions\] The Organizations accounts in which to create stack instances in the specified Amazon Web Services Regions.</p>
     /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
     pub fn deployment_targets(mut self, input: crate::types::DeploymentTargets) -> Self {
         self.deployment_targets = ::std::option::Option::Some(input);
         self
     }
-    /// <p>\[Service-managed permissions\] The Organizations accounts for which to create stack instances in the specified Amazon Web Services Regions.</p>
+    /// <p>\[Service-managed permissions\] The Organizations accounts in which to create stack instances in the specified Amazon Web Services Regions.</p>
     /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
     pub fn set_deployment_targets(mut self, input: ::std::option::Option<crate::types::DeploymentTargets>) -> Self {
         self.deployment_targets = input;
         self
     }
-    /// <p>\[Service-managed permissions\] The Organizations accounts for which to create stack instances in the specified Amazon Web Services Regions.</p>
+    /// <p>\[Service-managed permissions\] The Organizations accounts in which to create stack instances in the specified Amazon Web Services Regions.</p>
     /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
     pub fn get_deployment_targets(&self) -> &::std::option::Option<crate::types::DeploymentTargets> {
         &self.deployment_targets
@@ -212,7 +212,7 @@ impl CreateStackInstancesInputBuilder {
     ///
     /// To override the contents of this collection use [`set_parameter_overrides`](Self::set_parameter_overrides).
     ///
-    /// <p>A list of stack set parameters whose values you want to override in the selected stack instances.</p>
+    /// <p>A list of StackSet parameters whose values you want to override in the selected stack instances.</p>
     /// <p>Any overridden parameter values will be applied to all stack instances in the specified accounts and Amazon Web Services Regions. When specifying parameters and their values, be aware of how CloudFormation sets parameter values during stack instance operations:</p>
     /// <ul>
     /// <li>
@@ -220,19 +220,19 @@ impl CreateStackInstancesInputBuilder {
     /// <li>
     /// <p>To leave an overridden parameter set to its present value, include the parameter and specify <code>UsePreviousValue</code> as <code>true</code>. (You can't specify both a value and set <code>UsePreviousValue</code> to <code>true</code>.)</p></li>
     /// <li>
-    /// <p>To set an overridden parameter back to the value specified in the stack set, specify a parameter list but don't include the parameter in the list.</p></li>
+    /// <p>To set an overridden parameter back to the value specified in the StackSet, specify a parameter list but don't include the parameter in the list.</p></li>
     /// <li>
     /// <p>To leave all parameters set to their present values, don't specify this property at all.</p></li>
     /// </ul>
-    /// <p>During stack set updates, any parameter values overridden for a stack instance aren't updated, but retain their overridden value.</p>
-    /// <p>You can only override the parameter <i>values</i> that are specified in the stack set; to add or delete a parameter itself, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a> to update the stack set template.</p>
+    /// <p>During StackSet updates, any parameter values overridden for a stack instance aren't updated, but retain their overridden value.</p>
+    /// <p>You can only override the parameter <i>values</i> that are specified in the StackSet; to add or delete a parameter itself, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a> to update the StackSet template.</p>
     pub fn parameter_overrides(mut self, input: crate::types::Parameter) -> Self {
         let mut v = self.parameter_overrides.unwrap_or_default();
         v.push(input);
         self.parameter_overrides = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of stack set parameters whose values you want to override in the selected stack instances.</p>
+    /// <p>A list of StackSet parameters whose values you want to override in the selected stack instances.</p>
     /// <p>Any overridden parameter values will be applied to all stack instances in the specified accounts and Amazon Web Services Regions. When specifying parameters and their values, be aware of how CloudFormation sets parameter values during stack instance operations:</p>
     /// <ul>
     /// <li>
@@ -240,17 +240,17 @@ impl CreateStackInstancesInputBuilder {
     /// <li>
     /// <p>To leave an overridden parameter set to its present value, include the parameter and specify <code>UsePreviousValue</code> as <code>true</code>. (You can't specify both a value and set <code>UsePreviousValue</code> to <code>true</code>.)</p></li>
     /// <li>
-    /// <p>To set an overridden parameter back to the value specified in the stack set, specify a parameter list but don't include the parameter in the list.</p></li>
+    /// <p>To set an overridden parameter back to the value specified in the StackSet, specify a parameter list but don't include the parameter in the list.</p></li>
     /// <li>
     /// <p>To leave all parameters set to their present values, don't specify this property at all.</p></li>
     /// </ul>
-    /// <p>During stack set updates, any parameter values overridden for a stack instance aren't updated, but retain their overridden value.</p>
-    /// <p>You can only override the parameter <i>values</i> that are specified in the stack set; to add or delete a parameter itself, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a> to update the stack set template.</p>
+    /// <p>During StackSet updates, any parameter values overridden for a stack instance aren't updated, but retain their overridden value.</p>
+    /// <p>You can only override the parameter <i>values</i> that are specified in the StackSet; to add or delete a parameter itself, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a> to update the StackSet template.</p>
     pub fn set_parameter_overrides(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>) -> Self {
         self.parameter_overrides = input;
         self
     }
-    /// <p>A list of stack set parameters whose values you want to override in the selected stack instances.</p>
+    /// <p>A list of StackSet parameters whose values you want to override in the selected stack instances.</p>
     /// <p>Any overridden parameter values will be applied to all stack instances in the specified accounts and Amazon Web Services Regions. When specifying parameters and their values, be aware of how CloudFormation sets parameter values during stack instance operations:</p>
     /// <ul>
     /// <li>
@@ -258,54 +258,54 @@ impl CreateStackInstancesInputBuilder {
     /// <li>
     /// <p>To leave an overridden parameter set to its present value, include the parameter and specify <code>UsePreviousValue</code> as <code>true</code>. (You can't specify both a value and set <code>UsePreviousValue</code> to <code>true</code>.)</p></li>
     /// <li>
-    /// <p>To set an overridden parameter back to the value specified in the stack set, specify a parameter list but don't include the parameter in the list.</p></li>
+    /// <p>To set an overridden parameter back to the value specified in the StackSet, specify a parameter list but don't include the parameter in the list.</p></li>
     /// <li>
     /// <p>To leave all parameters set to their present values, don't specify this property at all.</p></li>
     /// </ul>
-    /// <p>During stack set updates, any parameter values overridden for a stack instance aren't updated, but retain their overridden value.</p>
-    /// <p>You can only override the parameter <i>values</i> that are specified in the stack set; to add or delete a parameter itself, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a> to update the stack set template.</p>
+    /// <p>During StackSet updates, any parameter values overridden for a stack instance aren't updated, but retain their overridden value.</p>
+    /// <p>You can only override the parameter <i>values</i> that are specified in the StackSet; to add or delete a parameter itself, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a> to update the StackSet template.</p>
     pub fn get_parameter_overrides(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
         &self.parameter_overrides
     }
-    /// <p>Preferences for how CloudFormation performs this stack set operation.</p>
+    /// <p>Preferences for how CloudFormation performs this StackSet operation.</p>
     pub fn operation_preferences(mut self, input: crate::types::StackSetOperationPreferences) -> Self {
         self.operation_preferences = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Preferences for how CloudFormation performs this stack set operation.</p>
+    /// <p>Preferences for how CloudFormation performs this StackSet operation.</p>
     pub fn set_operation_preferences(mut self, input: ::std::option::Option<crate::types::StackSetOperationPreferences>) -> Self {
         self.operation_preferences = input;
         self
     }
-    /// <p>Preferences for how CloudFormation performs this stack set operation.</p>
+    /// <p>Preferences for how CloudFormation performs this StackSet operation.</p>
     pub fn get_operation_preferences(&self) -> &::std::option::Option<crate::types::StackSetOperationPreferences> {
         &self.operation_preferences
     }
-    /// <p>The unique identifier for this stack set operation.</p>
-    /// <p>The operation ID also functions as an idempotency token, to ensure that CloudFormation performs the stack set operation only once, even if you retry the request multiple times. You might retry stack set operation requests to ensure that CloudFormation successfully received them.</p>
+    /// <p>The unique identifier for this StackSet operation.</p>
+    /// <p>The operation ID also functions as an idempotency token, to ensure that CloudFormation performs the StackSet operation only once, even if you retry the request multiple times. You might retry StackSet operation requests to ensure that CloudFormation successfully received them.</p>
     /// <p>If you don't specify an operation ID, the SDK generates one automatically.</p>
-    /// <p>Repeating this stack set operation with a new operation ID retries all stack instances whose status is <code>OUTDATED</code>.</p>
+    /// <p>Repeating this StackSet operation with a new operation ID retries all stack instances whose status is <code>OUTDATED</code>.</p>
     pub fn operation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.operation_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier for this stack set operation.</p>
-    /// <p>The operation ID also functions as an idempotency token, to ensure that CloudFormation performs the stack set operation only once, even if you retry the request multiple times. You might retry stack set operation requests to ensure that CloudFormation successfully received them.</p>
+    /// <p>The unique identifier for this StackSet operation.</p>
+    /// <p>The operation ID also functions as an idempotency token, to ensure that CloudFormation performs the StackSet operation only once, even if you retry the request multiple times. You might retry StackSet operation requests to ensure that CloudFormation successfully received them.</p>
     /// <p>If you don't specify an operation ID, the SDK generates one automatically.</p>
-    /// <p>Repeating this stack set operation with a new operation ID retries all stack instances whose status is <code>OUTDATED</code>.</p>
+    /// <p>Repeating this StackSet operation with a new operation ID retries all stack instances whose status is <code>OUTDATED</code>.</p>
     pub fn set_operation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.operation_id = input;
         self
     }
-    /// <p>The unique identifier for this stack set operation.</p>
-    /// <p>The operation ID also functions as an idempotency token, to ensure that CloudFormation performs the stack set operation only once, even if you retry the request multiple times. You might retry stack set operation requests to ensure that CloudFormation successfully received them.</p>
+    /// <p>The unique identifier for this StackSet operation.</p>
+    /// <p>The operation ID also functions as an idempotency token, to ensure that CloudFormation performs the StackSet operation only once, even if you retry the request multiple times. You might retry StackSet operation requests to ensure that CloudFormation successfully received them.</p>
     /// <p>If you don't specify an operation ID, the SDK generates one automatically.</p>
-    /// <p>Repeating this stack set operation with a new operation ID retries all stack instances whose status is <code>OUTDATED</code>.</p>
+    /// <p>Repeating this StackSet operation with a new operation ID retries all stack instances whose status is <code>OUTDATED</code>.</p>
     pub fn get_operation_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.operation_id
     }
     /// <p>\[Service-managed permissions\] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
-    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
+    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for StackSets with self-managed permissions.</p>
     /// <ul>
     /// <li>
     /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p></li>
@@ -318,7 +318,7 @@ impl CreateStackInstancesInputBuilder {
         self
     }
     /// <p>\[Service-managed permissions\] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
-    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
+    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for StackSets with self-managed permissions.</p>
     /// <ul>
     /// <li>
     /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p></li>
@@ -331,7 +331,7 @@ impl CreateStackInstancesInputBuilder {
         self
     }
     /// <p>\[Service-managed permissions\] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
-    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
+    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for StackSets with self-managed permissions.</p>
     /// <ul>
     /// <li>
     /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p></li>

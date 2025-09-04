@@ -53,6 +53,11 @@ pub fn ser_create_db_proxy_endpoint_input_input_input(
         }
         list_20.finish();
     }
+    #[allow(unused_mut)]
+    let mut scope_22 = writer.prefix("EndpointNetworkType");
+    if let Some(var_23) = &input.endpoint_network_type {
+        scope_22.string(var_23.as_str());
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

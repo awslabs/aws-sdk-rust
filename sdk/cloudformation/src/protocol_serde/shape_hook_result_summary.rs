@@ -7,8 +7,21 @@ pub fn de_hook_result_summary(
     let mut builder = crate::types::HookResultSummary::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
-            s if s.matches("InvocationPoint") /* InvocationPoint com.amazonaws.cloudformation#HookResultSummary$InvocationPoint */ =>  {
+            s if s.matches("HookResultId") /* HookResultId com.amazonaws.cloudformation#HookResultSummary$HookResultId */ =>  {
                 let var_1 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_hook_result_id(var_1);
+            }
+            ,
+            s if s.matches("InvocationPoint") /* InvocationPoint com.amazonaws.cloudformation#HookResultSummary$InvocationPoint */ =>  {
+                let var_2 =
                     Some(
                         Result::<crate::types::HookInvocationPoint, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::HookInvocationPoint::from(
@@ -18,11 +31,11 @@ pub fn de_hook_result_summary(
                         ?
                     )
                 ;
-                builder = builder.set_invocation_point(var_1);
+                builder = builder.set_invocation_point(var_2);
             }
             ,
             s if s.matches("FailureMode") /* FailureMode com.amazonaws.cloudformation#HookResultSummary$FailureMode */ =>  {
-                let var_2 =
+                let var_3 =
                     Some(
                         Result::<crate::types::HookFailureMode, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::HookFailureMode::from(
@@ -32,23 +45,10 @@ pub fn de_hook_result_summary(
                         ?
                     )
                 ;
-                builder = builder.set_failure_mode(var_2);
+                builder = builder.set_failure_mode(var_3);
             }
             ,
             s if s.matches("TypeName") /* TypeName com.amazonaws.cloudformation#HookResultSummary$TypeName */ =>  {
-                let var_3 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_type_name(var_3);
-            }
-            ,
-            s if s.matches("TypeVersionId") /* TypeVersionId com.amazonaws.cloudformation#HookResultSummary$TypeVersionId */ =>  {
                 let var_4 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -58,10 +58,10 @@ pub fn de_hook_result_summary(
                         ?
                     )
                 ;
-                builder = builder.set_type_version_id(var_4);
+                builder = builder.set_type_name(var_4);
             }
             ,
-            s if s.matches("TypeConfigurationVersionId") /* TypeConfigurationVersionId com.amazonaws.cloudformation#HookResultSummary$TypeConfigurationVersionId */ =>  {
+            s if s.matches("TypeVersionId") /* TypeVersionId com.amazonaws.cloudformation#HookResultSummary$TypeVersionId */ =>  {
                 let var_5 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -71,11 +71,24 @@ pub fn de_hook_result_summary(
                         ?
                     )
                 ;
-                builder = builder.set_type_configuration_version_id(var_5);
+                builder = builder.set_type_version_id(var_5);
+            }
+            ,
+            s if s.matches("TypeConfigurationVersionId") /* TypeConfigurationVersionId com.amazonaws.cloudformation#HookResultSummary$TypeConfigurationVersionId */ =>  {
+                let var_6 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_type_configuration_version_id(var_6);
             }
             ,
             s if s.matches("Status") /* Status com.amazonaws.cloudformation#HookResultSummary$Status */ =>  {
-                let var_6 =
+                let var_7 =
                     Some(
                         Result::<crate::types::HookStatus, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::HookStatus::from(
@@ -85,11 +98,11 @@ pub fn de_hook_result_summary(
                         ?
                     )
                 ;
-                builder = builder.set_status(var_6);
+                builder = builder.set_status(var_7);
             }
             ,
             s if s.matches("HookStatusReason") /* HookStatusReason com.amazonaws.cloudformation#HookResultSummary$HookStatusReason */ =>  {
-                let var_7 =
+                let var_8 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -98,7 +111,74 @@ pub fn de_hook_result_summary(
                         ?
                     )
                 ;
-                builder = builder.set_hook_status_reason(var_7);
+                builder = builder.set_hook_status_reason(var_8);
+            }
+            ,
+            s if s.matches("InvokedAt") /* InvokedAt com.amazonaws.cloudformation#HookResultSummary$InvokedAt */ =>  {
+                let var_9 =
+                    Some(
+                        ::aws_smithy_types::DateTime::from_str(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            , ::aws_smithy_types::date_time::Format::DateTimeWithOffset
+                        )
+                        .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (timestamp: `com.amazonaws.cloudformation#Timestamp`)"))
+                        ?
+                    )
+                ;
+                builder = builder.set_invoked_at(var_9);
+            }
+            ,
+            s if s.matches("TargetType") /* TargetType com.amazonaws.cloudformation#HookResultSummary$TargetType */ =>  {
+                let var_10 =
+                    Some(
+                        Result::<crate::types::ListHookResultsTargetType, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::ListHookResultsTargetType::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_target_type(var_10);
+            }
+            ,
+            s if s.matches("TargetId") /* TargetId com.amazonaws.cloudformation#HookResultSummary$TargetId */ =>  {
+                let var_11 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_target_id(var_11);
+            }
+            ,
+            s if s.matches("TypeArn") /* TypeArn com.amazonaws.cloudformation#HookResultSummary$TypeArn */ =>  {
+                let var_12 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_type_arn(var_12);
+            }
+            ,
+            s if s.matches("HookExecutionTarget") /* HookExecutionTarget com.amazonaws.cloudformation#HookResultSummary$HookExecutionTarget */ =>  {
+                let var_13 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_hook_execution_target(var_13);
             }
             ,
             _ => {}

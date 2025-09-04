@@ -22,7 +22,7 @@ impl crate::operation::list_types::builders::ListTypesInputBuilder {
 }
 /// Fluent builder constructing a request to `ListTypes`.
 ///
-/// <p>Returns summary information about extension that have been registered with CloudFormation.</p>
+/// <p>Returns summary information about all extensions, including your private resource types, modules, and Hooks as well as all public extensions from Amazon Web Services and third-party publishers.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListTypesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

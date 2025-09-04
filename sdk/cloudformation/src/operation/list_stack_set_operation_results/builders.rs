@@ -22,7 +22,7 @@ impl crate::operation::list_stack_set_operation_results::builders::ListStackSetO
 }
 /// Fluent builder constructing a request to `ListStackSetOperationResults`.
 ///
-/// <p>Returns summary information about the results of a stack set operation.</p><note>
+/// <p>Returns summary information about the results of a StackSet operation.</p><note>
 /// <p>This API provides <i>eventually consistent</i> reads meaning it may take some time but will eventually return the most up-to-date data.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -116,31 +116,31 @@ impl ListStackSetOperationResultsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_stack_set_operation_results::paginator::ListStackSetOperationResultsPaginator {
         crate::operation::list_stack_set_operation_results::paginator::ListStackSetOperationResultsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The name or unique ID of the stack set that you want to get operation results for.</p>
+    /// <p>The name or unique ID of the StackSet that you want to get operation results for.</p>
     pub fn stack_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stack_set_name(input.into());
         self
     }
-    /// <p>The name or unique ID of the stack set that you want to get operation results for.</p>
+    /// <p>The name or unique ID of the StackSet that you want to get operation results for.</p>
     pub fn set_stack_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stack_set_name(input);
         self
     }
-    /// <p>The name or unique ID of the stack set that you want to get operation results for.</p>
+    /// <p>The name or unique ID of the StackSet that you want to get operation results for.</p>
     pub fn get_stack_set_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_stack_set_name()
     }
-    /// <p>The ID of the stack set operation.</p>
+    /// <p>The ID of the StackSet operation.</p>
     pub fn operation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.operation_id(input.into());
         self
     }
-    /// <p>The ID of the stack set operation.</p>
+    /// <p>The ID of the StackSet operation.</p>
     pub fn set_operation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_operation_id(input);
         self
     }
-    /// <p>The ID of the stack set operation.</p>
+    /// <p>The ID of the StackSet operation.</p>
     pub fn get_operation_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_operation_id()
     }
@@ -173,7 +173,7 @@ impl ListStackSetOperationResultsFluentBuilder {
         self.inner.get_max_results()
     }
     /// <p>\[Service-managed permissions\] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
-    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
+    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for StackSets with self-managed permissions.</p>
     /// <ul>
     /// <li>
     /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p></li>
@@ -186,7 +186,7 @@ impl ListStackSetOperationResultsFluentBuilder {
         self
     }
     /// <p>\[Service-managed permissions\] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
-    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
+    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for StackSets with self-managed permissions.</p>
     /// <ul>
     /// <li>
     /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p></li>
@@ -199,7 +199,7 @@ impl ListStackSetOperationResultsFluentBuilder {
         self
     }
     /// <p>\[Service-managed permissions\] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
-    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
+    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for StackSets with self-managed permissions.</p>
     /// <ul>
     /// <li>
     /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p></li>

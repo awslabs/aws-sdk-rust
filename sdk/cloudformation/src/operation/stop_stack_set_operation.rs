@@ -266,7 +266,7 @@ pub enum StopStackSetOperationError {
     InvalidOperationException(crate::types::error::InvalidOperationException),
     /// <p>The specified ID refers to an operation that doesn't exist.</p>
     OperationNotFoundException(crate::types::error::OperationNotFoundException),
-    /// <p>The specified stack set doesn't exist.</p>
+    /// <p>The specified StackSet doesn't exist.</p>
     StackSetNotFoundException(crate::types::error::StackSetNotFoundException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

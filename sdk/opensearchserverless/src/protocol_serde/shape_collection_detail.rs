@@ -98,6 +98,9 @@ where
                                     .transpose()?,
                             );
                         }
+                        "fipsEndpoints" => {
+                            builder = builder.set_fips_endpoints(crate::protocol_serde::shape_fips_endpoints::de_fips_endpoints(tokens)?);
+                        }
                         "failureCode" => {
                             builder = builder.set_failure_code(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

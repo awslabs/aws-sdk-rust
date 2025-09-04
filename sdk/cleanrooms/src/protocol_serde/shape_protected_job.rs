@@ -70,6 +70,11 @@ where
                             "error" => {
                                 builder = builder.set_error(crate::protocol_serde::shape_protected_job_error::de_protected_job_error(tokens)?);
                             }
+                            "computeConfiguration" => {
+                                builder = builder.set_compute_configuration(
+                                    crate::protocol_serde::shape_protected_job_compute_configuration::de_protected_job_compute_configuration(tokens)?,
+                                );
+                            }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

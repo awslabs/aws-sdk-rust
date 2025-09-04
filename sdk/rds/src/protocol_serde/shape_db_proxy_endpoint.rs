@@ -149,6 +149,20 @@ pub fn de_db_proxy_endpoint(
                 builder = builder.set_is_default(var_11);
             }
             ,
+            s if s.matches("EndpointNetworkType") /* EndpointNetworkType com.amazonaws.rds#DBProxyEndpoint$EndpointNetworkType */ =>  {
+                let var_12 =
+                    Some(
+                        Result::<crate::types::EndpointNetworkType, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::EndpointNetworkType::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_endpoint_network_type(var_12);
+            }
+            ,
             _ => {}
         }
     }

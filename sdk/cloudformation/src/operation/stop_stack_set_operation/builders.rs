@@ -22,7 +22,7 @@ impl crate::operation::stop_stack_set_operation::builders::StopStackSetOperation
 }
 /// Fluent builder constructing a request to `StopStackSetOperation`.
 ///
-/// <p>Stops an in-progress operation on a stack set and its associated stack instances. StackSets will cancel all the unstarted stack instance deployments and wait for those are in-progress to complete.</p>
+/// <p>Stops an in-progress operation on a StackSet and its associated stack instances. StackSets will cancel all the unstarted stack instance deployments and wait for those are in-progress to complete.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StopStackSetOperationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl StopStackSetOperationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name or unique ID of the stack set that you want to stop the operation for.</p>
+    /// <p>The name or unique ID of the StackSet that you want to stop the operation for.</p>
     pub fn stack_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stack_set_name(input.into());
         self
     }
-    /// <p>The name or unique ID of the stack set that you want to stop the operation for.</p>
+    /// <p>The name or unique ID of the StackSet that you want to stop the operation for.</p>
     pub fn set_stack_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stack_set_name(input);
         self
     }
-    /// <p>The name or unique ID of the stack set that you want to stop the operation for.</p>
+    /// <p>The name or unique ID of the StackSet that you want to stop the operation for.</p>
     pub fn get_stack_set_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_stack_set_name()
     }
@@ -136,8 +136,8 @@ impl StopStackSetOperationFluentBuilder {
     pub fn get_operation_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_operation_id()
     }
-    /// <p>\[Service-managed permissions\] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
-    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
+    /// <p>Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account. Valid only if the StackSet uses service-managed permissions.</p>
+    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for StackSets with self-managed permissions.</p>
     /// <ul>
     /// <li>
     /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p></li>
@@ -149,8 +149,8 @@ impl StopStackSetOperationFluentBuilder {
         self.inner = self.inner.call_as(input);
         self
     }
-    /// <p>\[Service-managed permissions\] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
-    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
+    /// <p>Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account. Valid only if the StackSet uses service-managed permissions.</p>
+    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for StackSets with self-managed permissions.</p>
     /// <ul>
     /// <li>
     /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p></li>
@@ -162,8 +162,8 @@ impl StopStackSetOperationFluentBuilder {
         self.inner = self.inner.set_call_as(input);
         self
     }
-    /// <p>\[Service-managed permissions\] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
-    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
+    /// <p>Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account. Valid only if the StackSet uses service-managed permissions.</p>
+    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for StackSets with self-managed permissions.</p>
     /// <ul>
     /// <li>
     /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p></li>

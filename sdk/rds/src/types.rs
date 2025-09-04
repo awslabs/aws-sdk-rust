@@ -193,11 +193,15 @@ pub use crate::types::_connection_pool_configuration::ConnectionPoolConfiguratio
 
 pub use crate::types::_db_proxy_endpoint::DbProxyEndpoint;
 
+pub use crate::types::_endpoint_network_type::EndpointNetworkType;
+
 pub use crate::types::_db_proxy_endpoint_target_role::DbProxyEndpointTargetRole;
 
 pub use crate::types::_db_proxy_endpoint_status::DbProxyEndpointStatus;
 
 pub use crate::types::_db_proxy::DbProxy;
+
+pub use crate::types::_target_connection_network_type::TargetConnectionNetworkType;
 
 pub use crate::types::_user_auth_config_info::UserAuthConfigInfo;
 
@@ -443,6 +447,8 @@ mod _ec2_security_group;
 
 mod _endpoint;
 
+mod _endpoint_network_type;
+
 mod _engine_defaults;
 
 mod _engine_family;
@@ -584,6 +590,8 @@ mod _supported_engine_lifecycle;
 mod _switchover_detail;
 
 mod _tag;
+
+mod _target_connection_network_type;
 
 mod _target_health;
 

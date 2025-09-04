@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeStackSetOutput {
-    /// <p>The specified stack set.</p>
+    /// <p>The specified StackSet.</p>
     pub stack_set: ::std::option::Option<crate::types::StackSet>,
     _request_id: Option<String>,
 }
 impl DescribeStackSetOutput {
-    /// <p>The specified stack set.</p>
+    /// <p>The specified StackSet.</p>
     pub fn stack_set(&self) -> ::std::option::Option<&crate::types::StackSet> {
         self.stack_set.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct DescribeStackSetOutputBuilder {
     _request_id: Option<String>,
 }
 impl DescribeStackSetOutputBuilder {
-    /// <p>The specified stack set.</p>
+    /// <p>The specified StackSet.</p>
     pub fn stack_set(mut self, input: crate::types::StackSet) -> Self {
         self.stack_set = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The specified stack set.</p>
+    /// <p>The specified StackSet.</p>
     pub fn set_stack_set(mut self, input: ::std::option::Option<crate::types::StackSet>) -> Self {
         self.stack_set = input;
         self
     }
-    /// <p>The specified stack set.</p>
+    /// <p>The specified StackSet.</p>
     pub fn get_stack_set(&self) -> &::std::option::Option<crate::types::StackSet> {
         &self.stack_set
     }

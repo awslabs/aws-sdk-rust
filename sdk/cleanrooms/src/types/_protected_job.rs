@@ -24,6 +24,8 @@ pub struct ProtectedJob {
     pub result: ::std::option::Option<crate::types::ProtectedJobResult>,
     /// <p>The error from the protected job.</p>
     pub error: ::std::option::Option<crate::types::ProtectedJobError>,
+    /// <p>The compute configuration for the protected job.</p>
+    pub compute_configuration: ::std::option::Option<crate::types::ProtectedJobComputeConfiguration>,
 }
 impl ProtectedJob {
     /// <p>The identifier for a protected job instance.</p>
@@ -69,6 +71,10 @@ impl ProtectedJob {
     pub fn error(&self) -> ::std::option::Option<&crate::types::ProtectedJobError> {
         self.error.as_ref()
     }
+    /// <p>The compute configuration for the protected job.</p>
+    pub fn compute_configuration(&self) -> ::std::option::Option<&crate::types::ProtectedJobComputeConfiguration> {
+        self.compute_configuration.as_ref()
+    }
 }
 impl ProtectedJob {
     /// Creates a new builder-style object to manufacture [`ProtectedJob`](crate::types::ProtectedJob).
@@ -91,6 +97,7 @@ pub struct ProtectedJobBuilder {
     pub(crate) statistics: ::std::option::Option<crate::types::ProtectedJobStatistics>,
     pub(crate) result: ::std::option::Option<crate::types::ProtectedJobResult>,
     pub(crate) error: ::std::option::Option<crate::types::ProtectedJobError>,
+    pub(crate) compute_configuration: ::std::option::Option<crate::types::ProtectedJobComputeConfiguration>,
 }
 impl ProtectedJobBuilder {
     /// <p>The identifier for a protected job instance.</p>
@@ -238,6 +245,20 @@ impl ProtectedJobBuilder {
     pub fn get_error(&self) -> &::std::option::Option<crate::types::ProtectedJobError> {
         &self.error
     }
+    /// <p>The compute configuration for the protected job.</p>
+    pub fn compute_configuration(mut self, input: crate::types::ProtectedJobComputeConfiguration) -> Self {
+        self.compute_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The compute configuration for the protected job.</p>
+    pub fn set_compute_configuration(mut self, input: ::std::option::Option<crate::types::ProtectedJobComputeConfiguration>) -> Self {
+        self.compute_configuration = input;
+        self
+    }
+    /// <p>The compute configuration for the protected job.</p>
+    pub fn get_compute_configuration(&self) -> &::std::option::Option<crate::types::ProtectedJobComputeConfiguration> {
+        &self.compute_configuration
+    }
     /// Consumes the builder and constructs a [`ProtectedJob`](crate::types::ProtectedJob).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::ProtectedJobBuilder::id)
@@ -282,6 +303,7 @@ impl ProtectedJobBuilder {
             statistics: self.statistics,
             result: self.result,
             error: self.error,
+            compute_configuration: self.compute_configuration,
         })
     }
 }

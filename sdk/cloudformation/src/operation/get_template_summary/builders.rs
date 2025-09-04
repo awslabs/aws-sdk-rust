@@ -22,8 +22,8 @@ impl crate::operation::get_template_summary::builders::GetTemplateSummaryInputBu
 }
 /// Fluent builder constructing a request to `GetTemplateSummary`.
 ///
-/// <p>Returns information about a new or existing template. The <code>GetTemplateSummary</code> action is useful for viewing parameter information, such as default parameter values and parameter types, before you create or update a stack or stack set.</p>
-/// <p>You can use the <code>GetTemplateSummary</code> action when you submit a template, or you can get template information for a stack set, or a running or deleted stack.</p>
+/// <p>Returns information about a new or existing template. The <code>GetTemplateSummary</code> action is useful for viewing parameter information, such as default parameter values and parameter types, before you create or update a stack or StackSet.</p>
+/// <p>You can use the <code>GetTemplateSummary</code> action when you submit a template, or you can get template information for a StackSet, or a running or deleted stack.</p>
 /// <p>For deleted stacks, <code>GetTemplateSummary</code> returns the template information for up to 90 days after the stack has been deleted. If the template doesn't exist, a <code>ValidationError</code> is returned.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetTemplateSummaryFluentBuilder {
@@ -161,25 +161,25 @@ impl GetTemplateSummaryFluentBuilder {
     pub fn get_stack_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_stack_name()
     }
-    /// <p>The name or unique ID of the stack set from which the stack was created.</p>
+    /// <p>The name or unique ID of the StackSet from which the stack was created.</p>
     /// <p>Conditional: You must specify only one of the following parameters: <code>StackName</code>, <code>StackSetName</code>, <code>TemplateBody</code>, or <code>TemplateURL</code>.</p>
     pub fn stack_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stack_set_name(input.into());
         self
     }
-    /// <p>The name or unique ID of the stack set from which the stack was created.</p>
+    /// <p>The name or unique ID of the StackSet from which the stack was created.</p>
     /// <p>Conditional: You must specify only one of the following parameters: <code>StackName</code>, <code>StackSetName</code>, <code>TemplateBody</code>, or <code>TemplateURL</code>.</p>
     pub fn set_stack_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stack_set_name(input);
         self
     }
-    /// <p>The name or unique ID of the stack set from which the stack was created.</p>
+    /// <p>The name or unique ID of the StackSet from which the stack was created.</p>
     /// <p>Conditional: You must specify only one of the following parameters: <code>StackName</code>, <code>StackSetName</code>, <code>TemplateBody</code>, or <code>TemplateURL</code>.</p>
     pub fn get_stack_set_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_stack_set_name()
     }
     /// <p>\[Service-managed permissions\] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
-    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
+    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for StackSets with self-managed permissions.</p>
     /// <ul>
     /// <li>
     /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p></li>
@@ -192,7 +192,7 @@ impl GetTemplateSummaryFluentBuilder {
         self
     }
     /// <p>\[Service-managed permissions\] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
-    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
+    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for StackSets with self-managed permissions.</p>
     /// <ul>
     /// <li>
     /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p></li>
@@ -205,7 +205,7 @@ impl GetTemplateSummaryFluentBuilder {
         self
     }
     /// <p>\[Service-managed permissions\] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
-    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
+    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for StackSets with self-managed permissions.</p>
     /// <ul>
     /// <li>
     /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p></li>

@@ -273,11 +273,11 @@ pub enum DeleteStackInstancesError {
     InvalidOperationException(crate::types::error::InvalidOperationException),
     /// <p>The specified operation ID already exists.</p>
     OperationIdAlreadyExistsException(crate::types::error::OperationIdAlreadyExistsException),
-    /// <p>Another operation is currently in progress for this stack set. Only one operation can be performed for a stack set at a given time.</p>
+    /// <p>Another operation is currently in progress for this StackSet. Only one operation can be performed for a stack set at a given time.</p>
     OperationInProgressException(crate::types::error::OperationInProgressException),
-    /// <p>The specified stack set doesn't exist.</p>
+    /// <p>The specified StackSet doesn't exist.</p>
     StackSetNotFoundException(crate::types::error::StackSetNotFoundException),
-    /// <p>Another operation has been performed on this stack set since the specified operation was performed.</p>
+    /// <p>Another operation has been performed on this StackSet since the specified operation was performed.</p>
     StaleRequestException(crate::types::error::StaleRequestException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

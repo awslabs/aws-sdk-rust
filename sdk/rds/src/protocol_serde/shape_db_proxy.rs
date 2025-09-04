@@ -202,6 +202,34 @@ pub fn de_db_proxy(
                 builder = builder.set_updated_date(var_15);
             }
             ,
+            s if s.matches("EndpointNetworkType") /* EndpointNetworkType com.amazonaws.rds#DBProxy$EndpointNetworkType */ =>  {
+                let var_16 =
+                    Some(
+                        Result::<crate::types::EndpointNetworkType, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::EndpointNetworkType::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_endpoint_network_type(var_16);
+            }
+            ,
+            s if s.matches("TargetConnectionNetworkType") /* TargetConnectionNetworkType com.amazonaws.rds#DBProxy$TargetConnectionNetworkType */ =>  {
+                let var_17 =
+                    Some(
+                        Result::<crate::types::TargetConnectionNetworkType, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::TargetConnectionNetworkType::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_target_connection_network_type(var_17);
+            }
+            ,
             _ => {}
         }
     }

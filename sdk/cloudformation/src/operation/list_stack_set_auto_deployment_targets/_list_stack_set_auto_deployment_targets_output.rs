@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListStackSetAutoDeploymentTargetsOutput {
-    /// <p>An array of summaries of the deployment targets for the stack set.</p>
+    /// <p>An array of summaries of the deployment targets for the StackSet.</p>
     pub summaries: ::std::option::Option<::std::vec::Vec<crate::types::StackSetAutoDeploymentTargetSummary>>,
     /// <p>If the request doesn't return all the remaining results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListStackSetAutoDeploymentTargets.html">ListStackSetAutoDeploymentTargets</a> again and use that value for the <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to an empty string.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListStackSetAutoDeploymentTargetsOutput {
-    /// <p>An array of summaries of the deployment targets for the stack set.</p>
+    /// <p>An array of summaries of the deployment targets for the StackSet.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.summaries.is_none()`.
     pub fn summaries(&self) -> &[crate::types::StackSetAutoDeploymentTargetSummary] {
@@ -46,19 +46,19 @@ impl ListStackSetAutoDeploymentTargetsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_summaries`](Self::set_summaries).
     ///
-    /// <p>An array of summaries of the deployment targets for the stack set.</p>
+    /// <p>An array of summaries of the deployment targets for the StackSet.</p>
     pub fn summaries(mut self, input: crate::types::StackSetAutoDeploymentTargetSummary) -> Self {
         let mut v = self.summaries.unwrap_or_default();
         v.push(input);
         self.summaries = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of summaries of the deployment targets for the stack set.</p>
+    /// <p>An array of summaries of the deployment targets for the StackSet.</p>
     pub fn set_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StackSetAutoDeploymentTargetSummary>>) -> Self {
         self.summaries = input;
         self
     }
-    /// <p>An array of summaries of the deployment targets for the stack set.</p>
+    /// <p>An array of summaries of the deployment targets for the StackSet.</p>
     pub fn get_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StackSetAutoDeploymentTargetSummary>> {
         &self.summaries
     }

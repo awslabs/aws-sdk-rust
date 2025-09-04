@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListStackSetsOutput {
-    /// <p>A list of <code>StackSetSummary</code> structures that contain information about the user's stack sets.</p>
+    /// <p>A list of <code>StackSetSummary</code> structures that contain information about the user's StackSets.</p>
     pub summaries: ::std::option::Option<::std::vec::Vec<crate::types::StackSetSummary>>,
     /// <p>If the request doesn't return all of the remaining results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call <code>ListStackInstances</code> again and assign that token to the request object's <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to <code>null</code>.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListStackSetsOutput {
-    /// <p>A list of <code>StackSetSummary</code> structures that contain information about the user's stack sets.</p>
+    /// <p>A list of <code>StackSetSummary</code> structures that contain information about the user's StackSets.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.summaries.is_none()`.
     pub fn summaries(&self) -> &[crate::types::StackSetSummary] {
@@ -46,19 +46,19 @@ impl ListStackSetsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_summaries`](Self::set_summaries).
     ///
-    /// <p>A list of <code>StackSetSummary</code> structures that contain information about the user's stack sets.</p>
+    /// <p>A list of <code>StackSetSummary</code> structures that contain information about the user's StackSets.</p>
     pub fn summaries(mut self, input: crate::types::StackSetSummary) -> Self {
         let mut v = self.summaries.unwrap_or_default();
         v.push(input);
         self.summaries = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of <code>StackSetSummary</code> structures that contain information about the user's stack sets.</p>
+    /// <p>A list of <code>StackSetSummary</code> structures that contain information about the user's StackSets.</p>
     pub fn set_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StackSetSummary>>) -> Self {
         self.summaries = input;
         self
     }
-    /// <p>A list of <code>StackSetSummary</code> structures that contain information about the user's stack sets.</p>
+    /// <p>A list of <code>StackSetSummary</code> structures that contain information about the user's StackSets.</p>
     pub fn get_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StackSetSummary>> {
         &self.summaries
     }

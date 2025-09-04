@@ -268,7 +268,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListStackSetA
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum ListStackSetAutoDeploymentTargetsError {
-    /// <p>The specified stack set doesn't exist.</p>
+    /// <p>The specified StackSet doesn't exist.</p>
     StackSetNotFoundException(crate::types::error::StackSetNotFoundException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

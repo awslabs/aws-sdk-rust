@@ -11,6 +11,8 @@ pub struct StartProtectedJobInput {
     pub job_parameters: ::std::option::Option<crate::types::ProtectedJobParameters>,
     /// <p>The details needed to write the job results.</p>
     pub result_configuration: ::std::option::Option<crate::types::ProtectedJobResultConfigurationInput>,
+    /// <p>The compute configuration for the protected job.</p>
+    pub compute_configuration: ::std::option::Option<crate::types::ProtectedJobComputeConfiguration>,
 }
 impl StartProtectedJobInput {
     /// <p>The type of protected job to start.</p>
@@ -29,6 +31,10 @@ impl StartProtectedJobInput {
     pub fn result_configuration(&self) -> ::std::option::Option<&crate::types::ProtectedJobResultConfigurationInput> {
         self.result_configuration.as_ref()
     }
+    /// <p>The compute configuration for the protected job.</p>
+    pub fn compute_configuration(&self) -> ::std::option::Option<&crate::types::ProtectedJobComputeConfiguration> {
+        self.compute_configuration.as_ref()
+    }
 }
 impl StartProtectedJobInput {
     /// Creates a new builder-style object to manufacture [`StartProtectedJobInput`](crate::operation::start_protected_job::StartProtectedJobInput).
@@ -45,6 +51,7 @@ pub struct StartProtectedJobInputBuilder {
     pub(crate) membership_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) job_parameters: ::std::option::Option<crate::types::ProtectedJobParameters>,
     pub(crate) result_configuration: ::std::option::Option<crate::types::ProtectedJobResultConfigurationInput>,
+    pub(crate) compute_configuration: ::std::option::Option<crate::types::ProtectedJobComputeConfiguration>,
 }
 impl StartProtectedJobInputBuilder {
     /// <p>The type of protected job to start.</p>
@@ -106,6 +113,20 @@ impl StartProtectedJobInputBuilder {
     pub fn get_result_configuration(&self) -> &::std::option::Option<crate::types::ProtectedJobResultConfigurationInput> {
         &self.result_configuration
     }
+    /// <p>The compute configuration for the protected job.</p>
+    pub fn compute_configuration(mut self, input: crate::types::ProtectedJobComputeConfiguration) -> Self {
+        self.compute_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The compute configuration for the protected job.</p>
+    pub fn set_compute_configuration(mut self, input: ::std::option::Option<crate::types::ProtectedJobComputeConfiguration>) -> Self {
+        self.compute_configuration = input;
+        self
+    }
+    /// <p>The compute configuration for the protected job.</p>
+    pub fn get_compute_configuration(&self) -> &::std::option::Option<crate::types::ProtectedJobComputeConfiguration> {
+        &self.compute_configuration
+    }
     /// Consumes the builder and constructs a [`StartProtectedJobInput`](crate::operation::start_protected_job::StartProtectedJobInput).
     pub fn build(
         self,
@@ -115,6 +136,7 @@ impl StartProtectedJobInputBuilder {
             membership_identifier: self.membership_identifier,
             job_parameters: self.job_parameters,
             result_configuration: self.result_configuration,
+            compute_configuration: self.compute_configuration,
         })
     }
 }

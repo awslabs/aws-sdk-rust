@@ -53,6 +53,12 @@ pub fn ser_attribute_value(
         crate::types::AttributeValue::Decimal(inner) => {
             object_4.key("decimal").string(inner.as_str());
         }
+        crate::types::AttributeValue::Datetime(inner) => {
+            object_4.key("datetime").string(inner.as_str());
+        }
+        crate::types::AttributeValue::Duration(inner) => {
+            object_4.key("duration").string(inner.as_str());
+        }
         crate::types::AttributeValue::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "AttributeValue",
@@ -139,6 +145,22 @@ where
                                 .transpose()?
                                 .ok_or_else(|| {
                                     ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'decimal' cannot be null")
+                                })?,
+                        )),
+                        "datetime" => Some(crate::types::AttributeValue::Datetime(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'datetime' cannot be null")
+                                })?,
+                        )),
+                        "duration" => Some(crate::types::AttributeValue::Duration(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'duration' cannot be null")
                                 })?,
                         )),
                         _ => {

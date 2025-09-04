@@ -109,17 +109,17 @@ impl DescribeStackInstanceFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name or the unique stack ID of the stack set that you want to get stack instance information for.</p>
+    /// <p>The name or the unique stack ID of the StackSet that you want to get stack instance information for.</p>
     pub fn stack_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stack_set_name(input.into());
         self
     }
-    /// <p>The name or the unique stack ID of the stack set that you want to get stack instance information for.</p>
+    /// <p>The name or the unique stack ID of the StackSet that you want to get stack instance information for.</p>
     pub fn set_stack_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stack_set_name(input);
         self
     }
-    /// <p>The name or the unique stack ID of the stack set that you want to get stack instance information for.</p>
+    /// <p>The name or the unique stack ID of the StackSet that you want to get stack instance information for.</p>
     pub fn get_stack_set_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_stack_set_name()
     }
@@ -152,7 +152,7 @@ impl DescribeStackInstanceFluentBuilder {
         self.inner.get_stack_instance_region()
     }
     /// <p>\[Service-managed permissions\] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
-    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
+    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for StackSets with self-managed permissions.</p>
     /// <ul>
     /// <li>
     /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p></li>
@@ -165,7 +165,7 @@ impl DescribeStackInstanceFluentBuilder {
         self
     }
     /// <p>\[Service-managed permissions\] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
-    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
+    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for StackSets with self-managed permissions.</p>
     /// <ul>
     /// <li>
     /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p></li>
@@ -178,7 +178,7 @@ impl DescribeStackInstanceFluentBuilder {
         self
     }
     /// <p>\[Service-managed permissions\] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
-    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
+    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for StackSets with self-managed permissions.</p>
     /// <ul>
     /// <li>
     /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p></li>

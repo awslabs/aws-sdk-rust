@@ -22,7 +22,7 @@ impl crate::operation::list_stack_instances::builders::ListStackInstancesInputBu
 }
 /// Fluent builder constructing a request to `ListStackInstances`.
 ///
-/// <p>Returns summary information about stack instances that are associated with the specified stack set. You can filter for stack instances that are associated with a specific Amazon Web Services account name or Region, or that have a specific status.</p>
+/// <p>Returns summary information about stack instances that are associated with the specified StackSet. You can filter for stack instances that are associated with a specific Amazon Web Services account name or Region, or that have a specific status.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListStackInstancesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,17 +114,17 @@ impl ListStackInstancesFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_stack_instances::paginator::ListStackInstancesPaginator {
         crate::operation::list_stack_instances::paginator::ListStackInstancesPaginator::new(self.handle, self.inner)
     }
-    /// <p>The name or unique ID of the stack set that you want to list stack instances for.</p>
+    /// <p>The name or unique ID of the StackSet that you want to list stack instances for.</p>
     pub fn stack_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stack_set_name(input.into());
         self
     }
-    /// <p>The name or unique ID of the stack set that you want to list stack instances for.</p>
+    /// <p>The name or unique ID of the StackSet that you want to list stack instances for.</p>
     pub fn set_stack_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stack_set_name(input);
         self
     }
-    /// <p>The name or unique ID of the stack set that you want to list stack instances for.</p>
+    /// <p>The name or unique ID of the StackSet that you want to list stack instances for.</p>
     pub fn get_stack_set_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_stack_set_name()
     }
@@ -204,7 +204,7 @@ impl ListStackInstancesFluentBuilder {
         self.inner.get_stack_instance_region()
     }
     /// <p>\[Service-managed permissions\] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
-    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
+    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for StackSets with self-managed permissions.</p>
     /// <ul>
     /// <li>
     /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p></li>
@@ -217,7 +217,7 @@ impl ListStackInstancesFluentBuilder {
         self
     }
     /// <p>\[Service-managed permissions\] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
-    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
+    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for StackSets with self-managed permissions.</p>
     /// <ul>
     /// <li>
     /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p></li>
@@ -230,7 +230,7 @@ impl ListStackInstancesFluentBuilder {
         self
     }
     /// <p>\[Service-managed permissions\] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
-    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
+    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for StackSets with self-managed permissions.</p>
     /// <ul>
     /// <li>
     /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p></li>

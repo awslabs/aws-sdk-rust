@@ -7,6 +7,8 @@ pub struct WorkerComputeConfiguration {
     /// <p>The worker compute configuration type.</p>
     pub r#type: ::std::option::Option<crate::types::WorkerComputeType>,
     /// <p>The number of workers.</p>
+    /// <p>SQL queries support a minimum value of 2 and a maximum value of 400.</p>
+    /// <p>PySpark jobs support a minimum value of 4 and a maximum value of 128.</p>
     pub number: ::std::option::Option<i32>,
 }
 impl WorkerComputeConfiguration {
@@ -15,6 +17,8 @@ impl WorkerComputeConfiguration {
         self.r#type.as_ref()
     }
     /// <p>The number of workers.</p>
+    /// <p>SQL queries support a minimum value of 2 and a maximum value of 400.</p>
+    /// <p>PySpark jobs support a minimum value of 4 and a maximum value of 128.</p>
     pub fn number(&self) -> ::std::option::Option<i32> {
         self.number
     }
@@ -49,16 +53,22 @@ impl WorkerComputeConfigurationBuilder {
         &self.r#type
     }
     /// <p>The number of workers.</p>
+    /// <p>SQL queries support a minimum value of 2 and a maximum value of 400.</p>
+    /// <p>PySpark jobs support a minimum value of 4 and a maximum value of 128.</p>
     pub fn number(mut self, input: i32) -> Self {
         self.number = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of workers.</p>
+    /// <p>SQL queries support a minimum value of 2 and a maximum value of 400.</p>
+    /// <p>PySpark jobs support a minimum value of 4 and a maximum value of 128.</p>
     pub fn set_number(mut self, input: ::std::option::Option<i32>) -> Self {
         self.number = input;
         self
     }
     /// <p>The number of workers.</p>
+    /// <p>SQL queries support a minimum value of 2 and a maximum value of 400.</p>
+    /// <p>PySpark jobs support a minimum value of 4 and a maximum value of 128.</p>
     pub fn get_number(&self) -> &::std::option::Option<i32> {
         &self.number
     }

@@ -22,7 +22,7 @@ impl crate::operation::list_stack_set_auto_deployment_targets::builders::ListSta
 }
 /// Fluent builder constructing a request to `ListStackSetAutoDeploymentTargets`.
 ///
-/// <p>Returns summary information about deployment targets for a stack set.</p>
+/// <p>Returns summary information about deployment targets for a StackSet.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListStackSetAutoDeploymentTargetsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl ListStackSetAutoDeploymentTargetsFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name or unique ID of the stack set that you want to get automatic deployment targets for.</p>
+    /// <p>The name or unique ID of the StackSet that you want to get automatic deployment targets for.</p>
     pub fn stack_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stack_set_name(input.into());
         self
     }
-    /// <p>The name or unique ID of the stack set that you want to get automatic deployment targets for.</p>
+    /// <p>The name or unique ID of the StackSet that you want to get automatic deployment targets for.</p>
     pub fn set_stack_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stack_set_name(input);
         self
     }
-    /// <p>The name or unique ID of the stack set that you want to get automatic deployment targets for.</p>
+    /// <p>The name or unique ID of the StackSet that you want to get automatic deployment targets for.</p>
     pub fn get_stack_set_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_stack_set_name()
     }
-    /// <p>A string that identifies the next page of stack set deployment targets that you want to retrieve.</p>
+    /// <p>A string that identifies the next page of deployment targets that you want to retrieve.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>A string that identifies the next page of stack set deployment targets that you want to retrieve.</p>
+    /// <p>A string that identifies the next page of deployment targets that you want to retrieve.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>A string that identifies the next page of stack set deployment targets that you want to retrieve.</p>
+    /// <p>A string that identifies the next page of deployment targets that you want to retrieve.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }

@@ -206,8 +206,21 @@ pub fn de_stack_event(
                 builder = builder.set_hook_invocation_point(var_15);
             }
             ,
-            s if s.matches("HookFailureMode") /* HookFailureMode com.amazonaws.cloudformation#StackEvent$HookFailureMode */ =>  {
+            s if s.matches("HookInvocationId") /* HookInvocationId com.amazonaws.cloudformation#StackEvent$HookInvocationId */ =>  {
                 let var_16 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_hook_invocation_id(var_16);
+            }
+            ,
+            s if s.matches("HookFailureMode") /* HookFailureMode com.amazonaws.cloudformation#StackEvent$HookFailureMode */ =>  {
+                let var_17 =
                     Some(
                         Result::<crate::types::HookFailureMode, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::HookFailureMode::from(
@@ -217,11 +230,11 @@ pub fn de_stack_event(
                         ?
                     )
                 ;
-                builder = builder.set_hook_failure_mode(var_16);
+                builder = builder.set_hook_failure_mode(var_17);
             }
             ,
             s if s.matches("DetailedStatus") /* DetailedStatus com.amazonaws.cloudformation#StackEvent$DetailedStatus */ =>  {
-                let var_17 =
+                let var_18 =
                     Some(
                         Result::<crate::types::DetailedStatus, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::DetailedStatus::from(
@@ -231,7 +244,7 @@ pub fn de_stack_event(
                         ?
                     )
                 ;
-                builder = builder.set_detailed_status(var_17);
+                builder = builder.set_detailed_status(var_18);
             }
             ,
             _ => {}

@@ -3,10 +3,9 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListHookResultsOutput {
-    /// <p>The type of operation being targeted by the Hook.</p>
+    /// <p>The target type.</p>
     pub target_type: ::std::option::Option<crate::types::ListHookResultsTargetType>,
-    /// <p>The logical ID of the target the operation is acting on by the Hook. If the target is a change set, it's the ARN of the change set.</p>
-    /// <p>If the target is a Cloud Control API operation, this will be the <code>HooksRequestToken</code> returned by the Cloud Control API operation request. For more information on the <code>HooksRequestToken</code>, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_ProgressEvent.html">ProgressEvent</a>.</p>
+    /// <p>The unique identifier of the Hook invocation target.</p>
     pub target_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>HookResultSummary</code> structures that provides the status and Hook status reason for each Hook invocation for the specified target.</p>
     pub hook_results: ::std::option::Option<::std::vec::Vec<crate::types::HookResultSummary>>,
@@ -15,12 +14,11 @@ pub struct ListHookResultsOutput {
     _request_id: Option<String>,
 }
 impl ListHookResultsOutput {
-    /// <p>The type of operation being targeted by the Hook.</p>
+    /// <p>The target type.</p>
     pub fn target_type(&self) -> ::std::option::Option<&crate::types::ListHookResultsTargetType> {
         self.target_type.as_ref()
     }
-    /// <p>The logical ID of the target the operation is acting on by the Hook. If the target is a change set, it's the ARN of the change set.</p>
-    /// <p>If the target is a Cloud Control API operation, this will be the <code>HooksRequestToken</code> returned by the Cloud Control API operation request. For more information on the <code>HooksRequestToken</code>, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_ProgressEvent.html">ProgressEvent</a>.</p>
+    /// <p>The unique identifier of the Hook invocation target.</p>
     pub fn target_id(&self) -> ::std::option::Option<&str> {
         self.target_id.as_deref()
     }
@@ -58,34 +56,31 @@ pub struct ListHookResultsOutputBuilder {
     _request_id: Option<String>,
 }
 impl ListHookResultsOutputBuilder {
-    /// <p>The type of operation being targeted by the Hook.</p>
+    /// <p>The target type.</p>
     pub fn target_type(mut self, input: crate::types::ListHookResultsTargetType) -> Self {
         self.target_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of operation being targeted by the Hook.</p>
+    /// <p>The target type.</p>
     pub fn set_target_type(mut self, input: ::std::option::Option<crate::types::ListHookResultsTargetType>) -> Self {
         self.target_type = input;
         self
     }
-    /// <p>The type of operation being targeted by the Hook.</p>
+    /// <p>The target type.</p>
     pub fn get_target_type(&self) -> &::std::option::Option<crate::types::ListHookResultsTargetType> {
         &self.target_type
     }
-    /// <p>The logical ID of the target the operation is acting on by the Hook. If the target is a change set, it's the ARN of the change set.</p>
-    /// <p>If the target is a Cloud Control API operation, this will be the <code>HooksRequestToken</code> returned by the Cloud Control API operation request. For more information on the <code>HooksRequestToken</code>, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_ProgressEvent.html">ProgressEvent</a>.</p>
+    /// <p>The unique identifier of the Hook invocation target.</p>
     pub fn target_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The logical ID of the target the operation is acting on by the Hook. If the target is a change set, it's the ARN of the change set.</p>
-    /// <p>If the target is a Cloud Control API operation, this will be the <code>HooksRequestToken</code> returned by the Cloud Control API operation request. For more information on the <code>HooksRequestToken</code>, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_ProgressEvent.html">ProgressEvent</a>.</p>
+    /// <p>The unique identifier of the Hook invocation target.</p>
     pub fn set_target_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_id = input;
         self
     }
-    /// <p>The logical ID of the target the operation is acting on by the Hook. If the target is a change set, it's the ARN of the change set.</p>
-    /// <p>If the target is a Cloud Control API operation, this will be the <code>HooksRequestToken</code> returned by the Cloud Control API operation request. For more information on the <code>HooksRequestToken</code>, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_ProgressEvent.html">ProgressEvent</a>.</p>
+    /// <p>The unique identifier of the Hook invocation target.</p>
     pub fn get_target_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_id
     }

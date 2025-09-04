@@ -82,6 +82,16 @@ pub fn ser_create_db_proxy_input_input_input(
         }
         list_31.finish();
     }
+    #[allow(unused_mut)]
+    let mut scope_33 = writer.prefix("EndpointNetworkType");
+    if let Some(var_34) = &input.endpoint_network_type {
+        scope_33.string(var_34.as_str());
+    }
+    #[allow(unused_mut)]
+    let mut scope_35 = writer.prefix("TargetConnectionNetworkType");
+    if let Some(var_36) = &input.target_connection_network_type {
+        scope_35.string(var_36.as_str());
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

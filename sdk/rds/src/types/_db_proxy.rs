@@ -37,6 +37,26 @@ pub struct DbProxy {
     pub created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time when the proxy was last updated.</p>
     pub updated_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The network type of the DB proxy endpoint. The network type determines the IP version that the proxy endpoint supports.</p>
+    /// <p>Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IPV4</code> - The proxy endpoint supports IPv4 only.</p></li>
+    /// <li>
+    /// <p><code>IPV6</code> - The proxy endpoint supports IPv6 only.</p></li>
+    /// <li>
+    /// <p><code>DUAL</code> - The proxy endpoint supports both IPv4 and IPv6.</p></li>
+    /// </ul>
+    pub endpoint_network_type: ::std::option::Option<crate::types::EndpointNetworkType>,
+    /// <p>The network type that the proxy uses to connect to the target database. The network type determines the IP version that the proxy uses for connections to the database.</p>
+    /// <p>Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IPV4</code> - The proxy connects to the database using IPv4 only.</p></li>
+    /// <li>
+    /// <p><code>IPV6</code> - The proxy connects to the database using IPv6 only.</p></li>
+    /// </ul>
+    pub target_connection_network_type: ::std::option::Option<crate::types::TargetConnectionNetworkType>,
 }
 impl DbProxy {
     /// <p>The identifier for the proxy. This name must be unique for all proxies owned by your Amazon Web Services account in the specified Amazon Web Services Region.</p>
@@ -107,6 +127,30 @@ impl DbProxy {
     pub fn updated_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.updated_date.as_ref()
     }
+    /// <p>The network type of the DB proxy endpoint. The network type determines the IP version that the proxy endpoint supports.</p>
+    /// <p>Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IPV4</code> - The proxy endpoint supports IPv4 only.</p></li>
+    /// <li>
+    /// <p><code>IPV6</code> - The proxy endpoint supports IPv6 only.</p></li>
+    /// <li>
+    /// <p><code>DUAL</code> - The proxy endpoint supports both IPv4 and IPv6.</p></li>
+    /// </ul>
+    pub fn endpoint_network_type(&self) -> ::std::option::Option<&crate::types::EndpointNetworkType> {
+        self.endpoint_network_type.as_ref()
+    }
+    /// <p>The network type that the proxy uses to connect to the target database. The network type determines the IP version that the proxy uses for connections to the database.</p>
+    /// <p>Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IPV4</code> - The proxy connects to the database using IPv4 only.</p></li>
+    /// <li>
+    /// <p><code>IPV6</code> - The proxy connects to the database using IPv6 only.</p></li>
+    /// </ul>
+    pub fn target_connection_network_type(&self) -> ::std::option::Option<&crate::types::TargetConnectionNetworkType> {
+        self.target_connection_network_type.as_ref()
+    }
 }
 impl DbProxy {
     /// Creates a new builder-style object to manufacture [`DbProxy`](crate::types::DbProxy).
@@ -134,6 +178,8 @@ pub struct DbProxyBuilder {
     pub(crate) debug_logging: ::std::option::Option<bool>,
     pub(crate) created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) endpoint_network_type: ::std::option::Option<crate::types::EndpointNetworkType>,
+    pub(crate) target_connection_network_type: ::std::option::Option<crate::types::TargetConnectionNetworkType>,
 }
 impl DbProxyBuilder {
     /// <p>The identifier for the proxy. This name must be unique for all proxies owned by your Amazon Web Services account in the specified Amazon Web Services Region.</p>
@@ -370,6 +416,82 @@ impl DbProxyBuilder {
     pub fn get_updated_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_date
     }
+    /// <p>The network type of the DB proxy endpoint. The network type determines the IP version that the proxy endpoint supports.</p>
+    /// <p>Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IPV4</code> - The proxy endpoint supports IPv4 only.</p></li>
+    /// <li>
+    /// <p><code>IPV6</code> - The proxy endpoint supports IPv6 only.</p></li>
+    /// <li>
+    /// <p><code>DUAL</code> - The proxy endpoint supports both IPv4 and IPv6.</p></li>
+    /// </ul>
+    pub fn endpoint_network_type(mut self, input: crate::types::EndpointNetworkType) -> Self {
+        self.endpoint_network_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The network type of the DB proxy endpoint. The network type determines the IP version that the proxy endpoint supports.</p>
+    /// <p>Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IPV4</code> - The proxy endpoint supports IPv4 only.</p></li>
+    /// <li>
+    /// <p><code>IPV6</code> - The proxy endpoint supports IPv6 only.</p></li>
+    /// <li>
+    /// <p><code>DUAL</code> - The proxy endpoint supports both IPv4 and IPv6.</p></li>
+    /// </ul>
+    pub fn set_endpoint_network_type(mut self, input: ::std::option::Option<crate::types::EndpointNetworkType>) -> Self {
+        self.endpoint_network_type = input;
+        self
+    }
+    /// <p>The network type of the DB proxy endpoint. The network type determines the IP version that the proxy endpoint supports.</p>
+    /// <p>Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IPV4</code> - The proxy endpoint supports IPv4 only.</p></li>
+    /// <li>
+    /// <p><code>IPV6</code> - The proxy endpoint supports IPv6 only.</p></li>
+    /// <li>
+    /// <p><code>DUAL</code> - The proxy endpoint supports both IPv4 and IPv6.</p></li>
+    /// </ul>
+    pub fn get_endpoint_network_type(&self) -> &::std::option::Option<crate::types::EndpointNetworkType> {
+        &self.endpoint_network_type
+    }
+    /// <p>The network type that the proxy uses to connect to the target database. The network type determines the IP version that the proxy uses for connections to the database.</p>
+    /// <p>Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IPV4</code> - The proxy connects to the database using IPv4 only.</p></li>
+    /// <li>
+    /// <p><code>IPV6</code> - The proxy connects to the database using IPv6 only.</p></li>
+    /// </ul>
+    pub fn target_connection_network_type(mut self, input: crate::types::TargetConnectionNetworkType) -> Self {
+        self.target_connection_network_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The network type that the proxy uses to connect to the target database. The network type determines the IP version that the proxy uses for connections to the database.</p>
+    /// <p>Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IPV4</code> - The proxy connects to the database using IPv4 only.</p></li>
+    /// <li>
+    /// <p><code>IPV6</code> - The proxy connects to the database using IPv6 only.</p></li>
+    /// </ul>
+    pub fn set_target_connection_network_type(mut self, input: ::std::option::Option<crate::types::TargetConnectionNetworkType>) -> Self {
+        self.target_connection_network_type = input;
+        self
+    }
+    /// <p>The network type that the proxy uses to connect to the target database. The network type determines the IP version that the proxy uses for connections to the database.</p>
+    /// <p>Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IPV4</code> - The proxy connects to the database using IPv4 only.</p></li>
+    /// <li>
+    /// <p><code>IPV6</code> - The proxy connects to the database using IPv6 only.</p></li>
+    /// </ul>
+    pub fn get_target_connection_network_type(&self) -> &::std::option::Option<crate::types::TargetConnectionNetworkType> {
+        &self.target_connection_network_type
+    }
     /// Consumes the builder and constructs a [`DbProxy`](crate::types::DbProxy).
     pub fn build(self) -> crate::types::DbProxy {
         crate::types::DbProxy {
@@ -388,6 +510,8 @@ impl DbProxyBuilder {
             debug_logging: self.debug_logging,
             created_date: self.created_date,
             updated_date: self.updated_date,
+            endpoint_network_type: self.endpoint_network_type,
+            target_connection_network_type: self.target_connection_network_type,
         }
     }
 }

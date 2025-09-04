@@ -16,9 +16,19 @@ pub fn ser_list_hook_results_input_input_input(
         scope_3.string(var_4);
     }
     #[allow(unused_mut)]
-    let mut scope_5 = writer.prefix("NextToken");
-    if let Some(var_6) = &input.next_token {
+    let mut scope_5 = writer.prefix("TypeArn");
+    if let Some(var_6) = &input.type_arn {
         scope_5.string(var_6);
+    }
+    #[allow(unused_mut)]
+    let mut scope_7 = writer.prefix("Status");
+    if let Some(var_8) = &input.status {
+        scope_7.string(var_8.as_str());
+    }
+    #[allow(unused_mut)]
+    let mut scope_9 = writer.prefix("NextToken");
+    if let Some(var_10) = &input.next_token {
+        scope_9.string(var_10);
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

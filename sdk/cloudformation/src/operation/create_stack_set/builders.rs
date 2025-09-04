@@ -22,7 +22,7 @@ impl crate::operation::create_stack_set::builders::CreateStackSetInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateStackSet`.
 ///
-/// <p>Creates a stack set.</p>
+/// <p>Creates a StackSet.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateStackSetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,37 +108,37 @@ impl CreateStackSetFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name to associate with the stack set. The name must be unique in the Region where you create your stack set.</p><note>
+    /// <p>The name to associate with the StackSet. The name must be unique in the Region where you create your StackSet.</p><note>
     /// <p>A stack name can contain only alphanumeric characters (case-sensitive) and hyphens. It must start with an alphabetic character and can't be longer than 128 characters.</p>
     /// </note>
     pub fn stack_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stack_set_name(input.into());
         self
     }
-    /// <p>The name to associate with the stack set. The name must be unique in the Region where you create your stack set.</p><note>
+    /// <p>The name to associate with the StackSet. The name must be unique in the Region where you create your StackSet.</p><note>
     /// <p>A stack name can contain only alphanumeric characters (case-sensitive) and hyphens. It must start with an alphabetic character and can't be longer than 128 characters.</p>
     /// </note>
     pub fn set_stack_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stack_set_name(input);
         self
     }
-    /// <p>The name to associate with the stack set. The name must be unique in the Region where you create your stack set.</p><note>
+    /// <p>The name to associate with the StackSet. The name must be unique in the Region where you create your StackSet.</p><note>
     /// <p>A stack name can contain only alphanumeric characters (case-sensitive) and hyphens. It must start with an alphabetic character and can't be longer than 128 characters.</p>
     /// </note>
     pub fn get_stack_set_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_stack_set_name()
     }
-    /// <p>A description of the stack set. You can use the description to identify the stack set's purpose or other important information.</p>
+    /// <p>A description of the StackSet. You can use the description to identify the StackSet's purpose or other important information.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// <p>A description of the stack set. You can use the description to identify the stack set's purpose or other important information.</p>
+    /// <p>A description of the StackSet. You can use the description to identify the StackSet's purpose or other important information.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// <p>A description of the stack set. You can use the description to identify the stack set's purpose or other important information.</p>
+    /// <p>A description of the StackSet. You can use the description to identify the StackSet's purpose or other important information.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
@@ -176,17 +176,17 @@ impl CreateStackSetFluentBuilder {
     pub fn get_template_url(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_template_url()
     }
-    /// <p>The stack ID you are importing into a new stack set. Specify the Amazon Resource Name (ARN) of the stack.</p>
+    /// <p>The stack ID you are importing into a new StackSet. Specify the Amazon Resource Name (ARN) of the stack.</p>
     pub fn stack_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stack_id(input.into());
         self
     }
-    /// <p>The stack ID you are importing into a new stack set. Specify the Amazon Resource Name (ARN) of the stack.</p>
+    /// <p>The stack ID you are importing into a new StackSet. Specify the Amazon Resource Name (ARN) of the stack.</p>
     pub fn set_stack_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stack_id(input);
         self
     }
-    /// <p>The stack ID you are importing into a new stack set. Specify the Amazon Resource Name (ARN) of the stack.</p>
+    /// <p>The stack ID you are importing into a new StackSet. Specify the Amazon Resource Name (ARN) of the stack.</p>
     pub fn get_stack_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_stack_id()
     }
@@ -195,17 +195,17 @@ impl CreateStackSetFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
     ///
-    /// <p>The input parameters for the stack set template.</p>
+    /// <p>The input parameters for the StackSet template.</p>
     pub fn parameters(mut self, input: crate::types::Parameter) -> Self {
         self.inner = self.inner.parameters(input);
         self
     }
-    /// <p>The input parameters for the stack set template.</p>
+    /// <p>The input parameters for the StackSet template.</p>
     pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>) -> Self {
         self.inner = self.inner.set_parameters(input);
         self
     }
-    /// <p>The input parameters for the stack set template.</p>
+    /// <p>The input parameters for the StackSet template.</p>
     pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
         self.inner.get_parameters()
     }
@@ -214,11 +214,11 @@ impl CreateStackSetFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_capabilities`](Self::set_capabilities).
     ///
-    /// <p>In some cases, you must explicitly acknowledge that your stack set template contains certain capabilities in order for CloudFormation to create the stack set and related stack instances.</p>
+    /// <p>In some cases, you must explicitly acknowledge that your StackSet template contains certain capabilities in order for CloudFormation to create the StackSet and related stack instances.</p>
     /// <ul>
     /// <li>
     /// <p><code>CAPABILITY_IAM</code> and <code>CAPABILITY_NAMED_IAM</code></p>
-    /// <p>Some stack templates might include resources that can affect permissions in your Amazon Web Services account; for example, by creating new IAM users. For those stack sets, you must explicitly acknowledge this by specifying one of these capabilities.</p>
+    /// <p>Some stack templates might include resources that can affect permissions in your Amazon Web Services account; for example, by creating new IAM users. For those StackSets, you must explicitly acknowledge this by specifying one of these capabilities.</p>
     /// <p>The following IAM resources require you to specify either the <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code> capability.</p>
     /// <ul>
     /// <li>
@@ -248,19 +248,19 @@ impl CreateStackSetFluentBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/control-access-with-iam.html#using-iam-capabilities">Acknowledging IAM resources in CloudFormation templates</a>.</p></li>
     /// <li>
     /// <p><code>CAPABILITY_AUTO_EXPAND</code></p>
-    /// <p>Some templates reference macros. If your stack set template references one or more macros, you must create the stack set directly from the processed template, without first reviewing the resulting changes in a change set. To create the stack set directly, you must acknowledge this capability. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Perform custom processing on CloudFormation templates with template macros</a>.</p><important>
-    /// <p>Stack sets with service-managed permissions don't currently support the use of macros in templates. (This includes the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-include.html">AWS::Include</a> and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.) Even if you specify this capability for a stack set with service-managed permissions, if you reference a macro in your template the stack set operation will fail.</p>
+    /// <p>Some templates reference macros. If your StackSet template references one or more macros, you must create the StackSet directly from the processed template, without first reviewing the resulting changes in a change set. To create the StackSet directly, you must acknowledge this capability. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Perform custom processing on CloudFormation templates with template macros</a>.</p><important>
+    /// <p>StackSets with service-managed permissions don't currently support the use of macros in templates. (This includes the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-include.html">AWS::Include</a> and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.) Even if you specify this capability for a StackSet with service-managed permissions, if you reference a macro in your template the StackSet operation will fail.</p>
     /// </important></li>
     /// </ul>
     pub fn capabilities(mut self, input: crate::types::Capability) -> Self {
         self.inner = self.inner.capabilities(input);
         self
     }
-    /// <p>In some cases, you must explicitly acknowledge that your stack set template contains certain capabilities in order for CloudFormation to create the stack set and related stack instances.</p>
+    /// <p>In some cases, you must explicitly acknowledge that your StackSet template contains certain capabilities in order for CloudFormation to create the StackSet and related stack instances.</p>
     /// <ul>
     /// <li>
     /// <p><code>CAPABILITY_IAM</code> and <code>CAPABILITY_NAMED_IAM</code></p>
-    /// <p>Some stack templates might include resources that can affect permissions in your Amazon Web Services account; for example, by creating new IAM users. For those stack sets, you must explicitly acknowledge this by specifying one of these capabilities.</p>
+    /// <p>Some stack templates might include resources that can affect permissions in your Amazon Web Services account; for example, by creating new IAM users. For those StackSets, you must explicitly acknowledge this by specifying one of these capabilities.</p>
     /// <p>The following IAM resources require you to specify either the <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code> capability.</p>
     /// <ul>
     /// <li>
@@ -290,19 +290,19 @@ impl CreateStackSetFluentBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/control-access-with-iam.html#using-iam-capabilities">Acknowledging IAM resources in CloudFormation templates</a>.</p></li>
     /// <li>
     /// <p><code>CAPABILITY_AUTO_EXPAND</code></p>
-    /// <p>Some templates reference macros. If your stack set template references one or more macros, you must create the stack set directly from the processed template, without first reviewing the resulting changes in a change set. To create the stack set directly, you must acknowledge this capability. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Perform custom processing on CloudFormation templates with template macros</a>.</p><important>
-    /// <p>Stack sets with service-managed permissions don't currently support the use of macros in templates. (This includes the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-include.html">AWS::Include</a> and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.) Even if you specify this capability for a stack set with service-managed permissions, if you reference a macro in your template the stack set operation will fail.</p>
+    /// <p>Some templates reference macros. If your StackSet template references one or more macros, you must create the StackSet directly from the processed template, without first reviewing the resulting changes in a change set. To create the StackSet directly, you must acknowledge this capability. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Perform custom processing on CloudFormation templates with template macros</a>.</p><important>
+    /// <p>StackSets with service-managed permissions don't currently support the use of macros in templates. (This includes the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-include.html">AWS::Include</a> and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.) Even if you specify this capability for a StackSet with service-managed permissions, if you reference a macro in your template the StackSet operation will fail.</p>
     /// </important></li>
     /// </ul>
     pub fn set_capabilities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Capability>>) -> Self {
         self.inner = self.inner.set_capabilities(input);
         self
     }
-    /// <p>In some cases, you must explicitly acknowledge that your stack set template contains certain capabilities in order for CloudFormation to create the stack set and related stack instances.</p>
+    /// <p>In some cases, you must explicitly acknowledge that your StackSet template contains certain capabilities in order for CloudFormation to create the StackSet and related stack instances.</p>
     /// <ul>
     /// <li>
     /// <p><code>CAPABILITY_IAM</code> and <code>CAPABILITY_NAMED_IAM</code></p>
-    /// <p>Some stack templates might include resources that can affect permissions in your Amazon Web Services account; for example, by creating new IAM users. For those stack sets, you must explicitly acknowledge this by specifying one of these capabilities.</p>
+    /// <p>Some stack templates might include resources that can affect permissions in your Amazon Web Services account; for example, by creating new IAM users. For those StackSets, you must explicitly acknowledge this by specifying one of these capabilities.</p>
     /// <p>The following IAM resources require you to specify either the <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code> capability.</p>
     /// <ul>
     /// <li>
@@ -332,8 +332,8 @@ impl CreateStackSetFluentBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/control-access-with-iam.html#using-iam-capabilities">Acknowledging IAM resources in CloudFormation templates</a>.</p></li>
     /// <li>
     /// <p><code>CAPABILITY_AUTO_EXPAND</code></p>
-    /// <p>Some templates reference macros. If your stack set template references one or more macros, you must create the stack set directly from the processed template, without first reviewing the resulting changes in a change set. To create the stack set directly, you must acknowledge this capability. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Perform custom processing on CloudFormation templates with template macros</a>.</p><important>
-    /// <p>Stack sets with service-managed permissions don't currently support the use of macros in templates. (This includes the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-include.html">AWS::Include</a> and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.) Even if you specify this capability for a stack set with service-managed permissions, if you reference a macro in your template the stack set operation will fail.</p>
+    /// <p>Some templates reference macros. If your StackSet template references one or more macros, you must create the StackSet directly from the processed template, without first reviewing the resulting changes in a change set. To create the StackSet directly, you must acknowledge this capability. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Perform custom processing on CloudFormation templates with template macros</a>.</p><important>
+    /// <p>StackSets with service-managed permissions don't currently support the use of macros in templates. (This includes the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-include.html">AWS::Include</a> and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.) Even if you specify this capability for a StackSet with service-managed permissions, if you reference a macro in your template the StackSet operation will fail.</p>
     /// </important></li>
     /// </ul>
     pub fn get_capabilities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Capability>> {
@@ -344,184 +344,184 @@ impl CreateStackSetFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>The key-value pairs to associate with this stack set and the stacks created from it. CloudFormation also propagates these tags to supported resources that are created in the stacks. A maximum number of 50 tags can be specified.</p>
-    /// <p>If you specify tags as part of a <code>CreateStackSet</code> action, CloudFormation checks to see if you have the required IAM permission to tag resources. If you don't, the entire <code>CreateStackSet</code> action fails with an <code>access denied</code> error, and the stack set is not created.</p>
+    /// <p>The key-value pairs to associate with this StackSet and the stacks created from it. CloudFormation also propagates these tags to supported resources that are created in the stacks. A maximum number of 50 tags can be specified.</p>
+    /// <p>If you specify tags as part of a <code>CreateStackSet</code> action, CloudFormation checks to see if you have the required IAM permission to tag resources. If you don't, the entire <code>CreateStackSet</code> action fails with an <code>access denied</code> error, and the StackSet is not created.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         self.inner = self.inner.tags(input);
         self
     }
-    /// <p>The key-value pairs to associate with this stack set and the stacks created from it. CloudFormation also propagates these tags to supported resources that are created in the stacks. A maximum number of 50 tags can be specified.</p>
-    /// <p>If you specify tags as part of a <code>CreateStackSet</code> action, CloudFormation checks to see if you have the required IAM permission to tag resources. If you don't, the entire <code>CreateStackSet</code> action fails with an <code>access denied</code> error, and the stack set is not created.</p>
+    /// <p>The key-value pairs to associate with this StackSet and the stacks created from it. CloudFormation also propagates these tags to supported resources that are created in the stacks. A maximum number of 50 tags can be specified.</p>
+    /// <p>If you specify tags as part of a <code>CreateStackSet</code> action, CloudFormation checks to see if you have the required IAM permission to tag resources. If you don't, the entire <code>CreateStackSet</code> action fails with an <code>access denied</code> error, and the StackSet is not created.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p>The key-value pairs to associate with this stack set and the stacks created from it. CloudFormation also propagates these tags to supported resources that are created in the stacks. A maximum number of 50 tags can be specified.</p>
-    /// <p>If you specify tags as part of a <code>CreateStackSet</code> action, CloudFormation checks to see if you have the required IAM permission to tag resources. If you don't, the entire <code>CreateStackSet</code> action fails with an <code>access denied</code> error, and the stack set is not created.</p>
+    /// <p>The key-value pairs to associate with this StackSet and the stacks created from it. CloudFormation also propagates these tags to supported resources that are created in the stacks. A maximum number of 50 tags can be specified.</p>
+    /// <p>If you specify tags as part of a <code>CreateStackSet</code> action, CloudFormation checks to see if you have the required IAM permission to tag resources. If you don't, the entire <code>CreateStackSet</code> action fails with an <code>access denied</code> error, and the StackSet is not created.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role to use to create this stack set.</p>
-    /// <p>Specify an IAM role only if you are using customized administrator roles to control which users or groups can manage specific stack sets within the same administrator account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant self-managed permissions</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role to use to create this StackSet.</p>
+    /// <p>Specify an IAM role only if you are using customized administrator roles to control which users or groups can manage specific StackSets within the same administrator account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant self-managed permissions</a> in the <i>CloudFormation User Guide</i>.</p>
     /// <p>Valid only if the permissions model is <code>SELF_MANAGED</code>.</p>
     pub fn administration_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.administration_role_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role to use to create this stack set.</p>
-    /// <p>Specify an IAM role only if you are using customized administrator roles to control which users or groups can manage specific stack sets within the same administrator account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant self-managed permissions</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role to use to create this StackSet.</p>
+    /// <p>Specify an IAM role only if you are using customized administrator roles to control which users or groups can manage specific StackSets within the same administrator account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant self-managed permissions</a> in the <i>CloudFormation User Guide</i>.</p>
     /// <p>Valid only if the permissions model is <code>SELF_MANAGED</code>.</p>
     pub fn set_administration_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_administration_role_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role to use to create this stack set.</p>
-    /// <p>Specify an IAM role only if you are using customized administrator roles to control which users or groups can manage specific stack sets within the same administrator account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant self-managed permissions</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role to use to create this StackSet.</p>
+    /// <p>Specify an IAM role only if you are using customized administrator roles to control which users or groups can manage specific StackSets within the same administrator account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant self-managed permissions</a> in the <i>CloudFormation User Guide</i>.</p>
     /// <p>Valid only if the permissions model is <code>SELF_MANAGED</code>.</p>
     pub fn get_administration_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_administration_role_arn()
     }
-    /// <p>The name of the IAM execution role to use to create the stack set. If you do not specify an execution role, CloudFormation uses the <code>AWSCloudFormationStackSetExecutionRole</code> role for the stack set operation.</p>
-    /// <p>Specify an IAM role only if you are using customized execution roles to control which stack resources users and groups can include in their stack sets.</p>
+    /// <p>The name of the IAM execution role to use to create the StackSet. If you do not specify an execution role, CloudFormation uses the <code>AWSCloudFormationStackSetExecutionRole</code> role for the StackSet operation.</p>
+    /// <p>Specify an IAM role only if you are using customized execution roles to control which stack resources users and groups can include in their StackSets.</p>
     /// <p>Valid only if the permissions model is <code>SELF_MANAGED</code>.</p>
     pub fn execution_role_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.execution_role_name(input.into());
         self
     }
-    /// <p>The name of the IAM execution role to use to create the stack set. If you do not specify an execution role, CloudFormation uses the <code>AWSCloudFormationStackSetExecutionRole</code> role for the stack set operation.</p>
-    /// <p>Specify an IAM role only if you are using customized execution roles to control which stack resources users and groups can include in their stack sets.</p>
+    /// <p>The name of the IAM execution role to use to create the StackSet. If you do not specify an execution role, CloudFormation uses the <code>AWSCloudFormationStackSetExecutionRole</code> role for the StackSet operation.</p>
+    /// <p>Specify an IAM role only if you are using customized execution roles to control which stack resources users and groups can include in their StackSets.</p>
     /// <p>Valid only if the permissions model is <code>SELF_MANAGED</code>.</p>
     pub fn set_execution_role_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_execution_role_name(input);
         self
     }
-    /// <p>The name of the IAM execution role to use to create the stack set. If you do not specify an execution role, CloudFormation uses the <code>AWSCloudFormationStackSetExecutionRole</code> role for the stack set operation.</p>
-    /// <p>Specify an IAM role only if you are using customized execution roles to control which stack resources users and groups can include in their stack sets.</p>
+    /// <p>The name of the IAM execution role to use to create the StackSet. If you do not specify an execution role, CloudFormation uses the <code>AWSCloudFormationStackSetExecutionRole</code> role for the StackSet operation.</p>
+    /// <p>Specify an IAM role only if you are using customized execution roles to control which stack resources users and groups can include in their StackSets.</p>
     /// <p>Valid only if the permissions model is <code>SELF_MANAGED</code>.</p>
     pub fn get_execution_role_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_execution_role_name()
     }
-    /// <p>Describes how the IAM roles required for stack set operations are created. By default, <code>SELF-MANAGED</code> is specified.</p>
+    /// <p>Describes how the IAM roles required for StackSet operations are created. By default, <code>SELF-MANAGED</code> is specified.</p>
     /// <ul>
     /// <li>
     /// <p>With <code>self-managed</code> permissions, you must create the administrator and execution roles required to deploy to target accounts. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant self-managed permissions</a>.</p></li>
     /// <li>
-    /// <p>With <code>service-managed</code> permissions, StackSets automatically creates the IAM roles required to deploy to accounts managed by Organizations. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-activate-trusted-access.html">Activate trusted access for stack sets with Organizations</a>.</p></li>
+    /// <p>With <code>service-managed</code> permissions, StackSets automatically creates the IAM roles required to deploy to accounts managed by Organizations. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-activate-trusted-access.html">Activate trusted access for StackSets with Organizations</a>.</p></li>
     /// </ul>
     pub fn permission_model(mut self, input: crate::types::PermissionModels) -> Self {
         self.inner = self.inner.permission_model(input);
         self
     }
-    /// <p>Describes how the IAM roles required for stack set operations are created. By default, <code>SELF-MANAGED</code> is specified.</p>
+    /// <p>Describes how the IAM roles required for StackSet operations are created. By default, <code>SELF-MANAGED</code> is specified.</p>
     /// <ul>
     /// <li>
     /// <p>With <code>self-managed</code> permissions, you must create the administrator and execution roles required to deploy to target accounts. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant self-managed permissions</a>.</p></li>
     /// <li>
-    /// <p>With <code>service-managed</code> permissions, StackSets automatically creates the IAM roles required to deploy to accounts managed by Organizations. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-activate-trusted-access.html">Activate trusted access for stack sets with Organizations</a>.</p></li>
+    /// <p>With <code>service-managed</code> permissions, StackSets automatically creates the IAM roles required to deploy to accounts managed by Organizations. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-activate-trusted-access.html">Activate trusted access for StackSets with Organizations</a>.</p></li>
     /// </ul>
     pub fn set_permission_model(mut self, input: ::std::option::Option<crate::types::PermissionModels>) -> Self {
         self.inner = self.inner.set_permission_model(input);
         self
     }
-    /// <p>Describes how the IAM roles required for stack set operations are created. By default, <code>SELF-MANAGED</code> is specified.</p>
+    /// <p>Describes how the IAM roles required for StackSet operations are created. By default, <code>SELF-MANAGED</code> is specified.</p>
     /// <ul>
     /// <li>
     /// <p>With <code>self-managed</code> permissions, you must create the administrator and execution roles required to deploy to target accounts. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant self-managed permissions</a>.</p></li>
     /// <li>
-    /// <p>With <code>service-managed</code> permissions, StackSets automatically creates the IAM roles required to deploy to accounts managed by Organizations. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-activate-trusted-access.html">Activate trusted access for stack sets with Organizations</a>.</p></li>
+    /// <p>With <code>service-managed</code> permissions, StackSets automatically creates the IAM roles required to deploy to accounts managed by Organizations. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-activate-trusted-access.html">Activate trusted access for StackSets with Organizations</a>.</p></li>
     /// </ul>
     pub fn get_permission_model(&self) -> &::std::option::Option<crate::types::PermissionModels> {
         self.inner.get_permission_model()
     }
-    /// <p>Describes whether StackSets automatically deploys to Organizations accounts that are added to the target organization or organizational unit (OU). For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-manage-auto-deployment.html">Manage automatic deployments for CloudFormation StackSets that use service-managed permissions</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>Describes whether StackSets automatically deploys to Organizations accounts that are added to the target organization or organizational unit (OU). For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-manage-auto-deployment.html">Enable or disable automatic deployments for StackSets in Organizations</a> in the <i>CloudFormation User Guide</i>.</p>
     /// <p>Required if the permissions model is <code>SERVICE_MANAGED</code>. (Not used with self-managed permissions.)</p>
     pub fn auto_deployment(mut self, input: crate::types::AutoDeployment) -> Self {
         self.inner = self.inner.auto_deployment(input);
         self
     }
-    /// <p>Describes whether StackSets automatically deploys to Organizations accounts that are added to the target organization or organizational unit (OU). For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-manage-auto-deployment.html">Manage automatic deployments for CloudFormation StackSets that use service-managed permissions</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>Describes whether StackSets automatically deploys to Organizations accounts that are added to the target organization or organizational unit (OU). For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-manage-auto-deployment.html">Enable or disable automatic deployments for StackSets in Organizations</a> in the <i>CloudFormation User Guide</i>.</p>
     /// <p>Required if the permissions model is <code>SERVICE_MANAGED</code>. (Not used with self-managed permissions.)</p>
     pub fn set_auto_deployment(mut self, input: ::std::option::Option<crate::types::AutoDeployment>) -> Self {
         self.inner = self.inner.set_auto_deployment(input);
         self
     }
-    /// <p>Describes whether StackSets automatically deploys to Organizations accounts that are added to the target organization or organizational unit (OU). For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-manage-auto-deployment.html">Manage automatic deployments for CloudFormation StackSets that use service-managed permissions</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>Describes whether StackSets automatically deploys to Organizations accounts that are added to the target organization or organizational unit (OU). For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-manage-auto-deployment.html">Enable or disable automatic deployments for StackSets in Organizations</a> in the <i>CloudFormation User Guide</i>.</p>
     /// <p>Required if the permissions model is <code>SERVICE_MANAGED</code>. (Not used with self-managed permissions.)</p>
     pub fn get_auto_deployment(&self) -> &::std::option::Option<crate::types::AutoDeployment> {
         self.inner.get_auto_deployment()
     }
     /// <p>Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
-    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
+    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for StackSets with self-managed permissions.</p>
     /// <ul>
     /// <li>
-    /// <p>To create a stack set with service-managed permissions while signed in to the management account, specify <code>SELF</code>.</p></li>
+    /// <p>To create a StackSet with service-managed permissions while signed in to the management account, specify <code>SELF</code>.</p></li>
     /// <li>
-    /// <p>To create a stack set with service-managed permissions while signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.</p>
+    /// <p>To create a StackSet with service-managed permissions while signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.</p>
     /// <p>Your Amazon Web Services account must be registered as a delegated admin in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p></li>
     /// </ul>
-    /// <p>Stack sets with service-managed permissions are created in the management account, including stack sets that are created by delegated administrators.</p>
+    /// <p>StackSets with service-managed permissions are created in the management account, including StackSets that are created by delegated administrators.</p>
     /// <p>Valid only if the permissions model is <code>SERVICE_MANAGED</code>.</p>
     pub fn call_as(mut self, input: crate::types::CallAs) -> Self {
         self.inner = self.inner.call_as(input);
         self
     }
     /// <p>Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
-    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
+    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for StackSets with self-managed permissions.</p>
     /// <ul>
     /// <li>
-    /// <p>To create a stack set with service-managed permissions while signed in to the management account, specify <code>SELF</code>.</p></li>
+    /// <p>To create a StackSet with service-managed permissions while signed in to the management account, specify <code>SELF</code>.</p></li>
     /// <li>
-    /// <p>To create a stack set with service-managed permissions while signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.</p>
+    /// <p>To create a StackSet with service-managed permissions while signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.</p>
     /// <p>Your Amazon Web Services account must be registered as a delegated admin in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p></li>
     /// </ul>
-    /// <p>Stack sets with service-managed permissions are created in the management account, including stack sets that are created by delegated administrators.</p>
+    /// <p>StackSets with service-managed permissions are created in the management account, including StackSets that are created by delegated administrators.</p>
     /// <p>Valid only if the permissions model is <code>SERVICE_MANAGED</code>.</p>
     pub fn set_call_as(mut self, input: ::std::option::Option<crate::types::CallAs>) -> Self {
         self.inner = self.inner.set_call_as(input);
         self
     }
     /// <p>Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
-    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
+    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for StackSets with self-managed permissions.</p>
     /// <ul>
     /// <li>
-    /// <p>To create a stack set with service-managed permissions while signed in to the management account, specify <code>SELF</code>.</p></li>
+    /// <p>To create a StackSet with service-managed permissions while signed in to the management account, specify <code>SELF</code>.</p></li>
     /// <li>
-    /// <p>To create a stack set with service-managed permissions while signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.</p>
+    /// <p>To create a StackSet with service-managed permissions while signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.</p>
     /// <p>Your Amazon Web Services account must be registered as a delegated admin in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p></li>
     /// </ul>
-    /// <p>Stack sets with service-managed permissions are created in the management account, including stack sets that are created by delegated administrators.</p>
+    /// <p>StackSets with service-managed permissions are created in the management account, including StackSets that are created by delegated administrators.</p>
     /// <p>Valid only if the permissions model is <code>SERVICE_MANAGED</code>.</p>
     pub fn get_call_as(&self) -> &::std::option::Option<crate::types::CallAs> {
         self.inner.get_call_as()
     }
-    /// <p>A unique identifier for this <code>CreateStackSet</code> request. Specify this token if you plan to retry requests so that CloudFormation knows that you're not attempting to create another stack set with the same name. You might retry <code>CreateStackSet</code> requests to ensure that CloudFormation successfully received them.</p>
+    /// <p>A unique identifier for this <code>CreateStackSet</code> request. Specify this token if you plan to retry requests so that CloudFormation knows that you're not attempting to create another StackSet with the same name. You might retry <code>CreateStackSet</code> requests to ensure that CloudFormation successfully received them.</p>
     /// <p>If you don't specify an operation ID, the SDK generates one automatically.</p>
     pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
-    /// <p>A unique identifier for this <code>CreateStackSet</code> request. Specify this token if you plan to retry requests so that CloudFormation knows that you're not attempting to create another stack set with the same name. You might retry <code>CreateStackSet</code> requests to ensure that CloudFormation successfully received them.</p>
+    /// <p>A unique identifier for this <code>CreateStackSet</code> request. Specify this token if you plan to retry requests so that CloudFormation knows that you're not attempting to create another StackSet with the same name. You might retry <code>CreateStackSet</code> requests to ensure that CloudFormation successfully received them.</p>
     /// <p>If you don't specify an operation ID, the SDK generates one automatically.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
-    /// <p>A unique identifier for this <code>CreateStackSet</code> request. Specify this token if you plan to retry requests so that CloudFormation knows that you're not attempting to create another stack set with the same name. You might retry <code>CreateStackSet</code> requests to ensure that CloudFormation successfully received them.</p>
+    /// <p>A unique identifier for this <code>CreateStackSet</code> request. Specify this token if you plan to retry requests so that CloudFormation knows that you're not attempting to create another StackSet with the same name. You might retry <code>CreateStackSet</code> requests to ensure that CloudFormation successfully received them.</p>
     /// <p>If you don't specify an operation ID, the SDK generates one automatically.</p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_request_token()
     }
-    /// <p>Describes whether StackSets performs non-conflicting operations concurrently and queues conflicting operations.</p>
+    /// <p>Describes whether CloudFormation performs non-conflicting operations concurrently and queues conflicting operations.</p>
     pub fn managed_execution(mut self, input: crate::types::ManagedExecution) -> Self {
         self.inner = self.inner.managed_execution(input);
         self
     }
-    /// <p>Describes whether StackSets performs non-conflicting operations concurrently and queues conflicting operations.</p>
+    /// <p>Describes whether CloudFormation performs non-conflicting operations concurrently and queues conflicting operations.</p>
     pub fn set_managed_execution(mut self, input: ::std::option::Option<crate::types::ManagedExecution>) -> Self {
         self.inner = self.inner.set_managed_execution(input);
         self
     }
-    /// <p>Describes whether StackSets performs non-conflicting operations concurrently and queues conflicting operations.</p>
+    /// <p>Describes whether CloudFormation performs non-conflicting operations concurrently and queues conflicting operations.</p>
     pub fn get_managed_execution(&self) -> &::std::option::Option<crate::types::ManagedExecution> {
         self.inner.get_managed_execution()
     }

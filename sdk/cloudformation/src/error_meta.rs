@@ -32,7 +32,7 @@ pub enum Error {
     NameAlreadyExistsException(crate::types::error::NameAlreadyExistsException),
     /// <p>The specified operation ID already exists.</p>
     OperationIdAlreadyExistsException(crate::types::error::OperationIdAlreadyExistsException),
-    /// <p>Another operation is currently in progress for this stack set. Only one operation can be performed for a stack set at a given time.</p>
+    /// <p>Another operation is currently in progress for this StackSet. Only one operation can be performed for a stack set at a given time.</p>
     OperationInProgressException(crate::types::error::OperationInProgressException),
     /// <p>The specified ID refers to an operation that doesn't exist.</p>
     OperationNotFoundException(crate::types::error::OperationNotFoundException),
@@ -58,11 +58,11 @@ pub enum Error {
     StackNotFoundException(crate::types::error::StackNotFoundException),
     /// <p>The specified stack refactor can't be found.</p>
     StackRefactorNotFoundException(crate::types::error::StackRefactorNotFoundException),
-    /// <p>You can't yet delete this stack set, because it still contains one or more stack instances. Delete all stack instances from the stack set before deleting the stack set.</p>
+    /// <p>You can't yet delete this StackSet, because it still contains one or more stack instances. Delete all stack instances from the StackSet before deleting the StackSet.</p>
     StackSetNotEmptyException(crate::types::error::StackSetNotEmptyException),
-    /// <p>The specified stack set doesn't exist.</p>
+    /// <p>The specified StackSet doesn't exist.</p>
     StackSetNotFoundException(crate::types::error::StackSetNotFoundException),
-    /// <p>Another operation has been performed on this stack set since the specified operation was performed.</p>
+    /// <p>Another operation has been performed on this StackSet since the specified operation was performed.</p>
     StaleRequestException(crate::types::error::StaleRequestException),
     /// <p>A client request token already exists.</p>
     TokenAlreadyExistsException(crate::types::error::TokenAlreadyExistsException),

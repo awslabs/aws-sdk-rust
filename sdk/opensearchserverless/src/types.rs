@@ -99,6 +99,8 @@ pub use crate::types::_collection_error_detail::CollectionErrorDetail;
 
 pub use crate::types::_collection_detail::CollectionDetail;
 
+pub use crate::types::_fips_endpoints::FipsEndpoints;
+
 mod _access_policy_detail;
 
 mod _access_policy_stats;
@@ -136,6 +138,8 @@ mod _delete_vpc_endpoint_detail;
 mod _effective_lifecycle_policy_detail;
 
 mod _effective_lifecycle_policy_error_detail;
+
+mod _fips_endpoints;
 
 mod _iam_federation_config_options;
 

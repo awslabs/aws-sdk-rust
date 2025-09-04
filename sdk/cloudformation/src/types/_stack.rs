@@ -68,7 +68,7 @@ pub struct Stack {
     /// <p><code>FORCE_DELETE_STACK</code> - Delete the stack if it's stuck in a <code>DELETE_FAILED</code> state due to resource deletion failure.</p></li>
     /// </ul>
     pub deletion_mode: ::std::option::Option<crate::types::DeletionMode>,
-    /// <p>The detailed status of the resource or stack. If <code>CONFIGURATION_COMPLETE</code> is present, the resource or resource configuration phase has completed and the stabilization of the resources is in progress. The stack sets <code>CONFIGURATION_COMPLETE</code> when all of the resources in the stack have reached that event. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">Understand CloudFormation stack creation events</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>The detailed status of the resource or stack. If <code>CONFIGURATION_COMPLETE</code> is present, the resource or resource configuration phase has completed and the stabilization of the resources is in progress. The StackSets <code>CONFIGURATION_COMPLETE</code> when all of the resources in the stack have reached that event. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">Understand CloudFormation stack creation events</a> in the <i>CloudFormation User Guide</i>.</p>
     pub detailed_status: ::std::option::Option<crate::types::DetailedStatus>,
 }
 impl Stack {
@@ -194,7 +194,7 @@ impl Stack {
     pub fn deletion_mode(&self) -> ::std::option::Option<&crate::types::DeletionMode> {
         self.deletion_mode.as_ref()
     }
-    /// <p>The detailed status of the resource or stack. If <code>CONFIGURATION_COMPLETE</code> is present, the resource or resource configuration phase has completed and the stabilization of the resources is in progress. The stack sets <code>CONFIGURATION_COMPLETE</code> when all of the resources in the stack have reached that event. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">Understand CloudFormation stack creation events</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>The detailed status of the resource or stack. If <code>CONFIGURATION_COMPLETE</code> is present, the resource or resource configuration phase has completed and the stabilization of the resources is in progress. The StackSets <code>CONFIGURATION_COMPLETE</code> when all of the resources in the stack have reached that event. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">Understand CloudFormation stack creation events</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn detailed_status(&self) -> ::std::option::Option<&crate::types::DetailedStatus> {
         self.detailed_status.as_ref()
     }
@@ -654,17 +654,17 @@ impl StackBuilder {
     pub fn get_deletion_mode(&self) -> &::std::option::Option<crate::types::DeletionMode> {
         &self.deletion_mode
     }
-    /// <p>The detailed status of the resource or stack. If <code>CONFIGURATION_COMPLETE</code> is present, the resource or resource configuration phase has completed and the stabilization of the resources is in progress. The stack sets <code>CONFIGURATION_COMPLETE</code> when all of the resources in the stack have reached that event. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">Understand CloudFormation stack creation events</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>The detailed status of the resource or stack. If <code>CONFIGURATION_COMPLETE</code> is present, the resource or resource configuration phase has completed and the stabilization of the resources is in progress. The StackSets <code>CONFIGURATION_COMPLETE</code> when all of the resources in the stack have reached that event. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">Understand CloudFormation stack creation events</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn detailed_status(mut self, input: crate::types::DetailedStatus) -> Self {
         self.detailed_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The detailed status of the resource or stack. If <code>CONFIGURATION_COMPLETE</code> is present, the resource or resource configuration phase has completed and the stabilization of the resources is in progress. The stack sets <code>CONFIGURATION_COMPLETE</code> when all of the resources in the stack have reached that event. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">Understand CloudFormation stack creation events</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>The detailed status of the resource or stack. If <code>CONFIGURATION_COMPLETE</code> is present, the resource or resource configuration phase has completed and the stabilization of the resources is in progress. The StackSets <code>CONFIGURATION_COMPLETE</code> when all of the resources in the stack have reached that event. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">Understand CloudFormation stack creation events</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn set_detailed_status(mut self, input: ::std::option::Option<crate::types::DetailedStatus>) -> Self {
         self.detailed_status = input;
         self
     }
-    /// <p>The detailed status of the resource or stack. If <code>CONFIGURATION_COMPLETE</code> is present, the resource or resource configuration phase has completed and the stabilization of the resources is in progress. The stack sets <code>CONFIGURATION_COMPLETE</code> when all of the resources in the stack have reached that event. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">Understand CloudFormation stack creation events</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>The detailed status of the resource or stack. If <code>CONFIGURATION_COMPLETE</code> is present, the resource or resource configuration phase has completed and the stabilization of the resources is in progress. The StackSets <code>CONFIGURATION_COMPLETE</code> when all of the resources in the stack have reached that event. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">Understand CloudFormation stack creation events</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn get_detailed_status(&self) -> &::std::option::Option<crate::types::DetailedStatus> {
         &self.detailed_status
     }

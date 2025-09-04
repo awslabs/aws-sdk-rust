@@ -7,7 +7,7 @@ pub struct DescribeChangeSetHooksOutput {
     pub change_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The change set name.</p>
     pub change_set_name: ::std::option::Option<::std::string::String>,
-    /// <p>List of hook objects.</p>
+    /// <p>List of Hook objects.</p>
     pub hooks: ::std::option::Option<::std::vec::Vec<crate::types::ChangeSetHook>>,
     /// <p>Provides the status of the change set hook.</p>
     pub status: ::std::option::Option<crate::types::ChangeSetHooksStatus>,
@@ -28,7 +28,7 @@ impl DescribeChangeSetHooksOutput {
     pub fn change_set_name(&self) -> ::std::option::Option<&str> {
         self.change_set_name.as_deref()
     }
-    /// <p>List of hook objects.</p>
+    /// <p>List of Hook objects.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.hooks.is_none()`.
     pub fn hooks(&self) -> &[crate::types::ChangeSetHook] {
@@ -109,19 +109,19 @@ impl DescribeChangeSetHooksOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_hooks`](Self::set_hooks).
     ///
-    /// <p>List of hook objects.</p>
+    /// <p>List of Hook objects.</p>
     pub fn hooks(mut self, input: crate::types::ChangeSetHook) -> Self {
         let mut v = self.hooks.unwrap_or_default();
         v.push(input);
         self.hooks = ::std::option::Option::Some(v);
         self
     }
-    /// <p>List of hook objects.</p>
+    /// <p>List of Hook objects.</p>
     pub fn set_hooks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ChangeSetHook>>) -> Self {
         self.hooks = input;
         self
     }
-    /// <p>List of hook objects.</p>
+    /// <p>List of Hook objects.</p>
     pub fn get_hooks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ChangeSetHook>> {
         &self.hooks
     }

@@ -271,9 +271,9 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DetectStackSe
 pub enum DetectStackSetDriftError {
     /// <p>The specified operation isn't valid.</p>
     InvalidOperationException(crate::types::error::InvalidOperationException),
-    /// <p>Another operation is currently in progress for this stack set. Only one operation can be performed for a stack set at a given time.</p>
+    /// <p>Another operation is currently in progress for this StackSet. Only one operation can be performed for a stack set at a given time.</p>
     OperationInProgressException(crate::types::error::OperationInProgressException),
-    /// <p>The specified stack set doesn't exist.</p>
+    /// <p>The specified StackSet doesn't exist.</p>
     StackSetNotFoundException(crate::types::error::StackSetNotFoundException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

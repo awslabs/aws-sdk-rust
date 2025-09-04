@@ -3,10 +3,10 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeStackSetInput {
-    /// <p>The name or unique ID of the stack set whose description you want.</p>
+    /// <p>The name or unique ID of the StackSet whose description you want.</p>
     pub stack_set_name: ::std::option::Option<::std::string::String>,
     /// <p>\[Service-managed permissions\] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
-    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
+    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for StackSets with self-managed permissions.</p>
     /// <ul>
     /// <li>
     /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p></li>
@@ -17,12 +17,12 @@ pub struct DescribeStackSetInput {
     pub call_as: ::std::option::Option<crate::types::CallAs>,
 }
 impl DescribeStackSetInput {
-    /// <p>The name or unique ID of the stack set whose description you want.</p>
+    /// <p>The name or unique ID of the StackSet whose description you want.</p>
     pub fn stack_set_name(&self) -> ::std::option::Option<&str> {
         self.stack_set_name.as_deref()
     }
     /// <p>\[Service-managed permissions\] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
-    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
+    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for StackSets with self-managed permissions.</p>
     /// <ul>
     /// <li>
     /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p></li>
@@ -49,23 +49,23 @@ pub struct DescribeStackSetInputBuilder {
     pub(crate) call_as: ::std::option::Option<crate::types::CallAs>,
 }
 impl DescribeStackSetInputBuilder {
-    /// <p>The name or unique ID of the stack set whose description you want.</p>
+    /// <p>The name or unique ID of the StackSet whose description you want.</p>
     /// This field is required.
     pub fn stack_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_set_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name or unique ID of the stack set whose description you want.</p>
+    /// <p>The name or unique ID of the StackSet whose description you want.</p>
     pub fn set_stack_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stack_set_name = input;
         self
     }
-    /// <p>The name or unique ID of the stack set whose description you want.</p>
+    /// <p>The name or unique ID of the StackSet whose description you want.</p>
     pub fn get_stack_set_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.stack_set_name
     }
     /// <p>\[Service-managed permissions\] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
-    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
+    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for StackSets with self-managed permissions.</p>
     /// <ul>
     /// <li>
     /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p></li>
@@ -78,7 +78,7 @@ impl DescribeStackSetInputBuilder {
         self
     }
     /// <p>\[Service-managed permissions\] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
-    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
+    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for StackSets with self-managed permissions.</p>
     /// <ul>
     /// <li>
     /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p></li>
@@ -91,7 +91,7 @@ impl DescribeStackSetInputBuilder {
         self
     }
     /// <p>\[Service-managed permissions\] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
-    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
+    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for StackSets with self-managed permissions.</p>
     /// <ul>
     /// <li>
     /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p></li>

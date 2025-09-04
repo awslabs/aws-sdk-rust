@@ -22,7 +22,18 @@ impl crate::operation::list_hook_results::builders::ListHookResultsInputBuilder 
 }
 /// Fluent builder constructing a request to `ListHookResults`.
 ///
-/// <p>Returns summaries of invoked Hooks when a change set or Cloud Control API operation target is provided.</p>
+/// <p>Returns summaries of invoked Hooks. For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/hooks-userguide/hooks-view-invocations.html">View CloudFormation Hooks invocations</a> in the <i>CloudFormation Hooks User Guide</i>.</p>
+/// <p>This operation supports the following parameter combinations:</p>
+/// <ul>
+/// <li>
+/// <p>No parameters: Returns all Hook invocation summaries.</p></li>
+/// <li>
+/// <p><code>TypeArn</code> only: Returns summaries for a specific Hook.</p></li>
+/// <li>
+/// <p><code>TypeArn</code> and <code>Status</code>: Returns summaries for a specific Hook filtered by status.</p></li>
+/// <li>
+/// <p><code>TargetId</code> and <code>TargetType</code>: Returns summaries for a specific Hook invocation target.</p></li>
+/// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListHookResultsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,36 +119,100 @@ impl ListHookResultsFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The type of operation being targeted by the Hook.</p>
+    /// <p>Filters results by target type. Currently, only <code>CHANGE_SET</code> and <code>CLOUD_CONTROL</code> are supported filter options.</p>
+    /// <p>Required when <code>TargetId</code> is specified and cannot be used otherwise.</p>
     pub fn target_type(mut self, input: crate::types::ListHookResultsTargetType) -> Self {
         self.inner = self.inner.target_type(input);
         self
     }
-    /// <p>The type of operation being targeted by the Hook.</p>
+    /// <p>Filters results by target type. Currently, only <code>CHANGE_SET</code> and <code>CLOUD_CONTROL</code> are supported filter options.</p>
+    /// <p>Required when <code>TargetId</code> is specified and cannot be used otherwise.</p>
     pub fn set_target_type(mut self, input: ::std::option::Option<crate::types::ListHookResultsTargetType>) -> Self {
         self.inner = self.inner.set_target_type(input);
         self
     }
-    /// <p>The type of operation being targeted by the Hook.</p>
+    /// <p>Filters results by target type. Currently, only <code>CHANGE_SET</code> and <code>CLOUD_CONTROL</code> are supported filter options.</p>
+    /// <p>Required when <code>TargetId</code> is specified and cannot be used otherwise.</p>
     pub fn get_target_type(&self) -> &::std::option::Option<crate::types::ListHookResultsTargetType> {
         self.inner.get_target_type()
     }
-    /// <p>The logical ID of the target the operation is acting on by the Hook. If the target is a change set, it's the ARN of the change set.</p>
-    /// <p>If the target is a Cloud Control API operation, this will be the <code>HookRequestToken</code> returned by the Cloud Control API operation request. For more information on the <code>HookRequestToken</code>, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_ProgressEvent.html">ProgressEvent</a>.</p>
+    /// <p>Filters results by the unique identifier of the target the Hook was invoked against.</p>
+    /// <p>For change sets, this is the change set ARN. When the target is a Cloud Control API operation, this value must be the <code>HookRequestToken</code> returned by the Cloud Control API request. For more information on the <code>HookRequestToken</code>, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_ProgressEvent.html">ProgressEvent</a>.</p>
+    /// <p>Required when <code>TargetType</code> is specified and cannot be used otherwise.</p>
     pub fn target_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target_id(input.into());
         self
     }
-    /// <p>The logical ID of the target the operation is acting on by the Hook. If the target is a change set, it's the ARN of the change set.</p>
-    /// <p>If the target is a Cloud Control API operation, this will be the <code>HookRequestToken</code> returned by the Cloud Control API operation request. For more information on the <code>HookRequestToken</code>, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_ProgressEvent.html">ProgressEvent</a>.</p>
+    /// <p>Filters results by the unique identifier of the target the Hook was invoked against.</p>
+    /// <p>For change sets, this is the change set ARN. When the target is a Cloud Control API operation, this value must be the <code>HookRequestToken</code> returned by the Cloud Control API request. For more information on the <code>HookRequestToken</code>, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_ProgressEvent.html">ProgressEvent</a>.</p>
+    /// <p>Required when <code>TargetType</code> is specified and cannot be used otherwise.</p>
     pub fn set_target_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_target_id(input);
         self
     }
-    /// <p>The logical ID of the target the operation is acting on by the Hook. If the target is a change set, it's the ARN of the change set.</p>
-    /// <p>If the target is a Cloud Control API operation, this will be the <code>HookRequestToken</code> returned by the Cloud Control API operation request. For more information on the <code>HookRequestToken</code>, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_ProgressEvent.html">ProgressEvent</a>.</p>
+    /// <p>Filters results by the unique identifier of the target the Hook was invoked against.</p>
+    /// <p>For change sets, this is the change set ARN. When the target is a Cloud Control API operation, this value must be the <code>HookRequestToken</code> returned by the Cloud Control API request. For more information on the <code>HookRequestToken</code>, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_ProgressEvent.html">ProgressEvent</a>.</p>
+    /// <p>Required when <code>TargetType</code> is specified and cannot be used otherwise.</p>
     pub fn get_target_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_target_id()
+    }
+    /// <p>Filters results by the ARN of the Hook. Can be used alone or in combination with <code>Status</code>.</p>
+    pub fn type_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.type_arn(input.into());
+        self
+    }
+    /// <p>Filters results by the ARN of the Hook. Can be used alone or in combination with <code>Status</code>.</p>
+    pub fn set_type_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_type_arn(input);
+        self
+    }
+    /// <p>Filters results by the ARN of the Hook. Can be used alone or in combination with <code>Status</code>.</p>
+    pub fn get_type_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_type_arn()
+    }
+    /// <p>Filters results by the status of Hook invocations. Can only be used in combination with <code>TypeArn</code>. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>HOOK_IN_PROGRESS</code>: The Hook is currently running.</p></li>
+    /// <li>
+    /// <p><code>HOOK_COMPLETE_SUCCEEDED</code>: The Hook completed successfully.</p></li>
+    /// <li>
+    /// <p><code>HOOK_COMPLETE_FAILED</code>: The Hook completed but failed validation.</p></li>
+    /// <li>
+    /// <p><code>HOOK_FAILED</code>: The Hook encountered an error during execution.</p></li>
+    /// </ul>
+    pub fn status(mut self, input: crate::types::HookStatus) -> Self {
+        self.inner = self.inner.status(input);
+        self
+    }
+    /// <p>Filters results by the status of Hook invocations. Can only be used in combination with <code>TypeArn</code>. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>HOOK_IN_PROGRESS</code>: The Hook is currently running.</p></li>
+    /// <li>
+    /// <p><code>HOOK_COMPLETE_SUCCEEDED</code>: The Hook completed successfully.</p></li>
+    /// <li>
+    /// <p><code>HOOK_COMPLETE_FAILED</code>: The Hook completed but failed validation.</p></li>
+    /// <li>
+    /// <p><code>HOOK_FAILED</code>: The Hook encountered an error during execution.</p></li>
+    /// </ul>
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::HookStatus>) -> Self {
+        self.inner = self.inner.set_status(input);
+        self
+    }
+    /// <p>Filters results by the status of Hook invocations. Can only be used in combination with <code>TypeArn</code>. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>HOOK_IN_PROGRESS</code>: The Hook is currently running.</p></li>
+    /// <li>
+    /// <p><code>HOOK_COMPLETE_SUCCEEDED</code>: The Hook completed successfully.</p></li>
+    /// <li>
+    /// <p><code>HOOK_COMPLETE_FAILED</code>: The Hook completed but failed validation.</p></li>
+    /// <li>
+    /// <p><code>HOOK_FAILED</code>: The Hook encountered an error during execution.</p></li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::HookStatus> {
+        self.inner.get_status()
     }
     /// <p>A string that identifies the next page of events that you want to retrieve.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

@@ -405,6 +405,8 @@ pub(crate) mod shape_privacy_impact;
 
 pub(crate) mod shape_protected_job;
 
+pub(crate) mod shape_protected_job_compute_configuration;
+
 pub(crate) mod shape_protected_job_parameters;
 
 pub(crate) mod shape_protected_job_result_configuration_input;
@@ -554,6 +556,8 @@ pub(crate) mod shape_protected_job_result_configuration_output;
 pub(crate) mod shape_protected_job_statistics;
 
 pub(crate) mod shape_protected_job_summary;
+
+pub(crate) mod shape_protected_job_worker_compute_configuration;
 
 pub(crate) mod shape_protected_query_error;
 

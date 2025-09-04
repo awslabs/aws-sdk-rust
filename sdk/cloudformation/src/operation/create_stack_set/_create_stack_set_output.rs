@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateStackSetOutput {
-    /// <p>The ID of the stack set that you're creating.</p>
+    /// <p>The ID of the StackSet that you're creating.</p>
     pub stack_set_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateStackSetOutput {
-    /// <p>The ID of the stack set that you're creating.</p>
+    /// <p>The ID of the StackSet that you're creating.</p>
     pub fn stack_set_id(&self) -> ::std::option::Option<&str> {
         self.stack_set_id.as_deref()
     }
@@ -33,17 +33,17 @@ pub struct CreateStackSetOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateStackSetOutputBuilder {
-    /// <p>The ID of the stack set that you're creating.</p>
+    /// <p>The ID of the StackSet that you're creating.</p>
     pub fn stack_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_set_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the stack set that you're creating.</p>
+    /// <p>The ID of the StackSet that you're creating.</p>
     pub fn set_stack_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stack_set_id = input;
         self
     }
-    /// <p>The ID of the stack set that you're creating.</p>
+    /// <p>The ID of the StackSet that you're creating.</p>
     pub fn get_stack_set_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.stack_set_id
     }

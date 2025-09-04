@@ -22,8 +22,8 @@ impl crate::operation::update_stack_set::builders::UpdateStackSetInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateStackSet`.
 ///
-/// <p>Updates the stack set and associated stack instances in the specified accounts and Amazon Web Services Regions.</p>
-/// <p>Even if the stack set operation created by updating the stack set fails (completely or partially, below or above a specified failure tolerance), the stack set is updated with your changes. Subsequent <code>CreateStackInstances</code> calls on the specified stack set use the updated stack set.</p><note>
+/// <p>Updates the StackSet and associated stack instances in the specified accounts and Amazon Web Services Regions.</p>
+/// <p>Even if the StackSet operation created by updating the StackSet fails (completely or partially, below or above a specified failure tolerance), the StackSet is updated with your changes. Subsequent <code>CreateStackInstances</code> calls on the specified StackSet use the updated StackSet.</p><note>
 /// <p>The maximum number of organizational unit (OUs) supported by a <code>UpdateStackSet</code> operation is 50.</p>
 /// <p>If you need more than 50, consider the following options:</p>
 /// <ul>
@@ -118,17 +118,17 @@ impl UpdateStackSetFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name or unique ID of the stack set that you want to update.</p>
+    /// <p>The name or unique ID of the StackSet that you want to update.</p>
     pub fn stack_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stack_set_name(input.into());
         self
     }
-    /// <p>The name or unique ID of the stack set that you want to update.</p>
+    /// <p>The name or unique ID of the StackSet that you want to update.</p>
     pub fn set_stack_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stack_set_name(input);
         self
     }
-    /// <p>The name or unique ID of the stack set that you want to update.</p>
+    /// <p>The name or unique ID of the StackSet that you want to update.</p>
     pub fn get_stack_set_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_stack_set_name()
     }
@@ -180,19 +180,19 @@ impl UpdateStackSetFluentBuilder {
     pub fn get_template_url(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_template_url()
     }
-    /// <p>Use the existing template that's associated with the stack set that you're updating.</p>
+    /// <p>Use the existing template that's associated with the StackSet that you're updating.</p>
     /// <p>Conditional: You must specify only one of the following parameters: <code>TemplateBody</code> or <code>TemplateURL</code>—or set <code>UsePreviousTemplate</code> to true.</p>
     pub fn use_previous_template(mut self, input: bool) -> Self {
         self.inner = self.inner.use_previous_template(input);
         self
     }
-    /// <p>Use the existing template that's associated with the stack set that you're updating.</p>
+    /// <p>Use the existing template that's associated with the StackSet that you're updating.</p>
     /// <p>Conditional: You must specify only one of the following parameters: <code>TemplateBody</code> or <code>TemplateURL</code>—or set <code>UsePreviousTemplate</code> to true.</p>
     pub fn set_use_previous_template(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_use_previous_template(input);
         self
     }
-    /// <p>Use the existing template that's associated with the stack set that you're updating.</p>
+    /// <p>Use the existing template that's associated with the StackSet that you're updating.</p>
     /// <p>Conditional: You must specify only one of the following parameters: <code>TemplateBody</code> or <code>TemplateURL</code>—or set <code>UsePreviousTemplate</code> to true.</p>
     pub fn get_use_previous_template(&self) -> &::std::option::Option<bool> {
         self.inner.get_use_previous_template()
@@ -202,17 +202,17 @@ impl UpdateStackSetFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
     ///
-    /// <p>A list of input parameters for the stack set template.</p>
+    /// <p>A list of input parameters for the StackSet template.</p>
     pub fn parameters(mut self, input: crate::types::Parameter) -> Self {
         self.inner = self.inner.parameters(input);
         self
     }
-    /// <p>A list of input parameters for the stack set template.</p>
+    /// <p>A list of input parameters for the StackSet template.</p>
     pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>) -> Self {
         self.inner = self.inner.set_parameters(input);
         self
     }
-    /// <p>A list of input parameters for the stack set template.</p>
+    /// <p>A list of input parameters for the StackSet template.</p>
     pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
         self.inner.get_parameters()
     }
@@ -221,7 +221,7 @@ impl UpdateStackSetFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_capabilities`](Self::set_capabilities).
     ///
-    /// <p>In some cases, you must explicitly acknowledge that your stack template contains certain capabilities in order for CloudFormation to update the stack set and its associated stack instances.</p>
+    /// <p>In some cases, you must explicitly acknowledge that your stack template contains certain capabilities in order for CloudFormation to update the StackSet and its associated stack instances.</p>
     /// <ul>
     /// <li>
     /// <p><code>CAPABILITY_IAM</code> and <code>CAPABILITY_NAMED_IAM</code></p>
@@ -255,15 +255,15 @@ impl UpdateStackSetFluentBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/control-access-with-iam.html#using-iam-capabilities">Acknowledging IAM resources in CloudFormation templates</a>.</p></li>
     /// <li>
     /// <p><code>CAPABILITY_AUTO_EXPAND</code></p>
-    /// <p>Some templates reference macros. If your stack set template references one or more macros, you must update the stack set directly from the processed template, without first reviewing the resulting changes in a change set. To update the stack set directly, you must acknowledge this capability. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Perform custom processing on CloudFormation templates with template macros</a>.</p><important>
-    /// <p>Stack sets with service-managed permissions do not currently support the use of macros in templates. (This includes the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-include.html">AWS::Include</a> and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.) Even if you specify this capability for a stack set with service-managed permissions, if you reference a macro in your template the stack set operation will fail.</p>
+    /// <p>Some templates reference macros. If your StackSet template references one or more macros, you must update the StackSet directly from the processed template, without first reviewing the resulting changes in a change set. To update the StackSet directly, you must acknowledge this capability. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Perform custom processing on CloudFormation templates with template macros</a>.</p><important>
+    /// <p>StackSets with service-managed permissions do not currently support the use of macros in templates. (This includes the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-include.html">AWS::Include</a> and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.) Even if you specify this capability for a StackSet with service-managed permissions, if you reference a macro in your template the StackSet operation will fail.</p>
     /// </important></li>
     /// </ul>
     pub fn capabilities(mut self, input: crate::types::Capability) -> Self {
         self.inner = self.inner.capabilities(input);
         self
     }
-    /// <p>In some cases, you must explicitly acknowledge that your stack template contains certain capabilities in order for CloudFormation to update the stack set and its associated stack instances.</p>
+    /// <p>In some cases, you must explicitly acknowledge that your stack template contains certain capabilities in order for CloudFormation to update the StackSet and its associated stack instances.</p>
     /// <ul>
     /// <li>
     /// <p><code>CAPABILITY_IAM</code> and <code>CAPABILITY_NAMED_IAM</code></p>
@@ -297,15 +297,15 @@ impl UpdateStackSetFluentBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/control-access-with-iam.html#using-iam-capabilities">Acknowledging IAM resources in CloudFormation templates</a>.</p></li>
     /// <li>
     /// <p><code>CAPABILITY_AUTO_EXPAND</code></p>
-    /// <p>Some templates reference macros. If your stack set template references one or more macros, you must update the stack set directly from the processed template, without first reviewing the resulting changes in a change set. To update the stack set directly, you must acknowledge this capability. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Perform custom processing on CloudFormation templates with template macros</a>.</p><important>
-    /// <p>Stack sets with service-managed permissions do not currently support the use of macros in templates. (This includes the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-include.html">AWS::Include</a> and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.) Even if you specify this capability for a stack set with service-managed permissions, if you reference a macro in your template the stack set operation will fail.</p>
+    /// <p>Some templates reference macros. If your StackSet template references one or more macros, you must update the StackSet directly from the processed template, without first reviewing the resulting changes in a change set. To update the StackSet directly, you must acknowledge this capability. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Perform custom processing on CloudFormation templates with template macros</a>.</p><important>
+    /// <p>StackSets with service-managed permissions do not currently support the use of macros in templates. (This includes the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-include.html">AWS::Include</a> and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.) Even if you specify this capability for a StackSet with service-managed permissions, if you reference a macro in your template the StackSet operation will fail.</p>
     /// </important></li>
     /// </ul>
     pub fn set_capabilities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Capability>>) -> Self {
         self.inner = self.inner.set_capabilities(input);
         self
     }
-    /// <p>In some cases, you must explicitly acknowledge that your stack template contains certain capabilities in order for CloudFormation to update the stack set and its associated stack instances.</p>
+    /// <p>In some cases, you must explicitly acknowledge that your stack template contains certain capabilities in order for CloudFormation to update the StackSet and its associated stack instances.</p>
     /// <ul>
     /// <li>
     /// <p><code>CAPABILITY_IAM</code> and <code>CAPABILITY_NAMED_IAM</code></p>
@@ -339,8 +339,8 @@ impl UpdateStackSetFluentBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/control-access-with-iam.html#using-iam-capabilities">Acknowledging IAM resources in CloudFormation templates</a>.</p></li>
     /// <li>
     /// <p><code>CAPABILITY_AUTO_EXPAND</code></p>
-    /// <p>Some templates reference macros. If your stack set template references one or more macros, you must update the stack set directly from the processed template, without first reviewing the resulting changes in a change set. To update the stack set directly, you must acknowledge this capability. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Perform custom processing on CloudFormation templates with template macros</a>.</p><important>
-    /// <p>Stack sets with service-managed permissions do not currently support the use of macros in templates. (This includes the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-include.html">AWS::Include</a> and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.) Even if you specify this capability for a stack set with service-managed permissions, if you reference a macro in your template the stack set operation will fail.</p>
+    /// <p>Some templates reference macros. If your StackSet template references one or more macros, you must update the StackSet directly from the processed template, without first reviewing the resulting changes in a change set. To update the StackSet directly, you must acknowledge this capability. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Perform custom processing on CloudFormation templates with template macros</a>.</p><important>
+    /// <p>StackSets with service-managed permissions do not currently support the use of macros in templates. (This includes the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-include.html">AWS::Include</a> and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.) Even if you specify this capability for a StackSet with service-managed permissions, if you reference a macro in your template the StackSet operation will fail.</p>
     /// </important></li>
     /// </ul>
     pub fn get_capabilities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Capability>> {
@@ -351,193 +351,193 @@ impl UpdateStackSetFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>The key-value pairs to associate with this stack set and the stacks created from it. CloudFormation also propagates these tags to supported resources that are created in the stacks. You can specify a maximum number of 50 tags.</p>
-    /// <p>If you specify tags for this parameter, those tags replace any list of tags that are currently associated with this stack set. This means:</p>
+    /// <p>The key-value pairs to associate with this StackSet and the stacks created from it. CloudFormation also propagates these tags to supported resources that are created in the stacks. You can specify a maximum number of 50 tags.</p>
+    /// <p>If you specify tags for this parameter, those tags replace any list of tags that are currently associated with this StackSet. This means:</p>
     /// <ul>
     /// <li>
     /// <p>If you don't specify this parameter, CloudFormation doesn't modify the stack's tags.</p></li>
     /// <li>
-    /// <p>If you specify <i>any</i> tags using this parameter, you must specify <i>all</i> the tags that you want associated with this stack set, even tags you've specified before (for example, when creating the stack set or during a previous update of the stack set.). Any tags that you don't include in the updated list of tags are removed from the stack set, and therefore from the stacks and resources as well.</p></li>
+    /// <p>If you specify <i>any</i> tags using this parameter, you must specify <i>all</i> the tags that you want associated with this StackSet, even tags you've specified before (for example, when creating the StackSet or during a previous update of the StackSet.). Any tags that you don't include in the updated list of tags are removed from the StackSet, and therefore from the stacks and resources as well.</p></li>
     /// <li>
     /// <p>If you specify an empty value, CloudFormation removes all currently associated tags.</p></li>
     /// </ul>
-    /// <p>If you specify new tags as part of an <code>UpdateStackSet</code> action, CloudFormation checks to see if you have the required IAM permission to tag resources. If you omit tags that are currently associated with the stack set from the list of tags you specify, CloudFormation assumes that you want to remove those tags from the stack set, and checks to see if you have permission to untag resources. If you don't have the necessary permission(s), the entire <code>UpdateStackSet</code> action fails with an <code>access denied</code> error, and the stack set is not updated.</p>
+    /// <p>If you specify new tags as part of an <code>UpdateStackSet</code> action, CloudFormation checks to see if you have the required IAM permission to tag resources. If you omit tags that are currently associated with the StackSet from the list of tags you specify, CloudFormation assumes that you want to remove those tags from the StackSet, and checks to see if you have permission to untag resources. If you don't have the necessary permission(s), the entire <code>UpdateStackSet</code> action fails with an <code>access denied</code> error, and the StackSet is not updated.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         self.inner = self.inner.tags(input);
         self
     }
-    /// <p>The key-value pairs to associate with this stack set and the stacks created from it. CloudFormation also propagates these tags to supported resources that are created in the stacks. You can specify a maximum number of 50 tags.</p>
-    /// <p>If you specify tags for this parameter, those tags replace any list of tags that are currently associated with this stack set. This means:</p>
+    /// <p>The key-value pairs to associate with this StackSet and the stacks created from it. CloudFormation also propagates these tags to supported resources that are created in the stacks. You can specify a maximum number of 50 tags.</p>
+    /// <p>If you specify tags for this parameter, those tags replace any list of tags that are currently associated with this StackSet. This means:</p>
     /// <ul>
     /// <li>
     /// <p>If you don't specify this parameter, CloudFormation doesn't modify the stack's tags.</p></li>
     /// <li>
-    /// <p>If you specify <i>any</i> tags using this parameter, you must specify <i>all</i> the tags that you want associated with this stack set, even tags you've specified before (for example, when creating the stack set or during a previous update of the stack set.). Any tags that you don't include in the updated list of tags are removed from the stack set, and therefore from the stacks and resources as well.</p></li>
+    /// <p>If you specify <i>any</i> tags using this parameter, you must specify <i>all</i> the tags that you want associated with this StackSet, even tags you've specified before (for example, when creating the StackSet or during a previous update of the StackSet.). Any tags that you don't include in the updated list of tags are removed from the StackSet, and therefore from the stacks and resources as well.</p></li>
     /// <li>
     /// <p>If you specify an empty value, CloudFormation removes all currently associated tags.</p></li>
     /// </ul>
-    /// <p>If you specify new tags as part of an <code>UpdateStackSet</code> action, CloudFormation checks to see if you have the required IAM permission to tag resources. If you omit tags that are currently associated with the stack set from the list of tags you specify, CloudFormation assumes that you want to remove those tags from the stack set, and checks to see if you have permission to untag resources. If you don't have the necessary permission(s), the entire <code>UpdateStackSet</code> action fails with an <code>access denied</code> error, and the stack set is not updated.</p>
+    /// <p>If you specify new tags as part of an <code>UpdateStackSet</code> action, CloudFormation checks to see if you have the required IAM permission to tag resources. If you omit tags that are currently associated with the StackSet from the list of tags you specify, CloudFormation assumes that you want to remove those tags from the StackSet, and checks to see if you have permission to untag resources. If you don't have the necessary permission(s), the entire <code>UpdateStackSet</code> action fails with an <code>access denied</code> error, and the StackSet is not updated.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p>The key-value pairs to associate with this stack set and the stacks created from it. CloudFormation also propagates these tags to supported resources that are created in the stacks. You can specify a maximum number of 50 tags.</p>
-    /// <p>If you specify tags for this parameter, those tags replace any list of tags that are currently associated with this stack set. This means:</p>
+    /// <p>The key-value pairs to associate with this StackSet and the stacks created from it. CloudFormation also propagates these tags to supported resources that are created in the stacks. You can specify a maximum number of 50 tags.</p>
+    /// <p>If you specify tags for this parameter, those tags replace any list of tags that are currently associated with this StackSet. This means:</p>
     /// <ul>
     /// <li>
     /// <p>If you don't specify this parameter, CloudFormation doesn't modify the stack's tags.</p></li>
     /// <li>
-    /// <p>If you specify <i>any</i> tags using this parameter, you must specify <i>all</i> the tags that you want associated with this stack set, even tags you've specified before (for example, when creating the stack set or during a previous update of the stack set.). Any tags that you don't include in the updated list of tags are removed from the stack set, and therefore from the stacks and resources as well.</p></li>
+    /// <p>If you specify <i>any</i> tags using this parameter, you must specify <i>all</i> the tags that you want associated with this StackSet, even tags you've specified before (for example, when creating the StackSet or during a previous update of the StackSet.). Any tags that you don't include in the updated list of tags are removed from the StackSet, and therefore from the stacks and resources as well.</p></li>
     /// <li>
     /// <p>If you specify an empty value, CloudFormation removes all currently associated tags.</p></li>
     /// </ul>
-    /// <p>If you specify new tags as part of an <code>UpdateStackSet</code> action, CloudFormation checks to see if you have the required IAM permission to tag resources. If you omit tags that are currently associated with the stack set from the list of tags you specify, CloudFormation assumes that you want to remove those tags from the stack set, and checks to see if you have permission to untag resources. If you don't have the necessary permission(s), the entire <code>UpdateStackSet</code> action fails with an <code>access denied</code> error, and the stack set is not updated.</p>
+    /// <p>If you specify new tags as part of an <code>UpdateStackSet</code> action, CloudFormation checks to see if you have the required IAM permission to tag resources. If you omit tags that are currently associated with the StackSet from the list of tags you specify, CloudFormation assumes that you want to remove those tags from the StackSet, and checks to see if you have permission to untag resources. If you don't have the necessary permission(s), the entire <code>UpdateStackSet</code> action fails with an <code>access denied</code> error, and the StackSet is not updated.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }
-    /// <p>Preferences for how CloudFormation performs this stack set operation.</p>
+    /// <p>Preferences for how CloudFormation performs this StackSet operation.</p>
     pub fn operation_preferences(mut self, input: crate::types::StackSetOperationPreferences) -> Self {
         self.inner = self.inner.operation_preferences(input);
         self
     }
-    /// <p>Preferences for how CloudFormation performs this stack set operation.</p>
+    /// <p>Preferences for how CloudFormation performs this StackSet operation.</p>
     pub fn set_operation_preferences(mut self, input: ::std::option::Option<crate::types::StackSetOperationPreferences>) -> Self {
         self.inner = self.inner.set_operation_preferences(input);
         self
     }
-    /// <p>Preferences for how CloudFormation performs this stack set operation.</p>
+    /// <p>Preferences for how CloudFormation performs this StackSet operation.</p>
     pub fn get_operation_preferences(&self) -> &::std::option::Option<crate::types::StackSetOperationPreferences> {
         self.inner.get_operation_preferences()
     }
-    /// <p>\[Self-managed permissions\] The Amazon Resource Name (ARN) of the IAM role to use to update this stack set.</p>
-    /// <p>Specify an IAM role only if you are using customized administrator roles to control which users or groups can manage specific stack sets within the same administrator account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant self-managed permissions</a> in the <i>CloudFormation User Guide</i>.</p>
-    /// <p>If you specified a customized administrator role when you created the stack set, you must specify a customized administrator role, even if it is the same customized administrator role used with this stack set previously.</p>
+    /// <p>\[Self-managed permissions\] The Amazon Resource Name (ARN) of the IAM role to use to update this StackSet.</p>
+    /// <p>Specify an IAM role only if you are using customized administrator roles to control which users or groups can manage specific StackSets within the same administrator account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant self-managed permissions</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>If you specified a customized administrator role when you created the StackSet, you must specify a customized administrator role, even if it is the same customized administrator role used with this StackSet previously.</p>
     pub fn administration_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.administration_role_arn(input.into());
         self
     }
-    /// <p>\[Self-managed permissions\] The Amazon Resource Name (ARN) of the IAM role to use to update this stack set.</p>
-    /// <p>Specify an IAM role only if you are using customized administrator roles to control which users or groups can manage specific stack sets within the same administrator account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant self-managed permissions</a> in the <i>CloudFormation User Guide</i>.</p>
-    /// <p>If you specified a customized administrator role when you created the stack set, you must specify a customized administrator role, even if it is the same customized administrator role used with this stack set previously.</p>
+    /// <p>\[Self-managed permissions\] The Amazon Resource Name (ARN) of the IAM role to use to update this StackSet.</p>
+    /// <p>Specify an IAM role only if you are using customized administrator roles to control which users or groups can manage specific StackSets within the same administrator account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant self-managed permissions</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>If you specified a customized administrator role when you created the StackSet, you must specify a customized administrator role, even if it is the same customized administrator role used with this StackSet previously.</p>
     pub fn set_administration_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_administration_role_arn(input);
         self
     }
-    /// <p>\[Self-managed permissions\] The Amazon Resource Name (ARN) of the IAM role to use to update this stack set.</p>
-    /// <p>Specify an IAM role only if you are using customized administrator roles to control which users or groups can manage specific stack sets within the same administrator account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant self-managed permissions</a> in the <i>CloudFormation User Guide</i>.</p>
-    /// <p>If you specified a customized administrator role when you created the stack set, you must specify a customized administrator role, even if it is the same customized administrator role used with this stack set previously.</p>
+    /// <p>\[Self-managed permissions\] The Amazon Resource Name (ARN) of the IAM role to use to update this StackSet.</p>
+    /// <p>Specify an IAM role only if you are using customized administrator roles to control which users or groups can manage specific StackSets within the same administrator account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant self-managed permissions</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>If you specified a customized administrator role when you created the StackSet, you must specify a customized administrator role, even if it is the same customized administrator role used with this StackSet previously.</p>
     pub fn get_administration_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_administration_role_arn()
     }
-    /// <p>\[Self-managed permissions\] The name of the IAM execution role to use to update the stack set. If you do not specify an execution role, CloudFormation uses the AWSCloudFormationStackSetExecutionRole role for the stack set operation.</p>
-    /// <p>Specify an IAM role only if you are using customized execution roles to control which stack resources users and groups can include in their stack sets.</p>
-    /// <p>If you specify a customized execution role, CloudFormation uses that role to update the stack. If you do not specify a customized execution role, CloudFormation performs the update using the role previously associated with the stack set, so long as you have permissions to perform operations on the stack set.</p>
+    /// <p>\[Self-managed permissions\] The name of the IAM execution role to use to update the stack set. If you do not specify an execution role, CloudFormation uses the AWSCloudFormationStackSetExecutionRole role for the StackSet operation.</p>
+    /// <p>Specify an IAM role only if you are using customized execution roles to control which stack resources users and groups can include in their StackSets.</p>
+    /// <p>If you specify a customized execution role, CloudFormation uses that role to update the stack. If you do not specify a customized execution role, CloudFormation performs the update using the role previously associated with the StackSet, so long as you have permissions to perform operations on the StackSet.</p>
     pub fn execution_role_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.execution_role_name(input.into());
         self
     }
-    /// <p>\[Self-managed permissions\] The name of the IAM execution role to use to update the stack set. If you do not specify an execution role, CloudFormation uses the AWSCloudFormationStackSetExecutionRole role for the stack set operation.</p>
-    /// <p>Specify an IAM role only if you are using customized execution roles to control which stack resources users and groups can include in their stack sets.</p>
-    /// <p>If you specify a customized execution role, CloudFormation uses that role to update the stack. If you do not specify a customized execution role, CloudFormation performs the update using the role previously associated with the stack set, so long as you have permissions to perform operations on the stack set.</p>
+    /// <p>\[Self-managed permissions\] The name of the IAM execution role to use to update the stack set. If you do not specify an execution role, CloudFormation uses the AWSCloudFormationStackSetExecutionRole role for the StackSet operation.</p>
+    /// <p>Specify an IAM role only if you are using customized execution roles to control which stack resources users and groups can include in their StackSets.</p>
+    /// <p>If you specify a customized execution role, CloudFormation uses that role to update the stack. If you do not specify a customized execution role, CloudFormation performs the update using the role previously associated with the StackSet, so long as you have permissions to perform operations on the StackSet.</p>
     pub fn set_execution_role_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_execution_role_name(input);
         self
     }
-    /// <p>\[Self-managed permissions\] The name of the IAM execution role to use to update the stack set. If you do not specify an execution role, CloudFormation uses the AWSCloudFormationStackSetExecutionRole role for the stack set operation.</p>
-    /// <p>Specify an IAM role only if you are using customized execution roles to control which stack resources users and groups can include in their stack sets.</p>
-    /// <p>If you specify a customized execution role, CloudFormation uses that role to update the stack. If you do not specify a customized execution role, CloudFormation performs the update using the role previously associated with the stack set, so long as you have permissions to perform operations on the stack set.</p>
+    /// <p>\[Self-managed permissions\] The name of the IAM execution role to use to update the stack set. If you do not specify an execution role, CloudFormation uses the AWSCloudFormationStackSetExecutionRole role for the StackSet operation.</p>
+    /// <p>Specify an IAM role only if you are using customized execution roles to control which stack resources users and groups can include in their StackSets.</p>
+    /// <p>If you specify a customized execution role, CloudFormation uses that role to update the stack. If you do not specify a customized execution role, CloudFormation performs the update using the role previously associated with the StackSet, so long as you have permissions to perform operations on the StackSet.</p>
     pub fn get_execution_role_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_execution_role_name()
     }
     /// <p>\[Service-managed permissions\] The Organizations accounts in which to update associated stack instances.</p>
-    /// <p>To update all the stack instances associated with this stack set, do not specify <code>DeploymentTargets</code> or <code>Regions</code>.</p>
-    /// <p>If the stack set update includes changes to the template (that is, if <code>TemplateBody</code> or <code>TemplateURL</code> is specified), or the <code>Parameters</code>, CloudFormation marks all stack instances with a status of <code>OUTDATED</code> prior to updating the stack instances in the specified accounts and Amazon Web Services Regions. If the stack set update doesn't include changes to the template or parameters, CloudFormation updates the stack instances in the specified accounts and Regions, while leaving all other stack instances with their existing stack instance status.</p>
+    /// <p>To update all the stack instances associated with this StackSet, do not specify <code>DeploymentTargets</code> or <code>Regions</code>.</p>
+    /// <p>If the StackSet update includes changes to the template (that is, if <code>TemplateBody</code> or <code>TemplateURL</code> is specified), or the <code>Parameters</code>, CloudFormation marks all stack instances with a status of <code>OUTDATED</code> prior to updating the stack instances in the specified accounts and Amazon Web Services Regions. If the StackSet update doesn't include changes to the template or parameters, CloudFormation updates the stack instances in the specified accounts and Regions, while leaving all other stack instances with their existing stack instance status.</p>
     pub fn deployment_targets(mut self, input: crate::types::DeploymentTargets) -> Self {
         self.inner = self.inner.deployment_targets(input);
         self
     }
     /// <p>\[Service-managed permissions\] The Organizations accounts in which to update associated stack instances.</p>
-    /// <p>To update all the stack instances associated with this stack set, do not specify <code>DeploymentTargets</code> or <code>Regions</code>.</p>
-    /// <p>If the stack set update includes changes to the template (that is, if <code>TemplateBody</code> or <code>TemplateURL</code> is specified), or the <code>Parameters</code>, CloudFormation marks all stack instances with a status of <code>OUTDATED</code> prior to updating the stack instances in the specified accounts and Amazon Web Services Regions. If the stack set update doesn't include changes to the template or parameters, CloudFormation updates the stack instances in the specified accounts and Regions, while leaving all other stack instances with their existing stack instance status.</p>
+    /// <p>To update all the stack instances associated with this StackSet, do not specify <code>DeploymentTargets</code> or <code>Regions</code>.</p>
+    /// <p>If the StackSet update includes changes to the template (that is, if <code>TemplateBody</code> or <code>TemplateURL</code> is specified), or the <code>Parameters</code>, CloudFormation marks all stack instances with a status of <code>OUTDATED</code> prior to updating the stack instances in the specified accounts and Amazon Web Services Regions. If the StackSet update doesn't include changes to the template or parameters, CloudFormation updates the stack instances in the specified accounts and Regions, while leaving all other stack instances with their existing stack instance status.</p>
     pub fn set_deployment_targets(mut self, input: ::std::option::Option<crate::types::DeploymentTargets>) -> Self {
         self.inner = self.inner.set_deployment_targets(input);
         self
     }
     /// <p>\[Service-managed permissions\] The Organizations accounts in which to update associated stack instances.</p>
-    /// <p>To update all the stack instances associated with this stack set, do not specify <code>DeploymentTargets</code> or <code>Regions</code>.</p>
-    /// <p>If the stack set update includes changes to the template (that is, if <code>TemplateBody</code> or <code>TemplateURL</code> is specified), or the <code>Parameters</code>, CloudFormation marks all stack instances with a status of <code>OUTDATED</code> prior to updating the stack instances in the specified accounts and Amazon Web Services Regions. If the stack set update doesn't include changes to the template or parameters, CloudFormation updates the stack instances in the specified accounts and Regions, while leaving all other stack instances with their existing stack instance status.</p>
+    /// <p>To update all the stack instances associated with this StackSet, do not specify <code>DeploymentTargets</code> or <code>Regions</code>.</p>
+    /// <p>If the StackSet update includes changes to the template (that is, if <code>TemplateBody</code> or <code>TemplateURL</code> is specified), or the <code>Parameters</code>, CloudFormation marks all stack instances with a status of <code>OUTDATED</code> prior to updating the stack instances in the specified accounts and Amazon Web Services Regions. If the StackSet update doesn't include changes to the template or parameters, CloudFormation updates the stack instances in the specified accounts and Regions, while leaving all other stack instances with their existing stack instance status.</p>
     pub fn get_deployment_targets(&self) -> &::std::option::Option<crate::types::DeploymentTargets> {
         self.inner.get_deployment_targets()
     }
-    /// <p>Describes how the IAM roles required for stack set operations are created. You cannot modify <code>PermissionModel</code> if there are stack instances associated with your stack set.</p>
+    /// <p>Describes how the IAM roles required for StackSet operations are created. You cannot modify <code>PermissionModel</code> if there are stack instances associated with your stack set.</p>
     /// <ul>
     /// <li>
     /// <p>With <code>self-managed</code> permissions, you must create the administrator and execution roles required to deploy to target accounts. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant self-managed permissions</a>.</p></li>
     /// <li>
-    /// <p>With <code>service-managed</code> permissions, StackSets automatically creates the IAM roles required to deploy to accounts managed by Organizations. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-activate-trusted-access.html">Activate trusted access for stack sets with Organizations</a>.</p></li>
+    /// <p>With <code>service-managed</code> permissions, StackSets automatically creates the IAM roles required to deploy to accounts managed by Organizations. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-activate-trusted-access.html">Activate trusted access for StackSets with Organizations</a>.</p></li>
     /// </ul>
     pub fn permission_model(mut self, input: crate::types::PermissionModels) -> Self {
         self.inner = self.inner.permission_model(input);
         self
     }
-    /// <p>Describes how the IAM roles required for stack set operations are created. You cannot modify <code>PermissionModel</code> if there are stack instances associated with your stack set.</p>
+    /// <p>Describes how the IAM roles required for StackSet operations are created. You cannot modify <code>PermissionModel</code> if there are stack instances associated with your stack set.</p>
     /// <ul>
     /// <li>
     /// <p>With <code>self-managed</code> permissions, you must create the administrator and execution roles required to deploy to target accounts. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant self-managed permissions</a>.</p></li>
     /// <li>
-    /// <p>With <code>service-managed</code> permissions, StackSets automatically creates the IAM roles required to deploy to accounts managed by Organizations. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-activate-trusted-access.html">Activate trusted access for stack sets with Organizations</a>.</p></li>
+    /// <p>With <code>service-managed</code> permissions, StackSets automatically creates the IAM roles required to deploy to accounts managed by Organizations. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-activate-trusted-access.html">Activate trusted access for StackSets with Organizations</a>.</p></li>
     /// </ul>
     pub fn set_permission_model(mut self, input: ::std::option::Option<crate::types::PermissionModels>) -> Self {
         self.inner = self.inner.set_permission_model(input);
         self
     }
-    /// <p>Describes how the IAM roles required for stack set operations are created. You cannot modify <code>PermissionModel</code> if there are stack instances associated with your stack set.</p>
+    /// <p>Describes how the IAM roles required for StackSet operations are created. You cannot modify <code>PermissionModel</code> if there are stack instances associated with your stack set.</p>
     /// <ul>
     /// <li>
     /// <p>With <code>self-managed</code> permissions, you must create the administrator and execution roles required to deploy to target accounts. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant self-managed permissions</a>.</p></li>
     /// <li>
-    /// <p>With <code>service-managed</code> permissions, StackSets automatically creates the IAM roles required to deploy to accounts managed by Organizations. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-activate-trusted-access.html">Activate trusted access for stack sets with Organizations</a>.</p></li>
+    /// <p>With <code>service-managed</code> permissions, StackSets automatically creates the IAM roles required to deploy to accounts managed by Organizations. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-activate-trusted-access.html">Activate trusted access for StackSets with Organizations</a>.</p></li>
     /// </ul>
     pub fn get_permission_model(&self) -> &::std::option::Option<crate::types::PermissionModels> {
         self.inner.get_permission_model()
     }
-    /// <p>\[Service-managed permissions\] Describes whether StackSets automatically deploys to Organizations accounts that are added to a target organization or organizational unit (OU). For more information, see Manage automatic deployments for CloudFormation StackSets that use service-managed permissions in the CloudFormation User Guide.</p>
+    /// <p>\[Service-managed permissions\] Describes whether StackSets automatically deploys to Organizations accounts that are added to a target organization or organizational unit (OU). For more information, see Enable or disable automatic deployments for StackSets in Organizations in the CloudFormation User Guide.</p>
     /// <p>If you specify <code>AutoDeployment</code>, don't specify <code>DeploymentTargets</code> or <code>Regions</code>.</p>
     pub fn auto_deployment(mut self, input: crate::types::AutoDeployment) -> Self {
         self.inner = self.inner.auto_deployment(input);
         self
     }
-    /// <p>\[Service-managed permissions\] Describes whether StackSets automatically deploys to Organizations accounts that are added to a target organization or organizational unit (OU). For more information, see Manage automatic deployments for CloudFormation StackSets that use service-managed permissions in the CloudFormation User Guide.</p>
+    /// <p>\[Service-managed permissions\] Describes whether StackSets automatically deploys to Organizations accounts that are added to a target organization or organizational unit (OU). For more information, see Enable or disable automatic deployments for StackSets in Organizations in the CloudFormation User Guide.</p>
     /// <p>If you specify <code>AutoDeployment</code>, don't specify <code>DeploymentTargets</code> or <code>Regions</code>.</p>
     pub fn set_auto_deployment(mut self, input: ::std::option::Option<crate::types::AutoDeployment>) -> Self {
         self.inner = self.inner.set_auto_deployment(input);
         self
     }
-    /// <p>\[Service-managed permissions\] Describes whether StackSets automatically deploys to Organizations accounts that are added to a target organization or organizational unit (OU). For more information, see Manage automatic deployments for CloudFormation StackSets that use service-managed permissions in the CloudFormation User Guide.</p>
+    /// <p>\[Service-managed permissions\] Describes whether StackSets automatically deploys to Organizations accounts that are added to a target organization or organizational unit (OU). For more information, see Enable or disable automatic deployments for StackSets in Organizations in the CloudFormation User Guide.</p>
     /// <p>If you specify <code>AutoDeployment</code>, don't specify <code>DeploymentTargets</code> or <code>Regions</code>.</p>
     pub fn get_auto_deployment(&self) -> &::std::option::Option<crate::types::AutoDeployment> {
         self.inner.get_auto_deployment()
     }
-    /// <p>The unique ID for this stack set operation.</p>
-    /// <p>The operation ID also functions as an idempotency token, to ensure that CloudFormation performs the stack set operation only once, even if you retry the request multiple times. You might retry stack set operation requests to ensure that CloudFormation successfully received them.</p>
+    /// <p>The unique ID for this StackSet operation.</p>
+    /// <p>The operation ID also functions as an idempotency token, to ensure that CloudFormation performs the StackSet operation only once, even if you retry the request multiple times. You might retry StackSet operation requests to ensure that CloudFormation successfully received them.</p>
     /// <p>If you don't specify an operation ID, CloudFormation generates one automatically.</p>
-    /// <p>Repeating this stack set operation with a new operation ID retries all stack instances whose status is <code>OUTDATED</code>.</p>
+    /// <p>Repeating this StackSet operation with a new operation ID retries all stack instances whose status is <code>OUTDATED</code>.</p>
     pub fn operation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.operation_id(input.into());
         self
     }
-    /// <p>The unique ID for this stack set operation.</p>
-    /// <p>The operation ID also functions as an idempotency token, to ensure that CloudFormation performs the stack set operation only once, even if you retry the request multiple times. You might retry stack set operation requests to ensure that CloudFormation successfully received them.</p>
+    /// <p>The unique ID for this StackSet operation.</p>
+    /// <p>The operation ID also functions as an idempotency token, to ensure that CloudFormation performs the StackSet operation only once, even if you retry the request multiple times. You might retry StackSet operation requests to ensure that CloudFormation successfully received them.</p>
     /// <p>If you don't specify an operation ID, CloudFormation generates one automatically.</p>
-    /// <p>Repeating this stack set operation with a new operation ID retries all stack instances whose status is <code>OUTDATED</code>.</p>
+    /// <p>Repeating this StackSet operation with a new operation ID retries all stack instances whose status is <code>OUTDATED</code>.</p>
     pub fn set_operation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_operation_id(input);
         self
     }
-    /// <p>The unique ID for this stack set operation.</p>
-    /// <p>The operation ID also functions as an idempotency token, to ensure that CloudFormation performs the stack set operation only once, even if you retry the request multiple times. You might retry stack set operation requests to ensure that CloudFormation successfully received them.</p>
+    /// <p>The unique ID for this StackSet operation.</p>
+    /// <p>The operation ID also functions as an idempotency token, to ensure that CloudFormation performs the StackSet operation only once, even if you retry the request multiple times. You might retry StackSet operation requests to ensure that CloudFormation successfully received them.</p>
     /// <p>If you don't specify an operation ID, CloudFormation generates one automatically.</p>
-    /// <p>Repeating this stack set operation with a new operation ID retries all stack instances whose status is <code>OUTDATED</code>.</p>
+    /// <p>Repeating this StackSet operation with a new operation ID retries all stack instances whose status is <code>OUTDATED</code>.</p>
     pub fn get_operation_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_operation_id()
     }
@@ -546,23 +546,23 @@ impl UpdateStackSetFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_accounts`](Self::set_accounts).
     ///
-    /// <p>\[Self-managed permissions\] The accounts in which to update associated stack instances. If you specify accounts, you must also specify the Amazon Web Services Regions in which to update stack set instances.</p>
-    /// <p>To update <i>all</i> the stack instances associated with this stack set, don't specify the <code>Accounts</code> or <code>Regions</code> properties.</p>
-    /// <p>If the stack set update includes changes to the template (that is, if the <code>TemplateBody</code> or <code>TemplateURL</code> properties are specified), or the <code>Parameters</code> property, CloudFormation marks all stack instances with a status of <code>OUTDATED</code> prior to updating the stack instances in the specified accounts and Amazon Web Services Regions. If the stack set update does not include changes to the template or parameters, CloudFormation updates the stack instances in the specified accounts and Amazon Web Services Regions, while leaving all other stack instances with their existing stack instance status.</p>
+    /// <p>\[Self-managed permissions\] The accounts in which to update associated stack instances. If you specify accounts, you must also specify the Amazon Web Services Regions in which to update StackSet instances.</p>
+    /// <p>To update <i>all</i> the stack instances associated with this StackSet, don't specify the <code>Accounts</code> or <code>Regions</code> properties.</p>
+    /// <p>If the StackSet update includes changes to the template (that is, if the <code>TemplateBody</code> or <code>TemplateURL</code> properties are specified), or the <code>Parameters</code> property, CloudFormation marks all stack instances with a status of <code>OUTDATED</code> prior to updating the stack instances in the specified accounts and Amazon Web Services Regions. If the StackSet update does not include changes to the template or parameters, CloudFormation updates the stack instances in the specified accounts and Amazon Web Services Regions, while leaving all other stack instances with their existing stack instance status.</p>
     pub fn accounts(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.accounts(input.into());
         self
     }
-    /// <p>\[Self-managed permissions\] The accounts in which to update associated stack instances. If you specify accounts, you must also specify the Amazon Web Services Regions in which to update stack set instances.</p>
-    /// <p>To update <i>all</i> the stack instances associated with this stack set, don't specify the <code>Accounts</code> or <code>Regions</code> properties.</p>
-    /// <p>If the stack set update includes changes to the template (that is, if the <code>TemplateBody</code> or <code>TemplateURL</code> properties are specified), or the <code>Parameters</code> property, CloudFormation marks all stack instances with a status of <code>OUTDATED</code> prior to updating the stack instances in the specified accounts and Amazon Web Services Regions. If the stack set update does not include changes to the template or parameters, CloudFormation updates the stack instances in the specified accounts and Amazon Web Services Regions, while leaving all other stack instances with their existing stack instance status.</p>
+    /// <p>\[Self-managed permissions\] The accounts in which to update associated stack instances. If you specify accounts, you must also specify the Amazon Web Services Regions in which to update StackSet instances.</p>
+    /// <p>To update <i>all</i> the stack instances associated with this StackSet, don't specify the <code>Accounts</code> or <code>Regions</code> properties.</p>
+    /// <p>If the StackSet update includes changes to the template (that is, if the <code>TemplateBody</code> or <code>TemplateURL</code> properties are specified), or the <code>Parameters</code> property, CloudFormation marks all stack instances with a status of <code>OUTDATED</code> prior to updating the stack instances in the specified accounts and Amazon Web Services Regions. If the StackSet update does not include changes to the template or parameters, CloudFormation updates the stack instances in the specified accounts and Amazon Web Services Regions, while leaving all other stack instances with their existing stack instance status.</p>
     pub fn set_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_accounts(input);
         self
     }
-    /// <p>\[Self-managed permissions\] The accounts in which to update associated stack instances. If you specify accounts, you must also specify the Amazon Web Services Regions in which to update stack set instances.</p>
-    /// <p>To update <i>all</i> the stack instances associated with this stack set, don't specify the <code>Accounts</code> or <code>Regions</code> properties.</p>
-    /// <p>If the stack set update includes changes to the template (that is, if the <code>TemplateBody</code> or <code>TemplateURL</code> properties are specified), or the <code>Parameters</code> property, CloudFormation marks all stack instances with a status of <code>OUTDATED</code> prior to updating the stack instances in the specified accounts and Amazon Web Services Regions. If the stack set update does not include changes to the template or parameters, CloudFormation updates the stack instances in the specified accounts and Amazon Web Services Regions, while leaving all other stack instances with their existing stack instance status.</p>
+    /// <p>\[Self-managed permissions\] The accounts in which to update associated stack instances. If you specify accounts, you must also specify the Amazon Web Services Regions in which to update StackSet instances.</p>
+    /// <p>To update <i>all</i> the stack instances associated with this StackSet, don't specify the <code>Accounts</code> or <code>Regions</code> properties.</p>
+    /// <p>If the StackSet update includes changes to the template (that is, if the <code>TemplateBody</code> or <code>TemplateURL</code> properties are specified), or the <code>Parameters</code> property, CloudFormation marks all stack instances with a status of <code>OUTDATED</code> prior to updating the stack instances in the specified accounts and Amazon Web Services Regions. If the StackSet update does not include changes to the template or parameters, CloudFormation updates the stack instances in the specified accounts and Amazon Web Services Regions, while leaving all other stack instances with their existing stack instance status.</p>
     pub fn get_accounts(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_accounts()
     }
@@ -571,28 +571,28 @@ impl UpdateStackSetFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_regions`](Self::set_regions).
     ///
-    /// <p>The Amazon Web Services Regions in which to update associated stack instances. If you specify Regions, you must also specify accounts in which to update stack set instances.</p>
-    /// <p>To update <i>all</i> the stack instances associated with this stack set, do not specify the <code>Accounts</code> or <code>Regions</code> properties.</p>
-    /// <p>If the stack set update includes changes to the template (that is, if the <code>TemplateBody</code> or <code>TemplateURL</code> properties are specified), or the <code>Parameters</code> property, CloudFormation marks all stack instances with a status of <code>OUTDATED</code> prior to updating the stack instances in the specified accounts and Regions. If the stack set update does not include changes to the template or parameters, CloudFormation updates the stack instances in the specified accounts and Regions, while leaving all other stack instances with their existing stack instance status.</p>
+    /// <p>The Amazon Web Services Regions in which to update associated stack instances. If you specify Regions, you must also specify accounts in which to update StackSet instances.</p>
+    /// <p>To update <i>all</i> the stack instances associated with this StackSet, do not specify the <code>Accounts</code> or <code>Regions</code> properties.</p>
+    /// <p>If the StackSet update includes changes to the template (that is, if the <code>TemplateBody</code> or <code>TemplateURL</code> properties are specified), or the <code>Parameters</code> property, CloudFormation marks all stack instances with a status of <code>OUTDATED</code> prior to updating the stack instances in the specified accounts and Regions. If the StackSet update does not include changes to the template or parameters, CloudFormation updates the stack instances in the specified accounts and Regions, while leaving all other stack instances with their existing stack instance status.</p>
     pub fn regions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.regions(input.into());
         self
     }
-    /// <p>The Amazon Web Services Regions in which to update associated stack instances. If you specify Regions, you must also specify accounts in which to update stack set instances.</p>
-    /// <p>To update <i>all</i> the stack instances associated with this stack set, do not specify the <code>Accounts</code> or <code>Regions</code> properties.</p>
-    /// <p>If the stack set update includes changes to the template (that is, if the <code>TemplateBody</code> or <code>TemplateURL</code> properties are specified), or the <code>Parameters</code> property, CloudFormation marks all stack instances with a status of <code>OUTDATED</code> prior to updating the stack instances in the specified accounts and Regions. If the stack set update does not include changes to the template or parameters, CloudFormation updates the stack instances in the specified accounts and Regions, while leaving all other stack instances with their existing stack instance status.</p>
+    /// <p>The Amazon Web Services Regions in which to update associated stack instances. If you specify Regions, you must also specify accounts in which to update StackSet instances.</p>
+    /// <p>To update <i>all</i> the stack instances associated with this StackSet, do not specify the <code>Accounts</code> or <code>Regions</code> properties.</p>
+    /// <p>If the StackSet update includes changes to the template (that is, if the <code>TemplateBody</code> or <code>TemplateURL</code> properties are specified), or the <code>Parameters</code> property, CloudFormation marks all stack instances with a status of <code>OUTDATED</code> prior to updating the stack instances in the specified accounts and Regions. If the StackSet update does not include changes to the template or parameters, CloudFormation updates the stack instances in the specified accounts and Regions, while leaving all other stack instances with their existing stack instance status.</p>
     pub fn set_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_regions(input);
         self
     }
-    /// <p>The Amazon Web Services Regions in which to update associated stack instances. If you specify Regions, you must also specify accounts in which to update stack set instances.</p>
-    /// <p>To update <i>all</i> the stack instances associated with this stack set, do not specify the <code>Accounts</code> or <code>Regions</code> properties.</p>
-    /// <p>If the stack set update includes changes to the template (that is, if the <code>TemplateBody</code> or <code>TemplateURL</code> properties are specified), or the <code>Parameters</code> property, CloudFormation marks all stack instances with a status of <code>OUTDATED</code> prior to updating the stack instances in the specified accounts and Regions. If the stack set update does not include changes to the template or parameters, CloudFormation updates the stack instances in the specified accounts and Regions, while leaving all other stack instances with their existing stack instance status.</p>
+    /// <p>The Amazon Web Services Regions in which to update associated stack instances. If you specify Regions, you must also specify accounts in which to update StackSet instances.</p>
+    /// <p>To update <i>all</i> the stack instances associated with this StackSet, do not specify the <code>Accounts</code> or <code>Regions</code> properties.</p>
+    /// <p>If the StackSet update includes changes to the template (that is, if the <code>TemplateBody</code> or <code>TemplateURL</code> properties are specified), or the <code>Parameters</code> property, CloudFormation marks all stack instances with a status of <code>OUTDATED</code> prior to updating the stack instances in the specified accounts and Regions. If the StackSet update does not include changes to the template or parameters, CloudFormation updates the stack instances in the specified accounts and Regions, while leaving all other stack instances with their existing stack instance status.</p>
     pub fn get_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_regions()
     }
     /// <p>\[Service-managed permissions\] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
-    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
+    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for StackSets with self-managed permissions.</p>
     /// <ul>
     /// <li>
     /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p></li>
@@ -605,7 +605,7 @@ impl UpdateStackSetFluentBuilder {
         self
     }
     /// <p>\[Service-managed permissions\] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
-    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
+    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for StackSets with self-managed permissions.</p>
     /// <ul>
     /// <li>
     /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p></li>
@@ -618,7 +618,7 @@ impl UpdateStackSetFluentBuilder {
         self
     }
     /// <p>\[Service-managed permissions\] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
-    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
+    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for StackSets with self-managed permissions.</p>
     /// <ul>
     /// <li>
     /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p></li>
@@ -629,17 +629,17 @@ impl UpdateStackSetFluentBuilder {
     pub fn get_call_as(&self) -> &::std::option::Option<crate::types::CallAs> {
         self.inner.get_call_as()
     }
-    /// <p>Describes whether StackSets performs non-conflicting operations concurrently and queues conflicting operations.</p>
+    /// <p>Describes whether CloudFormation performs non-conflicting operations concurrently and queues conflicting operations.</p>
     pub fn managed_execution(mut self, input: crate::types::ManagedExecution) -> Self {
         self.inner = self.inner.managed_execution(input);
         self
     }
-    /// <p>Describes whether StackSets performs non-conflicting operations concurrently and queues conflicting operations.</p>
+    /// <p>Describes whether CloudFormation performs non-conflicting operations concurrently and queues conflicting operations.</p>
     pub fn set_managed_execution(mut self, input: ::std::option::Option<crate::types::ManagedExecution>) -> Self {
         self.inner = self.inner.set_managed_execution(input);
         self
     }
-    /// <p>Describes whether StackSets performs non-conflicting operations concurrently and queues conflicting operations.</p>
+    /// <p>Describes whether CloudFormation performs non-conflicting operations concurrently and queues conflicting operations.</p>
     pub fn get_managed_execution(&self) -> &::std::option::Option<crate::types::ManagedExecution> {
         self.inner.get_managed_execution()
     }

@@ -22,19 +22,19 @@ impl crate::operation::detect_stack_set_drift::builders::DetectStackSetDriftInpu
 }
 /// Fluent builder constructing a request to `DetectStackSetDrift`.
 ///
-/// <p>Detect drift on a stack set. When CloudFormation performs drift detection on a stack set, it performs drift detection on the stack associated with each stack instance in the stack set. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Performing drift detection on CloudFormation StackSets</a>.</p>
-/// <p><code>DetectStackSetDrift</code> returns the <code>OperationId</code> of the stack set drift detection operation. Use this operation id with <code>DescribeStackSetOperation</code> to monitor the progress of the drift detection operation. The drift detection operation may take some time, depending on the number of stack instances included in the stack set, in addition to the number of resources included in each stack.</p>
+/// <p>Detect drift on a StackSet. When CloudFormation performs drift detection on a StackSet, it performs drift detection on the stack associated with each stack instance in the StackSet. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Performing drift detection on CloudFormation StackSets</a>.</p>
+/// <p><code>DetectStackSetDrift</code> returns the <code>OperationId</code> of the StackSet drift detection operation. Use this operation id with <code>DescribeStackSetOperation</code> to monitor the progress of the drift detection operation. The drift detection operation may take some time, depending on the number of stack instances included in the StackSet, in addition to the number of resources included in each stack.</p>
 /// <p>Once the operation has completed, use the following actions to return drift information:</p>
 /// <ul>
 /// <li>
-/// <p>Use <code>DescribeStackSet</code> to return detailed information about the stack set, including detailed information about the last <i>completed</i> drift operation performed on the stack set. (Information about drift operations that are in progress isn't included.)</p></li>
+/// <p>Use <code>DescribeStackSet</code> to return detailed information about the stack set, including detailed information about the last <i>completed</i> drift operation performed on the StackSet. (Information about drift operations that are in progress isn't included.)</p></li>
 /// <li>
-/// <p>Use <code>ListStackInstances</code> to return a list of stack instances belonging to the stack set, including the drift status and last drift time checked of each instance.</p></li>
+/// <p>Use <code>ListStackInstances</code> to return a list of stack instances belonging to the StackSet, including the drift status and last drift time checked of each instance.</p></li>
 /// <li>
 /// <p>Use <code>DescribeStackInstance</code> to return detailed information about a specific stack instance, including its drift status and last drift time checked.</p></li>
 /// </ul>
-/// <p>You can only run a single drift detection operation on a given stack set at one time.</p>
-/// <p>To stop a drift detection stack set operation, use <code>StopStackSetOperation</code>.</p>
+/// <p>You can only run a single drift detection operation on a given StackSet at one time.</p>
+/// <p>To stop a drift detection StackSet operation, use <code>StopStackSetOperation</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DetectStackSetDriftFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -120,53 +120,53 @@ impl DetectStackSetDriftFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the stack set on which to perform the drift detection operation.</p>
+    /// <p>The name of the StackSet on which to perform the drift detection operation.</p>
     pub fn stack_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stack_set_name(input.into());
         self
     }
-    /// <p>The name of the stack set on which to perform the drift detection operation.</p>
+    /// <p>The name of the StackSet on which to perform the drift detection operation.</p>
     pub fn set_stack_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stack_set_name(input);
         self
     }
-    /// <p>The name of the stack set on which to perform the drift detection operation.</p>
+    /// <p>The name of the StackSet on which to perform the drift detection operation.</p>
     pub fn get_stack_set_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_stack_set_name()
     }
-    /// <p>The user-specified preferences for how CloudFormation performs a stack set operation.</p>
-    /// <p>For more information about maximum concurrent accounts and failure tolerance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/what-is-cfnstacksets.html#stackset-ops-options">Stack set operation options</a>.</p>
+    /// <p>The user-specified preferences for how CloudFormation performs a StackSet operation.</p>
+    /// <p>For more information about maximum concurrent accounts and failure tolerance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">StackSet operation options</a>.</p>
     pub fn operation_preferences(mut self, input: crate::types::StackSetOperationPreferences) -> Self {
         self.inner = self.inner.operation_preferences(input);
         self
     }
-    /// <p>The user-specified preferences for how CloudFormation performs a stack set operation.</p>
-    /// <p>For more information about maximum concurrent accounts and failure tolerance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/what-is-cfnstacksets.html#stackset-ops-options">Stack set operation options</a>.</p>
+    /// <p>The user-specified preferences for how CloudFormation performs a StackSet operation.</p>
+    /// <p>For more information about maximum concurrent accounts and failure tolerance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">StackSet operation options</a>.</p>
     pub fn set_operation_preferences(mut self, input: ::std::option::Option<crate::types::StackSetOperationPreferences>) -> Self {
         self.inner = self.inner.set_operation_preferences(input);
         self
     }
-    /// <p>The user-specified preferences for how CloudFormation performs a stack set operation.</p>
-    /// <p>For more information about maximum concurrent accounts and failure tolerance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/what-is-cfnstacksets.html#stackset-ops-options">Stack set operation options</a>.</p>
+    /// <p>The user-specified preferences for how CloudFormation performs a StackSet operation.</p>
+    /// <p>For more information about maximum concurrent accounts and failure tolerance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">StackSet operation options</a>.</p>
     pub fn get_operation_preferences(&self) -> &::std::option::Option<crate::types::StackSetOperationPreferences> {
         self.inner.get_operation_preferences()
     }
-    /// <p><i>The ID of the stack set operation.</i></p>
+    /// <p><i>The ID of the StackSet operation.</i></p>
     pub fn operation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.operation_id(input.into());
         self
     }
-    /// <p><i>The ID of the stack set operation.</i></p>
+    /// <p><i>The ID of the StackSet operation.</i></p>
     pub fn set_operation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_operation_id(input);
         self
     }
-    /// <p><i>The ID of the stack set operation.</i></p>
+    /// <p><i>The ID of the StackSet operation.</i></p>
     pub fn get_operation_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_operation_id()
     }
     /// <p>\[Service-managed permissions\] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
-    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
+    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for StackSets with self-managed permissions.</p>
     /// <ul>
     /// <li>
     /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p></li>
@@ -179,7 +179,7 @@ impl DetectStackSetDriftFluentBuilder {
         self
     }
     /// <p>\[Service-managed permissions\] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
-    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
+    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for StackSets with self-managed permissions.</p>
     /// <ul>
     /// <li>
     /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p></li>
@@ -192,7 +192,7 @@ impl DetectStackSetDriftFluentBuilder {
         self
     }
     /// <p>\[Service-managed permissions\] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
-    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
+    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for StackSets with self-managed permissions.</p>
     /// <ul>
     /// <li>
     /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p></li>

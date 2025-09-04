@@ -22,7 +22,7 @@ impl crate::operation::describe_type::builders::DescribeTypeInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeType`.
 ///
-/// <p>Returns detailed information about an extension that has been registered.</p>
+/// <p>Returns detailed information about an extension from the CloudFormation registry in your current account and Region.</p>
 /// <p>If you specify a <code>VersionId</code>, <code>DescribeType</code> returns information about that specific extension version. Otherwise, it returns information about the default extension version.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeTypeFluentBuilder {

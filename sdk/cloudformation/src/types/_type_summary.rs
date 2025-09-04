@@ -13,7 +13,7 @@ pub struct TypeSummary {
     /// <p>This applies only to private extensions you have registered in your account. For public extensions, both those provided by Amazon and published by third parties, CloudFormation returns <code>null</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
     /// <p>To set the default version of an extension, use <code>SetTypeDefaultVersion</code>.</p>
     pub default_version_id: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the extension.</p>
+    /// <p>The ARN of the extension.</p>
     pub type_arn: ::std::option::Option<::std::string::String>,
     /// <p>When the specified extension version was registered. This applies only to:</p>
     /// <ul>
@@ -62,7 +62,7 @@ impl TypeSummary {
     pub fn default_version_id(&self) -> ::std::option::Option<&str> {
         self.default_version_id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the extension.</p>
+    /// <p>The ARN of the extension.</p>
     pub fn type_arn(&self) -> ::std::option::Option<&str> {
         self.type_arn.as_deref()
     }
@@ -192,17 +192,17 @@ impl TypeSummaryBuilder {
     pub fn get_default_version_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.default_version_id
     }
-    /// <p>The Amazon Resource Name (ARN) of the extension.</p>
+    /// <p>The ARN of the extension.</p>
     pub fn type_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.type_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the extension.</p>
+    /// <p>The ARN of the extension.</p>
     pub fn set_type_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.type_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the extension.</p>
+    /// <p>The ARN of the extension.</p>
     pub fn get_type_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.type_arn
     }

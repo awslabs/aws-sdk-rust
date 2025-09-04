@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetectStackSetDriftOutput {
-    /// <p>The ID of the drift detection stack set operation.</p>
+    /// <p>The ID of the drift detection StackSet operation.</p>
     /// <p>You can use this operation ID with <code>DescribeStackSetOperation</code> to monitor the progress of the drift detection operation.</p>
     pub operation_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DetectStackSetDriftOutput {
-    /// <p>The ID of the drift detection stack set operation.</p>
+    /// <p>The ID of the drift detection StackSet operation.</p>
     /// <p>You can use this operation ID with <code>DescribeStackSetOperation</code> to monitor the progress of the drift detection operation.</p>
     pub fn operation_id(&self) -> ::std::option::Option<&str> {
         self.operation_id.as_deref()
@@ -35,19 +35,19 @@ pub struct DetectStackSetDriftOutputBuilder {
     _request_id: Option<String>,
 }
 impl DetectStackSetDriftOutputBuilder {
-    /// <p>The ID of the drift detection stack set operation.</p>
+    /// <p>The ID of the drift detection StackSet operation.</p>
     /// <p>You can use this operation ID with <code>DescribeStackSetOperation</code> to monitor the progress of the drift detection operation.</p>
     pub fn operation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.operation_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the drift detection stack set operation.</p>
+    /// <p>The ID of the drift detection StackSet operation.</p>
     /// <p>You can use this operation ID with <code>DescribeStackSetOperation</code> to monitor the progress of the drift detection operation.</p>
     pub fn set_operation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.operation_id = input;
         self
     }
-    /// <p>The ID of the drift detection stack set operation.</p>
+    /// <p>The ID of the drift detection StackSet operation.</p>
     /// <p>You can use this operation ID with <code>DescribeStackSetOperation</code> to monitor the progress of the drift detection operation.</p>
     pub fn get_operation_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.operation_id

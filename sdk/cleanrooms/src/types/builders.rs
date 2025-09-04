@@ -45,6 +45,8 @@ pub use crate::types::_protected_query_sql_parameters::ProtectedQuerySqlParamete
 
 pub use crate::types::_protected_job::ProtectedJobBuilder;
 
+pub use crate::types::_protected_job_worker_compute_configuration::ProtectedJobWorkerComputeConfigurationBuilder;
+
 pub use crate::types::_protected_job_error::ProtectedJobErrorBuilder;
 
 pub use crate::types::_protected_job_result::ProtectedJobResultBuilder;

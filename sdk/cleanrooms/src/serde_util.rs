@@ -2667,6 +2667,18 @@ pub(crate) fn payment_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn protected_job_worker_compute_configuration_correct_errors(
+    mut builder: crate::types::builders::ProtectedJobWorkerComputeConfigurationBuilder,
+) -> crate::types::builders::ProtectedJobWorkerComputeConfigurationBuilder {
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::ProtectedJobWorkerComputeType>().ok()
+    }
+    if builder.number.is_none() {
+        builder.number = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn schema_status_detail_correct_errors(
     mut builder: crate::types::builders::SchemaStatusDetailBuilder,
 ) -> crate::types::builders::SchemaStatusDetailBuilder {

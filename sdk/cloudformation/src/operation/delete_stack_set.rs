@@ -256,9 +256,9 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeleteStackSe
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum DeleteStackSetError {
-    /// <p>Another operation is currently in progress for this stack set. Only one operation can be performed for a stack set at a given time.</p>
+    /// <p>Another operation is currently in progress for this StackSet. Only one operation can be performed for a stack set at a given time.</p>
     OperationInProgressException(crate::types::error::OperationInProgressException),
-    /// <p>You can't yet delete this stack set, because it still contains one or more stack instances. Delete all stack instances from the stack set before deleting the stack set.</p>
+    /// <p>You can't yet delete this StackSet, because it still contains one or more stack instances. Delete all stack instances from the StackSet before deleting the StackSet.</p>
     StackSetNotEmptyException(crate::types::error::StackSetNotEmptyException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

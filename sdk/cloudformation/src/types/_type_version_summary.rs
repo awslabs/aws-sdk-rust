@@ -8,12 +8,12 @@ pub struct TypeVersionSummary {
     pub r#type: ::std::option::Option<crate::types::RegistryType>,
     /// <p>The name of the extension.</p>
     pub type_name: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of a specific version of the extension. The version ID is the value at the end of the Amazon Resource Name (ARN) assigned to the extension version when it's registered.</p>
+    /// <p>The ID of a specific version of the extension. The version ID is the value at the end of the ARN assigned to the extension version when it's registered.</p>
     pub version_id: ::std::option::Option<::std::string::String>,
     /// <p>Whether the specified extension version is set as the default version.</p>
     /// <p>This applies only to private extensions you have registered in your account, and extensions published by Amazon. For public third-party extensions, CloudFormation returns <code>null</code>.</p>
     pub is_default_version: ::std::option::Option<bool>,
-    /// <p>The Amazon Resource Name (ARN) of the extension version.</p>
+    /// <p>The ARN of the extension version.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>When the version was registered.</p>
     pub time_created: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -32,7 +32,7 @@ impl TypeVersionSummary {
     pub fn type_name(&self) -> ::std::option::Option<&str> {
         self.type_name.as_deref()
     }
-    /// <p>The ID of a specific version of the extension. The version ID is the value at the end of the Amazon Resource Name (ARN) assigned to the extension version when it's registered.</p>
+    /// <p>The ID of a specific version of the extension. The version ID is the value at the end of the ARN assigned to the extension version when it's registered.</p>
     pub fn version_id(&self) -> ::std::option::Option<&str> {
         self.version_id.as_deref()
     }
@@ -41,7 +41,7 @@ impl TypeVersionSummary {
     pub fn is_default_version(&self) -> ::std::option::Option<bool> {
         self.is_default_version
     }
-    /// <p>The Amazon Resource Name (ARN) of the extension version.</p>
+    /// <p>The ARN of the extension version.</p>
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -108,17 +108,17 @@ impl TypeVersionSummaryBuilder {
     pub fn get_type_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.type_name
     }
-    /// <p>The ID of a specific version of the extension. The version ID is the value at the end of the Amazon Resource Name (ARN) assigned to the extension version when it's registered.</p>
+    /// <p>The ID of a specific version of the extension. The version ID is the value at the end of the ARN assigned to the extension version when it's registered.</p>
     pub fn version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of a specific version of the extension. The version ID is the value at the end of the Amazon Resource Name (ARN) assigned to the extension version when it's registered.</p>
+    /// <p>The ID of a specific version of the extension. The version ID is the value at the end of the ARN assigned to the extension version when it's registered.</p>
     pub fn set_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version_id = input;
         self
     }
-    /// <p>The ID of a specific version of the extension. The version ID is the value at the end of the Amazon Resource Name (ARN) assigned to the extension version when it's registered.</p>
+    /// <p>The ID of a specific version of the extension. The version ID is the value at the end of the ARN assigned to the extension version when it's registered.</p>
     pub fn get_version_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.version_id
     }
@@ -139,17 +139,17 @@ impl TypeVersionSummaryBuilder {
     pub fn get_is_default_version(&self) -> &::std::option::Option<bool> {
         &self.is_default_version
     }
-    /// <p>The Amazon Resource Name (ARN) of the extension version.</p>
+    /// <p>The ARN of the extension version.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the extension version.</p>
+    /// <p>The ARN of the extension version.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the extension version.</p>
+    /// <p>The ARN of the extension version.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }

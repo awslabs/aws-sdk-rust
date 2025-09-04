@@ -163,13 +163,13 @@ pub use crate::types::_scanned_resource_identifier::ScannedResourceIdentifier;
 
 pub use crate::types::_hook_result_summary::HookResultSummary;
 
+pub use crate::types::_list_hook_results_target_type::ListHookResultsTargetType;
+
 pub use crate::types::_hook_status::HookStatus;
 
 pub use crate::types::_hook_failure_mode::HookFailureMode;
 
 pub use crate::types::_hook_invocation_point::HookInvocationPoint;
-
-pub use crate::types::_list_hook_results_target_type::ListHookResultsTargetType;
 
 pub use crate::types::_template_summary::TemplateSummary;
 

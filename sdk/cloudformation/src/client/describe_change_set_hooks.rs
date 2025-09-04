@@ -10,7 +10,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeChangeSetHooksOutput`](crate::operation::describe_change_set_hooks::DescribeChangeSetHooksOutput) with field(s):
     ///   - [`change_set_id(Option<String>)`](crate::operation::describe_change_set_hooks::DescribeChangeSetHooksOutput::change_set_id): <p>The change set identifier (stack ID).</p>
     ///   - [`change_set_name(Option<String>)`](crate::operation::describe_change_set_hooks::DescribeChangeSetHooksOutput::change_set_name): <p>The change set name.</p>
-    ///   - [`hooks(Option<Vec::<ChangeSetHook>>)`](crate::operation::describe_change_set_hooks::DescribeChangeSetHooksOutput::hooks): <p>List of hook objects.</p>
+    ///   - [`hooks(Option<Vec::<ChangeSetHook>>)`](crate::operation::describe_change_set_hooks::DescribeChangeSetHooksOutput::hooks): <p>List of Hook objects.</p>
     ///   - [`status(Option<ChangeSetHooksStatus>)`](crate::operation::describe_change_set_hooks::DescribeChangeSetHooksOutput::status): <p>Provides the status of the change set hook.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_change_set_hooks::DescribeChangeSetHooksOutput::next_token): <p>Pagination token, <code>null</code> or empty if no more results.</p>
     ///   - [`stack_id(Option<String>)`](crate::operation::describe_change_set_hooks::DescribeChangeSetHooksOutput::stack_id): <p>The stack identifier (stack ID).</p>

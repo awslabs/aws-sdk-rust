@@ -4,61 +4,109 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HookResultSummary {
-    /// <p>The exact point in the provisioning logic where the Hook runs.</p>
+    /// <p>The unique identifier for this Hook invocation result.</p>
+    pub hook_result_id: ::std::option::Option<::std::string::String>,
+    /// <p>The specific point in the provisioning process where the Hook is invoked.</p>
     pub invocation_point: ::std::option::Option<crate::types::HookInvocationPoint>,
-    /// <p>The failure mode of the invocation. The following are potential modes:</p>
+    /// <p>The failure mode of the invocation.</p>
+    pub failure_mode: ::std::option::Option<crate::types::HookFailureMode>,
+    /// <p>The name of the Hook that was invoked.</p>
+    pub type_name: ::std::option::Option<::std::string::String>,
+    /// <p>The version of the Hook that was invoked.</p>
+    pub type_version_id: ::std::option::Option<::std::string::String>,
+    /// <p>The version of the Hook configuration.</p>
+    pub type_configuration_version_id: ::std::option::Option<::std::string::String>,
+    /// <p>The status of the Hook invocation. The following statuses are possible:</p>
     /// <ul>
     /// <li>
-    /// <p><code>FAIL</code>: If the hook invocation returns a failure, then the requested target operation should fail.</p></li>
+    /// <p><code>HOOK_IN_PROGRESS</code>: The Hook is currently running.</p></li>
     /// <li>
-    /// <p><code>WARN</code>: If the hook invocation returns a failure, then the requested target operation should warn.</p></li>
+    /// <p><code>HOOK_COMPLETE_SUCCEEDED</code>: The Hook completed successfully.</p></li>
+    /// <li>
+    /// <p><code>HOOK_COMPLETE_FAILED</code>: The Hook completed but failed validation.</p></li>
+    /// <li>
+    /// <p><code>HOOK_FAILED</code>: The Hook encountered an error during execution.</p></li>
     /// </ul>
-    pub failure_mode: ::std::option::Option<crate::types::HookFailureMode>,
-    /// <p>The type name of the Hook being invoked.</p>
-    pub type_name: ::std::option::Option<::std::string::String>,
-    /// <p>The version of the Hook being invoked.</p>
-    pub type_version_id: ::std::option::Option<::std::string::String>,
-    /// <p>The version of the Hook type configuration.</p>
-    pub type_configuration_version_id: ::std::option::Option<::std::string::String>,
-    /// <p>The state of the Hook invocation.</p>
     pub status: ::std::option::Option<crate::types::HookStatus>,
-    /// <p>A description of the Hook results status. For example, if the Hook result is in a <code>FAILED</code> state, this may contain additional information for the <code>FAILED</code> state.</p>
+    /// <p>A description of the Hook results status. For example, if the Hook result is in a failed state, this may contain additional information for the failed state.</p>
     pub hook_status_reason: ::std::option::Option<::std::string::String>,
+    /// <p>The timestamp when the Hook was invoked.</p>
+    /// <p>Only shown in responses when the request does not specify <code>TargetType</code> and <code>TargetId</code> filters.</p>
+    pub invoked_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The target type that the Hook was invoked against.</p>
+    pub target_type: ::std::option::Option<crate::types::ListHookResultsTargetType>,
+    /// <p>The unique identifier of the Hook invocation target.</p>
+    pub target_id: ::std::option::Option<::std::string::String>,
+    /// <p>The ARN of the Hook that was invoked.</p>
+    pub type_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The ARN of the target stack or request token of the Cloud Control API operation.</p>
+    /// <p>Only shown in responses when the request does not specify <code>TargetType</code> and <code>TargetId</code> filters.</p>
+    pub hook_execution_target: ::std::option::Option<::std::string::String>,
 }
 impl HookResultSummary {
-    /// <p>The exact point in the provisioning logic where the Hook runs.</p>
+    /// <p>The unique identifier for this Hook invocation result.</p>
+    pub fn hook_result_id(&self) -> ::std::option::Option<&str> {
+        self.hook_result_id.as_deref()
+    }
+    /// <p>The specific point in the provisioning process where the Hook is invoked.</p>
     pub fn invocation_point(&self) -> ::std::option::Option<&crate::types::HookInvocationPoint> {
         self.invocation_point.as_ref()
     }
-    /// <p>The failure mode of the invocation. The following are potential modes:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>FAIL</code>: If the hook invocation returns a failure, then the requested target operation should fail.</p></li>
-    /// <li>
-    /// <p><code>WARN</code>: If the hook invocation returns a failure, then the requested target operation should warn.</p></li>
-    /// </ul>
+    /// <p>The failure mode of the invocation.</p>
     pub fn failure_mode(&self) -> ::std::option::Option<&crate::types::HookFailureMode> {
         self.failure_mode.as_ref()
     }
-    /// <p>The type name of the Hook being invoked.</p>
+    /// <p>The name of the Hook that was invoked.</p>
     pub fn type_name(&self) -> ::std::option::Option<&str> {
         self.type_name.as_deref()
     }
-    /// <p>The version of the Hook being invoked.</p>
+    /// <p>The version of the Hook that was invoked.</p>
     pub fn type_version_id(&self) -> ::std::option::Option<&str> {
         self.type_version_id.as_deref()
     }
-    /// <p>The version of the Hook type configuration.</p>
+    /// <p>The version of the Hook configuration.</p>
     pub fn type_configuration_version_id(&self) -> ::std::option::Option<&str> {
         self.type_configuration_version_id.as_deref()
     }
-    /// <p>The state of the Hook invocation.</p>
+    /// <p>The status of the Hook invocation. The following statuses are possible:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>HOOK_IN_PROGRESS</code>: The Hook is currently running.</p></li>
+    /// <li>
+    /// <p><code>HOOK_COMPLETE_SUCCEEDED</code>: The Hook completed successfully.</p></li>
+    /// <li>
+    /// <p><code>HOOK_COMPLETE_FAILED</code>: The Hook completed but failed validation.</p></li>
+    /// <li>
+    /// <p><code>HOOK_FAILED</code>: The Hook encountered an error during execution.</p></li>
+    /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::HookStatus> {
         self.status.as_ref()
     }
-    /// <p>A description of the Hook results status. For example, if the Hook result is in a <code>FAILED</code> state, this may contain additional information for the <code>FAILED</code> state.</p>
+    /// <p>A description of the Hook results status. For example, if the Hook result is in a failed state, this may contain additional information for the failed state.</p>
     pub fn hook_status_reason(&self) -> ::std::option::Option<&str> {
         self.hook_status_reason.as_deref()
+    }
+    /// <p>The timestamp when the Hook was invoked.</p>
+    /// <p>Only shown in responses when the request does not specify <code>TargetType</code> and <code>TargetId</code> filters.</p>
+    pub fn invoked_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.invoked_at.as_ref()
+    }
+    /// <p>The target type that the Hook was invoked against.</p>
+    pub fn target_type(&self) -> ::std::option::Option<&crate::types::ListHookResultsTargetType> {
+        self.target_type.as_ref()
+    }
+    /// <p>The unique identifier of the Hook invocation target.</p>
+    pub fn target_id(&self) -> ::std::option::Option<&str> {
+        self.target_id.as_deref()
+    }
+    /// <p>The ARN of the Hook that was invoked.</p>
+    pub fn type_arn(&self) -> ::std::option::Option<&str> {
+        self.type_arn.as_deref()
+    }
+    /// <p>The ARN of the target stack or request token of the Cloud Control API operation.</p>
+    /// <p>Only shown in responses when the request does not specify <code>TargetType</code> and <code>TargetId</code> filters.</p>
+    pub fn hook_execution_target(&self) -> ::std::option::Option<&str> {
+        self.hook_execution_target.as_deref()
     }
 }
 impl HookResultSummary {
@@ -72,6 +120,7 @@ impl HookResultSummary {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct HookResultSummaryBuilder {
+    pub(crate) hook_result_id: ::std::option::Option<::std::string::String>,
     pub(crate) invocation_point: ::std::option::Option<crate::types::HookInvocationPoint>,
     pub(crate) failure_mode: ::std::option::Option<crate::types::HookFailureMode>,
     pub(crate) type_name: ::std::option::Option<::std::string::String>,
@@ -79,127 +128,235 @@ pub struct HookResultSummaryBuilder {
     pub(crate) type_configuration_version_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::HookStatus>,
     pub(crate) hook_status_reason: ::std::option::Option<::std::string::String>,
+    pub(crate) invoked_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) target_type: ::std::option::Option<crate::types::ListHookResultsTargetType>,
+    pub(crate) target_id: ::std::option::Option<::std::string::String>,
+    pub(crate) type_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) hook_execution_target: ::std::option::Option<::std::string::String>,
 }
 impl HookResultSummaryBuilder {
-    /// <p>The exact point in the provisioning logic where the Hook runs.</p>
+    /// <p>The unique identifier for this Hook invocation result.</p>
+    pub fn hook_result_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.hook_result_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique identifier for this Hook invocation result.</p>
+    pub fn set_hook_result_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.hook_result_id = input;
+        self
+    }
+    /// <p>The unique identifier for this Hook invocation result.</p>
+    pub fn get_hook_result_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hook_result_id
+    }
+    /// <p>The specific point in the provisioning process where the Hook is invoked.</p>
     pub fn invocation_point(mut self, input: crate::types::HookInvocationPoint) -> Self {
         self.invocation_point = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The exact point in the provisioning logic where the Hook runs.</p>
+    /// <p>The specific point in the provisioning process where the Hook is invoked.</p>
     pub fn set_invocation_point(mut self, input: ::std::option::Option<crate::types::HookInvocationPoint>) -> Self {
         self.invocation_point = input;
         self
     }
-    /// <p>The exact point in the provisioning logic where the Hook runs.</p>
+    /// <p>The specific point in the provisioning process where the Hook is invoked.</p>
     pub fn get_invocation_point(&self) -> &::std::option::Option<crate::types::HookInvocationPoint> {
         &self.invocation_point
     }
-    /// <p>The failure mode of the invocation. The following are potential modes:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>FAIL</code>: If the hook invocation returns a failure, then the requested target operation should fail.</p></li>
-    /// <li>
-    /// <p><code>WARN</code>: If the hook invocation returns a failure, then the requested target operation should warn.</p></li>
-    /// </ul>
+    /// <p>The failure mode of the invocation.</p>
     pub fn failure_mode(mut self, input: crate::types::HookFailureMode) -> Self {
         self.failure_mode = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The failure mode of the invocation. The following are potential modes:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>FAIL</code>: If the hook invocation returns a failure, then the requested target operation should fail.</p></li>
-    /// <li>
-    /// <p><code>WARN</code>: If the hook invocation returns a failure, then the requested target operation should warn.</p></li>
-    /// </ul>
+    /// <p>The failure mode of the invocation.</p>
     pub fn set_failure_mode(mut self, input: ::std::option::Option<crate::types::HookFailureMode>) -> Self {
         self.failure_mode = input;
         self
     }
-    /// <p>The failure mode of the invocation. The following are potential modes:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>FAIL</code>: If the hook invocation returns a failure, then the requested target operation should fail.</p></li>
-    /// <li>
-    /// <p><code>WARN</code>: If the hook invocation returns a failure, then the requested target operation should warn.</p></li>
-    /// </ul>
+    /// <p>The failure mode of the invocation.</p>
     pub fn get_failure_mode(&self) -> &::std::option::Option<crate::types::HookFailureMode> {
         &self.failure_mode
     }
-    /// <p>The type name of the Hook being invoked.</p>
+    /// <p>The name of the Hook that was invoked.</p>
     pub fn type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.type_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The type name of the Hook being invoked.</p>
+    /// <p>The name of the Hook that was invoked.</p>
     pub fn set_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.type_name = input;
         self
     }
-    /// <p>The type name of the Hook being invoked.</p>
+    /// <p>The name of the Hook that was invoked.</p>
     pub fn get_type_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.type_name
     }
-    /// <p>The version of the Hook being invoked.</p>
+    /// <p>The version of the Hook that was invoked.</p>
     pub fn type_version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.type_version_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The version of the Hook being invoked.</p>
+    /// <p>The version of the Hook that was invoked.</p>
     pub fn set_type_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.type_version_id = input;
         self
     }
-    /// <p>The version of the Hook being invoked.</p>
+    /// <p>The version of the Hook that was invoked.</p>
     pub fn get_type_version_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.type_version_id
     }
-    /// <p>The version of the Hook type configuration.</p>
+    /// <p>The version of the Hook configuration.</p>
     pub fn type_configuration_version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.type_configuration_version_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The version of the Hook type configuration.</p>
+    /// <p>The version of the Hook configuration.</p>
     pub fn set_type_configuration_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.type_configuration_version_id = input;
         self
     }
-    /// <p>The version of the Hook type configuration.</p>
+    /// <p>The version of the Hook configuration.</p>
     pub fn get_type_configuration_version_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.type_configuration_version_id
     }
-    /// <p>The state of the Hook invocation.</p>
+    /// <p>The status of the Hook invocation. The following statuses are possible:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>HOOK_IN_PROGRESS</code>: The Hook is currently running.</p></li>
+    /// <li>
+    /// <p><code>HOOK_COMPLETE_SUCCEEDED</code>: The Hook completed successfully.</p></li>
+    /// <li>
+    /// <p><code>HOOK_COMPLETE_FAILED</code>: The Hook completed but failed validation.</p></li>
+    /// <li>
+    /// <p><code>HOOK_FAILED</code>: The Hook encountered an error during execution.</p></li>
+    /// </ul>
     pub fn status(mut self, input: crate::types::HookStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The state of the Hook invocation.</p>
+    /// <p>The status of the Hook invocation. The following statuses are possible:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>HOOK_IN_PROGRESS</code>: The Hook is currently running.</p></li>
+    /// <li>
+    /// <p><code>HOOK_COMPLETE_SUCCEEDED</code>: The Hook completed successfully.</p></li>
+    /// <li>
+    /// <p><code>HOOK_COMPLETE_FAILED</code>: The Hook completed but failed validation.</p></li>
+    /// <li>
+    /// <p><code>HOOK_FAILED</code>: The Hook encountered an error during execution.</p></li>
+    /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::HookStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The state of the Hook invocation.</p>
+    /// <p>The status of the Hook invocation. The following statuses are possible:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>HOOK_IN_PROGRESS</code>: The Hook is currently running.</p></li>
+    /// <li>
+    /// <p><code>HOOK_COMPLETE_SUCCEEDED</code>: The Hook completed successfully.</p></li>
+    /// <li>
+    /// <p><code>HOOK_COMPLETE_FAILED</code>: The Hook completed but failed validation.</p></li>
+    /// <li>
+    /// <p><code>HOOK_FAILED</code>: The Hook encountered an error during execution.</p></li>
+    /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::HookStatus> {
         &self.status
     }
-    /// <p>A description of the Hook results status. For example, if the Hook result is in a <code>FAILED</code> state, this may contain additional information for the <code>FAILED</code> state.</p>
+    /// <p>A description of the Hook results status. For example, if the Hook result is in a failed state, this may contain additional information for the failed state.</p>
     pub fn hook_status_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hook_status_reason = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A description of the Hook results status. For example, if the Hook result is in a <code>FAILED</code> state, this may contain additional information for the <code>FAILED</code> state.</p>
+    /// <p>A description of the Hook results status. For example, if the Hook result is in a failed state, this may contain additional information for the failed state.</p>
     pub fn set_hook_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hook_status_reason = input;
         self
     }
-    /// <p>A description of the Hook results status. For example, if the Hook result is in a <code>FAILED</code> state, this may contain additional information for the <code>FAILED</code> state.</p>
+    /// <p>A description of the Hook results status. For example, if the Hook result is in a failed state, this may contain additional information for the failed state.</p>
     pub fn get_hook_status_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.hook_status_reason
+    }
+    /// <p>The timestamp when the Hook was invoked.</p>
+    /// <p>Only shown in responses when the request does not specify <code>TargetType</code> and <code>TargetId</code> filters.</p>
+    pub fn invoked_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.invoked_at = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The timestamp when the Hook was invoked.</p>
+    /// <p>Only shown in responses when the request does not specify <code>TargetType</code> and <code>TargetId</code> filters.</p>
+    pub fn set_invoked_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.invoked_at = input;
+        self
+    }
+    /// <p>The timestamp when the Hook was invoked.</p>
+    /// <p>Only shown in responses when the request does not specify <code>TargetType</code> and <code>TargetId</code> filters.</p>
+    pub fn get_invoked_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.invoked_at
+    }
+    /// <p>The target type that the Hook was invoked against.</p>
+    pub fn target_type(mut self, input: crate::types::ListHookResultsTargetType) -> Self {
+        self.target_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The target type that the Hook was invoked against.</p>
+    pub fn set_target_type(mut self, input: ::std::option::Option<crate::types::ListHookResultsTargetType>) -> Self {
+        self.target_type = input;
+        self
+    }
+    /// <p>The target type that the Hook was invoked against.</p>
+    pub fn get_target_type(&self) -> &::std::option::Option<crate::types::ListHookResultsTargetType> {
+        &self.target_type
+    }
+    /// <p>The unique identifier of the Hook invocation target.</p>
+    pub fn target_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.target_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique identifier of the Hook invocation target.</p>
+    pub fn set_target_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.target_id = input;
+        self
+    }
+    /// <p>The unique identifier of the Hook invocation target.</p>
+    pub fn get_target_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_id
+    }
+    /// <p>The ARN of the Hook that was invoked.</p>
+    pub fn type_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.type_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN of the Hook that was invoked.</p>
+    pub fn set_type_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.type_arn = input;
+        self
+    }
+    /// <p>The ARN of the Hook that was invoked.</p>
+    pub fn get_type_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.type_arn
+    }
+    /// <p>The ARN of the target stack or request token of the Cloud Control API operation.</p>
+    /// <p>Only shown in responses when the request does not specify <code>TargetType</code> and <code>TargetId</code> filters.</p>
+    pub fn hook_execution_target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.hook_execution_target = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN of the target stack or request token of the Cloud Control API operation.</p>
+    /// <p>Only shown in responses when the request does not specify <code>TargetType</code> and <code>TargetId</code> filters.</p>
+    pub fn set_hook_execution_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.hook_execution_target = input;
+        self
+    }
+    /// <p>The ARN of the target stack or request token of the Cloud Control API operation.</p>
+    /// <p>Only shown in responses when the request does not specify <code>TargetType</code> and <code>TargetId</code> filters.</p>
+    pub fn get_hook_execution_target(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hook_execution_target
     }
     /// Consumes the builder and constructs a [`HookResultSummary`](crate::types::HookResultSummary).
     pub fn build(self) -> crate::types::HookResultSummary {
         crate::types::HookResultSummary {
+            hook_result_id: self.hook_result_id,
             invocation_point: self.invocation_point,
             failure_mode: self.failure_mode,
             type_name: self.type_name,
@@ -207,6 +364,11 @@ impl HookResultSummaryBuilder {
             type_configuration_version_id: self.type_configuration_version_id,
             status: self.status,
             hook_status_reason: self.hook_status_reason,
+            invoked_at: self.invoked_at,
+            target_type: self.target_type,
+            target_id: self.target_id,
+            type_arn: self.type_arn,
+            hook_execution_target: self.hook_execution_target,
         }
     }
 }

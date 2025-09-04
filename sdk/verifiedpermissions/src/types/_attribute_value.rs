@@ -9,9 +9,15 @@ pub enum AttributeValue {
     /// <p>An attribute value of <a href="https://docs.cedarpolicy.com/policies/syntax-datatypes.html#boolean">Boolean</a> type.</p>
     /// <p>Example: <code>{"boolean": true}</code></p>
     Boolean(bool),
+    /// <p>An attribute value of <a href="https://docs.cedarpolicy.com/policies/syntax-datatypes.html#datatype-datetime">datetime</a> type.</p>
+    /// <p>Example: <code>{"datetime": "2024-10-15T11:35:00Z"}</code></p>
+    Datetime(::std::string::String),
     /// <p>An attribute value of <a href="https://docs.cedarpolicy.com/policies/syntax-datatypes.html#datatype-decimal">decimal</a> type.</p>
     /// <p>Example: <code>{"decimal": "1.1"}</code></p>
     Decimal(::std::string::String),
+    /// <p>An attribute value of <a href="https://docs.cedarpolicy.com/policies/syntax-datatypes.html#datatype-duration">duration</a> type.</p>
+    /// <p>Example: <code>{"duration": "1h30m"}</code></p>
+    Duration(::std::string::String),
     /// <p>An attribute value of type <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_EntityIdentifier.html">EntityIdentifier</a>.</p>
     /// <p>Example: <code>"entityIdentifier": { "entityId": "&lt;id&gt;", "entityType": "&lt;entity type&gt;"}</code></p>
     EntityIdentifier(crate::types::EntityIdentifier),
@@ -54,6 +60,19 @@ impl AttributeValue {
     pub fn is_boolean(&self) -> bool {
         self.as_boolean().is_ok()
     }
+    /// Tries to convert the enum instance into [`Datetime`](crate::types::AttributeValue::Datetime), extracting the inner [`String`](::std::string::String).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_datetime(&self) -> ::std::result::Result<&::std::string::String, &Self> {
+        if let AttributeValue::Datetime(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`Datetime`](crate::types::AttributeValue::Datetime).
+    pub fn is_datetime(&self) -> bool {
+        self.as_datetime().is_ok()
+    }
     /// Tries to convert the enum instance into [`Decimal`](crate::types::AttributeValue::Decimal), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_decimal(&self) -> ::std::result::Result<&::std::string::String, &Self> {
@@ -66,6 +85,19 @@ impl AttributeValue {
     /// Returns true if this is a [`Decimal`](crate::types::AttributeValue::Decimal).
     pub fn is_decimal(&self) -> bool {
         self.as_decimal().is_ok()
+    }
+    /// Tries to convert the enum instance into [`Duration`](crate::types::AttributeValue::Duration), extracting the inner [`String`](::std::string::String).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_duration(&self) -> ::std::result::Result<&::std::string::String, &Self> {
+        if let AttributeValue::Duration(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`Duration`](crate::types::AttributeValue::Duration).
+    pub fn is_duration(&self) -> bool {
+        self.as_duration().is_ok()
     }
     /// Tries to convert the enum instance into [`EntityIdentifier`](crate::types::AttributeValue::EntityIdentifier), extracting the inner [`EntityIdentifier`](crate::types::EntityIdentifier).
     /// Returns `Err(&Self)` if it can't be converted.
@@ -154,7 +186,9 @@ impl ::std::fmt::Debug for AttributeValue {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             AttributeValue::Boolean(_) => f.debug_tuple("*** Sensitive Data Redacted ***").finish(),
+            AttributeValue::Datetime(_) => f.debug_tuple("*** Sensitive Data Redacted ***").finish(),
             AttributeValue::Decimal(_) => f.debug_tuple("*** Sensitive Data Redacted ***").finish(),
+            AttributeValue::Duration(_) => f.debug_tuple("*** Sensitive Data Redacted ***").finish(),
             AttributeValue::EntityIdentifier(val) => f.debug_tuple("EntityIdentifier").field(&val).finish(),
             AttributeValue::Ipaddr(_) => f.debug_tuple("*** Sensitive Data Redacted ***").finish(),
             AttributeValue::Long(_) => f.debug_tuple("*** Sensitive Data Redacted ***").finish(),

@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeStackSetOperationOutput {
-    /// <p>The specified stack set operation.</p>
+    /// <p>The specified StackSet operation.</p>
     pub stack_set_operation: ::std::option::Option<crate::types::StackSetOperation>,
     _request_id: Option<String>,
 }
 impl DescribeStackSetOperationOutput {
-    /// <p>The specified stack set operation.</p>
+    /// <p>The specified StackSet operation.</p>
     pub fn stack_set_operation(&self) -> ::std::option::Option<&crate::types::StackSetOperation> {
         self.stack_set_operation.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct DescribeStackSetOperationOutputBuilder {
     _request_id: Option<String>,
 }
 impl DescribeStackSetOperationOutputBuilder {
-    /// <p>The specified stack set operation.</p>
+    /// <p>The specified StackSet operation.</p>
     pub fn stack_set_operation(mut self, input: crate::types::StackSetOperation) -> Self {
         self.stack_set_operation = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The specified stack set operation.</p>
+    /// <p>The specified StackSet operation.</p>
     pub fn set_stack_set_operation(mut self, input: ::std::option::Option<crate::types::StackSetOperation>) -> Self {
         self.stack_set_operation = input;
         self
     }
-    /// <p>The specified stack set operation.</p>
+    /// <p>The specified StackSet operation.</p>
     pub fn get_stack_set_operation(&self) -> &::std::option::Option<crate::types::StackSetOperation> {
         &self.stack_set_operation
     }

@@ -79,7 +79,9 @@ pub struct CreateStackInput {
     /// <p>The Amazon Resource Name (ARN) of an IAM role that CloudFormation assumes to create the stack. CloudFormation uses the role's credentials to make calls on your behalf. CloudFormation always uses this role for all future operations on the stack. Provided that users have permission to operate on the stack, CloudFormation uses this role even if the users don't have permission to pass it. Ensure that the role grants least privilege.</p>
     /// <p>If you don't specify a value, CloudFormation uses the role that was previously associated with the stack. If no role is available, CloudFormation uses a temporary session that's generated from your user credentials.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
-    /// <p>Determines what action will be taken if stack creation fails. This must be one of: <code>DO_NOTHING</code>, <code>ROLLBACK</code>, or <code>DELETE</code>. You can specify either <code>OnFailure</code> or <code>DisableRollback</code>, but not both.</p>
+    /// <p>Determines what action will be taken if stack creation fails. This must be one of: <code>DO_NOTHING</code>, <code>ROLLBACK</code>, or <code>DELETE</code>. You can specify either <code>OnFailure</code> or <code>DisableRollback</code>, but not both.</p><note>
+    /// <p>Although the default setting is <code>ROLLBACK</code>, there is one exception. This exception occurs when a StackSet attempts to deploy a stack instance and the stack instance fails to create successfully. In this case, the <code>CreateStack</code> call overrides the default setting and sets the value of <code>OnFailure</code> to <code>DELETE</code>.</p>
+    /// </note>
     /// <p>Default: <code>ROLLBACK</code></p>
     pub on_failure: ::std::option::Option<crate::types::OnFailure>,
     /// <p>Structure that contains the stack policy body. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html">Prevent updates to stack resources</a> in the <i>CloudFormation User Guide</i>. You can specify either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but not both.</p>
@@ -206,7 +208,9 @@ impl CreateStackInput {
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>Determines what action will be taken if stack creation fails. This must be one of: <code>DO_NOTHING</code>, <code>ROLLBACK</code>, or <code>DELETE</code>. You can specify either <code>OnFailure</code> or <code>DisableRollback</code>, but not both.</p>
+    /// <p>Determines what action will be taken if stack creation fails. This must be one of: <code>DO_NOTHING</code>, <code>ROLLBACK</code>, or <code>DELETE</code>. You can specify either <code>OnFailure</code> or <code>DisableRollback</code>, but not both.</p><note>
+    /// <p>Although the default setting is <code>ROLLBACK</code>, there is one exception. This exception occurs when a StackSet attempts to deploy a stack instance and the stack instance fails to create successfully. In this case, the <code>CreateStack</code> call overrides the default setting and sets the value of <code>OnFailure</code> to <code>DELETE</code>.</p>
+    /// </note>
     /// <p>Default: <code>ROLLBACK</code></p>
     pub fn on_failure(&self) -> ::std::option::Option<&crate::types::OnFailure> {
         self.on_failure.as_ref()
@@ -612,19 +616,25 @@ impl CreateStackInputBuilder {
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }
-    /// <p>Determines what action will be taken if stack creation fails. This must be one of: <code>DO_NOTHING</code>, <code>ROLLBACK</code>, or <code>DELETE</code>. You can specify either <code>OnFailure</code> or <code>DisableRollback</code>, but not both.</p>
+    /// <p>Determines what action will be taken if stack creation fails. This must be one of: <code>DO_NOTHING</code>, <code>ROLLBACK</code>, or <code>DELETE</code>. You can specify either <code>OnFailure</code> or <code>DisableRollback</code>, but not both.</p><note>
+    /// <p>Although the default setting is <code>ROLLBACK</code>, there is one exception. This exception occurs when a StackSet attempts to deploy a stack instance and the stack instance fails to create successfully. In this case, the <code>CreateStack</code> call overrides the default setting and sets the value of <code>OnFailure</code> to <code>DELETE</code>.</p>
+    /// </note>
     /// <p>Default: <code>ROLLBACK</code></p>
     pub fn on_failure(mut self, input: crate::types::OnFailure) -> Self {
         self.on_failure = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Determines what action will be taken if stack creation fails. This must be one of: <code>DO_NOTHING</code>, <code>ROLLBACK</code>, or <code>DELETE</code>. You can specify either <code>OnFailure</code> or <code>DisableRollback</code>, but not both.</p>
+    /// <p>Determines what action will be taken if stack creation fails. This must be one of: <code>DO_NOTHING</code>, <code>ROLLBACK</code>, or <code>DELETE</code>. You can specify either <code>OnFailure</code> or <code>DisableRollback</code>, but not both.</p><note>
+    /// <p>Although the default setting is <code>ROLLBACK</code>, there is one exception. This exception occurs when a StackSet attempts to deploy a stack instance and the stack instance fails to create successfully. In this case, the <code>CreateStack</code> call overrides the default setting and sets the value of <code>OnFailure</code> to <code>DELETE</code>.</p>
+    /// </note>
     /// <p>Default: <code>ROLLBACK</code></p>
     pub fn set_on_failure(mut self, input: ::std::option::Option<crate::types::OnFailure>) -> Self {
         self.on_failure = input;
         self
     }
-    /// <p>Determines what action will be taken if stack creation fails. This must be one of: <code>DO_NOTHING</code>, <code>ROLLBACK</code>, or <code>DELETE</code>. You can specify either <code>OnFailure</code> or <code>DisableRollback</code>, but not both.</p>
+    /// <p>Determines what action will be taken if stack creation fails. This must be one of: <code>DO_NOTHING</code>, <code>ROLLBACK</code>, or <code>DELETE</code>. You can specify either <code>OnFailure</code> or <code>DisableRollback</code>, but not both.</p><note>
+    /// <p>Although the default setting is <code>ROLLBACK</code>, there is one exception. This exception occurs when a StackSet attempts to deploy a stack instance and the stack instance fails to create successfully. In this case, the <code>CreateStack</code> call overrides the default setting and sets the value of <code>OnFailure</code> to <code>DELETE</code>.</p>
+    /// </note>
     /// <p>Default: <code>ROLLBACK</code></p>
     pub fn get_on_failure(&self) -> &::std::option::Option<crate::types::OnFailure> {
         &self.on_failure

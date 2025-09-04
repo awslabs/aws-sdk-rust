@@ -22,7 +22,7 @@ impl crate::operation::batch_get_collection::builders::BatchGetCollectionInputBu
 }
 /// Fluent builder constructing a request to `BatchGetCollection`.
 ///
-/// <p>Returns attributes for one or more collections, including the collection endpoint and the OpenSearch Dashboards endpoint. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-manage.html">Creating and managing Amazon OpenSearch Serverless collections</a>.</p>
+/// <p>Returns attributes for one or more collections, including the collection endpoint, the OpenSearch Dashboards endpoint, and FIPS-compliant endpoints. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-manage.html">Creating and managing Amazon OpenSearch Serverless collections</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchGetCollectionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

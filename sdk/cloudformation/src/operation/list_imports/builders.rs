@@ -23,7 +23,7 @@ impl crate::operation::list_imports::builders::ListImportsInputBuilder {
 /// Fluent builder constructing a request to `ListImports`.
 ///
 /// <p>Lists all stacks that are importing an exported output value. To modify or remove an exported output value, first use this action to see which stacks are using it. To see the exported output values in your account, see <code>ListExports</code>.</p>
-/// <p>For more information about importing an exported output value, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-importvalue.html">Fn::ImportValue</a> function.</p>
+/// <p>For more information about importing an exported output value, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/intrinsic-function-reference-importvalue.html">Fn::ImportValue</a> function.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListImportsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

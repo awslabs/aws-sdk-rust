@@ -27,6 +27,17 @@ pub struct DbProxyEndpoint {
     pub target_role: ::std::option::Option<crate::types::DbProxyEndpointTargetRole>,
     /// <p>Indicates whether this endpoint is the default endpoint for the associated DB proxy. Default DB proxy endpoints always have read/write capability. Other endpoints that you associate with the DB proxy can be either read/write or read-only.</p>
     pub is_default: ::std::option::Option<bool>,
+    /// <p>The network type of the DB proxy endpoint. The network type determines the IP version that the proxy endpoint supports.</p>
+    /// <p>Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IPV4</code> - The proxy endpoint supports IPv4 only.</p></li>
+    /// <li>
+    /// <p><code>IPV6</code> - The proxy endpoint supports IPv6 only.</p></li>
+    /// <li>
+    /// <p><code>DUAL</code> - The proxy endpoint supports both IPv4 and IPv6.</p></li>
+    /// </ul>
+    pub endpoint_network_type: ::std::option::Option<crate::types::EndpointNetworkType>,
 }
 impl DbProxyEndpoint {
     /// <p>The name for the DB proxy endpoint. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.</p>
@@ -77,6 +88,19 @@ impl DbProxyEndpoint {
     pub fn is_default(&self) -> ::std::option::Option<bool> {
         self.is_default
     }
+    /// <p>The network type of the DB proxy endpoint. The network type determines the IP version that the proxy endpoint supports.</p>
+    /// <p>Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IPV4</code> - The proxy endpoint supports IPv4 only.</p></li>
+    /// <li>
+    /// <p><code>IPV6</code> - The proxy endpoint supports IPv6 only.</p></li>
+    /// <li>
+    /// <p><code>DUAL</code> - The proxy endpoint supports both IPv4 and IPv6.</p></li>
+    /// </ul>
+    pub fn endpoint_network_type(&self) -> ::std::option::Option<&crate::types::EndpointNetworkType> {
+        self.endpoint_network_type.as_ref()
+    }
 }
 impl DbProxyEndpoint {
     /// Creates a new builder-style object to manufacture [`DbProxyEndpoint`](crate::types::DbProxyEndpoint).
@@ -100,6 +124,7 @@ pub struct DbProxyEndpointBuilder {
     pub(crate) created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) target_role: ::std::option::Option<crate::types::DbProxyEndpointTargetRole>,
     pub(crate) is_default: ::std::option::Option<bool>,
+    pub(crate) endpoint_network_type: ::std::option::Option<crate::types::EndpointNetworkType>,
 }
 impl DbProxyEndpointBuilder {
     /// <p>The name for the DB proxy endpoint. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.</p>
@@ -268,6 +293,47 @@ impl DbProxyEndpointBuilder {
     pub fn get_is_default(&self) -> &::std::option::Option<bool> {
         &self.is_default
     }
+    /// <p>The network type of the DB proxy endpoint. The network type determines the IP version that the proxy endpoint supports.</p>
+    /// <p>Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IPV4</code> - The proxy endpoint supports IPv4 only.</p></li>
+    /// <li>
+    /// <p><code>IPV6</code> - The proxy endpoint supports IPv6 only.</p></li>
+    /// <li>
+    /// <p><code>DUAL</code> - The proxy endpoint supports both IPv4 and IPv6.</p></li>
+    /// </ul>
+    pub fn endpoint_network_type(mut self, input: crate::types::EndpointNetworkType) -> Self {
+        self.endpoint_network_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The network type of the DB proxy endpoint. The network type determines the IP version that the proxy endpoint supports.</p>
+    /// <p>Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IPV4</code> - The proxy endpoint supports IPv4 only.</p></li>
+    /// <li>
+    /// <p><code>IPV6</code> - The proxy endpoint supports IPv6 only.</p></li>
+    /// <li>
+    /// <p><code>DUAL</code> - The proxy endpoint supports both IPv4 and IPv6.</p></li>
+    /// </ul>
+    pub fn set_endpoint_network_type(mut self, input: ::std::option::Option<crate::types::EndpointNetworkType>) -> Self {
+        self.endpoint_network_type = input;
+        self
+    }
+    /// <p>The network type of the DB proxy endpoint. The network type determines the IP version that the proxy endpoint supports.</p>
+    /// <p>Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IPV4</code> - The proxy endpoint supports IPv4 only.</p></li>
+    /// <li>
+    /// <p><code>IPV6</code> - The proxy endpoint supports IPv6 only.</p></li>
+    /// <li>
+    /// <p><code>DUAL</code> - The proxy endpoint supports both IPv4 and IPv6.</p></li>
+    /// </ul>
+    pub fn get_endpoint_network_type(&self) -> &::std::option::Option<crate::types::EndpointNetworkType> {
+        &self.endpoint_network_type
+    }
     /// Consumes the builder and constructs a [`DbProxyEndpoint`](crate::types::DbProxyEndpoint).
     pub fn build(self) -> crate::types::DbProxyEndpoint {
         crate::types::DbProxyEndpoint {
@@ -282,6 +348,7 @@ impl DbProxyEndpointBuilder {
             created_date: self.created_date,
             target_role: self.target_role,
             is_default: self.is_default,
+            endpoint_network_type: self.endpoint_network_type,
         }
     }
 }

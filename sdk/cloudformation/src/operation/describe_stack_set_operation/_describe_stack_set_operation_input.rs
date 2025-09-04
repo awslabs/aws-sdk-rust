@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeStackSetOperationInput {
-    /// <p>The name or the unique stack ID of the stack set for the stack operation.</p>
+    /// <p>The name or the unique stack ID of the StackSet for the stack operation.</p>
     pub stack_set_name: ::std::option::Option<::std::string::String>,
-    /// <p>The unique ID of the stack set operation.</p>
+    /// <p>The unique ID of the StackSet operation.</p>
     pub operation_id: ::std::option::Option<::std::string::String>,
     /// <p>\[Service-managed permissions\] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
-    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
+    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for StackSets with self-managed permissions.</p>
     /// <ul>
     /// <li>
     /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p></li>
@@ -19,16 +19,16 @@ pub struct DescribeStackSetOperationInput {
     pub call_as: ::std::option::Option<crate::types::CallAs>,
 }
 impl DescribeStackSetOperationInput {
-    /// <p>The name or the unique stack ID of the stack set for the stack operation.</p>
+    /// <p>The name or the unique stack ID of the StackSet for the stack operation.</p>
     pub fn stack_set_name(&self) -> ::std::option::Option<&str> {
         self.stack_set_name.as_deref()
     }
-    /// <p>The unique ID of the stack set operation.</p>
+    /// <p>The unique ID of the StackSet operation.</p>
     pub fn operation_id(&self) -> ::std::option::Option<&str> {
         self.operation_id.as_deref()
     }
     /// <p>\[Service-managed permissions\] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
-    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
+    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for StackSets with self-managed permissions.</p>
     /// <ul>
     /// <li>
     /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p></li>
@@ -56,38 +56,38 @@ pub struct DescribeStackSetOperationInputBuilder {
     pub(crate) call_as: ::std::option::Option<crate::types::CallAs>,
 }
 impl DescribeStackSetOperationInputBuilder {
-    /// <p>The name or the unique stack ID of the stack set for the stack operation.</p>
+    /// <p>The name or the unique stack ID of the StackSet for the stack operation.</p>
     /// This field is required.
     pub fn stack_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_set_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name or the unique stack ID of the stack set for the stack operation.</p>
+    /// <p>The name or the unique stack ID of the StackSet for the stack operation.</p>
     pub fn set_stack_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stack_set_name = input;
         self
     }
-    /// <p>The name or the unique stack ID of the stack set for the stack operation.</p>
+    /// <p>The name or the unique stack ID of the StackSet for the stack operation.</p>
     pub fn get_stack_set_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.stack_set_name
     }
-    /// <p>The unique ID of the stack set operation.</p>
+    /// <p>The unique ID of the StackSet operation.</p>
     /// This field is required.
     pub fn operation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.operation_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique ID of the stack set operation.</p>
+    /// <p>The unique ID of the StackSet operation.</p>
     pub fn set_operation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.operation_id = input;
         self
     }
-    /// <p>The unique ID of the stack set operation.</p>
+    /// <p>The unique ID of the StackSet operation.</p>
     pub fn get_operation_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.operation_id
     }
     /// <p>\[Service-managed permissions\] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
-    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
+    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for StackSets with self-managed permissions.</p>
     /// <ul>
     /// <li>
     /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p></li>
@@ -100,7 +100,7 @@ impl DescribeStackSetOperationInputBuilder {
         self
     }
     /// <p>\[Service-managed permissions\] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
-    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
+    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for StackSets with self-managed permissions.</p>
     /// <ul>
     /// <li>
     /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p></li>
@@ -113,7 +113,7 @@ impl DescribeStackSetOperationInputBuilder {
         self
     }
     /// <p>\[Service-managed permissions\] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
-    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
+    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for StackSets with self-managed permissions.</p>
     /// <ul>
     /// <li>
     /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p></li>

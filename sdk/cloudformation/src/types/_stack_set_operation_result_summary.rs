@@ -8,13 +8,13 @@ pub struct StackSetOperationResultSummary {
     pub account: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Amazon Web Services Region for this operation result.</p>
     pub region: ::std::option::Option<::std::string::String>,
-    /// <p>The result status of the stack set operation for the given account in the given Region.</p>
+    /// <p>The result status of the StackSet operation for the given account in the given Region.</p>
     /// <ul>
     /// <li>
-    /// <p><code>CANCELLED</code>: The operation in the specified account and Region has been canceled. This is either because a user has stopped the stack set operation, or because the failure tolerance of the stack set operation has been exceeded.</p></li>
+    /// <p><code>CANCELLED</code>: The operation in the specified account and Region has been canceled. This is either because a user has stopped the StackSet operation, or because the failure tolerance of the StackSet operation has been exceeded.</p></li>
     /// <li>
     /// <p><code>FAILED</code>: The operation in the specified account and Region failed.</p>
-    /// <p>If the stack set operation fails in enough accounts within a Region, the failure tolerance for the stack set operation as a whole might be exceeded.</p></li>
+    /// <p>If the StackSet operation fails in enough accounts within a Region, the failure tolerance for the StackSet operation as a whole might be exceeded.</p></li>
     /// <li>
     /// <p><code>RUNNING</code>: The operation in the specified account and Region is currently in progress.</p></li>
     /// <li>
@@ -25,7 +25,7 @@ pub struct StackSetOperationResultSummary {
     pub status: ::std::option::Option<crate::types::StackSetOperationResultStatus>,
     /// <p>The reason for the assigned result status.</p>
     pub status_reason: ::std::option::Option<::std::string::String>,
-    /// <p>The results of the account gate function CloudFormation invokes, if present, before proceeding with stack set operations in an account.</p>
+    /// <p>The results of the account gate function CloudFormation invokes, if present, before proceeding with StackSet operations in an account.</p>
     pub account_gate_result: ::std::option::Option<crate::types::AccountGateResult>,
     /// <p>\[Service-managed permissions\] The organization root ID or organizational unit (OU) IDs that you specified for DeploymentTargets.</p>
     pub organizational_unit_id: ::std::option::Option<::std::string::String>,
@@ -39,13 +39,13 @@ impl StackSetOperationResultSummary {
     pub fn region(&self) -> ::std::option::Option<&str> {
         self.region.as_deref()
     }
-    /// <p>The result status of the stack set operation for the given account in the given Region.</p>
+    /// <p>The result status of the StackSet operation for the given account in the given Region.</p>
     /// <ul>
     /// <li>
-    /// <p><code>CANCELLED</code>: The operation in the specified account and Region has been canceled. This is either because a user has stopped the stack set operation, or because the failure tolerance of the stack set operation has been exceeded.</p></li>
+    /// <p><code>CANCELLED</code>: The operation in the specified account and Region has been canceled. This is either because a user has stopped the StackSet operation, or because the failure tolerance of the StackSet operation has been exceeded.</p></li>
     /// <li>
     /// <p><code>FAILED</code>: The operation in the specified account and Region failed.</p>
-    /// <p>If the stack set operation fails in enough accounts within a Region, the failure tolerance for the stack set operation as a whole might be exceeded.</p></li>
+    /// <p>If the StackSet operation fails in enough accounts within a Region, the failure tolerance for the StackSet operation as a whole might be exceeded.</p></li>
     /// <li>
     /// <p><code>RUNNING</code>: The operation in the specified account and Region is currently in progress.</p></li>
     /// <li>
@@ -60,7 +60,7 @@ impl StackSetOperationResultSummary {
     pub fn status_reason(&self) -> ::std::option::Option<&str> {
         self.status_reason.as_deref()
     }
-    /// <p>The results of the account gate function CloudFormation invokes, if present, before proceeding with stack set operations in an account.</p>
+    /// <p>The results of the account gate function CloudFormation invokes, if present, before proceeding with StackSet operations in an account.</p>
     pub fn account_gate_result(&self) -> ::std::option::Option<&crate::types::AccountGateResult> {
         self.account_gate_result.as_ref()
     }
@@ -116,13 +116,13 @@ impl StackSetOperationResultSummaryBuilder {
     pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
         &self.region
     }
-    /// <p>The result status of the stack set operation for the given account in the given Region.</p>
+    /// <p>The result status of the StackSet operation for the given account in the given Region.</p>
     /// <ul>
     /// <li>
-    /// <p><code>CANCELLED</code>: The operation in the specified account and Region has been canceled. This is either because a user has stopped the stack set operation, or because the failure tolerance of the stack set operation has been exceeded.</p></li>
+    /// <p><code>CANCELLED</code>: The operation in the specified account and Region has been canceled. This is either because a user has stopped the StackSet operation, or because the failure tolerance of the StackSet operation has been exceeded.</p></li>
     /// <li>
     /// <p><code>FAILED</code>: The operation in the specified account and Region failed.</p>
-    /// <p>If the stack set operation fails in enough accounts within a Region, the failure tolerance for the stack set operation as a whole might be exceeded.</p></li>
+    /// <p>If the StackSet operation fails in enough accounts within a Region, the failure tolerance for the StackSet operation as a whole might be exceeded.</p></li>
     /// <li>
     /// <p><code>RUNNING</code>: The operation in the specified account and Region is currently in progress.</p></li>
     /// <li>
@@ -134,13 +134,13 @@ impl StackSetOperationResultSummaryBuilder {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The result status of the stack set operation for the given account in the given Region.</p>
+    /// <p>The result status of the StackSet operation for the given account in the given Region.</p>
     /// <ul>
     /// <li>
-    /// <p><code>CANCELLED</code>: The operation in the specified account and Region has been canceled. This is either because a user has stopped the stack set operation, or because the failure tolerance of the stack set operation has been exceeded.</p></li>
+    /// <p><code>CANCELLED</code>: The operation in the specified account and Region has been canceled. This is either because a user has stopped the StackSet operation, or because the failure tolerance of the StackSet operation has been exceeded.</p></li>
     /// <li>
     /// <p><code>FAILED</code>: The operation in the specified account and Region failed.</p>
-    /// <p>If the stack set operation fails in enough accounts within a Region, the failure tolerance for the stack set operation as a whole might be exceeded.</p></li>
+    /// <p>If the StackSet operation fails in enough accounts within a Region, the failure tolerance for the StackSet operation as a whole might be exceeded.</p></li>
     /// <li>
     /// <p><code>RUNNING</code>: The operation in the specified account and Region is currently in progress.</p></li>
     /// <li>
@@ -152,13 +152,13 @@ impl StackSetOperationResultSummaryBuilder {
         self.status = input;
         self
     }
-    /// <p>The result status of the stack set operation for the given account in the given Region.</p>
+    /// <p>The result status of the StackSet operation for the given account in the given Region.</p>
     /// <ul>
     /// <li>
-    /// <p><code>CANCELLED</code>: The operation in the specified account and Region has been canceled. This is either because a user has stopped the stack set operation, or because the failure tolerance of the stack set operation has been exceeded.</p></li>
+    /// <p><code>CANCELLED</code>: The operation in the specified account and Region has been canceled. This is either because a user has stopped the StackSet operation, or because the failure tolerance of the StackSet operation has been exceeded.</p></li>
     /// <li>
     /// <p><code>FAILED</code>: The operation in the specified account and Region failed.</p>
-    /// <p>If the stack set operation fails in enough accounts within a Region, the failure tolerance for the stack set operation as a whole might be exceeded.</p></li>
+    /// <p>If the StackSet operation fails in enough accounts within a Region, the failure tolerance for the StackSet operation as a whole might be exceeded.</p></li>
     /// <li>
     /// <p><code>RUNNING</code>: The operation in the specified account and Region is currently in progress.</p></li>
     /// <li>
@@ -183,17 +183,17 @@ impl StackSetOperationResultSummaryBuilder {
     pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.status_reason
     }
-    /// <p>The results of the account gate function CloudFormation invokes, if present, before proceeding with stack set operations in an account.</p>
+    /// <p>The results of the account gate function CloudFormation invokes, if present, before proceeding with StackSet operations in an account.</p>
     pub fn account_gate_result(mut self, input: crate::types::AccountGateResult) -> Self {
         self.account_gate_result = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The results of the account gate function CloudFormation invokes, if present, before proceeding with stack set operations in an account.</p>
+    /// <p>The results of the account gate function CloudFormation invokes, if present, before proceeding with StackSet operations in an account.</p>
     pub fn set_account_gate_result(mut self, input: ::std::option::Option<crate::types::AccountGateResult>) -> Self {
         self.account_gate_result = input;
         self
     }
-    /// <p>The results of the account gate function CloudFormation invokes, if present, before proceeding with stack set operations in an account.</p>
+    /// <p>The results of the account gate function CloudFormation invokes, if present, before proceeding with StackSet operations in an account.</p>
     pub fn get_account_gate_result(&self) -> &::std::option::Option<crate::types::AccountGateResult> {
         &self.account_gate_result
     }

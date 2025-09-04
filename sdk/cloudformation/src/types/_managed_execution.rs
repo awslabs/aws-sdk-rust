@@ -4,17 +4,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ManagedExecution {
-    /// <p>When <code>true</code>, StackSets performs non-conflicting operations concurrently and queues conflicting operations. After conflicting operations finish, StackSets starts queued operations in request order.</p><note>
-    /// <p>If there are already running or queued operations, StackSets queues all incoming operations even if they are non-conflicting.</p>
-    /// <p>You can't modify your stack set's execution configuration while there are running or queued operations for that stack set.</p>
+    /// <p>When <code>true</code>, CloudFormation performs non-conflicting operations concurrently and queues conflicting operations. After conflicting operations finish, CloudFormation starts queued operations in request order.</p><note>
+    /// <p>If there are already running or queued operations, CloudFormation queues all incoming operations even if they are non-conflicting.</p>
+    /// <p>You can't modify your StackSet's execution configuration while there are running or queued operations for that StackSet.</p>
     /// </note>
     /// <p>When <code>false</code> (default), StackSets performs one operation at a time in request order.</p>
     pub active: ::std::option::Option<bool>,
 }
 impl ManagedExecution {
-    /// <p>When <code>true</code>, StackSets performs non-conflicting operations concurrently and queues conflicting operations. After conflicting operations finish, StackSets starts queued operations in request order.</p><note>
-    /// <p>If there are already running or queued operations, StackSets queues all incoming operations even if they are non-conflicting.</p>
-    /// <p>You can't modify your stack set's execution configuration while there are running or queued operations for that stack set.</p>
+    /// <p>When <code>true</code>, CloudFormation performs non-conflicting operations concurrently and queues conflicting operations. After conflicting operations finish, CloudFormation starts queued operations in request order.</p><note>
+    /// <p>If there are already running or queued operations, CloudFormation queues all incoming operations even if they are non-conflicting.</p>
+    /// <p>You can't modify your StackSet's execution configuration while there are running or queued operations for that StackSet.</p>
     /// </note>
     /// <p>When <code>false</code> (default), StackSets performs one operation at a time in request order.</p>
     pub fn active(&self) -> ::std::option::Option<bool> {
@@ -35,27 +35,27 @@ pub struct ManagedExecutionBuilder {
     pub(crate) active: ::std::option::Option<bool>,
 }
 impl ManagedExecutionBuilder {
-    /// <p>When <code>true</code>, StackSets performs non-conflicting operations concurrently and queues conflicting operations. After conflicting operations finish, StackSets starts queued operations in request order.</p><note>
-    /// <p>If there are already running or queued operations, StackSets queues all incoming operations even if they are non-conflicting.</p>
-    /// <p>You can't modify your stack set's execution configuration while there are running or queued operations for that stack set.</p>
+    /// <p>When <code>true</code>, CloudFormation performs non-conflicting operations concurrently and queues conflicting operations. After conflicting operations finish, CloudFormation starts queued operations in request order.</p><note>
+    /// <p>If there are already running or queued operations, CloudFormation queues all incoming operations even if they are non-conflicting.</p>
+    /// <p>You can't modify your StackSet's execution configuration while there are running or queued operations for that StackSet.</p>
     /// </note>
     /// <p>When <code>false</code> (default), StackSets performs one operation at a time in request order.</p>
     pub fn active(mut self, input: bool) -> Self {
         self.active = ::std::option::Option::Some(input);
         self
     }
-    /// <p>When <code>true</code>, StackSets performs non-conflicting operations concurrently and queues conflicting operations. After conflicting operations finish, StackSets starts queued operations in request order.</p><note>
-    /// <p>If there are already running or queued operations, StackSets queues all incoming operations even if they are non-conflicting.</p>
-    /// <p>You can't modify your stack set's execution configuration while there are running or queued operations for that stack set.</p>
+    /// <p>When <code>true</code>, CloudFormation performs non-conflicting operations concurrently and queues conflicting operations. After conflicting operations finish, CloudFormation starts queued operations in request order.</p><note>
+    /// <p>If there are already running or queued operations, CloudFormation queues all incoming operations even if they are non-conflicting.</p>
+    /// <p>You can't modify your StackSet's execution configuration while there are running or queued operations for that StackSet.</p>
     /// </note>
     /// <p>When <code>false</code> (default), StackSets performs one operation at a time in request order.</p>
     pub fn set_active(mut self, input: ::std::option::Option<bool>) -> Self {
         self.active = input;
         self
     }
-    /// <p>When <code>true</code>, StackSets performs non-conflicting operations concurrently and queues conflicting operations. After conflicting operations finish, StackSets starts queued operations in request order.</p><note>
-    /// <p>If there are already running or queued operations, StackSets queues all incoming operations even if they are non-conflicting.</p>
-    /// <p>You can't modify your stack set's execution configuration while there are running or queued operations for that stack set.</p>
+    /// <p>When <code>true</code>, CloudFormation performs non-conflicting operations concurrently and queues conflicting operations. After conflicting operations finish, CloudFormation starts queued operations in request order.</p><note>
+    /// <p>If there are already running or queued operations, CloudFormation queues all incoming operations even if they are non-conflicting.</p>
+    /// <p>You can't modify your StackSet's execution configuration while there are running or queued operations for that StackSet.</p>
     /// </note>
     /// <p>When <code>false</code> (default), StackSets performs one operation at a time in request order.</p>
     pub fn get_active(&self) -> &::std::option::Option<bool> {

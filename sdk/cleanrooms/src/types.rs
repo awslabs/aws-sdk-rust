@@ -81,6 +81,12 @@ pub use crate::types::_target_protected_query_status::TargetProtectedQueryStatus
 
 pub use crate::types::_protected_job::ProtectedJob;
 
+pub use crate::types::_protected_job_compute_configuration::ProtectedJobComputeConfiguration;
+
+pub use crate::types::_protected_job_worker_compute_configuration::ProtectedJobWorkerComputeConfiguration;
+
+pub use crate::types::_protected_job_worker_compute_type::ProtectedJobWorkerComputeType;
+
 pub use crate::types::_protected_job_error::ProtectedJobError;
 
 pub use crate::types::_protected_job_result::ProtectedJobResult;
@@ -779,6 +785,8 @@ mod _protected_job;
 
 mod _protected_job_analysis_type;
 
+mod _protected_job_compute_configuration;
+
 mod _protected_job_configuration_details;
 
 mod _protected_job_direct_analysis_configuration_details;
@@ -820,6 +828,10 @@ mod _protected_job_status;
 mod _protected_job_summary;
 
 mod _protected_job_type;
+
+mod _protected_job_worker_compute_configuration;
+
+mod _protected_job_worker_compute_type;
 
 mod _protected_query;
 

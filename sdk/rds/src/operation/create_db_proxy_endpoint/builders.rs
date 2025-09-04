@@ -210,4 +210,69 @@ impl CreateDBProxyEndpointFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }
+    /// <p>The network type of the DB proxy endpoint. The network type determines the IP version that the proxy endpoint supports.</p>
+    /// <p>Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IPV4</code> - The proxy endpoint supports IPv4 only.</p></li>
+    /// <li>
+    /// <p><code>IPV6</code> - The proxy endpoint supports IPv6 only.</p></li>
+    /// <li>
+    /// <p><code>DUAL</code> - The proxy endpoint supports both IPv4 and IPv6.</p></li>
+    /// </ul>
+    /// <p>Default: <code>IPV4</code></p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If you specify <code>IPV6</code> or <code>DUAL</code>, the VPC and all subnets must have an IPv6 CIDR block.</p></li>
+    /// <li>
+    /// <p>If you specify <code>IPV6</code> or <code>DUAL</code>, the VPC tenancy cannot be <code>dedicated</code>.</p></li>
+    /// </ul>
+    pub fn endpoint_network_type(mut self, input: crate::types::EndpointNetworkType) -> Self {
+        self.inner = self.inner.endpoint_network_type(input);
+        self
+    }
+    /// <p>The network type of the DB proxy endpoint. The network type determines the IP version that the proxy endpoint supports.</p>
+    /// <p>Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IPV4</code> - The proxy endpoint supports IPv4 only.</p></li>
+    /// <li>
+    /// <p><code>IPV6</code> - The proxy endpoint supports IPv6 only.</p></li>
+    /// <li>
+    /// <p><code>DUAL</code> - The proxy endpoint supports both IPv4 and IPv6.</p></li>
+    /// </ul>
+    /// <p>Default: <code>IPV4</code></p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If you specify <code>IPV6</code> or <code>DUAL</code>, the VPC and all subnets must have an IPv6 CIDR block.</p></li>
+    /// <li>
+    /// <p>If you specify <code>IPV6</code> or <code>DUAL</code>, the VPC tenancy cannot be <code>dedicated</code>.</p></li>
+    /// </ul>
+    pub fn set_endpoint_network_type(mut self, input: ::std::option::Option<crate::types::EndpointNetworkType>) -> Self {
+        self.inner = self.inner.set_endpoint_network_type(input);
+        self
+    }
+    /// <p>The network type of the DB proxy endpoint. The network type determines the IP version that the proxy endpoint supports.</p>
+    /// <p>Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IPV4</code> - The proxy endpoint supports IPv4 only.</p></li>
+    /// <li>
+    /// <p><code>IPV6</code> - The proxy endpoint supports IPv6 only.</p></li>
+    /// <li>
+    /// <p><code>DUAL</code> - The proxy endpoint supports both IPv4 and IPv6.</p></li>
+    /// </ul>
+    /// <p>Default: <code>IPV4</code></p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If you specify <code>IPV6</code> or <code>DUAL</code>, the VPC and all subnets must have an IPv6 CIDR block.</p></li>
+    /// <li>
+    /// <p>If you specify <code>IPV6</code> or <code>DUAL</code>, the VPC tenancy cannot be <code>dedicated</code>.</p></li>
+    /// </ul>
+    pub fn get_endpoint_network_type(&self) -> &::std::option::Option<crate::types::EndpointNetworkType> {
+        self.inner.get_endpoint_network_type()
+    }
 }
