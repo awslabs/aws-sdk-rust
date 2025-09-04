@@ -2698,6 +2698,10 @@ source_hash = '4c5d5266f2362d2e5151ae84c74d4be93d72b204329d3a66b9acddceaeb83925'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '4eae21d18f13ae2c8b3f5858292cfbd15f9dcb2b92d7ba9aac9878db2a601b2c'
+
+[release]
+tag = 'release-2025-09-04'
+
 [release.crates]
 aws-sdk-cleanrooms = '1.98.0'
 aws-sdk-cloudformation = '1.93.0'
