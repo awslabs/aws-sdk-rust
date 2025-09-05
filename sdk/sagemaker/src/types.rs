@@ -193,6 +193,8 @@ pub use crate::types::_root_access::RootAccess;
 
 pub use crate::types::_notebook_instance_accelerator_type::NotebookInstanceAcceleratorType;
 
+pub use crate::types::_ip_address_type::IpAddressType;
+
 pub use crate::types::_instance_type::InstanceType;
 
 pub use crate::types::_monitoring_schedule_config::MonitoringScheduleConfig;
@@ -452,6 +454,10 @@ pub use crate::types::_cluster_auto_scaler_type::ClusterAutoScalerType;
 pub use crate::types::_cluster_auto_scaling_mode::ClusterAutoScalingMode;
 
 pub use crate::types::_cluster_node_recovery::ClusterNodeRecovery;
+
+pub use crate::types::_cluster_tiered_storage_config::ClusterTieredStorageConfig;
+
+pub use crate::types::_cluster_config_mode::ClusterConfigMode;
 
 pub use crate::types::_cluster_restricted_instance_group_specification::ClusterRestrictedInstanceGroupSpecification;
 
@@ -2313,6 +2319,8 @@ mod _cluster_auto_scaling_mode;
 
 mod _cluster_auto_scaling_status;
 
+mod _cluster_config_mode;
+
 mod _cluster_ebs_volume_config;
 
 mod _cluster_event_detail;
@@ -2362,6 +2370,8 @@ mod _cluster_sort_by;
 mod _cluster_status;
 
 mod _cluster_summary;
+
+mod _cluster_tiered_storage_config;
 
 mod _code_editor_app_image_config;
 
@@ -2904,6 +2914,8 @@ mod _instance_type;
 mod _integer_parameter_range;
 
 mod _integer_parameter_range_specification;
+
+mod _ip_address_type;
 
 mod _is_tracking_server_active;
 

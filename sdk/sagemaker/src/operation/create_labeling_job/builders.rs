@@ -140,10 +140,10 @@ impl CreateLabelingJobFluentBuilder {
     /// <li>
     /// <p>The name can't end with "-metadata".</p></li>
     /// <li>
-    /// <p>If you are using one of the following <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-task-types.html">built-in task types</a>, the attribute name <i>must</i> end with "-ref". If the task type you are using is not listed below, the attribute name <i>must not</i> end with "-ref".</p>
+    /// <p>If you are using one of the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-task-types.html">built-in task types</a> or one of the following, the attribute name <i>must</i> end with "-ref".</p>
     /// <ul>
     /// <li>
-    /// <p>Verification (<code>VerificationSemanticSegmentation</code>) labeling jobs for this task type.</p></li>
+    /// <p>Image semantic segmentation (<code>SemanticSegmentation)</code> and adjustment (<code>AdjustmentSemanticSegmentation</code>) labeling jobs for this task type. One exception is that verification (<code>VerificationSemanticSegmentation</code>) <i>must not</i> end with -"ref".</p></li>
     /// <li>
     /// <p>Video frame object detection (<code>VideoObjectDetection</code>), and adjustment and verification (<code>AdjustmentVideoObjectDetection</code>) labeling jobs for this task type.</p></li>
     /// <li>
@@ -166,10 +166,10 @@ impl CreateLabelingJobFluentBuilder {
     /// <li>
     /// <p>The name can't end with "-metadata".</p></li>
     /// <li>
-    /// <p>If you are using one of the following <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-task-types.html">built-in task types</a>, the attribute name <i>must</i> end with "-ref". If the task type you are using is not listed below, the attribute name <i>must not</i> end with "-ref".</p>
+    /// <p>If you are using one of the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-task-types.html">built-in task types</a> or one of the following, the attribute name <i>must</i> end with "-ref".</p>
     /// <ul>
     /// <li>
-    /// <p>Verification (<code>VerificationSemanticSegmentation</code>) labeling jobs for this task type.</p></li>
+    /// <p>Image semantic segmentation (<code>SemanticSegmentation)</code> and adjustment (<code>AdjustmentSemanticSegmentation</code>) labeling jobs for this task type. One exception is that verification (<code>VerificationSemanticSegmentation</code>) <i>must not</i> end with -"ref".</p></li>
     /// <li>
     /// <p>Video frame object detection (<code>VideoObjectDetection</code>), and adjustment and verification (<code>AdjustmentVideoObjectDetection</code>) labeling jobs for this task type.</p></li>
     /// <li>
@@ -192,10 +192,10 @@ impl CreateLabelingJobFluentBuilder {
     /// <li>
     /// <p>The name can't end with "-metadata".</p></li>
     /// <li>
-    /// <p>If you are using one of the following <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-task-types.html">built-in task types</a>, the attribute name <i>must</i> end with "-ref". If the task type you are using is not listed below, the attribute name <i>must not</i> end with "-ref".</p>
+    /// <p>If you are using one of the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-task-types.html">built-in task types</a> or one of the following, the attribute name <i>must</i> end with "-ref".</p>
     /// <ul>
     /// <li>
-    /// <p>Verification (<code>VerificationSemanticSegmentation</code>) labeling jobs for this task type.</p></li>
+    /// <p>Image semantic segmentation (<code>SemanticSegmentation)</code> and adjustment (<code>AdjustmentSemanticSegmentation</code>) labeling jobs for this task type. One exception is that verification (<code>VerificationSemanticSegmentation</code>) <i>must not</i> end with -"ref".</p></li>
     /// <li>
     /// <p>Video frame object detection (<code>VideoObjectDetection</code>), and adjustment and verification (<code>AdjustmentVideoObjectDetection</code>) labeling jobs for this task type.</p></li>
     /// <li>

@@ -856,9 +856,9 @@ model_hash = '89554d443cae5bdcdf21e88597bea8236351777b9b0027ec903255751b4ad290'
 
 [crates.aws-sdk-ecs]
 category = 'AwsSdk'
-version = '1.95.0'
-source_hash = '9dd9831ee20549c0d2ef4668963b3e3b1e1a4efcddeb384dbb2b7bb0a233a15a'
-model_hash = '04cf565289272f81e7947146f53f4385cc71c3c41d86efb5f19da2a05d8e2b68'
+version = '1.95.1'
+source_hash = '9f0d3372cf88d887d0f82840d5d57d345ffb6e40cd3b0c9995509efcd0cb9eb3'
+model_hash = 'af40dd8afd73fce22f194f8f02c81f0ec659aa97e1277a2da2e610635ab4354e'
 
 [crates.aws-sdk-efs]
 category = 'AwsSdk'
@@ -1804,9 +1804,9 @@ model_hash = 'b6ba3fdf8abdf708f5c79693f242804c410e0206c1b4a471fb6d849afa4cdfe9'
 
 [crates.aws-sdk-pcs]
 category = 'AwsSdk'
-version = '1.50.0'
-source_hash = '09dbabe2fc82b25ea0d401f69925c0f7398b94ec0d6880a897892c9f25944662'
-model_hash = '2225ccb014a921fee671e05f7d8c1345ed9f2ada3e71b28a1b970feca51adfb2'
+version = '1.50.1'
+source_hash = '2034388657077bf67b37dc5211a9554faf05b99abdfe0c90b57a1e2c530d6f44'
+model_hash = 'b55c6d432d102e71488bc8a77bfd7576a04592a3f15a522dda133cfe8b77adaf'
 
 [crates.aws-sdk-personalize]
 category = 'AwsSdk'
@@ -2092,9 +2092,9 @@ model_hash = 'b90e484664117a6dba041694fc9ca91ac0722fbbd459767a2e8f3787e68f4973'
 
 [crates.aws-sdk-sagemaker]
 category = 'AwsSdk'
-version = '1.155.0'
-source_hash = '6597438c7908556c3e69717f0f4d7d55ce10395c4ca300ec7ca28bf836b33458'
-model_hash = '5e03b3b79ba7590e58bcd5349a9d83089060a6d5cde7ca8711c53865a8459879'
+version = '1.156.0'
+source_hash = '2b60a61e948cf9ebe7c61bf815254a16225cfeb25e61d078aac48342055749cd'
+model_hash = 'adb47cd67a4389496179e1d705a6a9d69f7d3339571067641b1c37228d94e596'
 
 [crates.aws-sdk-sagemakera2iruntime]
 category = 'AwsSdk'
@@ -2698,14 +2698,7 @@ source_hash = '4c5d5266f2362d2e5151ae84c74d4be93d72b204329d3a66b9acddceaeb83925'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '4eae21d18f13ae2c8b3f5858292cfbd15f9dcb2b92d7ba9aac9878db2a601b2c'
-
-[release]
-tag = 'release-2025-09-04'
-
 [release.crates]
-aws-sdk-cleanrooms = '1.98.0'
-aws-sdk-cloudformation = '1.93.0'
-aws-sdk-ec2 = '1.166.0'
-aws-sdk-opensearchserverless = '1.90.0'
-aws-sdk-rds = '1.107.0'
-aws-sdk-verifiedpermissions = '1.93.0'
+aws-sdk-ecs = '1.95.1'
+aws-sdk-pcs = '1.50.1'
+aws-sdk-sagemaker = '1.156.0'

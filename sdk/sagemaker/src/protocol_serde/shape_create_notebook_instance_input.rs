@@ -21,68 +21,71 @@ pub fn ser_create_notebook_instance_input_input(
         }
         array_5.finish();
     }
-    if let Some(var_7) = &input.role_arn {
-        object.key("RoleArn").string(var_7.as_str());
+    if let Some(var_7) = &input.ip_address_type {
+        object.key("IpAddressType").string(var_7.as_str());
     }
-    if let Some(var_8) = &input.kms_key_id {
-        object.key("KmsKeyId").string(var_8.as_str());
+    if let Some(var_8) = &input.role_arn {
+        object.key("RoleArn").string(var_8.as_str());
     }
-    if let Some(var_9) = &input.tags {
-        let mut array_10 = object.key("Tags").start_array();
-        for item_11 in var_9 {
+    if let Some(var_9) = &input.kms_key_id {
+        object.key("KmsKeyId").string(var_9.as_str());
+    }
+    if let Some(var_10) = &input.tags {
+        let mut array_11 = object.key("Tags").start_array();
+        for item_12 in var_10 {
             {
                 #[allow(unused_mut)]
-                let mut object_12 = array_10.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_12, item_11)?;
-                object_12.finish();
+                let mut object_13 = array_11.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_13, item_12)?;
+                object_13.finish();
             }
         }
-        array_10.finish();
+        array_11.finish();
     }
-    if let Some(var_13) = &input.lifecycle_config_name {
-        object.key("LifecycleConfigName").string(var_13.as_str());
+    if let Some(var_14) = &input.lifecycle_config_name {
+        object.key("LifecycleConfigName").string(var_14.as_str());
     }
-    if let Some(var_14) = &input.direct_internet_access {
-        object.key("DirectInternetAccess").string(var_14.as_str());
+    if let Some(var_15) = &input.direct_internet_access {
+        object.key("DirectInternetAccess").string(var_15.as_str());
     }
-    if let Some(var_15) = &input.volume_size_in_gb {
+    if let Some(var_16) = &input.volume_size_in_gb {
         object.key("VolumeSizeInGB").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_15).into()),
+            ::aws_smithy_types::Number::NegInt((*var_16).into()),
         );
     }
-    if let Some(var_16) = &input.accelerator_types {
-        let mut array_17 = object.key("AcceleratorTypes").start_array();
-        for item_18 in var_16 {
+    if let Some(var_17) = &input.accelerator_types {
+        let mut array_18 = object.key("AcceleratorTypes").start_array();
+        for item_19 in var_17 {
             {
-                array_17.value().string(item_18.as_str());
+                array_18.value().string(item_19.as_str());
             }
         }
-        array_17.finish();
+        array_18.finish();
     }
-    if let Some(var_19) = &input.default_code_repository {
-        object.key("DefaultCodeRepository").string(var_19.as_str());
+    if let Some(var_20) = &input.default_code_repository {
+        object.key("DefaultCodeRepository").string(var_20.as_str());
     }
-    if let Some(var_20) = &input.additional_code_repositories {
-        let mut array_21 = object.key("AdditionalCodeRepositories").start_array();
-        for item_22 in var_20 {
+    if let Some(var_21) = &input.additional_code_repositories {
+        let mut array_22 = object.key("AdditionalCodeRepositories").start_array();
+        for item_23 in var_21 {
             {
-                array_21.value().string(item_22.as_str());
+                array_22.value().string(item_23.as_str());
             }
         }
-        array_21.finish();
+        array_22.finish();
     }
-    if let Some(var_23) = &input.root_access {
-        object.key("RootAccess").string(var_23.as_str());
+    if let Some(var_24) = &input.root_access {
+        object.key("RootAccess").string(var_24.as_str());
     }
-    if let Some(var_24) = &input.platform_identifier {
-        object.key("PlatformIdentifier").string(var_24.as_str());
+    if let Some(var_25) = &input.platform_identifier {
+        object.key("PlatformIdentifier").string(var_25.as_str());
     }
-    if let Some(var_25) = &input.instance_metadata_service_configuration {
+    if let Some(var_26) = &input.instance_metadata_service_configuration {
         #[allow(unused_mut)]
-        let mut object_26 = object.key("InstanceMetadataServiceConfiguration").start_object();
-        crate::protocol_serde::shape_instance_metadata_service_configuration::ser_instance_metadata_service_configuration(&mut object_26, var_25)?;
-        object_26.finish();
+        let mut object_27 = object.key("InstanceMetadataServiceConfiguration").start_object();
+        crate::protocol_serde::shape_instance_metadata_service_configuration::ser_instance_metadata_service_configuration(&mut object_27, var_26)?;
+        object_27.finish();
     }
     Ok(())
 }

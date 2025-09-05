@@ -60,17 +60,23 @@ pub fn ser_create_cluster_input_input(
     if let Some(var_18) = &input.node_recovery {
         object.key("NodeRecovery").string(var_18.as_str());
     }
-    if let Some(var_19) = &input.node_provisioning_mode {
-        object.key("NodeProvisioningMode").string(var_19.as_str());
-    }
-    if let Some(var_20) = &input.cluster_role {
-        object.key("ClusterRole").string(var_20.as_str());
-    }
-    if let Some(var_21) = &input.auto_scaling {
+    if let Some(var_19) = &input.tiered_storage_config {
         #[allow(unused_mut)]
-        let mut object_22 = object.key("AutoScaling").start_object();
-        crate::protocol_serde::shape_cluster_auto_scaling_config::ser_cluster_auto_scaling_config(&mut object_22, var_21)?;
-        object_22.finish();
+        let mut object_20 = object.key("TieredStorageConfig").start_object();
+        crate::protocol_serde::shape_cluster_tiered_storage_config::ser_cluster_tiered_storage_config(&mut object_20, var_19)?;
+        object_20.finish();
+    }
+    if let Some(var_21) = &input.node_provisioning_mode {
+        object.key("NodeProvisioningMode").string(var_21.as_str());
+    }
+    if let Some(var_22) = &input.cluster_role {
+        object.key("ClusterRole").string(var_22.as_str());
+    }
+    if let Some(var_23) = &input.auto_scaling {
+        #[allow(unused_mut)]
+        let mut object_24 = object.key("AutoScaling").start_object();
+        crate::protocol_serde::shape_cluster_auto_scaling_config::ser_cluster_auto_scaling_config(&mut object_24, var_23)?;
+        object_24.finish();
     }
     Ok(())
 }

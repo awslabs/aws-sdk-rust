@@ -15,6 +15,8 @@ pub struct DescribeNotebookInstanceOutput {
     pub url: ::std::option::Option<::std::string::String>,
     /// <p>The type of ML compute instance running on the notebook instance.</p>
     pub instance_type: ::std::option::Option<crate::types::InstanceType>,
+    /// <p>The IP address type configured for the notebook instance. Returns <code>ipv4</code> for IPv4-only connectivity or <code>dualstack</code> for both IPv4 and IPv6 connectivity.</p>
+    pub ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
     /// <p>The ID of the VPC subnet.</p>
     pub subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>The IDs of the VPC security groups.</p>
@@ -78,6 +80,10 @@ impl DescribeNotebookInstanceOutput {
     /// <p>The type of ML compute instance running on the notebook instance.</p>
     pub fn instance_type(&self) -> ::std::option::Option<&crate::types::InstanceType> {
         self.instance_type.as_ref()
+    }
+    /// <p>The IP address type configured for the notebook instance. Returns <code>ipv4</code> for IPv4-only connectivity or <code>dualstack</code> for both IPv4 and IPv6 connectivity.</p>
+    pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::IpAddressType> {
+        self.ip_address_type.as_ref()
     }
     /// <p>The ID of the VPC subnet.</p>
     pub fn subnet_id(&self) -> ::std::option::Option<&str> {
@@ -177,6 +183,7 @@ pub struct DescribeNotebookInstanceOutputBuilder {
     pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
     pub(crate) url: ::std::option::Option<::std::string::String>,
     pub(crate) instance_type: ::std::option::Option<crate::types::InstanceType>,
+    pub(crate) ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
     pub(crate) subnet_id: ::std::option::Option<::std::string::String>,
     pub(crate) security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
@@ -279,6 +286,20 @@ impl DescribeNotebookInstanceOutputBuilder {
     /// <p>The type of ML compute instance running on the notebook instance.</p>
     pub fn get_instance_type(&self) -> &::std::option::Option<crate::types::InstanceType> {
         &self.instance_type
+    }
+    /// <p>The IP address type configured for the notebook instance. Returns <code>ipv4</code> for IPv4-only connectivity or <code>dualstack</code> for both IPv4 and IPv6 connectivity.</p>
+    pub fn ip_address_type(mut self, input: crate::types::IpAddressType) -> Self {
+        self.ip_address_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The IP address type configured for the notebook instance. Returns <code>ipv4</code> for IPv4-only connectivity or <code>dualstack</code> for both IPv4 and IPv6 connectivity.</p>
+    pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::IpAddressType>) -> Self {
+        self.ip_address_type = input;
+        self
+    }
+    /// <p>The IP address type configured for the notebook instance. Returns <code>ipv4</code> for IPv4-only connectivity or <code>dualstack</code> for both IPv4 and IPv6 connectivity.</p>
+    pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::IpAddressType> {
+        &self.ip_address_type
     }
     /// <p>The ID of the VPC subnet.</p>
     pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -558,6 +579,7 @@ impl DescribeNotebookInstanceOutputBuilder {
             failure_reason: self.failure_reason,
             url: self.url,
             instance_type: self.instance_type,
+            ip_address_type: self.ip_address_type,
             subnet_id: self.subnet_id,
             security_groups: self.security_groups,
             role_arn: self.role_arn,

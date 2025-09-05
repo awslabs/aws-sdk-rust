@@ -10,6 +10,22 @@ pub struct DescribePartnerAppOutput {
     /// <p>The type of SageMaker Partner AI App. Must be one of the following: <code>lakera-guard</code>, <code>comet</code>, <code>deepchecks-llm-evaluation</code>, or <code>fiddler</code>.</p>
     pub r#type: ::std::option::Option<crate::types::PartnerAppType>,
     /// <p>The status of the SageMaker Partner AI App.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Creating: SageMaker AI is creating the partner AI app. The partner AI app is not available during creation.</p></li>
+    /// <li>
+    /// <p>Updating: SageMaker AI is updating the partner AI app. The partner AI app is not available when updating.</p></li>
+    /// <li>
+    /// <p>Deleting: SageMaker AI is deleting the partner AI app. The partner AI app is not available during deletion.</p></li>
+    /// <li>
+    /// <p>Available: The partner AI app is provisioned and accessible.</p></li>
+    /// <li>
+    /// <p>Failed: The partner AI app is in a failed state and isn't available. SageMaker AI is investigating the issue. For further guidance, contact Amazon Web Services Support.</p></li>
+    /// <li>
+    /// <p>UpdateFailed: The partner AI app couldn't be updated but is available.</p></li>
+    /// <li>
+    /// <p>Deleted: The partner AI app is permanently deleted and not available.</p></li>
+    /// </ul>
     pub status: ::std::option::Option<crate::types::PartnerAppStatus>,
     /// <p>The time that the SageMaker Partner AI App was created.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -51,6 +67,22 @@ impl DescribePartnerAppOutput {
         self.r#type.as_ref()
     }
     /// <p>The status of the SageMaker Partner AI App.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Creating: SageMaker AI is creating the partner AI app. The partner AI app is not available during creation.</p></li>
+    /// <li>
+    /// <p>Updating: SageMaker AI is updating the partner AI app. The partner AI app is not available when updating.</p></li>
+    /// <li>
+    /// <p>Deleting: SageMaker AI is deleting the partner AI app. The partner AI app is not available during deletion.</p></li>
+    /// <li>
+    /// <p>Available: The partner AI app is provisioned and accessible.</p></li>
+    /// <li>
+    /// <p>Failed: The partner AI app is in a failed state and isn't available. SageMaker AI is investigating the issue. For further guidance, contact Amazon Web Services Support.</p></li>
+    /// <li>
+    /// <p>UpdateFailed: The partner AI app couldn't be updated but is available.</p></li>
+    /// <li>
+    /// <p>Deleted: The partner AI app is permanently deleted and not available.</p></li>
+    /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::PartnerAppStatus> {
         self.status.as_ref()
     }
@@ -181,16 +213,64 @@ impl DescribePartnerAppOutputBuilder {
         &self.r#type
     }
     /// <p>The status of the SageMaker Partner AI App.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Creating: SageMaker AI is creating the partner AI app. The partner AI app is not available during creation.</p></li>
+    /// <li>
+    /// <p>Updating: SageMaker AI is updating the partner AI app. The partner AI app is not available when updating.</p></li>
+    /// <li>
+    /// <p>Deleting: SageMaker AI is deleting the partner AI app. The partner AI app is not available during deletion.</p></li>
+    /// <li>
+    /// <p>Available: The partner AI app is provisioned and accessible.</p></li>
+    /// <li>
+    /// <p>Failed: The partner AI app is in a failed state and isn't available. SageMaker AI is investigating the issue. For further guidance, contact Amazon Web Services Support.</p></li>
+    /// <li>
+    /// <p>UpdateFailed: The partner AI app couldn't be updated but is available.</p></li>
+    /// <li>
+    /// <p>Deleted: The partner AI app is permanently deleted and not available.</p></li>
+    /// </ul>
     pub fn status(mut self, input: crate::types::PartnerAppStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the SageMaker Partner AI App.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Creating: SageMaker AI is creating the partner AI app. The partner AI app is not available during creation.</p></li>
+    /// <li>
+    /// <p>Updating: SageMaker AI is updating the partner AI app. The partner AI app is not available when updating.</p></li>
+    /// <li>
+    /// <p>Deleting: SageMaker AI is deleting the partner AI app. The partner AI app is not available during deletion.</p></li>
+    /// <li>
+    /// <p>Available: The partner AI app is provisioned and accessible.</p></li>
+    /// <li>
+    /// <p>Failed: The partner AI app is in a failed state and isn't available. SageMaker AI is investigating the issue. For further guidance, contact Amazon Web Services Support.</p></li>
+    /// <li>
+    /// <p>UpdateFailed: The partner AI app couldn't be updated but is available.</p></li>
+    /// <li>
+    /// <p>Deleted: The partner AI app is permanently deleted and not available.</p></li>
+    /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::PartnerAppStatus>) -> Self {
         self.status = input;
         self
     }
     /// <p>The status of the SageMaker Partner AI App.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Creating: SageMaker AI is creating the partner AI app. The partner AI app is not available during creation.</p></li>
+    /// <li>
+    /// <p>Updating: SageMaker AI is updating the partner AI app. The partner AI app is not available when updating.</p></li>
+    /// <li>
+    /// <p>Deleting: SageMaker AI is deleting the partner AI app. The partner AI app is not available during deletion.</p></li>
+    /// <li>
+    /// <p>Available: The partner AI app is provisioned and accessible.</p></li>
+    /// <li>
+    /// <p>Failed: The partner AI app is in a failed state and isn't available. SageMaker AI is investigating the issue. For further guidance, contact Amazon Web Services Support.</p></li>
+    /// <li>
+    /// <p>UpdateFailed: The partner AI app couldn't be updated but is available.</p></li>
+    /// <li>
+    /// <p>Deleted: The partner AI app is permanently deleted and not available.</p></li>
+    /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::PartnerAppStatus> {
         &self.status
     }

@@ -165,6 +165,20 @@ impl UpdateClusterFluentBuilder {
     ) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusterRestrictedInstanceGroupSpecification>> {
         self.inner.get_restricted_instance_groups()
     }
+    /// <p>Updates the configuration for managed tier checkpointing on the HyperPod cluster. For example, you can enable or disable the feature and modify the percentage of cluster memory allocated for checkpoint storage.</p>
+    pub fn tiered_storage_config(mut self, input: crate::types::ClusterTieredStorageConfig) -> Self {
+        self.inner = self.inner.tiered_storage_config(input);
+        self
+    }
+    /// <p>Updates the configuration for managed tier checkpointing on the HyperPod cluster. For example, you can enable or disable the feature and modify the percentage of cluster memory allocated for checkpoint storage.</p>
+    pub fn set_tiered_storage_config(mut self, input: ::std::option::Option<crate::types::ClusterTieredStorageConfig>) -> Self {
+        self.inner = self.inner.set_tiered_storage_config(input);
+        self
+    }
+    /// <p>Updates the configuration for managed tier checkpointing on the HyperPod cluster. For example, you can enable or disable the feature and modify the percentage of cluster memory allocated for checkpoint storage.</p>
+    pub fn get_tiered_storage_config(&self) -> &::std::option::Option<crate::types::ClusterTieredStorageConfig> {
+        self.inner.get_tiered_storage_config()
+    }
     /// <p>The node recovery mode to be applied to the SageMaker HyperPod cluster.</p>
     pub fn node_recovery(mut self, input: crate::types::ClusterNodeRecovery) -> Self {
         self.inner = self.inner.node_recovery(input);

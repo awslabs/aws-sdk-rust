@@ -277,6 +277,20 @@ impl CreateClusterFluentBuilder {
     pub fn get_node_recovery(&self) -> &::std::option::Option<crate::types::ClusterNodeRecovery> {
         self.inner.get_node_recovery()
     }
+    /// <p>The configuration for managed tier checkpointing on the HyperPod cluster. When enabled, this feature uses a multi-tier storage approach for storing model checkpoints, providing faster checkpoint operations and improved fault tolerance across cluster nodes.</p>
+    pub fn tiered_storage_config(mut self, input: crate::types::ClusterTieredStorageConfig) -> Self {
+        self.inner = self.inner.tiered_storage_config(input);
+        self
+    }
+    /// <p>The configuration for managed tier checkpointing on the HyperPod cluster. When enabled, this feature uses a multi-tier storage approach for storing model checkpoints, providing faster checkpoint operations and improved fault tolerance across cluster nodes.</p>
+    pub fn set_tiered_storage_config(mut self, input: ::std::option::Option<crate::types::ClusterTieredStorageConfig>) -> Self {
+        self.inner = self.inner.set_tiered_storage_config(input);
+        self
+    }
+    /// <p>The configuration for managed tier checkpointing on the HyperPod cluster. When enabled, this feature uses a multi-tier storage approach for storing model checkpoints, providing faster checkpoint operations and improved fault tolerance across cluster nodes.</p>
+    pub fn get_tiered_storage_config(&self) -> &::std::option::Option<crate::types::ClusterTieredStorageConfig> {
+        self.inner.get_tiered_storage_config()
+    }
     /// <p>The mode for provisioning nodes in the cluster. You can specify the following modes:</p>
     /// <ul>
     /// <li>

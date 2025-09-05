@@ -9,6 +9,8 @@ pub struct UpdateClusterInput {
     pub instance_groups: ::std::option::Option<::std::vec::Vec<crate::types::ClusterInstanceGroupSpecification>>,
     /// <p>The specialized instance groups for training models like Amazon Nova to be created in the SageMaker HyperPod cluster.</p>
     pub restricted_instance_groups: ::std::option::Option<::std::vec::Vec<crate::types::ClusterRestrictedInstanceGroupSpecification>>,
+    /// <p>Updates the configuration for managed tier checkpointing on the HyperPod cluster. For example, you can enable or disable the feature and modify the percentage of cluster memory allocated for checkpoint storage.</p>
+    pub tiered_storage_config: ::std::option::Option<crate::types::ClusterTieredStorageConfig>,
     /// <p>The node recovery mode to be applied to the SageMaker HyperPod cluster.</p>
     pub node_recovery: ::std::option::Option<crate::types::ClusterNodeRecovery>,
     /// <p>Specify the names of the instance groups to delete. Use a single <code>,</code> as the separator between multiple names.</p>
@@ -34,6 +36,10 @@ impl UpdateClusterInput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.restricted_instance_groups.is_none()`.
     pub fn restricted_instance_groups(&self) -> &[crate::types::ClusterRestrictedInstanceGroupSpecification] {
         self.restricted_instance_groups.as_deref().unwrap_or_default()
+    }
+    /// <p>Updates the configuration for managed tier checkpointing on the HyperPod cluster. For example, you can enable or disable the feature and modify the percentage of cluster memory allocated for checkpoint storage.</p>
+    pub fn tiered_storage_config(&self) -> ::std::option::Option<&crate::types::ClusterTieredStorageConfig> {
+        self.tiered_storage_config.as_ref()
     }
     /// <p>The node recovery mode to be applied to the SageMaker HyperPod cluster.</p>
     pub fn node_recovery(&self) -> ::std::option::Option<&crate::types::ClusterNodeRecovery> {
@@ -68,6 +74,7 @@ pub struct UpdateClusterInputBuilder {
     pub(crate) cluster_name: ::std::option::Option<::std::string::String>,
     pub(crate) instance_groups: ::std::option::Option<::std::vec::Vec<crate::types::ClusterInstanceGroupSpecification>>,
     pub(crate) restricted_instance_groups: ::std::option::Option<::std::vec::Vec<crate::types::ClusterRestrictedInstanceGroupSpecification>>,
+    pub(crate) tiered_storage_config: ::std::option::Option<crate::types::ClusterTieredStorageConfig>,
     pub(crate) node_recovery: ::std::option::Option<crate::types::ClusterNodeRecovery>,
     pub(crate) instance_groups_to_delete: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) cluster_role: ::std::option::Option<::std::string::String>,
@@ -133,6 +140,20 @@ impl UpdateClusterInputBuilder {
         &self,
     ) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusterRestrictedInstanceGroupSpecification>> {
         &self.restricted_instance_groups
+    }
+    /// <p>Updates the configuration for managed tier checkpointing on the HyperPod cluster. For example, you can enable or disable the feature and modify the percentage of cluster memory allocated for checkpoint storage.</p>
+    pub fn tiered_storage_config(mut self, input: crate::types::ClusterTieredStorageConfig) -> Self {
+        self.tiered_storage_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Updates the configuration for managed tier checkpointing on the HyperPod cluster. For example, you can enable or disable the feature and modify the percentage of cluster memory allocated for checkpoint storage.</p>
+    pub fn set_tiered_storage_config(mut self, input: ::std::option::Option<crate::types::ClusterTieredStorageConfig>) -> Self {
+        self.tiered_storage_config = input;
+        self
+    }
+    /// <p>Updates the configuration for managed tier checkpointing on the HyperPod cluster. For example, you can enable or disable the feature and modify the percentage of cluster memory allocated for checkpoint storage.</p>
+    pub fn get_tiered_storage_config(&self) -> &::std::option::Option<crate::types::ClusterTieredStorageConfig> {
+        &self.tiered_storage_config
     }
     /// <p>The node recovery mode to be applied to the SageMaker HyperPod cluster.</p>
     pub fn node_recovery(mut self, input: crate::types::ClusterNodeRecovery) -> Self {
@@ -204,6 +225,7 @@ impl UpdateClusterInputBuilder {
             cluster_name: self.cluster_name,
             instance_groups: self.instance_groups,
             restricted_instance_groups: self.restricted_instance_groups,
+            tiered_storage_config: self.tiered_storage_config,
             node_recovery: self.node_recovery,
             instance_groups_to_delete: self.instance_groups_to_delete,
             cluster_role: self.cluster_role,

@@ -285,7 +285,7 @@ pub enum RegisterComputeNodeGroupInstanceError {
     /// <p>The EC2 instance isn't present.</p></li>
     /// </ul>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p>Amazon Web Services PCS can't process your request right now. Try again later.</p>
+    /// <p>PCS can't process your request right now. Try again later.</p>
     InternalServerException(crate::types::error::InternalServerException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

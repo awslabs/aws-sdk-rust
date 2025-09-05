@@ -34,6 +34,8 @@ pub struct CreateClusterInput {
     pub orchestrator: ::std::option::Option<crate::types::ClusterOrchestrator>,
     /// <p>The node recovery mode for the SageMaker HyperPod cluster. When set to <code>Automatic</code>, SageMaker HyperPod will automatically reboot or replace faulty nodes when issues are detected. When set to <code>None</code>, cluster administrators will need to manually manage any faulty cluster instances.</p>
     pub node_recovery: ::std::option::Option<crate::types::ClusterNodeRecovery>,
+    /// <p>The configuration for managed tier checkpointing on the HyperPod cluster. When enabled, this feature uses a multi-tier storage approach for storing model checkpoints, providing faster checkpoint operations and improved fault tolerance across cluster nodes.</p>
+    pub tiered_storage_config: ::std::option::Option<crate::types::ClusterTieredStorageConfig>,
     /// <p>The mode for provisioning nodes in the cluster. You can specify the following modes:</p>
     /// <ul>
     /// <li>
@@ -97,6 +99,10 @@ impl CreateClusterInput {
     pub fn node_recovery(&self) -> ::std::option::Option<&crate::types::ClusterNodeRecovery> {
         self.node_recovery.as_ref()
     }
+    /// <p>The configuration for managed tier checkpointing on the HyperPod cluster. When enabled, this feature uses a multi-tier storage approach for storing model checkpoints, providing faster checkpoint operations and improved fault tolerance across cluster nodes.</p>
+    pub fn tiered_storage_config(&self) -> ::std::option::Option<&crate::types::ClusterTieredStorageConfig> {
+        self.tiered_storage_config.as_ref()
+    }
     /// <p>The mode for provisioning nodes in the cluster. You can specify the following modes:</p>
     /// <ul>
     /// <li>
@@ -132,6 +138,7 @@ pub struct CreateClusterInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) orchestrator: ::std::option::Option<crate::types::ClusterOrchestrator>,
     pub(crate) node_recovery: ::std::option::Option<crate::types::ClusterNodeRecovery>,
+    pub(crate) tiered_storage_config: ::std::option::Option<crate::types::ClusterTieredStorageConfig>,
     pub(crate) node_provisioning_mode: ::std::option::Option<crate::types::ClusterNodeProvisioningMode>,
     pub(crate) cluster_role: ::std::option::Option<::std::string::String>,
     pub(crate) auto_scaling: ::std::option::Option<crate::types::ClusterAutoScalingConfig>,
@@ -310,6 +317,20 @@ impl CreateClusterInputBuilder {
     pub fn get_node_recovery(&self) -> &::std::option::Option<crate::types::ClusterNodeRecovery> {
         &self.node_recovery
     }
+    /// <p>The configuration for managed tier checkpointing on the HyperPod cluster. When enabled, this feature uses a multi-tier storage approach for storing model checkpoints, providing faster checkpoint operations and improved fault tolerance across cluster nodes.</p>
+    pub fn tiered_storage_config(mut self, input: crate::types::ClusterTieredStorageConfig) -> Self {
+        self.tiered_storage_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration for managed tier checkpointing on the HyperPod cluster. When enabled, this feature uses a multi-tier storage approach for storing model checkpoints, providing faster checkpoint operations and improved fault tolerance across cluster nodes.</p>
+    pub fn set_tiered_storage_config(mut self, input: ::std::option::Option<crate::types::ClusterTieredStorageConfig>) -> Self {
+        self.tiered_storage_config = input;
+        self
+    }
+    /// <p>The configuration for managed tier checkpointing on the HyperPod cluster. When enabled, this feature uses a multi-tier storage approach for storing model checkpoints, providing faster checkpoint operations and improved fault tolerance across cluster nodes.</p>
+    pub fn get_tiered_storage_config(&self) -> &::std::option::Option<crate::types::ClusterTieredStorageConfig> {
+        &self.tiered_storage_config
+    }
     /// <p>The mode for provisioning nodes in the cluster. You can specify the following modes:</p>
     /// <ul>
     /// <li>
@@ -376,6 +397,7 @@ impl CreateClusterInputBuilder {
             tags: self.tags,
             orchestrator: self.orchestrator,
             node_recovery: self.node_recovery,
+            tiered_storage_config: self.tiered_storage_config,
             node_provisioning_mode: self.node_provisioning_mode,
             cluster_role: self.cluster_role,
             auto_scaling: self.auto_scaling,

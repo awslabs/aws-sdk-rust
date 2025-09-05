@@ -289,7 +289,7 @@ pub enum CreateClusterError {
     /// <p>A queue already exists in a cluster.</p></li>
     /// </ul>
     ConflictException(crate::types::error::ConflictException),
-    /// <p>Amazon Web Services PCS can't process your request right now. Try again later.</p>
+    /// <p>PCS can't process your request right now. Try again later.</p>
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>You exceeded your service quota. Service quotas, also referred to as limits, are the maximum number of service resources or operations for your Amazon Web Services account. To learn how to increase your service quota, see <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/request-quota-increase.html">Requesting a quota increase</a> in the <i>Service Quotas User Guide</i></p>
     /// <p><u>Examples</u></p>

@@ -7,6 +7,8 @@ pub struct UpdateNotebookInstanceInput {
     pub notebook_instance_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon ML compute instance type.</p>
     pub instance_type: ::std::option::Option<crate::types::InstanceType>,
+    /// <p>The IP address type for the notebook instance. Specify <code>ipv4</code> for IPv4-only connectivity or <code>dualstack</code> for both IPv4 and IPv6 connectivity. The notebook instance must be stopped before updating this setting. When you specify <code>dualstack</code>, the subnet must support IPv6 addressing.</p>
+    pub ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role that SageMaker AI can assume to access the notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker AI Roles</a>.</p><note>
     /// <p>To be able to pass this role to SageMaker AI, the caller of this API must have the <code>iam:PassRole</code> permission.</p>
     /// </note>
@@ -46,6 +48,10 @@ impl UpdateNotebookInstanceInput {
     /// <p>The Amazon ML compute instance type.</p>
     pub fn instance_type(&self) -> ::std::option::Option<&crate::types::InstanceType> {
         self.instance_type.as_ref()
+    }
+    /// <p>The IP address type for the notebook instance. Specify <code>ipv4</code> for IPv4-only connectivity or <code>dualstack</code> for both IPv4 and IPv6 connectivity. The notebook instance must be stopped before updating this setting. When you specify <code>dualstack</code>, the subnet must support IPv6 addressing.</p>
+    pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::IpAddressType> {
+        self.ip_address_type.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that SageMaker AI can assume to access the notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker AI Roles</a>.</p><note>
     /// <p>To be able to pass this role to SageMaker AI, the caller of this API must have the <code>iam:PassRole</code> permission.</p>
@@ -119,6 +125,7 @@ impl UpdateNotebookInstanceInput {
 pub struct UpdateNotebookInstanceInputBuilder {
     pub(crate) notebook_instance_name: ::std::option::Option<::std::string::String>,
     pub(crate) instance_type: ::std::option::Option<crate::types::InstanceType>,
+    pub(crate) ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) lifecycle_config_name: ::std::option::Option<::std::string::String>,
     pub(crate) disassociate_lifecycle_config: ::std::option::Option<bool>,
@@ -161,6 +168,20 @@ impl UpdateNotebookInstanceInputBuilder {
     /// <p>The Amazon ML compute instance type.</p>
     pub fn get_instance_type(&self) -> &::std::option::Option<crate::types::InstanceType> {
         &self.instance_type
+    }
+    /// <p>The IP address type for the notebook instance. Specify <code>ipv4</code> for IPv4-only connectivity or <code>dualstack</code> for both IPv4 and IPv6 connectivity. The notebook instance must be stopped before updating this setting. When you specify <code>dualstack</code>, the subnet must support IPv6 addressing.</p>
+    pub fn ip_address_type(mut self, input: crate::types::IpAddressType) -> Self {
+        self.ip_address_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The IP address type for the notebook instance. Specify <code>ipv4</code> for IPv4-only connectivity or <code>dualstack</code> for both IPv4 and IPv6 connectivity. The notebook instance must be stopped before updating this setting. When you specify <code>dualstack</code>, the subnet must support IPv6 addressing.</p>
+    pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::IpAddressType>) -> Self {
+        self.ip_address_type = input;
+        self
+    }
+    /// <p>The IP address type for the notebook instance. Specify <code>ipv4</code> for IPv4-only connectivity or <code>dualstack</code> for both IPv4 and IPv6 connectivity. The notebook instance must be stopped before updating this setting. When you specify <code>dualstack</code>, the subnet must support IPv6 addressing.</p>
+    pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::IpAddressType> {
+        &self.ip_address_type
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that SageMaker AI can assume to access the notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker AI Roles</a>.</p><note>
     /// <p>To be able to pass this role to SageMaker AI, the caller of this API must have the <code>iam:PassRole</code> permission.</p>
@@ -373,6 +394,7 @@ impl UpdateNotebookInstanceInputBuilder {
         ::std::result::Result::Ok(crate::operation::update_notebook_instance::UpdateNotebookInstanceInput {
             notebook_instance_name: self.notebook_instance_name,
             instance_type: self.instance_type,
+            ip_address_type: self.ip_address_type,
             role_arn: self.role_arn,
             lifecycle_config_name: self.lifecycle_config_name,
             disassociate_lifecycle_config: self.disassociate_lifecycle_config,

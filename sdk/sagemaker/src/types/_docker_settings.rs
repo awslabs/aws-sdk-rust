@@ -8,7 +8,7 @@ pub struct DockerSettings {
     pub enable_docker_access: ::std::option::Option<crate::types::FeatureStatus>,
     /// <p>The list of Amazon Web Services accounts that are trusted when the domain is created in VPC-only mode.</p>
     pub vpc_only_trusted_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>Indicates whether to use rootless Docker. Default value is <code>DISABLED</code>.</p>
+    /// <p>Indicates whether to use rootless Docker.</p>
     pub rootless_docker: ::std::option::Option<crate::types::FeatureStatus>,
 }
 impl DockerSettings {
@@ -22,7 +22,7 @@ impl DockerSettings {
     pub fn vpc_only_trusted_accounts(&self) -> &[::std::string::String] {
         self.vpc_only_trusted_accounts.as_deref().unwrap_or_default()
     }
-    /// <p>Indicates whether to use rootless Docker. Default value is <code>DISABLED</code>.</p>
+    /// <p>Indicates whether to use rootless Docker.</p>
     pub fn rootless_docker(&self) -> ::std::option::Option<&crate::types::FeatureStatus> {
         self.rootless_docker.as_ref()
     }
@@ -77,17 +77,17 @@ impl DockerSettingsBuilder {
     pub fn get_vpc_only_trusted_accounts(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.vpc_only_trusted_accounts
     }
-    /// <p>Indicates whether to use rootless Docker. Default value is <code>DISABLED</code>.</p>
+    /// <p>Indicates whether to use rootless Docker.</p>
     pub fn rootless_docker(mut self, input: crate::types::FeatureStatus) -> Self {
         self.rootless_docker = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether to use rootless Docker. Default value is <code>DISABLED</code>.</p>
+    /// <p>Indicates whether to use rootless Docker.</p>
     pub fn set_rootless_docker(mut self, input: ::std::option::Option<crate::types::FeatureStatus>) -> Self {
         self.rootless_docker = input;
         self
     }
-    /// <p>Indicates whether to use rootless Docker. Default value is <code>DISABLED</code>.</p>
+    /// <p>Indicates whether to use rootless Docker.</p>
     pub fn get_rootless_docker(&self) -> &::std::option::Option<crate::types::FeatureStatus> {
         &self.rootless_docker
     }

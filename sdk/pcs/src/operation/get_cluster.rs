@@ -280,7 +280,7 @@ pub enum GetClusterError {
     /// <p>A queue already exists in a cluster.</p></li>
     /// </ul>
     ConflictException(crate::types::error::ConflictException),
-    /// <p>Amazon Web Services PCS can't process your request right now. Try again later.</p>
+    /// <p>PCS can't process your request right now. Try again later.</p>
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>The requested resource can't be found. The cluster, node group, or queue you're attempting to get, update, list, or delete doesn't exist.</p>
     /// <p><u>Examples</u></p>

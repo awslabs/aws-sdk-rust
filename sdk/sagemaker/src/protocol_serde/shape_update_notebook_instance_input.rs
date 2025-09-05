@@ -9,59 +9,62 @@ pub fn ser_update_notebook_instance_input_input(
     if let Some(var_2) = &input.instance_type {
         object.key("InstanceType").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.role_arn {
-        object.key("RoleArn").string(var_3.as_str());
+    if let Some(var_3) = &input.ip_address_type {
+        object.key("IpAddressType").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.lifecycle_config_name {
-        object.key("LifecycleConfigName").string(var_4.as_str());
+    if let Some(var_4) = &input.role_arn {
+        object.key("RoleArn").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.disassociate_lifecycle_config {
-        object.key("DisassociateLifecycleConfig").boolean(*var_5);
+    if let Some(var_5) = &input.lifecycle_config_name {
+        object.key("LifecycleConfigName").string(var_5.as_str());
     }
-    if let Some(var_6) = &input.volume_size_in_gb {
+    if let Some(var_6) = &input.disassociate_lifecycle_config {
+        object.key("DisassociateLifecycleConfig").boolean(*var_6);
+    }
+    if let Some(var_7) = &input.volume_size_in_gb {
         object.key("VolumeSizeInGB").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_6).into()),
+            ::aws_smithy_types::Number::NegInt((*var_7).into()),
         );
     }
-    if let Some(var_7) = &input.default_code_repository {
-        object.key("DefaultCodeRepository").string(var_7.as_str());
+    if let Some(var_8) = &input.default_code_repository {
+        object.key("DefaultCodeRepository").string(var_8.as_str());
     }
-    if let Some(var_8) = &input.additional_code_repositories {
-        let mut array_9 = object.key("AdditionalCodeRepositories").start_array();
-        for item_10 in var_8 {
+    if let Some(var_9) = &input.additional_code_repositories {
+        let mut array_10 = object.key("AdditionalCodeRepositories").start_array();
+        for item_11 in var_9 {
             {
-                array_9.value().string(item_10.as_str());
+                array_10.value().string(item_11.as_str());
             }
         }
-        array_9.finish();
+        array_10.finish();
     }
-    if let Some(var_11) = &input.accelerator_types {
-        let mut array_12 = object.key("AcceleratorTypes").start_array();
-        for item_13 in var_11 {
+    if let Some(var_12) = &input.accelerator_types {
+        let mut array_13 = object.key("AcceleratorTypes").start_array();
+        for item_14 in var_12 {
             {
-                array_12.value().string(item_13.as_str());
+                array_13.value().string(item_14.as_str());
             }
         }
-        array_12.finish();
+        array_13.finish();
     }
-    if let Some(var_14) = &input.disassociate_accelerator_types {
-        object.key("DisassociateAcceleratorTypes").boolean(*var_14);
+    if let Some(var_15) = &input.disassociate_accelerator_types {
+        object.key("DisassociateAcceleratorTypes").boolean(*var_15);
     }
-    if let Some(var_15) = &input.disassociate_default_code_repository {
-        object.key("DisassociateDefaultCodeRepository").boolean(*var_15);
+    if let Some(var_16) = &input.disassociate_default_code_repository {
+        object.key("DisassociateDefaultCodeRepository").boolean(*var_16);
     }
-    if let Some(var_16) = &input.disassociate_additional_code_repositories {
-        object.key("DisassociateAdditionalCodeRepositories").boolean(*var_16);
+    if let Some(var_17) = &input.disassociate_additional_code_repositories {
+        object.key("DisassociateAdditionalCodeRepositories").boolean(*var_17);
     }
-    if let Some(var_17) = &input.root_access {
-        object.key("RootAccess").string(var_17.as_str());
+    if let Some(var_18) = &input.root_access {
+        object.key("RootAccess").string(var_18.as_str());
     }
-    if let Some(var_18) = &input.instance_metadata_service_configuration {
+    if let Some(var_19) = &input.instance_metadata_service_configuration {
         #[allow(unused_mut)]
-        let mut object_19 = object.key("InstanceMetadataServiceConfiguration").start_object();
-        crate::protocol_serde::shape_instance_metadata_service_configuration::ser_instance_metadata_service_configuration(&mut object_19, var_18)?;
-        object_19.finish();
+        let mut object_20 = object.key("InstanceMetadataServiceConfiguration").start_object();
+        crate::protocol_serde::shape_instance_metadata_service_configuration::ser_instance_metadata_service_configuration(&mut object_20, var_19)?;
+        object_20.finish();
     }
     Ok(())
 }

@@ -22,7 +22,7 @@ impl crate::operation::list_tags_for_resource::builders::ListTagsForResourceInpu
 }
 /// Fluent builder constructing a request to `ListTagsForResource`.
 ///
-/// <p>Returns a list of all tags on an Amazon Web Services PCS resource.</p>
+/// <p>Returns a list of all tags on an PCS resource.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListTagsForResourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

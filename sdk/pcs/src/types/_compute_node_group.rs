@@ -22,13 +22,13 @@ pub struct ComputeNodeGroup {
     /// <p>The resource enters the <code>SUSPENDING</code> and <code>SUSPENDED</code> states when the scheduler is beyond end of life and we have suspended the cluster. When in these states, you can't use the cluster. The cluster controller is down and all compute instances are terminated. The resources still count toward your service quotas. You can delete a resource if its status is <code>SUSPENDED</code>. For more information, see <a href="https://docs.aws.amazon.com/pcs/latest/userguide/slurm-versions_faq.html">Frequently asked questions about Slurm versions in PCS</a> in the <i>PCS User Guide</i>.</p>
     /// </important>
     pub status: crate::types::ComputeNodeGroupStatus,
-    /// <p>The ID of the Amazon Machine Image (AMI) that Amazon Web Services PCS uses to launch instances. If not provided, Amazon Web Services PCS uses the AMI ID specified in the custom launch template.</p>
+    /// <p>The ID of the Amazon Machine Image (AMI) that PCS uses to launch instances. If not provided, PCS uses the AMI ID specified in the custom launch template.</p>
     pub ami_id: ::std::option::Option<::std::string::String>,
     /// <p>The list of subnet IDs where instances are provisioned by the compute node group. The subnets must be in the same VPC as the cluster.</p>
     pub subnet_ids: ::std::vec::Vec<::std::string::String>,
     /// <p>Specifies how EC2 instances are purchased on your behalf. Amazon Web Services PCS supports On-Demand and Spot instances. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-purchasing-options.html">Instance purchasing options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. If you don't provide this option, it defaults to On-Demand.</p>
     pub purchase_option: ::std::option::Option<crate::types::PurchaseOption>,
-    /// <p>An Amazon EC2 launch template Amazon Web Services PCS uses to launch compute nodes.</p>
+    /// <p>An Amazon EC2 launch template PCS uses to launch compute nodes.</p>
     pub custom_launch_template: ::std::option::Option<crate::types::CustomLaunchTemplate>,
     /// <p>The Amazon Resource Name (ARN) of the IAM instance profile used to pass an IAM role when launching EC2 instances. The role contained in your instance profile must have the <code>pcs:RegisterComputeNodeGroupInstance</code> permission and the role name must start with <code>AWSPCS</code> or must have the path <code>/aws-pcs/</code>. For more information, see <a href="https://docs.aws.amazon.com/pcs/latest/userguide/security-instance-profiles.html">IAM instance profiles for PCS</a> in the <i>PCS User Guide</i>.</p>
     pub iam_instance_profile_arn: ::std::string::String,
@@ -80,7 +80,7 @@ impl ComputeNodeGroup {
     pub fn status(&self) -> &crate::types::ComputeNodeGroupStatus {
         &self.status
     }
-    /// <p>The ID of the Amazon Machine Image (AMI) that Amazon Web Services PCS uses to launch instances. If not provided, Amazon Web Services PCS uses the AMI ID specified in the custom launch template.</p>
+    /// <p>The ID of the Amazon Machine Image (AMI) that PCS uses to launch instances. If not provided, PCS uses the AMI ID specified in the custom launch template.</p>
     pub fn ami_id(&self) -> ::std::option::Option<&str> {
         self.ami_id.as_deref()
     }
@@ -93,7 +93,7 @@ impl ComputeNodeGroup {
     pub fn purchase_option(&self) -> ::std::option::Option<&crate::types::PurchaseOption> {
         self.purchase_option.as_ref()
     }
-    /// <p>An Amazon EC2 launch template Amazon Web Services PCS uses to launch compute nodes.</p>
+    /// <p>An Amazon EC2 launch template PCS uses to launch compute nodes.</p>
     pub fn custom_launch_template(&self) -> ::std::option::Option<&crate::types::CustomLaunchTemplate> {
         self.custom_launch_template.as_ref()
     }
@@ -273,17 +273,17 @@ impl ComputeNodeGroupBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ComputeNodeGroupStatus> {
         &self.status
     }
-    /// <p>The ID of the Amazon Machine Image (AMI) that Amazon Web Services PCS uses to launch instances. If not provided, Amazon Web Services PCS uses the AMI ID specified in the custom launch template.</p>
+    /// <p>The ID of the Amazon Machine Image (AMI) that PCS uses to launch instances. If not provided, PCS uses the AMI ID specified in the custom launch template.</p>
     pub fn ami_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ami_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the Amazon Machine Image (AMI) that Amazon Web Services PCS uses to launch instances. If not provided, Amazon Web Services PCS uses the AMI ID specified in the custom launch template.</p>
+    /// <p>The ID of the Amazon Machine Image (AMI) that PCS uses to launch instances. If not provided, PCS uses the AMI ID specified in the custom launch template.</p>
     pub fn set_ami_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ami_id = input;
         self
     }
-    /// <p>The ID of the Amazon Machine Image (AMI) that Amazon Web Services PCS uses to launch instances. If not provided, Amazon Web Services PCS uses the AMI ID specified in the custom launch template.</p>
+    /// <p>The ID of the Amazon Machine Image (AMI) that PCS uses to launch instances. If not provided, PCS uses the AMI ID specified in the custom launch template.</p>
     pub fn get_ami_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.ami_id
     }
@@ -321,18 +321,18 @@ impl ComputeNodeGroupBuilder {
     pub fn get_purchase_option(&self) -> &::std::option::Option<crate::types::PurchaseOption> {
         &self.purchase_option
     }
-    /// <p>An Amazon EC2 launch template Amazon Web Services PCS uses to launch compute nodes.</p>
+    /// <p>An Amazon EC2 launch template PCS uses to launch compute nodes.</p>
     /// This field is required.
     pub fn custom_launch_template(mut self, input: crate::types::CustomLaunchTemplate) -> Self {
         self.custom_launch_template = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An Amazon EC2 launch template Amazon Web Services PCS uses to launch compute nodes.</p>
+    /// <p>An Amazon EC2 launch template PCS uses to launch compute nodes.</p>
     pub fn set_custom_launch_template(mut self, input: ::std::option::Option<crate::types::CustomLaunchTemplate>) -> Self {
         self.custom_launch_template = input;
         self
     }
-    /// <p>An Amazon EC2 launch template Amazon Web Services PCS uses to launch compute nodes.</p>
+    /// <p>An Amazon EC2 launch template PCS uses to launch compute nodes.</p>
     pub fn get_custom_launch_template(&self) -> &::std::option::Option<crate::types::CustomLaunchTemplate> {
         &self.custom_launch_template
     }

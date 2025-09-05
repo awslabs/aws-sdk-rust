@@ -126,6 +126,11 @@ pub(crate) fn de_describe_cluster(
                 "Orchestrator" => {
                     builder = builder.set_orchestrator(crate::protocol_serde::shape_cluster_orchestrator::de_cluster_orchestrator(tokens)?);
                 }
+                "TieredStorageConfig" => {
+                    builder = builder.set_tiered_storage_config(
+                        crate::protocol_serde::shape_cluster_tiered_storage_config::de_cluster_tiered_storage_config(tokens)?,
+                    );
+                }
                 "NodeRecovery" => {
                     builder = builder.set_node_recovery(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

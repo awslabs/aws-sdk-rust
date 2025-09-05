@@ -21,6 +21,8 @@ pub struct DescribeClusterOutput {
     pub vpc_config: ::std::option::Option<crate::types::VpcConfig>,
     /// <p>The type of orchestrator used for the SageMaker HyperPod cluster.</p>
     pub orchestrator: ::std::option::Option<crate::types::ClusterOrchestrator>,
+    /// <p>The current configuration for managed tier checkpointing on the HyperPod cluster. For example, this shows whether the feature is enabled and the percentage of cluster memory allocated for checkpoint storage.</p>
+    pub tiered_storage_config: ::std::option::Option<crate::types::ClusterTieredStorageConfig>,
     /// <p>The node recovery mode configured for the SageMaker HyperPod cluster.</p>
     pub node_recovery: ::std::option::Option<crate::types::ClusterNodeRecovery>,
     /// <p>The mode used for provisioning nodes in the cluster.</p>
@@ -72,6 +74,10 @@ impl DescribeClusterOutput {
     pub fn orchestrator(&self) -> ::std::option::Option<&crate::types::ClusterOrchestrator> {
         self.orchestrator.as_ref()
     }
+    /// <p>The current configuration for managed tier checkpointing on the HyperPod cluster. For example, this shows whether the feature is enabled and the percentage of cluster memory allocated for checkpoint storage.</p>
+    pub fn tiered_storage_config(&self) -> ::std::option::Option<&crate::types::ClusterTieredStorageConfig> {
+        self.tiered_storage_config.as_ref()
+    }
     /// <p>The node recovery mode configured for the SageMaker HyperPod cluster.</p>
     pub fn node_recovery(&self) -> ::std::option::Option<&crate::types::ClusterNodeRecovery> {
         self.node_recovery.as_ref()
@@ -114,6 +120,7 @@ pub struct DescribeClusterOutputBuilder {
     pub(crate) restricted_instance_groups: ::std::option::Option<::std::vec::Vec<crate::types::ClusterRestrictedInstanceGroupDetails>>,
     pub(crate) vpc_config: ::std::option::Option<crate::types::VpcConfig>,
     pub(crate) orchestrator: ::std::option::Option<crate::types::ClusterOrchestrator>,
+    pub(crate) tiered_storage_config: ::std::option::Option<crate::types::ClusterTieredStorageConfig>,
     pub(crate) node_recovery: ::std::option::Option<crate::types::ClusterNodeRecovery>,
     pub(crate) node_provisioning_mode: ::std::option::Option<crate::types::ClusterNodeProvisioningMode>,
     pub(crate) cluster_role: ::std::option::Option<::std::string::String>,
@@ -264,6 +271,20 @@ impl DescribeClusterOutputBuilder {
     pub fn get_orchestrator(&self) -> &::std::option::Option<crate::types::ClusterOrchestrator> {
         &self.orchestrator
     }
+    /// <p>The current configuration for managed tier checkpointing on the HyperPod cluster. For example, this shows whether the feature is enabled and the percentage of cluster memory allocated for checkpoint storage.</p>
+    pub fn tiered_storage_config(mut self, input: crate::types::ClusterTieredStorageConfig) -> Self {
+        self.tiered_storage_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The current configuration for managed tier checkpointing on the HyperPod cluster. For example, this shows whether the feature is enabled and the percentage of cluster memory allocated for checkpoint storage.</p>
+    pub fn set_tiered_storage_config(mut self, input: ::std::option::Option<crate::types::ClusterTieredStorageConfig>) -> Self {
+        self.tiered_storage_config = input;
+        self
+    }
+    /// <p>The current configuration for managed tier checkpointing on the HyperPod cluster. For example, this shows whether the feature is enabled and the percentage of cluster memory allocated for checkpoint storage.</p>
+    pub fn get_tiered_storage_config(&self) -> &::std::option::Option<crate::types::ClusterTieredStorageConfig> {
+        &self.tiered_storage_config
+    }
     /// <p>The node recovery mode configured for the SageMaker HyperPod cluster.</p>
     pub fn node_recovery(mut self, input: crate::types::ClusterNodeRecovery) -> Self {
         self.node_recovery = ::std::option::Option::Some(input);
@@ -341,6 +362,7 @@ impl DescribeClusterOutputBuilder {
             restricted_instance_groups: self.restricted_instance_groups,
             vpc_config: self.vpc_config,
             orchestrator: self.orchestrator,
+            tiered_storage_config: self.tiered_storage_config,
             node_recovery: self.node_recovery,
             node_provisioning_mode: self.node_provisioning_mode,
             cluster_role: self.cluster_role,

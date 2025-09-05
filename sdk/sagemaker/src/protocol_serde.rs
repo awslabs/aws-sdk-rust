@@ -1627,6 +1627,8 @@ pub(crate) mod shape_cluster_scheduler_config_summary_list;
 
 pub(crate) mod shape_cluster_summaries;
 
+pub(crate) mod shape_cluster_tiered_storage_config;
+
 pub(crate) mod shape_code_editor_app_image_config;
 
 pub(crate) mod shape_code_repository_summary_list;

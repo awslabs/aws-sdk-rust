@@ -103,6 +103,13 @@ pub(crate) fn de_describe_notebook_instance(
                             .transpose()?,
                     );
                 }
+                "IpAddressType" => {
+                    builder = builder.set_ip_address_type(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::IpAddressType::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 "SubnetId" => {
                     builder = builder.set_subnet_id(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

@@ -11,6 +11,8 @@ pub struct CreateNotebookInstanceInput {
     pub subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>The VPC security group IDs, in the form sg-xxxxxxxx. The security groups must be for the same VPC as specified in the subnet.</p>
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The IP address type for the notebook instance. Specify <code>ipv4</code> for IPv4-only connectivity or <code>dualstack</code> for both IPv4 and IPv6 connectivity. When you specify <code>dualstack</code>, the subnet must support IPv6 CIDR blocks. If not specified, defaults to <code>ipv4</code>.</p>
+    pub ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
     /// <p>When you send any requests to Amazon Web Services resources from the notebook instance, SageMaker AI assumes this role to perform tasks on your behalf. You must grant this role necessary permissions so SageMaker AI can perform these tasks. The policy must allow the SageMaker AI service principal (sagemaker.amazonaws.com) permissions to assume this role. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker AI Roles</a>.</p><note>
     /// <p>To be able to pass this role to SageMaker AI, the caller of this API must have the <code>iam:PassRole</code> permission.</p>
     /// </note>
@@ -60,6 +62,10 @@ impl CreateNotebookInstanceInput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
     pub fn security_group_ids(&self) -> &[::std::string::String] {
         self.security_group_ids.as_deref().unwrap_or_default()
+    }
+    /// <p>The IP address type for the notebook instance. Specify <code>ipv4</code> for IPv4-only connectivity or <code>dualstack</code> for both IPv4 and IPv6 connectivity. When you specify <code>dualstack</code>, the subnet must support IPv6 CIDR blocks. If not specified, defaults to <code>ipv4</code>.</p>
+    pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::IpAddressType> {
+        self.ip_address_type.as_ref()
     }
     /// <p>When you send any requests to Amazon Web Services resources from the notebook instance, SageMaker AI assumes this role to perform tasks on your behalf. You must grant this role necessary permissions so SageMaker AI can perform these tasks. The policy must allow the SageMaker AI service principal (sagemaker.amazonaws.com) permissions to assume this role. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker AI Roles</a>.</p><note>
     /// <p>To be able to pass this role to SageMaker AI, the caller of this API must have the <code>iam:PassRole</code> permission.</p>
@@ -137,6 +143,7 @@ pub struct CreateNotebookInstanceInputBuilder {
     pub(crate) instance_type: ::std::option::Option<crate::types::InstanceType>,
     pub(crate) subnet_id: ::std::option::Option<::std::string::String>,
     pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -214,6 +221,20 @@ impl CreateNotebookInstanceInputBuilder {
     /// <p>The VPC security group IDs, in the form sg-xxxxxxxx. The security groups must be for the same VPC as specified in the subnet.</p>
     pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_group_ids
+    }
+    /// <p>The IP address type for the notebook instance. Specify <code>ipv4</code> for IPv4-only connectivity or <code>dualstack</code> for both IPv4 and IPv6 connectivity. When you specify <code>dualstack</code>, the subnet must support IPv6 CIDR blocks. If not specified, defaults to <code>ipv4</code>.</p>
+    pub fn ip_address_type(mut self, input: crate::types::IpAddressType) -> Self {
+        self.ip_address_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The IP address type for the notebook instance. Specify <code>ipv4</code> for IPv4-only connectivity or <code>dualstack</code> for both IPv4 and IPv6 connectivity. When you specify <code>dualstack</code>, the subnet must support IPv6 CIDR blocks. If not specified, defaults to <code>ipv4</code>.</p>
+    pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::IpAddressType>) -> Self {
+        self.ip_address_type = input;
+        self
+    }
+    /// <p>The IP address type for the notebook instance. Specify <code>ipv4</code> for IPv4-only connectivity or <code>dualstack</code> for both IPv4 and IPv6 connectivity. When you specify <code>dualstack</code>, the subnet must support IPv6 CIDR blocks. If not specified, defaults to <code>ipv4</code>.</p>
+    pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::IpAddressType> {
+        &self.ip_address_type
     }
     /// <p>When you send any requests to Amazon Web Services resources from the notebook instance, SageMaker AI assumes this role to perform tasks on your behalf. You must grant this role necessary permissions so SageMaker AI can perform these tasks. The policy must allow the SageMaker AI service principal (sagemaker.amazonaws.com) permissions to assume this role. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker AI Roles</a>.</p><note>
     /// <p>To be able to pass this role to SageMaker AI, the caller of this API must have the <code>iam:PassRole</code> permission.</p>
@@ -435,6 +456,7 @@ impl CreateNotebookInstanceInputBuilder {
             instance_type: self.instance_type,
             subnet_id: self.subnet_id,
             security_group_ids: self.security_group_ids,
+            ip_address_type: self.ip_address_type,
             role_arn: self.role_arn,
             kms_key_id: self.kms_key_id,
             tags: self.tags,

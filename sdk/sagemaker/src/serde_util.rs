@@ -2939,6 +2939,15 @@ pub(crate) fn cluster_orchestrator_correct_errors(
     builder
 }
 
+pub(crate) fn cluster_tiered_storage_config_correct_errors(
+    mut builder: crate::types::builders::ClusterTieredStorageConfigBuilder,
+) -> crate::types::builders::ClusterTieredStorageConfigBuilder {
+    if builder.mode.is_none() {
+        builder.mode = "no value was set".parse::<crate::types::ClusterConfigMode>().ok()
+    }
+    builder
+}
+
 pub(crate) fn context_source_correct_errors(
     mut builder: crate::types::builders::ContextSourceBuilder,
 ) -> crate::types::builders::ContextSourceBuilder {

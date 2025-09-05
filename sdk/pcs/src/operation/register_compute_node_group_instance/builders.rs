@@ -25,7 +25,7 @@ impl crate::operation::register_compute_node_group_instance::builders::RegisterC
 /// <important>
 /// <p>This API action isn't intended for you to use.</p>
 /// </important>
-/// <p>Amazon Web Services PCS uses this API action to register the compute nodes it launches in your account.</p>
+/// <p>PCS uses this API action to register the compute nodes it launches in your account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RegisterComputeNodeGroupInstanceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

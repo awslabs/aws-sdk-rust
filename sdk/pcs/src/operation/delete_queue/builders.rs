@@ -22,7 +22,7 @@ impl crate::operation::delete_queue::builders::DeleteQueueInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteQueue`.
 ///
-/// <p>Deletes a job queue. If the compute node group associated with this queue isn't associated with any other queues, Amazon Web Services PCS terminates all the compute nodes for this queue.</p>
+/// <p>Deletes a job queue. If the compute node group associated with this queue isn't associated with any other queues, PCS terminates all the compute nodes for this queue.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteQueueFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

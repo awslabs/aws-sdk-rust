@@ -7,11 +7,11 @@ pub struct UpdateComputeNodeGroupInput {
     pub cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The name or ID of the compute node group.</p>
     pub compute_node_group_identifier: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of the Amazon Machine Image (AMI) that Amazon Web Services PCS uses to launch instances. If not provided, Amazon Web Services PCS uses the AMI ID specified in the custom launch template.</p>
+    /// <p>The ID of the Amazon Machine Image (AMI) that PCS uses to launch instances. If not provided, PCS uses the AMI ID specified in the custom launch template.</p>
     pub ami_id: ::std::option::Option<::std::string::String>,
     /// <p>The list of subnet IDs where the compute node group provisions instances. The subnets must be in the same VPC as the cluster.</p>
     pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>An Amazon EC2 launch template Amazon Web Services PCS uses to launch compute nodes.</p>
+    /// <p>An Amazon EC2 launch template PCS uses to launch compute nodes.</p>
     pub custom_launch_template: ::std::option::Option<crate::types::CustomLaunchTemplate>,
     /// <p>Specifies how EC2 instances are purchased on your behalf. Amazon Web Services PCS supports On-Demand and Spot instances. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-purchasing-options.html">Instance purchasing options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. If you don't provide this option, it defaults to On-Demand.</p>
     pub purchase_option: ::std::option::Option<crate::types::PurchaseOption>,
@@ -35,7 +35,7 @@ impl UpdateComputeNodeGroupInput {
     pub fn compute_node_group_identifier(&self) -> ::std::option::Option<&str> {
         self.compute_node_group_identifier.as_deref()
     }
-    /// <p>The ID of the Amazon Machine Image (AMI) that Amazon Web Services PCS uses to launch instances. If not provided, Amazon Web Services PCS uses the AMI ID specified in the custom launch template.</p>
+    /// <p>The ID of the Amazon Machine Image (AMI) that PCS uses to launch instances. If not provided, PCS uses the AMI ID specified in the custom launch template.</p>
     pub fn ami_id(&self) -> ::std::option::Option<&str> {
         self.ami_id.as_deref()
     }
@@ -45,7 +45,7 @@ impl UpdateComputeNodeGroupInput {
     pub fn subnet_ids(&self) -> &[::std::string::String] {
         self.subnet_ids.as_deref().unwrap_or_default()
     }
-    /// <p>An Amazon EC2 launch template Amazon Web Services PCS uses to launch compute nodes.</p>
+    /// <p>An Amazon EC2 launch template PCS uses to launch compute nodes.</p>
     pub fn custom_launch_template(&self) -> ::std::option::Option<&crate::types::CustomLaunchTemplate> {
         self.custom_launch_template.as_ref()
     }
@@ -128,17 +128,17 @@ impl UpdateComputeNodeGroupInputBuilder {
     pub fn get_compute_node_group_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.compute_node_group_identifier
     }
-    /// <p>The ID of the Amazon Machine Image (AMI) that Amazon Web Services PCS uses to launch instances. If not provided, Amazon Web Services PCS uses the AMI ID specified in the custom launch template.</p>
+    /// <p>The ID of the Amazon Machine Image (AMI) that PCS uses to launch instances. If not provided, PCS uses the AMI ID specified in the custom launch template.</p>
     pub fn ami_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ami_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the Amazon Machine Image (AMI) that Amazon Web Services PCS uses to launch instances. If not provided, Amazon Web Services PCS uses the AMI ID specified in the custom launch template.</p>
+    /// <p>The ID of the Amazon Machine Image (AMI) that PCS uses to launch instances. If not provided, PCS uses the AMI ID specified in the custom launch template.</p>
     pub fn set_ami_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ami_id = input;
         self
     }
-    /// <p>The ID of the Amazon Machine Image (AMI) that Amazon Web Services PCS uses to launch instances. If not provided, Amazon Web Services PCS uses the AMI ID specified in the custom launch template.</p>
+    /// <p>The ID of the Amazon Machine Image (AMI) that PCS uses to launch instances. If not provided, PCS uses the AMI ID specified in the custom launch template.</p>
     pub fn get_ami_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.ami_id
     }
@@ -162,17 +162,17 @@ impl UpdateComputeNodeGroupInputBuilder {
     pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.subnet_ids
     }
-    /// <p>An Amazon EC2 launch template Amazon Web Services PCS uses to launch compute nodes.</p>
+    /// <p>An Amazon EC2 launch template PCS uses to launch compute nodes.</p>
     pub fn custom_launch_template(mut self, input: crate::types::CustomLaunchTemplate) -> Self {
         self.custom_launch_template = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An Amazon EC2 launch template Amazon Web Services PCS uses to launch compute nodes.</p>
+    /// <p>An Amazon EC2 launch template PCS uses to launch compute nodes.</p>
     pub fn set_custom_launch_template(mut self, input: ::std::option::Option<crate::types::CustomLaunchTemplate>) -> Self {
         self.custom_launch_template = input;
         self
     }
-    /// <p>An Amazon EC2 launch template Amazon Web Services PCS uses to launch compute nodes.</p>
+    /// <p>An Amazon EC2 launch template PCS uses to launch compute nodes.</p>
     pub fn get_custom_launch_template(&self) -> &::std::option::Option<crate::types::CustomLaunchTemplate> {
         &self.custom_launch_template
     }

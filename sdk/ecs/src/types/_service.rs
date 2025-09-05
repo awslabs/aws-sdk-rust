@@ -51,7 +51,7 @@ pub struct Service {
     pub placement_strategy: ::std::option::Option<::std::vec::Vec<crate::types::PlacementStrategy>>,
     /// <p>The VPC subnet and security group configuration for tasks that receive their own elastic network interface by using the <code>awsvpc</code> networking mode.</p>
     pub network_configuration: ::std::option::Option<crate::types::NetworkConfiguration>,
-    /// <p>The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy Elastic Load Balancing target health checks after a task has first started.</p>
+    /// <p>The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy Elastic Load Balancing, VPC Lattice, and container health checks after a task has first started.</p>
     pub health_check_grace_period_seconds: ::std::option::Option<i32>,
     /// <p>The scheduling strategy to use for the service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.</p>
     /// <p>There are two service scheduler strategies available.</p>
@@ -95,6 +95,13 @@ pub struct Service {
     pub enable_execute_command: bool,
     /// <p>Indicates whether to use Availability Zone rebalancing for the service.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-rebalancing.html">Balancing an Amazon ECS service across Availability Zones</a> in the <i> <i>Amazon Elastic Container Service Developer Guide</i> </i>.</p>
+    /// <p>The default behavior of <code>AvailabilityZoneRebalancing</code> differs between create and update requests:</p>
+    /// <ul>
+    /// <li>
+    /// <p>For create service requests, when when no value is specified for <code>AvailabilityZoneRebalancing</code>, Amazon ECS defaults the value to to <code>ENABLED</code>.</p></li>
+    /// <li>
+    /// <p>For update service requests, when no value is specified for <code>AvailabilityZoneRebalancing</code>, Amazon ECS defaults to the existing service’s <code>AvailabilityZoneRebalancing</code> value. If the service never had an <code>AvailabilityZoneRebalancing</code> value set, Amazon ECS treats this as <code>DISABLED</code>.</p></li>
+    /// </ul>
     pub availability_zone_rebalancing: ::std::option::Option<crate::types::AvailabilityZoneRebalancing>,
 }
 impl Service {
@@ -207,7 +214,7 @@ impl Service {
     pub fn network_configuration(&self) -> ::std::option::Option<&crate::types::NetworkConfiguration> {
         self.network_configuration.as_ref()
     }
-    /// <p>The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy Elastic Load Balancing target health checks after a task has first started.</p>
+    /// <p>The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy Elastic Load Balancing, VPC Lattice, and container health checks after a task has first started.</p>
     pub fn health_check_grace_period_seconds(&self) -> ::std::option::Option<i32> {
         self.health_check_grace_period_seconds
     }
@@ -269,6 +276,13 @@ impl Service {
     }
     /// <p>Indicates whether to use Availability Zone rebalancing for the service.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-rebalancing.html">Balancing an Amazon ECS service across Availability Zones</a> in the <i> <i>Amazon Elastic Container Service Developer Guide</i> </i>.</p>
+    /// <p>The default behavior of <code>AvailabilityZoneRebalancing</code> differs between create and update requests:</p>
+    /// <ul>
+    /// <li>
+    /// <p>For create service requests, when when no value is specified for <code>AvailabilityZoneRebalancing</code>, Amazon ECS defaults the value to to <code>ENABLED</code>.</p></li>
+    /// <li>
+    /// <p>For update service requests, when no value is specified for <code>AvailabilityZoneRebalancing</code>, Amazon ECS defaults to the existing service’s <code>AvailabilityZoneRebalancing</code> value. If the service never had an <code>AvailabilityZoneRebalancing</code> value set, Amazon ECS treats this as <code>DISABLED</code>.</p></li>
+    /// </ul>
     pub fn availability_zone_rebalancing(&self) -> ::std::option::Option<&crate::types::AvailabilityZoneRebalancing> {
         self.availability_zone_rebalancing.as_ref()
     }
@@ -694,17 +708,17 @@ impl ServiceBuilder {
     pub fn get_network_configuration(&self) -> &::std::option::Option<crate::types::NetworkConfiguration> {
         &self.network_configuration
     }
-    /// <p>The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy Elastic Load Balancing target health checks after a task has first started.</p>
+    /// <p>The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy Elastic Load Balancing, VPC Lattice, and container health checks after a task has first started.</p>
     pub fn health_check_grace_period_seconds(mut self, input: i32) -> Self {
         self.health_check_grace_period_seconds = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy Elastic Load Balancing target health checks after a task has first started.</p>
+    /// <p>The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy Elastic Load Balancing, VPC Lattice, and container health checks after a task has first started.</p>
     pub fn set_health_check_grace_period_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.health_check_grace_period_seconds = input;
         self
     }
-    /// <p>The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy Elastic Load Balancing target health checks after a task has first started.</p>
+    /// <p>The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy Elastic Load Balancing, VPC Lattice, and container health checks after a task has first started.</p>
     pub fn get_health_check_grace_period_seconds(&self) -> &::std::option::Option<i32> {
         &self.health_check_grace_period_seconds
     }
@@ -892,18 +906,39 @@ impl ServiceBuilder {
     }
     /// <p>Indicates whether to use Availability Zone rebalancing for the service.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-rebalancing.html">Balancing an Amazon ECS service across Availability Zones</a> in the <i> <i>Amazon Elastic Container Service Developer Guide</i> </i>.</p>
+    /// <p>The default behavior of <code>AvailabilityZoneRebalancing</code> differs between create and update requests:</p>
+    /// <ul>
+    /// <li>
+    /// <p>For create service requests, when when no value is specified for <code>AvailabilityZoneRebalancing</code>, Amazon ECS defaults the value to to <code>ENABLED</code>.</p></li>
+    /// <li>
+    /// <p>For update service requests, when no value is specified for <code>AvailabilityZoneRebalancing</code>, Amazon ECS defaults to the existing service’s <code>AvailabilityZoneRebalancing</code> value. If the service never had an <code>AvailabilityZoneRebalancing</code> value set, Amazon ECS treats this as <code>DISABLED</code>.</p></li>
+    /// </ul>
     pub fn availability_zone_rebalancing(mut self, input: crate::types::AvailabilityZoneRebalancing) -> Self {
         self.availability_zone_rebalancing = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether to use Availability Zone rebalancing for the service.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-rebalancing.html">Balancing an Amazon ECS service across Availability Zones</a> in the <i> <i>Amazon Elastic Container Service Developer Guide</i> </i>.</p>
+    /// <p>The default behavior of <code>AvailabilityZoneRebalancing</code> differs between create and update requests:</p>
+    /// <ul>
+    /// <li>
+    /// <p>For create service requests, when when no value is specified for <code>AvailabilityZoneRebalancing</code>, Amazon ECS defaults the value to to <code>ENABLED</code>.</p></li>
+    /// <li>
+    /// <p>For update service requests, when no value is specified for <code>AvailabilityZoneRebalancing</code>, Amazon ECS defaults to the existing service’s <code>AvailabilityZoneRebalancing</code> value. If the service never had an <code>AvailabilityZoneRebalancing</code> value set, Amazon ECS treats this as <code>DISABLED</code>.</p></li>
+    /// </ul>
     pub fn set_availability_zone_rebalancing(mut self, input: ::std::option::Option<crate::types::AvailabilityZoneRebalancing>) -> Self {
         self.availability_zone_rebalancing = input;
         self
     }
     /// <p>Indicates whether to use Availability Zone rebalancing for the service.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-rebalancing.html">Balancing an Amazon ECS service across Availability Zones</a> in the <i> <i>Amazon Elastic Container Service Developer Guide</i> </i>.</p>
+    /// <p>The default behavior of <code>AvailabilityZoneRebalancing</code> differs between create and update requests:</p>
+    /// <ul>
+    /// <li>
+    /// <p>For create service requests, when when no value is specified for <code>AvailabilityZoneRebalancing</code>, Amazon ECS defaults the value to to <code>ENABLED</code>.</p></li>
+    /// <li>
+    /// <p>For update service requests, when no value is specified for <code>AvailabilityZoneRebalancing</code>, Amazon ECS defaults to the existing service’s <code>AvailabilityZoneRebalancing</code> value. If the service never had an <code>AvailabilityZoneRebalancing</code> value set, Amazon ECS treats this as <code>DISABLED</code>.</p></li>
+    /// </ul>
     pub fn get_availability_zone_rebalancing(&self) -> &::std::option::Option<crate::types::AvailabilityZoneRebalancing> {
         &self.availability_zone_rebalancing
     }

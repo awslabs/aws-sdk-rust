@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Networking {
-    /// <p>The ID of the subnet where Amazon Web Services PCS creates an Elastic Network Interface (ENI) to enable communication between managed controllers and Amazon Web Services PCS resources. The subnet must have an available IP address, cannot reside in AWS Outposts, AWS Wavelength, or an AWS Local Zone.</p>
+    /// <p>The ID of the subnet where PCS creates an Elastic Network Interface (ENI) to enable communication between managed controllers and PCS resources. The subnet must have an available IP address, cannot reside in Outposts, Wavelength, or an Amazon Web Services Local Zone.</p>
     /// <p>Example: <code>subnet-abcd1234</code></p>
     pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The list of security group IDs associated with the Elastic Network Interface (ENI) created in subnets.</p>
@@ -46,7 +46,7 @@ pub struct Networking {
     pub network_type: ::std::option::Option<crate::types::NetworkType>,
 }
 impl Networking {
-    /// <p>The ID of the subnet where Amazon Web Services PCS creates an Elastic Network Interface (ENI) to enable communication between managed controllers and Amazon Web Services PCS resources. The subnet must have an available IP address, cannot reside in AWS Outposts, AWS Wavelength, or an AWS Local Zone.</p>
+    /// <p>The ID of the subnet where PCS creates an Elastic Network Interface (ENI) to enable communication between managed controllers and PCS resources. The subnet must have an available IP address, cannot reside in Outposts, Wavelength, or an Amazon Web Services Local Zone.</p>
     /// <p>Example: <code>subnet-abcd1234</code></p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_ids.is_none()`.
@@ -117,7 +117,7 @@ impl NetworkingBuilder {
     ///
     /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
     ///
-    /// <p>The ID of the subnet where Amazon Web Services PCS creates an Elastic Network Interface (ENI) to enable communication between managed controllers and Amazon Web Services PCS resources. The subnet must have an available IP address, cannot reside in AWS Outposts, AWS Wavelength, or an AWS Local Zone.</p>
+    /// <p>The ID of the subnet where PCS creates an Elastic Network Interface (ENI) to enable communication between managed controllers and PCS resources. The subnet must have an available IP address, cannot reside in Outposts, Wavelength, or an Amazon Web Services Local Zone.</p>
     /// <p>Example: <code>subnet-abcd1234</code></p>
     pub fn subnet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subnet_ids.unwrap_or_default();
@@ -125,13 +125,13 @@ impl NetworkingBuilder {
         self.subnet_ids = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The ID of the subnet where Amazon Web Services PCS creates an Elastic Network Interface (ENI) to enable communication between managed controllers and Amazon Web Services PCS resources. The subnet must have an available IP address, cannot reside in AWS Outposts, AWS Wavelength, or an AWS Local Zone.</p>
+    /// <p>The ID of the subnet where PCS creates an Elastic Network Interface (ENI) to enable communication between managed controllers and PCS resources. The subnet must have an available IP address, cannot reside in Outposts, Wavelength, or an Amazon Web Services Local Zone.</p>
     /// <p>Example: <code>subnet-abcd1234</code></p>
     pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.subnet_ids = input;
         self
     }
-    /// <p>The ID of the subnet where Amazon Web Services PCS creates an Elastic Network Interface (ENI) to enable communication between managed controllers and Amazon Web Services PCS resources. The subnet must have an available IP address, cannot reside in AWS Outposts, AWS Wavelength, or an AWS Local Zone.</p>
+    /// <p>The ID of the subnet where PCS creates an Elastic Network Interface (ENI) to enable communication between managed controllers and PCS resources. The subnet must have an available IP address, cannot reside in Outposts, Wavelength, or an Amazon Web Services Local Zone.</p>
     /// <p>Example: <code>subnet-abcd1234</code></p>
     pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.subnet_ids

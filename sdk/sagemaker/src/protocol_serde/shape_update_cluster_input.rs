@@ -33,26 +33,32 @@ pub fn ser_update_cluster_input_input(
         }
         array_7.finish();
     }
-    if let Some(var_10) = &input.node_recovery {
-        object.key("NodeRecovery").string(var_10.as_str());
+    if let Some(var_10) = &input.tiered_storage_config {
+        #[allow(unused_mut)]
+        let mut object_11 = object.key("TieredStorageConfig").start_object();
+        crate::protocol_serde::shape_cluster_tiered_storage_config::ser_cluster_tiered_storage_config(&mut object_11, var_10)?;
+        object_11.finish();
     }
-    if let Some(var_11) = &input.instance_groups_to_delete {
-        let mut array_12 = object.key("InstanceGroupsToDelete").start_array();
-        for item_13 in var_11 {
+    if let Some(var_12) = &input.node_recovery {
+        object.key("NodeRecovery").string(var_12.as_str());
+    }
+    if let Some(var_13) = &input.instance_groups_to_delete {
+        let mut array_14 = object.key("InstanceGroupsToDelete").start_array();
+        for item_15 in var_13 {
             {
-                array_12.value().string(item_13.as_str());
+                array_14.value().string(item_15.as_str());
             }
         }
-        array_12.finish();
+        array_14.finish();
     }
-    if let Some(var_14) = &input.cluster_role {
-        object.key("ClusterRole").string(var_14.as_str());
+    if let Some(var_16) = &input.cluster_role {
+        object.key("ClusterRole").string(var_16.as_str());
     }
-    if let Some(var_15) = &input.auto_scaling {
+    if let Some(var_17) = &input.auto_scaling {
         #[allow(unused_mut)]
-        let mut object_16 = object.key("AutoScaling").start_object();
-        crate::protocol_serde::shape_cluster_auto_scaling_config::ser_cluster_auto_scaling_config(&mut object_16, var_15)?;
-        object_16.finish();
+        let mut object_18 = object.key("AutoScaling").start_object();
+        crate::protocol_serde::shape_cluster_auto_scaling_config::ser_cluster_auto_scaling_config(&mut object_18, var_17)?;
+        object_18.finish();
     }
     Ok(())
 }

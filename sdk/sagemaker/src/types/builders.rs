@@ -323,6 +323,8 @@ pub use crate::types::_priority_class::PriorityClassBuilder;
 
 pub use crate::types::_cluster_auto_scaling_config::ClusterAutoScalingConfigBuilder;
 
+pub use crate::types::_cluster_tiered_storage_config::ClusterTieredStorageConfigBuilder;
+
 pub use crate::types::_cluster_restricted_instance_group_specification::ClusterRestrictedInstanceGroupSpecificationBuilder;
 
 pub use crate::types::_environment_config::EnvironmentConfigBuilder;

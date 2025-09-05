@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SlurmCustomSetting {
-    /// <p>Amazon Web Services PCS supports configuration of the following Slurm parameters:</p>
+    /// <p>PCS supports configuration of the following Slurm parameters:</p>
     /// <ul>
     /// <li>
     /// <p>For <b>clusters</b></p>
@@ -15,6 +15,10 @@ pub struct SlurmCustomSetting {
     /// <p><a href="https://slurm.schedmd.com/slurm.conf.html#OPT_Epilog_1"> <code>Epilog</code> </a></p></li>
     /// <li>
     /// <p><a href="https://slurm.schedmd.com/slurm.conf.html#OPT_SelectTypeParameters"> <code>SelectTypeParameters</code> </a></p></li>
+    /// <li>
+    /// <p><a href="https://slurm.schedmd.com/slurm.conf.html#OPT_AccountingStorageEnforce"> <code>AccountingStorageEnforce</code> </a></p><important>
+    /// <p>PCS supports a subset of the options for <code>AccountingStorageEnforce</code>. For more information, see <a href="https://docs.aws.amazon.com/pcs/latest/userguide/slurm-accounting.html">Slurm accounting in PCS</a> in the <i>PCS User Guide</i>.</p>
+    /// </important></li>
     /// </ul></li>
     /// <li>
     /// <p>For <b>compute node groups</b></p>
@@ -30,7 +34,7 @@ pub struct SlurmCustomSetting {
     pub parameter_value: ::std::string::String,
 }
 impl SlurmCustomSetting {
-    /// <p>Amazon Web Services PCS supports configuration of the following Slurm parameters:</p>
+    /// <p>PCS supports configuration of the following Slurm parameters:</p>
     /// <ul>
     /// <li>
     /// <p>For <b>clusters</b></p>
@@ -41,6 +45,10 @@ impl SlurmCustomSetting {
     /// <p><a href="https://slurm.schedmd.com/slurm.conf.html#OPT_Epilog_1"> <code>Epilog</code> </a></p></li>
     /// <li>
     /// <p><a href="https://slurm.schedmd.com/slurm.conf.html#OPT_SelectTypeParameters"> <code>SelectTypeParameters</code> </a></p></li>
+    /// <li>
+    /// <p><a href="https://slurm.schedmd.com/slurm.conf.html#OPT_AccountingStorageEnforce"> <code>AccountingStorageEnforce</code> </a></p><important>
+    /// <p>PCS supports a subset of the options for <code>AccountingStorageEnforce</code>. For more information, see <a href="https://docs.aws.amazon.com/pcs/latest/userguide/slurm-accounting.html">Slurm accounting in PCS</a> in the <i>PCS User Guide</i>.</p>
+    /// </important></li>
     /// </ul></li>
     /// <li>
     /// <p>For <b>compute node groups</b></p>
@@ -76,7 +84,7 @@ pub struct SlurmCustomSettingBuilder {
     pub(crate) parameter_value: ::std::option::Option<::std::string::String>,
 }
 impl SlurmCustomSettingBuilder {
-    /// <p>Amazon Web Services PCS supports configuration of the following Slurm parameters:</p>
+    /// <p>PCS supports configuration of the following Slurm parameters:</p>
     /// <ul>
     /// <li>
     /// <p>For <b>clusters</b></p>
@@ -87,6 +95,10 @@ impl SlurmCustomSettingBuilder {
     /// <p><a href="https://slurm.schedmd.com/slurm.conf.html#OPT_Epilog_1"> <code>Epilog</code> </a></p></li>
     /// <li>
     /// <p><a href="https://slurm.schedmd.com/slurm.conf.html#OPT_SelectTypeParameters"> <code>SelectTypeParameters</code> </a></p></li>
+    /// <li>
+    /// <p><a href="https://slurm.schedmd.com/slurm.conf.html#OPT_AccountingStorageEnforce"> <code>AccountingStorageEnforce</code> </a></p><important>
+    /// <p>PCS supports a subset of the options for <code>AccountingStorageEnforce</code>. For more information, see <a href="https://docs.aws.amazon.com/pcs/latest/userguide/slurm-accounting.html">Slurm accounting in PCS</a> in the <i>PCS User Guide</i>.</p>
+    /// </important></li>
     /// </ul></li>
     /// <li>
     /// <p>For <b>compute node groups</b></p>
@@ -102,7 +114,7 @@ impl SlurmCustomSettingBuilder {
         self.parameter_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Amazon Web Services PCS supports configuration of the following Slurm parameters:</p>
+    /// <p>PCS supports configuration of the following Slurm parameters:</p>
     /// <ul>
     /// <li>
     /// <p>For <b>clusters</b></p>
@@ -113,6 +125,10 @@ impl SlurmCustomSettingBuilder {
     /// <p><a href="https://slurm.schedmd.com/slurm.conf.html#OPT_Epilog_1"> <code>Epilog</code> </a></p></li>
     /// <li>
     /// <p><a href="https://slurm.schedmd.com/slurm.conf.html#OPT_SelectTypeParameters"> <code>SelectTypeParameters</code> </a></p></li>
+    /// <li>
+    /// <p><a href="https://slurm.schedmd.com/slurm.conf.html#OPT_AccountingStorageEnforce"> <code>AccountingStorageEnforce</code> </a></p><important>
+    /// <p>PCS supports a subset of the options for <code>AccountingStorageEnforce</code>. For more information, see <a href="https://docs.aws.amazon.com/pcs/latest/userguide/slurm-accounting.html">Slurm accounting in PCS</a> in the <i>PCS User Guide</i>.</p>
+    /// </important></li>
     /// </ul></li>
     /// <li>
     /// <p>For <b>compute node groups</b></p>
@@ -127,7 +143,7 @@ impl SlurmCustomSettingBuilder {
         self.parameter_name = input;
         self
     }
-    /// <p>Amazon Web Services PCS supports configuration of the following Slurm parameters:</p>
+    /// <p>PCS supports configuration of the following Slurm parameters:</p>
     /// <ul>
     /// <li>
     /// <p>For <b>clusters</b></p>
@@ -138,6 +154,10 @@ impl SlurmCustomSettingBuilder {
     /// <p><a href="https://slurm.schedmd.com/slurm.conf.html#OPT_Epilog_1"> <code>Epilog</code> </a></p></li>
     /// <li>
     /// <p><a href="https://slurm.schedmd.com/slurm.conf.html#OPT_SelectTypeParameters"> <code>SelectTypeParameters</code> </a></p></li>
+    /// <li>
+    /// <p><a href="https://slurm.schedmd.com/slurm.conf.html#OPT_AccountingStorageEnforce"> <code>AccountingStorageEnforce</code> </a></p><important>
+    /// <p>PCS supports a subset of the options for <code>AccountingStorageEnforce</code>. For more information, see <a href="https://docs.aws.amazon.com/pcs/latest/userguide/slurm-accounting.html">Slurm accounting in PCS</a> in the <i>PCS User Guide</i>.</p>
+    /// </important></li>
     /// </ul></li>
     /// <li>
     /// <p>For <b>compute node groups</b></p>

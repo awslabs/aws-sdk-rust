@@ -136,17 +136,17 @@ impl UpdateComputeNodeGroupFluentBuilder {
     pub fn get_compute_node_group_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_compute_node_group_identifier()
     }
-    /// <p>The ID of the Amazon Machine Image (AMI) that Amazon Web Services PCS uses to launch instances. If not provided, Amazon Web Services PCS uses the AMI ID specified in the custom launch template.</p>
+    /// <p>The ID of the Amazon Machine Image (AMI) that PCS uses to launch instances. If not provided, PCS uses the AMI ID specified in the custom launch template.</p>
     pub fn ami_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ami_id(input.into());
         self
     }
-    /// <p>The ID of the Amazon Machine Image (AMI) that Amazon Web Services PCS uses to launch instances. If not provided, Amazon Web Services PCS uses the AMI ID specified in the custom launch template.</p>
+    /// <p>The ID of the Amazon Machine Image (AMI) that PCS uses to launch instances. If not provided, PCS uses the AMI ID specified in the custom launch template.</p>
     pub fn set_ami_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ami_id(input);
         self
     }
-    /// <p>The ID of the Amazon Machine Image (AMI) that Amazon Web Services PCS uses to launch instances. If not provided, Amazon Web Services PCS uses the AMI ID specified in the custom launch template.</p>
+    /// <p>The ID of the Amazon Machine Image (AMI) that PCS uses to launch instances. If not provided, PCS uses the AMI ID specified in the custom launch template.</p>
     pub fn get_ami_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_ami_id()
     }
@@ -169,17 +169,17 @@ impl UpdateComputeNodeGroupFluentBuilder {
     pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_subnet_ids()
     }
-    /// <p>An Amazon EC2 launch template Amazon Web Services PCS uses to launch compute nodes.</p>
+    /// <p>An Amazon EC2 launch template PCS uses to launch compute nodes.</p>
     pub fn custom_launch_template(mut self, input: crate::types::CustomLaunchTemplate) -> Self {
         self.inner = self.inner.custom_launch_template(input);
         self
     }
-    /// <p>An Amazon EC2 launch template Amazon Web Services PCS uses to launch compute nodes.</p>
+    /// <p>An Amazon EC2 launch template PCS uses to launch compute nodes.</p>
     pub fn set_custom_launch_template(mut self, input: ::std::option::Option<crate::types::CustomLaunchTemplate>) -> Self {
         self.inner = self.inner.set_custom_launch_template(input);
         self
     }
-    /// <p>An Amazon EC2 launch template Amazon Web Services PCS uses to launch compute nodes.</p>
+    /// <p>An Amazon EC2 launch template PCS uses to launch compute nodes.</p>
     pub fn get_custom_launch_template(&self) -> &::std::option::Option<crate::types::CustomLaunchTemplate> {
         self.inner.get_custom_launch_template()
     }
