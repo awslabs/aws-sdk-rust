@@ -5,11 +5,17 @@
 pub struct DescribeComputationModelInput {
     /// <p>The ID of the computation model.</p>
     pub computation_model_id: ::std::option::Option<::std::string::String>,
+    /// <p>The version of the computation model.</p>
+    pub computation_model_version: ::std::option::Option<::std::string::String>,
 }
 impl DescribeComputationModelInput {
     /// <p>The ID of the computation model.</p>
     pub fn computation_model_id(&self) -> ::std::option::Option<&str> {
         self.computation_model_id.as_deref()
+    }
+    /// <p>The version of the computation model.</p>
+    pub fn computation_model_version(&self) -> ::std::option::Option<&str> {
+        self.computation_model_version.as_deref()
     }
 }
 impl DescribeComputationModelInput {
@@ -24,6 +30,7 @@ impl DescribeComputationModelInput {
 #[non_exhaustive]
 pub struct DescribeComputationModelInputBuilder {
     pub(crate) computation_model_id: ::std::option::Option<::std::string::String>,
+    pub(crate) computation_model_version: ::std::option::Option<::std::string::String>,
 }
 impl DescribeComputationModelInputBuilder {
     /// <p>The ID of the computation model.</p>
@@ -41,6 +48,20 @@ impl DescribeComputationModelInputBuilder {
     pub fn get_computation_model_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.computation_model_id
     }
+    /// <p>The version of the computation model.</p>
+    pub fn computation_model_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.computation_model_version = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The version of the computation model.</p>
+    pub fn set_computation_model_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.computation_model_version = input;
+        self
+    }
+    /// <p>The version of the computation model.</p>
+    pub fn get_computation_model_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.computation_model_version
+    }
     /// Consumes the builder and constructs a [`DescribeComputationModelInput`](crate::operation::describe_computation_model::DescribeComputationModelInput).
     pub fn build(
         self,
@@ -50,6 +71,7 @@ impl DescribeComputationModelInputBuilder {
     > {
         ::std::result::Result::Ok(crate::operation::describe_computation_model::DescribeComputationModelInput {
             computation_model_id: self.computation_model_id,
+            computation_model_version: self.computation_model_version,
         })
     }
 }

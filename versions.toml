@@ -1222,9 +1222,9 @@ model_hash = '61e0049c965c647b0b51322330846ace62d89673bc452b4a51cedb657e89b7eb'
 
 [crates.aws-sdk-iotsitewise]
 category = 'AwsSdk'
-version = '1.89.0'
-source_hash = '80aa76e27e7446ab4d59abcd63d3aa5dc53fa2de4901bc96f4170d1fdbb7e343'
-model_hash = 'b44e6a8fa71607db378766ca1b3355cd32e27c6fe766d4f67536b234d4803d4f'
+version = '1.90.0'
+source_hash = 'f7a421c325f3e3336cfa91c2ac320638d06e2c0d961b80b08b3cd8032f819f7d'
+model_hash = '9749bc183df1e81854ec9a263d82e4db2337c6d4244cd0ff093d55c57d6350a7'
 
 [crates.aws-sdk-iotthingsgraph]
 category = 'AwsSdk'
@@ -2062,9 +2062,9 @@ model_hash = '2ad86fa2c30cc2b8a2786d5e0e3ca072e0f5799cdd78d623e93953e8784df508'
 
 [crates.aws-sdk-s3]
 category = 'AwsSdk'
-version = '1.104.0'
-source_hash = 'e6f6d9d5970e5837a55f9e1394f02d5dc8c852b2cb1613a9f2cfbfdff71cf829'
-model_hash = 'a47da9c27912b5f39271cc02ba2451f76c58569a1a43c36b11444e6225bbd240'
+version = '1.105.0'
+source_hash = '81c9bb08d5b0cf658b6ee4dd1de81664181b59960c3b3fb4a022b5bc906e7de0'
+model_hash = 'd7594eff2b4070dddd45b94f7222f57db10a370ca54f07351ba06764a32dcf58'
 
 [crates.aws-sdk-s3control]
 category = 'AwsSdk'
@@ -2158,9 +2158,9 @@ model_hash = '0e3d29c3525fadad0625fedc9f034bd197e69e5c4382df91b1915cd9cfb108d0'
 
 [crates.aws-sdk-securityhub]
 category = 'AwsSdk'
-version = '1.90.0'
-source_hash = 'e8f166b64b5296ae82405412b20fd88d45815f9f33c7843cc91692913986a133'
-model_hash = 'e90074982dbd3104b4f5e72e838f55e75992697580077f02b2fe41ac84d3a0f3'
+version = '1.91.0'
+source_hash = '3321131110f49b86a2b0b663c598bf964d3cf36cfa6dc1d89b6327b20ecddb99'
+model_hash = '281e68e1638852520959728f5d06922fcf57591a6f81699659fe5d33f73085f1'
 
 [crates.aws-sdk-securityir]
 category = 'AwsSdk'
@@ -2698,11 +2698,7 @@ source_hash = '4c5d5266f2362d2e5151ae84c74d4be93d72b204329d3a66b9acddceaeb83925'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '4eae21d18f13ae2c8b3f5858292cfbd15f9dcb2b92d7ba9aac9878db2a601b2c'
-
-[release]
-tag = 'release-2025-09-05'
-
 [release.crates]
-aws-sdk-ecs = '1.95.1'
-aws-sdk-pcs = '1.50.1'
-aws-sdk-sagemaker = '1.156.0'
+aws-sdk-iotsitewise = '1.90.0'
+aws-sdk-s3 = '1.105.0'
+aws-sdk-securityhub = '1.91.0'

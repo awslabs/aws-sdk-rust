@@ -14,7 +14,7 @@ pub struct ExecuteQueryInput {
     /// <li>
     /// <p>Maximum is 20000</p></li>
     /// <li>
-    /// <p>Default is 250</p></li>
+    /// <p>Default is 20000</p></li>
     /// </ul>
     pub max_results: ::std::option::Option<i32>,
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
@@ -36,7 +36,7 @@ impl ExecuteQueryInput {
     /// <li>
     /// <p>Maximum is 20000</p></li>
     /// <li>
-    /// <p>Default is 250</p></li>
+    /// <p>Default is 20000</p></li>
     /// </ul>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
@@ -99,7 +99,7 @@ impl ExecuteQueryInputBuilder {
     /// <li>
     /// <p>Maximum is 20000</p></li>
     /// <li>
-    /// <p>Default is 250</p></li>
+    /// <p>Default is 20000</p></li>
     /// </ul>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -112,7 +112,7 @@ impl ExecuteQueryInputBuilder {
     /// <li>
     /// <p>Maximum is 20000</p></li>
     /// <li>
-    /// <p>Default is 250</p></li>
+    /// <p>Default is 20000</p></li>
     /// </ul>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
@@ -125,7 +125,7 @@ impl ExecuteQueryInputBuilder {
     /// <li>
     /// <p>Maximum is 20000</p></li>
     /// <li>
-    /// <p>Default is 250</p></li>
+    /// <p>Default is 20000</p></li>
     /// </ul>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results

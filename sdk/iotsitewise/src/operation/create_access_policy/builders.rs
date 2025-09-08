@@ -22,7 +22,9 @@ impl crate::operation::create_access_policy::builders::CreateAccessPolicyInputBu
 }
 /// Fluent builder constructing a request to `CreateAccessPolicy`.
 ///
-/// <p>Creates an access policy that grants the specified identity (IAM Identity Center user, IAM Identity Center group, or IAM user) access to the specified IoT SiteWise Monitor portal or project resource.</p>
+/// <p>Creates an access policy that grants the specified identity (IAM Identity Center user, IAM Identity Center group, or IAM user) access to the specified IoT SiteWise Monitor portal or project resource.</p><note>
+/// <p>Support for access policies that use an SSO Group as the identity is not supported at this time.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateAccessPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -122,4 +122,18 @@ impl DescribeComputationModelFluentBuilder {
     pub fn get_computation_model_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_computation_model_id()
     }
+    /// <p>The version of the computation model.</p>
+    pub fn computation_model_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.computation_model_version(input.into());
+        self
+    }
+    /// <p>The version of the computation model.</p>
+    pub fn set_computation_model_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_computation_model_version(input);
+        self
+    }
+    /// <p>The version of the computation model.</p>
+    pub fn get_computation_model_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_computation_model_version()
+    }
 }

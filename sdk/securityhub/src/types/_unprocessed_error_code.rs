@@ -16,6 +16,7 @@
 ///     UnprocessedErrorCode::InvalidInput => { /* ... */ },
 ///     UnprocessedErrorCode::LimitExceeded => { /* ... */ },
 ///     UnprocessedErrorCode::NotFound => { /* ... */ },
+///     UnprocessedErrorCode::ResourceNotFound => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -52,6 +53,8 @@ pub enum UnprocessedErrorCode {
     LimitExceeded,
     #[allow(missing_docs)] // documentation missing in model
     NotFound,
+    #[allow(missing_docs)] // documentation missing in model
+    ResourceNotFound,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -63,6 +66,7 @@ impl ::std::convert::From<&str> for UnprocessedErrorCode {
             "INVALID_INPUT" => UnprocessedErrorCode::InvalidInput,
             "LIMIT_EXCEEDED" => UnprocessedErrorCode::LimitExceeded,
             "NOT_FOUND" => UnprocessedErrorCode::NotFound,
+            "RESOURCE_NOT_FOUND" => UnprocessedErrorCode::ResourceNotFound,
             other => UnprocessedErrorCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -82,12 +86,13 @@ impl UnprocessedErrorCode {
             UnprocessedErrorCode::InvalidInput => "INVALID_INPUT",
             UnprocessedErrorCode::LimitExceeded => "LIMIT_EXCEEDED",
             UnprocessedErrorCode::NotFound => "NOT_FOUND",
+            UnprocessedErrorCode::ResourceNotFound => "RESOURCE_NOT_FOUND",
             UnprocessedErrorCode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACCESS_DENIED", "INVALID_INPUT", "LIMIT_EXCEEDED", "NOT_FOUND"]
+        &["ACCESS_DENIED", "INVALID_INPUT", "LIMIT_EXCEEDED", "NOT_FOUND", "RESOURCE_NOT_FOUND"]
     }
 }
 impl ::std::convert::AsRef<str> for UnprocessedErrorCode {
@@ -114,6 +119,7 @@ impl ::std::fmt::Display for UnprocessedErrorCode {
             UnprocessedErrorCode::InvalidInput => write!(f, "INVALID_INPUT"),
             UnprocessedErrorCode::LimitExceeded => write!(f, "LIMIT_EXCEEDED"),
             UnprocessedErrorCode::NotFound => write!(f, "NOT_FOUND"),
+            UnprocessedErrorCode::ResourceNotFound => write!(f, "RESOURCE_NOT_FOUND"),
             UnprocessedErrorCode::Unknown(value) => write!(f, "{}", value),
         }
     }
