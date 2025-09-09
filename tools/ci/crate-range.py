@@ -10,14 +10,14 @@
 #
 # generate-matrix
 #
-#   This sub-command counts the total number of crates in the SDK (including examples),
+#   This sub-command counts the total number of crates in the SDK,
 #   and creates a set of batches based on that size in a format that GitHub Actions
 #   can consume as a matrix strategy.
 #
 # run
 #
 #   This sub-command will run the given command on the given crate range.
-#   It deterministically distributes the SDK crates (including examples) fairly across
+#   It deterministically distributes the SDK crates fairly across
 #   the batch range by counting lines of code in attempt to keep batches with roughly
 #   the same workloads.
 #
@@ -109,7 +109,7 @@ def organize_crate_list(batch_count, crates):
     return result
 
 
-# Lists all SDK crates including examples
+# Lists all SDK crates
 def list_crates(repository_root, path):
     to_examine = []
     to_examine.extend(list(map(lambda p: f"{repository_root}/{path}/{p}", os.listdir(f"{repository_root}/{path}"))))
@@ -179,7 +179,7 @@ def main():
     subparser_generate_matrix = subparsers.add_parser("generate-matrix", help="Generate a test matrix")
     subparser_generate_matrix.add_argument("rust_versions", type=str, nargs=argparse.ONE_OR_MORE)
     subparser_generate_matrix.add_argument("-b", type=int, dest="batches", required=True, help="Number of batches")
-    subparser_generate_matrix.add_argument("--folder", required=True, type=str, choices=["sdk", "examples"],
+    subparser_generate_matrix.add_argument("--folder", required=True, type=str, choices=["sdk"],
                                            help="Name of the folder containing the crates you want to generate a "
                                                 "matrix for") 
 
@@ -187,7 +187,7 @@ def main():
     subparser_run.add_argument("-b", required=True, type=int, dest="batches", help="Number of batches")
     subparser_run.add_argument("-s", required=True, type=int, dest="start_inclusive", help="Range start inclusive")
     subparser_run.add_argument("-e", required=True, type=int, dest="end_exclusive", help="Range end exclusive")
-    subparser_run.add_argument("--folder", required=True, type=str, choices=["sdk", "examples"],
+    subparser_run.add_argument("--folder", required=True, type=str, choices=["sdk"],
                                help="Name of the folder containing the crates you want to run a command on")
     subparser_run.add_argument("cmd", type=str, nargs=argparse.ONE_OR_MORE)
 
