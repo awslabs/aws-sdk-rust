@@ -25,6 +25,21 @@ pub fn ser_segment_attribute_value(
             ::aws_smithy_types::Number::NegInt((*var_7).into()),
         );
     }
+    if let Some(var_8) = &input.value_list {
+        let mut array_9 = object.key("ValueList").start_array();
+        for item_10 in var_8 {
+            {
+                #[allow(unused_mut)]
+                let mut object_11 = array_9.value().start_object();
+                crate::protocol_serde::shape_segment_attribute_value::ser_segment_attribute_value(&mut object_11, item_10)?;
+                object_11.finish();
+            }
+        }
+        array_9.finish();
+    }
+    if let Some(var_12) = &input.value_arn {
+        object.key("ValueArn").string(var_12.as_str());
+    }
     Ok(())
 }
 
@@ -59,6 +74,17 @@ where
                             builder = builder.set_value_integer(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "ValueList" => {
+                            builder = builder
+                                .set_value_list(crate::protocol_serde::shape_segment_attribute_value_list::de_segment_attribute_value_list(tokens)?);
+                        }
+                        "ValueArn" => {
+                            builder = builder.set_value_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
                         }

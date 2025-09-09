@@ -23,6 +23,16 @@ impl crate::operation::get_asset_type::builders::GetAssetTypeInputBuilder {
 /// Fluent builder constructing a request to `GetAssetType`.
 ///
 /// <p>Gets an Amazon DataZone asset type.</p>
+/// <p>Asset types define the categories and characteristics of different kinds of data assets within Amazon DataZone.. They determine what metadata fields are required, what operations are possible, and how the asset integrates with other Amazon Web Services services. Asset types can range from built-in types like Amazon S3 buckets and Amazon Web Services Glue tables to custom types defined for specific organizational needs. Understanding asset types is crucial for properly organizing and managing different kinds of data resources.</p>
+/// <p>Prerequisites:</p>
+/// <ul>
+/// <li>
+/// <p>The asset type with identifier must exist in the domain. ResourceNotFoundException.</p></li>
+/// <li>
+/// <p>You must have the GetAssetType permission.</p></li>
+/// <li>
+/// <p>Ensure the domain-identifier value is correct and accessible.</p></li>
+/// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetAssetTypeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

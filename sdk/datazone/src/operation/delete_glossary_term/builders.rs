@@ -23,6 +23,17 @@ impl crate::operation::delete_glossary_term::builders::DeleteGlossaryTermInputBu
 /// Fluent builder constructing a request to `DeleteGlossaryTerm`.
 ///
 /// <p>Deletes a business glossary term in Amazon DataZone.</p>
+/// <p>Prerequisites:</p>
+/// <ul>
+/// <li>
+/// <p>Glossary term must exist and be active.</p></li>
+/// <li>
+/// <p>The term must not be linked to other assets or child terms.</p></li>
+/// <li>
+/// <p>Caller must have delete permissions in the domain/glossary.</p></li>
+/// <li>
+/// <p>Ensure all associations (such as to assets or parent terms) are removed before deletion.</p></li>
+/// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteGlossaryTermFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -23,6 +23,15 @@ impl crate::operation::get_metadata_generation_run::builders::GetMetadataGenerat
 /// Fluent builder constructing a request to `GetMetadataGenerationRun`.
 ///
 /// <p>Gets a metadata generation run in Amazon DataZone.</p>
+/// <p>Prerequisites:</p>
+/// <ul>
+/// <li>
+/// <p>Valid domain and run identifier.</p></li>
+/// <li>
+/// <p>The metadata generation run must exist.</p></li>
+/// <li>
+/// <p>User must have read access to the metadata run.</p></li>
+/// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetMetadataGenerationRunFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

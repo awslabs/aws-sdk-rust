@@ -15,40 +15,50 @@ pub fn ser_put_environment_blueprint_configuration_input_input(
     if let Some(var_4) = &input.environment_role_permission_boundary {
         object.key("environmentRolePermissionBoundary").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.manage_access_role_arn {
-        object.key("manageAccessRoleArn").string(var_5.as_str());
-    }
-    if let Some(var_6) = &input.provisioning_configurations {
-        let mut array_7 = object.key("provisioningConfigurations").start_array();
-        for item_8 in var_6 {
+    if let Some(var_5) = &input.global_parameters {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("globalParameters").start_object();
+        for (key_7, value_8) in var_5 {
             {
-                #[allow(unused_mut)]
-                let mut object_9 = array_7.value().start_object();
-                crate::protocol_serde::shape_provisioning_configuration::ser_provisioning_configuration(&mut object_9, item_8)?;
-                object_9.finish();
+                object_6.key(key_7.as_str()).string(value_8.as_str());
             }
         }
-        array_7.finish();
+        object_6.finish();
     }
-    if let Some(var_10) = &input.provisioning_role_arn {
-        object.key("provisioningRoleArn").string(var_10.as_str());
+    if let Some(var_9) = &input.manage_access_role_arn {
+        object.key("manageAccessRoleArn").string(var_9.as_str());
     }
-    if let Some(var_11) = &input.regional_parameters {
-        #[allow(unused_mut)]
-        let mut object_12 = object.key("regionalParameters").start_object();
-        for (key_13, value_14) in var_11 {
+    if let Some(var_10) = &input.provisioning_configurations {
+        let mut array_11 = object.key("provisioningConfigurations").start_array();
+        for item_12 in var_10 {
             {
                 #[allow(unused_mut)]
-                let mut object_15 = object_12.key(key_13.as_str()).start_object();
-                for (key_16, value_17) in value_14 {
+                let mut object_13 = array_11.value().start_object();
+                crate::protocol_serde::shape_provisioning_configuration::ser_provisioning_configuration(&mut object_13, item_12)?;
+                object_13.finish();
+            }
+        }
+        array_11.finish();
+    }
+    if let Some(var_14) = &input.provisioning_role_arn {
+        object.key("provisioningRoleArn").string(var_14.as_str());
+    }
+    if let Some(var_15) = &input.regional_parameters {
+        #[allow(unused_mut)]
+        let mut object_16 = object.key("regionalParameters").start_object();
+        for (key_17, value_18) in var_15 {
+            {
+                #[allow(unused_mut)]
+                let mut object_19 = object_16.key(key_17.as_str()).start_object();
+                for (key_20, value_21) in value_18 {
                     {
-                        object_15.key(key_16.as_str()).string(value_17.as_str());
+                        object_19.key(key_20.as_str()).string(value_21.as_str());
                     }
                 }
-                object_15.finish();
+                object_19.finish();
             }
         }
-        object_12.finish();
+        object_16.finish();
     }
     Ok(())
 }

@@ -65,6 +65,8 @@ pub(crate) mod shape_create_environment;
 
 pub(crate) mod shape_create_environment_action;
 
+pub(crate) mod shape_create_environment_blueprint;
+
 pub(crate) mod shape_create_environment_profile;
 
 pub(crate) mod shape_create_form_type;
@@ -114,6 +116,8 @@ pub(crate) mod shape_delete_domain_unit;
 pub(crate) mod shape_delete_environment;
 
 pub(crate) mod shape_delete_environment_action;
+
+pub(crate) mod shape_delete_environment_blueprint;
 
 pub(crate) mod shape_delete_environment_blueprint_configuration;
 
@@ -335,6 +339,8 @@ pub(crate) mod shape_update_environment;
 
 pub(crate) mod shape_update_environment_action;
 
+pub(crate) mod shape_update_environment_blueprint;
+
 pub(crate) mod shape_update_environment_profile;
 
 pub(crate) mod shape_update_glossary;
@@ -402,6 +408,8 @@ pub(crate) mod shape_create_domain_input;
 pub(crate) mod shape_create_domain_unit_input;
 
 pub(crate) mod shape_create_environment_action_input;
+
+pub(crate) mod shape_create_environment_blueprint_input;
 
 pub(crate) mod shape_create_environment_input;
 
@@ -493,6 +501,8 @@ pub(crate) mod shape_update_domain_unit_input;
 
 pub(crate) mod shape_update_environment_action_input;
 
+pub(crate) mod shape_update_environment_blueprint_input;
+
 pub(crate) mod shape_update_environment_input;
 
 pub(crate) mod shape_update_environment_profile_input;
@@ -564,6 +574,8 @@ pub(crate) mod shape_connection_properties_output;
 pub(crate) mod shape_connection_properties_patch;
 
 pub(crate) mod shape_connection_summaries;
+
+pub(crate) mod shape_custom_parameter;
 
 pub(crate) mod shape_custom_parameter_list;
 
@@ -834,8 +846,6 @@ pub(crate) mod shape_create_project_from_project_profile_policy_grant_detail;
 pub(crate) mod shape_create_project_policy_grant_detail;
 
 pub(crate) mod shape_custom_account_pool_handler;
-
-pub(crate) mod shape_custom_parameter;
 
 pub(crate) mod shape_data_product_listing;
 

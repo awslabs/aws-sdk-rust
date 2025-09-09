@@ -73,6 +73,8 @@ pub use crate::types::_enabled_service_principal::EnabledServicePrincipal;
 
 pub use crate::types::_account::Account;
 
+pub use crate::types::_account_state::AccountState;
+
 pub use crate::types::_handshake_constraint_violation_exception_reason::HandshakeConstraintViolationExceptionReason;
 
 pub use crate::types::_organization::Organization;
@@ -90,6 +92,8 @@ mod _access_denied_for_dependency_exception_reason;
 mod _account;
 
 mod _account_joined_method;
+
+mod _account_state;
 
 mod _account_status;
 

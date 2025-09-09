@@ -1161,6 +1161,8 @@ pub(crate) mod shape_inbound_additional_recipients;
 
 pub(crate) mod shape_inbound_email_content;
 
+pub(crate) mod shape_input_predefined_attribute_configuration;
+
 pub(crate) mod shape_instance;
 
 pub(crate) mod shape_instance_storage_config;
@@ -1591,6 +1593,10 @@ pub(crate) mod shape_phone_number_status;
 
 pub(crate) mod shape_phone_number_summary;
 
+pub(crate) mod shape_predefined_attribute_configuration;
+
+pub(crate) mod shape_predefined_attribute_purpose_name_list;
+
 pub(crate) mod shape_predefined_attribute_summary;
 
 pub(crate) mod shape_problem_detail;
@@ -1900,6 +1906,8 @@ pub(crate) mod shape_real_time_contact_analysis_matched_details;
 pub(crate) mod shape_real_time_contact_analysis_time_data;
 
 pub(crate) mod shape_real_time_contact_analysis_transcript_item_redaction;
+
+pub(crate) mod shape_segment_attribute_value_list;
 
 pub(crate) mod shape_segment_attribute_value_map;
 

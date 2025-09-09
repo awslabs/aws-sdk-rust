@@ -197,7 +197,7 @@ impl UpdateContactFluentBuilder {
     /// <p>A set of system defined key-value pairs stored on individual contact segments (unique contact ID) using an attribute map. The attributes are standard Amazon Connect attributes. They can be accessed in flows.</p>
     /// <p>Attribute keys can include only alphanumeric, -, and _.</p>
     /// <p>This field can be used to show channel subtype, such as <code>connect:Guide</code>.</p>
-    /// <p>Currently Contact Expiry is the only segment attribute which can be updated by using the UpdateContact API.</p>
+    /// <p>Contact Expiry, and user-defined attributes (String - String) that are defined in predefined attributes, can be updated by using the UpdateContact API.</p>
     pub fn segment_attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::SegmentAttributeValue) -> Self {
         self.inner = self.inner.segment_attributes(k.into(), v);
         self
@@ -205,7 +205,7 @@ impl UpdateContactFluentBuilder {
     /// <p>A set of system defined key-value pairs stored on individual contact segments (unique contact ID) using an attribute map. The attributes are standard Amazon Connect attributes. They can be accessed in flows.</p>
     /// <p>Attribute keys can include only alphanumeric, -, and _.</p>
     /// <p>This field can be used to show channel subtype, such as <code>connect:Guide</code>.</p>
-    /// <p>Currently Contact Expiry is the only segment attribute which can be updated by using the UpdateContact API.</p>
+    /// <p>Contact Expiry, and user-defined attributes (String - String) that are defined in predefined attributes, can be updated by using the UpdateContact API.</p>
     pub fn set_segment_attributes(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SegmentAttributeValue>>,
@@ -216,7 +216,7 @@ impl UpdateContactFluentBuilder {
     /// <p>A set of system defined key-value pairs stored on individual contact segments (unique contact ID) using an attribute map. The attributes are standard Amazon Connect attributes. They can be accessed in flows.</p>
     /// <p>Attribute keys can include only alphanumeric, -, and _.</p>
     /// <p>This field can be used to show channel subtype, such as <code>connect:Guide</code>.</p>
-    /// <p>Currently Contact Expiry is the only segment attribute which can be updated by using the UpdateContact API.</p>
+    /// <p>Contact Expiry, and user-defined attributes (String - String) that are defined in predefined attributes, can be updated by using the UpdateContact API.</p>
     pub fn get_segment_attributes(
         &self,
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SegmentAttributeValue>> {

@@ -23,6 +23,17 @@ impl crate::operation::create_glossary::builders::CreateGlossaryInputBuilder {
 /// Fluent builder constructing a request to `CreateGlossary`.
 ///
 /// <p>Creates an Amazon DataZone business glossary.</p>
+/// <p>Specifies that this is a create glossary policy.</p>
+/// <p>A glossary serves as the central repository for business terminology and definitions within an organization. It helps establish and maintain a common language across different departments and teams, reducing miscommunication and ensuring consistent interpretation of business concepts. Glossaries can include hierarchical relationships between terms, cross-references, and links to actual data assets, making them invaluable for both business users and technical teams trying to understand and use data correctly.</p>
+/// <p>Prerequisites:</p>
+/// <ul>
+/// <li>
+/// <p>Domain must exist and be in an active state.</p></li>
+/// <li>
+/// <p>Owning project must exist and be accessible by the caller.</p></li>
+/// <li>
+/// <p>The glossary name must be unique within the domain.</p></li>
+/// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateGlossaryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

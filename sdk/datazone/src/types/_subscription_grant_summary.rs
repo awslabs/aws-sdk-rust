@@ -14,7 +14,7 @@ pub struct SubscriptionGrantSummary {
     pub domain_id: ::std::string::String,
     /// <p>The timestamp of when a subscription grant was created.</p>
     pub created_at: ::aws_smithy_types::DateTime,
-    /// <p>The timestampf of when the subscription grant was updated.</p>
+    /// <p>The timestamp of when the subscription grant was updated.</p>
     pub updated_at: ::aws_smithy_types::DateTime,
     /// <p>The identifier of the target of the subscription grant.</p>
     pub subscription_target_id: ::std::string::String,
@@ -52,7 +52,7 @@ impl SubscriptionGrantSummary {
     pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
         &self.created_at
     }
-    /// <p>The timestampf of when the subscription grant was updated.</p>
+    /// <p>The timestamp of when the subscription grant was updated.</p>
     pub fn updated_at(&self) -> &::aws_smithy_types::DateTime {
         &self.updated_at
     }
@@ -179,18 +179,18 @@ impl SubscriptionGrantSummaryBuilder {
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_at
     }
-    /// <p>The timestampf of when the subscription grant was updated.</p>
+    /// <p>The timestamp of when the subscription grant was updated.</p>
     /// This field is required.
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The timestampf of when the subscription grant was updated.</p>
+    /// <p>The timestamp of when the subscription grant was updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }
-    /// <p>The timestampf of when the subscription grant was updated.</p>
+    /// <p>The timestamp of when the subscription grant was updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_at
     }

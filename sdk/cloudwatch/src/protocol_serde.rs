@@ -43,6 +43,10 @@ pub(crate) mod shape_delete_metric_stream;
 
 pub(crate) mod shape_delete_metric_stream_input;
 
+pub(crate) mod shape_describe_alarm_contributors;
+
+pub(crate) mod shape_describe_alarm_contributors_input;
+
 pub(crate) mod shape_describe_alarm_history;
 
 pub(crate) mod shape_describe_alarm_history_input;
@@ -231,6 +235,8 @@ pub(crate) mod shape_single_metric_anomaly_detector;
 
 pub(crate) mod shape_tag;
 
+pub(crate) mod shape_alarm_contributors;
+
 pub(crate) mod shape_alarm_history_items;
 
 pub(crate) mod shape_anomaly_detectors;
@@ -283,6 +289,8 @@ pub(crate) mod shape_statistic_set;
 
 pub(crate) mod shape_tag_list;
 
+pub(crate) mod shape_alarm_contributor;
+
 pub(crate) mod shape_alarm_history_item;
 
 pub(crate) mod shape_anomaly_detector;
@@ -314,6 +322,8 @@ pub(crate) mod shape_metric_data_result;
 pub(crate) mod shape_metric_stream_entry;
 
 pub(crate) mod shape_partial_failure;
+
+pub(crate) mod shape_contributor_attributes;
 
 pub(crate) mod shape_datapoint_value_map;
 

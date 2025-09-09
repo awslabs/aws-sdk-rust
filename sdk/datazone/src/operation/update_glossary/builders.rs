@@ -23,6 +23,17 @@ impl crate::operation::update_glossary::builders::UpdateGlossaryInputBuilder {
 /// Fluent builder constructing a request to `UpdateGlossary`.
 ///
 /// <p>Updates the business glossary in Amazon DataZone.</p>
+/// <p>Prerequisites:</p>
+/// <ul>
+/// <li>
+/// <p>The glossary must exist in the given domain.</p></li>
+/// <li>
+/// <p>The caller must have the <code>datazone:UpdateGlossary</code> permission to update it.</p></li>
+/// <li>
+/// <p>When updating the name, the new name must be unique within the domain.</p></li>
+/// <li>
+/// <p>The glossary must not be deleted or in a terminal state.</p></li>
+/// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateGlossaryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

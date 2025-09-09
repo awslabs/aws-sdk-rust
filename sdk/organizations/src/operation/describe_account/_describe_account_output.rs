@@ -3,12 +3,16 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAccountOutput {
-    /// <p>A structure that contains information about the requested account.</p>
+    /// <p>A structure that contains information about the requested account.</p><important>
+    /// <p>The <code>Status</code> parameter in the API response will be retired on September 9, 2026. Although both the account <code>State</code> and account <code>Status</code> parameters are currently available in the Organizations APIs (<code>DescribeAccount</code>, <code>ListAccounts</code>, <code>ListAccountsForParent</code>), we recommend that you update your scripts or other code to use the <code>State</code> parameter instead of <code>Status</code> before September 9, 2026.</p>
+    /// </important>
     pub account: ::std::option::Option<crate::types::Account>,
     _request_id: Option<String>,
 }
 impl DescribeAccountOutput {
-    /// <p>A structure that contains information about the requested account.</p>
+    /// <p>A structure that contains information about the requested account.</p><important>
+    /// <p>The <code>Status</code> parameter in the API response will be retired on September 9, 2026. Although both the account <code>State</code> and account <code>Status</code> parameters are currently available in the Organizations APIs (<code>DescribeAccount</code>, <code>ListAccounts</code>, <code>ListAccountsForParent</code>), we recommend that you update your scripts or other code to use the <code>State</code> parameter instead of <code>Status</code> before September 9, 2026.</p>
+    /// </important>
     pub fn account(&self) -> ::std::option::Option<&crate::types::Account> {
         self.account.as_ref()
     }
@@ -33,17 +37,23 @@ pub struct DescribeAccountOutputBuilder {
     _request_id: Option<String>,
 }
 impl DescribeAccountOutputBuilder {
-    /// <p>A structure that contains information about the requested account.</p>
+    /// <p>A structure that contains information about the requested account.</p><important>
+    /// <p>The <code>Status</code> parameter in the API response will be retired on September 9, 2026. Although both the account <code>State</code> and account <code>Status</code> parameters are currently available in the Organizations APIs (<code>DescribeAccount</code>, <code>ListAccounts</code>, <code>ListAccountsForParent</code>), we recommend that you update your scripts or other code to use the <code>State</code> parameter instead of <code>Status</code> before September 9, 2026.</p>
+    /// </important>
     pub fn account(mut self, input: crate::types::Account) -> Self {
         self.account = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A structure that contains information about the requested account.</p>
+    /// <p>A structure that contains information about the requested account.</p><important>
+    /// <p>The <code>Status</code> parameter in the API response will be retired on September 9, 2026. Although both the account <code>State</code> and account <code>Status</code> parameters are currently available in the Organizations APIs (<code>DescribeAccount</code>, <code>ListAccounts</code>, <code>ListAccountsForParent</code>), we recommend that you update your scripts or other code to use the <code>State</code> parameter instead of <code>Status</code> before September 9, 2026.</p>
+    /// </important>
     pub fn set_account(mut self, input: ::std::option::Option<crate::types::Account>) -> Self {
         self.account = input;
         self
     }
-    /// <p>A structure that contains information about the requested account.</p>
+    /// <p>A structure that contains information about the requested account.</p><important>
+    /// <p>The <code>Status</code> parameter in the API response will be retired on September 9, 2026. Although both the account <code>State</code> and account <code>Status</code> parameters are currently available in the Organizations APIs (<code>DescribeAccount</code>, <code>ListAccounts</code>, <code>ListAccountsForParent</code>), we recommend that you update your scripts or other code to use the <code>State</code> parameter instead of <code>Status</code> before September 9, 2026.</p>
+    /// </important>
     pub fn get_account(&self) -> &::std::option::Option<crate::types::Account> {
         &self.account
     }

@@ -178,6 +178,8 @@ mod create_environment;
 
 mod create_environment_action;
 
+mod create_environment_blueprint;
+
 mod create_environment_profile;
 
 mod create_form_type;
@@ -254,6 +256,8 @@ mod delete_domain_unit;
 mod delete_environment;
 
 mod delete_environment_action;
+
+mod delete_environment_blueprint;
 
 mod delete_environment_blueprint_configuration;
 
@@ -472,6 +476,8 @@ mod update_domain_unit;
 mod update_environment;
 
 mod update_environment_action;
+
+mod update_environment_blueprint;
 
 mod update_environment_profile;
 

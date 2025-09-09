@@ -20,8 +20,21 @@ pub fn de_alarm_history_item(
                 builder = builder.set_alarm_name(var_1);
             }
             ,
-            s if s.matches("AlarmType") /* AlarmType com.amazonaws.cloudwatch#AlarmHistoryItem$AlarmType */ =>  {
+            s if s.matches("AlarmContributorId") /* AlarmContributorId com.amazonaws.cloudwatch#AlarmHistoryItem$AlarmContributorId */ =>  {
                 let var_2 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_alarm_contributor_id(var_2);
+            }
+            ,
+            s if s.matches("AlarmType") /* AlarmType com.amazonaws.cloudwatch#AlarmHistoryItem$AlarmType */ =>  {
+                let var_3 =
                     Some(
                         Result::<crate::types::AlarmType, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::AlarmType::from(
@@ -31,11 +44,11 @@ pub fn de_alarm_history_item(
                         ?
                     )
                 ;
-                builder = builder.set_alarm_type(var_2);
+                builder = builder.set_alarm_type(var_3);
             }
             ,
             s if s.matches("Timestamp") /* Timestamp com.amazonaws.cloudwatch#AlarmHistoryItem$Timestamp */ =>  {
-                let var_3 =
+                let var_4 =
                     Some(
                         ::aws_smithy_types::DateTime::from_str(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -45,11 +58,11 @@ pub fn de_alarm_history_item(
                         ?
                     )
                 ;
-                builder = builder.set_timestamp(var_3);
+                builder = builder.set_timestamp(var_4);
             }
             ,
             s if s.matches("HistoryItemType") /* HistoryItemType com.amazonaws.cloudwatch#AlarmHistoryItem$HistoryItemType */ =>  {
-                let var_4 =
+                let var_5 =
                     Some(
                         Result::<crate::types::HistoryItemType, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::HistoryItemType::from(
@@ -59,23 +72,10 @@ pub fn de_alarm_history_item(
                         ?
                     )
                 ;
-                builder = builder.set_history_item_type(var_4);
+                builder = builder.set_history_item_type(var_5);
             }
             ,
             s if s.matches("HistorySummary") /* HistorySummary com.amazonaws.cloudwatch#AlarmHistoryItem$HistorySummary */ =>  {
-                let var_5 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_history_summary(var_5);
-            }
-            ,
-            s if s.matches("HistoryData") /* HistoryData com.amazonaws.cloudwatch#AlarmHistoryItem$HistoryData */ =>  {
                 let var_6 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -85,7 +85,30 @@ pub fn de_alarm_history_item(
                         ?
                     )
                 ;
-                builder = builder.set_history_data(var_6);
+                builder = builder.set_history_summary(var_6);
+            }
+            ,
+            s if s.matches("HistoryData") /* HistoryData com.amazonaws.cloudwatch#AlarmHistoryItem$HistoryData */ =>  {
+                let var_7 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_history_data(var_7);
+            }
+            ,
+            s if s.matches("AlarmContributorAttributes") /* AlarmContributorAttributes com.amazonaws.cloudwatch#AlarmHistoryItem$AlarmContributorAttributes */ =>  {
+                let var_8 =
+                    Some(
+                        crate::protocol_serde::shape_contributor_attributes::de_contributor_attributes(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_alarm_contributor_attributes(var_8);
             }
             ,
             _ => {}

@@ -23,6 +23,13 @@ impl crate::operation::list_asset_filters::builders::ListAssetFiltersInputBuilde
 /// Fluent builder constructing a request to `ListAssetFilters`.
 ///
 /// <p>Lists asset filters.</p>
+/// <p>Prerequisites:</p>
+/// <ul>
+/// <li>
+/// <p>A valid domain and asset must exist.</p></li>
+/// <li>
+/// <p>The asset must have at least one filter created to return results.</p></li>
+/// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListAssetFiltersFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

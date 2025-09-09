@@ -101,7 +101,11 @@ pub use crate::types::_alarm_history_item::AlarmHistoryItem;
 
 pub use crate::types::_history_item_type::HistoryItemType;
 
+pub use crate::types::_alarm_contributor::AlarmContributor;
+
 mod _actions_suppressed_by;
+
+mod _alarm_contributor;
 
 mod _alarm_history_item;
 

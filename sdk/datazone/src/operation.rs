@@ -64,6 +64,9 @@ pub mod create_environment;
 /// Types for the `CreateEnvironmentAction` operation.
 pub mod create_environment_action;
 
+/// Types for the `CreateEnvironmentBlueprint` operation.
+pub mod create_environment_blueprint;
+
 /// Types for the `CreateEnvironmentProfile` operation.
 pub mod create_environment_profile;
 
@@ -138,6 +141,9 @@ pub mod delete_environment;
 
 /// Types for the `DeleteEnvironmentAction` operation.
 pub mod delete_environment_action;
+
+/// Types for the `DeleteEnvironmentBlueprint` operation.
+pub mod delete_environment_blueprint;
 
 /// Types for the `DeleteEnvironmentBlueprintConfiguration` operation.
 pub mod delete_environment_blueprint_configuration;
@@ -465,6 +471,9 @@ pub mod update_environment;
 
 /// Types for the `UpdateEnvironmentAction` operation.
 pub mod update_environment_action;
+
+/// Types for the `UpdateEnvironmentBlueprint` operation.
+pub mod update_environment_blueprint;
 
 /// Types for the `UpdateEnvironmentProfile` operation.
 pub mod update_environment_profile;

@@ -9,6 +9,10 @@ pub struct CreatePredefinedAttributeInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The values of the predefined attribute.</p>
     pub values: ::std::option::Option<crate::types::PredefinedAttributeValues>,
+    /// <p>Values that enable you to categorize your predefined attributes. You can use them in custom UI elements across the Amazon Connect admin website.</p>
+    pub purposes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Custom metadata that is associated to predefined attributes to control behavior in upstream services, such as controlling how a predefined attribute should be displayed in the Amazon Connect admin website.</p>
+    pub attribute_configuration: ::std::option::Option<crate::types::InputPredefinedAttributeConfiguration>,
 }
 impl CreatePredefinedAttributeInput {
     /// <p>The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance.</p>
@@ -22,6 +26,16 @@ impl CreatePredefinedAttributeInput {
     /// <p>The values of the predefined attribute.</p>
     pub fn values(&self) -> ::std::option::Option<&crate::types::PredefinedAttributeValues> {
         self.values.as_ref()
+    }
+    /// <p>Values that enable you to categorize your predefined attributes. You can use them in custom UI elements across the Amazon Connect admin website.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.purposes.is_none()`.
+    pub fn purposes(&self) -> &[::std::string::String] {
+        self.purposes.as_deref().unwrap_or_default()
+    }
+    /// <p>Custom metadata that is associated to predefined attributes to control behavior in upstream services, such as controlling how a predefined attribute should be displayed in the Amazon Connect admin website.</p>
+    pub fn attribute_configuration(&self) -> ::std::option::Option<&crate::types::InputPredefinedAttributeConfiguration> {
+        self.attribute_configuration.as_ref()
     }
 }
 impl CreatePredefinedAttributeInput {
@@ -38,6 +52,8 @@ pub struct CreatePredefinedAttributeInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) values: ::std::option::Option<crate::types::PredefinedAttributeValues>,
+    pub(crate) purposes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) attribute_configuration: ::std::option::Option<crate::types::InputPredefinedAttributeConfiguration>,
 }
 impl CreatePredefinedAttributeInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance.</p>
@@ -71,7 +87,6 @@ impl CreatePredefinedAttributeInputBuilder {
         &self.name
     }
     /// <p>The values of the predefined attribute.</p>
-    /// This field is required.
     pub fn values(mut self, input: crate::types::PredefinedAttributeValues) -> Self {
         self.values = ::std::option::Option::Some(input);
         self
@@ -85,6 +100,40 @@ impl CreatePredefinedAttributeInputBuilder {
     pub fn get_values(&self) -> &::std::option::Option<crate::types::PredefinedAttributeValues> {
         &self.values
     }
+    /// Appends an item to `purposes`.
+    ///
+    /// To override the contents of this collection use [`set_purposes`](Self::set_purposes).
+    ///
+    /// <p>Values that enable you to categorize your predefined attributes. You can use them in custom UI elements across the Amazon Connect admin website.</p>
+    pub fn purposes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.purposes.unwrap_or_default();
+        v.push(input.into());
+        self.purposes = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Values that enable you to categorize your predefined attributes. You can use them in custom UI elements across the Amazon Connect admin website.</p>
+    pub fn set_purposes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.purposes = input;
+        self
+    }
+    /// <p>Values that enable you to categorize your predefined attributes. You can use them in custom UI elements across the Amazon Connect admin website.</p>
+    pub fn get_purposes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.purposes
+    }
+    /// <p>Custom metadata that is associated to predefined attributes to control behavior in upstream services, such as controlling how a predefined attribute should be displayed in the Amazon Connect admin website.</p>
+    pub fn attribute_configuration(mut self, input: crate::types::InputPredefinedAttributeConfiguration) -> Self {
+        self.attribute_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Custom metadata that is associated to predefined attributes to control behavior in upstream services, such as controlling how a predefined attribute should be displayed in the Amazon Connect admin website.</p>
+    pub fn set_attribute_configuration(mut self, input: ::std::option::Option<crate::types::InputPredefinedAttributeConfiguration>) -> Self {
+        self.attribute_configuration = input;
+        self
+    }
+    /// <p>Custom metadata that is associated to predefined attributes to control behavior in upstream services, such as controlling how a predefined attribute should be displayed in the Amazon Connect admin website.</p>
+    pub fn get_attribute_configuration(&self) -> &::std::option::Option<crate::types::InputPredefinedAttributeConfiguration> {
+        &self.attribute_configuration
+    }
     /// Consumes the builder and constructs a [`CreatePredefinedAttributeInput`](crate::operation::create_predefined_attribute::CreatePredefinedAttributeInput).
     pub fn build(
         self,
@@ -96,6 +145,8 @@ impl CreatePredefinedAttributeInputBuilder {
             instance_id: self.instance_id,
             name: self.name,
             values: self.values,
+            purposes: self.purposes,
+            attribute_configuration: self.attribute_configuration,
         })
     }
 }

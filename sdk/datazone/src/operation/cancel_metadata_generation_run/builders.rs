@@ -23,6 +23,15 @@ impl crate::operation::cancel_metadata_generation_run::builders::CancelMetadataG
 /// Fluent builder constructing a request to `CancelMetadataGenerationRun`.
 ///
 /// <p>Cancels the metadata generation run.</p>
+/// <p>Prerequisites:</p>
+/// <ul>
+/// <li>
+/// <p>The run must exist and be in a cancelable status (e.g., SUBMITTED, IN_PROGRESS).</p></li>
+/// <li>
+/// <p>Runs in SUCCEEDED status cannot be cancelled.</p></li>
+/// <li>
+/// <p>User must have access to the run and cancel permissions.</p></li>
+/// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CancelMetadataGenerationRunFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

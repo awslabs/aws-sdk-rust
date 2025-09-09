@@ -72,3 +72,5 @@ pub use crate::types::_metric_alarm::MetricAlarmBuilder;
 pub use crate::types::_composite_alarm::CompositeAlarmBuilder;
 
 pub use crate::types::_alarm_history_item::AlarmHistoryItemBuilder;
+
+pub use crate::types::_alarm_contributor::AlarmContributorBuilder;

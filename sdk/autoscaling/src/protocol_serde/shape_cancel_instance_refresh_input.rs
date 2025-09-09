@@ -10,6 +10,11 @@ pub fn ser_cancel_instance_refresh_input_input_input(
     if let Some(var_2) = &input.auto_scaling_group_name {
         scope_1.string(var_2);
     }
+    #[allow(unused_mut)]
+    let mut scope_3 = writer.prefix("WaitForTransitioningInstances");
+    if let Some(var_4) = &input.wait_for_transitioning_instances {
+        scope_3.boolean(*var_4);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

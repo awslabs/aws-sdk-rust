@@ -3,14 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAccountsOutput {
-    /// <p>A list of objects in the organization.</p>
+    /// <p>A list of objects in the organization.</p><important>
+    /// <p>The <code>Status</code> parameter in the API response will be retired on September 9, 2026. Although both the account <code>State</code> and account <code>Status</code> parameters are currently available in the Organizations APIs (<code>DescribeAccount</code>, <code>ListAccounts</code>, <code>ListAccountsForParent</code>), we recommend that you update your scripts or other code to use the <code>State</code> parameter instead of <code>Status</code> before September 9, 2026.</p>
+    /// </important>
     pub accounts: ::std::option::Option<::std::vec::Vec<crate::types::Account>>,
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListAccountsOutput {
-    /// <p>A list of objects in the organization.</p>
+    /// <p>A list of objects in the organization.</p><important>
+    /// <p>The <code>Status</code> parameter in the API response will be retired on September 9, 2026. Although both the account <code>State</code> and account <code>Status</code> parameters are currently available in the Organizations APIs (<code>DescribeAccount</code>, <code>ListAccounts</code>, <code>ListAccountsForParent</code>), we recommend that you update your scripts or other code to use the <code>State</code> parameter instead of <code>Status</code> before September 9, 2026.</p>
+    /// </important>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.accounts.is_none()`.
     pub fn accounts(&self) -> &[crate::types::Account] {
@@ -46,19 +50,25 @@ impl ListAccountsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_accounts`](Self::set_accounts).
     ///
-    /// <p>A list of objects in the organization.</p>
+    /// <p>A list of objects in the organization.</p><important>
+    /// <p>The <code>Status</code> parameter in the API response will be retired on September 9, 2026. Although both the account <code>State</code> and account <code>Status</code> parameters are currently available in the Organizations APIs (<code>DescribeAccount</code>, <code>ListAccounts</code>, <code>ListAccountsForParent</code>), we recommend that you update your scripts or other code to use the <code>State</code> parameter instead of <code>Status</code> before September 9, 2026.</p>
+    /// </important>
     pub fn accounts(mut self, input: crate::types::Account) -> Self {
         let mut v = self.accounts.unwrap_or_default();
         v.push(input);
         self.accounts = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of objects in the organization.</p>
+    /// <p>A list of objects in the organization.</p><important>
+    /// <p>The <code>Status</code> parameter in the API response will be retired on September 9, 2026. Although both the account <code>State</code> and account <code>Status</code> parameters are currently available in the Organizations APIs (<code>DescribeAccount</code>, <code>ListAccounts</code>, <code>ListAccountsForParent</code>), we recommend that you update your scripts or other code to use the <code>State</code> parameter instead of <code>Status</code> before September 9, 2026.</p>
+    /// </important>
     pub fn set_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Account>>) -> Self {
         self.accounts = input;
         self
     }
-    /// <p>A list of objects in the organization.</p>
+    /// <p>A list of objects in the organization.</p><important>
+    /// <p>The <code>Status</code> parameter in the API response will be retired on September 9, 2026. Although both the account <code>State</code> and account <code>Status</code> parameters are currently available in the Organizations APIs (<code>DescribeAccount</code>, <code>ListAccounts</code>, <code>ListAccountsForParent</code>), we recommend that you update your scripts or other code to use the <code>State</code> parameter instead of <code>Status</code> before September 9, 2026.</p>
+    /// </important>
     pub fn get_accounts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Account>> {
         &self.accounts
     }

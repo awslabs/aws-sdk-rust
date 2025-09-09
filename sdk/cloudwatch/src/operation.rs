@@ -16,6 +16,9 @@ pub mod delete_insight_rules;
 /// Types for the `DeleteMetricStream` operation.
 pub mod delete_metric_stream;
 
+/// Types for the `DescribeAlarmContributors` operation.
+pub mod describe_alarm_contributors;
+
 /// Types for the `DescribeAlarmHistory` operation.
 pub mod describe_alarm_history;
 

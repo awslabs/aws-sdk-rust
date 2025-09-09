@@ -3,11 +3,26 @@ pub fn ser_update_predefined_attribute_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_predefined_attribute::UpdatePredefinedAttributeInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.values {
+    if let Some(var_1) = &input.attribute_configuration {
         #[allow(unused_mut)]
-        let mut object_2 = object.key("Values").start_object();
-        crate::protocol_serde::shape_predefined_attribute_values::ser_predefined_attribute_values(&mut object_2, var_1)?;
+        let mut object_2 = object.key("AttributeConfiguration").start_object();
+        crate::protocol_serde::shape_input_predefined_attribute_configuration::ser_input_predefined_attribute_configuration(&mut object_2, var_1)?;
         object_2.finish();
+    }
+    if let Some(var_3) = &input.purposes {
+        let mut array_4 = object.key("Purposes").start_array();
+        for item_5 in var_3 {
+            {
+                array_4.value().string(item_5.as_str());
+            }
+        }
+        array_4.finish();
+    }
+    if let Some(var_6) = &input.values {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("Values").start_object();
+        crate::protocol_serde::shape_predefined_attribute_values::ser_predefined_attribute_values(&mut object_7, var_6)?;
+        object_7.finish();
     }
     Ok(())
 }

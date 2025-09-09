@@ -23,6 +23,15 @@ impl crate::operation::get_data_product::builders::GetDataProductInputBuilder {
 /// Fluent builder constructing a request to `GetDataProduct`.
 ///
 /// <p>Gets the data product.</p>
+/// <p>Prerequisites:</p>
+/// <ul>
+/// <li>
+/// <p>The data product ID must exist.</p></li>
+/// <li>
+/// <p>The domain must be valid and accessible.</p></li>
+/// <li>
+/// <p>User must have read or discovery permissions for the data product.</p></li>
+/// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetDataProductFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

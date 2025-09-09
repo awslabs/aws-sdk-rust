@@ -45,6 +45,9 @@ pub fn ser_domain_settings(
         crate::protocol_serde::shape_unified_studio_settings::ser_unified_studio_settings(&mut object_14, var_13)?;
         object_14.finish();
     }
+    if let Some(var_15) = &input.ip_address_type {
+        object.key("IpAddressType").string(var_15.as_str());
+    }
     Ok(())
 }
 
@@ -94,6 +97,13 @@ where
                         "UnifiedStudioSettings" => {
                             builder = builder.set_unified_studio_settings(
                                 crate::protocol_serde::shape_unified_studio_settings::de_unified_studio_settings(tokens)?,
+                            );
+                        }
+                        "IpAddressType" => {
+                            builder = builder.set_ip_address_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::IpAddressType::from(u.as_ref())))
+                                    .transpose()?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

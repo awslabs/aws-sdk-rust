@@ -207,6 +207,8 @@ mod delete_insight_rules;
 
 mod delete_metric_stream;
 
+mod describe_alarm_contributors;
+
 mod describe_alarm_history;
 
 mod describe_alarms;

@@ -97,6 +97,8 @@ pub use crate::types::_outbound_email_config::OutboundEmailConfigBuilder;
 
 pub use crate::types::_outbound_caller_config::OutboundCallerConfigBuilder;
 
+pub use crate::types::_input_predefined_attribute_configuration::InputPredefinedAttributeConfigurationBuilder;
+
 pub use crate::types::_chat_participant_role_config::ChatParticipantRoleConfigBuilder;
 
 pub use crate::types::_participant_timer_configuration::ParticipantTimerConfigurationBuilder;
@@ -308,6 +310,8 @@ pub use crate::types::_prompt_search_criteria::PromptSearchCriteriaBuilder;
 pub use crate::types::_prompt_search_filter::PromptSearchFilterBuilder;
 
 pub use crate::types::_predefined_attribute::PredefinedAttributeBuilder;
+
+pub use crate::types::_predefined_attribute_configuration::PredefinedAttributeConfigurationBuilder;
 
 pub use crate::types::_predefined_attribute_search_criteria::PredefinedAttributeSearchCriteriaBuilder;
 

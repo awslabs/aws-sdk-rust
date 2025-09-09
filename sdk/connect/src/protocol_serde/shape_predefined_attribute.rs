@@ -26,6 +26,18 @@ where
                                 tokens,
                             )?);
                         }
+                        "Purposes" => {
+                            builder = builder.set_purposes(
+                                crate::protocol_serde::shape_predefined_attribute_purpose_name_list::de_predefined_attribute_purpose_name_list(
+                                    tokens,
+                                )?,
+                            );
+                        }
+                        "AttributeConfiguration" => {
+                            builder = builder.set_attribute_configuration(
+                                crate::protocol_serde::shape_predefined_attribute_configuration::de_predefined_attribute_configuration(tokens)?,
+                            );
+                        }
                         "LastModifiedTime" => {
                             builder = builder.set_last_modified_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),

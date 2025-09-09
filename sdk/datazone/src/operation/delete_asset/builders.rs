@@ -23,6 +23,18 @@ impl crate::operation::delete_asset::builders::DeleteAssetInputBuilder {
 /// Fluent builder constructing a request to `DeleteAsset`.
 ///
 /// <p>Deletes an asset in Amazon DataZone.</p>
+/// <ul>
+/// <li>
+/// <p>--domain-identifier must refer to a valid and existing domain.</p></li>
+/// <li>
+/// <p>--identifier must refer to an existing asset in the specified domain.</p></li>
+/// <li>
+/// <p>Asset must not be referenced in any existing asset filters.</p></li>
+/// <li>
+/// <p>Asset must not be linked to any draft or published data product.</p></li>
+/// <li>
+/// <p>User must have delete permissions for the domain and project.</p></li>
+/// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteAssetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -42,3 +42,13 @@ where
         )),
     }
 }
+
+pub fn ser_cloud_formation_properties(
+    object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
+    input: &crate::types::CloudFormationProperties,
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("templateUrl").string(input.template_url.as_str());
+    }
+    Ok(())
+}

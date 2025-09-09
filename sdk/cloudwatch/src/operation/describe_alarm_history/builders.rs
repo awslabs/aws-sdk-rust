@@ -130,6 +130,20 @@ impl DescribeAlarmHistoryFluentBuilder {
     pub fn get_alarm_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_alarm_name()
     }
+    /// <p>The unique identifier of a specific alarm contributor to filter the alarm history results.</p>
+    pub fn alarm_contributor_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.alarm_contributor_id(input.into());
+        self
+    }
+    /// <p>The unique identifier of a specific alarm contributor to filter the alarm history results.</p>
+    pub fn set_alarm_contributor_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_alarm_contributor_id(input);
+        self
+    }
+    /// <p>The unique identifier of a specific alarm contributor to filter the alarm history results.</p>
+    pub fn get_alarm_contributor_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_alarm_contributor_id()
+    }
     ///
     /// Appends an item to `AlarmTypes`.
     ///

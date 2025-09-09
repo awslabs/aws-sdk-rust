@@ -22,7 +22,20 @@ impl crate::operation::delete_form_type::builders::DeleteFormTypeInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteFormType`.
 ///
-/// <p>Delets and metadata form type in Amazon DataZone.</p>
+/// <p>Deletes and metadata form type in Amazon DataZone.</p>
+/// <p>Prerequisites:</p>
+/// <ul>
+/// <li>
+/// <p>The form type must exist in the domain.</p></li>
+/// <li>
+/// <p>The form type must not be in use by any asset types or assets.</p></li>
+/// <li>
+/// <p>The domain must be valid and accessible.</p></li>
+/// <li>
+/// <p>User must have delete permissions on the form type.</p></li>
+/// <li>
+/// <p>Any dependencies (such as linked asset types) must be removed first.</p></li>
+/// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteFormTypeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -793,6 +793,54 @@ impl From<crate::operation::create_environment_action::CreateEnvironmentActionEr
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_environment_blueprint::CreateEnvironmentBlueprintError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_environment_blueprint::CreateEnvironmentBlueprintError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_environment_blueprint::CreateEnvironmentBlueprintError> for Error {
+    fn from(err: crate::operation::create_environment_blueprint::CreateEnvironmentBlueprintError) -> Self {
+        match err {
+            crate::operation::create_environment_blueprint::CreateEnvironmentBlueprintError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_environment_blueprint::CreateEnvironmentBlueprintError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::create_environment_blueprint::CreateEnvironmentBlueprintError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_environment_blueprint::CreateEnvironmentBlueprintError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_environment_blueprint::CreateEnvironmentBlueprintError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_environment_blueprint::CreateEnvironmentBlueprintError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::create_environment_blueprint::CreateEnvironmentBlueprintError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::create_environment_blueprint::CreateEnvironmentBlueprintError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::create_environment_blueprint::CreateEnvironmentBlueprintError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_environment_profile::CreateEnvironmentProfileError, R>>
     for Error
 where
@@ -1624,6 +1672,51 @@ impl From<crate::operation::delete_environment_action::DeleteEnvironmentActionEr
                 Error::UnauthorizedException(inner)
             }
             crate::operation::delete_environment_action::DeleteEnvironmentActionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_environment_blueprint::DeleteEnvironmentBlueprintError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_environment_blueprint::DeleteEnvironmentBlueprintError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_environment_blueprint::DeleteEnvironmentBlueprintError> for Error {
+    fn from(err: crate::operation::delete_environment_blueprint::DeleteEnvironmentBlueprintError) -> Self {
+        match err {
+            crate::operation::delete_environment_blueprint::DeleteEnvironmentBlueprintError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_environment_blueprint::DeleteEnvironmentBlueprintError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::delete_environment_blueprint::DeleteEnvironmentBlueprintError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_environment_blueprint::DeleteEnvironmentBlueprintError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_environment_blueprint::DeleteEnvironmentBlueprintError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::delete_environment_blueprint::DeleteEnvironmentBlueprintError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_environment_blueprint::DeleteEnvironmentBlueprintError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::delete_environment_blueprint::DeleteEnvironmentBlueprintError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -5262,6 +5355,54 @@ impl From<crate::operation::update_environment_action::UpdateEnvironmentActionEr
                 Error::UnauthorizedException(inner)
             }
             crate::operation::update_environment_action::UpdateEnvironmentActionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_environment_blueprint::UpdateEnvironmentBlueprintError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_environment_blueprint::UpdateEnvironmentBlueprintError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_environment_blueprint::UpdateEnvironmentBlueprintError> for Error {
+    fn from(err: crate::operation::update_environment_blueprint::UpdateEnvironmentBlueprintError) -> Self {
+        match err {
+            crate::operation::update_environment_blueprint::UpdateEnvironmentBlueprintError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_environment_blueprint::UpdateEnvironmentBlueprintError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::update_environment_blueprint::UpdateEnvironmentBlueprintError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_environment_blueprint::UpdateEnvironmentBlueprintError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_environment_blueprint::UpdateEnvironmentBlueprintError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::update_environment_blueprint::UpdateEnvironmentBlueprintError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_environment_blueprint::UpdateEnvironmentBlueprintError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::update_environment_blueprint::UpdateEnvironmentBlueprintError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::update_environment_blueprint::UpdateEnvironmentBlueprintError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

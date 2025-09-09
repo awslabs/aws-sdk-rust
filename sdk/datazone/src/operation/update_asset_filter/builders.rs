@@ -23,6 +23,15 @@ impl crate::operation::update_asset_filter::builders::UpdateAssetFilterInputBuil
 /// Fluent builder constructing a request to `UpdateAssetFilter`.
 ///
 /// <p>Updates an asset filter.</p>
+/// <p>Prerequisites:</p>
+/// <ul>
+/// <li>
+/// <p>The domain, asset, and asset filter identifier must all exist.</p></li>
+/// <li>
+/// <p>The asset must contain the columns being referenced in the update.</p></li>
+/// <li>
+/// <p>If applying a row filter, ensure the column referenced in the expression exists in the asset schema.</p></li>
+/// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateAssetFilterFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

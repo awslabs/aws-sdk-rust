@@ -10,6 +10,10 @@ pub struct SegmentAttributeValue {
     pub value_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SegmentAttributeValue>>,
     /// <p>The value of a segment attribute.</p>
     pub value_integer: ::std::option::Option<i32>,
+    /// <p>The value of a segment attribute. This is only supported for system-defined attributes, not for user-defined attributes.</p>
+    pub value_list: ::std::option::Option<::std::vec::Vec<crate::types::SegmentAttributeValue>>,
+    /// <p>The value of a segment attribute that has to be a valid ARN. This is only supported for system-defined attributes, not for user-defined attributes.</p>
+    pub value_arn: ::std::option::Option<::std::string::String>,
 }
 impl SegmentAttributeValue {
     /// <p>The value of a segment attribute.</p>
@@ -23,6 +27,16 @@ impl SegmentAttributeValue {
     /// <p>The value of a segment attribute.</p>
     pub fn value_integer(&self) -> ::std::option::Option<i32> {
         self.value_integer
+    }
+    /// <p>The value of a segment attribute. This is only supported for system-defined attributes, not for user-defined attributes.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.value_list.is_none()`.
+    pub fn value_list(&self) -> &[crate::types::SegmentAttributeValue] {
+        self.value_list.as_deref().unwrap_or_default()
+    }
+    /// <p>The value of a segment attribute that has to be a valid ARN. This is only supported for system-defined attributes, not for user-defined attributes.</p>
+    pub fn value_arn(&self) -> ::std::option::Option<&str> {
+        self.value_arn.as_deref()
     }
 }
 impl SegmentAttributeValue {
@@ -39,6 +53,8 @@ pub struct SegmentAttributeValueBuilder {
     pub(crate) value_string: ::std::option::Option<::std::string::String>,
     pub(crate) value_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SegmentAttributeValue>>,
     pub(crate) value_integer: ::std::option::Option<i32>,
+    pub(crate) value_list: ::std::option::Option<::std::vec::Vec<crate::types::SegmentAttributeValue>>,
+    pub(crate) value_arn: ::std::option::Option<::std::string::String>,
 }
 impl SegmentAttributeValueBuilder {
     /// <p>The value of a segment attribute.</p>
@@ -92,12 +108,48 @@ impl SegmentAttributeValueBuilder {
     pub fn get_value_integer(&self) -> &::std::option::Option<i32> {
         &self.value_integer
     }
+    /// Appends an item to `value_list`.
+    ///
+    /// To override the contents of this collection use [`set_value_list`](Self::set_value_list).
+    ///
+    /// <p>The value of a segment attribute. This is only supported for system-defined attributes, not for user-defined attributes.</p>
+    pub fn value_list(mut self, input: crate::types::SegmentAttributeValue) -> Self {
+        let mut v = self.value_list.unwrap_or_default();
+        v.push(input);
+        self.value_list = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The value of a segment attribute. This is only supported for system-defined attributes, not for user-defined attributes.</p>
+    pub fn set_value_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SegmentAttributeValue>>) -> Self {
+        self.value_list = input;
+        self
+    }
+    /// <p>The value of a segment attribute. This is only supported for system-defined attributes, not for user-defined attributes.</p>
+    pub fn get_value_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SegmentAttributeValue>> {
+        &self.value_list
+    }
+    /// <p>The value of a segment attribute that has to be a valid ARN. This is only supported for system-defined attributes, not for user-defined attributes.</p>
+    pub fn value_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.value_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The value of a segment attribute that has to be a valid ARN. This is only supported for system-defined attributes, not for user-defined attributes.</p>
+    pub fn set_value_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.value_arn = input;
+        self
+    }
+    /// <p>The value of a segment attribute that has to be a valid ARN. This is only supported for system-defined attributes, not for user-defined attributes.</p>
+    pub fn get_value_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value_arn
+    }
     /// Consumes the builder and constructs a [`SegmentAttributeValue`](crate::types::SegmentAttributeValue).
     pub fn build(self) -> crate::types::SegmentAttributeValue {
         crate::types::SegmentAttributeValue {
             value_string: self.value_string,
             value_map: self.value_map,
             value_integer: self.value_integer,
+            value_list: self.value_list,
+            value_arn: self.value_arn,
         }
     }
 }

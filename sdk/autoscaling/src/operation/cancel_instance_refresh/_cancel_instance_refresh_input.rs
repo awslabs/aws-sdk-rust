@@ -5,11 +5,19 @@
 pub struct CancelInstanceRefreshInput {
     /// <p>The name of the Auto Scaling group.</p>
     pub auto_scaling_group_name: ::std::option::Option<::std::string::String>,
+    /// <p>When cancelling an instance refresh, this indicates whether to wait for in-flight launches and terminations to complete. The default is true.</p>
+    /// <p>When set to false, Amazon EC2 Auto Scaling cancels the instance refresh without waiting for any pending launches or terminations to complete.</p>
+    pub wait_for_transitioning_instances: ::std::option::Option<bool>,
 }
 impl CancelInstanceRefreshInput {
     /// <p>The name of the Auto Scaling group.</p>
     pub fn auto_scaling_group_name(&self) -> ::std::option::Option<&str> {
         self.auto_scaling_group_name.as_deref()
+    }
+    /// <p>When cancelling an instance refresh, this indicates whether to wait for in-flight launches and terminations to complete. The default is true.</p>
+    /// <p>When set to false, Amazon EC2 Auto Scaling cancels the instance refresh without waiting for any pending launches or terminations to complete.</p>
+    pub fn wait_for_transitioning_instances(&self) -> ::std::option::Option<bool> {
+        self.wait_for_transitioning_instances
     }
 }
 impl CancelInstanceRefreshInput {
@@ -24,6 +32,7 @@ impl CancelInstanceRefreshInput {
 #[non_exhaustive]
 pub struct CancelInstanceRefreshInputBuilder {
     pub(crate) auto_scaling_group_name: ::std::option::Option<::std::string::String>,
+    pub(crate) wait_for_transitioning_instances: ::std::option::Option<bool>,
 }
 impl CancelInstanceRefreshInputBuilder {
     /// <p>The name of the Auto Scaling group.</p>
@@ -41,6 +50,23 @@ impl CancelInstanceRefreshInputBuilder {
     pub fn get_auto_scaling_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.auto_scaling_group_name
     }
+    /// <p>When cancelling an instance refresh, this indicates whether to wait for in-flight launches and terminations to complete. The default is true.</p>
+    /// <p>When set to false, Amazon EC2 Auto Scaling cancels the instance refresh without waiting for any pending launches or terminations to complete.</p>
+    pub fn wait_for_transitioning_instances(mut self, input: bool) -> Self {
+        self.wait_for_transitioning_instances = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>When cancelling an instance refresh, this indicates whether to wait for in-flight launches and terminations to complete. The default is true.</p>
+    /// <p>When set to false, Amazon EC2 Auto Scaling cancels the instance refresh without waiting for any pending launches or terminations to complete.</p>
+    pub fn set_wait_for_transitioning_instances(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.wait_for_transitioning_instances = input;
+        self
+    }
+    /// <p>When cancelling an instance refresh, this indicates whether to wait for in-flight launches and terminations to complete. The default is true.</p>
+    /// <p>When set to false, Amazon EC2 Auto Scaling cancels the instance refresh without waiting for any pending launches or terminations to complete.</p>
+    pub fn get_wait_for_transitioning_instances(&self) -> &::std::option::Option<bool> {
+        &self.wait_for_transitioning_instances
+    }
     /// Consumes the builder and constructs a [`CancelInstanceRefreshInput`](crate::operation::cancel_instance_refresh::CancelInstanceRefreshInput).
     pub fn build(
         self,
@@ -48,6 +74,7 @@ impl CancelInstanceRefreshInputBuilder {
     {
         ::std::result::Result::Ok(crate::operation::cancel_instance_refresh::CancelInstanceRefreshInput {
             auto_scaling_group_name: self.auto_scaling_group_name,
+            wait_for_transitioning_instances: self.wait_for_transitioning_instances,
         })
     }
 }

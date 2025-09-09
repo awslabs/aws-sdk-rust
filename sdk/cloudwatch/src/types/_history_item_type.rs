@@ -13,6 +13,8 @@
 /// # let historyitemtype = unimplemented!();
 /// match historyitemtype {
 ///     HistoryItemType::Action => { /* ... */ },
+///     HistoryItemType::AlarmContributorAction => { /* ... */ },
+///     HistoryItemType::AlarmContributorStateUpdate => { /* ... */ },
 ///     HistoryItemType::ConfigurationUpdate => { /* ... */ },
 ///     HistoryItemType::StateUpdate => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -46,6 +48,10 @@ pub enum HistoryItemType {
     #[allow(missing_docs)] // documentation missing in model
     Action,
     #[allow(missing_docs)] // documentation missing in model
+    AlarmContributorAction,
+    #[allow(missing_docs)] // documentation missing in model
+    AlarmContributorStateUpdate,
+    #[allow(missing_docs)] // documentation missing in model
     ConfigurationUpdate,
     #[allow(missing_docs)] // documentation missing in model
     StateUpdate,
@@ -57,6 +63,8 @@ impl ::std::convert::From<&str> for HistoryItemType {
     fn from(s: &str) -> Self {
         match s {
             "Action" => HistoryItemType::Action,
+            "AlarmContributorAction" => HistoryItemType::AlarmContributorAction,
+            "AlarmContributorStateUpdate" => HistoryItemType::AlarmContributorStateUpdate,
             "ConfigurationUpdate" => HistoryItemType::ConfigurationUpdate,
             "StateUpdate" => HistoryItemType::StateUpdate,
             other => HistoryItemType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -75,6 +83,8 @@ impl HistoryItemType {
     pub fn as_str(&self) -> &str {
         match self {
             HistoryItemType::Action => "Action",
+            HistoryItemType::AlarmContributorAction => "AlarmContributorAction",
+            HistoryItemType::AlarmContributorStateUpdate => "AlarmContributorStateUpdate",
             HistoryItemType::ConfigurationUpdate => "ConfigurationUpdate",
             HistoryItemType::StateUpdate => "StateUpdate",
             HistoryItemType::Unknown(value) => value.as_str(),
@@ -82,7 +92,13 @@ impl HistoryItemType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Action", "ConfigurationUpdate", "StateUpdate"]
+        &[
+            "Action",
+            "AlarmContributorAction",
+            "AlarmContributorStateUpdate",
+            "ConfigurationUpdate",
+            "StateUpdate",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for HistoryItemType {
@@ -106,6 +122,8 @@ impl ::std::fmt::Display for HistoryItemType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             HistoryItemType::Action => write!(f, "Action"),
+            HistoryItemType::AlarmContributorAction => write!(f, "AlarmContributorAction"),
+            HistoryItemType::AlarmContributorStateUpdate => write!(f, "AlarmContributorStateUpdate"),
             HistoryItemType::ConfigurationUpdate => write!(f, "ConfigurationUpdate"),
             HistoryItemType::StateUpdate => write!(f, "StateUpdate"),
             HistoryItemType::Unknown(value) => write!(f, "{}", value),

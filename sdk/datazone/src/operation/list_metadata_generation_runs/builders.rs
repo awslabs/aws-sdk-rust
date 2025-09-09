@@ -23,6 +23,14 @@ impl crate::operation::list_metadata_generation_runs::builders::ListMetadataGene
 /// Fluent builder constructing a request to `ListMetadataGenerationRuns`.
 ///
 /// <p>Lists all metadata generation runs.</p>
+/// <p>Metadata generation runs represent automated processes that leverage AI/ML capabilities to create or enhance asset metadata at scale. This feature helps organizations maintain comprehensive and consistent metadata across large numbers of assets without manual intervention. It can automatically generate business descriptions, tags, and other metadata elements, significantly reducing the time and effort required for metadata management while improving consistency and completeness.</p>
+/// <p>Prerequisites:</p>
+/// <ul>
+/// <li>
+/// <p>Valid domain identifier.</p></li>
+/// <li>
+/// <p>User must have access to metadata generation runs in the domain.</p></li>
+/// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListMetadataGenerationRunsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

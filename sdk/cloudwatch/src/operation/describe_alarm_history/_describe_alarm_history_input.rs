@@ -5,6 +5,8 @@
 pub struct DescribeAlarmHistoryInput {
     /// <p>The name of the alarm.</p>
     pub alarm_name: ::std::option::Option<::std::string::String>,
+    /// <p>The unique identifier of a specific alarm contributor to filter the alarm history results.</p>
+    pub alarm_contributor_id: ::std::option::Option<::std::string::String>,
     /// <p>Use this parameter to specify whether you want the operation to return metric alarms or composite alarms. If you omit this parameter, only metric alarms are returned.</p>
     pub alarm_types: ::std::option::Option<::std::vec::Vec<crate::types::AlarmType>>,
     /// <p>The type of alarm histories to retrieve.</p>
@@ -24,6 +26,10 @@ impl DescribeAlarmHistoryInput {
     /// <p>The name of the alarm.</p>
     pub fn alarm_name(&self) -> ::std::option::Option<&str> {
         self.alarm_name.as_deref()
+    }
+    /// <p>The unique identifier of a specific alarm contributor to filter the alarm history results.</p>
+    pub fn alarm_contributor_id(&self) -> ::std::option::Option<&str> {
+        self.alarm_contributor_id.as_deref()
     }
     /// <p>Use this parameter to specify whether you want the operation to return metric alarms or composite alarms. If you omit this parameter, only metric alarms are returned.</p>
     ///
@@ -68,6 +74,7 @@ impl DescribeAlarmHistoryInput {
 #[non_exhaustive]
 pub struct DescribeAlarmHistoryInputBuilder {
     pub(crate) alarm_name: ::std::option::Option<::std::string::String>,
+    pub(crate) alarm_contributor_id: ::std::option::Option<::std::string::String>,
     pub(crate) alarm_types: ::std::option::Option<::std::vec::Vec<crate::types::AlarmType>>,
     pub(crate) history_item_type: ::std::option::Option<crate::types::HistoryItemType>,
     pub(crate) start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -90,6 +97,20 @@ impl DescribeAlarmHistoryInputBuilder {
     /// <p>The name of the alarm.</p>
     pub fn get_alarm_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.alarm_name
+    }
+    /// <p>The unique identifier of a specific alarm contributor to filter the alarm history results.</p>
+    pub fn alarm_contributor_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.alarm_contributor_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique identifier of a specific alarm contributor to filter the alarm history results.</p>
+    pub fn set_alarm_contributor_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.alarm_contributor_id = input;
+        self
+    }
+    /// <p>The unique identifier of a specific alarm contributor to filter the alarm history results.</p>
+    pub fn get_alarm_contributor_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alarm_contributor_id
     }
     /// Appends an item to `alarm_types`.
     ///
@@ -202,6 +223,7 @@ impl DescribeAlarmHistoryInputBuilder {
     {
         ::std::result::Result::Ok(crate::operation::describe_alarm_history::DescribeAlarmHistoryInput {
             alarm_name: self.alarm_name,
+            alarm_contributor_id: self.alarm_contributor_id,
             alarm_types: self.alarm_types,
             history_item_type: self.history_item_type,
             start_date: self.start_date,

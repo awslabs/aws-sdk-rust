@@ -23,6 +23,15 @@ impl crate::operation::create_form_type::builders::CreateFormTypeInputBuilder {
 /// Fluent builder constructing a request to `CreateFormType`.
 ///
 /// <p>Creates a metadata form type.</p>
+/// <p>Prerequisites:</p>
+/// <ul>
+/// <li>
+/// <p>The domain must exist and be in an <code>ENABLED</code> state.</p></li>
+/// <li>
+/// <p>The owning project must exist and be accessible.</p></li>
+/// <li>
+/// <p>The name must be unique within the domain.</p></li>
+/// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateFormTypeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

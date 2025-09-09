@@ -16,6 +16,8 @@ pub struct CustomParameter {
     pub is_editable: ::std::option::Option<bool>,
     /// <p>Specifies whether the custom parameter is optional.</p>
     pub is_optional: ::std::option::Option<bool>,
+    /// <p>Specifies whether a parameter value can be updated after creation.</p>
+    pub is_update_supported: ::std::option::Option<bool>,
 }
 impl CustomParameter {
     /// <p>The key name of the parameter.</p>
@@ -44,6 +46,10 @@ impl CustomParameter {
     pub fn is_optional(&self) -> ::std::option::Option<bool> {
         self.is_optional
     }
+    /// <p>Specifies whether a parameter value can be updated after creation.</p>
+    pub fn is_update_supported(&self) -> ::std::option::Option<bool> {
+        self.is_update_supported
+    }
 }
 impl ::std::fmt::Debug for CustomParameter {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -54,6 +60,7 @@ impl ::std::fmt::Debug for CustomParameter {
         formatter.field("default_value", &self.default_value);
         formatter.field("is_editable", &self.is_editable);
         formatter.field("is_optional", &self.is_optional);
+        formatter.field("is_update_supported", &self.is_update_supported);
         formatter.finish()
     }
 }
@@ -74,6 +81,7 @@ pub struct CustomParameterBuilder {
     pub(crate) default_value: ::std::option::Option<::std::string::String>,
     pub(crate) is_editable: ::std::option::Option<bool>,
     pub(crate) is_optional: ::std::option::Option<bool>,
+    pub(crate) is_update_supported: ::std::option::Option<bool>,
 }
 impl CustomParameterBuilder {
     /// <p>The key name of the parameter.</p>
@@ -162,6 +170,20 @@ impl CustomParameterBuilder {
     pub fn get_is_optional(&self) -> &::std::option::Option<bool> {
         &self.is_optional
     }
+    /// <p>Specifies whether a parameter value can be updated after creation.</p>
+    pub fn is_update_supported(mut self, input: bool) -> Self {
+        self.is_update_supported = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether a parameter value can be updated after creation.</p>
+    pub fn set_is_update_supported(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.is_update_supported = input;
+        self
+    }
+    /// <p>Specifies whether a parameter value can be updated after creation.</p>
+    pub fn get_is_update_supported(&self) -> &::std::option::Option<bool> {
+        &self.is_update_supported
+    }
     /// Consumes the builder and constructs a [`CustomParameter`](crate::types::CustomParameter).
     /// This method will fail if any of the following fields are not set:
     /// - [`key_name`](crate::types::builders::CustomParameterBuilder::key_name)
@@ -184,6 +206,7 @@ impl CustomParameterBuilder {
             default_value: self.default_value,
             is_editable: self.is_editable,
             is_optional: self.is_optional,
+            is_update_supported: self.is_update_supported,
         })
     }
 }
@@ -196,6 +219,7 @@ impl ::std::fmt::Debug for CustomParameterBuilder {
         formatter.field("default_value", &self.default_value);
         formatter.field("is_editable", &self.is_editable);
         formatter.field("is_optional", &self.is_optional);
+        formatter.field("is_update_supported", &self.is_update_supported);
         formatter.finish()
     }
 }

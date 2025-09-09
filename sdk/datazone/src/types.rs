@@ -253,15 +253,15 @@ pub use crate::types::_group_profile_status::GroupProfileStatus;
 
 pub use crate::types::_custom_parameter::CustomParameter;
 
-pub use crate::types::_action_parameters::ActionParameters;
-
-pub use crate::types::_aws_console_link_parameters::AwsConsoleLinkParameters;
-
 pub use crate::types::_deployment_properties::DeploymentProperties;
 
 pub use crate::types::_provisioning_properties::ProvisioningProperties;
 
 pub use crate::types::_cloud_formation_properties::CloudFormationProperties;
+
+pub use crate::types::_action_parameters::ActionParameters;
+
+pub use crate::types::_aws_console_link_parameters::AwsConsoleLinkParameters;
 
 pub use crate::types::_deployment::Deployment;
 

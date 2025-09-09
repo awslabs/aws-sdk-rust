@@ -11,48 +11,53 @@ pub fn ser_describe_alarm_history_input_input_input(
         scope_1.string(var_2);
     }
     #[allow(unused_mut)]
-    let mut scope_3 = writer.prefix("AlarmTypes");
-    if let Some(var_4) = &input.alarm_types {
-        let mut list_6 = scope_3.start_list(false, None);
-        for item_5 in var_4 {
+    let mut scope_3 = writer.prefix("AlarmContributorId");
+    if let Some(var_4) = &input.alarm_contributor_id {
+        scope_3.string(var_4);
+    }
+    #[allow(unused_mut)]
+    let mut scope_5 = writer.prefix("AlarmTypes");
+    if let Some(var_6) = &input.alarm_types {
+        let mut list_8 = scope_5.start_list(false, None);
+        for item_7 in var_6 {
             #[allow(unused_mut)]
-            let mut entry_7 = list_6.entry();
-            entry_7.string(item_5.as_str());
+            let mut entry_9 = list_8.entry();
+            entry_9.string(item_7.as_str());
         }
-        list_6.finish();
+        list_8.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_8 = writer.prefix("HistoryItemType");
-    if let Some(var_9) = &input.history_item_type {
-        scope_8.string(var_9.as_str());
+    let mut scope_10 = writer.prefix("HistoryItemType");
+    if let Some(var_11) = &input.history_item_type {
+        scope_10.string(var_11.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_10 = writer.prefix("StartDate");
-    if let Some(var_11) = &input.start_date {
-        scope_10.date_time(var_11, ::aws_smithy_types::date_time::Format::DateTime)?;
-    }
-    #[allow(unused_mut)]
-    let mut scope_12 = writer.prefix("EndDate");
-    if let Some(var_13) = &input.end_date {
+    let mut scope_12 = writer.prefix("StartDate");
+    if let Some(var_13) = &input.start_date {
         scope_12.date_time(var_13, ::aws_smithy_types::date_time::Format::DateTime)?;
     }
     #[allow(unused_mut)]
-    let mut scope_14 = writer.prefix("MaxRecords");
-    if let Some(var_15) = &input.max_records {
-        scope_14.number(
+    let mut scope_14 = writer.prefix("EndDate");
+    if let Some(var_15) = &input.end_date {
+        scope_14.date_time(var_15, ::aws_smithy_types::date_time::Format::DateTime)?;
+    }
+    #[allow(unused_mut)]
+    let mut scope_16 = writer.prefix("MaxRecords");
+    if let Some(var_17) = &input.max_records {
+        scope_16.number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_15).into()),
+            ::aws_smithy_types::Number::NegInt((*var_17).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_16 = writer.prefix("NextToken");
-    if let Some(var_17) = &input.next_token {
-        scope_16.string(var_17);
+    let mut scope_18 = writer.prefix("NextToken");
+    if let Some(var_19) = &input.next_token {
+        scope_18.string(var_19);
     }
     #[allow(unused_mut)]
-    let mut scope_18 = writer.prefix("ScanBy");
-    if let Some(var_19) = &input.scan_by {
-        scope_18.string(var_19.as_str());
+    let mut scope_20 = writer.prefix("ScanBy");
+    if let Some(var_21) = &input.scan_by {
+        scope_20.string(var_21.as_str());
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

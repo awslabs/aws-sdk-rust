@@ -147,11 +147,11 @@ pub use crate::types::_project_deletion_error::ProjectDeletionErrorBuilder;
 
 pub use crate::types::_custom_parameter::CustomParameterBuilder;
 
-pub use crate::types::_aws_console_link_parameters::AwsConsoleLinkParametersBuilder;
-
 pub use crate::types::_deployment_properties::DeploymentPropertiesBuilder;
 
 pub use crate::types::_cloud_formation_properties::CloudFormationPropertiesBuilder;
+
+pub use crate::types::_aws_console_link_parameters::AwsConsoleLinkParametersBuilder;
 
 pub use crate::types::_deployment::DeploymentBuilder;
 

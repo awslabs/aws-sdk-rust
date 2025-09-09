@@ -23,6 +23,19 @@ impl crate::operation::create_asset_type::builders::CreateAssetTypeInputBuilder 
 /// Fluent builder constructing a request to `CreateAssetType`.
 ///
 /// <p>Creates a custom asset type.</p>
+/// <p>Prerequisites:</p>
+/// <ul>
+/// <li>
+/// <p>The form type with <code>typeIdentifier</code> and <code>typeRevision</code> must exist and be published.</p></li>
+/// <li>
+/// <p>You must have <code>CreateAssetType</code> permissions.</p></li>
+/// <li>
+/// <p>The domain-identifier and owning-project-identifier must be valid and active.</p></li>
+/// <li>
+/// <p>The name of the asset type must be unique within the domain — duplicate names will cause failure.</p></li>
+/// <li>
+/// <p>JSON input must be valid — incorrect formatting causes Invalid JSON errors.</p></li>
+/// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateAssetTypeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

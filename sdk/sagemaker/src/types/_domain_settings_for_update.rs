@@ -18,6 +18,8 @@ pub struct DomainSettingsForUpdate {
     pub amazon_q_settings: ::std::option::Option<crate::types::AmazonQSettings>,
     /// <p>The settings that apply to an SageMaker AI domain when you use it in Amazon SageMaker Unified Studio.</p>
     pub unified_studio_settings: ::std::option::Option<crate::types::UnifiedStudioSettings>,
+    /// <p>The IP address type for the domain. Specify <code>ipv4</code> for IPv4-only connectivity or <code>dualstack</code> for both IPv4 and IPv6 connectivity. When you specify <code>dualstack</code>, the subnet must support IPv6 CIDR blocks.</p>
+    pub ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
 }
 impl DomainSettingsForUpdate {
     /// <p>A collection of <code>RStudioServerPro</code> Domain-level app settings to update. A single <code>RStudioServerPro</code> application is created for a domain.</p>
@@ -50,6 +52,10 @@ impl DomainSettingsForUpdate {
     pub fn unified_studio_settings(&self) -> ::std::option::Option<&crate::types::UnifiedStudioSettings> {
         self.unified_studio_settings.as_ref()
     }
+    /// <p>The IP address type for the domain. Specify <code>ipv4</code> for IPv4-only connectivity or <code>dualstack</code> for both IPv4 and IPv6 connectivity. When you specify <code>dualstack</code>, the subnet must support IPv6 CIDR blocks.</p>
+    pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::IpAddressType> {
+        self.ip_address_type.as_ref()
+    }
 }
 impl DomainSettingsForUpdate {
     /// Creates a new builder-style object to manufacture [`DomainSettingsForUpdate`](crate::types::DomainSettingsForUpdate).
@@ -69,6 +75,7 @@ pub struct DomainSettingsForUpdateBuilder {
     pub(crate) docker_settings: ::std::option::Option<crate::types::DockerSettings>,
     pub(crate) amazon_q_settings: ::std::option::Option<crate::types::AmazonQSettings>,
     pub(crate) unified_studio_settings: ::std::option::Option<crate::types::UnifiedStudioSettings>,
+    pub(crate) ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
 }
 impl DomainSettingsForUpdateBuilder {
     /// <p>A collection of <code>RStudioServerPro</code> Domain-level app settings to update. A single <code>RStudioServerPro</code> application is created for a domain.</p>
@@ -183,6 +190,20 @@ impl DomainSettingsForUpdateBuilder {
     pub fn get_unified_studio_settings(&self) -> &::std::option::Option<crate::types::UnifiedStudioSettings> {
         &self.unified_studio_settings
     }
+    /// <p>The IP address type for the domain. Specify <code>ipv4</code> for IPv4-only connectivity or <code>dualstack</code> for both IPv4 and IPv6 connectivity. When you specify <code>dualstack</code>, the subnet must support IPv6 CIDR blocks.</p>
+    pub fn ip_address_type(mut self, input: crate::types::IpAddressType) -> Self {
+        self.ip_address_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The IP address type for the domain. Specify <code>ipv4</code> for IPv4-only connectivity or <code>dualstack</code> for both IPv4 and IPv6 connectivity. When you specify <code>dualstack</code>, the subnet must support IPv6 CIDR blocks.</p>
+    pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::IpAddressType>) -> Self {
+        self.ip_address_type = input;
+        self
+    }
+    /// <p>The IP address type for the domain. Specify <code>ipv4</code> for IPv4-only connectivity or <code>dualstack</code> for both IPv4 and IPv6 connectivity. When you specify <code>dualstack</code>, the subnet must support IPv6 CIDR blocks.</p>
+    pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::IpAddressType> {
+        &self.ip_address_type
+    }
     /// Consumes the builder and constructs a [`DomainSettingsForUpdate`](crate::types::DomainSettingsForUpdate).
     pub fn build(self) -> crate::types::DomainSettingsForUpdate {
         crate::types::DomainSettingsForUpdate {
@@ -193,6 +214,7 @@ impl DomainSettingsForUpdateBuilder {
             docker_settings: self.docker_settings,
             amazon_q_settings: self.amazon_q_settings,
             unified_studio_settings: self.unified_studio_settings,
+            ip_address_type: self.ip_address_type,
         }
     }
 }

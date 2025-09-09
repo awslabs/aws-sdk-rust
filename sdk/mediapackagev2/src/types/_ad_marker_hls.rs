@@ -13,6 +13,7 @@
 /// # let admarkerhls = unimplemented!();
 /// match admarkerhls {
 ///     AdMarkerHls::Daterange => { /* ... */ },
+///     AdMarkerHls::Scte35Enhanced => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -43,6 +44,8 @@
 pub enum AdMarkerHls {
     #[allow(missing_docs)] // documentation missing in model
     Daterange,
+    #[allow(missing_docs)] // documentation missing in model
+    Scte35Enhanced,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -51,6 +54,7 @@ impl ::std::convert::From<&str> for AdMarkerHls {
     fn from(s: &str) -> Self {
         match s {
             "DATERANGE" => AdMarkerHls::Daterange,
+            "SCTE35_ENHANCED" => AdMarkerHls::Scte35Enhanced,
             other => AdMarkerHls::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -67,12 +71,13 @@ impl AdMarkerHls {
     pub fn as_str(&self) -> &str {
         match self {
             AdMarkerHls::Daterange => "DATERANGE",
+            AdMarkerHls::Scte35Enhanced => "SCTE35_ENHANCED",
             AdMarkerHls::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DATERANGE"]
+        &["DATERANGE", "SCTE35_ENHANCED"]
     }
 }
 impl ::std::convert::AsRef<str> for AdMarkerHls {
@@ -96,6 +101,7 @@ impl ::std::fmt::Display for AdMarkerHls {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             AdMarkerHls::Daterange => write!(f, "DATERANGE"),
+            AdMarkerHls::Scte35Enhanced => write!(f, "SCTE35_ENHANCED"),
             AdMarkerHls::Unknown(value) => write!(f, "{}", value),
         }
     }

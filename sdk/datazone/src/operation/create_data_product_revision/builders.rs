@@ -23,6 +23,17 @@ impl crate::operation::create_data_product_revision::builders::CreateDataProduct
 /// Fluent builder constructing a request to `CreateDataProductRevision`.
 ///
 /// <p>Creates a data product revision.</p>
+/// <p>Prerequisites:</p>
+/// <ul>
+/// <li>
+/// <p>The original data product must exist in the given domain.</p></li>
+/// <li>
+/// <p>User must have permissions on the data product.</p></li>
+/// <li>
+/// <p>The domain must be valid and accessible.</p></li>
+/// <li>
+/// <p>The new revision name must comply with naming constraints (if required).</p></li>
+/// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateDataProductRevisionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

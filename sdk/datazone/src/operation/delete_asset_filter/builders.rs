@@ -23,6 +23,15 @@ impl crate::operation::delete_asset_filter::builders::DeleteAssetFilterInputBuil
 /// Fluent builder constructing a request to `DeleteAssetFilter`.
 ///
 /// <p>Deletes an asset filter.</p>
+/// <p>Prerequisites:</p>
+/// <ul>
+/// <li>
+/// <p>The asset filter must exist.</p></li>
+/// <li>
+/// <p>The domain and asset must not have been deleted.</p></li>
+/// <li>
+/// <p>Ensure the --identifier refers to a valid filter ID.</p></li>
+/// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteAssetFilterFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

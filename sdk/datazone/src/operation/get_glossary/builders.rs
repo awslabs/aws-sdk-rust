@@ -23,6 +23,13 @@ impl crate::operation::get_glossary::builders::GetGlossaryInputBuilder {
 /// Fluent builder constructing a request to `GetGlossary`.
 ///
 /// <p>Gets a business glossary in Amazon DataZone.</p>
+/// <p>Prerequisites:</p>
+/// <ul>
+/// <li>
+/// <p>The specified glossary ID must exist and be associated with the given domain.</p></li>
+/// <li>
+/// <p>The caller must have the <code>datazone:GetGlossary</code> permission on the domain.</p></li>
+/// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetGlossaryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

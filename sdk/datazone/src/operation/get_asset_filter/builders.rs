@@ -23,6 +23,15 @@ impl crate::operation::get_asset_filter::builders::GetAssetFilterInputBuilder {
 /// Fluent builder constructing a request to `GetAssetFilter`.
 ///
 /// <p>Gets an asset filter.</p>
+/// <p>Prerequisites:</p>
+/// <ul>
+/// <li>
+/// <p>Domain (<code>--domain-identifier</code>), asset (<code>--asset-identifier</code>), and filter (<code>--identifier</code>) must all exist.</p></li>
+/// <li>
+/// <p>The asset filter should not have been deleted.</p></li>
+/// <li>
+/// <p>The asset must still exist (since the filter is linked to it).</p></li>
+/// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetAssetFilterFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

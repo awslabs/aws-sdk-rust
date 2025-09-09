@@ -145,6 +145,8 @@ pub use crate::types::_outbound_email_config::OutboundEmailConfig;
 
 pub use crate::types::_outbound_caller_config::OutboundCallerConfig;
 
+pub use crate::types::_input_predefined_attribute_configuration::InputPredefinedAttributeConfiguration;
+
 pub use crate::types::_predefined_attribute_values::PredefinedAttributeValues;
 
 pub use crate::types::_update_participant_role_config_channel_info::UpdateParticipantRoleConfigChannelInfo;
@@ -454,6 +456,8 @@ pub use crate::types::_prompt_search_criteria::PromptSearchCriteria;
 pub use crate::types::_prompt_search_filter::PromptSearchFilter;
 
 pub use crate::types::_predefined_attribute::PredefinedAttribute;
+
+pub use crate::types::_predefined_attribute_configuration::PredefinedAttributeConfiguration;
 
 pub use crate::types::_predefined_attribute_search_criteria::PredefinedAttributeSearchCriteria;
 
@@ -1377,6 +1381,8 @@ mod _inbound_raw_message;
 
 mod _initiate_as;
 
+mod _input_predefined_attribute_configuration;
+
 mod _instance;
 
 mod _instance_attribute_type;
@@ -1530,6 +1536,8 @@ mod _phone_number_workflow_status;
 mod _phone_type;
 
 mod _predefined_attribute;
+
+mod _predefined_attribute_configuration;
 
 mod _predefined_attribute_search_criteria;
 

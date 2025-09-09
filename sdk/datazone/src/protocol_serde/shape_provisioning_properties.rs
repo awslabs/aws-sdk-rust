@@ -61,3 +61,23 @@ where
     }
     Ok(variant)
 }
+
+pub fn ser_provisioning_properties(
+    object_4: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
+    input: &crate::types::ProvisioningProperties,
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    match input {
+        crate::types::ProvisioningProperties::CloudFormation(inner) => {
+            #[allow(unused_mut)]
+            let mut object_1 = object_4.key("cloudFormation").start_object();
+            crate::protocol_serde::shape_cloud_formation_properties::ser_cloud_formation_properties(&mut object_1, inner)?;
+            object_1.finish();
+        }
+        crate::types::ProvisioningProperties::Unknown => {
+            return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
+                "ProvisioningProperties",
+            ))
+        }
+    }
+    Ok(())
+}

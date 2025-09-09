@@ -6,6 +6,8 @@
 pub struct AlarmHistoryItem {
     /// <p>The descriptive name for the alarm.</p>
     pub alarm_name: ::std::option::Option<::std::string::String>,
+    /// <p>The unique identifier of the alarm contributor associated with this history item, if applicable.</p>
+    pub alarm_contributor_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of alarm, either metric alarm or composite alarm.</p>
     pub alarm_type: ::std::option::Option<crate::types::AlarmType>,
     /// <p>The time stamp for the alarm history item.</p>
@@ -16,11 +18,17 @@ pub struct AlarmHistoryItem {
     pub history_summary: ::std::option::Option<::std::string::String>,
     /// <p>Data about the alarm, in JSON format.</p>
     pub history_data: ::std::option::Option<::std::string::String>,
+    /// <p>A map of attributes that describe the alarm contributor associated with this history item, providing context about the contributor's characteristics at the time of the event.</p>
+    pub alarm_contributor_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl AlarmHistoryItem {
     /// <p>The descriptive name for the alarm.</p>
     pub fn alarm_name(&self) -> ::std::option::Option<&str> {
         self.alarm_name.as_deref()
+    }
+    /// <p>The unique identifier of the alarm contributor associated with this history item, if applicable.</p>
+    pub fn alarm_contributor_id(&self) -> ::std::option::Option<&str> {
+        self.alarm_contributor_id.as_deref()
     }
     /// <p>The type of alarm, either metric alarm or composite alarm.</p>
     pub fn alarm_type(&self) -> ::std::option::Option<&crate::types::AlarmType> {
@@ -42,6 +50,10 @@ impl AlarmHistoryItem {
     pub fn history_data(&self) -> ::std::option::Option<&str> {
         self.history_data.as_deref()
     }
+    /// <p>A map of attributes that describe the alarm contributor associated with this history item, providing context about the contributor's characteristics at the time of the event.</p>
+    pub fn alarm_contributor_attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.alarm_contributor_attributes.as_ref()
+    }
 }
 impl AlarmHistoryItem {
     /// Creates a new builder-style object to manufacture [`AlarmHistoryItem`](crate::types::AlarmHistoryItem).
@@ -55,11 +67,13 @@ impl AlarmHistoryItem {
 #[non_exhaustive]
 pub struct AlarmHistoryItemBuilder {
     pub(crate) alarm_name: ::std::option::Option<::std::string::String>,
+    pub(crate) alarm_contributor_id: ::std::option::Option<::std::string::String>,
     pub(crate) alarm_type: ::std::option::Option<crate::types::AlarmType>,
     pub(crate) timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) history_item_type: ::std::option::Option<crate::types::HistoryItemType>,
     pub(crate) history_summary: ::std::option::Option<::std::string::String>,
     pub(crate) history_data: ::std::option::Option<::std::string::String>,
+    pub(crate) alarm_contributor_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl AlarmHistoryItemBuilder {
     /// <p>The descriptive name for the alarm.</p>
@@ -75,6 +89,20 @@ impl AlarmHistoryItemBuilder {
     /// <p>The descriptive name for the alarm.</p>
     pub fn get_alarm_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.alarm_name
+    }
+    /// <p>The unique identifier of the alarm contributor associated with this history item, if applicable.</p>
+    pub fn alarm_contributor_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.alarm_contributor_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique identifier of the alarm contributor associated with this history item, if applicable.</p>
+    pub fn set_alarm_contributor_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.alarm_contributor_id = input;
+        self
+    }
+    /// <p>The unique identifier of the alarm contributor associated with this history item, if applicable.</p>
+    pub fn get_alarm_contributor_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alarm_contributor_id
     }
     /// <p>The type of alarm, either metric alarm or composite alarm.</p>
     pub fn alarm_type(mut self, input: crate::types::AlarmType) -> Self {
@@ -146,15 +174,46 @@ impl AlarmHistoryItemBuilder {
     pub fn get_history_data(&self) -> &::std::option::Option<::std::string::String> {
         &self.history_data
     }
+    /// Adds a key-value pair to `alarm_contributor_attributes`.
+    ///
+    /// To override the contents of this collection use [`set_alarm_contributor_attributes`](Self::set_alarm_contributor_attributes).
+    ///
+    /// <p>A map of attributes that describe the alarm contributor associated with this history item, providing context about the contributor's characteristics at the time of the event.</p>
+    pub fn alarm_contributor_attributes(
+        mut self,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        let mut hash_map = self.alarm_contributor_attributes.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.alarm_contributor_attributes = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>A map of attributes that describe the alarm contributor associated with this history item, providing context about the contributor's characteristics at the time of the event.</p>
+    pub fn set_alarm_contributor_attributes(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    ) -> Self {
+        self.alarm_contributor_attributes = input;
+        self
+    }
+    /// <p>A map of attributes that describe the alarm contributor associated with this history item, providing context about the contributor's characteristics at the time of the event.</p>
+    pub fn get_alarm_contributor_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.alarm_contributor_attributes
+    }
     /// Consumes the builder and constructs a [`AlarmHistoryItem`](crate::types::AlarmHistoryItem).
     pub fn build(self) -> crate::types::AlarmHistoryItem {
         crate::types::AlarmHistoryItem {
             alarm_name: self.alarm_name,
+            alarm_contributor_id: self.alarm_contributor_id,
             alarm_type: self.alarm_type,
             timestamp: self.timestamp,
             history_item_type: self.history_item_type,
             history_summary: self.history_summary,
             history_data: self.history_data,
+            alarm_contributor_attributes: self.alarm_contributor_attributes,
         }
     }
 }

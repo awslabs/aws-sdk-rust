@@ -231,6 +231,32 @@ impl PutEnvironmentBlueprintConfigurationFluentBuilder {
         self.inner.get_regional_parameters()
     }
     ///
+    /// Adds a key-value pair to `globalParameters`.
+    ///
+    /// To override the contents of this collection use [`set_global_parameters`](Self::set_global_parameters).
+    ///
+    /// <p>Region-agnostic environment blueprint parameters.</p>
+    pub fn global_parameters(
+        mut self,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.inner = self.inner.global_parameters(k.into(), v.into());
+        self
+    }
+    /// <p>Region-agnostic environment blueprint parameters.</p>
+    pub fn set_global_parameters(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    ) -> Self {
+        self.inner = self.inner.set_global_parameters(input);
+        self
+    }
+    /// <p>Region-agnostic environment blueprint parameters.</p>
+    pub fn get_global_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.inner.get_global_parameters()
+    }
+    ///
     /// Appends an item to `provisioningConfigurations`.
     ///
     /// To override the contents of this collection use [`set_provisioning_configurations`](Self::set_provisioning_configurations).

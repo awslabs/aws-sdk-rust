@@ -23,6 +23,17 @@ impl crate::operation::delete_data_product::builders::DeleteDataProductInputBuil
 /// Fluent builder constructing a request to `DeleteDataProduct`.
 ///
 /// <p>Deletes a data product in Amazon DataZone.</p>
+/// <p>Prerequisites:</p>
+/// <ul>
+/// <li>
+/// <p>The data product must exist and not be deleted or archived.</p></li>
+/// <li>
+/// <p>The user must have delete permissions for the data product.</p></li>
+/// <li>
+/// <p>Ensure there are no active dependencies (e.g., published links, assets using the product).</p></li>
+/// <li>
+/// <p>Domain and project must be active.</p></li>
+/// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteDataProductFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -124,4 +124,21 @@ impl CancelInstanceRefreshFluentBuilder {
     pub fn get_auto_scaling_group_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_auto_scaling_group_name()
     }
+    /// <p>When cancelling an instance refresh, this indicates whether to wait for in-flight launches and terminations to complete. The default is true.</p>
+    /// <p>When set to false, Amazon EC2 Auto Scaling cancels the instance refresh without waiting for any pending launches or terminations to complete.</p>
+    pub fn wait_for_transitioning_instances(mut self, input: bool) -> Self {
+        self.inner = self.inner.wait_for_transitioning_instances(input);
+        self
+    }
+    /// <p>When cancelling an instance refresh, this indicates whether to wait for in-flight launches and terminations to complete. The default is true.</p>
+    /// <p>When set to false, Amazon EC2 Auto Scaling cancels the instance refresh without waiting for any pending launches or terminations to complete.</p>
+    pub fn set_wait_for_transitioning_instances(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_wait_for_transitioning_instances(input);
+        self
+    }
+    /// <p>When cancelling an instance refresh, this indicates whether to wait for in-flight launches and terminations to complete. The default is true.</p>
+    /// <p>When set to false, Amazon EC2 Auto Scaling cancels the instance refresh without waiting for any pending launches or terminations to complete.</p>
+    pub fn get_wait_for_transitioning_instances(&self) -> &::std::option::Option<bool> {
+        self.inner.get_wait_for_transitioning_instances()
+    }
 }

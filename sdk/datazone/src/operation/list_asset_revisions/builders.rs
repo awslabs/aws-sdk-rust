@@ -23,6 +23,17 @@ impl crate::operation::list_asset_revisions::builders::ListAssetRevisionsInputBu
 /// Fluent builder constructing a request to `ListAssetRevisions`.
 ///
 /// <p>Lists the revisions for the asset.</p>
+/// <p>Prerequisites:</p>
+/// <ul>
+/// <li>
+/// <p>The asset must exist in the domain.</p></li>
+/// <li>
+/// <p>There must be at least one revision of the asset (which happens automatically after creation).</p></li>
+/// <li>
+/// <p>The domain must be valid and active.</p></li>
+/// <li>
+/// <p>User must have permissions on the asset and domain.</p></li>
+/// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListAssetRevisionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -2,7 +2,7 @@
 
 /// <p>Information of returned contact.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ContactSearchSummary {
     /// <p>The Amazon Resource Name (ARN) of the contact.</p>
     pub arn: ::std::option::Option<::std::string::String>,
@@ -82,6 +82,24 @@ impl ContactSearchSummary {
         self.segment_attributes.as_ref()
     }
 }
+impl ::std::fmt::Debug for ContactSearchSummary {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ContactSearchSummary");
+        formatter.field("arn", &self.arn);
+        formatter.field("id", &self.id);
+        formatter.field("initial_contact_id", &self.initial_contact_id);
+        formatter.field("previous_contact_id", &self.previous_contact_id);
+        formatter.field("initiation_method", &self.initiation_method);
+        formatter.field("channel", &self.channel);
+        formatter.field("queue_info", &self.queue_info);
+        formatter.field("agent_info", &self.agent_info);
+        formatter.field("initiation_timestamp", &self.initiation_timestamp);
+        formatter.field("disconnect_timestamp", &self.disconnect_timestamp);
+        formatter.field("scheduled_timestamp", &self.scheduled_timestamp);
+        formatter.field("segment_attributes", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl ContactSearchSummary {
     /// Creates a new builder-style object to manufacture [`ContactSearchSummary`](crate::types::ContactSearchSummary).
     pub fn builder() -> crate::types::builders::ContactSearchSummaryBuilder {
@@ -90,7 +108,7 @@ impl ContactSearchSummary {
 }
 
 /// A builder for [`ContactSearchSummary`](crate::types::ContactSearchSummary).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct ContactSearchSummaryBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -307,5 +325,23 @@ impl ContactSearchSummaryBuilder {
             scheduled_timestamp: self.scheduled_timestamp,
             segment_attributes: self.segment_attributes,
         }
+    }
+}
+impl ::std::fmt::Debug for ContactSearchSummaryBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ContactSearchSummaryBuilder");
+        formatter.field("arn", &self.arn);
+        formatter.field("id", &self.id);
+        formatter.field("initial_contact_id", &self.initial_contact_id);
+        formatter.field("previous_contact_id", &self.previous_contact_id);
+        formatter.field("initiation_method", &self.initiation_method);
+        formatter.field("channel", &self.channel);
+        formatter.field("queue_info", &self.queue_info);
+        formatter.field("agent_info", &self.agent_info);
+        formatter.field("initiation_timestamp", &self.initiation_timestamp);
+        formatter.field("disconnect_timestamp", &self.disconnect_timestamp);
+        formatter.field("scheduled_timestamp", &self.scheduled_timestamp);
+        formatter.field("segment_attributes", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

@@ -48,5 +48,8 @@ pub fn ser_domain_settings_for_update(
         crate::protocol_serde::shape_unified_studio_settings::ser_unified_studio_settings(&mut object_14, var_13)?;
         object_14.finish();
     }
+    if let Some(var_15) = &input.ip_address_type {
+        object.key("IpAddressType").string(var_15.as_str());
+    }
     Ok(())
 }

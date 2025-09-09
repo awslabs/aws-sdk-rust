@@ -425,6 +425,24 @@ pub(crate) fn create_environment_action_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_environment_blueprint_output_output_correct_errors(
+    mut builder: crate::operation::create_environment_blueprint::builders::CreateEnvironmentBlueprintOutputBuilder,
+) -> crate::operation::create_environment_blueprint::builders::CreateEnvironmentBlueprintOutputBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.provider.is_none() {
+        builder.provider = Some(Default::default())
+    }
+    if builder.provisioning_properties.is_none() {
+        builder.provisioning_properties = Some(crate::types::ProvisioningProperties::Unknown)
+    }
+    builder
+}
+
 pub(crate) fn create_environment_profile_output_output_correct_errors(
     mut builder: crate::operation::create_environment_profile::builders::CreateEnvironmentProfileOutputBuilder,
 ) -> crate::operation::create_environment_profile::builders::CreateEnvironmentProfileOutputBuilder {
@@ -1834,6 +1852,24 @@ pub(crate) fn update_environment_action_output_output_correct_errors(
     }
     if builder.parameters.is_none() {
         builder.parameters = Some(crate::types::ActionParameters::Unknown)
+    }
+    builder
+}
+
+pub(crate) fn update_environment_blueprint_output_output_correct_errors(
+    mut builder: crate::operation::update_environment_blueprint::builders::UpdateEnvironmentBlueprintOutputBuilder,
+) -> crate::operation::update_environment_blueprint::builders::UpdateEnvironmentBlueprintOutputBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.provider.is_none() {
+        builder.provider = Some(Default::default())
+    }
+    if builder.provisioning_properties.is_none() {
+        builder.provisioning_properties = Some(crate::types::ProvisioningProperties::Unknown)
     }
     builder
 }
