@@ -27,5 +27,14 @@ pub fn ser_import_key_input_input(
         }
         array_6.finish();
     }
+    if let Some(var_9) = &input.replication_regions {
+        let mut array_10 = object.key("ReplicationRegions").start_array();
+        for item_11 in var_9 {
+            {
+                array_10.value().string(item_11.as_str());
+            }
+        }
+        array_10.finish();
+    }
     Ok(())
 }

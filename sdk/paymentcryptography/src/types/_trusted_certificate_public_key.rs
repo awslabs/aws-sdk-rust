@@ -2,7 +2,7 @@
 
 /// <p>Parameter information for trusted public key certificate import.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TrustedCertificatePublicKey {
     /// <p>The role of the key, the algorithm it supports, and the cryptographic operations allowed with the key. This data is immutable after a trusted public key is imported.</p>
     pub key_attributes: ::std::option::Option<crate::types::KeyAttributes>,
@@ -27,18 +27,6 @@ impl TrustedCertificatePublicKey {
         self.certificate_authority_public_key_identifier.deref()
     }
 }
-impl ::std::fmt::Debug for TrustedCertificatePublicKey {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
-        let mut formatter = f.debug_struct("TrustedCertificatePublicKey");
-        formatter.field("key_attributes", &self.key_attributes);
-        formatter.field("public_key_certificate", &"*** Sensitive Data Redacted ***");
-        formatter.field(
-            "certificate_authority_public_key_identifier",
-            &self.certificate_authority_public_key_identifier,
-        );
-        formatter.finish()
-    }
-}
 impl TrustedCertificatePublicKey {
     /// Creates a new builder-style object to manufacture [`TrustedCertificatePublicKey`](crate::types::TrustedCertificatePublicKey).
     pub fn builder() -> crate::types::builders::TrustedCertificatePublicKeyBuilder {
@@ -47,7 +35,7 @@ impl TrustedCertificatePublicKey {
 }
 
 /// A builder for [`TrustedCertificatePublicKey`](crate::types::TrustedCertificatePublicKey).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct TrustedCertificatePublicKeyBuilder {
     pub(crate) key_attributes: ::std::option::Option<crate::types::KeyAttributes>,
@@ -120,17 +108,5 @@ impl TrustedCertificatePublicKeyBuilder {
                 )
             })?,
         })
-    }
-}
-impl ::std::fmt::Debug for TrustedCertificatePublicKeyBuilder {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
-        let mut formatter = f.debug_struct("TrustedCertificatePublicKeyBuilder");
-        formatter.field("key_attributes", &self.key_attributes);
-        formatter.field("public_key_certificate", &"*** Sensitive Data Redacted ***");
-        formatter.field(
-            "certificate_authority_public_key_identifier",
-            &self.certificate_authority_public_key_identifier,
-        );
-        formatter.finish()
     }
 }

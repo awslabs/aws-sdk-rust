@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetKeyOutput {
-    /// <p>The key material, including the immutable and mutable data for the key.</p>
+    /// <p>Contains the key metadata, including both immutable and mutable attributes for the key, but does not include actual cryptographic key material.</p>
     pub key: ::std::option::Option<crate::types::Key>,
     _request_id: Option<String>,
 }
 impl GetKeyOutput {
-    /// <p>The key material, including the immutable and mutable data for the key.</p>
+    /// <p>Contains the key metadata, including both immutable and mutable attributes for the key, but does not include actual cryptographic key material.</p>
     pub fn key(&self) -> ::std::option::Option<&crate::types::Key> {
         self.key.as_ref()
     }
@@ -33,18 +33,18 @@ pub struct GetKeyOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetKeyOutputBuilder {
-    /// <p>The key material, including the immutable and mutable data for the key.</p>
+    /// <p>Contains the key metadata, including both immutable and mutable attributes for the key, but does not include actual cryptographic key material.</p>
     /// This field is required.
     pub fn key(mut self, input: crate::types::Key) -> Self {
         self.key = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The key material, including the immutable and mutable data for the key.</p>
+    /// <p>Contains the key metadata, including both immutable and mutable attributes for the key, but does not include actual cryptographic key material.</p>
     pub fn set_key(mut self, input: ::std::option::Option<crate::types::Key>) -> Self {
         self.key = input;
         self
     }
-    /// <p>The key material, including the immutable and mutable data for the key.</p>
+    /// <p>Contains the key metadata, including both immutable and mutable attributes for the key, but does not include actual cryptographic key material.</p>
     pub fn get_key(&self) -> &::std::option::Option<crate::types::Key> {
         &self.key
     }

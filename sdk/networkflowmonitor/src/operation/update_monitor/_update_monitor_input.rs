@@ -5,13 +5,15 @@
 pub struct UpdateMonitorInput {
     /// <p>The name of the monitor.</p>
     pub monitor_name: ::std::option::Option<::std::string::String>,
-    /// <p>The local resources to add, as an array of resources with identifiers and types.</p>
+    /// <p>Additional local resources to specify network flows for a monitor, as an array of resources with identifiers and types. A local resource in a workload is the location of hosts where the Network Flow Monitor agent is installed.</p>
     pub local_resources_to_add: ::std::option::Option<::std::vec::Vec<crate::types::MonitorLocalResource>>,
     /// <p>The local resources to remove, as an array of resources with identifiers and types.</p>
     pub local_resources_to_remove: ::std::option::Option<::std::vec::Vec<crate::types::MonitorLocalResource>>,
-    /// <p>The remove resources to add, as an array of resources with identifiers and types.</p>
+    /// <p>The remote resources to add, as an array of resources with identifiers and types.</p>
+    /// <p>A remote resource is the other endpoint in the flow of a workload, with a local resource. For example, Amazon Dynamo DB can be a remote resource.</p>
     pub remote_resources_to_add: ::std::option::Option<::std::vec::Vec<crate::types::MonitorRemoteResource>>,
-    /// <p>The remove resources to remove, as an array of resources with identifiers and types.</p>
+    /// <p>The remote resources to remove, as an array of resources with identifiers and types.</p>
+    /// <p>A remote resource is the other endpoint specified for the network flow of a workload, with a local resource. For example, Amazon Dynamo DB can be a remote resource.</p>
     pub remote_resources_to_remove: ::std::option::Option<::std::vec::Vec<crate::types::MonitorRemoteResource>>,
     /// <p>A unique, case-sensitive string of up to 64 ASCII characters that you specify to make an idempotent API request. Don't reuse the same client token for other API requests.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
@@ -21,7 +23,7 @@ impl UpdateMonitorInput {
     pub fn monitor_name(&self) -> ::std::option::Option<&str> {
         self.monitor_name.as_deref()
     }
-    /// <p>The local resources to add, as an array of resources with identifiers and types.</p>
+    /// <p>Additional local resources to specify network flows for a monitor, as an array of resources with identifiers and types. A local resource in a workload is the location of hosts where the Network Flow Monitor agent is installed.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.local_resources_to_add.is_none()`.
     pub fn local_resources_to_add(&self) -> &[crate::types::MonitorLocalResource] {
@@ -33,13 +35,15 @@ impl UpdateMonitorInput {
     pub fn local_resources_to_remove(&self) -> &[crate::types::MonitorLocalResource] {
         self.local_resources_to_remove.as_deref().unwrap_or_default()
     }
-    /// <p>The remove resources to add, as an array of resources with identifiers and types.</p>
+    /// <p>The remote resources to add, as an array of resources with identifiers and types.</p>
+    /// <p>A remote resource is the other endpoint in the flow of a workload, with a local resource. For example, Amazon Dynamo DB can be a remote resource.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.remote_resources_to_add.is_none()`.
     pub fn remote_resources_to_add(&self) -> &[crate::types::MonitorRemoteResource] {
         self.remote_resources_to_add.as_deref().unwrap_or_default()
     }
-    /// <p>The remove resources to remove, as an array of resources with identifiers and types.</p>
+    /// <p>The remote resources to remove, as an array of resources with identifiers and types.</p>
+    /// <p>A remote resource is the other endpoint specified for the network flow of a workload, with a local resource. For example, Amazon Dynamo DB can be a remote resource.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.remote_resources_to_remove.is_none()`.
     pub fn remote_resources_to_remove(&self) -> &[crate::types::MonitorRemoteResource] {
@@ -88,19 +92,19 @@ impl UpdateMonitorInputBuilder {
     ///
     /// To override the contents of this collection use [`set_local_resources_to_add`](Self::set_local_resources_to_add).
     ///
-    /// <p>The local resources to add, as an array of resources with identifiers and types.</p>
+    /// <p>Additional local resources to specify network flows for a monitor, as an array of resources with identifiers and types. A local resource in a workload is the location of hosts where the Network Flow Monitor agent is installed.</p>
     pub fn local_resources_to_add(mut self, input: crate::types::MonitorLocalResource) -> Self {
         let mut v = self.local_resources_to_add.unwrap_or_default();
         v.push(input);
         self.local_resources_to_add = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The local resources to add, as an array of resources with identifiers and types.</p>
+    /// <p>Additional local resources to specify network flows for a monitor, as an array of resources with identifiers and types. A local resource in a workload is the location of hosts where the Network Flow Monitor agent is installed.</p>
     pub fn set_local_resources_to_add(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MonitorLocalResource>>) -> Self {
         self.local_resources_to_add = input;
         self
     }
-    /// <p>The local resources to add, as an array of resources with identifiers and types.</p>
+    /// <p>Additional local resources to specify network flows for a monitor, as an array of resources with identifiers and types. A local resource in a workload is the location of hosts where the Network Flow Monitor agent is installed.</p>
     pub fn get_local_resources_to_add(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MonitorLocalResource>> {
         &self.local_resources_to_add
     }
@@ -128,19 +132,22 @@ impl UpdateMonitorInputBuilder {
     ///
     /// To override the contents of this collection use [`set_remote_resources_to_add`](Self::set_remote_resources_to_add).
     ///
-    /// <p>The remove resources to add, as an array of resources with identifiers and types.</p>
+    /// <p>The remote resources to add, as an array of resources with identifiers and types.</p>
+    /// <p>A remote resource is the other endpoint in the flow of a workload, with a local resource. For example, Amazon Dynamo DB can be a remote resource.</p>
     pub fn remote_resources_to_add(mut self, input: crate::types::MonitorRemoteResource) -> Self {
         let mut v = self.remote_resources_to_add.unwrap_or_default();
         v.push(input);
         self.remote_resources_to_add = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The remove resources to add, as an array of resources with identifiers and types.</p>
+    /// <p>The remote resources to add, as an array of resources with identifiers and types.</p>
+    /// <p>A remote resource is the other endpoint in the flow of a workload, with a local resource. For example, Amazon Dynamo DB can be a remote resource.</p>
     pub fn set_remote_resources_to_add(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MonitorRemoteResource>>) -> Self {
         self.remote_resources_to_add = input;
         self
     }
-    /// <p>The remove resources to add, as an array of resources with identifiers and types.</p>
+    /// <p>The remote resources to add, as an array of resources with identifiers and types.</p>
+    /// <p>A remote resource is the other endpoint in the flow of a workload, with a local resource. For example, Amazon Dynamo DB can be a remote resource.</p>
     pub fn get_remote_resources_to_add(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MonitorRemoteResource>> {
         &self.remote_resources_to_add
     }
@@ -148,19 +155,22 @@ impl UpdateMonitorInputBuilder {
     ///
     /// To override the contents of this collection use [`set_remote_resources_to_remove`](Self::set_remote_resources_to_remove).
     ///
-    /// <p>The remove resources to remove, as an array of resources with identifiers and types.</p>
+    /// <p>The remote resources to remove, as an array of resources with identifiers and types.</p>
+    /// <p>A remote resource is the other endpoint specified for the network flow of a workload, with a local resource. For example, Amazon Dynamo DB can be a remote resource.</p>
     pub fn remote_resources_to_remove(mut self, input: crate::types::MonitorRemoteResource) -> Self {
         let mut v = self.remote_resources_to_remove.unwrap_or_default();
         v.push(input);
         self.remote_resources_to_remove = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The remove resources to remove, as an array of resources with identifiers and types.</p>
+    /// <p>The remote resources to remove, as an array of resources with identifiers and types.</p>
+    /// <p>A remote resource is the other endpoint specified for the network flow of a workload, with a local resource. For example, Amazon Dynamo DB can be a remote resource.</p>
     pub fn set_remote_resources_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MonitorRemoteResource>>) -> Self {
         self.remote_resources_to_remove = input;
         self
     }
-    /// <p>The remove resources to remove, as an array of resources with identifiers and types.</p>
+    /// <p>The remote resources to remove, as an array of resources with identifiers and types.</p>
+    /// <p>A remote resource is the other endpoint specified for the network flow of a workload, with a local resource. For example, Amazon Dynamo DB can be a remote resource.</p>
     pub fn get_remote_resources_to_remove(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MonitorRemoteResource>> {
         &self.remote_resources_to_remove
     }

@@ -16,6 +16,7 @@
 ///     MonitorRemoteResourceType::AwsAz => { /* ... */ },
 ///     MonitorRemoteResourceType::AwsSubnet => { /* ... */ },
 ///     MonitorRemoteResourceType::AwsVpc => { /* ... */ },
+///     MonitorRemoteResourceType::AwsRegion => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -52,6 +53,8 @@ pub enum MonitorRemoteResourceType {
     AwsSubnet,
     #[allow(missing_docs)] // documentation missing in model
     AwsVpc,
+    #[allow(missing_docs)] // documentation missing in model
+    AwsRegion,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -63,6 +66,7 @@ impl ::std::convert::From<&str> for MonitorRemoteResourceType {
             "AWS::AvailabilityZone" => MonitorRemoteResourceType::AwsAz,
             "AWS::EC2::Subnet" => MonitorRemoteResourceType::AwsSubnet,
             "AWS::EC2::VPC" => MonitorRemoteResourceType::AwsVpc,
+            "AWS::Region" => MonitorRemoteResourceType::AwsRegion,
             other => MonitorRemoteResourceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -82,12 +86,19 @@ impl MonitorRemoteResourceType {
             MonitorRemoteResourceType::AwsAz => "AWS::AvailabilityZone",
             MonitorRemoteResourceType::AwsSubnet => "AWS::EC2::Subnet",
             MonitorRemoteResourceType::AwsVpc => "AWS::EC2::VPC",
+            MonitorRemoteResourceType::AwsRegion => "AWS::Region",
             MonitorRemoteResourceType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AWS::AWSService", "AWS::AvailabilityZone", "AWS::EC2::Subnet", "AWS::EC2::VPC"]
+        &[
+            "AWS::AWSService",
+            "AWS::AvailabilityZone",
+            "AWS::EC2::Subnet",
+            "AWS::EC2::VPC",
+            "AWS::Region",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for MonitorRemoteResourceType {
@@ -114,6 +125,7 @@ impl ::std::fmt::Display for MonitorRemoteResourceType {
             MonitorRemoteResourceType::AwsAz => write!(f, "AWS::AvailabilityZone"),
             MonitorRemoteResourceType::AwsSubnet => write!(f, "AWS::EC2::Subnet"),
             MonitorRemoteResourceType::AwsVpc => write!(f, "AWS::EC2::VPC"),
+            MonitorRemoteResourceType::AwsRegion => write!(f, "AWS::Region"),
             MonitorRemoteResourceType::Unknown(value) => write!(f, "{}", value),
         }
     }

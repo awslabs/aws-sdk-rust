@@ -38,7 +38,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-paymentcryptography = "1.89.0"
+//! aws-sdk-paymentcryptography = "1.90.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -155,14 +155,14 @@ pub use config::Config;
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CreateAlias`](crate::operation::create_alias) operation has
-/// a [`Client::create_alias`], function which returns a builder for that operation.
+/// For example, the [`AddKeyReplicationRegions`](crate::operation::add_key_replication_regions) operation has
+/// a [`Client::add_key_replication_regions`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.create_alias()
-///     .alias_name("example")
+/// let result = client.add_key_replication_regions()
+///     .key_identifier("example")
 ///     .send()
 ///     .await;
 /// ```

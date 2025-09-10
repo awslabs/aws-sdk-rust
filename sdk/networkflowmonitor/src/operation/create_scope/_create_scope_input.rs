@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateScopeInput {
-    /// <p>The targets to define the scope to be monitored. Currently, a target is an Amazon Web Services account.</p>
+    /// <p>The targets to define the scope to be monitored. A target is an array of targetResources, which are currently Region-account pairs, defined by targetResource constructs.</p>
     pub targets: ::std::option::Option<::std::vec::Vec<crate::types::TargetResource>>,
     /// <p>A unique, case-sensitive string of up to 64 ASCII characters that you specify to make an idempotent API request. Don't reuse the same client token for other API requests.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
@@ -11,7 +11,7 @@ pub struct CreateScopeInput {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateScopeInput {
-    /// <p>The targets to define the scope to be monitored. Currently, a target is an Amazon Web Services account.</p>
+    /// <p>The targets to define the scope to be monitored. A target is an array of targetResources, which are currently Region-account pairs, defined by targetResource constructs.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.targets.is_none()`.
     pub fn targets(&self) -> &[crate::types::TargetResource] {
@@ -46,19 +46,19 @@ impl CreateScopeInputBuilder {
     ///
     /// To override the contents of this collection use [`set_targets`](Self::set_targets).
     ///
-    /// <p>The targets to define the scope to be monitored. Currently, a target is an Amazon Web Services account.</p>
+    /// <p>The targets to define the scope to be monitored. A target is an array of targetResources, which are currently Region-account pairs, defined by targetResource constructs.</p>
     pub fn targets(mut self, input: crate::types::TargetResource) -> Self {
         let mut v = self.targets.unwrap_or_default();
         v.push(input);
         self.targets = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The targets to define the scope to be monitored. Currently, a target is an Amazon Web Services account.</p>
+    /// <p>The targets to define the scope to be monitored. A target is an array of targetResources, which are currently Region-account pairs, defined by targetResource constructs.</p>
     pub fn set_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TargetResource>>) -> Self {
         self.targets = input;
         self
     }
-    /// <p>The targets to define the scope to be monitored. Currently, a target is an Amazon Web Services account.</p>
+    /// <p>The targets to define the scope to be monitored. A target is an array of targetResources, which are currently Region-account pairs, defined by targetResource constructs.</p>
     pub fn get_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetResource>> {
         &self.targets
     }

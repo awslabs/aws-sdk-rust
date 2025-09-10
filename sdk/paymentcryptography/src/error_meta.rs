@@ -4,20 +4,28 @@
 #[derive(::std::fmt::Debug)]
 pub enum Error {
     /// <p>You do not have sufficient access to perform this action.</p>
+    /// <p>This exception is thrown when the caller lacks the necessary IAM permissions to perform the requested operation. Verify that your IAM policy includes the required permissions for the specific Amazon Web Services Payment Cryptography action you're attempting.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>This request can cause an inconsistent state for the resource.</p>
+    /// <p>The requested operation conflicts with the current state of the resource. For example, attempting to delete a key that is currently being used, or trying to create a resource that already exists.</p>
     ConflictException(crate::types::error::ConflictException),
     /// <p>The request processing has failed because of an unknown error, exception, or failure.</p>
+    /// <p>This indicates a server-side error within the Amazon Web Services Payment Cryptography service. If this error persists, contact support for assistance.</p>
     InternalServerException(crate::types::error::InternalServerException),
-    /// <p>The request was denied due to an invalid resource error.</p>
+    /// <p>The request was denied due to resource not found.</p>
+    /// <p>The specified key, alias, or other resource does not exist in your account or region. Verify that the resource identifier is correct and that the resource exists in the expected region.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>This request would cause a service quota to be exceeded.</p>
+    /// <p>You have reached the maximum number of keys, aliases, or other resources allowed in your account. Review your current usage and consider deleting unused resources or requesting a quota increase.</p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// <p>The service cannot complete the request.</p>
+    /// <p>The Amazon Web Services Payment Cryptography service is temporarily unavailable. This is typically a temporary condition - retry your request after a brief delay.</p>
     ServiceUnavailableException(crate::types::error::ServiceUnavailableException),
     /// <p>The request was denied due to request throttling.</p>
+    /// <p>You have exceeded the rate limits for Amazon Web Services Payment Cryptography API calls. Implement exponential backoff and retry logic in your application to handle throttling gracefully.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>The request was denied due to an invalid request error.</p>
+    /// <p>One or more parameters in your request are invalid. Check the parameter values, formats, and constraints specified in the API documentation.</p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
@@ -69,6 +77,49 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::ThrottlingException(inner) => inner.meta(),
             Self::ValidationException(inner) => inner.meta(),
             Self::Unhandled(inner) => &inner.meta,
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::add_key_replication_regions::AddKeyReplicationRegionsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::add_key_replication_regions::AddKeyReplicationRegionsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::add_key_replication_regions::AddKeyReplicationRegionsError> for Error {
+    fn from(err: crate::operation::add_key_replication_regions::AddKeyReplicationRegionsError) -> Self {
+        match err {
+            crate::operation::add_key_replication_regions::AddKeyReplicationRegionsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::add_key_replication_regions::AddKeyReplicationRegionsError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::add_key_replication_regions::AddKeyReplicationRegionsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::add_key_replication_regions::AddKeyReplicationRegionsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::add_key_replication_regions::AddKeyReplicationRegionsError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::add_key_replication_regions::AddKeyReplicationRegionsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::add_key_replication_regions::AddKeyReplicationRegionsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::add_key_replication_regions::AddKeyReplicationRegionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -186,6 +237,116 @@ impl From<crate::operation::delete_key::DeleteKeyError> for Error {
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::disable_default_key_replication_regions::DisableDefaultKeyReplicationRegionsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::disable_default_key_replication_regions::DisableDefaultKeyReplicationRegionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::disable_default_key_replication_regions::DisableDefaultKeyReplicationRegionsError> for Error {
+    fn from(err: crate::operation::disable_default_key_replication_regions::DisableDefaultKeyReplicationRegionsError) -> Self {
+        match err {
+            crate::operation::disable_default_key_replication_regions::DisableDefaultKeyReplicationRegionsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::disable_default_key_replication_regions::DisableDefaultKeyReplicationRegionsError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::disable_default_key_replication_regions::DisableDefaultKeyReplicationRegionsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::disable_default_key_replication_regions::DisableDefaultKeyReplicationRegionsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::disable_default_key_replication_regions::DisableDefaultKeyReplicationRegionsError::ServiceQuotaExceededException(
+                inner,
+            ) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::disable_default_key_replication_regions::DisableDefaultKeyReplicationRegionsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::disable_default_key_replication_regions::DisableDefaultKeyReplicationRegionsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::disable_default_key_replication_regions::DisableDefaultKeyReplicationRegionsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::enable_default_key_replication_regions::EnableDefaultKeyReplicationRegionsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::enable_default_key_replication_regions::EnableDefaultKeyReplicationRegionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::enable_default_key_replication_regions::EnableDefaultKeyReplicationRegionsError> for Error {
+    fn from(err: crate::operation::enable_default_key_replication_regions::EnableDefaultKeyReplicationRegionsError) -> Self {
+        match err {
+            crate::operation::enable_default_key_replication_regions::EnableDefaultKeyReplicationRegionsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::enable_default_key_replication_regions::EnableDefaultKeyReplicationRegionsError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::enable_default_key_replication_regions::EnableDefaultKeyReplicationRegionsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::enable_default_key_replication_regions::EnableDefaultKeyReplicationRegionsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::enable_default_key_replication_regions::EnableDefaultKeyReplicationRegionsError::ServiceQuotaExceededException(
+                inner,
+            ) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::enable_default_key_replication_regions::EnableDefaultKeyReplicationRegionsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::enable_default_key_replication_regions::EnableDefaultKeyReplicationRegionsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::enable_default_key_replication_regions::EnableDefaultKeyReplicationRegionsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::export_key::ExportKeyError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -238,6 +399,59 @@ impl From<crate::operation::get_alias::GetAliasError> for Error {
             crate::operation::get_alias::GetAliasError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_alias::GetAliasError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_alias::GetAliasError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_default_key_replication_regions::GetDefaultKeyReplicationRegionsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_default_key_replication_regions::GetDefaultKeyReplicationRegionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_default_key_replication_regions::GetDefaultKeyReplicationRegionsError> for Error {
+    fn from(err: crate::operation::get_default_key_replication_regions::GetDefaultKeyReplicationRegionsError) -> Self {
+        match err {
+            crate::operation::get_default_key_replication_regions::GetDefaultKeyReplicationRegionsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_default_key_replication_regions::GetDefaultKeyReplicationRegionsError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::get_default_key_replication_regions::GetDefaultKeyReplicationRegionsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_default_key_replication_regions::GetDefaultKeyReplicationRegionsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_default_key_replication_regions::GetDefaultKeyReplicationRegionsError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::get_default_key_replication_regions::GetDefaultKeyReplicationRegionsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_default_key_replication_regions::GetDefaultKeyReplicationRegionsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_default_key_replication_regions::GetDefaultKeyReplicationRegionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -507,6 +721,55 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
             crate::operation::list_tags_for_resource::ListTagsForResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::remove_key_replication_regions::RemoveKeyReplicationRegionsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::remove_key_replication_regions::RemoveKeyReplicationRegionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::remove_key_replication_regions::RemoveKeyReplicationRegionsError> for Error {
+    fn from(err: crate::operation::remove_key_replication_regions::RemoveKeyReplicationRegionsError) -> Self {
+        match err {
+            crate::operation::remove_key_replication_regions::RemoveKeyReplicationRegionsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::remove_key_replication_regions::RemoveKeyReplicationRegionsError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::remove_key_replication_regions::RemoveKeyReplicationRegionsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::remove_key_replication_regions::RemoveKeyReplicationRegionsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::remove_key_replication_regions::RemoveKeyReplicationRegionsError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::remove_key_replication_regions::RemoveKeyReplicationRegionsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::remove_key_replication_regions::RemoveKeyReplicationRegionsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::remove_key_replication_regions::RemoveKeyReplicationRegionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

@@ -2,7 +2,7 @@
 
 /// <p>Parameter information for key material export using asymmetric RSA wrap and unwrap key exchange method.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExportKeyCryptogram {
     /// <p>The <code>KeyARN</code> of the certificate chain that signs the wrapping key certificate during RSA wrap and unwrap key export.</p>
     pub certificate_authority_public_key_identifier: ::std::string::String,
@@ -27,18 +27,6 @@ impl ExportKeyCryptogram {
         self.wrapping_spec.as_ref()
     }
 }
-impl ::std::fmt::Debug for ExportKeyCryptogram {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
-        let mut formatter = f.debug_struct("ExportKeyCryptogram");
-        formatter.field(
-            "certificate_authority_public_key_identifier",
-            &self.certificate_authority_public_key_identifier,
-        );
-        formatter.field("wrapping_key_certificate", &"*** Sensitive Data Redacted ***");
-        formatter.field("wrapping_spec", &self.wrapping_spec);
-        formatter.finish()
-    }
-}
 impl ExportKeyCryptogram {
     /// Creates a new builder-style object to manufacture [`ExportKeyCryptogram`](crate::types::ExportKeyCryptogram).
     pub fn builder() -> crate::types::builders::ExportKeyCryptogramBuilder {
@@ -47,7 +35,7 @@ impl ExportKeyCryptogram {
 }
 
 /// A builder for [`ExportKeyCryptogram`](crate::types::ExportKeyCryptogram).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct ExportKeyCryptogramBuilder {
     pub(crate) certificate_authority_public_key_identifier: ::std::option::Option<::std::string::String>,
@@ -119,17 +107,5 @@ impl ExportKeyCryptogramBuilder {
             })?,
             wrapping_spec: self.wrapping_spec,
         })
-    }
-}
-impl ::std::fmt::Debug for ExportKeyCryptogramBuilder {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
-        let mut formatter = f.debug_struct("ExportKeyCryptogramBuilder");
-        formatter.field(
-            "certificate_authority_public_key_identifier",
-            &self.certificate_authority_public_key_identifier,
-        );
-        formatter.field("wrapping_key_certificate", &"*** Sensitive Data Redacted ***");
-        formatter.field("wrapping_spec", &self.wrapping_spec);
-        formatter.finish()
     }
 }

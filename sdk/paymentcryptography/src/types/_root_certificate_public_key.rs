@@ -2,7 +2,7 @@
 
 /// <p>Parameter information for root public key certificate import.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RootCertificatePublicKey {
     /// <p>The role of the key, the algorithm it supports, and the cryptographic operations allowed with the key. This data is immutable after the root public key is imported.</p>
     pub key_attributes: ::std::option::Option<crate::types::KeyAttributes>,
@@ -20,14 +20,6 @@ impl RootCertificatePublicKey {
         self.public_key_certificate.deref()
     }
 }
-impl ::std::fmt::Debug for RootCertificatePublicKey {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
-        let mut formatter = f.debug_struct("RootCertificatePublicKey");
-        formatter.field("key_attributes", &self.key_attributes);
-        formatter.field("public_key_certificate", &"*** Sensitive Data Redacted ***");
-        formatter.finish()
-    }
-}
 impl RootCertificatePublicKey {
     /// Creates a new builder-style object to manufacture [`RootCertificatePublicKey`](crate::types::RootCertificatePublicKey).
     pub fn builder() -> crate::types::builders::RootCertificatePublicKeyBuilder {
@@ -36,7 +28,7 @@ impl RootCertificatePublicKey {
 }
 
 /// A builder for [`RootCertificatePublicKey`](crate::types::RootCertificatePublicKey).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct RootCertificatePublicKeyBuilder {
     pub(crate) key_attributes: ::std::option::Option<crate::types::KeyAttributes>,
@@ -86,13 +78,5 @@ impl RootCertificatePublicKeyBuilder {
                 )
             })?,
         })
-    }
-}
-impl ::std::fmt::Debug for RootCertificatePublicKeyBuilder {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
-        let mut formatter = f.debug_struct("RootCertificatePublicKeyBuilder");
-        formatter.field("key_attributes", &self.key_attributes);
-        formatter.field("public_key_certificate", &"*** Sensitive Data Redacted ***");
-        formatter.finish()
     }
 }

@@ -5,7 +5,7 @@
 pub struct StartQueryWorkloadInsightsTopContributorsDataInput {
     /// <p>The identifier for the scope that includes the resources you want to get data results for. A scope ID is an internally-generated identifier that includes all the resources for a specific root account.</p>
     pub scope_id: ::std::option::Option<::std::string::String>,
-    /// <p>The timestamp that is the date and time beginning of the period that you want to retrieve results for with your query.</p>
+    /// <p>The timestamp that is the date and time that is the beginning of the period that you want to retrieve results for with your query.</p>
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp that is the date and time end of the period that you want to retrieve results for with your query.</p>
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -17,6 +17,8 @@ pub struct StartQueryWorkloadInsightsTopContributorsDataInput {
     /// <p><code>INTRA_AZ</code>: Top contributor network flows within a single Availability Zone</p></li>
     /// <li>
     /// <p><code>INTER_AZ</code>: Top contributor network flows between Availability Zones</p></li>
+    /// <li>
+    /// <p><code>INTER_REGION</code>: Top contributor network flows between Regions (to the edge of another Region)</p></li>
     /// <li>
     /// <p><code>INTER_VPC</code>: Top contributor network flows between VPCs</p></li>
     /// <li>
@@ -31,7 +33,7 @@ impl StartQueryWorkloadInsightsTopContributorsDataInput {
     pub fn scope_id(&self) -> ::std::option::Option<&str> {
         self.scope_id.as_deref()
     }
-    /// <p>The timestamp that is the date and time beginning of the period that you want to retrieve results for with your query.</p>
+    /// <p>The timestamp that is the date and time that is the beginning of the period that you want to retrieve results for with your query.</p>
     pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
@@ -49,6 +51,8 @@ impl StartQueryWorkloadInsightsTopContributorsDataInput {
     /// <p><code>INTRA_AZ</code>: Top contributor network flows within a single Availability Zone</p></li>
     /// <li>
     /// <p><code>INTER_AZ</code>: Top contributor network flows between Availability Zones</p></li>
+    /// <li>
+    /// <p><code>INTER_REGION</code>: Top contributor network flows between Regions (to the edge of another Region)</p></li>
     /// <li>
     /// <p><code>INTER_VPC</code>: Top contributor network flows between VPCs</p></li>
     /// <li>
@@ -95,18 +99,18 @@ impl StartQueryWorkloadInsightsTopContributorsDataInputBuilder {
     pub fn get_scope_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.scope_id
     }
-    /// <p>The timestamp that is the date and time beginning of the period that you want to retrieve results for with your query.</p>
+    /// <p>The timestamp that is the date and time that is the beginning of the period that you want to retrieve results for with your query.</p>
     /// This field is required.
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The timestamp that is the date and time beginning of the period that you want to retrieve results for with your query.</p>
+    /// <p>The timestamp that is the date and time that is the beginning of the period that you want to retrieve results for with your query.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
-    /// <p>The timestamp that is the date and time beginning of the period that you want to retrieve results for with your query.</p>
+    /// <p>The timestamp that is the date and time that is the beginning of the period that you want to retrieve results for with your query.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.start_time
     }
@@ -147,6 +151,8 @@ impl StartQueryWorkloadInsightsTopContributorsDataInputBuilder {
     /// <li>
     /// <p><code>INTER_AZ</code>: Top contributor network flows between Availability Zones</p></li>
     /// <li>
+    /// <p><code>INTER_REGION</code>: Top contributor network flows between Regions (to the edge of another Region)</p></li>
+    /// <li>
     /// <p><code>INTER_VPC</code>: Top contributor network flows between VPCs</p></li>
     /// <li>
     /// <p><code>AWS_SERVICES</code>: Top contributor network flows to or from Amazon Web Services services</p></li>
@@ -165,6 +171,8 @@ impl StartQueryWorkloadInsightsTopContributorsDataInputBuilder {
     /// <li>
     /// <p><code>INTER_AZ</code>: Top contributor network flows between Availability Zones</p></li>
     /// <li>
+    /// <p><code>INTER_REGION</code>: Top contributor network flows between Regions (to the edge of another Region)</p></li>
+    /// <li>
     /// <p><code>INTER_VPC</code>: Top contributor network flows between VPCs</p></li>
     /// <li>
     /// <p><code>AWS_SERVICES</code>: Top contributor network flows to or from Amazon Web Services services</p></li>
@@ -181,6 +189,8 @@ impl StartQueryWorkloadInsightsTopContributorsDataInputBuilder {
     /// <p><code>INTRA_AZ</code>: Top contributor network flows within a single Availability Zone</p></li>
     /// <li>
     /// <p><code>INTER_AZ</code>: Top contributor network flows between Availability Zones</p></li>
+    /// <li>
+    /// <p><code>INTER_REGION</code>: Top contributor network flows between Regions (to the edge of another Region)</p></li>
     /// <li>
     /// <p><code>INTER_VPC</code>: Top contributor network flows between VPCs</p></li>
     /// <li>

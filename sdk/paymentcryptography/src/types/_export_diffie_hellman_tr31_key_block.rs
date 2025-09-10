@@ -2,7 +2,7 @@
 
 /// <p>Key derivation parameter information for key material export using asymmetric ECDH key exchange method.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExportDiffieHellmanTr31KeyBlock {
     /// <p>The <code>keyARN</code> of the asymmetric ECC key created within Amazon Web Services Payment Cryptography.</p>
     pub private_key_identifier: ::std::string::String,
@@ -58,23 +58,6 @@ impl ExportDiffieHellmanTr31KeyBlock {
         self.key_block_headers.as_ref()
     }
 }
-impl ::std::fmt::Debug for ExportDiffieHellmanTr31KeyBlock {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
-        let mut formatter = f.debug_struct("ExportDiffieHellmanTr31KeyBlock");
-        formatter.field("private_key_identifier", &self.private_key_identifier);
-        formatter.field(
-            "certificate_authority_public_key_identifier",
-            &self.certificate_authority_public_key_identifier,
-        );
-        formatter.field("public_key_certificate", &"*** Sensitive Data Redacted ***");
-        formatter.field("derive_key_algorithm", &self.derive_key_algorithm);
-        formatter.field("key_derivation_function", &self.key_derivation_function);
-        formatter.field("key_derivation_hash_algorithm", &self.key_derivation_hash_algorithm);
-        formatter.field("derivation_data", &self.derivation_data);
-        formatter.field("key_block_headers", &self.key_block_headers);
-        formatter.finish()
-    }
-}
 impl ExportDiffieHellmanTr31KeyBlock {
     /// Creates a new builder-style object to manufacture [`ExportDiffieHellmanTr31KeyBlock`](crate::types::ExportDiffieHellmanTr31KeyBlock).
     pub fn builder() -> crate::types::builders::ExportDiffieHellmanTr31KeyBlockBuilder {
@@ -83,7 +66,7 @@ impl ExportDiffieHellmanTr31KeyBlock {
 }
 
 /// A builder for [`ExportDiffieHellmanTr31KeyBlock`](crate::types::ExportDiffieHellmanTr31KeyBlock).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct ExportDiffieHellmanTr31KeyBlockBuilder {
     pub(crate) private_key_identifier: ::std::option::Option<::std::string::String>,
@@ -264,22 +247,5 @@ impl ExportDiffieHellmanTr31KeyBlockBuilder {
             derivation_data: self.derivation_data,
             key_block_headers: self.key_block_headers,
         })
-    }
-}
-impl ::std::fmt::Debug for ExportDiffieHellmanTr31KeyBlockBuilder {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
-        let mut formatter = f.debug_struct("ExportDiffieHellmanTr31KeyBlockBuilder");
-        formatter.field("private_key_identifier", &self.private_key_identifier);
-        formatter.field(
-            "certificate_authority_public_key_identifier",
-            &self.certificate_authority_public_key_identifier,
-        );
-        formatter.field("public_key_certificate", &"*** Sensitive Data Redacted ***");
-        formatter.field("derive_key_algorithm", &self.derive_key_algorithm);
-        formatter.field("key_derivation_function", &self.key_derivation_function);
-        formatter.field("key_derivation_hash_algorithm", &self.key_derivation_hash_algorithm);
-        formatter.field("derivation_data", &self.derivation_data);
-        formatter.field("key_block_headers", &self.key_block_headers);
-        formatter.finish()
     }
 }

@@ -44,6 +44,20 @@ where
                         "Enabled" => {
                             builder = builder.set_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
+                        "MultiRegionKeyType" => {
+                            builder = builder.set_multi_region_key_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::MultiRegionKeyType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "PrimaryRegion" => {
+                            builder = builder.set_primary_region(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

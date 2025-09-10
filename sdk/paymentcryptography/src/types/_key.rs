@@ -33,6 +33,18 @@ pub struct Key {
     pub delete_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The cryptographic usage of an ECDH derived key as deﬁned in section A.5.2 of the TR-31 spec.</p>
     pub derive_key_usage: ::std::option::Option<crate::types::DeriveKeyUsage>,
+    /// <p>Indicates whether this key is a multi-region key and its role in the multi-region key hierarchy.</p>
+    /// <p>Multi-region keys allow the same key material to be used across multiple Amazon Web Services Regions. This field specifies whether the key is a primary key (which can be replicated to other regions) or a replica key (which is a copy of a primary key in another region).</p>
+    pub multi_region_key_type: ::std::option::Option<crate::types::MultiRegionKeyType>,
+    /// <p>An Amazon Web Services Region identifier in the standard format (e.g., <code>us-east-1</code>, <code>eu-west-1</code>).</p>
+    /// <p>Used to specify regions for key replication operations. The region must be a valid Amazon Web Services Region where Amazon Web Services Payment Cryptography is available.</p>
+    pub primary_region: ::std::option::Option<::std::string::String>,
+    /// <p>Information about the replication status of the key across different regions.</p>
+    /// <p>This field provides details about the current state of key replication, including any status messages or operational information. It helps track the progress and health of key replication operations.</p>
+    pub replication_status: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ReplicationStatusType>>,
+    /// <p>Indicates whether this key is using the account's default replication regions configuration.</p>
+    /// <p>When set to <code>true</code>, the key automatically replicates to the regions specified in the account's default replication settings. When set to <code>false</code>, the key has a custom replication configuration that overrides the account defaults.</p>
+    pub using_default_replication_regions: ::std::option::Option<bool>,
 }
 impl Key {
     /// <p>The Amazon Resource Name (ARN) of the key.</p>
@@ -94,6 +106,28 @@ impl Key {
     pub fn derive_key_usage(&self) -> ::std::option::Option<&crate::types::DeriveKeyUsage> {
         self.derive_key_usage.as_ref()
     }
+    /// <p>Indicates whether this key is a multi-region key and its role in the multi-region key hierarchy.</p>
+    /// <p>Multi-region keys allow the same key material to be used across multiple Amazon Web Services Regions. This field specifies whether the key is a primary key (which can be replicated to other regions) or a replica key (which is a copy of a primary key in another region).</p>
+    pub fn multi_region_key_type(&self) -> ::std::option::Option<&crate::types::MultiRegionKeyType> {
+        self.multi_region_key_type.as_ref()
+    }
+    /// <p>An Amazon Web Services Region identifier in the standard format (e.g., <code>us-east-1</code>, <code>eu-west-1</code>).</p>
+    /// <p>Used to specify regions for key replication operations. The region must be a valid Amazon Web Services Region where Amazon Web Services Payment Cryptography is available.</p>
+    pub fn primary_region(&self) -> ::std::option::Option<&str> {
+        self.primary_region.as_deref()
+    }
+    /// <p>Information about the replication status of the key across different regions.</p>
+    /// <p>This field provides details about the current state of key replication, including any status messages or operational information. It helps track the progress and health of key replication operations.</p>
+    pub fn replication_status(
+        &self,
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::ReplicationStatusType>> {
+        self.replication_status.as_ref()
+    }
+    /// <p>Indicates whether this key is using the account's default replication regions configuration.</p>
+    /// <p>When set to <code>true</code>, the key automatically replicates to the regions specified in the account's default replication settings. When set to <code>false</code>, the key has a custom replication configuration that overrides the account defaults.</p>
+    pub fn using_default_replication_regions(&self) -> ::std::option::Option<bool> {
+        self.using_default_replication_regions
+    }
 }
 impl Key {
     /// Creates a new builder-style object to manufacture [`Key`](crate::types::Key).
@@ -120,6 +154,10 @@ pub struct KeyBuilder {
     pub(crate) delete_pending_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) delete_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) derive_key_usage: ::std::option::Option<crate::types::DeriveKeyUsage>,
+    pub(crate) multi_region_key_type: ::std::option::Option<crate::types::MultiRegionKeyType>,
+    pub(crate) primary_region: ::std::option::Option<::std::string::String>,
+    pub(crate) replication_status: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ReplicationStatusType>>,
+    pub(crate) using_default_replication_regions: ::std::option::Option<bool>,
 }
 impl KeyBuilder {
     /// <p>The Amazon Resource Name (ARN) of the key.</p>
@@ -330,6 +368,85 @@ impl KeyBuilder {
     pub fn get_derive_key_usage(&self) -> &::std::option::Option<crate::types::DeriveKeyUsage> {
         &self.derive_key_usage
     }
+    /// <p>Indicates whether this key is a multi-region key and its role in the multi-region key hierarchy.</p>
+    /// <p>Multi-region keys allow the same key material to be used across multiple Amazon Web Services Regions. This field specifies whether the key is a primary key (which can be replicated to other regions) or a replica key (which is a copy of a primary key in another region).</p>
+    pub fn multi_region_key_type(mut self, input: crate::types::MultiRegionKeyType) -> Self {
+        self.multi_region_key_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether this key is a multi-region key and its role in the multi-region key hierarchy.</p>
+    /// <p>Multi-region keys allow the same key material to be used across multiple Amazon Web Services Regions. This field specifies whether the key is a primary key (which can be replicated to other regions) or a replica key (which is a copy of a primary key in another region).</p>
+    pub fn set_multi_region_key_type(mut self, input: ::std::option::Option<crate::types::MultiRegionKeyType>) -> Self {
+        self.multi_region_key_type = input;
+        self
+    }
+    /// <p>Indicates whether this key is a multi-region key and its role in the multi-region key hierarchy.</p>
+    /// <p>Multi-region keys allow the same key material to be used across multiple Amazon Web Services Regions. This field specifies whether the key is a primary key (which can be replicated to other regions) or a replica key (which is a copy of a primary key in another region).</p>
+    pub fn get_multi_region_key_type(&self) -> &::std::option::Option<crate::types::MultiRegionKeyType> {
+        &self.multi_region_key_type
+    }
+    /// <p>An Amazon Web Services Region identifier in the standard format (e.g., <code>us-east-1</code>, <code>eu-west-1</code>).</p>
+    /// <p>Used to specify regions for key replication operations. The region must be a valid Amazon Web Services Region where Amazon Web Services Payment Cryptography is available.</p>
+    pub fn primary_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.primary_region = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>An Amazon Web Services Region identifier in the standard format (e.g., <code>us-east-1</code>, <code>eu-west-1</code>).</p>
+    /// <p>Used to specify regions for key replication operations. The region must be a valid Amazon Web Services Region where Amazon Web Services Payment Cryptography is available.</p>
+    pub fn set_primary_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.primary_region = input;
+        self
+    }
+    /// <p>An Amazon Web Services Region identifier in the standard format (e.g., <code>us-east-1</code>, <code>eu-west-1</code>).</p>
+    /// <p>Used to specify regions for key replication operations. The region must be a valid Amazon Web Services Region where Amazon Web Services Payment Cryptography is available.</p>
+    pub fn get_primary_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.primary_region
+    }
+    /// Adds a key-value pair to `replication_status`.
+    ///
+    /// To override the contents of this collection use [`set_replication_status`](Self::set_replication_status).
+    ///
+    /// <p>Information about the replication status of the key across different regions.</p>
+    /// <p>This field provides details about the current state of key replication, including any status messages or operational information. It helps track the progress and health of key replication operations.</p>
+    pub fn replication_status(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::ReplicationStatusType) -> Self {
+        let mut hash_map = self.replication_status.unwrap_or_default();
+        hash_map.insert(k.into(), v);
+        self.replication_status = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>Information about the replication status of the key across different regions.</p>
+    /// <p>This field provides details about the current state of key replication, including any status messages or operational information. It helps track the progress and health of key replication operations.</p>
+    pub fn set_replication_status(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ReplicationStatusType>>,
+    ) -> Self {
+        self.replication_status = input;
+        self
+    }
+    /// <p>Information about the replication status of the key across different regions.</p>
+    /// <p>This field provides details about the current state of key replication, including any status messages or operational information. It helps track the progress and health of key replication operations.</p>
+    pub fn get_replication_status(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ReplicationStatusType>> {
+        &self.replication_status
+    }
+    /// <p>Indicates whether this key is using the account's default replication regions configuration.</p>
+    /// <p>When set to <code>true</code>, the key automatically replicates to the regions specified in the account's default replication settings. When set to <code>false</code>, the key has a custom replication configuration that overrides the account defaults.</p>
+    pub fn using_default_replication_regions(mut self, input: bool) -> Self {
+        self.using_default_replication_regions = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether this key is using the account's default replication regions configuration.</p>
+    /// <p>When set to <code>true</code>, the key automatically replicates to the regions specified in the account's default replication settings. When set to <code>false</code>, the key has a custom replication configuration that overrides the account defaults.</p>
+    pub fn set_using_default_replication_regions(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.using_default_replication_regions = input;
+        self
+    }
+    /// <p>Indicates whether this key is using the account's default replication regions configuration.</p>
+    /// <p>When set to <code>true</code>, the key automatically replicates to the regions specified in the account's default replication settings. When set to <code>false</code>, the key has a custom replication configuration that overrides the account defaults.</p>
+    pub fn get_using_default_replication_regions(&self) -> &::std::option::Option<bool> {
+        &self.using_default_replication_regions
+    }
     /// Consumes the builder and constructs a [`Key`](crate::types::Key).
     /// This method will fail if any of the following fields are not set:
     /// - [`key_arn`](crate::types::builders::KeyBuilder::key_arn)
@@ -396,6 +513,10 @@ impl KeyBuilder {
             delete_pending_timestamp: self.delete_pending_timestamp,
             delete_timestamp: self.delete_timestamp,
             derive_key_usage: self.derive_key_usage,
+            multi_region_key_type: self.multi_region_key_type,
+            primary_region: self.primary_region,
+            replication_status: self.replication_status,
+            using_default_replication_regions: self.using_default_replication_regions,
         })
     }
 }

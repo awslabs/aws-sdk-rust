@@ -67,7 +67,7 @@ impl ::std::fmt::Debug for ImportDiffieHellmanTr31KeyBlock {
             "certificate_authority_public_key_identifier",
             &self.certificate_authority_public_key_identifier,
         );
-        formatter.field("public_key_certificate", &"*** Sensitive Data Redacted ***");
+        formatter.field("public_key_certificate", &self.public_key_certificate);
         formatter.field("derive_key_algorithm", &self.derive_key_algorithm);
         formatter.field("key_derivation_function", &self.key_derivation_function);
         formatter.field("key_derivation_hash_algorithm", &self.key_derivation_hash_algorithm);
@@ -282,7 +282,7 @@ impl ::std::fmt::Debug for ImportDiffieHellmanTr31KeyBlockBuilder {
             "certificate_authority_public_key_identifier",
             &self.certificate_authority_public_key_identifier,
         );
-        formatter.field("public_key_certificate", &"*** Sensitive Data Redacted ***");
+        formatter.field("public_key_certificate", &self.public_key_certificate);
         formatter.field("derive_key_algorithm", &self.derive_key_algorithm);
         formatter.field("key_derivation_function", &self.key_derivation_function);
         formatter.field("key_derivation_hash_algorithm", &self.key_derivation_hash_algorithm);

@@ -15,6 +15,7 @@
 ///     KeyCheckValueAlgorithm::AnsiX924 => { /* ... */ },
 ///     KeyCheckValueAlgorithm::Cmac => { /* ... */ },
 ///     KeyCheckValueAlgorithm::Hmac => { /* ... */ },
+///     KeyCheckValueAlgorithm::Sha1 => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -49,6 +50,8 @@ pub enum KeyCheckValueAlgorithm {
     Cmac,
     #[allow(missing_docs)] // documentation missing in model
     Hmac,
+    #[allow(missing_docs)] // documentation missing in model
+    Sha1,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -59,6 +62,7 @@ impl ::std::convert::From<&str> for KeyCheckValueAlgorithm {
             "ANSI_X9_24" => KeyCheckValueAlgorithm::AnsiX924,
             "CMAC" => KeyCheckValueAlgorithm::Cmac,
             "HMAC" => KeyCheckValueAlgorithm::Hmac,
+            "SHA_1" => KeyCheckValueAlgorithm::Sha1,
             other => KeyCheckValueAlgorithm::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -77,12 +81,13 @@ impl KeyCheckValueAlgorithm {
             KeyCheckValueAlgorithm::AnsiX924 => "ANSI_X9_24",
             KeyCheckValueAlgorithm::Cmac => "CMAC",
             KeyCheckValueAlgorithm::Hmac => "HMAC",
+            KeyCheckValueAlgorithm::Sha1 => "SHA_1",
             KeyCheckValueAlgorithm::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ANSI_X9_24", "CMAC", "HMAC"]
+        &["ANSI_X9_24", "CMAC", "HMAC", "SHA_1"]
     }
 }
 impl ::std::convert::AsRef<str> for KeyCheckValueAlgorithm {
@@ -108,6 +113,7 @@ impl ::std::fmt::Display for KeyCheckValueAlgorithm {
             KeyCheckValueAlgorithm::AnsiX924 => write!(f, "ANSI_X9_24"),
             KeyCheckValueAlgorithm::Cmac => write!(f, "CMAC"),
             KeyCheckValueAlgorithm::Hmac => write!(f, "HMAC"),
+            KeyCheckValueAlgorithm::Sha1 => write!(f, "SHA_1"),
             KeyCheckValueAlgorithm::Unknown(value) => write!(f, "{}", value),
         }
     }

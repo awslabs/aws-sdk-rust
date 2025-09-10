@@ -59,14 +59,14 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CreateAlias`](crate::operation::create_alias) operation has
-/// a [`Client::create_alias`], function which returns a builder for that operation.
+/// For example, the [`AddKeyReplicationRegions`](crate::operation::add_key_replication_regions) operation has
+/// a [`Client::add_key_replication_regions`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.create_alias()
-///     .alias_name("example")
+/// let result = client.add_key_replication_regions()
+///     .key_identifier("example")
 ///     .send()
 ///     .await;
 /// ```
@@ -136,6 +136,8 @@ impl Client {
     }
 }
 
+mod add_key_replication_regions;
+
 mod create_alias;
 
 mod create_key;
@@ -151,7 +153,7 @@ mod create_key;
 /// # let client: aws_sdk_paymentcryptography::Client = unimplemented!();
 /// use ::http::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.create_alias()
+/// let result = client.add_key_replication_regions()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
@@ -171,9 +173,15 @@ mod delete_alias;
 
 mod delete_key;
 
+mod disable_default_key_replication_regions;
+
+mod enable_default_key_replication_regions;
+
 mod export_key;
 
 mod get_alias;
+
+mod get_default_key_replication_regions;
 
 mod get_key;
 
@@ -190,6 +198,8 @@ mod list_aliases;
 mod list_keys;
 
 mod list_tags_for_resource;
+
+mod remove_key_replication_regions;
 
 mod restore_key;
 

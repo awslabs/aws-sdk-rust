@@ -8,7 +8,7 @@ pub struct TraversedComponent {
     pub component_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of component that was traversed.</p>
     pub component_type: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of a tranversed component.</p>
+    /// <p>The Amazon Resource Name (ARN) of a traversed component.</p>
     pub component_arn: ::std::option::Option<::std::string::String>,
     /// <p>The service name for the traversed component.</p>
     pub service_name: ::std::option::Option<::std::string::String>,
@@ -22,7 +22,7 @@ impl TraversedComponent {
     pub fn component_type(&self) -> ::std::option::Option<&str> {
         self.component_type.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of a tranversed component.</p>
+    /// <p>The Amazon Resource Name (ARN) of a traversed component.</p>
     pub fn component_arn(&self) -> ::std::option::Option<&str> {
         self.component_arn.as_deref()
     }
@@ -76,17 +76,17 @@ impl TraversedComponentBuilder {
     pub fn get_component_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.component_type
     }
-    /// <p>The Amazon Resource Name (ARN) of a tranversed component.</p>
+    /// <p>The Amazon Resource Name (ARN) of a traversed component.</p>
     pub fn component_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of a tranversed component.</p>
+    /// <p>The Amazon Resource Name (ARN) of a traversed component.</p>
     pub fn set_component_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.component_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of a tranversed component.</p>
+    /// <p>The Amazon Resource Name (ARN) of a traversed component.</p>
     pub fn get_component_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.component_arn
     }

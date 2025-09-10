@@ -2,7 +2,7 @@
 
 /// <p>Parameter information for key material export using the asymmetric TR-34 key exchange method.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExportTr34KeyBlock {
     /// <p>The <code>KeyARN</code> of the certificate chain that signs the wrapping key certificate during TR-34 key export.</p>
     pub certificate_authority_public_key_identifier: ::std::string::String,
@@ -46,21 +46,6 @@ impl ExportTr34KeyBlock {
         self.key_block_headers.as_ref()
     }
 }
-impl ::std::fmt::Debug for ExportTr34KeyBlock {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
-        let mut formatter = f.debug_struct("ExportTr34KeyBlock");
-        formatter.field(
-            "certificate_authority_public_key_identifier",
-            &self.certificate_authority_public_key_identifier,
-        );
-        formatter.field("wrapping_key_certificate", &"*** Sensitive Data Redacted ***");
-        formatter.field("export_token", &self.export_token);
-        formatter.field("key_block_format", &self.key_block_format);
-        formatter.field("random_nonce", &self.random_nonce);
-        formatter.field("key_block_headers", &self.key_block_headers);
-        formatter.finish()
-    }
-}
 impl ExportTr34KeyBlock {
     /// Creates a new builder-style object to manufacture [`ExportTr34KeyBlock`](crate::types::ExportTr34KeyBlock).
     pub fn builder() -> crate::types::builders::ExportTr34KeyBlockBuilder {
@@ -69,7 +54,7 @@ impl ExportTr34KeyBlock {
 }
 
 /// A builder for [`ExportTr34KeyBlock`](crate::types::ExportTr34KeyBlock).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct ExportTr34KeyBlockBuilder {
     pub(crate) certificate_authority_public_key_identifier: ::std::option::Option<::std::string::String>,
@@ -203,20 +188,5 @@ impl ExportTr34KeyBlockBuilder {
             random_nonce: self.random_nonce,
             key_block_headers: self.key_block_headers,
         })
-    }
-}
-impl ::std::fmt::Debug for ExportTr34KeyBlockBuilder {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
-        let mut formatter = f.debug_struct("ExportTr34KeyBlockBuilder");
-        formatter.field(
-            "certificate_authority_public_key_identifier",
-            &self.certificate_authority_public_key_identifier,
-        );
-        formatter.field("wrapping_key_certificate", &"*** Sensitive Data Redacted ***");
-        formatter.field("export_token", &self.export_token);
-        formatter.field("key_block_format", &self.key_block_format);
-        formatter.field("random_nonce", &self.random_nonce);
-        formatter.field("key_block_headers", &self.key_block_headers);
-        formatter.finish()
     }
 }

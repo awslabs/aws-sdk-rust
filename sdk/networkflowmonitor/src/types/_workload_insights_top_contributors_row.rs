@@ -14,7 +14,7 @@ pub struct WorkloadInsightsTopContributorsRow {
     pub local_vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Region where the local resource is located.</p>
     pub local_region: ::std::option::Option<::std::string::String>,
-    /// <p>The identifier of a remote resource.</p>
+    /// <p>The identifier of a remote resource. For a VPC or subnet, this identifier is the VPC Amazon Resource Name (ARN) or subnet ARN. For an Availability Zone, this identifier is the AZ name, for example, us-west-2b. For an Amazon Web Services Region , this identifier is the Region name, for example, us-west-2.</p>
     pub remote_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The value for a metric.</p>
     pub value: ::std::option::Option<i64>,
@@ -44,7 +44,7 @@ impl WorkloadInsightsTopContributorsRow {
     pub fn local_region(&self) -> ::std::option::Option<&str> {
         self.local_region.as_deref()
     }
-    /// <p>The identifier of a remote resource.</p>
+    /// <p>The identifier of a remote resource. For a VPC or subnet, this identifier is the VPC Amazon Resource Name (ARN) or subnet ARN. For an Availability Zone, this identifier is the AZ name, for example, us-west-2b. For an Amazon Web Services Region , this identifier is the Region name, for example, us-west-2.</p>
     pub fn remote_identifier(&self) -> ::std::option::Option<&str> {
         self.remote_identifier.as_deref()
     }
@@ -153,17 +153,17 @@ impl WorkloadInsightsTopContributorsRowBuilder {
     pub fn get_local_region(&self) -> &::std::option::Option<::std::string::String> {
         &self.local_region
     }
-    /// <p>The identifier of a remote resource.</p>
+    /// <p>The identifier of a remote resource. For a VPC or subnet, this identifier is the VPC Amazon Resource Name (ARN) or subnet ARN. For an Availability Zone, this identifier is the AZ name, for example, us-west-2b. For an Amazon Web Services Region , this identifier is the Region name, for example, us-west-2.</p>
     pub fn remote_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.remote_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of a remote resource.</p>
+    /// <p>The identifier of a remote resource. For a VPC or subnet, this identifier is the VPC Amazon Resource Name (ARN) or subnet ARN. For an Availability Zone, this identifier is the AZ name, for example, us-west-2b. For an Amazon Web Services Region , this identifier is the Region name, for example, us-west-2.</p>
     pub fn set_remote_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.remote_identifier = input;
         self
     }
-    /// <p>The identifier of a remote resource.</p>
+    /// <p>The identifier of a remote resource. For a VPC or subnet, this identifier is the VPC Amazon Resource Name (ARN) or subnet ARN. For an Availability Zone, this identifier is the AZ name, for example, us-west-2b. For an Amazon Web Services Region , this identifier is the Region name, for example, us-west-2.</p>
     pub fn get_remote_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.remote_identifier
     }

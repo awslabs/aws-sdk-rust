@@ -5,7 +5,7 @@
 pub struct StartQueryMonitorTopContributorsInput {
     /// <p>The name of the monitor.</p>
     pub monitor_name: ::std::option::Option<::std::string::String>,
-    /// <p>The timestamp that is the date and time beginning of the period that you want to retrieve results for with your query.</p>
+    /// <p>The timestamp that is the date and time that is the beginning of the period that you want to retrieve results for with your query.</p>
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp that is the date and time end of the period that you want to retrieve results for with your query.</p>
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -17,6 +17,8 @@ pub struct StartQueryMonitorTopContributorsInput {
     /// <p><code>INTRA_AZ</code>: Top contributor network flows within a single Availability Zone</p></li>
     /// <li>
     /// <p><code>INTER_AZ</code>: Top contributor network flows between Availability Zones</p></li>
+    /// <li>
+    /// <p><code>INTER_REGION</code>: Top contributor network flows between Regions (to the edge of another Region)</p></li>
     /// <li>
     /// <p><code>INTER_VPC</code>: Top contributor network flows between VPCs</p></li>
     /// <li>
@@ -35,7 +37,7 @@ impl StartQueryMonitorTopContributorsInput {
     pub fn monitor_name(&self) -> ::std::option::Option<&str> {
         self.monitor_name.as_deref()
     }
-    /// <p>The timestamp that is the date and time beginning of the period that you want to retrieve results for with your query.</p>
+    /// <p>The timestamp that is the date and time that is the beginning of the period that you want to retrieve results for with your query.</p>
     pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
@@ -53,6 +55,8 @@ impl StartQueryMonitorTopContributorsInput {
     /// <p><code>INTRA_AZ</code>: Top contributor network flows within a single Availability Zone</p></li>
     /// <li>
     /// <p><code>INTER_AZ</code>: Top contributor network flows between Availability Zones</p></li>
+    /// <li>
+    /// <p><code>INTER_REGION</code>: Top contributor network flows between Regions (to the edge of another Region)</p></li>
     /// <li>
     /// <p><code>INTER_VPC</code>: Top contributor network flows between VPCs</p></li>
     /// <li>
@@ -104,18 +108,18 @@ impl StartQueryMonitorTopContributorsInputBuilder {
     pub fn get_monitor_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.monitor_name
     }
-    /// <p>The timestamp that is the date and time beginning of the period that you want to retrieve results for with your query.</p>
+    /// <p>The timestamp that is the date and time that is the beginning of the period that you want to retrieve results for with your query.</p>
     /// This field is required.
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The timestamp that is the date and time beginning of the period that you want to retrieve results for with your query.</p>
+    /// <p>The timestamp that is the date and time that is the beginning of the period that you want to retrieve results for with your query.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
-    /// <p>The timestamp that is the date and time beginning of the period that you want to retrieve results for with your query.</p>
+    /// <p>The timestamp that is the date and time that is the beginning of the period that you want to retrieve results for with your query.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.start_time
     }
@@ -156,6 +160,8 @@ impl StartQueryMonitorTopContributorsInputBuilder {
     /// <li>
     /// <p><code>INTER_AZ</code>: Top contributor network flows between Availability Zones</p></li>
     /// <li>
+    /// <p><code>INTER_REGION</code>: Top contributor network flows between Regions (to the edge of another Region)</p></li>
+    /// <li>
     /// <p><code>INTER_VPC</code>: Top contributor network flows between VPCs</p></li>
     /// <li>
     /// <p><code>AMAZON_S3</code>: Top contributor network flows to or from Amazon S3</p></li>
@@ -176,6 +182,8 @@ impl StartQueryMonitorTopContributorsInputBuilder {
     /// <li>
     /// <p><code>INTER_AZ</code>: Top contributor network flows between Availability Zones</p></li>
     /// <li>
+    /// <p><code>INTER_REGION</code>: Top contributor network flows between Regions (to the edge of another Region)</p></li>
+    /// <li>
     /// <p><code>INTER_VPC</code>: Top contributor network flows between VPCs</p></li>
     /// <li>
     /// <p><code>AMAZON_S3</code>: Top contributor network flows to or from Amazon S3</p></li>
@@ -194,6 +202,8 @@ impl StartQueryMonitorTopContributorsInputBuilder {
     /// <p><code>INTRA_AZ</code>: Top contributor network flows within a single Availability Zone</p></li>
     /// <li>
     /// <p><code>INTER_AZ</code>: Top contributor network flows between Availability Zones</p></li>
+    /// <li>
+    /// <p><code>INTER_REGION</code>: Top contributor network flows between Regions (to the edge of another Region)</p></li>
     /// <li>
     /// <p><code>INTER_VPC</code>: Top contributor network flows between VPCs</p></li>
     /// <li>

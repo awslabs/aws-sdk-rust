@@ -263,4 +263,26 @@ impl ImportKeyFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }
+    ///
+    /// Appends an item to `ReplicationRegions`.
+    ///
+    /// To override the contents of this collection use [`set_replication_regions`](Self::set_replication_regions).
+    ///
+    /// <p>A list of Amazon Web Services Regions for key replication operations.</p>
+    /// <p>Each region in the list must be a valid Amazon Web Services Region identifier where Amazon Web Services Payment Cryptography is available. This list is used to specify which regions should be added to or removed from a key's replication configuration.</p>
+    pub fn replication_regions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.replication_regions(input.into());
+        self
+    }
+    /// <p>A list of Amazon Web Services Regions for key replication operations.</p>
+    /// <p>Each region in the list must be a valid Amazon Web Services Region identifier where Amazon Web Services Payment Cryptography is available. This list is used to specify which regions should be added to or removed from a key's replication configuration.</p>
+    pub fn set_replication_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_replication_regions(input);
+        self
+    }
+    /// <p>A list of Amazon Web Services Regions for key replication operations.</p>
+    /// <p>Each region in the list must be a valid Amazon Web Services Region identifier where Amazon Web Services Payment Cryptography is available. This list is used to specify which regions should be added to or removed from a key's replication configuration.</p>
+    pub fn get_replication_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_replication_regions()
+    }
 }

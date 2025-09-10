@@ -1672,9 +1672,9 @@ model_hash = '3302b55cca924863508fccf972f9d4f02257e23bd3aeaf3634091066c9f70889'
 
 [crates.aws-sdk-networkflowmonitor]
 category = 'AwsSdk'
-version = '1.36.0'
-source_hash = '5dd9e5a6aeb2e75f0a61ed9f4788df366a66776983bab5774f0d74065d99ea01'
-model_hash = 'bd99764aa04123452204f40905348420f80dbecad49bb426633291fb8c73acf9'
+version = '1.37.0'
+source_hash = 'd0a5de79c3f5a875156f14ea6c6348024dd75df1fd6acd9370137fc403aa0e37'
+model_hash = 'fe83c6185d868b5ac912833b341cb666fbc29dc5bdb21a8272962cfe7982e8f1'
 
 [crates.aws-sdk-networkmanager]
 category = 'AwsSdk'
@@ -1780,9 +1780,9 @@ model_hash = '7147dfd48c13c95c5d146290662230f3ac28447abdada04894b5d84996837d6a'
 
 [crates.aws-sdk-paymentcryptography]
 category = 'AwsSdk'
-version = '1.89.0'
-source_hash = 'dc657728b53a167a4bafaca060affbb4ce4bd44318b8c11f385ffc5b555da948'
-model_hash = '56691cb28c2b69fb3b8852dc6982c244132fb0c04b3b3cef76fa029bddaf2ba2'
+version = '1.90.0'
+source_hash = 'a9ab574cc8c303ad845149fde78d5756d30f82adf7de15bffa9b2806a72cc74e'
+model_hash = 'a551c799766d7382fc4478248e6cb5b7b5a3c8a55e91e4db949d12169c005d90'
 
 [crates.aws-sdk-paymentcryptographydata]
 category = 'AwsSdk'
@@ -2698,15 +2698,6 @@ source_hash = '4c5d5266f2362d2e5151ae84c74d4be93d72b204329d3a66b9acddceaeb83925'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '4eae21d18f13ae2c8b3f5858292cfbd15f9dcb2b92d7ba9aac9878db2a601b2c'
-
-[release]
-tag = 'release-2025-09-09'
-
 [release.crates]
-aws-sdk-autoscaling = '1.94.0'
-aws-sdk-cloudwatch = '1.90.0'
-aws-sdk-connect = '1.127.0'
-aws-sdk-datazone = '1.102.0'
-aws-sdk-mediapackagev2 = '1.93.0'
-aws-sdk-organizations = '1.93.0'
-aws-sdk-sagemaker = '1.157.0'
+aws-sdk-networkflowmonitor = '1.37.0'
+aws-sdk-paymentcryptography = '1.90.0'

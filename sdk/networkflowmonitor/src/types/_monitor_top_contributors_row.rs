@@ -27,6 +27,8 @@ pub struct MonitorTopContributorsRow {
     /// <li>
     /// <p><code>INTER_AZ</code>: Top contributor network flows between Availability Zones</p></li>
     /// <li>
+    /// <p><code>INTER_REGION</code>: Top contributor network flows between Regions (to the edge of another Region)</p></li>
+    /// <li>
     /// <p><code>INTER_VPC</code>: Top contributor network flows between VPCs</p></li>
     /// <li>
     /// <p><code>AWS_SERVICES</code>: Top contributor network flows to or from Amazon Web Services services</p></li>
@@ -106,6 +108,8 @@ impl MonitorTopContributorsRow {
     /// <p><code>INTRA_AZ</code>: Top contributor network flows within a single Availability Zone</p></li>
     /// <li>
     /// <p><code>INTER_AZ</code>: Top contributor network flows between Availability Zones</p></li>
+    /// <li>
+    /// <p><code>INTER_REGION</code>: Top contributor network flows between Regions (to the edge of another Region)</p></li>
     /// <li>
     /// <p><code>INTER_VPC</code>: Top contributor network flows between VPCs</p></li>
     /// <li>
@@ -340,6 +344,8 @@ impl MonitorTopContributorsRowBuilder {
     /// <li>
     /// <p><code>INTER_AZ</code>: Top contributor network flows between Availability Zones</p></li>
     /// <li>
+    /// <p><code>INTER_REGION</code>: Top contributor network flows between Regions (to the edge of another Region)</p></li>
+    /// <li>
     /// <p><code>INTER_VPC</code>: Top contributor network flows between VPCs</p></li>
     /// <li>
     /// <p><code>AWS_SERVICES</code>: Top contributor network flows to or from Amazon Web Services services</p></li>
@@ -357,6 +363,8 @@ impl MonitorTopContributorsRowBuilder {
     /// <li>
     /// <p><code>INTER_AZ</code>: Top contributor network flows between Availability Zones</p></li>
     /// <li>
+    /// <p><code>INTER_REGION</code>: Top contributor network flows between Regions (to the edge of another Region)</p></li>
+    /// <li>
     /// <p><code>INTER_VPC</code>: Top contributor network flows between VPCs</p></li>
     /// <li>
     /// <p><code>AWS_SERVICES</code>: Top contributor network flows to or from Amazon Web Services services</p></li>
@@ -373,6 +381,8 @@ impl MonitorTopContributorsRowBuilder {
     /// <p><code>INTRA_AZ</code>: Top contributor network flows within a single Availability Zone</p></li>
     /// <li>
     /// <p><code>INTER_AZ</code>: Top contributor network flows between Availability Zones</p></li>
+    /// <li>
+    /// <p><code>INTER_REGION</code>: Top contributor network flows between Regions (to the edge of another Region)</p></li>
     /// <li>
     /// <p><code>INTER_VPC</code>: Top contributor network flows between VPCs</p></li>
     /// <li>

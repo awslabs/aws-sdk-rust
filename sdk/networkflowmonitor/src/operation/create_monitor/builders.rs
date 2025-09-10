@@ -22,7 +22,7 @@ impl crate::operation::create_monitor::builders::CreateMonitorInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateMonitor`.
 ///
-/// <p>Create a monitor for specific network flows between local and remote resources, so that you can monitor network performance for one or several of your workloads. For each monitor, Network Flow Monitor publishes detailed end-to-end performance metrics and a network health indicators (NHI) that informs you whether there were Amazon Web Services network issues for one or more of the network flows tracked by a monitor, during a time period that you choose.</p>
+/// <p>Create a monitor for specific network flows between local and remote resources, so that you can monitor network performance for one or several of your workloads. For each monitor, Network Flow Monitor publishes detailed end-to-end performance metrics and a network health indicator (NHI) that informs you whether there were Amazon Web Services network issues for one or more of the network flows tracked by a monitor, during a time period that you choose.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateMonitorFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -127,17 +127,20 @@ impl CreateMonitorFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_local_resources`](Self::set_local_resources).
     ///
-    /// <p>The local resources to monitor. A local resource, in a bi-directional flow of a workload, is the host where the agent is installed. For example, if a workload consists of an interaction between a web service and a backend database (for example, Amazon Relational Database Service (RDS)), the EC2 instance hosting the web service, which also runs the agent, is the local resource.</p>
+    /// <p>The local resources to monitor. A local resource in a workload is the location of the host, or hosts, where the Network Flow Monitor agent is installed. For example, if a workload consists of an interaction between a web service and a backend database (for example, Amazon Dynamo DB), the subnet with the EC2 instance that hosts the web service, which also runs the agent, is the local resource.</p>
+    /// <p>Be aware that all local resources must belong to the current Region.</p>
     pub fn local_resources(mut self, input: crate::types::MonitorLocalResource) -> Self {
         self.inner = self.inner.local_resources(input);
         self
     }
-    /// <p>The local resources to monitor. A local resource, in a bi-directional flow of a workload, is the host where the agent is installed. For example, if a workload consists of an interaction between a web service and a backend database (for example, Amazon Relational Database Service (RDS)), the EC2 instance hosting the web service, which also runs the agent, is the local resource.</p>
+    /// <p>The local resources to monitor. A local resource in a workload is the location of the host, or hosts, where the Network Flow Monitor agent is installed. For example, if a workload consists of an interaction between a web service and a backend database (for example, Amazon Dynamo DB), the subnet with the EC2 instance that hosts the web service, which also runs the agent, is the local resource.</p>
+    /// <p>Be aware that all local resources must belong to the current Region.</p>
     pub fn set_local_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MonitorLocalResource>>) -> Self {
         self.inner = self.inner.set_local_resources(input);
         self
     }
-    /// <p>The local resources to monitor. A local resource, in a bi-directional flow of a workload, is the host where the agent is installed. For example, if a workload consists of an interaction between a web service and a backend database (for example, Amazon Relational Database Service (RDS)), the EC2 instance hosting the web service, which also runs the agent, is the local resource.</p>
+    /// <p>The local resources to monitor. A local resource in a workload is the location of the host, or hosts, where the Network Flow Monitor agent is installed. For example, if a workload consists of an interaction between a web service and a backend database (for example, Amazon Dynamo DB), the subnet with the EC2 instance that hosts the web service, which also runs the agent, is the local resource.</p>
+    /// <p>Be aware that all local resources must belong to the current Region.</p>
     pub fn get_local_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MonitorLocalResource>> {
         self.inner.get_local_resources()
     }
@@ -146,17 +149,50 @@ impl CreateMonitorFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_remote_resources`](Self::set_remote_resources).
     ///
-    /// <p>The remote resources to monitor. A remote resource is the other endpoint in the bi-directional flow of a workload, with a local resource. For example, Amazon Relational Database Service (RDS) can be a remote resource.</p>
+    /// <p>The remote resources to monitor. A remote resource is the other endpoint in the bi-directional flow of a workload, with a local resource. For example, Amazon Dynamo DB can be a remote resource.</p>
+    /// <p>When you specify remote resources, be aware that specific combinations of resources are allowed and others are not, including the following constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>All remote resources that you specify must all belong to a single Region.</p></li>
+    /// <li>
+    /// <p>If you specify Amazon Web Services services as remote resources, any other remote resources that you specify must be in the current Region.</p></li>
+    /// <li>
+    /// <p>When you specify a remote resource for another Region, you can only specify the <code>Region</code> resource type. You cannot specify a subnet, VPC, or Availability Zone in another Region.</p></li>
+    /// <li>
+    /// <p>If you leave the <code>RemoteResources</code> parameter empty, the monitor will include all network flows that terminate in the current Region.</p></li>
+    /// </ul>
     pub fn remote_resources(mut self, input: crate::types::MonitorRemoteResource) -> Self {
         self.inner = self.inner.remote_resources(input);
         self
     }
-    /// <p>The remote resources to monitor. A remote resource is the other endpoint in the bi-directional flow of a workload, with a local resource. For example, Amazon Relational Database Service (RDS) can be a remote resource.</p>
+    /// <p>The remote resources to monitor. A remote resource is the other endpoint in the bi-directional flow of a workload, with a local resource. For example, Amazon Dynamo DB can be a remote resource.</p>
+    /// <p>When you specify remote resources, be aware that specific combinations of resources are allowed and others are not, including the following constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>All remote resources that you specify must all belong to a single Region.</p></li>
+    /// <li>
+    /// <p>If you specify Amazon Web Services services as remote resources, any other remote resources that you specify must be in the current Region.</p></li>
+    /// <li>
+    /// <p>When you specify a remote resource for another Region, you can only specify the <code>Region</code> resource type. You cannot specify a subnet, VPC, or Availability Zone in another Region.</p></li>
+    /// <li>
+    /// <p>If you leave the <code>RemoteResources</code> parameter empty, the monitor will include all network flows that terminate in the current Region.</p></li>
+    /// </ul>
     pub fn set_remote_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MonitorRemoteResource>>) -> Self {
         self.inner = self.inner.set_remote_resources(input);
         self
     }
-    /// <p>The remote resources to monitor. A remote resource is the other endpoint in the bi-directional flow of a workload, with a local resource. For example, Amazon Relational Database Service (RDS) can be a remote resource.</p>
+    /// <p>The remote resources to monitor. A remote resource is the other endpoint in the bi-directional flow of a workload, with a local resource. For example, Amazon Dynamo DB can be a remote resource.</p>
+    /// <p>When you specify remote resources, be aware that specific combinations of resources are allowed and others are not, including the following constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>All remote resources that you specify must all belong to a single Region.</p></li>
+    /// <li>
+    /// <p>If you specify Amazon Web Services services as remote resources, any other remote resources that you specify must be in the current Region.</p></li>
+    /// <li>
+    /// <p>When you specify a remote resource for another Region, you can only specify the <code>Region</code> resource type. You cannot specify a subnet, VPC, or Availability Zone in another Region.</p></li>
+    /// <li>
+    /// <p>If you leave the <code>RemoteResources</code> parameter empty, the monitor will include all network flows that terminate in the current Region.</p></li>
+    /// </ul>
     pub fn get_remote_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MonitorRemoteResource>> {
         self.inner.get_remote_resources()
     }

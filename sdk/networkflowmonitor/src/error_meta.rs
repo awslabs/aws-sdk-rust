@@ -140,6 +140,7 @@ impl From<crate::operation::delete_monitor::DeleteMonitorError> for Error {
     fn from(err: crate::operation::delete_monitor::DeleteMonitorError) -> Self {
         match err {
             crate::operation::delete_monitor::DeleteMonitorError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_monitor::DeleteMonitorError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::delete_monitor::DeleteMonitorError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::delete_monitor::DeleteMonitorError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::delete_monitor::DeleteMonitorError::ThrottlingException(inner) => Error::ThrottlingException(inner),

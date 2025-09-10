@@ -22,8 +22,17 @@ impl crate::operation::create_scope::builders::CreateScopeInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateScope`.
 ///
-/// <p>Create a scope of resources that you want to be available for Network Flow Monitor to generate metrics for, when you have active agents on those resources sending metrics reports to the Network Flow Monitor backend. This call returns a scope ID to identify the scope.</p>
-/// <p>When you create a scope, you enable permissions for Network Flow Monitor. The scope is set to the resources for the Amazon Web Services that enables the feature.</p>
+/// <p>In Network Flow Monitor, you specify a scope for the service to generate metrics for. By using the scope, Network Flow Monitor can generate a topology of all the resources to measure performance metrics for. When you create a scope, you enable permissions for Network Flow Monitor.</p>
+/// <p>A scope is a Region-account pair or multiple Region-account pairs. Network Flow Monitor uses your scope to determine all the resources (the topology) where Network Flow Monitor will gather network flow performance metrics for you. To provide performance metrics, Network Flow Monitor uses the data that is sent by the Network Flow Monitor agents you install on the resources.</p>
+/// <p>To define the Region-account pairs for your scope, the Network Flow Monitor API uses the following constucts, which allow for future flexibility in defining scopes:</p>
+/// <ul>
+/// <li>
+/// <p><i>Targets</i>, which are arrays of targetResources.</p></li>
+/// <li>
+/// <p><i>Target resources</i>, which are Region-targetIdentifier pairs.</p></li>
+/// <li>
+/// <p><i>Target identifiers</i>, made up of a targetID (currently always an account ID) and a targetType (currently always an account).</p></li>
+/// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateScopeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,17 +123,17 @@ impl CreateScopeFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_targets`](Self::set_targets).
     ///
-    /// <p>The targets to define the scope to be monitored. Currently, a target is an Amazon Web Services account.</p>
+    /// <p>The targets to define the scope to be monitored. A target is an array of targetResources, which are currently Region-account pairs, defined by targetResource constructs.</p>
     pub fn targets(mut self, input: crate::types::TargetResource) -> Self {
         self.inner = self.inner.targets(input);
         self
     }
-    /// <p>The targets to define the scope to be monitored. Currently, a target is an Amazon Web Services account.</p>
+    /// <p>The targets to define the scope to be monitored. A target is an array of targetResources, which are currently Region-account pairs, defined by targetResource constructs.</p>
     pub fn set_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TargetResource>>) -> Self {
         self.inner = self.inner.set_targets(input);
         self
     }
-    /// <p>The targets to define the scope to be monitored. Currently, a target is an Amazon Web Services account.</p>
+    /// <p>The targets to define the scope to be monitored. A target is an array of targetResources, which are currently Region-account pairs, defined by targetResource constructs.</p>
     pub fn get_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetResource>> {
         self.inner.get_targets()
     }

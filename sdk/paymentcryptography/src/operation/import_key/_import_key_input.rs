@@ -17,6 +17,9 @@ pub struct ImportKeyInput {
     /// <p>Tagging or untagging an Amazon Web Services Payment Cryptography key can allow or deny permission to the key.</p>
     /// </note>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>A list of Amazon Web Services Regions for key replication operations.</p>
+    /// <p>Each region in the list must be a valid Amazon Web Services Region identifier where Amazon Web Services Payment Cryptography is available. This list is used to specify which regions should be added to or removed from a key's replication configuration.</p>
+    pub replication_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ImportKeyInput {
     /// <p>The key or public key certificate type to use during key material import, for example TR-34 or RootCertificatePublicKey.</p>
@@ -43,6 +46,13 @@ impl ImportKeyInput {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
+    /// <p>A list of Amazon Web Services Regions for key replication operations.</p>
+    /// <p>Each region in the list must be a valid Amazon Web Services Region identifier where Amazon Web Services Payment Cryptography is available. This list is used to specify which regions should be added to or removed from a key's replication configuration.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replication_regions.is_none()`.
+    pub fn replication_regions(&self) -> &[::std::string::String] {
+        self.replication_regions.as_deref().unwrap_or_default()
+    }
 }
 impl ImportKeyInput {
     /// Creates a new builder-style object to manufacture [`ImportKeyInput`](crate::operation::import_key::ImportKeyInput).
@@ -59,6 +69,7 @@ pub struct ImportKeyInputBuilder {
     pub(crate) key_check_value_algorithm: ::std::option::Option<crate::types::KeyCheckValueAlgorithm>,
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) replication_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ImportKeyInputBuilder {
     /// <p>The key or public key certificate type to use during key material import, for example TR-34 or RootCertificatePublicKey.</p>
@@ -142,6 +153,29 @@ impl ImportKeyInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
+    /// Appends an item to `replication_regions`.
+    ///
+    /// To override the contents of this collection use [`set_replication_regions`](Self::set_replication_regions).
+    ///
+    /// <p>A list of Amazon Web Services Regions for key replication operations.</p>
+    /// <p>Each region in the list must be a valid Amazon Web Services Region identifier where Amazon Web Services Payment Cryptography is available. This list is used to specify which regions should be added to or removed from a key's replication configuration.</p>
+    pub fn replication_regions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.replication_regions.unwrap_or_default();
+        v.push(input.into());
+        self.replication_regions = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of Amazon Web Services Regions for key replication operations.</p>
+    /// <p>Each region in the list must be a valid Amazon Web Services Region identifier where Amazon Web Services Payment Cryptography is available. This list is used to specify which regions should be added to or removed from a key's replication configuration.</p>
+    pub fn set_replication_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.replication_regions = input;
+        self
+    }
+    /// <p>A list of Amazon Web Services Regions for key replication operations.</p>
+    /// <p>Each region in the list must be a valid Amazon Web Services Region identifier where Amazon Web Services Payment Cryptography is available. This list is used to specify which regions should be added to or removed from a key's replication configuration.</p>
+    pub fn get_replication_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.replication_regions
+    }
     /// Consumes the builder and constructs a [`ImportKeyInput`](crate::operation::import_key::ImportKeyInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::import_key::ImportKeyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::import_key::ImportKeyInput {
@@ -149,6 +183,7 @@ impl ImportKeyInputBuilder {
             key_check_value_algorithm: self.key_check_value_algorithm,
             enabled: self.enabled,
             tags: self.tags,
+            replication_regions: self.replication_regions,
         })
     }
 }

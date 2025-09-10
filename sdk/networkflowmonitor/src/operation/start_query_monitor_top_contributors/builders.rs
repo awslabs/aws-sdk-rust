@@ -124,17 +124,17 @@ impl StartQueryMonitorTopContributorsFluentBuilder {
     pub fn get_monitor_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_monitor_name()
     }
-    /// <p>The timestamp that is the date and time beginning of the period that you want to retrieve results for with your query.</p>
+    /// <p>The timestamp that is the date and time that is the beginning of the period that you want to retrieve results for with your query.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.start_time(input);
         self
     }
-    /// <p>The timestamp that is the date and time beginning of the period that you want to retrieve results for with your query.</p>
+    /// <p>The timestamp that is the date and time that is the beginning of the period that you want to retrieve results for with your query.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
-    /// <p>The timestamp that is the date and time beginning of the period that you want to retrieve results for with your query.</p>
+    /// <p>The timestamp that is the date and time that is the beginning of the period that you want to retrieve results for with your query.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_start_time()
     }
@@ -173,6 +173,8 @@ impl StartQueryMonitorTopContributorsFluentBuilder {
     /// <li>
     /// <p><code>INTER_AZ</code>: Top contributor network flows between Availability Zones</p></li>
     /// <li>
+    /// <p><code>INTER_REGION</code>: Top contributor network flows between Regions (to the edge of another Region)</p></li>
+    /// <li>
     /// <p><code>INTER_VPC</code>: Top contributor network flows between VPCs</p></li>
     /// <li>
     /// <p><code>AMAZON_S3</code>: Top contributor network flows to or from Amazon S3</p></li>
@@ -192,6 +194,8 @@ impl StartQueryMonitorTopContributorsFluentBuilder {
     /// <li>
     /// <p><code>INTER_AZ</code>: Top contributor network flows between Availability Zones</p></li>
     /// <li>
+    /// <p><code>INTER_REGION</code>: Top contributor network flows between Regions (to the edge of another Region)</p></li>
+    /// <li>
     /// <p><code>INTER_VPC</code>: Top contributor network flows between VPCs</p></li>
     /// <li>
     /// <p><code>AMAZON_S3</code>: Top contributor network flows to or from Amazon S3</p></li>
@@ -210,6 +214,8 @@ impl StartQueryMonitorTopContributorsFluentBuilder {
     /// <p><code>INTRA_AZ</code>: Top contributor network flows within a single Availability Zone</p></li>
     /// <li>
     /// <p><code>INTER_AZ</code>: Top contributor network flows between Availability Zones</p></li>
+    /// <li>
+    /// <p><code>INTER_REGION</code>: Top contributor network flows between Regions (to the edge of another Region)</p></li>
     /// <li>
     /// <p><code>INTER_VPC</code>: Top contributor network flows between VPCs</p></li>
     /// <li>

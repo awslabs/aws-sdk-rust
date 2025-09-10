@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScopeSummary {
-    /// <p>The identifier for the scope that includes the resources you want to get data results for. A scope ID is an internally-generated identifier that includes all the resources for a specific root account.</p>
+    /// <p>The identifier for the scope that includes the resources that you want to get data results for. A scope ID is an internally-generated identifier that includes all the resources for the accounts in a scope.</p>
     pub scope_id: ::std::string::String,
     /// <p>The status for a scope. The status can be one of the following: <code>SUCCEEDED</code>, <code>IN_PROGRESS</code>, <code>FAILED</code>, <code>DEACTIVATING</code>, or <code>DEACTIVATED</code>.</p>
     /// <p>A status of <code>DEACTIVATING</code> means that you've requested a scope to be deactivated and Network Flow Monitor is in the process of deactivating the scope. A status of <code>DEACTIVATED</code> means that the deactivating process is complete.</p>
@@ -13,7 +13,7 @@ pub struct ScopeSummary {
     pub scope_arn: ::std::string::String,
 }
 impl ScopeSummary {
-    /// <p>The identifier for the scope that includes the resources you want to get data results for. A scope ID is an internally-generated identifier that includes all the resources for a specific root account.</p>
+    /// <p>The identifier for the scope that includes the resources that you want to get data results for. A scope ID is an internally-generated identifier that includes all the resources for the accounts in a scope.</p>
     pub fn scope_id(&self) -> &str {
         use std::ops::Deref;
         self.scope_id.deref()
@@ -45,18 +45,18 @@ pub struct ScopeSummaryBuilder {
     pub(crate) scope_arn: ::std::option::Option<::std::string::String>,
 }
 impl ScopeSummaryBuilder {
-    /// <p>The identifier for the scope that includes the resources you want to get data results for. A scope ID is an internally-generated identifier that includes all the resources for a specific root account.</p>
+    /// <p>The identifier for the scope that includes the resources that you want to get data results for. A scope ID is an internally-generated identifier that includes all the resources for the accounts in a scope.</p>
     /// This field is required.
     pub fn scope_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scope_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier for the scope that includes the resources you want to get data results for. A scope ID is an internally-generated identifier that includes all the resources for a specific root account.</p>
+    /// <p>The identifier for the scope that includes the resources that you want to get data results for. A scope ID is an internally-generated identifier that includes all the resources for the accounts in a scope.</p>
     pub fn set_scope_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.scope_id = input;
         self
     }
-    /// <p>The identifier for the scope that includes the resources you want to get data results for. A scope ID is an internally-generated identifier that includes all the resources for a specific root account.</p>
+    /// <p>The identifier for the scope that includes the resources that you want to get data results for. A scope ID is an internally-generated identifier that includes all the resources for the accounts in a scope.</p>
     pub fn get_scope_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.scope_id
     }

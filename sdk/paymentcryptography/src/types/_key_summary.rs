@@ -16,6 +16,11 @@ pub struct KeySummary {
     pub exportable: bool,
     /// <p>Specifies whether the key is enabled.</p>
     pub enabled: bool,
+    /// Defines the replication type of a key
+    pub multi_region_key_type: ::std::option::Option<crate::types::MultiRegionKeyType>,
+    /// <p>An Amazon Web Services Region identifier in the standard format (e.g., <code>us-east-1</code>, <code>eu-west-1</code>).</p>
+    /// <p>Used to specify regions for key replication operations. The region must be a valid Amazon Web Services Region where Amazon Web Services Payment Cryptography is available.</p>
+    pub primary_region: ::std::option::Option<::std::string::String>,
 }
 impl KeySummary {
     /// <p>The Amazon Resource Name (ARN) of the key.</p>
@@ -44,6 +49,15 @@ impl KeySummary {
     pub fn enabled(&self) -> bool {
         self.enabled
     }
+    /// Defines the replication type of a key
+    pub fn multi_region_key_type(&self) -> ::std::option::Option<&crate::types::MultiRegionKeyType> {
+        self.multi_region_key_type.as_ref()
+    }
+    /// <p>An Amazon Web Services Region identifier in the standard format (e.g., <code>us-east-1</code>, <code>eu-west-1</code>).</p>
+    /// <p>Used to specify regions for key replication operations. The region must be a valid Amazon Web Services Region where Amazon Web Services Payment Cryptography is available.</p>
+    pub fn primary_region(&self) -> ::std::option::Option<&str> {
+        self.primary_region.as_deref()
+    }
 }
 impl KeySummary {
     /// Creates a new builder-style object to manufacture [`KeySummary`](crate::types::KeySummary).
@@ -62,6 +76,8 @@ pub struct KeySummaryBuilder {
     pub(crate) key_check_value: ::std::option::Option<::std::string::String>,
     pub(crate) exportable: ::std::option::Option<bool>,
     pub(crate) enabled: ::std::option::Option<bool>,
+    pub(crate) multi_region_key_type: ::std::option::Option<crate::types::MultiRegionKeyType>,
+    pub(crate) primary_region: ::std::option::Option<::std::string::String>,
 }
 impl KeySummaryBuilder {
     /// <p>The Amazon Resource Name (ARN) of the key.</p>
@@ -154,6 +170,37 @@ impl KeySummaryBuilder {
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
         &self.enabled
     }
+    /// Defines the replication type of a key
+    pub fn multi_region_key_type(mut self, input: crate::types::MultiRegionKeyType) -> Self {
+        self.multi_region_key_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// Defines the replication type of a key
+    pub fn set_multi_region_key_type(mut self, input: ::std::option::Option<crate::types::MultiRegionKeyType>) -> Self {
+        self.multi_region_key_type = input;
+        self
+    }
+    /// Defines the replication type of a key
+    pub fn get_multi_region_key_type(&self) -> &::std::option::Option<crate::types::MultiRegionKeyType> {
+        &self.multi_region_key_type
+    }
+    /// <p>An Amazon Web Services Region identifier in the standard format (e.g., <code>us-east-1</code>, <code>eu-west-1</code>).</p>
+    /// <p>Used to specify regions for key replication operations. The region must be a valid Amazon Web Services Region where Amazon Web Services Payment Cryptography is available.</p>
+    pub fn primary_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.primary_region = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>An Amazon Web Services Region identifier in the standard format (e.g., <code>us-east-1</code>, <code>eu-west-1</code>).</p>
+    /// <p>Used to specify regions for key replication operations. The region must be a valid Amazon Web Services Region where Amazon Web Services Payment Cryptography is available.</p>
+    pub fn set_primary_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.primary_region = input;
+        self
+    }
+    /// <p>An Amazon Web Services Region identifier in the standard format (e.g., <code>us-east-1</code>, <code>eu-west-1</code>).</p>
+    /// <p>Used to specify regions for key replication operations. The region must be a valid Amazon Web Services Region where Amazon Web Services Payment Cryptography is available.</p>
+    pub fn get_primary_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.primary_region
+    }
     /// Consumes the builder and constructs a [`KeySummary`](crate::types::KeySummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`key_arn`](crate::types::builders::KeySummaryBuilder::key_arn)
@@ -194,6 +241,8 @@ impl KeySummaryBuilder {
                     "enabled was not specified but it is required when building KeySummary",
                 )
             })?,
+            multi_region_key_type: self.multi_region_key_type,
+            primary_region: self.primary_region,
         })
     }
 }

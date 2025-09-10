@@ -15,6 +15,7 @@
 ///     MonitorLocalResourceType::AwsAz => { /* ... */ },
 ///     MonitorLocalResourceType::AwsSubnet => { /* ... */ },
 ///     MonitorLocalResourceType::AwsVpc => { /* ... */ },
+///     MonitorLocalResourceType::AwsRegion => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -49,6 +50,8 @@ pub enum MonitorLocalResourceType {
     AwsSubnet,
     #[allow(missing_docs)] // documentation missing in model
     AwsVpc,
+    #[allow(missing_docs)] // documentation missing in model
+    AwsRegion,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -59,6 +62,7 @@ impl ::std::convert::From<&str> for MonitorLocalResourceType {
             "AWS::AvailabilityZone" => MonitorLocalResourceType::AwsAz,
             "AWS::EC2::Subnet" => MonitorLocalResourceType::AwsSubnet,
             "AWS::EC2::VPC" => MonitorLocalResourceType::AwsVpc,
+            "AWS::Region" => MonitorLocalResourceType::AwsRegion,
             other => MonitorLocalResourceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -77,12 +81,13 @@ impl MonitorLocalResourceType {
             MonitorLocalResourceType::AwsAz => "AWS::AvailabilityZone",
             MonitorLocalResourceType::AwsSubnet => "AWS::EC2::Subnet",
             MonitorLocalResourceType::AwsVpc => "AWS::EC2::VPC",
+            MonitorLocalResourceType::AwsRegion => "AWS::Region",
             MonitorLocalResourceType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AWS::AvailabilityZone", "AWS::EC2::Subnet", "AWS::EC2::VPC"]
+        &["AWS::AvailabilityZone", "AWS::EC2::Subnet", "AWS::EC2::VPC", "AWS::Region"]
     }
 }
 impl ::std::convert::AsRef<str> for MonitorLocalResourceType {
@@ -108,6 +113,7 @@ impl ::std::fmt::Display for MonitorLocalResourceType {
             MonitorLocalResourceType::AwsAz => write!(f, "AWS::AvailabilityZone"),
             MonitorLocalResourceType::AwsSubnet => write!(f, "AWS::EC2::Subnet"),
             MonitorLocalResourceType::AwsVpc => write!(f, "AWS::EC2::VPC"),
+            MonitorLocalResourceType::AwsRegion => write!(f, "AWS::Region"),
             MonitorLocalResourceType::Unknown(value) => write!(f, "{}", value),
         }
     }

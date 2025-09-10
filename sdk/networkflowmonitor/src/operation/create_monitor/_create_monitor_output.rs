@@ -21,9 +21,9 @@ pub struct CreateMonitorOutput {
     /// <p><code>DELETING</code>: The monitor is in the process of being deleted.</p></li>
     /// </ul>
     pub monitor_status: crate::types::MonitorStatus,
-    /// <p>The local resources to monitor. A local resource, in a bi-directional flow of a workload, is the host where the agent is installed.</p>
+    /// <p>The local resources to monitor. A local resource in a workload is the location of hosts where the Network Flow Monitor agent is installed.</p>
     pub local_resources: ::std::vec::Vec<crate::types::MonitorLocalResource>,
-    /// <p>The remote resources to monitor. A remote resource is the other endpoint in the bi-directional flow of a workload, with a local resource. For example, Amazon Relational Database Service (RDS) can be a remote resource. The remote resource is identified by its ARN or an identifier.</p>
+    /// <p>The remote resources to monitor. A remote resource is the other endpoint specified for the network flow of a workload, with a local resource. For example, Amazon Dynamo DB can be a remote resource.</p>
     pub remote_resources: ::std::vec::Vec<crate::types::MonitorRemoteResource>,
     /// <p>The date and time when the monitor was created.</p>
     pub created_at: ::aws_smithy_types::DateTime,
@@ -60,12 +60,12 @@ impl CreateMonitorOutput {
     pub fn monitor_status(&self) -> &crate::types::MonitorStatus {
         &self.monitor_status
     }
-    /// <p>The local resources to monitor. A local resource, in a bi-directional flow of a workload, is the host where the agent is installed.</p>
+    /// <p>The local resources to monitor. A local resource in a workload is the location of hosts where the Network Flow Monitor agent is installed.</p>
     pub fn local_resources(&self) -> &[crate::types::MonitorLocalResource] {
         use std::ops::Deref;
         self.local_resources.deref()
     }
-    /// <p>The remote resources to monitor. A remote resource is the other endpoint in the bi-directional flow of a workload, with a local resource. For example, Amazon Relational Database Service (RDS) can be a remote resource. The remote resource is identified by its ARN or an identifier.</p>
+    /// <p>The remote resources to monitor. A remote resource is the other endpoint specified for the network flow of a workload, with a local resource. For example, Amazon Dynamo DB can be a remote resource.</p>
     pub fn remote_resources(&self) -> &[crate::types::MonitorRemoteResource] {
         use std::ops::Deref;
         self.remote_resources.deref()
@@ -195,19 +195,19 @@ impl CreateMonitorOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_local_resources`](Self::set_local_resources).
     ///
-    /// <p>The local resources to monitor. A local resource, in a bi-directional flow of a workload, is the host where the agent is installed.</p>
+    /// <p>The local resources to monitor. A local resource in a workload is the location of hosts where the Network Flow Monitor agent is installed.</p>
     pub fn local_resources(mut self, input: crate::types::MonitorLocalResource) -> Self {
         let mut v = self.local_resources.unwrap_or_default();
         v.push(input);
         self.local_resources = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The local resources to monitor. A local resource, in a bi-directional flow of a workload, is the host where the agent is installed.</p>
+    /// <p>The local resources to monitor. A local resource in a workload is the location of hosts where the Network Flow Monitor agent is installed.</p>
     pub fn set_local_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MonitorLocalResource>>) -> Self {
         self.local_resources = input;
         self
     }
-    /// <p>The local resources to monitor. A local resource, in a bi-directional flow of a workload, is the host where the agent is installed.</p>
+    /// <p>The local resources to monitor. A local resource in a workload is the location of hosts where the Network Flow Monitor agent is installed.</p>
     pub fn get_local_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MonitorLocalResource>> {
         &self.local_resources
     }
@@ -215,19 +215,19 @@ impl CreateMonitorOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_remote_resources`](Self::set_remote_resources).
     ///
-    /// <p>The remote resources to monitor. A remote resource is the other endpoint in the bi-directional flow of a workload, with a local resource. For example, Amazon Relational Database Service (RDS) can be a remote resource. The remote resource is identified by its ARN or an identifier.</p>
+    /// <p>The remote resources to monitor. A remote resource is the other endpoint specified for the network flow of a workload, with a local resource. For example, Amazon Dynamo DB can be a remote resource.</p>
     pub fn remote_resources(mut self, input: crate::types::MonitorRemoteResource) -> Self {
         let mut v = self.remote_resources.unwrap_or_default();
         v.push(input);
         self.remote_resources = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The remote resources to monitor. A remote resource is the other endpoint in the bi-directional flow of a workload, with a local resource. For example, Amazon Relational Database Service (RDS) can be a remote resource. The remote resource is identified by its ARN or an identifier.</p>
+    /// <p>The remote resources to monitor. A remote resource is the other endpoint specified for the network flow of a workload, with a local resource. For example, Amazon Dynamo DB can be a remote resource.</p>
     pub fn set_remote_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MonitorRemoteResource>>) -> Self {
         self.remote_resources = input;
         self
     }
-    /// <p>The remote resources to monitor. A remote resource is the other endpoint in the bi-directional flow of a workload, with a local resource. For example, Amazon Relational Database Service (RDS) can be a remote resource. The remote resource is identified by its ARN or an identifier.</p>
+    /// <p>The remote resources to monitor. A remote resource is the other endpoint specified for the network flow of a workload, with a local resource. For example, Amazon Dynamo DB can be a remote resource.</p>
     pub fn get_remote_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MonitorRemoteResource>> {
         &self.remote_resources
     }

@@ -54,7 +54,7 @@ impl ::std::fmt::Debug for ImportTr34KeyBlock {
             "certificate_authority_public_key_identifier",
             &self.certificate_authority_public_key_identifier,
         );
-        formatter.field("signing_key_certificate", &"*** Sensitive Data Redacted ***");
+        formatter.field("signing_key_certificate", &self.signing_key_certificate);
         formatter.field("import_token", &self.import_token);
         formatter.field("wrapped_key_block", &"*** Sensitive Data Redacted ***");
         formatter.field("key_block_format", &self.key_block_format);
@@ -220,7 +220,7 @@ impl ::std::fmt::Debug for ImportTr34KeyBlockBuilder {
             "certificate_authority_public_key_identifier",
             &self.certificate_authority_public_key_identifier,
         );
-        formatter.field("signing_key_certificate", &"*** Sensitive Data Redacted ***");
+        formatter.field("signing_key_certificate", &self.signing_key_certificate);
         formatter.field("import_token", &self.import_token);
         formatter.field("wrapped_key_block", &"*** Sensitive Data Redacted ***");
         formatter.field("key_block_format", &self.key_block_format);

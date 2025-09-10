@@ -15,6 +15,7 @@
 ///     DestinationCategory::AmazonDynamodb => { /* ... */ },
 ///     DestinationCategory::AmazonS3 => { /* ... */ },
 ///     DestinationCategory::InterAz => { /* ... */ },
+///     DestinationCategory::InterRegion => { /* ... */ },
 ///     DestinationCategory::InterVpc => { /* ... */ },
 ///     DestinationCategory::IntraAz => { /* ... */ },
 ///     DestinationCategory::Unclassified => { /* ... */ },
@@ -53,6 +54,8 @@ pub enum DestinationCategory {
     #[allow(missing_docs)] // documentation missing in model
     InterAz,
     #[allow(missing_docs)] // documentation missing in model
+    InterRegion,
+    #[allow(missing_docs)] // documentation missing in model
     InterVpc,
     #[allow(missing_docs)] // documentation missing in model
     IntraAz,
@@ -68,6 +71,7 @@ impl ::std::convert::From<&str> for DestinationCategory {
             "AMAZON_DYNAMODB" => DestinationCategory::AmazonDynamodb,
             "AMAZON_S3" => DestinationCategory::AmazonS3,
             "INTER_AZ" => DestinationCategory::InterAz,
+            "INTER_REGION" => DestinationCategory::InterRegion,
             "INTER_VPC" => DestinationCategory::InterVpc,
             "INTRA_AZ" => DestinationCategory::IntraAz,
             "UNCLASSIFIED" => DestinationCategory::Unclassified,
@@ -89,6 +93,7 @@ impl DestinationCategory {
             DestinationCategory::AmazonDynamodb => "AMAZON_DYNAMODB",
             DestinationCategory::AmazonS3 => "AMAZON_S3",
             DestinationCategory::InterAz => "INTER_AZ",
+            DestinationCategory::InterRegion => "INTER_REGION",
             DestinationCategory::InterVpc => "INTER_VPC",
             DestinationCategory::IntraAz => "INTRA_AZ",
             DestinationCategory::Unclassified => "UNCLASSIFIED",
@@ -97,7 +102,15 @@ impl DestinationCategory {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AMAZON_DYNAMODB", "AMAZON_S3", "INTER_AZ", "INTER_VPC", "INTRA_AZ", "UNCLASSIFIED"]
+        &[
+            "AMAZON_DYNAMODB",
+            "AMAZON_S3",
+            "INTER_AZ",
+            "INTER_REGION",
+            "INTER_VPC",
+            "INTRA_AZ",
+            "UNCLASSIFIED",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for DestinationCategory {
@@ -123,6 +136,7 @@ impl ::std::fmt::Display for DestinationCategory {
             DestinationCategory::AmazonDynamodb => write!(f, "AMAZON_DYNAMODB"),
             DestinationCategory::AmazonS3 => write!(f, "AMAZON_S3"),
             DestinationCategory::InterAz => write!(f, "INTER_AZ"),
+            DestinationCategory::InterRegion => write!(f, "INTER_REGION"),
             DestinationCategory::InterVpc => write!(f, "INTER_VPC"),
             DestinationCategory::IntraAz => write!(f, "INTRA_AZ"),
             DestinationCategory::Unclassified => write!(f, "UNCLASSIFIED"),

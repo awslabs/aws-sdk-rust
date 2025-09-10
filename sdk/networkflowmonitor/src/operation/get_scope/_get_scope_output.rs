@@ -10,7 +10,7 @@ pub struct GetScopeOutput {
     pub status: crate::types::ScopeStatus,
     /// <p>The Amazon Resource Name (ARN) of the scope.</p>
     pub scope_arn: ::std::string::String,
-    /// <p>The targets for a scope</p>
+    /// <p>The targets to define the scope to be monitored. A target is an array of targetResources, which are currently Region-account pairs, defined by targetResource constructs.</p>
     pub targets: ::std::vec::Vec<crate::types::TargetResource>,
     /// <p>The tags for a scope.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -32,7 +32,7 @@ impl GetScopeOutput {
         use std::ops::Deref;
         self.scope_arn.deref()
     }
-    /// <p>The targets for a scope</p>
+    /// <p>The targets to define the scope to be monitored. A target is an array of targetResources, which are currently Region-account pairs, defined by targetResource constructs.</p>
     pub fn targets(&self) -> &[crate::types::TargetResource] {
         use std::ops::Deref;
         self.targets.deref()
@@ -118,19 +118,19 @@ impl GetScopeOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_targets`](Self::set_targets).
     ///
-    /// <p>The targets for a scope</p>
+    /// <p>The targets to define the scope to be monitored. A target is an array of targetResources, which are currently Region-account pairs, defined by targetResource constructs.</p>
     pub fn targets(mut self, input: crate::types::TargetResource) -> Self {
         let mut v = self.targets.unwrap_or_default();
         v.push(input);
         self.targets = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The targets for a scope</p>
+    /// <p>The targets to define the scope to be monitored. A target is an array of targetResources, which are currently Region-account pairs, defined by targetResource constructs.</p>
     pub fn set_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TargetResource>>) -> Self {
         self.targets = input;
         self
     }
-    /// <p>The targets for a scope</p>
+    /// <p>The targets to define the scope to be monitored. A target is an array of targetResources, which are currently Region-account pairs, defined by targetResource constructs.</p>
     pub fn get_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetResource>> {
         &self.targets
     }

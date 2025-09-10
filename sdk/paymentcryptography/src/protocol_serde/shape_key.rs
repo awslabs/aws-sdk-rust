@@ -95,6 +95,27 @@ where
                                     .transpose()?,
                             );
                         }
+                        "MultiRegionKeyType" => {
+                            builder = builder.set_multi_region_key_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::MultiRegionKeyType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "PrimaryRegion" => {
+                            builder = builder.set_primary_region(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "ReplicationStatus" => {
+                            builder = builder.set_replication_status(crate::protocol_serde::shape_replication_status::de_replication_status(tokens)?);
+                        }
+                        "UsingDefaultReplicationRegions" => {
+                            builder = builder
+                                .set_using_default_replication_regions(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

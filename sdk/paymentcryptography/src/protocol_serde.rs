@@ -23,6 +23,8 @@ pub fn parse_http_error_metadata(
     crate::json_errors::parse_error_metadata(response_body, response_headers)
 }
 
+pub(crate) mod shape_add_key_replication_regions;
+
 pub(crate) mod shape_create_alias;
 
 pub(crate) mod shape_create_key;
@@ -31,9 +33,15 @@ pub(crate) mod shape_delete_alias;
 
 pub(crate) mod shape_delete_key;
 
+pub(crate) mod shape_disable_default_key_replication_regions;
+
+pub(crate) mod shape_enable_default_key_replication_regions;
+
 pub(crate) mod shape_export_key;
 
 pub(crate) mod shape_get_alias;
+
+pub(crate) mod shape_get_default_key_replication_regions;
 
 pub(crate) mod shape_get_key;
 
@@ -50,6 +58,8 @@ pub(crate) mod shape_list_aliases;
 pub(crate) mod shape_list_keys;
 
 pub(crate) mod shape_list_tags_for_resource;
+
+pub(crate) mod shape_remove_key_replication_regions;
 
 pub(crate) mod shape_restore_key;
 
@@ -73,6 +83,8 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
 
 pub(crate) mod shape_access_denied_exception;
 
+pub(crate) mod shape_add_key_replication_regions_input;
+
 pub(crate) mod shape_conflict_exception;
 
 pub(crate) mod shape_create_alias_input;
@@ -82,6 +94,10 @@ pub(crate) mod shape_create_key_input;
 pub(crate) mod shape_delete_alias_input;
 
 pub(crate) mod shape_delete_key_input;
+
+pub(crate) mod shape_disable_default_key_replication_regions_input;
+
+pub(crate) mod shape_enable_default_key_replication_regions_input;
 
 pub(crate) mod shape_export_key_input;
 
@@ -104,6 +120,8 @@ pub(crate) mod shape_list_aliases_input;
 pub(crate) mod shape_list_keys_input;
 
 pub(crate) mod shape_list_tags_for_resource_input;
+
+pub(crate) mod shape_remove_key_replication_regions_input;
 
 pub(crate) mod shape_resource_not_found_exception;
 
@@ -143,6 +161,8 @@ pub(crate) mod shape_key_attributes;
 
 pub(crate) mod shape_key_summary_list;
 
+pub(crate) mod shape_regions;
+
 pub(crate) mod shape_tag;
 
 pub(crate) mod shape_tags;
@@ -171,6 +191,8 @@ pub(crate) mod shape_key_modes_of_use;
 
 pub(crate) mod shape_key_summary;
 
+pub(crate) mod shape_replication_status;
+
 pub(crate) mod shape_root_certificate_public_key;
 
 pub(crate) mod shape_trusted_certificate_public_key;
@@ -178,3 +200,5 @@ pub(crate) mod shape_trusted_certificate_public_key;
 pub(crate) mod shape_diffie_hellman_derivation_data;
 
 pub(crate) mod shape_key_block_headers;
+
+pub(crate) mod shape_replication_status_type;
