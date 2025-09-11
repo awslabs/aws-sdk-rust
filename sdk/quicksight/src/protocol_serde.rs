@@ -77,6 +77,8 @@ pub(crate) mod shape_create_topic_refresh_schedule;
 
 pub(crate) mod shape_create_vpc_connection;
 
+pub(crate) mod shape_delete_account_custom_permission;
+
 pub(crate) mod shape_delete_account_customization;
 
 pub(crate) mod shape_delete_account_subscription;
@@ -138,6 +140,8 @@ pub(crate) mod shape_delete_user_by_principal_id;
 pub(crate) mod shape_delete_user_custom_permission;
 
 pub(crate) mod shape_delete_vpc_connection;
+
+pub(crate) mod shape_describe_account_custom_permission;
 
 pub(crate) mod shape_describe_account_customization;
 
@@ -352,6 +356,8 @@ pub(crate) mod shape_start_dashboard_snapshot_job_schedule;
 pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_untag_resource;
+
+pub(crate) mod shape_update_account_custom_permission;
 
 pub(crate) mod shape_update_account_customization;
 
@@ -570,6 +576,8 @@ pub(crate) mod shape_throttling_exception;
 pub(crate) mod shape_unsupported_pricing_plan_exception;
 
 pub(crate) mod shape_unsupported_user_edition_exception;
+
+pub(crate) mod shape_update_account_custom_permission_input;
 
 pub(crate) mod shape_update_account_customization_input;
 
@@ -830,6 +838,8 @@ pub(crate) mod shape_parameters;
 pub(crate) mod shape_performance_configuration;
 
 pub(crate) mod shape_physical_table;
+
+pub(crate) mod shape_q_data_key;
 
 pub(crate) mod shape_qa_result;
 
@@ -1125,6 +1135,8 @@ pub(crate) mod shape_column_level_permission_rule_list;
 
 pub(crate) mod shape_credential_pair;
 
+pub(crate) mod shape_custom_connection_parameters;
+
 pub(crate) mod shape_custom_sql;
 
 pub(crate) mod shape_dashboard_error;
@@ -1169,6 +1181,8 @@ pub(crate) mod shape_data_source_parameters_list;
 
 pub(crate) mod shape_data_source_summary;
 
+pub(crate) mod shape_data_stories_sharing_option;
+
 pub(crate) mod shape_databricks_parameters;
 
 pub(crate) mod shape_dataset_metadata;
@@ -1190,6 +1204,8 @@ pub(crate) mod shape_error_info;
 pub(crate) mod shape_error_list;
 
 pub(crate) mod shape_exasol_parameters;
+
+pub(crate) mod shape_executive_summary_option;
 
 pub(crate) mod shape_export_to_csv_option;
 
@@ -1872,6 +1888,8 @@ pub(crate) mod shape_topic_ir_group_by_list;
 pub(crate) mod shape_topic_ir_metric_list;
 
 pub(crate) mod shape_topic_named_entities;
+
+pub(crate) mod shape_topic_null_filter;
 
 pub(crate) mod shape_topic_numeric_equality_filter;
 

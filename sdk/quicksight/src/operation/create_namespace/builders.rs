@@ -23,7 +23,7 @@ impl crate::operation::create_namespace::builders::CreateNamespaceInputBuilder {
 /// Fluent builder constructing a request to `CreateNamespace`.
 ///
 /// <p>(Enterprise edition only) Creates a new namespace for you to use with Amazon QuickSight.</p>
-/// <p>A namespace allows you to isolate the Amazon QuickSight users and groups that are registered for that namespace. Users that access the namespace can share assets only with other users or groups in the same namespace. They can't see users and groups in other namespaces. You can create a namespace after your Amazon Web Services account is subscribed to Amazon QuickSight. The namespace must be unique within the Amazon Web Services account. By default, there is a limit of 100 namespaces per Amazon Web Services account. To increase your limit, create a ticket with Amazon Web ServicesSupport.</p>
+/// <p>A namespace allows you to isolate the QuickSight users and groups that are registered for that namespace. Users that access the namespace can share assets only with other users or groups in the same namespace. They can't see users and groups in other namespaces. You can create a namespace after your Amazon Web Services account is subscribed to QuickSight. The namespace must be unique within the Amazon Web Services account. By default, there is a limit of 100 namespaces per Amazon Web Services account. To increase your limit, create a ticket with Amazon Web Services Support.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateNamespaceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -109,17 +109,17 @@ impl CreateNamespaceFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ID for the Amazon Web Services account that you want to create the Amazon QuickSight namespace in.</p>
+    /// <p>The ID for the Amazon Web Services account that you want to create the QuickSight namespace in.</p>
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
-    /// <p>The ID for the Amazon Web Services account that you want to create the Amazon QuickSight namespace in.</p>
+    /// <p>The ID for the Amazon Web Services account that you want to create the QuickSight namespace in.</p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
-    /// <p>The ID for the Amazon Web Services account that you want to create the Amazon QuickSight namespace in.</p>
+    /// <p>The ID for the Amazon Web Services account that you want to create the QuickSight namespace in.</p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_aws_account_id()
     }

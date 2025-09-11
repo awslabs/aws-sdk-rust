@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BrandDetail {
-    /// <p>The ID of the Amazon QuickSight brand.</p>
+    /// <p>The ID of the QuickSight brand.</p>
     pub brand_id: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the brand.</p>
     pub arn: ::std::option::Option<::std::string::String>,
@@ -24,7 +24,7 @@ pub struct BrandDetail {
     pub logo: ::std::option::Option<crate::types::Logo>,
 }
 impl BrandDetail {
-    /// <p>The ID of the Amazon QuickSight brand.</p>
+    /// <p>The ID of the QuickSight brand.</p>
     pub fn brand_id(&self) -> &str {
         use std::ops::Deref;
         self.brand_id.deref()
@@ -86,18 +86,18 @@ pub struct BrandDetailBuilder {
     pub(crate) logo: ::std::option::Option<crate::types::Logo>,
 }
 impl BrandDetailBuilder {
-    /// <p>The ID of the Amazon QuickSight brand.</p>
+    /// <p>The ID of the QuickSight brand.</p>
     /// This field is required.
     pub fn brand_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.brand_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the Amazon QuickSight brand.</p>
+    /// <p>The ID of the QuickSight brand.</p>
     pub fn set_brand_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.brand_id = input;
         self
     }
-    /// <p>The ID of the Amazon QuickSight brand.</p>
+    /// <p>The ID of the QuickSight brand.</p>
     pub fn get_brand_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.brand_id
     }

@@ -22,7 +22,7 @@ impl crate::operation::update_key_registration::builders::UpdateKeyRegistrationI
 }
 /// Fluent builder constructing a request to `UpdateKeyRegistration`.
 ///
-/// <p>Updates a customer managed key in a Amazon QuickSight account.</p>
+/// <p>Updates a customer managed key in a QuickSight account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateKeyRegistrationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -127,17 +127,17 @@ impl UpdateKeyRegistrationFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_key_registration`](Self::set_key_registration).
     ///
-    /// <p>A list of <code>RegisteredCustomerManagedKey</code> objects to be updated to the Amazon QuickSight account.</p>
+    /// <p>A list of <code>RegisteredCustomerManagedKey</code> objects to be updated to the QuickSight account.</p>
     pub fn key_registration(mut self, input: crate::types::RegisteredCustomerManagedKey) -> Self {
         self.inner = self.inner.key_registration(input);
         self
     }
-    /// <p>A list of <code>RegisteredCustomerManagedKey</code> objects to be updated to the Amazon QuickSight account.</p>
+    /// <p>A list of <code>RegisteredCustomerManagedKey</code> objects to be updated to the QuickSight account.</p>
     pub fn set_key_registration(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RegisteredCustomerManagedKey>>) -> Self {
         self.inner = self.inner.set_key_registration(input);
         self
     }
-    /// <p>A list of <code>RegisteredCustomerManagedKey</code> objects to be updated to the Amazon QuickSight account.</p>
+    /// <p>A list of <code>RegisteredCustomerManagedKey</code> objects to be updated to the QuickSight account.</p>
     pub fn get_key_registration(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RegisteredCustomerManagedKey>> {
         self.inner.get_key_registration()
     }

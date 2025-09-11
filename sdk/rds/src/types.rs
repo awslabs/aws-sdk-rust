@@ -215,6 +215,8 @@ pub use crate::types::_db_proxy_status::DbProxyStatus;
 
 pub use crate::types::_user_auth_config::UserAuthConfig;
 
+pub use crate::types::_default_auth_scheme::DefaultAuthScheme;
+
 pub use crate::types::_master_user_authentication_type::MasterUserAuthenticationType;
 
 pub use crate::types::_cloudwatch_logs_export_configuration::CloudwatchLogsExportConfiguration;
@@ -434,6 +436,8 @@ mod _db_snapshot_attributes_result;
 mod _db_snapshot_tenant_database;
 
 mod _db_subnet_group;
+
+mod _default_auth_scheme;
 
 mod _describe_db_log_files_details;
 

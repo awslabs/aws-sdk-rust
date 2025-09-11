@@ -22,7 +22,7 @@ impl crate::operation::describe_key_registration::builders::DescribeKeyRegistrat
 }
 /// Fluent builder constructing a request to `DescribeKeyRegistration`.
 ///
-/// <p>Describes all customer managed key registrations in a Amazon QuickSight account.</p>
+/// <p>Describes all customer managed key registrations in a QuickSight account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeKeyRegistrationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

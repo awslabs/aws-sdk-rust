@@ -6,6 +6,9 @@ pub fn ser_eks_info(
     if let Some(var_1) = &input.namespace {
         object.key("namespace").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.node_label {
+        object.key("nodeLabel").string(var_2.as_str());
+    }
     Ok(())
 }
 
@@ -26,6 +29,13 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "namespace" => {
                             builder = builder.set_namespace(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "nodeLabel" => {
+                            builder = builder.set_node_label(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,

@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GenerateEmbedUrlForRegisteredUserOutput {
-    /// <p>The embed URL for the Amazon QuickSight dashboard, visual, Q search bar, Generative Q&amp;A experience, or console.</p>
+    /// <p>The embed URL for the QuickSight dashboard, visual, Q search bar, Generative Q&amp;A experience, or console.</p>
     pub embed_url: ::std::string::String,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
@@ -12,7 +12,7 @@ pub struct GenerateEmbedUrlForRegisteredUserOutput {
     _request_id: Option<String>,
 }
 impl GenerateEmbedUrlForRegisteredUserOutput {
-    /// <p>The embed URL for the Amazon QuickSight dashboard, visual, Q search bar, Generative Q&amp;A experience, or console.</p>
+    /// <p>The embed URL for the QuickSight dashboard, visual, Q search bar, Generative Q&amp;A experience, or console.</p>
     pub fn embed_url(&self) -> &str {
         use std::ops::Deref;
         self.embed_url.deref()
@@ -59,18 +59,18 @@ pub struct GenerateEmbedUrlForRegisteredUserOutputBuilder {
     _request_id: Option<String>,
 }
 impl GenerateEmbedUrlForRegisteredUserOutputBuilder {
-    /// <p>The embed URL for the Amazon QuickSight dashboard, visual, Q search bar, Generative Q&amp;A experience, or console.</p>
+    /// <p>The embed URL for the QuickSight dashboard, visual, Q search bar, Generative Q&amp;A experience, or console.</p>
     /// This field is required.
     pub fn embed_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.embed_url = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The embed URL for the Amazon QuickSight dashboard, visual, Q search bar, Generative Q&amp;A experience, or console.</p>
+    /// <p>The embed URL for the QuickSight dashboard, visual, Q search bar, Generative Q&amp;A experience, or console.</p>
     pub fn set_embed_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.embed_url = input;
         self
     }
-    /// <p>The embed URL for the Amazon QuickSight dashboard, visual, Q search bar, Generative Q&amp;A experience, or console.</p>
+    /// <p>The embed URL for the QuickSight dashboard, visual, Q search bar, Generative Q&amp;A experience, or console.</p>
     pub fn get_embed_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.embed_url
     }

@@ -7,6 +7,8 @@ pub struct ModifyDbProxyInput {
     pub db_proxy_name: ::std::option::Option<::std::string::String>,
     /// <p>The new identifier for the <code>DBProxy</code>. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.</p>
     pub new_db_proxy_name: ::std::option::Option<::std::string::String>,
+    /// <p>The default authentication scheme that the proxy uses for client connections to the proxy and connections from the proxy to the underlying database. Valid values are <code>NONE</code> and <code>IAM_AUTH</code>. When set to <code>IAM_AUTH</code>, the proxy uses end-to-end IAM authentication to connect to the database.</p>
+    pub default_auth_scheme: ::std::option::Option<crate::types::DefaultAuthScheme>,
     /// <p>The new authentication settings for the <code>DBProxy</code>.</p>
     pub auth: ::std::option::Option<::std::vec::Vec<crate::types::UserAuthConfig>>,
     /// <p>Whether Transport Layer Security (TLS) encryption is required for connections to the proxy. By enabling this setting, you can enforce encrypted TLS connections to the proxy, even if the associated database doesn't use TLS.</p>
@@ -28,6 +30,10 @@ impl ModifyDbProxyInput {
     /// <p>The new identifier for the <code>DBProxy</code>. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.</p>
     pub fn new_db_proxy_name(&self) -> ::std::option::Option<&str> {
         self.new_db_proxy_name.as_deref()
+    }
+    /// <p>The default authentication scheme that the proxy uses for client connections to the proxy and connections from the proxy to the underlying database. Valid values are <code>NONE</code> and <code>IAM_AUTH</code>. When set to <code>IAM_AUTH</code>, the proxy uses end-to-end IAM authentication to connect to the database.</p>
+    pub fn default_auth_scheme(&self) -> ::std::option::Option<&crate::types::DefaultAuthScheme> {
+        self.default_auth_scheme.as_ref()
     }
     /// <p>The new authentication settings for the <code>DBProxy</code>.</p>
     ///
@@ -71,6 +77,7 @@ impl ModifyDbProxyInput {
 pub struct ModifyDbProxyInputBuilder {
     pub(crate) db_proxy_name: ::std::option::Option<::std::string::String>,
     pub(crate) new_db_proxy_name: ::std::option::Option<::std::string::String>,
+    pub(crate) default_auth_scheme: ::std::option::Option<crate::types::DefaultAuthScheme>,
     pub(crate) auth: ::std::option::Option<::std::vec::Vec<crate::types::UserAuthConfig>>,
     pub(crate) require_tls: ::std::option::Option<bool>,
     pub(crate) idle_client_timeout: ::std::option::Option<i32>,
@@ -107,6 +114,20 @@ impl ModifyDbProxyInputBuilder {
     /// <p>The new identifier for the <code>DBProxy</code>. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.</p>
     pub fn get_new_db_proxy_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.new_db_proxy_name
+    }
+    /// <p>The default authentication scheme that the proxy uses for client connections to the proxy and connections from the proxy to the underlying database. Valid values are <code>NONE</code> and <code>IAM_AUTH</code>. When set to <code>IAM_AUTH</code>, the proxy uses end-to-end IAM authentication to connect to the database.</p>
+    pub fn default_auth_scheme(mut self, input: crate::types::DefaultAuthScheme) -> Self {
+        self.default_auth_scheme = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The default authentication scheme that the proxy uses for client connections to the proxy and connections from the proxy to the underlying database. Valid values are <code>NONE</code> and <code>IAM_AUTH</code>. When set to <code>IAM_AUTH</code>, the proxy uses end-to-end IAM authentication to connect to the database.</p>
+    pub fn set_default_auth_scheme(mut self, input: ::std::option::Option<crate::types::DefaultAuthScheme>) -> Self {
+        self.default_auth_scheme = input;
+        self
+    }
+    /// <p>The default authentication scheme that the proxy uses for client connections to the proxy and connections from the proxy to the underlying database. Valid values are <code>NONE</code> and <code>IAM_AUTH</code>. When set to <code>IAM_AUTH</code>, the proxy uses end-to-end IAM authentication to connect to the database.</p>
+    pub fn get_default_auth_scheme(&self) -> &::std::option::Option<crate::types::DefaultAuthScheme> {
+        &self.default_auth_scheme
     }
     /// Appends an item to `auth`.
     ///
@@ -211,6 +232,7 @@ impl ModifyDbProxyInputBuilder {
         ::std::result::Result::Ok(crate::operation::modify_db_proxy::ModifyDbProxyInput {
             db_proxy_name: self.db_proxy_name,
             new_db_proxy_name: self.new_db_proxy_name,
+            default_auth_scheme: self.default_auth_scheme,
             auth: self.auth,
             require_tls: self.require_tls,
             idle_client_timeout: self.idle_client_timeout,

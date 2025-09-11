@@ -26,6 +26,8 @@ pub struct TopicFilter {
     pub date_range_filter: ::std::option::Option<crate::types::TopicDateRangeFilter>,
     /// <p>The relative date filter.</p>
     pub relative_date_filter: ::std::option::Option<crate::types::TopicRelativeDateFilter>,
+    /// <p>The null filter.</p>
+    pub null_filter: ::std::option::Option<crate::types::TopicNullFilter>,
 }
 impl TopicFilter {
     /// <p>A description of the filter used to select items for a topic.</p>
@@ -76,6 +78,10 @@ impl TopicFilter {
     pub fn relative_date_filter(&self) -> ::std::option::Option<&crate::types::TopicRelativeDateFilter> {
         self.relative_date_filter.as_ref()
     }
+    /// <p>The null filter.</p>
+    pub fn null_filter(&self) -> ::std::option::Option<&crate::types::TopicNullFilter> {
+        self.null_filter.as_ref()
+    }
 }
 impl TopicFilter {
     /// Creates a new builder-style object to manufacture [`TopicFilter`](crate::types::TopicFilter).
@@ -99,6 +105,7 @@ pub struct TopicFilterBuilder {
     pub(crate) numeric_range_filter: ::std::option::Option<crate::types::TopicNumericRangeFilter>,
     pub(crate) date_range_filter: ::std::option::Option<crate::types::TopicDateRangeFilter>,
     pub(crate) relative_date_filter: ::std::option::Option<crate::types::TopicRelativeDateFilter>,
+    pub(crate) null_filter: ::std::option::Option<crate::types::TopicNullFilter>,
 }
 impl TopicFilterBuilder {
     /// <p>A description of the filter used to select items for a topic.</p>
@@ -263,6 +270,20 @@ impl TopicFilterBuilder {
     pub fn get_relative_date_filter(&self) -> &::std::option::Option<crate::types::TopicRelativeDateFilter> {
         &self.relative_date_filter
     }
+    /// <p>The null filter.</p>
+    pub fn null_filter(mut self, input: crate::types::TopicNullFilter) -> Self {
+        self.null_filter = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The null filter.</p>
+    pub fn set_null_filter(mut self, input: ::std::option::Option<crate::types::TopicNullFilter>) -> Self {
+        self.null_filter = input;
+        self
+    }
+    /// <p>The null filter.</p>
+    pub fn get_null_filter(&self) -> &::std::option::Option<crate::types::TopicNullFilter> {
+        &self.null_filter
+    }
     /// Consumes the builder and constructs a [`TopicFilter`](crate::types::TopicFilter).
     /// This method will fail if any of the following fields are not set:
     /// - [`filter_name`](crate::types::builders::TopicFilterBuilder::filter_name)
@@ -290,6 +311,7 @@ impl TopicFilterBuilder {
             numeric_range_filter: self.numeric_range_filter,
             date_range_filter: self.date_range_filter,
             relative_date_filter: self.relative_date_filter,
+            null_filter: self.null_filter,
         })
     }
 }

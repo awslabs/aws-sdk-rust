@@ -59,13 +59,13 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CreateEnvironment`](crate::operation::create_environment) operation has
-/// a [`Client::create_environment`], function which returns a builder for that operation.
+/// For example, the [`AssociateEipToVlan`](crate::operation::associate_eip_to_vlan) operation has
+/// a [`Client::associate_eip_to_vlan`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.create_environment()
+/// let result = client.associate_eip_to_vlan()
 ///     .client_token("example")
 ///     .send()
 ///     .await;
@@ -136,6 +136,8 @@ impl Client {
     }
 }
 
+mod associate_eip_to_vlan;
+
 mod create_environment;
 
 mod create_environment_host;
@@ -151,7 +153,7 @@ mod create_environment_host;
 /// # let client: aws_sdk_evs::Client = unimplemented!();
 /// use ::http::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.create_environment()
+/// let result = client.associate_eip_to_vlan()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
@@ -170,6 +172,8 @@ pub mod customize;
 mod delete_environment;
 
 mod delete_environment_host;
+
+mod disassociate_eip_from_vlan;
 
 mod get_environment;
 

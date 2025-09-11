@@ -22,7 +22,7 @@ impl crate::operation::describe_quick_sight_q_search_configuration::builders::De
 }
 /// Fluent builder constructing a request to `DescribeQuickSightQSearchConfiguration`.
 ///
-/// <p>Describes the state of a Amazon QuickSight Q Search configuration.</p>
+/// <p>Describes the state of a QuickSight Q Search configuration.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeQuickSightQSearchConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -112,17 +112,17 @@ impl DescribeQuickSightQSearchConfigurationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ID of the Amazon Web Services account that contains the Amazon QuickSight Q Search configuration that the user wants described.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the QuickSight Q Search configuration that the user wants described.</p>
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
-    /// <p>The ID of the Amazon Web Services account that contains the Amazon QuickSight Q Search configuration that the user wants described.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the QuickSight Q Search configuration that the user wants described.</p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
-    /// <p>The ID of the Amazon Web Services account that contains the Amazon QuickSight Q Search configuration that the user wants described.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the QuickSight Q Search configuration that the user wants described.</p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_aws_account_id()
     }

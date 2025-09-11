@@ -3,6 +3,8 @@ pub use crate::types::_validation_exception_field::ValidationExceptionFieldBuild
 
 pub use crate::types::_vlan::VlanBuilder;
 
+pub use crate::types::_eip_association::EipAssociationBuilder;
+
 pub use crate::types::_host::HostBuilder;
 
 pub use crate::types::_network_interface::NetworkInterfaceBuilder;

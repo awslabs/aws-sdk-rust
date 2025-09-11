@@ -34,7 +34,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-evs = "1.12.0"
+//! aws-sdk-evs = "1.13.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -151,13 +151,13 @@ pub use config::Config;
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CreateEnvironment`](crate::operation::create_environment) operation has
-/// a [`Client::create_environment`], function which returns a builder for that operation.
+/// For example, the [`AssociateEipToVlan`](crate::operation::associate_eip_to_vlan) operation has
+/// a [`Client::associate_eip_to_vlan`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.create_environment()
+/// let result = client.associate_eip_to_vlan()
 ///     .client_token("example")
 ///     .send()
 ///     .await;

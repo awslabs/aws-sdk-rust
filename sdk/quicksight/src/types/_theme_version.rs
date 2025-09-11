@@ -10,7 +10,7 @@ pub struct ThemeVersion {
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The description of the theme.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon QuickSight-defined ID of the theme that a custom theme inherits from. All themes initially inherit from a default Amazon QuickSight theme.</p>
+    /// <p>The Amazon QuickSight-defined ID of the theme that a custom theme inherits from. All themes initially inherit from a default QuickSight theme.</p>
     pub base_theme_id: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that this theme version was created.</p>
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -34,7 +34,7 @@ impl ThemeVersion {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The Amazon QuickSight-defined ID of the theme that a custom theme inherits from. All themes initially inherit from a default Amazon QuickSight theme.</p>
+    /// <p>The Amazon QuickSight-defined ID of the theme that a custom theme inherits from. All themes initially inherit from a default QuickSight theme.</p>
     pub fn base_theme_id(&self) -> ::std::option::Option<&str> {
         self.base_theme_id.as_deref()
     }
@@ -120,17 +120,17 @@ impl ThemeVersionBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>The Amazon QuickSight-defined ID of the theme that a custom theme inherits from. All themes initially inherit from a default Amazon QuickSight theme.</p>
+    /// <p>The Amazon QuickSight-defined ID of the theme that a custom theme inherits from. All themes initially inherit from a default QuickSight theme.</p>
     pub fn base_theme_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.base_theme_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon QuickSight-defined ID of the theme that a custom theme inherits from. All themes initially inherit from a default Amazon QuickSight theme.</p>
+    /// <p>The Amazon QuickSight-defined ID of the theme that a custom theme inherits from. All themes initially inherit from a default QuickSight theme.</p>
     pub fn set_base_theme_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.base_theme_id = input;
         self
     }
-    /// <p>The Amazon QuickSight-defined ID of the theme that a custom theme inherits from. All themes initially inherit from a default Amazon QuickSight theme.</p>
+    /// <p>The Amazon QuickSight-defined ID of the theme that a custom theme inherits from. All themes initially inherit from a default QuickSight theme.</p>
     pub fn get_base_theme_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.base_theme_id
     }

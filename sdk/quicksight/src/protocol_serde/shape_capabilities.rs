@@ -72,6 +72,12 @@ pub fn ser_capabilities(
     if let Some(var_23) = &input.include_content_in_scheduled_reports_email {
         object.key("IncludeContentInScheduledReportsEmail").string(var_23.as_str());
     }
+    if let Some(var_24) = &input.dashboard {
+        object.key("Dashboard").string(var_24.as_str());
+    }
+    if let Some(var_25) = &input.analysis {
+        object.key("Analysis").string(var_25.as_str());
+    }
     Ok(())
 }
 
@@ -246,6 +252,20 @@ where
                         }
                         "IncludeContentInScheduledReportsEmail" => {
                             builder = builder.set_include_content_in_scheduled_reports_email(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "Dashboard" => {
+                            builder = builder.set_dashboard(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "Analysis" => {
+                            builder = builder.set_analysis(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
                                     .transpose()?,

@@ -12,10 +12,10 @@ pub struct RedshiftParameters {
     pub database: ::std::string::String,
     /// <p>Cluster ID. This field can be blank if the <code>Host</code> and <code>Port</code> are provided.</p>
     pub cluster_id: ::std::option::Option<::std::string::String>,
-    /// <p>An optional parameter that uses IAM authentication to grant Amazon QuickSight access to your cluster. This parameter can be used instead of <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DataSourceCredentials.html">DataSourceCredentials</a>.</p>
+    /// <p>An optional parameter that uses IAM authentication to grant QuickSight access to your cluster. This parameter can be used instead of <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DataSourceCredentials.html">DataSourceCredentials</a>.</p>
     pub iam_parameters: ::std::option::Option<crate::types::RedshiftIamParameters>,
-    /// <p>An optional parameter that configures IAM Identity Center authentication to grant Amazon QuickSight access to your cluster.</p>
-    /// <p>This parameter can only be specified if your Amazon QuickSight account is configured with IAM Identity Center.</p>
+    /// <p>An optional parameter that configures IAM Identity Center authentication to grant QuickSight access to your cluster.</p>
+    /// <p>This parameter can only be specified if your QuickSight account is configured with IAM Identity Center.</p>
     pub identity_center_configuration: ::std::option::Option<crate::types::IdentityCenterConfiguration>,
 }
 impl RedshiftParameters {
@@ -36,12 +36,12 @@ impl RedshiftParameters {
     pub fn cluster_id(&self) -> ::std::option::Option<&str> {
         self.cluster_id.as_deref()
     }
-    /// <p>An optional parameter that uses IAM authentication to grant Amazon QuickSight access to your cluster. This parameter can be used instead of <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DataSourceCredentials.html">DataSourceCredentials</a>.</p>
+    /// <p>An optional parameter that uses IAM authentication to grant QuickSight access to your cluster. This parameter can be used instead of <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DataSourceCredentials.html">DataSourceCredentials</a>.</p>
     pub fn iam_parameters(&self) -> ::std::option::Option<&crate::types::RedshiftIamParameters> {
         self.iam_parameters.as_ref()
     }
-    /// <p>An optional parameter that configures IAM Identity Center authentication to grant Amazon QuickSight access to your cluster.</p>
-    /// <p>This parameter can only be specified if your Amazon QuickSight account is configured with IAM Identity Center.</p>
+    /// <p>An optional parameter that configures IAM Identity Center authentication to grant QuickSight access to your cluster.</p>
+    /// <p>This parameter can only be specified if your QuickSight account is configured with IAM Identity Center.</p>
     pub fn identity_center_configuration(&self) -> ::std::option::Option<&crate::types::IdentityCenterConfiguration> {
         self.identity_center_configuration.as_ref()
     }
@@ -122,34 +122,34 @@ impl RedshiftParametersBuilder {
     pub fn get_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.cluster_id
     }
-    /// <p>An optional parameter that uses IAM authentication to grant Amazon QuickSight access to your cluster. This parameter can be used instead of <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DataSourceCredentials.html">DataSourceCredentials</a>.</p>
+    /// <p>An optional parameter that uses IAM authentication to grant QuickSight access to your cluster. This parameter can be used instead of <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DataSourceCredentials.html">DataSourceCredentials</a>.</p>
     pub fn iam_parameters(mut self, input: crate::types::RedshiftIamParameters) -> Self {
         self.iam_parameters = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An optional parameter that uses IAM authentication to grant Amazon QuickSight access to your cluster. This parameter can be used instead of <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DataSourceCredentials.html">DataSourceCredentials</a>.</p>
+    /// <p>An optional parameter that uses IAM authentication to grant QuickSight access to your cluster. This parameter can be used instead of <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DataSourceCredentials.html">DataSourceCredentials</a>.</p>
     pub fn set_iam_parameters(mut self, input: ::std::option::Option<crate::types::RedshiftIamParameters>) -> Self {
         self.iam_parameters = input;
         self
     }
-    /// <p>An optional parameter that uses IAM authentication to grant Amazon QuickSight access to your cluster. This parameter can be used instead of <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DataSourceCredentials.html">DataSourceCredentials</a>.</p>
+    /// <p>An optional parameter that uses IAM authentication to grant QuickSight access to your cluster. This parameter can be used instead of <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DataSourceCredentials.html">DataSourceCredentials</a>.</p>
     pub fn get_iam_parameters(&self) -> &::std::option::Option<crate::types::RedshiftIamParameters> {
         &self.iam_parameters
     }
-    /// <p>An optional parameter that configures IAM Identity Center authentication to grant Amazon QuickSight access to your cluster.</p>
-    /// <p>This parameter can only be specified if your Amazon QuickSight account is configured with IAM Identity Center.</p>
+    /// <p>An optional parameter that configures IAM Identity Center authentication to grant QuickSight access to your cluster.</p>
+    /// <p>This parameter can only be specified if your QuickSight account is configured with IAM Identity Center.</p>
     pub fn identity_center_configuration(mut self, input: crate::types::IdentityCenterConfiguration) -> Self {
         self.identity_center_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An optional parameter that configures IAM Identity Center authentication to grant Amazon QuickSight access to your cluster.</p>
-    /// <p>This parameter can only be specified if your Amazon QuickSight account is configured with IAM Identity Center.</p>
+    /// <p>An optional parameter that configures IAM Identity Center authentication to grant QuickSight access to your cluster.</p>
+    /// <p>This parameter can only be specified if your QuickSight account is configured with IAM Identity Center.</p>
     pub fn set_identity_center_configuration(mut self, input: ::std::option::Option<crate::types::IdentityCenterConfiguration>) -> Self {
         self.identity_center_configuration = input;
         self
     }
-    /// <p>An optional parameter that configures IAM Identity Center authentication to grant Amazon QuickSight access to your cluster.</p>
-    /// <p>This parameter can only be specified if your Amazon QuickSight account is configured with IAM Identity Center.</p>
+    /// <p>An optional parameter that configures IAM Identity Center authentication to grant QuickSight access to your cluster.</p>
+    /// <p>This parameter can only be specified if your QuickSight account is configured with IAM Identity Center.</p>
     pub fn get_identity_center_configuration(&self) -> &::std::option::Option<crate::types::IdentityCenterConfiguration> {
         &self.identity_center_configuration
     }

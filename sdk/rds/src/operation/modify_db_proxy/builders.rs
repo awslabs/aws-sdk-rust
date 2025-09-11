@@ -136,6 +136,20 @@ impl ModifyDBProxyFluentBuilder {
     pub fn get_new_db_proxy_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_new_db_proxy_name()
     }
+    /// <p>The default authentication scheme that the proxy uses for client connections to the proxy and connections from the proxy to the underlying database. Valid values are <code>NONE</code> and <code>IAM_AUTH</code>. When set to <code>IAM_AUTH</code>, the proxy uses end-to-end IAM authentication to connect to the database.</p>
+    pub fn default_auth_scheme(mut self, input: crate::types::DefaultAuthScheme) -> Self {
+        self.inner = self.inner.default_auth_scheme(input);
+        self
+    }
+    /// <p>The default authentication scheme that the proxy uses for client connections to the proxy and connections from the proxy to the underlying database. Valid values are <code>NONE</code> and <code>IAM_AUTH</code>. When set to <code>IAM_AUTH</code>, the proxy uses end-to-end IAM authentication to connect to the database.</p>
+    pub fn set_default_auth_scheme(mut self, input: ::std::option::Option<crate::types::DefaultAuthScheme>) -> Self {
+        self.inner = self.inner.set_default_auth_scheme(input);
+        self
+    }
+    /// <p>The default authentication scheme that the proxy uses for client connections to the proxy and connections from the proxy to the underlying database. Valid values are <code>NONE</code> and <code>IAM_AUTH</code>. When set to <code>IAM_AUTH</code>, the proxy uses end-to-end IAM authentication to connect to the database.</p>
+    pub fn get_default_auth_scheme(&self) -> &::std::option::Option<crate::types::DefaultAuthScheme> {
+        self.inner.get_default_auth_scheme()
+    }
     ///
     /// Appends an item to `Auth`.
     ///

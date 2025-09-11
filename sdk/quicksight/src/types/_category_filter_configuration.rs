@@ -5,19 +5,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CategoryFilterConfiguration {
-    /// <p>A list of filter configurations. In the Amazon QuickSight console, this filter type is called a filter list.</p>
+    /// <p>A list of filter configurations. In the QuickSight console, this filter type is called a filter list.</p>
     pub filter_list_configuration: ::std::option::Option<crate::types::FilterListConfiguration>,
-    /// <p>A list of custom filter values. In the Amazon QuickSight console, this filter type is called a custom filter list.</p>
+    /// <p>A list of custom filter values. In the QuickSight console, this filter type is called a custom filter list.</p>
     pub custom_filter_list_configuration: ::std::option::Option<crate::types::CustomFilterListConfiguration>,
     /// <p>A custom filter that filters based on a single value. This filter can be partially matched.</p>
     pub custom_filter_configuration: ::std::option::Option<crate::types::CustomFilterConfiguration>,
 }
 impl CategoryFilterConfiguration {
-    /// <p>A list of filter configurations. In the Amazon QuickSight console, this filter type is called a filter list.</p>
+    /// <p>A list of filter configurations. In the QuickSight console, this filter type is called a filter list.</p>
     pub fn filter_list_configuration(&self) -> ::std::option::Option<&crate::types::FilterListConfiguration> {
         self.filter_list_configuration.as_ref()
     }
-    /// <p>A list of custom filter values. In the Amazon QuickSight console, this filter type is called a custom filter list.</p>
+    /// <p>A list of custom filter values. In the QuickSight console, this filter type is called a custom filter list.</p>
     pub fn custom_filter_list_configuration(&self) -> ::std::option::Option<&crate::types::CustomFilterListConfiguration> {
         self.custom_filter_list_configuration.as_ref()
     }
@@ -42,31 +42,31 @@ pub struct CategoryFilterConfigurationBuilder {
     pub(crate) custom_filter_configuration: ::std::option::Option<crate::types::CustomFilterConfiguration>,
 }
 impl CategoryFilterConfigurationBuilder {
-    /// <p>A list of filter configurations. In the Amazon QuickSight console, this filter type is called a filter list.</p>
+    /// <p>A list of filter configurations. In the QuickSight console, this filter type is called a filter list.</p>
     pub fn filter_list_configuration(mut self, input: crate::types::FilterListConfiguration) -> Self {
         self.filter_list_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A list of filter configurations. In the Amazon QuickSight console, this filter type is called a filter list.</p>
+    /// <p>A list of filter configurations. In the QuickSight console, this filter type is called a filter list.</p>
     pub fn set_filter_list_configuration(mut self, input: ::std::option::Option<crate::types::FilterListConfiguration>) -> Self {
         self.filter_list_configuration = input;
         self
     }
-    /// <p>A list of filter configurations. In the Amazon QuickSight console, this filter type is called a filter list.</p>
+    /// <p>A list of filter configurations. In the QuickSight console, this filter type is called a filter list.</p>
     pub fn get_filter_list_configuration(&self) -> &::std::option::Option<crate::types::FilterListConfiguration> {
         &self.filter_list_configuration
     }
-    /// <p>A list of custom filter values. In the Amazon QuickSight console, this filter type is called a custom filter list.</p>
+    /// <p>A list of custom filter values. In the QuickSight console, this filter type is called a custom filter list.</p>
     pub fn custom_filter_list_configuration(mut self, input: crate::types::CustomFilterListConfiguration) -> Self {
         self.custom_filter_list_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A list of custom filter values. In the Amazon QuickSight console, this filter type is called a custom filter list.</p>
+    /// <p>A list of custom filter values. In the QuickSight console, this filter type is called a custom filter list.</p>
     pub fn set_custom_filter_list_configuration(mut self, input: ::std::option::Option<crate::types::CustomFilterListConfiguration>) -> Self {
         self.custom_filter_list_configuration = input;
         self
     }
-    /// <p>A list of custom filter values. In the Amazon QuickSight console, this filter type is called a custom filter list.</p>
+    /// <p>A list of custom filter values. In the QuickSight console, this filter type is called a custom filter list.</p>
     pub fn get_custom_filter_list_configuration(&self) -> &::std::option::Option<crate::types::CustomFilterListConfiguration> {
         &self.custom_filter_list_configuration
     }

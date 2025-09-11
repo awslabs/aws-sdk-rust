@@ -3,7 +3,16 @@
 /// Media Package Output Settings
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MediaPackageOutputSettings {}
+pub struct MediaPackageOutputSettings {
+    /// Optional settings for MediaPackage V2 destinations
+    pub media_package_v2_destination_settings: ::std::option::Option<crate::types::MediaPackageV2DestinationSettings>,
+}
+impl MediaPackageOutputSettings {
+    /// Optional settings for MediaPackage V2 destinations
+    pub fn media_package_v2_destination_settings(&self) -> ::std::option::Option<&crate::types::MediaPackageV2DestinationSettings> {
+        self.media_package_v2_destination_settings.as_ref()
+    }
+}
 impl MediaPackageOutputSettings {
     /// Creates a new builder-style object to manufacture [`MediaPackageOutputSettings`](crate::types::MediaPackageOutputSettings).
     pub fn builder() -> crate::types::builders::MediaPackageOutputSettingsBuilder {
@@ -14,10 +23,31 @@ impl MediaPackageOutputSettings {
 /// A builder for [`MediaPackageOutputSettings`](crate::types::MediaPackageOutputSettings).
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
-pub struct MediaPackageOutputSettingsBuilder {}
+pub struct MediaPackageOutputSettingsBuilder {
+    pub(crate) media_package_v2_destination_settings: ::std::option::Option<crate::types::MediaPackageV2DestinationSettings>,
+}
 impl MediaPackageOutputSettingsBuilder {
+    /// Optional settings for MediaPackage V2 destinations
+    pub fn media_package_v2_destination_settings(mut self, input: crate::types::MediaPackageV2DestinationSettings) -> Self {
+        self.media_package_v2_destination_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// Optional settings for MediaPackage V2 destinations
+    pub fn set_media_package_v2_destination_settings(
+        mut self,
+        input: ::std::option::Option<crate::types::MediaPackageV2DestinationSettings>,
+    ) -> Self {
+        self.media_package_v2_destination_settings = input;
+        self
+    }
+    /// Optional settings for MediaPackage V2 destinations
+    pub fn get_media_package_v2_destination_settings(&self) -> &::std::option::Option<crate::types::MediaPackageV2DestinationSettings> {
+        &self.media_package_v2_destination_settings
+    }
     /// Consumes the builder and constructs a [`MediaPackageOutputSettings`](crate::types::MediaPackageOutputSettings).
     pub fn build(self) -> crate::types::MediaPackageOutputSettings {
-        crate::types::MediaPackageOutputSettings {}
+        crate::types::MediaPackageOutputSettings {
+            media_package_v2_destination_settings: self.media_package_v2_destination_settings,
+        }
     }
 }

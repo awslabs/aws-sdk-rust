@@ -13,7 +13,7 @@ pub struct UpdateDashboardPermissionsOutput {
     pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
-    /// <p>Updates the permissions of a shared link to an Amazon QuickSight dashboard.</p>
+    /// <p>Updates the permissions of a shared link to an QuickSight dashboard.</p>
     pub link_sharing_configuration: ::std::option::Option<crate::types::LinkSharingConfiguration>,
     _request_id: Option<String>,
 }
@@ -40,7 +40,7 @@ impl UpdateDashboardPermissionsOutput {
     pub fn status(&self) -> i32 {
         self.status
     }
-    /// <p>Updates the permissions of a shared link to an Amazon QuickSight dashboard.</p>
+    /// <p>Updates the permissions of a shared link to an QuickSight dashboard.</p>
     pub fn link_sharing_configuration(&self) -> ::std::option::Option<&crate::types::LinkSharingConfiguration> {
         self.link_sharing_configuration.as_ref()
     }
@@ -146,17 +146,17 @@ impl UpdateDashboardPermissionsOutputBuilder {
     pub fn get_status(&self) -> &::std::option::Option<i32> {
         &self.status
     }
-    /// <p>Updates the permissions of a shared link to an Amazon QuickSight dashboard.</p>
+    /// <p>Updates the permissions of a shared link to an QuickSight dashboard.</p>
     pub fn link_sharing_configuration(mut self, input: crate::types::LinkSharingConfiguration) -> Self {
         self.link_sharing_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Updates the permissions of a shared link to an Amazon QuickSight dashboard.</p>
+    /// <p>Updates the permissions of a shared link to an QuickSight dashboard.</p>
     pub fn set_link_sharing_configuration(mut self, input: ::std::option::Option<crate::types::LinkSharingConfiguration>) -> Self {
         self.link_sharing_configuration = input;
         self
     }
-    /// <p>Updates the permissions of a shared link to an Amazon QuickSight dashboard.</p>
+    /// <p>Updates the permissions of a shared link to an QuickSight dashboard.</p>
     pub fn get_link_sharing_configuration(&self) -> &::std::option::Option<crate::types::LinkSharingConfiguration> {
         &self.link_sharing_configuration
     }

@@ -6,11 +6,17 @@
 pub struct MediaPackageGroupSettings {
     /// MediaPackage channel destination.
     pub destination: ::std::option::Option<crate::types::OutputLocationRef>,
+    /// Parameters that apply only if the destination parameter (for the output group) specifies a channelGroup and channelName. Use of these two paramters indicates that the output group is for MediaPackage V2 (CMAF Ingest).
+    pub mediapackage_v2_group_settings: ::std::option::Option<crate::types::MediaPackageV2GroupSettings>,
 }
 impl MediaPackageGroupSettings {
     /// MediaPackage channel destination.
     pub fn destination(&self) -> ::std::option::Option<&crate::types::OutputLocationRef> {
         self.destination.as_ref()
+    }
+    /// Parameters that apply only if the destination parameter (for the output group) specifies a channelGroup and channelName. Use of these two paramters indicates that the output group is for MediaPackage V2 (CMAF Ingest).
+    pub fn mediapackage_v2_group_settings(&self) -> ::std::option::Option<&crate::types::MediaPackageV2GroupSettings> {
+        self.mediapackage_v2_group_settings.as_ref()
     }
 }
 impl MediaPackageGroupSettings {
@@ -25,6 +31,7 @@ impl MediaPackageGroupSettings {
 #[non_exhaustive]
 pub struct MediaPackageGroupSettingsBuilder {
     pub(crate) destination: ::std::option::Option<crate::types::OutputLocationRef>,
+    pub(crate) mediapackage_v2_group_settings: ::std::option::Option<crate::types::MediaPackageV2GroupSettings>,
 }
 impl MediaPackageGroupSettingsBuilder {
     /// MediaPackage channel destination.
@@ -42,10 +49,25 @@ impl MediaPackageGroupSettingsBuilder {
     pub fn get_destination(&self) -> &::std::option::Option<crate::types::OutputLocationRef> {
         &self.destination
     }
+    /// Parameters that apply only if the destination parameter (for the output group) specifies a channelGroup and channelName. Use of these two paramters indicates that the output group is for MediaPackage V2 (CMAF Ingest).
+    pub fn mediapackage_v2_group_settings(mut self, input: crate::types::MediaPackageV2GroupSettings) -> Self {
+        self.mediapackage_v2_group_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// Parameters that apply only if the destination parameter (for the output group) specifies a channelGroup and channelName. Use of these two paramters indicates that the output group is for MediaPackage V2 (CMAF Ingest).
+    pub fn set_mediapackage_v2_group_settings(mut self, input: ::std::option::Option<crate::types::MediaPackageV2GroupSettings>) -> Self {
+        self.mediapackage_v2_group_settings = input;
+        self
+    }
+    /// Parameters that apply only if the destination parameter (for the output group) specifies a channelGroup and channelName. Use of these two paramters indicates that the output group is for MediaPackage V2 (CMAF Ingest).
+    pub fn get_mediapackage_v2_group_settings(&self) -> &::std::option::Option<crate::types::MediaPackageV2GroupSettings> {
+        &self.mediapackage_v2_group_settings
+    }
     /// Consumes the builder and constructs a [`MediaPackageGroupSettings`](crate::types::MediaPackageGroupSettings).
     pub fn build(self) -> crate::types::MediaPackageGroupSettings {
         crate::types::MediaPackageGroupSettings {
             destination: self.destination,
+            mediapackage_v2_group_settings: self.mediapackage_v2_group_settings,
         }
     }
 }

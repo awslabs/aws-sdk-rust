@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdatePublicSharingSettingsInput {
-    /// <p>The Amazon Web Services account ID associated with your Amazon QuickSight subscription.</p>
+    /// <p>The Amazon Web Services account ID associated with your QuickSight subscription.</p>
     pub aws_account_id: ::std::option::Option<::std::string::String>,
-    /// <p>A Boolean value that indicates whether public sharing is turned on for an Amazon QuickSight account.</p>
+    /// <p>A Boolean value that indicates whether public sharing is turned on for an QuickSight account.</p>
     pub public_sharing_enabled: ::std::option::Option<bool>,
 }
 impl UpdatePublicSharingSettingsInput {
-    /// <p>The Amazon Web Services account ID associated with your Amazon QuickSight subscription.</p>
+    /// <p>The Amazon Web Services account ID associated with your QuickSight subscription.</p>
     pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
-    /// <p>A Boolean value that indicates whether public sharing is turned on for an Amazon QuickSight account.</p>
+    /// <p>A Boolean value that indicates whether public sharing is turned on for an QuickSight account.</p>
     pub fn public_sharing_enabled(&self) -> ::std::option::Option<bool> {
         self.public_sharing_enabled
     }
@@ -33,32 +33,32 @@ pub struct UpdatePublicSharingSettingsInputBuilder {
     pub(crate) public_sharing_enabled: ::std::option::Option<bool>,
 }
 impl UpdatePublicSharingSettingsInputBuilder {
-    /// <p>The Amazon Web Services account ID associated with your Amazon QuickSight subscription.</p>
+    /// <p>The Amazon Web Services account ID associated with your QuickSight subscription.</p>
     /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Web Services account ID associated with your Amazon QuickSight subscription.</p>
+    /// <p>The Amazon Web Services account ID associated with your QuickSight subscription.</p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
-    /// <p>The Amazon Web Services account ID associated with your Amazon QuickSight subscription.</p>
+    /// <p>The Amazon Web Services account ID associated with your QuickSight subscription.</p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.aws_account_id
     }
-    /// <p>A Boolean value that indicates whether public sharing is turned on for an Amazon QuickSight account.</p>
+    /// <p>A Boolean value that indicates whether public sharing is turned on for an QuickSight account.</p>
     pub fn public_sharing_enabled(mut self, input: bool) -> Self {
         self.public_sharing_enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A Boolean value that indicates whether public sharing is turned on for an Amazon QuickSight account.</p>
+    /// <p>A Boolean value that indicates whether public sharing is turned on for an QuickSight account.</p>
     pub fn set_public_sharing_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.public_sharing_enabled = input;
         self
     }
-    /// <p>A Boolean value that indicates whether public sharing is turned on for an Amazon QuickSight account.</p>
+    /// <p>A Boolean value that indicates whether public sharing is turned on for an QuickSight account.</p>
     pub fn get_public_sharing_enabled(&self) -> &::std::option::Option<bool> {
         &self.public_sharing_enabled
     }

@@ -226,7 +226,7 @@ impl CreateServiceFluentBuilder {
     /// <p>The default behavior of <code>AvailabilityZoneRebalancing</code> differs between create and update requests:</p>
     /// <ul>
     /// <li>
-    /// <p>For create service requests, when when no value is specified for <code>AvailabilityZoneRebalancing</code>, Amazon ECS defaults the value to to <code>ENABLED</code>.</p></li>
+    /// <p>For create service requests, when no value is specified for <code>AvailabilityZoneRebalancing</code>, Amazon ECS defaults the value to <code>ENABLED</code>.</p></li>
     /// <li>
     /// <p>For update service requests, when no value is specified for <code>AvailabilityZoneRebalancing</code>, Amazon ECS defaults to the existing service’s <code>AvailabilityZoneRebalancing</code> value. If the service never had an <code>AvailabilityZoneRebalancing</code> value set, Amazon ECS treats this as <code>DISABLED</code>.</p></li>
     /// </ul>
@@ -239,7 +239,7 @@ impl CreateServiceFluentBuilder {
     /// <p>The default behavior of <code>AvailabilityZoneRebalancing</code> differs between create and update requests:</p>
     /// <ul>
     /// <li>
-    /// <p>For create service requests, when when no value is specified for <code>AvailabilityZoneRebalancing</code>, Amazon ECS defaults the value to to <code>ENABLED</code>.</p></li>
+    /// <p>For create service requests, when no value is specified for <code>AvailabilityZoneRebalancing</code>, Amazon ECS defaults the value to <code>ENABLED</code>.</p></li>
     /// <li>
     /// <p>For update service requests, when no value is specified for <code>AvailabilityZoneRebalancing</code>, Amazon ECS defaults to the existing service’s <code>AvailabilityZoneRebalancing</code> value. If the service never had an <code>AvailabilityZoneRebalancing</code> value set, Amazon ECS treats this as <code>DISABLED</code>.</p></li>
     /// </ul>
@@ -252,7 +252,7 @@ impl CreateServiceFluentBuilder {
     /// <p>The default behavior of <code>AvailabilityZoneRebalancing</code> differs between create and update requests:</p>
     /// <ul>
     /// <li>
-    /// <p>For create service requests, when when no value is specified for <code>AvailabilityZoneRebalancing</code>, Amazon ECS defaults the value to to <code>ENABLED</code>.</p></li>
+    /// <p>For create service requests, when no value is specified for <code>AvailabilityZoneRebalancing</code>, Amazon ECS defaults the value to <code>ENABLED</code>.</p></li>
     /// <li>
     /// <p>For update service requests, when no value is specified for <code>AvailabilityZoneRebalancing</code>, Amazon ECS defaults to the existing service’s <code>AvailabilityZoneRebalancing</code> value. If the service never had an <code>AvailabilityZoneRebalancing</code> value set, Amazon ECS treats this as <code>DISABLED</code>.</p></li>
     /// </ul>

@@ -5,7 +5,7 @@
 pub struct UpdateBrandInput {
     /// <p>The ID of the Amazon Web Services account that owns the brand.</p>
     pub aws_account_id: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of the Amazon QuickSight brand.</p>
+    /// <p>The ID of the QuickSight brand.</p>
     pub brand_id: ::std::option::Option<::std::string::String>,
     /// <p>The definition of the brand.</p>
     pub brand_definition: ::std::option::Option<crate::types::BrandDefinition>,
@@ -15,7 +15,7 @@ impl UpdateBrandInput {
     pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
-    /// <p>The ID of the Amazon QuickSight brand.</p>
+    /// <p>The ID of the QuickSight brand.</p>
     pub fn brand_id(&self) -> ::std::option::Option<&str> {
         self.brand_id.as_deref()
     }
@@ -55,18 +55,18 @@ impl UpdateBrandInputBuilder {
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.aws_account_id
     }
-    /// <p>The ID of the Amazon QuickSight brand.</p>
+    /// <p>The ID of the QuickSight brand.</p>
     /// This field is required.
     pub fn brand_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.brand_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the Amazon QuickSight brand.</p>
+    /// <p>The ID of the QuickSight brand.</p>
     pub fn set_brand_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.brand_id = input;
         self
     }
-    /// <p>The ID of the Amazon QuickSight brand.</p>
+    /// <p>The ID of the QuickSight brand.</p>
     pub fn get_brand_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.brand_id
     }

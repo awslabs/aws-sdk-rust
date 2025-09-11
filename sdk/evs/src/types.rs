@@ -5,6 +5,8 @@ pub use crate::types::_validation_exception_reason::ValidationExceptionReason;
 
 pub use crate::types::_vlan::Vlan;
 
+pub use crate::types::_eip_association::EipAssociation;
+
 pub use crate::types::_vlan_state::VlanState;
 
 pub use crate::types::_host::Host;
@@ -52,6 +54,8 @@ mod _check_result;
 mod _check_type;
 
 mod _connectivity_info;
+
+mod _eip_association;
 
 mod _environment;
 

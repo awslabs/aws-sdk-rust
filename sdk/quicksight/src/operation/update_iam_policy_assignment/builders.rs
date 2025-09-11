@@ -188,17 +188,17 @@ impl UpdateIAMPolicyAssignmentFluentBuilder {
     pub fn get_assignment_status(&self) -> &::std::option::Option<crate::types::AssignmentStatus> {
         self.inner.get_assignment_status()
     }
-    /// <p>The ARN for the IAM policy to apply to the Amazon QuickSight users and groups specified in this assignment.</p>
+    /// <p>The ARN for the IAM policy to apply to the QuickSight users and groups specified in this assignment.</p>
     pub fn policy_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy_arn(input.into());
         self
     }
-    /// <p>The ARN for the IAM policy to apply to the Amazon QuickSight users and groups specified in this assignment.</p>
+    /// <p>The ARN for the IAM policy to apply to the QuickSight users and groups specified in this assignment.</p>
     pub fn set_policy_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy_arn(input);
         self
     }
-    /// <p>The ARN for the IAM policy to apply to the Amazon QuickSight users and groups specified in this assignment.</p>
+    /// <p>The ARN for the IAM policy to apply to the QuickSight users and groups specified in this assignment.</p>
     pub fn get_policy_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_policy_arn()
     }
@@ -207,12 +207,12 @@ impl UpdateIAMPolicyAssignmentFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_identities`](Self::set_identities).
     ///
-    /// <p>The Amazon QuickSight users, groups, or both that you want to assign the policy to.</p>
+    /// <p>The QuickSight users, groups, or both that you want to assign the policy to.</p>
     pub fn identities(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
         self.inner = self.inner.identities(k.into(), v);
         self
     }
-    /// <p>The Amazon QuickSight users, groups, or both that you want to assign the policy to.</p>
+    /// <p>The QuickSight users, groups, or both that you want to assign the policy to.</p>
     pub fn set_identities(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
@@ -220,7 +220,7 @@ impl UpdateIAMPolicyAssignmentFluentBuilder {
         self.inner = self.inner.set_identities(input);
         self
     }
-    /// <p>The Amazon QuickSight users, groups, or both that you want to assign the policy to.</p>
+    /// <p>The QuickSight users, groups, or both that you want to assign the policy to.</p>
     pub fn get_identities(
         &self,
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {

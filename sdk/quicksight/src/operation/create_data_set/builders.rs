@@ -213,17 +213,17 @@ impl CreateDataSetFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_column_groups`](Self::set_column_groups).
     ///
-    /// <p>Groupings of columns that work together in certain Amazon QuickSight features. Currently, only geospatial hierarchy is supported.</p>
+    /// <p>Groupings of columns that work together in certain QuickSight features. Currently, only geospatial hierarchy is supported.</p>
     pub fn column_groups(mut self, input: crate::types::ColumnGroup) -> Self {
         self.inner = self.inner.column_groups(input);
         self
     }
-    /// <p>Groupings of columns that work together in certain Amazon QuickSight features. Currently, only geospatial hierarchy is supported.</p>
+    /// <p>Groupings of columns that work together in certain QuickSight features. Currently, only geospatial hierarchy is supported.</p>
     pub fn set_column_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ColumnGroup>>) -> Self {
         self.inner = self.inner.set_column_groups(input);
         self
     }
-    /// <p>Groupings of columns that work together in certain Amazon QuickSight features. Currently, only geospatial hierarchy is supported.</p>
+    /// <p>Groupings of columns that work together in certain QuickSight features. Currently, only geospatial hierarchy is supported.</p>
     pub fn get_column_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnGroup>> {
         self.inner.get_column_groups()
     }
@@ -378,17 +378,17 @@ impl CreateDataSetFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_folder_arns`](Self::set_folder_arns).
     ///
-    /// <p>When you create the dataset, Amazon QuickSight adds the dataset to these folders.</p>
+    /// <p>When you create the dataset, QuickSight adds the dataset to these folders.</p>
     pub fn folder_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.folder_arns(input.into());
         self
     }
-    /// <p>When you create the dataset, Amazon QuickSight adds the dataset to these folders.</p>
+    /// <p>When you create the dataset, QuickSight adds the dataset to these folders.</p>
     pub fn set_folder_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_folder_arns(input);
         self
     }
-    /// <p>When you create the dataset, Amazon QuickSight adds the dataset to these folders.</p>
+    /// <p>When you create the dataset, QuickSight adds the dataset to these folders.</p>
     pub fn get_folder_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_folder_arns()
     }

@@ -75,6 +75,20 @@ where
                                     .transpose()?,
                             );
                         }
+                        "eipAssociations" => {
+                            builder =
+                                builder.set_eip_associations(crate::protocol_serde::shape_eip_association_list::de_eip_association_list(tokens)?);
+                        }
+                        "isPublic" => {
+                            builder = builder.set_is_public(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "networkAclId" => {
+                            builder = builder.set_network_acl_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

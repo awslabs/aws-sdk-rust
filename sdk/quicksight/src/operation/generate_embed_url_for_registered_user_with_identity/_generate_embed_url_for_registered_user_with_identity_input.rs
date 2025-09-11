@@ -7,7 +7,7 @@ pub struct GenerateEmbedUrlForRegisteredUserWithIdentityInput {
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The validity of the session in minutes.</p>
     pub session_lifetime_in_minutes: ::std::option::Option<i64>,
-    /// <p>The type of experience you want to embed. For registered users, you can embed Amazon QuickSight dashboards or the Amazon QuickSight console.</p><note>
+    /// <p>The type of experience you want to embed. For registered users, you can embed QuickSight dashboards or the QuickSight console.</p><note>
     /// <p>Exactly one of the experience configurations is required. You can choose <code>Dashboard</code> or <code>QuickSightConsole</code>. You cannot choose more than one experience configuration.</p>
     /// </note>
     pub experience_configuration: ::std::option::Option<crate::types::RegisteredUserEmbeddingExperienceConfiguration>,
@@ -23,7 +23,7 @@ impl GenerateEmbedUrlForRegisteredUserWithIdentityInput {
     pub fn session_lifetime_in_minutes(&self) -> ::std::option::Option<i64> {
         self.session_lifetime_in_minutes
     }
-    /// <p>The type of experience you want to embed. For registered users, you can embed Amazon QuickSight dashboards or the Amazon QuickSight console.</p><note>
+    /// <p>The type of experience you want to embed. For registered users, you can embed QuickSight dashboards or the QuickSight console.</p><note>
     /// <p>Exactly one of the experience configurations is required. You can choose <code>Dashboard</code> or <code>QuickSightConsole</code>. You cannot choose more than one experience configuration.</p>
     /// </note>
     pub fn experience_configuration(&self) -> ::std::option::Option<&crate::types::RegisteredUserEmbeddingExperienceConfiguration> {
@@ -84,7 +84,7 @@ impl GenerateEmbedUrlForRegisteredUserWithIdentityInputBuilder {
     pub fn get_session_lifetime_in_minutes(&self) -> &::std::option::Option<i64> {
         &self.session_lifetime_in_minutes
     }
-    /// <p>The type of experience you want to embed. For registered users, you can embed Amazon QuickSight dashboards or the Amazon QuickSight console.</p><note>
+    /// <p>The type of experience you want to embed. For registered users, you can embed QuickSight dashboards or the QuickSight console.</p><note>
     /// <p>Exactly one of the experience configurations is required. You can choose <code>Dashboard</code> or <code>QuickSightConsole</code>. You cannot choose more than one experience configuration.</p>
     /// </note>
     /// This field is required.
@@ -92,7 +92,7 @@ impl GenerateEmbedUrlForRegisteredUserWithIdentityInputBuilder {
         self.experience_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of experience you want to embed. For registered users, you can embed Amazon QuickSight dashboards or the Amazon QuickSight console.</p><note>
+    /// <p>The type of experience you want to embed. For registered users, you can embed QuickSight dashboards or the QuickSight console.</p><note>
     /// <p>Exactly one of the experience configurations is required. You can choose <code>Dashboard</code> or <code>QuickSightConsole</code>. You cannot choose more than one experience configuration.</p>
     /// </note>
     pub fn set_experience_configuration(
@@ -102,7 +102,7 @@ impl GenerateEmbedUrlForRegisteredUserWithIdentityInputBuilder {
         self.experience_configuration = input;
         self
     }
-    /// <p>The type of experience you want to embed. For registered users, you can embed Amazon QuickSight dashboards or the Amazon QuickSight console.</p><note>
+    /// <p>The type of experience you want to embed. For registered users, you can embed QuickSight dashboards or the QuickSight console.</p><note>
     /// <p>Exactly one of the experience configurations is required. You can choose <code>Dashboard</code> or <code>QuickSightConsole</code>. You cannot choose more than one experience configuration.</p>
     /// </note>
     pub fn get_experience_configuration(&self) -> &::std::option::Option<crate::types::RegisteredUserEmbeddingExperienceConfiguration> {

@@ -39,9 +39,11 @@ pub use crate::types::_topic_column::TopicColumnBuilder;
 
 pub use crate::types::_topic_filter::TopicFilterBuilder;
 
-pub use crate::types::_topic_relative_date_filter::TopicRelativeDateFilterBuilder;
+pub use crate::types::_topic_null_filter::TopicNullFilterBuilder;
 
 pub use crate::types::_topic_singular_filter_constant::TopicSingularFilterConstantBuilder;
+
+pub use crate::types::_topic_relative_date_filter::TopicRelativeDateFilterBuilder;
 
 pub use crate::types::_topic_date_range_filter::TopicDateRangeFilterBuilder;
 
@@ -1223,6 +1225,8 @@ pub use crate::types::_data_source_credentials::DataSourceCredentialsBuilder;
 
 pub use crate::types::_credential_pair::CredentialPairBuilder;
 
+pub use crate::types::_custom_connection_parameters::CustomConnectionParametersBuilder;
+
 pub use crate::types::_impala_parameters::ImpalaParametersBuilder;
 
 pub use crate::types::_big_query_parameters::BigQueryParametersBuilder;
@@ -1372,6 +1376,10 @@ pub use crate::types::_dashboard_version_definition::DashboardVersionDefinitionB
 pub use crate::types::_data_set_identifier_declaration::DataSetIdentifierDeclarationBuilder;
 
 pub use crate::types::_dashboard_publish_options::DashboardPublishOptionsBuilder;
+
+pub use crate::types::_data_stories_sharing_option::DataStoriesSharingOptionBuilder;
+
+pub use crate::types::_executive_summary_option::ExecutiveSummaryOptionBuilder;
 
 pub use crate::types::_data_qa_enabled_option::DataQaEnabledOptionBuilder;
 
@@ -1768,6 +1776,8 @@ pub use crate::types::_template::TemplateBuilder;
 pub use crate::types::_template_version::TemplateVersionBuilder;
 
 pub use crate::types::_sheet::SheetBuilder;
+
+pub use crate::types::_q_data_key::QDataKeyBuilder;
 
 pub use crate::types::_iam_policy_assignment::IamPolicyAssignmentBuilder;
 

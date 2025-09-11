@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateNamespaceOutput {
-    /// <p>The ARN of the Amazon QuickSight namespace you created.</p>
+    /// <p>The ARN of the QuickSight namespace you created.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the new namespace that you created.</p>
     pub name: ::std::option::Option<::std::string::String>,
@@ -20,7 +20,7 @@ pub struct CreateNamespaceOutput {
     _request_id: Option<String>,
 }
 impl CreateNamespaceOutput {
-    /// <p>The ARN of the Amazon QuickSight namespace you created.</p>
+    /// <p>The ARN of the QuickSight namespace you created.</p>
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -75,17 +75,17 @@ pub struct CreateNamespaceOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateNamespaceOutputBuilder {
-    /// <p>The ARN of the Amazon QuickSight namespace you created.</p>
+    /// <p>The ARN of the QuickSight namespace you created.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the Amazon QuickSight namespace you created.</p>
+    /// <p>The ARN of the QuickSight namespace you created.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
-    /// <p>The ARN of the Amazon QuickSight namespace you created.</p>
+    /// <p>The ARN of the QuickSight namespace you created.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }

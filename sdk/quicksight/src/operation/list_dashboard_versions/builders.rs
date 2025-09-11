@@ -22,7 +22,7 @@ impl crate::operation::list_dashboard_versions::builders::ListDashboardVersionsI
 }
 /// Fluent builder constructing a request to `ListDashboardVersions`.
 ///
-/// <p>Lists all the versions of the dashboards in the Amazon QuickSight subscription.</p>
+/// <p>Lists all the versions of the dashboards in the QuickSight subscription.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListDashboardVersionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

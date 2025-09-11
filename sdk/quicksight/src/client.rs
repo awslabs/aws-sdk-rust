@@ -217,6 +217,8 @@ mod create_vpc_connection;
 /// ```
 pub mod customize;
 
+mod delete_account_custom_permission;
+
 mod delete_account_customization;
 
 mod delete_account_subscription;
@@ -278,6 +280,8 @@ mod delete_user_by_principal_id;
 mod delete_user_custom_permission;
 
 mod delete_vpc_connection;
+
+mod describe_account_custom_permission;
 
 mod describe_account_customization;
 
@@ -492,6 +496,8 @@ mod start_dashboard_snapshot_job_schedule;
 mod tag_resource;
 
 mod untag_resource;
+
+mod update_account_custom_permission;
 
 mod update_account_customization;
 

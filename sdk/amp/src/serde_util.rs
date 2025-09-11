@@ -273,6 +273,32 @@ pub(crate) fn describe_scraper_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn describe_scraper_logging_configuration_output_output_correct_errors(
+    mut builder: crate::operation::describe_scraper_logging_configuration::builders::DescribeScraperLoggingConfigurationOutputBuilder,
+) -> crate::operation::describe_scraper_logging_configuration::builders::DescribeScraperLoggingConfigurationOutputBuilder {
+    if builder.status.is_none() {
+        builder.status = {
+            let builder = crate::types::builders::ScraperLoggingConfigurationStatusBuilder::default();
+            crate::serde_util::scraper_logging_configuration_status_correct_errors(builder)
+                .build()
+                .ok()
+        }
+    }
+    if builder.scraper_id.is_none() {
+        builder.scraper_id = Some(Default::default())
+    }
+    if builder.logging_destination.is_none() {
+        builder.logging_destination = Some(crate::types::ScraperLoggingDestination::Unknown)
+    }
+    if builder.scraper_components.is_none() {
+        builder.scraper_components = Some(Default::default())
+    }
+    if builder.modified_at.is_none() {
+        builder.modified_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn describe_workspace_output_output_correct_errors(
     mut builder: crate::operation::describe_workspace::builders::DescribeWorkspaceOutputBuilder,
 ) -> crate::operation::describe_workspace::builders::DescribeWorkspaceOutputBuilder {
@@ -412,6 +438,20 @@ pub(crate) fn update_scraper_output_output_correct_errors(
         builder.status = {
             let builder = crate::types::builders::ScraperStatusBuilder::default();
             crate::serde_util::scraper_status_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn update_scraper_logging_configuration_output_output_correct_errors(
+    mut builder: crate::operation::update_scraper_logging_configuration::builders::UpdateScraperLoggingConfigurationOutputBuilder,
+) -> crate::operation::update_scraper_logging_configuration::builders::UpdateScraperLoggingConfigurationOutputBuilder {
+    if builder.status.is_none() {
+        builder.status = {
+            let builder = crate::types::builders::ScraperLoggingConfigurationStatusBuilder::default();
+            crate::serde_util::scraper_logging_configuration_status_correct_errors(builder)
+                .build()
+                .ok()
         }
     }
     builder
@@ -615,6 +655,15 @@ pub(crate) fn scraper_description_correct_errors(
     builder
 }
 
+pub(crate) fn scraper_logging_configuration_status_correct_errors(
+    mut builder: crate::types::builders::ScraperLoggingConfigurationStatusBuilder,
+) -> crate::types::builders::ScraperLoggingConfigurationStatusBuilder {
+    if builder.status_code.is_none() {
+        builder.status_code = "no value was set".parse::<crate::types::ScraperLoggingConfigurationStatusCode>().ok()
+    }
+    builder
+}
+
 pub(crate) fn workspace_description_correct_errors(
     mut builder: crate::types::builders::WorkspaceDescriptionBuilder,
 ) -> crate::types::builders::WorkspaceDescriptionBuilder {
@@ -657,6 +706,15 @@ pub(crate) fn workspace_configuration_status_correct_errors(
     builder
 }
 
+pub(crate) fn cloud_watch_log_destination_correct_errors(
+    mut builder: crate::types::builders::CloudWatchLogDestinationBuilder,
+) -> crate::types::builders::CloudWatchLogDestinationBuilder {
+    if builder.log_group_arn.is_none() {
+        builder.log_group_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn rule_groups_namespace_summary_correct_errors(
     mut builder: crate::types::builders::RuleGroupsNamespaceSummaryBuilder,
 ) -> crate::types::builders::RuleGroupsNamespaceSummaryBuilder {
@@ -677,6 +735,15 @@ pub(crate) fn rule_groups_namespace_summary_correct_errors(
     }
     if builder.modified_at.is_none() {
         builder.modified_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn scraper_component_correct_errors(
+    mut builder: crate::types::builders::ScraperComponentBuilder,
+) -> crate::types::builders::ScraperComponentBuilder {
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::ScraperComponentType>().ok()
     }
     builder
 }
@@ -797,15 +864,6 @@ pub(crate) fn logging_destination_correct_errors(
             let builder = crate::types::builders::LoggingFilterBuilder::default();
             crate::serde_util::logging_filter_correct_errors(builder).build().ok()
         }
-    }
-    builder
-}
-
-pub(crate) fn cloud_watch_log_destination_correct_errors(
-    mut builder: crate::types::builders::CloudWatchLogDestinationBuilder,
-) -> crate::types::builders::CloudWatchLogDestinationBuilder {
-    if builder.log_group_arn.is_none() {
-        builder.log_group_arn = Some(Default::default())
     }
     builder
 }

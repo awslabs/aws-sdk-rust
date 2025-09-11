@@ -5,7 +5,7 @@
 pub struct UpdateKeyRegistrationInput {
     /// <p>The ID of the Amazon Web Services account that contains the customer managed key registration that you want to update.</p>
     pub aws_account_id: ::std::option::Option<::std::string::String>,
-    /// <p>A list of <code>RegisteredCustomerManagedKey</code> objects to be updated to the Amazon QuickSight account.</p>
+    /// <p>A list of <code>RegisteredCustomerManagedKey</code> objects to be updated to the QuickSight account.</p>
     pub key_registration: ::std::option::Option<::std::vec::Vec<crate::types::RegisteredCustomerManagedKey>>,
 }
 impl UpdateKeyRegistrationInput {
@@ -13,7 +13,7 @@ impl UpdateKeyRegistrationInput {
     pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
-    /// <p>A list of <code>RegisteredCustomerManagedKey</code> objects to be updated to the Amazon QuickSight account.</p>
+    /// <p>A list of <code>RegisteredCustomerManagedKey</code> objects to be updated to the QuickSight account.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.key_registration.is_none()`.
     pub fn key_registration(&self) -> &[crate::types::RegisteredCustomerManagedKey] {
@@ -54,19 +54,19 @@ impl UpdateKeyRegistrationInputBuilder {
     ///
     /// To override the contents of this collection use [`set_key_registration`](Self::set_key_registration).
     ///
-    /// <p>A list of <code>RegisteredCustomerManagedKey</code> objects to be updated to the Amazon QuickSight account.</p>
+    /// <p>A list of <code>RegisteredCustomerManagedKey</code> objects to be updated to the QuickSight account.</p>
     pub fn key_registration(mut self, input: crate::types::RegisteredCustomerManagedKey) -> Self {
         let mut v = self.key_registration.unwrap_or_default();
         v.push(input);
         self.key_registration = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of <code>RegisteredCustomerManagedKey</code> objects to be updated to the Amazon QuickSight account.</p>
+    /// <p>A list of <code>RegisteredCustomerManagedKey</code> objects to be updated to the QuickSight account.</p>
     pub fn set_key_registration(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RegisteredCustomerManagedKey>>) -> Self {
         self.key_registration = input;
         self
     }
-    /// <p>A list of <code>RegisteredCustomerManagedKey</code> objects to be updated to the Amazon QuickSight account.</p>
+    /// <p>A list of <code>RegisteredCustomerManagedKey</code> objects to be updated to the QuickSight account.</p>
     pub fn get_key_registration(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RegisteredCustomerManagedKey>> {
         &self.key_registration
     }

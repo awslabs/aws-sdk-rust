@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ColumnLevelPermissionRule {
-    /// <p>An array of Amazon Resource Names (ARNs) for Amazon QuickSight users or groups.</p>
+    /// <p>An array of Amazon Resource Names (ARNs) for QuickSight users or groups.</p>
     pub principals: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An array of column names.</p>
     pub column_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ColumnLevelPermissionRule {
-    /// <p>An array of Amazon Resource Names (ARNs) for Amazon QuickSight users or groups.</p>
+    /// <p>An array of Amazon Resource Names (ARNs) for QuickSight users or groups.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.principals.is_none()`.
     pub fn principals(&self) -> &[::std::string::String] {
@@ -42,19 +42,19 @@ impl ColumnLevelPermissionRuleBuilder {
     ///
     /// To override the contents of this collection use [`set_principals`](Self::set_principals).
     ///
-    /// <p>An array of Amazon Resource Names (ARNs) for Amazon QuickSight users or groups.</p>
+    /// <p>An array of Amazon Resource Names (ARNs) for QuickSight users or groups.</p>
     pub fn principals(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.principals.unwrap_or_default();
         v.push(input.into());
         self.principals = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of Amazon Resource Names (ARNs) for Amazon QuickSight users or groups.</p>
+    /// <p>An array of Amazon Resource Names (ARNs) for QuickSight users or groups.</p>
     pub fn set_principals(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.principals = input;
         self
     }
-    /// <p>An array of Amazon Resource Names (ARNs) for Amazon QuickSight users or groups.</p>
+    /// <p>An array of Amazon Resource Names (ARNs) for QuickSight users or groups.</p>
     pub fn get_principals(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.principals
     }

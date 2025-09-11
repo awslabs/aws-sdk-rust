@@ -629,6 +629,12 @@ pub use crate::types::_ms_smooth_h265_packaging_type::MsSmoothH265PackagingType;
 
 pub use crate::types::_media_package_output_settings::MediaPackageOutputSettings;
 
+pub use crate::types::_media_package_v2_destination_settings::MediaPackageV2DestinationSettings;
+
+pub use crate::types::_hls_default::HlsDefault;
+
+pub use crate::types::_hls_auto_select::HlsAutoSelect;
+
 pub use crate::types::_hls_output_settings::HlsOutputSettings;
 
 pub use crate::types::_hls_settings::HlsSettings;
@@ -741,6 +747,10 @@ pub use crate::types::_smooth_group_audio_only_timecode_control::SmoothGroupAudi
 
 pub use crate::types::_media_package_group_settings::MediaPackageGroupSettings;
 
+pub use crate::types::_media_package_v2_group_settings::MediaPackageV2GroupSettings;
+
+pub use crate::types::_caption_language_mapping::CaptionLanguageMapping;
+
 pub use crate::types::_hls_group_settings::HlsGroupSettings;
 
 pub use crate::types::_hls_ts_file_mode::HlsTsFileMode;
@@ -812,8 +822,6 @@ pub use crate::types::_hls_codec_specification::HlsCodecSpecification;
 pub use crate::types::_hls_client_cache::HlsClientCache;
 
 pub use crate::types::_hls_caption_language_setting::HlsCaptionLanguageSetting;
-
-pub use crate::types::_caption_language_mapping::CaptionLanguageMapping;
 
 pub use crate::types::_hls_ad_markers::HlsAdMarkers;
 
@@ -1811,6 +1819,8 @@ mod _hls_akamai_http_transfer_mode;
 
 mod _hls_akamai_settings;
 
+mod _hls_auto_select;
+
 mod _hls_basic_put_settings;
 
 mod _hls_caption_language_setting;
@@ -1820,6 +1830,8 @@ mod _hls_cdn_settings;
 mod _hls_client_cache;
 
 mod _hls_codec_specification;
+
+mod _hls_default;
 
 mod _hls_directory_structure;
 
@@ -2112,6 +2124,10 @@ mod _media_package_group_settings;
 mod _media_package_output_destination_settings;
 
 mod _media_package_output_settings;
+
+mod _media_package_v2_destination_settings;
+
+mod _media_package_v2_group_settings;
 
 mod _media_resource;
 

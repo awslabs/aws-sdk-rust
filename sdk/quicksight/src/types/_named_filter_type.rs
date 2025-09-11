@@ -14,6 +14,7 @@
 /// match namedfiltertype {
 ///     NamedFilterType::CategoryFilter => { /* ... */ },
 ///     NamedFilterType::DateRangeFilter => { /* ... */ },
+///     NamedFilterType::NullFilter => { /* ... */ },
 ///     NamedFilterType::NumericEqualityFilter => { /* ... */ },
 ///     NamedFilterType::NumericRangeFilter => { /* ... */ },
 ///     NamedFilterType::RelativeDateFilter => { /* ... */ },
@@ -50,6 +51,8 @@ pub enum NamedFilterType {
     #[allow(missing_docs)] // documentation missing in model
     DateRangeFilter,
     #[allow(missing_docs)] // documentation missing in model
+    NullFilter,
+    #[allow(missing_docs)] // documentation missing in model
     NumericEqualityFilter,
     #[allow(missing_docs)] // documentation missing in model
     NumericRangeFilter,
@@ -64,6 +67,7 @@ impl ::std::convert::From<&str> for NamedFilterType {
         match s {
             "CATEGORY_FILTER" => NamedFilterType::CategoryFilter,
             "DATE_RANGE_FILTER" => NamedFilterType::DateRangeFilter,
+            "NULL_FILTER" => NamedFilterType::NullFilter,
             "NUMERIC_EQUALITY_FILTER" => NamedFilterType::NumericEqualityFilter,
             "NUMERIC_RANGE_FILTER" => NamedFilterType::NumericRangeFilter,
             "RELATIVE_DATE_FILTER" => NamedFilterType::RelativeDateFilter,
@@ -84,6 +88,7 @@ impl NamedFilterType {
         match self {
             NamedFilterType::CategoryFilter => "CATEGORY_FILTER",
             NamedFilterType::DateRangeFilter => "DATE_RANGE_FILTER",
+            NamedFilterType::NullFilter => "NULL_FILTER",
             NamedFilterType::NumericEqualityFilter => "NUMERIC_EQUALITY_FILTER",
             NamedFilterType::NumericRangeFilter => "NUMERIC_RANGE_FILTER",
             NamedFilterType::RelativeDateFilter => "RELATIVE_DATE_FILTER",
@@ -95,6 +100,7 @@ impl NamedFilterType {
         &[
             "CATEGORY_FILTER",
             "DATE_RANGE_FILTER",
+            "NULL_FILTER",
             "NUMERIC_EQUALITY_FILTER",
             "NUMERIC_RANGE_FILTER",
             "RELATIVE_DATE_FILTER",
@@ -123,6 +129,7 @@ impl ::std::fmt::Display for NamedFilterType {
         match self {
             NamedFilterType::CategoryFilter => write!(f, "CATEGORY_FILTER"),
             NamedFilterType::DateRangeFilter => write!(f, "DATE_RANGE_FILTER"),
+            NamedFilterType::NullFilter => write!(f, "NULL_FILTER"),
             NamedFilterType::NumericEqualityFilter => write!(f, "NUMERIC_EQUALITY_FILTER"),
             NamedFilterType::NumericRangeFilter => write!(f, "NUMERIC_RANGE_FILTER"),
             NamedFilterType::RelativeDateFilter => write!(f, "RELATIVE_DATE_FILTER"),

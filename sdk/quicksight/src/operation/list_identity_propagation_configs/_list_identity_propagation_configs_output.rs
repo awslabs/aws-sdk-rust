@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListIdentityPropagationConfigsOutput {
-    /// <p>A list of services and their authorized targets that the Amazon QuickSight IAM Identity Center application can access.</p>
+    /// <p>A list of services and their authorized targets that the QuickSight IAM Identity Center application can access.</p>
     pub services: ::std::option::Option<::std::vec::Vec<crate::types::AuthorizedTargetsByService>>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,7 +14,7 @@ pub struct ListIdentityPropagationConfigsOutput {
     _request_id: Option<String>,
 }
 impl ListIdentityPropagationConfigsOutput {
-    /// <p>A list of services and their authorized targets that the Amazon QuickSight IAM Identity Center application can access.</p>
+    /// <p>A list of services and their authorized targets that the QuickSight IAM Identity Center application can access.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.services.is_none()`.
     pub fn services(&self) -> &[crate::types::AuthorizedTargetsByService] {
@@ -60,19 +60,19 @@ impl ListIdentityPropagationConfigsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_services`](Self::set_services).
     ///
-    /// <p>A list of services and their authorized targets that the Amazon QuickSight IAM Identity Center application can access.</p>
+    /// <p>A list of services and their authorized targets that the QuickSight IAM Identity Center application can access.</p>
     pub fn services(mut self, input: crate::types::AuthorizedTargetsByService) -> Self {
         let mut v = self.services.unwrap_or_default();
         v.push(input);
         self.services = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of services and their authorized targets that the Amazon QuickSight IAM Identity Center application can access.</p>
+    /// <p>A list of services and their authorized targets that the QuickSight IAM Identity Center application can access.</p>
     pub fn set_services(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AuthorizedTargetsByService>>) -> Self {
         self.services = input;
         self
     }
-    /// <p>A list of services and their authorized targets that the Amazon QuickSight IAM Identity Center application can access.</p>
+    /// <p>A list of services and their authorized targets that the QuickSight IAM Identity Center application can access.</p>
     pub fn get_services(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AuthorizedTargetsByService>> {
         &self.services
     }

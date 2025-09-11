@@ -22,6 +22,12 @@ pub struct Vlan {
     pub vlan_state: ::std::option::Option<crate::types::VlanState>,
     /// <p>The state details of the VLAN.</p>
     pub state_details: ::std::option::Option<::std::string::String>,
+    /// <p>An array of Elastic IP address associations.</p>
+    pub eip_associations: ::std::option::Option<::std::vec::Vec<crate::types::EipAssociation>>,
+    /// <p>Determines if the VLAN that Amazon EVS provisions is public or private.</p>
+    pub is_public: ::std::option::Option<bool>,
+    /// <p>A unique ID for a network access control list.</p>
+    pub network_acl_id: ::std::option::Option<::std::string::String>,
 }
 impl Vlan {
     /// <p>The unique ID of the VLAN.</p>
@@ -60,6 +66,20 @@ impl Vlan {
     pub fn state_details(&self) -> ::std::option::Option<&str> {
         self.state_details.as_deref()
     }
+    /// <p>An array of Elastic IP address associations.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.eip_associations.is_none()`.
+    pub fn eip_associations(&self) -> &[crate::types::EipAssociation] {
+        self.eip_associations.as_deref().unwrap_or_default()
+    }
+    /// <p>Determines if the VLAN that Amazon EVS provisions is public or private.</p>
+    pub fn is_public(&self) -> ::std::option::Option<bool> {
+        self.is_public
+    }
+    /// <p>A unique ID for a network access control list.</p>
+    pub fn network_acl_id(&self) -> ::std::option::Option<&str> {
+        self.network_acl_id.as_deref()
+    }
 }
 impl Vlan {
     /// Creates a new builder-style object to manufacture [`Vlan`](crate::types::Vlan).
@@ -81,6 +101,9 @@ pub struct VlanBuilder {
     pub(crate) modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) vlan_state: ::std::option::Option<crate::types::VlanState>,
     pub(crate) state_details: ::std::option::Option<::std::string::String>,
+    pub(crate) eip_associations: ::std::option::Option<::std::vec::Vec<crate::types::EipAssociation>>,
+    pub(crate) is_public: ::std::option::Option<bool>,
+    pub(crate) network_acl_id: ::std::option::Option<::std::string::String>,
 }
 impl VlanBuilder {
     /// <p>The unique ID of the VLAN.</p>
@@ -209,6 +232,54 @@ impl VlanBuilder {
     pub fn get_state_details(&self) -> &::std::option::Option<::std::string::String> {
         &self.state_details
     }
+    /// Appends an item to `eip_associations`.
+    ///
+    /// To override the contents of this collection use [`set_eip_associations`](Self::set_eip_associations).
+    ///
+    /// <p>An array of Elastic IP address associations.</p>
+    pub fn eip_associations(mut self, input: crate::types::EipAssociation) -> Self {
+        let mut v = self.eip_associations.unwrap_or_default();
+        v.push(input);
+        self.eip_associations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>An array of Elastic IP address associations.</p>
+    pub fn set_eip_associations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EipAssociation>>) -> Self {
+        self.eip_associations = input;
+        self
+    }
+    /// <p>An array of Elastic IP address associations.</p>
+    pub fn get_eip_associations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EipAssociation>> {
+        &self.eip_associations
+    }
+    /// <p>Determines if the VLAN that Amazon EVS provisions is public or private.</p>
+    pub fn is_public(mut self, input: bool) -> Self {
+        self.is_public = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Determines if the VLAN that Amazon EVS provisions is public or private.</p>
+    pub fn set_is_public(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.is_public = input;
+        self
+    }
+    /// <p>Determines if the VLAN that Amazon EVS provisions is public or private.</p>
+    pub fn get_is_public(&self) -> &::std::option::Option<bool> {
+        &self.is_public
+    }
+    /// <p>A unique ID for a network access control list.</p>
+    pub fn network_acl_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.network_acl_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A unique ID for a network access control list.</p>
+    pub fn set_network_acl_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.network_acl_id = input;
+        self
+    }
+    /// <p>A unique ID for a network access control list.</p>
+    pub fn get_network_acl_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_acl_id
+    }
     /// Consumes the builder and constructs a [`Vlan`](crate::types::Vlan).
     pub fn build(self) -> crate::types::Vlan {
         crate::types::Vlan {
@@ -221,6 +292,9 @@ impl VlanBuilder {
             modified_at: self.modified_at,
             vlan_state: self.vlan_state,
             state_details: self.state_details,
+            eip_associations: self.eip_associations,
+            is_public: self.is_public,
+            network_acl_id: self.network_acl_id,
         }
     }
 }

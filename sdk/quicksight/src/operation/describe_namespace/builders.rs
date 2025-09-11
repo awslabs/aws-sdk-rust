@@ -108,17 +108,17 @@ impl DescribeNamespaceFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ID for the Amazon Web Services account that contains the Amazon QuickSight namespace that you want to describe.</p>
+    /// <p>The ID for the Amazon Web Services account that contains the QuickSight namespace that you want to describe.</p>
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
-    /// <p>The ID for the Amazon Web Services account that contains the Amazon QuickSight namespace that you want to describe.</p>
+    /// <p>The ID for the Amazon Web Services account that contains the QuickSight namespace that you want to describe.</p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
-    /// <p>The ID for the Amazon Web Services account that contains the Amazon QuickSight namespace that you want to describe.</p>
+    /// <p>The ID for the Amazon Web Services account that contains the QuickSight namespace that you want to describe.</p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_aws_account_id()
     }

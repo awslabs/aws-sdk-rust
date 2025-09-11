@@ -22,7 +22,7 @@ impl crate::operation::register_user::builders::RegisterUserInputBuilder {
 }
 /// Fluent builder constructing a request to `RegisterUser`.
 ///
-/// <p>Creates an Amazon QuickSight user whose identity is associated with the Identity and Access Management (IAM) identity or role specified in the request. When you register a new user from the Amazon QuickSight API, Amazon QuickSight generates a registration URL. The user accesses this registration URL to create their account. Amazon QuickSight doesn't send a registration email to users who are registered from the Amazon QuickSight API. If you want new users to receive a registration email, then add those users in the Amazon QuickSight console. For more information on registering a new user in the Amazon QuickSight console, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/managing-users.html#inviting-users"> Inviting users to access Amazon QuickSight</a>.</p>
+/// <p>Creates an Amazon QuickSight user whose identity is associated with the Identity and Access Management (IAM) identity or role specified in the request. When you register a new user from the QuickSight API, QuickSight generates a registration URL. The user accesses this registration URL to create their account. QuickSight doesn't send a registration email to users who are registered from the QuickSight API. If you want new users to receive a registration email, then add those users in the QuickSight console. For more information on registering a new user in the QuickSight console, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/managing-users.html#inviting-users"> Inviting users to access QuickSight</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RegisterUserFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl RegisterUserFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The identity type that your Amazon QuickSight account uses to manage the identity of users.</p>
+    /// <p>The identity type that your QuickSight account uses to manage the identity of users.</p>
     pub fn identity_type(mut self, input: crate::types::IdentityType) -> Self {
         self.inner = self.inner.identity_type(input);
         self
     }
-    /// <p>The identity type that your Amazon QuickSight account uses to manage the identity of users.</p>
+    /// <p>The identity type that your QuickSight account uses to manage the identity of users.</p>
     pub fn set_identity_type(mut self, input: ::std::option::Option<crate::types::IdentityType>) -> Self {
         self.inner = self.inner.set_identity_type(input);
         self
     }
-    /// <p>The identity type that your Amazon QuickSight account uses to manage the identity of users.</p>
+    /// <p>The identity type that your QuickSight account uses to manage the identity of users.</p>
     pub fn get_identity_type(&self) -> &::std::option::Option<crate::types::IdentityType> {
         self.inner.get_identity_type()
     }
@@ -145,7 +145,7 @@ impl RegisterUserFluentBuilder {
     /// <li>
     /// <p><code>ADMIN</code>: A user who is an author, who can also manage Amazon QuickSight settings.</p></li>
     /// <li>
-    /// <p><code>READER_PRO</code>: Reader Pro adds Generative BI capabilities to the Reader role. Reader Pros have access to Amazon Q in Amazon QuickSight, can build stories with Amazon Q, and can generate executive summaries from dashboards.</p></li>
+    /// <p><code>READER_PRO</code>: Reader Pro adds Generative BI capabilities to the Reader role. Reader Pros have access to Amazon Q in QuickSight, can build stories with Amazon Q, and can generate executive summaries from dashboards.</p></li>
     /// <li>
     /// <p><code>AUTHOR_PRO</code>: Author Pro adds Generative BI capabilities to the Author role. Author Pros can author dashboards with natural language with Amazon Q, build stories with Amazon Q, create Topics for Q&amp;A, and generate executive summaries from dashboards.</p></li>
     /// <li>
@@ -168,7 +168,7 @@ impl RegisterUserFluentBuilder {
     /// <li>
     /// <p><code>ADMIN</code>: A user who is an author, who can also manage Amazon QuickSight settings.</p></li>
     /// <li>
-    /// <p><code>READER_PRO</code>: Reader Pro adds Generative BI capabilities to the Reader role. Reader Pros have access to Amazon Q in Amazon QuickSight, can build stories with Amazon Q, and can generate executive summaries from dashboards.</p></li>
+    /// <p><code>READER_PRO</code>: Reader Pro adds Generative BI capabilities to the Reader role. Reader Pros have access to Amazon Q in QuickSight, can build stories with Amazon Q, and can generate executive summaries from dashboards.</p></li>
     /// <li>
     /// <p><code>AUTHOR_PRO</code>: Author Pro adds Generative BI capabilities to the Author role. Author Pros can author dashboards with natural language with Amazon Q, build stories with Amazon Q, create Topics for Q&amp;A, and generate executive summaries from dashboards.</p></li>
     /// <li>
@@ -191,7 +191,7 @@ impl RegisterUserFluentBuilder {
     /// <li>
     /// <p><code>ADMIN</code>: A user who is an author, who can also manage Amazon QuickSight settings.</p></li>
     /// <li>
-    /// <p><code>READER_PRO</code>: Reader Pro adds Generative BI capabilities to the Reader role. Reader Pros have access to Amazon Q in Amazon QuickSight, can build stories with Amazon Q, and can generate executive summaries from dashboards.</p></li>
+    /// <p><code>READER_PRO</code>: Reader Pro adds Generative BI capabilities to the Reader role. Reader Pros have access to Amazon Q in QuickSight, can build stories with Amazon Q, and can generate executive summaries from dashboards.</p></li>
     /// <li>
     /// <p><code>AUTHOR_PRO</code>: Author Pro adds Generative BI capabilities to the Author role. Author Pros can author dashboards with natural language with Amazon Q, build stories with Amazon Q, create Topics for Q&amp;A, and generate executive summaries from dashboards.</p></li>
     /// <li>
@@ -286,9 +286,9 @@ impl RegisterUserFluentBuilder {
     /// <p>Subscribe to email reports</p></li>
     /// </ul>
     /// <p>To add custom permissions to an existing user, use <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html">UpdateUser</a> </code> instead.</p>
-    /// <p>A set of custom permissions includes any combination of these restrictions. Currently, you need to create the profile names for custom permission sets by using the Amazon QuickSight console. Then, you use the <code>RegisterUser</code> API operation to assign the named set of permissions to a Amazon QuickSight user.</p>
-    /// <p>Amazon QuickSight custom permissions are applied through IAM policies. Therefore, they override the permissions typically granted by assigning Amazon QuickSight users to one of the default security cohorts in Amazon QuickSight (admin, author, reader, admin pro, author pro, reader pro).</p>
-    /// <p>This feature is available only to Amazon QuickSight Enterprise edition subscriptions.</p>
+    /// <p>A set of custom permissions includes any combination of these restrictions. Currently, you need to create the profile names for custom permission sets by using the QuickSight console. Then, you use the <code>RegisterUser</code> API operation to assign the named set of permissions to a QuickSight user.</p>
+    /// <p>QuickSight custom permissions are applied through IAM policies. Therefore, they override the permissions typically granted by assigning QuickSight users to one of the default security cohorts in QuickSight (admin, author, reader, admin pro, author pro, reader pro).</p>
+    /// <p>This feature is available only to QuickSight Enterprise edition subscriptions.</p>
     pub fn custom_permissions_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.custom_permissions_name(input.into());
         self
@@ -305,9 +305,9 @@ impl RegisterUserFluentBuilder {
     /// <p>Subscribe to email reports</p></li>
     /// </ul>
     /// <p>To add custom permissions to an existing user, use <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html">UpdateUser</a> </code> instead.</p>
-    /// <p>A set of custom permissions includes any combination of these restrictions. Currently, you need to create the profile names for custom permission sets by using the Amazon QuickSight console. Then, you use the <code>RegisterUser</code> API operation to assign the named set of permissions to a Amazon QuickSight user.</p>
-    /// <p>Amazon QuickSight custom permissions are applied through IAM policies. Therefore, they override the permissions typically granted by assigning Amazon QuickSight users to one of the default security cohorts in Amazon QuickSight (admin, author, reader, admin pro, author pro, reader pro).</p>
-    /// <p>This feature is available only to Amazon QuickSight Enterprise edition subscriptions.</p>
+    /// <p>A set of custom permissions includes any combination of these restrictions. Currently, you need to create the profile names for custom permission sets by using the QuickSight console. Then, you use the <code>RegisterUser</code> API operation to assign the named set of permissions to a QuickSight user.</p>
+    /// <p>QuickSight custom permissions are applied through IAM policies. Therefore, they override the permissions typically granted by assigning QuickSight users to one of the default security cohorts in QuickSight (admin, author, reader, admin pro, author pro, reader pro).</p>
+    /// <p>This feature is available only to QuickSight Enterprise edition subscriptions.</p>
     pub fn set_custom_permissions_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_custom_permissions_name(input);
         self
@@ -324,9 +324,9 @@ impl RegisterUserFluentBuilder {
     /// <p>Subscribe to email reports</p></li>
     /// </ul>
     /// <p>To add custom permissions to an existing user, use <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html">UpdateUser</a> </code> instead.</p>
-    /// <p>A set of custom permissions includes any combination of these restrictions. Currently, you need to create the profile names for custom permission sets by using the Amazon QuickSight console. Then, you use the <code>RegisterUser</code> API operation to assign the named set of permissions to a Amazon QuickSight user.</p>
-    /// <p>Amazon QuickSight custom permissions are applied through IAM policies. Therefore, they override the permissions typically granted by assigning Amazon QuickSight users to one of the default security cohorts in Amazon QuickSight (admin, author, reader, admin pro, author pro, reader pro).</p>
-    /// <p>This feature is available only to Amazon QuickSight Enterprise edition subscriptions.</p>
+    /// <p>A set of custom permissions includes any combination of these restrictions. Currently, you need to create the profile names for custom permission sets by using the QuickSight console. Then, you use the <code>RegisterUser</code> API operation to assign the named set of permissions to a QuickSight user.</p>
+    /// <p>QuickSight custom permissions are applied through IAM policies. Therefore, they override the permissions typically granted by assigning QuickSight users to one of the default security cohorts in QuickSight (admin, author, reader, admin pro, author pro, reader pro).</p>
+    /// <p>This feature is available only to QuickSight Enterprise edition subscriptions.</p>
     pub fn get_custom_permissions_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_custom_permissions_name()
     }
@@ -362,17 +362,17 @@ impl RegisterUserFluentBuilder {
     pub fn get_external_login_federation_provider_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_external_login_federation_provider_type()
     }
-    /// <p>The URL of the custom OpenID Connect (OIDC) provider that provides identity to let a user federate into Amazon QuickSight with an associated Identity and Access Management(IAM) role. This parameter should only be used when <code>ExternalLoginFederationProviderType</code> parameter is set to <code>CUSTOM_OIDC</code>.</p>
+    /// <p>The URL of the custom OpenID Connect (OIDC) provider that provides identity to let a user federate into QuickSight with an associated Identity and Access Management(IAM) role. This parameter should only be used when <code>ExternalLoginFederationProviderType</code> parameter is set to <code>CUSTOM_OIDC</code>.</p>
     pub fn custom_federation_provider_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.custom_federation_provider_url(input.into());
         self
     }
-    /// <p>The URL of the custom OpenID Connect (OIDC) provider that provides identity to let a user federate into Amazon QuickSight with an associated Identity and Access Management(IAM) role. This parameter should only be used when <code>ExternalLoginFederationProviderType</code> parameter is set to <code>CUSTOM_OIDC</code>.</p>
+    /// <p>The URL of the custom OpenID Connect (OIDC) provider that provides identity to let a user federate into QuickSight with an associated Identity and Access Management(IAM) role. This parameter should only be used when <code>ExternalLoginFederationProviderType</code> parameter is set to <code>CUSTOM_OIDC</code>.</p>
     pub fn set_custom_federation_provider_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_custom_federation_provider_url(input);
         self
     }
-    /// <p>The URL of the custom OpenID Connect (OIDC) provider that provides identity to let a user federate into Amazon QuickSight with an associated Identity and Access Management(IAM) role. This parameter should only be used when <code>ExternalLoginFederationProviderType</code> parameter is set to <code>CUSTOM_OIDC</code>.</p>
+    /// <p>The URL of the custom OpenID Connect (OIDC) provider that provides identity to let a user federate into QuickSight with an associated Identity and Access Management(IAM) role. This parameter should only be used when <code>ExternalLoginFederationProviderType</code> parameter is set to <code>CUSTOM_OIDC</code>.</p>
     pub fn get_custom_federation_provider_url(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_custom_federation_provider_url()
     }

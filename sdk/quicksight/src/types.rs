@@ -75,11 +75,15 @@ pub use crate::types::_topic_column::TopicColumn;
 
 pub use crate::types::_topic_filter::TopicFilter;
 
-pub use crate::types::_topic_relative_date_filter::TopicRelativeDateFilter;
+pub use crate::types::_topic_null_filter::TopicNullFilter;
 
 pub use crate::types::_topic_singular_filter_constant::TopicSingularFilterConstant;
 
 pub use crate::types::_constant_type::ConstantType;
+
+pub use crate::types::_null_filter_type::NullFilterType;
+
+pub use crate::types::_topic_relative_date_filter::TopicRelativeDateFilter;
 
 pub use crate::types::_topic_relative_date_filter_function::TopicRelativeDateFilterFunction;
 
@@ -1553,6 +1557,8 @@ pub use crate::types::_credential_pair::CredentialPair;
 
 pub use crate::types::_data_source_parameters::DataSourceParameters;
 
+pub use crate::types::_custom_connection_parameters::CustomConnectionParameters;
+
 pub use crate::types::_impala_parameters::ImpalaParameters;
 
 pub use crate::types::_big_query_parameters::BigQueryParameters;
@@ -1740,6 +1746,10 @@ pub use crate::types::_dashboard_version_definition::DashboardVersionDefinition;
 pub use crate::types::_data_set_identifier_declaration::DataSetIdentifierDeclaration;
 
 pub use crate::types::_dashboard_publish_options::DashboardPublishOptions;
+
+pub use crate::types::_data_stories_sharing_option::DataStoriesSharingOption;
+
+pub use crate::types::_executive_summary_option::ExecutiveSummaryOption;
 
 pub use crate::types::_data_qa_enabled_option::DataQaEnabledOption;
 
@@ -2268,6 +2278,10 @@ pub use crate::types::_template::Template;
 pub use crate::types::_template_version::TemplateVersion;
 
 pub use crate::types::_sheet::Sheet;
+
+pub use crate::types::_q_data_key::QDataKey;
+
+pub use crate::types::_q_data_key_type::QDataKeyType;
 
 pub use crate::types::_iam_policy_assignment::IamPolicyAssignment;
 
@@ -2839,6 +2853,8 @@ mod _custom_action_url_operation;
 
 mod _custom_color;
 
+mod _custom_connection_parameters;
+
 mod _custom_content_configuration;
 
 mod _custom_content_image_scaling_configuration;
@@ -2983,6 +2999,8 @@ mod _data_source_type;
 
 mod _data_stories_configurations;
 
+mod _data_stories_sharing_option;
+
 mod _databricks_parameters;
 
 mod _dataset_metadata;
@@ -3106,6 +3124,8 @@ mod _exception_resource_type;
 mod _exclude_period_configuration;
 
 mod _executive_summary_configurations;
+
+mod _executive_summary_option;
 
 mod _explicit_hierarchy;
 
@@ -3699,6 +3719,8 @@ mod _new_default_values;
 
 mod _null_filter_option;
 
+mod _null_filter_type;
+
 mod _null_value_format_configuration;
 
 mod _number_display_format_configuration;
@@ -3898,6 +3920,10 @@ mod _property_usage;
 mod _purchase_mode;
 
 mod _q_business_insights_status;
+
+mod _q_data_key;
+
+mod _q_data_key_type;
 
 mod _q_search_status;
 
@@ -4490,6 +4516,8 @@ mod _topic_ir_group_by;
 mod _topic_ir_metric;
 
 mod _topic_named_entity;
+
+mod _topic_null_filter;
 
 mod _topic_numeric_equality_filter;
 

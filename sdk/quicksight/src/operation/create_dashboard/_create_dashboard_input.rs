@@ -14,7 +14,7 @@ pub struct CreateDashboardInput {
     /// <p>A structure that contains the permissions of the dashboard. You can use this structure for granting permissions by providing a list of IAM action information for each principal ARN.</p>
     /// <p>To specify no permissions, omit the permissions list.</p>
     pub permissions: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
-    /// <p>The entity that you are using as a source when you create the dashboard. In <code>SourceEntity</code>, you specify the type of object you're using as source. You can only create a dashboard from a template, so you use a <code>SourceTemplate</code> entity. If you need to create a dashboard from an analysis, first convert the analysis to a template by using the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a> </code> API operation. For <code>SourceTemplate</code>, specify the Amazon Resource Name (ARN) of the source template. The <code>SourceTemplate</code>ARN can contain any Amazon Web Services account and any Amazon QuickSight-supported Amazon Web Services Region.</p>
+    /// <p>The entity that you are using as a source when you create the dashboard. In <code>SourceEntity</code>, you specify the type of object you're using as source. You can only create a dashboard from a template, so you use a <code>SourceTemplate</code> entity. If you need to create a dashboard from an analysis, first convert the analysis to a template by using the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a> </code> API operation. For <code>SourceTemplate</code>, specify the Amazon Resource Name (ARN) of the source template. The <code>SourceTemplate</code>ARN can contain any Amazon Web Services account and any QuickSight-supported Amazon Web Services Region.</p>
     /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to list the replacement datasets for the placeholders listed in the original. The schema in each dataset must match its placeholder.</p>
     /// <p>Either a <code>SourceEntity</code> or a <code>Definition</code> must be provided in order for the request to be valid.</p>
     pub source_entity: ::std::option::Option<crate::types::DashboardSourceEntity>,
@@ -25,11 +25,15 @@ pub struct CreateDashboardInput {
     /// <p>Options for publishing the dashboard when you create it:</p>
     /// <ul>
     /// <li>
-    /// <p><code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This status can be either <code>ENABLED</code> or <code>DISABLED</code>. When this is set to <code>DISABLED</code>, Amazon QuickSight disables the left filter pane on the published dashboard, which can be used for ad hoc (one-time) filtering. This option is <code>ENABLED</code> by default.</p></li>
+    /// <p><code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This status can be either <code>ENABLED</code> or <code>DISABLED</code>. When this is set to <code>DISABLED</code>, QuickSight disables the left filter pane on the published dashboard, which can be used for ad hoc (one-time) filtering. This option is <code>ENABLED</code> by default.</p></li>
     /// <li>
     /// <p><code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status can be either <code>ENABLED</code> or <code>DISABLED</code>. The visual option to export data to .CSV format isn't enabled when this is set to <code>DISABLED</code>. This option is <code>ENABLED</code> by default.</p></li>
     /// <li>
     /// <p><code>VisibilityState</code> for <code>SheetControlsOption</code> - This visibility state can be either <code>COLLAPSED</code> or <code>EXPANDED</code>. This option is <code>COLLAPSED</code> by default.</p></li>
+    /// <li>
+    /// <p><code>AvailabilityStatus</code> for <code>ExecutiveSummaryOption</code> - This status can be either <code>ENABLED</code> or <code>DISABLED</code>. The option to build an executive summary is disabled when this is set to <code>DISABLED</code>. This option is <code>ENABLED</code> by default.</p></li>
+    /// <li>
+    /// <p><code>AvailabilityStatus</code> for <code>DataStoriesSharingOption</code> - This status can be either <code>ENABLED</code> or <code>DISABLED</code>. The option to share a data story is disabled when this is set to <code>DISABLED</code>. This option is <code>ENABLED</code> by default.</p></li>
     /// </ul>
     pub dashboard_publish_options: ::std::option::Option<crate::types::DashboardPublishOptions>,
     /// <p>The Amazon Resource Name (ARN) of the theme that is being used for this dashboard. If you add a value for this field, it overrides the value that is used in the source entity. The theme ARN must exist in the same Amazon Web Services account where you create the dashboard.</p>
@@ -40,7 +44,7 @@ pub struct CreateDashboardInput {
     pub definition: ::std::option::Option<crate::types::DashboardVersionDefinition>,
     /// <p>The option to relax the validation needed to create a dashboard with definition objects. This option skips the validation step for specific errors.</p>
     pub validation_strategy: ::std::option::Option<crate::types::ValidationStrategy>,
-    /// <p>When you create the dashboard, Amazon QuickSight adds the dashboard to these folders.</p>
+    /// <p>When you create the dashboard, QuickSight adds the dashboard to these folders.</p>
     pub folder_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A structure that contains the permissions of a shareable link to the dashboard.</p>
     pub link_sharing_configuration: ::std::option::Option<crate::types::LinkSharingConfiguration>,
@@ -71,7 +75,7 @@ impl CreateDashboardInput {
     pub fn permissions(&self) -> &[crate::types::ResourcePermission] {
         self.permissions.as_deref().unwrap_or_default()
     }
-    /// <p>The entity that you are using as a source when you create the dashboard. In <code>SourceEntity</code>, you specify the type of object you're using as source. You can only create a dashboard from a template, so you use a <code>SourceTemplate</code> entity. If you need to create a dashboard from an analysis, first convert the analysis to a template by using the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a> </code> API operation. For <code>SourceTemplate</code>, specify the Amazon Resource Name (ARN) of the source template. The <code>SourceTemplate</code>ARN can contain any Amazon Web Services account and any Amazon QuickSight-supported Amazon Web Services Region.</p>
+    /// <p>The entity that you are using as a source when you create the dashboard. In <code>SourceEntity</code>, you specify the type of object you're using as source. You can only create a dashboard from a template, so you use a <code>SourceTemplate</code> entity. If you need to create a dashboard from an analysis, first convert the analysis to a template by using the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a> </code> API operation. For <code>SourceTemplate</code>, specify the Amazon Resource Name (ARN) of the source template. The <code>SourceTemplate</code>ARN can contain any Amazon Web Services account and any QuickSight-supported Amazon Web Services Region.</p>
     /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to list the replacement datasets for the placeholders listed in the original. The schema in each dataset must match its placeholder.</p>
     /// <p>Either a <code>SourceEntity</code> or a <code>Definition</code> must be provided in order for the request to be valid.</p>
     pub fn source_entity(&self) -> ::std::option::Option<&crate::types::DashboardSourceEntity> {
@@ -90,11 +94,15 @@ impl CreateDashboardInput {
     /// <p>Options for publishing the dashboard when you create it:</p>
     /// <ul>
     /// <li>
-    /// <p><code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This status can be either <code>ENABLED</code> or <code>DISABLED</code>. When this is set to <code>DISABLED</code>, Amazon QuickSight disables the left filter pane on the published dashboard, which can be used for ad hoc (one-time) filtering. This option is <code>ENABLED</code> by default.</p></li>
+    /// <p><code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This status can be either <code>ENABLED</code> or <code>DISABLED</code>. When this is set to <code>DISABLED</code>, QuickSight disables the left filter pane on the published dashboard, which can be used for ad hoc (one-time) filtering. This option is <code>ENABLED</code> by default.</p></li>
     /// <li>
     /// <p><code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status can be either <code>ENABLED</code> or <code>DISABLED</code>. The visual option to export data to .CSV format isn't enabled when this is set to <code>DISABLED</code>. This option is <code>ENABLED</code> by default.</p></li>
     /// <li>
     /// <p><code>VisibilityState</code> for <code>SheetControlsOption</code> - This visibility state can be either <code>COLLAPSED</code> or <code>EXPANDED</code>. This option is <code>COLLAPSED</code> by default.</p></li>
+    /// <li>
+    /// <p><code>AvailabilityStatus</code> for <code>ExecutiveSummaryOption</code> - This status can be either <code>ENABLED</code> or <code>DISABLED</code>. The option to build an executive summary is disabled when this is set to <code>DISABLED</code>. This option is <code>ENABLED</code> by default.</p></li>
+    /// <li>
+    /// <p><code>AvailabilityStatus</code> for <code>DataStoriesSharingOption</code> - This status can be either <code>ENABLED</code> or <code>DISABLED</code>. The option to share a data story is disabled when this is set to <code>DISABLED</code>. This option is <code>ENABLED</code> by default.</p></li>
     /// </ul>
     pub fn dashboard_publish_options(&self) -> ::std::option::Option<&crate::types::DashboardPublishOptions> {
         self.dashboard_publish_options.as_ref()
@@ -113,7 +121,7 @@ impl CreateDashboardInput {
     pub fn validation_strategy(&self) -> ::std::option::Option<&crate::types::ValidationStrategy> {
         self.validation_strategy.as_ref()
     }
-    /// <p>When you create the dashboard, Amazon QuickSight adds the dashboard to these folders.</p>
+    /// <p>When you create the dashboard, QuickSight adds the dashboard to these folders.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.folder_arns.is_none()`.
     pub fn folder_arns(&self) -> &[::std::string::String] {
@@ -240,21 +248,21 @@ impl CreateDashboardInputBuilder {
     pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
         &self.permissions
     }
-    /// <p>The entity that you are using as a source when you create the dashboard. In <code>SourceEntity</code>, you specify the type of object you're using as source. You can only create a dashboard from a template, so you use a <code>SourceTemplate</code> entity. If you need to create a dashboard from an analysis, first convert the analysis to a template by using the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a> </code> API operation. For <code>SourceTemplate</code>, specify the Amazon Resource Name (ARN) of the source template. The <code>SourceTemplate</code>ARN can contain any Amazon Web Services account and any Amazon QuickSight-supported Amazon Web Services Region.</p>
+    /// <p>The entity that you are using as a source when you create the dashboard. In <code>SourceEntity</code>, you specify the type of object you're using as source. You can only create a dashboard from a template, so you use a <code>SourceTemplate</code> entity. If you need to create a dashboard from an analysis, first convert the analysis to a template by using the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a> </code> API operation. For <code>SourceTemplate</code>, specify the Amazon Resource Name (ARN) of the source template. The <code>SourceTemplate</code>ARN can contain any Amazon Web Services account and any QuickSight-supported Amazon Web Services Region.</p>
     /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to list the replacement datasets for the placeholders listed in the original. The schema in each dataset must match its placeholder.</p>
     /// <p>Either a <code>SourceEntity</code> or a <code>Definition</code> must be provided in order for the request to be valid.</p>
     pub fn source_entity(mut self, input: crate::types::DashboardSourceEntity) -> Self {
         self.source_entity = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The entity that you are using as a source when you create the dashboard. In <code>SourceEntity</code>, you specify the type of object you're using as source. You can only create a dashboard from a template, so you use a <code>SourceTemplate</code> entity. If you need to create a dashboard from an analysis, first convert the analysis to a template by using the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a> </code> API operation. For <code>SourceTemplate</code>, specify the Amazon Resource Name (ARN) of the source template. The <code>SourceTemplate</code>ARN can contain any Amazon Web Services account and any Amazon QuickSight-supported Amazon Web Services Region.</p>
+    /// <p>The entity that you are using as a source when you create the dashboard. In <code>SourceEntity</code>, you specify the type of object you're using as source. You can only create a dashboard from a template, so you use a <code>SourceTemplate</code> entity. If you need to create a dashboard from an analysis, first convert the analysis to a template by using the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a> </code> API operation. For <code>SourceTemplate</code>, specify the Amazon Resource Name (ARN) of the source template. The <code>SourceTemplate</code>ARN can contain any Amazon Web Services account and any QuickSight-supported Amazon Web Services Region.</p>
     /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to list the replacement datasets for the placeholders listed in the original. The schema in each dataset must match its placeholder.</p>
     /// <p>Either a <code>SourceEntity</code> or a <code>Definition</code> must be provided in order for the request to be valid.</p>
     pub fn set_source_entity(mut self, input: ::std::option::Option<crate::types::DashboardSourceEntity>) -> Self {
         self.source_entity = input;
         self
     }
-    /// <p>The entity that you are using as a source when you create the dashboard. In <code>SourceEntity</code>, you specify the type of object you're using as source. You can only create a dashboard from a template, so you use a <code>SourceTemplate</code> entity. If you need to create a dashboard from an analysis, first convert the analysis to a template by using the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a> </code> API operation. For <code>SourceTemplate</code>, specify the Amazon Resource Name (ARN) of the source template. The <code>SourceTemplate</code>ARN can contain any Amazon Web Services account and any Amazon QuickSight-supported Amazon Web Services Region.</p>
+    /// <p>The entity that you are using as a source when you create the dashboard. In <code>SourceEntity</code>, you specify the type of object you're using as source. You can only create a dashboard from a template, so you use a <code>SourceTemplate</code> entity. If you need to create a dashboard from an analysis, first convert the analysis to a template by using the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a> </code> API operation. For <code>SourceTemplate</code>, specify the Amazon Resource Name (ARN) of the source template. The <code>SourceTemplate</code>ARN can contain any Amazon Web Services account and any QuickSight-supported Amazon Web Services Region.</p>
     /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to list the replacement datasets for the placeholders listed in the original. The schema in each dataset must match its placeholder.</p>
     /// <p>Either a <code>SourceEntity</code> or a <code>Definition</code> must be provided in order for the request to be valid.</p>
     pub fn get_source_entity(&self) -> &::std::option::Option<crate::types::DashboardSourceEntity> {
@@ -297,11 +305,15 @@ impl CreateDashboardInputBuilder {
     /// <p>Options for publishing the dashboard when you create it:</p>
     /// <ul>
     /// <li>
-    /// <p><code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This status can be either <code>ENABLED</code> or <code>DISABLED</code>. When this is set to <code>DISABLED</code>, Amazon QuickSight disables the left filter pane on the published dashboard, which can be used for ad hoc (one-time) filtering. This option is <code>ENABLED</code> by default.</p></li>
+    /// <p><code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This status can be either <code>ENABLED</code> or <code>DISABLED</code>. When this is set to <code>DISABLED</code>, QuickSight disables the left filter pane on the published dashboard, which can be used for ad hoc (one-time) filtering. This option is <code>ENABLED</code> by default.</p></li>
     /// <li>
     /// <p><code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status can be either <code>ENABLED</code> or <code>DISABLED</code>. The visual option to export data to .CSV format isn't enabled when this is set to <code>DISABLED</code>. This option is <code>ENABLED</code> by default.</p></li>
     /// <li>
     /// <p><code>VisibilityState</code> for <code>SheetControlsOption</code> - This visibility state can be either <code>COLLAPSED</code> or <code>EXPANDED</code>. This option is <code>COLLAPSED</code> by default.</p></li>
+    /// <li>
+    /// <p><code>AvailabilityStatus</code> for <code>ExecutiveSummaryOption</code> - This status can be either <code>ENABLED</code> or <code>DISABLED</code>. The option to build an executive summary is disabled when this is set to <code>DISABLED</code>. This option is <code>ENABLED</code> by default.</p></li>
+    /// <li>
+    /// <p><code>AvailabilityStatus</code> for <code>DataStoriesSharingOption</code> - This status can be either <code>ENABLED</code> or <code>DISABLED</code>. The option to share a data story is disabled when this is set to <code>DISABLED</code>. This option is <code>ENABLED</code> by default.</p></li>
     /// </ul>
     pub fn dashboard_publish_options(mut self, input: crate::types::DashboardPublishOptions) -> Self {
         self.dashboard_publish_options = ::std::option::Option::Some(input);
@@ -310,11 +322,15 @@ impl CreateDashboardInputBuilder {
     /// <p>Options for publishing the dashboard when you create it:</p>
     /// <ul>
     /// <li>
-    /// <p><code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This status can be either <code>ENABLED</code> or <code>DISABLED</code>. When this is set to <code>DISABLED</code>, Amazon QuickSight disables the left filter pane on the published dashboard, which can be used for ad hoc (one-time) filtering. This option is <code>ENABLED</code> by default.</p></li>
+    /// <p><code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This status can be either <code>ENABLED</code> or <code>DISABLED</code>. When this is set to <code>DISABLED</code>, QuickSight disables the left filter pane on the published dashboard, which can be used for ad hoc (one-time) filtering. This option is <code>ENABLED</code> by default.</p></li>
     /// <li>
     /// <p><code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status can be either <code>ENABLED</code> or <code>DISABLED</code>. The visual option to export data to .CSV format isn't enabled when this is set to <code>DISABLED</code>. This option is <code>ENABLED</code> by default.</p></li>
     /// <li>
     /// <p><code>VisibilityState</code> for <code>SheetControlsOption</code> - This visibility state can be either <code>COLLAPSED</code> or <code>EXPANDED</code>. This option is <code>COLLAPSED</code> by default.</p></li>
+    /// <li>
+    /// <p><code>AvailabilityStatus</code> for <code>ExecutiveSummaryOption</code> - This status can be either <code>ENABLED</code> or <code>DISABLED</code>. The option to build an executive summary is disabled when this is set to <code>DISABLED</code>. This option is <code>ENABLED</code> by default.</p></li>
+    /// <li>
+    /// <p><code>AvailabilityStatus</code> for <code>DataStoriesSharingOption</code> - This status can be either <code>ENABLED</code> or <code>DISABLED</code>. The option to share a data story is disabled when this is set to <code>DISABLED</code>. This option is <code>ENABLED</code> by default.</p></li>
     /// </ul>
     pub fn set_dashboard_publish_options(mut self, input: ::std::option::Option<crate::types::DashboardPublishOptions>) -> Self {
         self.dashboard_publish_options = input;
@@ -323,11 +339,15 @@ impl CreateDashboardInputBuilder {
     /// <p>Options for publishing the dashboard when you create it:</p>
     /// <ul>
     /// <li>
-    /// <p><code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This status can be either <code>ENABLED</code> or <code>DISABLED</code>. When this is set to <code>DISABLED</code>, Amazon QuickSight disables the left filter pane on the published dashboard, which can be used for ad hoc (one-time) filtering. This option is <code>ENABLED</code> by default.</p></li>
+    /// <p><code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This status can be either <code>ENABLED</code> or <code>DISABLED</code>. When this is set to <code>DISABLED</code>, QuickSight disables the left filter pane on the published dashboard, which can be used for ad hoc (one-time) filtering. This option is <code>ENABLED</code> by default.</p></li>
     /// <li>
     /// <p><code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status can be either <code>ENABLED</code> or <code>DISABLED</code>. The visual option to export data to .CSV format isn't enabled when this is set to <code>DISABLED</code>. This option is <code>ENABLED</code> by default.</p></li>
     /// <li>
     /// <p><code>VisibilityState</code> for <code>SheetControlsOption</code> - This visibility state can be either <code>COLLAPSED</code> or <code>EXPANDED</code>. This option is <code>COLLAPSED</code> by default.</p></li>
+    /// <li>
+    /// <p><code>AvailabilityStatus</code> for <code>ExecutiveSummaryOption</code> - This status can be either <code>ENABLED</code> or <code>DISABLED</code>. The option to build an executive summary is disabled when this is set to <code>DISABLED</code>. This option is <code>ENABLED</code> by default.</p></li>
+    /// <li>
+    /// <p><code>AvailabilityStatus</code> for <code>DataStoriesSharingOption</code> - This status can be either <code>ENABLED</code> or <code>DISABLED</code>. The option to share a data story is disabled when this is set to <code>DISABLED</code>. This option is <code>ENABLED</code> by default.</p></li>
     /// </ul>
     pub fn get_dashboard_publish_options(&self) -> &::std::option::Option<crate::types::DashboardPublishOptions> {
         &self.dashboard_publish_options
@@ -384,19 +404,19 @@ impl CreateDashboardInputBuilder {
     ///
     /// To override the contents of this collection use [`set_folder_arns`](Self::set_folder_arns).
     ///
-    /// <p>When you create the dashboard, Amazon QuickSight adds the dashboard to these folders.</p>
+    /// <p>When you create the dashboard, QuickSight adds the dashboard to these folders.</p>
     pub fn folder_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.folder_arns.unwrap_or_default();
         v.push(input.into());
         self.folder_arns = ::std::option::Option::Some(v);
         self
     }
-    /// <p>When you create the dashboard, Amazon QuickSight adds the dashboard to these folders.</p>
+    /// <p>When you create the dashboard, QuickSight adds the dashboard to these folders.</p>
     pub fn set_folder_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.folder_arns = input;
         self
     }
-    /// <p>When you create the dashboard, Amazon QuickSight adds the dashboard to these folders.</p>
+    /// <p>When you create the dashboard, QuickSight adds the dashboard to these folders.</p>
     pub fn get_folder_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.folder_arns
     }

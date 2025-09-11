@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`aws_account_id(impl Into<String>)`](crate::operation::update_brand::builders::UpdateBrandFluentBuilder::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::operation::update_brand::builders::UpdateBrandFluentBuilder::set_aws_account_id):<br>required: **true**<br><p>The ID of the Amazon Web Services account that owns the brand.</p><br>
-    ///   - [`brand_id(impl Into<String>)`](crate::operation::update_brand::builders::UpdateBrandFluentBuilder::brand_id) / [`set_brand_id(Option<String>)`](crate::operation::update_brand::builders::UpdateBrandFluentBuilder::set_brand_id):<br>required: **true**<br><p>The ID of the Amazon QuickSight brand.</p><br>
+    ///   - [`brand_id(impl Into<String>)`](crate::operation::update_brand::builders::UpdateBrandFluentBuilder::brand_id) / [`set_brand_id(Option<String>)`](crate::operation::update_brand::builders::UpdateBrandFluentBuilder::set_brand_id):<br>required: **true**<br><p>The ID of the QuickSight brand.</p><br>
     ///   - [`brand_definition(BrandDefinition)`](crate::operation::update_brand::builders::UpdateBrandFluentBuilder::brand_definition) / [`set_brand_definition(Option<BrandDefinition>)`](crate::operation::update_brand::builders::UpdateBrandFluentBuilder::set_brand_definition):<br>required: **false**<br><p>The definition of the brand.</p><br>
     /// - On success, responds with [`UpdateBrandOutput`](crate::operation::update_brand::UpdateBrandOutput) with field(s):
     ///   - [`request_id(Option<String>)`](crate::operation::update_brand::UpdateBrandOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>

@@ -166,6 +166,12 @@ pub fn ser_data_source_parameters(
             crate::protocol_serde::shape_impala_parameters::ser_impala_parameters(&mut object_27, inner)?;
             object_27.finish();
         }
+        crate::types::DataSourceParameters::CustomConnectionParameters(inner) => {
+            #[allow(unused_mut)]
+            let mut object_28 = object_5.key("CustomConnectionParameters").start_object();
+            crate::protocol_serde::shape_custom_connection_parameters::ser_custom_connection_parameters(&mut object_28, inner)?;
+            object_28.finish();
+        }
         crate::types::DataSourceParameters::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "DataSourceParameters",
@@ -352,6 +358,13 @@ where
                         "ImpalaParameters" => Some(crate::types::DataSourceParameters::ImpalaParameters(
                             crate::protocol_serde::shape_impala_parameters::de_impala_parameters(tokens)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'ImpalaParameters' cannot be null")
+                            })?,
+                        )),
+                        "CustomConnectionParameters" => Some(crate::types::DataSourceParameters::CustomConnectionParameters(
+                            crate::protocol_serde::shape_custom_connection_parameters::de_custom_connection_parameters(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                    "value for 'CustomConnectionParameters' cannot be null",
+                                )
                             })?,
                         )),
                         _ => {

@@ -23,6 +23,8 @@ pub fn parse_http_error_metadata(
     crate::json_errors::parse_error_metadata(response_body, response_headers)
 }
 
+pub(crate) mod shape_associate_eip_to_vlan;
+
 pub(crate) mod shape_create_environment;
 
 pub(crate) mod shape_create_environment_host;
@@ -30,6 +32,8 @@ pub(crate) mod shape_create_environment_host;
 pub(crate) mod shape_delete_environment;
 
 pub(crate) mod shape_delete_environment_host;
+
+pub(crate) mod shape_disassociate_eip_from_vlan;
 
 pub(crate) mod shape_get_environment;
 
@@ -53,6 +57,8 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     }
 }
 
+pub(crate) mod shape_associate_eip_to_vlan_input;
+
 pub(crate) mod shape_create_environment_host_input;
 
 pub(crate) mod shape_create_environment_input;
@@ -60,6 +66,8 @@ pub(crate) mod shape_create_environment_input;
 pub(crate) mod shape_delete_environment_host_input;
 
 pub(crate) mod shape_delete_environment_input;
+
+pub(crate) mod shape_disassociate_eip_from_vlan_input;
 
 pub(crate) mod shape_get_environment_input;
 
@@ -113,9 +121,13 @@ pub(crate) mod shape_validation_exception_field_list;
 
 pub(crate) mod shape_vcf_hostnames;
 
+pub(crate) mod shape_vlan;
+
 pub(crate) mod shape_vlan_list;
 
 pub(crate) mod shape_checks_list;
+
+pub(crate) mod shape_eip_association_list;
 
 pub(crate) mod shape_initial_vlan_info;
 
@@ -127,9 +139,9 @@ pub(crate) mod shape_secret_list;
 
 pub(crate) mod shape_validation_exception_field;
 
-pub(crate) mod shape_vlan;
-
 pub(crate) mod shape_check;
+
+pub(crate) mod shape_eip_association;
 
 pub(crate) mod shape_network_interface;
 

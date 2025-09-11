@@ -301,6 +301,8 @@ pub use crate::types::_ms_smooth_output_settings::MsSmoothOutputSettingsBuilder;
 
 pub use crate::types::_media_package_output_settings::MediaPackageOutputSettingsBuilder;
 
+pub use crate::types::_media_package_v2_destination_settings::MediaPackageV2DestinationSettingsBuilder;
+
 pub use crate::types::_hls_output_settings::HlsOutputSettingsBuilder;
 
 pub use crate::types::_hls_settings::HlsSettingsBuilder;
@@ -345,6 +347,10 @@ pub use crate::types::_ms_smooth_group_settings::MsSmoothGroupSettingsBuilder;
 
 pub use crate::types::_media_package_group_settings::MediaPackageGroupSettingsBuilder;
 
+pub use crate::types::_media_package_v2_group_settings::MediaPackageV2GroupSettingsBuilder;
+
+pub use crate::types::_caption_language_mapping::CaptionLanguageMappingBuilder;
+
 pub use crate::types::_hls_group_settings::HlsGroupSettingsBuilder;
 
 pub use crate::types::_key_provider_settings::KeyProviderSettingsBuilder;
@@ -362,8 +368,6 @@ pub use crate::types::_hls_media_store_settings::HlsMediaStoreSettingsBuilder;
 pub use crate::types::_hls_basic_put_settings::HlsBasicPutSettingsBuilder;
 
 pub use crate::types::_hls_akamai_settings::HlsAkamaiSettingsBuilder;
-
-pub use crate::types::_caption_language_mapping::CaptionLanguageMappingBuilder;
 
 pub use crate::types::_frame_capture_group_settings::FrameCaptureGroupSettingsBuilder;
 

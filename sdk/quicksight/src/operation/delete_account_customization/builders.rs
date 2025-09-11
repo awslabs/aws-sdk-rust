@@ -22,7 +22,7 @@ impl crate::operation::delete_account_customization::builders::DeleteAccountCust
 }
 /// Fluent builder constructing a request to `DeleteAccountCustomization`.
 ///
-/// <p>Deletes all Amazon QuickSight customizations in this Amazon Web Services Region for the specified Amazon Web Services account and Amazon QuickSight namespace.</p>
+/// <p>Deletes all Amazon QuickSight customizations in this Amazon Web Services Region for the specified Amazon Web Services account and QuickSight namespace.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteAccountCustomizationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl DeleteAccountCustomizationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ID for the Amazon Web Services account that you want to delete Amazon QuickSight customizations from in this Amazon Web Services Region.</p>
+    /// <p>The ID for the Amazon Web Services account that you want to delete QuickSight customizations from in this Amazon Web Services Region.</p>
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
-    /// <p>The ID for the Amazon Web Services account that you want to delete Amazon QuickSight customizations from in this Amazon Web Services Region.</p>
+    /// <p>The ID for the Amazon Web Services account that you want to delete QuickSight customizations from in this Amazon Web Services Region.</p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
-    /// <p>The ID for the Amazon Web Services account that you want to delete Amazon QuickSight customizations from in this Amazon Web Services Region.</p>
+    /// <p>The ID for the Amazon Web Services account that you want to delete QuickSight customizations from in this Amazon Web Services Region.</p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_aws_account_id()
     }
-    /// <p>The Amazon QuickSight namespace that you're deleting the customizations from.</p>
+    /// <p>The QuickSight namespace that you're deleting the customizations from.</p>
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.namespace(input.into());
         self
     }
-    /// <p>The Amazon QuickSight namespace that you're deleting the customizations from.</p>
+    /// <p>The QuickSight namespace that you're deleting the customizations from.</p>
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_namespace(input);
         self
     }
-    /// <p>The Amazon QuickSight namespace that you're deleting the customizations from.</p>
+    /// <p>The QuickSight namespace that you're deleting the customizations from.</p>
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_namespace()
     }

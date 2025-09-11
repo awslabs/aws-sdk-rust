@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeQuickSightQSearchConfigurationInput {
-    /// <p>The ID of the Amazon Web Services account that contains the Amazon QuickSight Q Search configuration that the user wants described.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the QuickSight Q Search configuration that the user wants described.</p>
     pub aws_account_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeQuickSightQSearchConfigurationInput {
-    /// <p>The ID of the Amazon Web Services account that contains the Amazon QuickSight Q Search configuration that the user wants described.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the QuickSight Q Search configuration that the user wants described.</p>
     pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct DescribeQuickSightQSearchConfigurationInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeQuickSightQSearchConfigurationInputBuilder {
-    /// <p>The ID of the Amazon Web Services account that contains the Amazon QuickSight Q Search configuration that the user wants described.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the QuickSight Q Search configuration that the user wants described.</p>
     /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the Amazon Web Services account that contains the Amazon QuickSight Q Search configuration that the user wants described.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the QuickSight Q Search configuration that the user wants described.</p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
-    /// <p>The ID of the Amazon Web Services account that contains the Amazon QuickSight Q Search configuration that the user wants described.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the QuickSight Q Search configuration that the user wants described.</p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.aws_account_id
     }

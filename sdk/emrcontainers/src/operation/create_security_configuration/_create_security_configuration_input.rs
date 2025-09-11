@@ -7,6 +7,8 @@ pub struct CreateSecurityConfigurationInput {
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The name of the security configuration.</p>
     pub name: ::std::option::Option<::std::string::String>,
+    /// <p>The container provider associated with the security configuration.</p>
+    pub container_provider: ::std::option::Option<crate::types::ContainerProvider>,
     /// <p>Security configuration input for the request.</p>
     pub security_configuration_data: ::std::option::Option<crate::types::SecurityConfigurationData>,
     /// <p>The tags to add to the security configuration.</p>
@@ -20,6 +22,10 @@ impl CreateSecurityConfigurationInput {
     /// <p>The name of the security configuration.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
+    }
+    /// <p>The container provider associated with the security configuration.</p>
+    pub fn container_provider(&self) -> ::std::option::Option<&crate::types::ContainerProvider> {
+        self.container_provider.as_ref()
     }
     /// <p>Security configuration input for the request.</p>
     pub fn security_configuration_data(&self) -> ::std::option::Option<&crate::types::SecurityConfigurationData> {
@@ -43,6 +49,7 @@ impl CreateSecurityConfigurationInput {
 pub struct CreateSecurityConfigurationInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) container_provider: ::std::option::Option<crate::types::ContainerProvider>,
     pub(crate) security_configuration_data: ::std::option::Option<crate::types::SecurityConfigurationData>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -76,6 +83,20 @@ impl CreateSecurityConfigurationInputBuilder {
     /// <p>The name of the security configuration.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
+    }
+    /// <p>The container provider associated with the security configuration.</p>
+    pub fn container_provider(mut self, input: crate::types::ContainerProvider) -> Self {
+        self.container_provider = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The container provider associated with the security configuration.</p>
+    pub fn set_container_provider(mut self, input: ::std::option::Option<crate::types::ContainerProvider>) -> Self {
+        self.container_provider = input;
+        self
+    }
+    /// <p>The container provider associated with the security configuration.</p>
+    pub fn get_container_provider(&self) -> &::std::option::Option<crate::types::ContainerProvider> {
+        &self.container_provider
     }
     /// <p>Security configuration input for the request.</p>
     /// This field is required.
@@ -122,6 +143,7 @@ impl CreateSecurityConfigurationInputBuilder {
         ::std::result::Result::Ok(crate::operation::create_security_configuration::CreateSecurityConfigurationInput {
             client_token: self.client_token,
             name: self.name,
+            container_provider: self.container_provider,
             security_configuration_data: self.security_configuration_data,
             tags: self.tags,
         })

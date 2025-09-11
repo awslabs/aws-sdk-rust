@@ -22,7 +22,7 @@ impl crate::operation::delete_brand::builders::DeleteBrandInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteBrand`.
 ///
-/// <p>Deletes an Amazon QuickSight brand.</p>
+/// <p>Deletes an QuickSight brand.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteBrandFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -122,17 +122,17 @@ impl DeleteBrandFluentBuilder {
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_aws_account_id()
     }
-    /// <p>The ID of the Amazon QuickSight brand.</p>
+    /// <p>The ID of the QuickSight brand.</p>
     pub fn brand_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.brand_id(input.into());
         self
     }
-    /// <p>The ID of the Amazon QuickSight brand.</p>
+    /// <p>The ID of the QuickSight brand.</p>
     pub fn set_brand_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_brand_id(input);
         self
     }
-    /// <p>The ID of the Amazon QuickSight brand.</p>
+    /// <p>The ID of the QuickSight brand.</p>
     pub fn get_brand_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_brand_id()
     }

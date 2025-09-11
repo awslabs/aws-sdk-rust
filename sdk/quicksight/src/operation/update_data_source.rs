@@ -286,7 +286,7 @@ pub enum UpdateDataSourceError {
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>Updating or deleting a resource can cause an inconsistent state.</p>
     ConflictException(crate::types::error::ConflictException),
-    /// <p>The customer managed key that is registered to your Amazon QuickSight account is unavailable.</p>
+    /// <p>The customer managed key that is registered to your QuickSight account is unavailable.</p>
     CustomerManagedKeyUnavailableException(crate::types::error::CustomerManagedKeyUnavailableException),
     /// <p>An internal failure occurred.</p>
     InternalFailureException(crate::types::error::InternalFailureException),

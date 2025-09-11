@@ -9,7 +9,7 @@ pub enum Error {
     ConcurrentUpdatingException(crate::types::error::ConcurrentUpdatingException),
     /// <p>Updating or deleting a resource can cause an inconsistent state.</p>
     ConflictException(crate::types::error::ConflictException),
-    /// <p>The customer managed key that is registered to your Amazon QuickSight account is unavailable.</p>
+    /// <p>The customer managed key that is registered to your QuickSight account is unavailable.</p>
     CustomerManagedKeyUnavailableException(crate::types::error::CustomerManagedKeyUnavailableException),
     /// <p>The domain specified isn't on the allow list. All domains for embedded dashboards must be added to the approved list by an Amazon QuickSight admin.</p>
     DomainNotWhitelistedException(crate::types::error::DomainNotWhitelistedException),
@@ -41,10 +41,10 @@ pub enum Error {
     SessionLifetimeInMinutesInvalidException(crate::types::error::SessionLifetimeInMinutesInvalidException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
-    /// <p>This error indicates that you are calling an embedding operation in Amazon QuickSight without the required pricing plan on your Amazon Web Services account. Before you can use embedding for anonymous users, a QuickSight administrator needs to add capacity pricing to Amazon QuickSight. You can do this on the <b>Manage Amazon QuickSight</b> page.</p>
+    /// <p>This error indicates that you are calling an embedding operation in Amazon QuickSight without the required pricing plan on your Amazon Web Services account. Before you can use embedding for anonymous users, a QuickSight administrator needs to add capacity pricing to QuickSight. You can do this on the <b>Manage QuickSight</b> page.</p>
     /// <p>After capacity pricing is added, you can use the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GetDashboardEmbedUrl.html">GetDashboardEmbedUrl</a> </code> API operation with the <code>--identity-type ANONYMOUS</code> option.</p>
     UnsupportedPricingPlanException(crate::types::error::UnsupportedPricingPlanException),
-    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
+    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::types::error::UnsupportedUserEditionException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
@@ -1199,6 +1199,50 @@ impl From<crate::operation::delete_account_customization::DeleteAccountCustomiza
                 Error::ThrottlingException(inner)
             }
             crate::operation::delete_account_customization::DeleteAccountCustomizationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_account_custom_permission::DeleteAccountCustomPermissionError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_account_custom_permission::DeleteAccountCustomPermissionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_account_custom_permission::DeleteAccountCustomPermissionError> for Error {
+    fn from(err: crate::operation::delete_account_custom_permission::DeleteAccountCustomPermissionError) -> Self {
+        match err {
+            crate::operation::delete_account_custom_permission::DeleteAccountCustomPermissionError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_account_custom_permission::DeleteAccountCustomPermissionError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::operation::delete_account_custom_permission::DeleteAccountCustomPermissionError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::delete_account_custom_permission::DeleteAccountCustomPermissionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_account_custom_permission::DeleteAccountCustomPermissionError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::delete_account_custom_permission::DeleteAccountCustomPermissionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2364,6 +2408,53 @@ impl From<crate::operation::describe_account_customization::DescribeAccountCusto
                 Error::ThrottlingException(inner)
             }
             crate::operation::describe_account_customization::DescribeAccountCustomizationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_account_custom_permission::DescribeAccountCustomPermissionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_account_custom_permission::DescribeAccountCustomPermissionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_account_custom_permission::DescribeAccountCustomPermissionError> for Error {
+    fn from(err: crate::operation::describe_account_custom_permission::DescribeAccountCustomPermissionError) -> Self {
+        match err {
+            crate::operation::describe_account_custom_permission::DescribeAccountCustomPermissionError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::describe_account_custom_permission::DescribeAccountCustomPermissionError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::operation::describe_account_custom_permission::DescribeAccountCustomPermissionError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::describe_account_custom_permission::DescribeAccountCustomPermissionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_account_custom_permission::DescribeAccountCustomPermissionError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::describe_account_custom_permission::DescribeAccountCustomPermissionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -6414,6 +6505,50 @@ impl From<crate::operation::update_account_customization::UpdateAccountCustomiza
                 Error::ThrottlingException(inner)
             }
             crate::operation::update_account_customization::UpdateAccountCustomizationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_account_custom_permission::UpdateAccountCustomPermissionError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_account_custom_permission::UpdateAccountCustomPermissionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_account_custom_permission::UpdateAccountCustomPermissionError> for Error {
+    fn from(err: crate::operation::update_account_custom_permission::UpdateAccountCustomPermissionError) -> Self {
+        match err {
+            crate::operation::update_account_custom_permission::UpdateAccountCustomPermissionError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_account_custom_permission::UpdateAccountCustomPermissionError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::operation::update_account_custom_permission::UpdateAccountCustomPermissionError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::update_account_custom_permission::UpdateAccountCustomPermissionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_account_custom_permission::UpdateAccountCustomPermissionError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_account_custom_permission::UpdateAccountCustomPermissionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

@@ -16,7 +16,7 @@ pub struct StarburstParameters {
     pub database_access_control_role: ::std::option::Option<::std::string::String>,
     /// <p>The authentication type that you want to use for your connection. This parameter accepts OAuth and non-OAuth authentication types.</p>
     pub authentication_type: ::std::option::Option<crate::types::AuthenticationType>,
-    /// <p>An object that contains information needed to create a data source connection between an Amazon QuickSight account and Starburst.</p>
+    /// <p>An object that contains information needed to create a data source connection between an QuickSight account and Starburst.</p>
     pub o_auth_parameters: ::std::option::Option<crate::types::OAuthParameters>,
 }
 impl StarburstParameters {
@@ -46,7 +46,7 @@ impl StarburstParameters {
     pub fn authentication_type(&self) -> ::std::option::Option<&crate::types::AuthenticationType> {
         self.authentication_type.as_ref()
     }
-    /// <p>An object that contains information needed to create a data source connection between an Amazon QuickSight account and Starburst.</p>
+    /// <p>An object that contains information needed to create a data source connection between an QuickSight account and Starburst.</p>
     pub fn o_auth_parameters(&self) -> ::std::option::Option<&crate::types::OAuthParameters> {
         self.o_auth_parameters.as_ref()
     }
@@ -158,17 +158,17 @@ impl StarburstParametersBuilder {
     pub fn get_authentication_type(&self) -> &::std::option::Option<crate::types::AuthenticationType> {
         &self.authentication_type
     }
-    /// <p>An object that contains information needed to create a data source connection between an Amazon QuickSight account and Starburst.</p>
+    /// <p>An object that contains information needed to create a data source connection between an QuickSight account and Starburst.</p>
     pub fn o_auth_parameters(mut self, input: crate::types::OAuthParameters) -> Self {
         self.o_auth_parameters = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An object that contains information needed to create a data source connection between an Amazon QuickSight account and Starburst.</p>
+    /// <p>An object that contains information needed to create a data source connection between an QuickSight account and Starburst.</p>
     pub fn set_o_auth_parameters(mut self, input: ::std::option::Option<crate::types::OAuthParameters>) -> Self {
         self.o_auth_parameters = input;
         self
     }
-    /// <p>An object that contains information needed to create a data source connection between an Amazon QuickSight account and Starburst.</p>
+    /// <p>An object that contains information needed to create a data source connection between an QuickSight account and Starburst.</p>
     pub fn get_o_auth_parameters(&self) -> &::std::option::Option<crate::types::OAuthParameters> {
         &self.o_auth_parameters
     }

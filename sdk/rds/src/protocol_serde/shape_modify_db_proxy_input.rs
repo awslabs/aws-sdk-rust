@@ -16,49 +16,54 @@ pub fn ser_modify_db_proxy_input_input_input(
         scope_3.string(var_4);
     }
     #[allow(unused_mut)]
-    let mut scope_5 = writer.prefix("Auth");
-    if let Some(var_6) = &input.auth {
-        let mut list_8 = scope_5.start_list(false, None);
-        for item_7 in var_6 {
+    let mut scope_5 = writer.prefix("DefaultAuthScheme");
+    if let Some(var_6) = &input.default_auth_scheme {
+        scope_5.string(var_6.as_str());
+    }
+    #[allow(unused_mut)]
+    let mut scope_7 = writer.prefix("Auth");
+    if let Some(var_8) = &input.auth {
+        let mut list_10 = scope_7.start_list(false, None);
+        for item_9 in var_8 {
             #[allow(unused_mut)]
-            let mut entry_9 = list_8.entry();
-            crate::protocol_serde::shape_user_auth_config::ser_user_auth_config(entry_9, item_7)?;
+            let mut entry_11 = list_10.entry();
+            crate::protocol_serde::shape_user_auth_config::ser_user_auth_config(entry_11, item_9)?;
         }
-        list_8.finish();
+        list_10.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_10 = writer.prefix("RequireTLS");
-    if let Some(var_11) = &input.require_tls {
-        scope_10.boolean(*var_11);
+    let mut scope_12 = writer.prefix("RequireTLS");
+    if let Some(var_13) = &input.require_tls {
+        scope_12.boolean(*var_13);
     }
     #[allow(unused_mut)]
-    let mut scope_12 = writer.prefix("IdleClientTimeout");
-    if let Some(var_13) = &input.idle_client_timeout {
-        scope_12.number(
+    let mut scope_14 = writer.prefix("IdleClientTimeout");
+    if let Some(var_15) = &input.idle_client_timeout {
+        scope_14.number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_13).into()),
+            ::aws_smithy_types::Number::NegInt((*var_15).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_14 = writer.prefix("DebugLogging");
-    if let Some(var_15) = &input.debug_logging {
-        scope_14.boolean(*var_15);
+    let mut scope_16 = writer.prefix("DebugLogging");
+    if let Some(var_17) = &input.debug_logging {
+        scope_16.boolean(*var_17);
     }
     #[allow(unused_mut)]
-    let mut scope_16 = writer.prefix("RoleArn");
-    if let Some(var_17) = &input.role_arn {
-        scope_16.string(var_17);
+    let mut scope_18 = writer.prefix("RoleArn");
+    if let Some(var_19) = &input.role_arn {
+        scope_18.string(var_19);
     }
     #[allow(unused_mut)]
-    let mut scope_18 = writer.prefix("SecurityGroups");
-    if let Some(var_19) = &input.security_groups {
-        let mut list_21 = scope_18.start_list(false, None);
-        for item_20 in var_19 {
+    let mut scope_20 = writer.prefix("SecurityGroups");
+    if let Some(var_21) = &input.security_groups {
+        let mut list_23 = scope_20.start_list(false, None);
+        for item_22 in var_21 {
             #[allow(unused_mut)]
-            let mut entry_22 = list_21.entry();
-            entry_22.string(item_20);
+            let mut entry_24 = list_23.entry();
+            entry_24.string(item_22);
         }
-        list_21.finish();
+        list_23.finish();
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

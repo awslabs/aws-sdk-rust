@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DonutCenterOptions {
-    /// <p>Determines the visibility of the label in a donut chart. In the Amazon QuickSight console, this option is called <code>'Show total'</code>.</p>
+    /// <p>Determines the visibility of the label in a donut chart. In the QuickSight console, this option is called <code>'Show total'</code>.</p>
     pub label_visibility: ::std::option::Option<crate::types::Visibility>,
 }
 impl DonutCenterOptions {
-    /// <p>Determines the visibility of the label in a donut chart. In the Amazon QuickSight console, this option is called <code>'Show total'</code>.</p>
+    /// <p>Determines the visibility of the label in a donut chart. In the QuickSight console, this option is called <code>'Show total'</code>.</p>
     pub fn label_visibility(&self) -> ::std::option::Option<&crate::types::Visibility> {
         self.label_visibility.as_ref()
     }
@@ -27,17 +27,17 @@ pub struct DonutCenterOptionsBuilder {
     pub(crate) label_visibility: ::std::option::Option<crate::types::Visibility>,
 }
 impl DonutCenterOptionsBuilder {
-    /// <p>Determines the visibility of the label in a donut chart. In the Amazon QuickSight console, this option is called <code>'Show total'</code>.</p>
+    /// <p>Determines the visibility of the label in a donut chart. In the QuickSight console, this option is called <code>'Show total'</code>.</p>
     pub fn label_visibility(mut self, input: crate::types::Visibility) -> Self {
         self.label_visibility = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Determines the visibility of the label in a donut chart. In the Amazon QuickSight console, this option is called <code>'Show total'</code>.</p>
+    /// <p>Determines the visibility of the label in a donut chart. In the QuickSight console, this option is called <code>'Show total'</code>.</p>
     pub fn set_label_visibility(mut self, input: ::std::option::Option<crate::types::Visibility>) -> Self {
         self.label_visibility = input;
         self
     }
-    /// <p>Determines the visibility of the label in a donut chart. In the Amazon QuickSight console, this option is called <code>'Show total'</code>.</p>
+    /// <p>Determines the visibility of the label in a donut chart. In the QuickSight console, this option is called <code>'Show total'</code>.</p>
     pub fn get_label_visibility(&self) -> &::std::option::Option<crate::types::Visibility> {
         &self.label_visibility
     }

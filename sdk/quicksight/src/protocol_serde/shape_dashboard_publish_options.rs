@@ -75,6 +75,18 @@ pub fn ser_dashboard_publish_options(
         crate::protocol_serde::shape_data_qa_enabled_option::ser_data_qa_enabled_option(&mut object_24, var_23)?;
         object_24.finish();
     }
+    if let Some(var_25) = &input.executive_summary_option {
+        #[allow(unused_mut)]
+        let mut object_26 = object.key("ExecutiveSummaryOption").start_object();
+        crate::protocol_serde::shape_executive_summary_option::ser_executive_summary_option(&mut object_26, var_25)?;
+        object_26.finish();
+    }
+    if let Some(var_27) = &input.data_stories_sharing_option {
+        #[allow(unused_mut)]
+        let mut object_28 = object.key("DataStoriesSharingOption").start_object();
+        crate::protocol_serde::shape_data_stories_sharing_option::ser_data_stories_sharing_option(&mut object_28, var_27)?;
+        object_28.finish();
+    }
     Ok(())
 }
 
@@ -149,6 +161,16 @@ where
                         "DataQAEnabledOption" => {
                             builder = builder
                                 .set_data_qa_enabled_option(crate::protocol_serde::shape_data_qa_enabled_option::de_data_qa_enabled_option(tokens)?);
+                        }
+                        "ExecutiveSummaryOption" => {
+                            builder = builder.set_executive_summary_option(
+                                crate::protocol_serde::shape_executive_summary_option::de_executive_summary_option(tokens)?,
+                            );
+                        }
+                        "DataStoriesSharingOption" => {
+                            builder = builder.set_data_stories_sharing_option(
+                                crate::protocol_serde::shape_data_stories_sharing_option::de_data_stories_sharing_option(tokens)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

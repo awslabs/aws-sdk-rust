@@ -24,7 +24,7 @@ impl crate::operation::start_dashboard_snapshot_job_schedule::builders::StartDas
 ///
 /// <p>Starts an asynchronous job that runs an existing dashboard schedule and sends the dashboard snapshot through email.</p>
 /// <p>Only one job can run simultaneously in a given schedule. Repeated requests are skipped with a <code>202</code> HTTP status code.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sending-reports.html">Scheduling and sending Amazon QuickSight reports by email</a> and <a href="https://docs.aws.amazon.com/quicksight/latest/user/email-reports-from-dashboard.html">Configuring email report settings for a Amazon QuickSight dashboard</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sending-reports.html">Scheduling and sending QuickSight reports by email</a> and <a href="https://docs.aws.amazon.com/quicksight/latest/user/email-reports-from-dashboard.html">Configuring email report settings for a QuickSight dashboard</a> in the <i>Amazon QuickSight User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartDashboardSnapshotJobScheduleFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -138,17 +138,17 @@ impl StartDashboardSnapshotJobScheduleFluentBuilder {
     pub fn get_dashboard_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_dashboard_id()
     }
-    /// <p>The ID of the schedule that you want to start a snapshot job schedule for. The schedule ID can be found in the Amazon QuickSight console in the <b>Schedules</b> pane of the dashboard that the schedule is configured for.</p>
+    /// <p>The ID of the schedule that you want to start a snapshot job schedule for. The schedule ID can be found in the QuickSight console in the <b>Schedules</b> pane of the dashboard that the schedule is configured for.</p>
     pub fn schedule_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.schedule_id(input.into());
         self
     }
-    /// <p>The ID of the schedule that you want to start a snapshot job schedule for. The schedule ID can be found in the Amazon QuickSight console in the <b>Schedules</b> pane of the dashboard that the schedule is configured for.</p>
+    /// <p>The ID of the schedule that you want to start a snapshot job schedule for. The schedule ID can be found in the QuickSight console in the <b>Schedules</b> pane of the dashboard that the schedule is configured for.</p>
     pub fn set_schedule_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_schedule_id(input);
         self
     }
-    /// <p>The ID of the schedule that you want to start a snapshot job schedule for. The schedule ID can be found in the Amazon QuickSight console in the <b>Schedules</b> pane of the dashboard that the schedule is configured for.</p>
+    /// <p>The ID of the schedule that you want to start a snapshot job schedule for. The schedule ID can be found in the QuickSight console in the <b>Schedules</b> pane of the dashboard that the schedule is configured for.</p>
     pub fn get_schedule_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_schedule_id()
     }

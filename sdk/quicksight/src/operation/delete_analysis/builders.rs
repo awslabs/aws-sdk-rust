@@ -22,9 +22,9 @@ impl crate::operation::delete_analysis::builders::DeleteAnalysisInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteAnalysis`.
 ///
-/// <p>Deletes an analysis from Amazon QuickSight. You can optionally include a recovery window during which you can restore the analysis. If you don't specify a recovery window value, the operation defaults to 30 days. Amazon QuickSight attaches a <code>DeletionTime</code> stamp to the response that specifies the end of the recovery window. At the end of the recovery window, Amazon QuickSight deletes the analysis permanently.</p>
+/// <p>Deletes an analysis from Amazon QuickSight. You can optionally include a recovery window during which you can restore the analysis. If you don't specify a recovery window value, the operation defaults to 30 days. QuickSight attaches a <code>DeletionTime</code> stamp to the response that specifies the end of the recovery window. At the end of the recovery window, QuickSight deletes the analysis permanently.</p>
 /// <p>At any time before recovery window ends, you can use the <code>RestoreAnalysis</code> API operation to remove the <code>DeletionTime</code> stamp and cancel the deletion of the analysis. The analysis remains visible in the API until it's deleted, so you can describe it but you can't make a template from it.</p>
-/// <p>An analysis that's scheduled for deletion isn't accessible in the Amazon QuickSight console. To access it in the console, restore it. Deleting an analysis doesn't delete the dashboards that you publish from it.</p>
+/// <p>An analysis that's scheduled for deletion isn't accessible in the QuickSight console. To access it in the console, restore it. Deleting an analysis doesn't delete the dashboards that you publish from it.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteAnalysisFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -138,17 +138,17 @@ impl DeleteAnalysisFluentBuilder {
     pub fn get_analysis_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_analysis_id()
     }
-    /// <p>A value that specifies the number of days that Amazon QuickSight waits before it deletes the analysis. You can't use this parameter with the <code>ForceDeleteWithoutRecovery</code> option in the same API call. The default value is 30.</p>
+    /// <p>A value that specifies the number of days that QuickSight waits before it deletes the analysis. You can't use this parameter with the <code>ForceDeleteWithoutRecovery</code> option in the same API call. The default value is 30.</p>
     pub fn recovery_window_in_days(mut self, input: i64) -> Self {
         self.inner = self.inner.recovery_window_in_days(input);
         self
     }
-    /// <p>A value that specifies the number of days that Amazon QuickSight waits before it deletes the analysis. You can't use this parameter with the <code>ForceDeleteWithoutRecovery</code> option in the same API call. The default value is 30.</p>
+    /// <p>A value that specifies the number of days that QuickSight waits before it deletes the analysis. You can't use this parameter with the <code>ForceDeleteWithoutRecovery</code> option in the same API call. The default value is 30.</p>
     pub fn set_recovery_window_in_days(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_recovery_window_in_days(input);
         self
     }
-    /// <p>A value that specifies the number of days that Amazon QuickSight waits before it deletes the analysis. You can't use this parameter with the <code>ForceDeleteWithoutRecovery</code> option in the same API call. The default value is 30.</p>
+    /// <p>A value that specifies the number of days that QuickSight waits before it deletes the analysis. You can't use this parameter with the <code>ForceDeleteWithoutRecovery</code> option in the same API call. The default value is 30.</p>
     pub fn get_recovery_window_in_days(&self) -> &::std::option::Option<i64> {
         self.inner.get_recovery_window_in_days()
     }

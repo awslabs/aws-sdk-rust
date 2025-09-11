@@ -47,6 +47,8 @@ pub(crate) mod shape_delete_rule_groups_namespace;
 
 pub(crate) mod shape_delete_scraper;
 
+pub(crate) mod shape_delete_scraper_logging_configuration;
+
 pub(crate) mod shape_delete_workspace;
 
 pub(crate) mod shape_describe_alert_manager_definition;
@@ -60,6 +62,8 @@ pub(crate) mod shape_describe_resource_policy;
 pub(crate) mod shape_describe_rule_groups_namespace;
 
 pub(crate) mod shape_describe_scraper;
+
+pub(crate) mod shape_describe_scraper_logging_configuration;
 
 pub(crate) mod shape_describe_workspace;
 
@@ -90,6 +94,8 @@ pub(crate) mod shape_update_logging_configuration;
 pub(crate) mod shape_update_query_logging_configuration;
 
 pub(crate) mod shape_update_scraper;
+
+pub(crate) mod shape_update_scraper_logging_configuration;
 
 pub(crate) mod shape_update_workspace_alias;
 
@@ -141,6 +147,8 @@ pub(crate) mod shape_update_query_logging_configuration_input;
 
 pub(crate) mod shape_update_scraper_input;
 
+pub(crate) mod shape_update_scraper_logging_configuration_input;
+
 pub(crate) mod shape_update_workspace_alias_input;
 
 pub(crate) mod shape_update_workspace_configuration_input;
@@ -175,7 +183,15 @@ pub(crate) mod shape_rule_groups_namespace_summary_list;
 
 pub(crate) mod shape_scrape_configuration;
 
+pub(crate) mod shape_scraper_component;
+
+pub(crate) mod shape_scraper_components;
+
 pub(crate) mod shape_scraper_description;
+
+pub(crate) mod shape_scraper_logging_configuration_status;
+
+pub(crate) mod shape_scraper_logging_destination;
 
 pub(crate) mod shape_scraper_status;
 
@@ -201,6 +217,8 @@ pub(crate) mod shape_amp_configuration;
 
 pub(crate) mod shape_cloud_watch_log_destination;
 
+pub(crate) mod shape_component_config;
+
 pub(crate) mod shape_eks_configuration;
 
 pub(crate) mod shape_limits_per_label_set_entry;
@@ -222,5 +240,7 @@ pub(crate) mod shape_workspace_summary;
 pub(crate) mod shape_label_set;
 
 pub(crate) mod shape_security_group_ids;
+
+pub(crate) mod shape_string_map;
 
 pub(crate) mod shape_subnet_ids;

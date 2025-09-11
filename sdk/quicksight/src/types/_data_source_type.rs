@@ -23,6 +23,7 @@
 ///     DataSourceType::Databricks => { /* ... */ },
 ///     DataSourceType::Exasol => { /* ... */ },
 ///     DataSourceType::Github => { /* ... */ },
+///     DataSourceType::Googlesheets => { /* ... */ },
 ///     DataSourceType::Jira => { /* ... */ },
 ///     DataSourceType::Mariadb => { /* ... */ },
 ///     DataSourceType::Mysql => { /* ... */ },
@@ -92,6 +93,8 @@ pub enum DataSourceType {
     #[allow(missing_docs)] // documentation missing in model
     Github,
     #[allow(missing_docs)] // documentation missing in model
+    Googlesheets,
+    #[allow(missing_docs)] // documentation missing in model
     Jira,
     #[allow(missing_docs)] // documentation missing in model
     Mariadb,
@@ -145,6 +148,7 @@ impl ::std::convert::From<&str> for DataSourceType {
             "DATABRICKS" => DataSourceType::Databricks,
             "EXASOL" => DataSourceType::Exasol,
             "GITHUB" => DataSourceType::Github,
+            "GOOGLESHEETS" => DataSourceType::Googlesheets,
             "JIRA" => DataSourceType::Jira,
             "MARIADB" => DataSourceType::Mariadb,
             "MYSQL" => DataSourceType::Mysql,
@@ -189,6 +193,7 @@ impl DataSourceType {
             DataSourceType::Databricks => "DATABRICKS",
             DataSourceType::Exasol => "EXASOL",
             DataSourceType::Github => "GITHUB",
+            DataSourceType::Googlesheets => "GOOGLESHEETS",
             DataSourceType::Jira => "JIRA",
             DataSourceType::Mariadb => "MARIADB",
             DataSourceType::Mysql => "MYSQL",
@@ -224,6 +229,7 @@ impl DataSourceType {
             "DATABRICKS",
             "EXASOL",
             "GITHUB",
+            "GOOGLESHEETS",
             "JIRA",
             "MARIADB",
             "MYSQL",
@@ -276,6 +282,7 @@ impl ::std::fmt::Display for DataSourceType {
             DataSourceType::Databricks => write!(f, "DATABRICKS"),
             DataSourceType::Exasol => write!(f, "EXASOL"),
             DataSourceType::Github => write!(f, "GITHUB"),
+            DataSourceType::Googlesheets => write!(f, "GOOGLESHEETS"),
             DataSourceType::Jira => write!(f, "JIRA"),
             DataSourceType::Mariadb => write!(f, "MARIADB"),
             DataSourceType::Mysql => write!(f, "MYSQL"),

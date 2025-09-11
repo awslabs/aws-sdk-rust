@@ -14,7 +14,7 @@ pub struct SnowflakeParameters {
     pub authentication_type: ::std::option::Option<crate::types::AuthenticationType>,
     /// <p>The database access control role.</p>
     pub database_access_control_role: ::std::option::Option<::std::string::String>,
-    /// <p>An object that contains information needed to create a data source connection between an Amazon QuickSight account and Snowflake.</p>
+    /// <p>An object that contains information needed to create a data source connection between an QuickSight account and Snowflake.</p>
     pub o_auth_parameters: ::std::option::Option<crate::types::OAuthParameters>,
 }
 impl SnowflakeParameters {
@@ -41,7 +41,7 @@ impl SnowflakeParameters {
     pub fn database_access_control_role(&self) -> ::std::option::Option<&str> {
         self.database_access_control_role.as_deref()
     }
-    /// <p>An object that contains information needed to create a data source connection between an Amazon QuickSight account and Snowflake.</p>
+    /// <p>An object that contains information needed to create a data source connection between an QuickSight account and Snowflake.</p>
     pub fn o_auth_parameters(&self) -> ::std::option::Option<&crate::types::OAuthParameters> {
         self.o_auth_parameters.as_ref()
     }
@@ -138,17 +138,17 @@ impl SnowflakeParametersBuilder {
     pub fn get_database_access_control_role(&self) -> &::std::option::Option<::std::string::String> {
         &self.database_access_control_role
     }
-    /// <p>An object that contains information needed to create a data source connection between an Amazon QuickSight account and Snowflake.</p>
+    /// <p>An object that contains information needed to create a data source connection between an QuickSight account and Snowflake.</p>
     pub fn o_auth_parameters(mut self, input: crate::types::OAuthParameters) -> Self {
         self.o_auth_parameters = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An object that contains information needed to create a data source connection between an Amazon QuickSight account and Snowflake.</p>
+    /// <p>An object that contains information needed to create a data source connection between an QuickSight account and Snowflake.</p>
     pub fn set_o_auth_parameters(mut self, input: ::std::option::Option<crate::types::OAuthParameters>) -> Self {
         self.o_auth_parameters = input;
         self
     }
-    /// <p>An object that contains information needed to create a data source connection between an Amazon QuickSight account and Snowflake.</p>
+    /// <p>An object that contains information needed to create a data source connection between an QuickSight account and Snowflake.</p>
     pub fn get_o_auth_parameters(&self) -> &::std::option::Option<crate::types::OAuthParameters> {
         &self.o_auth_parameters
     }

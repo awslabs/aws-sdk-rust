@@ -136,6 +136,9 @@ pub(crate) fn de_describe_key_registration(
                 "KeyRegistration" => {
                     builder = builder.set_key_registration(crate::protocol_serde::shape_key_registration::de_key_registration(tokens)?);
                 }
+                "QDataKey" => {
+                    builder = builder.set_q_data_key(crate::protocol_serde::shape_q_data_key::de_q_data_key(tokens)?);
+                }
                 "RequestId" => {
                     builder = builder.set_request_id(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

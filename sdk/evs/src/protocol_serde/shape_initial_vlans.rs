@@ -63,5 +63,11 @@ pub fn ser_initial_vlans(
         crate::protocol_serde::shape_initial_vlan_info::ser_initial_vlan_info(&mut object_20, var_19)?;
         object_20.finish();
     }
+    if input.is_hcx_public {
+        object.key("isHcxPublic").boolean(input.is_hcx_public);
+    }
+    if let Some(var_21) = &input.hcx_network_acl_id {
+        object.key("hcxNetworkAclId").string(var_21.as_str());
+    }
     Ok(())
 }

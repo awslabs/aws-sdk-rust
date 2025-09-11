@@ -19,11 +19,24 @@ pub struct InitialVlans {
     /// <p>The NSX uplink VLAN subnet. This VLAN subnet allows connectivity to the NSX overlay network.</p>
     pub nsx_uplink: ::std::option::Option<crate::types::InitialVlanInfo>,
     /// <p>The HCX VLAN subnet. This VLAN subnet allows the HCX Interconnnect (IX) and HCX Network Extension (NE) to reach their peers and enable HCX Service Mesh creation.</p>
+    /// <p>If you plan to use a public HCX VLAN subnet, the following requirements must be met:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must have a /28 netmask and be allocated from the IPAM public pool. Required for HCX internet access configuration.</p></li>
+    /// <li>
+    /// <p>The HCX public VLAN CIDR block must be added to the VPC as a secondary CIDR block.</p></li>
+    /// <li>
+    /// <p>Must have at least three Elastic IP addresses to be allocated from the public IPAM pool for HCX components.</p></li>
+    /// </ul>
     pub hcx: ::std::option::Option<crate::types::InitialVlanInfo>,
     /// <p>An additional VLAN subnet that can be used to extend VCF capabilities once configured. For example, you can configure an expansion VLAN subnet to use NSX Federation for centralized management and synchronization of multiple NSX deployments across different locations.</p>
     pub expansion_vlan1: ::std::option::Option<crate::types::InitialVlanInfo>,
     /// <p>An additional VLAN subnet that can be used to extend VCF capabilities once configured. For example, you can configure an expansion VLAN subnet to use NSX Federation for centralized management and synchronization of multiple NSX deployments across different locations.</p>
     pub expansion_vlan2: ::std::option::Option<crate::types::InitialVlanInfo>,
+    /// <p>Determines if the HCX VLAN that Amazon EVS provisions is public or private.</p>
+    pub is_hcx_public: bool,
+    /// <p>A unique ID for a network access control list that the HCX VLAN uses. Required when <code>isHcxPublic</code> is set to <code>true</code>.</p>
+    pub hcx_network_acl_id: ::std::option::Option<::std::string::String>,
 }
 impl InitialVlans {
     /// <p>The host VMkernel management VLAN subnet. This VLAN subnet carries traffic for managing ESXi hosts and communicating with VMware vCenter Server.</p>
@@ -55,6 +68,15 @@ impl InitialVlans {
         self.nsx_uplink.as_ref()
     }
     /// <p>The HCX VLAN subnet. This VLAN subnet allows the HCX Interconnnect (IX) and HCX Network Extension (NE) to reach their peers and enable HCX Service Mesh creation.</p>
+    /// <p>If you plan to use a public HCX VLAN subnet, the following requirements must be met:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must have a /28 netmask and be allocated from the IPAM public pool. Required for HCX internet access configuration.</p></li>
+    /// <li>
+    /// <p>The HCX public VLAN CIDR block must be added to the VPC as a secondary CIDR block.</p></li>
+    /// <li>
+    /// <p>Must have at least three Elastic IP addresses to be allocated from the public IPAM pool for HCX components.</p></li>
+    /// </ul>
     pub fn hcx(&self) -> ::std::option::Option<&crate::types::InitialVlanInfo> {
         self.hcx.as_ref()
     }
@@ -65,6 +87,14 @@ impl InitialVlans {
     /// <p>An additional VLAN subnet that can be used to extend VCF capabilities once configured. For example, you can configure an expansion VLAN subnet to use NSX Federation for centralized management and synchronization of multiple NSX deployments across different locations.</p>
     pub fn expansion_vlan2(&self) -> ::std::option::Option<&crate::types::InitialVlanInfo> {
         self.expansion_vlan2.as_ref()
+    }
+    /// <p>Determines if the HCX VLAN that Amazon EVS provisions is public or private.</p>
+    pub fn is_hcx_public(&self) -> bool {
+        self.is_hcx_public
+    }
+    /// <p>A unique ID for a network access control list that the HCX VLAN uses. Required when <code>isHcxPublic</code> is set to <code>true</code>.</p>
+    pub fn hcx_network_acl_id(&self) -> ::std::option::Option<&str> {
+        self.hcx_network_acl_id.as_deref()
     }
 }
 impl InitialVlans {
@@ -88,6 +118,8 @@ pub struct InitialVlansBuilder {
     pub(crate) hcx: ::std::option::Option<crate::types::InitialVlanInfo>,
     pub(crate) expansion_vlan1: ::std::option::Option<crate::types::InitialVlanInfo>,
     pub(crate) expansion_vlan2: ::std::option::Option<crate::types::InitialVlanInfo>,
+    pub(crate) is_hcx_public: ::std::option::Option<bool>,
+    pub(crate) hcx_network_acl_id: ::std::option::Option<::std::string::String>,
 }
 impl InitialVlansBuilder {
     /// <p>The host VMkernel management VLAN subnet. This VLAN subnet carries traffic for managing ESXi hosts and communicating with VMware vCenter Server.</p>
@@ -196,17 +228,44 @@ impl InitialVlansBuilder {
         &self.nsx_uplink
     }
     /// <p>The HCX VLAN subnet. This VLAN subnet allows the HCX Interconnnect (IX) and HCX Network Extension (NE) to reach their peers and enable HCX Service Mesh creation.</p>
+    /// <p>If you plan to use a public HCX VLAN subnet, the following requirements must be met:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must have a /28 netmask and be allocated from the IPAM public pool. Required for HCX internet access configuration.</p></li>
+    /// <li>
+    /// <p>The HCX public VLAN CIDR block must be added to the VPC as a secondary CIDR block.</p></li>
+    /// <li>
+    /// <p>Must have at least three Elastic IP addresses to be allocated from the public IPAM pool for HCX components.</p></li>
+    /// </ul>
     /// This field is required.
     pub fn hcx(mut self, input: crate::types::InitialVlanInfo) -> Self {
         self.hcx = ::std::option::Option::Some(input);
         self
     }
     /// <p>The HCX VLAN subnet. This VLAN subnet allows the HCX Interconnnect (IX) and HCX Network Extension (NE) to reach their peers and enable HCX Service Mesh creation.</p>
+    /// <p>If you plan to use a public HCX VLAN subnet, the following requirements must be met:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must have a /28 netmask and be allocated from the IPAM public pool. Required for HCX internet access configuration.</p></li>
+    /// <li>
+    /// <p>The HCX public VLAN CIDR block must be added to the VPC as a secondary CIDR block.</p></li>
+    /// <li>
+    /// <p>Must have at least three Elastic IP addresses to be allocated from the public IPAM pool for HCX components.</p></li>
+    /// </ul>
     pub fn set_hcx(mut self, input: ::std::option::Option<crate::types::InitialVlanInfo>) -> Self {
         self.hcx = input;
         self
     }
     /// <p>The HCX VLAN subnet. This VLAN subnet allows the HCX Interconnnect (IX) and HCX Network Extension (NE) to reach their peers and enable HCX Service Mesh creation.</p>
+    /// <p>If you plan to use a public HCX VLAN subnet, the following requirements must be met:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must have a /28 netmask and be allocated from the IPAM public pool. Required for HCX internet access configuration.</p></li>
+    /// <li>
+    /// <p>The HCX public VLAN CIDR block must be added to the VPC as a secondary CIDR block.</p></li>
+    /// <li>
+    /// <p>Must have at least three Elastic IP addresses to be allocated from the public IPAM pool for HCX components.</p></li>
+    /// </ul>
     pub fn get_hcx(&self) -> &::std::option::Option<crate::types::InitialVlanInfo> {
         &self.hcx
     }
@@ -240,6 +299,34 @@ impl InitialVlansBuilder {
     pub fn get_expansion_vlan2(&self) -> &::std::option::Option<crate::types::InitialVlanInfo> {
         &self.expansion_vlan2
     }
+    /// <p>Determines if the HCX VLAN that Amazon EVS provisions is public or private.</p>
+    pub fn is_hcx_public(mut self, input: bool) -> Self {
+        self.is_hcx_public = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Determines if the HCX VLAN that Amazon EVS provisions is public or private.</p>
+    pub fn set_is_hcx_public(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.is_hcx_public = input;
+        self
+    }
+    /// <p>Determines if the HCX VLAN that Amazon EVS provisions is public or private.</p>
+    pub fn get_is_hcx_public(&self) -> &::std::option::Option<bool> {
+        &self.is_hcx_public
+    }
+    /// <p>A unique ID for a network access control list that the HCX VLAN uses. Required when <code>isHcxPublic</code> is set to <code>true</code>.</p>
+    pub fn hcx_network_acl_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.hcx_network_acl_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A unique ID for a network access control list that the HCX VLAN uses. Required when <code>isHcxPublic</code> is set to <code>true</code>.</p>
+    pub fn set_hcx_network_acl_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.hcx_network_acl_id = input;
+        self
+    }
+    /// <p>A unique ID for a network access control list that the HCX VLAN uses. Required when <code>isHcxPublic</code> is set to <code>true</code>.</p>
+    pub fn get_hcx_network_acl_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hcx_network_acl_id
+    }
     /// Consumes the builder and constructs a [`InitialVlans`](crate::types::InitialVlans).
     pub fn build(self) -> crate::types::InitialVlans {
         crate::types::InitialVlans {
@@ -253,6 +340,8 @@ impl InitialVlansBuilder {
             hcx: self.hcx,
             expansion_vlan1: self.expansion_vlan1,
             expansion_vlan2: self.expansion_vlan2,
+            is_hcx_public: self.is_hcx_public.unwrap_or_default(),
+            hcx_network_acl_id: self.hcx_network_acl_id,
         }
     }
 }

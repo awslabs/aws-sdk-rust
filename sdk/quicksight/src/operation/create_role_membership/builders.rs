@@ -22,7 +22,7 @@ impl crate::operation::create_role_membership::builders::CreateRoleMembershipInp
 }
 /// Fluent builder constructing a request to `CreateRoleMembership`.
 ///
-/// <p>Use <code>CreateRoleMembership</code> to add an existing Amazon QuickSight group to an existing role.</p>
+/// <p>Use <code>CreateRoleMembership</code> to add an existing QuickSight group to an existing role.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateRoleMembershipFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -531,6 +531,55 @@ impl From<crate::operation::delete_scraper::DeleteScraperError> for Error {
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_scraper_logging_configuration::DeleteScraperLoggingConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_scraper_logging_configuration::DeleteScraperLoggingConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_scraper_logging_configuration::DeleteScraperLoggingConfigurationError> for Error {
+    fn from(err: crate::operation::delete_scraper_logging_configuration::DeleteScraperLoggingConfigurationError) -> Self {
+        match err {
+            crate::operation::delete_scraper_logging_configuration::DeleteScraperLoggingConfigurationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_scraper_logging_configuration::DeleteScraperLoggingConfigurationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::delete_scraper_logging_configuration::DeleteScraperLoggingConfigurationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_scraper_logging_configuration::DeleteScraperLoggingConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_scraper_logging_configuration::DeleteScraperLoggingConfigurationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_scraper_logging_configuration::DeleteScraperLoggingConfigurationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_workspace::DeleteWorkspaceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -791,6 +840,52 @@ impl From<crate::operation::describe_scraper::DescribeScraperError> for Error {
             crate::operation::describe_scraper::DescribeScraperError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::describe_scraper::DescribeScraperError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::describe_scraper::DescribeScraperError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_scraper_logging_configuration::DescribeScraperLoggingConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_scraper_logging_configuration::DescribeScraperLoggingConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_scraper_logging_configuration::DescribeScraperLoggingConfigurationError> for Error {
+    fn from(err: crate::operation::describe_scraper_logging_configuration::DescribeScraperLoggingConfigurationError) -> Self {
+        match err {
+            crate::operation::describe_scraper_logging_configuration::DescribeScraperLoggingConfigurationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::describe_scraper_logging_configuration::DescribeScraperLoggingConfigurationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::describe_scraper_logging_configuration::DescribeScraperLoggingConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_scraper_logging_configuration::DescribeScraperLoggingConfigurationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::describe_scraper_logging_configuration::DescribeScraperLoggingConfigurationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -1303,6 +1398,55 @@ impl From<crate::operation::update_scraper::UpdateScraperError> for Error {
             crate::operation::update_scraper::UpdateScraperError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_scraper::UpdateScraperError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_scraper::UpdateScraperError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_scraper_logging_configuration::UpdateScraperLoggingConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_scraper_logging_configuration::UpdateScraperLoggingConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_scraper_logging_configuration::UpdateScraperLoggingConfigurationError> for Error {
+    fn from(err: crate::operation::update_scraper_logging_configuration::UpdateScraperLoggingConfigurationError) -> Self {
+        match err {
+            crate::operation::update_scraper_logging_configuration::UpdateScraperLoggingConfigurationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_scraper_logging_configuration::UpdateScraperLoggingConfigurationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::update_scraper_logging_configuration::UpdateScraperLoggingConfigurationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_scraper_logging_configuration::UpdateScraperLoggingConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_scraper_logging_configuration::UpdateScraperLoggingConfigurationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::update_scraper_logging_configuration::UpdateScraperLoggingConfigurationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }

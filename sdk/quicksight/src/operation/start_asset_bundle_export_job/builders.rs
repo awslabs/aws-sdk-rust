@@ -23,7 +23,7 @@ impl crate::operation::start_asset_bundle_export_job::builders::StartAssetBundle
 /// Fluent builder constructing a request to `StartAssetBundleExportJob`.
 ///
 /// <p>Starts an Asset Bundle export job.</p>
-/// <p>An Asset Bundle export job exports specified Amazon QuickSight assets. You can also choose to export any asset dependencies in the same job. Export jobs run asynchronously and can be polled with a <code>DescribeAssetBundleExportJob</code> API call. When a job is successfully completed, a download URL that contains the exported assets is returned. The URL is valid for 5 minutes and can be refreshed with a <code>DescribeAssetBundleExportJob</code> API call. Each Amazon QuickSight account can run up to 5 export jobs concurrently.</p>
+/// <p>An Asset Bundle export job exports specified QuickSight assets. You can also choose to export any asset dependencies in the same job. Export jobs run asynchronously and can be polled with a <code>DescribeAssetBundleExportJob</code> API call. When a job is successfully completed, a download URL that contains the exported assets is returned. The URL is valid for 5 minutes and can be refreshed with a <code>DescribeAssetBundleExportJob</code> API call. Each QuickSight account can run up to 5 export jobs concurrently.</p>
 /// <p>The API caller must have the necessary permissions in their IAM role to access each resource before the resources can be exported.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartAssetBundleExportJobFluentBuilder {

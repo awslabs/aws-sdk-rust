@@ -22,7 +22,7 @@ impl crate::operation::search_groups::builders::SearchGroupsInputBuilder {
 }
 /// Fluent builder constructing a request to `SearchGroups`.
 ///
-/// <p>Use the <code>SearchGroups</code> operation to search groups in a specified Amazon QuickSight namespace using the supplied filters.</p>
+/// <p>Use the <code>SearchGroups</code> operation to search groups in a specified QuickSight namespace using the supplied filters.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SearchGroupsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

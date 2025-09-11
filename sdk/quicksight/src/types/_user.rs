@@ -6,7 +6,7 @@
 pub struct User {
     /// <p>The Amazon Resource Name (ARN) for the user.</p>
     pub arn: ::std::option::Option<::std::string::String>,
-    /// <p>The user's user name. This value is required if you are registering a user that will be managed in Amazon QuickSight. In the output, the value for <code>UserName</code> is <code>N/A</code> when the value for <code>IdentityType</code> is <code>IAM</code> and the corresponding IAM user is deleted.</p>
+    /// <p>The user's user name. This value is required if you are registering a user that will be managed in QuickSight. In the output, the value for <code>UserName</code> is <code>N/A</code> when the value for <code>IdentityType</code> is <code>IAM</code> and the corresponding IAM user is deleted.</p>
     pub user_name: ::std::option::Option<::std::string::String>,
     /// <p>The user's email address.</p>
     pub email: ::std::option::Option<::std::string::String>,
@@ -17,9 +17,9 @@ pub struct User {
     /// <li>
     /// <p><code>AUTHOR</code>: A user who can create data sources, datasets, analyses, and dashboards.</p></li>
     /// <li>
-    /// <p><code>ADMIN</code>: A user who is an author, who can also manage Amazon Amazon QuickSight settings.</p></li>
+    /// <p><code>ADMIN</code>: A user who is an author, who can also manage Amazon QuickSight settings.</p></li>
     /// <li>
-    /// <p><code>READER_PRO</code>: Reader Pro adds Generative BI capabilities to the Reader role. Reader Pros have access to Amazon Q in Amazon QuickSight, can build stories with Amazon Q, and can generate executive summaries from dashboards.</p></li>
+    /// <p><code>READER_PRO</code>: Reader Pro adds Generative BI capabilities to the Reader role. Reader Pros have access to Amazon Q in QuickSight, can build stories with Amazon Q, and can generate executive summaries from dashboards.</p></li>
     /// <li>
     /// <p><code>AUTHOR_PRO</code>: Author Pro adds Generative BI capabilities to the Author role. Author Pros can author dashboards with natural language with Amazon Q, build stories with Amazon Q, create Topics for Q&amp;A, and generate executive summaries from dashboards.</p></li>
     /// <li>
@@ -56,7 +56,7 @@ impl User {
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The user's user name. This value is required if you are registering a user that will be managed in Amazon QuickSight. In the output, the value for <code>UserName</code> is <code>N/A</code> when the value for <code>IdentityType</code> is <code>IAM</code> and the corresponding IAM user is deleted.</p>
+    /// <p>The user's user name. This value is required if you are registering a user that will be managed in QuickSight. In the output, the value for <code>UserName</code> is <code>N/A</code> when the value for <code>IdentityType</code> is <code>IAM</code> and the corresponding IAM user is deleted.</p>
     pub fn user_name(&self) -> ::std::option::Option<&str> {
         self.user_name.as_deref()
     }
@@ -71,9 +71,9 @@ impl User {
     /// <li>
     /// <p><code>AUTHOR</code>: A user who can create data sources, datasets, analyses, and dashboards.</p></li>
     /// <li>
-    /// <p><code>ADMIN</code>: A user who is an author, who can also manage Amazon Amazon QuickSight settings.</p></li>
+    /// <p><code>ADMIN</code>: A user who is an author, who can also manage Amazon QuickSight settings.</p></li>
     /// <li>
-    /// <p><code>READER_PRO</code>: Reader Pro adds Generative BI capabilities to the Reader role. Reader Pros have access to Amazon Q in Amazon QuickSight, can build stories with Amazon Q, and can generate executive summaries from dashboards.</p></li>
+    /// <p><code>READER_PRO</code>: Reader Pro adds Generative BI capabilities to the Reader role. Reader Pros have access to Amazon Q in QuickSight, can build stories with Amazon Q, and can generate executive summaries from dashboards.</p></li>
     /// <li>
     /// <p><code>AUTHOR_PRO</code>: Author Pro adds Generative BI capabilities to the Author role. Author Pros can author dashboards with natural language with Amazon Q, build stories with Amazon Q, create Topics for Q&amp;A, and generate executive summaries from dashboards.</p></li>
     /// <li>
@@ -159,17 +159,17 @@ impl UserBuilder {
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
-    /// <p>The user's user name. This value is required if you are registering a user that will be managed in Amazon QuickSight. In the output, the value for <code>UserName</code> is <code>N/A</code> when the value for <code>IdentityType</code> is <code>IAM</code> and the corresponding IAM user is deleted.</p>
+    /// <p>The user's user name. This value is required if you are registering a user that will be managed in QuickSight. In the output, the value for <code>UserName</code> is <code>N/A</code> when the value for <code>IdentityType</code> is <code>IAM</code> and the corresponding IAM user is deleted.</p>
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The user's user name. This value is required if you are registering a user that will be managed in Amazon QuickSight. In the output, the value for <code>UserName</code> is <code>N/A</code> when the value for <code>IdentityType</code> is <code>IAM</code> and the corresponding IAM user is deleted.</p>
+    /// <p>The user's user name. This value is required if you are registering a user that will be managed in QuickSight. In the output, the value for <code>UserName</code> is <code>N/A</code> when the value for <code>IdentityType</code> is <code>IAM</code> and the corresponding IAM user is deleted.</p>
     pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_name = input;
         self
     }
-    /// <p>The user's user name. This value is required if you are registering a user that will be managed in Amazon QuickSight. In the output, the value for <code>UserName</code> is <code>N/A</code> when the value for <code>IdentityType</code> is <code>IAM</code> and the corresponding IAM user is deleted.</p>
+    /// <p>The user's user name. This value is required if you are registering a user that will be managed in QuickSight. In the output, the value for <code>UserName</code> is <code>N/A</code> when the value for <code>IdentityType</code> is <code>IAM</code> and the corresponding IAM user is deleted.</p>
     pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_name
     }
@@ -194,9 +194,9 @@ impl UserBuilder {
     /// <li>
     /// <p><code>AUTHOR</code>: A user who can create data sources, datasets, analyses, and dashboards.</p></li>
     /// <li>
-    /// <p><code>ADMIN</code>: A user who is an author, who can also manage Amazon Amazon QuickSight settings.</p></li>
+    /// <p><code>ADMIN</code>: A user who is an author, who can also manage Amazon QuickSight settings.</p></li>
     /// <li>
-    /// <p><code>READER_PRO</code>: Reader Pro adds Generative BI capabilities to the Reader role. Reader Pros have access to Amazon Q in Amazon QuickSight, can build stories with Amazon Q, and can generate executive summaries from dashboards.</p></li>
+    /// <p><code>READER_PRO</code>: Reader Pro adds Generative BI capabilities to the Reader role. Reader Pros have access to Amazon Q in QuickSight, can build stories with Amazon Q, and can generate executive summaries from dashboards.</p></li>
     /// <li>
     /// <p><code>AUTHOR_PRO</code>: Author Pro adds Generative BI capabilities to the Author role. Author Pros can author dashboards with natural language with Amazon Q, build stories with Amazon Q, create Topics for Q&amp;A, and generate executive summaries from dashboards.</p></li>
     /// <li>
@@ -217,9 +217,9 @@ impl UserBuilder {
     /// <li>
     /// <p><code>AUTHOR</code>: A user who can create data sources, datasets, analyses, and dashboards.</p></li>
     /// <li>
-    /// <p><code>ADMIN</code>: A user who is an author, who can also manage Amazon Amazon QuickSight settings.</p></li>
+    /// <p><code>ADMIN</code>: A user who is an author, who can also manage Amazon QuickSight settings.</p></li>
     /// <li>
-    /// <p><code>READER_PRO</code>: Reader Pro adds Generative BI capabilities to the Reader role. Reader Pros have access to Amazon Q in Amazon QuickSight, can build stories with Amazon Q, and can generate executive summaries from dashboards.</p></li>
+    /// <p><code>READER_PRO</code>: Reader Pro adds Generative BI capabilities to the Reader role. Reader Pros have access to Amazon Q in QuickSight, can build stories with Amazon Q, and can generate executive summaries from dashboards.</p></li>
     /// <li>
     /// <p><code>AUTHOR_PRO</code>: Author Pro adds Generative BI capabilities to the Author role. Author Pros can author dashboards with natural language with Amazon Q, build stories with Amazon Q, create Topics for Q&amp;A, and generate executive summaries from dashboards.</p></li>
     /// <li>
@@ -240,9 +240,9 @@ impl UserBuilder {
     /// <li>
     /// <p><code>AUTHOR</code>: A user who can create data sources, datasets, analyses, and dashboards.</p></li>
     /// <li>
-    /// <p><code>ADMIN</code>: A user who is an author, who can also manage Amazon Amazon QuickSight settings.</p></li>
+    /// <p><code>ADMIN</code>: A user who is an author, who can also manage Amazon QuickSight settings.</p></li>
     /// <li>
-    /// <p><code>READER_PRO</code>: Reader Pro adds Generative BI capabilities to the Reader role. Reader Pros have access to Amazon Q in Amazon QuickSight, can build stories with Amazon Q, and can generate executive summaries from dashboards.</p></li>
+    /// <p><code>READER_PRO</code>: Reader Pro adds Generative BI capabilities to the Reader role. Reader Pros have access to Amazon Q in QuickSight, can build stories with Amazon Q, and can generate executive summaries from dashboards.</p></li>
     /// <li>
     /// <p><code>AUTHOR_PRO</code>: Author Pro adds Generative BI capabilities to the Author role. Author Pros can author dashboards with natural language with Amazon Q, build stories with Amazon Q, create Topics for Q&amp;A, and generate executive summaries from dashboards.</p></li>
     /// <li>

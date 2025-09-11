@@ -22,7 +22,7 @@ impl crate::operation::search_topics::builders::SearchTopicsInputBuilder {
 }
 /// Fluent builder constructing a request to `SearchTopics`.
 ///
-/// <p>Searches for any Q topic that exists in an Amazon QuickSight account.</p>
+/// <p>Searches for any Q topic that exists in an QuickSight account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SearchTopicsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

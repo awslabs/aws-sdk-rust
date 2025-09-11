@@ -5,7 +5,7 @@
 pub struct UpdateQPersonalizationConfigurationInput {
     /// <p>The ID of the Amazon Web Services account account that contains the personalization configuration that the user wants to update.</p>
     pub aws_account_id: ::std::option::Option<::std::string::String>,
-    /// <p>An option to allow Amazon QuickSight to customize data stories with user specific metadata, specifically location and job information, in your IAM Identity Center instance.</p>
+    /// <p>An option to allow QuickSight to customize data stories with user specific metadata, specifically location and job information, in your IAM Identity Center instance.</p>
     pub personalization_mode: ::std::option::Option<crate::types::PersonalizationMode>,
 }
 impl UpdateQPersonalizationConfigurationInput {
@@ -13,7 +13,7 @@ impl UpdateQPersonalizationConfigurationInput {
     pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
-    /// <p>An option to allow Amazon QuickSight to customize data stories with user specific metadata, specifically location and job information, in your IAM Identity Center instance.</p>
+    /// <p>An option to allow QuickSight to customize data stories with user specific metadata, specifically location and job information, in your IAM Identity Center instance.</p>
     pub fn personalization_mode(&self) -> ::std::option::Option<&crate::types::PersonalizationMode> {
         self.personalization_mode.as_ref()
     }
@@ -48,18 +48,18 @@ impl UpdateQPersonalizationConfigurationInputBuilder {
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.aws_account_id
     }
-    /// <p>An option to allow Amazon QuickSight to customize data stories with user specific metadata, specifically location and job information, in your IAM Identity Center instance.</p>
+    /// <p>An option to allow QuickSight to customize data stories with user specific metadata, specifically location and job information, in your IAM Identity Center instance.</p>
     /// This field is required.
     pub fn personalization_mode(mut self, input: crate::types::PersonalizationMode) -> Self {
         self.personalization_mode = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An option to allow Amazon QuickSight to customize data stories with user specific metadata, specifically location and job information, in your IAM Identity Center instance.</p>
+    /// <p>An option to allow QuickSight to customize data stories with user specific metadata, specifically location and job information, in your IAM Identity Center instance.</p>
     pub fn set_personalization_mode(mut self, input: ::std::option::Option<crate::types::PersonalizationMode>) -> Self {
         self.personalization_mode = input;
         self
     }
-    /// <p>An option to allow Amazon QuickSight to customize data stories with user specific metadata, specifically location and job information, in your IAM Identity Center instance.</p>
+    /// <p>An option to allow QuickSight to customize data stories with user specific metadata, specifically location and job information, in your IAM Identity Center instance.</p>
     pub fn get_personalization_mode(&self) -> &::std::option::Option<crate::types::PersonalizationMode> {
         &self.personalization_mode
     }

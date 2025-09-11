@@ -8,7 +8,7 @@ pub struct SnapshotConfiguration {
     pub file_groups: ::std::vec::Vec<crate::types::SnapshotFileGroup>,
     /// <p>A structure that contains information on the Amazon S3 bucket that the generated snapshot is stored in.</p>
     pub destination_configuration: ::std::option::Option<crate::types::SnapshotDestinationConfiguration>,
-    /// <p>A list of Amazon QuickSight parameters and the list's override values.</p>
+    /// <p>A list of QuickSight parameters and the list's override values.</p>
     pub parameters: ::std::option::Option<crate::types::Parameters>,
 }
 impl SnapshotConfiguration {
@@ -21,7 +21,7 @@ impl SnapshotConfiguration {
     pub fn destination_configuration(&self) -> ::std::option::Option<&crate::types::SnapshotDestinationConfiguration> {
         self.destination_configuration.as_ref()
     }
-    /// <p>A list of Amazon QuickSight parameters and the list's override values.</p>
+    /// <p>A list of QuickSight parameters and the list's override values.</p>
     pub fn parameters(&self) -> ::std::option::Option<&crate::types::Parameters> {
         self.parameters.as_ref()
     }
@@ -76,17 +76,17 @@ impl SnapshotConfigurationBuilder {
     pub fn get_destination_configuration(&self) -> &::std::option::Option<crate::types::SnapshotDestinationConfiguration> {
         &self.destination_configuration
     }
-    /// <p>A list of Amazon QuickSight parameters and the list's override values.</p>
+    /// <p>A list of QuickSight parameters and the list's override values.</p>
     pub fn parameters(mut self, input: crate::types::Parameters) -> Self {
         self.parameters = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A list of Amazon QuickSight parameters and the list's override values.</p>
+    /// <p>A list of QuickSight parameters and the list's override values.</p>
     pub fn set_parameters(mut self, input: ::std::option::Option<crate::types::Parameters>) -> Self {
         self.parameters = input;
         self
     }
-    /// <p>A list of Amazon QuickSight parameters and the list's override values.</p>
+    /// <p>A list of QuickSight parameters and the list's override values.</p>
     pub fn get_parameters(&self) -> &::std::option::Option<crate::types::Parameters> {
         &self.parameters
     }

@@ -7,7 +7,7 @@ pub struct CreateAnalysisInput {
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID for the analysis that you're creating. This ID displays in the URL of the analysis.</p>
     pub analysis_id: ::std::option::Option<::std::string::String>,
-    /// <p>A descriptive name for the analysis that you're creating. This name displays for the analysis in the Amazon QuickSight console.</p>
+    /// <p>A descriptive name for the analysis that you're creating. This name displays for the analysis in the QuickSight console.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The parameter names and override values that you want to use. An analysis can have any parameter type, and some parameters might accept multiple values.</p>
     pub parameters: ::std::option::Option<crate::types::Parameters>,
@@ -17,7 +17,7 @@ pub struct CreateAnalysisInput {
     /// <p>A source entity to use for the analysis that you're creating. This metadata structure contains details that describe a source template and one or more datasets.</p>
     /// <p>Either a <code>SourceEntity</code> or a <code>Definition</code> must be provided in order for the request to be valid.</p>
     pub source_entity: ::std::option::Option<crate::types::AnalysisSourceEntity>,
-    /// <p>The ARN for the theme to apply to the analysis that you're creating. To see the theme in the Amazon QuickSight console, make sure that you have access to it.</p>
+    /// <p>The ARN for the theme to apply to the analysis that you're creating. To see the theme in the QuickSight console, make sure that you have access to it.</p>
     pub theme_arn: ::std::option::Option<::std::string::String>,
     /// <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the analysis.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -27,7 +27,7 @@ pub struct CreateAnalysisInput {
     pub definition: ::std::option::Option<crate::types::AnalysisDefinition>,
     /// <p>The option to relax the validation needed to create an analysis with definition objects. This skips the validation step for specific errors.</p>
     pub validation_strategy: ::std::option::Option<crate::types::ValidationStrategy>,
-    /// <p>When you create the analysis, Amazon QuickSight adds the analysis to these folders.</p>
+    /// <p>When you create the analysis, QuickSight adds the analysis to these folders.</p>
     pub folder_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CreateAnalysisInput {
@@ -39,7 +39,7 @@ impl CreateAnalysisInput {
     pub fn analysis_id(&self) -> ::std::option::Option<&str> {
         self.analysis_id.as_deref()
     }
-    /// <p>A descriptive name for the analysis that you're creating. This name displays for the analysis in the Amazon QuickSight console.</p>
+    /// <p>A descriptive name for the analysis that you're creating. This name displays for the analysis in the QuickSight console.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -59,7 +59,7 @@ impl CreateAnalysisInput {
     pub fn source_entity(&self) -> ::std::option::Option<&crate::types::AnalysisSourceEntity> {
         self.source_entity.as_ref()
     }
-    /// <p>The ARN for the theme to apply to the analysis that you're creating. To see the theme in the Amazon QuickSight console, make sure that you have access to it.</p>
+    /// <p>The ARN for the theme to apply to the analysis that you're creating. To see the theme in the QuickSight console, make sure that you have access to it.</p>
     pub fn theme_arn(&self) -> ::std::option::Option<&str> {
         self.theme_arn.as_deref()
     }
@@ -79,7 +79,7 @@ impl CreateAnalysisInput {
     pub fn validation_strategy(&self) -> ::std::option::Option<&crate::types::ValidationStrategy> {
         self.validation_strategy.as_ref()
     }
-    /// <p>When you create the analysis, Amazon QuickSight adds the analysis to these folders.</p>
+    /// <p>When you create the analysis, QuickSight adds the analysis to these folders.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.folder_arns.is_none()`.
     pub fn folder_arns(&self) -> &[::std::string::String] {
@@ -140,18 +140,18 @@ impl CreateAnalysisInputBuilder {
     pub fn get_analysis_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.analysis_id
     }
-    /// <p>A descriptive name for the analysis that you're creating. This name displays for the analysis in the Amazon QuickSight console.</p>
+    /// <p>A descriptive name for the analysis that you're creating. This name displays for the analysis in the QuickSight console.</p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A descriptive name for the analysis that you're creating. This name displays for the analysis in the Amazon QuickSight console.</p>
+    /// <p>A descriptive name for the analysis that you're creating. This name displays for the analysis in the QuickSight console.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>A descriptive name for the analysis that you're creating. This name displays for the analysis in the Amazon QuickSight console.</p>
+    /// <p>A descriptive name for the analysis that you're creating. This name displays for the analysis in the QuickSight console.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
@@ -209,17 +209,17 @@ impl CreateAnalysisInputBuilder {
     pub fn get_source_entity(&self) -> &::std::option::Option<crate::types::AnalysisSourceEntity> {
         &self.source_entity
     }
-    /// <p>The ARN for the theme to apply to the analysis that you're creating. To see the theme in the Amazon QuickSight console, make sure that you have access to it.</p>
+    /// <p>The ARN for the theme to apply to the analysis that you're creating. To see the theme in the QuickSight console, make sure that you have access to it.</p>
     pub fn theme_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.theme_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN for the theme to apply to the analysis that you're creating. To see the theme in the Amazon QuickSight console, make sure that you have access to it.</p>
+    /// <p>The ARN for the theme to apply to the analysis that you're creating. To see the theme in the QuickSight console, make sure that you have access to it.</p>
     pub fn set_theme_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.theme_arn = input;
         self
     }
-    /// <p>The ARN for the theme to apply to the analysis that you're creating. To see the theme in the Amazon QuickSight console, make sure that you have access to it.</p>
+    /// <p>The ARN for the theme to apply to the analysis that you're creating. To see the theme in the QuickSight console, make sure that you have access to it.</p>
     pub fn get_theme_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.theme_arn
     }
@@ -281,19 +281,19 @@ impl CreateAnalysisInputBuilder {
     ///
     /// To override the contents of this collection use [`set_folder_arns`](Self::set_folder_arns).
     ///
-    /// <p>When you create the analysis, Amazon QuickSight adds the analysis to these folders.</p>
+    /// <p>When you create the analysis, QuickSight adds the analysis to these folders.</p>
     pub fn folder_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.folder_arns.unwrap_or_default();
         v.push(input.into());
         self.folder_arns = ::std::option::Option::Some(v);
         self
     }
-    /// <p>When you create the analysis, Amazon QuickSight adds the analysis to these folders.</p>
+    /// <p>When you create the analysis, QuickSight adds the analysis to these folders.</p>
     pub fn set_folder_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.folder_arns = input;
         self
     }
-    /// <p>When you create the analysis, Amazon QuickSight adds the analysis to these folders.</p>
+    /// <p>When you create the analysis, QuickSight adds the analysis to these folders.</p>
     pub fn get_folder_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.folder_arns
     }

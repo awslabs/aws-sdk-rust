@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateQuickSightQSearchConfigurationOutput {
-    /// <p>The status of the Amazon QuickSight Q Search configuration.</p>
+    /// <p>The status of the QuickSight Q Search configuration.</p>
     pub q_search_status: ::std::option::Option<crate::types::QSearchStatus>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: ::std::option::Option<::std::string::String>,
@@ -12,7 +12,7 @@ pub struct UpdateQuickSightQSearchConfigurationOutput {
     _request_id: Option<String>,
 }
 impl UpdateQuickSightQSearchConfigurationOutput {
-    /// <p>The status of the Amazon QuickSight Q Search configuration.</p>
+    /// <p>The status of the QuickSight Q Search configuration.</p>
     pub fn q_search_status(&self) -> ::std::option::Option<&crate::types::QSearchStatus> {
         self.q_search_status.as_ref()
     }
@@ -47,17 +47,17 @@ pub struct UpdateQuickSightQSearchConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
 impl UpdateQuickSightQSearchConfigurationOutputBuilder {
-    /// <p>The status of the Amazon QuickSight Q Search configuration.</p>
+    /// <p>The status of the QuickSight Q Search configuration.</p>
     pub fn q_search_status(mut self, input: crate::types::QSearchStatus) -> Self {
         self.q_search_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of the Amazon QuickSight Q Search configuration.</p>
+    /// <p>The status of the QuickSight Q Search configuration.</p>
     pub fn set_q_search_status(mut self, input: ::std::option::Option<crate::types::QSearchStatus>) -> Self {
         self.q_search_status = input;
         self
     }
-    /// <p>The status of the Amazon QuickSight Q Search configuration.</p>
+    /// <p>The status of the QuickSight Q Search configuration.</p>
     pub fn get_q_search_status(&self) -> &::std::option::Option<crate::types::QSearchStatus> {
         &self.q_search_status
     }

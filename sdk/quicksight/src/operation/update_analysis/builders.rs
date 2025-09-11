@@ -136,17 +136,17 @@ impl UpdateAnalysisFluentBuilder {
     pub fn get_analysis_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_analysis_id()
     }
-    /// <p>A descriptive name for the analysis that you're updating. This name displays for the analysis in the Amazon QuickSight console.</p>
+    /// <p>A descriptive name for the analysis that you're updating. This name displays for the analysis in the QuickSight console.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p>A descriptive name for the analysis that you're updating. This name displays for the analysis in the Amazon QuickSight console.</p>
+    /// <p>A descriptive name for the analysis that you're updating. This name displays for the analysis in the QuickSight console.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>A descriptive name for the analysis that you're updating. This name displays for the analysis in the Amazon QuickSight console.</p>
+    /// <p>A descriptive name for the analysis that you're updating. This name displays for the analysis in the QuickSight console.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
@@ -178,17 +178,17 @@ impl UpdateAnalysisFluentBuilder {
     pub fn get_source_entity(&self) -> &::std::option::Option<crate::types::AnalysisSourceEntity> {
         self.inner.get_source_entity()
     }
-    /// <p>The Amazon Resource Name (ARN) for the theme to apply to the analysis that you're creating. To see the theme in the Amazon QuickSight console, make sure that you have access to it.</p>
+    /// <p>The Amazon Resource Name (ARN) for the theme to apply to the analysis that you're creating. To see the theme in the QuickSight console, make sure that you have access to it.</p>
     pub fn theme_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.theme_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) for the theme to apply to the analysis that you're creating. To see the theme in the Amazon QuickSight console, make sure that you have access to it.</p>
+    /// <p>The Amazon Resource Name (ARN) for the theme to apply to the analysis that you're creating. To see the theme in the QuickSight console, make sure that you have access to it.</p>
     pub fn set_theme_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_theme_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) for the theme to apply to the analysis that you're creating. To see the theme in the Amazon QuickSight console, make sure that you have access to it.</p>
+    /// <p>The Amazon Resource Name (ARN) for the theme to apply to the analysis that you're creating. To see the theme in the QuickSight console, make sure that you have access to it.</p>
     pub fn get_theme_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_theme_arn()
     }

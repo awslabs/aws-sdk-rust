@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct H265Settings {
-    /// Adaptive quantization. Allows intra-frame quantizers to vary to improve visual quality.
+    /// Enables or disables adaptive quantization (AQ), which is a technique MediaLive can apply to video on a frame-by-frame basis to produce more compression without losing quality. There are three types of adaptive quantization: spatial, temporal, and flicker. Flicker is the only type that you can customize. We recommend that you set the field to Auto. For more information about all the options, see the topic about video adaptive quantization in the MediaLive user guide.
     pub adaptive_quantization: ::std::option::Option<crate::types::H265AdaptiveQuantization>,
     /// Indicates that AFD values will be written into the output stream. If afdSignaling is "auto", the system will try to preserve the input AFD value (in cases where multiple AFD values are valid). If set to "fixed", the AFD value will be the value configured in the fixedAfd parameter.
     pub afd_signaling: ::std::option::Option<crate::types::AfdSignaling>,
@@ -22,7 +22,7 @@ pub struct H265Settings {
     pub filter_settings: ::std::option::Option<crate::types::H265FilterSettings>,
     /// Four bit AFD value to write on all frames of video in the output stream. Only valid when afdSignaling is set to 'Fixed'.
     pub fixed_afd: ::std::option::Option<crate::types::FixedAfd>,
-    /// If set to enabled, adjust quantization within each frame to reduce flicker or 'pop' on I-frames.
+    /// Flicker AQ makes adjustments within each frame to reduce flicker or 'pop' on I-frames. The value to enter in this field depends on the value in the Adaptive quantization field. For more information, see the topic about video adaptive quantization in the MediaLive user guide.
     pub flicker_aq: ::std::option::Option<crate::types::H265FlickerAq>,
     /// Framerate denominator.
     pub framerate_denominator: ::std::option::Option<i32>,
@@ -82,7 +82,7 @@ pub struct H265Settings {
     pub deblocking: ::std::option::Option<crate::types::H265Deblocking>,
 }
 impl H265Settings {
-    /// Adaptive quantization. Allows intra-frame quantizers to vary to improve visual quality.
+    /// Enables or disables adaptive quantization (AQ), which is a technique MediaLive can apply to video on a frame-by-frame basis to produce more compression without losing quality. There are three types of adaptive quantization: spatial, temporal, and flicker. Flicker is the only type that you can customize. We recommend that you set the field to Auto. For more information about all the options, see the topic about video adaptive quantization in the MediaLive user guide.
     pub fn adaptive_quantization(&self) -> ::std::option::Option<&crate::types::H265AdaptiveQuantization> {
         self.adaptive_quantization.as_ref()
     }
@@ -118,7 +118,7 @@ impl H265Settings {
     pub fn fixed_afd(&self) -> ::std::option::Option<&crate::types::FixedAfd> {
         self.fixed_afd.as_ref()
     }
-    /// If set to enabled, adjust quantization within each frame to reduce flicker or 'pop' on I-frames.
+    /// Flicker AQ makes adjustments within each frame to reduce flicker or 'pop' on I-frames. The value to enter in this field depends on the value in the Adaptive quantization field. For more information, see the topic about video adaptive quantization in the MediaLive user guide.
     pub fn flicker_aq(&self) -> ::std::option::Option<&crate::types::H265FlickerAq> {
         self.flicker_aq.as_ref()
     }
@@ -286,17 +286,17 @@ pub struct H265SettingsBuilder {
     pub(crate) deblocking: ::std::option::Option<crate::types::H265Deblocking>,
 }
 impl H265SettingsBuilder {
-    /// Adaptive quantization. Allows intra-frame quantizers to vary to improve visual quality.
+    /// Enables or disables adaptive quantization (AQ), which is a technique MediaLive can apply to video on a frame-by-frame basis to produce more compression without losing quality. There are three types of adaptive quantization: spatial, temporal, and flicker. Flicker is the only type that you can customize. We recommend that you set the field to Auto. For more information about all the options, see the topic about video adaptive quantization in the MediaLive user guide.
     pub fn adaptive_quantization(mut self, input: crate::types::H265AdaptiveQuantization) -> Self {
         self.adaptive_quantization = ::std::option::Option::Some(input);
         self
     }
-    /// Adaptive quantization. Allows intra-frame quantizers to vary to improve visual quality.
+    /// Enables or disables adaptive quantization (AQ), which is a technique MediaLive can apply to video on a frame-by-frame basis to produce more compression without losing quality. There are three types of adaptive quantization: spatial, temporal, and flicker. Flicker is the only type that you can customize. We recommend that you set the field to Auto. For more information about all the options, see the topic about video adaptive quantization in the MediaLive user guide.
     pub fn set_adaptive_quantization(mut self, input: ::std::option::Option<crate::types::H265AdaptiveQuantization>) -> Self {
         self.adaptive_quantization = input;
         self
     }
-    /// Adaptive quantization. Allows intra-frame quantizers to vary to improve visual quality.
+    /// Enables or disables adaptive quantization (AQ), which is a technique MediaLive can apply to video on a frame-by-frame basis to produce more compression without losing quality. There are three types of adaptive quantization: spatial, temporal, and flicker. Flicker is the only type that you can customize. We recommend that you set the field to Auto. For more information about all the options, see the topic about video adaptive quantization in the MediaLive user guide.
     pub fn get_adaptive_quantization(&self) -> &::std::option::Option<crate::types::H265AdaptiveQuantization> {
         &self.adaptive_quantization
     }
@@ -412,17 +412,17 @@ impl H265SettingsBuilder {
     pub fn get_fixed_afd(&self) -> &::std::option::Option<crate::types::FixedAfd> {
         &self.fixed_afd
     }
-    /// If set to enabled, adjust quantization within each frame to reduce flicker or 'pop' on I-frames.
+    /// Flicker AQ makes adjustments within each frame to reduce flicker or 'pop' on I-frames. The value to enter in this field depends on the value in the Adaptive quantization field. For more information, see the topic about video adaptive quantization in the MediaLive user guide.
     pub fn flicker_aq(mut self, input: crate::types::H265FlickerAq) -> Self {
         self.flicker_aq = ::std::option::Option::Some(input);
         self
     }
-    /// If set to enabled, adjust quantization within each frame to reduce flicker or 'pop' on I-frames.
+    /// Flicker AQ makes adjustments within each frame to reduce flicker or 'pop' on I-frames. The value to enter in this field depends on the value in the Adaptive quantization field. For more information, see the topic about video adaptive quantization in the MediaLive user guide.
     pub fn set_flicker_aq(mut self, input: ::std::option::Option<crate::types::H265FlickerAq>) -> Self {
         self.flicker_aq = input;
         self
     }
-    /// If set to enabled, adjust quantization within each frame to reduce flicker or 'pop' on I-frames.
+    /// Flicker AQ makes adjustments within each frame to reduce flicker or 'pop' on I-frames. The value to enter in this field depends on the value in the Adaptive quantization field. For more information, see the topic about video adaptive quantization in the MediaLive user guide.
     pub fn get_flicker_aq(&self) -> &::std::option::Option<crate::types::H265FlickerAq> {
         &self.flicker_aq
     }

@@ -93,18 +93,8 @@ pub fn de_db_proxy(
                 builder = builder.set_vpc_subnet_ids(var_7);
             }
             ,
-            s if s.matches("Auth") /* Auth com.amazonaws.rds#DBProxy$Auth */ =>  {
+            s if s.matches("DefaultAuthScheme") /* DefaultAuthScheme com.amazonaws.rds#DBProxy$DefaultAuthScheme */ =>  {
                 let var_8 =
-                    Some(
-                        crate::protocol_serde::shape_user_auth_config_info_list::de_user_auth_config_info_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_auth(var_8);
-            }
-            ,
-            s if s.matches("RoleArn") /* RoleArn com.amazonaws.rds#DBProxy$RoleArn */ =>  {
-                let var_9 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -113,10 +103,20 @@ pub fn de_db_proxy(
                         ?
                     )
                 ;
-                builder = builder.set_role_arn(var_9);
+                builder = builder.set_default_auth_scheme(var_8);
             }
             ,
-            s if s.matches("Endpoint") /* Endpoint com.amazonaws.rds#DBProxy$Endpoint */ =>  {
+            s if s.matches("Auth") /* Auth com.amazonaws.rds#DBProxy$Auth */ =>  {
+                let var_9 =
+                    Some(
+                        crate::protocol_serde::shape_user_auth_config_info_list::de_user_auth_config_info_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_auth(var_9);
+            }
+            ,
+            s if s.matches("RoleArn") /* RoleArn com.amazonaws.rds#DBProxy$RoleArn */ =>  {
                 let var_10 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -126,11 +126,24 @@ pub fn de_db_proxy(
                         ?
                     )
                 ;
-                builder = builder.set_endpoint(var_10);
+                builder = builder.set_role_arn(var_10);
+            }
+            ,
+            s if s.matches("Endpoint") /* Endpoint com.amazonaws.rds#DBProxy$Endpoint */ =>  {
+                let var_11 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_endpoint(var_11);
             }
             ,
             s if s.matches("RequireTLS") /* RequireTLS com.amazonaws.rds#DBProxy$RequireTLS */ =>  {
-                let var_11 =
+                let var_12 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -141,11 +154,11 @@ pub fn de_db_proxy(
                         ?
                     )
                 ;
-                builder = builder.set_require_tls(var_11);
+                builder = builder.set_require_tls(var_12);
             }
             ,
             s if s.matches("IdleClientTimeout") /* IdleClientTimeout com.amazonaws.rds#DBProxy$IdleClientTimeout */ =>  {
-                let var_12 =
+                let var_13 =
                     Some(
                          {
                             <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -156,11 +169,11 @@ pub fn de_db_proxy(
                         ?
                     )
                 ;
-                builder = builder.set_idle_client_timeout(var_12);
+                builder = builder.set_idle_client_timeout(var_13);
             }
             ,
             s if s.matches("DebugLogging") /* DebugLogging com.amazonaws.rds#DBProxy$DebugLogging */ =>  {
-                let var_13 =
+                let var_14 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -171,24 +184,10 @@ pub fn de_db_proxy(
                         ?
                     )
                 ;
-                builder = builder.set_debug_logging(var_13);
+                builder = builder.set_debug_logging(var_14);
             }
             ,
             s if s.matches("CreatedDate") /* CreatedDate com.amazonaws.rds#DBProxy$CreatedDate */ =>  {
-                let var_14 =
-                    Some(
-                        ::aws_smithy_types::DateTime::from_str(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , ::aws_smithy_types::date_time::Format::DateTimeWithOffset
-                        )
-                        .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (timestamp: `com.amazonaws.rds#TStamp`)"))
-                        ?
-                    )
-                ;
-                builder = builder.set_created_date(var_14);
-            }
-            ,
-            s if s.matches("UpdatedDate") /* UpdatedDate com.amazonaws.rds#DBProxy$UpdatedDate */ =>  {
                 let var_15 =
                     Some(
                         ::aws_smithy_types::DateTime::from_str(
@@ -199,11 +198,25 @@ pub fn de_db_proxy(
                         ?
                     )
                 ;
-                builder = builder.set_updated_date(var_15);
+                builder = builder.set_created_date(var_15);
+            }
+            ,
+            s if s.matches("UpdatedDate") /* UpdatedDate com.amazonaws.rds#DBProxy$UpdatedDate */ =>  {
+                let var_16 =
+                    Some(
+                        ::aws_smithy_types::DateTime::from_str(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            , ::aws_smithy_types::date_time::Format::DateTimeWithOffset
+                        )
+                        .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (timestamp: `com.amazonaws.rds#TStamp`)"))
+                        ?
+                    )
+                ;
+                builder = builder.set_updated_date(var_16);
             }
             ,
             s if s.matches("EndpointNetworkType") /* EndpointNetworkType com.amazonaws.rds#DBProxy$EndpointNetworkType */ =>  {
-                let var_16 =
+                let var_17 =
                     Some(
                         Result::<crate::types::EndpointNetworkType, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::EndpointNetworkType::from(
@@ -213,11 +226,11 @@ pub fn de_db_proxy(
                         ?
                     )
                 ;
-                builder = builder.set_endpoint_network_type(var_16);
+                builder = builder.set_endpoint_network_type(var_17);
             }
             ,
             s if s.matches("TargetConnectionNetworkType") /* TargetConnectionNetworkType com.amazonaws.rds#DBProxy$TargetConnectionNetworkType */ =>  {
-                let var_17 =
+                let var_18 =
                     Some(
                         Result::<crate::types::TargetConnectionNetworkType, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::TargetConnectionNetworkType::from(
@@ -227,7 +240,7 @@ pub fn de_db_proxy(
                         ?
                     )
                 ;
-                builder = builder.set_target_connection_network_type(var_17);
+                builder = builder.set_target_connection_network_type(var_18);
             }
             ,
             _ => {}

@@ -308,7 +308,7 @@ pub enum CreateTemplateAliasError {
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
-    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
+    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::types::error::UnsupportedUserEditionException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

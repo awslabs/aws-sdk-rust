@@ -6,11 +6,17 @@
 pub struct EksInfo {
     /// <p>The namespaces of the Amazon EKS cluster.</p>
     pub namespace: ::std::option::Option<::std::string::String>,
+    /// <p>The nodeLabel of the nodes where the resources of this virtual cluster can get scheduled. It requires relevant scaling and policy engine addons.</p>
+    pub node_label: ::std::option::Option<::std::string::String>,
 }
 impl EksInfo {
     /// <p>The namespaces of the Amazon EKS cluster.</p>
     pub fn namespace(&self) -> ::std::option::Option<&str> {
         self.namespace.as_deref()
+    }
+    /// <p>The nodeLabel of the nodes where the resources of this virtual cluster can get scheduled. It requires relevant scaling and policy engine addons.</p>
+    pub fn node_label(&self) -> ::std::option::Option<&str> {
+        self.node_label.as_deref()
     }
 }
 impl EksInfo {
@@ -25,6 +31,7 @@ impl EksInfo {
 #[non_exhaustive]
 pub struct EksInfoBuilder {
     pub(crate) namespace: ::std::option::Option<::std::string::String>,
+    pub(crate) node_label: ::std::option::Option<::std::string::String>,
 }
 impl EksInfoBuilder {
     /// <p>The namespaces of the Amazon EKS cluster.</p>
@@ -41,8 +48,25 @@ impl EksInfoBuilder {
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
         &self.namespace
     }
+    /// <p>The nodeLabel of the nodes where the resources of this virtual cluster can get scheduled. It requires relevant scaling and policy engine addons.</p>
+    pub fn node_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.node_label = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The nodeLabel of the nodes where the resources of this virtual cluster can get scheduled. It requires relevant scaling and policy engine addons.</p>
+    pub fn set_node_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.node_label = input;
+        self
+    }
+    /// <p>The nodeLabel of the nodes where the resources of this virtual cluster can get scheduled. It requires relevant scaling and policy engine addons.</p>
+    pub fn get_node_label(&self) -> &::std::option::Option<::std::string::String> {
+        &self.node_label
+    }
     /// Consumes the builder and constructs a [`EksInfo`](crate::types::EksInfo).
     pub fn build(self) -> crate::types::EksInfo {
-        crate::types::EksInfo { namespace: self.namespace }
+        crate::types::EksInfo {
+            namespace: self.namespace,
+            node_label: self.node_label,
+        }
     }
 }

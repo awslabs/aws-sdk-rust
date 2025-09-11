@@ -136,6 +136,20 @@ impl CreateDBProxyFluentBuilder {
     pub fn get_engine_family(&self) -> &::std::option::Option<crate::types::EngineFamily> {
         self.inner.get_engine_family()
     }
+    /// <p>The default authentication scheme that the proxy uses for client connections to the proxy and connections from the proxy to the underlying database. Valid values are <code>NONE</code> and <code>IAM_AUTH</code>. When set to <code>IAM_AUTH</code>, the proxy uses end-to-end IAM authentication to connect to the database. If you don't specify <code>DefaultAuthScheme</code> or specify this parameter as <code>NONE</code>, you must specify the <code>Auth</code> option.</p>
+    pub fn default_auth_scheme(mut self, input: crate::types::DefaultAuthScheme) -> Self {
+        self.inner = self.inner.default_auth_scheme(input);
+        self
+    }
+    /// <p>The default authentication scheme that the proxy uses for client connections to the proxy and connections from the proxy to the underlying database. Valid values are <code>NONE</code> and <code>IAM_AUTH</code>. When set to <code>IAM_AUTH</code>, the proxy uses end-to-end IAM authentication to connect to the database. If you don't specify <code>DefaultAuthScheme</code> or specify this parameter as <code>NONE</code>, you must specify the <code>Auth</code> option.</p>
+    pub fn set_default_auth_scheme(mut self, input: ::std::option::Option<crate::types::DefaultAuthScheme>) -> Self {
+        self.inner = self.inner.set_default_auth_scheme(input);
+        self
+    }
+    /// <p>The default authentication scheme that the proxy uses for client connections to the proxy and connections from the proxy to the underlying database. Valid values are <code>NONE</code> and <code>IAM_AUTH</code>. When set to <code>IAM_AUTH</code>, the proxy uses end-to-end IAM authentication to connect to the database. If you don't specify <code>DefaultAuthScheme</code> or specify this parameter as <code>NONE</code>, you must specify the <code>Auth</code> option.</p>
+    pub fn get_default_auth_scheme(&self) -> &::std::option::Option<crate::types::DefaultAuthScheme> {
+        self.inner.get_default_auth_scheme()
+    }
     ///
     /// Appends an item to `Auth`.
     ///

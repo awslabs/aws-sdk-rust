@@ -82,6 +82,9 @@ pub mod create_topic_refresh_schedule;
 /// Types for the `CreateVPCConnection` operation.
 pub mod create_vpc_connection;
 
+/// Types for the `DeleteAccountCustomPermission` operation.
+pub mod delete_account_custom_permission;
+
 /// Types for the `DeleteAccountCustomization` operation.
 pub mod delete_account_customization;
 
@@ -174,6 +177,9 @@ pub mod delete_user_custom_permission;
 
 /// Types for the `DeleteVPCConnection` operation.
 pub mod delete_vpc_connection;
+
+/// Types for the `DescribeAccountCustomPermission` operation.
+pub mod describe_account_custom_permission;
 
 /// Types for the `DescribeAccountCustomization` operation.
 pub mod describe_account_customization;
@@ -495,6 +501,9 @@ pub mod tag_resource;
 
 /// Types for the `UntagResource` operation.
 pub mod untag_resource;
+
+/// Types for the `UpdateAccountCustomPermission` operation.
+pub mod update_account_custom_permission;
 
 /// Types for the `UpdateAccountCustomization` operation.
 pub mod update_account_customization;

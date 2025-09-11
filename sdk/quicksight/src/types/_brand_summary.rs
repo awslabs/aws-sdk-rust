@@ -6,7 +6,7 @@
 pub struct BrandSummary {
     /// <p>The Amazon Resource Name (ARN) of the brand.</p>
     pub arn: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of the Amazon QuickSight brand.</p>
+    /// <p>The ID of the QuickSight brand.</p>
     pub brand_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the brand.</p>
     pub brand_name: ::std::option::Option<::std::string::String>,
@@ -24,7 +24,7 @@ impl BrandSummary {
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The ID of the Amazon QuickSight brand.</p>
+    /// <p>The ID of the QuickSight brand.</p>
     pub fn brand_id(&self) -> ::std::option::Option<&str> {
         self.brand_id.as_deref()
     }
@@ -83,17 +83,17 @@ impl BrandSummaryBuilder {
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
-    /// <p>The ID of the Amazon QuickSight brand.</p>
+    /// <p>The ID of the QuickSight brand.</p>
     pub fn brand_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.brand_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the Amazon QuickSight brand.</p>
+    /// <p>The ID of the QuickSight brand.</p>
     pub fn set_brand_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.brand_id = input;
         self
     }
-    /// <p>The ID of the Amazon QuickSight brand.</p>
+    /// <p>The ID of the QuickSight brand.</p>
     pub fn get_brand_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.brand_id
     }

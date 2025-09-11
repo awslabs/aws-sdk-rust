@@ -6,11 +6,17 @@
 pub struct IamUserProfileDetails {
     /// <p>The ARN of an IAM user profile in Amazon DataZone.</p>
     pub arn: ::std::option::Option<::std::string::String>,
+    /// <p>Principal ID of the IAM user.</p>
+    pub principal_id: ::std::option::Option<::std::string::String>,
 }
 impl IamUserProfileDetails {
     /// <p>The ARN of an IAM user profile in Amazon DataZone.</p>
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
+    }
+    /// <p>Principal ID of the IAM user.</p>
+    pub fn principal_id(&self) -> ::std::option::Option<&str> {
+        self.principal_id.as_deref()
     }
 }
 impl IamUserProfileDetails {
@@ -25,6 +31,7 @@ impl IamUserProfileDetails {
 #[non_exhaustive]
 pub struct IamUserProfileDetailsBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) principal_id: ::std::option::Option<::std::string::String>,
 }
 impl IamUserProfileDetailsBuilder {
     /// <p>The ARN of an IAM user profile in Amazon DataZone.</p>
@@ -41,8 +48,25 @@ impl IamUserProfileDetailsBuilder {
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
+    /// <p>Principal ID of the IAM user.</p>
+    pub fn principal_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.principal_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Principal ID of the IAM user.</p>
+    pub fn set_principal_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.principal_id = input;
+        self
+    }
+    /// <p>Principal ID of the IAM user.</p>
+    pub fn get_principal_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.principal_id
+    }
     /// Consumes the builder and constructs a [`IamUserProfileDetails`](crate::types::IamUserProfileDetails).
     pub fn build(self) -> crate::types::IamUserProfileDetails {
-        crate::types::IamUserProfileDetails { arn: self.arn }
+        crate::types::IamUserProfileDetails {
+            arn: self.arn,
+            principal_id: self.principal_id,
+        }
     }
 }

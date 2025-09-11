@@ -22,7 +22,7 @@ impl crate::operation::delete_account_subscription::builders::DeleteAccountSubsc
 }
 /// Fluent builder constructing a request to `DeleteAccountSubscription`.
 ///
-/// <p>Use the <code>DeleteAccountSubscription</code> operation to delete an Amazon QuickSight account. This operation will result in an error message if you have configured your account termination protection settings to <code>True</code>. To change this setting and delete your account, call the <code>UpdateAccountSettings</code> API and set the value of the <code>TerminationProtectionEnabled</code> parameter to <code>False</code>, then make another call to the <code>DeleteAccountSubscription</code> API.</p>
+/// <p>Use the <code>DeleteAccountSubscription</code> operation to delete an QuickSight account. This operation will result in an error message if you have configured your account termination protection settings to <code>True</code>. To change this setting and delete your account, call the <code>UpdateAccountSettings</code> API and set the value of the <code>TerminationProtectionEnabled</code> parameter to <code>False</code>, then make another call to the <code>DeleteAccountSubscription</code> API.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteAccountSubscriptionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -268,7 +268,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateEnviron
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum CreateEnvironmentHostError {
-    /// <p>The <code>CreateEnvironmentHost</code> operation couldn't be performed because the service is throttling requests. This exception is thrown when the <code>CreateEnvironmentHost</code> request exceeds concurrency of 1 transaction per second (TPS).</p>
+    /// <p>The operation couldn't be performed because the service is throttling requests. This exception is thrown when there are too many requests accepted concurrently from the service endpoint.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>The input fails to satisfy the specified constraints. You will see this exception if invalid inputs are provided for any of the Amazon EVS environment operations, or if a list operation is performed on an environment resource that is still initializing.</p>
     ValidationException(crate::types::error::ValidationException),

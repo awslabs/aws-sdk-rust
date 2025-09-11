@@ -231,6 +231,8 @@ mod delete_rule_groups_namespace;
 
 mod delete_scraper;
 
+mod delete_scraper_logging_configuration;
+
 mod delete_workspace;
 
 mod describe_alert_manager_definition;
@@ -244,6 +246,8 @@ mod describe_resource_policy;
 mod describe_rule_groups_namespace;
 
 mod describe_scraper;
+
+mod describe_scraper_logging_configuration;
 
 mod describe_workspace;
 
@@ -274,6 +278,8 @@ mod update_logging_configuration;
 mod update_query_logging_configuration;
 
 mod update_scraper;
+
+mod update_scraper_logging_configuration;
 
 mod update_workspace_alias;
 

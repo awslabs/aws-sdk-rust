@@ -75,6 +75,18 @@ pub use crate::types::_eks_configuration::EksConfiguration;
 
 pub use crate::types::_scraper_summary::ScraperSummary;
 
+pub use crate::types::_scraper_logging_configuration_status::ScraperLoggingConfigurationStatus;
+
+pub use crate::types::_scraper_logging_configuration_status_code::ScraperLoggingConfigurationStatusCode;
+
+pub use crate::types::_scraper_component::ScraperComponent;
+
+pub use crate::types::_component_config::ComponentConfig;
+
+pub use crate::types::_scraper_component_type::ScraperComponentType;
+
+pub use crate::types::_scraper_logging_destination::ScraperLoggingDestination;
+
 mod _alert_manager_definition_description;
 
 mod _alert_manager_definition_status;
@@ -84,6 +96,8 @@ mod _alert_manager_definition_status_code;
 mod _amp_configuration;
 
 mod _cloud_watch_log_destination;
+
+mod _component_config;
 
 mod _destination;
 
@@ -121,7 +135,17 @@ mod _rule_groups_namespace_summary;
 
 mod _scrape_configuration;
 
+mod _scraper_component;
+
+mod _scraper_component_type;
+
 mod _scraper_description;
+
+mod _scraper_logging_configuration_status;
+
+mod _scraper_logging_configuration_status_code;
+
+mod _scraper_logging_destination;
 
 mod _scraper_status;
 

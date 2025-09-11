@@ -29,8 +29,12 @@ pub struct DashboardPublishOptions {
     pub data_point_menu_label_option: ::std::option::Option<crate::types::DataPointMenuLabelOption>,
     /// <p>The data point tool tip options of a dashboard.</p>
     pub data_point_tooltip_option: ::std::option::Option<crate::types::DataPointTooltipOption>,
-    /// <p>Adds Q&amp;A capabilities to an Amazon QuickSight dashboard. If no topic is linked, Dashboard Q&amp;A uses the data values that are rendered on the dashboard. End users can use Dashboard Q&amp;A to ask for different slices of the data that they see on the dashboard. If a topic is linked, Topic Q&amp;A is used.</p>
+    /// <p>Adds Q&amp;A capabilities to an QuickSight dashboard. If no topic is linked, Dashboard Q&amp;A uses the data values that are rendered on the dashboard. End users can use Dashboard Q&amp;A to ask for different slices of the data that they see on the dashboard. If a topic is linked, Topic Q&amp;A is used.</p>
     pub data_qa_enabled_option: ::std::option::Option<crate::types::DataQaEnabledOption>,
+    /// <p>Executive summary option.</p>
+    pub executive_summary_option: ::std::option::Option<crate::types::ExecutiveSummaryOption>,
+    /// <p>Data stories sharing option.</p>
+    pub data_stories_sharing_option: ::std::option::Option<crate::types::DataStoriesSharingOption>,
 }
 impl DashboardPublishOptions {
     /// <p>Ad hoc (one-time) filtering option.</p>
@@ -80,9 +84,17 @@ impl DashboardPublishOptions {
     pub fn data_point_tooltip_option(&self) -> ::std::option::Option<&crate::types::DataPointTooltipOption> {
         self.data_point_tooltip_option.as_ref()
     }
-    /// <p>Adds Q&amp;A capabilities to an Amazon QuickSight dashboard. If no topic is linked, Dashboard Q&amp;A uses the data values that are rendered on the dashboard. End users can use Dashboard Q&amp;A to ask for different slices of the data that they see on the dashboard. If a topic is linked, Topic Q&amp;A is used.</p>
+    /// <p>Adds Q&amp;A capabilities to an QuickSight dashboard. If no topic is linked, Dashboard Q&amp;A uses the data values that are rendered on the dashboard. End users can use Dashboard Q&amp;A to ask for different slices of the data that they see on the dashboard. If a topic is linked, Topic Q&amp;A is used.</p>
     pub fn data_qa_enabled_option(&self) -> ::std::option::Option<&crate::types::DataQaEnabledOption> {
         self.data_qa_enabled_option.as_ref()
+    }
+    /// <p>Executive summary option.</p>
+    pub fn executive_summary_option(&self) -> ::std::option::Option<&crate::types::ExecutiveSummaryOption> {
+        self.executive_summary_option.as_ref()
+    }
+    /// <p>Data stories sharing option.</p>
+    pub fn data_stories_sharing_option(&self) -> ::std::option::Option<&crate::types::DataStoriesSharingOption> {
+        self.data_stories_sharing_option.as_ref()
     }
 }
 impl DashboardPublishOptions {
@@ -108,6 +120,8 @@ pub struct DashboardPublishOptionsBuilder {
     pub(crate) data_point_menu_label_option: ::std::option::Option<crate::types::DataPointMenuLabelOption>,
     pub(crate) data_point_tooltip_option: ::std::option::Option<crate::types::DataPointTooltipOption>,
     pub(crate) data_qa_enabled_option: ::std::option::Option<crate::types::DataQaEnabledOption>,
+    pub(crate) executive_summary_option: ::std::option::Option<crate::types::ExecutiveSummaryOption>,
+    pub(crate) data_stories_sharing_option: ::std::option::Option<crate::types::DataStoriesSharingOption>,
 }
 impl DashboardPublishOptionsBuilder {
     /// <p>Ad hoc (one-time) filtering option.</p>
@@ -276,19 +290,47 @@ impl DashboardPublishOptionsBuilder {
     pub fn get_data_point_tooltip_option(&self) -> &::std::option::Option<crate::types::DataPointTooltipOption> {
         &self.data_point_tooltip_option
     }
-    /// <p>Adds Q&amp;A capabilities to an Amazon QuickSight dashboard. If no topic is linked, Dashboard Q&amp;A uses the data values that are rendered on the dashboard. End users can use Dashboard Q&amp;A to ask for different slices of the data that they see on the dashboard. If a topic is linked, Topic Q&amp;A is used.</p>
+    /// <p>Adds Q&amp;A capabilities to an QuickSight dashboard. If no topic is linked, Dashboard Q&amp;A uses the data values that are rendered on the dashboard. End users can use Dashboard Q&amp;A to ask for different slices of the data that they see on the dashboard. If a topic is linked, Topic Q&amp;A is used.</p>
     pub fn data_qa_enabled_option(mut self, input: crate::types::DataQaEnabledOption) -> Self {
         self.data_qa_enabled_option = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Adds Q&amp;A capabilities to an Amazon QuickSight dashboard. If no topic is linked, Dashboard Q&amp;A uses the data values that are rendered on the dashboard. End users can use Dashboard Q&amp;A to ask for different slices of the data that they see on the dashboard. If a topic is linked, Topic Q&amp;A is used.</p>
+    /// <p>Adds Q&amp;A capabilities to an QuickSight dashboard. If no topic is linked, Dashboard Q&amp;A uses the data values that are rendered on the dashboard. End users can use Dashboard Q&amp;A to ask for different slices of the data that they see on the dashboard. If a topic is linked, Topic Q&amp;A is used.</p>
     pub fn set_data_qa_enabled_option(mut self, input: ::std::option::Option<crate::types::DataQaEnabledOption>) -> Self {
         self.data_qa_enabled_option = input;
         self
     }
-    /// <p>Adds Q&amp;A capabilities to an Amazon QuickSight dashboard. If no topic is linked, Dashboard Q&amp;A uses the data values that are rendered on the dashboard. End users can use Dashboard Q&amp;A to ask for different slices of the data that they see on the dashboard. If a topic is linked, Topic Q&amp;A is used.</p>
+    /// <p>Adds Q&amp;A capabilities to an QuickSight dashboard. If no topic is linked, Dashboard Q&amp;A uses the data values that are rendered on the dashboard. End users can use Dashboard Q&amp;A to ask for different slices of the data that they see on the dashboard. If a topic is linked, Topic Q&amp;A is used.</p>
     pub fn get_data_qa_enabled_option(&self) -> &::std::option::Option<crate::types::DataQaEnabledOption> {
         &self.data_qa_enabled_option
+    }
+    /// <p>Executive summary option.</p>
+    pub fn executive_summary_option(mut self, input: crate::types::ExecutiveSummaryOption) -> Self {
+        self.executive_summary_option = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Executive summary option.</p>
+    pub fn set_executive_summary_option(mut self, input: ::std::option::Option<crate::types::ExecutiveSummaryOption>) -> Self {
+        self.executive_summary_option = input;
+        self
+    }
+    /// <p>Executive summary option.</p>
+    pub fn get_executive_summary_option(&self) -> &::std::option::Option<crate::types::ExecutiveSummaryOption> {
+        &self.executive_summary_option
+    }
+    /// <p>Data stories sharing option.</p>
+    pub fn data_stories_sharing_option(mut self, input: crate::types::DataStoriesSharingOption) -> Self {
+        self.data_stories_sharing_option = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Data stories sharing option.</p>
+    pub fn set_data_stories_sharing_option(mut self, input: ::std::option::Option<crate::types::DataStoriesSharingOption>) -> Self {
+        self.data_stories_sharing_option = input;
+        self
+    }
+    /// <p>Data stories sharing option.</p>
+    pub fn get_data_stories_sharing_option(&self) -> &::std::option::Option<crate::types::DataStoriesSharingOption> {
+        &self.data_stories_sharing_option
     }
     /// Consumes the builder and constructs a [`DashboardPublishOptions`](crate::types::DashboardPublishOptions).
     pub fn build(self) -> crate::types::DashboardPublishOptions {
@@ -305,6 +347,8 @@ impl DashboardPublishOptionsBuilder {
             data_point_menu_label_option: self.data_point_menu_label_option,
             data_point_tooltip_option: self.data_point_tooltip_option,
             data_qa_enabled_option: self.data_qa_enabled_option,
+            executive_summary_option: self.executive_summary_option,
+            data_stories_sharing_option: self.data_stories_sharing_option,
         }
     }
 }

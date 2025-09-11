@@ -16,81 +16,86 @@ pub fn ser_create_db_proxy_input_input_input(
         scope_3.string(var_4.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_5 = writer.prefix("Auth");
-    if let Some(var_6) = &input.auth {
-        let mut list_8 = scope_5.start_list(false, None);
-        for item_7 in var_6 {
+    let mut scope_5 = writer.prefix("DefaultAuthScheme");
+    if let Some(var_6) = &input.default_auth_scheme {
+        scope_5.string(var_6.as_str());
+    }
+    #[allow(unused_mut)]
+    let mut scope_7 = writer.prefix("Auth");
+    if let Some(var_8) = &input.auth {
+        let mut list_10 = scope_7.start_list(false, None);
+        for item_9 in var_8 {
             #[allow(unused_mut)]
-            let mut entry_9 = list_8.entry();
-            crate::protocol_serde::shape_user_auth_config::ser_user_auth_config(entry_9, item_7)?;
+            let mut entry_11 = list_10.entry();
+            crate::protocol_serde::shape_user_auth_config::ser_user_auth_config(entry_11, item_9)?;
         }
-        list_8.finish();
+        list_10.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_10 = writer.prefix("RoleArn");
-    if let Some(var_11) = &input.role_arn {
-        scope_10.string(var_11);
+    let mut scope_12 = writer.prefix("RoleArn");
+    if let Some(var_13) = &input.role_arn {
+        scope_12.string(var_13);
     }
     #[allow(unused_mut)]
-    let mut scope_12 = writer.prefix("VpcSubnetIds");
-    if let Some(var_13) = &input.vpc_subnet_ids {
-        let mut list_15 = scope_12.start_list(false, None);
-        for item_14 in var_13 {
+    let mut scope_14 = writer.prefix("VpcSubnetIds");
+    if let Some(var_15) = &input.vpc_subnet_ids {
+        let mut list_17 = scope_14.start_list(false, None);
+        for item_16 in var_15 {
             #[allow(unused_mut)]
-            let mut entry_16 = list_15.entry();
-            entry_16.string(item_14);
+            let mut entry_18 = list_17.entry();
+            entry_18.string(item_16);
         }
-        list_15.finish();
+        list_17.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_17 = writer.prefix("VpcSecurityGroupIds");
-    if let Some(var_18) = &input.vpc_security_group_ids {
-        let mut list_20 = scope_17.start_list(false, None);
-        for item_19 in var_18 {
+    let mut scope_19 = writer.prefix("VpcSecurityGroupIds");
+    if let Some(var_20) = &input.vpc_security_group_ids {
+        let mut list_22 = scope_19.start_list(false, None);
+        for item_21 in var_20 {
             #[allow(unused_mut)]
-            let mut entry_21 = list_20.entry();
-            entry_21.string(item_19);
+            let mut entry_23 = list_22.entry();
+            entry_23.string(item_21);
         }
-        list_20.finish();
+        list_22.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_22 = writer.prefix("RequireTLS");
-    if let Some(var_23) = &input.require_tls {
-        scope_22.boolean(*var_23);
+    let mut scope_24 = writer.prefix("RequireTLS");
+    if let Some(var_25) = &input.require_tls {
+        scope_24.boolean(*var_25);
     }
     #[allow(unused_mut)]
-    let mut scope_24 = writer.prefix("IdleClientTimeout");
-    if let Some(var_25) = &input.idle_client_timeout {
-        scope_24.number(
+    let mut scope_26 = writer.prefix("IdleClientTimeout");
+    if let Some(var_27) = &input.idle_client_timeout {
+        scope_26.number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_25).into()),
+            ::aws_smithy_types::Number::NegInt((*var_27).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_26 = writer.prefix("DebugLogging");
-    if let Some(var_27) = &input.debug_logging {
-        scope_26.boolean(*var_27);
+    let mut scope_28 = writer.prefix("DebugLogging");
+    if let Some(var_29) = &input.debug_logging {
+        scope_28.boolean(*var_29);
     }
     #[allow(unused_mut)]
-    let mut scope_28 = writer.prefix("Tags");
-    if let Some(var_29) = &input.tags {
-        let mut list_31 = scope_28.start_list(false, Some("Tag"));
-        for item_30 in var_29 {
+    let mut scope_30 = writer.prefix("Tags");
+    if let Some(var_31) = &input.tags {
+        let mut list_33 = scope_30.start_list(false, Some("Tag"));
+        for item_32 in var_31 {
             #[allow(unused_mut)]
-            let mut entry_32 = list_31.entry();
-            crate::protocol_serde::shape_tag::ser_tag(entry_32, item_30)?;
+            let mut entry_34 = list_33.entry();
+            crate::protocol_serde::shape_tag::ser_tag(entry_34, item_32)?;
         }
-        list_31.finish();
+        list_33.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_33 = writer.prefix("EndpointNetworkType");
-    if let Some(var_34) = &input.endpoint_network_type {
-        scope_33.string(var_34.as_str());
-    }
-    #[allow(unused_mut)]
-    let mut scope_35 = writer.prefix("TargetConnectionNetworkType");
-    if let Some(var_36) = &input.target_connection_network_type {
+    let mut scope_35 = writer.prefix("EndpointNetworkType");
+    if let Some(var_36) = &input.endpoint_network_type {
         scope_35.string(var_36.as_str());
+    }
+    #[allow(unused_mut)]
+    let mut scope_37 = writer.prefix("TargetConnectionNetworkType");
+    if let Some(var_38) = &input.target_connection_network_type {
+        scope_37.string(var_38.as_str());
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

@@ -19,6 +19,8 @@ pub struct DbProxy {
     pub vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The EC2 subnet IDs for the proxy.</p>
     pub vpc_subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The default authentication scheme that the proxy uses for client connections to the proxy and connections from the proxy to the underlying database. Valid values are <code>NONE</code> and <code>IAM_AUTH</code>. When set to <code>IAM_AUTH</code>, the proxy uses end-to-end IAM authentication to connect to the database.</p>
+    pub default_auth_scheme: ::std::option::Option<::std::string::String>,
     /// <p>One or more data structures specifying the authorization mechanism to connect to the associated RDS DB instance or Aurora DB cluster.</p>
     pub auth: ::std::option::Option<::std::vec::Vec<crate::types::UserAuthConfigInfo>>,
     /// <p>The Amazon Resource Name (ARN) for the IAM role that the proxy uses to access Amazon Secrets Manager.</p>
@@ -90,6 +92,10 @@ impl DbProxy {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_subnet_ids.is_none()`.
     pub fn vpc_subnet_ids(&self) -> &[::std::string::String] {
         self.vpc_subnet_ids.as_deref().unwrap_or_default()
+    }
+    /// <p>The default authentication scheme that the proxy uses for client connections to the proxy and connections from the proxy to the underlying database. Valid values are <code>NONE</code> and <code>IAM_AUTH</code>. When set to <code>IAM_AUTH</code>, the proxy uses end-to-end IAM authentication to connect to the database.</p>
+    pub fn default_auth_scheme(&self) -> ::std::option::Option<&str> {
+        self.default_auth_scheme.as_deref()
     }
     /// <p>One or more data structures specifying the authorization mechanism to connect to the associated RDS DB instance or Aurora DB cluster.</p>
     ///
@@ -170,6 +176,7 @@ pub struct DbProxyBuilder {
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) vpc_subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) default_auth_scheme: ::std::option::Option<::std::string::String>,
     pub(crate) auth: ::std::option::Option<::std::vec::Vec<crate::types::UserAuthConfigInfo>>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) endpoint: ::std::option::Option<::std::string::String>,
@@ -291,6 +298,20 @@ impl DbProxyBuilder {
     /// <p>The EC2 subnet IDs for the proxy.</p>
     pub fn get_vpc_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.vpc_subnet_ids
+    }
+    /// <p>The default authentication scheme that the proxy uses for client connections to the proxy and connections from the proxy to the underlying database. Valid values are <code>NONE</code> and <code>IAM_AUTH</code>. When set to <code>IAM_AUTH</code>, the proxy uses end-to-end IAM authentication to connect to the database.</p>
+    pub fn default_auth_scheme(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.default_auth_scheme = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The default authentication scheme that the proxy uses for client connections to the proxy and connections from the proxy to the underlying database. Valid values are <code>NONE</code> and <code>IAM_AUTH</code>. When set to <code>IAM_AUTH</code>, the proxy uses end-to-end IAM authentication to connect to the database.</p>
+    pub fn set_default_auth_scheme(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.default_auth_scheme = input;
+        self
+    }
+    /// <p>The default authentication scheme that the proxy uses for client connections to the proxy and connections from the proxy to the underlying database. Valid values are <code>NONE</code> and <code>IAM_AUTH</code>. When set to <code>IAM_AUTH</code>, the proxy uses end-to-end IAM authentication to connect to the database.</p>
+    pub fn get_default_auth_scheme(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_auth_scheme
     }
     /// Appends an item to `auth`.
     ///
@@ -502,6 +523,7 @@ impl DbProxyBuilder {
             vpc_id: self.vpc_id,
             vpc_security_group_ids: self.vpc_security_group_ids,
             vpc_subnet_ids: self.vpc_subnet_ids,
+            default_auth_scheme: self.default_auth_scheme,
             auth: self.auth,
             role_arn: self.role_arn,
             endpoint: self.endpoint,

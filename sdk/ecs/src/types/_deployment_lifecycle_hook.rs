@@ -44,6 +44,8 @@ pub struct DeploymentLifecycleHook {
     /// </ul>
     /// <p>You must provide this parameter when configuring a deployment lifecycle hook.</p>
     pub lifecycle_stages: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentLifecycleHookStage>>,
+    /// <p>Use this field to specify custom parameters that Amazon ECS will pass to your hook target invocations (such as a Lambda function).</p>
+    pub hook_details: ::std::option::Option<::aws_smithy_types::Document>,
 }
 impl DeploymentLifecycleHook {
     /// <p>The Amazon Resource Name (ARN) of the hook target. Currently, only Lambda function ARNs are supported.</p>
@@ -93,6 +95,10 @@ impl DeploymentLifecycleHook {
     pub fn lifecycle_stages(&self) -> &[crate::types::DeploymentLifecycleHookStage] {
         self.lifecycle_stages.as_deref().unwrap_or_default()
     }
+    /// <p>Use this field to specify custom parameters that Amazon ECS will pass to your hook target invocations (such as a Lambda function).</p>
+    pub fn hook_details(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
+        self.hook_details.as_ref()
+    }
 }
 impl DeploymentLifecycleHook {
     /// Creates a new builder-style object to manufacture [`DeploymentLifecycleHook`](crate::types::DeploymentLifecycleHook).
@@ -108,6 +114,7 @@ pub struct DeploymentLifecycleHookBuilder {
     pub(crate) hook_target_arn: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) lifecycle_stages: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentLifecycleHookStage>>,
+    pub(crate) hook_details: ::std::option::Option<::aws_smithy_types::Document>,
 }
 impl DeploymentLifecycleHookBuilder {
     /// <p>The Amazon Resource Name (ARN) of the hook target. Currently, only Lambda function ARNs are supported.</p>
@@ -257,12 +264,27 @@ impl DeploymentLifecycleHookBuilder {
     pub fn get_lifecycle_stages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeploymentLifecycleHookStage>> {
         &self.lifecycle_stages
     }
+    /// <p>Use this field to specify custom parameters that Amazon ECS will pass to your hook target invocations (such as a Lambda function).</p>
+    pub fn hook_details(mut self, input: ::aws_smithy_types::Document) -> Self {
+        self.hook_details = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Use this field to specify custom parameters that Amazon ECS will pass to your hook target invocations (such as a Lambda function).</p>
+    pub fn set_hook_details(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
+        self.hook_details = input;
+        self
+    }
+    /// <p>Use this field to specify custom parameters that Amazon ECS will pass to your hook target invocations (such as a Lambda function).</p>
+    pub fn get_hook_details(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
+        &self.hook_details
+    }
     /// Consumes the builder and constructs a [`DeploymentLifecycleHook`](crate::types::DeploymentLifecycleHook).
     pub fn build(self) -> crate::types::DeploymentLifecycleHook {
         crate::types::DeploymentLifecycleHook {
             hook_target_arn: self.hook_target_arn,
             role_arn: self.role_arn,
             lifecycle_stages: self.lifecycle_stages,
+            hook_details: self.hook_details,
         }
     }
 }

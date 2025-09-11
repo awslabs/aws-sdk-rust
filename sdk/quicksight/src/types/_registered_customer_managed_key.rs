@@ -3,20 +3,20 @@
 /// <p>A customer managed key structure that contains the information listed below:</p>
 /// <ul>
 /// <li>
-/// <p><code>KeyArn</code> - The ARN of a KMS key that is registered to a Amazon QuickSight account for encryption and decryption use.</p></li>
+/// <p><code>KeyArn</code> - The ARN of a KMS key that is registered to a QuickSight account for encryption and decryption use.</p></li>
 /// <li>
 /// <p><code>DefaultKey</code> - Indicates whether the current key is set as the default key for encryption and decryption use.</p></li>
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisteredCustomerManagedKey {
-    /// <p>The ARN of the KMS key that is registered to a Amazon QuickSight account for encryption and decryption use.</p>
+    /// <p>The ARN of the KMS key that is registered to a QuickSight account for encryption and decryption use.</p>
     pub key_arn: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether a <code>RegisteredCustomerManagedKey</code> is set as the default key for encryption and decryption use.</p>
     pub default_key: bool,
 }
 impl RegisteredCustomerManagedKey {
-    /// <p>The ARN of the KMS key that is registered to a Amazon QuickSight account for encryption and decryption use.</p>
+    /// <p>The ARN of the KMS key that is registered to a QuickSight account for encryption and decryption use.</p>
     pub fn key_arn(&self) -> ::std::option::Option<&str> {
         self.key_arn.as_deref()
     }
@@ -40,17 +40,17 @@ pub struct RegisteredCustomerManagedKeyBuilder {
     pub(crate) default_key: ::std::option::Option<bool>,
 }
 impl RegisteredCustomerManagedKeyBuilder {
-    /// <p>The ARN of the KMS key that is registered to a Amazon QuickSight account for encryption and decryption use.</p>
+    /// <p>The ARN of the KMS key that is registered to a QuickSight account for encryption and decryption use.</p>
     pub fn key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the KMS key that is registered to a Amazon QuickSight account for encryption and decryption use.</p>
+    /// <p>The ARN of the KMS key that is registered to a QuickSight account for encryption and decryption use.</p>
     pub fn set_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_arn = input;
         self
     }
-    /// <p>The ARN of the KMS key that is registered to a Amazon QuickSight account for encryption and decryption use.</p>
+    /// <p>The ARN of the KMS key that is registered to a QuickSight account for encryption and decryption use.</p>
     pub fn get_key_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.key_arn
     }

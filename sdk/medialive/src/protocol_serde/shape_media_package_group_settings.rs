@@ -9,6 +9,12 @@ pub fn ser_media_package_group_settings(
         crate::protocol_serde::shape_output_location_ref::ser_output_location_ref(&mut object_2, var_1)?;
         object_2.finish();
     }
+    if let Some(var_3) = &input.mediapackage_v2_group_settings {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("mediapackageV2GroupSettings").start_object();
+        crate::protocol_serde::shape_media_package_v2_group_settings::ser_media_package_v2_group_settings(&mut object_4, var_3)?;
+        object_4.finish();
+    }
     Ok(())
 }
 
@@ -29,6 +35,11 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "destination" => {
                             builder = builder.set_destination(crate::protocol_serde::shape_output_location_ref::de_output_location_ref(tokens)?);
+                        }
+                        "mediapackageV2GroupSettings" => {
+                            builder = builder.set_mediapackage_v2_group_settings(
+                                crate::protocol_serde::shape_media_package_v2_group_settings::de_media_package_v2_group_settings(tokens)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

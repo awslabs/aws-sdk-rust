@@ -6,8 +6,7 @@
 pub struct AccountDetail {
     /// <p>The member account ID.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
-    /// <p>The email address of the member account.</p>
-    /// <p>The rules for a valid email address:</p>
+    /// <p>The email address of the member account. The following list includes the rules for a valid email address:</p>
     /// <ul>
     /// <li>
     /// <p>The email address must be a minimum of 6 and a maximum of 64 characters long.</p></li>
@@ -34,8 +33,7 @@ impl AccountDetail {
     pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
-    /// <p>The email address of the member account.</p>
-    /// <p>The rules for a valid email address:</p>
+    /// <p>The email address of the member account. The following list includes the rules for a valid email address:</p>
     /// <ul>
     /// <li>
     /// <p>The email address must be a minimum of 6 and a maximum of 64 characters long.</p></li>
@@ -97,8 +95,7 @@ impl AccountDetailBuilder {
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_id
     }
-    /// <p>The email address of the member account.</p>
-    /// <p>The rules for a valid email address:</p>
+    /// <p>The email address of the member account. The following list includes the rules for a valid email address:</p>
     /// <ul>
     /// <li>
     /// <p>The email address must be a minimum of 6 and a maximum of 64 characters long.</p></li>
@@ -123,8 +120,7 @@ impl AccountDetailBuilder {
         self.email = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The email address of the member account.</p>
-    /// <p>The rules for a valid email address:</p>
+    /// <p>The email address of the member account. The following list includes the rules for a valid email address:</p>
     /// <ul>
     /// <li>
     /// <p>The email address must be a minimum of 6 and a maximum of 64 characters long.</p></li>
@@ -148,8 +144,7 @@ impl AccountDetailBuilder {
         self.email = input;
         self
     }
-    /// <p>The email address of the member account.</p>
-    /// <p>The rules for a valid email address:</p>
+    /// <p>The email address of the member account. The following list includes the rules for a valid email address:</p>
     /// <ul>
     /// <li>
     /// <p>The email address must be a minimum of 6 and a maximum of 64 characters long.</p></li>

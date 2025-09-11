@@ -50,3 +50,9 @@ pub use crate::types::_scraper_description::ScraperDescriptionBuilder;
 pub use crate::types::_eks_configuration::EksConfigurationBuilder;
 
 pub use crate::types::_scraper_summary::ScraperSummaryBuilder;
+
+pub use crate::types::_scraper_logging_configuration_status::ScraperLoggingConfigurationStatusBuilder;
+
+pub use crate::types::_scraper_component::ScraperComponentBuilder;
+
+pub use crate::types::_component_config::ComponentConfigBuilder;

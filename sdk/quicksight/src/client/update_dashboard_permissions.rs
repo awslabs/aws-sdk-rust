@@ -15,7 +15,7 @@ impl super::Client {
     ///   - [`permissions(Option<Vec::<ResourcePermission>>)`](crate::operation::update_dashboard_permissions::UpdateDashboardPermissionsOutput::permissions): <p>Information about the permissions on the dashboard.</p>
     ///   - [`request_id(Option<String>)`](crate::operation::update_dashboard_permissions::UpdateDashboardPermissionsOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`status(i32)`](crate::operation::update_dashboard_permissions::UpdateDashboardPermissionsOutput::status): <p>The HTTP status of the request.</p>
-    ///   - [`link_sharing_configuration(Option<LinkSharingConfiguration>)`](crate::operation::update_dashboard_permissions::UpdateDashboardPermissionsOutput::link_sharing_configuration): <p>Updates the permissions of a shared link to an Amazon QuickSight dashboard.</p>
+    ///   - [`link_sharing_configuration(Option<LinkSharingConfiguration>)`](crate::operation::update_dashboard_permissions::UpdateDashboardPermissionsOutput::link_sharing_configuration): <p>Updates the permissions of a shared link to an QuickSight dashboard.</p>
     /// - On failure, responds with [`SdkError<UpdateDashboardPermissionsError>`](crate::operation::update_dashboard_permissions::UpdateDashboardPermissionsError)
     pub fn update_dashboard_permissions(&self) -> crate::operation::update_dashboard_permissions::builders::UpdateDashboardPermissionsFluentBuilder {
         crate::operation::update_dashboard_permissions::builders::UpdateDashboardPermissionsFluentBuilder::new(self.handle.clone())

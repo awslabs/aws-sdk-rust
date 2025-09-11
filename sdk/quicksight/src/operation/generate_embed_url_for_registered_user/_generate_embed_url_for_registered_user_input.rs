@@ -9,9 +9,9 @@ pub struct GenerateEmbedUrlForRegisteredUserInput {
     pub session_lifetime_in_minutes: ::std::option::Option<i64>,
     /// <p>The Amazon Resource Name for the registered user.</p>
     pub user_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The experience that you want to embed. For registered users, you can embed Amazon QuickSight dashboards, Amazon QuickSight visuals, the Amazon QuickSight Q search bar, the Amazon QuickSight Generative Q&amp;A experience, or the entire Amazon QuickSight console.</p>
+    /// <p>The experience that you want to embed. For registered users, you can embed QuickSight dashboards, QuickSight visuals, the QuickSight Q search bar, the QuickSight Generative Q&amp;A experience, or the entire QuickSight console.</p>
     pub experience_configuration: ::std::option::Option<crate::types::RegisteredUserEmbeddingExperienceConfiguration>,
-    /// <p>The domains that you want to add to the allow list for access to the generated URL that is then embedded. This optional parameter overrides the static domains that are configured in the Manage QuickSight menu in the Amazon QuickSight console. Instead, it allows only the domains that you include in this parameter. You can list up to three domains or subdomains in each API call.</p>
+    /// <p>The domains that you want to add to the allow list for access to the generated URL that is then embedded. This optional parameter overrides the static domains that are configured in the Manage QuickSight menu in the QuickSight console. Instead, it allows only the domains that you include in this parameter. You can list up to three domains or subdomains in each API call.</p>
     /// <p>To include all subdomains under a specific domain to the allow list, use <code>*</code>. For example, <code>https://*.sapp.amazon.com</code> includes all subdomains under <code>https://sapp.amazon.com</code>.</p>
     pub allowed_domains: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -28,11 +28,11 @@ impl GenerateEmbedUrlForRegisteredUserInput {
     pub fn user_arn(&self) -> ::std::option::Option<&str> {
         self.user_arn.as_deref()
     }
-    /// <p>The experience that you want to embed. For registered users, you can embed Amazon QuickSight dashboards, Amazon QuickSight visuals, the Amazon QuickSight Q search bar, the Amazon QuickSight Generative Q&amp;A experience, or the entire Amazon QuickSight console.</p>
+    /// <p>The experience that you want to embed. For registered users, you can embed QuickSight dashboards, QuickSight visuals, the QuickSight Q search bar, the QuickSight Generative Q&amp;A experience, or the entire QuickSight console.</p>
     pub fn experience_configuration(&self) -> ::std::option::Option<&crate::types::RegisteredUserEmbeddingExperienceConfiguration> {
         self.experience_configuration.as_ref()
     }
-    /// <p>The domains that you want to add to the allow list for access to the generated URL that is then embedded. This optional parameter overrides the static domains that are configured in the Manage QuickSight menu in the Amazon QuickSight console. Instead, it allows only the domains that you include in this parameter. You can list up to three domains or subdomains in each API call.</p>
+    /// <p>The domains that you want to add to the allow list for access to the generated URL that is then embedded. This optional parameter overrides the static domains that are configured in the Manage QuickSight menu in the QuickSight console. Instead, it allows only the domains that you include in this parameter. You can list up to three domains or subdomains in each API call.</p>
     /// <p>To include all subdomains under a specific domain to the allow list, use <code>*</code>. For example, <code>https://*.sapp.amazon.com</code> includes all subdomains under <code>https://sapp.amazon.com</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.allowed_domains.is_none()`.
@@ -102,13 +102,13 @@ impl GenerateEmbedUrlForRegisteredUserInputBuilder {
     pub fn get_user_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_arn
     }
-    /// <p>The experience that you want to embed. For registered users, you can embed Amazon QuickSight dashboards, Amazon QuickSight visuals, the Amazon QuickSight Q search bar, the Amazon QuickSight Generative Q&amp;A experience, or the entire Amazon QuickSight console.</p>
+    /// <p>The experience that you want to embed. For registered users, you can embed QuickSight dashboards, QuickSight visuals, the QuickSight Q search bar, the QuickSight Generative Q&amp;A experience, or the entire QuickSight console.</p>
     /// This field is required.
     pub fn experience_configuration(mut self, input: crate::types::RegisteredUserEmbeddingExperienceConfiguration) -> Self {
         self.experience_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The experience that you want to embed. For registered users, you can embed Amazon QuickSight dashboards, Amazon QuickSight visuals, the Amazon QuickSight Q search bar, the Amazon QuickSight Generative Q&amp;A experience, or the entire Amazon QuickSight console.</p>
+    /// <p>The experience that you want to embed. For registered users, you can embed QuickSight dashboards, QuickSight visuals, the QuickSight Q search bar, the QuickSight Generative Q&amp;A experience, or the entire QuickSight console.</p>
     pub fn set_experience_configuration(
         mut self,
         input: ::std::option::Option<crate::types::RegisteredUserEmbeddingExperienceConfiguration>,
@@ -116,7 +116,7 @@ impl GenerateEmbedUrlForRegisteredUserInputBuilder {
         self.experience_configuration = input;
         self
     }
-    /// <p>The experience that you want to embed. For registered users, you can embed Amazon QuickSight dashboards, Amazon QuickSight visuals, the Amazon QuickSight Q search bar, the Amazon QuickSight Generative Q&amp;A experience, or the entire Amazon QuickSight console.</p>
+    /// <p>The experience that you want to embed. For registered users, you can embed QuickSight dashboards, QuickSight visuals, the QuickSight Q search bar, the QuickSight Generative Q&amp;A experience, or the entire QuickSight console.</p>
     pub fn get_experience_configuration(&self) -> &::std::option::Option<crate::types::RegisteredUserEmbeddingExperienceConfiguration> {
         &self.experience_configuration
     }
@@ -124,7 +124,7 @@ impl GenerateEmbedUrlForRegisteredUserInputBuilder {
     ///
     /// To override the contents of this collection use [`set_allowed_domains`](Self::set_allowed_domains).
     ///
-    /// <p>The domains that you want to add to the allow list for access to the generated URL that is then embedded. This optional parameter overrides the static domains that are configured in the Manage QuickSight menu in the Amazon QuickSight console. Instead, it allows only the domains that you include in this parameter. You can list up to three domains or subdomains in each API call.</p>
+    /// <p>The domains that you want to add to the allow list for access to the generated URL that is then embedded. This optional parameter overrides the static domains that are configured in the Manage QuickSight menu in the QuickSight console. Instead, it allows only the domains that you include in this parameter. You can list up to three domains or subdomains in each API call.</p>
     /// <p>To include all subdomains under a specific domain to the allow list, use <code>*</code>. For example, <code>https://*.sapp.amazon.com</code> includes all subdomains under <code>https://sapp.amazon.com</code>.</p>
     pub fn allowed_domains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.allowed_domains.unwrap_or_default();
@@ -132,13 +132,13 @@ impl GenerateEmbedUrlForRegisteredUserInputBuilder {
         self.allowed_domains = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The domains that you want to add to the allow list for access to the generated URL that is then embedded. This optional parameter overrides the static domains that are configured in the Manage QuickSight menu in the Amazon QuickSight console. Instead, it allows only the domains that you include in this parameter. You can list up to three domains or subdomains in each API call.</p>
+    /// <p>The domains that you want to add to the allow list for access to the generated URL that is then embedded. This optional parameter overrides the static domains that are configured in the Manage QuickSight menu in the QuickSight console. Instead, it allows only the domains that you include in this parameter. You can list up to three domains or subdomains in each API call.</p>
     /// <p>To include all subdomains under a specific domain to the allow list, use <code>*</code>. For example, <code>https://*.sapp.amazon.com</code> includes all subdomains under <code>https://sapp.amazon.com</code>.</p>
     pub fn set_allowed_domains(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.allowed_domains = input;
         self
     }
-    /// <p>The domains that you want to add to the allow list for access to the generated URL that is then embedded. This optional parameter overrides the static domains that are configured in the Manage QuickSight menu in the Amazon QuickSight console. Instead, it allows only the domains that you include in this parameter. You can list up to three domains or subdomains in each API call.</p>
+    /// <p>The domains that you want to add to the allow list for access to the generated URL that is then embedded. This optional parameter overrides the static domains that are configured in the Manage QuickSight menu in the QuickSight console. Instead, it allows only the domains that you include in this parameter. You can list up to three domains or subdomains in each API call.</p>
     /// <p>To include all subdomains under a specific domain to the allow list, use <code>*</code>. For example, <code>https://*.sapp.amazon.com</code> includes all subdomains under <code>https://sapp.amazon.com</code>.</p>
     pub fn get_allowed_domains(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.allowed_domains

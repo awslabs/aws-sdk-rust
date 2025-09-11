@@ -1063,6 +1063,8 @@ pub(crate) mod shape_list_of_scte35_descriptor;
 
 pub(crate) mod shape_media_package_output_settings;
 
+pub(crate) mod shape_media_package_v2_group_settings;
+
 pub(crate) mod shape_mpeg2_filter_settings;
 
 pub(crate) mod shape_ms_smooth_output_settings;
@@ -1140,6 +1142,8 @@ pub(crate) mod shape_list_of_cmaf_ingest_caption_language_mapping;
 pub(crate) mod shape_list_of_hls_ad_markers;
 
 pub(crate) mod shape_list_of_rtmp_ad_markers;
+
+pub(crate) mod shape_media_package_v2_destination_settings;
 
 pub(crate) mod shape_multiplex_container_settings;
 

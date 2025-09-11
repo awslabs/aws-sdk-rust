@@ -5,8 +5,10 @@
 pub struct DescribeKeyRegistrationOutput {
     /// <p>The ID of the Amazon Web Services account that contains the customer managed key registration specified in the request.</p>
     pub aws_account_id: ::std::option::Option<::std::string::String>,
-    /// <p>A list of <code>RegisteredCustomerManagedKey</code> objects in a Amazon QuickSight account.</p>
+    /// <p>A list of <code>RegisteredCustomerManagedKey</code> objects in a QuickSight account.</p>
     pub key_registration: ::std::option::Option<::std::vec::Vec<crate::types::RegisteredCustomerManagedKey>>,
+    /// <p>A list of <code>QDataKey</code> objects in a QuickSight account.</p>
+    pub q_data_key: ::std::option::Option<crate::types::QDataKey>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>The HTTP status of the request.</p>
@@ -18,11 +20,15 @@ impl DescribeKeyRegistrationOutput {
     pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
-    /// <p>A list of <code>RegisteredCustomerManagedKey</code> objects in a Amazon QuickSight account.</p>
+    /// <p>A list of <code>RegisteredCustomerManagedKey</code> objects in a QuickSight account.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.key_registration.is_none()`.
     pub fn key_registration(&self) -> &[crate::types::RegisteredCustomerManagedKey] {
         self.key_registration.as_deref().unwrap_or_default()
+    }
+    /// <p>A list of <code>QDataKey</code> objects in a QuickSight account.</p>
+    pub fn q_data_key(&self) -> ::std::option::Option<&crate::types::QDataKey> {
+        self.q_data_key.as_ref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn request_id(&self) -> ::std::option::Option<&str> {
@@ -51,6 +57,7 @@ impl DescribeKeyRegistrationOutput {
 pub struct DescribeKeyRegistrationOutputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) key_registration: ::std::option::Option<::std::vec::Vec<crate::types::RegisteredCustomerManagedKey>>,
+    pub(crate) q_data_key: ::std::option::Option<crate::types::QDataKey>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<i32>,
     _request_id: Option<String>,
@@ -74,21 +81,35 @@ impl DescribeKeyRegistrationOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_key_registration`](Self::set_key_registration).
     ///
-    /// <p>A list of <code>RegisteredCustomerManagedKey</code> objects in a Amazon QuickSight account.</p>
+    /// <p>A list of <code>RegisteredCustomerManagedKey</code> objects in a QuickSight account.</p>
     pub fn key_registration(mut self, input: crate::types::RegisteredCustomerManagedKey) -> Self {
         let mut v = self.key_registration.unwrap_or_default();
         v.push(input);
         self.key_registration = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of <code>RegisteredCustomerManagedKey</code> objects in a Amazon QuickSight account.</p>
+    /// <p>A list of <code>RegisteredCustomerManagedKey</code> objects in a QuickSight account.</p>
     pub fn set_key_registration(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RegisteredCustomerManagedKey>>) -> Self {
         self.key_registration = input;
         self
     }
-    /// <p>A list of <code>RegisteredCustomerManagedKey</code> objects in a Amazon QuickSight account.</p>
+    /// <p>A list of <code>RegisteredCustomerManagedKey</code> objects in a QuickSight account.</p>
     pub fn get_key_registration(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RegisteredCustomerManagedKey>> {
         &self.key_registration
+    }
+    /// <p>A list of <code>QDataKey</code> objects in a QuickSight account.</p>
+    pub fn q_data_key(mut self, input: crate::types::QDataKey) -> Self {
+        self.q_data_key = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A list of <code>QDataKey</code> objects in a QuickSight account.</p>
+    pub fn set_q_data_key(mut self, input: ::std::option::Option<crate::types::QDataKey>) -> Self {
+        self.q_data_key = input;
+        self
+    }
+    /// <p>A list of <code>QDataKey</code> objects in a QuickSight account.</p>
+    pub fn get_q_data_key(&self) -> &::std::option::Option<crate::types::QDataKey> {
+        &self.q_data_key
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -132,6 +153,7 @@ impl DescribeKeyRegistrationOutputBuilder {
         crate::operation::describe_key_registration::DescribeKeyRegistrationOutput {
             aws_account_id: self.aws_account_id,
             key_registration: self.key_registration,
+            q_data_key: self.q_data_key,
             request_id: self.request_id,
             status: self.status.unwrap_or_default(),
             _request_id: self._request_id,

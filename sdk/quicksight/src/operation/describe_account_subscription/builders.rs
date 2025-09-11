@@ -22,7 +22,7 @@ impl crate::operation::describe_account_subscription::builders::DescribeAccountS
 }
 /// Fluent builder constructing a request to `DescribeAccountSubscription`.
 ///
-/// <p>Use the DescribeAccountSubscription operation to receive a description of an Amazon QuickSight account's subscription. A successful API call returns an <code>AccountInfo</code> object that includes an account's name, subscription status, authentication type, edition, and notification email address.</p>
+/// <p>Use the DescribeAccountSubscription operation to receive a description of an QuickSight account's subscription. A successful API call returns an <code>AccountInfo</code> object that includes an account's name, subscription status, authentication type, edition, and notification email address.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeAccountSubscriptionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl DescribeAccountSubscriptionFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The Amazon Web Services account ID associated with your Amazon QuickSight account.</p>
+    /// <p>The Amazon Web Services account ID associated with your QuickSight account.</p>
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
-    /// <p>The Amazon Web Services account ID associated with your Amazon QuickSight account.</p>
+    /// <p>The Amazon Web Services account ID associated with your QuickSight account.</p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
-    /// <p>The Amazon Web Services account ID associated with your Amazon QuickSight account.</p>
+    /// <p>The Amazon Web Services account ID associated with your QuickSight account.</p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_aws_account_id()
     }

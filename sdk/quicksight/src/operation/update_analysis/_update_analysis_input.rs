@@ -7,13 +7,13 @@ pub struct UpdateAnalysisInput {
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID for the analysis that you're updating. This ID displays in the URL of the analysis.</p>
     pub analysis_id: ::std::option::Option<::std::string::String>,
-    /// <p>A descriptive name for the analysis that you're updating. This name displays for the analysis in the Amazon QuickSight console.</p>
+    /// <p>A descriptive name for the analysis that you're updating. This name displays for the analysis in the QuickSight console.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The parameter names and override values that you want to use. An analysis can have any parameter type, and some parameters might accept multiple values.</p>
     pub parameters: ::std::option::Option<crate::types::Parameters>,
     /// <p>A source entity to use for the analysis that you're updating. This metadata structure contains details that describe a source template and one or more datasets.</p>
     pub source_entity: ::std::option::Option<crate::types::AnalysisSourceEntity>,
-    /// <p>The Amazon Resource Name (ARN) for the theme to apply to the analysis that you're creating. To see the theme in the Amazon QuickSight console, make sure that you have access to it.</p>
+    /// <p>The Amazon Resource Name (ARN) for the theme to apply to the analysis that you're creating. To see the theme in the QuickSight console, make sure that you have access to it.</p>
     pub theme_arn: ::std::option::Option<::std::string::String>,
     /// <p>The definition of an analysis.</p>
     /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
@@ -30,7 +30,7 @@ impl UpdateAnalysisInput {
     pub fn analysis_id(&self) -> ::std::option::Option<&str> {
         self.analysis_id.as_deref()
     }
-    /// <p>A descriptive name for the analysis that you're updating. This name displays for the analysis in the Amazon QuickSight console.</p>
+    /// <p>A descriptive name for the analysis that you're updating. This name displays for the analysis in the QuickSight console.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -42,7 +42,7 @@ impl UpdateAnalysisInput {
     pub fn source_entity(&self) -> ::std::option::Option<&crate::types::AnalysisSourceEntity> {
         self.source_entity.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) for the theme to apply to the analysis that you're creating. To see the theme in the Amazon QuickSight console, make sure that you have access to it.</p>
+    /// <p>The Amazon Resource Name (ARN) for the theme to apply to the analysis that you're creating. To see the theme in the QuickSight console, make sure that you have access to it.</p>
     pub fn theme_arn(&self) -> ::std::option::Option<&str> {
         self.theme_arn.as_deref()
     }
@@ -107,18 +107,18 @@ impl UpdateAnalysisInputBuilder {
     pub fn get_analysis_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.analysis_id
     }
-    /// <p>A descriptive name for the analysis that you're updating. This name displays for the analysis in the Amazon QuickSight console.</p>
+    /// <p>A descriptive name for the analysis that you're updating. This name displays for the analysis in the QuickSight console.</p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A descriptive name for the analysis that you're updating. This name displays for the analysis in the Amazon QuickSight console.</p>
+    /// <p>A descriptive name for the analysis that you're updating. This name displays for the analysis in the QuickSight console.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>A descriptive name for the analysis that you're updating. This name displays for the analysis in the Amazon QuickSight console.</p>
+    /// <p>A descriptive name for the analysis that you're updating. This name displays for the analysis in the QuickSight console.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
@@ -150,17 +150,17 @@ impl UpdateAnalysisInputBuilder {
     pub fn get_source_entity(&self) -> &::std::option::Option<crate::types::AnalysisSourceEntity> {
         &self.source_entity
     }
-    /// <p>The Amazon Resource Name (ARN) for the theme to apply to the analysis that you're creating. To see the theme in the Amazon QuickSight console, make sure that you have access to it.</p>
+    /// <p>The Amazon Resource Name (ARN) for the theme to apply to the analysis that you're creating. To see the theme in the QuickSight console, make sure that you have access to it.</p>
     pub fn theme_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.theme_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) for the theme to apply to the analysis that you're creating. To see the theme in the Amazon QuickSight console, make sure that you have access to it.</p>
+    /// <p>The Amazon Resource Name (ARN) for the theme to apply to the analysis that you're creating. To see the theme in the QuickSight console, make sure that you have access to it.</p>
     pub fn set_theme_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.theme_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) for the theme to apply to the analysis that you're creating. To see the theme in the Amazon QuickSight console, make sure that you have access to it.</p>
+    /// <p>The Amazon Resource Name (ARN) for the theme to apply to the analysis that you're creating. To see the theme in the QuickSight console, make sure that you have access to it.</p>
     pub fn get_theme_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.theme_arn
     }

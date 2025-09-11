@@ -3,19 +3,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDefaultQBusinessApplicationInput {
-    /// <p>The ID of the Amazon QuickSight account that is connected to the Amazon Q Business application that you want to update.</p>
+    /// <p>The ID of the QuickSight account that is connected to the Amazon Q Business application that you want to update.</p>
     pub aws_account_id: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon QuickSight namespace that contains the linked Amazon Q Business application. If this field is left blank, the default namespace is used. Currently, the default namespace is the only valid value for this parameter.</p>
+    /// <p>The QuickSight namespace that contains the linked Amazon Q Business application. If this field is left blank, the default namespace is used. Currently, the default namespace is the only valid value for this parameter.</p>
     pub namespace: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Q Business application that you want to update.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
 }
 impl UpdateDefaultQBusinessApplicationInput {
-    /// <p>The ID of the Amazon QuickSight account that is connected to the Amazon Q Business application that you want to update.</p>
+    /// <p>The ID of the QuickSight account that is connected to the Amazon Q Business application that you want to update.</p>
     pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
-    /// <p>The Amazon QuickSight namespace that contains the linked Amazon Q Business application. If this field is left blank, the default namespace is used. Currently, the default namespace is the only valid value for this parameter.</p>
+    /// <p>The QuickSight namespace that contains the linked Amazon Q Business application. If this field is left blank, the default namespace is used. Currently, the default namespace is the only valid value for this parameter.</p>
     pub fn namespace(&self) -> ::std::option::Option<&str> {
         self.namespace.as_deref()
     }
@@ -40,32 +40,32 @@ pub struct UpdateDefaultQBusinessApplicationInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
 }
 impl UpdateDefaultQBusinessApplicationInputBuilder {
-    /// <p>The ID of the Amazon QuickSight account that is connected to the Amazon Q Business application that you want to update.</p>
+    /// <p>The ID of the QuickSight account that is connected to the Amazon Q Business application that you want to update.</p>
     /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the Amazon QuickSight account that is connected to the Amazon Q Business application that you want to update.</p>
+    /// <p>The ID of the QuickSight account that is connected to the Amazon Q Business application that you want to update.</p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
-    /// <p>The ID of the Amazon QuickSight account that is connected to the Amazon Q Business application that you want to update.</p>
+    /// <p>The ID of the QuickSight account that is connected to the Amazon Q Business application that you want to update.</p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.aws_account_id
     }
-    /// <p>The Amazon QuickSight namespace that contains the linked Amazon Q Business application. If this field is left blank, the default namespace is used. Currently, the default namespace is the only valid value for this parameter.</p>
+    /// <p>The QuickSight namespace that contains the linked Amazon Q Business application. If this field is left blank, the default namespace is used. Currently, the default namespace is the only valid value for this parameter.</p>
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon QuickSight namespace that contains the linked Amazon Q Business application. If this field is left blank, the default namespace is used. Currently, the default namespace is the only valid value for this parameter.</p>
+    /// <p>The QuickSight namespace that contains the linked Amazon Q Business application. If this field is left blank, the default namespace is used. Currently, the default namespace is the only valid value for this parameter.</p>
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.namespace = input;
         self
     }
-    /// <p>The Amazon QuickSight namespace that contains the linked Amazon Q Business application. If this field is left blank, the default namespace is used. Currently, the default namespace is the only valid value for this parameter.</p>
+    /// <p>The QuickSight namespace that contains the linked Amazon Q Business application. If this field is left blank, the default namespace is used. Currently, the default namespace is the only valid value for this parameter.</p>
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
         &self.namespace
     }

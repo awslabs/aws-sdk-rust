@@ -57,6 +57,12 @@ pub fn ser_topic_filter(
         crate::protocol_serde::shape_topic_relative_date_filter::ser_topic_relative_date_filter(&mut object_16, var_15)?;
         object_16.finish();
     }
+    if let Some(var_17) = &input.null_filter {
+        #[allow(unused_mut)]
+        let mut object_18 = object.key("NullFilter").start_object();
+        crate::protocol_serde::shape_topic_null_filter::ser_topic_null_filter(&mut object_18, var_17)?;
+        object_18.finish();
+    }
     Ok(())
 }
 
@@ -135,6 +141,9 @@ where
                             builder = builder.set_relative_date_filter(
                                 crate::protocol_serde::shape_topic_relative_date_filter::de_topic_relative_date_filter(tokens)?,
                             );
+                        }
+                        "NullFilter" => {
+                            builder = builder.set_null_filter(crate::protocol_serde::shape_topic_null_filter::de_topic_null_filter(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

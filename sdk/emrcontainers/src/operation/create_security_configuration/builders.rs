@@ -136,6 +136,20 @@ impl CreateSecurityConfigurationFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
+    /// <p>The container provider associated with the security configuration.</p>
+    pub fn container_provider(mut self, input: crate::types::ContainerProvider) -> Self {
+        self.inner = self.inner.container_provider(input);
+        self
+    }
+    /// <p>The container provider associated with the security configuration.</p>
+    pub fn set_container_provider(mut self, input: ::std::option::Option<crate::types::ContainerProvider>) -> Self {
+        self.inner = self.inner.set_container_provider(input);
+        self
+    }
+    /// <p>The container provider associated with the security configuration.</p>
+    pub fn get_container_provider(&self) -> &::std::option::Option<crate::types::ContainerProvider> {
+        self.inner.get_container_provider()
+    }
     /// <p>Security configuration input for the request.</p>
     pub fn security_configuration_data(mut self, input: crate::types::SecurityConfigurationData) -> Self {
         self.inner = self.inner.security_configuration_data(input);

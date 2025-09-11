@@ -6,7 +6,7 @@
 pub struct Sheet {
     /// <p>The unique identifier associated with a sheet.</p>
     pub sheet_id: ::std::option::Option<::std::string::String>,
-    /// <p>The name of a sheet. This name is displayed on the sheet's tab in the Amazon QuickSight console.</p>
+    /// <p>The name of a sheet. This name is displayed on the sheet's tab in the QuickSight console.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A list of images on a sheet.</p>
     pub images: ::std::option::Option<::std::vec::Vec<crate::types::SheetImage>>,
@@ -16,7 +16,7 @@ impl Sheet {
     pub fn sheet_id(&self) -> ::std::option::Option<&str> {
         self.sheet_id.as_deref()
     }
-    /// <p>The name of a sheet. This name is displayed on the sheet's tab in the Amazon QuickSight console.</p>
+    /// <p>The name of a sheet. This name is displayed on the sheet's tab in the QuickSight console.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -57,17 +57,17 @@ impl SheetBuilder {
     pub fn get_sheet_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.sheet_id
     }
-    /// <p>The name of a sheet. This name is displayed on the sheet's tab in the Amazon QuickSight console.</p>
+    /// <p>The name of a sheet. This name is displayed on the sheet's tab in the QuickSight console.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of a sheet. This name is displayed on the sheet's tab in the Amazon QuickSight console.</p>
+    /// <p>The name of a sheet. This name is displayed on the sheet's tab in the QuickSight console.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of a sheet. This name is displayed on the sheet's tab in the Amazon QuickSight console.</p>
+    /// <p>The name of a sheet. This name is displayed on the sheet's tab in the QuickSight console.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }

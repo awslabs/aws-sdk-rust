@@ -12,7 +12,7 @@ pub enum Error {
     /// </note>
     /// <p>The request doesn't comply with IAM tag policy. Correct your request and then retry it.</p>
     TagPolicyException(crate::types::error::TagPolicyException),
-    /// <p>The <code>CreateEnvironmentHost</code> operation couldn't be performed because the service is throttling requests. This exception is thrown when the <code>CreateEnvironmentHost</code> request exceeds concurrency of 1 transaction per second (TPS).</p>
+    /// <p>The operation couldn't be performed because the service is throttling requests. This exception is thrown when there are too many requests accepted concurrently from the service endpoint.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
     /// <note>
     /// <p><code>TooManyTagsException</code> is deprecated. See <a href="https://docs.aws.amazon.com/evs/latest/APIReference/API_ServiceQuotaExceededException.html"> <code>ServiceQuotaExceededException</code> </a> instead.</p>
@@ -67,6 +67,32 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::TooManyTagsException(inner) => inner.meta(),
             Self::ValidationException(inner) => inner.meta(),
             Self::Unhandled(inner) => &inner.meta,
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_eip_to_vlan::AssociateEipToVlanError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_eip_to_vlan::AssociateEipToVlanError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::associate_eip_to_vlan::AssociateEipToVlanError> for Error {
+    fn from(err: crate::operation::associate_eip_to_vlan::AssociateEipToVlanError) -> Self {
+        match err {
+            crate::operation::associate_eip_to_vlan::AssociateEipToVlanError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::associate_eip_to_vlan::AssociateEipToVlanError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::associate_eip_to_vlan::AssociateEipToVlanError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::associate_eip_to_vlan::AssociateEipToVlanError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -164,6 +190,39 @@ impl From<crate::operation::delete_environment_host::DeleteEnvironmentHostError>
             }
             crate::operation::delete_environment_host::DeleteEnvironmentHostError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_environment_host::DeleteEnvironmentHostError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::disassociate_eip_from_vlan::DisassociateEipFromVlanError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::disassociate_eip_from_vlan::DisassociateEipFromVlanError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::disassociate_eip_from_vlan::DisassociateEipFromVlanError> for Error {
+    fn from(err: crate::operation::disassociate_eip_from_vlan::DisassociateEipFromVlanError) -> Self {
+        match err {
+            crate::operation::disassociate_eip_from_vlan::DisassociateEipFromVlanError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::disassociate_eip_from_vlan::DisassociateEipFromVlanError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::disassociate_eip_from_vlan::DisassociateEipFromVlanError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::disassociate_eip_from_vlan::DisassociateEipFromVlanError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

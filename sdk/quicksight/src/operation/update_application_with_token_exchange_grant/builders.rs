@@ -22,7 +22,7 @@ impl crate::operation::update_application_with_token_exchange_grant::builders::U
 }
 /// Fluent builder constructing a request to `UpdateApplicationWithTokenExchangeGrant`.
 ///
-/// <p>Updates an Amazon QuickSight application with a token exchange grant. This operation only supports Amazon QuickSight applications that are registered with IAM Identity Center.</p>
+/// <p>Updates an QuickSight application with a token exchange grant. This operation only supports QuickSight applications that are registered with IAM Identity Center.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateApplicationWithTokenExchangeGrantFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -126,17 +126,17 @@ impl UpdateApplicationWithTokenExchangeGrantFluentBuilder {
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_aws_account_id()
     }
-    /// <p>The namespace of the Amazon QuickSight application.</p>
+    /// <p>The namespace of the QuickSight application.</p>
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.namespace(input.into());
         self
     }
-    /// <p>The namespace of the Amazon QuickSight application.</p>
+    /// <p>The namespace of the QuickSight application.</p>
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_namespace(input);
         self
     }
-    /// <p>The namespace of the Amazon QuickSight application.</p>
+    /// <p>The namespace of the QuickSight application.</p>
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_namespace()
     }

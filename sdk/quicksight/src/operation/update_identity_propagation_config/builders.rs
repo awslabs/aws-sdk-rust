@@ -22,8 +22,8 @@ impl crate::operation::update_identity_propagation_config::builders::UpdateIdent
 }
 /// Fluent builder constructing a request to `UpdateIdentityPropagationConfig`.
 ///
-/// <p>Adds or updates services and authorized targets to configure what the Amazon QuickSight IAM Identity Center application can access.</p>
-/// <p>This operation is only supported for Amazon QuickSight accounts using IAM Identity Center</p>
+/// <p>Adds or updates services and authorized targets to configure what the QuickSight IAM Identity Center application can access.</p>
+/// <p>This operation is only supported for QuickSight accounts using IAM Identity Center</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateIdentityPropagationConfigFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

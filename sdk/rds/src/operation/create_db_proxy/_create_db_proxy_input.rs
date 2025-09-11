@@ -7,6 +7,8 @@ pub struct CreateDbProxyInput {
     pub db_proxy_name: ::std::option::Option<::std::string::String>,
     /// <p>The kinds of databases that the proxy can connect to. This value determines which database network protocol the proxy recognizes when it interprets network traffic to and from the database. For Aurora MySQL, RDS for MariaDB, and RDS for MySQL databases, specify <code>MYSQL</code>. For Aurora PostgreSQL and RDS for PostgreSQL databases, specify <code>POSTGRESQL</code>. For RDS for Microsoft SQL Server, specify <code>SQLSERVER</code>.</p>
     pub engine_family: ::std::option::Option<crate::types::EngineFamily>,
+    /// <p>The default authentication scheme that the proxy uses for client connections to the proxy and connections from the proxy to the underlying database. Valid values are <code>NONE</code> and <code>IAM_AUTH</code>. When set to <code>IAM_AUTH</code>, the proxy uses end-to-end IAM authentication to connect to the database. If you don't specify <code>DefaultAuthScheme</code> or specify this parameter as <code>NONE</code>, you must specify the <code>Auth</code> option.</p>
+    pub default_auth_scheme: ::std::option::Option<crate::types::DefaultAuthScheme>,
     /// <p>The authorization mechanism that the proxy uses.</p>
     pub auth: ::std::option::Option<::std::vec::Vec<crate::types::UserAuthConfig>>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access secrets in Amazon Web Services Secrets Manager.</p>
@@ -68,6 +70,10 @@ impl CreateDbProxyInput {
     /// <p>The kinds of databases that the proxy can connect to. This value determines which database network protocol the proxy recognizes when it interprets network traffic to and from the database. For Aurora MySQL, RDS for MariaDB, and RDS for MySQL databases, specify <code>MYSQL</code>. For Aurora PostgreSQL and RDS for PostgreSQL databases, specify <code>POSTGRESQL</code>. For RDS for Microsoft SQL Server, specify <code>SQLSERVER</code>.</p>
     pub fn engine_family(&self) -> ::std::option::Option<&crate::types::EngineFamily> {
         self.engine_family.as_ref()
+    }
+    /// <p>The default authentication scheme that the proxy uses for client connections to the proxy and connections from the proxy to the underlying database. Valid values are <code>NONE</code> and <code>IAM_AUTH</code>. When set to <code>IAM_AUTH</code>, the proxy uses end-to-end IAM authentication to connect to the database. If you don't specify <code>DefaultAuthScheme</code> or specify this parameter as <code>NONE</code>, you must specify the <code>Auth</code> option.</p>
+    pub fn default_auth_scheme(&self) -> ::std::option::Option<&crate::types::DefaultAuthScheme> {
+        self.default_auth_scheme.as_ref()
     }
     /// <p>The authorization mechanism that the proxy uses.</p>
     ///
@@ -163,6 +169,7 @@ impl CreateDbProxyInput {
 pub struct CreateDbProxyInputBuilder {
     pub(crate) db_proxy_name: ::std::option::Option<::std::string::String>,
     pub(crate) engine_family: ::std::option::Option<crate::types::EngineFamily>,
+    pub(crate) default_auth_scheme: ::std::option::Option<crate::types::DefaultAuthScheme>,
     pub(crate) auth: ::std::option::Option<::std::vec::Vec<crate::types::UserAuthConfig>>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -204,6 +211,20 @@ impl CreateDbProxyInputBuilder {
     /// <p>The kinds of databases that the proxy can connect to. This value determines which database network protocol the proxy recognizes when it interprets network traffic to and from the database. For Aurora MySQL, RDS for MariaDB, and RDS for MySQL databases, specify <code>MYSQL</code>. For Aurora PostgreSQL and RDS for PostgreSQL databases, specify <code>POSTGRESQL</code>. For RDS for Microsoft SQL Server, specify <code>SQLSERVER</code>.</p>
     pub fn get_engine_family(&self) -> &::std::option::Option<crate::types::EngineFamily> {
         &self.engine_family
+    }
+    /// <p>The default authentication scheme that the proxy uses for client connections to the proxy and connections from the proxy to the underlying database. Valid values are <code>NONE</code> and <code>IAM_AUTH</code>. When set to <code>IAM_AUTH</code>, the proxy uses end-to-end IAM authentication to connect to the database. If you don't specify <code>DefaultAuthScheme</code> or specify this parameter as <code>NONE</code>, you must specify the <code>Auth</code> option.</p>
+    pub fn default_auth_scheme(mut self, input: crate::types::DefaultAuthScheme) -> Self {
+        self.default_auth_scheme = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The default authentication scheme that the proxy uses for client connections to the proxy and connections from the proxy to the underlying database. Valid values are <code>NONE</code> and <code>IAM_AUTH</code>. When set to <code>IAM_AUTH</code>, the proxy uses end-to-end IAM authentication to connect to the database. If you don't specify <code>DefaultAuthScheme</code> or specify this parameter as <code>NONE</code>, you must specify the <code>Auth</code> option.</p>
+    pub fn set_default_auth_scheme(mut self, input: ::std::option::Option<crate::types::DefaultAuthScheme>) -> Self {
+        self.default_auth_scheme = input;
+        self
+    }
+    /// <p>The default authentication scheme that the proxy uses for client connections to the proxy and connections from the proxy to the underlying database. Valid values are <code>NONE</code> and <code>IAM_AUTH</code>. When set to <code>IAM_AUTH</code>, the proxy uses end-to-end IAM authentication to connect to the database. If you don't specify <code>DefaultAuthScheme</code> or specify this parameter as <code>NONE</code>, you must specify the <code>Auth</code> option.</p>
+    pub fn get_default_auth_scheme(&self) -> &::std::option::Option<crate::types::DefaultAuthScheme> {
+        &self.default_auth_scheme
     }
     /// Appends an item to `auth`.
     ///
@@ -473,6 +494,7 @@ impl CreateDbProxyInputBuilder {
         ::std::result::Result::Ok(crate::operation::create_db_proxy::CreateDbProxyInput {
             db_proxy_name: self.db_proxy_name,
             engine_family: self.engine_family,
+            default_auth_scheme: self.default_auth_scheme,
             auth: self.auth,
             role_arn: self.role_arn,
             vpc_subnet_ids: self.vpc_subnet_ids,

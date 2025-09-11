@@ -5,11 +5,11 @@
 pub struct CreateAccountCustomizationOutput {
     /// <p>The Amazon Resource Name (ARN) for the customization that you created for this Amazon Web Services account.</p>
     pub arn: ::std::option::Option<::std::string::String>,
-    /// <p>The ID for the Amazon Web Services account that you want to customize Amazon QuickSight for.</p>
+    /// <p>The ID for the Amazon Web Services account that you want to customize QuickSight for.</p>
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The namespace associated with the customization you're creating.</p>
     pub namespace: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon QuickSight customizations you're adding in the current Amazon Web Services Region.</p>
+    /// <p>The QuickSight customizations you're adding in the current Amazon Web Services Region.</p>
     pub account_customization: ::std::option::Option<crate::types::AccountCustomization>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: ::std::option::Option<::std::string::String>,
@@ -22,7 +22,7 @@ impl CreateAccountCustomizationOutput {
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The ID for the Amazon Web Services account that you want to customize Amazon QuickSight for.</p>
+    /// <p>The ID for the Amazon Web Services account that you want to customize QuickSight for.</p>
     pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
@@ -30,7 +30,7 @@ impl CreateAccountCustomizationOutput {
     pub fn namespace(&self) -> ::std::option::Option<&str> {
         self.namespace.as_deref()
     }
-    /// <p>The Amazon QuickSight customizations you're adding in the current Amazon Web Services Region.</p>
+    /// <p>The QuickSight customizations you're adding in the current Amazon Web Services Region.</p>
     pub fn account_customization(&self) -> ::std::option::Option<&crate::types::AccountCustomization> {
         self.account_customization.as_ref()
     }
@@ -82,17 +82,17 @@ impl CreateAccountCustomizationOutputBuilder {
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
-    /// <p>The ID for the Amazon Web Services account that you want to customize Amazon QuickSight for.</p>
+    /// <p>The ID for the Amazon Web Services account that you want to customize QuickSight for.</p>
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID for the Amazon Web Services account that you want to customize Amazon QuickSight for.</p>
+    /// <p>The ID for the Amazon Web Services account that you want to customize QuickSight for.</p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
-    /// <p>The ID for the Amazon Web Services account that you want to customize Amazon QuickSight for.</p>
+    /// <p>The ID for the Amazon Web Services account that you want to customize QuickSight for.</p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.aws_account_id
     }
@@ -110,17 +110,17 @@ impl CreateAccountCustomizationOutputBuilder {
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
         &self.namespace
     }
-    /// <p>The Amazon QuickSight customizations you're adding in the current Amazon Web Services Region.</p>
+    /// <p>The QuickSight customizations you're adding in the current Amazon Web Services Region.</p>
     pub fn account_customization(mut self, input: crate::types::AccountCustomization) -> Self {
         self.account_customization = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Amazon QuickSight customizations you're adding in the current Amazon Web Services Region.</p>
+    /// <p>The QuickSight customizations you're adding in the current Amazon Web Services Region.</p>
     pub fn set_account_customization(mut self, input: ::std::option::Option<crate::types::AccountCustomization>) -> Self {
         self.account_customization = input;
         self
     }
-    /// <p>The Amazon QuickSight customizations you're adding in the current Amazon Web Services Region.</p>
+    /// <p>The QuickSight customizations you're adding in the current Amazon Web Services Region.</p>
     pub fn get_account_customization(&self) -> &::std::option::Option<crate::types::AccountCustomization> {
         &self.account_customization
     }

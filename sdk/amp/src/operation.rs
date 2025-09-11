@@ -37,6 +37,9 @@ pub mod delete_rule_groups_namespace;
 /// Types for the `DeleteScraper` operation.
 pub mod delete_scraper;
 
+/// Types for the `DeleteScraperLoggingConfiguration` operation.
+pub mod delete_scraper_logging_configuration;
+
 /// Types for the `DeleteWorkspace` operation.
 pub mod delete_workspace;
 
@@ -57,6 +60,9 @@ pub mod describe_rule_groups_namespace;
 
 /// Types for the `DescribeScraper` operation.
 pub mod describe_scraper;
+
+/// Types for the `DescribeScraperLoggingConfiguration` operation.
+pub mod describe_scraper_logging_configuration;
 
 /// Types for the `DescribeWorkspace` operation.
 pub mod describe_workspace;
@@ -102,6 +108,9 @@ pub mod update_query_logging_configuration;
 
 /// Types for the `UpdateScraper` operation.
 pub mod update_scraper;
+
+/// Types for the `UpdateScraperLoggingConfiguration` operation.
+pub mod update_scraper_logging_configuration;
 
 /// Types for the `UpdateWorkspaceAlias` operation.
 pub mod update_workspace_alias;
