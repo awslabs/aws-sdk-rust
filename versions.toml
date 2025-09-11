@@ -2,7 +2,7 @@ smithy_rs_revision = '3bd662291569ecbc2c4fc0b74aea57a56fa61562'
 aws_doc_sdk_examples_revision = 'missing'
 
 [manual_interventions]
-crates_to_remove = []
+crates_to_remove = ["aws-sdk-sms"]
 [crates.aws-config]
 category = 'AwsRuntime'
 version = '1.8.6'
