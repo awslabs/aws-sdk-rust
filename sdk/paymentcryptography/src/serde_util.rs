@@ -77,6 +77,15 @@ pub(crate) fn get_alias_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_certificate_signing_request_output_output_correct_errors(
+    mut builder: crate::operation::get_certificate_signing_request::builders::GetCertificateSigningRequestOutputBuilder,
+) -> crate::operation::get_certificate_signing_request::builders::GetCertificateSigningRequestOutputBuilder {
+    if builder.certificate_signing_request.is_none() {
+        builder.certificate_signing_request = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn get_default_key_replication_regions_output_output_correct_errors(
     mut builder: crate::operation::get_default_key_replication_regions::builders::GetDefaultKeyReplicationRegionsOutputBuilder,
 ) -> crate::operation::get_default_key_replication_regions::builders::GetDefaultKeyReplicationRegionsOutputBuilder {

@@ -25,6 +25,8 @@ pub use crate::types::_trusted_certificate_public_key::TrustedCertificatePublicK
 
 pub use crate::types::_root_certificate_public_key::RootCertificatePublicKeyBuilder;
 
+pub use crate::types::_certificate_subject_type::CertificateSubjectTypeBuilder;
+
 pub use crate::types::_wrapped_key::WrappedKeyBuilder;
 
 pub use crate::types::_export_attributes::ExportAttributesBuilder;

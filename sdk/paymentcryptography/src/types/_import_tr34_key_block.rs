@@ -10,6 +10,10 @@ pub struct ImportTr34KeyBlock {
     pub signing_key_certificate: ::std::string::String,
     /// <p>The import token that initiates key import using the asymmetric TR-34 key exchange method into Amazon Web Services Payment Cryptography. It expires after 30 days. You can use the same import token to import multiple keys to the same service account.</p>
     pub import_token: ::std::string::String,
+    /// Key Identifier used for unwrapping the import key
+    pub wrapping_key_identifier: ::std::option::Option<::std::string::String>,
+    /// Key Identifier used for unwrapping the import key
+    pub wrapping_key_certificate: ::std::option::Option<::std::string::String>,
     /// <p>The TR-34 wrapped key block to import.</p>
     pub wrapped_key_block: ::std::string::String,
     /// <p>The key block format to use during key import. The only value allowed is <code>X9_TR34_2012</code>.</p>
@@ -32,6 +36,14 @@ impl ImportTr34KeyBlock {
     pub fn import_token(&self) -> &str {
         use std::ops::Deref;
         self.import_token.deref()
+    }
+    /// Key Identifier used for unwrapping the import key
+    pub fn wrapping_key_identifier(&self) -> ::std::option::Option<&str> {
+        self.wrapping_key_identifier.as_deref()
+    }
+    /// Key Identifier used for unwrapping the import key
+    pub fn wrapping_key_certificate(&self) -> ::std::option::Option<&str> {
+        self.wrapping_key_certificate.as_deref()
     }
     /// <p>The TR-34 wrapped key block to import.</p>
     pub fn wrapped_key_block(&self) -> &str {
@@ -56,6 +68,8 @@ impl ::std::fmt::Debug for ImportTr34KeyBlock {
         );
         formatter.field("signing_key_certificate", &self.signing_key_certificate);
         formatter.field("import_token", &self.import_token);
+        formatter.field("wrapping_key_identifier", &self.wrapping_key_identifier);
+        formatter.field("wrapping_key_certificate", &self.wrapping_key_certificate);
         formatter.field("wrapped_key_block", &"*** Sensitive Data Redacted ***");
         formatter.field("key_block_format", &self.key_block_format);
         formatter.field("random_nonce", &self.random_nonce);
@@ -76,6 +90,8 @@ pub struct ImportTr34KeyBlockBuilder {
     pub(crate) certificate_authority_public_key_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) signing_key_certificate: ::std::option::Option<::std::string::String>,
     pub(crate) import_token: ::std::option::Option<::std::string::String>,
+    pub(crate) wrapping_key_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) wrapping_key_certificate: ::std::option::Option<::std::string::String>,
     pub(crate) wrapped_key_block: ::std::option::Option<::std::string::String>,
     pub(crate) key_block_format: ::std::option::Option<crate::types::Tr34KeyBlockFormat>,
     pub(crate) random_nonce: ::std::option::Option<::std::string::String>,
@@ -112,7 +128,6 @@ impl ImportTr34KeyBlockBuilder {
         &self.signing_key_certificate
     }
     /// <p>The import token that initiates key import using the asymmetric TR-34 key exchange method into Amazon Web Services Payment Cryptography. It expires after 30 days. You can use the same import token to import multiple keys to the same service account.</p>
-    /// This field is required.
     pub fn import_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.import_token = ::std::option::Option::Some(input.into());
         self
@@ -125,6 +140,34 @@ impl ImportTr34KeyBlockBuilder {
     /// <p>The import token that initiates key import using the asymmetric TR-34 key exchange method into Amazon Web Services Payment Cryptography. It expires after 30 days. You can use the same import token to import multiple keys to the same service account.</p>
     pub fn get_import_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.import_token
+    }
+    /// Key Identifier used for unwrapping the import key
+    pub fn wrapping_key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.wrapping_key_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// Key Identifier used for unwrapping the import key
+    pub fn set_wrapping_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.wrapping_key_identifier = input;
+        self
+    }
+    /// Key Identifier used for unwrapping the import key
+    pub fn get_wrapping_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.wrapping_key_identifier
+    }
+    /// Key Identifier used for unwrapping the import key
+    pub fn wrapping_key_certificate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.wrapping_key_certificate = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// Key Identifier used for unwrapping the import key
+    pub fn set_wrapping_key_certificate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.wrapping_key_certificate = input;
+        self
+    }
+    /// Key Identifier used for unwrapping the import key
+    pub fn get_wrapping_key_certificate(&self) -> &::std::option::Option<::std::string::String> {
+        &self.wrapping_key_certificate
     }
     /// <p>The TR-34 wrapped key block to import.</p>
     /// This field is required.
@@ -174,7 +217,6 @@ impl ImportTr34KeyBlockBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`certificate_authority_public_key_identifier`](crate::types::builders::ImportTr34KeyBlockBuilder::certificate_authority_public_key_identifier)
     /// - [`signing_key_certificate`](crate::types::builders::ImportTr34KeyBlockBuilder::signing_key_certificate)
-    /// - [`import_token`](crate::types::builders::ImportTr34KeyBlockBuilder::import_token)
     /// - [`wrapped_key_block`](crate::types::builders::ImportTr34KeyBlockBuilder::wrapped_key_block)
     /// - [`key_block_format`](crate::types::builders::ImportTr34KeyBlockBuilder::key_block_format)
     pub fn build(self) -> ::std::result::Result<crate::types::ImportTr34KeyBlock, ::aws_smithy_types::error::operation::BuildError> {
@@ -191,12 +233,9 @@ impl ImportTr34KeyBlockBuilder {
                     "signing_key_certificate was not specified but it is required when building ImportTr34KeyBlock",
                 )
             })?,
-            import_token: self.import_token.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "import_token",
-                    "import_token was not specified but it is required when building ImportTr34KeyBlock",
-                )
-            })?,
+            import_token: self.import_token.unwrap_or_default(),
+            wrapping_key_identifier: self.wrapping_key_identifier,
+            wrapping_key_certificate: self.wrapping_key_certificate,
             wrapped_key_block: self.wrapped_key_block.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "wrapped_key_block",
@@ -222,6 +261,8 @@ impl ::std::fmt::Debug for ImportTr34KeyBlockBuilder {
         );
         formatter.field("signing_key_certificate", &self.signing_key_certificate);
         formatter.field("import_token", &self.import_token);
+        formatter.field("wrapping_key_identifier", &self.wrapping_key_identifier);
+        formatter.field("wrapping_key_certificate", &self.wrapping_key_certificate);
         formatter.field("wrapped_key_block", &"*** Sensitive Data Redacted ***");
         formatter.field("key_block_format", &self.key_block_format);
         formatter.field("random_nonce", &self.random_nonce);

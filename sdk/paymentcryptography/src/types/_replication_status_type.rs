@@ -5,14 +5,16 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplicationStatusType {
-    /// Defines the replication state of a key
+    /// <p>The current status of key replication in this region.</p>
+    /// <p>This field indicates whether the key replication is in progress, completed successfully, or has encountered an error. Possible values include states such as SYNCRHONIZED, IN_PROGRESS, DELETE_IN_PROGRESS, or FAILED. This provides visibility into the replication process for monitoring and troubleshooting purposes.</p>
     pub status: crate::types::KeyReplicationState,
     /// <p>A message that provides additional information about the current replication status of the key.</p>
     /// <p>This field contains details about any issues or progress updates related to key replication operations. It may include information about replication failures, synchronization status, or other operational details.</p>
     pub status_message: ::std::option::Option<::std::string::String>,
 }
 impl ReplicationStatusType {
-    /// Defines the replication state of a key
+    /// <p>The current status of key replication in this region.</p>
+    /// <p>This field indicates whether the key replication is in progress, completed successfully, or has encountered an error. Possible values include states such as SYNCRHONIZED, IN_PROGRESS, DELETE_IN_PROGRESS, or FAILED. This provides visibility into the replication process for monitoring and troubleshooting purposes.</p>
     pub fn status(&self) -> &crate::types::KeyReplicationState {
         &self.status
     }
@@ -37,18 +39,21 @@ pub struct ReplicationStatusTypeBuilder {
     pub(crate) status_message: ::std::option::Option<::std::string::String>,
 }
 impl ReplicationStatusTypeBuilder {
-    /// Defines the replication state of a key
+    /// <p>The current status of key replication in this region.</p>
+    /// <p>This field indicates whether the key replication is in progress, completed successfully, or has encountered an error. Possible values include states such as SYNCRHONIZED, IN_PROGRESS, DELETE_IN_PROGRESS, or FAILED. This provides visibility into the replication process for monitoring and troubleshooting purposes.</p>
     /// This field is required.
     pub fn status(mut self, input: crate::types::KeyReplicationState) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// Defines the replication state of a key
+    /// <p>The current status of key replication in this region.</p>
+    /// <p>This field indicates whether the key replication is in progress, completed successfully, or has encountered an error. Possible values include states such as SYNCRHONIZED, IN_PROGRESS, DELETE_IN_PROGRESS, or FAILED. This provides visibility into the replication process for monitoring and troubleshooting purposes.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::KeyReplicationState>) -> Self {
         self.status = input;
         self
     }
-    /// Defines the replication state of a key
+    /// <p>The current status of key replication in this region.</p>
+    /// <p>This field indicates whether the key replication is in progress, completed successfully, or has encountered an error. Possible values include states such as SYNCRHONIZED, IN_PROGRESS, DELETE_IN_PROGRESS, or FAILED. This provides visibility into the replication process for monitoring and troubleshooting purposes.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::KeyReplicationState> {
         &self.status
     }

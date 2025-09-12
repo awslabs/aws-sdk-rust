@@ -41,6 +41,8 @@ pub(crate) mod shape_export_key;
 
 pub(crate) mod shape_get_alias;
 
+pub(crate) mod shape_get_certificate_signing_request;
+
 pub(crate) mod shape_get_default_key_replication_regions;
 
 pub(crate) mod shape_get_key;
@@ -103,6 +105,8 @@ pub(crate) mod shape_export_key_input;
 
 pub(crate) mod shape_get_alias_input;
 
+pub(crate) mod shape_get_certificate_signing_request_input;
+
 pub(crate) mod shape_get_key_input;
 
 pub(crate) mod shape_get_parameters_for_export_input;
@@ -148,6 +152,8 @@ pub(crate) mod shape_validation_exception;
 pub(crate) mod shape_alias;
 
 pub(crate) mod shape_aliases;
+
+pub(crate) mod shape_certificate_subject_type;
 
 pub(crate) mod shape_export_attributes;
 

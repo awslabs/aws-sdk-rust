@@ -181,6 +181,8 @@ mod export_key;
 
 mod get_alias;
 
+mod get_certificate_signing_request;
+
 mod get_default_key_replication_regions;
 
 mod get_key;

@@ -20,7 +20,7 @@ use hickory_resolver::{
 ///
 /// This resolver requires a [tokio] runtime to function and isn't available for WASM targets.
 #[non_exhaustive]
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 pub struct HickoryDnsResolver {
     resolver: Resolver<TokioConnectionProvider>,
 }

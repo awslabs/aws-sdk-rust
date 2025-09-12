@@ -28,6 +28,9 @@ pub mod export_key;
 /// Types for the `GetAlias` operation.
 pub mod get_alias;
 
+/// Types for the `GetCertificateSigningRequest` operation.
+pub mod get_certificate_signing_request;
+
 /// Types for the `GetDefaultKeyReplicationRegions` operation.
 pub mod get_default_key_replication_regions;
 

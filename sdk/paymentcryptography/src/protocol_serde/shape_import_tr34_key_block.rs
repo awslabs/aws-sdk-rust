@@ -14,14 +14,20 @@ pub fn ser_import_tr34_key_block(
     {
         object.key("ImportToken").string(input.import_token.as_str());
     }
+    if let Some(var_1) = &input.wrapping_key_identifier {
+        object.key("WrappingKeyIdentifier").string(var_1.as_str());
+    }
+    if let Some(var_2) = &input.wrapping_key_certificate {
+        object.key("WrappingKeyCertificate").string(var_2.as_str());
+    }
     {
         object.key("WrappedKeyBlock").string(input.wrapped_key_block.as_str());
     }
     {
         object.key("KeyBlockFormat").string(input.key_block_format.as_str());
     }
-    if let Some(var_1) = &input.random_nonce {
-        object.key("RandomNonce").string(var_1.as_str());
+    if let Some(var_3) = &input.random_nonce {
+        object.key("RandomNonce").string(var_3.as_str());
     }
     Ok(())
 }

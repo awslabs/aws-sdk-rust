@@ -14,17 +14,23 @@ pub fn ser_export_tr34_key_block(
     {
         object.key("ExportToken").string(input.export_token.as_str());
     }
+    if let Some(var_1) = &input.signing_key_identifier {
+        object.key("SigningKeyIdentifier").string(var_1.as_str());
+    }
+    if let Some(var_2) = &input.signing_key_certificate {
+        object.key("SigningKeyCertificate").string(var_2.as_str());
+    }
     {
         object.key("KeyBlockFormat").string(input.key_block_format.as_str());
     }
-    if let Some(var_1) = &input.random_nonce {
-        object.key("RandomNonce").string(var_1.as_str());
+    if let Some(var_3) = &input.random_nonce {
+        object.key("RandomNonce").string(var_3.as_str());
     }
-    if let Some(var_2) = &input.key_block_headers {
+    if let Some(var_4) = &input.key_block_headers {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("KeyBlockHeaders").start_object();
-        crate::protocol_serde::shape_key_block_headers::ser_key_block_headers(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_5 = object.key("KeyBlockHeaders").start_object();
+        crate::protocol_serde::shape_key_block_headers::ser_key_block_headers(&mut object_5, var_4)?;
+        object_5.finish();
     }
     Ok(())
 }

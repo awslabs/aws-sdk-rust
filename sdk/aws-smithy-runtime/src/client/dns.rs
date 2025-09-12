@@ -15,7 +15,7 @@ mod tokio {
     ///
     /// This implementation isn't available for WASM targets.
     #[non_exhaustive]
-    #[derive(Debug, Default)]
+    #[derive(Debug, Default, Clone)]
     pub struct TokioDnsResolver;
 
     impl TokioDnsResolver {

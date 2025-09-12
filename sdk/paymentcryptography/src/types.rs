@@ -59,6 +59,10 @@ pub use crate::types::_root_certificate_public_key::RootCertificatePublicKey;
 
 pub use crate::types::_key_material_type::KeyMaterialType;
 
+pub use crate::types::_certificate_subject_type::CertificateSubjectType;
+
+pub use crate::types::_signing_algorithm_type::SigningAlgorithmType;
+
 pub use crate::types::_wrapped_key::WrappedKey;
 
 pub use crate::types::_wrapped_key_material_format::WrappedKeyMaterialFormat;
@@ -82,6 +86,8 @@ pub use crate::types::_export_tr34_key_block::ExportTr34KeyBlock;
 pub use crate::types::_export_tr31_key_block::ExportTr31KeyBlock;
 
 mod _alias;
+
+mod _certificate_subject_type;
 
 mod _derive_key_usage;
 
@@ -148,6 +154,8 @@ mod _multi_region_key_type;
 mod _replication_status_type;
 
 mod _root_certificate_public_key;
+
+mod _signing_algorithm_type;
 
 mod _symmetric_key_algorithm;
 

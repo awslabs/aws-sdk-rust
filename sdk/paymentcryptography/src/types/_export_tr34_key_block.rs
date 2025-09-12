@@ -10,6 +10,10 @@ pub struct ExportTr34KeyBlock {
     pub wrapping_key_certificate: ::std::string::String,
     /// <p>The export token to initiate key export from Amazon Web Services Payment Cryptography. It also contains the signing key certificate that will sign the wrapped key during TR-34 key block generation. Call <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetParametersForExport.html">GetParametersForExport</a> to receive an export token. It expires after 30 days. You can use the same export token to export multiple keys from the same service account.</p>
     pub export_token: ::std::string::String,
+    /// Key Identifier used for signing the export key
+    pub signing_key_identifier: ::std::option::Option<::std::string::String>,
+    /// Certificate used for signing the export key
+    pub signing_key_certificate: ::std::option::Option<::std::string::String>,
     /// <p>The format of key block that Amazon Web Services Payment Cryptography will use during key export.</p>
     pub key_block_format: crate::types::Tr34KeyBlockFormat,
     /// <p>A random number value that is unique to the TR-34 key block generated using 2 pass. The operation will fail, if a random nonce value is not provided for a TR-34 key block generated using 2 pass.</p>
@@ -32,6 +36,14 @@ impl ExportTr34KeyBlock {
     pub fn export_token(&self) -> &str {
         use std::ops::Deref;
         self.export_token.deref()
+    }
+    /// Key Identifier used for signing the export key
+    pub fn signing_key_identifier(&self) -> ::std::option::Option<&str> {
+        self.signing_key_identifier.as_deref()
+    }
+    /// Certificate used for signing the export key
+    pub fn signing_key_certificate(&self) -> ::std::option::Option<&str> {
+        self.signing_key_certificate.as_deref()
     }
     /// <p>The format of key block that Amazon Web Services Payment Cryptography will use during key export.</p>
     pub fn key_block_format(&self) -> &crate::types::Tr34KeyBlockFormat {
@@ -60,6 +72,8 @@ pub struct ExportTr34KeyBlockBuilder {
     pub(crate) certificate_authority_public_key_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) wrapping_key_certificate: ::std::option::Option<::std::string::String>,
     pub(crate) export_token: ::std::option::Option<::std::string::String>,
+    pub(crate) signing_key_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) signing_key_certificate: ::std::option::Option<::std::string::String>,
     pub(crate) key_block_format: ::std::option::Option<crate::types::Tr34KeyBlockFormat>,
     pub(crate) random_nonce: ::std::option::Option<::std::string::String>,
     pub(crate) key_block_headers: ::std::option::Option<crate::types::KeyBlockHeaders>,
@@ -96,7 +110,6 @@ impl ExportTr34KeyBlockBuilder {
         &self.wrapping_key_certificate
     }
     /// <p>The export token to initiate key export from Amazon Web Services Payment Cryptography. It also contains the signing key certificate that will sign the wrapped key during TR-34 key block generation. Call <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetParametersForExport.html">GetParametersForExport</a> to receive an export token. It expires after 30 days. You can use the same export token to export multiple keys from the same service account.</p>
-    /// This field is required.
     pub fn export_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.export_token = ::std::option::Option::Some(input.into());
         self
@@ -109,6 +122,34 @@ impl ExportTr34KeyBlockBuilder {
     /// <p>The export token to initiate key export from Amazon Web Services Payment Cryptography. It also contains the signing key certificate that will sign the wrapped key during TR-34 key block generation. Call <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetParametersForExport.html">GetParametersForExport</a> to receive an export token. It expires after 30 days. You can use the same export token to export multiple keys from the same service account.</p>
     pub fn get_export_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.export_token
+    }
+    /// Key Identifier used for signing the export key
+    pub fn signing_key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.signing_key_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// Key Identifier used for signing the export key
+    pub fn set_signing_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.signing_key_identifier = input;
+        self
+    }
+    /// Key Identifier used for signing the export key
+    pub fn get_signing_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.signing_key_identifier
+    }
+    /// Certificate used for signing the export key
+    pub fn signing_key_certificate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.signing_key_certificate = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// Certificate used for signing the export key
+    pub fn set_signing_key_certificate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.signing_key_certificate = input;
+        self
+    }
+    /// Certificate used for signing the export key
+    pub fn get_signing_key_certificate(&self) -> &::std::option::Option<::std::string::String> {
+        &self.signing_key_certificate
     }
     /// <p>The format of key block that Amazon Web Services Payment Cryptography will use during key export.</p>
     /// This field is required.
@@ -157,7 +198,6 @@ impl ExportTr34KeyBlockBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`certificate_authority_public_key_identifier`](crate::types::builders::ExportTr34KeyBlockBuilder::certificate_authority_public_key_identifier)
     /// - [`wrapping_key_certificate`](crate::types::builders::ExportTr34KeyBlockBuilder::wrapping_key_certificate)
-    /// - [`export_token`](crate::types::builders::ExportTr34KeyBlockBuilder::export_token)
     /// - [`key_block_format`](crate::types::builders::ExportTr34KeyBlockBuilder::key_block_format)
     pub fn build(self) -> ::std::result::Result<crate::types::ExportTr34KeyBlock, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ExportTr34KeyBlock {
@@ -173,12 +213,9 @@ impl ExportTr34KeyBlockBuilder {
                     "wrapping_key_certificate was not specified but it is required when building ExportTr34KeyBlock",
                 )
             })?,
-            export_token: self.export_token.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "export_token",
-                    "export_token was not specified but it is required when building ExportTr34KeyBlock",
-                )
-            })?,
+            export_token: self.export_token.unwrap_or_default(),
+            signing_key_identifier: self.signing_key_identifier,
+            signing_key_certificate: self.signing_key_certificate,
             key_block_format: self.key_block_format.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "key_block_format",
