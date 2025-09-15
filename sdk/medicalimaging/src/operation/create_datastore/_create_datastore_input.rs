@@ -11,6 +11,8 @@ pub struct CreateDatastoreInput {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) assigned to the Key Management Service (KMS) key for accessing encrypted data.</p>
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The ARN of the authorizer's Lambda function.</p>
+    pub lambda_authorizer_arn: ::std::option::Option<::std::string::String>,
 }
 impl CreateDatastoreInput {
     /// <p>The data store name.</p>
@@ -29,6 +31,10 @@ impl CreateDatastoreInput {
     pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
         self.kms_key_arn.as_deref()
     }
+    /// <p>The ARN of the authorizer's Lambda function.</p>
+    pub fn lambda_authorizer_arn(&self) -> ::std::option::Option<&str> {
+        self.lambda_authorizer_arn.as_deref()
+    }
 }
 impl CreateDatastoreInput {
     /// Creates a new builder-style object to manufacture [`CreateDatastoreInput`](crate::operation::create_datastore::CreateDatastoreInput).
@@ -45,6 +51,7 @@ pub struct CreateDatastoreInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) lambda_authorizer_arn: ::std::option::Option<::std::string::String>,
 }
 impl CreateDatastoreInputBuilder {
     /// <p>The data store name.</p>
@@ -110,6 +117,20 @@ impl CreateDatastoreInputBuilder {
     pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_arn
     }
+    /// <p>The ARN of the authorizer's Lambda function.</p>
+    pub fn lambda_authorizer_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.lambda_authorizer_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN of the authorizer's Lambda function.</p>
+    pub fn set_lambda_authorizer_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.lambda_authorizer_arn = input;
+        self
+    }
+    /// <p>The ARN of the authorizer's Lambda function.</p>
+    pub fn get_lambda_authorizer_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lambda_authorizer_arn
+    }
     /// Consumes the builder and constructs a [`CreateDatastoreInput`](crate::operation::create_datastore::CreateDatastoreInput).
     pub fn build(
         self,
@@ -119,6 +140,7 @@ impl CreateDatastoreInputBuilder {
             client_token: self.client_token,
             tags: self.tags,
             kms_key_arn: self.kms_key_arn,
+            lambda_authorizer_arn: self.lambda_authorizer_arn,
         })
     }
 }

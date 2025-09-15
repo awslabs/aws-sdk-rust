@@ -68,6 +68,44 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_centralization_rule_for_organization::CreateCentralizationRuleForOrganizationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_centralization_rule_for_organization::CreateCentralizationRuleForOrganizationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_centralization_rule_for_organization::CreateCentralizationRuleForOrganizationError> for Error {
+    fn from(err: crate::operation::create_centralization_rule_for_organization::CreateCentralizationRuleForOrganizationError) -> Self {
+        match err {
+            crate::operation::create_centralization_rule_for_organization::CreateCentralizationRuleForOrganizationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_centralization_rule_for_organization::CreateCentralizationRuleForOrganizationError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_centralization_rule_for_organization::CreateCentralizationRuleForOrganizationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_centralization_rule_for_organization::CreateCentralizationRuleForOrganizationError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::create_centralization_rule_for_organization::CreateCentralizationRuleForOrganizationError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::create_centralization_rule_for_organization::CreateCentralizationRuleForOrganizationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_centralization_rule_for_organization::CreateCentralizationRuleForOrganizationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_telemetry_rule::CreateTelemetryRuleError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -153,6 +191,43 @@ impl From<crate::operation::create_telemetry_rule_for_organization::CreateTeleme
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_centralization_rule_for_organization::DeleteCentralizationRuleForOrganizationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_centralization_rule_for_organization::DeleteCentralizationRuleForOrganizationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_centralization_rule_for_organization::DeleteCentralizationRuleForOrganizationError> for Error {
+    fn from(err: crate::operation::delete_centralization_rule_for_organization::DeleteCentralizationRuleForOrganizationError) -> Self {
+        match err {
+            crate::operation::delete_centralization_rule_for_organization::DeleteCentralizationRuleForOrganizationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_centralization_rule_for_organization::DeleteCentralizationRuleForOrganizationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_centralization_rule_for_organization::DeleteCentralizationRuleForOrganizationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_centralization_rule_for_organization::DeleteCentralizationRuleForOrganizationError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::delete_centralization_rule_for_organization::DeleteCentralizationRuleForOrganizationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_centralization_rule_for_organization::DeleteCentralizationRuleForOrganizationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_telemetry_rule::DeleteTelemetryRuleError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -229,6 +304,55 @@ impl From<crate::operation::delete_telemetry_rule_for_organization::DeleteTeleme
                 Error::ValidationException(inner)
             }
             crate::operation::delete_telemetry_rule_for_organization::DeleteTelemetryRuleForOrganizationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_centralization_rule_for_organization::GetCentralizationRuleForOrganizationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_centralization_rule_for_organization::GetCentralizationRuleForOrganizationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_centralization_rule_for_organization::GetCentralizationRuleForOrganizationError> for Error {
+    fn from(err: crate::operation::get_centralization_rule_for_organization::GetCentralizationRuleForOrganizationError) -> Self {
+        match err {
+            crate::operation::get_centralization_rule_for_organization::GetCentralizationRuleForOrganizationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_centralization_rule_for_organization::GetCentralizationRuleForOrganizationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_centralization_rule_for_organization::GetCentralizationRuleForOrganizationError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_centralization_rule_for_organization::GetCentralizationRuleForOrganizationError::TooManyRequestsException(
+                inner,
+            ) => Error::TooManyRequestsException(inner),
+            crate::operation::get_centralization_rule_for_organization::GetCentralizationRuleForOrganizationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_centralization_rule_for_organization::GetCentralizationRuleForOrganizationError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
         }
@@ -377,6 +501,52 @@ impl From<crate::operation::get_telemetry_rule_for_organization::GetTelemetryRul
                 Error::ValidationException(inner)
             }
             crate::operation::get_telemetry_rule_for_organization::GetTelemetryRuleForOrganizationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_centralization_rules_for_organization::ListCentralizationRulesForOrganizationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_centralization_rules_for_organization::ListCentralizationRulesForOrganizationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_centralization_rules_for_organization::ListCentralizationRulesForOrganizationError> for Error {
+    fn from(err: crate::operation::list_centralization_rules_for_organization::ListCentralizationRulesForOrganizationError) -> Self {
+        match err {
+            crate::operation::list_centralization_rules_for_organization::ListCentralizationRulesForOrganizationError::AccessDeniedException(
+                inner,
+            ) => Error::AccessDeniedException(inner),
+            crate::operation::list_centralization_rules_for_organization::ListCentralizationRulesForOrganizationError::InternalServerException(
+                inner,
+            ) => Error::InternalServerException(inner),
+            crate::operation::list_centralization_rules_for_organization::ListCentralizationRulesForOrganizationError::TooManyRequestsException(
+                inner,
+            ) => Error::TooManyRequestsException(inner),
+            crate::operation::list_centralization_rules_for_organization::ListCentralizationRulesForOrganizationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_centralization_rules_for_organization::ListCentralizationRulesForOrganizationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -778,6 +948,44 @@ impl From<crate::operation::untag_resource::UntagResourceError> for Error {
             crate::operation::untag_resource::UntagResourceError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::untag_resource::UntagResourceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_centralization_rule_for_organization::UpdateCentralizationRuleForOrganizationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_centralization_rule_for_organization::UpdateCentralizationRuleForOrganizationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_centralization_rule_for_organization::UpdateCentralizationRuleForOrganizationError> for Error {
+    fn from(err: crate::operation::update_centralization_rule_for_organization::UpdateCentralizationRuleForOrganizationError) -> Self {
+        match err {
+            crate::operation::update_centralization_rule_for_organization::UpdateCentralizationRuleForOrganizationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_centralization_rule_for_organization::UpdateCentralizationRuleForOrganizationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_centralization_rule_for_organization::UpdateCentralizationRuleForOrganizationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_centralization_rule_for_organization::UpdateCentralizationRuleForOrganizationError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::update_centralization_rule_for_organization::UpdateCentralizationRuleForOrganizationError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::update_centralization_rule_for_organization::UpdateCentralizationRuleForOrganizationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_centralization_rule_for_organization::UpdateCentralizationRuleForOrganizationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

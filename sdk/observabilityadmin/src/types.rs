@@ -11,17 +11,69 @@ pub use crate::types::_telemetry_type::TelemetryType;
 
 pub use crate::types::_resource_type::ResourceType;
 
+pub use crate::types::_centralization_rule::CentralizationRule;
+
+pub use crate::types::_centralization_rule_destination::CentralizationRuleDestination;
+
+pub use crate::types::_destination_logs_configuration::DestinationLogsConfiguration;
+
+pub use crate::types::_logs_backup_configuration::LogsBackupConfiguration;
+
+pub use crate::types::_logs_encryption_configuration::LogsEncryptionConfiguration;
+
+pub use crate::types::_encryption_conflict_resolution_strategy::EncryptionConflictResolutionStrategy;
+
+pub use crate::types::_encryption_strategy::EncryptionStrategy;
+
+pub use crate::types::_centralization_rule_source::CentralizationRuleSource;
+
+pub use crate::types::_source_logs_configuration::SourceLogsConfiguration;
+
+pub use crate::types::_encrypted_log_group_strategy::EncryptedLogGroupStrategy;
+
 pub use crate::types::_telemetry_rule_summary::TelemetryRuleSummary;
 
 pub use crate::types::_telemetry_configuration::TelemetryConfiguration;
 
 pub use crate::types::_telemetry_state::TelemetryState;
 
+pub use crate::types::_centralization_rule_summary::CentralizationRuleSummary;
+
+pub use crate::types::_centralization_failure_reason::CentralizationFailureReason;
+
+pub use crate::types::_rule_health::RuleHealth;
+
 pub use crate::types::_status::Status;
+
+mod _centralization_failure_reason;
+
+mod _centralization_rule;
+
+mod _centralization_rule_destination;
+
+mod _centralization_rule_source;
+
+mod _centralization_rule_summary;
+
+mod _destination_logs_configuration;
 
 mod _destination_type;
 
+mod _encrypted_log_group_strategy;
+
+mod _encryption_conflict_resolution_strategy;
+
+mod _encryption_strategy;
+
+mod _logs_backup_configuration;
+
+mod _logs_encryption_configuration;
+
 mod _resource_type;
+
+mod _rule_health;
+
+mod _source_logs_configuration;
 
 mod _status;
 

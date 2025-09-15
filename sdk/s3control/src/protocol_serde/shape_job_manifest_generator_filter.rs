@@ -47,6 +47,15 @@ pub fn ser_job_manifest_generator_filter(
             }
         }
     }
+    if let Some(var_11) = &input.match_any_object_encryption {
+        let mut inner_writer = scope.start_el("MatchAnyObjectEncryption").finish();
+        for list_item_12 in var_11 {
+            {
+                let inner_writer = inner_writer.start_el("ObjectEncryption");
+                crate::protocol_serde::shape_object_encryption_filter::ser_object_encryption_filter(list_item_12, inner_writer)?
+            }
+        }
+    }
     scope.finish();
     Ok(())
 }
@@ -60,7 +69,7 @@ pub fn de_job_manifest_generator_filter(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("EligibleForReplication") /* EligibleForReplication com.amazonaws.s3control#JobManifestGeneratorFilter$EligibleForReplication */ =>  {
-                let var_11 =
+                let var_13 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -71,11 +80,11 @@ pub fn de_job_manifest_generator_filter(
                         ?
                     )
                 ;
-                builder = builder.set_eligible_for_replication(var_11);
+                builder = builder.set_eligible_for_replication(var_13);
             }
             ,
             s if s.matches("CreatedAfter") /* CreatedAfter com.amazonaws.s3control#JobManifestGeneratorFilter$CreatedAfter */ =>  {
-                let var_12 =
+                let var_14 =
                     Some(
                         ::aws_smithy_types::DateTime::from_str(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -85,11 +94,11 @@ pub fn de_job_manifest_generator_filter(
                         ?
                     )
                 ;
-                builder = builder.set_created_after(var_12);
+                builder = builder.set_created_after(var_14);
             }
             ,
             s if s.matches("CreatedBefore") /* CreatedBefore com.amazonaws.s3control#JobManifestGeneratorFilter$CreatedBefore */ =>  {
-                let var_13 =
+                let var_15 =
                     Some(
                         ::aws_smithy_types::DateTime::from_str(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -99,31 +108,31 @@ pub fn de_job_manifest_generator_filter(
                         ?
                     )
                 ;
-                builder = builder.set_created_before(var_13);
+                builder = builder.set_created_before(var_15);
             }
             ,
             s if s.matches("ObjectReplicationStatuses") /* ObjectReplicationStatuses com.amazonaws.s3control#JobManifestGeneratorFilter$ObjectReplicationStatuses */ =>  {
-                let var_14 =
+                let var_16 =
                     Some(
                         crate::protocol_serde::shape_replication_status_filter_list::de_replication_status_filter_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_object_replication_statuses(var_14);
+                builder = builder.set_object_replication_statuses(var_16);
             }
             ,
             s if s.matches("KeyNameConstraint") /* KeyNameConstraint com.amazonaws.s3control#JobManifestGeneratorFilter$KeyNameConstraint */ =>  {
-                let var_15 =
+                let var_17 =
                     Some(
                         crate::protocol_serde::shape_key_name_constraint::de_key_name_constraint(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_key_name_constraint(var_15);
+                builder = builder.set_key_name_constraint(var_17);
             }
             ,
             s if s.matches("ObjectSizeGreaterThanBytes") /* ObjectSizeGreaterThanBytes com.amazonaws.s3control#JobManifestGeneratorFilter$ObjectSizeGreaterThanBytes */ =>  {
-                let var_16 =
+                let var_18 =
                     Some(
                          {
                             <i64 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -134,11 +143,11 @@ pub fn de_job_manifest_generator_filter(
                         ?
                     )
                 ;
-                builder = builder.set_object_size_greater_than_bytes(var_16);
+                builder = builder.set_object_size_greater_than_bytes(var_18);
             }
             ,
             s if s.matches("ObjectSizeLessThanBytes") /* ObjectSizeLessThanBytes com.amazonaws.s3control#JobManifestGeneratorFilter$ObjectSizeLessThanBytes */ =>  {
-                let var_17 =
+                let var_19 =
                     Some(
                          {
                             <i64 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -149,17 +158,27 @@ pub fn de_job_manifest_generator_filter(
                         ?
                     )
                 ;
-                builder = builder.set_object_size_less_than_bytes(var_17);
+                builder = builder.set_object_size_less_than_bytes(var_19);
             }
             ,
             s if s.matches("MatchAnyStorageClass") /* MatchAnyStorageClass com.amazonaws.s3control#JobManifestGeneratorFilter$MatchAnyStorageClass */ =>  {
-                let var_18 =
+                let var_20 =
                     Some(
                         crate::protocol_serde::shape_storage_class_list::de_storage_class_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_match_any_storage_class(var_18);
+                builder = builder.set_match_any_storage_class(var_20);
+            }
+            ,
+            s if s.matches("MatchAnyObjectEncryption") /* MatchAnyObjectEncryption com.amazonaws.s3control#JobManifestGeneratorFilter$MatchAnyObjectEncryption */ =>  {
+                let var_21 =
+                    Some(
+                        crate::protocol_serde::shape_object_encryption_filter_list::de_object_encryption_filter_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_match_any_object_encryption(var_21);
             }
             ,
             _ => {}

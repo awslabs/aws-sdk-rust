@@ -5,6 +5,22 @@ pub use crate::types::_telemetry_destination_configuration::TelemetryDestination
 
 pub use crate::types::_vpc_flow_log_parameters::VpcFlowLogParametersBuilder;
 
+pub use crate::types::_centralization_rule::CentralizationRuleBuilder;
+
+pub use crate::types::_centralization_rule_destination::CentralizationRuleDestinationBuilder;
+
+pub use crate::types::_destination_logs_configuration::DestinationLogsConfigurationBuilder;
+
+pub use crate::types::_logs_backup_configuration::LogsBackupConfigurationBuilder;
+
+pub use crate::types::_logs_encryption_configuration::LogsEncryptionConfigurationBuilder;
+
+pub use crate::types::_centralization_rule_source::CentralizationRuleSourceBuilder;
+
+pub use crate::types::_source_logs_configuration::SourceLogsConfigurationBuilder;
+
 pub use crate::types::_telemetry_rule_summary::TelemetryRuleSummaryBuilder;
 
 pub use crate::types::_telemetry_configuration::TelemetryConfigurationBuilder;
+
+pub use crate::types::_centralization_rule_summary::CentralizationRuleSummaryBuilder;

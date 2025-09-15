@@ -19,6 +19,9 @@
 ///     ImageSetWorkflowStatus::Created => { /* ... */ },
 ///     ImageSetWorkflowStatus::Deleted => { /* ... */ },
 ///     ImageSetWorkflowStatus::Deleting => { /* ... */ },
+///     ImageSetWorkflowStatus::Imported => { /* ... */ },
+///     ImageSetWorkflowStatus::Importing => { /* ... */ },
+///     ImageSetWorkflowStatus::ImportFailed => { /* ... */ },
 ///     ImageSetWorkflowStatus::Updated => { /* ... */ },
 ///     ImageSetWorkflowStatus::UpdateFailed => { /* ... */ },
 ///     ImageSetWorkflowStatus::Updating => { /* ... */ },
@@ -65,6 +68,12 @@ pub enum ImageSetWorkflowStatus {
     #[allow(missing_docs)] // documentation missing in model
     Deleting,
     #[allow(missing_docs)] // documentation missing in model
+    Imported,
+    #[allow(missing_docs)] // documentation missing in model
+    Importing,
+    #[allow(missing_docs)] // documentation missing in model
+    ImportFailed,
+    #[allow(missing_docs)] // documentation missing in model
     Updated,
     #[allow(missing_docs)] // documentation missing in model
     UpdateFailed,
@@ -84,6 +93,9 @@ impl ::std::convert::From<&str> for ImageSetWorkflowStatus {
             "CREATED" => ImageSetWorkflowStatus::Created,
             "DELETED" => ImageSetWorkflowStatus::Deleted,
             "DELETING" => ImageSetWorkflowStatus::Deleting,
+            "IMPORTED" => ImageSetWorkflowStatus::Imported,
+            "IMPORTING" => ImageSetWorkflowStatus::Importing,
+            "IMPORT_FAILED" => ImageSetWorkflowStatus::ImportFailed,
             "UPDATED" => ImageSetWorkflowStatus::Updated,
             "UPDATE_FAILED" => ImageSetWorkflowStatus::UpdateFailed,
             "UPDATING" => ImageSetWorkflowStatus::Updating,
@@ -109,6 +121,9 @@ impl ImageSetWorkflowStatus {
             ImageSetWorkflowStatus::Created => "CREATED",
             ImageSetWorkflowStatus::Deleted => "DELETED",
             ImageSetWorkflowStatus::Deleting => "DELETING",
+            ImageSetWorkflowStatus::Imported => "IMPORTED",
+            ImageSetWorkflowStatus::Importing => "IMPORTING",
+            ImageSetWorkflowStatus::ImportFailed => "IMPORT_FAILED",
             ImageSetWorkflowStatus::Updated => "UPDATED",
             ImageSetWorkflowStatus::UpdateFailed => "UPDATE_FAILED",
             ImageSetWorkflowStatus::Updating => "UPDATING",
@@ -125,6 +140,9 @@ impl ImageSetWorkflowStatus {
             "CREATED",
             "DELETED",
             "DELETING",
+            "IMPORTED",
+            "IMPORTING",
+            "IMPORT_FAILED",
             "UPDATED",
             "UPDATE_FAILED",
             "UPDATING",
@@ -158,6 +176,9 @@ impl ::std::fmt::Display for ImageSetWorkflowStatus {
             ImageSetWorkflowStatus::Created => write!(f, "CREATED"),
             ImageSetWorkflowStatus::Deleted => write!(f, "DELETED"),
             ImageSetWorkflowStatus::Deleting => write!(f, "DELETING"),
+            ImageSetWorkflowStatus::Imported => write!(f, "IMPORTED"),
+            ImageSetWorkflowStatus::Importing => write!(f, "IMPORTING"),
+            ImageSetWorkflowStatus::ImportFailed => write!(f, "IMPORT_FAILED"),
             ImageSetWorkflowStatus::Updated => write!(f, "UPDATED"),
             ImageSetWorkflowStatus::UpdateFailed => write!(f, "UPDATE_FAILED"),
             ImageSetWorkflowStatus::Updating => write!(f, "UPDATING"),

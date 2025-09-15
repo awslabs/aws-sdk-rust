@@ -593,6 +593,8 @@ pub(crate) mod shape_metrics;
 
 pub(crate) mod shape_multi_region_access_point_regional_response_list;
 
+pub(crate) mod shape_object_encryption_filter;
+
 pub(crate) mod shape_object_lambda_transformation_configuration_actions_list;
 
 pub(crate) mod shape_prefix_level;
@@ -621,7 +623,11 @@ pub(crate) mod shape_storage_lens_group_level_selection_criteria;
 
 pub(crate) mod shape_user_arguments;
 
+pub(crate) mod shape_dssekms_filter;
+
 pub(crate) mod shape_multi_region_access_point_regional_response;
+
+pub(crate) mod shape_object_encryption_filter_list;
 
 pub(crate) mod shape_prefix_level_storage_metrics;
 
@@ -637,6 +643,8 @@ pub(crate) mod shape_ssekms;
 
 pub(crate) mod shape_ssekms_encryption;
 
+pub(crate) mod shape_ssekms_filter;
+
 pub(crate) mod shape_storage_class_list;
 
 pub(crate) mod shape_non_empty_max_length1024_string_list;
@@ -650,3 +658,9 @@ pub(crate) mod shape_sses3_encryption;
 pub(crate) mod shape_storage_lens_group_level_exclude;
 
 pub(crate) mod shape_storage_lens_group_level_include;
+
+pub(crate) mod shape_not_sse_filter;
+
+pub(crate) mod shape_ssec_filter;
+
+pub(crate) mod shape_sses3_filter;

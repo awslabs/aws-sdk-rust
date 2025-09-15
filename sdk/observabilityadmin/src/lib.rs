@@ -34,7 +34,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-observabilityadmin = "1.36.0"
+//! aws-sdk-observabilityadmin = "1.37.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -151,13 +151,13 @@ pub use config::Config;
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CreateTelemetryRule`](crate::operation::create_telemetry_rule) operation has
-/// a [`Client::create_telemetry_rule`], function which returns a builder for that operation.
+/// For example, the [`CreateCentralizationRuleForOrganization`](crate::operation::create_centralization_rule_for_organization) operation has
+/// a [`Client::create_centralization_rule_for_organization`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.create_telemetry_rule()
+/// let result = client.create_centralization_rule_for_organization()
 ///     .rule_name("example")
 ///     .send()
 ///     .await;

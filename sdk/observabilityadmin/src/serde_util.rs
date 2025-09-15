@@ -8,11 +8,77 @@ pub(crate) fn list_tags_for_resource_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn centralization_rule_correct_errors(
+    mut builder: crate::types::builders::CentralizationRuleBuilder,
+) -> crate::types::builders::CentralizationRuleBuilder {
+    if builder.source.is_none() {
+        builder.source = {
+            let builder = crate::types::builders::CentralizationRuleSourceBuilder::default();
+            crate::serde_util::centralization_rule_source_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.destination.is_none() {
+        builder.destination = {
+            let builder = crate::types::builders::CentralizationRuleDestinationBuilder::default();
+            crate::serde_util::centralization_rule_destination_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn telemetry_rule_correct_errors(
     mut builder: crate::types::builders::TelemetryRuleBuilder,
 ) -> crate::types::builders::TelemetryRuleBuilder {
     if builder.telemetry_type.is_none() {
         builder.telemetry_type = "no value was set".parse::<crate::types::TelemetryType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn centralization_rule_destination_correct_errors(
+    mut builder: crate::types::builders::CentralizationRuleDestinationBuilder,
+) -> crate::types::builders::CentralizationRuleDestinationBuilder {
+    if builder.region.is_none() {
+        builder.region = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn centralization_rule_source_correct_errors(
+    mut builder: crate::types::builders::CentralizationRuleSourceBuilder,
+) -> crate::types::builders::CentralizationRuleSourceBuilder {
+    if builder.regions.is_none() {
+        builder.regions = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn source_logs_configuration_correct_errors(
+    mut builder: crate::types::builders::SourceLogsConfigurationBuilder,
+) -> crate::types::builders::SourceLogsConfigurationBuilder {
+    if builder.log_group_selection_criteria.is_none() {
+        builder.log_group_selection_criteria = Some(Default::default())
+    }
+    if builder.encrypted_log_group_strategy.is_none() {
+        builder.encrypted_log_group_strategy = "no value was set".parse::<crate::types::EncryptedLogGroupStrategy>().ok()
+    }
+    builder
+}
+
+pub(crate) fn logs_backup_configuration_correct_errors(
+    mut builder: crate::types::builders::LogsBackupConfigurationBuilder,
+) -> crate::types::builders::LogsBackupConfigurationBuilder {
+    if builder.region.is_none() {
+        builder.region = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn logs_encryption_configuration_correct_errors(
+    mut builder: crate::types::builders::LogsEncryptionConfigurationBuilder,
+) -> crate::types::builders::LogsEncryptionConfigurationBuilder {
+    if builder.encryption_strategy.is_none() {
+        builder.encryption_strategy = "no value was set".parse::<crate::types::EncryptionStrategy>().ok()
     }
     builder
 }

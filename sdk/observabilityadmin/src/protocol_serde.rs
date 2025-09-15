@@ -23,13 +23,19 @@ pub fn parse_http_error_metadata(
     crate::json_errors::parse_error_metadata(response_body, response_headers)
 }
 
+pub(crate) mod shape_create_centralization_rule_for_organization;
+
 pub(crate) mod shape_create_telemetry_rule;
 
 pub(crate) mod shape_create_telemetry_rule_for_organization;
 
+pub(crate) mod shape_delete_centralization_rule_for_organization;
+
 pub(crate) mod shape_delete_telemetry_rule;
 
 pub(crate) mod shape_delete_telemetry_rule_for_organization;
+
+pub(crate) mod shape_get_centralization_rule_for_organization;
 
 pub(crate) mod shape_get_telemetry_evaluation_status;
 
@@ -38,6 +44,8 @@ pub(crate) mod shape_get_telemetry_evaluation_status_for_organization;
 pub(crate) mod shape_get_telemetry_rule;
 
 pub(crate) mod shape_get_telemetry_rule_for_organization;
+
+pub(crate) mod shape_list_centralization_rules_for_organization;
 
 pub(crate) mod shape_list_resource_telemetry;
 
@@ -61,6 +69,8 @@ pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_untag_resource;
 
+pub(crate) mod shape_update_centralization_rule_for_organization;
+
 pub(crate) mod shape_update_telemetry_rule;
 
 pub(crate) mod shape_update_telemetry_rule_for_organization;
@@ -77,19 +87,27 @@ pub(crate) mod shape_access_denied_exception;
 
 pub(crate) mod shape_conflict_exception;
 
+pub(crate) mod shape_create_centralization_rule_for_organization_input;
+
 pub(crate) mod shape_create_telemetry_rule_for_organization_input;
 
 pub(crate) mod shape_create_telemetry_rule_input;
 
+pub(crate) mod shape_delete_centralization_rule_for_organization_input;
+
 pub(crate) mod shape_delete_telemetry_rule_for_organization_input;
 
 pub(crate) mod shape_delete_telemetry_rule_input;
+
+pub(crate) mod shape_get_centralization_rule_for_organization_input;
 
 pub(crate) mod shape_get_telemetry_rule_for_organization_input;
 
 pub(crate) mod shape_get_telemetry_rule_input;
 
 pub(crate) mod shape_internal_server_exception;
+
+pub(crate) mod shape_list_centralization_rules_for_organization_input;
 
 pub(crate) mod shape_list_resource_telemetry_for_organization_input;
 
@@ -111,11 +129,17 @@ pub(crate) mod shape_too_many_requests_exception;
 
 pub(crate) mod shape_untag_resource_input;
 
+pub(crate) mod shape_update_centralization_rule_for_organization_input;
+
 pub(crate) mod shape_update_telemetry_rule_for_organization_input;
 
 pub(crate) mod shape_update_telemetry_rule_input;
 
 pub(crate) mod shape_validation_exception;
+
+pub(crate) mod shape_centralization_rule;
+
+pub(crate) mod shape_centralization_rule_summaries;
 
 pub(crate) mod shape_tag_map_output;
 
@@ -125,12 +149,28 @@ pub(crate) mod shape_telemetry_rule;
 
 pub(crate) mod shape_telemetry_rule_summaries;
 
+pub(crate) mod shape_centralization_rule_destination;
+
+pub(crate) mod shape_centralization_rule_source;
+
+pub(crate) mod shape_centralization_rule_summary;
+
 pub(crate) mod shape_telemetry_configuration;
 
 pub(crate) mod shape_telemetry_destination_configuration;
 
 pub(crate) mod shape_telemetry_rule_summary;
 
+pub(crate) mod shape_destination_logs_configuration;
+
+pub(crate) mod shape_regions;
+
+pub(crate) mod shape_source_logs_configuration;
+
 pub(crate) mod shape_telemetry_configuration_state;
 
 pub(crate) mod shape_vpc_flow_log_parameters;
+
+pub(crate) mod shape_logs_backup_configuration;
+
+pub(crate) mod shape_logs_encryption_configuration;

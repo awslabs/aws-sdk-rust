@@ -169,4 +169,18 @@ impl CreateDatastoreFluentBuilder {
     pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_kms_key_arn()
     }
+    /// <p>The ARN of the authorizer's Lambda function.</p>
+    pub fn lambda_authorizer_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.lambda_authorizer_arn(input.into());
+        self
+    }
+    /// <p>The ARN of the authorizer's Lambda function.</p>
+    pub fn set_lambda_authorizer_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_lambda_authorizer_arn(input);
+        self
+    }
+    /// <p>The ARN of the authorizer's Lambda function.</p>
+    pub fn get_lambda_authorizer_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_lambda_authorizer_arn()
+    }
 }

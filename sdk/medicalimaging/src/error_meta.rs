@@ -116,6 +116,7 @@ impl From<crate::operation::create_datastore::CreateDatastoreError> for Error {
             crate::operation::create_datastore::CreateDatastoreError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::create_datastore::CreateDatastoreError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::create_datastore::CreateDatastoreError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_datastore::CreateDatastoreError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::create_datastore::CreateDatastoreError::ServiceQuotaExceededException(inner) => {
                 Error::ServiceQuotaExceededException(inner)
             }

@@ -12,6 +12,8 @@ pub struct DatastoreProperties {
     pub datastore_status: crate::types::DatastoreStatus,
     /// <p>The Amazon Resource Name (ARN) assigned to the Key Management Service (KMS) key for accessing encrypted data.</p>
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The ARN of the authorizer's Lambda function.</p>
+    pub lambda_authorizer_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the data store.</p>
     pub datastore_arn: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when the data store was created.</p>
@@ -37,6 +39,10 @@ impl DatastoreProperties {
     /// <p>The Amazon Resource Name (ARN) assigned to the Key Management Service (KMS) key for accessing encrypted data.</p>
     pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
         self.kms_key_arn.as_deref()
+    }
+    /// <p>The ARN of the authorizer's Lambda function.</p>
+    pub fn lambda_authorizer_arn(&self) -> ::std::option::Option<&str> {
+        self.lambda_authorizer_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the data store.</p>
     pub fn datastore_arn(&self) -> ::std::option::Option<&str> {
@@ -66,6 +72,7 @@ pub struct DatastorePropertiesBuilder {
     pub(crate) datastore_name: ::std::option::Option<::std::string::String>,
     pub(crate) datastore_status: ::std::option::Option<crate::types::DatastoreStatus>,
     pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) lambda_authorizer_arn: ::std::option::Option<::std::string::String>,
     pub(crate) datastore_arn: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -129,6 +136,20 @@ impl DatastorePropertiesBuilder {
     /// <p>The Amazon Resource Name (ARN) assigned to the Key Management Service (KMS) key for accessing encrypted data.</p>
     pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_arn
+    }
+    /// <p>The ARN of the authorizer's Lambda function.</p>
+    pub fn lambda_authorizer_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.lambda_authorizer_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN of the authorizer's Lambda function.</p>
+    pub fn set_lambda_authorizer_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.lambda_authorizer_arn = input;
+        self
+    }
+    /// <p>The ARN of the authorizer's Lambda function.</p>
+    pub fn get_lambda_authorizer_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lambda_authorizer_arn
     }
     /// <p>The Amazon Resource Name (ARN) for the data store.</p>
     pub fn datastore_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -198,6 +219,7 @@ impl DatastorePropertiesBuilder {
                 )
             })?,
             kms_key_arn: self.kms_key_arn,
+            lambda_authorizer_arn: self.lambda_authorizer_arn,
             datastore_arn: self.datastore_arn,
             created_at: self.created_at,
             updated_at: self.updated_at,

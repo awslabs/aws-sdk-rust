@@ -265,6 +265,18 @@ pub use crate::types::_s3_job_manifest_generator::S3JobManifestGenerator;
 
 pub use crate::types::_job_manifest_generator_filter::JobManifestGeneratorFilter;
 
+pub use crate::types::_object_encryption_filter::ObjectEncryptionFilter;
+
+pub use crate::types::_not_sse_filter::NotSseFilter;
+
+pub use crate::types::_ssec_filter::SsecFilter;
+
+pub use crate::types::_dssekms_filter::DssekmsFilter;
+
+pub use crate::types::_ssekms_filter::SsekmsFilter;
+
+pub use crate::types::_sses3_filter::Sses3Filter;
+
 pub use crate::types::_s3_storage_class::S3StorageClass;
 
 pub use crate::types::_key_name_constraint::KeyNameConstraint;
@@ -421,6 +433,8 @@ mod _destination;
 
 mod _detailed_status_codes_metrics;
 
+mod _dssekms_filter;
+
 mod _encryption_configuration;
 
 mod _established_multi_region_access_point_policy;
@@ -534,6 +548,10 @@ mod _network_origin;
 mod _noncurrent_version_expiration;
 
 mod _noncurrent_version_transition;
+
+mod _not_sse_filter;
+
+mod _object_encryption_filter;
 
 mod _object_lambda_access_point;
 
@@ -685,13 +703,19 @@ mod _sse_kms_encrypted_objects;
 
 mod _sse_kms_encrypted_objects_status;
 
+mod _ssec_filter;
+
 mod _ssekms;
 
 mod _ssekms_encryption;
 
+mod _ssekms_filter;
+
 mod _sses3;
 
 mod _sses3_encryption;
+
+mod _sses3_filter;
 
 mod _storage_lens_aws_org;
 

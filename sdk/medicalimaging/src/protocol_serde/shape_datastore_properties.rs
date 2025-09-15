@@ -42,6 +42,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "lambdaAuthorizerArn" => {
+                            builder = builder.set_lambda_authorizer_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "datastoreArn" => {
                             builder = builder.set_datastore_arn(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

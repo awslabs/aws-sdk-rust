@@ -59,13 +59,13 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CreateTelemetryRule`](crate::operation::create_telemetry_rule) operation has
-/// a [`Client::create_telemetry_rule`], function which returns a builder for that operation.
+/// For example, the [`CreateCentralizationRuleForOrganization`](crate::operation::create_centralization_rule_for_organization) operation has
+/// a [`Client::create_centralization_rule_for_organization`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.create_telemetry_rule()
+/// let result = client.create_centralization_rule_for_organization()
 ///     .rule_name("example")
 ///     .send()
 ///     .await;
@@ -136,6 +136,8 @@ impl Client {
     }
 }
 
+mod create_centralization_rule_for_organization;
+
 mod create_telemetry_rule;
 
 mod create_telemetry_rule_for_organization;
@@ -151,7 +153,7 @@ mod create_telemetry_rule_for_organization;
 /// # let client: aws_sdk_observabilityadmin::Client = unimplemented!();
 /// use ::http::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.create_telemetry_rule()
+/// let result = client.create_centralization_rule_for_organization()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
@@ -167,9 +169,13 @@ mod create_telemetry_rule_for_organization;
 /// ```
 pub mod customize;
 
+mod delete_centralization_rule_for_organization;
+
 mod delete_telemetry_rule;
 
 mod delete_telemetry_rule_for_organization;
+
+mod get_centralization_rule_for_organization;
 
 mod get_telemetry_evaluation_status;
 
@@ -178,6 +184,8 @@ mod get_telemetry_evaluation_status_for_organization;
 mod get_telemetry_rule;
 
 mod get_telemetry_rule_for_organization;
+
+mod list_centralization_rules_for_organization;
 
 mod list_resource_telemetry;
 
@@ -200,6 +208,8 @@ mod stop_telemetry_evaluation_for_organization;
 mod tag_resource;
 
 mod untag_resource;
+
+mod update_centralization_rule_for_organization;
 
 mod update_telemetry_rule;
 

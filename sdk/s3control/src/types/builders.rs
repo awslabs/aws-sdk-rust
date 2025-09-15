@@ -199,6 +199,16 @@ pub use crate::types::_s3_job_manifest_generator::S3JobManifestGeneratorBuilder;
 
 pub use crate::types::_job_manifest_generator_filter::JobManifestGeneratorFilterBuilder;
 
+pub use crate::types::_not_sse_filter::NotSseFilterBuilder;
+
+pub use crate::types::_ssec_filter::SsecFilterBuilder;
+
+pub use crate::types::_dssekms_filter::DssekmsFilterBuilder;
+
+pub use crate::types::_ssekms_filter::SsekmsFilterBuilder;
+
+pub use crate::types::_sses3_filter::Sses3FilterBuilder;
+
 pub use crate::types::_key_name_constraint::KeyNameConstraintBuilder;
 
 pub use crate::types::_s3_manifest_output_location::S3ManifestOutputLocationBuilder;
