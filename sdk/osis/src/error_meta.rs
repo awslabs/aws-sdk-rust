@@ -106,6 +106,43 @@ impl From<crate::operation::create_pipeline::CreatePipelineError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_pipeline_endpoint::CreatePipelineEndpointError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_pipeline_endpoint::CreatePipelineEndpointError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_pipeline_endpoint::CreatePipelineEndpointError> for Error {
+    fn from(err: crate::operation::create_pipeline_endpoint::CreatePipelineEndpointError) -> Self {
+        match err {
+            crate::operation::create_pipeline_endpoint::CreatePipelineEndpointError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_pipeline_endpoint::CreatePipelineEndpointError::DisabledOperationException(inner) => {
+                Error::DisabledOperationException(inner)
+            }
+            crate::operation::create_pipeline_endpoint::CreatePipelineEndpointError::InternalException(inner) => Error::InternalException(inner),
+            crate::operation::create_pipeline_endpoint::CreatePipelineEndpointError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::create_pipeline_endpoint::CreatePipelineEndpointError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_pipeline_endpoint::CreatePipelineEndpointError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_pipeline_endpoint::CreatePipelineEndpointError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_pipeline::DeletePipelineError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -130,6 +167,70 @@ impl From<crate::operation::delete_pipeline::DeletePipelineError> for Error {
             crate::operation::delete_pipeline::DeletePipelineError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::delete_pipeline::DeletePipelineError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_pipeline::DeletePipelineError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_pipeline_endpoint::DeletePipelineEndpointError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_pipeline_endpoint::DeletePipelineEndpointError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_pipeline_endpoint::DeletePipelineEndpointError> for Error {
+    fn from(err: crate::operation::delete_pipeline_endpoint::DeletePipelineEndpointError) -> Self {
+        match err {
+            crate::operation::delete_pipeline_endpoint::DeletePipelineEndpointError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_pipeline_endpoint::DeletePipelineEndpointError::DisabledOperationException(inner) => {
+                Error::DisabledOperationException(inner)
+            }
+            crate::operation::delete_pipeline_endpoint::DeletePipelineEndpointError::InternalException(inner) => Error::InternalException(inner),
+            crate::operation::delete_pipeline_endpoint::DeletePipelineEndpointError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_pipeline_endpoint::DeletePipelineEndpointError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_resource_policy::DeleteResourcePolicyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_resource_policy::DeleteResourcePolicyError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_resource_policy::DeleteResourcePolicyError> for Error {
+    fn from(err: crate::operation::delete_resource_policy::DeleteResourcePolicyError) -> Self {
+        match err {
+            crate::operation::delete_resource_policy::DeleteResourcePolicyError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_resource_policy::DeleteResourcePolicyError::DisabledOperationException(inner) => {
+                Error::DisabledOperationException(inner)
+            }
+            crate::operation::delete_resource_policy::DeleteResourcePolicyError::InternalException(inner) => Error::InternalException(inner),
+            crate::operation::delete_resource_policy::DeleteResourcePolicyError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::delete_resource_policy::DeleteResourcePolicyError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_resource_policy::DeleteResourcePolicyError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_resource_policy::DeleteResourcePolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -228,6 +329,37 @@ impl From<crate::operation::get_pipeline_change_progress::GetPipelineChangeProgr
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_resource_policy::GetResourcePolicyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_resource_policy::GetResourcePolicyError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_resource_policy::GetResourcePolicyError> for Error {
+    fn from(err: crate::operation::get_resource_policy::GetResourcePolicyError) -> Self {
+        match err {
+            crate::operation::get_resource_policy::GetResourcePolicyError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_resource_policy::GetResourcePolicyError::DisabledOperationException(inner) => {
+                Error::DisabledOperationException(inner)
+            }
+            crate::operation::get_resource_policy::GetResourcePolicyError::InternalException(inner) => Error::InternalException(inner),
+            crate::operation::get_resource_policy::GetResourcePolicyError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::get_resource_policy::GetResourcePolicyError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_resource_policy::GetResourcePolicyError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_resource_policy::GetResourcePolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_pipeline_blueprints::ListPipelineBlueprintsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -259,6 +391,87 @@ impl From<crate::operation::list_pipeline_blueprints::ListPipelineBlueprintsErro
             }
             crate::operation::list_pipeline_blueprints::ListPipelineBlueprintsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_pipeline_blueprints::ListPipelineBlueprintsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_pipeline_endpoint_connections::ListPipelineEndpointConnectionsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_pipeline_endpoint_connections::ListPipelineEndpointConnectionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_pipeline_endpoint_connections::ListPipelineEndpointConnectionsError> for Error {
+    fn from(err: crate::operation::list_pipeline_endpoint_connections::ListPipelineEndpointConnectionsError) -> Self {
+        match err {
+            crate::operation::list_pipeline_endpoint_connections::ListPipelineEndpointConnectionsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_pipeline_endpoint_connections::ListPipelineEndpointConnectionsError::DisabledOperationException(inner) => {
+                Error::DisabledOperationException(inner)
+            }
+            crate::operation::list_pipeline_endpoint_connections::ListPipelineEndpointConnectionsError::InternalException(inner) => {
+                Error::InternalException(inner)
+            }
+            crate::operation::list_pipeline_endpoint_connections::ListPipelineEndpointConnectionsError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::list_pipeline_endpoint_connections::ListPipelineEndpointConnectionsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_pipeline_endpoint_connections::ListPipelineEndpointConnectionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_pipeline_endpoints::ListPipelineEndpointsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_pipeline_endpoints::ListPipelineEndpointsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_pipeline_endpoints::ListPipelineEndpointsError> for Error {
+    fn from(err: crate::operation::list_pipeline_endpoints::ListPipelineEndpointsError) -> Self {
+        match err {
+            crate::operation::list_pipeline_endpoints::ListPipelineEndpointsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_pipeline_endpoints::ListPipelineEndpointsError::DisabledOperationException(inner) => {
+                Error::DisabledOperationException(inner)
+            }
+            crate::operation::list_pipeline_endpoints::ListPipelineEndpointsError::InternalException(inner) => Error::InternalException(inner),
+            crate::operation::list_pipeline_endpoints::ListPipelineEndpointsError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::list_pipeline_endpoints::ListPipelineEndpointsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_pipeline_endpoints::ListPipelineEndpointsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -317,6 +530,86 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
             }
             crate::operation::list_tags_for_resource::ListTagsForResourceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_resource_policy::PutResourcePolicyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_resource_policy::PutResourcePolicyError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_resource_policy::PutResourcePolicyError> for Error {
+    fn from(err: crate::operation::put_resource_policy::PutResourcePolicyError) -> Self {
+        match err {
+            crate::operation::put_resource_policy::PutResourcePolicyError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::put_resource_policy::PutResourcePolicyError::DisabledOperationException(inner) => {
+                Error::DisabledOperationException(inner)
+            }
+            crate::operation::put_resource_policy::PutResourcePolicyError::InternalException(inner) => Error::InternalException(inner),
+            crate::operation::put_resource_policy::PutResourcePolicyError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::put_resource_policy::PutResourcePolicyError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::put_resource_policy::PutResourcePolicyError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::put_resource_policy::PutResourcePolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::revoke_pipeline_endpoint_connections::RevokePipelineEndpointConnectionsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::revoke_pipeline_endpoint_connections::RevokePipelineEndpointConnectionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::revoke_pipeline_endpoint_connections::RevokePipelineEndpointConnectionsError> for Error {
+    fn from(err: crate::operation::revoke_pipeline_endpoint_connections::RevokePipelineEndpointConnectionsError) -> Self {
+        match err {
+            crate::operation::revoke_pipeline_endpoint_connections::RevokePipelineEndpointConnectionsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::revoke_pipeline_endpoint_connections::RevokePipelineEndpointConnectionsError::DisabledOperationException(inner) => {
+                Error::DisabledOperationException(inner)
+            }
+            crate::operation::revoke_pipeline_endpoint_connections::RevokePipelineEndpointConnectionsError::InternalException(inner) => {
+                Error::InternalException(inner)
+            }
+            crate::operation::revoke_pipeline_endpoint_connections::RevokePipelineEndpointConnectionsError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::revoke_pipeline_endpoint_connections::RevokePipelineEndpointConnectionsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::revoke_pipeline_endpoint_connections::RevokePipelineEndpointConnectionsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }

@@ -26,6 +26,18 @@ impl crate::operation::put_index_policy::builders::PutIndexPolicyInputBuilder {
 /// <p>You can use field index policies to create <i>field indexes</i> on fields found in log events in the log group. Creating field indexes speeds up and lowers the costs for CloudWatch Logs Insights queries that reference those field indexes, because these queries attempt to skip the processing of log events that are known to not match the indexed field. Good fields to index are fields that you often need to query for and fields or values that match only a small fraction of the total log events. Common examples of indexes include request ID, session ID, userID, and instance IDs. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatchLogs-Field-Indexing.html">Create field indexes to improve query performance and reduce costs</a>.</p>
 /// <p>To find the fields that are in your log group events, use the <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetLogGroupFields.html">GetLogGroupFields</a> operation.</p>
 /// <p>For example, suppose you have created a field index for <code>requestId</code>. Then, any CloudWatch Logs Insights query on that log group that includes <code>requestId = <i>value</i> </code> or <code>requestId IN \[value, value, ...\]</code> will process fewer log events to reduce costs, and have improved performance.</p>
+/// <p>CloudWatch Logs provides default field indexes for all log groups in the Standard log class. Default field indexes are automatically available for the following fields:</p>
+/// <ul>
+/// <li>
+/// <p><code>@aws.region</code></p></li>
+/// <li>
+/// <p><code>@aws.account</code></p></li>
+/// <li>
+/// <p><code>@source.log</code></p></li>
+/// <li>
+/// <p><code>traceId</code></p></li>
+/// </ul>
+/// <p>Default field indexes are in addition to any custom field indexes you define within your policy. Default field indexes are not counted towards your field index quota.</p>
 /// <p>Each index policy has the following quotas and restrictions:</p>
 /// <ul>
 /// <li>

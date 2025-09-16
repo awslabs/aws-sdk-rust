@@ -4,8 +4,17 @@ pub use ::aws_types::request_id::RequestId;
 /// Types for the `CreatePipeline` operation.
 pub mod create_pipeline;
 
+/// Types for the `CreatePipelineEndpoint` operation.
+pub mod create_pipeline_endpoint;
+
 /// Types for the `DeletePipeline` operation.
 pub mod delete_pipeline;
+
+/// Types for the `DeletePipelineEndpoint` operation.
+pub mod delete_pipeline_endpoint;
+
+/// Types for the `DeleteResourcePolicy` operation.
+pub mod delete_resource_policy;
 
 /// Types for the `GetPipeline` operation.
 pub mod get_pipeline;
@@ -16,14 +25,29 @@ pub mod get_pipeline_blueprint;
 /// Types for the `GetPipelineChangeProgress` operation.
 pub mod get_pipeline_change_progress;
 
+/// Types for the `GetResourcePolicy` operation.
+pub mod get_resource_policy;
+
 /// Types for the `ListPipelineBlueprints` operation.
 pub mod list_pipeline_blueprints;
+
+/// Types for the `ListPipelineEndpointConnections` operation.
+pub mod list_pipeline_endpoint_connections;
+
+/// Types for the `ListPipelineEndpoints` operation.
+pub mod list_pipeline_endpoints;
 
 /// Types for the `ListPipelines` operation.
 pub mod list_pipelines;
 
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
+
+/// Types for the `PutResourcePolicy` operation.
+pub mod put_resource_policy;
+
+/// Types for the `RevokePipelineEndpointConnections` operation.
+pub mod revoke_pipeline_endpoint_connections;
 
 /// Types for the `StartPipeline` operation.
 pub mod start_pipeline;

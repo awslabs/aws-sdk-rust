@@ -22,7 +22,7 @@ impl crate::operation::describe_field_indexes::builders::DescribeFieldIndexesInp
 }
 /// Fluent builder constructing a request to `DescribeFieldIndexes`.
 ///
-/// <p>Returns a list of field indexes listed in the field index policies of one or more log groups. For more information about field index policies, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutIndexPolicy.html">PutIndexPolicy</a>.</p>
+/// <p>Returns a list of custom and default field indexes which are discovered in log data. For more information about field index policies, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutIndexPolicy.html">PutIndexPolicy</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeFieldIndexesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

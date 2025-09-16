@@ -66,6 +66,18 @@ impl crate::operation::put_account_policy::builders::PutAccountPolicyInputBuilde
 /// <p>Having log events in standardized format enables visibility across your applications for your log analysis, reporting, and alarming needs. CloudWatch Logs provides transformation for common log types with out-of-the-box transformation templates for major Amazon Web Services log sources such as VPC flow logs, Lambda, and Amazon RDS. You can use pre-built transformation templates or create custom transformation policies.</p>
 /// <p>You can create transformers only for the log groups in the Standard log class.</p>
 /// <p>You can have one account-level transformer policy that applies to all log groups in the account. Or you can create as many as 20 account-level transformer policies that are each scoped to a subset of log groups with the <code>selectionCriteria</code> parameter. If you have multiple account-level transformer policies with selection criteria, no two of them can use the same or overlapping log group name prefixes. For example, if you have one policy filtered to log groups that start with <code>my-log</code>, you can't have another field index policy filtered to <code>my-logpprod</code> or <code>my-logging</code>.</p>
+/// <p>CloudWatch Logs provides default field indexes for all log groups in the Standard log class. Default field indexes are automatically available for the following fields:</p>
+/// <ul>
+/// <li>
+/// <p><code>@aws.region</code></p></li>
+/// <li>
+/// <p><code>@aws.account</code></p></li>
+/// <li>
+/// <p><code>@source.log</code></p></li>
+/// <li>
+/// <p><code>traceId</code></p></li>
+/// </ul>
+/// <p>Default field indexes are in addition to any custom field indexes you define within your policy. Default field indexes are not counted towards your field index quota.</p>
 /// <p>You can also set up a transformer at the log-group level. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutTransformer.html">PutTransformer</a>. If there is both a log-group level transformer created with <code>PutTransformer</code> and an account-level transformer that could apply to the same log group, the log group uses only the log-group level transformer. It ignores the account-level transformer.</p>
 /// <p><b>Field index policy</b></p>
 /// <p>You can use field index policies to create indexes on fields found in log events in the log group. Creating field indexes can help lower the scan volume for CloudWatch Logs Insights queries that reference those fields, because these queries attempt to skip the processing of log events that are known to not match the indexed field. Good fields to index are fields that you often need to query for and fields or values that match only a small fraction of the total log events. Common examples of indexes include request ID, session ID, user IDs, or instance IDs. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatchLogs-Field-Indexing.html">Create field indexes to improve query performance and reduce costs</a></p>

@@ -138,6 +138,8 @@ impl Client {
 
 mod create_pipeline;
 
+mod create_pipeline_endpoint;
+
 /// Operation customization and supporting types.
 ///
 /// The underlying HTTP requests made during an operation can be customized
@@ -167,17 +169,31 @@ pub mod customize;
 
 mod delete_pipeline;
 
+mod delete_pipeline_endpoint;
+
+mod delete_resource_policy;
+
 mod get_pipeline;
 
 mod get_pipeline_blueprint;
 
 mod get_pipeline_change_progress;
 
+mod get_resource_policy;
+
 mod list_pipeline_blueprints;
+
+mod list_pipeline_endpoint_connections;
+
+mod list_pipeline_endpoints;
 
 mod list_pipelines;
 
 mod list_tags_for_resource;
+
+mod put_resource_policy;
+
+mod revoke_pipeline_endpoint_connections;
 
 mod start_pipeline;
 

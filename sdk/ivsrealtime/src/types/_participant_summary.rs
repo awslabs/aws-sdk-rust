@@ -20,7 +20,7 @@ pub struct ParticipantSummary {
     pub replication_type: ::std::option::Option<crate::types::ReplicationType>,
     /// <p>The participant's replication state.</p>
     pub replication_state: ::std::option::Option<crate::types::ReplicationState>,
-    /// <p>ARN of the stage from which this participant is replicated.</p>
+    /// <p>Source stage ARN from which this participant is replicated, if <code>replicationType</code> is <code>REPLICA</code>.</p>
     pub source_stage_arn: ::std::option::Option<::std::string::String>,
     /// <p>ID of the session within the source stage, if <code>replicationType</code> is <code>REPLICA</code>.</p>
     pub source_session_id: ::std::option::Option<::std::string::String>,
@@ -58,7 +58,7 @@ impl ParticipantSummary {
     pub fn replication_state(&self) -> ::std::option::Option<&crate::types::ReplicationState> {
         self.replication_state.as_ref()
     }
-    /// <p>ARN of the stage from which this participant is replicated.</p>
+    /// <p>Source stage ARN from which this participant is replicated, if <code>replicationType</code> is <code>REPLICA</code>.</p>
     pub fn source_stage_arn(&self) -> ::std::option::Option<&str> {
         self.source_stage_arn.as_deref()
     }
@@ -202,17 +202,17 @@ impl ParticipantSummaryBuilder {
     pub fn get_replication_state(&self) -> &::std::option::Option<crate::types::ReplicationState> {
         &self.replication_state
     }
-    /// <p>ARN of the stage from which this participant is replicated.</p>
+    /// <p>Source stage ARN from which this participant is replicated, if <code>replicationType</code> is <code>REPLICA</code>.</p>
     pub fn source_stage_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_stage_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>ARN of the stage from which this participant is replicated.</p>
+    /// <p>Source stage ARN from which this participant is replicated, if <code>replicationType</code> is <code>REPLICA</code>.</p>
     pub fn set_source_stage_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_stage_arn = input;
         self
     }
-    /// <p>ARN of the stage from which this participant is replicated.</p>
+    /// <p>Source stage ARN from which this participant is replicated, if <code>replicationType</code> is <code>REPLICA</code>.</p>
     pub fn get_source_stage_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_stage_arn
     }

@@ -33,6 +33,14 @@ pub use crate::types::_pipeline_status::PipelineStatus;
 
 pub use crate::types::_pipeline_summary::PipelineSummary;
 
+pub use crate::types::_pipeline_endpoint::PipelineEndpoint;
+
+pub use crate::types::_pipeline_endpoint_vpc_options::PipelineEndpointVpcOptions;
+
+pub use crate::types::_pipeline_endpoint_status::PipelineEndpointStatus;
+
+pub use crate::types::_pipeline_endpoint_connection::PipelineEndpointConnection;
+
 pub use crate::types::_pipeline_blueprint_summary::PipelineBlueprintSummary;
 
 pub use crate::types::_change_progress_status::ChangeProgressStatus;
@@ -68,6 +76,14 @@ mod _pipeline_blueprint;
 mod _pipeline_blueprint_summary;
 
 mod _pipeline_destination;
+
+mod _pipeline_endpoint;
+
+mod _pipeline_endpoint_connection;
+
+mod _pipeline_endpoint_status;
+
+mod _pipeline_endpoint_vpc_options;
 
 mod _pipeline_status;
 

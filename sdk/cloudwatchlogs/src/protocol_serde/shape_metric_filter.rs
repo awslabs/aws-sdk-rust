@@ -50,6 +50,17 @@ where
                             builder =
                                 builder.set_apply_on_transformed_logs(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
+                        "fieldSelectionCriteria" => {
+                            builder = builder.set_field_selection_criteria(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "emitSystemFieldDimensions" => {
+                            builder = builder
+                                .set_emit_system_field_dimensions(crate::protocol_serde::shape_emit_system_fields::de_emit_system_fields(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

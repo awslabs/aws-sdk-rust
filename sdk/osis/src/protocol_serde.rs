@@ -25,7 +25,13 @@ pub fn parse_http_error_metadata(
 
 pub(crate) mod shape_create_pipeline;
 
+pub(crate) mod shape_create_pipeline_endpoint;
+
 pub(crate) mod shape_delete_pipeline;
+
+pub(crate) mod shape_delete_pipeline_endpoint;
+
+pub(crate) mod shape_delete_resource_policy;
 
 pub(crate) mod shape_get_pipeline;
 
@@ -33,11 +39,21 @@ pub(crate) mod shape_get_pipeline_blueprint;
 
 pub(crate) mod shape_get_pipeline_change_progress;
 
+pub(crate) mod shape_get_resource_policy;
+
 pub(crate) mod shape_list_pipeline_blueprints;
+
+pub(crate) mod shape_list_pipeline_endpoint_connections;
+
+pub(crate) mod shape_list_pipeline_endpoints;
 
 pub(crate) mod shape_list_pipelines;
 
 pub(crate) mod shape_list_tags_for_resource;
+
+pub(crate) mod shape_put_resource_policy;
+
+pub(crate) mod shape_revoke_pipeline_endpoint_connections;
 
 pub(crate) mod shape_start_pipeline;
 
@@ -63,6 +79,8 @@ pub(crate) mod shape_access_denied_exception;
 
 pub(crate) mod shape_conflict_exception;
 
+pub(crate) mod shape_create_pipeline_endpoint_input;
+
 pub(crate) mod shape_create_pipeline_input;
 
 pub(crate) mod shape_disabled_operation_exception;
@@ -73,9 +91,13 @@ pub(crate) mod shape_invalid_pagination_token_exception;
 
 pub(crate) mod shape_limit_exceeded_exception;
 
+pub(crate) mod shape_put_resource_policy_input;
+
 pub(crate) mod shape_resource_already_exists_exception;
 
 pub(crate) mod shape_resource_not_found_exception;
+
+pub(crate) mod shape_revoke_pipeline_endpoint_connections_input;
 
 pub(crate) mod shape_tag_resource_input;
 
@@ -101,6 +123,12 @@ pub(crate) mod shape_pipeline_blueprint;
 
 pub(crate) mod shape_pipeline_blueprints_summary_list;
 
+pub(crate) mod shape_pipeline_endpoint_connections_summary_list;
+
+pub(crate) mod shape_pipeline_endpoint_vpc_options;
+
+pub(crate) mod shape_pipeline_endpoints_summary_list;
+
 pub(crate) mod shape_pipeline_summary_list;
 
 pub(crate) mod shape_tag;
@@ -120,6 +148,10 @@ pub(crate) mod shape_ingest_endpoint_urls_list;
 pub(crate) mod shape_pipeline_blueprint_summary;
 
 pub(crate) mod shape_pipeline_destination_list;
+
+pub(crate) mod shape_pipeline_endpoint;
+
+pub(crate) mod shape_pipeline_endpoint_connection;
 
 pub(crate) mod shape_pipeline_status_reason;
 

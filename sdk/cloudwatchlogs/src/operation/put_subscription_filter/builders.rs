@@ -256,4 +256,37 @@ impl PutSubscriptionFilterFluentBuilder {
     pub fn get_apply_on_transformed_logs(&self) -> &::std::option::Option<bool> {
         self.inner.get_apply_on_transformed_logs()
     }
+    /// <p>A filter expression that specifies which log events should be processed by this subscription filter based on system fields such as source account and source region. Uses selection criteria syntax with operators like <code>=</code>, <code>!=</code>, <code>AND</code>, <code>OR</code>, <code>IN</code>, <code>NOT IN</code>. Example: <code>@aws.region NOT IN \["cn-north-1"\]</code> or <code>@aws.account = "123456789012" AND @aws.region = "us-east-1"</code>. Maximum length: 2000 characters.</p>
+    pub fn field_selection_criteria(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.field_selection_criteria(input.into());
+        self
+    }
+    /// <p>A filter expression that specifies which log events should be processed by this subscription filter based on system fields such as source account and source region. Uses selection criteria syntax with operators like <code>=</code>, <code>!=</code>, <code>AND</code>, <code>OR</code>, <code>IN</code>, <code>NOT IN</code>. Example: <code>@aws.region NOT IN \["cn-north-1"\]</code> or <code>@aws.account = "123456789012" AND @aws.region = "us-east-1"</code>. Maximum length: 2000 characters.</p>
+    pub fn set_field_selection_criteria(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_field_selection_criteria(input);
+        self
+    }
+    /// <p>A filter expression that specifies which log events should be processed by this subscription filter based on system fields such as source account and source region. Uses selection criteria syntax with operators like <code>=</code>, <code>!=</code>, <code>AND</code>, <code>OR</code>, <code>IN</code>, <code>NOT IN</code>. Example: <code>@aws.region NOT IN \["cn-north-1"\]</code> or <code>@aws.account = "123456789012" AND @aws.region = "us-east-1"</code>. Maximum length: 2000 characters.</p>
+    pub fn get_field_selection_criteria(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_field_selection_criteria()
+    }
+    ///
+    /// Appends an item to `emitSystemFields`.
+    ///
+    /// To override the contents of this collection use [`set_emit_system_fields`](Self::set_emit_system_fields).
+    ///
+    /// <p>A list of system fields to include in the log events sent to the subscription destination. Valid values are <code>@aws.account</code> and <code>@aws.region</code>. These fields provide source information for centralized log data in the forwarded payload.</p>
+    pub fn emit_system_fields(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.emit_system_fields(input.into());
+        self
+    }
+    /// <p>A list of system fields to include in the log events sent to the subscription destination. Valid values are <code>@aws.account</code> and <code>@aws.region</code>. These fields provide source information for centralized log data in the forwarded payload.</p>
+    pub fn set_emit_system_fields(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_emit_system_fields(input);
+        self
+    }
+    /// <p>A list of system fields to include in the log events sent to the subscription destination. Valid values are <code>@aws.account</code> and <code>@aws.region</code>. These fields provide source information for centralized log data in the forwarded payload.</p>
+    pub fn get_emit_system_fields(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_emit_system_fields()
+    }
 }

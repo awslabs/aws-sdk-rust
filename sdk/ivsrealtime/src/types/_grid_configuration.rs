@@ -14,6 +14,8 @@ pub struct GridConfiguration {
     pub video_fill_mode: ::std::option::Option<crate::types::VideoFillMode>,
     /// <p>Specifies the spacing between participant tiles in pixels. Default: <code>2</code>.</p>
     pub grid_gap: i32,
+    /// <p>Attribute name in <code>ParticipantTokenConfiguration</code> identifying the participant ordering key. Participants with <code>participantOrderAttribute</code> set to <code>""</code> or not specified are ordered based on their arrival time into the stage.</p>
+    pub participant_order_attribute: ::std::option::Option<::std::string::String>,
 }
 impl GridConfiguration {
     /// <p>This attribute name identifies the featured slot. A participant with this attribute set to <code>"true"</code> (as a string value) in <code>ParticipantTokenConfiguration</code> is placed in the featured slot. Default: <code>""</code> (no featured participant).</p>
@@ -36,6 +38,10 @@ impl GridConfiguration {
     pub fn grid_gap(&self) -> i32 {
         self.grid_gap
     }
+    /// <p>Attribute name in <code>ParticipantTokenConfiguration</code> identifying the participant ordering key. Participants with <code>participantOrderAttribute</code> set to <code>""</code> or not specified are ordered based on their arrival time into the stage.</p>
+    pub fn participant_order_attribute(&self) -> ::std::option::Option<&str> {
+        self.participant_order_attribute.as_deref()
+    }
 }
 impl GridConfiguration {
     /// Creates a new builder-style object to manufacture [`GridConfiguration`](crate::types::GridConfiguration).
@@ -53,6 +59,7 @@ pub struct GridConfigurationBuilder {
     pub(crate) video_aspect_ratio: ::std::option::Option<crate::types::VideoAspectRatio>,
     pub(crate) video_fill_mode: ::std::option::Option<crate::types::VideoFillMode>,
     pub(crate) grid_gap: ::std::option::Option<i32>,
+    pub(crate) participant_order_attribute: ::std::option::Option<::std::string::String>,
 }
 impl GridConfigurationBuilder {
     /// <p>This attribute name identifies the featured slot. A participant with this attribute set to <code>"true"</code> (as a string value) in <code>ParticipantTokenConfiguration</code> is placed in the featured slot. Default: <code>""</code> (no featured participant).</p>
@@ -125,6 +132,20 @@ impl GridConfigurationBuilder {
     pub fn get_grid_gap(&self) -> &::std::option::Option<i32> {
         &self.grid_gap
     }
+    /// <p>Attribute name in <code>ParticipantTokenConfiguration</code> identifying the participant ordering key. Participants with <code>participantOrderAttribute</code> set to <code>""</code> or not specified are ordered based on their arrival time into the stage.</p>
+    pub fn participant_order_attribute(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.participant_order_attribute = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Attribute name in <code>ParticipantTokenConfiguration</code> identifying the participant ordering key. Participants with <code>participantOrderAttribute</code> set to <code>""</code> or not specified are ordered based on their arrival time into the stage.</p>
+    pub fn set_participant_order_attribute(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.participant_order_attribute = input;
+        self
+    }
+    /// <p>Attribute name in <code>ParticipantTokenConfiguration</code> identifying the participant ordering key. Participants with <code>participantOrderAttribute</code> set to <code>""</code> or not specified are ordered based on their arrival time into the stage.</p>
+    pub fn get_participant_order_attribute(&self) -> &::std::option::Option<::std::string::String> {
+        &self.participant_order_attribute
+    }
     /// Consumes the builder and constructs a [`GridConfiguration`](crate::types::GridConfiguration).
     pub fn build(self) -> crate::types::GridConfiguration {
         crate::types::GridConfiguration {
@@ -133,6 +154,7 @@ impl GridConfigurationBuilder {
             video_aspect_ratio: self.video_aspect_ratio,
             video_fill_mode: self.video_fill_mode,
             grid_gap: self.grid_gap.unwrap_or_default(),
+            participant_order_attribute: self.participant_order_attribute,
         }
     }
 }

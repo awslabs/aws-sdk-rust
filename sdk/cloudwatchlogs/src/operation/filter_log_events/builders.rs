@@ -29,7 +29,7 @@ impl crate::operation::filter_log_events::builders::FilterLogEventsInputBuilder 
 /// <li>
 /// <p>A time range</p></li>
 /// <li>
-/// <p>The log stream name, or a log stream name prefix that matches mutltiple log streams</p></li>
+/// <p>The log stream name, or a log stream name prefix that matches multiple log streams</p></li>
 /// </ul>
 /// <p>You must have the <code>logs:FilterLogEvents</code> permission to perform this operation.</p>
 /// <p>You can specify the log group to search by using either <code>logGroupIdentifier</code> or <code>logGroupName</code>. You must include one of these two parameters, but you can't include both.</p>

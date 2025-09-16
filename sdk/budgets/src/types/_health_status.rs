@@ -14,6 +14,8 @@ pub struct HealthStatus {
     /// <p><code>BILLING_VIEW_UNHEALTHY</code>: The billing view associated with the budget is unhealthy.</p></li>
     /// <li>
     /// <p><code>FILTER_INVALID</code>: The filter contains reference to an account you do not have access to.</p></li>
+    /// <li>
+    /// <p><code>MULTI_YEAR_HISTORICAL_DATA_DISABLED</code>: The budget is not being updated. Enable multi-year historical data in your Cost Management preferences.</p></li>
     /// </ul>
     pub status_reason: ::std::option::Option<crate::types::HealthStatusReason>,
     /// <p>A generic time stamp. In Java, it's transformed to a <code>Date</code> object.</p>
@@ -32,6 +34,8 @@ impl HealthStatus {
     /// <p><code>BILLING_VIEW_UNHEALTHY</code>: The billing view associated with the budget is unhealthy.</p></li>
     /// <li>
     /// <p><code>FILTER_INVALID</code>: The filter contains reference to an account you do not have access to.</p></li>
+    /// <li>
+    /// <p><code>MULTI_YEAR_HISTORICAL_DATA_DISABLED</code>: The budget is not being updated. Enable multi-year historical data in your Cost Management preferences.</p></li>
     /// </ul>
     pub fn status_reason(&self) -> ::std::option::Option<&crate::types::HealthStatusReason> {
         self.status_reason.as_ref()
@@ -79,6 +83,8 @@ impl HealthStatusBuilder {
     /// <p><code>BILLING_VIEW_UNHEALTHY</code>: The billing view associated with the budget is unhealthy.</p></li>
     /// <li>
     /// <p><code>FILTER_INVALID</code>: The filter contains reference to an account you do not have access to.</p></li>
+    /// <li>
+    /// <p><code>MULTI_YEAR_HISTORICAL_DATA_DISABLED</code>: The budget is not being updated. Enable multi-year historical data in your Cost Management preferences.</p></li>
     /// </ul>
     pub fn status_reason(mut self, input: crate::types::HealthStatusReason) -> Self {
         self.status_reason = ::std::option::Option::Some(input);
@@ -92,6 +98,8 @@ impl HealthStatusBuilder {
     /// <p><code>BILLING_VIEW_UNHEALTHY</code>: The billing view associated with the budget is unhealthy.</p></li>
     /// <li>
     /// <p><code>FILTER_INVALID</code>: The filter contains reference to an account you do not have access to.</p></li>
+    /// <li>
+    /// <p><code>MULTI_YEAR_HISTORICAL_DATA_DISABLED</code>: The budget is not being updated. Enable multi-year historical data in your Cost Management preferences.</p></li>
     /// </ul>
     pub fn set_status_reason(mut self, input: ::std::option::Option<crate::types::HealthStatusReason>) -> Self {
         self.status_reason = input;
@@ -105,6 +113,8 @@ impl HealthStatusBuilder {
     /// <p><code>BILLING_VIEW_UNHEALTHY</code>: The billing view associated with the budget is unhealthy.</p></li>
     /// <li>
     /// <p><code>FILTER_INVALID</code>: The filter contains reference to an account you do not have access to.</p></li>
+    /// <li>
+    /// <p><code>MULTI_YEAR_HISTORICAL_DATA_DISABLED</code>: The budget is not being updated. Enable multi-year historical data in your Cost Management preferences.</p></li>
     /// </ul>
     pub fn get_status_reason(&self) -> &::std::option::Option<crate::types::HealthStatusReason> {
         &self.status_reason

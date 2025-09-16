@@ -24,6 +24,8 @@ pub struct PipConfiguration {
     pub pip_width: ::std::option::Option<i32>,
     /// <p>Specifies the height of the PiP window in pixels. When this is not set explicitly, <code>pipHeight</code>’s value will be based on the size of the composition and the aspect ratio of the participant’s video.</p>
     pub pip_height: ::std::option::Option<i32>,
+    /// <p>Attribute name in <code>ParticipantTokenConfiguration</code> identifying the participant ordering key. Participants with <code>participantOrderAttribute</code> set to <code>""</code> or not specified are ordered based on their arrival time into the stage.</p>
+    pub participant_order_attribute: ::std::option::Option<::std::string::String>,
 }
 impl PipConfiguration {
     /// <p>This attribute name identifies the featured slot. A participant with this attribute set to <code>"true"</code> (as a string value) in <code>ParticipantTokenConfiguration</code> is placed in the featured slot. Default: <code>""</code> (no featured participant).</p>
@@ -66,6 +68,10 @@ impl PipConfiguration {
     pub fn pip_height(&self) -> ::std::option::Option<i32> {
         self.pip_height
     }
+    /// <p>Attribute name in <code>ParticipantTokenConfiguration</code> identifying the participant ordering key. Participants with <code>participantOrderAttribute</code> set to <code>""</code> or not specified are ordered based on their arrival time into the stage.</p>
+    pub fn participant_order_attribute(&self) -> ::std::option::Option<&str> {
+        self.participant_order_attribute.as_deref()
+    }
 }
 impl PipConfiguration {
     /// Creates a new builder-style object to manufacture [`PipConfiguration`](crate::types::PipConfiguration).
@@ -88,6 +94,7 @@ pub struct PipConfigurationBuilder {
     pub(crate) pip_position: ::std::option::Option<crate::types::PipPosition>,
     pub(crate) pip_width: ::std::option::Option<i32>,
     pub(crate) pip_height: ::std::option::Option<i32>,
+    pub(crate) participant_order_attribute: ::std::option::Option<::std::string::String>,
 }
 impl PipConfigurationBuilder {
     /// <p>This attribute name identifies the featured slot. A participant with this attribute set to <code>"true"</code> (as a string value) in <code>ParticipantTokenConfiguration</code> is placed in the featured slot. Default: <code>""</code> (no featured participant).</p>
@@ -230,6 +237,20 @@ impl PipConfigurationBuilder {
     pub fn get_pip_height(&self) -> &::std::option::Option<i32> {
         &self.pip_height
     }
+    /// <p>Attribute name in <code>ParticipantTokenConfiguration</code> identifying the participant ordering key. Participants with <code>participantOrderAttribute</code> set to <code>""</code> or not specified are ordered based on their arrival time into the stage.</p>
+    pub fn participant_order_attribute(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.participant_order_attribute = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Attribute name in <code>ParticipantTokenConfiguration</code> identifying the participant ordering key. Participants with <code>participantOrderAttribute</code> set to <code>""</code> or not specified are ordered based on their arrival time into the stage.</p>
+    pub fn set_participant_order_attribute(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.participant_order_attribute = input;
+        self
+    }
+    /// <p>Attribute name in <code>ParticipantTokenConfiguration</code> identifying the participant ordering key. Participants with <code>participantOrderAttribute</code> set to <code>""</code> or not specified are ordered based on their arrival time into the stage.</p>
+    pub fn get_participant_order_attribute(&self) -> &::std::option::Option<::std::string::String> {
+        &self.participant_order_attribute
+    }
     /// Consumes the builder and constructs a [`PipConfiguration`](crate::types::PipConfiguration).
     pub fn build(self) -> crate::types::PipConfiguration {
         crate::types::PipConfiguration {
@@ -243,6 +264,7 @@ impl PipConfigurationBuilder {
             pip_position: self.pip_position,
             pip_width: self.pip_width,
             pip_height: self.pip_height,
+            participant_order_attribute: self.participant_order_attribute,
         }
     }
 }

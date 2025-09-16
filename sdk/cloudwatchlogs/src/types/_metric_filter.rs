@@ -17,6 +17,10 @@ pub struct MetricFilter {
     /// <p>This parameter is valid only for log groups that have an active log transformer. For more information about log transformers, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutTransformer.html">PutTransformer</a>.</p>
     /// <p>If this value is <code>true</code>, the metric filter is applied on the transformed version of the log events instead of the original ingested log events.</p>
     pub apply_on_transformed_logs: bool,
+    /// <p>The filter expression that specifies which log events are processed by this metric filter based on system fields. Returns the <code>fieldSelectionCriteria</code> value if it was specified when the metric filter was created.</p>
+    pub field_selection_criteria: ::std::option::Option<::std::string::String>,
+    /// <p>The list of system fields that are emitted as additional dimensions in the generated metrics. Returns the <code>emitSystemFieldDimensions</code> value if it was specified when the metric filter was created.</p>
+    pub emit_system_field_dimensions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl MetricFilter {
     /// <p>The name of the metric filter.</p>
@@ -46,6 +50,16 @@ impl MetricFilter {
     pub fn apply_on_transformed_logs(&self) -> bool {
         self.apply_on_transformed_logs
     }
+    /// <p>The filter expression that specifies which log events are processed by this metric filter based on system fields. Returns the <code>fieldSelectionCriteria</code> value if it was specified when the metric filter was created.</p>
+    pub fn field_selection_criteria(&self) -> ::std::option::Option<&str> {
+        self.field_selection_criteria.as_deref()
+    }
+    /// <p>The list of system fields that are emitted as additional dimensions in the generated metrics. Returns the <code>emitSystemFieldDimensions</code> value if it was specified when the metric filter was created.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.emit_system_field_dimensions.is_none()`.
+    pub fn emit_system_field_dimensions(&self) -> &[::std::string::String] {
+        self.emit_system_field_dimensions.as_deref().unwrap_or_default()
+    }
 }
 impl MetricFilter {
     /// Creates a new builder-style object to manufacture [`MetricFilter`](crate::types::MetricFilter).
@@ -64,6 +78,8 @@ pub struct MetricFilterBuilder {
     pub(crate) creation_time: ::std::option::Option<i64>,
     pub(crate) log_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) apply_on_transformed_logs: ::std::option::Option<bool>,
+    pub(crate) field_selection_criteria: ::std::option::Option<::std::string::String>,
+    pub(crate) emit_system_field_dimensions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl MetricFilterBuilder {
     /// <p>The name of the metric filter.</p>
@@ -159,6 +175,40 @@ impl MetricFilterBuilder {
     pub fn get_apply_on_transformed_logs(&self) -> &::std::option::Option<bool> {
         &self.apply_on_transformed_logs
     }
+    /// <p>The filter expression that specifies which log events are processed by this metric filter based on system fields. Returns the <code>fieldSelectionCriteria</code> value if it was specified when the metric filter was created.</p>
+    pub fn field_selection_criteria(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.field_selection_criteria = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The filter expression that specifies which log events are processed by this metric filter based on system fields. Returns the <code>fieldSelectionCriteria</code> value if it was specified when the metric filter was created.</p>
+    pub fn set_field_selection_criteria(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.field_selection_criteria = input;
+        self
+    }
+    /// <p>The filter expression that specifies which log events are processed by this metric filter based on system fields. Returns the <code>fieldSelectionCriteria</code> value if it was specified when the metric filter was created.</p>
+    pub fn get_field_selection_criteria(&self) -> &::std::option::Option<::std::string::String> {
+        &self.field_selection_criteria
+    }
+    /// Appends an item to `emit_system_field_dimensions`.
+    ///
+    /// To override the contents of this collection use [`set_emit_system_field_dimensions`](Self::set_emit_system_field_dimensions).
+    ///
+    /// <p>The list of system fields that are emitted as additional dimensions in the generated metrics. Returns the <code>emitSystemFieldDimensions</code> value if it was specified when the metric filter was created.</p>
+    pub fn emit_system_field_dimensions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.emit_system_field_dimensions.unwrap_or_default();
+        v.push(input.into());
+        self.emit_system_field_dimensions = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The list of system fields that are emitted as additional dimensions in the generated metrics. Returns the <code>emitSystemFieldDimensions</code> value if it was specified when the metric filter was created.</p>
+    pub fn set_emit_system_field_dimensions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.emit_system_field_dimensions = input;
+        self
+    }
+    /// <p>The list of system fields that are emitted as additional dimensions in the generated metrics. Returns the <code>emitSystemFieldDimensions</code> value if it was specified when the metric filter was created.</p>
+    pub fn get_emit_system_field_dimensions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.emit_system_field_dimensions
+    }
     /// Consumes the builder and constructs a [`MetricFilter`](crate::types::MetricFilter).
     pub fn build(self) -> crate::types::MetricFilter {
         crate::types::MetricFilter {
@@ -168,6 +218,8 @@ impl MetricFilterBuilder {
             creation_time: self.creation_time,
             log_group_name: self.log_group_name,
             apply_on_transformed_logs: self.apply_on_transformed_logs.unwrap_or_default(),
+            field_selection_criteria: self.field_selection_criteria,
+            emit_system_field_dimensions: self.emit_system_field_dimensions,
         }
     }
 }

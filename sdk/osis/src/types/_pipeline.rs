@@ -40,7 +40,7 @@ pub struct Pipeline {
     pub destinations: ::std::option::Option<::std::vec::Vec<crate::types::PipelineDestination>>,
     /// <p>A list of tags associated with the given pipeline.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    /// <p>The Amazon Resource Name (ARN) of the IAM role that provides the required permissions for a pipeline to read from the source and write to the sink.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that the pipeline uses to access AWS resources.</p>
     pub pipeline_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl Pipeline {
@@ -126,7 +126,7 @@ impl Pipeline {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role that provides the required permissions for a pipeline to read from the source and write to the sink.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that the pipeline uses to access AWS resources.</p>
     pub fn pipeline_role_arn(&self) -> ::std::option::Option<&str> {
         self.pipeline_role_arn.as_deref()
     }
@@ -445,17 +445,17 @@ impl PipelineBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role that provides the required permissions for a pipeline to read from the source and write to the sink.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that the pipeline uses to access AWS resources.</p>
     pub fn pipeline_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role that provides the required permissions for a pipeline to read from the source and write to the sink.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that the pipeline uses to access AWS resources.</p>
     pub fn set_pipeline_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pipeline_role_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role that provides the required permissions for a pipeline to read from the source and write to the sink.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that the pipeline uses to access AWS resources.</p>
     pub fn get_pipeline_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.pipeline_role_arn
     }

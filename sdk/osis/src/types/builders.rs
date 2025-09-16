@@ -27,6 +27,12 @@ pub use crate::types::_pipeline_status_reason::PipelineStatusReasonBuilder;
 
 pub use crate::types::_pipeline_summary::PipelineSummaryBuilder;
 
+pub use crate::types::_pipeline_endpoint::PipelineEndpointBuilder;
+
+pub use crate::types::_pipeline_endpoint_vpc_options::PipelineEndpointVpcOptionsBuilder;
+
+pub use crate::types::_pipeline_endpoint_connection::PipelineEndpointConnectionBuilder;
+
 pub use crate::types::_pipeline_blueprint_summary::PipelineBlueprintSummaryBuilder;
 
 pub use crate::types::_change_progress_status::ChangeProgressStatusBuilder;

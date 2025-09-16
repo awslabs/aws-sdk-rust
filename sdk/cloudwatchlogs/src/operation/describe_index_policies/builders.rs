@@ -22,7 +22,7 @@ impl crate::operation::describe_index_policies::builders::DescribeIndexPoliciesI
 }
 /// Fluent builder constructing a request to `DescribeIndexPolicies`.
 ///
-/// <p>Returns the field index policies of one or more log groups. For more information about field index policies, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutIndexPolicy.html">PutIndexPolicy</a>.</p>
+/// <p>Returns the field index policies of the specified log group. For more information about field index policies, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutIndexPolicy.html">PutIndexPolicy</a>.</p>
 /// <p>If a specified log group has a log-group level index policy, that policy is returned by this operation.</p>
 /// <p>If a specified log group doesn't have a log-group level index policy, but an account-wide index policy applies to it, that account-wide policy is returned by this operation.</p>
 /// <p>To find information about only account-level policies, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeAccountPolicies.html">DescribeAccountPolicies</a> instead.</p>

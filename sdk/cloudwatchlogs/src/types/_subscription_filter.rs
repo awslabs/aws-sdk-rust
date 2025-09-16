@@ -21,6 +21,10 @@ pub struct SubscriptionFilter {
     pub apply_on_transformed_logs: bool,
     /// <p>The creation time of the subscription filter, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
     pub creation_time: ::std::option::Option<i64>,
+    /// <p>The filter expression that specifies which log events are processed by this subscription filter based on system fields. Returns the <code>fieldSelectionCriteria</code> value if it was specified when the subscription filter was created.</p>
+    pub field_selection_criteria: ::std::option::Option<::std::string::String>,
+    /// <p>The list of system fields that are included in the log events sent to the subscription destination. Returns the <code>emitSystemFields</code> value if it was specified when the subscription filter was created.</p>
+    pub emit_system_fields: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SubscriptionFilter {
     /// <p>The name of the subscription filter.</p>
@@ -56,6 +60,16 @@ impl SubscriptionFilter {
     pub fn creation_time(&self) -> ::std::option::Option<i64> {
         self.creation_time
     }
+    /// <p>The filter expression that specifies which log events are processed by this subscription filter based on system fields. Returns the <code>fieldSelectionCriteria</code> value if it was specified when the subscription filter was created.</p>
+    pub fn field_selection_criteria(&self) -> ::std::option::Option<&str> {
+        self.field_selection_criteria.as_deref()
+    }
+    /// <p>The list of system fields that are included in the log events sent to the subscription destination. Returns the <code>emitSystemFields</code> value if it was specified when the subscription filter was created.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.emit_system_fields.is_none()`.
+    pub fn emit_system_fields(&self) -> &[::std::string::String] {
+        self.emit_system_fields.as_deref().unwrap_or_default()
+    }
 }
 impl SubscriptionFilter {
     /// Creates a new builder-style object to manufacture [`SubscriptionFilter`](crate::types::SubscriptionFilter).
@@ -76,6 +90,8 @@ pub struct SubscriptionFilterBuilder {
     pub(crate) distribution: ::std::option::Option<crate::types::Distribution>,
     pub(crate) apply_on_transformed_logs: ::std::option::Option<bool>,
     pub(crate) creation_time: ::std::option::Option<i64>,
+    pub(crate) field_selection_criteria: ::std::option::Option<::std::string::String>,
+    pub(crate) emit_system_fields: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SubscriptionFilterBuilder {
     /// <p>The name of the subscription filter.</p>
@@ -193,6 +209,40 @@ impl SubscriptionFilterBuilder {
     pub fn get_creation_time(&self) -> &::std::option::Option<i64> {
         &self.creation_time
     }
+    /// <p>The filter expression that specifies which log events are processed by this subscription filter based on system fields. Returns the <code>fieldSelectionCriteria</code> value if it was specified when the subscription filter was created.</p>
+    pub fn field_selection_criteria(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.field_selection_criteria = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The filter expression that specifies which log events are processed by this subscription filter based on system fields. Returns the <code>fieldSelectionCriteria</code> value if it was specified when the subscription filter was created.</p>
+    pub fn set_field_selection_criteria(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.field_selection_criteria = input;
+        self
+    }
+    /// <p>The filter expression that specifies which log events are processed by this subscription filter based on system fields. Returns the <code>fieldSelectionCriteria</code> value if it was specified when the subscription filter was created.</p>
+    pub fn get_field_selection_criteria(&self) -> &::std::option::Option<::std::string::String> {
+        &self.field_selection_criteria
+    }
+    /// Appends an item to `emit_system_fields`.
+    ///
+    /// To override the contents of this collection use [`set_emit_system_fields`](Self::set_emit_system_fields).
+    ///
+    /// <p>The list of system fields that are included in the log events sent to the subscription destination. Returns the <code>emitSystemFields</code> value if it was specified when the subscription filter was created.</p>
+    pub fn emit_system_fields(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.emit_system_fields.unwrap_or_default();
+        v.push(input.into());
+        self.emit_system_fields = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The list of system fields that are included in the log events sent to the subscription destination. Returns the <code>emitSystemFields</code> value if it was specified when the subscription filter was created.</p>
+    pub fn set_emit_system_fields(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.emit_system_fields = input;
+        self
+    }
+    /// <p>The list of system fields that are included in the log events sent to the subscription destination. Returns the <code>emitSystemFields</code> value if it was specified when the subscription filter was created.</p>
+    pub fn get_emit_system_fields(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.emit_system_fields
+    }
     /// Consumes the builder and constructs a [`SubscriptionFilter`](crate::types::SubscriptionFilter).
     pub fn build(self) -> crate::types::SubscriptionFilter {
         crate::types::SubscriptionFilter {
@@ -204,6 +254,8 @@ impl SubscriptionFilterBuilder {
             distribution: self.distribution,
             apply_on_transformed_logs: self.apply_on_transformed_logs.unwrap_or_default(),
             creation_time: self.creation_time,
+            field_selection_criteria: self.field_selection_criteria,
+            emit_system_fields: self.emit_system_fields,
         }
     }
 }

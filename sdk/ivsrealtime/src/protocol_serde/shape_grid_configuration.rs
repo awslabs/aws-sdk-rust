@@ -21,6 +21,9 @@ pub fn ser_grid_configuration(
             ::aws_smithy_types::Number::NegInt((input.grid_gap).into()),
         );
     }
+    if let Some(var_4) = &input.participant_order_attribute {
+        object.key("participantOrderAttribute").string(var_4.as_str());
+    }
     Ok(())
 }
 
@@ -67,6 +70,13 @@ where
                             builder = builder.set_grid_gap(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "participantOrderAttribute" => {
+                            builder = builder.set_participant_order_attribute(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
                         }

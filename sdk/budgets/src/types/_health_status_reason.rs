@@ -15,6 +15,7 @@
 ///     HealthStatusReason::BillingViewNoAccess => { /* ... */ },
 ///     HealthStatusReason::BillingViewUnhealthy => { /* ... */ },
 ///     HealthStatusReason::FilterInvalid => { /* ... */ },
+///     HealthStatusReason::MultiYearHistoricalDataDisabled => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -49,6 +50,8 @@ pub enum HealthStatusReason {
     BillingViewUnhealthy,
     #[allow(missing_docs)] // documentation missing in model
     FilterInvalid,
+    #[allow(missing_docs)] // documentation missing in model
+    MultiYearHistoricalDataDisabled,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -59,6 +62,7 @@ impl ::std::convert::From<&str> for HealthStatusReason {
             "BILLING_VIEW_NO_ACCESS" => HealthStatusReason::BillingViewNoAccess,
             "BILLING_VIEW_UNHEALTHY" => HealthStatusReason::BillingViewUnhealthy,
             "FILTER_INVALID" => HealthStatusReason::FilterInvalid,
+            "MULTI_YEAR_HISTORICAL_DATA_DISABLED" => HealthStatusReason::MultiYearHistoricalDataDisabled,
             other => HealthStatusReason::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -77,12 +81,18 @@ impl HealthStatusReason {
             HealthStatusReason::BillingViewNoAccess => "BILLING_VIEW_NO_ACCESS",
             HealthStatusReason::BillingViewUnhealthy => "BILLING_VIEW_UNHEALTHY",
             HealthStatusReason::FilterInvalid => "FILTER_INVALID",
+            HealthStatusReason::MultiYearHistoricalDataDisabled => "MULTI_YEAR_HISTORICAL_DATA_DISABLED",
             HealthStatusReason::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["BILLING_VIEW_NO_ACCESS", "BILLING_VIEW_UNHEALTHY", "FILTER_INVALID"]
+        &[
+            "BILLING_VIEW_NO_ACCESS",
+            "BILLING_VIEW_UNHEALTHY",
+            "FILTER_INVALID",
+            "MULTI_YEAR_HISTORICAL_DATA_DISABLED",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for HealthStatusReason {
@@ -108,6 +118,7 @@ impl ::std::fmt::Display for HealthStatusReason {
             HealthStatusReason::BillingViewNoAccess => write!(f, "BILLING_VIEW_NO_ACCESS"),
             HealthStatusReason::BillingViewUnhealthy => write!(f, "BILLING_VIEW_UNHEALTHY"),
             HealthStatusReason::FilterInvalid => write!(f, "FILTER_INVALID"),
+            HealthStatusReason::MultiYearHistoricalDataDisabled => write!(f, "MULTI_YEAR_HISTORICAL_DATA_DISABLED"),
             HealthStatusReason::Unknown(value) => write!(f, "{}", value),
         }
     }

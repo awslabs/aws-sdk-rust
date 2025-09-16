@@ -13,6 +13,7 @@
 /// # let timeunit = unimplemented!();
 /// match timeunit {
 ///     TimeUnit::Annually => { /* ... */ },
+///     TimeUnit::Custom => { /* ... */ },
 ///     TimeUnit::Daily => { /* ... */ },
 ///     TimeUnit::Monthly => { /* ... */ },
 ///     TimeUnit::Quarterly => { /* ... */ },
@@ -47,6 +48,8 @@ pub enum TimeUnit {
     #[allow(missing_docs)] // documentation missing in model
     Annually,
     #[allow(missing_docs)] // documentation missing in model
+    Custom,
+    #[allow(missing_docs)] // documentation missing in model
     Daily,
     #[allow(missing_docs)] // documentation missing in model
     Monthly,
@@ -60,6 +63,7 @@ impl ::std::convert::From<&str> for TimeUnit {
     fn from(s: &str) -> Self {
         match s {
             "ANNUALLY" => TimeUnit::Annually,
+            "CUSTOM" => TimeUnit::Custom,
             "DAILY" => TimeUnit::Daily,
             "MONTHLY" => TimeUnit::Monthly,
             "QUARTERLY" => TimeUnit::Quarterly,
@@ -79,6 +83,7 @@ impl TimeUnit {
     pub fn as_str(&self) -> &str {
         match self {
             TimeUnit::Annually => "ANNUALLY",
+            TimeUnit::Custom => "CUSTOM",
             TimeUnit::Daily => "DAILY",
             TimeUnit::Monthly => "MONTHLY",
             TimeUnit::Quarterly => "QUARTERLY",
@@ -87,7 +92,7 @@ impl TimeUnit {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ANNUALLY", "DAILY", "MONTHLY", "QUARTERLY"]
+        &["ANNUALLY", "CUSTOM", "DAILY", "MONTHLY", "QUARTERLY"]
     }
 }
 impl ::std::convert::AsRef<str> for TimeUnit {
@@ -111,6 +116,7 @@ impl ::std::fmt::Display for TimeUnit {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             TimeUnit::Annually => write!(f, "ANNUALLY"),
+            TimeUnit::Custom => write!(f, "CUSTOM"),
             TimeUnit::Daily => write!(f, "DAILY"),
             TimeUnit::Monthly => write!(f, "MONTHLY"),
             TimeUnit::Quarterly => write!(f, "QUARTERLY"),

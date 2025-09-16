@@ -67,6 +67,16 @@ where
                                     .transpose()?,
                             );
                         }
+                        "fieldSelectionCriteria" => {
+                            builder = builder.set_field_selection_criteria(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "emitSystemFields" => {
+                            builder = builder.set_emit_system_fields(crate::protocol_serde::shape_emit_system_fields::de_emit_system_fields(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

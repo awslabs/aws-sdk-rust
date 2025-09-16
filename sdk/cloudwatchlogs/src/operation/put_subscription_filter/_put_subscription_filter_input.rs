@@ -29,6 +29,10 @@ pub struct PutSubscriptionFilterInput {
     /// <p>This parameter is valid only for log groups that have an active log transformer. For more information about log transformers, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutTransformer.html">PutTransformer</a>.</p>
     /// <p>If the log group uses either a log-group level or account-level transformer, and you specify <code>true</code>, the subscription filter will be applied on the transformed version of the log events instead of the original ingested log events.</p>
     pub apply_on_transformed_logs: ::std::option::Option<bool>,
+    /// <p>A filter expression that specifies which log events should be processed by this subscription filter based on system fields such as source account and source region. Uses selection criteria syntax with operators like <code>=</code>, <code>!=</code>, <code>AND</code>, <code>OR</code>, <code>IN</code>, <code>NOT IN</code>. Example: <code>@aws.region NOT IN \["cn-north-1"\]</code> or <code>@aws.account = "123456789012" AND @aws.region = "us-east-1"</code>. Maximum length: 2000 characters.</p>
+    pub field_selection_criteria: ::std::option::Option<::std::string::String>,
+    /// <p>A list of system fields to include in the log events sent to the subscription destination. Valid values are <code>@aws.account</code> and <code>@aws.region</code>. These fields provide source information for centralized log data in the forwarded payload.</p>
+    pub emit_system_fields: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl PutSubscriptionFilterInput {
     /// <p>The name of the log group.</p>
@@ -71,6 +75,16 @@ impl PutSubscriptionFilterInput {
     pub fn apply_on_transformed_logs(&self) -> ::std::option::Option<bool> {
         self.apply_on_transformed_logs
     }
+    /// <p>A filter expression that specifies which log events should be processed by this subscription filter based on system fields such as source account and source region. Uses selection criteria syntax with operators like <code>=</code>, <code>!=</code>, <code>AND</code>, <code>OR</code>, <code>IN</code>, <code>NOT IN</code>. Example: <code>@aws.region NOT IN \["cn-north-1"\]</code> or <code>@aws.account = "123456789012" AND @aws.region = "us-east-1"</code>. Maximum length: 2000 characters.</p>
+    pub fn field_selection_criteria(&self) -> ::std::option::Option<&str> {
+        self.field_selection_criteria.as_deref()
+    }
+    /// <p>A list of system fields to include in the log events sent to the subscription destination. Valid values are <code>@aws.account</code> and <code>@aws.region</code>. These fields provide source information for centralized log data in the forwarded payload.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.emit_system_fields.is_none()`.
+    pub fn emit_system_fields(&self) -> &[::std::string::String] {
+        self.emit_system_fields.as_deref().unwrap_or_default()
+    }
 }
 impl PutSubscriptionFilterInput {
     /// Creates a new builder-style object to manufacture [`PutSubscriptionFilterInput`](crate::operation::put_subscription_filter::PutSubscriptionFilterInput).
@@ -90,6 +104,8 @@ pub struct PutSubscriptionFilterInputBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) distribution: ::std::option::Option<crate::types::Distribution>,
     pub(crate) apply_on_transformed_logs: ::std::option::Option<bool>,
+    pub(crate) field_selection_criteria: ::std::option::Option<::std::string::String>,
+    pub(crate) emit_system_fields: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl PutSubscriptionFilterInputBuilder {
     /// <p>The name of the log group.</p>
@@ -230,6 +246,40 @@ impl PutSubscriptionFilterInputBuilder {
     pub fn get_apply_on_transformed_logs(&self) -> &::std::option::Option<bool> {
         &self.apply_on_transformed_logs
     }
+    /// <p>A filter expression that specifies which log events should be processed by this subscription filter based on system fields such as source account and source region. Uses selection criteria syntax with operators like <code>=</code>, <code>!=</code>, <code>AND</code>, <code>OR</code>, <code>IN</code>, <code>NOT IN</code>. Example: <code>@aws.region NOT IN \["cn-north-1"\]</code> or <code>@aws.account = "123456789012" AND @aws.region = "us-east-1"</code>. Maximum length: 2000 characters.</p>
+    pub fn field_selection_criteria(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.field_selection_criteria = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A filter expression that specifies which log events should be processed by this subscription filter based on system fields such as source account and source region. Uses selection criteria syntax with operators like <code>=</code>, <code>!=</code>, <code>AND</code>, <code>OR</code>, <code>IN</code>, <code>NOT IN</code>. Example: <code>@aws.region NOT IN \["cn-north-1"\]</code> or <code>@aws.account = "123456789012" AND @aws.region = "us-east-1"</code>. Maximum length: 2000 characters.</p>
+    pub fn set_field_selection_criteria(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.field_selection_criteria = input;
+        self
+    }
+    /// <p>A filter expression that specifies which log events should be processed by this subscription filter based on system fields such as source account and source region. Uses selection criteria syntax with operators like <code>=</code>, <code>!=</code>, <code>AND</code>, <code>OR</code>, <code>IN</code>, <code>NOT IN</code>. Example: <code>@aws.region NOT IN \["cn-north-1"\]</code> or <code>@aws.account = "123456789012" AND @aws.region = "us-east-1"</code>. Maximum length: 2000 characters.</p>
+    pub fn get_field_selection_criteria(&self) -> &::std::option::Option<::std::string::String> {
+        &self.field_selection_criteria
+    }
+    /// Appends an item to `emit_system_fields`.
+    ///
+    /// To override the contents of this collection use [`set_emit_system_fields`](Self::set_emit_system_fields).
+    ///
+    /// <p>A list of system fields to include in the log events sent to the subscription destination. Valid values are <code>@aws.account</code> and <code>@aws.region</code>. These fields provide source information for centralized log data in the forwarded payload.</p>
+    pub fn emit_system_fields(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.emit_system_fields.unwrap_or_default();
+        v.push(input.into());
+        self.emit_system_fields = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of system fields to include in the log events sent to the subscription destination. Valid values are <code>@aws.account</code> and <code>@aws.region</code>. These fields provide source information for centralized log data in the forwarded payload.</p>
+    pub fn set_emit_system_fields(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.emit_system_fields = input;
+        self
+    }
+    /// <p>A list of system fields to include in the log events sent to the subscription destination. Valid values are <code>@aws.account</code> and <code>@aws.region</code>. These fields provide source information for centralized log data in the forwarded payload.</p>
+    pub fn get_emit_system_fields(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.emit_system_fields
+    }
     /// Consumes the builder and constructs a [`PutSubscriptionFilterInput`](crate::operation::put_subscription_filter::PutSubscriptionFilterInput).
     pub fn build(
         self,
@@ -243,6 +293,8 @@ impl PutSubscriptionFilterInputBuilder {
             role_arn: self.role_arn,
             distribution: self.distribution,
             apply_on_transformed_logs: self.apply_on_transformed_logs,
+            field_selection_criteria: self.field_selection_criteria,
+            emit_system_fields: self.emit_system_fields,
         })
     }
 }

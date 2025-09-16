@@ -24,5 +24,17 @@ pub fn ser_put_subscription_filter_input_input(
     if let Some(var_7) = &input.apply_on_transformed_logs {
         object.key("applyOnTransformedLogs").boolean(*var_7);
     }
+    if let Some(var_8) = &input.field_selection_criteria {
+        object.key("fieldSelectionCriteria").string(var_8.as_str());
+    }
+    if let Some(var_9) = &input.emit_system_fields {
+        let mut array_10 = object.key("emitSystemFields").start_array();
+        for item_11 in var_9 {
+            {
+                array_10.value().string(item_11.as_str());
+            }
+        }
+        array_10.finish();
+    }
     Ok(())
 }

@@ -27,5 +27,17 @@ pub fn ser_put_metric_filter_input_input(
     if let Some(var_8) = &input.apply_on_transformed_logs {
         object.key("applyOnTransformedLogs").boolean(*var_8);
     }
+    if let Some(var_9) = &input.field_selection_criteria {
+        object.key("fieldSelectionCriteria").string(var_9.as_str());
+    }
+    if let Some(var_10) = &input.emit_system_field_dimensions {
+        let mut array_11 = object.key("emitSystemFieldDimensions").start_array();
+        for item_12 in var_10 {
+            {
+                array_11.value().string(item_12.as_str());
+            }
+        }
+        array_11.finish();
+    }
     Ok(())
 }

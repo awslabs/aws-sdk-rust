@@ -663,6 +663,8 @@ pub(crate) mod shape_configuration_template_delivery_config_values;
 
 pub(crate) mod shape_copy_value_entry;
 
+pub(crate) mod shape_emit_system_fields;
+
 pub(crate) mod shape_export_task_execution_info;
 
 pub(crate) mod shape_export_task_status;

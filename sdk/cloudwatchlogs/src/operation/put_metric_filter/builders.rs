@@ -193,4 +193,37 @@ impl PutMetricFilterFluentBuilder {
     pub fn get_apply_on_transformed_logs(&self) -> &::std::option::Option<bool> {
         self.inner.get_apply_on_transformed_logs()
     }
+    /// <p>A filter expression that specifies which log events should be processed by this metric filter based on system fields such as source account and source region. Uses selection criteria syntax with operators like <code>=</code>, <code>!=</code>, <code>AND</code>, <code>OR</code>, <code>IN</code>, <code>NOT IN</code>. Example: <code>@aws.region = "us-east-1"</code> or <code>@aws.account IN \["123456789012", "987654321098"\]</code>. Maximum length: 2000 characters.</p>
+    pub fn field_selection_criteria(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.field_selection_criteria(input.into());
+        self
+    }
+    /// <p>A filter expression that specifies which log events should be processed by this metric filter based on system fields such as source account and source region. Uses selection criteria syntax with operators like <code>=</code>, <code>!=</code>, <code>AND</code>, <code>OR</code>, <code>IN</code>, <code>NOT IN</code>. Example: <code>@aws.region = "us-east-1"</code> or <code>@aws.account IN \["123456789012", "987654321098"\]</code>. Maximum length: 2000 characters.</p>
+    pub fn set_field_selection_criteria(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_field_selection_criteria(input);
+        self
+    }
+    /// <p>A filter expression that specifies which log events should be processed by this metric filter based on system fields such as source account and source region. Uses selection criteria syntax with operators like <code>=</code>, <code>!=</code>, <code>AND</code>, <code>OR</code>, <code>IN</code>, <code>NOT IN</code>. Example: <code>@aws.region = "us-east-1"</code> or <code>@aws.account IN \["123456789012", "987654321098"\]</code>. Maximum length: 2000 characters.</p>
+    pub fn get_field_selection_criteria(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_field_selection_criteria()
+    }
+    ///
+    /// Appends an item to `emitSystemFieldDimensions`.
+    ///
+    /// To override the contents of this collection use [`set_emit_system_field_dimensions`](Self::set_emit_system_field_dimensions).
+    ///
+    /// <p>A list of system fields to emit as additional dimensions in the generated metrics. Valid values are <code>@aws.account</code> and <code>@aws.region</code>. These dimensions help identify the source of centralized log data and count toward the total dimension limit for metric filters.</p>
+    pub fn emit_system_field_dimensions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.emit_system_field_dimensions(input.into());
+        self
+    }
+    /// <p>A list of system fields to emit as additional dimensions in the generated metrics. Valid values are <code>@aws.account</code> and <code>@aws.region</code>. These dimensions help identify the source of centralized log data and count toward the total dimension limit for metric filters.</p>
+    pub fn set_emit_system_field_dimensions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_emit_system_field_dimensions(input);
+        self
+    }
+    /// <p>A list of system fields to emit as additional dimensions in the generated metrics. Valid values are <code>@aws.account</code> and <code>@aws.region</code>. These dimensions help identify the source of centralized log data and count toward the total dimension limit for metric filters.</p>
+    pub fn get_emit_system_field_dimensions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_emit_system_field_dimensions()
+    }
 }

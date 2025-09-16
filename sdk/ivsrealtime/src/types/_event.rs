@@ -48,7 +48,7 @@ pub struct Event {
     pub destination_stage_arn: ::std::option::Option<::std::string::String>,
     /// <p>ID of the session within the destination stage. Applicable only if the event name is <code>REPLICATION_STARTED</code> or <code>REPLICATION_STOPPED</code>.</p>
     pub destination_session_id: ::std::option::Option<::std::string::String>,
-    /// <p>If true, this indicates the <code>participantId</code> is a replicated participant. If this is a subscribe event, then this flag refers to <code>remoteParticipantId</code>.</p>
+    /// <p>If true, this indicates the <code>participantId</code> is a replicated participant. If this is a subscribe event, then this flag refers to <code>remoteParticipantId</code>. Default: <code>false</code>.</p>
     pub replica: bool,
 }
 impl Event {
@@ -110,7 +110,7 @@ impl Event {
     pub fn destination_session_id(&self) -> ::std::option::Option<&str> {
         self.destination_session_id.as_deref()
     }
-    /// <p>If true, this indicates the <code>participantId</code> is a replicated participant. If this is a subscribe event, then this flag refers to <code>remoteParticipantId</code>.</p>
+    /// <p>If true, this indicates the <code>participantId</code> is a replicated participant. If this is a subscribe event, then this flag refers to <code>remoteParticipantId</code>. Default: <code>false</code>.</p>
     pub fn replica(&self) -> bool {
         self.replica
     }
@@ -324,17 +324,17 @@ impl EventBuilder {
     pub fn get_destination_session_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.destination_session_id
     }
-    /// <p>If true, this indicates the <code>participantId</code> is a replicated participant. If this is a subscribe event, then this flag refers to <code>remoteParticipantId</code>.</p>
+    /// <p>If true, this indicates the <code>participantId</code> is a replicated participant. If this is a subscribe event, then this flag refers to <code>remoteParticipantId</code>. Default: <code>false</code>.</p>
     pub fn replica(mut self, input: bool) -> Self {
         self.replica = ::std::option::Option::Some(input);
         self
     }
-    /// <p>If true, this indicates the <code>participantId</code> is a replicated participant. If this is a subscribe event, then this flag refers to <code>remoteParticipantId</code>.</p>
+    /// <p>If true, this indicates the <code>participantId</code> is a replicated participant. If this is a subscribe event, then this flag refers to <code>remoteParticipantId</code>. Default: <code>false</code>.</p>
     pub fn set_replica(mut self, input: ::std::option::Option<bool>) -> Self {
         self.replica = input;
         self
     }
-    /// <p>If true, this indicates the <code>participantId</code> is a replicated participant. If this is a subscribe event, then this flag refers to <code>remoteParticipantId</code>.</p>
+    /// <p>If true, this indicates the <code>participantId</code> is a replicated participant. If this is a subscribe event, then this flag refers to <code>remoteParticipantId</code>. Default: <code>false</code>.</p>
     pub fn get_replica(&self) -> &::std::option::Option<bool> {
         &self.replica
     }
