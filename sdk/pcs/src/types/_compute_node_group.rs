@@ -26,7 +26,7 @@ pub struct ComputeNodeGroup {
     pub ami_id: ::std::option::Option<::std::string::String>,
     /// <p>The list of subnet IDs where instances are provisioned by the compute node group. The subnets must be in the same VPC as the cluster.</p>
     pub subnet_ids: ::std::vec::Vec<::std::string::String>,
-    /// <p>Specifies how EC2 instances are purchased on your behalf. Amazon Web Services PCS supports On-Demand and Spot instances. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-purchasing-options.html">Instance purchasing options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. If you don't provide this option, it defaults to On-Demand.</p>
+    /// <p>Specifies how EC2 instances are purchased on your behalf. PCS supports On-Demand Instances, Spot Instances, and Amazon EC2 Capacity Blocks for ML. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-purchasing-options.html">Amazon EC2 billing and purchasing options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. For more information about PCS support for Capacity Blocks, see <a href="https://docs.aws.amazon.com/pcs/latest/userguide/capacity-blocks.html">Using Amazon EC2 Capacity Blocks for ML with PCS</a> in the <i>PCS User Guide</i>. If you don't provide this option, it defaults to On-Demand.</p>
     pub purchase_option: ::std::option::Option<crate::types::PurchaseOption>,
     /// <p>An Amazon EC2 launch template PCS uses to launch compute nodes.</p>
     pub custom_launch_template: ::std::option::Option<crate::types::CustomLaunchTemplate>,
@@ -34,7 +34,7 @@ pub struct ComputeNodeGroup {
     pub iam_instance_profile_arn: ::std::string::String,
     /// <p>Specifies the boundaries of the compute node group auto scaling.</p>
     pub scaling_configuration: ::std::option::Option<crate::types::ScalingConfiguration>,
-    /// <p>A list of EC2 instance configurations that Amazon Web Services PCS can provision in the compute node group.</p>
+    /// <p>A list of EC2 instance configurations that PCS can provision in the compute node group.</p>
     pub instance_configs: ::std::vec::Vec<crate::types::InstanceConfig>,
     /// <p>Additional configuration when you specify <code>SPOT</code> as the <code>purchaseOption</code> for the <code>CreateComputeNodeGroup</code> API action.</p>
     pub spot_options: ::std::option::Option<crate::types::SpotOptions>,
@@ -89,7 +89,7 @@ impl ComputeNodeGroup {
         use std::ops::Deref;
         self.subnet_ids.deref()
     }
-    /// <p>Specifies how EC2 instances are purchased on your behalf. Amazon Web Services PCS supports On-Demand and Spot instances. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-purchasing-options.html">Instance purchasing options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. If you don't provide this option, it defaults to On-Demand.</p>
+    /// <p>Specifies how EC2 instances are purchased on your behalf. PCS supports On-Demand Instances, Spot Instances, and Amazon EC2 Capacity Blocks for ML. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-purchasing-options.html">Amazon EC2 billing and purchasing options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. For more information about PCS support for Capacity Blocks, see <a href="https://docs.aws.amazon.com/pcs/latest/userguide/capacity-blocks.html">Using Amazon EC2 Capacity Blocks for ML with PCS</a> in the <i>PCS User Guide</i>. If you don't provide this option, it defaults to On-Demand.</p>
     pub fn purchase_option(&self) -> ::std::option::Option<&crate::types::PurchaseOption> {
         self.purchase_option.as_ref()
     }
@@ -106,7 +106,7 @@ impl ComputeNodeGroup {
     pub fn scaling_configuration(&self) -> ::std::option::Option<&crate::types::ScalingConfiguration> {
         self.scaling_configuration.as_ref()
     }
-    /// <p>A list of EC2 instance configurations that Amazon Web Services PCS can provision in the compute node group.</p>
+    /// <p>A list of EC2 instance configurations that PCS can provision in the compute node group.</p>
     pub fn instance_configs(&self) -> &[crate::types::InstanceConfig] {
         use std::ops::Deref;
         self.instance_configs.deref()
@@ -307,17 +307,17 @@ impl ComputeNodeGroupBuilder {
     pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.subnet_ids
     }
-    /// <p>Specifies how EC2 instances are purchased on your behalf. Amazon Web Services PCS supports On-Demand and Spot instances. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-purchasing-options.html">Instance purchasing options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. If you don't provide this option, it defaults to On-Demand.</p>
+    /// <p>Specifies how EC2 instances are purchased on your behalf. PCS supports On-Demand Instances, Spot Instances, and Amazon EC2 Capacity Blocks for ML. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-purchasing-options.html">Amazon EC2 billing and purchasing options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. For more information about PCS support for Capacity Blocks, see <a href="https://docs.aws.amazon.com/pcs/latest/userguide/capacity-blocks.html">Using Amazon EC2 Capacity Blocks for ML with PCS</a> in the <i>PCS User Guide</i>. If you don't provide this option, it defaults to On-Demand.</p>
     pub fn purchase_option(mut self, input: crate::types::PurchaseOption) -> Self {
         self.purchase_option = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies how EC2 instances are purchased on your behalf. Amazon Web Services PCS supports On-Demand and Spot instances. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-purchasing-options.html">Instance purchasing options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. If you don't provide this option, it defaults to On-Demand.</p>
+    /// <p>Specifies how EC2 instances are purchased on your behalf. PCS supports On-Demand Instances, Spot Instances, and Amazon EC2 Capacity Blocks for ML. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-purchasing-options.html">Amazon EC2 billing and purchasing options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. For more information about PCS support for Capacity Blocks, see <a href="https://docs.aws.amazon.com/pcs/latest/userguide/capacity-blocks.html">Using Amazon EC2 Capacity Blocks for ML with PCS</a> in the <i>PCS User Guide</i>. If you don't provide this option, it defaults to On-Demand.</p>
     pub fn set_purchase_option(mut self, input: ::std::option::Option<crate::types::PurchaseOption>) -> Self {
         self.purchase_option = input;
         self
     }
-    /// <p>Specifies how EC2 instances are purchased on your behalf. Amazon Web Services PCS supports On-Demand and Spot instances. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-purchasing-options.html">Instance purchasing options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. If you don't provide this option, it defaults to On-Demand.</p>
+    /// <p>Specifies how EC2 instances are purchased on your behalf. PCS supports On-Demand Instances, Spot Instances, and Amazon EC2 Capacity Blocks for ML. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-purchasing-options.html">Amazon EC2 billing and purchasing options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. For more information about PCS support for Capacity Blocks, see <a href="https://docs.aws.amazon.com/pcs/latest/userguide/capacity-blocks.html">Using Amazon EC2 Capacity Blocks for ML with PCS</a> in the <i>PCS User Guide</i>. If you don't provide this option, it defaults to On-Demand.</p>
     pub fn get_purchase_option(&self) -> &::std::option::Option<crate::types::PurchaseOption> {
         &self.purchase_option
     }
@@ -370,19 +370,19 @@ impl ComputeNodeGroupBuilder {
     ///
     /// To override the contents of this collection use [`set_instance_configs`](Self::set_instance_configs).
     ///
-    /// <p>A list of EC2 instance configurations that Amazon Web Services PCS can provision in the compute node group.</p>
+    /// <p>A list of EC2 instance configurations that PCS can provision in the compute node group.</p>
     pub fn instance_configs(mut self, input: crate::types::InstanceConfig) -> Self {
         let mut v = self.instance_configs.unwrap_or_default();
         v.push(input);
         self.instance_configs = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of EC2 instance configurations that Amazon Web Services PCS can provision in the compute node group.</p>
+    /// <p>A list of EC2 instance configurations that PCS can provision in the compute node group.</p>
     pub fn set_instance_configs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceConfig>>) -> Self {
         self.instance_configs = input;
         self
     }
-    /// <p>A list of EC2 instance configurations that Amazon Web Services PCS can provision in the compute node group.</p>
+    /// <p>A list of EC2 instance configurations that PCS can provision in the compute node group.</p>
     pub fn get_instance_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceConfig>> {
         &self.instance_configs
     }

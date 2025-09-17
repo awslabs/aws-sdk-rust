@@ -662,6 +662,8 @@
 ///     InstanceType::M8iMetal48xl => { /* ... */ },
 ///     InstanceType::M8iMetal96xl => { /* ... */ },
 ///     InstanceType::M8iXlarge => { /* ... */ },
+///     InstanceType::MacM4Metal => { /* ... */ },
+///     InstanceType::MacM4proMetal => { /* ... */ },
 ///     InstanceType::Mac1Metal => { /* ... */ },
 ///     InstanceType::Mac2M1ultraMetal => { /* ... */ },
 ///     InstanceType::Mac2M2Metal => { /* ... */ },
@@ -2357,6 +2359,10 @@ pub enum InstanceType {
     #[allow(missing_docs)] // documentation missing in model
     M8iXlarge,
     #[allow(missing_docs)] // documentation missing in model
+    MacM4Metal,
+    #[allow(missing_docs)] // documentation missing in model
+    MacM4proMetal,
+    #[allow(missing_docs)] // documentation missing in model
     Mac1Metal,
     #[allow(missing_docs)] // documentation missing in model
     Mac2M1ultraMetal,
@@ -3745,6 +3751,8 @@ impl ::std::convert::From<&str> for InstanceType {
             "m8i.metal-48xl" => InstanceType::M8iMetal48xl,
             "m8i.metal-96xl" => InstanceType::M8iMetal96xl,
             "m8i.xlarge" => InstanceType::M8iXlarge,
+            "mac-m4.metal" => InstanceType::MacM4Metal,
+            "mac-m4pro.metal" => InstanceType::MacM4proMetal,
             "mac1.metal" => InstanceType::Mac1Metal,
             "mac2-m1ultra.metal" => InstanceType::Mac2M1ultraMetal,
             "mac2-m2.metal" => InstanceType::Mac2M2Metal,
@@ -4776,6 +4784,8 @@ impl InstanceType {
             InstanceType::M8iMetal48xl => "m8i.metal-48xl",
             InstanceType::M8iMetal96xl => "m8i.metal-96xl",
             InstanceType::M8iXlarge => "m8i.xlarge",
+            InstanceType::MacM4Metal => "mac-m4.metal",
+            InstanceType::MacM4proMetal => "mac-m4pro.metal",
             InstanceType::Mac1Metal => "mac1.metal",
             InstanceType::Mac2M1ultraMetal => "mac2-m1ultra.metal",
             InstanceType::Mac2M2Metal => "mac2-m2.metal",
@@ -5798,6 +5808,8 @@ impl InstanceType {
             "m8i.metal-48xl",
             "m8i.metal-96xl",
             "m8i.xlarge",
+            "mac-m4.metal",
+            "mac-m4pro.metal",
             "mac1.metal",
             "mac2-m1ultra.metal",
             "mac2-m2.metal",
@@ -6837,6 +6849,8 @@ impl ::std::fmt::Display for InstanceType {
             InstanceType::M8iMetal48xl => write!(f, "m8i.metal-48xl"),
             InstanceType::M8iMetal96xl => write!(f, "m8i.metal-96xl"),
             InstanceType::M8iXlarge => write!(f, "m8i.xlarge"),
+            InstanceType::MacM4Metal => write!(f, "mac-m4.metal"),
+            InstanceType::MacM4proMetal => write!(f, "mac-m4pro.metal"),
             InstanceType::Mac1Metal => write!(f, "mac1.metal"),
             InstanceType::Mac2M1ultraMetal => write!(f, "mac2-m1ultra.metal"),
             InstanceType::Mac2M2Metal => write!(f, "mac2-m2.metal"),

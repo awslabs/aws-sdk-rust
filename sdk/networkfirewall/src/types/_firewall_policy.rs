@@ -39,6 +39,8 @@ pub struct FirewallPolicy {
     pub tls_inspection_configuration_arn: ::std::option::Option<::std::string::String>,
     /// <p>Contains variables that you can use to override default Suricata settings in your firewall policy.</p>
     pub policy_variables: ::std::option::Option<crate::types::PolicyVariables>,
+    /// <p>When true, prevents TCP and TLS packets from reaching destination servers until TLS Inspection has evaluated Server Name Indication (SNI) rules. Requires an associated TLS Inspection configuration.</p>
+    pub enable_tls_session_holding: ::std::option::Option<bool>,
 }
 impl FirewallPolicy {
     /// <p>References to the stateless rule groups that are used in the policy. These define the matching criteria in stateless rules.</p>
@@ -103,6 +105,10 @@ impl FirewallPolicy {
     pub fn policy_variables(&self) -> ::std::option::Option<&crate::types::PolicyVariables> {
         self.policy_variables.as_ref()
     }
+    /// <p>When true, prevents TCP and TLS packets from reaching destination servers until TLS Inspection has evaluated Server Name Indication (SNI) rules. Requires an associated TLS Inspection configuration.</p>
+    pub fn enable_tls_session_holding(&self) -> ::std::option::Option<bool> {
+        self.enable_tls_session_holding
+    }
 }
 impl FirewallPolicy {
     /// Creates a new builder-style object to manufacture [`FirewallPolicy`](crate::types::FirewallPolicy).
@@ -124,6 +130,7 @@ pub struct FirewallPolicyBuilder {
     pub(crate) stateful_engine_options: ::std::option::Option<crate::types::StatefulEngineOptions>,
     pub(crate) tls_inspection_configuration_arn: ::std::option::Option<::std::string::String>,
     pub(crate) policy_variables: ::std::option::Option<crate::types::PolicyVariables>,
+    pub(crate) enable_tls_session_holding: ::std::option::Option<bool>,
 }
 impl FirewallPolicyBuilder {
     /// Appends an item to `stateless_rule_group_references`.
@@ -342,6 +349,20 @@ impl FirewallPolicyBuilder {
     pub fn get_policy_variables(&self) -> &::std::option::Option<crate::types::PolicyVariables> {
         &self.policy_variables
     }
+    /// <p>When true, prevents TCP and TLS packets from reaching destination servers until TLS Inspection has evaluated Server Name Indication (SNI) rules. Requires an associated TLS Inspection configuration.</p>
+    pub fn enable_tls_session_holding(mut self, input: bool) -> Self {
+        self.enable_tls_session_holding = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>When true, prevents TCP and TLS packets from reaching destination servers until TLS Inspection has evaluated Server Name Indication (SNI) rules. Requires an associated TLS Inspection configuration.</p>
+    pub fn set_enable_tls_session_holding(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.enable_tls_session_holding = input;
+        self
+    }
+    /// <p>When true, prevents TCP and TLS packets from reaching destination servers until TLS Inspection has evaluated Server Name Indication (SNI) rules. Requires an associated TLS Inspection configuration.</p>
+    pub fn get_enable_tls_session_holding(&self) -> &::std::option::Option<bool> {
+        &self.enable_tls_session_holding
+    }
     /// Consumes the builder and constructs a [`FirewallPolicy`](crate::types::FirewallPolicy).
     /// This method will fail if any of the following fields are not set:
     /// - [`stateless_default_actions`](crate::types::builders::FirewallPolicyBuilder::stateless_default_actions)
@@ -367,6 +388,7 @@ impl FirewallPolicyBuilder {
             stateful_engine_options: self.stateful_engine_options,
             tls_inspection_configuration_arn: self.tls_inspection_configuration_arn,
             policy_variables: self.policy_variables,
+            enable_tls_session_holding: self.enable_tls_session_holding,
         })
     }
 }

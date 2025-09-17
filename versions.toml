@@ -831,9 +831,9 @@ model_hash = '1916c26602d2072708bf3aa67ef32120b520d7fefba2f4bebf0fd96ec5a45192'
 
 [crates.aws-sdk-ec2]
 category = 'AwsSdk'
-version = '1.167.0'
-source_hash = '9c5f2dfe6a577f18654df1ef269cfe1a7e2071bbb0d4ed2a059161f8f2e804ac'
-model_hash = '35f0cd986e7e15b24a5d24702669fb069173f340085e073fd7048158b5e92cdf'
+version = '1.168.0'
+source_hash = '7333a104115a1e4b0e64f4c82839e731ff211db0ef04b976abd54cd493169142'
+model_hash = '41cede1ab3b8ebfbb92bc20053cf997271f76e827ac527317cc21c49b1ef363c'
 
 [crates.aws-sdk-ec2instanceconnect]
 category = 'AwsSdk'
@@ -1665,9 +1665,9 @@ model_hash = '129fa9d4de82fa558f0297c0e8e84e333ba43c8b19a5700226203856f65ffb3f'
 
 [crates.aws-sdk-networkfirewall]
 category = 'AwsSdk'
-version = '1.91.0'
-source_hash = '995905e9c3bc4e69e4f964a7138602ed6aaa0c08dd60d59d49a51ef3251d5069'
-model_hash = '3302b55cca924863508fccf972f9d4f02257e23bd3aeaf3634091066c9f70889'
+version = '1.92.0'
+source_hash = '4c25c280a7097d0ffb383c1b0816d70f27ea159fedfd9ddf5ed796a8a821f3cc'
+model_hash = '19faf3eb0199d1ee2bcc36dfc97e3455b0d0c003ec65ace712739bb57fc408a1'
 
 [crates.aws-sdk-networkflowmonitor]
 category = 'AwsSdk'
@@ -1803,9 +1803,9 @@ model_hash = 'b6ba3fdf8abdf708f5c79693f242804c410e0206c1b4a471fb6d849afa4cdfe9'
 
 [crates.aws-sdk-pcs]
 category = 'AwsSdk'
-version = '1.51.0'
-source_hash = '9ba946662d9a3230443eeda42a5adf24b76719d0cab1a8da227603810dce09a8'
-model_hash = 'b55c6d432d102e71488bc8a77bfd7576a04592a3f15a522dda133cfe8b77adaf'
+version = '1.52.0'
+source_hash = '1ab03225742fc30489f7d9aa3c3cf6c149cf58f3d048592bd5e67f70033d4125'
+model_hash = '4870e0bd5dab1b482e57b2733adf6e412669c9dd5ab7c74872585df0224b2c30'
 
 [crates.aws-sdk-personalize]
 category = 'AwsSdk'
@@ -2691,12 +2691,7 @@ source_hash = 'bf1dc748b174d4d1e6a60d60597dec1eba598e4cfd418fffaeb1de2afc36099b'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '4eae21d18f13ae2c8b3f5858292cfbd15f9dcb2b92d7ba9aac9878db2a601b2c'
-
-[release]
-tag = 'release-2025-09-16'
-
 [release.crates]
-aws-sdk-budgets = '1.89.0'
-aws-sdk-cloudwatchlogs = '1.103.0'
-aws-sdk-ivsrealtime = '1.94.0'
-aws-sdk-osis = '1.88.0'
+aws-sdk-ec2 = '1.168.0'
+aws-sdk-networkfirewall = '1.92.0'
+aws-sdk-pcs = '1.52.0'

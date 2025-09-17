@@ -314,19 +314,19 @@ impl CreateFirewallFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_availability_zone_mappings`](Self::set_availability_zone_mappings).
     ///
-    /// <p>Required. The Availability Zones where you want to create firewall endpoints for a transit gateway-attached firewall. You must specify at least one Availability Zone. Consider enabling the firewall in every Availability Zone where you have workloads to maintain Availability Zone independence.</p>
+    /// <p>Required. The Availability Zones where you want to create firewall endpoints for a transit gateway-attached firewall. You must specify at least one Availability Zone. Consider enabling the firewall in every Availability Zone where you have workloads to maintain Availability Zone isolation.</p>
     /// <p>You can modify Availability Zones later using <code>AssociateAvailabilityZones</code> or <code>DisassociateAvailabilityZones</code>, but this may briefly disrupt traffic. The <code>AvailabilityZoneChangeProtection</code> setting controls whether you can make these modifications.</p>
     pub fn availability_zone_mappings(mut self, input: crate::types::AvailabilityZoneMapping) -> Self {
         self.inner = self.inner.availability_zone_mappings(input);
         self
     }
-    /// <p>Required. The Availability Zones where you want to create firewall endpoints for a transit gateway-attached firewall. You must specify at least one Availability Zone. Consider enabling the firewall in every Availability Zone where you have workloads to maintain Availability Zone independence.</p>
+    /// <p>Required. The Availability Zones where you want to create firewall endpoints for a transit gateway-attached firewall. You must specify at least one Availability Zone. Consider enabling the firewall in every Availability Zone where you have workloads to maintain Availability Zone isolation.</p>
     /// <p>You can modify Availability Zones later using <code>AssociateAvailabilityZones</code> or <code>DisassociateAvailabilityZones</code>, but this may briefly disrupt traffic. The <code>AvailabilityZoneChangeProtection</code> setting controls whether you can make these modifications.</p>
     pub fn set_availability_zone_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZoneMapping>>) -> Self {
         self.inner = self.inner.set_availability_zone_mappings(input);
         self
     }
-    /// <p>Required. The Availability Zones where you want to create firewall endpoints for a transit gateway-attached firewall. You must specify at least one Availability Zone. Consider enabling the firewall in every Availability Zone where you have workloads to maintain Availability Zone independence.</p>
+    /// <p>Required. The Availability Zones where you want to create firewall endpoints for a transit gateway-attached firewall. You must specify at least one Availability Zone. Consider enabling the firewall in every Availability Zone where you have workloads to maintain Availability Zone isolation.</p>
     /// <p>You can modify Availability Zones later using <code>AssociateAvailabilityZones</code> or <code>DisassociateAvailabilityZones</code>, but this may briefly disrupt traffic. The <code>AvailabilityZoneChangeProtection</code> setting controls whether you can make these modifications.</p>
     pub fn get_availability_zone_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZoneMapping>> {
         self.inner.get_availability_zone_mappings()

@@ -23,7 +23,7 @@ impl crate::operation::delete_network_firewall_transit_gateway_attachment::build
 /// Fluent builder constructing a request to `DeleteNetworkFirewallTransitGatewayAttachment`.
 ///
 /// <p>Deletes a transit gateway attachment from a Network Firewall. Either the firewall owner or the transit gateway owner can delete the attachment.</p><important>
-/// <p>After you delete a transit gateway attachment, raffic will no longer flow through the firewall endpoints.</p>
+/// <p>After you delete a transit gateway attachment, traffic will no longer flow through the firewall endpoints.</p>
 /// </important>
 /// <p>After you initiate the delete operation, use <code>DescribeFirewall</code> to monitor the deletion status.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

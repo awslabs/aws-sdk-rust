@@ -81,6 +81,9 @@ pub fn ser_firewall_policy(
         crate::protocol_serde::shape_policy_variables::ser_policy_variables(&mut object_24, var_23)?;
         object_24.finish();
     }
+    if let Some(var_25) = &input.enable_tls_session_holding {
+        object.key("EnableTLSSessionHolding").boolean(*var_25);
+    }
     Ok(())
 }
 
@@ -139,6 +142,10 @@ where
                         }
                         "PolicyVariables" => {
                             builder = builder.set_policy_variables(crate::protocol_serde::shape_policy_variables::de_policy_variables(tokens)?);
+                        }
+                        "EnableTLSSessionHolding" => {
+                            builder =
+                                builder.set_enable_tls_session_holding(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

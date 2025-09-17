@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SlurmAuthKey {
-    /// <p>The Amazon Resource Name (ARN) of the the shared Slurm key.</p>
+    /// <p>The Amazon Resource Name (ARN) of the shared Slurm key.</p>
     pub secret_arn: ::std::string::String,
     /// <p>The version of the shared Slurm key.</p>
     pub secret_version: ::std::string::String,
 }
 impl SlurmAuthKey {
-    /// <p>The Amazon Resource Name (ARN) of the the shared Slurm key.</p>
+    /// <p>The Amazon Resource Name (ARN) of the shared Slurm key.</p>
     pub fn secret_arn(&self) -> &str {
         use std::ops::Deref;
         self.secret_arn.deref()
@@ -36,18 +36,18 @@ pub struct SlurmAuthKeyBuilder {
     pub(crate) secret_version: ::std::option::Option<::std::string::String>,
 }
 impl SlurmAuthKeyBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the the shared Slurm key.</p>
+    /// <p>The Amazon Resource Name (ARN) of the shared Slurm key.</p>
     /// This field is required.
     pub fn secret_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the the shared Slurm key.</p>
+    /// <p>The Amazon Resource Name (ARN) of the shared Slurm key.</p>
     pub fn set_secret_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secret_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the the shared Slurm key.</p>
+    /// <p>The Amazon Resource Name (ARN) of the shared Slurm key.</p>
     pub fn get_secret_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.secret_arn
     }
