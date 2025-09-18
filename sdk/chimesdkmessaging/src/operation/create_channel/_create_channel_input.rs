@@ -19,7 +19,7 @@ pub struct CreateChannelInput {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
     pub chime_bearer: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of the channel in the request.</p>
+    /// <p>An ID for the channel being created. If you do not specify an ID, a UUID will be created for the channel.</p>
     pub channel_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARNs of the channel members in the request.</p>
     pub member_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -65,7 +65,7 @@ impl CreateChannelInput {
     pub fn chime_bearer(&self) -> ::std::option::Option<&str> {
         self.chime_bearer.as_deref()
     }
-    /// <p>The ID of the channel in the request.</p>
+    /// <p>An ID for the channel being created. If you do not specify an ID, a UUID will be created for the channel.</p>
     pub fn channel_id(&self) -> ::std::option::Option<&str> {
         self.channel_id.as_deref()
     }
@@ -257,17 +257,17 @@ impl CreateChannelInputBuilder {
     pub fn get_chime_bearer(&self) -> &::std::option::Option<::std::string::String> {
         &self.chime_bearer
     }
-    /// <p>The ID of the channel in the request.</p>
+    /// <p>An ID for the channel being created. If you do not specify an ID, a UUID will be created for the channel.</p>
     pub fn channel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the channel in the request.</p>
+    /// <p>An ID for the channel being created. If you do not specify an ID, a UUID will be created for the channel.</p>
     pub fn set_channel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.channel_id = input;
         self
     }
-    /// <p>The ID of the channel in the request.</p>
+    /// <p>An ID for the channel being created. If you do not specify an ID, a UUID will be created for the channel.</p>
     pub fn get_channel_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.channel_id
     }

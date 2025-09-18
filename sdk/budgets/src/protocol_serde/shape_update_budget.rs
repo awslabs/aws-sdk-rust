@@ -32,6 +32,24 @@ pub fn de_update_budget_http_error(
             }
             tmp
         }),
+        "BillingViewHealthStatusException" => crate::operation::update_budget::UpdateBudgetError::BillingViewHealthStatusException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::BillingViewHealthStatusExceptionBuilder::default();
+                output = crate::protocol_serde::shape_billing_view_health_status_exception::de_billing_view_health_status_exception_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::update_budget::UpdateBudgetError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "InternalErrorException" => crate::operation::update_budget::UpdateBudgetError::InternalErrorException({
             #[allow(unused_mut)]
             let mut tmp = {

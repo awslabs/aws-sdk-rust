@@ -13,6 +13,8 @@ pub use crate::types::error::_access_denied_exception::AccessDeniedException;
 
 pub use crate::types::error::_resource_locked_exception::ResourceLockedException;
 
+pub use crate::types::error::_billing_view_health_status_exception::BillingViewHealthStatusException;
+
 pub use crate::types::error::_service_quota_exceeded_exception::ServiceQuotaExceededException;
 
 pub use crate::types::error::_invalid_next_token_exception::InvalidNextTokenException;
@@ -22,6 +24,8 @@ pub use crate::types::error::_expired_next_token_exception::ExpiredNextTokenExce
 pub use crate::types::error::_creation_limit_exceeded_exception::CreationLimitExceededException;
 
 mod _access_denied_exception;
+
+mod _billing_view_health_status_exception;
 
 mod _creation_limit_exceeded_exception;
 

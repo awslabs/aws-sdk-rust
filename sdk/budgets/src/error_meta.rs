@@ -5,6 +5,8 @@
 pub enum Error {
     /// <p>You are not authorized to use this operation with the given parameters.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
+    /// <p>The billing view status must be HEALTHY to perform this action. Try again when the status is HEALTHY.</p>
+    BillingViewHealthStatusException(crate::types::error::BillingViewHealthStatusException),
     /// <p>You've exceeded the notification or subscriber limit.</p>
     CreationLimitExceededException(crate::types::error::CreationLimitExceededException),
     /// <p>The budget name already exists. Budget names must be unique within an account.</p>
@@ -38,6 +40,7 @@ impl ::std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
             Error::AccessDeniedException(inner) => inner.fmt(f),
+            Error::BillingViewHealthStatusException(inner) => inner.fmt(f),
             Error::CreationLimitExceededException(inner) => inner.fmt(f),
             Error::DuplicateRecordException(inner) => inner.fmt(f),
             Error::ExpiredNextTokenException(inner) => inner.fmt(f),
@@ -70,6 +73,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
     fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
         match self {
             Self::AccessDeniedException(inner) => inner.meta(),
+            Self::BillingViewHealthStatusException(inner) => inner.meta(),
             Self::CreationLimitExceededException(inner) => inner.meta(),
             Self::DuplicateRecordException(inner) => inner.meta(),
             Self::ExpiredNextTokenException(inner) => inner.meta(),
@@ -102,6 +106,9 @@ impl From<crate::operation::create_budget::CreateBudgetError> for Error {
     fn from(err: crate::operation::create_budget::CreateBudgetError) -> Self {
         match err {
             crate::operation::create_budget::CreateBudgetError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_budget::CreateBudgetError::BillingViewHealthStatusException(inner) => {
+                Error::BillingViewHealthStatusException(inner)
+            }
             crate::operation::create_budget::CreateBudgetError::CreationLimitExceededException(inner) => Error::CreationLimitExceededException(inner),
             crate::operation::create_budget::CreateBudgetError::DuplicateRecordException(inner) => Error::DuplicateRecordException(inner),
             crate::operation::create_budget::CreateBudgetError::InternalErrorException(inner) => Error::InternalErrorException(inner),
@@ -895,6 +902,9 @@ impl From<crate::operation::update_budget::UpdateBudgetError> for Error {
     fn from(err: crate::operation::update_budget::UpdateBudgetError) -> Self {
         match err {
             crate::operation::update_budget::UpdateBudgetError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_budget::UpdateBudgetError::BillingViewHealthStatusException(inner) => {
+                Error::BillingViewHealthStatusException(inner)
+            }
             crate::operation::update_budget::UpdateBudgetError::InternalErrorException(inner) => Error::InternalErrorException(inner),
             crate::operation::update_budget::UpdateBudgetError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::update_budget::UpdateBudgetError::NotFoundException(inner) => Error::NotFoundException(inner),
@@ -992,6 +1002,7 @@ impl ::std::error::Error for Error {
     fn source(&self) -> std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Error::AccessDeniedException(inner) => inner.source(),
+            Error::BillingViewHealthStatusException(inner) => inner.source(),
             Error::CreationLimitExceededException(inner) => inner.source(),
             Error::DuplicateRecordException(inner) => inner.source(),
             Error::ExpiredNextTokenException(inner) => inner.source(),
@@ -1010,6 +1021,7 @@ impl ::aws_types::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {
             Self::AccessDeniedException(e) => e.request_id(),
+            Self::BillingViewHealthStatusException(e) => e.request_id(),
             Self::CreationLimitExceededException(e) => e.request_id(),
             Self::DuplicateRecordException(e) => e.request_id(),
             Self::ExpiredNextTokenException(e) => e.request_id(),

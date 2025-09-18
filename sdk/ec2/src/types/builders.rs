@@ -301,6 +301,10 @@ pub use crate::types::_icmp_type_code::IcmpTypeCodeBuilder;
 
 pub use crate::types::_image_criterion_request::ImageCriterionRequestBuilder;
 
+pub use crate::types::_creation_date_condition_request::CreationDateConditionRequestBuilder;
+
+pub use crate::types::_deprecation_time_condition_request::DeprecationTimeConditionRequestBuilder;
+
 pub use crate::types::_iam_instance_profile_association::IamInstanceProfileAssociationBuilder;
 
 pub use crate::types::_unsuccessful_item::UnsuccessfulItemBuilder;
@@ -874,6 +878,10 @@ pub use crate::types::_ipv6_cidr_association::Ipv6CidrAssociationBuilder;
 pub use crate::types::_associated_role::AssociatedRoleBuilder;
 
 pub use crate::types::_image_criterion::ImageCriterionBuilder;
+
+pub use crate::types::_creation_date_condition::CreationDateConditionBuilder;
+
+pub use crate::types::_deprecation_time_condition::DeprecationTimeConditionBuilder;
 
 pub use crate::types::_active_vpn_tunnel_status::ActiveVpnTunnelStatusBuilder;
 

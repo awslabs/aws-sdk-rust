@@ -23,7 +23,9 @@ impl crate::operation::search_channels::builders::SearchChannelsInputBuilder {
 /// Fluent builder constructing a request to `SearchChannels`.
 ///
 /// <p>Allows the <code>ChimeBearer</code> to search channels by channel members. Users or bots can search across the channels that they belong to. Users in the <code>AppInstanceAdmin</code> role can search across all channels.</p>
-/// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p>
+/// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p><note>
+/// <p>This operation isn't supported for <code>AppInstanceUsers</code> with a large number of memberships.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SearchChannelsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

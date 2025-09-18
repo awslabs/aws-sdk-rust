@@ -17,5 +17,41 @@ pub fn ser_image_criterion_request(
             list_4.finish();
         }
     }
+    #[allow(unused_mut)]
+    let mut scope_6 = writer.prefix("MarketplaceProductCode");
+    if let Some(var_7) = &input.marketplace_product_codes {
+        if !var_7.is_empty() {
+            let mut list_9 = scope_6.start_list(true, Some("item"));
+            for item_8 in var_7 {
+                #[allow(unused_mut)]
+                let mut entry_10 = list_9.entry();
+                entry_10.string(item_8);
+            }
+            list_9.finish();
+        }
+    }
+    #[allow(unused_mut)]
+    let mut scope_11 = writer.prefix("ImageName");
+    if let Some(var_12) = &input.image_names {
+        if !var_12.is_empty() {
+            let mut list_14 = scope_11.start_list(true, Some("item"));
+            for item_13 in var_12 {
+                #[allow(unused_mut)]
+                let mut entry_15 = list_14.entry();
+                entry_15.string(item_13);
+            }
+            list_14.finish();
+        }
+    }
+    #[allow(unused_mut)]
+    let mut scope_16 = writer.prefix("DeprecationTimeCondition");
+    if let Some(var_17) = &input.deprecation_time_condition {
+        crate::protocol_serde::shape_deprecation_time_condition_request::ser_deprecation_time_condition_request(scope_16, var_17)?;
+    }
+    #[allow(unused_mut)]
+    let mut scope_18 = writer.prefix("CreationDateCondition");
+    if let Some(var_19) = &input.creation_date_condition {
+        crate::protocol_serde::shape_creation_date_condition_request::ser_creation_date_condition_request(scope_18, var_19)?;
+    }
     Ok(())
 }

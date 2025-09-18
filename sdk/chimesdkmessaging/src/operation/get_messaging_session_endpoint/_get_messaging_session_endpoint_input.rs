@@ -2,7 +2,16 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetMessagingSessionEndpointInput {}
+pub struct GetMessagingSessionEndpointInput {
+    /// <p>The type of network for the messaging session endpoint. Either IPv4 only or dual-stack (IPv4 and IPv6).</p>
+    pub network_type: ::std::option::Option<crate::types::NetworkType>,
+}
+impl GetMessagingSessionEndpointInput {
+    /// <p>The type of network for the messaging session endpoint. Either IPv4 only or dual-stack (IPv4 and IPv6).</p>
+    pub fn network_type(&self) -> ::std::option::Option<&crate::types::NetworkType> {
+        self.network_type.as_ref()
+    }
+}
 impl GetMessagingSessionEndpointInput {
     /// Creates a new builder-style object to manufacture [`GetMessagingSessionEndpointInput`](crate::operation::get_messaging_session_endpoint::GetMessagingSessionEndpointInput).
     pub fn builder() -> crate::operation::get_messaging_session_endpoint::builders::GetMessagingSessionEndpointInputBuilder {
@@ -13,8 +22,24 @@ impl GetMessagingSessionEndpointInput {
 /// A builder for [`GetMessagingSessionEndpointInput`](crate::operation::get_messaging_session_endpoint::GetMessagingSessionEndpointInput).
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
-pub struct GetMessagingSessionEndpointInputBuilder {}
+pub struct GetMessagingSessionEndpointInputBuilder {
+    pub(crate) network_type: ::std::option::Option<crate::types::NetworkType>,
+}
 impl GetMessagingSessionEndpointInputBuilder {
+    /// <p>The type of network for the messaging session endpoint. Either IPv4 only or dual-stack (IPv4 and IPv6).</p>
+    pub fn network_type(mut self, input: crate::types::NetworkType) -> Self {
+        self.network_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of network for the messaging session endpoint. Either IPv4 only or dual-stack (IPv4 and IPv6).</p>
+    pub fn set_network_type(mut self, input: ::std::option::Option<crate::types::NetworkType>) -> Self {
+        self.network_type = input;
+        self
+    }
+    /// <p>The type of network for the messaging session endpoint. Either IPv4 only or dual-stack (IPv4 and IPv6).</p>
+    pub fn get_network_type(&self) -> &::std::option::Option<crate::types::NetworkType> {
+        &self.network_type
+    }
     /// Consumes the builder and constructs a [`GetMessagingSessionEndpointInput`](crate::operation::get_messaging_session_endpoint::GetMessagingSessionEndpointInput).
     pub fn build(
         self,
@@ -22,6 +47,8 @@ impl GetMessagingSessionEndpointInputBuilder {
         crate::operation::get_messaging_session_endpoint::GetMessagingSessionEndpointInput,
         ::aws_smithy_types::error::operation::BuildError,
     > {
-        ::std::result::Result::Ok(crate::operation::get_messaging_session_endpoint::GetMessagingSessionEndpointInput {})
+        ::std::result::Result::Ok(crate::operation::get_messaging_session_endpoint::GetMessagingSessionEndpointInput {
+            network_type: self.network_type,
+        })
     }
 }

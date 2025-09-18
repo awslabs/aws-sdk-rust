@@ -3223,6 +3223,8 @@ pub(crate) mod shape_create_volume_permission;
 
 pub(crate) mod shape_create_volume_permission_list;
 
+pub(crate) mod shape_creation_date_condition_request;
+
 pub(crate) mod shape_customer_gateway;
 
 pub(crate) mod shape_customer_gateway_list;
@@ -3240,6 +3242,8 @@ pub(crate) mod shape_delete_launch_template_versions_response_error_set;
 pub(crate) mod shape_delete_launch_template_versions_response_success_set;
 
 pub(crate) mod shape_delete_snapshot_result_set;
+
+pub(crate) mod shape_deprecation_time_condition_request;
 
 pub(crate) mod shape_deprovisioned_address_set;
 
@@ -4679,11 +4683,15 @@ pub(crate) mod shape_cpu_manufacturer_set;
 
 pub(crate) mod shape_cpu_options;
 
+pub(crate) mod shape_creation_date_condition;
+
 pub(crate) mod shape_dedicated_host_id_list;
 
 pub(crate) mod shape_delete_fleet_error;
 
 pub(crate) mod shape_delete_queued_reserved_instances_error;
+
+pub(crate) mod shape_deprecation_time_condition;
 
 pub(crate) mod shape_describe_fleets_error_set;
 
@@ -4742,6 +4750,8 @@ pub(crate) mod shape_host_instance_list;
 pub(crate) mod shape_host_properties;
 
 pub(crate) mod shape_image_metadata;
+
+pub(crate) mod shape_image_name_list;
 
 pub(crate) mod shape_image_provider_list;
 
@@ -4828,6 +4838,8 @@ pub(crate) mod shape_load_permission;
 pub(crate) mod shape_local_storage_type_set;
 
 pub(crate) mod shape_mac_os_version_string_list;
+
+pub(crate) mod shape_marketplace_product_code_list;
 
 pub(crate) mod shape_media_accelerator_info;
 

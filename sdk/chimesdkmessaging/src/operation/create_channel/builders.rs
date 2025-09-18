@@ -228,17 +228,17 @@ impl CreateChannelFluentBuilder {
     pub fn get_chime_bearer(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_chime_bearer()
     }
-    /// <p>The ID of the channel in the request.</p>
+    /// <p>An ID for the channel being created. If you do not specify an ID, a UUID will be created for the channel.</p>
     pub fn channel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.channel_id(input.into());
         self
     }
-    /// <p>The ID of the channel in the request.</p>
+    /// <p>An ID for the channel being created. If you do not specify an ID, a UUID will be created for the channel.</p>
     pub fn set_channel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_channel_id(input);
         self
     }
-    /// <p>The ID of the channel in the request.</p>
+    /// <p>An ID for the channel being created. If you do not specify an ID, a UUID will be created for the channel.</p>
     pub fn get_channel_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_channel_id()
     }

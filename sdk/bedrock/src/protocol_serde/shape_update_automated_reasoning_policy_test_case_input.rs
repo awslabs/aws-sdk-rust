@@ -18,16 +18,13 @@ pub fn ser_update_automated_reasoning_policy_test_case_input_input(
     if let Some(var_4) = &input.guard_content {
         object.key("guardContent").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.kms_key_arn {
-        object.key("kmsKeyArn").string(var_5.as_str());
-    }
-    if let Some(var_6) = &input.last_updated_at {
+    if let Some(var_5) = &input.last_updated_at {
         object
             .key("lastUpdatedAt")
-            .date_time(var_6, ::aws_smithy_types::date_time::Format::DateTime)?;
+            .date_time(var_5, ::aws_smithy_types::date_time::Format::DateTime)?;
     }
-    if let Some(var_7) = &input.query_content {
-        object.key("queryContent").string(var_7.as_str());
+    if let Some(var_6) = &input.query_content {
+        object.key("queryContent").string(var_6.as_str());
     }
     Ok(())
 }

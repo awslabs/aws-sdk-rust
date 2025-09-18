@@ -74,6 +74,22 @@ pub fn de_delete_automated_reasoning_policy_build_workflow_http_error(
                                                         }
             tmp
         }),
+        "ResourceInUseException" => crate::operation::delete_automated_reasoning_policy_build_workflow::DeleteAutomatedReasoningPolicyBuildWorkflowError::ResourceInUseException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ResourceInUseExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_resource_in_use_exception::de_resource_in_use_exception_json_err(_response_body, output).map_err(crate::operation::delete_automated_reasoning_policy_build_workflow::DeleteAutomatedReasoningPolicyBuildWorkflowError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                            tmp.message = _error_message;
+                                                        }
+            tmp
+        }),
         "ResourceNotFoundException" => crate::operation::delete_automated_reasoning_policy_build_workflow::DeleteAutomatedReasoningPolicyBuildWorkflowError::ResourceNotFoundException({
             #[allow(unused_mut)]
             let mut tmp =

@@ -2,7 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetMessagingSessionEndpoint`](crate::operation::get_messaging_session_endpoint::builders::GetMessagingSessionEndpointFluentBuilder) operation.
     ///
-    /// - The fluent builder takes no input, just [`send`](crate::operation::get_messaging_session_endpoint::builders::GetMessagingSessionEndpointFluentBuilder::send) it.
+    /// - The fluent builder is configurable:
+    ///   - [`network_type(NetworkType)`](crate::operation::get_messaging_session_endpoint::builders::GetMessagingSessionEndpointFluentBuilder::network_type) / [`set_network_type(Option<NetworkType>)`](crate::operation::get_messaging_session_endpoint::builders::GetMessagingSessionEndpointFluentBuilder::set_network_type):<br>required: **false**<br><p>The type of network for the messaging session endpoint. Either IPv4 only or dual-stack (IPv4 and IPv6).</p><br>
     /// - On success, responds with [`GetMessagingSessionEndpointOutput`](crate::operation::get_messaging_session_endpoint::GetMessagingSessionEndpointOutput) with field(s):
     ///   - [`endpoint(Option<MessagingSessionEndpoint>)`](crate::operation::get_messaging_session_endpoint::GetMessagingSessionEndpointOutput::endpoint): <p>The endpoint returned in the response.</p>
     /// - On failure, responds with [`SdkError<GetMessagingSessionEndpointError>`](crate::operation::get_messaging_session_endpoint::GetMessagingSessionEndpointError)

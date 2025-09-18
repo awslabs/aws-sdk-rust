@@ -85,6 +85,8 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
 
 pub(crate) mod shape_access_denied_exception;
 
+pub(crate) mod shape_billing_view_health_status_exception;
+
 pub(crate) mod shape_create_budget_action_input;
 
 pub(crate) mod shape_create_budget_input;

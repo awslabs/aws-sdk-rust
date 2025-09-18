@@ -35,7 +35,7 @@ impl AutomatedReasoningPolicyBuildWorkflowDocument {
 impl ::std::fmt::Debug for AutomatedReasoningPolicyBuildWorkflowDocument {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("AutomatedReasoningPolicyBuildWorkflowDocument");
-        formatter.field("document", &self.document);
+        formatter.field("document", &"*** Sensitive Data Redacted ***");
         formatter.field("document_content_type", &self.document_content_type);
         formatter.field("document_name", &"*** Sensitive Data Redacted ***");
         formatter.field("document_description", &"*** Sensitive Data Redacted ***");
@@ -152,7 +152,7 @@ impl AutomatedReasoningPolicyBuildWorkflowDocumentBuilder {
 impl ::std::fmt::Debug for AutomatedReasoningPolicyBuildWorkflowDocumentBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("AutomatedReasoningPolicyBuildWorkflowDocumentBuilder");
-        formatter.field("document", &self.document);
+        formatter.field("document", &"*** Sensitive Data Redacted ***");
         formatter.field("document_content_type", &self.document_content_type);
         formatter.field("document_name", &"*** Sensitive Data Redacted ***");
         formatter.field("document_description", &"*** Sensitive Data Redacted ***");

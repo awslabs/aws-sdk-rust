@@ -83,6 +83,8 @@ pub use crate::types::_channel_ban_summary::ChannelBanSummary;
 
 pub use crate::types::_messaging_session_endpoint::MessagingSessionEndpoint;
 
+pub use crate::types::_network_type::NetworkType;
+
 pub use crate::types::_channel_message::ChannelMessage;
 
 pub use crate::types::_channel_moderator::ChannelModerator;
@@ -180,6 +182,8 @@ mod _message_attribute_value;
 mod _messaging_data_type;
 
 mod _messaging_session_endpoint;
+
+mod _network_type;
 
 mod _processor;
 

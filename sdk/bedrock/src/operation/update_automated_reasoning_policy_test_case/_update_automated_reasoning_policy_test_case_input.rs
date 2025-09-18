@@ -17,8 +17,6 @@ pub struct UpdateAutomatedReasoningPolicyTestCaseInput {
     pub expected_aggregated_findings_result: ::std::option::Option<crate::types::AutomatedReasoningCheckResult>,
     /// <p>The updated minimum confidence level for logic validation. If null is provided, the threshold will be removed.</p>
     pub confidence_threshold: ::std::option::Option<f64>,
-    /// <p>The KMS key ARN for encrypting the test at rest. If not provided, the key will not be updated. Use <code>DISCARD</code> to remove the key.</p>
-    pub kms_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>A unique, case-sensitive identifier to ensure that the operation completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error.</p>
     pub client_request_token: ::std::option::Option<::std::string::String>,
 }
@@ -51,10 +49,6 @@ impl UpdateAutomatedReasoningPolicyTestCaseInput {
     pub fn confidence_threshold(&self) -> ::std::option::Option<f64> {
         self.confidence_threshold
     }
-    /// <p>The KMS key ARN for encrypting the test at rest. If not provided, the key will not be updated. Use <code>DISCARD</code> to remove the key.</p>
-    pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
-        self.kms_key_arn.as_deref()
-    }
     /// <p>A unique, case-sensitive identifier to ensure that the operation completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error.</p>
     pub fn client_request_token(&self) -> ::std::option::Option<&str> {
         self.client_request_token.as_deref()
@@ -70,7 +64,6 @@ impl ::std::fmt::Debug for UpdateAutomatedReasoningPolicyTestCaseInput {
         formatter.field("last_updated_at", &self.last_updated_at);
         formatter.field("expected_aggregated_findings_result", &self.expected_aggregated_findings_result);
         formatter.field("confidence_threshold", &self.confidence_threshold);
-        formatter.field("kms_key_arn", &self.kms_key_arn);
         formatter.field("client_request_token", &self.client_request_token);
         formatter.finish()
     }
@@ -93,7 +86,6 @@ pub struct UpdateAutomatedReasoningPolicyTestCaseInputBuilder {
     pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) expected_aggregated_findings_result: ::std::option::Option<crate::types::AutomatedReasoningCheckResult>,
     pub(crate) confidence_threshold: ::std::option::Option<f64>,
-    pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdateAutomatedReasoningPolicyTestCaseInputBuilder {
@@ -200,20 +192,6 @@ impl UpdateAutomatedReasoningPolicyTestCaseInputBuilder {
     pub fn get_confidence_threshold(&self) -> &::std::option::Option<f64> {
         &self.confidence_threshold
     }
-    /// <p>The KMS key ARN for encrypting the test at rest. If not provided, the key will not be updated. Use <code>DISCARD</code> to remove the key.</p>
-    pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.kms_key_arn = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The KMS key ARN for encrypting the test at rest. If not provided, the key will not be updated. Use <code>DISCARD</code> to remove the key.</p>
-    pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_arn = input;
-        self
-    }
-    /// <p>The KMS key ARN for encrypting the test at rest. If not provided, the key will not be updated. Use <code>DISCARD</code> to remove the key.</p>
-    pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
-        &self.kms_key_arn
-    }
     /// <p>A unique, case-sensitive identifier to ensure that the operation completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error.</p>
     pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
@@ -244,7 +222,6 @@ impl UpdateAutomatedReasoningPolicyTestCaseInputBuilder {
                 last_updated_at: self.last_updated_at,
                 expected_aggregated_findings_result: self.expected_aggregated_findings_result,
                 confidence_threshold: self.confidence_threshold,
-                kms_key_arn: self.kms_key_arn,
                 client_request_token: self.client_request_token,
             },
         )
@@ -260,7 +237,6 @@ impl ::std::fmt::Debug for UpdateAutomatedReasoningPolicyTestCaseInputBuilder {
         formatter.field("last_updated_at", &self.last_updated_at);
         formatter.field("expected_aggregated_findings_result", &self.expected_aggregated_findings_result);
         formatter.field("confidence_threshold", &self.confidence_threshold);
-        formatter.field("kms_key_arn", &self.kms_key_arn);
         formatter.field("client_request_token", &self.client_request_token);
         formatter.finish()
     }

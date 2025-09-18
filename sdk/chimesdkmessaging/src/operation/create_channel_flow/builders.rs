@@ -32,7 +32,7 @@ impl crate::operation::create_channel_flow::builders::CreateChannelFlowInputBuil
 /// <li>
 /// <p>The Standard message type</p></li>
 /// </ol><note>
-/// <p>Channel flows don't process Control or System messages. For more information about the message types provided by Chime SDK messaging, refer to <a href="https://docs.aws.amazon.com/chime/latest/dg/using-the-messaging-sdk.html#msg-types">Message types</a> in the <i>Amazon Chime developer guide</i>.</p>
+/// <p>Channel flows don't process Control or System messages. For more information about the message types provided by Chime SDK messaging, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/using-the-messaging-sdk.html#msg-types">Message types</a> in the <i>Amazon Chime developer guide</i>.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateChannelFlowFluentBuilder {

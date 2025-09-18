@@ -17,6 +17,46 @@ pub fn de_image_criterion(
                 builder = builder.set_image_providers(var_1);
             }
             ,
+            s if s.matches("marketplaceProductCodeSet") /* MarketplaceProductCodes com.amazonaws.ec2#ImageCriterion$MarketplaceProductCodes */ =>  {
+                let var_2 =
+                    Some(
+                        crate::protocol_serde::shape_marketplace_product_code_list::de_marketplace_product_code_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_marketplace_product_codes(var_2);
+            }
+            ,
+            s if s.matches("imageNameSet") /* ImageNames com.amazonaws.ec2#ImageCriterion$ImageNames */ =>  {
+                let var_3 =
+                    Some(
+                        crate::protocol_serde::shape_image_name_list::de_image_name_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_image_names(var_3);
+            }
+            ,
+            s if s.matches("deprecationTimeCondition") /* DeprecationTimeCondition com.amazonaws.ec2#ImageCriterion$DeprecationTimeCondition */ =>  {
+                let var_4 =
+                    Some(
+                        crate::protocol_serde::shape_deprecation_time_condition::de_deprecation_time_condition(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_deprecation_time_condition(var_4);
+            }
+            ,
+            s if s.matches("creationDateCondition") /* CreationDateCondition com.amazonaws.ec2#ImageCriterion$CreationDateCondition */ =>  {
+                let var_5 =
+                    Some(
+                        crate::protocol_serde::shape_creation_date_condition::de_creation_date_condition(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_creation_date_condition(var_5);
+            }
+            ,
             _ => {}
         }
     }

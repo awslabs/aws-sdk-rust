@@ -451,6 +451,10 @@ pub use crate::types::_rule_action::RuleAction;
 
 pub use crate::types::_image_criterion_request::ImageCriterionRequest;
 
+pub use crate::types::_creation_date_condition_request::CreationDateConditionRequest;
+
+pub use crate::types::_deprecation_time_condition_request::DeprecationTimeConditionRequest;
+
 pub use crate::types::_iam_instance_profile_association::IamInstanceProfileAssociation;
 
 pub use crate::types::_iam_instance_profile_association_state::IamInstanceProfileAssociationState;
@@ -1302,6 +1306,10 @@ pub use crate::types::_ipv6_cidr_association::Ipv6CidrAssociation;
 pub use crate::types::_associated_role::AssociatedRole;
 
 pub use crate::types::_image_criterion::ImageCriterion;
+
+pub use crate::types::_creation_date_condition::CreationDateCondition;
+
+pub use crate::types::_deprecation_time_condition::DeprecationTimeCondition;
 
 pub use crate::types::_active_vpn_tunnel_status::ActiveVpnTunnelStatus;
 
@@ -2889,6 +2897,10 @@ mod _create_volume_permission;
 
 mod _create_volume_permission_modifications;
 
+mod _creation_date_condition;
+
+mod _creation_date_condition_request;
+
 mod _credit_specification;
 
 mod _credit_specification_request;
@@ -2932,6 +2944,10 @@ mod _delete_queued_reserved_instances_error;
 mod _delete_queued_reserved_instances_error_code;
 
 mod _delete_snapshot_return_code;
+
+mod _deprecation_time_condition;
+
+mod _deprecation_time_condition_request;
 
 mod _deregister_instance_tag_attribute_request;
 

@@ -210,20 +210,6 @@ impl UpdateAutomatedReasoningPolicyTestCaseFluentBuilder {
     pub fn get_confidence_threshold(&self) -> &::std::option::Option<f64> {
         self.inner.get_confidence_threshold()
     }
-    /// <p>The KMS key ARN for encrypting the test at rest. If not provided, the key will not be updated. Use <code>DISCARD</code> to remove the key.</p>
-    pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.kms_key_arn(input.into());
-        self
-    }
-    /// <p>The KMS key ARN for encrypting the test at rest. If not provided, the key will not be updated. Use <code>DISCARD</code> to remove the key.</p>
-    pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_kms_key_arn(input);
-        self
-    }
-    /// <p>The KMS key ARN for encrypting the test at rest. If not provided, the key will not be updated. Use <code>DISCARD</code> to remove the key.</p>
-    pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_kms_key_arn()
-    }
     /// <p>A unique, case-sensitive identifier to ensure that the operation completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error.</p>
     pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());

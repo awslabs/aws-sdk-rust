@@ -258,6 +258,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdateBudgetE
 pub enum UpdateBudgetError {
     /// <p>You are not authorized to use this operation with the given parameters.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
+    /// <p>The billing view status must be HEALTHY to perform this action. Try again when the status is HEALTHY.</p>
+    BillingViewHealthStatusException(crate::types::error::BillingViewHealthStatusException),
     /// <p>An error on the server occurred during the processing of your request. Try again later.</p>
     InternalErrorException(crate::types::error::InternalErrorException),
     /// <p>An error on the client occurred. Typically, the cause is an invalid input value.</p>
@@ -300,6 +302,7 @@ impl UpdateBudgetError {
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::AccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::BillingViewHealthStatusException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InternalErrorException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidParameterException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::NotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -310,6 +313,10 @@ impl UpdateBudgetError {
     /// Returns `true` if the error kind is `UpdateBudgetError::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(self, Self::AccessDeniedException(_))
+    }
+    /// Returns `true` if the error kind is `UpdateBudgetError::BillingViewHealthStatusException`.
+    pub fn is_billing_view_health_status_exception(&self) -> bool {
+        matches!(self, Self::BillingViewHealthStatusException(_))
     }
     /// Returns `true` if the error kind is `UpdateBudgetError::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
@@ -332,6 +339,7 @@ impl ::std::error::Error for UpdateBudgetError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
+            Self::BillingViewHealthStatusException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalErrorException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidParameterException(_inner) => ::std::option::Option::Some(_inner),
             Self::NotFoundException(_inner) => ::std::option::Option::Some(_inner),
@@ -344,6 +352,7 @@ impl ::std::fmt::Display for UpdateBudgetError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             Self::AccessDeniedException(_inner) => _inner.fmt(f),
+            Self::BillingViewHealthStatusException(_inner) => _inner.fmt(f),
             Self::InternalErrorException(_inner) => _inner.fmt(f),
             Self::InvalidParameterException(_inner) => _inner.fmt(f),
             Self::NotFoundException(_inner) => _inner.fmt(f),
@@ -370,6 +379,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for UpdateBudgetE
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::BillingViewHealthStatusException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalErrorException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidParameterException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::NotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

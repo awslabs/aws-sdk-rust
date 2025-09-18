@@ -944,6 +944,7 @@ impl From<crate::operation::delete_automated_reasoning_policy_build_workflow::De
             crate::operation::delete_automated_reasoning_policy_build_workflow::DeleteAutomatedReasoningPolicyBuildWorkflowError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::delete_automated_reasoning_policy_build_workflow::DeleteAutomatedReasoningPolicyBuildWorkflowError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::delete_automated_reasoning_policy_build_workflow::DeleteAutomatedReasoningPolicyBuildWorkflowError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_automated_reasoning_policy_build_workflow::DeleteAutomatedReasoningPolicyBuildWorkflowError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
             crate::operation::delete_automated_reasoning_policy_build_workflow::DeleteAutomatedReasoningPolicyBuildWorkflowError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::delete_automated_reasoning_policy_build_workflow::DeleteAutomatedReasoningPolicyBuildWorkflowError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::delete_automated_reasoning_policy_build_workflow::DeleteAutomatedReasoningPolicyBuildWorkflowError::ValidationException(inner) => Error::ValidationException(inner),
