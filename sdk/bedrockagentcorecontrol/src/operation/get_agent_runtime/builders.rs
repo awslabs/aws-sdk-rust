@@ -22,7 +22,7 @@ impl crate::operation::get_agent_runtime::builders::GetAgentRuntimeInputBuilder 
 }
 /// Fluent builder constructing a request to `GetAgentRuntime`.
 ///
-/// <p>Gets an Amazon Secure Agent.</p>
+/// <p>Gets an Amazon Bedrock AgentCore Runtime.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetAgentRuntimeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl GetAgentRuntimeFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique identifier of the agent runtime to retrieve.</p>
+    /// <p>The unique identifier of the AgentCore Runtime to retrieve.</p>
     pub fn agent_runtime_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_runtime_id(input.into());
         self
     }
-    /// <p>The unique identifier of the agent runtime to retrieve.</p>
+    /// <p>The unique identifier of the AgentCore Runtime to retrieve.</p>
     pub fn set_agent_runtime_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_agent_runtime_id(input);
         self
     }
-    /// <p>The unique identifier of the agent runtime to retrieve.</p>
+    /// <p>The unique identifier of the AgentCore Runtime to retrieve.</p>
     pub fn get_agent_runtime_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agent_runtime_id()
     }
-    /// <p>The version of the agent runtime to retrieve.</p>
+    /// <p>The version of the AgentCore Runtime to retrieve.</p>
     pub fn agent_runtime_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_runtime_version(input.into());
         self
     }
-    /// <p>The version of the agent runtime to retrieve.</p>
+    /// <p>The version of the AgentCore Runtime to retrieve.</p>
     pub fn set_agent_runtime_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_agent_runtime_version(input);
         self
     }
-    /// <p>The version of the agent runtime to retrieve.</p>
+    /// <p>The version of the AgentCore Runtime to retrieve.</p>
     pub fn get_agent_runtime_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agent_runtime_version()
     }

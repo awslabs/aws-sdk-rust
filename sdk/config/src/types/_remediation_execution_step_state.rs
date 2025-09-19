@@ -12,9 +12,12 @@
 /// ```text
 /// # let remediationexecutionstepstate = unimplemented!();
 /// match remediationexecutionstepstate {
+///     RemediationExecutionStepState::Exited => { /* ... */ },
 ///     RemediationExecutionStepState::Failed => { /* ... */ },
+///     RemediationExecutionStepState::InProgress => { /* ... */ },
 ///     RemediationExecutionStepState::Pending => { /* ... */ },
 ///     RemediationExecutionStepState::Succeeded => { /* ... */ },
+///     RemediationExecutionStepState::UnknownValue => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -37,18 +40,26 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-#[allow(missing_docs)] // documentation missing in model
+///
+/// _Note: `RemediationExecutionStepState::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum RemediationExecutionStepState {
     #[allow(missing_docs)] // documentation missing in model
+    Exited,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
+    InProgress,
     #[allow(missing_docs)] // documentation missing in model
     Pending,
     #[allow(missing_docs)] // documentation missing in model
     Succeeded,
+    ///
+    /// _Note: `::Unknown` has been renamed to `::UnknownValue`._
+    UnknownValue,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -56,9 +67,12 @@ pub enum RemediationExecutionStepState {
 impl ::std::convert::From<&str> for RemediationExecutionStepState {
     fn from(s: &str) -> Self {
         match s {
+            "EXITED" => RemediationExecutionStepState::Exited,
             "FAILED" => RemediationExecutionStepState::Failed,
+            "IN_PROGRESS" => RemediationExecutionStepState::InProgress,
             "PENDING" => RemediationExecutionStepState::Pending,
             "SUCCEEDED" => RemediationExecutionStepState::Succeeded,
+            "UNKNOWN" => RemediationExecutionStepState::UnknownValue,
             other => RemediationExecutionStepState::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -74,15 +88,18 @@ impl RemediationExecutionStepState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            RemediationExecutionStepState::Exited => "EXITED",
             RemediationExecutionStepState::Failed => "FAILED",
+            RemediationExecutionStepState::InProgress => "IN_PROGRESS",
             RemediationExecutionStepState::Pending => "PENDING",
             RemediationExecutionStepState::Succeeded => "SUCCEEDED",
+            RemediationExecutionStepState::UnknownValue => "UNKNOWN",
             RemediationExecutionStepState::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FAILED", "PENDING", "SUCCEEDED"]
+        &["EXITED", "FAILED", "IN_PROGRESS", "PENDING", "SUCCEEDED", "UNKNOWN"]
     }
 }
 impl ::std::convert::AsRef<str> for RemediationExecutionStepState {
@@ -105,9 +122,12 @@ impl RemediationExecutionStepState {
 impl ::std::fmt::Display for RemediationExecutionStepState {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            RemediationExecutionStepState::Exited => write!(f, "EXITED"),
             RemediationExecutionStepState::Failed => write!(f, "FAILED"),
+            RemediationExecutionStepState::InProgress => write!(f, "IN_PROGRESS"),
             RemediationExecutionStepState::Pending => write!(f, "PENDING"),
             RemediationExecutionStepState::Succeeded => write!(f, "SUCCEEDED"),
+            RemediationExecutionStepState::UnknownValue => write!(f, "UNKNOWN"),
             RemediationExecutionStepState::Unknown(value) => write!(f, "{}", value),
         }
     }

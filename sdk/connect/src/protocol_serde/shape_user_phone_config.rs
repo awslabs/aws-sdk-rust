@@ -18,6 +18,9 @@ pub fn ser_user_phone_config(
     if let Some(var_1) = &input.desk_phone_number {
         object.key("DeskPhoneNumber").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.persistent_connection {
+        object.key("PersistentConnection").boolean(*var_2);
+    }
     Ok(())
 }
 
@@ -59,6 +62,9 @@ where
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
+                        }
+                        "PersistentConnection" => {
+                            builder = builder.set_persistent_connection(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

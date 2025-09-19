@@ -3,33 +3,33 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateGatewayTargetInput {
-    /// <p>The unique identifier of the Gateway associated with the target.</p>
+    /// <p>The unique identifier of the gateway associated with the target.</p>
     pub gateway_identifier: ::std::option::Option<::std::string::String>,
-    /// <p>The unique identifier of the Gateway Target to update.</p>
+    /// <p>The unique identifier of the gateway target to update.</p>
     pub target_id: ::std::option::Option<::std::string::String>,
-    /// <p>The updated name for the Gateway Target.</p>
+    /// <p>The updated name for the gateway target.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The updated description for the Gateway Target.</p>
+    /// <p>The updated description for the gateway target.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The configuration for a gateway target. This structure defines how the gateway connects to and interacts with the target endpoint.</p>
     pub target_configuration: ::std::option::Option<crate::types::TargetConfiguration>,
-    /// <p>The updated credential provider configurations for the Gateway Target.</p>
+    /// <p>The updated credential provider configurations for the gateway target.</p>
     pub credential_provider_configurations: ::std::option::Option<::std::vec::Vec<crate::types::CredentialProviderConfiguration>>,
 }
 impl UpdateGatewayTargetInput {
-    /// <p>The unique identifier of the Gateway associated with the target.</p>
+    /// <p>The unique identifier of the gateway associated with the target.</p>
     pub fn gateway_identifier(&self) -> ::std::option::Option<&str> {
         self.gateway_identifier.as_deref()
     }
-    /// <p>The unique identifier of the Gateway Target to update.</p>
+    /// <p>The unique identifier of the gateway target to update.</p>
     pub fn target_id(&self) -> ::std::option::Option<&str> {
         self.target_id.as_deref()
     }
-    /// <p>The updated name for the Gateway Target.</p>
+    /// <p>The updated name for the gateway target.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The updated description for the Gateway Target.</p>
+    /// <p>The updated description for the gateway target.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -37,7 +37,7 @@ impl UpdateGatewayTargetInput {
     pub fn target_configuration(&self) -> ::std::option::Option<&crate::types::TargetConfiguration> {
         self.target_configuration.as_ref()
     }
-    /// <p>The updated credential provider configurations for the Gateway Target.</p>
+    /// <p>The updated credential provider configurations for the gateway target.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.credential_provider_configurations.is_none()`.
     pub fn credential_provider_configurations(&self) -> &[crate::types::CredentialProviderConfiguration] {
@@ -75,62 +75,62 @@ pub struct UpdateGatewayTargetInputBuilder {
     pub(crate) credential_provider_configurations: ::std::option::Option<::std::vec::Vec<crate::types::CredentialProviderConfiguration>>,
 }
 impl UpdateGatewayTargetInputBuilder {
-    /// <p>The unique identifier of the Gateway associated with the target.</p>
+    /// <p>The unique identifier of the gateway associated with the target.</p>
     /// This field is required.
     pub fn gateway_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the Gateway associated with the target.</p>
+    /// <p>The unique identifier of the gateway associated with the target.</p>
     pub fn set_gateway_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.gateway_identifier = input;
         self
     }
-    /// <p>The unique identifier of the Gateway associated with the target.</p>
+    /// <p>The unique identifier of the gateway associated with the target.</p>
     pub fn get_gateway_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.gateway_identifier
     }
-    /// <p>The unique identifier of the Gateway Target to update.</p>
+    /// <p>The unique identifier of the gateway target to update.</p>
     /// This field is required.
     pub fn target_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the Gateway Target to update.</p>
+    /// <p>The unique identifier of the gateway target to update.</p>
     pub fn set_target_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_id = input;
         self
     }
-    /// <p>The unique identifier of the Gateway Target to update.</p>
+    /// <p>The unique identifier of the gateway target to update.</p>
     pub fn get_target_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_id
     }
-    /// <p>The updated name for the Gateway Target.</p>
+    /// <p>The updated name for the gateway target.</p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The updated name for the Gateway Target.</p>
+    /// <p>The updated name for the gateway target.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The updated name for the Gateway Target.</p>
+    /// <p>The updated name for the gateway target.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The updated description for the Gateway Target.</p>
+    /// <p>The updated description for the gateway target.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The updated description for the Gateway Target.</p>
+    /// <p>The updated description for the gateway target.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p>The updated description for the Gateway Target.</p>
+    /// <p>The updated description for the gateway target.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
@@ -153,14 +153,14 @@ impl UpdateGatewayTargetInputBuilder {
     ///
     /// To override the contents of this collection use [`set_credential_provider_configurations`](Self::set_credential_provider_configurations).
     ///
-    /// <p>The updated credential provider configurations for the Gateway Target.</p>
+    /// <p>The updated credential provider configurations for the gateway target.</p>
     pub fn credential_provider_configurations(mut self, input: crate::types::CredentialProviderConfiguration) -> Self {
         let mut v = self.credential_provider_configurations.unwrap_or_default();
         v.push(input);
         self.credential_provider_configurations = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The updated credential provider configurations for the Gateway Target.</p>
+    /// <p>The updated credential provider configurations for the gateway target.</p>
     pub fn set_credential_provider_configurations(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::CredentialProviderConfiguration>>,
@@ -168,7 +168,7 @@ impl UpdateGatewayTargetInputBuilder {
         self.credential_provider_configurations = input;
         self
     }
-    /// <p>The updated credential provider configurations for the Gateway Target.</p>
+    /// <p>The updated credential provider configurations for the gateway target.</p>
     pub fn get_credential_provider_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CredentialProviderConfiguration>> {
         &self.credential_provider_configurations
     }

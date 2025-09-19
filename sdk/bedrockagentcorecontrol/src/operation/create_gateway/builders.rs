@@ -137,17 +137,17 @@ impl CreateGatewayFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
-    /// <p>A unique, case-sensitive identifier to ensure that the operation completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request but does not return an error.</p>
+    /// <p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
-    /// <p>A unique, case-sensitive identifier to ensure that the operation completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request but does not return an error.</p>
+    /// <p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
-    /// <p>A unique, case-sensitive identifier to ensure that the operation completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request but does not return an error.</p>
+    /// <p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
@@ -165,31 +165,31 @@ impl CreateGatewayFluentBuilder {
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_role_arn()
     }
-    /// <p>The protocol type for the gateway. Currently supports MCP (Model Context Protocol).</p>
+    /// <p>The protocol type for the gateway.</p>
     pub fn protocol_type(mut self, input: crate::types::GatewayProtocolType) -> Self {
         self.inner = self.inner.protocol_type(input);
         self
     }
-    /// <p>The protocol type for the gateway. Currently supports MCP (Model Context Protocol).</p>
+    /// <p>The protocol type for the gateway.</p>
     pub fn set_protocol_type(mut self, input: ::std::option::Option<crate::types::GatewayProtocolType>) -> Self {
         self.inner = self.inner.set_protocol_type(input);
         self
     }
-    /// <p>The protocol type for the gateway. Currently supports MCP (Model Context Protocol).</p>
+    /// <p>The protocol type for the gateway.</p>
     pub fn get_protocol_type(&self) -> &::std::option::Option<crate::types::GatewayProtocolType> {
         self.inner.get_protocol_type()
     }
-    /// <p>The configuration settings for the protocol specified in the protocolType parameter.</p>
+    /// <p>The configuration settings for the protocol specified in the <code>protocolType</code> parameter.</p>
     pub fn protocol_configuration(mut self, input: crate::types::GatewayProtocolConfiguration) -> Self {
         self.inner = self.inner.protocol_configuration(input);
         self
     }
-    /// <p>The configuration settings for the protocol specified in the protocolType parameter.</p>
+    /// <p>The configuration settings for the protocol specified in the <code>protocolType</code> parameter.</p>
     pub fn set_protocol_configuration(mut self, input: ::std::option::Option<crate::types::GatewayProtocolConfiguration>) -> Self {
         self.inner = self.inner.set_protocol_configuration(input);
         self
     }
-    /// <p>The configuration settings for the protocol specified in the protocolType parameter.</p>
+    /// <p>The configuration settings for the protocol specified in the <code>protocolType</code> parameter.</p>
     pub fn get_protocol_configuration(&self) -> &::std::option::Option<crate::types::GatewayProtocolConfiguration> {
         self.inner.get_protocol_configuration()
     }
@@ -207,17 +207,17 @@ impl CreateGatewayFluentBuilder {
     pub fn get_authorizer_type(&self) -> &::std::option::Option<crate::types::AuthorizerType> {
         self.inner.get_authorizer_type()
     }
-    /// <p>The authorizer configuration for the Gateway.</p>
+    /// <p>The authorizer configuration for the gateway.</p>
     pub fn authorizer_configuration(mut self, input: crate::types::AuthorizerConfiguration) -> Self {
         self.inner = self.inner.authorizer_configuration(input);
         self
     }
-    /// <p>The authorizer configuration for the Gateway.</p>
+    /// <p>The authorizer configuration for the gateway.</p>
     pub fn set_authorizer_configuration(mut self, input: ::std::option::Option<crate::types::AuthorizerConfiguration>) -> Self {
         self.inner = self.inner.set_authorizer_configuration(input);
         self
     }
-    /// <p>The authorizer configuration for the Gateway.</p>
+    /// <p>The authorizer configuration for the gateway.</p>
     pub fn get_authorizer_configuration(&self) -> &::std::option::Option<crate::types::AuthorizerConfiguration> {
         self.inner.get_authorizer_configuration()
     }
@@ -235,17 +235,35 @@ impl CreateGatewayFluentBuilder {
     pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_kms_key_arn()
     }
-    /// <p>The verbosity of exception messages. Use DEBUG mode to see granular exception messages from a Gateway. If this parameter is not set, exception messages are by default sanitized for presentation to end users.</p>
+    /// <p>The level of detail in error messages returned when invoking the gateway.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the value is <code>DEBUG</code>, granular exception messages are returned to help a user debug the gateway.</p></li>
+    /// <li>
+    /// <p>If the value is omitted, a generic error message is returned to the end user.</p></li>
+    /// </ul>
     pub fn exception_level(mut self, input: crate::types::ExceptionLevel) -> Self {
         self.inner = self.inner.exception_level(input);
         self
     }
-    /// <p>The verbosity of exception messages. Use DEBUG mode to see granular exception messages from a Gateway. If this parameter is not set, exception messages are by default sanitized for presentation to end users.</p>
+    /// <p>The level of detail in error messages returned when invoking the gateway.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the value is <code>DEBUG</code>, granular exception messages are returned to help a user debug the gateway.</p></li>
+    /// <li>
+    /// <p>If the value is omitted, a generic error message is returned to the end user.</p></li>
+    /// </ul>
     pub fn set_exception_level(mut self, input: ::std::option::Option<crate::types::ExceptionLevel>) -> Self {
         self.inner = self.inner.set_exception_level(input);
         self
     }
-    /// <p>The verbosity of exception messages. Use DEBUG mode to see granular exception messages from a Gateway. If this parameter is not set, exception messages are by default sanitized for presentation to end users.</p>
+    /// <p>The level of detail in error messages returned when invoking the gateway.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the value is <code>DEBUG</code>, granular exception messages are returned to help a user debug the gateway.</p></li>
+    /// <li>
+    /// <p>If the value is omitted, a generic error message is returned to the end user.</p></li>
+    /// </ul>
     pub fn get_exception_level(&self) -> &::std::option::Option<crate::types::ExceptionLevel> {
         self.inner.get_exception_level()
     }

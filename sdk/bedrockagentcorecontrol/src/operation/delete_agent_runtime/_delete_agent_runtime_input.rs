@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteAgentRuntimeInput {
-    /// <p>The unique identifier of the agent runtime to delete.</p>
+    /// <p>The unique identifier of the AgentCore Runtime to delete.</p>
     pub agent_runtime_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteAgentRuntimeInput {
-    /// <p>The unique identifier of the agent runtime to delete.</p>
+    /// <p>The unique identifier of the AgentCore Runtime to delete.</p>
     pub fn agent_runtime_id(&self) -> ::std::option::Option<&str> {
         self.agent_runtime_id.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct DeleteAgentRuntimeInputBuilder {
     pub(crate) agent_runtime_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteAgentRuntimeInputBuilder {
-    /// <p>The unique identifier of the agent runtime to delete.</p>
+    /// <p>The unique identifier of the AgentCore Runtime to delete.</p>
     /// This field is required.
     pub fn agent_runtime_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.agent_runtime_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the agent runtime to delete.</p>
+    /// <p>The unique identifier of the AgentCore Runtime to delete.</p>
     pub fn set_agent_runtime_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.agent_runtime_id = input;
         self
     }
-    /// <p>The unique identifier of the agent runtime to delete.</p>
+    /// <p>The unique identifier of the AgentCore Runtime to delete.</p>
     pub fn get_agent_runtime_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.agent_runtime_id
     }

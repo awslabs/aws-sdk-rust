@@ -10,6 +10,8 @@ pub struct ActiveDirectoryIdentityProvider {
     pub active_directory_settings: ::std::option::Option<crate::types::ActiveDirectorySettings>,
     /// <p>The type of Active Directory – either a self-managed Active Directory or an Amazon Web Services Managed Active Directory.</p>
     pub active_directory_type: ::std::option::Option<crate::types::ActiveDirectoryType>,
+    /// <p>Whether this directory is shared from an Amazon Web Services Managed Active Directory. The default value is false.</p>
+    pub is_shared_active_directory: ::std::option::Option<bool>,
 }
 impl ActiveDirectoryIdentityProvider {
     /// <p>The directory ID for an Active Directory identity provider.</p>
@@ -23,6 +25,10 @@ impl ActiveDirectoryIdentityProvider {
     /// <p>The type of Active Directory – either a self-managed Active Directory or an Amazon Web Services Managed Active Directory.</p>
     pub fn active_directory_type(&self) -> ::std::option::Option<&crate::types::ActiveDirectoryType> {
         self.active_directory_type.as_ref()
+    }
+    /// <p>Whether this directory is shared from an Amazon Web Services Managed Active Directory. The default value is false.</p>
+    pub fn is_shared_active_directory(&self) -> ::std::option::Option<bool> {
+        self.is_shared_active_directory
     }
 }
 impl ActiveDirectoryIdentityProvider {
@@ -39,6 +45,7 @@ pub struct ActiveDirectoryIdentityProviderBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) active_directory_settings: ::std::option::Option<crate::types::ActiveDirectorySettings>,
     pub(crate) active_directory_type: ::std::option::Option<crate::types::ActiveDirectoryType>,
+    pub(crate) is_shared_active_directory: ::std::option::Option<bool>,
 }
 impl ActiveDirectoryIdentityProviderBuilder {
     /// <p>The directory ID for an Active Directory identity provider.</p>
@@ -83,12 +90,27 @@ impl ActiveDirectoryIdentityProviderBuilder {
     pub fn get_active_directory_type(&self) -> &::std::option::Option<crate::types::ActiveDirectoryType> {
         &self.active_directory_type
     }
+    /// <p>Whether this directory is shared from an Amazon Web Services Managed Active Directory. The default value is false.</p>
+    pub fn is_shared_active_directory(mut self, input: bool) -> Self {
+        self.is_shared_active_directory = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Whether this directory is shared from an Amazon Web Services Managed Active Directory. The default value is false.</p>
+    pub fn set_is_shared_active_directory(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.is_shared_active_directory = input;
+        self
+    }
+    /// <p>Whether this directory is shared from an Amazon Web Services Managed Active Directory. The default value is false.</p>
+    pub fn get_is_shared_active_directory(&self) -> &::std::option::Option<bool> {
+        &self.is_shared_active_directory
+    }
     /// Consumes the builder and constructs a [`ActiveDirectoryIdentityProvider`](crate::types::ActiveDirectoryIdentityProvider).
     pub fn build(self) -> crate::types::ActiveDirectoryIdentityProvider {
         crate::types::ActiveDirectoryIdentityProvider {
             directory_id: self.directory_id,
             active_directory_settings: self.active_directory_settings,
             active_directory_type: self.active_directory_type,
+            is_shared_active_directory: self.is_shared_active_directory,
         }
     }
 }

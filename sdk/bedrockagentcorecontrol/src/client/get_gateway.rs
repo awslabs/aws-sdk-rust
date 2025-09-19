@@ -3,25 +3,25 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetGateway`](crate::operation::get_gateway::builders::GetGatewayFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`gateway_identifier(impl Into<String>)`](crate::operation::get_gateway::builders::GetGatewayFluentBuilder::gateway_identifier) / [`set_gateway_identifier(Option<String>)`](crate::operation::get_gateway::builders::GetGatewayFluentBuilder::set_gateway_identifier):<br>required: **true**<br><p>The identifier of the gateway to retrieve. This can be either the gateway ID or the gateway ARN.</p><br>
+    ///   - [`gateway_identifier(impl Into<String>)`](crate::operation::get_gateway::builders::GetGatewayFluentBuilder::gateway_identifier) / [`set_gateway_identifier(Option<String>)`](crate::operation::get_gateway::builders::GetGatewayFluentBuilder::set_gateway_identifier):<br>required: **true**<br><p>The identifier of the gateway to retrieve.</p><br>
     /// - On success, responds with [`GetGatewayOutput`](crate::operation::get_gateway::GetGatewayOutput) with field(s):
-    ///   - [`gateway_arn(String)`](crate::operation::get_gateway::GetGatewayOutput::gateway_arn): <p>The Amazon Resource Name (ARN) of the Gateway.</p>
-    ///   - [`gateway_id(String)`](crate::operation::get_gateway::GetGatewayOutput::gateway_id): <p>The unique identifier of the Gateway.</p>
-    ///   - [`gateway_url(Option<String>)`](crate::operation::get_gateway::GetGatewayOutput::gateway_url): <p>An endpoint for invoking Gateway.</p>
-    ///   - [`created_at(DateTime)`](crate::operation::get_gateway::GetGatewayOutput::created_at): <p>The timestamp when the Gateway was created.</p>
-    ///   - [`updated_at(DateTime)`](crate::operation::get_gateway::GetGatewayOutput::updated_at): <p>The timestamp when the Gateway was last updated.</p>
-    ///   - [`status(GatewayStatus)`](crate::operation::get_gateway::GetGatewayOutput::status): <p>The current status of the Gateway.</p>
-    ///   - [`status_reasons(Option<Vec::<String>>)`](crate::operation::get_gateway::GetGatewayOutput::status_reasons): <p>The reasons for the current status of the Gateway.</p>
-    ///   - [`name(String)`](crate::operation::get_gateway::GetGatewayOutput::name): <p>The name of the Gateway.</p>
-    ///   - [`description(Option<String>)`](crate::operation::get_gateway::GetGatewayOutput::description): <p>The description of the Gateway.</p>
-    ///   - [`role_arn(Option<String>)`](crate::operation::get_gateway::GetGatewayOutput::role_arn): <p>The IAM role ARN that provides permissions for the Gateway.</p>
-    ///   - [`protocol_type(GatewayProtocolType)`](crate::operation::get_gateway::GetGatewayOutput::protocol_type): <p>Protocol applied to a Gateway.</p>
+    ///   - [`gateway_arn(String)`](crate::operation::get_gateway::GetGatewayOutput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway.</p>
+    ///   - [`gateway_id(String)`](crate::operation::get_gateway::GetGatewayOutput::gateway_id): <p>The unique identifier of the gateway.</p>
+    ///   - [`gateway_url(Option<String>)`](crate::operation::get_gateway::GetGatewayOutput::gateway_url): <p>An endpoint for invoking gateway.</p>
+    ///   - [`created_at(DateTime)`](crate::operation::get_gateway::GetGatewayOutput::created_at): <p>The timestamp when the gateway was created.</p>
+    ///   - [`updated_at(DateTime)`](crate::operation::get_gateway::GetGatewayOutput::updated_at): <p>The timestamp when the gateway was last updated.</p>
+    ///   - [`status(GatewayStatus)`](crate::operation::get_gateway::GetGatewayOutput::status): <p>The current status of the gateway.</p>
+    ///   - [`status_reasons(Option<Vec::<String>>)`](crate::operation::get_gateway::GetGatewayOutput::status_reasons): <p>The reasons for the current status of the gateway.</p>
+    ///   - [`name(String)`](crate::operation::get_gateway::GetGatewayOutput::name): <p>The name of the gateway.</p>
+    ///   - [`description(Option<String>)`](crate::operation::get_gateway::GetGatewayOutput::description): <p>The description of the gateway.</p>
+    ///   - [`role_arn(Option<String>)`](crate::operation::get_gateway::GetGatewayOutput::role_arn): <p>The IAM role ARN that provides permissions for the gateway.</p>
+    ///   - [`protocol_type(GatewayProtocolType)`](crate::operation::get_gateway::GetGatewayOutput::protocol_type): <p>Protocol applied to a gateway.</p>
     ///   - [`protocol_configuration(Option<GatewayProtocolConfiguration>)`](crate::operation::get_gateway::GetGatewayOutput::protocol_configuration): <p>The configuration for a gateway protocol. This structure defines how the gateway communicates with external services.</p>
     ///   - [`authorizer_type(AuthorizerType)`](crate::operation::get_gateway::GetGatewayOutput::authorizer_type): <p>Authorizer type for the gateway.</p>
-    ///   - [`authorizer_configuration(Option<AuthorizerConfiguration>)`](crate::operation::get_gateway::GetGatewayOutput::authorizer_configuration): <p>The authorizer configuration for the Gateway.</p>
-    ///   - [`kms_key_arn(Option<String>)`](crate::operation::get_gateway::GetGatewayOutput::kms_key_arn): <p>The ARN of the KMS key used to encrypt the Gateway.</p>
-    ///   - [`workload_identity_details(Option<WorkloadIdentityDetails>)`](crate::operation::get_gateway::GetGatewayOutput::workload_identity_details): <p>The workload identity details for the Gateway.</p>
-    ///   - [`exception_level(Option<ExceptionLevel>)`](crate::operation::get_gateway::GetGatewayOutput::exception_level): <p>The verbosity of exception messages. Use DEBUG mode to see granular exception messages from a Gateway. If this parameter is not set, exception messages are by default sanitized for presentation to end users.</p>
+    ///   - [`authorizer_configuration(Option<AuthorizerConfiguration>)`](crate::operation::get_gateway::GetGatewayOutput::authorizer_configuration): <p>The authorizer configuration for the gateway.</p>
+    ///   - [`kms_key_arn(Option<String>)`](crate::operation::get_gateway::GetGatewayOutput::kms_key_arn): <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the gateway.</p>
+    ///   - [`workload_identity_details(Option<WorkloadIdentityDetails>)`](crate::operation::get_gateway::GetGatewayOutput::workload_identity_details): <p>The workload identity details for the gateway.</p>
+    ///   - [`exception_level(Option<ExceptionLevel>)`](crate::operation::get_gateway::GetGatewayOutput::exception_level): <p>The level of detail in error messages returned when invoking the gateway.</p> <ul>  <li>   <p>If the value is <code>DEBUG</code>, granular exception messages are returned to help a user debug the gateway.</p></li>  <li>   <p>If the value is omitted, a generic error message is returned to the end user.</p></li> </ul>
     /// - On failure, responds with [`SdkError<GetGatewayError>`](crate::operation::get_gateway::GetGatewayError)
     pub fn get_gateway(&self) -> crate::operation::get_gateway::builders::GetGatewayFluentBuilder {
         crate::operation::get_gateway::builders::GetGatewayFluentBuilder::new(self.handle.clone())

@@ -211,17 +211,17 @@ impl UpdateHoursOfOperationOverrideFluentBuilder {
     pub fn get_effective_from(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_effective_from()
     }
-    /// <p>The date till when the hours of operation override would be effective.</p>
+    /// <p>The date until the hours of operation override is effective.</p>
     pub fn effective_till(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.effective_till(input.into());
         self
     }
-    /// <p>The date till when the hours of operation override would be effective.</p>
+    /// <p>The date until the hours of operation override is effective.</p>
     pub fn set_effective_till(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_effective_till(input);
         self
     }
-    /// <p>The date till when the hours of operation override would be effective.</p>
+    /// <p>The date until the hours of operation override is effective.</p>
     pub fn get_effective_till(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_effective_till()
     }

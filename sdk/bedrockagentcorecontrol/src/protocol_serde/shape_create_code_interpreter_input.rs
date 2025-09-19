@@ -21,5 +21,15 @@ pub fn ser_create_code_interpreter_input_input(
         crate::protocol_serde::shape_code_interpreter_network_configuration::ser_code_interpreter_network_configuration(&mut object_6, var_5)?;
         object_6.finish();
     }
+    if let Some(var_7) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("tags").start_object();
+        for (key_9, value_10) in var_7 {
+            {
+                object_8.key(key_9.as_str()).string(value_10.as_str());
+            }
+        }
+        object_8.finish();
+    }
     Ok(())
 }

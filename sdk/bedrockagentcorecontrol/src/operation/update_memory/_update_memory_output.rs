@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateMemoryOutput {
-    /// <p>The updated memory details.</p>
+    /// <p>The updated AgentCore Memory resource details.</p>
     pub memory: ::std::option::Option<crate::types::Memory>,
     _request_id: Option<String>,
 }
 impl UpdateMemoryOutput {
-    /// <p>The updated memory details.</p>
+    /// <p>The updated AgentCore Memory resource details.</p>
     pub fn memory(&self) -> ::std::option::Option<&crate::types::Memory> {
         self.memory.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct UpdateMemoryOutputBuilder {
     _request_id: Option<String>,
 }
 impl UpdateMemoryOutputBuilder {
-    /// <p>The updated memory details.</p>
+    /// <p>The updated AgentCore Memory resource details.</p>
     pub fn memory(mut self, input: crate::types::Memory) -> Self {
         self.memory = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The updated memory details.</p>
+    /// <p>The updated AgentCore Memory resource details.</p>
     pub fn set_memory(mut self, input: ::std::option::Option<crate::types::Memory>) -> Self {
         self.memory = input;
         self
     }
-    /// <p>The updated memory details.</p>
+    /// <p>The updated AgentCore Memory resource details.</p>
     pub fn get_memory(&self) -> &::std::option::Option<crate::types::Memory> {
         &self.memory
     }

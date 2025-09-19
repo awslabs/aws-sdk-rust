@@ -114,17 +114,17 @@ impl ListAgentRuntimeVersionsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_agent_runtime_versions::paginator::ListAgentRuntimeVersionsPaginator {
         crate::operation::list_agent_runtime_versions::paginator::ListAgentRuntimeVersionsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The unique identifier of the agent runtime to list versions for.</p>
+    /// <p>The unique identifier of the AgentCore Runtime to list versions for.</p>
     pub fn agent_runtime_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_runtime_id(input.into());
         self
     }
-    /// <p>The unique identifier of the agent runtime to list versions for.</p>
+    /// <p>The unique identifier of the AgentCore Runtime to list versions for.</p>
     pub fn set_agent_runtime_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_agent_runtime_id(input);
         self
     }
-    /// <p>The unique identifier of the agent runtime to list versions for.</p>
+    /// <p>The unique identifier of the AgentCore Runtime to list versions for.</p>
     pub fn get_agent_runtime_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agent_runtime_id()
     }

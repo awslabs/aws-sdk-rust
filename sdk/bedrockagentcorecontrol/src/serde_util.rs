@@ -27,7 +27,7 @@ pub(crate) fn create_agent_runtime_output_output_correct_errors(
         builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     if builder.status.is_none() {
-        builder.status = "no value was set".parse::<crate::types::AgentStatus>().ok()
+        builder.status = "no value was set".parse::<crate::types::AgentRuntimeStatus>().ok()
     }
     builder
 }
@@ -45,7 +45,7 @@ pub(crate) fn create_agent_runtime_endpoint_output_output_correct_errors(
         builder.agent_runtime_arn = Some(Default::default())
     }
     if builder.status.is_none() {
-        builder.status = "no value was set".parse::<crate::types::AgentEndpointStatus>().ok()
+        builder.status = "no value was set".parse::<crate::types::AgentRuntimeEndpointStatus>().ok()
     }
     if builder.created_at.is_none() {
         builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
@@ -219,7 +219,7 @@ pub(crate) fn delete_agent_runtime_output_output_correct_errors(
     mut builder: crate::operation::delete_agent_runtime::builders::DeleteAgentRuntimeOutputBuilder,
 ) -> crate::operation::delete_agent_runtime::builders::DeleteAgentRuntimeOutputBuilder {
     if builder.status.is_none() {
-        builder.status = "no value was set".parse::<crate::types::AgentStatus>().ok()
+        builder.status = "no value was set".parse::<crate::types::AgentRuntimeStatus>().ok()
     }
     builder
 }
@@ -228,7 +228,7 @@ pub(crate) fn delete_agent_runtime_endpoint_output_output_correct_errors(
     mut builder: crate::operation::delete_agent_runtime_endpoint::builders::DeleteAgentRuntimeEndpointOutputBuilder,
 ) -> crate::operation::delete_agent_runtime_endpoint::builders::DeleteAgentRuntimeEndpointOutputBuilder {
     if builder.status.is_none() {
-        builder.status = "no value was set".parse::<crate::types::AgentEndpointStatus>().ok()
+        builder.status = "no value was set".parse::<crate::types::AgentRuntimeEndpointStatus>().ok()
     }
     builder
 }
@@ -330,7 +330,7 @@ pub(crate) fn get_agent_runtime_output_output_correct_errors(
         }
     }
     if builder.status.is_none() {
-        builder.status = "no value was set".parse::<crate::types::AgentStatus>().ok()
+        builder.status = "no value was set".parse::<crate::types::AgentRuntimeStatus>().ok()
     }
     builder
 }
@@ -345,7 +345,7 @@ pub(crate) fn get_agent_runtime_endpoint_output_output_correct_errors(
         builder.agent_runtime_arn = Some(Default::default())
     }
     if builder.status.is_none() {
-        builder.status = "no value was set".parse::<crate::types::AgentEndpointStatus>().ok()
+        builder.status = "no value was set".parse::<crate::types::AgentRuntimeEndpointStatus>().ok()
     }
     if builder.created_at.is_none() {
         builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
@@ -729,7 +729,7 @@ pub(crate) fn update_agent_runtime_output_output_correct_errors(
         builder.last_updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     if builder.status.is_none() {
-        builder.status = "no value was set".parse::<crate::types::AgentStatus>().ok()
+        builder.status = "no value was set".parse::<crate::types::AgentRuntimeStatus>().ok()
     }
     builder
 }
@@ -744,7 +744,7 @@ pub(crate) fn update_agent_runtime_endpoint_output_output_correct_errors(
         builder.agent_runtime_arn = Some(Default::default())
     }
     if builder.status.is_none() {
-        builder.status = "no value was set".parse::<crate::types::AgentEndpointStatus>().ok()
+        builder.status = "no value was set".parse::<crate::types::AgentRuntimeEndpointStatus>().ok()
     }
     if builder.created_at.is_none() {
         builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
@@ -973,7 +973,7 @@ pub(crate) fn workload_identity_details_correct_errors(
     builder
 }
 
-pub(crate) fn agent_correct_errors(mut builder: crate::types::builders::AgentBuilder) -> crate::types::builders::AgentBuilder {
+pub(crate) fn agent_runtime_correct_errors(mut builder: crate::types::builders::AgentRuntimeBuilder) -> crate::types::builders::AgentRuntimeBuilder {
     if builder.agent_runtime_arn.is_none() {
         builder.agent_runtime_arn = Some(Default::default())
     }
@@ -993,14 +993,14 @@ pub(crate) fn agent_correct_errors(mut builder: crate::types::builders::AgentBui
         builder.last_updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     if builder.status.is_none() {
-        builder.status = "no value was set".parse::<crate::types::AgentStatus>().ok()
+        builder.status = "no value was set".parse::<crate::types::AgentRuntimeStatus>().ok()
     }
     builder
 }
 
-pub(crate) fn agent_endpoint_correct_errors(
-    mut builder: crate::types::builders::AgentEndpointBuilder,
-) -> crate::types::builders::AgentEndpointBuilder {
+pub(crate) fn agent_runtime_endpoint_correct_errors(
+    mut builder: crate::types::builders::AgentRuntimeEndpointBuilder,
+) -> crate::types::builders::AgentRuntimeEndpointBuilder {
     if builder.name.is_none() {
         builder.name = Some(Default::default())
     }
@@ -1011,7 +1011,7 @@ pub(crate) fn agent_endpoint_correct_errors(
         builder.agent_runtime_arn = Some(Default::default())
     }
     if builder.status.is_none() {
-        builder.status = "no value was set".parse::<crate::types::AgentEndpointStatus>().ok()
+        builder.status = "no value was set".parse::<crate::types::AgentRuntimeEndpointStatus>().ok()
     }
     if builder.id.is_none() {
         builder.id = Some(Default::default())
@@ -1259,6 +1259,16 @@ pub(crate) fn validation_exception_field_correct_errors(
     }
     if builder.message.is_none() {
         builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn vpc_config_correct_errors(mut builder: crate::types::builders::VpcConfigBuilder) -> crate::types::builders::VpcConfigBuilder {
+    if builder.security_groups.is_none() {
+        builder.security_groups = Some(Default::default())
+    }
+    if builder.subnets.is_none() {
+        builder.subnets = Some(Default::default())
     }
     builder
 }

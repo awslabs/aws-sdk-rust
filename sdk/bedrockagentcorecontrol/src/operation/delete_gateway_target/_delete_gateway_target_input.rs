@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteGatewayTargetInput {
-    /// <p>The unique identifier of the Gateway associated with the target.</p>
+    /// <p>The unique identifier of the gateway associated with the target.</p>
     pub gateway_identifier: ::std::option::Option<::std::string::String>,
-    /// <p>The unique identifier of the Gateway Target to delete.</p>
+    /// <p>The unique identifier of the gateway target to delete.</p>
     pub target_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteGatewayTargetInput {
-    /// <p>The unique identifier of the Gateway associated with the target.</p>
+    /// <p>The unique identifier of the gateway associated with the target.</p>
     pub fn gateway_identifier(&self) -> ::std::option::Option<&str> {
         self.gateway_identifier.as_deref()
     }
-    /// <p>The unique identifier of the Gateway Target to delete.</p>
+    /// <p>The unique identifier of the gateway target to delete.</p>
     pub fn target_id(&self) -> ::std::option::Option<&str> {
         self.target_id.as_deref()
     }
@@ -33,33 +33,33 @@ pub struct DeleteGatewayTargetInputBuilder {
     pub(crate) target_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteGatewayTargetInputBuilder {
-    /// <p>The unique identifier of the Gateway associated with the target.</p>
+    /// <p>The unique identifier of the gateway associated with the target.</p>
     /// This field is required.
     pub fn gateway_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the Gateway associated with the target.</p>
+    /// <p>The unique identifier of the gateway associated with the target.</p>
     pub fn set_gateway_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.gateway_identifier = input;
         self
     }
-    /// <p>The unique identifier of the Gateway associated with the target.</p>
+    /// <p>The unique identifier of the gateway associated with the target.</p>
     pub fn get_gateway_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.gateway_identifier
     }
-    /// <p>The unique identifier of the Gateway Target to delete.</p>
+    /// <p>The unique identifier of the gateway target to delete.</p>
     /// This field is required.
     pub fn target_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the Gateway Target to delete.</p>
+    /// <p>The unique identifier of the gateway target to delete.</p>
     pub fn set_target_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_id = input;
         self
     }
-    /// <p>The unique identifier of the Gateway Target to delete.</p>
+    /// <p>The unique identifier of the gateway target to delete.</p>
     pub fn get_target_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_id
     }

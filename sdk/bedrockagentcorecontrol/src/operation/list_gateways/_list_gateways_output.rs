@@ -3,19 +3,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListGatewaysOutput {
-    /// <p>The list of Gateway summaries.</p>
+    /// <p>The list of gateway summaries.</p>
     pub items: ::std::vec::Vec<crate::types::GatewaySummary>,
-    /// <p>Opaque continuation token for the next paginated response.</p>
+    /// <p>If the total number of results is greater than the <code>maxResults</code> value provided in the request, use this token when making another request in the <code>nextToken</code> field to return the next batch of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListGatewaysOutput {
-    /// <p>The list of Gateway summaries.</p>
+    /// <p>The list of gateway summaries.</p>
     pub fn items(&self) -> &[crate::types::GatewaySummary] {
         use std::ops::Deref;
         self.items.deref()
     }
-    /// <p>Opaque continuation token for the next paginated response.</p>
+    /// <p>If the total number of results is greater than the <code>maxResults</code> value provided in the request, use this token when making another request in the <code>nextToken</code> field to return the next batch of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -45,33 +45,33 @@ impl ListGatewaysOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_items`](Self::set_items).
     ///
-    /// <p>The list of Gateway summaries.</p>
+    /// <p>The list of gateway summaries.</p>
     pub fn items(mut self, input: crate::types::GatewaySummary) -> Self {
         let mut v = self.items.unwrap_or_default();
         v.push(input);
         self.items = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The list of Gateway summaries.</p>
+    /// <p>The list of gateway summaries.</p>
     pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GatewaySummary>>) -> Self {
         self.items = input;
         self
     }
-    /// <p>The list of Gateway summaries.</p>
+    /// <p>The list of gateway summaries.</p>
     pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GatewaySummary>> {
         &self.items
     }
-    /// <p>Opaque continuation token for the next paginated response.</p>
+    /// <p>If the total number of results is greater than the <code>maxResults</code> value provided in the request, use this token when making another request in the <code>nextToken</code> field to return the next batch of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Opaque continuation token for the next paginated response.</p>
+    /// <p>If the total number of results is greater than the <code>maxResults</code> value provided in the request, use this token when making another request in the <code>nextToken</code> field to return the next batch of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>Opaque continuation token for the next paginated response.</p>
+    /// <p>If the total number of results is greater than the <code>maxResults</code> value provided in the request, use this token when making another request in the <code>nextToken</code> field to return the next batch of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

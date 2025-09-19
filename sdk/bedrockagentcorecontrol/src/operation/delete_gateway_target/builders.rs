@@ -22,7 +22,7 @@ impl crate::operation::delete_gateway_target::builders::DeleteGatewayTargetInput
 }
 /// Fluent builder constructing a request to `DeleteGatewayTarget`.
 ///
-/// <p>Deletes a Gateway Target.</p>
+/// <p>Deletes a gateway target.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteGatewayTargetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl DeleteGatewayTargetFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique identifier of the Gateway associated with the target.</p>
+    /// <p>The unique identifier of the gateway associated with the target.</p>
     pub fn gateway_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.gateway_identifier(input.into());
         self
     }
-    /// <p>The unique identifier of the Gateway associated with the target.</p>
+    /// <p>The unique identifier of the gateway associated with the target.</p>
     pub fn set_gateway_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_gateway_identifier(input);
         self
     }
-    /// <p>The unique identifier of the Gateway associated with the target.</p>
+    /// <p>The unique identifier of the gateway associated with the target.</p>
     pub fn get_gateway_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_gateway_identifier()
     }
-    /// <p>The unique identifier of the Gateway Target to delete.</p>
+    /// <p>The unique identifier of the gateway target to delete.</p>
     pub fn target_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target_id(input.into());
         self
     }
-    /// <p>The unique identifier of the Gateway Target to delete.</p>
+    /// <p>The unique identifier of the gateway target to delete.</p>
     pub fn set_target_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_target_id(input);
         self
     }
-    /// <p>The unique identifier of the Gateway Target to delete.</p>
+    /// <p>The unique identifier of the gateway target to delete.</p>
     pub fn get_target_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_target_id()
     }

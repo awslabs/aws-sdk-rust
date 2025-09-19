@@ -6,6 +6,12 @@ pub fn ser_browser_network_configuration(
     {
         object.key("networkMode").string(input.network_mode.as_str());
     }
+    if let Some(var_1) = &input.vpc_config {
+        #[allow(unused_mut)]
+        let mut object_2 = object.key("vpcConfig").start_object();
+        crate::protocol_serde::shape_vpc_config::ser_vpc_config(&mut object_2, var_1)?;
+        object_2.finish();
+    }
     Ok(())
 }
 
@@ -30,6 +36,9 @@ where
                                     .map(|s| s.to_unescaped().map(|u| crate::types::BrowserNetworkMode::from(u.as_ref())))
                                     .transpose()?,
                             );
+                        }
+                        "vpcConfig" => {
+                            builder = builder.set_vpc_config(crate::protocol_serde::shape_vpc_config::de_vpc_config(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

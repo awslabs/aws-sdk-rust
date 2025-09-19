@@ -6,11 +6,17 @@
 pub struct CodeInterpreterNetworkConfiguration {
     /// <p>The network mode for the code interpreter. This field specifies how the code interpreter connects to the network.</p>
     pub network_mode: crate::types::CodeInterpreterNetworkMode,
+    /// <p>VpcConfig for the Agent.</p>
+    pub vpc_config: ::std::option::Option<crate::types::VpcConfig>,
 }
 impl CodeInterpreterNetworkConfiguration {
     /// <p>The network mode for the code interpreter. This field specifies how the code interpreter connects to the network.</p>
     pub fn network_mode(&self) -> &crate::types::CodeInterpreterNetworkMode {
         &self.network_mode
+    }
+    /// <p>VpcConfig for the Agent.</p>
+    pub fn vpc_config(&self) -> ::std::option::Option<&crate::types::VpcConfig> {
+        self.vpc_config.as_ref()
     }
 }
 impl CodeInterpreterNetworkConfiguration {
@@ -25,6 +31,7 @@ impl CodeInterpreterNetworkConfiguration {
 #[non_exhaustive]
 pub struct CodeInterpreterNetworkConfigurationBuilder {
     pub(crate) network_mode: ::std::option::Option<crate::types::CodeInterpreterNetworkMode>,
+    pub(crate) vpc_config: ::std::option::Option<crate::types::VpcConfig>,
 }
 impl CodeInterpreterNetworkConfigurationBuilder {
     /// <p>The network mode for the code interpreter. This field specifies how the code interpreter connects to the network.</p>
@@ -42,6 +49,20 @@ impl CodeInterpreterNetworkConfigurationBuilder {
     pub fn get_network_mode(&self) -> &::std::option::Option<crate::types::CodeInterpreterNetworkMode> {
         &self.network_mode
     }
+    /// <p>VpcConfig for the Agent.</p>
+    pub fn vpc_config(mut self, input: crate::types::VpcConfig) -> Self {
+        self.vpc_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>VpcConfig for the Agent.</p>
+    pub fn set_vpc_config(mut self, input: ::std::option::Option<crate::types::VpcConfig>) -> Self {
+        self.vpc_config = input;
+        self
+    }
+    /// <p>VpcConfig for the Agent.</p>
+    pub fn get_vpc_config(&self) -> &::std::option::Option<crate::types::VpcConfig> {
+        &self.vpc_config
+    }
     /// Consumes the builder and constructs a [`CodeInterpreterNetworkConfiguration`](crate::types::CodeInterpreterNetworkConfiguration).
     pub fn build(self) -> crate::types::CodeInterpreterNetworkConfiguration {
         crate::types::CodeInterpreterNetworkConfiguration {
@@ -50,6 +71,7 @@ impl CodeInterpreterNetworkConfigurationBuilder {
                     .parse::<crate::types::CodeInterpreterNetworkMode>()
                     .expect("static value validated to member"),
             ),
+            vpc_config: self.vpc_config,
         }
     }
 }

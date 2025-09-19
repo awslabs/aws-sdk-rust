@@ -212,7 +212,7 @@ pub(crate) fn de_update_agent_runtime(
                 "status" => {
                     builder = builder.set_status(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| crate::types::AgentStatus::from(u.as_ref())))
+                            .map(|s| s.to_unescaped().map(|u| crate::types::AgentRuntimeStatus::from(u.as_ref())))
                             .transpose()?,
                     );
                 }

@@ -134,7 +134,7 @@ impl ListAgentRuntimeVersionsPaginatorItems {
         self,
     ) -> ::aws_smithy_async::future::pagination_stream::PaginationStream<
         ::std::result::Result<
-            crate::types::Agent,
+            crate::types::AgentRuntime,
             ::aws_smithy_runtime_api::client::result::SdkError<
                 crate::operation::list_agent_runtime_versions::ListAgentRuntimeVersionsError,
                 ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,

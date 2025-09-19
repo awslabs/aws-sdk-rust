@@ -5,7 +5,7 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`memory_id(impl Into<String>)`](crate::operation::get_memory::builders::GetMemoryFluentBuilder::memory_id) / [`set_memory_id(Option<String>)`](crate::operation::get_memory::builders::GetMemoryFluentBuilder::set_memory_id):<br>required: **true**<br><p>The unique identifier of the memory to retrieve.</p><br>
     /// - On success, responds with [`GetMemoryOutput`](crate::operation::get_memory::GetMemoryOutput) with field(s):
-    ///   - [`memory(Option<Memory>)`](crate::operation::get_memory::GetMemoryOutput::memory): <p>The retrieved memory details.</p>
+    ///   - [`memory(Option<Memory>)`](crate::operation::get_memory::GetMemoryOutput::memory): <p>The retrieved AgentCore Memory resource details.</p>
     /// - On failure, responds with [`SdkError<GetMemoryError>`](crate::operation::get_memory::GetMemoryError)
     pub fn get_memory(&self) -> crate::operation::get_memory::builders::GetMemoryFluentBuilder {
         crate::operation::get_memory::builders::GetMemoryFluentBuilder::new(self.handle.clone())

@@ -6,8 +6,8 @@ impl super::Client {
     ///   - [`client_token(impl Into<String>)`](crate::operation::delete_memory::builders::DeleteMemoryFluentBuilder::client_token) / [`set_client_token(Option<String>)`](crate::operation::delete_memory::builders::DeleteMemoryFluentBuilder::set_client_token):<br>required: **false**<br><p>A client token is used for keeping track of idempotent requests. It can contain a session id which can be around 250 chars, combined with a unique AWS identifier.</p><br>
     ///   - [`memory_id(impl Into<String>)`](crate::operation::delete_memory::builders::DeleteMemoryFluentBuilder::memory_id) / [`set_memory_id(Option<String>)`](crate::operation::delete_memory::builders::DeleteMemoryFluentBuilder::set_memory_id):<br>required: **true**<br><p>The unique identifier of the memory to delete.</p><br>
     /// - On success, responds with [`DeleteMemoryOutput`](crate::operation::delete_memory::DeleteMemoryOutput) with field(s):
-    ///   - [`memory_id(String)`](crate::operation::delete_memory::DeleteMemoryOutput::memory_id): <p>The unique identifier of the deleted memory.</p>
-    ///   - [`status(Option<MemoryStatus>)`](crate::operation::delete_memory::DeleteMemoryOutput::status): <p>The current status of the memory deletion.</p>
+    ///   - [`memory_id(String)`](crate::operation::delete_memory::DeleteMemoryOutput::memory_id): <p>The unique identifier of the deleted AgentCore Memory resource.</p>
+    ///   - [`status(Option<MemoryStatus>)`](crate::operation::delete_memory::DeleteMemoryOutput::status): <p>The current status of the AgentCore Memory resource deletion.</p>
     /// - On failure, responds with [`SdkError<DeleteMemoryError>`](crate::operation::delete_memory::DeleteMemoryError)
     pub fn delete_memory(&self) -> crate::operation::delete_memory::builders::DeleteMemoryFluentBuilder {
         crate::operation::delete_memory::builders::DeleteMemoryFluentBuilder::new(self.handle.clone())

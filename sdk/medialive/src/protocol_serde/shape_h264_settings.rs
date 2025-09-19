@@ -192,6 +192,12 @@ pub fn ser_h264_settings(
             ::aws_smithy_types::Number::NegInt((*var_46).into()),
         );
     }
+    if let Some(var_47) = &input.min_bitrate {
+        object.key("minBitrate").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_47).into()),
+        );
+    }
     Ok(())
 }
 
@@ -496,6 +502,13 @@ where
                         }
                         "minQp" => {
                             builder = builder.set_min_qp(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "minBitrate" => {
+                            builder = builder.set_min_bitrate(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
                                     .transpose()?,

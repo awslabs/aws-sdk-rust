@@ -3,43 +3,45 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateAgentRuntimeInput {
-    /// <p>The unique identifier of the agent runtime to update.</p>
+    /// <p>The unique identifier of the AgentCore Runtime to update.</p>
     pub agent_runtime_id: ::std::option::Option<::std::string::String>,
-    /// <p>The updated description of the agent runtime.</p>
+    /// <p>The updated description of the AgentCore Runtime.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The updated artifact of the agent runtime.</p>
-    pub agent_runtime_artifact: ::std::option::Option<crate::types::AgentArtifact>,
-    /// <p>The updated IAM role ARN that provides permissions for the agent runtime.</p>
+    /// <p>The updated artifact of the AgentCore Runtime.</p>
+    pub agent_runtime_artifact: ::std::option::Option<crate::types::AgentRuntimeArtifact>,
+    /// <p>The updated IAM role ARN that provides permissions for the AgentCore Runtime.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The updated network configuration for the agent runtime.</p>
+    /// <p>The updated network configuration for the AgentCore Runtime.</p>
     pub network_configuration: ::std::option::Option<crate::types::NetworkConfiguration>,
     /// <p>The protocol configuration for an agent runtime. This structure defines how the agent runtime communicates with clients.</p>
     pub protocol_configuration: ::std::option::Option<crate::types::ProtocolConfiguration>,
     /// <p>A unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
-    /// <p>Updated environment variables to set in the agent runtime environment.</p>
+    /// <p>Updated environment variables to set in the AgentCore Runtime environment.</p>
     pub environment_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p>The updated authorizer configuration for the agent runtime.</p>
+    /// <p>The updated authorizer configuration for the AgentCore Runtime.</p>
     pub authorizer_configuration: ::std::option::Option<crate::types::AuthorizerConfiguration>,
+    /// <p>The updated configuration for HTTP request headers that will be passed through to the runtime.</p>
+    pub request_header_configuration: ::std::option::Option<crate::types::RequestHeaderConfiguration>,
 }
 impl UpdateAgentRuntimeInput {
-    /// <p>The unique identifier of the agent runtime to update.</p>
+    /// <p>The unique identifier of the AgentCore Runtime to update.</p>
     pub fn agent_runtime_id(&self) -> ::std::option::Option<&str> {
         self.agent_runtime_id.as_deref()
     }
-    /// <p>The updated description of the agent runtime.</p>
+    /// <p>The updated description of the AgentCore Runtime.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The updated artifact of the agent runtime.</p>
-    pub fn agent_runtime_artifact(&self) -> ::std::option::Option<&crate::types::AgentArtifact> {
+    /// <p>The updated artifact of the AgentCore Runtime.</p>
+    pub fn agent_runtime_artifact(&self) -> ::std::option::Option<&crate::types::AgentRuntimeArtifact> {
         self.agent_runtime_artifact.as_ref()
     }
-    /// <p>The updated IAM role ARN that provides permissions for the agent runtime.</p>
+    /// <p>The updated IAM role ARN that provides permissions for the AgentCore Runtime.</p>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>The updated network configuration for the agent runtime.</p>
+    /// <p>The updated network configuration for the AgentCore Runtime.</p>
     pub fn network_configuration(&self) -> ::std::option::Option<&crate::types::NetworkConfiguration> {
         self.network_configuration.as_ref()
     }
@@ -51,13 +53,17 @@ impl UpdateAgentRuntimeInput {
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>Updated environment variables to set in the agent runtime environment.</p>
+    /// <p>Updated environment variables to set in the AgentCore Runtime environment.</p>
     pub fn environment_variables(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.environment_variables.as_ref()
     }
-    /// <p>The updated authorizer configuration for the agent runtime.</p>
+    /// <p>The updated authorizer configuration for the AgentCore Runtime.</p>
     pub fn authorizer_configuration(&self) -> ::std::option::Option<&crate::types::AuthorizerConfiguration> {
         self.authorizer_configuration.as_ref()
+    }
+    /// <p>The updated configuration for HTTP request headers that will be passed through to the runtime.</p>
+    pub fn request_header_configuration(&self) -> ::std::option::Option<&crate::types::RequestHeaderConfiguration> {
+        self.request_header_configuration.as_ref()
     }
 }
 impl ::std::fmt::Debug for UpdateAgentRuntimeInput {
@@ -72,6 +78,7 @@ impl ::std::fmt::Debug for UpdateAgentRuntimeInput {
         formatter.field("client_token", &self.client_token);
         formatter.field("environment_variables", &"*** Sensitive Data Redacted ***");
         formatter.field("authorizer_configuration", &self.authorizer_configuration);
+        formatter.field("request_header_configuration", &self.request_header_configuration);
         formatter.finish()
     }
 }
@@ -88,86 +95,87 @@ impl UpdateAgentRuntimeInput {
 pub struct UpdateAgentRuntimeInputBuilder {
     pub(crate) agent_runtime_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) agent_runtime_artifact: ::std::option::Option<crate::types::AgentArtifact>,
+    pub(crate) agent_runtime_artifact: ::std::option::Option<crate::types::AgentRuntimeArtifact>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) network_configuration: ::std::option::Option<crate::types::NetworkConfiguration>,
     pub(crate) protocol_configuration: ::std::option::Option<crate::types::ProtocolConfiguration>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) environment_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) authorizer_configuration: ::std::option::Option<crate::types::AuthorizerConfiguration>,
+    pub(crate) request_header_configuration: ::std::option::Option<crate::types::RequestHeaderConfiguration>,
 }
 impl UpdateAgentRuntimeInputBuilder {
-    /// <p>The unique identifier of the agent runtime to update.</p>
+    /// <p>The unique identifier of the AgentCore Runtime to update.</p>
     /// This field is required.
     pub fn agent_runtime_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.agent_runtime_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the agent runtime to update.</p>
+    /// <p>The unique identifier of the AgentCore Runtime to update.</p>
     pub fn set_agent_runtime_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.agent_runtime_id = input;
         self
     }
-    /// <p>The unique identifier of the agent runtime to update.</p>
+    /// <p>The unique identifier of the AgentCore Runtime to update.</p>
     pub fn get_agent_runtime_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.agent_runtime_id
     }
-    /// <p>The updated description of the agent runtime.</p>
+    /// <p>The updated description of the AgentCore Runtime.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The updated description of the agent runtime.</p>
+    /// <p>The updated description of the AgentCore Runtime.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p>The updated description of the agent runtime.</p>
+    /// <p>The updated description of the AgentCore Runtime.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>The updated artifact of the agent runtime.</p>
+    /// <p>The updated artifact of the AgentCore Runtime.</p>
     /// This field is required.
-    pub fn agent_runtime_artifact(mut self, input: crate::types::AgentArtifact) -> Self {
+    pub fn agent_runtime_artifact(mut self, input: crate::types::AgentRuntimeArtifact) -> Self {
         self.agent_runtime_artifact = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The updated artifact of the agent runtime.</p>
-    pub fn set_agent_runtime_artifact(mut self, input: ::std::option::Option<crate::types::AgentArtifact>) -> Self {
+    /// <p>The updated artifact of the AgentCore Runtime.</p>
+    pub fn set_agent_runtime_artifact(mut self, input: ::std::option::Option<crate::types::AgentRuntimeArtifact>) -> Self {
         self.agent_runtime_artifact = input;
         self
     }
-    /// <p>The updated artifact of the agent runtime.</p>
-    pub fn get_agent_runtime_artifact(&self) -> &::std::option::Option<crate::types::AgentArtifact> {
+    /// <p>The updated artifact of the AgentCore Runtime.</p>
+    pub fn get_agent_runtime_artifact(&self) -> &::std::option::Option<crate::types::AgentRuntimeArtifact> {
         &self.agent_runtime_artifact
     }
-    /// <p>The updated IAM role ARN that provides permissions for the agent runtime.</p>
+    /// <p>The updated IAM role ARN that provides permissions for the AgentCore Runtime.</p>
     /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The updated IAM role ARN that provides permissions for the agent runtime.</p>
+    /// <p>The updated IAM role ARN that provides permissions for the AgentCore Runtime.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
-    /// <p>The updated IAM role ARN that provides permissions for the agent runtime.</p>
+    /// <p>The updated IAM role ARN that provides permissions for the AgentCore Runtime.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }
-    /// <p>The updated network configuration for the agent runtime.</p>
+    /// <p>The updated network configuration for the AgentCore Runtime.</p>
     /// This field is required.
     pub fn network_configuration(mut self, input: crate::types::NetworkConfiguration) -> Self {
         self.network_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The updated network configuration for the agent runtime.</p>
+    /// <p>The updated network configuration for the AgentCore Runtime.</p>
     pub fn set_network_configuration(mut self, input: ::std::option::Option<crate::types::NetworkConfiguration>) -> Self {
         self.network_configuration = input;
         self
     }
-    /// <p>The updated network configuration for the agent runtime.</p>
+    /// <p>The updated network configuration for the AgentCore Runtime.</p>
     pub fn get_network_configuration(&self) -> &::std::option::Option<crate::types::NetworkConfiguration> {
         &self.network_configuration
     }
@@ -203,7 +211,7 @@ impl UpdateAgentRuntimeInputBuilder {
     ///
     /// To override the contents of this collection use [`set_environment_variables`](Self::set_environment_variables).
     ///
-    /// <p>Updated environment variables to set in the agent runtime environment.</p>
+    /// <p>Updated environment variables to set in the AgentCore Runtime environment.</p>
     pub fn environment_variables(
         mut self,
         k: impl ::std::convert::Into<::std::string::String>,
@@ -214,7 +222,7 @@ impl UpdateAgentRuntimeInputBuilder {
         self.environment_variables = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>Updated environment variables to set in the agent runtime environment.</p>
+    /// <p>Updated environment variables to set in the AgentCore Runtime environment.</p>
     pub fn set_environment_variables(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -222,23 +230,37 @@ impl UpdateAgentRuntimeInputBuilder {
         self.environment_variables = input;
         self
     }
-    /// <p>Updated environment variables to set in the agent runtime environment.</p>
+    /// <p>Updated environment variables to set in the AgentCore Runtime environment.</p>
     pub fn get_environment_variables(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.environment_variables
     }
-    /// <p>The updated authorizer configuration for the agent runtime.</p>
+    /// <p>The updated authorizer configuration for the AgentCore Runtime.</p>
     pub fn authorizer_configuration(mut self, input: crate::types::AuthorizerConfiguration) -> Self {
         self.authorizer_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The updated authorizer configuration for the agent runtime.</p>
+    /// <p>The updated authorizer configuration for the AgentCore Runtime.</p>
     pub fn set_authorizer_configuration(mut self, input: ::std::option::Option<crate::types::AuthorizerConfiguration>) -> Self {
         self.authorizer_configuration = input;
         self
     }
-    /// <p>The updated authorizer configuration for the agent runtime.</p>
+    /// <p>The updated authorizer configuration for the AgentCore Runtime.</p>
     pub fn get_authorizer_configuration(&self) -> &::std::option::Option<crate::types::AuthorizerConfiguration> {
         &self.authorizer_configuration
+    }
+    /// <p>The updated configuration for HTTP request headers that will be passed through to the runtime.</p>
+    pub fn request_header_configuration(mut self, input: crate::types::RequestHeaderConfiguration) -> Self {
+        self.request_header_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The updated configuration for HTTP request headers that will be passed through to the runtime.</p>
+    pub fn set_request_header_configuration(mut self, input: ::std::option::Option<crate::types::RequestHeaderConfiguration>) -> Self {
+        self.request_header_configuration = input;
+        self
+    }
+    /// <p>The updated configuration for HTTP request headers that will be passed through to the runtime.</p>
+    pub fn get_request_header_configuration(&self) -> &::std::option::Option<crate::types::RequestHeaderConfiguration> {
+        &self.request_header_configuration
     }
     /// Consumes the builder and constructs a [`UpdateAgentRuntimeInput`](crate::operation::update_agent_runtime::UpdateAgentRuntimeInput).
     pub fn build(
@@ -255,6 +277,7 @@ impl UpdateAgentRuntimeInputBuilder {
             client_token: self.client_token,
             environment_variables: self.environment_variables,
             authorizer_configuration: self.authorizer_configuration,
+            request_header_configuration: self.request_header_configuration,
         })
     }
 }
@@ -270,6 +293,7 @@ impl ::std::fmt::Debug for UpdateAgentRuntimeInputBuilder {
         formatter.field("client_token", &self.client_token);
         formatter.field("environment_variables", &"*** Sensitive Data Redacted ***");
         formatter.field("authorizer_configuration", &self.authorizer_configuration);
+        formatter.field("request_header_configuration", &self.request_header_configuration);
         formatter.finish()
     }
 }

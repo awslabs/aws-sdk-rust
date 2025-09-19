@@ -15,6 +15,8 @@ pub struct CreateBrowserInput {
     pub recording: ::std::option::Option<crate::types::RecordingConfig>,
     /// <p>A unique, case-sensitive identifier to ensure that the operation completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request but does not return an error.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
+    /// <p>A map of tag keys and values to assign to the browser. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.</p>
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateBrowserInput {
     /// <p>The name of the browser. The name must be unique within your account.</p>
@@ -41,6 +43,10 @@ impl CreateBrowserInput {
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
+    /// <p>A map of tag keys and values to assign to the browser. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.</p>
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.tags.as_ref()
+    }
 }
 impl ::std::fmt::Debug for CreateBrowserInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -51,6 +57,7 @@ impl ::std::fmt::Debug for CreateBrowserInput {
         formatter.field("network_configuration", &self.network_configuration);
         formatter.field("recording", &self.recording);
         formatter.field("client_token", &self.client_token);
+        formatter.field("tags", &self.tags);
         formatter.finish()
     }
 }
@@ -71,6 +78,7 @@ pub struct CreateBrowserInputBuilder {
     pub(crate) network_configuration: ::std::option::Option<crate::types::BrowserNetworkConfiguration>,
     pub(crate) recording: ::std::option::Option<crate::types::RecordingConfig>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateBrowserInputBuilder {
     /// <p>The name of the browser. The name must be unique within your account.</p>
@@ -159,6 +167,26 @@ impl CreateBrowserInputBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
+    /// Adds a key-value pair to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>A map of tag keys and values to assign to the browser. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.</p>
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut hash_map = self.tags.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.tags = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>A map of tag keys and values to assign to the browser. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// <p>A map of tag keys and values to assign to the browser. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.tags
+    }
     /// Consumes the builder and constructs a [`CreateBrowserInput`](crate::operation::create_browser::CreateBrowserInput).
     pub fn build(
         self,
@@ -170,6 +198,7 @@ impl CreateBrowserInputBuilder {
             network_configuration: self.network_configuration,
             recording: self.recording,
             client_token: self.client_token,
+            tags: self.tags,
         })
     }
 }
@@ -182,6 +211,7 @@ impl ::std::fmt::Debug for CreateBrowserInputBuilder {
         formatter.field("network_configuration", &self.network_configuration);
         formatter.field("recording", &self.recording);
         formatter.field("client_token", &self.client_token);
+        formatter.field("tags", &self.tags);
         formatter.finish()
     }
 }

@@ -18,7 +18,7 @@ pub struct HoursOfOperationOverride {
     pub config: ::std::option::Option<::std::vec::Vec<crate::types::HoursOfOperationOverrideConfig>>,
     /// <p>The date from which the hours of operation override would be effective.</p>
     pub effective_from: ::std::option::Option<::std::string::String>,
-    /// <p>The date till which the hours of operation override would be effective.</p>
+    /// <p>The date until the hours of operation override is effective.</p>
     pub effective_till: ::std::option::Option<::std::string::String>,
 }
 impl HoursOfOperationOverride {
@@ -52,7 +52,7 @@ impl HoursOfOperationOverride {
     pub fn effective_from(&self) -> ::std::option::Option<&str> {
         self.effective_from.as_deref()
     }
-    /// <p>The date till which the hours of operation override would be effective.</p>
+    /// <p>The date until the hours of operation override is effective.</p>
     pub fn effective_till(&self) -> ::std::option::Option<&str> {
         self.effective_till.as_deref()
     }
@@ -182,17 +182,17 @@ impl HoursOfOperationOverrideBuilder {
     pub fn get_effective_from(&self) -> &::std::option::Option<::std::string::String> {
         &self.effective_from
     }
-    /// <p>The date till which the hours of operation override would be effective.</p>
+    /// <p>The date until the hours of operation override is effective.</p>
     pub fn effective_till(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.effective_till = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The date till which the hours of operation override would be effective.</p>
+    /// <p>The date until the hours of operation override is effective.</p>
     pub fn set_effective_till(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.effective_till = input;
         self
     }
-    /// <p>The date till which the hours of operation override would be effective.</p>
+    /// <p>The date until the hours of operation override is effective.</p>
     pub fn get_effective_till(&self) -> &::std::option::Option<::std::string::String> {
         &self.effective_till
     }

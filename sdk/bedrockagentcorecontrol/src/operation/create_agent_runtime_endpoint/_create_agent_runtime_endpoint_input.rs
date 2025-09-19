@@ -3,37 +3,43 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateAgentRuntimeEndpointInput {
-    /// <p>The unique identifier of the agent runtime to create an endpoint for.</p>
+    /// <p>The unique identifier of the AgentCore Runtime to create an endpoint for.</p>
     pub agent_runtime_id: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the agent runtime endpoint.</p>
+    /// <p>The name of the AgentCore Runtime endpoint.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The version of the agent runtime to use for the endpoint.</p>
+    /// <p>The version of the AgentCore Runtime to use for the endpoint.</p>
     pub agent_runtime_version: ::std::option::Option<::std::string::String>,
-    /// <p>The description of the agent runtime endpoint.</p>
+    /// <p>The description of the AgentCore Runtime endpoint.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
+    /// <p>A map of tag keys and values to assign to the agent runtime endpoint. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.</p>
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateAgentRuntimeEndpointInput {
-    /// <p>The unique identifier of the agent runtime to create an endpoint for.</p>
+    /// <p>The unique identifier of the AgentCore Runtime to create an endpoint for.</p>
     pub fn agent_runtime_id(&self) -> ::std::option::Option<&str> {
         self.agent_runtime_id.as_deref()
     }
-    /// <p>The name of the agent runtime endpoint.</p>
+    /// <p>The name of the AgentCore Runtime endpoint.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The version of the agent runtime to use for the endpoint.</p>
+    /// <p>The version of the AgentCore Runtime to use for the endpoint.</p>
     pub fn agent_runtime_version(&self) -> ::std::option::Option<&str> {
         self.agent_runtime_version.as_deref()
     }
-    /// <p>The description of the agent runtime endpoint.</p>
+    /// <p>The description of the AgentCore Runtime endpoint.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>A unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
+    }
+    /// <p>A map of tag keys and values to assign to the agent runtime endpoint. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.</p>
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.tags.as_ref()
     }
 }
 impl ::std::fmt::Debug for CreateAgentRuntimeEndpointInput {
@@ -44,6 +50,7 @@ impl ::std::fmt::Debug for CreateAgentRuntimeEndpointInput {
         formatter.field("agent_runtime_version", &self.agent_runtime_version);
         formatter.field("description", &self.description);
         formatter.field("client_token", &self.client_token);
+        formatter.field("tags", &self.tags);
         formatter.finish()
     }
 }
@@ -63,63 +70,64 @@ pub struct CreateAgentRuntimeEndpointInputBuilder {
     pub(crate) agent_runtime_version: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateAgentRuntimeEndpointInputBuilder {
-    /// <p>The unique identifier of the agent runtime to create an endpoint for.</p>
+    /// <p>The unique identifier of the AgentCore Runtime to create an endpoint for.</p>
     /// This field is required.
     pub fn agent_runtime_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.agent_runtime_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the agent runtime to create an endpoint for.</p>
+    /// <p>The unique identifier of the AgentCore Runtime to create an endpoint for.</p>
     pub fn set_agent_runtime_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.agent_runtime_id = input;
         self
     }
-    /// <p>The unique identifier of the agent runtime to create an endpoint for.</p>
+    /// <p>The unique identifier of the AgentCore Runtime to create an endpoint for.</p>
     pub fn get_agent_runtime_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.agent_runtime_id
     }
-    /// <p>The name of the agent runtime endpoint.</p>
+    /// <p>The name of the AgentCore Runtime endpoint.</p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the agent runtime endpoint.</p>
+    /// <p>The name of the AgentCore Runtime endpoint.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of the agent runtime endpoint.</p>
+    /// <p>The name of the AgentCore Runtime endpoint.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The version of the agent runtime to use for the endpoint.</p>
+    /// <p>The version of the AgentCore Runtime to use for the endpoint.</p>
     pub fn agent_runtime_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.agent_runtime_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The version of the agent runtime to use for the endpoint.</p>
+    /// <p>The version of the AgentCore Runtime to use for the endpoint.</p>
     pub fn set_agent_runtime_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.agent_runtime_version = input;
         self
     }
-    /// <p>The version of the agent runtime to use for the endpoint.</p>
+    /// <p>The version of the AgentCore Runtime to use for the endpoint.</p>
     pub fn get_agent_runtime_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.agent_runtime_version
     }
-    /// <p>The description of the agent runtime endpoint.</p>
+    /// <p>The description of the AgentCore Runtime endpoint.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The description of the agent runtime endpoint.</p>
+    /// <p>The description of the AgentCore Runtime endpoint.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p>The description of the agent runtime endpoint.</p>
+    /// <p>The description of the AgentCore Runtime endpoint.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
@@ -137,6 +145,26 @@ impl CreateAgentRuntimeEndpointInputBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
+    /// Adds a key-value pair to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>A map of tag keys and values to assign to the agent runtime endpoint. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.</p>
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut hash_map = self.tags.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.tags = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>A map of tag keys and values to assign to the agent runtime endpoint. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// <p>A map of tag keys and values to assign to the agent runtime endpoint. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.tags
+    }
     /// Consumes the builder and constructs a [`CreateAgentRuntimeEndpointInput`](crate::operation::create_agent_runtime_endpoint::CreateAgentRuntimeEndpointInput).
     pub fn build(
         self,
@@ -150,6 +178,7 @@ impl CreateAgentRuntimeEndpointInputBuilder {
             agent_runtime_version: self.agent_runtime_version,
             description: self.description,
             client_token: self.client_token,
+            tags: self.tags,
         })
     }
 }
@@ -161,6 +190,7 @@ impl ::std::fmt::Debug for CreateAgentRuntimeEndpointInputBuilder {
         formatter.field("agent_runtime_version", &self.agent_runtime_version);
         formatter.field("description", &self.description);
         formatter.field("client_token", &self.client_token);
+        formatter.field("tags", &self.tags);
         formatter.finish()
     }
 }

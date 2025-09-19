@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetGatewayTargetInput {
-    /// <p>The identifier of the gateway that contains the target. This can be either the gateway ID or the gateway ARN.</p>
+    /// <p>The identifier of the gateway that contains the target.</p>
     pub gateway_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the target to retrieve.</p>
     pub target_id: ::std::option::Option<::std::string::String>,
 }
 impl GetGatewayTargetInput {
-    /// <p>The identifier of the gateway that contains the target. This can be either the gateway ID or the gateway ARN.</p>
+    /// <p>The identifier of the gateway that contains the target.</p>
     pub fn gateway_identifier(&self) -> ::std::option::Option<&str> {
         self.gateway_identifier.as_deref()
     }
@@ -33,18 +33,18 @@ pub struct GetGatewayTargetInputBuilder {
     pub(crate) target_id: ::std::option::Option<::std::string::String>,
 }
 impl GetGatewayTargetInputBuilder {
-    /// <p>The identifier of the gateway that contains the target. This can be either the gateway ID or the gateway ARN.</p>
+    /// <p>The identifier of the gateway that contains the target.</p>
     /// This field is required.
     pub fn gateway_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the gateway that contains the target. This can be either the gateway ID or the gateway ARN.</p>
+    /// <p>The identifier of the gateway that contains the target.</p>
     pub fn set_gateway_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.gateway_identifier = input;
         self
     }
-    /// <p>The identifier of the gateway that contains the target. This can be either the gateway ID or the gateway ARN.</p>
+    /// <p>The identifier of the gateway that contains the target.</p>
     pub fn get_gateway_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.gateway_identifier
     }

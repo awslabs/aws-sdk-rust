@@ -105,9 +105,15 @@ pub(crate) mod shape_list_memories;
 
 pub(crate) mod shape_list_oauth2_credential_providers;
 
+pub(crate) mod shape_list_tags_for_resource;
+
 pub(crate) mod shape_list_workload_identities;
 
 pub(crate) mod shape_set_token_vault_cmk;
+
+pub(crate) mod shape_tag_resource;
+
+pub(crate) mod shape_untag_resource;
 
 pub(crate) mod shape_update_agent_runtime;
 
@@ -197,6 +203,8 @@ pub(crate) mod shape_service_quota_exceeded_exception;
 
 pub(crate) mod shape_set_token_vault_cmk_input;
 
+pub(crate) mod shape_tag_resource_input;
+
 pub(crate) mod shape_throttled_exception;
 
 pub(crate) mod shape_throttling_exception;
@@ -221,11 +229,11 @@ pub(crate) mod shape_update_workload_identity_input;
 
 pub(crate) mod shape_validation_exception;
 
-pub(crate) mod shape_agent_artifact;
+pub(crate) mod shape_agent_runtime_artifact;
 
-pub(crate) mod shape_agent_endpoints;
+pub(crate) mod shape_agent_runtime_endpoints;
 
-pub(crate) mod shape_agents;
+pub(crate) mod shape_agent_runtimes;
 
 pub(crate) mod shape_api_key_credential_providers;
 
@@ -271,11 +279,15 @@ pub(crate) mod shape_protocol_configuration;
 
 pub(crate) mod shape_recording_config;
 
+pub(crate) mod shape_request_header_configuration;
+
 pub(crate) mod shape_resource_oauth2_return_url_list_type;
 
 pub(crate) mod shape_secret;
 
 pub(crate) mod shape_status_reasons;
+
+pub(crate) mod shape_tags_map;
 
 pub(crate) mod shape_target_configuration;
 
@@ -287,9 +299,9 @@ pub(crate) mod shape_workload_identity_details;
 
 pub(crate) mod shape_workload_identity_list;
 
-pub(crate) mod shape_agent;
+pub(crate) mod shape_agent_runtime;
 
-pub(crate) mod shape_agent_endpoint;
+pub(crate) mod shape_agent_runtime_endpoint;
 
 pub(crate) mod shape_api_key_credential_provider_item;
 
@@ -337,6 +349,8 @@ pub(crate) mod shape_modify_memory_strategy_input;
 
 pub(crate) mod shape_oauth2_credential_provider_item;
 
+pub(crate) mod shape_request_header_allowlist;
+
 pub(crate) mod shape_s3_location;
 
 pub(crate) mod shape_salesforce_oauth2_provider_config_input;
@@ -356,6 +370,8 @@ pub(crate) mod shape_target_summary;
 pub(crate) mod shape_user_preference_memory_strategy_input;
 
 pub(crate) mod shape_validation_exception_field;
+
+pub(crate) mod shape_vpc_config;
 
 pub(crate) mod shape_workload_identity_type;
 
@@ -380,6 +396,10 @@ pub(crate) mod shape_modify_strategy_configuration;
 pub(crate) mod shape_o_auth_credential_provider;
 
 pub(crate) mod shape_oauth2_discovery;
+
+pub(crate) mod shape_security_groups;
+
+pub(crate) mod shape_subnets;
 
 pub(crate) mod shape_modify_consolidation_configuration;
 

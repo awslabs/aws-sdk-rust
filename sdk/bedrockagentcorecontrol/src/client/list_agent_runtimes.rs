@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_agent_runtimes::builders::ListAgentRuntimesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_agent_runtimes::builders::ListAgentRuntimesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in the response.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_agent_runtimes::builders::ListAgentRuntimesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_agent_runtimes::builders::ListAgentRuntimesFluentBuilder::set_next_token):<br>required: **false**<br><p>A token to retrieve the next page of results.</p><br>
     /// - On success, responds with [`ListAgentRuntimesOutput`](crate::operation::list_agent_runtimes::ListAgentRuntimesOutput) with field(s):
-    ///   - [`agent_runtimes(Vec::<Agent>)`](crate::operation::list_agent_runtimes::ListAgentRuntimesOutput::agent_runtimes): <p>The list of agent runtimes.</p>
+    ///   - [`agent_runtimes(Vec::<AgentRuntime>)`](crate::operation::list_agent_runtimes::ListAgentRuntimesOutput::agent_runtimes): <p>The list of AgentCore Runtime resources.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_agent_runtimes::ListAgentRuntimesOutput::next_token): <p>A token to retrieve the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListAgentRuntimesError>`](crate::operation::list_agent_runtimes::ListAgentRuntimesError)
     pub fn list_agent_runtimes(&self) -> crate::operation::list_agent_runtimes::builders::ListAgentRuntimesFluentBuilder {

@@ -3,19 +3,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteMemoryOutput {
-    /// <p>The unique identifier of the deleted memory.</p>
+    /// <p>The unique identifier of the deleted AgentCore Memory resource.</p>
     pub memory_id: ::std::string::String,
-    /// <p>The current status of the memory deletion.</p>
+    /// <p>The current status of the AgentCore Memory resource deletion.</p>
     pub status: ::std::option::Option<crate::types::MemoryStatus>,
     _request_id: Option<String>,
 }
 impl DeleteMemoryOutput {
-    /// <p>The unique identifier of the deleted memory.</p>
+    /// <p>The unique identifier of the deleted AgentCore Memory resource.</p>
     pub fn memory_id(&self) -> &str {
         use std::ops::Deref;
         self.memory_id.deref()
     }
-    /// <p>The current status of the memory deletion.</p>
+    /// <p>The current status of the AgentCore Memory resource deletion.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::MemoryStatus> {
         self.status.as_ref()
     }
@@ -41,32 +41,32 @@ pub struct DeleteMemoryOutputBuilder {
     _request_id: Option<String>,
 }
 impl DeleteMemoryOutputBuilder {
-    /// <p>The unique identifier of the deleted memory.</p>
+    /// <p>The unique identifier of the deleted AgentCore Memory resource.</p>
     /// This field is required.
     pub fn memory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.memory_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the deleted memory.</p>
+    /// <p>The unique identifier of the deleted AgentCore Memory resource.</p>
     pub fn set_memory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.memory_id = input;
         self
     }
-    /// <p>The unique identifier of the deleted memory.</p>
+    /// <p>The unique identifier of the deleted AgentCore Memory resource.</p>
     pub fn get_memory_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.memory_id
     }
-    /// <p>The current status of the memory deletion.</p>
+    /// <p>The current status of the AgentCore Memory resource deletion.</p>
     pub fn status(mut self, input: crate::types::MemoryStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The current status of the memory deletion.</p>
+    /// <p>The current status of the AgentCore Memory resource deletion.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::MemoryStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The current status of the memory deletion.</p>
+    /// <p>The current status of the AgentCore Memory resource deletion.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::MemoryStatus> {
         &self.status
     }

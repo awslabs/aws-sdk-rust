@@ -111,21 +111,21 @@ pub(crate) fn reflens_list_workload_identities_output_output_next_token(
 
 pub(crate) fn lens_list_agent_runtime_endpoints_output_output_runtime_endpoints(
     input: crate::operation::list_agent_runtime_endpoints::ListAgentRuntimeEndpointsOutput,
-) -> ::std::option::Option<::std::vec::Vec<crate::types::AgentEndpoint>> {
+) -> ::std::option::Option<::std::vec::Vec<crate::types::AgentRuntimeEndpoint>> {
     let input = input.runtime_endpoints;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_agent_runtime_versions_output_output_agent_runtimes(
     input: crate::operation::list_agent_runtime_versions::ListAgentRuntimeVersionsOutput,
-) -> ::std::option::Option<::std::vec::Vec<crate::types::Agent>> {
+) -> ::std::option::Option<::std::vec::Vec<crate::types::AgentRuntime>> {
     let input = input.agent_runtimes;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_agent_runtimes_output_output_agent_runtimes(
     input: crate::operation::list_agent_runtimes::ListAgentRuntimesOutput,
-) -> ::std::option::Option<::std::vec::Vec<crate::types::Agent>> {
+) -> ::std::option::Option<::std::vec::Vec<crate::types::AgentRuntime>> {
     let input = input.agent_runtimes;
     ::std::option::Option::Some(input)
 }

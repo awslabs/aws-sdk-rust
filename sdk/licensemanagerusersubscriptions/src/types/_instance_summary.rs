@@ -14,6 +14,10 @@ pub struct InstanceSummary {
     pub last_status_check_date: ::std::option::Option<::std::string::String>,
     /// <p>The status message for an EC2 instance.</p>
     pub status_message: ::std::option::Option<::std::string::String>,
+    /// <p>The AWS Account ID of the owner of this resource.</p>
+    pub owner_account_id: ::std::option::Option<::std::string::String>,
+    /// <p>The <code>IdentityProvider</code> resource specifies details about the identity provider.</p>
+    pub identity_provider: ::std::option::Option<crate::types::IdentityProvider>,
 }
 impl InstanceSummary {
     /// <p>The ID of the EC2 instance, which provides user-based subscriptions.</p>
@@ -39,6 +43,14 @@ impl InstanceSummary {
     pub fn status_message(&self) -> ::std::option::Option<&str> {
         self.status_message.as_deref()
     }
+    /// <p>The AWS Account ID of the owner of this resource.</p>
+    pub fn owner_account_id(&self) -> ::std::option::Option<&str> {
+        self.owner_account_id.as_deref()
+    }
+    /// <p>The <code>IdentityProvider</code> resource specifies details about the identity provider.</p>
+    pub fn identity_provider(&self) -> ::std::option::Option<&crate::types::IdentityProvider> {
+        self.identity_provider.as_ref()
+    }
 }
 impl InstanceSummary {
     /// Creates a new builder-style object to manufacture [`InstanceSummary`](crate::types::InstanceSummary).
@@ -56,6 +68,8 @@ pub struct InstanceSummaryBuilder {
     pub(crate) products: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) last_status_check_date: ::std::option::Option<::std::string::String>,
     pub(crate) status_message: ::std::option::Option<::std::string::String>,
+    pub(crate) owner_account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) identity_provider: ::std::option::Option<crate::types::IdentityProvider>,
 }
 impl InstanceSummaryBuilder {
     /// <p>The ID of the EC2 instance, which provides user-based subscriptions.</p>
@@ -136,6 +150,34 @@ impl InstanceSummaryBuilder {
     pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.status_message
     }
+    /// <p>The AWS Account ID of the owner of this resource.</p>
+    pub fn owner_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.owner_account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The AWS Account ID of the owner of this resource.</p>
+    pub fn set_owner_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.owner_account_id = input;
+        self
+    }
+    /// <p>The AWS Account ID of the owner of this resource.</p>
+    pub fn get_owner_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_account_id
+    }
+    /// <p>The <code>IdentityProvider</code> resource specifies details about the identity provider.</p>
+    pub fn identity_provider(mut self, input: crate::types::IdentityProvider) -> Self {
+        self.identity_provider = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The <code>IdentityProvider</code> resource specifies details about the identity provider.</p>
+    pub fn set_identity_provider(mut self, input: ::std::option::Option<crate::types::IdentityProvider>) -> Self {
+        self.identity_provider = input;
+        self
+    }
+    /// <p>The <code>IdentityProvider</code> resource specifies details about the identity provider.</p>
+    pub fn get_identity_provider(&self) -> &::std::option::Option<crate::types::IdentityProvider> {
+        &self.identity_provider
+    }
     /// Consumes the builder and constructs a [`InstanceSummary`](crate::types::InstanceSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`instance_id`](crate::types::builders::InstanceSummaryBuilder::instance_id)
@@ -163,6 +205,8 @@ impl InstanceSummaryBuilder {
             })?,
             last_status_check_date: self.last_status_check_date,
             status_message: self.status_message,
+            owner_account_id: self.owner_account_id,
+            identity_provider: self.identity_provider,
         })
     }
 }

@@ -16,6 +16,8 @@ pub struct IdentityProviderSummary {
     pub identity_provider_arn: ::std::option::Option<::std::string::String>,
     /// <p>The failure message associated with an identity provider.</p>
     pub failure_message: ::std::option::Option<::std::string::String>,
+    /// <p>The AWS Account ID of the owner of this resource.</p>
+    pub owner_account_id: ::std::option::Option<::std::string::String>,
 }
 impl IdentityProviderSummary {
     /// <p>The <code>IdentityProvider</code> resource contains information about an identity provider.</p>
@@ -44,6 +46,10 @@ impl IdentityProviderSummary {
     pub fn failure_message(&self) -> ::std::option::Option<&str> {
         self.failure_message.as_deref()
     }
+    /// <p>The AWS Account ID of the owner of this resource.</p>
+    pub fn owner_account_id(&self) -> ::std::option::Option<&str> {
+        self.owner_account_id.as_deref()
+    }
 }
 impl IdentityProviderSummary {
     /// Creates a new builder-style object to manufacture [`IdentityProviderSummary`](crate::types::IdentityProviderSummary).
@@ -62,6 +68,7 @@ pub struct IdentityProviderSummaryBuilder {
     pub(crate) status: ::std::option::Option<::std::string::String>,
     pub(crate) identity_provider_arn: ::std::option::Option<::std::string::String>,
     pub(crate) failure_message: ::std::option::Option<::std::string::String>,
+    pub(crate) owner_account_id: ::std::option::Option<::std::string::String>,
 }
 impl IdentityProviderSummaryBuilder {
     /// <p>The <code>IdentityProvider</code> resource contains information about an identity provider.</p>
@@ -152,6 +159,20 @@ impl IdentityProviderSummaryBuilder {
     pub fn get_failure_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.failure_message
     }
+    /// <p>The AWS Account ID of the owner of this resource.</p>
+    pub fn owner_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.owner_account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The AWS Account ID of the owner of this resource.</p>
+    pub fn set_owner_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.owner_account_id = input;
+        self
+    }
+    /// <p>The AWS Account ID of the owner of this resource.</p>
+    pub fn get_owner_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_account_id
+    }
     /// Consumes the builder and constructs a [`IdentityProviderSummary`](crate::types::IdentityProviderSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`product`](crate::types::builders::IdentityProviderSummaryBuilder::product)
@@ -174,6 +195,7 @@ impl IdentityProviderSummaryBuilder {
             })?,
             identity_provider_arn: self.identity_provider_arn,
             failure_message: self.failure_message,
+            owner_account_id: self.owner_account_id,
         })
     }
 }

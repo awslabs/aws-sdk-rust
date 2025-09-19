@@ -3,13 +3,13 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteGatewayTarget`](crate::operation::delete_gateway_target::builders::DeleteGatewayTargetFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`gateway_identifier(impl Into<String>)`](crate::operation::delete_gateway_target::builders::DeleteGatewayTargetFluentBuilder::gateway_identifier) / [`set_gateway_identifier(Option<String>)`](crate::operation::delete_gateway_target::builders::DeleteGatewayTargetFluentBuilder::set_gateway_identifier):<br>required: **true**<br><p>The unique identifier of the Gateway associated with the target.</p><br>
-    ///   - [`target_id(impl Into<String>)`](crate::operation::delete_gateway_target::builders::DeleteGatewayTargetFluentBuilder::target_id) / [`set_target_id(Option<String>)`](crate::operation::delete_gateway_target::builders::DeleteGatewayTargetFluentBuilder::set_target_id):<br>required: **true**<br><p>The unique identifier of the Gateway Target to delete.</p><br>
+    ///   - [`gateway_identifier(impl Into<String>)`](crate::operation::delete_gateway_target::builders::DeleteGatewayTargetFluentBuilder::gateway_identifier) / [`set_gateway_identifier(Option<String>)`](crate::operation::delete_gateway_target::builders::DeleteGatewayTargetFluentBuilder::set_gateway_identifier):<br>required: **true**<br><p>The unique identifier of the gateway associated with the target.</p><br>
+    ///   - [`target_id(impl Into<String>)`](crate::operation::delete_gateway_target::builders::DeleteGatewayTargetFluentBuilder::target_id) / [`set_target_id(Option<String>)`](crate::operation::delete_gateway_target::builders::DeleteGatewayTargetFluentBuilder::set_target_id):<br>required: **true**<br><p>The unique identifier of the gateway target to delete.</p><br>
     /// - On success, responds with [`DeleteGatewayTargetOutput`](crate::operation::delete_gateway_target::DeleteGatewayTargetOutput) with field(s):
-    ///   - [`gateway_arn(String)`](crate::operation::delete_gateway_target::DeleteGatewayTargetOutput::gateway_arn): <p>The Amazon Resource Name (ARN) of the Gateway.</p>
-    ///   - [`target_id(String)`](crate::operation::delete_gateway_target::DeleteGatewayTargetOutput::target_id): <p>The unique identifier of the deleted Gateway Target.</p>
-    ///   - [`status(TargetStatus)`](crate::operation::delete_gateway_target::DeleteGatewayTargetOutput::status): <p>The current status of the Gateway Target deletion.</p>
-    ///   - [`status_reasons(Option<Vec::<String>>)`](crate::operation::delete_gateway_target::DeleteGatewayTargetOutput::status_reasons): <p>The reasons for the current status of the Gateway Target deletion.</p>
+    ///   - [`gateway_arn(String)`](crate::operation::delete_gateway_target::DeleteGatewayTargetOutput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway.</p>
+    ///   - [`target_id(String)`](crate::operation::delete_gateway_target::DeleteGatewayTargetOutput::target_id): <p>The unique identifier of the deleted gateway target.</p>
+    ///   - [`status(TargetStatus)`](crate::operation::delete_gateway_target::DeleteGatewayTargetOutput::status): <p>The current status of the gateway target deletion.</p>
+    ///   - [`status_reasons(Option<Vec::<String>>)`](crate::operation::delete_gateway_target::DeleteGatewayTargetOutput::status_reasons): <p>The reasons for the current status of the gateway target deletion.</p>
     /// - On failure, responds with [`SdkError<DeleteGatewayTargetError>`](crate::operation::delete_gateway_target::DeleteGatewayTargetError)
     pub fn delete_gateway_target(&self) -> crate::operation::delete_gateway_target::builders::DeleteGatewayTargetFluentBuilder {
         crate::operation::delete_gateway_target::builders::DeleteGatewayTargetFluentBuilder::new(self.handle.clone())

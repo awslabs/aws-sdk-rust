@@ -6,7 +6,7 @@ pub fn ser_create_agent_runtime_input_input(
     if let Some(var_1) = &input.agent_runtime_artifact {
         #[allow(unused_mut)]
         let mut object_2 = object.key("agentRuntimeArtifact").start_object();
-        crate::protocol_serde::shape_agent_artifact::ser_agent_artifact(&mut object_2, var_1)?;
+        crate::protocol_serde::shape_agent_runtime_artifact::ser_agent_runtime_artifact(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.agent_runtime_name {
@@ -46,8 +46,24 @@ pub fn ser_create_agent_runtime_input_input(
         crate::protocol_serde::shape_protocol_configuration::ser_protocol_configuration(&mut object_15, var_14)?;
         object_15.finish();
     }
-    if let Some(var_16) = &input.role_arn {
-        object.key("roleArn").string(var_16.as_str());
+    if let Some(var_16) = &input.request_header_configuration {
+        #[allow(unused_mut)]
+        let mut object_17 = object.key("requestHeaderConfiguration").start_object();
+        crate::protocol_serde::shape_request_header_configuration::ser_request_header_configuration(&mut object_17, var_16)?;
+        object_17.finish();
+    }
+    if let Some(var_18) = &input.role_arn {
+        object.key("roleArn").string(var_18.as_str());
+    }
+    if let Some(var_19) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_20 = object.key("tags").start_object();
+        for (key_21, value_22) in var_19 {
+            {
+                object_20.key(key_21.as_str()).string(value_22.as_str());
+            }
+        }
+        object_20.finish();
     }
     Ok(())
 }

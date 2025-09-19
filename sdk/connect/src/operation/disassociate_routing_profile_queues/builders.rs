@@ -23,6 +23,7 @@ impl crate::operation::disassociate_routing_profile_queues::builders::Disassocia
 /// Fluent builder constructing a request to `DisassociateRoutingProfileQueues`.
 ///
 /// <p>Disassociates a set of queues from a routing profile.</p>
+/// <p>Up to 10 queue references can be disassociated in a single API call. More than 10 queue references results in a single call results in an InvalidParameterException.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateRoutingProfileQueuesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

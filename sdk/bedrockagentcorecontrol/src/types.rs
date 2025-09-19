@@ -181,6 +181,8 @@ pub use crate::types::_code_interpreter_status::CodeInterpreterStatus;
 
 pub use crate::types::_code_interpreter_network_configuration::CodeInterpreterNetworkConfiguration;
 
+pub use crate::types::_vpc_config::VpcConfig;
+
 pub use crate::types::_code_interpreter_network_mode::CodeInterpreterNetworkMode;
 
 pub use crate::types::_code_interpreter_summary::CodeInterpreterSummary;
@@ -201,9 +203,11 @@ pub use crate::types::_browser_summary::BrowserSummary;
 
 pub use crate::types::_api_key_credential_provider_item::ApiKeyCredentialProviderItem;
 
-pub use crate::types::_agent::Agent;
+pub use crate::types::_agent_runtime::AgentRuntime;
 
-pub use crate::types::_agent_status::AgentStatus;
+pub use crate::types::_agent_runtime_status::AgentRuntimeStatus;
+
+pub use crate::types::_request_header_configuration::RequestHeaderConfiguration;
 
 pub use crate::types::_protocol_configuration::ProtocolConfiguration;
 
@@ -213,27 +217,27 @@ pub use crate::types::_network_configuration::NetworkConfiguration;
 
 pub use crate::types::_network_mode::NetworkMode;
 
-pub use crate::types::_agent_artifact::AgentArtifact;
+pub use crate::types::_agent_runtime_artifact::AgentRuntimeArtifact;
 
 pub use crate::types::_container_configuration::ContainerConfiguration;
 
-pub use crate::types::_agent_endpoint_status::AgentEndpointStatus;
+pub use crate::types::_agent_runtime_endpoint_status::AgentRuntimeEndpointStatus;
 
-pub use crate::types::_agent_endpoint::AgentEndpoint;
+pub use crate::types::_agent_runtime_endpoint::AgentRuntimeEndpoint;
 
 pub use crate::types::_kms_configuration::KmsConfiguration;
 
 pub use crate::types::_key_type::KeyType;
 
-mod _agent;
+mod _agent_runtime;
 
-mod _agent_artifact;
+mod _agent_runtime_artifact;
 
-mod _agent_endpoint;
+mod _agent_runtime_endpoint;
 
-mod _agent_endpoint_status;
+mod _agent_runtime_endpoint_status;
 
-mod _agent_status;
+mod _agent_runtime_status;
 
 mod _api_key_credential_location;
 
@@ -375,6 +379,8 @@ mod _protocol_configuration;
 
 mod _recording_config;
 
+mod _request_header_configuration;
+
 mod _resource_type;
 
 mod _s3_configuration;
@@ -446,6 +452,8 @@ mod _user_preference_override_extraction_configuration_input;
 mod _validation_exception_field;
 
 mod _validation_exception_reason;
+
+mod _vpc_config;
 
 mod _workload_identity_details;
 

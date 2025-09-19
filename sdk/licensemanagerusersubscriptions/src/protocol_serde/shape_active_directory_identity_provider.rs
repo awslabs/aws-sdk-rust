@@ -15,6 +15,9 @@ pub fn ser_active_directory_identity_provider(
     if let Some(var_4) = &input.active_directory_type {
         object.key("ActiveDirectoryType").string(var_4.as_str());
     }
+    if let Some(var_5) = &input.is_shared_active_directory {
+        object.key("IsSharedActiveDirectory").boolean(*var_5);
+    }
     Ok(())
 }
 
@@ -51,6 +54,10 @@ where
                                     .map(|s| s.to_unescaped().map(|u| crate::types::ActiveDirectoryType::from(u.as_ref())))
                                     .transpose()?,
                             );
+                        }
+                        "IsSharedActiveDirectory" => {
+                            builder =
+                                builder.set_is_shared_active_directory(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

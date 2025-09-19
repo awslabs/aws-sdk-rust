@@ -22,7 +22,7 @@ impl crate::operation::list_gateway_targets::builders::ListGatewayTargetsInputBu
 }
 /// Fluent builder constructing a request to `ListGatewayTargets`.
 ///
-/// <p>Lists all targets for a specific Gateway.</p>
+/// <p>Lists all targets for a specific gateway.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListGatewayTargetsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,45 +114,45 @@ impl ListGatewayTargetsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_gateway_targets::paginator::ListGatewayTargetsPaginator {
         crate::operation::list_gateway_targets::paginator::ListGatewayTargetsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The identifier of the gateway to list targets for. This can be either the gateway ID or the gateway ARN.</p>
+    /// <p>The identifier of the gateway to list targets for.</p>
     pub fn gateway_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.gateway_identifier(input.into());
         self
     }
-    /// <p>The identifier of the gateway to list targets for. This can be either the gateway ID or the gateway ARN.</p>
+    /// <p>The identifier of the gateway to list targets for.</p>
     pub fn set_gateway_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_gateway_identifier(input);
         self
     }
-    /// <p>The identifier of the gateway to list targets for. This can be either the gateway ID or the gateway ARN.</p>
+    /// <p>The identifier of the gateway to list targets for.</p>
     pub fn get_gateway_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_gateway_identifier()
     }
-    /// <p>The maximum number of results to return in a single call. The default value is 10. The maximum value is 50.</p>
+    /// <p>The maximum number of results to return in the response. If the total number of results is greater than this value, use the token returned in the response in the <code>nextToken</code> field when making another request to return the next batch of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>The maximum number of results to return in a single call. The default value is 10. The maximum value is 50.</p>
+    /// <p>The maximum number of results to return in the response. If the total number of results is greater than this value, use the token returned in the response in the <code>nextToken</code> field when making another request to return the next batch of results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>The maximum number of results to return in a single call. The default value is 10. The maximum value is 50.</p>
+    /// <p>The maximum number of results to return in the response. If the total number of results is greater than this value, use the token returned in the response in the <code>nextToken</code> field when making another request to return the next batch of results.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
-    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    /// <p>If the total number of results is greater than the <code>maxResults</code> value provided in the request, enter the token returned in the <code>nextToken</code> field in the response in this field to return the next batch of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    /// <p>If the total number of results is greater than the <code>maxResults</code> value provided in the request, enter the token returned in the <code>nextToken</code> field in the response in this field to return the next batch of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    /// <p>If the total number of results is greater than the <code>maxResults</code> value provided in the request, enter the token returned in the <code>nextToken</code> field in the response in this field to return the next batch of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }

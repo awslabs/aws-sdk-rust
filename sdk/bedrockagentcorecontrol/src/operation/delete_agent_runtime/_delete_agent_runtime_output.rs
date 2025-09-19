@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteAgentRuntimeOutput {
-    /// <p>The current status of the agent runtime deletion.</p>
-    pub status: crate::types::AgentStatus,
+    /// <p>The current status of the AgentCore Runtime deletion.</p>
+    pub status: crate::types::AgentRuntimeStatus,
     _request_id: Option<String>,
 }
 impl DeleteAgentRuntimeOutput {
-    /// <p>The current status of the agent runtime deletion.</p>
-    pub fn status(&self) -> &crate::types::AgentStatus {
+    /// <p>The current status of the AgentCore Runtime deletion.</p>
+    pub fn status(&self) -> &crate::types::AgentRuntimeStatus {
         &self.status
     }
 }
@@ -29,23 +29,23 @@ impl DeleteAgentRuntimeOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct DeleteAgentRuntimeOutputBuilder {
-    pub(crate) status: ::std::option::Option<crate::types::AgentStatus>,
+    pub(crate) status: ::std::option::Option<crate::types::AgentRuntimeStatus>,
     _request_id: Option<String>,
 }
 impl DeleteAgentRuntimeOutputBuilder {
-    /// <p>The current status of the agent runtime deletion.</p>
+    /// <p>The current status of the AgentCore Runtime deletion.</p>
     /// This field is required.
-    pub fn status(mut self, input: crate::types::AgentStatus) -> Self {
+    pub fn status(mut self, input: crate::types::AgentRuntimeStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The current status of the agent runtime deletion.</p>
-    pub fn set_status(mut self, input: ::std::option::Option<crate::types::AgentStatus>) -> Self {
+    /// <p>The current status of the AgentCore Runtime deletion.</p>
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::AgentRuntimeStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The current status of the agent runtime deletion.</p>
-    pub fn get_status(&self) -> &::std::option::Option<crate::types::AgentStatus> {
+    /// <p>The current status of the AgentCore Runtime deletion.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::AgentRuntimeStatus> {
         &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

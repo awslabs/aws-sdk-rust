@@ -201,7 +201,7 @@ pub(crate) fn de_create_agent_runtime_endpoint(
                 "status" => {
                     builder = builder.set_status(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| crate::types::AgentEndpointStatus::from(u.as_ref())))
+                            .map(|s| s.to_unescaped().map(|u| crate::types::AgentRuntimeEndpointStatus::from(u.as_ref())))
                             .transpose()?,
                     );
                 }

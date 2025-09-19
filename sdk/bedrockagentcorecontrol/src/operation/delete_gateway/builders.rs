@@ -22,7 +22,7 @@ impl crate::operation::delete_gateway::builders::DeleteGatewayInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteGateway`.
 ///
-/// <p>Deletes a Gateway.</p>
+/// <p>Deletes a gateway.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteGatewayFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl DeleteGatewayFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The identifier of the gateway to delete. This can be either the gateway ID or the gateway ARN.</p>
+    /// <p>The identifier of the gateway to delete.</p>
     pub fn gateway_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.gateway_identifier(input.into());
         self
     }
-    /// <p>The identifier of the gateway to delete. This can be either the gateway ID or the gateway ARN.</p>
+    /// <p>The identifier of the gateway to delete.</p>
     pub fn set_gateway_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_gateway_identifier(input);
         self
     }
-    /// <p>The identifier of the gateway to delete. This can be either the gateway ID or the gateway ARN.</p>
+    /// <p>The identifier of the gateway to delete.</p>
     pub fn get_gateway_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_gateway_identifier()
     }

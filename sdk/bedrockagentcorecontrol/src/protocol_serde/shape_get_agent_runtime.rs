@@ -135,7 +135,8 @@ pub(crate) fn de_get_agent_runtime(
                     );
                 }
                 "agentRuntimeArtifact" => {
-                    builder = builder.set_agent_runtime_artifact(crate::protocol_serde::shape_agent_artifact::de_agent_artifact(tokens)?);
+                    builder =
+                        builder.set_agent_runtime_artifact(crate::protocol_serde::shape_agent_runtime_artifact::de_agent_runtime_artifact(tokens)?);
                 }
                 "agentRuntimeId" => {
                     builder = builder.set_agent_runtime_id(
@@ -195,6 +196,11 @@ pub(crate) fn de_get_agent_runtime(
                     builder =
                         builder.set_protocol_configuration(crate::protocol_serde::shape_protocol_configuration::de_protocol_configuration(tokens)?);
                 }
+                "requestHeaderConfiguration" => {
+                    builder = builder.set_request_header_configuration(
+                        crate::protocol_serde::shape_request_header_configuration::de_request_header_configuration(tokens)?,
+                    );
+                }
                 "roleArn" => {
                     builder = builder.set_role_arn(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -205,7 +211,7 @@ pub(crate) fn de_get_agent_runtime(
                 "status" => {
                     builder = builder.set_status(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| crate::types::AgentStatus::from(u.as_ref())))
+                            .map(|s| s.to_unescaped().map(|u| crate::types::AgentRuntimeStatus::from(u.as_ref())))
                             .transpose()?,
                     );
                 }

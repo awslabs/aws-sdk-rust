@@ -29,13 +29,19 @@ pub struct CreateGatewayOutput {
     pub protocol_configuration: ::std::option::Option<crate::types::GatewayProtocolConfiguration>,
     /// <p>The type of authorizer used by the gateway.</p>
     pub authorizer_type: crate::types::AuthorizerType,
-    /// <p>The authorizer configuration for the created Gateway.</p>
+    /// <p>The authorizer configuration for the created gateway.</p>
     pub authorizer_configuration: ::std::option::Option<crate::types::AuthorizerConfiguration>,
     /// <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt data associated with the gateway.</p>
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The workload identity details for the created Gateway.</p>
+    /// <p>The workload identity details for the created gateway.</p>
     pub workload_identity_details: ::std::option::Option<crate::types::WorkloadIdentityDetails>,
-    /// <p>The verbosity of exception messages. Use DEBUG mode to see granular exception messages from a Gateway. If this parameter is not set, exception messages are by default sanitized for presentation to end users.</p>
+    /// <p>The level of detail in error messages returned when invoking the gateway.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the value is <code>DEBUG</code>, granular exception messages are returned to help a user debug the gateway.</p></li>
+    /// <li>
+    /// <p>If the value is omitted, a generic error message is returned to the end user.</p></li>
+    /// </ul>
     pub exception_level: ::std::option::Option<crate::types::ExceptionLevel>,
     _request_id: Option<String>,
 }
@@ -97,7 +103,7 @@ impl CreateGatewayOutput {
     pub fn authorizer_type(&self) -> &crate::types::AuthorizerType {
         &self.authorizer_type
     }
-    /// <p>The authorizer configuration for the created Gateway.</p>
+    /// <p>The authorizer configuration for the created gateway.</p>
     pub fn authorizer_configuration(&self) -> ::std::option::Option<&crate::types::AuthorizerConfiguration> {
         self.authorizer_configuration.as_ref()
     }
@@ -105,11 +111,17 @@ impl CreateGatewayOutput {
     pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
         self.kms_key_arn.as_deref()
     }
-    /// <p>The workload identity details for the created Gateway.</p>
+    /// <p>The workload identity details for the created gateway.</p>
     pub fn workload_identity_details(&self) -> ::std::option::Option<&crate::types::WorkloadIdentityDetails> {
         self.workload_identity_details.as_ref()
     }
-    /// <p>The verbosity of exception messages. Use DEBUG mode to see granular exception messages from a Gateway. If this parameter is not set, exception messages are by default sanitized for presentation to end users.</p>
+    /// <p>The level of detail in error messages returned when invoking the gateway.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the value is <code>DEBUG</code>, granular exception messages are returned to help a user debug the gateway.</p></li>
+    /// <li>
+    /// <p>If the value is omitted, a generic error message is returned to the end user.</p></li>
+    /// </ul>
     pub fn exception_level(&self) -> ::std::option::Option<&crate::types::ExceptionLevel> {
         self.exception_level.as_ref()
     }
@@ -370,17 +382,17 @@ impl CreateGatewayOutputBuilder {
     pub fn get_authorizer_type(&self) -> &::std::option::Option<crate::types::AuthorizerType> {
         &self.authorizer_type
     }
-    /// <p>The authorizer configuration for the created Gateway.</p>
+    /// <p>The authorizer configuration for the created gateway.</p>
     pub fn authorizer_configuration(mut self, input: crate::types::AuthorizerConfiguration) -> Self {
         self.authorizer_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The authorizer configuration for the created Gateway.</p>
+    /// <p>The authorizer configuration for the created gateway.</p>
     pub fn set_authorizer_configuration(mut self, input: ::std::option::Option<crate::types::AuthorizerConfiguration>) -> Self {
         self.authorizer_configuration = input;
         self
     }
-    /// <p>The authorizer configuration for the created Gateway.</p>
+    /// <p>The authorizer configuration for the created gateway.</p>
     pub fn get_authorizer_configuration(&self) -> &::std::option::Option<crate::types::AuthorizerConfiguration> {
         &self.authorizer_configuration
     }
@@ -398,31 +410,49 @@ impl CreateGatewayOutputBuilder {
     pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_arn
     }
-    /// <p>The workload identity details for the created Gateway.</p>
+    /// <p>The workload identity details for the created gateway.</p>
     pub fn workload_identity_details(mut self, input: crate::types::WorkloadIdentityDetails) -> Self {
         self.workload_identity_details = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The workload identity details for the created Gateway.</p>
+    /// <p>The workload identity details for the created gateway.</p>
     pub fn set_workload_identity_details(mut self, input: ::std::option::Option<crate::types::WorkloadIdentityDetails>) -> Self {
         self.workload_identity_details = input;
         self
     }
-    /// <p>The workload identity details for the created Gateway.</p>
+    /// <p>The workload identity details for the created gateway.</p>
     pub fn get_workload_identity_details(&self) -> &::std::option::Option<crate::types::WorkloadIdentityDetails> {
         &self.workload_identity_details
     }
-    /// <p>The verbosity of exception messages. Use DEBUG mode to see granular exception messages from a Gateway. If this parameter is not set, exception messages are by default sanitized for presentation to end users.</p>
+    /// <p>The level of detail in error messages returned when invoking the gateway.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the value is <code>DEBUG</code>, granular exception messages are returned to help a user debug the gateway.</p></li>
+    /// <li>
+    /// <p>If the value is omitted, a generic error message is returned to the end user.</p></li>
+    /// </ul>
     pub fn exception_level(mut self, input: crate::types::ExceptionLevel) -> Self {
         self.exception_level = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The verbosity of exception messages. Use DEBUG mode to see granular exception messages from a Gateway. If this parameter is not set, exception messages are by default sanitized for presentation to end users.</p>
+    /// <p>The level of detail in error messages returned when invoking the gateway.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the value is <code>DEBUG</code>, granular exception messages are returned to help a user debug the gateway.</p></li>
+    /// <li>
+    /// <p>If the value is omitted, a generic error message is returned to the end user.</p></li>
+    /// </ul>
     pub fn set_exception_level(mut self, input: ::std::option::Option<crate::types::ExceptionLevel>) -> Self {
         self.exception_level = input;
         self
     }
-    /// <p>The verbosity of exception messages. Use DEBUG mode to see granular exception messages from a Gateway. If this parameter is not set, exception messages are by default sanitized for presentation to end users.</p>
+    /// <p>The level of detail in error messages returned when invoking the gateway.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the value is <code>DEBUG</code>, granular exception messages are returned to help a user debug the gateway.</p></li>
+    /// <li>
+    /// <p>If the value is omitted, a generic error message is returned to the end user.</p></li>
+    /// </ul>
     pub fn get_exception_level(&self) -> &::std::option::Option<crate::types::ExceptionLevel> {
         &self.exception_level
     }

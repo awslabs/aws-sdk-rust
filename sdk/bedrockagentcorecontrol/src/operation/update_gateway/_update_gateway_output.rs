@@ -3,89 +3,95 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateGatewayOutput {
-    /// <p>The Amazon Resource Name (ARN) of the updated Gateway.</p>
+    /// <p>The Amazon Resource Name (ARN) of the updated gateway.</p>
     pub gateway_arn: ::std::string::String,
-    /// <p>The unique identifier of the updated Gateway.</p>
+    /// <p>The unique identifier of the updated gateway.</p>
     pub gateway_id: ::std::string::String,
-    /// <p>An endpoint for invoking the updated Gateway.</p>
+    /// <p>An endpoint for invoking the updated gateway.</p>
     pub gateway_url: ::std::option::Option<::std::string::String>,
-    /// <p>The timestamp when the Gateway was created.</p>
+    /// <p>The timestamp when the gateway was created.</p>
     pub created_at: ::aws_smithy_types::DateTime,
-    /// <p>The timestamp when the Gateway was last updated.</p>
+    /// <p>The timestamp when the gateway was last updated.</p>
     pub updated_at: ::aws_smithy_types::DateTime,
-    /// <p>The current status of the updated Gateway.</p>
+    /// <p>The current status of the updated gateway.</p>
     pub status: crate::types::GatewayStatus,
-    /// <p>The reasons for the current status of the updated Gateway.</p>
+    /// <p>The reasons for the current status of the updated gateway.</p>
     pub status_reasons: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The updated name of the Gateway.</p>
+    /// <p>The name of the gateway.</p>
     pub name: ::std::string::String,
-    /// <p>The updated description of the Gateway.</p>
+    /// <p>The updated description of the gateway.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The updated IAM role ARN that provides permissions for the Gateway.</p>
+    /// <p>The updated IAM role ARN that provides permissions for the gateway.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The updated protocol type for the Gateway.</p>
+    /// <p>The updated protocol type for the gateway.</p>
     pub protocol_type: crate::types::GatewayProtocolType,
     /// <p>The configuration for a gateway protocol. This structure defines how the gateway communicates with external services.</p>
     pub protocol_configuration: ::std::option::Option<crate::types::GatewayProtocolConfiguration>,
-    /// <p>The updated authorizer type for the Gateway.</p>
+    /// <p>The updated authorizer type for the gateway.</p>
     pub authorizer_type: crate::types::AuthorizerType,
-    /// <p>The updated authorizer configuration for the Gateway.</p>
+    /// <p>The updated authorizer configuration for the gateway.</p>
     pub authorizer_configuration: ::std::option::Option<crate::types::AuthorizerConfiguration>,
-    /// <p>The updated ARN of the KMS key used to encrypt the Gateway.</p>
+    /// <p>The updated ARN of the KMS key used to encrypt the gateway.</p>
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The workload identity details for the updated Gateway.</p>
+    /// <p>The workload identity details for the updated gateway.</p>
     pub workload_identity_details: ::std::option::Option<crate::types::WorkloadIdentityDetails>,
-    /// <p>The verbosity of exception messages. Use DEBUG mode to see granular exception messages from a Gateway. If this parameter is not set, exception messages are by default sanitized for presentation to end users.</p>
+    /// <p>The level of detail in error messages returned when invoking the gateway.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the value is <code>DEBUG</code>, granular exception messages are returned to help a user debug the gateway.</p></li>
+    /// <li>
+    /// <p>If the value is omitted, a generic error message is returned to the end user.</p></li>
+    /// </ul>
     pub exception_level: ::std::option::Option<crate::types::ExceptionLevel>,
     _request_id: Option<String>,
 }
 impl UpdateGatewayOutput {
-    /// <p>The Amazon Resource Name (ARN) of the updated Gateway.</p>
+    /// <p>The Amazon Resource Name (ARN) of the updated gateway.</p>
     pub fn gateway_arn(&self) -> &str {
         use std::ops::Deref;
         self.gateway_arn.deref()
     }
-    /// <p>The unique identifier of the updated Gateway.</p>
+    /// <p>The unique identifier of the updated gateway.</p>
     pub fn gateway_id(&self) -> &str {
         use std::ops::Deref;
         self.gateway_id.deref()
     }
-    /// <p>An endpoint for invoking the updated Gateway.</p>
+    /// <p>An endpoint for invoking the updated gateway.</p>
     pub fn gateway_url(&self) -> ::std::option::Option<&str> {
         self.gateway_url.as_deref()
     }
-    /// <p>The timestamp when the Gateway was created.</p>
+    /// <p>The timestamp when the gateway was created.</p>
     pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
         &self.created_at
     }
-    /// <p>The timestamp when the Gateway was last updated.</p>
+    /// <p>The timestamp when the gateway was last updated.</p>
     pub fn updated_at(&self) -> &::aws_smithy_types::DateTime {
         &self.updated_at
     }
-    /// <p>The current status of the updated Gateway.</p>
+    /// <p>The current status of the updated gateway.</p>
     pub fn status(&self) -> &crate::types::GatewayStatus {
         &self.status
     }
-    /// <p>The reasons for the current status of the updated Gateway.</p>
+    /// <p>The reasons for the current status of the updated gateway.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.status_reasons.is_none()`.
     pub fn status_reasons(&self) -> &[::std::string::String] {
         self.status_reasons.as_deref().unwrap_or_default()
     }
-    /// <p>The updated name of the Gateway.</p>
+    /// <p>The name of the gateway.</p>
     pub fn name(&self) -> &str {
         use std::ops::Deref;
         self.name.deref()
     }
-    /// <p>The updated description of the Gateway.</p>
+    /// <p>The updated description of the gateway.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The updated IAM role ARN that provides permissions for the Gateway.</p>
+    /// <p>The updated IAM role ARN that provides permissions for the gateway.</p>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>The updated protocol type for the Gateway.</p>
+    /// <p>The updated protocol type for the gateway.</p>
     pub fn protocol_type(&self) -> &crate::types::GatewayProtocolType {
         &self.protocol_type
     }
@@ -93,23 +99,29 @@ impl UpdateGatewayOutput {
     pub fn protocol_configuration(&self) -> ::std::option::Option<&crate::types::GatewayProtocolConfiguration> {
         self.protocol_configuration.as_ref()
     }
-    /// <p>The updated authorizer type for the Gateway.</p>
+    /// <p>The updated authorizer type for the gateway.</p>
     pub fn authorizer_type(&self) -> &crate::types::AuthorizerType {
         &self.authorizer_type
     }
-    /// <p>The updated authorizer configuration for the Gateway.</p>
+    /// <p>The updated authorizer configuration for the gateway.</p>
     pub fn authorizer_configuration(&self) -> ::std::option::Option<&crate::types::AuthorizerConfiguration> {
         self.authorizer_configuration.as_ref()
     }
-    /// <p>The updated ARN of the KMS key used to encrypt the Gateway.</p>
+    /// <p>The updated ARN of the KMS key used to encrypt the gateway.</p>
     pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
         self.kms_key_arn.as_deref()
     }
-    /// <p>The workload identity details for the updated Gateway.</p>
+    /// <p>The workload identity details for the updated gateway.</p>
     pub fn workload_identity_details(&self) -> ::std::option::Option<&crate::types::WorkloadIdentityDetails> {
         self.workload_identity_details.as_ref()
     }
-    /// <p>The verbosity of exception messages. Use DEBUG mode to see granular exception messages from a Gateway. If this parameter is not set, exception messages are by default sanitized for presentation to end users.</p>
+    /// <p>The level of detail in error messages returned when invoking the gateway.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the value is <code>DEBUG</code>, granular exception messages are returned to help a user debug the gateway.</p></li>
+    /// <li>
+    /// <p>If the value is omitted, a generic error message is returned to the end user.</p></li>
+    /// </ul>
     pub fn exception_level(&self) -> ::std::option::Option<&crate::types::ExceptionLevel> {
         self.exception_level.as_ref()
     }
@@ -174,92 +186,92 @@ pub struct UpdateGatewayOutputBuilder {
     _request_id: Option<String>,
 }
 impl UpdateGatewayOutputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the updated Gateway.</p>
+    /// <p>The Amazon Resource Name (ARN) of the updated gateway.</p>
     /// This field is required.
     pub fn gateway_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the updated Gateway.</p>
+    /// <p>The Amazon Resource Name (ARN) of the updated gateway.</p>
     pub fn set_gateway_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.gateway_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the updated Gateway.</p>
+    /// <p>The Amazon Resource Name (ARN) of the updated gateway.</p>
     pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.gateway_arn
     }
-    /// <p>The unique identifier of the updated Gateway.</p>
+    /// <p>The unique identifier of the updated gateway.</p>
     /// This field is required.
     pub fn gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the updated Gateway.</p>
+    /// <p>The unique identifier of the updated gateway.</p>
     pub fn set_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.gateway_id = input;
         self
     }
-    /// <p>The unique identifier of the updated Gateway.</p>
+    /// <p>The unique identifier of the updated gateway.</p>
     pub fn get_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.gateway_id
     }
-    /// <p>An endpoint for invoking the updated Gateway.</p>
+    /// <p>An endpoint for invoking the updated gateway.</p>
     pub fn gateway_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_url = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An endpoint for invoking the updated Gateway.</p>
+    /// <p>An endpoint for invoking the updated gateway.</p>
     pub fn set_gateway_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.gateway_url = input;
         self
     }
-    /// <p>An endpoint for invoking the updated Gateway.</p>
+    /// <p>An endpoint for invoking the updated gateway.</p>
     pub fn get_gateway_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.gateway_url
     }
-    /// <p>The timestamp when the Gateway was created.</p>
+    /// <p>The timestamp when the gateway was created.</p>
     /// This field is required.
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The timestamp when the Gateway was created.</p>
+    /// <p>The timestamp when the gateway was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
-    /// <p>The timestamp when the Gateway was created.</p>
+    /// <p>The timestamp when the gateway was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_at
     }
-    /// <p>The timestamp when the Gateway was last updated.</p>
+    /// <p>The timestamp when the gateway was last updated.</p>
     /// This field is required.
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The timestamp when the Gateway was last updated.</p>
+    /// <p>The timestamp when the gateway was last updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }
-    /// <p>The timestamp when the Gateway was last updated.</p>
+    /// <p>The timestamp when the gateway was last updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_at
     }
-    /// <p>The current status of the updated Gateway.</p>
+    /// <p>The current status of the updated gateway.</p>
     /// This field is required.
     pub fn status(mut self, input: crate::types::GatewayStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The current status of the updated Gateway.</p>
+    /// <p>The current status of the updated gateway.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::GatewayStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The current status of the updated Gateway.</p>
+    /// <p>The current status of the updated gateway.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::GatewayStatus> {
         &self.status
     }
@@ -267,77 +279,77 @@ impl UpdateGatewayOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_status_reasons`](Self::set_status_reasons).
     ///
-    /// <p>The reasons for the current status of the updated Gateway.</p>
+    /// <p>The reasons for the current status of the updated gateway.</p>
     pub fn status_reasons(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.status_reasons.unwrap_or_default();
         v.push(input.into());
         self.status_reasons = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The reasons for the current status of the updated Gateway.</p>
+    /// <p>The reasons for the current status of the updated gateway.</p>
     pub fn set_status_reasons(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.status_reasons = input;
         self
     }
-    /// <p>The reasons for the current status of the updated Gateway.</p>
+    /// <p>The reasons for the current status of the updated gateway.</p>
     pub fn get_status_reasons(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.status_reasons
     }
-    /// <p>The updated name of the Gateway.</p>
+    /// <p>The name of the gateway.</p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The updated name of the Gateway.</p>
+    /// <p>The name of the gateway.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The updated name of the Gateway.</p>
+    /// <p>The name of the gateway.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The updated description of the Gateway.</p>
+    /// <p>The updated description of the gateway.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The updated description of the Gateway.</p>
+    /// <p>The updated description of the gateway.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p>The updated description of the Gateway.</p>
+    /// <p>The updated description of the gateway.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>The updated IAM role ARN that provides permissions for the Gateway.</p>
+    /// <p>The updated IAM role ARN that provides permissions for the gateway.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The updated IAM role ARN that provides permissions for the Gateway.</p>
+    /// <p>The updated IAM role ARN that provides permissions for the gateway.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
-    /// <p>The updated IAM role ARN that provides permissions for the Gateway.</p>
+    /// <p>The updated IAM role ARN that provides permissions for the gateway.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }
-    /// <p>The updated protocol type for the Gateway.</p>
+    /// <p>The updated protocol type for the gateway.</p>
     /// This field is required.
     pub fn protocol_type(mut self, input: crate::types::GatewayProtocolType) -> Self {
         self.protocol_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The updated protocol type for the Gateway.</p>
+    /// <p>The updated protocol type for the gateway.</p>
     pub fn set_protocol_type(mut self, input: ::std::option::Option<crate::types::GatewayProtocolType>) -> Self {
         self.protocol_type = input;
         self
     }
-    /// <p>The updated protocol type for the Gateway.</p>
+    /// <p>The updated protocol type for the gateway.</p>
     pub fn get_protocol_type(&self) -> &::std::option::Option<crate::types::GatewayProtocolType> {
         &self.protocol_type
     }
@@ -355,74 +367,92 @@ impl UpdateGatewayOutputBuilder {
     pub fn get_protocol_configuration(&self) -> &::std::option::Option<crate::types::GatewayProtocolConfiguration> {
         &self.protocol_configuration
     }
-    /// <p>The updated authorizer type for the Gateway.</p>
+    /// <p>The updated authorizer type for the gateway.</p>
     /// This field is required.
     pub fn authorizer_type(mut self, input: crate::types::AuthorizerType) -> Self {
         self.authorizer_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The updated authorizer type for the Gateway.</p>
+    /// <p>The updated authorizer type for the gateway.</p>
     pub fn set_authorizer_type(mut self, input: ::std::option::Option<crate::types::AuthorizerType>) -> Self {
         self.authorizer_type = input;
         self
     }
-    /// <p>The updated authorizer type for the Gateway.</p>
+    /// <p>The updated authorizer type for the gateway.</p>
     pub fn get_authorizer_type(&self) -> &::std::option::Option<crate::types::AuthorizerType> {
         &self.authorizer_type
     }
-    /// <p>The updated authorizer configuration for the Gateway.</p>
+    /// <p>The updated authorizer configuration for the gateway.</p>
     pub fn authorizer_configuration(mut self, input: crate::types::AuthorizerConfiguration) -> Self {
         self.authorizer_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The updated authorizer configuration for the Gateway.</p>
+    /// <p>The updated authorizer configuration for the gateway.</p>
     pub fn set_authorizer_configuration(mut self, input: ::std::option::Option<crate::types::AuthorizerConfiguration>) -> Self {
         self.authorizer_configuration = input;
         self
     }
-    /// <p>The updated authorizer configuration for the Gateway.</p>
+    /// <p>The updated authorizer configuration for the gateway.</p>
     pub fn get_authorizer_configuration(&self) -> &::std::option::Option<crate::types::AuthorizerConfiguration> {
         &self.authorizer_configuration
     }
-    /// <p>The updated ARN of the KMS key used to encrypt the Gateway.</p>
+    /// <p>The updated ARN of the KMS key used to encrypt the gateway.</p>
     pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The updated ARN of the KMS key used to encrypt the Gateway.</p>
+    /// <p>The updated ARN of the KMS key used to encrypt the gateway.</p>
     pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_arn = input;
         self
     }
-    /// <p>The updated ARN of the KMS key used to encrypt the Gateway.</p>
+    /// <p>The updated ARN of the KMS key used to encrypt the gateway.</p>
     pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_arn
     }
-    /// <p>The workload identity details for the updated Gateway.</p>
+    /// <p>The workload identity details for the updated gateway.</p>
     pub fn workload_identity_details(mut self, input: crate::types::WorkloadIdentityDetails) -> Self {
         self.workload_identity_details = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The workload identity details for the updated Gateway.</p>
+    /// <p>The workload identity details for the updated gateway.</p>
     pub fn set_workload_identity_details(mut self, input: ::std::option::Option<crate::types::WorkloadIdentityDetails>) -> Self {
         self.workload_identity_details = input;
         self
     }
-    /// <p>The workload identity details for the updated Gateway.</p>
+    /// <p>The workload identity details for the updated gateway.</p>
     pub fn get_workload_identity_details(&self) -> &::std::option::Option<crate::types::WorkloadIdentityDetails> {
         &self.workload_identity_details
     }
-    /// <p>The verbosity of exception messages. Use DEBUG mode to see granular exception messages from a Gateway. If this parameter is not set, exception messages are by default sanitized for presentation to end users.</p>
+    /// <p>The level of detail in error messages returned when invoking the gateway.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the value is <code>DEBUG</code>, granular exception messages are returned to help a user debug the gateway.</p></li>
+    /// <li>
+    /// <p>If the value is omitted, a generic error message is returned to the end user.</p></li>
+    /// </ul>
     pub fn exception_level(mut self, input: crate::types::ExceptionLevel) -> Self {
         self.exception_level = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The verbosity of exception messages. Use DEBUG mode to see granular exception messages from a Gateway. If this parameter is not set, exception messages are by default sanitized for presentation to end users.</p>
+    /// <p>The level of detail in error messages returned when invoking the gateway.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the value is <code>DEBUG</code>, granular exception messages are returned to help a user debug the gateway.</p></li>
+    /// <li>
+    /// <p>If the value is omitted, a generic error message is returned to the end user.</p></li>
+    /// </ul>
     pub fn set_exception_level(mut self, input: ::std::option::Option<crate::types::ExceptionLevel>) -> Self {
         self.exception_level = input;
         self
     }
-    /// <p>The verbosity of exception messages. Use DEBUG mode to see granular exception messages from a Gateway. If this parameter is not set, exception messages are by default sanitized for presentation to end users.</p>
+    /// <p>The level of detail in error messages returned when invoking the gateway.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the value is <code>DEBUG</code>, granular exception messages are returned to help a user debug the gateway.</p></li>
+    /// <li>
+    /// <p>If the value is omitted, a generic error message is returned to the end user.</p></li>
+    /// </ul>
     pub fn get_exception_level(&self) -> &::std::option::Option<crate::types::ExceptionLevel> {
         &self.exception_level
     }

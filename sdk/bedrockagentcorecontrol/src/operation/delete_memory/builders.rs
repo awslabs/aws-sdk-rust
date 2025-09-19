@@ -22,7 +22,7 @@ impl crate::operation::delete_memory::builders::DeleteMemoryInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteMemory`.
 ///
-/// <p>Deletes a memory.</p>
+/// <p>Deletes an Amazon Bedrock AgentCore Memory resource.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteMemoryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

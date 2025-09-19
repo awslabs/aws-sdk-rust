@@ -130,7 +130,8 @@ pub(crate) fn de_list_agent_runtime_endpoints(
                     );
                 }
                 "runtimeEndpoints" => {
-                    builder = builder.set_runtime_endpoints(crate::protocol_serde::shape_agent_endpoints::de_agent_endpoints(tokens)?);
+                    builder =
+                        builder.set_runtime_endpoints(crate::protocol_serde::shape_agent_runtime_endpoints::de_agent_runtime_endpoints(tokens)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

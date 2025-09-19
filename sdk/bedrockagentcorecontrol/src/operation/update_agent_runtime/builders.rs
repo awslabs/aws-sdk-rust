@@ -108,73 +108,73 @@ impl UpdateAgentRuntimeFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique identifier of the agent runtime to update.</p>
+    /// <p>The unique identifier of the AgentCore Runtime to update.</p>
     pub fn agent_runtime_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_runtime_id(input.into());
         self
     }
-    /// <p>The unique identifier of the agent runtime to update.</p>
+    /// <p>The unique identifier of the AgentCore Runtime to update.</p>
     pub fn set_agent_runtime_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_agent_runtime_id(input);
         self
     }
-    /// <p>The unique identifier of the agent runtime to update.</p>
+    /// <p>The unique identifier of the AgentCore Runtime to update.</p>
     pub fn get_agent_runtime_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agent_runtime_id()
     }
-    /// <p>The updated description of the agent runtime.</p>
+    /// <p>The updated description of the AgentCore Runtime.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// <p>The updated description of the agent runtime.</p>
+    /// <p>The updated description of the AgentCore Runtime.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// <p>The updated description of the agent runtime.</p>
+    /// <p>The updated description of the AgentCore Runtime.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
-    /// <p>The updated artifact of the agent runtime.</p>
-    pub fn agent_runtime_artifact(mut self, input: crate::types::AgentArtifact) -> Self {
+    /// <p>The updated artifact of the AgentCore Runtime.</p>
+    pub fn agent_runtime_artifact(mut self, input: crate::types::AgentRuntimeArtifact) -> Self {
         self.inner = self.inner.agent_runtime_artifact(input);
         self
     }
-    /// <p>The updated artifact of the agent runtime.</p>
-    pub fn set_agent_runtime_artifact(mut self, input: ::std::option::Option<crate::types::AgentArtifact>) -> Self {
+    /// <p>The updated artifact of the AgentCore Runtime.</p>
+    pub fn set_agent_runtime_artifact(mut self, input: ::std::option::Option<crate::types::AgentRuntimeArtifact>) -> Self {
         self.inner = self.inner.set_agent_runtime_artifact(input);
         self
     }
-    /// <p>The updated artifact of the agent runtime.</p>
-    pub fn get_agent_runtime_artifact(&self) -> &::std::option::Option<crate::types::AgentArtifact> {
+    /// <p>The updated artifact of the AgentCore Runtime.</p>
+    pub fn get_agent_runtime_artifact(&self) -> &::std::option::Option<crate::types::AgentRuntimeArtifact> {
         self.inner.get_agent_runtime_artifact()
     }
-    /// <p>The updated IAM role ARN that provides permissions for the agent runtime.</p>
+    /// <p>The updated IAM role ARN that provides permissions for the AgentCore Runtime.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
         self
     }
-    /// <p>The updated IAM role ARN that provides permissions for the agent runtime.</p>
+    /// <p>The updated IAM role ARN that provides permissions for the AgentCore Runtime.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
     }
-    /// <p>The updated IAM role ARN that provides permissions for the agent runtime.</p>
+    /// <p>The updated IAM role ARN that provides permissions for the AgentCore Runtime.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_role_arn()
     }
-    /// <p>The updated network configuration for the agent runtime.</p>
+    /// <p>The updated network configuration for the AgentCore Runtime.</p>
     pub fn network_configuration(mut self, input: crate::types::NetworkConfiguration) -> Self {
         self.inner = self.inner.network_configuration(input);
         self
     }
-    /// <p>The updated network configuration for the agent runtime.</p>
+    /// <p>The updated network configuration for the AgentCore Runtime.</p>
     pub fn set_network_configuration(mut self, input: ::std::option::Option<crate::types::NetworkConfiguration>) -> Self {
         self.inner = self.inner.set_network_configuration(input);
         self
     }
-    /// <p>The updated network configuration for the agent runtime.</p>
+    /// <p>The updated network configuration for the AgentCore Runtime.</p>
     pub fn get_network_configuration(&self) -> &::std::option::Option<crate::types::NetworkConfiguration> {
         self.inner.get_network_configuration()
     }
@@ -211,7 +211,7 @@ impl UpdateAgentRuntimeFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_environment_variables`](Self::set_environment_variables).
     ///
-    /// <p>Updated environment variables to set in the agent runtime environment.</p>
+    /// <p>Updated environment variables to set in the AgentCore Runtime environment.</p>
     pub fn environment_variables(
         mut self,
         k: impl ::std::convert::Into<::std::string::String>,
@@ -220,7 +220,7 @@ impl UpdateAgentRuntimeFluentBuilder {
         self.inner = self.inner.environment_variables(k.into(), v.into());
         self
     }
-    /// <p>Updated environment variables to set in the agent runtime environment.</p>
+    /// <p>Updated environment variables to set in the AgentCore Runtime environment.</p>
     pub fn set_environment_variables(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -228,22 +228,36 @@ impl UpdateAgentRuntimeFluentBuilder {
         self.inner = self.inner.set_environment_variables(input);
         self
     }
-    /// <p>Updated environment variables to set in the agent runtime environment.</p>
+    /// <p>Updated environment variables to set in the AgentCore Runtime environment.</p>
     pub fn get_environment_variables(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_environment_variables()
     }
-    /// <p>The updated authorizer configuration for the agent runtime.</p>
+    /// <p>The updated authorizer configuration for the AgentCore Runtime.</p>
     pub fn authorizer_configuration(mut self, input: crate::types::AuthorizerConfiguration) -> Self {
         self.inner = self.inner.authorizer_configuration(input);
         self
     }
-    /// <p>The updated authorizer configuration for the agent runtime.</p>
+    /// <p>The updated authorizer configuration for the AgentCore Runtime.</p>
     pub fn set_authorizer_configuration(mut self, input: ::std::option::Option<crate::types::AuthorizerConfiguration>) -> Self {
         self.inner = self.inner.set_authorizer_configuration(input);
         self
     }
-    /// <p>The updated authorizer configuration for the agent runtime.</p>
+    /// <p>The updated authorizer configuration for the AgentCore Runtime.</p>
     pub fn get_authorizer_configuration(&self) -> &::std::option::Option<crate::types::AuthorizerConfiguration> {
         self.inner.get_authorizer_configuration()
+    }
+    /// <p>The updated configuration for HTTP request headers that will be passed through to the runtime.</p>
+    pub fn request_header_configuration(mut self, input: crate::types::RequestHeaderConfiguration) -> Self {
+        self.inner = self.inner.request_header_configuration(input);
+        self
+    }
+    /// <p>The updated configuration for HTTP request headers that will be passed through to the runtime.</p>
+    pub fn set_request_header_configuration(mut self, input: ::std::option::Option<crate::types::RequestHeaderConfiguration>) -> Self {
+        self.inner = self.inner.set_request_header_configuration(input);
+        self
+    }
+    /// <p>The updated configuration for HTTP request headers that will be passed through to the runtime.</p>
+    pub fn get_request_header_configuration(&self) -> &::std::option::Option<crate::types::RequestHeaderConfiguration> {
+        self.inner.get_request_header_configuration()
     }
 }

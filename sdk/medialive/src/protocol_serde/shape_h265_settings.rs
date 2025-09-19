@@ -171,6 +171,24 @@ pub fn ser_h265_settings(
     if let Some(var_41) = &input.deblocking {
         object.key("deblocking").string(var_41.as_str());
     }
+    if let Some(var_42) = &input.gop_b_reference {
+        object.key("gopBReference").string(var_42.as_str());
+    }
+    if let Some(var_43) = &input.gop_num_b_frames {
+        object.key("gopNumBFrames").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_43).into()),
+        );
+    }
+    if let Some(var_44) = &input.min_bitrate {
+        object.key("minBitrate").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_44).into()),
+        );
+    }
+    if let Some(var_45) = &input.subgop_length {
+        object.key("subgopLength").string(var_45.as_str());
+    }
     Ok(())
 }
 
@@ -442,6 +460,34 @@ where
                             builder = builder.set_deblocking(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::H265Deblocking::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "gopBReference" => {
+                            builder = builder.set_gop_b_reference(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::H265GopBReference::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "gopNumBFrames" => {
+                            builder = builder.set_gop_num_b_frames(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "minBitrate" => {
+                            builder = builder.set_min_bitrate(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "subgopLength" => {
+                            builder = builder.set_subgop_length(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::H265SubGopLength::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

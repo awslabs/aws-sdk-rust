@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMemoryOutput {
-    /// <p>The retrieved memory details.</p>
+    /// <p>The retrieved AgentCore Memory resource details.</p>
     pub memory: ::std::option::Option<crate::types::Memory>,
     _request_id: Option<String>,
 }
 impl GetMemoryOutput {
-    /// <p>The retrieved memory details.</p>
+    /// <p>The retrieved AgentCore Memory resource details.</p>
     pub fn memory(&self) -> ::std::option::Option<&crate::types::Memory> {
         self.memory.as_ref()
     }
@@ -33,18 +33,18 @@ pub struct GetMemoryOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetMemoryOutputBuilder {
-    /// <p>The retrieved memory details.</p>
+    /// <p>The retrieved AgentCore Memory resource details.</p>
     /// This field is required.
     pub fn memory(mut self, input: crate::types::Memory) -> Self {
         self.memory = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The retrieved memory details.</p>
+    /// <p>The retrieved AgentCore Memory resource details.</p>
     pub fn set_memory(mut self, input: ::std::option::Option<crate::types::Memory>) -> Self {
         self.memory = input;
         self
     }
-    /// <p>The retrieved memory details.</p>
+    /// <p>The retrieved AgentCore Memory resource details.</p>
     pub fn get_memory(&self) -> &::std::option::Option<crate::types::Memory> {
         &self.memory
     }

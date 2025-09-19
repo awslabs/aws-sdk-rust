@@ -3,75 +3,75 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetAgentRuntimeEndpointOutput {
-    /// <p>The currently deployed version of the agent runtime on the endpoint.</p>
+    /// <p>The currently deployed version of the AgentCore Runtime on the endpoint.</p>
     pub live_version: ::std::option::Option<::std::string::String>,
-    /// <p>The target version of the agent runtime for the endpoint.</p>
+    /// <p>The target version of the AgentCore Runtime for the endpoint.</p>
     pub target_version: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the agent runtime endpoint.</p>
+    /// <p>The Amazon Resource Name (ARN) of the AgentCore Runtime endpoint.</p>
     pub agent_runtime_endpoint_arn: ::std::string::String,
-    /// <p>The Amazon Resource Name (ARN) of the agent runtime.</p>
+    /// <p>The Amazon Resource Name (ARN) of the AgentCore Runtime.</p>
     pub agent_runtime_arn: ::std::string::String,
-    /// <p>The description of the agent runtime endpoint.</p>
+    /// <p>The description of the AgentCore Runtime endpoint.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The current status of the agent runtime endpoint.</p>
-    pub status: crate::types::AgentEndpointStatus,
-    /// <p>The timestamp when the agent runtime endpoint was created.</p>
+    /// <p>The current status of the AgentCore Runtime endpoint.</p>
+    pub status: crate::types::AgentRuntimeEndpointStatus,
+    /// <p>The timestamp when the AgentCore Runtime endpoint was created.</p>
     pub created_at: ::aws_smithy_types::DateTime,
-    /// <p>The timestamp when the agent runtime endpoint was last updated.</p>
+    /// <p>The timestamp when the AgentCore Runtime endpoint was last updated.</p>
     pub last_updated_at: ::aws_smithy_types::DateTime,
-    /// <p>The reason for failure if the agent runtime endpoint is in a failed state.</p>
+    /// <p>The reason for failure if the AgentCore Runtime endpoint is in a failed state.</p>
     pub failure_reason: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the agent runtime endpoint.</p>
+    /// <p>The name of the AgentCore Runtime endpoint.</p>
     pub name: ::std::string::String,
-    /// <p>The unique identifier of the agent runtime endpoint.</p>
+    /// <p>The unique identifier of the AgentCore Runtime endpoint.</p>
     pub id: ::std::string::String,
     _request_id: Option<String>,
 }
 impl GetAgentRuntimeEndpointOutput {
-    /// <p>The currently deployed version of the agent runtime on the endpoint.</p>
+    /// <p>The currently deployed version of the AgentCore Runtime on the endpoint.</p>
     pub fn live_version(&self) -> ::std::option::Option<&str> {
         self.live_version.as_deref()
     }
-    /// <p>The target version of the agent runtime for the endpoint.</p>
+    /// <p>The target version of the AgentCore Runtime for the endpoint.</p>
     pub fn target_version(&self) -> ::std::option::Option<&str> {
         self.target_version.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the agent runtime endpoint.</p>
+    /// <p>The Amazon Resource Name (ARN) of the AgentCore Runtime endpoint.</p>
     pub fn agent_runtime_endpoint_arn(&self) -> &str {
         use std::ops::Deref;
         self.agent_runtime_endpoint_arn.deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the agent runtime.</p>
+    /// <p>The Amazon Resource Name (ARN) of the AgentCore Runtime.</p>
     pub fn agent_runtime_arn(&self) -> &str {
         use std::ops::Deref;
         self.agent_runtime_arn.deref()
     }
-    /// <p>The description of the agent runtime endpoint.</p>
+    /// <p>The description of the AgentCore Runtime endpoint.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The current status of the agent runtime endpoint.</p>
-    pub fn status(&self) -> &crate::types::AgentEndpointStatus {
+    /// <p>The current status of the AgentCore Runtime endpoint.</p>
+    pub fn status(&self) -> &crate::types::AgentRuntimeEndpointStatus {
         &self.status
     }
-    /// <p>The timestamp when the agent runtime endpoint was created.</p>
+    /// <p>The timestamp when the AgentCore Runtime endpoint was created.</p>
     pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
         &self.created_at
     }
-    /// <p>The timestamp when the agent runtime endpoint was last updated.</p>
+    /// <p>The timestamp when the AgentCore Runtime endpoint was last updated.</p>
     pub fn last_updated_at(&self) -> &::aws_smithy_types::DateTime {
         &self.last_updated_at
     }
-    /// <p>The reason for failure if the agent runtime endpoint is in a failed state.</p>
+    /// <p>The reason for failure if the AgentCore Runtime endpoint is in a failed state.</p>
     pub fn failure_reason(&self) -> ::std::option::Option<&str> {
         self.failure_reason.as_deref()
     }
-    /// <p>The name of the agent runtime endpoint.</p>
+    /// <p>The name of the AgentCore Runtime endpoint.</p>
     pub fn name(&self) -> &str {
         use std::ops::Deref;
         self.name.deref()
     }
-    /// <p>The unique identifier of the agent runtime endpoint.</p>
+    /// <p>The unique identifier of the AgentCore Runtime endpoint.</p>
     pub fn id(&self) -> &str {
         use std::ops::Deref;
         self.id.deref()
@@ -116,7 +116,7 @@ pub struct GetAgentRuntimeEndpointOutputBuilder {
     pub(crate) agent_runtime_endpoint_arn: ::std::option::Option<::std::string::String>,
     pub(crate) agent_runtime_arn: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) status: ::std::option::Option<crate::types::AgentEndpointStatus>,
+    pub(crate) status: ::std::option::Option<crate::types::AgentRuntimeEndpointStatus>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
@@ -125,164 +125,164 @@ pub struct GetAgentRuntimeEndpointOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetAgentRuntimeEndpointOutputBuilder {
-    /// <p>The currently deployed version of the agent runtime on the endpoint.</p>
+    /// <p>The currently deployed version of the AgentCore Runtime on the endpoint.</p>
     pub fn live_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.live_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The currently deployed version of the agent runtime on the endpoint.</p>
+    /// <p>The currently deployed version of the AgentCore Runtime on the endpoint.</p>
     pub fn set_live_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.live_version = input;
         self
     }
-    /// <p>The currently deployed version of the agent runtime on the endpoint.</p>
+    /// <p>The currently deployed version of the AgentCore Runtime on the endpoint.</p>
     pub fn get_live_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.live_version
     }
-    /// <p>The target version of the agent runtime for the endpoint.</p>
+    /// <p>The target version of the AgentCore Runtime for the endpoint.</p>
     pub fn target_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The target version of the agent runtime for the endpoint.</p>
+    /// <p>The target version of the AgentCore Runtime for the endpoint.</p>
     pub fn set_target_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_version = input;
         self
     }
-    /// <p>The target version of the agent runtime for the endpoint.</p>
+    /// <p>The target version of the AgentCore Runtime for the endpoint.</p>
     pub fn get_target_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_version
     }
-    /// <p>The Amazon Resource Name (ARN) of the agent runtime endpoint.</p>
+    /// <p>The Amazon Resource Name (ARN) of the AgentCore Runtime endpoint.</p>
     /// This field is required.
     pub fn agent_runtime_endpoint_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.agent_runtime_endpoint_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the agent runtime endpoint.</p>
+    /// <p>The Amazon Resource Name (ARN) of the AgentCore Runtime endpoint.</p>
     pub fn set_agent_runtime_endpoint_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.agent_runtime_endpoint_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the agent runtime endpoint.</p>
+    /// <p>The Amazon Resource Name (ARN) of the AgentCore Runtime endpoint.</p>
     pub fn get_agent_runtime_endpoint_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.agent_runtime_endpoint_arn
     }
-    /// <p>The Amazon Resource Name (ARN) of the agent runtime.</p>
+    /// <p>The Amazon Resource Name (ARN) of the AgentCore Runtime.</p>
     /// This field is required.
     pub fn agent_runtime_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.agent_runtime_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the agent runtime.</p>
+    /// <p>The Amazon Resource Name (ARN) of the AgentCore Runtime.</p>
     pub fn set_agent_runtime_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.agent_runtime_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the agent runtime.</p>
+    /// <p>The Amazon Resource Name (ARN) of the AgentCore Runtime.</p>
     pub fn get_agent_runtime_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.agent_runtime_arn
     }
-    /// <p>The description of the agent runtime endpoint.</p>
+    /// <p>The description of the AgentCore Runtime endpoint.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The description of the agent runtime endpoint.</p>
+    /// <p>The description of the AgentCore Runtime endpoint.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p>The description of the agent runtime endpoint.</p>
+    /// <p>The description of the AgentCore Runtime endpoint.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>The current status of the agent runtime endpoint.</p>
+    /// <p>The current status of the AgentCore Runtime endpoint.</p>
     /// This field is required.
-    pub fn status(mut self, input: crate::types::AgentEndpointStatus) -> Self {
+    pub fn status(mut self, input: crate::types::AgentRuntimeEndpointStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The current status of the agent runtime endpoint.</p>
-    pub fn set_status(mut self, input: ::std::option::Option<crate::types::AgentEndpointStatus>) -> Self {
+    /// <p>The current status of the AgentCore Runtime endpoint.</p>
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::AgentRuntimeEndpointStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The current status of the agent runtime endpoint.</p>
-    pub fn get_status(&self) -> &::std::option::Option<crate::types::AgentEndpointStatus> {
+    /// <p>The current status of the AgentCore Runtime endpoint.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::AgentRuntimeEndpointStatus> {
         &self.status
     }
-    /// <p>The timestamp when the agent runtime endpoint was created.</p>
+    /// <p>The timestamp when the AgentCore Runtime endpoint was created.</p>
     /// This field is required.
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The timestamp when the agent runtime endpoint was created.</p>
+    /// <p>The timestamp when the AgentCore Runtime endpoint was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
-    /// <p>The timestamp when the agent runtime endpoint was created.</p>
+    /// <p>The timestamp when the AgentCore Runtime endpoint was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_at
     }
-    /// <p>The timestamp when the agent runtime endpoint was last updated.</p>
+    /// <p>The timestamp when the AgentCore Runtime endpoint was last updated.</p>
     /// This field is required.
     pub fn last_updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The timestamp when the agent runtime endpoint was last updated.</p>
+    /// <p>The timestamp when the AgentCore Runtime endpoint was last updated.</p>
     pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_at = input;
         self
     }
-    /// <p>The timestamp when the agent runtime endpoint was last updated.</p>
+    /// <p>The timestamp when the AgentCore Runtime endpoint was last updated.</p>
     pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_at
     }
-    /// <p>The reason for failure if the agent runtime endpoint is in a failed state.</p>
+    /// <p>The reason for failure if the AgentCore Runtime endpoint is in a failed state.</p>
     pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_reason = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The reason for failure if the agent runtime endpoint is in a failed state.</p>
+    /// <p>The reason for failure if the AgentCore Runtime endpoint is in a failed state.</p>
     pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_reason = input;
         self
     }
-    /// <p>The reason for failure if the agent runtime endpoint is in a failed state.</p>
+    /// <p>The reason for failure if the AgentCore Runtime endpoint is in a failed state.</p>
     pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.failure_reason
     }
-    /// <p>The name of the agent runtime endpoint.</p>
+    /// <p>The name of the AgentCore Runtime endpoint.</p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the agent runtime endpoint.</p>
+    /// <p>The name of the AgentCore Runtime endpoint.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of the agent runtime endpoint.</p>
+    /// <p>The name of the AgentCore Runtime endpoint.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The unique identifier of the agent runtime endpoint.</p>
+    /// <p>The unique identifier of the AgentCore Runtime endpoint.</p>
     /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the agent runtime endpoint.</p>
+    /// <p>The unique identifier of the AgentCore Runtime endpoint.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
-    /// <p>The unique identifier of the agent runtime endpoint.</p>
+    /// <p>The unique identifier of the AgentCore Runtime endpoint.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }

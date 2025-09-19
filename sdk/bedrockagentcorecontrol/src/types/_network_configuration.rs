@@ -4,13 +4,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkConfiguration {
-    /// <p>The network mode for the agent runtime.</p>
+    /// <p>The network mode for the AgentCore Runtime.</p>
     pub network_mode: crate::types::NetworkMode,
+    /// <p>The network mode configuration for the AgentCore Runtime.</p>
+    pub network_mode_config: ::std::option::Option<crate::types::VpcConfig>,
 }
 impl NetworkConfiguration {
-    /// <p>The network mode for the agent runtime.</p>
+    /// <p>The network mode for the AgentCore Runtime.</p>
     pub fn network_mode(&self) -> &crate::types::NetworkMode {
         &self.network_mode
+    }
+    /// <p>The network mode configuration for the AgentCore Runtime.</p>
+    pub fn network_mode_config(&self) -> ::std::option::Option<&crate::types::VpcConfig> {
+        self.network_mode_config.as_ref()
     }
 }
 impl NetworkConfiguration {
@@ -25,22 +31,37 @@ impl NetworkConfiguration {
 #[non_exhaustive]
 pub struct NetworkConfigurationBuilder {
     pub(crate) network_mode: ::std::option::Option<crate::types::NetworkMode>,
+    pub(crate) network_mode_config: ::std::option::Option<crate::types::VpcConfig>,
 }
 impl NetworkConfigurationBuilder {
-    /// <p>The network mode for the agent runtime.</p>
+    /// <p>The network mode for the AgentCore Runtime.</p>
     /// This field is required.
     pub fn network_mode(mut self, input: crate::types::NetworkMode) -> Self {
         self.network_mode = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The network mode for the agent runtime.</p>
+    /// <p>The network mode for the AgentCore Runtime.</p>
     pub fn set_network_mode(mut self, input: ::std::option::Option<crate::types::NetworkMode>) -> Self {
         self.network_mode = input;
         self
     }
-    /// <p>The network mode for the agent runtime.</p>
+    /// <p>The network mode for the AgentCore Runtime.</p>
     pub fn get_network_mode(&self) -> &::std::option::Option<crate::types::NetworkMode> {
         &self.network_mode
+    }
+    /// <p>The network mode configuration for the AgentCore Runtime.</p>
+    pub fn network_mode_config(mut self, input: crate::types::VpcConfig) -> Self {
+        self.network_mode_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The network mode configuration for the AgentCore Runtime.</p>
+    pub fn set_network_mode_config(mut self, input: ::std::option::Option<crate::types::VpcConfig>) -> Self {
+        self.network_mode_config = input;
+        self
+    }
+    /// <p>The network mode configuration for the AgentCore Runtime.</p>
+    pub fn get_network_mode_config(&self) -> &::std::option::Option<crate::types::VpcConfig> {
+        &self.network_mode_config
     }
     /// Consumes the builder and constructs a [`NetworkConfiguration`](crate::types::NetworkConfiguration).
     /// This method will fail if any of the following fields are not set:
@@ -53,6 +74,7 @@ impl NetworkConfigurationBuilder {
                     "network_mode was not specified but it is required when building NetworkConfiguration",
                 )
             })?,
+            network_mode_config: self.network_mode_config,
         })
     }
 }

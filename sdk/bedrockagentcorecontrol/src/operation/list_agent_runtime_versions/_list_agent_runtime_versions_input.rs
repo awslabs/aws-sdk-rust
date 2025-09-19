@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAgentRuntimeVersionsInput {
-    /// <p>The unique identifier of the agent runtime to list versions for.</p>
+    /// <p>The unique identifier of the AgentCore Runtime to list versions for.</p>
     pub agent_runtime_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return in the response.</p>
     pub max_results: ::std::option::Option<i32>,
@@ -11,7 +11,7 @@ pub struct ListAgentRuntimeVersionsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListAgentRuntimeVersionsInput {
-    /// <p>The unique identifier of the agent runtime to list versions for.</p>
+    /// <p>The unique identifier of the AgentCore Runtime to list versions for.</p>
     pub fn agent_runtime_id(&self) -> ::std::option::Option<&str> {
         self.agent_runtime_id.as_deref()
     }
@@ -40,18 +40,18 @@ pub struct ListAgentRuntimeVersionsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListAgentRuntimeVersionsInputBuilder {
-    /// <p>The unique identifier of the agent runtime to list versions for.</p>
+    /// <p>The unique identifier of the AgentCore Runtime to list versions for.</p>
     /// This field is required.
     pub fn agent_runtime_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.agent_runtime_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the agent runtime to list versions for.</p>
+    /// <p>The unique identifier of the AgentCore Runtime to list versions for.</p>
     pub fn set_agent_runtime_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.agent_runtime_id = input;
         self
     }
-    /// <p>The unique identifier of the agent runtime to list versions for.</p>
+    /// <p>The unique identifier of the AgentCore Runtime to list versions for.</p>
     pub fn get_agent_runtime_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.agent_runtime_id
     }

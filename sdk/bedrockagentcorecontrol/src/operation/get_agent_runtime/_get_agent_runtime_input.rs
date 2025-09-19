@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAgentRuntimeInput {
-    /// <p>The unique identifier of the agent runtime to retrieve.</p>
+    /// <p>The unique identifier of the AgentCore Runtime to retrieve.</p>
     pub agent_runtime_id: ::std::option::Option<::std::string::String>,
-    /// <p>The version of the agent runtime to retrieve.</p>
+    /// <p>The version of the AgentCore Runtime to retrieve.</p>
     pub agent_runtime_version: ::std::option::Option<::std::string::String>,
 }
 impl GetAgentRuntimeInput {
-    /// <p>The unique identifier of the agent runtime to retrieve.</p>
+    /// <p>The unique identifier of the AgentCore Runtime to retrieve.</p>
     pub fn agent_runtime_id(&self) -> ::std::option::Option<&str> {
         self.agent_runtime_id.as_deref()
     }
-    /// <p>The version of the agent runtime to retrieve.</p>
+    /// <p>The version of the AgentCore Runtime to retrieve.</p>
     pub fn agent_runtime_version(&self) -> ::std::option::Option<&str> {
         self.agent_runtime_version.as_deref()
     }
@@ -33,32 +33,32 @@ pub struct GetAgentRuntimeInputBuilder {
     pub(crate) agent_runtime_version: ::std::option::Option<::std::string::String>,
 }
 impl GetAgentRuntimeInputBuilder {
-    /// <p>The unique identifier of the agent runtime to retrieve.</p>
+    /// <p>The unique identifier of the AgentCore Runtime to retrieve.</p>
     /// This field is required.
     pub fn agent_runtime_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.agent_runtime_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the agent runtime to retrieve.</p>
+    /// <p>The unique identifier of the AgentCore Runtime to retrieve.</p>
     pub fn set_agent_runtime_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.agent_runtime_id = input;
         self
     }
-    /// <p>The unique identifier of the agent runtime to retrieve.</p>
+    /// <p>The unique identifier of the AgentCore Runtime to retrieve.</p>
     pub fn get_agent_runtime_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.agent_runtime_id
     }
-    /// <p>The version of the agent runtime to retrieve.</p>
+    /// <p>The version of the AgentCore Runtime to retrieve.</p>
     pub fn agent_runtime_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.agent_runtime_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The version of the agent runtime to retrieve.</p>
+    /// <p>The version of the AgentCore Runtime to retrieve.</p>
     pub fn set_agent_runtime_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.agent_runtime_version = input;
         self
     }
-    /// <p>The version of the agent runtime to retrieve.</p>
+    /// <p>The version of the AgentCore Runtime to retrieve.</p>
     pub fn get_agent_runtime_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.agent_runtime_version
     }

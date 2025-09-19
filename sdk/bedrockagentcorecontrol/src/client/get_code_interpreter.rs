@@ -12,6 +12,7 @@ impl super::Client {
     ///   - [`execution_role_arn(Option<String>)`](crate::operation::get_code_interpreter::GetCodeInterpreterOutput::execution_role_arn): <p>The IAM role ARN that provides permissions for the code interpreter.</p>
     ///   - [`network_configuration(Option<CodeInterpreterNetworkConfiguration>)`](crate::operation::get_code_interpreter::GetCodeInterpreterOutput::network_configuration): <p>The network configuration for a code interpreter. This structure defines how the code interpreter connects to the network.</p>
     ///   - [`status(CodeInterpreterStatus)`](crate::operation::get_code_interpreter::GetCodeInterpreterOutput::status): <p>The current status of the code interpreter.</p>
+    ///   - [`failure_reason(Option<String>)`](crate::operation::get_code_interpreter::GetCodeInterpreterOutput::failure_reason): <p>The reason for failure if the code interpreter is in a failed state.</p>
     ///   - [`created_at(DateTime)`](crate::operation::get_code_interpreter::GetCodeInterpreterOutput::created_at): <p>The timestamp when the code interpreter was created.</p>
     ///   - [`last_updated_at(DateTime)`](crate::operation::get_code_interpreter::GetCodeInterpreterOutput::last_updated_at): <p>The timestamp when the code interpreter was last updated.</p>
     /// - On failure, responds with [`SdkError<GetCodeInterpreterError>`](crate::operation::get_code_interpreter::GetCodeInterpreterError)

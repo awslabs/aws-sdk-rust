@@ -6,11 +6,17 @@
 pub struct BrowserNetworkConfiguration {
     /// <p>The network mode for the browser. This field specifies how the browser connects to the network.</p>
     pub network_mode: crate::types::BrowserNetworkMode,
+    /// <p>VpcConfig for the Agent.</p>
+    pub vpc_config: ::std::option::Option<crate::types::VpcConfig>,
 }
 impl BrowserNetworkConfiguration {
     /// <p>The network mode for the browser. This field specifies how the browser connects to the network.</p>
     pub fn network_mode(&self) -> &crate::types::BrowserNetworkMode {
         &self.network_mode
+    }
+    /// <p>VpcConfig for the Agent.</p>
+    pub fn vpc_config(&self) -> ::std::option::Option<&crate::types::VpcConfig> {
+        self.vpc_config.as_ref()
     }
 }
 impl BrowserNetworkConfiguration {
@@ -25,6 +31,7 @@ impl BrowserNetworkConfiguration {
 #[non_exhaustive]
 pub struct BrowserNetworkConfigurationBuilder {
     pub(crate) network_mode: ::std::option::Option<crate::types::BrowserNetworkMode>,
+    pub(crate) vpc_config: ::std::option::Option<crate::types::VpcConfig>,
 }
 impl BrowserNetworkConfigurationBuilder {
     /// <p>The network mode for the browser. This field specifies how the browser connects to the network.</p>
@@ -42,6 +49,20 @@ impl BrowserNetworkConfigurationBuilder {
     pub fn get_network_mode(&self) -> &::std::option::Option<crate::types::BrowserNetworkMode> {
         &self.network_mode
     }
+    /// <p>VpcConfig for the Agent.</p>
+    pub fn vpc_config(mut self, input: crate::types::VpcConfig) -> Self {
+        self.vpc_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>VpcConfig for the Agent.</p>
+    pub fn set_vpc_config(mut self, input: ::std::option::Option<crate::types::VpcConfig>) -> Self {
+        self.vpc_config = input;
+        self
+    }
+    /// <p>VpcConfig for the Agent.</p>
+    pub fn get_vpc_config(&self) -> &::std::option::Option<crate::types::VpcConfig> {
+        &self.vpc_config
+    }
     /// Consumes the builder and constructs a [`BrowserNetworkConfiguration`](crate::types::BrowserNetworkConfiguration).
     pub fn build(self) -> crate::types::BrowserNetworkConfiguration {
         crate::types::BrowserNetworkConfiguration {
@@ -50,6 +71,7 @@ impl BrowserNetworkConfigurationBuilder {
                     .parse::<crate::types::BrowserNetworkMode>()
                     .expect("static value validated to member"),
             ),
+            vpc_config: self.vpc_config,
         }
     }
 }

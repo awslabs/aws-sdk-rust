@@ -109,6 +109,8 @@ pub use crate::types::_gateway_summary::GatewaySummaryBuilder;
 
 pub use crate::types::_code_interpreter_network_configuration::CodeInterpreterNetworkConfigurationBuilder;
 
+pub use crate::types::_vpc_config::VpcConfigBuilder;
+
 pub use crate::types::_code_interpreter_summary::CodeInterpreterSummaryBuilder;
 
 pub use crate::types::_recording_config::RecordingConfigBuilder;
@@ -121,7 +123,7 @@ pub use crate::types::_browser_summary::BrowserSummaryBuilder;
 
 pub use crate::types::_api_key_credential_provider_item::ApiKeyCredentialProviderItemBuilder;
 
-pub use crate::types::_agent::AgentBuilder;
+pub use crate::types::_agent_runtime::AgentRuntimeBuilder;
 
 pub use crate::types::_protocol_configuration::ProtocolConfigurationBuilder;
 
@@ -129,6 +131,6 @@ pub use crate::types::_network_configuration::NetworkConfigurationBuilder;
 
 pub use crate::types::_container_configuration::ContainerConfigurationBuilder;
 
-pub use crate::types::_agent_endpoint::AgentEndpointBuilder;
+pub use crate::types::_agent_runtime_endpoint::AgentRuntimeEndpointBuilder;
 
 pub use crate::types::_kms_configuration::KmsConfigurationBuilder;

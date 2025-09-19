@@ -138,7 +138,7 @@ pub(crate) fn de_list_agent_runtime_versions(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "agentRuntimes" => {
-                    builder = builder.set_agent_runtimes(crate::protocol_serde::shape_agents::de_agents(tokens)?);
+                    builder = builder.set_agent_runtimes(crate::protocol_serde::shape_agent_runtimes::de_agent_runtimes(tokens)?);
                 }
                 "nextToken" => {
                     builder = builder.set_next_token(

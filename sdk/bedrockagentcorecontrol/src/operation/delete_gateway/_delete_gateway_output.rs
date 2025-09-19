@@ -3,25 +3,25 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteGatewayOutput {
-    /// <p>The unique identifier of the deleted Gateway.</p>
+    /// <p>The unique identifier of the deleted gateway.</p>
     pub gateway_id: ::std::string::String,
-    /// <p>The current status of the Gateway deletion.</p>
+    /// <p>The current status of the gateway deletion.</p>
     pub status: crate::types::GatewayStatus,
-    /// <p>The reasons for the current status of the Gateway deletion.</p>
+    /// <p>The reasons for the current status of the gateway deletion.</p>
     pub status_reasons: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl DeleteGatewayOutput {
-    /// <p>The unique identifier of the deleted Gateway.</p>
+    /// <p>The unique identifier of the deleted gateway.</p>
     pub fn gateway_id(&self) -> &str {
         use std::ops::Deref;
         self.gateway_id.deref()
     }
-    /// <p>The current status of the Gateway deletion.</p>
+    /// <p>The current status of the gateway deletion.</p>
     pub fn status(&self) -> &crate::types::GatewayStatus {
         &self.status
     }
-    /// <p>The reasons for the current status of the Gateway deletion.</p>
+    /// <p>The reasons for the current status of the gateway deletion.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.status_reasons.is_none()`.
     pub fn status_reasons(&self) -> &[::std::string::String] {
@@ -50,33 +50,33 @@ pub struct DeleteGatewayOutputBuilder {
     _request_id: Option<String>,
 }
 impl DeleteGatewayOutputBuilder {
-    /// <p>The unique identifier of the deleted Gateway.</p>
+    /// <p>The unique identifier of the deleted gateway.</p>
     /// This field is required.
     pub fn gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the deleted Gateway.</p>
+    /// <p>The unique identifier of the deleted gateway.</p>
     pub fn set_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.gateway_id = input;
         self
     }
-    /// <p>The unique identifier of the deleted Gateway.</p>
+    /// <p>The unique identifier of the deleted gateway.</p>
     pub fn get_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.gateway_id
     }
-    /// <p>The current status of the Gateway deletion.</p>
+    /// <p>The current status of the gateway deletion.</p>
     /// This field is required.
     pub fn status(mut self, input: crate::types::GatewayStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The current status of the Gateway deletion.</p>
+    /// <p>The current status of the gateway deletion.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::GatewayStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The current status of the Gateway deletion.</p>
+    /// <p>The current status of the gateway deletion.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::GatewayStatus> {
         &self.status
     }
@@ -84,19 +84,19 @@ impl DeleteGatewayOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_status_reasons`](Self::set_status_reasons).
     ///
-    /// <p>The reasons for the current status of the Gateway deletion.</p>
+    /// <p>The reasons for the current status of the gateway deletion.</p>
     pub fn status_reasons(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.status_reasons.unwrap_or_default();
         v.push(input.into());
         self.status_reasons = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The reasons for the current status of the Gateway deletion.</p>
+    /// <p>The reasons for the current status of the gateway deletion.</p>
     pub fn set_status_reasons(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.status_reasons = input;
         self
     }
-    /// <p>The reasons for the current status of the Gateway deletion.</p>
+    /// <p>The reasons for the current status of the gateway deletion.</p>
     pub fn get_status_reasons(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.status_reasons
     }

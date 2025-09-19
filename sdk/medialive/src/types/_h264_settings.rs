@@ -90,6 +90,8 @@ pub struct H264Settings {
     pub timecode_burnin_settings: ::std::option::Option<crate::types::TimecodeBurninSettings>,
     /// Sets the minimum QP. If you aren't familiar with quantization adjustment, leave the field empty. MediaLive will apply an appropriate value.
     pub min_qp: ::std::option::Option<i32>,
+    /// Used for QVBR rate control mode only. Optional. Enter a minimum bitrate if you want to keep the output bitrate about a threshold, in order to prevent the downstream system from de-allocating network bandwidth for this output.
+    pub min_bitrate: ::std::option::Option<i32>,
 }
 impl H264Settings {
     /// Enables or disables adaptive quantization (AQ), which is a technique MediaLive can apply to video on a frame-by-frame basis to produce more compression without losing quality. There are three types of adaptive quantization: spatial, temporal, and flicker. We recommend that you set the field to Auto. For more information about all the options, see the topic about video adaptive quantization in the MediaLive user guide.
@@ -264,6 +266,10 @@ impl H264Settings {
     pub fn min_qp(&self) -> ::std::option::Option<i32> {
         self.min_qp
     }
+    /// Used for QVBR rate control mode only. Optional. Enter a minimum bitrate if you want to keep the output bitrate about a threshold, in order to prevent the downstream system from de-allocating network bandwidth for this output.
+    pub fn min_bitrate(&self) -> ::std::option::Option<i32> {
+        self.min_bitrate
+    }
 }
 impl H264Settings {
     /// Creates a new builder-style object to manufacture [`H264Settings`](crate::types::H264Settings).
@@ -319,6 +325,7 @@ pub struct H264SettingsBuilder {
     pub(crate) timecode_insertion: ::std::option::Option<crate::types::H264TimecodeInsertionBehavior>,
     pub(crate) timecode_burnin_settings: ::std::option::Option<crate::types::TimecodeBurninSettings>,
     pub(crate) min_qp: ::std::option::Option<i32>,
+    pub(crate) min_bitrate: ::std::option::Option<i32>,
 }
 impl H264SettingsBuilder {
     /// Enables or disables adaptive quantization (AQ), which is a technique MediaLive can apply to video on a frame-by-frame basis to produce more compression without losing quality. There are three types of adaptive quantization: spatial, temporal, and flicker. We recommend that you set the field to Auto. For more information about all the options, see the topic about video adaptive quantization in the MediaLive user guide.
@@ -923,6 +930,20 @@ impl H264SettingsBuilder {
     pub fn get_min_qp(&self) -> &::std::option::Option<i32> {
         &self.min_qp
     }
+    /// Used for QVBR rate control mode only. Optional. Enter a minimum bitrate if you want to keep the output bitrate about a threshold, in order to prevent the downstream system from de-allocating network bandwidth for this output.
+    pub fn min_bitrate(mut self, input: i32) -> Self {
+        self.min_bitrate = ::std::option::Option::Some(input);
+        self
+    }
+    /// Used for QVBR rate control mode only. Optional. Enter a minimum bitrate if you want to keep the output bitrate about a threshold, in order to prevent the downstream system from de-allocating network bandwidth for this output.
+    pub fn set_min_bitrate(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.min_bitrate = input;
+        self
+    }
+    /// Used for QVBR rate control mode only. Optional. Enter a minimum bitrate if you want to keep the output bitrate about a threshold, in order to prevent the downstream system from de-allocating network bandwidth for this output.
+    pub fn get_min_bitrate(&self) -> &::std::option::Option<i32> {
+        &self.min_bitrate
+    }
     /// Consumes the builder and constructs a [`H264Settings`](crate::types::H264Settings).
     pub fn build(self) -> crate::types::H264Settings {
         crate::types::H264Settings {
@@ -969,6 +990,7 @@ impl H264SettingsBuilder {
             timecode_insertion: self.timecode_insertion,
             timecode_burnin_settings: self.timecode_burnin_settings,
             min_qp: self.min_qp,
+            min_bitrate: self.min_bitrate,
         }
     }
 }

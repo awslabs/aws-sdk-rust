@@ -7,11 +7,11 @@ pub struct UpdateMemoryInput {
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the memory to update.</p>
     pub memory_id: ::std::option::Option<::std::string::String>,
-    /// <p>The updated description of the memory.</p>
+    /// <p>The updated description of the AgentCore Memory resource.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The number of days after which memory events will expire, between 7 and 365 days.</p>
     pub event_expiry_duration: ::std::option::Option<i32>,
-    /// <p>The ARN of the IAM role that provides permissions for the memory.</p>
+    /// <p>The ARN of the IAM role that provides permissions for the AgentCore Memory resource.</p>
     pub memory_execution_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The memory strategies to add, modify, or delete.</p>
     pub memory_strategies: ::std::option::Option<crate::types::ModifyMemoryStrategies>,
@@ -25,7 +25,7 @@ impl UpdateMemoryInput {
     pub fn memory_id(&self) -> ::std::option::Option<&str> {
         self.memory_id.as_deref()
     }
-    /// <p>The updated description of the memory.</p>
+    /// <p>The updated description of the AgentCore Memory resource.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -33,7 +33,7 @@ impl UpdateMemoryInput {
     pub fn event_expiry_duration(&self) -> ::std::option::Option<i32> {
         self.event_expiry_duration
     }
-    /// <p>The ARN of the IAM role that provides permissions for the memory.</p>
+    /// <p>The ARN of the IAM role that provides permissions for the AgentCore Memory resource.</p>
     pub fn memory_execution_role_arn(&self) -> ::std::option::Option<&str> {
         self.memory_execution_role_arn.as_deref()
     }
@@ -102,17 +102,17 @@ impl UpdateMemoryInputBuilder {
     pub fn get_memory_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.memory_id
     }
-    /// <p>The updated description of the memory.</p>
+    /// <p>The updated description of the AgentCore Memory resource.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The updated description of the memory.</p>
+    /// <p>The updated description of the AgentCore Memory resource.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p>The updated description of the memory.</p>
+    /// <p>The updated description of the AgentCore Memory resource.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
@@ -130,17 +130,17 @@ impl UpdateMemoryInputBuilder {
     pub fn get_event_expiry_duration(&self) -> &::std::option::Option<i32> {
         &self.event_expiry_duration
     }
-    /// <p>The ARN of the IAM role that provides permissions for the memory.</p>
+    /// <p>The ARN of the IAM role that provides permissions for the AgentCore Memory resource.</p>
     pub fn memory_execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.memory_execution_role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the IAM role that provides permissions for the memory.</p>
+    /// <p>The ARN of the IAM role that provides permissions for the AgentCore Memory resource.</p>
     pub fn set_memory_execution_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.memory_execution_role_arn = input;
         self
     }
-    /// <p>The ARN of the IAM role that provides permissions for the memory.</p>
+    /// <p>The ARN of the IAM role that provides permissions for the AgentCore Memory resource.</p>
     pub fn get_memory_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.memory_execution_role_arn
     }

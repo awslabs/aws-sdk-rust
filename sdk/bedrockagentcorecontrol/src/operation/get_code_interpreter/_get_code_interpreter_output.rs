@@ -17,6 +17,8 @@ pub struct GetCodeInterpreterOutput {
     pub network_configuration: ::std::option::Option<crate::types::CodeInterpreterNetworkConfiguration>,
     /// <p>The current status of the code interpreter.</p>
     pub status: crate::types::CodeInterpreterStatus,
+    /// <p>The reason for failure if the code interpreter is in a failed state.</p>
+    pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when the code interpreter was created.</p>
     pub created_at: ::aws_smithy_types::DateTime,
     /// <p>The timestamp when the code interpreter was last updated.</p>
@@ -55,6 +57,10 @@ impl GetCodeInterpreterOutput {
     pub fn status(&self) -> &crate::types::CodeInterpreterStatus {
         &self.status
     }
+    /// <p>The reason for failure if the code interpreter is in a failed state.</p>
+    pub fn failure_reason(&self) -> ::std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
     /// <p>The timestamp when the code interpreter was created.</p>
     pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
         &self.created_at
@@ -74,6 +80,7 @@ impl ::std::fmt::Debug for GetCodeInterpreterOutput {
         formatter.field("execution_role_arn", &self.execution_role_arn);
         formatter.field("network_configuration", &self.network_configuration);
         formatter.field("status", &self.status);
+        formatter.field("failure_reason", &self.failure_reason);
         formatter.field("created_at", &self.created_at);
         formatter.field("last_updated_at", &self.last_updated_at);
         formatter.field("_request_id", &self._request_id);
@@ -103,6 +110,7 @@ pub struct GetCodeInterpreterOutputBuilder {
     pub(crate) execution_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) network_configuration: ::std::option::Option<crate::types::CodeInterpreterNetworkConfiguration>,
     pub(crate) status: ::std::option::Option<crate::types::CodeInterpreterStatus>,
+    pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
@@ -211,6 +219,20 @@ impl GetCodeInterpreterOutputBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::CodeInterpreterStatus> {
         &self.status
     }
+    /// <p>The reason for failure if the code interpreter is in a failed state.</p>
+    pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.failure_reason = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The reason for failure if the code interpreter is in a failed state.</p>
+    pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.failure_reason = input;
+        self
+    }
+    /// <p>The reason for failure if the code interpreter is in a failed state.</p>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_reason
+    }
     /// <p>The timestamp when the code interpreter was created.</p>
     /// This field is required.
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -290,6 +312,7 @@ impl GetCodeInterpreterOutputBuilder {
                     "status was not specified but it is required when building GetCodeInterpreterOutput",
                 )
             })?,
+            failure_reason: self.failure_reason,
             created_at: self.created_at.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",
@@ -316,6 +339,7 @@ impl ::std::fmt::Debug for GetCodeInterpreterOutputBuilder {
         formatter.field("execution_role_arn", &self.execution_role_arn);
         formatter.field("network_configuration", &self.network_configuration);
         formatter.field("status", &self.status);
+        formatter.field("failure_reason", &self.failure_reason);
         formatter.field("created_at", &self.created_at);
         formatter.field("last_updated_at", &self.last_updated_at);
         formatter.field("_request_id", &self._request_id);

@@ -274,9 +274,15 @@ mod list_memories;
 
 mod list_oauth2_credential_providers;
 
+mod list_tags_for_resource;
+
 mod list_workload_identities;
 
 mod set_token_vault_cmk;
+
+mod tag_resource;
+
+mod untag_resource;
 
 mod update_agent_runtime;
 

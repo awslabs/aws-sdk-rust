@@ -3,63 +3,63 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetGatewayTargetOutput {
-    /// <p>The Amazon Resource Name (ARN) of the Gateway.</p>
+    /// <p>The Amazon Resource Name (ARN) of the gateway.</p>
     pub gateway_arn: ::std::string::String,
-    /// <p>The unique identifier of the Gateway Target.</p>
+    /// <p>The unique identifier of the gateway target.</p>
     pub target_id: ::std::string::String,
-    /// <p>The timestamp when the Gateway Target was created.</p>
+    /// <p>The timestamp when the gateway target was created.</p>
     pub created_at: ::aws_smithy_types::DateTime,
-    /// <p>The timestamp when the Gateway Target was last updated.</p>
+    /// <p>The timestamp when the gateway target was last updated.</p>
     pub updated_at: ::aws_smithy_types::DateTime,
-    /// <p>The current status of the Gateway Target.</p>
+    /// <p>The current status of the gateway target.</p>
     pub status: crate::types::TargetStatus,
-    /// <p>The reasons for the current status of the Gateway Target.</p>
+    /// <p>The reasons for the current status of the gateway target.</p>
     pub status_reasons: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The name of the Gateway Target.</p>
+    /// <p>The name of the gateway target.</p>
     pub name: ::std::string::String,
-    /// <p>The description of the Gateway Target.</p>
+    /// <p>The description of the gateway target.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The configuration for a gateway target. This structure defines how the gateway connects to and interacts with the target endpoint.</p>
     pub target_configuration: ::std::option::Option<crate::types::TargetConfiguration>,
-    /// <p>The credential provider configurations for the Gateway Target.</p>
+    /// <p>The credential provider configurations for the gateway target.</p>
     pub credential_provider_configurations: ::std::vec::Vec<crate::types::CredentialProviderConfiguration>,
     _request_id: Option<String>,
 }
 impl GetGatewayTargetOutput {
-    /// <p>The Amazon Resource Name (ARN) of the Gateway.</p>
+    /// <p>The Amazon Resource Name (ARN) of the gateway.</p>
     pub fn gateway_arn(&self) -> &str {
         use std::ops::Deref;
         self.gateway_arn.deref()
     }
-    /// <p>The unique identifier of the Gateway Target.</p>
+    /// <p>The unique identifier of the gateway target.</p>
     pub fn target_id(&self) -> &str {
         use std::ops::Deref;
         self.target_id.deref()
     }
-    /// <p>The timestamp when the Gateway Target was created.</p>
+    /// <p>The timestamp when the gateway target was created.</p>
     pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
         &self.created_at
     }
-    /// <p>The timestamp when the Gateway Target was last updated.</p>
+    /// <p>The timestamp when the gateway target was last updated.</p>
     pub fn updated_at(&self) -> &::aws_smithy_types::DateTime {
         &self.updated_at
     }
-    /// <p>The current status of the Gateway Target.</p>
+    /// <p>The current status of the gateway target.</p>
     pub fn status(&self) -> &crate::types::TargetStatus {
         &self.status
     }
-    /// <p>The reasons for the current status of the Gateway Target.</p>
+    /// <p>The reasons for the current status of the gateway target.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.status_reasons.is_none()`.
     pub fn status_reasons(&self) -> &[::std::string::String] {
         self.status_reasons.as_deref().unwrap_or_default()
     }
-    /// <p>The name of the Gateway Target.</p>
+    /// <p>The name of the gateway target.</p>
     pub fn name(&self) -> &str {
         use std::ops::Deref;
         self.name.deref()
     }
-    /// <p>The description of the Gateway Target.</p>
+    /// <p>The description of the gateway target.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -67,7 +67,7 @@ impl GetGatewayTargetOutput {
     pub fn target_configuration(&self) -> ::std::option::Option<&crate::types::TargetConfiguration> {
         self.target_configuration.as_ref()
     }
-    /// <p>The credential provider configurations for the Gateway Target.</p>
+    /// <p>The credential provider configurations for the gateway target.</p>
     pub fn credential_provider_configurations(&self) -> &[crate::types::CredentialProviderConfiguration] {
         use std::ops::Deref;
         self.credential_provider_configurations.deref()
@@ -119,78 +119,78 @@ pub struct GetGatewayTargetOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetGatewayTargetOutputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the Gateway.</p>
+    /// <p>The Amazon Resource Name (ARN) of the gateway.</p>
     /// This field is required.
     pub fn gateway_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Gateway.</p>
+    /// <p>The Amazon Resource Name (ARN) of the gateway.</p>
     pub fn set_gateway_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.gateway_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Gateway.</p>
+    /// <p>The Amazon Resource Name (ARN) of the gateway.</p>
     pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.gateway_arn
     }
-    /// <p>The unique identifier of the Gateway Target.</p>
+    /// <p>The unique identifier of the gateway target.</p>
     /// This field is required.
     pub fn target_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the Gateway Target.</p>
+    /// <p>The unique identifier of the gateway target.</p>
     pub fn set_target_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_id = input;
         self
     }
-    /// <p>The unique identifier of the Gateway Target.</p>
+    /// <p>The unique identifier of the gateway target.</p>
     pub fn get_target_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_id
     }
-    /// <p>The timestamp when the Gateway Target was created.</p>
+    /// <p>The timestamp when the gateway target was created.</p>
     /// This field is required.
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The timestamp when the Gateway Target was created.</p>
+    /// <p>The timestamp when the gateway target was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
-    /// <p>The timestamp when the Gateway Target was created.</p>
+    /// <p>The timestamp when the gateway target was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_at
     }
-    /// <p>The timestamp when the Gateway Target was last updated.</p>
+    /// <p>The timestamp when the gateway target was last updated.</p>
     /// This field is required.
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The timestamp when the Gateway Target was last updated.</p>
+    /// <p>The timestamp when the gateway target was last updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }
-    /// <p>The timestamp when the Gateway Target was last updated.</p>
+    /// <p>The timestamp when the gateway target was last updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_at
     }
-    /// <p>The current status of the Gateway Target.</p>
+    /// <p>The current status of the gateway target.</p>
     /// This field is required.
     pub fn status(mut self, input: crate::types::TargetStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The current status of the Gateway Target.</p>
+    /// <p>The current status of the gateway target.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::TargetStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The current status of the Gateway Target.</p>
+    /// <p>The current status of the gateway target.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::TargetStatus> {
         &self.status
     }
@@ -198,48 +198,48 @@ impl GetGatewayTargetOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_status_reasons`](Self::set_status_reasons).
     ///
-    /// <p>The reasons for the current status of the Gateway Target.</p>
+    /// <p>The reasons for the current status of the gateway target.</p>
     pub fn status_reasons(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.status_reasons.unwrap_or_default();
         v.push(input.into());
         self.status_reasons = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The reasons for the current status of the Gateway Target.</p>
+    /// <p>The reasons for the current status of the gateway target.</p>
     pub fn set_status_reasons(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.status_reasons = input;
         self
     }
-    /// <p>The reasons for the current status of the Gateway Target.</p>
+    /// <p>The reasons for the current status of the gateway target.</p>
     pub fn get_status_reasons(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.status_reasons
     }
-    /// <p>The name of the Gateway Target.</p>
+    /// <p>The name of the gateway target.</p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the Gateway Target.</p>
+    /// <p>The name of the gateway target.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of the Gateway Target.</p>
+    /// <p>The name of the gateway target.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The description of the Gateway Target.</p>
+    /// <p>The description of the gateway target.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The description of the Gateway Target.</p>
+    /// <p>The description of the gateway target.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p>The description of the Gateway Target.</p>
+    /// <p>The description of the gateway target.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
@@ -262,14 +262,14 @@ impl GetGatewayTargetOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_credential_provider_configurations`](Self::set_credential_provider_configurations).
     ///
-    /// <p>The credential provider configurations for the Gateway Target.</p>
+    /// <p>The credential provider configurations for the gateway target.</p>
     pub fn credential_provider_configurations(mut self, input: crate::types::CredentialProviderConfiguration) -> Self {
         let mut v = self.credential_provider_configurations.unwrap_or_default();
         v.push(input);
         self.credential_provider_configurations = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The credential provider configurations for the Gateway Target.</p>
+    /// <p>The credential provider configurations for the gateway target.</p>
     pub fn set_credential_provider_configurations(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::CredentialProviderConfiguration>>,
@@ -277,7 +277,7 @@ impl GetGatewayTargetOutputBuilder {
         self.credential_provider_configurations = input;
         self
     }
-    /// <p>The credential provider configurations for the Gateway Target.</p>
+    /// <p>The credential provider configurations for the gateway target.</p>
     pub fn get_credential_provider_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CredentialProviderConfiguration>> {
         &self.credential_provider_configurations
     }

@@ -14,6 +14,7 @@
 /// match codeinterpreternetworkmode {
 ///     CodeInterpreterNetworkMode::Public => { /* ... */ },
 ///     CodeInterpreterNetworkMode::Sandbox => { /* ... */ },
+///     CodeInterpreterNetworkMode::Vpc => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -46,6 +47,8 @@ pub enum CodeInterpreterNetworkMode {
     Public,
     #[allow(missing_docs)] // documentation missing in model
     Sandbox,
+    #[allow(missing_docs)] // documentation missing in model
+    Vpc,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -55,6 +58,7 @@ impl ::std::convert::From<&str> for CodeInterpreterNetworkMode {
         match s {
             "PUBLIC" => CodeInterpreterNetworkMode::Public,
             "SANDBOX" => CodeInterpreterNetworkMode::Sandbox,
+            "VPC" => CodeInterpreterNetworkMode::Vpc,
             other => CodeInterpreterNetworkMode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -72,12 +76,13 @@ impl CodeInterpreterNetworkMode {
         match self {
             CodeInterpreterNetworkMode::Public => "PUBLIC",
             CodeInterpreterNetworkMode::Sandbox => "SANDBOX",
+            CodeInterpreterNetworkMode::Vpc => "VPC",
             CodeInterpreterNetworkMode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["PUBLIC", "SANDBOX"]
+        &["PUBLIC", "SANDBOX", "VPC"]
     }
 }
 impl ::std::convert::AsRef<str> for CodeInterpreterNetworkMode {
@@ -102,6 +107,7 @@ impl ::std::fmt::Display for CodeInterpreterNetworkMode {
         match self {
             CodeInterpreterNetworkMode::Public => write!(f, "PUBLIC"),
             CodeInterpreterNetworkMode::Sandbox => write!(f, "SANDBOX"),
+            CodeInterpreterNetworkMode::Vpc => write!(f, "VPC"),
             CodeInterpreterNetworkMode::Unknown(value) => write!(f, "{}", value),
         }
     }

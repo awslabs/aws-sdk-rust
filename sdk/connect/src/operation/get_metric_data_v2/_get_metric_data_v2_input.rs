@@ -166,6 +166,7 @@ pub struct GetMetricDataV2Input {
     /// <dd>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype, Q in Connect</p>
+    /// <p>Valid metric filter key: <code>INITIATION_METHOD</code></p>
     /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-queue-abandon-time">Average queue abandon time</a></p>
     /// </dd>
     /// <dt>
@@ -454,9 +455,18 @@ pub struct GetMetricDataV2Input {
     /// <dd>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Feature, contact/segmentAttributes/connect:Subtype, Q in Connect</p>
-    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-queue-answer-time">Average queue answer time</a></p><note>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-queue-answer-time">Average queue answer time</a></p>
+    /// <p>Valid metric level filters: <code>INITIATION_METHOD</code>, <code>FEATURE</code>, <code>DISCONNECT_REASON</code></p><note>
     /// <p>Feature is a valid filter but not a valid grouping.</p>
     /// </note>
+    /// </dd>
+    /// <dt>
+    /// AVG_QUEUE_ANSWER_TIME_CUSTOMER_FIRST_CALLBACK
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Seconds</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Feature, contact/segmentAttributes/connect:Subtype, Q in Connect, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-queue-answer-time-customer-first-callback">Avg. queue answer time - customer first callback</a></p>
     /// </dd>
     /// <dt>
     /// AVG_RESPONSE_TIME_AGENT
@@ -517,6 +527,14 @@ pub struct GetMetricDataV2Input {
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Campaign</p>
     /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-wait-time-after-customer-connection">Average wait time after customer connection</a></p>
+    /// </dd>
+    /// <dt>
+    /// AVG_WAIT_TIME_AFTER_CUSTOMER_FIRST_CALLBACK_CONNECTION
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Seconds</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Feature, contact/segmentAttributes/connect:Subtype, Q in Connect, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-wait-time-after-customer-connection-customer-first-callback">Avg. wait time after customer connection - customer first callback</a></p>
     /// </dd>
     /// <dt>
     /// AVG_WEIGHTED_EVALUATION_SCORE
@@ -627,7 +645,7 @@ pub struct GetMetricDataV2Input {
     /// <p>Unit: Count</p>
     /// <p>Valid metric filter key: <code>INITIATION_METHOD</code>, <code>DISCONNECT_REASON</code></p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype, RoutingStepExpression, Q in Connect</p>
-    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#api-contacts-handled">API contacts handled</a></p><note>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-handled">Contacts handled</a></p><note>
     /// <p>Feature is a valid filter but not a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -1019,7 +1037,7 @@ pub struct GetMetricDataV2Input {
     /// </dt>
     /// <dd>
     /// <p>Unit: Seconds</p>
-    /// <p>Valid metric filter key: <code>INITIATION_METHOD</code>. This metric only supports the following filter keys as <code>INITIATION_METHOD</code>: <code>INBOUND</code> | <code>OUTBOUND</code> | <code>CALLBACK</code> | <code>API</code></p>
+    /// <p>Valid metric filter key: <code>INITIATION_METHOD</code>. This metric only supports the following filter keys as <code>INITIATION_METHOD</code>: <code>INBOUND</code> | <code>OUTBOUND</code> | <code>CALLBACK</code> | <code>API</code> | <code>CALLBACK_CUSTOMER_FIRST_DIALED</code></p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
     /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#agent-api-connecting-time">Agent API connecting time</a></p><note>
     /// <p>The <code>Negate</code> key in metric-level filters is not applicable for this metric.</p>
@@ -1033,7 +1051,7 @@ pub struct GetMetricDataV2Input {
     /// <p>Metric filter:</p>
     /// <ul>
     /// <li>
-    /// <p>Valid values: <code>API</code>| <code>Incoming</code> | <code>Outbound</code> | <code>Transfer</code> | <code>Callback</code> | <code>Queue_Transfer</code>| <code>Disconnect</code></p></li>
+    /// <p>Valid values: <code>API</code>| <code>INCOMING</code> | <code>OUTBOUND</code> | <code>TRANSFER</code> | <code>CALLBACK</code> | <code>QUEUE_TRANSFER</code>| <code>Disconnect</code> | <code>CALLBACK_CUSTOMER_FIRST_DIALED</code></p></li>
     /// </ul>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype, RoutingStepExpression, Q in Connect</p>
     /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-abandoned">Contact abandoned</a></p>
@@ -1340,6 +1358,7 @@ impl GetMetricDataV2Input {
     /// <dd>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype, Q in Connect</p>
+    /// <p>Valid metric filter key: <code>INITIATION_METHOD</code></p>
     /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-queue-abandon-time">Average queue abandon time</a></p>
     /// </dd>
     /// <dt>
@@ -1628,9 +1647,18 @@ impl GetMetricDataV2Input {
     /// <dd>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Feature, contact/segmentAttributes/connect:Subtype, Q in Connect</p>
-    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-queue-answer-time">Average queue answer time</a></p><note>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-queue-answer-time">Average queue answer time</a></p>
+    /// <p>Valid metric level filters: <code>INITIATION_METHOD</code>, <code>FEATURE</code>, <code>DISCONNECT_REASON</code></p><note>
     /// <p>Feature is a valid filter but not a valid grouping.</p>
     /// </note>
+    /// </dd>
+    /// <dt>
+    /// AVG_QUEUE_ANSWER_TIME_CUSTOMER_FIRST_CALLBACK
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Seconds</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Feature, contact/segmentAttributes/connect:Subtype, Q in Connect, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-queue-answer-time-customer-first-callback">Avg. queue answer time - customer first callback</a></p>
     /// </dd>
     /// <dt>
     /// AVG_RESPONSE_TIME_AGENT
@@ -1691,6 +1719,14 @@ impl GetMetricDataV2Input {
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Campaign</p>
     /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-wait-time-after-customer-connection">Average wait time after customer connection</a></p>
+    /// </dd>
+    /// <dt>
+    /// AVG_WAIT_TIME_AFTER_CUSTOMER_FIRST_CALLBACK_CONNECTION
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Seconds</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Feature, contact/segmentAttributes/connect:Subtype, Q in Connect, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-wait-time-after-customer-connection-customer-first-callback">Avg. wait time after customer connection - customer first callback</a></p>
     /// </dd>
     /// <dt>
     /// AVG_WEIGHTED_EVALUATION_SCORE
@@ -1801,7 +1837,7 @@ impl GetMetricDataV2Input {
     /// <p>Unit: Count</p>
     /// <p>Valid metric filter key: <code>INITIATION_METHOD</code>, <code>DISCONNECT_REASON</code></p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype, RoutingStepExpression, Q in Connect</p>
-    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#api-contacts-handled">API contacts handled</a></p><note>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-handled">Contacts handled</a></p><note>
     /// <p>Feature is a valid filter but not a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -2193,7 +2229,7 @@ impl GetMetricDataV2Input {
     /// </dt>
     /// <dd>
     /// <p>Unit: Seconds</p>
-    /// <p>Valid metric filter key: <code>INITIATION_METHOD</code>. This metric only supports the following filter keys as <code>INITIATION_METHOD</code>: <code>INBOUND</code> | <code>OUTBOUND</code> | <code>CALLBACK</code> | <code>API</code></p>
+    /// <p>Valid metric filter key: <code>INITIATION_METHOD</code>. This metric only supports the following filter keys as <code>INITIATION_METHOD</code>: <code>INBOUND</code> | <code>OUTBOUND</code> | <code>CALLBACK</code> | <code>API</code> | <code>CALLBACK_CUSTOMER_FIRST_DIALED</code></p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
     /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#agent-api-connecting-time">Agent API connecting time</a></p><note>
     /// <p>The <code>Negate</code> key in metric-level filters is not applicable for this metric.</p>
@@ -2207,7 +2243,7 @@ impl GetMetricDataV2Input {
     /// <p>Metric filter:</p>
     /// <ul>
     /// <li>
-    /// <p>Valid values: <code>API</code>| <code>Incoming</code> | <code>Outbound</code> | <code>Transfer</code> | <code>Callback</code> | <code>Queue_Transfer</code>| <code>Disconnect</code></p></li>
+    /// <p>Valid values: <code>API</code>| <code>INCOMING</code> | <code>OUTBOUND</code> | <code>TRANSFER</code> | <code>CALLBACK</code> | <code>QUEUE_TRANSFER</code>| <code>Disconnect</code> | <code>CALLBACK_CUSTOMER_FIRST_DIALED</code></p></li>
     /// </ul>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype, RoutingStepExpression, Q in Connect</p>
     /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-abandoned">Contact abandoned</a></p>
@@ -2752,6 +2788,7 @@ impl GetMetricDataV2InputBuilder {
     /// <dd>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype, Q in Connect</p>
+    /// <p>Valid metric filter key: <code>INITIATION_METHOD</code></p>
     /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-queue-abandon-time">Average queue abandon time</a></p>
     /// </dd>
     /// <dt>
@@ -3040,9 +3077,18 @@ impl GetMetricDataV2InputBuilder {
     /// <dd>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Feature, contact/segmentAttributes/connect:Subtype, Q in Connect</p>
-    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-queue-answer-time">Average queue answer time</a></p><note>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-queue-answer-time">Average queue answer time</a></p>
+    /// <p>Valid metric level filters: <code>INITIATION_METHOD</code>, <code>FEATURE</code>, <code>DISCONNECT_REASON</code></p><note>
     /// <p>Feature is a valid filter but not a valid grouping.</p>
     /// </note>
+    /// </dd>
+    /// <dt>
+    /// AVG_QUEUE_ANSWER_TIME_CUSTOMER_FIRST_CALLBACK
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Seconds</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Feature, contact/segmentAttributes/connect:Subtype, Q in Connect, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-queue-answer-time-customer-first-callback">Avg. queue answer time - customer first callback</a></p>
     /// </dd>
     /// <dt>
     /// AVG_RESPONSE_TIME_AGENT
@@ -3103,6 +3149,14 @@ impl GetMetricDataV2InputBuilder {
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Campaign</p>
     /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-wait-time-after-customer-connection">Average wait time after customer connection</a></p>
+    /// </dd>
+    /// <dt>
+    /// AVG_WAIT_TIME_AFTER_CUSTOMER_FIRST_CALLBACK_CONNECTION
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Seconds</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Feature, contact/segmentAttributes/connect:Subtype, Q in Connect, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-wait-time-after-customer-connection-customer-first-callback">Avg. wait time after customer connection - customer first callback</a></p>
     /// </dd>
     /// <dt>
     /// AVG_WEIGHTED_EVALUATION_SCORE
@@ -3213,7 +3267,7 @@ impl GetMetricDataV2InputBuilder {
     /// <p>Unit: Count</p>
     /// <p>Valid metric filter key: <code>INITIATION_METHOD</code>, <code>DISCONNECT_REASON</code></p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype, RoutingStepExpression, Q in Connect</p>
-    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#api-contacts-handled">API contacts handled</a></p><note>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-handled">Contacts handled</a></p><note>
     /// <p>Feature is a valid filter but not a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -3605,7 +3659,7 @@ impl GetMetricDataV2InputBuilder {
     /// </dt>
     /// <dd>
     /// <p>Unit: Seconds</p>
-    /// <p>Valid metric filter key: <code>INITIATION_METHOD</code>. This metric only supports the following filter keys as <code>INITIATION_METHOD</code>: <code>INBOUND</code> | <code>OUTBOUND</code> | <code>CALLBACK</code> | <code>API</code></p>
+    /// <p>Valid metric filter key: <code>INITIATION_METHOD</code>. This metric only supports the following filter keys as <code>INITIATION_METHOD</code>: <code>INBOUND</code> | <code>OUTBOUND</code> | <code>CALLBACK</code> | <code>API</code> | <code>CALLBACK_CUSTOMER_FIRST_DIALED</code></p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
     /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#agent-api-connecting-time">Agent API connecting time</a></p><note>
     /// <p>The <code>Negate</code> key in metric-level filters is not applicable for this metric.</p>
@@ -3619,7 +3673,7 @@ impl GetMetricDataV2InputBuilder {
     /// <p>Metric filter:</p>
     /// <ul>
     /// <li>
-    /// <p>Valid values: <code>API</code>| <code>Incoming</code> | <code>Outbound</code> | <code>Transfer</code> | <code>Callback</code> | <code>Queue_Transfer</code>| <code>Disconnect</code></p></li>
+    /// <p>Valid values: <code>API</code>| <code>INCOMING</code> | <code>OUTBOUND</code> | <code>TRANSFER</code> | <code>CALLBACK</code> | <code>QUEUE_TRANSFER</code>| <code>Disconnect</code> | <code>CALLBACK_CUSTOMER_FIRST_DIALED</code></p></li>
     /// </ul>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype, RoutingStepExpression, Q in Connect</p>
     /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-abandoned">Contact abandoned</a></p>
@@ -3830,6 +3884,7 @@ impl GetMetricDataV2InputBuilder {
     /// <dd>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype, Q in Connect</p>
+    /// <p>Valid metric filter key: <code>INITIATION_METHOD</code></p>
     /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-queue-abandon-time">Average queue abandon time</a></p>
     /// </dd>
     /// <dt>
@@ -4118,9 +4173,18 @@ impl GetMetricDataV2InputBuilder {
     /// <dd>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Feature, contact/segmentAttributes/connect:Subtype, Q in Connect</p>
-    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-queue-answer-time">Average queue answer time</a></p><note>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-queue-answer-time">Average queue answer time</a></p>
+    /// <p>Valid metric level filters: <code>INITIATION_METHOD</code>, <code>FEATURE</code>, <code>DISCONNECT_REASON</code></p><note>
     /// <p>Feature is a valid filter but not a valid grouping.</p>
     /// </note>
+    /// </dd>
+    /// <dt>
+    /// AVG_QUEUE_ANSWER_TIME_CUSTOMER_FIRST_CALLBACK
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Seconds</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Feature, contact/segmentAttributes/connect:Subtype, Q in Connect, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-queue-answer-time-customer-first-callback">Avg. queue answer time - customer first callback</a></p>
     /// </dd>
     /// <dt>
     /// AVG_RESPONSE_TIME_AGENT
@@ -4181,6 +4245,14 @@ impl GetMetricDataV2InputBuilder {
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Campaign</p>
     /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-wait-time-after-customer-connection">Average wait time after customer connection</a></p>
+    /// </dd>
+    /// <dt>
+    /// AVG_WAIT_TIME_AFTER_CUSTOMER_FIRST_CALLBACK_CONNECTION
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Seconds</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Feature, contact/segmentAttributes/connect:Subtype, Q in Connect, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-wait-time-after-customer-connection-customer-first-callback">Avg. wait time after customer connection - customer first callback</a></p>
     /// </dd>
     /// <dt>
     /// AVG_WEIGHTED_EVALUATION_SCORE
@@ -4291,7 +4363,7 @@ impl GetMetricDataV2InputBuilder {
     /// <p>Unit: Count</p>
     /// <p>Valid metric filter key: <code>INITIATION_METHOD</code>, <code>DISCONNECT_REASON</code></p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype, RoutingStepExpression, Q in Connect</p>
-    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#api-contacts-handled">API contacts handled</a></p><note>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-handled">Contacts handled</a></p><note>
     /// <p>Feature is a valid filter but not a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -4683,7 +4755,7 @@ impl GetMetricDataV2InputBuilder {
     /// </dt>
     /// <dd>
     /// <p>Unit: Seconds</p>
-    /// <p>Valid metric filter key: <code>INITIATION_METHOD</code>. This metric only supports the following filter keys as <code>INITIATION_METHOD</code>: <code>INBOUND</code> | <code>OUTBOUND</code> | <code>CALLBACK</code> | <code>API</code></p>
+    /// <p>Valid metric filter key: <code>INITIATION_METHOD</code>. This metric only supports the following filter keys as <code>INITIATION_METHOD</code>: <code>INBOUND</code> | <code>OUTBOUND</code> | <code>CALLBACK</code> | <code>API</code> | <code>CALLBACK_CUSTOMER_FIRST_DIALED</code></p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
     /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#agent-api-connecting-time">Agent API connecting time</a></p><note>
     /// <p>The <code>Negate</code> key in metric-level filters is not applicable for this metric.</p>
@@ -4697,7 +4769,7 @@ impl GetMetricDataV2InputBuilder {
     /// <p>Metric filter:</p>
     /// <ul>
     /// <li>
-    /// <p>Valid values: <code>API</code>| <code>Incoming</code> | <code>Outbound</code> | <code>Transfer</code> | <code>Callback</code> | <code>Queue_Transfer</code>| <code>Disconnect</code></p></li>
+    /// <p>Valid values: <code>API</code>| <code>INCOMING</code> | <code>OUTBOUND</code> | <code>TRANSFER</code> | <code>CALLBACK</code> | <code>QUEUE_TRANSFER</code>| <code>Disconnect</code> | <code>CALLBACK_CUSTOMER_FIRST_DIALED</code></p></li>
     /// </ul>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype, RoutingStepExpression, Q in Connect</p>
     /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-abandoned">Contact abandoned</a></p>
@@ -4906,6 +4978,7 @@ impl GetMetricDataV2InputBuilder {
     /// <dd>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype, Q in Connect</p>
+    /// <p>Valid metric filter key: <code>INITIATION_METHOD</code></p>
     /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-queue-abandon-time">Average queue abandon time</a></p>
     /// </dd>
     /// <dt>
@@ -5194,9 +5267,18 @@ impl GetMetricDataV2InputBuilder {
     /// <dd>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Feature, contact/segmentAttributes/connect:Subtype, Q in Connect</p>
-    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-queue-answer-time">Average queue answer time</a></p><note>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-queue-answer-time">Average queue answer time</a></p>
+    /// <p>Valid metric level filters: <code>INITIATION_METHOD</code>, <code>FEATURE</code>, <code>DISCONNECT_REASON</code></p><note>
     /// <p>Feature is a valid filter but not a valid grouping.</p>
     /// </note>
+    /// </dd>
+    /// <dt>
+    /// AVG_QUEUE_ANSWER_TIME_CUSTOMER_FIRST_CALLBACK
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Seconds</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Feature, contact/segmentAttributes/connect:Subtype, Q in Connect, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-queue-answer-time-customer-first-callback">Avg. queue answer time - customer first callback</a></p>
     /// </dd>
     /// <dt>
     /// AVG_RESPONSE_TIME_AGENT
@@ -5257,6 +5339,14 @@ impl GetMetricDataV2InputBuilder {
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Campaign</p>
     /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-wait-time-after-customer-connection">Average wait time after customer connection</a></p>
+    /// </dd>
+    /// <dt>
+    /// AVG_WAIT_TIME_AFTER_CUSTOMER_FIRST_CALLBACK_CONNECTION
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Seconds</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Feature, contact/segmentAttributes/connect:Subtype, Q in Connect, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-wait-time-after-customer-connection-customer-first-callback">Avg. wait time after customer connection - customer first callback</a></p>
     /// </dd>
     /// <dt>
     /// AVG_WEIGHTED_EVALUATION_SCORE
@@ -5367,7 +5457,7 @@ impl GetMetricDataV2InputBuilder {
     /// <p>Unit: Count</p>
     /// <p>Valid metric filter key: <code>INITIATION_METHOD</code>, <code>DISCONNECT_REASON</code></p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype, RoutingStepExpression, Q in Connect</p>
-    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#api-contacts-handled">API contacts handled</a></p><note>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-handled">Contacts handled</a></p><note>
     /// <p>Feature is a valid filter but not a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -5759,7 +5849,7 @@ impl GetMetricDataV2InputBuilder {
     /// </dt>
     /// <dd>
     /// <p>Unit: Seconds</p>
-    /// <p>Valid metric filter key: <code>INITIATION_METHOD</code>. This metric only supports the following filter keys as <code>INITIATION_METHOD</code>: <code>INBOUND</code> | <code>OUTBOUND</code> | <code>CALLBACK</code> | <code>API</code></p>
+    /// <p>Valid metric filter key: <code>INITIATION_METHOD</code>. This metric only supports the following filter keys as <code>INITIATION_METHOD</code>: <code>INBOUND</code> | <code>OUTBOUND</code> | <code>CALLBACK</code> | <code>API</code> | <code>CALLBACK_CUSTOMER_FIRST_DIALED</code></p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
     /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#agent-api-connecting-time">Agent API connecting time</a></p><note>
     /// <p>The <code>Negate</code> key in metric-level filters is not applicable for this metric.</p>
@@ -5773,7 +5863,7 @@ impl GetMetricDataV2InputBuilder {
     /// <p>Metric filter:</p>
     /// <ul>
     /// <li>
-    /// <p>Valid values: <code>API</code>| <code>Incoming</code> | <code>Outbound</code> | <code>Transfer</code> | <code>Callback</code> | <code>Queue_Transfer</code>| <code>Disconnect</code></p></li>
+    /// <p>Valid values: <code>API</code>| <code>INCOMING</code> | <code>OUTBOUND</code> | <code>TRANSFER</code> | <code>CALLBACK</code> | <code>QUEUE_TRANSFER</code>| <code>Disconnect</code> | <code>CALLBACK_CUSTOMER_FIRST_DIALED</code></p></li>
     /// </ul>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype, RoutingStepExpression, Q in Connect</p>
     /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-abandoned">Contact abandoned</a></p>

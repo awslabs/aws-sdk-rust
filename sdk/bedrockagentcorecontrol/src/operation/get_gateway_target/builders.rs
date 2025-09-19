@@ -22,7 +22,7 @@ impl crate::operation::get_gateway_target::builders::GetGatewayTargetInputBuilde
 }
 /// Fluent builder constructing a request to `GetGatewayTarget`.
 ///
-/// <p>Retrieves information about a specific Gateway Target.</p>
+/// <p>Retrieves information about a specific gateway target.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetGatewayTargetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl GetGatewayTargetFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The identifier of the gateway that contains the target. This can be either the gateway ID or the gateway ARN.</p>
+    /// <p>The identifier of the gateway that contains the target.</p>
     pub fn gateway_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.gateway_identifier(input.into());
         self
     }
-    /// <p>The identifier of the gateway that contains the target. This can be either the gateway ID or the gateway ARN.</p>
+    /// <p>The identifier of the gateway that contains the target.</p>
     pub fn set_gateway_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_gateway_identifier(input);
         self
     }
-    /// <p>The identifier of the gateway that contains the target. This can be either the gateway ID or the gateway ARN.</p>
+    /// <p>The identifier of the gateway that contains the target.</p>
     pub fn get_gateway_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_gateway_identifier()
     }

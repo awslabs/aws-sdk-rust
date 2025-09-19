@@ -3,7 +3,7 @@
 /// <p>Contains information about an agent runtime endpoint. An endpoint provides a way to connect to and interact with an agent runtime.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct AgentEndpoint {
+pub struct AgentRuntimeEndpoint {
     /// <p>The name of the agent runtime endpoint.</p>
     pub name: ::std::string::String,
     /// <p>The live version of the agent runtime endpoint. This is the version that is currently serving requests.</p>
@@ -15,7 +15,7 @@ pub struct AgentEndpoint {
     /// <p>The Amazon Resource Name (ARN) of the agent runtime associated with the endpoint.</p>
     pub agent_runtime_arn: ::std::string::String,
     /// <p>The current status of the agent runtime endpoint.</p>
-    pub status: crate::types::AgentEndpointStatus,
+    pub status: crate::types::AgentRuntimeEndpointStatus,
     /// <p>The unique identifier of the agent runtime endpoint.</p>
     pub id: ::std::string::String,
     /// <p>The description of the agent runtime endpoint.</p>
@@ -25,7 +25,7 @@ pub struct AgentEndpoint {
     /// <p>The timestamp when the agent runtime endpoint was last updated.</p>
     pub last_updated_at: ::aws_smithy_types::DateTime,
 }
-impl AgentEndpoint {
+impl AgentRuntimeEndpoint {
     /// <p>The name of the agent runtime endpoint.</p>
     pub fn name(&self) -> &str {
         use std::ops::Deref;
@@ -50,7 +50,7 @@ impl AgentEndpoint {
         self.agent_runtime_arn.deref()
     }
     /// <p>The current status of the agent runtime endpoint.</p>
-    pub fn status(&self) -> &crate::types::AgentEndpointStatus {
+    pub fn status(&self) -> &crate::types::AgentRuntimeEndpointStatus {
         &self.status
     }
     /// <p>The unique identifier of the agent runtime endpoint.</p>
@@ -71,9 +71,9 @@ impl AgentEndpoint {
         &self.last_updated_at
     }
 }
-impl ::std::fmt::Debug for AgentEndpoint {
+impl ::std::fmt::Debug for AgentRuntimeEndpoint {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
-        let mut formatter = f.debug_struct("AgentEndpoint");
+        let mut formatter = f.debug_struct("AgentRuntimeEndpoint");
         formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("live_version", &self.live_version);
         formatter.field("target_version", &self.target_version);
@@ -87,29 +87,29 @@ impl ::std::fmt::Debug for AgentEndpoint {
         formatter.finish()
     }
 }
-impl AgentEndpoint {
-    /// Creates a new builder-style object to manufacture [`AgentEndpoint`](crate::types::AgentEndpoint).
-    pub fn builder() -> crate::types::builders::AgentEndpointBuilder {
-        crate::types::builders::AgentEndpointBuilder::default()
+impl AgentRuntimeEndpoint {
+    /// Creates a new builder-style object to manufacture [`AgentRuntimeEndpoint`](crate::types::AgentRuntimeEndpoint).
+    pub fn builder() -> crate::types::builders::AgentRuntimeEndpointBuilder {
+        crate::types::builders::AgentRuntimeEndpointBuilder::default()
     }
 }
 
-/// A builder for [`AgentEndpoint`](crate::types::AgentEndpoint).
+/// A builder for [`AgentRuntimeEndpoint`](crate::types::AgentRuntimeEndpoint).
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
-pub struct AgentEndpointBuilder {
+pub struct AgentRuntimeEndpointBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) live_version: ::std::option::Option<::std::string::String>,
     pub(crate) target_version: ::std::option::Option<::std::string::String>,
     pub(crate) agent_runtime_endpoint_arn: ::std::option::Option<::std::string::String>,
     pub(crate) agent_runtime_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) status: ::std::option::Option<crate::types::AgentEndpointStatus>,
+    pub(crate) status: ::std::option::Option<crate::types::AgentRuntimeEndpointStatus>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl AgentEndpointBuilder {
+impl AgentRuntimeEndpointBuilder {
     /// <p>The name of the agent runtime endpoint.</p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -185,17 +185,17 @@ impl AgentEndpointBuilder {
     }
     /// <p>The current status of the agent runtime endpoint.</p>
     /// This field is required.
-    pub fn status(mut self, input: crate::types::AgentEndpointStatus) -> Self {
+    pub fn status(mut self, input: crate::types::AgentRuntimeEndpointStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current status of the agent runtime endpoint.</p>
-    pub fn set_status(mut self, input: ::std::option::Option<crate::types::AgentEndpointStatus>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::AgentRuntimeEndpointStatus>) -> Self {
         self.status = input;
         self
     }
     /// <p>The current status of the agent runtime endpoint.</p>
-    pub fn get_status(&self) -> &::std::option::Option<crate::types::AgentEndpointStatus> {
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::AgentRuntimeEndpointStatus> {
         &self.status
     }
     /// <p>The unique identifier of the agent runtime endpoint.</p>
@@ -257,21 +257,21 @@ impl AgentEndpointBuilder {
     pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_at
     }
-    /// Consumes the builder and constructs a [`AgentEndpoint`](crate::types::AgentEndpoint).
+    /// Consumes the builder and constructs a [`AgentRuntimeEndpoint`](crate::types::AgentRuntimeEndpoint).
     /// This method will fail if any of the following fields are not set:
-    /// - [`name`](crate::types::builders::AgentEndpointBuilder::name)
-    /// - [`agent_runtime_endpoint_arn`](crate::types::builders::AgentEndpointBuilder::agent_runtime_endpoint_arn)
-    /// - [`agent_runtime_arn`](crate::types::builders::AgentEndpointBuilder::agent_runtime_arn)
-    /// - [`status`](crate::types::builders::AgentEndpointBuilder::status)
-    /// - [`id`](crate::types::builders::AgentEndpointBuilder::id)
-    /// - [`created_at`](crate::types::builders::AgentEndpointBuilder::created_at)
-    /// - [`last_updated_at`](crate::types::builders::AgentEndpointBuilder::last_updated_at)
-    pub fn build(self) -> ::std::result::Result<crate::types::AgentEndpoint, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AgentEndpoint {
+    /// - [`name`](crate::types::builders::AgentRuntimeEndpointBuilder::name)
+    /// - [`agent_runtime_endpoint_arn`](crate::types::builders::AgentRuntimeEndpointBuilder::agent_runtime_endpoint_arn)
+    /// - [`agent_runtime_arn`](crate::types::builders::AgentRuntimeEndpointBuilder::agent_runtime_arn)
+    /// - [`status`](crate::types::builders::AgentRuntimeEndpointBuilder::status)
+    /// - [`id`](crate::types::builders::AgentRuntimeEndpointBuilder::id)
+    /// - [`created_at`](crate::types::builders::AgentRuntimeEndpointBuilder::created_at)
+    /// - [`last_updated_at`](crate::types::builders::AgentRuntimeEndpointBuilder::last_updated_at)
+    pub fn build(self) -> ::std::result::Result<crate::types::AgentRuntimeEndpoint, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AgentRuntimeEndpoint {
             name: self.name.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
-                    "name was not specified but it is required when building AgentEndpoint",
+                    "name was not specified but it is required when building AgentRuntimeEndpoint",
                 )
             })?,
             live_version: self.live_version,
@@ -279,46 +279,46 @@ impl AgentEndpointBuilder {
             agent_runtime_endpoint_arn: self.agent_runtime_endpoint_arn.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "agent_runtime_endpoint_arn",
-                    "agent_runtime_endpoint_arn was not specified but it is required when building AgentEndpoint",
+                    "agent_runtime_endpoint_arn was not specified but it is required when building AgentRuntimeEndpoint",
                 )
             })?,
             agent_runtime_arn: self.agent_runtime_arn.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "agent_runtime_arn",
-                    "agent_runtime_arn was not specified but it is required when building AgentEndpoint",
+                    "agent_runtime_arn was not specified but it is required when building AgentRuntimeEndpoint",
                 )
             })?,
             status: self.status.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
-                    "status was not specified but it is required when building AgentEndpoint",
+                    "status was not specified but it is required when building AgentRuntimeEndpoint",
                 )
             })?,
             id: self.id.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
-                    "id was not specified but it is required when building AgentEndpoint",
+                    "id was not specified but it is required when building AgentRuntimeEndpoint",
                 )
             })?,
             description: self.description,
             created_at: self.created_at.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",
-                    "created_at was not specified but it is required when building AgentEndpoint",
+                    "created_at was not specified but it is required when building AgentRuntimeEndpoint",
                 )
             })?,
             last_updated_at: self.last_updated_at.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "last_updated_at",
-                    "last_updated_at was not specified but it is required when building AgentEndpoint",
+                    "last_updated_at was not specified but it is required when building AgentRuntimeEndpoint",
                 )
             })?,
         })
     }
 }
-impl ::std::fmt::Debug for AgentEndpointBuilder {
+impl ::std::fmt::Debug for AgentRuntimeEndpointBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
-        let mut formatter = f.debug_struct("AgentEndpointBuilder");
+        let mut formatter = f.debug_struct("AgentRuntimeEndpointBuilder");
         formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("live_version", &self.live_version);
         formatter.field("target_version", &self.target_version);

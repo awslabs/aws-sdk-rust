@@ -22,7 +22,7 @@ impl crate::operation::create_memory::builders::CreateMemoryInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateMemory`.
 ///
-/// <p>Creates a new memory.</p>
+/// <p>Creates a new Amazon Bedrock AgentCore Memory resource.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateMemoryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

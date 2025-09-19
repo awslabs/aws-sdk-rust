@@ -14,6 +14,8 @@ pub struct UserPhoneConfig {
     pub after_contact_work_time_limit: i32,
     /// <p>The phone number for the user's desk phone.</p>
     pub desk_phone_number: ::std::option::Option<::std::string::String>,
+    /// <p>The persistent connection setting for the user.</p>
+    pub persistent_connection: ::std::option::Option<bool>,
 }
 impl UserPhoneConfig {
     /// <p>The phone type.</p>
@@ -34,6 +36,10 @@ impl UserPhoneConfig {
     pub fn desk_phone_number(&self) -> ::std::option::Option<&str> {
         self.desk_phone_number.as_deref()
     }
+    /// <p>The persistent connection setting for the user.</p>
+    pub fn persistent_connection(&self) -> ::std::option::Option<bool> {
+        self.persistent_connection
+    }
 }
 impl UserPhoneConfig {
     /// Creates a new builder-style object to manufacture [`UserPhoneConfig`](crate::types::UserPhoneConfig).
@@ -50,6 +56,7 @@ pub struct UserPhoneConfigBuilder {
     pub(crate) auto_accept: ::std::option::Option<bool>,
     pub(crate) after_contact_work_time_limit: ::std::option::Option<i32>,
     pub(crate) desk_phone_number: ::std::option::Option<::std::string::String>,
+    pub(crate) persistent_connection: ::std::option::Option<bool>,
 }
 impl UserPhoneConfigBuilder {
     /// <p>The phone type.</p>
@@ -115,6 +122,20 @@ impl UserPhoneConfigBuilder {
     pub fn get_desk_phone_number(&self) -> &::std::option::Option<::std::string::String> {
         &self.desk_phone_number
     }
+    /// <p>The persistent connection setting for the user.</p>
+    pub fn persistent_connection(mut self, input: bool) -> Self {
+        self.persistent_connection = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The persistent connection setting for the user.</p>
+    pub fn set_persistent_connection(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.persistent_connection = input;
+        self
+    }
+    /// <p>The persistent connection setting for the user.</p>
+    pub fn get_persistent_connection(&self) -> &::std::option::Option<bool> {
+        &self.persistent_connection
+    }
     /// Consumes the builder and constructs a [`UserPhoneConfig`](crate::types::UserPhoneConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`phone_type`](crate::types::builders::UserPhoneConfigBuilder::phone_type)
@@ -129,6 +150,7 @@ impl UserPhoneConfigBuilder {
             auto_accept: self.auto_accept.unwrap_or_default(),
             after_contact_work_time_limit: self.after_contact_work_time_limit.unwrap_or_default(),
             desk_phone_number: self.desk_phone_number,
+            persistent_connection: self.persistent_connection,
         })
     }
 }

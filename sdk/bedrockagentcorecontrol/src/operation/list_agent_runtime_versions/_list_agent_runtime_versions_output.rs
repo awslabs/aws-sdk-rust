@@ -3,15 +3,15 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAgentRuntimeVersionsOutput {
-    /// <p>The list of agent runtime versions.</p>
-    pub agent_runtimes: ::std::vec::Vec<crate::types::Agent>,
+    /// <p>The list of AgentCore Runtime versions.</p>
+    pub agent_runtimes: ::std::vec::Vec<crate::types::AgentRuntime>,
     /// <p>A token to retrieve the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListAgentRuntimeVersionsOutput {
-    /// <p>The list of agent runtime versions.</p>
-    pub fn agent_runtimes(&self) -> &[crate::types::Agent] {
+    /// <p>The list of AgentCore Runtime versions.</p>
+    pub fn agent_runtimes(&self) -> &[crate::types::AgentRuntime] {
         use std::ops::Deref;
         self.agent_runtimes.deref()
     }
@@ -36,7 +36,7 @@ impl ListAgentRuntimeVersionsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct ListAgentRuntimeVersionsOutputBuilder {
-    pub(crate) agent_runtimes: ::std::option::Option<::std::vec::Vec<crate::types::Agent>>,
+    pub(crate) agent_runtimes: ::std::option::Option<::std::vec::Vec<crate::types::AgentRuntime>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -45,20 +45,20 @@ impl ListAgentRuntimeVersionsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_agent_runtimes`](Self::set_agent_runtimes).
     ///
-    /// <p>The list of agent runtime versions.</p>
-    pub fn agent_runtimes(mut self, input: crate::types::Agent) -> Self {
+    /// <p>The list of AgentCore Runtime versions.</p>
+    pub fn agent_runtimes(mut self, input: crate::types::AgentRuntime) -> Self {
         let mut v = self.agent_runtimes.unwrap_or_default();
         v.push(input);
         self.agent_runtimes = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The list of agent runtime versions.</p>
-    pub fn set_agent_runtimes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Agent>>) -> Self {
+    /// <p>The list of AgentCore Runtime versions.</p>
+    pub fn set_agent_runtimes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AgentRuntime>>) -> Self {
         self.agent_runtimes = input;
         self
     }
-    /// <p>The list of agent runtime versions.</p>
-    pub fn get_agent_runtimes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Agent>> {
+    /// <p>The list of AgentCore Runtime versions.</p>
+    pub fn get_agent_runtimes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AgentRuntime>> {
         &self.agent_runtimes
     }
     /// <p>A token to retrieve the next page of results.</p>

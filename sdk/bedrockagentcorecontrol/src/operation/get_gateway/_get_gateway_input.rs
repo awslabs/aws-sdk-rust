@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetGatewayInput {
-    /// <p>The identifier of the gateway to retrieve. This can be either the gateway ID or the gateway ARN.</p>
+    /// <p>The identifier of the gateway to retrieve.</p>
     pub gateway_identifier: ::std::option::Option<::std::string::String>,
 }
 impl GetGatewayInput {
-    /// <p>The identifier of the gateway to retrieve. This can be either the gateway ID or the gateway ARN.</p>
+    /// <p>The identifier of the gateway to retrieve.</p>
     pub fn gateway_identifier(&self) -> ::std::option::Option<&str> {
         self.gateway_identifier.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct GetGatewayInputBuilder {
     pub(crate) gateway_identifier: ::std::option::Option<::std::string::String>,
 }
 impl GetGatewayInputBuilder {
-    /// <p>The identifier of the gateway to retrieve. This can be either the gateway ID or the gateway ARN.</p>
+    /// <p>The identifier of the gateway to retrieve.</p>
     /// This field is required.
     pub fn gateway_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the gateway to retrieve. This can be either the gateway ID or the gateway ARN.</p>
+    /// <p>The identifier of the gateway to retrieve.</p>
     pub fn set_gateway_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.gateway_identifier = input;
         self
     }
-    /// <p>The identifier of the gateway to retrieve. This can be either the gateway ID or the gateway ARN.</p>
+    /// <p>The identifier of the gateway to retrieve.</p>
     pub fn get_gateway_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.gateway_identifier
     }

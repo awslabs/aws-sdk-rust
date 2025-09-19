@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteAgentRuntimeEndpointOutput {
-    /// <p>The current status of the agent runtime endpoint deletion.</p>
-    pub status: crate::types::AgentEndpointStatus,
+    /// <p>The current status of the AgentCore Runtime endpoint deletion.</p>
+    pub status: crate::types::AgentRuntimeEndpointStatus,
     _request_id: Option<String>,
 }
 impl DeleteAgentRuntimeEndpointOutput {
-    /// <p>The current status of the agent runtime endpoint deletion.</p>
-    pub fn status(&self) -> &crate::types::AgentEndpointStatus {
+    /// <p>The current status of the AgentCore Runtime endpoint deletion.</p>
+    pub fn status(&self) -> &crate::types::AgentRuntimeEndpointStatus {
         &self.status
     }
 }
@@ -29,23 +29,23 @@ impl DeleteAgentRuntimeEndpointOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct DeleteAgentRuntimeEndpointOutputBuilder {
-    pub(crate) status: ::std::option::Option<crate::types::AgentEndpointStatus>,
+    pub(crate) status: ::std::option::Option<crate::types::AgentRuntimeEndpointStatus>,
     _request_id: Option<String>,
 }
 impl DeleteAgentRuntimeEndpointOutputBuilder {
-    /// <p>The current status of the agent runtime endpoint deletion.</p>
+    /// <p>The current status of the AgentCore Runtime endpoint deletion.</p>
     /// This field is required.
-    pub fn status(mut self, input: crate::types::AgentEndpointStatus) -> Self {
+    pub fn status(mut self, input: crate::types::AgentRuntimeEndpointStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The current status of the agent runtime endpoint deletion.</p>
-    pub fn set_status(mut self, input: ::std::option::Option<crate::types::AgentEndpointStatus>) -> Self {
+    /// <p>The current status of the AgentCore Runtime endpoint deletion.</p>
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::AgentRuntimeEndpointStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The current status of the agent runtime endpoint deletion.</p>
-    pub fn get_status(&self) -> &::std::option::Option<crate::types::AgentEndpointStatus> {
+    /// <p>The current status of the AgentCore Runtime endpoint deletion.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::AgentRuntimeEndpointStatus> {
         &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

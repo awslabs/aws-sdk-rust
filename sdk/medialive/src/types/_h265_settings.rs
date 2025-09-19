@@ -80,6 +80,14 @@ pub struct H265Settings {
     pub min_qp: ::std::option::Option<i32>,
     /// Enable or disable the deblocking filter for this codec. The filter reduces blocking artifacts at block boundaries, which improves overall video quality. If the filter is disabled, visible block edges might appear in the output, especially at lower bitrates.
     pub deblocking: ::std::option::Option<crate::types::H265Deblocking>,
+    /// Allows the encoder to use a B-Frame as a reference frame as well. ENABLED: B-frames will also serve as reference frames. DISABLED: B-frames won't be reference frames. Must be DISABLED if resolution is greater than 1080p or when using tiled hevc encoding.
+    pub gop_b_reference: ::std::option::Option<crate::types::H265GopBReference>,
+    /// Sets the number of B-frames between reference frames. Set to 2 if resolution is greater than 1080p or when using tiled hevc encoding.
+    pub gop_num_b_frames: ::std::option::Option<i32>,
+    /// Used for QVBR rate control mode only. Optional. Enter a minimum bitrate if you want to keep the output bitrate about a threshold, in order to prevent the downstream system from de-allocating network bandwidth for this output.
+    pub min_bitrate: ::std::option::Option<i32>,
+    /// Sets the number of B-frames in each sub-GOP. FIXED: Use the value in Num B-frames. DYNAMIC: Optimizes the number of B-frames in each sub-GOP to improve visual quality. Must be FIXED if resolution is greater than 1080p or when using tiled hevc encoding.
+    pub subgop_length: ::std::option::Option<crate::types::H265SubGopLength>,
 }
 impl H265Settings {
     /// Enables or disables adaptive quantization (AQ), which is a technique MediaLive can apply to video on a frame-by-frame basis to produce more compression without losing quality. There are three types of adaptive quantization: spatial, temporal, and flicker. Flicker is the only type that you can customize. We recommend that you set the field to Auto. For more information about all the options, see the topic about video adaptive quantization in the MediaLive user guide.
@@ -234,6 +242,22 @@ impl H265Settings {
     pub fn deblocking(&self) -> ::std::option::Option<&crate::types::H265Deblocking> {
         self.deblocking.as_ref()
     }
+    /// Allows the encoder to use a B-Frame as a reference frame as well. ENABLED: B-frames will also serve as reference frames. DISABLED: B-frames won't be reference frames. Must be DISABLED if resolution is greater than 1080p or when using tiled hevc encoding.
+    pub fn gop_b_reference(&self) -> ::std::option::Option<&crate::types::H265GopBReference> {
+        self.gop_b_reference.as_ref()
+    }
+    /// Sets the number of B-frames between reference frames. Set to 2 if resolution is greater than 1080p or when using tiled hevc encoding.
+    pub fn gop_num_b_frames(&self) -> ::std::option::Option<i32> {
+        self.gop_num_b_frames
+    }
+    /// Used for QVBR rate control mode only. Optional. Enter a minimum bitrate if you want to keep the output bitrate about a threshold, in order to prevent the downstream system from de-allocating network bandwidth for this output.
+    pub fn min_bitrate(&self) -> ::std::option::Option<i32> {
+        self.min_bitrate
+    }
+    /// Sets the number of B-frames in each sub-GOP. FIXED: Use the value in Num B-frames. DYNAMIC: Optimizes the number of B-frames in each sub-GOP to improve visual quality. Must be FIXED if resolution is greater than 1080p or when using tiled hevc encoding.
+    pub fn subgop_length(&self) -> ::std::option::Option<&crate::types::H265SubGopLength> {
+        self.subgop_length.as_ref()
+    }
 }
 impl H265Settings {
     /// Creates a new builder-style object to manufacture [`H265Settings`](crate::types::H265Settings).
@@ -284,6 +308,10 @@ pub struct H265SettingsBuilder {
     pub(crate) treeblock_size: ::std::option::Option<crate::types::H265TreeblockSize>,
     pub(crate) min_qp: ::std::option::Option<i32>,
     pub(crate) deblocking: ::std::option::Option<crate::types::H265Deblocking>,
+    pub(crate) gop_b_reference: ::std::option::Option<crate::types::H265GopBReference>,
+    pub(crate) gop_num_b_frames: ::std::option::Option<i32>,
+    pub(crate) min_bitrate: ::std::option::Option<i32>,
+    pub(crate) subgop_length: ::std::option::Option<crate::types::H265SubGopLength>,
 }
 impl H265SettingsBuilder {
     /// Enables or disables adaptive quantization (AQ), which is a technique MediaLive can apply to video on a frame-by-frame basis to produce more compression without losing quality. There are three types of adaptive quantization: spatial, temporal, and flicker. Flicker is the only type that you can customize. We recommend that you set the field to Auto. For more information about all the options, see the topic about video adaptive quantization in the MediaLive user guide.
@@ -820,6 +848,62 @@ impl H265SettingsBuilder {
     pub fn get_deblocking(&self) -> &::std::option::Option<crate::types::H265Deblocking> {
         &self.deblocking
     }
+    /// Allows the encoder to use a B-Frame as a reference frame as well. ENABLED: B-frames will also serve as reference frames. DISABLED: B-frames won't be reference frames. Must be DISABLED if resolution is greater than 1080p or when using tiled hevc encoding.
+    pub fn gop_b_reference(mut self, input: crate::types::H265GopBReference) -> Self {
+        self.gop_b_reference = ::std::option::Option::Some(input);
+        self
+    }
+    /// Allows the encoder to use a B-Frame as a reference frame as well. ENABLED: B-frames will also serve as reference frames. DISABLED: B-frames won't be reference frames. Must be DISABLED if resolution is greater than 1080p or when using tiled hevc encoding.
+    pub fn set_gop_b_reference(mut self, input: ::std::option::Option<crate::types::H265GopBReference>) -> Self {
+        self.gop_b_reference = input;
+        self
+    }
+    /// Allows the encoder to use a B-Frame as a reference frame as well. ENABLED: B-frames will also serve as reference frames. DISABLED: B-frames won't be reference frames. Must be DISABLED if resolution is greater than 1080p or when using tiled hevc encoding.
+    pub fn get_gop_b_reference(&self) -> &::std::option::Option<crate::types::H265GopBReference> {
+        &self.gop_b_reference
+    }
+    /// Sets the number of B-frames between reference frames. Set to 2 if resolution is greater than 1080p or when using tiled hevc encoding.
+    pub fn gop_num_b_frames(mut self, input: i32) -> Self {
+        self.gop_num_b_frames = ::std::option::Option::Some(input);
+        self
+    }
+    /// Sets the number of B-frames between reference frames. Set to 2 if resolution is greater than 1080p or when using tiled hevc encoding.
+    pub fn set_gop_num_b_frames(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.gop_num_b_frames = input;
+        self
+    }
+    /// Sets the number of B-frames between reference frames. Set to 2 if resolution is greater than 1080p or when using tiled hevc encoding.
+    pub fn get_gop_num_b_frames(&self) -> &::std::option::Option<i32> {
+        &self.gop_num_b_frames
+    }
+    /// Used for QVBR rate control mode only. Optional. Enter a minimum bitrate if you want to keep the output bitrate about a threshold, in order to prevent the downstream system from de-allocating network bandwidth for this output.
+    pub fn min_bitrate(mut self, input: i32) -> Self {
+        self.min_bitrate = ::std::option::Option::Some(input);
+        self
+    }
+    /// Used for QVBR rate control mode only. Optional. Enter a minimum bitrate if you want to keep the output bitrate about a threshold, in order to prevent the downstream system from de-allocating network bandwidth for this output.
+    pub fn set_min_bitrate(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.min_bitrate = input;
+        self
+    }
+    /// Used for QVBR rate control mode only. Optional. Enter a minimum bitrate if you want to keep the output bitrate about a threshold, in order to prevent the downstream system from de-allocating network bandwidth for this output.
+    pub fn get_min_bitrate(&self) -> &::std::option::Option<i32> {
+        &self.min_bitrate
+    }
+    /// Sets the number of B-frames in each sub-GOP. FIXED: Use the value in Num B-frames. DYNAMIC: Optimizes the number of B-frames in each sub-GOP to improve visual quality. Must be FIXED if resolution is greater than 1080p or when using tiled hevc encoding.
+    pub fn subgop_length(mut self, input: crate::types::H265SubGopLength) -> Self {
+        self.subgop_length = ::std::option::Option::Some(input);
+        self
+    }
+    /// Sets the number of B-frames in each sub-GOP. FIXED: Use the value in Num B-frames. DYNAMIC: Optimizes the number of B-frames in each sub-GOP to improve visual quality. Must be FIXED if resolution is greater than 1080p or when using tiled hevc encoding.
+    pub fn set_subgop_length(mut self, input: ::std::option::Option<crate::types::H265SubGopLength>) -> Self {
+        self.subgop_length = input;
+        self
+    }
+    /// Sets the number of B-frames in each sub-GOP. FIXED: Use the value in Num B-frames. DYNAMIC: Optimizes the number of B-frames in each sub-GOP to improve visual quality. Must be FIXED if resolution is greater than 1080p or when using tiled hevc encoding.
+    pub fn get_subgop_length(&self) -> &::std::option::Option<crate::types::H265SubGopLength> {
+        &self.subgop_length
+    }
     /// Consumes the builder and constructs a [`H265Settings`](crate::types::H265Settings).
     pub fn build(self) -> crate::types::H265Settings {
         crate::types::H265Settings {
@@ -861,6 +945,10 @@ impl H265SettingsBuilder {
             treeblock_size: self.treeblock_size,
             min_qp: self.min_qp,
             deblocking: self.deblocking,
+            gop_b_reference: self.gop_b_reference,
+            gop_num_b_frames: self.gop_num_b_frames,
+            min_bitrate: self.min_bitrate,
+            subgop_length: self.subgop_length,
         }
     }
 }

@@ -22,7 +22,7 @@ impl crate::operation::list_memories::builders::ListMemoriesInputBuilder {
 }
 /// Fluent builder constructing a request to `ListMemories`.
 ///
-/// <p>Lists the memory present.</p>
+/// <p>Lists the available Amazon Bedrock AgentCore Memory resources in the current Amazon Web Services Region.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListMemoriesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

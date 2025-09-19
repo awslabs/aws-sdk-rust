@@ -22,7 +22,7 @@ impl crate::operation::update_agent_runtime_endpoint::builders::UpdateAgentRunti
 }
 /// Fluent builder constructing a request to `UpdateAgentRuntimeEndpoint`.
 ///
-/// <p>Updates an existing Amazon Secure AgentEndpoint.</p>
+/// <p>Updates an existing Amazon Bedrock AgentCore Runtime endpoint.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateAgentRuntimeEndpointFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,59 +108,59 @@ impl UpdateAgentRuntimeEndpointFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique identifier of the agent runtime associated with the endpoint.</p>
+    /// <p>The unique identifier of the AgentCore Runtime associated with the endpoint.</p>
     pub fn agent_runtime_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_runtime_id(input.into());
         self
     }
-    /// <p>The unique identifier of the agent runtime associated with the endpoint.</p>
+    /// <p>The unique identifier of the AgentCore Runtime associated with the endpoint.</p>
     pub fn set_agent_runtime_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_agent_runtime_id(input);
         self
     }
-    /// <p>The unique identifier of the agent runtime associated with the endpoint.</p>
+    /// <p>The unique identifier of the AgentCore Runtime associated with the endpoint.</p>
     pub fn get_agent_runtime_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agent_runtime_id()
     }
-    /// <p>The name of the agent runtime endpoint to update.</p>
+    /// <p>The name of the AgentCore Runtime endpoint to update.</p>
     pub fn endpoint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.endpoint_name(input.into());
         self
     }
-    /// <p>The name of the agent runtime endpoint to update.</p>
+    /// <p>The name of the AgentCore Runtime endpoint to update.</p>
     pub fn set_endpoint_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_endpoint_name(input);
         self
     }
-    /// <p>The name of the agent runtime endpoint to update.</p>
+    /// <p>The name of the AgentCore Runtime endpoint to update.</p>
     pub fn get_endpoint_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_endpoint_name()
     }
-    /// <p>The updated version of the agent runtime for the endpoint.</p>
+    /// <p>The updated version of the AgentCore Runtime for the endpoint.</p>
     pub fn agent_runtime_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_runtime_version(input.into());
         self
     }
-    /// <p>The updated version of the agent runtime for the endpoint.</p>
+    /// <p>The updated version of the AgentCore Runtime for the endpoint.</p>
     pub fn set_agent_runtime_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_agent_runtime_version(input);
         self
     }
-    /// <p>The updated version of the agent runtime for the endpoint.</p>
+    /// <p>The updated version of the AgentCore Runtime for the endpoint.</p>
     pub fn get_agent_runtime_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agent_runtime_version()
     }
-    /// <p>The updated description of the agent runtime endpoint.</p>
+    /// <p>The updated description of the AgentCore Runtime endpoint.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// <p>The updated description of the agent runtime endpoint.</p>
+    /// <p>The updated description of the AgentCore Runtime endpoint.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// <p>The updated description of the agent runtime endpoint.</p>
+    /// <p>The updated description of the AgentCore Runtime endpoint.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }

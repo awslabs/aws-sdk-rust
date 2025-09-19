@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteAgentRuntime`](crate::operation::delete_agent_runtime::builders::DeleteAgentRuntimeFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`agent_runtime_id(impl Into<String>)`](crate::operation::delete_agent_runtime::builders::DeleteAgentRuntimeFluentBuilder::agent_runtime_id) / [`set_agent_runtime_id(Option<String>)`](crate::operation::delete_agent_runtime::builders::DeleteAgentRuntimeFluentBuilder::set_agent_runtime_id):<br>required: **true**<br><p>The unique identifier of the agent runtime to delete.</p><br>
+    ///   - [`agent_runtime_id(impl Into<String>)`](crate::operation::delete_agent_runtime::builders::DeleteAgentRuntimeFluentBuilder::agent_runtime_id) / [`set_agent_runtime_id(Option<String>)`](crate::operation::delete_agent_runtime::builders::DeleteAgentRuntimeFluentBuilder::set_agent_runtime_id):<br>required: **true**<br><p>The unique identifier of the AgentCore Runtime to delete.</p><br>
     /// - On success, responds with [`DeleteAgentRuntimeOutput`](crate::operation::delete_agent_runtime::DeleteAgentRuntimeOutput) with field(s):
-    ///   - [`status(AgentStatus)`](crate::operation::delete_agent_runtime::DeleteAgentRuntimeOutput::status): <p>The current status of the agent runtime deletion.</p>
+    ///   - [`status(AgentRuntimeStatus)`](crate::operation::delete_agent_runtime::DeleteAgentRuntimeOutput::status): <p>The current status of the AgentCore Runtime deletion.</p>
     /// - On failure, responds with [`SdkError<DeleteAgentRuntimeError>`](crate::operation::delete_agent_runtime::DeleteAgentRuntimeError)
     pub fn delete_agent_runtime(&self) -> crate::operation::delete_agent_runtime::builders::DeleteAgentRuntimeFluentBuilder {
         crate::operation::delete_agent_runtime::builders::DeleteAgentRuntimeFluentBuilder::new(self.handle.clone())

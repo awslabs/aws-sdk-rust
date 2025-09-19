@@ -23,7 +23,6 @@ impl crate::operation::create_gateway_target::builders::CreateGatewayTargetInput
 /// Fluent builder constructing a request to `CreateGatewayTarget`.
 ///
 /// <p>Creates a target for a gateway. A target defines an endpoint that the gateway can connect to.</p>
-/// <p>To create a target, you must specify the gateway identifier and target configuration.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateGatewayTargetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -109,17 +108,17 @@ impl CreateGatewayTargetFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The identifier of the gateway to create a target for. This can be either the gateway ID or the gateway ARN.</p>
+    /// <p>The identifier of the gateway to create a target for.</p>
     pub fn gateway_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.gateway_identifier(input.into());
         self
     }
-    /// <p>The identifier of the gateway to create a target for. This can be either the gateway ID or the gateway ARN.</p>
+    /// <p>The identifier of the gateway to create a target for.</p>
     pub fn set_gateway_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_gateway_identifier(input);
         self
     }
-    /// <p>The identifier of the gateway to create a target for. This can be either the gateway ID or the gateway ARN.</p>
+    /// <p>The identifier of the gateway to create a target for.</p>
     pub fn get_gateway_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_gateway_identifier()
     }
@@ -151,17 +150,17 @@ impl CreateGatewayTargetFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
-    /// <p>A unique, case-sensitive identifier to ensure that the operation completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request but does not return an error.</p>
+    /// <p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
-    /// <p>A unique, case-sensitive identifier to ensure that the operation completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request but does not return an error.</p>
+    /// <p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
-    /// <p>A unique, case-sensitive identifier to ensure that the operation completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request but does not return an error.</p>
+    /// <p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }

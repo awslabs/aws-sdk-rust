@@ -3,15 +3,15 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAgentRuntimeEndpointsOutput {
-    /// <p>The list of agent runtime endpoints.</p>
-    pub runtime_endpoints: ::std::vec::Vec<crate::types::AgentEndpoint>,
+    /// <p>The list of AgentCore Runtime endpoints.</p>
+    pub runtime_endpoints: ::std::vec::Vec<crate::types::AgentRuntimeEndpoint>,
     /// <p>A token to retrieve the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListAgentRuntimeEndpointsOutput {
-    /// <p>The list of agent runtime endpoints.</p>
-    pub fn runtime_endpoints(&self) -> &[crate::types::AgentEndpoint] {
+    /// <p>The list of AgentCore Runtime endpoints.</p>
+    pub fn runtime_endpoints(&self) -> &[crate::types::AgentRuntimeEndpoint] {
         use std::ops::Deref;
         self.runtime_endpoints.deref()
     }
@@ -36,7 +36,7 @@ impl ListAgentRuntimeEndpointsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct ListAgentRuntimeEndpointsOutputBuilder {
-    pub(crate) runtime_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::AgentEndpoint>>,
+    pub(crate) runtime_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::AgentRuntimeEndpoint>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -45,20 +45,20 @@ impl ListAgentRuntimeEndpointsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_runtime_endpoints`](Self::set_runtime_endpoints).
     ///
-    /// <p>The list of agent runtime endpoints.</p>
-    pub fn runtime_endpoints(mut self, input: crate::types::AgentEndpoint) -> Self {
+    /// <p>The list of AgentCore Runtime endpoints.</p>
+    pub fn runtime_endpoints(mut self, input: crate::types::AgentRuntimeEndpoint) -> Self {
         let mut v = self.runtime_endpoints.unwrap_or_default();
         v.push(input);
         self.runtime_endpoints = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The list of agent runtime endpoints.</p>
-    pub fn set_runtime_endpoints(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AgentEndpoint>>) -> Self {
+    /// <p>The list of AgentCore Runtime endpoints.</p>
+    pub fn set_runtime_endpoints(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AgentRuntimeEndpoint>>) -> Self {
         self.runtime_endpoints = input;
         self
     }
-    /// <p>The list of agent runtime endpoints.</p>
-    pub fn get_runtime_endpoints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AgentEndpoint>> {
+    /// <p>The list of AgentCore Runtime endpoints.</p>
+    pub fn get_runtime_endpoints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AgentRuntimeEndpoint>> {
         &self.runtime_endpoints
     }
     /// <p>A token to retrieve the next page of results.</p>

@@ -22,7 +22,7 @@ impl crate::operation::delete_agent_runtime_endpoint::builders::DeleteAgentRunti
 }
 /// Fluent builder constructing a request to `DeleteAgentRuntimeEndpoint`.
 ///
-/// <p>Deletes an Amazon Secure AgentEndpoint.</p>
+/// <p>Deletes an AAgentCore Runtime endpoint.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteAgentRuntimeEndpointFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl DeleteAgentRuntimeEndpointFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique identifier of the agent runtime associated with the endpoint.</p>
+    /// <p>The unique identifier of the AgentCore Runtime associated with the endpoint.</p>
     pub fn agent_runtime_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_runtime_id(input.into());
         self
     }
-    /// <p>The unique identifier of the agent runtime associated with the endpoint.</p>
+    /// <p>The unique identifier of the AgentCore Runtime associated with the endpoint.</p>
     pub fn set_agent_runtime_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_agent_runtime_id(input);
         self
     }
-    /// <p>The unique identifier of the agent runtime associated with the endpoint.</p>
+    /// <p>The unique identifier of the AgentCore Runtime associated with the endpoint.</p>
     pub fn get_agent_runtime_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agent_runtime_id()
     }
-    /// <p>The name of the agent runtime endpoint to delete.</p>
+    /// <p>The name of the AgentCore Runtime endpoint to delete.</p>
     pub fn endpoint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.endpoint_name(input.into());
         self
     }
-    /// <p>The name of the agent runtime endpoint to delete.</p>
+    /// <p>The name of the AgentCore Runtime endpoint to delete.</p>
     pub fn set_endpoint_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_endpoint_name(input);
         self
     }
-    /// <p>The name of the agent runtime endpoint to delete.</p>
+    /// <p>The name of the AgentCore Runtime endpoint to delete.</p>
     pub fn get_endpoint_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_endpoint_name()
     }

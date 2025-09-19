@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListMemoriesOutput {
-    /// <p>The list of memory summaries.</p>
+    /// <p>The list of AgentCore Memory resource summaries.</p>
     pub memories: ::std::vec::Vec<crate::types::MemorySummary>,
     /// <p>A token to retrieve the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListMemoriesOutput {
-    /// <p>The list of memory summaries.</p>
+    /// <p>The list of AgentCore Memory resource summaries.</p>
     pub fn memories(&self) -> &[crate::types::MemorySummary] {
         use std::ops::Deref;
         self.memories.deref()
@@ -45,19 +45,19 @@ impl ListMemoriesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_memories`](Self::set_memories).
     ///
-    /// <p>The list of memory summaries.</p>
+    /// <p>The list of AgentCore Memory resource summaries.</p>
     pub fn memories(mut self, input: crate::types::MemorySummary) -> Self {
         let mut v = self.memories.unwrap_or_default();
         v.push(input);
         self.memories = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The list of memory summaries.</p>
+    /// <p>The list of AgentCore Memory resource summaries.</p>
     pub fn set_memories(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MemorySummary>>) -> Self {
         self.memories = input;
         self
     }
-    /// <p>The list of memory summaries.</p>
+    /// <p>The list of AgentCore Memory resource summaries.</p>
     pub fn get_memories(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MemorySummary>> {
         &self.memories
     }

@@ -108,17 +108,17 @@ impl GetGatewayFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The identifier of the gateway to retrieve. This can be either the gateway ID or the gateway ARN.</p>
+    /// <p>The identifier of the gateway to retrieve.</p>
     pub fn gateway_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.gateway_identifier(input.into());
         self
     }
-    /// <p>The identifier of the gateway to retrieve. This can be either the gateway ID or the gateway ARN.</p>
+    /// <p>The identifier of the gateway to retrieve.</p>
     pub fn set_gateway_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_gateway_identifier(input);
         self
     }
-    /// <p>The identifier of the gateway to retrieve. This can be either the gateway ID or the gateway ARN.</p>
+    /// <p>The identifier of the gateway to retrieve.</p>
     pub fn get_gateway_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_gateway_identifier()
     }

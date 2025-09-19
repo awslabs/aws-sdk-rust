@@ -22,7 +22,7 @@ impl crate::operation::update_memory::builders::UpdateMemoryInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateMemory`.
 ///
-/// <p>Update memory.</p>
+/// <p>Update an Amazon Bedrock AgentCore Memory resource memory.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateMemoryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -136,17 +136,17 @@ impl UpdateMemoryFluentBuilder {
     pub fn get_memory_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_memory_id()
     }
-    /// <p>The updated description of the memory.</p>
+    /// <p>The updated description of the AgentCore Memory resource.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// <p>The updated description of the memory.</p>
+    /// <p>The updated description of the AgentCore Memory resource.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// <p>The updated description of the memory.</p>
+    /// <p>The updated description of the AgentCore Memory resource.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
@@ -164,17 +164,17 @@ impl UpdateMemoryFluentBuilder {
     pub fn get_event_expiry_duration(&self) -> &::std::option::Option<i32> {
         self.inner.get_event_expiry_duration()
     }
-    /// <p>The ARN of the IAM role that provides permissions for the memory.</p>
+    /// <p>The ARN of the IAM role that provides permissions for the AgentCore Memory resource.</p>
     pub fn memory_execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.memory_execution_role_arn(input.into());
         self
     }
-    /// <p>The ARN of the IAM role that provides permissions for the memory.</p>
+    /// <p>The ARN of the IAM role that provides permissions for the AgentCore Memory resource.</p>
     pub fn set_memory_execution_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_memory_execution_role_arn(input);
         self
     }
-    /// <p>The ARN of the IAM role that provides permissions for the memory.</p>
+    /// <p>The ARN of the IAM role that provides permissions for the AgentCore Memory resource.</p>
     pub fn get_memory_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_memory_execution_role_arn()
     }

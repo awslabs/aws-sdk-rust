@@ -22,7 +22,7 @@ impl crate::operation::update_gateway_target::builders::UpdateGatewayTargetInput
 }
 /// Fluent builder constructing a request to `UpdateGatewayTarget`.
 ///
-/// <p>Updates an existing Gateway Target.</p>
+/// <p>Updates an existing gateway target.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateGatewayTargetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,59 +108,59 @@ impl UpdateGatewayTargetFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique identifier of the Gateway associated with the target.</p>
+    /// <p>The unique identifier of the gateway associated with the target.</p>
     pub fn gateway_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.gateway_identifier(input.into());
         self
     }
-    /// <p>The unique identifier of the Gateway associated with the target.</p>
+    /// <p>The unique identifier of the gateway associated with the target.</p>
     pub fn set_gateway_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_gateway_identifier(input);
         self
     }
-    /// <p>The unique identifier of the Gateway associated with the target.</p>
+    /// <p>The unique identifier of the gateway associated with the target.</p>
     pub fn get_gateway_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_gateway_identifier()
     }
-    /// <p>The unique identifier of the Gateway Target to update.</p>
+    /// <p>The unique identifier of the gateway target to update.</p>
     pub fn target_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target_id(input.into());
         self
     }
-    /// <p>The unique identifier of the Gateway Target to update.</p>
+    /// <p>The unique identifier of the gateway target to update.</p>
     pub fn set_target_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_target_id(input);
         self
     }
-    /// <p>The unique identifier of the Gateway Target to update.</p>
+    /// <p>The unique identifier of the gateway target to update.</p>
     pub fn get_target_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_target_id()
     }
-    /// <p>The updated name for the Gateway Target.</p>
+    /// <p>The updated name for the gateway target.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p>The updated name for the Gateway Target.</p>
+    /// <p>The updated name for the gateway target.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>The updated name for the Gateway Target.</p>
+    /// <p>The updated name for the gateway target.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p>The updated description for the Gateway Target.</p>
+    /// <p>The updated description for the gateway target.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// <p>The updated description for the Gateway Target.</p>
+    /// <p>The updated description for the gateway target.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// <p>The updated description for the Gateway Target.</p>
+    /// <p>The updated description for the gateway target.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
@@ -183,12 +183,12 @@ impl UpdateGatewayTargetFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_credential_provider_configurations`](Self::set_credential_provider_configurations).
     ///
-    /// <p>The updated credential provider configurations for the Gateway Target.</p>
+    /// <p>The updated credential provider configurations for the gateway target.</p>
     pub fn credential_provider_configurations(mut self, input: crate::types::CredentialProviderConfiguration) -> Self {
         self.inner = self.inner.credential_provider_configurations(input);
         self
     }
-    /// <p>The updated credential provider configurations for the Gateway Target.</p>
+    /// <p>The updated credential provider configurations for the gateway target.</p>
     pub fn set_credential_provider_configurations(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::CredentialProviderConfiguration>>,
@@ -196,7 +196,7 @@ impl UpdateGatewayTargetFluentBuilder {
         self.inner = self.inner.set_credential_provider_configurations(input);
         self
     }
-    /// <p>The updated credential provider configurations for the Gateway Target.</p>
+    /// <p>The updated credential provider configurations for the gateway target.</p>
     pub fn get_credential_provider_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CredentialProviderConfiguration>> {
         self.inner.get_credential_provider_configurations()
     }

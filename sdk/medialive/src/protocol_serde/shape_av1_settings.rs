@@ -96,6 +96,12 @@ pub fn ser_av1_settings(
     if let Some(var_21) = &input.rate_control_mode {
         object.key("rateControlMode").string(var_21.as_str());
     }
+    if let Some(var_22) = &input.min_bitrate {
+        object.key("minBitrate").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_22).into()),
+        );
+    }
     Ok(())
 }
 
@@ -237,6 +243,13 @@ where
                             builder = builder.set_rate_control_mode(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::Av1RateControlMode::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "minBitrate" => {
+                            builder = builder.set_min_bitrate(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
                                     .transpose()?,
                             );
                         }

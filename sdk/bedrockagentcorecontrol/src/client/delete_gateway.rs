@@ -3,11 +3,11 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteGateway`](crate::operation::delete_gateway::builders::DeleteGatewayFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`gateway_identifier(impl Into<String>)`](crate::operation::delete_gateway::builders::DeleteGatewayFluentBuilder::gateway_identifier) / [`set_gateway_identifier(Option<String>)`](crate::operation::delete_gateway::builders::DeleteGatewayFluentBuilder::set_gateway_identifier):<br>required: **true**<br><p>The identifier of the gateway to delete. This can be either the gateway ID or the gateway ARN.</p><br>
+    ///   - [`gateway_identifier(impl Into<String>)`](crate::operation::delete_gateway::builders::DeleteGatewayFluentBuilder::gateway_identifier) / [`set_gateway_identifier(Option<String>)`](crate::operation::delete_gateway::builders::DeleteGatewayFluentBuilder::set_gateway_identifier):<br>required: **true**<br><p>The identifier of the gateway to delete.</p><br>
     /// - On success, responds with [`DeleteGatewayOutput`](crate::operation::delete_gateway::DeleteGatewayOutput) with field(s):
-    ///   - [`gateway_id(String)`](crate::operation::delete_gateway::DeleteGatewayOutput::gateway_id): <p>The unique identifier of the deleted Gateway.</p>
-    ///   - [`status(GatewayStatus)`](crate::operation::delete_gateway::DeleteGatewayOutput::status): <p>The current status of the Gateway deletion.</p>
-    ///   - [`status_reasons(Option<Vec::<String>>)`](crate::operation::delete_gateway::DeleteGatewayOutput::status_reasons): <p>The reasons for the current status of the Gateway deletion.</p>
+    ///   - [`gateway_id(String)`](crate::operation::delete_gateway::DeleteGatewayOutput::gateway_id): <p>The unique identifier of the deleted gateway.</p>
+    ///   - [`status(GatewayStatus)`](crate::operation::delete_gateway::DeleteGatewayOutput::status): <p>The current status of the gateway deletion.</p>
+    ///   - [`status_reasons(Option<Vec::<String>>)`](crate::operation::delete_gateway::DeleteGatewayOutput::status_reasons): <p>The reasons for the current status of the gateway deletion.</p>
     /// - On failure, responds with [`SdkError<DeleteGatewayError>`](crate::operation::delete_gateway::DeleteGatewayError)
     pub fn delete_gateway(&self) -> crate::operation::delete_gateway::builders::DeleteGatewayFluentBuilder {
         crate::operation::delete_gateway::builders::DeleteGatewayFluentBuilder::new(self.handle.clone())

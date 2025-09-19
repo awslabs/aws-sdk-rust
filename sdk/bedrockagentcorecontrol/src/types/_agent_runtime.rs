@@ -3,7 +3,7 @@
 /// <p>Contains information about an agent runtime. An agent runtime is the execution environment for a Amazon Bedrock Agent.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct Agent {
+pub struct AgentRuntime {
     /// <p>The Amazon Resource Name (ARN) of the agent runtime.</p>
     pub agent_runtime_arn: ::std::string::String,
     /// <p>The unique identifier of the agent runtime.</p>
@@ -17,9 +17,9 @@ pub struct Agent {
     /// <p>The timestamp when the agent runtime was last updated.</p>
     pub last_updated_at: ::aws_smithy_types::DateTime,
     /// <p>The current status of the agent runtime.</p>
-    pub status: crate::types::AgentStatus,
+    pub status: crate::types::AgentRuntimeStatus,
 }
-impl Agent {
+impl AgentRuntime {
     /// <p>The Amazon Resource Name (ARN) of the agent runtime.</p>
     pub fn agent_runtime_arn(&self) -> &str {
         use std::ops::Deref;
@@ -50,13 +50,13 @@ impl Agent {
         &self.last_updated_at
     }
     /// <p>The current status of the agent runtime.</p>
-    pub fn status(&self) -> &crate::types::AgentStatus {
+    pub fn status(&self) -> &crate::types::AgentRuntimeStatus {
         &self.status
     }
 }
-impl ::std::fmt::Debug for Agent {
+impl ::std::fmt::Debug for AgentRuntime {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
-        let mut formatter = f.debug_struct("Agent");
+        let mut formatter = f.debug_struct("AgentRuntime");
         formatter.field("agent_runtime_arn", &self.agent_runtime_arn);
         formatter.field("agent_runtime_id", &self.agent_runtime_id);
         formatter.field("agent_runtime_version", &self.agent_runtime_version);
@@ -67,26 +67,26 @@ impl ::std::fmt::Debug for Agent {
         formatter.finish()
     }
 }
-impl Agent {
-    /// Creates a new builder-style object to manufacture [`Agent`](crate::types::Agent).
-    pub fn builder() -> crate::types::builders::AgentBuilder {
-        crate::types::builders::AgentBuilder::default()
+impl AgentRuntime {
+    /// Creates a new builder-style object to manufacture [`AgentRuntime`](crate::types::AgentRuntime).
+    pub fn builder() -> crate::types::builders::AgentRuntimeBuilder {
+        crate::types::builders::AgentRuntimeBuilder::default()
     }
 }
 
-/// A builder for [`Agent`](crate::types::Agent).
+/// A builder for [`AgentRuntime`](crate::types::AgentRuntime).
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
-pub struct AgentBuilder {
+pub struct AgentRuntimeBuilder {
     pub(crate) agent_runtime_arn: ::std::option::Option<::std::string::String>,
     pub(crate) agent_runtime_id: ::std::option::Option<::std::string::String>,
     pub(crate) agent_runtime_version: ::std::option::Option<::std::string::String>,
     pub(crate) agent_runtime_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) status: ::std::option::Option<crate::types::AgentStatus>,
+    pub(crate) status: ::std::option::Option<crate::types::AgentRuntimeStatus>,
 }
-impl AgentBuilder {
+impl AgentRuntimeBuilder {
     /// <p>The Amazon Resource Name (ARN) of the agent runtime.</p>
     /// This field is required.
     pub fn agent_runtime_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -179,78 +179,78 @@ impl AgentBuilder {
     }
     /// <p>The current status of the agent runtime.</p>
     /// This field is required.
-    pub fn status(mut self, input: crate::types::AgentStatus) -> Self {
+    pub fn status(mut self, input: crate::types::AgentRuntimeStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current status of the agent runtime.</p>
-    pub fn set_status(mut self, input: ::std::option::Option<crate::types::AgentStatus>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::AgentRuntimeStatus>) -> Self {
         self.status = input;
         self
     }
     /// <p>The current status of the agent runtime.</p>
-    pub fn get_status(&self) -> &::std::option::Option<crate::types::AgentStatus> {
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::AgentRuntimeStatus> {
         &self.status
     }
-    /// Consumes the builder and constructs a [`Agent`](crate::types::Agent).
+    /// Consumes the builder and constructs a [`AgentRuntime`](crate::types::AgentRuntime).
     /// This method will fail if any of the following fields are not set:
-    /// - [`agent_runtime_arn`](crate::types::builders::AgentBuilder::agent_runtime_arn)
-    /// - [`agent_runtime_id`](crate::types::builders::AgentBuilder::agent_runtime_id)
-    /// - [`agent_runtime_version`](crate::types::builders::AgentBuilder::agent_runtime_version)
-    /// - [`agent_runtime_name`](crate::types::builders::AgentBuilder::agent_runtime_name)
-    /// - [`description`](crate::types::builders::AgentBuilder::description)
-    /// - [`last_updated_at`](crate::types::builders::AgentBuilder::last_updated_at)
-    /// - [`status`](crate::types::builders::AgentBuilder::status)
-    pub fn build(self) -> ::std::result::Result<crate::types::Agent, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Agent {
+    /// - [`agent_runtime_arn`](crate::types::builders::AgentRuntimeBuilder::agent_runtime_arn)
+    /// - [`agent_runtime_id`](crate::types::builders::AgentRuntimeBuilder::agent_runtime_id)
+    /// - [`agent_runtime_version`](crate::types::builders::AgentRuntimeBuilder::agent_runtime_version)
+    /// - [`agent_runtime_name`](crate::types::builders::AgentRuntimeBuilder::agent_runtime_name)
+    /// - [`description`](crate::types::builders::AgentRuntimeBuilder::description)
+    /// - [`last_updated_at`](crate::types::builders::AgentRuntimeBuilder::last_updated_at)
+    /// - [`status`](crate::types::builders::AgentRuntimeBuilder::status)
+    pub fn build(self) -> ::std::result::Result<crate::types::AgentRuntime, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AgentRuntime {
             agent_runtime_arn: self.agent_runtime_arn.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "agent_runtime_arn",
-                    "agent_runtime_arn was not specified but it is required when building Agent",
+                    "agent_runtime_arn was not specified but it is required when building AgentRuntime",
                 )
             })?,
             agent_runtime_id: self.agent_runtime_id.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "agent_runtime_id",
-                    "agent_runtime_id was not specified but it is required when building Agent",
+                    "agent_runtime_id was not specified but it is required when building AgentRuntime",
                 )
             })?,
             agent_runtime_version: self.agent_runtime_version.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "agent_runtime_version",
-                    "agent_runtime_version was not specified but it is required when building Agent",
+                    "agent_runtime_version was not specified but it is required when building AgentRuntime",
                 )
             })?,
             agent_runtime_name: self.agent_runtime_name.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "agent_runtime_name",
-                    "agent_runtime_name was not specified but it is required when building Agent",
+                    "agent_runtime_name was not specified but it is required when building AgentRuntime",
                 )
             })?,
             description: self.description.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "description",
-                    "description was not specified but it is required when building Agent",
+                    "description was not specified but it is required when building AgentRuntime",
                 )
             })?,
             last_updated_at: self.last_updated_at.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "last_updated_at",
-                    "last_updated_at was not specified but it is required when building Agent",
+                    "last_updated_at was not specified but it is required when building AgentRuntime",
                 )
             })?,
             status: self.status.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
-                    "status was not specified but it is required when building Agent",
+                    "status was not specified but it is required when building AgentRuntime",
                 )
             })?,
         })
     }
 }
-impl ::std::fmt::Debug for AgentBuilder {
+impl ::std::fmt::Debug for AgentRuntimeBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
-        let mut formatter = f.debug_struct("AgentBuilder");
+        let mut formatter = f.debug_struct("AgentRuntimeBuilder");
         formatter.field("agent_runtime_arn", &self.agent_runtime_arn);
         formatter.field("agent_runtime_id", &self.agent_runtime_id);
         formatter.field("agent_runtime_version", &self.agent_runtime_version);

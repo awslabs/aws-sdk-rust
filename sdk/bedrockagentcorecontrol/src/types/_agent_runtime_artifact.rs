@@ -3,7 +3,7 @@
 /// <p>The artifact of the agent.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub enum AgentArtifact {
+pub enum AgentRuntimeArtifact {
     /// <p>The container configuration for the agent artifact.</p>
     ContainerConfiguration(crate::types::ContainerConfiguration),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
@@ -16,18 +16,18 @@ pub enum AgentArtifact {
     #[non_exhaustive]
     Unknown,
 }
-impl AgentArtifact {
+impl AgentRuntimeArtifact {
     #[allow(irrefutable_let_patterns)]
-    /// Tries to convert the enum instance into [`ContainerConfiguration`](crate::types::AgentArtifact::ContainerConfiguration), extracting the inner [`ContainerConfiguration`](crate::types::ContainerConfiguration).
+    /// Tries to convert the enum instance into [`ContainerConfiguration`](crate::types::AgentRuntimeArtifact::ContainerConfiguration), extracting the inner [`ContainerConfiguration`](crate::types::ContainerConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_container_configuration(&self) -> ::std::result::Result<&crate::types::ContainerConfiguration, &Self> {
-        if let AgentArtifact::ContainerConfiguration(val) = &self {
+        if let AgentRuntimeArtifact::ContainerConfiguration(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
             ::std::result::Result::Err(self)
         }
     }
-    /// Returns true if this is a [`ContainerConfiguration`](crate::types::AgentArtifact::ContainerConfiguration).
+    /// Returns true if this is a [`ContainerConfiguration`](crate::types::AgentRuntimeArtifact::ContainerConfiguration).
     pub fn is_container_configuration(&self) -> bool {
         self.as_container_configuration().is_ok()
     }

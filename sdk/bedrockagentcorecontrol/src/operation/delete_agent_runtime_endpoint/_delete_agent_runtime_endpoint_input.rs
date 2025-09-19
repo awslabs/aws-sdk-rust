@@ -3,19 +3,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DeleteAgentRuntimeEndpointInput {
-    /// <p>The unique identifier of the agent runtime associated with the endpoint.</p>
+    /// <p>The unique identifier of the AgentCore Runtime associated with the endpoint.</p>
     pub agent_runtime_id: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the agent runtime endpoint to delete.</p>
+    /// <p>The name of the AgentCore Runtime endpoint to delete.</p>
     pub endpoint_name: ::std::option::Option<::std::string::String>,
     /// <p>A unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl DeleteAgentRuntimeEndpointInput {
-    /// <p>The unique identifier of the agent runtime associated with the endpoint.</p>
+    /// <p>The unique identifier of the AgentCore Runtime associated with the endpoint.</p>
     pub fn agent_runtime_id(&self) -> ::std::option::Option<&str> {
         self.agent_runtime_id.as_deref()
     }
-    /// <p>The name of the agent runtime endpoint to delete.</p>
+    /// <p>The name of the AgentCore Runtime endpoint to delete.</p>
     pub fn endpoint_name(&self) -> ::std::option::Option<&str> {
         self.endpoint_name.as_deref()
     }
@@ -49,33 +49,33 @@ pub struct DeleteAgentRuntimeEndpointInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl DeleteAgentRuntimeEndpointInputBuilder {
-    /// <p>The unique identifier of the agent runtime associated with the endpoint.</p>
+    /// <p>The unique identifier of the AgentCore Runtime associated with the endpoint.</p>
     /// This field is required.
     pub fn agent_runtime_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.agent_runtime_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the agent runtime associated with the endpoint.</p>
+    /// <p>The unique identifier of the AgentCore Runtime associated with the endpoint.</p>
     pub fn set_agent_runtime_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.agent_runtime_id = input;
         self
     }
-    /// <p>The unique identifier of the agent runtime associated with the endpoint.</p>
+    /// <p>The unique identifier of the AgentCore Runtime associated with the endpoint.</p>
     pub fn get_agent_runtime_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.agent_runtime_id
     }
-    /// <p>The name of the agent runtime endpoint to delete.</p>
+    /// <p>The name of the AgentCore Runtime endpoint to delete.</p>
     /// This field is required.
     pub fn endpoint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the agent runtime endpoint to delete.</p>
+    /// <p>The name of the AgentCore Runtime endpoint to delete.</p>
     pub fn set_endpoint_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.endpoint_name = input;
         self
     }
-    /// <p>The name of the agent runtime endpoint to delete.</p>
+    /// <p>The name of the AgentCore Runtime endpoint to delete.</p>
     pub fn get_endpoint_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.endpoint_name
     }

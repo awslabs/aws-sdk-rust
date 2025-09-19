@@ -1,8 +1,6 @@
 # aws-sdk-bedrockagentcorecontrol
 
-Amazon Bedrock Agent Core Control is a service that enables you to manage memory resources for your Amazon Bedrock agents.
-
-Use this API to create, retrieve, update, and delete memory resources and their associated memory strategies. Memory resources enable your agents to store and retrieve information from conversations and interactions.
+Welcome to the Amazon Bedrock AgentCore Control plane API reference. Control plane actions configure, create, modify, and monitor Amazon Web Services resources.
 
 ## Getting Started
 
@@ -16,7 +14,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-aws-sdk-bedrockagentcorecontrol = "1.8.0"
+aws-sdk-bedrockagentcorecontrol = "1.9.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

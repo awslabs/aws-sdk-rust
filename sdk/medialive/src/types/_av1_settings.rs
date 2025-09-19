@@ -42,6 +42,8 @@ pub struct Av1Settings {
     pub bitrate: ::std::option::Option<i32>,
     /// Rate control mode. QVBR: Quality will match the specified quality level except when it is constrained by the maximum bitrate. Recommended if you or your viewers pay for bandwidth. CBR: Quality varies, depending on the video complexity. Recommended only if you distribute your assets to devices that cannot handle variable bitrates.
     pub rate_control_mode: ::std::option::Option<crate::types::Av1RateControlMode>,
+    /// Used for QVBR rate control mode only. Optional. Enter a minimum bitrate if you want to keep the output bitrate about a threshold, in order to prevent the downstream system from de-allocating network bandwidth for this output.
+    pub min_bitrate: ::std::option::Option<i32>,
 }
 impl Av1Settings {
     /// Configures whether MediaLive will write AFD values into the video. AUTO: MediaLive will try to preserve the input AFD value (in cases where multiple AFD values are valid). FIXED: the AFD value will be the value configured in the fixedAfd parameter. NONE: MediaLive won't write AFD into the video
@@ -120,6 +122,10 @@ impl Av1Settings {
     pub fn rate_control_mode(&self) -> ::std::option::Option<&crate::types::Av1RateControlMode> {
         self.rate_control_mode.as_ref()
     }
+    /// Used for QVBR rate control mode only. Optional. Enter a minimum bitrate if you want to keep the output bitrate about a threshold, in order to prevent the downstream system from de-allocating network bandwidth for this output.
+    pub fn min_bitrate(&self) -> ::std::option::Option<i32> {
+        self.min_bitrate
+    }
 }
 impl Av1Settings {
     /// Creates a new builder-style object to manufacture [`Av1Settings`](crate::types::Av1Settings).
@@ -151,6 +157,7 @@ pub struct Av1SettingsBuilder {
     pub(crate) timecode_burnin_settings: ::std::option::Option<crate::types::TimecodeBurninSettings>,
     pub(crate) bitrate: ::std::option::Option<i32>,
     pub(crate) rate_control_mode: ::std::option::Option<crate::types::Av1RateControlMode>,
+    pub(crate) min_bitrate: ::std::option::Option<i32>,
 }
 impl Av1SettingsBuilder {
     /// Configures whether MediaLive will write AFD values into the video. AUTO: MediaLive will try to preserve the input AFD value (in cases where multiple AFD values are valid). FIXED: the AFD value will be the value configured in the fixedAfd parameter. NONE: MediaLive won't write AFD into the video
@@ -421,6 +428,20 @@ impl Av1SettingsBuilder {
     pub fn get_rate_control_mode(&self) -> &::std::option::Option<crate::types::Av1RateControlMode> {
         &self.rate_control_mode
     }
+    /// Used for QVBR rate control mode only. Optional. Enter a minimum bitrate if you want to keep the output bitrate about a threshold, in order to prevent the downstream system from de-allocating network bandwidth for this output.
+    pub fn min_bitrate(mut self, input: i32) -> Self {
+        self.min_bitrate = ::std::option::Option::Some(input);
+        self
+    }
+    /// Used for QVBR rate control mode only. Optional. Enter a minimum bitrate if you want to keep the output bitrate about a threshold, in order to prevent the downstream system from de-allocating network bandwidth for this output.
+    pub fn set_min_bitrate(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.min_bitrate = input;
+        self
+    }
+    /// Used for QVBR rate control mode only. Optional. Enter a minimum bitrate if you want to keep the output bitrate about a threshold, in order to prevent the downstream system from de-allocating network bandwidth for this output.
+    pub fn get_min_bitrate(&self) -> &::std::option::Option<i32> {
+        &self.min_bitrate
+    }
     /// Consumes the builder and constructs a [`Av1Settings`](crate::types::Av1Settings).
     pub fn build(self) -> crate::types::Av1Settings {
         crate::types::Av1Settings {
@@ -443,6 +464,7 @@ impl Av1SettingsBuilder {
             timecode_burnin_settings: self.timecode_burnin_settings,
             bitrate: self.bitrate,
             rate_control_mode: self.rate_control_mode,
+            min_bitrate: self.min_bitrate,
         }
     }
 }

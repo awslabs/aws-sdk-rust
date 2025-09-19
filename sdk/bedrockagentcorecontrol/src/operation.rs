@@ -124,11 +124,20 @@ pub mod list_memories;
 /// Types for the `ListOauth2CredentialProviders` operation.
 pub mod list_oauth2_credential_providers;
 
+/// Types for the `ListTagsForResource` operation.
+pub mod list_tags_for_resource;
+
 /// Types for the `ListWorkloadIdentities` operation.
 pub mod list_workload_identities;
 
 /// Types for the `SetTokenVaultCMK` operation.
 pub mod set_token_vault_cmk;
+
+/// Types for the `TagResource` operation.
+pub mod tag_resource;
+
+/// Types for the `UntagResource` operation.
+pub mod untag_resource;
 
 /// Types for the `UpdateAgentRuntime` operation.
 pub mod update_agent_runtime;

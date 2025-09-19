@@ -22,7 +22,7 @@ impl crate::operation::get_memory::builders::GetMemoryInputBuilder {
 }
 /// Fluent builder constructing a request to `GetMemory`.
 ///
-/// <p>Retrieve an existing memory.</p>
+/// <p>Retrieve an existing Amazon Bedrock AgentCore Memory resource.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetMemoryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

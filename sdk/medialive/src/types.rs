@@ -439,6 +439,10 @@ pub use crate::types::_mpeg2_adaptive_quantization::Mpeg2AdaptiveQuantization;
 
 pub use crate::types::_h265_settings::H265Settings;
 
+pub use crate::types::_h265_sub_gop_length::H265SubGopLength;
+
+pub use crate::types::_h265_gop_b_reference::H265GopBReference;
+
 pub use crate::types::_h265_deblocking::H265Deblocking;
 
 pub use crate::types::_h265_treeblock_size::H265TreeblockSize;
@@ -1783,6 +1787,8 @@ mod _h265_filter_settings;
 
 mod _h265_flicker_aq;
 
+mod _h265_gop_b_reference;
+
 mod _h265_gop_size_units;
 
 mod _h265_level;
@@ -1802,6 +1808,8 @@ mod _h265_scan_type;
 mod _h265_scene_change_detect;
 
 mod _h265_settings;
+
+mod _h265_sub_gop_length;
 
 mod _h265_tier;
 

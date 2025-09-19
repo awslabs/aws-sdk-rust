@@ -3,32 +3,32 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteGatewayTargetOutput {
-    /// <p>The Amazon Resource Name (ARN) of the Gateway.</p>
+    /// <p>The Amazon Resource Name (ARN) of the gateway.</p>
     pub gateway_arn: ::std::string::String,
-    /// <p>The unique identifier of the deleted Gateway Target.</p>
+    /// <p>The unique identifier of the deleted gateway target.</p>
     pub target_id: ::std::string::String,
-    /// <p>The current status of the Gateway Target deletion.</p>
+    /// <p>The current status of the gateway target deletion.</p>
     pub status: crate::types::TargetStatus,
-    /// <p>The reasons for the current status of the Gateway Target deletion.</p>
+    /// <p>The reasons for the current status of the gateway target deletion.</p>
     pub status_reasons: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl DeleteGatewayTargetOutput {
-    /// <p>The Amazon Resource Name (ARN) of the Gateway.</p>
+    /// <p>The Amazon Resource Name (ARN) of the gateway.</p>
     pub fn gateway_arn(&self) -> &str {
         use std::ops::Deref;
         self.gateway_arn.deref()
     }
-    /// <p>The unique identifier of the deleted Gateway Target.</p>
+    /// <p>The unique identifier of the deleted gateway target.</p>
     pub fn target_id(&self) -> &str {
         use std::ops::Deref;
         self.target_id.deref()
     }
-    /// <p>The current status of the Gateway Target deletion.</p>
+    /// <p>The current status of the gateway target deletion.</p>
     pub fn status(&self) -> &crate::types::TargetStatus {
         &self.status
     }
-    /// <p>The reasons for the current status of the Gateway Target deletion.</p>
+    /// <p>The reasons for the current status of the gateway target deletion.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.status_reasons.is_none()`.
     pub fn status_reasons(&self) -> &[::std::string::String] {
@@ -58,48 +58,48 @@ pub struct DeleteGatewayTargetOutputBuilder {
     _request_id: Option<String>,
 }
 impl DeleteGatewayTargetOutputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the Gateway.</p>
+    /// <p>The Amazon Resource Name (ARN) of the gateway.</p>
     /// This field is required.
     pub fn gateway_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Gateway.</p>
+    /// <p>The Amazon Resource Name (ARN) of the gateway.</p>
     pub fn set_gateway_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.gateway_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Gateway.</p>
+    /// <p>The Amazon Resource Name (ARN) of the gateway.</p>
     pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.gateway_arn
     }
-    /// <p>The unique identifier of the deleted Gateway Target.</p>
+    /// <p>The unique identifier of the deleted gateway target.</p>
     /// This field is required.
     pub fn target_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the deleted Gateway Target.</p>
+    /// <p>The unique identifier of the deleted gateway target.</p>
     pub fn set_target_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_id = input;
         self
     }
-    /// <p>The unique identifier of the deleted Gateway Target.</p>
+    /// <p>The unique identifier of the deleted gateway target.</p>
     pub fn get_target_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_id
     }
-    /// <p>The current status of the Gateway Target deletion.</p>
+    /// <p>The current status of the gateway target deletion.</p>
     /// This field is required.
     pub fn status(mut self, input: crate::types::TargetStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The current status of the Gateway Target deletion.</p>
+    /// <p>The current status of the gateway target deletion.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::TargetStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The current status of the Gateway Target deletion.</p>
+    /// <p>The current status of the gateway target deletion.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::TargetStatus> {
         &self.status
     }
@@ -107,19 +107,19 @@ impl DeleteGatewayTargetOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_status_reasons`](Self::set_status_reasons).
     ///
-    /// <p>The reasons for the current status of the Gateway Target deletion.</p>
+    /// <p>The reasons for the current status of the gateway target deletion.</p>
     pub fn status_reasons(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.status_reasons.unwrap_or_default();
         v.push(input.into());
         self.status_reasons = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The reasons for the current status of the Gateway Target deletion.</p>
+    /// <p>The reasons for the current status of the gateway target deletion.</p>
     pub fn set_status_reasons(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.status_reasons = input;
         self
     }
-    /// <p>The reasons for the current status of the Gateway Target deletion.</p>
+    /// <p>The reasons for the current status of the gateway target deletion.</p>
     pub fn get_status_reasons(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.status_reasons
     }
