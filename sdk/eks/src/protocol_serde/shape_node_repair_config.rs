@@ -6,6 +6,42 @@ pub fn ser_node_repair_config(
     if let Some(var_1) = &input.enabled {
         object.key("enabled").boolean(*var_1);
     }
+    if let Some(var_2) = &input.max_unhealthy_node_threshold_count {
+        object.key("maxUnhealthyNodeThresholdCount").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
+        );
+    }
+    if let Some(var_3) = &input.max_unhealthy_node_threshold_percentage {
+        object.key("maxUnhealthyNodeThresholdPercentage").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_3).into()),
+        );
+    }
+    if let Some(var_4) = &input.max_parallel_nodes_repaired_count {
+        object.key("maxParallelNodesRepairedCount").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_4).into()),
+        );
+    }
+    if let Some(var_5) = &input.max_parallel_nodes_repaired_percentage {
+        object.key("maxParallelNodesRepairedPercentage").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_5).into()),
+        );
+    }
+    if let Some(var_6) = &input.node_repair_config_overrides {
+        let mut array_7 = object.key("nodeRepairConfigOverrides").start_array();
+        for item_8 in var_6 {
+            {
+                #[allow(unused_mut)]
+                let mut object_9 = array_7.value().start_object();
+                crate::protocol_serde::shape_node_repair_config_overrides::ser_node_repair_config_overrides(&mut object_9, item_8)?;
+                object_9.finish();
+            }
+        }
+        array_7.finish();
+    }
     Ok(())
 }
 
@@ -26,6 +62,39 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "enabled" => {
                             builder = builder.set_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "maxUnhealthyNodeThresholdCount" => {
+                            builder = builder.set_max_unhealthy_node_threshold_count(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "maxUnhealthyNodeThresholdPercentage" => {
+                            builder = builder.set_max_unhealthy_node_threshold_percentage(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "maxParallelNodesRepairedCount" => {
+                            builder = builder.set_max_parallel_nodes_repaired_count(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "maxParallelNodesRepairedPercentage" => {
+                            builder = builder.set_max_parallel_nodes_repaired_percentage(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "nodeRepairConfigOverrides" => {
+                            builder = builder.set_node_repair_config_overrides(
+                                crate::protocol_serde::shape_node_repair_config_overrides_list::de_node_repair_config_overrides_list(tokens)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

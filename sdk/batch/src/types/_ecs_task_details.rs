@@ -16,13 +16,13 @@ pub struct EcsTaskDetails {
     pub execution_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Fargate platform version where the jobs are running.</p>
     pub platform_version: ::std::option::Option<::std::string::String>,
-    /// <p>The IPC resource namespace to use for the containers in the task.</p>
+    /// <p>The IPC resource namespace to use for the containers in the task. The valid values are <code>host</code>, <code>task</code>, or <code>none</code>. For more information see <code>ipcMode</code> in <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_EcsTaskProperties.html">EcsTaskProperties</a>.</p>
     pub ipc_mode: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role that the container can assume for Amazon Web Services permissions. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM roles for tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p><note>
     /// <p>This is object is comparable to <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_ContainerProperties.html">ContainerProperties:jobRoleArn</a>.</p>
     /// </note>
     pub task_role_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The process namespace to use for the containers in the task.</p>
+    /// <p>The process namespace to use for the containers in the task. The valid values are <code>host</code>, or <code>task</code>. For more information see <code>pidMode</code> in <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_EcsTaskProperties.html">EcsTaskProperties</a>.</p>
     pub pid_mode: ::std::option::Option<::std::string::String>,
     /// <p>The network configuration for jobs that are running on Fargate resources. Jobs that are running on Amazon EC2 resources must not specify this parameter.</p>
     pub network_configuration: ::std::option::Option<crate::types::NetworkConfiguration>,
@@ -60,7 +60,7 @@ impl EcsTaskDetails {
     pub fn platform_version(&self) -> ::std::option::Option<&str> {
         self.platform_version.as_deref()
     }
-    /// <p>The IPC resource namespace to use for the containers in the task.</p>
+    /// <p>The IPC resource namespace to use for the containers in the task. The valid values are <code>host</code>, <code>task</code>, or <code>none</code>. For more information see <code>ipcMode</code> in <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_EcsTaskProperties.html">EcsTaskProperties</a>.</p>
     pub fn ipc_mode(&self) -> ::std::option::Option<&str> {
         self.ipc_mode.as_deref()
     }
@@ -70,7 +70,7 @@ impl EcsTaskDetails {
     pub fn task_role_arn(&self) -> ::std::option::Option<&str> {
         self.task_role_arn.as_deref()
     }
-    /// <p>The process namespace to use for the containers in the task.</p>
+    /// <p>The process namespace to use for the containers in the task. The valid values are <code>host</code>, or <code>task</code>. For more information see <code>pidMode</code> in <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_EcsTaskProperties.html">EcsTaskProperties</a>.</p>
     pub fn pid_mode(&self) -> ::std::option::Option<&str> {
         self.pid_mode.as_deref()
     }
@@ -209,17 +209,17 @@ impl EcsTaskDetailsBuilder {
     pub fn get_platform_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.platform_version
     }
-    /// <p>The IPC resource namespace to use for the containers in the task.</p>
+    /// <p>The IPC resource namespace to use for the containers in the task. The valid values are <code>host</code>, <code>task</code>, or <code>none</code>. For more information see <code>ipcMode</code> in <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_EcsTaskProperties.html">EcsTaskProperties</a>.</p>
     pub fn ipc_mode(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipc_mode = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The IPC resource namespace to use for the containers in the task.</p>
+    /// <p>The IPC resource namespace to use for the containers in the task. The valid values are <code>host</code>, <code>task</code>, or <code>none</code>. For more information see <code>ipcMode</code> in <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_EcsTaskProperties.html">EcsTaskProperties</a>.</p>
     pub fn set_ipc_mode(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ipc_mode = input;
         self
     }
-    /// <p>The IPC resource namespace to use for the containers in the task.</p>
+    /// <p>The IPC resource namespace to use for the containers in the task. The valid values are <code>host</code>, <code>task</code>, or <code>none</code>. For more information see <code>ipcMode</code> in <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_EcsTaskProperties.html">EcsTaskProperties</a>.</p>
     pub fn get_ipc_mode(&self) -> &::std::option::Option<::std::string::String> {
         &self.ipc_mode
     }
@@ -243,17 +243,17 @@ impl EcsTaskDetailsBuilder {
     pub fn get_task_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.task_role_arn
     }
-    /// <p>The process namespace to use for the containers in the task.</p>
+    /// <p>The process namespace to use for the containers in the task. The valid values are <code>host</code>, or <code>task</code>. For more information see <code>pidMode</code> in <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_EcsTaskProperties.html">EcsTaskProperties</a>.</p>
     pub fn pid_mode(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pid_mode = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The process namespace to use for the containers in the task.</p>
+    /// <p>The process namespace to use for the containers in the task. The valid values are <code>host</code>, or <code>task</code>. For more information see <code>pidMode</code> in <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_EcsTaskProperties.html">EcsTaskProperties</a>.</p>
     pub fn set_pid_mode(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pid_mode = input;
         self
     }
-    /// <p>The process namespace to use for the containers in the task.</p>
+    /// <p>The process namespace to use for the containers in the task. The valid values are <code>host</code>, or <code>task</code>. For more information see <code>pidMode</code> in <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_EcsTaskProperties.html">EcsTaskProperties</a>.</p>
     pub fn get_pid_mode(&self) -> &::std::option::Option<::std::string::String> {
         &self.pid_mode
     }

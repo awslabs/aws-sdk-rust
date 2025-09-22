@@ -19,6 +19,10 @@ pub use crate::types::_launch_template_specification::LaunchTemplateSpecificatio
 
 pub use crate::types::_node_repair_config::NodeRepairConfig;
 
+pub use crate::types::_node_repair_config_overrides::NodeRepairConfigOverrides;
+
+pub use crate::types::_repair_action::RepairAction;
+
 pub use crate::types::_nodegroup_update_config::NodegroupUpdateConfig;
 
 pub use crate::types::_nodegroup_update_strategies::NodegroupUpdateStrategies;
@@ -407,6 +411,8 @@ mod _marketplace_information;
 
 mod _node_repair_config;
 
+mod _node_repair_config_overrides;
+
 mod _nodegroup;
 
 mod _nodegroup_health;
@@ -448,6 +454,8 @@ mod _remote_network_config_response;
 mod _remote_node_network;
 
 mod _remote_pod_network;
+
+mod _repair_action;
 
 mod _resolve_conflicts;
 

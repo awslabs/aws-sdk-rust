@@ -41,7 +41,6 @@ pub struct ListWorkflowBuildVersionsInputBuilder {
 }
 impl ListWorkflowBuildVersionsInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the workflow resource for which to get a list of build versions.</p>
-    /// This field is required.
     pub fn workflow_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_version_arn = ::std::option::Option::Some(input.into());
         self

@@ -6,11 +6,43 @@
 pub struct NodeRepairConfig {
     /// <p>Specifies whether to enable node auto repair for the node group. Node auto repair is disabled by default.</p>
     pub enabled: ::std::option::Option<bool>,
+    /// <p>Specify a count threshold of unhealthy nodes, above which node auto repair actions will stop. When using this, you cannot also set <code>maxUnhealthyNodeThresholdPercentage</code> at the same time.</p>
+    pub max_unhealthy_node_threshold_count: ::std::option::Option<i32>,
+    /// <p>Specify a percentage threshold of unhealthy nodes, above which node auto repair actions will stop. When using this, you cannot also set <code>maxUnhealthyNodeThresholdCount</code> at the same time.</p>
+    pub max_unhealthy_node_threshold_percentage: ::std::option::Option<i32>,
+    /// <p>Specify the maximum number of nodes that can be repaired concurrently or in parallel, expressed as a count of unhealthy nodes. This gives you finer-grained control over the pace of node replacements. When using this, you cannot also set <code>maxParallelNodesRepairedPercentage</code> at the same time.</p>
+    pub max_parallel_nodes_repaired_count: ::std::option::Option<i32>,
+    /// <p>Specify the maximum number of nodes that can be repaired concurrently or in parallel, expressed as a percentage of unhealthy nodes. This gives you finer-grained control over the pace of node replacements. When using this, you cannot also set <code>maxParallelNodesRepairedCount</code> at the same time.</p>
+    pub max_parallel_nodes_repaired_percentage: ::std::option::Option<i32>,
+    /// <p>Specify granular overrides for specific repair actions. These overrides control the repair action and the repair delay time before a node is considered eligible for repair. If you use this, you must specify all the values.</p>
+    pub node_repair_config_overrides: ::std::option::Option<::std::vec::Vec<crate::types::NodeRepairConfigOverrides>>,
 }
 impl NodeRepairConfig {
     /// <p>Specifies whether to enable node auto repair for the node group. Node auto repair is disabled by default.</p>
     pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
+    }
+    /// <p>Specify a count threshold of unhealthy nodes, above which node auto repair actions will stop. When using this, you cannot also set <code>maxUnhealthyNodeThresholdPercentage</code> at the same time.</p>
+    pub fn max_unhealthy_node_threshold_count(&self) -> ::std::option::Option<i32> {
+        self.max_unhealthy_node_threshold_count
+    }
+    /// <p>Specify a percentage threshold of unhealthy nodes, above which node auto repair actions will stop. When using this, you cannot also set <code>maxUnhealthyNodeThresholdCount</code> at the same time.</p>
+    pub fn max_unhealthy_node_threshold_percentage(&self) -> ::std::option::Option<i32> {
+        self.max_unhealthy_node_threshold_percentage
+    }
+    /// <p>Specify the maximum number of nodes that can be repaired concurrently or in parallel, expressed as a count of unhealthy nodes. This gives you finer-grained control over the pace of node replacements. When using this, you cannot also set <code>maxParallelNodesRepairedPercentage</code> at the same time.</p>
+    pub fn max_parallel_nodes_repaired_count(&self) -> ::std::option::Option<i32> {
+        self.max_parallel_nodes_repaired_count
+    }
+    /// <p>Specify the maximum number of nodes that can be repaired concurrently or in parallel, expressed as a percentage of unhealthy nodes. This gives you finer-grained control over the pace of node replacements. When using this, you cannot also set <code>maxParallelNodesRepairedCount</code> at the same time.</p>
+    pub fn max_parallel_nodes_repaired_percentage(&self) -> ::std::option::Option<i32> {
+        self.max_parallel_nodes_repaired_percentage
+    }
+    /// <p>Specify granular overrides for specific repair actions. These overrides control the repair action and the repair delay time before a node is considered eligible for repair. If you use this, you must specify all the values.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.node_repair_config_overrides.is_none()`.
+    pub fn node_repair_config_overrides(&self) -> &[crate::types::NodeRepairConfigOverrides] {
+        self.node_repair_config_overrides.as_deref().unwrap_or_default()
     }
 }
 impl NodeRepairConfig {
@@ -25,6 +57,11 @@ impl NodeRepairConfig {
 #[non_exhaustive]
 pub struct NodeRepairConfigBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
+    pub(crate) max_unhealthy_node_threshold_count: ::std::option::Option<i32>,
+    pub(crate) max_unhealthy_node_threshold_percentage: ::std::option::Option<i32>,
+    pub(crate) max_parallel_nodes_repaired_count: ::std::option::Option<i32>,
+    pub(crate) max_parallel_nodes_repaired_percentage: ::std::option::Option<i32>,
+    pub(crate) node_repair_config_overrides: ::std::option::Option<::std::vec::Vec<crate::types::NodeRepairConfigOverrides>>,
 }
 impl NodeRepairConfigBuilder {
     /// <p>Specifies whether to enable node auto repair for the node group. Node auto repair is disabled by default.</p>
@@ -41,8 +78,94 @@ impl NodeRepairConfigBuilder {
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
         &self.enabled
     }
+    /// <p>Specify a count threshold of unhealthy nodes, above which node auto repair actions will stop. When using this, you cannot also set <code>maxUnhealthyNodeThresholdPercentage</code> at the same time.</p>
+    pub fn max_unhealthy_node_threshold_count(mut self, input: i32) -> Self {
+        self.max_unhealthy_node_threshold_count = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specify a count threshold of unhealthy nodes, above which node auto repair actions will stop. When using this, you cannot also set <code>maxUnhealthyNodeThresholdPercentage</code> at the same time.</p>
+    pub fn set_max_unhealthy_node_threshold_count(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.max_unhealthy_node_threshold_count = input;
+        self
+    }
+    /// <p>Specify a count threshold of unhealthy nodes, above which node auto repair actions will stop. When using this, you cannot also set <code>maxUnhealthyNodeThresholdPercentage</code> at the same time.</p>
+    pub fn get_max_unhealthy_node_threshold_count(&self) -> &::std::option::Option<i32> {
+        &self.max_unhealthy_node_threshold_count
+    }
+    /// <p>Specify a percentage threshold of unhealthy nodes, above which node auto repair actions will stop. When using this, you cannot also set <code>maxUnhealthyNodeThresholdCount</code> at the same time.</p>
+    pub fn max_unhealthy_node_threshold_percentage(mut self, input: i32) -> Self {
+        self.max_unhealthy_node_threshold_percentage = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specify a percentage threshold of unhealthy nodes, above which node auto repair actions will stop. When using this, you cannot also set <code>maxUnhealthyNodeThresholdCount</code> at the same time.</p>
+    pub fn set_max_unhealthy_node_threshold_percentage(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.max_unhealthy_node_threshold_percentage = input;
+        self
+    }
+    /// <p>Specify a percentage threshold of unhealthy nodes, above which node auto repair actions will stop. When using this, you cannot also set <code>maxUnhealthyNodeThresholdCount</code> at the same time.</p>
+    pub fn get_max_unhealthy_node_threshold_percentage(&self) -> &::std::option::Option<i32> {
+        &self.max_unhealthy_node_threshold_percentage
+    }
+    /// <p>Specify the maximum number of nodes that can be repaired concurrently or in parallel, expressed as a count of unhealthy nodes. This gives you finer-grained control over the pace of node replacements. When using this, you cannot also set <code>maxParallelNodesRepairedPercentage</code> at the same time.</p>
+    pub fn max_parallel_nodes_repaired_count(mut self, input: i32) -> Self {
+        self.max_parallel_nodes_repaired_count = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specify the maximum number of nodes that can be repaired concurrently or in parallel, expressed as a count of unhealthy nodes. This gives you finer-grained control over the pace of node replacements. When using this, you cannot also set <code>maxParallelNodesRepairedPercentage</code> at the same time.</p>
+    pub fn set_max_parallel_nodes_repaired_count(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.max_parallel_nodes_repaired_count = input;
+        self
+    }
+    /// <p>Specify the maximum number of nodes that can be repaired concurrently or in parallel, expressed as a count of unhealthy nodes. This gives you finer-grained control over the pace of node replacements. When using this, you cannot also set <code>maxParallelNodesRepairedPercentage</code> at the same time.</p>
+    pub fn get_max_parallel_nodes_repaired_count(&self) -> &::std::option::Option<i32> {
+        &self.max_parallel_nodes_repaired_count
+    }
+    /// <p>Specify the maximum number of nodes that can be repaired concurrently or in parallel, expressed as a percentage of unhealthy nodes. This gives you finer-grained control over the pace of node replacements. When using this, you cannot also set <code>maxParallelNodesRepairedCount</code> at the same time.</p>
+    pub fn max_parallel_nodes_repaired_percentage(mut self, input: i32) -> Self {
+        self.max_parallel_nodes_repaired_percentage = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specify the maximum number of nodes that can be repaired concurrently or in parallel, expressed as a percentage of unhealthy nodes. This gives you finer-grained control over the pace of node replacements. When using this, you cannot also set <code>maxParallelNodesRepairedCount</code> at the same time.</p>
+    pub fn set_max_parallel_nodes_repaired_percentage(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.max_parallel_nodes_repaired_percentage = input;
+        self
+    }
+    /// <p>Specify the maximum number of nodes that can be repaired concurrently or in parallel, expressed as a percentage of unhealthy nodes. This gives you finer-grained control over the pace of node replacements. When using this, you cannot also set <code>maxParallelNodesRepairedCount</code> at the same time.</p>
+    pub fn get_max_parallel_nodes_repaired_percentage(&self) -> &::std::option::Option<i32> {
+        &self.max_parallel_nodes_repaired_percentage
+    }
+    /// Appends an item to `node_repair_config_overrides`.
+    ///
+    /// To override the contents of this collection use [`set_node_repair_config_overrides`](Self::set_node_repair_config_overrides).
+    ///
+    /// <p>Specify granular overrides for specific repair actions. These overrides control the repair action and the repair delay time before a node is considered eligible for repair. If you use this, you must specify all the values.</p>
+    pub fn node_repair_config_overrides(mut self, input: crate::types::NodeRepairConfigOverrides) -> Self {
+        let mut v = self.node_repair_config_overrides.unwrap_or_default();
+        v.push(input);
+        self.node_repair_config_overrides = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Specify granular overrides for specific repair actions. These overrides control the repair action and the repair delay time before a node is considered eligible for repair. If you use this, you must specify all the values.</p>
+    pub fn set_node_repair_config_overrides(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::NodeRepairConfigOverrides>>,
+    ) -> Self {
+        self.node_repair_config_overrides = input;
+        self
+    }
+    /// <p>Specify granular overrides for specific repair actions. These overrides control the repair action and the repair delay time before a node is considered eligible for repair. If you use this, you must specify all the values.</p>
+    pub fn get_node_repair_config_overrides(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NodeRepairConfigOverrides>> {
+        &self.node_repair_config_overrides
+    }
     /// Consumes the builder and constructs a [`NodeRepairConfig`](crate::types::NodeRepairConfig).
     pub fn build(self) -> crate::types::NodeRepairConfig {
-        crate::types::NodeRepairConfig { enabled: self.enabled }
+        crate::types::NodeRepairConfig {
+            enabled: self.enabled,
+            max_unhealthy_node_threshold_count: self.max_unhealthy_node_threshold_count,
+            max_unhealthy_node_threshold_percentage: self.max_unhealthy_node_threshold_percentage,
+            max_parallel_nodes_repaired_count: self.max_parallel_nodes_repaired_count,
+            max_parallel_nodes_repaired_percentage: self.max_parallel_nodes_repaired_percentage,
+            node_repair_config_overrides: self.node_repair_config_overrides,
+        }
     }
 }

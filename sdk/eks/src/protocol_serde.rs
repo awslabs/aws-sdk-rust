@@ -385,6 +385,8 @@ pub(crate) mod shape_log_setup;
 
 pub(crate) mod shape_marketplace_information;
 
+pub(crate) mod shape_node_repair_config_overrides;
+
 pub(crate) mod shape_nodegroup_health;
 
 pub(crate) mod shape_nodegroup_resources;
@@ -440,6 +442,8 @@ pub(crate) mod shape_issue_list;
 pub(crate) mod shape_license;
 
 pub(crate) mod shape_log_setups;
+
+pub(crate) mod shape_node_repair_config_overrides_list;
 
 pub(crate) mod shape_oidc;
 

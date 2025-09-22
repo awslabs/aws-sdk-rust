@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LogConfiguration {
     /// <p>The log driver to use for the container. The valid values that are listed for this parameter are log drivers that the Amazon ECS container agent can communicate with by default.</p>
-    /// <p>The supported log drivers are <code>awslogs</code>, <code>fluentd</code>, <code>gelf</code>, <code>json-file</code>, <code>journald</code>, <code>logentries</code>, <code>syslog</code>, and <code>splunk</code>.</p><note>
+    /// <p>The supported log drivers are <code>awsfirelens</code>, <code>awslogs</code>, <code>fluentd</code>, <code>gelf</code>, <code>json-file</code>, <code>journald</code>, <code>logentries</code>, <code>syslog</code>, and <code>splunk</code>.</p><note>
     /// <p>Jobs that are running on Fargate resources are restricted to the <code>awslogs</code> and <code>splunk</code> log drivers.</p>
     /// </note>
     /// <dl>
@@ -69,7 +69,7 @@ pub struct LogConfiguration {
 }
 impl LogConfiguration {
     /// <p>The log driver to use for the container. The valid values that are listed for this parameter are log drivers that the Amazon ECS container agent can communicate with by default.</p>
-    /// <p>The supported log drivers are <code>awslogs</code>, <code>fluentd</code>, <code>gelf</code>, <code>json-file</code>, <code>journald</code>, <code>logentries</code>, <code>syslog</code>, and <code>splunk</code>.</p><note>
+    /// <p>The supported log drivers are <code>awsfirelens</code>, <code>awslogs</code>, <code>fluentd</code>, <code>gelf</code>, <code>json-file</code>, <code>journald</code>, <code>logentries</code>, <code>syslog</code>, and <code>splunk</code>.</p><note>
     /// <p>Jobs that are running on Fargate resources are restricted to the <code>awslogs</code> and <code>splunk</code> log drivers.</p>
     /// </note>
     /// <dl>
@@ -156,7 +156,7 @@ pub struct LogConfigurationBuilder {
 }
 impl LogConfigurationBuilder {
     /// <p>The log driver to use for the container. The valid values that are listed for this parameter are log drivers that the Amazon ECS container agent can communicate with by default.</p>
-    /// <p>The supported log drivers are <code>awslogs</code>, <code>fluentd</code>, <code>gelf</code>, <code>json-file</code>, <code>journald</code>, <code>logentries</code>, <code>syslog</code>, and <code>splunk</code>.</p><note>
+    /// <p>The supported log drivers are <code>awsfirelens</code>, <code>awslogs</code>, <code>fluentd</code>, <code>gelf</code>, <code>json-file</code>, <code>journald</code>, <code>logentries</code>, <code>syslog</code>, and <code>splunk</code>.</p><note>
     /// <p>Jobs that are running on Fargate resources are restricted to the <code>awslogs</code> and <code>splunk</code> log drivers.</p>
     /// </note>
     /// <dl>
@@ -218,7 +218,7 @@ impl LogConfigurationBuilder {
         self
     }
     /// <p>The log driver to use for the container. The valid values that are listed for this parameter are log drivers that the Amazon ECS container agent can communicate with by default.</p>
-    /// <p>The supported log drivers are <code>awslogs</code>, <code>fluentd</code>, <code>gelf</code>, <code>json-file</code>, <code>journald</code>, <code>logentries</code>, <code>syslog</code>, and <code>splunk</code>.</p><note>
+    /// <p>The supported log drivers are <code>awsfirelens</code>, <code>awslogs</code>, <code>fluentd</code>, <code>gelf</code>, <code>json-file</code>, <code>journald</code>, <code>logentries</code>, <code>syslog</code>, and <code>splunk</code>.</p><note>
     /// <p>Jobs that are running on Fargate resources are restricted to the <code>awslogs</code> and <code>splunk</code> log drivers.</p>
     /// </note>
     /// <dl>
@@ -279,7 +279,7 @@ impl LogConfigurationBuilder {
         self
     }
     /// <p>The log driver to use for the container. The valid values that are listed for this parameter are log drivers that the Amazon ECS container agent can communicate with by default.</p>
-    /// <p>The supported log drivers are <code>awslogs</code>, <code>fluentd</code>, <code>gelf</code>, <code>json-file</code>, <code>journald</code>, <code>logentries</code>, <code>syslog</code>, and <code>splunk</code>.</p><note>
+    /// <p>The supported log drivers are <code>awsfirelens</code>, <code>awslogs</code>, <code>fluentd</code>, <code>gelf</code>, <code>json-file</code>, <code>journald</code>, <code>logentries</code>, <code>syslog</code>, and <code>splunk</code>.</p><note>
     /// <p>Jobs that are running on Fargate resources are restricted to the <code>awslogs</code> and <code>splunk</code> log drivers.</p>
     /// </note>
     /// <dl>

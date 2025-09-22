@@ -15,7 +15,7 @@ pub struct SubmitServiceJobInput {
     pub service_request_payload: ::std::option::Option<::std::string::String>,
     /// <p>The type of service job. For SageMaker Training jobs, specify <code>SAGEMAKER_TRAINING</code>.</p>
     pub service_job_type: ::std::option::Option<crate::types::ServiceJobType>,
-    /// <p>The share identifier for the service job. Don't specify this parameter if the job queue doesn't have a fair- share scheduling policy. If the job queue has a fair-share scheduling policy, then this parameter must be specified.</p>
+    /// <p>The share identifier for the service job. Don't specify this parameter if the job queue doesn't have a fair-share scheduling policy. If the job queue has a fair-share scheduling policy, then this parameter must be specified.</p>
     pub share_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The timeout configuration for the service job. If none is specified, Batch defers to the default timeout of the underlying service handling the job.</p>
     pub timeout_config: ::std::option::Option<crate::types::ServiceJobTimeout>,
@@ -49,7 +49,7 @@ impl SubmitServiceJobInput {
     pub fn service_job_type(&self) -> ::std::option::Option<&crate::types::ServiceJobType> {
         self.service_job_type.as_ref()
     }
-    /// <p>The share identifier for the service job. Don't specify this parameter if the job queue doesn't have a fair- share scheduling policy. If the job queue has a fair-share scheduling policy, then this parameter must be specified.</p>
+    /// <p>The share identifier for the service job. Don't specify this parameter if the job queue doesn't have a fair-share scheduling policy. If the job queue has a fair-share scheduling policy, then this parameter must be specified.</p>
     pub fn share_identifier(&self) -> ::std::option::Option<&str> {
         self.share_identifier.as_deref()
     }
@@ -177,17 +177,17 @@ impl SubmitServiceJobInputBuilder {
     pub fn get_service_job_type(&self) -> &::std::option::Option<crate::types::ServiceJobType> {
         &self.service_job_type
     }
-    /// <p>The share identifier for the service job. Don't specify this parameter if the job queue doesn't have a fair- share scheduling policy. If the job queue has a fair-share scheduling policy, then this parameter must be specified.</p>
+    /// <p>The share identifier for the service job. Don't specify this parameter if the job queue doesn't have a fair-share scheduling policy. If the job queue has a fair-share scheduling policy, then this parameter must be specified.</p>
     pub fn share_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.share_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The share identifier for the service job. Don't specify this parameter if the job queue doesn't have a fair- share scheduling policy. If the job queue has a fair-share scheduling policy, then this parameter must be specified.</p>
+    /// <p>The share identifier for the service job. Don't specify this parameter if the job queue doesn't have a fair-share scheduling policy. If the job queue has a fair-share scheduling policy, then this parameter must be specified.</p>
     pub fn set_share_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.share_identifier = input;
         self
     }
-    /// <p>The share identifier for the service job. Don't specify this parameter if the job queue doesn't have a fair- share scheduling policy. If the job queue has a fair-share scheduling policy, then this parameter must be specified.</p>
+    /// <p>The share identifier for the service job. Don't specify this parameter if the job queue doesn't have a fair-share scheduling policy. If the job queue has a fair-share scheduling policy, then this parameter must be specified.</p>
     pub fn get_share_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.share_identifier
     }

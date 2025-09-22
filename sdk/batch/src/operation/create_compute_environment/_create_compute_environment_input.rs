@@ -31,7 +31,9 @@ pub struct CreateComputeEnvironmentInput {
     /// <p>The tags that you apply to the compute environment to help you categorize and organize your resources. Each tag consists of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> in <i>Amazon Web Services General Reference</i>.</p>
     /// <p>These tags can be updated or removed using the <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_TagResource.html">TagResource</a> and <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_UntagResource.html">UntagResource</a> API operations. These tags don't propagate to the underlying compute resources.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p>The details for the Amazon EKS cluster that supports the compute environment.</p>
+    /// <p>The details for the Amazon EKS cluster that supports the compute environment.</p><note>
+    /// <p>To create a compute environment that uses EKS resources, the caller must have permissions to call <code>eks:DescribeCluster</code>.</p>
+    /// </note>
     pub eks_configuration: ::std::option::Option<crate::types::EksConfiguration>,
     /// <p>Reserved.</p>
     pub context: ::std::option::Option<::std::string::String>,
@@ -78,7 +80,9 @@ impl CreateComputeEnvironmentInput {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
-    /// <p>The details for the Amazon EKS cluster that supports the compute environment.</p>
+    /// <p>The details for the Amazon EKS cluster that supports the compute environment.</p><note>
+    /// <p>To create a compute environment that uses EKS resources, the caller must have permissions to call <code>eks:DescribeCluster</code>.</p>
+    /// </note>
     pub fn eks_configuration(&self) -> ::std::option::Option<&crate::types::EksConfiguration> {
         self.eks_configuration.as_ref()
     }
@@ -254,17 +258,23 @@ impl CreateComputeEnvironmentInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
-    /// <p>The details for the Amazon EKS cluster that supports the compute environment.</p>
+    /// <p>The details for the Amazon EKS cluster that supports the compute environment.</p><note>
+    /// <p>To create a compute environment that uses EKS resources, the caller must have permissions to call <code>eks:DescribeCluster</code>.</p>
+    /// </note>
     pub fn eks_configuration(mut self, input: crate::types::EksConfiguration) -> Self {
         self.eks_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The details for the Amazon EKS cluster that supports the compute environment.</p>
+    /// <p>The details for the Amazon EKS cluster that supports the compute environment.</p><note>
+    /// <p>To create a compute environment that uses EKS resources, the caller must have permissions to call <code>eks:DescribeCluster</code>.</p>
+    /// </note>
     pub fn set_eks_configuration(mut self, input: ::std::option::Option<crate::types::EksConfiguration>) -> Self {
         self.eks_configuration = input;
         self
     }
-    /// <p>The details for the Amazon EKS cluster that supports the compute environment.</p>
+    /// <p>The details for the Amazon EKS cluster that supports the compute environment.</p><note>
+    /// <p>To create a compute environment that uses EKS resources, the caller must have permissions to call <code>eks:DescribeCluster</code>.</p>
+    /// </note>
     pub fn get_eks_configuration(&self) -> &::std::option::Option<crate::types::EksConfiguration> {
         &self.eks_configuration
     }

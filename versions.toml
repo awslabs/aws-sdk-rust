@@ -267,9 +267,9 @@ model_hash = '381cfbdec38d68c05c1e4d594c5f9228b1872517c6eedda542cdc460a8a802d7'
 
 [crates.aws-sdk-batch]
 category = 'AwsSdk'
-version = '1.95.0'
-source_hash = '045250a95e59df77d5fe832387e1ab56d97fee8e52563fbdaea3f22ded245097'
-model_hash = '179fb311007f07eab9fe82f97044cba2fd3061f29091cae87315971862e5745f'
+version = '1.95.1'
+source_hash = 'c2b5547a8a8e9c985c8a8b03e1ab17ed87a8404c92076203e974b9b523f1e46b'
+model_hash = '1452e2b95ca924ef6d89716a4d6d3d68c5a3b46675e4f2e863a34177ec4583c7'
 
 [crates.aws-sdk-bcmdashboards]
 category = 'AwsSdk'
@@ -867,9 +867,9 @@ model_hash = '466d1d74a9b53efdb34d51c8562a074ded7c080ffd89686b39f5377144a1237d'
 
 [crates.aws-sdk-eks]
 category = 'AwsSdk'
-version = '1.107.0'
-source_hash = 'a59ecee28bb116ceafb19f4b1e6081c2255fea3bd99ac9706282a0d41a36eba8'
-model_hash = '2d4a93276849ff3bd4cffbddf7bf9d71135a1e1966eba60748e58cdcf6ed3648'
+version = '1.108.0'
+source_hash = 'b1bd822a7bd85df1d50f34dc8d375264d43bfe8ef0932849dfc7d4309e332901'
+model_hash = 'f30f4ed379c2a706559dc4b653ef6ea3667b0f1f5edbe1b239fd6db6746ee4eb'
 
 [crates.aws-sdk-eksauth]
 category = 'AwsSdk'
@@ -1119,9 +1119,9 @@ model_hash = '7ff9d21e48614d81be668b4654f5fdeb768d3813def07055a52ca240615dbe85'
 
 [crates.aws-sdk-imagebuilder]
 category = 'AwsSdk'
-version = '1.89.0'
-source_hash = '3f99200056ef0ebe8211b81ebae8a4fdb77a66629f1dcb1e4ae52c6d2c9bf463'
-model_hash = '367af72000c274f90e9f233b2a6b4aba595455dbe6ed1cc568dc4edd397ccabf'
+version = '1.90.0'
+source_hash = '30bb6e09d35274cec96853689f57f89d72213662d95a0c5d5dff65698d8ec6ff'
+model_hash = 'ad5a19385874c7214cda65a41caaa87f856dccb5c65cb277c7e505b473df895c'
 
 [crates.aws-sdk-inspector]
 category = 'AwsSdk'
@@ -2691,15 +2691,7 @@ source_hash = 'bf1dc748b174d4d1e6a60d60597dec1eba598e4cfd418fffaeb1de2afc36099b'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '4eae21d18f13ae2c8b3f5858292cfbd15f9dcb2b92d7ba9aac9878db2a601b2c'
-
-[release]
-tag = 'release-2025-09-19'
-
 [release.crates]
-aws-sdk-bedrockagentcorecontrol = '1.9.0'
-aws-sdk-config = '1.89.0'
-aws-sdk-connect = '1.129.0'
-aws-sdk-kendraranking = '1.83.1'
-aws-sdk-licensemanagerusersubscriptions = '1.86.0'
-aws-sdk-medialive = '1.108.0'
-aws-sdk-sqs = '1.84.1'
+aws-sdk-batch = '1.95.1'
+aws-sdk-eks = '1.108.0'
+aws-sdk-imagebuilder = '1.90.0'

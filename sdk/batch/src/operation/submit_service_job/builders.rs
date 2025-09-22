@@ -192,17 +192,17 @@ impl SubmitServiceJobFluentBuilder {
     pub fn get_service_job_type(&self) -> &::std::option::Option<crate::types::ServiceJobType> {
         self.inner.get_service_job_type()
     }
-    /// <p>The share identifier for the service job. Don't specify this parameter if the job queue doesn't have a fair- share scheduling policy. If the job queue has a fair-share scheduling policy, then this parameter must be specified.</p>
+    /// <p>The share identifier for the service job. Don't specify this parameter if the job queue doesn't have a fair-share scheduling policy. If the job queue has a fair-share scheduling policy, then this parameter must be specified.</p>
     pub fn share_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.share_identifier(input.into());
         self
     }
-    /// <p>The share identifier for the service job. Don't specify this parameter if the job queue doesn't have a fair- share scheduling policy. If the job queue has a fair-share scheduling policy, then this parameter must be specified.</p>
+    /// <p>The share identifier for the service job. Don't specify this parameter if the job queue doesn't have a fair-share scheduling policy. If the job queue has a fair-share scheduling policy, then this parameter must be specified.</p>
     pub fn set_share_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_share_identifier(input);
         self
     }
-    /// <p>The share identifier for the service job. Don't specify this parameter if the job queue doesn't have a fair- share scheduling policy. If the job queue has a fair-share scheduling policy, then this parameter must be specified.</p>
+    /// <p>The share identifier for the service job. Don't specify this parameter if the job queue doesn't have a fair-share scheduling policy. If the job queue has a fair-share scheduling policy, then this parameter must be specified.</p>
     pub fn get_share_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_share_identifier()
     }

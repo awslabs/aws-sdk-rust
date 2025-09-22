@@ -11,6 +11,8 @@ pub use crate::types::_launch_template_specification::LaunchTemplateSpecificatio
 
 pub use crate::types::_node_repair_config::NodeRepairConfigBuilder;
 
+pub use crate::types::_node_repair_config_overrides::NodeRepairConfigOverridesBuilder;
+
 pub use crate::types::_nodegroup_update_config::NodegroupUpdateConfigBuilder;
 
 pub use crate::types::_nodegroup_scaling_config::NodegroupScalingConfigBuilder;
