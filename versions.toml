@@ -1,7 +1,7 @@
 smithy_rs_revision = '441e42ceeda3c084c971d6b90908b9c268d1703e'
 
 [manual_interventions]
-crates_to_remove = []
+crates_to_remove = ["aws-sdk-opsworks", "aws-sdk-opsworkscm"]
 [crates.aws-config]
 category = 'AwsRuntime'
 version = '1.8.6'
