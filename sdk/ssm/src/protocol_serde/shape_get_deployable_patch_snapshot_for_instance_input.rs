@@ -15,5 +15,8 @@ pub fn ser_get_deployable_patch_snapshot_for_instance_input_input(
         crate::protocol_serde::shape_baseline_override::ser_baseline_override(&mut object_4, var_3)?;
         object_4.finish();
     }
+    if let Some(var_5) = &input.use_s3_dual_stack_endpoint {
+        object.key("UseS3DualStackEndpoint").boolean(*var_5);
+    }
     Ok(())
 }

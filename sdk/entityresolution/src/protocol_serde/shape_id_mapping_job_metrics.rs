@@ -35,6 +35,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "deleteRecordsProcessed" => {
+                            builder = builder.set_delete_records_processed(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
                         "totalMappedRecords" => {
                             builder = builder.set_total_mapped_records(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
@@ -58,6 +65,55 @@ where
                         }
                         "uniqueRecordsLoaded" => {
                             builder = builder.set_unique_records_loaded(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "newMappedRecords" => {
+                            builder = builder.set_new_mapped_records(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "newMappedSourceRecords" => {
+                            builder = builder.set_new_mapped_source_records(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "newMappedTargetRecords" => {
+                            builder = builder.set_new_mapped_target_records(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "newUniqueRecordsLoaded" => {
+                            builder = builder.set_new_unique_records_loaded(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "mappedRecordsRemoved" => {
+                            builder = builder.set_mapped_records_removed(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "mappedSourceRecordsRemoved" => {
+                            builder = builder.set_mapped_source_records_removed(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "mappedTargetRecordsRemoved" => {
+                            builder = builder.set_mapped_target_records_removed(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
                                     .transpose()?,

@@ -675,6 +675,9 @@ impl From<crate::operation::create_privacy_budget_template::CreatePrivacyBudgetT
             crate::operation::create_privacy_budget_template::CreatePrivacyBudgetTemplateError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
+            crate::operation::create_privacy_budget_template::CreatePrivacyBudgetTemplateError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
             crate::operation::create_privacy_budget_template::CreatePrivacyBudgetTemplateError::ThrottlingException(inner) => {
                 Error::ThrottlingException(inner)
             }

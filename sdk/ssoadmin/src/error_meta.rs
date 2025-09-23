@@ -2925,6 +2925,7 @@ impl From<crate::operation::update_instance::UpdateInstanceError> for Error {
             crate::operation::update_instance::UpdateInstanceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::update_instance::UpdateInstanceError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::update_instance::UpdateInstanceError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_instance::UpdateInstanceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::update_instance::UpdateInstanceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_instance::UpdateInstanceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_instance::UpdateInstanceError::Unhandled(inner) => Error::Unhandled(inner),

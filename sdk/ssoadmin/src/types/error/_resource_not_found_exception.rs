@@ -6,7 +6,15 @@
 pub struct ResourceNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: ::std::option::Option<::std::string::String>,
+    /// <p>The reason for the resource not found exception.</p>
+    pub reason: ::std::option::Option<crate::types::ResourceNotFoundExceptionReason>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
+}
+impl ResourceNotFoundException {
+    /// <p>The reason for the resource not found exception.</p>
+    pub fn reason(&self) -> ::std::option::Option<&crate::types::ResourceNotFoundExceptionReason> {
+        self.reason.as_ref()
+    }
 }
 impl ResourceNotFoundException {
     /// Returns the error message.
@@ -49,6 +57,7 @@ impl ResourceNotFoundException {
 #[non_exhaustive]
 pub struct ResourceNotFoundExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
+    pub(crate) reason: ::std::option::Option<crate::types::ResourceNotFoundExceptionReason>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl ResourceNotFoundExceptionBuilder {
@@ -66,6 +75,20 @@ impl ResourceNotFoundExceptionBuilder {
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
     }
+    /// <p>The reason for the resource not found exception.</p>
+    pub fn reason(mut self, input: crate::types::ResourceNotFoundExceptionReason) -> Self {
+        self.reason = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The reason for the resource not found exception.</p>
+    pub fn set_reason(mut self, input: ::std::option::Option<crate::types::ResourceNotFoundExceptionReason>) -> Self {
+        self.reason = input;
+        self
+    }
+    /// <p>The reason for the resource not found exception.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<crate::types::ResourceNotFoundExceptionReason> {
+        &self.reason
+    }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
         self.meta = Some(meta);
@@ -81,6 +104,7 @@ impl ResourceNotFoundExceptionBuilder {
     pub fn build(self) -> crate::types::error::ResourceNotFoundException {
         crate::types::error::ResourceNotFoundException {
             message: self.message,
+            reason: self.reason,
             meta: self.meta.unwrap_or_default(),
         }
     }

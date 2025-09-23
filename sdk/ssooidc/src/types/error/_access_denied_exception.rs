@@ -6,6 +6,8 @@
 pub struct AccessDeniedException {
     /// <p>Single error code. For this exception the value will be <code>access_denied</code>.</p>
     pub error: ::std::option::Option<::std::string::String>,
+    /// <p>A string that uniquely identifies a reason for the error.</p>
+    pub reason: ::std::option::Option<crate::types::AccessDeniedExceptionReason>,
     /// <p>Human-readable text providing additional information, used to assist the client developer in understanding the error that occurred.</p>
     pub error_description: ::std::option::Option<::std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
@@ -16,6 +18,10 @@ impl AccessDeniedException {
     /// <p>Single error code. For this exception the value will be <code>access_denied</code>.</p>
     pub fn error(&self) -> ::std::option::Option<&str> {
         self.error.as_deref()
+    }
+    /// <p>A string that uniquely identifies a reason for the error.</p>
+    pub fn reason(&self) -> ::std::option::Option<&crate::types::AccessDeniedExceptionReason> {
+        self.reason.as_ref()
     }
     /// <p>Human-readable text providing additional information, used to assist the client developer in understanding the error that occurred.</p>
     pub fn error_description(&self) -> ::std::option::Option<&str> {
@@ -63,6 +69,7 @@ impl AccessDeniedException {
 #[non_exhaustive]
 pub struct AccessDeniedExceptionBuilder {
     pub(crate) error: ::std::option::Option<::std::string::String>,
+    pub(crate) reason: ::std::option::Option<crate::types::AccessDeniedExceptionReason>,
     pub(crate) error_description: ::std::option::Option<::std::string::String>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -81,6 +88,20 @@ impl AccessDeniedExceptionBuilder {
     /// <p>Single error code. For this exception the value will be <code>access_denied</code>.</p>
     pub fn get_error(&self) -> &::std::option::Option<::std::string::String> {
         &self.error
+    }
+    /// <p>A string that uniquely identifies a reason for the error.</p>
+    pub fn reason(mut self, input: crate::types::AccessDeniedExceptionReason) -> Self {
+        self.reason = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A string that uniquely identifies a reason for the error.</p>
+    pub fn set_reason(mut self, input: ::std::option::Option<crate::types::AccessDeniedExceptionReason>) -> Self {
+        self.reason = input;
+        self
+    }
+    /// <p>A string that uniquely identifies a reason for the error.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<crate::types::AccessDeniedExceptionReason> {
+        &self.reason
     }
     /// <p>Human-readable text providing additional information, used to assist the client developer in understanding the error that occurred.</p>
     pub fn error_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -125,6 +146,7 @@ impl AccessDeniedExceptionBuilder {
     pub fn build(self) -> crate::types::error::AccessDeniedException {
         crate::types::error::AccessDeniedException {
             error: self.error,
+            reason: self.reason,
             error_description: self.error_description,
             message: self.message,
             meta: self.meta.unwrap_or_default(),

@@ -35,6 +35,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "deleteRecordsProcessed" => {
+                            builder = builder.set_delete_records_processed(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
                         "matchIDs" => {
                             builder = builder.set_match_ids(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?

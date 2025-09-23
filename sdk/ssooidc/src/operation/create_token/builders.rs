@@ -209,17 +209,17 @@ impl CreateTokenFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_scope`](Self::set_scope).
     ///
-    /// <p>The list of scopes for which authorization is requested. The access token that is issued is limited to the scopes that are granted. If this value is not specified, IAM Identity Center authorizes all scopes that are configured for the client during the call to <code>RegisterClient</code>.</p>
+    /// <p>The list of scopes for which authorization is requested. This parameter has no effect; the access token will always include all scopes configured during client registration.</p>
     pub fn scope(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.scope(input.into());
         self
     }
-    /// <p>The list of scopes for which authorization is requested. The access token that is issued is limited to the scopes that are granted. If this value is not specified, IAM Identity Center authorizes all scopes that are configured for the client during the call to <code>RegisterClient</code>.</p>
+    /// <p>The list of scopes for which authorization is requested. This parameter has no effect; the access token will always include all scopes configured during client registration.</p>
     pub fn set_scope(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_scope(input);
         self
     }
-    /// <p>The list of scopes for which authorization is requested. The access token that is issued is limited to the scopes that are granted. If this value is not specified, IAM Identity Center authorizes all scopes that are configured for the client during the call to <code>RegisterClient</code>.</p>
+    /// <p>The list of scopes for which authorization is requested. This parameter has no effect; the access token will always include all scopes configured during client registration.</p>
     pub fn get_scope(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_scope()
     }

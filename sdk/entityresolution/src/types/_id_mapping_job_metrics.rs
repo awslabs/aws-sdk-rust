@@ -10,14 +10,30 @@ pub struct IdMappingJobMetrics {
     pub total_records_processed: ::std::option::Option<i32>,
     /// <p>The total number of records that did not get processed.</p>
     pub records_not_processed: ::std::option::Option<i32>,
+    /// <p>The number of records processed that were marked for deletion in the input file using the DELETE schema mapping field. These are the records to be removed from the ID mapping table.</p>
+    pub delete_records_processed: ::std::option::Option<i32>,
     /// <p>The total number of records that were mapped.</p>
     pub total_mapped_records: ::std::option::Option<i32>,
     /// <p>The total number of mapped source records.</p>
     pub total_mapped_source_records: ::std::option::Option<i32>,
     /// <p>The total number of distinct mapped target records.</p>
     pub total_mapped_target_records: ::std::option::Option<i32>,
-    /// <p>The number of records remaining after loading and aggregating duplicate records. Duplicates are determined by the field marked as UNIQUE_ID in your schema mapping - records sharing the same value in this field are considered duplicates. For example, if you specified "customer_id" as a UNIQUE_ID field and had three records with the same customer_id value, they would count as one unique record in this metric.</p>
+    /// <p>The number of de-duplicated processed records across all runs, excluding deletion-related records. Duplicates are determined by the field marked as UNIQUE_ID in your schema mapping. Records sharing the same value in this field are considered duplicates. For example, if you specified "customer_id" as a UNIQUE_ID field and had three records with the same customer_id value, they would count as one unique record in this metric.</p>
     pub unique_records_loaded: ::std::option::Option<i32>,
+    /// <p>The number of new mapped records.</p>
+    pub new_mapped_records: ::std::option::Option<i32>,
+    /// <p>The number of new source records mapped.</p>
+    pub new_mapped_source_records: ::std::option::Option<i32>,
+    /// <p>The number of new mapped target records.</p>
+    pub new_mapped_target_records: ::std::option::Option<i32>,
+    /// <p>The number of new unique records processed in the current job run, after removing duplicates. This metric excludes deletion-related records. Duplicates are determined by the field marked as UNIQUE_ID in your schema mapping. Records sharing the same value in this field are considered duplicates. For example, if your current run processes five new records with the same UNIQUE_ID value, they would count as one new unique record in this metric.</p>
+    pub new_unique_records_loaded: ::std::option::Option<i32>,
+    /// <p>The number of mapped records removed.</p>
+    pub mapped_records_removed: ::std::option::Option<i32>,
+    /// <p>The number of source records removed due to ID mapping.</p>
+    pub mapped_source_records_removed: ::std::option::Option<i32>,
+    /// <p>The number of mapped target records removed.</p>
+    pub mapped_target_records_removed: ::std::option::Option<i32>,
 }
 impl IdMappingJobMetrics {
     /// <p>The total number of records that were input for processing.</p>
@@ -32,6 +48,10 @@ impl IdMappingJobMetrics {
     pub fn records_not_processed(&self) -> ::std::option::Option<i32> {
         self.records_not_processed
     }
+    /// <p>The number of records processed that were marked for deletion in the input file using the DELETE schema mapping field. These are the records to be removed from the ID mapping table.</p>
+    pub fn delete_records_processed(&self) -> ::std::option::Option<i32> {
+        self.delete_records_processed
+    }
     /// <p>The total number of records that were mapped.</p>
     pub fn total_mapped_records(&self) -> ::std::option::Option<i32> {
         self.total_mapped_records
@@ -44,9 +64,37 @@ impl IdMappingJobMetrics {
     pub fn total_mapped_target_records(&self) -> ::std::option::Option<i32> {
         self.total_mapped_target_records
     }
-    /// <p>The number of records remaining after loading and aggregating duplicate records. Duplicates are determined by the field marked as UNIQUE_ID in your schema mapping - records sharing the same value in this field are considered duplicates. For example, if you specified "customer_id" as a UNIQUE_ID field and had three records with the same customer_id value, they would count as one unique record in this metric.</p>
+    /// <p>The number of de-duplicated processed records across all runs, excluding deletion-related records. Duplicates are determined by the field marked as UNIQUE_ID in your schema mapping. Records sharing the same value in this field are considered duplicates. For example, if you specified "customer_id" as a UNIQUE_ID field and had three records with the same customer_id value, they would count as one unique record in this metric.</p>
     pub fn unique_records_loaded(&self) -> ::std::option::Option<i32> {
         self.unique_records_loaded
+    }
+    /// <p>The number of new mapped records.</p>
+    pub fn new_mapped_records(&self) -> ::std::option::Option<i32> {
+        self.new_mapped_records
+    }
+    /// <p>The number of new source records mapped.</p>
+    pub fn new_mapped_source_records(&self) -> ::std::option::Option<i32> {
+        self.new_mapped_source_records
+    }
+    /// <p>The number of new mapped target records.</p>
+    pub fn new_mapped_target_records(&self) -> ::std::option::Option<i32> {
+        self.new_mapped_target_records
+    }
+    /// <p>The number of new unique records processed in the current job run, after removing duplicates. This metric excludes deletion-related records. Duplicates are determined by the field marked as UNIQUE_ID in your schema mapping. Records sharing the same value in this field are considered duplicates. For example, if your current run processes five new records with the same UNIQUE_ID value, they would count as one new unique record in this metric.</p>
+    pub fn new_unique_records_loaded(&self) -> ::std::option::Option<i32> {
+        self.new_unique_records_loaded
+    }
+    /// <p>The number of mapped records removed.</p>
+    pub fn mapped_records_removed(&self) -> ::std::option::Option<i32> {
+        self.mapped_records_removed
+    }
+    /// <p>The number of source records removed due to ID mapping.</p>
+    pub fn mapped_source_records_removed(&self) -> ::std::option::Option<i32> {
+        self.mapped_source_records_removed
+    }
+    /// <p>The number of mapped target records removed.</p>
+    pub fn mapped_target_records_removed(&self) -> ::std::option::Option<i32> {
+        self.mapped_target_records_removed
     }
 }
 impl IdMappingJobMetrics {
@@ -63,10 +111,18 @@ pub struct IdMappingJobMetricsBuilder {
     pub(crate) input_records: ::std::option::Option<i32>,
     pub(crate) total_records_processed: ::std::option::Option<i32>,
     pub(crate) records_not_processed: ::std::option::Option<i32>,
+    pub(crate) delete_records_processed: ::std::option::Option<i32>,
     pub(crate) total_mapped_records: ::std::option::Option<i32>,
     pub(crate) total_mapped_source_records: ::std::option::Option<i32>,
     pub(crate) total_mapped_target_records: ::std::option::Option<i32>,
     pub(crate) unique_records_loaded: ::std::option::Option<i32>,
+    pub(crate) new_mapped_records: ::std::option::Option<i32>,
+    pub(crate) new_mapped_source_records: ::std::option::Option<i32>,
+    pub(crate) new_mapped_target_records: ::std::option::Option<i32>,
+    pub(crate) new_unique_records_loaded: ::std::option::Option<i32>,
+    pub(crate) mapped_records_removed: ::std::option::Option<i32>,
+    pub(crate) mapped_source_records_removed: ::std::option::Option<i32>,
+    pub(crate) mapped_target_records_removed: ::std::option::Option<i32>,
 }
 impl IdMappingJobMetricsBuilder {
     /// <p>The total number of records that were input for processing.</p>
@@ -111,6 +167,20 @@ impl IdMappingJobMetricsBuilder {
     pub fn get_records_not_processed(&self) -> &::std::option::Option<i32> {
         &self.records_not_processed
     }
+    /// <p>The number of records processed that were marked for deletion in the input file using the DELETE schema mapping field. These are the records to be removed from the ID mapping table.</p>
+    pub fn delete_records_processed(mut self, input: i32) -> Self {
+        self.delete_records_processed = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of records processed that were marked for deletion in the input file using the DELETE schema mapping field. These are the records to be removed from the ID mapping table.</p>
+    pub fn set_delete_records_processed(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.delete_records_processed = input;
+        self
+    }
+    /// <p>The number of records processed that were marked for deletion in the input file using the DELETE schema mapping field. These are the records to be removed from the ID mapping table.</p>
+    pub fn get_delete_records_processed(&self) -> &::std::option::Option<i32> {
+        &self.delete_records_processed
+    }
     /// <p>The total number of records that were mapped.</p>
     pub fn total_mapped_records(mut self, input: i32) -> Self {
         self.total_mapped_records = ::std::option::Option::Some(input);
@@ -153,19 +223,117 @@ impl IdMappingJobMetricsBuilder {
     pub fn get_total_mapped_target_records(&self) -> &::std::option::Option<i32> {
         &self.total_mapped_target_records
     }
-    /// <p>The number of records remaining after loading and aggregating duplicate records. Duplicates are determined by the field marked as UNIQUE_ID in your schema mapping - records sharing the same value in this field are considered duplicates. For example, if you specified "customer_id" as a UNIQUE_ID field and had three records with the same customer_id value, they would count as one unique record in this metric.</p>
+    /// <p>The number of de-duplicated processed records across all runs, excluding deletion-related records. Duplicates are determined by the field marked as UNIQUE_ID in your schema mapping. Records sharing the same value in this field are considered duplicates. For example, if you specified "customer_id" as a UNIQUE_ID field and had three records with the same customer_id value, they would count as one unique record in this metric.</p>
     pub fn unique_records_loaded(mut self, input: i32) -> Self {
         self.unique_records_loaded = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of records remaining after loading and aggregating duplicate records. Duplicates are determined by the field marked as UNIQUE_ID in your schema mapping - records sharing the same value in this field are considered duplicates. For example, if you specified "customer_id" as a UNIQUE_ID field and had three records with the same customer_id value, they would count as one unique record in this metric.</p>
+    /// <p>The number of de-duplicated processed records across all runs, excluding deletion-related records. Duplicates are determined by the field marked as UNIQUE_ID in your schema mapping. Records sharing the same value in this field are considered duplicates. For example, if you specified "customer_id" as a UNIQUE_ID field and had three records with the same customer_id value, they would count as one unique record in this metric.</p>
     pub fn set_unique_records_loaded(mut self, input: ::std::option::Option<i32>) -> Self {
         self.unique_records_loaded = input;
         self
     }
-    /// <p>The number of records remaining after loading and aggregating duplicate records. Duplicates are determined by the field marked as UNIQUE_ID in your schema mapping - records sharing the same value in this field are considered duplicates. For example, if you specified "customer_id" as a UNIQUE_ID field and had three records with the same customer_id value, they would count as one unique record in this metric.</p>
+    /// <p>The number of de-duplicated processed records across all runs, excluding deletion-related records. Duplicates are determined by the field marked as UNIQUE_ID in your schema mapping. Records sharing the same value in this field are considered duplicates. For example, if you specified "customer_id" as a UNIQUE_ID field and had three records with the same customer_id value, they would count as one unique record in this metric.</p>
     pub fn get_unique_records_loaded(&self) -> &::std::option::Option<i32> {
         &self.unique_records_loaded
+    }
+    /// <p>The number of new mapped records.</p>
+    pub fn new_mapped_records(mut self, input: i32) -> Self {
+        self.new_mapped_records = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of new mapped records.</p>
+    pub fn set_new_mapped_records(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.new_mapped_records = input;
+        self
+    }
+    /// <p>The number of new mapped records.</p>
+    pub fn get_new_mapped_records(&self) -> &::std::option::Option<i32> {
+        &self.new_mapped_records
+    }
+    /// <p>The number of new source records mapped.</p>
+    pub fn new_mapped_source_records(mut self, input: i32) -> Self {
+        self.new_mapped_source_records = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of new source records mapped.</p>
+    pub fn set_new_mapped_source_records(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.new_mapped_source_records = input;
+        self
+    }
+    /// <p>The number of new source records mapped.</p>
+    pub fn get_new_mapped_source_records(&self) -> &::std::option::Option<i32> {
+        &self.new_mapped_source_records
+    }
+    /// <p>The number of new mapped target records.</p>
+    pub fn new_mapped_target_records(mut self, input: i32) -> Self {
+        self.new_mapped_target_records = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of new mapped target records.</p>
+    pub fn set_new_mapped_target_records(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.new_mapped_target_records = input;
+        self
+    }
+    /// <p>The number of new mapped target records.</p>
+    pub fn get_new_mapped_target_records(&self) -> &::std::option::Option<i32> {
+        &self.new_mapped_target_records
+    }
+    /// <p>The number of new unique records processed in the current job run, after removing duplicates. This metric excludes deletion-related records. Duplicates are determined by the field marked as UNIQUE_ID in your schema mapping. Records sharing the same value in this field are considered duplicates. For example, if your current run processes five new records with the same UNIQUE_ID value, they would count as one new unique record in this metric.</p>
+    pub fn new_unique_records_loaded(mut self, input: i32) -> Self {
+        self.new_unique_records_loaded = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of new unique records processed in the current job run, after removing duplicates. This metric excludes deletion-related records. Duplicates are determined by the field marked as UNIQUE_ID in your schema mapping. Records sharing the same value in this field are considered duplicates. For example, if your current run processes five new records with the same UNIQUE_ID value, they would count as one new unique record in this metric.</p>
+    pub fn set_new_unique_records_loaded(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.new_unique_records_loaded = input;
+        self
+    }
+    /// <p>The number of new unique records processed in the current job run, after removing duplicates. This metric excludes deletion-related records. Duplicates are determined by the field marked as UNIQUE_ID in your schema mapping. Records sharing the same value in this field are considered duplicates. For example, if your current run processes five new records with the same UNIQUE_ID value, they would count as one new unique record in this metric.</p>
+    pub fn get_new_unique_records_loaded(&self) -> &::std::option::Option<i32> {
+        &self.new_unique_records_loaded
+    }
+    /// <p>The number of mapped records removed.</p>
+    pub fn mapped_records_removed(mut self, input: i32) -> Self {
+        self.mapped_records_removed = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of mapped records removed.</p>
+    pub fn set_mapped_records_removed(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.mapped_records_removed = input;
+        self
+    }
+    /// <p>The number of mapped records removed.</p>
+    pub fn get_mapped_records_removed(&self) -> &::std::option::Option<i32> {
+        &self.mapped_records_removed
+    }
+    /// <p>The number of source records removed due to ID mapping.</p>
+    pub fn mapped_source_records_removed(mut self, input: i32) -> Self {
+        self.mapped_source_records_removed = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of source records removed due to ID mapping.</p>
+    pub fn set_mapped_source_records_removed(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.mapped_source_records_removed = input;
+        self
+    }
+    /// <p>The number of source records removed due to ID mapping.</p>
+    pub fn get_mapped_source_records_removed(&self) -> &::std::option::Option<i32> {
+        &self.mapped_source_records_removed
+    }
+    /// <p>The number of mapped target records removed.</p>
+    pub fn mapped_target_records_removed(mut self, input: i32) -> Self {
+        self.mapped_target_records_removed = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of mapped target records removed.</p>
+    pub fn set_mapped_target_records_removed(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.mapped_target_records_removed = input;
+        self
+    }
+    /// <p>The number of mapped target records removed.</p>
+    pub fn get_mapped_target_records_removed(&self) -> &::std::option::Option<i32> {
+        &self.mapped_target_records_removed
     }
     /// Consumes the builder and constructs a [`IdMappingJobMetrics`](crate::types::IdMappingJobMetrics).
     pub fn build(self) -> crate::types::IdMappingJobMetrics {
@@ -173,10 +341,18 @@ impl IdMappingJobMetricsBuilder {
             input_records: self.input_records,
             total_records_processed: self.total_records_processed,
             records_not_processed: self.records_not_processed,
+            delete_records_processed: self.delete_records_processed,
             total_mapped_records: self.total_mapped_records,
             total_mapped_source_records: self.total_mapped_source_records,
             total_mapped_target_records: self.total_mapped_target_records,
             unique_records_loaded: self.unique_records_loaded,
+            new_mapped_records: self.new_mapped_records,
+            new_mapped_source_records: self.new_mapped_source_records,
+            new_mapped_target_records: self.new_mapped_target_records,
+            new_unique_records_loaded: self.new_unique_records_loaded,
+            mapped_records_removed: self.mapped_records_removed,
+            mapped_source_records_removed: self.mapped_source_records_removed,
+            mapped_target_records_removed: self.mapped_target_records_removed,
         }
     }
 }

@@ -11,6 +11,8 @@ impl super::Client {
     ///   - [`name(Option<String>)`](crate::operation::describe_instance::DescribeInstanceOutput::name): <p>Specifies the instance name.</p>
     ///   - [`created_date(Option<DateTime>)`](crate::operation::describe_instance::DescribeInstanceOutput::created_date): <p>The date the instance was created.</p>
     ///   - [`status(Option<InstanceStatus>)`](crate::operation::describe_instance::DescribeInstanceOutput::status): <p>The status of the instance.</p>
+    ///   - [`status_reason(Option<String>)`](crate::operation::describe_instance::DescribeInstanceOutput::status_reason): <p>Provides additional context about the current status of the IAM Identity Center instance. This field is particularly useful when an instance is in a non-ACTIVE state, such as CREATE_FAILED. When an instance fails to create or update, this field contains information about the cause, which may include issues with KMS key configuration, permission problems with the specified KMS key, or service-related errors.</p>
+    ///   - [`encryption_configuration_details(Option<EncryptionConfigurationDetails>)`](crate::operation::describe_instance::DescribeInstanceOutput::encryption_configuration_details): <p>Contains the encryption configuration for your IAM Identity Center instance, including the encryption status, KMS key type, and KMS key ARN.</p>
     /// - On failure, responds with [`SdkError<DescribeInstanceError>`](crate::operation::describe_instance::DescribeInstanceError)
     pub fn describe_instance(&self) -> crate::operation::describe_instance::builders::DescribeInstanceFluentBuilder {
         crate::operation::describe_instance::builders::DescribeInstanceFluentBuilder::new(self.handle.clone())

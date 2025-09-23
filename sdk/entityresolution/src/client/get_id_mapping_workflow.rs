@@ -13,6 +13,7 @@ impl super::Client {
     ///   - [`id_mapping_techniques(Option<IdMappingTechniques>)`](crate::operation::get_id_mapping_workflow::GetIdMappingWorkflowOutput::id_mapping_techniques): <p>An object which defines the ID mapping technique and any additional configurations.</p>
     ///   - [`created_at(DateTime)`](crate::operation::get_id_mapping_workflow::GetIdMappingWorkflowOutput::created_at): <p>The timestamp of when the workflow was created.</p>
     ///   - [`updated_at(DateTime)`](crate::operation::get_id_mapping_workflow::GetIdMappingWorkflowOutput::updated_at): <p>The timestamp of when the workflow was last updated.</p>
+    ///   - [`incremental_run_config(Option<IdMappingIncrementalRunConfig>)`](crate::operation::get_id_mapping_workflow::GetIdMappingWorkflowOutput::incremental_run_config): <p>The incremental run configuration for the ID mapping workflow.</p>
     ///   - [`role_arn(String)`](crate::operation::get_id_mapping_workflow::GetIdMappingWorkflowOutput::role_arn): <p>The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes this role to access Amazon Web Services resources on your behalf.</p>
     ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_id_mapping_workflow::GetIdMappingWorkflowOutput::tags): <p>The tags used to organize, track, or control access for this resource.</p>
     /// - On failure, responds with [`SdkError<GetIdMappingWorkflowError>`](crate::operation::get_id_mapping_workflow::GetIdMappingWorkflowError)

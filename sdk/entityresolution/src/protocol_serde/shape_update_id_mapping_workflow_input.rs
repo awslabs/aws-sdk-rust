@@ -12,32 +12,38 @@ pub fn ser_update_id_mapping_workflow_input_input(
         crate::protocol_serde::shape_id_mapping_techniques::ser_id_mapping_techniques(&mut object_3, var_2)?;
         object_3.finish();
     }
-    if let Some(var_4) = &input.input_source_config {
-        let mut array_5 = object.key("inputSourceConfig").start_array();
-        for item_6 in var_4 {
+    if let Some(var_4) = &input.incremental_run_config {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("incrementalRunConfig").start_object();
+        crate::protocol_serde::shape_id_mapping_incremental_run_config::ser_id_mapping_incremental_run_config(&mut object_5, var_4)?;
+        object_5.finish();
+    }
+    if let Some(var_6) = &input.input_source_config {
+        let mut array_7 = object.key("inputSourceConfig").start_array();
+        for item_8 in var_6 {
             {
                 #[allow(unused_mut)]
-                let mut object_7 = array_5.value().start_object();
-                crate::protocol_serde::shape_id_mapping_workflow_input_source::ser_id_mapping_workflow_input_source(&mut object_7, item_6)?;
-                object_7.finish();
+                let mut object_9 = array_7.value().start_object();
+                crate::protocol_serde::shape_id_mapping_workflow_input_source::ser_id_mapping_workflow_input_source(&mut object_9, item_8)?;
+                object_9.finish();
             }
         }
-        array_5.finish();
+        array_7.finish();
     }
-    if let Some(var_8) = &input.output_source_config {
-        let mut array_9 = object.key("outputSourceConfig").start_array();
-        for item_10 in var_8 {
+    if let Some(var_10) = &input.output_source_config {
+        let mut array_11 = object.key("outputSourceConfig").start_array();
+        for item_12 in var_10 {
             {
                 #[allow(unused_mut)]
-                let mut object_11 = array_9.value().start_object();
-                crate::protocol_serde::shape_id_mapping_workflow_output_source::ser_id_mapping_workflow_output_source(&mut object_11, item_10)?;
-                object_11.finish();
+                let mut object_13 = array_11.value().start_object();
+                crate::protocol_serde::shape_id_mapping_workflow_output_source::ser_id_mapping_workflow_output_source(&mut object_13, item_12)?;
+                object_13.finish();
             }
         }
-        array_9.finish();
+        array_11.finish();
     }
-    if let Some(var_12) = &input.role_arn {
-        object.key("roleArn").string(var_12.as_str());
+    if let Some(var_14) = &input.role_arn {
+        object.key("roleArn").string(var_14.as_str());
     }
     Ok(())
 }

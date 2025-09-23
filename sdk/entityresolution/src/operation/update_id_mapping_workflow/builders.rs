@@ -22,7 +22,9 @@ impl crate::operation::update_id_mapping_workflow::builders::UpdateIdMappingWork
 }
 /// Fluent builder constructing a request to `UpdateIdMappingWorkflow`.
 ///
-/// <p>Updates an existing <code>IdMappingWorkflow</code>. This method is identical to CreateIdMappingWorkflow, except it uses an HTTP <code>PUT</code> request instead of a <code>POST</code> request, and the <code>IdMappingWorkflow</code> must already exist for the method to succeed.</p>
+/// <p>Updates an existing <code>IdMappingWorkflow</code>. This method is identical to CreateIdMappingWorkflow, except it uses an HTTP <code>PUT</code> request instead of a <code>POST</code> request, and the <code>IdMappingWorkflow</code> must already exist for the method to succeed.</p><important>
+/// <p>Incremental processing is not supported for ID mapping workflows.</p>
+/// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateIdMappingWorkflowFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -187,6 +189,20 @@ impl UpdateIdMappingWorkflowFluentBuilder {
     /// <p>An object which defines the ID mapping technique and any additional configurations.</p>
     pub fn get_id_mapping_techniques(&self) -> &::std::option::Option<crate::types::IdMappingTechniques> {
         self.inner.get_id_mapping_techniques()
+    }
+    /// <p>The incremental run configuration for the update ID mapping workflow.</p>
+    pub fn incremental_run_config(mut self, input: crate::types::IdMappingIncrementalRunConfig) -> Self {
+        self.inner = self.inner.incremental_run_config(input);
+        self
+    }
+    /// <p>The incremental run configuration for the update ID mapping workflow.</p>
+    pub fn set_incremental_run_config(mut self, input: ::std::option::Option<crate::types::IdMappingIncrementalRunConfig>) -> Self {
+        self.inner = self.inner.set_incremental_run_config(input);
+        self
+    }
+    /// <p>The incremental run configuration for the update ID mapping workflow.</p>
+    pub fn get_incremental_run_config(&self) -> &::std::option::Option<crate::types::IdMappingIncrementalRunConfig> {
+        self.inner.get_incremental_run_config()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes this role to access Amazon Web Services resources on your behalf.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

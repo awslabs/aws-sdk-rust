@@ -7,6 +7,11 @@ pub struct StartIdMappingJobInput {
     pub workflow_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>OutputSource</code> objects.</p>
     pub output_source_config: ::std::option::Option<::std::vec::Vec<crate::types::IdMappingJobOutputSource>>,
+    /// <p>The job type for the ID mapping job.</p>
+    /// <p>If the <code>jobType</code> value is set to <code>INCREMENTAL</code>, only new or changed data is processed since the last job run. This is the default value if the <code>CreateIdMappingWorkflow</code> API is configured with an <code>incrementalRunConfig</code>.</p>
+    /// <p>If the <code>jobType</code> value is set to <code>BATCH</code>, all data is processed from the input source, regardless of previous job runs. This is the default value if the <code>CreateIdMappingWorkflow</code> API isn't configured with an <code>incrementalRunConfig</code>.</p>
+    /// <p>If the <code>jobType</code> value is set to <code>DELETE_ONLY</code>, only deletion requests from <code>BatchDeleteUniqueIds</code> are processed.</p>
+    pub job_type: ::std::option::Option<crate::types::JobType>,
 }
 impl StartIdMappingJobInput {
     /// <p>The name of the ID mapping job to be retrieved.</p>
@@ -18,6 +23,13 @@ impl StartIdMappingJobInput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.output_source_config.is_none()`.
     pub fn output_source_config(&self) -> &[crate::types::IdMappingJobOutputSource] {
         self.output_source_config.as_deref().unwrap_or_default()
+    }
+    /// <p>The job type for the ID mapping job.</p>
+    /// <p>If the <code>jobType</code> value is set to <code>INCREMENTAL</code>, only new or changed data is processed since the last job run. This is the default value if the <code>CreateIdMappingWorkflow</code> API is configured with an <code>incrementalRunConfig</code>.</p>
+    /// <p>If the <code>jobType</code> value is set to <code>BATCH</code>, all data is processed from the input source, regardless of previous job runs. This is the default value if the <code>CreateIdMappingWorkflow</code> API isn't configured with an <code>incrementalRunConfig</code>.</p>
+    /// <p>If the <code>jobType</code> value is set to <code>DELETE_ONLY</code>, only deletion requests from <code>BatchDeleteUniqueIds</code> are processed.</p>
+    pub fn job_type(&self) -> ::std::option::Option<&crate::types::JobType> {
+        self.job_type.as_ref()
     }
 }
 impl StartIdMappingJobInput {
@@ -33,6 +45,7 @@ impl StartIdMappingJobInput {
 pub struct StartIdMappingJobInputBuilder {
     pub(crate) workflow_name: ::std::option::Option<::std::string::String>,
     pub(crate) output_source_config: ::std::option::Option<::std::vec::Vec<crate::types::IdMappingJobOutputSource>>,
+    pub(crate) job_type: ::std::option::Option<crate::types::JobType>,
 }
 impl StartIdMappingJobInputBuilder {
     /// <p>The name of the ID mapping job to be retrieved.</p>
@@ -70,6 +83,29 @@ impl StartIdMappingJobInputBuilder {
     pub fn get_output_source_config(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IdMappingJobOutputSource>> {
         &self.output_source_config
     }
+    /// <p>The job type for the ID mapping job.</p>
+    /// <p>If the <code>jobType</code> value is set to <code>INCREMENTAL</code>, only new or changed data is processed since the last job run. This is the default value if the <code>CreateIdMappingWorkflow</code> API is configured with an <code>incrementalRunConfig</code>.</p>
+    /// <p>If the <code>jobType</code> value is set to <code>BATCH</code>, all data is processed from the input source, regardless of previous job runs. This is the default value if the <code>CreateIdMappingWorkflow</code> API isn't configured with an <code>incrementalRunConfig</code>.</p>
+    /// <p>If the <code>jobType</code> value is set to <code>DELETE_ONLY</code>, only deletion requests from <code>BatchDeleteUniqueIds</code> are processed.</p>
+    pub fn job_type(mut self, input: crate::types::JobType) -> Self {
+        self.job_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The job type for the ID mapping job.</p>
+    /// <p>If the <code>jobType</code> value is set to <code>INCREMENTAL</code>, only new or changed data is processed since the last job run. This is the default value if the <code>CreateIdMappingWorkflow</code> API is configured with an <code>incrementalRunConfig</code>.</p>
+    /// <p>If the <code>jobType</code> value is set to <code>BATCH</code>, all data is processed from the input source, regardless of previous job runs. This is the default value if the <code>CreateIdMappingWorkflow</code> API isn't configured with an <code>incrementalRunConfig</code>.</p>
+    /// <p>If the <code>jobType</code> value is set to <code>DELETE_ONLY</code>, only deletion requests from <code>BatchDeleteUniqueIds</code> are processed.</p>
+    pub fn set_job_type(mut self, input: ::std::option::Option<crate::types::JobType>) -> Self {
+        self.job_type = input;
+        self
+    }
+    /// <p>The job type for the ID mapping job.</p>
+    /// <p>If the <code>jobType</code> value is set to <code>INCREMENTAL</code>, only new or changed data is processed since the last job run. This is the default value if the <code>CreateIdMappingWorkflow</code> API is configured with an <code>incrementalRunConfig</code>.</p>
+    /// <p>If the <code>jobType</code> value is set to <code>BATCH</code>, all data is processed from the input source, regardless of previous job runs. This is the default value if the <code>CreateIdMappingWorkflow</code> API isn't configured with an <code>incrementalRunConfig</code>.</p>
+    /// <p>If the <code>jobType</code> value is set to <code>DELETE_ONLY</code>, only deletion requests from <code>BatchDeleteUniqueIds</code> are processed.</p>
+    pub fn get_job_type(&self) -> &::std::option::Option<crate::types::JobType> {
+        &self.job_type
+    }
     /// Consumes the builder and constructs a [`StartIdMappingJobInput`](crate::operation::start_id_mapping_job::StartIdMappingJobInput).
     pub fn build(
         self,
@@ -77,6 +113,7 @@ impl StartIdMappingJobInputBuilder {
         ::std::result::Result::Ok(crate::operation::start_id_mapping_job::StartIdMappingJobInput {
             workflow_name: self.workflow_name,
             output_source_config: self.output_source_config,
+            job_type: self.job_type,
         })
     }
 }

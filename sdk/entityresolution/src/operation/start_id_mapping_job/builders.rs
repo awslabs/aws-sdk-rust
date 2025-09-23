@@ -141,4 +141,27 @@ impl StartIdMappingJobFluentBuilder {
     pub fn get_output_source_config(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IdMappingJobOutputSource>> {
         self.inner.get_output_source_config()
     }
+    /// <p>The job type for the ID mapping job.</p>
+    /// <p>If the <code>jobType</code> value is set to <code>INCREMENTAL</code>, only new or changed data is processed since the last job run. This is the default value if the <code>CreateIdMappingWorkflow</code> API is configured with an <code>incrementalRunConfig</code>.</p>
+    /// <p>If the <code>jobType</code> value is set to <code>BATCH</code>, all data is processed from the input source, regardless of previous job runs. This is the default value if the <code>CreateIdMappingWorkflow</code> API isn't configured with an <code>incrementalRunConfig</code>.</p>
+    /// <p>If the <code>jobType</code> value is set to <code>DELETE_ONLY</code>, only deletion requests from <code>BatchDeleteUniqueIds</code> are processed.</p>
+    pub fn job_type(mut self, input: crate::types::JobType) -> Self {
+        self.inner = self.inner.job_type(input);
+        self
+    }
+    /// <p>The job type for the ID mapping job.</p>
+    /// <p>If the <code>jobType</code> value is set to <code>INCREMENTAL</code>, only new or changed data is processed since the last job run. This is the default value if the <code>CreateIdMappingWorkflow</code> API is configured with an <code>incrementalRunConfig</code>.</p>
+    /// <p>If the <code>jobType</code> value is set to <code>BATCH</code>, all data is processed from the input source, regardless of previous job runs. This is the default value if the <code>CreateIdMappingWorkflow</code> API isn't configured with an <code>incrementalRunConfig</code>.</p>
+    /// <p>If the <code>jobType</code> value is set to <code>DELETE_ONLY</code>, only deletion requests from <code>BatchDeleteUniqueIds</code> are processed.</p>
+    pub fn set_job_type(mut self, input: ::std::option::Option<crate::types::JobType>) -> Self {
+        self.inner = self.inner.set_job_type(input);
+        self
+    }
+    /// <p>The job type for the ID mapping job.</p>
+    /// <p>If the <code>jobType</code> value is set to <code>INCREMENTAL</code>, only new or changed data is processed since the last job run. This is the default value if the <code>CreateIdMappingWorkflow</code> API is configured with an <code>incrementalRunConfig</code>.</p>
+    /// <p>If the <code>jobType</code> value is set to <code>BATCH</code>, all data is processed from the input source, regardless of previous job runs. This is the default value if the <code>CreateIdMappingWorkflow</code> API isn't configured with an <code>incrementalRunConfig</code>.</p>
+    /// <p>If the <code>jobType</code> value is set to <code>DELETE_ONLY</code>, only deletion requests from <code>BatchDeleteUniqueIds</code> are processed.</p>
+    pub fn get_job_type(&self) -> &::std::option::Option<crate::types::JobType> {
+        self.inner.get_job_type()
+    }
 }

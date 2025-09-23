@@ -49,7 +49,9 @@ pub struct CreateAssociationInput {
     pub apply_only_at_cron_interval: ::std::option::Option<bool>,
     /// <p>The names of Amazon Resource Names (ARNs) of the Change Calendar type documents you want to gate your associations under. The associations only run when that change calendar is open. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon Web Services Systems Manager Change Calendar</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub calendar_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>A location is a combination of Amazon Web Services Regions and Amazon Web Services accounts where you want to run the association. Use this action to create an association in multiple Regions and multiple accounts.</p>
+    /// <p>A location is a combination of Amazon Web Services Regions and Amazon Web Services accounts where you want to run the association. Use this action to create an association in multiple Regions and multiple accounts.</p><note>
+    /// <p>The <code>IncludeChildOrganizationUnits</code> parameter is not supported by State Manager.</p>
+    /// </note>
     pub target_locations: ::std::option::Option<::std::vec::Vec<crate::types::TargetLocation>>,
     /// <p>Number of days to wait after the scheduled day to run an association. For example, if you specified a cron schedule of <code>cron(0 0 ? * THU#2 *)</code>, you could specify an offset of 3 to run the association each Sunday after the second Thursday of the month. For more information about cron schedules for associations, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/reference-cron-and-rate-expressions.html">Reference: Cron and rate expressions for Systems Manager</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p><note>
     /// <p>To use offsets, you must specify the <code>ApplyOnlyAtCronInterval</code> parameter. This option tells the system not to run an association immediately after you create it.</p>
@@ -153,7 +155,9 @@ impl CreateAssociationInput {
     pub fn calendar_names(&self) -> &[::std::string::String] {
         self.calendar_names.as_deref().unwrap_or_default()
     }
-    /// <p>A location is a combination of Amazon Web Services Regions and Amazon Web Services accounts where you want to run the association. Use this action to create an association in multiple Regions and multiple accounts.</p>
+    /// <p>A location is a combination of Amazon Web Services Regions and Amazon Web Services accounts where you want to run the association. Use this action to create an association in multiple Regions and multiple accounts.</p><note>
+    /// <p>The <code>IncludeChildOrganizationUnits</code> parameter is not supported by State Manager.</p>
+    /// </note>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_locations.is_none()`.
     pub fn target_locations(&self) -> &[crate::types::TargetLocation] {
@@ -541,19 +545,25 @@ impl CreateAssociationInputBuilder {
     ///
     /// To override the contents of this collection use [`set_target_locations`](Self::set_target_locations).
     ///
-    /// <p>A location is a combination of Amazon Web Services Regions and Amazon Web Services accounts where you want to run the association. Use this action to create an association in multiple Regions and multiple accounts.</p>
+    /// <p>A location is a combination of Amazon Web Services Regions and Amazon Web Services accounts where you want to run the association. Use this action to create an association in multiple Regions and multiple accounts.</p><note>
+    /// <p>The <code>IncludeChildOrganizationUnits</code> parameter is not supported by State Manager.</p>
+    /// </note>
     pub fn target_locations(mut self, input: crate::types::TargetLocation) -> Self {
         let mut v = self.target_locations.unwrap_or_default();
         v.push(input);
         self.target_locations = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A location is a combination of Amazon Web Services Regions and Amazon Web Services accounts where you want to run the association. Use this action to create an association in multiple Regions and multiple accounts.</p>
+    /// <p>A location is a combination of Amazon Web Services Regions and Amazon Web Services accounts where you want to run the association. Use this action to create an association in multiple Regions and multiple accounts.</p><note>
+    /// <p>The <code>IncludeChildOrganizationUnits</code> parameter is not supported by State Manager.</p>
+    /// </note>
     pub fn set_target_locations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TargetLocation>>) -> Self {
         self.target_locations = input;
         self
     }
-    /// <p>A location is a combination of Amazon Web Services Regions and Amazon Web Services accounts where you want to run the association. Use this action to create an association in multiple Regions and multiple accounts.</p>
+    /// <p>A location is a combination of Amazon Web Services Regions and Amazon Web Services accounts where you want to run the association. Use this action to create an association in multiple Regions and multiple accounts.</p><note>
+    /// <p>The <code>IncludeChildOrganizationUnits</code> parameter is not supported by State Manager.</p>
+    /// </note>
     pub fn get_target_locations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetLocation>> {
         &self.target_locations
     }

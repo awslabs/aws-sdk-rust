@@ -181,6 +181,13 @@ pub(crate) fn de_start_id_mapping_job(
                             .transpose()?,
                     );
                 }
+                "jobType" => {
+                    builder = builder.set_job_type(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::JobType::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 "outputSourceConfig" => {
                     builder = builder.set_output_source_config(
                         crate::protocol_serde::shape_id_mapping_job_output_source_config::de_id_mapping_job_output_source_config(tokens)?,

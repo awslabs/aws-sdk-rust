@@ -4,7 +4,15 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResolutionTechniques {
-    /// <p>The type of matching. There are three types of matching: <code>RULE_MATCHING</code>, <code>ML_MATCHING</code>, and <code>PROVIDER</code>.</p>
+    /// <p>The type of matching workflow to create. Specify one of the following types:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>RULE_MATCHING</code>: Match records using configurable rule-based criteria</p></li>
+    /// <li>
+    /// <p><code>ML_MATCHING</code>: Match records using machine learning models</p></li>
+    /// <li>
+    /// <p><code>PROVIDER</code>: Match records using a third-party matching provider</p></li>
+    /// </ul>
     pub resolution_type: crate::types::ResolutionType,
     /// <p>An object which defines the list of matching rules to run and has a field <code>rules</code>, which is a list of rule objects.</p>
     pub rule_based_properties: ::std::option::Option<crate::types::RuleBasedProperties>,
@@ -14,7 +22,15 @@ pub struct ResolutionTechniques {
     pub provider_properties: ::std::option::Option<crate::types::ProviderProperties>,
 }
 impl ResolutionTechniques {
-    /// <p>The type of matching. There are three types of matching: <code>RULE_MATCHING</code>, <code>ML_MATCHING</code>, and <code>PROVIDER</code>.</p>
+    /// <p>The type of matching workflow to create. Specify one of the following types:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>RULE_MATCHING</code>: Match records using configurable rule-based criteria</p></li>
+    /// <li>
+    /// <p><code>ML_MATCHING</code>: Match records using machine learning models</p></li>
+    /// <li>
+    /// <p><code>PROVIDER</code>: Match records using a third-party matching provider</p></li>
+    /// </ul>
     pub fn resolution_type(&self) -> &crate::types::ResolutionType {
         &self.resolution_type
     }
@@ -48,18 +64,42 @@ pub struct ResolutionTechniquesBuilder {
     pub(crate) provider_properties: ::std::option::Option<crate::types::ProviderProperties>,
 }
 impl ResolutionTechniquesBuilder {
-    /// <p>The type of matching. There are three types of matching: <code>RULE_MATCHING</code>, <code>ML_MATCHING</code>, and <code>PROVIDER</code>.</p>
+    /// <p>The type of matching workflow to create. Specify one of the following types:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>RULE_MATCHING</code>: Match records using configurable rule-based criteria</p></li>
+    /// <li>
+    /// <p><code>ML_MATCHING</code>: Match records using machine learning models</p></li>
+    /// <li>
+    /// <p><code>PROVIDER</code>: Match records using a third-party matching provider</p></li>
+    /// </ul>
     /// This field is required.
     pub fn resolution_type(mut self, input: crate::types::ResolutionType) -> Self {
         self.resolution_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of matching. There are three types of matching: <code>RULE_MATCHING</code>, <code>ML_MATCHING</code>, and <code>PROVIDER</code>.</p>
+    /// <p>The type of matching workflow to create. Specify one of the following types:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>RULE_MATCHING</code>: Match records using configurable rule-based criteria</p></li>
+    /// <li>
+    /// <p><code>ML_MATCHING</code>: Match records using machine learning models</p></li>
+    /// <li>
+    /// <p><code>PROVIDER</code>: Match records using a third-party matching provider</p></li>
+    /// </ul>
     pub fn set_resolution_type(mut self, input: ::std::option::Option<crate::types::ResolutionType>) -> Self {
         self.resolution_type = input;
         self
     }
-    /// <p>The type of matching. There are three types of matching: <code>RULE_MATCHING</code>, <code>ML_MATCHING</code>, and <code>PROVIDER</code>.</p>
+    /// <p>The type of matching workflow to create. Specify one of the following types:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>RULE_MATCHING</code>: Match records using configurable rule-based criteria</p></li>
+    /// <li>
+    /// <p><code>ML_MATCHING</code>: Match records using machine learning models</p></li>
+    /// <li>
+    /// <p><code>PROVIDER</code>: Match records using a third-party matching provider</p></li>
+    /// </ul>
     pub fn get_resolution_type(&self) -> &::std::option::Option<crate::types::ResolutionType> {
         &self.resolution_type
     }

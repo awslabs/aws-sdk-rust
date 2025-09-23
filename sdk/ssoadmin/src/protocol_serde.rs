@@ -375,6 +375,10 @@ pub(crate) mod shape_customer_managed_policy_reference_list;
 
 pub(crate) mod shape_display_data;
 
+pub(crate) mod shape_encryption_configuration;
+
+pub(crate) mod shape_encryption_configuration_details;
+
 pub(crate) mod shape_grant;
 
 pub(crate) mod shape_grants;

@@ -156,4 +156,18 @@ impl GetDeployablePatchSnapshotForInstanceFluentBuilder {
     pub fn get_baseline_override(&self) -> &::std::option::Option<crate::types::BaselineOverride> {
         self.inner.get_baseline_override()
     }
+    /// <p>Specifies whether to use S3 dualstack endpoints for the patch snapshot download URL. Set to <code>true</code> to receive a presigned URL that supports both IPv4 and IPv6 connectivity. Set to <code>false</code> to use standard IPv4-only endpoints. Default is <code>false</code>. This parameter is required for managed nodes in IPv6-only environments.</p>
+    pub fn use_s3_dual_stack_endpoint(mut self, input: bool) -> Self {
+        self.inner = self.inner.use_s3_dual_stack_endpoint(input);
+        self
+    }
+    /// <p>Specifies whether to use S3 dualstack endpoints for the patch snapshot download URL. Set to <code>true</code> to receive a presigned URL that supports both IPv4 and IPv6 connectivity. Set to <code>false</code> to use standard IPv4-only endpoints. Default is <code>false</code>. This parameter is required for managed nodes in IPv6-only environments.</p>
+    pub fn set_use_s3_dual_stack_endpoint(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_use_s3_dual_stack_endpoint(input);
+        self
+    }
+    /// <p>Specifies whether to use S3 dualstack endpoints for the patch snapshot download URL. Set to <code>true</code> to receive a presigned URL that supports both IPv4 and IPv6 connectivity. Set to <code>false</code> to use standard IPv4-only endpoints. Default is <code>false</code>. This parameter is required for managed nodes in IPv6-only environments.</p>
+    pub fn get_use_s3_dual_stack_endpoint(&self) -> &::std::option::Option<bool> {
+        self.inner.get_use_s3_dual_stack_endpoint()
+    }
 }

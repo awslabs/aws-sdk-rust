@@ -14,7 +14,7 @@ pub struct CreateMatchingWorkflowInput {
     /// <p>An object which defines the <code>resolutionType</code> and the <code>ruleBasedProperties</code>.</p>
     pub resolution_techniques: ::std::option::Option<crate::types::ResolutionTechniques>,
     /// <p>Optional. An object that defines the incremental run type. This object contains only the <code>incrementalRunType</code> field, which appears as "Automatic" in the console.</p><important>
-    /// <p>For workflows where <code>resolutionType</code> is <code>ML_MATCHING</code>, incremental processing is not supported.</p>
+    /// <p>For workflows where <code>resolutionType</code> is <code>ML_MATCHING</code> or <code>PROVIDER</code>, incremental processing is not supported.</p>
     /// </important>
     pub incremental_run_config: ::std::option::Option<crate::types::IncrementalRunConfig>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes this role to create resources on your behalf as part of workflow execution.</p>
@@ -48,7 +48,7 @@ impl CreateMatchingWorkflowInput {
         self.resolution_techniques.as_ref()
     }
     /// <p>Optional. An object that defines the incremental run type. This object contains only the <code>incrementalRunType</code> field, which appears as "Automatic" in the console.</p><important>
-    /// <p>For workflows where <code>resolutionType</code> is <code>ML_MATCHING</code>, incremental processing is not supported.</p>
+    /// <p>For workflows where <code>resolutionType</code> is <code>ML_MATCHING</code> or <code>PROVIDER</code>, incremental processing is not supported.</p>
     /// </important>
     pub fn incremental_run_config(&self) -> ::std::option::Option<&crate::types::IncrementalRunConfig> {
         self.incremental_run_config.as_ref()
@@ -168,21 +168,21 @@ impl CreateMatchingWorkflowInputBuilder {
         &self.resolution_techniques
     }
     /// <p>Optional. An object that defines the incremental run type. This object contains only the <code>incrementalRunType</code> field, which appears as "Automatic" in the console.</p><important>
-    /// <p>For workflows where <code>resolutionType</code> is <code>ML_MATCHING</code>, incremental processing is not supported.</p>
+    /// <p>For workflows where <code>resolutionType</code> is <code>ML_MATCHING</code> or <code>PROVIDER</code>, incremental processing is not supported.</p>
     /// </important>
     pub fn incremental_run_config(mut self, input: crate::types::IncrementalRunConfig) -> Self {
         self.incremental_run_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>Optional. An object that defines the incremental run type. This object contains only the <code>incrementalRunType</code> field, which appears as "Automatic" in the console.</p><important>
-    /// <p>For workflows where <code>resolutionType</code> is <code>ML_MATCHING</code>, incremental processing is not supported.</p>
+    /// <p>For workflows where <code>resolutionType</code> is <code>ML_MATCHING</code> or <code>PROVIDER</code>, incremental processing is not supported.</p>
     /// </important>
     pub fn set_incremental_run_config(mut self, input: ::std::option::Option<crate::types::IncrementalRunConfig>) -> Self {
         self.incremental_run_config = input;
         self
     }
     /// <p>Optional. An object that defines the incremental run type. This object contains only the <code>incrementalRunType</code> field, which appears as "Automatic" in the console.</p><important>
-    /// <p>For workflows where <code>resolutionType</code> is <code>ML_MATCHING</code>, incremental processing is not supported.</p>
+    /// <p>For workflows where <code>resolutionType</code> is <code>ML_MATCHING</code> or <code>PROVIDER</code>, incremental processing is not supported.</p>
     /// </important>
     pub fn get_incremental_run_config(&self) -> &::std::option::Option<crate::types::IncrementalRunConfig> {
         &self.incremental_run_config

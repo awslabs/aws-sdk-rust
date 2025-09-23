@@ -22,7 +22,7 @@
 //!
 //! __API namespaces__
 //!
-//! IAM Identity Center uses the sso and identitystore API namespaces. IAM Identity Center OpenID Connect uses the sso-oidc namespace.
+//! IAM Identity Center uses the sso and identitystore API namespaces. IAM Identity Center OpenID Connect uses the sso-oauth namespace.
 //!
 //! __Considerations for using this guide__
 //!
@@ -46,7 +46,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-ssooidc = "1.85.0"
+//! aws-sdk-ssooidc = "1.86.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

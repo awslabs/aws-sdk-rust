@@ -15,6 +15,8 @@ pub struct UpdateIdMappingWorkflowOutput {
     pub output_source_config: ::std::option::Option<::std::vec::Vec<crate::types::IdMappingWorkflowOutputSource>>,
     /// <p>An object which defines the ID mapping technique and any additional configurations.</p>
     pub id_mapping_techniques: ::std::option::Option<crate::types::IdMappingTechniques>,
+    /// <p>The incremental run configuration for the update ID mapping workflow output.</p>
+    pub incremental_run_config: ::std::option::Option<crate::types::IdMappingIncrementalRunConfig>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes this role to access Amazon Web Services resources on your behalf.</p>
     pub role_arn: ::std::string::String,
     _request_id: Option<String>,
@@ -49,6 +51,10 @@ impl UpdateIdMappingWorkflowOutput {
     pub fn id_mapping_techniques(&self) -> ::std::option::Option<&crate::types::IdMappingTechniques> {
         self.id_mapping_techniques.as_ref()
     }
+    /// <p>The incremental run configuration for the update ID mapping workflow output.</p>
+    pub fn incremental_run_config(&self) -> ::std::option::Option<&crate::types::IdMappingIncrementalRunConfig> {
+        self.incremental_run_config.as_ref()
+    }
     /// <p>The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes this role to access Amazon Web Services resources on your behalf.</p>
     pub fn role_arn(&self) -> &str {
         use std::ops::Deref;
@@ -77,6 +83,7 @@ pub struct UpdateIdMappingWorkflowOutputBuilder {
     pub(crate) input_source_config: ::std::option::Option<::std::vec::Vec<crate::types::IdMappingWorkflowInputSource>>,
     pub(crate) output_source_config: ::std::option::Option<::std::vec::Vec<crate::types::IdMappingWorkflowOutputSource>>,
     pub(crate) id_mapping_techniques: ::std::option::Option<crate::types::IdMappingTechniques>,
+    pub(crate) incremental_run_config: ::std::option::Option<crate::types::IdMappingIncrementalRunConfig>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -180,6 +187,20 @@ impl UpdateIdMappingWorkflowOutputBuilder {
     pub fn get_id_mapping_techniques(&self) -> &::std::option::Option<crate::types::IdMappingTechniques> {
         &self.id_mapping_techniques
     }
+    /// <p>The incremental run configuration for the update ID mapping workflow output.</p>
+    pub fn incremental_run_config(mut self, input: crate::types::IdMappingIncrementalRunConfig) -> Self {
+        self.incremental_run_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The incremental run configuration for the update ID mapping workflow output.</p>
+    pub fn set_incremental_run_config(mut self, input: ::std::option::Option<crate::types::IdMappingIncrementalRunConfig>) -> Self {
+        self.incremental_run_config = input;
+        self
+    }
+    /// <p>The incremental run configuration for the update ID mapping workflow output.</p>
+    pub fn get_incremental_run_config(&self) -> &::std::option::Option<crate::types::IdMappingIncrementalRunConfig> {
+        &self.incremental_run_config
+    }
     /// <p>The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes this role to access Amazon Web Services resources on your behalf.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -236,6 +257,7 @@ impl UpdateIdMappingWorkflowOutputBuilder {
             })?,
             output_source_config: self.output_source_config,
             id_mapping_techniques: self.id_mapping_techniques,
+            incremental_run_config: self.incremental_run_config,
             role_arn: self.role_arn.unwrap_or_default(),
             _request_id: self._request_id,
         })

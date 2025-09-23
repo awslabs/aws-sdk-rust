@@ -17,6 +17,13 @@ pub(crate) fn de_invalid_request_exception_json_err(
                             .transpose()?,
                     );
                 }
+                "reason" => {
+                    builder = builder.set_reason(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::InvalidRequestExceptionReason::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 "error_description" => {
                     builder = builder.set_error_description(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

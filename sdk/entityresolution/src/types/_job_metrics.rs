@@ -10,6 +10,8 @@ pub struct JobMetrics {
     pub total_records_processed: ::std::option::Option<i32>,
     /// <p>The total number of records that did not get processed.</p>
     pub records_not_processed: ::std::option::Option<i32>,
+    /// <p>The number of records processed that were marked for deletion (<code>DELETE</code> = True) in the input file. This metric tracks records flagged for removal during the job execution.</p>
+    pub delete_records_processed: ::std::option::Option<i32>,
     /// <p>The total number of <code>matchID</code>s generated.</p>
     pub match_ids: ::std::option::Option<i32>,
 }
@@ -25,6 +27,10 @@ impl JobMetrics {
     /// <p>The total number of records that did not get processed.</p>
     pub fn records_not_processed(&self) -> ::std::option::Option<i32> {
         self.records_not_processed
+    }
+    /// <p>The number of records processed that were marked for deletion (<code>DELETE</code> = True) in the input file. This metric tracks records flagged for removal during the job execution.</p>
+    pub fn delete_records_processed(&self) -> ::std::option::Option<i32> {
+        self.delete_records_processed
     }
     /// <p>The total number of <code>matchID</code>s generated.</p>
     pub fn match_ids(&self) -> ::std::option::Option<i32> {
@@ -45,6 +51,7 @@ pub struct JobMetricsBuilder {
     pub(crate) input_records: ::std::option::Option<i32>,
     pub(crate) total_records_processed: ::std::option::Option<i32>,
     pub(crate) records_not_processed: ::std::option::Option<i32>,
+    pub(crate) delete_records_processed: ::std::option::Option<i32>,
     pub(crate) match_ids: ::std::option::Option<i32>,
 }
 impl JobMetricsBuilder {
@@ -90,6 +97,20 @@ impl JobMetricsBuilder {
     pub fn get_records_not_processed(&self) -> &::std::option::Option<i32> {
         &self.records_not_processed
     }
+    /// <p>The number of records processed that were marked for deletion (<code>DELETE</code> = True) in the input file. This metric tracks records flagged for removal during the job execution.</p>
+    pub fn delete_records_processed(mut self, input: i32) -> Self {
+        self.delete_records_processed = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of records processed that were marked for deletion (<code>DELETE</code> = True) in the input file. This metric tracks records flagged for removal during the job execution.</p>
+    pub fn set_delete_records_processed(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.delete_records_processed = input;
+        self
+    }
+    /// <p>The number of records processed that were marked for deletion (<code>DELETE</code> = True) in the input file. This metric tracks records flagged for removal during the job execution.</p>
+    pub fn get_delete_records_processed(&self) -> &::std::option::Option<i32> {
+        &self.delete_records_processed
+    }
     /// <p>The total number of <code>matchID</code>s generated.</p>
     pub fn match_ids(mut self, input: i32) -> Self {
         self.match_ids = ::std::option::Option::Some(input);
@@ -110,6 +131,7 @@ impl JobMetricsBuilder {
             input_records: self.input_records,
             total_records_processed: self.total_records_processed,
             records_not_processed: self.records_not_processed,
+            delete_records_processed: self.delete_records_processed,
             match_ids: self.match_ids,
         }
     }

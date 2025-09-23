@@ -215,6 +215,8 @@ pub use crate::types::_id_namespace_association_summary::IdNamespaceAssociationS
 
 pub use crate::types::_id_namespace_association_input_reference_properties_summary::IdNamespaceAssociationInputReferencePropertiesSummary;
 
+pub use crate::types::_job_type::JobType;
+
 pub use crate::types::_id_mapping_table::IdMappingTable;
 
 pub use crate::types::_id_mapping_table_input_reference_properties::IdMappingTableInputReferenceProperties;
@@ -702,6 +704,8 @@ mod _id_namespace_association_summary;
 mod _id_namespace_type;
 
 mod _job_compute_payment_config;
+
+mod _job_type;
 
 mod _join_operator;
 

@@ -16,6 +16,8 @@ pub struct InstanceMetadata {
     pub created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The current status of this Identity Center instance.</p>
     pub status: ::std::option::Option<crate::types::InstanceStatus>,
+    /// <p>Provides additional context about the current status of the IAM Identity Center instance. This field is particularly useful when an instance is in a non-ACTIVE state, such as CREATE_FAILED. When an instance creation fails, this field contains information about the cause, which may include issues with KMS key configuration or insufficient permissions.</p>
+    pub status_reason: ::std::option::Option<::std::string::String>,
 }
 impl InstanceMetadata {
     /// <p>The ARN of the Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
@@ -42,6 +44,10 @@ impl InstanceMetadata {
     pub fn status(&self) -> ::std::option::Option<&crate::types::InstanceStatus> {
         self.status.as_ref()
     }
+    /// <p>Provides additional context about the current status of the IAM Identity Center instance. This field is particularly useful when an instance is in a non-ACTIVE state, such as CREATE_FAILED. When an instance creation fails, this field contains information about the cause, which may include issues with KMS key configuration or insufficient permissions.</p>
+    pub fn status_reason(&self) -> ::std::option::Option<&str> {
+        self.status_reason.as_deref()
+    }
 }
 impl InstanceMetadata {
     /// Creates a new builder-style object to manufacture [`InstanceMetadata`](crate::types::InstanceMetadata).
@@ -60,6 +66,7 @@ pub struct InstanceMetadataBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) status: ::std::option::Option<crate::types::InstanceStatus>,
+    pub(crate) status_reason: ::std::option::Option<::std::string::String>,
 }
 impl InstanceMetadataBuilder {
     /// <p>The ARN of the Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
@@ -146,6 +153,20 @@ impl InstanceMetadataBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::InstanceStatus> {
         &self.status
     }
+    /// <p>Provides additional context about the current status of the IAM Identity Center instance. This field is particularly useful when an instance is in a non-ACTIVE state, such as CREATE_FAILED. When an instance creation fails, this field contains information about the cause, which may include issues with KMS key configuration or insufficient permissions.</p>
+    pub fn status_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status_reason = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Provides additional context about the current status of the IAM Identity Center instance. This field is particularly useful when an instance is in a non-ACTIVE state, such as CREATE_FAILED. When an instance creation fails, this field contains information about the cause, which may include issues with KMS key configuration or insufficient permissions.</p>
+    pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.status_reason = input;
+        self
+    }
+    /// <p>Provides additional context about the current status of the IAM Identity Center instance. This field is particularly useful when an instance is in a non-ACTIVE state, such as CREATE_FAILED. When an instance creation fails, this field contains information about the cause, which may include issues with KMS key configuration or insufficient permissions.</p>
+    pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_reason
+    }
     /// Consumes the builder and constructs a [`InstanceMetadata`](crate::types::InstanceMetadata).
     pub fn build(self) -> crate::types::InstanceMetadata {
         crate::types::InstanceMetadata {
@@ -155,6 +176,7 @@ impl InstanceMetadataBuilder {
             name: self.name,
             created_date: self.created_date,
             status: self.status,
+            status_reason: self.status_reason,
         }
     }
 }

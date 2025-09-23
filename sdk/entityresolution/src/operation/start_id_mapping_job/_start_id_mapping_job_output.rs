@@ -7,6 +7,11 @@ pub struct StartIdMappingJobOutput {
     pub job_id: ::std::string::String,
     /// <p>A list of <code>OutputSource</code> objects.</p>
     pub output_source_config: ::std::option::Option<::std::vec::Vec<crate::types::IdMappingJobOutputSource>>,
+    /// <p>The job type for the started ID mapping job.</p>
+    /// <p>A value of <code>INCREMENTAL</code> indicates that only new or changed data was processed since the last job run. This is the default job type if the workflow was created with an <code>incrementalRunConfig</code>.</p>
+    /// <p>A value of <code>BATCH</code> indicates that all data was processed from the input source, regardless of previous job runs. This is the default job type if the workflow wasn't created with an <code>incrementalRunConfig</code>.</p>
+    /// <p>A value of <code>DELETE_ONLY</code> indicates that only deletion requests from <code>BatchDeleteUniqueIds</code> were processed.</p>
+    pub job_type: ::std::option::Option<crate::types::JobType>,
     _request_id: Option<String>,
 }
 impl StartIdMappingJobOutput {
@@ -20,6 +25,13 @@ impl StartIdMappingJobOutput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.output_source_config.is_none()`.
     pub fn output_source_config(&self) -> &[crate::types::IdMappingJobOutputSource] {
         self.output_source_config.as_deref().unwrap_or_default()
+    }
+    /// <p>The job type for the started ID mapping job.</p>
+    /// <p>A value of <code>INCREMENTAL</code> indicates that only new or changed data was processed since the last job run. This is the default job type if the workflow was created with an <code>incrementalRunConfig</code>.</p>
+    /// <p>A value of <code>BATCH</code> indicates that all data was processed from the input source, regardless of previous job runs. This is the default job type if the workflow wasn't created with an <code>incrementalRunConfig</code>.</p>
+    /// <p>A value of <code>DELETE_ONLY</code> indicates that only deletion requests from <code>BatchDeleteUniqueIds</code> were processed.</p>
+    pub fn job_type(&self) -> ::std::option::Option<&crate::types::JobType> {
+        self.job_type.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for StartIdMappingJobOutput {
@@ -40,6 +52,7 @@ impl StartIdMappingJobOutput {
 pub struct StartIdMappingJobOutputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) output_source_config: ::std::option::Option<::std::vec::Vec<crate::types::IdMappingJobOutputSource>>,
+    pub(crate) job_type: ::std::option::Option<crate::types::JobType>,
     _request_id: Option<String>,
 }
 impl StartIdMappingJobOutputBuilder {
@@ -78,6 +91,29 @@ impl StartIdMappingJobOutputBuilder {
     pub fn get_output_source_config(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IdMappingJobOutputSource>> {
         &self.output_source_config
     }
+    /// <p>The job type for the started ID mapping job.</p>
+    /// <p>A value of <code>INCREMENTAL</code> indicates that only new or changed data was processed since the last job run. This is the default job type if the workflow was created with an <code>incrementalRunConfig</code>.</p>
+    /// <p>A value of <code>BATCH</code> indicates that all data was processed from the input source, regardless of previous job runs. This is the default job type if the workflow wasn't created with an <code>incrementalRunConfig</code>.</p>
+    /// <p>A value of <code>DELETE_ONLY</code> indicates that only deletion requests from <code>BatchDeleteUniqueIds</code> were processed.</p>
+    pub fn job_type(mut self, input: crate::types::JobType) -> Self {
+        self.job_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The job type for the started ID mapping job.</p>
+    /// <p>A value of <code>INCREMENTAL</code> indicates that only new or changed data was processed since the last job run. This is the default job type if the workflow was created with an <code>incrementalRunConfig</code>.</p>
+    /// <p>A value of <code>BATCH</code> indicates that all data was processed from the input source, regardless of previous job runs. This is the default job type if the workflow wasn't created with an <code>incrementalRunConfig</code>.</p>
+    /// <p>A value of <code>DELETE_ONLY</code> indicates that only deletion requests from <code>BatchDeleteUniqueIds</code> were processed.</p>
+    pub fn set_job_type(mut self, input: ::std::option::Option<crate::types::JobType>) -> Self {
+        self.job_type = input;
+        self
+    }
+    /// <p>The job type for the started ID mapping job.</p>
+    /// <p>A value of <code>INCREMENTAL</code> indicates that only new or changed data was processed since the last job run. This is the default job type if the workflow was created with an <code>incrementalRunConfig</code>.</p>
+    /// <p>A value of <code>BATCH</code> indicates that all data was processed from the input source, regardless of previous job runs. This is the default job type if the workflow wasn't created with an <code>incrementalRunConfig</code>.</p>
+    /// <p>A value of <code>DELETE_ONLY</code> indicates that only deletion requests from <code>BatchDeleteUniqueIds</code> were processed.</p>
+    pub fn get_job_type(&self) -> &::std::option::Option<crate::types::JobType> {
+        &self.job_type
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -102,6 +138,7 @@ impl StartIdMappingJobOutputBuilder {
                 )
             })?,
             output_source_config: self.output_source_config,
+            job_type: self.job_type,
             _request_id: self._request_id,
         })
     }

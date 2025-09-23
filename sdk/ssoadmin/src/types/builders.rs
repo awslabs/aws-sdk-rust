@@ -25,6 +25,8 @@ pub use crate::types::_access_control_attribute::AccessControlAttributeBuilder;
 
 pub use crate::types::_access_control_attribute_value::AccessControlAttributeValueBuilder;
 
+pub use crate::types::_encryption_configuration::EncryptionConfigurationBuilder;
+
 pub use crate::types::_update_application_portal_options::UpdateApplicationPortalOptionsBuilder;
 
 pub use crate::types::_sign_in_options::SignInOptionsBuilder;
@@ -78,5 +80,7 @@ pub use crate::types::_account_assignment_operation_status_metadata::AccountAssi
 pub use crate::types::_oidc_jwt_configuration::OidcJwtConfigurationBuilder;
 
 pub use crate::types::_permission_set::PermissionSetBuilder;
+
+pub use crate::types::_encryption_configuration_details::EncryptionConfigurationDetailsBuilder;
 
 pub use crate::types::_account_assignment_operation_status::AccountAssignmentOperationStatusBuilder;

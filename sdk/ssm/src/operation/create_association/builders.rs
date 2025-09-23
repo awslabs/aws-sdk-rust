@@ -391,17 +391,23 @@ impl CreateAssociationFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_target_locations`](Self::set_target_locations).
     ///
-    /// <p>A location is a combination of Amazon Web Services Regions and Amazon Web Services accounts where you want to run the association. Use this action to create an association in multiple Regions and multiple accounts.</p>
+    /// <p>A location is a combination of Amazon Web Services Regions and Amazon Web Services accounts where you want to run the association. Use this action to create an association in multiple Regions and multiple accounts.</p><note>
+    /// <p>The <code>IncludeChildOrganizationUnits</code> parameter is not supported by State Manager.</p>
+    /// </note>
     pub fn target_locations(mut self, input: crate::types::TargetLocation) -> Self {
         self.inner = self.inner.target_locations(input);
         self
     }
-    /// <p>A location is a combination of Amazon Web Services Regions and Amazon Web Services accounts where you want to run the association. Use this action to create an association in multiple Regions and multiple accounts.</p>
+    /// <p>A location is a combination of Amazon Web Services Regions and Amazon Web Services accounts where you want to run the association. Use this action to create an association in multiple Regions and multiple accounts.</p><note>
+    /// <p>The <code>IncludeChildOrganizationUnits</code> parameter is not supported by State Manager.</p>
+    /// </note>
     pub fn set_target_locations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TargetLocation>>) -> Self {
         self.inner = self.inner.set_target_locations(input);
         self
     }
-    /// <p>A location is a combination of Amazon Web Services Regions and Amazon Web Services accounts where you want to run the association. Use this action to create an association in multiple Regions and multiple accounts.</p>
+    /// <p>A location is a combination of Amazon Web Services Regions and Amazon Web Services accounts where you want to run the association. Use this action to create an association in multiple Regions and multiple accounts.</p><note>
+    /// <p>The <code>IncludeChildOrganizationUnits</code> parameter is not supported by State Manager.</p>
+    /// </note>
     pub fn get_target_locations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetLocation>> {
         self.inner.get_target_locations()
     }

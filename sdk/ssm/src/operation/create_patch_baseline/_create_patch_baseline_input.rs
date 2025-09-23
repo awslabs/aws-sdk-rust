@@ -36,7 +36,14 @@ pub struct CreatePatchBaselineInput {
     /// BLOCK
     /// </dt>
     /// <dd>
-    /// <p><b>All OSs</b>: Packages in the rejected patches list, and packages that include them as dependencies, aren't installed by Patch Manager under any circumstances. If a package was installed before it was added to the rejected patches list, or is installed outside of Patch Manager afterward, it's considered noncompliant with the patch baseline and its status is reported as <code>INSTALLED_REJECTED</code>.</p>
+    /// <p><b>All OSs</b>: Packages in the rejected patches list, and packages that include them as dependencies, aren't installed by Patch Manager under any circumstances.</p>
+    /// <p>State value assignment for patch compliance:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If a package was installed before it was added to the rejected patches list, or is installed outside of Patch Manager afterward, it's considered noncompliant with the patch baseline and its status is reported as <code>INSTALLED_REJECTED</code>.</p></li>
+    /// <li>
+    /// <p>If an update attempts to install a dependency package that is now rejected by the baseline, when previous versions of the package were not rejected, the package being updated is reported as <code>MISSING</code> for <code>SCAN</code> operations and as <code>FAILED</code> for <code>INSTALL</code> operations.</p></li>
+    /// </ul>
     /// </dd>
     /// </dl>
     pub rejected_patches_action: ::std::option::Option<crate::types::PatchAction>,
@@ -115,7 +122,14 @@ impl CreatePatchBaselineInput {
     /// BLOCK
     /// </dt>
     /// <dd>
-    /// <p><b>All OSs</b>: Packages in the rejected patches list, and packages that include them as dependencies, aren't installed by Patch Manager under any circumstances. If a package was installed before it was added to the rejected patches list, or is installed outside of Patch Manager afterward, it's considered noncompliant with the patch baseline and its status is reported as <code>INSTALLED_REJECTED</code>.</p>
+    /// <p><b>All OSs</b>: Packages in the rejected patches list, and packages that include them as dependencies, aren't installed by Patch Manager under any circumstances.</p>
+    /// <p>State value assignment for patch compliance:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If a package was installed before it was added to the rejected patches list, or is installed outside of Patch Manager afterward, it's considered noncompliant with the patch baseline and its status is reported as <code>INSTALLED_REJECTED</code>.</p></li>
+    /// <li>
+    /// <p>If an update attempts to install a dependency package that is now rejected by the baseline, when previous versions of the package were not rejected, the package being updated is reported as <code>MISSING</code> for <code>SCAN</code> operations and as <code>FAILED</code> for <code>INSTALL</code> operations.</p></li>
+    /// </ul>
     /// </dd>
     /// </dl>
     pub fn rejected_patches_action(&self) -> ::std::option::Option<&crate::types::PatchAction> {
@@ -333,7 +347,14 @@ impl CreatePatchBaselineInputBuilder {
     /// BLOCK
     /// </dt>
     /// <dd>
-    /// <p><b>All OSs</b>: Packages in the rejected patches list, and packages that include them as dependencies, aren't installed by Patch Manager under any circumstances. If a package was installed before it was added to the rejected patches list, or is installed outside of Patch Manager afterward, it's considered noncompliant with the patch baseline and its status is reported as <code>INSTALLED_REJECTED</code>.</p>
+    /// <p><b>All OSs</b>: Packages in the rejected patches list, and packages that include them as dependencies, aren't installed by Patch Manager under any circumstances.</p>
+    /// <p>State value assignment for patch compliance:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If a package was installed before it was added to the rejected patches list, or is installed outside of Patch Manager afterward, it's considered noncompliant with the patch baseline and its status is reported as <code>INSTALLED_REJECTED</code>.</p></li>
+    /// <li>
+    /// <p>If an update attempts to install a dependency package that is now rejected by the baseline, when previous versions of the package were not rejected, the package being updated is reported as <code>MISSING</code> for <code>SCAN</code> operations and as <code>FAILED</code> for <code>INSTALL</code> operations.</p></li>
+    /// </ul>
     /// </dd>
     /// </dl>
     pub fn rejected_patches_action(mut self, input: crate::types::PatchAction) -> Self {
@@ -353,7 +374,14 @@ impl CreatePatchBaselineInputBuilder {
     /// BLOCK
     /// </dt>
     /// <dd>
-    /// <p><b>All OSs</b>: Packages in the rejected patches list, and packages that include them as dependencies, aren't installed by Patch Manager under any circumstances. If a package was installed before it was added to the rejected patches list, or is installed outside of Patch Manager afterward, it's considered noncompliant with the patch baseline and its status is reported as <code>INSTALLED_REJECTED</code>.</p>
+    /// <p><b>All OSs</b>: Packages in the rejected patches list, and packages that include them as dependencies, aren't installed by Patch Manager under any circumstances.</p>
+    /// <p>State value assignment for patch compliance:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If a package was installed before it was added to the rejected patches list, or is installed outside of Patch Manager afterward, it's considered noncompliant with the patch baseline and its status is reported as <code>INSTALLED_REJECTED</code>.</p></li>
+    /// <li>
+    /// <p>If an update attempts to install a dependency package that is now rejected by the baseline, when previous versions of the package were not rejected, the package being updated is reported as <code>MISSING</code> for <code>SCAN</code> operations and as <code>FAILED</code> for <code>INSTALL</code> operations.</p></li>
+    /// </ul>
     /// </dd>
     /// </dl>
     pub fn set_rejected_patches_action(mut self, input: ::std::option::Option<crate::types::PatchAction>) -> Self {
@@ -373,7 +401,14 @@ impl CreatePatchBaselineInputBuilder {
     /// BLOCK
     /// </dt>
     /// <dd>
-    /// <p><b>All OSs</b>: Packages in the rejected patches list, and packages that include them as dependencies, aren't installed by Patch Manager under any circumstances. If a package was installed before it was added to the rejected patches list, or is installed outside of Patch Manager afterward, it's considered noncompliant with the patch baseline and its status is reported as <code>INSTALLED_REJECTED</code>.</p>
+    /// <p><b>All OSs</b>: Packages in the rejected patches list, and packages that include them as dependencies, aren't installed by Patch Manager under any circumstances.</p>
+    /// <p>State value assignment for patch compliance:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If a package was installed before it was added to the rejected patches list, or is installed outside of Patch Manager afterward, it's considered noncompliant with the patch baseline and its status is reported as <code>INSTALLED_REJECTED</code>.</p></li>
+    /// <li>
+    /// <p>If an update attempts to install a dependency package that is now rejected by the baseline, when previous versions of the package were not rejected, the package being updated is reported as <code>MISSING</code> for <code>SCAN</code> operations and as <code>FAILED</code> for <code>INSTALL</code> operations.</p></li>
+    /// </ul>
     /// </dd>
     /// </dl>
     pub fn get_rejected_patches_action(&self) -> &::std::option::Option<crate::types::PatchAction> {

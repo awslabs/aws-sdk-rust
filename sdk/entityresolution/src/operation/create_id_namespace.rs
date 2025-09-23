@@ -262,7 +262,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateIdNames
 pub enum CreateIdNamespaceError {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p>The request could not be processed because of conflict in the current state of the resource. Example: Workflow already exists, Schema already exists, Workflow is currently running, etc.</p>
+    /// <p>The request couldn't be processed because of conflict in the current state of the resource. Example: Workflow already exists, Schema already exists, Workflow is currently running, etc.</p>
     ConflictException(crate::types::error::ConflictException),
     /// <p>The request was rejected because it attempted to create resources beyond the current Entity Resolution account limits. The error message describes the limit exceeded.</p>
     ExceedsLimitException(crate::types::error::ExceedsLimitException),

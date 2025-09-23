@@ -289,7 +289,7 @@ pub enum ListIdMappingJobsError {
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>This exception occurs when there is an internal failure in the Entity Resolution service.</p>
     InternalServerException(crate::types::error::InternalServerException),
-    /// <p>The resource could not be found.</p>
+    /// <p>The resource couldn't be found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::types::error::ThrottlingException),

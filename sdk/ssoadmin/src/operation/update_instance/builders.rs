@@ -136,4 +136,18 @@ impl UpdateInstanceFluentBuilder {
     pub fn get_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_instance_arn()
     }
+    /// <p>Specifies the encryption configuration for your IAM Identity Center instance. You can use this to configure customer managed KMS keys (CMK) or Amazon Web Services owned KMS keys for encrypting your instance data.</p>
+    pub fn encryption_configuration(mut self, input: crate::types::EncryptionConfiguration) -> Self {
+        self.inner = self.inner.encryption_configuration(input);
+        self
+    }
+    /// <p>Specifies the encryption configuration for your IAM Identity Center instance. You can use this to configure customer managed KMS keys (CMK) or Amazon Web Services owned KMS keys for encrypting your instance data.</p>
+    pub fn set_encryption_configuration(mut self, input: ::std::option::Option<crate::types::EncryptionConfiguration>) -> Self {
+        self.inner = self.inner.set_encryption_configuration(input);
+        self
+    }
+    /// <p>Specifies the encryption configuration for your IAM Identity Center instance. You can use this to configure customer managed KMS keys (CMK) or Amazon Web Services owned KMS keys for encrypting your instance data.</p>
+    pub fn get_encryption_configuration(&self) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
+        self.inner.get_encryption_configuration()
+    }
 }

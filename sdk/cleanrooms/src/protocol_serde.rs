@@ -241,6 +241,8 @@ pub(crate) mod shape_create_privacy_budget_template_input;
 
 pub(crate) mod shape_internal_server_exception;
 
+pub(crate) mod shape_populate_id_mapping_table_input;
+
 pub(crate) mod shape_preview_privacy_impact_input;
 
 pub(crate) mod shape_resource_not_found_exception;

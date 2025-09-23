@@ -49,6 +49,10 @@ pub use crate::types::_id_mapping_type::IdMappingType;
 
 pub use crate::types::_id_namespace_input_source::IdNamespaceInputSource;
 
+pub use crate::types::_id_mapping_incremental_run_config::IdMappingIncrementalRunConfig;
+
+pub use crate::types::_id_mapping_incremental_run_type::IdMappingIncrementalRunType;
+
 pub use crate::types::_id_mapping_techniques::IdMappingTechniques;
 
 pub use crate::types::_id_mapping_rule_based_properties::IdMappingRuleBasedProperties;
@@ -56,6 +60,8 @@ pub use crate::types::_id_mapping_rule_based_properties::IdMappingRuleBasedPrope
 pub use crate::types::_id_mapping_workflow_output_source::IdMappingWorkflowOutputSource;
 
 pub use crate::types::_id_mapping_workflow_input_source::IdMappingWorkflowInputSource;
+
+pub use crate::types::_job_type::JobType;
 
 pub use crate::types::_id_mapping_job_output_source::IdMappingJobOutputSource;
 
@@ -131,6 +137,10 @@ mod _error_details;
 
 mod _failed_record;
 
+mod _id_mapping_incremental_run_config;
+
+mod _id_mapping_incremental_run_type;
+
 mod _id_mapping_job_metrics;
 
 mod _id_mapping_job_output_source;
@@ -174,6 +184,8 @@ mod _job_output_source;
 mod _job_status;
 
 mod _job_summary;
+
+mod _job_type;
 
 mod _match_group;
 

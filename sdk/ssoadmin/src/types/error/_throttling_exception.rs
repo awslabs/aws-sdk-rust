@@ -6,7 +6,15 @@
 pub struct ThrottlingException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: ::std::option::Option<::std::string::String>,
+    /// <p>The reason for the throttling exception.</p>
+    pub reason: ::std::option::Option<crate::types::ThrottlingExceptionReason>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
+}
+impl ThrottlingException {
+    /// <p>The reason for the throttling exception.</p>
+    pub fn reason(&self) -> ::std::option::Option<&crate::types::ThrottlingExceptionReason> {
+        self.reason.as_ref()
+    }
 }
 impl ThrottlingException {
     /// Returns the error message.
@@ -49,6 +57,7 @@ impl ThrottlingException {
 #[non_exhaustive]
 pub struct ThrottlingExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
+    pub(crate) reason: ::std::option::Option<crate::types::ThrottlingExceptionReason>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl ThrottlingExceptionBuilder {
@@ -66,6 +75,20 @@ impl ThrottlingExceptionBuilder {
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
     }
+    /// <p>The reason for the throttling exception.</p>
+    pub fn reason(mut self, input: crate::types::ThrottlingExceptionReason) -> Self {
+        self.reason = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The reason for the throttling exception.</p>
+    pub fn set_reason(mut self, input: ::std::option::Option<crate::types::ThrottlingExceptionReason>) -> Self {
+        self.reason = input;
+        self
+    }
+    /// <p>The reason for the throttling exception.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<crate::types::ThrottlingExceptionReason> {
+        &self.reason
+    }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
         self.meta = Some(meta);
@@ -81,6 +104,7 @@ impl ThrottlingExceptionBuilder {
     pub fn build(self) -> crate::types::error::ThrottlingException {
         crate::types::error::ThrottlingException {
             message: self.message,
+            reason: self.reason,
             meta: self.meta.unwrap_or_default(),
         }
     }

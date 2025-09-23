@@ -9,6 +9,8 @@ pub struct GetDeployablePatchSnapshotForInstanceInput {
     pub snapshot_id: ::std::option::Option<::std::string::String>,
     /// <p>Defines the basic information about a patch baseline override.</p>
     pub baseline_override: ::std::option::Option<crate::types::BaselineOverride>,
+    /// <p>Specifies whether to use S3 dualstack endpoints for the patch snapshot download URL. Set to <code>true</code> to receive a presigned URL that supports both IPv4 and IPv6 connectivity. Set to <code>false</code> to use standard IPv4-only endpoints. Default is <code>false</code>. This parameter is required for managed nodes in IPv6-only environments.</p>
+    pub use_s3_dual_stack_endpoint: ::std::option::Option<bool>,
 }
 impl GetDeployablePatchSnapshotForInstanceInput {
     /// <p>The ID of the managed node for which the appropriate patch snapshot should be retrieved.</p>
@@ -22,6 +24,10 @@ impl GetDeployablePatchSnapshotForInstanceInput {
     /// <p>Defines the basic information about a patch baseline override.</p>
     pub fn baseline_override(&self) -> ::std::option::Option<&crate::types::BaselineOverride> {
         self.baseline_override.as_ref()
+    }
+    /// <p>Specifies whether to use S3 dualstack endpoints for the patch snapshot download URL. Set to <code>true</code> to receive a presigned URL that supports both IPv4 and IPv6 connectivity. Set to <code>false</code> to use standard IPv4-only endpoints. Default is <code>false</code>. This parameter is required for managed nodes in IPv6-only environments.</p>
+    pub fn use_s3_dual_stack_endpoint(&self) -> ::std::option::Option<bool> {
+        self.use_s3_dual_stack_endpoint
     }
 }
 impl GetDeployablePatchSnapshotForInstanceInput {
@@ -38,6 +44,7 @@ pub struct GetDeployablePatchSnapshotForInstanceInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) snapshot_id: ::std::option::Option<::std::string::String>,
     pub(crate) baseline_override: ::std::option::Option<crate::types::BaselineOverride>,
+    pub(crate) use_s3_dual_stack_endpoint: ::std::option::Option<bool>,
 }
 impl GetDeployablePatchSnapshotForInstanceInputBuilder {
     /// <p>The ID of the managed node for which the appropriate patch snapshot should be retrieved.</p>
@@ -84,6 +91,20 @@ impl GetDeployablePatchSnapshotForInstanceInputBuilder {
     pub fn get_baseline_override(&self) -> &::std::option::Option<crate::types::BaselineOverride> {
         &self.baseline_override
     }
+    /// <p>Specifies whether to use S3 dualstack endpoints for the patch snapshot download URL. Set to <code>true</code> to receive a presigned URL that supports both IPv4 and IPv6 connectivity. Set to <code>false</code> to use standard IPv4-only endpoints. Default is <code>false</code>. This parameter is required for managed nodes in IPv6-only environments.</p>
+    pub fn use_s3_dual_stack_endpoint(mut self, input: bool) -> Self {
+        self.use_s3_dual_stack_endpoint = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to use S3 dualstack endpoints for the patch snapshot download URL. Set to <code>true</code> to receive a presigned URL that supports both IPv4 and IPv6 connectivity. Set to <code>false</code> to use standard IPv4-only endpoints. Default is <code>false</code>. This parameter is required for managed nodes in IPv6-only environments.</p>
+    pub fn set_use_s3_dual_stack_endpoint(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.use_s3_dual_stack_endpoint = input;
+        self
+    }
+    /// <p>Specifies whether to use S3 dualstack endpoints for the patch snapshot download URL. Set to <code>true</code> to receive a presigned URL that supports both IPv4 and IPv6 connectivity. Set to <code>false</code> to use standard IPv4-only endpoints. Default is <code>false</code>. This parameter is required for managed nodes in IPv6-only environments.</p>
+    pub fn get_use_s3_dual_stack_endpoint(&self) -> &::std::option::Option<bool> {
+        &self.use_s3_dual_stack_endpoint
+    }
     /// Consumes the builder and constructs a [`GetDeployablePatchSnapshotForInstanceInput`](crate::operation::get_deployable_patch_snapshot_for_instance::GetDeployablePatchSnapshotForInstanceInput).
     pub fn build(
         self,
@@ -96,6 +117,7 @@ impl GetDeployablePatchSnapshotForInstanceInputBuilder {
                 instance_id: self.instance_id,
                 snapshot_id: self.snapshot_id,
                 baseline_override: self.baseline_override,
+                use_s3_dual_stack_endpoint: self.use_s3_dual_stack_endpoint,
             },
         )
     }

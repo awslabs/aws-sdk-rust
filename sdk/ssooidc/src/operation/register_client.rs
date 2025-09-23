@@ -255,6 +255,8 @@ pub enum RegisterClientError {
     InvalidRequestException(crate::types::error::InvalidRequestException),
     /// <p>Indicates that the scope provided in the request is invalid.</p>
     InvalidScopeException(crate::types::error::InvalidScopeException),
+    /// <p>Indicates that the client is making the request too frequently and is more than the service can handle.</p>
+    SlowDownException(crate::types::error::SlowDownException),
     /// <p>Indicates that the grant type in the request is not supported by the service.</p>
     UnsupportedGrantTypeException(crate::types::error::UnsupportedGrantTypeException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -295,6 +297,7 @@ impl RegisterClientError {
             Self::InvalidRedirectUriException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidRequestException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidScopeException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::SlowDownException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::UnsupportedGrantTypeException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
@@ -319,6 +322,10 @@ impl RegisterClientError {
     pub fn is_invalid_scope_exception(&self) -> bool {
         matches!(self, Self::InvalidScopeException(_))
     }
+    /// Returns `true` if the error kind is `RegisterClientError::SlowDownException`.
+    pub fn is_slow_down_exception(&self) -> bool {
+        matches!(self, Self::SlowDownException(_))
+    }
     /// Returns `true` if the error kind is `RegisterClientError::UnsupportedGrantTypeException`.
     pub fn is_unsupported_grant_type_exception(&self) -> bool {
         matches!(self, Self::UnsupportedGrantTypeException(_))
@@ -332,6 +339,7 @@ impl ::std::error::Error for RegisterClientError {
             Self::InvalidRedirectUriException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidRequestException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidScopeException(_inner) => ::std::option::Option::Some(_inner),
+            Self::SlowDownException(_inner) => ::std::option::Option::Some(_inner),
             Self::UnsupportedGrantTypeException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
@@ -345,6 +353,7 @@ impl ::std::fmt::Display for RegisterClientError {
             Self::InvalidRedirectUriException(_inner) => _inner.fmt(f),
             Self::InvalidRequestException(_inner) => _inner.fmt(f),
             Self::InvalidScopeException(_inner) => _inner.fmt(f),
+            Self::SlowDownException(_inner) => _inner.fmt(f),
             Self::UnsupportedGrantTypeException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
@@ -372,6 +381,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for RegisterClien
             Self::InvalidRedirectUriException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidRequestException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidScopeException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::SlowDownException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::UnsupportedGrantTypeException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }

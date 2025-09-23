@@ -136,4 +136,30 @@ impl PopulateIdMappingTableFluentBuilder {
     pub fn get_membership_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_membership_identifier()
     }
+    /// <p>The job type of the rule-based ID mapping job. Valid values include:</p>
+    /// <p><code>INCREMENTAL</code>: Processes only new or changed data since the last job run. This is the default job type if the ID mapping workflow was created in Entity Resolution with <code>incrementalRunConfig</code> specified.</p>
+    /// <p><code>BATCH</code>: Processes all data from the input source, regardless of previous job runs. This is the default job type if the ID mapping workflow was created in Entity Resolution but <code>incrementalRunConfig</code> wasn't specified.</p>
+    /// <p><code>DELETE_ONLY</code>: Processes only deletion requests from <code>BatchDeleteUniqueId</code>, which is set in Entity Resolution.</p>
+    /// <p>For more information about <code>incrementalRunConfig</code> and <code>BatchDeleteUniqueId</code>, see the <a href="https://docs.aws.amazon.com/entityresolution/latest/apireference/Welcome.html">Entity Resolution API Reference</a>.</p>
+    pub fn job_type(mut self, input: crate::types::JobType) -> Self {
+        self.inner = self.inner.job_type(input);
+        self
+    }
+    /// <p>The job type of the rule-based ID mapping job. Valid values include:</p>
+    /// <p><code>INCREMENTAL</code>: Processes only new or changed data since the last job run. This is the default job type if the ID mapping workflow was created in Entity Resolution with <code>incrementalRunConfig</code> specified.</p>
+    /// <p><code>BATCH</code>: Processes all data from the input source, regardless of previous job runs. This is the default job type if the ID mapping workflow was created in Entity Resolution but <code>incrementalRunConfig</code> wasn't specified.</p>
+    /// <p><code>DELETE_ONLY</code>: Processes only deletion requests from <code>BatchDeleteUniqueId</code>, which is set in Entity Resolution.</p>
+    /// <p>For more information about <code>incrementalRunConfig</code> and <code>BatchDeleteUniqueId</code>, see the <a href="https://docs.aws.amazon.com/entityresolution/latest/apireference/Welcome.html">Entity Resolution API Reference</a>.</p>
+    pub fn set_job_type(mut self, input: ::std::option::Option<crate::types::JobType>) -> Self {
+        self.inner = self.inner.set_job_type(input);
+        self
+    }
+    /// <p>The job type of the rule-based ID mapping job. Valid values include:</p>
+    /// <p><code>INCREMENTAL</code>: Processes only new or changed data since the last job run. This is the default job type if the ID mapping workflow was created in Entity Resolution with <code>incrementalRunConfig</code> specified.</p>
+    /// <p><code>BATCH</code>: Processes all data from the input source, regardless of previous job runs. This is the default job type if the ID mapping workflow was created in Entity Resolution but <code>incrementalRunConfig</code> wasn't specified.</p>
+    /// <p><code>DELETE_ONLY</code>: Processes only deletion requests from <code>BatchDeleteUniqueId</code>, which is set in Entity Resolution.</p>
+    /// <p>For more information about <code>incrementalRunConfig</code> and <code>BatchDeleteUniqueId</code>, see the <a href="https://docs.aws.amazon.com/entityresolution/latest/apireference/Welcome.html">Entity Resolution API Reference</a>.</p>
+    pub fn get_job_type(&self) -> &::std::option::Option<crate::types::JobType> {
+        self.inner.get_job_type()
+    }
 }

@@ -7,6 +7,8 @@ pub struct UpdateInstanceInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the instance of IAM Identity Center under which the operation will run. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub instance_arn: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies the encryption configuration for your IAM Identity Center instance. You can use this to configure customer managed KMS keys (CMK) or Amazon Web Services owned KMS keys for encrypting your instance data.</p>
+    pub encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
 }
 impl UpdateInstanceInput {
     /// <p>Updates the instance name.</p>
@@ -16,6 +18,10 @@ impl UpdateInstanceInput {
     /// <p>The ARN of the instance of IAM Identity Center under which the operation will run. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn instance_arn(&self) -> ::std::option::Option<&str> {
         self.instance_arn.as_deref()
+    }
+    /// <p>Specifies the encryption configuration for your IAM Identity Center instance. You can use this to configure customer managed KMS keys (CMK) or Amazon Web Services owned KMS keys for encrypting your instance data.</p>
+    pub fn encryption_configuration(&self) -> ::std::option::Option<&crate::types::EncryptionConfiguration> {
+        self.encryption_configuration.as_ref()
     }
 }
 impl UpdateInstanceInput {
@@ -31,10 +37,10 @@ impl UpdateInstanceInput {
 pub struct UpdateInstanceInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) instance_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
 }
 impl UpdateInstanceInputBuilder {
     /// <p>Updates the instance name.</p>
-    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +69,20 @@ impl UpdateInstanceInputBuilder {
     pub fn get_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_arn
     }
+    /// <p>Specifies the encryption configuration for your IAM Identity Center instance. You can use this to configure customer managed KMS keys (CMK) or Amazon Web Services owned KMS keys for encrypting your instance data.</p>
+    pub fn encryption_configuration(mut self, input: crate::types::EncryptionConfiguration) -> Self {
+        self.encryption_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the encryption configuration for your IAM Identity Center instance. You can use this to configure customer managed KMS keys (CMK) or Amazon Web Services owned KMS keys for encrypting your instance data.</p>
+    pub fn set_encryption_configuration(mut self, input: ::std::option::Option<crate::types::EncryptionConfiguration>) -> Self {
+        self.encryption_configuration = input;
+        self
+    }
+    /// <p>Specifies the encryption configuration for your IAM Identity Center instance. You can use this to configure customer managed KMS keys (CMK) or Amazon Web Services owned KMS keys for encrypting your instance data.</p>
+    pub fn get_encryption_configuration(&self) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
+        &self.encryption_configuration
+    }
     /// Consumes the builder and constructs a [`UpdateInstanceInput`](crate::operation::update_instance::UpdateInstanceInput).
     pub fn build(
         self,
@@ -70,6 +90,7 @@ impl UpdateInstanceInputBuilder {
         ::std::result::Result::Ok(crate::operation::update_instance::UpdateInstanceInput {
             name: self.name,
             instance_arn: self.instance_arn,
+            encryption_configuration: self.encryption_configuration,
         })
     }
 }

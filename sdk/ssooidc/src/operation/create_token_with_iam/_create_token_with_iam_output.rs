@@ -20,7 +20,7 @@ pub struct CreateTokenWithIamOutput {
     pub issued_token_type: ::std::option::Option<::std::string::String>,
     /// <p>The list of scopes for which authorization is granted. The access token that is issued is limited to the scopes that are granted.</p>
     pub scope: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>A structure containing information from the <code>idToken</code>. Only the <code>identityContext</code> is in it, which is a value extracted from the <code>idToken</code>. This provides direct access to identity information without requiring JWT parsing.</p>
+    /// <p>A structure containing information from IAM Identity Center managed user and group information.</p>
     pub aws_additional_details: ::std::option::Option<crate::types::AwsAdditionalDetails>,
     _request_id: Option<String>,
 }
@@ -58,7 +58,7 @@ impl CreateTokenWithIamOutput {
     pub fn scope(&self) -> &[::std::string::String] {
         self.scope.as_deref().unwrap_or_default()
     }
-    /// <p>A structure containing information from the <code>idToken</code>. Only the <code>identityContext</code> is in it, which is a value extracted from the <code>idToken</code>. This provides direct access to identity information without requiring JWT parsing.</p>
+    /// <p>A structure containing information from IAM Identity Center managed user and group information.</p>
     pub fn aws_additional_details(&self) -> ::std::option::Option<&crate::types::AwsAdditionalDetails> {
         self.aws_additional_details.as_ref()
     }
@@ -218,17 +218,17 @@ impl CreateTokenWithIamOutputBuilder {
     pub fn get_scope(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.scope
     }
-    /// <p>A structure containing information from the <code>idToken</code>. Only the <code>identityContext</code> is in it, which is a value extracted from the <code>idToken</code>. This provides direct access to identity information without requiring JWT parsing.</p>
+    /// <p>A structure containing information from IAM Identity Center managed user and group information.</p>
     pub fn aws_additional_details(mut self, input: crate::types::AwsAdditionalDetails) -> Self {
         self.aws_additional_details = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A structure containing information from the <code>idToken</code>. Only the <code>identityContext</code> is in it, which is a value extracted from the <code>idToken</code>. This provides direct access to identity information without requiring JWT parsing.</p>
+    /// <p>A structure containing information from IAM Identity Center managed user and group information.</p>
     pub fn set_aws_additional_details(mut self, input: ::std::option::Option<crate::types::AwsAdditionalDetails>) -> Self {
         self.aws_additional_details = input;
         self
     }
-    /// <p>A structure containing information from the <code>idToken</code>. Only the <code>identityContext</code> is in it, which is a value extracted from the <code>idToken</code>. This provides direct access to identity information without requiring JWT parsing.</p>
+    /// <p>A structure containing information from IAM Identity Center managed user and group information.</p>
     pub fn get_aws_additional_details(&self) -> &::std::option::Option<crate::types::AwsAdditionalDetails> {
         &self.aws_additional_details
     }

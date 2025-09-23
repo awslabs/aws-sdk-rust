@@ -265,6 +265,8 @@ pub enum UpdateInstanceError {
     ConflictException(crate::types::error::ConflictException),
     /// <p>The request processing has failed because of an unknown error, exception, or failure with an internal server.</p>
     InternalServerException(crate::types::error::InternalServerException),
+    /// <p>Indicates that a requested resource is not found.</p>
+    ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>Indicates that the principal has crossed the throttling limits of the API operations.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>The request failed because it contains a syntax error.</p>
@@ -305,6 +307,7 @@ impl UpdateInstanceError {
             Self::AccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ConflictException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InternalServerException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ThrottlingException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ValidationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
@@ -322,6 +325,10 @@ impl UpdateInstanceError {
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(self, Self::InternalServerException(_))
     }
+    /// Returns `true` if the error kind is `UpdateInstanceError::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(self, Self::ResourceNotFoundException(_))
+    }
     /// Returns `true` if the error kind is `UpdateInstanceError::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(self, Self::ThrottlingException(_))
@@ -337,6 +344,7 @@ impl ::std::error::Error for UpdateInstanceError {
             Self::AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
             Self::ConflictException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalServerException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::ThrottlingException(_inner) => ::std::option::Option::Some(_inner),
             Self::ValidationException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
@@ -349,6 +357,7 @@ impl ::std::fmt::Display for UpdateInstanceError {
             Self::AccessDeniedException(_inner) => _inner.fmt(f),
             Self::ConflictException(_inner) => _inner.fmt(f),
             Self::InternalServerException(_inner) => _inner.fmt(f),
+            Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::ThrottlingException(_inner) => _inner.fmt(f),
             Self::ValidationException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
@@ -375,6 +384,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for UpdateInstanc
             Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ConflictException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalServerException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ThrottlingException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ValidationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,

@@ -8,15 +8,17 @@ pub struct TargetLocation {
     pub accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Amazon Web Services Regions targeted by the current Automation execution.</p>
     pub regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The maximum number of Amazon Web Services Regions and Amazon Web Services accounts allowed to run the Automation concurrently.</p>
+    /// <p>The maximum number of Amazon Web Services Regions and Amazon Web Services accounts allowed to run the Automation concurrently. <code>TargetLocationMaxConcurrency</code> has a default value of 1.</p>
     pub target_location_max_concurrency: ::std::option::Option<::std::string::String>,
-    /// <p>The maximum number of errors allowed before the system stops queueing additional Automation executions for the currently running Automation.</p>
+    /// <p>The maximum number of errors allowed before the system stops queueing additional Automation executions for the currently running Automation. <code>TargetLocationMaxErrors</code> has a default value of 0.</p>
     pub target_location_max_errors: ::std::option::Option<::std::string::String>,
     /// <p>The Automation execution role used by the currently running Automation. If not specified, the default value is <code>AWS-SystemsManager-AutomationExecutionRole</code>.</p>
     pub execution_role_name: ::std::option::Option<::std::string::String>,
     /// <p>The details for the CloudWatch alarm you want to apply to an automation or command.</p>
     pub target_location_alarm_configuration: ::std::option::Option<crate::types::AlarmConfiguration>,
-    /// <p>Indicates whether to include child organizational units (OUs) that are children of the targeted OUs. The default is <code>false</code>.</p>
+    /// <p>Indicates whether to include child organizational units (OUs) that are children of the targeted OUs. The default is <code>false</code>.</p><note>
+    /// <p>This parameter is not supported by State Manager.</p>
+    /// </note>
     pub include_child_organization_units: bool,
     /// <p>Amazon Web Services accounts or organizational units to exclude as expanded targets.</p>
     pub exclude_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -41,11 +43,11 @@ impl TargetLocation {
     pub fn regions(&self) -> &[::std::string::String] {
         self.regions.as_deref().unwrap_or_default()
     }
-    /// <p>The maximum number of Amazon Web Services Regions and Amazon Web Services accounts allowed to run the Automation concurrently.</p>
+    /// <p>The maximum number of Amazon Web Services Regions and Amazon Web Services accounts allowed to run the Automation concurrently. <code>TargetLocationMaxConcurrency</code> has a default value of 1.</p>
     pub fn target_location_max_concurrency(&self) -> ::std::option::Option<&str> {
         self.target_location_max_concurrency.as_deref()
     }
-    /// <p>The maximum number of errors allowed before the system stops queueing additional Automation executions for the currently running Automation.</p>
+    /// <p>The maximum number of errors allowed before the system stops queueing additional Automation executions for the currently running Automation. <code>TargetLocationMaxErrors</code> has a default value of 0.</p>
     pub fn target_location_max_errors(&self) -> ::std::option::Option<&str> {
         self.target_location_max_errors.as_deref()
     }
@@ -57,7 +59,9 @@ impl TargetLocation {
     pub fn target_location_alarm_configuration(&self) -> ::std::option::Option<&crate::types::AlarmConfiguration> {
         self.target_location_alarm_configuration.as_ref()
     }
-    /// <p>Indicates whether to include child organizational units (OUs) that are children of the targeted OUs. The default is <code>false</code>.</p>
+    /// <p>Indicates whether to include child organizational units (OUs) that are children of the targeted OUs. The default is <code>false</code>.</p><note>
+    /// <p>This parameter is not supported by State Manager.</p>
+    /// </note>
     pub fn include_child_organization_units(&self) -> bool {
         self.include_child_organization_units
     }
@@ -147,31 +151,31 @@ impl TargetLocationBuilder {
     pub fn get_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.regions
     }
-    /// <p>The maximum number of Amazon Web Services Regions and Amazon Web Services accounts allowed to run the Automation concurrently.</p>
+    /// <p>The maximum number of Amazon Web Services Regions and Amazon Web Services accounts allowed to run the Automation concurrently. <code>TargetLocationMaxConcurrency</code> has a default value of 1.</p>
     pub fn target_location_max_concurrency(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_location_max_concurrency = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The maximum number of Amazon Web Services Regions and Amazon Web Services accounts allowed to run the Automation concurrently.</p>
+    /// <p>The maximum number of Amazon Web Services Regions and Amazon Web Services accounts allowed to run the Automation concurrently. <code>TargetLocationMaxConcurrency</code> has a default value of 1.</p>
     pub fn set_target_location_max_concurrency(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_location_max_concurrency = input;
         self
     }
-    /// <p>The maximum number of Amazon Web Services Regions and Amazon Web Services accounts allowed to run the Automation concurrently.</p>
+    /// <p>The maximum number of Amazon Web Services Regions and Amazon Web Services accounts allowed to run the Automation concurrently. <code>TargetLocationMaxConcurrency</code> has a default value of 1.</p>
     pub fn get_target_location_max_concurrency(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_location_max_concurrency
     }
-    /// <p>The maximum number of errors allowed before the system stops queueing additional Automation executions for the currently running Automation.</p>
+    /// <p>The maximum number of errors allowed before the system stops queueing additional Automation executions for the currently running Automation. <code>TargetLocationMaxErrors</code> has a default value of 0.</p>
     pub fn target_location_max_errors(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_location_max_errors = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The maximum number of errors allowed before the system stops queueing additional Automation executions for the currently running Automation.</p>
+    /// <p>The maximum number of errors allowed before the system stops queueing additional Automation executions for the currently running Automation. <code>TargetLocationMaxErrors</code> has a default value of 0.</p>
     pub fn set_target_location_max_errors(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_location_max_errors = input;
         self
     }
-    /// <p>The maximum number of errors allowed before the system stops queueing additional Automation executions for the currently running Automation.</p>
+    /// <p>The maximum number of errors allowed before the system stops queueing additional Automation executions for the currently running Automation. <code>TargetLocationMaxErrors</code> has a default value of 0.</p>
     pub fn get_target_location_max_errors(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_location_max_errors
     }
@@ -203,17 +207,23 @@ impl TargetLocationBuilder {
     pub fn get_target_location_alarm_configuration(&self) -> &::std::option::Option<crate::types::AlarmConfiguration> {
         &self.target_location_alarm_configuration
     }
-    /// <p>Indicates whether to include child organizational units (OUs) that are children of the targeted OUs. The default is <code>false</code>.</p>
+    /// <p>Indicates whether to include child organizational units (OUs) that are children of the targeted OUs. The default is <code>false</code>.</p><note>
+    /// <p>This parameter is not supported by State Manager.</p>
+    /// </note>
     pub fn include_child_organization_units(mut self, input: bool) -> Self {
         self.include_child_organization_units = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether to include child organizational units (OUs) that are children of the targeted OUs. The default is <code>false</code>.</p>
+    /// <p>Indicates whether to include child organizational units (OUs) that are children of the targeted OUs. The default is <code>false</code>.</p><note>
+    /// <p>This parameter is not supported by State Manager.</p>
+    /// </note>
     pub fn set_include_child_organization_units(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_child_organization_units = input;
         self
     }
-    /// <p>Indicates whether to include child organizational units (OUs) that are children of the targeted OUs. The default is <code>false</code>.</p>
+    /// <p>Indicates whether to include child organizational units (OUs) that are children of the targeted OUs. The default is <code>false</code>.</p><note>
+    /// <p>This parameter is not supported by State Manager.</p>
+    /// </note>
     pub fn get_include_child_organization_units(&self) -> &::std::option::Option<bool> {
         &self.include_child_organization_units
     }

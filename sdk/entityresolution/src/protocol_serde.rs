@@ -159,6 +159,8 @@ pub(crate) mod shape_error_details;
 
 pub(crate) mod shape_failed_records_list;
 
+pub(crate) mod shape_id_mapping_incremental_run_config;
+
 pub(crate) mod shape_id_mapping_job_metrics;
 
 pub(crate) mod shape_id_mapping_job_output_source;

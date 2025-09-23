@@ -19,7 +19,7 @@ pub struct CreateTokenInput {
     /// <p>Used only when calling this API for the Refresh Token grant type. This token is used to refresh short-lived tokens, such as the access token, that might expire.</p>
     /// <p>For more information about the features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center OIDC API Reference</a>.</p>
     pub refresh_token: ::std::option::Option<::std::string::String>,
-    /// <p>The list of scopes for which authorization is requested. The access token that is issued is limited to the scopes that are granted. If this value is not specified, IAM Identity Center authorizes all scopes that are configured for the client during the call to <code>RegisterClient</code>.</p>
+    /// <p>The list of scopes for which authorization is requested. This parameter has no effect; the access token will always include all scopes configured during client registration.</p>
     pub scope: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Used only when calling this API for the Authorization Code grant type. This value specifies the location of the client or application that has registered to receive the authorization code.</p>
     pub redirect_uri: ::std::option::Option<::std::string::String>,
@@ -55,7 +55,7 @@ impl CreateTokenInput {
     pub fn refresh_token(&self) -> ::std::option::Option<&str> {
         self.refresh_token.as_deref()
     }
-    /// <p>The list of scopes for which authorization is requested. The access token that is issued is limited to the scopes that are granted. If this value is not specified, IAM Identity Center authorizes all scopes that are configured for the client during the call to <code>RegisterClient</code>.</p>
+    /// <p>The list of scopes for which authorization is requested. This parameter has no effect; the access token will always include all scopes configured during client registration.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.scope.is_none()`.
     pub fn scope(&self) -> &[::std::string::String] {
@@ -210,19 +210,19 @@ impl CreateTokenInputBuilder {
     ///
     /// To override the contents of this collection use [`set_scope`](Self::set_scope).
     ///
-    /// <p>The list of scopes for which authorization is requested. The access token that is issued is limited to the scopes that are granted. If this value is not specified, IAM Identity Center authorizes all scopes that are configured for the client during the call to <code>RegisterClient</code>.</p>
+    /// <p>The list of scopes for which authorization is requested. This parameter has no effect; the access token will always include all scopes configured during client registration.</p>
     pub fn scope(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.scope.unwrap_or_default();
         v.push(input.into());
         self.scope = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The list of scopes for which authorization is requested. The access token that is issued is limited to the scopes that are granted. If this value is not specified, IAM Identity Center authorizes all scopes that are configured for the client during the call to <code>RegisterClient</code>.</p>
+    /// <p>The list of scopes for which authorization is requested. This parameter has no effect; the access token will always include all scopes configured during client registration.</p>
     pub fn set_scope(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.scope = input;
         self
     }
-    /// <p>The list of scopes for which authorization is requested. The access token that is issued is limited to the scopes that are granted. If this value is not specified, IAM Identity Center authorizes all scopes that are configured for the client during the call to <code>RegisterClient</code>.</p>
+    /// <p>The list of scopes for which authorization is requested. This parameter has no effect; the access token will always include all scopes configured during client registration.</p>
     pub fn get_scope(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.scope
     }

@@ -19,6 +19,8 @@ pub struct GetIdMappingWorkflowOutput {
     pub created_at: ::aws_smithy_types::DateTime,
     /// <p>The timestamp of when the workflow was last updated.</p>
     pub updated_at: ::aws_smithy_types::DateTime,
+    /// <p>The incremental run configuration for the ID mapping workflow.</p>
+    pub incremental_run_config: ::std::option::Option<crate::types::IdMappingIncrementalRunConfig>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes this role to access Amazon Web Services resources on your behalf.</p>
     pub role_arn: ::std::string::String,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
@@ -63,6 +65,10 @@ impl GetIdMappingWorkflowOutput {
     pub fn updated_at(&self) -> &::aws_smithy_types::DateTime {
         &self.updated_at
     }
+    /// <p>The incremental run configuration for the ID mapping workflow.</p>
+    pub fn incremental_run_config(&self) -> ::std::option::Option<&crate::types::IdMappingIncrementalRunConfig> {
+        self.incremental_run_config.as_ref()
+    }
     /// <p>The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes this role to access Amazon Web Services resources on your behalf.</p>
     pub fn role_arn(&self) -> &str {
         use std::ops::Deref;
@@ -97,6 +103,7 @@ pub struct GetIdMappingWorkflowOutputBuilder {
     pub(crate) id_mapping_techniques: ::std::option::Option<crate::types::IdMappingTechniques>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) incremental_run_config: ::std::option::Option<crate::types::IdMappingIncrementalRunConfig>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
@@ -231,6 +238,20 @@ impl GetIdMappingWorkflowOutputBuilder {
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_at
     }
+    /// <p>The incremental run configuration for the ID mapping workflow.</p>
+    pub fn incremental_run_config(mut self, input: crate::types::IdMappingIncrementalRunConfig) -> Self {
+        self.incremental_run_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The incremental run configuration for the ID mapping workflow.</p>
+    pub fn set_incremental_run_config(mut self, input: ::std::option::Option<crate::types::IdMappingIncrementalRunConfig>) -> Self {
+        self.incremental_run_config = input;
+        self
+    }
+    /// <p>The incremental run configuration for the ID mapping workflow.</p>
+    pub fn get_incremental_run_config(&self) -> &::std::option::Option<crate::types::IdMappingIncrementalRunConfig> {
+        &self.incremental_run_config
+    }
     /// <p>The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes this role to access Amazon Web Services resources on your behalf.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -319,6 +340,7 @@ impl GetIdMappingWorkflowOutputBuilder {
                     "updated_at was not specified but it is required when building GetIdMappingWorkflowOutput",
                 )
             })?,
+            incremental_run_config: self.incremental_run_config,
             role_arn: self.role_arn.unwrap_or_default(),
             tags: self.tags,
             _request_id: self._request_id,

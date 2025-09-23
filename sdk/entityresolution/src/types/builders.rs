@@ -31,6 +31,8 @@ pub use crate::types::_namespace_rule_based_properties::NamespaceRuleBasedProper
 
 pub use crate::types::_id_namespace_input_source::IdNamespaceInputSourceBuilder;
 
+pub use crate::types::_id_mapping_incremental_run_config::IdMappingIncrementalRunConfigBuilder;
+
 pub use crate::types::_id_mapping_techniques::IdMappingTechniquesBuilder;
 
 pub use crate::types::_id_mapping_rule_based_properties::IdMappingRuleBasedPropertiesBuilder;

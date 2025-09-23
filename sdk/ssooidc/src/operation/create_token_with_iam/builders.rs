@@ -22,7 +22,9 @@ impl crate::operation::create_token_with_iam::builders::CreateTokenWithIamInputB
 }
 /// Fluent builder constructing a request to `CreateTokenWithIAM`.
 ///
-/// <p>Creates and returns access and refresh tokens for clients and applications that are authenticated using IAM entities. The access token can be used to fetch short-lived credentials for the assigned Amazon Web Services accounts or to access application APIs using <code>bearer</code> authentication.</p>
+/// <p>Creates and returns access and refresh tokens for authorized client applications that are authenticated using any IAM entity, such as a service role or user. These tokens might contain defined scopes that specify permissions such as <code>read:profile</code> or <code>write:data</code>. Through downscoping, you can use the scopes parameter to request tokens with reduced permissions compared to the original client application's permissions or, if applicable, the refresh token's scopes. The access token can be used to fetch short-lived credentials for the assigned Amazon Web Services accounts or to access application APIs using <code>bearer</code> authentication.</p><note>
+/// <p>This API is used with Signature Version 4. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html">Amazon Web Services Signature Version 4 for API Requests</a>.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateTokenWithIAMFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

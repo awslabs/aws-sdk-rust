@@ -1,8 +1,8 @@
 [workspace]
 resolver = "2"
 exclude = [
-    "tests/telemetry",
     "tests/no-default-features",
+    "tests/telemetry",
     "tests/webassembly"
 ]
 members = [
@@ -324,8 +324,6 @@ members = [
     "sdk/omics",
     "sdk/opensearch",
     "sdk/opensearchserverless",
-    "sdk/opsworks",
-    "sdk/opsworkscm",
     "sdk/organizations",
     "sdk/osis",
     "sdk/outposts",
@@ -347,7 +345,6 @@ members = [
     "sdk/pipes",
     "sdk/polly",
     "sdk/pricing",
-    "sdk/privatenetworks",
     "sdk/proton",
     "sdk/qapps",
     "sdk/qbusiness",

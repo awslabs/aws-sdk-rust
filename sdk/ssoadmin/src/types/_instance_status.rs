@@ -13,6 +13,7 @@
 /// # let instancestatus = unimplemented!();
 /// match instancestatus {
 ///     InstanceStatus::Active => { /* ... */ },
+///     InstanceStatus::CreateFailed => { /* ... */ },
 ///     InstanceStatus::CreateInProgress => { /* ... */ },
 ///     InstanceStatus::DeleteInProgress => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -46,6 +47,8 @@ pub enum InstanceStatus {
     #[allow(missing_docs)] // documentation missing in model
     Active,
     #[allow(missing_docs)] // documentation missing in model
+    CreateFailed,
+    #[allow(missing_docs)] // documentation missing in model
     CreateInProgress,
     #[allow(missing_docs)] // documentation missing in model
     DeleteInProgress,
@@ -57,6 +60,7 @@ impl ::std::convert::From<&str> for InstanceStatus {
     fn from(s: &str) -> Self {
         match s {
             "ACTIVE" => InstanceStatus::Active,
+            "CREATE_FAILED" => InstanceStatus::CreateFailed,
             "CREATE_IN_PROGRESS" => InstanceStatus::CreateInProgress,
             "DELETE_IN_PROGRESS" => InstanceStatus::DeleteInProgress,
             other => InstanceStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -75,6 +79,7 @@ impl InstanceStatus {
     pub fn as_str(&self) -> &str {
         match self {
             InstanceStatus::Active => "ACTIVE",
+            InstanceStatus::CreateFailed => "CREATE_FAILED",
             InstanceStatus::CreateInProgress => "CREATE_IN_PROGRESS",
             InstanceStatus::DeleteInProgress => "DELETE_IN_PROGRESS",
             InstanceStatus::Unknown(value) => value.as_str(),
@@ -82,7 +87,7 @@ impl InstanceStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "CREATE_IN_PROGRESS", "DELETE_IN_PROGRESS"]
+        &["ACTIVE", "CREATE_FAILED", "CREATE_IN_PROGRESS", "DELETE_IN_PROGRESS"]
     }
 }
 impl ::std::convert::AsRef<str> for InstanceStatus {
@@ -106,6 +111,7 @@ impl ::std::fmt::Display for InstanceStatus {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             InstanceStatus::Active => write!(f, "ACTIVE"),
+            InstanceStatus::CreateFailed => write!(f, "CREATE_FAILED"),
             InstanceStatus::CreateInProgress => write!(f, "CREATE_IN_PROGRESS"),
             InstanceStatus::DeleteInProgress => write!(f, "DELETE_IN_PROGRESS"),
             InstanceStatus::Unknown(value) => write!(f, "{}", value),

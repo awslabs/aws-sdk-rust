@@ -15,6 +15,10 @@ pub struct DescribeInstanceOutput {
     pub created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the instance.</p>
     pub status: ::std::option::Option<crate::types::InstanceStatus>,
+    /// <p>Provides additional context about the current status of the IAM Identity Center instance. This field is particularly useful when an instance is in a non-ACTIVE state, such as CREATE_FAILED. When an instance fails to create or update, this field contains information about the cause, which may include issues with KMS key configuration, permission problems with the specified KMS key, or service-related errors.</p>
+    pub status_reason: ::std::option::Option<::std::string::String>,
+    /// <p>Contains the encryption configuration for your IAM Identity Center instance, including the encryption status, KMS key type, and KMS key ARN.</p>
+    pub encryption_configuration_details: ::std::option::Option<crate::types::EncryptionConfigurationDetails>,
     _request_id: Option<String>,
 }
 impl DescribeInstanceOutput {
@@ -42,6 +46,14 @@ impl DescribeInstanceOutput {
     pub fn status(&self) -> ::std::option::Option<&crate::types::InstanceStatus> {
         self.status.as_ref()
     }
+    /// <p>Provides additional context about the current status of the IAM Identity Center instance. This field is particularly useful when an instance is in a non-ACTIVE state, such as CREATE_FAILED. When an instance fails to create or update, this field contains information about the cause, which may include issues with KMS key configuration, permission problems with the specified KMS key, or service-related errors.</p>
+    pub fn status_reason(&self) -> ::std::option::Option<&str> {
+        self.status_reason.as_deref()
+    }
+    /// <p>Contains the encryption configuration for your IAM Identity Center instance, including the encryption status, KMS key type, and KMS key ARN.</p>
+    pub fn encryption_configuration_details(&self) -> ::std::option::Option<&crate::types::EncryptionConfigurationDetails> {
+        self.encryption_configuration_details.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for DescribeInstanceOutput {
     fn request_id(&self) -> Option<&str> {
@@ -65,6 +77,8 @@ pub struct DescribeInstanceOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) status: ::std::option::Option<crate::types::InstanceStatus>,
+    pub(crate) status_reason: ::std::option::Option<::std::string::String>,
+    pub(crate) encryption_configuration_details: ::std::option::Option<crate::types::EncryptionConfigurationDetails>,
     _request_id: Option<String>,
 }
 impl DescribeInstanceOutputBuilder {
@@ -152,6 +166,34 @@ impl DescribeInstanceOutputBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::InstanceStatus> {
         &self.status
     }
+    /// <p>Provides additional context about the current status of the IAM Identity Center instance. This field is particularly useful when an instance is in a non-ACTIVE state, such as CREATE_FAILED. When an instance fails to create or update, this field contains information about the cause, which may include issues with KMS key configuration, permission problems with the specified KMS key, or service-related errors.</p>
+    pub fn status_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status_reason = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Provides additional context about the current status of the IAM Identity Center instance. This field is particularly useful when an instance is in a non-ACTIVE state, such as CREATE_FAILED. When an instance fails to create or update, this field contains information about the cause, which may include issues with KMS key configuration, permission problems with the specified KMS key, or service-related errors.</p>
+    pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.status_reason = input;
+        self
+    }
+    /// <p>Provides additional context about the current status of the IAM Identity Center instance. This field is particularly useful when an instance is in a non-ACTIVE state, such as CREATE_FAILED. When an instance fails to create or update, this field contains information about the cause, which may include issues with KMS key configuration, permission problems with the specified KMS key, or service-related errors.</p>
+    pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_reason
+    }
+    /// <p>Contains the encryption configuration for your IAM Identity Center instance, including the encryption status, KMS key type, and KMS key ARN.</p>
+    pub fn encryption_configuration_details(mut self, input: crate::types::EncryptionConfigurationDetails) -> Self {
+        self.encryption_configuration_details = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains the encryption configuration for your IAM Identity Center instance, including the encryption status, KMS key type, and KMS key ARN.</p>
+    pub fn set_encryption_configuration_details(mut self, input: ::std::option::Option<crate::types::EncryptionConfigurationDetails>) -> Self {
+        self.encryption_configuration_details = input;
+        self
+    }
+    /// <p>Contains the encryption configuration for your IAM Identity Center instance, including the encryption status, KMS key type, and KMS key ARN.</p>
+    pub fn get_encryption_configuration_details(&self) -> &::std::option::Option<crate::types::EncryptionConfigurationDetails> {
+        &self.encryption_configuration_details
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -170,6 +212,8 @@ impl DescribeInstanceOutputBuilder {
             name: self.name,
             created_date: self.created_date,
             status: self.status,
+            status_reason: self.status_reason,
+            encryption_configuration_details: self.encryption_configuration_details,
             _request_id: self._request_id,
         }
     }

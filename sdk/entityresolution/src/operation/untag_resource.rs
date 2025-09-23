@@ -278,7 +278,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UntagResource
 pub enum UntagResourceError {
     /// <p>This exception occurs when there is an internal failure in the Entity Resolution service.</p>
     InternalServerException(crate::types::error::InternalServerException),
-    /// <p>The resource could not be found.</p>
+    /// <p>The resource couldn't be found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

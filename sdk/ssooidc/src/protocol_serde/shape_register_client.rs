@@ -96,6 +96,21 @@ pub fn de_register_client_http_error(
             }
             tmp
         }),
+        "SlowDownException" => crate::operation::register_client::RegisterClientError::SlowDownException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::SlowDownExceptionBuilder::default();
+                output = crate::protocol_serde::shape_slow_down_exception::de_slow_down_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::register_client::RegisterClientError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "UnsupportedGrantTypeException" => crate::operation::register_client::RegisterClientError::UnsupportedGrantTypeException({
             #[allow(unused_mut)]
             let mut tmp = {

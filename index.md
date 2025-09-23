@@ -124,15 +124,12 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | AWS Multi-party Approval | [aws-sdk-mpa](https://crates.io/crates/aws-sdk-mpa) ([docs](https://docs.rs/aws-sdk-mpa)) |
 | AWS Network Firewall | [aws-sdk-networkfirewall](https://crates.io/crates/aws-sdk-networkfirewall) ([docs](https://docs.rs/aws-sdk-networkfirewall)) |
 | AWS Network Manager | [aws-sdk-networkmanager](https://crates.io/crates/aws-sdk-networkmanager) ([docs](https://docs.rs/aws-sdk-networkmanager)) |
-| AWS OpsWorks | [aws-sdk-opsworks](https://crates.io/crates/aws-sdk-opsworks) ([docs](https://docs.rs/aws-sdk-opsworks)) |
-| AWS OpsWorks CM | [aws-sdk-opsworkscm](https://crates.io/crates/aws-sdk-opsworkscm) ([docs](https://docs.rs/aws-sdk-opsworkscm)) |
 | AWS Organizations | [aws-sdk-organizations](https://crates.io/crates/aws-sdk-organizations) ([docs](https://docs.rs/aws-sdk-organizations)) |
 | AWS Outposts | [aws-sdk-outposts](https://crates.io/crates/aws-sdk-outposts) ([docs](https://docs.rs/aws-sdk-outposts)) |
 | AWS Panorama | [aws-sdk-panorama](https://crates.io/crates/aws-sdk-panorama) ([docs](https://docs.rs/aws-sdk-panorama)) |
 | AWS Parallel Computing Service | [aws-sdk-pcs](https://crates.io/crates/aws-sdk-pcs) ([docs](https://docs.rs/aws-sdk-pcs)) |
 | AWS Performance Insights | [aws-sdk-pi](https://crates.io/crates/aws-sdk-pi) ([docs](https://docs.rs/aws-sdk-pi)) |
 | AWS Price List Service | [aws-sdk-pricing](https://crates.io/crates/aws-sdk-pricing) ([docs](https://docs.rs/aws-sdk-pricing)) |
-| AWS Private 5G | [aws-sdk-privatenetworks](https://crates.io/crates/aws-sdk-privatenetworks) ([docs](https://docs.rs/aws-sdk-privatenetworks)) |
 | AWS Proton | [aws-sdk-proton](https://crates.io/crates/aws-sdk-proton) ([docs](https://docs.rs/aws-sdk-proton)) |
 | AWS RDS DataService | [aws-sdk-rdsdata](https://crates.io/crates/aws-sdk-rdsdata) ([docs](https://docs.rs/aws-sdk-rdsdata)) |
 | AWS Resilience Hub | [aws-sdk-resiliencehub](https://crates.io/crates/aws-sdk-resiliencehub) ([docs](https://docs.rs/aws-sdk-resiliencehub)) |

@@ -193,6 +193,7 @@ impl From<crate::operation::register_client::RegisterClientError> for Error {
             crate::operation::register_client::RegisterClientError::InvalidRedirectUriException(inner) => Error::InvalidRedirectUriException(inner),
             crate::operation::register_client::RegisterClientError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::register_client::RegisterClientError::InvalidScopeException(inner) => Error::InvalidScopeException(inner),
+            crate::operation::register_client::RegisterClientError::SlowDownException(inner) => Error::SlowDownException(inner),
             crate::operation::register_client::RegisterClientError::UnsupportedGrantTypeException(inner) => {
                 Error::UnsupportedGrantTypeException(inner)
             }

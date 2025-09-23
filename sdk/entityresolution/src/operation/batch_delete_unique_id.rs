@@ -271,7 +271,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for BatchDeleteUn
 pub enum BatchDeleteUniqueIdError {
     /// <p>This exception occurs when there is an internal failure in the Entity Resolution service.</p>
     InternalServerException(crate::types::error::InternalServerException),
-    /// <p>The resource could not be found.</p>
+    /// <p>The resource couldn't be found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The input fails to satisfy the constraints specified by Entity Resolution.</p>
     ValidationException(crate::types::error::ValidationException),

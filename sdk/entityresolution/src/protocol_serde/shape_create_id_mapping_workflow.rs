@@ -174,6 +174,11 @@ pub(crate) fn de_create_id_mapping_workflow(
                     builder =
                         builder.set_id_mapping_techniques(crate::protocol_serde::shape_id_mapping_techniques::de_id_mapping_techniques(tokens)?);
                 }
+                "incrementalRunConfig" => {
+                    builder = builder.set_incremental_run_config(
+                        crate::protocol_serde::shape_id_mapping_incremental_run_config::de_id_mapping_incremental_run_config(tokens)?,
+                    );
+                }
                 "inputSourceConfig" => {
                     builder = builder.set_input_source_config(
                         crate::protocol_serde::shape_id_mapping_workflow_input_source_config::de_id_mapping_workflow_input_source_config(tokens)?,
