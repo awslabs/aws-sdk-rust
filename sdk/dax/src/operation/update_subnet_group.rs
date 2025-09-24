@@ -264,6 +264,8 @@ pub enum UpdateSubnetGroupError {
     SubnetGroupNotFoundFault(crate::types::error::SubnetGroupNotFoundFault),
     /// <p>The requested subnet is being used by another subnet group.</p>
     SubnetInUse(crate::types::error::SubnetInUse),
+    /// <p>The specified subnet can't be used for the requested network type. This error occurs when either there aren't enough subnets of the required network type to create the cluster, or when you try to use a subnet that doesn't support the requested network type (for example, trying to create a dual-stack cluster with a subnet that doesn't have IPv6 CIDR).</p>
+    SubnetNotAllowedFault(crate::types::error::SubnetNotAllowedFault),
     /// <p>The request cannot be processed because it would exceed the allowed number of subnets in a subnet group.</p>
     SubnetQuotaExceededFault(crate::types::error::SubnetQuotaExceededFault),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -303,6 +305,7 @@ impl UpdateSubnetGroupError {
             Self::ServiceLinkedRoleNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::SubnetGroupNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::SubnetInUse(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::SubnetNotAllowedFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::SubnetQuotaExceededFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
@@ -323,6 +326,10 @@ impl UpdateSubnetGroupError {
     pub fn is_subnet_in_use(&self) -> bool {
         matches!(self, Self::SubnetInUse(_))
     }
+    /// Returns `true` if the error kind is `UpdateSubnetGroupError::SubnetNotAllowedFault`.
+    pub fn is_subnet_not_allowed_fault(&self) -> bool {
+        matches!(self, Self::SubnetNotAllowedFault(_))
+    }
     /// Returns `true` if the error kind is `UpdateSubnetGroupError::SubnetQuotaExceededFault`.
     pub fn is_subnet_quota_exceeded_fault(&self) -> bool {
         matches!(self, Self::SubnetQuotaExceededFault(_))
@@ -335,6 +342,7 @@ impl ::std::error::Error for UpdateSubnetGroupError {
             Self::ServiceLinkedRoleNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::SubnetGroupNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::SubnetInUse(_inner) => ::std::option::Option::Some(_inner),
+            Self::SubnetNotAllowedFault(_inner) => ::std::option::Option::Some(_inner),
             Self::SubnetQuotaExceededFault(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
@@ -347,6 +355,7 @@ impl ::std::fmt::Display for UpdateSubnetGroupError {
             Self::ServiceLinkedRoleNotFoundFault(_inner) => _inner.fmt(f),
             Self::SubnetGroupNotFoundFault(_inner) => _inner.fmt(f),
             Self::SubnetInUse(_inner) => _inner.fmt(f),
+            Self::SubnetNotAllowedFault(_inner) => _inner.fmt(f),
             Self::SubnetQuotaExceededFault(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
@@ -373,6 +382,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for UpdateSubnetG
             Self::ServiceLinkedRoleNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::SubnetGroupNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::SubnetInUse(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::SubnetNotAllowedFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::SubnetQuotaExceededFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }

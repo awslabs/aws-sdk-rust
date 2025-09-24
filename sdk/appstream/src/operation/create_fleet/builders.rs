@@ -254,6 +254,16 @@ impl CreateFleetFluentBuilder {
     /// <p>stream.graphics.gr6.4xlarge</p></li>
     /// <li>
     /// <p>stream.graphics.gr6.8xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6f.large</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6f.xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6f.2xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6f.4xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.gr6f.4xlarge</p></li>
     /// </ul>
     /// <p>The following instance types are available for Elastic fleets:</p>
     /// <ul>
@@ -376,6 +386,16 @@ impl CreateFleetFluentBuilder {
     /// <p>stream.graphics.gr6.4xlarge</p></li>
     /// <li>
     /// <p>stream.graphics.gr6.8xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6f.large</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6f.xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6f.2xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6f.4xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.gr6f.4xlarge</p></li>
     /// </ul>
     /// <p>The following instance types are available for Elastic fleets:</p>
     /// <ul>
@@ -498,6 +518,16 @@ impl CreateFleetFluentBuilder {
     /// <p>stream.graphics.gr6.4xlarge</p></li>
     /// <li>
     /// <p>stream.graphics.gr6.8xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6f.large</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6f.xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6f.2xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6f.4xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.gr6f.4xlarge</p></li>
     /// </ul>
     /// <p>The following instance types are available for Elastic fleets:</p>
     /// <ul>

@@ -275,7 +275,7 @@ pub enum IncreaseReplicationFactorError {
     InvalidVpcNetworkStateFault(crate::types::error::InvalidVpcNetworkStateFault),
     /// <p>You have attempted to exceed the maximum number of nodes for a DAX cluster.</p>
     NodeQuotaForClusterExceededFault(crate::types::error::NodeQuotaForClusterExceededFault),
-    /// <p>You have attempted to exceed the maximum number of nodes for your AWS account.</p>
+    /// <p>You have attempted to exceed the maximum number of nodes for your Amazon Web Services account.</p>
     NodeQuotaForCustomerExceededFault(crate::types::error::NodeQuotaForCustomerExceededFault),
     /// <p>The specified service linked role (SLR) was not found.</p>
     ServiceLinkedRoleNotFoundFault(crate::types::error::ServiceLinkedRoleNotFoundFault),

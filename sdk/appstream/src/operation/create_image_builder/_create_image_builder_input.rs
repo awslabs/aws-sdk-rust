@@ -109,6 +109,16 @@ pub struct CreateImageBuilderInput {
     /// <p>stream.graphics.gr6.4xlarge</p></li>
     /// <li>
     /// <p>stream.graphics.gr6.8xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6f.large</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6f.xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6f.2xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6f.4xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.gr6f.4xlarge</p></li>
     /// </ul>
     pub instance_type: ::std::option::Option<::std::string::String>,
     /// <p>The description to display.</p>
@@ -248,6 +258,16 @@ impl CreateImageBuilderInput {
     /// <p>stream.graphics.gr6.4xlarge</p></li>
     /// <li>
     /// <p>stream.graphics.gr6.8xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6f.large</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6f.xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6f.2xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6f.4xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.gr6f.4xlarge</p></li>
     /// </ul>
     pub fn instance_type(&self) -> ::std::option::Option<&str> {
         self.instance_type.as_deref()
@@ -465,6 +485,16 @@ impl CreateImageBuilderInputBuilder {
     /// <p>stream.graphics.gr6.4xlarge</p></li>
     /// <li>
     /// <p>stream.graphics.gr6.8xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6f.large</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6f.xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6f.2xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6f.4xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.gr6f.4xlarge</p></li>
     /// </ul>
     /// This field is required.
     pub fn instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -571,6 +601,16 @@ impl CreateImageBuilderInputBuilder {
     /// <p>stream.graphics.gr6.4xlarge</p></li>
     /// <li>
     /// <p>stream.graphics.gr6.8xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6f.large</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6f.xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6f.2xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6f.4xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.gr6f.4xlarge</p></li>
     /// </ul>
     pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_type = input;
@@ -676,6 +716,16 @@ impl CreateImageBuilderInputBuilder {
     /// <p>stream.graphics.gr6.4xlarge</p></li>
     /// <li>
     /// <p>stream.graphics.gr6.8xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6f.large</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6f.xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6f.2xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6f.4xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.gr6f.4xlarge</p></li>
     /// </ul>
     pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_type

@@ -7,7 +7,7 @@ pub enum Error {
     ClusterAlreadyExistsFault(crate::types::error::ClusterAlreadyExistsFault),
     /// <p>The requested cluster ID does not refer to an existing DAX cluster.</p>
     ClusterNotFoundFault(crate::types::error::ClusterNotFoundFault),
-    /// <p>You have attempted to exceed the maximum number of DAX clusters for your AWS account.</p>
+    /// <p>You have attempted to exceed the maximum number of DAX clusters for your Amazon Web Services account.</p>
     ClusterQuotaForCustomerExceededFault(crate::types::error::ClusterQuotaForCustomerExceededFault),
     /// <p>There are not enough system resources to create the cluster you requested (or to resize an already-existing cluster).</p>
     InsufficientClusterCapacityFault(crate::types::error::InsufficientClusterCapacityFault),
@@ -29,7 +29,7 @@ pub enum Error {
     NodeNotFoundFault(crate::types::error::NodeNotFoundFault),
     /// <p>You have attempted to exceed the maximum number of nodes for a DAX cluster.</p>
     NodeQuotaForClusterExceededFault(crate::types::error::NodeQuotaForClusterExceededFault),
-    /// <p>You have attempted to exceed the maximum number of nodes for your AWS account.</p>
+    /// <p>You have attempted to exceed the maximum number of nodes for your Amazon Web Services account.</p>
     NodeQuotaForCustomerExceededFault(crate::types::error::NodeQuotaForCustomerExceededFault),
     /// <p>The specified parameter group already exists.</p>
     ParameterGroupAlreadyExistsFault(crate::types::error::ParameterGroupAlreadyExistsFault),
@@ -39,7 +39,7 @@ pub enum Error {
     ParameterGroupQuotaExceededFault(crate::types::error::ParameterGroupQuotaExceededFault),
     /// <p>The specified service linked role (SLR) was not found.</p>
     ServiceLinkedRoleNotFoundFault(crate::types::error::ServiceLinkedRoleNotFoundFault),
-    /// <p>You have reached the maximum number of x509 certificates that can be created for encrypted clusters in a 30 day period. Contact AWS customer support to discuss options for continuing to create encrypted clusters.</p>
+    /// <p>You have reached the maximum number of x509 certificates that can be created for encrypted clusters in a 30 day period. Contact Amazon Web Services customer support to discuss options for continuing to create encrypted clusters.</p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// <p>The specified subnet group already exists.</p>
     SubnetGroupAlreadyExistsFault(crate::types::error::SubnetGroupAlreadyExistsFault),
@@ -51,6 +51,8 @@ pub enum Error {
     SubnetGroupQuotaExceededFault(crate::types::error::SubnetGroupQuotaExceededFault),
     /// <p>The requested subnet is being used by another subnet group.</p>
     SubnetInUse(crate::types::error::SubnetInUse),
+    /// <p>The specified subnet can't be used for the requested network type. This error occurs when either there aren't enough subnets of the required network type to create the cluster, or when you try to use a subnet that doesn't support the requested network type (for example, trying to create a dual-stack cluster with a subnet that doesn't have IPv6 CIDR).</p>
+    SubnetNotAllowedFault(crate::types::error::SubnetNotAllowedFault),
     /// <p>The request cannot be processed because it would exceed the allowed number of subnets in a subnet group.</p>
     SubnetQuotaExceededFault(crate::types::error::SubnetQuotaExceededFault),
     /// <p>The tag does not exist.</p>
@@ -93,6 +95,7 @@ impl ::std::fmt::Display for Error {
             Error::SubnetGroupNotFoundFault(inner) => inner.fmt(f),
             Error::SubnetGroupQuotaExceededFault(inner) => inner.fmt(f),
             Error::SubnetInUse(inner) => inner.fmt(f),
+            Error::SubnetNotAllowedFault(inner) => inner.fmt(f),
             Error::SubnetQuotaExceededFault(inner) => inner.fmt(f),
             Error::TagNotFoundFault(inner) => inner.fmt(f),
             Error::TagQuotaPerResourceExceeded(inner) => inner.fmt(f),
@@ -141,6 +144,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::SubnetGroupNotFoundFault(inner) => inner.meta(),
             Self::SubnetGroupQuotaExceededFault(inner) => inner.meta(),
             Self::SubnetInUse(inner) => inner.meta(),
+            Self::SubnetNotAllowedFault(inner) => inner.meta(),
             Self::SubnetQuotaExceededFault(inner) => inner.meta(),
             Self::TagNotFoundFault(inner) => inner.meta(),
             Self::TagQuotaPerResourceExceeded(inner) => inner.meta(),
@@ -266,6 +270,7 @@ impl From<crate::operation::create_subnet_group::CreateSubnetGroupError> for Err
             crate::operation::create_subnet_group::CreateSubnetGroupError::SubnetGroupQuotaExceededFault(inner) => {
                 Error::SubnetGroupQuotaExceededFault(inner)
             }
+            crate::operation::create_subnet_group::CreateSubnetGroupError::SubnetNotAllowedFault(inner) => Error::SubnetNotAllowedFault(inner),
             crate::operation::create_subnet_group::CreateSubnetGroupError::SubnetQuotaExceededFault(inner) => Error::SubnetQuotaExceededFault(inner),
             crate::operation::create_subnet_group::CreateSubnetGroupError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -865,6 +870,7 @@ impl From<crate::operation::update_subnet_group::UpdateSubnetGroupError> for Err
             }
             crate::operation::update_subnet_group::UpdateSubnetGroupError::SubnetGroupNotFoundFault(inner) => Error::SubnetGroupNotFoundFault(inner),
             crate::operation::update_subnet_group::UpdateSubnetGroupError::SubnetInUse(inner) => Error::SubnetInUse(inner),
+            crate::operation::update_subnet_group::UpdateSubnetGroupError::SubnetNotAllowedFault(inner) => Error::SubnetNotAllowedFault(inner),
             crate::operation::update_subnet_group::UpdateSubnetGroupError::SubnetQuotaExceededFault(inner) => Error::SubnetQuotaExceededFault(inner),
             crate::operation::update_subnet_group::UpdateSubnetGroupError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -897,6 +903,7 @@ impl ::std::error::Error for Error {
             Error::SubnetGroupNotFoundFault(inner) => inner.source(),
             Error::SubnetGroupQuotaExceededFault(inner) => inner.source(),
             Error::SubnetInUse(inner) => inner.source(),
+            Error::SubnetNotAllowedFault(inner) => inner.source(),
             Error::SubnetQuotaExceededFault(inner) => inner.source(),
             Error::TagNotFoundFault(inner) => inner.source(),
             Error::TagQuotaPerResourceExceeded(inner) => inner.source(),
@@ -931,6 +938,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::SubnetGroupNotFoundFault(e) => e.request_id(),
             Self::SubnetGroupQuotaExceededFault(e) => e.request_id(),
             Self::SubnetInUse(e) => e.request_id(),
+            Self::SubnetNotAllowedFault(e) => e.request_id(),
             Self::SubnetQuotaExceededFault(e) => e.request_id(),
             Self::TagNotFoundFault(e) => e.request_id(),
             Self::TagQuotaPerResourceExceeded(e) => e.request_id(),

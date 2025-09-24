@@ -258,7 +258,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateCluster
 pub enum CreateClusterError {
     /// <p>You already have a DAX cluster with the given identifier.</p>
     ClusterAlreadyExistsFault(crate::types::error::ClusterAlreadyExistsFault),
-    /// <p>You have attempted to exceed the maximum number of DAX clusters for your AWS account.</p>
+    /// <p>You have attempted to exceed the maximum number of DAX clusters for your Amazon Web Services account.</p>
     ClusterQuotaForCustomerExceededFault(crate::types::error::ClusterQuotaForCustomerExceededFault),
     /// <p>There are not enough system resources to create the cluster you requested (or to resize an already-existing cluster).</p>
     InsufficientClusterCapacityFault(crate::types::error::InsufficientClusterCapacityFault),
@@ -274,13 +274,13 @@ pub enum CreateClusterError {
     InvalidVpcNetworkStateFault(crate::types::error::InvalidVpcNetworkStateFault),
     /// <p>You have attempted to exceed the maximum number of nodes for a DAX cluster.</p>
     NodeQuotaForClusterExceededFault(crate::types::error::NodeQuotaForClusterExceededFault),
-    /// <p>You have attempted to exceed the maximum number of nodes for your AWS account.</p>
+    /// <p>You have attempted to exceed the maximum number of nodes for your Amazon Web Services account.</p>
     NodeQuotaForCustomerExceededFault(crate::types::error::NodeQuotaForCustomerExceededFault),
     /// <p>The specified parameter group does not exist.</p>
     ParameterGroupNotFoundFault(crate::types::error::ParameterGroupNotFoundFault),
     /// <p>The specified service linked role (SLR) was not found.</p>
     ServiceLinkedRoleNotFoundFault(crate::types::error::ServiceLinkedRoleNotFoundFault),
-    /// <p>You have reached the maximum number of x509 certificates that can be created for encrypted clusters in a 30 day period. Contact AWS customer support to discuss options for continuing to create encrypted clusters.</p>
+    /// <p>You have reached the maximum number of x509 certificates that can be created for encrypted clusters in a 30 day period. Contact Amazon Web Services customer support to discuss options for continuing to create encrypted clusters.</p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// <p>The requested subnet group name does not refer to an existing subnet group.</p>
     SubnetGroupNotFoundFault(crate::types::error::SubnetGroupNotFoundFault),

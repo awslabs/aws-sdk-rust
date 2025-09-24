@@ -72,5 +72,8 @@ pub fn ser_create_cluster_input_input(
     if let Some(var_22) = &input.cluster_endpoint_encryption_type {
         object.key("ClusterEndpointEncryptionType").string(var_22.as_str());
     }
+    if let Some(var_23) = &input.network_type {
+        object.key("NetworkType").string(var_23.as_str());
+    }
     Ok(())
 }

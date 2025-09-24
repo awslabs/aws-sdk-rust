@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CopyDbClusterSnapshotInput {
-    /// <p>The identifier of the DB cluster snapshot to copy. This parameter is not case-sensitive.</p>
+    /// <p>The identifier of the DB cluster snapshot to copy. This parameter is not case-sensitive. If the source DB cluster snapshot is in a different region or owned by another account, specify the snapshot ARN.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
@@ -39,7 +39,7 @@ pub struct CopyDbClusterSnapshotInput {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CopyDbClusterSnapshotInput {
-    /// <p>The identifier of the DB cluster snapshot to copy. This parameter is not case-sensitive.</p>
+    /// <p>The identifier of the DB cluster snapshot to copy. This parameter is not case-sensitive. If the source DB cluster snapshot is in a different region or owned by another account, specify the snapshot ARN.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
@@ -107,7 +107,7 @@ pub struct CopyDbClusterSnapshotInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CopyDbClusterSnapshotInputBuilder {
-    /// <p>The identifier of the DB cluster snapshot to copy. This parameter is not case-sensitive.</p>
+    /// <p>The identifier of the DB cluster snapshot to copy. This parameter is not case-sensitive. If the source DB cluster snapshot is in a different region or owned by another account, specify the snapshot ARN.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
@@ -121,7 +121,7 @@ impl CopyDbClusterSnapshotInputBuilder {
         self.source_db_cluster_snapshot_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the DB cluster snapshot to copy. This parameter is not case-sensitive.</p>
+    /// <p>The identifier of the DB cluster snapshot to copy. This parameter is not case-sensitive. If the source DB cluster snapshot is in a different region or owned by another account, specify the snapshot ARN.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
@@ -134,7 +134,7 @@ impl CopyDbClusterSnapshotInputBuilder {
         self.source_db_cluster_snapshot_identifier = input;
         self
     }
-    /// <p>The identifier of the DB cluster snapshot to copy. This parameter is not case-sensitive.</p>
+    /// <p>The identifier of the DB cluster snapshot to copy. This parameter is not case-sensitive. If the source DB cluster snapshot is in a different region or owned by another account, specify the snapshot ARN.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>

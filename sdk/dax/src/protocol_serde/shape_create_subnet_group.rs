@@ -87,6 +87,21 @@ pub fn de_create_subnet_group_http_error(
             }
             tmp
         }),
+        "SubnetNotAllowedFault" => crate::operation::create_subnet_group::CreateSubnetGroupError::SubnetNotAllowedFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::SubnetNotAllowedFaultBuilder::default();
+                output = crate::protocol_serde::shape_subnet_not_allowed_fault::de_subnet_not_allowed_fault_json_err(_response_body, output)
+                    .map_err(crate::operation::create_subnet_group::CreateSubnetGroupError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "SubnetQuotaExceededFault" => crate::operation::create_subnet_group::CreateSubnetGroupError::SubnetQuotaExceededFault({
             #[allow(unused_mut)]
             let mut tmp = {

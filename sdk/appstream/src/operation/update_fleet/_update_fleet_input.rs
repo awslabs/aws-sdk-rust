@@ -81,6 +81,48 @@ pub struct UpdateFleetInput {
     /// <p>stream.graphics-pro.8xlarge</p></li>
     /// <li>
     /// <p>stream.graphics-pro.16xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g5.xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g5.2xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g5.4xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g5.8xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g5.16xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g5.12xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g5.24xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6.xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6.2xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6.4xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6.8xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6.16xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6.12xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6.24xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.gr6.4xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.gr6.8xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6f.large</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6f.xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6f.2xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6f.4xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.gr6f.4xlarge</p></li>
     /// </ul>
     /// <p>The following instance types are available for Elastic fleets:</p>
     /// <ul>
@@ -226,6 +268,48 @@ impl UpdateFleetInput {
     /// <p>stream.graphics-pro.8xlarge</p></li>
     /// <li>
     /// <p>stream.graphics-pro.16xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g5.xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g5.2xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g5.4xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g5.8xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g5.16xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g5.12xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g5.24xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6.xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6.2xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6.4xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6.8xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6.16xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6.12xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6.24xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.gr6.4xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.gr6.8xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6f.large</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6f.xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6f.2xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6f.4xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.gr6f.4xlarge</p></li>
     /// </ul>
     /// <p>The following instance types are available for Elastic fleets:</p>
     /// <ul>
@@ -477,6 +561,48 @@ impl UpdateFleetInputBuilder {
     /// <p>stream.graphics-pro.8xlarge</p></li>
     /// <li>
     /// <p>stream.graphics-pro.16xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g5.xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g5.2xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g5.4xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g5.8xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g5.16xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g5.12xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g5.24xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6.xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6.2xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6.4xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6.8xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6.16xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6.12xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6.24xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.gr6.4xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.gr6.8xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6f.large</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6f.xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6f.2xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6f.4xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.gr6f.4xlarge</p></li>
     /// </ul>
     /// <p>The following instance types are available for Elastic fleets:</p>
     /// <ul>
@@ -567,6 +693,48 @@ impl UpdateFleetInputBuilder {
     /// <p>stream.graphics-pro.8xlarge</p></li>
     /// <li>
     /// <p>stream.graphics-pro.16xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g5.xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g5.2xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g5.4xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g5.8xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g5.16xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g5.12xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g5.24xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6.xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6.2xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6.4xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6.8xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6.16xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6.12xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6.24xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.gr6.4xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.gr6.8xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6f.large</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6f.xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6f.2xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6f.4xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.gr6f.4xlarge</p></li>
     /// </ul>
     /// <p>The following instance types are available for Elastic fleets:</p>
     /// <ul>
@@ -657,6 +825,48 @@ impl UpdateFleetInputBuilder {
     /// <p>stream.graphics-pro.8xlarge</p></li>
     /// <li>
     /// <p>stream.graphics-pro.16xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g5.xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g5.2xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g5.4xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g5.8xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g5.16xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g5.12xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g5.24xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6.xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6.2xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6.4xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6.8xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6.16xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6.12xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6.24xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.gr6.4xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.gr6.8xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6f.large</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6f.xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6f.2xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6f.4xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.gr6f.4xlarge</p></li>
     /// </ul>
     /// <p>The following instance types are available for Elastic fleets:</p>
     /// <ul>

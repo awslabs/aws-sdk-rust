@@ -19,7 +19,7 @@ pub struct CreateClusterInput {
     /// <p>A description of the cluster.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node cluster, without any read replicas. For additional fault tolerance, you can create a multiple node cluster with one or more read replicas. To do this, set <code>ReplicationFactor</code> to a number between 3 (one primary and two read replicas) and 10 (one primary and nine read replicas). <code>If the AvailabilityZones</code> parameter is provided, its length must equal the <code>ReplicationFactor</code>.</p><note>
-    /// <p>AWS recommends that you have at least two read replicas per cluster.</p>
+    /// <p>Amazon Web Services recommends that you have at least two read replicas per cluster.</p>
     /// </note>
     pub replication_factor: ::std::option::Option<i32>,
     /// <p>The Availability Zones (AZs) in which the cluster nodes will reside after the cluster has been created or updated. If provided, the length of this list must equal the <code>ReplicationFactor</code> parameter. If you omit this parameter, DAX will spread the nodes across Availability Zones for the highest availability.</p>
@@ -72,6 +72,18 @@ pub struct CreateClusterInput {
     /// <p><code>TLS</code> for Transport Layer Security</p></li>
     /// </ul>
     pub cluster_endpoint_encryption_type: ::std::option::Option<crate::types::ClusterEndpointEncryptionType>,
+    /// <p>Specifies the IP protocol(s) the cluster uses for network communications. Values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ipv4</code> - The cluster is accessible only through IPv4 addresses</p></li>
+    /// <li>
+    /// <p><code>ipv6</code> - The cluster is accessible only through IPv6 addresses</p></li>
+    /// <li>
+    /// <p><code>dual_stack</code> - The cluster is accessible through both IPv4 and IPv6 addresses.</p></li>
+    /// </ul><note>
+    /// <p>If no explicit <code>NetworkType</code> is provided, the network type is derived based on the subnet group's configuration.</p>
+    /// </note>
+    pub network_type: ::std::option::Option<crate::types::NetworkType>,
 }
 impl CreateClusterInput {
     /// <p>The cluster identifier. This parameter is stored as a lowercase string.</p>
@@ -96,7 +108,7 @@ impl CreateClusterInput {
         self.description.as_deref()
     }
     /// <p>The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node cluster, without any read replicas. For additional fault tolerance, you can create a multiple node cluster with one or more read replicas. To do this, set <code>ReplicationFactor</code> to a number between 3 (one primary and two read replicas) and 10 (one primary and nine read replicas). <code>If the AvailabilityZones</code> parameter is provided, its length must equal the <code>ReplicationFactor</code>.</p><note>
-    /// <p>AWS recommends that you have at least two read replicas per cluster.</p>
+    /// <p>Amazon Web Services recommends that you have at least two read replicas per cluster.</p>
     /// </note>
     pub fn replication_factor(&self) -> ::std::option::Option<i32> {
         self.replication_factor
@@ -177,6 +189,20 @@ impl CreateClusterInput {
     pub fn cluster_endpoint_encryption_type(&self) -> ::std::option::Option<&crate::types::ClusterEndpointEncryptionType> {
         self.cluster_endpoint_encryption_type.as_ref()
     }
+    /// <p>Specifies the IP protocol(s) the cluster uses for network communications. Values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ipv4</code> - The cluster is accessible only through IPv4 addresses</p></li>
+    /// <li>
+    /// <p><code>ipv6</code> - The cluster is accessible only through IPv6 addresses</p></li>
+    /// <li>
+    /// <p><code>dual_stack</code> - The cluster is accessible through both IPv4 and IPv6 addresses.</p></li>
+    /// </ul><note>
+    /// <p>If no explicit <code>NetworkType</code> is provided, the network type is derived based on the subnet group's configuration.</p>
+    /// </note>
+    pub fn network_type(&self) -> ::std::option::Option<&crate::types::NetworkType> {
+        self.network_type.as_ref()
+    }
 }
 impl CreateClusterInput {
     /// Creates a new builder-style object to manufacture [`CreateClusterInput`](crate::operation::create_cluster::CreateClusterInput).
@@ -203,6 +229,7 @@ pub struct CreateClusterInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) sse_specification: ::std::option::Option<crate::types::SseSpecification>,
     pub(crate) cluster_endpoint_encryption_type: ::std::option::Option<crate::types::ClusterEndpointEncryptionType>,
+    pub(crate) network_type: ::std::option::Option<crate::types::NetworkType>,
 }
 impl CreateClusterInputBuilder {
     /// <p>The cluster identifier. This parameter is stored as a lowercase string.</p>
@@ -277,7 +304,7 @@ impl CreateClusterInputBuilder {
         &self.description
     }
     /// <p>The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node cluster, without any read replicas. For additional fault tolerance, you can create a multiple node cluster with one or more read replicas. To do this, set <code>ReplicationFactor</code> to a number between 3 (one primary and two read replicas) and 10 (one primary and nine read replicas). <code>If the AvailabilityZones</code> parameter is provided, its length must equal the <code>ReplicationFactor</code>.</p><note>
-    /// <p>AWS recommends that you have at least two read replicas per cluster.</p>
+    /// <p>Amazon Web Services recommends that you have at least two read replicas per cluster.</p>
     /// </note>
     /// This field is required.
     pub fn replication_factor(mut self, input: i32) -> Self {
@@ -285,14 +312,14 @@ impl CreateClusterInputBuilder {
         self
     }
     /// <p>The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node cluster, without any read replicas. For additional fault tolerance, you can create a multiple node cluster with one or more read replicas. To do this, set <code>ReplicationFactor</code> to a number between 3 (one primary and two read replicas) and 10 (one primary and nine read replicas). <code>If the AvailabilityZones</code> parameter is provided, its length must equal the <code>ReplicationFactor</code>.</p><note>
-    /// <p>AWS recommends that you have at least two read replicas per cluster.</p>
+    /// <p>Amazon Web Services recommends that you have at least two read replicas per cluster.</p>
     /// </note>
     pub fn set_replication_factor(mut self, input: ::std::option::Option<i32>) -> Self {
         self.replication_factor = input;
         self
     }
     /// <p>The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node cluster, without any read replicas. For additional fault tolerance, you can create a multiple node cluster with one or more read replicas. To do this, set <code>ReplicationFactor</code> to a number between 3 (one primary and two read replicas) and 10 (one primary and nine read replicas). <code>If the AvailabilityZones</code> parameter is provided, its length must equal the <code>ReplicationFactor</code>.</p><note>
-    /// <p>AWS recommends that you have at least two read replicas per cluster.</p>
+    /// <p>Amazon Web Services recommends that you have at least two read replicas per cluster.</p>
     /// </note>
     pub fn get_replication_factor(&self) -> &::std::option::Option<i32> {
         &self.replication_factor
@@ -546,6 +573,50 @@ impl CreateClusterInputBuilder {
     pub fn get_cluster_endpoint_encryption_type(&self) -> &::std::option::Option<crate::types::ClusterEndpointEncryptionType> {
         &self.cluster_endpoint_encryption_type
     }
+    /// <p>Specifies the IP protocol(s) the cluster uses for network communications. Values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ipv4</code> - The cluster is accessible only through IPv4 addresses</p></li>
+    /// <li>
+    /// <p><code>ipv6</code> - The cluster is accessible only through IPv6 addresses</p></li>
+    /// <li>
+    /// <p><code>dual_stack</code> - The cluster is accessible through both IPv4 and IPv6 addresses.</p></li>
+    /// </ul><note>
+    /// <p>If no explicit <code>NetworkType</code> is provided, the network type is derived based on the subnet group's configuration.</p>
+    /// </note>
+    pub fn network_type(mut self, input: crate::types::NetworkType) -> Self {
+        self.network_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the IP protocol(s) the cluster uses for network communications. Values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ipv4</code> - The cluster is accessible only through IPv4 addresses</p></li>
+    /// <li>
+    /// <p><code>ipv6</code> - The cluster is accessible only through IPv6 addresses</p></li>
+    /// <li>
+    /// <p><code>dual_stack</code> - The cluster is accessible through both IPv4 and IPv6 addresses.</p></li>
+    /// </ul><note>
+    /// <p>If no explicit <code>NetworkType</code> is provided, the network type is derived based on the subnet group's configuration.</p>
+    /// </note>
+    pub fn set_network_type(mut self, input: ::std::option::Option<crate::types::NetworkType>) -> Self {
+        self.network_type = input;
+        self
+    }
+    /// <p>Specifies the IP protocol(s) the cluster uses for network communications. Values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ipv4</code> - The cluster is accessible only through IPv4 addresses</p></li>
+    /// <li>
+    /// <p><code>ipv6</code> - The cluster is accessible only through IPv6 addresses</p></li>
+    /// <li>
+    /// <p><code>dual_stack</code> - The cluster is accessible through both IPv4 and IPv6 addresses.</p></li>
+    /// </ul><note>
+    /// <p>If no explicit <code>NetworkType</code> is provided, the network type is derived based on the subnet group's configuration.</p>
+    /// </note>
+    pub fn get_network_type(&self) -> &::std::option::Option<crate::types::NetworkType> {
+        &self.network_type
+    }
     /// Consumes the builder and constructs a [`CreateClusterInput`](crate::operation::create_cluster::CreateClusterInput).
     pub fn build(
         self,
@@ -565,6 +636,7 @@ impl CreateClusterInputBuilder {
             tags: self.tags,
             sse_specification: self.sse_specification,
             cluster_endpoint_encryption_type: self.cluster_endpoint_encryption_type,
+            network_type: self.network_type,
         })
     }
 }

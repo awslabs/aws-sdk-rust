@@ -153,6 +153,8 @@ pub(crate) mod shape_subnet_group_quota_exceeded_fault;
 
 pub(crate) mod shape_subnet_in_use;
 
+pub(crate) mod shape_subnet_not_allowed_fault;
+
 pub(crate) mod shape_subnet_quota_exceeded_fault;
 
 pub(crate) mod shape_tag_not_found_fault;
@@ -196,6 +198,8 @@ pub(crate) mod shape_tag_list;
 pub(crate) mod shape_endpoint;
 
 pub(crate) mod shape_event;
+
+pub(crate) mod shape_network_type_list;
 
 pub(crate) mod shape_node_identifier_list;
 

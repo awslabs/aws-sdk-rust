@@ -109,7 +109,7 @@ impl CopyDBClusterSnapshotFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The identifier of the DB cluster snapshot to copy. This parameter is not case-sensitive.</p>
+    /// <p>The identifier of the DB cluster snapshot to copy. This parameter is not case-sensitive. If the source DB cluster snapshot is in a different region or owned by another account, specify the snapshot ARN.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
@@ -122,7 +122,7 @@ impl CopyDBClusterSnapshotFluentBuilder {
         self.inner = self.inner.source_db_cluster_snapshot_identifier(input.into());
         self
     }
-    /// <p>The identifier of the DB cluster snapshot to copy. This parameter is not case-sensitive.</p>
+    /// <p>The identifier of the DB cluster snapshot to copy. This parameter is not case-sensitive. If the source DB cluster snapshot is in a different region or owned by another account, specify the snapshot ARN.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
@@ -135,7 +135,7 @@ impl CopyDBClusterSnapshotFluentBuilder {
         self.inner = self.inner.set_source_db_cluster_snapshot_identifier(input);
         self
     }
-    /// <p>The identifier of the DB cluster snapshot to copy. This parameter is not case-sensitive.</p>
+    /// <p>The identifier of the DB cluster snapshot to copy. This parameter is not case-sensitive. If the source DB cluster snapshot is in a different region or owned by another account, specify the snapshot ARN.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>

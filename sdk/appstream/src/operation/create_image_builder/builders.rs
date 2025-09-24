@@ -251,6 +251,16 @@ impl CreateImageBuilderFluentBuilder {
     /// <p>stream.graphics.gr6.4xlarge</p></li>
     /// <li>
     /// <p>stream.graphics.gr6.8xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6f.large</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6f.xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6f.2xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6f.4xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.gr6f.4xlarge</p></li>
     /// </ul>
     pub fn instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_type(input.into());
@@ -356,6 +366,16 @@ impl CreateImageBuilderFluentBuilder {
     /// <p>stream.graphics.gr6.4xlarge</p></li>
     /// <li>
     /// <p>stream.graphics.gr6.8xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6f.large</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6f.xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6f.2xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6f.4xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.gr6f.4xlarge</p></li>
     /// </ul>
     pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_type(input);
@@ -461,6 +481,16 @@ impl CreateImageBuilderFluentBuilder {
     /// <p>stream.graphics.gr6.4xlarge</p></li>
     /// <li>
     /// <p>stream.graphics.gr6.8xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6f.large</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6f.xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6f.2xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.g6f.4xlarge</p></li>
+    /// <li>
+    /// <p>stream.graphics.gr6f.4xlarge</p></li>
     /// </ul>
     pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_instance_type()

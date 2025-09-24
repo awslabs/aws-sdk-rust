@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IncreaseReplicationFactorOutput {
-    /// <p>A description of the DAX cluster. with its new replication factor.</p>
+    /// <p>A description of the DAX cluster, with its new replication factor.</p>
     pub cluster: ::std::option::Option<crate::types::Cluster>,
     _request_id: Option<String>,
 }
 impl IncreaseReplicationFactorOutput {
-    /// <p>A description of the DAX cluster. with its new replication factor.</p>
+    /// <p>A description of the DAX cluster, with its new replication factor.</p>
     pub fn cluster(&self) -> ::std::option::Option<&crate::types::Cluster> {
         self.cluster.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct IncreaseReplicationFactorOutputBuilder {
     _request_id: Option<String>,
 }
 impl IncreaseReplicationFactorOutputBuilder {
-    /// <p>A description of the DAX cluster. with its new replication factor.</p>
+    /// <p>A description of the DAX cluster, with its new replication factor.</p>
     pub fn cluster(mut self, input: crate::types::Cluster) -> Self {
         self.cluster = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A description of the DAX cluster. with its new replication factor.</p>
+    /// <p>A description of the DAX cluster, with its new replication factor.</p>
     pub fn set_cluster(mut self, input: ::std::option::Option<crate::types::Cluster>) -> Self {
         self.cluster = input;
         self
     }
-    /// <p>A description of the DAX cluster. with its new replication factor.</p>
+    /// <p>A description of the DAX cluster, with its new replication factor.</p>
     pub fn get_cluster(&self) -> &::std::option::Option<crate::types::Cluster> {
         &self.cluster
     }

@@ -45,6 +45,16 @@ pub struct Cluster {
     /// <p><code>TLS</code> for Transport Layer Security</p></li>
     /// </ul>
     pub cluster_endpoint_encryption_type: ::std::option::Option<crate::types::ClusterEndpointEncryptionType>,
+    /// <p>The IP address type of the cluster. Values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ipv4</code> - IPv4 addresses only</p></li>
+    /// <li>
+    /// <p><code>ipv6</code> - IPv6 addresses only</p></li>
+    /// <li>
+    /// <p><code>dual_stack</code> - Both IPv4 and IPv6 addresses</p></li>
+    /// </ul>
+    pub network_type: ::std::option::Option<crate::types::NetworkType>,
 }
 impl Cluster {
     /// <p>The name of the DAX cluster.</p>
@@ -130,6 +140,18 @@ impl Cluster {
     pub fn cluster_endpoint_encryption_type(&self) -> ::std::option::Option<&crate::types::ClusterEndpointEncryptionType> {
         self.cluster_endpoint_encryption_type.as_ref()
     }
+    /// <p>The IP address type of the cluster. Values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ipv4</code> - IPv4 addresses only</p></li>
+    /// <li>
+    /// <p><code>ipv6</code> - IPv6 addresses only</p></li>
+    /// <li>
+    /// <p><code>dual_stack</code> - Both IPv4 and IPv6 addresses</p></li>
+    /// </ul>
+    pub fn network_type(&self) -> ::std::option::Option<&crate::types::NetworkType> {
+        self.network_type.as_ref()
+    }
 }
 impl Cluster {
     /// Creates a new builder-style object to manufacture [`Cluster`](crate::types::Cluster).
@@ -160,6 +182,7 @@ pub struct ClusterBuilder {
     pub(crate) parameter_group: ::std::option::Option<crate::types::ParameterGroupStatus>,
     pub(crate) sse_description: ::std::option::Option<crate::types::SseDescription>,
     pub(crate) cluster_endpoint_encryption_type: ::std::option::Option<crate::types::ClusterEndpointEncryptionType>,
+    pub(crate) network_type: ::std::option::Option<crate::types::NetworkType>,
 }
 impl ClusterBuilder {
     /// <p>The name of the DAX cluster.</p>
@@ -447,6 +470,44 @@ impl ClusterBuilder {
     pub fn get_cluster_endpoint_encryption_type(&self) -> &::std::option::Option<crate::types::ClusterEndpointEncryptionType> {
         &self.cluster_endpoint_encryption_type
     }
+    /// <p>The IP address type of the cluster. Values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ipv4</code> - IPv4 addresses only</p></li>
+    /// <li>
+    /// <p><code>ipv6</code> - IPv6 addresses only</p></li>
+    /// <li>
+    /// <p><code>dual_stack</code> - Both IPv4 and IPv6 addresses</p></li>
+    /// </ul>
+    pub fn network_type(mut self, input: crate::types::NetworkType) -> Self {
+        self.network_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The IP address type of the cluster. Values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ipv4</code> - IPv4 addresses only</p></li>
+    /// <li>
+    /// <p><code>ipv6</code> - IPv6 addresses only</p></li>
+    /// <li>
+    /// <p><code>dual_stack</code> - Both IPv4 and IPv6 addresses</p></li>
+    /// </ul>
+    pub fn set_network_type(mut self, input: ::std::option::Option<crate::types::NetworkType>) -> Self {
+        self.network_type = input;
+        self
+    }
+    /// <p>The IP address type of the cluster. Values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ipv4</code> - IPv4 addresses only</p></li>
+    /// <li>
+    /// <p><code>ipv6</code> - IPv6 addresses only</p></li>
+    /// <li>
+    /// <p><code>dual_stack</code> - Both IPv4 and IPv6 addresses</p></li>
+    /// </ul>
+    pub fn get_network_type(&self) -> &::std::option::Option<crate::types::NetworkType> {
+        &self.network_type
+    }
     /// Consumes the builder and constructs a [`Cluster`](crate::types::Cluster).
     pub fn build(self) -> crate::types::Cluster {
         crate::types::Cluster {
@@ -468,6 +529,7 @@ impl ClusterBuilder {
             parameter_group: self.parameter_group,
             sse_description: self.sse_description,
             cluster_endpoint_encryption_type: self.cluster_endpoint_encryption_type,
+            network_type: self.network_type,
         }
     }
 }
