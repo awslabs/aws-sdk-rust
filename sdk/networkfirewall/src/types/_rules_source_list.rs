@@ -16,7 +16,9 @@ pub struct RulesSourceList {
     pub targets: ::std::vec::Vec<::std::string::String>,
     /// <p>The protocols you want to inspect. Specify <code>TLS_SNI</code> for <code>HTTPS</code>. Specify <code>HTTP_HOST</code> for <code>HTTP</code>. You can specify either or both.</p>
     pub target_types: ::std::vec::Vec<crate::types::TargetType>,
-    /// <p>Whether you want to allow or deny access to the domains in your target list.</p>
+    /// <p>Whether you want to apply allow, reject, alert, or drop behavior to the domains in your target list.</p><note>
+    /// <p>When logging is enabled and you choose Alert, traffic that matches the domain specifications generates an alert in the firewall's logs. Then, traffic either passes, is rejected, or drops based on other rules in the firewall policy.</p>
+    /// </note>
     pub generated_rules_type: crate::types::GeneratedRulesType,
 }
 impl RulesSourceList {
@@ -36,7 +38,9 @@ impl RulesSourceList {
         use std::ops::Deref;
         self.target_types.deref()
     }
-    /// <p>Whether you want to allow or deny access to the domains in your target list.</p>
+    /// <p>Whether you want to apply allow, reject, alert, or drop behavior to the domains in your target list.</p><note>
+    /// <p>When logging is enabled and you choose Alert, traffic that matches the domain specifications generates an alert in the firewall's logs. Then, traffic either passes, is rejected, or drops based on other rules in the firewall policy.</p>
+    /// </note>
     pub fn generated_rules_type(&self) -> &crate::types::GeneratedRulesType {
         &self.generated_rules_type
     }
@@ -115,18 +119,24 @@ impl RulesSourceListBuilder {
     pub fn get_target_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetType>> {
         &self.target_types
     }
-    /// <p>Whether you want to allow or deny access to the domains in your target list.</p>
+    /// <p>Whether you want to apply allow, reject, alert, or drop behavior to the domains in your target list.</p><note>
+    /// <p>When logging is enabled and you choose Alert, traffic that matches the domain specifications generates an alert in the firewall's logs. Then, traffic either passes, is rejected, or drops based on other rules in the firewall policy.</p>
+    /// </note>
     /// This field is required.
     pub fn generated_rules_type(mut self, input: crate::types::GeneratedRulesType) -> Self {
         self.generated_rules_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Whether you want to allow or deny access to the domains in your target list.</p>
+    /// <p>Whether you want to apply allow, reject, alert, or drop behavior to the domains in your target list.</p><note>
+    /// <p>When logging is enabled and you choose Alert, traffic that matches the domain specifications generates an alert in the firewall's logs. Then, traffic either passes, is rejected, or drops based on other rules in the firewall policy.</p>
+    /// </note>
     pub fn set_generated_rules_type(mut self, input: ::std::option::Option<crate::types::GeneratedRulesType>) -> Self {
         self.generated_rules_type = input;
         self
     }
-    /// <p>Whether you want to allow or deny access to the domains in your target list.</p>
+    /// <p>Whether you want to apply allow, reject, alert, or drop behavior to the domains in your target list.</p><note>
+    /// <p>When logging is enabled and you choose Alert, traffic that matches the domain specifications generates an alert in the firewall's logs. Then, traffic either passes, is rejected, or drops based on other rules in the firewall policy.</p>
+    /// </note>
     pub fn get_generated_rules_type(&self) -> &::std::option::Option<crate::types::GeneratedRulesType> {
         &self.generated_rules_type
     }

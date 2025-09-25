@@ -28,6 +28,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "KmsKeyArn" => {
+                            builder = builder.set_kms_key_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "OAuth2Properties" => {
                             builder = builder.set_o_auth2_properties(crate::protocol_serde::shape_o_auth2_properties::de_o_auth2_properties(tokens)?);
                         }

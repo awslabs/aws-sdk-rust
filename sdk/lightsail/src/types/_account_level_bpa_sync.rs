@@ -32,7 +32,7 @@ pub struct AccountLevelBpaSync {
     /// <li>
     /// <p><code>DEFAULTED_FOR_SLR_MISSING_ON_HOLD</code> - The synchronization failed because the required service-linked role is missing from your Amazon Web Services account. Account-level BPA is not yet configured for your Lightsail buckets. Therefore, only the bucket access permissions and individual object access permissions apply to your Lightsail buckets. For more information about how to create the required service-linked role to allow synchronization, see <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-using-service-linked-roles">Using Service-Linked Roles for Amazon Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>.</p></li>
     /// <li>
-    /// <p><code>Unknown</code> - The reason that synchronization failed is unknown. Contact Amazon Web ServicesSupport for more information.</p></li>
+    /// <p><code>Unknown</code> - The reason that synchronization failed is unknown. Contact Amazon Web Services Support for more information.</p></li>
     /// </ul>
     pub message: ::std::option::Option<crate::types::BpaStatusMessage>,
     /// <p>A Boolean value that indicates whether account-level block public access is affecting your Lightsail buckets.</p>
@@ -70,7 +70,7 @@ impl AccountLevelBpaSync {
     /// <li>
     /// <p><code>DEFAULTED_FOR_SLR_MISSING_ON_HOLD</code> - The synchronization failed because the required service-linked role is missing from your Amazon Web Services account. Account-level BPA is not yet configured for your Lightsail buckets. Therefore, only the bucket access permissions and individual object access permissions apply to your Lightsail buckets. For more information about how to create the required service-linked role to allow synchronization, see <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-using-service-linked-roles">Using Service-Linked Roles for Amazon Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>.</p></li>
     /// <li>
-    /// <p><code>Unknown</code> - The reason that synchronization failed is unknown. Contact Amazon Web ServicesSupport for more information.</p></li>
+    /// <p><code>Unknown</code> - The reason that synchronization failed is unknown. Contact Amazon Web Services Support for more information.</p></li>
     /// </ul>
     pub fn message(&self) -> ::std::option::Option<&crate::types::BpaStatusMessage> {
         self.message.as_ref()
@@ -174,7 +174,7 @@ impl AccountLevelBpaSyncBuilder {
     /// <li>
     /// <p><code>DEFAULTED_FOR_SLR_MISSING_ON_HOLD</code> - The synchronization failed because the required service-linked role is missing from your Amazon Web Services account. Account-level BPA is not yet configured for your Lightsail buckets. Therefore, only the bucket access permissions and individual object access permissions apply to your Lightsail buckets. For more information about how to create the required service-linked role to allow synchronization, see <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-using-service-linked-roles">Using Service-Linked Roles for Amazon Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>.</p></li>
     /// <li>
-    /// <p><code>Unknown</code> - The reason that synchronization failed is unknown. Contact Amazon Web ServicesSupport for more information.</p></li>
+    /// <p><code>Unknown</code> - The reason that synchronization failed is unknown. Contact Amazon Web Services Support for more information.</p></li>
     /// </ul>
     pub fn message(mut self, input: crate::types::BpaStatusMessage) -> Self {
         self.message = ::std::option::Option::Some(input);
@@ -190,7 +190,7 @@ impl AccountLevelBpaSyncBuilder {
     /// <li>
     /// <p><code>DEFAULTED_FOR_SLR_MISSING_ON_HOLD</code> - The synchronization failed because the required service-linked role is missing from your Amazon Web Services account. Account-level BPA is not yet configured for your Lightsail buckets. Therefore, only the bucket access permissions and individual object access permissions apply to your Lightsail buckets. For more information about how to create the required service-linked role to allow synchronization, see <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-using-service-linked-roles">Using Service-Linked Roles for Amazon Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>.</p></li>
     /// <li>
-    /// <p><code>Unknown</code> - The reason that synchronization failed is unknown. Contact Amazon Web ServicesSupport for more information.</p></li>
+    /// <p><code>Unknown</code> - The reason that synchronization failed is unknown. Contact Amazon Web Services Support for more information.</p></li>
     /// </ul>
     pub fn set_message(mut self, input: ::std::option::Option<crate::types::BpaStatusMessage>) -> Self {
         self.message = input;
@@ -206,7 +206,7 @@ impl AccountLevelBpaSyncBuilder {
     /// <li>
     /// <p><code>DEFAULTED_FOR_SLR_MISSING_ON_HOLD</code> - The synchronization failed because the required service-linked role is missing from your Amazon Web Services account. Account-level BPA is not yet configured for your Lightsail buckets. Therefore, only the bucket access permissions and individual object access permissions apply to your Lightsail buckets. For more information about how to create the required service-linked role to allow synchronization, see <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-using-service-linked-roles">Using Service-Linked Roles for Amazon Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>.</p></li>
     /// <li>
-    /// <p><code>Unknown</code> - The reason that synchronization failed is unknown. Contact Amazon Web ServicesSupport for more information.</p></li>
+    /// <p><code>Unknown</code> - The reason that synchronization failed is unknown. Contact Amazon Web Services Support for more information.</p></li>
     /// </ul>
     pub fn get_message(&self) -> &::std::option::Option<crate::types::BpaStatusMessage> {
         &self.message

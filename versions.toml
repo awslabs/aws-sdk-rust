@@ -1059,9 +1059,9 @@ model_hash = '46995118bf839da7588d103cfb94f604022ec01c095f9cea1fcbb6094e1d9a59'
 
 [crates.aws-sdk-glue]
 category = 'AwsSdk'
-version = '1.120.0'
-source_hash = '8771de517019b83c48cb093d66a75999244a8efd65af67f6c4f5cb50bc1c5e69'
-model_hash = 'dafa1cd19dca65548072ab1551fb093d5a4ab127d85b8a6890e9866685aa46c5'
+version = '1.121.0'
+source_hash = '4dccb7913b10cbde1c7dce658727479c30a4b61a5ba4532012737d9243897157'
+model_hash = 'cf08da73281abdcc035795d3e69d2b2d9dd22efd0edd49f6af29f4a8f57a8a6e'
 
 [crates.aws-sdk-grafana]
 category = 'AwsSdk'
@@ -1413,9 +1413,9 @@ model_hash = '57854939efe2096a475b478fedc72c5462e7b34e36f7c400791993eb541f2815'
 
 [crates.aws-sdk-lightsail]
 category = 'AwsSdk'
-version = '1.89.0'
-source_hash = '70c606c3b28162129be462f25380b5d1959a70a727eb19318e0130af6ee243ab'
-model_hash = 'c1ecab32c4392c4c5c5c171ed397d3a42df44a83db8ff5d59a18191414180ecd'
+version = '1.90.0'
+source_hash = '89749119cdfe3a8fdaf1d8c03fd8741018e9c549abd7c9d51fad1a529a866e87'
+model_hash = '6215c8f5991a2f5505b4f8fa6b7598d978b5c0af23f63d29dd2043bb653dae10'
 
 [crates.aws-sdk-location]
 category = 'AwsSdk'
@@ -1665,9 +1665,9 @@ model_hash = '129fa9d4de82fa558f0297c0e8e84e333ba43c8b19a5700226203856f65ffb3f'
 
 [crates.aws-sdk-networkfirewall]
 category = 'AwsSdk'
-version = '1.92.0'
-source_hash = '3f94098558aedbdd0855169f45daa1006c0e07056ab9995d2b4d590d8cd22d5f'
-model_hash = '19faf3eb0199d1ee2bcc36dfc97e3455b0d0c003ec65ace712739bb57fc408a1'
+version = '1.93.0'
+source_hash = '57b6f5859e1dcd55444ae6d3be0511e6b3014e3c41c572345651aea4987809aa'
+model_hash = '2eb81c5457ed4cfc8b7f75617906d96cec3bd7f74d8bffbe533e8df035f651b0'
 
 [crates.aws-sdk-networkflowmonitor]
 category = 'AwsSdk'
@@ -2673,13 +2673,7 @@ source_hash = 'bf1dc748b174d4d1e6a60d60597dec1eba598e4cfd418fffaeb1de2afc36099b'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '4eae21d18f13ae2c8b3f5858292cfbd15f9dcb2b92d7ba9aac9878db2a601b2c'
-
-[release]
-tag = 'release-2025-09-24'
-
 [release.crates]
-aws-sdk-appstream = '1.90.1'
-aws-sdk-cloudwatch = '1.92.0'
-aws-sdk-dax = '1.85.0'
-aws-sdk-kms = '1.87.1'
-aws-sdk-neptune = '1.87.1'
+aws-sdk-glue = '1.121.0'
+aws-sdk-lightsail = '1.90.0'
+aws-sdk-networkfirewall = '1.93.0'

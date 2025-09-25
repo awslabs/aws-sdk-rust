@@ -8,6 +8,8 @@ pub struct AuthenticationConfiguration {
     pub authentication_type: ::std::option::Option<crate::types::AuthenticationType>,
     /// <p>The secret manager ARN to store credentials.</p>
     pub secret_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt sensitive authentication information. This key is used to protect credentials and other sensitive data stored within the authentication configuration.</p>
+    pub kms_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>The properties for OAuth2 authentication.</p>
     pub o_auth2_properties: ::std::option::Option<crate::types::OAuth2Properties>,
 }
@@ -19,6 +21,10 @@ impl AuthenticationConfiguration {
     /// <p>The secret manager ARN to store credentials.</p>
     pub fn secret_arn(&self) -> ::std::option::Option<&str> {
         self.secret_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt sensitive authentication information. This key is used to protect credentials and other sensitive data stored within the authentication configuration.</p>
+    pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
+        self.kms_key_arn.as_deref()
     }
     /// <p>The properties for OAuth2 authentication.</p>
     pub fn o_auth2_properties(&self) -> ::std::option::Option<&crate::types::OAuth2Properties> {
@@ -38,6 +44,7 @@ impl AuthenticationConfiguration {
 pub struct AuthenticationConfigurationBuilder {
     pub(crate) authentication_type: ::std::option::Option<crate::types::AuthenticationType>,
     pub(crate) secret_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
     pub(crate) o_auth2_properties: ::std::option::Option<crate::types::OAuth2Properties>,
 }
 impl AuthenticationConfigurationBuilder {
@@ -69,6 +76,20 @@ impl AuthenticationConfigurationBuilder {
     pub fn get_secret_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.secret_arn
     }
+    /// <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt sensitive authentication information. This key is used to protect credentials and other sensitive data stored within the authentication configuration.</p>
+    pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt sensitive authentication information. This key is used to protect credentials and other sensitive data stored within the authentication configuration.</p>
+    pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.kms_key_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt sensitive authentication information. This key is used to protect credentials and other sensitive data stored within the authentication configuration.</p>
+    pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_arn
+    }
     /// <p>The properties for OAuth2 authentication.</p>
     pub fn o_auth2_properties(mut self, input: crate::types::OAuth2Properties) -> Self {
         self.o_auth2_properties = ::std::option::Option::Some(input);
@@ -88,6 +109,7 @@ impl AuthenticationConfigurationBuilder {
         crate::types::AuthenticationConfiguration {
             authentication_type: self.authentication_type,
             secret_arn: self.secret_arn,
+            kms_key_arn: self.kms_key_arn,
             o_auth2_properties: self.o_auth2_properties,
         }
     }

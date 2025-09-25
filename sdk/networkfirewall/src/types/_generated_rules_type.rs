@@ -12,8 +12,10 @@
 /// ```text
 /// # let generatedrulestype = unimplemented!();
 /// match generatedrulestype {
+///     GeneratedRulesType::Alertlist => { /* ... */ },
 ///     GeneratedRulesType::Allowlist => { /* ... */ },
 ///     GeneratedRulesType::Denylist => { /* ... */ },
+///     GeneratedRulesType::Rejectlist => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -43,9 +45,13 @@
 )]
 pub enum GeneratedRulesType {
     #[allow(missing_docs)] // documentation missing in model
+    Alertlist,
+    #[allow(missing_docs)] // documentation missing in model
     Allowlist,
     #[allow(missing_docs)] // documentation missing in model
     Denylist,
+    #[allow(missing_docs)] // documentation missing in model
+    Rejectlist,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -53,8 +59,10 @@ pub enum GeneratedRulesType {
 impl ::std::convert::From<&str> for GeneratedRulesType {
     fn from(s: &str) -> Self {
         match s {
+            "ALERTLIST" => GeneratedRulesType::Alertlist,
             "ALLOWLIST" => GeneratedRulesType::Allowlist,
             "DENYLIST" => GeneratedRulesType::Denylist,
+            "REJECTLIST" => GeneratedRulesType::Rejectlist,
             other => GeneratedRulesType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -70,14 +78,16 @@ impl GeneratedRulesType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            GeneratedRulesType::Alertlist => "ALERTLIST",
             GeneratedRulesType::Allowlist => "ALLOWLIST",
             GeneratedRulesType::Denylist => "DENYLIST",
+            GeneratedRulesType::Rejectlist => "REJECTLIST",
             GeneratedRulesType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ALLOWLIST", "DENYLIST"]
+        &["ALERTLIST", "ALLOWLIST", "DENYLIST", "REJECTLIST"]
     }
 }
 impl ::std::convert::AsRef<str> for GeneratedRulesType {
@@ -100,8 +110,10 @@ impl GeneratedRulesType {
 impl ::std::fmt::Display for GeneratedRulesType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            GeneratedRulesType::Alertlist => write!(f, "ALERTLIST"),
             GeneratedRulesType::Allowlist => write!(f, "ALLOWLIST"),
             GeneratedRulesType::Denylist => write!(f, "DENYLIST"),
+            GeneratedRulesType::Rejectlist => write!(f, "REJECTLIST"),
             GeneratedRulesType::Unknown(value) => write!(f, "{}", value),
         }
     }
