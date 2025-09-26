@@ -325,6 +325,8 @@ pub use crate::types::_flow_multi_turn_input_request_event::FlowMultiTurnInputRe
 
 pub use crate::types::_flow_trace_event::FlowTraceEventBuilder;
 
+pub use crate::types::_flow_trace_dependency_event::FlowTraceDependencyEventBuilder;
+
 pub use crate::types::_flow_trace_node_action_event::FlowTraceNodeActionEventBuilder;
 
 pub use crate::types::_flow_trace_condition_node_result_event::FlowTraceConditionNodeResultEventBuilder;
@@ -335,9 +337,15 @@ pub use crate::types::_flow_trace_node_output_event::FlowTraceNodeOutputEventBui
 
 pub use crate::types::_flow_trace_node_output_field::FlowTraceNodeOutputFieldBuilder;
 
+pub use crate::types::_flow_trace_node_output_next::FlowTraceNodeOutputNextBuilder;
+
 pub use crate::types::_flow_trace_node_input_event::FlowTraceNodeInputEventBuilder;
 
 pub use crate::types::_flow_trace_node_input_field::FlowTraceNodeInputFieldBuilder;
+
+pub use crate::types::_flow_trace_node_input_execution_chain_item::FlowTraceNodeInputExecutionChainItemBuilder;
+
+pub use crate::types::_flow_trace_node_input_source::FlowTraceNodeInputSourceBuilder;
 
 pub use crate::types::_flow_completion_event::FlowCompletionEventBuilder;
 
@@ -348,6 +356,10 @@ pub use crate::types::_model_performance_configuration::ModelPerformanceConfigur
 pub use crate::types::_flow_input::FlowInputBuilder;
 
 pub use crate::types::_flow_execution_summary::FlowExecutionSummaryBuilder;
+
+pub use crate::types::_node_dependency_event::NodeDependencyEventBuilder;
+
+pub use crate::types::_node_action_event::NodeActionEventBuilder;
 
 pub use crate::types::_flow_failure_event::FlowFailureEventBuilder;
 
@@ -361,9 +373,15 @@ pub use crate::types::_node_output_event::NodeOutputEventBuilder;
 
 pub use crate::types::_node_output_field::NodeOutputFieldBuilder;
 
+pub use crate::types::_node_output_next::NodeOutputNextBuilder;
+
 pub use crate::types::_node_input_event::NodeInputEventBuilder;
 
 pub use crate::types::_node_input_field::NodeInputFieldBuilder;
+
+pub use crate::types::_node_input_execution_chain_item::NodeInputExecutionChainItemBuilder;
+
+pub use crate::types::_node_input_source::NodeInputSourceBuilder;
 
 pub use crate::types::_flow_execution_output_event::FlowExecutionOutputEventBuilder;
 

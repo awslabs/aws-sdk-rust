@@ -155,4 +155,28 @@ impl AssociateRoutingProfileQueuesFluentBuilder {
     pub fn get_queue_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileQueueConfig>> {
         self.inner.get_queue_configs()
     }
+    ///
+    /// Appends an item to `ManualAssignmentQueueConfigs`.
+    ///
+    /// To override the contents of this collection use [`set_manual_assignment_queue_configs`](Self::set_manual_assignment_queue_configs).
+    ///
+    /// <p>The manual assignment queues to associate with this routing profile.</p>
+    pub fn manual_assignment_queue_configs(mut self, input: crate::types::RoutingProfileManualAssignmentQueueConfig) -> Self {
+        self.inner = self.inner.manual_assignment_queue_configs(input);
+        self
+    }
+    /// <p>The manual assignment queues to associate with this routing profile.</p>
+    pub fn set_manual_assignment_queue_configs(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileManualAssignmentQueueConfig>>,
+    ) -> Self {
+        self.inner = self.inner.set_manual_assignment_queue_configs(input);
+        self
+    }
+    /// <p>The manual assignment queues to associate with this routing profile.</p>
+    pub fn get_manual_assignment_queue_configs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileManualAssignmentQueueConfig>> {
+        self.inner.get_manual_assignment_queue_configs()
+    }
 }

@@ -29,6 +29,10 @@ pub struct ContactSearchSummary {
     /// <p>Set of segment attributes for a contact.</p>
     pub segment_attributes:
         ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ContactSearchSummarySegmentAttributeValue>>,
+    /// <p>Indicates name of the contact.</p>
+    pub name: ::std::option::Option<::std::string::String>,
+    /// <p>Latest routing criteria on the contact.</p>
+    pub routing_criteria: ::std::option::Option<crate::types::RoutingCriteria>,
 }
 impl ContactSearchSummary {
     /// <p>The Amazon Resource Name (ARN) of the contact.</p>
@@ -81,6 +85,14 @@ impl ContactSearchSummary {
     ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::ContactSearchSummarySegmentAttributeValue>> {
         self.segment_attributes.as_ref()
     }
+    /// <p>Indicates name of the contact.</p>
+    pub fn name(&self) -> ::std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Latest routing criteria on the contact.</p>
+    pub fn routing_criteria(&self) -> ::std::option::Option<&crate::types::RoutingCriteria> {
+        self.routing_criteria.as_ref()
+    }
 }
 impl ::std::fmt::Debug for ContactSearchSummary {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -97,6 +109,8 @@ impl ::std::fmt::Debug for ContactSearchSummary {
         formatter.field("disconnect_timestamp", &self.disconnect_timestamp);
         formatter.field("scheduled_timestamp", &self.scheduled_timestamp);
         formatter.field("segment_attributes", &"*** Sensitive Data Redacted ***");
+        formatter.field("name", &"*** Sensitive Data Redacted ***");
+        formatter.field("routing_criteria", &self.routing_criteria);
         formatter.finish()
     }
 }
@@ -124,6 +138,8 @@ pub struct ContactSearchSummaryBuilder {
     pub(crate) scheduled_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) segment_attributes:
         ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ContactSearchSummarySegmentAttributeValue>>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) routing_criteria: ::std::option::Option<crate::types::RoutingCriteria>,
 }
 impl ContactSearchSummaryBuilder {
     /// <p>The Amazon Resource Name (ARN) of the contact.</p>
@@ -309,6 +325,34 @@ impl ContactSearchSummaryBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ContactSearchSummarySegmentAttributeValue>> {
         &self.segment_attributes
     }
+    /// <p>Indicates name of the contact.</p>
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Indicates name of the contact.</p>
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.name = input;
+        self
+    }
+    /// <p>Indicates name of the contact.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
+    /// <p>Latest routing criteria on the contact.</p>
+    pub fn routing_criteria(mut self, input: crate::types::RoutingCriteria) -> Self {
+        self.routing_criteria = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Latest routing criteria on the contact.</p>
+    pub fn set_routing_criteria(mut self, input: ::std::option::Option<crate::types::RoutingCriteria>) -> Self {
+        self.routing_criteria = input;
+        self
+    }
+    /// <p>Latest routing criteria on the contact.</p>
+    pub fn get_routing_criteria(&self) -> &::std::option::Option<crate::types::RoutingCriteria> {
+        &self.routing_criteria
+    }
     /// Consumes the builder and constructs a [`ContactSearchSummary`](crate::types::ContactSearchSummary).
     pub fn build(self) -> crate::types::ContactSearchSummary {
         crate::types::ContactSearchSummary {
@@ -324,6 +368,8 @@ impl ContactSearchSummaryBuilder {
             disconnect_timestamp: self.disconnect_timestamp,
             scheduled_timestamp: self.scheduled_timestamp,
             segment_attributes: self.segment_attributes,
+            name: self.name,
+            routing_criteria: self.routing_criteria,
         }
     }
 }
@@ -342,6 +388,8 @@ impl ::std::fmt::Debug for ContactSearchSummaryBuilder {
         formatter.field("disconnect_timestamp", &self.disconnect_timestamp);
         formatter.field("scheduled_timestamp", &self.scheduled_timestamp);
         formatter.field("segment_attributes", &"*** Sensitive Data Redacted ***");
+        formatter.field("name", &"*** Sensitive Data Redacted ***");
+        formatter.field("routing_criteria", &self.routing_criteria);
         formatter.finish()
     }
 }

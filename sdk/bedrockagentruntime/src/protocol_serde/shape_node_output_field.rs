@@ -24,6 +24,16 @@ where
                         "content" => {
                             builder = builder.set_content(crate::protocol_serde::shape_node_execution_content::de_node_execution_content(tokens)?);
                         }
+                        "next" => {
+                            builder = builder.set_next(crate::protocol_serde::shape_node_output_next_list::de_node_output_next_list(tokens)?);
+                        }
+                        "type" => {
+                            builder = builder.set_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::FlowNodeIoDataType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

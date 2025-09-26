@@ -30,14 +30,17 @@ pub fn ser_list_billing_views_input_input(
     if let Some(var_9) = &input.owner_account_id {
         object.key("ownerAccountId").string(var_9.as_str());
     }
-    if let Some(var_10) = &input.max_results {
+    if let Some(var_10) = &input.source_account_id {
+        object.key("sourceAccountId").string(var_10.as_str());
+    }
+    if let Some(var_11) = &input.max_results {
         object.key("maxResults").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_10).into()),
+            ::aws_smithy_types::Number::NegInt((*var_11).into()),
         );
     }
-    if let Some(var_11) = &input.next_token {
-        object.key("nextToken").string(var_11.as_str());
+    if let Some(var_12) = &input.next_token {
+        object.key("nextToken").string(var_12.as_str());
     }
     Ok(())
 }

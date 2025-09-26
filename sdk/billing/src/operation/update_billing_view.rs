@@ -261,6 +261,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdateBilling
 pub enum UpdateBillingViewError {
     /// <p>You don't have sufficient access to perform this action.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
+    /// <p>Exception thrown when a billing view's health status prevents an operation from being performed. This may occur if the billing view is in a state other than <code>HEALTHY</code>.</p>
+    BillingViewHealthStatusException(crate::types::error::BillingViewHealthStatusException),
     /// <p>The requested operation would cause a conflict with the current state of a service resource associated with the request. Resolve the conflict before retrying this request.</p>
     ConflictException(crate::types::error::ConflictException),
     /// <p>The request processing failed because of an unknown error, exception, or failure.</p>
@@ -307,6 +309,7 @@ impl UpdateBillingViewError {
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::AccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::BillingViewHealthStatusException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ConflictException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InternalServerException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -319,6 +322,10 @@ impl UpdateBillingViewError {
     /// Returns `true` if the error kind is `UpdateBillingViewError::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(self, Self::AccessDeniedException(_))
+    }
+    /// Returns `true` if the error kind is `UpdateBillingViewError::BillingViewHealthStatusException`.
+    pub fn is_billing_view_health_status_exception(&self) -> bool {
+        matches!(self, Self::BillingViewHealthStatusException(_))
     }
     /// Returns `true` if the error kind is `UpdateBillingViewError::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
@@ -349,6 +356,7 @@ impl ::std::error::Error for UpdateBillingViewError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
+            Self::BillingViewHealthStatusException(_inner) => ::std::option::Option::Some(_inner),
             Self::ConflictException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalServerException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
@@ -363,6 +371,7 @@ impl ::std::fmt::Display for UpdateBillingViewError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             Self::AccessDeniedException(_inner) => _inner.fmt(f),
+            Self::BillingViewHealthStatusException(_inner) => _inner.fmt(f),
             Self::ConflictException(_inner) => _inner.fmt(f),
             Self::InternalServerException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
@@ -391,6 +400,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for UpdateBilling
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::BillingViewHealthStatusException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ConflictException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalServerException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

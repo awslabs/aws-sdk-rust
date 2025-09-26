@@ -17,6 +17,24 @@ pub fn de_get_cost_forecast_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "BillingViewHealthStatusException" => crate::operation::get_cost_forecast::GetCostForecastError::BillingViewHealthStatusException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::BillingViewHealthStatusExceptionBuilder::default();
+                output = crate::protocol_serde::shape_billing_view_health_status_exception::de_billing_view_health_status_exception_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::get_cost_forecast::GetCostForecastError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "DataUnavailableException" => crate::operation::get_cost_forecast::GetCostForecastError::DataUnavailableException({
             #[allow(unused_mut)]
             let mut tmp = {

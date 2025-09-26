@@ -8,6 +8,8 @@ pub struct AudioExtractionCategory {
     pub state: crate::types::State,
     /// List of Audio Extraction Category Type
     pub types: ::std::option::Option<::std::vec::Vec<crate::types::AudioExtractionCategoryType>>,
+    /// Configuration for different audio extraction category types
+    pub type_configuration: ::std::option::Option<crate::types::AudioExtractionCategoryTypeConfiguration>,
 }
 impl AudioExtractionCategory {
     /// State
@@ -19,6 +21,10 @@ impl AudioExtractionCategory {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.types.is_none()`.
     pub fn types(&self) -> &[crate::types::AudioExtractionCategoryType] {
         self.types.as_deref().unwrap_or_default()
+    }
+    /// Configuration for different audio extraction category types
+    pub fn type_configuration(&self) -> ::std::option::Option<&crate::types::AudioExtractionCategoryTypeConfiguration> {
+        self.type_configuration.as_ref()
     }
 }
 impl AudioExtractionCategory {
@@ -34,6 +40,7 @@ impl AudioExtractionCategory {
 pub struct AudioExtractionCategoryBuilder {
     pub(crate) state: ::std::option::Option<crate::types::State>,
     pub(crate) types: ::std::option::Option<::std::vec::Vec<crate::types::AudioExtractionCategoryType>>,
+    pub(crate) type_configuration: ::std::option::Option<crate::types::AudioExtractionCategoryTypeConfiguration>,
 }
 impl AudioExtractionCategoryBuilder {
     /// State
@@ -71,6 +78,20 @@ impl AudioExtractionCategoryBuilder {
     pub fn get_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AudioExtractionCategoryType>> {
         &self.types
     }
+    /// Configuration for different audio extraction category types
+    pub fn type_configuration(mut self, input: crate::types::AudioExtractionCategoryTypeConfiguration) -> Self {
+        self.type_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// Configuration for different audio extraction category types
+    pub fn set_type_configuration(mut self, input: ::std::option::Option<crate::types::AudioExtractionCategoryTypeConfiguration>) -> Self {
+        self.type_configuration = input;
+        self
+    }
+    /// Configuration for different audio extraction category types
+    pub fn get_type_configuration(&self) -> &::std::option::Option<crate::types::AudioExtractionCategoryTypeConfiguration> {
+        &self.type_configuration
+    }
     /// Consumes the builder and constructs a [`AudioExtractionCategory`](crate::types::AudioExtractionCategory).
     /// This method will fail if any of the following fields are not set:
     /// - [`state`](crate::types::builders::AudioExtractionCategoryBuilder::state)
@@ -83,6 +104,7 @@ impl AudioExtractionCategoryBuilder {
                 )
             })?,
             types: self.types,
+            type_configuration: self.type_configuration,
         })
     }
 }

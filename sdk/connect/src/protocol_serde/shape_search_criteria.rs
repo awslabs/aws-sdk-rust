@@ -3,65 +3,83 @@ pub fn ser_search_criteria(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SearchCriteria,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.agent_ids {
-        let mut array_2 = object.key("AgentIds").start_array();
-        for item_3 in var_1 {
+    if let Some(var_1) = &input.name {
+        #[allow(unused_mut)]
+        let mut object_2 = object.key("Name").start_object();
+        crate::protocol_serde::shape_name_criteria::ser_name_criteria(&mut object_2, var_1)?;
+        object_2.finish();
+    }
+    if let Some(var_3) = &input.agent_ids {
+        let mut array_4 = object.key("AgentIds").start_array();
+        for item_5 in var_3 {
             {
-                array_2.value().string(item_3.as_str());
+                array_4.value().string(item_5.as_str());
             }
         }
-        array_2.finish();
+        array_4.finish();
     }
-    if let Some(var_4) = &input.agent_hierarchy_groups {
+    if let Some(var_6) = &input.agent_hierarchy_groups {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("AgentHierarchyGroups").start_object();
-        crate::protocol_serde::shape_agent_hierarchy_groups::ser_agent_hierarchy_groups(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_7 = object.key("AgentHierarchyGroups").start_object();
+        crate::protocol_serde::shape_agent_hierarchy_groups::ser_agent_hierarchy_groups(&mut object_7, var_6)?;
+        object_7.finish();
     }
-    if let Some(var_6) = &input.channels {
-        let mut array_7 = object.key("Channels").start_array();
-        for item_8 in var_6 {
+    if let Some(var_8) = &input.channels {
+        let mut array_9 = object.key("Channels").start_array();
+        for item_10 in var_8 {
             {
-                array_7.value().string(item_8.as_str());
+                array_9.value().string(item_10.as_str());
             }
         }
-        array_7.finish();
+        array_9.finish();
     }
-    if let Some(var_9) = &input.contact_analysis {
+    if let Some(var_11) = &input.contact_analysis {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("ContactAnalysis").start_object();
-        crate::protocol_serde::shape_contact_analysis::ser_contact_analysis(&mut object_10, var_9)?;
-        object_10.finish();
+        let mut object_12 = object.key("ContactAnalysis").start_object();
+        crate::protocol_serde::shape_contact_analysis::ser_contact_analysis(&mut object_12, var_11)?;
+        object_12.finish();
     }
-    if let Some(var_11) = &input.initiation_methods {
-        let mut array_12 = object.key("InitiationMethods").start_array();
-        for item_13 in var_11 {
+    if let Some(var_13) = &input.initiation_methods {
+        let mut array_14 = object.key("InitiationMethods").start_array();
+        for item_15 in var_13 {
             {
-                array_12.value().string(item_13.as_str());
+                array_14.value().string(item_15.as_str());
             }
         }
-        array_12.finish();
+        array_14.finish();
     }
-    if let Some(var_14) = &input.queue_ids {
-        let mut array_15 = object.key("QueueIds").start_array();
-        for item_16 in var_14 {
+    if let Some(var_16) = &input.queue_ids {
+        let mut array_17 = object.key("QueueIds").start_array();
+        for item_18 in var_16 {
             {
-                array_15.value().string(item_16.as_str());
+                array_17.value().string(item_18.as_str());
             }
         }
-        array_15.finish();
+        array_17.finish();
     }
-    if let Some(var_17) = &input.searchable_contact_attributes {
+    if let Some(var_19) = &input.routing_criteria {
         #[allow(unused_mut)]
-        let mut object_18 = object.key("SearchableContactAttributes").start_object();
-        crate::protocol_serde::shape_searchable_contact_attributes::ser_searchable_contact_attributes(&mut object_18, var_17)?;
-        object_18.finish();
-    }
-    if let Some(var_19) = &input.searchable_segment_attributes {
-        #[allow(unused_mut)]
-        let mut object_20 = object.key("SearchableSegmentAttributes").start_object();
-        crate::protocol_serde::shape_searchable_segment_attributes::ser_searchable_segment_attributes(&mut object_20, var_19)?;
+        let mut object_20 = object.key("RoutingCriteria").start_object();
+        crate::protocol_serde::shape_searchable_routing_criteria::ser_searchable_routing_criteria(&mut object_20, var_19)?;
         object_20.finish();
+    }
+    if let Some(var_21) = &input.additional_time_range {
+        #[allow(unused_mut)]
+        let mut object_22 = object.key("AdditionalTimeRange").start_object();
+        crate::protocol_serde::shape_search_contacts_additional_time_range::ser_search_contacts_additional_time_range(&mut object_22, var_21)?;
+        object_22.finish();
+    }
+    if let Some(var_23) = &input.searchable_contact_attributes {
+        #[allow(unused_mut)]
+        let mut object_24 = object.key("SearchableContactAttributes").start_object();
+        crate::protocol_serde::shape_searchable_contact_attributes::ser_searchable_contact_attributes(&mut object_24, var_23)?;
+        object_24.finish();
+    }
+    if let Some(var_25) = &input.searchable_segment_attributes {
+        #[allow(unused_mut)]
+        let mut object_26 = object.key("SearchableSegmentAttributes").start_object();
+        crate::protocol_serde::shape_searchable_segment_attributes::ser_searchable_segment_attributes(&mut object_26, var_25)?;
+        object_26.finish();
     }
     Ok(())
 }

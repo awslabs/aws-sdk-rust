@@ -193,6 +193,8 @@ pub(crate) mod shape_video_bounding_box;
 
 pub(crate) mod shape_video_extraction_category;
 
+pub(crate) mod shape_audio_extraction_category_type_configuration;
+
 pub(crate) mod shape_audio_standard_generative_field_types;
 
 pub(crate) mod shape_image_standard_generative_field_types;
@@ -207,4 +209,10 @@ pub(crate) mod shape_document_output_text_format_types;
 
 pub(crate) mod shape_image_extraction_category_types;
 
+pub(crate) mod shape_transcript_configuration;
+
 pub(crate) mod shape_video_extraction_category_types;
+
+pub(crate) mod shape_channel_labeling_configuration;
+
+pub(crate) mod shape_speaker_labeling_configuration;

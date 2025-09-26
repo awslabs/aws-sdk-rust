@@ -497,6 +497,10 @@ pub use crate::types::_flow_trace_event::FlowTraceEvent;
 
 pub use crate::types::_flow_trace::FlowTrace;
 
+pub use crate::types::_flow_trace_dependency_event::FlowTraceDependencyEvent;
+
+pub use crate::types::_trace_elements::TraceElements;
+
 pub use crate::types::_flow_trace_node_action_event::FlowTraceNodeActionEvent;
 
 pub use crate::types::_flow_trace_condition_node_result_event::FlowTraceConditionNodeResultEvent;
@@ -507,11 +511,23 @@ pub use crate::types::_flow_trace_node_output_event::FlowTraceNodeOutputEvent;
 
 pub use crate::types::_flow_trace_node_output_field::FlowTraceNodeOutputField;
 
+pub use crate::types::_flow_node_io_data_type::FlowNodeIoDataType;
+
+pub use crate::types::_flow_trace_node_output_next::FlowTraceNodeOutputNext;
+
 pub use crate::types::_flow_trace_node_output_content::FlowTraceNodeOutputContent;
 
 pub use crate::types::_flow_trace_node_input_event::FlowTraceNodeInputEvent;
 
 pub use crate::types::_flow_trace_node_input_field::FlowTraceNodeInputField;
+
+pub use crate::types::_flow_trace_node_input_execution_chain_item::FlowTraceNodeInputExecutionChainItem;
+
+pub use crate::types::_flow_control_node_type::FlowControlNodeType;
+
+pub use crate::types::_flow_node_input_category::FlowNodeInputCategory;
+
+pub use crate::types::_flow_trace_node_input_source::FlowTraceNodeInputSource;
 
 pub use crate::types::_flow_trace_node_input_content::FlowTraceNodeInputContent;
 
@@ -535,6 +551,12 @@ pub use crate::types::_flow_execution_summary::FlowExecutionSummary;
 
 pub use crate::types::_flow_execution_event::FlowExecutionEvent;
 
+pub use crate::types::_node_dependency_event::NodeDependencyEvent;
+
+pub use crate::types::_node_trace_elements::NodeTraceElements;
+
+pub use crate::types::_node_action_event::NodeActionEvent;
+
 pub use crate::types::_flow_failure_event::FlowFailureEvent;
 
 pub use crate::types::_flow_error_code::FlowErrorCode;
@@ -551,11 +573,17 @@ pub use crate::types::_node_output_event::NodeOutputEvent;
 
 pub use crate::types::_node_output_field::NodeOutputField;
 
+pub use crate::types::_node_output_next::NodeOutputNext;
+
 pub use crate::types::_node_execution_content::NodeExecutionContent;
 
 pub use crate::types::_node_input_event::NodeInputEvent;
 
 pub use crate::types::_node_input_field::NodeInputField;
+
+pub use crate::types::_node_input_execution_chain_item::NodeInputExecutionChainItem;
+
+pub use crate::types::_node_input_source::NodeInputSource;
 
 pub use crate::types::_flow_execution_output_event::FlowExecutionOutputEvent;
 
@@ -689,6 +717,8 @@ mod _flow_completion_event;
 
 mod _flow_completion_reason;
 
+mod _flow_control_node_type;
+
 mod _flow_error_code;
 
 mod _flow_execution_content;
@@ -721,6 +751,10 @@ mod _flow_multi_turn_input_content;
 
 mod _flow_multi_turn_input_request_event;
 
+mod _flow_node_input_category;
+
+mod _flow_node_io_data_type;
+
 mod _flow_output_content;
 
 mod _flow_output_event;
@@ -735,6 +769,8 @@ mod _flow_trace_condition;
 
 mod _flow_trace_condition_node_result_event;
 
+mod _flow_trace_dependency_event;
+
 mod _flow_trace_event;
 
 mod _flow_trace_node_action_event;
@@ -743,13 +779,19 @@ mod _flow_trace_node_input_content;
 
 mod _flow_trace_node_input_event;
 
+mod _flow_trace_node_input_execution_chain_item;
+
 mod _flow_trace_node_input_field;
+
+mod _flow_trace_node_input_source;
 
 mod _flow_trace_node_output_content;
 
 mod _flow_trace_node_output_event;
 
 mod _flow_trace_node_output_field;
+
+mod _flow_trace_node_output_next;
 
 mod _function_definition;
 
@@ -911,6 +953,10 @@ mod _model_invocation_input;
 
 mod _model_performance_configuration;
 
+mod _node_action_event;
+
+mod _node_dependency_event;
+
 mod _node_error_code;
 
 mod _node_execution_content;
@@ -919,11 +965,19 @@ mod _node_failure_event;
 
 mod _node_input_event;
 
+mod _node_input_execution_chain_item;
+
 mod _node_input_field;
+
+mod _node_input_source;
 
 mod _node_output_event;
 
 mod _node_output_field;
+
+mod _node_output_next;
+
+mod _node_trace_elements;
 
 mod _node_type;
 
@@ -1130,6 +1184,8 @@ mod _text_to_sql_configuration_type;
 mod _text_to_sql_knowledge_base_configuration;
 
 mod _trace;
+
+mod _trace_elements;
 
 mod _trace_part;
 

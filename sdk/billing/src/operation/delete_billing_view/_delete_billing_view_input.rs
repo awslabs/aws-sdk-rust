@@ -5,11 +5,17 @@
 pub struct DeleteBillingViewInput {
     /// <p>The Amazon Resource Name (ARN) that can be used to uniquely identify the billing view.</p>
     pub arn: ::std::option::Option<::std::string::String>,
+    /// <p>If set to true, forces deletion of the billing view even if it has derived resources (e.g. other billing views or budgets). Use with caution as this may break dependent resources.</p>
+    pub force: ::std::option::Option<bool>,
 }
 impl DeleteBillingViewInput {
     /// <p>The Amazon Resource Name (ARN) that can be used to uniquely identify the billing view.</p>
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
+    }
+    /// <p>If set to true, forces deletion of the billing view even if it has derived resources (e.g. other billing views or budgets). Use with caution as this may break dependent resources.</p>
+    pub fn force(&self) -> ::std::option::Option<bool> {
+        self.force
     }
 }
 impl DeleteBillingViewInput {
@@ -24,6 +30,7 @@ impl DeleteBillingViewInput {
 #[non_exhaustive]
 pub struct DeleteBillingViewInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) force: ::std::option::Option<bool>,
 }
 impl DeleteBillingViewInputBuilder {
     /// <p>The Amazon Resource Name (ARN) that can be used to uniquely identify the billing view.</p>
@@ -41,10 +48,27 @@ impl DeleteBillingViewInputBuilder {
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
+    /// <p>If set to true, forces deletion of the billing view even if it has derived resources (e.g. other billing views or budgets). Use with caution as this may break dependent resources.</p>
+    pub fn force(mut self, input: bool) -> Self {
+        self.force = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>If set to true, forces deletion of the billing view even if it has derived resources (e.g. other billing views or budgets). Use with caution as this may break dependent resources.</p>
+    pub fn set_force(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.force = input;
+        self
+    }
+    /// <p>If set to true, forces deletion of the billing view even if it has derived resources (e.g. other billing views or budgets). Use with caution as this may break dependent resources.</p>
+    pub fn get_force(&self) -> &::std::option::Option<bool> {
+        &self.force
+    }
     /// Consumes the builder and constructs a [`DeleteBillingViewInput`](crate::operation::delete_billing_view::DeleteBillingViewInput).
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::delete_billing_view::DeleteBillingViewInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_billing_view::DeleteBillingViewInput { arn: self.arn })
+        ::std::result::Result::Ok(crate::operation::delete_billing_view::DeleteBillingViewInput {
+            arn: self.arn,
+            force: self.force,
+        })
     }
 }

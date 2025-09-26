@@ -14,12 +14,22 @@ pub struct BillingViewElement {
     pub billing_view_type: ::std::option::Option<crate::types::BillingViewType>,
     /// <p>The account owner of the billing view.</p>
     pub owner_account_id: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Web Services account ID that owns the source billing view, if this is a derived billing view.</p>
+    pub source_account_id: ::std::option::Option<::std::string::String>,
     /// <p>See <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_billing_Expression.html">Expression</a>. Billing view only supports <code>LINKED_ACCOUNT</code> and <code>Tags</code>.</p>
     pub data_filter_expression: ::std::option::Option<crate::types::Expression>,
     /// <p>The time when the billing view was created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time when the billing view was last updated.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The number of billing views that use this billing view as a source.</p>
+    pub derived_view_count: ::std::option::Option<i32>,
+    /// <p>The number of source views associated with this billing view.</p>
+    pub source_view_count: ::std::option::Option<i32>,
+    /// <p>The timestamp of when the billing view definition was last updated.</p>
+    pub view_definition_last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The current health status of the billing view.</p>
+    pub health_status: ::std::option::Option<crate::types::BillingViewHealthStatus>,
 }
 impl BillingViewElement {
     /// <p>The Amazon Resource Name (ARN) that can be used to uniquely identify the billing view.</p>
@@ -42,6 +52,10 @@ impl BillingViewElement {
     pub fn owner_account_id(&self) -> ::std::option::Option<&str> {
         self.owner_account_id.as_deref()
     }
+    /// <p>The Amazon Web Services account ID that owns the source billing view, if this is a derived billing view.</p>
+    pub fn source_account_id(&self) -> ::std::option::Option<&str> {
+        self.source_account_id.as_deref()
+    }
     /// <p>See <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_billing_Expression.html">Expression</a>. Billing view only supports <code>LINKED_ACCOUNT</code> and <code>Tags</code>.</p>
     pub fn data_filter_expression(&self) -> ::std::option::Option<&crate::types::Expression> {
         self.data_filter_expression.as_ref()
@@ -54,6 +68,22 @@ impl BillingViewElement {
     pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
+    /// <p>The number of billing views that use this billing view as a source.</p>
+    pub fn derived_view_count(&self) -> ::std::option::Option<i32> {
+        self.derived_view_count
+    }
+    /// <p>The number of source views associated with this billing view.</p>
+    pub fn source_view_count(&self) -> ::std::option::Option<i32> {
+        self.source_view_count
+    }
+    /// <p>The timestamp of when the billing view definition was last updated.</p>
+    pub fn view_definition_last_updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.view_definition_last_updated_at.as_ref()
+    }
+    /// <p>The current health status of the billing view.</p>
+    pub fn health_status(&self) -> ::std::option::Option<&crate::types::BillingViewHealthStatus> {
+        self.health_status.as_ref()
+    }
 }
 impl ::std::fmt::Debug for BillingViewElement {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -63,9 +93,14 @@ impl ::std::fmt::Debug for BillingViewElement {
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("billing_view_type", &self.billing_view_type);
         formatter.field("owner_account_id", &self.owner_account_id);
+        formatter.field("source_account_id", &self.source_account_id);
         formatter.field("data_filter_expression", &self.data_filter_expression);
         formatter.field("created_at", &self.created_at);
         formatter.field("updated_at", &self.updated_at);
+        formatter.field("derived_view_count", &self.derived_view_count);
+        formatter.field("source_view_count", &self.source_view_count);
+        formatter.field("view_definition_last_updated_at", &self.view_definition_last_updated_at);
+        formatter.field("health_status", &self.health_status);
         formatter.finish()
     }
 }
@@ -85,9 +120,14 @@ pub struct BillingViewElementBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) billing_view_type: ::std::option::Option<crate::types::BillingViewType>,
     pub(crate) owner_account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) source_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) data_filter_expression: ::std::option::Option<crate::types::Expression>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) derived_view_count: ::std::option::Option<i32>,
+    pub(crate) source_view_count: ::std::option::Option<i32>,
+    pub(crate) view_definition_last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) health_status: ::std::option::Option<crate::types::BillingViewHealthStatus>,
 }
 impl BillingViewElementBuilder {
     /// <p>The Amazon Resource Name (ARN) that can be used to uniquely identify the billing view.</p>
@@ -160,6 +200,20 @@ impl BillingViewElementBuilder {
     pub fn get_owner_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.owner_account_id
     }
+    /// <p>The Amazon Web Services account ID that owns the source billing view, if this is a derived billing view.</p>
+    pub fn source_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.source_account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Web Services account ID that owns the source billing view, if this is a derived billing view.</p>
+    pub fn set_source_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.source_account_id = input;
+        self
+    }
+    /// <p>The Amazon Web Services account ID that owns the source billing view, if this is a derived billing view.</p>
+    pub fn get_source_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_account_id
+    }
     /// <p>See <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_billing_Expression.html">Expression</a>. Billing view only supports <code>LINKED_ACCOUNT</code> and <code>Tags</code>.</p>
     pub fn data_filter_expression(mut self, input: crate::types::Expression) -> Self {
         self.data_filter_expression = ::std::option::Option::Some(input);
@@ -202,6 +256,62 @@ impl BillingViewElementBuilder {
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_at
     }
+    /// <p>The number of billing views that use this billing view as a source.</p>
+    pub fn derived_view_count(mut self, input: i32) -> Self {
+        self.derived_view_count = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of billing views that use this billing view as a source.</p>
+    pub fn set_derived_view_count(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.derived_view_count = input;
+        self
+    }
+    /// <p>The number of billing views that use this billing view as a source.</p>
+    pub fn get_derived_view_count(&self) -> &::std::option::Option<i32> {
+        &self.derived_view_count
+    }
+    /// <p>The number of source views associated with this billing view.</p>
+    pub fn source_view_count(mut self, input: i32) -> Self {
+        self.source_view_count = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of source views associated with this billing view.</p>
+    pub fn set_source_view_count(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.source_view_count = input;
+        self
+    }
+    /// <p>The number of source views associated with this billing view.</p>
+    pub fn get_source_view_count(&self) -> &::std::option::Option<i32> {
+        &self.source_view_count
+    }
+    /// <p>The timestamp of when the billing view definition was last updated.</p>
+    pub fn view_definition_last_updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.view_definition_last_updated_at = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The timestamp of when the billing view definition was last updated.</p>
+    pub fn set_view_definition_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.view_definition_last_updated_at = input;
+        self
+    }
+    /// <p>The timestamp of when the billing view definition was last updated.</p>
+    pub fn get_view_definition_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.view_definition_last_updated_at
+    }
+    /// <p>The current health status of the billing view.</p>
+    pub fn health_status(mut self, input: crate::types::BillingViewHealthStatus) -> Self {
+        self.health_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The current health status of the billing view.</p>
+    pub fn set_health_status(mut self, input: ::std::option::Option<crate::types::BillingViewHealthStatus>) -> Self {
+        self.health_status = input;
+        self
+    }
+    /// <p>The current health status of the billing view.</p>
+    pub fn get_health_status(&self) -> &::std::option::Option<crate::types::BillingViewHealthStatus> {
+        &self.health_status
+    }
     /// Consumes the builder and constructs a [`BillingViewElement`](crate::types::BillingViewElement).
     pub fn build(self) -> crate::types::BillingViewElement {
         crate::types::BillingViewElement {
@@ -210,9 +320,14 @@ impl BillingViewElementBuilder {
             description: self.description,
             billing_view_type: self.billing_view_type,
             owner_account_id: self.owner_account_id,
+            source_account_id: self.source_account_id,
             data_filter_expression: self.data_filter_expression,
             created_at: self.created_at,
             updated_at: self.updated_at,
+            derived_view_count: self.derived_view_count,
+            source_view_count: self.source_view_count,
+            view_definition_last_updated_at: self.view_definition_last_updated_at,
+            health_status: self.health_status,
         }
     }
 }
@@ -224,9 +339,14 @@ impl ::std::fmt::Debug for BillingViewElementBuilder {
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("billing_view_type", &self.billing_view_type);
         formatter.field("owner_account_id", &self.owner_account_id);
+        formatter.field("source_account_id", &self.source_account_id);
         formatter.field("data_filter_expression", &self.data_filter_expression);
         formatter.field("created_at", &self.created_at);
         formatter.field("updated_at", &self.updated_at);
+        formatter.field("derived_view_count", &self.derived_view_count);
+        formatter.field("source_view_count", &self.source_view_count);
+        formatter.field("view_definition_last_updated_at", &self.view_definition_last_updated_at);
+        formatter.field("health_status", &self.health_status);
         formatter.finish()
     }
 }

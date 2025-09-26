@@ -3,6 +3,8 @@ pub use crate::types::_validation_exception_field::ValidationExceptionFieldBuild
 
 pub use crate::types::_expression::ExpressionBuilder;
 
+pub use crate::types::_time_range::TimeRangeBuilder;
+
 pub use crate::types::_tag_values::TagValuesBuilder;
 
 pub use crate::types::_dimension_values::DimensionValuesBuilder;
@@ -10,6 +12,8 @@ pub use crate::types::_dimension_values::DimensionValuesBuilder;
 pub use crate::types::_resource_tag::ResourceTagBuilder;
 
 pub use crate::types::_billing_view_list_element::BillingViewListElementBuilder;
+
+pub use crate::types::_billing_view_health_status::BillingViewHealthStatusBuilder;
 
 pub use crate::types::_active_time_range::ActiveTimeRangeBuilder;
 

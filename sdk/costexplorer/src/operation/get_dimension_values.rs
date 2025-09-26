@@ -262,6 +262,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetDimensionV
 pub enum GetDimensionValuesError {
     /// <p>The requested report expired. Update the date interval and try again.</p>
     BillExpirationException(crate::types::error::BillExpirationException),
+    /// <p>The billing view status must be <code>HEALTHY</code> to perform this action. Try again when the status is <code>HEALTHY</code>.</p>
+    BillingViewHealthStatusException(crate::types::error::BillingViewHealthStatusException),
     /// <p>The requested data is unavailable.</p>
     DataUnavailableException(crate::types::error::DataUnavailableException),
     /// <p>The pagination token is invalid. Try again without a pagination token.</p>
@@ -306,6 +308,7 @@ impl GetDimensionValuesError {
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::BillExpirationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::BillingViewHealthStatusException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::DataUnavailableException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidNextTokenException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::LimitExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -317,6 +320,10 @@ impl GetDimensionValuesError {
     /// Returns `true` if the error kind is `GetDimensionValuesError::BillExpirationException`.
     pub fn is_bill_expiration_exception(&self) -> bool {
         matches!(self, Self::BillExpirationException(_))
+    }
+    /// Returns `true` if the error kind is `GetDimensionValuesError::BillingViewHealthStatusException`.
+    pub fn is_billing_view_health_status_exception(&self) -> bool {
+        matches!(self, Self::BillingViewHealthStatusException(_))
     }
     /// Returns `true` if the error kind is `GetDimensionValuesError::DataUnavailableException`.
     pub fn is_data_unavailable_exception(&self) -> bool {
@@ -343,6 +350,7 @@ impl ::std::error::Error for GetDimensionValuesError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::BillExpirationException(_inner) => ::std::option::Option::Some(_inner),
+            Self::BillingViewHealthStatusException(_inner) => ::std::option::Option::Some(_inner),
             Self::DataUnavailableException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidNextTokenException(_inner) => ::std::option::Option::Some(_inner),
             Self::LimitExceededException(_inner) => ::std::option::Option::Some(_inner),
@@ -356,6 +364,7 @@ impl ::std::fmt::Display for GetDimensionValuesError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             Self::BillExpirationException(_inner) => _inner.fmt(f),
+            Self::BillingViewHealthStatusException(_inner) => _inner.fmt(f),
             Self::DataUnavailableException(_inner) => _inner.fmt(f),
             Self::InvalidNextTokenException(_inner) => _inner.fmt(f),
             Self::LimitExceededException(_inner) => _inner.fmt(f),
@@ -383,6 +392,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for GetDimensionV
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::BillExpirationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::BillingViewHealthStatusException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DataUnavailableException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidNextTokenException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::LimitExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

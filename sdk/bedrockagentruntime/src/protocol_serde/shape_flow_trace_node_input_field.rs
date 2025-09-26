@@ -25,6 +25,29 @@ where
                             builder = builder
                                 .set_content(crate::protocol_serde::shape_flow_trace_node_input_content::de_flow_trace_node_input_content(tokens)?);
                         }
+                        "source" => {
+                            builder = builder
+                                .set_source(crate::protocol_serde::shape_flow_trace_node_input_source::de_flow_trace_node_input_source(tokens)?);
+                        }
+                        "type" => {
+                            builder = builder.set_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::FlowNodeIoDataType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "category" => {
+                            builder = builder.set_category(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::FlowNodeInputCategory::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "executionChain" => {
+                            builder = builder.set_execution_chain(
+                                crate::protocol_serde::shape_flow_trace_node_input_execution_chain::de_flow_trace_node_input_execution_chain(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

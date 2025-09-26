@@ -31,6 +31,8 @@ pub(crate) mod shape_associate_approved_origin;
 
 pub(crate) mod shape_associate_bot;
 
+pub(crate) mod shape_associate_contact_with_user;
+
 pub(crate) mod shape_associate_default_vocabulary;
 
 pub(crate) mod shape_associate_flow;
@@ -355,6 +357,8 @@ pub(crate) mod shape_list_quick_connects;
 
 pub(crate) mod shape_list_realtime_contact_analysis_segments_v2;
 
+pub(crate) mod shape_list_routing_profile_manual_assignment_queues;
+
 pub(crate) mod shape_list_routing_profile_queues;
 
 pub(crate) mod shape_list_routing_profiles;
@@ -606,6 +610,8 @@ pub(crate) mod shape_associate_analytics_data_set_input;
 pub(crate) mod shape_associate_approved_origin_input;
 
 pub(crate) mod shape_associate_bot_input;
+
+pub(crate) mod shape_associate_contact_with_user_input;
 
 pub(crate) mod shape_associate_default_vocabulary_input;
 
@@ -1281,6 +1287,10 @@ pub(crate) mod shape_routing_profile;
 
 pub(crate) mod shape_routing_profile_list;
 
+pub(crate) mod shape_routing_profile_manual_assignment_queue_config;
+
+pub(crate) mod shape_routing_profile_manual_assignment_queue_config_summary_list;
+
 pub(crate) mod shape_routing_profile_queue_config;
 
 pub(crate) mod shape_routing_profile_queue_config_summary_list;
@@ -1581,6 +1591,8 @@ pub(crate) mod shape_metric_filter_v2;
 
 pub(crate) mod shape_metric_result_v2;
 
+pub(crate) mod shape_name_criteria;
+
 pub(crate) mod shape_outbound_raw_message;
 
 pub(crate) mod shape_override_time_slice;
@@ -1635,6 +1647,8 @@ pub(crate) mod shape_routing_criteria;
 
 pub(crate) mod shape_routing_criteria_input_step;
 
+pub(crate) mod shape_routing_profile_manual_assignment_queue_config_summary;
+
 pub(crate) mod shape_routing_profile_queue_config_summary;
 
 pub(crate) mod shape_routing_profile_summary;
@@ -1645,7 +1659,11 @@ pub(crate) mod shape_rule_summary;
 
 pub(crate) mod shape_s3_config;
 
+pub(crate) mod shape_search_contacts_additional_time_range;
+
 pub(crate) mod shape_searchable_contact_attributes;
+
+pub(crate) mod shape_searchable_routing_criteria;
 
 pub(crate) mod shape_searchable_segment_attributes;
 
@@ -1831,7 +1849,11 @@ pub(crate) mod shape_routing_criteria_input_step_expiry;
 
 pub(crate) mod shape_routing_profile_reference;
 
+pub(crate) mod shape_search_contacts_additional_time_range_criteria;
+
 pub(crate) mod shape_searchable_contact_attributes_criteria;
+
+pub(crate) mod shape_searchable_routing_criteria_step;
 
 pub(crate) mod shape_searchable_segment_attributes_criteria;
 
@@ -1906,6 +1928,10 @@ pub(crate) mod shape_real_time_contact_analysis_matched_details;
 pub(crate) mod shape_real_time_contact_analysis_time_data;
 
 pub(crate) mod shape_real_time_contact_analysis_transcript_item_redaction;
+
+pub(crate) mod shape_search_contacts_timestamp_condition;
+
+pub(crate) mod shape_searchable_agent_criteria_step;
 
 pub(crate) mod shape_segment_attribute_value_list;
 

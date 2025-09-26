@@ -122,4 +122,18 @@ impl DeleteBillingViewFluentBuilder {
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_arn()
     }
+    /// <p>If set to true, forces deletion of the billing view even if it has derived resources (e.g. other billing views or budgets). Use with caution as this may break dependent resources.</p>
+    pub fn force(mut self, input: bool) -> Self {
+        self.inner = self.inner.force(input);
+        self
+    }
+    /// <p>If set to true, forces deletion of the billing view even if it has derived resources (e.g. other billing views or budgets). Use with caution as this may break dependent resources.</p>
+    pub fn set_force(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_force(input);
+        self
+    }
+    /// <p>If set to true, forces deletion of the billing view even if it has derived resources (e.g. other billing views or budgets). Use with caution as this may break dependent resources.</p>
+    pub fn get_force(&self) -> &::std::option::Option<bool> {
+        self.inner.get_force()
+    }
 }

@@ -90,6 +90,16 @@ where
                                     crate::protocol_serde::shape_contact_search_summary_segment_attributes::de_contact_search_summary_segment_attributes(tokens)?
                                 );
                             }
+                            "Name" => {
+                                builder = builder.set_name(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "RoutingCriteria" => {
+                                builder = builder.set_routing_criteria(crate::protocol_serde::shape_routing_criteria::de_routing_criteria(tokens)?);
+                            }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

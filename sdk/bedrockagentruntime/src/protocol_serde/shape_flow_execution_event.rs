@@ -64,6 +64,16 @@ where
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'flowFailureEvent' cannot be null")
                             })?,
                         )),
+                        "nodeActionEvent" => Some(crate::types::FlowExecutionEvent::NodeActionEvent(
+                            crate::protocol_serde::shape_node_action_event::de_node_action_event(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'nodeActionEvent' cannot be null")
+                            })?,
+                        )),
+                        "nodeDependencyEvent" => Some(crate::types::FlowExecutionEvent::NodeDependencyEvent(
+                            crate::protocol_serde::shape_node_dependency_event::de_node_dependency_event(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'nodeDependencyEvent' cannot be null")
+                            })?,
+                        )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
                             Some(crate::types::FlowExecutionEvent::Unknown)

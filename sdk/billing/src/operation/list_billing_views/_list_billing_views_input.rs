@@ -11,6 +11,8 @@ pub struct ListBillingViewsInput {
     pub billing_view_types: ::std::option::Option<::std::vec::Vec<crate::types::BillingViewType>>,
     /// <p>The list of owners of the billing view.</p>
     pub owner_account_id: ::std::option::Option<::std::string::String>,
+    /// <p>Filters the results to include only billing views that use the specified account as a source.</p>
+    pub source_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of billing views to retrieve. Default is 100.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The pagination token that is used on subsequent calls to list billing views.</p>
@@ -37,6 +39,10 @@ impl ListBillingViewsInput {
     pub fn owner_account_id(&self) -> ::std::option::Option<&str> {
         self.owner_account_id.as_deref()
     }
+    /// <p>Filters the results to include only billing views that use the specified account as a source.</p>
+    pub fn source_account_id(&self) -> ::std::option::Option<&str> {
+        self.source_account_id.as_deref()
+    }
     /// <p>The maximum number of billing views to retrieve. Default is 100.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
@@ -61,6 +67,7 @@ pub struct ListBillingViewsInputBuilder {
     pub(crate) arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) billing_view_types: ::std::option::Option<::std::vec::Vec<crate::types::BillingViewType>>,
     pub(crate) owner_account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) source_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -133,6 +140,20 @@ impl ListBillingViewsInputBuilder {
     pub fn get_owner_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.owner_account_id
     }
+    /// <p>Filters the results to include only billing views that use the specified account as a source.</p>
+    pub fn source_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.source_account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Filters the results to include only billing views that use the specified account as a source.</p>
+    pub fn set_source_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.source_account_id = input;
+        self
+    }
+    /// <p>Filters the results to include only billing views that use the specified account as a source.</p>
+    pub fn get_source_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_account_id
+    }
     /// <p>The maximum number of billing views to retrieve. Default is 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -170,6 +191,7 @@ impl ListBillingViewsInputBuilder {
             arns: self.arns,
             billing_view_types: self.billing_view_types,
             owner_account_id: self.owner_account_id,
+            source_account_id: self.source_account_id,
             max_results: self.max_results,
             next_token: self.next_token,
         })

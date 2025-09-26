@@ -12,8 +12,12 @@ pub struct BillingViewListElement {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The list of owners of the Billing view.</p>
     pub owner_account_id: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Web Services account ID that owns the source billing view, if this is a derived billing view.</p>
+    pub source_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of billing view.</p>
     pub billing_view_type: ::std::option::Option<crate::types::BillingViewType>,
+    /// <p>The current health status of the billing view.</p>
+    pub health_status: ::std::option::Option<crate::types::BillingViewHealthStatus>,
 }
 impl BillingViewListElement {
     /// <p>The Amazon Resource Name (ARN) that can be used to uniquely identify the billing view.</p>
@@ -32,9 +36,17 @@ impl BillingViewListElement {
     pub fn owner_account_id(&self) -> ::std::option::Option<&str> {
         self.owner_account_id.as_deref()
     }
+    /// <p>The Amazon Web Services account ID that owns the source billing view, if this is a derived billing view.</p>
+    pub fn source_account_id(&self) -> ::std::option::Option<&str> {
+        self.source_account_id.as_deref()
+    }
     /// <p>The type of billing view.</p>
     pub fn billing_view_type(&self) -> ::std::option::Option<&crate::types::BillingViewType> {
         self.billing_view_type.as_ref()
+    }
+    /// <p>The current health status of the billing view.</p>
+    pub fn health_status(&self) -> ::std::option::Option<&crate::types::BillingViewHealthStatus> {
+        self.health_status.as_ref()
     }
 }
 impl ::std::fmt::Debug for BillingViewListElement {
@@ -44,7 +56,9 @@ impl ::std::fmt::Debug for BillingViewListElement {
         formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("owner_account_id", &self.owner_account_id);
+        formatter.field("source_account_id", &self.source_account_id);
         formatter.field("billing_view_type", &self.billing_view_type);
+        formatter.field("health_status", &self.health_status);
         formatter.finish()
     }
 }
@@ -63,7 +77,9 @@ pub struct BillingViewListElementBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) owner_account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) source_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) billing_view_type: ::std::option::Option<crate::types::BillingViewType>,
+    pub(crate) health_status: ::std::option::Option<crate::types::BillingViewHealthStatus>,
 }
 impl BillingViewListElementBuilder {
     /// <p>The Amazon Resource Name (ARN) that can be used to uniquely identify the billing view.</p>
@@ -122,6 +138,20 @@ impl BillingViewListElementBuilder {
     pub fn get_owner_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.owner_account_id
     }
+    /// <p>The Amazon Web Services account ID that owns the source billing view, if this is a derived billing view.</p>
+    pub fn source_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.source_account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Web Services account ID that owns the source billing view, if this is a derived billing view.</p>
+    pub fn set_source_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.source_account_id = input;
+        self
+    }
+    /// <p>The Amazon Web Services account ID that owns the source billing view, if this is a derived billing view.</p>
+    pub fn get_source_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_account_id
+    }
     /// <p>The type of billing view.</p>
     pub fn billing_view_type(mut self, input: crate::types::BillingViewType) -> Self {
         self.billing_view_type = ::std::option::Option::Some(input);
@@ -136,6 +166,20 @@ impl BillingViewListElementBuilder {
     pub fn get_billing_view_type(&self) -> &::std::option::Option<crate::types::BillingViewType> {
         &self.billing_view_type
     }
+    /// <p>The current health status of the billing view.</p>
+    pub fn health_status(mut self, input: crate::types::BillingViewHealthStatus) -> Self {
+        self.health_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The current health status of the billing view.</p>
+    pub fn set_health_status(mut self, input: ::std::option::Option<crate::types::BillingViewHealthStatus>) -> Self {
+        self.health_status = input;
+        self
+    }
+    /// <p>The current health status of the billing view.</p>
+    pub fn get_health_status(&self) -> &::std::option::Option<crate::types::BillingViewHealthStatus> {
+        &self.health_status
+    }
     /// Consumes the builder and constructs a [`BillingViewListElement`](crate::types::BillingViewListElement).
     pub fn build(self) -> crate::types::BillingViewListElement {
         crate::types::BillingViewListElement {
@@ -143,7 +187,9 @@ impl BillingViewListElementBuilder {
             name: self.name,
             description: self.description,
             owner_account_id: self.owner_account_id,
+            source_account_id: self.source_account_id,
             billing_view_type: self.billing_view_type,
+            health_status: self.health_status,
         }
     }
 }
@@ -154,7 +200,9 @@ impl ::std::fmt::Debug for BillingViewListElementBuilder {
         formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("owner_account_id", &self.owner_account_id);
+        formatter.field("source_account_id", &self.source_account_id);
         formatter.field("billing_view_type", &self.billing_view_type);
+        formatter.field("health_status", &self.health_status);
         formatter.finish()
     }
 }

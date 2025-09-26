@@ -386,3 +386,21 @@ pub(crate) fn video_extraction_category_correct_errors(
     }
     builder
 }
+
+pub(crate) fn channel_labeling_configuration_correct_errors(
+    mut builder: crate::types::builders::ChannelLabelingConfigurationBuilder,
+) -> crate::types::builders::ChannelLabelingConfigurationBuilder {
+    if builder.state.is_none() {
+        builder.state = "no value was set".parse::<crate::types::State>().ok()
+    }
+    builder
+}
+
+pub(crate) fn speaker_labeling_configuration_correct_errors(
+    mut builder: crate::types::builders::SpeakerLabelingConfigurationBuilder,
+) -> crate::types::builders::SpeakerLabelingConfigurationBuilder {
+    if builder.state.is_none() {
+        builder.state = "no value was set".parse::<crate::types::State>().ok()
+    }
+    builder
+}

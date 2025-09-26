@@ -14,6 +14,8 @@
 /// match searchcontactsmatchtype {
 ///     SearchContactsMatchType::MatchAll => { /* ... */ },
 ///     SearchContactsMatchType::MatchAny => { /* ... */ },
+///     SearchContactsMatchType::MatchExact => { /* ... */ },
+///     SearchContactsMatchType::MatchNone => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -46,6 +48,10 @@ pub enum SearchContactsMatchType {
     MatchAll,
     #[allow(missing_docs)] // documentation missing in model
     MatchAny,
+    #[allow(missing_docs)] // documentation missing in model
+    MatchExact,
+    #[allow(missing_docs)] // documentation missing in model
+    MatchNone,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -55,6 +61,8 @@ impl ::std::convert::From<&str> for SearchContactsMatchType {
         match s {
             "MATCH_ALL" => SearchContactsMatchType::MatchAll,
             "MATCH_ANY" => SearchContactsMatchType::MatchAny,
+            "MATCH_EXACT" => SearchContactsMatchType::MatchExact,
+            "MATCH_NONE" => SearchContactsMatchType::MatchNone,
             other => SearchContactsMatchType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -72,12 +80,14 @@ impl SearchContactsMatchType {
         match self {
             SearchContactsMatchType::MatchAll => "MATCH_ALL",
             SearchContactsMatchType::MatchAny => "MATCH_ANY",
+            SearchContactsMatchType::MatchExact => "MATCH_EXACT",
+            SearchContactsMatchType::MatchNone => "MATCH_NONE",
             SearchContactsMatchType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["MATCH_ALL", "MATCH_ANY"]
+        &["MATCH_ALL", "MATCH_ANY", "MATCH_EXACT", "MATCH_NONE"]
     }
 }
 impl ::std::convert::AsRef<str> for SearchContactsMatchType {
@@ -102,6 +112,8 @@ impl ::std::fmt::Display for SearchContactsMatchType {
         match self {
             SearchContactsMatchType::MatchAll => write!(f, "MATCH_ALL"),
             SearchContactsMatchType::MatchAny => write!(f, "MATCH_ANY"),
+            SearchContactsMatchType::MatchExact => write!(f, "MATCH_EXACT"),
+            SearchContactsMatchType::MatchNone => write!(f, "MATCH_NONE"),
             SearchContactsMatchType::Unknown(value) => write!(f, "{}", value),
         }
     }

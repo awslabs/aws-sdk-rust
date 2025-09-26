@@ -10,6 +10,10 @@ pub struct NodeOutputField {
     pub name: ::std::string::String,
     /// <p>The content of the output field, which can contain text or structured data.</p>
     pub content: ::std::option::Option<crate::types::NodeExecutionContent>,
+    /// <p>The next node that receives output data from this field.</p>
+    pub next: ::std::option::Option<::std::vec::Vec<crate::types::NodeOutputNext>>,
+    /// <p>The data type of the output field for compatibility validation.</p>
+    pub r#type: ::std::option::Option<crate::types::FlowNodeIoDataType>,
 }
 impl NodeOutputField {
     /// <p>The name of the output field as defined in the node's output schema.</p>
@@ -21,12 +25,24 @@ impl NodeOutputField {
     pub fn content(&self) -> ::std::option::Option<&crate::types::NodeExecutionContent> {
         self.content.as_ref()
     }
+    /// <p>The next node that receives output data from this field.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.next.is_none()`.
+    pub fn next(&self) -> &[crate::types::NodeOutputNext] {
+        self.next.as_deref().unwrap_or_default()
+    }
+    /// <p>The data type of the output field for compatibility validation.</p>
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::FlowNodeIoDataType> {
+        self.r#type.as_ref()
+    }
 }
 impl ::std::fmt::Debug for NodeOutputField {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("NodeOutputField");
         formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("content", &"*** Sensitive Data Redacted ***");
+        formatter.field("next", &"*** Sensitive Data Redacted ***");
+        formatter.field("r#type", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -43,6 +59,8 @@ impl NodeOutputField {
 pub struct NodeOutputFieldBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) content: ::std::option::Option<crate::types::NodeExecutionContent>,
+    pub(crate) next: ::std::option::Option<::std::vec::Vec<crate::types::NodeOutputNext>>,
+    pub(crate) r#type: ::std::option::Option<crate::types::FlowNodeIoDataType>,
 }
 impl NodeOutputFieldBuilder {
     /// <p>The name of the output field as defined in the node's output schema.</p>
@@ -75,6 +93,40 @@ impl NodeOutputFieldBuilder {
     pub fn get_content(&self) -> &::std::option::Option<crate::types::NodeExecutionContent> {
         &self.content
     }
+    /// Appends an item to `next`.
+    ///
+    /// To override the contents of this collection use [`set_next`](Self::set_next).
+    ///
+    /// <p>The next node that receives output data from this field.</p>
+    pub fn next(mut self, input: crate::types::NodeOutputNext) -> Self {
+        let mut v = self.next.unwrap_or_default();
+        v.push(input);
+        self.next = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The next node that receives output data from this field.</p>
+    pub fn set_next(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NodeOutputNext>>) -> Self {
+        self.next = input;
+        self
+    }
+    /// <p>The next node that receives output data from this field.</p>
+    pub fn get_next(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NodeOutputNext>> {
+        &self.next
+    }
+    /// <p>The data type of the output field for compatibility validation.</p>
+    pub fn r#type(mut self, input: crate::types::FlowNodeIoDataType) -> Self {
+        self.r#type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The data type of the output field for compatibility validation.</p>
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::FlowNodeIoDataType>) -> Self {
+        self.r#type = input;
+        self
+    }
+    /// <p>The data type of the output field for compatibility validation.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::FlowNodeIoDataType> {
+        &self.r#type
+    }
     /// Consumes the builder and constructs a [`NodeOutputField`](crate::types::NodeOutputField).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::NodeOutputFieldBuilder::name)
@@ -87,6 +139,8 @@ impl NodeOutputFieldBuilder {
                 )
             })?,
             content: self.content,
+            next: self.next,
+            r#type: self.r#type,
         })
     }
 }
@@ -95,6 +149,8 @@ impl ::std::fmt::Debug for NodeOutputFieldBuilder {
         let mut formatter = f.debug_struct("NodeOutputFieldBuilder");
         formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("content", &"*** Sensitive Data Redacted ***");
+        formatter.field("next", &"*** Sensitive Data Redacted ***");
+        formatter.field("r#type", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

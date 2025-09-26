@@ -483,6 +483,14 @@ pub use crate::types::_email_address_search_criteria::EmailAddressSearchCriteria
 
 pub use crate::types::_contact_search_summary::ContactSearchSummary;
 
+pub use crate::types::_routing_criteria::RoutingCriteria;
+
+pub use crate::types::_step::Step;
+
+pub use crate::types::_routing_criteria_step_status::RoutingCriteriaStepStatus;
+
+pub use crate::types::_expiry::Expiry;
+
 pub use crate::types::_contact_search_summary_segment_attribute_value::ContactSearchSummarySegmentAttributeValue;
 
 pub use crate::types::_contact_search_summary_agent_info::ContactSearchSummaryAgentInfo;
@@ -509,6 +517,24 @@ pub use crate::types::_searchable_contact_attributes::SearchableContactAttribute
 
 pub use crate::types::_searchable_contact_attributes_criteria::SearchableContactAttributesCriteria;
 
+pub use crate::types::_search_contacts_additional_time_range::SearchContactsAdditionalTimeRange;
+
+pub use crate::types::_search_contacts_additional_time_range_criteria::SearchContactsAdditionalTimeRangeCriteria;
+
+pub use crate::types::_search_contacts_timestamp_condition::SearchContactsTimestampCondition;
+
+pub use crate::types::_search_contacts_time_range_condition_type::SearchContactsTimeRangeConditionType;
+
+pub use crate::types::_search_contacts_time_range_type::SearchContactsTimeRangeType;
+
+pub use crate::types::_search_contacts_time_range::SearchContactsTimeRange;
+
+pub use crate::types::_searchable_routing_criteria::SearchableRoutingCriteria;
+
+pub use crate::types::_searchable_routing_criteria_step::SearchableRoutingCriteriaStep;
+
+pub use crate::types::_searchable_agent_criteria_step::SearchableAgentCriteriaStep;
+
 pub use crate::types::_contact_analysis::ContactAnalysis;
 
 pub use crate::types::_transcript::Transcript;
@@ -519,9 +545,7 @@ pub use crate::types::_participant_role::ParticipantRole;
 
 pub use crate::types::_agent_hierarchy_groups::AgentHierarchyGroups;
 
-pub use crate::types::_search_contacts_time_range::SearchContactsTimeRange;
-
-pub use crate::types::_search_contacts_time_range_type::SearchContactsTimeRangeType;
+pub use crate::types::_name_criteria::NameCriteria;
 
 pub use crate::types::_contact_flow::ContactFlow;
 
@@ -588,6 +612,8 @@ pub use crate::types::_event_source_name::EventSourceName;
 pub use crate::types::_routing_profile_summary::RoutingProfileSummary;
 
 pub use crate::types::_routing_profile_queue_config_summary::RoutingProfileQueueConfigSummary;
+
+pub use crate::types::_routing_profile_manual_assignment_queue_config_summary::RoutingProfileManualAssignmentQueueConfigSummary;
 
 pub use crate::types::_realtime_contact_analysis_segment::RealtimeContactAnalysisSegment;
 
@@ -907,14 +933,6 @@ pub use crate::types::_customer::Customer;
 
 pub use crate::types::_device_info::DeviceInfo;
 
-pub use crate::types::_routing_criteria::RoutingCriteria;
-
-pub use crate::types::_step::Step;
-
-pub use crate::types::_routing_criteria_step_status::RoutingCriteriaStepStatus;
-
-pub use crate::types::_expiry::Expiry;
-
 pub use crate::types::_endpoint_info::EndpointInfo;
 
 pub use crate::types::_wisdom_info::WisdomInfo;
@@ -932,6 +950,8 @@ pub use crate::types::_agent_hierarchy_group::AgentHierarchyGroup;
 pub use crate::types::_queue_info::QueueInfo;
 
 pub use crate::types::_authentication_profile::AuthenticationProfile;
+
+pub use crate::types::_routing_profile_manual_assignment_queue_config::RoutingProfileManualAssignmentQueueConfig;
 
 pub use crate::types::_contact_configuration::ContactConfiguration;
 
@@ -1459,6 +1479,8 @@ mod _metric_v2;
 
 mod _monitor_capability;
 
+mod _name_criteria;
+
 mod _new_session_details;
 
 mod _notification_content_type;
@@ -1679,6 +1701,10 @@ mod _routing_criteria_step_status;
 
 mod _routing_profile;
 
+mod _routing_profile_manual_assignment_queue_config;
+
+mod _routing_profile_manual_assignment_queue_config_summary;
+
 mod _routing_profile_queue_config;
 
 mod _routing_profile_queue_config_summary;
@@ -1707,19 +1733,33 @@ mod _s3_config;
 
 mod _screen_share_capability;
 
+mod _search_contacts_additional_time_range;
+
+mod _search_contacts_additional_time_range_criteria;
+
 mod _search_contacts_match_type;
 
 mod _search_contacts_time_range;
 
+mod _search_contacts_time_range_condition_type;
+
 mod _search_contacts_time_range_type;
 
+mod _search_contacts_timestamp_condition;
+
 mod _search_criteria;
+
+mod _searchable_agent_criteria_step;
 
 mod _searchable_contact_attributes;
 
 mod _searchable_contact_attributes_criteria;
 
 mod _searchable_queue_type;
+
+mod _searchable_routing_criteria;
+
+mod _searchable_routing_criteria_step;
 
 mod _searchable_segment_attributes;
 

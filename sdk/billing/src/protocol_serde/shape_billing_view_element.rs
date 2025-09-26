@@ -49,6 +49,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "sourceAccountId" => {
+                            builder = builder.set_source_account_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "dataFilterExpression" => {
                             builder = builder.set_data_filter_expression(crate::protocol_serde::shape_expression::de_expression(tokens)?);
                         }
@@ -63,6 +70,31 @@ where
                                 tokens.next(),
                                 ::aws_smithy_types::date_time::Format::EpochSeconds,
                             )?);
+                        }
+                        "derivedViewCount" => {
+                            builder = builder.set_derived_view_count(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "sourceViewCount" => {
+                            builder = builder.set_source_view_count(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "viewDefinitionLastUpdatedAt" => {
+                            builder = builder.set_view_definition_last_updated_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                tokens.next(),
+                                ::aws_smithy_types::date_time::Format::EpochSeconds,
+                            )?);
+                        }
+                        "healthStatus" => {
+                            builder = builder.set_health_status(
+                                crate::protocol_serde::shape_billing_view_health_status::de_billing_view_health_status(tokens)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

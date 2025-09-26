@@ -6,8 +6,10 @@
 pub enum FlowTrace {
     /// <p>Contains information about an output from a condition node.</p>
     ConditionNodeResultTrace(crate::types::FlowTraceConditionNodeResultEvent),
-    /// <p>Contains information about an action (operation) called by a node. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/flows-trace.html">Track each step in your prompt flow by viewing its trace in Amazon Bedrock</a>.</p>
+    /// <p>Contains information about an action (operation) called by a node.</p>
     NodeActionTrace(crate::types::FlowTraceNodeActionEvent),
+    /// <p>Contains information about an internal trace of a node.</p>
+    NodeDependencyTrace(crate::types::FlowTraceDependencyEvent),
     /// <p>Contains information about the input into a node.</p>
     NodeInputTrace(crate::types::FlowTraceNodeInputEvent),
     /// <p>Contains information about the output from a node.</p>
@@ -48,6 +50,19 @@ impl FlowTrace {
     /// Returns true if this is a [`NodeActionTrace`](crate::types::FlowTrace::NodeActionTrace).
     pub fn is_node_action_trace(&self) -> bool {
         self.as_node_action_trace().is_ok()
+    }
+    /// Tries to convert the enum instance into [`NodeDependencyTrace`](crate::types::FlowTrace::NodeDependencyTrace), extracting the inner [`FlowTraceDependencyEvent`](crate::types::FlowTraceDependencyEvent).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_node_dependency_trace(&self) -> ::std::result::Result<&crate::types::FlowTraceDependencyEvent, &Self> {
+        if let FlowTrace::NodeDependencyTrace(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`NodeDependencyTrace`](crate::types::FlowTrace::NodeDependencyTrace).
+    pub fn is_node_dependency_trace(&self) -> bool {
+        self.as_node_dependency_trace().is_ok()
     }
     /// Tries to convert the enum instance into [`NodeInputTrace`](crate::types::FlowTrace::NodeInputTrace), extracting the inner [`FlowTraceNodeInputEvent`](crate::types::FlowTraceNodeInputEvent).
     /// Returns `Err(&Self)` if it can't be converted.

@@ -129,6 +129,8 @@ pub(crate) mod shape_backfill_limit_exceeded_exception;
 
 pub(crate) mod shape_bill_expiration_exception;
 
+pub(crate) mod shape_billing_view_health_status_exception;
+
 pub(crate) mod shape_create_anomaly_monitor_input;
 
 pub(crate) mod shape_create_anomaly_subscription_input;

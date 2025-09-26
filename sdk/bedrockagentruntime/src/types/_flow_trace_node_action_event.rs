@@ -14,6 +14,10 @@ pub struct FlowTraceNodeActionEvent {
     pub service_name: ::std::string::String,
     /// <p>The name of the operation that the node called.</p>
     pub operation_name: ::std::string::String,
+    /// <p>The request payload sent to the downstream service.</p>
+    pub operation_request: ::std::option::Option<::aws_smithy_types::Document>,
+    /// <p>The response payload received from the downstream service.</p>
+    pub operation_response: ::std::option::Option<::aws_smithy_types::Document>,
 }
 impl FlowTraceNodeActionEvent {
     /// <p>The name of the node that called the operation.</p>
@@ -40,6 +44,14 @@ impl FlowTraceNodeActionEvent {
         use std::ops::Deref;
         self.operation_name.deref()
     }
+    /// <p>The request payload sent to the downstream service.</p>
+    pub fn operation_request(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
+        self.operation_request.as_ref()
+    }
+    /// <p>The response payload received from the downstream service.</p>
+    pub fn operation_response(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
+        self.operation_response.as_ref()
+    }
 }
 impl ::std::fmt::Debug for FlowTraceNodeActionEvent {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -49,6 +61,8 @@ impl ::std::fmt::Debug for FlowTraceNodeActionEvent {
         formatter.field("request_id", &"*** Sensitive Data Redacted ***");
         formatter.field("service_name", &"*** Sensitive Data Redacted ***");
         formatter.field("operation_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("operation_request", &"*** Sensitive Data Redacted ***");
+        formatter.field("operation_response", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -68,6 +82,8 @@ pub struct FlowTraceNodeActionEventBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) service_name: ::std::option::Option<::std::string::String>,
     pub(crate) operation_name: ::std::option::Option<::std::string::String>,
+    pub(crate) operation_request: ::std::option::Option<::aws_smithy_types::Document>,
+    pub(crate) operation_response: ::std::option::Option<::aws_smithy_types::Document>,
 }
 impl FlowTraceNodeActionEventBuilder {
     /// <p>The name of the node that called the operation.</p>
@@ -145,6 +161,34 @@ impl FlowTraceNodeActionEventBuilder {
     pub fn get_operation_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.operation_name
     }
+    /// <p>The request payload sent to the downstream service.</p>
+    pub fn operation_request(mut self, input: ::aws_smithy_types::Document) -> Self {
+        self.operation_request = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The request payload sent to the downstream service.</p>
+    pub fn set_operation_request(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
+        self.operation_request = input;
+        self
+    }
+    /// <p>The request payload sent to the downstream service.</p>
+    pub fn get_operation_request(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
+        &self.operation_request
+    }
+    /// <p>The response payload received from the downstream service.</p>
+    pub fn operation_response(mut self, input: ::aws_smithy_types::Document) -> Self {
+        self.operation_response = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The response payload received from the downstream service.</p>
+    pub fn set_operation_response(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
+        self.operation_response = input;
+        self
+    }
+    /// <p>The response payload received from the downstream service.</p>
+    pub fn get_operation_response(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
+        &self.operation_response
+    }
     /// Consumes the builder and constructs a [`FlowTraceNodeActionEvent`](crate::types::FlowTraceNodeActionEvent).
     /// This method will fail if any of the following fields are not set:
     /// - [`node_name`](crate::types::builders::FlowTraceNodeActionEventBuilder::node_name)
@@ -184,6 +228,8 @@ impl FlowTraceNodeActionEventBuilder {
                     "operation_name was not specified but it is required when building FlowTraceNodeActionEvent",
                 )
             })?,
+            operation_request: self.operation_request,
+            operation_response: self.operation_response,
         })
     }
 }
@@ -195,6 +241,8 @@ impl ::std::fmt::Debug for FlowTraceNodeActionEventBuilder {
         formatter.field("request_id", &"*** Sensitive Data Redacted ***");
         formatter.field("service_name", &"*** Sensitive Data Redacted ***");
         formatter.field("operation_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("operation_request", &"*** Sensitive Data Redacted ***");
+        formatter.field("operation_response", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

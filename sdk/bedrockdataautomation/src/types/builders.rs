@@ -33,6 +33,14 @@ pub use crate::types::_audio_standard_extraction::AudioStandardExtractionBuilder
 
 pub use crate::types::_audio_extraction_category::AudioExtractionCategoryBuilder;
 
+pub use crate::types::_audio_extraction_category_type_configuration::AudioExtractionCategoryTypeConfigurationBuilder;
+
+pub use crate::types::_transcript_configuration::TranscriptConfigurationBuilder;
+
+pub use crate::types::_channel_labeling_configuration::ChannelLabelingConfigurationBuilder;
+
+pub use crate::types::_speaker_labeling_configuration::SpeakerLabelingConfigurationBuilder;
+
 pub use crate::types::_video_standard_output_configuration::VideoStandardOutputConfigurationBuilder;
 
 pub use crate::types::_video_standard_generative_field::VideoStandardGenerativeFieldBuilder;

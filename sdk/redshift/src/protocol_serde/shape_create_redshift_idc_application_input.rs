@@ -54,6 +54,28 @@ pub fn ser_create_redshift_idc_application_input_input_input(
         }
         list_19.finish();
     }
+    #[allow(unused_mut)]
+    let mut scope_22 = writer.prefix("Tags");
+    if let Some(var_23) = &input.tags {
+        let mut list_25 = scope_22.start_list(false, Some("Tag"));
+        for item_24 in var_23 {
+            #[allow(unused_mut)]
+            let mut entry_26 = list_25.entry();
+            crate::protocol_serde::shape_tag::ser_tag(entry_26, item_24)?;
+        }
+        list_25.finish();
+    }
+    #[allow(unused_mut)]
+    let mut scope_27 = writer.prefix("SsoTagKeys");
+    if let Some(var_28) = &input.sso_tag_keys {
+        let mut list_30 = scope_27.start_list(false, Some("TagKey"));
+        for item_29 in var_28 {
+            #[allow(unused_mut)]
+            let mut entry_31 = list_30.entry();
+            entry_31.string(item_29);
+        }
+        list_30.finish();
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

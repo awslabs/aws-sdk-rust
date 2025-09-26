@@ -9,6 +9,8 @@ pub struct DisassociateRoutingProfileQueuesInput {
     pub routing_profile_id: ::std::option::Option<::std::string::String>,
     /// <p>The queues to disassociate from this routing profile.</p>
     pub queue_references: ::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileQueueReference>>,
+    /// <p>The manual assignment queues to disassociate with this routing profile.</p>
+    pub manual_assignment_queue_references: ::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileQueueReference>>,
 }
 impl DisassociateRoutingProfileQueuesInput {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -25,6 +27,12 @@ impl DisassociateRoutingProfileQueuesInput {
     pub fn queue_references(&self) -> &[crate::types::RoutingProfileQueueReference] {
         self.queue_references.as_deref().unwrap_or_default()
     }
+    /// <p>The manual assignment queues to disassociate with this routing profile.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.manual_assignment_queue_references.is_none()`.
+    pub fn manual_assignment_queue_references(&self) -> &[crate::types::RoutingProfileQueueReference] {
+        self.manual_assignment_queue_references.as_deref().unwrap_or_default()
+    }
 }
 impl DisassociateRoutingProfileQueuesInput {
     /// Creates a new builder-style object to manufacture [`DisassociateRoutingProfileQueuesInput`](crate::operation::disassociate_routing_profile_queues::DisassociateRoutingProfileQueuesInput).
@@ -40,6 +48,7 @@ pub struct DisassociateRoutingProfileQueuesInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) routing_profile_id: ::std::option::Option<::std::string::String>,
     pub(crate) queue_references: ::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileQueueReference>>,
+    pub(crate) manual_assignment_queue_references: ::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileQueueReference>>,
 }
 impl DisassociateRoutingProfileQueuesInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -92,6 +101,29 @@ impl DisassociateRoutingProfileQueuesInputBuilder {
     pub fn get_queue_references(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileQueueReference>> {
         &self.queue_references
     }
+    /// Appends an item to `manual_assignment_queue_references`.
+    ///
+    /// To override the contents of this collection use [`set_manual_assignment_queue_references`](Self::set_manual_assignment_queue_references).
+    ///
+    /// <p>The manual assignment queues to disassociate with this routing profile.</p>
+    pub fn manual_assignment_queue_references(mut self, input: crate::types::RoutingProfileQueueReference) -> Self {
+        let mut v = self.manual_assignment_queue_references.unwrap_or_default();
+        v.push(input);
+        self.manual_assignment_queue_references = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The manual assignment queues to disassociate with this routing profile.</p>
+    pub fn set_manual_assignment_queue_references(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileQueueReference>>,
+    ) -> Self {
+        self.manual_assignment_queue_references = input;
+        self
+    }
+    /// <p>The manual assignment queues to disassociate with this routing profile.</p>
+    pub fn get_manual_assignment_queue_references(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileQueueReference>> {
+        &self.manual_assignment_queue_references
+    }
     /// Consumes the builder and constructs a [`DisassociateRoutingProfileQueuesInput`](crate::operation::disassociate_routing_profile_queues::DisassociateRoutingProfileQueuesInput).
     pub fn build(
         self,
@@ -104,6 +136,7 @@ impl DisassociateRoutingProfileQueuesInputBuilder {
                 instance_id: self.instance_id,
                 routing_profile_id: self.routing_profile_id,
                 queue_references: self.queue_references,
+                manual_assignment_queue_references: self.manual_assignment_queue_references,
             },
         )
     }

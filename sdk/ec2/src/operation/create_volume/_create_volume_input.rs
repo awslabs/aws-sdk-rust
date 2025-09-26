@@ -16,7 +16,7 @@ pub struct CreateVolumeInput {
     /// <p>The following are the supported values for each volume type:</p>
     /// <ul>
     /// <li>
-    /// <p><code>gp3</code>: 3,000 - 16,000 IOPS</p></li>
+    /// <p><code>gp3</code>: 3,000 - 80,000 IOPS</p></li>
     /// <li>
     /// <p><code>io1</code>: 100 - 64,000 IOPS</p></li>
     /// <li>
@@ -46,7 +46,9 @@ pub struct CreateVolumeInput {
     /// <p>The following are the supported volumes sizes for each volume type:</p>
     /// <ul>
     /// <li>
-    /// <p><code>gp2</code> and <code>gp3</code>: 1 - 16,384 GiB</p></li>
+    /// <p><code>gp2</code>: 1 - 16,384 GiB</p></li>
+    /// <li>
+    /// <p><code>gp3</code>: 1 - 65,536 GiB</p></li>
     /// <li>
     /// <p><code>io1</code>: 4 - 16,384 GiB</p></li>
     /// <li>
@@ -81,9 +83,9 @@ pub struct CreateVolumeInput {
     pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     /// <p>Indicates whether to enable Amazon EBS Multi-Attach. If you enable Multi-Attach, you can attach the volume to up to 16 <a href="https://docs.aws.amazon.com/ec2/latest/instancetypes/ec2-nitro-instances.html">Instances built on the Nitro System</a> in the same Availability Zone. This parameter is supported with <code>io1</code> and <code>io2</code> volumes only. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volumes-multi.html"> Amazon EBS Multi-Attach</a> in the <i>Amazon EBS User Guide</i>.</p>
     pub multi_attach_enabled: ::std::option::Option<bool>,
-    /// <p>The throughput to provision for a volume, with a maximum of 1,000 MiB/s.</p>
+    /// <p>The throughput to provision for a volume, with a maximum of 2,000 MiB/s.</p>
     /// <p>This parameter is valid only for <code>gp3</code> volumes.</p>
-    /// <p>Valid Range: Minimum value of 125. Maximum value of 1000.</p>
+    /// <p>Valid Range: Minimum value of 125. Maximum value of 2,000.</p>
     pub throughput: ::std::option::Option<i32>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html">Ensure Idempotency</a>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
@@ -125,7 +127,7 @@ impl CreateVolumeInput {
     /// <p>The following are the supported values for each volume type:</p>
     /// <ul>
     /// <li>
-    /// <p><code>gp3</code>: 3,000 - 16,000 IOPS</p></li>
+    /// <p><code>gp3</code>: 3,000 - 80,000 IOPS</p></li>
     /// <li>
     /// <p><code>io1</code>: 100 - 64,000 IOPS</p></li>
     /// <li>
@@ -161,7 +163,9 @@ impl CreateVolumeInput {
     /// <p>The following are the supported volumes sizes for each volume type:</p>
     /// <ul>
     /// <li>
-    /// <p><code>gp2</code> and <code>gp3</code>: 1 - 16,384 GiB</p></li>
+    /// <p><code>gp2</code>: 1 - 16,384 GiB</p></li>
+    /// <li>
+    /// <p><code>gp3</code>: 1 - 65,536 GiB</p></li>
     /// <li>
     /// <p><code>io1</code>: 4 - 16,384 GiB</p></li>
     /// <li>
@@ -208,9 +212,9 @@ impl CreateVolumeInput {
     pub fn multi_attach_enabled(&self) -> ::std::option::Option<bool> {
         self.multi_attach_enabled
     }
-    /// <p>The throughput to provision for a volume, with a maximum of 1,000 MiB/s.</p>
+    /// <p>The throughput to provision for a volume, with a maximum of 2,000 MiB/s.</p>
     /// <p>This parameter is valid only for <code>gp3</code> volumes.</p>
-    /// <p>Valid Range: Minimum value of 125. Maximum value of 1000.</p>
+    /// <p>Valid Range: Minimum value of 125. Maximum value of 2,000.</p>
     pub fn throughput(&self) -> ::std::option::Option<i32> {
         self.throughput
     }
@@ -326,7 +330,7 @@ impl CreateVolumeInputBuilder {
     /// <p>The following are the supported values for each volume type:</p>
     /// <ul>
     /// <li>
-    /// <p><code>gp3</code>: 3,000 - 16,000 IOPS</p></li>
+    /// <p><code>gp3</code>: 3,000 - 80,000 IOPS</p></li>
     /// <li>
     /// <p><code>io1</code>: 100 - 64,000 IOPS</p></li>
     /// <li>
@@ -342,7 +346,7 @@ impl CreateVolumeInputBuilder {
     /// <p>The following are the supported values for each volume type:</p>
     /// <ul>
     /// <li>
-    /// <p><code>gp3</code>: 3,000 - 16,000 IOPS</p></li>
+    /// <p><code>gp3</code>: 3,000 - 80,000 IOPS</p></li>
     /// <li>
     /// <p><code>io1</code>: 100 - 64,000 IOPS</p></li>
     /// <li>
@@ -358,7 +362,7 @@ impl CreateVolumeInputBuilder {
     /// <p>The following are the supported values for each volume type:</p>
     /// <ul>
     /// <li>
-    /// <p><code>gp3</code>: 3,000 - 16,000 IOPS</p></li>
+    /// <p><code>gp3</code>: 3,000 - 80,000 IOPS</p></li>
     /// <li>
     /// <p><code>io1</code>: 100 - 64,000 IOPS</p></li>
     /// <li>
@@ -440,7 +444,9 @@ impl CreateVolumeInputBuilder {
     /// <p>The following are the supported volumes sizes for each volume type:</p>
     /// <ul>
     /// <li>
-    /// <p><code>gp2</code> and <code>gp3</code>: 1 - 16,384 GiB</p></li>
+    /// <p><code>gp2</code>: 1 - 16,384 GiB</p></li>
+    /// <li>
+    /// <p><code>gp3</code>: 1 - 65,536 GiB</p></li>
     /// <li>
     /// <p><code>io1</code>: 4 - 16,384 GiB</p></li>
     /// <li>
@@ -458,7 +464,9 @@ impl CreateVolumeInputBuilder {
     /// <p>The following are the supported volumes sizes for each volume type:</p>
     /// <ul>
     /// <li>
-    /// <p><code>gp2</code> and <code>gp3</code>: 1 - 16,384 GiB</p></li>
+    /// <p><code>gp2</code>: 1 - 16,384 GiB</p></li>
+    /// <li>
+    /// <p><code>gp3</code>: 1 - 65,536 GiB</p></li>
     /// <li>
     /// <p><code>io1</code>: 4 - 16,384 GiB</p></li>
     /// <li>
@@ -476,7 +484,9 @@ impl CreateVolumeInputBuilder {
     /// <p>The following are the supported volumes sizes for each volume type:</p>
     /// <ul>
     /// <li>
-    /// <p><code>gp2</code> and <code>gp3</code>: 1 - 16,384 GiB</p></li>
+    /// <p><code>gp2</code>: 1 - 16,384 GiB</p></li>
+    /// <li>
+    /// <p><code>gp3</code>: 1 - 65,536 GiB</p></li>
     /// <li>
     /// <p><code>io1</code>: 4 - 16,384 GiB</p></li>
     /// <li>
@@ -599,23 +609,23 @@ impl CreateVolumeInputBuilder {
     pub fn get_multi_attach_enabled(&self) -> &::std::option::Option<bool> {
         &self.multi_attach_enabled
     }
-    /// <p>The throughput to provision for a volume, with a maximum of 1,000 MiB/s.</p>
+    /// <p>The throughput to provision for a volume, with a maximum of 2,000 MiB/s.</p>
     /// <p>This parameter is valid only for <code>gp3</code> volumes.</p>
-    /// <p>Valid Range: Minimum value of 125. Maximum value of 1000.</p>
+    /// <p>Valid Range: Minimum value of 125. Maximum value of 2,000.</p>
     pub fn throughput(mut self, input: i32) -> Self {
         self.throughput = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The throughput to provision for a volume, with a maximum of 1,000 MiB/s.</p>
+    /// <p>The throughput to provision for a volume, with a maximum of 2,000 MiB/s.</p>
     /// <p>This parameter is valid only for <code>gp3</code> volumes.</p>
-    /// <p>Valid Range: Minimum value of 125. Maximum value of 1000.</p>
+    /// <p>Valid Range: Minimum value of 125. Maximum value of 2,000.</p>
     pub fn set_throughput(mut self, input: ::std::option::Option<i32>) -> Self {
         self.throughput = input;
         self
     }
-    /// <p>The throughput to provision for a volume, with a maximum of 1,000 MiB/s.</p>
+    /// <p>The throughput to provision for a volume, with a maximum of 2,000 MiB/s.</p>
     /// <p>This parameter is valid only for <code>gp3</code> volumes.</p>
-    /// <p>Valid Range: Minimum value of 125. Maximum value of 1000.</p>
+    /// <p>Valid Range: Minimum value of 125. Maximum value of 2,000.</p>
     pub fn get_throughput(&self) -> &::std::option::Option<i32> {
         &self.throughput
     }

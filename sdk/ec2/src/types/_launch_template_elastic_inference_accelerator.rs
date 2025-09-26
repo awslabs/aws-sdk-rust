@@ -10,7 +10,6 @@ pub struct LaunchTemplateElasticInferenceAccelerator {
     /// <p>The type of elastic inference accelerator. The possible values are eia1.medium, eia1.large, and eia1.xlarge.</p>
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The number of elastic inference accelerators to attach to the instance.</p>
-    /// <p>Default: 1</p>
     pub count: ::std::option::Option<i32>,
 }
 impl LaunchTemplateElasticInferenceAccelerator {
@@ -19,7 +18,6 @@ impl LaunchTemplateElasticInferenceAccelerator {
         self.r#type.as_deref()
     }
     /// <p>The number of elastic inference accelerators to attach to the instance.</p>
-    /// <p>Default: 1</p>
     pub fn count(&self) -> ::std::option::Option<i32> {
         self.count
     }
@@ -55,19 +53,16 @@ impl LaunchTemplateElasticInferenceAcceleratorBuilder {
         &self.r#type
     }
     /// <p>The number of elastic inference accelerators to attach to the instance.</p>
-    /// <p>Default: 1</p>
     pub fn count(mut self, input: i32) -> Self {
         self.count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of elastic inference accelerators to attach to the instance.</p>
-    /// <p>Default: 1</p>
     pub fn set_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.count = input;
         self
     }
     /// <p>The number of elastic inference accelerators to attach to the instance.</p>
-    /// <p>Default: 1</p>
     pub fn get_count(&self) -> &::std::option::Option<i32> {
         &self.count
     }

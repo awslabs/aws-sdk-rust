@@ -9,6 +9,8 @@ pub enum Error {
     BackfillLimitExceededException(crate::types::error::BackfillLimitExceededException),
     /// <p>The requested report expired. Update the date interval and try again.</p>
     BillExpirationException(crate::types::error::BillExpirationException),
+    /// <p>The billing view status must be <code>HEALTHY</code> to perform this action. Try again when the status is <code>HEALTHY</code>.</p>
+    BillingViewHealthStatusException(crate::types::error::BillingViewHealthStatusException),
     /// <p>The requested data is unavailable.</p>
     DataUnavailableException(crate::types::error::DataUnavailableException),
     /// <p>A request to generate a recommendation or analysis is already in progress.</p>
@@ -46,6 +48,7 @@ impl ::std::fmt::Display for Error {
             Error::AnalysisNotFoundException(inner) => inner.fmt(f),
             Error::BackfillLimitExceededException(inner) => inner.fmt(f),
             Error::BillExpirationException(inner) => inner.fmt(f),
+            Error::BillingViewHealthStatusException(inner) => inner.fmt(f),
             Error::DataUnavailableException(inner) => inner.fmt(f),
             Error::GenerationExistsException(inner) => inner.fmt(f),
             Error::InvalidNextTokenException(inner) => inner.fmt(f),
@@ -81,6 +84,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::AnalysisNotFoundException(inner) => inner.meta(),
             Self::BackfillLimitExceededException(inner) => inner.meta(),
             Self::BillExpirationException(inner) => inner.meta(),
+            Self::BillingViewHealthStatusException(inner) => inner.meta(),
             Self::DataUnavailableException(inner) => inner.meta(),
             Self::GenerationExistsException(inner) => inner.meta(),
             Self::InvalidNextTokenException(inner) => inner.meta(),
@@ -481,6 +485,9 @@ impl From<crate::operation::get_cost_and_usage::GetCostAndUsageError> for Error 
     fn from(err: crate::operation::get_cost_and_usage::GetCostAndUsageError) -> Self {
         match err {
             crate::operation::get_cost_and_usage::GetCostAndUsageError::BillExpirationException(inner) => Error::BillExpirationException(inner),
+            crate::operation::get_cost_and_usage::GetCostAndUsageError::BillingViewHealthStatusException(inner) => {
+                Error::BillingViewHealthStatusException(inner)
+            }
             crate::operation::get_cost_and_usage::GetCostAndUsageError::DataUnavailableException(inner) => Error::DataUnavailableException(inner),
             crate::operation::get_cost_and_usage::GetCostAndUsageError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
             crate::operation::get_cost_and_usage::GetCostAndUsageError::LimitExceededException(inner) => Error::LimitExceededException(inner),
@@ -510,6 +517,9 @@ where
 impl From<crate::operation::get_cost_and_usage_comparisons::GetCostAndUsageComparisonsError> for Error {
     fn from(err: crate::operation::get_cost_and_usage_comparisons::GetCostAndUsageComparisonsError) -> Self {
         match err {
+            crate::operation::get_cost_and_usage_comparisons::GetCostAndUsageComparisonsError::BillingViewHealthStatusException(inner) => {
+                Error::BillingViewHealthStatusException(inner)
+            }
             crate::operation::get_cost_and_usage_comparisons::GetCostAndUsageComparisonsError::DataUnavailableException(inner) => {
                 Error::DataUnavailableException(inner)
             }
@@ -554,6 +564,9 @@ impl From<crate::operation::get_cost_and_usage_with_resources::GetCostAndUsageWi
             crate::operation::get_cost_and_usage_with_resources::GetCostAndUsageWithResourcesError::BillExpirationException(inner) => {
                 Error::BillExpirationException(inner)
             }
+            crate::operation::get_cost_and_usage_with_resources::GetCostAndUsageWithResourcesError::BillingViewHealthStatusException(inner) => {
+                Error::BillingViewHealthStatusException(inner)
+            }
             crate::operation::get_cost_and_usage_with_resources::GetCostAndUsageWithResourcesError::DataUnavailableException(inner) => {
                 Error::DataUnavailableException(inner)
             }
@@ -591,6 +604,9 @@ impl From<crate::operation::get_cost_categories::GetCostCategoriesError> for Err
     fn from(err: crate::operation::get_cost_categories::GetCostCategoriesError) -> Self {
         match err {
             crate::operation::get_cost_categories::GetCostCategoriesError::BillExpirationException(inner) => Error::BillExpirationException(inner),
+            crate::operation::get_cost_categories::GetCostCategoriesError::BillingViewHealthStatusException(inner) => {
+                Error::BillingViewHealthStatusException(inner)
+            }
             crate::operation::get_cost_categories::GetCostCategoriesError::DataUnavailableException(inner) => Error::DataUnavailableException(inner),
             crate::operation::get_cost_categories::GetCostCategoriesError::InvalidNextTokenException(inner) => {
                 Error::InvalidNextTokenException(inner)
@@ -624,6 +640,9 @@ where
 impl From<crate::operation::get_cost_comparison_drivers::GetCostComparisonDriversError> for Error {
     fn from(err: crate::operation::get_cost_comparison_drivers::GetCostComparisonDriversError) -> Self {
         match err {
+            crate::operation::get_cost_comparison_drivers::GetCostComparisonDriversError::BillingViewHealthStatusException(inner) => {
+                Error::BillingViewHealthStatusException(inner)
+            }
             crate::operation::get_cost_comparison_drivers::GetCostComparisonDriversError::DataUnavailableException(inner) => {
                 Error::DataUnavailableException(inner)
             }
@@ -657,6 +676,9 @@ where
 impl From<crate::operation::get_cost_forecast::GetCostForecastError> for Error {
     fn from(err: crate::operation::get_cost_forecast::GetCostForecastError) -> Self {
         match err {
+            crate::operation::get_cost_forecast::GetCostForecastError::BillingViewHealthStatusException(inner) => {
+                Error::BillingViewHealthStatusException(inner)
+            }
             crate::operation::get_cost_forecast::GetCostForecastError::DataUnavailableException(inner) => Error::DataUnavailableException(inner),
             crate::operation::get_cost_forecast::GetCostForecastError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::get_cost_forecast::GetCostForecastError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
@@ -682,6 +704,9 @@ impl From<crate::operation::get_dimension_values::GetDimensionValuesError> for E
     fn from(err: crate::operation::get_dimension_values::GetDimensionValuesError) -> Self {
         match err {
             crate::operation::get_dimension_values::GetDimensionValuesError::BillExpirationException(inner) => Error::BillExpirationException(inner),
+            crate::operation::get_dimension_values::GetDimensionValuesError::BillingViewHealthStatusException(inner) => {
+                Error::BillingViewHealthStatusException(inner)
+            }
             crate::operation::get_dimension_values::GetDimensionValuesError::DataUnavailableException(inner) => {
                 Error::DataUnavailableException(inner)
             }
@@ -1037,6 +1062,7 @@ impl From<crate::operation::get_tags::GetTagsError> for Error {
     fn from(err: crate::operation::get_tags::GetTagsError) -> Self {
         match err {
             crate::operation::get_tags::GetTagsError::BillExpirationException(inner) => Error::BillExpirationException(inner),
+            crate::operation::get_tags::GetTagsError::BillingViewHealthStatusException(inner) => Error::BillingViewHealthStatusException(inner),
             crate::operation::get_tags::GetTagsError::DataUnavailableException(inner) => Error::DataUnavailableException(inner),
             crate::operation::get_tags::GetTagsError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
             crate::operation::get_tags::GetTagsError::LimitExceededException(inner) => Error::LimitExceededException(inner),
@@ -1063,6 +1089,9 @@ where
 impl From<crate::operation::get_usage_forecast::GetUsageForecastError> for Error {
     fn from(err: crate::operation::get_usage_forecast::GetUsageForecastError) -> Self {
         match err {
+            crate::operation::get_usage_forecast::GetUsageForecastError::BillingViewHealthStatusException(inner) => {
+                Error::BillingViewHealthStatusException(inner)
+            }
             crate::operation::get_usage_forecast::GetUsageForecastError::DataUnavailableException(inner) => Error::DataUnavailableException(inner),
             crate::operation::get_usage_forecast::GetUsageForecastError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::get_usage_forecast::GetUsageForecastError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
@@ -1610,6 +1639,7 @@ impl ::std::error::Error for Error {
             Error::AnalysisNotFoundException(inner) => inner.source(),
             Error::BackfillLimitExceededException(inner) => inner.source(),
             Error::BillExpirationException(inner) => inner.source(),
+            Error::BillingViewHealthStatusException(inner) => inner.source(),
             Error::DataUnavailableException(inner) => inner.source(),
             Error::GenerationExistsException(inner) => inner.source(),
             Error::InvalidNextTokenException(inner) => inner.source(),
@@ -1631,6 +1661,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::AnalysisNotFoundException(e) => e.request_id(),
             Self::BackfillLimitExceededException(e) => e.request_id(),
             Self::BillExpirationException(e) => e.request_id(),
+            Self::BillingViewHealthStatusException(e) => e.request_id(),
             Self::DataUnavailableException(e) => e.request_id(),
             Self::GenerationExistsException(e) => e.request_id(),
             Self::InvalidNextTokenException(e) => e.request_id(),

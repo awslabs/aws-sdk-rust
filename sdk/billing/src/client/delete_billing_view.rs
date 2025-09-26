@@ -4,6 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`arn(impl Into<String>)`](crate::operation::delete_billing_view::builders::DeleteBillingViewFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::delete_billing_view::builders::DeleteBillingViewFluentBuilder::set_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) that can be used to uniquely identify the billing view.</p><br>
+    ///   - [`force(bool)`](crate::operation::delete_billing_view::builders::DeleteBillingViewFluentBuilder::force) / [`set_force(Option<bool>)`](crate::operation::delete_billing_view::builders::DeleteBillingViewFluentBuilder::set_force):<br>required: **false**<br><p>If set to true, forces deletion of the billing view even if it has derived resources (e.g. other billing views or budgets). Use with caution as this may break dependent resources.</p><br>
     /// - On success, responds with [`DeleteBillingViewOutput`](crate::operation::delete_billing_view::DeleteBillingViewOutput) with field(s):
     ///   - [`arn(String)`](crate::operation::delete_billing_view::DeleteBillingViewOutput::arn): <p>The Amazon Resource Name (ARN) that can be used to uniquely identify the billing view.</p>
     /// - On failure, responds with [`SdkError<DeleteBillingViewError>`](crate::operation::delete_billing_view::DeleteBillingViewError)

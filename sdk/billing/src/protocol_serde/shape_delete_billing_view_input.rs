@@ -6,5 +6,8 @@ pub fn ser_delete_billing_view_input_input(
     if let Some(var_1) = &input.arn {
         object.key("arn").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.force {
+        object.key("force").boolean(*var_2);
+    }
     Ok(())
 }

@@ -144,6 +144,8 @@ mod associate_approved_origin;
 
 mod associate_bot;
 
+mod associate_contact_with_user;
+
 mod associate_default_vocabulary;
 
 mod associate_flow;
@@ -494,6 +496,8 @@ mod list_queues;
 mod list_quick_connects;
 
 mod list_realtime_contact_analysis_segments_v2;
+
+mod list_routing_profile_manual_assignment_queues;
 
 mod list_routing_profile_queues;
 

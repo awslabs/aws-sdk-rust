@@ -11,4 +11,6 @@ pub use crate::types::error::_internal_server_exception::InternalServerException
 
 pub use crate::types::error::_conflict_exception::ConflictExceptionBuilder;
 
+pub use crate::types::error::_billing_view_health_status_exception::BillingViewHealthStatusExceptionBuilder;
+
 pub use crate::types::error::_access_denied_exception::AccessDeniedExceptionBuilder;

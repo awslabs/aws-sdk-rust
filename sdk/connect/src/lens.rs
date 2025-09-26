@@ -329,6 +329,16 @@ pub(crate) fn reflens_list_realtime_contact_analysis_segments_v2_output_output_n
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_routing_profile_manual_assignment_queues_output_output_next_token(
+    input: &crate::operation::list_routing_profile_manual_assignment_queues::ListRoutingProfileManualAssignmentQueuesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_routing_profile_queues_output_output_next_token(
     input: &crate::operation::list_routing_profile_queues::ListRoutingProfileQueuesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -852,6 +862,13 @@ pub(crate) fn lens_list_quick_connects_output_output_quick_connect_summary_list(
     input: crate::operation::list_quick_connects::ListQuickConnectsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::QuickConnectSummary>> {
     let input = input.quick_connect_summary_list?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_routing_profile_manual_assignment_queues_output_output_routing_profile_manual_assignment_queue_config_summary_list(
+    input: crate::operation::list_routing_profile_manual_assignment_queues::ListRoutingProfileManualAssignmentQueuesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileManualAssignmentQueueConfigSummary>> {
+    let input = input.routing_profile_manual_assignment_queue_config_summary_list?;
     ::std::option::Option::Some(input)
 }
 

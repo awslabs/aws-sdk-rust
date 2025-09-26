@@ -10,7 +10,7 @@ pub struct EbsBlockDevice {
     /// <p>The following are the supported values for each volume type:</p>
     /// <ul>
     /// <li>
-    /// <p><code>gp3</code>: 3,000 - 16,000 IOPS</p></li>
+    /// <p><code>gp3</code>: 3,000 - 80,000 IOPS</p></li>
     /// <li>
     /// <p><code>io1</code>: 100 - 64,000 IOPS</p></li>
     /// <li>
@@ -25,7 +25,9 @@ pub struct EbsBlockDevice {
     /// <p>The following are the supported sizes for each volume type:</p>
     /// <ul>
     /// <li>
-    /// <p><code>gp2</code> and <code>gp3</code>: 1 - 16,384 GiB</p></li>
+    /// <p><code>gp2</code>: 1 - 16,384 GiB</p></li>
+    /// <li>
+    /// <p><code>gp3</code>: 1 - 65,536 GiB</p></li>
     /// <li>
     /// <p><code>io1</code>: 4 - 16,384 GiB</p></li>
     /// <li>
@@ -43,7 +45,7 @@ pub struct EbsBlockDevice {
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The throughput that the volume supports, in MiB/s.</p>
     /// <p>This parameter is valid only for <code>gp3</code> volumes.</p>
-    /// <p>Valid Range: Minimum value of 125. Maximum value of 1000.</p>
+    /// <p>Valid Range: Minimum value of 125. Maximum value of 2,000.</p>
     pub throughput: ::std::option::Option<i32>,
     /// <p>The ARN of the Outpost on which the snapshot is stored.</p>
     /// <p>This parameter is not supported when using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>.</p>
@@ -96,7 +98,7 @@ impl EbsBlockDevice {
     /// <p>The following are the supported values for each volume type:</p>
     /// <ul>
     /// <li>
-    /// <p><code>gp3</code>: 3,000 - 16,000 IOPS</p></li>
+    /// <p><code>gp3</code>: 3,000 - 80,000 IOPS</p></li>
     /// <li>
     /// <p><code>io1</code>: 100 - 64,000 IOPS</p></li>
     /// <li>
@@ -115,7 +117,9 @@ impl EbsBlockDevice {
     /// <p>The following are the supported sizes for each volume type:</p>
     /// <ul>
     /// <li>
-    /// <p><code>gp2</code> and <code>gp3</code>: 1 - 16,384 GiB</p></li>
+    /// <p><code>gp2</code>: 1 - 16,384 GiB</p></li>
+    /// <li>
+    /// <p><code>gp3</code>: 1 - 65,536 GiB</p></li>
     /// <li>
     /// <p><code>io1</code>: 4 - 16,384 GiB</p></li>
     /// <li>
@@ -139,7 +143,7 @@ impl EbsBlockDevice {
     }
     /// <p>The throughput that the volume supports, in MiB/s.</p>
     /// <p>This parameter is valid only for <code>gp3</code> volumes.</p>
-    /// <p>Valid Range: Minimum value of 125. Maximum value of 1000.</p>
+    /// <p>Valid Range: Minimum value of 125. Maximum value of 2,000.</p>
     pub fn throughput(&self) -> ::std::option::Option<i32> {
         self.throughput
     }
@@ -238,7 +242,7 @@ impl EbsBlockDeviceBuilder {
     /// <p>The following are the supported values for each volume type:</p>
     /// <ul>
     /// <li>
-    /// <p><code>gp3</code>: 3,000 - 16,000 IOPS</p></li>
+    /// <p><code>gp3</code>: 3,000 - 80,000 IOPS</p></li>
     /// <li>
     /// <p><code>io1</code>: 100 - 64,000 IOPS</p></li>
     /// <li>
@@ -254,7 +258,7 @@ impl EbsBlockDeviceBuilder {
     /// <p>The following are the supported values for each volume type:</p>
     /// <ul>
     /// <li>
-    /// <p><code>gp3</code>: 3,000 - 16,000 IOPS</p></li>
+    /// <p><code>gp3</code>: 3,000 - 80,000 IOPS</p></li>
     /// <li>
     /// <p><code>io1</code>: 100 - 64,000 IOPS</p></li>
     /// <li>
@@ -270,7 +274,7 @@ impl EbsBlockDeviceBuilder {
     /// <p>The following are the supported values for each volume type:</p>
     /// <ul>
     /// <li>
-    /// <p><code>gp3</code>: 3,000 - 16,000 IOPS</p></li>
+    /// <p><code>gp3</code>: 3,000 - 80,000 IOPS</p></li>
     /// <li>
     /// <p><code>io1</code>: 100 - 64,000 IOPS</p></li>
     /// <li>
@@ -299,7 +303,9 @@ impl EbsBlockDeviceBuilder {
     /// <p>The following are the supported sizes for each volume type:</p>
     /// <ul>
     /// <li>
-    /// <p><code>gp2</code> and <code>gp3</code>: 1 - 16,384 GiB</p></li>
+    /// <p><code>gp2</code>: 1 - 16,384 GiB</p></li>
+    /// <li>
+    /// <p><code>gp3</code>: 1 - 65,536 GiB</p></li>
     /// <li>
     /// <p><code>io1</code>: 4 - 16,384 GiB</p></li>
     /// <li>
@@ -317,7 +323,9 @@ impl EbsBlockDeviceBuilder {
     /// <p>The following are the supported sizes for each volume type:</p>
     /// <ul>
     /// <li>
-    /// <p><code>gp2</code> and <code>gp3</code>: 1 - 16,384 GiB</p></li>
+    /// <p><code>gp2</code>: 1 - 16,384 GiB</p></li>
+    /// <li>
+    /// <p><code>gp3</code>: 1 - 65,536 GiB</p></li>
     /// <li>
     /// <p><code>io1</code>: 4 - 16,384 GiB</p></li>
     /// <li>
@@ -335,7 +343,9 @@ impl EbsBlockDeviceBuilder {
     /// <p>The following are the supported sizes for each volume type:</p>
     /// <ul>
     /// <li>
-    /// <p><code>gp2</code> and <code>gp3</code>: 1 - 16,384 GiB</p></li>
+    /// <p><code>gp2</code>: 1 - 16,384 GiB</p></li>
+    /// <li>
+    /// <p><code>gp3</code>: 1 - 65,536 GiB</p></li>
     /// <li>
     /// <p><code>io1</code>: 4 - 16,384 GiB</p></li>
     /// <li>
@@ -381,21 +391,21 @@ impl EbsBlockDeviceBuilder {
     }
     /// <p>The throughput that the volume supports, in MiB/s.</p>
     /// <p>This parameter is valid only for <code>gp3</code> volumes.</p>
-    /// <p>Valid Range: Minimum value of 125. Maximum value of 1000.</p>
+    /// <p>Valid Range: Minimum value of 125. Maximum value of 2,000.</p>
     pub fn throughput(mut self, input: i32) -> Self {
         self.throughput = ::std::option::Option::Some(input);
         self
     }
     /// <p>The throughput that the volume supports, in MiB/s.</p>
     /// <p>This parameter is valid only for <code>gp3</code> volumes.</p>
-    /// <p>Valid Range: Minimum value of 125. Maximum value of 1000.</p>
+    /// <p>Valid Range: Minimum value of 125. Maximum value of 2,000.</p>
     pub fn set_throughput(mut self, input: ::std::option::Option<i32>) -> Self {
         self.throughput = input;
         self
     }
     /// <p>The throughput that the volume supports, in MiB/s.</p>
     /// <p>This parameter is valid only for <code>gp3</code> volumes.</p>
-    /// <p>Valid Range: Minimum value of 125. Maximum value of 1000.</p>
+    /// <p>Valid Range: Minimum value of 125. Maximum value of 2,000.</p>
     pub fn get_throughput(&self) -> &::std::option::Option<i32> {
         &self.throughput
     }

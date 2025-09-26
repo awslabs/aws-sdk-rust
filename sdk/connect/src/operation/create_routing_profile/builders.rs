@@ -187,6 +187,30 @@ impl CreateRoutingProfileFluentBuilder {
         self.inner.get_queue_configs()
     }
     ///
+    /// Appends an item to `ManualAssignmentQueueConfigs`.
+    ///
+    /// To override the contents of this collection use [`set_manual_assignment_queue_configs`](Self::set_manual_assignment_queue_configs).
+    ///
+    /// <p>The manual assignment queues associated with the routing profile. If no queue is added, agents and supervisors can't pick or assign any contacts from this routing profile. The limit of 10 array members applies to the maximum number of RoutingProfileManualAssignmentQueueConfig objects that can be passed during a CreateRoutingProfile API request. It is different from the quota of 50 queues per routing profile per instance that is listed in Amazon Connect service quotas.</p>
+    pub fn manual_assignment_queue_configs(mut self, input: crate::types::RoutingProfileManualAssignmentQueueConfig) -> Self {
+        self.inner = self.inner.manual_assignment_queue_configs(input);
+        self
+    }
+    /// <p>The manual assignment queues associated with the routing profile. If no queue is added, agents and supervisors can't pick or assign any contacts from this routing profile. The limit of 10 array members applies to the maximum number of RoutingProfileManualAssignmentQueueConfig objects that can be passed during a CreateRoutingProfile API request. It is different from the quota of 50 queues per routing profile per instance that is listed in Amazon Connect service quotas.</p>
+    pub fn set_manual_assignment_queue_configs(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileManualAssignmentQueueConfig>>,
+    ) -> Self {
+        self.inner = self.inner.set_manual_assignment_queue_configs(input);
+        self
+    }
+    /// <p>The manual assignment queues associated with the routing profile. If no queue is added, agents and supervisors can't pick or assign any contacts from this routing profile. The limit of 10 array members applies to the maximum number of RoutingProfileManualAssignmentQueueConfig objects that can be passed during a CreateRoutingProfile API request. It is different from the quota of 50 queues per routing profile per instance that is listed in Amazon Connect service quotas.</p>
+    pub fn get_manual_assignment_queue_configs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileManualAssignmentQueueConfig>> {
+        self.inner.get_manual_assignment_queue_configs()
+    }
+    ///
     /// Appends an item to `MediaConcurrencies`.
     ///
     /// To override the contents of this collection use [`set_media_concurrencies`](Self::set_media_concurrencies).

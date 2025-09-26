@@ -11,7 +11,7 @@ pub enum Error {
     ConflictException(crate::types::error::ConflictException),
     /// <p>The flow has not been published.</p>
     ContactFlowNotPublishedException(crate::types::error::ContactFlowNotPublishedException),
-    /// <p>The contact with the specified ID is not active or does not exist. Applies to Voice calls only, not to Chat or Task contacts.</p>
+    /// <p>The contact with the specified ID is not active or does not exist.</p>
     ContactNotFoundException(crate::types::error::ContactNotFoundException),
     /// <p>Outbound calls to the destination number are not allowed.</p>
     DestinationNotAllowedException(crate::types::error::DestinationNotAllowedException),
@@ -289,6 +289,48 @@ impl From<crate::operation::associate_bot::AssociateBotError> for Error {
             crate::operation::associate_bot::AssociateBotError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
             crate::operation::associate_bot::AssociateBotError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::associate_bot::AssociateBotError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_contact_with_user::AssociateContactWithUserError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_contact_with_user::AssociateContactWithUserError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::associate_contact_with_user::AssociateContactWithUserError> for Error {
+    fn from(err: crate::operation::associate_contact_with_user::AssociateContactWithUserError) -> Self {
+        match err {
+            crate::operation::associate_contact_with_user::AssociateContactWithUserError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::associate_contact_with_user::AssociateContactWithUserError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::associate_contact_with_user::AssociateContactWithUserError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::associate_contact_with_user::AssociateContactWithUserError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::associate_contact_with_user::AssociateContactWithUserError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::associate_contact_with_user::AssociateContactWithUserError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::associate_contact_with_user::AssociateContactWithUserError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -6175,6 +6217,43 @@ impl From<crate::operation::list_realtime_contact_analysis_segments_v2::ListReal
             crate::operation::list_realtime_contact_analysis_segments_v2::ListRealtimeContactAnalysisSegmentsV2Error::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_routing_profile_manual_assignment_queues::ListRoutingProfileManualAssignmentQueuesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_routing_profile_manual_assignment_queues::ListRoutingProfileManualAssignmentQueuesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_routing_profile_manual_assignment_queues::ListRoutingProfileManualAssignmentQueuesError> for Error {
+    fn from(err: crate::operation::list_routing_profile_manual_assignment_queues::ListRoutingProfileManualAssignmentQueuesError) -> Self {
+        match err {
+            crate::operation::list_routing_profile_manual_assignment_queues::ListRoutingProfileManualAssignmentQueuesError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::list_routing_profile_manual_assignment_queues::ListRoutingProfileManualAssignmentQueuesError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::list_routing_profile_manual_assignment_queues::ListRoutingProfileManualAssignmentQueuesError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::list_routing_profile_manual_assignment_queues::ListRoutingProfileManualAssignmentQueuesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_routing_profile_manual_assignment_queues::ListRoutingProfileManualAssignmentQueuesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_routing_profile_manual_assignment_queues::ListRoutingProfileManualAssignmentQueuesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

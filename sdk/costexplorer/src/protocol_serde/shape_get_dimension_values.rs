@@ -35,6 +35,24 @@ pub fn de_get_dimension_values_http_error(
             }
             tmp
         }),
+        "BillingViewHealthStatusException" => crate::operation::get_dimension_values::GetDimensionValuesError::BillingViewHealthStatusException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::BillingViewHealthStatusExceptionBuilder::default();
+                output = crate::protocol_serde::shape_billing_view_health_status_exception::de_billing_view_health_status_exception_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::get_dimension_values::GetDimensionValuesError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "DataUnavailableException" => crate::operation::get_dimension_values::GetDimensionValuesError::DataUnavailableException({
             #[allow(unused_mut)]
             let mut tmp = {

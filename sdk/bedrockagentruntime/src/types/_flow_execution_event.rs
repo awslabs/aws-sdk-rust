@@ -14,6 +14,10 @@ pub enum FlowExecutionEvent {
     FlowInputEvent(crate::types::FlowExecutionInputEvent),
     /// <p>Contains information about the outputs produced by the flow at the end of execution.</p>
     FlowOutputEvent(crate::types::FlowExecutionOutputEvent),
+    /// <p>Contains information about an action (operation) called by a node during execution.</p>
+    NodeActionEvent(crate::types::NodeActionEvent),
+    /// <p>Contains information about an internal trace of a specific node during execution.</p>
+    NodeDependencyEvent(crate::types::NodeDependencyEvent),
     /// <p>Contains information about a failure that occurred at a specific node during execution.</p>
     NodeFailureEvent(crate::types::NodeFailureEvent),
     /// <p>Contains information about the inputs provided to a specific node during execution.</p>
@@ -83,6 +87,32 @@ impl FlowExecutionEvent {
     pub fn is_flow_output_event(&self) -> bool {
         self.as_flow_output_event().is_ok()
     }
+    /// Tries to convert the enum instance into [`NodeActionEvent`](crate::types::FlowExecutionEvent::NodeActionEvent), extracting the inner [`NodeActionEvent`](crate::types::NodeActionEvent).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_node_action_event(&self) -> ::std::result::Result<&crate::types::NodeActionEvent, &Self> {
+        if let FlowExecutionEvent::NodeActionEvent(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`NodeActionEvent`](crate::types::FlowExecutionEvent::NodeActionEvent).
+    pub fn is_node_action_event(&self) -> bool {
+        self.as_node_action_event().is_ok()
+    }
+    /// Tries to convert the enum instance into [`NodeDependencyEvent`](crate::types::FlowExecutionEvent::NodeDependencyEvent), extracting the inner [`NodeDependencyEvent`](crate::types::NodeDependencyEvent).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_node_dependency_event(&self) -> ::std::result::Result<&crate::types::NodeDependencyEvent, &Self> {
+        if let FlowExecutionEvent::NodeDependencyEvent(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`NodeDependencyEvent`](crate::types::FlowExecutionEvent::NodeDependencyEvent).
+    pub fn is_node_dependency_event(&self) -> bool {
+        self.as_node_dependency_event().is_ok()
+    }
     /// Tries to convert the enum instance into [`NodeFailureEvent`](crate::types::FlowExecutionEvent::NodeFailureEvent), extracting the inner [`NodeFailureEvent`](crate::types::NodeFailureEvent).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_node_failure_event(&self) -> ::std::result::Result<&crate::types::NodeFailureEvent, &Self> {
@@ -134,6 +164,8 @@ impl ::std::fmt::Debug for FlowExecutionEvent {
             FlowExecutionEvent::FlowFailureEvent(_) => f.debug_tuple("*** Sensitive Data Redacted ***").finish(),
             FlowExecutionEvent::FlowInputEvent(_) => f.debug_tuple("*** Sensitive Data Redacted ***").finish(),
             FlowExecutionEvent::FlowOutputEvent(_) => f.debug_tuple("*** Sensitive Data Redacted ***").finish(),
+            FlowExecutionEvent::NodeActionEvent(_) => f.debug_tuple("*** Sensitive Data Redacted ***").finish(),
+            FlowExecutionEvent::NodeDependencyEvent(_) => f.debug_tuple("*** Sensitive Data Redacted ***").finish(),
             FlowExecutionEvent::NodeFailureEvent(_) => f.debug_tuple("*** Sensitive Data Redacted ***").finish(),
             FlowExecutionEvent::NodeInputEvent(_) => f.debug_tuple("*** Sensitive Data Redacted ***").finish(),
             FlowExecutionEvent::NodeOutputEvent(_) => f.debug_tuple("*** Sensitive Data Redacted ***").finish(),

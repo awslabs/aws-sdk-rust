@@ -6,11 +6,17 @@
 pub struct ContactSearchSummarySegmentAttributeValue {
     /// <p>The value of a segment attribute represented as a string.</p>
     pub value_string: ::std::option::Option<::std::string::String>,
+    /// <p>The key and value of a segment attribute.</p>
+    pub value_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SegmentAttributeValue>>,
 }
 impl ContactSearchSummarySegmentAttributeValue {
     /// <p>The value of a segment attribute represented as a string.</p>
     pub fn value_string(&self) -> ::std::option::Option<&str> {
         self.value_string.as_deref()
+    }
+    /// <p>The key and value of a segment attribute.</p>
+    pub fn value_map(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::SegmentAttributeValue>> {
+        self.value_map.as_ref()
     }
 }
 impl ContactSearchSummarySegmentAttributeValue {
@@ -25,6 +31,7 @@ impl ContactSearchSummarySegmentAttributeValue {
 #[non_exhaustive]
 pub struct ContactSearchSummarySegmentAttributeValueBuilder {
     pub(crate) value_string: ::std::option::Option<::std::string::String>,
+    pub(crate) value_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SegmentAttributeValue>>,
 }
 impl ContactSearchSummarySegmentAttributeValueBuilder {
     /// <p>The value of a segment attribute represented as a string.</p>
@@ -41,10 +48,34 @@ impl ContactSearchSummarySegmentAttributeValueBuilder {
     pub fn get_value_string(&self) -> &::std::option::Option<::std::string::String> {
         &self.value_string
     }
+    /// Adds a key-value pair to `value_map`.
+    ///
+    /// To override the contents of this collection use [`set_value_map`](Self::set_value_map).
+    ///
+    /// <p>The key and value of a segment attribute.</p>
+    pub fn value_map(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::SegmentAttributeValue) -> Self {
+        let mut hash_map = self.value_map.unwrap_or_default();
+        hash_map.insert(k.into(), v);
+        self.value_map = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>The key and value of a segment attribute.</p>
+    pub fn set_value_map(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SegmentAttributeValue>>,
+    ) -> Self {
+        self.value_map = input;
+        self
+    }
+    /// <p>The key and value of a segment attribute.</p>
+    pub fn get_value_map(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SegmentAttributeValue>> {
+        &self.value_map
+    }
     /// Consumes the builder and constructs a [`ContactSearchSummarySegmentAttributeValue`](crate::types::ContactSearchSummarySegmentAttributeValue).
     pub fn build(self) -> crate::types::ContactSearchSummarySegmentAttributeValue {
         crate::types::ContactSearchSummarySegmentAttributeValue {
             value_string: self.value_string,
+            value_map: self.value_map,
         }
     }
 }

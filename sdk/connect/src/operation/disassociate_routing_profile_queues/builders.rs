@@ -156,4 +156,26 @@ impl DisassociateRoutingProfileQueuesFluentBuilder {
     pub fn get_queue_references(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileQueueReference>> {
         self.inner.get_queue_references()
     }
+    ///
+    /// Appends an item to `ManualAssignmentQueueReferences`.
+    ///
+    /// To override the contents of this collection use [`set_manual_assignment_queue_references`](Self::set_manual_assignment_queue_references).
+    ///
+    /// <p>The manual assignment queues to disassociate with this routing profile.</p>
+    pub fn manual_assignment_queue_references(mut self, input: crate::types::RoutingProfileQueueReference) -> Self {
+        self.inner = self.inner.manual_assignment_queue_references(input);
+        self
+    }
+    /// <p>The manual assignment queues to disassociate with this routing profile.</p>
+    pub fn set_manual_assignment_queue_references(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileQueueReference>>,
+    ) -> Self {
+        self.inner = self.inner.set_manual_assignment_queue_references(input);
+        self
+    }
+    /// <p>The manual assignment queues to disassociate with this routing profile.</p>
+    pub fn get_manual_assignment_queue_references(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileQueueReference>> {
+        self.inner.get_manual_assignment_queue_references()
+    }
 }

@@ -3,8 +3,8 @@ pub fn ser_disassociate_routing_profile_queues_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::disassociate_routing_profile_queues::DisassociateRoutingProfileQueuesInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.queue_references {
-        let mut array_2 = object.key("QueueReferences").start_array();
+    if let Some(var_1) = &input.manual_assignment_queue_references {
+        let mut array_2 = object.key("ManualAssignmentQueueReferences").start_array();
         for item_3 in var_1 {
             {
                 #[allow(unused_mut)]
@@ -14,6 +14,18 @@ pub fn ser_disassociate_routing_profile_queues_input_input(
             }
         }
         array_2.finish();
+    }
+    if let Some(var_5) = &input.queue_references {
+        let mut array_6 = object.key("QueueReferences").start_array();
+        for item_7 in var_5 {
+            {
+                #[allow(unused_mut)]
+                let mut object_8 = array_6.value().start_object();
+                crate::protocol_serde::shape_routing_profile_queue_reference::ser_routing_profile_queue_reference(&mut object_8, item_7)?;
+                object_8.finish();
+            }
+        }
+        array_6.finish();
     }
     Ok(())
 }

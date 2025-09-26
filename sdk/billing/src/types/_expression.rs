@@ -8,6 +8,8 @@ pub struct Expression {
     pub dimensions: ::std::option::Option<crate::types::DimensionValues>,
     /// <p>The specific <code>Tag</code> to use for <code>Expression</code>.</p>
     pub tags: ::std::option::Option<crate::types::TagValues>,
+    /// <p>Specifies a time range filter for the billing view data.</p>
+    pub time_range: ::std::option::Option<crate::types::TimeRange>,
 }
 impl Expression {
     /// <p>The specific <code>Dimension</code> to use for <code>Expression</code>.</p>
@@ -17,6 +19,10 @@ impl Expression {
     /// <p>The specific <code>Tag</code> to use for <code>Expression</code>.</p>
     pub fn tags(&self) -> ::std::option::Option<&crate::types::TagValues> {
         self.tags.as_ref()
+    }
+    /// <p>Specifies a time range filter for the billing view data.</p>
+    pub fn time_range(&self) -> ::std::option::Option<&crate::types::TimeRange> {
+        self.time_range.as_ref()
     }
 }
 impl Expression {
@@ -32,6 +38,7 @@ impl Expression {
 pub struct ExpressionBuilder {
     pub(crate) dimensions: ::std::option::Option<crate::types::DimensionValues>,
     pub(crate) tags: ::std::option::Option<crate::types::TagValues>,
+    pub(crate) time_range: ::std::option::Option<crate::types::TimeRange>,
 }
 impl ExpressionBuilder {
     /// <p>The specific <code>Dimension</code> to use for <code>Expression</code>.</p>
@@ -62,11 +69,26 @@ impl ExpressionBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<crate::types::TagValues> {
         &self.tags
     }
+    /// <p>Specifies a time range filter for the billing view data.</p>
+    pub fn time_range(mut self, input: crate::types::TimeRange) -> Self {
+        self.time_range = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies a time range filter for the billing view data.</p>
+    pub fn set_time_range(mut self, input: ::std::option::Option<crate::types::TimeRange>) -> Self {
+        self.time_range = input;
+        self
+    }
+    /// <p>Specifies a time range filter for the billing view data.</p>
+    pub fn get_time_range(&self) -> &::std::option::Option<crate::types::TimeRange> {
+        &self.time_range
+    }
     /// Consumes the builder and constructs a [`Expression`](crate::types::Expression).
     pub fn build(self) -> crate::types::Expression {
         crate::types::Expression {
             dimensions: self.dimensions,
             tags: self.tags,
+            time_range: self.time_range,
         }
     }
 }

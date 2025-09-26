@@ -26,7 +26,7 @@ pub struct FleetEbsBlockDeviceRequest {
     /// <p>The following are the supported values for each volume type:</p>
     /// <ul>
     /// <li>
-    /// <p><code>gp3</code>: 3,000 - 16,000 IOPS</p></li>
+    /// <p><code>gp3</code>: 3,000 - 80,000 IOPS</p></li>
     /// <li>
     /// <p><code>io1</code>: 100 - 64,000 IOPS</p></li>
     /// <li>
@@ -37,7 +37,7 @@ pub struct FleetEbsBlockDeviceRequest {
     pub iops: ::std::option::Option<i32>,
     /// <p>The throughput that the volume supports, in MiB/s.</p>
     /// <p>This parameter is valid only for <code>gp3</code> volumes.</p>
-    /// <p>Valid Range: Minimum value of 125. Maximum value of 1000.</p>
+    /// <p>Valid Range: Minimum value of 125. Maximum value of 2,000.</p>
     pub throughput: ::std::option::Option<i32>,
     /// <p>Identifier (key ID, key alias, key ARN, or alias ARN) of the customer managed KMS key to use for EBS encryption.</p>
     /// <p>This parameter is only supported on <code>BlockDeviceMapping</code> objects called by <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet.html">CreateFleet</a>, <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotInstances.html">RequestSpotInstances</a>, and <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>.</p>
@@ -48,7 +48,9 @@ pub struct FleetEbsBlockDeviceRequest {
     /// <p>The following are the supported sizes for each volume type:</p>
     /// <ul>
     /// <li>
-    /// <p><code>gp2</code> and <code>gp3</code>: 1 - 16,384 GiB</p></li>
+    /// <p><code>gp2</code>: 1 - 16,384 GiB</p></li>
+    /// <li>
+    /// <p><code>gp3</code>: 1 - 65,536 GiB</p></li>
     /// <li>
     /// <p><code>io1</code>: 4 - 16,384 GiB</p></li>
     /// <li>
@@ -89,7 +91,7 @@ impl FleetEbsBlockDeviceRequest {
     /// <p>The following are the supported values for each volume type:</p>
     /// <ul>
     /// <li>
-    /// <p><code>gp3</code>: 3,000 - 16,000 IOPS</p></li>
+    /// <p><code>gp3</code>: 3,000 - 80,000 IOPS</p></li>
     /// <li>
     /// <p><code>io1</code>: 100 - 64,000 IOPS</p></li>
     /// <li>
@@ -102,7 +104,7 @@ impl FleetEbsBlockDeviceRequest {
     }
     /// <p>The throughput that the volume supports, in MiB/s.</p>
     /// <p>This parameter is valid only for <code>gp3</code> volumes.</p>
-    /// <p>Valid Range: Minimum value of 125. Maximum value of 1000.</p>
+    /// <p>Valid Range: Minimum value of 125. Maximum value of 2,000.</p>
     pub fn throughput(&self) -> ::std::option::Option<i32> {
         self.throughput
     }
@@ -119,7 +121,9 @@ impl FleetEbsBlockDeviceRequest {
     /// <p>The following are the supported sizes for each volume type:</p>
     /// <ul>
     /// <li>
-    /// <p><code>gp2</code> and <code>gp3</code>: 1 - 16,384 GiB</p></li>
+    /// <p><code>gp2</code>: 1 - 16,384 GiB</p></li>
+    /// <li>
+    /// <p><code>gp3</code>: 1 - 65,536 GiB</p></li>
     /// <li>
     /// <p><code>io1</code>: 4 - 16,384 GiB</p></li>
     /// <li>
@@ -232,7 +236,7 @@ impl FleetEbsBlockDeviceRequestBuilder {
     /// <p>The following are the supported values for each volume type:</p>
     /// <ul>
     /// <li>
-    /// <p><code>gp3</code>: 3,000 - 16,000 IOPS</p></li>
+    /// <p><code>gp3</code>: 3,000 - 80,000 IOPS</p></li>
     /// <li>
     /// <p><code>io1</code>: 100 - 64,000 IOPS</p></li>
     /// <li>
@@ -248,7 +252,7 @@ impl FleetEbsBlockDeviceRequestBuilder {
     /// <p>The following are the supported values for each volume type:</p>
     /// <ul>
     /// <li>
-    /// <p><code>gp3</code>: 3,000 - 16,000 IOPS</p></li>
+    /// <p><code>gp3</code>: 3,000 - 80,000 IOPS</p></li>
     /// <li>
     /// <p><code>io1</code>: 100 - 64,000 IOPS</p></li>
     /// <li>
@@ -264,7 +268,7 @@ impl FleetEbsBlockDeviceRequestBuilder {
     /// <p>The following are the supported values for each volume type:</p>
     /// <ul>
     /// <li>
-    /// <p><code>gp3</code>: 3,000 - 16,000 IOPS</p></li>
+    /// <p><code>gp3</code>: 3,000 - 80,000 IOPS</p></li>
     /// <li>
     /// <p><code>io1</code>: 100 - 64,000 IOPS</p></li>
     /// <li>
@@ -277,21 +281,21 @@ impl FleetEbsBlockDeviceRequestBuilder {
     }
     /// <p>The throughput that the volume supports, in MiB/s.</p>
     /// <p>This parameter is valid only for <code>gp3</code> volumes.</p>
-    /// <p>Valid Range: Minimum value of 125. Maximum value of 1000.</p>
+    /// <p>Valid Range: Minimum value of 125. Maximum value of 2,000.</p>
     pub fn throughput(mut self, input: i32) -> Self {
         self.throughput = ::std::option::Option::Some(input);
         self
     }
     /// <p>The throughput that the volume supports, in MiB/s.</p>
     /// <p>This parameter is valid only for <code>gp3</code> volumes.</p>
-    /// <p>Valid Range: Minimum value of 125. Maximum value of 1000.</p>
+    /// <p>Valid Range: Minimum value of 125. Maximum value of 2,000.</p>
     pub fn set_throughput(mut self, input: ::std::option::Option<i32>) -> Self {
         self.throughput = input;
         self
     }
     /// <p>The throughput that the volume supports, in MiB/s.</p>
     /// <p>This parameter is valid only for <code>gp3</code> volumes.</p>
-    /// <p>Valid Range: Minimum value of 125. Maximum value of 1000.</p>
+    /// <p>Valid Range: Minimum value of 125. Maximum value of 2,000.</p>
     pub fn get_throughput(&self) -> &::std::option::Option<i32> {
         &self.throughput
     }
@@ -330,7 +334,9 @@ impl FleetEbsBlockDeviceRequestBuilder {
     /// <p>The following are the supported sizes for each volume type:</p>
     /// <ul>
     /// <li>
-    /// <p><code>gp2</code> and <code>gp3</code>: 1 - 16,384 GiB</p></li>
+    /// <p><code>gp2</code>: 1 - 16,384 GiB</p></li>
+    /// <li>
+    /// <p><code>gp3</code>: 1 - 65,536 GiB</p></li>
     /// <li>
     /// <p><code>io1</code>: 4 - 16,384 GiB</p></li>
     /// <li>
@@ -348,7 +354,9 @@ impl FleetEbsBlockDeviceRequestBuilder {
     /// <p>The following are the supported sizes for each volume type:</p>
     /// <ul>
     /// <li>
-    /// <p><code>gp2</code> and <code>gp3</code>: 1 - 16,384 GiB</p></li>
+    /// <p><code>gp2</code>: 1 - 16,384 GiB</p></li>
+    /// <li>
+    /// <p><code>gp3</code>: 1 - 65,536 GiB</p></li>
     /// <li>
     /// <p><code>io1</code>: 4 - 16,384 GiB</p></li>
     /// <li>
@@ -366,7 +374,9 @@ impl FleetEbsBlockDeviceRequestBuilder {
     /// <p>The following are the supported sizes for each volume type:</p>
     /// <ul>
     /// <li>
-    /// <p><code>gp2</code> and <code>gp3</code>: 1 - 16,384 GiB</p></li>
+    /// <p><code>gp2</code>: 1 - 16,384 GiB</p></li>
+    /// <li>
+    /// <p><code>gp3</code>: 1 - 65,536 GiB</p></li>
     /// <li>
     /// <p><code>io1</code>: 4 - 16,384 GiB</p></li>
     /// <li>

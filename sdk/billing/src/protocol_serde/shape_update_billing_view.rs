@@ -32,6 +32,23 @@ pub fn de_update_billing_view_http_error(
             };
             tmp
         }),
+        "BillingViewHealthStatusException" => crate::operation::update_billing_view::UpdateBillingViewError::BillingViewHealthStatusException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::BillingViewHealthStatusExceptionBuilder::default();
+                output = crate::protocol_serde::shape_billing_view_health_status_exception::de_billing_view_health_status_exception_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::update_billing_view::UpdateBillingViewError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::billing_view_health_status_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::update_billing_view::UpdateBillingViewError::unhandled)?
+            };
+            tmp
+        }),
         "ConflictException" => crate::operation::update_billing_view::UpdateBillingViewError::ConflictException({
             #[allow(unused_mut)]
             let mut tmp = {

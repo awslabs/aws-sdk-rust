@@ -8,6 +8,14 @@ pub struct FlowTraceNodeInputField {
     pub node_input_name: ::std::string::String,
     /// <p>The content of the node input.</p>
     pub content: ::std::option::Option<crate::types::FlowTraceNodeInputContent>,
+    /// <p>The source node that provides input data to this field.</p>
+    pub source: ::std::option::Option<crate::types::FlowTraceNodeInputSource>,
+    /// <p>The data type of the input field for compatibility validation.</p>
+    pub r#type: ::std::option::Option<crate::types::FlowNodeIoDataType>,
+    /// <p>The category of the input field.</p>
+    pub category: ::std::option::Option<crate::types::FlowNodeInputCategory>,
+    /// <p>The execution path through nested nodes like iterators and loops.</p>
+    pub execution_chain: ::std::option::Option<::std::vec::Vec<crate::types::FlowTraceNodeInputExecutionChainItem>>,
 }
 impl FlowTraceNodeInputField {
     /// <p>The name of the node input.</p>
@@ -19,12 +27,34 @@ impl FlowTraceNodeInputField {
     pub fn content(&self) -> ::std::option::Option<&crate::types::FlowTraceNodeInputContent> {
         self.content.as_ref()
     }
+    /// <p>The source node that provides input data to this field.</p>
+    pub fn source(&self) -> ::std::option::Option<&crate::types::FlowTraceNodeInputSource> {
+        self.source.as_ref()
+    }
+    /// <p>The data type of the input field for compatibility validation.</p>
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::FlowNodeIoDataType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The category of the input field.</p>
+    pub fn category(&self) -> ::std::option::Option<&crate::types::FlowNodeInputCategory> {
+        self.category.as_ref()
+    }
+    /// <p>The execution path through nested nodes like iterators and loops.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.execution_chain.is_none()`.
+    pub fn execution_chain(&self) -> &[crate::types::FlowTraceNodeInputExecutionChainItem] {
+        self.execution_chain.as_deref().unwrap_or_default()
+    }
 }
 impl ::std::fmt::Debug for FlowTraceNodeInputField {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("FlowTraceNodeInputField");
         formatter.field("node_input_name", &"*** Sensitive Data Redacted ***");
         formatter.field("content", &"*** Sensitive Data Redacted ***");
+        formatter.field("source", &"*** Sensitive Data Redacted ***");
+        formatter.field("r#type", &"*** Sensitive Data Redacted ***");
+        formatter.field("category", &"*** Sensitive Data Redacted ***");
+        formatter.field("execution_chain", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -41,6 +71,10 @@ impl FlowTraceNodeInputField {
 pub struct FlowTraceNodeInputFieldBuilder {
     pub(crate) node_input_name: ::std::option::Option<::std::string::String>,
     pub(crate) content: ::std::option::Option<crate::types::FlowTraceNodeInputContent>,
+    pub(crate) source: ::std::option::Option<crate::types::FlowTraceNodeInputSource>,
+    pub(crate) r#type: ::std::option::Option<crate::types::FlowNodeIoDataType>,
+    pub(crate) category: ::std::option::Option<crate::types::FlowNodeInputCategory>,
+    pub(crate) execution_chain: ::std::option::Option<::std::vec::Vec<crate::types::FlowTraceNodeInputExecutionChainItem>>,
 }
 impl FlowTraceNodeInputFieldBuilder {
     /// <p>The name of the node input.</p>
@@ -73,6 +107,68 @@ impl FlowTraceNodeInputFieldBuilder {
     pub fn get_content(&self) -> &::std::option::Option<crate::types::FlowTraceNodeInputContent> {
         &self.content
     }
+    /// <p>The source node that provides input data to this field.</p>
+    pub fn source(mut self, input: crate::types::FlowTraceNodeInputSource) -> Self {
+        self.source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The source node that provides input data to this field.</p>
+    pub fn set_source(mut self, input: ::std::option::Option<crate::types::FlowTraceNodeInputSource>) -> Self {
+        self.source = input;
+        self
+    }
+    /// <p>The source node that provides input data to this field.</p>
+    pub fn get_source(&self) -> &::std::option::Option<crate::types::FlowTraceNodeInputSource> {
+        &self.source
+    }
+    /// <p>The data type of the input field for compatibility validation.</p>
+    pub fn r#type(mut self, input: crate::types::FlowNodeIoDataType) -> Self {
+        self.r#type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The data type of the input field for compatibility validation.</p>
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::FlowNodeIoDataType>) -> Self {
+        self.r#type = input;
+        self
+    }
+    /// <p>The data type of the input field for compatibility validation.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::FlowNodeIoDataType> {
+        &self.r#type
+    }
+    /// <p>The category of the input field.</p>
+    pub fn category(mut self, input: crate::types::FlowNodeInputCategory) -> Self {
+        self.category = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The category of the input field.</p>
+    pub fn set_category(mut self, input: ::std::option::Option<crate::types::FlowNodeInputCategory>) -> Self {
+        self.category = input;
+        self
+    }
+    /// <p>The category of the input field.</p>
+    pub fn get_category(&self) -> &::std::option::Option<crate::types::FlowNodeInputCategory> {
+        &self.category
+    }
+    /// Appends an item to `execution_chain`.
+    ///
+    /// To override the contents of this collection use [`set_execution_chain`](Self::set_execution_chain).
+    ///
+    /// <p>The execution path through nested nodes like iterators and loops.</p>
+    pub fn execution_chain(mut self, input: crate::types::FlowTraceNodeInputExecutionChainItem) -> Self {
+        let mut v = self.execution_chain.unwrap_or_default();
+        v.push(input);
+        self.execution_chain = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The execution path through nested nodes like iterators and loops.</p>
+    pub fn set_execution_chain(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FlowTraceNodeInputExecutionChainItem>>) -> Self {
+        self.execution_chain = input;
+        self
+    }
+    /// <p>The execution path through nested nodes like iterators and loops.</p>
+    pub fn get_execution_chain(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FlowTraceNodeInputExecutionChainItem>> {
+        &self.execution_chain
+    }
     /// Consumes the builder and constructs a [`FlowTraceNodeInputField`](crate::types::FlowTraceNodeInputField).
     /// This method will fail if any of the following fields are not set:
     /// - [`node_input_name`](crate::types::builders::FlowTraceNodeInputFieldBuilder::node_input_name)
@@ -85,6 +181,10 @@ impl FlowTraceNodeInputFieldBuilder {
                 )
             })?,
             content: self.content,
+            source: self.source,
+            r#type: self.r#type,
+            category: self.category,
+            execution_chain: self.execution_chain,
         })
     }
 }
@@ -93,6 +193,10 @@ impl ::std::fmt::Debug for FlowTraceNodeInputFieldBuilder {
         let mut formatter = f.debug_struct("FlowTraceNodeInputFieldBuilder");
         formatter.field("node_input_name", &"*** Sensitive Data Redacted ***");
         formatter.field("content", &"*** Sensitive Data Redacted ***");
+        formatter.field("source", &"*** Sensitive Data Redacted ***");
+        formatter.field("r#type", &"*** Sensitive Data Redacted ***");
+        formatter.field("category", &"*** Sensitive Data Redacted ***");
+        formatter.field("execution_chain", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

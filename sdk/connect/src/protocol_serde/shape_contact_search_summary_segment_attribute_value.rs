@@ -21,6 +21,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "ValueMap" => {
+                            builder = builder.set_value_map(
+                                crate::protocol_serde::shape_segment_attribute_value_map::de_segment_attribute_value_map(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

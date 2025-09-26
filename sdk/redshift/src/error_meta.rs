@@ -1515,11 +1515,17 @@ impl From<crate::operation::create_redshift_idc_application::CreateRedshiftIdcAp
             crate::operation::create_redshift_idc_application::CreateRedshiftIdcApplicationError::DependentServiceUnavailableFault(inner) => {
                 Error::DependentServiceUnavailableFault(inner)
             }
+            crate::operation::create_redshift_idc_application::CreateRedshiftIdcApplicationError::InvalidTagFault(inner) => {
+                Error::InvalidTagFault(inner)
+            }
             crate::operation::create_redshift_idc_application::CreateRedshiftIdcApplicationError::RedshiftIdcApplicationAlreadyExistsFault(inner) => {
                 Error::RedshiftIdcApplicationAlreadyExistsFault(inner)
             }
             crate::operation::create_redshift_idc_application::CreateRedshiftIdcApplicationError::RedshiftIdcApplicationQuotaExceededFault(inner) => {
                 Error::RedshiftIdcApplicationQuotaExceededFault(inner)
+            }
+            crate::operation::create_redshift_idc_application::CreateRedshiftIdcApplicationError::TagLimitExceededFault(inner) => {
+                Error::TagLimitExceededFault(inner)
             }
             crate::operation::create_redshift_idc_application::CreateRedshiftIdcApplicationError::UnsupportedOperationFault(inner) => {
                 Error::UnsupportedOperationFault(inner)

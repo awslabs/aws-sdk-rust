@@ -750,6 +750,24 @@ pub(crate) fn quick_connect_config_correct_errors(
     builder
 }
 
+pub(crate) fn routing_profile_manual_assignment_queue_config_summary_correct_errors(
+    mut builder: crate::types::builders::RoutingProfileManualAssignmentQueueConfigSummaryBuilder,
+) -> crate::types::builders::RoutingProfileManualAssignmentQueueConfigSummaryBuilder {
+    if builder.queue_id.is_none() {
+        builder.queue_id = Some(Default::default())
+    }
+    if builder.queue_arn.is_none() {
+        builder.queue_arn = Some(Default::default())
+    }
+    if builder.queue_name.is_none() {
+        builder.queue_name = Some(Default::default())
+    }
+    if builder.channel.is_none() {
+        builder.channel = "no value was set".parse::<crate::types::Channel>().ok()
+    }
+    builder
+}
+
 pub(crate) fn routing_profile_queue_config_summary_correct_errors(
     mut builder: crate::types::builders::RoutingProfileQueueConfigSummaryBuilder,
 ) -> crate::types::builders::RoutingProfileQueueConfigSummaryBuilder {

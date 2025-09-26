@@ -5,6 +5,8 @@
 pub enum Error {
     /// <p>You don't have sufficient access to perform this action.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
+    /// <p>Exception thrown when a billing view's health status prevents an operation from being performed. This may occur if the billing view is in a state other than <code>HEALTHY</code>.</p>
+    BillingViewHealthStatusException(crate::types::error::BillingViewHealthStatusException),
     /// <p>The requested operation would cause a conflict with the current state of a service resource associated with the request. Resolve the conflict before retrying this request.</p>
     ConflictException(crate::types::error::ConflictException),
     /// <p>The request processing failed because of an unknown error, exception, or failure.</p>
@@ -30,6 +32,7 @@ impl ::std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
             Error::AccessDeniedException(inner) => inner.fmt(f),
+            Error::BillingViewHealthStatusException(inner) => inner.fmt(f),
             Error::ConflictException(inner) => inner.fmt(f),
             Error::InternalServerException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
@@ -58,6 +61,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
     fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
         match self {
             Self::AccessDeniedException(inner) => inner.meta(),
+            Self::BillingViewHealthStatusException(inner) => inner.meta(),
             Self::ConflictException(inner) => inner.meta(),
             Self::InternalServerException(inner) => inner.meta(),
             Self::ResourceNotFoundException(inner) => inner.meta(),
@@ -65,6 +69,43 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::ThrottlingException(inner) => inner.meta(),
             Self::ValidationException(inner) => inner.meta(),
             Self::Unhandled(inner) => &inner.meta,
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_source_views::AssociateSourceViewsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_source_views::AssociateSourceViewsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::associate_source_views::AssociateSourceViewsError> for Error {
+    fn from(err: crate::operation::associate_source_views::AssociateSourceViewsError) -> Self {
+        match err {
+            crate::operation::associate_source_views::AssociateSourceViewsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::associate_source_views::AssociateSourceViewsError::BillingViewHealthStatusException(inner) => {
+                Error::BillingViewHealthStatusException(inner)
+            }
+            crate::operation::associate_source_views::AssociateSourceViewsError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::associate_source_views::AssociateSourceViewsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::associate_source_views::AssociateSourceViewsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::associate_source_views::AssociateSourceViewsError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::associate_source_views::AssociateSourceViewsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::associate_source_views::AssociateSourceViewsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::associate_source_views::AssociateSourceViewsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -86,8 +127,14 @@ impl From<crate::operation::create_billing_view::CreateBillingViewError> for Err
     fn from(err: crate::operation::create_billing_view::CreateBillingViewError) -> Self {
         match err {
             crate::operation::create_billing_view::CreateBillingViewError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_billing_view::CreateBillingViewError::BillingViewHealthStatusException(inner) => {
+                Error::BillingViewHealthStatusException(inner)
+            }
             crate::operation::create_billing_view::CreateBillingViewError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::create_billing_view::CreateBillingViewError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_billing_view::CreateBillingViewError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::create_billing_view::CreateBillingViewError::ServiceQuotaExceededException(inner) => {
                 Error::ServiceQuotaExceededException(inner)
             }
@@ -120,6 +167,49 @@ impl From<crate::operation::delete_billing_view::DeleteBillingViewError> for Err
             crate::operation::delete_billing_view::DeleteBillingViewError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::delete_billing_view::DeleteBillingViewError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_billing_view::DeleteBillingViewError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::disassociate_source_views::DisassociateSourceViewsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::disassociate_source_views::DisassociateSourceViewsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::disassociate_source_views::DisassociateSourceViewsError> for Error {
+    fn from(err: crate::operation::disassociate_source_views::DisassociateSourceViewsError) -> Self {
+        match err {
+            crate::operation::disassociate_source_views::DisassociateSourceViewsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::disassociate_source_views::DisassociateSourceViewsError::BillingViewHealthStatusException(inner) => {
+                Error::BillingViewHealthStatusException(inner)
+            }
+            crate::operation::disassociate_source_views::DisassociateSourceViewsError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::disassociate_source_views::DisassociateSourceViewsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::disassociate_source_views::DisassociateSourceViewsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::disassociate_source_views::DisassociateSourceViewsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::disassociate_source_views::DisassociateSourceViewsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::disassociate_source_views::DisassociateSourceViewsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -349,6 +439,9 @@ impl From<crate::operation::update_billing_view::UpdateBillingViewError> for Err
     fn from(err: crate::operation::update_billing_view::UpdateBillingViewError) -> Self {
         match err {
             crate::operation::update_billing_view::UpdateBillingViewError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_billing_view::UpdateBillingViewError::BillingViewHealthStatusException(inner) => {
+                Error::BillingViewHealthStatusException(inner)
+            }
             crate::operation::update_billing_view::UpdateBillingViewError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::update_billing_view::UpdateBillingViewError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::update_billing_view::UpdateBillingViewError::ResourceNotFoundException(inner) => {
@@ -367,6 +460,7 @@ impl ::std::error::Error for Error {
     fn source(&self) -> std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Error::AccessDeniedException(inner) => inner.source(),
+            Error::BillingViewHealthStatusException(inner) => inner.source(),
             Error::ConflictException(inner) => inner.source(),
             Error::InternalServerException(inner) => inner.source(),
             Error::ResourceNotFoundException(inner) => inner.source(),
@@ -381,6 +475,7 @@ impl ::aws_types::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {
             Self::AccessDeniedException(e) => e.request_id(),
+            Self::BillingViewHealthStatusException(e) => e.request_id(),
             Self::ConflictException(e) => e.request_id(),
             Self::InternalServerException(e) => e.request_id(),
             Self::ResourceNotFoundException(e) => e.request_id(),

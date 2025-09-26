@@ -15,6 +15,7 @@
 ///     SortableFieldName::Channel => { /* ... */ },
 ///     SortableFieldName::ConnectedToAgentTimestamp => { /* ... */ },
 ///     SortableFieldName::DisconnectTimestamp => { /* ... */ },
+///     SortableFieldName::ExpiryTimestamp => { /* ... */ },
 ///     SortableFieldName::InitiationMethod => { /* ... */ },
 ///     SortableFieldName::InitiationTimestamp => { /* ... */ },
 ///     SortableFieldName::ScheduledTimestamp => { /* ... */ },
@@ -53,6 +54,8 @@ pub enum SortableFieldName {
     #[allow(missing_docs)] // documentation missing in model
     DisconnectTimestamp,
     #[allow(missing_docs)] // documentation missing in model
+    ExpiryTimestamp,
+    #[allow(missing_docs)] // documentation missing in model
     InitiationMethod,
     #[allow(missing_docs)] // documentation missing in model
     InitiationTimestamp,
@@ -68,6 +71,7 @@ impl ::std::convert::From<&str> for SortableFieldName {
             "CHANNEL" => SortableFieldName::Channel,
             "CONNECTED_TO_AGENT_TIMESTAMP" => SortableFieldName::ConnectedToAgentTimestamp,
             "DISCONNECT_TIMESTAMP" => SortableFieldName::DisconnectTimestamp,
+            "EXPIRY_TIMESTAMP" => SortableFieldName::ExpiryTimestamp,
             "INITIATION_METHOD" => SortableFieldName::InitiationMethod,
             "INITIATION_TIMESTAMP" => SortableFieldName::InitiationTimestamp,
             "SCHEDULED_TIMESTAMP" => SortableFieldName::ScheduledTimestamp,
@@ -89,6 +93,7 @@ impl SortableFieldName {
             SortableFieldName::Channel => "CHANNEL",
             SortableFieldName::ConnectedToAgentTimestamp => "CONNECTED_TO_AGENT_TIMESTAMP",
             SortableFieldName::DisconnectTimestamp => "DISCONNECT_TIMESTAMP",
+            SortableFieldName::ExpiryTimestamp => "EXPIRY_TIMESTAMP",
             SortableFieldName::InitiationMethod => "INITIATION_METHOD",
             SortableFieldName::InitiationTimestamp => "INITIATION_TIMESTAMP",
             SortableFieldName::ScheduledTimestamp => "SCHEDULED_TIMESTAMP",
@@ -101,6 +106,7 @@ impl SortableFieldName {
             "CHANNEL",
             "CONNECTED_TO_AGENT_TIMESTAMP",
             "DISCONNECT_TIMESTAMP",
+            "EXPIRY_TIMESTAMP",
             "INITIATION_METHOD",
             "INITIATION_TIMESTAMP",
             "SCHEDULED_TIMESTAMP",
@@ -130,6 +136,7 @@ impl ::std::fmt::Display for SortableFieldName {
             SortableFieldName::Channel => write!(f, "CHANNEL"),
             SortableFieldName::ConnectedToAgentTimestamp => write!(f, "CONNECTED_TO_AGENT_TIMESTAMP"),
             SortableFieldName::DisconnectTimestamp => write!(f, "DISCONNECT_TIMESTAMP"),
+            SortableFieldName::ExpiryTimestamp => write!(f, "EXPIRY_TIMESTAMP"),
             SortableFieldName::InitiationMethod => write!(f, "INITIATION_METHOD"),
             SortableFieldName::InitiationTimestamp => write!(f, "INITIATION_TIMESTAMP"),
             SortableFieldName::ScheduledTimestamp => write!(f, "SCHEDULED_TIMESTAMP"),

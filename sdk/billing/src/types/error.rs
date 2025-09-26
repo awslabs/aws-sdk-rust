@@ -11,9 +11,13 @@ pub use crate::types::error::_internal_server_exception::InternalServerException
 
 pub use crate::types::error::_conflict_exception::ConflictException;
 
+pub use crate::types::error::_billing_view_health_status_exception::BillingViewHealthStatusException;
+
 pub use crate::types::error::_access_denied_exception::AccessDeniedException;
 
 mod _access_denied_exception;
+
+mod _billing_view_health_status_exception;
 
 mod _conflict_exception;
 

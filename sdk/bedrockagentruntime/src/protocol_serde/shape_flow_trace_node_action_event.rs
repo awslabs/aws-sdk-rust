@@ -48,6 +48,12 @@ where
                                     .transpose()?,
                             );
                         }
+                        "operationRequest" => {
+                            builder = builder.set_operation_request(Some(::aws_smithy_json::deserialize::token::expect_document(tokens)?));
+                        }
+                        "operationResponse" => {
+                            builder = builder.set_operation_response(Some(::aws_smithy_json::deserialize::token::expect_document(tokens)?));
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

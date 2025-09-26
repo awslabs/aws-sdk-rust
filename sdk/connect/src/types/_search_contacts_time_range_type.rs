@@ -14,6 +14,7 @@
 /// match searchcontactstimerangetype {
 ///     SearchContactsTimeRangeType::ConnectedToAgentTimestamp => { /* ... */ },
 ///     SearchContactsTimeRangeType::DisconnectTimestamp => { /* ... */ },
+///     SearchContactsTimeRangeType::EnqueueTimestamp => { /* ... */ },
 ///     SearchContactsTimeRangeType::InitiationTimestamp => { /* ... */ },
 ///     SearchContactsTimeRangeType::ScheduledTimestamp => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -49,6 +50,8 @@ pub enum SearchContactsTimeRangeType {
     #[allow(missing_docs)] // documentation missing in model
     DisconnectTimestamp,
     #[allow(missing_docs)] // documentation missing in model
+    EnqueueTimestamp,
+    #[allow(missing_docs)] // documentation missing in model
     InitiationTimestamp,
     #[allow(missing_docs)] // documentation missing in model
     ScheduledTimestamp,
@@ -61,6 +64,7 @@ impl ::std::convert::From<&str> for SearchContactsTimeRangeType {
         match s {
             "CONNECTED_TO_AGENT_TIMESTAMP" => SearchContactsTimeRangeType::ConnectedToAgentTimestamp,
             "DISCONNECT_TIMESTAMP" => SearchContactsTimeRangeType::DisconnectTimestamp,
+            "ENQUEUE_TIMESTAMP" => SearchContactsTimeRangeType::EnqueueTimestamp,
             "INITIATION_TIMESTAMP" => SearchContactsTimeRangeType::InitiationTimestamp,
             "SCHEDULED_TIMESTAMP" => SearchContactsTimeRangeType::ScheduledTimestamp,
             other => SearchContactsTimeRangeType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -80,6 +84,7 @@ impl SearchContactsTimeRangeType {
         match self {
             SearchContactsTimeRangeType::ConnectedToAgentTimestamp => "CONNECTED_TO_AGENT_TIMESTAMP",
             SearchContactsTimeRangeType::DisconnectTimestamp => "DISCONNECT_TIMESTAMP",
+            SearchContactsTimeRangeType::EnqueueTimestamp => "ENQUEUE_TIMESTAMP",
             SearchContactsTimeRangeType::InitiationTimestamp => "INITIATION_TIMESTAMP",
             SearchContactsTimeRangeType::ScheduledTimestamp => "SCHEDULED_TIMESTAMP",
             SearchContactsTimeRangeType::Unknown(value) => value.as_str(),
@@ -90,6 +95,7 @@ impl SearchContactsTimeRangeType {
         &[
             "CONNECTED_TO_AGENT_TIMESTAMP",
             "DISCONNECT_TIMESTAMP",
+            "ENQUEUE_TIMESTAMP",
             "INITIATION_TIMESTAMP",
             "SCHEDULED_TIMESTAMP",
         ]
@@ -117,6 +123,7 @@ impl ::std::fmt::Display for SearchContactsTimeRangeType {
         match self {
             SearchContactsTimeRangeType::ConnectedToAgentTimestamp => write!(f, "CONNECTED_TO_AGENT_TIMESTAMP"),
             SearchContactsTimeRangeType::DisconnectTimestamp => write!(f, "DISCONNECT_TIMESTAMP"),
+            SearchContactsTimeRangeType::EnqueueTimestamp => write!(f, "ENQUEUE_TIMESTAMP"),
             SearchContactsTimeRangeType::InitiationTimestamp => write!(f, "INITIATION_TIMESTAMP"),
             SearchContactsTimeRangeType::ScheduledTimestamp => write!(f, "SCHEDULED_TIMESTAMP"),
             SearchContactsTimeRangeType::Unknown(value) => write!(f, "{}", value),

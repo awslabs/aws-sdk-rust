@@ -335,6 +335,12 @@ pub use crate::types::_email_address_search_criteria::EmailAddressSearchCriteria
 
 pub use crate::types::_contact_search_summary::ContactSearchSummaryBuilder;
 
+pub use crate::types::_routing_criteria::RoutingCriteriaBuilder;
+
+pub use crate::types::_step::StepBuilder;
+
+pub use crate::types::_expiry::ExpiryBuilder;
+
 pub use crate::types::_contact_search_summary_segment_attribute_value::ContactSearchSummarySegmentAttributeValueBuilder;
 
 pub use crate::types::_contact_search_summary_agent_info::ContactSearchSummaryAgentInfoBuilder;
@@ -353,6 +359,20 @@ pub use crate::types::_searchable_contact_attributes::SearchableContactAttribute
 
 pub use crate::types::_searchable_contact_attributes_criteria::SearchableContactAttributesCriteriaBuilder;
 
+pub use crate::types::_search_contacts_additional_time_range::SearchContactsAdditionalTimeRangeBuilder;
+
+pub use crate::types::_search_contacts_additional_time_range_criteria::SearchContactsAdditionalTimeRangeCriteriaBuilder;
+
+pub use crate::types::_search_contacts_timestamp_condition::SearchContactsTimestampConditionBuilder;
+
+pub use crate::types::_search_contacts_time_range::SearchContactsTimeRangeBuilder;
+
+pub use crate::types::_searchable_routing_criteria::SearchableRoutingCriteriaBuilder;
+
+pub use crate::types::_searchable_routing_criteria_step::SearchableRoutingCriteriaStepBuilder;
+
+pub use crate::types::_searchable_agent_criteria_step::SearchableAgentCriteriaStepBuilder;
+
 pub use crate::types::_contact_analysis::ContactAnalysisBuilder;
 
 pub use crate::types::_transcript::TranscriptBuilder;
@@ -361,7 +381,7 @@ pub use crate::types::_transcript_criteria::TranscriptCriteriaBuilder;
 
 pub use crate::types::_agent_hierarchy_groups::AgentHierarchyGroupsBuilder;
 
-pub use crate::types::_search_contacts_time_range::SearchContactsTimeRangeBuilder;
+pub use crate::types::_name_criteria::NameCriteriaBuilder;
 
 pub use crate::types::_contact_flow::ContactFlowBuilder;
 
@@ -408,6 +428,8 @@ pub use crate::types::_action_summary::ActionSummaryBuilder;
 pub use crate::types::_routing_profile_summary::RoutingProfileSummaryBuilder;
 
 pub use crate::types::_routing_profile_queue_config_summary::RoutingProfileQueueConfigSummaryBuilder;
+
+pub use crate::types::_routing_profile_manual_assignment_queue_config_summary::RoutingProfileManualAssignmentQueueConfigSummaryBuilder;
 
 pub use crate::types::_real_time_contact_analysis_segment_post_contact_summary::RealTimeContactAnalysisSegmentPostContactSummaryBuilder;
 
@@ -651,12 +673,6 @@ pub use crate::types::_customer::CustomerBuilder;
 
 pub use crate::types::_device_info::DeviceInfoBuilder;
 
-pub use crate::types::_routing_criteria::RoutingCriteriaBuilder;
-
-pub use crate::types::_step::StepBuilder;
-
-pub use crate::types::_expiry::ExpiryBuilder;
-
 pub use crate::types::_endpoint_info::EndpointInfoBuilder;
 
 pub use crate::types::_wisdom_info::WisdomInfoBuilder;
@@ -672,6 +688,8 @@ pub use crate::types::_agent_hierarchy_group::AgentHierarchyGroupBuilder;
 pub use crate::types::_queue_info::QueueInfoBuilder;
 
 pub use crate::types::_authentication_profile::AuthenticationProfileBuilder;
+
+pub use crate::types::_routing_profile_manual_assignment_queue_config::RoutingProfileManualAssignmentQueueConfigBuilder;
 
 pub use crate::types::_contact_configuration::ContactConfigurationBuilder;
 

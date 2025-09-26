@@ -181,6 +181,20 @@ impl ListBillingViewsFluentBuilder {
     pub fn get_owner_account_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_owner_account_id()
     }
+    /// <p>Filters the results to include only billing views that use the specified account as a source.</p>
+    pub fn source_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.source_account_id(input.into());
+        self
+    }
+    /// <p>Filters the results to include only billing views that use the specified account as a source.</p>
+    pub fn set_source_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_source_account_id(input);
+        self
+    }
+    /// <p>Filters the results to include only billing views that use the specified account as a source.</p>
+    pub fn get_source_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_account_id()
+    }
     /// <p>The maximum number of billing views to retrieve. Default is 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);

@@ -23,9 +23,13 @@ pub fn parse_http_error_metadata(
     crate::json_errors::parse_error_metadata(response_body, response_headers)
 }
 
+pub(crate) mod shape_associate_source_views;
+
 pub(crate) mod shape_create_billing_view;
 
 pub(crate) mod shape_delete_billing_view;
+
+pub(crate) mod shape_disassociate_source_views;
 
 pub(crate) mod shape_get_billing_view;
 
@@ -53,11 +57,17 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
 
 pub(crate) mod shape_access_denied_exception;
 
+pub(crate) mod shape_associate_source_views_input;
+
+pub(crate) mod shape_billing_view_health_status_exception;
+
 pub(crate) mod shape_conflict_exception;
 
 pub(crate) mod shape_create_billing_view_input;
 
 pub(crate) mod shape_delete_billing_view_input;
+
+pub(crate) mod shape_disassociate_source_views_input;
 
 pub(crate) mod shape_get_billing_view_input;
 
@@ -101,12 +111,18 @@ pub(crate) mod shape_resource_tag_list;
 
 pub(crate) mod shape_validation_exception_field_list;
 
+pub(crate) mod shape_billing_view_health_status;
+
 pub(crate) mod shape_billing_view_list_element;
 
 pub(crate) mod shape_dimension_values;
 
 pub(crate) mod shape_tag_values;
 
+pub(crate) mod shape_time_range;
+
 pub(crate) mod shape_validation_exception_field;
+
+pub(crate) mod shape_billing_view_status_reasons;
 
 pub(crate) mod shape_values;

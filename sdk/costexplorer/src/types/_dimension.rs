@@ -29,6 +29,7 @@
 ///     Dimension::LinkedAccountName => { /* ... */ },
 ///     Dimension::OperatingSystem => { /* ... */ },
 ///     Dimension::Operation => { /* ... */ },
+///     Dimension::PayerAccount => { /* ... */ },
 ///     Dimension::PaymentOption => { /* ... */ },
 ///     Dimension::Platform => { /* ... */ },
 ///     Dimension::PurchaseType => { /* ... */ },
@@ -109,6 +110,8 @@ pub enum Dimension {
     #[allow(missing_docs)] // documentation missing in model
     Operation,
     #[allow(missing_docs)] // documentation missing in model
+    PayerAccount,
+    #[allow(missing_docs)] // documentation missing in model
     PaymentOption,
     #[allow(missing_docs)] // documentation missing in model
     Platform,
@@ -166,6 +169,7 @@ impl ::std::convert::From<&str> for Dimension {
             "LINKED_ACCOUNT_NAME" => Dimension::LinkedAccountName,
             "OPERATING_SYSTEM" => Dimension::OperatingSystem,
             "OPERATION" => Dimension::Operation,
+            "PAYER_ACCOUNT" => Dimension::PayerAccount,
             "PAYMENT_OPTION" => Dimension::PaymentOption,
             "PLATFORM" => Dimension::Platform,
             "PURCHASE_TYPE" => Dimension::PurchaseType,
@@ -215,6 +219,7 @@ impl Dimension {
             Dimension::LinkedAccountName => "LINKED_ACCOUNT_NAME",
             Dimension::OperatingSystem => "OPERATING_SYSTEM",
             Dimension::Operation => "OPERATION",
+            Dimension::PayerAccount => "PAYER_ACCOUNT",
             Dimension::PaymentOption => "PAYMENT_OPTION",
             Dimension::Platform => "PLATFORM",
             Dimension::PurchaseType => "PURCHASE_TYPE",
@@ -255,6 +260,7 @@ impl Dimension {
             "LINKED_ACCOUNT_NAME",
             "OPERATING_SYSTEM",
             "OPERATION",
+            "PAYER_ACCOUNT",
             "PAYMENT_OPTION",
             "PLATFORM",
             "PURCHASE_TYPE",
@@ -312,6 +318,7 @@ impl ::std::fmt::Display for Dimension {
             Dimension::LinkedAccountName => write!(f, "LINKED_ACCOUNT_NAME"),
             Dimension::OperatingSystem => write!(f, "OPERATING_SYSTEM"),
             Dimension::Operation => write!(f, "OPERATION"),
+            Dimension::PayerAccount => write!(f, "PAYER_ACCOUNT"),
             Dimension::PaymentOption => write!(f, "PAYMENT_OPTION"),
             Dimension::Platform => write!(f, "PLATFORM"),
             Dimension::PurchaseType => write!(f, "PURCHASE_TYPE"),

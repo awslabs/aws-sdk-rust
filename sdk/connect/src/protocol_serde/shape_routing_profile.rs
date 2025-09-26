@@ -70,6 +70,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "NumberOfAssociatedManualAssignmentQueues" => {
+                            builder = builder.set_number_of_associated_manual_assignment_queues(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i64::try_from)
+                                    .transpose()?,
+                            );
+                        }
                         "NumberOfAssociatedUsers" => {
                             builder = builder.set_number_of_associated_users(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
@@ -102,6 +109,11 @@ where
                         }
                         "AssociatedQueueIds" => {
                             builder = builder.set_associated_queue_ids(
+                                crate::protocol_serde::shape_associated_queue_id_list::de_associated_queue_id_list(tokens)?,
+                            );
+                        }
+                        "AssociatedManualAssignmentQueueIds" => {
+                            builder = builder.set_associated_manual_assignment_queue_ids(
                                 crate::protocol_serde::shape_associated_queue_id_list::de_associated_queue_id_list(tokens)?,
                             );
                         }

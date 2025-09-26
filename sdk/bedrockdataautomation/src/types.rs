@@ -45,6 +45,14 @@ pub use crate::types::_audio_standard_extraction::AudioStandardExtraction;
 
 pub use crate::types::_audio_extraction_category::AudioExtractionCategory;
 
+pub use crate::types::_audio_extraction_category_type_configuration::AudioExtractionCategoryTypeConfiguration;
+
+pub use crate::types::_transcript_configuration::TranscriptConfiguration;
+
+pub use crate::types::_channel_labeling_configuration::ChannelLabelingConfiguration;
+
+pub use crate::types::_speaker_labeling_configuration::SpeakerLabelingConfiguration;
+
 pub use crate::types::_audio_extraction_category_type::AudioExtractionCategoryType;
 
 pub use crate::types::_video_standard_output_configuration::VideoStandardOutputConfiguration;
@@ -121,6 +129,8 @@ mod _audio_extraction_category;
 
 mod _audio_extraction_category_type;
 
+mod _audio_extraction_category_type_configuration;
+
 mod _audio_override_configuration;
 
 mod _audio_standard_extraction;
@@ -142,6 +152,8 @@ mod _blueprint_stage;
 mod _blueprint_stage_filter;
 
 mod _blueprint_summary;
+
+mod _channel_labeling_configuration;
 
 mod _custom_output_configuration;
 
@@ -207,6 +219,8 @@ mod _override_configuration;
 
 mod _resource_owner;
 
+mod _speaker_labeling_configuration;
+
 mod _splitter_configuration;
 
 mod _standard_output_configuration;
@@ -214,6 +228,8 @@ mod _standard_output_configuration;
 mod _state;
 
 mod _tag;
+
+mod _transcript_configuration;
 
 mod _type_;
 

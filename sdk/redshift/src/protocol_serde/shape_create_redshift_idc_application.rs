@@ -60,6 +60,21 @@ pub fn de_create_redshift_idc_application_http_error(
                 tmp
             })
         }
+        "InvalidTagFault" => crate::operation::create_redshift_idc_application::CreateRedshiftIdcApplicationError::InvalidTagFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidTagFaultBuilder::default();
+                output = crate::protocol_serde::shape_invalid_tag_fault::de_invalid_tag_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::create_redshift_idc_application::CreateRedshiftIdcApplicationError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "RedshiftIdcApplicationAlreadyExists" => {
             crate::operation::create_redshift_idc_application::CreateRedshiftIdcApplicationError::RedshiftIdcApplicationAlreadyExistsFault({
                 #[allow(unused_mut)]
@@ -92,6 +107,21 @@ pub fn de_create_redshift_idc_application_http_error(
                 tmp
             })
         }
+        "TagLimitExceededFault" => crate::operation::create_redshift_idc_application::CreateRedshiftIdcApplicationError::TagLimitExceededFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::TagLimitExceededFaultBuilder::default();
+                output = crate::protocol_serde::shape_tag_limit_exceeded_fault::de_tag_limit_exceeded_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::create_redshift_idc_application::CreateRedshiftIdcApplicationError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "UnsupportedOperation" => crate::operation::create_redshift_idc_application::CreateRedshiftIdcApplicationError::UnsupportedOperationFault({
             #[allow(unused_mut)]
             let mut tmp = {

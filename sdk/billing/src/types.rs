@@ -5,6 +5,8 @@ pub use crate::types::_validation_exception_reason::ValidationExceptionReason;
 
 pub use crate::types::_expression::Expression;
 
+pub use crate::types::_time_range::TimeRange;
+
 pub use crate::types::_tag_values::TagValues;
 
 pub use crate::types::_dimension_values::DimensionValues;
@@ -14,6 +16,12 @@ pub use crate::types::_dimension::Dimension;
 pub use crate::types::_resource_tag::ResourceTag;
 
 pub use crate::types::_billing_view_list_element::BillingViewListElement;
+
+pub use crate::types::_billing_view_health_status::BillingViewHealthStatus;
+
+pub use crate::types::_billing_view_status_reason::BillingViewStatusReason;
+
+pub use crate::types::_billing_view_status::BillingViewStatus;
 
 pub use crate::types::_billing_view_type::BillingViewType;
 
@@ -25,7 +33,13 @@ mod _active_time_range;
 
 mod _billing_view_element;
 
+mod _billing_view_health_status;
+
 mod _billing_view_list_element;
+
+mod _billing_view_status;
+
+mod _billing_view_status_reason;
 
 mod _billing_view_type;
 
@@ -38,6 +52,8 @@ mod _expression;
 mod _resource_tag;
 
 mod _tag_values;
+
+mod _time_range;
 
 mod _validation_exception_field;
 

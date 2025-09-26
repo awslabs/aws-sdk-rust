@@ -17,6 +17,10 @@ pub struct CreateRedshiftIdcApplicationInput {
     pub authorized_token_issuer_list: ::std::option::Option<::std::vec::Vec<crate::types::AuthorizedTokenIssuer>>,
     /// <p>A collection of service integrations for the Redshift IAM Identity Center application.</p>
     pub service_integrations: ::std::option::Option<::std::vec::Vec<crate::types::ServiceIntegrationsUnion>>,
+    /// <p>A list of tags.</p>
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>A list of tags keys that Redshift Identity Center applications copy to IAM Identity Center. For each input key, the tag corresponding to the key-value pair is propagated.</p>
+    pub sso_tag_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CreateRedshiftIdcApplicationInput {
     /// <p>The Amazon resource name (ARN) of the IAM Identity Center instance where Amazon Redshift creates a new managed application.</p>
@@ -51,6 +55,18 @@ impl CreateRedshiftIdcApplicationInput {
     pub fn service_integrations(&self) -> &[crate::types::ServiceIntegrationsUnion] {
         self.service_integrations.as_deref().unwrap_or_default()
     }
+    /// <p>A list of tags.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
+    }
+    /// <p>A list of tags keys that Redshift Identity Center applications copy to IAM Identity Center. For each input key, the tag corresponding to the key-value pair is propagated.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sso_tag_keys.is_none()`.
+    pub fn sso_tag_keys(&self) -> &[::std::string::String] {
+        self.sso_tag_keys.as_deref().unwrap_or_default()
+    }
 }
 impl CreateRedshiftIdcApplicationInput {
     /// Creates a new builder-style object to manufacture [`CreateRedshiftIdcApplicationInput`](crate::operation::create_redshift_idc_application::CreateRedshiftIdcApplicationInput).
@@ -70,6 +86,8 @@ pub struct CreateRedshiftIdcApplicationInputBuilder {
     pub(crate) iam_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) authorized_token_issuer_list: ::std::option::Option<::std::vec::Vec<crate::types::AuthorizedTokenIssuer>>,
     pub(crate) service_integrations: ::std::option::Option<::std::vec::Vec<crate::types::ServiceIntegrationsUnion>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) sso_tag_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CreateRedshiftIdcApplicationInputBuilder {
     /// <p>The Amazon resource name (ARN) of the IAM Identity Center instance where Amazon Redshift creates a new managed application.</p>
@@ -186,6 +204,46 @@ impl CreateRedshiftIdcApplicationInputBuilder {
     pub fn get_service_integrations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceIntegrationsUnion>> {
         &self.service_integrations
     }
+    /// Appends an item to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>A list of tags.</p>
+    pub fn tags(mut self, input: crate::types::Tag) -> Self {
+        let mut v = self.tags.unwrap_or_default();
+        v.push(input);
+        self.tags = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of tags.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// <p>A list of tags.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
+    /// Appends an item to `sso_tag_keys`.
+    ///
+    /// To override the contents of this collection use [`set_sso_tag_keys`](Self::set_sso_tag_keys).
+    ///
+    /// <p>A list of tags keys that Redshift Identity Center applications copy to IAM Identity Center. For each input key, the tag corresponding to the key-value pair is propagated.</p>
+    pub fn sso_tag_keys(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.sso_tag_keys.unwrap_or_default();
+        v.push(input.into());
+        self.sso_tag_keys = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of tags keys that Redshift Identity Center applications copy to IAM Identity Center. For each input key, the tag corresponding to the key-value pair is propagated.</p>
+    pub fn set_sso_tag_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.sso_tag_keys = input;
+        self
+    }
+    /// <p>A list of tags keys that Redshift Identity Center applications copy to IAM Identity Center. For each input key, the tag corresponding to the key-value pair is propagated.</p>
+    pub fn get_sso_tag_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.sso_tag_keys
+    }
     /// Consumes the builder and constructs a [`CreateRedshiftIdcApplicationInput`](crate::operation::create_redshift_idc_application::CreateRedshiftIdcApplicationInput).
     pub fn build(
         self,
@@ -201,6 +259,8 @@ impl CreateRedshiftIdcApplicationInputBuilder {
             iam_role_arn: self.iam_role_arn,
             authorized_token_issuer_list: self.authorized_token_issuer_list,
             service_integrations: self.service_integrations,
+            tags: self.tags,
+            sso_tag_keys: self.sso_tag_keys,
         })
     }
 }

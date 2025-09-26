@@ -13,6 +13,9 @@ pub mod associate_approved_origin;
 /// Types for the `AssociateBot` operation.
 pub mod associate_bot;
 
+/// Types for the `AssociateContactWithUser` operation.
+pub mod associate_contact_with_user;
+
 /// Types for the `AssociateDefaultVocabulary` operation.
 pub mod associate_default_vocabulary;
 
@@ -498,6 +501,9 @@ pub mod list_quick_connects;
 
 /// Types for the `ListRealtimeContactAnalysisSegmentsV2` operation.
 pub mod list_realtime_contact_analysis_segments_v2;
+
+/// Types for the `ListRoutingProfileManualAssignmentQueues` operation.
+pub mod list_routing_profile_manual_assignment_queues;
 
 /// Types for the `ListRoutingProfileQueues` operation.
 pub mod list_routing_profile_queues;

@@ -266,10 +266,14 @@ pub enum CreateRedshiftIdcApplicationError {
     DependentServiceAccessDeniedFault(crate::types::error::DependentServiceAccessDeniedFault),
     /// <p>Your request cannot be completed because a dependent internal service is temporarily unavailable. Wait 30 to 60 seconds and try again.</p>
     DependentServiceUnavailableFault(crate::types::error::DependentServiceUnavailableFault),
+    /// <p>The tag is invalid.</p>
+    InvalidTagFault(crate::types::error::InvalidTagFault),
     /// <p>The application you attempted to add already exists.</p>
     RedshiftIdcApplicationAlreadyExistsFault(crate::types::error::RedshiftIdcApplicationAlreadyExistsFault),
     /// <p>The maximum number of Redshift IAM Identity Center applications was exceeded.</p>
     RedshiftIdcApplicationQuotaExceededFault(crate::types::error::RedshiftIdcApplicationQuotaExceededFault),
+    /// <p>You have exceeded the number of tags allowed.</p>
+    TagLimitExceededFault(crate::types::error::TagLimitExceededFault),
     /// <p>The requested operation isn't supported.</p>
     UnsupportedOperationFault(crate::types::error::UnsupportedOperationFault),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -307,8 +311,10 @@ impl CreateRedshiftIdcApplicationError {
         match self {
             Self::DependentServiceAccessDeniedFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::DependentServiceUnavailableFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidTagFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::RedshiftIdcApplicationAlreadyExistsFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::RedshiftIdcApplicationQuotaExceededFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::TagLimitExceededFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::UnsupportedOperationFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
@@ -321,6 +327,10 @@ impl CreateRedshiftIdcApplicationError {
     pub fn is_dependent_service_unavailable_fault(&self) -> bool {
         matches!(self, Self::DependentServiceUnavailableFault(_))
     }
+    /// Returns `true` if the error kind is `CreateRedshiftIdcApplicationError::InvalidTagFault`.
+    pub fn is_invalid_tag_fault(&self) -> bool {
+        matches!(self, Self::InvalidTagFault(_))
+    }
     /// Returns `true` if the error kind is `CreateRedshiftIdcApplicationError::RedshiftIdcApplicationAlreadyExistsFault`.
     pub fn is_redshift_idc_application_already_exists_fault(&self) -> bool {
         matches!(self, Self::RedshiftIdcApplicationAlreadyExistsFault(_))
@@ -328,6 +338,10 @@ impl CreateRedshiftIdcApplicationError {
     /// Returns `true` if the error kind is `CreateRedshiftIdcApplicationError::RedshiftIdcApplicationQuotaExceededFault`.
     pub fn is_redshift_idc_application_quota_exceeded_fault(&self) -> bool {
         matches!(self, Self::RedshiftIdcApplicationQuotaExceededFault(_))
+    }
+    /// Returns `true` if the error kind is `CreateRedshiftIdcApplicationError::TagLimitExceededFault`.
+    pub fn is_tag_limit_exceeded_fault(&self) -> bool {
+        matches!(self, Self::TagLimitExceededFault(_))
     }
     /// Returns `true` if the error kind is `CreateRedshiftIdcApplicationError::UnsupportedOperationFault`.
     pub fn is_unsupported_operation_fault(&self) -> bool {
@@ -339,8 +353,10 @@ impl ::std::error::Error for CreateRedshiftIdcApplicationError {
         match self {
             Self::DependentServiceAccessDeniedFault(_inner) => ::std::option::Option::Some(_inner),
             Self::DependentServiceUnavailableFault(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidTagFault(_inner) => ::std::option::Option::Some(_inner),
             Self::RedshiftIdcApplicationAlreadyExistsFault(_inner) => ::std::option::Option::Some(_inner),
             Self::RedshiftIdcApplicationQuotaExceededFault(_inner) => ::std::option::Option::Some(_inner),
+            Self::TagLimitExceededFault(_inner) => ::std::option::Option::Some(_inner),
             Self::UnsupportedOperationFault(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
@@ -351,8 +367,10 @@ impl ::std::fmt::Display for CreateRedshiftIdcApplicationError {
         match self {
             Self::DependentServiceAccessDeniedFault(_inner) => _inner.fmt(f),
             Self::DependentServiceUnavailableFault(_inner) => _inner.fmt(f),
+            Self::InvalidTagFault(_inner) => _inner.fmt(f),
             Self::RedshiftIdcApplicationAlreadyExistsFault(_inner) => _inner.fmt(f),
             Self::RedshiftIdcApplicationQuotaExceededFault(_inner) => _inner.fmt(f),
+            Self::TagLimitExceededFault(_inner) => _inner.fmt(f),
             Self::UnsupportedOperationFault(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
@@ -377,8 +395,10 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateRedshif
         match self {
             Self::DependentServiceAccessDeniedFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DependentServiceUnavailableFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidTagFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::RedshiftIdcApplicationAlreadyExistsFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::RedshiftIdcApplicationQuotaExceededFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::TagLimitExceededFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::UnsupportedOperationFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }

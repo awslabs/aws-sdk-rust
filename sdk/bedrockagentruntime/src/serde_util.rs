@@ -513,6 +513,42 @@ pub(crate) fn flow_trace_event_correct_errors(
     builder
 }
 
+pub(crate) fn node_action_event_correct_errors(
+    mut builder: crate::types::builders::NodeActionEventBuilder,
+) -> crate::types::builders::NodeActionEventBuilder {
+    if builder.node_name.is_none() {
+        builder.node_name = Some(Default::default())
+    }
+    if builder.timestamp.is_none() {
+        builder.timestamp = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.request_id.is_none() {
+        builder.request_id = Some(Default::default())
+    }
+    if builder.service_name.is_none() {
+        builder.service_name = Some(Default::default())
+    }
+    if builder.operation_name.is_none() {
+        builder.operation_name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn node_dependency_event_correct_errors(
+    mut builder: crate::types::builders::NodeDependencyEventBuilder,
+) -> crate::types::builders::NodeDependencyEventBuilder {
+    if builder.node_name.is_none() {
+        builder.node_name = Some(Default::default())
+    }
+    if builder.timestamp.is_none() {
+        builder.timestamp = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.trace_elements.is_none() {
+        builder.trace_elements = Some(crate::types::NodeTraceElements::Unknown)
+    }
+    builder
+}
+
 pub(crate) fn node_failure_event_correct_errors(
     mut builder: crate::types::builders::NodeFailureEventBuilder,
 ) -> crate::types::builders::NodeFailureEventBuilder {
@@ -623,6 +659,21 @@ pub(crate) fn flow_trace_condition_node_result_event_correct_errors(
     }
     if builder.satisfied_conditions.is_none() {
         builder.satisfied_conditions = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn flow_trace_dependency_event_correct_errors(
+    mut builder: crate::types::builders::FlowTraceDependencyEventBuilder,
+) -> crate::types::builders::FlowTraceDependencyEventBuilder {
+    if builder.node_name.is_none() {
+        builder.node_name = Some(Default::default())
+    }
+    if builder.timestamp.is_none() {
+        builder.timestamp = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.trace_elements.is_none() {
+        builder.trace_elements = Some(crate::types::TraceElements::Unknown)
     }
     builder
 }
@@ -746,6 +797,21 @@ pub(crate) fn function_invocation_input_correct_errors(
     builder
 }
 
+pub(crate) fn node_input_source_correct_errors(
+    mut builder: crate::types::builders::NodeInputSourceBuilder,
+) -> crate::types::builders::NodeInputSourceBuilder {
+    if builder.node_name.is_none() {
+        builder.node_name = Some(Default::default())
+    }
+    if builder.output_field_name.is_none() {
+        builder.output_field_name = Some(Default::default())
+    }
+    if builder.expression.is_none() {
+        builder.expression = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn flow_trace_condition_correct_errors(
     mut builder: crate::types::builders::FlowTraceConditionBuilder,
 ) -> crate::types::builders::FlowTraceConditionBuilder {
@@ -779,9 +845,48 @@ pub(crate) fn flow_trace_node_output_field_correct_errors(
     builder
 }
 
+pub(crate) fn node_input_execution_chain_item_correct_errors(
+    mut builder: crate::types::builders::NodeInputExecutionChainItemBuilder,
+) -> crate::types::builders::NodeInputExecutionChainItemBuilder {
+    if builder.node_name.is_none() {
+        builder.node_name = Some(Default::default())
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::FlowControlNodeType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn node_output_next_correct_errors(
+    mut builder: crate::types::builders::NodeOutputNextBuilder,
+) -> crate::types::builders::NodeOutputNextBuilder {
+    if builder.node_name.is_none() {
+        builder.node_name = Some(Default::default())
+    }
+    if builder.input_field_name.is_none() {
+        builder.input_field_name = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn s3_location_correct_errors(mut builder: crate::types::builders::S3LocationBuilder) -> crate::types::builders::S3LocationBuilder {
     if builder.uri.is_none() {
         builder.uri = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn flow_trace_node_input_source_correct_errors(
+    mut builder: crate::types::builders::FlowTraceNodeInputSourceBuilder,
+) -> crate::types::builders::FlowTraceNodeInputSourceBuilder {
+    if builder.node_name.is_none() {
+        builder.node_name = Some(Default::default())
+    }
+    if builder.output_field_name.is_none() {
+        builder.output_field_name = Some(Default::default())
+    }
+    if builder.expression.is_none() {
+        builder.expression = Some(Default::default())
     }
     builder
 }
@@ -791,6 +896,30 @@ pub(crate) fn reasoning_text_block_correct_errors(
 ) -> crate::types::builders::ReasoningTextBlockBuilder {
     if builder.text.is_none() {
         builder.text = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn flow_trace_node_input_execution_chain_item_correct_errors(
+    mut builder: crate::types::builders::FlowTraceNodeInputExecutionChainItemBuilder,
+) -> crate::types::builders::FlowTraceNodeInputExecutionChainItemBuilder {
+    if builder.node_name.is_none() {
+        builder.node_name = Some(Default::default())
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::FlowControlNodeType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn flow_trace_node_output_next_correct_errors(
+    mut builder: crate::types::builders::FlowTraceNodeOutputNextBuilder,
+) -> crate::types::builders::FlowTraceNodeOutputNextBuilder {
+    if builder.node_name.is_none() {
+        builder.node_name = Some(Default::default())
+    }
+    if builder.input_field_name.is_none() {
+        builder.input_field_name = Some(Default::default())
     }
     builder
 }

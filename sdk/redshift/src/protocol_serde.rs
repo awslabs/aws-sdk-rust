@@ -1147,6 +1147,8 @@ pub(crate) mod shape_source_ids_list;
 
 pub(crate) mod shape_subnet_list;
 
+pub(crate) mod shape_tag_key_list;
+
 pub(crate) mod shape_tagged_resource;
 
 pub(crate) mod shape_usage_limit;

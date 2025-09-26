@@ -251,7 +251,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for StopContactEn
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum StopContactError {
-    /// <p>The contact with the specified ID is not active or does not exist. Applies to Voice calls only, not to Chat or Task contacts.</p>
+    /// <p>The contact with the specified ID is not active or does not exist.</p>
     ContactNotFoundException(crate::types::error::ContactNotFoundException),
     /// <p>Request processing failed because of an error or failure with the service.</p>
     InternalServiceException(crate::types::error::InternalServiceException),

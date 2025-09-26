@@ -21,6 +21,8 @@ pub use crate::types::error::_invalid_next_token_exception::InvalidNextTokenExce
 
 pub use crate::types::error::_unresolvable_usage_unit_exception::UnresolvableUsageUnitException;
 
+pub use crate::types::error::_billing_view_health_status_exception::BillingViewHealthStatusException;
+
 pub use crate::types::error::_request_changed_exception::RequestChangedException;
 
 pub use crate::types::error::_bill_expiration_exception::BillExpirationException;
@@ -32,6 +34,8 @@ mod _analysis_not_found_exception;
 mod _backfill_limit_exceeded_exception;
 
 mod _bill_expiration_exception;
+
+mod _billing_view_health_status_exception;
 
 mod _data_unavailable_exception;
 

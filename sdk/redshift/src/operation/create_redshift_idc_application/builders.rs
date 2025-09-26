@@ -216,4 +216,42 @@ impl CreateRedshiftIdcApplicationFluentBuilder {
     pub fn get_service_integrations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceIntegrationsUnion>> {
         self.inner.get_service_integrations()
     }
+    ///
+    /// Appends an item to `Tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>A list of tags.</p>
+    pub fn tags(mut self, input: crate::types::Tag) -> Self {
+        self.inner = self.inner.tags(input);
+        self
+    }
+    /// <p>A list of tags.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.inner = self.inner.set_tags(input);
+        self
+    }
+    /// <p>A list of tags.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
+    ///
+    /// Appends an item to `SsoTagKeys`.
+    ///
+    /// To override the contents of this collection use [`set_sso_tag_keys`](Self::set_sso_tag_keys).
+    ///
+    /// <p>A list of tags keys that Redshift Identity Center applications copy to IAM Identity Center. For each input key, the tag corresponding to the key-value pair is propagated.</p>
+    pub fn sso_tag_keys(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.sso_tag_keys(input.into());
+        self
+    }
+    /// <p>A list of tags keys that Redshift Identity Center applications copy to IAM Identity Center. For each input key, the tag corresponding to the key-value pair is propagated.</p>
+    pub fn set_sso_tag_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_sso_tag_keys(input);
+        self
+    }
+    /// <p>A list of tags keys that Redshift Identity Center applications copy to IAM Identity Center. For each input key, the tag corresponding to the key-value pair is propagated.</p>
+    pub fn get_sso_tag_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_sso_tag_keys()
+    }
 }

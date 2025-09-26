@@ -42,11 +42,23 @@ where
                                     .transpose()?,
                             );
                         }
+                        "sourceAccountId" => {
+                            builder = builder.set_source_account_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "billingViewType" => {
                             builder = builder.set_billing_view_type(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::BillingViewType::from(u.as_ref())))
                                     .transpose()?,
+                            );
+                        }
+                        "healthStatus" => {
+                            builder = builder.set_health_status(
+                                crate::protocol_serde::shape_billing_view_health_status::de_billing_view_health_status(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -8,6 +8,15 @@ pub(crate) fn access_denied_exception_correct_errors(
     builder
 }
 
+pub(crate) fn billing_view_health_status_exception_correct_errors(
+    mut builder: crate::types::error::builders::BillingViewHealthStatusExceptionBuilder,
+) -> crate::types::error::builders::BillingViewHealthStatusExceptionBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn conflict_exception_correct_errors(
     mut builder: crate::types::error::builders::ConflictExceptionBuilder,
 ) -> crate::types::error::builders::ConflictExceptionBuilder {
@@ -28,6 +37,21 @@ pub(crate) fn internal_server_exception_correct_errors(
 ) -> crate::types::error::builders::InternalServerExceptionBuilder {
     if builder.message.is_none() {
         builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn resource_not_found_exception_correct_errors(
+    mut builder: crate::types::error::builders::ResourceNotFoundExceptionBuilder,
+) -> crate::types::error::builders::ResourceNotFoundExceptionBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    if builder.resource_id.is_none() {
+        builder.resource_id = Some(Default::default())
+    }
+    if builder.resource_type.is_none() {
+        builder.resource_type = Some(Default::default())
     }
     builder
 }
@@ -74,6 +98,15 @@ pub(crate) fn validation_exception_correct_errors(
     builder
 }
 
+pub(crate) fn associate_source_views_output_output_correct_errors(
+    mut builder: crate::operation::associate_source_views::builders::AssociateSourceViewsOutputBuilder,
+) -> crate::operation::associate_source_views::builders::AssociateSourceViewsOutputBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn create_billing_view_output_output_correct_errors(
     mut builder: crate::operation::create_billing_view::builders::CreateBillingViewOutputBuilder,
 ) -> crate::operation::create_billing_view::builders::CreateBillingViewOutputBuilder {
@@ -92,17 +125,11 @@ pub(crate) fn delete_billing_view_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn resource_not_found_exception_correct_errors(
-    mut builder: crate::types::error::builders::ResourceNotFoundExceptionBuilder,
-) -> crate::types::error::builders::ResourceNotFoundExceptionBuilder {
-    if builder.message.is_none() {
-        builder.message = Some(Default::default())
-    }
-    if builder.resource_id.is_none() {
-        builder.resource_id = Some(Default::default())
-    }
-    if builder.resource_type.is_none() {
-        builder.resource_type = Some(Default::default())
+pub(crate) fn disassociate_source_views_output_output_correct_errors(
+    mut builder: crate::operation::disassociate_source_views::builders::DisassociateSourceViewsOutputBuilder,
+) -> crate::operation::disassociate_source_views::builders::DisassociateSourceViewsOutputBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
     }
     builder
 }

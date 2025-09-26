@@ -15,6 +15,15 @@ pub fn ser_audio_extraction_category(
         }
         array_2.finish();
     }
+    if let Some(var_4) = &input.type_configuration {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("typeConfiguration").start_object();
+        crate::protocol_serde::shape_audio_extraction_category_type_configuration::ser_audio_extraction_category_type_configuration(
+            &mut object_5,
+            var_4,
+        )?;
+        object_5.finish();
+    }
     Ok(())
 }
 
@@ -43,6 +52,11 @@ where
                         "types" => {
                             builder = builder
                                 .set_types(crate::protocol_serde::shape_audio_extraction_category_types::de_audio_extraction_category_types(tokens)?);
+                        }
+                        "typeConfiguration" => {
+                            builder = builder.set_type_configuration(
+                                    crate::protocol_serde::shape_audio_extraction_category_type_configuration::de_audio_extraction_category_type_configuration(tokens)?
+                                );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

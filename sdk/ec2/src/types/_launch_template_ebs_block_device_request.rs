@@ -12,7 +12,7 @@ pub struct LaunchTemplateEbsBlockDeviceRequest {
     /// <p>The following are the supported values for each volume type:</p>
     /// <ul>
     /// <li>
-    /// <p><code>gp3</code>: 3,000 - 16,000 IOPS</p></li>
+    /// <p><code>gp3</code>: 3,000 - 80,000 IOPS</p></li>
     /// <li>
     /// <p><code>io1</code>: 100 - 64,000 IOPS</p></li>
     /// <li>
@@ -28,7 +28,9 @@ pub struct LaunchTemplateEbsBlockDeviceRequest {
     /// <p>The size of the volume, in GiBs. You must specify either a snapshot ID or a volume size. The following are the supported volumes sizes for each volume type:</p>
     /// <ul>
     /// <li>
-    /// <p><code>gp2</code> and <code>gp3</code>: 1 - 16,384 GiB</p></li>
+    /// <p><code>gp2</code>: 1 - 16,384 GiB</p></li>
+    /// <li>
+    /// <p><code>gp3</code>: 1 - 65,536 GiB</p></li>
     /// <li>
     /// <p><code>io1</code>: 4 - 16,384 GiB</p></li>
     /// <li>
@@ -41,8 +43,8 @@ pub struct LaunchTemplateEbsBlockDeviceRequest {
     pub volume_size: ::std::option::Option<i32>,
     /// <p>The volume type. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-types.html">Amazon EBS volume types</a> in the <i>Amazon EBS User Guide</i>.</p>
     pub volume_type: ::std::option::Option<crate::types::VolumeType>,
-    /// <p>The throughput to provision for a <code>gp3</code> volume, with a maximum of 1,000 MiB/s.</p>
-    /// <p>Valid Range: Minimum value of 125. Maximum value of 1000.</p>
+    /// <p>The throughput to provision for a <code>gp3</code> volume, with a maximum of 2,000 MiB/s.</p>
+    /// <p>Valid Range: Minimum value of 125. Maximum value of 2,000.</p>
     pub throughput: ::std::option::Option<i32>,
     /// <p>Specifies the Amazon EBS Provisioned Rate for Volume Initialization (volume initialization rate), in MiB/s, at which to download the snapshot blocks from Amazon S3 to the volume. This is also known as <i>volume initialization</i>. Specifying a volume initialization rate ensures that the volume is initialized at a predictable and consistent rate after creation.</p>
     /// <p>This parameter is supported only for volumes created from snapshots. Omit this parameter if:</p>
@@ -71,7 +73,7 @@ impl LaunchTemplateEbsBlockDeviceRequest {
     /// <p>The following are the supported values for each volume type:</p>
     /// <ul>
     /// <li>
-    /// <p><code>gp3</code>: 3,000 - 16,000 IOPS</p></li>
+    /// <p><code>gp3</code>: 3,000 - 80,000 IOPS</p></li>
     /// <li>
     /// <p><code>io1</code>: 100 - 64,000 IOPS</p></li>
     /// <li>
@@ -93,7 +95,9 @@ impl LaunchTemplateEbsBlockDeviceRequest {
     /// <p>The size of the volume, in GiBs. You must specify either a snapshot ID or a volume size. The following are the supported volumes sizes for each volume type:</p>
     /// <ul>
     /// <li>
-    /// <p><code>gp2</code> and <code>gp3</code>: 1 - 16,384 GiB</p></li>
+    /// <p><code>gp2</code>: 1 - 16,384 GiB</p></li>
+    /// <li>
+    /// <p><code>gp3</code>: 1 - 65,536 GiB</p></li>
     /// <li>
     /// <p><code>io1</code>: 4 - 16,384 GiB</p></li>
     /// <li>
@@ -110,8 +114,8 @@ impl LaunchTemplateEbsBlockDeviceRequest {
     pub fn volume_type(&self) -> ::std::option::Option<&crate::types::VolumeType> {
         self.volume_type.as_ref()
     }
-    /// <p>The throughput to provision for a <code>gp3</code> volume, with a maximum of 1,000 MiB/s.</p>
-    /// <p>Valid Range: Minimum value of 125. Maximum value of 1000.</p>
+    /// <p>The throughput to provision for a <code>gp3</code> volume, with a maximum of 2,000 MiB/s.</p>
+    /// <p>Valid Range: Minimum value of 125. Maximum value of 2,000.</p>
     pub fn throughput(&self) -> ::std::option::Option<i32> {
         self.throughput
     }
@@ -185,7 +189,7 @@ impl LaunchTemplateEbsBlockDeviceRequestBuilder {
     /// <p>The following are the supported values for each volume type:</p>
     /// <ul>
     /// <li>
-    /// <p><code>gp3</code>: 3,000 - 16,000 IOPS</p></li>
+    /// <p><code>gp3</code>: 3,000 - 80,000 IOPS</p></li>
     /// <li>
     /// <p><code>io1</code>: 100 - 64,000 IOPS</p></li>
     /// <li>
@@ -201,7 +205,7 @@ impl LaunchTemplateEbsBlockDeviceRequestBuilder {
     /// <p>The following are the supported values for each volume type:</p>
     /// <ul>
     /// <li>
-    /// <p><code>gp3</code>: 3,000 - 16,000 IOPS</p></li>
+    /// <p><code>gp3</code>: 3,000 - 80,000 IOPS</p></li>
     /// <li>
     /// <p><code>io1</code>: 100 - 64,000 IOPS</p></li>
     /// <li>
@@ -217,7 +221,7 @@ impl LaunchTemplateEbsBlockDeviceRequestBuilder {
     /// <p>The following are the supported values for each volume type:</p>
     /// <ul>
     /// <li>
-    /// <p><code>gp3</code>: 3,000 - 16,000 IOPS</p></li>
+    /// <p><code>gp3</code>: 3,000 - 80,000 IOPS</p></li>
     /// <li>
     /// <p><code>io1</code>: 100 - 64,000 IOPS</p></li>
     /// <li>
@@ -259,7 +263,9 @@ impl LaunchTemplateEbsBlockDeviceRequestBuilder {
     /// <p>The size of the volume, in GiBs. You must specify either a snapshot ID or a volume size. The following are the supported volumes sizes for each volume type:</p>
     /// <ul>
     /// <li>
-    /// <p><code>gp2</code> and <code>gp3</code>: 1 - 16,384 GiB</p></li>
+    /// <p><code>gp2</code>: 1 - 16,384 GiB</p></li>
+    /// <li>
+    /// <p><code>gp3</code>: 1 - 65,536 GiB</p></li>
     /// <li>
     /// <p><code>io1</code>: 4 - 16,384 GiB</p></li>
     /// <li>
@@ -276,7 +282,9 @@ impl LaunchTemplateEbsBlockDeviceRequestBuilder {
     /// <p>The size of the volume, in GiBs. You must specify either a snapshot ID or a volume size. The following are the supported volumes sizes for each volume type:</p>
     /// <ul>
     /// <li>
-    /// <p><code>gp2</code> and <code>gp3</code>: 1 - 16,384 GiB</p></li>
+    /// <p><code>gp2</code>: 1 - 16,384 GiB</p></li>
+    /// <li>
+    /// <p><code>gp3</code>: 1 - 65,536 GiB</p></li>
     /// <li>
     /// <p><code>io1</code>: 4 - 16,384 GiB</p></li>
     /// <li>
@@ -293,7 +301,9 @@ impl LaunchTemplateEbsBlockDeviceRequestBuilder {
     /// <p>The size of the volume, in GiBs. You must specify either a snapshot ID or a volume size. The following are the supported volumes sizes for each volume type:</p>
     /// <ul>
     /// <li>
-    /// <p><code>gp2</code> and <code>gp3</code>: 1 - 16,384 GiB</p></li>
+    /// <p><code>gp2</code>: 1 - 16,384 GiB</p></li>
+    /// <li>
+    /// <p><code>gp3</code>: 1 - 65,536 GiB</p></li>
     /// <li>
     /// <p><code>io1</code>: 4 - 16,384 GiB</p></li>
     /// <li>
@@ -320,20 +330,20 @@ impl LaunchTemplateEbsBlockDeviceRequestBuilder {
     pub fn get_volume_type(&self) -> &::std::option::Option<crate::types::VolumeType> {
         &self.volume_type
     }
-    /// <p>The throughput to provision for a <code>gp3</code> volume, with a maximum of 1,000 MiB/s.</p>
-    /// <p>Valid Range: Minimum value of 125. Maximum value of 1000.</p>
+    /// <p>The throughput to provision for a <code>gp3</code> volume, with a maximum of 2,000 MiB/s.</p>
+    /// <p>Valid Range: Minimum value of 125. Maximum value of 2,000.</p>
     pub fn throughput(mut self, input: i32) -> Self {
         self.throughput = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The throughput to provision for a <code>gp3</code> volume, with a maximum of 1,000 MiB/s.</p>
-    /// <p>Valid Range: Minimum value of 125. Maximum value of 1000.</p>
+    /// <p>The throughput to provision for a <code>gp3</code> volume, with a maximum of 2,000 MiB/s.</p>
+    /// <p>Valid Range: Minimum value of 125. Maximum value of 2,000.</p>
     pub fn set_throughput(mut self, input: ::std::option::Option<i32>) -> Self {
         self.throughput = input;
         self
     }
-    /// <p>The throughput to provision for a <code>gp3</code> volume, with a maximum of 1,000 MiB/s.</p>
-    /// <p>Valid Range: Minimum value of 125. Maximum value of 1000.</p>
+    /// <p>The throughput to provision for a <code>gp3</code> volume, with a maximum of 2,000 MiB/s.</p>
+    /// <p>Valid Range: Minimum value of 125. Maximum value of 2,000.</p>
     pub fn get_throughput(&self) -> &::std::option::Option<i32> {
         &self.throughput
     }

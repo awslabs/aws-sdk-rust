@@ -17,7 +17,6 @@ pub struct LaunchTemplateInstanceMetadataOptions {
     /// </ul>
     pub http_tokens: ::std::option::Option<crate::types::LaunchTemplateHttpTokensState>,
     /// <p>The desired HTTP PUT response hop limit for instance metadata requests. The larger the number, the further instance metadata requests can travel.</p>
-    /// <p>Default: 1</p>
     /// <p>Possible values: Integers from 1 to 64</p>
     pub http_put_response_hop_limit: ::std::option::Option<i32>,
     /// <p>Enables or disables the HTTP metadata endpoint on your instances. If the parameter is not specified, the default state is <code>enabled</code>.</p><note>
@@ -49,7 +48,6 @@ impl LaunchTemplateInstanceMetadataOptions {
         self.http_tokens.as_ref()
     }
     /// <p>The desired HTTP PUT response hop limit for instance metadata requests. The larger the number, the further instance metadata requests can travel.</p>
-    /// <p>Default: 1</p>
     /// <p>Possible values: Integers from 1 to 64</p>
     pub fn http_put_response_hop_limit(&self) -> ::std::option::Option<i32> {
         self.http_put_response_hop_limit
@@ -143,21 +141,18 @@ impl LaunchTemplateInstanceMetadataOptionsBuilder {
         &self.http_tokens
     }
     /// <p>The desired HTTP PUT response hop limit for instance metadata requests. The larger the number, the further instance metadata requests can travel.</p>
-    /// <p>Default: 1</p>
     /// <p>Possible values: Integers from 1 to 64</p>
     pub fn http_put_response_hop_limit(mut self, input: i32) -> Self {
         self.http_put_response_hop_limit = ::std::option::Option::Some(input);
         self
     }
     /// <p>The desired HTTP PUT response hop limit for instance metadata requests. The larger the number, the further instance metadata requests can travel.</p>
-    /// <p>Default: 1</p>
     /// <p>Possible values: Integers from 1 to 64</p>
     pub fn set_http_put_response_hop_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.http_put_response_hop_limit = input;
         self
     }
     /// <p>The desired HTTP PUT response hop limit for instance metadata requests. The larger the number, the further instance metadata requests can travel.</p>
-    /// <p>Default: 1</p>
     /// <p>Possible values: Integers from 1 to 64</p>
     pub fn get_http_put_response_hop_limit(&self) -> &::std::option::Option<i32> {
         &self.http_put_response_hop_limit

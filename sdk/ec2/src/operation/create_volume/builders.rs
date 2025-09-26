@@ -167,7 +167,7 @@ impl CreateVolumeFluentBuilder {
     /// <p>The following are the supported values for each volume type:</p>
     /// <ul>
     /// <li>
-    /// <p><code>gp3</code>: 3,000 - 16,000 IOPS</p></li>
+    /// <p><code>gp3</code>: 3,000 - 80,000 IOPS</p></li>
     /// <li>
     /// <p><code>io1</code>: 100 - 64,000 IOPS</p></li>
     /// <li>
@@ -183,7 +183,7 @@ impl CreateVolumeFluentBuilder {
     /// <p>The following are the supported values for each volume type:</p>
     /// <ul>
     /// <li>
-    /// <p><code>gp3</code>: 3,000 - 16,000 IOPS</p></li>
+    /// <p><code>gp3</code>: 3,000 - 80,000 IOPS</p></li>
     /// <li>
     /// <p><code>io1</code>: 100 - 64,000 IOPS</p></li>
     /// <li>
@@ -199,7 +199,7 @@ impl CreateVolumeFluentBuilder {
     /// <p>The following are the supported values for each volume type:</p>
     /// <ul>
     /// <li>
-    /// <p><code>gp3</code>: 3,000 - 16,000 IOPS</p></li>
+    /// <p><code>gp3</code>: 3,000 - 80,000 IOPS</p></li>
     /// <li>
     /// <p><code>io1</code>: 100 - 64,000 IOPS</p></li>
     /// <li>
@@ -281,7 +281,9 @@ impl CreateVolumeFluentBuilder {
     /// <p>The following are the supported volumes sizes for each volume type:</p>
     /// <ul>
     /// <li>
-    /// <p><code>gp2</code> and <code>gp3</code>: 1 - 16,384 GiB</p></li>
+    /// <p><code>gp2</code>: 1 - 16,384 GiB</p></li>
+    /// <li>
+    /// <p><code>gp3</code>: 1 - 65,536 GiB</p></li>
     /// <li>
     /// <p><code>io1</code>: 4 - 16,384 GiB</p></li>
     /// <li>
@@ -299,7 +301,9 @@ impl CreateVolumeFluentBuilder {
     /// <p>The following are the supported volumes sizes for each volume type:</p>
     /// <ul>
     /// <li>
-    /// <p><code>gp2</code> and <code>gp3</code>: 1 - 16,384 GiB</p></li>
+    /// <p><code>gp2</code>: 1 - 16,384 GiB</p></li>
+    /// <li>
+    /// <p><code>gp3</code>: 1 - 65,536 GiB</p></li>
     /// <li>
     /// <p><code>io1</code>: 4 - 16,384 GiB</p></li>
     /// <li>
@@ -317,7 +321,9 @@ impl CreateVolumeFluentBuilder {
     /// <p>The following are the supported volumes sizes for each volume type:</p>
     /// <ul>
     /// <li>
-    /// <p><code>gp2</code> and <code>gp3</code>: 1 - 16,384 GiB</p></li>
+    /// <p><code>gp2</code>: 1 - 16,384 GiB</p></li>
+    /// <li>
+    /// <p><code>gp3</code>: 1 - 65,536 GiB</p></li>
     /// <li>
     /// <p><code>io1</code>: 4 - 16,384 GiB</p></li>
     /// <li>
@@ -439,23 +445,23 @@ impl CreateVolumeFluentBuilder {
     pub fn get_multi_attach_enabled(&self) -> &::std::option::Option<bool> {
         self.inner.get_multi_attach_enabled()
     }
-    /// <p>The throughput to provision for a volume, with a maximum of 1,000 MiB/s.</p>
+    /// <p>The throughput to provision for a volume, with a maximum of 2,000 MiB/s.</p>
     /// <p>This parameter is valid only for <code>gp3</code> volumes.</p>
-    /// <p>Valid Range: Minimum value of 125. Maximum value of 1000.</p>
+    /// <p>Valid Range: Minimum value of 125. Maximum value of 2,000.</p>
     pub fn throughput(mut self, input: i32) -> Self {
         self.inner = self.inner.throughput(input);
         self
     }
-    /// <p>The throughput to provision for a volume, with a maximum of 1,000 MiB/s.</p>
+    /// <p>The throughput to provision for a volume, with a maximum of 2,000 MiB/s.</p>
     /// <p>This parameter is valid only for <code>gp3</code> volumes.</p>
-    /// <p>Valid Range: Minimum value of 125. Maximum value of 1000.</p>
+    /// <p>Valid Range: Minimum value of 125. Maximum value of 2,000.</p>
     pub fn set_throughput(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_throughput(input);
         self
     }
-    /// <p>The throughput to provision for a volume, with a maximum of 1,000 MiB/s.</p>
+    /// <p>The throughput to provision for a volume, with a maximum of 2,000 MiB/s.</p>
     /// <p>This parameter is valid only for <code>gp3</code> volumes.</p>
-    /// <p>Valid Range: Minimum value of 125. Maximum value of 1000.</p>
+    /// <p>Valid Range: Minimum value of 125. Maximum value of 2,000.</p>
     pub fn get_throughput(&self) -> &::std::option::Option<i32> {
         self.inner.get_throughput()
     }
