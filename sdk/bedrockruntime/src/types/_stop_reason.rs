@@ -16,6 +16,7 @@
 ///     StopReason::EndTurn => { /* ... */ },
 ///     StopReason::GuardrailIntervened => { /* ... */ },
 ///     StopReason::MaxTokens => { /* ... */ },
+///     StopReason::ModelContextWindowExceeded => { /* ... */ },
 ///     StopReason::StopSequence => { /* ... */ },
 ///     StopReason::ToolUse => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -55,6 +56,8 @@ pub enum StopReason {
     #[allow(missing_docs)] // documentation missing in model
     MaxTokens,
     #[allow(missing_docs)] // documentation missing in model
+    ModelContextWindowExceeded,
+    #[allow(missing_docs)] // documentation missing in model
     StopSequence,
     #[allow(missing_docs)] // documentation missing in model
     ToolUse,
@@ -69,6 +72,7 @@ impl ::std::convert::From<&str> for StopReason {
             "end_turn" => StopReason::EndTurn,
             "guardrail_intervened" => StopReason::GuardrailIntervened,
             "max_tokens" => StopReason::MaxTokens,
+            "model_context_window_exceeded" => StopReason::ModelContextWindowExceeded,
             "stop_sequence" => StopReason::StopSequence,
             "tool_use" => StopReason::ToolUse,
             other => StopReason::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -90,6 +94,7 @@ impl StopReason {
             StopReason::EndTurn => "end_turn",
             StopReason::GuardrailIntervened => "guardrail_intervened",
             StopReason::MaxTokens => "max_tokens",
+            StopReason::ModelContextWindowExceeded => "model_context_window_exceeded",
             StopReason::StopSequence => "stop_sequence",
             StopReason::ToolUse => "tool_use",
             StopReason::Unknown(value) => value.as_str(),
@@ -102,6 +107,7 @@ impl StopReason {
             "end_turn",
             "guardrail_intervened",
             "max_tokens",
+            "model_context_window_exceeded",
             "stop_sequence",
             "tool_use",
         ]
@@ -131,6 +137,7 @@ impl ::std::fmt::Display for StopReason {
             StopReason::EndTurn => write!(f, "end_turn"),
             StopReason::GuardrailIntervened => write!(f, "guardrail_intervened"),
             StopReason::MaxTokens => write!(f, "max_tokens"),
+            StopReason::ModelContextWindowExceeded => write!(f, "model_context_window_exceeded"),
             StopReason::StopSequence => write!(f, "stop_sequence"),
             StopReason::ToolUse => write!(f, "tool_use"),
             StopReason::Unknown(value) => write!(f, "{}", value),

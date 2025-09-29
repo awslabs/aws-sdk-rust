@@ -7,6 +7,8 @@ pub struct StartImagePipelineExecutionInput {
     pub image_pipeline_arn: ::std::option::Option<::std::string::String>,
     /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
+    /// <p>Specify tags for Image Builder to apply to the image resource that's created When it starts pipeline execution.</p>
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl StartImagePipelineExecutionInput {
     /// <p>The Amazon Resource Name (ARN) of the image pipeline that you want to manually invoke.</p>
@@ -16,6 +18,10 @@ impl StartImagePipelineExecutionInput {
     /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
+    }
+    /// <p>Specify tags for Image Builder to apply to the image resource that's created When it starts pipeline execution.</p>
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.tags.as_ref()
     }
 }
 impl StartImagePipelineExecutionInput {
@@ -31,6 +37,7 @@ impl StartImagePipelineExecutionInput {
 pub struct StartImagePipelineExecutionInputBuilder {
     pub(crate) image_pipeline_arn: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl StartImagePipelineExecutionInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the image pipeline that you want to manually invoke.</p>
@@ -63,6 +70,26 @@ impl StartImagePipelineExecutionInputBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
+    /// Adds a key-value pair to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>Specify tags for Image Builder to apply to the image resource that's created When it starts pipeline execution.</p>
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut hash_map = self.tags.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.tags = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>Specify tags for Image Builder to apply to the image resource that's created When it starts pipeline execution.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// <p>Specify tags for Image Builder to apply to the image resource that's created When it starts pipeline execution.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.tags
+    }
     /// Consumes the builder and constructs a [`StartImagePipelineExecutionInput`](crate::operation::start_image_pipeline_execution::StartImagePipelineExecutionInput).
     pub fn build(
         self,
@@ -73,6 +100,7 @@ impl StartImagePipelineExecutionInputBuilder {
         ::std::result::Result::Ok(crate::operation::start_image_pipeline_execution::StartImagePipelineExecutionInput {
             image_pipeline_arn: self.image_pipeline_arn,
             client_token: self.client_token,
+            tags: self.tags,
         })
     }
 }

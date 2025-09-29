@@ -5,7 +5,7 @@
 pub struct ListResourceConfigurationsInput {
     /// <p>The ID of the resource gateway for the resource configuration.</p>
     pub resource_gateway_identifier: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of the group resource configuration.</p>
+    /// <p>The ID of the resource configuration of type <code>Group</code>.</p>
     pub resource_configuration_group_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The maximum page size.</p>
     pub max_results: ::std::option::Option<i32>,
@@ -17,7 +17,7 @@ impl ListResourceConfigurationsInput {
     pub fn resource_gateway_identifier(&self) -> ::std::option::Option<&str> {
         self.resource_gateway_identifier.as_deref()
     }
-    /// <p>The ID of the group resource configuration.</p>
+    /// <p>The ID of the resource configuration of type <code>Group</code>.</p>
     pub fn resource_configuration_group_identifier(&self) -> ::std::option::Option<&str> {
         self.resource_configuration_group_identifier.as_deref()
     }
@@ -61,17 +61,17 @@ impl ListResourceConfigurationsInputBuilder {
     pub fn get_resource_gateway_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_gateway_identifier
     }
-    /// <p>The ID of the group resource configuration.</p>
+    /// <p>The ID of the resource configuration of type <code>Group</code>.</p>
     pub fn resource_configuration_group_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_configuration_group_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the group resource configuration.</p>
+    /// <p>The ID of the resource configuration of type <code>Group</code>.</p>
     pub fn set_resource_configuration_group_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_configuration_group_identifier = input;
         self
     }
-    /// <p>The ID of the group resource configuration.</p>
+    /// <p>The ID of the resource configuration of type <code>Group</code>.</p>
     pub fn get_resource_configuration_group_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_configuration_group_identifier
     }

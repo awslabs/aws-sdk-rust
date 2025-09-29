@@ -9,30 +9,36 @@ pub fn ser_import_vm_image_input_input(
     if let Some(var_2) = &input.description {
         object.key("description").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.name {
-        object.key("name").string(var_3.as_str());
-    }
-    if let Some(var_4) = &input.os_version {
-        object.key("osVersion").string(var_4.as_str());
-    }
-    if let Some(var_5) = &input.platform {
-        object.key("platform").string(var_5.as_str());
-    }
-    if let Some(var_6) = &input.semantic_version {
-        object.key("semanticVersion").string(var_6.as_str());
-    }
-    if let Some(var_7) = &input.tags {
+    if let Some(var_3) = &input.logging_configuration {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("tags").start_object();
-        for (key_9, value_10) in var_7 {
+        let mut object_4 = object.key("loggingConfiguration").start_object();
+        crate::protocol_serde::shape_image_logging_configuration::ser_image_logging_configuration(&mut object_4, var_3)?;
+        object_4.finish();
+    }
+    if let Some(var_5) = &input.name {
+        object.key("name").string(var_5.as_str());
+    }
+    if let Some(var_6) = &input.os_version {
+        object.key("osVersion").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.platform {
+        object.key("platform").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.semantic_version {
+        object.key("semanticVersion").string(var_8.as_str());
+    }
+    if let Some(var_9) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("tags").start_object();
+        for (key_11, value_12) in var_9 {
             {
-                object_8.key(key_9.as_str()).string(value_10.as_str());
+                object_10.key(key_11.as_str()).string(value_12.as_str());
             }
         }
-        object_8.finish();
+        object_10.finish();
     }
-    if let Some(var_11) = &input.vm_import_task_id {
-        object.key("vmImportTaskId").string(var_11.as_str());
+    if let Some(var_13) = &input.vm_import_task_id {
+        object.key("vmImportTaskId").string(var_13.as_str());
     }
     Ok(())
 }

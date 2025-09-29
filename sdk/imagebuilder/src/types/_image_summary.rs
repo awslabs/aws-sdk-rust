@@ -44,6 +44,8 @@ pub struct ImageSummary {
     pub deprecation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Identifies the last runtime instance of the lifecycle policy to take action on the image.</p>
     pub lifecycle_execution_id: ::std::option::Option<::std::string::String>,
+    /// <p>The logging configuration that's defined for the image.</p>
+    pub logging_configuration: ::std::option::Option<crate::types::ImageLoggingConfiguration>,
 }
 impl ImageSummary {
     /// <p>The Amazon Resource Name (ARN) of the image.</p>
@@ -116,6 +118,10 @@ impl ImageSummary {
     pub fn lifecycle_execution_id(&self) -> ::std::option::Option<&str> {
         self.lifecycle_execution_id.as_deref()
     }
+    /// <p>The logging configuration that's defined for the image.</p>
+    pub fn logging_configuration(&self) -> ::std::option::Option<&crate::types::ImageLoggingConfiguration> {
+        self.logging_configuration.as_ref()
+    }
 }
 impl ImageSummary {
     /// Creates a new builder-style object to manufacture [`ImageSummary`](crate::types::ImageSummary).
@@ -143,6 +149,7 @@ pub struct ImageSummaryBuilder {
     pub(crate) image_source: ::std::option::Option<crate::types::ImageSource>,
     pub(crate) deprecation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) lifecycle_execution_id: ::std::option::Option<::std::string::String>,
+    pub(crate) logging_configuration: ::std::option::Option<crate::types::ImageLoggingConfiguration>,
 }
 impl ImageSummaryBuilder {
     /// <p>The Amazon Resource Name (ARN) of the image.</p>
@@ -391,6 +398,20 @@ impl ImageSummaryBuilder {
     pub fn get_lifecycle_execution_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.lifecycle_execution_id
     }
+    /// <p>The logging configuration that's defined for the image.</p>
+    pub fn logging_configuration(mut self, input: crate::types::ImageLoggingConfiguration) -> Self {
+        self.logging_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The logging configuration that's defined for the image.</p>
+    pub fn set_logging_configuration(mut self, input: ::std::option::Option<crate::types::ImageLoggingConfiguration>) -> Self {
+        self.logging_configuration = input;
+        self
+    }
+    /// <p>The logging configuration that's defined for the image.</p>
+    pub fn get_logging_configuration(&self) -> &::std::option::Option<crate::types::ImageLoggingConfiguration> {
+        &self.logging_configuration
+    }
     /// Consumes the builder and constructs a [`ImageSummary`](crate::types::ImageSummary).
     pub fn build(self) -> crate::types::ImageSummary {
         crate::types::ImageSummary {
@@ -409,6 +430,7 @@ impl ImageSummaryBuilder {
             image_source: self.image_source,
             deprecation_time: self.deprecation_time,
             lifecycle_execution_id: self.lifecycle_execution_id,
+            logging_configuration: self.logging_configuration,
         }
     }
 }

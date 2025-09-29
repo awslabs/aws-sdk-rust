@@ -19,7 +19,7 @@ pub struct ResourceConfigurationSummary {
     /// <li>
     /// <p><code>SINGLE</code> - A single resource.</p></li>
     /// <li>
-    /// <p><code>GROUP</code> - A group of resources.</p></li>
+    /// <p><code>GROUP</code> - A group of resources. You must create a group resource configuration before you create a child resource configuration.</p></li>
     /// <li>
     /// <p><code>CHILD</code> - A single resource that is part of a group resource configuration.</p></li>
     /// <li>
@@ -61,7 +61,7 @@ impl ResourceConfigurationSummary {
     /// <li>
     /// <p><code>SINGLE</code> - A single resource.</p></li>
     /// <li>
-    /// <p><code>GROUP</code> - A group of resources.</p></li>
+    /// <p><code>GROUP</code> - A group of resources. You must create a group resource configuration before you create a child resource configuration.</p></li>
     /// <li>
     /// <p><code>CHILD</code> - A single resource that is part of a group resource configuration.</p></li>
     /// <li>
@@ -185,7 +185,7 @@ impl ResourceConfigurationSummaryBuilder {
     /// <li>
     /// <p><code>SINGLE</code> - A single resource.</p></li>
     /// <li>
-    /// <p><code>GROUP</code> - A group of resources.</p></li>
+    /// <p><code>GROUP</code> - A group of resources. You must create a group resource configuration before you create a child resource configuration.</p></li>
     /// <li>
     /// <p><code>CHILD</code> - A single resource that is part of a group resource configuration.</p></li>
     /// <li>
@@ -200,7 +200,7 @@ impl ResourceConfigurationSummaryBuilder {
     /// <li>
     /// <p><code>SINGLE</code> - A single resource.</p></li>
     /// <li>
-    /// <p><code>GROUP</code> - A group of resources.</p></li>
+    /// <p><code>GROUP</code> - A group of resources. You must create a group resource configuration before you create a child resource configuration.</p></li>
     /// <li>
     /// <p><code>CHILD</code> - A single resource that is part of a group resource configuration.</p></li>
     /// <li>
@@ -215,7 +215,7 @@ impl ResourceConfigurationSummaryBuilder {
     /// <li>
     /// <p><code>SINGLE</code> - A single resource.</p></li>
     /// <li>
-    /// <p><code>GROUP</code> - A group of resources.</p></li>
+    /// <p><code>GROUP</code> - A group of resources. You must create a group resource configuration before you create a child resource configuration.</p></li>
     /// <li>
     /// <p><code>CHILD</code> - A single resource that is part of a group resource configuration.</p></li>
     /// <li>

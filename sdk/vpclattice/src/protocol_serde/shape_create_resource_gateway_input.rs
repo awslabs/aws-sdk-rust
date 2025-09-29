@@ -9,39 +9,45 @@ pub fn ser_create_resource_gateway_input_input(
     if let Some(var_2) = &input.ip_address_type {
         object.key("ipAddressType").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.name {
-        object.key("name").string(var_3.as_str());
+    if let Some(var_3) = &input.ipv4_addresses_per_eni {
+        object.key("ipv4AddressesPerEni").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_3).into()),
+        );
     }
-    if let Some(var_4) = &input.security_group_ids {
-        let mut array_5 = object.key("securityGroupIds").start_array();
-        for item_6 in var_4 {
+    if let Some(var_4) = &input.name {
+        object.key("name").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.security_group_ids {
+        let mut array_6 = object.key("securityGroupIds").start_array();
+        for item_7 in var_5 {
             {
-                array_5.value().string(item_6.as_str());
+                array_6.value().string(item_7.as_str());
             }
         }
-        array_5.finish();
+        array_6.finish();
     }
-    if let Some(var_7) = &input.subnet_ids {
-        let mut array_8 = object.key("subnetIds").start_array();
-        for item_9 in var_7 {
+    if let Some(var_8) = &input.subnet_ids {
+        let mut array_9 = object.key("subnetIds").start_array();
+        for item_10 in var_8 {
             {
-                array_8.value().string(item_9.as_str());
+                array_9.value().string(item_10.as_str());
             }
         }
-        array_8.finish();
+        array_9.finish();
     }
-    if let Some(var_10) = &input.tags {
+    if let Some(var_11) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("tags").start_object();
-        for (key_12, value_13) in var_10 {
+        let mut object_12 = object.key("tags").start_object();
+        for (key_13, value_14) in var_11 {
             {
-                object_11.key(key_12.as_str()).string(value_13.as_str());
+                object_12.key(key_13.as_str()).string(value_14.as_str());
             }
         }
-        object_11.finish();
+        object_12.finish();
     }
-    if let Some(var_14) = &input.vpc_identifier {
-        object.key("vpcIdentifier").string(var_14.as_str());
+    if let Some(var_15) = &input.vpc_identifier {
+        object.key("vpcIdentifier").string(var_15.as_str());
     }
     Ok(())
 }

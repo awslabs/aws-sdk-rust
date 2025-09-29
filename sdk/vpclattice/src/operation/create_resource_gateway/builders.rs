@@ -22,7 +22,7 @@ impl crate::operation::create_resource_gateway::builders::CreateResourceGatewayI
 }
 /// Fluent builder constructing a request to `CreateResourceGateway`.
 ///
-/// <p>Creates a resource gateway.</p>
+/// <p>A resource gateway is a point of ingress into the VPC where a resource resides. It spans multiple Availability Zones. For your resource to be accessible from all Availability Zones, you should create your resource gateways to span as many Availability Zones as possible. A VPC can have multiple resource gateways.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateResourceGatewayFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -188,19 +188,60 @@ impl CreateResourceGatewayFluentBuilder {
     pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_security_group_ids()
     }
-    /// <p>The type of IP address used by the resource gateway.</p>
+    /// <p>A resource gateway can have IPv4, IPv6 or dualstack addresses. The IP address type of a resource gateway must be compatible with the subnets of the resource gateway and the IP address type of the resource, as described here:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b>IPv4</b>Assign IPv4 addresses to your resource gateway network interfaces. This option is supported only if all selected subnets have IPv4 address ranges, and the resource also has an IPv4 address.</p></li>
+    /// <li>
+    /// <p><b>IPv6</b>Assign IPv6 addresses to your resource gateway network interfaces. This option is supported only if all selected subnets are IPv6 only subnets, and the resource also has an IPv6 address.</p></li>
+    /// <li>
+    /// <p><b>Dualstack</b>Assign both IPv4 and IPv6 addresses to your resource gateway network interfaces. This option is supported only if all selected subnets have both IPv4 and IPv6 address ranges, and the resource either has an IPv4 or IPv6 address.</p></li>
+    /// </ul>
+    /// <p>The IP address type of the resource gateway is independent of the IP address type of the client or the VPC endpoint through which the resource is accessed.</p>
     pub fn ip_address_type(mut self, input: crate::types::ResourceGatewayIpAddressType) -> Self {
         self.inner = self.inner.ip_address_type(input);
         self
     }
-    /// <p>The type of IP address used by the resource gateway.</p>
+    /// <p>A resource gateway can have IPv4, IPv6 or dualstack addresses. The IP address type of a resource gateway must be compatible with the subnets of the resource gateway and the IP address type of the resource, as described here:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b>IPv4</b>Assign IPv4 addresses to your resource gateway network interfaces. This option is supported only if all selected subnets have IPv4 address ranges, and the resource also has an IPv4 address.</p></li>
+    /// <li>
+    /// <p><b>IPv6</b>Assign IPv6 addresses to your resource gateway network interfaces. This option is supported only if all selected subnets are IPv6 only subnets, and the resource also has an IPv6 address.</p></li>
+    /// <li>
+    /// <p><b>Dualstack</b>Assign both IPv4 and IPv6 addresses to your resource gateway network interfaces. This option is supported only if all selected subnets have both IPv4 and IPv6 address ranges, and the resource either has an IPv4 or IPv6 address.</p></li>
+    /// </ul>
+    /// <p>The IP address type of the resource gateway is independent of the IP address type of the client or the VPC endpoint through which the resource is accessed.</p>
     pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::ResourceGatewayIpAddressType>) -> Self {
         self.inner = self.inner.set_ip_address_type(input);
         self
     }
-    /// <p>The type of IP address used by the resource gateway.</p>
+    /// <p>A resource gateway can have IPv4, IPv6 or dualstack addresses. The IP address type of a resource gateway must be compatible with the subnets of the resource gateway and the IP address type of the resource, as described here:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b>IPv4</b>Assign IPv4 addresses to your resource gateway network interfaces. This option is supported only if all selected subnets have IPv4 address ranges, and the resource also has an IPv4 address.</p></li>
+    /// <li>
+    /// <p><b>IPv6</b>Assign IPv6 addresses to your resource gateway network interfaces. This option is supported only if all selected subnets are IPv6 only subnets, and the resource also has an IPv6 address.</p></li>
+    /// <li>
+    /// <p><b>Dualstack</b>Assign both IPv4 and IPv6 addresses to your resource gateway network interfaces. This option is supported only if all selected subnets have both IPv4 and IPv6 address ranges, and the resource either has an IPv4 or IPv6 address.</p></li>
+    /// </ul>
+    /// <p>The IP address type of the resource gateway is independent of the IP address type of the client or the VPC endpoint through which the resource is accessed.</p>
     pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::ResourceGatewayIpAddressType> {
         self.inner.get_ip_address_type()
+    }
+    /// <p>The number of IPv4 addresses in each ENI for the resource gateway.</p>
+    pub fn ipv4_addresses_per_eni(mut self, input: i32) -> Self {
+        self.inner = self.inner.ipv4_addresses_per_eni(input);
+        self
+    }
+    /// <p>The number of IPv4 addresses in each ENI for the resource gateway.</p>
+    pub fn set_ipv4_addresses_per_eni(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.inner = self.inner.set_ipv4_addresses_per_eni(input);
+        self
+    }
+    /// <p>The number of IPv4 addresses in each ENI for the resource gateway.</p>
+    pub fn get_ipv4_addresses_per_eni(&self) -> &::std::option::Option<i32> {
+        self.inner.get_ipv4_addresses_per_eni()
     }
     ///
     /// Adds a key-value pair to `tags`.

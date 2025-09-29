@@ -203,6 +203,13 @@ pub(crate) fn de_create_resource_gateway(
                             .transpose()?,
                     );
                 }
+                "ipv4AddressesPerEni" => {
+                    builder = builder.set_ipv4_addresses_per_eni(
+                        ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                            .map(i32::try_from)
+                            .transpose()?,
+                    );
+                }
                 "name" => {
                     builder = builder.set_name(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

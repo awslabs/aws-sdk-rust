@@ -6,7 +6,7 @@
 pub struct DnsResource {
     /// <p>The domain name of the resource.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
-    /// <p>The type of IP address.</p>
+    /// <p>The type of IP address. Dualstack is currently not supported.</p>
     pub ip_address_type: ::std::option::Option<crate::types::ResourceConfigurationIpAddressType>,
 }
 impl DnsResource {
@@ -14,7 +14,7 @@ impl DnsResource {
     pub fn domain_name(&self) -> ::std::option::Option<&str> {
         self.domain_name.as_deref()
     }
-    /// <p>The type of IP address.</p>
+    /// <p>The type of IP address. Dualstack is currently not supported.</p>
     pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::ResourceConfigurationIpAddressType> {
         self.ip_address_type.as_ref()
     }
@@ -48,17 +48,17 @@ impl DnsResourceBuilder {
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_name
     }
-    /// <p>The type of IP address.</p>
+    /// <p>The type of IP address. Dualstack is currently not supported.</p>
     pub fn ip_address_type(mut self, input: crate::types::ResourceConfigurationIpAddressType) -> Self {
         self.ip_address_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of IP address.</p>
+    /// <p>The type of IP address. Dualstack is currently not supported.</p>
     pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::ResourceConfigurationIpAddressType>) -> Self {
         self.ip_address_type = input;
         self
     }
-    /// <p>The type of IP address.</p>
+    /// <p>The type of IP address. Dualstack is currently not supported.</p>
     pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::ResourceConfigurationIpAddressType> {
         &self.ip_address_type
     }

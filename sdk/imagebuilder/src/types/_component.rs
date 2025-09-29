@@ -28,7 +28,7 @@ pub struct Component {
     pub owner: ::std::option::Option<::std::string::String>,
     /// <p>Component data contains the YAML document content for the component.</p>
     pub data: ::std::option::Option<::std::string::String>,
-    /// <p>The KMS key identifier used to encrypt the component.</p>
+    /// <p>The KMS key identifier used to encrypt the component. This can be either the Key ARN or the Alias ARN. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">Key identifiers (KeyId)</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The encryption status of the component.</p>
     pub encrypted: ::std::option::Option<bool>,
@@ -96,7 +96,7 @@ impl Component {
     pub fn data(&self) -> ::std::option::Option<&str> {
         self.data.as_deref()
     }
-    /// <p>The KMS key identifier used to encrypt the component.</p>
+    /// <p>The KMS key identifier used to encrypt the component. This can be either the Key ARN or the Alias ARN. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">Key identifiers (KeyId)</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
@@ -339,17 +339,17 @@ impl ComponentBuilder {
     pub fn get_data(&self) -> &::std::option::Option<::std::string::String> {
         &self.data
     }
-    /// <p>The KMS key identifier used to encrypt the component.</p>
+    /// <p>The KMS key identifier used to encrypt the component. This can be either the Key ARN or the Alias ARN. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">Key identifiers (KeyId)</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The KMS key identifier used to encrypt the component.</p>
+    /// <p>The KMS key identifier used to encrypt the component. This can be either the Key ARN or the Alias ARN. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">Key identifiers (KeyId)</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
     }
-    /// <p>The KMS key identifier used to encrypt the component.</p>
+    /// <p>The KMS key identifier used to encrypt the component. This can be either the Key ARN or the Alias ARN. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">Key identifiers (KeyId)</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_id
     }

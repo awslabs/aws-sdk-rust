@@ -19,6 +19,8 @@ pub struct CreateResourceGatewayOutput {
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The type of IP address for the resource gateway.</p>
     pub ip_address_type: ::std::option::Option<crate::types::ResourceGatewayIpAddressType>,
+    /// <p>The number of IPv4 addresses in each ENI for the resource gateway.</p>
+    pub ipv4_addresses_per_eni: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }
 impl CreateResourceGatewayOutput {
@@ -58,6 +60,10 @@ impl CreateResourceGatewayOutput {
     pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::ResourceGatewayIpAddressType> {
         self.ip_address_type.as_ref()
     }
+    /// <p>The number of IPv4 addresses in each ENI for the resource gateway.</p>
+    pub fn ipv4_addresses_per_eni(&self) -> ::std::option::Option<i32> {
+        self.ipv4_addresses_per_eni
+    }
 }
 impl ::aws_types::request_id::RequestId for CreateResourceGatewayOutput {
     fn request_id(&self) -> Option<&str> {
@@ -83,6 +89,7 @@ pub struct CreateResourceGatewayOutputBuilder {
     pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) ip_address_type: ::std::option::Option<crate::types::ResourceGatewayIpAddressType>,
+    pub(crate) ipv4_addresses_per_eni: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }
 impl CreateResourceGatewayOutputBuilder {
@@ -210,6 +217,20 @@ impl CreateResourceGatewayOutputBuilder {
     pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::ResourceGatewayIpAddressType> {
         &self.ip_address_type
     }
+    /// <p>The number of IPv4 addresses in each ENI for the resource gateway.</p>
+    pub fn ipv4_addresses_per_eni(mut self, input: i32) -> Self {
+        self.ipv4_addresses_per_eni = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of IPv4 addresses in each ENI for the resource gateway.</p>
+    pub fn set_ipv4_addresses_per_eni(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.ipv4_addresses_per_eni = input;
+        self
+    }
+    /// <p>The number of IPv4 addresses in each ENI for the resource gateway.</p>
+    pub fn get_ipv4_addresses_per_eni(&self) -> &::std::option::Option<i32> {
+        &self.ipv4_addresses_per_eni
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -230,6 +251,7 @@ impl CreateResourceGatewayOutputBuilder {
             subnet_ids: self.subnet_ids,
             security_group_ids: self.security_group_ids,
             ip_address_type: self.ip_address_type,
+            ipv4_addresses_per_eni: self.ipv4_addresses_per_eni,
             _request_id: self._request_id,
         }
     }

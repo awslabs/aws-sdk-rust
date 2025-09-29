@@ -23,7 +23,7 @@ pub struct ListComponentsInput {
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>Returns the list of components for the specified name.</p>
     pub by_name: ::std::option::Option<bool>,
-    /// <p>The maximum items to return in a request.</p>
+    /// <p>Specify the maximum number of items to return in a request.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>A token to specify where to start paginating. This is the nextToken from a previously truncated response.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -57,7 +57,7 @@ impl ListComponentsInput {
     pub fn by_name(&self) -> ::std::option::Option<bool> {
         self.by_name
     }
-    /// <p>The maximum items to return in a request.</p>
+    /// <p>Specify the maximum number of items to return in a request.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -174,17 +174,17 @@ impl ListComponentsInputBuilder {
     pub fn get_by_name(&self) -> &::std::option::Option<bool> {
         &self.by_name
     }
-    /// <p>The maximum items to return in a request.</p>
+    /// <p>Specify the maximum number of items to return in a request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum items to return in a request.</p>
+    /// <p>Specify the maximum number of items to return in a request.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>The maximum items to return in a request.</p>
+    /// <p>Specify the maximum number of items to return in a request.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }

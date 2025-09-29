@@ -106,6 +106,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "loggingConfiguration" => {
+                            builder = builder.set_logging_configuration(
+                                crate::protocol_serde::shape_image_logging_configuration::de_image_logging_configuration(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

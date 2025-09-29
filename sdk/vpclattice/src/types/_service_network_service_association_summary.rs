@@ -6,7 +6,7 @@
 pub struct ServiceNetworkServiceAssociationSummary {
     /// <p>The ID of the association.</p>
     pub id: ::std::option::Option<::std::string::String>,
-    /// <p>The status. If the deletion fails, try to delete again.</p>
+    /// <p>The status of the service network’s association with the service. If the deletion fails, try to delete again.</p>
     pub status: ::std::option::Option<crate::types::ServiceNetworkServiceAssociationStatus>,
     /// <p>The Amazon Resource Name (ARN) of the association.</p>
     pub arn: ::std::option::Option<::std::string::String>,
@@ -36,7 +36,7 @@ impl ServiceNetworkServiceAssociationSummary {
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The status. If the deletion fails, try to delete again.</p>
+    /// <p>The status of the service network’s association with the service. If the deletion fails, try to delete again.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::ServiceNetworkServiceAssociationStatus> {
         self.status.as_ref()
     }
@@ -125,17 +125,17 @@ impl ServiceNetworkServiceAssociationSummaryBuilder {
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
-    /// <p>The status. If the deletion fails, try to delete again.</p>
+    /// <p>The status of the service network’s association with the service. If the deletion fails, try to delete again.</p>
     pub fn status(mut self, input: crate::types::ServiceNetworkServiceAssociationStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status. If the deletion fails, try to delete again.</p>
+    /// <p>The status of the service network’s association with the service. If the deletion fails, try to delete again.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ServiceNetworkServiceAssociationStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The status. If the deletion fails, try to delete again.</p>
+    /// <p>The status of the service network’s association with the service. If the deletion fails, try to delete again.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ServiceNetworkServiceAssociationStatus> {
         &self.status
     }

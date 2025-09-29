@@ -158,6 +158,11 @@ where
                                 crate::protocol_serde::shape_workflow_configuration_list::de_workflow_configuration_list(tokens)?,
                             );
                         }
+                        "loggingConfiguration" => {
+                            builder = builder.set_logging_configuration(
+                                crate::protocol_serde::shape_image_logging_configuration::de_image_logging_configuration(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

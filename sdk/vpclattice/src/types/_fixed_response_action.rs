@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FixedResponseAction {
-    /// <p>The HTTP response code.</p>
+    /// <p>The HTTP response code. Only <code>404</code> and <code>500</code> status codes are supported.</p>
     pub status_code: i32,
 }
 impl FixedResponseAction {
-    /// <p>The HTTP response code.</p>
+    /// <p>The HTTP response code. Only <code>404</code> and <code>500</code> status codes are supported.</p>
     pub fn status_code(&self) -> i32 {
         self.status_code
     }
@@ -27,18 +27,18 @@ pub struct FixedResponseActionBuilder {
     pub(crate) status_code: ::std::option::Option<i32>,
 }
 impl FixedResponseActionBuilder {
-    /// <p>The HTTP response code.</p>
+    /// <p>The HTTP response code. Only <code>404</code> and <code>500</code> status codes are supported.</p>
     /// This field is required.
     pub fn status_code(mut self, input: i32) -> Self {
         self.status_code = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The HTTP response code.</p>
+    /// <p>The HTTP response code. Only <code>404</code> and <code>500</code> status codes are supported.</p>
     pub fn set_status_code(mut self, input: ::std::option::Option<i32>) -> Self {
         self.status_code = input;
         self
     }
-    /// <p>The HTTP response code.</p>
+    /// <p>The HTTP response code. Only <code>404</code> and <code>500</code> status codes are supported.</p>
     pub fn get_status_code(&self) -> &::std::option::Option<i32> {
         &self.status_code
     }

@@ -5,7 +5,15 @@
 pub struct UpdateResourceConfigurationInput {
     /// <p>The ID of the resource configuration.</p>
     pub resource_configuration_identifier: ::std::option::Option<::std::string::String>,
-    /// <p>The resource configuration.</p>
+    /// <p>Identifies the resource configuration in one of the following ways:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b>Amazon Resource Name (ARN)</b> - Supported resource-types that are provisioned by Amazon Web Services services, such as RDS databases, can be identified by their ARN.</p></li>
+    /// <li>
+    /// <p><b>Domain name</b> - Any domain name that is publicly resolvable.</p></li>
+    /// <li>
+    /// <p><b>IP address</b> - For IPv4 and IPv6, only IP addresses in the VPC are supported.</p></li>
+    /// </ul>
     pub resource_configuration_definition: ::std::option::Option<crate::types::ResourceConfigurationDefinition>,
     /// <p>Indicates whether to add the resource configuration to service networks that are shared with other accounts.</p>
     pub allow_association_to_shareable_service_network: ::std::option::Option<bool>,
@@ -17,7 +25,15 @@ impl UpdateResourceConfigurationInput {
     pub fn resource_configuration_identifier(&self) -> ::std::option::Option<&str> {
         self.resource_configuration_identifier.as_deref()
     }
-    /// <p>The resource configuration.</p>
+    /// <p>Identifies the resource configuration in one of the following ways:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b>Amazon Resource Name (ARN)</b> - Supported resource-types that are provisioned by Amazon Web Services services, such as RDS databases, can be identified by their ARN.</p></li>
+    /// <li>
+    /// <p><b>Domain name</b> - Any domain name that is publicly resolvable.</p></li>
+    /// <li>
+    /// <p><b>IP address</b> - For IPv4 and IPv6, only IP addresses in the VPC are supported.</p></li>
+    /// </ul>
     pub fn resource_configuration_definition(&self) -> ::std::option::Option<&crate::types::ResourceConfigurationDefinition> {
         self.resource_configuration_definition.as_ref()
     }
@@ -64,17 +80,41 @@ impl UpdateResourceConfigurationInputBuilder {
     pub fn get_resource_configuration_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_configuration_identifier
     }
-    /// <p>The resource configuration.</p>
+    /// <p>Identifies the resource configuration in one of the following ways:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b>Amazon Resource Name (ARN)</b> - Supported resource-types that are provisioned by Amazon Web Services services, such as RDS databases, can be identified by their ARN.</p></li>
+    /// <li>
+    /// <p><b>Domain name</b> - Any domain name that is publicly resolvable.</p></li>
+    /// <li>
+    /// <p><b>IP address</b> - For IPv4 and IPv6, only IP addresses in the VPC are supported.</p></li>
+    /// </ul>
     pub fn resource_configuration_definition(mut self, input: crate::types::ResourceConfigurationDefinition) -> Self {
         self.resource_configuration_definition = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The resource configuration.</p>
+    /// <p>Identifies the resource configuration in one of the following ways:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b>Amazon Resource Name (ARN)</b> - Supported resource-types that are provisioned by Amazon Web Services services, such as RDS databases, can be identified by their ARN.</p></li>
+    /// <li>
+    /// <p><b>Domain name</b> - Any domain name that is publicly resolvable.</p></li>
+    /// <li>
+    /// <p><b>IP address</b> - For IPv4 and IPv6, only IP addresses in the VPC are supported.</p></li>
+    /// </ul>
     pub fn set_resource_configuration_definition(mut self, input: ::std::option::Option<crate::types::ResourceConfigurationDefinition>) -> Self {
         self.resource_configuration_definition = input;
         self
     }
-    /// <p>The resource configuration.</p>
+    /// <p>Identifies the resource configuration in one of the following ways:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b>Amazon Resource Name (ARN)</b> - Supported resource-types that are provisioned by Amazon Web Services services, such as RDS databases, can be identified by their ARN.</p></li>
+    /// <li>
+    /// <p><b>Domain name</b> - Any domain name that is publicly resolvable.</p></li>
+    /// <li>
+    /// <p><b>IP address</b> - For IPv4 and IPv6, only IP addresses in the VPC are supported.</p></li>
+    /// </ul>
     pub fn get_resource_configuration_definition(&self) -> &::std::option::Option<crate::types::ResourceConfigurationDefinition> {
         &self.resource_configuration_definition
     }

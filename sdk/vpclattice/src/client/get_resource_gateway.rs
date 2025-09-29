@@ -13,6 +13,7 @@ impl super::Client {
     ///   - [`subnet_ids(Option<Vec::<String>>)`](crate::operation::get_resource_gateway::GetResourceGatewayOutput::subnet_ids): <p>The IDs of the VPC subnets for resource gateway.</p>
     ///   - [`security_group_ids(Option<Vec::<String>>)`](crate::operation::get_resource_gateway::GetResourceGatewayOutput::security_group_ids): <p>The security group IDs associated with the resource gateway.</p>
     ///   - [`ip_address_type(Option<ResourceGatewayIpAddressType>)`](crate::operation::get_resource_gateway::GetResourceGatewayOutput::ip_address_type): <p>The type of IP address for the resource gateway.</p>
+    ///   - [`ipv4_addresses_per_eni(Option<i32>)`](crate::operation::get_resource_gateway::GetResourceGatewayOutput::ipv4_addresses_per_eni): <p>The number of IPv4 addresses in each ENI for the resource gateway.</p>
     ///   - [`created_at(Option<DateTime>)`](crate::operation::get_resource_gateway::GetResourceGatewayOutput::created_at): <p>The date and time that the resource gateway was created, in ISO-8601 format.</p>
     ///   - [`last_updated_at(Option<DateTime>)`](crate::operation::get_resource_gateway::GetResourceGatewayOutput::last_updated_at): <p>The date and time that the resource gateway was last updated, in ISO-8601 format.</p>
     /// - On failure, responds with [`SdkError<GetResourceGatewayError>`](crate::operation::get_resource_gateway::GetResourceGatewayError)

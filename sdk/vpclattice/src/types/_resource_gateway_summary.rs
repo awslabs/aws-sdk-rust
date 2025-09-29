@@ -20,6 +20,8 @@ pub struct ResourceGatewaySummary {
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The type of IP address used by the resource gateway.</p>
     pub ip_address_type: ::std::option::Option<crate::types::ResourceGatewayIpAddressType>,
+    /// <p>The number of IPv4 addresses in each ENI for the resource gateway.</p>
+    pub ipv4_addresses_per_eni: ::std::option::Option<i32>,
     /// <p>The date and time that the VPC endpoint association was created, in ISO-8601 format.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The most recent date and time that the resource gateway was updated, in ISO-8601 format.</p>
@@ -62,6 +64,10 @@ impl ResourceGatewaySummary {
     pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::ResourceGatewayIpAddressType> {
         self.ip_address_type.as_ref()
     }
+    /// <p>The number of IPv4 addresses in each ENI for the resource gateway.</p>
+    pub fn ipv4_addresses_per_eni(&self) -> ::std::option::Option<i32> {
+        self.ipv4_addresses_per_eni
+    }
     /// <p>The date and time that the VPC endpoint association was created, in ISO-8601 format.</p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
@@ -90,6 +96,7 @@ pub struct ResourceGatewaySummaryBuilder {
     pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) ip_address_type: ::std::option::Option<crate::types::ResourceGatewayIpAddressType>,
+    pub(crate) ipv4_addresses_per_eni: ::std::option::Option<i32>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -218,6 +225,20 @@ impl ResourceGatewaySummaryBuilder {
     pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::ResourceGatewayIpAddressType> {
         &self.ip_address_type
     }
+    /// <p>The number of IPv4 addresses in each ENI for the resource gateway.</p>
+    pub fn ipv4_addresses_per_eni(mut self, input: i32) -> Self {
+        self.ipv4_addresses_per_eni = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of IPv4 addresses in each ENI for the resource gateway.</p>
+    pub fn set_ipv4_addresses_per_eni(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.ipv4_addresses_per_eni = input;
+        self
+    }
+    /// <p>The number of IPv4 addresses in each ENI for the resource gateway.</p>
+    pub fn get_ipv4_addresses_per_eni(&self) -> &::std::option::Option<i32> {
+        &self.ipv4_addresses_per_eni
+    }
     /// <p>The date and time that the VPC endpoint association was created, in ISO-8601 format.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -257,6 +278,7 @@ impl ResourceGatewaySummaryBuilder {
             subnet_ids: self.subnet_ids,
             security_group_ids: self.security_group_ids,
             ip_address_type: self.ip_address_type,
+            ipv4_addresses_per_eni: self.ipv4_addresses_per_eni,
             created_at: self.created_at,
             last_updated_at: self.last_updated_at,
         }

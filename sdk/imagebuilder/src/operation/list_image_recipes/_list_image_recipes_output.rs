@@ -5,7 +5,7 @@
 pub struct ListImageRecipesOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
     pub request_id: ::std::option::Option<::std::string::String>,
-    /// <p>The list of image pipelines.</p>
+    /// <p>A list of <code>ImageRecipeSummary</code> objects that contain identifying characteristics for the image recipe, such as the name, the Amazon Resource Name (ARN), and the date created, along with other key details.</p>
     pub image_recipe_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::ImageRecipeSummary>>,
     /// <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service hasn't included in this request. Use this token with the next request to retrieve additional objects.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -16,7 +16,7 @@ impl ListImageRecipesOutput {
     pub fn request_id(&self) -> ::std::option::Option<&str> {
         self.request_id.as_deref()
     }
-    /// <p>The list of image pipelines.</p>
+    /// <p>A list of <code>ImageRecipeSummary</code> objects that contain identifying characteristics for the image recipe, such as the name, the Amazon Resource Name (ARN), and the date created, along with other key details.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.image_recipe_summary_list.is_none()`.
     pub fn image_recipe_summary_list(&self) -> &[crate::types::ImageRecipeSummary] {
@@ -67,19 +67,19 @@ impl ListImageRecipesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_image_recipe_summary_list`](Self::set_image_recipe_summary_list).
     ///
-    /// <p>The list of image pipelines.</p>
+    /// <p>A list of <code>ImageRecipeSummary</code> objects that contain identifying characteristics for the image recipe, such as the name, the Amazon Resource Name (ARN), and the date created, along with other key details.</p>
     pub fn image_recipe_summary_list(mut self, input: crate::types::ImageRecipeSummary) -> Self {
         let mut v = self.image_recipe_summary_list.unwrap_or_default();
         v.push(input);
         self.image_recipe_summary_list = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The list of image pipelines.</p>
+    /// <p>A list of <code>ImageRecipeSummary</code> objects that contain identifying characteristics for the image recipe, such as the name, the Amazon Resource Name (ARN), and the date created, along with other key details.</p>
     pub fn set_image_recipe_summary_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ImageRecipeSummary>>) -> Self {
         self.image_recipe_summary_list = input;
         self
     }
-    /// <p>The list of image pipelines.</p>
+    /// <p>A list of <code>ImageRecipeSummary</code> objects that contain identifying characteristics for the image recipe, such as the name, the Amazon Resource Name (ARN), and the date created, along with other key details.</p>
     pub fn get_image_recipe_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ImageRecipeSummary>> {
         &self.image_recipe_summary_list
     }

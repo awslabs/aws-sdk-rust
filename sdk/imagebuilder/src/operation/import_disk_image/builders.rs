@@ -224,6 +224,20 @@ impl ImportDiskImageFluentBuilder {
     pub fn get_uri(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_uri()
     }
+    /// <p>Define logging configuration for the image build process.</p>
+    pub fn logging_configuration(mut self, input: crate::types::ImageLoggingConfiguration) -> Self {
+        self.inner = self.inner.logging_configuration(input);
+        self
+    }
+    /// <p>Define logging configuration for the image build process.</p>
+    pub fn set_logging_configuration(mut self, input: ::std::option::Option<crate::types::ImageLoggingConfiguration>) -> Self {
+        self.inner = self.inner.set_logging_configuration(input);
+        self
+    }
+    /// <p>Define logging configuration for the image build process.</p>
+    pub fn get_logging_configuration(&self) -> &::std::option::Option<crate::types::ImageLoggingConfiguration> {
+        self.inner.get_logging_configuration()
+    }
     ///
     /// Adds a key-value pair to `tags`.
     ///

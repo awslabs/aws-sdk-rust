@@ -5,19 +5,22 @@
 pub struct ListServiceNetworkResourceAssociationsInput {
     /// <p>The ID of the service network.</p>
     pub service_network_identifier: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of the resource configurationk.</p>
+    /// <p>The ID of the resource configuration.</p>
     pub resource_configuration_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The maximum page size.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>If there are additional results, a pagination token for the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
+    /// <p>Include service network resource associations of the child resource configuration with the grouped resource configuration.</p>
+    /// <p>The type is boolean and the default value is false.</p>
+    pub include_children: ::std::option::Option<bool>,
 }
 impl ListServiceNetworkResourceAssociationsInput {
     /// <p>The ID of the service network.</p>
     pub fn service_network_identifier(&self) -> ::std::option::Option<&str> {
         self.service_network_identifier.as_deref()
     }
-    /// <p>The ID of the resource configurationk.</p>
+    /// <p>The ID of the resource configuration.</p>
     pub fn resource_configuration_identifier(&self) -> ::std::option::Option<&str> {
         self.resource_configuration_identifier.as_deref()
     }
@@ -28,6 +31,11 @@ impl ListServiceNetworkResourceAssociationsInput {
     /// <p>If there are additional results, a pagination token for the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
+    }
+    /// <p>Include service network resource associations of the child resource configuration with the grouped resource configuration.</p>
+    /// <p>The type is boolean and the default value is false.</p>
+    pub fn include_children(&self) -> ::std::option::Option<bool> {
+        self.include_children
     }
 }
 impl ListServiceNetworkResourceAssociationsInput {
@@ -45,6 +53,7 @@ pub struct ListServiceNetworkResourceAssociationsInputBuilder {
     pub(crate) resource_configuration_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
+    pub(crate) include_children: ::std::option::Option<bool>,
 }
 impl ListServiceNetworkResourceAssociationsInputBuilder {
     /// <p>The ID of the service network.</p>
@@ -61,17 +70,17 @@ impl ListServiceNetworkResourceAssociationsInputBuilder {
     pub fn get_service_network_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.service_network_identifier
     }
-    /// <p>The ID of the resource configurationk.</p>
+    /// <p>The ID of the resource configuration.</p>
     pub fn resource_configuration_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_configuration_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the resource configurationk.</p>
+    /// <p>The ID of the resource configuration.</p>
     pub fn set_resource_configuration_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_configuration_identifier = input;
         self
     }
-    /// <p>The ID of the resource configurationk.</p>
+    /// <p>The ID of the resource configuration.</p>
     pub fn get_resource_configuration_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_configuration_identifier
     }
@@ -103,6 +112,23 @@ impl ListServiceNetworkResourceAssociationsInputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
+    /// <p>Include service network resource associations of the child resource configuration with the grouped resource configuration.</p>
+    /// <p>The type is boolean and the default value is false.</p>
+    pub fn include_children(mut self, input: bool) -> Self {
+        self.include_children = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Include service network resource associations of the child resource configuration with the grouped resource configuration.</p>
+    /// <p>The type is boolean and the default value is false.</p>
+    pub fn set_include_children(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.include_children = input;
+        self
+    }
+    /// <p>Include service network resource associations of the child resource configuration with the grouped resource configuration.</p>
+    /// <p>The type is boolean and the default value is false.</p>
+    pub fn get_include_children(&self) -> &::std::option::Option<bool> {
+        &self.include_children
+    }
     /// Consumes the builder and constructs a [`ListServiceNetworkResourceAssociationsInput`](crate::operation::list_service_network_resource_associations::ListServiceNetworkResourceAssociationsInput).
     pub fn build(
         self,
@@ -116,6 +142,7 @@ impl ListServiceNetworkResourceAssociationsInputBuilder {
                 resource_configuration_identifier: self.resource_configuration_identifier,
                 max_results: self.max_results,
                 next_token: self.next_token,
+                include_children: self.include_children,
             },
         )
     }

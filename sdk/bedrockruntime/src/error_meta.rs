@@ -111,6 +111,7 @@ impl From<crate::operation::apply_guardrail::ApplyGuardrailError> for Error {
             crate::operation::apply_guardrail::ApplyGuardrailError::ServiceQuotaExceededException(inner) => {
                 Error::ServiceQuotaExceededException(inner)
             }
+            crate::operation::apply_guardrail::ApplyGuardrailError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::operation::apply_guardrail::ApplyGuardrailError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::apply_guardrail::ApplyGuardrailError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::apply_guardrail::ApplyGuardrailError::Unhandled(inner) => Error::Unhandled(inner),

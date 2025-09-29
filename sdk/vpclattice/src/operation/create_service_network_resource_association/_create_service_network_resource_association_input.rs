@@ -9,7 +9,7 @@ pub struct CreateServiceNetworkResourceAssociationInput {
     pub resource_configuration_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the service network to associate with the resource configuration.</p>
     pub service_network_identifier: ::std::option::Option<::std::string::String>,
-    /// <p>The tags for the association.</p>
+    /// <p>A key-value pair to associate with a resource.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateServiceNetworkResourceAssociationInput {
@@ -25,7 +25,7 @@ impl CreateServiceNetworkResourceAssociationInput {
     pub fn service_network_identifier(&self) -> ::std::option::Option<&str> {
         self.service_network_identifier.as_deref()
     }
-    /// <p>The tags for the association.</p>
+    /// <p>A key-value pair to associate with a resource.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
@@ -95,19 +95,19 @@ impl CreateServiceNetworkResourceAssociationInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>The tags for the association.</p>
+    /// <p>A key-value pair to associate with a resource.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>The tags for the association.</p>
+    /// <p>A key-value pair to associate with a resource.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>The tags for the association.</p>
+    /// <p>A key-value pair to associate with a resource.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }

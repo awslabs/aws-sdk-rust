@@ -56,7 +56,7 @@ pub struct ContainerRecipe {
     pub instance_configuration: ::std::option::Option<crate::types::InstanceConfiguration>,
     /// <p>Dockerfiles are text documents that are used to build Docker containers, and ensure that they contain all of the elements required by the application running inside. The template data consists of contextual variables where Image Builder places build information or scripts, based on your container image recipe.</p>
     pub dockerfile_template_data: ::std::option::Option<::std::string::String>,
-    /// <p>Identifies which KMS key is used to encrypt the container image for distribution to the target Region.</p>
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies which KMS key is used to encrypt the container image for distribution to the target Region. This can be either the Key ARN or the Alias ARN. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">Key identifiers (KeyId)</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>A flag that indicates if the target container is encrypted.</p>
     pub encrypted: ::std::option::Option<bool>,
@@ -146,7 +146,7 @@ impl ContainerRecipe {
     pub fn dockerfile_template_data(&self) -> ::std::option::Option<&str> {
         self.dockerfile_template_data.as_deref()
     }
-    /// <p>Identifies which KMS key is used to encrypt the container image for distribution to the target Region.</p>
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies which KMS key is used to encrypt the container image for distribution to the target Region. This can be either the Key ARN or the Alias ARN. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">Key identifiers (KeyId)</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
@@ -447,17 +447,17 @@ impl ContainerRecipeBuilder {
     pub fn get_dockerfile_template_data(&self) -> &::std::option::Option<::std::string::String> {
         &self.dockerfile_template_data
     }
-    /// <p>Identifies which KMS key is used to encrypt the container image for distribution to the target Region.</p>
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies which KMS key is used to encrypt the container image for distribution to the target Region. This can be either the Key ARN or the Alias ARN. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">Key identifiers (KeyId)</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Identifies which KMS key is used to encrypt the container image for distribution to the target Region.</p>
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies which KMS key is used to encrypt the container image for distribution to the target Region. This can be either the Key ARN or the Alias ARN. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">Key identifiers (KeyId)</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
     }
-    /// <p>Identifies which KMS key is used to encrypt the container image for distribution to the target Region.</p>
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies which KMS key is used to encrypt the container image for distribution to the target Region. This can be either the Key ARN or the Alias ARN. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">Key identifiers (KeyId)</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_id
     }

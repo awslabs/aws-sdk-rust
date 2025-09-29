@@ -29,6 +29,8 @@ pub struct UpdateImagePipelineInput {
     pub image_scanning_configuration: ::std::option::Option<crate::types::ImageScanningConfiguration>,
     /// <p>Contains the workflows to run for the pipeline.</p>
     pub workflows: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowConfiguration>>,
+    /// <p>Update logging configuration for the output image that's created when the pipeline runs.</p>
+    pub logging_configuration: ::std::option::Option<crate::types::PipelineLoggingConfiguration>,
     /// <p>The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to perform workflow actions.</p>
     pub execution_role: ::std::option::Option<::std::string::String>,
 }
@@ -87,6 +89,10 @@ impl UpdateImagePipelineInput {
     pub fn workflows(&self) -> &[crate::types::WorkflowConfiguration] {
         self.workflows.as_deref().unwrap_or_default()
     }
+    /// <p>Update logging configuration for the output image that's created when the pipeline runs.</p>
+    pub fn logging_configuration(&self) -> ::std::option::Option<&crate::types::PipelineLoggingConfiguration> {
+        self.logging_configuration.as_ref()
+    }
     /// <p>The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to perform workflow actions.</p>
     pub fn execution_role(&self) -> ::std::option::Option<&str> {
         self.execution_role.as_deref()
@@ -116,6 +122,7 @@ pub struct UpdateImagePipelineInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) image_scanning_configuration: ::std::option::Option<crate::types::ImageScanningConfiguration>,
     pub(crate) workflows: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowConfiguration>>,
+    pub(crate) logging_configuration: ::std::option::Option<crate::types::PipelineLoggingConfiguration>,
     pub(crate) execution_role: ::std::option::Option<::std::string::String>,
 }
 impl UpdateImagePipelineInputBuilder {
@@ -310,6 +317,20 @@ impl UpdateImagePipelineInputBuilder {
     pub fn get_workflows(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkflowConfiguration>> {
         &self.workflows
     }
+    /// <p>Update logging configuration for the output image that's created when the pipeline runs.</p>
+    pub fn logging_configuration(mut self, input: crate::types::PipelineLoggingConfiguration) -> Self {
+        self.logging_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Update logging configuration for the output image that's created when the pipeline runs.</p>
+    pub fn set_logging_configuration(mut self, input: ::std::option::Option<crate::types::PipelineLoggingConfiguration>) -> Self {
+        self.logging_configuration = input;
+        self
+    }
+    /// <p>Update logging configuration for the output image that's created when the pipeline runs.</p>
+    pub fn get_logging_configuration(&self) -> &::std::option::Option<crate::types::PipelineLoggingConfiguration> {
+        &self.logging_configuration
+    }
     /// <p>The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to perform workflow actions.</p>
     pub fn execution_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_role = ::std::option::Option::Some(input.into());
@@ -343,6 +364,7 @@ impl UpdateImagePipelineInputBuilder {
             client_token: self.client_token,
             image_scanning_configuration: self.image_scanning_configuration,
             workflows: self.workflows,
+            logging_configuration: self.logging_configuration,
             execution_role: self.execution_role,
         })
     }

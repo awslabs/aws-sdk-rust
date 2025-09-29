@@ -110,6 +110,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "lastRunStatus" => {
+                            builder = builder.set_last_run_status(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ImageStatus::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "dateNextRun" => {
                             builder = builder.set_date_next_run(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -135,6 +142,18 @@ where
                         "workflows" => {
                             builder = builder.set_workflows(
                                 crate::protocol_serde::shape_workflow_configuration_list::de_workflow_configuration_list(tokens)?,
+                            );
+                        }
+                        "loggingConfiguration" => {
+                            builder = builder.set_logging_configuration(
+                                crate::protocol_serde::shape_pipeline_logging_configuration::de_pipeline_logging_configuration(tokens)?,
+                            );
+                        }
+                        "consecutiveFailures" => {
+                            builder = builder.set_consecutive_failures(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

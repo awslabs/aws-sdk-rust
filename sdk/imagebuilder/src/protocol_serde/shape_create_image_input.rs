@@ -36,27 +36,33 @@ pub fn ser_create_image_input_input(
     if let Some(var_11) = &input.infrastructure_configuration_arn {
         object.key("infrastructureConfigurationArn").string(var_11.as_str());
     }
-    if let Some(var_12) = &input.tags {
+    if let Some(var_12) = &input.logging_configuration {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("tags").start_object();
-        for (key_14, value_15) in var_12 {
-            {
-                object_13.key(key_14.as_str()).string(value_15.as_str());
-            }
-        }
+        let mut object_13 = object.key("loggingConfiguration").start_object();
+        crate::protocol_serde::shape_image_logging_configuration::ser_image_logging_configuration(&mut object_13, var_12)?;
         object_13.finish();
     }
-    if let Some(var_16) = &input.workflows {
-        let mut array_17 = object.key("workflows").start_array();
-        for item_18 in var_16 {
+    if let Some(var_14) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_15 = object.key("tags").start_object();
+        for (key_16, value_17) in var_14 {
             {
-                #[allow(unused_mut)]
-                let mut object_19 = array_17.value().start_object();
-                crate::protocol_serde::shape_workflow_configuration::ser_workflow_configuration(&mut object_19, item_18)?;
-                object_19.finish();
+                object_15.key(key_16.as_str()).string(value_17.as_str());
             }
         }
-        array_17.finish();
+        object_15.finish();
+    }
+    if let Some(var_18) = &input.workflows {
+        let mut array_19 = object.key("workflows").start_array();
+        for item_20 in var_18 {
+            {
+                #[allow(unused_mut)]
+                let mut object_21 = array_19.value().start_object();
+                crate::protocol_serde::shape_workflow_configuration::ser_workflow_configuration(&mut object_21, item_20)?;
+                object_21.finish();
+            }
+        }
+        array_19.finish();
     }
     Ok(())
 }

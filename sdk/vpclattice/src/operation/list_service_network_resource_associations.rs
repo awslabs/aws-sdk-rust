@@ -223,6 +223,11 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListServiceN
                         query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_4));
                     }
                 }
+                if let ::std::option::Option::Some(inner_5) = &_input.include_children {
+                    {
+                        query.push_kv("includeChildren", ::aws_smithy_types::primitive::Encoder::from(*inner_5).encode());
+                    }
+                }
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

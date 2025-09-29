@@ -137,17 +137,17 @@ impl ListServiceNetworkResourceAssociationsFluentBuilder {
     pub fn get_service_network_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_service_network_identifier()
     }
-    /// <p>The ID of the resource configurationk.</p>
+    /// <p>The ID of the resource configuration.</p>
     pub fn resource_configuration_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_configuration_identifier(input.into());
         self
     }
-    /// <p>The ID of the resource configurationk.</p>
+    /// <p>The ID of the resource configuration.</p>
     pub fn set_resource_configuration_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_configuration_identifier(input);
         self
     }
-    /// <p>The ID of the resource configurationk.</p>
+    /// <p>The ID of the resource configuration.</p>
     pub fn get_resource_configuration_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_configuration_identifier()
     }
@@ -178,5 +178,22 @@ impl ListServiceNetworkResourceAssociationsFluentBuilder {
     /// <p>If there are additional results, a pagination token for the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
+    }
+    /// <p>Include service network resource associations of the child resource configuration with the grouped resource configuration.</p>
+    /// <p>The type is boolean and the default value is false.</p>
+    pub fn include_children(mut self, input: bool) -> Self {
+        self.inner = self.inner.include_children(input);
+        self
+    }
+    /// <p>Include service network resource associations of the child resource configuration with the grouped resource configuration.</p>
+    /// <p>The type is boolean and the default value is false.</p>
+    pub fn set_include_children(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_include_children(input);
+        self
+    }
+    /// <p>Include service network resource associations of the child resource configuration with the grouped resource configuration.</p>
+    /// <p>The type is boolean and the default value is false.</p>
+    pub fn get_include_children(&self) -> &::std::option::Option<bool> {
+        self.inner.get_include_children()
     }
 }

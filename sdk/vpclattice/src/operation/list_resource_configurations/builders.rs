@@ -128,17 +128,17 @@ impl ListResourceConfigurationsFluentBuilder {
     pub fn get_resource_gateway_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_gateway_identifier()
     }
-    /// <p>The ID of the group resource configuration.</p>
+    /// <p>The ID of the resource configuration of type <code>Group</code>.</p>
     pub fn resource_configuration_group_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_configuration_group_identifier(input.into());
         self
     }
-    /// <p>The ID of the group resource configuration.</p>
+    /// <p>The ID of the resource configuration of type <code>Group</code>.</p>
     pub fn set_resource_configuration_group_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_configuration_group_identifier(input);
         self
     }
-    /// <p>The ID of the group resource configuration.</p>
+    /// <p>The ID of the resource configuration of type <code>Group</code>.</p>
     pub fn get_resource_configuration_group_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_configuration_group_identifier()
     }

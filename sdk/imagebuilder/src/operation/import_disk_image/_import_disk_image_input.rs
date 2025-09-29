@@ -19,6 +19,8 @@ pub struct ImportDiskImageInput {
     pub infrastructure_configuration_arn: ::std::option::Option<::std::string::String>,
     /// <p>The <code>uri</code> of the ISO disk file that's stored in Amazon S3.</p>
     pub uri: ::std::option::Option<::std::string::String>,
+    /// <p>Define logging configuration for the image build process.</p>
+    pub logging_configuration: ::std::option::Option<crate::types::ImageLoggingConfiguration>,
     /// <p>Tags that are attached to image resources created from the import.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
@@ -57,6 +59,10 @@ impl ImportDiskImageInput {
     pub fn uri(&self) -> ::std::option::Option<&str> {
         self.uri.as_deref()
     }
+    /// <p>Define logging configuration for the image build process.</p>
+    pub fn logging_configuration(&self) -> ::std::option::Option<&crate::types::ImageLoggingConfiguration> {
+        self.logging_configuration.as_ref()
+    }
     /// <p>Tags that are attached to image resources created from the import.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
@@ -85,6 +91,7 @@ pub struct ImportDiskImageInputBuilder {
     pub(crate) execution_role: ::std::option::Option<::std::string::String>,
     pub(crate) infrastructure_configuration_arn: ::std::option::Option<::std::string::String>,
     pub(crate) uri: ::std::option::Option<::std::string::String>,
+    pub(crate) logging_configuration: ::std::option::Option<crate::types::ImageLoggingConfiguration>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
@@ -207,6 +214,20 @@ impl ImportDiskImageInputBuilder {
     pub fn get_uri(&self) -> &::std::option::Option<::std::string::String> {
         &self.uri
     }
+    /// <p>Define logging configuration for the image build process.</p>
+    pub fn logging_configuration(mut self, input: crate::types::ImageLoggingConfiguration) -> Self {
+        self.logging_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Define logging configuration for the image build process.</p>
+    pub fn set_logging_configuration(mut self, input: ::std::option::Option<crate::types::ImageLoggingConfiguration>) -> Self {
+        self.logging_configuration = input;
+        self
+    }
+    /// <p>Define logging configuration for the image build process.</p>
+    pub fn get_logging_configuration(&self) -> &::std::option::Option<crate::types::ImageLoggingConfiguration> {
+        &self.logging_configuration
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -255,6 +276,7 @@ impl ImportDiskImageInputBuilder {
             execution_role: self.execution_role,
             infrastructure_configuration_arn: self.infrastructure_configuration_arn,
             uri: self.uri,
+            logging_configuration: self.logging_configuration,
             tags: self.tags,
             client_token: self.client_token,
         })

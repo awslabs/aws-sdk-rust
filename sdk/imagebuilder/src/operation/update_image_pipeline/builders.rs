@@ -297,6 +297,20 @@ impl UpdateImagePipelineFluentBuilder {
     pub fn get_workflows(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkflowConfiguration>> {
         self.inner.get_workflows()
     }
+    /// <p>Update logging configuration for the output image that's created when the pipeline runs.</p>
+    pub fn logging_configuration(mut self, input: crate::types::PipelineLoggingConfiguration) -> Self {
+        self.inner = self.inner.logging_configuration(input);
+        self
+    }
+    /// <p>Update logging configuration for the output image that's created when the pipeline runs.</p>
+    pub fn set_logging_configuration(mut self, input: ::std::option::Option<crate::types::PipelineLoggingConfiguration>) -> Self {
+        self.inner = self.inner.set_logging_configuration(input);
+        self
+    }
+    /// <p>Update logging configuration for the output image that's created when the pipeline runs.</p>
+    pub fn get_logging_configuration(&self) -> &::std::option::Option<crate::types::PipelineLoggingConfiguration> {
+        self.inner.get_logging_configuration()
+    }
     /// <p>The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to perform workflow actions.</p>
     pub fn execution_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.execution_role(input.into());

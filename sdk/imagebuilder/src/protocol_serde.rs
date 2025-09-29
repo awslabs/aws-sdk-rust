@@ -335,6 +335,8 @@ pub(crate) mod shape_filter;
 
 pub(crate) mod shape_image;
 
+pub(crate) mod shape_image_logging_configuration;
+
 pub(crate) mod shape_image_package_list;
 
 pub(crate) mod shape_image_pipeline;
@@ -387,6 +389,8 @@ pub(crate) mod shape_lifecycle_policy_summary_list;
 
 pub(crate) mod shape_logging;
 
+pub(crate) mod shape_pipeline_logging_configuration;
+
 pub(crate) mod shape_placement;
 
 pub(crate) mod shape_resource_state;
@@ -416,6 +420,8 @@ pub(crate) mod shape_workflow_summary_list;
 pub(crate) mod shape_workflow_version_list;
 
 pub(crate) mod shape_ami_distribution_configuration;
+
+pub(crate) mod shape_auto_disable_policy;
 
 pub(crate) mod shape_component_configuration_list;
 

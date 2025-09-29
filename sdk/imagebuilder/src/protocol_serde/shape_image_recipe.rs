@@ -101,6 +101,9 @@ where
                                 crate::protocol_serde::shape_additional_instance_configuration::de_additional_instance_configuration(tokens)?,
                             );
                         }
+                        "amiTags" => {
+                            builder = builder.set_ami_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

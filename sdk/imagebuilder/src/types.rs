@@ -37,6 +37,8 @@ pub use crate::types::_logging::Logging;
 
 pub use crate::types::_s3_logs::S3Logs;
 
+pub use crate::types::_pipeline_logging_configuration::PipelineLoggingConfiguration;
+
 pub use crate::types::_workflow_configuration::WorkflowConfiguration;
 
 pub use crate::types::_on_workflow_failure::OnWorkflowFailure;
@@ -50,6 +52,8 @@ pub use crate::types::_ecr_configuration::EcrConfiguration;
 pub use crate::types::_pipeline_status::PipelineStatus;
 
 pub use crate::types::_schedule::Schedule;
+
+pub use crate::types::_auto_disable_policy::AutoDisablePolicy;
 
 pub use crate::types::_pipeline_execution_start_condition::PipelineExecutionStartCondition;
 
@@ -189,7 +193,11 @@ pub use crate::types::_image_recipe_summary::ImageRecipeSummary;
 
 pub use crate::types::_image_pipeline::ImagePipeline;
 
+pub use crate::types::_image_status::ImageStatus;
+
 pub use crate::types::_image_summary::ImageSummary;
+
+pub use crate::types::_image_logging_configuration::ImageLoggingConfiguration;
 
 pub use crate::types::_output_resources::OutputResources;
 
@@ -198,8 +206,6 @@ pub use crate::types::_container::Container;
 pub use crate::types::_ami::Ami;
 
 pub use crate::types::_image_state::ImageState;
-
-pub use crate::types::_image_status::ImageStatus;
 
 pub use crate::types::_image_package::ImagePackage;
 
@@ -275,6 +281,8 @@ mod _ami;
 
 mod _ami_distribution_configuration;
 
+mod _auto_disable_policy;
+
 mod _build_type;
 
 mod _component;
@@ -340,6 +348,8 @@ mod _filter;
 mod _image;
 
 mod _image_aggregation;
+
+mod _image_logging_configuration;
 
 mod _image_package;
 
@@ -458,6 +468,8 @@ mod _ownership;
 mod _package_vulnerability_details;
 
 mod _pipeline_execution_start_condition;
+
+mod _pipeline_logging_configuration;
 
 mod _pipeline_status;
 

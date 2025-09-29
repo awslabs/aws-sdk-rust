@@ -33,6 +33,8 @@ pub struct CreateImagePipelineInput {
     pub workflows: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowConfiguration>>,
     /// <p>The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to perform workflow actions.</p>
     pub execution_role: ::std::option::Option<::std::string::String>,
+    /// <p>Define logging configuration for the image build process.</p>
+    pub logging_configuration: ::std::option::Option<crate::types::PipelineLoggingConfiguration>,
 }
 impl CreateImagePipelineInput {
     /// <p>The name of the image pipeline.</p>
@@ -97,6 +99,10 @@ impl CreateImagePipelineInput {
     pub fn execution_role(&self) -> ::std::option::Option<&str> {
         self.execution_role.as_deref()
     }
+    /// <p>Define logging configuration for the image build process.</p>
+    pub fn logging_configuration(&self) -> ::std::option::Option<&crate::types::PipelineLoggingConfiguration> {
+        self.logging_configuration.as_ref()
+    }
 }
 impl CreateImagePipelineInput {
     /// Creates a new builder-style object to manufacture [`CreateImagePipelineInput`](crate::operation::create_image_pipeline::CreateImagePipelineInput).
@@ -124,6 +130,7 @@ pub struct CreateImagePipelineInputBuilder {
     pub(crate) image_scanning_configuration: ::std::option::Option<crate::types::ImageScanningConfiguration>,
     pub(crate) workflows: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowConfiguration>>,
     pub(crate) execution_role: ::std::option::Option<::std::string::String>,
+    pub(crate) logging_configuration: ::std::option::Option<crate::types::PipelineLoggingConfiguration>,
 }
 impl CreateImagePipelineInputBuilder {
     /// <p>The name of the image pipeline.</p>
@@ -351,6 +358,20 @@ impl CreateImagePipelineInputBuilder {
     pub fn get_execution_role(&self) -> &::std::option::Option<::std::string::String> {
         &self.execution_role
     }
+    /// <p>Define logging configuration for the image build process.</p>
+    pub fn logging_configuration(mut self, input: crate::types::PipelineLoggingConfiguration) -> Self {
+        self.logging_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Define logging configuration for the image build process.</p>
+    pub fn set_logging_configuration(mut self, input: ::std::option::Option<crate::types::PipelineLoggingConfiguration>) -> Self {
+        self.logging_configuration = input;
+        self
+    }
+    /// <p>Define logging configuration for the image build process.</p>
+    pub fn get_logging_configuration(&self) -> &::std::option::Option<crate::types::PipelineLoggingConfiguration> {
+        &self.logging_configuration
+    }
     /// Consumes the builder and constructs a [`CreateImagePipelineInput`](crate::operation::create_image_pipeline::CreateImagePipelineInput).
     pub fn build(
         self,
@@ -372,6 +393,7 @@ impl CreateImagePipelineInputBuilder {
             image_scanning_configuration: self.image_scanning_configuration,
             workflows: self.workflows,
             execution_role: self.execution_role,
+            logging_configuration: self.logging_configuration,
         })
     }
 }

@@ -114,17 +114,17 @@ impl ListLifecycleExecutionsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_lifecycle_executions::paginator::ListLifecycleExecutionsPaginator {
         crate::operation::list_lifecycle_executions::paginator::ListLifecycleExecutionsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The maximum items to return in a request.</p>
+    /// <p>Specify the maximum number of items to return in a request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>The maximum items to return in a request.</p>
+    /// <p>Specify the maximum number of items to return in a request.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>The maximum items to return in a request.</p>
+    /// <p>Specify the maximum number of items to return in a request.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }

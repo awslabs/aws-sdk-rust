@@ -122,46 +122,46 @@ impl CreateResourceConfigurationFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p>The type of resource configuration.</p>
+    /// <p>The type of resource configuration. A resource configuration can be one of the following types:</p>
     /// <ul>
     /// <li>
-    /// <p><code>SINGLE</code> - A single resource.</p></li>
+    /// <p><b>SINGLE</b> - A single resource.</p></li>
     /// <li>
-    /// <p><code>GROUP</code> - A group of resources. You must create a group resource configuration before you create a child resource configuration.</p></li>
+    /// <p><b>GROUP</b> - A group of resources. You must create a group resource configuration before you create a child resource configuration.</p></li>
     /// <li>
-    /// <p><code>CHILD</code> - A single resource that is part of a group resource configuration.</p></li>
+    /// <p><b>CHILD</b> - A single resource that is part of a group resource configuration.</p></li>
     /// <li>
-    /// <p><code>ARN</code> - An Amazon Web Services resource.</p></li>
+    /// <p><b>ARN</b> - An Amazon Web Services resource.</p></li>
     /// </ul>
     pub fn r#type(mut self, input: crate::types::ResourceConfigurationType) -> Self {
         self.inner = self.inner.r#type(input);
         self
     }
-    /// <p>The type of resource configuration.</p>
+    /// <p>The type of resource configuration. A resource configuration can be one of the following types:</p>
     /// <ul>
     /// <li>
-    /// <p><code>SINGLE</code> - A single resource.</p></li>
+    /// <p><b>SINGLE</b> - A single resource.</p></li>
     /// <li>
-    /// <p><code>GROUP</code> - A group of resources. You must create a group resource configuration before you create a child resource configuration.</p></li>
+    /// <p><b>GROUP</b> - A group of resources. You must create a group resource configuration before you create a child resource configuration.</p></li>
     /// <li>
-    /// <p><code>CHILD</code> - A single resource that is part of a group resource configuration.</p></li>
+    /// <p><b>CHILD</b> - A single resource that is part of a group resource configuration.</p></li>
     /// <li>
-    /// <p><code>ARN</code> - An Amazon Web Services resource.</p></li>
+    /// <p><b>ARN</b> - An Amazon Web Services resource.</p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ResourceConfigurationType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }
-    /// <p>The type of resource configuration.</p>
+    /// <p>The type of resource configuration. A resource configuration can be one of the following types:</p>
     /// <ul>
     /// <li>
-    /// <p><code>SINGLE</code> - A single resource.</p></li>
+    /// <p><b>SINGLE</b> - A single resource.</p></li>
     /// <li>
-    /// <p><code>GROUP</code> - A group of resources. You must create a group resource configuration before you create a child resource configuration.</p></li>
+    /// <p><b>GROUP</b> - A group of resources. You must create a group resource configuration before you create a child resource configuration.</p></li>
     /// <li>
-    /// <p><code>CHILD</code> - A single resource that is part of a group resource configuration.</p></li>
+    /// <p><b>CHILD</b> - A single resource that is part of a group resource configuration.</p></li>
     /// <li>
-    /// <p><code>ARN</code> - An Amazon Web Services resource.</p></li>
+    /// <p><b>ARN</b> - An Amazon Web Services resource.</p></li>
     /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ResourceConfigurationType> {
         self.inner.get_type()
@@ -213,31 +213,55 @@ impl CreateResourceConfigurationFluentBuilder {
     pub fn get_resource_gateway_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_gateway_identifier()
     }
-    /// <p>(CHILD) The ID or ARN of the parent resource configuration (type is <code>GROUP</code>). This is used to associate a child resource configuration with a group resource configuration.</p>
+    /// <p>(CHILD) The ID or ARN of the parent resource configuration of type <code>GROUP</code>. This is used to associate a child resource configuration with a group resource configuration.</p>
     pub fn resource_configuration_group_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_configuration_group_identifier(input.into());
         self
     }
-    /// <p>(CHILD) The ID or ARN of the parent resource configuration (type is <code>GROUP</code>). This is used to associate a child resource configuration with a group resource configuration.</p>
+    /// <p>(CHILD) The ID or ARN of the parent resource configuration of type <code>GROUP</code>. This is used to associate a child resource configuration with a group resource configuration.</p>
     pub fn set_resource_configuration_group_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_configuration_group_identifier(input);
         self
     }
-    /// <p>(CHILD) The ID or ARN of the parent resource configuration (type is <code>GROUP</code>). This is used to associate a child resource configuration with a group resource configuration.</p>
+    /// <p>(CHILD) The ID or ARN of the parent resource configuration of type <code>GROUP</code>. This is used to associate a child resource configuration with a group resource configuration.</p>
     pub fn get_resource_configuration_group_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_configuration_group_identifier()
     }
-    /// <p>(SINGLE, CHILD, ARN) The resource configuration.</p>
+    /// <p>Identifies the resource configuration in one of the following ways:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b>Amazon Resource Name (ARN)</b> - Supported resource-types that are provisioned by Amazon Web Services services, such as RDS databases, can be identified by their ARN.</p></li>
+    /// <li>
+    /// <p><b>Domain name</b> - Any domain name that is publicly resolvable.</p></li>
+    /// <li>
+    /// <p><b>IP address</b> - For IPv4 and IPv6, only IP addresses in the VPC are supported.</p></li>
+    /// </ul>
     pub fn resource_configuration_definition(mut self, input: crate::types::ResourceConfigurationDefinition) -> Self {
         self.inner = self.inner.resource_configuration_definition(input);
         self
     }
-    /// <p>(SINGLE, CHILD, ARN) The resource configuration.</p>
+    /// <p>Identifies the resource configuration in one of the following ways:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b>Amazon Resource Name (ARN)</b> - Supported resource-types that are provisioned by Amazon Web Services services, such as RDS databases, can be identified by their ARN.</p></li>
+    /// <li>
+    /// <p><b>Domain name</b> - Any domain name that is publicly resolvable.</p></li>
+    /// <li>
+    /// <p><b>IP address</b> - For IPv4 and IPv6, only IP addresses in the VPC are supported.</p></li>
+    /// </ul>
     pub fn set_resource_configuration_definition(mut self, input: ::std::option::Option<crate::types::ResourceConfigurationDefinition>) -> Self {
         self.inner = self.inner.set_resource_configuration_definition(input);
         self
     }
-    /// <p>(SINGLE, CHILD, ARN) The resource configuration.</p>
+    /// <p>Identifies the resource configuration in one of the following ways:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b>Amazon Resource Name (ARN)</b> - Supported resource-types that are provisioned by Amazon Web Services services, such as RDS databases, can be identified by their ARN.</p></li>
+    /// <li>
+    /// <p><b>Domain name</b> - Any domain name that is publicly resolvable.</p></li>
+    /// <li>
+    /// <p><b>IP address</b> - For IPv4 and IPv6, only IP addresses in the VPC are supported.</p></li>
+    /// </ul>
     pub fn get_resource_configuration_definition(&self) -> &::std::option::Option<crate::types::ResourceConfigurationDefinition> {
         self.inner.get_resource_configuration_definition()
     }

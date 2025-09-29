@@ -34,6 +34,8 @@ pub struct ImagePipeline {
     pub date_updated: ::std::option::Option<::std::string::String>,
     /// <p>This is no longer supported, and does not return a value.</p>
     pub date_last_run: ::std::option::Option<::std::string::String>,
+    /// <p>The status of the last image that this pipeline built, such as <code>BUILDING</code>, <code>TESTING</code>, <code>FAILED</code>, or <code>AVAILABLE</code>.</p>
+    pub last_run_status: ::std::option::Option<crate::types::ImageStatus>,
     /// <p>The next date when the pipeline is scheduled to run.</p>
     pub date_next_run: ::std::option::Option<::std::string::String>,
     /// <p>The tags of this image pipeline.</p>
@@ -44,6 +46,24 @@ pub struct ImagePipeline {
     pub execution_role: ::std::option::Option<::std::string::String>,
     /// <p>Contains the workflows that run for the image pipeline.</p>
     pub workflows: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowConfiguration>>,
+    /// <p>Defines logging configuration for the output image.</p>
+    pub logging_configuration: ::std::option::Option<crate::types::PipelineLoggingConfiguration>,
+    /// <p>Image Builder tracks the number of consecutive failures for scheduled pipeline executions and takes one of the following actions each time it runs on a schedule:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the pipeline execution is successful, the number of consecutive failures resets to zero.</p></li>
+    /// <li>
+    /// <p>If the pipeline execution fails, Image Builder increments the number of consecutive failures. If the failure count exceeds the limit defined in the <code>AutoDisablePolicy</code>, Image Builder disables the pipeline.</p></li>
+    /// </ul>
+    /// <p>The consecutive failure count is also reset to zero under the following conditions:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The pipeline runs manually and succeeds.</p></li>
+    /// <li>
+    /// <p>The pipeline configuration is updated.</p></li>
+    /// </ul>
+    /// <p>If the pipeline runs manually and fails, the count remains the same. The next scheduled run continues to increment where it left off before.</p>
+    pub consecutive_failures: ::std::option::Option<i32>,
 }
 impl ImagePipeline {
     /// <p>The Amazon Resource Name (ARN) of the image pipeline.</p>
@@ -106,6 +126,10 @@ impl ImagePipeline {
     pub fn date_last_run(&self) -> ::std::option::Option<&str> {
         self.date_last_run.as_deref()
     }
+    /// <p>The status of the last image that this pipeline built, such as <code>BUILDING</code>, <code>TESTING</code>, <code>FAILED</code>, or <code>AVAILABLE</code>.</p>
+    pub fn last_run_status(&self) -> ::std::option::Option<&crate::types::ImageStatus> {
+        self.last_run_status.as_ref()
+    }
     /// <p>The next date when the pipeline is scheduled to run.</p>
     pub fn date_next_run(&self) -> ::std::option::Option<&str> {
         self.date_next_run.as_deref()
@@ -127,6 +151,28 @@ impl ImagePipeline {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.workflows.is_none()`.
     pub fn workflows(&self) -> &[crate::types::WorkflowConfiguration] {
         self.workflows.as_deref().unwrap_or_default()
+    }
+    /// <p>Defines logging configuration for the output image.</p>
+    pub fn logging_configuration(&self) -> ::std::option::Option<&crate::types::PipelineLoggingConfiguration> {
+        self.logging_configuration.as_ref()
+    }
+    /// <p>Image Builder tracks the number of consecutive failures for scheduled pipeline executions and takes one of the following actions each time it runs on a schedule:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the pipeline execution is successful, the number of consecutive failures resets to zero.</p></li>
+    /// <li>
+    /// <p>If the pipeline execution fails, Image Builder increments the number of consecutive failures. If the failure count exceeds the limit defined in the <code>AutoDisablePolicy</code>, Image Builder disables the pipeline.</p></li>
+    /// </ul>
+    /// <p>The consecutive failure count is also reset to zero under the following conditions:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The pipeline runs manually and succeeds.</p></li>
+    /// <li>
+    /// <p>The pipeline configuration is updated.</p></li>
+    /// </ul>
+    /// <p>If the pipeline runs manually and fails, the count remains the same. The next scheduled run continues to increment where it left off before.</p>
+    pub fn consecutive_failures(&self) -> ::std::option::Option<i32> {
+        self.consecutive_failures
     }
 }
 impl ImagePipeline {
@@ -155,11 +201,14 @@ pub struct ImagePipelineBuilder {
     pub(crate) date_created: ::std::option::Option<::std::string::String>,
     pub(crate) date_updated: ::std::option::Option<::std::string::String>,
     pub(crate) date_last_run: ::std::option::Option<::std::string::String>,
+    pub(crate) last_run_status: ::std::option::Option<crate::types::ImageStatus>,
     pub(crate) date_next_run: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) image_scanning_configuration: ::std::option::Option<crate::types::ImageScanningConfiguration>,
     pub(crate) execution_role: ::std::option::Option<::std::string::String>,
     pub(crate) workflows: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowConfiguration>>,
+    pub(crate) logging_configuration: ::std::option::Option<crate::types::PipelineLoggingConfiguration>,
+    pub(crate) consecutive_failures: ::std::option::Option<i32>,
 }
 impl ImagePipelineBuilder {
     /// <p>The Amazon Resource Name (ARN) of the image pipeline.</p>
@@ -372,6 +421,20 @@ impl ImagePipelineBuilder {
     pub fn get_date_last_run(&self) -> &::std::option::Option<::std::string::String> {
         &self.date_last_run
     }
+    /// <p>The status of the last image that this pipeline built, such as <code>BUILDING</code>, <code>TESTING</code>, <code>FAILED</code>, or <code>AVAILABLE</code>.</p>
+    pub fn last_run_status(mut self, input: crate::types::ImageStatus) -> Self {
+        self.last_run_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The status of the last image that this pipeline built, such as <code>BUILDING</code>, <code>TESTING</code>, <code>FAILED</code>, or <code>AVAILABLE</code>.</p>
+    pub fn set_last_run_status(mut self, input: ::std::option::Option<crate::types::ImageStatus>) -> Self {
+        self.last_run_status = input;
+        self
+    }
+    /// <p>The status of the last image that this pipeline built, such as <code>BUILDING</code>, <code>TESTING</code>, <code>FAILED</code>, or <code>AVAILABLE</code>.</p>
+    pub fn get_last_run_status(&self) -> &::std::option::Option<crate::types::ImageStatus> {
+        &self.last_run_status
+    }
     /// <p>The next date when the pipeline is scheduled to run.</p>
     pub fn date_next_run(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.date_next_run = ::std::option::Option::Some(input.into());
@@ -454,6 +517,76 @@ impl ImagePipelineBuilder {
     pub fn get_workflows(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkflowConfiguration>> {
         &self.workflows
     }
+    /// <p>Defines logging configuration for the output image.</p>
+    pub fn logging_configuration(mut self, input: crate::types::PipelineLoggingConfiguration) -> Self {
+        self.logging_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Defines logging configuration for the output image.</p>
+    pub fn set_logging_configuration(mut self, input: ::std::option::Option<crate::types::PipelineLoggingConfiguration>) -> Self {
+        self.logging_configuration = input;
+        self
+    }
+    /// <p>Defines logging configuration for the output image.</p>
+    pub fn get_logging_configuration(&self) -> &::std::option::Option<crate::types::PipelineLoggingConfiguration> {
+        &self.logging_configuration
+    }
+    /// <p>Image Builder tracks the number of consecutive failures for scheduled pipeline executions and takes one of the following actions each time it runs on a schedule:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the pipeline execution is successful, the number of consecutive failures resets to zero.</p></li>
+    /// <li>
+    /// <p>If the pipeline execution fails, Image Builder increments the number of consecutive failures. If the failure count exceeds the limit defined in the <code>AutoDisablePolicy</code>, Image Builder disables the pipeline.</p></li>
+    /// </ul>
+    /// <p>The consecutive failure count is also reset to zero under the following conditions:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The pipeline runs manually and succeeds.</p></li>
+    /// <li>
+    /// <p>The pipeline configuration is updated.</p></li>
+    /// </ul>
+    /// <p>If the pipeline runs manually and fails, the count remains the same. The next scheduled run continues to increment where it left off before.</p>
+    pub fn consecutive_failures(mut self, input: i32) -> Self {
+        self.consecutive_failures = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Image Builder tracks the number of consecutive failures for scheduled pipeline executions and takes one of the following actions each time it runs on a schedule:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the pipeline execution is successful, the number of consecutive failures resets to zero.</p></li>
+    /// <li>
+    /// <p>If the pipeline execution fails, Image Builder increments the number of consecutive failures. If the failure count exceeds the limit defined in the <code>AutoDisablePolicy</code>, Image Builder disables the pipeline.</p></li>
+    /// </ul>
+    /// <p>The consecutive failure count is also reset to zero under the following conditions:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The pipeline runs manually and succeeds.</p></li>
+    /// <li>
+    /// <p>The pipeline configuration is updated.</p></li>
+    /// </ul>
+    /// <p>If the pipeline runs manually and fails, the count remains the same. The next scheduled run continues to increment where it left off before.</p>
+    pub fn set_consecutive_failures(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.consecutive_failures = input;
+        self
+    }
+    /// <p>Image Builder tracks the number of consecutive failures for scheduled pipeline executions and takes one of the following actions each time it runs on a schedule:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the pipeline execution is successful, the number of consecutive failures resets to zero.</p></li>
+    /// <li>
+    /// <p>If the pipeline execution fails, Image Builder increments the number of consecutive failures. If the failure count exceeds the limit defined in the <code>AutoDisablePolicy</code>, Image Builder disables the pipeline.</p></li>
+    /// </ul>
+    /// <p>The consecutive failure count is also reset to zero under the following conditions:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The pipeline runs manually and succeeds.</p></li>
+    /// <li>
+    /// <p>The pipeline configuration is updated.</p></li>
+    /// </ul>
+    /// <p>If the pipeline runs manually and fails, the count remains the same. The next scheduled run continues to increment where it left off before.</p>
+    pub fn get_consecutive_failures(&self) -> &::std::option::Option<i32> {
+        &self.consecutive_failures
+    }
     /// Consumes the builder and constructs a [`ImagePipeline`](crate::types::ImagePipeline).
     pub fn build(self) -> crate::types::ImagePipeline {
         crate::types::ImagePipeline {
@@ -472,11 +605,14 @@ impl ImagePipelineBuilder {
             date_created: self.date_created,
             date_updated: self.date_updated,
             date_last_run: self.date_last_run,
+            last_run_status: self.last_run_status,
             date_next_run: self.date_next_run,
             tags: self.tags,
             image_scanning_configuration: self.image_scanning_configuration,
             execution_role: self.execution_role,
             workflows: self.workflows,
+            logging_configuration: self.logging_configuration,
+            consecutive_failures: self.consecutive_failures,
         }
     }
 }

@@ -42,6 +42,8 @@ pub struct ImageRecipe {
     pub working_directory: ::std::option::Option<::std::string::String>,
     /// <p>Before you create a new AMI, Image Builder launches temporary Amazon EC2 instances to build and test your image configuration. Instance configuration adds a layer of control over those instances. You can define settings and add scripts to run when an instance is launched from your AMI.</p>
     pub additional_instance_configuration: ::std::option::Option<crate::types::AdditionalInstanceConfiguration>,
+    /// <p>Tags that are applied to the AMI that Image Builder creates during the Build phase prior to image distribution.</p>
+    pub ami_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ImageRecipe {
     /// <p>The Amazon Resource Name (ARN) of the image recipe.</p>
@@ -114,6 +116,10 @@ impl ImageRecipe {
     pub fn additional_instance_configuration(&self) -> ::std::option::Option<&crate::types::AdditionalInstanceConfiguration> {
         self.additional_instance_configuration.as_ref()
     }
+    /// <p>Tags that are applied to the AMI that Image Builder creates during the Build phase prior to image distribution.</p>
+    pub fn ami_tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.ami_tags.as_ref()
+    }
 }
 impl ImageRecipe {
     /// Creates a new builder-style object to manufacture [`ImageRecipe`](crate::types::ImageRecipe).
@@ -140,6 +146,7 @@ pub struct ImageRecipeBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) working_directory: ::std::option::Option<::std::string::String>,
     pub(crate) additional_instance_configuration: ::std::option::Option<crate::types::AdditionalInstanceConfiguration>,
+    pub(crate) ami_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ImageRecipeBuilder {
     /// <p>The Amazon Resource Name (ARN) of the image recipe.</p>
@@ -386,6 +393,26 @@ impl ImageRecipeBuilder {
     pub fn get_additional_instance_configuration(&self) -> &::std::option::Option<crate::types::AdditionalInstanceConfiguration> {
         &self.additional_instance_configuration
     }
+    /// Adds a key-value pair to `ami_tags`.
+    ///
+    /// To override the contents of this collection use [`set_ami_tags`](Self::set_ami_tags).
+    ///
+    /// <p>Tags that are applied to the AMI that Image Builder creates during the Build phase prior to image distribution.</p>
+    pub fn ami_tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut hash_map = self.ami_tags.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.ami_tags = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>Tags that are applied to the AMI that Image Builder creates during the Build phase prior to image distribution.</p>
+    pub fn set_ami_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.ami_tags = input;
+        self
+    }
+    /// <p>Tags that are applied to the AMI that Image Builder creates during the Build phase prior to image distribution.</p>
+    pub fn get_ami_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.ami_tags
+    }
     /// Consumes the builder and constructs a [`ImageRecipe`](crate::types::ImageRecipe).
     pub fn build(self) -> crate::types::ImageRecipe {
         crate::types::ImageRecipe {
@@ -403,6 +430,7 @@ impl ImageRecipeBuilder {
             tags: self.tags,
             working_directory: self.working_directory,
             additional_instance_configuration: self.additional_instance_configuration,
+            ami_tags: self.ami_tags,
         }
     }
 }

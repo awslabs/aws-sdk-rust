@@ -2256,6 +2256,7 @@ impl From<crate::operation::update_resource_gateway::UpdateResourceGatewayError>
             crate::operation::update_resource_gateway::UpdateResourceGatewayError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
+            crate::operation::update_resource_gateway::UpdateResourceGatewayError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::update_resource_gateway::UpdateResourceGatewayError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }

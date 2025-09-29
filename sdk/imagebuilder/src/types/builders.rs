@@ -25,6 +25,8 @@ pub use crate::types::_logging::LoggingBuilder;
 
 pub use crate::types::_s3_logs::S3LogsBuilder;
 
+pub use crate::types::_pipeline_logging_configuration::PipelineLoggingConfigurationBuilder;
+
 pub use crate::types::_workflow_configuration::WorkflowConfigurationBuilder;
 
 pub use crate::types::_workflow_parameter::WorkflowParameterBuilder;
@@ -34,6 +36,8 @@ pub use crate::types::_image_scanning_configuration::ImageScanningConfigurationB
 pub use crate::types::_ecr_configuration::EcrConfigurationBuilder;
 
 pub use crate::types::_schedule::ScheduleBuilder;
+
+pub use crate::types::_auto_disable_policy::AutoDisablePolicyBuilder;
 
 pub use crate::types::_image_tests_configuration::ImageTestsConfigurationBuilder;
 
@@ -136,6 +140,8 @@ pub use crate::types::_image_recipe_summary::ImageRecipeSummaryBuilder;
 pub use crate::types::_image_pipeline::ImagePipelineBuilder;
 
 pub use crate::types::_image_summary::ImageSummaryBuilder;
+
+pub use crate::types::_image_logging_configuration::ImageLoggingConfigurationBuilder;
 
 pub use crate::types::_output_resources::OutputResourcesBuilder;
 

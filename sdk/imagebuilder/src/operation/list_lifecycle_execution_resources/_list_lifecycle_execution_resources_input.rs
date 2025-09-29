@@ -8,7 +8,7 @@ pub struct ListLifecycleExecutionResourcesInput {
     /// <p>You can leave this empty to get a list of Image Builder resources that were identified for lifecycle actions.</p>
     /// <p>To get a list of associated resources that are impacted for an individual resource (the parent), specify its Amazon Resource Name (ARN). Associated resources are produced from your image and distributed when you run a build, such as AMIs or container images stored in ECR repositories.</p>
     pub parent_resource_id: ::std::option::Option<::std::string::String>,
-    /// <p>The maximum items to return in a request.</p>
+    /// <p>Specify the maximum number of items to return in a request.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>A token to specify where to start paginating. This is the nextToken from a previously truncated response.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -23,7 +23,7 @@ impl ListLifecycleExecutionResourcesInput {
     pub fn parent_resource_id(&self) -> ::std::option::Option<&str> {
         self.parent_resource_id.as_deref()
     }
-    /// <p>The maximum items to return in a request.</p>
+    /// <p>Specify the maximum number of items to return in a request.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -81,17 +81,17 @@ impl ListLifecycleExecutionResourcesInputBuilder {
     pub fn get_parent_resource_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.parent_resource_id
     }
-    /// <p>The maximum items to return in a request.</p>
+    /// <p>Specify the maximum number of items to return in a request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum items to return in a request.</p>
+    /// <p>Specify the maximum number of items to return in a request.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>The maximum items to return in a request.</p>
+    /// <p>Specify the maximum number of items to return in a request.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }

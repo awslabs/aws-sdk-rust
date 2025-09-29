@@ -12,6 +12,12 @@ pub fn ser_schedule(
     if let Some(var_3) = &input.pipeline_execution_start_condition {
         object.key("pipelineExecutionStartCondition").string(var_3.as_str());
     }
+    if let Some(var_4) = &input.auto_disable_policy {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("autoDisablePolicy").start_object();
+        crate::protocol_serde::shape_auto_disable_policy::ser_auto_disable_policy(&mut object_5, var_4)?;
+        object_5.finish();
+    }
     Ok(())
 }
 
@@ -50,6 +56,10 @@ where
                                     .map(|s| s.to_unescaped().map(|u| crate::types::PipelineExecutionStartCondition::from(u.as_ref())))
                                     .transpose()?,
                             );
+                        }
+                        "autoDisablePolicy" => {
+                            builder =
+                                builder.set_auto_disable_policy(crate::protocol_serde::shape_auto_disable_policy::de_auto_disable_policy(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

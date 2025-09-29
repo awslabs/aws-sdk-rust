@@ -15,30 +15,36 @@ pub fn ser_import_disk_image_input_input(
     if let Some(var_4) = &input.infrastructure_configuration_arn {
         object.key("infrastructureConfigurationArn").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.name {
-        object.key("name").string(var_5.as_str());
-    }
-    if let Some(var_6) = &input.os_version {
-        object.key("osVersion").string(var_6.as_str());
-    }
-    if let Some(var_7) = &input.platform {
-        object.key("platform").string(var_7.as_str());
-    }
-    if let Some(var_8) = &input.semantic_version {
-        object.key("semanticVersion").string(var_8.as_str());
-    }
-    if let Some(var_9) = &input.tags {
+    if let Some(var_5) = &input.logging_configuration {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("tags").start_object();
-        for (key_11, value_12) in var_9 {
+        let mut object_6 = object.key("loggingConfiguration").start_object();
+        crate::protocol_serde::shape_image_logging_configuration::ser_image_logging_configuration(&mut object_6, var_5)?;
+        object_6.finish();
+    }
+    if let Some(var_7) = &input.name {
+        object.key("name").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.os_version {
+        object.key("osVersion").string(var_8.as_str());
+    }
+    if let Some(var_9) = &input.platform {
+        object.key("platform").string(var_9.as_str());
+    }
+    if let Some(var_10) = &input.semantic_version {
+        object.key("semanticVersion").string(var_10.as_str());
+    }
+    if let Some(var_11) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_12 = object.key("tags").start_object();
+        for (key_13, value_14) in var_11 {
             {
-                object_10.key(key_11.as_str()).string(value_12.as_str());
+                object_12.key(key_13.as_str()).string(value_14.as_str());
             }
         }
-        object_10.finish();
+        object_12.finish();
     }
-    if let Some(var_13) = &input.uri {
-        object.key("uri").string(var_13.as_str());
+    if let Some(var_15) = &input.uri {
+        object.key("uri").string(var_15.as_str());
     }
     Ok(())
 }

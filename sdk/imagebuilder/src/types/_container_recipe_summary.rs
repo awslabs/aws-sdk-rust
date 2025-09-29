@@ -18,6 +18,9 @@ pub struct ContainerRecipeSummary {
     pub parent_image: ::std::option::Option<::std::string::String>,
     /// <p>The date when this container recipe was created.</p>
     pub date_created: ::std::option::Option<::std::string::String>,
+    /// <p>The base image for a container build and test instance. This can contain an AMI ID or it can specify an Amazon Web Services Systems Manager (SSM) Parameter Store Parameter, prefixed by <code>ssm:</code>, followed by the parameter name or ARN.</p>
+    /// <p>If not specified, Image Builder uses the appropriate ECS-optimized AMI as a base image.</p>
+    pub instance_image: ::std::option::Option<::std::string::String>,
     /// <p>Tags that are attached to the container recipe.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -50,6 +53,11 @@ impl ContainerRecipeSummary {
     pub fn date_created(&self) -> ::std::option::Option<&str> {
         self.date_created.as_deref()
     }
+    /// <p>The base image for a container build and test instance. This can contain an AMI ID or it can specify an Amazon Web Services Systems Manager (SSM) Parameter Store Parameter, prefixed by <code>ssm:</code>, followed by the parameter name or ARN.</p>
+    /// <p>If not specified, Image Builder uses the appropriate ECS-optimized AMI as a base image.</p>
+    pub fn instance_image(&self) -> ::std::option::Option<&str> {
+        self.instance_image.as_deref()
+    }
     /// <p>Tags that are attached to the container recipe.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
@@ -73,6 +81,7 @@ pub struct ContainerRecipeSummaryBuilder {
     pub(crate) owner: ::std::option::Option<::std::string::String>,
     pub(crate) parent_image: ::std::option::Option<::std::string::String>,
     pub(crate) date_created: ::std::option::Option<::std::string::String>,
+    pub(crate) instance_image: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ContainerRecipeSummaryBuilder {
@@ -174,6 +183,23 @@ impl ContainerRecipeSummaryBuilder {
     pub fn get_date_created(&self) -> &::std::option::Option<::std::string::String> {
         &self.date_created
     }
+    /// <p>The base image for a container build and test instance. This can contain an AMI ID or it can specify an Amazon Web Services Systems Manager (SSM) Parameter Store Parameter, prefixed by <code>ssm:</code>, followed by the parameter name or ARN.</p>
+    /// <p>If not specified, Image Builder uses the appropriate ECS-optimized AMI as a base image.</p>
+    pub fn instance_image(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.instance_image = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The base image for a container build and test instance. This can contain an AMI ID or it can specify an Amazon Web Services Systems Manager (SSM) Parameter Store Parameter, prefixed by <code>ssm:</code>, followed by the parameter name or ARN.</p>
+    /// <p>If not specified, Image Builder uses the appropriate ECS-optimized AMI as a base image.</p>
+    pub fn set_instance_image(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.instance_image = input;
+        self
+    }
+    /// <p>The base image for a container build and test instance. This can contain an AMI ID or it can specify an Amazon Web Services Systems Manager (SSM) Parameter Store Parameter, prefixed by <code>ssm:</code>, followed by the parameter name or ARN.</p>
+    /// <p>If not specified, Image Builder uses the appropriate ECS-optimized AMI as a base image.</p>
+    pub fn get_instance_image(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_image
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -204,6 +230,7 @@ impl ContainerRecipeSummaryBuilder {
             owner: self.owner,
             parent_image: self.parent_image,
             date_created: self.date_created,
+            instance_image: self.instance_image,
             tags: self.tags,
         }
     }

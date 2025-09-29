@@ -19,6 +19,8 @@ pub struct Schedule {
     /// <p><code>EXPRESSION_MATCH_ONLY</code> – This condition builds a new image every time the CRON expression matches the current time.</p></li>
     /// </ul>
     pub pipeline_execution_start_condition: ::std::option::Option<crate::types::PipelineExecutionStartCondition>,
+    /// <p>The policy that configures when Image Builder should automatically disable a pipeline that is failing.</p>
+    pub auto_disable_policy: ::std::option::Option<crate::types::AutoDisablePolicy>,
 }
 impl Schedule {
     /// <p>The cron expression determines how often EC2 Image Builder evaluates your <code>pipelineExecutionStartCondition</code>.</p>
@@ -42,6 +44,10 @@ impl Schedule {
     pub fn pipeline_execution_start_condition(&self) -> ::std::option::Option<&crate::types::PipelineExecutionStartCondition> {
         self.pipeline_execution_start_condition.as_ref()
     }
+    /// <p>The policy that configures when Image Builder should automatically disable a pipeline that is failing.</p>
+    pub fn auto_disable_policy(&self) -> ::std::option::Option<&crate::types::AutoDisablePolicy> {
+        self.auto_disable_policy.as_ref()
+    }
 }
 impl Schedule {
     /// Creates a new builder-style object to manufacture [`Schedule`](crate::types::Schedule).
@@ -57,6 +63,7 @@ pub struct ScheduleBuilder {
     pub(crate) schedule_expression: ::std::option::Option<::std::string::String>,
     pub(crate) timezone: ::std::option::Option<::std::string::String>,
     pub(crate) pipeline_execution_start_condition: ::std::option::Option<crate::types::PipelineExecutionStartCondition>,
+    pub(crate) auto_disable_policy: ::std::option::Option<crate::types::AutoDisablePolicy>,
 }
 impl ScheduleBuilder {
     /// <p>The cron expression determines how often EC2 Image Builder evaluates your <code>pipelineExecutionStartCondition</code>.</p>
@@ -128,12 +135,27 @@ impl ScheduleBuilder {
     pub fn get_pipeline_execution_start_condition(&self) -> &::std::option::Option<crate::types::PipelineExecutionStartCondition> {
         &self.pipeline_execution_start_condition
     }
+    /// <p>The policy that configures when Image Builder should automatically disable a pipeline that is failing.</p>
+    pub fn auto_disable_policy(mut self, input: crate::types::AutoDisablePolicy) -> Self {
+        self.auto_disable_policy = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The policy that configures when Image Builder should automatically disable a pipeline that is failing.</p>
+    pub fn set_auto_disable_policy(mut self, input: ::std::option::Option<crate::types::AutoDisablePolicy>) -> Self {
+        self.auto_disable_policy = input;
+        self
+    }
+    /// <p>The policy that configures when Image Builder should automatically disable a pipeline that is failing.</p>
+    pub fn get_auto_disable_policy(&self) -> &::std::option::Option<crate::types::AutoDisablePolicy> {
+        &self.auto_disable_policy
+    }
     /// Consumes the builder and constructs a [`Schedule`](crate::types::Schedule).
     pub fn build(self) -> crate::types::Schedule {
         crate::types::Schedule {
             schedule_expression: self.schedule_expression,
             timezone: self.timezone,
             pipeline_execution_start_condition: self.pipeline_execution_start_condition,
+            auto_disable_policy: self.auto_disable_policy,
         }
     }
 }

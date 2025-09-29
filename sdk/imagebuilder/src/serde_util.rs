@@ -20,6 +20,15 @@ pub(crate) fn target_container_repository_correct_errors(
     builder
 }
 
+pub(crate) fn auto_disable_policy_correct_errors(
+    mut builder: crate::types::builders::AutoDisablePolicyBuilder,
+) -> crate::types::builders::AutoDisablePolicyBuilder {
+    if builder.failure_count.is_none() {
+        builder.failure_count = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn component_configuration_correct_errors(
     mut builder: crate::types::builders::ComponentConfigurationBuilder,
 ) -> crate::types::builders::ComponentConfigurationBuilder {

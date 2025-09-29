@@ -11,9 +11,19 @@ pub struct CreateResourceConfigurationOutput {
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the resource gateway associated with the resource configuration.</p>
     pub resource_gateway_id: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of the parent resource configuration (type is GROUP).</p>
+    /// <p>The ID of the parent resource configuration of type <code>GROUP</code>.</p>
     pub resource_configuration_group_id: ::std::option::Option<::std::string::String>,
-    /// <p>The type of resource configuration.</p>
+    /// <p>The type of resource configuration. A resource configuration can be one of the following types:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b>SINGLE</b> - A single resource.</p></li>
+    /// <li>
+    /// <p><b>GROUP</b> - A group of resources. You must create a group resource configuration before you create a child resource configuration.</p></li>
+    /// <li>
+    /// <p><b>CHILD</b> - A single resource that is part of a group resource configuration.</p></li>
+    /// <li>
+    /// <p><b>ARN</b> - An Amazon Web Services resource.</p></li>
+    /// </ul>
     pub r#type: ::std::option::Option<crate::types::ResourceConfigurationType>,
     /// <p>The port range.</p>
     pub port_ranges: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -21,7 +31,15 @@ pub struct CreateResourceConfigurationOutput {
     pub protocol: ::std::option::Option<crate::types::ProtocolType>,
     /// <p>The current status of the resource configuration.</p>
     pub status: ::std::option::Option<crate::types::ResourceConfigurationStatus>,
-    /// <p>The resource configuration.</p>
+    /// <p>Identifies the resource configuration in one of the following ways:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b>Amazon Resource Name (ARN)</b> - Supported resource-types that are provisioned by Amazon Web Services services, such as RDS databases, can be identified by their ARN.</p></li>
+    /// <li>
+    /// <p><b>Domain name</b> - Any domain name that is publicly resolvable.</p></li>
+    /// <li>
+    /// <p><b>IP address</b> - For IPv4 and IPv6, only IP addresses in the VPC are supported.</p></li>
+    /// </ul>
     pub resource_configuration_definition: ::std::option::Option<crate::types::ResourceConfigurationDefinition>,
     /// <p>Specifies whether the resource configuration can be associated with a sharable service network.</p>
     pub allow_association_to_shareable_service_network: ::std::option::Option<bool>,
@@ -48,11 +66,21 @@ impl CreateResourceConfigurationOutput {
     pub fn resource_gateway_id(&self) -> ::std::option::Option<&str> {
         self.resource_gateway_id.as_deref()
     }
-    /// <p>The ID of the parent resource configuration (type is GROUP).</p>
+    /// <p>The ID of the parent resource configuration of type <code>GROUP</code>.</p>
     pub fn resource_configuration_group_id(&self) -> ::std::option::Option<&str> {
         self.resource_configuration_group_id.as_deref()
     }
-    /// <p>The type of resource configuration.</p>
+    /// <p>The type of resource configuration. A resource configuration can be one of the following types:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b>SINGLE</b> - A single resource.</p></li>
+    /// <li>
+    /// <p><b>GROUP</b> - A group of resources. You must create a group resource configuration before you create a child resource configuration.</p></li>
+    /// <li>
+    /// <p><b>CHILD</b> - A single resource that is part of a group resource configuration.</p></li>
+    /// <li>
+    /// <p><b>ARN</b> - An Amazon Web Services resource.</p></li>
+    /// </ul>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::ResourceConfigurationType> {
         self.r#type.as_ref()
     }
@@ -70,7 +98,15 @@ impl CreateResourceConfigurationOutput {
     pub fn status(&self) -> ::std::option::Option<&crate::types::ResourceConfigurationStatus> {
         self.status.as_ref()
     }
-    /// <p>The resource configuration.</p>
+    /// <p>Identifies the resource configuration in one of the following ways:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b>Amazon Resource Name (ARN)</b> - Supported resource-types that are provisioned by Amazon Web Services services, such as RDS databases, can be identified by their ARN.</p></li>
+    /// <li>
+    /// <p><b>Domain name</b> - Any domain name that is publicly resolvable.</p></li>
+    /// <li>
+    /// <p><b>IP address</b> - For IPv4 and IPv6, only IP addresses in the VPC are supported.</p></li>
+    /// </ul>
     pub fn resource_configuration_definition(&self) -> ::std::option::Option<&crate::types::ResourceConfigurationDefinition> {
         self.resource_configuration_definition.as_ref()
     }
@@ -175,31 +211,61 @@ impl CreateResourceConfigurationOutputBuilder {
     pub fn get_resource_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_gateway_id
     }
-    /// <p>The ID of the parent resource configuration (type is GROUP).</p>
+    /// <p>The ID of the parent resource configuration of type <code>GROUP</code>.</p>
     pub fn resource_configuration_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_configuration_group_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the parent resource configuration (type is GROUP).</p>
+    /// <p>The ID of the parent resource configuration of type <code>GROUP</code>.</p>
     pub fn set_resource_configuration_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_configuration_group_id = input;
         self
     }
-    /// <p>The ID of the parent resource configuration (type is GROUP).</p>
+    /// <p>The ID of the parent resource configuration of type <code>GROUP</code>.</p>
     pub fn get_resource_configuration_group_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_configuration_group_id
     }
-    /// <p>The type of resource configuration.</p>
+    /// <p>The type of resource configuration. A resource configuration can be one of the following types:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b>SINGLE</b> - A single resource.</p></li>
+    /// <li>
+    /// <p><b>GROUP</b> - A group of resources. You must create a group resource configuration before you create a child resource configuration.</p></li>
+    /// <li>
+    /// <p><b>CHILD</b> - A single resource that is part of a group resource configuration.</p></li>
+    /// <li>
+    /// <p><b>ARN</b> - An Amazon Web Services resource.</p></li>
+    /// </ul>
     pub fn r#type(mut self, input: crate::types::ResourceConfigurationType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of resource configuration.</p>
+    /// <p>The type of resource configuration. A resource configuration can be one of the following types:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b>SINGLE</b> - A single resource.</p></li>
+    /// <li>
+    /// <p><b>GROUP</b> - A group of resources. You must create a group resource configuration before you create a child resource configuration.</p></li>
+    /// <li>
+    /// <p><b>CHILD</b> - A single resource that is part of a group resource configuration.</p></li>
+    /// <li>
+    /// <p><b>ARN</b> - An Amazon Web Services resource.</p></li>
+    /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ResourceConfigurationType>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>The type of resource configuration.</p>
+    /// <p>The type of resource configuration. A resource configuration can be one of the following types:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b>SINGLE</b> - A single resource.</p></li>
+    /// <li>
+    /// <p><b>GROUP</b> - A group of resources. You must create a group resource configuration before you create a child resource configuration.</p></li>
+    /// <li>
+    /// <p><b>CHILD</b> - A single resource that is part of a group resource configuration.</p></li>
+    /// <li>
+    /// <p><b>ARN</b> - An Amazon Web Services resource.</p></li>
+    /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ResourceConfigurationType> {
         &self.r#type
     }
@@ -251,17 +317,41 @@ impl CreateResourceConfigurationOutputBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ResourceConfigurationStatus> {
         &self.status
     }
-    /// <p>The resource configuration.</p>
+    /// <p>Identifies the resource configuration in one of the following ways:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b>Amazon Resource Name (ARN)</b> - Supported resource-types that are provisioned by Amazon Web Services services, such as RDS databases, can be identified by their ARN.</p></li>
+    /// <li>
+    /// <p><b>Domain name</b> - Any domain name that is publicly resolvable.</p></li>
+    /// <li>
+    /// <p><b>IP address</b> - For IPv4 and IPv6, only IP addresses in the VPC are supported.</p></li>
+    /// </ul>
     pub fn resource_configuration_definition(mut self, input: crate::types::ResourceConfigurationDefinition) -> Self {
         self.resource_configuration_definition = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The resource configuration.</p>
+    /// <p>Identifies the resource configuration in one of the following ways:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b>Amazon Resource Name (ARN)</b> - Supported resource-types that are provisioned by Amazon Web Services services, such as RDS databases, can be identified by their ARN.</p></li>
+    /// <li>
+    /// <p><b>Domain name</b> - Any domain name that is publicly resolvable.</p></li>
+    /// <li>
+    /// <p><b>IP address</b> - For IPv4 and IPv6, only IP addresses in the VPC are supported.</p></li>
+    /// </ul>
     pub fn set_resource_configuration_definition(mut self, input: ::std::option::Option<crate::types::ResourceConfigurationDefinition>) -> Self {
         self.resource_configuration_definition = input;
         self
     }
-    /// <p>The resource configuration.</p>
+    /// <p>Identifies the resource configuration in one of the following ways:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b>Amazon Resource Name (ARN)</b> - Supported resource-types that are provisioned by Amazon Web Services services, such as RDS databases, can be identified by their ARN.</p></li>
+    /// <li>
+    /// <p><b>Domain name</b> - Any domain name that is publicly resolvable.</p></li>
+    /// <li>
+    /// <p><b>IP address</b> - For IPv4 and IPv6, only IP addresses in the VPC are supported.</p></li>
+    /// </ul>
     pub fn get_resource_configuration_definition(&self) -> &::std::option::Option<crate::types::ResourceConfigurationDefinition> {
         &self.resource_configuration_definition
     }

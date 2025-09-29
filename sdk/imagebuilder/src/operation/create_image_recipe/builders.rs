@@ -327,6 +327,25 @@ impl CreateImageRecipeFluentBuilder {
     pub fn get_additional_instance_configuration(&self) -> &::std::option::Option<crate::types::AdditionalInstanceConfiguration> {
         self.inner.get_additional_instance_configuration()
     }
+    ///
+    /// Adds a key-value pair to `amiTags`.
+    ///
+    /// To override the contents of this collection use [`set_ami_tags`](Self::set_ami_tags).
+    ///
+    /// <p>Tags that are applied to the AMI that Image Builder creates during the Build phase prior to image distribution.</p>
+    pub fn ami_tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.ami_tags(k.into(), v.into());
+        self
+    }
+    /// <p>Tags that are applied to the AMI that Image Builder creates during the Build phase prior to image distribution.</p>
+    pub fn set_ami_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.inner = self.inner.set_ami_tags(input);
+        self
+    }
+    /// <p>Tags that are applied to the AMI that Image Builder creates during the Build phase prior to image distribution.</p>
+    pub fn get_ami_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.inner.get_ami_tags()
+    }
     /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
