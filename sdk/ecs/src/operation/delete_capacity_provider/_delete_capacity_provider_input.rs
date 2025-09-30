@@ -5,11 +5,17 @@
 pub struct DeleteCapacityProviderInput {
     /// <p>The short name or full Amazon Resource Name (ARN) of the capacity provider to delete.</p>
     pub capacity_provider: ::std::option::Option<::std::string::String>,
+    /// <p>The name of the cluster that contains the capacity provider to delete. Managed instances capacity providers are cluster-scoped and can only be deleted from their associated cluster.</p>
+    pub cluster: ::std::option::Option<::std::string::String>,
 }
 impl DeleteCapacityProviderInput {
     /// <p>The short name or full Amazon Resource Name (ARN) of the capacity provider to delete.</p>
     pub fn capacity_provider(&self) -> ::std::option::Option<&str> {
         self.capacity_provider.as_deref()
+    }
+    /// <p>The name of the cluster that contains the capacity provider to delete. Managed instances capacity providers are cluster-scoped and can only be deleted from their associated cluster.</p>
+    pub fn cluster(&self) -> ::std::option::Option<&str> {
+        self.cluster.as_deref()
     }
 }
 impl DeleteCapacityProviderInput {
@@ -24,6 +30,7 @@ impl DeleteCapacityProviderInput {
 #[non_exhaustive]
 pub struct DeleteCapacityProviderInputBuilder {
     pub(crate) capacity_provider: ::std::option::Option<::std::string::String>,
+    pub(crate) cluster: ::std::option::Option<::std::string::String>,
 }
 impl DeleteCapacityProviderInputBuilder {
     /// <p>The short name or full Amazon Resource Name (ARN) of the capacity provider to delete.</p>
@@ -41,6 +48,20 @@ impl DeleteCapacityProviderInputBuilder {
     pub fn get_capacity_provider(&self) -> &::std::option::Option<::std::string::String> {
         &self.capacity_provider
     }
+    /// <p>The name of the cluster that contains the capacity provider to delete. Managed instances capacity providers are cluster-scoped and can only be deleted from their associated cluster.</p>
+    pub fn cluster(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cluster = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the cluster that contains the capacity provider to delete. Managed instances capacity providers are cluster-scoped and can only be deleted from their associated cluster.</p>
+    pub fn set_cluster(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.cluster = input;
+        self
+    }
+    /// <p>The name of the cluster that contains the capacity provider to delete. Managed instances capacity providers are cluster-scoped and can only be deleted from their associated cluster.</p>
+    pub fn get_cluster(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster
+    }
     /// Consumes the builder and constructs a [`DeleteCapacityProviderInput`](crate::operation::delete_capacity_provider::DeleteCapacityProviderInput).
     pub fn build(
         self,
@@ -50,6 +71,7 @@ impl DeleteCapacityProviderInputBuilder {
     > {
         ::std::result::Result::Ok(crate::operation::delete_capacity_provider::DeleteCapacityProviderInput {
             capacity_provider: self.capacity_provider,
+            cluster: self.cluster,
         })
     }
 }

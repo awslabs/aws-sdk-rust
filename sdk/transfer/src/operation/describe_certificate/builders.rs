@@ -22,7 +22,9 @@ impl crate::operation::describe_certificate::builders::DescribeCertificateInputB
 }
 /// Fluent builder constructing a request to `DescribeCertificate`.
 ///
-/// <p>Describes the certificate that's identified by the <code>CertificateId</code>.</p>
+/// <p>Describes the certificate that's identified by the <code>CertificateId</code>.</p><note>
+/// <p>Transfer Family automatically publishes a Amazon CloudWatch metric called <code>DaysUntilExpiry</code> for imported certificates. This metric tracks the number of days until the certificate expires based on the <code>InactiveDate</code>. The metric is available in the <code>AWS/Transfer</code> namespace and includes the <code>CertificateId</code> as a dimension.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeCertificateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

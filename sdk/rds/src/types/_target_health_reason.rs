@@ -16,6 +16,7 @@
 ///     TargetHealthReason::ConnectionFailed => { /* ... */ },
 ///     TargetHealthReason::InvalidReplicationState => { /* ... */ },
 ///     TargetHealthReason::PendingProxyCapacity => { /* ... */ },
+///     TargetHealthReason::Promoted => { /* ... */ },
 ///     TargetHealthReason::Unreachable => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -54,6 +55,8 @@ pub enum TargetHealthReason {
     #[allow(missing_docs)] // documentation missing in model
     PendingProxyCapacity,
     #[allow(missing_docs)] // documentation missing in model
+    Promoted,
+    #[allow(missing_docs)] // documentation missing in model
     Unreachable,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -66,6 +69,7 @@ impl ::std::convert::From<&str> for TargetHealthReason {
             "CONNECTION_FAILED" => TargetHealthReason::ConnectionFailed,
             "INVALID_REPLICATION_STATE" => TargetHealthReason::InvalidReplicationState,
             "PENDING_PROXY_CAPACITY" => TargetHealthReason::PendingProxyCapacity,
+            "PROMOTED" => TargetHealthReason::Promoted,
             "UNREACHABLE" => TargetHealthReason::Unreachable,
             other => TargetHealthReason::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -86,6 +90,7 @@ impl TargetHealthReason {
             TargetHealthReason::ConnectionFailed => "CONNECTION_FAILED",
             TargetHealthReason::InvalidReplicationState => "INVALID_REPLICATION_STATE",
             TargetHealthReason::PendingProxyCapacity => "PENDING_PROXY_CAPACITY",
+            TargetHealthReason::Promoted => "PROMOTED",
             TargetHealthReason::Unreachable => "UNREACHABLE",
             TargetHealthReason::Unknown(value) => value.as_str(),
         }
@@ -97,6 +102,7 @@ impl TargetHealthReason {
             "CONNECTION_FAILED",
             "INVALID_REPLICATION_STATE",
             "PENDING_PROXY_CAPACITY",
+            "PROMOTED",
             "UNREACHABLE",
         ]
     }
@@ -125,6 +131,7 @@ impl ::std::fmt::Display for TargetHealthReason {
             TargetHealthReason::ConnectionFailed => write!(f, "CONNECTION_FAILED"),
             TargetHealthReason::InvalidReplicationState => write!(f, "INVALID_REPLICATION_STATE"),
             TargetHealthReason::PendingProxyCapacity => write!(f, "PENDING_PROXY_CAPACITY"),
+            TargetHealthReason::Promoted => write!(f, "PROMOTED"),
             TargetHealthReason::Unreachable => write!(f, "UNREACHABLE"),
             TargetHealthReason::Unknown(value) => write!(f, "{}", value),
         }

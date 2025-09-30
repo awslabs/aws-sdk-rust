@@ -6,8 +6,12 @@
 pub enum RelatedItemInputContent {
     /// <p>Represents the content of a comment to be returned to agents.</p>
     Comment(crate::types::CommentContent),
+    /// Input content for a related Connect case
+    ConnectCase(crate::types::ConnectCaseInputContent),
     /// <p>Object representing a contact in Amazon Connect as an API request field.</p>
     Contact(crate::types::Contact),
+    /// Input content for a custom related item
+    Custom(crate::types::CustomInputContent),
     /// <p>A file of related items.</p>
     File(crate::types::FileContent),
     /// <p>Represents the content of an SLA to be created.</p>
@@ -36,6 +40,19 @@ impl RelatedItemInputContent {
     pub fn is_comment(&self) -> bool {
         self.as_comment().is_ok()
     }
+    /// Tries to convert the enum instance into [`ConnectCase`](crate::types::RelatedItemInputContent::ConnectCase), extracting the inner [`ConnectCaseInputContent`](crate::types::ConnectCaseInputContent).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_connect_case(&self) -> ::std::result::Result<&crate::types::ConnectCaseInputContent, &Self> {
+        if let RelatedItemInputContent::ConnectCase(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`ConnectCase`](crate::types::RelatedItemInputContent::ConnectCase).
+    pub fn is_connect_case(&self) -> bool {
+        self.as_connect_case().is_ok()
+    }
     /// Tries to convert the enum instance into [`Contact`](crate::types::RelatedItemInputContent::Contact), extracting the inner [`Contact`](crate::types::Contact).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_contact(&self) -> ::std::result::Result<&crate::types::Contact, &Self> {
@@ -48,6 +65,19 @@ impl RelatedItemInputContent {
     /// Returns true if this is a [`Contact`](crate::types::RelatedItemInputContent::Contact).
     pub fn is_contact(&self) -> bool {
         self.as_contact().is_ok()
+    }
+    /// Tries to convert the enum instance into [`Custom`](crate::types::RelatedItemInputContent::Custom), extracting the inner [`CustomInputContent`](crate::types::CustomInputContent).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_custom(&self) -> ::std::result::Result<&crate::types::CustomInputContent, &Self> {
+        if let RelatedItemInputContent::Custom(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`Custom`](crate::types::RelatedItemInputContent::Custom).
+    pub fn is_custom(&self) -> bool {
+        self.as_custom().is_ok()
     }
     /// Tries to convert the enum instance into [`File`](crate::types::RelatedItemInputContent::File), extracting the inner [`FileContent`](crate::types::FileContent).
     /// Returns `Err(&Self)` if it can't be converted.

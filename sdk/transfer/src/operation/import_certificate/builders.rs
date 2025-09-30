@@ -23,9 +23,24 @@ impl crate::operation::import_certificate::builders::ImportCertificateInputBuild
 /// Fluent builder constructing a request to `ImportCertificate`.
 ///
 /// <p>Imports the signing and encryption certificates that you need to create local (AS2) profiles and partner profiles.</p>
-/// <p>You can import both the certificate and its chain in the <code>Certificate</code> parameter.</p><note>
+/// <p>You can import both the certificate and its chain in the <code>Certificate</code> parameter.</p>
+/// <p>After importing a certificate, Transfer Family automatically creates a Amazon CloudWatch metric called <code>DaysUntilExpiry</code> that tracks the number of days until the certificate expires. The metric is based on the <code>InactiveDate</code> parameter and is published daily in the <code>AWS/Transfer</code> namespace.</p><important>
+/// <p>It can take up to a full day after importing a certificate for Transfer Family to emit the <code>DaysUntilExpiry</code> metric to your account.</p>
+/// </important> <note>
 /// <p>If you use the <code>Certificate</code> parameter to upload both the certificate and its chain, don't use the <code>CertificateChain</code> parameter.</p>
 /// </note>
+/// <p><b>CloudWatch monitoring</b></p>
+/// <p>The <code>DaysUntilExpiry</code> metric includes the following specifications:</p>
+/// <ul>
+/// <li>
+/// <p><b>Units:</b> Count (days)</p></li>
+/// <li>
+/// <p><b>Dimensions:</b> <code>CertificateId</code> (always present), <code>Description</code> (if provided during certificate import)</p></li>
+/// <li>
+/// <p><b>Statistics:</b> Minimum, Maximum, Average</p></li>
+/// <li>
+/// <p><b>Frequency:</b> Published daily</p></li>
+/// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ImportCertificateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

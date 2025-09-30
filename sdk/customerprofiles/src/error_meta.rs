@@ -1253,6 +1253,45 @@ impl From<crate::operation::get_matches::GetMatchesError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_profile_history_record::GetProfileHistoryRecordError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_profile_history_record::GetProfileHistoryRecordError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_profile_history_record::GetProfileHistoryRecordError> for Error {
+    fn from(err: crate::operation::get_profile_history_record::GetProfileHistoryRecordError) -> Self {
+        match err {
+            crate::operation::get_profile_history_record::GetProfileHistoryRecordError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_profile_history_record::GetProfileHistoryRecordError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::get_profile_history_record::GetProfileHistoryRecordError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_profile_history_record::GetProfileHistoryRecordError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_profile_history_record::GetProfileHistoryRecordError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_profile_history_record::GetProfileHistoryRecordError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_profile_object_type::GetProfileObjectTypeError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1961,6 +2000,45 @@ impl From<crate::operation::list_profile_attribute_values::ListProfileAttributeV
                 Error::ThrottlingException(inner)
             }
             crate::operation::list_profile_attribute_values::ListProfileAttributeValuesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_profile_history_records::ListProfileHistoryRecordsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_profile_history_records::ListProfileHistoryRecordsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_profile_history_records::ListProfileHistoryRecordsError> for Error {
+    fn from(err: crate::operation::list_profile_history_records::ListProfileHistoryRecordsError) -> Self {
+        match err {
+            crate::operation::list_profile_history_records::ListProfileHistoryRecordsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_profile_history_records::ListProfileHistoryRecordsError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::list_profile_history_records::ListProfileHistoryRecordsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_profile_history_records::ListProfileHistoryRecordsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_profile_history_records::ListProfileHistoryRecordsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_profile_history_records::ListProfileHistoryRecordsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

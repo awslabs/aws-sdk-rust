@@ -10,6 +10,8 @@ pub struct DomainController {
     pub domain_controller_id: ::std::option::Option<::std::string::String>,
     /// <p>The IP address of the domain controller.</p>
     pub dns_ip_addr: ::std::option::Option<::std::string::String>,
+    /// <p>The IPv6 address of the domain controller.</p>
+    pub dns_ipv6_addr: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the VPC that contains the domain controller.</p>
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>Identifier of the subnet in the VPC that contains the domain controller.</p>
@@ -37,6 +39,10 @@ impl DomainController {
     /// <p>The IP address of the domain controller.</p>
     pub fn dns_ip_addr(&self) -> ::std::option::Option<&str> {
         self.dns_ip_addr.as_deref()
+    }
+    /// <p>The IPv6 address of the domain controller.</p>
+    pub fn dns_ipv6_addr(&self) -> ::std::option::Option<&str> {
+        self.dns_ipv6_addr.as_deref()
     }
     /// <p>The identifier of the VPC that contains the domain controller.</p>
     pub fn vpc_id(&self) -> ::std::option::Option<&str> {
@@ -81,6 +87,7 @@ pub struct DomainControllerBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) domain_controller_id: ::std::option::Option<::std::string::String>,
     pub(crate) dns_ip_addr: ::std::option::Option<::std::string::String>,
+    pub(crate) dns_ipv6_addr: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
     pub(crate) subnet_id: ::std::option::Option<::std::string::String>,
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
@@ -131,6 +138,20 @@ impl DomainControllerBuilder {
     /// <p>The IP address of the domain controller.</p>
     pub fn get_dns_ip_addr(&self) -> &::std::option::Option<::std::string::String> {
         &self.dns_ip_addr
+    }
+    /// <p>The IPv6 address of the domain controller.</p>
+    pub fn dns_ipv6_addr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.dns_ipv6_addr = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The IPv6 address of the domain controller.</p>
+    pub fn set_dns_ipv6_addr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.dns_ipv6_addr = input;
+        self
+    }
+    /// <p>The IPv6 address of the domain controller.</p>
+    pub fn get_dns_ipv6_addr(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dns_ipv6_addr
     }
     /// <p>The identifier of the VPC that contains the domain controller.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -236,6 +257,7 @@ impl DomainControllerBuilder {
             directory_id: self.directory_id,
             domain_controller_id: self.domain_controller_id,
             dns_ip_addr: self.dns_ip_addr,
+            dns_ipv6_addr: self.dns_ipv6_addr,
             vpc_id: self.vpc_id,
             subnet_id: self.subnet_id,
             availability_zone: self.availability_zone,

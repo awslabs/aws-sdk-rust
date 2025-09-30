@@ -258,6 +258,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeleteCluster
 pub enum DeleteClusterError {
     /// <p>These errors are usually caused by a client action. This client action might be using an action or resource on behalf of a user that doesn't have permissions to use the action or resource. Or, it might be specifying an identifier that isn't valid.</p>
     ClientException(crate::types::error::ClientException),
+    /// <p>The cluster contains one or more capacity providers that prevent the requested operation. This exception occurs when you try to delete a cluster that still has active capacity providers, including Amazon ECS Managed Instances capacity providers. You must first delete all capacity providers from the cluster before you can delete the cluster itself.</p>
+    ClusterContainsCapacityProviderException(crate::types::error::ClusterContainsCapacityProviderException),
     /// <p>You can't delete a cluster that has registered container instances. First, deregister the container instances before you can delete the cluster. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DeregisterContainerInstance.html">DeregisterContainerInstance</a>.</p>
     ClusterContainsContainerInstancesException(crate::types::error::ClusterContainsContainerInstancesException),
     /// <p>You can't delete a cluster that contains services. First, update the service to reduce its desired task count to 0, and then delete the service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateService.html">UpdateService</a> and <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DeleteService.html">DeleteService</a>.</p>
@@ -307,6 +309,7 @@ impl DeleteClusterError {
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::ClientException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ClusterContainsCapacityProviderException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ClusterContainsContainerInstancesException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ClusterContainsServicesException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ClusterContainsTasksException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -320,6 +323,10 @@ impl DeleteClusterError {
     /// Returns `true` if the error kind is `DeleteClusterError::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(self, Self::ClientException(_))
+    }
+    /// Returns `true` if the error kind is `DeleteClusterError::ClusterContainsCapacityProviderException`.
+    pub fn is_cluster_contains_capacity_provider_exception(&self) -> bool {
+        matches!(self, Self::ClusterContainsCapacityProviderException(_))
     }
     /// Returns `true` if the error kind is `DeleteClusterError::ClusterContainsContainerInstancesException`.
     pub fn is_cluster_contains_container_instances_exception(&self) -> bool {
@@ -354,6 +361,7 @@ impl ::std::error::Error for DeleteClusterError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::ClientException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ClusterContainsCapacityProviderException(_inner) => ::std::option::Option::Some(_inner),
             Self::ClusterContainsContainerInstancesException(_inner) => ::std::option::Option::Some(_inner),
             Self::ClusterContainsServicesException(_inner) => ::std::option::Option::Some(_inner),
             Self::ClusterContainsTasksException(_inner) => ::std::option::Option::Some(_inner),
@@ -369,6 +377,7 @@ impl ::std::fmt::Display for DeleteClusterError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             Self::ClientException(_inner) => _inner.fmt(f),
+            Self::ClusterContainsCapacityProviderException(_inner) => _inner.fmt(f),
             Self::ClusterContainsContainerInstancesException(_inner) => _inner.fmt(f),
             Self::ClusterContainsServicesException(_inner) => _inner.fmt(f),
             Self::ClusterContainsTasksException(_inner) => _inner.fmt(f),
@@ -398,6 +407,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DeleteCluster
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::ClientException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ClusterContainsCapacityProviderException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ClusterContainsContainerInstancesException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ClusterContainsServicesException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ClusterContainsTasksException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

@@ -11,6 +11,14 @@ pub use crate::types::_hybrid_customer_instances_settings::HybridCustomerInstanc
 
 pub use crate::types::_hybrid_administrator_account_update::HybridAdministratorAccountUpdate;
 
+pub use crate::types::_network_update_settings::NetworkUpdateSettings;
+
+pub use crate::types::_network_type::NetworkType;
+
+pub use crate::types::_directory_size_update_settings::DirectorySizeUpdateSettings;
+
+pub use crate::types::_directory_size::DirectorySize;
+
 pub use crate::types::_os_update_settings::OsUpdateSettings;
 
 pub use crate::types::_os_version::OsVersion;
@@ -133,8 +141,6 @@ pub use crate::types::_directory_type::DirectoryType;
 
 pub use crate::types::_directory_edition::DirectoryEdition;
 
-pub use crate::types::_directory_size::DirectorySize;
-
 pub use crate::types::_conditional_forwarder::ConditionalForwarder;
 
 pub use crate::types::_replication_scope::ReplicationScope;
@@ -211,6 +217,8 @@ mod _directory_limits;
 
 mod _directory_size;
 
+mod _directory_size_update_settings;
+
 mod _directory_stage;
 
 mod _directory_type;
@@ -252,6 +260,10 @@ mod _ldaps_status;
 mod _ldaps_type;
 
 mod _log_subscription;
+
+mod _network_type;
+
+mod _network_update_settings;
 
 mod _os_update_settings;
 

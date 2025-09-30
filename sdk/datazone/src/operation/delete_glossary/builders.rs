@@ -34,7 +34,7 @@ impl crate::operation::delete_glossary::builders::DeleteGlossaryInputBuilder {
 /// <li>
 /// <p>The caller must have the <code>datazone:DeleteGlossary</code> permission in the domain and glossary.</p></li>
 /// <li>
-/// <p>There should be no active assets or metadata linked to the glossary.</p></li>
+/// <p>Glossary should not be linked to any active metadata forms.</p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteGlossaryFluentBuilder {

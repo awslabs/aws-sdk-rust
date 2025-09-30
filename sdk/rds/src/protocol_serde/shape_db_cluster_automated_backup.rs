@@ -313,21 +313,8 @@ pub fn de_db_cluster_automated_backup(
                 builder = builder.set_iops(var_23);
             }
             ,
-            s if s.matches("AwsBackupRecoveryPointArn") /* AwsBackupRecoveryPointArn com.amazonaws.rds#DBClusterAutomatedBackup$AwsBackupRecoveryPointArn */ =>  {
-                let var_24 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_aws_backup_recovery_point_arn(var_24);
-            }
-            ,
             s if s.matches("StorageThroughput") /* StorageThroughput com.amazonaws.rds#DBClusterAutomatedBackup$StorageThroughput */ =>  {
-                let var_25 =
+                let var_24 =
                     Some(
                          {
                             <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -338,7 +325,20 @@ pub fn de_db_cluster_automated_backup(
                         ?
                     )
                 ;
-                builder = builder.set_storage_throughput(var_25);
+                builder = builder.set_storage_throughput(var_24);
+            }
+            ,
+            s if s.matches("AwsBackupRecoveryPointArn") /* AwsBackupRecoveryPointArn com.amazonaws.rds#DBClusterAutomatedBackup$AwsBackupRecoveryPointArn */ =>  {
+                let var_25 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_aws_backup_recovery_point_arn(var_25);
             }
             ,
             _ => {}

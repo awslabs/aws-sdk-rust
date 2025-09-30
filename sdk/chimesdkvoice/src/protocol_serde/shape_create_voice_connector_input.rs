@@ -12,20 +12,23 @@ pub fn ser_create_voice_connector_input_input(
     if let Some(var_3) = &input.name {
         object.key("Name").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.require_encryption {
-        object.key("RequireEncryption").boolean(*var_4);
+    if let Some(var_4) = &input.network_type {
+        object.key("NetworkType").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.tags {
-        let mut array_6 = object.key("Tags").start_array();
-        for item_7 in var_5 {
+    if let Some(var_5) = &input.require_encryption {
+        object.key("RequireEncryption").boolean(*var_5);
+    }
+    if let Some(var_6) = &input.tags {
+        let mut array_7 = object.key("Tags").start_array();
+        for item_8 in var_6 {
             {
                 #[allow(unused_mut)]
-                let mut object_8 = array_6.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_8, item_7)?;
-                object_8.finish();
+                let mut object_9 = array_7.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_9, item_8)?;
+                object_9.finish();
             }
         }
-        array_6.finish();
+        array_7.finish();
     }
     Ok(())
 }

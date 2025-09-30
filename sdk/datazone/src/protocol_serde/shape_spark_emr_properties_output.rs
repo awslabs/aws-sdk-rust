@@ -86,6 +86,25 @@ where
                                     .transpose()?,
                             );
                         }
+                        "certificateData" => {
+                            builder = builder.set_certificate_data(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "managedEndpointArn" => {
+                            builder = builder.set_managed_endpoint_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "managedEndpointCredentials" => {
+                            builder = builder.set_managed_endpoint_credentials(
+                                crate::protocol_serde::shape_managed_endpoint_credentials::de_managed_endpoint_credentials(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

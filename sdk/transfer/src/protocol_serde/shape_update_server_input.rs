@@ -78,5 +78,8 @@ pub fn ser_update_server_input_input(
     if let Some(var_25) = &input.ip_address_type {
         object.key("IpAddressType").string(var_25.as_str());
     }
+    if let Some(var_26) = &input.identity_provider_type {
+        object.key("IdentityProviderType").string(var_26.as_str());
+    }
     Ok(())
 }

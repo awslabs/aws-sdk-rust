@@ -1107,6 +1107,8 @@ pub(crate) mod shape_lineage_sql_query_run_details;
 
 pub(crate) mod shape_listing_summaries;
 
+pub(crate) mod shape_managed_endpoint_credentials;
+
 pub(crate) mod shape_member_details;
 
 pub(crate) mod shape_metadata_form_reference;

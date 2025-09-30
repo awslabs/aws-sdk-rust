@@ -198,6 +198,25 @@ impl CreateTrustFluentBuilder {
     pub fn get_conditional_forwarder_ip_addrs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_conditional_forwarder_ip_addrs()
     }
+    ///
+    /// Appends an item to `ConditionalForwarderIpv6Addrs`.
+    ///
+    /// To override the contents of this collection use [`set_conditional_forwarder_ipv6_addrs`](Self::set_conditional_forwarder_ipv6_addrs).
+    ///
+    /// <p>The IPv6 addresses of the remote DNS server associated with RemoteDomainName.</p>
+    pub fn conditional_forwarder_ipv6_addrs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.conditional_forwarder_ipv6_addrs(input.into());
+        self
+    }
+    /// <p>The IPv6 addresses of the remote DNS server associated with RemoteDomainName.</p>
+    pub fn set_conditional_forwarder_ipv6_addrs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_conditional_forwarder_ipv6_addrs(input);
+        self
+    }
+    /// <p>The IPv6 addresses of the remote DNS server associated with RemoteDomainName.</p>
+    pub fn get_conditional_forwarder_ipv6_addrs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_conditional_forwarder_ipv6_addrs()
+    }
     /// <p>Optional parameter to enable selective authentication for the trust.</p>
     pub fn selective_auth(mut self, input: crate::types::SelectiveAuth) -> Self {
         self.inner = self.inner.selective_auth(input);

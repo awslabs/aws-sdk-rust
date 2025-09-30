@@ -6,19 +6,27 @@
 pub struct FileSystemEndpoint {
     /// <p>The file system's DNS name. You can mount your file system using its DNS name.</p>
     pub dns_name: ::std::option::Option<::std::string::String>,
-    /// <p>IP addresses of the file system endpoint.</p>
+    /// <p>The IPv4 addresses of the file system endpoint.</p>
     pub ip_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The IPv6 addresses of the file system endpoint.</p>
+    pub ipv6_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl FileSystemEndpoint {
     /// <p>The file system's DNS name. You can mount your file system using its DNS name.</p>
     pub fn dns_name(&self) -> ::std::option::Option<&str> {
         self.dns_name.as_deref()
     }
-    /// <p>IP addresses of the file system endpoint.</p>
+    /// <p>The IPv4 addresses of the file system endpoint.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ip_addresses.is_none()`.
     pub fn ip_addresses(&self) -> &[::std::string::String] {
         self.ip_addresses.as_deref().unwrap_or_default()
+    }
+    /// <p>The IPv6 addresses of the file system endpoint.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ipv6_addresses.is_none()`.
+    pub fn ipv6_addresses(&self) -> &[::std::string::String] {
+        self.ipv6_addresses.as_deref().unwrap_or_default()
     }
 }
 impl FileSystemEndpoint {
@@ -34,6 +42,7 @@ impl FileSystemEndpoint {
 pub struct FileSystemEndpointBuilder {
     pub(crate) dns_name: ::std::option::Option<::std::string::String>,
     pub(crate) ip_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) ipv6_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl FileSystemEndpointBuilder {
     /// <p>The file system's DNS name. You can mount your file system using its DNS name.</p>
@@ -54,27 +63,48 @@ impl FileSystemEndpointBuilder {
     ///
     /// To override the contents of this collection use [`set_ip_addresses`](Self::set_ip_addresses).
     ///
-    /// <p>IP addresses of the file system endpoint.</p>
+    /// <p>The IPv4 addresses of the file system endpoint.</p>
     pub fn ip_addresses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.ip_addresses.unwrap_or_default();
         v.push(input.into());
         self.ip_addresses = ::std::option::Option::Some(v);
         self
     }
-    /// <p>IP addresses of the file system endpoint.</p>
+    /// <p>The IPv4 addresses of the file system endpoint.</p>
     pub fn set_ip_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.ip_addresses = input;
         self
     }
-    /// <p>IP addresses of the file system endpoint.</p>
+    /// <p>The IPv4 addresses of the file system endpoint.</p>
     pub fn get_ip_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.ip_addresses
+    }
+    /// Appends an item to `ipv6_addresses`.
+    ///
+    /// To override the contents of this collection use [`set_ipv6_addresses`](Self::set_ipv6_addresses).
+    ///
+    /// <p>The IPv6 addresses of the file system endpoint.</p>
+    pub fn ipv6_addresses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.ipv6_addresses.unwrap_or_default();
+        v.push(input.into());
+        self.ipv6_addresses = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The IPv6 addresses of the file system endpoint.</p>
+    pub fn set_ipv6_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.ipv6_addresses = input;
+        self
+    }
+    /// <p>The IPv6 addresses of the file system endpoint.</p>
+    pub fn get_ipv6_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.ipv6_addresses
     }
     /// Consumes the builder and constructs a [`FileSystemEndpoint`](crate::types::FileSystemEndpoint).
     pub fn build(self) -> crate::types::FileSystemEndpoint {
         crate::types::FileSystemEndpoint {
             dns_name: self.dns_name,
             ip_addresses: self.ip_addresses,
+            ipv6_addresses: self.ipv6_addresses,
         }
     }
 }

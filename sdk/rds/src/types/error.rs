@@ -43,6 +43,8 @@ pub use crate::types::error::_db_cluster_snapshot_not_found_fault::DbClusterSnap
 
 pub use crate::types::error::_storage_type_not_supported_fault::StorageTypeNotSupportedFault;
 
+pub use crate::types::error::_invalid_db_instance_automated_backup_state_fault::InvalidDbInstanceAutomatedBackupStateFault;
+
 pub use crate::types::error::_db_instance_automated_backup_quota_exceeded_fault::DbInstanceAutomatedBackupQuotaExceededFault;
 
 pub use crate::types::error::_invalid_vpc_network_state_fault::InvalidVpcNetworkStateFault;
@@ -111,13 +113,19 @@ pub use crate::types::error::_invalid_db_parameter_group_state_fault::InvalidDbP
 
 pub use crate::types::error::_tenant_database_not_found_fault::TenantDatabaseNotFoundFault;
 
+pub use crate::types::error::_invalid_db_cluster_endpoint_state_fault::InvalidDbClusterEndpointStateFault;
+
 pub use crate::types::error::_integration_not_found_fault::IntegrationNotFoundFault;
 
 pub use crate::types::error::_db_snapshot_tenant_database_not_found_fault::DbSnapshotTenantDatabaseNotFoundFault;
 
+pub use crate::types::error::_db_shard_group_not_found_fault::DbShardGroupNotFoundFault;
+
 pub use crate::types::error::_db_proxy_target_group_not_found_fault::DbProxyTargetGroupNotFoundFault;
 
 pub use crate::types::error::_db_proxy_not_found_fault::DbProxyNotFoundFault;
+
+pub use crate::types::error::_db_proxy_endpoint_not_found_fault::DbProxyEndpointNotFoundFault;
 
 pub use crate::types::error::_subscription_not_found_fault::SubscriptionNotFoundFault;
 
@@ -132,8 +140,6 @@ pub use crate::types::error::_invalid_db_proxy_state_fault::InvalidDbProxyStateF
 pub use crate::types::error::_insufficient_available_ips_in_subnet_fault::InsufficientAvailableIPsInSubnetFault;
 
 pub use crate::types::error::_db_proxy_target_already_registered_fault::DbProxyTargetAlreadyRegisteredFault;
-
-pub use crate::types::error::_db_shard_group_not_found_fault::DbShardGroupNotFoundFault;
 
 pub use crate::types::error::_reserved_db_instances_offering_not_found_fault::ReservedDbInstancesOfferingNotFoundFault;
 
@@ -171,15 +177,11 @@ pub use crate::types::error::_db_shard_group_already_exists_fault::DbShardGroupA
 
 pub use crate::types::error::_invalid_db_proxy_endpoint_state_fault::InvalidDbProxyEndpointStateFault;
 
-pub use crate::types::error::_db_proxy_endpoint_not_found_fault::DbProxyEndpointNotFoundFault;
-
 pub use crate::types::error::_db_proxy_endpoint_already_exists_fault::DbProxyEndpointAlreadyExistsFault;
 
 pub use crate::types::error::_db_proxy_already_exists_fault::DbProxyAlreadyExistsFault;
 
 pub use crate::types::error::_db_upgrade_dependency_failure_fault::DbUpgradeDependencyFailureFault;
-
-pub use crate::types::error::_invalid_db_cluster_endpoint_state_fault::InvalidDbClusterEndpointStateFault;
 
 pub use crate::types::error::_db_cluster_endpoint_not_found_fault::DbClusterEndpointNotFoundFault;
 
@@ -208,8 +210,6 @@ pub use crate::types::error::_db_cluster_backtrack_not_found_fault::DbClusterBac
 pub use crate::types::error::_invalid_event_subscription_state_fault::InvalidEventSubscriptionStateFault;
 
 pub use crate::types::error::_invalid_db_subnet_state_fault::InvalidDbSubnetStateFault;
-
-pub use crate::types::error::_invalid_db_instance_automated_backup_state_fault::InvalidDbInstanceAutomatedBackupStateFault;
 
 pub use crate::types::error::_invalid_db_cluster_automated_backup_state_fault::InvalidDbClusterAutomatedBackupStateFault;
 

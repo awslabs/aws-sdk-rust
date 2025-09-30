@@ -112,6 +112,9 @@ pub mod get_integration;
 /// Types for the `GetMatches` operation.
 pub mod get_matches;
 
+/// Types for the `GetProfileHistoryRecord` operation.
+pub mod get_profile_history_record;
+
 /// Types for the `GetProfileObjectType` operation.
 pub mod get_profile_object_type;
 
@@ -177,6 +180,9 @@ pub mod list_object_type_attributes;
 
 /// Types for the `ListProfileAttributeValues` operation.
 pub mod list_profile_attribute_values;
+
+/// Types for the `ListProfileHistoryRecords` operation.
+pub mod list_profile_history_records;
 
 /// Types for the `ListProfileObjectTypeTemplates` operation.
 pub mod list_profile_object_type_templates;

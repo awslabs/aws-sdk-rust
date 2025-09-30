@@ -34,6 +34,9 @@ impl crate::operation::get_form_type::builders::GetFormTypeInputBuilder {
 /// <li>
 /// <p>The form type should not be deleted or in an invalid state.</p></li>
 /// </ul>
+/// <p>One use case for this API is to determine whether a form field is indexed for search.</p>
+/// <p>A searchable field will be annotated with <code>@amazon.datazone#searchable</code>. By default, searchable fields are indexed for semantic search, where related query terms will match the attribute value even if they are not stemmed or keyword matches. If a field is indexed technical identifier search, it will be annotated with <code>@amazon.datazone#searchable(modes:\["TECHNICAL"\])</code>. If a field is indexed for lexical search (supports stemmed and prefix matches but not semantic matches), it will be annotated with <code>@amazon.datazone#searchable(modes:\["LEXICAL"\])</code>.</p>
+/// <p>A field storing glossary term IDs (which is filterable) will be annotated with <code>@amazon.datazone#glossaryterm("${glossaryId}")</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetFormTypeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

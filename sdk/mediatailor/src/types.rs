@@ -25,6 +25,8 @@ pub use crate::types::_recurring_prefetch_configuration::RecurringPrefetchConfig
 
 pub use crate::types::_recurring_retrieval::RecurringRetrieval;
 
+pub use crate::types::_traffic_shaping_tps_configuration::TrafficShapingTpsConfiguration;
+
 pub use crate::types::_traffic_shaping_retrieval_window::TrafficShapingRetrievalWindow;
 
 pub use crate::types::_traffic_shaping_type::TrafficShapingType;
@@ -302,6 +304,8 @@ mod _time_shift_configuration;
 mod _time_signal_message;
 
 mod _traffic_shaping_retrieval_window;
+
+mod _traffic_shaping_tps_configuration;
 
 mod _traffic_shaping_type;
 

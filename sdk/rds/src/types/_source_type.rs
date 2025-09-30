@@ -20,7 +20,9 @@
 ///     SourceType::DbParameterGroup => { /* ... */ },
 ///     SourceType::DbProxy => { /* ... */ },
 ///     SourceType::DbSecurityGroup => { /* ... */ },
+///     SourceType::DbShardGroup => { /* ... */ },
 ///     SourceType::DbSnapshot => { /* ... */ },
+///     SourceType::ZeroEtl => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -66,7 +68,11 @@ pub enum SourceType {
     #[allow(missing_docs)] // documentation missing in model
     DbSecurityGroup,
     #[allow(missing_docs)] // documentation missing in model
+    DbShardGroup,
+    #[allow(missing_docs)] // documentation missing in model
     DbSnapshot,
+    #[allow(missing_docs)] // documentation missing in model
+    ZeroEtl,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -82,7 +88,9 @@ impl ::std::convert::From<&str> for SourceType {
             "db-parameter-group" => SourceType::DbParameterGroup,
             "db-proxy" => SourceType::DbProxy,
             "db-security-group" => SourceType::DbSecurityGroup,
+            "db-shard-group" => SourceType::DbShardGroup,
             "db-snapshot" => SourceType::DbSnapshot,
+            "zero-etl" => SourceType::ZeroEtl,
             other => SourceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -106,7 +114,9 @@ impl SourceType {
             SourceType::DbParameterGroup => "db-parameter-group",
             SourceType::DbProxy => "db-proxy",
             SourceType::DbSecurityGroup => "db-security-group",
+            SourceType::DbShardGroup => "db-shard-group",
             SourceType::DbSnapshot => "db-snapshot",
+            SourceType::ZeroEtl => "zero-etl",
             SourceType::Unknown(value) => value.as_str(),
         }
     }
@@ -121,7 +131,9 @@ impl SourceType {
             "db-parameter-group",
             "db-proxy",
             "db-security-group",
+            "db-shard-group",
             "db-snapshot",
+            "zero-etl",
         ]
     }
 }
@@ -153,7 +165,9 @@ impl ::std::fmt::Display for SourceType {
             SourceType::DbParameterGroup => write!(f, "db-parameter-group"),
             SourceType::DbProxy => write!(f, "db-proxy"),
             SourceType::DbSecurityGroup => write!(f, "db-security-group"),
+            SourceType::DbShardGroup => write!(f, "db-shard-group"),
             SourceType::DbSnapshot => write!(f, "db-snapshot"),
+            SourceType::ZeroEtl => write!(f, "zero-etl"),
             SourceType::Unknown(value) => write!(f, "{}", value),
         }
     }

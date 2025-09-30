@@ -23,6 +23,9 @@ where
                         "MetricReferences" => {
                             builder = builder.set_metric_references(crate::protocol_serde::shape_metric_references::de_metric_references(tokens)?);
                         }
+                        "ServiceGroups" => {
+                            builder = builder.set_service_groups(crate::protocol_serde::shape_service_groups::de_service_groups(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

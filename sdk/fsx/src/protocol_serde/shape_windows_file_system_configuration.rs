@@ -105,6 +105,13 @@ where
                                 crate::protocol_serde::shape_disk_iops_configuration::de_disk_iops_configuration(tokens)?,
                             );
                         }
+                        "PreferredFileServerIpv6" => {
+                            builder = builder.set_preferred_file_server_ipv6(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

@@ -50,8 +50,28 @@ pub fn de_valid_storage_options(
                 builder = builder.set_iops_to_storage_ratio(var_4);
             }
             ,
-            s if s.matches("SupportsStorageAutoscaling") /* SupportsStorageAutoscaling com.amazonaws.rds#ValidStorageOptions$SupportsStorageAutoscaling */ =>  {
+            s if s.matches("ProvisionedStorageThroughput") /* ProvisionedStorageThroughput com.amazonaws.rds#ValidStorageOptions$ProvisionedStorageThroughput */ =>  {
                 let var_5 =
+                    Some(
+                        crate::protocol_serde::shape_range_list::de_range_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_provisioned_storage_throughput(var_5);
+            }
+            ,
+            s if s.matches("StorageThroughputToIopsRatio") /* StorageThroughputToIopsRatio com.amazonaws.rds#ValidStorageOptions$StorageThroughputToIopsRatio */ =>  {
+                let var_6 =
+                    Some(
+                        crate::protocol_serde::shape_double_range_list::de_double_range_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_storage_throughput_to_iops_ratio(var_6);
+            }
+            ,
+            s if s.matches("SupportsStorageAutoscaling") /* SupportsStorageAutoscaling com.amazonaws.rds#ValidStorageOptions$SupportsStorageAutoscaling */ =>  {
+                let var_7 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -62,27 +82,7 @@ pub fn de_valid_storage_options(
                         ?
                     )
                 ;
-                builder = builder.set_supports_storage_autoscaling(var_5);
-            }
-            ,
-            s if s.matches("ProvisionedStorageThroughput") /* ProvisionedStorageThroughput com.amazonaws.rds#ValidStorageOptions$ProvisionedStorageThroughput */ =>  {
-                let var_6 =
-                    Some(
-                        crate::protocol_serde::shape_range_list::de_range_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_provisioned_storage_throughput(var_6);
-            }
-            ,
-            s if s.matches("StorageThroughputToIopsRatio") /* StorageThroughputToIopsRatio com.amazonaws.rds#ValidStorageOptions$StorageThroughputToIopsRatio */ =>  {
-                let var_7 =
-                    Some(
-                        crate::protocol_serde::shape_double_range_list::de_double_range_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_storage_throughput_to_iops_ratio(var_7);
+                builder = builder.set_supports_storage_autoscaling(var_7);
             }
             ,
             _ => {}

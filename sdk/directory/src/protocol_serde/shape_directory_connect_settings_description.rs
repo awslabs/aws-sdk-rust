@@ -44,6 +44,9 @@ where
                         "ConnectIps" => {
                             builder = builder.set_connect_ips(crate::protocol_serde::shape_ip_addrs::de_ip_addrs(tokens)?);
                         }
+                        "ConnectIpsV6" => {
+                            builder = builder.set_connect_ips_v6(crate::protocol_serde::shape_ipv6_addrs::de_ipv6_addrs(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

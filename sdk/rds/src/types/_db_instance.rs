@@ -14,8 +14,6 @@ pub struct DbInstance {
     /// <p>The current state of this database.</p>
     /// <p>For information about DB instance statuses, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/accessing-monitoring.html#Overview.DBInstance.Status">Viewing DB instance status</a> in the <i>Amazon RDS User Guide.</i></p>
     pub db_instance_status: ::std::option::Option<::std::string::String>,
-    /// <p>The time when a stopped DB instance is restarted automatically.</p>
-    pub automatic_restart_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The master username for the DB instance.</p>
     pub master_username: ::std::option::Option<::std::string::String>,
     /// <p>The initial database name that you provided (if required) when you created the DB instance. This name is returned for the life of your DB instance. For an RDS for Oracle CDB instance, the name identifies the PDB rather than the CDB.</p>
@@ -71,6 +69,9 @@ pub struct DbInstance {
     pub license_model: ::std::option::Option<::std::string::String>,
     /// <p>The Provisioned IOPS (I/O operations per second) value for the DB instance.</p>
     pub iops: ::std::option::Option<i32>,
+    /// <p>The storage throughput for the DB instance.</p>
+    /// <p>This setting applies only to the <code>gp3</code> storage type.</p>
+    pub storage_throughput: ::std::option::Option<i32>,
     /// <p>The list of option group memberships for this DB instance.</p>
     pub option_group_memberships: ::std::option::Option<::std::vec::Vec<crate::types::OptionGroupMembership>>,
     /// <p>If present, specifies the name of the character set that this instance is associated with.</p>
@@ -159,15 +160,20 @@ pub struct DbInstance {
     /// <p>A list of tags.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS resources</a> in the <i>Amazon RDS User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.html">Tagging Amazon Aurora and Amazon RDS resources</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    /// <p>The list of replicated automated backups associated with the DB instance.</p>
-    pub db_instance_automated_backups_replications: ::std::option::Option<::std::vec::Vec<crate::types::DbInstanceAutomatedBackupsReplication>>,
+    /// <p>The automation mode of the RDS Custom DB instance: <code>full</code> or <code>all paused</code>. If <code>full</code>, the DB instance automates monitoring and instance recovery. If <code>all paused</code>, the instance pauses automation for the duration set by <code>--resume-full-automation-mode-minutes</code>.</p>
+    pub automation_mode: ::std::option::Option<crate::types::AutomationMode>,
+    /// <p>The number of minutes to pause the automation. When the time period ends, RDS Custom resumes full automation. The minimum value is 60 (default). The maximum value is 1,440.</p>
+    pub resume_full_automation_mode_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Indicates whether a customer-owned IP address (CoIP) is enabled for an RDS on Outposts DB instance.</p>
     /// <p>A <i>CoIP </i>provides local or external connectivity to resources in your Outpost subnets through your on-premises network. For some use cases, a CoIP can provide lower latency for connections to the DB instance from outside of its virtual private cloud (VPC) on your local network.</p>
     /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
     pub customer_owned_ip_enabled: ::std::option::Option<bool>,
-    /// <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.</p>
-    pub aws_backup_recovery_point_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The network type of the DB instance.</p>
+    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i></p>
+    /// <p>Valid Values: <code>IPV4 | DUAL</code></p>
+    pub network_type: ::std::option::Option<::std::string::String>,
     /// <p>The status of the database activity stream.</p>
     pub activity_stream_status: ::std::option::Option<crate::types::ActivityStreamStatus>,
     /// <p>The Amazon Web Services KMS key identifier used for encrypting messages in the database activity stream. The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
@@ -178,10 +184,14 @@ pub struct DbInstance {
     pub activity_stream_mode: ::std::option::Option<crate::types::ActivityStreamMode>,
     /// <p>Indicates whether engine-native audit fields are included in the database activity stream.</p>
     pub activity_stream_engine_native_audit_fields_included: ::std::option::Option<bool>,
-    /// <p>The automation mode of the RDS Custom DB instance: <code>full</code> or <code>all paused</code>. If <code>full</code>, the DB instance automates monitoring and instance recovery. If <code>all paused</code>, the instance pauses automation for the duration set by <code>--resume-full-automation-mode-minutes</code>.</p>
-    pub automation_mode: ::std::option::Option<crate::types::AutomationMode>,
-    /// <p>The number of minutes to pause the automation. When the time period ends, RDS Custom resumes full automation. The minimum value is 60 (default). The maximum value is 1,440.</p>
-    pub resume_full_automation_mode_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.</p>
+    pub aws_backup_recovery_point_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The list of replicated automated backups associated with the DB instance.</p>
+    pub db_instance_automated_backups_replications: ::std::option::Option<::std::vec::Vec<crate::types::DbInstanceAutomatedBackupsReplication>>,
+    /// <p>The location where automated backups and manual snapshots are stored: Dedicated Local Zones, Amazon Web Services Outposts or the Amazon Web Services Region.</p>
+    pub backup_target: ::std::option::Option<::std::string::String>,
+    /// <p>The time when a stopped DB instance is restarted automatically.</p>
+    pub automatic_restart_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The instance profile associated with the underlying Amazon EC2 instance of an RDS Custom DB instance. The instance profile must meet the following requirements:</p>
     /// <ul>
     /// <li>
@@ -193,35 +203,25 @@ pub struct DbInstance {
     /// </ul>
     /// <p>For the list of permissions required for the IAM role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc"> Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
     pub custom_iam_instance_profile: ::std::option::Option<::std::string::String>,
-    /// <p>The location where automated backups and manual snapshots are stored: Dedicated Local Zones, Amazon Web Services Outposts or the Amazon Web Services Region.</p>
-    pub backup_target: ::std::option::Option<::std::string::String>,
-    /// <p>The network type of the DB instance.</p>
-    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i></p>
-    /// <p>Valid Values: <code>IPV4 | DUAL</code></p>
-    pub network_type: ::std::option::Option<::std::string::String>,
     /// <p>The status of the policy state of the activity stream.</p>
     pub activity_stream_policy_status: ::std::option::Option<crate::types::ActivityStreamPolicyStatus>,
-    /// <p>The storage throughput for the DB instance.</p>
-    /// <p>This setting applies only to the <code>gp3</code> storage type.</p>
-    pub storage_throughput: ::std::option::Option<i32>,
+    /// <p>The details of the DB instance's server certificate.</p>
+    pub certificate_details: ::std::option::Option<crate::types::CertificateDetails>,
     /// <p>The Oracle system ID (Oracle SID) for a container database (CDB). The Oracle SID is also the name of the CDB. This setting is only valid for RDS Custom DB instances.</p>
     pub db_system_id: ::std::option::Option<::std::string::String>,
     /// <p>The secret managed by RDS in Amazon Web Services Secrets Manager for the master user password.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i></p>
     pub master_user_secret: ::std::option::Option<crate::types::MasterUserSecret>,
-    /// <p>The details of the DB instance's server certificate.</p>
-    pub certificate_details: ::std::option::Option<crate::types::CertificateDetails>,
     /// <p>The identifier of the source DB cluster if this DB instance is a read replica.</p>
     pub read_replica_source_db_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The progress of the storage optimization operation as a percentage.</p>
     pub percent_progress: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies whether the DB instance is in the multi-tenant configuration (TRUE) or the single-tenant configuration (FALSE).</p>
+    pub multi_tenant: ::std::option::Option<bool>,
     /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.</p>
     pub dedicated_log_volume: ::std::option::Option<bool>,
     /// <p>Indicates whether an upgrade is recommended for the storage file system configuration on the DB instance. To migrate to the preferred configuration, you can either create a blue/green deployment, or create a read replica from the DB instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.UpgradeFileSystem">Upgrading the storage file system for a DB instance</a>.</p>
     pub is_storage_config_upgrade_available: ::std::option::Option<bool>,
-    /// <p>Specifies whether the DB instance is in the multi-tenant configuration (TRUE) or the single-tenant configuration (FALSE).</p>
-    pub multi_tenant: ::std::option::Option<bool>,
     /// <p>The lifecycle type for the DB instance.</p>
     /// <p>For more information, see CreateDBInstance.</p>
     pub engine_lifecycle_support: ::std::option::Option<::std::string::String>,
@@ -243,10 +243,6 @@ impl DbInstance {
     /// <p>For information about DB instance statuses, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/accessing-monitoring.html#Overview.DBInstance.Status">Viewing DB instance status</a> in the <i>Amazon RDS User Guide.</i></p>
     pub fn db_instance_status(&self) -> ::std::option::Option<&str> {
         self.db_instance_status.as_deref()
-    }
-    /// <p>The time when a stopped DB instance is restarted automatically.</p>
-    pub fn automatic_restart_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.automatic_restart_time.as_ref()
     }
     /// <p>The master username for the DB instance.</p>
     pub fn master_username(&self) -> ::std::option::Option<&str> {
@@ -360,6 +356,11 @@ impl DbInstance {
     /// <p>The Provisioned IOPS (I/O operations per second) value for the DB instance.</p>
     pub fn iops(&self) -> ::std::option::Option<i32> {
         self.iops
+    }
+    /// <p>The storage throughput for the DB instance.</p>
+    /// <p>This setting applies only to the <code>gp3</code> storage type.</p>
+    pub fn storage_throughput(&self) -> ::std::option::Option<i32> {
+        self.storage_throughput
     }
     /// <p>The list of option group memberships for this DB instance.</p>
     ///
@@ -531,11 +532,13 @@ impl DbInstance {
     pub fn tag_list(&self) -> &[crate::types::Tag] {
         self.tag_list.as_deref().unwrap_or_default()
     }
-    /// <p>The list of replicated automated backups associated with the DB instance.</p>
-    ///
-    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.db_instance_automated_backups_replications.is_none()`.
-    pub fn db_instance_automated_backups_replications(&self) -> &[crate::types::DbInstanceAutomatedBackupsReplication] {
-        self.db_instance_automated_backups_replications.as_deref().unwrap_or_default()
+    /// <p>The automation mode of the RDS Custom DB instance: <code>full</code> or <code>all paused</code>. If <code>full</code>, the DB instance automates monitoring and instance recovery. If <code>all paused</code>, the instance pauses automation for the duration set by <code>--resume-full-automation-mode-minutes</code>.</p>
+    pub fn automation_mode(&self) -> ::std::option::Option<&crate::types::AutomationMode> {
+        self.automation_mode.as_ref()
+    }
+    /// <p>The number of minutes to pause the automation. When the time period ends, RDS Custom resumes full automation. The minimum value is 60 (default). The maximum value is 1,440.</p>
+    pub fn resume_full_automation_mode_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.resume_full_automation_mode_time.as_ref()
     }
     /// <p>Indicates whether a customer-owned IP address (CoIP) is enabled for an RDS on Outposts DB instance.</p>
     /// <p>A <i>CoIP </i>provides local or external connectivity to resources in your Outpost subnets through your on-premises network. For some use cases, a CoIP can provide lower latency for connections to the DB instance from outside of its virtual private cloud (VPC) on your local network.</p>
@@ -544,9 +547,12 @@ impl DbInstance {
     pub fn customer_owned_ip_enabled(&self) -> ::std::option::Option<bool> {
         self.customer_owned_ip_enabled
     }
-    /// <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.</p>
-    pub fn aws_backup_recovery_point_arn(&self) -> ::std::option::Option<&str> {
-        self.aws_backup_recovery_point_arn.as_deref()
+    /// <p>The network type of the DB instance.</p>
+    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i></p>
+    /// <p>Valid Values: <code>IPV4 | DUAL</code></p>
+    pub fn network_type(&self) -> ::std::option::Option<&str> {
+        self.network_type.as_deref()
     }
     /// <p>The status of the database activity stream.</p>
     pub fn activity_stream_status(&self) -> ::std::option::Option<&crate::types::ActivityStreamStatus> {
@@ -568,13 +574,23 @@ impl DbInstance {
     pub fn activity_stream_engine_native_audit_fields_included(&self) -> ::std::option::Option<bool> {
         self.activity_stream_engine_native_audit_fields_included
     }
-    /// <p>The automation mode of the RDS Custom DB instance: <code>full</code> or <code>all paused</code>. If <code>full</code>, the DB instance automates monitoring and instance recovery. If <code>all paused</code>, the instance pauses automation for the duration set by <code>--resume-full-automation-mode-minutes</code>.</p>
-    pub fn automation_mode(&self) -> ::std::option::Option<&crate::types::AutomationMode> {
-        self.automation_mode.as_ref()
+    /// <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.</p>
+    pub fn aws_backup_recovery_point_arn(&self) -> ::std::option::Option<&str> {
+        self.aws_backup_recovery_point_arn.as_deref()
     }
-    /// <p>The number of minutes to pause the automation. When the time period ends, RDS Custom resumes full automation. The minimum value is 60 (default). The maximum value is 1,440.</p>
-    pub fn resume_full_automation_mode_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.resume_full_automation_mode_time.as_ref()
+    /// <p>The list of replicated automated backups associated with the DB instance.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.db_instance_automated_backups_replications.is_none()`.
+    pub fn db_instance_automated_backups_replications(&self) -> &[crate::types::DbInstanceAutomatedBackupsReplication] {
+        self.db_instance_automated_backups_replications.as_deref().unwrap_or_default()
+    }
+    /// <p>The location where automated backups and manual snapshots are stored: Dedicated Local Zones, Amazon Web Services Outposts or the Amazon Web Services Region.</p>
+    pub fn backup_target(&self) -> ::std::option::Option<&str> {
+        self.backup_target.as_deref()
+    }
+    /// <p>The time when a stopped DB instance is restarted automatically.</p>
+    pub fn automatic_restart_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.automatic_restart_time.as_ref()
     }
     /// <p>The instance profile associated with the underlying Amazon EC2 instance of an RDS Custom DB instance. The instance profile must meet the following requirements:</p>
     /// <ul>
@@ -589,25 +605,13 @@ impl DbInstance {
     pub fn custom_iam_instance_profile(&self) -> ::std::option::Option<&str> {
         self.custom_iam_instance_profile.as_deref()
     }
-    /// <p>The location where automated backups and manual snapshots are stored: Dedicated Local Zones, Amazon Web Services Outposts or the Amazon Web Services Region.</p>
-    pub fn backup_target(&self) -> ::std::option::Option<&str> {
-        self.backup_target.as_deref()
-    }
-    /// <p>The network type of the DB instance.</p>
-    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i></p>
-    /// <p>Valid Values: <code>IPV4 | DUAL</code></p>
-    pub fn network_type(&self) -> ::std::option::Option<&str> {
-        self.network_type.as_deref()
-    }
     /// <p>The status of the policy state of the activity stream.</p>
     pub fn activity_stream_policy_status(&self) -> ::std::option::Option<&crate::types::ActivityStreamPolicyStatus> {
         self.activity_stream_policy_status.as_ref()
     }
-    /// <p>The storage throughput for the DB instance.</p>
-    /// <p>This setting applies only to the <code>gp3</code> storage type.</p>
-    pub fn storage_throughput(&self) -> ::std::option::Option<i32> {
-        self.storage_throughput
+    /// <p>The details of the DB instance's server certificate.</p>
+    pub fn certificate_details(&self) -> ::std::option::Option<&crate::types::CertificateDetails> {
+        self.certificate_details.as_ref()
     }
     /// <p>The Oracle system ID (Oracle SID) for a container database (CDB). The Oracle SID is also the name of the CDB. This setting is only valid for RDS Custom DB instances.</p>
     pub fn db_system_id(&self) -> ::std::option::Option<&str> {
@@ -618,10 +622,6 @@ impl DbInstance {
     pub fn master_user_secret(&self) -> ::std::option::Option<&crate::types::MasterUserSecret> {
         self.master_user_secret.as_ref()
     }
-    /// <p>The details of the DB instance's server certificate.</p>
-    pub fn certificate_details(&self) -> ::std::option::Option<&crate::types::CertificateDetails> {
-        self.certificate_details.as_ref()
-    }
     /// <p>The identifier of the source DB cluster if this DB instance is a read replica.</p>
     pub fn read_replica_source_db_cluster_identifier(&self) -> ::std::option::Option<&str> {
         self.read_replica_source_db_cluster_identifier.as_deref()
@@ -630,6 +630,10 @@ impl DbInstance {
     pub fn percent_progress(&self) -> ::std::option::Option<&str> {
         self.percent_progress.as_deref()
     }
+    /// <p>Specifies whether the DB instance is in the multi-tenant configuration (TRUE) or the single-tenant configuration (FALSE).</p>
+    pub fn multi_tenant(&self) -> ::std::option::Option<bool> {
+        self.multi_tenant
+    }
     /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.</p>
     pub fn dedicated_log_volume(&self) -> ::std::option::Option<bool> {
         self.dedicated_log_volume
@@ -637,10 +641,6 @@ impl DbInstance {
     /// <p>Indicates whether an upgrade is recommended for the storage file system configuration on the DB instance. To migrate to the preferred configuration, you can either create a blue/green deployment, or create a read replica from the DB instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.UpgradeFileSystem">Upgrading the storage file system for a DB instance</a>.</p>
     pub fn is_storage_config_upgrade_available(&self) -> ::std::option::Option<bool> {
         self.is_storage_config_upgrade_available
-    }
-    /// <p>Specifies whether the DB instance is in the multi-tenant configuration (TRUE) or the single-tenant configuration (FALSE).</p>
-    pub fn multi_tenant(&self) -> ::std::option::Option<bool> {
-        self.multi_tenant
     }
     /// <p>The lifecycle type for the DB instance.</p>
     /// <p>For more information, see CreateDBInstance.</p>
@@ -663,7 +663,6 @@ pub struct DbInstanceBuilder {
     pub(crate) db_instance_class: ::std::option::Option<::std::string::String>,
     pub(crate) engine: ::std::option::Option<::std::string::String>,
     pub(crate) db_instance_status: ::std::option::Option<::std::string::String>,
-    pub(crate) automatic_restart_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) master_username: ::std::option::Option<::std::string::String>,
     pub(crate) db_name: ::std::option::Option<::std::string::String>,
     pub(crate) endpoint: ::std::option::Option<crate::types::Endpoint>,
@@ -688,6 +687,7 @@ pub struct DbInstanceBuilder {
     pub(crate) replica_mode: ::std::option::Option<crate::types::ReplicaMode>,
     pub(crate) license_model: ::std::option::Option<::std::string::String>,
     pub(crate) iops: ::std::option::Option<i32>,
+    pub(crate) storage_throughput: ::std::option::Option<i32>,
     pub(crate) option_group_memberships: ::std::option::Option<::std::vec::Vec<crate::types::OptionGroupMembership>>,
     pub(crate) character_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) nchar_character_set_name: ::std::option::Option<::std::string::String>,
@@ -722,30 +722,30 @@ pub struct DbInstanceBuilder {
     pub(crate) listener_endpoint: ::std::option::Option<crate::types::Endpoint>,
     pub(crate) max_allocated_storage: ::std::option::Option<i32>,
     pub(crate) tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    pub(crate) db_instance_automated_backups_replications:
-        ::std::option::Option<::std::vec::Vec<crate::types::DbInstanceAutomatedBackupsReplication>>,
+    pub(crate) automation_mode: ::std::option::Option<crate::types::AutomationMode>,
+    pub(crate) resume_full_automation_mode_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) customer_owned_ip_enabled: ::std::option::Option<bool>,
-    pub(crate) aws_backup_recovery_point_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) network_type: ::std::option::Option<::std::string::String>,
     pub(crate) activity_stream_status: ::std::option::Option<crate::types::ActivityStreamStatus>,
     pub(crate) activity_stream_kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) activity_stream_kinesis_stream_name: ::std::option::Option<::std::string::String>,
     pub(crate) activity_stream_mode: ::std::option::Option<crate::types::ActivityStreamMode>,
     pub(crate) activity_stream_engine_native_audit_fields_included: ::std::option::Option<bool>,
-    pub(crate) automation_mode: ::std::option::Option<crate::types::AutomationMode>,
-    pub(crate) resume_full_automation_mode_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) custom_iam_instance_profile: ::std::option::Option<::std::string::String>,
+    pub(crate) aws_backup_recovery_point_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) db_instance_automated_backups_replications:
+        ::std::option::Option<::std::vec::Vec<crate::types::DbInstanceAutomatedBackupsReplication>>,
     pub(crate) backup_target: ::std::option::Option<::std::string::String>,
-    pub(crate) network_type: ::std::option::Option<::std::string::String>,
+    pub(crate) automatic_restart_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) custom_iam_instance_profile: ::std::option::Option<::std::string::String>,
     pub(crate) activity_stream_policy_status: ::std::option::Option<crate::types::ActivityStreamPolicyStatus>,
-    pub(crate) storage_throughput: ::std::option::Option<i32>,
+    pub(crate) certificate_details: ::std::option::Option<crate::types::CertificateDetails>,
     pub(crate) db_system_id: ::std::option::Option<::std::string::String>,
     pub(crate) master_user_secret: ::std::option::Option<crate::types::MasterUserSecret>,
-    pub(crate) certificate_details: ::std::option::Option<crate::types::CertificateDetails>,
     pub(crate) read_replica_source_db_cluster_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) percent_progress: ::std::option::Option<::std::string::String>,
+    pub(crate) multi_tenant: ::std::option::Option<bool>,
     pub(crate) dedicated_log_volume: ::std::option::Option<bool>,
     pub(crate) is_storage_config_upgrade_available: ::std::option::Option<bool>,
-    pub(crate) multi_tenant: ::std::option::Option<bool>,
     pub(crate) engine_lifecycle_support: ::std::option::Option<::std::string::String>,
 }
 impl DbInstanceBuilder {
@@ -807,20 +807,6 @@ impl DbInstanceBuilder {
     /// <p>For information about DB instance statuses, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/accessing-monitoring.html#Overview.DBInstance.Status">Viewing DB instance status</a> in the <i>Amazon RDS User Guide.</i></p>
     pub fn get_db_instance_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_instance_status
-    }
-    /// <p>The time when a stopped DB instance is restarted automatically.</p>
-    pub fn automatic_restart_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
-        self.automatic_restart_time = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The time when a stopped DB instance is restarted automatically.</p>
-    pub fn set_automatic_restart_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.automatic_restart_time = input;
-        self
-    }
-    /// <p>The time when a stopped DB instance is restarted automatically.</p>
-    pub fn get_automatic_restart_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
-        &self.automatic_restart_time
     }
     /// <p>The master username for the DB instance.</p>
     pub fn master_username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -1208,6 +1194,23 @@ impl DbInstanceBuilder {
     /// <p>The Provisioned IOPS (I/O operations per second) value for the DB instance.</p>
     pub fn get_iops(&self) -> &::std::option::Option<i32> {
         &self.iops
+    }
+    /// <p>The storage throughput for the DB instance.</p>
+    /// <p>This setting applies only to the <code>gp3</code> storage type.</p>
+    pub fn storage_throughput(mut self, input: i32) -> Self {
+        self.storage_throughput = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The storage throughput for the DB instance.</p>
+    /// <p>This setting applies only to the <code>gp3</code> storage type.</p>
+    pub fn set_storage_throughput(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.storage_throughput = input;
+        self
+    }
+    /// <p>The storage throughput for the DB instance.</p>
+    /// <p>This setting applies only to the <code>gp3</code> storage type.</p>
+    pub fn get_storage_throughput(&self) -> &::std::option::Option<i32> {
+        &self.storage_throughput
     }
     /// Appends an item to `option_group_memberships`.
     ///
@@ -1787,30 +1790,33 @@ impl DbInstanceBuilder {
     pub fn get_tag_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tag_list
     }
-    /// Appends an item to `db_instance_automated_backups_replications`.
-    ///
-    /// To override the contents of this collection use [`set_db_instance_automated_backups_replications`](Self::set_db_instance_automated_backups_replications).
-    ///
-    /// <p>The list of replicated automated backups associated with the DB instance.</p>
-    pub fn db_instance_automated_backups_replications(mut self, input: crate::types::DbInstanceAutomatedBackupsReplication) -> Self {
-        let mut v = self.db_instance_automated_backups_replications.unwrap_or_default();
-        v.push(input);
-        self.db_instance_automated_backups_replications = ::std::option::Option::Some(v);
+    /// <p>The automation mode of the RDS Custom DB instance: <code>full</code> or <code>all paused</code>. If <code>full</code>, the DB instance automates monitoring and instance recovery. If <code>all paused</code>, the instance pauses automation for the duration set by <code>--resume-full-automation-mode-minutes</code>.</p>
+    pub fn automation_mode(mut self, input: crate::types::AutomationMode) -> Self {
+        self.automation_mode = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The list of replicated automated backups associated with the DB instance.</p>
-    pub fn set_db_instance_automated_backups_replications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DbInstanceAutomatedBackupsReplication>>,
-    ) -> Self {
-        self.db_instance_automated_backups_replications = input;
+    /// <p>The automation mode of the RDS Custom DB instance: <code>full</code> or <code>all paused</code>. If <code>full</code>, the DB instance automates monitoring and instance recovery. If <code>all paused</code>, the instance pauses automation for the duration set by <code>--resume-full-automation-mode-minutes</code>.</p>
+    pub fn set_automation_mode(mut self, input: ::std::option::Option<crate::types::AutomationMode>) -> Self {
+        self.automation_mode = input;
         self
     }
-    /// <p>The list of replicated automated backups associated with the DB instance.</p>
-    pub fn get_db_instance_automated_backups_replications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DbInstanceAutomatedBackupsReplication>> {
-        &self.db_instance_automated_backups_replications
+    /// <p>The automation mode of the RDS Custom DB instance: <code>full</code> or <code>all paused</code>. If <code>full</code>, the DB instance automates monitoring and instance recovery. If <code>all paused</code>, the instance pauses automation for the duration set by <code>--resume-full-automation-mode-minutes</code>.</p>
+    pub fn get_automation_mode(&self) -> &::std::option::Option<crate::types::AutomationMode> {
+        &self.automation_mode
+    }
+    /// <p>The number of minutes to pause the automation. When the time period ends, RDS Custom resumes full automation. The minimum value is 60 (default). The maximum value is 1,440.</p>
+    pub fn resume_full_automation_mode_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.resume_full_automation_mode_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of minutes to pause the automation. When the time period ends, RDS Custom resumes full automation. The minimum value is 60 (default). The maximum value is 1,440.</p>
+    pub fn set_resume_full_automation_mode_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.resume_full_automation_mode_time = input;
+        self
+    }
+    /// <p>The number of minutes to pause the automation. When the time period ends, RDS Custom resumes full automation. The minimum value is 60 (default). The maximum value is 1,440.</p>
+    pub fn get_resume_full_automation_mode_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.resume_full_automation_mode_time
     }
     /// <p>Indicates whether a customer-owned IP address (CoIP) is enabled for an RDS on Outposts DB instance.</p>
     /// <p>A <i>CoIP </i>provides local or external connectivity to resources in your Outpost subnets through your on-premises network. For some use cases, a CoIP can provide lower latency for connections to the DB instance from outside of its virtual private cloud (VPC) on your local network.</p>
@@ -1835,19 +1841,28 @@ impl DbInstanceBuilder {
     pub fn get_customer_owned_ip_enabled(&self) -> &::std::option::Option<bool> {
         &self.customer_owned_ip_enabled
     }
-    /// <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.</p>
-    pub fn aws_backup_recovery_point_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.aws_backup_recovery_point_arn = ::std::option::Option::Some(input.into());
+    /// <p>The network type of the DB instance.</p>
+    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i></p>
+    /// <p>Valid Values: <code>IPV4 | DUAL</code></p>
+    pub fn network_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.network_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.</p>
-    pub fn set_aws_backup_recovery_point_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_backup_recovery_point_arn = input;
+    /// <p>The network type of the DB instance.</p>
+    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i></p>
+    /// <p>Valid Values: <code>IPV4 | DUAL</code></p>
+    pub fn set_network_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.network_type = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.</p>
-    pub fn get_aws_backup_recovery_point_arn(&self) -> &::std::option::Option<::std::string::String> {
-        &self.aws_backup_recovery_point_arn
+    /// <p>The network type of the DB instance.</p>
+    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i></p>
+    /// <p>Valid Values: <code>IPV4 | DUAL</code></p>
+    pub fn get_network_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_type
     }
     /// <p>The status of the database activity stream.</p>
     pub fn activity_stream_status(mut self, input: crate::types::ActivityStreamStatus) -> Self {
@@ -1919,33 +1934,72 @@ impl DbInstanceBuilder {
     pub fn get_activity_stream_engine_native_audit_fields_included(&self) -> &::std::option::Option<bool> {
         &self.activity_stream_engine_native_audit_fields_included
     }
-    /// <p>The automation mode of the RDS Custom DB instance: <code>full</code> or <code>all paused</code>. If <code>full</code>, the DB instance automates monitoring and instance recovery. If <code>all paused</code>, the instance pauses automation for the duration set by <code>--resume-full-automation-mode-minutes</code>.</p>
-    pub fn automation_mode(mut self, input: crate::types::AutomationMode) -> Self {
-        self.automation_mode = ::std::option::Option::Some(input);
+    /// <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.</p>
+    pub fn aws_backup_recovery_point_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.aws_backup_recovery_point_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The automation mode of the RDS Custom DB instance: <code>full</code> or <code>all paused</code>. If <code>full</code>, the DB instance automates monitoring and instance recovery. If <code>all paused</code>, the instance pauses automation for the duration set by <code>--resume-full-automation-mode-minutes</code>.</p>
-    pub fn set_automation_mode(mut self, input: ::std::option::Option<crate::types::AutomationMode>) -> Self {
-        self.automation_mode = input;
+    /// <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.</p>
+    pub fn set_aws_backup_recovery_point_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.aws_backup_recovery_point_arn = input;
         self
     }
-    /// <p>The automation mode of the RDS Custom DB instance: <code>full</code> or <code>all paused</code>. If <code>full</code>, the DB instance automates monitoring and instance recovery. If <code>all paused</code>, the instance pauses automation for the duration set by <code>--resume-full-automation-mode-minutes</code>.</p>
-    pub fn get_automation_mode(&self) -> &::std::option::Option<crate::types::AutomationMode> {
-        &self.automation_mode
+    /// <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.</p>
+    pub fn get_aws_backup_recovery_point_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_backup_recovery_point_arn
     }
-    /// <p>The number of minutes to pause the automation. When the time period ends, RDS Custom resumes full automation. The minimum value is 60 (default). The maximum value is 1,440.</p>
-    pub fn resume_full_automation_mode_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
-        self.resume_full_automation_mode_time = ::std::option::Option::Some(input);
+    /// Appends an item to `db_instance_automated_backups_replications`.
+    ///
+    /// To override the contents of this collection use [`set_db_instance_automated_backups_replications`](Self::set_db_instance_automated_backups_replications).
+    ///
+    /// <p>The list of replicated automated backups associated with the DB instance.</p>
+    pub fn db_instance_automated_backups_replications(mut self, input: crate::types::DbInstanceAutomatedBackupsReplication) -> Self {
+        let mut v = self.db_instance_automated_backups_replications.unwrap_or_default();
+        v.push(input);
+        self.db_instance_automated_backups_replications = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The number of minutes to pause the automation. When the time period ends, RDS Custom resumes full automation. The minimum value is 60 (default). The maximum value is 1,440.</p>
-    pub fn set_resume_full_automation_mode_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.resume_full_automation_mode_time = input;
+    /// <p>The list of replicated automated backups associated with the DB instance.</p>
+    pub fn set_db_instance_automated_backups_replications(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DbInstanceAutomatedBackupsReplication>>,
+    ) -> Self {
+        self.db_instance_automated_backups_replications = input;
         self
     }
-    /// <p>The number of minutes to pause the automation. When the time period ends, RDS Custom resumes full automation. The minimum value is 60 (default). The maximum value is 1,440.</p>
-    pub fn get_resume_full_automation_mode_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
-        &self.resume_full_automation_mode_time
+    /// <p>The list of replicated automated backups associated with the DB instance.</p>
+    pub fn get_db_instance_automated_backups_replications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DbInstanceAutomatedBackupsReplication>> {
+        &self.db_instance_automated_backups_replications
+    }
+    /// <p>The location where automated backups and manual snapshots are stored: Dedicated Local Zones, Amazon Web Services Outposts or the Amazon Web Services Region.</p>
+    pub fn backup_target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.backup_target = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The location where automated backups and manual snapshots are stored: Dedicated Local Zones, Amazon Web Services Outposts or the Amazon Web Services Region.</p>
+    pub fn set_backup_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.backup_target = input;
+        self
+    }
+    /// <p>The location where automated backups and manual snapshots are stored: Dedicated Local Zones, Amazon Web Services Outposts or the Amazon Web Services Region.</p>
+    pub fn get_backup_target(&self) -> &::std::option::Option<::std::string::String> {
+        &self.backup_target
+    }
+    /// <p>The time when a stopped DB instance is restarted automatically.</p>
+    pub fn automatic_restart_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.automatic_restart_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The time when a stopped DB instance is restarted automatically.</p>
+    pub fn set_automatic_restart_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.automatic_restart_time = input;
+        self
+    }
+    /// <p>The time when a stopped DB instance is restarted automatically.</p>
+    pub fn get_automatic_restart_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.automatic_restart_time
     }
     /// <p>The instance profile associated with the underlying Amazon EC2 instance of an RDS Custom DB instance. The instance profile must meet the following requirements:</p>
     /// <ul>
@@ -1988,43 +2042,6 @@ impl DbInstanceBuilder {
     pub fn get_custom_iam_instance_profile(&self) -> &::std::option::Option<::std::string::String> {
         &self.custom_iam_instance_profile
     }
-    /// <p>The location where automated backups and manual snapshots are stored: Dedicated Local Zones, Amazon Web Services Outposts or the Amazon Web Services Region.</p>
-    pub fn backup_target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.backup_target = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The location where automated backups and manual snapshots are stored: Dedicated Local Zones, Amazon Web Services Outposts or the Amazon Web Services Region.</p>
-    pub fn set_backup_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.backup_target = input;
-        self
-    }
-    /// <p>The location where automated backups and manual snapshots are stored: Dedicated Local Zones, Amazon Web Services Outposts or the Amazon Web Services Region.</p>
-    pub fn get_backup_target(&self) -> &::std::option::Option<::std::string::String> {
-        &self.backup_target
-    }
-    /// <p>The network type of the DB instance.</p>
-    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i></p>
-    /// <p>Valid Values: <code>IPV4 | DUAL</code></p>
-    pub fn network_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.network_type = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The network type of the DB instance.</p>
-    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i></p>
-    /// <p>Valid Values: <code>IPV4 | DUAL</code></p>
-    pub fn set_network_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.network_type = input;
-        self
-    }
-    /// <p>The network type of the DB instance.</p>
-    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i></p>
-    /// <p>Valid Values: <code>IPV4 | DUAL</code></p>
-    pub fn get_network_type(&self) -> &::std::option::Option<::std::string::String> {
-        &self.network_type
-    }
     /// <p>The status of the policy state of the activity stream.</p>
     pub fn activity_stream_policy_status(mut self, input: crate::types::ActivityStreamPolicyStatus) -> Self {
         self.activity_stream_policy_status = ::std::option::Option::Some(input);
@@ -2039,22 +2056,19 @@ impl DbInstanceBuilder {
     pub fn get_activity_stream_policy_status(&self) -> &::std::option::Option<crate::types::ActivityStreamPolicyStatus> {
         &self.activity_stream_policy_status
     }
-    /// <p>The storage throughput for the DB instance.</p>
-    /// <p>This setting applies only to the <code>gp3</code> storage type.</p>
-    pub fn storage_throughput(mut self, input: i32) -> Self {
-        self.storage_throughput = ::std::option::Option::Some(input);
+    /// <p>The details of the DB instance's server certificate.</p>
+    pub fn certificate_details(mut self, input: crate::types::CertificateDetails) -> Self {
+        self.certificate_details = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The storage throughput for the DB instance.</p>
-    /// <p>This setting applies only to the <code>gp3</code> storage type.</p>
-    pub fn set_storage_throughput(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.storage_throughput = input;
+    /// <p>The details of the DB instance's server certificate.</p>
+    pub fn set_certificate_details(mut self, input: ::std::option::Option<crate::types::CertificateDetails>) -> Self {
+        self.certificate_details = input;
         self
     }
-    /// <p>The storage throughput for the DB instance.</p>
-    /// <p>This setting applies only to the <code>gp3</code> storage type.</p>
-    pub fn get_storage_throughput(&self) -> &::std::option::Option<i32> {
-        &self.storage_throughput
+    /// <p>The details of the DB instance's server certificate.</p>
+    pub fn get_certificate_details(&self) -> &::std::option::Option<crate::types::CertificateDetails> {
+        &self.certificate_details
     }
     /// <p>The Oracle system ID (Oracle SID) for a container database (CDB). The Oracle SID is also the name of the CDB. This setting is only valid for RDS Custom DB instances.</p>
     pub fn db_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -2087,20 +2101,6 @@ impl DbInstanceBuilder {
     pub fn get_master_user_secret(&self) -> &::std::option::Option<crate::types::MasterUserSecret> {
         &self.master_user_secret
     }
-    /// <p>The details of the DB instance's server certificate.</p>
-    pub fn certificate_details(mut self, input: crate::types::CertificateDetails) -> Self {
-        self.certificate_details = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The details of the DB instance's server certificate.</p>
-    pub fn set_certificate_details(mut self, input: ::std::option::Option<crate::types::CertificateDetails>) -> Self {
-        self.certificate_details = input;
-        self
-    }
-    /// <p>The details of the DB instance's server certificate.</p>
-    pub fn get_certificate_details(&self) -> &::std::option::Option<crate::types::CertificateDetails> {
-        &self.certificate_details
-    }
     /// <p>The identifier of the source DB cluster if this DB instance is a read replica.</p>
     pub fn read_replica_source_db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.read_replica_source_db_cluster_identifier = ::std::option::Option::Some(input.into());
@@ -2128,6 +2128,20 @@ impl DbInstanceBuilder {
     /// <p>The progress of the storage optimization operation as a percentage.</p>
     pub fn get_percent_progress(&self) -> &::std::option::Option<::std::string::String> {
         &self.percent_progress
+    }
+    /// <p>Specifies whether the DB instance is in the multi-tenant configuration (TRUE) or the single-tenant configuration (FALSE).</p>
+    pub fn multi_tenant(mut self, input: bool) -> Self {
+        self.multi_tenant = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether the DB instance is in the multi-tenant configuration (TRUE) or the single-tenant configuration (FALSE).</p>
+    pub fn set_multi_tenant(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.multi_tenant = input;
+        self
+    }
+    /// <p>Specifies whether the DB instance is in the multi-tenant configuration (TRUE) or the single-tenant configuration (FALSE).</p>
+    pub fn get_multi_tenant(&self) -> &::std::option::Option<bool> {
+        &self.multi_tenant
     }
     /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.</p>
     pub fn dedicated_log_volume(mut self, input: bool) -> Self {
@@ -2157,20 +2171,6 @@ impl DbInstanceBuilder {
     pub fn get_is_storage_config_upgrade_available(&self) -> &::std::option::Option<bool> {
         &self.is_storage_config_upgrade_available
     }
-    /// <p>Specifies whether the DB instance is in the multi-tenant configuration (TRUE) or the single-tenant configuration (FALSE).</p>
-    pub fn multi_tenant(mut self, input: bool) -> Self {
-        self.multi_tenant = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>Specifies whether the DB instance is in the multi-tenant configuration (TRUE) or the single-tenant configuration (FALSE).</p>
-    pub fn set_multi_tenant(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.multi_tenant = input;
-        self
-    }
-    /// <p>Specifies whether the DB instance is in the multi-tenant configuration (TRUE) or the single-tenant configuration (FALSE).</p>
-    pub fn get_multi_tenant(&self) -> &::std::option::Option<bool> {
-        &self.multi_tenant
-    }
     /// <p>The lifecycle type for the DB instance.</p>
     /// <p>For more information, see CreateDBInstance.</p>
     pub fn engine_lifecycle_support(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -2195,7 +2195,6 @@ impl DbInstanceBuilder {
             db_instance_class: self.db_instance_class,
             engine: self.engine,
             db_instance_status: self.db_instance_status,
-            automatic_restart_time: self.automatic_restart_time,
             master_username: self.master_username,
             db_name: self.db_name,
             endpoint: self.endpoint,
@@ -2220,6 +2219,7 @@ impl DbInstanceBuilder {
             replica_mode: self.replica_mode,
             license_model: self.license_model,
             iops: self.iops,
+            storage_throughput: self.storage_throughput,
             option_group_memberships: self.option_group_memberships,
             character_set_name: self.character_set_name,
             nchar_character_set_name: self.nchar_character_set_name,
@@ -2254,29 +2254,29 @@ impl DbInstanceBuilder {
             listener_endpoint: self.listener_endpoint,
             max_allocated_storage: self.max_allocated_storage,
             tag_list: self.tag_list,
-            db_instance_automated_backups_replications: self.db_instance_automated_backups_replications,
+            automation_mode: self.automation_mode,
+            resume_full_automation_mode_time: self.resume_full_automation_mode_time,
             customer_owned_ip_enabled: self.customer_owned_ip_enabled,
-            aws_backup_recovery_point_arn: self.aws_backup_recovery_point_arn,
+            network_type: self.network_type,
             activity_stream_status: self.activity_stream_status,
             activity_stream_kms_key_id: self.activity_stream_kms_key_id,
             activity_stream_kinesis_stream_name: self.activity_stream_kinesis_stream_name,
             activity_stream_mode: self.activity_stream_mode,
             activity_stream_engine_native_audit_fields_included: self.activity_stream_engine_native_audit_fields_included,
-            automation_mode: self.automation_mode,
-            resume_full_automation_mode_time: self.resume_full_automation_mode_time,
-            custom_iam_instance_profile: self.custom_iam_instance_profile,
+            aws_backup_recovery_point_arn: self.aws_backup_recovery_point_arn,
+            db_instance_automated_backups_replications: self.db_instance_automated_backups_replications,
             backup_target: self.backup_target,
-            network_type: self.network_type,
+            automatic_restart_time: self.automatic_restart_time,
+            custom_iam_instance_profile: self.custom_iam_instance_profile,
             activity_stream_policy_status: self.activity_stream_policy_status,
-            storage_throughput: self.storage_throughput,
+            certificate_details: self.certificate_details,
             db_system_id: self.db_system_id,
             master_user_secret: self.master_user_secret,
-            certificate_details: self.certificate_details,
             read_replica_source_db_cluster_identifier: self.read_replica_source_db_cluster_identifier,
             percent_progress: self.percent_progress,
+            multi_tenant: self.multi_tenant,
             dedicated_log_volume: self.dedicated_log_volume,
             is_storage_config_upgrade_available: self.is_storage_config_upgrade_available,
-            multi_tenant: self.multi_tenant,
             engine_lifecycle_support: self.engine_lifecycle_support,
         }
     }

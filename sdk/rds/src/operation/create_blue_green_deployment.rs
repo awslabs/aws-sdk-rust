@@ -278,6 +278,8 @@ pub enum CreateBlueGreenDeploymentError {
     SourceClusterNotSupportedFault(crate::types::error::SourceClusterNotSupportedFault),
     /// <p>The source DB instance isn't supported for a blue/green deployment.</p>
     SourceDatabaseNotSupportedFault(crate::types::error::SourceDatabaseNotSupportedFault),
+    /// <p>The request would result in the user exceeding the allowed amount of storage available across all DB instances.</p>
+    StorageQuotaExceededFault(crate::types::error::StorageQuotaExceededFault),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -322,6 +324,7 @@ impl CreateBlueGreenDeploymentError {
             Self::InvalidDbInstanceStateFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::SourceClusterNotSupportedFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::SourceDatabaseNotSupportedFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::StorageQuotaExceededFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
     }
@@ -369,6 +372,10 @@ impl CreateBlueGreenDeploymentError {
     pub fn is_source_database_not_supported_fault(&self) -> bool {
         matches!(self, Self::SourceDatabaseNotSupportedFault(_))
     }
+    /// Returns `true` if the error kind is `CreateBlueGreenDeploymentError::StorageQuotaExceededFault`.
+    pub fn is_storage_quota_exceeded_fault(&self) -> bool {
+        matches!(self, Self::StorageQuotaExceededFault(_))
+    }
 }
 impl ::std::error::Error for CreateBlueGreenDeploymentError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
@@ -384,6 +391,7 @@ impl ::std::error::Error for CreateBlueGreenDeploymentError {
             Self::InvalidDbInstanceStateFault(_inner) => ::std::option::Option::Some(_inner),
             Self::SourceClusterNotSupportedFault(_inner) => ::std::option::Option::Some(_inner),
             Self::SourceDatabaseNotSupportedFault(_inner) => ::std::option::Option::Some(_inner),
+            Self::StorageQuotaExceededFault(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
     }
@@ -402,6 +410,7 @@ impl ::std::fmt::Display for CreateBlueGreenDeploymentError {
             Self::InvalidDbInstanceStateFault(_inner) => _inner.fmt(f),
             Self::SourceClusterNotSupportedFault(_inner) => _inner.fmt(f),
             Self::SourceDatabaseNotSupportedFault(_inner) => _inner.fmt(f),
+            Self::StorageQuotaExceededFault(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -434,6 +443,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateBlueGre
             Self::InvalidDbInstanceStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::SourceClusterNotSupportedFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::SourceDatabaseNotSupportedFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::StorageQuotaExceededFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }
     }

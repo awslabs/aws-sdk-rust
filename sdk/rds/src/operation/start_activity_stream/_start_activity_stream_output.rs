@@ -11,10 +11,10 @@ pub struct StartActivityStreamOutput {
     pub status: ::std::option::Option<crate::types::ActivityStreamStatus>,
     /// <p>The mode of the database activity stream.</p>
     pub mode: ::std::option::Option<crate::types::ActivityStreamMode>,
-    /// <p>Indicates whether or not the database activity stream will start as soon as possible, regardless of the maintenance window for the database.</p>
-    pub apply_immediately: ::std::option::Option<bool>,
     /// <p>Indicates whether engine-native audit fields are included in the database activity stream.</p>
     pub engine_native_audit_fields_included: ::std::option::Option<bool>,
+    /// <p>Indicates whether or not the database activity stream will start as soon as possible, regardless of the maintenance window for the database.</p>
+    pub apply_immediately: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl StartActivityStreamOutput {
@@ -34,13 +34,13 @@ impl StartActivityStreamOutput {
     pub fn mode(&self) -> ::std::option::Option<&crate::types::ActivityStreamMode> {
         self.mode.as_ref()
     }
-    /// <p>Indicates whether or not the database activity stream will start as soon as possible, regardless of the maintenance window for the database.</p>
-    pub fn apply_immediately(&self) -> ::std::option::Option<bool> {
-        self.apply_immediately
-    }
     /// <p>Indicates whether engine-native audit fields are included in the database activity stream.</p>
     pub fn engine_native_audit_fields_included(&self) -> ::std::option::Option<bool> {
         self.engine_native_audit_fields_included
+    }
+    /// <p>Indicates whether or not the database activity stream will start as soon as possible, regardless of the maintenance window for the database.</p>
+    pub fn apply_immediately(&self) -> ::std::option::Option<bool> {
+        self.apply_immediately
     }
 }
 impl ::aws_types::request_id::RequestId for StartActivityStreamOutput {
@@ -63,8 +63,8 @@ pub struct StartActivityStreamOutputBuilder {
     pub(crate) kinesis_stream_name: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ActivityStreamStatus>,
     pub(crate) mode: ::std::option::Option<crate::types::ActivityStreamMode>,
-    pub(crate) apply_immediately: ::std::option::Option<bool>,
     pub(crate) engine_native_audit_fields_included: ::std::option::Option<bool>,
+    pub(crate) apply_immediately: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl StartActivityStreamOutputBuilder {
@@ -124,20 +124,6 @@ impl StartActivityStreamOutputBuilder {
     pub fn get_mode(&self) -> &::std::option::Option<crate::types::ActivityStreamMode> {
         &self.mode
     }
-    /// <p>Indicates whether or not the database activity stream will start as soon as possible, regardless of the maintenance window for the database.</p>
-    pub fn apply_immediately(mut self, input: bool) -> Self {
-        self.apply_immediately = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>Indicates whether or not the database activity stream will start as soon as possible, regardless of the maintenance window for the database.</p>
-    pub fn set_apply_immediately(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.apply_immediately = input;
-        self
-    }
-    /// <p>Indicates whether or not the database activity stream will start as soon as possible, regardless of the maintenance window for the database.</p>
-    pub fn get_apply_immediately(&self) -> &::std::option::Option<bool> {
-        &self.apply_immediately
-    }
     /// <p>Indicates whether engine-native audit fields are included in the database activity stream.</p>
     pub fn engine_native_audit_fields_included(mut self, input: bool) -> Self {
         self.engine_native_audit_fields_included = ::std::option::Option::Some(input);
@@ -151,6 +137,20 @@ impl StartActivityStreamOutputBuilder {
     /// <p>Indicates whether engine-native audit fields are included in the database activity stream.</p>
     pub fn get_engine_native_audit_fields_included(&self) -> &::std::option::Option<bool> {
         &self.engine_native_audit_fields_included
+    }
+    /// <p>Indicates whether or not the database activity stream will start as soon as possible, regardless of the maintenance window for the database.</p>
+    pub fn apply_immediately(mut self, input: bool) -> Self {
+        self.apply_immediately = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether or not the database activity stream will start as soon as possible, regardless of the maintenance window for the database.</p>
+    pub fn set_apply_immediately(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.apply_immediately = input;
+        self
+    }
+    /// <p>Indicates whether or not the database activity stream will start as soon as possible, regardless of the maintenance window for the database.</p>
+    pub fn get_apply_immediately(&self) -> &::std::option::Option<bool> {
+        &self.apply_immediately
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
@@ -168,8 +168,8 @@ impl StartActivityStreamOutputBuilder {
             kinesis_stream_name: self.kinesis_stream_name,
             status: self.status,
             mode: self.mode,
-            apply_immediately: self.apply_immediately,
             engine_native_audit_fields_included: self.engine_native_audit_fields_included,
+            apply_immediately: self.apply_immediately,
             _request_id: self._request_id,
         }
     }

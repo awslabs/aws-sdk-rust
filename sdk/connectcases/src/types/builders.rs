@@ -69,6 +69,10 @@ pub use crate::types::_audit_event_performed_by::AuditEventPerformedByBuilder;
 
 pub use crate::types::_audit_event_field::AuditEventFieldBuilder;
 
+pub use crate::types::_custom_input_content::CustomInputContentBuilder;
+
+pub use crate::types::_connect_case_input_content::ConnectCaseInputContentBuilder;
+
 pub use crate::types::_sla_input_configuration::SlaInputConfigurationBuilder;
 
 pub use crate::types::_file_content::FileContentBuilder;
@@ -79,11 +83,19 @@ pub use crate::types::_contact::ContactBuilder;
 
 pub use crate::types::_search_related_items_response_item::SearchRelatedItemsResponseItemBuilder;
 
+pub use crate::types::_custom_content::CustomContentBuilder;
+
+pub use crate::types::_connect_case_content::ConnectCaseContentBuilder;
+
 pub use crate::types::_sla_content::SlaContentBuilder;
 
 pub use crate::types::_sla_configuration::SlaConfigurationBuilder;
 
 pub use crate::types::_contact_content::ContactContentBuilder;
+
+pub use crate::types::_custom_filter::CustomFilterBuilder;
+
+pub use crate::types::_connect_case_filter::ConnectCaseFilterBuilder;
 
 pub use crate::types::_sla_filter::SlaFilterBuilder;
 

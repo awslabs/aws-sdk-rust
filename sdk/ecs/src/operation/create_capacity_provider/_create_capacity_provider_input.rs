@@ -5,8 +5,12 @@
 pub struct CreateCapacityProviderInput {
     /// <p>The name of the capacity provider. Up to 255 characters are allowed. They include letters (both upper and lowercase letters), numbers, underscores (_), and hyphens (-). The name can't be prefixed with "<code>aws</code>", "<code>ecs</code>", or "<code>fargate</code>".</p>
     pub name: ::std::option::Option<::std::string::String>,
+    /// <p>The name of the cluster to associate with the capacity provider. When you create a capacity provider with Amazon ECS Managed Instances, it becomes available only within the specified cluster.</p>
+    pub cluster: ::std::option::Option<::std::string::String>,
     /// <p>The details of the Auto Scaling group for the capacity provider.</p>
     pub auto_scaling_group_provider: ::std::option::Option<crate::types::AutoScalingGroupProvider>,
+    /// <p>The configuration for the Amazon ECS Managed Instances provider. This configuration specifies how Amazon ECS manages Amazon EC2 instances on your behalf, including the infrastructure role, instance launch template, and tag propagation settings.</p>
+    pub managed_instances_provider: ::std::option::Option<crate::types::CreateManagedInstancesProviderConfiguration>,
     /// <p>The metadata that you apply to the capacity provider to categorize and organize them more conveniently. Each tag consists of a key and an optional value. You define both of them.</p>
     /// <p>The following basic restrictions apply to tags:</p>
     /// <ul>
@@ -32,9 +36,17 @@ impl CreateCapacityProviderInput {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
+    /// <p>The name of the cluster to associate with the capacity provider. When you create a capacity provider with Amazon ECS Managed Instances, it becomes available only within the specified cluster.</p>
+    pub fn cluster(&self) -> ::std::option::Option<&str> {
+        self.cluster.as_deref()
+    }
     /// <p>The details of the Auto Scaling group for the capacity provider.</p>
     pub fn auto_scaling_group_provider(&self) -> ::std::option::Option<&crate::types::AutoScalingGroupProvider> {
         self.auto_scaling_group_provider.as_ref()
+    }
+    /// <p>The configuration for the Amazon ECS Managed Instances provider. This configuration specifies how Amazon ECS manages Amazon EC2 instances on your behalf, including the infrastructure role, instance launch template, and tag propagation settings.</p>
+    pub fn managed_instances_provider(&self) -> ::std::option::Option<&crate::types::CreateManagedInstancesProviderConfiguration> {
+        self.managed_instances_provider.as_ref()
     }
     /// <p>The metadata that you apply to the capacity provider to categorize and organize them more conveniently. Each tag consists of a key and an optional value. You define both of them.</p>
     /// <p>The following basic restrictions apply to tags:</p>
@@ -72,7 +84,9 @@ impl CreateCapacityProviderInput {
 #[non_exhaustive]
 pub struct CreateCapacityProviderInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) cluster: ::std::option::Option<::std::string::String>,
     pub(crate) auto_scaling_group_provider: ::std::option::Option<crate::types::AutoScalingGroupProvider>,
+    pub(crate) managed_instances_provider: ::std::option::Option<crate::types::CreateManagedInstancesProviderConfiguration>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateCapacityProviderInputBuilder {
@@ -91,8 +105,21 @@ impl CreateCapacityProviderInputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
+    /// <p>The name of the cluster to associate with the capacity provider. When you create a capacity provider with Amazon ECS Managed Instances, it becomes available only within the specified cluster.</p>
+    pub fn cluster(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cluster = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the cluster to associate with the capacity provider. When you create a capacity provider with Amazon ECS Managed Instances, it becomes available only within the specified cluster.</p>
+    pub fn set_cluster(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.cluster = input;
+        self
+    }
+    /// <p>The name of the cluster to associate with the capacity provider. When you create a capacity provider with Amazon ECS Managed Instances, it becomes available only within the specified cluster.</p>
+    pub fn get_cluster(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster
+    }
     /// <p>The details of the Auto Scaling group for the capacity provider.</p>
-    /// This field is required.
     pub fn auto_scaling_group_provider(mut self, input: crate::types::AutoScalingGroupProvider) -> Self {
         self.auto_scaling_group_provider = ::std::option::Option::Some(input);
         self
@@ -105,6 +132,20 @@ impl CreateCapacityProviderInputBuilder {
     /// <p>The details of the Auto Scaling group for the capacity provider.</p>
     pub fn get_auto_scaling_group_provider(&self) -> &::std::option::Option<crate::types::AutoScalingGroupProvider> {
         &self.auto_scaling_group_provider
+    }
+    /// <p>The configuration for the Amazon ECS Managed Instances provider. This configuration specifies how Amazon ECS manages Amazon EC2 instances on your behalf, including the infrastructure role, instance launch template, and tag propagation settings.</p>
+    pub fn managed_instances_provider(mut self, input: crate::types::CreateManagedInstancesProviderConfiguration) -> Self {
+        self.managed_instances_provider = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration for the Amazon ECS Managed Instances provider. This configuration specifies how Amazon ECS manages Amazon EC2 instances on your behalf, including the infrastructure role, instance launch template, and tag propagation settings.</p>
+    pub fn set_managed_instances_provider(mut self, input: ::std::option::Option<crate::types::CreateManagedInstancesProviderConfiguration>) -> Self {
+        self.managed_instances_provider = input;
+        self
+    }
+    /// <p>The configuration for the Amazon ECS Managed Instances provider. This configuration specifies how Amazon ECS manages Amazon EC2 instances on your behalf, including the infrastructure role, instance launch template, and tag propagation settings.</p>
+    pub fn get_managed_instances_provider(&self) -> &::std::option::Option<crate::types::CreateManagedInstancesProviderConfiguration> {
+        &self.managed_instances_provider
     }
     /// Appends an item to `tags`.
     ///
@@ -186,7 +227,9 @@ impl CreateCapacityProviderInputBuilder {
     > {
         ::std::result::Result::Ok(crate::operation::create_capacity_provider::CreateCapacityProviderInput {
             name: self.name,
+            cluster: self.cluster,
             auto_scaling_group_provider: self.auto_scaling_group_provider,
+            managed_instances_provider: self.managed_instances_provider,
             tags: self.tags,
         })
     }

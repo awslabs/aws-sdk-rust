@@ -262,6 +262,8 @@ pub enum ModifyDBSubnetGroupError {
     DbSubnetGroupNotFoundFault(crate::types::error::DbSubnetGroupNotFoundFault),
     /// <p>The request would result in the user exceeding the allowed number of subnets in a DB subnet groups.</p>
     DbSubnetQuotaExceededFault(crate::types::error::DbSubnetQuotaExceededFault),
+    /// <p>The DB subnet group cannot be deleted because it's in use.</p>
+    InvalidDbSubnetGroupStateFault(crate::types::error::InvalidDbSubnetGroupStateFault),
     /// <p>The requested subnet is invalid, or multiple subnets were requested that are not all in a common VPC.</p>
     InvalidSubnet(crate::types::error::InvalidSubnet),
     /// <p>The DB subnet is already in use in the Availability Zone.</p>
@@ -302,6 +304,7 @@ impl ModifyDBSubnetGroupError {
             Self::DbSubnetGroupDoesNotCoverEnoughAZs(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::DbSubnetGroupNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::DbSubnetQuotaExceededFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidDbSubnetGroupStateFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidSubnet(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::SubnetAlreadyInUse(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
@@ -319,6 +322,10 @@ impl ModifyDBSubnetGroupError {
     pub fn is_db_subnet_quota_exceeded_fault(&self) -> bool {
         matches!(self, Self::DbSubnetQuotaExceededFault(_))
     }
+    /// Returns `true` if the error kind is `ModifyDBSubnetGroupError::InvalidDbSubnetGroupStateFault`.
+    pub fn is_invalid_db_subnet_group_state_fault(&self) -> bool {
+        matches!(self, Self::InvalidDbSubnetGroupStateFault(_))
+    }
     /// Returns `true` if the error kind is `ModifyDBSubnetGroupError::InvalidSubnet`.
     pub fn is_invalid_subnet(&self) -> bool {
         matches!(self, Self::InvalidSubnet(_))
@@ -334,6 +341,7 @@ impl ::std::error::Error for ModifyDBSubnetGroupError {
             Self::DbSubnetGroupDoesNotCoverEnoughAZs(_inner) => ::std::option::Option::Some(_inner),
             Self::DbSubnetGroupNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::DbSubnetQuotaExceededFault(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidDbSubnetGroupStateFault(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidSubnet(_inner) => ::std::option::Option::Some(_inner),
             Self::SubnetAlreadyInUse(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
@@ -346,6 +354,7 @@ impl ::std::fmt::Display for ModifyDBSubnetGroupError {
             Self::DbSubnetGroupDoesNotCoverEnoughAZs(_inner) => _inner.fmt(f),
             Self::DbSubnetGroupNotFoundFault(_inner) => _inner.fmt(f),
             Self::DbSubnetQuotaExceededFault(_inner) => _inner.fmt(f),
+            Self::InvalidDbSubnetGroupStateFault(_inner) => _inner.fmt(f),
             Self::InvalidSubnet(_inner) => _inner.fmt(f),
             Self::SubnetAlreadyInUse(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
@@ -372,6 +381,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ModifyDBSubne
             Self::DbSubnetGroupDoesNotCoverEnoughAZs(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DbSubnetGroupNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DbSubnetQuotaExceededFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidDbSubnetGroupStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidSubnet(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::SubnetAlreadyInUse(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,

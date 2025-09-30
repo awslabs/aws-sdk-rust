@@ -97,6 +97,8 @@ pub(crate) mod shape_get_integration;
 
 pub(crate) mod shape_get_matches;
 
+pub(crate) mod shape_get_profile_history_record;
+
 pub(crate) mod shape_get_profile_object_type;
 
 pub(crate) mod shape_get_profile_object_type_template;
@@ -140,6 +142,8 @@ pub(crate) mod shape_list_integrations;
 pub(crate) mod shape_list_object_type_attributes;
 
 pub(crate) mod shape_list_profile_attribute_values;
+
+pub(crate) mod shape_list_profile_history_records;
 
 pub(crate) mod shape_list_profile_object_type_templates;
 
@@ -246,6 +250,8 @@ pub(crate) mod shape_get_similar_profiles_input;
 pub(crate) mod shape_internal_server_exception;
 
 pub(crate) mod shape_list_account_integrations_input;
+
+pub(crate) mod shape_list_profile_history_records_input;
 
 pub(crate) mod shape_list_profile_objects_input;
 
@@ -369,6 +375,8 @@ pub(crate) mod shape_object_type_key;
 
 pub(crate) mod shape_object_type_names;
 
+pub(crate) mod shape_profile_history_records;
+
 pub(crate) mod shape_profile_id_list;
 
 pub(crate) mod shape_profile_list;
@@ -486,6 +494,8 @@ pub(crate) mod shape_period;
 pub(crate) mod shape_periods;
 
 pub(crate) mod shape_profile;
+
+pub(crate) mod shape_profile_history_record;
 
 pub(crate) mod shape_profile_query_failures;
 

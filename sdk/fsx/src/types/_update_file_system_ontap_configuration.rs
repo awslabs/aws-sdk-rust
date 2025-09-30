@@ -51,6 +51,8 @@ pub struct UpdateFileSystemOntapConfiguration {
     pub throughput_capacity_per_ha_pair: ::std::option::Option<i32>,
     /// <p>Use to update the number of high-availability (HA) pairs for a second-generation single-AZ file system. If you increase the number of HA pairs for your file system, you must specify proportional increases for <code>StorageCapacity</code>, <code>Iops</code>, and <code>ThroughputCapacity</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/administering-file-systems.html#HA-pairs">High-availability (HA) pairs</a> in the FSx for ONTAP user guide. Block storage protocol support (iSCSI and NVMe over TCP) is disabled on file systems with more than 6 HA pairs. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/supported-fsx-clients.html#using-block-storage">Using block storage protocols</a>.</p>
     pub ha_pairs: ::std::option::Option<i32>,
+    /// <p>(Multi-AZ only) Specifies the IPv6 address range in which the endpoints to access your file system will be created. By default in the Amazon FSx API and Amazon FSx console, Amazon FSx selects an available /118 IP address range for you from one of the VPC's CIDR ranges. You can have overlapping endpoint IP addresses for file systems deployed in the same VPC/route tables, as long as they don't overlap with any subnet.</p>
+    pub endpoint_ipv6_address_range: ::std::option::Option<::std::string::String>,
 }
 impl UpdateFileSystemOntapConfiguration {
     /// <p>The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic backups. You can retain automatic backups for a maximum of 90 days. The default is <code>30</code>.</p>
@@ -124,6 +126,10 @@ impl UpdateFileSystemOntapConfiguration {
     pub fn ha_pairs(&self) -> ::std::option::Option<i32> {
         self.ha_pairs
     }
+    /// <p>(Multi-AZ only) Specifies the IPv6 address range in which the endpoints to access your file system will be created. By default in the Amazon FSx API and Amazon FSx console, Amazon FSx selects an available /118 IP address range for you from one of the VPC's CIDR ranges. You can have overlapping endpoint IP addresses for file systems deployed in the same VPC/route tables, as long as they don't overlap with any subnet.</p>
+    pub fn endpoint_ipv6_address_range(&self) -> ::std::option::Option<&str> {
+        self.endpoint_ipv6_address_range.as_deref()
+    }
 }
 impl ::std::fmt::Debug for UpdateFileSystemOntapConfiguration {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -138,6 +144,7 @@ impl ::std::fmt::Debug for UpdateFileSystemOntapConfiguration {
         formatter.field("remove_route_table_ids", &self.remove_route_table_ids);
         formatter.field("throughput_capacity_per_ha_pair", &self.throughput_capacity_per_ha_pair);
         formatter.field("ha_pairs", &self.ha_pairs);
+        formatter.field("endpoint_ipv6_address_range", &self.endpoint_ipv6_address_range);
         formatter.finish()
     }
 }
@@ -162,6 +169,7 @@ pub struct UpdateFileSystemOntapConfigurationBuilder {
     pub(crate) remove_route_table_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) throughput_capacity_per_ha_pair: ::std::option::Option<i32>,
     pub(crate) ha_pairs: ::std::option::Option<i32>,
+    pub(crate) endpoint_ipv6_address_range: ::std::option::Option<::std::string::String>,
 }
 impl UpdateFileSystemOntapConfigurationBuilder {
     /// <p>The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic backups. You can retain automatic backups for a maximum of 90 days. The default is <code>30</code>.</p>
@@ -397,6 +405,20 @@ impl UpdateFileSystemOntapConfigurationBuilder {
     pub fn get_ha_pairs(&self) -> &::std::option::Option<i32> {
         &self.ha_pairs
     }
+    /// <p>(Multi-AZ only) Specifies the IPv6 address range in which the endpoints to access your file system will be created. By default in the Amazon FSx API and Amazon FSx console, Amazon FSx selects an available /118 IP address range for you from one of the VPC's CIDR ranges. You can have overlapping endpoint IP addresses for file systems deployed in the same VPC/route tables, as long as they don't overlap with any subnet.</p>
+    pub fn endpoint_ipv6_address_range(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.endpoint_ipv6_address_range = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>(Multi-AZ only) Specifies the IPv6 address range in which the endpoints to access your file system will be created. By default in the Amazon FSx API and Amazon FSx console, Amazon FSx selects an available /118 IP address range for you from one of the VPC's CIDR ranges. You can have overlapping endpoint IP addresses for file systems deployed in the same VPC/route tables, as long as they don't overlap with any subnet.</p>
+    pub fn set_endpoint_ipv6_address_range(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.endpoint_ipv6_address_range = input;
+        self
+    }
+    /// <p>(Multi-AZ only) Specifies the IPv6 address range in which the endpoints to access your file system will be created. By default in the Amazon FSx API and Amazon FSx console, Amazon FSx selects an available /118 IP address range for you from one of the VPC's CIDR ranges. You can have overlapping endpoint IP addresses for file systems deployed in the same VPC/route tables, as long as they don't overlap with any subnet.</p>
+    pub fn get_endpoint_ipv6_address_range(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_ipv6_address_range
+    }
     /// Consumes the builder and constructs a [`UpdateFileSystemOntapConfiguration`](crate::types::UpdateFileSystemOntapConfiguration).
     pub fn build(self) -> crate::types::UpdateFileSystemOntapConfiguration {
         crate::types::UpdateFileSystemOntapConfiguration {
@@ -410,6 +432,7 @@ impl UpdateFileSystemOntapConfigurationBuilder {
             remove_route_table_ids: self.remove_route_table_ids,
             throughput_capacity_per_ha_pair: self.throughput_capacity_per_ha_pair,
             ha_pairs: self.ha_pairs,
+            endpoint_ipv6_address_range: self.endpoint_ipv6_address_range,
         }
     }
 }
@@ -426,6 +449,7 @@ impl ::std::fmt::Debug for UpdateFileSystemOntapConfigurationBuilder {
         formatter.field("remove_route_table_ids", &self.remove_route_table_ids);
         formatter.field("throughput_capacity_per_ha_pair", &self.throughput_capacity_per_ha_pair);
         formatter.field("ha_pairs", &self.ha_pairs);
+        formatter.field("endpoint_ipv6_address_range", &self.endpoint_ipv6_address_range);
         formatter.finish()
     }
 }

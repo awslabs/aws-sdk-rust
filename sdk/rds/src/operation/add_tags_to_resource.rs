@@ -259,16 +259,26 @@ pub enum AddTagsToResourceError {
     DbClusterNotFoundFault(crate::types::error::DbClusterNotFoundFault),
     /// <p><code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.</p>
     DbInstanceNotFoundFault(crate::types::error::DbInstanceNotFoundFault),
+    /// <p>The DB proxy endpoint doesn't exist.</p>
+    DbProxyEndpointNotFoundFault(crate::types::error::DbProxyEndpointNotFoundFault),
     /// <p>The specified proxy name doesn't correspond to a proxy owned by your Amazon Web Services account in the specified Amazon Web Services Region.</p>
     DbProxyNotFoundFault(crate::types::error::DbProxyNotFoundFault),
     /// <p>The specified target group isn't available for a proxy owned by your Amazon Web Services account in the specified Amazon Web Services Region.</p>
     DbProxyTargetGroupNotFoundFault(crate::types::error::DbProxyTargetGroupNotFoundFault),
+    /// <p>The specified DB shard group name wasn't found.</p>
+    DbShardGroupNotFoundFault(crate::types::error::DbShardGroupNotFoundFault),
     /// <p><code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.</p>
     DbSnapshotNotFoundFault(crate::types::error::DbSnapshotNotFoundFault),
     /// <p>The specified snapshot tenant database wasn't found.</p>
     DbSnapshotTenantDatabaseNotFoundFault(crate::types::error::DbSnapshotTenantDatabaseNotFoundFault),
     /// <p>The specified integration could not be found.</p>
     IntegrationNotFoundFault(crate::types::error::IntegrationNotFoundFault),
+    /// <p>The requested operation can't be performed on the endpoint while the endpoint is in this state.</p>
+    InvalidDbClusterEndpointStateFault(crate::types::error::InvalidDbClusterEndpointStateFault),
+    /// <p>The requested operation can't be performed while the cluster is in this state.</p>
+    InvalidDbClusterStateFault(crate::types::error::InvalidDbClusterStateFault),
+    /// <p>The DB instance isn't in a valid state.</p>
+    InvalidDbInstanceStateFault(crate::types::error::InvalidDbInstanceStateFault),
     /// <p>The specified tenant database wasn't found in the DB instance.</p>
     TenantDatabaseNotFoundFault(crate::types::error::TenantDatabaseNotFoundFault),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -307,11 +317,16 @@ impl AddTagsToResourceError {
             Self::BlueGreenDeploymentNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::DbClusterNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::DbInstanceNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::DbProxyEndpointNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::DbProxyNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::DbProxyTargetGroupNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::DbShardGroupNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::DbSnapshotNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::DbSnapshotTenantDatabaseNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::IntegrationNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidDbClusterEndpointStateFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidDbClusterStateFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidDbInstanceStateFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::TenantDatabaseNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
@@ -328,6 +343,10 @@ impl AddTagsToResourceError {
     pub fn is_db_instance_not_found_fault(&self) -> bool {
         matches!(self, Self::DbInstanceNotFoundFault(_))
     }
+    /// Returns `true` if the error kind is `AddTagsToResourceError::DbProxyEndpointNotFoundFault`.
+    pub fn is_db_proxy_endpoint_not_found_fault(&self) -> bool {
+        matches!(self, Self::DbProxyEndpointNotFoundFault(_))
+    }
     /// Returns `true` if the error kind is `AddTagsToResourceError::DbProxyNotFoundFault`.
     pub fn is_db_proxy_not_found_fault(&self) -> bool {
         matches!(self, Self::DbProxyNotFoundFault(_))
@@ -335,6 +354,10 @@ impl AddTagsToResourceError {
     /// Returns `true` if the error kind is `AddTagsToResourceError::DbProxyTargetGroupNotFoundFault`.
     pub fn is_db_proxy_target_group_not_found_fault(&self) -> bool {
         matches!(self, Self::DbProxyTargetGroupNotFoundFault(_))
+    }
+    /// Returns `true` if the error kind is `AddTagsToResourceError::DbShardGroupNotFoundFault`.
+    pub fn is_db_shard_group_not_found_fault(&self) -> bool {
+        matches!(self, Self::DbShardGroupNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `AddTagsToResourceError::DbSnapshotNotFoundFault`.
     pub fn is_db_snapshot_not_found_fault(&self) -> bool {
@@ -348,6 +371,18 @@ impl AddTagsToResourceError {
     pub fn is_integration_not_found_fault(&self) -> bool {
         matches!(self, Self::IntegrationNotFoundFault(_))
     }
+    /// Returns `true` if the error kind is `AddTagsToResourceError::InvalidDbClusterEndpointStateFault`.
+    pub fn is_invalid_db_cluster_endpoint_state_fault(&self) -> bool {
+        matches!(self, Self::InvalidDbClusterEndpointStateFault(_))
+    }
+    /// Returns `true` if the error kind is `AddTagsToResourceError::InvalidDbClusterStateFault`.
+    pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
+        matches!(self, Self::InvalidDbClusterStateFault(_))
+    }
+    /// Returns `true` if the error kind is `AddTagsToResourceError::InvalidDbInstanceStateFault`.
+    pub fn is_invalid_db_instance_state_fault(&self) -> bool {
+        matches!(self, Self::InvalidDbInstanceStateFault(_))
+    }
     /// Returns `true` if the error kind is `AddTagsToResourceError::TenantDatabaseNotFoundFault`.
     pub fn is_tenant_database_not_found_fault(&self) -> bool {
         matches!(self, Self::TenantDatabaseNotFoundFault(_))
@@ -359,11 +394,16 @@ impl ::std::error::Error for AddTagsToResourceError {
             Self::BlueGreenDeploymentNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::DbClusterNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::DbInstanceNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
+            Self::DbProxyEndpointNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::DbProxyNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::DbProxyTargetGroupNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
+            Self::DbShardGroupNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::DbSnapshotNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::DbSnapshotTenantDatabaseNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::IntegrationNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidDbClusterEndpointStateFault(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidDbClusterStateFault(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidDbInstanceStateFault(_inner) => ::std::option::Option::Some(_inner),
             Self::TenantDatabaseNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
@@ -375,11 +415,16 @@ impl ::std::fmt::Display for AddTagsToResourceError {
             Self::BlueGreenDeploymentNotFoundFault(_inner) => _inner.fmt(f),
             Self::DbClusterNotFoundFault(_inner) => _inner.fmt(f),
             Self::DbInstanceNotFoundFault(_inner) => _inner.fmt(f),
+            Self::DbProxyEndpointNotFoundFault(_inner) => _inner.fmt(f),
             Self::DbProxyNotFoundFault(_inner) => _inner.fmt(f),
             Self::DbProxyTargetGroupNotFoundFault(_inner) => _inner.fmt(f),
+            Self::DbShardGroupNotFoundFault(_inner) => _inner.fmt(f),
             Self::DbSnapshotNotFoundFault(_inner) => _inner.fmt(f),
             Self::DbSnapshotTenantDatabaseNotFoundFault(_inner) => _inner.fmt(f),
             Self::IntegrationNotFoundFault(_inner) => _inner.fmt(f),
+            Self::InvalidDbClusterEndpointStateFault(_inner) => _inner.fmt(f),
+            Self::InvalidDbClusterStateFault(_inner) => _inner.fmt(f),
+            Self::InvalidDbInstanceStateFault(_inner) => _inner.fmt(f),
             Self::TenantDatabaseNotFoundFault(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
@@ -405,11 +450,16 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for AddTagsToReso
             Self::BlueGreenDeploymentNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DbClusterNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DbInstanceNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::DbProxyEndpointNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DbProxyNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DbProxyTargetGroupNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::DbShardGroupNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DbSnapshotNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DbSnapshotTenantDatabaseNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::IntegrationNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidDbClusterEndpointStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidDbClusterStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidDbInstanceStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::TenantDatabaseNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }

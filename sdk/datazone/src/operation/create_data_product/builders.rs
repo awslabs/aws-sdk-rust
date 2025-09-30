@@ -34,8 +34,6 @@ impl crate::operation::create_data_product::builders::CreateDataProductInputBuil
 /// <p>The name must be unique within the domain (no existing data product with the same name).</p></li>
 /// <li>
 /// <p>User must have create permissions for data products in the project.</p></li>
-/// <li>
-/// <p>The domain must have Amazon DataZone publishing enabled.</p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateDataProductFluentBuilder {

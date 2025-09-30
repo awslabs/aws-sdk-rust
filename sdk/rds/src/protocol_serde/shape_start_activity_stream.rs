@@ -217,23 +217,8 @@ pub fn de_start_activity_stream(
                 builder = builder.set_mode(var_4);
             }
             ,
-            s if s.matches("ApplyImmediately") /* ApplyImmediately com.amazonaws.rds.synthetic#StartActivityStreamOutput$ApplyImmediately */ =>  {
-                let var_5 =
-                    Some(
-                         {
-                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_apply_immediately(var_5);
-            }
-            ,
             s if s.matches("EngineNativeAuditFieldsIncluded") /* EngineNativeAuditFieldsIncluded com.amazonaws.rds.synthetic#StartActivityStreamOutput$EngineNativeAuditFieldsIncluded */ =>  {
-                let var_6 =
+                let var_5 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -244,7 +229,22 @@ pub fn de_start_activity_stream(
                         ?
                     )
                 ;
-                builder = builder.set_engine_native_audit_fields_included(var_6);
+                builder = builder.set_engine_native_audit_fields_included(var_5);
+            }
+            ,
+            s if s.matches("ApplyImmediately") /* ApplyImmediately com.amazonaws.rds.synthetic#StartActivityStreamOutput$ApplyImmediately */ =>  {
+                let var_6 =
+                    Some(
+                         {
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_apply_immediately(var_6);
             }
             ,
             _ => {}

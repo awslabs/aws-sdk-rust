@@ -39,6 +39,21 @@ pub fn de_describe_capacity_providers_http_error(
             }
             tmp
         }),
+        "ClusterNotFoundException" => crate::operation::describe_capacity_providers::DescribeCapacityProvidersError::ClusterNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ClusterNotFoundExceptionBuilder::default();
+                output = crate::protocol_serde::shape_cluster_not_found_exception::de_cluster_not_found_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::describe_capacity_providers::DescribeCapacityProvidersError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "InvalidParameterException" => crate::operation::describe_capacity_providers::DescribeCapacityProvidersError::InvalidParameterException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -69,6 +84,24 @@ pub fn de_describe_capacity_providers_http_error(
             }
             tmp
         }),
+        "UnsupportedFeatureException" => {
+            crate::operation::describe_capacity_providers::DescribeCapacityProvidersError::UnsupportedFeatureException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::UnsupportedFeatureExceptionBuilder::default();
+                    output =
+                        crate::protocol_serde::shape_unsupported_feature_exception::de_unsupported_feature_exception_json_err(_response_body, output)
+                            .map_err(crate::operation::describe_capacity_providers::DescribeCapacityProvidersError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::operation::describe_capacity_providers::DescribeCapacityProvidersError::generic(generic),
     })
 }

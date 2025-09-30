@@ -11,6 +11,8 @@ pub enum Error {
     BlockedException(crate::types::error::BlockedException),
     /// <p>These errors are usually caused by a client action. This client action might be using an action or resource on behalf of a user that doesn't have permissions to use the action or resource. Or, it might be specifying an identifier that isn't valid.</p>
     ClientException(crate::types::error::ClientException),
+    /// <p>The cluster contains one or more capacity providers that prevent the requested operation. This exception occurs when you try to delete a cluster that still has active capacity providers, including Amazon ECS Managed Instances capacity providers. You must first delete all capacity providers from the cluster before you can delete the cluster itself.</p>
+    ClusterContainsCapacityProviderException(crate::types::error::ClusterContainsCapacityProviderException),
     /// <p>You can't delete a cluster that has registered container instances. First, deregister the container instances before you can delete the cluster. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DeregisterContainerInstance.html">DeregisterContainerInstance</a>.</p>
     ClusterContainsContainerInstancesException(crate::types::error::ClusterContainsContainerInstancesException),
     /// <p>You can't delete a cluster that contains services. First, update the service to reduce its desired task count to 0, and then delete the service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateService.html">UpdateService</a> and <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DeleteService.html">DeleteService</a>.</p>
@@ -83,6 +85,7 @@ impl ::std::fmt::Display for Error {
             Error::AttributeLimitExceededException(inner) => inner.fmt(f),
             Error::BlockedException(inner) => inner.fmt(f),
             Error::ClientException(inner) => inner.fmt(f),
+            Error::ClusterContainsCapacityProviderException(inner) => inner.fmt(f),
             Error::ClusterContainsContainerInstancesException(inner) => inner.fmt(f),
             Error::ClusterContainsServicesException(inner) => inner.fmt(f),
             Error::ClusterContainsTasksException(inner) => inner.fmt(f),
@@ -131,6 +134,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::AttributeLimitExceededException(inner) => inner.meta(),
             Self::BlockedException(inner) => inner.meta(),
             Self::ClientException(inner) => inner.meta(),
+            Self::ClusterContainsCapacityProviderException(inner) => inner.meta(),
             Self::ClusterContainsContainerInstancesException(inner) => inner.meta(),
             Self::ClusterContainsServicesException(inner) => inner.meta(),
             Self::ClusterContainsTasksException(inner) => inner.meta(),
@@ -178,6 +182,9 @@ impl From<crate::operation::create_capacity_provider::CreateCapacityProviderErro
     fn from(err: crate::operation::create_capacity_provider::CreateCapacityProviderError) -> Self {
         match err {
             crate::operation::create_capacity_provider::CreateCapacityProviderError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::create_capacity_provider::CreateCapacityProviderError::ClusterNotFoundException(inner) => {
+                Error::ClusterNotFoundException(inner)
+            }
             crate::operation::create_capacity_provider::CreateCapacityProviderError::InvalidParameterException(inner) => {
                 Error::InvalidParameterException(inner)
             }
@@ -185,6 +192,9 @@ impl From<crate::operation::create_capacity_provider::CreateCapacityProviderErro
                 Error::LimitExceededException(inner)
             }
             crate::operation::create_capacity_provider::CreateCapacityProviderError::ServerException(inner) => Error::ServerException(inner),
+            crate::operation::create_capacity_provider::CreateCapacityProviderError::UnsupportedFeatureException(inner) => {
+                Error::UnsupportedFeatureException(inner)
+            }
             crate::operation::create_capacity_provider::CreateCapacityProviderError::UpdateInProgressException(inner) => {
                 Error::UpdateInProgressException(inner)
             }
@@ -353,10 +363,16 @@ impl From<crate::operation::delete_capacity_provider::DeleteCapacityProviderErro
     fn from(err: crate::operation::delete_capacity_provider::DeleteCapacityProviderError) -> Self {
         match err {
             crate::operation::delete_capacity_provider::DeleteCapacityProviderError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::delete_capacity_provider::DeleteCapacityProviderError::ClusterNotFoundException(inner) => {
+                Error::ClusterNotFoundException(inner)
+            }
             crate::operation::delete_capacity_provider::DeleteCapacityProviderError::InvalidParameterException(inner) => {
                 Error::InvalidParameterException(inner)
             }
             crate::operation::delete_capacity_provider::DeleteCapacityProviderError::ServerException(inner) => Error::ServerException(inner),
+            crate::operation::delete_capacity_provider::DeleteCapacityProviderError::UnsupportedFeatureException(inner) => {
+                Error::UnsupportedFeatureException(inner)
+            }
             crate::operation::delete_capacity_provider::DeleteCapacityProviderError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -379,6 +395,9 @@ impl From<crate::operation::delete_cluster::DeleteClusterError> for Error {
     fn from(err: crate::operation::delete_cluster::DeleteClusterError) -> Self {
         match err {
             crate::operation::delete_cluster::DeleteClusterError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::delete_cluster::DeleteClusterError::ClusterContainsCapacityProviderException(inner) => {
+                Error::ClusterContainsCapacityProviderException(inner)
+            }
             crate::operation::delete_cluster::DeleteClusterError::ClusterContainsContainerInstancesException(inner) => {
                 Error::ClusterContainsContainerInstancesException(inner)
             }
@@ -567,10 +586,16 @@ impl From<crate::operation::describe_capacity_providers::DescribeCapacityProvide
     fn from(err: crate::operation::describe_capacity_providers::DescribeCapacityProvidersError) -> Self {
         match err {
             crate::operation::describe_capacity_providers::DescribeCapacityProvidersError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::describe_capacity_providers::DescribeCapacityProvidersError::ClusterNotFoundException(inner) => {
+                Error::ClusterNotFoundException(inner)
+            }
             crate::operation::describe_capacity_providers::DescribeCapacityProvidersError::InvalidParameterException(inner) => {
                 Error::InvalidParameterException(inner)
             }
             crate::operation::describe_capacity_providers::DescribeCapacityProvidersError::ServerException(inner) => Error::ServerException(inner),
+            crate::operation::describe_capacity_providers::DescribeCapacityProvidersError::UnsupportedFeatureException(inner) => {
+                Error::UnsupportedFeatureException(inner)
+            }
             crate::operation::describe_capacity_providers::DescribeCapacityProvidersError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1693,10 +1718,16 @@ impl From<crate::operation::update_capacity_provider::UpdateCapacityProviderErro
     fn from(err: crate::operation::update_capacity_provider::UpdateCapacityProviderError) -> Self {
         match err {
             crate::operation::update_capacity_provider::UpdateCapacityProviderError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::update_capacity_provider::UpdateCapacityProviderError::ClusterNotFoundException(inner) => {
+                Error::ClusterNotFoundException(inner)
+            }
             crate::operation::update_capacity_provider::UpdateCapacityProviderError::InvalidParameterException(inner) => {
                 Error::InvalidParameterException(inner)
             }
             crate::operation::update_capacity_provider::UpdateCapacityProviderError::ServerException(inner) => Error::ServerException(inner),
+            crate::operation::update_capacity_provider::UpdateCapacityProviderError::UnsupportedFeatureException(inner) => {
+                Error::UnsupportedFeatureException(inner)
+            }
             crate::operation::update_capacity_provider::UpdateCapacityProviderError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -2011,6 +2042,7 @@ impl ::std::error::Error for Error {
             Error::AttributeLimitExceededException(inner) => inner.source(),
             Error::BlockedException(inner) => inner.source(),
             Error::ClientException(inner) => inner.source(),
+            Error::ClusterContainsCapacityProviderException(inner) => inner.source(),
             Error::ClusterContainsContainerInstancesException(inner) => inner.source(),
             Error::ClusterContainsServicesException(inner) => inner.source(),
             Error::ClusterContainsTasksException(inner) => inner.source(),
@@ -2045,6 +2077,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::AttributeLimitExceededException(e) => e.request_id(),
             Self::BlockedException(e) => e.request_id(),
             Self::ClientException(e) => e.request_id(),
+            Self::ClusterContainsCapacityProviderException(e) => e.request_id(),
             Self::ClusterContainsContainerInstancesException(e) => e.request_id(),
             Self::ClusterContainsServicesException(e) => e.request_id(),
             Self::ClusterContainsTasksException(e) => e.request_id(),

@@ -18,6 +18,8 @@ pub struct SparkEmrPropertiesInput {
     pub runtime_role: ::std::option::Option<::std::string::String>,
     /// <p>The certificates S3 URI of the Spark EMR.</p>
     pub trusted_certificates_s3_uri: ::std::option::Option<::std::string::String>,
+    /// <p>The managed endpoint ARN of the EMR on EKS cluster.</p>
+    pub managed_endpoint_arn: ::std::option::Option<::std::string::String>,
 }
 impl SparkEmrPropertiesInput {
     /// <p>The compute ARN of Spark EMR.</p>
@@ -48,6 +50,10 @@ impl SparkEmrPropertiesInput {
     pub fn trusted_certificates_s3_uri(&self) -> ::std::option::Option<&str> {
         self.trusted_certificates_s3_uri.as_deref()
     }
+    /// <p>The managed endpoint ARN of the EMR on EKS cluster.</p>
+    pub fn managed_endpoint_arn(&self) -> ::std::option::Option<&str> {
+        self.managed_endpoint_arn.as_deref()
+    }
 }
 impl SparkEmrPropertiesInput {
     /// Creates a new builder-style object to manufacture [`SparkEmrPropertiesInput`](crate::types::SparkEmrPropertiesInput).
@@ -67,6 +73,7 @@ pub struct SparkEmrPropertiesInputBuilder {
     pub(crate) python_virtual_env: ::std::option::Option<::std::string::String>,
     pub(crate) runtime_role: ::std::option::Option<::std::string::String>,
     pub(crate) trusted_certificates_s3_uri: ::std::option::Option<::std::string::String>,
+    pub(crate) managed_endpoint_arn: ::std::option::Option<::std::string::String>,
 }
 impl SparkEmrPropertiesInputBuilder {
     /// <p>The compute ARN of Spark EMR.</p>
@@ -167,6 +174,20 @@ impl SparkEmrPropertiesInputBuilder {
     pub fn get_trusted_certificates_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
         &self.trusted_certificates_s3_uri
     }
+    /// <p>The managed endpoint ARN of the EMR on EKS cluster.</p>
+    pub fn managed_endpoint_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.managed_endpoint_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The managed endpoint ARN of the EMR on EKS cluster.</p>
+    pub fn set_managed_endpoint_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.managed_endpoint_arn = input;
+        self
+    }
+    /// <p>The managed endpoint ARN of the EMR on EKS cluster.</p>
+    pub fn get_managed_endpoint_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.managed_endpoint_arn
+    }
     /// Consumes the builder and constructs a [`SparkEmrPropertiesInput`](crate::types::SparkEmrPropertiesInput).
     pub fn build(self) -> crate::types::SparkEmrPropertiesInput {
         crate::types::SparkEmrPropertiesInput {
@@ -177,6 +198,7 @@ impl SparkEmrPropertiesInputBuilder {
             python_virtual_env: self.python_virtual_env,
             runtime_role: self.runtime_role,
             trusted_certificates_s3_uri: self.trusted_certificates_s3_uri,
+            managed_endpoint_arn: self.managed_endpoint_arn,
         }
     }
 }

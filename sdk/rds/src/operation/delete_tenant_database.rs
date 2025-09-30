@@ -259,6 +259,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeleteTenantD
 pub enum DeleteTenantDatabaseError {
     /// <p><code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.</p>
     DbInstanceNotFoundFault(crate::types::error::DbInstanceNotFoundFault),
+    /// <p><code>DBSnapshotIdentifier</code> is already used by an existing snapshot.</p>
+    DbSnapshotAlreadyExistsFault(crate::types::error::DbSnapshotAlreadyExistsFault),
     /// <p>The DB instance isn't in a valid state.</p>
     InvalidDbInstanceStateFault(crate::types::error::InvalidDbInstanceStateFault),
     /// <p>The specified tenant database wasn't found in the DB instance.</p>
@@ -297,6 +299,7 @@ impl DeleteTenantDatabaseError {
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::DbInstanceNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::DbSnapshotAlreadyExistsFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidDbInstanceStateFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::TenantDatabaseNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
@@ -305,6 +308,10 @@ impl DeleteTenantDatabaseError {
     /// Returns `true` if the error kind is `DeleteTenantDatabaseError::DbInstanceNotFoundFault`.
     pub fn is_db_instance_not_found_fault(&self) -> bool {
         matches!(self, Self::DbInstanceNotFoundFault(_))
+    }
+    /// Returns `true` if the error kind is `DeleteTenantDatabaseError::DbSnapshotAlreadyExistsFault`.
+    pub fn is_db_snapshot_already_exists_fault(&self) -> bool {
+        matches!(self, Self::DbSnapshotAlreadyExistsFault(_))
     }
     /// Returns `true` if the error kind is `DeleteTenantDatabaseError::InvalidDbInstanceStateFault`.
     pub fn is_invalid_db_instance_state_fault(&self) -> bool {
@@ -319,6 +326,7 @@ impl ::std::error::Error for DeleteTenantDatabaseError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::DbInstanceNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
+            Self::DbSnapshotAlreadyExistsFault(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidDbInstanceStateFault(_inner) => ::std::option::Option::Some(_inner),
             Self::TenantDatabaseNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
@@ -329,6 +337,7 @@ impl ::std::fmt::Display for DeleteTenantDatabaseError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             Self::DbInstanceNotFoundFault(_inner) => _inner.fmt(f),
+            Self::DbSnapshotAlreadyExistsFault(_inner) => _inner.fmt(f),
             Self::InvalidDbInstanceStateFault(_inner) => _inner.fmt(f),
             Self::TenantDatabaseNotFoundFault(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
@@ -353,6 +362,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DeleteTenantD
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::DbInstanceNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::DbSnapshotAlreadyExistsFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidDbInstanceStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::TenantDatabaseNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,

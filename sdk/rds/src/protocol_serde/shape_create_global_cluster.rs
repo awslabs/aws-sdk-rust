@@ -87,6 +87,39 @@ pub fn de_create_global_cluster_http_error(
             }
             tmp
         }),
+        "InvalidDBShardGroupState" => crate::operation::create_global_cluster::CreateGlobalClusterError::InvalidDbShardGroupStateFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidDbShardGroupStateFaultBuilder::default();
+                output = crate::protocol_serde::shape_invalid_db_shard_group_state_fault::de_invalid_db_shard_group_state_fault_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::create_global_cluster::CreateGlobalClusterError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ResourceNotFoundFault" => crate::operation::create_global_cluster::CreateGlobalClusterError::ResourceNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ResourceNotFoundFaultBuilder::default();
+                output = crate::protocol_serde::shape_resource_not_found_fault::de_resource_not_found_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::create_global_cluster::CreateGlobalClusterError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::operation::create_global_cluster::CreateGlobalClusterError::generic(generic),
     })
 }

@@ -8,10 +8,14 @@ pub struct CapacityProvider {
     pub capacity_provider_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the capacity provider.</p>
     pub name: ::std::option::Option<::std::string::String>,
+    /// <p>The cluster that this capacity provider is associated with. Managed instances capacity providers are cluster-scoped, meaning they can only be used within their associated cluster.</p>
+    pub cluster: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the capacity provider. Only capacity providers in an <code>ACTIVE</code> state can be used in a cluster. When a capacity provider is successfully deleted, it has an <code>INACTIVE</code> status.</p>
     pub status: ::std::option::Option<crate::types::CapacityProviderStatus>,
     /// <p>The Auto Scaling group settings for the capacity provider.</p>
     pub auto_scaling_group_provider: ::std::option::Option<crate::types::AutoScalingGroupProvider>,
+    /// <p>The configuration for the Amazon ECS Managed Instances provider. This includes the infrastructure role, the launch template configuration, and tag propagation settings.</p>
+    pub managed_instances_provider: ::std::option::Option<crate::types::ManagedInstancesProvider>,
     /// <p>The update status of the capacity provider. The following are the possible states that is returned.</p>
     /// <dl>
     /// <dt>
@@ -55,6 +59,8 @@ pub struct CapacityProvider {
     /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p></li>
     /// </ul>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>The type of capacity provider. For Amazon ECS Managed Instances, this value is <code>MANAGED_INSTANCES</code>, indicating that Amazon ECS manages the underlying Amazon EC2 instances on your behalf.</p>
+    pub r#type: ::std::option::Option<crate::types::CapacityProviderType>,
 }
 impl CapacityProvider {
     /// <p>The Amazon Resource Name (ARN) that identifies the capacity provider.</p>
@@ -65,6 +71,10 @@ impl CapacityProvider {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
+    /// <p>The cluster that this capacity provider is associated with. Managed instances capacity providers are cluster-scoped, meaning they can only be used within their associated cluster.</p>
+    pub fn cluster(&self) -> ::std::option::Option<&str> {
+        self.cluster.as_deref()
+    }
     /// <p>The current status of the capacity provider. Only capacity providers in an <code>ACTIVE</code> state can be used in a cluster. When a capacity provider is successfully deleted, it has an <code>INACTIVE</code> status.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::CapacityProviderStatus> {
         self.status.as_ref()
@@ -72,6 +82,10 @@ impl CapacityProvider {
     /// <p>The Auto Scaling group settings for the capacity provider.</p>
     pub fn auto_scaling_group_provider(&self) -> ::std::option::Option<&crate::types::AutoScalingGroupProvider> {
         self.auto_scaling_group_provider.as_ref()
+    }
+    /// <p>The configuration for the Amazon ECS Managed Instances provider. This includes the infrastructure role, the launch template configuration, and tag propagation settings.</p>
+    pub fn managed_instances_provider(&self) -> ::std::option::Option<&crate::types::ManagedInstancesProvider> {
+        self.managed_instances_provider.as_ref()
     }
     /// <p>The update status of the capacity provider. The following are the possible states that is returned.</p>
     /// <dl>
@@ -124,6 +138,10 @@ impl CapacityProvider {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
+    /// <p>The type of capacity provider. For Amazon ECS Managed Instances, this value is <code>MANAGED_INSTANCES</code>, indicating that Amazon ECS manages the underlying Amazon EC2 instances on your behalf.</p>
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::CapacityProviderType> {
+        self.r#type.as_ref()
+    }
 }
 impl CapacityProvider {
     /// Creates a new builder-style object to manufacture [`CapacityProvider`](crate::types::CapacityProvider).
@@ -138,11 +156,14 @@ impl CapacityProvider {
 pub struct CapacityProviderBuilder {
     pub(crate) capacity_provider_arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) cluster: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::CapacityProviderStatus>,
     pub(crate) auto_scaling_group_provider: ::std::option::Option<crate::types::AutoScalingGroupProvider>,
+    pub(crate) managed_instances_provider: ::std::option::Option<crate::types::ManagedInstancesProvider>,
     pub(crate) update_status: ::std::option::Option<crate::types::CapacityProviderUpdateStatus>,
     pub(crate) update_status_reason: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) r#type: ::std::option::Option<crate::types::CapacityProviderType>,
 }
 impl CapacityProviderBuilder {
     /// <p>The Amazon Resource Name (ARN) that identifies the capacity provider.</p>
@@ -173,6 +194,20 @@ impl CapacityProviderBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
+    /// <p>The cluster that this capacity provider is associated with. Managed instances capacity providers are cluster-scoped, meaning they can only be used within their associated cluster.</p>
+    pub fn cluster(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cluster = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The cluster that this capacity provider is associated with. Managed instances capacity providers are cluster-scoped, meaning they can only be used within their associated cluster.</p>
+    pub fn set_cluster(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.cluster = input;
+        self
+    }
+    /// <p>The cluster that this capacity provider is associated with. Managed instances capacity providers are cluster-scoped, meaning they can only be used within their associated cluster.</p>
+    pub fn get_cluster(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster
+    }
     /// <p>The current status of the capacity provider. Only capacity providers in an <code>ACTIVE</code> state can be used in a cluster. When a capacity provider is successfully deleted, it has an <code>INACTIVE</code> status.</p>
     pub fn status(mut self, input: crate::types::CapacityProviderStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -200,6 +235,20 @@ impl CapacityProviderBuilder {
     /// <p>The Auto Scaling group settings for the capacity provider.</p>
     pub fn get_auto_scaling_group_provider(&self) -> &::std::option::Option<crate::types::AutoScalingGroupProvider> {
         &self.auto_scaling_group_provider
+    }
+    /// <p>The configuration for the Amazon ECS Managed Instances provider. This includes the infrastructure role, the launch template configuration, and tag propagation settings.</p>
+    pub fn managed_instances_provider(mut self, input: crate::types::ManagedInstancesProvider) -> Self {
+        self.managed_instances_provider = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration for the Amazon ECS Managed Instances provider. This includes the infrastructure role, the launch template configuration, and tag propagation settings.</p>
+    pub fn set_managed_instances_provider(mut self, input: ::std::option::Option<crate::types::ManagedInstancesProvider>) -> Self {
+        self.managed_instances_provider = input;
+        self
+    }
+    /// <p>The configuration for the Amazon ECS Managed Instances provider. This includes the infrastructure role, the launch template configuration, and tag propagation settings.</p>
+    pub fn get_managed_instances_provider(&self) -> &::std::option::Option<crate::types::ManagedInstancesProvider> {
+        &self.managed_instances_provider
     }
     /// <p>The update status of the capacity provider. The following are the possible states that is returned.</p>
     /// <dl>
@@ -360,16 +409,33 @@ impl CapacityProviderBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
+    /// <p>The type of capacity provider. For Amazon ECS Managed Instances, this value is <code>MANAGED_INSTANCES</code>, indicating that Amazon ECS manages the underlying Amazon EC2 instances on your behalf.</p>
+    pub fn r#type(mut self, input: crate::types::CapacityProviderType) -> Self {
+        self.r#type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of capacity provider. For Amazon ECS Managed Instances, this value is <code>MANAGED_INSTANCES</code>, indicating that Amazon ECS manages the underlying Amazon EC2 instances on your behalf.</p>
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::CapacityProviderType>) -> Self {
+        self.r#type = input;
+        self
+    }
+    /// <p>The type of capacity provider. For Amazon ECS Managed Instances, this value is <code>MANAGED_INSTANCES</code>, indicating that Amazon ECS manages the underlying Amazon EC2 instances on your behalf.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::CapacityProviderType> {
+        &self.r#type
+    }
     /// Consumes the builder and constructs a [`CapacityProvider`](crate::types::CapacityProvider).
     pub fn build(self) -> crate::types::CapacityProvider {
         crate::types::CapacityProvider {
             capacity_provider_arn: self.capacity_provider_arn,
             name: self.name,
+            cluster: self.cluster,
             status: self.status,
             auto_scaling_group_provider: self.auto_scaling_group_provider,
+            managed_instances_provider: self.managed_instances_provider,
             update_status: self.update_status,
             update_status_reason: self.update_status_reason,
             tags: self.tags,
+            r#type: self.r#type,
         }
     }
 }

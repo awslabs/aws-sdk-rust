@@ -102,6 +102,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for StartDB
                 .expect("required fields set"),
         ));
 
+        cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::SensitiveOutput);
         cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::Metadata::new("StartDBCluster", "RDS"));
         let mut signing_options = ::aws_runtime::auth::SigningOptions::default();
         signing_options.double_uri_encode = true;
@@ -261,6 +262,8 @@ pub enum StartDBClusterError {
     InvalidDbInstanceStateFault(crate::types::error::InvalidDbInstanceStateFault),
     /// <p>The DB shard group must be in the available state.</p>
     InvalidDbShardGroupStateFault(crate::types::error::InvalidDbShardGroupStateFault),
+    /// <p>An error occurred accessing an Amazon Web Services KMS key.</p>
+    KmsKeyNotAccessibleFault(crate::types::error::KmsKeyNotAccessibleFault),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -298,6 +301,7 @@ impl StartDBClusterError {
             Self::InvalidDbClusterStateFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidDbInstanceStateFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidDbShardGroupStateFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::KmsKeyNotAccessibleFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
     }
@@ -317,6 +321,10 @@ impl StartDBClusterError {
     pub fn is_invalid_db_shard_group_state_fault(&self) -> bool {
         matches!(self, Self::InvalidDbShardGroupStateFault(_))
     }
+    /// Returns `true` if the error kind is `StartDBClusterError::KmsKeyNotAccessibleFault`.
+    pub fn is_kms_key_not_accessible_fault(&self) -> bool {
+        matches!(self, Self::KmsKeyNotAccessibleFault(_))
+    }
 }
 impl ::std::error::Error for StartDBClusterError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
@@ -325,6 +333,7 @@ impl ::std::error::Error for StartDBClusterError {
             Self::InvalidDbClusterStateFault(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidDbInstanceStateFault(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidDbShardGroupStateFault(_inner) => ::std::option::Option::Some(_inner),
+            Self::KmsKeyNotAccessibleFault(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
     }
@@ -336,6 +345,7 @@ impl ::std::fmt::Display for StartDBClusterError {
             Self::InvalidDbClusterStateFault(_inner) => _inner.fmt(f),
             Self::InvalidDbInstanceStateFault(_inner) => _inner.fmt(f),
             Self::InvalidDbShardGroupStateFault(_inner) => _inner.fmt(f),
+            Self::KmsKeyNotAccessibleFault(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -361,6 +371,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for StartDBCluste
             Self::InvalidDbClusterStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidDbInstanceStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidDbShardGroupStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::KmsKeyNotAccessibleFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }
     }

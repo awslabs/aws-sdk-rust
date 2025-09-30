@@ -5,7 +5,7 @@
 pub struct SearchCasesInput {
     /// <p>The unique identifier of the Cases domain.</p>
     pub domain_id: ::std::option::Option<::std::string::String>,
-    /// <p>The maximum number of cases to return. The current maximum supported value is 25. This is also the default value when no other value is provided.</p>
+    /// <p>The maximum number of cases to return. When no value is provided, 25 is the default.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -23,7 +23,7 @@ impl SearchCasesInput {
     pub fn domain_id(&self) -> ::std::option::Option<&str> {
         self.domain_id.as_deref()
     }
-    /// <p>The maximum number of cases to return. The current maximum supported value is 25. This is also the default value when no other value is provided.</p>
+    /// <p>The maximum number of cases to return. When no value is provided, 25 is the default.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -87,17 +87,17 @@ impl SearchCasesInputBuilder {
     pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_id
     }
-    /// <p>The maximum number of cases to return. The current maximum supported value is 25. This is also the default value when no other value is provided.</p>
+    /// <p>The maximum number of cases to return. When no value is provided, 25 is the default.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of cases to return. The current maximum supported value is 25. This is also the default value when no other value is provided.</p>
+    /// <p>The maximum number of cases to return. When no value is provided, 25 is the default.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>The maximum number of cases to return. The current maximum supported value is 25. This is also the default value when no other value is provided.</p>
+    /// <p>The maximum number of cases to return. When no value is provided, 25 is the default.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }

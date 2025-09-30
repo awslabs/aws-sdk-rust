@@ -15,6 +15,7 @@
 ///     ActiveDirectoryErrorType::DomainNotFound => { /* ... */ },
 ///     ActiveDirectoryErrorType::IncompatibleDomainMode => { /* ... */ },
 ///     ActiveDirectoryErrorType::InvalidDomainStage => { /* ... */ },
+///     ActiveDirectoryErrorType::InvalidNetworkType => { /* ... */ },
 ///     ActiveDirectoryErrorType::WrongVpc => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -55,6 +56,8 @@ pub enum ActiveDirectoryErrorType {
     #[allow(missing_docs)] // documentation missing in model
     InvalidDomainStage,
     #[allow(missing_docs)] // documentation missing in model
+    InvalidNetworkType,
+    #[allow(missing_docs)] // documentation missing in model
     WrongVpc,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -66,6 +69,7 @@ impl ::std::convert::From<&str> for ActiveDirectoryErrorType {
             "DOMAIN_NOT_FOUND" => ActiveDirectoryErrorType::DomainNotFound,
             "INCOMPATIBLE_DOMAIN_MODE" => ActiveDirectoryErrorType::IncompatibleDomainMode,
             "INVALID_DOMAIN_STAGE" => ActiveDirectoryErrorType::InvalidDomainStage,
+            "INVALID_NETWORK_TYPE" => ActiveDirectoryErrorType::InvalidNetworkType,
             "WRONG_VPC" => ActiveDirectoryErrorType::WrongVpc,
             other => ActiveDirectoryErrorType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -85,13 +89,20 @@ impl ActiveDirectoryErrorType {
             ActiveDirectoryErrorType::DomainNotFound => "DOMAIN_NOT_FOUND",
             ActiveDirectoryErrorType::IncompatibleDomainMode => "INCOMPATIBLE_DOMAIN_MODE",
             ActiveDirectoryErrorType::InvalidDomainStage => "INVALID_DOMAIN_STAGE",
+            ActiveDirectoryErrorType::InvalidNetworkType => "INVALID_NETWORK_TYPE",
             ActiveDirectoryErrorType::WrongVpc => "WRONG_VPC",
             ActiveDirectoryErrorType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DOMAIN_NOT_FOUND", "INCOMPATIBLE_DOMAIN_MODE", "INVALID_DOMAIN_STAGE", "WRONG_VPC"]
+        &[
+            "DOMAIN_NOT_FOUND",
+            "INCOMPATIBLE_DOMAIN_MODE",
+            "INVALID_DOMAIN_STAGE",
+            "INVALID_NETWORK_TYPE",
+            "WRONG_VPC",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for ActiveDirectoryErrorType {
@@ -117,6 +128,7 @@ impl ::std::fmt::Display for ActiveDirectoryErrorType {
             ActiveDirectoryErrorType::DomainNotFound => write!(f, "DOMAIN_NOT_FOUND"),
             ActiveDirectoryErrorType::IncompatibleDomainMode => write!(f, "INCOMPATIBLE_DOMAIN_MODE"),
             ActiveDirectoryErrorType::InvalidDomainStage => write!(f, "INVALID_DOMAIN_STAGE"),
+            ActiveDirectoryErrorType::InvalidNetworkType => write!(f, "INVALID_NETWORK_TYPE"),
             ActiveDirectoryErrorType::WrongVpc => write!(f, "WRONG_VPC"),
             ActiveDirectoryErrorType::Unknown(value) => write!(f, "{}", value),
         }

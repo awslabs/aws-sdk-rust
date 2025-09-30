@@ -60,5 +60,8 @@ pub fn ser_create_file_system_ontap_configuration(
             ::aws_smithy_types::Number::NegInt((*var_15).into()),
         );
     }
+    if let Some(var_16) = &input.endpoint_ipv6_address_range {
+        object.key("EndpointIpv6AddressRange").string(var_16.as_str());
+    }
     Ok(())
 }

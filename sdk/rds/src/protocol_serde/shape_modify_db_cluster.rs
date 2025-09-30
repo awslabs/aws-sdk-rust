@@ -82,6 +82,24 @@ pub fn de_modify_db_cluster_http_error(
             }
             tmp
         }),
+        "DBParameterGroupNotFound" => crate::operation::modify_db_cluster::ModifyDBClusterError::DbParameterGroupNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::DbParameterGroupNotFoundFaultBuilder::default();
+                output = crate::protocol_serde::shape_db_parameter_group_not_found_fault::de_db_parameter_group_not_found_fault_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::modify_db_cluster::ModifyDBClusterError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "DBSubnetGroupNotFoundFault" => crate::operation::modify_db_cluster::ModifyDBClusterError::DbSubnetGroupNotFoundFault({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -181,6 +199,24 @@ pub fn de_modify_db_cluster_http_error(
             }
             tmp
         }),
+        "InvalidGlobalClusterStateFault" => crate::operation::modify_db_cluster::ModifyDBClusterError::InvalidGlobalClusterStateFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidGlobalClusterStateFaultBuilder::default();
+                output = crate::protocol_serde::shape_invalid_global_cluster_state_fault::de_invalid_global_cluster_state_fault_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::modify_db_cluster::ModifyDBClusterError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "InvalidSubnet" => crate::operation::modify_db_cluster::ModifyDBClusterError::InvalidSubnet({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -204,6 +240,36 @@ pub fn de_modify_db_cluster_http_error(
                 output =
                     crate::protocol_serde::shape_invalid_vpc_network_state_fault::de_invalid_vpc_network_state_fault_xml_err(_response_body, output)
                         .map_err(crate::operation::modify_db_cluster::ModifyDBClusterError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "KMSKeyNotAccessibleFault" => crate::operation::modify_db_cluster::ModifyDBClusterError::KmsKeyNotAccessibleFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::KmsKeyNotAccessibleFaultBuilder::default();
+                output = crate::protocol_serde::shape_kms_key_not_accessible_fault::de_kms_key_not_accessible_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::modify_db_cluster::ModifyDBClusterError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "NetworkTypeNotSupported" => crate::operation::modify_db_cluster::ModifyDBClusterError::NetworkTypeNotSupported({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::NetworkTypeNotSupportedBuilder::default();
+                output = crate::protocol_serde::shape_network_type_not_supported::de_network_type_not_supported_xml_err(_response_body, output)
+                    .map_err(crate::operation::modify_db_cluster::ModifyDBClusterError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -248,6 +314,24 @@ pub fn de_modify_db_cluster_http_error(
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::StorageTypeNotAvailableFaultBuilder::default();
                 output = crate::protocol_serde::shape_storage_type_not_available_fault::de_storage_type_not_available_fault_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::modify_db_cluster::ModifyDBClusterError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "StorageTypeNotSupported" => crate::operation::modify_db_cluster::ModifyDBClusterError::StorageTypeNotSupportedFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::StorageTypeNotSupportedFaultBuilder::default();
+                output = crate::protocol_serde::shape_storage_type_not_supported_fault::de_storage_type_not_supported_fault_xml_err(
                     _response_body,
                     output,
                 )

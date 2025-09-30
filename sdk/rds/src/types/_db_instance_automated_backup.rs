@@ -46,6 +46,8 @@ pub struct DbInstanceAutomatedBackup {
     pub license_model: ::std::option::Option<::std::string::String>,
     /// <p>The IOPS (I/O operations per second) value for the automated backup.</p>
     pub iops: ::std::option::Option<i32>,
+    /// <p>The storage throughput for the automated backup.</p>
+    pub storage_throughput: ::std::option::Option<i32>,
     /// <p>The option group the automated backup is associated with. If omitted, the default option group for the engine specified is used.</p>
     pub option_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN from the key store with which the automated backup is associated for TDE encryption.</p>
@@ -69,14 +71,12 @@ pub struct DbInstanceAutomatedBackup {
     pub db_instance_automated_backups_replications: ::std::option::Option<::std::vec::Vec<crate::types::DbInstanceAutomatedBackupsReplication>>,
     /// <p>The location where automated backups are stored: Dedicated Local Zones, Amazon Web Services Outposts or the Amazon Web Services Region.</p>
     pub backup_target: ::std::option::Option<::std::string::String>,
-    /// <p>The storage throughput for the automated backup.</p>
-    pub storage_throughput: ::std::option::Option<i32>,
+    /// <p>Specifies whether the automatic backup is for a DB instance in the multi-tenant configuration (TRUE) or the single-tenant configuration (FALSE).</p>
+    pub multi_tenant: ::std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.</p>
     pub aws_backup_recovery_point_arn: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.</p>
     pub dedicated_log_volume: ::std::option::Option<bool>,
-    /// <p>Specifies whether the automatic backup is for a DB instance in the multi-tenant configuration (TRUE) or the single-tenant configuration (FALSE).</p>
-    pub multi_tenant: ::std::option::Option<bool>,
 }
 impl DbInstanceAutomatedBackup {
     /// <p>The Amazon Resource Name (ARN) for the automated backups.</p>
@@ -153,6 +153,10 @@ impl DbInstanceAutomatedBackup {
     pub fn iops(&self) -> ::std::option::Option<i32> {
         self.iops
     }
+    /// <p>The storage throughput for the automated backup.</p>
+    pub fn storage_throughput(&self) -> ::std::option::Option<i32> {
+        self.storage_throughput
+    }
     /// <p>The option group the automated backup is associated with. If omitted, the default option group for the engine specified is used.</p>
     pub fn option_group_name(&self) -> ::std::option::Option<&str> {
         self.option_group_name.as_deref()
@@ -200,9 +204,9 @@ impl DbInstanceAutomatedBackup {
     pub fn backup_target(&self) -> ::std::option::Option<&str> {
         self.backup_target.as_deref()
     }
-    /// <p>The storage throughput for the automated backup.</p>
-    pub fn storage_throughput(&self) -> ::std::option::Option<i32> {
-        self.storage_throughput
+    /// <p>Specifies whether the automatic backup is for a DB instance in the multi-tenant configuration (TRUE) or the single-tenant configuration (FALSE).</p>
+    pub fn multi_tenant(&self) -> ::std::option::Option<bool> {
+        self.multi_tenant
     }
     /// <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.</p>
     pub fn aws_backup_recovery_point_arn(&self) -> ::std::option::Option<&str> {
@@ -211,10 +215,6 @@ impl DbInstanceAutomatedBackup {
     /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.</p>
     pub fn dedicated_log_volume(&self) -> ::std::option::Option<bool> {
         self.dedicated_log_volume
-    }
-    /// <p>Specifies whether the automatic backup is for a DB instance in the multi-tenant configuration (TRUE) or the single-tenant configuration (FALSE).</p>
-    pub fn multi_tenant(&self) -> ::std::option::Option<bool> {
-        self.multi_tenant
     }
 }
 impl DbInstanceAutomatedBackup {
@@ -244,6 +244,7 @@ pub struct DbInstanceAutomatedBackupBuilder {
     pub(crate) engine_version: ::std::option::Option<::std::string::String>,
     pub(crate) license_model: ::std::option::Option<::std::string::String>,
     pub(crate) iops: ::std::option::Option<i32>,
+    pub(crate) storage_throughput: ::std::option::Option<i32>,
     pub(crate) option_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) tde_credential_arn: ::std::option::Option<::std::string::String>,
     pub(crate) encrypted: ::std::option::Option<bool>,
@@ -256,10 +257,9 @@ pub struct DbInstanceAutomatedBackupBuilder {
     pub(crate) db_instance_automated_backups_replications:
         ::std::option::Option<::std::vec::Vec<crate::types::DbInstanceAutomatedBackupsReplication>>,
     pub(crate) backup_target: ::std::option::Option<::std::string::String>,
-    pub(crate) storage_throughput: ::std::option::Option<i32>,
+    pub(crate) multi_tenant: ::std::option::Option<bool>,
     pub(crate) aws_backup_recovery_point_arn: ::std::option::Option<::std::string::String>,
     pub(crate) dedicated_log_volume: ::std::option::Option<bool>,
-    pub(crate) multi_tenant: ::std::option::Option<bool>,
 }
 impl DbInstanceAutomatedBackupBuilder {
     /// <p>The Amazon Resource Name (ARN) for the automated backups.</p>
@@ -516,6 +516,20 @@ impl DbInstanceAutomatedBackupBuilder {
     pub fn get_iops(&self) -> &::std::option::Option<i32> {
         &self.iops
     }
+    /// <p>The storage throughput for the automated backup.</p>
+    pub fn storage_throughput(mut self, input: i32) -> Self {
+        self.storage_throughput = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The storage throughput for the automated backup.</p>
+    pub fn set_storage_throughput(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.storage_throughput = input;
+        self
+    }
+    /// <p>The storage throughput for the automated backup.</p>
+    pub fn get_storage_throughput(&self) -> &::std::option::Option<i32> {
+        &self.storage_throughput
+    }
     /// <p>The option group the automated backup is associated with. If omitted, the default option group for the engine specified is used.</p>
     pub fn option_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.option_group_name = ::std::option::Option::Some(input.into());
@@ -684,19 +698,19 @@ impl DbInstanceAutomatedBackupBuilder {
     pub fn get_backup_target(&self) -> &::std::option::Option<::std::string::String> {
         &self.backup_target
     }
-    /// <p>The storage throughput for the automated backup.</p>
-    pub fn storage_throughput(mut self, input: i32) -> Self {
-        self.storage_throughput = ::std::option::Option::Some(input);
+    /// <p>Specifies whether the automatic backup is for a DB instance in the multi-tenant configuration (TRUE) or the single-tenant configuration (FALSE).</p>
+    pub fn multi_tenant(mut self, input: bool) -> Self {
+        self.multi_tenant = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The storage throughput for the automated backup.</p>
-    pub fn set_storage_throughput(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.storage_throughput = input;
+    /// <p>Specifies whether the automatic backup is for a DB instance in the multi-tenant configuration (TRUE) or the single-tenant configuration (FALSE).</p>
+    pub fn set_multi_tenant(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.multi_tenant = input;
         self
     }
-    /// <p>The storage throughput for the automated backup.</p>
-    pub fn get_storage_throughput(&self) -> &::std::option::Option<i32> {
-        &self.storage_throughput
+    /// <p>Specifies whether the automatic backup is for a DB instance in the multi-tenant configuration (TRUE) or the single-tenant configuration (FALSE).</p>
+    pub fn get_multi_tenant(&self) -> &::std::option::Option<bool> {
+        &self.multi_tenant
     }
     /// <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.</p>
     pub fn aws_backup_recovery_point_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -726,20 +740,6 @@ impl DbInstanceAutomatedBackupBuilder {
     pub fn get_dedicated_log_volume(&self) -> &::std::option::Option<bool> {
         &self.dedicated_log_volume
     }
-    /// <p>Specifies whether the automatic backup is for a DB instance in the multi-tenant configuration (TRUE) or the single-tenant configuration (FALSE).</p>
-    pub fn multi_tenant(mut self, input: bool) -> Self {
-        self.multi_tenant = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>Specifies whether the automatic backup is for a DB instance in the multi-tenant configuration (TRUE) or the single-tenant configuration (FALSE).</p>
-    pub fn set_multi_tenant(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.multi_tenant = input;
-        self
-    }
-    /// <p>Specifies whether the automatic backup is for a DB instance in the multi-tenant configuration (TRUE) or the single-tenant configuration (FALSE).</p>
-    pub fn get_multi_tenant(&self) -> &::std::option::Option<bool> {
-        &self.multi_tenant
-    }
     /// Consumes the builder and constructs a [`DbInstanceAutomatedBackup`](crate::types::DbInstanceAutomatedBackup).
     pub fn build(self) -> crate::types::DbInstanceAutomatedBackup {
         crate::types::DbInstanceAutomatedBackup {
@@ -759,6 +759,7 @@ impl DbInstanceAutomatedBackupBuilder {
             engine_version: self.engine_version,
             license_model: self.license_model,
             iops: self.iops,
+            storage_throughput: self.storage_throughput,
             option_group_name: self.option_group_name,
             tde_credential_arn: self.tde_credential_arn,
             encrypted: self.encrypted,
@@ -770,10 +771,9 @@ impl DbInstanceAutomatedBackupBuilder {
             db_instance_automated_backups_arn: self.db_instance_automated_backups_arn,
             db_instance_automated_backups_replications: self.db_instance_automated_backups_replications,
             backup_target: self.backup_target,
-            storage_throughput: self.storage_throughput,
+            multi_tenant: self.multi_tenant,
             aws_backup_recovery_point_arn: self.aws_backup_recovery_point_arn,
             dedicated_log_volume: self.dedicated_log_volume,
-            multi_tenant: self.multi_tenant,
         }
     }
 }

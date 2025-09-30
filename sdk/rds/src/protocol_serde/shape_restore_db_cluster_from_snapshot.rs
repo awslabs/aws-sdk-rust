@@ -353,6 +353,23 @@ pub fn de_restore_db_cluster_from_snapshot_http_error(
                 tmp
             })
         }
+        "NetworkTypeNotSupported" => {
+            crate::operation::restore_db_cluster_from_snapshot::RestoreDBClusterFromSnapshotError::NetworkTypeNotSupported({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::NetworkTypeNotSupportedBuilder::default();
+                    output = crate::protocol_serde::shape_network_type_not_supported::de_network_type_not_supported_xml_err(_response_body, output)
+                        .map_err(crate::operation::restore_db_cluster_from_snapshot::RestoreDBClusterFromSnapshotError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "OptionGroupNotFoundFault" => {
             crate::operation::restore_db_cluster_from_snapshot::RestoreDBClusterFromSnapshotError::OptionGroupNotFoundFault({
                 #[allow(unused_mut)]
@@ -386,6 +403,26 @@ pub fn de_restore_db_cluster_from_snapshot_http_error(
             }
             tmp
         }),
+        "StorageTypeNotSupported" => {
+            crate::operation::restore_db_cluster_from_snapshot::RestoreDBClusterFromSnapshotError::StorageTypeNotSupportedFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::StorageTypeNotSupportedFaultBuilder::default();
+                    output = crate::protocol_serde::shape_storage_type_not_supported_fault::de_storage_type_not_supported_fault_xml_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::restore_db_cluster_from_snapshot::RestoreDBClusterFromSnapshotError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::operation::restore_db_cluster_from_snapshot::RestoreDBClusterFromSnapshotError::generic(generic),
     })
 }

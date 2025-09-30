@@ -47,6 +47,16 @@ where
                             crate::protocol_serde::shape_sla_content::de_sla_content(tokens)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'sla' cannot be null"))?,
                         )),
+                        "connectCase" => Some(crate::types::RelatedItemContent::ConnectCase(
+                            crate::protocol_serde::shape_connect_case_content::de_connect_case_content(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'connectCase' cannot be null")
+                            })?,
+                        )),
+                        "custom" => Some(crate::types::RelatedItemContent::Custom(
+                            crate::protocol_serde::shape_custom_content::de_custom_content(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'custom' cannot be null")
+                            })?,
+                        )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
                             Some(crate::types::RelatedItemContent::Unknown)

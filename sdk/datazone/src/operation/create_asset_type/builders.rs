@@ -26,7 +26,7 @@ impl crate::operation::create_asset_type::builders::CreateAssetTypeInputBuilder 
 /// <p>Prerequisites:</p>
 /// <ul>
 /// <li>
-/// <p>The form type with <code>typeIdentifier</code> and <code>typeRevision</code> must exist and be published.</p></li>
+/// <p>The <code>formsInput</code> field is required, however, can be passed as empty (e.g. <code>-forms-input {})</code>.</p></li>
 /// <li>
 /// <p>You must have <code>CreateAssetType</code> permissions.</p></li>
 /// <li>

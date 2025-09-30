@@ -194,9 +194,9 @@ pub fn ser_restore_db_cluster_from_s3_input_input_input(
         scope_73.string(var_74);
     }
     #[allow(unused_mut)]
-    let mut scope_75 = writer.prefix("ServerlessV2ScalingConfiguration");
-    if let Some(var_76) = &input.serverless_v2_scaling_configuration {
-        crate::protocol_serde::shape_serverless_v2_scaling_configuration::ser_serverless_v2_scaling_configuration(scope_75, var_76)?;
+    let mut scope_75 = writer.prefix("StorageType");
+    if let Some(var_76) = &input.storage_type {
+        scope_75.string(var_76);
     }
     #[allow(unused_mut)]
     let mut scope_77 = writer.prefix("NetworkType");
@@ -204,18 +204,18 @@ pub fn ser_restore_db_cluster_from_s3_input_input_input(
         scope_77.string(var_78);
     }
     #[allow(unused_mut)]
-    let mut scope_79 = writer.prefix("ManageMasterUserPassword");
-    if let Some(var_80) = &input.manage_master_user_password {
-        scope_79.boolean(*var_80);
+    let mut scope_79 = writer.prefix("ServerlessV2ScalingConfiguration");
+    if let Some(var_80) = &input.serverless_v2_scaling_configuration {
+        crate::protocol_serde::shape_serverless_v2_scaling_configuration::ser_serverless_v2_scaling_configuration(scope_79, var_80)?;
     }
     #[allow(unused_mut)]
-    let mut scope_81 = writer.prefix("MasterUserSecretKmsKeyId");
-    if let Some(var_82) = &input.master_user_secret_kms_key_id {
-        scope_81.string(var_82);
+    let mut scope_81 = writer.prefix("ManageMasterUserPassword");
+    if let Some(var_82) = &input.manage_master_user_password {
+        scope_81.boolean(*var_82);
     }
     #[allow(unused_mut)]
-    let mut scope_83 = writer.prefix("StorageType");
-    if let Some(var_84) = &input.storage_type {
+    let mut scope_83 = writer.prefix("MasterUserSecretKmsKeyId");
+    if let Some(var_84) = &input.master_user_secret_kms_key_id {
         scope_83.string(var_84);
     }
     #[allow(unused_mut)]

@@ -237,6 +237,8 @@ mod get_integration;
 
 mod get_matches;
 
+mod get_profile_history_record;
+
 mod get_profile_object_type;
 
 mod get_profile_object_type_template;
@@ -280,6 +282,8 @@ mod list_integrations;
 mod list_object_type_attributes;
 
 mod list_profile_attribute_values;
+
+mod list_profile_history_records;
 
 mod list_profile_object_type_templates;
 

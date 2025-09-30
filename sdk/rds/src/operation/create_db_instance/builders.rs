@@ -1951,6 +1951,26 @@ impl CreateDBInstanceFluentBuilder {
     pub fn get_iops(&self) -> &::std::option::Option<i32> {
         self.inner.get_iops()
     }
+    /// <p>The storage throughput value, in mebibyte per second (MiBps), for the DB instance.</p>
+    /// <p>This setting applies only to the <code>gp3</code> storage type.</p>
+    /// <p>This setting doesn't apply to Amazon Aurora or RDS Custom DB instances.</p>
+    pub fn storage_throughput(mut self, input: i32) -> Self {
+        self.inner = self.inner.storage_throughput(input);
+        self
+    }
+    /// <p>The storage throughput value, in mebibyte per second (MiBps), for the DB instance.</p>
+    /// <p>This setting applies only to the <code>gp3</code> storage type.</p>
+    /// <p>This setting doesn't apply to Amazon Aurora or RDS Custom DB instances.</p>
+    pub fn set_storage_throughput(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.inner = self.inner.set_storage_throughput(input);
+        self
+    }
+    /// <p>The storage throughput value, in mebibyte per second (MiBps), for the DB instance.</p>
+    /// <p>This setting applies only to the <code>gp3</code> storage type.</p>
+    /// <p>This setting doesn't apply to Amazon Aurora or RDS Custom DB instances.</p>
+    pub fn get_storage_throughput(&self) -> &::std::option::Option<i32> {
+        self.inner.get_storage_throughput()
+    }
     /// <p>The option group to associate the DB instance with.</p>
     /// <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option group. Also, that option group can't be removed from a DB instance after it is associated with a DB instance.</p>
     /// <p>This setting doesn't apply to Amazon Aurora or RDS Custom DB instances.</p>
@@ -2860,52 +2880,28 @@ impl CreateDBInstanceFluentBuilder {
     pub fn get_enable_customer_owned_ip(&self) -> &::std::option::Option<bool> {
         self.inner.get_enable_customer_owned_ip()
     }
-    /// <p>The instance profile associated with the underlying Amazon EC2 instance of an RDS Custom DB instance.</p>
-    /// <p>This setting is required for RDS Custom.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li>
-    /// <p>The profile must exist in your account.</p></li>
-    /// <li>
-    /// <p>The profile must have an IAM role that Amazon EC2 has permissions to assume.</p></li>
-    /// <li>
-    /// <p>The instance profile name and the associated IAM role name must start with the prefix <code>AWSRDSCustom</code>.</p></li>
-    /// </ul>
-    /// <p>For the list of permissions required for the IAM role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc"> Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
-    pub fn custom_iam_instance_profile(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.custom_iam_instance_profile(input.into());
+    /// <p>The network type of the DB instance.</p>
+    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i></p>
+    /// <p>Valid Values: <code>IPV4 | DUAL</code></p>
+    pub fn network_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.network_type(input.into());
         self
     }
-    /// <p>The instance profile associated with the underlying Amazon EC2 instance of an RDS Custom DB instance.</p>
-    /// <p>This setting is required for RDS Custom.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li>
-    /// <p>The profile must exist in your account.</p></li>
-    /// <li>
-    /// <p>The profile must have an IAM role that Amazon EC2 has permissions to assume.</p></li>
-    /// <li>
-    /// <p>The instance profile name and the associated IAM role name must start with the prefix <code>AWSRDSCustom</code>.</p></li>
-    /// </ul>
-    /// <p>For the list of permissions required for the IAM role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc"> Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
-    pub fn set_custom_iam_instance_profile(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_custom_iam_instance_profile(input);
+    /// <p>The network type of the DB instance.</p>
+    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i></p>
+    /// <p>Valid Values: <code>IPV4 | DUAL</code></p>
+    pub fn set_network_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_network_type(input);
         self
     }
-    /// <p>The instance profile associated with the underlying Amazon EC2 instance of an RDS Custom DB instance.</p>
-    /// <p>This setting is required for RDS Custom.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li>
-    /// <p>The profile must exist in your account.</p></li>
-    /// <li>
-    /// <p>The profile must have an IAM role that Amazon EC2 has permissions to assume.</p></li>
-    /// <li>
-    /// <p>The instance profile name and the associated IAM role name must start with the prefix <code>AWSRDSCustom</code>.</p></li>
-    /// </ul>
-    /// <p>For the list of permissions required for the IAM role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc"> Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
-    pub fn get_custom_iam_instance_profile(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_custom_iam_instance_profile()
+    /// <p>The network type of the DB instance.</p>
+    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i></p>
+    /// <p>Valid Values: <code>IPV4 | DUAL</code></p>
+    pub fn get_network_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_network_type()
     }
     /// <p>The location for storing automated backups and manual snapshots.</p>
     /// <p>Valid Values:</p>
@@ -2954,48 +2950,86 @@ impl CreateDBInstanceFluentBuilder {
     pub fn get_backup_target(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_backup_target()
     }
-    /// <p>The network type of the DB instance.</p>
-    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i></p>
-    /// <p>Valid Values: <code>IPV4 | DUAL</code></p>
-    pub fn network_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.network_type(input.into());
+    /// <p>The instance profile associated with the underlying Amazon EC2 instance of an RDS Custom DB instance.</p>
+    /// <p>This setting is required for RDS Custom.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The profile must exist in your account.</p></li>
+    /// <li>
+    /// <p>The profile must have an IAM role that Amazon EC2 has permissions to assume.</p></li>
+    /// <li>
+    /// <p>The instance profile name and the associated IAM role name must start with the prefix <code>AWSRDSCustom</code>.</p></li>
+    /// </ul>
+    /// <p>For the list of permissions required for the IAM role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc"> Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
+    pub fn custom_iam_instance_profile(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.custom_iam_instance_profile(input.into());
         self
     }
-    /// <p>The network type of the DB instance.</p>
-    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i></p>
-    /// <p>Valid Values: <code>IPV4 | DUAL</code></p>
-    pub fn set_network_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_network_type(input);
+    /// <p>The instance profile associated with the underlying Amazon EC2 instance of an RDS Custom DB instance.</p>
+    /// <p>This setting is required for RDS Custom.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The profile must exist in your account.</p></li>
+    /// <li>
+    /// <p>The profile must have an IAM role that Amazon EC2 has permissions to assume.</p></li>
+    /// <li>
+    /// <p>The instance profile name and the associated IAM role name must start with the prefix <code>AWSRDSCustom</code>.</p></li>
+    /// </ul>
+    /// <p>For the list of permissions required for the IAM role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc"> Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
+    pub fn set_custom_iam_instance_profile(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_custom_iam_instance_profile(input);
         self
     }
-    /// <p>The network type of the DB instance.</p>
-    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i></p>
-    /// <p>Valid Values: <code>IPV4 | DUAL</code></p>
-    pub fn get_network_type(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_network_type()
+    /// <p>The instance profile associated with the underlying Amazon EC2 instance of an RDS Custom DB instance.</p>
+    /// <p>This setting is required for RDS Custom.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The profile must exist in your account.</p></li>
+    /// <li>
+    /// <p>The profile must have an IAM role that Amazon EC2 has permissions to assume.</p></li>
+    /// <li>
+    /// <p>The instance profile name and the associated IAM role name must start with the prefix <code>AWSRDSCustom</code>.</p></li>
+    /// </ul>
+    /// <p>For the list of permissions required for the IAM role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc"> Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
+    pub fn get_custom_iam_instance_profile(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_custom_iam_instance_profile()
     }
-    /// <p>The storage throughput value, in mebibyte per second (MiBps), for the DB instance.</p>
-    /// <p>This setting applies only to the <code>gp3</code> storage type.</p>
-    /// <p>This setting doesn't apply to Amazon Aurora or RDS Custom DB instances.</p>
-    pub fn storage_throughput(mut self, input: i32) -> Self {
-        self.inner = self.inner.storage_throughput(input);
+    /// <p>The Oracle system identifier (SID), which is the name of the Oracle database instance that manages your database files. In this context, the term "Oracle database instance" refers exclusively to the system global area (SGA) and Oracle background processes. If you don't specify a SID, the value defaults to <code>RDSCDB</code>. The Oracle SID is also the name of your CDB.</p>
+    pub fn db_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.db_system_id(input.into());
         self
     }
-    /// <p>The storage throughput value, in mebibyte per second (MiBps), for the DB instance.</p>
-    /// <p>This setting applies only to the <code>gp3</code> storage type.</p>
-    /// <p>This setting doesn't apply to Amazon Aurora or RDS Custom DB instances.</p>
-    pub fn set_storage_throughput(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.inner = self.inner.set_storage_throughput(input);
+    /// <p>The Oracle system identifier (SID), which is the name of the Oracle database instance that manages your database files. In this context, the term "Oracle database instance" refers exclusively to the system global area (SGA) and Oracle background processes. If you don't specify a SID, the value defaults to <code>RDSCDB</code>. The Oracle SID is also the name of your CDB.</p>
+    pub fn set_db_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_db_system_id(input);
         self
     }
-    /// <p>The storage throughput value, in mebibyte per second (MiBps), for the DB instance.</p>
-    /// <p>This setting applies only to the <code>gp3</code> storage type.</p>
-    /// <p>This setting doesn't apply to Amazon Aurora or RDS Custom DB instances.</p>
-    pub fn get_storage_throughput(&self) -> &::std::option::Option<i32> {
-        self.inner.get_storage_throughput()
+    /// <p>The Oracle system identifier (SID), which is the name of the Oracle database instance that manages your database files. In this context, the term "Oracle database instance" refers exclusively to the system global area (SGA) and Oracle background processes. If you don't specify a SID, the value defaults to <code>RDSCDB</code>. The Oracle SID is also the name of your CDB.</p>
+    pub fn get_db_system_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_db_system_id()
+    }
+    /// <p>The CA certificate identifier to use for the DB instance's server certificate.</p>
+    /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub fn ca_certificate_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.ca_certificate_identifier(input.into());
+        self
+    }
+    /// <p>The CA certificate identifier to use for the DB instance's server certificate.</p>
+    /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub fn set_ca_certificate_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_ca_certificate_identifier(input);
+        self
+    }
+    /// <p>The CA certificate identifier to use for the DB instance's server certificate.</p>
+    /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub fn get_ca_certificate_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ca_certificate_identifier()
     }
     /// <p>Specifies whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i></p>
@@ -3055,54 +3089,6 @@ impl CreateDBInstanceFluentBuilder {
     pub fn get_master_user_secret_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_master_user_secret_kms_key_id()
     }
-    /// <p>The CA certificate identifier to use for the DB instance's server certificate.</p>
-    /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    pub fn ca_certificate_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.ca_certificate_identifier(input.into());
-        self
-    }
-    /// <p>The CA certificate identifier to use for the DB instance's server certificate.</p>
-    /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    pub fn set_ca_certificate_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_ca_certificate_identifier(input);
-        self
-    }
-    /// <p>The CA certificate identifier to use for the DB instance's server certificate.</p>
-    /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    pub fn get_ca_certificate_identifier(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_ca_certificate_identifier()
-    }
-    /// <p>The Oracle system identifier (SID), which is the name of the Oracle database instance that manages your database files. In this context, the term "Oracle database instance" refers exclusively to the system global area (SGA) and Oracle background processes. If you don't specify a SID, the value defaults to <code>RDSCDB</code>. The Oracle SID is also the name of your CDB.</p>
-    pub fn db_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.db_system_id(input.into());
-        self
-    }
-    /// <p>The Oracle system identifier (SID), which is the name of the Oracle database instance that manages your database files. In this context, the term "Oracle database instance" refers exclusively to the system global area (SGA) and Oracle background processes. If you don't specify a SID, the value defaults to <code>RDSCDB</code>. The Oracle SID is also the name of your CDB.</p>
-    pub fn set_db_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_db_system_id(input);
-        self
-    }
-    /// <p>The Oracle system identifier (SID), which is the name of the Oracle database instance that manages your database files. In this context, the term "Oracle database instance" refers exclusively to the system global area (SGA) and Oracle background processes. If you don't specify a SID, the value defaults to <code>RDSCDB</code>. The Oracle SID is also the name of your CDB.</p>
-    pub fn get_db_system_id(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_db_system_id()
-    }
-    /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.</p>
-    pub fn dedicated_log_volume(mut self, input: bool) -> Self {
-        self.inner = self.inner.dedicated_log_volume(input);
-        self
-    }
-    /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.</p>
-    pub fn set_dedicated_log_volume(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.inner = self.inner.set_dedicated_log_volume(input);
-        self
-    }
-    /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.</p>
-    pub fn get_dedicated_log_volume(&self) -> &::std::option::Option<bool> {
-        self.inner.get_dedicated_log_volume()
-    }
     /// <p>Specifies whether to use the multi-tenant configuration or the single-tenant configuration (default). This parameter only applies to RDS for Oracle container database (CDB) engines.</p>
     /// <p>Note the following restrictions:</p>
     /// <ul>
@@ -3137,6 +3123,20 @@ impl CreateDBInstanceFluentBuilder {
     /// </ul>
     pub fn get_multi_tenant(&self) -> &::std::option::Option<bool> {
         self.inner.get_multi_tenant()
+    }
+    /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.</p>
+    pub fn dedicated_log_volume(mut self, input: bool) -> Self {
+        self.inner = self.inner.dedicated_log_volume(input);
+        self
+    }
+    /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.</p>
+    pub fn set_dedicated_log_volume(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_dedicated_log_volume(input);
+        self
+    }
+    /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.</p>
+    pub fn get_dedicated_log_volume(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dedicated_log_volume()
     }
     /// <p>The life cycle type for this DB instance.</p><note>
     /// <p>By default, this value is set to <code>open-source-rds-extended-support</code>, which enrolls your DB instance into Amazon RDS Extended Support. At the end of standard support, you can avoid charges for Extended Support by setting the value to <code>open-source-rds-extended-support-disabled</code>. In this case, creating the DB instance will fail if the DB major version is past its end of standard support date.</p>

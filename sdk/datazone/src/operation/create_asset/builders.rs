@@ -34,7 +34,7 @@ impl crate::operation::create_asset::builders::CreateAssetInputBuilder {
 /// <li>
 /// <p><code>--type-revision</code> (if used) must match a valid revision of the asset type.</p></li>
 /// <li>
-/// <p>Form type must exist and be associated with the asset type. Use <code>create-form-type</code> to define. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/reference/datazone/create-form-type.html">create-form-type</a>.</p></li>
+/// <p><code>formsInput</code> is required when it is associated as required in the <code>asset-type</code>. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/reference/datazone/create-form-type.html">create-form-type</a>.</p></li>
 /// <li>
 /// <p>Form content must include all required fields as per the form schema (e.g., <code>bucketArn</code>).</p></li>
 /// </ul>

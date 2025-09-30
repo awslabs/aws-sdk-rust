@@ -672,6 +672,15 @@ pub(crate) fn comment_content_correct_errors(
     builder
 }
 
+pub(crate) fn connect_case_content_correct_errors(
+    mut builder: crate::types::builders::ConnectCaseContentBuilder,
+) -> crate::types::builders::ConnectCaseContentBuilder {
+    if builder.case_id.is_none() {
+        builder.case_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn contact_content_correct_errors(
     mut builder: crate::types::builders::ContactContentBuilder,
 ) -> crate::types::builders::ContactContentBuilder {
@@ -683,6 +692,15 @@ pub(crate) fn contact_content_correct_errors(
     }
     if builder.connected_to_system_time.is_none() {
         builder.connected_to_system_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn custom_content_correct_errors(
+    mut builder: crate::types::builders::CustomContentBuilder,
+) -> crate::types::builders::CustomContentBuilder {
+    if builder.fields.is_none() {
+        builder.fields = Some(Default::default())
     }
     builder
 }

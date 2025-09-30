@@ -2,7 +2,7 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RestoreDbInstanceFromDbSnapshotInput {
     /// <p>The name of the DB instance to create from the DB snapshot. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
@@ -124,6 +124,9 @@ pub struct RestoreDbInstanceFromDbSnapshotInput {
     /// <p>The provisioned IOPS value must follow the requirements for your database engine. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage</a> in the <i>Amazon RDS User Guide.</i></p>
     /// <p>Constraints: Must be an integer greater than 1000.</p>
     pub iops: ::std::option::Option<i32>,
+    /// <p>Specifies the storage throughput value for the DB instance.</p>
+    /// <p>This setting doesn't apply to RDS Custom or Amazon Aurora.</p>
+    pub storage_throughput: ::std::option::Option<i32>,
     /// <p>The name of the option group to be used for the restored DB instance.</p>
     /// <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option group, and that option group can't be removed from a DB instance after it is associated with a DB instance.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
@@ -226,6 +229,21 @@ pub struct RestoreDbInstanceFromDbSnapshotInput {
     /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
     pub enable_customer_owned_ip: ::std::option::Option<bool>,
+    /// <p>The network type of the DB instance.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IPV4</code></p></li>
+    /// <li>
+    /// <p><code>DUAL</code></p></li>
+    /// </ul>
+    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i></p>
+    pub network_type: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies where automated backups and manual snapshots are stored for the restored DB instance.</p>
+    /// <p>Possible values are <code>local</code> (Dedicated Local Zone), <code>outposts</code> (Amazon Web Services Outposts), and <code>region</code> (Amazon Web Services Region). The default is <code>region</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
+    pub backup_target: ::std::option::Option<::std::string::String>,
     /// <p>The instance profile associated with the underlying Amazon EC2 instance of an RDS Custom DB instance. The instance profile must meet the following requirements:</p>
     /// <ul>
     /// <li>
@@ -238,24 +256,11 @@ pub struct RestoreDbInstanceFromDbSnapshotInput {
     /// <p>For the list of permissions required for the IAM role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc"> Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting is required for RDS Custom.</p>
     pub custom_iam_instance_profile: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies where automated backups and manual snapshots are stored for the restored DB instance.</p>
-    /// <p>Possible values are <code>local</code> (Dedicated Local Zone), <code>outposts</code> (Amazon Web Services Outposts), and <code>region</code> (Amazon Web Services Region). The default is <code>region</code>.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
-    pub backup_target: ::std::option::Option<::std::string::String>,
-    /// <p>The network type of the DB instance.</p>
-    /// <p>Valid Values:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>IPV4</code></p></li>
-    /// <li>
-    /// <p><code>DUAL</code></p></li>
-    /// </ul>
-    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i></p>
-    pub network_type: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the storage throughput value for the DB instance.</p>
-    /// <p>This setting doesn't apply to RDS Custom or Amazon Aurora.</p>
-    pub storage_throughput: ::std::option::Option<i32>,
+    /// <p>The amount of storage (in gibibytes) to allocate initially for the DB instance. Follow the allocation rules specified in CreateDBInstance.</p>
+    /// <p>This setting isn't valid for RDS for SQL Server.</p><note>
+    /// <p>Be sure to allocate enough storage for your new DB instance so that the restore operation can succeed. You can also allocate additional storage for future growth.</p>
+    /// </note>
+    pub allocated_storage: ::std::option::Option<i32>,
     /// <p>The identifier for the Multi-AZ DB cluster snapshot to restore from.</p>
     /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>Constraints:</p>
@@ -272,11 +277,6 @@ pub struct RestoreDbInstanceFromDbSnapshotInput {
     /// <p>Can't be the identifier of an Aurora DB cluster snapshot.</p></li>
     /// </ul>
     pub db_cluster_snapshot_identifier: ::std::option::Option<::std::string::String>,
-    /// <p>The amount of storage (in gibibytes) to allocate initially for the DB instance. Follow the allocation rules specified in CreateDBInstance.</p>
-    /// <p>This setting isn't valid for RDS for SQL Server.</p><note>
-    /// <p>Be sure to allocate enough storage for your new DB instance so that the restore operation can succeed. You can also allocate additional storage for future growth.</p>
-    /// </note>
-    pub allocated_storage: ::std::option::Option<i32>,
     /// <p>Specifies whether to enable a dedicated log volume (DLV) for the DB instance.</p>
     pub dedicated_log_volume: ::std::option::Option<bool>,
     /// <p>The CA certificate identifier to use for the DB instance's server certificate.</p>
@@ -453,6 +453,11 @@ impl RestoreDbInstanceFromDbSnapshotInput {
     pub fn iops(&self) -> ::std::option::Option<i32> {
         self.iops
     }
+    /// <p>Specifies the storage throughput value for the DB instance.</p>
+    /// <p>This setting doesn't apply to RDS Custom or Amazon Aurora.</p>
+    pub fn storage_throughput(&self) -> ::std::option::Option<i32> {
+        self.storage_throughput
+    }
     /// <p>The name of the option group to be used for the restored DB instance.</p>
     /// <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option group, and that option group can't be removed from a DB instance after it is associated with a DB instance.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
@@ -605,6 +610,25 @@ impl RestoreDbInstanceFromDbSnapshotInput {
     pub fn enable_customer_owned_ip(&self) -> ::std::option::Option<bool> {
         self.enable_customer_owned_ip
     }
+    /// <p>The network type of the DB instance.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IPV4</code></p></li>
+    /// <li>
+    /// <p><code>DUAL</code></p></li>
+    /// </ul>
+    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i></p>
+    pub fn network_type(&self) -> ::std::option::Option<&str> {
+        self.network_type.as_deref()
+    }
+    /// <p>Specifies where automated backups and manual snapshots are stored for the restored DB instance.</p>
+    /// <p>Possible values are <code>local</code> (Dedicated Local Zone), <code>outposts</code> (Amazon Web Services Outposts), and <code>region</code> (Amazon Web Services Region). The default is <code>region</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
+    pub fn backup_target(&self) -> ::std::option::Option<&str> {
+        self.backup_target.as_deref()
+    }
     /// <p>The instance profile associated with the underlying Amazon EC2 instance of an RDS Custom DB instance. The instance profile must meet the following requirements:</p>
     /// <ul>
     /// <li>
@@ -619,29 +643,12 @@ impl RestoreDbInstanceFromDbSnapshotInput {
     pub fn custom_iam_instance_profile(&self) -> ::std::option::Option<&str> {
         self.custom_iam_instance_profile.as_deref()
     }
-    /// <p>Specifies where automated backups and manual snapshots are stored for the restored DB instance.</p>
-    /// <p>Possible values are <code>local</code> (Dedicated Local Zone), <code>outposts</code> (Amazon Web Services Outposts), and <code>region</code> (Amazon Web Services Region). The default is <code>region</code>.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
-    pub fn backup_target(&self) -> ::std::option::Option<&str> {
-        self.backup_target.as_deref()
-    }
-    /// <p>The network type of the DB instance.</p>
-    /// <p>Valid Values:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>IPV4</code></p></li>
-    /// <li>
-    /// <p><code>DUAL</code></p></li>
-    /// </ul>
-    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i></p>
-    pub fn network_type(&self) -> ::std::option::Option<&str> {
-        self.network_type.as_deref()
-    }
-    /// <p>Specifies the storage throughput value for the DB instance.</p>
-    /// <p>This setting doesn't apply to RDS Custom or Amazon Aurora.</p>
-    pub fn storage_throughput(&self) -> ::std::option::Option<i32> {
-        self.storage_throughput
+    /// <p>The amount of storage (in gibibytes) to allocate initially for the DB instance. Follow the allocation rules specified in CreateDBInstance.</p>
+    /// <p>This setting isn't valid for RDS for SQL Server.</p><note>
+    /// <p>Be sure to allocate enough storage for your new DB instance so that the restore operation can succeed. You can also allocate additional storage for future growth.</p>
+    /// </note>
+    pub fn allocated_storage(&self) -> ::std::option::Option<i32> {
+        self.allocated_storage
     }
     /// <p>The identifier for the Multi-AZ DB cluster snapshot to restore from.</p>
     /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User Guide</i>.</p>
@@ -660,13 +667,6 @@ impl RestoreDbInstanceFromDbSnapshotInput {
     /// </ul>
     pub fn db_cluster_snapshot_identifier(&self) -> ::std::option::Option<&str> {
         self.db_cluster_snapshot_identifier.as_deref()
-    }
-    /// <p>The amount of storage (in gibibytes) to allocate initially for the DB instance. Follow the allocation rules specified in CreateDBInstance.</p>
-    /// <p>This setting isn't valid for RDS for SQL Server.</p><note>
-    /// <p>Be sure to allocate enough storage for your new DB instance so that the restore operation can succeed. You can also allocate additional storage for future growth.</p>
-    /// </note>
-    pub fn allocated_storage(&self) -> ::std::option::Option<i32> {
-        self.allocated_storage
     }
     /// <p>Specifies whether to enable a dedicated log volume (DLV) for the DB instance.</p>
     pub fn dedicated_log_volume(&self) -> ::std::option::Option<bool> {
@@ -707,6 +707,56 @@ impl RestoreDbInstanceFromDbSnapshotInput {
         self.master_user_secret_kms_key_id.as_deref()
     }
 }
+impl ::std::fmt::Debug for RestoreDbInstanceFromDbSnapshotInput {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RestoreDbInstanceFromDbSnapshotInput");
+        formatter.field("db_instance_identifier", &self.db_instance_identifier);
+        formatter.field("db_snapshot_identifier", &self.db_snapshot_identifier);
+        formatter.field("db_instance_class", &self.db_instance_class);
+        formatter.field("port", &self.port);
+        formatter.field("availability_zone", &self.availability_zone);
+        formatter.field("db_subnet_group_name", &self.db_subnet_group_name);
+        formatter.field("multi_az", &self.multi_az);
+        formatter.field("publicly_accessible", &self.publicly_accessible);
+        formatter.field("auto_minor_version_upgrade", &self.auto_minor_version_upgrade);
+        formatter.field("license_model", &self.license_model);
+        formatter.field("db_name", &self.db_name);
+        formatter.field("engine", &self.engine);
+        formatter.field("iops", &self.iops);
+        formatter.field("storage_throughput", &self.storage_throughput);
+        formatter.field("option_group_name", &self.option_group_name);
+        formatter.field("tags", &self.tags);
+        formatter.field("storage_type", &self.storage_type);
+        formatter.field("tde_credential_arn", &self.tde_credential_arn);
+        formatter.field("tde_credential_password", &"*** Sensitive Data Redacted ***");
+        formatter.field("vpc_security_group_ids", &self.vpc_security_group_ids);
+        formatter.field("domain", &self.domain);
+        formatter.field("domain_fqdn", &self.domain_fqdn);
+        formatter.field("domain_ou", &self.domain_ou);
+        formatter.field("domain_auth_secret_arn", &self.domain_auth_secret_arn);
+        formatter.field("domain_dns_ips", &self.domain_dns_ips);
+        formatter.field("copy_tags_to_snapshot", &self.copy_tags_to_snapshot);
+        formatter.field("domain_iam_role_name", &self.domain_iam_role_name);
+        formatter.field("enable_iam_database_authentication", &self.enable_iam_database_authentication);
+        formatter.field("enable_cloudwatch_logs_exports", &self.enable_cloudwatch_logs_exports);
+        formatter.field("processor_features", &self.processor_features);
+        formatter.field("use_default_processor_features", &self.use_default_processor_features);
+        formatter.field("db_parameter_group_name", &self.db_parameter_group_name);
+        formatter.field("deletion_protection", &self.deletion_protection);
+        formatter.field("enable_customer_owned_ip", &self.enable_customer_owned_ip);
+        formatter.field("network_type", &self.network_type);
+        formatter.field("backup_target", &self.backup_target);
+        formatter.field("custom_iam_instance_profile", &self.custom_iam_instance_profile);
+        formatter.field("allocated_storage", &self.allocated_storage);
+        formatter.field("db_cluster_snapshot_identifier", &self.db_cluster_snapshot_identifier);
+        formatter.field("dedicated_log_volume", &self.dedicated_log_volume);
+        formatter.field("ca_certificate_identifier", &self.ca_certificate_identifier);
+        formatter.field("engine_lifecycle_support", &self.engine_lifecycle_support);
+        formatter.field("manage_master_user_password", &self.manage_master_user_password);
+        formatter.field("master_user_secret_kms_key_id", &self.master_user_secret_kms_key_id);
+        formatter.finish()
+    }
+}
 impl RestoreDbInstanceFromDbSnapshotInput {
     /// Creates a new builder-style object to manufacture [`RestoreDbInstanceFromDbSnapshotInput`](crate::operation::restore_db_instance_from_db_snapshot::RestoreDbInstanceFromDbSnapshotInput).
     pub fn builder() -> crate::operation::restore_db_instance_from_db_snapshot::builders::RestoreDbInstanceFromDbSnapshotInputBuilder {
@@ -715,7 +765,7 @@ impl RestoreDbInstanceFromDbSnapshotInput {
 }
 
 /// A builder for [`RestoreDbInstanceFromDbSnapshotInput`](crate::operation::restore_db_instance_from_db_snapshot::RestoreDbInstanceFromDbSnapshotInput).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct RestoreDbInstanceFromDbSnapshotInputBuilder {
     pub(crate) db_instance_identifier: ::std::option::Option<::std::string::String>,
@@ -731,6 +781,7 @@ pub struct RestoreDbInstanceFromDbSnapshotInputBuilder {
     pub(crate) db_name: ::std::option::Option<::std::string::String>,
     pub(crate) engine: ::std::option::Option<::std::string::String>,
     pub(crate) iops: ::std::option::Option<i32>,
+    pub(crate) storage_throughput: ::std::option::Option<i32>,
     pub(crate) option_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) storage_type: ::std::option::Option<::std::string::String>,
@@ -751,12 +802,11 @@ pub struct RestoreDbInstanceFromDbSnapshotInputBuilder {
     pub(crate) db_parameter_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) deletion_protection: ::std::option::Option<bool>,
     pub(crate) enable_customer_owned_ip: ::std::option::Option<bool>,
-    pub(crate) custom_iam_instance_profile: ::std::option::Option<::std::string::String>,
-    pub(crate) backup_target: ::std::option::Option<::std::string::String>,
     pub(crate) network_type: ::std::option::Option<::std::string::String>,
-    pub(crate) storage_throughput: ::std::option::Option<i32>,
-    pub(crate) db_cluster_snapshot_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) backup_target: ::std::option::Option<::std::string::String>,
+    pub(crate) custom_iam_instance_profile: ::std::option::Option<::std::string::String>,
     pub(crate) allocated_storage: ::std::option::Option<i32>,
+    pub(crate) db_cluster_snapshot_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) dedicated_log_volume: ::std::option::Option<bool>,
     pub(crate) ca_certificate_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) engine_lifecycle_support: ::std::option::Option<::std::string::String>,
@@ -1228,6 +1278,23 @@ impl RestoreDbInstanceFromDbSnapshotInputBuilder {
     /// <p>Constraints: Must be an integer greater than 1000.</p>
     pub fn get_iops(&self) -> &::std::option::Option<i32> {
         &self.iops
+    }
+    /// <p>Specifies the storage throughput value for the DB instance.</p>
+    /// <p>This setting doesn't apply to RDS Custom or Amazon Aurora.</p>
+    pub fn storage_throughput(mut self, input: i32) -> Self {
+        self.storage_throughput = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the storage throughput value for the DB instance.</p>
+    /// <p>This setting doesn't apply to RDS Custom or Amazon Aurora.</p>
+    pub fn set_storage_throughput(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.storage_throughput = input;
+        self
+    }
+    /// <p>Specifies the storage throughput value for the DB instance.</p>
+    /// <p>This setting doesn't apply to RDS Custom or Amazon Aurora.</p>
+    pub fn get_storage_throughput(&self) -> &::std::option::Option<i32> {
+        &self.storage_throughput
     }
     /// <p>The name of the option group to be used for the restored DB instance.</p>
     /// <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option group, and that option group can't be removed from a DB instance after it is associated with a DB instance.</p>
@@ -1725,6 +1792,67 @@ impl RestoreDbInstanceFromDbSnapshotInputBuilder {
     pub fn get_enable_customer_owned_ip(&self) -> &::std::option::Option<bool> {
         &self.enable_customer_owned_ip
     }
+    /// <p>The network type of the DB instance.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IPV4</code></p></li>
+    /// <li>
+    /// <p><code>DUAL</code></p></li>
+    /// </ul>
+    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i></p>
+    pub fn network_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.network_type = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The network type of the DB instance.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IPV4</code></p></li>
+    /// <li>
+    /// <p><code>DUAL</code></p></li>
+    /// </ul>
+    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i></p>
+    pub fn set_network_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.network_type = input;
+        self
+    }
+    /// <p>The network type of the DB instance.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IPV4</code></p></li>
+    /// <li>
+    /// <p><code>DUAL</code></p></li>
+    /// </ul>
+    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i></p>
+    pub fn get_network_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_type
+    }
+    /// <p>Specifies where automated backups and manual snapshots are stored for the restored DB instance.</p>
+    /// <p>Possible values are <code>local</code> (Dedicated Local Zone), <code>outposts</code> (Amazon Web Services Outposts), and <code>region</code> (Amazon Web Services Region). The default is <code>region</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
+    pub fn backup_target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.backup_target = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Specifies where automated backups and manual snapshots are stored for the restored DB instance.</p>
+    /// <p>Possible values are <code>local</code> (Dedicated Local Zone), <code>outposts</code> (Amazon Web Services Outposts), and <code>region</code> (Amazon Web Services Region). The default is <code>region</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
+    pub fn set_backup_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.backup_target = input;
+        self
+    }
+    /// <p>Specifies where automated backups and manual snapshots are stored for the restored DB instance.</p>
+    /// <p>Possible values are <code>local</code> (Dedicated Local Zone), <code>outposts</code> (Amazon Web Services Outposts), and <code>region</code> (Amazon Web Services Region). The default is <code>region</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
+    pub fn get_backup_target(&self) -> &::std::option::Option<::std::string::String> {
+        &self.backup_target
+    }
     /// <p>The instance profile associated with the underlying Amazon EC2 instance of an RDS Custom DB instance. The instance profile must meet the following requirements:</p>
     /// <ul>
     /// <li>
@@ -1769,83 +1897,28 @@ impl RestoreDbInstanceFromDbSnapshotInputBuilder {
     pub fn get_custom_iam_instance_profile(&self) -> &::std::option::Option<::std::string::String> {
         &self.custom_iam_instance_profile
     }
-    /// <p>Specifies where automated backups and manual snapshots are stored for the restored DB instance.</p>
-    /// <p>Possible values are <code>local</code> (Dedicated Local Zone), <code>outposts</code> (Amazon Web Services Outposts), and <code>region</code> (Amazon Web Services Region). The default is <code>region</code>.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
-    pub fn backup_target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.backup_target = ::std::option::Option::Some(input.into());
+    /// <p>The amount of storage (in gibibytes) to allocate initially for the DB instance. Follow the allocation rules specified in CreateDBInstance.</p>
+    /// <p>This setting isn't valid for RDS for SQL Server.</p><note>
+    /// <p>Be sure to allocate enough storage for your new DB instance so that the restore operation can succeed. You can also allocate additional storage for future growth.</p>
+    /// </note>
+    pub fn allocated_storage(mut self, input: i32) -> Self {
+        self.allocated_storage = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies where automated backups and manual snapshots are stored for the restored DB instance.</p>
-    /// <p>Possible values are <code>local</code> (Dedicated Local Zone), <code>outposts</code> (Amazon Web Services Outposts), and <code>region</code> (Amazon Web Services Region). The default is <code>region</code>.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
-    pub fn set_backup_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.backup_target = input;
+    /// <p>The amount of storage (in gibibytes) to allocate initially for the DB instance. Follow the allocation rules specified in CreateDBInstance.</p>
+    /// <p>This setting isn't valid for RDS for SQL Server.</p><note>
+    /// <p>Be sure to allocate enough storage for your new DB instance so that the restore operation can succeed. You can also allocate additional storage for future growth.</p>
+    /// </note>
+    pub fn set_allocated_storage(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.allocated_storage = input;
         self
     }
-    /// <p>Specifies where automated backups and manual snapshots are stored for the restored DB instance.</p>
-    /// <p>Possible values are <code>local</code> (Dedicated Local Zone), <code>outposts</code> (Amazon Web Services Outposts), and <code>region</code> (Amazon Web Services Region). The default is <code>region</code>.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
-    pub fn get_backup_target(&self) -> &::std::option::Option<::std::string::String> {
-        &self.backup_target
-    }
-    /// <p>The network type of the DB instance.</p>
-    /// <p>Valid Values:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>IPV4</code></p></li>
-    /// <li>
-    /// <p><code>DUAL</code></p></li>
-    /// </ul>
-    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i></p>
-    pub fn network_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.network_type = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The network type of the DB instance.</p>
-    /// <p>Valid Values:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>IPV4</code></p></li>
-    /// <li>
-    /// <p><code>DUAL</code></p></li>
-    /// </ul>
-    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i></p>
-    pub fn set_network_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.network_type = input;
-        self
-    }
-    /// <p>The network type of the DB instance.</p>
-    /// <p>Valid Values:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>IPV4</code></p></li>
-    /// <li>
-    /// <p><code>DUAL</code></p></li>
-    /// </ul>
-    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i></p>
-    pub fn get_network_type(&self) -> &::std::option::Option<::std::string::String> {
-        &self.network_type
-    }
-    /// <p>Specifies the storage throughput value for the DB instance.</p>
-    /// <p>This setting doesn't apply to RDS Custom or Amazon Aurora.</p>
-    pub fn storage_throughput(mut self, input: i32) -> Self {
-        self.storage_throughput = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>Specifies the storage throughput value for the DB instance.</p>
-    /// <p>This setting doesn't apply to RDS Custom or Amazon Aurora.</p>
-    pub fn set_storage_throughput(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.storage_throughput = input;
-        self
-    }
-    /// <p>Specifies the storage throughput value for the DB instance.</p>
-    /// <p>This setting doesn't apply to RDS Custom or Amazon Aurora.</p>
-    pub fn get_storage_throughput(&self) -> &::std::option::Option<i32> {
-        &self.storage_throughput
+    /// <p>The amount of storage (in gibibytes) to allocate initially for the DB instance. Follow the allocation rules specified in CreateDBInstance.</p>
+    /// <p>This setting isn't valid for RDS for SQL Server.</p><note>
+    /// <p>Be sure to allocate enough storage for your new DB instance so that the restore operation can succeed. You can also allocate additional storage for future growth.</p>
+    /// </note>
+    pub fn get_allocated_storage(&self) -> &::std::option::Option<i32> {
+        &self.allocated_storage
     }
     /// <p>The identifier for the Multi-AZ DB cluster snapshot to restore from.</p>
     /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User Guide</i>.</p>
@@ -1902,29 +1975,6 @@ impl RestoreDbInstanceFromDbSnapshotInputBuilder {
     /// </ul>
     pub fn get_db_cluster_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_cluster_snapshot_identifier
-    }
-    /// <p>The amount of storage (in gibibytes) to allocate initially for the DB instance. Follow the allocation rules specified in CreateDBInstance.</p>
-    /// <p>This setting isn't valid for RDS for SQL Server.</p><note>
-    /// <p>Be sure to allocate enough storage for your new DB instance so that the restore operation can succeed. You can also allocate additional storage for future growth.</p>
-    /// </note>
-    pub fn allocated_storage(mut self, input: i32) -> Self {
-        self.allocated_storage = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The amount of storage (in gibibytes) to allocate initially for the DB instance. Follow the allocation rules specified in CreateDBInstance.</p>
-    /// <p>This setting isn't valid for RDS for SQL Server.</p><note>
-    /// <p>Be sure to allocate enough storage for your new DB instance so that the restore operation can succeed. You can also allocate additional storage for future growth.</p>
-    /// </note>
-    pub fn set_allocated_storage(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.allocated_storage = input;
-        self
-    }
-    /// <p>The amount of storage (in gibibytes) to allocate initially for the DB instance. Follow the allocation rules specified in CreateDBInstance.</p>
-    /// <p>This setting isn't valid for RDS for SQL Server.</p><note>
-    /// <p>Be sure to allocate enough storage for your new DB instance so that the restore operation can succeed. You can also allocate additional storage for future growth.</p>
-    /// </note>
-    pub fn get_allocated_storage(&self) -> &::std::option::Option<i32> {
-        &self.allocated_storage
     }
     /// <p>Specifies whether to enable a dedicated log volume (DLV) for the DB instance.</p>
     pub fn dedicated_log_volume(mut self, input: bool) -> Self {
@@ -2072,6 +2122,7 @@ impl RestoreDbInstanceFromDbSnapshotInputBuilder {
                 db_name: self.db_name,
                 engine: self.engine,
                 iops: self.iops,
+                storage_throughput: self.storage_throughput,
                 option_group_name: self.option_group_name,
                 tags: self.tags,
                 storage_type: self.storage_type,
@@ -2092,12 +2143,11 @@ impl RestoreDbInstanceFromDbSnapshotInputBuilder {
                 db_parameter_group_name: self.db_parameter_group_name,
                 deletion_protection: self.deletion_protection,
                 enable_customer_owned_ip: self.enable_customer_owned_ip,
-                custom_iam_instance_profile: self.custom_iam_instance_profile,
-                backup_target: self.backup_target,
                 network_type: self.network_type,
-                storage_throughput: self.storage_throughput,
-                db_cluster_snapshot_identifier: self.db_cluster_snapshot_identifier,
+                backup_target: self.backup_target,
+                custom_iam_instance_profile: self.custom_iam_instance_profile,
                 allocated_storage: self.allocated_storage,
+                db_cluster_snapshot_identifier: self.db_cluster_snapshot_identifier,
                 dedicated_log_volume: self.dedicated_log_volume,
                 ca_certificate_identifier: self.ca_certificate_identifier,
                 engine_lifecycle_support: self.engine_lifecycle_support,
@@ -2105,5 +2155,55 @@ impl RestoreDbInstanceFromDbSnapshotInputBuilder {
                 master_user_secret_kms_key_id: self.master_user_secret_kms_key_id,
             },
         )
+    }
+}
+impl ::std::fmt::Debug for RestoreDbInstanceFromDbSnapshotInputBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RestoreDbInstanceFromDbSnapshotInputBuilder");
+        formatter.field("db_instance_identifier", &self.db_instance_identifier);
+        formatter.field("db_snapshot_identifier", &self.db_snapshot_identifier);
+        formatter.field("db_instance_class", &self.db_instance_class);
+        formatter.field("port", &self.port);
+        formatter.field("availability_zone", &self.availability_zone);
+        formatter.field("db_subnet_group_name", &self.db_subnet_group_name);
+        formatter.field("multi_az", &self.multi_az);
+        formatter.field("publicly_accessible", &self.publicly_accessible);
+        formatter.field("auto_minor_version_upgrade", &self.auto_minor_version_upgrade);
+        formatter.field("license_model", &self.license_model);
+        formatter.field("db_name", &self.db_name);
+        formatter.field("engine", &self.engine);
+        formatter.field("iops", &self.iops);
+        formatter.field("storage_throughput", &self.storage_throughput);
+        formatter.field("option_group_name", &self.option_group_name);
+        formatter.field("tags", &self.tags);
+        formatter.field("storage_type", &self.storage_type);
+        formatter.field("tde_credential_arn", &self.tde_credential_arn);
+        formatter.field("tde_credential_password", &"*** Sensitive Data Redacted ***");
+        formatter.field("vpc_security_group_ids", &self.vpc_security_group_ids);
+        formatter.field("domain", &self.domain);
+        formatter.field("domain_fqdn", &self.domain_fqdn);
+        formatter.field("domain_ou", &self.domain_ou);
+        formatter.field("domain_auth_secret_arn", &self.domain_auth_secret_arn);
+        formatter.field("domain_dns_ips", &self.domain_dns_ips);
+        formatter.field("copy_tags_to_snapshot", &self.copy_tags_to_snapshot);
+        formatter.field("domain_iam_role_name", &self.domain_iam_role_name);
+        formatter.field("enable_iam_database_authentication", &self.enable_iam_database_authentication);
+        formatter.field("enable_cloudwatch_logs_exports", &self.enable_cloudwatch_logs_exports);
+        formatter.field("processor_features", &self.processor_features);
+        formatter.field("use_default_processor_features", &self.use_default_processor_features);
+        formatter.field("db_parameter_group_name", &self.db_parameter_group_name);
+        formatter.field("deletion_protection", &self.deletion_protection);
+        formatter.field("enable_customer_owned_ip", &self.enable_customer_owned_ip);
+        formatter.field("network_type", &self.network_type);
+        formatter.field("backup_target", &self.backup_target);
+        formatter.field("custom_iam_instance_profile", &self.custom_iam_instance_profile);
+        formatter.field("allocated_storage", &self.allocated_storage);
+        formatter.field("db_cluster_snapshot_identifier", &self.db_cluster_snapshot_identifier);
+        formatter.field("dedicated_log_volume", &self.dedicated_log_volume);
+        formatter.field("ca_certificate_identifier", &self.ca_certificate_identifier);
+        formatter.field("engine_lifecycle_support", &self.engine_lifecycle_support);
+        formatter.field("manage_master_user_password", &self.manage_master_user_password);
+        formatter.field("master_user_secret_kms_key_id", &self.master_user_secret_kms_key_id);
+        formatter.finish()
     }
 }

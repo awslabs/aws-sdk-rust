@@ -24,5 +24,8 @@ pub fn ser_spark_emr_properties_input(
     if let Some(var_7) = &input.trusted_certificates_s3_uri {
         object.key("trustedCertificatesS3Uri").string(var_7.as_str());
     }
+    if let Some(var_8) = &input.managed_endpoint_arn {
+        object.key("managedEndpointArn").string(var_8.as_str());
+    }
     Ok(())
 }

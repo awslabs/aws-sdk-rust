@@ -28,6 +28,18 @@ pub fn ser_related_item_input_content(
             crate::protocol_serde::shape_sla_input_content::ser_sla_input_content(&mut object_4, inner)?;
             object_4.finish();
         }
+        crate::types::RelatedItemInputContent::ConnectCase(inner) => {
+            #[allow(unused_mut)]
+            let mut object_5 = object_2.key("connectCase").start_object();
+            crate::protocol_serde::shape_connect_case_input_content::ser_connect_case_input_content(&mut object_5, inner)?;
+            object_5.finish();
+        }
+        crate::types::RelatedItemInputContent::Custom(inner) => {
+            #[allow(unused_mut)]
+            let mut object_6 = object_2.key("custom").start_object();
+            crate::protocol_serde::shape_custom_input_content::ser_custom_input_content(&mut object_6, inner)?;
+            object_6.finish();
+        }
         crate::types::RelatedItemInputContent::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "RelatedItemInputContent",

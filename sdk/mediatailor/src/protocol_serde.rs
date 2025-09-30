@@ -301,6 +301,8 @@ pub(crate) mod shape_time_signal_message;
 
 pub(crate) mod shape_traffic_shaping_retrieval_window;
 
+pub(crate) mod shape_traffic_shaping_tps_configuration;
+
 pub(crate) mod shape_transition;
 
 pub(crate) mod shape_update_program_transition;

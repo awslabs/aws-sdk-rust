@@ -28,6 +28,18 @@ pub fn ser_related_item_type_filter(
             crate::protocol_serde::shape_sla_filter::ser_sla_filter(&mut object_4, inner)?;
             object_4.finish();
         }
+        crate::types::RelatedItemTypeFilter::ConnectCase(inner) => {
+            #[allow(unused_mut)]
+            let mut object_5 = object_4.key("connectCase").start_object();
+            crate::protocol_serde::shape_connect_case_filter::ser_connect_case_filter(&mut object_5, inner)?;
+            object_5.finish();
+        }
+        crate::types::RelatedItemTypeFilter::Custom(inner) => {
+            #[allow(unused_mut)]
+            let mut object_6 = object_4.key("custom").start_object();
+            crate::protocol_serde::shape_custom_filter::ser_custom_filter(&mut object_6, inner)?;
+            object_6.finish();
+        }
         crate::types::RelatedItemTypeFilter::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "RelatedItemTypeFilter",

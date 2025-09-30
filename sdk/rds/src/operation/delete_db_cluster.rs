@@ -102,6 +102,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for DeleteD
                 .expect("required fields set"),
         ));
 
+        cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::SensitiveOutput);
         cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::Metadata::new("DeleteDBCluster", "RDS"));
         let mut signing_options = ::aws_runtime::auth::SigningOptions::default();
         signing_options.double_uri_encode = true;
@@ -263,6 +264,10 @@ pub enum DeleteDBClusterError {
     InvalidDbClusterSnapshotStateFault(crate::types::error::InvalidDbClusterSnapshotStateFault),
     /// <p>The requested operation can't be performed while the cluster is in this state.</p>
     InvalidDbClusterStateFault(crate::types::error::InvalidDbClusterStateFault),
+    /// <p>The global cluster is in an invalid state and can't perform the requested operation.</p>
+    InvalidGlobalClusterStateFault(crate::types::error::InvalidGlobalClusterStateFault),
+    /// <p>An error occurred accessing an Amazon Web Services KMS key.</p>
+    KmsKeyNotAccessibleFault(crate::types::error::KmsKeyNotAccessibleFault),
     /// <p>The request would result in the user exceeding the allowed number of DB snapshots.</p>
     SnapshotQuotaExceededFault(crate::types::error::SnapshotQuotaExceededFault),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -303,6 +308,8 @@ impl DeleteDBClusterError {
             Self::DbClusterSnapshotAlreadyExistsFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidDbClusterSnapshotStateFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidDbClusterStateFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidGlobalClusterStateFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::KmsKeyNotAccessibleFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::SnapshotQuotaExceededFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
@@ -327,6 +334,14 @@ impl DeleteDBClusterError {
     pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
         matches!(self, Self::InvalidDbClusterStateFault(_))
     }
+    /// Returns `true` if the error kind is `DeleteDBClusterError::InvalidGlobalClusterStateFault`.
+    pub fn is_invalid_global_cluster_state_fault(&self) -> bool {
+        matches!(self, Self::InvalidGlobalClusterStateFault(_))
+    }
+    /// Returns `true` if the error kind is `DeleteDBClusterError::KmsKeyNotAccessibleFault`.
+    pub fn is_kms_key_not_accessible_fault(&self) -> bool {
+        matches!(self, Self::KmsKeyNotAccessibleFault(_))
+    }
     /// Returns `true` if the error kind is `DeleteDBClusterError::SnapshotQuotaExceededFault`.
     pub fn is_snapshot_quota_exceeded_fault(&self) -> bool {
         matches!(self, Self::SnapshotQuotaExceededFault(_))
@@ -340,6 +355,8 @@ impl ::std::error::Error for DeleteDBClusterError {
             Self::DbClusterSnapshotAlreadyExistsFault(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidDbClusterSnapshotStateFault(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidDbClusterStateFault(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidGlobalClusterStateFault(_inner) => ::std::option::Option::Some(_inner),
+            Self::KmsKeyNotAccessibleFault(_inner) => ::std::option::Option::Some(_inner),
             Self::SnapshotQuotaExceededFault(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
@@ -353,6 +370,8 @@ impl ::std::fmt::Display for DeleteDBClusterError {
             Self::DbClusterSnapshotAlreadyExistsFault(_inner) => _inner.fmt(f),
             Self::InvalidDbClusterSnapshotStateFault(_inner) => _inner.fmt(f),
             Self::InvalidDbClusterStateFault(_inner) => _inner.fmt(f),
+            Self::InvalidGlobalClusterStateFault(_inner) => _inner.fmt(f),
+            Self::KmsKeyNotAccessibleFault(_inner) => _inner.fmt(f),
             Self::SnapshotQuotaExceededFault(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
@@ -380,6 +399,8 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DeleteDBClust
             Self::DbClusterSnapshotAlreadyExistsFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidDbClusterSnapshotStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidDbClusterStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidGlobalClusterStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::KmsKeyNotAccessibleFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::SnapshotQuotaExceededFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }

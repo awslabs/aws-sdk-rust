@@ -183,9 +183,6 @@ pub struct RestoreDbClusterFromSnapshotInput {
     /// </ul>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub publicly_accessible: ::std::option::Option<bool>,
-    /// <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    pub serverless_v2_scaling_configuration: ::std::option::Option<crate::types::ServerlessV2ScalingConfiguration>,
     /// <p>The network type of the DB cluster.</p>
     /// <p>Valid Values:</p>
     /// <ul>
@@ -198,6 +195,9 @@ pub struct RestoreDbClusterFromSnapshotInput {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i></p>
     /// <p>Valid for: Aurora DB clusters only</p>
     pub network_type: ::std::option::Option<::std::string::String>,
+    /// <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub serverless_v2_scaling_configuration: ::std::option::Option<crate::types::ServerlessV2ScalingConfiguration>,
     /// <p>Reserved for future use.</p>
     pub rds_custom_cluster_configuration: ::std::option::Option<crate::types::RdsCustomClusterConfiguration>,
     /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB cluster. To turn off collecting Enhanced Monitoring metrics, specify <code>0</code>.</p>
@@ -482,11 +482,6 @@ impl RestoreDbClusterFromSnapshotInput {
     pub fn publicly_accessible(&self) -> ::std::option::Option<bool> {
         self.publicly_accessible
     }
-    /// <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    pub fn serverless_v2_scaling_configuration(&self) -> ::std::option::Option<&crate::types::ServerlessV2ScalingConfiguration> {
-        self.serverless_v2_scaling_configuration.as_ref()
-    }
     /// <p>The network type of the DB cluster.</p>
     /// <p>Valid Values:</p>
     /// <ul>
@@ -500,6 +495,11 @@ impl RestoreDbClusterFromSnapshotInput {
     /// <p>Valid for: Aurora DB clusters only</p>
     pub fn network_type(&self) -> ::std::option::Option<&str> {
         self.network_type.as_deref()
+    }
+    /// <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub fn serverless_v2_scaling_configuration(&self) -> ::std::option::Option<&crate::types::ServerlessV2ScalingConfiguration> {
+        self.serverless_v2_scaling_configuration.as_ref()
     }
     /// <p>Reserved for future use.</p>
     pub fn rds_custom_cluster_configuration(&self) -> ::std::option::Option<&crate::types::RdsCustomClusterConfiguration> {
@@ -596,8 +596,8 @@ pub struct RestoreDbClusterFromSnapshotInputBuilder {
     pub(crate) storage_type: ::std::option::Option<::std::string::String>,
     pub(crate) iops: ::std::option::Option<i32>,
     pub(crate) publicly_accessible: ::std::option::Option<bool>,
-    pub(crate) serverless_v2_scaling_configuration: ::std::option::Option<crate::types::ServerlessV2ScalingConfiguration>,
     pub(crate) network_type: ::std::option::Option<::std::string::String>,
+    pub(crate) serverless_v2_scaling_configuration: ::std::option::Option<crate::types::ServerlessV2ScalingConfiguration>,
     pub(crate) rds_custom_cluster_configuration: ::std::option::Option<crate::types::RdsCustomClusterConfiguration>,
     pub(crate) monitoring_interval: ::std::option::Option<i32>,
     pub(crate) monitoring_role_arn: ::std::option::Option<::std::string::String>,
@@ -1379,23 +1379,6 @@ impl RestoreDbClusterFromSnapshotInputBuilder {
     pub fn get_publicly_accessible(&self) -> &::std::option::Option<bool> {
         &self.publicly_accessible
     }
-    /// <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    pub fn serverless_v2_scaling_configuration(mut self, input: crate::types::ServerlessV2ScalingConfiguration) -> Self {
-        self.serverless_v2_scaling_configuration = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    pub fn set_serverless_v2_scaling_configuration(mut self, input: ::std::option::Option<crate::types::ServerlessV2ScalingConfiguration>) -> Self {
-        self.serverless_v2_scaling_configuration = input;
-        self
-    }
-    /// <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    pub fn get_serverless_v2_scaling_configuration(&self) -> &::std::option::Option<crate::types::ServerlessV2ScalingConfiguration> {
-        &self.serverless_v2_scaling_configuration
-    }
     /// <p>The network type of the DB cluster.</p>
     /// <p>Valid Values:</p>
     /// <ul>
@@ -1439,6 +1422,23 @@ impl RestoreDbClusterFromSnapshotInputBuilder {
     /// <p>Valid for: Aurora DB clusters only</p>
     pub fn get_network_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.network_type
+    }
+    /// <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub fn serverless_v2_scaling_configuration(mut self, input: crate::types::ServerlessV2ScalingConfiguration) -> Self {
+        self.serverless_v2_scaling_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub fn set_serverless_v2_scaling_configuration(mut self, input: ::std::option::Option<crate::types::ServerlessV2ScalingConfiguration>) -> Self {
+        self.serverless_v2_scaling_configuration = input;
+        self
+    }
+    /// <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub fn get_serverless_v2_scaling_configuration(&self) -> &::std::option::Option<crate::types::ServerlessV2ScalingConfiguration> {
+        &self.serverless_v2_scaling_configuration
     }
     /// <p>Reserved for future use.</p>
     pub fn rds_custom_cluster_configuration(mut self, input: crate::types::RdsCustomClusterConfiguration) -> Self {
@@ -1659,8 +1659,8 @@ impl RestoreDbClusterFromSnapshotInputBuilder {
             storage_type: self.storage_type,
             iops: self.iops,
             publicly_accessible: self.publicly_accessible,
-            serverless_v2_scaling_configuration: self.serverless_v2_scaling_configuration,
             network_type: self.network_type,
+            serverless_v2_scaling_configuration: self.serverless_v2_scaling_configuration,
             rds_custom_cluster_configuration: self.rds_custom_cluster_configuration,
             monitoring_interval: self.monitoring_interval,
             monitoring_role_arn: self.monitoring_role_arn,

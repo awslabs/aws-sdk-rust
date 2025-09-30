@@ -169,14 +169,14 @@ pub fn ser_restore_db_cluster_from_snapshot_input_input_input(
         scope_63.boolean(*var_64);
     }
     #[allow(unused_mut)]
-    let mut scope_65 = writer.prefix("ServerlessV2ScalingConfiguration");
-    if let Some(var_66) = &input.serverless_v2_scaling_configuration {
-        crate::protocol_serde::shape_serverless_v2_scaling_configuration::ser_serverless_v2_scaling_configuration(scope_65, var_66)?;
+    let mut scope_65 = writer.prefix("NetworkType");
+    if let Some(var_66) = &input.network_type {
+        scope_65.string(var_66);
     }
     #[allow(unused_mut)]
-    let mut scope_67 = writer.prefix("NetworkType");
-    if let Some(var_68) = &input.network_type {
-        scope_67.string(var_68);
+    let mut scope_67 = writer.prefix("ServerlessV2ScalingConfiguration");
+    if let Some(var_68) = &input.serverless_v2_scaling_configuration {
+        crate::protocol_serde::shape_serverless_v2_scaling_configuration::ser_serverless_v2_scaling_configuration(scope_67, var_68)?;
     }
     #[allow(unused_mut)]
     let mut scope_69 = writer.prefix("RdsCustomClusterConfiguration");

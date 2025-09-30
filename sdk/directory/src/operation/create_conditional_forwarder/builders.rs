@@ -155,4 +155,23 @@ impl CreateConditionalForwarderFluentBuilder {
     pub fn get_dns_ip_addrs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_dns_ip_addrs()
     }
+    ///
+    /// Appends an item to `DnsIpv6Addrs`.
+    ///
+    /// To override the contents of this collection use [`set_dns_ipv6_addrs`](Self::set_dns_ipv6_addrs).
+    ///
+    /// <p>The IPv6 addresses of the remote DNS server associated with RemoteDomainName.</p>
+    pub fn dns_ipv6_addrs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.dns_ipv6_addrs(input.into());
+        self
+    }
+    /// <p>The IPv6 addresses of the remote DNS server associated with RemoteDomainName.</p>
+    pub fn set_dns_ipv6_addrs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_dns_ipv6_addrs(input);
+        self
+    }
+    /// <p>The IPv6 addresses of the remote DNS server associated with RemoteDomainName.</p>
+    pub fn get_dns_ipv6_addrs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_dns_ipv6_addrs()
+    }
 }

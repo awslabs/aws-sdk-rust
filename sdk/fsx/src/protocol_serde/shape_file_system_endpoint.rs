@@ -26,6 +26,11 @@ where
                                 crate::protocol_serde::shape_ontap_endpoint_ip_addresses::de_ontap_endpoint_ip_addresses(tokens)?,
                             );
                         }
+                        "Ipv6Addresses" => {
+                            builder = builder.set_ipv6_addresses(
+                                crate::protocol_serde::shape_ontap_endpoint_ip_addresses::de_ontap_endpoint_ip_addresses(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

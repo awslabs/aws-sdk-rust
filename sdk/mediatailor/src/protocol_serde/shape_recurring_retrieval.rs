@@ -36,6 +36,11 @@ where
                                 crate::protocol_serde::shape_traffic_shaping_retrieval_window::de_traffic_shaping_retrieval_window(tokens)?,
                             );
                         }
+                        "TrafficShapingTpsConfiguration" => {
+                            builder = builder.set_traffic_shaping_tps_configuration(
+                                crate::protocol_serde::shape_traffic_shaping_tps_configuration::de_traffic_shaping_tps_configuration(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -82,6 +87,12 @@ pub fn ser_recurring_retrieval(
         let mut object_8 = object.key("TrafficShapingRetrievalWindow").start_object();
         crate::protocol_serde::shape_traffic_shaping_retrieval_window::ser_traffic_shaping_retrieval_window(&mut object_8, var_7)?;
         object_8.finish();
+    }
+    if let Some(var_9) = &input.traffic_shaping_tps_configuration {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("TrafficShapingTpsConfiguration").start_object();
+        crate::protocol_serde::shape_traffic_shaping_tps_configuration::ser_traffic_shaping_tps_configuration(&mut object_10, var_9)?;
+        object_10.finish();
     }
     Ok(())
 }

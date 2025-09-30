@@ -31,7 +31,7 @@ pub struct UpdateFileSystemOpenZfsConfiguration {
     pub remove_route_table_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The configuration for the optional provisioned SSD read cache on file systems that use the Intelligent-Tiering storage class.</p>
     pub read_cache_configuration: ::std::option::Option<crate::types::OpenZfsReadCacheConfiguration>,
-    /// <p>(Multi-AZ only) Specifies the IP address range in which the endpoints to access your file system will be created. By default in the Amazon FSx API and Amazon FSx console, Amazon FSx selects an available /118 IP address range for you from one of the VPC's CIDR ranges. You can have overlapping endpoint IP addresses for file systems deployed in the same VPC/route tables, as long as they don't overlap with any subnet.</p>
+    /// <p>(Multi-AZ only) Specifies the IPv6 address range in which the endpoints to access your file system will be created. By default in the Amazon FSx API and Amazon FSx console, Amazon FSx selects an available /118 IP address range for you from one of the VPC's CIDR ranges. You can have overlapping endpoint IP addresses for file systems deployed in the same VPC/route tables, as long as they don't overlap with any subnet.</p>
     pub endpoint_ipv6_address_range: ::std::option::Option<::std::string::String>,
 }
 impl UpdateFileSystemOpenZfsConfiguration {
@@ -86,7 +86,7 @@ impl UpdateFileSystemOpenZfsConfiguration {
     pub fn read_cache_configuration(&self) -> ::std::option::Option<&crate::types::OpenZfsReadCacheConfiguration> {
         self.read_cache_configuration.as_ref()
     }
-    /// <p>(Multi-AZ only) Specifies the IP address range in which the endpoints to access your file system will be created. By default in the Amazon FSx API and Amazon FSx console, Amazon FSx selects an available /118 IP address range for you from one of the VPC's CIDR ranges. You can have overlapping endpoint IP addresses for file systems deployed in the same VPC/route tables, as long as they don't overlap with any subnet.</p>
+    /// <p>(Multi-AZ only) Specifies the IPv6 address range in which the endpoints to access your file system will be created. By default in the Amazon FSx API and Amazon FSx console, Amazon FSx selects an available /118 IP address range for you from one of the VPC's CIDR ranges. You can have overlapping endpoint IP addresses for file systems deployed in the same VPC/route tables, as long as they don't overlap with any subnet.</p>
     pub fn endpoint_ipv6_address_range(&self) -> ::std::option::Option<&str> {
         self.endpoint_ipv6_address_range.as_deref()
     }
@@ -288,17 +288,17 @@ impl UpdateFileSystemOpenZfsConfigurationBuilder {
     pub fn get_read_cache_configuration(&self) -> &::std::option::Option<crate::types::OpenZfsReadCacheConfiguration> {
         &self.read_cache_configuration
     }
-    /// <p>(Multi-AZ only) Specifies the IP address range in which the endpoints to access your file system will be created. By default in the Amazon FSx API and Amazon FSx console, Amazon FSx selects an available /118 IP address range for you from one of the VPC's CIDR ranges. You can have overlapping endpoint IP addresses for file systems deployed in the same VPC/route tables, as long as they don't overlap with any subnet.</p>
+    /// <p>(Multi-AZ only) Specifies the IPv6 address range in which the endpoints to access your file system will be created. By default in the Amazon FSx API and Amazon FSx console, Amazon FSx selects an available /118 IP address range for you from one of the VPC's CIDR ranges. You can have overlapping endpoint IP addresses for file systems deployed in the same VPC/route tables, as long as they don't overlap with any subnet.</p>
     pub fn endpoint_ipv6_address_range(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_ipv6_address_range = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>(Multi-AZ only) Specifies the IP address range in which the endpoints to access your file system will be created. By default in the Amazon FSx API and Amazon FSx console, Amazon FSx selects an available /118 IP address range for you from one of the VPC's CIDR ranges. You can have overlapping endpoint IP addresses for file systems deployed in the same VPC/route tables, as long as they don't overlap with any subnet.</p>
+    /// <p>(Multi-AZ only) Specifies the IPv6 address range in which the endpoints to access your file system will be created. By default in the Amazon FSx API and Amazon FSx console, Amazon FSx selects an available /118 IP address range for you from one of the VPC's CIDR ranges. You can have overlapping endpoint IP addresses for file systems deployed in the same VPC/route tables, as long as they don't overlap with any subnet.</p>
     pub fn set_endpoint_ipv6_address_range(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.endpoint_ipv6_address_range = input;
         self
     }
-    /// <p>(Multi-AZ only) Specifies the IP address range in which the endpoints to access your file system will be created. By default in the Amazon FSx API and Amazon FSx console, Amazon FSx selects an available /118 IP address range for you from one of the VPC's CIDR ranges. You can have overlapping endpoint IP addresses for file systems deployed in the same VPC/route tables, as long as they don't overlap with any subnet.</p>
+    /// <p>(Multi-AZ only) Specifies the IPv6 address range in which the endpoints to access your file system will be created. By default in the Amazon FSx API and Amazon FSx console, Amazon FSx selects an available /118 IP address range for you from one of the VPC's CIDR ranges. You can have overlapping endpoint IP addresses for file systems deployed in the same VPC/route tables, as long as they don't overlap with any subnet.</p>
     pub fn get_endpoint_ipv6_address_range(&self) -> &::std::option::Option<::std::string::String> {
         &self.endpoint_ipv6_address_range
     }

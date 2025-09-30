@@ -30,8 +30,6 @@ impl crate::operation::delete_data_product::builders::DeleteDataProductInputBuil
 /// <li>
 /// <p>The user must have delete permissions for the data product.</p></li>
 /// <li>
-/// <p>Ensure there are no active dependencies (e.g., published links, assets using the product).</p></li>
-/// <li>
 /// <p>Domain and project must be active.</p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

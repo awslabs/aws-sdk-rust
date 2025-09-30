@@ -457,6 +457,8 @@ pub(crate) mod shape_directory_descriptions;
 
 pub(crate) mod shape_directory_limits;
 
+pub(crate) mod shape_directory_size_update_settings;
+
 pub(crate) mod shape_directory_vpc_settings;
 
 pub(crate) mod shape_domain_controllers;
@@ -476,6 +478,8 @@ pub(crate) mod shape_ip_routes_info;
 pub(crate) mod shape_ldaps_settings_info;
 
 pub(crate) mod shape_log_subscriptions;
+
+pub(crate) mod shape_network_update_settings;
 
 pub(crate) mod shape_os_update_settings;
 
@@ -565,6 +569,8 @@ pub(crate) mod shape_directory_vpc_settings_description;
 
 pub(crate) mod shape_dns_ip_addrs;
 
+pub(crate) mod shape_dns_ipv6_addrs;
+
 pub(crate) mod shape_hybrid_settings_description;
 
 pub(crate) mod shape_hybrid_update_info_entry;
@@ -584,5 +590,7 @@ pub(crate) mod shape_availability_zones;
 pub(crate) mod shape_hybrid_update_value;
 
 pub(crate) mod shape_ip_addrs;
+
+pub(crate) mod shape_ipv6_addrs;
 
 pub(crate) mod shape_servers;

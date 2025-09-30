@@ -8,10 +8,12 @@ pub struct RecurringRetrieval {
     pub dynamic_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The number of seconds that MediaTailor waits after an ad avail before prefetching ads for the next avail. If not set, the default is 0 (no delay).</p>
     pub delay_after_avail_end_seconds: ::std::option::Option<i32>,
-    /// <p>Indicates if this configuration uses a retrieval window for traffic shaping and limiting the number of requests to the ADS at one time.</p>
+    /// <p>Indicates the type of traffic shaping used for traffic shaping and limiting the number of requests to the ADS at one time.</p>
     pub traffic_shaping_type: ::std::option::Option<crate::types::TrafficShapingType>,
     /// <p>Configuration for spreading ADS traffic across a set window instead of sending ADS requests for all sessions at the same time.</p>
     pub traffic_shaping_retrieval_window: ::std::option::Option<crate::types::TrafficShapingRetrievalWindow>,
+    /// <p>The configuration for TPS-based traffic shaping that limits the number of requests to the ad decision server (ADS) based on transactions per second instead of time windows.</p>
+    pub traffic_shaping_tps_configuration: ::std::option::Option<crate::types::TrafficShapingTpsConfiguration>,
 }
 impl RecurringRetrieval {
     /// <p>The dynamic variables to use for substitution during prefetch requests to the ADS.</p>
@@ -22,13 +24,17 @@ impl RecurringRetrieval {
     pub fn delay_after_avail_end_seconds(&self) -> ::std::option::Option<i32> {
         self.delay_after_avail_end_seconds
     }
-    /// <p>Indicates if this configuration uses a retrieval window for traffic shaping and limiting the number of requests to the ADS at one time.</p>
+    /// <p>Indicates the type of traffic shaping used for traffic shaping and limiting the number of requests to the ADS at one time.</p>
     pub fn traffic_shaping_type(&self) -> ::std::option::Option<&crate::types::TrafficShapingType> {
         self.traffic_shaping_type.as_ref()
     }
     /// <p>Configuration for spreading ADS traffic across a set window instead of sending ADS requests for all sessions at the same time.</p>
     pub fn traffic_shaping_retrieval_window(&self) -> ::std::option::Option<&crate::types::TrafficShapingRetrievalWindow> {
         self.traffic_shaping_retrieval_window.as_ref()
+    }
+    /// <p>The configuration for TPS-based traffic shaping that limits the number of requests to the ad decision server (ADS) based on transactions per second instead of time windows.</p>
+    pub fn traffic_shaping_tps_configuration(&self) -> ::std::option::Option<&crate::types::TrafficShapingTpsConfiguration> {
+        self.traffic_shaping_tps_configuration.as_ref()
     }
 }
 impl RecurringRetrieval {
@@ -46,6 +52,7 @@ pub struct RecurringRetrievalBuilder {
     pub(crate) delay_after_avail_end_seconds: ::std::option::Option<i32>,
     pub(crate) traffic_shaping_type: ::std::option::Option<crate::types::TrafficShapingType>,
     pub(crate) traffic_shaping_retrieval_window: ::std::option::Option<crate::types::TrafficShapingRetrievalWindow>,
+    pub(crate) traffic_shaping_tps_configuration: ::std::option::Option<crate::types::TrafficShapingTpsConfiguration>,
 }
 impl RecurringRetrievalBuilder {
     /// Adds a key-value pair to `dynamic_variables`.
@@ -89,17 +96,17 @@ impl RecurringRetrievalBuilder {
     pub fn get_delay_after_avail_end_seconds(&self) -> &::std::option::Option<i32> {
         &self.delay_after_avail_end_seconds
     }
-    /// <p>Indicates if this configuration uses a retrieval window for traffic shaping and limiting the number of requests to the ADS at one time.</p>
+    /// <p>Indicates the type of traffic shaping used for traffic shaping and limiting the number of requests to the ADS at one time.</p>
     pub fn traffic_shaping_type(mut self, input: crate::types::TrafficShapingType) -> Self {
         self.traffic_shaping_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates if this configuration uses a retrieval window for traffic shaping and limiting the number of requests to the ADS at one time.</p>
+    /// <p>Indicates the type of traffic shaping used for traffic shaping and limiting the number of requests to the ADS at one time.</p>
     pub fn set_traffic_shaping_type(mut self, input: ::std::option::Option<crate::types::TrafficShapingType>) -> Self {
         self.traffic_shaping_type = input;
         self
     }
-    /// <p>Indicates if this configuration uses a retrieval window for traffic shaping and limiting the number of requests to the ADS at one time.</p>
+    /// <p>Indicates the type of traffic shaping used for traffic shaping and limiting the number of requests to the ADS at one time.</p>
     pub fn get_traffic_shaping_type(&self) -> &::std::option::Option<crate::types::TrafficShapingType> {
         &self.traffic_shaping_type
     }
@@ -117,6 +124,20 @@ impl RecurringRetrievalBuilder {
     pub fn get_traffic_shaping_retrieval_window(&self) -> &::std::option::Option<crate::types::TrafficShapingRetrievalWindow> {
         &self.traffic_shaping_retrieval_window
     }
+    /// <p>The configuration for TPS-based traffic shaping that limits the number of requests to the ad decision server (ADS) based on transactions per second instead of time windows.</p>
+    pub fn traffic_shaping_tps_configuration(mut self, input: crate::types::TrafficShapingTpsConfiguration) -> Self {
+        self.traffic_shaping_tps_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration for TPS-based traffic shaping that limits the number of requests to the ad decision server (ADS) based on transactions per second instead of time windows.</p>
+    pub fn set_traffic_shaping_tps_configuration(mut self, input: ::std::option::Option<crate::types::TrafficShapingTpsConfiguration>) -> Self {
+        self.traffic_shaping_tps_configuration = input;
+        self
+    }
+    /// <p>The configuration for TPS-based traffic shaping that limits the number of requests to the ad decision server (ADS) based on transactions per second instead of time windows.</p>
+    pub fn get_traffic_shaping_tps_configuration(&self) -> &::std::option::Option<crate::types::TrafficShapingTpsConfiguration> {
+        &self.traffic_shaping_tps_configuration
+    }
     /// Consumes the builder and constructs a [`RecurringRetrieval`](crate::types::RecurringRetrieval).
     pub fn build(self) -> crate::types::RecurringRetrieval {
         crate::types::RecurringRetrieval {
@@ -124,6 +145,7 @@ impl RecurringRetrievalBuilder {
             delay_after_avail_end_seconds: self.delay_after_avail_end_seconds,
             traffic_shaping_type: self.traffic_shaping_type,
             traffic_shaping_retrieval_window: self.traffic_shaping_retrieval_window,
+            traffic_shaping_tps_configuration: self.traffic_shaping_tps_configuration,
         }
     }
 }

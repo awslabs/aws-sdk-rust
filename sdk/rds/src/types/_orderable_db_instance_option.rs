@@ -29,6 +29,8 @@ pub struct OrderableDbInstanceOption {
     pub storage_type: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether a DB instance supports provisioned IOPS.</p>
     pub supports_iops: ::std::option::Option<bool>,
+    /// <p>Indicates whether a DB instance supports storage throughput.</p>
+    pub supports_storage_throughput: ::std::option::Option<bool>,
     /// <p>Indicates whether a DB instance supports Enhanced Monitoring at intervals from 1 to 60 seconds.</p>
     pub supports_enhanced_monitoring: ::std::option::Option<bool>,
     /// <p>Indicates whether a DB instance supports IAM database authentication.</p>
@@ -47,6 +49,14 @@ pub struct OrderableDbInstanceOption {
     pub min_iops_per_gib: ::std::option::Option<f64>,
     /// <p>Maximum provisioned IOPS per GiB for a DB instance.</p>
     pub max_iops_per_gib: ::std::option::Option<f64>,
+    /// <p>Minimum storage throughput for a DB instance.</p>
+    pub min_storage_throughput_per_db_instance: ::std::option::Option<i32>,
+    /// <p>Maximum storage throughput for a DB instance.</p>
+    pub max_storage_throughput_per_db_instance: ::std::option::Option<i32>,
+    /// <p>Minimum storage throughput to provisioned IOPS ratio for a DB instance.</p>
+    pub min_storage_throughput_per_iops: ::std::option::Option<f64>,
+    /// <p>Maximum storage throughput to provisioned IOPS ratio for a DB instance.</p>
+    pub max_storage_throughput_per_iops: ::std::option::Option<f64>,
     /// <p>A list of the available processor features for the DB instance class of a DB instance.</p>
     pub available_processor_features: ::std::option::Option<::std::vec::Vec<crate::types::AvailableProcessorFeature>>,
     /// <p>A list of the supported DB engine modes.</p>
@@ -62,23 +72,13 @@ pub struct OrderableDbInstanceOption {
     pub supported_activity_stream_modes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Indicates whether you can use Aurora global databases with a specific combination of other DB engine attributes.</p>
     pub supports_global_databases: ::std::option::Option<bool>,
-    /// <p>Indicates whether DB instances can be configured as a Multi-AZ DB cluster.</p>
-    /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i></p>
-    pub supports_clusters: ::std::option::Option<bool>,
     /// <p>The network types supported by the DB instance (<code>IPV4</code> or <code>DUAL</code>).</p>
     /// <p>A DB instance can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i></p>
     pub supported_network_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>Indicates whether a DB instance supports storage throughput.</p>
-    pub supports_storage_throughput: ::std::option::Option<bool>,
-    /// <p>Minimum storage throughput for a DB instance.</p>
-    pub min_storage_throughput_per_db_instance: ::std::option::Option<i32>,
-    /// <p>Maximum storage throughput for a DB instance.</p>
-    pub max_storage_throughput_per_db_instance: ::std::option::Option<i32>,
-    /// <p>Minimum storage throughput to provisioned IOPS ratio for a DB instance.</p>
-    pub min_storage_throughput_per_iops: ::std::option::Option<f64>,
-    /// <p>Maximum storage throughput to provisioned IOPS ratio for a DB instance.</p>
-    pub max_storage_throughput_per_iops: ::std::option::Option<f64>,
+    /// <p>Indicates whether DB instances can be configured as a Multi-AZ DB cluster.</p>
+    /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i></p>
+    pub supports_clusters: ::std::option::Option<bool>,
     /// <p>Indicates whether a DB instance supports using a dedicated log volume (DLV).</p>
     pub supports_dedicated_log_volume: ::std::option::Option<bool>,
     /// <p>Indicates whether a DB instance supports HTTP endpoints.</p>
@@ -135,6 +135,10 @@ impl OrderableDbInstanceOption {
     pub fn supports_iops(&self) -> ::std::option::Option<bool> {
         self.supports_iops
     }
+    /// <p>Indicates whether a DB instance supports storage throughput.</p>
+    pub fn supports_storage_throughput(&self) -> ::std::option::Option<bool> {
+        self.supports_storage_throughput
+    }
     /// <p>Indicates whether a DB instance supports Enhanced Monitoring at intervals from 1 to 60 seconds.</p>
     pub fn supports_enhanced_monitoring(&self) -> ::std::option::Option<bool> {
         self.supports_enhanced_monitoring
@@ -171,6 +175,22 @@ impl OrderableDbInstanceOption {
     pub fn max_iops_per_gib(&self) -> ::std::option::Option<f64> {
         self.max_iops_per_gib
     }
+    /// <p>Minimum storage throughput for a DB instance.</p>
+    pub fn min_storage_throughput_per_db_instance(&self) -> ::std::option::Option<i32> {
+        self.min_storage_throughput_per_db_instance
+    }
+    /// <p>Maximum storage throughput for a DB instance.</p>
+    pub fn max_storage_throughput_per_db_instance(&self) -> ::std::option::Option<i32> {
+        self.max_storage_throughput_per_db_instance
+    }
+    /// <p>Minimum storage throughput to provisioned IOPS ratio for a DB instance.</p>
+    pub fn min_storage_throughput_per_iops(&self) -> ::std::option::Option<f64> {
+        self.min_storage_throughput_per_iops
+    }
+    /// <p>Maximum storage throughput to provisioned IOPS ratio for a DB instance.</p>
+    pub fn max_storage_throughput_per_iops(&self) -> ::std::option::Option<f64> {
+        self.max_storage_throughput_per_iops
+    }
     /// <p>A list of the available processor features for the DB instance class of a DB instance.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.available_processor_features.is_none()`.
@@ -206,11 +226,6 @@ impl OrderableDbInstanceOption {
     pub fn supports_global_databases(&self) -> ::std::option::Option<bool> {
         self.supports_global_databases
     }
-    /// <p>Indicates whether DB instances can be configured as a Multi-AZ DB cluster.</p>
-    /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i></p>
-    pub fn supports_clusters(&self) -> ::std::option::Option<bool> {
-        self.supports_clusters
-    }
     /// <p>The network types supported by the DB instance (<code>IPV4</code> or <code>DUAL</code>).</p>
     /// <p>A DB instance can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i></p>
@@ -219,25 +234,10 @@ impl OrderableDbInstanceOption {
     pub fn supported_network_types(&self) -> &[::std::string::String] {
         self.supported_network_types.as_deref().unwrap_or_default()
     }
-    /// <p>Indicates whether a DB instance supports storage throughput.</p>
-    pub fn supports_storage_throughput(&self) -> ::std::option::Option<bool> {
-        self.supports_storage_throughput
-    }
-    /// <p>Minimum storage throughput for a DB instance.</p>
-    pub fn min_storage_throughput_per_db_instance(&self) -> ::std::option::Option<i32> {
-        self.min_storage_throughput_per_db_instance
-    }
-    /// <p>Maximum storage throughput for a DB instance.</p>
-    pub fn max_storage_throughput_per_db_instance(&self) -> ::std::option::Option<i32> {
-        self.max_storage_throughput_per_db_instance
-    }
-    /// <p>Minimum storage throughput to provisioned IOPS ratio for a DB instance.</p>
-    pub fn min_storage_throughput_per_iops(&self) -> ::std::option::Option<f64> {
-        self.min_storage_throughput_per_iops
-    }
-    /// <p>Maximum storage throughput to provisioned IOPS ratio for a DB instance.</p>
-    pub fn max_storage_throughput_per_iops(&self) -> ::std::option::Option<f64> {
-        self.max_storage_throughput_per_iops
+    /// <p>Indicates whether DB instances can be configured as a Multi-AZ DB cluster.</p>
+    /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i></p>
+    pub fn supports_clusters(&self) -> ::std::option::Option<bool> {
+        self.supports_clusters
     }
     /// <p>Indicates whether a DB instance supports using a dedicated log volume (DLV).</p>
     pub fn supports_dedicated_log_volume(&self) -> ::std::option::Option<bool> {
@@ -271,6 +271,7 @@ pub struct OrderableDbInstanceOptionBuilder {
     pub(crate) supports_storage_encryption: ::std::option::Option<bool>,
     pub(crate) storage_type: ::std::option::Option<::std::string::String>,
     pub(crate) supports_iops: ::std::option::Option<bool>,
+    pub(crate) supports_storage_throughput: ::std::option::Option<bool>,
     pub(crate) supports_enhanced_monitoring: ::std::option::Option<bool>,
     pub(crate) supports_iam_database_authentication: ::std::option::Option<bool>,
     pub(crate) supports_performance_insights: ::std::option::Option<bool>,
@@ -280,6 +281,10 @@ pub struct OrderableDbInstanceOptionBuilder {
     pub(crate) max_iops_per_db_instance: ::std::option::Option<i32>,
     pub(crate) min_iops_per_gib: ::std::option::Option<f64>,
     pub(crate) max_iops_per_gib: ::std::option::Option<f64>,
+    pub(crate) min_storage_throughput_per_db_instance: ::std::option::Option<i32>,
+    pub(crate) max_storage_throughput_per_db_instance: ::std::option::Option<i32>,
+    pub(crate) min_storage_throughput_per_iops: ::std::option::Option<f64>,
+    pub(crate) max_storage_throughput_per_iops: ::std::option::Option<f64>,
     pub(crate) available_processor_features: ::std::option::Option<::std::vec::Vec<crate::types::AvailableProcessorFeature>>,
     pub(crate) supported_engine_modes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) supports_storage_autoscaling: ::std::option::Option<bool>,
@@ -287,13 +292,8 @@ pub struct OrderableDbInstanceOptionBuilder {
     pub(crate) outpost_capable: ::std::option::Option<bool>,
     pub(crate) supported_activity_stream_modes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) supports_global_databases: ::std::option::Option<bool>,
-    pub(crate) supports_clusters: ::std::option::Option<bool>,
     pub(crate) supported_network_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) supports_storage_throughput: ::std::option::Option<bool>,
-    pub(crate) min_storage_throughput_per_db_instance: ::std::option::Option<i32>,
-    pub(crate) max_storage_throughput_per_db_instance: ::std::option::Option<i32>,
-    pub(crate) min_storage_throughput_per_iops: ::std::option::Option<f64>,
-    pub(crate) max_storage_throughput_per_iops: ::std::option::Option<f64>,
+    pub(crate) supports_clusters: ::std::option::Option<bool>,
     pub(crate) supports_dedicated_log_volume: ::std::option::Option<bool>,
     pub(crate) supports_http_endpoint: ::std::option::Option<bool>,
 }
@@ -472,6 +472,20 @@ impl OrderableDbInstanceOptionBuilder {
     pub fn get_supports_iops(&self) -> &::std::option::Option<bool> {
         &self.supports_iops
     }
+    /// <p>Indicates whether a DB instance supports storage throughput.</p>
+    pub fn supports_storage_throughput(mut self, input: bool) -> Self {
+        self.supports_storage_throughput = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether a DB instance supports storage throughput.</p>
+    pub fn set_supports_storage_throughput(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.supports_storage_throughput = input;
+        self
+    }
+    /// <p>Indicates whether a DB instance supports storage throughput.</p>
+    pub fn get_supports_storage_throughput(&self) -> &::std::option::Option<bool> {
+        &self.supports_storage_throughput
+    }
     /// <p>Indicates whether a DB instance supports Enhanced Monitoring at intervals from 1 to 60 seconds.</p>
     pub fn supports_enhanced_monitoring(mut self, input: bool) -> Self {
         self.supports_enhanced_monitoring = ::std::option::Option::Some(input);
@@ -598,6 +612,62 @@ impl OrderableDbInstanceOptionBuilder {
     pub fn get_max_iops_per_gib(&self) -> &::std::option::Option<f64> {
         &self.max_iops_per_gib
     }
+    /// <p>Minimum storage throughput for a DB instance.</p>
+    pub fn min_storage_throughput_per_db_instance(mut self, input: i32) -> Self {
+        self.min_storage_throughput_per_db_instance = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Minimum storage throughput for a DB instance.</p>
+    pub fn set_min_storage_throughput_per_db_instance(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.min_storage_throughput_per_db_instance = input;
+        self
+    }
+    /// <p>Minimum storage throughput for a DB instance.</p>
+    pub fn get_min_storage_throughput_per_db_instance(&self) -> &::std::option::Option<i32> {
+        &self.min_storage_throughput_per_db_instance
+    }
+    /// <p>Maximum storage throughput for a DB instance.</p>
+    pub fn max_storage_throughput_per_db_instance(mut self, input: i32) -> Self {
+        self.max_storage_throughput_per_db_instance = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Maximum storage throughput for a DB instance.</p>
+    pub fn set_max_storage_throughput_per_db_instance(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.max_storage_throughput_per_db_instance = input;
+        self
+    }
+    /// <p>Maximum storage throughput for a DB instance.</p>
+    pub fn get_max_storage_throughput_per_db_instance(&self) -> &::std::option::Option<i32> {
+        &self.max_storage_throughput_per_db_instance
+    }
+    /// <p>Minimum storage throughput to provisioned IOPS ratio for a DB instance.</p>
+    pub fn min_storage_throughput_per_iops(mut self, input: f64) -> Self {
+        self.min_storage_throughput_per_iops = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Minimum storage throughput to provisioned IOPS ratio for a DB instance.</p>
+    pub fn set_min_storage_throughput_per_iops(mut self, input: ::std::option::Option<f64>) -> Self {
+        self.min_storage_throughput_per_iops = input;
+        self
+    }
+    /// <p>Minimum storage throughput to provisioned IOPS ratio for a DB instance.</p>
+    pub fn get_min_storage_throughput_per_iops(&self) -> &::std::option::Option<f64> {
+        &self.min_storage_throughput_per_iops
+    }
+    /// <p>Maximum storage throughput to provisioned IOPS ratio for a DB instance.</p>
+    pub fn max_storage_throughput_per_iops(mut self, input: f64) -> Self {
+        self.max_storage_throughput_per_iops = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Maximum storage throughput to provisioned IOPS ratio for a DB instance.</p>
+    pub fn set_max_storage_throughput_per_iops(mut self, input: ::std::option::Option<f64>) -> Self {
+        self.max_storage_throughput_per_iops = input;
+        self
+    }
+    /// <p>Maximum storage throughput to provisioned IOPS ratio for a DB instance.</p>
+    pub fn get_max_storage_throughput_per_iops(&self) -> &::std::option::Option<f64> {
+        &self.max_storage_throughput_per_iops
+    }
     /// Appends an item to `available_processor_features`.
     ///
     /// To override the contents of this collection use [`set_available_processor_features`](Self::set_available_processor_features).
@@ -720,23 +790,6 @@ impl OrderableDbInstanceOptionBuilder {
     pub fn get_supports_global_databases(&self) -> &::std::option::Option<bool> {
         &self.supports_global_databases
     }
-    /// <p>Indicates whether DB instances can be configured as a Multi-AZ DB cluster.</p>
-    /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i></p>
-    pub fn supports_clusters(mut self, input: bool) -> Self {
-        self.supports_clusters = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>Indicates whether DB instances can be configured as a Multi-AZ DB cluster.</p>
-    /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i></p>
-    pub fn set_supports_clusters(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.supports_clusters = input;
-        self
-    }
-    /// <p>Indicates whether DB instances can be configured as a Multi-AZ DB cluster.</p>
-    /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i></p>
-    pub fn get_supports_clusters(&self) -> &::std::option::Option<bool> {
-        &self.supports_clusters
-    }
     /// Appends an item to `supported_network_types`.
     ///
     /// To override the contents of this collection use [`set_supported_network_types`](Self::set_supported_network_types).
@@ -763,75 +816,22 @@ impl OrderableDbInstanceOptionBuilder {
     pub fn get_supported_network_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.supported_network_types
     }
-    /// <p>Indicates whether a DB instance supports storage throughput.</p>
-    pub fn supports_storage_throughput(mut self, input: bool) -> Self {
-        self.supports_storage_throughput = ::std::option::Option::Some(input);
+    /// <p>Indicates whether DB instances can be configured as a Multi-AZ DB cluster.</p>
+    /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i></p>
+    pub fn supports_clusters(mut self, input: bool) -> Self {
+        self.supports_clusters = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether a DB instance supports storage throughput.</p>
-    pub fn set_supports_storage_throughput(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.supports_storage_throughput = input;
+    /// <p>Indicates whether DB instances can be configured as a Multi-AZ DB cluster.</p>
+    /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i></p>
+    pub fn set_supports_clusters(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.supports_clusters = input;
         self
     }
-    /// <p>Indicates whether a DB instance supports storage throughput.</p>
-    pub fn get_supports_storage_throughput(&self) -> &::std::option::Option<bool> {
-        &self.supports_storage_throughput
-    }
-    /// <p>Minimum storage throughput for a DB instance.</p>
-    pub fn min_storage_throughput_per_db_instance(mut self, input: i32) -> Self {
-        self.min_storage_throughput_per_db_instance = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>Minimum storage throughput for a DB instance.</p>
-    pub fn set_min_storage_throughput_per_db_instance(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.min_storage_throughput_per_db_instance = input;
-        self
-    }
-    /// <p>Minimum storage throughput for a DB instance.</p>
-    pub fn get_min_storage_throughput_per_db_instance(&self) -> &::std::option::Option<i32> {
-        &self.min_storage_throughput_per_db_instance
-    }
-    /// <p>Maximum storage throughput for a DB instance.</p>
-    pub fn max_storage_throughput_per_db_instance(mut self, input: i32) -> Self {
-        self.max_storage_throughput_per_db_instance = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>Maximum storage throughput for a DB instance.</p>
-    pub fn set_max_storage_throughput_per_db_instance(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_storage_throughput_per_db_instance = input;
-        self
-    }
-    /// <p>Maximum storage throughput for a DB instance.</p>
-    pub fn get_max_storage_throughput_per_db_instance(&self) -> &::std::option::Option<i32> {
-        &self.max_storage_throughput_per_db_instance
-    }
-    /// <p>Minimum storage throughput to provisioned IOPS ratio for a DB instance.</p>
-    pub fn min_storage_throughput_per_iops(mut self, input: f64) -> Self {
-        self.min_storage_throughput_per_iops = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>Minimum storage throughput to provisioned IOPS ratio for a DB instance.</p>
-    pub fn set_min_storage_throughput_per_iops(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.min_storage_throughput_per_iops = input;
-        self
-    }
-    /// <p>Minimum storage throughput to provisioned IOPS ratio for a DB instance.</p>
-    pub fn get_min_storage_throughput_per_iops(&self) -> &::std::option::Option<f64> {
-        &self.min_storage_throughput_per_iops
-    }
-    /// <p>Maximum storage throughput to provisioned IOPS ratio for a DB instance.</p>
-    pub fn max_storage_throughput_per_iops(mut self, input: f64) -> Self {
-        self.max_storage_throughput_per_iops = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>Maximum storage throughput to provisioned IOPS ratio for a DB instance.</p>
-    pub fn set_max_storage_throughput_per_iops(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.max_storage_throughput_per_iops = input;
-        self
-    }
-    /// <p>Maximum storage throughput to provisioned IOPS ratio for a DB instance.</p>
-    pub fn get_max_storage_throughput_per_iops(&self) -> &::std::option::Option<f64> {
-        &self.max_storage_throughput_per_iops
+    /// <p>Indicates whether DB instances can be configured as a Multi-AZ DB cluster.</p>
+    /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i></p>
+    pub fn get_supports_clusters(&self) -> &::std::option::Option<bool> {
+        &self.supports_clusters
     }
     /// <p>Indicates whether a DB instance supports using a dedicated log volume (DLV).</p>
     pub fn supports_dedicated_log_volume(mut self, input: bool) -> Self {
@@ -876,6 +876,7 @@ impl OrderableDbInstanceOptionBuilder {
             supports_storage_encryption: self.supports_storage_encryption,
             storage_type: self.storage_type,
             supports_iops: self.supports_iops,
+            supports_storage_throughput: self.supports_storage_throughput,
             supports_enhanced_monitoring: self.supports_enhanced_monitoring,
             supports_iam_database_authentication: self.supports_iam_database_authentication,
             supports_performance_insights: self.supports_performance_insights,
@@ -885,6 +886,10 @@ impl OrderableDbInstanceOptionBuilder {
             max_iops_per_db_instance: self.max_iops_per_db_instance,
             min_iops_per_gib: self.min_iops_per_gib,
             max_iops_per_gib: self.max_iops_per_gib,
+            min_storage_throughput_per_db_instance: self.min_storage_throughput_per_db_instance,
+            max_storage_throughput_per_db_instance: self.max_storage_throughput_per_db_instance,
+            min_storage_throughput_per_iops: self.min_storage_throughput_per_iops,
+            max_storage_throughput_per_iops: self.max_storage_throughput_per_iops,
             available_processor_features: self.available_processor_features,
             supported_engine_modes: self.supported_engine_modes,
             supports_storage_autoscaling: self.supports_storage_autoscaling,
@@ -892,13 +897,8 @@ impl OrderableDbInstanceOptionBuilder {
             outpost_capable: self.outpost_capable,
             supported_activity_stream_modes: self.supported_activity_stream_modes,
             supports_global_databases: self.supports_global_databases,
-            supports_clusters: self.supports_clusters,
             supported_network_types: self.supported_network_types,
-            supports_storage_throughput: self.supports_storage_throughput,
-            min_storage_throughput_per_db_instance: self.min_storage_throughput_per_db_instance,
-            max_storage_throughput_per_db_instance: self.max_storage_throughput_per_db_instance,
-            min_storage_throughput_per_iops: self.min_storage_throughput_per_iops,
-            max_storage_throughput_per_iops: self.max_storage_throughput_per_iops,
+            supports_clusters: self.supports_clusters,
             supports_dedicated_log_volume: self.supports_dedicated_log_volume,
             supports_http_endpoint: self.supports_http_endpoint,
         }

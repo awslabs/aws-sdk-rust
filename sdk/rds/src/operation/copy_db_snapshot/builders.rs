@@ -113,13 +113,12 @@ impl CopyDBSnapshotFluentBuilder {
     }
     /// <p>The identifier for the source DB snapshot.</p>
     /// <p>If the source snapshot is in the same Amazon Web Services Region as the copy, specify a valid DB snapshot identifier. For example, you might specify <code>rds:mysql-instance1-snapshot-20130805</code>.</p>
-    /// <p>If the source snapshot is in a different Amazon Web Services Region than the copy, specify a valid DB snapshot ARN. For example, you might specify <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20130805</code>.</p>
     /// <p>If you are copying from a shared manual DB snapshot, this parameter must be the Amazon Resource Name (ARN) of the shared DB snapshot.</p>
-    /// <p>If you are copying an encrypted snapshot this parameter must be in the ARN format for the source Amazon Web Services Region.</p>
+    /// <p>If the source snapshot is in a different Amazon Web Services Region than the copy, specify a valid DB snapshot ARN. You can also specify an ARN of a snapshot that is in a different account and a different Amazon Web Services Region. For example, you might specify <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20130805</code>.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
-    /// <p>Must specify a valid system snapshot in the "available" state.</p></li>
+    /// <p>Must specify a valid source snapshot in the "available" state.</p></li>
     /// </ul>
     /// <p>Example: <code>rds:mydb-2012-04-02-00-01</code></p>
     /// <p>Example: <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20130805</code></p>
@@ -129,13 +128,12 @@ impl CopyDBSnapshotFluentBuilder {
     }
     /// <p>The identifier for the source DB snapshot.</p>
     /// <p>If the source snapshot is in the same Amazon Web Services Region as the copy, specify a valid DB snapshot identifier. For example, you might specify <code>rds:mysql-instance1-snapshot-20130805</code>.</p>
-    /// <p>If the source snapshot is in a different Amazon Web Services Region than the copy, specify a valid DB snapshot ARN. For example, you might specify <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20130805</code>.</p>
     /// <p>If you are copying from a shared manual DB snapshot, this parameter must be the Amazon Resource Name (ARN) of the shared DB snapshot.</p>
-    /// <p>If you are copying an encrypted snapshot this parameter must be in the ARN format for the source Amazon Web Services Region.</p>
+    /// <p>If the source snapshot is in a different Amazon Web Services Region than the copy, specify a valid DB snapshot ARN. You can also specify an ARN of a snapshot that is in a different account and a different Amazon Web Services Region. For example, you might specify <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20130805</code>.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
-    /// <p>Must specify a valid system snapshot in the "available" state.</p></li>
+    /// <p>Must specify a valid source snapshot in the "available" state.</p></li>
     /// </ul>
     /// <p>Example: <code>rds:mydb-2012-04-02-00-01</code></p>
     /// <p>Example: <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20130805</code></p>
@@ -145,13 +143,12 @@ impl CopyDBSnapshotFluentBuilder {
     }
     /// <p>The identifier for the source DB snapshot.</p>
     /// <p>If the source snapshot is in the same Amazon Web Services Region as the copy, specify a valid DB snapshot identifier. For example, you might specify <code>rds:mysql-instance1-snapshot-20130805</code>.</p>
-    /// <p>If the source snapshot is in a different Amazon Web Services Region than the copy, specify a valid DB snapshot ARN. For example, you might specify <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20130805</code>.</p>
     /// <p>If you are copying from a shared manual DB snapshot, this parameter must be the Amazon Resource Name (ARN) of the shared DB snapshot.</p>
-    /// <p>If you are copying an encrypted snapshot this parameter must be in the ARN format for the source Amazon Web Services Region.</p>
+    /// <p>If the source snapshot is in a different Amazon Web Services Region than the copy, specify a valid DB snapshot ARN. You can also specify an ARN of a snapshot that is in a different account and a different Amazon Web Services Region. For example, you might specify <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20130805</code>.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
-    /// <p>Must specify a valid system snapshot in the "available" state.</p></li>
+    /// <p>Must specify a valid source snapshot in the "available" state.</p></li>
     /// </ul>
     /// <p>Example: <code>rds:mydb-2012-04-02-00-01</code></p>
     /// <p>Example: <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20130805</code></p>
@@ -363,34 +360,6 @@ impl CopyDBSnapshotFluentBuilder {
     pub fn get_target_custom_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_target_custom_availability_zone()
     }
-    /// <p>Specifies whether to copy the DB option group associated with the source DB snapshot to the target Amazon Web Services account and associate with the target DB snapshot. The associated option group can be copied only with cross-account snapshot copy calls.</p>
-    pub fn copy_option_group(mut self, input: bool) -> Self {
-        self.inner = self.inner.copy_option_group(input);
-        self
-    }
-    /// <p>Specifies whether to copy the DB option group associated with the source DB snapshot to the target Amazon Web Services account and associate with the target DB snapshot. The associated option group can be copied only with cross-account snapshot copy calls.</p>
-    pub fn set_copy_option_group(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.inner = self.inner.set_copy_option_group(input);
-        self
-    }
-    /// <p>Specifies whether to copy the DB option group associated with the source DB snapshot to the target Amazon Web Services account and associate with the target DB snapshot. The associated option group can be copied only with cross-account snapshot copy calls.</p>
-    pub fn get_copy_option_group(&self) -> &::std::option::Option<bool> {
-        self.inner.get_copy_option_group()
-    }
-    /// <p>Specifies the name of the Availability Zone where RDS stores the DB snapshot. This value is valid only for snapshots that RDS stores on a Dedicated Local Zone.</p>
-    pub fn snapshot_availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.snapshot_availability_zone(input.into());
-        self
-    }
-    /// <p>Specifies the name of the Availability Zone where RDS stores the DB snapshot. This value is valid only for snapshots that RDS stores on a Dedicated Local Zone.</p>
-    pub fn set_snapshot_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_snapshot_availability_zone(input);
-        self
-    }
-    /// <p>Specifies the name of the Availability Zone where RDS stores the DB snapshot. This value is valid only for snapshots that RDS stores on a Dedicated Local Zone.</p>
-    pub fn get_snapshot_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_snapshot_availability_zone()
-    }
     /// <p>Configures the location where RDS will store copied snapshots.</p>
     /// <p>Valid Values:</p>
     /// <ul>
@@ -431,5 +400,33 @@ impl CopyDBSnapshotFluentBuilder {
     /// </ul>
     pub fn get_snapshot_target(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_snapshot_target()
+    }
+    /// <p>Specifies whether to copy the DB option group associated with the source DB snapshot to the target Amazon Web Services account and associate with the target DB snapshot. The associated option group can be copied only with cross-account snapshot copy calls.</p>
+    pub fn copy_option_group(mut self, input: bool) -> Self {
+        self.inner = self.inner.copy_option_group(input);
+        self
+    }
+    /// <p>Specifies whether to copy the DB option group associated with the source DB snapshot to the target Amazon Web Services account and associate with the target DB snapshot. The associated option group can be copied only with cross-account snapshot copy calls.</p>
+    pub fn set_copy_option_group(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_copy_option_group(input);
+        self
+    }
+    /// <p>Specifies whether to copy the DB option group associated with the source DB snapshot to the target Amazon Web Services account and associate with the target DB snapshot. The associated option group can be copied only with cross-account snapshot copy calls.</p>
+    pub fn get_copy_option_group(&self) -> &::std::option::Option<bool> {
+        self.inner.get_copy_option_group()
+    }
+    /// <p>Specifies the name of the Availability Zone where RDS stores the DB snapshot. This value is valid only for snapshots that RDS stores on a Dedicated Local Zone.</p>
+    pub fn snapshot_availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.snapshot_availability_zone(input.into());
+        self
+    }
+    /// <p>Specifies the name of the Availability Zone where RDS stores the DB snapshot. This value is valid only for snapshots that RDS stores on a Dedicated Local Zone.</p>
+    pub fn set_snapshot_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_snapshot_availability_zone(input);
+        self
+    }
+    /// <p>Specifies the name of the Availability Zone where RDS stores the DB snapshot. This value is valid only for snapshots that RDS stores on a Dedicated Local Zone.</p>
+    pub fn get_snapshot_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_snapshot_availability_zone()
     }
 }

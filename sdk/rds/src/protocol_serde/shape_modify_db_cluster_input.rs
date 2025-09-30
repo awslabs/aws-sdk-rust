@@ -172,50 +172,50 @@ pub fn ser_modify_db_cluster_input_input_input(
         scope_60.boolean(*var_61);
     }
     #[allow(unused_mut)]
-    let mut scope_62 = writer.prefix("MonitoringInterval");
-    if let Some(var_63) = &input.monitoring_interval {
-        scope_62.number(
+    let mut scope_62 = writer.prefix("NetworkType");
+    if let Some(var_63) = &input.network_type {
+        scope_62.string(var_63);
+    }
+    #[allow(unused_mut)]
+    let mut scope_64 = writer.prefix("ServerlessV2ScalingConfiguration");
+    if let Some(var_65) = &input.serverless_v2_scaling_configuration {
+        crate::protocol_serde::shape_serverless_v2_scaling_configuration::ser_serverless_v2_scaling_configuration(scope_64, var_65)?;
+    }
+    #[allow(unused_mut)]
+    let mut scope_66 = writer.prefix("MonitoringInterval");
+    if let Some(var_67) = &input.monitoring_interval {
+        scope_66.number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_63).into()),
+            ::aws_smithy_types::Number::NegInt((*var_67).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_64 = writer.prefix("MonitoringRoleArn");
-    if let Some(var_65) = &input.monitoring_role_arn {
-        scope_64.string(var_65);
+    let mut scope_68 = writer.prefix("MonitoringRoleArn");
+    if let Some(var_69) = &input.monitoring_role_arn {
+        scope_68.string(var_69);
     }
     #[allow(unused_mut)]
-    let mut scope_66 = writer.prefix("DatabaseInsightsMode");
-    if let Some(var_67) = &input.database_insights_mode {
-        scope_66.string(var_67.as_str());
+    let mut scope_70 = writer.prefix("DatabaseInsightsMode");
+    if let Some(var_71) = &input.database_insights_mode {
+        scope_70.string(var_71.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_68 = writer.prefix("EnablePerformanceInsights");
-    if let Some(var_69) = &input.enable_performance_insights {
-        scope_68.boolean(*var_69);
+    let mut scope_72 = writer.prefix("EnablePerformanceInsights");
+    if let Some(var_73) = &input.enable_performance_insights {
+        scope_72.boolean(*var_73);
     }
     #[allow(unused_mut)]
-    let mut scope_70 = writer.prefix("PerformanceInsightsKMSKeyId");
-    if let Some(var_71) = &input.performance_insights_kms_key_id {
-        scope_70.string(var_71);
+    let mut scope_74 = writer.prefix("PerformanceInsightsKMSKeyId");
+    if let Some(var_75) = &input.performance_insights_kms_key_id {
+        scope_74.string(var_75);
     }
     #[allow(unused_mut)]
-    let mut scope_72 = writer.prefix("PerformanceInsightsRetentionPeriod");
-    if let Some(var_73) = &input.performance_insights_retention_period {
-        scope_72.number(
+    let mut scope_76 = writer.prefix("PerformanceInsightsRetentionPeriod");
+    if let Some(var_77) = &input.performance_insights_retention_period {
+        scope_76.number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_73).into()),
+            ::aws_smithy_types::Number::NegInt((*var_77).into()),
         );
-    }
-    #[allow(unused_mut)]
-    let mut scope_74 = writer.prefix("ServerlessV2ScalingConfiguration");
-    if let Some(var_75) = &input.serverless_v2_scaling_configuration {
-        crate::protocol_serde::shape_serverless_v2_scaling_configuration::ser_serverless_v2_scaling_configuration(scope_74, var_75)?;
-    }
-    #[allow(unused_mut)]
-    let mut scope_76 = writer.prefix("NetworkType");
-    if let Some(var_77) = &input.network_type {
-        scope_76.string(var_77);
     }
     #[allow(unused_mut)]
     let mut scope_78 = writer.prefix("ManageMasterUserPassword");
@@ -228,23 +228,23 @@ pub fn ser_modify_db_cluster_input_input_input(
         scope_80.boolean(*var_81);
     }
     #[allow(unused_mut)]
-    let mut scope_82 = writer.prefix("MasterUserSecretKmsKeyId");
-    if let Some(var_83) = &input.master_user_secret_kms_key_id {
-        scope_82.string(var_83);
+    let mut scope_82 = writer.prefix("EnableLocalWriteForwarding");
+    if let Some(var_83) = &input.enable_local_write_forwarding {
+        scope_82.boolean(*var_83);
     }
     #[allow(unused_mut)]
-    let mut scope_84 = writer.prefix("EngineMode");
-    if let Some(var_85) = &input.engine_mode {
+    let mut scope_84 = writer.prefix("MasterUserSecretKmsKeyId");
+    if let Some(var_85) = &input.master_user_secret_kms_key_id {
         scope_84.string(var_85);
     }
     #[allow(unused_mut)]
-    let mut scope_86 = writer.prefix("AllowEngineModeChange");
-    if let Some(var_87) = &input.allow_engine_mode_change {
-        scope_86.boolean(*var_87);
+    let mut scope_86 = writer.prefix("EngineMode");
+    if let Some(var_87) = &input.engine_mode {
+        scope_86.string(var_87);
     }
     #[allow(unused_mut)]
-    let mut scope_88 = writer.prefix("EnableLocalWriteForwarding");
-    if let Some(var_89) = &input.enable_local_write_forwarding {
+    let mut scope_88 = writer.prefix("AllowEngineModeChange");
+    if let Some(var_89) = &input.allow_engine_mode_change {
         scope_88.boolean(*var_89);
     }
     #[allow(unused_mut)]

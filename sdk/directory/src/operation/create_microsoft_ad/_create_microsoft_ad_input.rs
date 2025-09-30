@@ -19,6 +19,8 @@ pub struct CreateMicrosoftAdInput {
     pub edition: ::std::option::Option<crate::types::DirectoryEdition>,
     /// <p>The tags to be assigned to the Managed Microsoft AD directory.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>The network type for your domain. The default value is <code>IPv4</code> or <code>IPv6</code> based on the provided subnet capabilities.</p>
+    pub network_type: ::std::option::Option<crate::types::NetworkType>,
 }
 impl CreateMicrosoftAdInput {
     /// <p>The fully qualified domain name for the Managed Microsoft AD directory, such as <code>corp.example.com</code>. This name will resolve inside your VPC only. It does not need to be publicly resolvable.</p>
@@ -52,6 +54,10 @@ impl CreateMicrosoftAdInput {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
+    /// <p>The network type for your domain. The default value is <code>IPv4</code> or <code>IPv6</code> based on the provided subnet capabilities.</p>
+    pub fn network_type(&self) -> ::std::option::Option<&crate::types::NetworkType> {
+        self.network_type.as_ref()
+    }
 }
 impl ::std::fmt::Debug for CreateMicrosoftAdInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -63,6 +69,7 @@ impl ::std::fmt::Debug for CreateMicrosoftAdInput {
         formatter.field("vpc_settings", &self.vpc_settings);
         formatter.field("edition", &self.edition);
         formatter.field("tags", &self.tags);
+        formatter.field("network_type", &self.network_type);
         formatter.finish()
     }
 }
@@ -84,6 +91,7 @@ pub struct CreateMicrosoftAdInputBuilder {
     pub(crate) vpc_settings: ::std::option::Option<crate::types::DirectoryVpcSettings>,
     pub(crate) edition: ::std::option::Option<crate::types::DirectoryEdition>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) network_type: ::std::option::Option<crate::types::NetworkType>,
 }
 impl CreateMicrosoftAdInputBuilder {
     /// <p>The fully qualified domain name for the Managed Microsoft AD directory, such as <code>corp.example.com</code>. This name will resolve inside your VPC only. It does not need to be publicly resolvable.</p>
@@ -196,6 +204,20 @@ impl CreateMicrosoftAdInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
+    /// <p>The network type for your domain. The default value is <code>IPv4</code> or <code>IPv6</code> based on the provided subnet capabilities.</p>
+    pub fn network_type(mut self, input: crate::types::NetworkType) -> Self {
+        self.network_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The network type for your domain. The default value is <code>IPv4</code> or <code>IPv6</code> based on the provided subnet capabilities.</p>
+    pub fn set_network_type(mut self, input: ::std::option::Option<crate::types::NetworkType>) -> Self {
+        self.network_type = input;
+        self
+    }
+    /// <p>The network type for your domain. The default value is <code>IPv4</code> or <code>IPv6</code> based on the provided subnet capabilities.</p>
+    pub fn get_network_type(&self) -> &::std::option::Option<crate::types::NetworkType> {
+        &self.network_type
+    }
     /// Consumes the builder and constructs a [`CreateMicrosoftAdInput`](crate::operation::create_microsoft_ad::CreateMicrosoftAdInput).
     pub fn build(
         self,
@@ -208,6 +230,7 @@ impl CreateMicrosoftAdInputBuilder {
             vpc_settings: self.vpc_settings,
             edition: self.edition,
             tags: self.tags,
+            network_type: self.network_type,
         })
     }
 }
@@ -221,6 +244,7 @@ impl ::std::fmt::Debug for CreateMicrosoftAdInputBuilder {
         formatter.field("vpc_settings", &self.vpc_settings);
         formatter.field("edition", &self.edition);
         formatter.field("tags", &self.tags);
+        formatter.field("network_type", &self.network_type);
         formatter.finish()
     }
 }

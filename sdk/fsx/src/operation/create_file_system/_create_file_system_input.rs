@@ -99,7 +99,7 @@ pub struct CreateFileSystemInput {
     pub file_system_type_version: ::std::option::Option<::std::string::String>,
     /// <p>The OpenZFS configuration for the file system that's being created.</p>
     pub open_zfs_configuration: ::std::option::Option<crate::types::CreateFileSystemOpenZfsConfiguration>,
-    /// <p>The network type of the Amazon FSx file system that you are creating. Valid values are <code>IPV4</code> (which supports IPv4 only) and <code>DUAL</code> (for dual-stack mode, which supports both IPv4 and IPv6). The default is <code>IPV4</code>. Supported only for Amazon FSx for OpenZFS file systems.</p>
+    /// <p>The network type of the Amazon FSx file system that you are creating. Valid values are <code>IPV4</code> (which supports IPv4 only) and <code>DUAL</code> (for dual-stack mode, which supports both IPv4 and IPv6). The default is <code>IPV4</code>. Supported for FSx for OpenZFS, FSx for ONTAP, and FSx for Windows File Server file systems.</p>
     pub network_type: ::std::option::Option<crate::types::NetworkType>,
 }
 impl CreateFileSystemInput {
@@ -230,7 +230,7 @@ impl CreateFileSystemInput {
     pub fn open_zfs_configuration(&self) -> ::std::option::Option<&crate::types::CreateFileSystemOpenZfsConfiguration> {
         self.open_zfs_configuration.as_ref()
     }
-    /// <p>The network type of the Amazon FSx file system that you are creating. Valid values are <code>IPV4</code> (which supports IPv4 only) and <code>DUAL</code> (for dual-stack mode, which supports both IPv4 and IPv6). The default is <code>IPV4</code>. Supported only for Amazon FSx for OpenZFS file systems.</p>
+    /// <p>The network type of the Amazon FSx file system that you are creating. Valid values are <code>IPV4</code> (which supports IPv4 only) and <code>DUAL</code> (for dual-stack mode, which supports both IPv4 and IPv6). The default is <code>IPV4</code>. Supported for FSx for OpenZFS, FSx for ONTAP, and FSx for Windows File Server file systems.</p>
     pub fn network_type(&self) -> ::std::option::Option<&crate::types::NetworkType> {
         self.network_type.as_ref()
     }
@@ -670,17 +670,17 @@ impl CreateFileSystemInputBuilder {
     pub fn get_open_zfs_configuration(&self) -> &::std::option::Option<crate::types::CreateFileSystemOpenZfsConfiguration> {
         &self.open_zfs_configuration
     }
-    /// <p>The network type of the Amazon FSx file system that you are creating. Valid values are <code>IPV4</code> (which supports IPv4 only) and <code>DUAL</code> (for dual-stack mode, which supports both IPv4 and IPv6). The default is <code>IPV4</code>. Supported only for Amazon FSx for OpenZFS file systems.</p>
+    /// <p>The network type of the Amazon FSx file system that you are creating. Valid values are <code>IPV4</code> (which supports IPv4 only) and <code>DUAL</code> (for dual-stack mode, which supports both IPv4 and IPv6). The default is <code>IPV4</code>. Supported for FSx for OpenZFS, FSx for ONTAP, and FSx for Windows File Server file systems.</p>
     pub fn network_type(mut self, input: crate::types::NetworkType) -> Self {
         self.network_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The network type of the Amazon FSx file system that you are creating. Valid values are <code>IPV4</code> (which supports IPv4 only) and <code>DUAL</code> (for dual-stack mode, which supports both IPv4 and IPv6). The default is <code>IPV4</code>. Supported only for Amazon FSx for OpenZFS file systems.</p>
+    /// <p>The network type of the Amazon FSx file system that you are creating. Valid values are <code>IPV4</code> (which supports IPv4 only) and <code>DUAL</code> (for dual-stack mode, which supports both IPv4 and IPv6). The default is <code>IPV4</code>. Supported for FSx for OpenZFS, FSx for ONTAP, and FSx for Windows File Server file systems.</p>
     pub fn set_network_type(mut self, input: ::std::option::Option<crate::types::NetworkType>) -> Self {
         self.network_type = input;
         self
     }
-    /// <p>The network type of the Amazon FSx file system that you are creating. Valid values are <code>IPV4</code> (which supports IPv4 only) and <code>DUAL</code> (for dual-stack mode, which supports both IPv4 and IPv6). The default is <code>IPV4</code>. Supported only for Amazon FSx for OpenZFS file systems.</p>
+    /// <p>The network type of the Amazon FSx file system that you are creating. Valid values are <code>IPV4</code> (which supports IPv4 only) and <code>DUAL</code> (for dual-stack mode, which supports both IPv4 and IPv6). The default is <code>IPV4</code>. Supported for FSx for OpenZFS, FSx for ONTAP, and FSx for Windows File Server file systems.</p>
     pub fn get_network_type(&self) -> &::std::option::Option<crate::types::NetworkType> {
         &self.network_type
     }

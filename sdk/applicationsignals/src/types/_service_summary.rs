@@ -61,6 +61,8 @@ pub struct ServiceSummary {
     pub attribute_maps: ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>>,
     /// <p>An array of structures that each contain information about one metric associated with this service.</p>
     pub metric_references: ::std::vec::Vec<crate::types::MetricReference>,
+    /// <p>An array of service groups that this service belongs to, based on the configured grouping attributes.</p>
+    pub service_groups: ::std::option::Option<::std::vec::Vec<crate::types::ServiceGroup>>,
 }
 impl ServiceSummary {
     /// <p>This is a string-to-string map that help identify the objects discovered by Application Signals. It can include the following fields.</p>
@@ -129,6 +131,12 @@ impl ServiceSummary {
         use std::ops::Deref;
         self.metric_references.deref()
     }
+    /// <p>An array of service groups that this service belongs to, based on the configured grouping attributes.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.service_groups.is_none()`.
+    pub fn service_groups(&self) -> &[crate::types::ServiceGroup] {
+        self.service_groups.as_deref().unwrap_or_default()
+    }
 }
 impl ServiceSummary {
     /// Creates a new builder-style object to manufacture [`ServiceSummary`](crate::types::ServiceSummary).
@@ -144,6 +152,7 @@ pub struct ServiceSummaryBuilder {
     pub(crate) key_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) attribute_maps: ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>>,
     pub(crate) metric_references: ::std::option::Option<::std::vec::Vec<crate::types::MetricReference>>,
+    pub(crate) service_groups: ::std::option::Option<::std::vec::Vec<crate::types::ServiceGroup>>,
 }
 impl ServiceSummaryBuilder {
     /// Adds a key-value pair to `key_attributes`.
@@ -371,6 +380,26 @@ impl ServiceSummaryBuilder {
     pub fn get_metric_references(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricReference>> {
         &self.metric_references
     }
+    /// Appends an item to `service_groups`.
+    ///
+    /// To override the contents of this collection use [`set_service_groups`](Self::set_service_groups).
+    ///
+    /// <p>An array of service groups that this service belongs to, based on the configured grouping attributes.</p>
+    pub fn service_groups(mut self, input: crate::types::ServiceGroup) -> Self {
+        let mut v = self.service_groups.unwrap_or_default();
+        v.push(input);
+        self.service_groups = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>An array of service groups that this service belongs to, based on the configured grouping attributes.</p>
+    pub fn set_service_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceGroup>>) -> Self {
+        self.service_groups = input;
+        self
+    }
+    /// <p>An array of service groups that this service belongs to, based on the configured grouping attributes.</p>
+    pub fn get_service_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceGroup>> {
+        &self.service_groups
+    }
     /// Consumes the builder and constructs a [`ServiceSummary`](crate::types::ServiceSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`key_attributes`](crate::types::builders::ServiceSummaryBuilder::key_attributes)
@@ -390,6 +419,7 @@ impl ServiceSummaryBuilder {
                     "metric_references was not specified but it is required when building ServiceSummary",
                 )
             })?,
+            service_groups: self.service_groups,
         })
     }
 }

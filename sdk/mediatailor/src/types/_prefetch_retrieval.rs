@@ -11,10 +11,12 @@ pub struct PrefetchRetrieval {
     pub end_time: ::aws_smithy_types::DateTime,
     /// <p>The time when prefetch retrievals can start for this break. Ad prefetching will be attempted for manifest requests that occur at or after this time. Defaults to the current time. If not specified, the prefetch retrieval starts as soon as possible.</p>
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>Indicates if this configuration uses a retrieval window for traffic shaping and limiting the number of requests to the ADS at one time.</p>
+    /// <p>Indicates the type of traffic shaping used for prefetch traffic shaping and limiting the number of requests to the ADS at one time.</p>
     pub traffic_shaping_type: ::std::option::Option<crate::types::TrafficShapingType>,
     /// <p>Configuration for spreading ADS traffic across a set window instead of sending ADS requests for all sessions at the same time.</p>
     pub traffic_shaping_retrieval_window: ::std::option::Option<crate::types::TrafficShapingRetrievalWindow>,
+    /// <p>The configuration for TPS-based traffic shaping that limits the number of requests to the ad decision server (ADS) based on transactions per second instead of time windows.</p>
+    pub traffic_shaping_tps_configuration: ::std::option::Option<crate::types::TrafficShapingTpsConfiguration>,
 }
 impl PrefetchRetrieval {
     /// <p>The dynamic variables to use for substitution during prefetch requests to the ad decision server (ADS).</p>
@@ -30,13 +32,17 @@ impl PrefetchRetrieval {
     pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
-    /// <p>Indicates if this configuration uses a retrieval window for traffic shaping and limiting the number of requests to the ADS at one time.</p>
+    /// <p>Indicates the type of traffic shaping used for prefetch traffic shaping and limiting the number of requests to the ADS at one time.</p>
     pub fn traffic_shaping_type(&self) -> ::std::option::Option<&crate::types::TrafficShapingType> {
         self.traffic_shaping_type.as_ref()
     }
     /// <p>Configuration for spreading ADS traffic across a set window instead of sending ADS requests for all sessions at the same time.</p>
     pub fn traffic_shaping_retrieval_window(&self) -> ::std::option::Option<&crate::types::TrafficShapingRetrievalWindow> {
         self.traffic_shaping_retrieval_window.as_ref()
+    }
+    /// <p>The configuration for TPS-based traffic shaping that limits the number of requests to the ad decision server (ADS) based on transactions per second instead of time windows.</p>
+    pub fn traffic_shaping_tps_configuration(&self) -> ::std::option::Option<&crate::types::TrafficShapingTpsConfiguration> {
+        self.traffic_shaping_tps_configuration.as_ref()
     }
 }
 impl PrefetchRetrieval {
@@ -55,6 +61,7 @@ pub struct PrefetchRetrievalBuilder {
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) traffic_shaping_type: ::std::option::Option<crate::types::TrafficShapingType>,
     pub(crate) traffic_shaping_retrieval_window: ::std::option::Option<crate::types::TrafficShapingRetrievalWindow>,
+    pub(crate) traffic_shaping_tps_configuration: ::std::option::Option<crate::types::TrafficShapingTpsConfiguration>,
 }
 impl PrefetchRetrievalBuilder {
     /// Adds a key-value pair to `dynamic_variables`.
@@ -116,17 +123,17 @@ impl PrefetchRetrievalBuilder {
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.start_time
     }
-    /// <p>Indicates if this configuration uses a retrieval window for traffic shaping and limiting the number of requests to the ADS at one time.</p>
+    /// <p>Indicates the type of traffic shaping used for prefetch traffic shaping and limiting the number of requests to the ADS at one time.</p>
     pub fn traffic_shaping_type(mut self, input: crate::types::TrafficShapingType) -> Self {
         self.traffic_shaping_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates if this configuration uses a retrieval window for traffic shaping and limiting the number of requests to the ADS at one time.</p>
+    /// <p>Indicates the type of traffic shaping used for prefetch traffic shaping and limiting the number of requests to the ADS at one time.</p>
     pub fn set_traffic_shaping_type(mut self, input: ::std::option::Option<crate::types::TrafficShapingType>) -> Self {
         self.traffic_shaping_type = input;
         self
     }
-    /// <p>Indicates if this configuration uses a retrieval window for traffic shaping and limiting the number of requests to the ADS at one time.</p>
+    /// <p>Indicates the type of traffic shaping used for prefetch traffic shaping and limiting the number of requests to the ADS at one time.</p>
     pub fn get_traffic_shaping_type(&self) -> &::std::option::Option<crate::types::TrafficShapingType> {
         &self.traffic_shaping_type
     }
@@ -144,6 +151,20 @@ impl PrefetchRetrievalBuilder {
     pub fn get_traffic_shaping_retrieval_window(&self) -> &::std::option::Option<crate::types::TrafficShapingRetrievalWindow> {
         &self.traffic_shaping_retrieval_window
     }
+    /// <p>The configuration for TPS-based traffic shaping that limits the number of requests to the ad decision server (ADS) based on transactions per second instead of time windows.</p>
+    pub fn traffic_shaping_tps_configuration(mut self, input: crate::types::TrafficShapingTpsConfiguration) -> Self {
+        self.traffic_shaping_tps_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration for TPS-based traffic shaping that limits the number of requests to the ad decision server (ADS) based on transactions per second instead of time windows.</p>
+    pub fn set_traffic_shaping_tps_configuration(mut self, input: ::std::option::Option<crate::types::TrafficShapingTpsConfiguration>) -> Self {
+        self.traffic_shaping_tps_configuration = input;
+        self
+    }
+    /// <p>The configuration for TPS-based traffic shaping that limits the number of requests to the ad decision server (ADS) based on transactions per second instead of time windows.</p>
+    pub fn get_traffic_shaping_tps_configuration(&self) -> &::std::option::Option<crate::types::TrafficShapingTpsConfiguration> {
+        &self.traffic_shaping_tps_configuration
+    }
     /// Consumes the builder and constructs a [`PrefetchRetrieval`](crate::types::PrefetchRetrieval).
     /// This method will fail if any of the following fields are not set:
     /// - [`end_time`](crate::types::builders::PrefetchRetrievalBuilder::end_time)
@@ -159,6 +180,7 @@ impl PrefetchRetrievalBuilder {
             start_time: self.start_time,
             traffic_shaping_type: self.traffic_shaping_type,
             traffic_shaping_retrieval_window: self.traffic_shaping_retrieval_window,
+            traffic_shaping_tps_configuration: self.traffic_shaping_tps_configuration,
         })
     }
 }

@@ -109,6 +109,8 @@ pub use crate::types::_list_profile_objects_item::ListProfileObjectsItemBuilder;
 
 pub use crate::types::_object_filter::ObjectFilterBuilder;
 
+pub use crate::types::_profile_history_record::ProfileHistoryRecordBuilder;
+
 pub use crate::types::_attribute_value_item::AttributeValueItemBuilder;
 
 pub use crate::types::_list_object_type_attribute_item::ListObjectTypeAttributeItemBuilder;

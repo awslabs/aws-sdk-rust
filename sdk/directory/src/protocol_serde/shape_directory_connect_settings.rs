@@ -24,6 +24,15 @@ pub fn ser_directory_connect_settings(
         }
         array_3.finish();
     }
+    if let Some(var_5) = &input.customer_dns_ips_v6 {
+        let mut array_6 = object.key("CustomerDnsIpsV6").start_array();
+        for item_7 in var_5 {
+            {
+                array_6.value().string(item_7.as_str());
+            }
+        }
+        array_6.finish();
+    }
     {
         object.key("CustomerUserName").string(input.customer_user_name.as_str());
     }

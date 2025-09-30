@@ -67,6 +67,8 @@ pub use crate::types::_ssh_public_key::SshPublicKey;
 
 pub use crate::types::_listed_user::ListedUser;
 
+pub use crate::types::_identity_provider_type::IdentityProviderType;
+
 pub use crate::types::_ip_address_type::IpAddressType;
 
 pub use crate::types::_s3_storage_options::S3StorageOptions;
@@ -98,8 +100,6 @@ pub use crate::types::_tls_session_resumption_mode::TlsSessionResumptionMode;
 pub use crate::types::_described_server::DescribedServer;
 
 pub use crate::types::_state::State;
-
-pub use crate::types::_identity_provider_type::IdentityProviderType;
 
 pub use crate::types::_domain::Domain;
 

@@ -52,18 +52,18 @@ pub fn ser_copy_db_snapshot_input_input_input(
         scope_18.string(var_19);
     }
     #[allow(unused_mut)]
-    let mut scope_20 = writer.prefix("CopyOptionGroup");
-    if let Some(var_21) = &input.copy_option_group {
-        scope_20.boolean(*var_21);
+    let mut scope_20 = writer.prefix("SnapshotTarget");
+    if let Some(var_21) = &input.snapshot_target {
+        scope_20.string(var_21);
     }
     #[allow(unused_mut)]
-    let mut scope_22 = writer.prefix("SnapshotAvailabilityZone");
-    if let Some(var_23) = &input.snapshot_availability_zone {
-        scope_22.string(var_23);
+    let mut scope_22 = writer.prefix("CopyOptionGroup");
+    if let Some(var_23) = &input.copy_option_group {
+        scope_22.boolean(*var_23);
     }
     #[allow(unused_mut)]
-    let mut scope_24 = writer.prefix("SnapshotTarget");
-    if let Some(var_25) = &input.snapshot_target {
+    let mut scope_24 = writer.prefix("SnapshotAvailabilityZone");
+    if let Some(var_25) = &input.snapshot_availability_zone {
         scope_24.string(var_25);
     }
     writer.finish();

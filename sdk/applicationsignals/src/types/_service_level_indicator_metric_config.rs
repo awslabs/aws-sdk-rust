@@ -23,6 +23,8 @@ pub struct ServiceLevelIndicatorMetricConfig {
     pub operation_name: ::std::option::Option<::std::string::String>,
     /// <p>If the SLO is to monitor either the <code>LATENCY</code> or <code>AVAILABILITY</code> metric that Application Signals collects, use this field to specify which of those metrics is used.</p>
     pub metric_type: ::std::option::Option<crate::types::ServiceLevelIndicatorMetricType>,
+    /// <p>The name of the CloudWatch metric to use for the SLO, when using a custom metric rather than Application Signals standard metrics.</p>
+    pub metric_name: ::std::option::Option<::std::string::String>,
     /// <p>The statistic to use for comparison to the threshold. It can be any CloudWatch statistic or extended statistic. For more information about statistics, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html">CloudWatch statistics definitions</a>.</p>
     pub statistic: ::std::option::Option<::std::string::String>,
     /// <p>The number of seconds to use as the period for SLO evaluation. Your application's performance is compared to the SLI during each period. For each period, the application is determined to have either achieved or not achieved the necessary performance.</p>
@@ -58,6 +60,10 @@ impl ServiceLevelIndicatorMetricConfig {
     pub fn metric_type(&self) -> ::std::option::Option<&crate::types::ServiceLevelIndicatorMetricType> {
         self.metric_type.as_ref()
     }
+    /// <p>The name of the CloudWatch metric to use for the SLO, when using a custom metric rather than Application Signals standard metrics.</p>
+    pub fn metric_name(&self) -> ::std::option::Option<&str> {
+        self.metric_name.as_deref()
+    }
     /// <p>The statistic to use for comparison to the threshold. It can be any CloudWatch statistic or extended statistic. For more information about statistics, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html">CloudWatch statistics definitions</a>.</p>
     pub fn statistic(&self) -> ::std::option::Option<&str> {
         self.statistic.as_deref()
@@ -91,6 +97,7 @@ pub struct ServiceLevelIndicatorMetricConfigBuilder {
     pub(crate) key_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) operation_name: ::std::option::Option<::std::string::String>,
     pub(crate) metric_type: ::std::option::Option<crate::types::ServiceLevelIndicatorMetricType>,
+    pub(crate) metric_name: ::std::option::Option<::std::string::String>,
     pub(crate) statistic: ::std::option::Option<::std::string::String>,
     pub(crate) period_seconds: ::std::option::Option<i32>,
     pub(crate) metric_data_queries: ::std::option::Option<::std::vec::Vec<crate::types::MetricDataQuery>>,
@@ -191,6 +198,20 @@ impl ServiceLevelIndicatorMetricConfigBuilder {
     pub fn get_metric_type(&self) -> &::std::option::Option<crate::types::ServiceLevelIndicatorMetricType> {
         &self.metric_type
     }
+    /// <p>The name of the CloudWatch metric to use for the SLO, when using a custom metric rather than Application Signals standard metrics.</p>
+    pub fn metric_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.metric_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the CloudWatch metric to use for the SLO, when using a custom metric rather than Application Signals standard metrics.</p>
+    pub fn set_metric_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.metric_name = input;
+        self
+    }
+    /// <p>The name of the CloudWatch metric to use for the SLO, when using a custom metric rather than Application Signals standard metrics.</p>
+    pub fn get_metric_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metric_name
+    }
     /// <p>The statistic to use for comparison to the threshold. It can be any CloudWatch statistic or extended statistic. For more information about statistics, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html">CloudWatch statistics definitions</a>.</p>
     pub fn statistic(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.statistic = ::std::option::Option::Some(input.into());
@@ -259,6 +280,7 @@ impl ServiceLevelIndicatorMetricConfigBuilder {
             key_attributes: self.key_attributes,
             operation_name: self.operation_name,
             metric_type: self.metric_type,
+            metric_name: self.metric_name,
             statistic: self.statistic,
             period_seconds: self.period_seconds,
             metric_data_queries: self.metric_data_queries,

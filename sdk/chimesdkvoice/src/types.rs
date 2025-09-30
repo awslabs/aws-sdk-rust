@@ -17,6 +17,8 @@ pub use crate::types::_voice_connector_item::VoiceConnectorItem;
 
 pub use crate::types::_voice_connector::VoiceConnector;
 
+pub use crate::types::_network_type::NetworkType;
+
 pub use crate::types::_voice_connector_integration_type::VoiceConnectorIntegrationType;
 
 pub use crate::types::_voice_connector_aws_region::VoiceConnectorAwsRegion;
@@ -176,6 +178,8 @@ mod _language_code;
 mod _logging_configuration;
 
 mod _media_insights_configuration;
+
+mod _network_type;
 
 mod _notification_target;
 

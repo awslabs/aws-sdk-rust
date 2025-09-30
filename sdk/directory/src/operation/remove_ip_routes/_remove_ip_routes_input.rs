@@ -7,6 +7,8 @@ pub struct RemoveIpRoutesInput {
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>IP address blocks that you want to remove.</p>
     pub cidr_ips: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>IPv6 address blocks that you want to remove.</p>
+    pub cidr_ipv6s: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RemoveIpRoutesInput {
     /// <p>Identifier (ID) of the directory from which you want to remove the IP addresses.</p>
@@ -18,6 +20,12 @@ impl RemoveIpRoutesInput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cidr_ips.is_none()`.
     pub fn cidr_ips(&self) -> &[::std::string::String] {
         self.cidr_ips.as_deref().unwrap_or_default()
+    }
+    /// <p>IPv6 address blocks that you want to remove.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cidr_ipv6s.is_none()`.
+    pub fn cidr_ipv6s(&self) -> &[::std::string::String] {
+        self.cidr_ipv6s.as_deref().unwrap_or_default()
     }
 }
 impl RemoveIpRoutesInput {
@@ -33,6 +41,7 @@ impl RemoveIpRoutesInput {
 pub struct RemoveIpRoutesInputBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) cidr_ips: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) cidr_ipv6s: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RemoveIpRoutesInputBuilder {
     /// <p>Identifier (ID) of the directory from which you want to remove the IP addresses.</p>
@@ -70,6 +79,26 @@ impl RemoveIpRoutesInputBuilder {
     pub fn get_cidr_ips(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.cidr_ips
     }
+    /// Appends an item to `cidr_ipv6s`.
+    ///
+    /// To override the contents of this collection use [`set_cidr_ipv6s`](Self::set_cidr_ipv6s).
+    ///
+    /// <p>IPv6 address blocks that you want to remove.</p>
+    pub fn cidr_ipv6s(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.cidr_ipv6s.unwrap_or_default();
+        v.push(input.into());
+        self.cidr_ipv6s = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>IPv6 address blocks that you want to remove.</p>
+    pub fn set_cidr_ipv6s(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.cidr_ipv6s = input;
+        self
+    }
+    /// <p>IPv6 address blocks that you want to remove.</p>
+    pub fn get_cidr_ipv6s(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.cidr_ipv6s
+    }
     /// Consumes the builder and constructs a [`RemoveIpRoutesInput`](crate::operation::remove_ip_routes::RemoveIpRoutesInput).
     pub fn build(
         self,
@@ -77,6 +106,7 @@ impl RemoveIpRoutesInputBuilder {
         ::std::result::Result::Ok(crate::operation::remove_ip_routes::RemoveIpRoutesInput {
             directory_id: self.directory_id,
             cidr_ips: self.cidr_ips,
+            cidr_ipv6s: self.cidr_ipv6s,
         })
     }
 }

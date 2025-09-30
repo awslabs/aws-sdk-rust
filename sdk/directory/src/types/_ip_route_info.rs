@@ -8,6 +8,8 @@ pub struct IpRouteInfo {
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>IP address block in the <code>IpRoute</code>.</p>
     pub cidr_ip: ::std::option::Option<::std::string::String>,
+    /// <p>IPv6 address block in the <code>IpRoute</code>.</p>
+    pub cidr_ipv6: ::std::option::Option<::std::string::String>,
     /// <p>The status of the IP address block.</p>
     pub ip_route_status_msg: ::std::option::Option<crate::types::IpRouteStatusMsg>,
     /// <p>The date and time the address block was added to the directory.</p>
@@ -25,6 +27,10 @@ impl IpRouteInfo {
     /// <p>IP address block in the <code>IpRoute</code>.</p>
     pub fn cidr_ip(&self) -> ::std::option::Option<&str> {
         self.cidr_ip.as_deref()
+    }
+    /// <p>IPv6 address block in the <code>IpRoute</code>.</p>
+    pub fn cidr_ipv6(&self) -> ::std::option::Option<&str> {
+        self.cidr_ipv6.as_deref()
     }
     /// <p>The status of the IP address block.</p>
     pub fn ip_route_status_msg(&self) -> ::std::option::Option<&crate::types::IpRouteStatusMsg> {
@@ -56,6 +62,7 @@ impl IpRouteInfo {
 pub struct IpRouteInfoBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) cidr_ip: ::std::option::Option<::std::string::String>,
+    pub(crate) cidr_ipv6: ::std::option::Option<::std::string::String>,
     pub(crate) ip_route_status_msg: ::std::option::Option<crate::types::IpRouteStatusMsg>,
     pub(crate) added_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) ip_route_status_reason: ::std::option::Option<::std::string::String>,
@@ -89,6 +96,20 @@ impl IpRouteInfoBuilder {
     /// <p>IP address block in the <code>IpRoute</code>.</p>
     pub fn get_cidr_ip(&self) -> &::std::option::Option<::std::string::String> {
         &self.cidr_ip
+    }
+    /// <p>IPv6 address block in the <code>IpRoute</code>.</p>
+    pub fn cidr_ipv6(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cidr_ipv6 = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>IPv6 address block in the <code>IpRoute</code>.</p>
+    pub fn set_cidr_ipv6(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.cidr_ipv6 = input;
+        self
+    }
+    /// <p>IPv6 address block in the <code>IpRoute</code>.</p>
+    pub fn get_cidr_ipv6(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cidr_ipv6
     }
     /// <p>The status of the IP address block.</p>
     pub fn ip_route_status_msg(mut self, input: crate::types::IpRouteStatusMsg) -> Self {
@@ -151,6 +172,7 @@ impl IpRouteInfoBuilder {
         crate::types::IpRouteInfo {
             directory_id: self.directory_id,
             cidr_ip: self.cidr_ip,
+            cidr_ipv6: self.cidr_ipv6,
             ip_route_status_msg: self.ip_route_status_msg,
             added_date_time: self.added_date_time,
             ip_route_status_reason: self.ip_route_status_reason,

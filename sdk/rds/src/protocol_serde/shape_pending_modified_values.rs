@@ -134,20 +134,22 @@ pub fn de_pending_modified_values(
                 builder = builder.set_iops(var_9);
             }
             ,
-            s if s.matches("DBInstanceIdentifier") /* DBInstanceIdentifier com.amazonaws.rds#PendingModifiedValues$DBInstanceIdentifier */ =>  {
+            s if s.matches("StorageThroughput") /* StorageThroughput com.amazonaws.rds#PendingModifiedValues$StorageThroughput */ =>  {
                 let var_10 =
                     Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
+                         {
+                            <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.rds#IntegerOptional`)"))
+                        }
                         ?
                     )
                 ;
-                builder = builder.set_db_instance_identifier(var_10);
+                builder = builder.set_storage_throughput(var_10);
             }
             ,
-            s if s.matches("StorageType") /* StorageType com.amazonaws.rds#PendingModifiedValues$StorageType */ =>  {
+            s if s.matches("DBInstanceIdentifier") /* DBInstanceIdentifier com.amazonaws.rds#PendingModifiedValues$DBInstanceIdentifier */ =>  {
                 let var_11 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -157,10 +159,10 @@ pub fn de_pending_modified_values(
                         ?
                     )
                 ;
-                builder = builder.set_storage_type(var_11);
+                builder = builder.set_db_instance_identifier(var_11);
             }
             ,
-            s if s.matches("CACertificateIdentifier") /* CACertificateIdentifier com.amazonaws.rds#PendingModifiedValues$CACertificateIdentifier */ =>  {
+            s if s.matches("StorageType") /* StorageType com.amazonaws.rds#PendingModifiedValues$StorageType */ =>  {
                 let var_12 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -170,10 +172,10 @@ pub fn de_pending_modified_values(
                         ?
                     )
                 ;
-                builder = builder.set_ca_certificate_identifier(var_12);
+                builder = builder.set_storage_type(var_12);
             }
             ,
-            s if s.matches("DBSubnetGroupName") /* DBSubnetGroupName com.amazonaws.rds#PendingModifiedValues$DBSubnetGroupName */ =>  {
+            s if s.matches("CACertificateIdentifier") /* CACertificateIdentifier com.amazonaws.rds#PendingModifiedValues$CACertificateIdentifier */ =>  {
                 let var_13 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -183,42 +185,40 @@ pub fn de_pending_modified_values(
                         ?
                     )
                 ;
-                builder = builder.set_db_subnet_group_name(var_13);
+                builder = builder.set_ca_certificate_identifier(var_13);
+            }
+            ,
+            s if s.matches("DBSubnetGroupName") /* DBSubnetGroupName com.amazonaws.rds#PendingModifiedValues$DBSubnetGroupName */ =>  {
+                let var_14 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_db_subnet_group_name(var_14);
             }
             ,
             s if s.matches("PendingCloudwatchLogsExports") /* PendingCloudwatchLogsExports com.amazonaws.rds#PendingModifiedValues$PendingCloudwatchLogsExports */ =>  {
-                let var_14 =
+                let var_15 =
                     Some(
                         crate::protocol_serde::shape_pending_cloudwatch_logs_exports::de_pending_cloudwatch_logs_exports(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_pending_cloudwatch_logs_exports(var_14);
+                builder = builder.set_pending_cloudwatch_logs_exports(var_15);
             }
             ,
             s if s.matches("ProcessorFeatures") /* ProcessorFeatures com.amazonaws.rds#PendingModifiedValues$ProcessorFeatures */ =>  {
-                let var_15 =
+                let var_16 =
                     Some(
                         crate::protocol_serde::shape_processor_feature_list::de_processor_feature_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_processor_features(var_15);
-            }
-            ,
-            s if s.matches("IAMDatabaseAuthenticationEnabled") /* IAMDatabaseAuthenticationEnabled com.amazonaws.rds#PendingModifiedValues$IAMDatabaseAuthenticationEnabled */ =>  {
-                let var_16 =
-                    Some(
-                         {
-                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.rds#BooleanOptional`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_iam_database_authentication_enabled(var_16);
+                builder = builder.set_processor_features(var_16);
             }
             ,
             s if s.matches("AutomationMode") /* AutomationMode com.amazonaws.rds#PendingModifiedValues$AutomationMode */ =>  {
@@ -249,32 +249,34 @@ pub fn de_pending_modified_values(
                 builder = builder.set_resume_full_automation_mode_time(var_18);
             }
             ,
-            s if s.matches("StorageThroughput") /* StorageThroughput com.amazonaws.rds#PendingModifiedValues$StorageThroughput */ =>  {
+            s if s.matches("MultiTenant") /* MultiTenant com.amazonaws.rds#PendingModifiedValues$MultiTenant */ =>  {
                 let var_19 =
                     Some(
                          {
-                            <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
-                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.rds#IntegerOptional`)"))
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.rds#BooleanOptional`)"))
                         }
                         ?
                     )
                 ;
-                builder = builder.set_storage_throughput(var_19);
+                builder = builder.set_multi_tenant(var_19);
             }
             ,
-            s if s.matches("Engine") /* Engine com.amazonaws.rds#PendingModifiedValues$Engine */ =>  {
+            s if s.matches("IAMDatabaseAuthenticationEnabled") /* IAMDatabaseAuthenticationEnabled com.amazonaws.rds#PendingModifiedValues$IAMDatabaseAuthenticationEnabled */ =>  {
                 let var_20 =
                     Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
+                         {
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.rds#BooleanOptional`)"))
+                        }
                         ?
                     )
                 ;
-                builder = builder.set_engine(var_20);
+                builder = builder.set_iam_database_authentication_enabled(var_20);
             }
             ,
             s if s.matches("DedicatedLogVolume") /* DedicatedLogVolume com.amazonaws.rds#PendingModifiedValues$DedicatedLogVolume */ =>  {
@@ -292,19 +294,17 @@ pub fn de_pending_modified_values(
                 builder = builder.set_dedicated_log_volume(var_21);
             }
             ,
-            s if s.matches("MultiTenant") /* MultiTenant com.amazonaws.rds#PendingModifiedValues$MultiTenant */ =>  {
+            s if s.matches("Engine") /* Engine com.amazonaws.rds#PendingModifiedValues$Engine */ =>  {
                 let var_22 =
                     Some(
-                         {
-                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.rds#BooleanOptional`)"))
-                        }
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
                         ?
                     )
                 ;
-                builder = builder.set_multi_tenant(var_22);
+                builder = builder.set_engine(var_22);
             }
             ,
             _ => {}

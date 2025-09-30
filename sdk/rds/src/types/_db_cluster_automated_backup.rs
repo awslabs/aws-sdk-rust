@@ -59,11 +59,11 @@ pub struct DbClusterAutomatedBackup {
     /// <p>The IOPS (I/O operations per second) value for the automated backup.</p>
     /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
     pub iops: ::std::option::Option<i32>,
-    /// <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.</p>
-    pub aws_backup_recovery_point_arn: ::std::option::Option<::std::string::String>,
     /// <p>The storage throughput for the automated backup. The throughput is automatically set based on the IOPS that you provision, and is not configurable.</p>
     /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
     pub storage_throughput: ::std::option::Option<i32>,
+    /// <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.</p>
+    pub aws_backup_recovery_point_arn: ::std::option::Option<::std::string::String>,
 }
 impl DbClusterAutomatedBackup {
     /// <p>The name of the database engine for this automated backup.</p>
@@ -169,14 +169,14 @@ impl DbClusterAutomatedBackup {
     pub fn iops(&self) -> ::std::option::Option<i32> {
         self.iops
     }
-    /// <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.</p>
-    pub fn aws_backup_recovery_point_arn(&self) -> ::std::option::Option<&str> {
-        self.aws_backup_recovery_point_arn.as_deref()
-    }
     /// <p>The storage throughput for the automated backup. The throughput is automatically set based on the IOPS that you provision, and is not configurable.</p>
     /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
     pub fn storage_throughput(&self) -> ::std::option::Option<i32> {
         self.storage_throughput
+    }
+    /// <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.</p>
+    pub fn aws_backup_recovery_point_arn(&self) -> ::std::option::Option<&str> {
+        self.aws_backup_recovery_point_arn.as_deref()
     }
 }
 impl DbClusterAutomatedBackup {
@@ -213,8 +213,8 @@ pub struct DbClusterAutomatedBackupBuilder {
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) storage_type: ::std::option::Option<::std::string::String>,
     pub(crate) iops: ::std::option::Option<i32>,
-    pub(crate) aws_backup_recovery_point_arn: ::std::option::Option<::std::string::String>,
     pub(crate) storage_throughput: ::std::option::Option<i32>,
+    pub(crate) aws_backup_recovery_point_arn: ::std::option::Option<::std::string::String>,
 }
 impl DbClusterAutomatedBackupBuilder {
     /// <p>The name of the database engine for this automated backup.</p>
@@ -572,20 +572,6 @@ impl DbClusterAutomatedBackupBuilder {
     pub fn get_iops(&self) -> &::std::option::Option<i32> {
         &self.iops
     }
-    /// <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.</p>
-    pub fn aws_backup_recovery_point_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.aws_backup_recovery_point_arn = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.</p>
-    pub fn set_aws_backup_recovery_point_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_backup_recovery_point_arn = input;
-        self
-    }
-    /// <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.</p>
-    pub fn get_aws_backup_recovery_point_arn(&self) -> &::std::option::Option<::std::string::String> {
-        &self.aws_backup_recovery_point_arn
-    }
     /// <p>The storage throughput for the automated backup. The throughput is automatically set based on the IOPS that you provision, and is not configurable.</p>
     /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
     pub fn storage_throughput(mut self, input: i32) -> Self {
@@ -602,6 +588,20 @@ impl DbClusterAutomatedBackupBuilder {
     /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
     pub fn get_storage_throughput(&self) -> &::std::option::Option<i32> {
         &self.storage_throughput
+    }
+    /// <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.</p>
+    pub fn aws_backup_recovery_point_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.aws_backup_recovery_point_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.</p>
+    pub fn set_aws_backup_recovery_point_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.aws_backup_recovery_point_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.</p>
+    pub fn get_aws_backup_recovery_point_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_backup_recovery_point_arn
     }
     /// Consumes the builder and constructs a [`DbClusterAutomatedBackup`](crate::types::DbClusterAutomatedBackup).
     pub fn build(self) -> crate::types::DbClusterAutomatedBackup {
@@ -629,8 +629,8 @@ impl DbClusterAutomatedBackupBuilder {
             kms_key_id: self.kms_key_id,
             storage_type: self.storage_type,
             iops: self.iops,
-            aws_backup_recovery_point_arn: self.aws_backup_recovery_point_arn,
             storage_throughput: self.storage_throughput,
+            aws_backup_recovery_point_arn: self.aws_backup_recovery_point_arn,
         }
     }
 }

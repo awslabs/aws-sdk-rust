@@ -12,12 +12,12 @@ pub struct ValidStorageOptions {
     pub provisioned_iops: ::std::option::Option<::std::vec::Vec<crate::types::Range>>,
     /// <p>The valid range of Provisioned IOPS to gibibytes of storage multiplier. For example, 3-10, which means that provisioned IOPS can be between 3 and 10 times storage.</p>
     pub iops_to_storage_ratio: ::std::option::Option<::std::vec::Vec<crate::types::DoubleRange>>,
-    /// <p>Indicates whether or not Amazon RDS can automatically scale storage for DB instances that use the new instance class.</p>
-    pub supports_storage_autoscaling: ::std::option::Option<bool>,
     /// <p>The valid range of provisioned storage throughput. For example, 500-4,000 mebibytes per second (MiBps).</p>
     pub provisioned_storage_throughput: ::std::option::Option<::std::vec::Vec<crate::types::Range>>,
     /// <p>The valid range of storage throughput to provisioned IOPS ratios. For example, 0-0.25.</p>
     pub storage_throughput_to_iops_ratio: ::std::option::Option<::std::vec::Vec<crate::types::DoubleRange>>,
+    /// <p>Indicates whether or not Amazon RDS can automatically scale storage for DB instances that use the new instance class.</p>
+    pub supports_storage_autoscaling: ::std::option::Option<bool>,
 }
 impl ValidStorageOptions {
     /// <p>The valid storage types for your DB instance. For example: gp2, gp3, io1, io2.</p>
@@ -42,10 +42,6 @@ impl ValidStorageOptions {
     pub fn iops_to_storage_ratio(&self) -> &[crate::types::DoubleRange] {
         self.iops_to_storage_ratio.as_deref().unwrap_or_default()
     }
-    /// <p>Indicates whether or not Amazon RDS can automatically scale storage for DB instances that use the new instance class.</p>
-    pub fn supports_storage_autoscaling(&self) -> ::std::option::Option<bool> {
-        self.supports_storage_autoscaling
-    }
     /// <p>The valid range of provisioned storage throughput. For example, 500-4,000 mebibytes per second (MiBps).</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.provisioned_storage_throughput.is_none()`.
@@ -57,6 +53,10 @@ impl ValidStorageOptions {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.storage_throughput_to_iops_ratio.is_none()`.
     pub fn storage_throughput_to_iops_ratio(&self) -> &[crate::types::DoubleRange] {
         self.storage_throughput_to_iops_ratio.as_deref().unwrap_or_default()
+    }
+    /// <p>Indicates whether or not Amazon RDS can automatically scale storage for DB instances that use the new instance class.</p>
+    pub fn supports_storage_autoscaling(&self) -> ::std::option::Option<bool> {
+        self.supports_storage_autoscaling
     }
 }
 impl ValidStorageOptions {
@@ -74,9 +74,9 @@ pub struct ValidStorageOptionsBuilder {
     pub(crate) storage_size: ::std::option::Option<::std::vec::Vec<crate::types::Range>>,
     pub(crate) provisioned_iops: ::std::option::Option<::std::vec::Vec<crate::types::Range>>,
     pub(crate) iops_to_storage_ratio: ::std::option::Option<::std::vec::Vec<crate::types::DoubleRange>>,
-    pub(crate) supports_storage_autoscaling: ::std::option::Option<bool>,
     pub(crate) provisioned_storage_throughput: ::std::option::Option<::std::vec::Vec<crate::types::Range>>,
     pub(crate) storage_throughput_to_iops_ratio: ::std::option::Option<::std::vec::Vec<crate::types::DoubleRange>>,
+    pub(crate) supports_storage_autoscaling: ::std::option::Option<bool>,
 }
 impl ValidStorageOptionsBuilder {
     /// <p>The valid storage types for your DB instance. For example: gp2, gp3, io1, io2.</p>
@@ -153,20 +153,6 @@ impl ValidStorageOptionsBuilder {
     pub fn get_iops_to_storage_ratio(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DoubleRange>> {
         &self.iops_to_storage_ratio
     }
-    /// <p>Indicates whether or not Amazon RDS can automatically scale storage for DB instances that use the new instance class.</p>
-    pub fn supports_storage_autoscaling(mut self, input: bool) -> Self {
-        self.supports_storage_autoscaling = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>Indicates whether or not Amazon RDS can automatically scale storage for DB instances that use the new instance class.</p>
-    pub fn set_supports_storage_autoscaling(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.supports_storage_autoscaling = input;
-        self
-    }
-    /// <p>Indicates whether or not Amazon RDS can automatically scale storage for DB instances that use the new instance class.</p>
-    pub fn get_supports_storage_autoscaling(&self) -> &::std::option::Option<bool> {
-        &self.supports_storage_autoscaling
-    }
     /// Appends an item to `provisioned_storage_throughput`.
     ///
     /// To override the contents of this collection use [`set_provisioned_storage_throughput`](Self::set_provisioned_storage_throughput).
@@ -207,6 +193,20 @@ impl ValidStorageOptionsBuilder {
     pub fn get_storage_throughput_to_iops_ratio(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DoubleRange>> {
         &self.storage_throughput_to_iops_ratio
     }
+    /// <p>Indicates whether or not Amazon RDS can automatically scale storage for DB instances that use the new instance class.</p>
+    pub fn supports_storage_autoscaling(mut self, input: bool) -> Self {
+        self.supports_storage_autoscaling = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether or not Amazon RDS can automatically scale storage for DB instances that use the new instance class.</p>
+    pub fn set_supports_storage_autoscaling(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.supports_storage_autoscaling = input;
+        self
+    }
+    /// <p>Indicates whether or not Amazon RDS can automatically scale storage for DB instances that use the new instance class.</p>
+    pub fn get_supports_storage_autoscaling(&self) -> &::std::option::Option<bool> {
+        &self.supports_storage_autoscaling
+    }
     /// Consumes the builder and constructs a [`ValidStorageOptions`](crate::types::ValidStorageOptions).
     pub fn build(self) -> crate::types::ValidStorageOptions {
         crate::types::ValidStorageOptions {
@@ -214,9 +214,9 @@ impl ValidStorageOptionsBuilder {
             storage_size: self.storage_size,
             provisioned_iops: self.provisioned_iops,
             iops_to_storage_ratio: self.iops_to_storage_ratio,
-            supports_storage_autoscaling: self.supports_storage_autoscaling,
             provisioned_storage_throughput: self.provisioned_storage_throughput,
             storage_throughput_to_iops_ratio: self.storage_throughput_to_iops_ratio,
+            supports_storage_autoscaling: self.supports_storage_autoscaling,
         }
     }
 }

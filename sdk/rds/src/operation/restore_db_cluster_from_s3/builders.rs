@@ -819,22 +819,28 @@ impl RestoreDBClusterFromS3FluentBuilder {
     pub fn get_domain_iam_role_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_domain_iam_role_name()
     }
-    /// <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    pub fn serverless_v2_scaling_configuration(mut self, input: crate::types::ServerlessV2ScalingConfiguration) -> Self {
-        self.inner = self.inner.serverless_v2_scaling_configuration(input);
+    /// <p>Specifies the storage type to be associated with the DB cluster.</p>
+    /// <p>Valid Values: <code>aurora</code>, <code>aurora-iopt1</code></p>
+    /// <p>Default: <code>aurora</code></p>
+    /// <p>Valid for: Aurora DB clusters only</p>
+    pub fn storage_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.storage_type(input.into());
         self
     }
-    /// <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    pub fn set_serverless_v2_scaling_configuration(mut self, input: ::std::option::Option<crate::types::ServerlessV2ScalingConfiguration>) -> Self {
-        self.inner = self.inner.set_serverless_v2_scaling_configuration(input);
+    /// <p>Specifies the storage type to be associated with the DB cluster.</p>
+    /// <p>Valid Values: <code>aurora</code>, <code>aurora-iopt1</code></p>
+    /// <p>Default: <code>aurora</code></p>
+    /// <p>Valid for: Aurora DB clusters only</p>
+    pub fn set_storage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_storage_type(input);
         self
     }
-    /// <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    pub fn get_serverless_v2_scaling_configuration(&self) -> &::std::option::Option<crate::types::ServerlessV2ScalingConfiguration> {
-        self.inner.get_serverless_v2_scaling_configuration()
+    /// <p>Specifies the storage type to be associated with the DB cluster.</p>
+    /// <p>Valid Values: <code>aurora</code>, <code>aurora-iopt1</code></p>
+    /// <p>Default: <code>aurora</code></p>
+    /// <p>Valid for: Aurora DB clusters only</p>
+    pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_storage_type()
     }
     /// <p>The network type of the DB cluster.</p>
     /// <p>Valid Values:</p>
@@ -876,6 +882,23 @@ impl RestoreDBClusterFromS3FluentBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i></p>
     pub fn get_network_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_network_type()
+    }
+    /// <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub fn serverless_v2_scaling_configuration(mut self, input: crate::types::ServerlessV2ScalingConfiguration) -> Self {
+        self.inner = self.inner.serverless_v2_scaling_configuration(input);
+        self
+    }
+    /// <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub fn set_serverless_v2_scaling_configuration(mut self, input: ::std::option::Option<crate::types::ServerlessV2ScalingConfiguration>) -> Self {
+        self.inner = self.inner.set_serverless_v2_scaling_configuration(input);
+        self
+    }
+    /// <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub fn get_serverless_v2_scaling_configuration(&self) -> &::std::option::Option<crate::types::ServerlessV2ScalingConfiguration> {
+        self.inner.get_serverless_v2_scaling_configuration()
     }
     /// <p>Specifies whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i></p>
@@ -934,29 +957,6 @@ impl RestoreDBClusterFromS3FluentBuilder {
     /// <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
     pub fn get_master_user_secret_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_master_user_secret_kms_key_id()
-    }
-    /// <p>Specifies the storage type to be associated with the DB cluster.</p>
-    /// <p>Valid Values: <code>aurora</code>, <code>aurora-iopt1</code></p>
-    /// <p>Default: <code>aurora</code></p>
-    /// <p>Valid for: Aurora DB clusters only</p>
-    pub fn storage_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.storage_type(input.into());
-        self
-    }
-    /// <p>Specifies the storage type to be associated with the DB cluster.</p>
-    /// <p>Valid Values: <code>aurora</code>, <code>aurora-iopt1</code></p>
-    /// <p>Default: <code>aurora</code></p>
-    /// <p>Valid for: Aurora DB clusters only</p>
-    pub fn set_storage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_storage_type(input);
-        self
-    }
-    /// <p>Specifies the storage type to be associated with the DB cluster.</p>
-    /// <p>Valid Values: <code>aurora</code>, <code>aurora-iopt1</code></p>
-    /// <p>Default: <code>aurora</code></p>
-    /// <p>Valid for: Aurora DB clusters only</p>
-    pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_storage_type()
     }
     /// <p>The life cycle type for this DB cluster.</p><note>
     /// <p>By default, this value is set to <code>open-source-rds-extended-support</code>, which enrolls your DB cluster into Amazon RDS Extended Support. At the end of standard support, you can avoid charges for Extended Support by setting the value to <code>open-source-rds-extended-support-disabled</code>. In this case, RDS automatically upgrades your restored DB cluster to a higher engine version, if the major engine version is past its end of standard support date.</p>

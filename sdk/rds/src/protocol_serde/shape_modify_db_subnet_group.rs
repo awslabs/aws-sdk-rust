@@ -73,6 +73,24 @@ pub fn de_modify_db_subnet_group_http_error(
             }
             tmp
         }),
+        "InvalidDBSubnetGroupStateFault" => crate::operation::modify_db_subnet_group::ModifyDBSubnetGroupError::InvalidDbSubnetGroupStateFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidDbSubnetGroupStateFaultBuilder::default();
+                output = crate::protocol_serde::shape_invalid_db_subnet_group_state_fault::de_invalid_db_subnet_group_state_fault_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::modify_db_subnet_group::ModifyDBSubnetGroupError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "InvalidSubnet" => crate::operation::modify_db_subnet_group::ModifyDBSubnetGroupError::InvalidSubnet({
             #[allow(unused_mut)]
             let mut tmp = {

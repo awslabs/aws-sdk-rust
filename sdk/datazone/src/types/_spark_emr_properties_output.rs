@@ -26,6 +26,12 @@ pub struct SparkEmrPropertiesOutput {
     pub runtime_role: ::std::option::Option<::std::string::String>,
     /// <p>The trusted certificate S3 URL of the Spark EMR.</p>
     pub trusted_certificates_s3_uri: ::std::option::Option<::std::string::String>,
+    /// <p>The certificate data of the EMR on EKS cluster.</p>
+    pub certificate_data: ::std::option::Option<::std::string::String>,
+    /// <p>The managed endpoint ARN of the EMR on EKS cluster.</p>
+    pub managed_endpoint_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The managed endpoint credentials of the EMR on EKS cluster.</p>
+    pub managed_endpoint_credentials: ::std::option::Option<crate::types::ManagedEndpointCredentials>,
 }
 impl SparkEmrPropertiesOutput {
     /// <p>The compute ARN of the Spark EMR.</p>
@@ -72,6 +78,18 @@ impl SparkEmrPropertiesOutput {
     pub fn trusted_certificates_s3_uri(&self) -> ::std::option::Option<&str> {
         self.trusted_certificates_s3_uri.as_deref()
     }
+    /// <p>The certificate data of the EMR on EKS cluster.</p>
+    pub fn certificate_data(&self) -> ::std::option::Option<&str> {
+        self.certificate_data.as_deref()
+    }
+    /// <p>The managed endpoint ARN of the EMR on EKS cluster.</p>
+    pub fn managed_endpoint_arn(&self) -> ::std::option::Option<&str> {
+        self.managed_endpoint_arn.as_deref()
+    }
+    /// <p>The managed endpoint credentials of the EMR on EKS cluster.</p>
+    pub fn managed_endpoint_credentials(&self) -> ::std::option::Option<&crate::types::ManagedEndpointCredentials> {
+        self.managed_endpoint_credentials.as_ref()
+    }
 }
 impl ::std::fmt::Debug for SparkEmrPropertiesOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -87,6 +105,9 @@ impl ::std::fmt::Debug for SparkEmrPropertiesOutput {
         formatter.field("python_virtual_env", &self.python_virtual_env);
         formatter.field("runtime_role", &self.runtime_role);
         formatter.field("trusted_certificates_s3_uri", &self.trusted_certificates_s3_uri);
+        formatter.field("certificate_data", &self.certificate_data);
+        formatter.field("managed_endpoint_arn", &self.managed_endpoint_arn);
+        formatter.field("managed_endpoint_credentials", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -112,6 +133,9 @@ pub struct SparkEmrPropertiesOutputBuilder {
     pub(crate) python_virtual_env: ::std::option::Option<::std::string::String>,
     pub(crate) runtime_role: ::std::option::Option<::std::string::String>,
     pub(crate) trusted_certificates_s3_uri: ::std::option::Option<::std::string::String>,
+    pub(crate) certificate_data: ::std::option::Option<::std::string::String>,
+    pub(crate) managed_endpoint_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) managed_endpoint_credentials: ::std::option::Option<crate::types::ManagedEndpointCredentials>,
 }
 impl SparkEmrPropertiesOutputBuilder {
     /// <p>The compute ARN of the Spark EMR.</p>
@@ -268,6 +292,48 @@ impl SparkEmrPropertiesOutputBuilder {
     pub fn get_trusted_certificates_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
         &self.trusted_certificates_s3_uri
     }
+    /// <p>The certificate data of the EMR on EKS cluster.</p>
+    pub fn certificate_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.certificate_data = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The certificate data of the EMR on EKS cluster.</p>
+    pub fn set_certificate_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.certificate_data = input;
+        self
+    }
+    /// <p>The certificate data of the EMR on EKS cluster.</p>
+    pub fn get_certificate_data(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_data
+    }
+    /// <p>The managed endpoint ARN of the EMR on EKS cluster.</p>
+    pub fn managed_endpoint_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.managed_endpoint_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The managed endpoint ARN of the EMR on EKS cluster.</p>
+    pub fn set_managed_endpoint_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.managed_endpoint_arn = input;
+        self
+    }
+    /// <p>The managed endpoint ARN of the EMR on EKS cluster.</p>
+    pub fn get_managed_endpoint_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.managed_endpoint_arn
+    }
+    /// <p>The managed endpoint credentials of the EMR on EKS cluster.</p>
+    pub fn managed_endpoint_credentials(mut self, input: crate::types::ManagedEndpointCredentials) -> Self {
+        self.managed_endpoint_credentials = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The managed endpoint credentials of the EMR on EKS cluster.</p>
+    pub fn set_managed_endpoint_credentials(mut self, input: ::std::option::Option<crate::types::ManagedEndpointCredentials>) -> Self {
+        self.managed_endpoint_credentials = input;
+        self
+    }
+    /// <p>The managed endpoint credentials of the EMR on EKS cluster.</p>
+    pub fn get_managed_endpoint_credentials(&self) -> &::std::option::Option<crate::types::ManagedEndpointCredentials> {
+        &self.managed_endpoint_credentials
+    }
     /// Consumes the builder and constructs a [`SparkEmrPropertiesOutput`](crate::types::SparkEmrPropertiesOutput).
     pub fn build(self) -> crate::types::SparkEmrPropertiesOutput {
         crate::types::SparkEmrPropertiesOutput {
@@ -282,6 +348,9 @@ impl SparkEmrPropertiesOutputBuilder {
             python_virtual_env: self.python_virtual_env,
             runtime_role: self.runtime_role,
             trusted_certificates_s3_uri: self.trusted_certificates_s3_uri,
+            certificate_data: self.certificate_data,
+            managed_endpoint_arn: self.managed_endpoint_arn,
+            managed_endpoint_credentials: self.managed_endpoint_credentials,
         }
     }
 }
@@ -299,6 +368,9 @@ impl ::std::fmt::Debug for SparkEmrPropertiesOutputBuilder {
         formatter.field("python_virtual_env", &self.python_virtual_env);
         formatter.field("runtime_role", &self.runtime_role);
         formatter.field("trusted_certificates_s3_uri", &self.trusted_certificates_s3_uri);
+        formatter.field("certificate_data", &self.certificate_data);
+        formatter.field("managed_endpoint_arn", &self.managed_endpoint_arn);
+        formatter.field("managed_endpoint_credentials", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

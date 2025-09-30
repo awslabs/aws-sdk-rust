@@ -34,6 +34,7 @@ pub struct RemoveFromGlobalClusterInputBuilder {
 }
 impl RemoveFromGlobalClusterInputBuilder {
     /// <p>The cluster identifier to detach from the Aurora global database cluster.</p>
+    /// This field is required.
     pub fn global_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_cluster_identifier = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl RemoveFromGlobalClusterInputBuilder {
         &self.global_cluster_identifier
     }
     /// <p>The Amazon Resource Name (ARN) identifying the cluster that was detached from the Aurora global database cluster.</p>
+    /// This field is required.
     pub fn db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_identifier = ::std::option::Option::Some(input.into());
         self

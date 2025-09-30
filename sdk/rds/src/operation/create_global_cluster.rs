@@ -264,6 +264,10 @@ pub enum CreateGlobalClusterError {
     GlobalClusterQuotaExceededFault(crate::types::error::GlobalClusterQuotaExceededFault),
     /// <p>The requested operation can't be performed while the cluster is in this state.</p>
     InvalidDbClusterStateFault(crate::types::error::InvalidDbClusterStateFault),
+    /// <p>The DB shard group must be in the available state.</p>
+    InvalidDbShardGroupStateFault(crate::types::error::InvalidDbShardGroupStateFault),
+    /// <p>The specified resource ID was not found.</p>
+    ResourceNotFoundFault(crate::types::error::ResourceNotFoundFault),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -301,6 +305,8 @@ impl CreateGlobalClusterError {
             Self::GlobalClusterAlreadyExistsFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::GlobalClusterQuotaExceededFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidDbClusterStateFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidDbShardGroupStateFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ResourceNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
     }
@@ -320,6 +326,14 @@ impl CreateGlobalClusterError {
     pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
         matches!(self, Self::InvalidDbClusterStateFault(_))
     }
+    /// Returns `true` if the error kind is `CreateGlobalClusterError::InvalidDbShardGroupStateFault`.
+    pub fn is_invalid_db_shard_group_state_fault(&self) -> bool {
+        matches!(self, Self::InvalidDbShardGroupStateFault(_))
+    }
+    /// Returns `true` if the error kind is `CreateGlobalClusterError::ResourceNotFoundFault`.
+    pub fn is_resource_not_found_fault(&self) -> bool {
+        matches!(self, Self::ResourceNotFoundFault(_))
+    }
 }
 impl ::std::error::Error for CreateGlobalClusterError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
@@ -328,6 +342,8 @@ impl ::std::error::Error for CreateGlobalClusterError {
             Self::GlobalClusterAlreadyExistsFault(_inner) => ::std::option::Option::Some(_inner),
             Self::GlobalClusterQuotaExceededFault(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidDbClusterStateFault(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidDbShardGroupStateFault(_inner) => ::std::option::Option::Some(_inner),
+            Self::ResourceNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
     }
@@ -339,6 +355,8 @@ impl ::std::fmt::Display for CreateGlobalClusterError {
             Self::GlobalClusterAlreadyExistsFault(_inner) => _inner.fmt(f),
             Self::GlobalClusterQuotaExceededFault(_inner) => _inner.fmt(f),
             Self::InvalidDbClusterStateFault(_inner) => _inner.fmt(f),
+            Self::InvalidDbShardGroupStateFault(_inner) => _inner.fmt(f),
+            Self::ResourceNotFoundFault(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -364,6 +382,8 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateGlobalC
             Self::GlobalClusterAlreadyExistsFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::GlobalClusterQuotaExceededFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidDbClusterStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidDbShardGroupStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ResourceNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }
     }

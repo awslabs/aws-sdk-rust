@@ -12,16 +12,25 @@ pub fn ser_radius_settings(
         }
         array_2.finish();
     }
-    if let Some(var_4) = &input.radius_port {
+    if let Some(var_4) = &input.radius_servers_ipv6 {
+        let mut array_5 = object.key("RadiusServersIpv6").start_array();
+        for item_6 in var_4 {
+            {
+                array_5.value().string(item_6.as_str());
+            }
+        }
+        array_5.finish();
+    }
+    if let Some(var_7) = &input.radius_port {
         object.key("RadiusPort").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_4).into()),
+            ::aws_smithy_types::Number::NegInt((*var_7).into()),
         );
     }
-    if let Some(var_5) = &input.radius_timeout {
+    if let Some(var_8) = &input.radius_timeout {
         object.key("RadiusTimeout").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_5).into()),
+            ::aws_smithy_types::Number::NegInt((*var_8).into()),
         );
     }
     if input.radius_retries != 0 {
@@ -30,14 +39,14 @@ pub fn ser_radius_settings(
             ::aws_smithy_types::Number::NegInt((input.radius_retries).into()),
         );
     }
-    if let Some(var_6) = &input.shared_secret {
-        object.key("SharedSecret").string(var_6.as_str());
+    if let Some(var_9) = &input.shared_secret {
+        object.key("SharedSecret").string(var_9.as_str());
     }
-    if let Some(var_7) = &input.authentication_protocol {
-        object.key("AuthenticationProtocol").string(var_7.as_str());
+    if let Some(var_10) = &input.authentication_protocol {
+        object.key("AuthenticationProtocol").string(var_10.as_str());
     }
-    if let Some(var_8) = &input.display_label {
-        object.key("DisplayLabel").string(var_8.as_str());
+    if let Some(var_11) = &input.display_label {
+        object.key("DisplayLabel").string(var_11.as_str());
     }
     if input.use_same_username {
         object.key("UseSameUsername").boolean(input.use_same_username);
@@ -62,6 +71,9 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "RadiusServers" => {
                             builder = builder.set_radius_servers(crate::protocol_serde::shape_servers::de_servers(tokens)?);
+                        }
+                        "RadiusServersIpv6" => {
+                            builder = builder.set_radius_servers_ipv6(crate::protocol_serde::shape_servers::de_servers(tokens)?);
                         }
                         "RadiusPort" => {
                             builder = builder.set_radius_port(

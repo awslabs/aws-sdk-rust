@@ -161,6 +161,7 @@ pub struct CreateGlobalClusterInputBuilder {
 }
 impl CreateGlobalClusterInputBuilder {
     /// <p>The cluster identifier for this global database cluster. This parameter is stored as a lowercase string.</p>
+    /// This field is required.
     pub fn global_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_cluster_identifier = ::std::option::Option::Some(input.into());
         self

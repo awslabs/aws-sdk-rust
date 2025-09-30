@@ -125,37 +125,37 @@ pub fn ser_restore_db_cluster_to_point_in_time_input_input_input(
         scope_46.string(var_47);
     }
     #[allow(unused_mut)]
-    let mut scope_48 = writer.prefix("ScalingConfiguration");
-    if let Some(var_49) = &input.scaling_configuration {
-        crate::protocol_serde::shape_scaling_configuration::ser_scaling_configuration(scope_48, var_49)?;
+    let mut scope_48 = writer.prefix("DBClusterInstanceClass");
+    if let Some(var_49) = &input.db_cluster_instance_class {
+        scope_48.string(var_49);
     }
     #[allow(unused_mut)]
-    let mut scope_50 = writer.prefix("EngineMode");
-    if let Some(var_51) = &input.engine_mode {
+    let mut scope_50 = writer.prefix("StorageType");
+    if let Some(var_51) = &input.storage_type {
         scope_50.string(var_51);
     }
     #[allow(unused_mut)]
-    let mut scope_52 = writer.prefix("DBClusterInstanceClass");
-    if let Some(var_53) = &input.db_cluster_instance_class {
-        scope_52.string(var_53);
+    let mut scope_52 = writer.prefix("PubliclyAccessible");
+    if let Some(var_53) = &input.publicly_accessible {
+        scope_52.boolean(*var_53);
     }
     #[allow(unused_mut)]
-    let mut scope_54 = writer.prefix("StorageType");
-    if let Some(var_55) = &input.storage_type {
-        scope_54.string(var_55);
-    }
-    #[allow(unused_mut)]
-    let mut scope_56 = writer.prefix("PubliclyAccessible");
-    if let Some(var_57) = &input.publicly_accessible {
-        scope_56.boolean(*var_57);
-    }
-    #[allow(unused_mut)]
-    let mut scope_58 = writer.prefix("Iops");
-    if let Some(var_59) = &input.iops {
-        scope_58.number(
+    let mut scope_54 = writer.prefix("Iops");
+    if let Some(var_55) = &input.iops {
+        scope_54.number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_59).into()),
+            ::aws_smithy_types::Number::NegInt((*var_55).into()),
         );
+    }
+    #[allow(unused_mut)]
+    let mut scope_56 = writer.prefix("NetworkType");
+    if let Some(var_57) = &input.network_type {
+        scope_56.string(var_57);
+    }
+    #[allow(unused_mut)]
+    let mut scope_58 = writer.prefix("SourceDbClusterResourceId");
+    if let Some(var_59) = &input.source_db_cluster_resource_id {
+        scope_58.string(var_59);
     }
     #[allow(unused_mut)]
     let mut scope_60 = writer.prefix("ServerlessV2ScalingConfiguration");
@@ -163,13 +163,13 @@ pub fn ser_restore_db_cluster_to_point_in_time_input_input_input(
         crate::protocol_serde::shape_serverless_v2_scaling_configuration::ser_serverless_v2_scaling_configuration(scope_60, var_61)?;
     }
     #[allow(unused_mut)]
-    let mut scope_62 = writer.prefix("NetworkType");
-    if let Some(var_63) = &input.network_type {
-        scope_62.string(var_63);
+    let mut scope_62 = writer.prefix("ScalingConfiguration");
+    if let Some(var_63) = &input.scaling_configuration {
+        crate::protocol_serde::shape_scaling_configuration::ser_scaling_configuration(scope_62, var_63)?;
     }
     #[allow(unused_mut)]
-    let mut scope_64 = writer.prefix("SourceDbClusterResourceId");
-    if let Some(var_65) = &input.source_db_cluster_resource_id {
+    let mut scope_64 = writer.prefix("EngineMode");
+    if let Some(var_65) = &input.engine_mode {
         scope_64.string(var_65);
     }
     #[allow(unused_mut)]

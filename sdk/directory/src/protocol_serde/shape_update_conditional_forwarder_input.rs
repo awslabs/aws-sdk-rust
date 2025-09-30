@@ -18,5 +18,14 @@ pub fn ser_update_conditional_forwarder_input_input(
         }
         array_4.finish();
     }
+    if let Some(var_6) = &input.dns_ipv6_addrs {
+        let mut array_7 = object.key("DnsIpv6Addrs").start_array();
+        for item_8 in var_6 {
+            {
+                array_7.value().string(item_8.as_str());
+            }
+        }
+        array_7.finish();
+    }
     Ok(())
 }

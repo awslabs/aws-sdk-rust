@@ -36,5 +36,8 @@ pub fn ser_create_directory_input_input(
         }
         array_9.finish();
     }
+    if let Some(var_12) = &input.network_type {
+        object.key("NetworkType").string(var_12.as_str());
+    }
     Ok(())
 }

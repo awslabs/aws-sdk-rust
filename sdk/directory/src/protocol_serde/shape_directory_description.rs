@@ -73,6 +73,9 @@ where
                         "DnsIpAddrs" => {
                             builder = builder.set_dns_ip_addrs(crate::protocol_serde::shape_dns_ip_addrs::de_dns_ip_addrs(tokens)?);
                         }
+                        "DnsIpv6Addrs" => {
+                            builder = builder.set_dns_ipv6_addrs(crate::protocol_serde::shape_dns_ipv6_addrs::de_dns_ipv6_addrs(tokens)?);
+                        }
                         "Stage" => {
                             builder = builder.set_stage(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -177,6 +180,13 @@ where
                         "HybridSettings" => {
                             builder = builder.set_hybrid_settings(
                                 crate::protocol_serde::shape_hybrid_settings_description::de_hybrid_settings_description(tokens)?,
+                            );
+                        }
+                        "NetworkType" => {
+                            builder = builder.set_network_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::NetworkType::from(u.as_ref())))
+                                    .transpose()?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

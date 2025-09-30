@@ -24,6 +24,9 @@ where
                         "DnsIpAddrs" => {
                             builder = builder.set_dns_ip_addrs(crate::protocol_serde::shape_dns_ip_addrs::de_dns_ip_addrs(tokens)?);
                         }
+                        "DnsIpv6Addrs" => {
+                            builder = builder.set_dns_ipv6_addrs(crate::protocol_serde::shape_dns_ipv6_addrs::de_dns_ipv6_addrs(tokens)?);
+                        }
                         "ReplicationScope" => {
                             builder = builder.set_replication_scope(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

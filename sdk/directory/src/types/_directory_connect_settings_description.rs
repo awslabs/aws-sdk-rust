@@ -12,10 +12,12 @@ pub struct DirectoryConnectSettingsDescription {
     pub customer_user_name: ::std::option::Option<::std::string::String>,
     /// <p>The security group identifier for the AD Connector directory.</p>
     pub security_group_id: ::std::option::Option<::std::string::String>,
-    /// <p>A list of the Availability Zones that the directory is in.</p>
+    /// <p>The Availability Zones that the directory is in.</p>
     pub availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The IP addresses of the AD Connector servers.</p>
     pub connect_ips: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The IPv6 addresses of the AD Connector servers.</p>
+    pub connect_ips_v6: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DirectoryConnectSettingsDescription {
     /// <p>The identifier of the VPC that the AD Connector is in.</p>
@@ -36,7 +38,7 @@ impl DirectoryConnectSettingsDescription {
     pub fn security_group_id(&self) -> ::std::option::Option<&str> {
         self.security_group_id.as_deref()
     }
-    /// <p>A list of the Availability Zones that the directory is in.</p>
+    /// <p>The Availability Zones that the directory is in.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.availability_zones.is_none()`.
     pub fn availability_zones(&self) -> &[::std::string::String] {
@@ -47,6 +49,12 @@ impl DirectoryConnectSettingsDescription {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.connect_ips.is_none()`.
     pub fn connect_ips(&self) -> &[::std::string::String] {
         self.connect_ips.as_deref().unwrap_or_default()
+    }
+    /// <p>The IPv6 addresses of the AD Connector servers.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.connect_ips_v6.is_none()`.
+    pub fn connect_ips_v6(&self) -> &[::std::string::String] {
+        self.connect_ips_v6.as_deref().unwrap_or_default()
     }
 }
 impl DirectoryConnectSettingsDescription {
@@ -66,6 +74,7 @@ pub struct DirectoryConnectSettingsDescriptionBuilder {
     pub(crate) security_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) connect_ips: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) connect_ips_v6: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DirectoryConnectSettingsDescriptionBuilder {
     /// <p>The identifier of the VPC that the AD Connector is in.</p>
@@ -134,19 +143,19 @@ impl DirectoryConnectSettingsDescriptionBuilder {
     ///
     /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
     ///
-    /// <p>A list of the Availability Zones that the directory is in.</p>
+    /// <p>The Availability Zones that the directory is in.</p>
     pub fn availability_zones(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.availability_zones.unwrap_or_default();
         v.push(input.into());
         self.availability_zones = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of the Availability Zones that the directory is in.</p>
+    /// <p>The Availability Zones that the directory is in.</p>
     pub fn set_availability_zones(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.availability_zones = input;
         self
     }
-    /// <p>A list of the Availability Zones that the directory is in.</p>
+    /// <p>The Availability Zones that the directory is in.</p>
     pub fn get_availability_zones(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.availability_zones
     }
@@ -170,6 +179,26 @@ impl DirectoryConnectSettingsDescriptionBuilder {
     pub fn get_connect_ips(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.connect_ips
     }
+    /// Appends an item to `connect_ips_v6`.
+    ///
+    /// To override the contents of this collection use [`set_connect_ips_v6`](Self::set_connect_ips_v6).
+    ///
+    /// <p>The IPv6 addresses of the AD Connector servers.</p>
+    pub fn connect_ips_v6(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.connect_ips_v6.unwrap_or_default();
+        v.push(input.into());
+        self.connect_ips_v6 = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The IPv6 addresses of the AD Connector servers.</p>
+    pub fn set_connect_ips_v6(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.connect_ips_v6 = input;
+        self
+    }
+    /// <p>The IPv6 addresses of the AD Connector servers.</p>
+    pub fn get_connect_ips_v6(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.connect_ips_v6
+    }
     /// Consumes the builder and constructs a [`DirectoryConnectSettingsDescription`](crate::types::DirectoryConnectSettingsDescription).
     pub fn build(self) -> crate::types::DirectoryConnectSettingsDescription {
         crate::types::DirectoryConnectSettingsDescription {
@@ -179,6 +208,7 @@ impl DirectoryConnectSettingsDescriptionBuilder {
             security_group_id: self.security_group_id,
             availability_zones: self.availability_zones,
             connect_ips: self.connect_ips,
+            connect_ips_v6: self.connect_ips_v6,
         }
     }
 }

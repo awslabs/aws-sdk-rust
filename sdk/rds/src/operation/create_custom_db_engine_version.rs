@@ -260,10 +260,14 @@ pub enum CreateCustomDBEngineVersionError {
     CreateCustomDbEngineVersionFault(crate::types::error::CreateCustomDbEngineVersionFault),
     /// <p>A CEV with the specified name already exists.</p>
     CustomDbEngineVersionAlreadyExistsFault(crate::types::error::CustomDbEngineVersionAlreadyExistsFault),
+    /// <p>The specified CEV was not found.</p>
+    CustomDbEngineVersionNotFoundFault(crate::types::error::CustomDbEngineVersionNotFoundFault),
     /// <p>You have exceeded your CEV quota.</p>
     CustomDbEngineVersionQuotaExceededFault(crate::types::error::CustomDbEngineVersionQuotaExceededFault),
     /// <p>The AMI configuration prerequisite has not been met.</p>
     Ec2ImagePropertiesNotSupportedFault(crate::types::error::Ec2ImagePropertiesNotSupportedFault),
+    /// <p>You can't delete the CEV.</p>
+    InvalidCustomDbEngineVersionStateFault(crate::types::error::InvalidCustomDbEngineVersionStateFault),
     /// <p>An error occurred accessing an Amazon Web Services KMS key.</p>
     KmsKeyNotAccessibleFault(crate::types::error::KmsKeyNotAccessibleFault),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -301,8 +305,10 @@ impl CreateCustomDBEngineVersionError {
         match self {
             Self::CreateCustomDbEngineVersionFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::CustomDbEngineVersionAlreadyExistsFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::CustomDbEngineVersionNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::CustomDbEngineVersionQuotaExceededFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Ec2ImagePropertiesNotSupportedFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidCustomDbEngineVersionStateFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::KmsKeyNotAccessibleFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
@@ -315,6 +321,10 @@ impl CreateCustomDBEngineVersionError {
     pub fn is_custom_db_engine_version_already_exists_fault(&self) -> bool {
         matches!(self, Self::CustomDbEngineVersionAlreadyExistsFault(_))
     }
+    /// Returns `true` if the error kind is `CreateCustomDBEngineVersionError::CustomDbEngineVersionNotFoundFault`.
+    pub fn is_custom_db_engine_version_not_found_fault(&self) -> bool {
+        matches!(self, Self::CustomDbEngineVersionNotFoundFault(_))
+    }
     /// Returns `true` if the error kind is `CreateCustomDBEngineVersionError::CustomDbEngineVersionQuotaExceededFault`.
     pub fn is_custom_db_engine_version_quota_exceeded_fault(&self) -> bool {
         matches!(self, Self::CustomDbEngineVersionQuotaExceededFault(_))
@@ -322,6 +332,10 @@ impl CreateCustomDBEngineVersionError {
     /// Returns `true` if the error kind is `CreateCustomDBEngineVersionError::Ec2ImagePropertiesNotSupportedFault`.
     pub fn is_ec2_image_properties_not_supported_fault(&self) -> bool {
         matches!(self, Self::Ec2ImagePropertiesNotSupportedFault(_))
+    }
+    /// Returns `true` if the error kind is `CreateCustomDBEngineVersionError::InvalidCustomDbEngineVersionStateFault`.
+    pub fn is_invalid_custom_db_engine_version_state_fault(&self) -> bool {
+        matches!(self, Self::InvalidCustomDbEngineVersionStateFault(_))
     }
     /// Returns `true` if the error kind is `CreateCustomDBEngineVersionError::KmsKeyNotAccessibleFault`.
     pub fn is_kms_key_not_accessible_fault(&self) -> bool {
@@ -333,8 +347,10 @@ impl ::std::error::Error for CreateCustomDBEngineVersionError {
         match self {
             Self::CreateCustomDbEngineVersionFault(_inner) => ::std::option::Option::Some(_inner),
             Self::CustomDbEngineVersionAlreadyExistsFault(_inner) => ::std::option::Option::Some(_inner),
+            Self::CustomDbEngineVersionNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::CustomDbEngineVersionQuotaExceededFault(_inner) => ::std::option::Option::Some(_inner),
             Self::Ec2ImagePropertiesNotSupportedFault(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidCustomDbEngineVersionStateFault(_inner) => ::std::option::Option::Some(_inner),
             Self::KmsKeyNotAccessibleFault(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
@@ -345,8 +361,10 @@ impl ::std::fmt::Display for CreateCustomDBEngineVersionError {
         match self {
             Self::CreateCustomDbEngineVersionFault(_inner) => _inner.fmt(f),
             Self::CustomDbEngineVersionAlreadyExistsFault(_inner) => _inner.fmt(f),
+            Self::CustomDbEngineVersionNotFoundFault(_inner) => _inner.fmt(f),
             Self::CustomDbEngineVersionQuotaExceededFault(_inner) => _inner.fmt(f),
             Self::Ec2ImagePropertiesNotSupportedFault(_inner) => _inner.fmt(f),
+            Self::InvalidCustomDbEngineVersionStateFault(_inner) => _inner.fmt(f),
             Self::KmsKeyNotAccessibleFault(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
@@ -371,8 +389,10 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateCustomD
         match self {
             Self::CreateCustomDbEngineVersionFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::CustomDbEngineVersionAlreadyExistsFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::CustomDbEngineVersionNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::CustomDbEngineVersionQuotaExceededFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Ec2ImagePropertiesNotSupportedFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidCustomDbEngineVersionStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::KmsKeyNotAccessibleFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }

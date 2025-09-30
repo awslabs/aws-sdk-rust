@@ -35,6 +35,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "DnsIpv6Addr" => {
+                            builder = builder.set_dns_ipv6_addr(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "VpcId" => {
                             builder = builder.set_vpc_id(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

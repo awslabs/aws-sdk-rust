@@ -28,6 +28,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "CidrIpv6" => {
+                            builder = builder.set_cidr_ipv6(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "IpRouteStatusMsg" => {
                             builder = builder.set_ip_route_status_msg(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

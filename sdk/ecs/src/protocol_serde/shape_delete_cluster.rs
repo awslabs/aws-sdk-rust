@@ -32,6 +32,22 @@ pub fn de_delete_cluster_http_error(
             }
             tmp
         }),
+        "ClusterContainsCapacityProviderException" => {
+            crate::operation::delete_cluster::DeleteClusterError::ClusterContainsCapacityProviderException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ClusterContainsCapacityProviderExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_cluster_contains_capacity_provider_exception::de_cluster_contains_capacity_provider_exception_json_err(_response_body, output).map_err(crate::operation::delete_cluster::DeleteClusterError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "ClusterContainsContainerInstancesException" => {
             crate::operation::delete_cluster::DeleteClusterError::ClusterContainsContainerInstancesException({
                 #[allow(unused_mut)]

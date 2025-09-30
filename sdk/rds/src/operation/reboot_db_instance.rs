@@ -102,6 +102,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for RebootD
                 .expect("required fields set"),
         ));
 
+        cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::SensitiveOutput);
         cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::Metadata::new("RebootDBInstance", "RDS"));
         let mut signing_options = ::aws_runtime::auth::SigningOptions::default();
         signing_options.double_uri_encode = true;
@@ -257,6 +258,8 @@ pub enum RebootDBInstanceError {
     DbInstanceNotFoundFault(crate::types::error::DbInstanceNotFoundFault),
     /// <p>The DB instance isn't in a valid state.</p>
     InvalidDbInstanceStateFault(crate::types::error::InvalidDbInstanceStateFault),
+    /// <p>An error occurred accessing an Amazon Web Services KMS key.</p>
+    KmsKeyNotAccessibleFault(crate::types::error::KmsKeyNotAccessibleFault),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -292,6 +295,7 @@ impl RebootDBInstanceError {
         match self {
             Self::DbInstanceNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidDbInstanceStateFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::KmsKeyNotAccessibleFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
     }
@@ -303,12 +307,17 @@ impl RebootDBInstanceError {
     pub fn is_invalid_db_instance_state_fault(&self) -> bool {
         matches!(self, Self::InvalidDbInstanceStateFault(_))
     }
+    /// Returns `true` if the error kind is `RebootDBInstanceError::KmsKeyNotAccessibleFault`.
+    pub fn is_kms_key_not_accessible_fault(&self) -> bool {
+        matches!(self, Self::KmsKeyNotAccessibleFault(_))
+    }
 }
 impl ::std::error::Error for RebootDBInstanceError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::DbInstanceNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidDbInstanceStateFault(_inner) => ::std::option::Option::Some(_inner),
+            Self::KmsKeyNotAccessibleFault(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
     }
@@ -318,6 +327,7 @@ impl ::std::fmt::Display for RebootDBInstanceError {
         match self {
             Self::DbInstanceNotFoundFault(_inner) => _inner.fmt(f),
             Self::InvalidDbInstanceStateFault(_inner) => _inner.fmt(f),
+            Self::KmsKeyNotAccessibleFault(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -341,6 +351,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for RebootDBInsta
         match self {
             Self::DbInstanceNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidDbInstanceStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::KmsKeyNotAccessibleFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }
     }

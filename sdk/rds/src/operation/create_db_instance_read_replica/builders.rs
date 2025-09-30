@@ -329,6 +329,23 @@ impl CreateDBInstanceReadReplicaFluentBuilder {
     pub fn get_iops(&self) -> &::std::option::Option<i32> {
         self.inner.get_iops()
     }
+    /// <p>Specifies the storage throughput value for the read replica.</p>
+    /// <p>This setting doesn't apply to RDS Custom or Amazon Aurora DB instances.</p>
+    pub fn storage_throughput(mut self, input: i32) -> Self {
+        self.inner = self.inner.storage_throughput(input);
+        self
+    }
+    /// <p>Specifies the storage throughput value for the read replica.</p>
+    /// <p>This setting doesn't apply to RDS Custom or Amazon Aurora DB instances.</p>
+    pub fn set_storage_throughput(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.inner = self.inner.set_storage_throughput(input);
+        self
+    }
+    /// <p>Specifies the storage throughput value for the read replica.</p>
+    /// <p>This setting doesn't apply to RDS Custom or Amazon Aurora DB instances.</p>
+    pub fn get_storage_throughput(&self) -> &::std::option::Option<i32> {
+        self.inner.get_storage_throughput()
+    }
     /// <p>The option group to associate the DB instance with. If not specified, RDS uses the option group associated with the source DB instance or cluster.</p><note>
     /// <p>For SQL Server, you must use the option group associated with the source.</p>
     /// </note>
@@ -1154,6 +1171,70 @@ impl CreateDBInstanceReadReplicaFluentBuilder {
     pub fn get_replica_mode(&self) -> &::std::option::Option<crate::types::ReplicaMode> {
         self.inner.get_replica_mode()
     }
+    /// <p>Specifies whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts read replica.</p>
+    /// <p>A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your on-premises network. For some use cases, a CoIP can provide lower latency for connections to the read replica from outside of its virtual private cloud (VPC) on your local network.</p>
+    /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
+    pub fn enable_customer_owned_ip(mut self, input: bool) -> Self {
+        self.inner = self.inner.enable_customer_owned_ip(input);
+        self
+    }
+    /// <p>Specifies whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts read replica.</p>
+    /// <p>A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your on-premises network. For some use cases, a CoIP can provide lower latency for connections to the read replica from outside of its virtual private cloud (VPC) on your local network.</p>
+    /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
+    pub fn set_enable_customer_owned_ip(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_enable_customer_owned_ip(input);
+        self
+    }
+    /// <p>Specifies whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts read replica.</p>
+    /// <p>A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your on-premises network. For some use cases, a CoIP can provide lower latency for connections to the read replica from outside of its virtual private cloud (VPC) on your local network.</p>
+    /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
+    pub fn get_enable_customer_owned_ip(&self) -> &::std::option::Option<bool> {
+        self.inner.get_enable_customer_owned_ip()
+    }
+    /// <p>The network type of the DB instance.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IPV4</code></p></li>
+    /// <li>
+    /// <p><code>DUAL</code></p></li>
+    /// </ul>
+    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for read replica. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i></p>
+    pub fn network_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.network_type(input.into());
+        self
+    }
+    /// <p>The network type of the DB instance.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IPV4</code></p></li>
+    /// <li>
+    /// <p><code>DUAL</code></p></li>
+    /// </ul>
+    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for read replica. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i></p>
+    pub fn set_network_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_network_type(input);
+        self
+    }
+    /// <p>The network type of the DB instance.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IPV4</code></p></li>
+    /// <li>
+    /// <p><code>DUAL</code></p></li>
+    /// </ul>
+    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for read replica. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i></p>
+    pub fn get_network_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_network_type()
+    }
     /// <p>The upper limit in gibibytes (GiB) to which Amazon RDS can automatically scale the storage of the DB instance.</p>
     /// <p>For more information about this setting, including limitations that apply to it, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling"> Managing capacity automatically with Amazon RDS storage autoscaling</a> in the <i>Amazon RDS User Guide</i>.</p>
     pub fn max_allocated_storage(mut self, input: i32) -> Self {
@@ -1170,6 +1251,41 @@ impl CreateDBInstanceReadReplicaFluentBuilder {
     /// <p>For more information about this setting, including limitations that apply to it, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling"> Managing capacity automatically with Amazon RDS storage autoscaling</a> in the <i>Amazon RDS User Guide</i>.</p>
     pub fn get_max_allocated_storage(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_allocated_storage()
+    }
+    /// <p>The location where RDS stores automated backups and manual snapshots.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>local</code> for Dedicated Local Zones</p></li>
+    /// <li>
+    /// <p><code>region</code> for Amazon Web Services Region</p></li>
+    /// </ul>
+    pub fn backup_target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.backup_target(input.into());
+        self
+    }
+    /// <p>The location where RDS stores automated backups and manual snapshots.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>local</code> for Dedicated Local Zones</p></li>
+    /// <li>
+    /// <p><code>region</code> for Amazon Web Services Region</p></li>
+    /// </ul>
+    pub fn set_backup_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_backup_target(input);
+        self
+    }
+    /// <p>The location where RDS stores automated backups and manual snapshots.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>local</code> for Dedicated Local Zones</p></li>
+    /// <li>
+    /// <p><code>region</code> for Amazon Web Services Region</p></li>
+    /// </ul>
+    pub fn get_backup_target(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_backup_target()
     }
     /// <p>The instance profile associated with the underlying Amazon EC2 instance of an RDS Custom DB instance. The instance profile must meet the following requirements:</p>
     /// <ul>
@@ -1214,122 +1330,6 @@ impl CreateDBInstanceReadReplicaFluentBuilder {
     /// <p>This setting is required for RDS Custom DB instances.</p>
     pub fn get_custom_iam_instance_profile(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_custom_iam_instance_profile()
-    }
-    /// <p>The network type of the DB instance.</p>
-    /// <p>Valid Values:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>IPV4</code></p></li>
-    /// <li>
-    /// <p><code>DUAL</code></p></li>
-    /// </ul>
-    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for read replica. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i></p>
-    pub fn network_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.network_type(input.into());
-        self
-    }
-    /// <p>The network type of the DB instance.</p>
-    /// <p>Valid Values:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>IPV4</code></p></li>
-    /// <li>
-    /// <p><code>DUAL</code></p></li>
-    /// </ul>
-    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for read replica. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i></p>
-    pub fn set_network_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_network_type(input);
-        self
-    }
-    /// <p>The network type of the DB instance.</p>
-    /// <p>Valid Values:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>IPV4</code></p></li>
-    /// <li>
-    /// <p><code>DUAL</code></p></li>
-    /// </ul>
-    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for read replica. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i></p>
-    pub fn get_network_type(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_network_type()
-    }
-    /// <p>Specifies the storage throughput value for the read replica.</p>
-    /// <p>This setting doesn't apply to RDS Custom or Amazon Aurora DB instances.</p>
-    pub fn storage_throughput(mut self, input: i32) -> Self {
-        self.inner = self.inner.storage_throughput(input);
-        self
-    }
-    /// <p>Specifies the storage throughput value for the read replica.</p>
-    /// <p>This setting doesn't apply to RDS Custom or Amazon Aurora DB instances.</p>
-    pub fn set_storage_throughput(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.inner = self.inner.set_storage_throughput(input);
-        self
-    }
-    /// <p>Specifies the storage throughput value for the read replica.</p>
-    /// <p>This setting doesn't apply to RDS Custom or Amazon Aurora DB instances.</p>
-    pub fn get_storage_throughput(&self) -> &::std::option::Option<i32> {
-        self.inner.get_storage_throughput()
-    }
-    /// <p>Specifies whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts read replica.</p>
-    /// <p>A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your on-premises network. For some use cases, a CoIP can provide lower latency for connections to the read replica from outside of its virtual private cloud (VPC) on your local network.</p>
-    /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
-    /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
-    pub fn enable_customer_owned_ip(mut self, input: bool) -> Self {
-        self.inner = self.inner.enable_customer_owned_ip(input);
-        self
-    }
-    /// <p>Specifies whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts read replica.</p>
-    /// <p>A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your on-premises network. For some use cases, a CoIP can provide lower latency for connections to the read replica from outside of its virtual private cloud (VPC) on your local network.</p>
-    /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
-    /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
-    pub fn set_enable_customer_owned_ip(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.inner = self.inner.set_enable_customer_owned_ip(input);
-        self
-    }
-    /// <p>Specifies whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts read replica.</p>
-    /// <p>A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your on-premises network. For some use cases, a CoIP can provide lower latency for connections to the read replica from outside of its virtual private cloud (VPC) on your local network.</p>
-    /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
-    /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
-    pub fn get_enable_customer_owned_ip(&self) -> &::std::option::Option<bool> {
-        self.inner.get_enable_customer_owned_ip()
-    }
-    /// <p>The location where RDS stores automated backups and manual snapshots.</p>
-    /// <p>Valid Values:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>local</code> for Dedicated Local Zones</p></li>
-    /// <li>
-    /// <p><code>region</code> for Amazon Web Services Region</p></li>
-    /// </ul>
-    pub fn backup_target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.backup_target(input.into());
-        self
-    }
-    /// <p>The location where RDS stores automated backups and manual snapshots.</p>
-    /// <p>Valid Values:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>local</code> for Dedicated Local Zones</p></li>
-    /// <li>
-    /// <p><code>region</code> for Amazon Web Services Region</p></li>
-    /// </ul>
-    pub fn set_backup_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_backup_target(input);
-        self
-    }
-    /// <p>The location where RDS stores automated backups and manual snapshots.</p>
-    /// <p>Valid Values:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>local</code> for Dedicated Local Zones</p></li>
-    /// <li>
-    /// <p><code>region</code> for Amazon Web Services Region</p></li>
-    /// </ul>
-    pub fn get_backup_target(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_backup_target()
     }
     /// <p>The amount of storage (in gibibytes) to allocate initially for the read replica. Follow the allocation rules specified in <code>CreateDBInstance</code>.</p>
     /// <p>This setting isn't valid for RDS for SQL Server.</p><note>

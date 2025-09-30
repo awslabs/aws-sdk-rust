@@ -13,7 +13,9 @@
 /// # let capacityproviderstatus = unimplemented!();
 /// match capacityproviderstatus {
 ///     CapacityProviderStatus::Active => { /* ... */ },
+///     CapacityProviderStatus::Deprovisioning => { /* ... */ },
 ///     CapacityProviderStatus::Inactive => { /* ... */ },
+///     CapacityProviderStatus::Provisioning => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -45,7 +47,11 @@ pub enum CapacityProviderStatus {
     #[allow(missing_docs)] // documentation missing in model
     Active,
     #[allow(missing_docs)] // documentation missing in model
+    Deprovisioning,
+    #[allow(missing_docs)] // documentation missing in model
     Inactive,
+    #[allow(missing_docs)] // documentation missing in model
+    Provisioning,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -54,7 +60,9 @@ impl ::std::convert::From<&str> for CapacityProviderStatus {
     fn from(s: &str) -> Self {
         match s {
             "ACTIVE" => CapacityProviderStatus::Active,
+            "DEPROVISIONING" => CapacityProviderStatus::Deprovisioning,
             "INACTIVE" => CapacityProviderStatus::Inactive,
+            "PROVISIONING" => CapacityProviderStatus::Provisioning,
             other => CapacityProviderStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -71,13 +79,15 @@ impl CapacityProviderStatus {
     pub fn as_str(&self) -> &str {
         match self {
             CapacityProviderStatus::Active => "ACTIVE",
+            CapacityProviderStatus::Deprovisioning => "DEPROVISIONING",
             CapacityProviderStatus::Inactive => "INACTIVE",
+            CapacityProviderStatus::Provisioning => "PROVISIONING",
             CapacityProviderStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "INACTIVE"]
+        &["ACTIVE", "DEPROVISIONING", "INACTIVE", "PROVISIONING"]
     }
 }
 impl ::std::convert::AsRef<str> for CapacityProviderStatus {
@@ -101,7 +111,9 @@ impl ::std::fmt::Display for CapacityProviderStatus {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             CapacityProviderStatus::Active => write!(f, "ACTIVE"),
+            CapacityProviderStatus::Deprovisioning => write!(f, "DEPROVISIONING"),
             CapacityProviderStatus::Inactive => write!(f, "INACTIVE"),
+            CapacityProviderStatus::Provisioning => write!(f, "PROVISIONING"),
             CapacityProviderStatus::Unknown(value) => write!(f, "{}", value),
         }
     }

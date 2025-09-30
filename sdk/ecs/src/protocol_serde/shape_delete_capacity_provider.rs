@@ -39,6 +39,21 @@ pub fn de_delete_capacity_provider_http_error(
             }
             tmp
         }),
+        "ClusterNotFoundException" => crate::operation::delete_capacity_provider::DeleteCapacityProviderError::ClusterNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ClusterNotFoundExceptionBuilder::default();
+                output = crate::protocol_serde::shape_cluster_not_found_exception::de_cluster_not_found_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::delete_capacity_provider::DeleteCapacityProviderError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "InvalidParameterException" => crate::operation::delete_capacity_provider::DeleteCapacityProviderError::InvalidParameterException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -61,6 +76,22 @@ pub fn de_delete_capacity_provider_http_error(
                 let mut output = crate::types::error::builders::ServerExceptionBuilder::default();
                 output = crate::protocol_serde::shape_server_exception::de_server_exception_json_err(_response_body, output)
                     .map_err(crate::operation::delete_capacity_provider::DeleteCapacityProviderError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "UnsupportedFeatureException" => crate::operation::delete_capacity_provider::DeleteCapacityProviderError::UnsupportedFeatureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::UnsupportedFeatureExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_unsupported_feature_exception::de_unsupported_feature_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::delete_capacity_provider::DeleteCapacityProviderError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };

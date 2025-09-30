@@ -32,6 +32,8 @@ impl crate::operation::create_form_type::builders::CreateFormTypeInputBuilder {
 /// <li>
 /// <p>The name must be unique within the domain.</p></li>
 /// </ul>
+/// <p>For custom form types, to indicate that a field should be searchable, annotate it with <code>@amazon.datazone#searchable</code>. By default, searchable fields are indexed for semantic search, where related query terms will match the attribute value even if they are not stemmed or keyword matches. To indicate that a field should be indexed for lexical search (which disables semantic search but supports stemmed and partial matches), annotate it with <code>@amazon.datazone#searchable(modes:\["LEXICAL"\])</code>. To indicate that a field should be indexed for technical identifier search (for more information on technical identifier search, see: <a href="https://aws.amazon.com/blogs/big-data/streamline-data-discovery-with-precise-technical-identifier-search-in-amazon-sagemaker-unified-studio/">https://aws.amazon.com/blogs/big-data/streamline-data-discovery-with-precise-technical-identifier-search-in-amazon-sagemaker-unified-studio/</a>), annotate it with <code>@amazon.datazone#searchable(modes:\["TECHNICAL"\])</code>.</p>
+/// <p>To denote that a field will store glossary term ids (which are filterable via the Search/SearchListings APIs), annotate it with <code>@amazon.datazone#glossaryterm("${GLOSSARY_ID}")</code>, where <code>${GLOSSARY_ID}</code> is the id of the glossary that the glossary terms stored in the field belong to.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateFormTypeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

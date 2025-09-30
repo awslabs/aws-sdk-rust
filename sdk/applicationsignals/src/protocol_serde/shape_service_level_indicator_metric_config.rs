@@ -19,32 +19,35 @@ pub fn ser_service_level_indicator_metric_config(
     if let Some(var_6) = &input.metric_type {
         object.key("MetricType").string(var_6.as_str());
     }
-    if let Some(var_7) = &input.statistic {
-        object.key("Statistic").string(var_7.as_str());
+    if let Some(var_7) = &input.metric_name {
+        object.key("MetricName").string(var_7.as_str());
     }
-    if let Some(var_8) = &input.period_seconds {
+    if let Some(var_8) = &input.statistic {
+        object.key("Statistic").string(var_8.as_str());
+    }
+    if let Some(var_9) = &input.period_seconds {
         object.key("PeriodSeconds").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_8).into()),
+            ::aws_smithy_types::Number::NegInt((*var_9).into()),
         );
     }
-    if let Some(var_9) = &input.metric_data_queries {
-        let mut array_10 = object.key("MetricDataQueries").start_array();
-        for item_11 in var_9 {
+    if let Some(var_10) = &input.metric_data_queries {
+        let mut array_11 = object.key("MetricDataQueries").start_array();
+        for item_12 in var_10 {
             {
                 #[allow(unused_mut)]
-                let mut object_12 = array_10.value().start_object();
-                crate::protocol_serde::shape_metric_data_query::ser_metric_data_query(&mut object_12, item_11)?;
-                object_12.finish();
+                let mut object_13 = array_11.value().start_object();
+                crate::protocol_serde::shape_metric_data_query::ser_metric_data_query(&mut object_13, item_12)?;
+                object_13.finish();
             }
         }
-        array_10.finish();
+        array_11.finish();
     }
-    if let Some(var_13) = &input.dependency_config {
+    if let Some(var_14) = &input.dependency_config {
         #[allow(unused_mut)]
-        let mut object_14 = object.key("DependencyConfig").start_object();
-        crate::protocol_serde::shape_dependency_config::ser_dependency_config(&mut object_14, var_13)?;
-        object_14.finish();
+        let mut object_15 = object.key("DependencyConfig").start_object();
+        crate::protocol_serde::shape_dependency_config::ser_dependency_config(&mut object_15, var_14)?;
+        object_15.finish();
     }
     Ok(())
 }

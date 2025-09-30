@@ -86,48 +86,8 @@ pub fn de_cluster_pending_modified_values(
                 builder = builder.set_backup_retention_period(var_6);
             }
             ,
-            s if s.matches("AllocatedStorage") /* AllocatedStorage com.amazonaws.rds#ClusterPendingModifiedValues$AllocatedStorage */ =>  {
-                let var_7 =
-                    Some(
-                         {
-                            <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.rds#IntegerOptional`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_allocated_storage(var_7);
-            }
-            ,
-            s if s.matches("RdsCustomClusterConfiguration") /* RdsCustomClusterConfiguration com.amazonaws.rds#ClusterPendingModifiedValues$RdsCustomClusterConfiguration */ =>  {
-                let var_8 =
-                    Some(
-                        crate::protocol_serde::shape_rds_custom_cluster_configuration::de_rds_custom_cluster_configuration(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_rds_custom_cluster_configuration(var_8);
-            }
-            ,
-            s if s.matches("Iops") /* Iops com.amazonaws.rds#ClusterPendingModifiedValues$Iops */ =>  {
-                let var_9 =
-                    Some(
-                         {
-                            <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.rds#IntegerOptional`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_iops(var_9);
-            }
-            ,
             s if s.matches("StorageType") /* StorageType com.amazonaws.rds#ClusterPendingModifiedValues$StorageType */ =>  {
-                let var_10 =
+                let var_7 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -136,7 +96,47 @@ pub fn de_cluster_pending_modified_values(
                         ?
                     )
                 ;
-                builder = builder.set_storage_type(var_10);
+                builder = builder.set_storage_type(var_7);
+            }
+            ,
+            s if s.matches("AllocatedStorage") /* AllocatedStorage com.amazonaws.rds#ClusterPendingModifiedValues$AllocatedStorage */ =>  {
+                let var_8 =
+                    Some(
+                         {
+                            <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.rds#IntegerOptional`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_allocated_storage(var_8);
+            }
+            ,
+            s if s.matches("RdsCustomClusterConfiguration") /* RdsCustomClusterConfiguration com.amazonaws.rds#ClusterPendingModifiedValues$RdsCustomClusterConfiguration */ =>  {
+                let var_9 =
+                    Some(
+                        crate::protocol_serde::shape_rds_custom_cluster_configuration::de_rds_custom_cluster_configuration(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_rds_custom_cluster_configuration(var_9);
+            }
+            ,
+            s if s.matches("Iops") /* Iops com.amazonaws.rds#ClusterPendingModifiedValues$Iops */ =>  {
+                let var_10 =
+                    Some(
+                         {
+                            <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.rds#IntegerOptional`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_iops(var_10);
             }
             ,
             s if s.matches("CertificateDetails") /* CertificateDetails com.amazonaws.rds#ClusterPendingModifiedValues$CertificateDetails */ =>  {

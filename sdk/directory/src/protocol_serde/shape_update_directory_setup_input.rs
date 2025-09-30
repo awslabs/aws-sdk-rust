@@ -15,8 +15,20 @@ pub fn ser_update_directory_setup_input_input(
         crate::protocol_serde::shape_os_update_settings::ser_os_update_settings(&mut object_4, var_3)?;
         object_4.finish();
     }
-    if let Some(var_5) = &input.create_snapshot_before_update {
-        object.key("CreateSnapshotBeforeUpdate").boolean(*var_5);
+    if let Some(var_5) = &input.directory_size_update_settings {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("DirectorySizeUpdateSettings").start_object();
+        crate::protocol_serde::shape_directory_size_update_settings::ser_directory_size_update_settings(&mut object_6, var_5)?;
+        object_6.finish();
+    }
+    if let Some(var_7) = &input.network_update_settings {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("NetworkUpdateSettings").start_object();
+        crate::protocol_serde::shape_network_update_settings::ser_network_update_settings(&mut object_8, var_7)?;
+        object_8.finish();
+    }
+    if let Some(var_9) = &input.create_snapshot_before_update {
+        object.key("CreateSnapshotBeforeUpdate").boolean(*var_9);
     }
     Ok(())
 }

@@ -98,6 +98,21 @@ pub fn de_delete_db_instance_http_error(
             }
             tmp
         }),
+        "KMSKeyNotAccessibleFault" => crate::operation::delete_db_instance::DeleteDBInstanceError::KmsKeyNotAccessibleFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::KmsKeyNotAccessibleFaultBuilder::default();
+                output = crate::protocol_serde::shape_kms_key_not_accessible_fault::de_kms_key_not_accessible_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::delete_db_instance::DeleteDBInstanceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "SnapshotQuotaExceeded" => crate::operation::delete_db_instance::DeleteDBInstanceError::SnapshotQuotaExceededFault({
             #[allow(unused_mut)]
             let mut tmp = {

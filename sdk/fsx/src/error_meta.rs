@@ -69,7 +69,7 @@ pub enum Error {
     ResourceNotFound(crate::types::error::ResourceNotFound),
     /// <p>The access point specified was not found.</p>
     S3AccessPointAttachmentNotFound(crate::types::error::S3AccessPointAttachmentNotFound),
-    /// <p>An error indicating that a particular service limit was exceeded. You can increase some service limits by contacting Amazon Web ServicesSupport.</p>
+    /// <p>An error indicating that a particular service limit was exceeded. You can increase some service limits by contacting Amazon Web Services Support.</p>
     ServiceLimitExceeded(crate::types::error::ServiceLimitExceeded),
     /// <p>No Amazon FSx snapshots were found based on the supplied parameters.</p>
     SnapshotNotFound(crate::types::error::SnapshotNotFound),

@@ -242,6 +242,24 @@ pub(crate) fn get_integration_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_profile_history_record_output_output_correct_errors(
+    mut builder: crate::operation::get_profile_history_record::builders::GetProfileHistoryRecordOutputBuilder,
+) -> crate::operation::get_profile_history_record::builders::GetProfileHistoryRecordOutputBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.object_type_name.is_none() {
+        builder.object_type_name = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.action_type.is_none() {
+        builder.action_type = "no value was set".parse::<crate::types::ActionType>().ok()
+    }
+    builder
+}
+
 pub(crate) fn get_profile_object_type_output_output_correct_errors(
     mut builder: crate::operation::get_profile_object_type::builders::GetProfileObjectTypeOutputBuilder,
 ) -> crate::operation::get_profile_object_type::builders::GetProfileObjectTypeOutputBuilder {
@@ -605,6 +623,24 @@ pub(crate) fn list_workflows_item_correct_errors(
     }
     if builder.last_updated_at.is_none() {
         builder.last_updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn profile_history_record_correct_errors(
+    mut builder: crate::types::builders::ProfileHistoryRecordBuilder,
+) -> crate::types::builders::ProfileHistoryRecordBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.object_type_name.is_none() {
+        builder.object_type_name = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.action_type.is_none() {
+        builder.action_type = "no value was set".parse::<crate::types::ActionType>().ok()
     }
     builder
 }

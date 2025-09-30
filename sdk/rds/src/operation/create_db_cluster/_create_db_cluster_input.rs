@@ -2,7 +2,7 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateDbClusterInput {
     /// <p>A list of Availability Zones (AZs) where you specifically want to create DB instances in the DB cluster.</p>
     /// <p>For the first three DB instances that you create, RDS distributes each DB instance to a different AZ that you specify. For additional DB instances that you create, RDS randomly distributes them to the AZs that you specified. For example, if you create a DB cluster with one writer instance and three reader instances, RDS might distribute the writer instance to AZ 1, the first reader instance to AZ 2, the second reader instance to AZ 3, and the third reader instance to either AZ 1, AZ 2, or AZ 3.</p>
@@ -253,32 +253,6 @@ pub struct CreateDbClusterInput {
     pub scaling_configuration: ::std::option::Option<crate::types::ScalingConfiguration>,
     /// <p>Reserved for future use.</p>
     pub rds_custom_cluster_configuration: ::std::option::Option<crate::types::RdsCustomClusterConfiguration>,
-    /// <p>Specifies whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection isn't enabled.</p>
-    /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
-    pub deletion_protection: ::std::option::Option<bool>,
-    /// <p>The global cluster ID of an Aurora cluster that becomes the primary cluster in the new global database cluster.</p>
-    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
-    pub global_cluster_identifier: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies whether to enable the HTTP endpoint for the DB cluster. By default, the HTTP endpoint isn't enabled.</p>
-    /// <p>When enabled, the HTTP endpoint provides a connectionless web service API (RDS Data API) for running SQL queries on the DB cluster. You can also query your database from inside the RDS console with the RDS query editor.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using RDS Data API</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
-    pub enable_http_endpoint: ::std::option::Option<bool>,
-    /// <p>Specifies whether to copy all tags from the DB cluster to snapshots of the DB cluster. The default is not to copy them.</p>
-    /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
-    pub copy_tags_to_snapshot: ::std::option::Option<bool>,
-    /// <p>The Active Directory directory ID to create the DB cluster in.</p>
-    /// <p>For Amazon Aurora DB clusters, Amazon RDS can use Kerberos authentication to authenticate users that connect to the DB cluster.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
-    pub domain: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the IAM role to use when making API calls to the Directory Service.</p>
-    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
-    pub domain_iam_role_name: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies whether to enable this DB cluster to forward write operations to the primary cluster of a global cluster (Aurora global database). By default, write operations are not allowed on Aurora DB clusters that are secondary clusters in an Aurora global database.</p>
-    /// <p>You can set this value only on Aurora DB clusters that are members of an Aurora global database. With this parameter enabled, a secondary cluster can forward writes to the current primary cluster, and the resulting changes are replicated back to this cluster. For the primary DB cluster of an Aurora global database, this value is used immediately if the primary is demoted by a global cluster API operation, but it does nothing until then.</p>
-    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
-    pub enable_global_write_forwarding: ::std::option::Option<bool>,
     /// <p>The compute and memory capacity of each DB instance in the Multi-AZ DB cluster, for example <code>db.m6gd.xlarge</code>. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.</p>
     /// <p>For the full list of DB instance classes and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB instance class</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting is required to create a Multi-AZ DB cluster.</p>
@@ -344,6 +318,41 @@ pub struct CreateDbClusterInput {
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB cluster.</p>
     /// <p>For more information about automatic minor version upgrades, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Upgrading.html#USER_UpgradeDBInstance.Upgrading.AutoMinorVersionUpgrades">Automatically upgrading the minor engine version</a>.</p>
     pub auto_minor_version_upgrade: ::std::option::Option<bool>,
+    /// <p>Specifies whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection isn't enabled.</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
+    pub deletion_protection: ::std::option::Option<bool>,
+    /// <p>The global cluster ID of an Aurora cluster that becomes the primary cluster in the new global database cluster.</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
+    pub global_cluster_identifier: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies whether to enable the HTTP endpoint for the DB cluster. By default, the HTTP endpoint isn't enabled.</p>
+    /// <p>When enabled, the HTTP endpoint provides a connectionless web service API (RDS Data API) for running SQL queries on the DB cluster. You can also query your database from inside the RDS console with the RDS query editor.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using RDS Data API</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
+    pub enable_http_endpoint: ::std::option::Option<bool>,
+    /// <p>Specifies whether to copy all tags from the DB cluster to snapshots of the DB cluster. The default is not to copy them.</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
+    pub copy_tags_to_snapshot: ::std::option::Option<bool>,
+    /// <p>The Active Directory directory ID to create the DB cluster in.</p>
+    /// <p>For Amazon Aurora DB clusters, Amazon RDS can use Kerberos authentication to authenticate users that connect to the DB cluster.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
+    pub domain: ::std::option::Option<::std::string::String>,
+    /// <p>The name of the IAM role to use when making API calls to the Directory Service.</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
+    pub domain_iam_role_name: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies whether to enable this DB cluster to forward write operations to the primary cluster of a global cluster (Aurora global database). By default, write operations are not allowed on Aurora DB clusters that are secondary clusters in an Aurora global database.</p>
+    /// <p>You can set this value only on Aurora DB clusters that are members of an Aurora global database. With this parameter enabled, a secondary cluster can forward writes to the current primary cluster, and the resulting changes are replicated back to this cluster. For the primary DB cluster of an Aurora global database, this value is used immediately if the primary is demoted by a global cluster API operation, but it does nothing until then.</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
+    pub enable_global_write_forwarding: ::std::option::Option<bool>,
+    /// <p>The network type of the DB cluster.</p>
+    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i></p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
+    /// <p>Valid Values: <code>IPV4 | DUAL</code></p>
+    pub network_type: ::std::option::Option<::std::string::String>,
+    /// <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub serverless_v2_scaling_configuration: ::std::option::Option<crate::types::ServerlessV2ScalingConfiguration>,
     /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB cluster. To turn off collecting Enhanced Monitoring metrics, specify <code>0</code>.</p>
     /// <p>If <code>MonitoringRoleArn</code> is specified, also set <code>MonitoringInterval</code> to a value other than <code>0</code>.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
@@ -386,15 +395,6 @@ pub struct CreateDbClusterInput {
     /// <p>This setting is no longer used. Instead use the <code>ClusterScalabilityType</code> setting.</p>
     /// </note>
     pub enable_limitless_database: ::std::option::Option<bool>,
-    /// <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    pub serverless_v2_scaling_configuration: ::std::option::Option<crate::types::ServerlessV2ScalingConfiguration>,
-    /// <p>The network type of the DB cluster.</p>
-    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i></p>
-    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
-    /// <p>Valid Values: <code>IPV4 | DUAL</code></p>
-    pub network_type: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the scalability mode of the Aurora DB cluster. When set to <code>limitless</code>, the cluster operates as an Aurora Limitless Database. When set to <code>standard</code> (the default), the cluster uses normal DB instance creation.</p>
     /// <p>Valid for: Aurora DB clusters only</p><note>
     /// <p>You can't modify this setting after you create the DB cluster.</p>
@@ -411,6 +411,9 @@ pub struct CreateDbClusterInput {
     /// <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p></li>
     /// </ul>
     pub manage_master_user_password: ::std::option::Option<bool>,
+    /// <p>Specifies whether read replicas can forward write operations to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
+    pub enable_local_write_forwarding: ::std::option::Option<bool>,
     /// <p>The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in Amazon Web Services Secrets Manager.</p>
     /// <p>This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets Manager for the DB cluster.</p>
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
@@ -418,9 +421,6 @@ pub struct CreateDbClusterInput {
     /// <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub master_user_secret_kms_key_id: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies whether read replicas can forward write operations to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.</p>
-    /// <p>Valid for: Aurora DB clusters only</p>
-    pub enable_local_write_forwarding: ::std::option::Option<bool>,
     /// <p>The CA certificate identifier to use for the DB cluster's server certificate.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>Valid for Cluster Type: Multi-AZ DB clusters</p>
@@ -763,46 +763,6 @@ impl CreateDbClusterInput {
     pub fn rds_custom_cluster_configuration(&self) -> ::std::option::Option<&crate::types::RdsCustomClusterConfiguration> {
         self.rds_custom_cluster_configuration.as_ref()
     }
-    /// <p>Specifies whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection isn't enabled.</p>
-    /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
-    pub fn deletion_protection(&self) -> ::std::option::Option<bool> {
-        self.deletion_protection
-    }
-    /// <p>The global cluster ID of an Aurora cluster that becomes the primary cluster in the new global database cluster.</p>
-    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
-    pub fn global_cluster_identifier(&self) -> ::std::option::Option<&str> {
-        self.global_cluster_identifier.as_deref()
-    }
-    /// <p>Specifies whether to enable the HTTP endpoint for the DB cluster. By default, the HTTP endpoint isn't enabled.</p>
-    /// <p>When enabled, the HTTP endpoint provides a connectionless web service API (RDS Data API) for running SQL queries on the DB cluster. You can also query your database from inside the RDS console with the RDS query editor.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using RDS Data API</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
-    pub fn enable_http_endpoint(&self) -> ::std::option::Option<bool> {
-        self.enable_http_endpoint
-    }
-    /// <p>Specifies whether to copy all tags from the DB cluster to snapshots of the DB cluster. The default is not to copy them.</p>
-    /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
-    pub fn copy_tags_to_snapshot(&self) -> ::std::option::Option<bool> {
-        self.copy_tags_to_snapshot
-    }
-    /// <p>The Active Directory directory ID to create the DB cluster in.</p>
-    /// <p>For Amazon Aurora DB clusters, Amazon RDS can use Kerberos authentication to authenticate users that connect to the DB cluster.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
-    pub fn domain(&self) -> ::std::option::Option<&str> {
-        self.domain.as_deref()
-    }
-    /// <p>The name of the IAM role to use when making API calls to the Directory Service.</p>
-    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
-    pub fn domain_iam_role_name(&self) -> ::std::option::Option<&str> {
-        self.domain_iam_role_name.as_deref()
-    }
-    /// <p>Specifies whether to enable this DB cluster to forward write operations to the primary cluster of a global cluster (Aurora global database). By default, write operations are not allowed on Aurora DB clusters that are secondary clusters in an Aurora global database.</p>
-    /// <p>You can set this value only on Aurora DB clusters that are members of an Aurora global database. With this parameter enabled, a secondary cluster can forward writes to the current primary cluster, and the resulting changes are replicated back to this cluster. For the primary DB cluster of an Aurora global database, this value is used immediately if the primary is demoted by a global cluster API operation, but it does nothing until then.</p>
-    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
-    pub fn enable_global_write_forwarding(&self) -> ::std::option::Option<bool> {
-        self.enable_global_write_forwarding
-    }
     /// <p>The compute and memory capacity of each DB instance in the Multi-AZ DB cluster, for example <code>db.m6gd.xlarge</code>. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.</p>
     /// <p>For the full list of DB instance classes and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB instance class</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting is required to create a Multi-AZ DB cluster.</p>
@@ -880,6 +840,59 @@ impl CreateDbClusterInput {
     pub fn auto_minor_version_upgrade(&self) -> ::std::option::Option<bool> {
         self.auto_minor_version_upgrade
     }
+    /// <p>Specifies whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection isn't enabled.</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
+    pub fn deletion_protection(&self) -> ::std::option::Option<bool> {
+        self.deletion_protection
+    }
+    /// <p>The global cluster ID of an Aurora cluster that becomes the primary cluster in the new global database cluster.</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
+    pub fn global_cluster_identifier(&self) -> ::std::option::Option<&str> {
+        self.global_cluster_identifier.as_deref()
+    }
+    /// <p>Specifies whether to enable the HTTP endpoint for the DB cluster. By default, the HTTP endpoint isn't enabled.</p>
+    /// <p>When enabled, the HTTP endpoint provides a connectionless web service API (RDS Data API) for running SQL queries on the DB cluster. You can also query your database from inside the RDS console with the RDS query editor.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using RDS Data API</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
+    pub fn enable_http_endpoint(&self) -> ::std::option::Option<bool> {
+        self.enable_http_endpoint
+    }
+    /// <p>Specifies whether to copy all tags from the DB cluster to snapshots of the DB cluster. The default is not to copy them.</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
+    pub fn copy_tags_to_snapshot(&self) -> ::std::option::Option<bool> {
+        self.copy_tags_to_snapshot
+    }
+    /// <p>The Active Directory directory ID to create the DB cluster in.</p>
+    /// <p>For Amazon Aurora DB clusters, Amazon RDS can use Kerberos authentication to authenticate users that connect to the DB cluster.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
+    pub fn domain(&self) -> ::std::option::Option<&str> {
+        self.domain.as_deref()
+    }
+    /// <p>The name of the IAM role to use when making API calls to the Directory Service.</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
+    pub fn domain_iam_role_name(&self) -> ::std::option::Option<&str> {
+        self.domain_iam_role_name.as_deref()
+    }
+    /// <p>Specifies whether to enable this DB cluster to forward write operations to the primary cluster of a global cluster (Aurora global database). By default, write operations are not allowed on Aurora DB clusters that are secondary clusters in an Aurora global database.</p>
+    /// <p>You can set this value only on Aurora DB clusters that are members of an Aurora global database. With this parameter enabled, a secondary cluster can forward writes to the current primary cluster, and the resulting changes are replicated back to this cluster. For the primary DB cluster of an Aurora global database, this value is used immediately if the primary is demoted by a global cluster API operation, but it does nothing until then.</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
+    pub fn enable_global_write_forwarding(&self) -> ::std::option::Option<bool> {
+        self.enable_global_write_forwarding
+    }
+    /// <p>The network type of the DB cluster.</p>
+    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i></p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
+    /// <p>Valid Values: <code>IPV4 | DUAL</code></p>
+    pub fn network_type(&self) -> ::std::option::Option<&str> {
+        self.network_type.as_deref()
+    }
+    /// <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub fn serverless_v2_scaling_configuration(&self) -> ::std::option::Option<&crate::types::ServerlessV2ScalingConfiguration> {
+        self.serverless_v2_scaling_configuration.as_ref()
+    }
     /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB cluster. To turn off collecting Enhanced Monitoring metrics, specify <code>0</code>.</p>
     /// <p>If <code>MonitoringRoleArn</code> is specified, also set <code>MonitoringInterval</code> to a value other than <code>0</code>.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
@@ -936,19 +949,6 @@ impl CreateDbClusterInput {
     pub fn enable_limitless_database(&self) -> ::std::option::Option<bool> {
         self.enable_limitless_database
     }
-    /// <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    pub fn serverless_v2_scaling_configuration(&self) -> ::std::option::Option<&crate::types::ServerlessV2ScalingConfiguration> {
-        self.serverless_v2_scaling_configuration.as_ref()
-    }
-    /// <p>The network type of the DB cluster.</p>
-    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i></p>
-    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
-    /// <p>Valid Values: <code>IPV4 | DUAL</code></p>
-    pub fn network_type(&self) -> ::std::option::Option<&str> {
-        self.network_type.as_deref()
-    }
     /// <p>Specifies the scalability mode of the Aurora DB cluster. When set to <code>limitless</code>, the cluster operates as an Aurora Limitless Database. When set to <code>standard</code> (the default), the cluster uses normal DB instance creation.</p>
     /// <p>Valid for: Aurora DB clusters only</p><note>
     /// <p>You can't modify this setting after you create the DB cluster.</p>
@@ -971,6 +971,11 @@ impl CreateDbClusterInput {
     pub fn manage_master_user_password(&self) -> ::std::option::Option<bool> {
         self.manage_master_user_password
     }
+    /// <p>Specifies whether read replicas can forward write operations to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
+    pub fn enable_local_write_forwarding(&self) -> ::std::option::Option<bool> {
+        self.enable_local_write_forwarding
+    }
     /// <p>The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in Amazon Web Services Secrets Manager.</p>
     /// <p>This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets Manager for the DB cluster.</p>
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
@@ -979,11 +984,6 @@ impl CreateDbClusterInput {
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn master_user_secret_kms_key_id(&self) -> ::std::option::Option<&str> {
         self.master_user_secret_kms_key_id.as_deref()
-    }
-    /// <p>Specifies whether read replicas can forward write operations to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.</p>
-    /// <p>Valid for: Aurora DB clusters only</p>
-    pub fn enable_local_write_forwarding(&self) -> ::std::option::Option<bool> {
-        self.enable_local_write_forwarding
     }
     /// <p>The CA certificate identifier to use for the DB cluster's server certificate.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i>.</p>
@@ -1021,6 +1021,69 @@ impl CreateDbClusterInput {
         self.master_user_authentication_type.as_ref()
     }
 }
+impl ::std::fmt::Debug for CreateDbClusterInput {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateDbClusterInput");
+        formatter.field("availability_zones", &self.availability_zones);
+        formatter.field("backup_retention_period", &self.backup_retention_period);
+        formatter.field("character_set_name", &self.character_set_name);
+        formatter.field("database_name", &self.database_name);
+        formatter.field("db_cluster_identifier", &self.db_cluster_identifier);
+        formatter.field("db_cluster_parameter_group_name", &self.db_cluster_parameter_group_name);
+        formatter.field("vpc_security_group_ids", &self.vpc_security_group_ids);
+        formatter.field("db_subnet_group_name", &self.db_subnet_group_name);
+        formatter.field("engine", &self.engine);
+        formatter.field("engine_version", &self.engine_version);
+        formatter.field("port", &self.port);
+        formatter.field("master_username", &self.master_username);
+        formatter.field("master_user_password", &"*** Sensitive Data Redacted ***");
+        formatter.field("option_group_name", &self.option_group_name);
+        formatter.field("preferred_backup_window", &self.preferred_backup_window);
+        formatter.field("preferred_maintenance_window", &self.preferred_maintenance_window);
+        formatter.field("replication_source_identifier", &self.replication_source_identifier);
+        formatter.field("tags", &self.tags);
+        formatter.field("storage_encrypted", &self.storage_encrypted);
+        formatter.field("kms_key_id", &self.kms_key_id);
+        formatter.field("pre_signed_url", &"*** Sensitive Data Redacted ***");
+        formatter.field("enable_iam_database_authentication", &self.enable_iam_database_authentication);
+        formatter.field("backtrack_window", &self.backtrack_window);
+        formatter.field("enable_cloudwatch_logs_exports", &self.enable_cloudwatch_logs_exports);
+        formatter.field("engine_mode", &self.engine_mode);
+        formatter.field("scaling_configuration", &self.scaling_configuration);
+        formatter.field("rds_custom_cluster_configuration", &self.rds_custom_cluster_configuration);
+        formatter.field("db_cluster_instance_class", &self.db_cluster_instance_class);
+        formatter.field("allocated_storage", &self.allocated_storage);
+        formatter.field("storage_type", &self.storage_type);
+        formatter.field("iops", &self.iops);
+        formatter.field("publicly_accessible", &self.publicly_accessible);
+        formatter.field("auto_minor_version_upgrade", &self.auto_minor_version_upgrade);
+        formatter.field("deletion_protection", &self.deletion_protection);
+        formatter.field("global_cluster_identifier", &self.global_cluster_identifier);
+        formatter.field("enable_http_endpoint", &self.enable_http_endpoint);
+        formatter.field("copy_tags_to_snapshot", &self.copy_tags_to_snapshot);
+        formatter.field("domain", &self.domain);
+        formatter.field("domain_iam_role_name", &self.domain_iam_role_name);
+        formatter.field("enable_global_write_forwarding", &self.enable_global_write_forwarding);
+        formatter.field("network_type", &self.network_type);
+        formatter.field("serverless_v2_scaling_configuration", &self.serverless_v2_scaling_configuration);
+        formatter.field("monitoring_interval", &self.monitoring_interval);
+        formatter.field("monitoring_role_arn", &self.monitoring_role_arn);
+        formatter.field("database_insights_mode", &self.database_insights_mode);
+        formatter.field("enable_performance_insights", &self.enable_performance_insights);
+        formatter.field("performance_insights_kms_key_id", &self.performance_insights_kms_key_id);
+        formatter.field("performance_insights_retention_period", &self.performance_insights_retention_period);
+        formatter.field("enable_limitless_database", &self.enable_limitless_database);
+        formatter.field("cluster_scalability_type", &self.cluster_scalability_type);
+        formatter.field("db_system_id", &self.db_system_id);
+        formatter.field("manage_master_user_password", &self.manage_master_user_password);
+        formatter.field("enable_local_write_forwarding", &self.enable_local_write_forwarding);
+        formatter.field("master_user_secret_kms_key_id", &self.master_user_secret_kms_key_id);
+        formatter.field("ca_certificate_identifier", &self.ca_certificate_identifier);
+        formatter.field("engine_lifecycle_support", &self.engine_lifecycle_support);
+        formatter.field("master_user_authentication_type", &self.master_user_authentication_type);
+        formatter.finish()
+    }
+}
 impl CreateDbClusterInput {
     /// Creates a new builder-style object to manufacture [`CreateDbClusterInput`](crate::operation::create_db_cluster::CreateDbClusterInput).
     pub fn builder() -> crate::operation::create_db_cluster::builders::CreateDbClusterInputBuilder {
@@ -1029,7 +1092,7 @@ impl CreateDbClusterInput {
 }
 
 /// A builder for [`CreateDbClusterInput`](crate::operation::create_db_cluster::CreateDbClusterInput).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct CreateDbClusterInputBuilder {
     pub(crate) availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -1059,6 +1122,12 @@ pub struct CreateDbClusterInputBuilder {
     pub(crate) engine_mode: ::std::option::Option<::std::string::String>,
     pub(crate) scaling_configuration: ::std::option::Option<crate::types::ScalingConfiguration>,
     pub(crate) rds_custom_cluster_configuration: ::std::option::Option<crate::types::RdsCustomClusterConfiguration>,
+    pub(crate) db_cluster_instance_class: ::std::option::Option<::std::string::String>,
+    pub(crate) allocated_storage: ::std::option::Option<i32>,
+    pub(crate) storage_type: ::std::option::Option<::std::string::String>,
+    pub(crate) iops: ::std::option::Option<i32>,
+    pub(crate) publicly_accessible: ::std::option::Option<bool>,
+    pub(crate) auto_minor_version_upgrade: ::std::option::Option<bool>,
     pub(crate) deletion_protection: ::std::option::Option<bool>,
     pub(crate) global_cluster_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) enable_http_endpoint: ::std::option::Option<bool>,
@@ -1066,12 +1135,8 @@ pub struct CreateDbClusterInputBuilder {
     pub(crate) domain: ::std::option::Option<::std::string::String>,
     pub(crate) domain_iam_role_name: ::std::option::Option<::std::string::String>,
     pub(crate) enable_global_write_forwarding: ::std::option::Option<bool>,
-    pub(crate) db_cluster_instance_class: ::std::option::Option<::std::string::String>,
-    pub(crate) allocated_storage: ::std::option::Option<i32>,
-    pub(crate) storage_type: ::std::option::Option<::std::string::String>,
-    pub(crate) iops: ::std::option::Option<i32>,
-    pub(crate) publicly_accessible: ::std::option::Option<bool>,
-    pub(crate) auto_minor_version_upgrade: ::std::option::Option<bool>,
+    pub(crate) network_type: ::std::option::Option<::std::string::String>,
+    pub(crate) serverless_v2_scaling_configuration: ::std::option::Option<crate::types::ServerlessV2ScalingConfiguration>,
     pub(crate) monitoring_interval: ::std::option::Option<i32>,
     pub(crate) monitoring_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) database_insights_mode: ::std::option::Option<crate::types::DatabaseInsightsMode>,
@@ -1079,13 +1144,11 @@ pub struct CreateDbClusterInputBuilder {
     pub(crate) performance_insights_kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) performance_insights_retention_period: ::std::option::Option<i32>,
     pub(crate) enable_limitless_database: ::std::option::Option<bool>,
-    pub(crate) serverless_v2_scaling_configuration: ::std::option::Option<crate::types::ServerlessV2ScalingConfiguration>,
-    pub(crate) network_type: ::std::option::Option<::std::string::String>,
     pub(crate) cluster_scalability_type: ::std::option::Option<crate::types::ClusterScalabilityType>,
     pub(crate) db_system_id: ::std::option::Option<::std::string::String>,
     pub(crate) manage_master_user_password: ::std::option::Option<bool>,
-    pub(crate) master_user_secret_kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) enable_local_write_forwarding: ::std::option::Option<bool>,
+    pub(crate) master_user_secret_kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) ca_certificate_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) engine_lifecycle_support: ::std::option::Option<::std::string::String>,
     pub(crate) master_user_authentication_type: ::std::option::Option<crate::types::MasterUserAuthenticationType>,
@@ -2080,140 +2143,6 @@ impl CreateDbClusterInputBuilder {
     pub fn get_rds_custom_cluster_configuration(&self) -> &::std::option::Option<crate::types::RdsCustomClusterConfiguration> {
         &self.rds_custom_cluster_configuration
     }
-    /// <p>Specifies whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection isn't enabled.</p>
-    /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
-    pub fn deletion_protection(mut self, input: bool) -> Self {
-        self.deletion_protection = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>Specifies whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection isn't enabled.</p>
-    /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
-    pub fn set_deletion_protection(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.deletion_protection = input;
-        self
-    }
-    /// <p>Specifies whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection isn't enabled.</p>
-    /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
-    pub fn get_deletion_protection(&self) -> &::std::option::Option<bool> {
-        &self.deletion_protection
-    }
-    /// <p>The global cluster ID of an Aurora cluster that becomes the primary cluster in the new global database cluster.</p>
-    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
-    pub fn global_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.global_cluster_identifier = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The global cluster ID of an Aurora cluster that becomes the primary cluster in the new global database cluster.</p>
-    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
-    pub fn set_global_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.global_cluster_identifier = input;
-        self
-    }
-    /// <p>The global cluster ID of an Aurora cluster that becomes the primary cluster in the new global database cluster.</p>
-    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
-    pub fn get_global_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
-        &self.global_cluster_identifier
-    }
-    /// <p>Specifies whether to enable the HTTP endpoint for the DB cluster. By default, the HTTP endpoint isn't enabled.</p>
-    /// <p>When enabled, the HTTP endpoint provides a connectionless web service API (RDS Data API) for running SQL queries on the DB cluster. You can also query your database from inside the RDS console with the RDS query editor.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using RDS Data API</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
-    pub fn enable_http_endpoint(mut self, input: bool) -> Self {
-        self.enable_http_endpoint = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>Specifies whether to enable the HTTP endpoint for the DB cluster. By default, the HTTP endpoint isn't enabled.</p>
-    /// <p>When enabled, the HTTP endpoint provides a connectionless web service API (RDS Data API) for running SQL queries on the DB cluster. You can also query your database from inside the RDS console with the RDS query editor.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using RDS Data API</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
-    pub fn set_enable_http_endpoint(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enable_http_endpoint = input;
-        self
-    }
-    /// <p>Specifies whether to enable the HTTP endpoint for the DB cluster. By default, the HTTP endpoint isn't enabled.</p>
-    /// <p>When enabled, the HTTP endpoint provides a connectionless web service API (RDS Data API) for running SQL queries on the DB cluster. You can also query your database from inside the RDS console with the RDS query editor.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using RDS Data API</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
-    pub fn get_enable_http_endpoint(&self) -> &::std::option::Option<bool> {
-        &self.enable_http_endpoint
-    }
-    /// <p>Specifies whether to copy all tags from the DB cluster to snapshots of the DB cluster. The default is not to copy them.</p>
-    /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
-    pub fn copy_tags_to_snapshot(mut self, input: bool) -> Self {
-        self.copy_tags_to_snapshot = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>Specifies whether to copy all tags from the DB cluster to snapshots of the DB cluster. The default is not to copy them.</p>
-    /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
-    pub fn set_copy_tags_to_snapshot(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.copy_tags_to_snapshot = input;
-        self
-    }
-    /// <p>Specifies whether to copy all tags from the DB cluster to snapshots of the DB cluster. The default is not to copy them.</p>
-    /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
-    pub fn get_copy_tags_to_snapshot(&self) -> &::std::option::Option<bool> {
-        &self.copy_tags_to_snapshot
-    }
-    /// <p>The Active Directory directory ID to create the DB cluster in.</p>
-    /// <p>For Amazon Aurora DB clusters, Amazon RDS can use Kerberos authentication to authenticate users that connect to the DB cluster.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
-    pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.domain = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The Active Directory directory ID to create the DB cluster in.</p>
-    /// <p>For Amazon Aurora DB clusters, Amazon RDS can use Kerberos authentication to authenticate users that connect to the DB cluster.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
-    pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain = input;
-        self
-    }
-    /// <p>The Active Directory directory ID to create the DB cluster in.</p>
-    /// <p>For Amazon Aurora DB clusters, Amazon RDS can use Kerberos authentication to authenticate users that connect to the DB cluster.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
-    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
-        &self.domain
-    }
-    /// <p>The name of the IAM role to use when making API calls to the Directory Service.</p>
-    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
-    pub fn domain_iam_role_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.domain_iam_role_name = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The name of the IAM role to use when making API calls to the Directory Service.</p>
-    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
-    pub fn set_domain_iam_role_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_iam_role_name = input;
-        self
-    }
-    /// <p>The name of the IAM role to use when making API calls to the Directory Service.</p>
-    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
-    pub fn get_domain_iam_role_name(&self) -> &::std::option::Option<::std::string::String> {
-        &self.domain_iam_role_name
-    }
-    /// <p>Specifies whether to enable this DB cluster to forward write operations to the primary cluster of a global cluster (Aurora global database). By default, write operations are not allowed on Aurora DB clusters that are secondary clusters in an Aurora global database.</p>
-    /// <p>You can set this value only on Aurora DB clusters that are members of an Aurora global database. With this parameter enabled, a secondary cluster can forward writes to the current primary cluster, and the resulting changes are replicated back to this cluster. For the primary DB cluster of an Aurora global database, this value is used immediately if the primary is demoted by a global cluster API operation, but it does nothing until then.</p>
-    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
-    pub fn enable_global_write_forwarding(mut self, input: bool) -> Self {
-        self.enable_global_write_forwarding = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>Specifies whether to enable this DB cluster to forward write operations to the primary cluster of a global cluster (Aurora global database). By default, write operations are not allowed on Aurora DB clusters that are secondary clusters in an Aurora global database.</p>
-    /// <p>You can set this value only on Aurora DB clusters that are members of an Aurora global database. With this parameter enabled, a secondary cluster can forward writes to the current primary cluster, and the resulting changes are replicated back to this cluster. For the primary DB cluster of an Aurora global database, this value is used immediately if the primary is demoted by a global cluster API operation, but it does nothing until then.</p>
-    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
-    pub fn set_enable_global_write_forwarding(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enable_global_write_forwarding = input;
-        self
-    }
-    /// <p>Specifies whether to enable this DB cluster to forward write operations to the primary cluster of a global cluster (Aurora global database). By default, write operations are not allowed on Aurora DB clusters that are secondary clusters in an Aurora global database.</p>
-    /// <p>You can set this value only on Aurora DB clusters that are members of an Aurora global database. With this parameter enabled, a secondary cluster can forward writes to the current primary cluster, and the resulting changes are replicated back to this cluster. For the primary DB cluster of an Aurora global database, this value is used immediately if the primary is demoted by a global cluster API operation, but it does nothing until then.</p>
-    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
-    pub fn get_enable_global_write_forwarding(&self) -> &::std::option::Option<bool> {
-        &self.enable_global_write_forwarding
-    }
     /// <p>The compute and memory capacity of each DB instance in the Multi-AZ DB cluster, for example <code>db.m6gd.xlarge</code>. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.</p>
     /// <p>For the full list of DB instance classes and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB instance class</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting is required to create a Multi-AZ DB cluster.</p>
@@ -2457,6 +2386,183 @@ impl CreateDbClusterInputBuilder {
     pub fn get_auto_minor_version_upgrade(&self) -> &::std::option::Option<bool> {
         &self.auto_minor_version_upgrade
     }
+    /// <p>Specifies whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection isn't enabled.</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
+    pub fn deletion_protection(mut self, input: bool) -> Self {
+        self.deletion_protection = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection isn't enabled.</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
+    pub fn set_deletion_protection(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.deletion_protection = input;
+        self
+    }
+    /// <p>Specifies whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection isn't enabled.</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
+    pub fn get_deletion_protection(&self) -> &::std::option::Option<bool> {
+        &self.deletion_protection
+    }
+    /// <p>The global cluster ID of an Aurora cluster that becomes the primary cluster in the new global database cluster.</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
+    pub fn global_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.global_cluster_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The global cluster ID of an Aurora cluster that becomes the primary cluster in the new global database cluster.</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
+    pub fn set_global_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.global_cluster_identifier = input;
+        self
+    }
+    /// <p>The global cluster ID of an Aurora cluster that becomes the primary cluster in the new global database cluster.</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
+    pub fn get_global_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.global_cluster_identifier
+    }
+    /// <p>Specifies whether to enable the HTTP endpoint for the DB cluster. By default, the HTTP endpoint isn't enabled.</p>
+    /// <p>When enabled, the HTTP endpoint provides a connectionless web service API (RDS Data API) for running SQL queries on the DB cluster. You can also query your database from inside the RDS console with the RDS query editor.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using RDS Data API</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
+    pub fn enable_http_endpoint(mut self, input: bool) -> Self {
+        self.enable_http_endpoint = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to enable the HTTP endpoint for the DB cluster. By default, the HTTP endpoint isn't enabled.</p>
+    /// <p>When enabled, the HTTP endpoint provides a connectionless web service API (RDS Data API) for running SQL queries on the DB cluster. You can also query your database from inside the RDS console with the RDS query editor.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using RDS Data API</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
+    pub fn set_enable_http_endpoint(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.enable_http_endpoint = input;
+        self
+    }
+    /// <p>Specifies whether to enable the HTTP endpoint for the DB cluster. By default, the HTTP endpoint isn't enabled.</p>
+    /// <p>When enabled, the HTTP endpoint provides a connectionless web service API (RDS Data API) for running SQL queries on the DB cluster. You can also query your database from inside the RDS console with the RDS query editor.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using RDS Data API</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
+    pub fn get_enable_http_endpoint(&self) -> &::std::option::Option<bool> {
+        &self.enable_http_endpoint
+    }
+    /// <p>Specifies whether to copy all tags from the DB cluster to snapshots of the DB cluster. The default is not to copy them.</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
+    pub fn copy_tags_to_snapshot(mut self, input: bool) -> Self {
+        self.copy_tags_to_snapshot = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to copy all tags from the DB cluster to snapshots of the DB cluster. The default is not to copy them.</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
+    pub fn set_copy_tags_to_snapshot(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.copy_tags_to_snapshot = input;
+        self
+    }
+    /// <p>Specifies whether to copy all tags from the DB cluster to snapshots of the DB cluster. The default is not to copy them.</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
+    pub fn get_copy_tags_to_snapshot(&self) -> &::std::option::Option<bool> {
+        &self.copy_tags_to_snapshot
+    }
+    /// <p>The Active Directory directory ID to create the DB cluster in.</p>
+    /// <p>For Amazon Aurora DB clusters, Amazon RDS can use Kerberos authentication to authenticate users that connect to the DB cluster.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
+    pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.domain = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Active Directory directory ID to create the DB cluster in.</p>
+    /// <p>For Amazon Aurora DB clusters, Amazon RDS can use Kerberos authentication to authenticate users that connect to the DB cluster.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
+    pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.domain = input;
+        self
+    }
+    /// <p>The Active Directory directory ID to create the DB cluster in.</p>
+    /// <p>For Amazon Aurora DB clusters, Amazon RDS can use Kerberos authentication to authenticate users that connect to the DB cluster.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain
+    }
+    /// <p>The name of the IAM role to use when making API calls to the Directory Service.</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
+    pub fn domain_iam_role_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.domain_iam_role_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the IAM role to use when making API calls to the Directory Service.</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
+    pub fn set_domain_iam_role_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.domain_iam_role_name = input;
+        self
+    }
+    /// <p>The name of the IAM role to use when making API calls to the Directory Service.</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
+    pub fn get_domain_iam_role_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_iam_role_name
+    }
+    /// <p>Specifies whether to enable this DB cluster to forward write operations to the primary cluster of a global cluster (Aurora global database). By default, write operations are not allowed on Aurora DB clusters that are secondary clusters in an Aurora global database.</p>
+    /// <p>You can set this value only on Aurora DB clusters that are members of an Aurora global database. With this parameter enabled, a secondary cluster can forward writes to the current primary cluster, and the resulting changes are replicated back to this cluster. For the primary DB cluster of an Aurora global database, this value is used immediately if the primary is demoted by a global cluster API operation, but it does nothing until then.</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
+    pub fn enable_global_write_forwarding(mut self, input: bool) -> Self {
+        self.enable_global_write_forwarding = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to enable this DB cluster to forward write operations to the primary cluster of a global cluster (Aurora global database). By default, write operations are not allowed on Aurora DB clusters that are secondary clusters in an Aurora global database.</p>
+    /// <p>You can set this value only on Aurora DB clusters that are members of an Aurora global database. With this parameter enabled, a secondary cluster can forward writes to the current primary cluster, and the resulting changes are replicated back to this cluster. For the primary DB cluster of an Aurora global database, this value is used immediately if the primary is demoted by a global cluster API operation, but it does nothing until then.</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
+    pub fn set_enable_global_write_forwarding(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.enable_global_write_forwarding = input;
+        self
+    }
+    /// <p>Specifies whether to enable this DB cluster to forward write operations to the primary cluster of a global cluster (Aurora global database). By default, write operations are not allowed on Aurora DB clusters that are secondary clusters in an Aurora global database.</p>
+    /// <p>You can set this value only on Aurora DB clusters that are members of an Aurora global database. With this parameter enabled, a secondary cluster can forward writes to the current primary cluster, and the resulting changes are replicated back to this cluster. For the primary DB cluster of an Aurora global database, this value is used immediately if the primary is demoted by a global cluster API operation, but it does nothing until then.</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
+    pub fn get_enable_global_write_forwarding(&self) -> &::std::option::Option<bool> {
+        &self.enable_global_write_forwarding
+    }
+    /// <p>The network type of the DB cluster.</p>
+    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i></p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
+    /// <p>Valid Values: <code>IPV4 | DUAL</code></p>
+    pub fn network_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.network_type = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The network type of the DB cluster.</p>
+    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i></p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
+    /// <p>Valid Values: <code>IPV4 | DUAL</code></p>
+    pub fn set_network_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.network_type = input;
+        self
+    }
+    /// <p>The network type of the DB cluster.</p>
+    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i></p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
+    /// <p>Valid Values: <code>IPV4 | DUAL</code></p>
+    pub fn get_network_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_type
+    }
+    /// <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub fn serverless_v2_scaling_configuration(mut self, input: crate::types::ServerlessV2ScalingConfiguration) -> Self {
+        self.serverless_v2_scaling_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub fn set_serverless_v2_scaling_configuration(mut self, input: ::std::option::Option<crate::types::ServerlessV2ScalingConfiguration>) -> Self {
+        self.serverless_v2_scaling_configuration = input;
+        self
+    }
+    /// <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub fn get_serverless_v2_scaling_configuration(&self) -> &::std::option::Option<crate::types::ServerlessV2ScalingConfiguration> {
+        &self.serverless_v2_scaling_configuration
+    }
     /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB cluster. To turn off collecting Enhanced Monitoring metrics, specify <code>0</code>.</p>
     /// <p>If <code>MonitoringRoleArn</code> is specified, also set <code>MonitoringInterval</code> to a value other than <code>0</code>.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
@@ -2639,49 +2745,6 @@ impl CreateDbClusterInputBuilder {
     pub fn get_enable_limitless_database(&self) -> &::std::option::Option<bool> {
         &self.enable_limitless_database
     }
-    /// <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    pub fn serverless_v2_scaling_configuration(mut self, input: crate::types::ServerlessV2ScalingConfiguration) -> Self {
-        self.serverless_v2_scaling_configuration = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    pub fn set_serverless_v2_scaling_configuration(mut self, input: ::std::option::Option<crate::types::ServerlessV2ScalingConfiguration>) -> Self {
-        self.serverless_v2_scaling_configuration = input;
-        self
-    }
-    /// <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    pub fn get_serverless_v2_scaling_configuration(&self) -> &::std::option::Option<crate::types::ServerlessV2ScalingConfiguration> {
-        &self.serverless_v2_scaling_configuration
-    }
-    /// <p>The network type of the DB cluster.</p>
-    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i></p>
-    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
-    /// <p>Valid Values: <code>IPV4 | DUAL</code></p>
-    pub fn network_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.network_type = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The network type of the DB cluster.</p>
-    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i></p>
-    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
-    /// <p>Valid Values: <code>IPV4 | DUAL</code></p>
-    pub fn set_network_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.network_type = input;
-        self
-    }
-    /// <p>The network type of the DB cluster.</p>
-    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i></p>
-    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
-    /// <p>Valid Values: <code>IPV4 | DUAL</code></p>
-    pub fn get_network_type(&self) -> &::std::option::Option<::std::string::String> {
-        &self.network_type
-    }
     /// <p>Specifies the scalability mode of the Aurora DB cluster. When set to <code>limitless</code>, the cluster operates as an Aurora Limitless Database. When set to <code>standard</code> (the default), the cluster uses normal DB instance creation.</p>
     /// <p>Valid for: Aurora DB clusters only</p><note>
     /// <p>You can't modify this setting after you create the DB cluster.</p>
@@ -2754,6 +2817,23 @@ impl CreateDbClusterInputBuilder {
     pub fn get_manage_master_user_password(&self) -> &::std::option::Option<bool> {
         &self.manage_master_user_password
     }
+    /// <p>Specifies whether read replicas can forward write operations to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
+    pub fn enable_local_write_forwarding(mut self, input: bool) -> Self {
+        self.enable_local_write_forwarding = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether read replicas can forward write operations to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
+    pub fn set_enable_local_write_forwarding(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.enable_local_write_forwarding = input;
+        self
+    }
+    /// <p>Specifies whether read replicas can forward write operations to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
+    pub fn get_enable_local_write_forwarding(&self) -> &::std::option::Option<bool> {
+        &self.enable_local_write_forwarding
+    }
     /// <p>The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in Amazon Web Services Secrets Manager.</p>
     /// <p>This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets Manager for the DB cluster.</p>
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
@@ -2782,23 +2862,6 @@ impl CreateDbClusterInputBuilder {
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn get_master_user_secret_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.master_user_secret_kms_key_id
-    }
-    /// <p>Specifies whether read replicas can forward write operations to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.</p>
-    /// <p>Valid for: Aurora DB clusters only</p>
-    pub fn enable_local_write_forwarding(mut self, input: bool) -> Self {
-        self.enable_local_write_forwarding = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>Specifies whether read replicas can forward write operations to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.</p>
-    /// <p>Valid for: Aurora DB clusters only</p>
-    pub fn set_enable_local_write_forwarding(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enable_local_write_forwarding = input;
-        self
-    }
-    /// <p>Specifies whether read replicas can forward write operations to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.</p>
-    /// <p>Valid for: Aurora DB clusters only</p>
-    pub fn get_enable_local_write_forwarding(&self) -> &::std::option::Option<bool> {
-        &self.enable_local_write_forwarding
     }
     /// <p>The CA certificate identifier to use for the DB cluster's server certificate.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i>.</p>
@@ -2943,6 +3006,12 @@ impl CreateDbClusterInputBuilder {
             engine_mode: self.engine_mode,
             scaling_configuration: self.scaling_configuration,
             rds_custom_cluster_configuration: self.rds_custom_cluster_configuration,
+            db_cluster_instance_class: self.db_cluster_instance_class,
+            allocated_storage: self.allocated_storage,
+            storage_type: self.storage_type,
+            iops: self.iops,
+            publicly_accessible: self.publicly_accessible,
+            auto_minor_version_upgrade: self.auto_minor_version_upgrade,
             deletion_protection: self.deletion_protection,
             global_cluster_identifier: self.global_cluster_identifier,
             enable_http_endpoint: self.enable_http_endpoint,
@@ -2950,12 +3019,8 @@ impl CreateDbClusterInputBuilder {
             domain: self.domain,
             domain_iam_role_name: self.domain_iam_role_name,
             enable_global_write_forwarding: self.enable_global_write_forwarding,
-            db_cluster_instance_class: self.db_cluster_instance_class,
-            allocated_storage: self.allocated_storage,
-            storage_type: self.storage_type,
-            iops: self.iops,
-            publicly_accessible: self.publicly_accessible,
-            auto_minor_version_upgrade: self.auto_minor_version_upgrade,
+            network_type: self.network_type,
+            serverless_v2_scaling_configuration: self.serverless_v2_scaling_configuration,
             monitoring_interval: self.monitoring_interval,
             monitoring_role_arn: self.monitoring_role_arn,
             database_insights_mode: self.database_insights_mode,
@@ -2963,16 +3028,77 @@ impl CreateDbClusterInputBuilder {
             performance_insights_kms_key_id: self.performance_insights_kms_key_id,
             performance_insights_retention_period: self.performance_insights_retention_period,
             enable_limitless_database: self.enable_limitless_database,
-            serverless_v2_scaling_configuration: self.serverless_v2_scaling_configuration,
-            network_type: self.network_type,
             cluster_scalability_type: self.cluster_scalability_type,
             db_system_id: self.db_system_id,
             manage_master_user_password: self.manage_master_user_password,
-            master_user_secret_kms_key_id: self.master_user_secret_kms_key_id,
             enable_local_write_forwarding: self.enable_local_write_forwarding,
+            master_user_secret_kms_key_id: self.master_user_secret_kms_key_id,
             ca_certificate_identifier: self.ca_certificate_identifier,
             engine_lifecycle_support: self.engine_lifecycle_support,
             master_user_authentication_type: self.master_user_authentication_type,
         })
+    }
+}
+impl ::std::fmt::Debug for CreateDbClusterInputBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateDbClusterInputBuilder");
+        formatter.field("availability_zones", &self.availability_zones);
+        formatter.field("backup_retention_period", &self.backup_retention_period);
+        formatter.field("character_set_name", &self.character_set_name);
+        formatter.field("database_name", &self.database_name);
+        formatter.field("db_cluster_identifier", &self.db_cluster_identifier);
+        formatter.field("db_cluster_parameter_group_name", &self.db_cluster_parameter_group_name);
+        formatter.field("vpc_security_group_ids", &self.vpc_security_group_ids);
+        formatter.field("db_subnet_group_name", &self.db_subnet_group_name);
+        formatter.field("engine", &self.engine);
+        formatter.field("engine_version", &self.engine_version);
+        formatter.field("port", &self.port);
+        formatter.field("master_username", &self.master_username);
+        formatter.field("master_user_password", &"*** Sensitive Data Redacted ***");
+        formatter.field("option_group_name", &self.option_group_name);
+        formatter.field("preferred_backup_window", &self.preferred_backup_window);
+        formatter.field("preferred_maintenance_window", &self.preferred_maintenance_window);
+        formatter.field("replication_source_identifier", &self.replication_source_identifier);
+        formatter.field("tags", &self.tags);
+        formatter.field("storage_encrypted", &self.storage_encrypted);
+        formatter.field("kms_key_id", &self.kms_key_id);
+        formatter.field("pre_signed_url", &"*** Sensitive Data Redacted ***");
+        formatter.field("enable_iam_database_authentication", &self.enable_iam_database_authentication);
+        formatter.field("backtrack_window", &self.backtrack_window);
+        formatter.field("enable_cloudwatch_logs_exports", &self.enable_cloudwatch_logs_exports);
+        formatter.field("engine_mode", &self.engine_mode);
+        formatter.field("scaling_configuration", &self.scaling_configuration);
+        formatter.field("rds_custom_cluster_configuration", &self.rds_custom_cluster_configuration);
+        formatter.field("db_cluster_instance_class", &self.db_cluster_instance_class);
+        formatter.field("allocated_storage", &self.allocated_storage);
+        formatter.field("storage_type", &self.storage_type);
+        formatter.field("iops", &self.iops);
+        formatter.field("publicly_accessible", &self.publicly_accessible);
+        formatter.field("auto_minor_version_upgrade", &self.auto_minor_version_upgrade);
+        formatter.field("deletion_protection", &self.deletion_protection);
+        formatter.field("global_cluster_identifier", &self.global_cluster_identifier);
+        formatter.field("enable_http_endpoint", &self.enable_http_endpoint);
+        formatter.field("copy_tags_to_snapshot", &self.copy_tags_to_snapshot);
+        formatter.field("domain", &self.domain);
+        formatter.field("domain_iam_role_name", &self.domain_iam_role_name);
+        formatter.field("enable_global_write_forwarding", &self.enable_global_write_forwarding);
+        formatter.field("network_type", &self.network_type);
+        formatter.field("serverless_v2_scaling_configuration", &self.serverless_v2_scaling_configuration);
+        formatter.field("monitoring_interval", &self.monitoring_interval);
+        formatter.field("monitoring_role_arn", &self.monitoring_role_arn);
+        formatter.field("database_insights_mode", &self.database_insights_mode);
+        formatter.field("enable_performance_insights", &self.enable_performance_insights);
+        formatter.field("performance_insights_kms_key_id", &self.performance_insights_kms_key_id);
+        formatter.field("performance_insights_retention_period", &self.performance_insights_retention_period);
+        formatter.field("enable_limitless_database", &self.enable_limitless_database);
+        formatter.field("cluster_scalability_type", &self.cluster_scalability_type);
+        formatter.field("db_system_id", &self.db_system_id);
+        formatter.field("manage_master_user_password", &self.manage_master_user_password);
+        formatter.field("enable_local_write_forwarding", &self.enable_local_write_forwarding);
+        formatter.field("master_user_secret_kms_key_id", &self.master_user_secret_kms_key_id);
+        formatter.field("ca_certificate_identifier", &self.ca_certificate_identifier);
+        formatter.field("engine_lifecycle_support", &self.engine_lifecycle_support);
+        formatter.field("master_user_authentication_type", &self.master_user_authentication_type);
+        formatter.finish()
     }
 }

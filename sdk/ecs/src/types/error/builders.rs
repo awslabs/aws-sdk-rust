@@ -51,4 +51,6 @@ pub use crate::types::error::_cluster_contains_services_exception::ClusterContai
 
 pub use crate::types::error::_cluster_contains_container_instances_exception::ClusterContainsContainerInstancesExceptionBuilder;
 
+pub use crate::types::error::_cluster_contains_capacity_provider_exception::ClusterContainsCapacityProviderExceptionBuilder;
+
 pub use crate::types::error::_limit_exceeded_exception::LimitExceededExceptionBuilder;

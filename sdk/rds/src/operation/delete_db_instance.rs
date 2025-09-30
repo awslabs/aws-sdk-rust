@@ -102,6 +102,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for DeleteD
                 .expect("required fields set"),
         ));
 
+        cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::SensitiveOutput);
         cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::Metadata::new("DeleteDBInstance", "RDS"));
         let mut signing_options = ::aws_runtime::auth::SigningOptions::default();
         signing_options.double_uri_encode = true;
@@ -263,6 +264,8 @@ pub enum DeleteDBInstanceError {
     InvalidDbClusterStateFault(crate::types::error::InvalidDbClusterStateFault),
     /// <p>The DB instance isn't in a valid state.</p>
     InvalidDbInstanceStateFault(crate::types::error::InvalidDbInstanceStateFault),
+    /// <p>An error occurred accessing an Amazon Web Services KMS key.</p>
+    KmsKeyNotAccessibleFault(crate::types::error::KmsKeyNotAccessibleFault),
     /// <p>The request would result in the user exceeding the allowed number of DB snapshots.</p>
     SnapshotQuotaExceededFault(crate::types::error::SnapshotQuotaExceededFault),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -303,6 +306,7 @@ impl DeleteDBInstanceError {
             Self::DbSnapshotAlreadyExistsFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidDbClusterStateFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidDbInstanceStateFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::KmsKeyNotAccessibleFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::SnapshotQuotaExceededFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
@@ -327,6 +331,10 @@ impl DeleteDBInstanceError {
     pub fn is_invalid_db_instance_state_fault(&self) -> bool {
         matches!(self, Self::InvalidDbInstanceStateFault(_))
     }
+    /// Returns `true` if the error kind is `DeleteDBInstanceError::KmsKeyNotAccessibleFault`.
+    pub fn is_kms_key_not_accessible_fault(&self) -> bool {
+        matches!(self, Self::KmsKeyNotAccessibleFault(_))
+    }
     /// Returns `true` if the error kind is `DeleteDBInstanceError::SnapshotQuotaExceededFault`.
     pub fn is_snapshot_quota_exceeded_fault(&self) -> bool {
         matches!(self, Self::SnapshotQuotaExceededFault(_))
@@ -340,6 +348,7 @@ impl ::std::error::Error for DeleteDBInstanceError {
             Self::DbSnapshotAlreadyExistsFault(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidDbClusterStateFault(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidDbInstanceStateFault(_inner) => ::std::option::Option::Some(_inner),
+            Self::KmsKeyNotAccessibleFault(_inner) => ::std::option::Option::Some(_inner),
             Self::SnapshotQuotaExceededFault(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
@@ -353,6 +362,7 @@ impl ::std::fmt::Display for DeleteDBInstanceError {
             Self::DbSnapshotAlreadyExistsFault(_inner) => _inner.fmt(f),
             Self::InvalidDbClusterStateFault(_inner) => _inner.fmt(f),
             Self::InvalidDbInstanceStateFault(_inner) => _inner.fmt(f),
+            Self::KmsKeyNotAccessibleFault(_inner) => _inner.fmt(f),
             Self::SnapshotQuotaExceededFault(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
@@ -380,6 +390,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DeleteDBInsta
             Self::DbSnapshotAlreadyExistsFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidDbClusterStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidDbInstanceStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::KmsKeyNotAccessibleFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::SnapshotQuotaExceededFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }

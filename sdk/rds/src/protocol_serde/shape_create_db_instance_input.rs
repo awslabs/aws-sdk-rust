@@ -135,252 +135,252 @@ pub fn ser_create_db_instance_input_input_input(
         );
     }
     #[allow(unused_mut)]
-    let mut scope_49 = writer.prefix("OptionGroupName");
-    if let Some(var_50) = &input.option_group_name {
-        scope_49.string(var_50);
+    let mut scope_49 = writer.prefix("StorageThroughput");
+    if let Some(var_50) = &input.storage_throughput {
+        scope_49.number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_50).into()),
+        );
     }
     #[allow(unused_mut)]
-    let mut scope_51 = writer.prefix("CharacterSetName");
-    if let Some(var_52) = &input.character_set_name {
+    let mut scope_51 = writer.prefix("OptionGroupName");
+    if let Some(var_52) = &input.option_group_name {
         scope_51.string(var_52);
     }
     #[allow(unused_mut)]
-    let mut scope_53 = writer.prefix("NcharCharacterSetName");
-    if let Some(var_54) = &input.nchar_character_set_name {
+    let mut scope_53 = writer.prefix("CharacterSetName");
+    if let Some(var_54) = &input.character_set_name {
         scope_53.string(var_54);
     }
     #[allow(unused_mut)]
-    let mut scope_55 = writer.prefix("PubliclyAccessible");
-    if let Some(var_56) = &input.publicly_accessible {
-        scope_55.boolean(*var_56);
+    let mut scope_55 = writer.prefix("NcharCharacterSetName");
+    if let Some(var_56) = &input.nchar_character_set_name {
+        scope_55.string(var_56);
     }
     #[allow(unused_mut)]
-    let mut scope_57 = writer.prefix("Tags");
-    if let Some(var_58) = &input.tags {
-        let mut list_60 = scope_57.start_list(false, Some("Tag"));
-        for item_59 in var_58 {
+    let mut scope_57 = writer.prefix("PubliclyAccessible");
+    if let Some(var_58) = &input.publicly_accessible {
+        scope_57.boolean(*var_58);
+    }
+    #[allow(unused_mut)]
+    let mut scope_59 = writer.prefix("Tags");
+    if let Some(var_60) = &input.tags {
+        let mut list_62 = scope_59.start_list(false, Some("Tag"));
+        for item_61 in var_60 {
             #[allow(unused_mut)]
-            let mut entry_61 = list_60.entry();
-            crate::protocol_serde::shape_tag::ser_tag(entry_61, item_59)?;
+            let mut entry_63 = list_62.entry();
+            crate::protocol_serde::shape_tag::ser_tag(entry_63, item_61)?;
         }
-        list_60.finish();
+        list_62.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_62 = writer.prefix("DBClusterIdentifier");
-    if let Some(var_63) = &input.db_cluster_identifier {
-        scope_62.string(var_63);
-    }
-    #[allow(unused_mut)]
-    let mut scope_64 = writer.prefix("StorageType");
-    if let Some(var_65) = &input.storage_type {
+    let mut scope_64 = writer.prefix("DBClusterIdentifier");
+    if let Some(var_65) = &input.db_cluster_identifier {
         scope_64.string(var_65);
     }
     #[allow(unused_mut)]
-    let mut scope_66 = writer.prefix("TdeCredentialArn");
-    if let Some(var_67) = &input.tde_credential_arn {
+    let mut scope_66 = writer.prefix("StorageType");
+    if let Some(var_67) = &input.storage_type {
         scope_66.string(var_67);
     }
     #[allow(unused_mut)]
-    let mut scope_68 = writer.prefix("TdeCredentialPassword");
-    if let Some(var_69) = &input.tde_credential_password {
+    let mut scope_68 = writer.prefix("TdeCredentialArn");
+    if let Some(var_69) = &input.tde_credential_arn {
         scope_68.string(var_69);
     }
     #[allow(unused_mut)]
-    let mut scope_70 = writer.prefix("StorageEncrypted");
-    if let Some(var_71) = &input.storage_encrypted {
-        scope_70.boolean(*var_71);
+    let mut scope_70 = writer.prefix("TdeCredentialPassword");
+    if let Some(var_71) = &input.tde_credential_password {
+        scope_70.string(var_71);
     }
     #[allow(unused_mut)]
-    let mut scope_72 = writer.prefix("KmsKeyId");
-    if let Some(var_73) = &input.kms_key_id {
-        scope_72.string(var_73);
+    let mut scope_72 = writer.prefix("StorageEncrypted");
+    if let Some(var_73) = &input.storage_encrypted {
+        scope_72.boolean(*var_73);
     }
     #[allow(unused_mut)]
-    let mut scope_74 = writer.prefix("Domain");
-    if let Some(var_75) = &input.domain {
+    let mut scope_74 = writer.prefix("KmsKeyId");
+    if let Some(var_75) = &input.kms_key_id {
         scope_74.string(var_75);
     }
     #[allow(unused_mut)]
-    let mut scope_76 = writer.prefix("DomainFqdn");
-    if let Some(var_77) = &input.domain_fqdn {
+    let mut scope_76 = writer.prefix("Domain");
+    if let Some(var_77) = &input.domain {
         scope_76.string(var_77);
     }
     #[allow(unused_mut)]
-    let mut scope_78 = writer.prefix("DomainOu");
-    if let Some(var_79) = &input.domain_ou {
+    let mut scope_78 = writer.prefix("DomainFqdn");
+    if let Some(var_79) = &input.domain_fqdn {
         scope_78.string(var_79);
     }
     #[allow(unused_mut)]
-    let mut scope_80 = writer.prefix("DomainAuthSecretArn");
-    if let Some(var_81) = &input.domain_auth_secret_arn {
+    let mut scope_80 = writer.prefix("DomainOu");
+    if let Some(var_81) = &input.domain_ou {
         scope_80.string(var_81);
     }
     #[allow(unused_mut)]
-    let mut scope_82 = writer.prefix("DomainDnsIps");
-    if let Some(var_83) = &input.domain_dns_ips {
-        let mut list_85 = scope_82.start_list(false, None);
-        for item_84 in var_83 {
+    let mut scope_82 = writer.prefix("DomainAuthSecretArn");
+    if let Some(var_83) = &input.domain_auth_secret_arn {
+        scope_82.string(var_83);
+    }
+    #[allow(unused_mut)]
+    let mut scope_84 = writer.prefix("DomainDnsIps");
+    if let Some(var_85) = &input.domain_dns_ips {
+        let mut list_87 = scope_84.start_list(false, None);
+        for item_86 in var_85 {
             #[allow(unused_mut)]
-            let mut entry_86 = list_85.entry();
-            entry_86.string(item_84);
+            let mut entry_88 = list_87.entry();
+            entry_88.string(item_86);
         }
-        list_85.finish();
+        list_87.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_87 = writer.prefix("CopyTagsToSnapshot");
-    if let Some(var_88) = &input.copy_tags_to_snapshot {
-        scope_87.boolean(*var_88);
+    let mut scope_89 = writer.prefix("CopyTagsToSnapshot");
+    if let Some(var_90) = &input.copy_tags_to_snapshot {
+        scope_89.boolean(*var_90);
     }
     #[allow(unused_mut)]
-    let mut scope_89 = writer.prefix("MonitoringInterval");
-    if let Some(var_90) = &input.monitoring_interval {
-        scope_89.number(
+    let mut scope_91 = writer.prefix("MonitoringInterval");
+    if let Some(var_92) = &input.monitoring_interval {
+        scope_91.number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_90).into()),
+            ::aws_smithy_types::Number::NegInt((*var_92).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_91 = writer.prefix("MonitoringRoleArn");
-    if let Some(var_92) = &input.monitoring_role_arn {
-        scope_91.string(var_92);
-    }
-    #[allow(unused_mut)]
-    let mut scope_93 = writer.prefix("DomainIAMRoleName");
-    if let Some(var_94) = &input.domain_iam_role_name {
+    let mut scope_93 = writer.prefix("MonitoringRoleArn");
+    if let Some(var_94) = &input.monitoring_role_arn {
         scope_93.string(var_94);
     }
     #[allow(unused_mut)]
-    let mut scope_95 = writer.prefix("PromotionTier");
-    if let Some(var_96) = &input.promotion_tier {
-        scope_95.number(
+    let mut scope_95 = writer.prefix("DomainIAMRoleName");
+    if let Some(var_96) = &input.domain_iam_role_name {
+        scope_95.string(var_96);
+    }
+    #[allow(unused_mut)]
+    let mut scope_97 = writer.prefix("PromotionTier");
+    if let Some(var_98) = &input.promotion_tier {
+        scope_97.number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_96).into()),
+            ::aws_smithy_types::Number::NegInt((*var_98).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_97 = writer.prefix("Timezone");
-    if let Some(var_98) = &input.timezone {
-        scope_97.string(var_98);
+    let mut scope_99 = writer.prefix("Timezone");
+    if let Some(var_100) = &input.timezone {
+        scope_99.string(var_100);
     }
     #[allow(unused_mut)]
-    let mut scope_99 = writer.prefix("EnableIAMDatabaseAuthentication");
-    if let Some(var_100) = &input.enable_iam_database_authentication {
-        scope_99.boolean(*var_100);
+    let mut scope_101 = writer.prefix("EnableIAMDatabaseAuthentication");
+    if let Some(var_102) = &input.enable_iam_database_authentication {
+        scope_101.boolean(*var_102);
     }
     #[allow(unused_mut)]
-    let mut scope_101 = writer.prefix("DatabaseInsightsMode");
-    if let Some(var_102) = &input.database_insights_mode {
-        scope_101.string(var_102.as_str());
+    let mut scope_103 = writer.prefix("DatabaseInsightsMode");
+    if let Some(var_104) = &input.database_insights_mode {
+        scope_103.string(var_104.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_103 = writer.prefix("EnablePerformanceInsights");
-    if let Some(var_104) = &input.enable_performance_insights {
-        scope_103.boolean(*var_104);
+    let mut scope_105 = writer.prefix("EnablePerformanceInsights");
+    if let Some(var_106) = &input.enable_performance_insights {
+        scope_105.boolean(*var_106);
     }
     #[allow(unused_mut)]
-    let mut scope_105 = writer.prefix("PerformanceInsightsKMSKeyId");
-    if let Some(var_106) = &input.performance_insights_kms_key_id {
-        scope_105.string(var_106);
+    let mut scope_107 = writer.prefix("PerformanceInsightsKMSKeyId");
+    if let Some(var_108) = &input.performance_insights_kms_key_id {
+        scope_107.string(var_108);
     }
     #[allow(unused_mut)]
-    let mut scope_107 = writer.prefix("PerformanceInsightsRetentionPeriod");
-    if let Some(var_108) = &input.performance_insights_retention_period {
-        scope_107.number(
+    let mut scope_109 = writer.prefix("PerformanceInsightsRetentionPeriod");
+    if let Some(var_110) = &input.performance_insights_retention_period {
+        scope_109.number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_108).into()),
+            ::aws_smithy_types::Number::NegInt((*var_110).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_109 = writer.prefix("EnableCloudwatchLogsExports");
-    if let Some(var_110) = &input.enable_cloudwatch_logs_exports {
-        let mut list_112 = scope_109.start_list(false, None);
-        for item_111 in var_110 {
+    let mut scope_111 = writer.prefix("EnableCloudwatchLogsExports");
+    if let Some(var_112) = &input.enable_cloudwatch_logs_exports {
+        let mut list_114 = scope_111.start_list(false, None);
+        for item_113 in var_112 {
             #[allow(unused_mut)]
-            let mut entry_113 = list_112.entry();
-            entry_113.string(item_111);
+            let mut entry_115 = list_114.entry();
+            entry_115.string(item_113);
         }
-        list_112.finish();
+        list_114.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_114 = writer.prefix("ProcessorFeatures");
-    if let Some(var_115) = &input.processor_features {
-        let mut list_117 = scope_114.start_list(false, Some("ProcessorFeature"));
-        for item_116 in var_115 {
+    let mut scope_116 = writer.prefix("ProcessorFeatures");
+    if let Some(var_117) = &input.processor_features {
+        let mut list_119 = scope_116.start_list(false, Some("ProcessorFeature"));
+        for item_118 in var_117 {
             #[allow(unused_mut)]
-            let mut entry_118 = list_117.entry();
-            crate::protocol_serde::shape_processor_feature::ser_processor_feature(entry_118, item_116)?;
+            let mut entry_120 = list_119.entry();
+            crate::protocol_serde::shape_processor_feature::ser_processor_feature(entry_120, item_118)?;
         }
-        list_117.finish();
+        list_119.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_119 = writer.prefix("DeletionProtection");
-    if let Some(var_120) = &input.deletion_protection {
-        scope_119.boolean(*var_120);
+    let mut scope_121 = writer.prefix("DeletionProtection");
+    if let Some(var_122) = &input.deletion_protection {
+        scope_121.boolean(*var_122);
     }
     #[allow(unused_mut)]
-    let mut scope_121 = writer.prefix("MaxAllocatedStorage");
-    if let Some(var_122) = &input.max_allocated_storage {
-        scope_121.number(
+    let mut scope_123 = writer.prefix("MaxAllocatedStorage");
+    if let Some(var_124) = &input.max_allocated_storage {
+        scope_123.number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_122).into()),
+            ::aws_smithy_types::Number::NegInt((*var_124).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_123 = writer.prefix("EnableCustomerOwnedIp");
-    if let Some(var_124) = &input.enable_customer_owned_ip {
-        scope_123.boolean(*var_124);
+    let mut scope_125 = writer.prefix("EnableCustomerOwnedIp");
+    if let Some(var_126) = &input.enable_customer_owned_ip {
+        scope_125.boolean(*var_126);
     }
     #[allow(unused_mut)]
-    let mut scope_125 = writer.prefix("CustomIamInstanceProfile");
-    if let Some(var_126) = &input.custom_iam_instance_profile {
-        scope_125.string(var_126);
-    }
-    #[allow(unused_mut)]
-    let mut scope_127 = writer.prefix("BackupTarget");
-    if let Some(var_128) = &input.backup_target {
+    let mut scope_127 = writer.prefix("NetworkType");
+    if let Some(var_128) = &input.network_type {
         scope_127.string(var_128);
     }
     #[allow(unused_mut)]
-    let mut scope_129 = writer.prefix("NetworkType");
-    if let Some(var_130) = &input.network_type {
+    let mut scope_129 = writer.prefix("BackupTarget");
+    if let Some(var_130) = &input.backup_target {
         scope_129.string(var_130);
     }
     #[allow(unused_mut)]
-    let mut scope_131 = writer.prefix("StorageThroughput");
-    if let Some(var_132) = &input.storage_throughput {
-        scope_131.number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_132).into()),
-        );
+    let mut scope_131 = writer.prefix("CustomIamInstanceProfile");
+    if let Some(var_132) = &input.custom_iam_instance_profile {
+        scope_131.string(var_132);
     }
     #[allow(unused_mut)]
-    let mut scope_133 = writer.prefix("ManageMasterUserPassword");
-    if let Some(var_134) = &input.manage_master_user_password {
-        scope_133.boolean(*var_134);
+    let mut scope_133 = writer.prefix("DBSystemId");
+    if let Some(var_134) = &input.db_system_id {
+        scope_133.string(var_134);
     }
     #[allow(unused_mut)]
-    let mut scope_135 = writer.prefix("MasterUserSecretKmsKeyId");
-    if let Some(var_136) = &input.master_user_secret_kms_key_id {
+    let mut scope_135 = writer.prefix("CACertificateIdentifier");
+    if let Some(var_136) = &input.ca_certificate_identifier {
         scope_135.string(var_136);
     }
     #[allow(unused_mut)]
-    let mut scope_137 = writer.prefix("CACertificateIdentifier");
-    if let Some(var_138) = &input.ca_certificate_identifier {
-        scope_137.string(var_138);
+    let mut scope_137 = writer.prefix("ManageMasterUserPassword");
+    if let Some(var_138) = &input.manage_master_user_password {
+        scope_137.boolean(*var_138);
     }
     #[allow(unused_mut)]
-    let mut scope_139 = writer.prefix("DBSystemId");
-    if let Some(var_140) = &input.db_system_id {
+    let mut scope_139 = writer.prefix("MasterUserSecretKmsKeyId");
+    if let Some(var_140) = &input.master_user_secret_kms_key_id {
         scope_139.string(var_140);
     }
     #[allow(unused_mut)]
-    let mut scope_141 = writer.prefix("DedicatedLogVolume");
-    if let Some(var_142) = &input.dedicated_log_volume {
+    let mut scope_141 = writer.prefix("MultiTenant");
+    if let Some(var_142) = &input.multi_tenant {
         scope_141.boolean(*var_142);
     }
     #[allow(unused_mut)]
-    let mut scope_143 = writer.prefix("MultiTenant");
-    if let Some(var_144) = &input.multi_tenant {
+    let mut scope_143 = writer.prefix("DedicatedLogVolume");
+    if let Some(var_144) = &input.dedicated_log_volume {
         scope_143.boolean(*var_144);
     }
     #[allow(unused_mut)]

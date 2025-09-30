@@ -31,7 +31,7 @@ impl crate::operation::delete_case::builders::DeleteCaseInputBuilder {
 /// <li>
 /// <p>Perform any operations that require the CaseID</p></li>
 /// </ul><important>
-/// <p>This action is irreversible. Once you delete a case, you cannot recover its data.</p>
+/// <p>This action is irreversible. After you delete a case, you cannot recover its data.</p>
 /// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteCaseFluentBuilder {

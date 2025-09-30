@@ -22,6 +22,16 @@ impl crate::operation::update_public_sharing_settings::builders::UpdatePublicSha
 }
 /// Fluent builder constructing a request to `UpdatePublicSharingSettings`.
 ///
+/// <important>
+/// <p>This API controls public sharing settings for your entire QuickSight account, affecting data security and access. When you enable public sharing:</p>
+/// <ul>
+/// <li>
+/// <p>Dashboards can be shared publicly</p></li>
+/// <li>
+/// <p>This setting affects your entire Amazon Web Services account and all QuickSight users</p></li>
+/// </ul>
+/// <p><b>Before proceeding:</b> Ensure you understand the security implications and have proper IAM permissions configured.</p>
+/// </important>
 /// <p>Use the <code>UpdatePublicSharingSettings</code> operation to turn on or turn off the public sharing settings of an QuickSight dashboard.</p>
 /// <p>To use this operation, turn on session capacity pricing for your QuickSight account.</p>
 /// <p>Before you can turn on public sharing on your account, make sure to give public sharing permissions to an administrative user in the Identity and Access Management (IAM) console. For more information on using IAM with QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/security_iam_service-with-iam.html">Using QuickSight with IAM</a> in the <i>QuickSight User Guide</i>.</p>

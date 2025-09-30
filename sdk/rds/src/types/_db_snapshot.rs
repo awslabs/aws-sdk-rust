@@ -35,6 +35,8 @@ pub struct DbSnapshot {
     pub snapshot_type: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the Provisioned IOPS (I/O operations per second) value of the DB instance at the time of the snapshot.</p>
     pub iops: ::std::option::Option<i32>,
+    /// <p>Specifies the storage throughput for the DB snapshot.</p>
+    pub storage_throughput: ::std::option::Option<i32>,
     /// <p>Provides the option group name for the DB snapshot.</p>
     pub option_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The percentage of the estimated data that has been transferred.</p>
@@ -65,21 +67,19 @@ pub struct DbSnapshot {
     /// <p>A list of tags.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS resources</a> in the <i>Amazon RDS User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.html">Tagging Amazon Aurora and Amazon RDS resources</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>Specifies where manual snapshots are stored: Dedicated Local Zones, Amazon Web Services Outposts or the Amazon Web Services Region.</p>
+    pub snapshot_target: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the time of the CreateDBSnapshot operation in Coordinated Universal Time (UTC). Doesn't change when the snapshot is copied.</p>
     pub original_snapshot_create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp of the most recent transaction applied to the database that you're backing up. Thus, if you restore a snapshot, SnapshotDatabaseTime is the most recent transaction in the restored DB instance. In contrast, originalSnapshotCreateTime specifies the system time that the snapshot completed.</p>
     /// <p>If you back up a read replica, you can determine the replica lag by comparing SnapshotDatabaseTime with originalSnapshotCreateTime. For example, if originalSnapshotCreateTime is two hours later than SnapshotDatabaseTime, then the replica lag is two hours.</p>
     pub snapshot_database_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>Specifies where manual snapshots are stored: Dedicated Local Zones, Amazon Web Services Outposts or the Amazon Web Services Region.</p>
-    pub snapshot_target: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the storage throughput for the DB snapshot.</p>
-    pub storage_throughput: ::std::option::Option<i32>,
     /// <p>The Oracle system identifier (SID), which is the name of the Oracle database instance that manages your database files. The Oracle SID is also the name of your CDB.</p>
     pub db_system_id: ::std::option::Option<::std::string::String>,
-    /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.</p>
-    pub dedicated_log_volume: ::std::option::Option<bool>,
     /// <p>Indicates whether the snapshot is of a DB instance using the multi-tenant configuration (TRUE) or the single-tenant configuration (FALSE).</p>
     pub multi_tenant: ::std::option::Option<bool>,
+    /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.</p>
+    pub dedicated_log_volume: ::std::option::Option<bool>,
     /// <p>Specifies the name of the Availability Zone where RDS stores the DB snapshot. This value is valid only for snapshots that RDS stores on a Dedicated Local Zone.</p>
     pub snapshot_availability_zone: ::std::option::Option<::std::string::String>,
 }
@@ -144,6 +144,10 @@ impl DbSnapshot {
     pub fn iops(&self) -> ::std::option::Option<i32> {
         self.iops
     }
+    /// <p>Specifies the storage throughput for the DB snapshot.</p>
+    pub fn storage_throughput(&self) -> ::std::option::Option<i32> {
+        self.storage_throughput
+    }
     /// <p>Provides the option group name for the DB snapshot.</p>
     pub fn option_group_name(&self) -> ::std::option::Option<&str> {
         self.option_group_name.as_deref()
@@ -206,6 +210,10 @@ impl DbSnapshot {
     pub fn tag_list(&self) -> &[crate::types::Tag] {
         self.tag_list.as_deref().unwrap_or_default()
     }
+    /// <p>Specifies where manual snapshots are stored: Dedicated Local Zones, Amazon Web Services Outposts or the Amazon Web Services Region.</p>
+    pub fn snapshot_target(&self) -> ::std::option::Option<&str> {
+        self.snapshot_target.as_deref()
+    }
     /// <p>Specifies the time of the CreateDBSnapshot operation in Coordinated Universal Time (UTC). Doesn't change when the snapshot is copied.</p>
     pub fn original_snapshot_create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.original_snapshot_create_time.as_ref()
@@ -215,25 +223,17 @@ impl DbSnapshot {
     pub fn snapshot_database_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.snapshot_database_time.as_ref()
     }
-    /// <p>Specifies where manual snapshots are stored: Dedicated Local Zones, Amazon Web Services Outposts or the Amazon Web Services Region.</p>
-    pub fn snapshot_target(&self) -> ::std::option::Option<&str> {
-        self.snapshot_target.as_deref()
-    }
-    /// <p>Specifies the storage throughput for the DB snapshot.</p>
-    pub fn storage_throughput(&self) -> ::std::option::Option<i32> {
-        self.storage_throughput
-    }
     /// <p>The Oracle system identifier (SID), which is the name of the Oracle database instance that manages your database files. The Oracle SID is also the name of your CDB.</p>
     pub fn db_system_id(&self) -> ::std::option::Option<&str> {
         self.db_system_id.as_deref()
     }
-    /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.</p>
-    pub fn dedicated_log_volume(&self) -> ::std::option::Option<bool> {
-        self.dedicated_log_volume
-    }
     /// <p>Indicates whether the snapshot is of a DB instance using the multi-tenant configuration (TRUE) or the single-tenant configuration (FALSE).</p>
     pub fn multi_tenant(&self) -> ::std::option::Option<bool> {
         self.multi_tenant
+    }
+    /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.</p>
+    pub fn dedicated_log_volume(&self) -> ::std::option::Option<bool> {
+        self.dedicated_log_volume
     }
     /// <p>Specifies the name of the Availability Zone where RDS stores the DB snapshot. This value is valid only for snapshots that RDS stores on a Dedicated Local Zone.</p>
     pub fn snapshot_availability_zone(&self) -> ::std::option::Option<&str> {
@@ -266,6 +266,7 @@ pub struct DbSnapshotBuilder {
     pub(crate) license_model: ::std::option::Option<::std::string::String>,
     pub(crate) snapshot_type: ::std::option::Option<::std::string::String>,
     pub(crate) iops: ::std::option::Option<i32>,
+    pub(crate) storage_throughput: ::std::option::Option<i32>,
     pub(crate) option_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) percent_progress: ::std::option::Option<i32>,
     pub(crate) source_region: ::std::option::Option<::std::string::String>,
@@ -280,13 +281,12 @@ pub struct DbSnapshotBuilder {
     pub(crate) processor_features: ::std::option::Option<::std::vec::Vec<crate::types::ProcessorFeature>>,
     pub(crate) dbi_resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) snapshot_target: ::std::option::Option<::std::string::String>,
     pub(crate) original_snapshot_create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) snapshot_database_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) snapshot_target: ::std::option::Option<::std::string::String>,
-    pub(crate) storage_throughput: ::std::option::Option<i32>,
     pub(crate) db_system_id: ::std::option::Option<::std::string::String>,
-    pub(crate) dedicated_log_volume: ::std::option::Option<bool>,
     pub(crate) multi_tenant: ::std::option::Option<bool>,
+    pub(crate) dedicated_log_volume: ::std::option::Option<bool>,
     pub(crate) snapshot_availability_zone: ::std::option::Option<::std::string::String>,
 }
 impl DbSnapshotBuilder {
@@ -499,6 +499,20 @@ impl DbSnapshotBuilder {
     /// <p>Specifies the Provisioned IOPS (I/O operations per second) value of the DB instance at the time of the snapshot.</p>
     pub fn get_iops(&self) -> &::std::option::Option<i32> {
         &self.iops
+    }
+    /// <p>Specifies the storage throughput for the DB snapshot.</p>
+    pub fn storage_throughput(mut self, input: i32) -> Self {
+        self.storage_throughput = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the storage throughput for the DB snapshot.</p>
+    pub fn set_storage_throughput(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.storage_throughput = input;
+        self
+    }
+    /// <p>Specifies the storage throughput for the DB snapshot.</p>
+    pub fn get_storage_throughput(&self) -> &::std::option::Option<i32> {
+        &self.storage_throughput
     }
     /// <p>Provides the option group name for the DB snapshot.</p>
     pub fn option_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -714,6 +728,20 @@ impl DbSnapshotBuilder {
     pub fn get_tag_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tag_list
     }
+    /// <p>Specifies where manual snapshots are stored: Dedicated Local Zones, Amazon Web Services Outposts or the Amazon Web Services Region.</p>
+    pub fn snapshot_target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.snapshot_target = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Specifies where manual snapshots are stored: Dedicated Local Zones, Amazon Web Services Outposts or the Amazon Web Services Region.</p>
+    pub fn set_snapshot_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.snapshot_target = input;
+        self
+    }
+    /// <p>Specifies where manual snapshots are stored: Dedicated Local Zones, Amazon Web Services Outposts or the Amazon Web Services Region.</p>
+    pub fn get_snapshot_target(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_target
+    }
     /// <p>Specifies the time of the CreateDBSnapshot operation in Coordinated Universal Time (UTC). Doesn't change when the snapshot is copied.</p>
     pub fn original_snapshot_create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.original_snapshot_create_time = ::std::option::Option::Some(input);
@@ -745,34 +773,6 @@ impl DbSnapshotBuilder {
     pub fn get_snapshot_database_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.snapshot_database_time
     }
-    /// <p>Specifies where manual snapshots are stored: Dedicated Local Zones, Amazon Web Services Outposts or the Amazon Web Services Region.</p>
-    pub fn snapshot_target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.snapshot_target = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>Specifies where manual snapshots are stored: Dedicated Local Zones, Amazon Web Services Outposts or the Amazon Web Services Region.</p>
-    pub fn set_snapshot_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snapshot_target = input;
-        self
-    }
-    /// <p>Specifies where manual snapshots are stored: Dedicated Local Zones, Amazon Web Services Outposts or the Amazon Web Services Region.</p>
-    pub fn get_snapshot_target(&self) -> &::std::option::Option<::std::string::String> {
-        &self.snapshot_target
-    }
-    /// <p>Specifies the storage throughput for the DB snapshot.</p>
-    pub fn storage_throughput(mut self, input: i32) -> Self {
-        self.storage_throughput = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>Specifies the storage throughput for the DB snapshot.</p>
-    pub fn set_storage_throughput(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.storage_throughput = input;
-        self
-    }
-    /// <p>Specifies the storage throughput for the DB snapshot.</p>
-    pub fn get_storage_throughput(&self) -> &::std::option::Option<i32> {
-        &self.storage_throughput
-    }
     /// <p>The Oracle system identifier (SID), which is the name of the Oracle database instance that manages your database files. The Oracle SID is also the name of your CDB.</p>
     pub fn db_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_system_id = ::std::option::Option::Some(input.into());
@@ -787,20 +787,6 @@ impl DbSnapshotBuilder {
     pub fn get_db_system_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_system_id
     }
-    /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.</p>
-    pub fn dedicated_log_volume(mut self, input: bool) -> Self {
-        self.dedicated_log_volume = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.</p>
-    pub fn set_dedicated_log_volume(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dedicated_log_volume = input;
-        self
-    }
-    /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.</p>
-    pub fn get_dedicated_log_volume(&self) -> &::std::option::Option<bool> {
-        &self.dedicated_log_volume
-    }
     /// <p>Indicates whether the snapshot is of a DB instance using the multi-tenant configuration (TRUE) or the single-tenant configuration (FALSE).</p>
     pub fn multi_tenant(mut self, input: bool) -> Self {
         self.multi_tenant = ::std::option::Option::Some(input);
@@ -814,6 +800,20 @@ impl DbSnapshotBuilder {
     /// <p>Indicates whether the snapshot is of a DB instance using the multi-tenant configuration (TRUE) or the single-tenant configuration (FALSE).</p>
     pub fn get_multi_tenant(&self) -> &::std::option::Option<bool> {
         &self.multi_tenant
+    }
+    /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.</p>
+    pub fn dedicated_log_volume(mut self, input: bool) -> Self {
+        self.dedicated_log_volume = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.</p>
+    pub fn set_dedicated_log_volume(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.dedicated_log_volume = input;
+        self
+    }
+    /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.</p>
+    pub fn get_dedicated_log_volume(&self) -> &::std::option::Option<bool> {
+        &self.dedicated_log_volume
     }
     /// <p>Specifies the name of the Availability Zone where RDS stores the DB snapshot. This value is valid only for snapshots that RDS stores on a Dedicated Local Zone.</p>
     pub fn snapshot_availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -847,6 +847,7 @@ impl DbSnapshotBuilder {
             license_model: self.license_model,
             snapshot_type: self.snapshot_type,
             iops: self.iops,
+            storage_throughput: self.storage_throughput,
             option_group_name: self.option_group_name,
             percent_progress: self.percent_progress,
             source_region: self.source_region,
@@ -861,13 +862,12 @@ impl DbSnapshotBuilder {
             processor_features: self.processor_features,
             dbi_resource_id: self.dbi_resource_id,
             tag_list: self.tag_list,
+            snapshot_target: self.snapshot_target,
             original_snapshot_create_time: self.original_snapshot_create_time,
             snapshot_database_time: self.snapshot_database_time,
-            snapshot_target: self.snapshot_target,
-            storage_throughput: self.storage_throughput,
             db_system_id: self.db_system_id,
-            dedicated_log_volume: self.dedicated_log_volume,
             multi_tenant: self.multi_tenant,
+            dedicated_log_volume: self.dedicated_log_volume,
             snapshot_availability_zone: self.snapshot_availability_zone,
         }
     }

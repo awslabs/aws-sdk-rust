@@ -231,6 +231,21 @@ pub fn de_restore_db_cluster_from_s3_http_error(
             }
             tmp
         }),
+        "NetworkTypeNotSupported" => crate::operation::restore_db_cluster_from_s3::RestoreDBClusterFromS3Error::NetworkTypeNotSupported({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::NetworkTypeNotSupportedBuilder::default();
+                output = crate::protocol_serde::shape_network_type_not_supported::de_network_type_not_supported_xml_err(_response_body, output)
+                    .map_err(crate::operation::restore_db_cluster_from_s3::RestoreDBClusterFromS3Error::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "StorageQuotaExceeded" => crate::operation::restore_db_cluster_from_s3::RestoreDBClusterFromS3Error::StorageQuotaExceededFault({
             #[allow(unused_mut)]
             let mut tmp = {

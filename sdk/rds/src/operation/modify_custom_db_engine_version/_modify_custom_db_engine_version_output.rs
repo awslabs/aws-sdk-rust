@@ -6,12 +6,22 @@
 pub struct ModifyCustomDbEngineVersionOutput {
     /// <p>The name of the database engine.</p>
     pub engine: ::std::option::Option<::std::string::String>,
+    /// <p>The major engine version of the CEV.</p>
+    pub major_engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The version number of the database engine.</p>
     pub engine_version: ::std::option::Option<::std::string::String>,
+    /// <p>The name of the Amazon S3 bucket that contains your database installation files.</p>
+    pub database_installation_files_s3_bucket_name: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon S3 directory that contains the database installation files. If not specified, then no prefix is assumed.</p>
+    pub database_installation_files_s3_prefix: ::std::option::Option<::std::string::String>,
+    /// <p>JSON string that lists the installation files and parameters that RDS Custom uses to create a custom engine version (CEV). RDS Custom applies the patches in the order in which they're listed in the manifest. You can set the Oracle home, Oracle base, and UNIX/Linux user and group using the installation parameters. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields">JSON fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>.</p>
+    pub custom_db_engine_version_manifest: ::std::option::Option<::std::string::String>,
     /// <p>The name of the DB parameter group family for the database engine.</p>
     pub db_parameter_group_family: ::std::option::Option<::std::string::String>,
     /// <p>The description of the database engine.</p>
     pub db_engine_description: ::std::option::Option<::std::string::String>,
+    /// <p>The ARN of the custom engine version.</p>
+    pub db_engine_version_arn: ::std::option::Option<::std::string::String>,
     /// <p>The description of the database engine version.</p>
     pub db_engine_version_description: ::std::option::Option<::std::string::String>,
     /// <p>The default character set for new instances of this engine version, if the <code>CharacterSetName</code> parameter of the CreateDBInstance API isn't specified.</p>
@@ -20,6 +30,10 @@ pub struct ModifyCustomDbEngineVersionOutput {
     pub image: ::std::option::Option<crate::types::CustomDbEngineVersionAmi>,
     /// <p>A value that indicates the source media provider of the AMI based on the usage operation. Applicable for RDS Custom for SQL Server.</p>
     pub db_engine_media_type: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Web Services KMS key identifier for an encrypted CEV. This parameter is required for RDS Custom, but optional for Amazon RDS.</p>
+    pub kms_key_id: ::std::option::Option<::std::string::String>,
+    /// <p>The creation time of the DB engine version.</p>
+    pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A list of the character sets supported by this engine for the <code>CharacterSetName</code> parameter of the <code>CreateDBInstance</code> operation.</p>
     pub supported_character_sets: ::std::option::Option<::std::vec::Vec<crate::types::CharacterSet>>,
     /// <p>A list of the character sets supported by the Oracle DB engine for the <code>NcharCharacterSetName</code> parameter of the <code>CreateDBInstance</code> operation.</p>
@@ -53,25 +67,11 @@ pub struct ModifyCustomDbEngineVersionOutput {
     pub supports_parallel_query: ::std::option::Option<bool>,
     /// <p>Indicates whether you can use Aurora global databases with a specific DB engine version.</p>
     pub supports_global_databases: ::std::option::Option<bool>,
-    /// <p>The major engine version of the CEV.</p>
-    pub major_engine_version: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the Amazon S3 bucket that contains your database installation files.</p>
-    pub database_installation_files_s3_bucket_name: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon S3 directory that contains the database installation files. If not specified, then no prefix is assumed.</p>
-    pub database_installation_files_s3_prefix: ::std::option::Option<::std::string::String>,
-    /// <p>The ARN of the custom engine version.</p>
-    pub db_engine_version_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Web Services KMS key identifier for an encrypted CEV. This parameter is required for RDS Custom, but optional for Amazon RDS.</p>
-    pub kms_key_id: ::std::option::Option<::std::string::String>,
-    /// <p>The creation time of the DB engine version.</p>
-    pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A list of tags.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS resources</a> in the <i>Amazon RDS User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.html">Tagging Amazon Aurora and Amazon RDS resources</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Indicates whether the engine version supports Babelfish for Aurora PostgreSQL.</p>
     pub supports_babelfish: ::std::option::Option<bool>,
-    /// <p>JSON string that lists the installation files and parameters that RDS Custom uses to create a custom engine version (CEV). RDS Custom applies the patches in the order in which they're listed in the manifest. You can set the Oracle home, Oracle base, and UNIX/Linux user and group using the installation parameters. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields">JSON fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>.</p>
-    pub custom_db_engine_version_manifest: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the DB engine version supports Aurora Limitless Database.</p>
     pub supports_limitless_database: ::std::option::Option<bool>,
     /// <p>Indicates whether the engine version supports rotating the server certificate without rebooting the DB instance.</p>
@@ -93,9 +93,25 @@ impl ModifyCustomDbEngineVersionOutput {
     pub fn engine(&self) -> ::std::option::Option<&str> {
         self.engine.as_deref()
     }
+    /// <p>The major engine version of the CEV.</p>
+    pub fn major_engine_version(&self) -> ::std::option::Option<&str> {
+        self.major_engine_version.as_deref()
+    }
     /// <p>The version number of the database engine.</p>
     pub fn engine_version(&self) -> ::std::option::Option<&str> {
         self.engine_version.as_deref()
+    }
+    /// <p>The name of the Amazon S3 bucket that contains your database installation files.</p>
+    pub fn database_installation_files_s3_bucket_name(&self) -> ::std::option::Option<&str> {
+        self.database_installation_files_s3_bucket_name.as_deref()
+    }
+    /// <p>The Amazon S3 directory that contains the database installation files. If not specified, then no prefix is assumed.</p>
+    pub fn database_installation_files_s3_prefix(&self) -> ::std::option::Option<&str> {
+        self.database_installation_files_s3_prefix.as_deref()
+    }
+    /// <p>JSON string that lists the installation files and parameters that RDS Custom uses to create a custom engine version (CEV). RDS Custom applies the patches in the order in which they're listed in the manifest. You can set the Oracle home, Oracle base, and UNIX/Linux user and group using the installation parameters. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields">JSON fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>.</p>
+    pub fn custom_db_engine_version_manifest(&self) -> ::std::option::Option<&str> {
+        self.custom_db_engine_version_manifest.as_deref()
     }
     /// <p>The name of the DB parameter group family for the database engine.</p>
     pub fn db_parameter_group_family(&self) -> ::std::option::Option<&str> {
@@ -104,6 +120,10 @@ impl ModifyCustomDbEngineVersionOutput {
     /// <p>The description of the database engine.</p>
     pub fn db_engine_description(&self) -> ::std::option::Option<&str> {
         self.db_engine_description.as_deref()
+    }
+    /// <p>The ARN of the custom engine version.</p>
+    pub fn db_engine_version_arn(&self) -> ::std::option::Option<&str> {
+        self.db_engine_version_arn.as_deref()
     }
     /// <p>The description of the database engine version.</p>
     pub fn db_engine_version_description(&self) -> ::std::option::Option<&str> {
@@ -120,6 +140,14 @@ impl ModifyCustomDbEngineVersionOutput {
     /// <p>A value that indicates the source media provider of the AMI based on the usage operation. Applicable for RDS Custom for SQL Server.</p>
     pub fn db_engine_media_type(&self) -> ::std::option::Option<&str> {
         self.db_engine_media_type.as_deref()
+    }
+    /// <p>The Amazon Web Services KMS key identifier for an encrypted CEV. This parameter is required for RDS Custom, but optional for Amazon RDS.</p>
+    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
+    /// <p>The creation time of the DB engine version.</p>
+    pub fn create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.create_time.as_ref()
     }
     /// <p>A list of the character sets supported by this engine for the <code>CharacterSetName</code> parameter of the <code>CreateDBInstance</code> operation.</p>
     ///
@@ -192,30 +220,6 @@ impl ModifyCustomDbEngineVersionOutput {
     pub fn supports_global_databases(&self) -> ::std::option::Option<bool> {
         self.supports_global_databases
     }
-    /// <p>The major engine version of the CEV.</p>
-    pub fn major_engine_version(&self) -> ::std::option::Option<&str> {
-        self.major_engine_version.as_deref()
-    }
-    /// <p>The name of the Amazon S3 bucket that contains your database installation files.</p>
-    pub fn database_installation_files_s3_bucket_name(&self) -> ::std::option::Option<&str> {
-        self.database_installation_files_s3_bucket_name.as_deref()
-    }
-    /// <p>The Amazon S3 directory that contains the database installation files. If not specified, then no prefix is assumed.</p>
-    pub fn database_installation_files_s3_prefix(&self) -> ::std::option::Option<&str> {
-        self.database_installation_files_s3_prefix.as_deref()
-    }
-    /// <p>The ARN of the custom engine version.</p>
-    pub fn db_engine_version_arn(&self) -> ::std::option::Option<&str> {
-        self.db_engine_version_arn.as_deref()
-    }
-    /// <p>The Amazon Web Services KMS key identifier for an encrypted CEV. This parameter is required for RDS Custom, but optional for Amazon RDS.</p>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
-        self.kms_key_id.as_deref()
-    }
-    /// <p>The creation time of the DB engine version.</p>
-    pub fn create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.create_time.as_ref()
-    }
     /// <p>A list of tags.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS resources</a> in the <i>Amazon RDS User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.html">Tagging Amazon Aurora and Amazon RDS resources</a> in the <i>Amazon Aurora User Guide</i>.</p>
     ///
@@ -226,10 +230,6 @@ impl ModifyCustomDbEngineVersionOutput {
     /// <p>Indicates whether the engine version supports Babelfish for Aurora PostgreSQL.</p>
     pub fn supports_babelfish(&self) -> ::std::option::Option<bool> {
         self.supports_babelfish
-    }
-    /// <p>JSON string that lists the installation files and parameters that RDS Custom uses to create a custom engine version (CEV). RDS Custom applies the patches in the order in which they're listed in the manifest. You can set the Oracle home, Oracle base, and UNIX/Linux user and group using the installation parameters. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields">JSON fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>.</p>
-    pub fn custom_db_engine_version_manifest(&self) -> ::std::option::Option<&str> {
-        self.custom_db_engine_version_manifest.as_deref()
     }
     /// <p>Indicates whether the DB engine version supports Aurora Limitless Database.</p>
     pub fn supports_limitless_database(&self) -> ::std::option::Option<bool> {
@@ -277,13 +277,20 @@ impl ModifyCustomDbEngineVersionOutput {
 #[non_exhaustive]
 pub struct ModifyCustomDbEngineVersionOutputBuilder {
     pub(crate) engine: ::std::option::Option<::std::string::String>,
+    pub(crate) major_engine_version: ::std::option::Option<::std::string::String>,
     pub(crate) engine_version: ::std::option::Option<::std::string::String>,
+    pub(crate) database_installation_files_s3_bucket_name: ::std::option::Option<::std::string::String>,
+    pub(crate) database_installation_files_s3_prefix: ::std::option::Option<::std::string::String>,
+    pub(crate) custom_db_engine_version_manifest: ::std::option::Option<::std::string::String>,
     pub(crate) db_parameter_group_family: ::std::option::Option<::std::string::String>,
     pub(crate) db_engine_description: ::std::option::Option<::std::string::String>,
+    pub(crate) db_engine_version_arn: ::std::option::Option<::std::string::String>,
     pub(crate) db_engine_version_description: ::std::option::Option<::std::string::String>,
     pub(crate) default_character_set: ::std::option::Option<crate::types::CharacterSet>,
     pub(crate) image: ::std::option::Option<crate::types::CustomDbEngineVersionAmi>,
     pub(crate) db_engine_media_type: ::std::option::Option<::std::string::String>,
+    pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
+    pub(crate) create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) supported_character_sets: ::std::option::Option<::std::vec::Vec<crate::types::CharacterSet>>,
     pub(crate) supported_nchar_character_sets: ::std::option::Option<::std::vec::Vec<crate::types::CharacterSet>>,
     pub(crate) valid_upgrade_target: ::std::option::Option<::std::vec::Vec<crate::types::UpgradeTarget>>,
@@ -296,15 +303,8 @@ pub struct ModifyCustomDbEngineVersionOutputBuilder {
     pub(crate) status: ::std::option::Option<::std::string::String>,
     pub(crate) supports_parallel_query: ::std::option::Option<bool>,
     pub(crate) supports_global_databases: ::std::option::Option<bool>,
-    pub(crate) major_engine_version: ::std::option::Option<::std::string::String>,
-    pub(crate) database_installation_files_s3_bucket_name: ::std::option::Option<::std::string::String>,
-    pub(crate) database_installation_files_s3_prefix: ::std::option::Option<::std::string::String>,
-    pub(crate) db_engine_version_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
-    pub(crate) create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) supports_babelfish: ::std::option::Option<bool>,
-    pub(crate) custom_db_engine_version_manifest: ::std::option::Option<::std::string::String>,
     pub(crate) supports_limitless_database: ::std::option::Option<bool>,
     pub(crate) supports_certificate_rotation_without_restart: ::std::option::Option<bool>,
     pub(crate) supported_ca_certificate_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -328,6 +328,20 @@ impl ModifyCustomDbEngineVersionOutputBuilder {
     pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
         &self.engine
     }
+    /// <p>The major engine version of the CEV.</p>
+    pub fn major_engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.major_engine_version = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The major engine version of the CEV.</p>
+    pub fn set_major_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.major_engine_version = input;
+        self
+    }
+    /// <p>The major engine version of the CEV.</p>
+    pub fn get_major_engine_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.major_engine_version
+    }
     /// <p>The version number of the database engine.</p>
     pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_version = ::std::option::Option::Some(input.into());
@@ -341,6 +355,48 @@ impl ModifyCustomDbEngineVersionOutputBuilder {
     /// <p>The version number of the database engine.</p>
     pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.engine_version
+    }
+    /// <p>The name of the Amazon S3 bucket that contains your database installation files.</p>
+    pub fn database_installation_files_s3_bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.database_installation_files_s3_bucket_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the Amazon S3 bucket that contains your database installation files.</p>
+    pub fn set_database_installation_files_s3_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.database_installation_files_s3_bucket_name = input;
+        self
+    }
+    /// <p>The name of the Amazon S3 bucket that contains your database installation files.</p>
+    pub fn get_database_installation_files_s3_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_installation_files_s3_bucket_name
+    }
+    /// <p>The Amazon S3 directory that contains the database installation files. If not specified, then no prefix is assumed.</p>
+    pub fn database_installation_files_s3_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.database_installation_files_s3_prefix = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon S3 directory that contains the database installation files. If not specified, then no prefix is assumed.</p>
+    pub fn set_database_installation_files_s3_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.database_installation_files_s3_prefix = input;
+        self
+    }
+    /// <p>The Amazon S3 directory that contains the database installation files. If not specified, then no prefix is assumed.</p>
+    pub fn get_database_installation_files_s3_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_installation_files_s3_prefix
+    }
+    /// <p>JSON string that lists the installation files and parameters that RDS Custom uses to create a custom engine version (CEV). RDS Custom applies the patches in the order in which they're listed in the manifest. You can set the Oracle home, Oracle base, and UNIX/Linux user and group using the installation parameters. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields">JSON fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>.</p>
+    pub fn custom_db_engine_version_manifest(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.custom_db_engine_version_manifest = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>JSON string that lists the installation files and parameters that RDS Custom uses to create a custom engine version (CEV). RDS Custom applies the patches in the order in which they're listed in the manifest. You can set the Oracle home, Oracle base, and UNIX/Linux user and group using the installation parameters. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields">JSON fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>.</p>
+    pub fn set_custom_db_engine_version_manifest(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.custom_db_engine_version_manifest = input;
+        self
+    }
+    /// <p>JSON string that lists the installation files and parameters that RDS Custom uses to create a custom engine version (CEV). RDS Custom applies the patches in the order in which they're listed in the manifest. You can set the Oracle home, Oracle base, and UNIX/Linux user and group using the installation parameters. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields">JSON fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>.</p>
+    pub fn get_custom_db_engine_version_manifest(&self) -> &::std::option::Option<::std::string::String> {
+        &self.custom_db_engine_version_manifest
     }
     /// <p>The name of the DB parameter group family for the database engine.</p>
     pub fn db_parameter_group_family(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -369,6 +425,20 @@ impl ModifyCustomDbEngineVersionOutputBuilder {
     /// <p>The description of the database engine.</p>
     pub fn get_db_engine_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_engine_description
+    }
+    /// <p>The ARN of the custom engine version.</p>
+    pub fn db_engine_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.db_engine_version_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN of the custom engine version.</p>
+    pub fn set_db_engine_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.db_engine_version_arn = input;
+        self
+    }
+    /// <p>The ARN of the custom engine version.</p>
+    pub fn get_db_engine_version_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_engine_version_arn
     }
     /// <p>The description of the database engine version.</p>
     pub fn db_engine_version_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -425,6 +495,34 @@ impl ModifyCustomDbEngineVersionOutputBuilder {
     /// <p>A value that indicates the source media provider of the AMI based on the usage operation. Applicable for RDS Custom for SQL Server.</p>
     pub fn get_db_engine_media_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_engine_media_type
+    }
+    /// <p>The Amazon Web Services KMS key identifier for an encrypted CEV. This parameter is required for RDS Custom, but optional for Amazon RDS.</p>
+    pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Web Services KMS key identifier for an encrypted CEV. This parameter is required for RDS Custom, but optional for Amazon RDS.</p>
+    pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.kms_key_id = input;
+        self
+    }
+    /// <p>The Amazon Web Services KMS key identifier for an encrypted CEV. This parameter is required for RDS Custom, but optional for Amazon RDS.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
+    }
+    /// <p>The creation time of the DB engine version.</p>
+    pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.create_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The creation time of the DB engine version.</p>
+    pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.create_time = input;
+        self
+    }
+    /// <p>The creation time of the DB engine version.</p>
+    pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.create_time
     }
     /// Appends an item to `supported_character_sets`.
     ///
@@ -663,90 +761,6 @@ impl ModifyCustomDbEngineVersionOutputBuilder {
     pub fn get_supports_global_databases(&self) -> &::std::option::Option<bool> {
         &self.supports_global_databases
     }
-    /// <p>The major engine version of the CEV.</p>
-    pub fn major_engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.major_engine_version = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The major engine version of the CEV.</p>
-    pub fn set_major_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.major_engine_version = input;
-        self
-    }
-    /// <p>The major engine version of the CEV.</p>
-    pub fn get_major_engine_version(&self) -> &::std::option::Option<::std::string::String> {
-        &self.major_engine_version
-    }
-    /// <p>The name of the Amazon S3 bucket that contains your database installation files.</p>
-    pub fn database_installation_files_s3_bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.database_installation_files_s3_bucket_name = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The name of the Amazon S3 bucket that contains your database installation files.</p>
-    pub fn set_database_installation_files_s3_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_installation_files_s3_bucket_name = input;
-        self
-    }
-    /// <p>The name of the Amazon S3 bucket that contains your database installation files.</p>
-    pub fn get_database_installation_files_s3_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
-        &self.database_installation_files_s3_bucket_name
-    }
-    /// <p>The Amazon S3 directory that contains the database installation files. If not specified, then no prefix is assumed.</p>
-    pub fn database_installation_files_s3_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.database_installation_files_s3_prefix = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The Amazon S3 directory that contains the database installation files. If not specified, then no prefix is assumed.</p>
-    pub fn set_database_installation_files_s3_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_installation_files_s3_prefix = input;
-        self
-    }
-    /// <p>The Amazon S3 directory that contains the database installation files. If not specified, then no prefix is assumed.</p>
-    pub fn get_database_installation_files_s3_prefix(&self) -> &::std::option::Option<::std::string::String> {
-        &self.database_installation_files_s3_prefix
-    }
-    /// <p>The ARN of the custom engine version.</p>
-    pub fn db_engine_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.db_engine_version_arn = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The ARN of the custom engine version.</p>
-    pub fn set_db_engine_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_engine_version_arn = input;
-        self
-    }
-    /// <p>The ARN of the custom engine version.</p>
-    pub fn get_db_engine_version_arn(&self) -> &::std::option::Option<::std::string::String> {
-        &self.db_engine_version_arn
-    }
-    /// <p>The Amazon Web Services KMS key identifier for an encrypted CEV. This parameter is required for RDS Custom, but optional for Amazon RDS.</p>
-    pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.kms_key_id = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The Amazon Web Services KMS key identifier for an encrypted CEV. This parameter is required for RDS Custom, but optional for Amazon RDS.</p>
-    pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
-    }
-    /// <p>The Amazon Web Services KMS key identifier for an encrypted CEV. This parameter is required for RDS Custom, but optional for Amazon RDS.</p>
-    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
-        &self.kms_key_id
-    }
-    /// <p>The creation time of the DB engine version.</p>
-    pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
-        self.create_time = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The creation time of the DB engine version.</p>
-    pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.create_time = input;
-        self
-    }
-    /// <p>The creation time of the DB engine version.</p>
-    pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
-        &self.create_time
-    }
     /// Appends an item to `tag_list`.
     ///
     /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
@@ -783,20 +797,6 @@ impl ModifyCustomDbEngineVersionOutputBuilder {
     /// <p>Indicates whether the engine version supports Babelfish for Aurora PostgreSQL.</p>
     pub fn get_supports_babelfish(&self) -> &::std::option::Option<bool> {
         &self.supports_babelfish
-    }
-    /// <p>JSON string that lists the installation files and parameters that RDS Custom uses to create a custom engine version (CEV). RDS Custom applies the patches in the order in which they're listed in the manifest. You can set the Oracle home, Oracle base, and UNIX/Linux user and group using the installation parameters. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields">JSON fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>.</p>
-    pub fn custom_db_engine_version_manifest(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.custom_db_engine_version_manifest = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>JSON string that lists the installation files and parameters that RDS Custom uses to create a custom engine version (CEV). RDS Custom applies the patches in the order in which they're listed in the manifest. You can set the Oracle home, Oracle base, and UNIX/Linux user and group using the installation parameters. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields">JSON fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>.</p>
-    pub fn set_custom_db_engine_version_manifest(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.custom_db_engine_version_manifest = input;
-        self
-    }
-    /// <p>JSON string that lists the installation files and parameters that RDS Custom uses to create a custom engine version (CEV). RDS Custom applies the patches in the order in which they're listed in the manifest. You can set the Oracle home, Oracle base, and UNIX/Linux user and group using the installation parameters. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields">JSON fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>.</p>
-    pub fn get_custom_db_engine_version_manifest(&self) -> &::std::option::Option<::std::string::String> {
-        &self.custom_db_engine_version_manifest
     }
     /// <p>Indicates whether the DB engine version supports Aurora Limitless Database.</p>
     pub fn supports_limitless_database(mut self, input: bool) -> Self {
@@ -907,13 +907,20 @@ impl ModifyCustomDbEngineVersionOutputBuilder {
     pub fn build(self) -> crate::operation::modify_custom_db_engine_version::ModifyCustomDbEngineVersionOutput {
         crate::operation::modify_custom_db_engine_version::ModifyCustomDbEngineVersionOutput {
             engine: self.engine,
+            major_engine_version: self.major_engine_version,
             engine_version: self.engine_version,
+            database_installation_files_s3_bucket_name: self.database_installation_files_s3_bucket_name,
+            database_installation_files_s3_prefix: self.database_installation_files_s3_prefix,
+            custom_db_engine_version_manifest: self.custom_db_engine_version_manifest,
             db_parameter_group_family: self.db_parameter_group_family,
             db_engine_description: self.db_engine_description,
+            db_engine_version_arn: self.db_engine_version_arn,
             db_engine_version_description: self.db_engine_version_description,
             default_character_set: self.default_character_set,
             image: self.image,
             db_engine_media_type: self.db_engine_media_type,
+            kms_key_id: self.kms_key_id,
+            create_time: self.create_time,
             supported_character_sets: self.supported_character_sets,
             supported_nchar_character_sets: self.supported_nchar_character_sets,
             valid_upgrade_target: self.valid_upgrade_target,
@@ -926,15 +933,8 @@ impl ModifyCustomDbEngineVersionOutputBuilder {
             status: self.status,
             supports_parallel_query: self.supports_parallel_query,
             supports_global_databases: self.supports_global_databases,
-            major_engine_version: self.major_engine_version,
-            database_installation_files_s3_bucket_name: self.database_installation_files_s3_bucket_name,
-            database_installation_files_s3_prefix: self.database_installation_files_s3_prefix,
-            db_engine_version_arn: self.db_engine_version_arn,
-            kms_key_id: self.kms_key_id,
-            create_time: self.create_time,
             tag_list: self.tag_list,
             supports_babelfish: self.supports_babelfish,
-            custom_db_engine_version_manifest: self.custom_db_engine_version_manifest,
             supports_limitless_database: self.supports_limitless_database,
             supports_certificate_rotation_without_restart: self.supports_certificate_rotation_without_restart,
             supported_ca_certificate_identifiers: self.supported_ca_certificate_identifiers,

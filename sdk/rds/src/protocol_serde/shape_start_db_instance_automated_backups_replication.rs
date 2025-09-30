@@ -58,6 +58,22 @@ pub fn de_start_db_instance_automated_backups_replication_http_error(
                                                         }
             tmp
         }),
+        "InvalidDBInstanceAutomatedBackupState" => crate::operation::start_db_instance_automated_backups_replication::StartDBInstanceAutomatedBackupsReplicationError::InvalidDbInstanceAutomatedBackupStateFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidDbInstanceAutomatedBackupStateFaultBuilder::default();
+                    output = crate::protocol_serde::shape_invalid_db_instance_automated_backup_state_fault::de_invalid_db_instance_automated_backup_state_fault_xml_err(_response_body, output).map_err(crate::operation::start_db_instance_automated_backups_replication::StartDBInstanceAutomatedBackupsReplicationError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                            tmp.message = _error_message;
+                                                        }
+            tmp
+        }),
         "InvalidDBInstanceState" => crate::operation::start_db_instance_automated_backups_replication::StartDBInstanceAutomatedBackupsReplicationError::InvalidDbInstanceStateFault({
             #[allow(unused_mut)]
             let mut tmp =

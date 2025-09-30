@@ -4,12 +4,24 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3StorageOptions {
-    /// <p>Specifies whether or not performance for your Amazon S3 directories is optimized. This is disabled by default.</p>
+    /// <p>Specifies whether or not performance for your Amazon S3 directories is optimized.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If using the console, this is enabled by default.</p></li>
+    /// <li>
+    /// <p>If using the API or CLI, this is disabled by default.</p></li>
+    /// </ul>
     /// <p>By default, home directory mappings have a <code>TYPE</code> of <code>DIRECTORY</code>. If you enable this option, you would then need to explicitly set the <code>HomeDirectoryMapEntry</code> <code>Type</code> to <code>FILE</code> if you want a mapping to have a file target.</p>
     pub directory_listing_optimization: ::std::option::Option<crate::types::DirectoryListingOptimization>,
 }
 impl S3StorageOptions {
-    /// <p>Specifies whether or not performance for your Amazon S3 directories is optimized. This is disabled by default.</p>
+    /// <p>Specifies whether or not performance for your Amazon S3 directories is optimized.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If using the console, this is enabled by default.</p></li>
+    /// <li>
+    /// <p>If using the API or CLI, this is disabled by default.</p></li>
+    /// </ul>
     /// <p>By default, home directory mappings have a <code>TYPE</code> of <code>DIRECTORY</code>. If you enable this option, you would then need to explicitly set the <code>HomeDirectoryMapEntry</code> <code>Type</code> to <code>FILE</code> if you want a mapping to have a file target.</p>
     pub fn directory_listing_optimization(&self) -> ::std::option::Option<&crate::types::DirectoryListingOptimization> {
         self.directory_listing_optimization.as_ref()
@@ -29,19 +41,37 @@ pub struct S3StorageOptionsBuilder {
     pub(crate) directory_listing_optimization: ::std::option::Option<crate::types::DirectoryListingOptimization>,
 }
 impl S3StorageOptionsBuilder {
-    /// <p>Specifies whether or not performance for your Amazon S3 directories is optimized. This is disabled by default.</p>
+    /// <p>Specifies whether or not performance for your Amazon S3 directories is optimized.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If using the console, this is enabled by default.</p></li>
+    /// <li>
+    /// <p>If using the API or CLI, this is disabled by default.</p></li>
+    /// </ul>
     /// <p>By default, home directory mappings have a <code>TYPE</code> of <code>DIRECTORY</code>. If you enable this option, you would then need to explicitly set the <code>HomeDirectoryMapEntry</code> <code>Type</code> to <code>FILE</code> if you want a mapping to have a file target.</p>
     pub fn directory_listing_optimization(mut self, input: crate::types::DirectoryListingOptimization) -> Self {
         self.directory_listing_optimization = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether or not performance for your Amazon S3 directories is optimized. This is disabled by default.</p>
+    /// <p>Specifies whether or not performance for your Amazon S3 directories is optimized.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If using the console, this is enabled by default.</p></li>
+    /// <li>
+    /// <p>If using the API or CLI, this is disabled by default.</p></li>
+    /// </ul>
     /// <p>By default, home directory mappings have a <code>TYPE</code> of <code>DIRECTORY</code>. If you enable this option, you would then need to explicitly set the <code>HomeDirectoryMapEntry</code> <code>Type</code> to <code>FILE</code> if you want a mapping to have a file target.</p>
     pub fn set_directory_listing_optimization(mut self, input: ::std::option::Option<crate::types::DirectoryListingOptimization>) -> Self {
         self.directory_listing_optimization = input;
         self
     }
-    /// <p>Specifies whether or not performance for your Amazon S3 directories is optimized. This is disabled by default.</p>
+    /// <p>Specifies whether or not performance for your Amazon S3 directories is optimized.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If using the console, this is enabled by default.</p></li>
+    /// <li>
+    /// <p>If using the API or CLI, this is disabled by default.</p></li>
+    /// </ul>
     /// <p>By default, home directory mappings have a <code>TYPE</code> of <code>DIRECTORY</code>. If you enable this option, you would then need to explicitly set the <code>HomeDirectoryMapEntry</code> <code>Type</code> to <code>FILE</code> if you want a mapping to have a file target.</p>
     pub fn get_directory_listing_optimization(&self) -> &::std::option::Option<crate::types::DirectoryListingOptimization> {
         &self.directory_listing_optimization

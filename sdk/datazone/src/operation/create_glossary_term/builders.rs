@@ -29,7 +29,7 @@ impl crate::operation::create_glossary_term::builders::CreateGlossaryTermInputBu
 /// <li>
 /// <p>Domain must exist.</p></li>
 /// <li>
-/// <p>Glossary must exist and be in an ENABLED state.</p></li>
+/// <p>Glossary must exist.</p></li>
 /// <li>
 /// <p>The term name must be unique within the glossary.</p></li>
 /// <li>

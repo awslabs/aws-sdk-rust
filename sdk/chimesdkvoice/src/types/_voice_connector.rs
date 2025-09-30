@@ -22,6 +22,8 @@ pub struct VoiceConnector {
     pub voice_connector_arn: ::std::option::Option<::std::string::String>,
     /// <p>The connectors for use with Amazon Connect.</p>
     pub integration_type: ::std::option::Option<crate::types::VoiceConnectorIntegrationType>,
+    /// <p>The type of network of the Voice Connector. Either IPv4 only or dual-stack (IPv4 and IPv6).</p>
+    pub network_type: ::std::option::Option<crate::types::NetworkType>,
 }
 impl VoiceConnector {
     /// <p>The Voice Connector's ID.</p>
@@ -60,6 +62,10 @@ impl VoiceConnector {
     pub fn integration_type(&self) -> ::std::option::Option<&crate::types::VoiceConnectorIntegrationType> {
         self.integration_type.as_ref()
     }
+    /// <p>The type of network of the Voice Connector. Either IPv4 only or dual-stack (IPv4 and IPv6).</p>
+    pub fn network_type(&self) -> ::std::option::Option<&crate::types::NetworkType> {
+        self.network_type.as_ref()
+    }
 }
 impl VoiceConnector {
     /// Creates a new builder-style object to manufacture [`VoiceConnector`](crate::types::VoiceConnector).
@@ -81,6 +87,7 @@ pub struct VoiceConnectorBuilder {
     pub(crate) updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) voice_connector_arn: ::std::option::Option<::std::string::String>,
     pub(crate) integration_type: ::std::option::Option<crate::types::VoiceConnectorIntegrationType>,
+    pub(crate) network_type: ::std::option::Option<crate::types::NetworkType>,
 }
 impl VoiceConnectorBuilder {
     /// <p>The Voice Connector's ID.</p>
@@ -209,6 +216,20 @@ impl VoiceConnectorBuilder {
     pub fn get_integration_type(&self) -> &::std::option::Option<crate::types::VoiceConnectorIntegrationType> {
         &self.integration_type
     }
+    /// <p>The type of network of the Voice Connector. Either IPv4 only or dual-stack (IPv4 and IPv6).</p>
+    pub fn network_type(mut self, input: crate::types::NetworkType) -> Self {
+        self.network_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of network of the Voice Connector. Either IPv4 only or dual-stack (IPv4 and IPv6).</p>
+    pub fn set_network_type(mut self, input: ::std::option::Option<crate::types::NetworkType>) -> Self {
+        self.network_type = input;
+        self
+    }
+    /// <p>The type of network of the Voice Connector. Either IPv4 only or dual-stack (IPv4 and IPv6).</p>
+    pub fn get_network_type(&self) -> &::std::option::Option<crate::types::NetworkType> {
+        &self.network_type
+    }
     /// Consumes the builder and constructs a [`VoiceConnector`](crate::types::VoiceConnector).
     pub fn build(self) -> crate::types::VoiceConnector {
         crate::types::VoiceConnector {
@@ -221,6 +242,7 @@ impl VoiceConnectorBuilder {
             updated_timestamp: self.updated_timestamp,
             voice_connector_arn: self.voice_connector_arn,
             integration_type: self.integration_type,
+            network_type: self.network_type,
         }
     }
 }

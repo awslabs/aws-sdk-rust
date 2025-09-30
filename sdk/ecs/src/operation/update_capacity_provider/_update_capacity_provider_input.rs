@@ -5,17 +5,29 @@
 pub struct UpdateCapacityProviderInput {
     /// <p>The name of the capacity provider to update.</p>
     pub name: ::std::option::Option<::std::string::String>,
+    /// <p>The name of the cluster that contains the capacity provider to update. Managed instances capacity providers are cluster-scoped and can only be updated within their associated cluster.</p>
+    pub cluster: ::std::option::Option<::std::string::String>,
     /// <p>An object that represent the parameters to update for the Auto Scaling group capacity provider.</p>
     pub auto_scaling_group_provider: ::std::option::Option<crate::types::AutoScalingGroupProviderUpdate>,
+    /// <p>The updated configuration for the Amazon ECS Managed Instances provider. You can modify the infrastructure role, instance launch template, and tag propagation settings. Changes take effect for new instances launched after the update.</p>
+    pub managed_instances_provider: ::std::option::Option<crate::types::UpdateManagedInstancesProviderConfiguration>,
 }
 impl UpdateCapacityProviderInput {
     /// <p>The name of the capacity provider to update.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
+    /// <p>The name of the cluster that contains the capacity provider to update. Managed instances capacity providers are cluster-scoped and can only be updated within their associated cluster.</p>
+    pub fn cluster(&self) -> ::std::option::Option<&str> {
+        self.cluster.as_deref()
+    }
     /// <p>An object that represent the parameters to update for the Auto Scaling group capacity provider.</p>
     pub fn auto_scaling_group_provider(&self) -> ::std::option::Option<&crate::types::AutoScalingGroupProviderUpdate> {
         self.auto_scaling_group_provider.as_ref()
+    }
+    /// <p>The updated configuration for the Amazon ECS Managed Instances provider. You can modify the infrastructure role, instance launch template, and tag propagation settings. Changes take effect for new instances launched after the update.</p>
+    pub fn managed_instances_provider(&self) -> ::std::option::Option<&crate::types::UpdateManagedInstancesProviderConfiguration> {
+        self.managed_instances_provider.as_ref()
     }
 }
 impl UpdateCapacityProviderInput {
@@ -30,7 +42,9 @@ impl UpdateCapacityProviderInput {
 #[non_exhaustive]
 pub struct UpdateCapacityProviderInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) cluster: ::std::option::Option<::std::string::String>,
     pub(crate) auto_scaling_group_provider: ::std::option::Option<crate::types::AutoScalingGroupProviderUpdate>,
+    pub(crate) managed_instances_provider: ::std::option::Option<crate::types::UpdateManagedInstancesProviderConfiguration>,
 }
 impl UpdateCapacityProviderInputBuilder {
     /// <p>The name of the capacity provider to update.</p>
@@ -48,8 +62,21 @@ impl UpdateCapacityProviderInputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
+    /// <p>The name of the cluster that contains the capacity provider to update. Managed instances capacity providers are cluster-scoped and can only be updated within their associated cluster.</p>
+    pub fn cluster(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cluster = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the cluster that contains the capacity provider to update. Managed instances capacity providers are cluster-scoped and can only be updated within their associated cluster.</p>
+    pub fn set_cluster(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.cluster = input;
+        self
+    }
+    /// <p>The name of the cluster that contains the capacity provider to update. Managed instances capacity providers are cluster-scoped and can only be updated within their associated cluster.</p>
+    pub fn get_cluster(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster
+    }
     /// <p>An object that represent the parameters to update for the Auto Scaling group capacity provider.</p>
-    /// This field is required.
     pub fn auto_scaling_group_provider(mut self, input: crate::types::AutoScalingGroupProviderUpdate) -> Self {
         self.auto_scaling_group_provider = ::std::option::Option::Some(input);
         self
@@ -63,6 +90,20 @@ impl UpdateCapacityProviderInputBuilder {
     pub fn get_auto_scaling_group_provider(&self) -> &::std::option::Option<crate::types::AutoScalingGroupProviderUpdate> {
         &self.auto_scaling_group_provider
     }
+    /// <p>The updated configuration for the Amazon ECS Managed Instances provider. You can modify the infrastructure role, instance launch template, and tag propagation settings. Changes take effect for new instances launched after the update.</p>
+    pub fn managed_instances_provider(mut self, input: crate::types::UpdateManagedInstancesProviderConfiguration) -> Self {
+        self.managed_instances_provider = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The updated configuration for the Amazon ECS Managed Instances provider. You can modify the infrastructure role, instance launch template, and tag propagation settings. Changes take effect for new instances launched after the update.</p>
+    pub fn set_managed_instances_provider(mut self, input: ::std::option::Option<crate::types::UpdateManagedInstancesProviderConfiguration>) -> Self {
+        self.managed_instances_provider = input;
+        self
+    }
+    /// <p>The updated configuration for the Amazon ECS Managed Instances provider. You can modify the infrastructure role, instance launch template, and tag propagation settings. Changes take effect for new instances launched after the update.</p>
+    pub fn get_managed_instances_provider(&self) -> &::std::option::Option<crate::types::UpdateManagedInstancesProviderConfiguration> {
+        &self.managed_instances_provider
+    }
     /// Consumes the builder and constructs a [`UpdateCapacityProviderInput`](crate::operation::update_capacity_provider::UpdateCapacityProviderInput).
     pub fn build(
         self,
@@ -72,7 +113,9 @@ impl UpdateCapacityProviderInputBuilder {
     > {
         ::std::result::Result::Ok(crate::operation::update_capacity_provider::UpdateCapacityProviderInput {
             name: self.name,
+            cluster: self.cluster,
             auto_scaling_group_provider: self.auto_scaling_group_provider,
+            managed_instances_provider: self.managed_instances_provider,
         })
     }
 }

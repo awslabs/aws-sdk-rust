@@ -159,6 +159,8 @@ pub(crate) mod shape_blocked_exception;
 
 pub(crate) mod shape_client_exception;
 
+pub(crate) mod shape_cluster_contains_capacity_provider_exception;
+
 pub(crate) mod shape_cluster_contains_container_instances_exception;
 
 pub(crate) mod shape_cluster_contains_services_exception;
@@ -359,6 +361,8 @@ pub(crate) mod shape_container_instances;
 
 pub(crate) mod shape_container_state_change;
 
+pub(crate) mod shape_create_managed_instances_provider_configuration;
+
 pub(crate) mod shape_created_at;
 
 pub(crate) mod shape_deployment_configuration;
@@ -443,6 +447,8 @@ pub(crate) mod shape_task_volume_configuration;
 
 pub(crate) mod shape_tasks;
 
+pub(crate) mod shape_update_managed_instances_provider_configuration;
+
 pub(crate) mod shape_version_info;
 
 pub(crate) mod shape_volume;
@@ -509,6 +515,10 @@ pub(crate) mod shape_inference_accelerator_override;
 
 pub(crate) mod shape_inference_accelerators;
 
+pub(crate) mod shape_instance_launch_template;
+
+pub(crate) mod shape_instance_launch_template_update;
+
 pub(crate) mod shape_key_value_pair;
 
 pub(crate) mod shape_linux_parameters;
@@ -516,6 +526,8 @@ pub(crate) mod shape_linux_parameters;
 pub(crate) mod shape_load_balancers;
 
 pub(crate) mod shape_log_configuration;
+
+pub(crate) mod shape_managed_instances_provider;
 
 pub(crate) mod shape_managed_scaling;
 
@@ -597,7 +609,13 @@ pub(crate) mod shape_inference_accelerator_overrides;
 
 pub(crate) mod shape_instance_health_check_result_list;
 
+pub(crate) mod shape_instance_requirements_request;
+
 pub(crate) mod shape_kernel_capabilities;
+
+pub(crate) mod shape_managed_instances_network_configuration;
+
+pub(crate) mod shape_managed_instances_storage_configuration;
 
 pub(crate) mod shape_proxy_configuration_properties;
 
@@ -629,7 +647,13 @@ pub(crate) mod shape_tmpfs;
 
 pub(crate) mod shape_vpc_lattice_configurations;
 
+pub(crate) mod shape_accelerator_count_request;
+
+pub(crate) mod shape_accelerator_total_memory_mib_request;
+
 pub(crate) mod shape_attachment_details;
+
+pub(crate) mod shape_baseline_ebs_bandwidth_mbps_request;
 
 pub(crate) mod shape_container_dependencies;
 
@@ -649,9 +673,17 @@ pub(crate) mod shape_instance_health_check_result;
 
 pub(crate) mod shape_managed_agents;
 
+pub(crate) mod shape_memory_gib_per_v_cpu_request;
+
+pub(crate) mod shape_memory_mib_request;
+
 pub(crate) mod shape_mount_point_list;
 
+pub(crate) mod shape_network_bandwidth_gbps_request;
+
 pub(crate) mod shape_network_bindings;
+
+pub(crate) mod shape_network_interface_count_request;
 
 pub(crate) mod shape_network_interfaces;
 
@@ -673,17 +705,37 @@ pub(crate) mod shape_service_revision_load_balancers;
 
 pub(crate) mod shape_system_controls;
 
+pub(crate) mod shape_total_local_storage_gb_request;
+
 pub(crate) mod shape_ulimit_list;
 
+pub(crate) mod shape_v_cpu_count_range_request;
+
 pub(crate) mod shape_volume_from_list;
+
+pub(crate) mod shape_accelerator_manufacturer_set;
+
+pub(crate) mod shape_accelerator_name_set;
+
+pub(crate) mod shape_accelerator_type_set;
+
+pub(crate) mod shape_allowed_instance_type_set;
+
+pub(crate) mod shape_cpu_manufacturer_set;
 
 pub(crate) mod shape_deployment_lifecycle_hook_stage_list;
 
 pub(crate) mod shape_devices_list;
 
+pub(crate) mod shape_excluded_instance_type_set;
+
 pub(crate) mod shape_firelens_configuration_options_map;
 
+pub(crate) mod shape_instance_generation_set;
+
 pub(crate) mod shape_integer_list;
+
+pub(crate) mod shape_local_storage_type_set;
 
 pub(crate) mod shape_log_configuration_options_map;
 

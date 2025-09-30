@@ -6,8 +6,11 @@ pub fn ser_ip_route(
     if let Some(var_1) = &input.cidr_ip {
         object.key("CidrIp").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.description {
-        object.key("Description").string(var_2.as_str());
+    if let Some(var_2) = &input.cidr_ipv6 {
+        object.key("CidrIpv6").string(var_2.as_str());
+    }
+    if let Some(var_3) = &input.description {
+        object.key("Description").string(var_3.as_str());
     }
     Ok(())
 }

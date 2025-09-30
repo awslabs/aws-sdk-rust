@@ -123,15 +123,14 @@ impl CopyDBClusterSnapshotFluentBuilder {
         self
     }
     /// <p>The identifier of the DB cluster snapshot to copy. This parameter isn't case-sensitive.</p>
-    /// <p>You can't copy an encrypted, shared DB cluster snapshot from one Amazon Web Services Region to another.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
-    /// <p>Must specify a valid system snapshot in the "available" state.</p></li>
+    /// <p>Must specify a valid source snapshot in the "available" state.</p></li>
     /// <li>
     /// <p>If the source snapshot is in the same Amazon Web Services Region as the copy, specify a valid DB snapshot identifier.</p></li>
     /// <li>
-    /// <p>If the source snapshot is in a different Amazon Web Services Region than the copy, specify a valid DB cluster snapshot ARN. For more information, go to <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_CopySnapshot.html#USER_CopySnapshot.AcrossRegions"> Copying Snapshots Across Amazon Web Services Regions</a> in the <i>Amazon Aurora User Guide</i>.</p></li>
+    /// <p>If the source snapshot is in a different Amazon Web Services Region than the copy, specify a valid DB cluster snapshot ARN. You can also specify an ARN of a snapshot that is in a different account and a different Amazon Web Services Region. For more information, go to <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_CopySnapshot.html#USER_CopySnapshot.AcrossRegions"> Copying Snapshots Across Amazon Web Services Regions</a> in the <i>Amazon Aurora User Guide</i>.</p></li>
     /// </ul>
     /// <p>Example: <code>my-cluster-snapshot1</code></p>
     pub fn source_db_cluster_snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -139,15 +138,14 @@ impl CopyDBClusterSnapshotFluentBuilder {
         self
     }
     /// <p>The identifier of the DB cluster snapshot to copy. This parameter isn't case-sensitive.</p>
-    /// <p>You can't copy an encrypted, shared DB cluster snapshot from one Amazon Web Services Region to another.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
-    /// <p>Must specify a valid system snapshot in the "available" state.</p></li>
+    /// <p>Must specify a valid source snapshot in the "available" state.</p></li>
     /// <li>
     /// <p>If the source snapshot is in the same Amazon Web Services Region as the copy, specify a valid DB snapshot identifier.</p></li>
     /// <li>
-    /// <p>If the source snapshot is in a different Amazon Web Services Region than the copy, specify a valid DB cluster snapshot ARN. For more information, go to <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_CopySnapshot.html#USER_CopySnapshot.AcrossRegions"> Copying Snapshots Across Amazon Web Services Regions</a> in the <i>Amazon Aurora User Guide</i>.</p></li>
+    /// <p>If the source snapshot is in a different Amazon Web Services Region than the copy, specify a valid DB cluster snapshot ARN. You can also specify an ARN of a snapshot that is in a different account and a different Amazon Web Services Region. For more information, go to <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_CopySnapshot.html#USER_CopySnapshot.AcrossRegions"> Copying Snapshots Across Amazon Web Services Regions</a> in the <i>Amazon Aurora User Guide</i>.</p></li>
     /// </ul>
     /// <p>Example: <code>my-cluster-snapshot1</code></p>
     pub fn set_source_db_cluster_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -155,15 +153,14 @@ impl CopyDBClusterSnapshotFluentBuilder {
         self
     }
     /// <p>The identifier of the DB cluster snapshot to copy. This parameter isn't case-sensitive.</p>
-    /// <p>You can't copy an encrypted, shared DB cluster snapshot from one Amazon Web Services Region to another.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
-    /// <p>Must specify a valid system snapshot in the "available" state.</p></li>
+    /// <p>Must specify a valid source snapshot in the "available" state.</p></li>
     /// <li>
     /// <p>If the source snapshot is in the same Amazon Web Services Region as the copy, specify a valid DB snapshot identifier.</p></li>
     /// <li>
-    /// <p>If the source snapshot is in a different Amazon Web Services Region than the copy, specify a valid DB cluster snapshot ARN. For more information, go to <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_CopySnapshot.html#USER_CopySnapshot.AcrossRegions"> Copying Snapshots Across Amazon Web Services Regions</a> in the <i>Amazon Aurora User Guide</i>.</p></li>
+    /// <p>If the source snapshot is in a different Amazon Web Services Region than the copy, specify a valid DB cluster snapshot ARN. You can also specify an ARN of a snapshot that is in a different account and a different Amazon Web Services Region. For more information, go to <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_CopySnapshot.html#USER_CopySnapshot.AcrossRegions"> Copying Snapshots Across Amazon Web Services Regions</a> in the <i>Amazon Aurora User Guide</i>.</p></li>
     /// </ul>
     /// <p>Example: <code>my-cluster-snapshot1</code></p>
     pub fn get_source_db_cluster_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {

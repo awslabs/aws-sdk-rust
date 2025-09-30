@@ -2,7 +2,7 @@
 
 /// <p>This data type is used as a response element to <code>DownloadDBLogFilePortion</code>.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DownloadDbLogFilePortionOutput {
     /// <p>Entries from the specified log file.</p>
     pub log_file_data: ::std::option::Option<::std::string::String>,
@@ -26,6 +26,16 @@ impl DownloadDbLogFilePortionOutput {
         self.additional_data_pending
     }
 }
+impl ::std::fmt::Debug for DownloadDbLogFilePortionOutput {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("DownloadDbLogFilePortionOutput");
+        formatter.field("log_file_data", &"*** Sensitive Data Redacted ***");
+        formatter.field("marker", &self.marker);
+        formatter.field("additional_data_pending", &self.additional_data_pending);
+        formatter.field("_request_id", &self._request_id);
+        formatter.finish()
+    }
+}
 impl ::aws_types::request_id::RequestId for DownloadDbLogFilePortionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
@@ -39,7 +49,7 @@ impl DownloadDbLogFilePortionOutput {
 }
 
 /// A builder for [`DownloadDbLogFilePortionOutput`](crate::operation::download_db_log_file_portion::DownloadDbLogFilePortionOutput).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct DownloadDbLogFilePortionOutputBuilder {
     pub(crate) log_file_data: ::std::option::Option<::std::string::String>,
@@ -107,5 +117,15 @@ impl DownloadDbLogFilePortionOutputBuilder {
             additional_data_pending: self.additional_data_pending,
             _request_id: self._request_id,
         }
+    }
+}
+impl ::std::fmt::Debug for DownloadDbLogFilePortionOutputBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("DownloadDbLogFilePortionOutputBuilder");
+        formatter.field("log_file_data", &"*** Sensitive Data Redacted ***");
+        formatter.field("marker", &self.marker);
+        formatter.field("additional_data_pending", &self.additional_data_pending);
+        formatter.field("_request_id", &self._request_id);
+        formatter.finish()
     }
 }

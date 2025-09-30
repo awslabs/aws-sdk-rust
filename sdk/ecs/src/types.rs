@@ -155,7 +155,59 @@ pub use crate::types::_cluster_service_connect_defaults_request::ClusterServiceC
 
 pub use crate::types::_capacity_provider::CapacityProvider;
 
+pub use crate::types::_capacity_provider_type::CapacityProviderType;
+
 pub use crate::types::_capacity_provider_update_status::CapacityProviderUpdateStatus;
+
+pub use crate::types::_managed_instances_provider::ManagedInstancesProvider;
+
+pub use crate::types::_propagate_mi_tags::PropagateMiTags;
+
+pub use crate::types::_instance_launch_template::InstanceLaunchTemplate;
+
+pub use crate::types::_instance_requirements_request::InstanceRequirementsRequest;
+
+pub use crate::types::_network_bandwidth_gbps_request::NetworkBandwidthGbpsRequest;
+
+pub use crate::types::_accelerator_total_memory_mib_request::AcceleratorTotalMemoryMiBRequest;
+
+pub use crate::types::_accelerator_name::AcceleratorName;
+
+pub use crate::types::_accelerator_manufacturer::AcceleratorManufacturer;
+
+pub use crate::types::_accelerator_count_request::AcceleratorCountRequest;
+
+pub use crate::types::_accelerator_type::AcceleratorType;
+
+pub use crate::types::_baseline_ebs_bandwidth_mbps_request::BaselineEbsBandwidthMbpsRequest;
+
+pub use crate::types::_total_local_storage_gb_request::TotalLocalStorageGbRequest;
+
+pub use crate::types::_local_storage_type::LocalStorageType;
+
+pub use crate::types::_local_storage::LocalStorage;
+
+pub use crate::types::_network_interface_count_request::NetworkInterfaceCountRequest;
+
+pub use crate::types::_burstable_performance::BurstablePerformance;
+
+pub use crate::types::_bare_metal::BareMetal;
+
+pub use crate::types::_instance_generation::InstanceGeneration;
+
+pub use crate::types::_memory_gib_per_v_cpu_request::MemoryGiBPerVCpuRequest;
+
+pub use crate::types::_cpu_manufacturer::CpuManufacturer;
+
+pub use crate::types::_memory_mib_request::MemoryMiBRequest;
+
+pub use crate::types::_v_cpu_count_range_request::VCpuCountRangeRequest;
+
+pub use crate::types::_managed_instances_monitoring_options::ManagedInstancesMonitoringOptions;
+
+pub use crate::types::_managed_instances_storage_configuration::ManagedInstancesStorageConfiguration;
+
+pub use crate::types::_managed_instances_network_configuration::ManagedInstancesNetworkConfiguration;
 
 pub use crate::types::_auto_scaling_group_provider::AutoScalingGroupProvider;
 
@@ -168,6 +220,10 @@ pub use crate::types::_managed_scaling::ManagedScaling;
 pub use crate::types::_managed_scaling_status::ManagedScalingStatus;
 
 pub use crate::types::_capacity_provider_status::CapacityProviderStatus;
+
+pub use crate::types::_update_managed_instances_provider_configuration::UpdateManagedInstancesProviderConfiguration;
+
+pub use crate::types::_instance_launch_template_update::InstanceLaunchTemplateUpdate;
 
 pub use crate::types::_auto_scaling_group_provider_update::AutoScalingGroupProviderUpdate;
 
@@ -375,6 +431,18 @@ pub use crate::types::_cluster_field::ClusterField;
 
 pub use crate::types::_capacity_provider_field::CapacityProviderField;
 
+pub use crate::types::_create_managed_instances_provider_configuration::CreateManagedInstancesProviderConfiguration;
+
+mod _accelerator_count_request;
+
+mod _accelerator_manufacturer;
+
+mod _accelerator_name;
+
+mod _accelerator_total_memory_mib_request;
+
+mod _accelerator_type;
+
 mod _advanced_configuration;
 
 mod _agent_update_status;
@@ -397,6 +465,12 @@ mod _availability_zone_rebalancing;
 
 mod _aws_vpc_configuration;
 
+mod _bare_metal;
+
+mod _baseline_ebs_bandwidth_mbps_request;
+
+mod _burstable_performance;
+
 mod _capacity_provider;
 
 mod _capacity_provider_field;
@@ -404,6 +478,8 @@ mod _capacity_provider_field;
 mod _capacity_provider_status;
 
 mod _capacity_provider_strategy_item;
+
+mod _capacity_provider_type;
 
 mod _capacity_provider_update_status;
 
@@ -450,6 +526,10 @@ mod _container_restart_policy;
 mod _container_state_change;
 
 mod _cpu_architecture;
+
+mod _cpu_manufacturer;
+
+mod _create_managed_instances_provider_configuration;
 
 mod _created_at;
 
@@ -529,11 +609,19 @@ mod _inference_accelerator;
 
 mod _inference_accelerator_override;
 
+mod _instance_generation;
+
 mod _instance_health_check_result;
 
 mod _instance_health_check_state;
 
 mod _instance_health_check_type;
+
+mod _instance_launch_template;
+
+mod _instance_launch_template_update;
+
+mod _instance_requirements_request;
 
 mod _ipc_mode;
 
@@ -547,6 +635,10 @@ mod _linux_parameters;
 
 mod _load_balancer;
 
+mod _local_storage;
+
+mod _local_storage_type;
+
 mod _log_configuration;
 
 mod _log_driver;
@@ -559,6 +651,14 @@ mod _managed_agent_state_change;
 
 mod _managed_draining;
 
+mod _managed_instances_monitoring_options;
+
+mod _managed_instances_network_configuration;
+
+mod _managed_instances_provider;
+
+mod _managed_instances_storage_configuration;
+
 mod _managed_scaling;
 
 mod _managed_scaling_status;
@@ -567,13 +667,21 @@ mod _managed_storage_configuration;
 
 mod _managed_termination_protection;
 
+mod _memory_gib_per_v_cpu_request;
+
+mod _memory_mib_request;
+
 mod _mount_point;
+
+mod _network_bandwidth_gbps_request;
 
 mod _network_binding;
 
 mod _network_configuration;
 
 mod _network_interface;
+
+mod _network_interface_count_request;
 
 mod _network_mode;
 
@@ -594,6 +702,8 @@ mod _platform_device;
 mod _platform_device_type;
 
 mod _port_mapping;
+
+mod _propagate_mi_tags;
 
 mod _propagate_tags;
 
@@ -735,11 +845,17 @@ mod _timeout_configuration;
 
 mod _tmpfs;
 
+mod _total_local_storage_gb_request;
+
 mod _transport_protocol;
 
 mod _ulimit;
 
 mod _ulimit_name;
+
+mod _update_managed_instances_provider_configuration;
+
+mod _v_cpu_count_range_request;
 
 mod _version_consistency;
 

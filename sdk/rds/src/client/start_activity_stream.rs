@@ -13,8 +13,8 @@ impl super::Client {
     ///   - [`kinesis_stream_name(Option<String>)`](crate::operation::start_activity_stream::StartActivityStreamOutput::kinesis_stream_name): <p>The name of the Amazon Kinesis data stream to be used for the database activity stream.</p>
     ///   - [`status(Option<ActivityStreamStatus>)`](crate::operation::start_activity_stream::StartActivityStreamOutput::status): <p>The status of the database activity stream.</p>
     ///   - [`mode(Option<ActivityStreamMode>)`](crate::operation::start_activity_stream::StartActivityStreamOutput::mode): <p>The mode of the database activity stream.</p>
-    ///   - [`apply_immediately(Option<bool>)`](crate::operation::start_activity_stream::StartActivityStreamOutput::apply_immediately): <p>Indicates whether or not the database activity stream will start as soon as possible, regardless of the maintenance window for the database.</p>
     ///   - [`engine_native_audit_fields_included(Option<bool>)`](crate::operation::start_activity_stream::StartActivityStreamOutput::engine_native_audit_fields_included): <p>Indicates whether engine-native audit fields are included in the database activity stream.</p>
+    ///   - [`apply_immediately(Option<bool>)`](crate::operation::start_activity_stream::StartActivityStreamOutput::apply_immediately): <p>Indicates whether or not the database activity stream will start as soon as possible, regardless of the maintenance window for the database.</p>
     /// - On failure, responds with [`SdkError<StartActivityStreamError>`](crate::operation::start_activity_stream::StartActivityStreamError)
     pub fn start_activity_stream(&self) -> crate::operation::start_activity_stream::builders::StartActivityStreamFluentBuilder {
         crate::operation::start_activity_stream::builders::StartActivityStreamFluentBuilder::new(self.handle.clone())

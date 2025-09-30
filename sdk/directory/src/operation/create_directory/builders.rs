@@ -266,4 +266,18 @@ impl CreateDirectoryFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }
+    /// <p>The network type for your directory. Simple AD supports IPv4 and Dual-stack only.</p>
+    pub fn network_type(mut self, input: crate::types::NetworkType) -> Self {
+        self.inner = self.inner.network_type(input);
+        self
+    }
+    /// <p>The network type for your directory. Simple AD supports IPv4 and Dual-stack only.</p>
+    pub fn set_network_type(mut self, input: ::std::option::Option<crate::types::NetworkType>) -> Self {
+        self.inner = self.inner.set_network_type(input);
+        self
+    }
+    /// <p>The network type for your directory. Simple AD supports IPv4 and Dual-stack only.</p>
+    pub fn get_network_type(&self) -> &::std::option::Option<crate::types::NetworkType> {
+        self.inner.get_network_type()
+    }
 }

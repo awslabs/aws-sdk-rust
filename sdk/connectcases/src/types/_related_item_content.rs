@@ -6,8 +6,12 @@
 pub enum RelatedItemContent {
     /// <p>Represents the content of a comment to be returned to agents.</p>
     Comment(crate::types::CommentContent),
+    /// Content for a related Connect case
+    ConnectCase(crate::types::ConnectCaseContent),
     /// <p>Represents the content of a contact to be returned to agents.</p>
     Contact(crate::types::ContactContent),
+    /// Content for a custom related item
+    Custom(crate::types::CustomContent),
     /// <p>Represents the content of a File to be returned to agents.</p>
     File(crate::types::FileContent),
     /// <p>Represents the content of an SLA to be returned to agents.</p>
@@ -36,6 +40,19 @@ impl RelatedItemContent {
     pub fn is_comment(&self) -> bool {
         self.as_comment().is_ok()
     }
+    /// Tries to convert the enum instance into [`ConnectCase`](crate::types::RelatedItemContent::ConnectCase), extracting the inner [`ConnectCaseContent`](crate::types::ConnectCaseContent).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_connect_case(&self) -> ::std::result::Result<&crate::types::ConnectCaseContent, &Self> {
+        if let RelatedItemContent::ConnectCase(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`ConnectCase`](crate::types::RelatedItemContent::ConnectCase).
+    pub fn is_connect_case(&self) -> bool {
+        self.as_connect_case().is_ok()
+    }
     /// Tries to convert the enum instance into [`Contact`](crate::types::RelatedItemContent::Contact), extracting the inner [`ContactContent`](crate::types::ContactContent).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_contact(&self) -> ::std::result::Result<&crate::types::ContactContent, &Self> {
@@ -48,6 +65,19 @@ impl RelatedItemContent {
     /// Returns true if this is a [`Contact`](crate::types::RelatedItemContent::Contact).
     pub fn is_contact(&self) -> bool {
         self.as_contact().is_ok()
+    }
+    /// Tries to convert the enum instance into [`Custom`](crate::types::RelatedItemContent::Custom), extracting the inner [`CustomContent`](crate::types::CustomContent).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_custom(&self) -> ::std::result::Result<&crate::types::CustomContent, &Self> {
+        if let RelatedItemContent::Custom(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`Custom`](crate::types::RelatedItemContent::Custom).
+    pub fn is_custom(&self) -> bool {
+        self.as_custom().is_ok()
     }
     /// Tries to convert the enum instance into [`File`](crate::types::RelatedItemContent::File), extracting the inner [`FileContent`](crate::types::FileContent).
     /// Returns `Err(&Self)` if it can't be converted.

@@ -123,7 +123,7 @@ pub fn de_delete_custom_db_engine_version(
                 builder = builder.set_engine(var_1);
             }
             ,
-            s if s.matches("EngineVersion") /* EngineVersion com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$EngineVersion */ =>  {
+            s if s.matches("MajorEngineVersion") /* MajorEngineVersion com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$MajorEngineVersion */ =>  {
                 let var_2 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -133,10 +133,10 @@ pub fn de_delete_custom_db_engine_version(
                         ?
                     )
                 ;
-                builder = builder.set_engine_version(var_2);
+                builder = builder.set_major_engine_version(var_2);
             }
             ,
-            s if s.matches("DBParameterGroupFamily") /* DBParameterGroupFamily com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$DBParameterGroupFamily */ =>  {
+            s if s.matches("EngineVersion") /* EngineVersion com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$EngineVersion */ =>  {
                 let var_3 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -146,10 +146,10 @@ pub fn de_delete_custom_db_engine_version(
                         ?
                     )
                 ;
-                builder = builder.set_db_parameter_group_family(var_3);
+                builder = builder.set_engine_version(var_3);
             }
             ,
-            s if s.matches("DBEngineDescription") /* DBEngineDescription com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$DBEngineDescription */ =>  {
+            s if s.matches("DatabaseInstallationFilesS3BucketName") /* DatabaseInstallationFilesS3BucketName com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$DatabaseInstallationFilesS3BucketName */ =>  {
                 let var_4 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -159,10 +159,10 @@ pub fn de_delete_custom_db_engine_version(
                         ?
                     )
                 ;
-                builder = builder.set_db_engine_description(var_4);
+                builder = builder.set_database_installation_files_s3_bucket_name(var_4);
             }
             ,
-            s if s.matches("DBEngineVersionDescription") /* DBEngineVersionDescription com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$DBEngineVersionDescription */ =>  {
+            s if s.matches("DatabaseInstallationFilesS3Prefix") /* DatabaseInstallationFilesS3Prefix com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$DatabaseInstallationFilesS3Prefix */ =>  {
                 let var_5 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -172,30 +172,36 @@ pub fn de_delete_custom_db_engine_version(
                         ?
                     )
                 ;
-                builder = builder.set_db_engine_version_description(var_5);
+                builder = builder.set_database_installation_files_s3_prefix(var_5);
             }
             ,
-            s if s.matches("DefaultCharacterSet") /* DefaultCharacterSet com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$DefaultCharacterSet */ =>  {
+            s if s.matches("CustomDBEngineVersionManifest") /* CustomDBEngineVersionManifest com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$CustomDBEngineVersionManifest */ =>  {
                 let var_6 =
                     Some(
-                        crate::protocol_serde::shape_character_set::de_character_set(&mut tag)
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
                         ?
                     )
                 ;
-                builder = builder.set_default_character_set(var_6);
+                builder = builder.set_custom_db_engine_version_manifest(var_6);
             }
             ,
-            s if s.matches("Image") /* Image com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$Image */ =>  {
+            s if s.matches("DBParameterGroupFamily") /* DBParameterGroupFamily com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$DBParameterGroupFamily */ =>  {
                 let var_7 =
                     Some(
-                        crate::protocol_serde::shape_custom_db_engine_version_ami::de_custom_db_engine_version_ami(&mut tag)
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
                         ?
                     )
                 ;
-                builder = builder.set_image(var_7);
+                builder = builder.set_db_parameter_group_family(var_7);
             }
             ,
-            s if s.matches("DBEngineMediaType") /* DBEngineMediaType com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$DBEngineMediaType */ =>  {
+            s if s.matches("DBEngineDescription") /* DBEngineDescription com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$DBEngineDescription */ =>  {
                 let var_8 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -205,193 +211,11 @@ pub fn de_delete_custom_db_engine_version(
                         ?
                     )
                 ;
-                builder = builder.set_db_engine_media_type(var_8);
-            }
-            ,
-            s if s.matches("SupportedCharacterSets") /* SupportedCharacterSets com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$SupportedCharacterSets */ =>  {
-                let var_9 =
-                    Some(
-                        crate::protocol_serde::shape_supported_character_sets_list::de_supported_character_sets_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_supported_character_sets(var_9);
-            }
-            ,
-            s if s.matches("SupportedNcharCharacterSets") /* SupportedNcharCharacterSets com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$SupportedNcharCharacterSets */ =>  {
-                let var_10 =
-                    Some(
-                        crate::protocol_serde::shape_supported_character_sets_list::de_supported_character_sets_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_supported_nchar_character_sets(var_10);
-            }
-            ,
-            s if s.matches("ValidUpgradeTarget") /* ValidUpgradeTarget com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$ValidUpgradeTarget */ =>  {
-                let var_11 =
-                    Some(
-                        crate::protocol_serde::shape_valid_upgrade_target_list::de_valid_upgrade_target_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_valid_upgrade_target(var_11);
-            }
-            ,
-            s if s.matches("SupportedTimezones") /* SupportedTimezones com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$SupportedTimezones */ =>  {
-                let var_12 =
-                    Some(
-                        crate::protocol_serde::shape_supported_timezones_list::de_supported_timezones_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_supported_timezones(var_12);
-            }
-            ,
-            s if s.matches("ExportableLogTypes") /* ExportableLogTypes com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$ExportableLogTypes */ =>  {
-                let var_13 =
-                    Some(
-                        crate::protocol_serde::shape_log_type_list::de_log_type_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_exportable_log_types(var_13);
-            }
-            ,
-            s if s.matches("SupportsLogExportsToCloudwatchLogs") /* SupportsLogExportsToCloudwatchLogs com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$SupportsLogExportsToCloudwatchLogs */ =>  {
-                let var_14 =
-                    Some(
-                         {
-                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_supports_log_exports_to_cloudwatch_logs(var_14);
-            }
-            ,
-            s if s.matches("SupportsReadReplica") /* SupportsReadReplica com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$SupportsReadReplica */ =>  {
-                let var_15 =
-                    Some(
-                         {
-                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_supports_read_replica(var_15);
-            }
-            ,
-            s if s.matches("SupportedEngineModes") /* SupportedEngineModes com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$SupportedEngineModes */ =>  {
-                let var_16 =
-                    Some(
-                        crate::protocol_serde::shape_engine_mode_list::de_engine_mode_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_supported_engine_modes(var_16);
-            }
-            ,
-            s if s.matches("SupportedFeatureNames") /* SupportedFeatureNames com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$SupportedFeatureNames */ =>  {
-                let var_17 =
-                    Some(
-                        crate::protocol_serde::shape_feature_name_list::de_feature_name_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_supported_feature_names(var_17);
-            }
-            ,
-            s if s.matches("Status") /* Status com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$Status */ =>  {
-                let var_18 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_status(var_18);
-            }
-            ,
-            s if s.matches("SupportsParallelQuery") /* SupportsParallelQuery com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$SupportsParallelQuery */ =>  {
-                let var_19 =
-                    Some(
-                         {
-                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_supports_parallel_query(var_19);
-            }
-            ,
-            s if s.matches("SupportsGlobalDatabases") /* SupportsGlobalDatabases com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$SupportsGlobalDatabases */ =>  {
-                let var_20 =
-                    Some(
-                         {
-                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_supports_global_databases(var_20);
-            }
-            ,
-            s if s.matches("MajorEngineVersion") /* MajorEngineVersion com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$MajorEngineVersion */ =>  {
-                let var_21 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_major_engine_version(var_21);
-            }
-            ,
-            s if s.matches("DatabaseInstallationFilesS3BucketName") /* DatabaseInstallationFilesS3BucketName com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$DatabaseInstallationFilesS3BucketName */ =>  {
-                let var_22 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_database_installation_files_s3_bucket_name(var_22);
-            }
-            ,
-            s if s.matches("DatabaseInstallationFilesS3Prefix") /* DatabaseInstallationFilesS3Prefix com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$DatabaseInstallationFilesS3Prefix */ =>  {
-                let var_23 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_database_installation_files_s3_prefix(var_23);
+                builder = builder.set_db_engine_description(var_8);
             }
             ,
             s if s.matches("DBEngineVersionArn") /* DBEngineVersionArn com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$DBEngineVersionArn */ =>  {
-                let var_24 =
+                let var_9 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -400,11 +224,57 @@ pub fn de_delete_custom_db_engine_version(
                         ?
                     )
                 ;
-                builder = builder.set_db_engine_version_arn(var_24);
+                builder = builder.set_db_engine_version_arn(var_9);
+            }
+            ,
+            s if s.matches("DBEngineVersionDescription") /* DBEngineVersionDescription com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$DBEngineVersionDescription */ =>  {
+                let var_10 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_db_engine_version_description(var_10);
+            }
+            ,
+            s if s.matches("DefaultCharacterSet") /* DefaultCharacterSet com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$DefaultCharacterSet */ =>  {
+                let var_11 =
+                    Some(
+                        crate::protocol_serde::shape_character_set::de_character_set(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_default_character_set(var_11);
+            }
+            ,
+            s if s.matches("Image") /* Image com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$Image */ =>  {
+                let var_12 =
+                    Some(
+                        crate::protocol_serde::shape_custom_db_engine_version_ami::de_custom_db_engine_version_ami(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_image(var_12);
+            }
+            ,
+            s if s.matches("DBEngineMediaType") /* DBEngineMediaType com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$DBEngineMediaType */ =>  {
+                let var_13 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_db_engine_media_type(var_13);
             }
             ,
             s if s.matches("KMSKeyId") /* KMSKeyId com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$KMSKeyId */ =>  {
-                let var_25 =
+                let var_14 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -413,11 +283,11 @@ pub fn de_delete_custom_db_engine_version(
                         ?
                     )
                 ;
-                builder = builder.set_kms_key_id(var_25);
+                builder = builder.set_kms_key_id(var_14);
             }
             ,
             s if s.matches("CreateTime") /* CreateTime com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$CreateTime */ =>  {
-                let var_26 =
+                let var_15 =
                     Some(
                         ::aws_smithy_types::DateTime::from_str(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -427,21 +297,61 @@ pub fn de_delete_custom_db_engine_version(
                         ?
                     )
                 ;
-                builder = builder.set_create_time(var_26);
+                builder = builder.set_create_time(var_15);
             }
             ,
-            s if s.matches("TagList") /* TagList com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$TagList */ =>  {
-                let var_27 =
+            s if s.matches("SupportedCharacterSets") /* SupportedCharacterSets com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$SupportedCharacterSets */ =>  {
+                let var_16 =
                     Some(
-                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        crate::protocol_serde::shape_supported_character_sets_list::de_supported_character_sets_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_tag_list(var_27);
+                builder = builder.set_supported_character_sets(var_16);
             }
             ,
-            s if s.matches("SupportsBabelfish") /* SupportsBabelfish com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$SupportsBabelfish */ =>  {
-                let var_28 =
+            s if s.matches("SupportedNcharCharacterSets") /* SupportedNcharCharacterSets com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$SupportedNcharCharacterSets */ =>  {
+                let var_17 =
+                    Some(
+                        crate::protocol_serde::shape_supported_character_sets_list::de_supported_character_sets_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_supported_nchar_character_sets(var_17);
+            }
+            ,
+            s if s.matches("ValidUpgradeTarget") /* ValidUpgradeTarget com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$ValidUpgradeTarget */ =>  {
+                let var_18 =
+                    Some(
+                        crate::protocol_serde::shape_valid_upgrade_target_list::de_valid_upgrade_target_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_valid_upgrade_target(var_18);
+            }
+            ,
+            s if s.matches("SupportedTimezones") /* SupportedTimezones com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$SupportedTimezones */ =>  {
+                let var_19 =
+                    Some(
+                        crate::protocol_serde::shape_supported_timezones_list::de_supported_timezones_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_supported_timezones(var_19);
+            }
+            ,
+            s if s.matches("ExportableLogTypes") /* ExportableLogTypes com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$ExportableLogTypes */ =>  {
+                let var_20 =
+                    Some(
+                        crate::protocol_serde::shape_log_type_list::de_log_type_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_exportable_log_types(var_20);
+            }
+            ,
+            s if s.matches("SupportsLogExportsToCloudwatchLogs") /* SupportsLogExportsToCloudwatchLogs com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$SupportsLogExportsToCloudwatchLogs */ =>  {
+                let var_21 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -452,11 +362,46 @@ pub fn de_delete_custom_db_engine_version(
                         ?
                     )
                 ;
-                builder = builder.set_supports_babelfish(var_28);
+                builder = builder.set_supports_log_exports_to_cloudwatch_logs(var_21);
             }
             ,
-            s if s.matches("CustomDBEngineVersionManifest") /* CustomDBEngineVersionManifest com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$CustomDBEngineVersionManifest */ =>  {
-                let var_29 =
+            s if s.matches("SupportsReadReplica") /* SupportsReadReplica com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$SupportsReadReplica */ =>  {
+                let var_22 =
+                    Some(
+                         {
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_supports_read_replica(var_22);
+            }
+            ,
+            s if s.matches("SupportedEngineModes") /* SupportedEngineModes com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$SupportedEngineModes */ =>  {
+                let var_23 =
+                    Some(
+                        crate::protocol_serde::shape_engine_mode_list::de_engine_mode_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_supported_engine_modes(var_23);
+            }
+            ,
+            s if s.matches("SupportedFeatureNames") /* SupportedFeatureNames com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$SupportedFeatureNames */ =>  {
+                let var_24 =
+                    Some(
+                        crate::protocol_serde::shape_feature_name_list::de_feature_name_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_supported_feature_names(var_24);
+            }
+            ,
+            s if s.matches("Status") /* Status com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$Status */ =>  {
+                let var_25 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -465,7 +410,62 @@ pub fn de_delete_custom_db_engine_version(
                         ?
                     )
                 ;
-                builder = builder.set_custom_db_engine_version_manifest(var_29);
+                builder = builder.set_status(var_25);
+            }
+            ,
+            s if s.matches("SupportsParallelQuery") /* SupportsParallelQuery com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$SupportsParallelQuery */ =>  {
+                let var_26 =
+                    Some(
+                         {
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_supports_parallel_query(var_26);
+            }
+            ,
+            s if s.matches("SupportsGlobalDatabases") /* SupportsGlobalDatabases com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$SupportsGlobalDatabases */ =>  {
+                let var_27 =
+                    Some(
+                         {
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_supports_global_databases(var_27);
+            }
+            ,
+            s if s.matches("TagList") /* TagList com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$TagList */ =>  {
+                let var_28 =
+                    Some(
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_tag_list(var_28);
+            }
+            ,
+            s if s.matches("SupportsBabelfish") /* SupportsBabelfish com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$SupportsBabelfish */ =>  {
+                let var_29 =
+                    Some(
+                         {
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_supports_babelfish(var_29);
             }
             ,
             s if s.matches("SupportsLimitlessDatabase") /* SupportsLimitlessDatabase com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$SupportsLimitlessDatabase */ =>  {

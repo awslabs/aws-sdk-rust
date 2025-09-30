@@ -15,6 +15,7 @@
 ///     TargetState::Available => { /* ... */ },
 ///     TargetState::Registering => { /* ... */ },
 ///     TargetState::Unavailable => { /* ... */ },
+///     TargetState::Unused => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -49,6 +50,8 @@ pub enum TargetState {
     Registering,
     #[allow(missing_docs)] // documentation missing in model
     Unavailable,
+    #[allow(missing_docs)] // documentation missing in model
+    Unused,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -59,6 +62,7 @@ impl ::std::convert::From<&str> for TargetState {
             "AVAILABLE" => TargetState::Available,
             "REGISTERING" => TargetState::Registering,
             "UNAVAILABLE" => TargetState::Unavailable,
+            "UNUSED" => TargetState::Unused,
             other => TargetState::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -77,12 +81,13 @@ impl TargetState {
             TargetState::Available => "AVAILABLE",
             TargetState::Registering => "REGISTERING",
             TargetState::Unavailable => "UNAVAILABLE",
+            TargetState::Unused => "UNUSED",
             TargetState::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AVAILABLE", "REGISTERING", "UNAVAILABLE"]
+        &["AVAILABLE", "REGISTERING", "UNAVAILABLE", "UNUSED"]
     }
 }
 impl ::std::convert::AsRef<str> for TargetState {
@@ -108,6 +113,7 @@ impl ::std::fmt::Display for TargetState {
             TargetState::Available => write!(f, "AVAILABLE"),
             TargetState::Registering => write!(f, "REGISTERING"),
             TargetState::Unavailable => write!(f, "UNAVAILABLE"),
+            TargetState::Unused => write!(f, "UNUSED"),
             TargetState::Unknown(value) => write!(f, "{}", value),
         }
     }

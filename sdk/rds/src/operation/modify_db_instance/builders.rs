@@ -928,6 +928,26 @@ impl ModifyDBInstanceFluentBuilder {
     pub fn get_iops(&self) -> &::std::option::Option<i32> {
         self.inner.get_iops()
     }
+    /// <p>The storage throughput value for the DB instance.</p>
+    /// <p>This setting applies only to the <code>gp3</code> storage type.</p>
+    /// <p>This setting doesn't apply to Amazon Aurora or RDS Custom DB instances.</p>
+    pub fn storage_throughput(mut self, input: i32) -> Self {
+        self.inner = self.inner.storage_throughput(input);
+        self
+    }
+    /// <p>The storage throughput value for the DB instance.</p>
+    /// <p>This setting applies only to the <code>gp3</code> storage type.</p>
+    /// <p>This setting doesn't apply to Amazon Aurora or RDS Custom DB instances.</p>
+    pub fn set_storage_throughput(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.inner = self.inner.set_storage_throughput(input);
+        self
+    }
+    /// <p>The storage throughput value for the DB instance.</p>
+    /// <p>This setting applies only to the <code>gp3</code> storage type.</p>
+    /// <p>This setting doesn't apply to Amazon Aurora or RDS Custom DB instances.</p>
+    pub fn get_storage_throughput(&self) -> &::std::option::Option<i32> {
+        self.inner.get_storage_throughput()
+    }
     /// <p>The option group to associate the DB instance with.</p>
     /// <p>Changing this parameter doesn't result in an outage, with one exception. If the parameter change results in an option group that enables OEM, it can cause a brief period, lasting less than a second, during which new connections are rejected but existing connections aren't interrupted.</p>
     /// <p>The change is applied during the next maintenance window unless the <code>ApplyImmediately</code> parameter is enabled for this request.</p>
@@ -1225,6 +1245,20 @@ impl ModifyDBInstanceFluentBuilder {
     pub fn get_domain_dns_ips(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_domain_dns_ips()
     }
+    /// <p>Specifies whether to remove the DB instance from the Active Directory domain.</p>
+    pub fn disable_domain(mut self, input: bool) -> Self {
+        self.inner = self.inner.disable_domain(input);
+        self
+    }
+    /// <p>Specifies whether to remove the DB instance from the Active Directory domain.</p>
+    pub fn set_disable_domain(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_disable_domain(input);
+        self
+    }
+    /// <p>Specifies whether to remove the DB instance from the Active Directory domain.</p>
+    pub fn get_disable_domain(&self) -> &::std::option::Option<bool> {
+        self.inner.get_disable_domain()
+    }
     /// <p>Specifies whether to copy all tags from the DB instance to snapshots of the DB instance. By default, tags aren't copied.</p>
     /// <p>This setting doesn't apply to Amazon Aurora DB instances. Copying tags to snapshots is managed by the DB cluster. Setting this value for an Aurora DB instance has no effect on the DB cluster setting. For more information, see <code>ModifyDBCluster</code>.</p>
     pub fn copy_tags_to_snapshot(mut self, input: bool) -> Self {
@@ -1422,20 +1456,6 @@ impl ModifyDBInstanceFluentBuilder {
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
     pub fn get_domain_iam_role_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_domain_iam_role_name()
-    }
-    /// <p>Specifies whether to remove the DB instance from the Active Directory domain.</p>
-    pub fn disable_domain(mut self, input: bool) -> Self {
-        self.inner = self.inner.disable_domain(input);
-        self
-    }
-    /// <p>Specifies whether to remove the DB instance from the Active Directory domain.</p>
-    pub fn set_disable_domain(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.inner = self.inner.set_disable_domain(input);
-        self
-    }
-    /// <p>Specifies whether to remove the DB instance from the Active Directory domain.</p>
-    pub fn get_disable_domain(&self) -> &::std::option::Option<bool> {
-        self.inner.get_disable_domain()
     }
     /// <p>The order of priority in which an Aurora Replica is promoted to the primary instance after a failure of the existing primary instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.AuroraHighAvailability.html#Aurora.Managing.FaultTolerance"> Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
@@ -1849,46 +1869,6 @@ impl ModifyDBInstanceFluentBuilder {
     pub fn get_replica_mode(&self) -> &::std::option::Option<crate::types::ReplicaMode> {
         self.inner.get_replica_mode()
     }
-    /// <p>Specifies whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB instance.</p>
-    /// <p>A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your on-premises network. For some use cases, a CoIP can provide lower latency for connections to the DB instance from outside of its virtual private cloud (VPC) on your local network.</p>
-    /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
-    /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
-    pub fn enable_customer_owned_ip(mut self, input: bool) -> Self {
-        self.inner = self.inner.enable_customer_owned_ip(input);
-        self
-    }
-    /// <p>Specifies whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB instance.</p>
-    /// <p>A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your on-premises network. For some use cases, a CoIP can provide lower latency for connections to the DB instance from outside of its virtual private cloud (VPC) on your local network.</p>
-    /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
-    /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
-    pub fn set_enable_customer_owned_ip(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.inner = self.inner.set_enable_customer_owned_ip(input);
-        self
-    }
-    /// <p>Specifies whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB instance.</p>
-    /// <p>A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your on-premises network. For some use cases, a CoIP can provide lower latency for connections to the DB instance from outside of its virtual private cloud (VPC) on your local network.</p>
-    /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
-    /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
-    pub fn get_enable_customer_owned_ip(&self) -> &::std::option::Option<bool> {
-        self.inner.get_enable_customer_owned_ip()
-    }
-    /// <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.</p>
-    /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
-    pub fn aws_backup_recovery_point_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.aws_backup_recovery_point_arn(input.into());
-        self
-    }
-    /// <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.</p>
-    /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
-    pub fn set_aws_backup_recovery_point_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_aws_backup_recovery_point_arn(input);
-        self
-    }
-    /// <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.</p>
-    /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
-    pub fn get_aws_backup_recovery_point_arn(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_aws_backup_recovery_point_arn()
-    }
     /// <p>The automation mode of the RDS Custom DB instance. If <code>full</code>, the DB instance automates monitoring and instance recovery. If <code>all paused</code>, the instance pauses automation for the duration set by <code>ResumeFullAutomationModeMinutes</code>.</p>
     pub fn automation_mode(mut self, input: crate::types::AutomationMode) -> Self {
         self.inner = self.inner.automation_mode(input);
@@ -1941,6 +1921,29 @@ impl ModifyDBInstanceFluentBuilder {
     pub fn get_resume_full_automation_mode_minutes(&self) -> &::std::option::Option<i32> {
         self.inner.get_resume_full_automation_mode_minutes()
     }
+    /// <p>Specifies whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB instance.</p>
+    /// <p>A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your on-premises network. For some use cases, a CoIP can provide lower latency for connections to the DB instance from outside of its virtual private cloud (VPC) on your local network.</p>
+    /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
+    pub fn enable_customer_owned_ip(mut self, input: bool) -> Self {
+        self.inner = self.inner.enable_customer_owned_ip(input);
+        self
+    }
+    /// <p>Specifies whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB instance.</p>
+    /// <p>A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your on-premises network. For some use cases, a CoIP can provide lower latency for connections to the DB instance from outside of its virtual private cloud (VPC) on your local network.</p>
+    /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
+    pub fn set_enable_customer_owned_ip(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_enable_customer_owned_ip(input);
+        self
+    }
+    /// <p>Specifies whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB instance.</p>
+    /// <p>A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your on-premises network. For some use cases, a CoIP can provide lower latency for connections to the DB instance from outside of its virtual private cloud (VPC) on your local network.</p>
+    /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
+    pub fn get_enable_customer_owned_ip(&self) -> &::std::option::Option<bool> {
+        self.inner.get_enable_customer_owned_ip()
+    }
     /// <p>The network type of the DB instance.</p>
     /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i></p>
@@ -1964,25 +1967,22 @@ impl ModifyDBInstanceFluentBuilder {
     pub fn get_network_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_network_type()
     }
-    /// <p>The storage throughput value for the DB instance.</p>
-    /// <p>This setting applies only to the <code>gp3</code> storage type.</p>
-    /// <p>This setting doesn't apply to Amazon Aurora or RDS Custom DB instances.</p>
-    pub fn storage_throughput(mut self, input: i32) -> Self {
-        self.inner = self.inner.storage_throughput(input);
+    /// <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.</p>
+    /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
+    pub fn aws_backup_recovery_point_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.aws_backup_recovery_point_arn(input.into());
         self
     }
-    /// <p>The storage throughput value for the DB instance.</p>
-    /// <p>This setting applies only to the <code>gp3</code> storage type.</p>
-    /// <p>This setting doesn't apply to Amazon Aurora or RDS Custom DB instances.</p>
-    pub fn set_storage_throughput(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.inner = self.inner.set_storage_throughput(input);
+    /// <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.</p>
+    /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
+    pub fn set_aws_backup_recovery_point_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_aws_backup_recovery_point_arn(input);
         self
     }
-    /// <p>The storage throughput value for the DB instance.</p>
-    /// <p>This setting applies only to the <code>gp3</code> storage type.</p>
-    /// <p>This setting doesn't apply to Amazon Aurora or RDS Custom DB instances.</p>
-    pub fn get_storage_throughput(&self) -> &::std::option::Option<i32> {
-        self.inner.get_storage_throughput()
+    /// <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.</p>
+    /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
+    pub fn get_aws_backup_recovery_point_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_aws_backup_recovery_point_arn()
     }
     /// <p>Specifies whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
     /// <p>If the DB instance doesn't manage the master user password with Amazon Web Services Secrets Manager, you can turn on this management. In this case, you can't specify <code>MasterUserPassword</code>.</p>
@@ -2116,6 +2116,43 @@ impl ModifyDBInstanceFluentBuilder {
     pub fn get_master_user_secret_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_master_user_secret_kms_key_id()
     }
+    /// <p>Specifies whether the to convert your DB instance from the single-tenant conﬁguration to the multi-tenant conﬁguration. This parameter is supported only for RDS for Oracle CDB instances.</p>
+    /// <p>During the conversion, RDS creates an initial tenant database and associates the DB name, master user name, character set, and national character set metadata with this database. The tags associated with the instance also propagate to the initial tenant database. You can add more tenant databases to your DB instance by using the <code>CreateTenantDatabase</code> operation.</p><important>
+    /// <p>The conversion to the multi-tenant configuration is permanent and irreversible, so you can't later convert back to the single-tenant configuration. When you specify this parameter, you must also specify <code>ApplyImmediately</code>.</p>
+    /// </important>
+    pub fn multi_tenant(mut self, input: bool) -> Self {
+        self.inner = self.inner.multi_tenant(input);
+        self
+    }
+    /// <p>Specifies whether the to convert your DB instance from the single-tenant conﬁguration to the multi-tenant conﬁguration. This parameter is supported only for RDS for Oracle CDB instances.</p>
+    /// <p>During the conversion, RDS creates an initial tenant database and associates the DB name, master user name, character set, and national character set metadata with this database. The tags associated with the instance also propagate to the initial tenant database. You can add more tenant databases to your DB instance by using the <code>CreateTenantDatabase</code> operation.</p><important>
+    /// <p>The conversion to the multi-tenant configuration is permanent and irreversible, so you can't later convert back to the single-tenant configuration. When you specify this parameter, you must also specify <code>ApplyImmediately</code>.</p>
+    /// </important>
+    pub fn set_multi_tenant(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_multi_tenant(input);
+        self
+    }
+    /// <p>Specifies whether the to convert your DB instance from the single-tenant conﬁguration to the multi-tenant conﬁguration. This parameter is supported only for RDS for Oracle CDB instances.</p>
+    /// <p>During the conversion, RDS creates an initial tenant database and associates the DB name, master user name, character set, and national character set metadata with this database. The tags associated with the instance also propagate to the initial tenant database. You can add more tenant databases to your DB instance by using the <code>CreateTenantDatabase</code> operation.</p><important>
+    /// <p>The conversion to the multi-tenant configuration is permanent and irreversible, so you can't later convert back to the single-tenant configuration. When you specify this parameter, you must also specify <code>ApplyImmediately</code>.</p>
+    /// </important>
+    pub fn get_multi_tenant(&self) -> &::std::option::Option<bool> {
+        self.inner.get_multi_tenant()
+    }
+    /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.</p>
+    pub fn dedicated_log_volume(mut self, input: bool) -> Self {
+        self.inner = self.inner.dedicated_log_volume(input);
+        self
+    }
+    /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.</p>
+    pub fn set_dedicated_log_volume(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_dedicated_log_volume(input);
+        self
+    }
+    /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.</p>
+    pub fn get_dedicated_log_volume(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dedicated_log_volume()
+    }
     /// <p>The target Oracle DB engine when you convert a non-CDB to a CDB. This intermediate step is necessary to upgrade an Oracle Database 19c non-CDB to an Oracle Database 21c CDB.</p>
     /// <p>Note the following requirements:</p>
     /// <ul>
@@ -2183,43 +2220,6 @@ impl ModifyDBInstanceFluentBuilder {
     /// </ul>
     pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_engine()
-    }
-    /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.</p>
-    pub fn dedicated_log_volume(mut self, input: bool) -> Self {
-        self.inner = self.inner.dedicated_log_volume(input);
-        self
-    }
-    /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.</p>
-    pub fn set_dedicated_log_volume(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.inner = self.inner.set_dedicated_log_volume(input);
-        self
-    }
-    /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.</p>
-    pub fn get_dedicated_log_volume(&self) -> &::std::option::Option<bool> {
-        self.inner.get_dedicated_log_volume()
-    }
-    /// <p>Specifies whether the to convert your DB instance from the single-tenant conﬁguration to the multi-tenant conﬁguration. This parameter is supported only for RDS for Oracle CDB instances.</p>
-    /// <p>During the conversion, RDS creates an initial tenant database and associates the DB name, master user name, character set, and national character set metadata with this database. The tags associated with the instance also propagate to the initial tenant database. You can add more tenant databases to your DB instance by using the <code>CreateTenantDatabase</code> operation.</p><important>
-    /// <p>The conversion to the multi-tenant configuration is permanent and irreversible, so you can't later convert back to the single-tenant configuration. When you specify this parameter, you must also specify <code>ApplyImmediately</code>.</p>
-    /// </important>
-    pub fn multi_tenant(mut self, input: bool) -> Self {
-        self.inner = self.inner.multi_tenant(input);
-        self
-    }
-    /// <p>Specifies whether the to convert your DB instance from the single-tenant conﬁguration to the multi-tenant conﬁguration. This parameter is supported only for RDS for Oracle CDB instances.</p>
-    /// <p>During the conversion, RDS creates an initial tenant database and associates the DB name, master user name, character set, and national character set metadata with this database. The tags associated with the instance also propagate to the initial tenant database. You can add more tenant databases to your DB instance by using the <code>CreateTenantDatabase</code> operation.</p><important>
-    /// <p>The conversion to the multi-tenant configuration is permanent and irreversible, so you can't later convert back to the single-tenant configuration. When you specify this parameter, you must also specify <code>ApplyImmediately</code>.</p>
-    /// </important>
-    pub fn set_multi_tenant(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.inner = self.inner.set_multi_tenant(input);
-        self
-    }
-    /// <p>Specifies whether the to convert your DB instance from the single-tenant conﬁguration to the multi-tenant conﬁguration. This parameter is supported only for RDS for Oracle CDB instances.</p>
-    /// <p>During the conversion, RDS creates an initial tenant database and associates the DB name, master user name, character set, and national character set metadata with this database. The tags associated with the instance also propagate to the initial tenant database. You can add more tenant databases to your DB instance by using the <code>CreateTenantDatabase</code> operation.</p><important>
-    /// <p>The conversion to the multi-tenant configuration is permanent and irreversible, so you can't later convert back to the single-tenant configuration. When you specify this parameter, you must also specify <code>ApplyImmediately</code>.</p>
-    /// </important>
-    pub fn get_multi_tenant(&self) -> &::std::option::Option<bool> {
-        self.inner.get_multi_tenant()
     }
     /// <p>Specifies the authentication type for the master user. With IAM master user authentication, you can change the master DB user to use IAM database authentication.</p>
     /// <p>You can specify one of the following values:</p>

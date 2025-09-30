@@ -30,7 +30,9 @@ pub struct SftpConnectorConfig {
     /// <p><code>ftp.host.com ssh-rsa AAAAB3Nza...&lt;long-string-for-public-key</code></p>
     /// <p>Copy and paste this string into the <code>TrustedHostKeys</code> field for the <code>create-connector</code> command or into the <b>Trusted host keys</b> field in the console.</p>
     pub trusted_host_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>Specify the number of concurrent connections that your connector creates to the remote server. The default value is <code>5</code> (this is also the maximum value allowed).</p>
+    /// <p>Specify the number of concurrent connections that your connector creates to the remote server. The default value is <code>1</code>. The maximum values is <code>5</code>.</p><note>
+    /// <p>If you are using the Amazon Web Services Management Console, the default value is <code>5</code>.</p>
+    /// </note>
     /// <p>This parameter specifies the number of active connections that your connector can establish with the remote server at the same time. Increasing this value can enhance connector performance when transferring large file batches by enabling parallel operations.</p>
     pub max_concurrent_connections: i32,
 }
@@ -67,7 +69,9 @@ impl SftpConnectorConfig {
     pub fn trusted_host_keys(&self) -> &[::std::string::String] {
         self.trusted_host_keys.as_deref().unwrap_or_default()
     }
-    /// <p>Specify the number of concurrent connections that your connector creates to the remote server. The default value is <code>5</code> (this is also the maximum value allowed).</p>
+    /// <p>Specify the number of concurrent connections that your connector creates to the remote server. The default value is <code>1</code>. The maximum values is <code>5</code>.</p><note>
+    /// <p>If you are using the Amazon Web Services Management Console, the default value is <code>5</code>.</p>
+    /// </note>
     /// <p>This parameter specifies the number of active connections that your connector can establish with the remote server at the same time. Increasing this value can enhance connector performance when transferring large file batches by enabling parallel operations.</p>
     pub fn max_concurrent_connections(&self) -> i32 {
         self.max_concurrent_connections
@@ -189,19 +193,25 @@ impl SftpConnectorConfigBuilder {
     pub fn get_trusted_host_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.trusted_host_keys
     }
-    /// <p>Specify the number of concurrent connections that your connector creates to the remote server. The default value is <code>5</code> (this is also the maximum value allowed).</p>
+    /// <p>Specify the number of concurrent connections that your connector creates to the remote server. The default value is <code>1</code>. The maximum values is <code>5</code>.</p><note>
+    /// <p>If you are using the Amazon Web Services Management Console, the default value is <code>5</code>.</p>
+    /// </note>
     /// <p>This parameter specifies the number of active connections that your connector can establish with the remote server at the same time. Increasing this value can enhance connector performance when transferring large file batches by enabling parallel operations.</p>
     pub fn max_concurrent_connections(mut self, input: i32) -> Self {
         self.max_concurrent_connections = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specify the number of concurrent connections that your connector creates to the remote server. The default value is <code>5</code> (this is also the maximum value allowed).</p>
+    /// <p>Specify the number of concurrent connections that your connector creates to the remote server. The default value is <code>1</code>. The maximum values is <code>5</code>.</p><note>
+    /// <p>If you are using the Amazon Web Services Management Console, the default value is <code>5</code>.</p>
+    /// </note>
     /// <p>This parameter specifies the number of active connections that your connector can establish with the remote server at the same time. Increasing this value can enhance connector performance when transferring large file batches by enabling parallel operations.</p>
     pub fn set_max_concurrent_connections(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_concurrent_connections = input;
         self
     }
-    /// <p>Specify the number of concurrent connections that your connector creates to the remote server. The default value is <code>5</code> (this is also the maximum value allowed).</p>
+    /// <p>Specify the number of concurrent connections that your connector creates to the remote server. The default value is <code>1</code>. The maximum values is <code>5</code>.</p><note>
+    /// <p>If you are using the Amazon Web Services Management Console, the default value is <code>5</code>.</p>
+    /// </note>
     /// <p>This parameter specifies the number of active connections that your connector can establish with the remote server at the same time. Increasing this value can enhance connector performance when transferring large file batches by enabling parallel operations.</p>
     pub fn get_max_concurrent_connections(&self) -> &::std::option::Option<i32> {
         &self.max_concurrent_connections

@@ -178,6 +178,39 @@ impl From<crate::operation::create_service_level_objective::CreateServiceLevelOb
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_grouping_configuration::DeleteGroupingConfigurationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_grouping_configuration::DeleteGroupingConfigurationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_grouping_configuration::DeleteGroupingConfigurationError> for Error {
+    fn from(err: crate::operation::delete_grouping_configuration::DeleteGroupingConfigurationError) -> Self {
+        match err {
+            crate::operation::delete_grouping_configuration::DeleteGroupingConfigurationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_grouping_configuration::DeleteGroupingConfigurationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::delete_grouping_configuration::DeleteGroupingConfigurationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_grouping_configuration::DeleteGroupingConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_service_level_objective::DeleteServiceLevelObjectiveError, R>>
     for Error
@@ -268,6 +301,70 @@ impl From<crate::operation::get_service_level_objective::GetServiceLevelObjectiv
                 Error::ValidationException(inner)
             }
             crate::operation::get_service_level_objective::GetServiceLevelObjectiveError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_audit_findings::ListAuditFindingsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_audit_findings::ListAuditFindingsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_audit_findings::ListAuditFindingsError> for Error {
+    fn from(err: crate::operation::list_audit_findings::ListAuditFindingsError) -> Self {
+        match err {
+            crate::operation::list_audit_findings::ListAuditFindingsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_audit_findings::ListAuditFindingsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_audit_findings::ListAuditFindingsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_grouping_attribute_definitions::ListGroupingAttributeDefinitionsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_grouping_attribute_definitions::ListGroupingAttributeDefinitionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_grouping_attribute_definitions::ListGroupingAttributeDefinitionsError> for Error {
+    fn from(err: crate::operation::list_grouping_attribute_definitions::ListGroupingAttributeDefinitionsError) -> Self {
+        match err {
+            crate::operation::list_grouping_attribute_definitions::ListGroupingAttributeDefinitionsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_grouping_attribute_definitions::ListGroupingAttributeDefinitionsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_grouping_attribute_definitions::ListGroupingAttributeDefinitionsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_grouping_attribute_definitions::ListGroupingAttributeDefinitionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -439,6 +536,29 @@ impl From<crate::operation::list_services::ListServicesError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_service_states::ListServiceStatesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_service_states::ListServiceStatesError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_service_states::ListServiceStatesError> for Error {
+    fn from(err: crate::operation::list_service_states::ListServiceStatesError) -> Self {
+        match err {
+            crate::operation::list_service_states::ListServiceStatesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_service_states::ListServiceStatesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_service_states::ListServiceStatesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -461,6 +581,39 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
             }
             crate::operation::list_tags_for_resource::ListTagsForResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_grouping_configuration::PutGroupingConfigurationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_grouping_configuration::PutGroupingConfigurationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_grouping_configuration::PutGroupingConfigurationError> for Error {
+    fn from(err: crate::operation::put_grouping_configuration::PutGroupingConfigurationError) -> Self {
+        match err {
+            crate::operation::put_grouping_configuration::PutGroupingConfigurationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::put_grouping_configuration::PutGroupingConfigurationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::put_grouping_configuration::PutGroupingConfigurationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::put_grouping_configuration::PutGroupingConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

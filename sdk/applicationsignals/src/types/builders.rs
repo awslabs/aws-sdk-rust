@@ -39,7 +39,19 @@ pub use crate::types::_tag::TagBuilder;
 
 pub use crate::types::_service_level_objective_summary::ServiceLevelObjectiveSummaryBuilder;
 
+pub use crate::types::_grouping_configuration::GroupingConfigurationBuilder;
+
+pub use crate::types::_grouping_attribute_definition::GroupingAttributeDefinitionBuilder;
+
+pub use crate::types::_service_state::ServiceStateBuilder;
+
+pub use crate::types::_change_event::ChangeEventBuilder;
+
+pub use crate::types::_attribute_filter::AttributeFilterBuilder;
+
 pub use crate::types::_service_summary::ServiceSummaryBuilder;
+
+pub use crate::types::_service_group::ServiceGroupBuilder;
 
 pub use crate::types::_metric_reference::MetricReferenceBuilder;
 
@@ -54,6 +66,26 @@ pub use crate::types::_window::WindowBuilder;
 pub use crate::types::_service_dependent::ServiceDependentBuilder;
 
 pub use crate::types::_service_dependency::ServiceDependencyBuilder;
+
+pub use crate::types::_audit_finding::AuditFindingBuilder;
+
+pub use crate::types::_dependency_graph::DependencyGraphBuilder;
+
+pub use crate::types::_edge::EdgeBuilder;
+
+pub use crate::types::_node::NodeBuilder;
+
+pub use crate::types::_metric_graph::MetricGraphBuilder;
+
+pub use crate::types::_auditor_result::AuditorResultBuilder;
+
+pub use crate::types::_audit_target::AuditTargetBuilder;
+
+pub use crate::types::_service_operation_entity::ServiceOperationEntityBuilder;
+
+pub use crate::types::_service_entity::ServiceEntityBuilder;
+
+pub use crate::types::_service_level_objective_entity::ServiceLevelObjectiveEntityBuilder;
 
 pub use crate::types::_service::ServiceBuilder;
 

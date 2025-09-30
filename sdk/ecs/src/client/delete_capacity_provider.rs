@@ -4,6 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`capacity_provider(impl Into<String>)`](crate::operation::delete_capacity_provider::builders::DeleteCapacityProviderFluentBuilder::capacity_provider) / [`set_capacity_provider(Option<String>)`](crate::operation::delete_capacity_provider::builders::DeleteCapacityProviderFluentBuilder::set_capacity_provider):<br>required: **true**<br><p>The short name or full Amazon Resource Name (ARN) of the capacity provider to delete.</p><br>
+    ///   - [`cluster(impl Into<String>)`](crate::operation::delete_capacity_provider::builders::DeleteCapacityProviderFluentBuilder::cluster) / [`set_cluster(Option<String>)`](crate::operation::delete_capacity_provider::builders::DeleteCapacityProviderFluentBuilder::set_cluster):<br>required: **false**<br><p>The name of the cluster that contains the capacity provider to delete. Managed instances capacity providers are cluster-scoped and can only be deleted from their associated cluster.</p><br>
     /// - On success, responds with [`DeleteCapacityProviderOutput`](crate::operation::delete_capacity_provider::DeleteCapacityProviderOutput) with field(s):
     ///   - [`capacity_provider(Option<CapacityProvider>)`](crate::operation::delete_capacity_provider::DeleteCapacityProviderOutput::capacity_provider): <p>The details of the capacity provider.</p>
     /// - On failure, responds with [`SdkError<DeleteCapacityProviderError>`](crate::operation::delete_capacity_provider::DeleteCapacityProviderError)

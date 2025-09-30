@@ -29,11 +29,17 @@ pub(crate) mod shape_batch_update_exclusion_windows;
 
 pub(crate) mod shape_create_service_level_objective;
 
+pub(crate) mod shape_delete_grouping_configuration;
+
 pub(crate) mod shape_delete_service_level_objective;
 
 pub(crate) mod shape_get_service;
 
 pub(crate) mod shape_get_service_level_objective;
+
+pub(crate) mod shape_list_audit_findings;
+
+pub(crate) mod shape_list_grouping_attribute_definitions;
 
 pub(crate) mod shape_list_service_dependencies;
 
@@ -45,9 +51,13 @@ pub(crate) mod shape_list_service_level_objectives;
 
 pub(crate) mod shape_list_service_operations;
 
+pub(crate) mod shape_list_service_states;
+
 pub(crate) mod shape_list_services;
 
 pub(crate) mod shape_list_tags_for_resource;
+
+pub(crate) mod shape_put_grouping_configuration;
 
 pub(crate) mod shape_start_discovery;
 
@@ -77,6 +87,8 @@ pub(crate) mod shape_create_service_level_objective_input;
 
 pub(crate) mod shape_get_service_input;
 
+pub(crate) mod shape_list_audit_findings_input;
+
 pub(crate) mod shape_list_service_dependencies_input;
 
 pub(crate) mod shape_list_service_dependents_input;
@@ -84,6 +96,10 @@ pub(crate) mod shape_list_service_dependents_input;
 pub(crate) mod shape_list_service_level_objectives_input;
 
 pub(crate) mod shape_list_service_operations_input;
+
+pub(crate) mod shape_list_service_states_input;
+
+pub(crate) mod shape_put_grouping_configuration_input;
 
 pub(crate) mod shape_resource_not_found_exception;
 
@@ -99,6 +115,12 @@ pub(crate) mod shape_update_service_level_objective_input;
 
 pub(crate) mod shape_validation_exception;
 
+pub(crate) mod shape_attribute_filter;
+
+pub(crate) mod shape_audit_findings;
+
+pub(crate) mod shape_audit_target;
+
 pub(crate) mod shape_batch_update_exclusion_windows_errors;
 
 pub(crate) mod shape_burn_rate_configuration;
@@ -110,6 +132,12 @@ pub(crate) mod shape_exclusion_window;
 pub(crate) mod shape_exclusion_windows;
 
 pub(crate) mod shape_goal;
+
+pub(crate) mod shape_grouping_attribute_definition;
+
+pub(crate) mod shape_grouping_attribute_definitions;
+
+pub(crate) mod shape_grouping_configuration;
 
 pub(crate) mod shape_log_group_references;
 
@@ -135,6 +163,8 @@ pub(crate) mod shape_service_level_objective_summaries;
 
 pub(crate) mod shape_service_operations;
 
+pub(crate) mod shape_service_states;
+
 pub(crate) mod shape_service_summaries;
 
 pub(crate) mod shape_tag;
@@ -144,6 +174,10 @@ pub(crate) mod shape_tag_list;
 pub(crate) mod shape_attribute_maps;
 
 pub(crate) mod shape_attributes;
+
+pub(crate) mod shape_audit_finding;
+
+pub(crate) mod shape_audit_target_entity;
 
 pub(crate) mod shape_batch_update_exclusion_windows_error;
 
@@ -163,6 +197,8 @@ pub(crate) mod shape_service_dependency;
 
 pub(crate) mod shape_service_dependent;
 
+pub(crate) mod shape_service_groups;
+
 pub(crate) mod shape_service_level_indicator;
 
 pub(crate) mod shape_service_level_indicator_metric_config;
@@ -175,15 +211,29 @@ pub(crate) mod shape_service_level_objective_summary;
 
 pub(crate) mod shape_service_operation;
 
+pub(crate) mod shape_service_state;
+
 pub(crate) mod shape_service_summary;
 
 pub(crate) mod shape_window;
 
+pub(crate) mod shape_attribute_filters;
+
 pub(crate) mod shape_attribute_map;
+
+pub(crate) mod shape_auditor_results;
 
 pub(crate) mod shape_calendar_interval;
 
+pub(crate) mod shape_dependency_graph;
+
+pub(crate) mod shape_grouping_source_key_string_list;
+
+pub(crate) mod shape_latest_change_events;
+
 pub(crate) mod shape_metric_data_query;
+
+pub(crate) mod shape_metric_graph;
 
 pub(crate) mod shape_metric_reference;
 
@@ -193,14 +243,36 @@ pub(crate) mod shape_request_based_service_level_indicator_metric;
 
 pub(crate) mod shape_rolling_interval;
 
+pub(crate) mod shape_service_entity;
+
+pub(crate) mod shape_service_group;
+
 pub(crate) mod shape_service_level_indicator_metric;
 
+pub(crate) mod shape_service_level_objective_entity;
+
+pub(crate) mod shape_service_operation_entity;
+
+pub(crate) mod shape_auditor_result;
+
+pub(crate) mod shape_change_event;
+
 pub(crate) mod shape_dimensions;
+
+pub(crate) mod shape_edges;
 
 pub(crate) mod shape_metric_data_queries;
 
 pub(crate) mod shape_metric_stat;
 
+pub(crate) mod shape_nodes;
+
+pub(crate) mod shape_attribute_filter_values;
+
 pub(crate) mod shape_dimension;
 
+pub(crate) mod shape_edge;
+
 pub(crate) mod shape_metric;
+
+pub(crate) mod shape_node;

@@ -15,6 +15,7 @@
 ///     Compatibility::Ec2 => { /* ... */ },
 ///     Compatibility::External => { /* ... */ },
 ///     Compatibility::Fargate => { /* ... */ },
+///     Compatibility::ManagedInstances => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -49,6 +50,8 @@ pub enum Compatibility {
     External,
     #[allow(missing_docs)] // documentation missing in model
     Fargate,
+    #[allow(missing_docs)] // documentation missing in model
+    ManagedInstances,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -59,6 +62,7 @@ impl ::std::convert::From<&str> for Compatibility {
             "EC2" => Compatibility::Ec2,
             "EXTERNAL" => Compatibility::External,
             "FARGATE" => Compatibility::Fargate,
+            "MANAGED_INSTANCES" => Compatibility::ManagedInstances,
             other => Compatibility::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -77,12 +81,13 @@ impl Compatibility {
             Compatibility::Ec2 => "EC2",
             Compatibility::External => "EXTERNAL",
             Compatibility::Fargate => "FARGATE",
+            Compatibility::ManagedInstances => "MANAGED_INSTANCES",
             Compatibility::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["EC2", "EXTERNAL", "FARGATE"]
+        &["EC2", "EXTERNAL", "FARGATE", "MANAGED_INSTANCES"]
     }
 }
 impl ::std::convert::AsRef<str> for Compatibility {
@@ -108,6 +113,7 @@ impl ::std::fmt::Display for Compatibility {
             Compatibility::Ec2 => write!(f, "EC2"),
             Compatibility::External => write!(f, "EXTERNAL"),
             Compatibility::Fargate => write!(f, "FARGATE"),
+            Compatibility::ManagedInstances => write!(f, "MANAGED_INSTANCES"),
             Compatibility::Unknown(value) => write!(f, "{}", value),
         }
     }

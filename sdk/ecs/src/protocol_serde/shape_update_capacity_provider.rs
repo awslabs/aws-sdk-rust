@@ -39,6 +39,21 @@ pub fn de_update_capacity_provider_http_error(
             }
             tmp
         }),
+        "ClusterNotFoundException" => crate::operation::update_capacity_provider::UpdateCapacityProviderError::ClusterNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ClusterNotFoundExceptionBuilder::default();
+                output = crate::protocol_serde::shape_cluster_not_found_exception::de_cluster_not_found_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::update_capacity_provider::UpdateCapacityProviderError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "InvalidParameterException" => crate::operation::update_capacity_provider::UpdateCapacityProviderError::InvalidParameterException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -61,6 +76,22 @@ pub fn de_update_capacity_provider_http_error(
                 let mut output = crate::types::error::builders::ServerExceptionBuilder::default();
                 output = crate::protocol_serde::shape_server_exception::de_server_exception_json_err(_response_body, output)
                     .map_err(crate::operation::update_capacity_provider::UpdateCapacityProviderError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "UnsupportedFeatureException" => crate::operation::update_capacity_provider::UpdateCapacityProviderError::UnsupportedFeatureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::UnsupportedFeatureExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_unsupported_feature_exception::de_unsupported_feature_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::update_capacity_provider::UpdateCapacityProviderError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };

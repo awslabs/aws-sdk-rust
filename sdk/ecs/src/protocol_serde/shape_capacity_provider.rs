@@ -28,6 +28,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "cluster" => {
+                            builder = builder.set_cluster(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "status" => {
                             builder = builder.set_status(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -38,6 +45,11 @@ where
                         "autoScalingGroupProvider" => {
                             builder = builder.set_auto_scaling_group_provider(
                                 crate::protocol_serde::shape_auto_scaling_group_provider::de_auto_scaling_group_provider(tokens)?,
+                            );
+                        }
+                        "managedInstancesProvider" => {
+                            builder = builder.set_managed_instances_provider(
+                                crate::protocol_serde::shape_managed_instances_provider::de_managed_instances_provider(tokens)?,
                             );
                         }
                         "updateStatus" => {
@@ -56,6 +68,13 @@ where
                         }
                         "tags" => {
                             builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens)?);
+                        }
+                        "type" => {
+                            builder = builder.set_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapacityProviderType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

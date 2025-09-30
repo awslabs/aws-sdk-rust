@@ -142,17 +142,17 @@ impl GetCaseAuditEventsFluentBuilder {
     pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_domain_id()
     }
-    /// <p>The maximum number of audit events to return. The current maximum supported value is 25. This is also the default when no other value is provided.</p>
+    /// <p>The maximum number of audit events to return. When no value is provided, 25 is the default.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>The maximum number of audit events to return. The current maximum supported value is 25. This is also the default when no other value is provided.</p>
+    /// <p>The maximum number of audit events to return. When no value is provided, 25 is the default.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>The maximum number of audit events to return. The current maximum supported value is 25. This is also the default when no other value is provided.</p>
+    /// <p>The maximum number of audit events to return. When no value is provided, 25 is the default.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }

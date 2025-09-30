@@ -263,6 +263,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateCapacit
 pub enum CreateCapacityProviderError {
     /// <p>These errors are usually caused by a client action. This client action might be using an action or resource on behalf of a user that doesn't have permissions to use the action or resource. Or, it might be specifying an identifier that isn't valid.</p>
     ClientException(crate::types::error::ClientException),
+    /// <p>The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>. Amazon ECS clusters are Region specific.</p>
+    ClusterNotFoundException(crate::types::error::ClusterNotFoundException),
     /// <p>The specified parameter isn't valid. Review the available parameters for the API request.</p>
     /// <p>For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon ECS service event messages</a>.</p>
     InvalidParameterException(crate::types::error::InvalidParameterException),
@@ -270,6 +272,8 @@ pub enum CreateCapacityProviderError {
     LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::types::error::ServerException),
+    /// <p>The specified task isn't supported in this Region.</p>
+    UnsupportedFeatureException(crate::types::error::UnsupportedFeatureException),
     /// <p>There's already a current Amazon ECS container agent update in progress on the container instance that's specified. If the container agent becomes disconnected while it's in a transitional stage, such as <code>PENDING</code> or <code>STAGING</code>, the update process can get stuck in that state. However, when the agent reconnects, it resumes where it stopped previously.</p>
     UpdateInProgressException(crate::types::error::UpdateInProgressException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -306,9 +310,11 @@ impl CreateCapacityProviderError {
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::ClientException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ClusterNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidParameterException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::LimitExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ServerException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::UnsupportedFeatureException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::UpdateInProgressException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
@@ -316,6 +322,10 @@ impl CreateCapacityProviderError {
     /// Returns `true` if the error kind is `CreateCapacityProviderError::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(self, Self::ClientException(_))
+    }
+    /// Returns `true` if the error kind is `CreateCapacityProviderError::ClusterNotFoundException`.
+    pub fn is_cluster_not_found_exception(&self) -> bool {
+        matches!(self, Self::ClusterNotFoundException(_))
     }
     /// Returns `true` if the error kind is `CreateCapacityProviderError::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
@@ -329,6 +339,10 @@ impl CreateCapacityProviderError {
     pub fn is_server_exception(&self) -> bool {
         matches!(self, Self::ServerException(_))
     }
+    /// Returns `true` if the error kind is `CreateCapacityProviderError::UnsupportedFeatureException`.
+    pub fn is_unsupported_feature_exception(&self) -> bool {
+        matches!(self, Self::UnsupportedFeatureException(_))
+    }
     /// Returns `true` if the error kind is `CreateCapacityProviderError::UpdateInProgressException`.
     pub fn is_update_in_progress_exception(&self) -> bool {
         matches!(self, Self::UpdateInProgressException(_))
@@ -338,9 +352,11 @@ impl ::std::error::Error for CreateCapacityProviderError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::ClientException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ClusterNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidParameterException(_inner) => ::std::option::Option::Some(_inner),
             Self::LimitExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::ServerException(_inner) => ::std::option::Option::Some(_inner),
+            Self::UnsupportedFeatureException(_inner) => ::std::option::Option::Some(_inner),
             Self::UpdateInProgressException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
@@ -350,9 +366,11 @@ impl ::std::fmt::Display for CreateCapacityProviderError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             Self::ClientException(_inner) => _inner.fmt(f),
+            Self::ClusterNotFoundException(_inner) => _inner.fmt(f),
             Self::InvalidParameterException(_inner) => _inner.fmt(f),
             Self::LimitExceededException(_inner) => _inner.fmt(f),
             Self::ServerException(_inner) => _inner.fmt(f),
+            Self::UnsupportedFeatureException(_inner) => _inner.fmt(f),
             Self::UpdateInProgressException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
@@ -376,9 +394,11 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateCapacit
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::ClientException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ClusterNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidParameterException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::LimitExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ServerException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::UnsupportedFeatureException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::UpdateInProgressException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }

@@ -13,6 +13,7 @@
 /// # let clusterscalabilitytype = unimplemented!();
 /// match clusterscalabilitytype {
 ///     ClusterScalabilityType::Limitless => { /* ... */ },
+///     ClusterScalabilityType::Scaleout => { /* ... */ },
 ///     ClusterScalabilityType::Standard => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -45,6 +46,8 @@ pub enum ClusterScalabilityType {
     #[allow(missing_docs)] // documentation missing in model
     Limitless,
     #[allow(missing_docs)] // documentation missing in model
+    Scaleout,
+    #[allow(missing_docs)] // documentation missing in model
     Standard,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -54,6 +57,7 @@ impl ::std::convert::From<&str> for ClusterScalabilityType {
     fn from(s: &str) -> Self {
         match s {
             "limitless" => ClusterScalabilityType::Limitless,
+            "scaleout" => ClusterScalabilityType::Scaleout,
             "standard" => ClusterScalabilityType::Standard,
             other => ClusterScalabilityType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -71,13 +75,14 @@ impl ClusterScalabilityType {
     pub fn as_str(&self) -> &str {
         match self {
             ClusterScalabilityType::Limitless => "limitless",
+            ClusterScalabilityType::Scaleout => "scaleout",
             ClusterScalabilityType::Standard => "standard",
             ClusterScalabilityType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["limitless", "standard"]
+        &["limitless", "scaleout", "standard"]
     }
 }
 impl ::std::convert::AsRef<str> for ClusterScalabilityType {
@@ -101,6 +106,7 @@ impl ::std::fmt::Display for ClusterScalabilityType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ClusterScalabilityType::Limitless => write!(f, "limitless"),
+            ClusterScalabilityType::Scaleout => write!(f, "scaleout"),
             ClusterScalabilityType::Standard => write!(f, "standard"),
             ClusterScalabilityType::Unknown(value) => write!(f, "{}", value),
         }

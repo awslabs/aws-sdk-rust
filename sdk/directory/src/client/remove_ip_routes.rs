@@ -4,7 +4,8 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`directory_id(impl Into<String>)`](crate::operation::remove_ip_routes::builders::RemoveIpRoutesFluentBuilder::directory_id) / [`set_directory_id(Option<String>)`](crate::operation::remove_ip_routes::builders::RemoveIpRoutesFluentBuilder::set_directory_id):<br>required: **true**<br><p>Identifier (ID) of the directory from which you want to remove the IP addresses.</p><br>
-    ///   - [`cidr_ips(impl Into<String>)`](crate::operation::remove_ip_routes::builders::RemoveIpRoutesFluentBuilder::cidr_ips) / [`set_cidr_ips(Option<Vec::<String>>)`](crate::operation::remove_ip_routes::builders::RemoveIpRoutesFluentBuilder::set_cidr_ips):<br>required: **true**<br><p>IP address blocks that you want to remove.</p><br>
+    ///   - [`cidr_ips(impl Into<String>)`](crate::operation::remove_ip_routes::builders::RemoveIpRoutesFluentBuilder::cidr_ips) / [`set_cidr_ips(Option<Vec::<String>>)`](crate::operation::remove_ip_routes::builders::RemoveIpRoutesFluentBuilder::set_cidr_ips):<br>required: **false**<br><p>IP address blocks that you want to remove.</p><br>
+    ///   - [`cidr_ipv6s(impl Into<String>)`](crate::operation::remove_ip_routes::builders::RemoveIpRoutesFluentBuilder::cidr_ipv6s) / [`set_cidr_ipv6s(Option<Vec::<String>>)`](crate::operation::remove_ip_routes::builders::RemoveIpRoutesFluentBuilder::set_cidr_ipv6s):<br>required: **false**<br><p>IPv6 address blocks that you want to remove.</p><br>
     /// - On success, responds with [`RemoveIpRoutesOutput`](crate::operation::remove_ip_routes::RemoveIpRoutesOutput)
     /// - On failure, responds with [`SdkError<RemoveIpRoutesError>`](crate::operation::remove_ip_routes::RemoveIpRoutesError)
     pub fn remove_ip_routes(&self) -> crate::operation::remove_ip_routes::builders::RemoveIpRoutesFluentBuilder {

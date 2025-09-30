@@ -49,6 +49,16 @@ pub(crate) fn reflens_list_service_operations_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_service_states_output_output_next_token(
+    input: &crate::operation::list_service_states::ListServiceStatesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_services_output_output_next_token(
     input: &crate::operation::list_services::ListServicesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -91,6 +101,13 @@ pub(crate) fn lens_list_service_operations_output_output_service_operations(
     input: crate::operation::list_service_operations::ListServiceOperationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ServiceOperation>> {
     let input = input.service_operations;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_service_states_output_output_service_states(
+    input: crate::operation::list_service_states::ListServiceStatesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ServiceState>> {
+    let input = input.service_states;
     ::std::option::Option::Some(input)
 }
 

@@ -262,10 +262,14 @@ pub enum ListTagsForResourceError {
     DbClusterNotFoundFault(crate::types::error::DbClusterNotFoundFault),
     /// <p><code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.</p>
     DbInstanceNotFoundFault(crate::types::error::DbInstanceNotFoundFault),
+    /// <p>The DB proxy endpoint doesn't exist.</p>
+    DbProxyEndpointNotFoundFault(crate::types::error::DbProxyEndpointNotFoundFault),
     /// <p>The specified proxy name doesn't correspond to a proxy owned by your Amazon Web Services account in the specified Amazon Web Services Region.</p>
     DbProxyNotFoundFault(crate::types::error::DbProxyNotFoundFault),
     /// <p>The specified target group isn't available for a proxy owned by your Amazon Web Services account in the specified Amazon Web Services Region.</p>
     DbProxyTargetGroupNotFoundFault(crate::types::error::DbProxyTargetGroupNotFoundFault),
+    /// <p>The specified DB shard group name wasn't found.</p>
+    DbShardGroupNotFoundFault(crate::types::error::DbShardGroupNotFoundFault),
     /// <p><code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.</p>
     DbSnapshotNotFoundFault(crate::types::error::DbSnapshotNotFoundFault),
     /// <p>The specified snapshot tenant database wasn't found.</p>
@@ -310,8 +314,10 @@ impl ListTagsForResourceError {
             Self::BlueGreenDeploymentNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::DbClusterNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::DbInstanceNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::DbProxyEndpointNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::DbProxyNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::DbProxyTargetGroupNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::DbShardGroupNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::DbSnapshotNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::DbSnapshotTenantDatabaseNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::IntegrationNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -331,6 +337,10 @@ impl ListTagsForResourceError {
     pub fn is_db_instance_not_found_fault(&self) -> bool {
         matches!(self, Self::DbInstanceNotFoundFault(_))
     }
+    /// Returns `true` if the error kind is `ListTagsForResourceError::DbProxyEndpointNotFoundFault`.
+    pub fn is_db_proxy_endpoint_not_found_fault(&self) -> bool {
+        matches!(self, Self::DbProxyEndpointNotFoundFault(_))
+    }
     /// Returns `true` if the error kind is `ListTagsForResourceError::DbProxyNotFoundFault`.
     pub fn is_db_proxy_not_found_fault(&self) -> bool {
         matches!(self, Self::DbProxyNotFoundFault(_))
@@ -338,6 +348,10 @@ impl ListTagsForResourceError {
     /// Returns `true` if the error kind is `ListTagsForResourceError::DbProxyTargetGroupNotFoundFault`.
     pub fn is_db_proxy_target_group_not_found_fault(&self) -> bool {
         matches!(self, Self::DbProxyTargetGroupNotFoundFault(_))
+    }
+    /// Returns `true` if the error kind is `ListTagsForResourceError::DbShardGroupNotFoundFault`.
+    pub fn is_db_shard_group_not_found_fault(&self) -> bool {
+        matches!(self, Self::DbShardGroupNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `ListTagsForResourceError::DbSnapshotNotFoundFault`.
     pub fn is_db_snapshot_not_found_fault(&self) -> bool {
@@ -362,8 +376,10 @@ impl ::std::error::Error for ListTagsForResourceError {
             Self::BlueGreenDeploymentNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::DbClusterNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::DbInstanceNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
+            Self::DbProxyEndpointNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::DbProxyNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::DbProxyTargetGroupNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
+            Self::DbShardGroupNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::DbSnapshotNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::DbSnapshotTenantDatabaseNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::IntegrationNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
@@ -378,8 +394,10 @@ impl ::std::fmt::Display for ListTagsForResourceError {
             Self::BlueGreenDeploymentNotFoundFault(_inner) => _inner.fmt(f),
             Self::DbClusterNotFoundFault(_inner) => _inner.fmt(f),
             Self::DbInstanceNotFoundFault(_inner) => _inner.fmt(f),
+            Self::DbProxyEndpointNotFoundFault(_inner) => _inner.fmt(f),
             Self::DbProxyNotFoundFault(_inner) => _inner.fmt(f),
             Self::DbProxyTargetGroupNotFoundFault(_inner) => _inner.fmt(f),
+            Self::DbShardGroupNotFoundFault(_inner) => _inner.fmt(f),
             Self::DbSnapshotNotFoundFault(_inner) => _inner.fmt(f),
             Self::DbSnapshotTenantDatabaseNotFoundFault(_inner) => _inner.fmt(f),
             Self::IntegrationNotFoundFault(_inner) => _inner.fmt(f),
@@ -408,8 +426,10 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ListTagsForRe
             Self::BlueGreenDeploymentNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DbClusterNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DbInstanceNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::DbProxyEndpointNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DbProxyNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DbProxyTargetGroupNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::DbShardGroupNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DbSnapshotNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DbSnapshotTenantDatabaseNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::IntegrationNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

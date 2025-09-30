@@ -29,6 +29,8 @@ pub struct CreateGatewayInput {
     /// <p>If the value is omitted, a generic error message is returned to the end user.</p></li>
     /// </ul>
     pub exception_level: ::std::option::Option<crate::types::ExceptionLevel>,
+    /// <p>A map of key-value pairs to associate with the gateway as metadata tags.</p>
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateGatewayInput {
     /// <p>The name of the gateway. The name must be unique within your account.</p>
@@ -77,6 +79,10 @@ impl CreateGatewayInput {
     pub fn exception_level(&self) -> ::std::option::Option<&crate::types::ExceptionLevel> {
         self.exception_level.as_ref()
     }
+    /// <p>A map of key-value pairs to associate with the gateway as metadata tags.</p>
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.tags.as_ref()
+    }
 }
 impl ::std::fmt::Debug for CreateGatewayInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -91,6 +97,7 @@ impl ::std::fmt::Debug for CreateGatewayInput {
         formatter.field("authorizer_configuration", &self.authorizer_configuration);
         formatter.field("kms_key_arn", &self.kms_key_arn);
         formatter.field("exception_level", &self.exception_level);
+        formatter.field("tags", &self.tags);
         formatter.finish()
     }
 }
@@ -115,6 +122,7 @@ pub struct CreateGatewayInputBuilder {
     pub(crate) authorizer_configuration: ::std::option::Option<crate::types::AuthorizerConfiguration>,
     pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
     pub(crate) exception_level: ::std::option::Option<crate::types::ExceptionLevel>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateGatewayInputBuilder {
     /// <p>The name of the gateway. The name must be unique within your account.</p>
@@ -280,6 +288,26 @@ impl CreateGatewayInputBuilder {
     pub fn get_exception_level(&self) -> &::std::option::Option<crate::types::ExceptionLevel> {
         &self.exception_level
     }
+    /// Adds a key-value pair to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>A map of key-value pairs to associate with the gateway as metadata tags.</p>
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut hash_map = self.tags.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.tags = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>A map of key-value pairs to associate with the gateway as metadata tags.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// <p>A map of key-value pairs to associate with the gateway as metadata tags.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.tags
+    }
     /// Consumes the builder and constructs a [`CreateGatewayInput`](crate::operation::create_gateway::CreateGatewayInput).
     pub fn build(
         self,
@@ -295,6 +323,7 @@ impl CreateGatewayInputBuilder {
             authorizer_configuration: self.authorizer_configuration,
             kms_key_arn: self.kms_key_arn,
             exception_level: self.exception_level,
+            tags: self.tags,
         })
     }
 }
@@ -311,6 +340,7 @@ impl ::std::fmt::Debug for CreateGatewayInputBuilder {
         formatter.field("authorizer_configuration", &self.authorizer_configuration);
         formatter.field("kms_key_arn", &self.kms_key_arn);
         formatter.field("exception_level", &self.exception_level);
+        formatter.field("tags", &self.tags);
         formatter.finish()
     }
 }

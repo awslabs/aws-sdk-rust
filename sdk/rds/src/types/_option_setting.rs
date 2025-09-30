@@ -2,7 +2,7 @@
 
 /// <p>Option settings are the actual settings being applied or configured for that option. It is used when you modify an option group or describe option groups. For example, the NATIVE_NETWORK_ENCRYPTION option has a setting called SQLNET.ENCRYPTION_SERVER that can have several different values.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct OptionSetting {
     /// <p>The name of the option that has settings that you can set.</p>
     pub name: ::std::option::Option<::std::string::String>,
@@ -61,6 +61,21 @@ impl OptionSetting {
         self.is_collection
     }
 }
+impl ::std::fmt::Debug for OptionSetting {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("OptionSetting");
+        formatter.field("name", &self.name);
+        formatter.field("value", &"*** Sensitive Data Redacted ***");
+        formatter.field("default_value", &self.default_value);
+        formatter.field("description", &self.description);
+        formatter.field("apply_type", &self.apply_type);
+        formatter.field("data_type", &self.data_type);
+        formatter.field("allowed_values", &self.allowed_values);
+        formatter.field("is_modifiable", &self.is_modifiable);
+        formatter.field("is_collection", &self.is_collection);
+        formatter.finish()
+    }
+}
 impl OptionSetting {
     /// Creates a new builder-style object to manufacture [`OptionSetting`](crate::types::OptionSetting).
     pub fn builder() -> crate::types::builders::OptionSettingBuilder {
@@ -69,7 +84,7 @@ impl OptionSetting {
 }
 
 /// A builder for [`OptionSetting`](crate::types::OptionSetting).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct OptionSettingBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -222,5 +237,20 @@ impl OptionSettingBuilder {
             is_modifiable: self.is_modifiable,
             is_collection: self.is_collection,
         }
+    }
+}
+impl ::std::fmt::Debug for OptionSettingBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("OptionSettingBuilder");
+        formatter.field("name", &self.name);
+        formatter.field("value", &"*** Sensitive Data Redacted ***");
+        formatter.field("default_value", &self.default_value);
+        formatter.field("description", &self.description);
+        formatter.field("apply_type", &self.apply_type);
+        formatter.field("data_type", &self.data_type);
+        formatter.field("allowed_values", &self.allowed_values);
+        formatter.field("is_modifiable", &self.is_modifiable);
+        formatter.field("is_collection", &self.is_collection);
+        formatter.finish()
     }
 }

@@ -13,6 +13,7 @@
 /// # let endpointtype = unimplemented!();
 /// match endpointtype {
 ///     EndpointType::Fips => { /* ... */ },
+///     EndpointType::FipsPrivateLink => { /* ... */ },
 ///     EndpointType::PrivateLink => { /* ... */ },
 ///     EndpointType::Public => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -46,6 +47,8 @@ pub enum EndpointType {
     #[allow(missing_docs)] // documentation missing in model
     Fips,
     #[allow(missing_docs)] // documentation missing in model
+    FipsPrivateLink,
+    #[allow(missing_docs)] // documentation missing in model
     PrivateLink,
     #[allow(missing_docs)] // documentation missing in model
     Public,
@@ -57,6 +60,7 @@ impl ::std::convert::From<&str> for EndpointType {
     fn from(s: &str) -> Self {
         match s {
             "FIPS" => EndpointType::Fips,
+            "FIPS_PRIVATE_LINK" => EndpointType::FipsPrivateLink,
             "PRIVATE_LINK" => EndpointType::PrivateLink,
             "PUBLIC" => EndpointType::Public,
             other => EndpointType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -75,6 +79,7 @@ impl EndpointType {
     pub fn as_str(&self) -> &str {
         match self {
             EndpointType::Fips => "FIPS",
+            EndpointType::FipsPrivateLink => "FIPS_PRIVATE_LINK",
             EndpointType::PrivateLink => "PRIVATE_LINK",
             EndpointType::Public => "PUBLIC",
             EndpointType::Unknown(value) => value.as_str(),
@@ -82,7 +87,7 @@ impl EndpointType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FIPS", "PRIVATE_LINK", "PUBLIC"]
+        &["FIPS", "FIPS_PRIVATE_LINK", "PRIVATE_LINK", "PUBLIC"]
     }
 }
 impl ::std::convert::AsRef<str> for EndpointType {
@@ -106,6 +111,7 @@ impl ::std::fmt::Display for EndpointType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             EndpointType::Fips => write!(f, "FIPS"),
+            EndpointType::FipsPrivateLink => write!(f, "FIPS_PRIVATE_LINK"),
             EndpointType::PrivateLink => write!(f, "PRIVATE_LINK"),
             EndpointType::Public => write!(f, "PUBLIC"),
             EndpointType::Unknown(value) => write!(f, "{}", value),

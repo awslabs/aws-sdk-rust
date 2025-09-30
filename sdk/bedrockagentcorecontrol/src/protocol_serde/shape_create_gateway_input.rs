@@ -39,5 +39,15 @@ pub fn ser_create_gateway_input_input(
     if let Some(var_12) = &input.role_arn {
         object.key("roleArn").string(var_12.as_str());
     }
+    if let Some(var_13) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_14 = object.key("tags").start_object();
+        for (key_15, value_16) in var_13 {
+            {
+                object_14.key(key_15.as_str()).string(value_16.as_str());
+            }
+        }
+        object_14.finish();
+    }
     Ok(())
 }

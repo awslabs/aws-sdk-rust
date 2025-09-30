@@ -68,6 +68,24 @@ pub fn de_add_tags_to_resource_http_error(
             }
             tmp
         }),
+        "DBProxyEndpointNotFoundFault" => crate::operation::add_tags_to_resource::AddTagsToResourceError::DbProxyEndpointNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::DbProxyEndpointNotFoundFaultBuilder::default();
+                output = crate::protocol_serde::shape_db_proxy_endpoint_not_found_fault::de_db_proxy_endpoint_not_found_fault_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::add_tags_to_resource::AddTagsToResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "DBProxyNotFoundFault" => crate::operation::add_tags_to_resource::AddTagsToResourceError::DbProxyNotFoundFault({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -93,6 +111,22 @@ pub fn de_add_tags_to_resource_http_error(
                     output,
                 )
                 .map_err(crate::operation::add_tags_to_resource::AddTagsToResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "DBShardGroupNotFound" => crate::operation::add_tags_to_resource::AddTagsToResourceError::DbShardGroupNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::DbShardGroupNotFoundFaultBuilder::default();
+                output =
+                    crate::protocol_serde::shape_db_shard_group_not_found_fault::de_db_shard_group_not_found_fault_xml_err(_response_body, output)
+                        .map_err(crate::operation::add_tags_to_resource::AddTagsToResourceError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -139,6 +173,56 @@ pub fn de_add_tags_to_resource_http_error(
                 let mut output = crate::types::error::builders::IntegrationNotFoundFaultBuilder::default();
                 output = crate::protocol_serde::shape_integration_not_found_fault::de_integration_not_found_fault_xml_err(_response_body, output)
                     .map_err(crate::operation::add_tags_to_resource::AddTagsToResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidDBClusterEndpointStateFault" => crate::operation::add_tags_to_resource::AddTagsToResourceError::InvalidDbClusterEndpointStateFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidDbClusterEndpointStateFaultBuilder::default();
+                output = crate::protocol_serde::shape_invalid_db_cluster_endpoint_state_fault::de_invalid_db_cluster_endpoint_state_fault_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::add_tags_to_resource::AddTagsToResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidDBClusterStateFault" => crate::operation::add_tags_to_resource::AddTagsToResourceError::InvalidDbClusterStateFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidDbClusterStateFaultBuilder::default();
+                output =
+                    crate::protocol_serde::shape_invalid_db_cluster_state_fault::de_invalid_db_cluster_state_fault_xml_err(_response_body, output)
+                        .map_err(crate::operation::add_tags_to_resource::AddTagsToResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidDBInstanceState" => crate::operation::add_tags_to_resource::AddTagsToResourceError::InvalidDbInstanceStateFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidDbInstanceStateFaultBuilder::default();
+                output =
+                    crate::protocol_serde::shape_invalid_db_instance_state_fault::de_invalid_db_instance_state_fault_xml_err(_response_body, output)
+                        .map_err(crate::operation::add_tags_to_resource::AddTagsToResourceError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };

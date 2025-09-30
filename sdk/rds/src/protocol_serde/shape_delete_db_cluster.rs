@@ -100,6 +100,39 @@ pub fn de_delete_db_cluster_http_error(
             }
             tmp
         }),
+        "InvalidGlobalClusterStateFault" => crate::operation::delete_db_cluster::DeleteDBClusterError::InvalidGlobalClusterStateFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidGlobalClusterStateFaultBuilder::default();
+                output = crate::protocol_serde::shape_invalid_global_cluster_state_fault::de_invalid_global_cluster_state_fault_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::delete_db_cluster::DeleteDBClusterError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "KMSKeyNotAccessibleFault" => crate::operation::delete_db_cluster::DeleteDBClusterError::KmsKeyNotAccessibleFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::KmsKeyNotAccessibleFaultBuilder::default();
+                output = crate::protocol_serde::shape_kms_key_not_accessible_fault::de_kms_key_not_accessible_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::delete_db_cluster::DeleteDBClusterError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "SnapshotQuotaExceeded" => crate::operation::delete_db_cluster::DeleteDBClusterError::SnapshotQuotaExceededFault({
             #[allow(unused_mut)]
             let mut tmp = {

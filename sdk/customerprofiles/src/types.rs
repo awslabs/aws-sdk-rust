@@ -175,6 +175,10 @@ pub use crate::types::_list_profile_objects_item::ListProfileObjectsItem;
 
 pub use crate::types::_object_filter::ObjectFilter;
 
+pub use crate::types::_profile_history_record::ProfileHistoryRecord;
+
+pub use crate::types::_action_type::ActionType;
+
 pub use crate::types::_attribute_value_item::AttributeValueItem;
 
 pub use crate::types::_list_object_type_attribute_item::ListObjectTypeAttributeItem;
@@ -312,6 +316,8 @@ pub use crate::types::_batch_get_profile_error::BatchGetProfileError;
 pub use crate::types::_calculated_attribute_value::CalculatedAttributeValue;
 
 pub use crate::types::_batch_get_calculated_attribute_for_profile_error::BatchGetCalculatedAttributeForProfileError;
+
+mod _action_type;
 
 mod _additional_search_key;
 
@@ -516,6 +522,8 @@ mod _profile;
 mod _profile_attributes;
 
 mod _profile_dimension;
+
+mod _profile_history_record;
 
 mod _profile_query_failures;
 

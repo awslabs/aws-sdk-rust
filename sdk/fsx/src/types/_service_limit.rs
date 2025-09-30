@@ -47,7 +47,7 @@
 /// <p>The types of limits on your service utilization. Limits include file system count,
 /// total throughput capacity, total storage, and total user-initiated backups. These limits
 /// apply for a specific account in a specific Amazon Web Services Region. You can increase some of them by
-/// contacting Amazon Web ServicesSupport.</p>
+/// contacting Amazon Web Services Support.</p>
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,

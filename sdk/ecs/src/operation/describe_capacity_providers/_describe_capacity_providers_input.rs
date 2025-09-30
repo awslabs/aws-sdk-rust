@@ -5,6 +5,8 @@
 pub struct DescribeCapacityProvidersInput {
     /// <p>The short name or full Amazon Resource Name (ARN) of one or more capacity providers. Up to <code>100</code> capacity providers can be described in an action.</p>
     pub capacity_providers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The name of the cluster to describe capacity providers for. When specified, only capacity providers associated with this cluster are returned, including Amazon ECS Managed Instances capacity providers.</p>
+    pub cluster: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether or not you want to see the resource tags for the capacity provider. If <code>TAGS</code> is specified, the tags are included in the response. If this field is omitted, tags aren't included in the response.</p>
     pub include: ::std::option::Option<::std::vec::Vec<crate::types::CapacityProviderField>>,
     /// <p>The maximum number of account setting results returned by <code>DescribeCapacityProviders</code> in paginated output. When this parameter is used, <code>DescribeCapacityProviders</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeCapacityProviders</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 10. If this parameter is not used, then <code>DescribeCapacityProviders</code> returns up to 10 results and a <code>nextToken</code> value if applicable.</p>
@@ -20,6 +22,10 @@ impl DescribeCapacityProvidersInput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.capacity_providers.is_none()`.
     pub fn capacity_providers(&self) -> &[::std::string::String] {
         self.capacity_providers.as_deref().unwrap_or_default()
+    }
+    /// <p>The name of the cluster to describe capacity providers for. When specified, only capacity providers associated with this cluster are returned, including Amazon ECS Managed Instances capacity providers.</p>
+    pub fn cluster(&self) -> ::std::option::Option<&str> {
+        self.cluster.as_deref()
     }
     /// <p>Specifies whether or not you want to see the resource tags for the capacity provider. If <code>TAGS</code> is specified, the tags are included in the response. If this field is omitted, tags aren't included in the response.</p>
     ///
@@ -50,6 +56,7 @@ impl DescribeCapacityProvidersInput {
 #[non_exhaustive]
 pub struct DescribeCapacityProvidersInputBuilder {
     pub(crate) capacity_providers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) cluster: ::std::option::Option<::std::string::String>,
     pub(crate) include: ::std::option::Option<::std::vec::Vec<crate::types::CapacityProviderField>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -74,6 +81,20 @@ impl DescribeCapacityProvidersInputBuilder {
     /// <p>The short name or full Amazon Resource Name (ARN) of one or more capacity providers. Up to <code>100</code> capacity providers can be described in an action.</p>
     pub fn get_capacity_providers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.capacity_providers
+    }
+    /// <p>The name of the cluster to describe capacity providers for. When specified, only capacity providers associated with this cluster are returned, including Amazon ECS Managed Instances capacity providers.</p>
+    pub fn cluster(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cluster = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the cluster to describe capacity providers for. When specified, only capacity providers associated with this cluster are returned, including Amazon ECS Managed Instances capacity providers.</p>
+    pub fn set_cluster(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.cluster = input;
+        self
+    }
+    /// <p>The name of the cluster to describe capacity providers for. When specified, only capacity providers associated with this cluster are returned, including Amazon ECS Managed Instances capacity providers.</p>
+    pub fn get_cluster(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster
     }
     /// Appends an item to `include`.
     ///
@@ -138,6 +159,7 @@ impl DescribeCapacityProvidersInputBuilder {
     > {
         ::std::result::Result::Ok(crate::operation::describe_capacity_providers::DescribeCapacityProvidersInput {
             capacity_providers: self.capacity_providers,
+            cluster: self.cluster,
             include: self.include,
             max_results: self.max_results,
             next_token: self.next_token,

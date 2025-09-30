@@ -174,126 +174,126 @@ pub fn ser_create_db_cluster_input_input_input(
         crate::protocol_serde::shape_rds_custom_cluster_configuration::ser_rds_custom_cluster_configuration(scope_65, var_66)?;
     }
     #[allow(unused_mut)]
-    let mut scope_67 = writer.prefix("DeletionProtection");
-    if let Some(var_68) = &input.deletion_protection {
-        scope_67.boolean(*var_68);
+    let mut scope_67 = writer.prefix("DBClusterInstanceClass");
+    if let Some(var_68) = &input.db_cluster_instance_class {
+        scope_67.string(var_68);
     }
     #[allow(unused_mut)]
-    let mut scope_69 = writer.prefix("GlobalClusterIdentifier");
-    if let Some(var_70) = &input.global_cluster_identifier {
-        scope_69.string(var_70);
+    let mut scope_69 = writer.prefix("AllocatedStorage");
+    if let Some(var_70) = &input.allocated_storage {
+        scope_69.number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_70).into()),
+        );
     }
     #[allow(unused_mut)]
-    let mut scope_71 = writer.prefix("EnableHttpEndpoint");
-    if let Some(var_72) = &input.enable_http_endpoint {
-        scope_71.boolean(*var_72);
+    let mut scope_71 = writer.prefix("StorageType");
+    if let Some(var_72) = &input.storage_type {
+        scope_71.string(var_72);
     }
     #[allow(unused_mut)]
-    let mut scope_73 = writer.prefix("CopyTagsToSnapshot");
-    if let Some(var_74) = &input.copy_tags_to_snapshot {
-        scope_73.boolean(*var_74);
+    let mut scope_73 = writer.prefix("Iops");
+    if let Some(var_74) = &input.iops {
+        scope_73.number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_74).into()),
+        );
     }
     #[allow(unused_mut)]
-    let mut scope_75 = writer.prefix("Domain");
-    if let Some(var_76) = &input.domain {
-        scope_75.string(var_76);
+    let mut scope_75 = writer.prefix("PubliclyAccessible");
+    if let Some(var_76) = &input.publicly_accessible {
+        scope_75.boolean(*var_76);
     }
     #[allow(unused_mut)]
-    let mut scope_77 = writer.prefix("DomainIAMRoleName");
-    if let Some(var_78) = &input.domain_iam_role_name {
-        scope_77.string(var_78);
+    let mut scope_77 = writer.prefix("AutoMinorVersionUpgrade");
+    if let Some(var_78) = &input.auto_minor_version_upgrade {
+        scope_77.boolean(*var_78);
     }
     #[allow(unused_mut)]
-    let mut scope_79 = writer.prefix("EnableGlobalWriteForwarding");
-    if let Some(var_80) = &input.enable_global_write_forwarding {
+    let mut scope_79 = writer.prefix("DeletionProtection");
+    if let Some(var_80) = &input.deletion_protection {
         scope_79.boolean(*var_80);
     }
     #[allow(unused_mut)]
-    let mut scope_81 = writer.prefix("DBClusterInstanceClass");
-    if let Some(var_82) = &input.db_cluster_instance_class {
+    let mut scope_81 = writer.prefix("GlobalClusterIdentifier");
+    if let Some(var_82) = &input.global_cluster_identifier {
         scope_81.string(var_82);
     }
     #[allow(unused_mut)]
-    let mut scope_83 = writer.prefix("AllocatedStorage");
-    if let Some(var_84) = &input.allocated_storage {
-        scope_83.number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_84).into()),
-        );
+    let mut scope_83 = writer.prefix("EnableHttpEndpoint");
+    if let Some(var_84) = &input.enable_http_endpoint {
+        scope_83.boolean(*var_84);
     }
     #[allow(unused_mut)]
-    let mut scope_85 = writer.prefix("StorageType");
-    if let Some(var_86) = &input.storage_type {
-        scope_85.string(var_86);
+    let mut scope_85 = writer.prefix("CopyTagsToSnapshot");
+    if let Some(var_86) = &input.copy_tags_to_snapshot {
+        scope_85.boolean(*var_86);
     }
     #[allow(unused_mut)]
-    let mut scope_87 = writer.prefix("Iops");
-    if let Some(var_88) = &input.iops {
-        scope_87.number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_88).into()),
-        );
+    let mut scope_87 = writer.prefix("Domain");
+    if let Some(var_88) = &input.domain {
+        scope_87.string(var_88);
     }
     #[allow(unused_mut)]
-    let mut scope_89 = writer.prefix("PubliclyAccessible");
-    if let Some(var_90) = &input.publicly_accessible {
-        scope_89.boolean(*var_90);
+    let mut scope_89 = writer.prefix("DomainIAMRoleName");
+    if let Some(var_90) = &input.domain_iam_role_name {
+        scope_89.string(var_90);
     }
     #[allow(unused_mut)]
-    let mut scope_91 = writer.prefix("AutoMinorVersionUpgrade");
-    if let Some(var_92) = &input.auto_minor_version_upgrade {
+    let mut scope_91 = writer.prefix("EnableGlobalWriteForwarding");
+    if let Some(var_92) = &input.enable_global_write_forwarding {
         scope_91.boolean(*var_92);
     }
     #[allow(unused_mut)]
-    let mut scope_93 = writer.prefix("MonitoringInterval");
-    if let Some(var_94) = &input.monitoring_interval {
-        scope_93.number(
+    let mut scope_93 = writer.prefix("NetworkType");
+    if let Some(var_94) = &input.network_type {
+        scope_93.string(var_94);
+    }
+    #[allow(unused_mut)]
+    let mut scope_95 = writer.prefix("ServerlessV2ScalingConfiguration");
+    if let Some(var_96) = &input.serverless_v2_scaling_configuration {
+        crate::protocol_serde::shape_serverless_v2_scaling_configuration::ser_serverless_v2_scaling_configuration(scope_95, var_96)?;
+    }
+    #[allow(unused_mut)]
+    let mut scope_97 = writer.prefix("MonitoringInterval");
+    if let Some(var_98) = &input.monitoring_interval {
+        scope_97.number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_94).into()),
+            ::aws_smithy_types::Number::NegInt((*var_98).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_95 = writer.prefix("MonitoringRoleArn");
-    if let Some(var_96) = &input.monitoring_role_arn {
-        scope_95.string(var_96);
+    let mut scope_99 = writer.prefix("MonitoringRoleArn");
+    if let Some(var_100) = &input.monitoring_role_arn {
+        scope_99.string(var_100);
     }
     #[allow(unused_mut)]
-    let mut scope_97 = writer.prefix("DatabaseInsightsMode");
-    if let Some(var_98) = &input.database_insights_mode {
-        scope_97.string(var_98.as_str());
+    let mut scope_101 = writer.prefix("DatabaseInsightsMode");
+    if let Some(var_102) = &input.database_insights_mode {
+        scope_101.string(var_102.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_99 = writer.prefix("EnablePerformanceInsights");
-    if let Some(var_100) = &input.enable_performance_insights {
-        scope_99.boolean(*var_100);
+    let mut scope_103 = writer.prefix("EnablePerformanceInsights");
+    if let Some(var_104) = &input.enable_performance_insights {
+        scope_103.boolean(*var_104);
     }
     #[allow(unused_mut)]
-    let mut scope_101 = writer.prefix("PerformanceInsightsKMSKeyId");
-    if let Some(var_102) = &input.performance_insights_kms_key_id {
-        scope_101.string(var_102);
+    let mut scope_105 = writer.prefix("PerformanceInsightsKMSKeyId");
+    if let Some(var_106) = &input.performance_insights_kms_key_id {
+        scope_105.string(var_106);
     }
     #[allow(unused_mut)]
-    let mut scope_103 = writer.prefix("PerformanceInsightsRetentionPeriod");
-    if let Some(var_104) = &input.performance_insights_retention_period {
-        scope_103.number(
+    let mut scope_107 = writer.prefix("PerformanceInsightsRetentionPeriod");
+    if let Some(var_108) = &input.performance_insights_retention_period {
+        scope_107.number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_104).into()),
+            ::aws_smithy_types::Number::NegInt((*var_108).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_105 = writer.prefix("EnableLimitlessDatabase");
-    if let Some(var_106) = &input.enable_limitless_database {
-        scope_105.boolean(*var_106);
-    }
-    #[allow(unused_mut)]
-    let mut scope_107 = writer.prefix("ServerlessV2ScalingConfiguration");
-    if let Some(var_108) = &input.serverless_v2_scaling_configuration {
-        crate::protocol_serde::shape_serverless_v2_scaling_configuration::ser_serverless_v2_scaling_configuration(scope_107, var_108)?;
-    }
-    #[allow(unused_mut)]
-    let mut scope_109 = writer.prefix("NetworkType");
-    if let Some(var_110) = &input.network_type {
-        scope_109.string(var_110);
+    let mut scope_109 = writer.prefix("EnableLimitlessDatabase");
+    if let Some(var_110) = &input.enable_limitless_database {
+        scope_109.boolean(*var_110);
     }
     #[allow(unused_mut)]
     let mut scope_111 = writer.prefix("ClusterScalabilityType");
@@ -311,14 +311,14 @@ pub fn ser_create_db_cluster_input_input_input(
         scope_115.boolean(*var_116);
     }
     #[allow(unused_mut)]
-    let mut scope_117 = writer.prefix("MasterUserSecretKmsKeyId");
-    if let Some(var_118) = &input.master_user_secret_kms_key_id {
-        scope_117.string(var_118);
+    let mut scope_117 = writer.prefix("EnableLocalWriteForwarding");
+    if let Some(var_118) = &input.enable_local_write_forwarding {
+        scope_117.boolean(*var_118);
     }
     #[allow(unused_mut)]
-    let mut scope_119 = writer.prefix("EnableLocalWriteForwarding");
-    if let Some(var_120) = &input.enable_local_write_forwarding {
-        scope_119.boolean(*var_120);
+    let mut scope_119 = writer.prefix("MasterUserSecretKmsKeyId");
+    if let Some(var_120) = &input.master_user_secret_kms_key_id {
+        scope_119.string(var_120);
     }
     #[allow(unused_mut)]
     let mut scope_121 = writer.prefix("CACertificateIdentifier");

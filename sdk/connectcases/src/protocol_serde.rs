@@ -253,9 +253,17 @@ pub(crate) mod shape_comment_content;
 
 pub(crate) mod shape_comment_filter;
 
+pub(crate) mod shape_connect_case_filter;
+
+pub(crate) mod shape_connect_case_input_content;
+
 pub(crate) mod shape_contact;
 
 pub(crate) mod shape_contact_filter;
+
+pub(crate) mod shape_custom_filter;
+
+pub(crate) mod shape_custom_input_content;
 
 pub(crate) mod shape_domain_summary;
 
@@ -301,6 +309,8 @@ pub(crate) mod shape_boolean_condition;
 
 pub(crate) mod shape_case_event_included_data;
 
+pub(crate) mod shape_custom_fields_filter;
+
 pub(crate) mod shape_empty_field_value;
 
 pub(crate) mod shape_layout_sections;
@@ -315,7 +325,11 @@ pub(crate) mod shape_audit_event_field;
 
 pub(crate) mod shape_boolean_operands;
 
+pub(crate) mod shape_connect_case_content;
+
 pub(crate) mod shape_contact_content;
+
+pub(crate) mod shape_custom_content;
 
 pub(crate) mod shape_field_identifier_list;
 

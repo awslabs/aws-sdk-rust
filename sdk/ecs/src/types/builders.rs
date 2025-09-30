@@ -109,9 +109,41 @@ pub use crate::types::_cluster_service_connect_defaults_request::ClusterServiceC
 
 pub use crate::types::_capacity_provider::CapacityProviderBuilder;
 
+pub use crate::types::_managed_instances_provider::ManagedInstancesProviderBuilder;
+
+pub use crate::types::_instance_launch_template::InstanceLaunchTemplateBuilder;
+
+pub use crate::types::_instance_requirements_request::InstanceRequirementsRequestBuilder;
+
+pub use crate::types::_network_bandwidth_gbps_request::NetworkBandwidthGbpsRequestBuilder;
+
+pub use crate::types::_accelerator_total_memory_mib_request::AcceleratorTotalMemoryMiBRequestBuilder;
+
+pub use crate::types::_accelerator_count_request::AcceleratorCountRequestBuilder;
+
+pub use crate::types::_baseline_ebs_bandwidth_mbps_request::BaselineEbsBandwidthMbpsRequestBuilder;
+
+pub use crate::types::_total_local_storage_gb_request::TotalLocalStorageGbRequestBuilder;
+
+pub use crate::types::_network_interface_count_request::NetworkInterfaceCountRequestBuilder;
+
+pub use crate::types::_memory_gib_per_v_cpu_request::MemoryGiBPerVCpuRequestBuilder;
+
+pub use crate::types::_memory_mib_request::MemoryMiBRequestBuilder;
+
+pub use crate::types::_v_cpu_count_range_request::VCpuCountRangeRequestBuilder;
+
+pub use crate::types::_managed_instances_storage_configuration::ManagedInstancesStorageConfigurationBuilder;
+
+pub use crate::types::_managed_instances_network_configuration::ManagedInstancesNetworkConfigurationBuilder;
+
 pub use crate::types::_auto_scaling_group_provider::AutoScalingGroupProviderBuilder;
 
 pub use crate::types::_managed_scaling::ManagedScalingBuilder;
+
+pub use crate::types::_update_managed_instances_provider_configuration::UpdateManagedInstancesProviderConfigurationBuilder;
+
+pub use crate::types::_instance_launch_template_update::InstanceLaunchTemplateUpdateBuilder;
 
 pub use crate::types::_auto_scaling_group_provider_update::AutoScalingGroupProviderUpdateBuilder;
 
@@ -234,3 +266,5 @@ pub use crate::types::_service_deployment_circuit_breaker::ServiceDeploymentCirc
 pub use crate::types::_rollback::RollbackBuilder;
 
 pub use crate::types::_service_revision_summary::ServiceRevisionSummaryBuilder;
+
+pub use crate::types::_create_managed_instances_provider_configuration::CreateManagedInstancesProviderConfigurationBuilder;

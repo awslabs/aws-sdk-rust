@@ -717,6 +717,23 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
     pub fn get_iops(&self) -> &::std::option::Option<i32> {
         self.inner.get_iops()
     }
+    /// <p>The storage throughput value for the DB instance.</p>
+    /// <p>This setting doesn't apply to RDS Custom or Amazon Aurora.</p>
+    pub fn storage_throughput(mut self, input: i32) -> Self {
+        self.inner = self.inner.storage_throughput(input);
+        self
+    }
+    /// <p>The storage throughput value for the DB instance.</p>
+    /// <p>This setting doesn't apply to RDS Custom or Amazon Aurora.</p>
+    pub fn set_storage_throughput(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.inner = self.inner.set_storage_throughput(input);
+        self
+    }
+    /// <p>The storage throughput value for the DB instance.</p>
+    /// <p>This setting doesn't apply to RDS Custom or Amazon Aurora.</p>
+    pub fn get_storage_throughput(&self) -> &::std::option::Option<i32> {
+        self.inner.get_storage_throughput()
+    }
     /// <p>The name of the option group to use for the restored DB instance.</p>
     /// <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option group, and that option group can't be removed from a DB instance after it is associated with a DB instance</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
@@ -1222,23 +1239,6 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
     pub fn get_max_allocated_storage(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_allocated_storage()
     }
-    /// <p>The Amazon Resource Name (ARN) of the replicated automated backups from which to restore, for example, <code>arn:aws:rds:us-east-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.</p>
-    /// <p>This setting doesn't apply to RDS Custom.</p>
-    pub fn source_db_instance_automated_backups_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.source_db_instance_automated_backups_arn(input.into());
-        self
-    }
-    /// <p>The Amazon Resource Name (ARN) of the replicated automated backups from which to restore, for example, <code>arn:aws:rds:us-east-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.</p>
-    /// <p>This setting doesn't apply to RDS Custom.</p>
-    pub fn set_source_db_instance_automated_backups_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_source_db_instance_automated_backups_arn(input);
-        self
-    }
-    /// <p>The Amazon Resource Name (ARN) of the replicated automated backups from which to restore, for example, <code>arn:aws:rds:us-east-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.</p>
-    /// <p>This setting doesn't apply to RDS Custom.</p>
-    pub fn get_source_db_instance_automated_backups_arn(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_source_db_instance_automated_backups_arn()
-    }
     /// <p>Specifies whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB instance.</p>
     /// <p>A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your on-premises network. For some use cases, a CoIP can provide lower latency for connections to the DB instance from outside of its virtual private cloud (VPC) on your local network.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
@@ -1265,49 +1265,63 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
     pub fn get_enable_customer_owned_ip(&self) -> &::std::option::Option<bool> {
         self.inner.get_enable_customer_owned_ip()
     }
-    /// <p>The instance profile associated with the underlying Amazon EC2 instance of an RDS Custom DB instance. The instance profile must meet the following requirements:</p>
+    /// <p>The network type of the DB instance.</p>
+    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i></p>
+    /// <p>Valid Values:</p>
     /// <ul>
     /// <li>
-    /// <p>The profile must exist in your account.</p></li>
+    /// <p><code>IPV4</code></p></li>
     /// <li>
-    /// <p>The profile must have an IAM role that Amazon EC2 has permissions to assume.</p></li>
-    /// <li>
-    /// <p>The instance profile name and the associated IAM role name must start with the prefix <code>AWSRDSCustom</code>.</p></li>
+    /// <p><code>DUAL</code></p></li>
     /// </ul>
-    /// <p>For the list of permissions required for the IAM role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc"> Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
-    /// <p>This setting is required for RDS Custom.</p>
-    pub fn custom_iam_instance_profile(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.custom_iam_instance_profile(input.into());
+    pub fn network_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.network_type(input.into());
         self
     }
-    /// <p>The instance profile associated with the underlying Amazon EC2 instance of an RDS Custom DB instance. The instance profile must meet the following requirements:</p>
+    /// <p>The network type of the DB instance.</p>
+    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i></p>
+    /// <p>Valid Values:</p>
     /// <ul>
     /// <li>
-    /// <p>The profile must exist in your account.</p></li>
+    /// <p><code>IPV4</code></p></li>
     /// <li>
-    /// <p>The profile must have an IAM role that Amazon EC2 has permissions to assume.</p></li>
-    /// <li>
-    /// <p>The instance profile name and the associated IAM role name must start with the prefix <code>AWSRDSCustom</code>.</p></li>
+    /// <p><code>DUAL</code></p></li>
     /// </ul>
-    /// <p>For the list of permissions required for the IAM role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc"> Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
-    /// <p>This setting is required for RDS Custom.</p>
-    pub fn set_custom_iam_instance_profile(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_custom_iam_instance_profile(input);
+    pub fn set_network_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_network_type(input);
         self
     }
-    /// <p>The instance profile associated with the underlying Amazon EC2 instance of an RDS Custom DB instance. The instance profile must meet the following requirements:</p>
+    /// <p>The network type of the DB instance.</p>
+    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i></p>
+    /// <p>Valid Values:</p>
     /// <ul>
     /// <li>
-    /// <p>The profile must exist in your account.</p></li>
+    /// <p><code>IPV4</code></p></li>
     /// <li>
-    /// <p>The profile must have an IAM role that Amazon EC2 has permissions to assume.</p></li>
-    /// <li>
-    /// <p>The instance profile name and the associated IAM role name must start with the prefix <code>AWSRDSCustom</code>.</p></li>
+    /// <p><code>DUAL</code></p></li>
     /// </ul>
-    /// <p>For the list of permissions required for the IAM role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc"> Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
-    /// <p>This setting is required for RDS Custom.</p>
-    pub fn get_custom_iam_instance_profile(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_custom_iam_instance_profile()
+    pub fn get_network_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_network_type()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the replicated automated backups from which to restore, for example, <code>arn:aws:rds:us-east-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.</p>
+    /// <p>This setting doesn't apply to RDS Custom.</p>
+    pub fn source_db_instance_automated_backups_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.source_db_instance_automated_backups_arn(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the replicated automated backups from which to restore, for example, <code>arn:aws:rds:us-east-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.</p>
+    /// <p>This setting doesn't apply to RDS Custom.</p>
+    pub fn set_source_db_instance_automated_backups_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_source_db_instance_automated_backups_arn(input);
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the replicated automated backups from which to restore, for example, <code>arn:aws:rds:us-east-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.</p>
+    /// <p>This setting doesn't apply to RDS Custom.</p>
+    pub fn get_source_db_instance_automated_backups_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_db_instance_automated_backups_arn()
     }
     /// <p>The location for storing automated backups and manual snapshots for the restored DB instance.</p>
     /// <p>Valid Values:</p>
@@ -1356,63 +1370,49 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
     pub fn get_backup_target(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_backup_target()
     }
-    /// <p>The network type of the DB instance.</p>
-    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i></p>
-    /// <p>Valid Values:</p>
+    /// <p>The instance profile associated with the underlying Amazon EC2 instance of an RDS Custom DB instance. The instance profile must meet the following requirements:</p>
     /// <ul>
     /// <li>
-    /// <p><code>IPV4</code></p></li>
+    /// <p>The profile must exist in your account.</p></li>
     /// <li>
-    /// <p><code>DUAL</code></p></li>
+    /// <p>The profile must have an IAM role that Amazon EC2 has permissions to assume.</p></li>
+    /// <li>
+    /// <p>The instance profile name and the associated IAM role name must start with the prefix <code>AWSRDSCustom</code>.</p></li>
     /// </ul>
-    pub fn network_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.network_type(input.into());
+    /// <p>For the list of permissions required for the IAM role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc"> Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>This setting is required for RDS Custom.</p>
+    pub fn custom_iam_instance_profile(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.custom_iam_instance_profile(input.into());
         self
     }
-    /// <p>The network type of the DB instance.</p>
-    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i></p>
-    /// <p>Valid Values:</p>
+    /// <p>The instance profile associated with the underlying Amazon EC2 instance of an RDS Custom DB instance. The instance profile must meet the following requirements:</p>
     /// <ul>
     /// <li>
-    /// <p><code>IPV4</code></p></li>
+    /// <p>The profile must exist in your account.</p></li>
     /// <li>
-    /// <p><code>DUAL</code></p></li>
+    /// <p>The profile must have an IAM role that Amazon EC2 has permissions to assume.</p></li>
+    /// <li>
+    /// <p>The instance profile name and the associated IAM role name must start with the prefix <code>AWSRDSCustom</code>.</p></li>
     /// </ul>
-    pub fn set_network_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_network_type(input);
+    /// <p>For the list of permissions required for the IAM role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc"> Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>This setting is required for RDS Custom.</p>
+    pub fn set_custom_iam_instance_profile(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_custom_iam_instance_profile(input);
         self
     }
-    /// <p>The network type of the DB instance.</p>
-    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i></p>
-    /// <p>Valid Values:</p>
+    /// <p>The instance profile associated with the underlying Amazon EC2 instance of an RDS Custom DB instance. The instance profile must meet the following requirements:</p>
     /// <ul>
     /// <li>
-    /// <p><code>IPV4</code></p></li>
+    /// <p>The profile must exist in your account.</p></li>
     /// <li>
-    /// <p><code>DUAL</code></p></li>
+    /// <p>The profile must have an IAM role that Amazon EC2 has permissions to assume.</p></li>
+    /// <li>
+    /// <p>The instance profile name and the associated IAM role name must start with the prefix <code>AWSRDSCustom</code>.</p></li>
     /// </ul>
-    pub fn get_network_type(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_network_type()
-    }
-    /// <p>The storage throughput value for the DB instance.</p>
-    /// <p>This setting doesn't apply to RDS Custom or Amazon Aurora.</p>
-    pub fn storage_throughput(mut self, input: i32) -> Self {
-        self.inner = self.inner.storage_throughput(input);
-        self
-    }
-    /// <p>The storage throughput value for the DB instance.</p>
-    /// <p>This setting doesn't apply to RDS Custom or Amazon Aurora.</p>
-    pub fn set_storage_throughput(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.inner = self.inner.set_storage_throughput(input);
-        self
-    }
-    /// <p>The storage throughput value for the DB instance.</p>
-    /// <p>This setting doesn't apply to RDS Custom or Amazon Aurora.</p>
-    pub fn get_storage_throughput(&self) -> &::std::option::Option<i32> {
-        self.inner.get_storage_throughput()
+    /// <p>For the list of permissions required for the IAM role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc"> Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>This setting is required for RDS Custom.</p>
+    pub fn get_custom_iam_instance_profile(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_custom_iam_instance_profile()
     }
     /// <p>The amount of storage (in gibibytes) to allocate initially for the DB instance. Follow the allocation rules specified in <code>CreateDBInstance</code>.</p>
     /// <p>This setting isn't valid for RDS for SQL Server.</p><note>

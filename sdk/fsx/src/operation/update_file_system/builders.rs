@@ -84,6 +84,8 @@ impl crate::operation::update_file_system::builders::UpdateFileSystemInputBuilde
 /// <li>
 /// <p><code>DiskIopsConfiguration</code></p></li>
 /// <li>
+/// <p><code>EndpointIpv6AddressRange</code></p></li>
+/// <li>
 /// <p><code>FsxAdminPassword</code></p></li>
 /// <li>
 /// <p><code>HAPairs</code></p></li>

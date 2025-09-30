@@ -44,6 +44,7 @@ pub struct EndpointDetails {
     /// </note>
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of security groups IDs that are available to attach to your server's endpoint.</p><note>
+    /// <p>While <code>SecurityGroupIds</code> appears in the response syntax for consistency with <code>CreateServer</code> and <code>UpdateServer</code> operations, this field is not populated in <code>DescribeServer</code> responses. Security groups are managed at the VPC endpoint level and can be modified outside of the Transfer Family service. To retrieve current security group information, use the EC2 <code>DescribeVpcEndpoints</code> API with the <code>VpcEndpointId</code> returned in the response.</p>
     /// <p>This property can only be set when <code>EndpointType</code> is set to <code>VPC</code>.</p>
     /// <p>You can edit the <code>SecurityGroupIds</code> property in the <a href="https://docs.aws.amazon.com/transfer/latest/userguide/API_UpdateServer.html">UpdateServer</a> API only if you are changing the <code>EndpointType</code> from <code>PUBLIC</code> or <code>VPC_ENDPOINT</code> to <code>VPC</code>. To change security groups associated with your server's VPC endpoint after creation, use the Amazon EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyVpcEndpoint.html">ModifyVpcEndpoint</a> API.</p>
     /// </note>
@@ -98,6 +99,7 @@ impl EndpointDetails {
         self.vpc_id.as_deref()
     }
     /// <p>A list of security groups IDs that are available to attach to your server's endpoint.</p><note>
+    /// <p>While <code>SecurityGroupIds</code> appears in the response syntax for consistency with <code>CreateServer</code> and <code>UpdateServer</code> operations, this field is not populated in <code>DescribeServer</code> responses. Security groups are managed at the VPC endpoint level and can be modified outside of the Transfer Family service. To retrieve current security group information, use the EC2 <code>DescribeVpcEndpoints</code> API with the <code>VpcEndpointId</code> returned in the response.</p>
     /// <p>This property can only be set when <code>EndpointType</code> is set to <code>VPC</code>.</p>
     /// <p>You can edit the <code>SecurityGroupIds</code> property in the <a href="https://docs.aws.amazon.com/transfer/latest/userguide/API_UpdateServer.html">UpdateServer</a> API only if you are changing the <code>EndpointType</code> from <code>PUBLIC</code> or <code>VPC_ENDPOINT</code> to <code>VPC</code>. To change security groups associated with your server's VPC endpoint after creation, use the Amazon EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyVpcEndpoint.html">ModifyVpcEndpoint</a> API.</p>
     /// </note>
@@ -279,6 +281,7 @@ impl EndpointDetailsBuilder {
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
     ///
     /// <p>A list of security groups IDs that are available to attach to your server's endpoint.</p><note>
+    /// <p>While <code>SecurityGroupIds</code> appears in the response syntax for consistency with <code>CreateServer</code> and <code>UpdateServer</code> operations, this field is not populated in <code>DescribeServer</code> responses. Security groups are managed at the VPC endpoint level and can be modified outside of the Transfer Family service. To retrieve current security group information, use the EC2 <code>DescribeVpcEndpoints</code> API with the <code>VpcEndpointId</code> returned in the response.</p>
     /// <p>This property can only be set when <code>EndpointType</code> is set to <code>VPC</code>.</p>
     /// <p>You can edit the <code>SecurityGroupIds</code> property in the <a href="https://docs.aws.amazon.com/transfer/latest/userguide/API_UpdateServer.html">UpdateServer</a> API only if you are changing the <code>EndpointType</code> from <code>PUBLIC</code> or <code>VPC_ENDPOINT</code> to <code>VPC</code>. To change security groups associated with your server's VPC endpoint after creation, use the Amazon EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyVpcEndpoint.html">ModifyVpcEndpoint</a> API.</p>
     /// </note>
@@ -289,6 +292,7 @@ impl EndpointDetailsBuilder {
         self
     }
     /// <p>A list of security groups IDs that are available to attach to your server's endpoint.</p><note>
+    /// <p>While <code>SecurityGroupIds</code> appears in the response syntax for consistency with <code>CreateServer</code> and <code>UpdateServer</code> operations, this field is not populated in <code>DescribeServer</code> responses. Security groups are managed at the VPC endpoint level and can be modified outside of the Transfer Family service. To retrieve current security group information, use the EC2 <code>DescribeVpcEndpoints</code> API with the <code>VpcEndpointId</code> returned in the response.</p>
     /// <p>This property can only be set when <code>EndpointType</code> is set to <code>VPC</code>.</p>
     /// <p>You can edit the <code>SecurityGroupIds</code> property in the <a href="https://docs.aws.amazon.com/transfer/latest/userguide/API_UpdateServer.html">UpdateServer</a> API only if you are changing the <code>EndpointType</code> from <code>PUBLIC</code> or <code>VPC_ENDPOINT</code> to <code>VPC</code>. To change security groups associated with your server's VPC endpoint after creation, use the Amazon EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyVpcEndpoint.html">ModifyVpcEndpoint</a> API.</p>
     /// </note>
@@ -297,6 +301,7 @@ impl EndpointDetailsBuilder {
         self
     }
     /// <p>A list of security groups IDs that are available to attach to your server's endpoint.</p><note>
+    /// <p>While <code>SecurityGroupIds</code> appears in the response syntax for consistency with <code>CreateServer</code> and <code>UpdateServer</code> operations, this field is not populated in <code>DescribeServer</code> responses. Security groups are managed at the VPC endpoint level and can be modified outside of the Transfer Family service. To retrieve current security group information, use the EC2 <code>DescribeVpcEndpoints</code> API with the <code>VpcEndpointId</code> returned in the response.</p>
     /// <p>This property can only be set when <code>EndpointType</code> is set to <code>VPC</code>.</p>
     /// <p>You can edit the <code>SecurityGroupIds</code> property in the <a href="https://docs.aws.amazon.com/transfer/latest/userguide/API_UpdateServer.html">UpdateServer</a> API only if you are changing the <code>EndpointType</code> from <code>PUBLIC</code> or <code>VPC_ENDPOINT</code> to <code>VPC</code>. To change security groups associated with your server's VPC endpoint after creation, use the Amazon EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyVpcEndpoint.html">ModifyVpcEndpoint</a> API.</p>
     /// </note>

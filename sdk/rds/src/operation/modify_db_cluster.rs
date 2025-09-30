@@ -102,6 +102,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ModifyD
                 .expect("required fields set"),
         ));
 
+        cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::SensitiveOutput);
         cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::Metadata::new("ModifyDBCluster", "RDS"));
         let mut signing_options = ::aws_runtime::auth::SigningOptions::default();
         signing_options.double_uri_encode = true;
@@ -261,6 +262,8 @@ pub enum ModifyDBClusterError {
     DbClusterParameterGroupNotFoundFault(crate::types::error::DbClusterParameterGroupNotFoundFault),
     /// <p>The user already has a DB instance with the given identifier.</p>
     DbInstanceAlreadyExistsFault(crate::types::error::DbInstanceAlreadyExistsFault),
+    /// <p><code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group.</p>
+    DbParameterGroupNotFoundFault(crate::types::error::DbParameterGroupNotFoundFault),
     /// <p><code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group.</p>
     DbSubnetGroupNotFoundFault(crate::types::error::DbSubnetGroupNotFoundFault),
     /// <p><code>Domain</code> doesn't refer to an existing Active Directory domain.</p>
@@ -273,16 +276,24 @@ pub enum ModifyDBClusterError {
     InvalidDbSecurityGroupStateFault(crate::types::error::InvalidDbSecurityGroupStateFault),
     /// <p>The DB subnet group cannot be deleted because it's in use.</p>
     InvalidDbSubnetGroupStateFault(crate::types::error::InvalidDbSubnetGroupStateFault),
+    /// <p>The global cluster is in an invalid state and can't perform the requested operation.</p>
+    InvalidGlobalClusterStateFault(crate::types::error::InvalidGlobalClusterStateFault),
     /// <p>The requested subnet is invalid, or multiple subnets were requested that are not all in a common VPC.</p>
     InvalidSubnet(crate::types::error::InvalidSubnet),
     /// <p>The DB subnet group doesn't cover all Availability Zones after it's created because of users' change.</p>
     InvalidVpcNetworkStateFault(crate::types::error::InvalidVpcNetworkStateFault),
+    /// <p>An error occurred accessing an Amazon Web Services KMS key.</p>
+    KmsKeyNotAccessibleFault(crate::types::error::KmsKeyNotAccessibleFault),
+    /// <p>The network type is invalid for the DB instance. Valid nework type values are <code>IPV4</code> and <code>DUAL</code>.</p>
+    NetworkTypeNotSupported(crate::types::error::NetworkTypeNotSupported),
     /// <p>The specified option group could not be found.</p>
     OptionGroupNotFoundFault(crate::types::error::OptionGroupNotFoundFault),
     /// <p>The request would result in the user exceeding the allowed amount of storage available across all DB instances.</p>
     StorageQuotaExceededFault(crate::types::error::StorageQuotaExceededFault),
     /// <p>The <code>aurora-iopt1</code> storage type isn't available, because you modified the DB cluster to use this storage type less than one month ago.</p>
     StorageTypeNotAvailableFault(crate::types::error::StorageTypeNotAvailableFault),
+    /// <p>The specified <code>StorageType</code> can't be associated with the DB instance.</p>
+    StorageTypeNotSupportedFault(crate::types::error::StorageTypeNotSupportedFault),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -320,17 +331,22 @@ impl ModifyDBClusterError {
             Self::DbClusterNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::DbClusterParameterGroupNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::DbInstanceAlreadyExistsFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::DbParameterGroupNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::DbSubnetGroupNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::DomainNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidDbClusterStateFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidDbInstanceStateFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidDbSecurityGroupStateFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidDbSubnetGroupStateFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidGlobalClusterStateFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidSubnet(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidVpcNetworkStateFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::KmsKeyNotAccessibleFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::NetworkTypeNotSupported(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::OptionGroupNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::StorageQuotaExceededFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::StorageTypeNotAvailableFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::StorageTypeNotSupportedFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
     }
@@ -349,6 +365,10 @@ impl ModifyDBClusterError {
     /// Returns `true` if the error kind is `ModifyDBClusterError::DbInstanceAlreadyExistsFault`.
     pub fn is_db_instance_already_exists_fault(&self) -> bool {
         matches!(self, Self::DbInstanceAlreadyExistsFault(_))
+    }
+    /// Returns `true` if the error kind is `ModifyDBClusterError::DbParameterGroupNotFoundFault`.
+    pub fn is_db_parameter_group_not_found_fault(&self) -> bool {
+        matches!(self, Self::DbParameterGroupNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `ModifyDBClusterError::DbSubnetGroupNotFoundFault`.
     pub fn is_db_subnet_group_not_found_fault(&self) -> bool {
@@ -374,6 +394,10 @@ impl ModifyDBClusterError {
     pub fn is_invalid_db_subnet_group_state_fault(&self) -> bool {
         matches!(self, Self::InvalidDbSubnetGroupStateFault(_))
     }
+    /// Returns `true` if the error kind is `ModifyDBClusterError::InvalidGlobalClusterStateFault`.
+    pub fn is_invalid_global_cluster_state_fault(&self) -> bool {
+        matches!(self, Self::InvalidGlobalClusterStateFault(_))
+    }
     /// Returns `true` if the error kind is `ModifyDBClusterError::InvalidSubnet`.
     pub fn is_invalid_subnet(&self) -> bool {
         matches!(self, Self::InvalidSubnet(_))
@@ -381,6 +405,14 @@ impl ModifyDBClusterError {
     /// Returns `true` if the error kind is `ModifyDBClusterError::InvalidVpcNetworkStateFault`.
     pub fn is_invalid_vpc_network_state_fault(&self) -> bool {
         matches!(self, Self::InvalidVpcNetworkStateFault(_))
+    }
+    /// Returns `true` if the error kind is `ModifyDBClusterError::KmsKeyNotAccessibleFault`.
+    pub fn is_kms_key_not_accessible_fault(&self) -> bool {
+        matches!(self, Self::KmsKeyNotAccessibleFault(_))
+    }
+    /// Returns `true` if the error kind is `ModifyDBClusterError::NetworkTypeNotSupported`.
+    pub fn is_network_type_not_supported(&self) -> bool {
+        matches!(self, Self::NetworkTypeNotSupported(_))
     }
     /// Returns `true` if the error kind is `ModifyDBClusterError::OptionGroupNotFoundFault`.
     pub fn is_option_group_not_found_fault(&self) -> bool {
@@ -394,6 +426,10 @@ impl ModifyDBClusterError {
     pub fn is_storage_type_not_available_fault(&self) -> bool {
         matches!(self, Self::StorageTypeNotAvailableFault(_))
     }
+    /// Returns `true` if the error kind is `ModifyDBClusterError::StorageTypeNotSupportedFault`.
+    pub fn is_storage_type_not_supported_fault(&self) -> bool {
+        matches!(self, Self::StorageTypeNotSupportedFault(_))
+    }
 }
 impl ::std::error::Error for ModifyDBClusterError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
@@ -402,17 +438,22 @@ impl ::std::error::Error for ModifyDBClusterError {
             Self::DbClusterNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::DbClusterParameterGroupNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::DbInstanceAlreadyExistsFault(_inner) => ::std::option::Option::Some(_inner),
+            Self::DbParameterGroupNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::DbSubnetGroupNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::DomainNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidDbClusterStateFault(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidDbInstanceStateFault(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidDbSecurityGroupStateFault(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidDbSubnetGroupStateFault(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidGlobalClusterStateFault(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidSubnet(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidVpcNetworkStateFault(_inner) => ::std::option::Option::Some(_inner),
+            Self::KmsKeyNotAccessibleFault(_inner) => ::std::option::Option::Some(_inner),
+            Self::NetworkTypeNotSupported(_inner) => ::std::option::Option::Some(_inner),
             Self::OptionGroupNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::StorageQuotaExceededFault(_inner) => ::std::option::Option::Some(_inner),
             Self::StorageTypeNotAvailableFault(_inner) => ::std::option::Option::Some(_inner),
+            Self::StorageTypeNotSupportedFault(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
     }
@@ -424,17 +465,22 @@ impl ::std::fmt::Display for ModifyDBClusterError {
             Self::DbClusterNotFoundFault(_inner) => _inner.fmt(f),
             Self::DbClusterParameterGroupNotFoundFault(_inner) => _inner.fmt(f),
             Self::DbInstanceAlreadyExistsFault(_inner) => _inner.fmt(f),
+            Self::DbParameterGroupNotFoundFault(_inner) => _inner.fmt(f),
             Self::DbSubnetGroupNotFoundFault(_inner) => _inner.fmt(f),
             Self::DomainNotFoundFault(_inner) => _inner.fmt(f),
             Self::InvalidDbClusterStateFault(_inner) => _inner.fmt(f),
             Self::InvalidDbInstanceStateFault(_inner) => _inner.fmt(f),
             Self::InvalidDbSecurityGroupStateFault(_inner) => _inner.fmt(f),
             Self::InvalidDbSubnetGroupStateFault(_inner) => _inner.fmt(f),
+            Self::InvalidGlobalClusterStateFault(_inner) => _inner.fmt(f),
             Self::InvalidSubnet(_inner) => _inner.fmt(f),
             Self::InvalidVpcNetworkStateFault(_inner) => _inner.fmt(f),
+            Self::KmsKeyNotAccessibleFault(_inner) => _inner.fmt(f),
+            Self::NetworkTypeNotSupported(_inner) => _inner.fmt(f),
             Self::OptionGroupNotFoundFault(_inner) => _inner.fmt(f),
             Self::StorageQuotaExceededFault(_inner) => _inner.fmt(f),
             Self::StorageTypeNotAvailableFault(_inner) => _inner.fmt(f),
+            Self::StorageTypeNotSupportedFault(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -460,17 +506,22 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ModifyDBClust
             Self::DbClusterNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DbClusterParameterGroupNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DbInstanceAlreadyExistsFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::DbParameterGroupNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DbSubnetGroupNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DomainNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidDbClusterStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidDbInstanceStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidDbSecurityGroupStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidDbSubnetGroupStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidGlobalClusterStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidSubnet(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidVpcNetworkStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::KmsKeyNotAccessibleFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::NetworkTypeNotSupported(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::OptionGroupNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::StorageQuotaExceededFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::StorageTypeNotAvailableFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::StorageTypeNotSupportedFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }
     }

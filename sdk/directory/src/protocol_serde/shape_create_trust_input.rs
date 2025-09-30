@@ -27,8 +27,17 @@ pub fn ser_create_trust_input_input(
         }
         array_7.finish();
     }
-    if let Some(var_9) = &input.selective_auth {
-        object.key("SelectiveAuth").string(var_9.as_str());
+    if let Some(var_9) = &input.conditional_forwarder_ipv6_addrs {
+        let mut array_10 = object.key("ConditionalForwarderIpv6Addrs").start_array();
+        for item_11 in var_9 {
+            {
+                array_10.value().string(item_11.as_str());
+            }
+        }
+        array_10.finish();
+    }
+    if let Some(var_12) = &input.selective_auth {
+        object.key("SelectiveAuth").string(var_12.as_str());
     }
     Ok(())
 }

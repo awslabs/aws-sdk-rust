@@ -6,8 +6,12 @@
 pub enum RelatedItemTypeFilter {
     /// <p>A filter for related items of type <code>Comment</code>.</p>
     Comment(crate::types::CommentFilter),
+    /// Filter for related items of type Connect case
+    ConnectCase(crate::types::ConnectCaseFilter),
     /// <p>A filter for related items of type <code>Contact</code>.</p>
     Contact(crate::types::ContactFilter),
+    /// Filter for related items of type Custom
+    Custom(crate::types::CustomFilter),
     /// <p>A filter for related items of this type of <code>File</code>.</p>
     File(crate::types::FileFilter),
     /// <p>Filter for related items of type <code>SLA</code>.</p>
@@ -36,6 +40,19 @@ impl RelatedItemTypeFilter {
     pub fn is_comment(&self) -> bool {
         self.as_comment().is_ok()
     }
+    /// Tries to convert the enum instance into [`ConnectCase`](crate::types::RelatedItemTypeFilter::ConnectCase), extracting the inner [`ConnectCaseFilter`](crate::types::ConnectCaseFilter).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_connect_case(&self) -> ::std::result::Result<&crate::types::ConnectCaseFilter, &Self> {
+        if let RelatedItemTypeFilter::ConnectCase(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`ConnectCase`](crate::types::RelatedItemTypeFilter::ConnectCase).
+    pub fn is_connect_case(&self) -> bool {
+        self.as_connect_case().is_ok()
+    }
     /// Tries to convert the enum instance into [`Contact`](crate::types::RelatedItemTypeFilter::Contact), extracting the inner [`ContactFilter`](crate::types::ContactFilter).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_contact(&self) -> ::std::result::Result<&crate::types::ContactFilter, &Self> {
@@ -48,6 +65,19 @@ impl RelatedItemTypeFilter {
     /// Returns true if this is a [`Contact`](crate::types::RelatedItemTypeFilter::Contact).
     pub fn is_contact(&self) -> bool {
         self.as_contact().is_ok()
+    }
+    /// Tries to convert the enum instance into [`Custom`](crate::types::RelatedItemTypeFilter::Custom), extracting the inner [`CustomFilter`](crate::types::CustomFilter).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_custom(&self) -> ::std::result::Result<&crate::types::CustomFilter, &Self> {
+        if let RelatedItemTypeFilter::Custom(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`Custom`](crate::types::RelatedItemTypeFilter::Custom).
+    pub fn is_custom(&self) -> bool {
+        self.as_custom().is_ok()
     }
     /// Tries to convert the enum instance into [`File`](crate::types::RelatedItemTypeFilter::File), extracting the inner [`FileFilter`](crate::types::FileFilter).
     /// Returns `Err(&Self)` if it can't be converted.

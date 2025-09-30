@@ -213,6 +213,21 @@ pub fn de_create_blue_green_deployment_http_error(
                 tmp
             })
         }
+        "StorageQuotaExceeded" => crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentError::StorageQuotaExceededFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::StorageQuotaExceededFaultBuilder::default();
+                output = crate::protocol_serde::shape_storage_quota_exceeded_fault::de_storage_quota_exceeded_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentError::generic(generic),
     })
 }

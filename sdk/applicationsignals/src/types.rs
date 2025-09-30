@@ -55,7 +55,21 @@ pub use crate::types::_tag::Tag;
 
 pub use crate::types::_service_level_objective_summary::ServiceLevelObjectiveSummary;
 
+pub use crate::types::_grouping_configuration::GroupingConfiguration;
+
+pub use crate::types::_grouping_attribute_definition::GroupingAttributeDefinition;
+
+pub use crate::types::_service_state::ServiceState;
+
+pub use crate::types::_change_event::ChangeEvent;
+
+pub use crate::types::_change_event_type::ChangeEventType;
+
+pub use crate::types::_attribute_filter::AttributeFilter;
+
 pub use crate::types::_service_summary::ServiceSummary;
+
+pub use crate::types::_service_group::ServiceGroup;
 
 pub use crate::types::_metric_reference::MetricReference;
 
@@ -71,6 +85,32 @@ pub use crate::types::_service_dependent::ServiceDependent;
 
 pub use crate::types::_service_dependency::ServiceDependency;
 
+pub use crate::types::_audit_finding::AuditFinding;
+
+pub use crate::types::_dependency_graph::DependencyGraph;
+
+pub use crate::types::_edge::Edge;
+
+pub use crate::types::_connection_type::ConnectionType;
+
+pub use crate::types::_node::Node;
+
+pub use crate::types::_metric_graph::MetricGraph;
+
+pub use crate::types::_auditor_result::AuditorResult;
+
+pub use crate::types::_severity::Severity;
+
+pub use crate::types::_audit_target::AuditTarget;
+
+pub use crate::types::_audit_target_entity::AuditTargetEntity;
+
+pub use crate::types::_service_operation_entity::ServiceOperationEntity;
+
+pub use crate::types::_service_entity::ServiceEntity;
+
+pub use crate::types::_service_level_objective_entity::ServiceLevelObjectiveEntity;
+
 pub use crate::types::_service::Service;
 
 pub use crate::types::_batch_update_exclusion_windows_error::BatchUpdateExclusionWindowsError;
@@ -81,17 +121,37 @@ pub use crate::types::_service_level_objective_budget_report::ServiceLevelObject
 
 pub use crate::types::_service_level_objective_budget_status::ServiceLevelObjectiveBudgetStatus;
 
+mod _attribute_filter;
+
+mod _audit_finding;
+
+mod _audit_target;
+
+mod _audit_target_entity;
+
+mod _auditor_result;
+
 mod _batch_update_exclusion_windows_error;
 
 mod _burn_rate_configuration;
 
 mod _calendar_interval;
 
+mod _change_event;
+
+mod _change_event_type;
+
+mod _connection_type;
+
 mod _dependency_config;
+
+mod _dependency_graph;
 
 mod _dimension;
 
 mod _duration_unit;
+
+mod _edge;
 
 mod _evaluation_type;
 
@@ -99,11 +159,17 @@ mod _exclusion_window;
 
 mod _goal;
 
+mod _grouping_attribute_definition;
+
+mod _grouping_configuration;
+
 mod _interval;
 
 mod _metric;
 
 mod _metric_data_query;
+
+mod _metric_graph;
 
 mod _metric_reference;
 
@@ -112,6 +178,8 @@ mod _metric_source_type;
 mod _metric_stat;
 
 mod _monitored_request_count_metric_data_queries;
+
+mod _node;
 
 mod _recurrence_rule;
 
@@ -130,6 +198,10 @@ mod _service;
 mod _service_dependency;
 
 mod _service_dependent;
+
+mod _service_entity;
+
+mod _service_group;
 
 mod _service_level_indicator;
 
@@ -151,11 +223,19 @@ mod _service_level_objective_budget_report_error;
 
 mod _service_level_objective_budget_status;
 
+mod _service_level_objective_entity;
+
 mod _service_level_objective_summary;
 
 mod _service_operation;
 
+mod _service_operation_entity;
+
+mod _service_state;
+
 mod _service_summary;
+
+mod _severity;
 
 mod _standard_unit;
 

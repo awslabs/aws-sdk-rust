@@ -13,7 +13,9 @@
 /// # let relateditemtype = unimplemented!();
 /// match relateditemtype {
 ///     RelatedItemType::Comment => { /* ... */ },
+///     RelatedItemType::ConnectCase => { /* ... */ },
 ///     RelatedItemType::Contact => { /* ... */ },
+///     RelatedItemType::Custom => { /* ... */ },
 ///     RelatedItemType::File => { /* ... */ },
 ///     RelatedItemType::Sla => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -47,7 +49,11 @@ pub enum RelatedItemType {
     #[allow(missing_docs)] // documentation missing in model
     Comment,
     #[allow(missing_docs)] // documentation missing in model
+    ConnectCase,
+    #[allow(missing_docs)] // documentation missing in model
     Contact,
+    #[allow(missing_docs)] // documentation missing in model
+    Custom,
     #[allow(missing_docs)] // documentation missing in model
     File,
     #[allow(missing_docs)] // documentation missing in model
@@ -60,7 +66,9 @@ impl ::std::convert::From<&str> for RelatedItemType {
     fn from(s: &str) -> Self {
         match s {
             "Comment" => RelatedItemType::Comment,
+            "ConnectCase" => RelatedItemType::ConnectCase,
             "Contact" => RelatedItemType::Contact,
+            "Custom" => RelatedItemType::Custom,
             "File" => RelatedItemType::File,
             "Sla" => RelatedItemType::Sla,
             other => RelatedItemType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -79,7 +87,9 @@ impl RelatedItemType {
     pub fn as_str(&self) -> &str {
         match self {
             RelatedItemType::Comment => "Comment",
+            RelatedItemType::ConnectCase => "ConnectCase",
             RelatedItemType::Contact => "Contact",
+            RelatedItemType::Custom => "Custom",
             RelatedItemType::File => "File",
             RelatedItemType::Sla => "Sla",
             RelatedItemType::Unknown(value) => value.as_str(),
@@ -87,7 +97,7 @@ impl RelatedItemType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Comment", "Contact", "File", "Sla"]
+        &["Comment", "ConnectCase", "Contact", "Custom", "File", "Sla"]
     }
 }
 impl ::std::convert::AsRef<str> for RelatedItemType {
@@ -111,7 +121,9 @@ impl ::std::fmt::Display for RelatedItemType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             RelatedItemType::Comment => write!(f, "Comment"),
+            RelatedItemType::ConnectCase => write!(f, "ConnectCase"),
             RelatedItemType::Contact => write!(f, "Contact"),
+            RelatedItemType::Custom => write!(f, "Custom"),
             RelatedItemType::File => write!(f, "File"),
             RelatedItemType::Sla => write!(f, "Sla"),
             RelatedItemType::Unknown(value) => write!(f, "{}", value),

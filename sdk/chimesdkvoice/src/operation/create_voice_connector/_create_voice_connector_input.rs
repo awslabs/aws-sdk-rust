@@ -20,6 +20,8 @@ pub struct CreateVoiceConnectorInput {
     /// <p><code>CONNECT_ANALYTICS_CONNECTOR</code> - Enables enterprises to integrate Amazon Connect with other voice systems for real-time and post-call analytics. They can use Amazon Connect Contact Lens with their existing voice systems to provides call recordings, conversational analytics (including contact transcript, sensitive data redaction, content categorization, theme detection, sentiment analysis, real-time alerts, and post-contact summary), and agent performance evaluations (including evaluation forms, automated evaluation, supervisor review) with a rich user experience to display, search and filter customer interactions, and programmatic access to data streams and the data lake. Additionally, enterprises migrating their contact center to Amazon Connect can start with Contact Lens analytics and performance insights ahead of agent migration.</p></li>
     /// </ul>
     pub integration_type: ::std::option::Option<crate::types::VoiceConnectorIntegrationType>,
+    /// <p>The type of network for the Voice Connector. Either IPv4 only or dual-stack (IPv4 and IPv6).</p>
+    pub network_type: ::std::option::Option<crate::types::NetworkType>,
 }
 impl CreateVoiceConnectorInput {
     /// <p>The name of the Voice Connector.</p>
@@ -51,6 +53,10 @@ impl CreateVoiceConnectorInput {
     pub fn integration_type(&self) -> ::std::option::Option<&crate::types::VoiceConnectorIntegrationType> {
         self.integration_type.as_ref()
     }
+    /// <p>The type of network for the Voice Connector. Either IPv4 only or dual-stack (IPv4 and IPv6).</p>
+    pub fn network_type(&self) -> ::std::option::Option<&crate::types::NetworkType> {
+        self.network_type.as_ref()
+    }
 }
 impl CreateVoiceConnectorInput {
     /// Creates a new builder-style object to manufacture [`CreateVoiceConnectorInput`](crate::operation::create_voice_connector::CreateVoiceConnectorInput).
@@ -68,6 +74,7 @@ pub struct CreateVoiceConnectorInputBuilder {
     pub(crate) require_encryption: ::std::option::Option<bool>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) integration_type: ::std::option::Option<crate::types::VoiceConnectorIntegrationType>,
+    pub(crate) network_type: ::std::option::Option<crate::types::NetworkType>,
 }
 impl CreateVoiceConnectorInputBuilder {
     /// <p>The name of the Voice Connector.</p>
@@ -169,6 +176,20 @@ impl CreateVoiceConnectorInputBuilder {
     pub fn get_integration_type(&self) -> &::std::option::Option<crate::types::VoiceConnectorIntegrationType> {
         &self.integration_type
     }
+    /// <p>The type of network for the Voice Connector. Either IPv4 only or dual-stack (IPv4 and IPv6).</p>
+    pub fn network_type(mut self, input: crate::types::NetworkType) -> Self {
+        self.network_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of network for the Voice Connector. Either IPv4 only or dual-stack (IPv4 and IPv6).</p>
+    pub fn set_network_type(mut self, input: ::std::option::Option<crate::types::NetworkType>) -> Self {
+        self.network_type = input;
+        self
+    }
+    /// <p>The type of network for the Voice Connector. Either IPv4 only or dual-stack (IPv4 and IPv6).</p>
+    pub fn get_network_type(&self) -> &::std::option::Option<crate::types::NetworkType> {
+        &self.network_type
+    }
     /// Consumes the builder and constructs a [`CreateVoiceConnectorInput`](crate::operation::create_voice_connector::CreateVoiceConnectorInput).
     pub fn build(
         self,
@@ -180,6 +201,7 @@ impl CreateVoiceConnectorInputBuilder {
             require_encryption: self.require_encryption,
             tags: self.tags,
             integration_type: self.integration_type,
+            network_type: self.network_type,
         })
     }
 }

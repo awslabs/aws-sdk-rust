@@ -31,6 +31,9 @@ where
                         "DnsIpAddrs" => {
                             builder = builder.set_dns_ip_addrs(crate::protocol_serde::shape_dns_ip_addrs::de_dns_ip_addrs(tokens)?);
                         }
+                        "DnsIpv6Addrs" => {
+                            builder = builder.set_dns_ipv6_addrs(crate::protocol_serde::shape_dns_ipv6_addrs::de_dns_ipv6_addrs(tokens)?);
+                        }
                         "VpcSettings" => {
                             builder = builder.set_vpc_settings(
                                 crate::protocol_serde::shape_directory_vpc_settings_description::de_directory_vpc_settings_description(tokens)?,
@@ -43,6 +46,13 @@ where
                             builder = builder.set_radius_status(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::RadiusStatus::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "NetworkType" => {
+                            builder = builder.set_network_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::NetworkType::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

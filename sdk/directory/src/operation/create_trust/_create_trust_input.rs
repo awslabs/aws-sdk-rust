@@ -17,6 +17,8 @@ pub struct CreateTrustInput {
     pub trust_type: ::std::option::Option<crate::types::TrustType>,
     /// <p>The IP addresses of the remote DNS server associated with RemoteDomainName.</p>
     pub conditional_forwarder_ip_addrs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The IPv6 addresses of the remote DNS server associated with RemoteDomainName.</p>
+    pub conditional_forwarder_ipv6_addrs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Optional parameter to enable selective authentication for the trust.</p>
     pub selective_auth: ::std::option::Option<crate::types::SelectiveAuth>,
 }
@@ -47,6 +49,12 @@ impl CreateTrustInput {
     pub fn conditional_forwarder_ip_addrs(&self) -> &[::std::string::String] {
         self.conditional_forwarder_ip_addrs.as_deref().unwrap_or_default()
     }
+    /// <p>The IPv6 addresses of the remote DNS server associated with RemoteDomainName.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.conditional_forwarder_ipv6_addrs.is_none()`.
+    pub fn conditional_forwarder_ipv6_addrs(&self) -> &[::std::string::String] {
+        self.conditional_forwarder_ipv6_addrs.as_deref().unwrap_or_default()
+    }
     /// <p>Optional parameter to enable selective authentication for the trust.</p>
     pub fn selective_auth(&self) -> ::std::option::Option<&crate::types::SelectiveAuth> {
         self.selective_auth.as_ref()
@@ -61,6 +69,7 @@ impl ::std::fmt::Debug for CreateTrustInput {
         formatter.field("trust_direction", &self.trust_direction);
         formatter.field("trust_type", &self.trust_type);
         formatter.field("conditional_forwarder_ip_addrs", &self.conditional_forwarder_ip_addrs);
+        formatter.field("conditional_forwarder_ipv6_addrs", &self.conditional_forwarder_ipv6_addrs);
         formatter.field("selective_auth", &self.selective_auth);
         formatter.finish()
     }
@@ -82,6 +91,7 @@ pub struct CreateTrustInputBuilder {
     pub(crate) trust_direction: ::std::option::Option<crate::types::TrustDirection>,
     pub(crate) trust_type: ::std::option::Option<crate::types::TrustType>,
     pub(crate) conditional_forwarder_ip_addrs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) conditional_forwarder_ipv6_addrs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) selective_auth: ::std::option::Option<crate::types::SelectiveAuth>,
 }
 impl CreateTrustInputBuilder {
@@ -179,6 +189,26 @@ impl CreateTrustInputBuilder {
     pub fn get_conditional_forwarder_ip_addrs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.conditional_forwarder_ip_addrs
     }
+    /// Appends an item to `conditional_forwarder_ipv6_addrs`.
+    ///
+    /// To override the contents of this collection use [`set_conditional_forwarder_ipv6_addrs`](Self::set_conditional_forwarder_ipv6_addrs).
+    ///
+    /// <p>The IPv6 addresses of the remote DNS server associated with RemoteDomainName.</p>
+    pub fn conditional_forwarder_ipv6_addrs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.conditional_forwarder_ipv6_addrs.unwrap_or_default();
+        v.push(input.into());
+        self.conditional_forwarder_ipv6_addrs = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The IPv6 addresses of the remote DNS server associated with RemoteDomainName.</p>
+    pub fn set_conditional_forwarder_ipv6_addrs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.conditional_forwarder_ipv6_addrs = input;
+        self
+    }
+    /// <p>The IPv6 addresses of the remote DNS server associated with RemoteDomainName.</p>
+    pub fn get_conditional_forwarder_ipv6_addrs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.conditional_forwarder_ipv6_addrs
+    }
     /// <p>Optional parameter to enable selective authentication for the trust.</p>
     pub fn selective_auth(mut self, input: crate::types::SelectiveAuth) -> Self {
         self.selective_auth = ::std::option::Option::Some(input);
@@ -202,6 +232,7 @@ impl CreateTrustInputBuilder {
             trust_direction: self.trust_direction,
             trust_type: self.trust_type,
             conditional_forwarder_ip_addrs: self.conditional_forwarder_ip_addrs,
+            conditional_forwarder_ipv6_addrs: self.conditional_forwarder_ipv6_addrs,
             selective_auth: self.selective_auth,
         })
     }
@@ -215,6 +246,7 @@ impl ::std::fmt::Debug for CreateTrustInputBuilder {
         formatter.field("trust_direction", &self.trust_direction);
         formatter.field("trust_type", &self.trust_type);
         formatter.field("conditional_forwarder_ip_addrs", &self.conditional_forwarder_ip_addrs);
+        formatter.field("conditional_forwarder_ipv6_addrs", &self.conditional_forwarder_ipv6_addrs);
         formatter.field("selective_auth", &self.selective_auth);
         formatter.finish()
     }

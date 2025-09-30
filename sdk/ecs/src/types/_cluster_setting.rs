@@ -6,7 +6,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClusterSetting {
-    /// <p>The name of the cluster setting. The value is <code>containerInsights</code>.</p>
+    /// <p>The name of the cluster setting. The value is <code>containerInsights</code> .</p>
     pub name: ::std::option::Option<crate::types::ClusterSettingName>,
     /// <p>The value to set for the cluster setting. The supported values are <code>enhanced</code>, <code>enabled</code>, and <code>disabled</code>.</p>
     /// <p>To use Container Insights with enhanced observability, set the <code>containerInsights</code> account setting to <code>enhanced</code>.</p>
@@ -15,7 +15,7 @@ pub struct ClusterSetting {
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl ClusterSetting {
-    /// <p>The name of the cluster setting. The value is <code>containerInsights</code>.</p>
+    /// <p>The name of the cluster setting. The value is <code>containerInsights</code> .</p>
     pub fn name(&self) -> ::std::option::Option<&crate::types::ClusterSettingName> {
         self.name.as_ref()
     }
@@ -42,17 +42,17 @@ pub struct ClusterSettingBuilder {
     pub(crate) value: ::std::option::Option<::std::string::String>,
 }
 impl ClusterSettingBuilder {
-    /// <p>The name of the cluster setting. The value is <code>containerInsights</code>.</p>
+    /// <p>The name of the cluster setting. The value is <code>containerInsights</code> .</p>
     pub fn name(mut self, input: crate::types::ClusterSettingName) -> Self {
         self.name = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The name of the cluster setting. The value is <code>containerInsights</code>.</p>
+    /// <p>The name of the cluster setting. The value is <code>containerInsights</code> .</p>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::ClusterSettingName>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of the cluster setting. The value is <code>containerInsights</code>.</p>
+    /// <p>The name of the cluster setting. The value is <code>containerInsights</code> .</p>
     pub fn get_name(&self) -> &::std::option::Option<crate::types::ClusterSettingName> {
         &self.name
     }

@@ -169,6 +169,8 @@ pub use crate::types::_spark_glue_args::SparkGlueArgsBuilder;
 
 pub use crate::types::_spark_emr_properties_output::SparkEmrPropertiesOutputBuilder;
 
+pub use crate::types::_managed_endpoint_credentials::ManagedEndpointCredentialsBuilder;
+
 pub use crate::types::_username_password::UsernamePasswordBuilder;
 
 pub use crate::types::_redshift_properties_output::RedshiftPropertiesOutputBuilder;

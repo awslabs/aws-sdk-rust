@@ -109,6 +109,10 @@ pub use crate::types::_audit_event_type::AuditEventType;
 
 pub use crate::types::_related_item_input_content::RelatedItemInputContent;
 
+pub use crate::types::_custom_input_content::CustomInputContent;
+
+pub use crate::types::_connect_case_input_content::ConnectCaseInputContent;
+
 pub use crate::types::_sla_input_content::SlaInputContent;
 
 pub use crate::types::_sla_input_configuration::SlaInputConfiguration;
@@ -127,6 +131,10 @@ pub use crate::types::_search_related_items_response_item::SearchRelatedItemsRes
 
 pub use crate::types::_related_item_content::RelatedItemContent;
 
+pub use crate::types::_custom_content::CustomContent;
+
+pub use crate::types::_connect_case_content::ConnectCaseContent;
+
 pub use crate::types::_sla_content::SlaContent;
 
 pub use crate::types::_sla_configuration::SlaConfiguration;
@@ -136,6 +144,12 @@ pub use crate::types::_sla_status::SlaStatus;
 pub use crate::types::_contact_content::ContactContent;
 
 pub use crate::types::_related_item_type_filter::RelatedItemTypeFilter;
+
+pub use crate::types::_custom_filter::CustomFilter;
+
+pub use crate::types::_custom_fields_filter::CustomFieldsFilter;
+
+pub use crate::types::_connect_case_filter::ConnectCaseFilter;
 
 pub use crate::types::_sla_filter::SlaFilter;
 
@@ -181,11 +195,25 @@ mod _comment_content;
 
 mod _comment_filter;
 
+mod _connect_case_content;
+
+mod _connect_case_filter;
+
+mod _connect_case_input_content;
+
 mod _contact;
 
 mod _contact_content;
 
 mod _contact_filter;
+
+mod _custom_content;
+
+mod _custom_fields_filter;
+
+mod _custom_filter;
+
+mod _custom_input_content;
 
 mod _domain_status;
 

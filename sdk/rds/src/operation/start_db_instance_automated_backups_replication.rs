@@ -265,6 +265,8 @@ pub enum StartDBInstanceAutomatedBackupsReplicationError {
     DbInstanceAutomatedBackupQuotaExceededFault(crate::types::error::DbInstanceAutomatedBackupQuotaExceededFault),
     /// <p><code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.</p>
     DbInstanceNotFoundFault(crate::types::error::DbInstanceNotFoundFault),
+    /// <p>The automated backup is in an invalid state. For example, this automated backup is associated with an active instance.</p>
+    InvalidDbInstanceAutomatedBackupStateFault(crate::types::error::InvalidDbInstanceAutomatedBackupStateFault),
     /// <p>The DB instance isn't in a valid state.</p>
     InvalidDbInstanceStateFault(crate::types::error::InvalidDbInstanceStateFault),
     /// <p>An error occurred accessing an Amazon Web Services KMS key.</p>
@@ -306,6 +308,7 @@ impl StartDBInstanceAutomatedBackupsReplicationError {
         match self {
             Self::DbInstanceAutomatedBackupQuotaExceededFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::DbInstanceNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidDbInstanceAutomatedBackupStateFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidDbInstanceStateFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::KmsKeyNotAccessibleFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::StorageTypeNotSupportedFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -319,6 +322,10 @@ impl StartDBInstanceAutomatedBackupsReplicationError {
     /// Returns `true` if the error kind is `StartDBInstanceAutomatedBackupsReplicationError::DbInstanceNotFoundFault`.
     pub fn is_db_instance_not_found_fault(&self) -> bool {
         matches!(self, Self::DbInstanceNotFoundFault(_))
+    }
+    /// Returns `true` if the error kind is `StartDBInstanceAutomatedBackupsReplicationError::InvalidDbInstanceAutomatedBackupStateFault`.
+    pub fn is_invalid_db_instance_automated_backup_state_fault(&self) -> bool {
+        matches!(self, Self::InvalidDbInstanceAutomatedBackupStateFault(_))
     }
     /// Returns `true` if the error kind is `StartDBInstanceAutomatedBackupsReplicationError::InvalidDbInstanceStateFault`.
     pub fn is_invalid_db_instance_state_fault(&self) -> bool {
@@ -338,6 +345,7 @@ impl ::std::error::Error for StartDBInstanceAutomatedBackupsReplicationError {
         match self {
             Self::DbInstanceAutomatedBackupQuotaExceededFault(_inner) => ::std::option::Option::Some(_inner),
             Self::DbInstanceNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidDbInstanceAutomatedBackupStateFault(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidDbInstanceStateFault(_inner) => ::std::option::Option::Some(_inner),
             Self::KmsKeyNotAccessibleFault(_inner) => ::std::option::Option::Some(_inner),
             Self::StorageTypeNotSupportedFault(_inner) => ::std::option::Option::Some(_inner),
@@ -350,6 +358,7 @@ impl ::std::fmt::Display for StartDBInstanceAutomatedBackupsReplicationError {
         match self {
             Self::DbInstanceAutomatedBackupQuotaExceededFault(_inner) => _inner.fmt(f),
             Self::DbInstanceNotFoundFault(_inner) => _inner.fmt(f),
+            Self::InvalidDbInstanceAutomatedBackupStateFault(_inner) => _inner.fmt(f),
             Self::InvalidDbInstanceStateFault(_inner) => _inner.fmt(f),
             Self::KmsKeyNotAccessibleFault(_inner) => _inner.fmt(f),
             Self::StorageTypeNotSupportedFault(_inner) => _inner.fmt(f),
@@ -376,6 +385,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for StartDBInstan
         match self {
             Self::DbInstanceAutomatedBackupQuotaExceededFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DbInstanceNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidDbInstanceAutomatedBackupStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidDbInstanceStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::KmsKeyNotAccessibleFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::StorageTypeNotSupportedFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

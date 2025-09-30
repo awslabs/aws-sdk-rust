@@ -22,7 +22,9 @@ impl crate::operation::list_tags_for_resource::builders::ListTagsForResourceInpu
 }
 /// Fluent builder constructing a request to `ListTagsForResource`.
 ///
-/// <p>Lists the tags associated with the specified resource.</p>
+/// <p>Lists the tags associated with the specified resource.</p><note>
+/// <p>This feature is currently available only for AgentCore Runtime, Browser, Code Interpreter tool, and Gateway.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListTagsForResourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

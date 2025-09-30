@@ -12,6 +12,9 @@
 /// ```text
 /// # let capacityproviderupdatestatus = unimplemented!();
 /// match capacityproviderupdatestatus {
+///     CapacityProviderUpdateStatus::CreateComplete => { /* ... */ },
+///     CapacityProviderUpdateStatus::CreateFailed => { /* ... */ },
+///     CapacityProviderUpdateStatus::CreateInProgress => { /* ... */ },
 ///     CapacityProviderUpdateStatus::DeleteComplete => { /* ... */ },
 ///     CapacityProviderUpdateStatus::DeleteFailed => { /* ... */ },
 ///     CapacityProviderUpdateStatus::DeleteInProgress => { /* ... */ },
@@ -47,6 +50,12 @@
 )]
 pub enum CapacityProviderUpdateStatus {
     #[allow(missing_docs)] // documentation missing in model
+    CreateComplete,
+    #[allow(missing_docs)] // documentation missing in model
+    CreateFailed,
+    #[allow(missing_docs)] // documentation missing in model
+    CreateInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     DeleteComplete,
     #[allow(missing_docs)] // documentation missing in model
     DeleteFailed,
@@ -65,6 +74,9 @@ pub enum CapacityProviderUpdateStatus {
 impl ::std::convert::From<&str> for CapacityProviderUpdateStatus {
     fn from(s: &str) -> Self {
         match s {
+            "CREATE_COMPLETE" => CapacityProviderUpdateStatus::CreateComplete,
+            "CREATE_FAILED" => CapacityProviderUpdateStatus::CreateFailed,
+            "CREATE_IN_PROGRESS" => CapacityProviderUpdateStatus::CreateInProgress,
             "DELETE_COMPLETE" => CapacityProviderUpdateStatus::DeleteComplete,
             "DELETE_FAILED" => CapacityProviderUpdateStatus::DeleteFailed,
             "DELETE_IN_PROGRESS" => CapacityProviderUpdateStatus::DeleteInProgress,
@@ -86,6 +98,9 @@ impl CapacityProviderUpdateStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            CapacityProviderUpdateStatus::CreateComplete => "CREATE_COMPLETE",
+            CapacityProviderUpdateStatus::CreateFailed => "CREATE_FAILED",
+            CapacityProviderUpdateStatus::CreateInProgress => "CREATE_IN_PROGRESS",
             CapacityProviderUpdateStatus::DeleteComplete => "DELETE_COMPLETE",
             CapacityProviderUpdateStatus::DeleteFailed => "DELETE_FAILED",
             CapacityProviderUpdateStatus::DeleteInProgress => "DELETE_IN_PROGRESS",
@@ -98,6 +113,9 @@ impl CapacityProviderUpdateStatus {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "CREATE_COMPLETE",
+            "CREATE_FAILED",
+            "CREATE_IN_PROGRESS",
             "DELETE_COMPLETE",
             "DELETE_FAILED",
             "DELETE_IN_PROGRESS",
@@ -127,6 +145,9 @@ impl CapacityProviderUpdateStatus {
 impl ::std::fmt::Display for CapacityProviderUpdateStatus {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            CapacityProviderUpdateStatus::CreateComplete => write!(f, "CREATE_COMPLETE"),
+            CapacityProviderUpdateStatus::CreateFailed => write!(f, "CREATE_FAILED"),
+            CapacityProviderUpdateStatus::CreateInProgress => write!(f, "CREATE_IN_PROGRESS"),
             CapacityProviderUpdateStatus::DeleteComplete => write!(f, "DELETE_COMPLETE"),
             CapacityProviderUpdateStatus::DeleteFailed => write!(f, "DELETE_FAILED"),
             CapacityProviderUpdateStatus::DeleteInProgress => write!(f, "DELETE_IN_PROGRESS"),

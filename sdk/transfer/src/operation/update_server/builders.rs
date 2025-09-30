@@ -549,19 +549,37 @@ impl UpdateServerFluentBuilder {
     pub fn get_structured_log_destinations(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_structured_log_destinations()
     }
-    /// <p>Specifies whether or not performance for your Amazon S3 directories is optimized. This is disabled by default.</p>
+    /// <p>Specifies whether or not performance for your Amazon S3 directories is optimized.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If using the console, this is enabled by default.</p></li>
+    /// <li>
+    /// <p>If using the API or CLI, this is disabled by default.</p></li>
+    /// </ul>
     /// <p>By default, home directory mappings have a <code>TYPE</code> of <code>DIRECTORY</code>. If you enable this option, you would then need to explicitly set the <code>HomeDirectoryMapEntry</code> <code>Type</code> to <code>FILE</code> if you want a mapping to have a file target.</p>
     pub fn s3_storage_options(mut self, input: crate::types::S3StorageOptions) -> Self {
         self.inner = self.inner.s3_storage_options(input);
         self
     }
-    /// <p>Specifies whether or not performance for your Amazon S3 directories is optimized. This is disabled by default.</p>
+    /// <p>Specifies whether or not performance for your Amazon S3 directories is optimized.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If using the console, this is enabled by default.</p></li>
+    /// <li>
+    /// <p>If using the API or CLI, this is disabled by default.</p></li>
+    /// </ul>
     /// <p>By default, home directory mappings have a <code>TYPE</code> of <code>DIRECTORY</code>. If you enable this option, you would then need to explicitly set the <code>HomeDirectoryMapEntry</code> <code>Type</code> to <code>FILE</code> if you want a mapping to have a file target.</p>
     pub fn set_s3_storage_options(mut self, input: ::std::option::Option<crate::types::S3StorageOptions>) -> Self {
         self.inner = self.inner.set_s3_storage_options(input);
         self
     }
-    /// <p>Specifies whether or not performance for your Amazon S3 directories is optimized. This is disabled by default.</p>
+    /// <p>Specifies whether or not performance for your Amazon S3 directories is optimized.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If using the console, this is enabled by default.</p></li>
+    /// <li>
+    /// <p>If using the API or CLI, this is disabled by default.</p></li>
+    /// </ul>
     /// <p>By default, home directory mappings have a <code>TYPE</code> of <code>DIRECTORY</code>. If you enable this option, you would then need to explicitly set the <code>HomeDirectoryMapEntry</code> <code>Type</code> to <code>FILE</code> if you want a mapping to have a file target.</p>
     pub fn get_s3_storage_options(&self) -> &::std::option::Option<crate::types::S3StorageOptions> {
         self.inner.get_s3_storage_options()
@@ -609,5 +627,28 @@ impl UpdateServerFluentBuilder {
     /// </note>
     pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::IpAddressType> {
         self.inner.get_ip_address_type()
+    }
+    /// <p>The mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>, which allows you to store and access user credentials within the Transfer Family service.</p>
+    /// <p>Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Directory Service for Microsoft Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon Web Services using AD Connector. This option also requires you to provide a Directory ID by using the <code>IdentityProviderDetails</code> parameter.</p>
+    /// <p>Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The <code>API_GATEWAY</code> setting requires you to provide an Amazon API Gateway endpoint URL to call for authentication by using the <code>IdentityProviderDetails</code> parameter.</p>
+    /// <p>Use the <code>AWS_LAMBDA</code> value to directly use an Lambda function as your identity provider. If you choose this value, you must specify the ARN for the Lambda function in the <code>Function</code> parameter for the <code>IdentityProviderDetails</code> data type.</p>
+    pub fn identity_provider_type(mut self, input: crate::types::IdentityProviderType) -> Self {
+        self.inner = self.inner.identity_provider_type(input);
+        self
+    }
+    /// <p>The mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>, which allows you to store and access user credentials within the Transfer Family service.</p>
+    /// <p>Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Directory Service for Microsoft Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon Web Services using AD Connector. This option also requires you to provide a Directory ID by using the <code>IdentityProviderDetails</code> parameter.</p>
+    /// <p>Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The <code>API_GATEWAY</code> setting requires you to provide an Amazon API Gateway endpoint URL to call for authentication by using the <code>IdentityProviderDetails</code> parameter.</p>
+    /// <p>Use the <code>AWS_LAMBDA</code> value to directly use an Lambda function as your identity provider. If you choose this value, you must specify the ARN for the Lambda function in the <code>Function</code> parameter for the <code>IdentityProviderDetails</code> data type.</p>
+    pub fn set_identity_provider_type(mut self, input: ::std::option::Option<crate::types::IdentityProviderType>) -> Self {
+        self.inner = self.inner.set_identity_provider_type(input);
+        self
+    }
+    /// <p>The mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>, which allows you to store and access user credentials within the Transfer Family service.</p>
+    /// <p>Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Directory Service for Microsoft Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon Web Services using AD Connector. This option also requires you to provide a Directory ID by using the <code>IdentityProviderDetails</code> parameter.</p>
+    /// <p>Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The <code>API_GATEWAY</code> setting requires you to provide an Amazon API Gateway endpoint URL to call for authentication by using the <code>IdentityProviderDetails</code> parameter.</p>
+    /// <p>Use the <code>AWS_LAMBDA</code> value to directly use an Lambda function as your identity provider. If you choose this value, you must specify the ARN for the Lambda function in the <code>Function</code> parameter for the <code>IdentityProviderDetails</code> data type.</p>
+    pub fn get_identity_provider_type(&self) -> &::std::option::Option<crate::types::IdentityProviderType> {
+        self.inner.get_identity_provider_type()
     }
 }

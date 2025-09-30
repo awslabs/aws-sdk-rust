@@ -22,8 +22,7 @@ impl crate::operation::create_capacity_provider::builders::CreateCapacityProvide
 }
 /// Fluent builder constructing a request to `CreateCapacityProvider`.
 ///
-/// <p>Creates a new capacity provider. Capacity providers are associated with an Amazon ECS cluster and are used in capacity provider strategies to facilitate cluster auto scaling.</p>
-/// <p>Only capacity providers that use an Auto Scaling group can be created. Amazon ECS tasks on Fargate use the <code>FARGATE</code> and <code>FARGATE_SPOT</code> capacity providers. These providers are available to all accounts in the Amazon Web Services Regions that Fargate supports.</p>
+/// <p>Creates a capacity provider. Capacity providers are associated with a cluster and are used in capacity provider strategies to facilitate cluster auto scaling. You can create capacity providers for Amazon ECS Managed Instances and EC2 instances. Fargate has the predefined <code>FARGATE</code> and <code>FARGATE_SPOT</code> capacity providers.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateCapacityProviderFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -123,6 +122,20 @@ impl CreateCapacityProviderFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
+    /// <p>The name of the cluster to associate with the capacity provider. When you create a capacity provider with Amazon ECS Managed Instances, it becomes available only within the specified cluster.</p>
+    pub fn cluster(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.cluster(input.into());
+        self
+    }
+    /// <p>The name of the cluster to associate with the capacity provider. When you create a capacity provider with Amazon ECS Managed Instances, it becomes available only within the specified cluster.</p>
+    pub fn set_cluster(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_cluster(input);
+        self
+    }
+    /// <p>The name of the cluster to associate with the capacity provider. When you create a capacity provider with Amazon ECS Managed Instances, it becomes available only within the specified cluster.</p>
+    pub fn get_cluster(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster()
+    }
     /// <p>The details of the Auto Scaling group for the capacity provider.</p>
     pub fn auto_scaling_group_provider(mut self, input: crate::types::AutoScalingGroupProvider) -> Self {
         self.inner = self.inner.auto_scaling_group_provider(input);
@@ -136,6 +149,20 @@ impl CreateCapacityProviderFluentBuilder {
     /// <p>The details of the Auto Scaling group for the capacity provider.</p>
     pub fn get_auto_scaling_group_provider(&self) -> &::std::option::Option<crate::types::AutoScalingGroupProvider> {
         self.inner.get_auto_scaling_group_provider()
+    }
+    /// <p>The configuration for the Amazon ECS Managed Instances provider. This configuration specifies how Amazon ECS manages Amazon EC2 instances on your behalf, including the infrastructure role, instance launch template, and tag propagation settings.</p>
+    pub fn managed_instances_provider(mut self, input: crate::types::CreateManagedInstancesProviderConfiguration) -> Self {
+        self.inner = self.inner.managed_instances_provider(input);
+        self
+    }
+    /// <p>The configuration for the Amazon ECS Managed Instances provider. This configuration specifies how Amazon ECS manages Amazon EC2 instances on your behalf, including the infrastructure role, instance launch template, and tag propagation settings.</p>
+    pub fn set_managed_instances_provider(mut self, input: ::std::option::Option<crate::types::CreateManagedInstancesProviderConfiguration>) -> Self {
+        self.inner = self.inner.set_managed_instances_provider(input);
+        self
+    }
+    /// <p>The configuration for the Amazon ECS Managed Instances provider. This configuration specifies how Amazon ECS manages Amazon EC2 instances on your behalf, including the infrastructure role, instance launch template, and tag propagation settings.</p>
+    pub fn get_managed_instances_provider(&self) -> &::std::option::Option<crate::types::CreateManagedInstancesProviderConfiguration> {
+        self.inner.get_managed_instances_provider()
     }
     ///
     /// Appends an item to `tags`.

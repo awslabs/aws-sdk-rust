@@ -6,11 +6,23 @@ pub fn ser_update_capacity_provider_input_input(
     if let Some(var_1) = &input.name {
         object.key("name").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.auto_scaling_group_provider {
+    if let Some(var_2) = &input.cluster {
+        object.key("cluster").string(var_2.as_str());
+    }
+    if let Some(var_3) = &input.auto_scaling_group_provider {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("autoScalingGroupProvider").start_object();
-        crate::protocol_serde::shape_auto_scaling_group_provider_update::ser_auto_scaling_group_provider_update(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_4 = object.key("autoScalingGroupProvider").start_object();
+        crate::protocol_serde::shape_auto_scaling_group_provider_update::ser_auto_scaling_group_provider_update(&mut object_4, var_3)?;
+        object_4.finish();
+    }
+    if let Some(var_5) = &input.managed_instances_provider {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("managedInstancesProvider").start_object();
+        crate::protocol_serde::shape_update_managed_instances_provider_configuration::ser_update_managed_instances_provider_configuration(
+            &mut object_6,
+            var_5,
+        )?;
+        object_6.finish();
     }
     Ok(())
 }

@@ -170,7 +170,7 @@ pub fn de_orderable_db_instance_option(
                 builder = builder.set_supports_iops(var_12);
             }
             ,
-            s if s.matches("SupportsEnhancedMonitoring") /* SupportsEnhancedMonitoring com.amazonaws.rds#OrderableDBInstanceOption$SupportsEnhancedMonitoring */ =>  {
+            s if s.matches("SupportsStorageThroughput") /* SupportsStorageThroughput com.amazonaws.rds#OrderableDBInstanceOption$SupportsStorageThroughput */ =>  {
                 let var_13 =
                     Some(
                          {
@@ -182,10 +182,10 @@ pub fn de_orderable_db_instance_option(
                         ?
                     )
                 ;
-                builder = builder.set_supports_enhanced_monitoring(var_13);
+                builder = builder.set_supports_storage_throughput(var_13);
             }
             ,
-            s if s.matches("SupportsIAMDatabaseAuthentication") /* SupportsIAMDatabaseAuthentication com.amazonaws.rds#OrderableDBInstanceOption$SupportsIAMDatabaseAuthentication */ =>  {
+            s if s.matches("SupportsEnhancedMonitoring") /* SupportsEnhancedMonitoring com.amazonaws.rds#OrderableDBInstanceOption$SupportsEnhancedMonitoring */ =>  {
                 let var_14 =
                     Some(
                          {
@@ -197,10 +197,10 @@ pub fn de_orderable_db_instance_option(
                         ?
                     )
                 ;
-                builder = builder.set_supports_iam_database_authentication(var_14);
+                builder = builder.set_supports_enhanced_monitoring(var_14);
             }
             ,
-            s if s.matches("SupportsPerformanceInsights") /* SupportsPerformanceInsights com.amazonaws.rds#OrderableDBInstanceOption$SupportsPerformanceInsights */ =>  {
+            s if s.matches("SupportsIAMDatabaseAuthentication") /* SupportsIAMDatabaseAuthentication com.amazonaws.rds#OrderableDBInstanceOption$SupportsIAMDatabaseAuthentication */ =>  {
                 let var_15 =
                     Some(
                          {
@@ -212,25 +212,25 @@ pub fn de_orderable_db_instance_option(
                         ?
                     )
                 ;
-                builder = builder.set_supports_performance_insights(var_15);
+                builder = builder.set_supports_iam_database_authentication(var_15);
             }
             ,
-            s if s.matches("MinStorageSize") /* MinStorageSize com.amazonaws.rds#OrderableDBInstanceOption$MinStorageSize */ =>  {
+            s if s.matches("SupportsPerformanceInsights") /* SupportsPerformanceInsights com.amazonaws.rds#OrderableDBInstanceOption$SupportsPerformanceInsights */ =>  {
                 let var_16 =
                     Some(
                          {
-                            <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
-                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.rds#IntegerOptional`)"))
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
                         }
                         ?
                     )
                 ;
-                builder = builder.set_min_storage_size(var_16);
+                builder = builder.set_supports_performance_insights(var_16);
             }
             ,
-            s if s.matches("MaxStorageSize") /* MaxStorageSize com.amazonaws.rds#OrderableDBInstanceOption$MaxStorageSize */ =>  {
+            s if s.matches("MinStorageSize") /* MinStorageSize com.amazonaws.rds#OrderableDBInstanceOption$MinStorageSize */ =>  {
                 let var_17 =
                     Some(
                          {
@@ -242,10 +242,10 @@ pub fn de_orderable_db_instance_option(
                         ?
                     )
                 ;
-                builder = builder.set_max_storage_size(var_17);
+                builder = builder.set_min_storage_size(var_17);
             }
             ,
-            s if s.matches("MinIopsPerDbInstance") /* MinIopsPerDbInstance com.amazonaws.rds#OrderableDBInstanceOption$MinIopsPerDbInstance */ =>  {
+            s if s.matches("MaxStorageSize") /* MaxStorageSize com.amazonaws.rds#OrderableDBInstanceOption$MaxStorageSize */ =>  {
                 let var_18 =
                     Some(
                          {
@@ -257,10 +257,10 @@ pub fn de_orderable_db_instance_option(
                         ?
                     )
                 ;
-                builder = builder.set_min_iops_per_db_instance(var_18);
+                builder = builder.set_max_storage_size(var_18);
             }
             ,
-            s if s.matches("MaxIopsPerDbInstance") /* MaxIopsPerDbInstance com.amazonaws.rds#OrderableDBInstanceOption$MaxIopsPerDbInstance */ =>  {
+            s if s.matches("MinIopsPerDbInstance") /* MinIopsPerDbInstance com.amazonaws.rds#OrderableDBInstanceOption$MinIopsPerDbInstance */ =>  {
                 let var_19 =
                     Some(
                          {
@@ -272,25 +272,25 @@ pub fn de_orderable_db_instance_option(
                         ?
                     )
                 ;
-                builder = builder.set_max_iops_per_db_instance(var_19);
+                builder = builder.set_min_iops_per_db_instance(var_19);
             }
             ,
-            s if s.matches("MinIopsPerGib") /* MinIopsPerGib com.amazonaws.rds#OrderableDBInstanceOption$MinIopsPerGib */ =>  {
+            s if s.matches("MaxIopsPerDbInstance") /* MaxIopsPerDbInstance com.amazonaws.rds#OrderableDBInstanceOption$MaxIopsPerDbInstance */ =>  {
                 let var_20 =
                     Some(
                          {
-                            <f64 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                            <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
-                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (double: `com.amazonaws.rds#DoubleOptional`)"))
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.rds#IntegerOptional`)"))
                         }
                         ?
                     )
                 ;
-                builder = builder.set_min_iops_per_gib(var_20);
+                builder = builder.set_max_iops_per_db_instance(var_20);
             }
             ,
-            s if s.matches("MaxIopsPerGib") /* MaxIopsPerGib com.amazonaws.rds#OrderableDBInstanceOption$MaxIopsPerGib */ =>  {
+            s if s.matches("MinIopsPerGib") /* MinIopsPerGib com.amazonaws.rds#OrderableDBInstanceOption$MinIopsPerGib */ =>  {
                 let var_21 =
                     Some(
                          {
@@ -302,125 +302,135 @@ pub fn de_orderable_db_instance_option(
                         ?
                     )
                 ;
-                builder = builder.set_max_iops_per_gib(var_21);
+                builder = builder.set_min_iops_per_gib(var_21);
+            }
+            ,
+            s if s.matches("MaxIopsPerGib") /* MaxIopsPerGib com.amazonaws.rds#OrderableDBInstanceOption$MaxIopsPerGib */ =>  {
+                let var_22 =
+                    Some(
+                         {
+                            <f64 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (double: `com.amazonaws.rds#DoubleOptional`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_max_iops_per_gib(var_22);
+            }
+            ,
+            s if s.matches("MinStorageThroughputPerDbInstance") /* MinStorageThroughputPerDbInstance com.amazonaws.rds#OrderableDBInstanceOption$MinStorageThroughputPerDbInstance */ =>  {
+                let var_23 =
+                    Some(
+                         {
+                            <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.rds#IntegerOptional`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_min_storage_throughput_per_db_instance(var_23);
+            }
+            ,
+            s if s.matches("MaxStorageThroughputPerDbInstance") /* MaxStorageThroughputPerDbInstance com.amazonaws.rds#OrderableDBInstanceOption$MaxStorageThroughputPerDbInstance */ =>  {
+                let var_24 =
+                    Some(
+                         {
+                            <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.rds#IntegerOptional`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_max_storage_throughput_per_db_instance(var_24);
+            }
+            ,
+            s if s.matches("MinStorageThroughputPerIops") /* MinStorageThroughputPerIops com.amazonaws.rds#OrderableDBInstanceOption$MinStorageThroughputPerIops */ =>  {
+                let var_25 =
+                    Some(
+                         {
+                            <f64 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (double: `com.amazonaws.rds#DoubleOptional`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_min_storage_throughput_per_iops(var_25);
+            }
+            ,
+            s if s.matches("MaxStorageThroughputPerIops") /* MaxStorageThroughputPerIops com.amazonaws.rds#OrderableDBInstanceOption$MaxStorageThroughputPerIops */ =>  {
+                let var_26 =
+                    Some(
+                         {
+                            <f64 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (double: `com.amazonaws.rds#DoubleOptional`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_max_storage_throughput_per_iops(var_26);
             }
             ,
             s if s.matches("AvailableProcessorFeatures") /* AvailableProcessorFeatures com.amazonaws.rds#OrderableDBInstanceOption$AvailableProcessorFeatures */ =>  {
-                let var_22 =
+                let var_27 =
                     Some(
                         crate::protocol_serde::shape_available_processor_feature_list::de_available_processor_feature_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_available_processor_features(var_22);
+                builder = builder.set_available_processor_features(var_27);
             }
             ,
             s if s.matches("SupportedEngineModes") /* SupportedEngineModes com.amazonaws.rds#OrderableDBInstanceOption$SupportedEngineModes */ =>  {
-                let var_23 =
+                let var_28 =
                     Some(
                         crate::protocol_serde::shape_engine_mode_list::de_engine_mode_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_supported_engine_modes(var_23);
+                builder = builder.set_supported_engine_modes(var_28);
             }
             ,
             s if s.matches("SupportsStorageAutoscaling") /* SupportsStorageAutoscaling com.amazonaws.rds#OrderableDBInstanceOption$SupportsStorageAutoscaling */ =>  {
-                let var_24 =
-                    Some(
-                         {
-                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.rds#BooleanOptional`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_supports_storage_autoscaling(var_24);
-            }
-            ,
-            s if s.matches("SupportsKerberosAuthentication") /* SupportsKerberosAuthentication com.amazonaws.rds#OrderableDBInstanceOption$SupportsKerberosAuthentication */ =>  {
-                let var_25 =
-                    Some(
-                         {
-                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.rds#BooleanOptional`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_supports_kerberos_authentication(var_25);
-            }
-            ,
-            s if s.matches("OutpostCapable") /* OutpostCapable com.amazonaws.rds#OrderableDBInstanceOption$OutpostCapable */ =>  {
-                let var_26 =
-                    Some(
-                         {
-                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_outpost_capable(var_26);
-            }
-            ,
-            s if s.matches("SupportedActivityStreamModes") /* SupportedActivityStreamModes com.amazonaws.rds#OrderableDBInstanceOption$SupportedActivityStreamModes */ =>  {
-                let var_27 =
-                    Some(
-                        crate::protocol_serde::shape_activity_stream_mode_list::de_activity_stream_mode_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_supported_activity_stream_modes(var_27);
-            }
-            ,
-            s if s.matches("SupportsGlobalDatabases") /* SupportsGlobalDatabases com.amazonaws.rds#OrderableDBInstanceOption$SupportsGlobalDatabases */ =>  {
-                let var_28 =
-                    Some(
-                         {
-                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_supports_global_databases(var_28);
-            }
-            ,
-            s if s.matches("SupportsClusters") /* SupportsClusters com.amazonaws.rds#OrderableDBInstanceOption$SupportsClusters */ =>  {
                 let var_29 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
-                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.rds#BooleanOptional`)"))
                         }
                         ?
                     )
                 ;
-                builder = builder.set_supports_clusters(var_29);
+                builder = builder.set_supports_storage_autoscaling(var_29);
             }
             ,
-            s if s.matches("SupportedNetworkTypes") /* SupportedNetworkTypes com.amazonaws.rds#OrderableDBInstanceOption$SupportedNetworkTypes */ =>  {
+            s if s.matches("SupportsKerberosAuthentication") /* SupportsKerberosAuthentication com.amazonaws.rds#OrderableDBInstanceOption$SupportsKerberosAuthentication */ =>  {
                 let var_30 =
                     Some(
-                        crate::protocol_serde::shape_string_list::de_string_list(&mut tag)
+                         {
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.rds#BooleanOptional`)"))
+                        }
                         ?
                     )
                 ;
-                builder = builder.set_supported_network_types(var_30);
+                builder = builder.set_supports_kerberos_authentication(var_30);
             }
             ,
-            s if s.matches("SupportsStorageThroughput") /* SupportsStorageThroughput com.amazonaws.rds#OrderableDBInstanceOption$SupportsStorageThroughput */ =>  {
+            s if s.matches("OutpostCapable") /* OutpostCapable com.amazonaws.rds#OrderableDBInstanceOption$OutpostCapable */ =>  {
                 let var_31 =
                     Some(
                          {
@@ -432,67 +442,57 @@ pub fn de_orderable_db_instance_option(
                         ?
                     )
                 ;
-                builder = builder.set_supports_storage_throughput(var_31);
+                builder = builder.set_outpost_capable(var_31);
             }
             ,
-            s if s.matches("MinStorageThroughputPerDbInstance") /* MinStorageThroughputPerDbInstance com.amazonaws.rds#OrderableDBInstanceOption$MinStorageThroughputPerDbInstance */ =>  {
+            s if s.matches("SupportedActivityStreamModes") /* SupportedActivityStreamModes com.amazonaws.rds#OrderableDBInstanceOption$SupportedActivityStreamModes */ =>  {
                 let var_32 =
                     Some(
-                         {
-                            <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.rds#IntegerOptional`)"))
-                        }
+                        crate::protocol_serde::shape_activity_stream_mode_list::de_activity_stream_mode_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_min_storage_throughput_per_db_instance(var_32);
+                builder = builder.set_supported_activity_stream_modes(var_32);
             }
             ,
-            s if s.matches("MaxStorageThroughputPerDbInstance") /* MaxStorageThroughputPerDbInstance com.amazonaws.rds#OrderableDBInstanceOption$MaxStorageThroughputPerDbInstance */ =>  {
+            s if s.matches("SupportsGlobalDatabases") /* SupportsGlobalDatabases com.amazonaws.rds#OrderableDBInstanceOption$SupportsGlobalDatabases */ =>  {
                 let var_33 =
                     Some(
                          {
-                            <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
-                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.rds#IntegerOptional`)"))
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
                         }
                         ?
                     )
                 ;
-                builder = builder.set_max_storage_throughput_per_db_instance(var_33);
+                builder = builder.set_supports_global_databases(var_33);
             }
             ,
-            s if s.matches("MinStorageThroughputPerIops") /* MinStorageThroughputPerIops com.amazonaws.rds#OrderableDBInstanceOption$MinStorageThroughputPerIops */ =>  {
+            s if s.matches("SupportedNetworkTypes") /* SupportedNetworkTypes com.amazonaws.rds#OrderableDBInstanceOption$SupportedNetworkTypes */ =>  {
                 let var_34 =
                     Some(
-                         {
-                            <f64 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (double: `com.amazonaws.rds#DoubleOptional`)"))
-                        }
+                        crate::protocol_serde::shape_string_list::de_string_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_min_storage_throughput_per_iops(var_34);
+                builder = builder.set_supported_network_types(var_34);
             }
             ,
-            s if s.matches("MaxStorageThroughputPerIops") /* MaxStorageThroughputPerIops com.amazonaws.rds#OrderableDBInstanceOption$MaxStorageThroughputPerIops */ =>  {
+            s if s.matches("SupportsClusters") /* SupportsClusters com.amazonaws.rds#OrderableDBInstanceOption$SupportsClusters */ =>  {
                 let var_35 =
                     Some(
                          {
-                            <f64 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
-                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (double: `com.amazonaws.rds#DoubleOptional`)"))
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
                         }
                         ?
                     )
                 ;
-                builder = builder.set_max_storage_throughput_per_iops(var_35);
+                builder = builder.set_supports_clusters(var_35);
             }
             ,
             s if s.matches("SupportsDedicatedLogVolume") /* SupportsDedicatedLogVolume com.amazonaws.rds#OrderableDBInstanceOption$SupportsDedicatedLogVolume */ =>  {

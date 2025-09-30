@@ -68,6 +68,24 @@ pub fn de_list_tags_for_resource_http_error(
             }
             tmp
         }),
+        "DBProxyEndpointNotFoundFault" => crate::operation::list_tags_for_resource::ListTagsForResourceError::DbProxyEndpointNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::DbProxyEndpointNotFoundFaultBuilder::default();
+                output = crate::protocol_serde::shape_db_proxy_endpoint_not_found_fault::de_db_proxy_endpoint_not_found_fault_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "DBProxyNotFoundFault" => crate::operation::list_tags_for_resource::ListTagsForResourceError::DbProxyNotFoundFault({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -93,6 +111,22 @@ pub fn de_list_tags_for_resource_http_error(
                     output,
                 )
                 .map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "DBShardGroupNotFound" => crate::operation::list_tags_for_resource::ListTagsForResourceError::DbShardGroupNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::DbShardGroupNotFoundFaultBuilder::default();
+                output =
+                    crate::protocol_serde::shape_db_shard_group_not_found_fault::de_db_shard_group_not_found_fault_xml_err(_response_body, output)
+                        .map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };

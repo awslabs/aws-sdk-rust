@@ -687,40 +687,6 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
     pub fn get_domain_iam_role_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_domain_iam_role_name()
     }
-    /// <p>For DB clusters in <code>serverless</code> DB engine mode, the scaling properties of the DB cluster.</p>
-    /// <p>Valid for: Aurora DB clusters only</p>
-    pub fn scaling_configuration(mut self, input: crate::types::ScalingConfiguration) -> Self {
-        self.inner = self.inner.scaling_configuration(input);
-        self
-    }
-    /// <p>For DB clusters in <code>serverless</code> DB engine mode, the scaling properties of the DB cluster.</p>
-    /// <p>Valid for: Aurora DB clusters only</p>
-    pub fn set_scaling_configuration(mut self, input: ::std::option::Option<crate::types::ScalingConfiguration>) -> Self {
-        self.inner = self.inner.set_scaling_configuration(input);
-        self
-    }
-    /// <p>For DB clusters in <code>serverless</code> DB engine mode, the scaling properties of the DB cluster.</p>
-    /// <p>Valid for: Aurora DB clusters only</p>
-    pub fn get_scaling_configuration(&self) -> &::std::option::Option<crate::types::ScalingConfiguration> {
-        self.inner.get_scaling_configuration()
-    }
-    /// <p>The engine mode of the new cluster. Specify <code>provisioned</code> or <code>serverless</code>, depending on the type of the cluster you are creating. You can create an Aurora Serverless v1 clone from a provisioned cluster, or a provisioned clone from an Aurora Serverless v1 cluster. To create a clone that is an Aurora Serverless v1 cluster, the original cluster must be an Aurora Serverless v1 cluster or an encrypted provisioned cluster. To create a full copy that is an Aurora Serverless v1 cluster, specify the engine mode <code>serverless</code>.</p>
-    /// <p>Valid for: Aurora DB clusters only</p>
-    pub fn engine_mode(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.engine_mode(input.into());
-        self
-    }
-    /// <p>The engine mode of the new cluster. Specify <code>provisioned</code> or <code>serverless</code>, depending on the type of the cluster you are creating. You can create an Aurora Serverless v1 clone from a provisioned cluster, or a provisioned clone from an Aurora Serverless v1 cluster. To create a clone that is an Aurora Serverless v1 cluster, the original cluster must be an Aurora Serverless v1 cluster or an encrypted provisioned cluster. To create a full copy that is an Aurora Serverless v1 cluster, specify the engine mode <code>serverless</code>.</p>
-    /// <p>Valid for: Aurora DB clusters only</p>
-    pub fn set_engine_mode(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_engine_mode(input);
-        self
-    }
-    /// <p>The engine mode of the new cluster. Specify <code>provisioned</code> or <code>serverless</code>, depending on the type of the cluster you are creating. You can create an Aurora Serverless v1 clone from a provisioned cluster, or a provisioned clone from an Aurora Serverless v1 cluster. To create a clone that is an Aurora Serverless v1 cluster, the original cluster must be an Aurora Serverless v1 cluster or an encrypted provisioned cluster. To create a full copy that is an Aurora Serverless v1 cluster, specify the engine mode <code>serverless</code>.</p>
-    /// <p>Valid for: Aurora DB clusters only</p>
-    pub fn get_engine_mode(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_engine_mode()
-    }
     /// <p>The compute and memory capacity of the each DB instance in the Multi-AZ DB cluster, for example db.m6gd.xlarge. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.</p>
     /// <p>For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB instance class</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>Valid for: Multi-AZ DB clusters only</p>
@@ -858,23 +824,6 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
     pub fn get_iops(&self) -> &::std::option::Option<i32> {
         self.inner.get_iops()
     }
-    /// <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    pub fn serverless_v2_scaling_configuration(mut self, input: crate::types::ServerlessV2ScalingConfiguration) -> Self {
-        self.inner = self.inner.serverless_v2_scaling_configuration(input);
-        self
-    }
-    /// <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    pub fn set_serverless_v2_scaling_configuration(mut self, input: ::std::option::Option<crate::types::ServerlessV2ScalingConfiguration>) -> Self {
-        self.inner = self.inner.set_serverless_v2_scaling_configuration(input);
-        self
-    }
-    /// <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    pub fn get_serverless_v2_scaling_configuration(&self) -> &::std::option::Option<crate::types::ServerlessV2ScalingConfiguration> {
-        self.inner.get_serverless_v2_scaling_configuration()
-    }
     /// <p>The network type of the DB cluster.</p>
     /// <p>Valid Values:</p>
     /// <ul>
@@ -932,6 +881,57 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
     /// <p>The resource ID of the source DB cluster from which to restore.</p>
     pub fn get_source_db_cluster_resource_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_source_db_cluster_resource_id()
+    }
+    /// <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub fn serverless_v2_scaling_configuration(mut self, input: crate::types::ServerlessV2ScalingConfiguration) -> Self {
+        self.inner = self.inner.serverless_v2_scaling_configuration(input);
+        self
+    }
+    /// <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub fn set_serverless_v2_scaling_configuration(mut self, input: ::std::option::Option<crate::types::ServerlessV2ScalingConfiguration>) -> Self {
+        self.inner = self.inner.set_serverless_v2_scaling_configuration(input);
+        self
+    }
+    /// <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub fn get_serverless_v2_scaling_configuration(&self) -> &::std::option::Option<crate::types::ServerlessV2ScalingConfiguration> {
+        self.inner.get_serverless_v2_scaling_configuration()
+    }
+    /// <p>For DB clusters in <code>serverless</code> DB engine mode, the scaling properties of the DB cluster.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
+    pub fn scaling_configuration(mut self, input: crate::types::ScalingConfiguration) -> Self {
+        self.inner = self.inner.scaling_configuration(input);
+        self
+    }
+    /// <p>For DB clusters in <code>serverless</code> DB engine mode, the scaling properties of the DB cluster.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
+    pub fn set_scaling_configuration(mut self, input: ::std::option::Option<crate::types::ScalingConfiguration>) -> Self {
+        self.inner = self.inner.set_scaling_configuration(input);
+        self
+    }
+    /// <p>For DB clusters in <code>serverless</code> DB engine mode, the scaling properties of the DB cluster.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
+    pub fn get_scaling_configuration(&self) -> &::std::option::Option<crate::types::ScalingConfiguration> {
+        self.inner.get_scaling_configuration()
+    }
+    /// <p>The engine mode of the new cluster. Specify <code>provisioned</code> or <code>serverless</code>, depending on the type of the cluster you are creating. You can create an Aurora Serverless v1 clone from a provisioned cluster, or a provisioned clone from an Aurora Serverless v1 cluster. To create a clone that is an Aurora Serverless v1 cluster, the original cluster must be an Aurora Serverless v1 cluster or an encrypted provisioned cluster. To create a full copy that is an Aurora Serverless v1 cluster, specify the engine mode <code>serverless</code>.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
+    pub fn engine_mode(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.engine_mode(input.into());
+        self
+    }
+    /// <p>The engine mode of the new cluster. Specify <code>provisioned</code> or <code>serverless</code>, depending on the type of the cluster you are creating. You can create an Aurora Serverless v1 clone from a provisioned cluster, or a provisioned clone from an Aurora Serverless v1 cluster. To create a clone that is an Aurora Serverless v1 cluster, the original cluster must be an Aurora Serverless v1 cluster or an encrypted provisioned cluster. To create a full copy that is an Aurora Serverless v1 cluster, specify the engine mode <code>serverless</code>.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
+    pub fn set_engine_mode(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_engine_mode(input);
+        self
+    }
+    /// <p>The engine mode of the new cluster. Specify <code>provisioned</code> or <code>serverless</code>, depending on the type of the cluster you are creating. You can create an Aurora Serverless v1 clone from a provisioned cluster, or a provisioned clone from an Aurora Serverless v1 cluster. To create a clone that is an Aurora Serverless v1 cluster, the original cluster must be an Aurora Serverless v1 cluster or an encrypted provisioned cluster. To create a full copy that is an Aurora Serverless v1 cluster, specify the engine mode <code>serverless</code>.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
+    pub fn get_engine_mode(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_engine_mode()
     }
     /// <p>Reserved for future use.</p>
     pub fn rds_custom_cluster_configuration(mut self, input: crate::types::RdsCustomClusterConfiguration) -> Self {

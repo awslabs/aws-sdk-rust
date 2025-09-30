@@ -59,16 +59,16 @@ pub struct DbClusterSnapshot {
     /// <p>A list of tags.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS resources</a> in the <i>Amazon RDS User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.html">Tagging Amazon Aurora and Amazon RDS resources</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    /// <p>Reserved for future use.</p>
-    pub db_system_id: ::std::option::Option<::std::string::String>,
     /// <p>The storage type associated with the DB cluster snapshot.</p>
     /// <p>This setting is only for Aurora DB clusters.</p>
     pub storage_type: ::std::option::Option<::std::string::String>,
-    /// <p>The resource ID of the DB cluster that this DB cluster snapshot was created from.</p>
-    pub db_cluster_resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The storage throughput for the DB cluster snapshot. The throughput is automatically set based on the IOPS that you provision, and is not configurable.</p>
     /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
     pub storage_throughput: ::std::option::Option<i32>,
+    /// <p>The resource ID of the DB cluster that this DB cluster snapshot was created from.</p>
+    pub db_cluster_resource_id: ::std::option::Option<::std::string::String>,
+    /// <p>Reserved for future use.</p>
+    pub db_system_id: ::std::option::Option<::std::string::String>,
 }
 impl DbClusterSnapshot {
     /// <p>The list of Availability Zones (AZs) where instances in the DB cluster snapshot can be restored.</p>
@@ -173,23 +173,23 @@ impl DbClusterSnapshot {
     pub fn tag_list(&self) -> &[crate::types::Tag] {
         self.tag_list.as_deref().unwrap_or_default()
     }
-    /// <p>Reserved for future use.</p>
-    pub fn db_system_id(&self) -> ::std::option::Option<&str> {
-        self.db_system_id.as_deref()
-    }
     /// <p>The storage type associated with the DB cluster snapshot.</p>
     /// <p>This setting is only for Aurora DB clusters.</p>
     pub fn storage_type(&self) -> ::std::option::Option<&str> {
         self.storage_type.as_deref()
     }
-    /// <p>The resource ID of the DB cluster that this DB cluster snapshot was created from.</p>
-    pub fn db_cluster_resource_id(&self) -> ::std::option::Option<&str> {
-        self.db_cluster_resource_id.as_deref()
-    }
     /// <p>The storage throughput for the DB cluster snapshot. The throughput is automatically set based on the IOPS that you provision, and is not configurable.</p>
     /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
     pub fn storage_throughput(&self) -> ::std::option::Option<i32> {
         self.storage_throughput
+    }
+    /// <p>The resource ID of the DB cluster that this DB cluster snapshot was created from.</p>
+    pub fn db_cluster_resource_id(&self) -> ::std::option::Option<&str> {
+        self.db_cluster_resource_id.as_deref()
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn db_system_id(&self) -> ::std::option::Option<&str> {
+        self.db_system_id.as_deref()
     }
 }
 impl DbClusterSnapshot {
@@ -225,10 +225,10 @@ pub struct DbClusterSnapshotBuilder {
     pub(crate) source_db_cluster_snapshot_arn: ::std::option::Option<::std::string::String>,
     pub(crate) iam_database_authentication_enabled: ::std::option::Option<bool>,
     pub(crate) tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    pub(crate) db_system_id: ::std::option::Option<::std::string::String>,
     pub(crate) storage_type: ::std::option::Option<::std::string::String>,
-    pub(crate) db_cluster_resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) storage_throughput: ::std::option::Option<i32>,
+    pub(crate) db_cluster_resource_id: ::std::option::Option<::std::string::String>,
+    pub(crate) db_system_id: ::std::option::Option<::std::string::String>,
 }
 impl DbClusterSnapshotBuilder {
     /// Appends an item to `availability_zones`.
@@ -581,20 +581,6 @@ impl DbClusterSnapshotBuilder {
     pub fn get_tag_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tag_list
     }
-    /// <p>Reserved for future use.</p>
-    pub fn db_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.db_system_id = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>Reserved for future use.</p>
-    pub fn set_db_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_system_id = input;
-        self
-    }
-    /// <p>Reserved for future use.</p>
-    pub fn get_db_system_id(&self) -> &::std::option::Option<::std::string::String> {
-        &self.db_system_id
-    }
     /// <p>The storage type associated with the DB cluster snapshot.</p>
     /// <p>This setting is only for Aurora DB clusters.</p>
     pub fn storage_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -612,20 +598,6 @@ impl DbClusterSnapshotBuilder {
     pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.storage_type
     }
-    /// <p>The resource ID of the DB cluster that this DB cluster snapshot was created from.</p>
-    pub fn db_cluster_resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.db_cluster_resource_id = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The resource ID of the DB cluster that this DB cluster snapshot was created from.</p>
-    pub fn set_db_cluster_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_cluster_resource_id = input;
-        self
-    }
-    /// <p>The resource ID of the DB cluster that this DB cluster snapshot was created from.</p>
-    pub fn get_db_cluster_resource_id(&self) -> &::std::option::Option<::std::string::String> {
-        &self.db_cluster_resource_id
-    }
     /// <p>The storage throughput for the DB cluster snapshot. The throughput is automatically set based on the IOPS that you provision, and is not configurable.</p>
     /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
     pub fn storage_throughput(mut self, input: i32) -> Self {
@@ -642,6 +614,34 @@ impl DbClusterSnapshotBuilder {
     /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
     pub fn get_storage_throughput(&self) -> &::std::option::Option<i32> {
         &self.storage_throughput
+    }
+    /// <p>The resource ID of the DB cluster that this DB cluster snapshot was created from.</p>
+    pub fn db_cluster_resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.db_cluster_resource_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The resource ID of the DB cluster that this DB cluster snapshot was created from.</p>
+    pub fn set_db_cluster_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.db_cluster_resource_id = input;
+        self
+    }
+    /// <p>The resource ID of the DB cluster that this DB cluster snapshot was created from.</p>
+    pub fn get_db_cluster_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_cluster_resource_id
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn db_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.db_system_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn set_db_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.db_system_id = input;
+        self
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn get_db_system_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_system_id
     }
     /// Consumes the builder and constructs a [`DbClusterSnapshot`](crate::types::DbClusterSnapshot).
     pub fn build(self) -> crate::types::DbClusterSnapshot {
@@ -668,10 +668,10 @@ impl DbClusterSnapshotBuilder {
             source_db_cluster_snapshot_arn: self.source_db_cluster_snapshot_arn,
             iam_database_authentication_enabled: self.iam_database_authentication_enabled,
             tag_list: self.tag_list,
-            db_system_id: self.db_system_id,
             storage_type: self.storage_type,
-            db_cluster_resource_id: self.db_cluster_resource_id,
             storage_throughput: self.storage_throughput,
+            db_cluster_resource_id: self.db_cluster_resource_id,
+            db_system_id: self.db_system_id,
         }
     }
 }

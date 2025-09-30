@@ -278,7 +278,7 @@ pub enum CopyBackupError {
     InvalidRegion(crate::types::error::InvalidRegion),
     /// <p>The Key Management Service (KMS) key of the source backup is not valid.</p>
     InvalidSourceKmsKey(crate::types::error::InvalidSourceKmsKey),
-    /// <p>An error indicating that a particular service limit was exceeded. You can increase some service limits by contacting Amazon Web ServicesSupport.</p>
+    /// <p>An error indicating that a particular service limit was exceeded. You can increase some service limits by contacting Amazon Web Services Support.</p>
     ServiceLimitExceeded(crate::types::error::ServiceLimitExceeded),
     /// <p>The request was rejected because the lifecycle status of the source backup isn't <code>AVAILABLE</code>.</p>
     SourceBackupUnavailable(crate::types::error::SourceBackupUnavailable),

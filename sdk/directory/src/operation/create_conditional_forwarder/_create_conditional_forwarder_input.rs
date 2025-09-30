@@ -10,6 +10,8 @@ pub struct CreateConditionalForwarderInput {
     pub remote_domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The IP addresses of the remote DNS server associated with RemoteDomainName.</p>
     pub dns_ip_addrs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The IPv6 addresses of the remote DNS server associated with RemoteDomainName.</p>
+    pub dns_ipv6_addrs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CreateConditionalForwarderInput {
     /// <p>The directory ID of the Amazon Web Services directory for which you are creating the conditional forwarder.</p>
@@ -26,6 +28,12 @@ impl CreateConditionalForwarderInput {
     pub fn dns_ip_addrs(&self) -> &[::std::string::String] {
         self.dns_ip_addrs.as_deref().unwrap_or_default()
     }
+    /// <p>The IPv6 addresses of the remote DNS server associated with RemoteDomainName.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dns_ipv6_addrs.is_none()`.
+    pub fn dns_ipv6_addrs(&self) -> &[::std::string::String] {
+        self.dns_ipv6_addrs.as_deref().unwrap_or_default()
+    }
 }
 impl CreateConditionalForwarderInput {
     /// Creates a new builder-style object to manufacture [`CreateConditionalForwarderInput`](crate::operation::create_conditional_forwarder::CreateConditionalForwarderInput).
@@ -41,6 +49,7 @@ pub struct CreateConditionalForwarderInputBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) remote_domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) dns_ip_addrs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) dns_ipv6_addrs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CreateConditionalForwarderInputBuilder {
     /// <p>The directory ID of the Amazon Web Services directory for which you are creating the conditional forwarder.</p>
@@ -93,6 +102,26 @@ impl CreateConditionalForwarderInputBuilder {
     pub fn get_dns_ip_addrs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.dns_ip_addrs
     }
+    /// Appends an item to `dns_ipv6_addrs`.
+    ///
+    /// To override the contents of this collection use [`set_dns_ipv6_addrs`](Self::set_dns_ipv6_addrs).
+    ///
+    /// <p>The IPv6 addresses of the remote DNS server associated with RemoteDomainName.</p>
+    pub fn dns_ipv6_addrs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.dns_ipv6_addrs.unwrap_or_default();
+        v.push(input.into());
+        self.dns_ipv6_addrs = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The IPv6 addresses of the remote DNS server associated with RemoteDomainName.</p>
+    pub fn set_dns_ipv6_addrs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.dns_ipv6_addrs = input;
+        self
+    }
+    /// <p>The IPv6 addresses of the remote DNS server associated with RemoteDomainName.</p>
+    pub fn get_dns_ipv6_addrs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.dns_ipv6_addrs
+    }
     /// Consumes the builder and constructs a [`CreateConditionalForwarderInput`](crate::operation::create_conditional_forwarder::CreateConditionalForwarderInput).
     pub fn build(
         self,
@@ -104,6 +133,7 @@ impl CreateConditionalForwarderInputBuilder {
             directory_id: self.directory_id,
             remote_domain_name: self.remote_domain_name,
             dns_ip_addrs: self.dns_ip_addrs,
+            dns_ipv6_addrs: self.dns_ipv6_addrs,
         })
     }
 }

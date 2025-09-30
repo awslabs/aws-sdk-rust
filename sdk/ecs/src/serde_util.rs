@@ -99,6 +99,21 @@ pub(crate) fn inference_accelerator_correct_errors(
     builder
 }
 
+pub(crate) fn instance_launch_template_correct_errors(
+    mut builder: crate::types::builders::InstanceLaunchTemplateBuilder,
+) -> crate::types::builders::InstanceLaunchTemplateBuilder {
+    if builder.ec2_instance_profile_arn.is_none() {
+        builder.ec2_instance_profile_arn = Some(Default::default())
+    }
+    if builder.network_configuration.is_none() {
+        builder.network_configuration = {
+            let builder = crate::types::builders::ManagedInstancesNetworkConfigurationBuilder::default();
+            Some(builder.build())
+        }
+    }
+    builder
+}
+
 pub(crate) fn service_connect_configuration_correct_errors(
     mut builder: crate::types::builders::ServiceConnectConfigurationBuilder,
 ) -> crate::types::builders::ServiceConnectConfigurationBuilder {
@@ -158,6 +173,24 @@ pub(crate) fn firelens_configuration_correct_errors(
 pub(crate) fn health_check_correct_errors(mut builder: crate::types::builders::HealthCheckBuilder) -> crate::types::builders::HealthCheckBuilder {
     if builder.command.is_none() {
         builder.command = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn instance_requirements_request_correct_errors(
+    mut builder: crate::types::builders::InstanceRequirementsRequestBuilder,
+) -> crate::types::builders::InstanceRequirementsRequestBuilder {
+    if builder.v_cpu_count.is_none() {
+        builder.v_cpu_count = {
+            let builder = crate::types::builders::VCpuCountRangeRequestBuilder::default();
+            crate::serde_util::v_cpu_count_range_request_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.memory_mib.is_none() {
+        builder.memory_mib = {
+            let builder = crate::types::builders::MemoryMiBRequestBuilder::default();
+            crate::serde_util::memory_mib_request_correct_errors(builder).build().ok()
+        }
     }
     builder
 }
@@ -250,6 +283,15 @@ pub(crate) fn host_entry_correct_errors(mut builder: crate::types::builders::Hos
     builder
 }
 
+pub(crate) fn memory_mib_request_correct_errors(
+    mut builder: crate::types::builders::MemoryMiBRequestBuilder,
+) -> crate::types::builders::MemoryMiBRequestBuilder {
+    if builder.min.is_none() {
+        builder.min = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn resource_requirement_correct_errors(
     mut builder: crate::types::builders::ResourceRequirementBuilder,
 ) -> crate::types::builders::ResourceRequirementBuilder {
@@ -299,6 +341,15 @@ pub(crate) fn ulimit_correct_errors(mut builder: crate::types::builders::UlimitB
     }
     if builder.hard_limit.is_none() {
         builder.hard_limit = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn v_cpu_count_range_request_correct_errors(
+    mut builder: crate::types::builders::VCpuCountRangeRequestBuilder,
+) -> crate::types::builders::VCpuCountRangeRequestBuilder {
+    if builder.min.is_none() {
+        builder.min = Some(Default::default())
     }
     builder
 }

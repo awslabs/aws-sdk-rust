@@ -29,7 +29,7 @@ impl crate::operation::create_asset_revision::builders::CreateAssetRevisionInput
 /// <li>
 /// <p>Asset must already exist in the domain with identifier.</p></li>
 /// <li>
-/// <p>The form type with correct revision must be registered in the same domain.</p></li>
+/// <p><code>formsInput</code> is required when asset has the form type. <code>typeRevision</code> should be the latest version of form type.</p></li>
 /// <li>
 /// <p>The form content must include all required fields (e.g., <code>bucketArn</code> for <code>S3ObjectCollectionForm</code>).</p></li>
 /// <li>

@@ -10,6 +10,9 @@ pub mod batch_update_exclusion_windows;
 /// Types for the `CreateServiceLevelObjective` operation.
 pub mod create_service_level_objective;
 
+/// Types for the `DeleteGroupingConfiguration` operation.
+pub mod delete_grouping_configuration;
+
 /// Types for the `DeleteServiceLevelObjective` operation.
 pub mod delete_service_level_objective;
 
@@ -18,6 +21,12 @@ pub mod get_service;
 
 /// Types for the `GetServiceLevelObjective` operation.
 pub mod get_service_level_objective;
+
+/// Types for the `ListAuditFindings` operation.
+pub mod list_audit_findings;
+
+/// Types for the `ListGroupingAttributeDefinitions` operation.
+pub mod list_grouping_attribute_definitions;
 
 /// Types for the `ListServiceDependencies` operation.
 pub mod list_service_dependencies;
@@ -34,11 +43,17 @@ pub mod list_service_level_objectives;
 /// Types for the `ListServiceOperations` operation.
 pub mod list_service_operations;
 
+/// Types for the `ListServiceStates` operation.
+pub mod list_service_states;
+
 /// Types for the `ListServices` operation.
 pub mod list_services;
 
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
+
+/// Types for the `PutGroupingConfiguration` operation.
+pub mod put_grouping_configuration;
 
 /// Types for the `StartDiscovery` operation.
 pub mod start_discovery;

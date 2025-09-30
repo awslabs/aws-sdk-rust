@@ -2,7 +2,7 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateDbInstanceInput {
     /// <p>The meaning of this parameter differs according to the database engine you use.</p>
     /// <dl>
@@ -558,6 +558,10 @@ pub struct CreateDbInstanceInput {
     /// <p>For RDS for SQL Server - Must be a multiple between 1 and 50 of the storage amount for the DB instance.</p></li>
     /// </ul>
     pub iops: ::std::option::Option<i32>,
+    /// <p>The storage throughput value, in mebibyte per second (MiBps), for the DB instance.</p>
+    /// <p>This setting applies only to the <code>gp3</code> storage type.</p>
+    /// <p>This setting doesn't apply to Amazon Aurora or RDS Custom DB instances.</p>
+    pub storage_throughput: ::std::option::Option<i32>,
     /// <p>The option group to associate the DB instance with.</p>
     /// <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option group. Also, that option group can't be removed from a DB instance after it is associated with a DB instance.</p>
     /// <p>This setting doesn't apply to Amazon Aurora or RDS Custom DB instances.</p>
@@ -769,19 +773,11 @@ pub struct CreateDbInstanceInput {
     /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
     pub enable_customer_owned_ip: ::std::option::Option<bool>,
-    /// <p>The instance profile associated with the underlying Amazon EC2 instance of an RDS Custom DB instance.</p>
-    /// <p>This setting is required for RDS Custom.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li>
-    /// <p>The profile must exist in your account.</p></li>
-    /// <li>
-    /// <p>The profile must have an IAM role that Amazon EC2 has permissions to assume.</p></li>
-    /// <li>
-    /// <p>The instance profile name and the associated IAM role name must start with the prefix <code>AWSRDSCustom</code>.</p></li>
-    /// </ul>
-    /// <p>For the list of permissions required for the IAM role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc"> Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
-    pub custom_iam_instance_profile: ::std::option::Option<::std::string::String>,
+    /// <p>The network type of the DB instance.</p>
+    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i></p>
+    /// <p>Valid Values: <code>IPV4 | DUAL</code></p>
+    pub network_type: ::std::option::Option<::std::string::String>,
     /// <p>The location for storing automated backups and manual snapshots.</p>
     /// <p>Valid Values:</p>
     /// <ul>
@@ -795,15 +791,25 @@ pub struct CreateDbInstanceInput {
     /// <p>Default: <code>region</code></p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
     pub backup_target: ::std::option::Option<::std::string::String>,
-    /// <p>The network type of the DB instance.</p>
-    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i></p>
-    /// <p>Valid Values: <code>IPV4 | DUAL</code></p>
-    pub network_type: ::std::option::Option<::std::string::String>,
-    /// <p>The storage throughput value, in mebibyte per second (MiBps), for the DB instance.</p>
-    /// <p>This setting applies only to the <code>gp3</code> storage type.</p>
-    /// <p>This setting doesn't apply to Amazon Aurora or RDS Custom DB instances.</p>
-    pub storage_throughput: ::std::option::Option<i32>,
+    /// <p>The instance profile associated with the underlying Amazon EC2 instance of an RDS Custom DB instance.</p>
+    /// <p>This setting is required for RDS Custom.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The profile must exist in your account.</p></li>
+    /// <li>
+    /// <p>The profile must have an IAM role that Amazon EC2 has permissions to assume.</p></li>
+    /// <li>
+    /// <p>The instance profile name and the associated IAM role name must start with the prefix <code>AWSRDSCustom</code>.</p></li>
+    /// </ul>
+    /// <p>For the list of permissions required for the IAM role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc"> Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
+    pub custom_iam_instance_profile: ::std::option::Option<::std::string::String>,
+    /// <p>The Oracle system identifier (SID), which is the name of the Oracle database instance that manages your database files. In this context, the term "Oracle database instance" refers exclusively to the system global area (SGA) and Oracle background processes. If you don't specify a SID, the value defaults to <code>RDSCDB</code>. The Oracle SID is also the name of your CDB.</p>
+    pub db_system_id: ::std::option::Option<::std::string::String>,
+    /// <p>The CA certificate identifier to use for the DB instance's server certificate.</p>
+    /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub ca_certificate_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i></p>
     /// <p>Constraints:</p>
@@ -818,14 +824,6 @@ pub struct CreateDbInstanceInput {
     /// <p>If you don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer managed KMS key.</p>
     /// <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
     pub master_user_secret_kms_key_id: ::std::option::Option<::std::string::String>,
-    /// <p>The CA certificate identifier to use for the DB instance's server certificate.</p>
-    /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    pub ca_certificate_identifier: ::std::option::Option<::std::string::String>,
-    /// <p>The Oracle system identifier (SID), which is the name of the Oracle database instance that manages your database files. In this context, the term "Oracle database instance" refers exclusively to the system global area (SGA) and Oracle background processes. If you don't specify a SID, the value defaults to <code>RDSCDB</code>. The Oracle SID is also the name of your CDB.</p>
-    pub db_system_id: ::std::option::Option<::std::string::String>,
-    /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.</p>
-    pub dedicated_log_volume: ::std::option::Option<bool>,
     /// <p>Specifies whether to use the multi-tenant configuration or the single-tenant configuration (default). This parameter only applies to RDS for Oracle container database (CDB) engines.</p>
     /// <p>Note the following restrictions:</p>
     /// <ul>
@@ -835,6 +833,8 @@ pub struct CreateDbInstanceInput {
     /// <p>If you specify the multi-tenant configuration when you create your DB instance, you can't later modify this DB instance to use the single-tenant configuration.</p></li>
     /// </ul>
     pub multi_tenant: ::std::option::Option<bool>,
+    /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.</p>
+    pub dedicated_log_volume: ::std::option::Option<bool>,
     /// <p>The life cycle type for this DB instance.</p><note>
     /// <p>By default, this value is set to <code>open-source-rds-extended-support</code>, which enrolls your DB instance into Amazon RDS Extended Support. At the end of standard support, you can avoid charges for Extended Support by setting the value to <code>open-source-rds-extended-support-disabled</code>. In this case, creating the DB instance will fail if the DB major version is past its end of standard support date.</p>
     /// </note>
@@ -1455,6 +1455,12 @@ impl CreateDbInstanceInput {
     pub fn iops(&self) -> ::std::option::Option<i32> {
         self.iops
     }
+    /// <p>The storage throughput value, in mebibyte per second (MiBps), for the DB instance.</p>
+    /// <p>This setting applies only to the <code>gp3</code> storage type.</p>
+    /// <p>This setting doesn't apply to Amazon Aurora or RDS Custom DB instances.</p>
+    pub fn storage_throughput(&self) -> ::std::option::Option<i32> {
+        self.storage_throughput
+    }
     /// <p>The option group to associate the DB instance with.</p>
     /// <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option group. Also, that option group can't be removed from a DB instance after it is associated with a DB instance.</p>
     /// <p>This setting doesn't apply to Amazon Aurora or RDS Custom DB instances.</p>
@@ -1738,20 +1744,12 @@ impl CreateDbInstanceInput {
     pub fn enable_customer_owned_ip(&self) -> ::std::option::Option<bool> {
         self.enable_customer_owned_ip
     }
-    /// <p>The instance profile associated with the underlying Amazon EC2 instance of an RDS Custom DB instance.</p>
-    /// <p>This setting is required for RDS Custom.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li>
-    /// <p>The profile must exist in your account.</p></li>
-    /// <li>
-    /// <p>The profile must have an IAM role that Amazon EC2 has permissions to assume.</p></li>
-    /// <li>
-    /// <p>The instance profile name and the associated IAM role name must start with the prefix <code>AWSRDSCustom</code>.</p></li>
-    /// </ul>
-    /// <p>For the list of permissions required for the IAM role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc"> Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
-    pub fn custom_iam_instance_profile(&self) -> ::std::option::Option<&str> {
-        self.custom_iam_instance_profile.as_deref()
+    /// <p>The network type of the DB instance.</p>
+    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i></p>
+    /// <p>Valid Values: <code>IPV4 | DUAL</code></p>
+    pub fn network_type(&self) -> ::std::option::Option<&str> {
+        self.network_type.as_deref()
     }
     /// <p>The location for storing automated backups and manual snapshots.</p>
     /// <p>Valid Values:</p>
@@ -1768,18 +1766,30 @@ impl CreateDbInstanceInput {
     pub fn backup_target(&self) -> ::std::option::Option<&str> {
         self.backup_target.as_deref()
     }
-    /// <p>The network type of the DB instance.</p>
-    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i></p>
-    /// <p>Valid Values: <code>IPV4 | DUAL</code></p>
-    pub fn network_type(&self) -> ::std::option::Option<&str> {
-        self.network_type.as_deref()
+    /// <p>The instance profile associated with the underlying Amazon EC2 instance of an RDS Custom DB instance.</p>
+    /// <p>This setting is required for RDS Custom.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The profile must exist in your account.</p></li>
+    /// <li>
+    /// <p>The profile must have an IAM role that Amazon EC2 has permissions to assume.</p></li>
+    /// <li>
+    /// <p>The instance profile name and the associated IAM role name must start with the prefix <code>AWSRDSCustom</code>.</p></li>
+    /// </ul>
+    /// <p>For the list of permissions required for the IAM role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc"> Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
+    pub fn custom_iam_instance_profile(&self) -> ::std::option::Option<&str> {
+        self.custom_iam_instance_profile.as_deref()
     }
-    /// <p>The storage throughput value, in mebibyte per second (MiBps), for the DB instance.</p>
-    /// <p>This setting applies only to the <code>gp3</code> storage type.</p>
-    /// <p>This setting doesn't apply to Amazon Aurora or RDS Custom DB instances.</p>
-    pub fn storage_throughput(&self) -> ::std::option::Option<i32> {
-        self.storage_throughput
+    /// <p>The Oracle system identifier (SID), which is the name of the Oracle database instance that manages your database files. In this context, the term "Oracle database instance" refers exclusively to the system global area (SGA) and Oracle background processes. If you don't specify a SID, the value defaults to <code>RDSCDB</code>. The Oracle SID is also the name of your CDB.</p>
+    pub fn db_system_id(&self) -> ::std::option::Option<&str> {
+        self.db_system_id.as_deref()
+    }
+    /// <p>The CA certificate identifier to use for the DB instance's server certificate.</p>
+    /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub fn ca_certificate_identifier(&self) -> ::std::option::Option<&str> {
+        self.ca_certificate_identifier.as_deref()
     }
     /// <p>Specifies whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i></p>
@@ -1799,20 +1809,6 @@ impl CreateDbInstanceInput {
     pub fn master_user_secret_kms_key_id(&self) -> ::std::option::Option<&str> {
         self.master_user_secret_kms_key_id.as_deref()
     }
-    /// <p>The CA certificate identifier to use for the DB instance's server certificate.</p>
-    /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    pub fn ca_certificate_identifier(&self) -> ::std::option::Option<&str> {
-        self.ca_certificate_identifier.as_deref()
-    }
-    /// <p>The Oracle system identifier (SID), which is the name of the Oracle database instance that manages your database files. In this context, the term "Oracle database instance" refers exclusively to the system global area (SGA) and Oracle background processes. If you don't specify a SID, the value defaults to <code>RDSCDB</code>. The Oracle SID is also the name of your CDB.</p>
-    pub fn db_system_id(&self) -> ::std::option::Option<&str> {
-        self.db_system_id.as_deref()
-    }
-    /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.</p>
-    pub fn dedicated_log_volume(&self) -> ::std::option::Option<bool> {
-        self.dedicated_log_volume
-    }
     /// <p>Specifies whether to use the multi-tenant configuration or the single-tenant configuration (default). This parameter only applies to RDS for Oracle container database (CDB) engines.</p>
     /// <p>Note the following restrictions:</p>
     /// <ul>
@@ -1823,6 +1819,10 @@ impl CreateDbInstanceInput {
     /// </ul>
     pub fn multi_tenant(&self) -> ::std::option::Option<bool> {
         self.multi_tenant
+    }
+    /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.</p>
+    pub fn dedicated_log_volume(&self) -> ::std::option::Option<bool> {
+        self.dedicated_log_volume
     }
     /// <p>The life cycle type for this DB instance.</p><note>
     /// <p>By default, this value is set to <code>open-source-rds-extended-support</code>, which enrolls your DB instance into Amazon RDS Extended Support. At the end of standard support, you can avoid charges for Extended Support by setting the value to <code>open-source-rds-extended-support-disabled</code>. In this case, creating the DB instance will fail if the DB major version is past its end of standard support date.</p>
@@ -1847,6 +1847,77 @@ impl CreateDbInstanceInput {
         self.master_user_authentication_type.as_ref()
     }
 }
+impl ::std::fmt::Debug for CreateDbInstanceInput {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateDbInstanceInput");
+        formatter.field("db_name", &self.db_name);
+        formatter.field("db_instance_identifier", &self.db_instance_identifier);
+        formatter.field("allocated_storage", &self.allocated_storage);
+        formatter.field("db_instance_class", &self.db_instance_class);
+        formatter.field("engine", &self.engine);
+        formatter.field("master_username", &self.master_username);
+        formatter.field("master_user_password", &"*** Sensitive Data Redacted ***");
+        formatter.field("db_security_groups", &self.db_security_groups);
+        formatter.field("vpc_security_group_ids", &self.vpc_security_group_ids);
+        formatter.field("availability_zone", &self.availability_zone);
+        formatter.field("db_subnet_group_name", &self.db_subnet_group_name);
+        formatter.field("preferred_maintenance_window", &self.preferred_maintenance_window);
+        formatter.field("db_parameter_group_name", &self.db_parameter_group_name);
+        formatter.field("backup_retention_period", &self.backup_retention_period);
+        formatter.field("preferred_backup_window", &self.preferred_backup_window);
+        formatter.field("port", &self.port);
+        formatter.field("multi_az", &self.multi_az);
+        formatter.field("engine_version", &self.engine_version);
+        formatter.field("auto_minor_version_upgrade", &self.auto_minor_version_upgrade);
+        formatter.field("license_model", &self.license_model);
+        formatter.field("iops", &self.iops);
+        formatter.field("storage_throughput", &self.storage_throughput);
+        formatter.field("option_group_name", &self.option_group_name);
+        formatter.field("character_set_name", &self.character_set_name);
+        formatter.field("nchar_character_set_name", &self.nchar_character_set_name);
+        formatter.field("publicly_accessible", &self.publicly_accessible);
+        formatter.field("tags", &self.tags);
+        formatter.field("db_cluster_identifier", &self.db_cluster_identifier);
+        formatter.field("storage_type", &self.storage_type);
+        formatter.field("tde_credential_arn", &self.tde_credential_arn);
+        formatter.field("tde_credential_password", &"*** Sensitive Data Redacted ***");
+        formatter.field("storage_encrypted", &self.storage_encrypted);
+        formatter.field("kms_key_id", &self.kms_key_id);
+        formatter.field("domain", &self.domain);
+        formatter.field("domain_fqdn", &self.domain_fqdn);
+        formatter.field("domain_ou", &self.domain_ou);
+        formatter.field("domain_auth_secret_arn", &self.domain_auth_secret_arn);
+        formatter.field("domain_dns_ips", &self.domain_dns_ips);
+        formatter.field("copy_tags_to_snapshot", &self.copy_tags_to_snapshot);
+        formatter.field("monitoring_interval", &self.monitoring_interval);
+        formatter.field("monitoring_role_arn", &self.monitoring_role_arn);
+        formatter.field("domain_iam_role_name", &self.domain_iam_role_name);
+        formatter.field("promotion_tier", &self.promotion_tier);
+        formatter.field("timezone", &self.timezone);
+        formatter.field("enable_iam_database_authentication", &self.enable_iam_database_authentication);
+        formatter.field("database_insights_mode", &self.database_insights_mode);
+        formatter.field("enable_performance_insights", &self.enable_performance_insights);
+        formatter.field("performance_insights_kms_key_id", &self.performance_insights_kms_key_id);
+        formatter.field("performance_insights_retention_period", &self.performance_insights_retention_period);
+        formatter.field("enable_cloudwatch_logs_exports", &self.enable_cloudwatch_logs_exports);
+        formatter.field("processor_features", &self.processor_features);
+        formatter.field("deletion_protection", &self.deletion_protection);
+        formatter.field("max_allocated_storage", &self.max_allocated_storage);
+        formatter.field("enable_customer_owned_ip", &self.enable_customer_owned_ip);
+        formatter.field("network_type", &self.network_type);
+        formatter.field("backup_target", &self.backup_target);
+        formatter.field("custom_iam_instance_profile", &self.custom_iam_instance_profile);
+        formatter.field("db_system_id", &self.db_system_id);
+        formatter.field("ca_certificate_identifier", &self.ca_certificate_identifier);
+        formatter.field("manage_master_user_password", &self.manage_master_user_password);
+        formatter.field("master_user_secret_kms_key_id", &self.master_user_secret_kms_key_id);
+        formatter.field("multi_tenant", &self.multi_tenant);
+        formatter.field("dedicated_log_volume", &self.dedicated_log_volume);
+        formatter.field("engine_lifecycle_support", &self.engine_lifecycle_support);
+        formatter.field("master_user_authentication_type", &self.master_user_authentication_type);
+        formatter.finish()
+    }
+}
 impl CreateDbInstanceInput {
     /// Creates a new builder-style object to manufacture [`CreateDbInstanceInput`](crate::operation::create_db_instance::CreateDbInstanceInput).
     pub fn builder() -> crate::operation::create_db_instance::builders::CreateDbInstanceInputBuilder {
@@ -1855,7 +1926,7 @@ impl CreateDbInstanceInput {
 }
 
 /// A builder for [`CreateDbInstanceInput`](crate::operation::create_db_instance::CreateDbInstanceInput).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct CreateDbInstanceInputBuilder {
     pub(crate) db_name: ::std::option::Option<::std::string::String>,
@@ -1879,6 +1950,7 @@ pub struct CreateDbInstanceInputBuilder {
     pub(crate) auto_minor_version_upgrade: ::std::option::Option<bool>,
     pub(crate) license_model: ::std::option::Option<::std::string::String>,
     pub(crate) iops: ::std::option::Option<i32>,
+    pub(crate) storage_throughput: ::std::option::Option<i32>,
     pub(crate) option_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) character_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) nchar_character_set_name: ::std::option::Option<::std::string::String>,
@@ -1911,16 +1983,15 @@ pub struct CreateDbInstanceInputBuilder {
     pub(crate) deletion_protection: ::std::option::Option<bool>,
     pub(crate) max_allocated_storage: ::std::option::Option<i32>,
     pub(crate) enable_customer_owned_ip: ::std::option::Option<bool>,
-    pub(crate) custom_iam_instance_profile: ::std::option::Option<::std::string::String>,
-    pub(crate) backup_target: ::std::option::Option<::std::string::String>,
     pub(crate) network_type: ::std::option::Option<::std::string::String>,
-    pub(crate) storage_throughput: ::std::option::Option<i32>,
+    pub(crate) backup_target: ::std::option::Option<::std::string::String>,
+    pub(crate) custom_iam_instance_profile: ::std::option::Option<::std::string::String>,
+    pub(crate) db_system_id: ::std::option::Option<::std::string::String>,
+    pub(crate) ca_certificate_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) manage_master_user_password: ::std::option::Option<bool>,
     pub(crate) master_user_secret_kms_key_id: ::std::option::Option<::std::string::String>,
-    pub(crate) ca_certificate_identifier: ::std::option::Option<::std::string::String>,
-    pub(crate) db_system_id: ::std::option::Option<::std::string::String>,
-    pub(crate) dedicated_log_volume: ::std::option::Option<bool>,
     pub(crate) multi_tenant: ::std::option::Option<bool>,
+    pub(crate) dedicated_log_volume: ::std::option::Option<bool>,
     pub(crate) engine_lifecycle_support: ::std::option::Option<::std::string::String>,
     pub(crate) master_user_authentication_type: ::std::option::Option<crate::types::MasterUserAuthenticationType>,
 }
@@ -3770,6 +3841,26 @@ impl CreateDbInstanceInputBuilder {
     pub fn get_iops(&self) -> &::std::option::Option<i32> {
         &self.iops
     }
+    /// <p>The storage throughput value, in mebibyte per second (MiBps), for the DB instance.</p>
+    /// <p>This setting applies only to the <code>gp3</code> storage type.</p>
+    /// <p>This setting doesn't apply to Amazon Aurora or RDS Custom DB instances.</p>
+    pub fn storage_throughput(mut self, input: i32) -> Self {
+        self.storage_throughput = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The storage throughput value, in mebibyte per second (MiBps), for the DB instance.</p>
+    /// <p>This setting applies only to the <code>gp3</code> storage type.</p>
+    /// <p>This setting doesn't apply to Amazon Aurora or RDS Custom DB instances.</p>
+    pub fn set_storage_throughput(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.storage_throughput = input;
+        self
+    }
+    /// <p>The storage throughput value, in mebibyte per second (MiBps), for the DB instance.</p>
+    /// <p>This setting applies only to the <code>gp3</code> storage type.</p>
+    /// <p>This setting doesn't apply to Amazon Aurora or RDS Custom DB instances.</p>
+    pub fn get_storage_throughput(&self) -> &::std::option::Option<i32> {
+        &self.storage_throughput
+    }
     /// <p>The option group to associate the DB instance with.</p>
     /// <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option group. Also, that option group can't be removed from a DB instance after it is associated with a DB instance.</p>
     /// <p>This setting doesn't apply to Amazon Aurora or RDS Custom DB instances.</p>
@@ -4683,52 +4774,28 @@ impl CreateDbInstanceInputBuilder {
     pub fn get_enable_customer_owned_ip(&self) -> &::std::option::Option<bool> {
         &self.enable_customer_owned_ip
     }
-    /// <p>The instance profile associated with the underlying Amazon EC2 instance of an RDS Custom DB instance.</p>
-    /// <p>This setting is required for RDS Custom.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li>
-    /// <p>The profile must exist in your account.</p></li>
-    /// <li>
-    /// <p>The profile must have an IAM role that Amazon EC2 has permissions to assume.</p></li>
-    /// <li>
-    /// <p>The instance profile name and the associated IAM role name must start with the prefix <code>AWSRDSCustom</code>.</p></li>
-    /// </ul>
-    /// <p>For the list of permissions required for the IAM role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc"> Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
-    pub fn custom_iam_instance_profile(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.custom_iam_instance_profile = ::std::option::Option::Some(input.into());
+    /// <p>The network type of the DB instance.</p>
+    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i></p>
+    /// <p>Valid Values: <code>IPV4 | DUAL</code></p>
+    pub fn network_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.network_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The instance profile associated with the underlying Amazon EC2 instance of an RDS Custom DB instance.</p>
-    /// <p>This setting is required for RDS Custom.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li>
-    /// <p>The profile must exist in your account.</p></li>
-    /// <li>
-    /// <p>The profile must have an IAM role that Amazon EC2 has permissions to assume.</p></li>
-    /// <li>
-    /// <p>The instance profile name and the associated IAM role name must start with the prefix <code>AWSRDSCustom</code>.</p></li>
-    /// </ul>
-    /// <p>For the list of permissions required for the IAM role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc"> Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
-    pub fn set_custom_iam_instance_profile(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.custom_iam_instance_profile = input;
+    /// <p>The network type of the DB instance.</p>
+    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i></p>
+    /// <p>Valid Values: <code>IPV4 | DUAL</code></p>
+    pub fn set_network_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.network_type = input;
         self
     }
-    /// <p>The instance profile associated with the underlying Amazon EC2 instance of an RDS Custom DB instance.</p>
-    /// <p>This setting is required for RDS Custom.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li>
-    /// <p>The profile must exist in your account.</p></li>
-    /// <li>
-    /// <p>The profile must have an IAM role that Amazon EC2 has permissions to assume.</p></li>
-    /// <li>
-    /// <p>The instance profile name and the associated IAM role name must start with the prefix <code>AWSRDSCustom</code>.</p></li>
-    /// </ul>
-    /// <p>For the list of permissions required for the IAM role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc"> Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
-    pub fn get_custom_iam_instance_profile(&self) -> &::std::option::Option<::std::string::String> {
-        &self.custom_iam_instance_profile
+    /// <p>The network type of the DB instance.</p>
+    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i></p>
+    /// <p>Valid Values: <code>IPV4 | DUAL</code></p>
+    pub fn get_network_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_type
     }
     /// <p>The location for storing automated backups and manual snapshots.</p>
     /// <p>Valid Values:</p>
@@ -4777,48 +4844,86 @@ impl CreateDbInstanceInputBuilder {
     pub fn get_backup_target(&self) -> &::std::option::Option<::std::string::String> {
         &self.backup_target
     }
-    /// <p>The network type of the DB instance.</p>
-    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i></p>
-    /// <p>Valid Values: <code>IPV4 | DUAL</code></p>
-    pub fn network_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.network_type = ::std::option::Option::Some(input.into());
+    /// <p>The instance profile associated with the underlying Amazon EC2 instance of an RDS Custom DB instance.</p>
+    /// <p>This setting is required for RDS Custom.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The profile must exist in your account.</p></li>
+    /// <li>
+    /// <p>The profile must have an IAM role that Amazon EC2 has permissions to assume.</p></li>
+    /// <li>
+    /// <p>The instance profile name and the associated IAM role name must start with the prefix <code>AWSRDSCustom</code>.</p></li>
+    /// </ul>
+    /// <p>For the list of permissions required for the IAM role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc"> Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
+    pub fn custom_iam_instance_profile(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.custom_iam_instance_profile = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The network type of the DB instance.</p>
-    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i></p>
-    /// <p>Valid Values: <code>IPV4 | DUAL</code></p>
-    pub fn set_network_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.network_type = input;
+    /// <p>The instance profile associated with the underlying Amazon EC2 instance of an RDS Custom DB instance.</p>
+    /// <p>This setting is required for RDS Custom.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The profile must exist in your account.</p></li>
+    /// <li>
+    /// <p>The profile must have an IAM role that Amazon EC2 has permissions to assume.</p></li>
+    /// <li>
+    /// <p>The instance profile name and the associated IAM role name must start with the prefix <code>AWSRDSCustom</code>.</p></li>
+    /// </ul>
+    /// <p>For the list of permissions required for the IAM role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc"> Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
+    pub fn set_custom_iam_instance_profile(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.custom_iam_instance_profile = input;
         self
     }
-    /// <p>The network type of the DB instance.</p>
-    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i></p>
-    /// <p>Valid Values: <code>IPV4 | DUAL</code></p>
-    pub fn get_network_type(&self) -> &::std::option::Option<::std::string::String> {
-        &self.network_type
+    /// <p>The instance profile associated with the underlying Amazon EC2 instance of an RDS Custom DB instance.</p>
+    /// <p>This setting is required for RDS Custom.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The profile must exist in your account.</p></li>
+    /// <li>
+    /// <p>The profile must have an IAM role that Amazon EC2 has permissions to assume.</p></li>
+    /// <li>
+    /// <p>The instance profile name and the associated IAM role name must start with the prefix <code>AWSRDSCustom</code>.</p></li>
+    /// </ul>
+    /// <p>For the list of permissions required for the IAM role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc"> Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
+    pub fn get_custom_iam_instance_profile(&self) -> &::std::option::Option<::std::string::String> {
+        &self.custom_iam_instance_profile
     }
-    /// <p>The storage throughput value, in mebibyte per second (MiBps), for the DB instance.</p>
-    /// <p>This setting applies only to the <code>gp3</code> storage type.</p>
-    /// <p>This setting doesn't apply to Amazon Aurora or RDS Custom DB instances.</p>
-    pub fn storage_throughput(mut self, input: i32) -> Self {
-        self.storage_throughput = ::std::option::Option::Some(input);
+    /// <p>The Oracle system identifier (SID), which is the name of the Oracle database instance that manages your database files. In this context, the term "Oracle database instance" refers exclusively to the system global area (SGA) and Oracle background processes. If you don't specify a SID, the value defaults to <code>RDSCDB</code>. The Oracle SID is also the name of your CDB.</p>
+    pub fn db_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.db_system_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The storage throughput value, in mebibyte per second (MiBps), for the DB instance.</p>
-    /// <p>This setting applies only to the <code>gp3</code> storage type.</p>
-    /// <p>This setting doesn't apply to Amazon Aurora or RDS Custom DB instances.</p>
-    pub fn set_storage_throughput(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.storage_throughput = input;
+    /// <p>The Oracle system identifier (SID), which is the name of the Oracle database instance that manages your database files. In this context, the term "Oracle database instance" refers exclusively to the system global area (SGA) and Oracle background processes. If you don't specify a SID, the value defaults to <code>RDSCDB</code>. The Oracle SID is also the name of your CDB.</p>
+    pub fn set_db_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.db_system_id = input;
         self
     }
-    /// <p>The storage throughput value, in mebibyte per second (MiBps), for the DB instance.</p>
-    /// <p>This setting applies only to the <code>gp3</code> storage type.</p>
-    /// <p>This setting doesn't apply to Amazon Aurora or RDS Custom DB instances.</p>
-    pub fn get_storage_throughput(&self) -> &::std::option::Option<i32> {
-        &self.storage_throughput
+    /// <p>The Oracle system identifier (SID), which is the name of the Oracle database instance that manages your database files. In this context, the term "Oracle database instance" refers exclusively to the system global area (SGA) and Oracle background processes. If you don't specify a SID, the value defaults to <code>RDSCDB</code>. The Oracle SID is also the name of your CDB.</p>
+    pub fn get_db_system_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_system_id
+    }
+    /// <p>The CA certificate identifier to use for the DB instance's server certificate.</p>
+    /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub fn ca_certificate_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ca_certificate_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The CA certificate identifier to use for the DB instance's server certificate.</p>
+    /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub fn set_ca_certificate_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.ca_certificate_identifier = input;
+        self
+    }
+    /// <p>The CA certificate identifier to use for the DB instance's server certificate.</p>
+    /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub fn get_ca_certificate_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ca_certificate_identifier
     }
     /// <p>Specifies whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i></p>
@@ -4878,54 +4983,6 @@ impl CreateDbInstanceInputBuilder {
     pub fn get_master_user_secret_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.master_user_secret_kms_key_id
     }
-    /// <p>The CA certificate identifier to use for the DB instance's server certificate.</p>
-    /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    pub fn ca_certificate_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.ca_certificate_identifier = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The CA certificate identifier to use for the DB instance's server certificate.</p>
-    /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    pub fn set_ca_certificate_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ca_certificate_identifier = input;
-        self
-    }
-    /// <p>The CA certificate identifier to use for the DB instance's server certificate.</p>
-    /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    pub fn get_ca_certificate_identifier(&self) -> &::std::option::Option<::std::string::String> {
-        &self.ca_certificate_identifier
-    }
-    /// <p>The Oracle system identifier (SID), which is the name of the Oracle database instance that manages your database files. In this context, the term "Oracle database instance" refers exclusively to the system global area (SGA) and Oracle background processes. If you don't specify a SID, the value defaults to <code>RDSCDB</code>. The Oracle SID is also the name of your CDB.</p>
-    pub fn db_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.db_system_id = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The Oracle system identifier (SID), which is the name of the Oracle database instance that manages your database files. In this context, the term "Oracle database instance" refers exclusively to the system global area (SGA) and Oracle background processes. If you don't specify a SID, the value defaults to <code>RDSCDB</code>. The Oracle SID is also the name of your CDB.</p>
-    pub fn set_db_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_system_id = input;
-        self
-    }
-    /// <p>The Oracle system identifier (SID), which is the name of the Oracle database instance that manages your database files. In this context, the term "Oracle database instance" refers exclusively to the system global area (SGA) and Oracle background processes. If you don't specify a SID, the value defaults to <code>RDSCDB</code>. The Oracle SID is also the name of your CDB.</p>
-    pub fn get_db_system_id(&self) -> &::std::option::Option<::std::string::String> {
-        &self.db_system_id
-    }
-    /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.</p>
-    pub fn dedicated_log_volume(mut self, input: bool) -> Self {
-        self.dedicated_log_volume = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.</p>
-    pub fn set_dedicated_log_volume(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dedicated_log_volume = input;
-        self
-    }
-    /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.</p>
-    pub fn get_dedicated_log_volume(&self) -> &::std::option::Option<bool> {
-        &self.dedicated_log_volume
-    }
     /// <p>Specifies whether to use the multi-tenant configuration or the single-tenant configuration (default). This parameter only applies to RDS for Oracle container database (CDB) engines.</p>
     /// <p>Note the following restrictions:</p>
     /// <ul>
@@ -4960,6 +5017,20 @@ impl CreateDbInstanceInputBuilder {
     /// </ul>
     pub fn get_multi_tenant(&self) -> &::std::option::Option<bool> {
         &self.multi_tenant
+    }
+    /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.</p>
+    pub fn dedicated_log_volume(mut self, input: bool) -> Self {
+        self.dedicated_log_volume = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.</p>
+    pub fn set_dedicated_log_volume(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.dedicated_log_volume = input;
+        self
+    }
+    /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.</p>
+    pub fn get_dedicated_log_volume(&self) -> &::std::option::Option<bool> {
+        &self.dedicated_log_volume
     }
     /// <p>The life cycle type for this DB instance.</p><note>
     /// <p>By default, this value is set to <code>open-source-rds-extended-support</code>, which enrolls your DB instance into Amazon RDS Extended Support. At the end of standard support, you can avoid charges for Extended Support by setting the value to <code>open-source-rds-extended-support-disabled</code>. In this case, creating the DB instance will fail if the DB major version is past its end of standard support date.</p>
@@ -5057,6 +5128,7 @@ impl CreateDbInstanceInputBuilder {
             auto_minor_version_upgrade: self.auto_minor_version_upgrade,
             license_model: self.license_model,
             iops: self.iops,
+            storage_throughput: self.storage_throughput,
             option_group_name: self.option_group_name,
             character_set_name: self.character_set_name,
             nchar_character_set_name: self.nchar_character_set_name,
@@ -5089,18 +5161,88 @@ impl CreateDbInstanceInputBuilder {
             deletion_protection: self.deletion_protection,
             max_allocated_storage: self.max_allocated_storage,
             enable_customer_owned_ip: self.enable_customer_owned_ip,
-            custom_iam_instance_profile: self.custom_iam_instance_profile,
-            backup_target: self.backup_target,
             network_type: self.network_type,
-            storage_throughput: self.storage_throughput,
+            backup_target: self.backup_target,
+            custom_iam_instance_profile: self.custom_iam_instance_profile,
+            db_system_id: self.db_system_id,
+            ca_certificate_identifier: self.ca_certificate_identifier,
             manage_master_user_password: self.manage_master_user_password,
             master_user_secret_kms_key_id: self.master_user_secret_kms_key_id,
-            ca_certificate_identifier: self.ca_certificate_identifier,
-            db_system_id: self.db_system_id,
-            dedicated_log_volume: self.dedicated_log_volume,
             multi_tenant: self.multi_tenant,
+            dedicated_log_volume: self.dedicated_log_volume,
             engine_lifecycle_support: self.engine_lifecycle_support,
             master_user_authentication_type: self.master_user_authentication_type,
         })
+    }
+}
+impl ::std::fmt::Debug for CreateDbInstanceInputBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateDbInstanceInputBuilder");
+        formatter.field("db_name", &self.db_name);
+        formatter.field("db_instance_identifier", &self.db_instance_identifier);
+        formatter.field("allocated_storage", &self.allocated_storage);
+        formatter.field("db_instance_class", &self.db_instance_class);
+        formatter.field("engine", &self.engine);
+        formatter.field("master_username", &self.master_username);
+        formatter.field("master_user_password", &"*** Sensitive Data Redacted ***");
+        formatter.field("db_security_groups", &self.db_security_groups);
+        formatter.field("vpc_security_group_ids", &self.vpc_security_group_ids);
+        formatter.field("availability_zone", &self.availability_zone);
+        formatter.field("db_subnet_group_name", &self.db_subnet_group_name);
+        formatter.field("preferred_maintenance_window", &self.preferred_maintenance_window);
+        formatter.field("db_parameter_group_name", &self.db_parameter_group_name);
+        formatter.field("backup_retention_period", &self.backup_retention_period);
+        formatter.field("preferred_backup_window", &self.preferred_backup_window);
+        formatter.field("port", &self.port);
+        formatter.field("multi_az", &self.multi_az);
+        formatter.field("engine_version", &self.engine_version);
+        formatter.field("auto_minor_version_upgrade", &self.auto_minor_version_upgrade);
+        formatter.field("license_model", &self.license_model);
+        formatter.field("iops", &self.iops);
+        formatter.field("storage_throughput", &self.storage_throughput);
+        formatter.field("option_group_name", &self.option_group_name);
+        formatter.field("character_set_name", &self.character_set_name);
+        formatter.field("nchar_character_set_name", &self.nchar_character_set_name);
+        formatter.field("publicly_accessible", &self.publicly_accessible);
+        formatter.field("tags", &self.tags);
+        formatter.field("db_cluster_identifier", &self.db_cluster_identifier);
+        formatter.field("storage_type", &self.storage_type);
+        formatter.field("tde_credential_arn", &self.tde_credential_arn);
+        formatter.field("tde_credential_password", &"*** Sensitive Data Redacted ***");
+        formatter.field("storage_encrypted", &self.storage_encrypted);
+        formatter.field("kms_key_id", &self.kms_key_id);
+        formatter.field("domain", &self.domain);
+        formatter.field("domain_fqdn", &self.domain_fqdn);
+        formatter.field("domain_ou", &self.domain_ou);
+        formatter.field("domain_auth_secret_arn", &self.domain_auth_secret_arn);
+        formatter.field("domain_dns_ips", &self.domain_dns_ips);
+        formatter.field("copy_tags_to_snapshot", &self.copy_tags_to_snapshot);
+        formatter.field("monitoring_interval", &self.monitoring_interval);
+        formatter.field("monitoring_role_arn", &self.monitoring_role_arn);
+        formatter.field("domain_iam_role_name", &self.domain_iam_role_name);
+        formatter.field("promotion_tier", &self.promotion_tier);
+        formatter.field("timezone", &self.timezone);
+        formatter.field("enable_iam_database_authentication", &self.enable_iam_database_authentication);
+        formatter.field("database_insights_mode", &self.database_insights_mode);
+        formatter.field("enable_performance_insights", &self.enable_performance_insights);
+        formatter.field("performance_insights_kms_key_id", &self.performance_insights_kms_key_id);
+        formatter.field("performance_insights_retention_period", &self.performance_insights_retention_period);
+        formatter.field("enable_cloudwatch_logs_exports", &self.enable_cloudwatch_logs_exports);
+        formatter.field("processor_features", &self.processor_features);
+        formatter.field("deletion_protection", &self.deletion_protection);
+        formatter.field("max_allocated_storage", &self.max_allocated_storage);
+        formatter.field("enable_customer_owned_ip", &self.enable_customer_owned_ip);
+        formatter.field("network_type", &self.network_type);
+        formatter.field("backup_target", &self.backup_target);
+        formatter.field("custom_iam_instance_profile", &self.custom_iam_instance_profile);
+        formatter.field("db_system_id", &self.db_system_id);
+        formatter.field("ca_certificate_identifier", &self.ca_certificate_identifier);
+        formatter.field("manage_master_user_password", &self.manage_master_user_password);
+        formatter.field("master_user_secret_kms_key_id", &self.master_user_secret_kms_key_id);
+        formatter.field("multi_tenant", &self.multi_tenant);
+        formatter.field("dedicated_log_volume", &self.dedicated_log_volume);
+        formatter.field("engine_lifecycle_support", &self.engine_lifecycle_support);
+        formatter.field("master_user_authentication_type", &self.master_user_authentication_type);
+        formatter.finish()
     }
 }

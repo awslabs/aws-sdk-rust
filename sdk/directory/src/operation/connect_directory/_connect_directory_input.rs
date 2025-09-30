@@ -18,6 +18,8 @@ pub struct ConnectDirectoryInput {
     pub connect_settings: ::std::option::Option<crate::types::DirectoryConnectSettings>,
     /// <p>The tags to be assigned to AD Connector.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>The network type for your directory. The default value is <code>IPv4</code> or <code>IPv6</code> based on the provided subnet capabilities.</p>
+    pub network_type: ::std::option::Option<crate::types::NetworkType>,
 }
 impl ConnectDirectoryInput {
     /// <p>The fully qualified name of your self-managed directory, such as <code>corp.example.com</code>.</p>
@@ -50,6 +52,10 @@ impl ConnectDirectoryInput {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
+    /// <p>The network type for your directory. The default value is <code>IPv4</code> or <code>IPv6</code> based on the provided subnet capabilities.</p>
+    pub fn network_type(&self) -> ::std::option::Option<&crate::types::NetworkType> {
+        self.network_type.as_ref()
+    }
 }
 impl ::std::fmt::Debug for ConnectDirectoryInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -61,6 +67,7 @@ impl ::std::fmt::Debug for ConnectDirectoryInput {
         formatter.field("size", &self.size);
         formatter.field("connect_settings", &self.connect_settings);
         formatter.field("tags", &self.tags);
+        formatter.field("network_type", &self.network_type);
         formatter.finish()
     }
 }
@@ -82,6 +89,7 @@ pub struct ConnectDirectoryInputBuilder {
     pub(crate) size: ::std::option::Option<crate::types::DirectorySize>,
     pub(crate) connect_settings: ::std::option::Option<crate::types::DirectoryConnectSettings>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) network_type: ::std::option::Option<crate::types::NetworkType>,
 }
 impl ConnectDirectoryInputBuilder {
     /// <p>The fully qualified name of your self-managed directory, such as <code>corp.example.com</code>.</p>
@@ -192,6 +200,20 @@ impl ConnectDirectoryInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
+    /// <p>The network type for your directory. The default value is <code>IPv4</code> or <code>IPv6</code> based on the provided subnet capabilities.</p>
+    pub fn network_type(mut self, input: crate::types::NetworkType) -> Self {
+        self.network_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The network type for your directory. The default value is <code>IPv4</code> or <code>IPv6</code> based on the provided subnet capabilities.</p>
+    pub fn set_network_type(mut self, input: ::std::option::Option<crate::types::NetworkType>) -> Self {
+        self.network_type = input;
+        self
+    }
+    /// <p>The network type for your directory. The default value is <code>IPv4</code> or <code>IPv6</code> based on the provided subnet capabilities.</p>
+    pub fn get_network_type(&self) -> &::std::option::Option<crate::types::NetworkType> {
+        &self.network_type
+    }
     /// Consumes the builder and constructs a [`ConnectDirectoryInput`](crate::operation::connect_directory::ConnectDirectoryInput).
     pub fn build(
         self,
@@ -204,6 +226,7 @@ impl ConnectDirectoryInputBuilder {
             size: self.size,
             connect_settings: self.connect_settings,
             tags: self.tags,
+            network_type: self.network_type,
         })
     }
 }
@@ -217,6 +240,7 @@ impl ::std::fmt::Debug for ConnectDirectoryInputBuilder {
         formatter.field("size", &self.size);
         formatter.field("connect_settings", &self.connect_settings);
         formatter.field("tags", &self.tags);
+        formatter.field("network_type", &self.network_type);
         formatter.finish()
     }
 }

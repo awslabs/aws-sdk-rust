@@ -2,7 +2,7 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ModifyDbClusterInput {
     /// <p>The DB cluster identifier for the cluster being modified. This parameter isn't case-sensitive.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
@@ -223,6 +223,15 @@ pub struct ModifyDbClusterInput {
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters.</p>
     /// <p>For more information about automatic minor version upgrades, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Upgrading.html#USER_UpgradeDBInstance.Upgrading.AutoMinorVersionUpgrades">Automatically upgrading the minor engine version</a>.</p>
     pub auto_minor_version_upgrade: ::std::option::Option<bool>,
+    /// <p>The network type of the DB cluster.</p>
+    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i></p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
+    /// <p>Valid Values: <code>IPV4 | DUAL</code></p>
+    pub network_type: ::std::option::Option<::std::string::String>,
+    /// <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub serverless_v2_scaling_configuration: ::std::option::Option<crate::types::ServerlessV2ScalingConfiguration>,
     /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB cluster. To turn off collecting Enhanced Monitoring metrics, specify <code>0</code>.</p>
     /// <p>If <code>MonitoringRoleArn</code> is specified, also set <code>MonitoringInterval</code> to a value other than <code>0</code>.</p>
     /// <p>Valid for Cluster Type: Multi-AZ DB clusters only</p>
@@ -261,15 +270,6 @@ pub struct ModifyDbClusterInput {
     /// <p>Default: <code>7</code> days</p>
     /// <p>If you specify a retention period that isn't valid, such as <code>94</code>, Amazon RDS issues an error.</p>
     pub performance_insights_retention_period: ::std::option::Option<i32>,
-    /// <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    pub serverless_v2_scaling_configuration: ::std::option::Option<crate::types::ServerlessV2ScalingConfiguration>,
-    /// <p>The network type of the DB cluster.</p>
-    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i></p>
-    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
-    /// <p>Valid Values: <code>IPV4 | DUAL</code></p>
-    pub network_type: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
     /// <p>If the DB cluster doesn't manage the master user password with Amazon Web Services Secrets Manager, you can turn on this management. In this case, you can't specify <code>MasterUserPassword</code>.</p>
     /// <p>If the DB cluster already manages the master user password with Amazon Web Services Secrets Manager, and you specify that the master user password is not managed with Amazon Web Services Secrets Manager, then you must specify <code>MasterUserPassword</code>. In this case, RDS deletes the secret and uses the new password for the master user specified by <code>MasterUserPassword</code>.</p>
@@ -286,6 +286,9 @@ pub struct ModifyDbClusterInput {
     /// <p>You must apply the change immediately when rotating the master user password.</p></li>
     /// </ul>
     pub rotate_master_user_password: ::std::option::Option<bool>,
+    /// <p>Specifies whether read replicas can forward write operations to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
+    pub enable_local_write_forwarding: ::std::option::Option<bool>,
     /// <p>The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in Amazon Web Services Secrets Manager.</p>
     /// <p>This setting is valid only if both of the following conditions are met:</p>
     /// <ul>
@@ -314,9 +317,6 @@ pub struct ModifyDbClusterInput {
     /// <p>You must allow engine mode changes when specifying a different value for the <code>EngineMode</code> parameter from the DB cluster's current engine mode.</p></li>
     /// </ul>
     pub allow_engine_mode_change: ::std::option::Option<bool>,
-    /// <p>Specifies whether read replicas can forward write operations to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.</p>
-    /// <p>Valid for: Aurora DB clusters only</p>
-    pub enable_local_write_forwarding: ::std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.</p>
     pub aws_backup_recovery_point_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether to enable Aurora Limitless Database. You must enable Aurora Limitless Database to create a DB shard group.</p>
@@ -620,6 +620,19 @@ impl ModifyDbClusterInput {
     pub fn auto_minor_version_upgrade(&self) -> ::std::option::Option<bool> {
         self.auto_minor_version_upgrade
     }
+    /// <p>The network type of the DB cluster.</p>
+    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i></p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
+    /// <p>Valid Values: <code>IPV4 | DUAL</code></p>
+    pub fn network_type(&self) -> ::std::option::Option<&str> {
+        self.network_type.as_deref()
+    }
+    /// <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub fn serverless_v2_scaling_configuration(&self) -> ::std::option::Option<&crate::types::ServerlessV2ScalingConfiguration> {
+        self.serverless_v2_scaling_configuration.as_ref()
+    }
     /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB cluster. To turn off collecting Enhanced Monitoring metrics, specify <code>0</code>.</p>
     /// <p>If <code>MonitoringRoleArn</code> is specified, also set <code>MonitoringInterval</code> to a value other than <code>0</code>.</p>
     /// <p>Valid for Cluster Type: Multi-AZ DB clusters only</p>
@@ -670,19 +683,6 @@ impl ModifyDbClusterInput {
     pub fn performance_insights_retention_period(&self) -> ::std::option::Option<i32> {
         self.performance_insights_retention_period
     }
-    /// <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    pub fn serverless_v2_scaling_configuration(&self) -> ::std::option::Option<&crate::types::ServerlessV2ScalingConfiguration> {
-        self.serverless_v2_scaling_configuration.as_ref()
-    }
-    /// <p>The network type of the DB cluster.</p>
-    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i></p>
-    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
-    /// <p>Valid Values: <code>IPV4 | DUAL</code></p>
-    pub fn network_type(&self) -> ::std::option::Option<&str> {
-        self.network_type.as_deref()
-    }
     /// <p>Specifies whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
     /// <p>If the DB cluster doesn't manage the master user password with Amazon Web Services Secrets Manager, you can turn on this management. In this case, you can't specify <code>MasterUserPassword</code>.</p>
     /// <p>If the DB cluster already manages the master user password with Amazon Web Services Secrets Manager, and you specify that the master user password is not managed with Amazon Web Services Secrets Manager, then you must specify <code>MasterUserPassword</code>. In this case, RDS deletes the secret and uses the new password for the master user specified by <code>MasterUserPassword</code>.</p>
@@ -702,6 +702,11 @@ impl ModifyDbClusterInput {
     /// </ul>
     pub fn rotate_master_user_password(&self) -> ::std::option::Option<bool> {
         self.rotate_master_user_password
+    }
+    /// <p>Specifies whether read replicas can forward write operations to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
+    pub fn enable_local_write_forwarding(&self) -> ::std::option::Option<bool> {
+        self.enable_local_write_forwarding
     }
     /// <p>The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in Amazon Web Services Secrets Manager.</p>
     /// <p>This setting is valid only if both of the following conditions are met:</p>
@@ -737,11 +742,6 @@ impl ModifyDbClusterInput {
     pub fn allow_engine_mode_change(&self) -> ::std::option::Option<bool> {
         self.allow_engine_mode_change
     }
-    /// <p>Specifies whether read replicas can forward write operations to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.</p>
-    /// <p>Valid for: Aurora DB clusters only</p>
-    pub fn enable_local_write_forwarding(&self) -> ::std::option::Option<bool> {
-        self.enable_local_write_forwarding
-    }
     /// <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.</p>
     pub fn aws_backup_recovery_point_arn(&self) -> ::std::option::Option<&str> {
         self.aws_backup_recovery_point_arn.as_deref()
@@ -773,6 +773,59 @@ impl ModifyDbClusterInput {
         self.master_user_authentication_type.as_ref()
     }
 }
+impl ::std::fmt::Debug for ModifyDbClusterInput {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ModifyDbClusterInput");
+        formatter.field("db_cluster_identifier", &self.db_cluster_identifier);
+        formatter.field("new_db_cluster_identifier", &self.new_db_cluster_identifier);
+        formatter.field("apply_immediately", &self.apply_immediately);
+        formatter.field("backup_retention_period", &self.backup_retention_period);
+        formatter.field("db_cluster_parameter_group_name", &self.db_cluster_parameter_group_name);
+        formatter.field("vpc_security_group_ids", &self.vpc_security_group_ids);
+        formatter.field("port", &self.port);
+        formatter.field("master_user_password", &"*** Sensitive Data Redacted ***");
+        formatter.field("option_group_name", &self.option_group_name);
+        formatter.field("preferred_backup_window", &self.preferred_backup_window);
+        formatter.field("preferred_maintenance_window", &self.preferred_maintenance_window);
+        formatter.field("enable_iam_database_authentication", &self.enable_iam_database_authentication);
+        formatter.field("backtrack_window", &self.backtrack_window);
+        formatter.field("cloudwatch_logs_export_configuration", &self.cloudwatch_logs_export_configuration);
+        formatter.field("engine_version", &self.engine_version);
+        formatter.field("allow_major_version_upgrade", &self.allow_major_version_upgrade);
+        formatter.field("db_instance_parameter_group_name", &self.db_instance_parameter_group_name);
+        formatter.field("domain", &self.domain);
+        formatter.field("domain_iam_role_name", &self.domain_iam_role_name);
+        formatter.field("scaling_configuration", &self.scaling_configuration);
+        formatter.field("deletion_protection", &self.deletion_protection);
+        formatter.field("enable_http_endpoint", &self.enable_http_endpoint);
+        formatter.field("copy_tags_to_snapshot", &self.copy_tags_to_snapshot);
+        formatter.field("enable_global_write_forwarding", &self.enable_global_write_forwarding);
+        formatter.field("db_cluster_instance_class", &self.db_cluster_instance_class);
+        formatter.field("allocated_storage", &self.allocated_storage);
+        formatter.field("storage_type", &self.storage_type);
+        formatter.field("iops", &self.iops);
+        formatter.field("auto_minor_version_upgrade", &self.auto_minor_version_upgrade);
+        formatter.field("network_type", &self.network_type);
+        formatter.field("serverless_v2_scaling_configuration", &self.serverless_v2_scaling_configuration);
+        formatter.field("monitoring_interval", &self.monitoring_interval);
+        formatter.field("monitoring_role_arn", &self.monitoring_role_arn);
+        formatter.field("database_insights_mode", &self.database_insights_mode);
+        formatter.field("enable_performance_insights", &self.enable_performance_insights);
+        formatter.field("performance_insights_kms_key_id", &self.performance_insights_kms_key_id);
+        formatter.field("performance_insights_retention_period", &self.performance_insights_retention_period);
+        formatter.field("manage_master_user_password", &self.manage_master_user_password);
+        formatter.field("rotate_master_user_password", &self.rotate_master_user_password);
+        formatter.field("enable_local_write_forwarding", &self.enable_local_write_forwarding);
+        formatter.field("master_user_secret_kms_key_id", &self.master_user_secret_kms_key_id);
+        formatter.field("engine_mode", &self.engine_mode);
+        formatter.field("allow_engine_mode_change", &self.allow_engine_mode_change);
+        formatter.field("aws_backup_recovery_point_arn", &self.aws_backup_recovery_point_arn);
+        formatter.field("enable_limitless_database", &self.enable_limitless_database);
+        formatter.field("ca_certificate_identifier", &self.ca_certificate_identifier);
+        formatter.field("master_user_authentication_type", &self.master_user_authentication_type);
+        formatter.finish()
+    }
+}
 impl ModifyDbClusterInput {
     /// Creates a new builder-style object to manufacture [`ModifyDbClusterInput`](crate::operation::modify_db_cluster::ModifyDbClusterInput).
     pub fn builder() -> crate::operation::modify_db_cluster::builders::ModifyDbClusterInputBuilder {
@@ -781,7 +834,7 @@ impl ModifyDbClusterInput {
 }
 
 /// A builder for [`ModifyDbClusterInput`](crate::operation::modify_db_cluster::ModifyDbClusterInput).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct ModifyDbClusterInputBuilder {
     pub(crate) db_cluster_identifier: ::std::option::Option<::std::string::String>,
@@ -813,20 +866,20 @@ pub struct ModifyDbClusterInputBuilder {
     pub(crate) storage_type: ::std::option::Option<::std::string::String>,
     pub(crate) iops: ::std::option::Option<i32>,
     pub(crate) auto_minor_version_upgrade: ::std::option::Option<bool>,
+    pub(crate) network_type: ::std::option::Option<::std::string::String>,
+    pub(crate) serverless_v2_scaling_configuration: ::std::option::Option<crate::types::ServerlessV2ScalingConfiguration>,
     pub(crate) monitoring_interval: ::std::option::Option<i32>,
     pub(crate) monitoring_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) database_insights_mode: ::std::option::Option<crate::types::DatabaseInsightsMode>,
     pub(crate) enable_performance_insights: ::std::option::Option<bool>,
     pub(crate) performance_insights_kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) performance_insights_retention_period: ::std::option::Option<i32>,
-    pub(crate) serverless_v2_scaling_configuration: ::std::option::Option<crate::types::ServerlessV2ScalingConfiguration>,
-    pub(crate) network_type: ::std::option::Option<::std::string::String>,
     pub(crate) manage_master_user_password: ::std::option::Option<bool>,
     pub(crate) rotate_master_user_password: ::std::option::Option<bool>,
+    pub(crate) enable_local_write_forwarding: ::std::option::Option<bool>,
     pub(crate) master_user_secret_kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) engine_mode: ::std::option::Option<::std::string::String>,
     pub(crate) allow_engine_mode_change: ::std::option::Option<bool>,
-    pub(crate) enable_local_write_forwarding: ::std::option::Option<bool>,
     pub(crate) aws_backup_recovery_point_arn: ::std::option::Option<::std::string::String>,
     pub(crate) enable_limitless_database: ::std::option::Option<bool>,
     pub(crate) ca_certificate_identifier: ::std::option::Option<::std::string::String>,
@@ -1729,6 +1782,49 @@ impl ModifyDbClusterInputBuilder {
     pub fn get_auto_minor_version_upgrade(&self) -> &::std::option::Option<bool> {
         &self.auto_minor_version_upgrade
     }
+    /// <p>The network type of the DB cluster.</p>
+    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i></p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
+    /// <p>Valid Values: <code>IPV4 | DUAL</code></p>
+    pub fn network_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.network_type = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The network type of the DB cluster.</p>
+    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i></p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
+    /// <p>Valid Values: <code>IPV4 | DUAL</code></p>
+    pub fn set_network_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.network_type = input;
+        self
+    }
+    /// <p>The network type of the DB cluster.</p>
+    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i></p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
+    /// <p>Valid Values: <code>IPV4 | DUAL</code></p>
+    pub fn get_network_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_type
+    }
+    /// <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub fn serverless_v2_scaling_configuration(mut self, input: crate::types::ServerlessV2ScalingConfiguration) -> Self {
+        self.serverless_v2_scaling_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub fn set_serverless_v2_scaling_configuration(mut self, input: ::std::option::Option<crate::types::ServerlessV2ScalingConfiguration>) -> Self {
+        self.serverless_v2_scaling_configuration = input;
+        self
+    }
+    /// <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub fn get_serverless_v2_scaling_configuration(&self) -> &::std::option::Option<crate::types::ServerlessV2ScalingConfiguration> {
+        &self.serverless_v2_scaling_configuration
+    }
     /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB cluster. To turn off collecting Enhanced Monitoring metrics, specify <code>0</code>.</p>
     /// <p>If <code>MonitoringRoleArn</code> is specified, also set <code>MonitoringInterval</code> to a value other than <code>0</code>.</p>
     /// <p>Valid for Cluster Type: Multi-AZ DB clusters only</p>
@@ -1891,49 +1987,6 @@ impl ModifyDbClusterInputBuilder {
     pub fn get_performance_insights_retention_period(&self) -> &::std::option::Option<i32> {
         &self.performance_insights_retention_period
     }
-    /// <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    pub fn serverless_v2_scaling_configuration(mut self, input: crate::types::ServerlessV2ScalingConfiguration) -> Self {
-        self.serverless_v2_scaling_configuration = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    pub fn set_serverless_v2_scaling_configuration(mut self, input: ::std::option::Option<crate::types::ServerlessV2ScalingConfiguration>) -> Self {
-        self.serverless_v2_scaling_configuration = input;
-        self
-    }
-    /// <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    pub fn get_serverless_v2_scaling_configuration(&self) -> &::std::option::Option<crate::types::ServerlessV2ScalingConfiguration> {
-        &self.serverless_v2_scaling_configuration
-    }
-    /// <p>The network type of the DB cluster.</p>
-    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i></p>
-    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
-    /// <p>Valid Values: <code>IPV4 | DUAL</code></p>
-    pub fn network_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.network_type = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The network type of the DB cluster.</p>
-    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i></p>
-    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
-    /// <p>Valid Values: <code>IPV4 | DUAL</code></p>
-    pub fn set_network_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.network_type = input;
-        self
-    }
-    /// <p>The network type of the DB cluster.</p>
-    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i></p>
-    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
-    /// <p>Valid Values: <code>IPV4 | DUAL</code></p>
-    pub fn get_network_type(&self) -> &::std::option::Option<::std::string::String> {
-        &self.network_type
-    }
     /// <p>Specifies whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
     /// <p>If the DB cluster doesn't manage the master user password with Amazon Web Services Secrets Manager, you can turn on this management. In this case, you can't specify <code>MasterUserPassword</code>.</p>
     /// <p>If the DB cluster already manages the master user password with Amazon Web Services Secrets Manager, and you specify that the master user password is not managed with Amazon Web Services Secrets Manager, then you must specify <code>MasterUserPassword</code>. In this case, RDS deletes the secret and uses the new password for the master user specified by <code>MasterUserPassword</code>.</p>
@@ -1997,6 +2050,23 @@ impl ModifyDbClusterInputBuilder {
     /// </ul>
     pub fn get_rotate_master_user_password(&self) -> &::std::option::Option<bool> {
         &self.rotate_master_user_password
+    }
+    /// <p>Specifies whether read replicas can forward write operations to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
+    pub fn enable_local_write_forwarding(mut self, input: bool) -> Self {
+        self.enable_local_write_forwarding = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether read replicas can forward write operations to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
+    pub fn set_enable_local_write_forwarding(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.enable_local_write_forwarding = input;
+        self
+    }
+    /// <p>Specifies whether read replicas can forward write operations to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
+    pub fn get_enable_local_write_forwarding(&self) -> &::std::option::Option<bool> {
+        &self.enable_local_write_forwarding
     }
     /// <p>The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in Amazon Web Services Secrets Manager.</p>
     /// <p>This setting is valid only if both of the following conditions are met:</p>
@@ -2105,23 +2175,6 @@ impl ModifyDbClusterInputBuilder {
     /// </ul>
     pub fn get_allow_engine_mode_change(&self) -> &::std::option::Option<bool> {
         &self.allow_engine_mode_change
-    }
-    /// <p>Specifies whether read replicas can forward write operations to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.</p>
-    /// <p>Valid for: Aurora DB clusters only</p>
-    pub fn enable_local_write_forwarding(mut self, input: bool) -> Self {
-        self.enable_local_write_forwarding = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>Specifies whether read replicas can forward write operations to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.</p>
-    /// <p>Valid for: Aurora DB clusters only</p>
-    pub fn set_enable_local_write_forwarding(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enable_local_write_forwarding = input;
-        self
-    }
-    /// <p>Specifies whether read replicas can forward write operations to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.</p>
-    /// <p>Valid for: Aurora DB clusters only</p>
-    pub fn get_enable_local_write_forwarding(&self) -> &::std::option::Option<bool> {
-        &self.enable_local_write_forwarding
     }
     /// <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.</p>
     pub fn aws_backup_recovery_point_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -2255,24 +2308,77 @@ impl ModifyDbClusterInputBuilder {
             storage_type: self.storage_type,
             iops: self.iops,
             auto_minor_version_upgrade: self.auto_minor_version_upgrade,
+            network_type: self.network_type,
+            serverless_v2_scaling_configuration: self.serverless_v2_scaling_configuration,
             monitoring_interval: self.monitoring_interval,
             monitoring_role_arn: self.monitoring_role_arn,
             database_insights_mode: self.database_insights_mode,
             enable_performance_insights: self.enable_performance_insights,
             performance_insights_kms_key_id: self.performance_insights_kms_key_id,
             performance_insights_retention_period: self.performance_insights_retention_period,
-            serverless_v2_scaling_configuration: self.serverless_v2_scaling_configuration,
-            network_type: self.network_type,
             manage_master_user_password: self.manage_master_user_password,
             rotate_master_user_password: self.rotate_master_user_password,
+            enable_local_write_forwarding: self.enable_local_write_forwarding,
             master_user_secret_kms_key_id: self.master_user_secret_kms_key_id,
             engine_mode: self.engine_mode,
             allow_engine_mode_change: self.allow_engine_mode_change,
-            enable_local_write_forwarding: self.enable_local_write_forwarding,
             aws_backup_recovery_point_arn: self.aws_backup_recovery_point_arn,
             enable_limitless_database: self.enable_limitless_database,
             ca_certificate_identifier: self.ca_certificate_identifier,
             master_user_authentication_type: self.master_user_authentication_type,
         })
+    }
+}
+impl ::std::fmt::Debug for ModifyDbClusterInputBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ModifyDbClusterInputBuilder");
+        formatter.field("db_cluster_identifier", &self.db_cluster_identifier);
+        formatter.field("new_db_cluster_identifier", &self.new_db_cluster_identifier);
+        formatter.field("apply_immediately", &self.apply_immediately);
+        formatter.field("backup_retention_period", &self.backup_retention_period);
+        formatter.field("db_cluster_parameter_group_name", &self.db_cluster_parameter_group_name);
+        formatter.field("vpc_security_group_ids", &self.vpc_security_group_ids);
+        formatter.field("port", &self.port);
+        formatter.field("master_user_password", &"*** Sensitive Data Redacted ***");
+        formatter.field("option_group_name", &self.option_group_name);
+        formatter.field("preferred_backup_window", &self.preferred_backup_window);
+        formatter.field("preferred_maintenance_window", &self.preferred_maintenance_window);
+        formatter.field("enable_iam_database_authentication", &self.enable_iam_database_authentication);
+        formatter.field("backtrack_window", &self.backtrack_window);
+        formatter.field("cloudwatch_logs_export_configuration", &self.cloudwatch_logs_export_configuration);
+        formatter.field("engine_version", &self.engine_version);
+        formatter.field("allow_major_version_upgrade", &self.allow_major_version_upgrade);
+        formatter.field("db_instance_parameter_group_name", &self.db_instance_parameter_group_name);
+        formatter.field("domain", &self.domain);
+        formatter.field("domain_iam_role_name", &self.domain_iam_role_name);
+        formatter.field("scaling_configuration", &self.scaling_configuration);
+        formatter.field("deletion_protection", &self.deletion_protection);
+        formatter.field("enable_http_endpoint", &self.enable_http_endpoint);
+        formatter.field("copy_tags_to_snapshot", &self.copy_tags_to_snapshot);
+        formatter.field("enable_global_write_forwarding", &self.enable_global_write_forwarding);
+        formatter.field("db_cluster_instance_class", &self.db_cluster_instance_class);
+        formatter.field("allocated_storage", &self.allocated_storage);
+        formatter.field("storage_type", &self.storage_type);
+        formatter.field("iops", &self.iops);
+        formatter.field("auto_minor_version_upgrade", &self.auto_minor_version_upgrade);
+        formatter.field("network_type", &self.network_type);
+        formatter.field("serverless_v2_scaling_configuration", &self.serverless_v2_scaling_configuration);
+        formatter.field("monitoring_interval", &self.monitoring_interval);
+        formatter.field("monitoring_role_arn", &self.monitoring_role_arn);
+        formatter.field("database_insights_mode", &self.database_insights_mode);
+        formatter.field("enable_performance_insights", &self.enable_performance_insights);
+        formatter.field("performance_insights_kms_key_id", &self.performance_insights_kms_key_id);
+        formatter.field("performance_insights_retention_period", &self.performance_insights_retention_period);
+        formatter.field("manage_master_user_password", &self.manage_master_user_password);
+        formatter.field("rotate_master_user_password", &self.rotate_master_user_password);
+        formatter.field("enable_local_write_forwarding", &self.enable_local_write_forwarding);
+        formatter.field("master_user_secret_kms_key_id", &self.master_user_secret_kms_key_id);
+        formatter.field("engine_mode", &self.engine_mode);
+        formatter.field("allow_engine_mode_change", &self.allow_engine_mode_change);
+        formatter.field("aws_backup_recovery_point_arn", &self.aws_backup_recovery_point_arn);
+        formatter.field("enable_limitless_database", &self.enable_limitless_database);
+        formatter.field("ca_certificate_identifier", &self.ca_certificate_identifier);
+        formatter.field("master_user_authentication_type", &self.master_user_authentication_type);
+        formatter.finish()
     }
 }

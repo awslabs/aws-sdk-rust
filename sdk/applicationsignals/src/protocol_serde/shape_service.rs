@@ -20,6 +20,9 @@ where
                         "AttributeMaps" => {
                             builder = builder.set_attribute_maps(crate::protocol_serde::shape_attribute_maps::de_attribute_maps(tokens)?);
                         }
+                        "ServiceGroups" => {
+                            builder = builder.set_service_groups(crate::protocol_serde::shape_service_groups::de_service_groups(tokens)?);
+                        }
                         "MetricReferences" => {
                             builder = builder.set_metric_references(crate::protocol_serde::shape_metric_references::de_metric_references(tokens)?);
                         }

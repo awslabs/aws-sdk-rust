@@ -36,35 +36,35 @@ pub fn ser_create_custom_db_engine_version_input_input_input(
         scope_11.string(var_12);
     }
     #[allow(unused_mut)]
-    let mut scope_13 = writer.prefix("Description");
-    if let Some(var_14) = &input.description {
+    let mut scope_13 = writer.prefix("SourceCustomDbEngineVersionIdentifier");
+    if let Some(var_14) = &input.source_custom_db_engine_version_identifier {
         scope_13.string(var_14);
     }
     #[allow(unused_mut)]
-    let mut scope_15 = writer.prefix("Manifest");
-    if let Some(var_16) = &input.manifest {
-        scope_15.string(var_16);
+    let mut scope_15 = writer.prefix("UseAwsProvidedLatestImage");
+    if let Some(var_16) = &input.use_aws_provided_latest_image {
+        scope_15.boolean(*var_16);
     }
     #[allow(unused_mut)]
-    let mut scope_17 = writer.prefix("Tags");
-    if let Some(var_18) = &input.tags {
-        let mut list_20 = scope_17.start_list(false, Some("Tag"));
-        for item_19 in var_18 {
+    let mut scope_17 = writer.prefix("Description");
+    if let Some(var_18) = &input.description {
+        scope_17.string(var_18);
+    }
+    #[allow(unused_mut)]
+    let mut scope_19 = writer.prefix("Manifest");
+    if let Some(var_20) = &input.manifest {
+        scope_19.string(var_20);
+    }
+    #[allow(unused_mut)]
+    let mut scope_21 = writer.prefix("Tags");
+    if let Some(var_22) = &input.tags {
+        let mut list_24 = scope_21.start_list(false, Some("Tag"));
+        for item_23 in var_22 {
             #[allow(unused_mut)]
-            let mut entry_21 = list_20.entry();
-            crate::protocol_serde::shape_tag::ser_tag(entry_21, item_19)?;
+            let mut entry_25 = list_24.entry();
+            crate::protocol_serde::shape_tag::ser_tag(entry_25, item_23)?;
         }
-        list_20.finish();
-    }
-    #[allow(unused_mut)]
-    let mut scope_22 = writer.prefix("SourceCustomDbEngineVersionIdentifier");
-    if let Some(var_23) = &input.source_custom_db_engine_version_identifier {
-        scope_22.string(var_23);
-    }
-    #[allow(unused_mut)]
-    let mut scope_24 = writer.prefix("UseAwsProvidedLatestImage");
-    if let Some(var_25) = &input.use_aws_provided_latest_image {
-        scope_24.boolean(*var_25);
+        list_24.finish();
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

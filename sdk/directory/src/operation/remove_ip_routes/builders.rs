@@ -141,4 +141,23 @@ impl RemoveIpRoutesFluentBuilder {
     pub fn get_cidr_ips(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_cidr_ips()
     }
+    ///
+    /// Appends an item to `CidrIpv6s`.
+    ///
+    /// To override the contents of this collection use [`set_cidr_ipv6s`](Self::set_cidr_ipv6s).
+    ///
+    /// <p>IPv6 address blocks that you want to remove.</p>
+    pub fn cidr_ipv6s(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.cidr_ipv6s(input.into());
+        self
+    }
+    /// <p>IPv6 address blocks that you want to remove.</p>
+    pub fn set_cidr_ipv6s(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_cidr_ipv6s(input);
+        self
+    }
+    /// <p>IPv6 address blocks that you want to remove.</p>
+    pub fn get_cidr_ipv6s(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_cidr_ipv6s()
+    }
 }

@@ -14,16 +14,18 @@ pub struct DirectoryDescription {
     pub size: ::std::option::Option<crate::types::DirectorySize>,
     /// <p>The edition associated with this directory.</p>
     pub edition: ::std::option::Option<crate::types::DirectoryEdition>,
-    /// <p>The alias for the directory. If no alias has been created for the directory, the alias is the directory identifier, such as <code>d-XXXXXXXXXX</code>.</p>
+    /// <p>The alias for the directory. If no alias exists, the alias is the directory identifier, such as <code>d-XXXXXXXXXX</code>.</p>
     pub alias: ::std::option::Option<::std::string::String>,
     /// <p>The access URL for the directory, such as <code>http://<alias>
     /// .awsapps.com
-    /// </alias></code>. If no alias has been created for the directory, <code><alias></alias></code> is the directory identifier, such as <code>d-XXXXXXXXXX</code>.</p>
+    /// </alias></code>. If no alias exists, <code><alias></alias></code> is the directory identifier, such as <code>d-XXXXXXXXXX</code>.</p>
     pub access_url: ::std::option::Option<::std::string::String>,
     /// <p>The description for the directory.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The IP addresses of the DNS servers for the directory. For a Simple AD or Microsoft AD directory, these are the IP addresses of the Simple AD or Microsoft AD directory servers. For an AD Connector directory, these are the IP addresses of the DNS servers or domain controllers in your self-managed directory to which the AD Connector is connected.</p>
+    /// <p>The IP addresses of the DNS servers for the directory. For a Simple AD or Microsoft AD directory, these are the IP addresses of the Simple AD or Microsoft AD directory servers. For an AD Connector directory, these are the IP addresses of self-managed directory to which the AD Connector is connected.</p>
     pub dns_ip_addrs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The IPv6 addresses of the DNS servers for the directory. For a Simple AD or Microsoft AD directory, these are the IPv6 addresses of the Simple AD or Microsoft AD directory servers. For an AD Connector directory, these are the IPv6 addresses of the DNS servers or domain controllers in your self-managed directory to which the AD Connector is connected.</p>
+    pub dns_ipv6_addrs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The current stage of the directory.</p>
     pub stage: ::std::option::Option<crate::types::DirectoryStage>,
     /// <p>Current directory status of the shared Managed Microsoft AD directory.</p>
@@ -32,23 +34,23 @@ pub struct DirectoryDescription {
     pub share_method: ::std::option::Option<crate::types::ShareMethod>,
     /// <p>A directory share request that is sent by the directory owner to the directory consumer. The request includes a typed message to help the directory consumer administrator determine whether to approve or reject the share invitation.</p>
     pub share_notes: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies when the directory was created.</p>
+    /// <p>The date and time when the directory was created.</p>
     pub launch_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The date and time that the stage was last updated.</p>
+    /// <p>The date and time when the stage was last updated.</p>
     pub stage_last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The directory type.</p>
     pub r#type: ::std::option::Option<crate::types::DirectoryType>,
-    /// <p>A <code>DirectoryVpcSettingsDescription</code> object that contains additional information about a directory. This member is only present if the directory is a Simple AD or Managed Microsoft AD directory.</p>
+    /// <p>A <code>DirectoryVpcSettingsDescription</code> object that contains additional information about a directory. Present only for Simple AD and Managed Microsoft AD directories.</p>
     pub vpc_settings: ::std::option::Option<crate::types::DirectoryVpcSettingsDescription>,
-    /// <p>A <code>DirectoryConnectSettingsDescription</code> object that contains additional information about an AD Connector directory. This member is only present if the directory is an AD Connector directory.</p>
+    /// <p><code>DirectoryConnectSettingsDescription</code> object that contains additional information about an AD Connector directory. Present only for AD Connector directories.</p>
     pub connect_settings: ::std::option::Option<crate::types::DirectoryConnectSettingsDescription>,
-    /// <p>A <code>RadiusSettings</code> object that contains information about the RADIUS server configured for this directory.</p>
+    /// <p>Information about the <code>RadiusSettings</code> object configured for this directory.</p>
     pub radius_settings: ::std::option::Option<crate::types::RadiusSettings>,
     /// <p>The status of the RADIUS MFA server connection.</p>
     pub radius_status: ::std::option::Option<crate::types::RadiusStatus>,
     /// <p>Additional information about the directory stage.</p>
     pub stage_reason: ::std::option::Option<::std::string::String>,
-    /// <p>Indicates if single sign-on is enabled for the directory. For more information, see <code>EnableSso</code> and <code>DisableSso</code>.</p>
+    /// <p>Indicates whether single sign-on is enabled for the directory. For more information, see <code>EnableSso</code> and <code>DisableSso</code>.</p>
     pub sso_enabled: bool,
     /// <p>The desired number of domain controllers in the directory if the directory is Microsoft AD.</p>
     pub desired_number_of_domain_controllers: ::std::option::Option<i32>,
@@ -60,6 +62,8 @@ pub struct DirectoryDescription {
     pub os_version: ::std::option::Option<crate::types::OsVersion>,
     /// <p>Contains information about the hybrid directory configuration for the directory, including Amazon Web Services System Manager managed node identifiers and DNS IPs.</p>
     pub hybrid_settings: ::std::option::Option<crate::types::HybridSettingsDescription>,
+    /// <p>The network type of the directory.</p>
+    pub network_type: ::std::option::Option<crate::types::NetworkType>,
 }
 impl DirectoryDescription {
     /// <p>The directory identifier.</p>
@@ -82,13 +86,13 @@ impl DirectoryDescription {
     pub fn edition(&self) -> ::std::option::Option<&crate::types::DirectoryEdition> {
         self.edition.as_ref()
     }
-    /// <p>The alias for the directory. If no alias has been created for the directory, the alias is the directory identifier, such as <code>d-XXXXXXXXXX</code>.</p>
+    /// <p>The alias for the directory. If no alias exists, the alias is the directory identifier, such as <code>d-XXXXXXXXXX</code>.</p>
     pub fn alias(&self) -> ::std::option::Option<&str> {
         self.alias.as_deref()
     }
     /// <p>The access URL for the directory, such as <code>http://<alias>
     /// .awsapps.com
-    /// </alias></code>. If no alias has been created for the directory, <code><alias></alias></code> is the directory identifier, such as <code>d-XXXXXXXXXX</code>.</p>
+    /// </alias></code>. If no alias exists, <code><alias></alias></code> is the directory identifier, such as <code>d-XXXXXXXXXX</code>.</p>
     pub fn access_url(&self) -> ::std::option::Option<&str> {
         self.access_url.as_deref()
     }
@@ -96,11 +100,17 @@ impl DirectoryDescription {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The IP addresses of the DNS servers for the directory. For a Simple AD or Microsoft AD directory, these are the IP addresses of the Simple AD or Microsoft AD directory servers. For an AD Connector directory, these are the IP addresses of the DNS servers or domain controllers in your self-managed directory to which the AD Connector is connected.</p>
+    /// <p>The IP addresses of the DNS servers for the directory. For a Simple AD or Microsoft AD directory, these are the IP addresses of the Simple AD or Microsoft AD directory servers. For an AD Connector directory, these are the IP addresses of self-managed directory to which the AD Connector is connected.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dns_ip_addrs.is_none()`.
     pub fn dns_ip_addrs(&self) -> &[::std::string::String] {
         self.dns_ip_addrs.as_deref().unwrap_or_default()
+    }
+    /// <p>The IPv6 addresses of the DNS servers for the directory. For a Simple AD or Microsoft AD directory, these are the IPv6 addresses of the Simple AD or Microsoft AD directory servers. For an AD Connector directory, these are the IPv6 addresses of the DNS servers or domain controllers in your self-managed directory to which the AD Connector is connected.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dns_ipv6_addrs.is_none()`.
+    pub fn dns_ipv6_addrs(&self) -> &[::std::string::String] {
+        self.dns_ipv6_addrs.as_deref().unwrap_or_default()
     }
     /// <p>The current stage of the directory.</p>
     pub fn stage(&self) -> ::std::option::Option<&crate::types::DirectoryStage> {
@@ -118,11 +128,11 @@ impl DirectoryDescription {
     pub fn share_notes(&self) -> ::std::option::Option<&str> {
         self.share_notes.as_deref()
     }
-    /// <p>Specifies when the directory was created.</p>
+    /// <p>The date and time when the directory was created.</p>
     pub fn launch_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.launch_time.as_ref()
     }
-    /// <p>The date and time that the stage was last updated.</p>
+    /// <p>The date and time when the stage was last updated.</p>
     pub fn stage_last_updated_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.stage_last_updated_date_time.as_ref()
     }
@@ -130,15 +140,15 @@ impl DirectoryDescription {
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::DirectoryType> {
         self.r#type.as_ref()
     }
-    /// <p>A <code>DirectoryVpcSettingsDescription</code> object that contains additional information about a directory. This member is only present if the directory is a Simple AD or Managed Microsoft AD directory.</p>
+    /// <p>A <code>DirectoryVpcSettingsDescription</code> object that contains additional information about a directory. Present only for Simple AD and Managed Microsoft AD directories.</p>
     pub fn vpc_settings(&self) -> ::std::option::Option<&crate::types::DirectoryVpcSettingsDescription> {
         self.vpc_settings.as_ref()
     }
-    /// <p>A <code>DirectoryConnectSettingsDescription</code> object that contains additional information about an AD Connector directory. This member is only present if the directory is an AD Connector directory.</p>
+    /// <p><code>DirectoryConnectSettingsDescription</code> object that contains additional information about an AD Connector directory. Present only for AD Connector directories.</p>
     pub fn connect_settings(&self) -> ::std::option::Option<&crate::types::DirectoryConnectSettingsDescription> {
         self.connect_settings.as_ref()
     }
-    /// <p>A <code>RadiusSettings</code> object that contains information about the RADIUS server configured for this directory.</p>
+    /// <p>Information about the <code>RadiusSettings</code> object configured for this directory.</p>
     pub fn radius_settings(&self) -> ::std::option::Option<&crate::types::RadiusSettings> {
         self.radius_settings.as_ref()
     }
@@ -150,7 +160,7 @@ impl DirectoryDescription {
     pub fn stage_reason(&self) -> ::std::option::Option<&str> {
         self.stage_reason.as_deref()
     }
-    /// <p>Indicates if single sign-on is enabled for the directory. For more information, see <code>EnableSso</code> and <code>DisableSso</code>.</p>
+    /// <p>Indicates whether single sign-on is enabled for the directory. For more information, see <code>EnableSso</code> and <code>DisableSso</code>.</p>
     pub fn sso_enabled(&self) -> bool {
         self.sso_enabled
     }
@@ -174,6 +184,10 @@ impl DirectoryDescription {
     pub fn hybrid_settings(&self) -> ::std::option::Option<&crate::types::HybridSettingsDescription> {
         self.hybrid_settings.as_ref()
     }
+    /// <p>The network type of the directory.</p>
+    pub fn network_type(&self) -> ::std::option::Option<&crate::types::NetworkType> {
+        self.network_type.as_ref()
+    }
 }
 impl ::std::fmt::Debug for DirectoryDescription {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -187,6 +201,7 @@ impl ::std::fmt::Debug for DirectoryDescription {
         formatter.field("access_url", &self.access_url);
         formatter.field("description", &self.description);
         formatter.field("dns_ip_addrs", &self.dns_ip_addrs);
+        formatter.field("dns_ipv6_addrs", &self.dns_ipv6_addrs);
         formatter.field("stage", &self.stage);
         formatter.field("share_status", &self.share_status);
         formatter.field("share_method", &self.share_method);
@@ -205,6 +220,7 @@ impl ::std::fmt::Debug for DirectoryDescription {
         formatter.field("regions_info", &self.regions_info);
         formatter.field("os_version", &self.os_version);
         formatter.field("hybrid_settings", &self.hybrid_settings);
+        formatter.field("network_type", &self.network_type);
         formatter.finish()
     }
 }
@@ -228,6 +244,7 @@ pub struct DirectoryDescriptionBuilder {
     pub(crate) access_url: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) dns_ip_addrs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) dns_ipv6_addrs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) stage: ::std::option::Option<crate::types::DirectoryStage>,
     pub(crate) share_status: ::std::option::Option<crate::types::ShareStatus>,
     pub(crate) share_method: ::std::option::Option<crate::types::ShareMethod>,
@@ -246,6 +263,7 @@ pub struct DirectoryDescriptionBuilder {
     pub(crate) regions_info: ::std::option::Option<crate::types::RegionsInfo>,
     pub(crate) os_version: ::std::option::Option<crate::types::OsVersion>,
     pub(crate) hybrid_settings: ::std::option::Option<crate::types::HybridSettingsDescription>,
+    pub(crate) network_type: ::std::option::Option<crate::types::NetworkType>,
 }
 impl DirectoryDescriptionBuilder {
     /// <p>The directory identifier.</p>
@@ -318,37 +336,37 @@ impl DirectoryDescriptionBuilder {
     pub fn get_edition(&self) -> &::std::option::Option<crate::types::DirectoryEdition> {
         &self.edition
     }
-    /// <p>The alias for the directory. If no alias has been created for the directory, the alias is the directory identifier, such as <code>d-XXXXXXXXXX</code>.</p>
+    /// <p>The alias for the directory. If no alias exists, the alias is the directory identifier, such as <code>d-XXXXXXXXXX</code>.</p>
     pub fn alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alias = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The alias for the directory. If no alias has been created for the directory, the alias is the directory identifier, such as <code>d-XXXXXXXXXX</code>.</p>
+    /// <p>The alias for the directory. If no alias exists, the alias is the directory identifier, such as <code>d-XXXXXXXXXX</code>.</p>
     pub fn set_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.alias = input;
         self
     }
-    /// <p>The alias for the directory. If no alias has been created for the directory, the alias is the directory identifier, such as <code>d-XXXXXXXXXX</code>.</p>
+    /// <p>The alias for the directory. If no alias exists, the alias is the directory identifier, such as <code>d-XXXXXXXXXX</code>.</p>
     pub fn get_alias(&self) -> &::std::option::Option<::std::string::String> {
         &self.alias
     }
     /// <p>The access URL for the directory, such as <code>http://<alias>
     /// .awsapps.com
-    /// </alias></code>. If no alias has been created for the directory, <code><alias></alias></code> is the directory identifier, such as <code>d-XXXXXXXXXX</code>.</p>
+    /// </alias></code>. If no alias exists, <code><alias></alias></code> is the directory identifier, such as <code>d-XXXXXXXXXX</code>.</p>
     pub fn access_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The access URL for the directory, such as <code>http://<alias>
     /// .awsapps.com
-    /// </alias></code>. If no alias has been created for the directory, <code><alias></alias></code> is the directory identifier, such as <code>d-XXXXXXXXXX</code>.</p>
+    /// </alias></code>. If no alias exists, <code><alias></alias></code> is the directory identifier, such as <code>d-XXXXXXXXXX</code>.</p>
     pub fn set_access_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.access_url = input;
         self
     }
     /// <p>The access URL for the directory, such as <code>http://<alias>
     /// .awsapps.com
-    /// </alias></code>. If no alias has been created for the directory, <code><alias></alias></code> is the directory identifier, such as <code>d-XXXXXXXXXX</code>.</p>
+    /// </alias></code>. If no alias exists, <code><alias></alias></code> is the directory identifier, such as <code>d-XXXXXXXXXX</code>.</p>
     pub fn get_access_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.access_url
     }
@@ -370,21 +388,41 @@ impl DirectoryDescriptionBuilder {
     ///
     /// To override the contents of this collection use [`set_dns_ip_addrs`](Self::set_dns_ip_addrs).
     ///
-    /// <p>The IP addresses of the DNS servers for the directory. For a Simple AD or Microsoft AD directory, these are the IP addresses of the Simple AD or Microsoft AD directory servers. For an AD Connector directory, these are the IP addresses of the DNS servers or domain controllers in your self-managed directory to which the AD Connector is connected.</p>
+    /// <p>The IP addresses of the DNS servers for the directory. For a Simple AD or Microsoft AD directory, these are the IP addresses of the Simple AD or Microsoft AD directory servers. For an AD Connector directory, these are the IP addresses of self-managed directory to which the AD Connector is connected.</p>
     pub fn dns_ip_addrs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.dns_ip_addrs.unwrap_or_default();
         v.push(input.into());
         self.dns_ip_addrs = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The IP addresses of the DNS servers for the directory. For a Simple AD or Microsoft AD directory, these are the IP addresses of the Simple AD or Microsoft AD directory servers. For an AD Connector directory, these are the IP addresses of the DNS servers or domain controllers in your self-managed directory to which the AD Connector is connected.</p>
+    /// <p>The IP addresses of the DNS servers for the directory. For a Simple AD or Microsoft AD directory, these are the IP addresses of the Simple AD or Microsoft AD directory servers. For an AD Connector directory, these are the IP addresses of self-managed directory to which the AD Connector is connected.</p>
     pub fn set_dns_ip_addrs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.dns_ip_addrs = input;
         self
     }
-    /// <p>The IP addresses of the DNS servers for the directory. For a Simple AD or Microsoft AD directory, these are the IP addresses of the Simple AD or Microsoft AD directory servers. For an AD Connector directory, these are the IP addresses of the DNS servers or domain controllers in your self-managed directory to which the AD Connector is connected.</p>
+    /// <p>The IP addresses of the DNS servers for the directory. For a Simple AD or Microsoft AD directory, these are the IP addresses of the Simple AD or Microsoft AD directory servers. For an AD Connector directory, these are the IP addresses of self-managed directory to which the AD Connector is connected.</p>
     pub fn get_dns_ip_addrs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.dns_ip_addrs
+    }
+    /// Appends an item to `dns_ipv6_addrs`.
+    ///
+    /// To override the contents of this collection use [`set_dns_ipv6_addrs`](Self::set_dns_ipv6_addrs).
+    ///
+    /// <p>The IPv6 addresses of the DNS servers for the directory. For a Simple AD or Microsoft AD directory, these are the IPv6 addresses of the Simple AD or Microsoft AD directory servers. For an AD Connector directory, these are the IPv6 addresses of the DNS servers or domain controllers in your self-managed directory to which the AD Connector is connected.</p>
+    pub fn dns_ipv6_addrs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.dns_ipv6_addrs.unwrap_or_default();
+        v.push(input.into());
+        self.dns_ipv6_addrs = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The IPv6 addresses of the DNS servers for the directory. For a Simple AD or Microsoft AD directory, these are the IPv6 addresses of the Simple AD or Microsoft AD directory servers. For an AD Connector directory, these are the IPv6 addresses of the DNS servers or domain controllers in your self-managed directory to which the AD Connector is connected.</p>
+    pub fn set_dns_ipv6_addrs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.dns_ipv6_addrs = input;
+        self
+    }
+    /// <p>The IPv6 addresses of the DNS servers for the directory. For a Simple AD or Microsoft AD directory, these are the IPv6 addresses of the Simple AD or Microsoft AD directory servers. For an AD Connector directory, these are the IPv6 addresses of the DNS servers or domain controllers in your self-managed directory to which the AD Connector is connected.</p>
+    pub fn get_dns_ipv6_addrs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.dns_ipv6_addrs
     }
     /// <p>The current stage of the directory.</p>
     pub fn stage(mut self, input: crate::types::DirectoryStage) -> Self {
@@ -442,31 +480,31 @@ impl DirectoryDescriptionBuilder {
     pub fn get_share_notes(&self) -> &::std::option::Option<::std::string::String> {
         &self.share_notes
     }
-    /// <p>Specifies when the directory was created.</p>
+    /// <p>The date and time when the directory was created.</p>
     pub fn launch_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.launch_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies when the directory was created.</p>
+    /// <p>The date and time when the directory was created.</p>
     pub fn set_launch_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.launch_time = input;
         self
     }
-    /// <p>Specifies when the directory was created.</p>
+    /// <p>The date and time when the directory was created.</p>
     pub fn get_launch_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.launch_time
     }
-    /// <p>The date and time that the stage was last updated.</p>
+    /// <p>The date and time when the stage was last updated.</p>
     pub fn stage_last_updated_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.stage_last_updated_date_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date and time that the stage was last updated.</p>
+    /// <p>The date and time when the stage was last updated.</p>
     pub fn set_stage_last_updated_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.stage_last_updated_date_time = input;
         self
     }
-    /// <p>The date and time that the stage was last updated.</p>
+    /// <p>The date and time when the stage was last updated.</p>
     pub fn get_stage_last_updated_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.stage_last_updated_date_time
     }
@@ -484,45 +522,45 @@ impl DirectoryDescriptionBuilder {
     pub fn get_type(&self) -> &::std::option::Option<crate::types::DirectoryType> {
         &self.r#type
     }
-    /// <p>A <code>DirectoryVpcSettingsDescription</code> object that contains additional information about a directory. This member is only present if the directory is a Simple AD or Managed Microsoft AD directory.</p>
+    /// <p>A <code>DirectoryVpcSettingsDescription</code> object that contains additional information about a directory. Present only for Simple AD and Managed Microsoft AD directories.</p>
     pub fn vpc_settings(mut self, input: crate::types::DirectoryVpcSettingsDescription) -> Self {
         self.vpc_settings = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A <code>DirectoryVpcSettingsDescription</code> object that contains additional information about a directory. This member is only present if the directory is a Simple AD or Managed Microsoft AD directory.</p>
+    /// <p>A <code>DirectoryVpcSettingsDescription</code> object that contains additional information about a directory. Present only for Simple AD and Managed Microsoft AD directories.</p>
     pub fn set_vpc_settings(mut self, input: ::std::option::Option<crate::types::DirectoryVpcSettingsDescription>) -> Self {
         self.vpc_settings = input;
         self
     }
-    /// <p>A <code>DirectoryVpcSettingsDescription</code> object that contains additional information about a directory. This member is only present if the directory is a Simple AD or Managed Microsoft AD directory.</p>
+    /// <p>A <code>DirectoryVpcSettingsDescription</code> object that contains additional information about a directory. Present only for Simple AD and Managed Microsoft AD directories.</p>
     pub fn get_vpc_settings(&self) -> &::std::option::Option<crate::types::DirectoryVpcSettingsDescription> {
         &self.vpc_settings
     }
-    /// <p>A <code>DirectoryConnectSettingsDescription</code> object that contains additional information about an AD Connector directory. This member is only present if the directory is an AD Connector directory.</p>
+    /// <p><code>DirectoryConnectSettingsDescription</code> object that contains additional information about an AD Connector directory. Present only for AD Connector directories.</p>
     pub fn connect_settings(mut self, input: crate::types::DirectoryConnectSettingsDescription) -> Self {
         self.connect_settings = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A <code>DirectoryConnectSettingsDescription</code> object that contains additional information about an AD Connector directory. This member is only present if the directory is an AD Connector directory.</p>
+    /// <p><code>DirectoryConnectSettingsDescription</code> object that contains additional information about an AD Connector directory. Present only for AD Connector directories.</p>
     pub fn set_connect_settings(mut self, input: ::std::option::Option<crate::types::DirectoryConnectSettingsDescription>) -> Self {
         self.connect_settings = input;
         self
     }
-    /// <p>A <code>DirectoryConnectSettingsDescription</code> object that contains additional information about an AD Connector directory. This member is only present if the directory is an AD Connector directory.</p>
+    /// <p><code>DirectoryConnectSettingsDescription</code> object that contains additional information about an AD Connector directory. Present only for AD Connector directories.</p>
     pub fn get_connect_settings(&self) -> &::std::option::Option<crate::types::DirectoryConnectSettingsDescription> {
         &self.connect_settings
     }
-    /// <p>A <code>RadiusSettings</code> object that contains information about the RADIUS server configured for this directory.</p>
+    /// <p>Information about the <code>RadiusSettings</code> object configured for this directory.</p>
     pub fn radius_settings(mut self, input: crate::types::RadiusSettings) -> Self {
         self.radius_settings = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A <code>RadiusSettings</code> object that contains information about the RADIUS server configured for this directory.</p>
+    /// <p>Information about the <code>RadiusSettings</code> object configured for this directory.</p>
     pub fn set_radius_settings(mut self, input: ::std::option::Option<crate::types::RadiusSettings>) -> Self {
         self.radius_settings = input;
         self
     }
-    /// <p>A <code>RadiusSettings</code> object that contains information about the RADIUS server configured for this directory.</p>
+    /// <p>Information about the <code>RadiusSettings</code> object configured for this directory.</p>
     pub fn get_radius_settings(&self) -> &::std::option::Option<crate::types::RadiusSettings> {
         &self.radius_settings
     }
@@ -554,17 +592,17 @@ impl DirectoryDescriptionBuilder {
     pub fn get_stage_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.stage_reason
     }
-    /// <p>Indicates if single sign-on is enabled for the directory. For more information, see <code>EnableSso</code> and <code>DisableSso</code>.</p>
+    /// <p>Indicates whether single sign-on is enabled for the directory. For more information, see <code>EnableSso</code> and <code>DisableSso</code>.</p>
     pub fn sso_enabled(mut self, input: bool) -> Self {
         self.sso_enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates if single sign-on is enabled for the directory. For more information, see <code>EnableSso</code> and <code>DisableSso</code>.</p>
+    /// <p>Indicates whether single sign-on is enabled for the directory. For more information, see <code>EnableSso</code> and <code>DisableSso</code>.</p>
     pub fn set_sso_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.sso_enabled = input;
         self
     }
-    /// <p>Indicates if single sign-on is enabled for the directory. For more information, see <code>EnableSso</code> and <code>DisableSso</code>.</p>
+    /// <p>Indicates whether single sign-on is enabled for the directory. For more information, see <code>EnableSso</code> and <code>DisableSso</code>.</p>
     pub fn get_sso_enabled(&self) -> &::std::option::Option<bool> {
         &self.sso_enabled
     }
@@ -638,6 +676,20 @@ impl DirectoryDescriptionBuilder {
     pub fn get_hybrid_settings(&self) -> &::std::option::Option<crate::types::HybridSettingsDescription> {
         &self.hybrid_settings
     }
+    /// <p>The network type of the directory.</p>
+    pub fn network_type(mut self, input: crate::types::NetworkType) -> Self {
+        self.network_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The network type of the directory.</p>
+    pub fn set_network_type(mut self, input: ::std::option::Option<crate::types::NetworkType>) -> Self {
+        self.network_type = input;
+        self
+    }
+    /// <p>The network type of the directory.</p>
+    pub fn get_network_type(&self) -> &::std::option::Option<crate::types::NetworkType> {
+        &self.network_type
+    }
     /// Consumes the builder and constructs a [`DirectoryDescription`](crate::types::DirectoryDescription).
     pub fn build(self) -> crate::types::DirectoryDescription {
         crate::types::DirectoryDescription {
@@ -650,6 +702,7 @@ impl DirectoryDescriptionBuilder {
             access_url: self.access_url,
             description: self.description,
             dns_ip_addrs: self.dns_ip_addrs,
+            dns_ipv6_addrs: self.dns_ipv6_addrs,
             stage: self.stage,
             share_status: self.share_status,
             share_method: self.share_method,
@@ -668,6 +721,7 @@ impl DirectoryDescriptionBuilder {
             regions_info: self.regions_info,
             os_version: self.os_version,
             hybrid_settings: self.hybrid_settings,
+            network_type: self.network_type,
         }
     }
 }
@@ -683,6 +737,7 @@ impl ::std::fmt::Debug for DirectoryDescriptionBuilder {
         formatter.field("access_url", &self.access_url);
         formatter.field("description", &self.description);
         formatter.field("dns_ip_addrs", &self.dns_ip_addrs);
+        formatter.field("dns_ipv6_addrs", &self.dns_ipv6_addrs);
         formatter.field("stage", &self.stage);
         formatter.field("share_status", &self.share_status);
         formatter.field("share_method", &self.share_method);
@@ -701,6 +756,7 @@ impl ::std::fmt::Debug for DirectoryDescriptionBuilder {
         formatter.field("regions_info", &self.regions_info);
         formatter.field("os_version", &self.os_version);
         formatter.field("hybrid_settings", &self.hybrid_settings);
+        formatter.field("network_type", &self.network_type);
         formatter.finish()
     }
 }

@@ -51,6 +51,8 @@ pub use crate::types::error::_cluster_contains_services_exception::ClusterContai
 
 pub use crate::types::error::_cluster_contains_container_instances_exception::ClusterContainsContainerInstancesException;
 
+pub use crate::types::error::_cluster_contains_capacity_provider_exception::ClusterContainsCapacityProviderException;
+
 pub use crate::types::error::_limit_exceeded_exception::LimitExceededException;
 
 mod _access_denied_exception;
@@ -60,6 +62,8 @@ mod _attribute_limit_exceeded_exception;
 mod _blocked_exception;
 
 mod _client_exception;
+
+mod _cluster_contains_capacity_provider_exception;
 
 mod _cluster_contains_container_instances_exception;
 

@@ -55,6 +55,22 @@ pub fn de_remove_from_global_cluster_http_error(
             }
             tmp
         }),
+        "InvalidDBClusterStateFault" => crate::operation::remove_from_global_cluster::RemoveFromGlobalClusterError::InvalidDbClusterStateFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidDbClusterStateFaultBuilder::default();
+                output =
+                    crate::protocol_serde::shape_invalid_db_cluster_state_fault::de_invalid_db_cluster_state_fault_xml_err(_response_body, output)
+                        .map_err(crate::operation::remove_from_global_cluster::RemoveFromGlobalClusterError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "InvalidGlobalClusterStateFault" => {
             crate::operation::remove_from_global_cluster::RemoveFromGlobalClusterError::InvalidGlobalClusterStateFault({
                 #[allow(unused_mut)]

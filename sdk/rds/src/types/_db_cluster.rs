@@ -26,8 +26,6 @@ pub struct DbCluster {
     pub db_subnet_group: ::std::option::Option<::std::string::String>,
     /// <p>The current state of this DB cluster.</p>
     pub status: ::std::option::Option<::std::string::String>,
-    /// <p>The time when a stopped DB cluster is restarted automatically.</p>
-    pub automatic_restart_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The progress of the operation as a percentage.</p>
     pub percent_progress: ::std::option::Option<::std::string::String>,
     /// <p>The earliest time to which a database can be restored with point-in-time restore.</p>
@@ -100,6 +98,8 @@ pub struct DbCluster {
     /// <p>The current capacity of an Aurora Serverless v1 DB cluster. The capacity is <code>0</code> (zero) when the cluster is paused.</p>
     /// <p>For more information about Aurora Serverless v1, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon Aurora Serverless v1</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub capacity: ::std::option::Option<i32>,
+    /// <p>Information about pending changes to the DB cluster. This information is returned only when there are pending changes. Specific changes are identified by subelements.</p>
+    pub pending_modified_values: ::std::option::Option<crate::types::ClusterPendingModifiedValues>,
     /// <p>The DB engine mode of the DB cluster, either <code>provisioned</code> or <code>serverless</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html"> CreateDBCluster</a>.</p>
     pub engine_mode: ::std::option::Option<::std::string::String>,
@@ -108,6 +108,30 @@ pub struct DbCluster {
     pub scaling_configuration_info: ::std::option::Option<crate::types::ScalingConfigurationInfo>,
     /// <p>Reserved for future use.</p>
     pub rds_custom_cluster_configuration: ::std::option::Option<crate::types::RdsCustomClusterConfiguration>,
+    /// <p>The name of the compute and memory capacity class of the DB instance.</p>
+    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+    pub db_cluster_instance_class: ::std::option::Option<::std::string::String>,
+    /// <p>The storage type associated with the DB cluster.</p>
+    pub storage_type: ::std::option::Option<::std::string::String>,
+    /// <p>The Provisioned IOPS (I/O operations per second) value.</p>
+    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+    pub iops: ::std::option::Option<i32>,
+    /// <p>The storage throughput for the DB cluster. The throughput is automatically set based on the IOPS that you provision, and is not configurable.</p>
+    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+    pub storage_throughput: ::std::option::Option<i32>,
+    /// <p>The next time you can modify the DB cluster to use the <code>aurora-iopt1</code> storage type.</p>
+    /// <p>This setting is only for Aurora DB clusters.</p>
+    pub io_optimized_next_allowed_modification_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>Indicates whether the DB cluster is publicly accessible.</p>
+    /// <p>When the DB cluster is publicly accessible and you connect from outside of the DB cluster's virtual private cloud (VPC), its Domain Name System (DNS) endpoint resolves to the public IP address. When you connect from within the same VPC as the DB cluster, the endpoint resolves to the private IP address. Access to the DB cluster is ultimately controlled by the security group it uses. That public access isn't permitted if the security group assigned to the DB cluster doesn't permit it.</p>
+    /// <p>When the DB cluster isn't publicly accessible, it is an internal DB cluster with a DNS name that resolves to a private IP address.</p>
+    /// <p>For more information, see <code>CreateDBCluster</code>.</p>
+    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+    pub publicly_accessible: ::std::option::Option<bool>,
+    /// <p>Indicates whether minor version patches are applied automatically.</p>
+    /// <p>This setting is for Aurora DB clusters and Multi-AZ DB clusters.</p>
+    /// <p>For more information about automatic minor version upgrades, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Upgrading.html#USER_UpgradeDBInstance.Upgrading.AutoMinorVersionUpgrades">Automatically upgrading the minor engine version</a>.</p>
+    pub auto_minor_version_upgrade: ::std::option::Option<bool>,
     /// <p>Indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled.</p>
     pub deletion_protection: ::std::option::Option<bool>,
     /// <p>Indicates whether the HTTP endpoint is enabled for an Aurora DB cluster.</p>
@@ -138,26 +162,19 @@ pub struct DbCluster {
     pub global_write_forwarding_status: ::std::option::Option<crate::types::WriteForwardingStatus>,
     /// <p>Indicates whether write forwarding is enabled for a secondary cluster in an Aurora global database. Because write forwarding takes time to enable, check the value of <code>GlobalWriteForwardingStatus</code> to confirm that the request has completed before using the write forwarding feature for this cluster.</p>
     pub global_write_forwarding_requested: ::std::option::Option<bool>,
-    /// <p>Information about pending changes to the DB cluster. This information is returned only when there are pending changes. Specific changes are identified by subelements.</p>
-    pub pending_modified_values: ::std::option::Option<crate::types::ClusterPendingModifiedValues>,
-    /// <p>The name of the compute and memory capacity class of the DB instance.</p>
-    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
-    pub db_cluster_instance_class: ::std::option::Option<::std::string::String>,
-    /// <p>The storage type associated with the DB cluster.</p>
-    pub storage_type: ::std::option::Option<::std::string::String>,
-    /// <p>The Provisioned IOPS (I/O operations per second) value.</p>
-    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
-    pub iops: ::std::option::Option<i32>,
-    /// <p>Indicates whether the DB cluster is publicly accessible.</p>
-    /// <p>When the DB cluster is publicly accessible and you connect from outside of the DB cluster's virtual private cloud (VPC), its Domain Name System (DNS) endpoint resolves to the public IP address. When you connect from within the same VPC as the DB cluster, the endpoint resolves to the private IP address. Access to the DB cluster is ultimately controlled by the security group it uses. That public access isn't permitted if the security group assigned to the DB cluster doesn't permit it.</p>
-    /// <p>When the DB cluster isn't publicly accessible, it is an internal DB cluster with a DNS name that resolves to a private IP address.</p>
-    /// <p>For more information, see <code>CreateDBCluster</code>.</p>
-    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
-    pub publicly_accessible: ::std::option::Option<bool>,
-    /// <p>Indicates whether minor version patches are applied automatically.</p>
-    /// <p>This setting is for Aurora DB clusters and Multi-AZ DB clusters.</p>
-    /// <p>For more information about automatic minor version upgrades, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Upgrading.html#USER_UpgradeDBInstance.Upgrading.AutoMinorVersionUpgrades">Automatically upgrading the minor engine version</a>.</p>
-    pub auto_minor_version_upgrade: ::std::option::Option<bool>,
+    /// <p>The network type of the DB instance.</p>
+    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i></p>
+    /// <p>This setting is only for Aurora DB clusters.</p>
+    /// <p>Valid Values: <code>IPV4 | DUAL</code></p>
+    pub network_type: ::std::option::Option<::std::string::String>,
+    /// <p>The time when a stopped DB cluster is restarted automatically.</p>
+    pub automatic_restart_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The scaling configuration for an Aurora Serverless v2 DB cluster.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub serverless_v2_scaling_configuration: ::std::option::Option<crate::types::ServerlessV2ScalingConfigurationInfo>,
+    /// <p>The version of the Aurora Serverless V2 platform used by the DB cluster. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub serverless_v2_platform_version: ::std::option::Option<::std::string::String>,
     /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB cluster.</p>
     /// <p>This setting is only for -Aurora DB clusters and Multi-AZ DB clusters.</p>
     pub monitoring_interval: ::std::option::Option<i32>,
@@ -186,34 +203,17 @@ pub struct DbCluster {
     /// </ul>
     /// <p>Default: <code>7</code> days</p>
     pub performance_insights_retention_period: ::std::option::Option<i32>,
-    /// <p>The scaling configuration for an Aurora Serverless v2 DB cluster.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    pub serverless_v2_scaling_configuration: ::std::option::Option<crate::types::ServerlessV2ScalingConfigurationInfo>,
-    /// <p>The version of the Aurora Serverless V2 platform used by the DB cluster. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    pub serverless_v2_platform_version: ::std::option::Option<::std::string::String>,
-    /// <p>The network type of the DB instance.</p>
-    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i></p>
-    /// <p>This setting is only for Aurora DB clusters.</p>
-    /// <p>Valid Values: <code>IPV4 | DUAL</code></p>
-    pub network_type: ::std::option::Option<::std::string::String>,
     /// <p>Reserved for future use.</p>
     pub db_system_id: ::std::option::Option<::std::string::String>,
     /// <p>The secret managed by RDS in Amazon Web Services Secrets Manager for the master user password.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i></p>
     pub master_user_secret: ::std::option::Option<crate::types::MasterUserSecret>,
-    /// <p>The next time you can modify the DB cluster to use the <code>aurora-iopt1</code> storage type.</p>
-    /// <p>This setting is only for Aurora DB clusters.</p>
-    pub io_optimized_next_allowed_modification_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Indicates whether an Aurora DB cluster has in-cluster write forwarding enabled, not enabled, requested, or is in the process of enabling it.</p>
     pub local_write_forwarding_status: ::std::option::Option<crate::types::LocalWriteForwardingStatus>,
     /// <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.</p>
     pub aws_backup_recovery_point_arn: ::std::option::Option<::std::string::String>,
     /// <p>The details for Aurora Limitless Database.</p>
     pub limitless_database: ::std::option::Option<crate::types::LimitlessDatabase>,
-    /// <p>The storage throughput for the DB cluster. The throughput is automatically set based on the IOPS that you provision, and is not configurable.</p>
-    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
-    pub storage_throughput: ::std::option::Option<i32>,
     /// <p>The scalability mode of the Aurora DB cluster. When set to <code>limitless</code>, the cluster operates as an Aurora Limitless Database. When set to <code>standard</code> (the default), the cluster uses normal DB instance creation.</p>
     pub cluster_scalability_type: ::std::option::Option<crate::types::ClusterScalabilityType>,
     /// <p>The details of the DB instance’s server certificate.</p>
@@ -261,10 +261,6 @@ impl DbCluster {
     /// <p>The current state of this DB cluster.</p>
     pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
-    }
-    /// <p>The time when a stopped DB cluster is restarted automatically.</p>
-    pub fn automatic_restart_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.automatic_restart_time.as_ref()
     }
     /// <p>The progress of the operation as a percentage.</p>
     pub fn percent_progress(&self) -> ::std::option::Option<&str> {
@@ -420,6 +416,10 @@ impl DbCluster {
     pub fn capacity(&self) -> ::std::option::Option<i32> {
         self.capacity
     }
+    /// <p>Information about pending changes to the DB cluster. This information is returned only when there are pending changes. Specific changes are identified by subelements.</p>
+    pub fn pending_modified_values(&self) -> ::std::option::Option<&crate::types::ClusterPendingModifiedValues> {
+        self.pending_modified_values.as_ref()
+    }
     /// <p>The DB engine mode of the DB cluster, either <code>provisioned</code> or <code>serverless</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html"> CreateDBCluster</a>.</p>
     pub fn engine_mode(&self) -> ::std::option::Option<&str> {
@@ -433,6 +433,44 @@ impl DbCluster {
     /// <p>Reserved for future use.</p>
     pub fn rds_custom_cluster_configuration(&self) -> ::std::option::Option<&crate::types::RdsCustomClusterConfiguration> {
         self.rds_custom_cluster_configuration.as_ref()
+    }
+    /// <p>The name of the compute and memory capacity class of the DB instance.</p>
+    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+    pub fn db_cluster_instance_class(&self) -> ::std::option::Option<&str> {
+        self.db_cluster_instance_class.as_deref()
+    }
+    /// <p>The storage type associated with the DB cluster.</p>
+    pub fn storage_type(&self) -> ::std::option::Option<&str> {
+        self.storage_type.as_deref()
+    }
+    /// <p>The Provisioned IOPS (I/O operations per second) value.</p>
+    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+    pub fn iops(&self) -> ::std::option::Option<i32> {
+        self.iops
+    }
+    /// <p>The storage throughput for the DB cluster. The throughput is automatically set based on the IOPS that you provision, and is not configurable.</p>
+    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+    pub fn storage_throughput(&self) -> ::std::option::Option<i32> {
+        self.storage_throughput
+    }
+    /// <p>The next time you can modify the DB cluster to use the <code>aurora-iopt1</code> storage type.</p>
+    /// <p>This setting is only for Aurora DB clusters.</p>
+    pub fn io_optimized_next_allowed_modification_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.io_optimized_next_allowed_modification_time.as_ref()
+    }
+    /// <p>Indicates whether the DB cluster is publicly accessible.</p>
+    /// <p>When the DB cluster is publicly accessible and you connect from outside of the DB cluster's virtual private cloud (VPC), its Domain Name System (DNS) endpoint resolves to the public IP address. When you connect from within the same VPC as the DB cluster, the endpoint resolves to the private IP address. Access to the DB cluster is ultimately controlled by the security group it uses. That public access isn't permitted if the security group assigned to the DB cluster doesn't permit it.</p>
+    /// <p>When the DB cluster isn't publicly accessible, it is an internal DB cluster with a DNS name that resolves to a private IP address.</p>
+    /// <p>For more information, see <code>CreateDBCluster</code>.</p>
+    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+    pub fn publicly_accessible(&self) -> ::std::option::Option<bool> {
+        self.publicly_accessible
+    }
+    /// <p>Indicates whether minor version patches are applied automatically.</p>
+    /// <p>This setting is for Aurora DB clusters and Multi-AZ DB clusters.</p>
+    /// <p>For more information about automatic minor version upgrades, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Upgrading.html#USER_UpgradeDBInstance.Upgrading.AutoMinorVersionUpgrades">Automatically upgrading the minor engine version</a>.</p>
+    pub fn auto_minor_version_upgrade(&self) -> ::std::option::Option<bool> {
+        self.auto_minor_version_upgrade
     }
     /// <p>Indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled.</p>
     pub fn deletion_protection(&self) -> ::std::option::Option<bool> {
@@ -494,37 +532,26 @@ impl DbCluster {
     pub fn global_write_forwarding_requested(&self) -> ::std::option::Option<bool> {
         self.global_write_forwarding_requested
     }
-    /// <p>Information about pending changes to the DB cluster. This information is returned only when there are pending changes. Specific changes are identified by subelements.</p>
-    pub fn pending_modified_values(&self) -> ::std::option::Option<&crate::types::ClusterPendingModifiedValues> {
-        self.pending_modified_values.as_ref()
+    /// <p>The network type of the DB instance.</p>
+    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i></p>
+    /// <p>This setting is only for Aurora DB clusters.</p>
+    /// <p>Valid Values: <code>IPV4 | DUAL</code></p>
+    pub fn network_type(&self) -> ::std::option::Option<&str> {
+        self.network_type.as_deref()
     }
-    /// <p>The name of the compute and memory capacity class of the DB instance.</p>
-    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
-    pub fn db_cluster_instance_class(&self) -> ::std::option::Option<&str> {
-        self.db_cluster_instance_class.as_deref()
+    /// <p>The time when a stopped DB cluster is restarted automatically.</p>
+    pub fn automatic_restart_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.automatic_restart_time.as_ref()
     }
-    /// <p>The storage type associated with the DB cluster.</p>
-    pub fn storage_type(&self) -> ::std::option::Option<&str> {
-        self.storage_type.as_deref()
+    /// <p>The scaling configuration for an Aurora Serverless v2 DB cluster.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub fn serverless_v2_scaling_configuration(&self) -> ::std::option::Option<&crate::types::ServerlessV2ScalingConfigurationInfo> {
+        self.serverless_v2_scaling_configuration.as_ref()
     }
-    /// <p>The Provisioned IOPS (I/O operations per second) value.</p>
-    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
-    pub fn iops(&self) -> ::std::option::Option<i32> {
-        self.iops
-    }
-    /// <p>Indicates whether the DB cluster is publicly accessible.</p>
-    /// <p>When the DB cluster is publicly accessible and you connect from outside of the DB cluster's virtual private cloud (VPC), its Domain Name System (DNS) endpoint resolves to the public IP address. When you connect from within the same VPC as the DB cluster, the endpoint resolves to the private IP address. Access to the DB cluster is ultimately controlled by the security group it uses. That public access isn't permitted if the security group assigned to the DB cluster doesn't permit it.</p>
-    /// <p>When the DB cluster isn't publicly accessible, it is an internal DB cluster with a DNS name that resolves to a private IP address.</p>
-    /// <p>For more information, see <code>CreateDBCluster</code>.</p>
-    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
-    pub fn publicly_accessible(&self) -> ::std::option::Option<bool> {
-        self.publicly_accessible
-    }
-    /// <p>Indicates whether minor version patches are applied automatically.</p>
-    /// <p>This setting is for Aurora DB clusters and Multi-AZ DB clusters.</p>
-    /// <p>For more information about automatic minor version upgrades, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Upgrading.html#USER_UpgradeDBInstance.Upgrading.AutoMinorVersionUpgrades">Automatically upgrading the minor engine version</a>.</p>
-    pub fn auto_minor_version_upgrade(&self) -> ::std::option::Option<bool> {
-        self.auto_minor_version_upgrade
+    /// <p>The version of the Aurora Serverless V2 platform used by the DB cluster. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub fn serverless_v2_platform_version(&self) -> ::std::option::Option<&str> {
+        self.serverless_v2_platform_version.as_deref()
     }
     /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB cluster.</p>
     /// <p>This setting is only for -Aurora DB clusters and Multi-AZ DB clusters.</p>
@@ -566,23 +593,6 @@ impl DbCluster {
     pub fn performance_insights_retention_period(&self) -> ::std::option::Option<i32> {
         self.performance_insights_retention_period
     }
-    /// <p>The scaling configuration for an Aurora Serverless v2 DB cluster.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    pub fn serverless_v2_scaling_configuration(&self) -> ::std::option::Option<&crate::types::ServerlessV2ScalingConfigurationInfo> {
-        self.serverless_v2_scaling_configuration.as_ref()
-    }
-    /// <p>The version of the Aurora Serverless V2 platform used by the DB cluster. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    pub fn serverless_v2_platform_version(&self) -> ::std::option::Option<&str> {
-        self.serverless_v2_platform_version.as_deref()
-    }
-    /// <p>The network type of the DB instance.</p>
-    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i></p>
-    /// <p>This setting is only for Aurora DB clusters.</p>
-    /// <p>Valid Values: <code>IPV4 | DUAL</code></p>
-    pub fn network_type(&self) -> ::std::option::Option<&str> {
-        self.network_type.as_deref()
-    }
     /// <p>Reserved for future use.</p>
     pub fn db_system_id(&self) -> ::std::option::Option<&str> {
         self.db_system_id.as_deref()
@@ -591,11 +601,6 @@ impl DbCluster {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i></p>
     pub fn master_user_secret(&self) -> ::std::option::Option<&crate::types::MasterUserSecret> {
         self.master_user_secret.as_ref()
-    }
-    /// <p>The next time you can modify the DB cluster to use the <code>aurora-iopt1</code> storage type.</p>
-    /// <p>This setting is only for Aurora DB clusters.</p>
-    pub fn io_optimized_next_allowed_modification_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.io_optimized_next_allowed_modification_time.as_ref()
     }
     /// <p>Indicates whether an Aurora DB cluster has in-cluster write forwarding enabled, not enabled, requested, or is in the process of enabling it.</p>
     pub fn local_write_forwarding_status(&self) -> ::std::option::Option<&crate::types::LocalWriteForwardingStatus> {
@@ -608,11 +613,6 @@ impl DbCluster {
     /// <p>The details for Aurora Limitless Database.</p>
     pub fn limitless_database(&self) -> ::std::option::Option<&crate::types::LimitlessDatabase> {
         self.limitless_database.as_ref()
-    }
-    /// <p>The storage throughput for the DB cluster. The throughput is automatically set based on the IOPS that you provision, and is not configurable.</p>
-    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
-    pub fn storage_throughput(&self) -> ::std::option::Option<i32> {
-        self.storage_throughput
     }
     /// <p>The scalability mode of the Aurora DB cluster. When set to <code>limitless</code>, the cluster operates as an Aurora Limitless Database. When set to <code>standard</code> (the default), the cluster uses normal DB instance creation.</p>
     pub fn cluster_scalability_type(&self) -> ::std::option::Option<&crate::types::ClusterScalabilityType> {
@@ -649,7 +649,6 @@ pub struct DbClusterBuilder {
     pub(crate) db_cluster_parameter_group: ::std::option::Option<::std::string::String>,
     pub(crate) db_subnet_group: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<::std::string::String>,
-    pub(crate) automatic_restart_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) percent_progress: ::std::option::Option<::std::string::String>,
     pub(crate) earliest_restorable_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) endpoint: ::std::option::Option<::std::string::String>,
@@ -683,9 +682,17 @@ pub struct DbClusterBuilder {
     pub(crate) backtrack_consumed_change_records: ::std::option::Option<i64>,
     pub(crate) enabled_cloudwatch_logs_exports: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) capacity: ::std::option::Option<i32>,
+    pub(crate) pending_modified_values: ::std::option::Option<crate::types::ClusterPendingModifiedValues>,
     pub(crate) engine_mode: ::std::option::Option<::std::string::String>,
     pub(crate) scaling_configuration_info: ::std::option::Option<crate::types::ScalingConfigurationInfo>,
     pub(crate) rds_custom_cluster_configuration: ::std::option::Option<crate::types::RdsCustomClusterConfiguration>,
+    pub(crate) db_cluster_instance_class: ::std::option::Option<::std::string::String>,
+    pub(crate) storage_type: ::std::option::Option<::std::string::String>,
+    pub(crate) iops: ::std::option::Option<i32>,
+    pub(crate) storage_throughput: ::std::option::Option<i32>,
+    pub(crate) io_optimized_next_allowed_modification_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) publicly_accessible: ::std::option::Option<bool>,
+    pub(crate) auto_minor_version_upgrade: ::std::option::Option<bool>,
     pub(crate) deletion_protection: ::std::option::Option<bool>,
     pub(crate) http_endpoint_enabled: ::std::option::Option<bool>,
     pub(crate) activity_stream_mode: ::std::option::Option<crate::types::ActivityStreamMode>,
@@ -699,28 +706,21 @@ pub struct DbClusterBuilder {
     pub(crate) global_cluster_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) global_write_forwarding_status: ::std::option::Option<crate::types::WriteForwardingStatus>,
     pub(crate) global_write_forwarding_requested: ::std::option::Option<bool>,
-    pub(crate) pending_modified_values: ::std::option::Option<crate::types::ClusterPendingModifiedValues>,
-    pub(crate) db_cluster_instance_class: ::std::option::Option<::std::string::String>,
-    pub(crate) storage_type: ::std::option::Option<::std::string::String>,
-    pub(crate) iops: ::std::option::Option<i32>,
-    pub(crate) publicly_accessible: ::std::option::Option<bool>,
-    pub(crate) auto_minor_version_upgrade: ::std::option::Option<bool>,
+    pub(crate) network_type: ::std::option::Option<::std::string::String>,
+    pub(crate) automatic_restart_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) serverless_v2_scaling_configuration: ::std::option::Option<crate::types::ServerlessV2ScalingConfigurationInfo>,
+    pub(crate) serverless_v2_platform_version: ::std::option::Option<::std::string::String>,
     pub(crate) monitoring_interval: ::std::option::Option<i32>,
     pub(crate) monitoring_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) database_insights_mode: ::std::option::Option<crate::types::DatabaseInsightsMode>,
     pub(crate) performance_insights_enabled: ::std::option::Option<bool>,
     pub(crate) performance_insights_kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) performance_insights_retention_period: ::std::option::Option<i32>,
-    pub(crate) serverless_v2_scaling_configuration: ::std::option::Option<crate::types::ServerlessV2ScalingConfigurationInfo>,
-    pub(crate) serverless_v2_platform_version: ::std::option::Option<::std::string::String>,
-    pub(crate) network_type: ::std::option::Option<::std::string::String>,
     pub(crate) db_system_id: ::std::option::Option<::std::string::String>,
     pub(crate) master_user_secret: ::std::option::Option<crate::types::MasterUserSecret>,
-    pub(crate) io_optimized_next_allowed_modification_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) local_write_forwarding_status: ::std::option::Option<crate::types::LocalWriteForwardingStatus>,
     pub(crate) aws_backup_recovery_point_arn: ::std::option::Option<::std::string::String>,
     pub(crate) limitless_database: ::std::option::Option<crate::types::LimitlessDatabase>,
-    pub(crate) storage_throughput: ::std::option::Option<i32>,
     pub(crate) cluster_scalability_type: ::std::option::Option<crate::types::ClusterScalabilityType>,
     pub(crate) certificate_details: ::std::option::Option<crate::types::CertificateDetails>,
     pub(crate) engine_lifecycle_support: ::std::option::Option<::std::string::String>,
@@ -857,20 +857,6 @@ impl DbClusterBuilder {
     /// <p>The current state of this DB cluster.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status
-    }
-    /// <p>The time when a stopped DB cluster is restarted automatically.</p>
-    pub fn automatic_restart_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
-        self.automatic_restart_time = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The time when a stopped DB cluster is restarted automatically.</p>
-    pub fn set_automatic_restart_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.automatic_restart_time = input;
-        self
-    }
-    /// <p>The time when a stopped DB cluster is restarted automatically.</p>
-    pub fn get_automatic_restart_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
-        &self.automatic_restart_time
     }
     /// <p>The progress of the operation as a percentage.</p>
     pub fn percent_progress(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -1403,6 +1389,20 @@ impl DbClusterBuilder {
     pub fn get_capacity(&self) -> &::std::option::Option<i32> {
         &self.capacity
     }
+    /// <p>Information about pending changes to the DB cluster. This information is returned only when there are pending changes. Specific changes are identified by subelements.</p>
+    pub fn pending_modified_values(mut self, input: crate::types::ClusterPendingModifiedValues) -> Self {
+        self.pending_modified_values = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Information about pending changes to the DB cluster. This information is returned only when there are pending changes. Specific changes are identified by subelements.</p>
+    pub fn set_pending_modified_values(mut self, input: ::std::option::Option<crate::types::ClusterPendingModifiedValues>) -> Self {
+        self.pending_modified_values = input;
+        self
+    }
+    /// <p>Information about pending changes to the DB cluster. This information is returned only when there are pending changes. Specific changes are identified by subelements.</p>
+    pub fn get_pending_modified_values(&self) -> &::std::option::Option<crate::types::ClusterPendingModifiedValues> {
+        &self.pending_modified_values
+    }
     /// <p>The DB engine mode of the DB cluster, either <code>provisioned</code> or <code>serverless</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html"> CreateDBCluster</a>.</p>
     pub fn engine_mode(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -1450,6 +1450,134 @@ impl DbClusterBuilder {
     /// <p>Reserved for future use.</p>
     pub fn get_rds_custom_cluster_configuration(&self) -> &::std::option::Option<crate::types::RdsCustomClusterConfiguration> {
         &self.rds_custom_cluster_configuration
+    }
+    /// <p>The name of the compute and memory capacity class of the DB instance.</p>
+    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+    pub fn db_cluster_instance_class(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.db_cluster_instance_class = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the compute and memory capacity class of the DB instance.</p>
+    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+    pub fn set_db_cluster_instance_class(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.db_cluster_instance_class = input;
+        self
+    }
+    /// <p>The name of the compute and memory capacity class of the DB instance.</p>
+    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+    pub fn get_db_cluster_instance_class(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_cluster_instance_class
+    }
+    /// <p>The storage type associated with the DB cluster.</p>
+    pub fn storage_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.storage_type = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The storage type associated with the DB cluster.</p>
+    pub fn set_storage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.storage_type = input;
+        self
+    }
+    /// <p>The storage type associated with the DB cluster.</p>
+    pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.storage_type
+    }
+    /// <p>The Provisioned IOPS (I/O operations per second) value.</p>
+    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+    pub fn iops(mut self, input: i32) -> Self {
+        self.iops = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Provisioned IOPS (I/O operations per second) value.</p>
+    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+    pub fn set_iops(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.iops = input;
+        self
+    }
+    /// <p>The Provisioned IOPS (I/O operations per second) value.</p>
+    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+    pub fn get_iops(&self) -> &::std::option::Option<i32> {
+        &self.iops
+    }
+    /// <p>The storage throughput for the DB cluster. The throughput is automatically set based on the IOPS that you provision, and is not configurable.</p>
+    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+    pub fn storage_throughput(mut self, input: i32) -> Self {
+        self.storage_throughput = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The storage throughput for the DB cluster. The throughput is automatically set based on the IOPS that you provision, and is not configurable.</p>
+    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+    pub fn set_storage_throughput(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.storage_throughput = input;
+        self
+    }
+    /// <p>The storage throughput for the DB cluster. The throughput is automatically set based on the IOPS that you provision, and is not configurable.</p>
+    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+    pub fn get_storage_throughput(&self) -> &::std::option::Option<i32> {
+        &self.storage_throughput
+    }
+    /// <p>The next time you can modify the DB cluster to use the <code>aurora-iopt1</code> storage type.</p>
+    /// <p>This setting is only for Aurora DB clusters.</p>
+    pub fn io_optimized_next_allowed_modification_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.io_optimized_next_allowed_modification_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The next time you can modify the DB cluster to use the <code>aurora-iopt1</code> storage type.</p>
+    /// <p>This setting is only for Aurora DB clusters.</p>
+    pub fn set_io_optimized_next_allowed_modification_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.io_optimized_next_allowed_modification_time = input;
+        self
+    }
+    /// <p>The next time you can modify the DB cluster to use the <code>aurora-iopt1</code> storage type.</p>
+    /// <p>This setting is only for Aurora DB clusters.</p>
+    pub fn get_io_optimized_next_allowed_modification_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.io_optimized_next_allowed_modification_time
+    }
+    /// <p>Indicates whether the DB cluster is publicly accessible.</p>
+    /// <p>When the DB cluster is publicly accessible and you connect from outside of the DB cluster's virtual private cloud (VPC), its Domain Name System (DNS) endpoint resolves to the public IP address. When you connect from within the same VPC as the DB cluster, the endpoint resolves to the private IP address. Access to the DB cluster is ultimately controlled by the security group it uses. That public access isn't permitted if the security group assigned to the DB cluster doesn't permit it.</p>
+    /// <p>When the DB cluster isn't publicly accessible, it is an internal DB cluster with a DNS name that resolves to a private IP address.</p>
+    /// <p>For more information, see <code>CreateDBCluster</code>.</p>
+    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+    pub fn publicly_accessible(mut self, input: bool) -> Self {
+        self.publicly_accessible = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether the DB cluster is publicly accessible.</p>
+    /// <p>When the DB cluster is publicly accessible and you connect from outside of the DB cluster's virtual private cloud (VPC), its Domain Name System (DNS) endpoint resolves to the public IP address. When you connect from within the same VPC as the DB cluster, the endpoint resolves to the private IP address. Access to the DB cluster is ultimately controlled by the security group it uses. That public access isn't permitted if the security group assigned to the DB cluster doesn't permit it.</p>
+    /// <p>When the DB cluster isn't publicly accessible, it is an internal DB cluster with a DNS name that resolves to a private IP address.</p>
+    /// <p>For more information, see <code>CreateDBCluster</code>.</p>
+    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+    pub fn set_publicly_accessible(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.publicly_accessible = input;
+        self
+    }
+    /// <p>Indicates whether the DB cluster is publicly accessible.</p>
+    /// <p>When the DB cluster is publicly accessible and you connect from outside of the DB cluster's virtual private cloud (VPC), its Domain Name System (DNS) endpoint resolves to the public IP address. When you connect from within the same VPC as the DB cluster, the endpoint resolves to the private IP address. Access to the DB cluster is ultimately controlled by the security group it uses. That public access isn't permitted if the security group assigned to the DB cluster doesn't permit it.</p>
+    /// <p>When the DB cluster isn't publicly accessible, it is an internal DB cluster with a DNS name that resolves to a private IP address.</p>
+    /// <p>For more information, see <code>CreateDBCluster</code>.</p>
+    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+    pub fn get_publicly_accessible(&self) -> &::std::option::Option<bool> {
+        &self.publicly_accessible
+    }
+    /// <p>Indicates whether minor version patches are applied automatically.</p>
+    /// <p>This setting is for Aurora DB clusters and Multi-AZ DB clusters.</p>
+    /// <p>For more information about automatic minor version upgrades, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Upgrading.html#USER_UpgradeDBInstance.Upgrading.AutoMinorVersionUpgrades">Automatically upgrading the minor engine version</a>.</p>
+    pub fn auto_minor_version_upgrade(mut self, input: bool) -> Self {
+        self.auto_minor_version_upgrade = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether minor version patches are applied automatically.</p>
+    /// <p>This setting is for Aurora DB clusters and Multi-AZ DB clusters.</p>
+    /// <p>For more information about automatic minor version upgrades, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Upgrading.html#USER_UpgradeDBInstance.Upgrading.AutoMinorVersionUpgrades">Automatically upgrading the minor engine version</a>.</p>
+    pub fn set_auto_minor_version_upgrade(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.auto_minor_version_upgrade = input;
+        self
+    }
+    /// <p>Indicates whether minor version patches are applied automatically.</p>
+    /// <p>This setting is for Aurora DB clusters and Multi-AZ DB clusters.</p>
+    /// <p>For more information about automatic minor version upgrades, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Upgrading.html#USER_UpgradeDBInstance.Upgrading.AutoMinorVersionUpgrades">Automatically upgrading the minor engine version</a>.</p>
+    pub fn get_auto_minor_version_upgrade(&self) -> &::std::option::Option<bool> {
+        &self.auto_minor_version_upgrade
     }
     /// <p>Indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled.</p>
     pub fn deletion_protection(mut self, input: bool) -> Self {
@@ -1657,113 +1785,79 @@ impl DbClusterBuilder {
     pub fn get_global_write_forwarding_requested(&self) -> &::std::option::Option<bool> {
         &self.global_write_forwarding_requested
     }
-    /// <p>Information about pending changes to the DB cluster. This information is returned only when there are pending changes. Specific changes are identified by subelements.</p>
-    pub fn pending_modified_values(mut self, input: crate::types::ClusterPendingModifiedValues) -> Self {
-        self.pending_modified_values = ::std::option::Option::Some(input);
+    /// <p>The network type of the DB instance.</p>
+    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i></p>
+    /// <p>This setting is only for Aurora DB clusters.</p>
+    /// <p>Valid Values: <code>IPV4 | DUAL</code></p>
+    pub fn network_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.network_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Information about pending changes to the DB cluster. This information is returned only when there are pending changes. Specific changes are identified by subelements.</p>
-    pub fn set_pending_modified_values(mut self, input: ::std::option::Option<crate::types::ClusterPendingModifiedValues>) -> Self {
-        self.pending_modified_values = input;
+    /// <p>The network type of the DB instance.</p>
+    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i></p>
+    /// <p>This setting is only for Aurora DB clusters.</p>
+    /// <p>Valid Values: <code>IPV4 | DUAL</code></p>
+    pub fn set_network_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.network_type = input;
         self
     }
-    /// <p>Information about pending changes to the DB cluster. This information is returned only when there are pending changes. Specific changes are identified by subelements.</p>
-    pub fn get_pending_modified_values(&self) -> &::std::option::Option<crate::types::ClusterPendingModifiedValues> {
-        &self.pending_modified_values
+    /// <p>The network type of the DB instance.</p>
+    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i></p>
+    /// <p>This setting is only for Aurora DB clusters.</p>
+    /// <p>Valid Values: <code>IPV4 | DUAL</code></p>
+    pub fn get_network_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_type
     }
-    /// <p>The name of the compute and memory capacity class of the DB instance.</p>
-    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
-    pub fn db_cluster_instance_class(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.db_cluster_instance_class = ::std::option::Option::Some(input.into());
+    /// <p>The time when a stopped DB cluster is restarted automatically.</p>
+    pub fn automatic_restart_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.automatic_restart_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The name of the compute and memory capacity class of the DB instance.</p>
-    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
-    pub fn set_db_cluster_instance_class(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_cluster_instance_class = input;
+    /// <p>The time when a stopped DB cluster is restarted automatically.</p>
+    pub fn set_automatic_restart_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.automatic_restart_time = input;
         self
     }
-    /// <p>The name of the compute and memory capacity class of the DB instance.</p>
-    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
-    pub fn get_db_cluster_instance_class(&self) -> &::std::option::Option<::std::string::String> {
-        &self.db_cluster_instance_class
+    /// <p>The time when a stopped DB cluster is restarted automatically.</p>
+    pub fn get_automatic_restart_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.automatic_restart_time
     }
-    /// <p>The storage type associated with the DB cluster.</p>
-    pub fn storage_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.storage_type = ::std::option::Option::Some(input.into());
+    /// <p>The scaling configuration for an Aurora Serverless v2 DB cluster.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub fn serverless_v2_scaling_configuration(mut self, input: crate::types::ServerlessV2ScalingConfigurationInfo) -> Self {
+        self.serverless_v2_scaling_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The storage type associated with the DB cluster.</p>
-    pub fn set_storage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.storage_type = input;
+    /// <p>The scaling configuration for an Aurora Serverless v2 DB cluster.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub fn set_serverless_v2_scaling_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::ServerlessV2ScalingConfigurationInfo>,
+    ) -> Self {
+        self.serverless_v2_scaling_configuration = input;
         self
     }
-    /// <p>The storage type associated with the DB cluster.</p>
-    pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
-        &self.storage_type
+    /// <p>The scaling configuration for an Aurora Serverless v2 DB cluster.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub fn get_serverless_v2_scaling_configuration(&self) -> &::std::option::Option<crate::types::ServerlessV2ScalingConfigurationInfo> {
+        &self.serverless_v2_scaling_configuration
     }
-    /// <p>The Provisioned IOPS (I/O operations per second) value.</p>
-    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
-    pub fn iops(mut self, input: i32) -> Self {
-        self.iops = ::std::option::Option::Some(input);
+    /// <p>The version of the Aurora Serverless V2 platform used by the DB cluster. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub fn serverless_v2_platform_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.serverless_v2_platform_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Provisioned IOPS (I/O operations per second) value.</p>
-    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
-    pub fn set_iops(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.iops = input;
+    /// <p>The version of the Aurora Serverless V2 platform used by the DB cluster. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub fn set_serverless_v2_platform_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.serverless_v2_platform_version = input;
         self
     }
-    /// <p>The Provisioned IOPS (I/O operations per second) value.</p>
-    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
-    pub fn get_iops(&self) -> &::std::option::Option<i32> {
-        &self.iops
-    }
-    /// <p>Indicates whether the DB cluster is publicly accessible.</p>
-    /// <p>When the DB cluster is publicly accessible and you connect from outside of the DB cluster's virtual private cloud (VPC), its Domain Name System (DNS) endpoint resolves to the public IP address. When you connect from within the same VPC as the DB cluster, the endpoint resolves to the private IP address. Access to the DB cluster is ultimately controlled by the security group it uses. That public access isn't permitted if the security group assigned to the DB cluster doesn't permit it.</p>
-    /// <p>When the DB cluster isn't publicly accessible, it is an internal DB cluster with a DNS name that resolves to a private IP address.</p>
-    /// <p>For more information, see <code>CreateDBCluster</code>.</p>
-    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
-    pub fn publicly_accessible(mut self, input: bool) -> Self {
-        self.publicly_accessible = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>Indicates whether the DB cluster is publicly accessible.</p>
-    /// <p>When the DB cluster is publicly accessible and you connect from outside of the DB cluster's virtual private cloud (VPC), its Domain Name System (DNS) endpoint resolves to the public IP address. When you connect from within the same VPC as the DB cluster, the endpoint resolves to the private IP address. Access to the DB cluster is ultimately controlled by the security group it uses. That public access isn't permitted if the security group assigned to the DB cluster doesn't permit it.</p>
-    /// <p>When the DB cluster isn't publicly accessible, it is an internal DB cluster with a DNS name that resolves to a private IP address.</p>
-    /// <p>For more information, see <code>CreateDBCluster</code>.</p>
-    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
-    pub fn set_publicly_accessible(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.publicly_accessible = input;
-        self
-    }
-    /// <p>Indicates whether the DB cluster is publicly accessible.</p>
-    /// <p>When the DB cluster is publicly accessible and you connect from outside of the DB cluster's virtual private cloud (VPC), its Domain Name System (DNS) endpoint resolves to the public IP address. When you connect from within the same VPC as the DB cluster, the endpoint resolves to the private IP address. Access to the DB cluster is ultimately controlled by the security group it uses. That public access isn't permitted if the security group assigned to the DB cluster doesn't permit it.</p>
-    /// <p>When the DB cluster isn't publicly accessible, it is an internal DB cluster with a DNS name that resolves to a private IP address.</p>
-    /// <p>For more information, see <code>CreateDBCluster</code>.</p>
-    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
-    pub fn get_publicly_accessible(&self) -> &::std::option::Option<bool> {
-        &self.publicly_accessible
-    }
-    /// <p>Indicates whether minor version patches are applied automatically.</p>
-    /// <p>This setting is for Aurora DB clusters and Multi-AZ DB clusters.</p>
-    /// <p>For more information about automatic minor version upgrades, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Upgrading.html#USER_UpgradeDBInstance.Upgrading.AutoMinorVersionUpgrades">Automatically upgrading the minor engine version</a>.</p>
-    pub fn auto_minor_version_upgrade(mut self, input: bool) -> Self {
-        self.auto_minor_version_upgrade = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>Indicates whether minor version patches are applied automatically.</p>
-    /// <p>This setting is for Aurora DB clusters and Multi-AZ DB clusters.</p>
-    /// <p>For more information about automatic minor version upgrades, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Upgrading.html#USER_UpgradeDBInstance.Upgrading.AutoMinorVersionUpgrades">Automatically upgrading the minor engine version</a>.</p>
-    pub fn set_auto_minor_version_upgrade(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.auto_minor_version_upgrade = input;
-        self
-    }
-    /// <p>Indicates whether minor version patches are applied automatically.</p>
-    /// <p>This setting is for Aurora DB clusters and Multi-AZ DB clusters.</p>
-    /// <p>For more information about automatic minor version upgrades, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Upgrading.html#USER_UpgradeDBInstance.Upgrading.AutoMinorVersionUpgrades">Automatically upgrading the minor engine version</a>.</p>
-    pub fn get_auto_minor_version_upgrade(&self) -> &::std::option::Option<bool> {
-        &self.auto_minor_version_upgrade
+    /// <p>The version of the Aurora Serverless V2 platform used by the DB cluster. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub fn get_serverless_v2_platform_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.serverless_v2_platform_version
     }
     /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB cluster.</p>
     /// <p>This setting is only for -Aurora DB clusters and Multi-AZ DB clusters.</p>
@@ -1897,66 +1991,6 @@ impl DbClusterBuilder {
     pub fn get_performance_insights_retention_period(&self) -> &::std::option::Option<i32> {
         &self.performance_insights_retention_period
     }
-    /// <p>The scaling configuration for an Aurora Serverless v2 DB cluster.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    pub fn serverless_v2_scaling_configuration(mut self, input: crate::types::ServerlessV2ScalingConfigurationInfo) -> Self {
-        self.serverless_v2_scaling_configuration = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The scaling configuration for an Aurora Serverless v2 DB cluster.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    pub fn set_serverless_v2_scaling_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ServerlessV2ScalingConfigurationInfo>,
-    ) -> Self {
-        self.serverless_v2_scaling_configuration = input;
-        self
-    }
-    /// <p>The scaling configuration for an Aurora Serverless v2 DB cluster.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    pub fn get_serverless_v2_scaling_configuration(&self) -> &::std::option::Option<crate::types::ServerlessV2ScalingConfigurationInfo> {
-        &self.serverless_v2_scaling_configuration
-    }
-    /// <p>The version of the Aurora Serverless V2 platform used by the DB cluster. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    pub fn serverless_v2_platform_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.serverless_v2_platform_version = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The version of the Aurora Serverless V2 platform used by the DB cluster. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    pub fn set_serverless_v2_platform_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.serverless_v2_platform_version = input;
-        self
-    }
-    /// <p>The version of the Aurora Serverless V2 platform used by the DB cluster. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    pub fn get_serverless_v2_platform_version(&self) -> &::std::option::Option<::std::string::String> {
-        &self.serverless_v2_platform_version
-    }
-    /// <p>The network type of the DB instance.</p>
-    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i></p>
-    /// <p>This setting is only for Aurora DB clusters.</p>
-    /// <p>Valid Values: <code>IPV4 | DUAL</code></p>
-    pub fn network_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.network_type = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The network type of the DB instance.</p>
-    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i></p>
-    /// <p>This setting is only for Aurora DB clusters.</p>
-    /// <p>Valid Values: <code>IPV4 | DUAL</code></p>
-    pub fn set_network_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.network_type = input;
-        self
-    }
-    /// <p>The network type of the DB instance.</p>
-    /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i></p>
-    /// <p>This setting is only for Aurora DB clusters.</p>
-    /// <p>Valid Values: <code>IPV4 | DUAL</code></p>
-    pub fn get_network_type(&self) -> &::std::option::Option<::std::string::String> {
-        &self.network_type
-    }
     /// <p>Reserved for future use.</p>
     pub fn db_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_system_id = ::std::option::Option::Some(input.into());
@@ -1987,23 +2021,6 @@ impl DbClusterBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i></p>
     pub fn get_master_user_secret(&self) -> &::std::option::Option<crate::types::MasterUserSecret> {
         &self.master_user_secret
-    }
-    /// <p>The next time you can modify the DB cluster to use the <code>aurora-iopt1</code> storage type.</p>
-    /// <p>This setting is only for Aurora DB clusters.</p>
-    pub fn io_optimized_next_allowed_modification_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
-        self.io_optimized_next_allowed_modification_time = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The next time you can modify the DB cluster to use the <code>aurora-iopt1</code> storage type.</p>
-    /// <p>This setting is only for Aurora DB clusters.</p>
-    pub fn set_io_optimized_next_allowed_modification_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.io_optimized_next_allowed_modification_time = input;
-        self
-    }
-    /// <p>The next time you can modify the DB cluster to use the <code>aurora-iopt1</code> storage type.</p>
-    /// <p>This setting is only for Aurora DB clusters.</p>
-    pub fn get_io_optimized_next_allowed_modification_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
-        &self.io_optimized_next_allowed_modification_time
     }
     /// <p>Indicates whether an Aurora DB cluster has in-cluster write forwarding enabled, not enabled, requested, or is in the process of enabling it.</p>
     pub fn local_write_forwarding_status(mut self, input: crate::types::LocalWriteForwardingStatus) -> Self {
@@ -2046,23 +2063,6 @@ impl DbClusterBuilder {
     /// <p>The details for Aurora Limitless Database.</p>
     pub fn get_limitless_database(&self) -> &::std::option::Option<crate::types::LimitlessDatabase> {
         &self.limitless_database
-    }
-    /// <p>The storage throughput for the DB cluster. The throughput is automatically set based on the IOPS that you provision, and is not configurable.</p>
-    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
-    pub fn storage_throughput(mut self, input: i32) -> Self {
-        self.storage_throughput = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The storage throughput for the DB cluster. The throughput is automatically set based on the IOPS that you provision, and is not configurable.</p>
-    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
-    pub fn set_storage_throughput(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.storage_throughput = input;
-        self
-    }
-    /// <p>The storage throughput for the DB cluster. The throughput is automatically set based on the IOPS that you provision, and is not configurable.</p>
-    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
-    pub fn get_storage_throughput(&self) -> &::std::option::Option<i32> {
-        &self.storage_throughput
     }
     /// <p>The scalability mode of the Aurora DB cluster. When set to <code>limitless</code>, the cluster operates as an Aurora Limitless Database. When set to <code>standard</code> (the default), the cluster uses normal DB instance creation.</p>
     pub fn cluster_scalability_type(mut self, input: crate::types::ClusterScalabilityType) -> Self {
@@ -2124,7 +2124,6 @@ impl DbClusterBuilder {
             db_cluster_parameter_group: self.db_cluster_parameter_group,
             db_subnet_group: self.db_subnet_group,
             status: self.status,
-            automatic_restart_time: self.automatic_restart_time,
             percent_progress: self.percent_progress,
             earliest_restorable_time: self.earliest_restorable_time,
             endpoint: self.endpoint,
@@ -2158,9 +2157,17 @@ impl DbClusterBuilder {
             backtrack_consumed_change_records: self.backtrack_consumed_change_records,
             enabled_cloudwatch_logs_exports: self.enabled_cloudwatch_logs_exports,
             capacity: self.capacity,
+            pending_modified_values: self.pending_modified_values,
             engine_mode: self.engine_mode,
             scaling_configuration_info: self.scaling_configuration_info,
             rds_custom_cluster_configuration: self.rds_custom_cluster_configuration,
+            db_cluster_instance_class: self.db_cluster_instance_class,
+            storage_type: self.storage_type,
+            iops: self.iops,
+            storage_throughput: self.storage_throughput,
+            io_optimized_next_allowed_modification_time: self.io_optimized_next_allowed_modification_time,
+            publicly_accessible: self.publicly_accessible,
+            auto_minor_version_upgrade: self.auto_minor_version_upgrade,
             deletion_protection: self.deletion_protection,
             http_endpoint_enabled: self.http_endpoint_enabled,
             activity_stream_mode: self.activity_stream_mode,
@@ -2174,28 +2181,21 @@ impl DbClusterBuilder {
             global_cluster_identifier: self.global_cluster_identifier,
             global_write_forwarding_status: self.global_write_forwarding_status,
             global_write_forwarding_requested: self.global_write_forwarding_requested,
-            pending_modified_values: self.pending_modified_values,
-            db_cluster_instance_class: self.db_cluster_instance_class,
-            storage_type: self.storage_type,
-            iops: self.iops,
-            publicly_accessible: self.publicly_accessible,
-            auto_minor_version_upgrade: self.auto_minor_version_upgrade,
+            network_type: self.network_type,
+            automatic_restart_time: self.automatic_restart_time,
+            serverless_v2_scaling_configuration: self.serverless_v2_scaling_configuration,
+            serverless_v2_platform_version: self.serverless_v2_platform_version,
             monitoring_interval: self.monitoring_interval,
             monitoring_role_arn: self.monitoring_role_arn,
             database_insights_mode: self.database_insights_mode,
             performance_insights_enabled: self.performance_insights_enabled,
             performance_insights_kms_key_id: self.performance_insights_kms_key_id,
             performance_insights_retention_period: self.performance_insights_retention_period,
-            serverless_v2_scaling_configuration: self.serverless_v2_scaling_configuration,
-            serverless_v2_platform_version: self.serverless_v2_platform_version,
-            network_type: self.network_type,
             db_system_id: self.db_system_id,
             master_user_secret: self.master_user_secret,
-            io_optimized_next_allowed_modification_time: self.io_optimized_next_allowed_modification_time,
             local_write_forwarding_status: self.local_write_forwarding_status,
             aws_backup_recovery_point_arn: self.aws_backup_recovery_point_arn,
             limitless_database: self.limitless_database,
-            storage_throughput: self.storage_throughput,
             cluster_scalability_type: self.cluster_scalability_type,
             certificate_details: self.certificate_details,
             engine_lifecycle_support: self.engine_lifecycle_support,

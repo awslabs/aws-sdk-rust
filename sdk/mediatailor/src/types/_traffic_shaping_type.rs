@@ -13,6 +13,7 @@
 /// # let trafficshapingtype = unimplemented!();
 /// match trafficshapingtype {
 ///     TrafficShapingType::RetrievalWindow => { /* ... */ },
+///     TrafficShapingType::Tps => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -43,6 +44,8 @@
 pub enum TrafficShapingType {
     #[allow(missing_docs)] // documentation missing in model
     RetrievalWindow,
+    #[allow(missing_docs)] // documentation missing in model
+    Tps,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -51,6 +54,7 @@ impl ::std::convert::From<&str> for TrafficShapingType {
     fn from(s: &str) -> Self {
         match s {
             "RETRIEVAL_WINDOW" => TrafficShapingType::RetrievalWindow,
+            "TPS" => TrafficShapingType::Tps,
             other => TrafficShapingType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -67,12 +71,13 @@ impl TrafficShapingType {
     pub fn as_str(&self) -> &str {
         match self {
             TrafficShapingType::RetrievalWindow => "RETRIEVAL_WINDOW",
+            TrafficShapingType::Tps => "TPS",
             TrafficShapingType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["RETRIEVAL_WINDOW"]
+        &["RETRIEVAL_WINDOW", "TPS"]
     }
 }
 impl ::std::convert::AsRef<str> for TrafficShapingType {
@@ -96,6 +101,7 @@ impl ::std::fmt::Display for TrafficShapingType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             TrafficShapingType::RetrievalWindow => write!(f, "RETRIEVAL_WINDOW"),
+            TrafficShapingType::Tps => write!(f, "TPS"),
             TrafficShapingType::Unknown(value) => write!(f, "{}", value),
         }
     }

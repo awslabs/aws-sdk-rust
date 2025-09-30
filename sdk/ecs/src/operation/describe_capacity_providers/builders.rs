@@ -127,6 +127,20 @@ impl DescribeCapacityProvidersFluentBuilder {
     pub fn get_capacity_providers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_capacity_providers()
     }
+    /// <p>The name of the cluster to describe capacity providers for. When specified, only capacity providers associated with this cluster are returned, including Amazon ECS Managed Instances capacity providers.</p>
+    pub fn cluster(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.cluster(input.into());
+        self
+    }
+    /// <p>The name of the cluster to describe capacity providers for. When specified, only capacity providers associated with this cluster are returned, including Amazon ECS Managed Instances capacity providers.</p>
+    pub fn set_cluster(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_cluster(input);
+        self
+    }
+    /// <p>The name of the cluster to describe capacity providers for. When specified, only capacity providers associated with this cluster are returned, including Amazon ECS Managed Instances capacity providers.</p>
+    pub fn get_cluster(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster()
+    }
     ///
     /// Appends an item to `include`.
     ///

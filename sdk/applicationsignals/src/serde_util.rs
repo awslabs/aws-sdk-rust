@@ -110,6 +110,24 @@ pub(crate) fn get_service_level_objective_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_audit_findings_output_output_correct_errors(
+    mut builder: crate::operation::list_audit_findings::builders::ListAuditFindingsOutputBuilder,
+) -> crate::operation::list_audit_findings::builders::ListAuditFindingsOutputBuilder {
+    if builder.audit_findings.is_none() {
+        builder.audit_findings = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_grouping_attribute_definitions_output_output_correct_errors(
+    mut builder: crate::operation::list_grouping_attribute_definitions::builders::ListGroupingAttributeDefinitionsOutputBuilder,
+) -> crate::operation::list_grouping_attribute_definitions::builders::ListGroupingAttributeDefinitionsOutputBuilder {
+    if builder.grouping_attribute_definitions.is_none() {
+        builder.grouping_attribute_definitions = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_service_dependencies_output_output_correct_errors(
     mut builder: crate::operation::list_service_dependencies::builders::ListServiceDependenciesOutputBuilder,
 ) -> crate::operation::list_service_dependencies::builders::ListServiceDependenciesOutputBuilder {
@@ -164,6 +182,21 @@ pub(crate) fn list_service_operations_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_service_states_output_output_correct_errors(
+    mut builder: crate::operation::list_service_states::builders::ListServiceStatesOutputBuilder,
+) -> crate::operation::list_service_states::builders::ListServiceStatesOutputBuilder {
+    if builder.start_time.is_none() {
+        builder.start_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.end_time.is_none() {
+        builder.end_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.service_states.is_none() {
+        builder.service_states = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_services_output_output_correct_errors(
     mut builder: crate::operation::list_services::builders::ListServicesOutputBuilder,
 ) -> crate::operation::list_services::builders::ListServicesOutputBuilder {
@@ -175,6 +208,18 @@ pub(crate) fn list_services_output_output_correct_errors(
     }
     if builder.service_summaries.is_none() {
         builder.service_summaries = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn put_grouping_configuration_output_output_correct_errors(
+    mut builder: crate::operation::put_grouping_configuration::builders::PutGroupingConfigurationOutputBuilder,
+) -> crate::operation::put_grouping_configuration::builders::PutGroupingConfigurationOutputBuilder {
+    if builder.grouping_configuration.is_none() {
+        builder.grouping_configuration = {
+            let builder = crate::types::builders::GroupingConfigurationBuilder::default();
+            crate::serde_util::grouping_configuration_correct_errors(builder).build().ok()
+        }
     }
     builder
 }
@@ -225,6 +270,25 @@ pub(crate) fn service_correct_errors(mut builder: crate::types::builders::Servic
     builder
 }
 
+pub(crate) fn grouping_configuration_correct_errors(
+    mut builder: crate::types::builders::GroupingConfigurationBuilder,
+) -> crate::types::builders::GroupingConfigurationBuilder {
+    if builder.grouping_attribute_definitions.is_none() {
+        builder.grouping_attribute_definitions = Some(Default::default())
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn audit_finding_correct_errors(mut builder: crate::types::builders::AuditFindingBuilder) -> crate::types::builders::AuditFindingBuilder {
+    if builder.key_attributes.is_none() {
+        builder.key_attributes = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn batch_update_exclusion_windows_error_correct_errors(
     mut builder: crate::types::builders::BatchUpdateExclusionWindowsErrorBuilder,
 ) -> crate::types::builders::BatchUpdateExclusionWindowsErrorBuilder {
@@ -248,6 +312,15 @@ pub(crate) fn exclusion_window_correct_errors(
             let builder = crate::types::builders::WindowBuilder::default();
             crate::serde_util::window_correct_errors(builder).build().ok()
         }
+    }
+    builder
+}
+
+pub(crate) fn grouping_attribute_definition_correct_errors(
+    mut builder: crate::types::builders::GroupingAttributeDefinitionBuilder,
+) -> crate::types::builders::GroupingAttributeDefinitionBuilder {
+    if builder.grouping_name.is_none() {
+        builder.grouping_name = Some(Default::default())
     }
     builder
 }
@@ -371,6 +444,16 @@ pub(crate) fn service_operation_correct_errors(
     builder
 }
 
+pub(crate) fn service_state_correct_errors(mut builder: crate::types::builders::ServiceStateBuilder) -> crate::types::builders::ServiceStateBuilder {
+    if builder.service.is_none() {
+        builder.service = Some(Default::default())
+    }
+    if builder.latest_change_events.is_none() {
+        builder.latest_change_events = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn service_summary_correct_errors(
     mut builder: crate::types::builders::ServiceSummaryBuilder,
 ) -> crate::types::builders::ServiceSummaryBuilder {
@@ -450,6 +533,22 @@ pub(crate) fn request_based_service_level_indicator_metric_correct_errors(
     builder
 }
 
+pub(crate) fn service_group_correct_errors(mut builder: crate::types::builders::ServiceGroupBuilder) -> crate::types::builders::ServiceGroupBuilder {
+    if builder.group_name.is_none() {
+        builder.group_name = Some(Default::default())
+    }
+    if builder.group_value.is_none() {
+        builder.group_value = Some(Default::default())
+    }
+    if builder.group_source.is_none() {
+        builder.group_source = Some(Default::default())
+    }
+    if builder.group_identifier.is_none() {
+        builder.group_identifier = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn service_level_indicator_metric_correct_errors(
     mut builder: crate::types::builders::ServiceLevelIndicatorMetricBuilder,
 ) -> crate::types::builders::ServiceLevelIndicatorMetricBuilder {
@@ -469,6 +568,18 @@ pub(crate) fn window_correct_errors(mut builder: crate::types::builders::WindowB
     builder
 }
 
+pub(crate) fn attribute_filter_correct_errors(
+    mut builder: crate::types::builders::AttributeFilterBuilder,
+) -> crate::types::builders::AttributeFilterBuilder {
+    if builder.attribute_filter_name.is_none() {
+        builder.attribute_filter_name = Some(Default::default())
+    }
+    if builder.attribute_filter_values.is_none() {
+        builder.attribute_filter_values = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn calendar_interval_correct_errors(
     mut builder: crate::types::builders::CalendarIntervalBuilder,
 ) -> crate::types::builders::CalendarIntervalBuilder {
@@ -480,6 +591,28 @@ pub(crate) fn calendar_interval_correct_errors(
     }
     if builder.duration.is_none() {
         builder.duration = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn change_event_correct_errors(mut builder: crate::types::builders::ChangeEventBuilder) -> crate::types::builders::ChangeEventBuilder {
+    if builder.timestamp.is_none() {
+        builder.timestamp = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.account_id.is_none() {
+        builder.account_id = Some(Default::default())
+    }
+    if builder.region.is_none() {
+        builder.region = Some(Default::default())
+    }
+    if builder.entity.is_none() {
+        builder.entity = Some(Default::default())
+    }
+    if builder.change_event_type.is_none() {
+        builder.change_event_type = "no value was set".parse::<crate::types::ChangeEventType>().ok()
+    }
+    if builder.event_id.is_none() {
+        builder.event_id = Some(Default::default())
     }
     builder
 }
@@ -511,6 +644,19 @@ pub(crate) fn metric_data_query_correct_errors(
 ) -> crate::types::builders::MetricDataQueryBuilder {
     if builder.id.is_none() {
         builder.id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn node_correct_errors(mut builder: crate::types::builders::NodeBuilder) -> crate::types::builders::NodeBuilder {
+    if builder.key_attributes.is_none() {
+        builder.key_attributes = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.node_id.is_none() {
+        builder.node_id = Some(Default::default())
     }
     builder
 }

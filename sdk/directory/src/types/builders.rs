@@ -7,6 +7,10 @@ pub use crate::types::_hybrid_customer_instances_settings::HybridCustomerInstanc
 
 pub use crate::types::_hybrid_administrator_account_update::HybridAdministratorAccountUpdateBuilder;
 
+pub use crate::types::_network_update_settings::NetworkUpdateSettingsBuilder;
+
+pub use crate::types::_directory_size_update_settings::DirectorySizeUpdateSettingsBuilder;
+
 pub use crate::types::_os_update_settings::OsUpdateSettingsBuilder;
 
 pub use crate::types::_unshare_target::UnshareTargetBuilder;

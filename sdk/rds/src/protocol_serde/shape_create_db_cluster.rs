@@ -324,6 +324,21 @@ pub fn de_create_db_cluster_http_error(
             }
             tmp
         }),
+        "NetworkTypeNotSupported" => crate::operation::create_db_cluster::CreateDBClusterError::NetworkTypeNotSupported({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::NetworkTypeNotSupportedBuilder::default();
+                output = crate::protocol_serde::shape_network_type_not_supported::de_network_type_not_supported_xml_err(_response_body, output)
+                    .map_err(crate::operation::create_db_cluster::CreateDBClusterError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "OptionGroupNotFoundFault" => crate::operation::create_db_cluster::CreateDBClusterError::OptionGroupNotFoundFault({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -346,6 +361,24 @@ pub fn de_create_db_cluster_http_error(
                 let mut output = crate::types::error::builders::StorageQuotaExceededFaultBuilder::default();
                 output = crate::protocol_serde::shape_storage_quota_exceeded_fault::de_storage_quota_exceeded_fault_xml_err(_response_body, output)
                     .map_err(crate::operation::create_db_cluster::CreateDBClusterError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "StorageTypeNotSupported" => crate::operation::create_db_cluster::CreateDBClusterError::StorageTypeNotSupportedFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::StorageTypeNotSupportedFaultBuilder::default();
+                output = crate::protocol_serde::shape_storage_type_not_supported_fault::de_storage_type_not_supported_fault_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::create_db_cluster::CreateDBClusterError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };

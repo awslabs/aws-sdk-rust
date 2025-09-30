@@ -2,7 +2,7 @@
 
 /// <p>This data type is used as a response element in the <code>ModifyDBInstance</code> operation and contains changes that will be applied during the next maintenance window.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct PendingModifiedValues {
     /// <p>The name of the compute and memory capacity class for the DB instance.</p>
     pub db_instance_class: ::std::option::Option<::std::string::String>,
@@ -23,6 +23,8 @@ pub struct PendingModifiedValues {
     pub license_model: ::std::option::Option<::std::string::String>,
     /// <p>The Provisioned IOPS value for the DB instance.</p>
     pub iops: ::std::option::Option<i32>,
+    /// <p>The storage throughput of the DB instance.</p>
+    pub storage_throughput: ::std::option::Option<i32>,
     /// <p>The database identifier for the DB instance.</p>
     pub db_instance_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The storage type of the DB instance.</p>
@@ -36,20 +38,18 @@ pub struct PendingModifiedValues {
     pub pending_cloudwatch_logs_exports: ::std::option::Option<crate::types::PendingCloudwatchLogsExports>,
     /// <p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.</p>
     pub processor_features: ::std::option::Option<::std::vec::Vec<crate::types::ProcessorFeature>>,
-    /// <p>Indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled.</p>
-    pub iam_database_authentication_enabled: ::std::option::Option<bool>,
     /// <p>The automation mode of the RDS Custom DB instance: <code>full</code> or <code>all-paused</code>. If <code>full</code>, the DB instance automates monitoring and instance recovery. If <code>all-paused</code>, the instance pauses automation for the duration set by <code>--resume-full-automation-mode-minutes</code>.</p>
     pub automation_mode: ::std::option::Option<crate::types::AutomationMode>,
     /// <p>The number of minutes to pause the automation. When the time period ends, RDS Custom resumes full automation. The minimum value is 60 (default). The maximum value is 1,440.</p>
     pub resume_full_automation_mode_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The storage throughput of the DB instance.</p>
-    pub storage_throughput: ::std::option::Option<i32>,
-    /// <p>The database engine of the DB instance.</p>
-    pub engine: ::std::option::Option<::std::string::String>,
-    /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.&gt;</p>
-    pub dedicated_log_volume: ::std::option::Option<bool>,
     /// <p>Indicates whether the DB instance will change to the multi-tenant configuration (TRUE) or the single-tenant configuration (FALSE).</p>
     pub multi_tenant: ::std::option::Option<bool>,
+    /// <p>Indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled.</p>
+    pub iam_database_authentication_enabled: ::std::option::Option<bool>,
+    /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.&gt;</p>
+    pub dedicated_log_volume: ::std::option::Option<bool>,
+    /// <p>The database engine of the DB instance.</p>
+    pub engine: ::std::option::Option<::std::string::String>,
 }
 impl PendingModifiedValues {
     /// <p>The name of the compute and memory capacity class for the DB instance.</p>
@@ -89,6 +89,10 @@ impl PendingModifiedValues {
     pub fn iops(&self) -> ::std::option::Option<i32> {
         self.iops
     }
+    /// <p>The storage throughput of the DB instance.</p>
+    pub fn storage_throughput(&self) -> ::std::option::Option<i32> {
+        self.storage_throughput
+    }
     /// <p>The database identifier for the DB instance.</p>
     pub fn db_instance_identifier(&self) -> ::std::option::Option<&str> {
         self.db_instance_identifier.as_deref()
@@ -116,10 +120,6 @@ impl PendingModifiedValues {
     pub fn processor_features(&self) -> &[crate::types::ProcessorFeature] {
         self.processor_features.as_deref().unwrap_or_default()
     }
-    /// <p>Indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled.</p>
-    pub fn iam_database_authentication_enabled(&self) -> ::std::option::Option<bool> {
-        self.iam_database_authentication_enabled
-    }
     /// <p>The automation mode of the RDS Custom DB instance: <code>full</code> or <code>all-paused</code>. If <code>full</code>, the DB instance automates monitoring and instance recovery. If <code>all-paused</code>, the instance pauses automation for the duration set by <code>--resume-full-automation-mode-minutes</code>.</p>
     pub fn automation_mode(&self) -> ::std::option::Option<&crate::types::AutomationMode> {
         self.automation_mode.as_ref()
@@ -128,21 +128,49 @@ impl PendingModifiedValues {
     pub fn resume_full_automation_mode_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.resume_full_automation_mode_time.as_ref()
     }
-    /// <p>The storage throughput of the DB instance.</p>
-    pub fn storage_throughput(&self) -> ::std::option::Option<i32> {
-        self.storage_throughput
+    /// <p>Indicates whether the DB instance will change to the multi-tenant configuration (TRUE) or the single-tenant configuration (FALSE).</p>
+    pub fn multi_tenant(&self) -> ::std::option::Option<bool> {
+        self.multi_tenant
     }
-    /// <p>The database engine of the DB instance.</p>
-    pub fn engine(&self) -> ::std::option::Option<&str> {
-        self.engine.as_deref()
+    /// <p>Indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled.</p>
+    pub fn iam_database_authentication_enabled(&self) -> ::std::option::Option<bool> {
+        self.iam_database_authentication_enabled
     }
     /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.&gt;</p>
     pub fn dedicated_log_volume(&self) -> ::std::option::Option<bool> {
         self.dedicated_log_volume
     }
-    /// <p>Indicates whether the DB instance will change to the multi-tenant configuration (TRUE) or the single-tenant configuration (FALSE).</p>
-    pub fn multi_tenant(&self) -> ::std::option::Option<bool> {
-        self.multi_tenant
+    /// <p>The database engine of the DB instance.</p>
+    pub fn engine(&self) -> ::std::option::Option<&str> {
+        self.engine.as_deref()
+    }
+}
+impl ::std::fmt::Debug for PendingModifiedValues {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("PendingModifiedValues");
+        formatter.field("db_instance_class", &self.db_instance_class);
+        formatter.field("allocated_storage", &self.allocated_storage);
+        formatter.field("master_user_password", &"*** Sensitive Data Redacted ***");
+        formatter.field("port", &self.port);
+        formatter.field("backup_retention_period", &self.backup_retention_period);
+        formatter.field("multi_az", &self.multi_az);
+        formatter.field("engine_version", &self.engine_version);
+        formatter.field("license_model", &self.license_model);
+        formatter.field("iops", &self.iops);
+        formatter.field("storage_throughput", &self.storage_throughput);
+        formatter.field("db_instance_identifier", &self.db_instance_identifier);
+        formatter.field("storage_type", &self.storage_type);
+        formatter.field("ca_certificate_identifier", &self.ca_certificate_identifier);
+        formatter.field("db_subnet_group_name", &self.db_subnet_group_name);
+        formatter.field("pending_cloudwatch_logs_exports", &self.pending_cloudwatch_logs_exports);
+        formatter.field("processor_features", &self.processor_features);
+        formatter.field("automation_mode", &self.automation_mode);
+        formatter.field("resume_full_automation_mode_time", &self.resume_full_automation_mode_time);
+        formatter.field("multi_tenant", &self.multi_tenant);
+        formatter.field("iam_database_authentication_enabled", &self.iam_database_authentication_enabled);
+        formatter.field("dedicated_log_volume", &self.dedicated_log_volume);
+        formatter.field("engine", &self.engine);
+        formatter.finish()
     }
 }
 impl PendingModifiedValues {
@@ -153,7 +181,7 @@ impl PendingModifiedValues {
 }
 
 /// A builder for [`PendingModifiedValues`](crate::types::PendingModifiedValues).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct PendingModifiedValuesBuilder {
     pub(crate) db_instance_class: ::std::option::Option<::std::string::String>,
@@ -165,19 +193,19 @@ pub struct PendingModifiedValuesBuilder {
     pub(crate) engine_version: ::std::option::Option<::std::string::String>,
     pub(crate) license_model: ::std::option::Option<::std::string::String>,
     pub(crate) iops: ::std::option::Option<i32>,
+    pub(crate) storage_throughput: ::std::option::Option<i32>,
     pub(crate) db_instance_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) storage_type: ::std::option::Option<::std::string::String>,
     pub(crate) ca_certificate_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) db_subnet_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) pending_cloudwatch_logs_exports: ::std::option::Option<crate::types::PendingCloudwatchLogsExports>,
     pub(crate) processor_features: ::std::option::Option<::std::vec::Vec<crate::types::ProcessorFeature>>,
-    pub(crate) iam_database_authentication_enabled: ::std::option::Option<bool>,
     pub(crate) automation_mode: ::std::option::Option<crate::types::AutomationMode>,
     pub(crate) resume_full_automation_mode_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) storage_throughput: ::std::option::Option<i32>,
-    pub(crate) engine: ::std::option::Option<::std::string::String>,
-    pub(crate) dedicated_log_volume: ::std::option::Option<bool>,
     pub(crate) multi_tenant: ::std::option::Option<bool>,
+    pub(crate) iam_database_authentication_enabled: ::std::option::Option<bool>,
+    pub(crate) dedicated_log_volume: ::std::option::Option<bool>,
+    pub(crate) engine: ::std::option::Option<::std::string::String>,
 }
 impl PendingModifiedValuesBuilder {
     /// <p>The name of the compute and memory capacity class for the DB instance.</p>
@@ -309,6 +337,20 @@ impl PendingModifiedValuesBuilder {
     pub fn get_iops(&self) -> &::std::option::Option<i32> {
         &self.iops
     }
+    /// <p>The storage throughput of the DB instance.</p>
+    pub fn storage_throughput(mut self, input: i32) -> Self {
+        self.storage_throughput = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The storage throughput of the DB instance.</p>
+    pub fn set_storage_throughput(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.storage_throughput = input;
+        self
+    }
+    /// <p>The storage throughput of the DB instance.</p>
+    pub fn get_storage_throughput(&self) -> &::std::option::Option<i32> {
+        &self.storage_throughput
+    }
     /// <p>The database identifier for the DB instance.</p>
     pub fn db_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_instance_identifier = ::std::option::Option::Some(input.into());
@@ -402,20 +444,6 @@ impl PendingModifiedValuesBuilder {
     pub fn get_processor_features(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProcessorFeature>> {
         &self.processor_features
     }
-    /// <p>Indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled.</p>
-    pub fn iam_database_authentication_enabled(mut self, input: bool) -> Self {
-        self.iam_database_authentication_enabled = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>Indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled.</p>
-    pub fn set_iam_database_authentication_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.iam_database_authentication_enabled = input;
-        self
-    }
-    /// <p>Indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled.</p>
-    pub fn get_iam_database_authentication_enabled(&self) -> &::std::option::Option<bool> {
-        &self.iam_database_authentication_enabled
-    }
     /// <p>The automation mode of the RDS Custom DB instance: <code>full</code> or <code>all-paused</code>. If <code>full</code>, the DB instance automates monitoring and instance recovery. If <code>all-paused</code>, the instance pauses automation for the duration set by <code>--resume-full-automation-mode-minutes</code>.</p>
     pub fn automation_mode(mut self, input: crate::types::AutomationMode) -> Self {
         self.automation_mode = ::std::option::Option::Some(input);
@@ -444,33 +472,33 @@ impl PendingModifiedValuesBuilder {
     pub fn get_resume_full_automation_mode_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.resume_full_automation_mode_time
     }
-    /// <p>The storage throughput of the DB instance.</p>
-    pub fn storage_throughput(mut self, input: i32) -> Self {
-        self.storage_throughput = ::std::option::Option::Some(input);
+    /// <p>Indicates whether the DB instance will change to the multi-tenant configuration (TRUE) or the single-tenant configuration (FALSE).</p>
+    pub fn multi_tenant(mut self, input: bool) -> Self {
+        self.multi_tenant = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The storage throughput of the DB instance.</p>
-    pub fn set_storage_throughput(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.storage_throughput = input;
+    /// <p>Indicates whether the DB instance will change to the multi-tenant configuration (TRUE) or the single-tenant configuration (FALSE).</p>
+    pub fn set_multi_tenant(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.multi_tenant = input;
         self
     }
-    /// <p>The storage throughput of the DB instance.</p>
-    pub fn get_storage_throughput(&self) -> &::std::option::Option<i32> {
-        &self.storage_throughput
+    /// <p>Indicates whether the DB instance will change to the multi-tenant configuration (TRUE) or the single-tenant configuration (FALSE).</p>
+    pub fn get_multi_tenant(&self) -> &::std::option::Option<bool> {
+        &self.multi_tenant
     }
-    /// <p>The database engine of the DB instance.</p>
-    pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.engine = ::std::option::Option::Some(input.into());
+    /// <p>Indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled.</p>
+    pub fn iam_database_authentication_enabled(mut self, input: bool) -> Self {
+        self.iam_database_authentication_enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The database engine of the DB instance.</p>
-    pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.engine = input;
+    /// <p>Indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled.</p>
+    pub fn set_iam_database_authentication_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.iam_database_authentication_enabled = input;
         self
     }
-    /// <p>The database engine of the DB instance.</p>
-    pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
-        &self.engine
+    /// <p>Indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled.</p>
+    pub fn get_iam_database_authentication_enabled(&self) -> &::std::option::Option<bool> {
+        &self.iam_database_authentication_enabled
     }
     /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.&gt;</p>
     pub fn dedicated_log_volume(mut self, input: bool) -> Self {
@@ -486,19 +514,19 @@ impl PendingModifiedValuesBuilder {
     pub fn get_dedicated_log_volume(&self) -> &::std::option::Option<bool> {
         &self.dedicated_log_volume
     }
-    /// <p>Indicates whether the DB instance will change to the multi-tenant configuration (TRUE) or the single-tenant configuration (FALSE).</p>
-    pub fn multi_tenant(mut self, input: bool) -> Self {
-        self.multi_tenant = ::std::option::Option::Some(input);
+    /// <p>The database engine of the DB instance.</p>
+    pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.engine = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Indicates whether the DB instance will change to the multi-tenant configuration (TRUE) or the single-tenant configuration (FALSE).</p>
-    pub fn set_multi_tenant(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.multi_tenant = input;
+    /// <p>The database engine of the DB instance.</p>
+    pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.engine = input;
         self
     }
-    /// <p>Indicates whether the DB instance will change to the multi-tenant configuration (TRUE) or the single-tenant configuration (FALSE).</p>
-    pub fn get_multi_tenant(&self) -> &::std::option::Option<bool> {
-        &self.multi_tenant
+    /// <p>The database engine of the DB instance.</p>
+    pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine
     }
     /// Consumes the builder and constructs a [`PendingModifiedValues`](crate::types::PendingModifiedValues).
     pub fn build(self) -> crate::types::PendingModifiedValues {
@@ -512,19 +540,47 @@ impl PendingModifiedValuesBuilder {
             engine_version: self.engine_version,
             license_model: self.license_model,
             iops: self.iops,
+            storage_throughput: self.storage_throughput,
             db_instance_identifier: self.db_instance_identifier,
             storage_type: self.storage_type,
             ca_certificate_identifier: self.ca_certificate_identifier,
             db_subnet_group_name: self.db_subnet_group_name,
             pending_cloudwatch_logs_exports: self.pending_cloudwatch_logs_exports,
             processor_features: self.processor_features,
-            iam_database_authentication_enabled: self.iam_database_authentication_enabled,
             automation_mode: self.automation_mode,
             resume_full_automation_mode_time: self.resume_full_automation_mode_time,
-            storage_throughput: self.storage_throughput,
-            engine: self.engine,
-            dedicated_log_volume: self.dedicated_log_volume,
             multi_tenant: self.multi_tenant,
+            iam_database_authentication_enabled: self.iam_database_authentication_enabled,
+            dedicated_log_volume: self.dedicated_log_volume,
+            engine: self.engine,
         }
+    }
+}
+impl ::std::fmt::Debug for PendingModifiedValuesBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("PendingModifiedValuesBuilder");
+        formatter.field("db_instance_class", &self.db_instance_class);
+        formatter.field("allocated_storage", &self.allocated_storage);
+        formatter.field("master_user_password", &"*** Sensitive Data Redacted ***");
+        formatter.field("port", &self.port);
+        formatter.field("backup_retention_period", &self.backup_retention_period);
+        formatter.field("multi_az", &self.multi_az);
+        formatter.field("engine_version", &self.engine_version);
+        formatter.field("license_model", &self.license_model);
+        formatter.field("iops", &self.iops);
+        formatter.field("storage_throughput", &self.storage_throughput);
+        formatter.field("db_instance_identifier", &self.db_instance_identifier);
+        formatter.field("storage_type", &self.storage_type);
+        formatter.field("ca_certificate_identifier", &self.ca_certificate_identifier);
+        formatter.field("db_subnet_group_name", &self.db_subnet_group_name);
+        formatter.field("pending_cloudwatch_logs_exports", &self.pending_cloudwatch_logs_exports);
+        formatter.field("processor_features", &self.processor_features);
+        formatter.field("automation_mode", &self.automation_mode);
+        formatter.field("resume_full_automation_mode_time", &self.resume_full_automation_mode_time);
+        formatter.field("multi_tenant", &self.multi_tenant);
+        formatter.field("iam_database_authentication_enabled", &self.iam_database_authentication_enabled);
+        formatter.field("dedicated_log_volume", &self.dedicated_log_volume);
+        formatter.field("engine", &self.engine);
+        formatter.finish()
     }
 }

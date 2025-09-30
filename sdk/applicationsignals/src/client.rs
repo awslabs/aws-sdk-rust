@@ -169,11 +169,17 @@ mod create_service_level_objective;
 /// ```
 pub mod customize;
 
+mod delete_grouping_configuration;
+
 mod delete_service_level_objective;
 
 mod get_service;
 
 mod get_service_level_objective;
+
+mod list_audit_findings;
+
+mod list_grouping_attribute_definitions;
 
 mod list_service_dependencies;
 
@@ -185,9 +191,13 @@ mod list_service_level_objectives;
 
 mod list_service_operations;
 
+mod list_service_states;
+
 mod list_services;
 
 mod list_tags_for_resource;
+
+mod put_grouping_configuration;
 
 mod start_discovery;
 

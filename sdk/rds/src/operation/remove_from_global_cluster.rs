@@ -260,6 +260,8 @@ pub enum RemoveFromGlobalClusterError {
     DbClusterNotFoundFault(crate::types::error::DbClusterNotFoundFault),
     /// <p>The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global database cluster.</p>
     GlobalClusterNotFoundFault(crate::types::error::GlobalClusterNotFoundFault),
+    /// <p>The requested operation can't be performed while the cluster is in this state.</p>
+    InvalidDbClusterStateFault(crate::types::error::InvalidDbClusterStateFault),
     /// <p>The global cluster is in an invalid state and can't perform the requested operation.</p>
     InvalidGlobalClusterStateFault(crate::types::error::InvalidGlobalClusterStateFault),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -297,6 +299,7 @@ impl RemoveFromGlobalClusterError {
         match self {
             Self::DbClusterNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::GlobalClusterNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidDbClusterStateFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidGlobalClusterStateFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
@@ -309,6 +312,10 @@ impl RemoveFromGlobalClusterError {
     pub fn is_global_cluster_not_found_fault(&self) -> bool {
         matches!(self, Self::GlobalClusterNotFoundFault(_))
     }
+    /// Returns `true` if the error kind is `RemoveFromGlobalClusterError::InvalidDbClusterStateFault`.
+    pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
+        matches!(self, Self::InvalidDbClusterStateFault(_))
+    }
     /// Returns `true` if the error kind is `RemoveFromGlobalClusterError::InvalidGlobalClusterStateFault`.
     pub fn is_invalid_global_cluster_state_fault(&self) -> bool {
         matches!(self, Self::InvalidGlobalClusterStateFault(_))
@@ -319,6 +326,7 @@ impl ::std::error::Error for RemoveFromGlobalClusterError {
         match self {
             Self::DbClusterNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::GlobalClusterNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidDbClusterStateFault(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidGlobalClusterStateFault(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
@@ -329,6 +337,7 @@ impl ::std::fmt::Display for RemoveFromGlobalClusterError {
         match self {
             Self::DbClusterNotFoundFault(_inner) => _inner.fmt(f),
             Self::GlobalClusterNotFoundFault(_inner) => _inner.fmt(f),
+            Self::InvalidDbClusterStateFault(_inner) => _inner.fmt(f),
             Self::InvalidGlobalClusterStateFault(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
@@ -353,6 +362,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for RemoveFromGlo
         match self {
             Self::DbClusterNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::GlobalClusterNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidDbClusterStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidGlobalClusterStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }

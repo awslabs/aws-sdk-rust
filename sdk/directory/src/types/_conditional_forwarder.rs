@@ -8,6 +8,8 @@ pub struct ConditionalForwarder {
     pub remote_domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The IP addresses of the remote DNS server associated with RemoteDomainName. This is the IP address of the DNS server that your conditional forwarder points to.</p>
     pub dns_ip_addrs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The IPv6 addresses of the remote DNS server associated with RemoteDomainName. This is the IPv6 address of the DNS server that your conditional forwarder points to.</p>
+    pub dns_ipv6_addrs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The replication scope of the conditional forwarder. The only allowed value is <code>Domain</code>, which will replicate the conditional forwarder to all of the domain controllers for your Amazon Web Services directory.</p>
     pub replication_scope: ::std::option::Option<crate::types::ReplicationScope>,
 }
@@ -21,6 +23,12 @@ impl ConditionalForwarder {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dns_ip_addrs.is_none()`.
     pub fn dns_ip_addrs(&self) -> &[::std::string::String] {
         self.dns_ip_addrs.as_deref().unwrap_or_default()
+    }
+    /// <p>The IPv6 addresses of the remote DNS server associated with RemoteDomainName. This is the IPv6 address of the DNS server that your conditional forwarder points to.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dns_ipv6_addrs.is_none()`.
+    pub fn dns_ipv6_addrs(&self) -> &[::std::string::String] {
+        self.dns_ipv6_addrs.as_deref().unwrap_or_default()
     }
     /// <p>The replication scope of the conditional forwarder. The only allowed value is <code>Domain</code>, which will replicate the conditional forwarder to all of the domain controllers for your Amazon Web Services directory.</p>
     pub fn replication_scope(&self) -> ::std::option::Option<&crate::types::ReplicationScope> {
@@ -40,6 +48,7 @@ impl ConditionalForwarder {
 pub struct ConditionalForwarderBuilder {
     pub(crate) remote_domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) dns_ip_addrs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) dns_ipv6_addrs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) replication_scope: ::std::option::Option<crate::types::ReplicationScope>,
 }
 impl ConditionalForwarderBuilder {
@@ -77,6 +86,26 @@ impl ConditionalForwarderBuilder {
     pub fn get_dns_ip_addrs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.dns_ip_addrs
     }
+    /// Appends an item to `dns_ipv6_addrs`.
+    ///
+    /// To override the contents of this collection use [`set_dns_ipv6_addrs`](Self::set_dns_ipv6_addrs).
+    ///
+    /// <p>The IPv6 addresses of the remote DNS server associated with RemoteDomainName. This is the IPv6 address of the DNS server that your conditional forwarder points to.</p>
+    pub fn dns_ipv6_addrs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.dns_ipv6_addrs.unwrap_or_default();
+        v.push(input.into());
+        self.dns_ipv6_addrs = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The IPv6 addresses of the remote DNS server associated with RemoteDomainName. This is the IPv6 address of the DNS server that your conditional forwarder points to.</p>
+    pub fn set_dns_ipv6_addrs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.dns_ipv6_addrs = input;
+        self
+    }
+    /// <p>The IPv6 addresses of the remote DNS server associated with RemoteDomainName. This is the IPv6 address of the DNS server that your conditional forwarder points to.</p>
+    pub fn get_dns_ipv6_addrs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.dns_ipv6_addrs
+    }
     /// <p>The replication scope of the conditional forwarder. The only allowed value is <code>Domain</code>, which will replicate the conditional forwarder to all of the domain controllers for your Amazon Web Services directory.</p>
     pub fn replication_scope(mut self, input: crate::types::ReplicationScope) -> Self {
         self.replication_scope = ::std::option::Option::Some(input);
@@ -96,6 +125,7 @@ impl ConditionalForwarderBuilder {
         crate::types::ConditionalForwarder {
             remote_domain_name: self.remote_domain_name,
             dns_ip_addrs: self.dns_ip_addrs,
+            dns_ipv6_addrs: self.dns_ipv6_addrs,
             replication_scope: self.replication_scope,
         }
     }

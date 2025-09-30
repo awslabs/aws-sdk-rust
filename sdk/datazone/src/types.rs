@@ -293,6 +293,8 @@ pub use crate::types::_spark_glue_args::SparkGlueArgs;
 
 pub use crate::types::_spark_emr_properties_output::SparkEmrPropertiesOutput;
 
+pub use crate::types::_managed_endpoint_credentials::ManagedEndpointCredentials;
+
 pub use crate::types::_governance_type::GovernanceType;
 
 pub use crate::types::_username_password::UsernamePassword;
@@ -1132,6 +1134,8 @@ mod _listing_status;
 mod _listing_summary;
 
 mod _listing_summary_item;
+
+mod _managed_endpoint_credentials;
 
 mod _managed_policy_type;
 

@@ -748,15 +748,30 @@ impl From<crate::operation::add_tags_to_resource::AddTagsToResourceError> for Er
             }
             crate::operation::add_tags_to_resource::AddTagsToResourceError::DbClusterNotFoundFault(inner) => Error::DbClusterNotFoundFault(inner),
             crate::operation::add_tags_to_resource::AddTagsToResourceError::DbInstanceNotFoundFault(inner) => Error::DbInstanceNotFoundFault(inner),
+            crate::operation::add_tags_to_resource::AddTagsToResourceError::DbProxyEndpointNotFoundFault(inner) => {
+                Error::DbProxyEndpointNotFoundFault(inner)
+            }
             crate::operation::add_tags_to_resource::AddTagsToResourceError::DbProxyNotFoundFault(inner) => Error::DbProxyNotFoundFault(inner),
             crate::operation::add_tags_to_resource::AddTagsToResourceError::DbProxyTargetGroupNotFoundFault(inner) => {
                 Error::DbProxyTargetGroupNotFoundFault(inner)
+            }
+            crate::operation::add_tags_to_resource::AddTagsToResourceError::DbShardGroupNotFoundFault(inner) => {
+                Error::DbShardGroupNotFoundFault(inner)
             }
             crate::operation::add_tags_to_resource::AddTagsToResourceError::DbSnapshotNotFoundFault(inner) => Error::DbSnapshotNotFoundFault(inner),
             crate::operation::add_tags_to_resource::AddTagsToResourceError::DbSnapshotTenantDatabaseNotFoundFault(inner) => {
                 Error::DbSnapshotTenantDatabaseNotFoundFault(inner)
             }
             crate::operation::add_tags_to_resource::AddTagsToResourceError::IntegrationNotFoundFault(inner) => Error::IntegrationNotFoundFault(inner),
+            crate::operation::add_tags_to_resource::AddTagsToResourceError::InvalidDbClusterEndpointStateFault(inner) => {
+                Error::InvalidDbClusterEndpointStateFault(inner)
+            }
+            crate::operation::add_tags_to_resource::AddTagsToResourceError::InvalidDbClusterStateFault(inner) => {
+                Error::InvalidDbClusterStateFault(inner)
+            }
+            crate::operation::add_tags_to_resource::AddTagsToResourceError::InvalidDbInstanceStateFault(inner) => {
+                Error::InvalidDbInstanceStateFault(inner)
+            }
             crate::operation::add_tags_to_resource::AddTagsToResourceError::TenantDatabaseNotFoundFault(inner) => {
                 Error::TenantDatabaseNotFoundFault(inner)
             }
@@ -1118,6 +1133,9 @@ impl From<crate::operation::create_blue_green_deployment::CreateBlueGreenDeploym
             crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentError::SourceDatabaseNotSupportedFault(inner) => {
                 Error::SourceDatabaseNotSupportedFault(inner)
             }
+            crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentError::StorageQuotaExceededFault(inner) => {
+                Error::StorageQuotaExceededFault(inner)
+            }
             crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1152,11 +1170,17 @@ impl From<crate::operation::create_custom_db_engine_version::CreateCustomDBEngin
             crate::operation::create_custom_db_engine_version::CreateCustomDBEngineVersionError::CustomDbEngineVersionAlreadyExistsFault(inner) => {
                 Error::CustomDbEngineVersionAlreadyExistsFault(inner)
             }
+            crate::operation::create_custom_db_engine_version::CreateCustomDBEngineVersionError::CustomDbEngineVersionNotFoundFault(inner) => {
+                Error::CustomDbEngineVersionNotFoundFault(inner)
+            }
             crate::operation::create_custom_db_engine_version::CreateCustomDBEngineVersionError::CustomDbEngineVersionQuotaExceededFault(inner) => {
                 Error::CustomDbEngineVersionQuotaExceededFault(inner)
             }
             crate::operation::create_custom_db_engine_version::CreateCustomDBEngineVersionError::Ec2ImagePropertiesNotSupportedFault(inner) => {
                 Error::Ec2ImagePropertiesNotSupportedFault(inner)
+            }
+            crate::operation::create_custom_db_engine_version::CreateCustomDBEngineVersionError::InvalidCustomDbEngineVersionStateFault(inner) => {
+                Error::InvalidCustomDbEngineVersionStateFault(inner)
             }
             crate::operation::create_custom_db_engine_version::CreateCustomDBEngineVersionError::KmsKeyNotAccessibleFault(inner) => {
                 Error::KmsKeyNotAccessibleFault(inner)
@@ -1221,8 +1245,12 @@ impl From<crate::operation::create_db_cluster::CreateDBClusterError> for Error {
                 Error::InvalidVpcNetworkStateFault(inner)
             }
             crate::operation::create_db_cluster::CreateDBClusterError::KmsKeyNotAccessibleFault(inner) => Error::KmsKeyNotAccessibleFault(inner),
+            crate::operation::create_db_cluster::CreateDBClusterError::NetworkTypeNotSupported(inner) => Error::NetworkTypeNotSupported(inner),
             crate::operation::create_db_cluster::CreateDBClusterError::OptionGroupNotFoundFault(inner) => Error::OptionGroupNotFoundFault(inner),
             crate::operation::create_db_cluster::CreateDBClusterError::StorageQuotaExceededFault(inner) => Error::StorageQuotaExceededFault(inner),
+            crate::operation::create_db_cluster::CreateDBClusterError::StorageTypeNotSupportedFault(inner) => {
+                Error::StorageTypeNotSupportedFault(inner)
+            }
             crate::operation::create_db_cluster::CreateDBClusterError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1808,6 +1836,10 @@ impl From<crate::operation::create_global_cluster::CreateGlobalClusterError> for
             crate::operation::create_global_cluster::CreateGlobalClusterError::InvalidDbClusterStateFault(inner) => {
                 Error::InvalidDbClusterStateFault(inner)
             }
+            crate::operation::create_global_cluster::CreateGlobalClusterError::InvalidDbShardGroupStateFault(inner) => {
+                Error::InvalidDbShardGroupStateFault(inner)
+            }
+            crate::operation::create_global_cluster::CreateGlobalClusterError::ResourceNotFoundFault(inner) => Error::ResourceNotFoundFault(inner),
             crate::operation::create_global_cluster::CreateGlobalClusterError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -2000,6 +2032,10 @@ impl From<crate::operation::delete_db_cluster::DeleteDBClusterError> for Error {
                 Error::InvalidDbClusterSnapshotStateFault(inner)
             }
             crate::operation::delete_db_cluster::DeleteDBClusterError::InvalidDbClusterStateFault(inner) => Error::InvalidDbClusterStateFault(inner),
+            crate::operation::delete_db_cluster::DeleteDBClusterError::InvalidGlobalClusterStateFault(inner) => {
+                Error::InvalidGlobalClusterStateFault(inner)
+            }
+            crate::operation::delete_db_cluster::DeleteDBClusterError::KmsKeyNotAccessibleFault(inner) => Error::KmsKeyNotAccessibleFault(inner),
             crate::operation::delete_db_cluster::DeleteDBClusterError::SnapshotQuotaExceededFault(inner) => Error::SnapshotQuotaExceededFault(inner),
             crate::operation::delete_db_cluster::DeleteDBClusterError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -2174,6 +2210,7 @@ impl From<crate::operation::delete_db_instance::DeleteDBInstanceError> for Error
             crate::operation::delete_db_instance::DeleteDBInstanceError::InvalidDbInstanceStateFault(inner) => {
                 Error::InvalidDbInstanceStateFault(inner)
             }
+            crate::operation::delete_db_instance::DeleteDBInstanceError::KmsKeyNotAccessibleFault(inner) => Error::KmsKeyNotAccessibleFault(inner),
             crate::operation::delete_db_instance::DeleteDBInstanceError::SnapshotQuotaExceededFault(inner) => {
                 Error::SnapshotQuotaExceededFault(inner)
             }
@@ -2540,6 +2577,9 @@ impl From<crate::operation::delete_tenant_database::DeleteTenantDatabaseError> f
         match err {
             crate::operation::delete_tenant_database::DeleteTenantDatabaseError::DbInstanceNotFoundFault(inner) => {
                 Error::DbInstanceNotFoundFault(inner)
+            }
+            crate::operation::delete_tenant_database::DeleteTenantDatabaseError::DbSnapshotAlreadyExistsFault(inner) => {
+                Error::DbSnapshotAlreadyExistsFault(inner)
             }
             crate::operation::delete_tenant_database::DeleteTenantDatabaseError::InvalidDbInstanceStateFault(inner) => {
                 Error::InvalidDbInstanceStateFault(inner)
@@ -4080,9 +4120,15 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
             crate::operation::list_tags_for_resource::ListTagsForResourceError::DbInstanceNotFoundFault(inner) => {
                 Error::DbInstanceNotFoundFault(inner)
             }
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::DbProxyEndpointNotFoundFault(inner) => {
+                Error::DbProxyEndpointNotFoundFault(inner)
+            }
             crate::operation::list_tags_for_resource::ListTagsForResourceError::DbProxyNotFoundFault(inner) => Error::DbProxyNotFoundFault(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::DbProxyTargetGroupNotFoundFault(inner) => {
                 Error::DbProxyTargetGroupNotFoundFault(inner)
+            }
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::DbShardGroupNotFoundFault(inner) => {
+                Error::DbShardGroupNotFoundFault(inner)
             }
             crate::operation::list_tags_for_resource::ListTagsForResourceError::DbSnapshotNotFoundFault(inner) => {
                 Error::DbSnapshotNotFoundFault(inner)
@@ -4252,6 +4298,9 @@ impl From<crate::operation::modify_db_cluster::ModifyDBClusterError> for Error {
             crate::operation::modify_db_cluster::ModifyDBClusterError::DbInstanceAlreadyExistsFault(inner) => {
                 Error::DbInstanceAlreadyExistsFault(inner)
             }
+            crate::operation::modify_db_cluster::ModifyDBClusterError::DbParameterGroupNotFoundFault(inner) => {
+                Error::DbParameterGroupNotFoundFault(inner)
+            }
             crate::operation::modify_db_cluster::ModifyDBClusterError::DbSubnetGroupNotFoundFault(inner) => Error::DbSubnetGroupNotFoundFault(inner),
             crate::operation::modify_db_cluster::ModifyDBClusterError::DomainNotFoundFault(inner) => Error::DomainNotFoundFault(inner),
             crate::operation::modify_db_cluster::ModifyDBClusterError::InvalidDbClusterStateFault(inner) => Error::InvalidDbClusterStateFault(inner),
@@ -4264,14 +4313,22 @@ impl From<crate::operation::modify_db_cluster::ModifyDBClusterError> for Error {
             crate::operation::modify_db_cluster::ModifyDBClusterError::InvalidDbSubnetGroupStateFault(inner) => {
                 Error::InvalidDbSubnetGroupStateFault(inner)
             }
+            crate::operation::modify_db_cluster::ModifyDBClusterError::InvalidGlobalClusterStateFault(inner) => {
+                Error::InvalidGlobalClusterStateFault(inner)
+            }
             crate::operation::modify_db_cluster::ModifyDBClusterError::InvalidSubnet(inner) => Error::InvalidSubnet(inner),
             crate::operation::modify_db_cluster::ModifyDBClusterError::InvalidVpcNetworkStateFault(inner) => {
                 Error::InvalidVpcNetworkStateFault(inner)
             }
+            crate::operation::modify_db_cluster::ModifyDBClusterError::KmsKeyNotAccessibleFault(inner) => Error::KmsKeyNotAccessibleFault(inner),
+            crate::operation::modify_db_cluster::ModifyDBClusterError::NetworkTypeNotSupported(inner) => Error::NetworkTypeNotSupported(inner),
             crate::operation::modify_db_cluster::ModifyDBClusterError::OptionGroupNotFoundFault(inner) => Error::OptionGroupNotFoundFault(inner),
             crate::operation::modify_db_cluster::ModifyDBClusterError::StorageQuotaExceededFault(inner) => Error::StorageQuotaExceededFault(inner),
             crate::operation::modify_db_cluster::ModifyDBClusterError::StorageTypeNotAvailableFault(inner) => {
                 Error::StorageTypeNotAvailableFault(inner)
+            }
+            crate::operation::modify_db_cluster::ModifyDBClusterError::StorageTypeNotSupportedFault(inner) => {
+                Error::StorageTypeNotSupportedFault(inner)
             }
             crate::operation::modify_db_cluster::ModifyDBClusterError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -4658,6 +4715,10 @@ impl From<crate::operation::modify_db_snapshot::ModifyDBSnapshotError> for Error
     fn from(err: crate::operation::modify_db_snapshot::ModifyDBSnapshotError) -> Self {
         match err {
             crate::operation::modify_db_snapshot::ModifyDBSnapshotError::DbSnapshotNotFoundFault(inner) => Error::DbSnapshotNotFoundFault(inner),
+            crate::operation::modify_db_snapshot::ModifyDBSnapshotError::InvalidDbSnapshotStateFault(inner) => {
+                Error::InvalidDbSnapshotStateFault(inner)
+            }
+            crate::operation::modify_db_snapshot::ModifyDBSnapshotError::KmsKeyNotAccessibleFault(inner) => Error::KmsKeyNotAccessibleFault(inner),
             crate::operation::modify_db_snapshot::ModifyDBSnapshotError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -4720,6 +4781,9 @@ impl From<crate::operation::modify_db_subnet_group::ModifyDBSubnetGroupError> fo
             }
             crate::operation::modify_db_subnet_group::ModifyDBSubnetGroupError::DbSubnetQuotaExceededFault(inner) => {
                 Error::DbSubnetQuotaExceededFault(inner)
+            }
+            crate::operation::modify_db_subnet_group::ModifyDBSubnetGroupError::InvalidDbSubnetGroupStateFault(inner) => {
+                Error::InvalidDbSubnetGroupStateFault(inner)
             }
             crate::operation::modify_db_subnet_group::ModifyDBSubnetGroupError::InvalidSubnet(inner) => Error::InvalidSubnet(inner),
             crate::operation::modify_db_subnet_group::ModifyDBSubnetGroupError::SubnetAlreadyInUse(inner) => Error::SubnetAlreadyInUse(inner),
@@ -5035,6 +5099,7 @@ impl From<crate::operation::reboot_db_instance::RebootDBInstanceError> for Error
             crate::operation::reboot_db_instance::RebootDBInstanceError::InvalidDbInstanceStateFault(inner) => {
                 Error::InvalidDbInstanceStateFault(inner)
             }
+            crate::operation::reboot_db_instance::RebootDBInstanceError::KmsKeyNotAccessibleFault(inner) => Error::KmsKeyNotAccessibleFault(inner),
             crate::operation::reboot_db_instance::RebootDBInstanceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -5142,6 +5207,9 @@ impl From<crate::operation::remove_from_global_cluster::RemoveFromGlobalClusterE
             }
             crate::operation::remove_from_global_cluster::RemoveFromGlobalClusterError::GlobalClusterNotFoundFault(inner) => {
                 Error::GlobalClusterNotFoundFault(inner)
+            }
+            crate::operation::remove_from_global_cluster::RemoveFromGlobalClusterError::InvalidDbClusterStateFault(inner) => {
+                Error::InvalidDbClusterStateFault(inner)
             }
             crate::operation::remove_from_global_cluster::RemoveFromGlobalClusterError::InvalidGlobalClusterStateFault(inner) => {
                 Error::InvalidGlobalClusterStateFault(inner)
@@ -5285,11 +5353,17 @@ impl From<crate::operation::remove_tags_from_resource::RemoveTagsFromResourceErr
             crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::DbInstanceNotFoundFault(inner) => {
                 Error::DbInstanceNotFoundFault(inner)
             }
+            crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::DbProxyEndpointNotFoundFault(inner) => {
+                Error::DbProxyEndpointNotFoundFault(inner)
+            }
             crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::DbProxyNotFoundFault(inner) => {
                 Error::DbProxyNotFoundFault(inner)
             }
             crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::DbProxyTargetGroupNotFoundFault(inner) => {
                 Error::DbProxyTargetGroupNotFoundFault(inner)
+            }
+            crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::DbShardGroupNotFoundFault(inner) => {
+                Error::DbShardGroupNotFoundFault(inner)
             }
             crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::DbSnapshotNotFoundFault(inner) => {
                 Error::DbSnapshotNotFoundFault(inner)
@@ -5299,6 +5373,15 @@ impl From<crate::operation::remove_tags_from_resource::RemoveTagsFromResourceErr
             }
             crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::IntegrationNotFoundFault(inner) => {
                 Error::IntegrationNotFoundFault(inner)
+            }
+            crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::InvalidDbClusterEndpointStateFault(inner) => {
+                Error::InvalidDbClusterEndpointStateFault(inner)
+            }
+            crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::InvalidDbClusterStateFault(inner) => {
+                Error::InvalidDbClusterStateFault(inner)
+            }
+            crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::InvalidDbInstanceStateFault(inner) => {
+                Error::InvalidDbInstanceStateFault(inner)
             }
             crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::TenantDatabaseNotFoundFault(inner) => {
                 Error::TenantDatabaseNotFoundFault(inner)
@@ -5427,6 +5510,9 @@ impl From<crate::operation::restore_db_cluster_from_s3::RestoreDBClusterFromS3Er
             crate::operation::restore_db_cluster_from_s3::RestoreDBClusterFromS3Error::KmsKeyNotAccessibleFault(inner) => {
                 Error::KmsKeyNotAccessibleFault(inner)
             }
+            crate::operation::restore_db_cluster_from_s3::RestoreDBClusterFromS3Error::NetworkTypeNotSupported(inner) => {
+                Error::NetworkTypeNotSupported(inner)
+            }
             crate::operation::restore_db_cluster_from_s3::RestoreDBClusterFromS3Error::StorageQuotaExceededFault(inner) => {
                 Error::StorageQuotaExceededFault(inner)
             }
@@ -5515,11 +5601,17 @@ impl From<crate::operation::restore_db_cluster_from_snapshot::RestoreDBClusterFr
             crate::operation::restore_db_cluster_from_snapshot::RestoreDBClusterFromSnapshotError::KmsKeyNotAccessibleFault(inner) => {
                 Error::KmsKeyNotAccessibleFault(inner)
             }
+            crate::operation::restore_db_cluster_from_snapshot::RestoreDBClusterFromSnapshotError::NetworkTypeNotSupported(inner) => {
+                Error::NetworkTypeNotSupported(inner)
+            }
             crate::operation::restore_db_cluster_from_snapshot::RestoreDBClusterFromSnapshotError::OptionGroupNotFoundFault(inner) => {
                 Error::OptionGroupNotFoundFault(inner)
             }
             crate::operation::restore_db_cluster_from_snapshot::RestoreDBClusterFromSnapshotError::StorageQuotaExceededFault(inner) => {
                 Error::StorageQuotaExceededFault(inner)
+            }
+            crate::operation::restore_db_cluster_from_snapshot::RestoreDBClusterFromSnapshotError::StorageTypeNotSupportedFault(inner) => {
+                Error::StorageTypeNotSupportedFault(inner)
             }
             crate::operation::restore_db_cluster_from_snapshot::RestoreDBClusterFromSnapshotError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -5607,11 +5699,17 @@ impl From<crate::operation::restore_db_cluster_to_point_in_time::RestoreDBCluste
             crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTimeError::KmsKeyNotAccessibleFault(inner) => {
                 Error::KmsKeyNotAccessibleFault(inner)
             }
+            crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTimeError::NetworkTypeNotSupported(inner) => {
+                Error::NetworkTypeNotSupported(inner)
+            }
             crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTimeError::OptionGroupNotFoundFault(inner) => {
                 Error::OptionGroupNotFoundFault(inner)
             }
             crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTimeError::StorageQuotaExceededFault(inner) => {
                 Error::StorageQuotaExceededFault(inner)
+            }
+            crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTimeError::StorageTypeNotSupportedFault(inner) => {
+                Error::StorageTypeNotSupportedFault(inner)
             }
             crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTimeError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -6002,6 +6100,7 @@ impl From<crate::operation::start_db_cluster::StartDBClusterError> for Error {
             crate::operation::start_db_cluster::StartDBClusterError::InvalidDbShardGroupStateFault(inner) => {
                 Error::InvalidDbShardGroupStateFault(inner)
             }
+            crate::operation::start_db_cluster::StartDBClusterError::KmsKeyNotAccessibleFault(inner) => Error::KmsKeyNotAccessibleFault(inner),
             crate::operation::start_db_cluster::StartDBClusterError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -6076,6 +6175,7 @@ impl From<crate::operation::start_db_instance_automated_backups_replication::Sta
         match err {
             crate::operation::start_db_instance_automated_backups_replication::StartDBInstanceAutomatedBackupsReplicationError::DbInstanceAutomatedBackupQuotaExceededFault(inner) => Error::DbInstanceAutomatedBackupQuotaExceededFault(inner),
             crate::operation::start_db_instance_automated_backups_replication::StartDBInstanceAutomatedBackupsReplicationError::DbInstanceNotFoundFault(inner) => Error::DbInstanceNotFoundFault(inner),
+            crate::operation::start_db_instance_automated_backups_replication::StartDBInstanceAutomatedBackupsReplicationError::InvalidDbInstanceAutomatedBackupStateFault(inner) => Error::InvalidDbInstanceAutomatedBackupStateFault(inner),
             crate::operation::start_db_instance_automated_backups_replication::StartDBInstanceAutomatedBackupsReplicationError::InvalidDbInstanceStateFault(inner) => Error::InvalidDbInstanceStateFault(inner),
             crate::operation::start_db_instance_automated_backups_replication::StartDBInstanceAutomatedBackupsReplicationError::KmsKeyNotAccessibleFault(inner) => Error::KmsKeyNotAccessibleFault(inner),
             crate::operation::start_db_instance_automated_backups_replication::StartDBInstanceAutomatedBackupsReplicationError::StorageTypeNotSupportedFault(inner) => Error::StorageTypeNotSupportedFault(inner),

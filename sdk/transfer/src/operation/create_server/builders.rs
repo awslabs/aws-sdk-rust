@@ -590,19 +590,37 @@ impl CreateServerFluentBuilder {
     pub fn get_structured_log_destinations(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_structured_log_destinations()
     }
-    /// <p>Specifies whether or not performance for your Amazon S3 directories is optimized. This is disabled by default.</p>
+    /// <p>Specifies whether or not performance for your Amazon S3 directories is optimized.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If using the console, this is enabled by default.</p></li>
+    /// <li>
+    /// <p>If using the API or CLI, this is disabled by default.</p></li>
+    /// </ul>
     /// <p>By default, home directory mappings have a <code>TYPE</code> of <code>DIRECTORY</code>. If you enable this option, you would then need to explicitly set the <code>HomeDirectoryMapEntry</code> <code>Type</code> to <code>FILE</code> if you want a mapping to have a file target.</p>
     pub fn s3_storage_options(mut self, input: crate::types::S3StorageOptions) -> Self {
         self.inner = self.inner.s3_storage_options(input);
         self
     }
-    /// <p>Specifies whether or not performance for your Amazon S3 directories is optimized. This is disabled by default.</p>
+    /// <p>Specifies whether or not performance for your Amazon S3 directories is optimized.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If using the console, this is enabled by default.</p></li>
+    /// <li>
+    /// <p>If using the API or CLI, this is disabled by default.</p></li>
+    /// </ul>
     /// <p>By default, home directory mappings have a <code>TYPE</code> of <code>DIRECTORY</code>. If you enable this option, you would then need to explicitly set the <code>HomeDirectoryMapEntry</code> <code>Type</code> to <code>FILE</code> if you want a mapping to have a file target.</p>
     pub fn set_s3_storage_options(mut self, input: ::std::option::Option<crate::types::S3StorageOptions>) -> Self {
         self.inner = self.inner.set_s3_storage_options(input);
         self
     }
-    /// <p>Specifies whether or not performance for your Amazon S3 directories is optimized. This is disabled by default.</p>
+    /// <p>Specifies whether or not performance for your Amazon S3 directories is optimized.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If using the console, this is enabled by default.</p></li>
+    /// <li>
+    /// <p>If using the API or CLI, this is disabled by default.</p></li>
+    /// </ul>
     /// <p>By default, home directory mappings have a <code>TYPE</code> of <code>DIRECTORY</code>. If you enable this option, you would then need to explicitly set the <code>HomeDirectoryMapEntry</code> <code>Type</code> to <code>FILE</code> if you want a mapping to have a file target.</p>
     pub fn get_s3_storage_options(&self) -> &::std::option::Option<crate::types::S3StorageOptions> {
         self.inner.get_s3_storage_options()

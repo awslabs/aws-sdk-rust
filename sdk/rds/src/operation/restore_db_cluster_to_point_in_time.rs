@@ -102,6 +102,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Restore
                 .expect("required fields set"),
         ));
 
+        cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::SensitiveOutput);
         cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::Metadata::new(
             "RestoreDBClusterToPointInTime",
             "RDS",
@@ -296,10 +297,14 @@ pub enum RestoreDBClusterToPointInTimeError {
     InvalidVpcNetworkStateFault(crate::types::error::InvalidVpcNetworkStateFault),
     /// <p>An error occurred accessing an Amazon Web Services KMS key.</p>
     KmsKeyNotAccessibleFault(crate::types::error::KmsKeyNotAccessibleFault),
+    /// <p>The network type is invalid for the DB instance. Valid nework type values are <code>IPV4</code> and <code>DUAL</code>.</p>
+    NetworkTypeNotSupported(crate::types::error::NetworkTypeNotSupported),
     /// <p>The specified option group could not be found.</p>
     OptionGroupNotFoundFault(crate::types::error::OptionGroupNotFoundFault),
     /// <p>The request would result in the user exceeding the allowed amount of storage available across all DB instances.</p>
     StorageQuotaExceededFault(crate::types::error::StorageQuotaExceededFault),
+    /// <p>The specified <code>StorageType</code> can't be associated with the DB instance.</p>
+    StorageTypeNotSupportedFault(crate::types::error::StorageTypeNotSupportedFault),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -351,8 +356,10 @@ impl RestoreDBClusterToPointInTimeError {
             Self::InvalidSubnet(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidVpcNetworkStateFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::KmsKeyNotAccessibleFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::NetworkTypeNotSupported(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::OptionGroupNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::StorageQuotaExceededFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::StorageTypeNotSupportedFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
     }
@@ -428,6 +435,10 @@ impl RestoreDBClusterToPointInTimeError {
     pub fn is_kms_key_not_accessible_fault(&self) -> bool {
         matches!(self, Self::KmsKeyNotAccessibleFault(_))
     }
+    /// Returns `true` if the error kind is `RestoreDBClusterToPointInTimeError::NetworkTypeNotSupported`.
+    pub fn is_network_type_not_supported(&self) -> bool {
+        matches!(self, Self::NetworkTypeNotSupported(_))
+    }
     /// Returns `true` if the error kind is `RestoreDBClusterToPointInTimeError::OptionGroupNotFoundFault`.
     pub fn is_option_group_not_found_fault(&self) -> bool {
         matches!(self, Self::OptionGroupNotFoundFault(_))
@@ -435,6 +446,10 @@ impl RestoreDBClusterToPointInTimeError {
     /// Returns `true` if the error kind is `RestoreDBClusterToPointInTimeError::StorageQuotaExceededFault`.
     pub fn is_storage_quota_exceeded_fault(&self) -> bool {
         matches!(self, Self::StorageQuotaExceededFault(_))
+    }
+    /// Returns `true` if the error kind is `RestoreDBClusterToPointInTimeError::StorageTypeNotSupportedFault`.
+    pub fn is_storage_type_not_supported_fault(&self) -> bool {
+        matches!(self, Self::StorageTypeNotSupportedFault(_))
     }
 }
 impl ::std::error::Error for RestoreDBClusterToPointInTimeError {
@@ -458,8 +473,10 @@ impl ::std::error::Error for RestoreDBClusterToPointInTimeError {
             Self::InvalidSubnet(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidVpcNetworkStateFault(_inner) => ::std::option::Option::Some(_inner),
             Self::KmsKeyNotAccessibleFault(_inner) => ::std::option::Option::Some(_inner),
+            Self::NetworkTypeNotSupported(_inner) => ::std::option::Option::Some(_inner),
             Self::OptionGroupNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::StorageQuotaExceededFault(_inner) => ::std::option::Option::Some(_inner),
+            Self::StorageTypeNotSupportedFault(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
     }
@@ -485,8 +502,10 @@ impl ::std::fmt::Display for RestoreDBClusterToPointInTimeError {
             Self::InvalidSubnet(_inner) => _inner.fmt(f),
             Self::InvalidVpcNetworkStateFault(_inner) => _inner.fmt(f),
             Self::KmsKeyNotAccessibleFault(_inner) => _inner.fmt(f),
+            Self::NetworkTypeNotSupported(_inner) => _inner.fmt(f),
             Self::OptionGroupNotFoundFault(_inner) => _inner.fmt(f),
             Self::StorageQuotaExceededFault(_inner) => _inner.fmt(f),
+            Self::StorageTypeNotSupportedFault(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -526,8 +545,10 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for RestoreDBClus
             Self::InvalidSubnet(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidVpcNetworkStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::KmsKeyNotAccessibleFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::NetworkTypeNotSupported(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::OptionGroupNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::StorageQuotaExceededFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::StorageTypeNotSupportedFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }
     }

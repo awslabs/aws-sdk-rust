@@ -59,21 +59,20 @@ pub fn de_db_instance(
                 builder = builder.set_db_instance_status(var_4);
             }
             ,
-            s if s.matches("AutomaticRestartTime") /* AutomaticRestartTime com.amazonaws.rds#DBInstance$AutomaticRestartTime */ =>  {
+            s if s.matches("MasterUsername") /* MasterUsername com.amazonaws.rds#DBInstance$MasterUsername */ =>  {
                 let var_5 =
                     Some(
-                        ::aws_smithy_types::DateTime::from_str(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , ::aws_smithy_types::date_time::Format::DateTimeWithOffset
+                            .into()
                         )
-                        .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (timestamp: `com.amazonaws.rds#TStamp`)"))
                         ?
                     )
                 ;
-                builder = builder.set_automatic_restart_time(var_5);
+                builder = builder.set_master_username(var_5);
             }
             ,
-            s if s.matches("MasterUsername") /* MasterUsername com.amazonaws.rds#DBInstance$MasterUsername */ =>  {
+            s if s.matches("DBName") /* DBName com.amazonaws.rds#DBInstance$DBName */ =>  {
                 let var_6 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -83,34 +82,21 @@ pub fn de_db_instance(
                         ?
                     )
                 ;
-                builder = builder.set_master_username(var_6);
-            }
-            ,
-            s if s.matches("DBName") /* DBName com.amazonaws.rds#DBInstance$DBName */ =>  {
-                let var_7 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_db_name(var_7);
+                builder = builder.set_db_name(var_6);
             }
             ,
             s if s.matches("Endpoint") /* Endpoint com.amazonaws.rds#DBInstance$Endpoint */ =>  {
-                let var_8 =
+                let var_7 =
                     Some(
                         crate::protocol_serde::shape_endpoint::de_endpoint(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_endpoint(var_8);
+                builder = builder.set_endpoint(var_7);
             }
             ,
             s if s.matches("AllocatedStorage") /* AllocatedStorage com.amazonaws.rds#DBInstance$AllocatedStorage */ =>  {
-                let var_9 =
+                let var_8 =
                     Some(
                          {
                             <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -121,11 +107,11 @@ pub fn de_db_instance(
                         ?
                     )
                 ;
-                builder = builder.set_allocated_storage(var_9);
+                builder = builder.set_allocated_storage(var_8);
             }
             ,
             s if s.matches("InstanceCreateTime") /* InstanceCreateTime com.amazonaws.rds#DBInstance$InstanceCreateTime */ =>  {
-                let var_10 =
+                let var_9 =
                     Some(
                         ::aws_smithy_types::DateTime::from_str(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -135,11 +121,11 @@ pub fn de_db_instance(
                         ?
                     )
                 ;
-                builder = builder.set_instance_create_time(var_10);
+                builder = builder.set_instance_create_time(var_9);
             }
             ,
             s if s.matches("PreferredBackupWindow") /* PreferredBackupWindow com.amazonaws.rds#DBInstance$PreferredBackupWindow */ =>  {
-                let var_11 =
+                let var_10 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -148,11 +134,11 @@ pub fn de_db_instance(
                         ?
                     )
                 ;
-                builder = builder.set_preferred_backup_window(var_11);
+                builder = builder.set_preferred_backup_window(var_10);
             }
             ,
             s if s.matches("BackupRetentionPeriod") /* BackupRetentionPeriod com.amazonaws.rds#DBInstance$BackupRetentionPeriod */ =>  {
-                let var_12 =
+                let var_11 =
                     Some(
                          {
                             <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -163,41 +149,41 @@ pub fn de_db_instance(
                         ?
                     )
                 ;
-                builder = builder.set_backup_retention_period(var_12);
+                builder = builder.set_backup_retention_period(var_11);
             }
             ,
             s if s.matches("DBSecurityGroups") /* DBSecurityGroups com.amazonaws.rds#DBInstance$DBSecurityGroups */ =>  {
-                let var_13 =
+                let var_12 =
                     Some(
                         crate::protocol_serde::shape_db_security_group_membership_list::de_db_security_group_membership_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_db_security_groups(var_13);
+                builder = builder.set_db_security_groups(var_12);
             }
             ,
             s if s.matches("VpcSecurityGroups") /* VpcSecurityGroups com.amazonaws.rds#DBInstance$VpcSecurityGroups */ =>  {
-                let var_14 =
+                let var_13 =
                     Some(
                         crate::protocol_serde::shape_vpc_security_group_membership_list::de_vpc_security_group_membership_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_vpc_security_groups(var_14);
+                builder = builder.set_vpc_security_groups(var_13);
             }
             ,
             s if s.matches("DBParameterGroups") /* DBParameterGroups com.amazonaws.rds#DBInstance$DBParameterGroups */ =>  {
-                let var_15 =
+                let var_14 =
                     Some(
                         crate::protocol_serde::shape_db_parameter_group_status_list::de_db_parameter_group_status_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_db_parameter_groups(var_15);
+                builder = builder.set_db_parameter_groups(var_14);
             }
             ,
             s if s.matches("AvailabilityZone") /* AvailabilityZone com.amazonaws.rds#DBInstance$AvailabilityZone */ =>  {
-                let var_16 =
+                let var_15 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -206,21 +192,21 @@ pub fn de_db_instance(
                         ?
                     )
                 ;
-                builder = builder.set_availability_zone(var_16);
+                builder = builder.set_availability_zone(var_15);
             }
             ,
             s if s.matches("DBSubnetGroup") /* DBSubnetGroup com.amazonaws.rds#DBInstance$DBSubnetGroup */ =>  {
-                let var_17 =
+                let var_16 =
                     Some(
                         crate::protocol_serde::shape_db_subnet_group::de_db_subnet_group(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_db_subnet_group(var_17);
+                builder = builder.set_db_subnet_group(var_16);
             }
             ,
             s if s.matches("PreferredMaintenanceWindow") /* PreferredMaintenanceWindow com.amazonaws.rds#DBInstance$PreferredMaintenanceWindow */ =>  {
-                let var_18 =
+                let var_17 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -229,21 +215,21 @@ pub fn de_db_instance(
                         ?
                     )
                 ;
-                builder = builder.set_preferred_maintenance_window(var_18);
+                builder = builder.set_preferred_maintenance_window(var_17);
             }
             ,
             s if s.matches("PendingModifiedValues") /* PendingModifiedValues com.amazonaws.rds#DBInstance$PendingModifiedValues */ =>  {
-                let var_19 =
+                let var_18 =
                     Some(
                         crate::protocol_serde::shape_pending_modified_values::de_pending_modified_values(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_pending_modified_values(var_19);
+                builder = builder.set_pending_modified_values(var_18);
             }
             ,
             s if s.matches("LatestRestorableTime") /* LatestRestorableTime com.amazonaws.rds#DBInstance$LatestRestorableTime */ =>  {
-                let var_20 =
+                let var_19 =
                     Some(
                         ::aws_smithy_types::DateTime::from_str(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -253,11 +239,11 @@ pub fn de_db_instance(
                         ?
                     )
                 ;
-                builder = builder.set_latest_restorable_time(var_20);
+                builder = builder.set_latest_restorable_time(var_19);
             }
             ,
             s if s.matches("MultiAZ") /* MultiAZ com.amazonaws.rds#DBInstance$MultiAZ */ =>  {
-                let var_21 =
+                let var_20 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -268,11 +254,11 @@ pub fn de_db_instance(
                         ?
                     )
                 ;
-                builder = builder.set_multi_az(var_21);
+                builder = builder.set_multi_az(var_20);
             }
             ,
             s if s.matches("EngineVersion") /* EngineVersion com.amazonaws.rds#DBInstance$EngineVersion */ =>  {
-                let var_22 =
+                let var_21 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -281,11 +267,11 @@ pub fn de_db_instance(
                         ?
                     )
                 ;
-                builder = builder.set_engine_version(var_22);
+                builder = builder.set_engine_version(var_21);
             }
             ,
             s if s.matches("AutoMinorVersionUpgrade") /* AutoMinorVersionUpgrade com.amazonaws.rds#DBInstance$AutoMinorVersionUpgrade */ =>  {
-                let var_23 =
+                let var_22 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -296,11 +282,11 @@ pub fn de_db_instance(
                         ?
                     )
                 ;
-                builder = builder.set_auto_minor_version_upgrade(var_23);
+                builder = builder.set_auto_minor_version_upgrade(var_22);
             }
             ,
             s if s.matches("ReadReplicaSourceDBInstanceIdentifier") /* ReadReplicaSourceDBInstanceIdentifier com.amazonaws.rds#DBInstance$ReadReplicaSourceDBInstanceIdentifier */ =>  {
-                let var_24 =
+                let var_23 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -309,31 +295,31 @@ pub fn de_db_instance(
                         ?
                     )
                 ;
-                builder = builder.set_read_replica_source_db_instance_identifier(var_24);
+                builder = builder.set_read_replica_source_db_instance_identifier(var_23);
             }
             ,
             s if s.matches("ReadReplicaDBInstanceIdentifiers") /* ReadReplicaDBInstanceIdentifiers com.amazonaws.rds#DBInstance$ReadReplicaDBInstanceIdentifiers */ =>  {
-                let var_25 =
+                let var_24 =
                     Some(
                         crate::protocol_serde::shape_read_replica_db_instance_identifier_list::de_read_replica_db_instance_identifier_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_read_replica_db_instance_identifiers(var_25);
+                builder = builder.set_read_replica_db_instance_identifiers(var_24);
             }
             ,
             s if s.matches("ReadReplicaDBClusterIdentifiers") /* ReadReplicaDBClusterIdentifiers com.amazonaws.rds#DBInstance$ReadReplicaDBClusterIdentifiers */ =>  {
-                let var_26 =
+                let var_25 =
                     Some(
                         crate::protocol_serde::shape_read_replica_db_cluster_identifier_list::de_read_replica_db_cluster_identifier_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_read_replica_db_cluster_identifiers(var_26);
+                builder = builder.set_read_replica_db_cluster_identifiers(var_25);
             }
             ,
             s if s.matches("ReplicaMode") /* ReplicaMode com.amazonaws.rds#DBInstance$ReplicaMode */ =>  {
-                let var_27 =
+                let var_26 =
                     Some(
                         Result::<crate::types::ReplicaMode, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::ReplicaMode::from(
@@ -343,11 +329,11 @@ pub fn de_db_instance(
                         ?
                     )
                 ;
-                builder = builder.set_replica_mode(var_27);
+                builder = builder.set_replica_mode(var_26);
             }
             ,
             s if s.matches("LicenseModel") /* LicenseModel com.amazonaws.rds#DBInstance$LicenseModel */ =>  {
-                let var_28 =
+                let var_27 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -356,10 +342,25 @@ pub fn de_db_instance(
                         ?
                     )
                 ;
-                builder = builder.set_license_model(var_28);
+                builder = builder.set_license_model(var_27);
             }
             ,
             s if s.matches("Iops") /* Iops com.amazonaws.rds#DBInstance$Iops */ =>  {
+                let var_28 =
+                    Some(
+                         {
+                            <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.rds#IntegerOptional`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_iops(var_28);
+            }
+            ,
+            s if s.matches("StorageThroughput") /* StorageThroughput com.amazonaws.rds#DBInstance$StorageThroughput */ =>  {
                 let var_29 =
                     Some(
                          {
@@ -371,7 +372,7 @@ pub fn de_db_instance(
                         ?
                     )
                 ;
-                builder = builder.set_iops(var_29);
+                builder = builder.set_storage_throughput(var_29);
             }
             ,
             s if s.matches("OptionGroupMemberships") /* OptionGroupMemberships com.amazonaws.rds#DBInstance$OptionGroupMemberships */ =>  {
@@ -815,115 +816,8 @@ pub fn de_db_instance(
                 builder = builder.set_tag_list(var_63);
             }
             ,
-            s if s.matches("DBInstanceAutomatedBackupsReplications") /* DBInstanceAutomatedBackupsReplications com.amazonaws.rds#DBInstance$DBInstanceAutomatedBackupsReplications */ =>  {
-                let var_64 =
-                    Some(
-                        crate::protocol_serde::shape_db_instance_automated_backups_replication_list::de_db_instance_automated_backups_replication_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_db_instance_automated_backups_replications(var_64);
-            }
-            ,
-            s if s.matches("CustomerOwnedIpEnabled") /* CustomerOwnedIpEnabled com.amazonaws.rds#DBInstance$CustomerOwnedIpEnabled */ =>  {
-                let var_65 =
-                    Some(
-                         {
-                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.rds#BooleanOptional`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_customer_owned_ip_enabled(var_65);
-            }
-            ,
-            s if s.matches("AwsBackupRecoveryPointArn") /* AwsBackupRecoveryPointArn com.amazonaws.rds#DBInstance$AwsBackupRecoveryPointArn */ =>  {
-                let var_66 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_aws_backup_recovery_point_arn(var_66);
-            }
-            ,
-            s if s.matches("ActivityStreamStatus") /* ActivityStreamStatus com.amazonaws.rds#DBInstance$ActivityStreamStatus */ =>  {
-                let var_67 =
-                    Some(
-                        Result::<crate::types::ActivityStreamStatus, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::types::ActivityStreamStatus::from(
-                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_activity_stream_status(var_67);
-            }
-            ,
-            s if s.matches("ActivityStreamKmsKeyId") /* ActivityStreamKmsKeyId com.amazonaws.rds#DBInstance$ActivityStreamKmsKeyId */ =>  {
-                let var_68 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_activity_stream_kms_key_id(var_68);
-            }
-            ,
-            s if s.matches("ActivityStreamKinesisStreamName") /* ActivityStreamKinesisStreamName com.amazonaws.rds#DBInstance$ActivityStreamKinesisStreamName */ =>  {
-                let var_69 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_activity_stream_kinesis_stream_name(var_69);
-            }
-            ,
-            s if s.matches("ActivityStreamMode") /* ActivityStreamMode com.amazonaws.rds#DBInstance$ActivityStreamMode */ =>  {
-                let var_70 =
-                    Some(
-                        Result::<crate::types::ActivityStreamMode, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::types::ActivityStreamMode::from(
-                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_activity_stream_mode(var_70);
-            }
-            ,
-            s if s.matches("ActivityStreamEngineNativeAuditFieldsIncluded") /* ActivityStreamEngineNativeAuditFieldsIncluded com.amazonaws.rds#DBInstance$ActivityStreamEngineNativeAuditFieldsIncluded */ =>  {
-                let var_71 =
-                    Some(
-                         {
-                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.rds#BooleanOptional`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_activity_stream_engine_native_audit_fields_included(var_71);
-            }
-            ,
             s if s.matches("AutomationMode") /* AutomationMode com.amazonaws.rds#DBInstance$AutomationMode */ =>  {
-                let var_72 =
+                let var_64 =
                     Some(
                         Result::<crate::types::AutomationMode, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::AutomationMode::from(
@@ -933,11 +827,11 @@ pub fn de_db_instance(
                         ?
                     )
                 ;
-                builder = builder.set_automation_mode(var_72);
+                builder = builder.set_automation_mode(var_64);
             }
             ,
             s if s.matches("ResumeFullAutomationModeTime") /* ResumeFullAutomationModeTime com.amazonaws.rds#DBInstance$ResumeFullAutomationModeTime */ =>  {
-                let var_73 =
+                let var_65 =
                     Some(
                         ::aws_smithy_types::DateTime::from_str(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -947,11 +841,26 @@ pub fn de_db_instance(
                         ?
                     )
                 ;
-                builder = builder.set_resume_full_automation_mode_time(var_73);
+                builder = builder.set_resume_full_automation_mode_time(var_65);
             }
             ,
-            s if s.matches("CustomIamInstanceProfile") /* CustomIamInstanceProfile com.amazonaws.rds#DBInstance$CustomIamInstanceProfile */ =>  {
-                let var_74 =
+            s if s.matches("CustomerOwnedIpEnabled") /* CustomerOwnedIpEnabled com.amazonaws.rds#DBInstance$CustomerOwnedIpEnabled */ =>  {
+                let var_66 =
+                    Some(
+                         {
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.rds#BooleanOptional`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_customer_owned_ip_enabled(var_66);
+            }
+            ,
+            s if s.matches("NetworkType") /* NetworkType com.amazonaws.rds#DBInstance$NetworkType */ =>  {
+                let var_67 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -960,7 +869,99 @@ pub fn de_db_instance(
                         ?
                     )
                 ;
-                builder = builder.set_custom_iam_instance_profile(var_74);
+                builder = builder.set_network_type(var_67);
+            }
+            ,
+            s if s.matches("ActivityStreamStatus") /* ActivityStreamStatus com.amazonaws.rds#DBInstance$ActivityStreamStatus */ =>  {
+                let var_68 =
+                    Some(
+                        Result::<crate::types::ActivityStreamStatus, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::ActivityStreamStatus::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_activity_stream_status(var_68);
+            }
+            ,
+            s if s.matches("ActivityStreamKmsKeyId") /* ActivityStreamKmsKeyId com.amazonaws.rds#DBInstance$ActivityStreamKmsKeyId */ =>  {
+                let var_69 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_activity_stream_kms_key_id(var_69);
+            }
+            ,
+            s if s.matches("ActivityStreamKinesisStreamName") /* ActivityStreamKinesisStreamName com.amazonaws.rds#DBInstance$ActivityStreamKinesisStreamName */ =>  {
+                let var_70 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_activity_stream_kinesis_stream_name(var_70);
+            }
+            ,
+            s if s.matches("ActivityStreamMode") /* ActivityStreamMode com.amazonaws.rds#DBInstance$ActivityStreamMode */ =>  {
+                let var_71 =
+                    Some(
+                        Result::<crate::types::ActivityStreamMode, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::ActivityStreamMode::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_activity_stream_mode(var_71);
+            }
+            ,
+            s if s.matches("ActivityStreamEngineNativeAuditFieldsIncluded") /* ActivityStreamEngineNativeAuditFieldsIncluded com.amazonaws.rds#DBInstance$ActivityStreamEngineNativeAuditFieldsIncluded */ =>  {
+                let var_72 =
+                    Some(
+                         {
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.rds#BooleanOptional`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_activity_stream_engine_native_audit_fields_included(var_72);
+            }
+            ,
+            s if s.matches("AwsBackupRecoveryPointArn") /* AwsBackupRecoveryPointArn com.amazonaws.rds#DBInstance$AwsBackupRecoveryPointArn */ =>  {
+                let var_73 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_aws_backup_recovery_point_arn(var_73);
+            }
+            ,
+            s if s.matches("DBInstanceAutomatedBackupsReplications") /* DBInstanceAutomatedBackupsReplications com.amazonaws.rds#DBInstance$DBInstanceAutomatedBackupsReplications */ =>  {
+                let var_74 =
+                    Some(
+                        crate::protocol_serde::shape_db_instance_automated_backups_replication_list::de_db_instance_automated_backups_replication_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_db_instance_automated_backups_replications(var_74);
             }
             ,
             s if s.matches("BackupTarget") /* BackupTarget com.amazonaws.rds#DBInstance$BackupTarget */ =>  {
@@ -976,8 +977,22 @@ pub fn de_db_instance(
                 builder = builder.set_backup_target(var_75);
             }
             ,
-            s if s.matches("NetworkType") /* NetworkType com.amazonaws.rds#DBInstance$NetworkType */ =>  {
+            s if s.matches("AutomaticRestartTime") /* AutomaticRestartTime com.amazonaws.rds#DBInstance$AutomaticRestartTime */ =>  {
                 let var_76 =
+                    Some(
+                        ::aws_smithy_types::DateTime::from_str(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            , ::aws_smithy_types::date_time::Format::DateTimeWithOffset
+                        )
+                        .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (timestamp: `com.amazonaws.rds#TStamp`)"))
+                        ?
+                    )
+                ;
+                builder = builder.set_automatic_restart_time(var_76);
+            }
+            ,
+            s if s.matches("CustomIamInstanceProfile") /* CustomIamInstanceProfile com.amazonaws.rds#DBInstance$CustomIamInstanceProfile */ =>  {
+                let var_77 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -986,11 +1001,11 @@ pub fn de_db_instance(
                         ?
                     )
                 ;
-                builder = builder.set_network_type(var_76);
+                builder = builder.set_custom_iam_instance_profile(var_77);
             }
             ,
             s if s.matches("ActivityStreamPolicyStatus") /* ActivityStreamPolicyStatus com.amazonaws.rds#DBInstance$ActivityStreamPolicyStatus */ =>  {
-                let var_77 =
+                let var_78 =
                     Some(
                         Result::<crate::types::ActivityStreamPolicyStatus, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::ActivityStreamPolicyStatus::from(
@@ -1000,26 +1015,21 @@ pub fn de_db_instance(
                         ?
                     )
                 ;
-                builder = builder.set_activity_stream_policy_status(var_77);
+                builder = builder.set_activity_stream_policy_status(var_78);
             }
             ,
-            s if s.matches("StorageThroughput") /* StorageThroughput com.amazonaws.rds#DBInstance$StorageThroughput */ =>  {
-                let var_78 =
+            s if s.matches("CertificateDetails") /* CertificateDetails com.amazonaws.rds#DBInstance$CertificateDetails */ =>  {
+                let var_79 =
                     Some(
-                         {
-                            <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.rds#IntegerOptional`)"))
-                        }
+                        crate::protocol_serde::shape_certificate_details::de_certificate_details(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_storage_throughput(var_78);
+                builder = builder.set_certificate_details(var_79);
             }
             ,
             s if s.matches("DBSystemId") /* DBSystemId com.amazonaws.rds#DBInstance$DBSystemId */ =>  {
-                let var_79 =
+                let var_80 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -1028,27 +1038,17 @@ pub fn de_db_instance(
                         ?
                     )
                 ;
-                builder = builder.set_db_system_id(var_79);
+                builder = builder.set_db_system_id(var_80);
             }
             ,
             s if s.matches("MasterUserSecret") /* MasterUserSecret com.amazonaws.rds#DBInstance$MasterUserSecret */ =>  {
-                let var_80 =
+                let var_81 =
                     Some(
                         crate::protocol_serde::shape_master_user_secret::de_master_user_secret(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_master_user_secret(var_80);
-            }
-            ,
-            s if s.matches("CertificateDetails") /* CertificateDetails com.amazonaws.rds#DBInstance$CertificateDetails */ =>  {
-                let var_81 =
-                    Some(
-                        crate::protocol_serde::shape_certificate_details::de_certificate_details(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_certificate_details(var_81);
+                builder = builder.set_master_user_secret(var_81);
             }
             ,
             s if s.matches("ReadReplicaSourceDBClusterIdentifier") /* ReadReplicaSourceDBClusterIdentifier com.amazonaws.rds#DBInstance$ReadReplicaSourceDBClusterIdentifier */ =>  {
@@ -1077,23 +1077,8 @@ pub fn de_db_instance(
                 builder = builder.set_percent_progress(var_83);
             }
             ,
-            s if s.matches("DedicatedLogVolume") /* DedicatedLogVolume com.amazonaws.rds#DBInstance$DedicatedLogVolume */ =>  {
+            s if s.matches("MultiTenant") /* MultiTenant com.amazonaws.rds#DBInstance$MultiTenant */ =>  {
                 let var_84 =
-                    Some(
-                         {
-                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_dedicated_log_volume(var_84);
-            }
-            ,
-            s if s.matches("IsStorageConfigUpgradeAvailable") /* IsStorageConfigUpgradeAvailable com.amazonaws.rds#DBInstance$IsStorageConfigUpgradeAvailable */ =>  {
-                let var_85 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -1104,10 +1089,25 @@ pub fn de_db_instance(
                         ?
                     )
                 ;
-                builder = builder.set_is_storage_config_upgrade_available(var_85);
+                builder = builder.set_multi_tenant(var_84);
             }
             ,
-            s if s.matches("MultiTenant") /* MultiTenant com.amazonaws.rds#DBInstance$MultiTenant */ =>  {
+            s if s.matches("DedicatedLogVolume") /* DedicatedLogVolume com.amazonaws.rds#DBInstance$DedicatedLogVolume */ =>  {
+                let var_85 =
+                    Some(
+                         {
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_dedicated_log_volume(var_85);
+            }
+            ,
+            s if s.matches("IsStorageConfigUpgradeAvailable") /* IsStorageConfigUpgradeAvailable com.amazonaws.rds#DBInstance$IsStorageConfigUpgradeAvailable */ =>  {
                 let var_86 =
                     Some(
                          {
@@ -1119,7 +1119,7 @@ pub fn de_db_instance(
                         ?
                     )
                 ;
-                builder = builder.set_multi_tenant(var_86);
+                builder = builder.set_is_storage_config_upgrade_available(var_86);
             }
             ,
             s if s.matches("EngineLifecycleSupport") /* EngineLifecycleSupport com.amazonaws.rds#DBInstance$EngineLifecycleSupport */ =>  {

@@ -204,4 +204,18 @@ impl CreateVoiceConnectorFluentBuilder {
     pub fn get_integration_type(&self) -> &::std::option::Option<crate::types::VoiceConnectorIntegrationType> {
         self.inner.get_integration_type()
     }
+    /// <p>The type of network for the Voice Connector. Either IPv4 only or dual-stack (IPv4 and IPv6).</p>
+    pub fn network_type(mut self, input: crate::types::NetworkType) -> Self {
+        self.inner = self.inner.network_type(input);
+        self
+    }
+    /// <p>The type of network for the Voice Connector. Either IPv4 only or dual-stack (IPv4 and IPv6).</p>
+    pub fn set_network_type(mut self, input: ::std::option::Option<crate::types::NetworkType>) -> Self {
+        self.inner = self.inner.set_network_type(input);
+        self
+    }
+    /// <p>The type of network for the Voice Connector. Either IPv4 only or dual-stack (IPv4 and IPv6).</p>
+    pub fn get_network_type(&self) -> &::std::option::Option<crate::types::NetworkType> {
+        self.inner.get_network_type()
+    }
 }

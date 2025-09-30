@@ -12,23 +12,26 @@ pub fn ser_describe_capacity_providers_input_input(
         }
         array_2.finish();
     }
-    if let Some(var_4) = &input.include {
-        let mut array_5 = object.key("include").start_array();
-        for item_6 in var_4 {
+    if let Some(var_4) = &input.cluster {
+        object.key("cluster").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.include {
+        let mut array_6 = object.key("include").start_array();
+        for item_7 in var_5 {
             {
-                array_5.value().string(item_6.as_str());
+                array_6.value().string(item_7.as_str());
             }
         }
-        array_5.finish();
+        array_6.finish();
     }
-    if let Some(var_7) = &input.max_results {
+    if let Some(var_8) = &input.max_results {
         object.key("maxResults").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_7).into()),
+            ::aws_smithy_types::Number::NegInt((*var_8).into()),
         );
     }
-    if let Some(var_8) = &input.next_token {
-        object.key("nextToken").string(var_8.as_str());
+    if let Some(var_9) = &input.next_token {
+        object.key("nextToken").string(var_9.as_str());
     }
     Ok(())
 }

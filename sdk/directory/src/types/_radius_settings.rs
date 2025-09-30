@@ -4,8 +4,10 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RadiusSettings {
-    /// <p>An array of strings that contains the fully qualified domain name (FQDN) or IP addresses of the RADIUS server endpoints, or the FQDN or IP addresses of your RADIUS server load balancer.</p>
+    /// <p>The fully qualified domain name (FQDN) or IP addresses of the RADIUS server endpoints, or the FQDN or IP addresses of your RADIUS server load balancer.</p>
     pub radius_servers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The IPv6 addresses of the RADIUS server endpoints or RADIUS server load balancer.</p>
+    pub radius_servers_ipv6: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The port that your RADIUS server is using for communications. Your self-managed network must allow inbound traffic over this port from the Directory Service servers.</p>
     pub radius_port: ::std::option::Option<i32>,
     /// <p>The amount of time, in seconds, to wait for the RADIUS server to respond.</p>
@@ -22,11 +24,17 @@ pub struct RadiusSettings {
     pub use_same_username: bool,
 }
 impl RadiusSettings {
-    /// <p>An array of strings that contains the fully qualified domain name (FQDN) or IP addresses of the RADIUS server endpoints, or the FQDN or IP addresses of your RADIUS server load balancer.</p>
+    /// <p>The fully qualified domain name (FQDN) or IP addresses of the RADIUS server endpoints, or the FQDN or IP addresses of your RADIUS server load balancer.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.radius_servers.is_none()`.
     pub fn radius_servers(&self) -> &[::std::string::String] {
         self.radius_servers.as_deref().unwrap_or_default()
+    }
+    /// <p>The IPv6 addresses of the RADIUS server endpoints or RADIUS server load balancer.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.radius_servers_ipv6.is_none()`.
+    pub fn radius_servers_ipv6(&self) -> &[::std::string::String] {
+        self.radius_servers_ipv6.as_deref().unwrap_or_default()
     }
     /// <p>The port that your RADIUS server is using for communications. Your self-managed network must allow inbound traffic over this port from the Directory Service servers.</p>
     pub fn radius_port(&self) -> ::std::option::Option<i32> {
@@ -61,6 +69,7 @@ impl ::std::fmt::Debug for RadiusSettings {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("RadiusSettings");
         formatter.field("radius_servers", &self.radius_servers);
+        formatter.field("radius_servers_ipv6", &self.radius_servers_ipv6);
         formatter.field("radius_port", &self.radius_port);
         formatter.field("radius_timeout", &self.radius_timeout);
         formatter.field("radius_retries", &self.radius_retries);
@@ -83,6 +92,7 @@ impl RadiusSettings {
 #[non_exhaustive]
 pub struct RadiusSettingsBuilder {
     pub(crate) radius_servers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) radius_servers_ipv6: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) radius_port: ::std::option::Option<i32>,
     pub(crate) radius_timeout: ::std::option::Option<i32>,
     pub(crate) radius_retries: ::std::option::Option<i32>,
@@ -96,21 +106,41 @@ impl RadiusSettingsBuilder {
     ///
     /// To override the contents of this collection use [`set_radius_servers`](Self::set_radius_servers).
     ///
-    /// <p>An array of strings that contains the fully qualified domain name (FQDN) or IP addresses of the RADIUS server endpoints, or the FQDN or IP addresses of your RADIUS server load balancer.</p>
+    /// <p>The fully qualified domain name (FQDN) or IP addresses of the RADIUS server endpoints, or the FQDN or IP addresses of your RADIUS server load balancer.</p>
     pub fn radius_servers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.radius_servers.unwrap_or_default();
         v.push(input.into());
         self.radius_servers = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of strings that contains the fully qualified domain name (FQDN) or IP addresses of the RADIUS server endpoints, or the FQDN or IP addresses of your RADIUS server load balancer.</p>
+    /// <p>The fully qualified domain name (FQDN) or IP addresses of the RADIUS server endpoints, or the FQDN or IP addresses of your RADIUS server load balancer.</p>
     pub fn set_radius_servers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.radius_servers = input;
         self
     }
-    /// <p>An array of strings that contains the fully qualified domain name (FQDN) or IP addresses of the RADIUS server endpoints, or the FQDN or IP addresses of your RADIUS server load balancer.</p>
+    /// <p>The fully qualified domain name (FQDN) or IP addresses of the RADIUS server endpoints, or the FQDN or IP addresses of your RADIUS server load balancer.</p>
     pub fn get_radius_servers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.radius_servers
+    }
+    /// Appends an item to `radius_servers_ipv6`.
+    ///
+    /// To override the contents of this collection use [`set_radius_servers_ipv6`](Self::set_radius_servers_ipv6).
+    ///
+    /// <p>The IPv6 addresses of the RADIUS server endpoints or RADIUS server load balancer.</p>
+    pub fn radius_servers_ipv6(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.radius_servers_ipv6.unwrap_or_default();
+        v.push(input.into());
+        self.radius_servers_ipv6 = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The IPv6 addresses of the RADIUS server endpoints or RADIUS server load balancer.</p>
+    pub fn set_radius_servers_ipv6(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.radius_servers_ipv6 = input;
+        self
+    }
+    /// <p>The IPv6 addresses of the RADIUS server endpoints or RADIUS server load balancer.</p>
+    pub fn get_radius_servers_ipv6(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.radius_servers_ipv6
     }
     /// <p>The port that your RADIUS server is using for communications. Your self-managed network must allow inbound traffic over this port from the Directory Service servers.</p>
     pub fn radius_port(mut self, input: i32) -> Self {
@@ -214,6 +244,7 @@ impl RadiusSettingsBuilder {
     pub fn build(self) -> crate::types::RadiusSettings {
         crate::types::RadiusSettings {
             radius_servers: self.radius_servers,
+            radius_servers_ipv6: self.radius_servers_ipv6,
             radius_port: self.radius_port,
             radius_timeout: self.radius_timeout,
             radius_retries: self.radius_retries.unwrap_or_default(),
@@ -228,6 +259,7 @@ impl ::std::fmt::Debug for RadiusSettingsBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("RadiusSettingsBuilder");
         formatter.field("radius_servers", &self.radius_servers);
+        formatter.field("radius_servers_ipv6", &self.radius_servers_ipv6);
         formatter.field("radius_port", &self.radius_port);
         formatter.field("radius_timeout", &self.radius_timeout);
         formatter.field("radius_retries", &self.radius_retries);

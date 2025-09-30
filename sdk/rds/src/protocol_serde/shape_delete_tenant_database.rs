@@ -35,6 +35,24 @@ pub fn de_delete_tenant_database_http_error(
             }
             tmp
         }),
+        "DBSnapshotAlreadyExists" => crate::operation::delete_tenant_database::DeleteTenantDatabaseError::DbSnapshotAlreadyExistsFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::DbSnapshotAlreadyExistsFaultBuilder::default();
+                output = crate::protocol_serde::shape_db_snapshot_already_exists_fault::de_db_snapshot_already_exists_fault_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::delete_tenant_database::DeleteTenantDatabaseError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "InvalidDBInstanceState" => crate::operation::delete_tenant_database::DeleteTenantDatabaseError::InvalidDbInstanceStateFault({
             #[allow(unused_mut)]
             let mut tmp = {
