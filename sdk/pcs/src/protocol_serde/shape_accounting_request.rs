@@ -3,14 +3,14 @@ pub fn ser_accounting_request(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AccountingRequest,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    {
-        object.key("mode").string(input.mode.as_str());
-    }
     if let Some(var_1) = &input.default_purge_time_in_days {
         object.key("defaultPurgeTimeInDays").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
+    }
+    {
+        object.key("mode").string(input.mode.as_str());
     }
     Ok(())
 }

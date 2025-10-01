@@ -40,6 +40,13 @@ pub struct UpdateServiceInput {
     pub deployment_configuration: ::std::option::Option<crate::types::DeploymentConfiguration>,
     /// <p>Indicates whether to use Availability Zone rebalancing for the service.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-rebalancing.html">Balancing an Amazon ECS service across Availability Zones</a> in the <i> <i>Amazon Elastic Container Service Developer Guide</i> </i>.</p>
+    /// <p>The default behavior of <code>AvailabilityZoneRebalancing</code> differs between create and update requests:</p>
+    /// <ul>
+    /// <li>
+    /// <p>For create service requests, when no value is specified for <code>AvailabilityZoneRebalancing</code>, Amazon ECS defaults the value to <code>ENABLED</code>.</p></li>
+    /// <li>
+    /// <p>For update service requests, when no value is specified for <code>AvailabilityZoneRebalancing</code>, Amazon ECS defaults to the existing service’s <code>AvailabilityZoneRebalancing</code> value. If the service never had an <code>AvailabilityZoneRebalancing</code> value set, Amazon ECS treats this as <code>DISABLED</code>.</p></li>
+    /// </ul>
     /// <p>This parameter doesn't trigger a new service deployment.</p>
     pub availability_zone_rebalancing: ::std::option::Option<crate::types::AvailabilityZoneRebalancing>,
     /// <p>An object representing the network configuration for the service.</p>
@@ -60,6 +67,7 @@ pub struct UpdateServiceInput {
     pub force_new_deployment: ::std::option::Option<bool>,
     /// <p>The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy Elastic Load Balancing, VPC Lattice, and container health checks after a task has first started. If you don't specify a health check grace period value, the default value of <code>0</code> is used. If you don't use any of the health checks, then <code>healthCheckGracePeriodSeconds</code> is unused.</p>
     /// <p>If your service's tasks take a while to start and respond to health checks, you can specify a health check grace period of up to 2,147,483,647 seconds (about 69 years). During that time, the Amazon ECS service scheduler ignores health check status. This grace period can prevent the service scheduler from marking tasks as unhealthy and stopping them before they have time to come up.</p>
+    /// <p>If your service has more running tasks than desired, unhealthy tasks in the grace period might be stopped to reach the desired count.</p>
     /// <p>This parameter doesn't trigger a new service deployment.</p>
     pub health_check_grace_period_seconds: ::std::option::Option<i32>,
     /// <p>The deployment controller to use for the service.</p>
@@ -159,6 +167,13 @@ impl UpdateServiceInput {
     }
     /// <p>Indicates whether to use Availability Zone rebalancing for the service.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-rebalancing.html">Balancing an Amazon ECS service across Availability Zones</a> in the <i> <i>Amazon Elastic Container Service Developer Guide</i> </i>.</p>
+    /// <p>The default behavior of <code>AvailabilityZoneRebalancing</code> differs between create and update requests:</p>
+    /// <ul>
+    /// <li>
+    /// <p>For create service requests, when no value is specified for <code>AvailabilityZoneRebalancing</code>, Amazon ECS defaults the value to <code>ENABLED</code>.</p></li>
+    /// <li>
+    /// <p>For update service requests, when no value is specified for <code>AvailabilityZoneRebalancing</code>, Amazon ECS defaults to the existing service’s <code>AvailabilityZoneRebalancing</code> value. If the service never had an <code>AvailabilityZoneRebalancing</code> value set, Amazon ECS treats this as <code>DISABLED</code>.</p></li>
+    /// </ul>
     /// <p>This parameter doesn't trigger a new service deployment.</p>
     pub fn availability_zone_rebalancing(&self) -> ::std::option::Option<&crate::types::AvailabilityZoneRebalancing> {
         self.availability_zone_rebalancing.as_ref()
@@ -195,6 +210,7 @@ impl UpdateServiceInput {
     }
     /// <p>The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy Elastic Load Balancing, VPC Lattice, and container health checks after a task has first started. If you don't specify a health check grace period value, the default value of <code>0</code> is used. If you don't use any of the health checks, then <code>healthCheckGracePeriodSeconds</code> is unused.</p>
     /// <p>If your service's tasks take a while to start and respond to health checks, you can specify a health check grace period of up to 2,147,483,647 seconds (about 69 years). During that time, the Amazon ECS service scheduler ignores health check status. This grace period can prevent the service scheduler from marking tasks as unhealthy and stopping them before they have time to come up.</p>
+    /// <p>If your service has more running tasks than desired, unhealthy tasks in the grace period might be stopped to reach the desired count.</p>
     /// <p>This parameter doesn't trigger a new service deployment.</p>
     pub fn health_check_grace_period_seconds(&self) -> ::std::option::Option<i32> {
         self.health_check_grace_period_seconds
@@ -470,6 +486,13 @@ impl UpdateServiceInputBuilder {
     }
     /// <p>Indicates whether to use Availability Zone rebalancing for the service.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-rebalancing.html">Balancing an Amazon ECS service across Availability Zones</a> in the <i> <i>Amazon Elastic Container Service Developer Guide</i> </i>.</p>
+    /// <p>The default behavior of <code>AvailabilityZoneRebalancing</code> differs between create and update requests:</p>
+    /// <ul>
+    /// <li>
+    /// <p>For create service requests, when no value is specified for <code>AvailabilityZoneRebalancing</code>, Amazon ECS defaults the value to <code>ENABLED</code>.</p></li>
+    /// <li>
+    /// <p>For update service requests, when no value is specified for <code>AvailabilityZoneRebalancing</code>, Amazon ECS defaults to the existing service’s <code>AvailabilityZoneRebalancing</code> value. If the service never had an <code>AvailabilityZoneRebalancing</code> value set, Amazon ECS treats this as <code>DISABLED</code>.</p></li>
+    /// </ul>
     /// <p>This parameter doesn't trigger a new service deployment.</p>
     pub fn availability_zone_rebalancing(mut self, input: crate::types::AvailabilityZoneRebalancing) -> Self {
         self.availability_zone_rebalancing = ::std::option::Option::Some(input);
@@ -477,6 +500,13 @@ impl UpdateServiceInputBuilder {
     }
     /// <p>Indicates whether to use Availability Zone rebalancing for the service.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-rebalancing.html">Balancing an Amazon ECS service across Availability Zones</a> in the <i> <i>Amazon Elastic Container Service Developer Guide</i> </i>.</p>
+    /// <p>The default behavior of <code>AvailabilityZoneRebalancing</code> differs between create and update requests:</p>
+    /// <ul>
+    /// <li>
+    /// <p>For create service requests, when no value is specified for <code>AvailabilityZoneRebalancing</code>, Amazon ECS defaults the value to <code>ENABLED</code>.</p></li>
+    /// <li>
+    /// <p>For update service requests, when no value is specified for <code>AvailabilityZoneRebalancing</code>, Amazon ECS defaults to the existing service’s <code>AvailabilityZoneRebalancing</code> value. If the service never had an <code>AvailabilityZoneRebalancing</code> value set, Amazon ECS treats this as <code>DISABLED</code>.</p></li>
+    /// </ul>
     /// <p>This parameter doesn't trigger a new service deployment.</p>
     pub fn set_availability_zone_rebalancing(mut self, input: ::std::option::Option<crate::types::AvailabilityZoneRebalancing>) -> Self {
         self.availability_zone_rebalancing = input;
@@ -484,6 +514,13 @@ impl UpdateServiceInputBuilder {
     }
     /// <p>Indicates whether to use Availability Zone rebalancing for the service.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-rebalancing.html">Balancing an Amazon ECS service across Availability Zones</a> in the <i> <i>Amazon Elastic Container Service Developer Guide</i> </i>.</p>
+    /// <p>The default behavior of <code>AvailabilityZoneRebalancing</code> differs between create and update requests:</p>
+    /// <ul>
+    /// <li>
+    /// <p>For create service requests, when no value is specified for <code>AvailabilityZoneRebalancing</code>, Amazon ECS defaults the value to <code>ENABLED</code>.</p></li>
+    /// <li>
+    /// <p>For update service requests, when no value is specified for <code>AvailabilityZoneRebalancing</code>, Amazon ECS defaults to the existing service’s <code>AvailabilityZoneRebalancing</code> value. If the service never had an <code>AvailabilityZoneRebalancing</code> value set, Amazon ECS treats this as <code>DISABLED</code>.</p></li>
+    /// </ul>
     /// <p>This parameter doesn't trigger a new service deployment.</p>
     pub fn get_availability_zone_rebalancing(&self) -> &::std::option::Option<crate::types::AvailabilityZoneRebalancing> {
         &self.availability_zone_rebalancing
@@ -590,6 +627,7 @@ impl UpdateServiceInputBuilder {
     }
     /// <p>The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy Elastic Load Balancing, VPC Lattice, and container health checks after a task has first started. If you don't specify a health check grace period value, the default value of <code>0</code> is used. If you don't use any of the health checks, then <code>healthCheckGracePeriodSeconds</code> is unused.</p>
     /// <p>If your service's tasks take a while to start and respond to health checks, you can specify a health check grace period of up to 2,147,483,647 seconds (about 69 years). During that time, the Amazon ECS service scheduler ignores health check status. This grace period can prevent the service scheduler from marking tasks as unhealthy and stopping them before they have time to come up.</p>
+    /// <p>If your service has more running tasks than desired, unhealthy tasks in the grace period might be stopped to reach the desired count.</p>
     /// <p>This parameter doesn't trigger a new service deployment.</p>
     pub fn health_check_grace_period_seconds(mut self, input: i32) -> Self {
         self.health_check_grace_period_seconds = ::std::option::Option::Some(input);
@@ -597,6 +635,7 @@ impl UpdateServiceInputBuilder {
     }
     /// <p>The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy Elastic Load Balancing, VPC Lattice, and container health checks after a task has first started. If you don't specify a health check grace period value, the default value of <code>0</code> is used. If you don't use any of the health checks, then <code>healthCheckGracePeriodSeconds</code> is unused.</p>
     /// <p>If your service's tasks take a while to start and respond to health checks, you can specify a health check grace period of up to 2,147,483,647 seconds (about 69 years). During that time, the Amazon ECS service scheduler ignores health check status. This grace period can prevent the service scheduler from marking tasks as unhealthy and stopping them before they have time to come up.</p>
+    /// <p>If your service has more running tasks than desired, unhealthy tasks in the grace period might be stopped to reach the desired count.</p>
     /// <p>This parameter doesn't trigger a new service deployment.</p>
     pub fn set_health_check_grace_period_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.health_check_grace_period_seconds = input;
@@ -604,6 +643,7 @@ impl UpdateServiceInputBuilder {
     }
     /// <p>The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy Elastic Load Balancing, VPC Lattice, and container health checks after a task has first started. If you don't specify a health check grace period value, the default value of <code>0</code> is used. If you don't use any of the health checks, then <code>healthCheckGracePeriodSeconds</code> is unused.</p>
     /// <p>If your service's tasks take a while to start and respond to health checks, you can specify a health check grace period of up to 2,147,483,647 seconds (about 69 years). During that time, the Amazon ECS service scheduler ignores health check status. This grace period can prevent the service scheduler from marking tasks as unhealthy and stopping them before they have time to come up.</p>
+    /// <p>If your service has more running tasks than desired, unhealthy tasks in the grace period might be stopped to reach the desired count.</p>
     /// <p>This parameter doesn't trigger a new service deployment.</p>
     pub fn get_health_check_grace_period_seconds(&self) -> &::std::option::Option<i32> {
         &self.health_check_grace_period_seconds

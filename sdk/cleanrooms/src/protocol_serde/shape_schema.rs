@@ -95,6 +95,13 @@ where
                                 crate::protocol_serde::shape_schema_status_detail_list::de_schema_status_detail_list(tokens)?,
                             );
                         }
+                        "resourceArn" => {
+                            builder = builder.set_resource_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "schemaTypeProperties" => {
                             builder = builder
                                 .set_schema_type_properties(crate::protocol_serde::shape_schema_type_properties::de_schema_type_properties(tokens)?);

@@ -4,20 +4,16 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Accounting {
-    /// <p>The default value for <code>mode</code> is <code>STANDARD</code>. A value of <code>STANDARD</code> means Slurm accounting is enabled.</p>
-    pub mode: crate::types::AccountingMode,
     /// <p>The default value for all purge settings for <code>slurmdbd.conf</code>. For more information, see the <a href="https://slurm.schedmd.com/slurmdbd.conf.html">slurmdbd.conf documentation at SchedMD</a>.</p>
     /// <p>The default value for <code>defaultPurgeTimeInDays</code> is <code>-1</code>.</p>
     /// <p>A value of <code>-1</code> means there is no purge time and records persist as long as the cluster exists.</p><important>
     /// <p><code>0</code> isn't a valid value.</p>
     /// </important>
     pub default_purge_time_in_days: ::std::option::Option<i32>,
+    /// <p>The default value for <code>mode</code> is <code>STANDARD</code>. A value of <code>STANDARD</code> means Slurm accounting is enabled.</p>
+    pub mode: crate::types::AccountingMode,
 }
 impl Accounting {
-    /// <p>The default value for <code>mode</code> is <code>STANDARD</code>. A value of <code>STANDARD</code> means Slurm accounting is enabled.</p>
-    pub fn mode(&self) -> &crate::types::AccountingMode {
-        &self.mode
-    }
     /// <p>The default value for all purge settings for <code>slurmdbd.conf</code>. For more information, see the <a href="https://slurm.schedmd.com/slurmdbd.conf.html">slurmdbd.conf documentation at SchedMD</a>.</p>
     /// <p>The default value for <code>defaultPurgeTimeInDays</code> is <code>-1</code>.</p>
     /// <p>A value of <code>-1</code> means there is no purge time and records persist as long as the cluster exists.</p><important>
@@ -25,6 +21,10 @@ impl Accounting {
     /// </important>
     pub fn default_purge_time_in_days(&self) -> ::std::option::Option<i32> {
         self.default_purge_time_in_days
+    }
+    /// <p>The default value for <code>mode</code> is <code>STANDARD</code>. A value of <code>STANDARD</code> means Slurm accounting is enabled.</p>
+    pub fn mode(&self) -> &crate::types::AccountingMode {
+        &self.mode
     }
 }
 impl Accounting {
@@ -38,25 +38,10 @@ impl Accounting {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct AccountingBuilder {
-    pub(crate) mode: ::std::option::Option<crate::types::AccountingMode>,
     pub(crate) default_purge_time_in_days: ::std::option::Option<i32>,
+    pub(crate) mode: ::std::option::Option<crate::types::AccountingMode>,
 }
 impl AccountingBuilder {
-    /// <p>The default value for <code>mode</code> is <code>STANDARD</code>. A value of <code>STANDARD</code> means Slurm accounting is enabled.</p>
-    /// This field is required.
-    pub fn mode(mut self, input: crate::types::AccountingMode) -> Self {
-        self.mode = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The default value for <code>mode</code> is <code>STANDARD</code>. A value of <code>STANDARD</code> means Slurm accounting is enabled.</p>
-    pub fn set_mode(mut self, input: ::std::option::Option<crate::types::AccountingMode>) -> Self {
-        self.mode = input;
-        self
-    }
-    /// <p>The default value for <code>mode</code> is <code>STANDARD</code>. A value of <code>STANDARD</code> means Slurm accounting is enabled.</p>
-    pub fn get_mode(&self) -> &::std::option::Option<crate::types::AccountingMode> {
-        &self.mode
-    }
     /// <p>The default value for all purge settings for <code>slurmdbd.conf</code>. For more information, see the <a href="https://slurm.schedmd.com/slurmdbd.conf.html">slurmdbd.conf documentation at SchedMD</a>.</p>
     /// <p>The default value for <code>defaultPurgeTimeInDays</code> is <code>-1</code>.</p>
     /// <p>A value of <code>-1</code> means there is no purge time and records persist as long as the cluster exists.</p><important>
@@ -83,18 +68,33 @@ impl AccountingBuilder {
     pub fn get_default_purge_time_in_days(&self) -> &::std::option::Option<i32> {
         &self.default_purge_time_in_days
     }
+    /// <p>The default value for <code>mode</code> is <code>STANDARD</code>. A value of <code>STANDARD</code> means Slurm accounting is enabled.</p>
+    /// This field is required.
+    pub fn mode(mut self, input: crate::types::AccountingMode) -> Self {
+        self.mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The default value for <code>mode</code> is <code>STANDARD</code>. A value of <code>STANDARD</code> means Slurm accounting is enabled.</p>
+    pub fn set_mode(mut self, input: ::std::option::Option<crate::types::AccountingMode>) -> Self {
+        self.mode = input;
+        self
+    }
+    /// <p>The default value for <code>mode</code> is <code>STANDARD</code>. A value of <code>STANDARD</code> means Slurm accounting is enabled.</p>
+    pub fn get_mode(&self) -> &::std::option::Option<crate::types::AccountingMode> {
+        &self.mode
+    }
     /// Consumes the builder and constructs a [`Accounting`](crate::types::Accounting).
     /// This method will fail if any of the following fields are not set:
     /// - [`mode`](crate::types::builders::AccountingBuilder::mode)
     pub fn build(self) -> ::std::result::Result<crate::types::Accounting, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Accounting {
+            default_purge_time_in_days: self.default_purge_time_in_days,
             mode: self.mode.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "mode",
                     "mode was not specified but it is required when building Accounting",
                 )
             })?,
-            default_purge_time_in_days: self.default_purge_time_in_days,
         })
     }
 }

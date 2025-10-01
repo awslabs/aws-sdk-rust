@@ -13,6 +13,15 @@ pub fn ser_privacy_budget_template_update_parameters(
             )?;
             object_1.finish();
         }
+        crate::types::PrivacyBudgetTemplateUpdateParameters::AccessBudget(inner) => {
+            #[allow(unused_mut)]
+            let mut object_2 = object_2.key("accessBudget").start_object();
+            crate::protocol_serde::shape_access_budgets_privacy_template_update_parameters::ser_access_budgets_privacy_template_update_parameters(
+                &mut object_2,
+                inner,
+            )?;
+            object_2.finish();
+        }
         crate::types::PrivacyBudgetTemplateUpdateParameters::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "PrivacyBudgetTemplateUpdateParameters",

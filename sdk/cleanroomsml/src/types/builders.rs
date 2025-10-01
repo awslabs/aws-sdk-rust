@@ -41,6 +41,10 @@ pub use crate::types::_model_training_data_channel::ModelTrainingDataChannelBuil
 
 pub use crate::types::_incremental_training_data_channel::IncrementalTrainingDataChannelBuilder;
 
+pub use crate::types::_access_budget::AccessBudgetBuilder;
+
+pub use crate::types::_access_budget_details::AccessBudgetDetailsBuilder;
+
 pub use crate::types::_input_channel::InputChannelBuilder;
 
 pub use crate::types::_protected_query_input_parameters::ProtectedQueryInputParametersBuilder;

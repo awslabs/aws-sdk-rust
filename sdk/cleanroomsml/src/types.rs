@@ -63,6 +63,16 @@ pub use crate::types::_s3_data_distribution_type::S3DataDistributionType;
 
 pub use crate::types::_incremental_training_data_channel::IncrementalTrainingDataChannel;
 
+pub use crate::types::_privacy_budgets::PrivacyBudgets;
+
+pub use crate::types::_access_budget::AccessBudget;
+
+pub use crate::types::_access_budget_details::AccessBudgetDetails;
+
+pub use crate::types::_auto_refresh_mode::AutoRefreshMode;
+
+pub use crate::types::_access_budget_type::AccessBudgetType;
+
 pub use crate::types::_ml_input_channel_status::MlInputChannelStatus;
 
 pub use crate::types::_input_channel::InputChannel;
@@ -187,6 +197,12 @@ pub use crate::types::_collaboration_ml_input_channel_summary::CollaborationMlIn
 
 pub use crate::types::_collaboration_configured_model_algorithm_association_summary::CollaborationConfiguredModelAlgorithmAssociationSummary;
 
+mod _access_budget;
+
+mod _access_budget_details;
+
+mod _access_budget_type;
+
 mod _audience_destination;
 
 mod _audience_export_job_status;
@@ -210,6 +226,8 @@ mod _audience_size;
 mod _audience_size_config;
 
 mod _audience_size_type;
+
+mod _auto_refresh_mode;
 
 mod _collaboration_configured_model_algorithm_association_summary;
 
@@ -304,6 +322,8 @@ mod _model_training_data_channel;
 mod _noise_level_type;
 
 mod _policy_existence_condition;
+
+mod _privacy_budgets;
 
 mod _privacy_configuration;
 

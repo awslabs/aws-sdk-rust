@@ -2497,6 +2497,18 @@ pub(crate) fn membership_query_compute_payment_config_correct_errors(
     builder
 }
 
+pub(crate) fn access_budgets_privacy_template_parameters_output_correct_errors(
+    mut builder: crate::types::builders::AccessBudgetsPrivacyTemplateParametersOutputBuilder,
+) -> crate::types::builders::AccessBudgetsPrivacyTemplateParametersOutputBuilder {
+    if builder.budget_parameters.is_none() {
+        builder.budget_parameters = Some(Default::default())
+    }
+    if builder.resource_arn.is_none() {
+        builder.resource_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn analysis_parameter_correct_errors(
     mut builder: crate::types::builders::AnalysisParameterBuilder,
 ) -> crate::types::builders::AnalysisParameterBuilder {
@@ -2711,6 +2723,19 @@ pub(crate) fn snowflake_table_reference_correct_errors(
     }
     if builder.table_schema.is_none() {
         builder.table_schema = Some(crate::types::SnowflakeTableSchema::Unknown)
+    }
+    builder
+}
+
+pub(crate) fn access_budget_correct_errors(mut builder: crate::types::builders::AccessBudgetBuilder) -> crate::types::builders::AccessBudgetBuilder {
+    if builder.resource_arn.is_none() {
+        builder.resource_arn = Some(Default::default())
+    }
+    if builder.details.is_none() {
+        builder.details = Some(Default::default())
+    }
+    if builder.aggregate_remaining_budget.is_none() {
+        builder.aggregate_remaining_budget = Some(Default::default())
     }
     builder
 }
@@ -3012,6 +3037,18 @@ pub(crate) fn analysis_template_validation_status_reason_correct_errors(
     builder
 }
 
+pub(crate) fn budget_parameter_correct_errors(
+    mut builder: crate::types::builders::BudgetParameterBuilder,
+) -> crate::types::builders::BudgetParameterBuilder {
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::AccessBudgetType>().ok()
+    }
+    if builder.budget.is_none() {
+        builder.budget = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn differential_privacy_configuration_correct_errors(
     mut builder: crate::types::builders::DifferentialPrivacyConfigurationBuilder,
 ) -> crate::types::builders::DifferentialPrivacyConfigurationBuilder {
@@ -3087,6 +3124,24 @@ pub(crate) fn schema_status_reason_correct_errors(
     }
     if builder.message.is_none() {
         builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn access_budget_details_correct_errors(
+    mut builder: crate::types::builders::AccessBudgetDetailsBuilder,
+) -> crate::types::builders::AccessBudgetDetailsBuilder {
+    if builder.start_time.is_none() {
+        builder.start_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.remaining_budget.is_none() {
+        builder.remaining_budget = Some(Default::default())
+    }
+    if builder.budget.is_none() {
+        builder.budget = Some(Default::default())
+    }
+    if builder.budget_type.is_none() {
+        builder.budget_type = "no value was set".parse::<crate::types::AccessBudgetType>().ok()
     }
     builder
 }

@@ -25,6 +25,8 @@ pub struct SchemaSummary {
     /// <p><code>DIRECT_JOB</code> allows PySpark jobs to be run directly on this table.</p>
     /// <p><code>MULTIPLE</code> allows both SQL queries and PySpark jobs to be run directly on this table.</p>
     pub analysis_method: ::std::option::Option<crate::types::AnalysisMethod>,
+    /// <p>The Amazon Resource Name (ARN) of the schema summary resource.</p>
+    pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The selected analysis methods for the schema.</p>
     pub selected_analysis_methods: ::std::option::Option<::std::vec::Vec<crate::types::SelectedAnalysisMethod>>,
 }
@@ -73,6 +75,10 @@ impl SchemaSummary {
     pub fn analysis_method(&self) -> ::std::option::Option<&crate::types::AnalysisMethod> {
         self.analysis_method.as_ref()
     }
+    /// <p>The Amazon Resource Name (ARN) of the schema summary resource.</p>
+    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
     /// <p>The selected analysis methods for the schema.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.selected_analysis_methods.is_none()`.
@@ -100,6 +106,7 @@ pub struct SchemaSummaryBuilder {
     pub(crate) collaboration_arn: ::std::option::Option<::std::string::String>,
     pub(crate) analysis_rule_types: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisRuleType>>,
     pub(crate) analysis_method: ::std::option::Option<crate::types::AnalysisMethod>,
+    pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) selected_analysis_methods: ::std::option::Option<::std::vec::Vec<crate::types::SelectedAnalysisMethod>>,
 }
 impl SchemaSummaryBuilder {
@@ -251,6 +258,20 @@ impl SchemaSummaryBuilder {
     pub fn get_analysis_method(&self) -> &::std::option::Option<crate::types::AnalysisMethod> {
         &self.analysis_method
     }
+    /// <p>The Amazon Resource Name (ARN) of the schema summary resource.</p>
+    pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the schema summary resource.</p>
+    pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.resource_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the schema summary resource.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     /// Appends an item to `selected_analysis_methods`.
     ///
     /// To override the contents of this collection use [`set_selected_analysis_methods`](Self::set_selected_analysis_methods).
@@ -332,6 +353,7 @@ impl SchemaSummaryBuilder {
                 )
             })?,
             analysis_method: self.analysis_method,
+            resource_arn: self.resource_arn,
             selected_analysis_methods: self.selected_analysis_methods,
         })
     }

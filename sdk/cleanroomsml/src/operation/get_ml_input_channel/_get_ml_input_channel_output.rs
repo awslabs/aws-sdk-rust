@@ -21,6 +21,8 @@ pub struct GetMlInputChannelOutput {
     pub retention_in_days: i32,
     /// <p>The number of records in the ML input channel.</p>
     pub number_of_records: ::std::option::Option<i64>,
+    /// <p>Returns the privacy budgets that control access to this Clean Rooms ML input channel. Use these budgets to monitor and limit resource consumption over specified time periods.</p>
+    pub privacy_budgets: ::std::option::Option<crate::types::PrivacyBudgets>,
     /// <p>The description of the ML input channel.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The time at which the ML input channel was created.</p>
@@ -99,6 +101,10 @@ impl GetMlInputChannelOutput {
     /// <p>The number of records in the ML input channel.</p>
     pub fn number_of_records(&self) -> ::std::option::Option<i64> {
         self.number_of_records
+    }
+    /// <p>Returns the privacy budgets that control access to this Clean Rooms ML input channel. Use these budgets to monitor and limit resource consumption over specified time periods.</p>
+    pub fn privacy_budgets(&self) -> ::std::option::Option<&crate::types::PrivacyBudgets> {
+        self.privacy_budgets.as_ref()
     }
     /// <p>The description of the ML input channel.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -179,6 +185,7 @@ pub struct GetMlInputChannelOutputBuilder {
     pub(crate) status_details: ::std::option::Option<crate::types::StatusDetails>,
     pub(crate) retention_in_days: ::std::option::Option<i32>,
     pub(crate) number_of_records: ::std::option::Option<i64>,
+    pub(crate) privacy_budgets: ::std::option::Option<crate::types::PrivacyBudgets>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -328,6 +335,20 @@ impl GetMlInputChannelOutputBuilder {
     /// <p>The number of records in the ML input channel.</p>
     pub fn get_number_of_records(&self) -> &::std::option::Option<i64> {
         &self.number_of_records
+    }
+    /// <p>Returns the privacy budgets that control access to this Clean Rooms ML input channel. Use these budgets to monitor and limit resource consumption over specified time periods.</p>
+    pub fn privacy_budgets(mut self, input: crate::types::PrivacyBudgets) -> Self {
+        self.privacy_budgets = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Returns the privacy budgets that control access to this Clean Rooms ML input channel. Use these budgets to monitor and limit resource consumption over specified time periods.</p>
+    pub fn set_privacy_budgets(mut self, input: ::std::option::Option<crate::types::PrivacyBudgets>) -> Self {
+        self.privacy_budgets = input;
+        self
+    }
+    /// <p>Returns the privacy budgets that control access to this Clean Rooms ML input channel. Use these budgets to monitor and limit resource consumption over specified time periods.</p>
+    pub fn get_privacy_budgets(&self) -> &::std::option::Option<crate::types::PrivacyBudgets> {
+        &self.privacy_budgets
     }
     /// <p>The description of the ML input channel.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -584,6 +605,7 @@ impl GetMlInputChannelOutputBuilder {
                 )
             })?,
             number_of_records: self.number_of_records,
+            privacy_budgets: self.privacy_budgets,
             description: self.description,
             create_time: self.create_time.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(

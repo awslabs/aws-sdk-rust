@@ -22,7 +22,7 @@ impl crate::operation::batch_create_attendee::builders::BatchCreateAttendeeInput
 }
 /// Fluent builder constructing a request to `BatchCreateAttendee`.
 ///
-/// <p>Creates up to 100 attendees for an active Amazon Chime SDK meeting. For more information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p>
+/// <p>Creates up to 100 attendees for an active Amazon Chime SDK meeting. For more information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchCreateAttendeeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

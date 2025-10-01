@@ -170,4 +170,18 @@ impl ListPrivacyBudgetsFluentBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
+    /// <p>The Amazon Resource Name (ARN) of the access budget resource to filter privacy budgets by.</p>
+    pub fn access_budget_resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.access_budget_resource_arn(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the access budget resource to filter privacy budgets by.</p>
+    pub fn set_access_budget_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_access_budget_resource_arn(input);
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the access budget resource to filter privacy budgets by.</p>
+    pub fn get_access_budget_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_access_budget_resource_arn()
+    }
 }

@@ -24,6 +24,8 @@ pub struct Queue {
     pub status: crate::types::QueueStatus,
     /// <p>The list of compute node group configurations associated with the queue. Queues assign jobs to associated compute node groups.</p>
     pub compute_node_group_configurations: ::std::vec::Vec<crate::types::ComputeNodeGroupConfiguration>,
+    /// <p>Additional options related to the Slurm scheduler.</p>
+    pub slurm_configuration: ::std::option::Option<crate::types::QueueSlurmConfiguration>,
     /// <p>The list of errors that occurred during queue provisioning.</p>
     pub error_info: ::std::option::Option<::std::vec::Vec<crate::types::ErrorInfo>>,
 }
@@ -69,6 +71,10 @@ impl Queue {
         use std::ops::Deref;
         self.compute_node_group_configurations.deref()
     }
+    /// <p>Additional options related to the Slurm scheduler.</p>
+    pub fn slurm_configuration(&self) -> ::std::option::Option<&crate::types::QueueSlurmConfiguration> {
+        self.slurm_configuration.as_ref()
+    }
     /// <p>The list of errors that occurred during queue provisioning.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.error_info.is_none()`.
@@ -95,6 +101,7 @@ pub struct QueueBuilder {
     pub(crate) modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) status: ::std::option::Option<crate::types::QueueStatus>,
     pub(crate) compute_node_group_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ComputeNodeGroupConfiguration>>,
+    pub(crate) slurm_configuration: ::std::option::Option<crate::types::QueueSlurmConfiguration>,
     pub(crate) error_info: ::std::option::Option<::std::vec::Vec<crate::types::ErrorInfo>>,
 }
 impl QueueBuilder {
@@ -238,6 +245,20 @@ impl QueueBuilder {
     pub fn get_compute_node_group_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ComputeNodeGroupConfiguration>> {
         &self.compute_node_group_configurations
     }
+    /// <p>Additional options related to the Slurm scheduler.</p>
+    pub fn slurm_configuration(mut self, input: crate::types::QueueSlurmConfiguration) -> Self {
+        self.slurm_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Additional options related to the Slurm scheduler.</p>
+    pub fn set_slurm_configuration(mut self, input: ::std::option::Option<crate::types::QueueSlurmConfiguration>) -> Self {
+        self.slurm_configuration = input;
+        self
+    }
+    /// <p>Additional options related to the Slurm scheduler.</p>
+    pub fn get_slurm_configuration(&self) -> &::std::option::Option<crate::types::QueueSlurmConfiguration> {
+        &self.slurm_configuration
+    }
     /// Appends an item to `error_info`.
     ///
     /// To override the contents of this collection use [`set_error_info`](Self::set_error_info).
@@ -312,6 +333,7 @@ impl QueueBuilder {
                     "compute_node_group_configurations was not specified but it is required when building Queue",
                 )
             })?,
+            slurm_configuration: self.slurm_configuration,
             error_info: self.error_info,
         })
     }

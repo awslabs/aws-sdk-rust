@@ -35,6 +35,10 @@ pub use crate::types::_scheduler::Scheduler;
 
 pub use crate::types::_scheduler_type::SchedulerType;
 
+pub use crate::types::_update_cluster_slurm_configuration_request::UpdateClusterSlurmConfigurationRequest;
+
+pub use crate::types::_update_accounting_request::UpdateAccountingRequest;
+
 pub use crate::types::_cluster_slurm_configuration_request::ClusterSlurmConfigurationRequest;
 
 pub use crate::types::_accounting_request::AccountingRequest;
@@ -49,7 +53,13 @@ pub use crate::types::_queue_status::QueueStatus;
 
 pub use crate::types::_queue::Queue;
 
+pub use crate::types::_queue_slurm_configuration::QueueSlurmConfiguration;
+
 pub use crate::types::_compute_node_group_configuration::ComputeNodeGroupConfiguration;
+
+pub use crate::types::_update_queue_slurm_configuration_request::UpdateQueueSlurmConfigurationRequest;
+
+pub use crate::types::_queue_slurm_configuration_request::QueueSlurmConfigurationRequest;
 
 pub use crate::types::_compute_node_group_summary::ComputeNodeGroupSummary;
 
@@ -125,6 +135,10 @@ mod _purchase_option;
 
 mod _queue;
 
+mod _queue_slurm_configuration;
+
+mod _queue_slurm_configuration_request;
+
 mod _queue_status;
 
 mod _queue_summary;
@@ -149,7 +163,13 @@ mod _spot_allocation_strategy;
 
 mod _spot_options;
 
+mod _update_accounting_request;
+
+mod _update_cluster_slurm_configuration_request;
+
 mod _update_compute_node_group_slurm_configuration_request;
+
+mod _update_queue_slurm_configuration_request;
 
 mod _validation_exception_field;
 

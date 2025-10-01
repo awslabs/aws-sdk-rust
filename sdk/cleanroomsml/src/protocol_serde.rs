@@ -265,6 +265,8 @@ pub(crate) mod shape_model_training_data_channel;
 
 pub(crate) mod shape_model_training_data_channels;
 
+pub(crate) mod shape_privacy_budgets;
+
 pub(crate) mod shape_privacy_configuration;
 
 pub(crate) mod shape_resource_config;
@@ -282,6 +284,8 @@ pub(crate) mod shape_trained_model_inference_job_list;
 pub(crate) mod shape_trained_model_list;
 
 pub(crate) mod shape_training_dataset_list;
+
+pub(crate) mod shape_access_budgets;
 
 pub(crate) mod shape_audience_destination;
 
@@ -349,6 +353,8 @@ pub(crate) mod shape_trained_model_summary;
 
 pub(crate) mod shape_training_dataset_summary;
 
+pub(crate) mod shape_access_budget;
+
 pub(crate) mod shape_column_schema;
 
 pub(crate) mod shape_data_source;
@@ -366,6 +372,8 @@ pub(crate) mod shape_trained_model_inference_jobs_configuration_policy;
 pub(crate) mod shape_trained_models_configuration_policy;
 
 pub(crate) mod shape_worker_compute_configuration;
+
+pub(crate) mod shape_access_budget_details_list;
 
 pub(crate) mod shape_dataset_schema_list;
 
@@ -386,6 +394,8 @@ pub(crate) mod shape_trained_model_export_receiver_members;
 pub(crate) mod shape_trained_model_exports_max_size;
 
 pub(crate) mod shape_trained_model_inference_max_output_size;
+
+pub(crate) mod shape_access_budget_details;
 
 pub(crate) mod shape_log_redaction_configuration;
 

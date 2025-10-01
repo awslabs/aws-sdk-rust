@@ -13,6 +13,14 @@ pub use crate::types::_privacy_budget_template::PrivacyBudgetTemplate;
 
 pub use crate::types::_privacy_budget_template_parameters_output::PrivacyBudgetTemplateParametersOutput;
 
+pub use crate::types::_access_budgets_privacy_template_parameters_output::AccessBudgetsPrivacyTemplateParametersOutput;
+
+pub use crate::types::_budget_parameter::BudgetParameter;
+
+pub use crate::types::_auto_refresh_mode::AutoRefreshMode;
+
+pub use crate::types::_access_budget_type::AccessBudgetType;
+
 pub use crate::types::_differential_privacy_template_parameters_output::DifferentialPrivacyTemplateParametersOutput;
 
 pub use crate::types::_privacy_budget_template_auto_refresh::PrivacyBudgetTemplateAutoRefresh;
@@ -21,9 +29,13 @@ pub use crate::types::_privacy_budget_type::PrivacyBudgetType;
 
 pub use crate::types::_privacy_budget_template_update_parameters::PrivacyBudgetTemplateUpdateParameters;
 
+pub use crate::types::_access_budgets_privacy_template_update_parameters::AccessBudgetsPrivacyTemplateUpdateParameters;
+
 pub use crate::types::_differential_privacy_template_update_parameters::DifferentialPrivacyTemplateUpdateParameters;
 
 pub use crate::types::_privacy_budget_template_parameters_input::PrivacyBudgetTemplateParametersInput;
+
+pub use crate::types::_access_budgets_privacy_template_parameters_input::AccessBudgetsPrivacyTemplateParametersInput;
 
 pub use crate::types::_differential_privacy_template_parameters_input::DifferentialPrivacyTemplateParametersInput;
 
@@ -158,6 +170,10 @@ pub use crate::types::_protected_job_analysis_type::ProtectedJobAnalysisType;
 pub use crate::types::_privacy_budget_summary::PrivacyBudgetSummary;
 
 pub use crate::types::_privacy_budget::PrivacyBudget;
+
+pub use crate::types::_access_budget::AccessBudget;
+
+pub use crate::types::_access_budget_details::AccessBudgetDetails;
 
 pub use crate::types::_differential_privacy_privacy_budget::DifferentialPrivacyPrivacyBudget;
 
@@ -465,6 +481,18 @@ pub use crate::types::_analysis_template::AnalysisTemplate;
 
 pub use crate::types::_analysis_template_summary::AnalysisTemplateSummary;
 
+mod _access_budget;
+
+mod _access_budget_details;
+
+mod _access_budget_type;
+
+mod _access_budgets_privacy_template_parameters_input;
+
+mod _access_budgets_privacy_template_parameters_output;
+
+mod _access_budgets_privacy_template_update_parameters;
+
 mod _access_denied_exception_reason;
 
 mod _additional_analyses;
@@ -531,6 +559,8 @@ mod _athena_table_reference;
 
 mod _auto_approved_change_type;
 
+mod _auto_refresh_mode;
+
 mod _batch_get_collaboration_analysis_template_error;
 
 mod _batch_get_schema_analysis_rule_error;
@@ -540,6 +570,8 @@ mod _batch_get_schema_error;
 mod _billed_job_resource_utilization;
 
 mod _billed_resource_utilization;
+
+mod _budget_parameter;
 
 mod _change;
 

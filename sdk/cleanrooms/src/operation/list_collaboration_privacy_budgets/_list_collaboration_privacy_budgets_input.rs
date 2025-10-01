@@ -11,6 +11,8 @@ pub struct ListCollaborationPrivacyBudgetsInput {
     pub max_results: ::std::option::Option<i32>,
     /// <p>The pagination token that's used to fetch the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the Configured Table Association (ConfiguredTableAssociation) used to filter privacy budgets.</p>
+    pub access_budget_resource_arn: ::std::option::Option<::std::string::String>,
 }
 impl ListCollaborationPrivacyBudgetsInput {
     /// <p>A unique identifier for one of your collaborations.</p>
@@ -29,6 +31,10 @@ impl ListCollaborationPrivacyBudgetsInput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
+    /// <p>The Amazon Resource Name (ARN) of the Configured Table Association (ConfiguredTableAssociation) used to filter privacy budgets.</p>
+    pub fn access_budget_resource_arn(&self) -> ::std::option::Option<&str> {
+        self.access_budget_resource_arn.as_deref()
+    }
 }
 impl ListCollaborationPrivacyBudgetsInput {
     /// Creates a new builder-style object to manufacture [`ListCollaborationPrivacyBudgetsInput`](crate::operation::list_collaboration_privacy_budgets::ListCollaborationPrivacyBudgetsInput).
@@ -45,6 +51,7 @@ pub struct ListCollaborationPrivacyBudgetsInputBuilder {
     pub(crate) privacy_budget_type: ::std::option::Option<crate::types::PrivacyBudgetType>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
+    pub(crate) access_budget_resource_arn: ::std::option::Option<::std::string::String>,
 }
 impl ListCollaborationPrivacyBudgetsInputBuilder {
     /// <p>A unique identifier for one of your collaborations.</p>
@@ -105,6 +112,20 @@ impl ListCollaborationPrivacyBudgetsInputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
+    /// <p>The Amazon Resource Name (ARN) of the Configured Table Association (ConfiguredTableAssociation) used to filter privacy budgets.</p>
+    pub fn access_budget_resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.access_budget_resource_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Configured Table Association (ConfiguredTableAssociation) used to filter privacy budgets.</p>
+    pub fn set_access_budget_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.access_budget_resource_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Configured Table Association (ConfiguredTableAssociation) used to filter privacy budgets.</p>
+    pub fn get_access_budget_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_budget_resource_arn
+    }
     /// Consumes the builder and constructs a [`ListCollaborationPrivacyBudgetsInput`](crate::operation::list_collaboration_privacy_budgets::ListCollaborationPrivacyBudgetsInput).
     pub fn build(
         self,
@@ -118,6 +139,7 @@ impl ListCollaborationPrivacyBudgetsInputBuilder {
                 privacy_budget_type: self.privacy_budget_type,
                 max_results: self.max_results,
                 next_token: self.next_token,
+                access_budget_resource_arn: self.access_budget_resource_arn,
             },
         )
     }

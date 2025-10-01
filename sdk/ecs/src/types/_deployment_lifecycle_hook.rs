@@ -44,7 +44,7 @@ pub struct DeploymentLifecycleHook {
     /// </ul>
     /// <p>You must provide this parameter when configuring a deployment lifecycle hook.</p>
     pub lifecycle_stages: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentLifecycleHookStage>>,
-    /// <p>The details of the deployment lifecycle hook. This provides additional configuration for how the hook should be executed during deployment operations on Amazon ECS Managed Instances.</p>
+    /// <p>Use this field to specify custom parameters that Amazon ECS will pass to your hook target invocations (such as a Lambda function).</p>
     pub hook_details: ::std::option::Option<::aws_smithy_types::Document>,
 }
 impl DeploymentLifecycleHook {
@@ -95,7 +95,7 @@ impl DeploymentLifecycleHook {
     pub fn lifecycle_stages(&self) -> &[crate::types::DeploymentLifecycleHookStage] {
         self.lifecycle_stages.as_deref().unwrap_or_default()
     }
-    /// <p>The details of the deployment lifecycle hook. This provides additional configuration for how the hook should be executed during deployment operations on Amazon ECS Managed Instances.</p>
+    /// <p>Use this field to specify custom parameters that Amazon ECS will pass to your hook target invocations (such as a Lambda function).</p>
     pub fn hook_details(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
         self.hook_details.as_ref()
     }
@@ -264,17 +264,17 @@ impl DeploymentLifecycleHookBuilder {
     pub fn get_lifecycle_stages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeploymentLifecycleHookStage>> {
         &self.lifecycle_stages
     }
-    /// <p>The details of the deployment lifecycle hook. This provides additional configuration for how the hook should be executed during deployment operations on Amazon ECS Managed Instances.</p>
+    /// <p>Use this field to specify custom parameters that Amazon ECS will pass to your hook target invocations (such as a Lambda function).</p>
     pub fn hook_details(mut self, input: ::aws_smithy_types::Document) -> Self {
         self.hook_details = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The details of the deployment lifecycle hook. This provides additional configuration for how the hook should be executed during deployment operations on Amazon ECS Managed Instances.</p>
+    /// <p>Use this field to specify custom parameters that Amazon ECS will pass to your hook target invocations (such as a Lambda function).</p>
     pub fn set_hook_details(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
         self.hook_details = input;
         self
     }
-    /// <p>The details of the deployment lifecycle hook. This provides additional configuration for how the hook should be executed during deployment operations on Amazon ECS Managed Instances.</p>
+    /// <p>Use this field to specify custom parameters that Amazon ECS will pass to your hook target invocations (such as a Lambda function).</p>
     pub fn get_hook_details(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
         &self.hook_details
     }

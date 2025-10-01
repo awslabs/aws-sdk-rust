@@ -21,6 +21,10 @@ pub use crate::types::_slurm_custom_setting::SlurmCustomSettingBuilder;
 
 pub use crate::types::_scheduler::SchedulerBuilder;
 
+pub use crate::types::_update_cluster_slurm_configuration_request::UpdateClusterSlurmConfigurationRequestBuilder;
+
+pub use crate::types::_update_accounting_request::UpdateAccountingRequestBuilder;
+
 pub use crate::types::_cluster_slurm_configuration_request::ClusterSlurmConfigurationRequestBuilder;
 
 pub use crate::types::_accounting_request::AccountingRequestBuilder;
@@ -33,7 +37,13 @@ pub use crate::types::_queue_summary::QueueSummaryBuilder;
 
 pub use crate::types::_queue::QueueBuilder;
 
+pub use crate::types::_queue_slurm_configuration::QueueSlurmConfigurationBuilder;
+
 pub use crate::types::_compute_node_group_configuration::ComputeNodeGroupConfigurationBuilder;
+
+pub use crate::types::_update_queue_slurm_configuration_request::UpdateQueueSlurmConfigurationRequestBuilder;
+
+pub use crate::types::_queue_slurm_configuration_request::QueueSlurmConfigurationRequestBuilder;
 
 pub use crate::types::_compute_node_group_summary::ComputeNodeGroupSummaryBuilder;
 

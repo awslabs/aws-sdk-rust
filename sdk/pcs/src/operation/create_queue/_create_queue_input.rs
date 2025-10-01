@@ -9,6 +9,8 @@ pub struct CreateQueueInput {
     pub queue_name: ::std::option::Option<::std::string::String>,
     /// <p>The list of compute node group configurations to associate with the queue. Queues assign jobs to associated compute node groups.</p>
     pub compute_node_group_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ComputeNodeGroupConfiguration>>,
+    /// <p>Additional options related to the Slurm scheduler.</p>
+    pub slurm_configuration: ::std::option::Option<crate::types::QueueSlurmConfigurationRequest>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, the subsequent retries with the same client token return the result from the original successful request and they have no additional effect. If you don't specify a client token, the CLI and SDK automatically generate 1 for you.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>1 or more tags added to the resource. Each tag consists of a tag key and tag value. The tag value is optional and can be an empty string.</p>
@@ -28,6 +30,10 @@ impl CreateQueueInput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.compute_node_group_configurations.is_none()`.
     pub fn compute_node_group_configurations(&self) -> &[crate::types::ComputeNodeGroupConfiguration] {
         self.compute_node_group_configurations.as_deref().unwrap_or_default()
+    }
+    /// <p>Additional options related to the Slurm scheduler.</p>
+    pub fn slurm_configuration(&self) -> ::std::option::Option<&crate::types::QueueSlurmConfigurationRequest> {
+        self.slurm_configuration.as_ref()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, the subsequent retries with the same client token return the result from the original successful request and they have no additional effect. If you don't specify a client token, the CLI and SDK automatically generate 1 for you.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -52,6 +58,7 @@ pub struct CreateQueueInputBuilder {
     pub(crate) cluster_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) queue_name: ::std::option::Option<::std::string::String>,
     pub(crate) compute_node_group_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ComputeNodeGroupConfiguration>>,
+    pub(crate) slurm_configuration: ::std::option::Option<crate::types::QueueSlurmConfigurationRequest>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -109,6 +116,20 @@ impl CreateQueueInputBuilder {
     pub fn get_compute_node_group_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ComputeNodeGroupConfiguration>> {
         &self.compute_node_group_configurations
     }
+    /// <p>Additional options related to the Slurm scheduler.</p>
+    pub fn slurm_configuration(mut self, input: crate::types::QueueSlurmConfigurationRequest) -> Self {
+        self.slurm_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Additional options related to the Slurm scheduler.</p>
+    pub fn set_slurm_configuration(mut self, input: ::std::option::Option<crate::types::QueueSlurmConfigurationRequest>) -> Self {
+        self.slurm_configuration = input;
+        self
+    }
+    /// <p>Additional options related to the Slurm scheduler.</p>
+    pub fn get_slurm_configuration(&self) -> &::std::option::Option<crate::types::QueueSlurmConfigurationRequest> {
+        &self.slurm_configuration
+    }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, the subsequent retries with the same client token return the result from the original successful request and they have no additional effect. If you don't specify a client token, the CLI and SDK automatically generate 1 for you.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -149,6 +170,7 @@ impl CreateQueueInputBuilder {
             cluster_identifier: self.cluster_identifier,
             queue_name: self.queue_name,
             compute_node_group_configurations: self.compute_node_group_configurations,
+            slurm_configuration: self.slurm_configuration,
             client_token: self.client_token,
             tags: self.tags,
         })

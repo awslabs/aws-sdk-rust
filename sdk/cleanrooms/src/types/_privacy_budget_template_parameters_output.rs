@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum PrivacyBudgetTemplateParametersOutput {
+    /// <p>Access budget configuration returned from the privacy budget template, containing the configured access budget settings.</p>
+    AccessBudget(crate::types::AccessBudgetsPrivacyTemplateParametersOutput),
     /// <p>The epsilon and noise parameters.</p>
     DifferentialPrivacy(crate::types::DifferentialPrivacyTemplateParametersOutput),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
@@ -17,7 +19,19 @@ pub enum PrivacyBudgetTemplateParametersOutput {
     Unknown,
 }
 impl PrivacyBudgetTemplateParametersOutput {
-    #[allow(irrefutable_let_patterns)]
+    /// Tries to convert the enum instance into [`AccessBudget`](crate::types::PrivacyBudgetTemplateParametersOutput::AccessBudget), extracting the inner [`AccessBudgetsPrivacyTemplateParametersOutput`](crate::types::AccessBudgetsPrivacyTemplateParametersOutput).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_access_budget(&self) -> ::std::result::Result<&crate::types::AccessBudgetsPrivacyTemplateParametersOutput, &Self> {
+        if let PrivacyBudgetTemplateParametersOutput::AccessBudget(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`AccessBudget`](crate::types::PrivacyBudgetTemplateParametersOutput::AccessBudget).
+    pub fn is_access_budget(&self) -> bool {
+        self.as_access_budget().is_ok()
+    }
     /// Tries to convert the enum instance into [`DifferentialPrivacy`](crate::types::PrivacyBudgetTemplateParametersOutput::DifferentialPrivacy), extracting the inner [`DifferentialPrivacyTemplateParametersOutput`](crate::types::DifferentialPrivacyTemplateParametersOutput).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_differential_privacy(&self) -> ::std::result::Result<&crate::types::DifferentialPrivacyTemplateParametersOutput, &Self> {

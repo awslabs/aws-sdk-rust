@@ -21,47 +21,50 @@ pub fn ser_create_meeting_with_attendees_input_input(
     if let Some(var_6) = &input.external_meeting_id {
         object.key("ExternalMeetingId").string(var_6.as_str());
     }
-    if let Some(var_7) = &input.media_region {
-        object.key("MediaRegion").string(var_7.as_str());
+    if let Some(var_7) = &input.media_placement_network_type {
+        object.key("MediaPlacementNetworkType").string(var_7.as_str());
     }
-    if let Some(var_8) = &input.meeting_features {
+    if let Some(var_8) = &input.media_region {
+        object.key("MediaRegion").string(var_8.as_str());
+    }
+    if let Some(var_9) = &input.meeting_features {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("MeetingFeatures").start_object();
-        crate::protocol_serde::shape_meeting_features_configuration::ser_meeting_features_configuration(&mut object_9, var_8)?;
-        object_9.finish();
+        let mut object_10 = object.key("MeetingFeatures").start_object();
+        crate::protocol_serde::shape_meeting_features_configuration::ser_meeting_features_configuration(&mut object_10, var_9)?;
+        object_10.finish();
     }
-    if let Some(var_10) = &input.meeting_host_id {
-        object.key("MeetingHostId").string(var_10.as_str());
+    if let Some(var_11) = &input.meeting_host_id {
+        object.key("MeetingHostId").string(var_11.as_str());
     }
-    if let Some(var_11) = &input.notifications_configuration {
+    if let Some(var_12) = &input.notifications_configuration {
         #[allow(unused_mut)]
-        let mut object_12 = object.key("NotificationsConfiguration").start_object();
-        crate::protocol_serde::shape_notifications_configuration::ser_notifications_configuration(&mut object_12, var_11)?;
-        object_12.finish();
+        let mut object_13 = object.key("NotificationsConfiguration").start_object();
+        crate::protocol_serde::shape_notifications_configuration::ser_notifications_configuration(&mut object_13, var_12)?;
+        object_13.finish();
     }
-    if let Some(var_13) = &input.primary_meeting_id {
-        object.key("PrimaryMeetingId").string(var_13.as_str());
+    if let Some(var_14) = &input.primary_meeting_id {
+        object.key("PrimaryMeetingId").string(var_14.as_str());
     }
-    if let Some(var_14) = &input.tags {
-        let mut array_15 = object.key("Tags").start_array();
-        for item_16 in var_14 {
+    if let Some(var_15) = &input.tags {
+        let mut array_16 = object.key("Tags").start_array();
+        for item_17 in var_15 {
             {
                 #[allow(unused_mut)]
-                let mut object_17 = array_15.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_17, item_16)?;
-                object_17.finish();
+                let mut object_18 = array_16.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_18, item_17)?;
+                object_18.finish();
             }
         }
-        array_15.finish();
+        array_16.finish();
     }
-    if let Some(var_18) = &input.tenant_ids {
-        let mut array_19 = object.key("TenantIds").start_array();
-        for item_20 in var_18 {
+    if let Some(var_19) = &input.tenant_ids {
+        let mut array_20 = object.key("TenantIds").start_array();
+        for item_21 in var_19 {
             {
-                array_19.value().string(item_20.as_str());
+                array_20.value().string(item_21.as_str());
             }
         }
-        array_19.finish();
+        array_20.finish();
     }
     Ok(())
 }

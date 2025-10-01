@@ -57,6 +57,8 @@ pub use crate::types::_media_placement::MediaPlacement;
 
 pub use crate::types::_create_attendee_error::CreateAttendeeError;
 
+pub use crate::types::_media_placement_network_type::MediaPlacementNetworkType;
+
 pub use crate::types::_create_attendee_request_item::CreateAttendeeRequestItem;
 
 pub use crate::types::_notifications_configuration::NotificationsConfiguration;
@@ -88,6 +90,8 @@ mod _engine_transcribe_settings;
 mod _media_capabilities;
 
 mod _media_placement;
+
+mod _media_placement_network_type;
 
 mod _meeting;
 

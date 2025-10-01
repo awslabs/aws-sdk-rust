@@ -72,6 +72,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "resourceArn" => {
+                            builder = builder.set_resource_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "selectedAnalysisMethods" => {
                             builder = builder.set_selected_analysis_methods(
                                 crate::protocol_serde::shape_selected_analysis_methods::de_selected_analysis_methods(tokens)?,

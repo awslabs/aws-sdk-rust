@@ -1364,6 +1364,19 @@ pub(crate) fn training_dataset_summary_correct_errors(
     builder
 }
 
+pub(crate) fn access_budget_correct_errors(mut builder: crate::types::builders::AccessBudgetBuilder) -> crate::types::builders::AccessBudgetBuilder {
+    if builder.resource_arn.is_none() {
+        builder.resource_arn = Some(Default::default())
+    }
+    if builder.details.is_none() {
+        builder.details = Some(Default::default())
+    }
+    if builder.aggregate_remaining_budget.is_none() {
+        builder.aggregate_remaining_budget = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn audience_size_correct_errors(mut builder: crate::types::builders::AudienceSizeBuilder) -> crate::types::builders::AudienceSizeBuilder {
     if builder.r#type.is_none() {
         builder.r#type = "no value was set".parse::<crate::types::AudienceSizeType>().ok()
@@ -1511,6 +1524,24 @@ pub(crate) fn trained_model_inference_max_output_size_correct_errors(
     }
     if builder.value.is_none() {
         builder.value = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn access_budget_details_correct_errors(
+    mut builder: crate::types::builders::AccessBudgetDetailsBuilder,
+) -> crate::types::builders::AccessBudgetDetailsBuilder {
+    if builder.start_time.is_none() {
+        builder.start_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.remaining_budget.is_none() {
+        builder.remaining_budget = Some(Default::default())
+    }
+    if builder.budget.is_none() {
+        builder.budget = Some(Default::default())
+    }
+    if builder.budget_type.is_none() {
+        builder.budget_type = "no value was set".parse::<crate::types::AccessBudgetType>().ok()
     }
     builder
 }

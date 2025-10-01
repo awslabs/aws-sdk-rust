@@ -35,6 +35,11 @@ where
                                     ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'differentialPrivacy' cannot be null")
                                 })?,
                         )),
+                        "accessBudget" => Some(crate::types::PrivacyBudget::AccessBudget(
+                            crate::protocol_serde::shape_access_budget::de_access_budget(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'accessBudget' cannot be null")
+                            })?,
+                        )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
                             Some(crate::types::PrivacyBudget::Unknown)

@@ -66,6 +66,11 @@ where
                                 crate::protocol_serde::shape_compute_node_group_configuration_list::de_compute_node_group_configuration_list(tokens)?,
                             );
                         }
+                        "slurmConfiguration" => {
+                            builder = builder.set_slurm_configuration(
+                                crate::protocol_serde::shape_queue_slurm_configuration::de_queue_slurm_configuration(tokens)?,
+                            );
+                        }
                         "errorInfo" => {
                             builder = builder.set_error_info(crate::protocol_serde::shape_error_info_list::de_error_info_list(tokens)?);
                         }

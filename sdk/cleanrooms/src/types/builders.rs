@@ -3,9 +3,17 @@ pub use crate::types::_validation_exception_field::ValidationExceptionFieldBuild
 
 pub use crate::types::_privacy_budget_template::PrivacyBudgetTemplateBuilder;
 
+pub use crate::types::_access_budgets_privacy_template_parameters_output::AccessBudgetsPrivacyTemplateParametersOutputBuilder;
+
+pub use crate::types::_budget_parameter::BudgetParameterBuilder;
+
 pub use crate::types::_differential_privacy_template_parameters_output::DifferentialPrivacyTemplateParametersOutputBuilder;
 
+pub use crate::types::_access_budgets_privacy_template_update_parameters::AccessBudgetsPrivacyTemplateUpdateParametersBuilder;
+
 pub use crate::types::_differential_privacy_template_update_parameters::DifferentialPrivacyTemplateUpdateParametersBuilder;
+
+pub use crate::types::_access_budgets_privacy_template_parameters_input::AccessBudgetsPrivacyTemplateParametersInputBuilder;
 
 pub use crate::types::_differential_privacy_template_parameters_input::DifferentialPrivacyTemplateParametersInputBuilder;
 
@@ -90,6 +98,10 @@ pub use crate::types::_protected_job_receiver_configuration::ProtectedJobReceive
 pub use crate::types::_protected_job_direct_analysis_configuration_details::ProtectedJobDirectAnalysisConfigurationDetailsBuilder;
 
 pub use crate::types::_privacy_budget_summary::PrivacyBudgetSummaryBuilder;
+
+pub use crate::types::_access_budget::AccessBudgetBuilder;
+
+pub use crate::types::_access_budget_details::AccessBudgetDetailsBuilder;
 
 pub use crate::types::_differential_privacy_privacy_budget::DifferentialPrivacyPrivacyBudgetBuilder;
 

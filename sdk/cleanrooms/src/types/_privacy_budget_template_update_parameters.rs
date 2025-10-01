@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum PrivacyBudgetTemplateUpdateParameters {
+    /// <p>The new access budget configuration that completely replaces the existing access budget settings in the privacy budget template.</p>
+    AccessBudget(crate::types::AccessBudgetsPrivacyTemplateUpdateParameters),
     /// <p>An object that specifies the new values for the epsilon and noise parameters.</p>
     DifferentialPrivacy(crate::types::DifferentialPrivacyTemplateUpdateParameters),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
@@ -17,7 +19,19 @@ pub enum PrivacyBudgetTemplateUpdateParameters {
     Unknown,
 }
 impl PrivacyBudgetTemplateUpdateParameters {
-    #[allow(irrefutable_let_patterns)]
+    /// Tries to convert the enum instance into [`AccessBudget`](crate::types::PrivacyBudgetTemplateUpdateParameters::AccessBudget), extracting the inner [`AccessBudgetsPrivacyTemplateUpdateParameters`](crate::types::AccessBudgetsPrivacyTemplateUpdateParameters).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_access_budget(&self) -> ::std::result::Result<&crate::types::AccessBudgetsPrivacyTemplateUpdateParameters, &Self> {
+        if let PrivacyBudgetTemplateUpdateParameters::AccessBudget(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`AccessBudget`](crate::types::PrivacyBudgetTemplateUpdateParameters::AccessBudget).
+    pub fn is_access_budget(&self) -> bool {
+        self.as_access_budget().is_ok()
+    }
     /// Tries to convert the enum instance into [`DifferentialPrivacy`](crate::types::PrivacyBudgetTemplateUpdateParameters::DifferentialPrivacy), extracting the inner [`DifferentialPrivacyTemplateUpdateParameters`](crate::types::DifferentialPrivacyTemplateUpdateParameters).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_differential_privacy(&self) -> ::std::result::Result<&crate::types::DifferentialPrivacyTemplateUpdateParameters, &Self> {

@@ -158,6 +158,20 @@ impl CreateQueueFluentBuilder {
     pub fn get_compute_node_group_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ComputeNodeGroupConfiguration>> {
         self.inner.get_compute_node_group_configurations()
     }
+    /// <p>Additional options related to the Slurm scheduler.</p>
+    pub fn slurm_configuration(mut self, input: crate::types::QueueSlurmConfigurationRequest) -> Self {
+        self.inner = self.inner.slurm_configuration(input);
+        self
+    }
+    /// <p>Additional options related to the Slurm scheduler.</p>
+    pub fn set_slurm_configuration(mut self, input: ::std::option::Option<crate::types::QueueSlurmConfigurationRequest>) -> Self {
+        self.inner = self.inner.set_slurm_configuration(input);
+        self
+    }
+    /// <p>Additional options related to the Slurm scheduler.</p>
+    pub fn get_slurm_configuration(&self) -> &::std::option::Option<crate::types::QueueSlurmConfigurationRequest> {
+        self.inner.get_slurm_configuration()
+    }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, the subsequent retries with the same client token return the result from the original successful request and they have no additional effect. If you don't specify a client token, the CLI and SDK automatically generate 1 for you.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());

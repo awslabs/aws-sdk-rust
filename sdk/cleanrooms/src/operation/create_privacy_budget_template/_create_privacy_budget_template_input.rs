@@ -76,7 +76,6 @@ impl CreatePrivacyBudgetTemplateInputBuilder {
     /// <p>How often the privacy budget refreshes.</p><important>
     /// <p>If you plan to regularly bring new data into the collaboration, you can use <code>CALENDAR_MONTH</code> to automatically get a new privacy budget for the collaboration every calendar month. Choosing this option allows arbitrary amounts of information to be revealed about rows of the data when repeatedly queries across refreshes. Avoid choosing this if the same rows will be repeatedly queried between privacy budget refreshes.</p>
     /// </important>
-    /// This field is required.
     pub fn auto_refresh(mut self, input: crate::types::PrivacyBudgetTemplateAutoRefresh) -> Self {
         self.auto_refresh = ::std::option::Option::Some(input);
         self

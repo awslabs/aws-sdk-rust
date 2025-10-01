@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum PrivacyBudget {
+    /// <p>Access budget information associated with this privacy budget.</p>
+    AccessBudget(crate::types::AccessBudget),
     /// <p>An object that specifies the epsilon parameter and the utility in terms of total aggregations, as well as the remaining aggregations available.</p>
     DifferentialPrivacy(crate::types::DifferentialPrivacyPrivacyBudget),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
@@ -17,7 +19,19 @@ pub enum PrivacyBudget {
     Unknown,
 }
 impl PrivacyBudget {
-    #[allow(irrefutable_let_patterns)]
+    /// Tries to convert the enum instance into [`AccessBudget`](crate::types::PrivacyBudget::AccessBudget), extracting the inner [`AccessBudget`](crate::types::AccessBudget).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_access_budget(&self) -> ::std::result::Result<&crate::types::AccessBudget, &Self> {
+        if let PrivacyBudget::AccessBudget(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`AccessBudget`](crate::types::PrivacyBudget::AccessBudget).
+    pub fn is_access_budget(&self) -> bool {
+        self.as_access_budget().is_ok()
+    }
     /// Tries to convert the enum instance into [`DifferentialPrivacy`](crate::types::PrivacyBudget::DifferentialPrivacy), extracting the inner [`DifferentialPrivacyPrivacyBudget`](crate::types::DifferentialPrivacyPrivacyBudget).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_differential_privacy(&self) -> ::std::result::Result<&crate::types::DifferentialPrivacyPrivacyBudget, &Self> {

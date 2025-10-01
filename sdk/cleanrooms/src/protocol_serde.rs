@@ -439,6 +439,10 @@ pub(crate) mod shape_tag_map;
 
 pub(crate) mod shape_validation_exception_field_list;
 
+pub(crate) mod shape_access_budgets_privacy_template_parameters_input;
+
+pub(crate) mod shape_access_budgets_privacy_template_update_parameters;
+
 pub(crate) mod shape_allowed_column_list;
 
 pub(crate) mod shape_analysis_parameter_list;
@@ -587,6 +591,8 @@ pub(crate) mod shape_validation_exception_field;
 
 pub(crate) mod shape_worker_compute_configuration;
 
+pub(crate) mod shape_access_budgets_privacy_template_parameters_output;
+
 pub(crate) mod shape_analysis_rule_aggregation;
 
 pub(crate) mod shape_analysis_rule_custom;
@@ -604,6 +610,8 @@ pub(crate) mod shape_analysis_template_validation_status_detail;
 pub(crate) mod shape_billed_job_resource_utilization;
 
 pub(crate) mod shape_billed_resource_utilization;
+
+pub(crate) mod shape_budget_parameter;
 
 pub(crate) mod shape_change;
 
@@ -673,6 +681,8 @@ pub(crate) mod shape_schema_status_detail;
 
 pub(crate) mod shape_snowflake_table_schema;
 
+pub(crate) mod shape_access_budget;
+
 pub(crate) mod shape_aggregate_column;
 
 pub(crate) mod shape_aggregation_constraint;
@@ -682,6 +692,8 @@ pub(crate) mod shape_analysis_rule_id_mapping_table;
 pub(crate) mod shape_analysis_template_artifact_list;
 
 pub(crate) mod shape_analysis_template_validation_status_reason_list;
+
+pub(crate) mod shape_budget_parameters;
 
 pub(crate) mod shape_change_type_list;
 
@@ -733,6 +745,8 @@ pub(crate) mod shape_schema_status_reason_list;
 
 pub(crate) mod shape_snowflake_table_schema_v1;
 
+pub(crate) mod shape_access_budget_details_list;
+
 pub(crate) mod shape_aggregate_column_list;
 
 pub(crate) mod shape_aggregation_constraints;
@@ -772,6 +786,8 @@ pub(crate) mod shape_scalar_functions_list;
 pub(crate) mod shape_schema_status_reason;
 
 pub(crate) mod shape_snowflake_table_schema_list;
+
+pub(crate) mod shape_access_budget_details;
 
 pub(crate) mod shape_differential_privacy_column_list;
 

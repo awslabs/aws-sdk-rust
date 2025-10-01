@@ -180,6 +180,9 @@ pub(crate) fn de_get_collaboration_ml_input_channel(
                             .transpose()?,
                     );
                 }
+                "privacyBudgets" => {
+                    builder = builder.set_privacy_budgets(crate::protocol_serde::shape_privacy_budgets::de_privacy_budgets(tokens)?);
+                }
                 "retentionInDays" => {
                     builder = builder.set_retention_in_days(
                         ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?

@@ -43,6 +43,8 @@ pub struct CreateMeetingInput {
     /// <p>Some services might have specific requirements for tagging some resources. For example, to tag an Amazon S3 bucket, you must also have the <code>s3:GetBucketTagging</code> permission. If the expected minimum permissions don't work, check the documentation for that service's tagging APIs for more information.</p>
     /// </note>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>The type of network for the media placement. Either IPv4 only or dual-stack (IPv4 and IPv6).</p>
+    pub media_placement_network_type: ::std::option::Option<crate::types::MediaPlacementNetworkType>,
 }
 impl CreateMeetingInput {
     /// <p>The unique identifier for the client request. Use a different token for different meetings.</p>
@@ -107,6 +109,10 @@ impl CreateMeetingInput {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
+    /// <p>The type of network for the media placement. Either IPv4 only or dual-stack (IPv4 and IPv6).</p>
+    pub fn media_placement_network_type(&self) -> ::std::option::Option<&crate::types::MediaPlacementNetworkType> {
+        self.media_placement_network_type.as_ref()
+    }
 }
 impl ::std::fmt::Debug for CreateMeetingInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -120,6 +126,7 @@ impl ::std::fmt::Debug for CreateMeetingInput {
         formatter.field("primary_meeting_id", &self.primary_meeting_id);
         formatter.field("tenant_ids", &self.tenant_ids);
         formatter.field("tags", &self.tags);
+        formatter.field("media_placement_network_type", &self.media_placement_network_type);
         formatter.finish()
     }
 }
@@ -143,6 +150,7 @@ pub struct CreateMeetingInputBuilder {
     pub(crate) primary_meeting_id: ::std::option::Option<::std::string::String>,
     pub(crate) tenant_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) media_placement_network_type: ::std::option::Option<crate::types::MediaPlacementNetworkType>,
 }
 impl CreateMeetingInputBuilder {
     /// <p>The unique identifier for the client request. Use a different token for different meetings.</p>
@@ -352,6 +360,20 @@ impl CreateMeetingInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
+    /// <p>The type of network for the media placement. Either IPv4 only or dual-stack (IPv4 and IPv6).</p>
+    pub fn media_placement_network_type(mut self, input: crate::types::MediaPlacementNetworkType) -> Self {
+        self.media_placement_network_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of network for the media placement. Either IPv4 only or dual-stack (IPv4 and IPv6).</p>
+    pub fn set_media_placement_network_type(mut self, input: ::std::option::Option<crate::types::MediaPlacementNetworkType>) -> Self {
+        self.media_placement_network_type = input;
+        self
+    }
+    /// <p>The type of network for the media placement. Either IPv4 only or dual-stack (IPv4 and IPv6).</p>
+    pub fn get_media_placement_network_type(&self) -> &::std::option::Option<crate::types::MediaPlacementNetworkType> {
+        &self.media_placement_network_type
+    }
     /// Consumes the builder and constructs a [`CreateMeetingInput`](crate::operation::create_meeting::CreateMeetingInput).
     pub fn build(
         self,
@@ -366,6 +388,7 @@ impl CreateMeetingInputBuilder {
             primary_meeting_id: self.primary_meeting_id,
             tenant_ids: self.tenant_ids,
             tags: self.tags,
+            media_placement_network_type: self.media_placement_network_type,
         })
     }
 }
@@ -381,6 +404,7 @@ impl ::std::fmt::Debug for CreateMeetingInputBuilder {
         formatter.field("primary_meeting_id", &self.primary_meeting_id);
         formatter.field("tenant_ids", &self.tenant_ids);
         formatter.field("tags", &self.tags);
+        formatter.field("media_placement_network_type", &self.media_placement_network_type);
         formatter.finish()
     }
 }

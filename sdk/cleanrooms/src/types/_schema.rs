@@ -35,6 +35,8 @@ pub struct Schema {
     pub r#type: crate::types::SchemaType,
     /// <p>Details about the status of the schema. Currently, only one entry is present.</p>
     pub schema_status_details: ::std::vec::Vec<crate::types::SchemaStatusDetail>,
+    /// <p>The Amazon Resource Name (ARN) of the schema resource.</p>
+    pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The schema type properties.</p>
     pub schema_type_properties: ::std::option::Option<crate::types::SchemaTypeProperties>,
 }
@@ -109,6 +111,10 @@ impl Schema {
         use std::ops::Deref;
         self.schema_status_details.deref()
     }
+    /// <p>The Amazon Resource Name (ARN) of the schema resource.</p>
+    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
     /// <p>The schema type properties.</p>
     pub fn schema_type_properties(&self) -> ::std::option::Option<&crate::types::SchemaTypeProperties> {
         self.schema_type_properties.as_ref()
@@ -139,6 +145,7 @@ pub struct SchemaBuilder {
     pub(crate) update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) r#type: ::std::option::Option<crate::types::SchemaType>,
     pub(crate) schema_status_details: ::std::option::Option<::std::vec::Vec<crate::types::SchemaStatusDetail>>,
+    pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) schema_type_properties: ::std::option::Option<crate::types::SchemaTypeProperties>,
 }
 impl SchemaBuilder {
@@ -385,6 +392,20 @@ impl SchemaBuilder {
     pub fn get_schema_status_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SchemaStatusDetail>> {
         &self.schema_status_details
     }
+    /// <p>The Amazon Resource Name (ARN) of the schema resource.</p>
+    pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the schema resource.</p>
+    pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.resource_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the schema resource.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     /// <p>The schema type properties.</p>
     pub fn schema_type_properties(mut self, input: crate::types::SchemaTypeProperties) -> Self {
         self.schema_type_properties = ::std::option::Option::Some(input);
@@ -483,6 +504,7 @@ impl SchemaBuilder {
                 )
             })?,
             schema_status_details: self.schema_status_details.unwrap_or_default(),
+            resource_arn: self.resource_arn,
             schema_type_properties: self.schema_type_properties,
         })
     }

@@ -55,6 +55,8 @@ pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_untag_resource;
 
+pub(crate) mod shape_update_cluster;
+
 pub(crate) mod shape_update_compute_node_group;
 
 pub(crate) mod shape_update_queue;
@@ -111,6 +113,8 @@ pub(crate) mod shape_throttling_exception;
 
 pub(crate) mod shape_untag_resource_input;
 
+pub(crate) mod shape_update_cluster_input;
+
 pub(crate) mod shape_update_compute_node_group_input;
 
 pub(crate) mod shape_update_queue_input;
@@ -143,6 +147,8 @@ pub(crate) mod shape_queue;
 
 pub(crate) mod shape_queue_list;
 
+pub(crate) mod shape_queue_slurm_configuration_request;
+
 pub(crate) mod shape_response_tag_map;
 
 pub(crate) mod shape_scaling_configuration_request;
@@ -151,7 +157,11 @@ pub(crate) mod shape_scheduler_request;
 
 pub(crate) mod shape_spot_options;
 
+pub(crate) mod shape_update_cluster_slurm_configuration_request;
+
 pub(crate) mod shape_update_compute_node_group_slurm_configuration_request;
+
+pub(crate) mod shape_update_queue_slurm_configuration_request;
 
 pub(crate) mod shape_validation_exception_field_list;
 
@@ -175,6 +185,8 @@ pub(crate) mod shape_instance_list;
 
 pub(crate) mod shape_networking;
 
+pub(crate) mod shape_queue_slurm_configuration;
+
 pub(crate) mod shape_queue_summary;
 
 pub(crate) mod shape_scaling_configuration;
@@ -184,6 +196,8 @@ pub(crate) mod shape_scheduler;
 pub(crate) mod shape_slurm_custom_setting;
 
 pub(crate) mod shape_subnet_id_list;
+
+pub(crate) mod shape_update_accounting_request;
 
 pub(crate) mod shape_validation_exception_field;
 

@@ -108,17 +108,17 @@ impl GetClusterFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name or ID of the cluster of the queue.</p>
+    /// <p>The name or ID of the cluster.</p>
     pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_identifier(input.into());
         self
     }
-    /// <p>The name or ID of the cluster of the queue.</p>
+    /// <p>The name or ID of the cluster.</p>
     pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_identifier(input);
         self
     }
-    /// <p>The name or ID of the cluster of the queue.</p>
+    /// <p>The name or ID of the cluster.</p>
     pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cluster_identifier()
     }

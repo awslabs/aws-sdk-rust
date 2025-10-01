@@ -11,6 +11,8 @@ pub struct ListPrivacyBudgetsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results that are returned for an API request call. The service chooses a default number if you don't set one. The service might return a `nextToken` even if the `maxResults` value has not been met.</p>
     pub max_results: ::std::option::Option<i32>,
+    /// <p>The Amazon Resource Name (ARN) of the access budget resource to filter privacy budgets by.</p>
+    pub access_budget_resource_arn: ::std::option::Option<::std::string::String>,
 }
 impl ListPrivacyBudgetsInput {
     /// <p>A unique identifier for one of your memberships for a collaboration. The privacy budget is retrieved from the collaboration that this membership belongs to. Accepts a membership ID.</p>
@@ -29,6 +31,10 @@ impl ListPrivacyBudgetsInput {
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
+    /// <p>The Amazon Resource Name (ARN) of the access budget resource to filter privacy budgets by.</p>
+    pub fn access_budget_resource_arn(&self) -> ::std::option::Option<&str> {
+        self.access_budget_resource_arn.as_deref()
+    }
 }
 impl ListPrivacyBudgetsInput {
     /// Creates a new builder-style object to manufacture [`ListPrivacyBudgetsInput`](crate::operation::list_privacy_budgets::ListPrivacyBudgetsInput).
@@ -45,6 +51,7 @@ pub struct ListPrivacyBudgetsInputBuilder {
     pub(crate) privacy_budget_type: ::std::option::Option<crate::types::PrivacyBudgetType>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
+    pub(crate) access_budget_resource_arn: ::std::option::Option<::std::string::String>,
 }
 impl ListPrivacyBudgetsInputBuilder {
     /// <p>A unique identifier for one of your memberships for a collaboration. The privacy budget is retrieved from the collaboration that this membership belongs to. Accepts a membership ID.</p>
@@ -105,6 +112,20 @@ impl ListPrivacyBudgetsInputBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
+    /// <p>The Amazon Resource Name (ARN) of the access budget resource to filter privacy budgets by.</p>
+    pub fn access_budget_resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.access_budget_resource_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the access budget resource to filter privacy budgets by.</p>
+    pub fn set_access_budget_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.access_budget_resource_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the access budget resource to filter privacy budgets by.</p>
+    pub fn get_access_budget_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_budget_resource_arn
+    }
     /// Consumes the builder and constructs a [`ListPrivacyBudgetsInput`](crate::operation::list_privacy_budgets::ListPrivacyBudgetsInput).
     pub fn build(
         self,
@@ -115,6 +136,7 @@ impl ListPrivacyBudgetsInputBuilder {
             privacy_budget_type: self.privacy_budget_type,
             next_token: self.next_token,
             max_results: self.max_results,
+            access_budget_resource_arn: self.access_budget_resource_arn,
         })
     }
 }

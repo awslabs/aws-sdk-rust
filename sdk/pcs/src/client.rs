@@ -195,6 +195,8 @@ mod tag_resource;
 
 mod untag_resource;
 
+mod update_cluster;
+
 mod update_compute_node_group;
 
 mod update_queue;

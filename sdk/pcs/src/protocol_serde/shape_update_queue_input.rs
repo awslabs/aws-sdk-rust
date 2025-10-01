@@ -21,8 +21,14 @@ pub fn ser_update_queue_input_input(
         }
         array_4.finish();
     }
-    if let Some(var_7) = &input.client_token {
-        object.key("clientToken").string(var_7.as_str());
+    if let Some(var_7) = &input.slurm_configuration {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("slurmConfiguration").start_object();
+        crate::protocol_serde::shape_update_queue_slurm_configuration_request::ser_update_queue_slurm_configuration_request(&mut object_8, var_7)?;
+        object_8.finish();
+    }
+    if let Some(var_9) = &input.client_token {
+        object.key("clientToken").string(var_9.as_str());
     }
     Ok(())
 }

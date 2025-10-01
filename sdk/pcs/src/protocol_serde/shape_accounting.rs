@@ -14,17 +14,17 @@ where
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "mode" => {
-                            builder = builder.set_mode(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::AccountingMode::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
                         "defaultPurgeTimeInDays" => {
                             builder = builder.set_default_purge_time_in_days(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "mode" => {
+                            builder = builder.set_mode(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::AccountingMode::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

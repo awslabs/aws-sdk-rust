@@ -182,6 +182,9 @@ pub(crate) fn de_get_ml_input_channel(
                             .transpose()?,
                     );
                 }
+                "privacyBudgets" => {
+                    builder = builder.set_privacy_budgets(crate::protocol_serde::shape_privacy_budgets::de_privacy_budgets(tokens)?);
+                }
                 "protectedQueryIdentifier" => {
                     builder = builder.set_protected_query_identifier(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

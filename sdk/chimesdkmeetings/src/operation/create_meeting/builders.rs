@@ -22,7 +22,15 @@ impl crate::operation::create_meeting::builders::CreateMeetingInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateMeeting`.
 ///
-/// <p>Creates a new Amazon Chime SDK meeting in the specified media Region with no initial attendees. For more information about specifying media Regions, see <a href="https://docs.aws.amazon.com/chime/latest/dg/chime-sdk-meetings-regions.html">Amazon Chime SDK Media Regions</a> in the <i>Amazon Chime Developer Guide</i>. For more information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p>
+/// <p>Creates a new Amazon Chime SDK meeting in the specified media Region with no initial attendees. For more information about specifying media Regions, see <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/sdk-available-regions">Available Regions</a> and <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/chime-sdk-meetings-regions.html">Using meeting Regions</a>, both in the <i>Amazon Chime SDK Developer Guide</i>. For more information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p><note>
+/// <p>If you use this API in conjuction with the and APIs, and you don't specify the <code>MeetingFeatures.Content.MaxResolution</code> or <code>MeetingFeatures.Video.MaxResolution</code> parameters, the following defaults are used:</p>
+/// <ul>
+/// <li>
+/// <p>Content.MaxResolution: FHD</p></li>
+/// <li>
+/// <p>Video.MaxResolution: HD</p></li>
+/// </ul>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateMeetingFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -309,5 +317,19 @@ impl CreateMeetingFluentBuilder {
     /// </note>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
+    }
+    /// <p>The type of network for the media placement. Either IPv4 only or dual-stack (IPv4 and IPv6).</p>
+    pub fn media_placement_network_type(mut self, input: crate::types::MediaPlacementNetworkType) -> Self {
+        self.inner = self.inner.media_placement_network_type(input);
+        self
+    }
+    /// <p>The type of network for the media placement. Either IPv4 only or dual-stack (IPv4 and IPv6).</p>
+    pub fn set_media_placement_network_type(mut self, input: ::std::option::Option<crate::types::MediaPlacementNetworkType>) -> Self {
+        self.inner = self.inner.set_media_placement_network_type(input);
+        self
+    }
+    /// <p>The type of network for the media placement. Either IPv4 only or dual-stack (IPv4 and IPv6).</p>
+    pub fn get_media_placement_network_type(&self) -> &::std::option::Option<crate::types::MediaPlacementNetworkType> {
+        self.inner.get_media_placement_network_type()
     }
 }
