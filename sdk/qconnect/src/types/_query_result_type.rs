@@ -14,6 +14,9 @@
 /// match queryresulttype {
 ///     QueryResultType::BlockedGenerativeAnswerChunk => { /* ... */ },
 ///     QueryResultType::BlockedIntentAnswerChunk => { /* ... */ },
+///     QueryResultType::EmailGenerativeAnswerChunk => { /* ... */ },
+///     QueryResultType::EmailOverviewChunk => { /* ... */ },
+///     QueryResultType::EmailResponseChunk => { /* ... */ },
 ///     QueryResultType::GenerativeAnswer => { /* ... */ },
 ///     QueryResultType::GenerativeAnswerChunk => { /* ... */ },
 ///     QueryResultType::IntentAnswer => { /* ... */ },
@@ -52,6 +55,12 @@ pub enum QueryResultType {
     #[allow(missing_docs)] // documentation missing in model
     BlockedIntentAnswerChunk,
     #[allow(missing_docs)] // documentation missing in model
+    EmailGenerativeAnswerChunk,
+    #[allow(missing_docs)] // documentation missing in model
+    EmailOverviewChunk,
+    #[allow(missing_docs)] // documentation missing in model
+    EmailResponseChunk,
+    #[allow(missing_docs)] // documentation missing in model
     GenerativeAnswer,
     #[allow(missing_docs)] // documentation missing in model
     GenerativeAnswerChunk,
@@ -70,6 +79,9 @@ impl ::std::convert::From<&str> for QueryResultType {
         match s {
             "BLOCKED_GENERATIVE_ANSWER_CHUNK" => QueryResultType::BlockedGenerativeAnswerChunk,
             "BLOCKED_INTENT_ANSWER_CHUNK" => QueryResultType::BlockedIntentAnswerChunk,
+            "EMAIL_GENERATIVE_ANSWER_CHUNK" => QueryResultType::EmailGenerativeAnswerChunk,
+            "EMAIL_OVERVIEW_CHUNK" => QueryResultType::EmailOverviewChunk,
+            "EMAIL_RESPONSE_CHUNK" => QueryResultType::EmailResponseChunk,
             "GENERATIVE_ANSWER" => QueryResultType::GenerativeAnswer,
             "GENERATIVE_ANSWER_CHUNK" => QueryResultType::GenerativeAnswerChunk,
             "INTENT_ANSWER" => QueryResultType::IntentAnswer,
@@ -92,6 +104,9 @@ impl QueryResultType {
         match self {
             QueryResultType::BlockedGenerativeAnswerChunk => "BLOCKED_GENERATIVE_ANSWER_CHUNK",
             QueryResultType::BlockedIntentAnswerChunk => "BLOCKED_INTENT_ANSWER_CHUNK",
+            QueryResultType::EmailGenerativeAnswerChunk => "EMAIL_GENERATIVE_ANSWER_CHUNK",
+            QueryResultType::EmailOverviewChunk => "EMAIL_OVERVIEW_CHUNK",
+            QueryResultType::EmailResponseChunk => "EMAIL_RESPONSE_CHUNK",
             QueryResultType::GenerativeAnswer => "GENERATIVE_ANSWER",
             QueryResultType::GenerativeAnswerChunk => "GENERATIVE_ANSWER_CHUNK",
             QueryResultType::IntentAnswer => "INTENT_ANSWER",
@@ -105,6 +120,9 @@ impl QueryResultType {
         &[
             "BLOCKED_GENERATIVE_ANSWER_CHUNK",
             "BLOCKED_INTENT_ANSWER_CHUNK",
+            "EMAIL_GENERATIVE_ANSWER_CHUNK",
+            "EMAIL_OVERVIEW_CHUNK",
+            "EMAIL_RESPONSE_CHUNK",
             "GENERATIVE_ANSWER",
             "GENERATIVE_ANSWER_CHUNK",
             "INTENT_ANSWER",
@@ -135,6 +153,9 @@ impl ::std::fmt::Display for QueryResultType {
         match self {
             QueryResultType::BlockedGenerativeAnswerChunk => write!(f, "BLOCKED_GENERATIVE_ANSWER_CHUNK"),
             QueryResultType::BlockedIntentAnswerChunk => write!(f, "BLOCKED_INTENT_ANSWER_CHUNK"),
+            QueryResultType::EmailGenerativeAnswerChunk => write!(f, "EMAIL_GENERATIVE_ANSWER_CHUNK"),
+            QueryResultType::EmailOverviewChunk => write!(f, "EMAIL_OVERVIEW_CHUNK"),
+            QueryResultType::EmailResponseChunk => write!(f, "EMAIL_RESPONSE_CHUNK"),
             QueryResultType::GenerativeAnswer => write!(f, "GENERATIVE_ANSWER"),
             QueryResultType::GenerativeAnswerChunk => write!(f, "GENERATIVE_ANSWER_CHUNK"),
             QueryResultType::IntentAnswer => write!(f, "INTENT_ANSWER"),

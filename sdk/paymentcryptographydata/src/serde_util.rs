@@ -134,6 +134,18 @@ pub(crate) fn re_encrypt_data_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn translate_key_material_output_output_correct_errors(
+    mut builder: crate::operation::translate_key_material::builders::TranslateKeyMaterialOutputBuilder,
+) -> crate::operation::translate_key_material::builders::TranslateKeyMaterialOutputBuilder {
+    if builder.wrapped_key.is_none() {
+        builder.wrapped_key = {
+            let builder = crate::types::builders::WrappedWorkingKeyBuilder::default();
+            crate::serde_util::wrapped_working_key_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn translate_pin_data_output_output_correct_errors(
     mut builder: crate::operation::translate_pin_data::builders::TranslatePinDataOutputBuilder,
 ) -> crate::operation::translate_pin_data::builders::TranslatePinDataOutputBuilder {
@@ -211,6 +223,21 @@ pub(crate) fn verify_pin_data_output_output_correct_errors(
     }
     if builder.encryption_key_check_value.is_none() {
         builder.encryption_key_check_value = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn wrapped_working_key_correct_errors(
+    mut builder: crate::types::builders::WrappedWorkingKeyBuilder,
+) -> crate::types::builders::WrappedWorkingKeyBuilder {
+    if builder.wrapped_key_material.is_none() {
+        builder.wrapped_key_material = Some(Default::default())
+    }
+    if builder.key_check_value.is_none() {
+        builder.key_check_value = Some(Default::default())
+    }
+    if builder.wrapped_key_material_format.is_none() {
+        builder.wrapped_key_material_format = "no value was set".parse::<crate::types::WrappedKeyMaterialFormat>().ok()
     }
     builder
 }

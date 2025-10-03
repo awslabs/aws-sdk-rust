@@ -34,6 +34,8 @@ pub struct CreateCollaborationInput {
     pub analytics_engine: ::std::option::Option<crate::types::AnalyticsEngine>,
     /// <p>The types of change requests that are automatically approved for this collaboration.</p>
     pub auto_approved_change_request_types: ::std::option::Option<::std::vec::Vec<crate::types::AutoApprovedChangeType>>,
+    /// <p>The Amazon Web Services Regions where collaboration query results can be stored. When specified, results can only be written to these Regions. This parameter enables you to meet your compliance and data governance requirements, and implement regional data governance policies.</p>
+    pub allowed_result_regions: ::std::option::Option<::std::vec::Vec<crate::types::SupportedS3Region>>,
 }
 impl CreateCollaborationInput {
     /// <p>A list of initial members, not including the creator. This list is immutable.</p>
@@ -99,6 +101,12 @@ impl CreateCollaborationInput {
     pub fn auto_approved_change_request_types(&self) -> &[crate::types::AutoApprovedChangeType] {
         self.auto_approved_change_request_types.as_deref().unwrap_or_default()
     }
+    /// <p>The Amazon Web Services Regions where collaboration query results can be stored. When specified, results can only be written to these Regions. This parameter enables you to meet your compliance and data governance requirements, and implement regional data governance policies.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.allowed_result_regions.is_none()`.
+    pub fn allowed_result_regions(&self) -> &[crate::types::SupportedS3Region] {
+        self.allowed_result_regions.as_deref().unwrap_or_default()
+    }
 }
 impl CreateCollaborationInput {
     /// Creates a new builder-style object to manufacture [`CreateCollaborationInput`](crate::operation::create_collaboration::CreateCollaborationInput).
@@ -124,6 +132,7 @@ pub struct CreateCollaborationInputBuilder {
     pub(crate) creator_payment_configuration: ::std::option::Option<crate::types::PaymentConfiguration>,
     pub(crate) analytics_engine: ::std::option::Option<crate::types::AnalyticsEngine>,
     pub(crate) auto_approved_change_request_types: ::std::option::Option<::std::vec::Vec<crate::types::AutoApprovedChangeType>>,
+    pub(crate) allowed_result_regions: ::std::option::Option<::std::vec::Vec<crate::types::SupportedS3Region>>,
 }
 impl CreateCollaborationInputBuilder {
     /// Appends an item to `members`.
@@ -354,6 +363,26 @@ impl CreateCollaborationInputBuilder {
     pub fn get_auto_approved_change_request_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AutoApprovedChangeType>> {
         &self.auto_approved_change_request_types
     }
+    /// Appends an item to `allowed_result_regions`.
+    ///
+    /// To override the contents of this collection use [`set_allowed_result_regions`](Self::set_allowed_result_regions).
+    ///
+    /// <p>The Amazon Web Services Regions where collaboration query results can be stored. When specified, results can only be written to these Regions. This parameter enables you to meet your compliance and data governance requirements, and implement regional data governance policies.</p>
+    pub fn allowed_result_regions(mut self, input: crate::types::SupportedS3Region) -> Self {
+        let mut v = self.allowed_result_regions.unwrap_or_default();
+        v.push(input);
+        self.allowed_result_regions = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The Amazon Web Services Regions where collaboration query results can be stored. When specified, results can only be written to these Regions. This parameter enables you to meet your compliance and data governance requirements, and implement regional data governance policies.</p>
+    pub fn set_allowed_result_regions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SupportedS3Region>>) -> Self {
+        self.allowed_result_regions = input;
+        self
+    }
+    /// <p>The Amazon Web Services Regions where collaboration query results can be stored. When specified, results can only be written to these Regions. This parameter enables you to meet your compliance and data governance requirements, and implement regional data governance policies.</p>
+    pub fn get_allowed_result_regions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SupportedS3Region>> {
+        &self.allowed_result_regions
+    }
     /// Consumes the builder and constructs a [`CreateCollaborationInput`](crate::operation::create_collaboration::CreateCollaborationInput).
     pub fn build(
         self,
@@ -373,6 +402,7 @@ impl CreateCollaborationInputBuilder {
             creator_payment_configuration: self.creator_payment_configuration,
             analytics_engine: self.analytics_engine,
             auto_approved_change_request_types: self.auto_approved_change_request_types,
+            allowed_result_regions: self.allowed_result_regions,
         })
     }
 }

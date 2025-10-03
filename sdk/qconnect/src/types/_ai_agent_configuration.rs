@@ -6,6 +6,12 @@
 pub enum AiAgentConfiguration {
     /// <p>The configuration for AI Agents of type <code>ANSWER_RECOMMENDATION</code>.</p>
     AnswerRecommendationAiAgentConfiguration(crate::types::AnswerRecommendationAiAgentConfiguration),
+    /// <p>Configuration for the EMAIL_GENERATIVE_ANSWER AI agent that provides comprehensive knowledge-based answers for customer queries.</p>
+    EmailGenerativeAnswerAiAgentConfiguration(crate::types::EmailGenerativeAnswerAiAgentConfiguration),
+    /// <p>Configuration for the EMAIL_OVERVIEW AI agent that generates structured overview of email conversations.</p>
+    EmailOverviewAiAgentConfiguration(crate::types::EmailOverviewAiAgentConfiguration),
+    /// <p>Configuration for the EMAIL_RESPONSE AI agent that generates professional email responses using knowledge base content.</p>
+    EmailResponseAiAgentConfiguration(crate::types::EmailResponseAiAgentConfiguration),
     /// <p>The configuration for AI Agents of type <code>MANUAL_SEARCH</code>.</p>
     ManualSearchAiAgentConfiguration(crate::types::ManualSearchAiAgentConfiguration),
     /// <p>The configuration for AI Agents of type SELF_SERVICE.</p>
@@ -35,6 +41,47 @@ impl AiAgentConfiguration {
     /// Returns true if this is a [`AnswerRecommendationAiAgentConfiguration`](crate::types::AiAgentConfiguration::AnswerRecommendationAiAgentConfiguration).
     pub fn is_answer_recommendation_ai_agent_configuration(&self) -> bool {
         self.as_answer_recommendation_ai_agent_configuration().is_ok()
+    }
+    /// Tries to convert the enum instance into [`EmailGenerativeAnswerAiAgentConfiguration`](crate::types::AiAgentConfiguration::EmailGenerativeAnswerAiAgentConfiguration), extracting the inner [`EmailGenerativeAnswerAiAgentConfiguration`](crate::types::EmailGenerativeAnswerAiAgentConfiguration).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_email_generative_answer_ai_agent_configuration(
+        &self,
+    ) -> ::std::result::Result<&crate::types::EmailGenerativeAnswerAiAgentConfiguration, &Self> {
+        if let AiAgentConfiguration::EmailGenerativeAnswerAiAgentConfiguration(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`EmailGenerativeAnswerAiAgentConfiguration`](crate::types::AiAgentConfiguration::EmailGenerativeAnswerAiAgentConfiguration).
+    pub fn is_email_generative_answer_ai_agent_configuration(&self) -> bool {
+        self.as_email_generative_answer_ai_agent_configuration().is_ok()
+    }
+    /// Tries to convert the enum instance into [`EmailOverviewAiAgentConfiguration`](crate::types::AiAgentConfiguration::EmailOverviewAiAgentConfiguration), extracting the inner [`EmailOverviewAiAgentConfiguration`](crate::types::EmailOverviewAiAgentConfiguration).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_email_overview_ai_agent_configuration(&self) -> ::std::result::Result<&crate::types::EmailOverviewAiAgentConfiguration, &Self> {
+        if let AiAgentConfiguration::EmailOverviewAiAgentConfiguration(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`EmailOverviewAiAgentConfiguration`](crate::types::AiAgentConfiguration::EmailOverviewAiAgentConfiguration).
+    pub fn is_email_overview_ai_agent_configuration(&self) -> bool {
+        self.as_email_overview_ai_agent_configuration().is_ok()
+    }
+    /// Tries to convert the enum instance into [`EmailResponseAiAgentConfiguration`](crate::types::AiAgentConfiguration::EmailResponseAiAgentConfiguration), extracting the inner [`EmailResponseAiAgentConfiguration`](crate::types::EmailResponseAiAgentConfiguration).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_email_response_ai_agent_configuration(&self) -> ::std::result::Result<&crate::types::EmailResponseAiAgentConfiguration, &Self> {
+        if let AiAgentConfiguration::EmailResponseAiAgentConfiguration(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`EmailResponseAiAgentConfiguration`](crate::types::AiAgentConfiguration::EmailResponseAiAgentConfiguration).
+    pub fn is_email_response_ai_agent_configuration(&self) -> bool {
+        self.as_email_response_ai_agent_configuration().is_ok()
     }
     /// Tries to convert the enum instance into [`ManualSearchAiAgentConfiguration`](crate::types::AiAgentConfiguration::ManualSearchAiAgentConfiguration), extracting the inner [`ManualSearchAiAgentConfiguration`](crate::types::ManualSearchAiAgentConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.

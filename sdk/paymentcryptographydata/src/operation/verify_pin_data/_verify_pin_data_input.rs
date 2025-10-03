@@ -162,7 +162,6 @@ impl VerifyPinDataInputBuilder {
         &self.encrypted_pin_block
     }
     /// <p>The Primary Account Number (PAN), a unique identifier for a payment credit or debit card that associates the card with a specific account holder.</p>
-    /// This field is required.
     pub fn primary_account_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.primary_account_number = ::std::option::Option::Some(input.into());
         self

@@ -445,6 +445,8 @@ pub(crate) mod shape_access_budgets_privacy_template_update_parameters;
 
 pub(crate) mod shape_allowed_column_list;
 
+pub(crate) mod shape_allowed_result_regions;
+
 pub(crate) mod shape_analysis_parameter_list;
 
 pub(crate) mod shape_analysis_rule_policy;

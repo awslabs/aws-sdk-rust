@@ -7,6 +7,8 @@ pub enum Error {
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>The request could not be processed because of conflict in the current state of the resource. For example, if you're using a <code>Create</code> API (such as <code>CreateAssistant</code>) that accepts name, a conflicting resource (usually with the same name) is being created or mutated.</p>
     ConflictException(crate::types::error::ConflictException),
+    /// <p>An error occurred while calling a dependency. For example, calling <code>connect:DecribeContact</code> as part of <code>CreateSession</code> with a contactArn.</p>
+    DependencyFailedException(crate::types::error::DependencyFailedException),
     /// <p>The provided <code>revisionId</code> does not match, indicating the content has been modified since it was last read.</p>
     PreconditionFailedException(crate::types::error::PreconditionFailedException),
     /// <p>The request reached the service more than 15 minutes after the date stamp on the request or more than 15 minutes after the request expiration date (such as for pre-signed URLs), or the date stamp on the request is more than 15 minutes in the future.</p>
@@ -37,6 +39,7 @@ impl ::std::fmt::Display for Error {
         match self {
             Error::AccessDeniedException(inner) => inner.fmt(f),
             Error::ConflictException(inner) => inner.fmt(f),
+            Error::DependencyFailedException(inner) => inner.fmt(f),
             Error::PreconditionFailedException(inner) => inner.fmt(f),
             Error::RequestTimeoutException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
@@ -68,6 +71,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
         match self {
             Self::AccessDeniedException(inner) => inner.meta(),
             Self::ConflictException(inner) => inner.meta(),
+            Self::DependencyFailedException(inner) => inner.meta(),
             Self::PreconditionFailedException(inner) => inner.meta(),
             Self::RequestTimeoutException(inner) => inner.meta(),
             Self::ResourceNotFoundException(inner) => inner.meta(),
@@ -673,6 +677,7 @@ impl From<crate::operation::create_session::CreateSessionError> for Error {
         match err {
             crate::operation::create_session::CreateSessionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::create_session::CreateSessionError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_session::CreateSessionError::DependencyFailedException(inner) => Error::DependencyFailedException(inner),
             crate::operation::create_session::CreateSessionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::create_session::CreateSessionError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::create_session::CreateSessionError::ValidationException(inner) => Error::ValidationException(inner),
@@ -2847,6 +2852,7 @@ impl ::std::error::Error for Error {
         match self {
             Error::AccessDeniedException(inner) => inner.source(),
             Error::ConflictException(inner) => inner.source(),
+            Error::DependencyFailedException(inner) => inner.source(),
             Error::PreconditionFailedException(inner) => inner.source(),
             Error::RequestTimeoutException(inner) => inner.source(),
             Error::ResourceNotFoundException(inner) => inner.source(),
@@ -2864,6 +2870,7 @@ impl ::aws_types::request_id::RequestId for Error {
         match self {
             Self::AccessDeniedException(e) => e.request_id(),
             Self::ConflictException(e) => e.request_id(),
+            Self::DependencyFailedException(e) => e.request_id(),
             Self::PreconditionFailedException(e) => e.request_id(),
             Self::RequestTimeoutException(e) => e.request_id(),
             Self::ResourceNotFoundException(e) => e.request_id(),

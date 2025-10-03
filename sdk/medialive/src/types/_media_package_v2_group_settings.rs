@@ -6,6 +6,24 @@
 pub struct MediaPackageV2GroupSettings {
     /// Mapping of up to 4 caption channels to caption languages.
     pub caption_language_mappings: ::std::option::Option<::std::vec::Vec<crate::types::CaptionLanguageMapping>>,
+    /// Set to ENABLED to enable ID3 metadata insertion. To include metadata, you configure other parameters in the output group, or you add an ID3 action to the channel schedule.
+    pub id3_behavior: ::std::option::Option<crate::types::CmafId3Behavior>,
+    /// If set to passthrough, passes any KLV data from the input source to this output.
+    pub klv_behavior: ::std::option::Option<crate::types::CmafKlvBehavior>,
+    /// If set to passthrough, Nielsen inaudible tones for media tracking will be detected in the input audio and an equivalent ID3 tag will be inserted in the output.
+    pub nielsen_id3_behavior: ::std::option::Option<crate::types::CmafNielsenId3Behavior>,
+    /// Type of scte35 track to add. none or scte35WithoutSegmentation
+    pub scte35_type: ::std::option::Option<crate::types::Scte35Type>,
+    /// The nominal duration of segments. The units are specified in SegmentLengthUnits. The segments will end on the next keyframe after the specified duration, so the actual segment length might be longer, and it might be a fraction of the units.
+    pub segment_length: ::std::option::Option<i32>,
+    /// Time unit for segment length parameter.
+    pub segment_length_units: ::std::option::Option<crate::types::CmafIngestSegmentLengthUnits>,
+    /// Set to none if you don't want to insert a timecode in the output. Otherwise choose the frame type for the timecode.
+    pub timed_metadata_id3_frame: ::std::option::Option<crate::types::CmafTimedMetadataId3Frame>,
+    /// If you set up to insert a timecode in the output, specify the frequency for the frame, in seconds.
+    pub timed_metadata_id3_period: ::std::option::Option<i32>,
+    /// Set to enabled to pass through ID3 metadata from the input sources.
+    pub timed_metadata_passthrough: ::std::option::Option<crate::types::CmafTimedMetadataPassthrough>,
 }
 impl MediaPackageV2GroupSettings {
     /// Mapping of up to 4 caption channels to caption languages.
@@ -13,6 +31,42 @@ impl MediaPackageV2GroupSettings {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.caption_language_mappings.is_none()`.
     pub fn caption_language_mappings(&self) -> &[crate::types::CaptionLanguageMapping] {
         self.caption_language_mappings.as_deref().unwrap_or_default()
+    }
+    /// Set to ENABLED to enable ID3 metadata insertion. To include metadata, you configure other parameters in the output group, or you add an ID3 action to the channel schedule.
+    pub fn id3_behavior(&self) -> ::std::option::Option<&crate::types::CmafId3Behavior> {
+        self.id3_behavior.as_ref()
+    }
+    /// If set to passthrough, passes any KLV data from the input source to this output.
+    pub fn klv_behavior(&self) -> ::std::option::Option<&crate::types::CmafKlvBehavior> {
+        self.klv_behavior.as_ref()
+    }
+    /// If set to passthrough, Nielsen inaudible tones for media tracking will be detected in the input audio and an equivalent ID3 tag will be inserted in the output.
+    pub fn nielsen_id3_behavior(&self) -> ::std::option::Option<&crate::types::CmafNielsenId3Behavior> {
+        self.nielsen_id3_behavior.as_ref()
+    }
+    /// Type of scte35 track to add. none or scte35WithoutSegmentation
+    pub fn scte35_type(&self) -> ::std::option::Option<&crate::types::Scte35Type> {
+        self.scte35_type.as_ref()
+    }
+    /// The nominal duration of segments. The units are specified in SegmentLengthUnits. The segments will end on the next keyframe after the specified duration, so the actual segment length might be longer, and it might be a fraction of the units.
+    pub fn segment_length(&self) -> ::std::option::Option<i32> {
+        self.segment_length
+    }
+    /// Time unit for segment length parameter.
+    pub fn segment_length_units(&self) -> ::std::option::Option<&crate::types::CmafIngestSegmentLengthUnits> {
+        self.segment_length_units.as_ref()
+    }
+    /// Set to none if you don't want to insert a timecode in the output. Otherwise choose the frame type for the timecode.
+    pub fn timed_metadata_id3_frame(&self) -> ::std::option::Option<&crate::types::CmafTimedMetadataId3Frame> {
+        self.timed_metadata_id3_frame.as_ref()
+    }
+    /// If you set up to insert a timecode in the output, specify the frequency for the frame, in seconds.
+    pub fn timed_metadata_id3_period(&self) -> ::std::option::Option<i32> {
+        self.timed_metadata_id3_period
+    }
+    /// Set to enabled to pass through ID3 metadata from the input sources.
+    pub fn timed_metadata_passthrough(&self) -> ::std::option::Option<&crate::types::CmafTimedMetadataPassthrough> {
+        self.timed_metadata_passthrough.as_ref()
     }
 }
 impl MediaPackageV2GroupSettings {
@@ -27,6 +81,15 @@ impl MediaPackageV2GroupSettings {
 #[non_exhaustive]
 pub struct MediaPackageV2GroupSettingsBuilder {
     pub(crate) caption_language_mappings: ::std::option::Option<::std::vec::Vec<crate::types::CaptionLanguageMapping>>,
+    pub(crate) id3_behavior: ::std::option::Option<crate::types::CmafId3Behavior>,
+    pub(crate) klv_behavior: ::std::option::Option<crate::types::CmafKlvBehavior>,
+    pub(crate) nielsen_id3_behavior: ::std::option::Option<crate::types::CmafNielsenId3Behavior>,
+    pub(crate) scte35_type: ::std::option::Option<crate::types::Scte35Type>,
+    pub(crate) segment_length: ::std::option::Option<i32>,
+    pub(crate) segment_length_units: ::std::option::Option<crate::types::CmafIngestSegmentLengthUnits>,
+    pub(crate) timed_metadata_id3_frame: ::std::option::Option<crate::types::CmafTimedMetadataId3Frame>,
+    pub(crate) timed_metadata_id3_period: ::std::option::Option<i32>,
+    pub(crate) timed_metadata_passthrough: ::std::option::Option<crate::types::CmafTimedMetadataPassthrough>,
 }
 impl MediaPackageV2GroupSettingsBuilder {
     /// Appends an item to `caption_language_mappings`.
@@ -49,10 +112,145 @@ impl MediaPackageV2GroupSettingsBuilder {
     pub fn get_caption_language_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CaptionLanguageMapping>> {
         &self.caption_language_mappings
     }
+    /// Set to ENABLED to enable ID3 metadata insertion. To include metadata, you configure other parameters in the output group, or you add an ID3 action to the channel schedule.
+    pub fn id3_behavior(mut self, input: crate::types::CmafId3Behavior) -> Self {
+        self.id3_behavior = ::std::option::Option::Some(input);
+        self
+    }
+    /// Set to ENABLED to enable ID3 metadata insertion. To include metadata, you configure other parameters in the output group, or you add an ID3 action to the channel schedule.
+    pub fn set_id3_behavior(mut self, input: ::std::option::Option<crate::types::CmafId3Behavior>) -> Self {
+        self.id3_behavior = input;
+        self
+    }
+    /// Set to ENABLED to enable ID3 metadata insertion. To include metadata, you configure other parameters in the output group, or you add an ID3 action to the channel schedule.
+    pub fn get_id3_behavior(&self) -> &::std::option::Option<crate::types::CmafId3Behavior> {
+        &self.id3_behavior
+    }
+    /// If set to passthrough, passes any KLV data from the input source to this output.
+    pub fn klv_behavior(mut self, input: crate::types::CmafKlvBehavior) -> Self {
+        self.klv_behavior = ::std::option::Option::Some(input);
+        self
+    }
+    /// If set to passthrough, passes any KLV data from the input source to this output.
+    pub fn set_klv_behavior(mut self, input: ::std::option::Option<crate::types::CmafKlvBehavior>) -> Self {
+        self.klv_behavior = input;
+        self
+    }
+    /// If set to passthrough, passes any KLV data from the input source to this output.
+    pub fn get_klv_behavior(&self) -> &::std::option::Option<crate::types::CmafKlvBehavior> {
+        &self.klv_behavior
+    }
+    /// If set to passthrough, Nielsen inaudible tones for media tracking will be detected in the input audio and an equivalent ID3 tag will be inserted in the output.
+    pub fn nielsen_id3_behavior(mut self, input: crate::types::CmafNielsenId3Behavior) -> Self {
+        self.nielsen_id3_behavior = ::std::option::Option::Some(input);
+        self
+    }
+    /// If set to passthrough, Nielsen inaudible tones for media tracking will be detected in the input audio and an equivalent ID3 tag will be inserted in the output.
+    pub fn set_nielsen_id3_behavior(mut self, input: ::std::option::Option<crate::types::CmafNielsenId3Behavior>) -> Self {
+        self.nielsen_id3_behavior = input;
+        self
+    }
+    /// If set to passthrough, Nielsen inaudible tones for media tracking will be detected in the input audio and an equivalent ID3 tag will be inserted in the output.
+    pub fn get_nielsen_id3_behavior(&self) -> &::std::option::Option<crate::types::CmafNielsenId3Behavior> {
+        &self.nielsen_id3_behavior
+    }
+    /// Type of scte35 track to add. none or scte35WithoutSegmentation
+    pub fn scte35_type(mut self, input: crate::types::Scte35Type) -> Self {
+        self.scte35_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// Type of scte35 track to add. none or scte35WithoutSegmentation
+    pub fn set_scte35_type(mut self, input: ::std::option::Option<crate::types::Scte35Type>) -> Self {
+        self.scte35_type = input;
+        self
+    }
+    /// Type of scte35 track to add. none or scte35WithoutSegmentation
+    pub fn get_scte35_type(&self) -> &::std::option::Option<crate::types::Scte35Type> {
+        &self.scte35_type
+    }
+    /// The nominal duration of segments. The units are specified in SegmentLengthUnits. The segments will end on the next keyframe after the specified duration, so the actual segment length might be longer, and it might be a fraction of the units.
+    pub fn segment_length(mut self, input: i32) -> Self {
+        self.segment_length = ::std::option::Option::Some(input);
+        self
+    }
+    /// The nominal duration of segments. The units are specified in SegmentLengthUnits. The segments will end on the next keyframe after the specified duration, so the actual segment length might be longer, and it might be a fraction of the units.
+    pub fn set_segment_length(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.segment_length = input;
+        self
+    }
+    /// The nominal duration of segments. The units are specified in SegmentLengthUnits. The segments will end on the next keyframe after the specified duration, so the actual segment length might be longer, and it might be a fraction of the units.
+    pub fn get_segment_length(&self) -> &::std::option::Option<i32> {
+        &self.segment_length
+    }
+    /// Time unit for segment length parameter.
+    pub fn segment_length_units(mut self, input: crate::types::CmafIngestSegmentLengthUnits) -> Self {
+        self.segment_length_units = ::std::option::Option::Some(input);
+        self
+    }
+    /// Time unit for segment length parameter.
+    pub fn set_segment_length_units(mut self, input: ::std::option::Option<crate::types::CmafIngestSegmentLengthUnits>) -> Self {
+        self.segment_length_units = input;
+        self
+    }
+    /// Time unit for segment length parameter.
+    pub fn get_segment_length_units(&self) -> &::std::option::Option<crate::types::CmafIngestSegmentLengthUnits> {
+        &self.segment_length_units
+    }
+    /// Set to none if you don't want to insert a timecode in the output. Otherwise choose the frame type for the timecode.
+    pub fn timed_metadata_id3_frame(mut self, input: crate::types::CmafTimedMetadataId3Frame) -> Self {
+        self.timed_metadata_id3_frame = ::std::option::Option::Some(input);
+        self
+    }
+    /// Set to none if you don't want to insert a timecode in the output. Otherwise choose the frame type for the timecode.
+    pub fn set_timed_metadata_id3_frame(mut self, input: ::std::option::Option<crate::types::CmafTimedMetadataId3Frame>) -> Self {
+        self.timed_metadata_id3_frame = input;
+        self
+    }
+    /// Set to none if you don't want to insert a timecode in the output. Otherwise choose the frame type for the timecode.
+    pub fn get_timed_metadata_id3_frame(&self) -> &::std::option::Option<crate::types::CmafTimedMetadataId3Frame> {
+        &self.timed_metadata_id3_frame
+    }
+    /// If you set up to insert a timecode in the output, specify the frequency for the frame, in seconds.
+    pub fn timed_metadata_id3_period(mut self, input: i32) -> Self {
+        self.timed_metadata_id3_period = ::std::option::Option::Some(input);
+        self
+    }
+    /// If you set up to insert a timecode in the output, specify the frequency for the frame, in seconds.
+    pub fn set_timed_metadata_id3_period(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.timed_metadata_id3_period = input;
+        self
+    }
+    /// If you set up to insert a timecode in the output, specify the frequency for the frame, in seconds.
+    pub fn get_timed_metadata_id3_period(&self) -> &::std::option::Option<i32> {
+        &self.timed_metadata_id3_period
+    }
+    /// Set to enabled to pass through ID3 metadata from the input sources.
+    pub fn timed_metadata_passthrough(mut self, input: crate::types::CmafTimedMetadataPassthrough) -> Self {
+        self.timed_metadata_passthrough = ::std::option::Option::Some(input);
+        self
+    }
+    /// Set to enabled to pass through ID3 metadata from the input sources.
+    pub fn set_timed_metadata_passthrough(mut self, input: ::std::option::Option<crate::types::CmafTimedMetadataPassthrough>) -> Self {
+        self.timed_metadata_passthrough = input;
+        self
+    }
+    /// Set to enabled to pass through ID3 metadata from the input sources.
+    pub fn get_timed_metadata_passthrough(&self) -> &::std::option::Option<crate::types::CmafTimedMetadataPassthrough> {
+        &self.timed_metadata_passthrough
+    }
     /// Consumes the builder and constructs a [`MediaPackageV2GroupSettings`](crate::types::MediaPackageV2GroupSettings).
     pub fn build(self) -> crate::types::MediaPackageV2GroupSettings {
         crate::types::MediaPackageV2GroupSettings {
             caption_language_mappings: self.caption_language_mappings,
+            id3_behavior: self.id3_behavior,
+            klv_behavior: self.klv_behavior,
+            nielsen_id3_behavior: self.nielsen_id3_behavior,
+            scte35_type: self.scte35_type,
+            segment_length: self.segment_length,
+            segment_length_units: self.segment_length_units,
+            timed_metadata_id3_frame: self.timed_metadata_id3_frame,
+            timed_metadata_id3_period: self.timed_metadata_id3_period,
+            timed_metadata_passthrough: self.timed_metadata_passthrough,
         }
     }
 }

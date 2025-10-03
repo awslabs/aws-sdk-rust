@@ -17,11 +17,15 @@ pub use crate::types::error::_throttling_exception::ThrottlingException;
 
 pub use crate::types::error::_precondition_failed_exception::PreconditionFailedException;
 
+pub use crate::types::error::_dependency_failed_exception::DependencyFailedException;
+
 pub use crate::types::error::_too_many_tags_exception::TooManyTagsException;
 
 mod _access_denied_exception;
 
 mod _conflict_exception;
+
+mod _dependency_failed_exception;
 
 mod _precondition_failed_exception;
 

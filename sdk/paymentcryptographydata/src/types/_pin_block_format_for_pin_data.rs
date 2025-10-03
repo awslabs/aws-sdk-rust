@@ -13,6 +13,7 @@
 /// # let pinblockformatforpindata = unimplemented!();
 /// match pinblockformatforpindata {
 ///     PinBlockFormatForPinData::IsoFormat0 => { /* ... */ },
+///     PinBlockFormatForPinData::IsoFormat1 => { /* ... */ },
 ///     PinBlockFormatForPinData::IsoFormat3 => { /* ... */ },
 ///     PinBlockFormatForPinData::IsoFormat4 => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -46,6 +47,8 @@ pub enum PinBlockFormatForPinData {
     #[allow(missing_docs)] // documentation missing in model
     IsoFormat0,
     #[allow(missing_docs)] // documentation missing in model
+    IsoFormat1,
+    #[allow(missing_docs)] // documentation missing in model
     IsoFormat3,
     #[allow(missing_docs)] // documentation missing in model
     IsoFormat4,
@@ -57,6 +60,7 @@ impl ::std::convert::From<&str> for PinBlockFormatForPinData {
     fn from(s: &str) -> Self {
         match s {
             "ISO_FORMAT_0" => PinBlockFormatForPinData::IsoFormat0,
+            "ISO_FORMAT_1" => PinBlockFormatForPinData::IsoFormat1,
             "ISO_FORMAT_3" => PinBlockFormatForPinData::IsoFormat3,
             "ISO_FORMAT_4" => PinBlockFormatForPinData::IsoFormat4,
             other => PinBlockFormatForPinData::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -75,6 +79,7 @@ impl PinBlockFormatForPinData {
     pub fn as_str(&self) -> &str {
         match self {
             PinBlockFormatForPinData::IsoFormat0 => "ISO_FORMAT_0",
+            PinBlockFormatForPinData::IsoFormat1 => "ISO_FORMAT_1",
             PinBlockFormatForPinData::IsoFormat3 => "ISO_FORMAT_3",
             PinBlockFormatForPinData::IsoFormat4 => "ISO_FORMAT_4",
             PinBlockFormatForPinData::Unknown(value) => value.as_str(),
@@ -82,7 +87,7 @@ impl PinBlockFormatForPinData {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ISO_FORMAT_0", "ISO_FORMAT_3", "ISO_FORMAT_4"]
+        &["ISO_FORMAT_0", "ISO_FORMAT_1", "ISO_FORMAT_3", "ISO_FORMAT_4"]
     }
 }
 impl ::std::convert::AsRef<str> for PinBlockFormatForPinData {
@@ -106,6 +111,7 @@ impl ::std::fmt::Display for PinBlockFormatForPinData {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             PinBlockFormatForPinData::IsoFormat0 => write!(f, "ISO_FORMAT_0"),
+            PinBlockFormatForPinData::IsoFormat1 => write!(f, "ISO_FORMAT_1"),
             PinBlockFormatForPinData::IsoFormat3 => write!(f, "ISO_FORMAT_3"),
             PinBlockFormatForPinData::IsoFormat4 => write!(f, "ISO_FORMAT_4"),
             PinBlockFormatForPinData::Unknown(value) => write!(f, "{}", value),

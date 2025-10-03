@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ArchiveOutputSettings {
-    /// Settings specific to the container type of the file.
+    /// Container for this output. Can be auto-detected from extension field.
     pub container_settings: ::std::option::Option<crate::types::ArchiveContainerSettings>,
     /// Output file extension. If excluded, this will be auto-selected from the container type.
     pub extension: ::std::option::Option<::std::string::String>,
@@ -12,7 +12,7 @@ pub struct ArchiveOutputSettings {
     pub name_modifier: ::std::option::Option<::std::string::String>,
 }
 impl ArchiveOutputSettings {
-    /// Settings specific to the container type of the file.
+    /// Container for this output. Can be auto-detected from extension field.
     pub fn container_settings(&self) -> ::std::option::Option<&crate::types::ArchiveContainerSettings> {
         self.container_settings.as_ref()
     }
@@ -41,18 +41,18 @@ pub struct ArchiveOutputSettingsBuilder {
     pub(crate) name_modifier: ::std::option::Option<::std::string::String>,
 }
 impl ArchiveOutputSettingsBuilder {
-    /// Settings specific to the container type of the file.
+    /// Container for this output. Can be auto-detected from extension field.
     /// This field is required.
     pub fn container_settings(mut self, input: crate::types::ArchiveContainerSettings) -> Self {
         self.container_settings = ::std::option::Option::Some(input);
         self
     }
-    /// Settings specific to the container type of the file.
+    /// Container for this output. Can be auto-detected from extension field.
     pub fn set_container_settings(mut self, input: ::std::option::Option<crate::types::ArchiveContainerSettings>) -> Self {
         self.container_settings = input;
         self
     }
-    /// Settings specific to the container type of the file.
+    /// Container for this output. Can be auto-detected from extension field.
     pub fn get_container_settings(&self) -> &::std::option::Option<crate::types::ArchiveContainerSettings> {
         &self.container_settings
     }

@@ -8,7 +8,7 @@ pub struct Av1Settings {
     pub afd_signaling: ::std::option::Option<crate::types::AfdSignaling>,
     /// The size of the buffer (HRD buffer model) in bits.
     pub buf_size: ::std::option::Option<i32>,
-    /// Color Space settings
+    /// Specify the type of color space to apply or choose to pass through. The default is to pass through the color space that is in the source.
     pub color_space_settings: ::std::option::Option<crate::types::Av1ColorSpaceSettings>,
     /// Complete this property only if you set the afdSignaling property to FIXED. Choose the AFD value (4 bits) to write on all frames of the video encode.
     pub fixed_afd: ::std::option::Option<crate::types::FixedAfd>,
@@ -54,7 +54,7 @@ impl Av1Settings {
     pub fn buf_size(&self) -> ::std::option::Option<i32> {
         self.buf_size
     }
-    /// Color Space settings
+    /// Specify the type of color space to apply or choose to pass through. The default is to pass through the color space that is in the source.
     pub fn color_space_settings(&self) -> ::std::option::Option<&crate::types::Av1ColorSpaceSettings> {
         self.color_space_settings.as_ref()
     }
@@ -188,17 +188,17 @@ impl Av1SettingsBuilder {
     pub fn get_buf_size(&self) -> &::std::option::Option<i32> {
         &self.buf_size
     }
-    /// Color Space settings
+    /// Specify the type of color space to apply or choose to pass through. The default is to pass through the color space that is in the source.
     pub fn color_space_settings(mut self, input: crate::types::Av1ColorSpaceSettings) -> Self {
         self.color_space_settings = ::std::option::Option::Some(input);
         self
     }
-    /// Color Space settings
+    /// Specify the type of color space to apply or choose to pass through. The default is to pass through the color space that is in the source.
     pub fn set_color_space_settings(mut self, input: ::std::option::Option<crate::types::Av1ColorSpaceSettings>) -> Self {
         self.color_space_settings = input;
         self
     }
-    /// Color Space settings
+    /// Specify the type of color space to apply or choose to pass through. The default is to pass through the color space that is in the source.
     pub fn get_color_space_settings(&self) -> &::std::option::Option<crate::types::Av1ColorSpaceSettings> {
         &self.color_space_settings
     }

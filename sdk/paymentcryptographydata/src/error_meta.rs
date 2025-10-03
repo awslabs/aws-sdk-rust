@@ -272,6 +272,36 @@ impl From<crate::operation::re_encrypt_data::ReEncryptDataError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::translate_key_material::TranslateKeyMaterialError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::translate_key_material::TranslateKeyMaterialError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::translate_key_material::TranslateKeyMaterialError> for Error {
+    fn from(err: crate::operation::translate_key_material::TranslateKeyMaterialError) -> Self {
+        match err {
+            crate::operation::translate_key_material::TranslateKeyMaterialError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::translate_key_material::TranslateKeyMaterialError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::translate_key_material::TranslateKeyMaterialError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::translate_key_material::TranslateKeyMaterialError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::translate_key_material::TranslateKeyMaterialError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::translate_key_material::TranslateKeyMaterialError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::translate_pin_data::TranslatePinDataError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

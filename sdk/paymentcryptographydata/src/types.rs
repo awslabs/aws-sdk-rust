@@ -89,6 +89,20 @@ pub use crate::types::_translation_pin_data_iso_format034::TranslationPinDataIso
 
 pub use crate::types::_translation_pin_data_iso_format1::TranslationPinDataIsoFormat1;
 
+pub use crate::types::_wrapped_working_key::WrappedWorkingKey;
+
+pub use crate::types::_wrapped_key_material_format::WrappedKeyMaterialFormat;
+
+pub use crate::types::_outgoing_key_material::OutgoingKeyMaterial;
+
+pub use crate::types::_outgoing_tr31_key_block::OutgoingTr31KeyBlock;
+
+pub use crate::types::_incoming_key_material::IncomingKeyMaterial;
+
+pub use crate::types::_incoming_diffie_hellman_tr31_key_block::IncomingDiffieHellmanTr31KeyBlock;
+
+pub use crate::types::_diffie_hellman_derivation_data::DiffieHellmanDerivationData;
+
 pub use crate::types::_re_encryption_attributes::ReEncryptionAttributes;
 
 pub use crate::types::_dukpt_encryption_attributes::DukptEncryptionAttributes;
@@ -179,6 +193,8 @@ mod _current_pin_attributes;
 
 mod _derivation_method_attributes;
 
+mod _diffie_hellman_derivation_data;
+
 mod _discover_dynamic_card_verification_code;
 
 mod _dukpt_attributes;
@@ -223,6 +239,10 @@ mod _ibm3624_pin_verification;
 
 mod _ibm3624_random_pin;
 
+mod _incoming_diffie_hellman_tr31_key_block;
+
+mod _incoming_key_material;
+
 mod _key_check_value_algorithm;
 
 mod _key_derivation_function;
@@ -240,6 +260,10 @@ mod _mac_attributes;
 mod _major_key_derivation_mode;
 
 mod _master_card_attributes;
+
+mod _outgoing_key_material;
+
+mod _outgoing_tr31_key_block;
 
 mod _padding_type;
 
@@ -302,6 +326,10 @@ mod _visa_pin_verification_value;
 mod _wrapped_key;
 
 mod _wrapped_key_material;
+
+mod _wrapped_key_material_format;
+
+mod _wrapped_working_key;
 
 /// Builders
 pub mod builders;

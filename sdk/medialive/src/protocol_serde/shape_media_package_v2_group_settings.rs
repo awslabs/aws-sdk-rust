@@ -15,6 +15,39 @@ pub fn ser_media_package_v2_group_settings(
         }
         array_2.finish();
     }
+    if let Some(var_5) = &input.id3_behavior {
+        object.key("id3Behavior").string(var_5.as_str());
+    }
+    if let Some(var_6) = &input.klv_behavior {
+        object.key("klvBehavior").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.nielsen_id3_behavior {
+        object.key("nielsenId3Behavior").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.scte35_type {
+        object.key("scte35Type").string(var_8.as_str());
+    }
+    if let Some(var_9) = &input.segment_length {
+        object.key("segmentLength").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_9).into()),
+        );
+    }
+    if let Some(var_10) = &input.segment_length_units {
+        object.key("segmentLengthUnits").string(var_10.as_str());
+    }
+    if let Some(var_11) = &input.timed_metadata_id3_frame {
+        object.key("timedMetadataId3Frame").string(var_11.as_str());
+    }
+    if let Some(var_12) = &input.timed_metadata_id3_period {
+        object.key("timedMetadataId3Period").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_12).into()),
+        );
+    }
+    if let Some(var_13) = &input.timed_metadata_passthrough {
+        object.key("timedMetadataPassthrough").string(var_13.as_str());
+    }
     Ok(())
 }
 
@@ -36,6 +69,69 @@ where
                         "captionLanguageMappings" => {
                             builder = builder.set_caption_language_mappings(
                                 crate::protocol_serde::shape_list_of_caption_language_mapping::de_list_of_caption_language_mapping(tokens)?,
+                            );
+                        }
+                        "id3Behavior" => {
+                            builder = builder.set_id3_behavior(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CmafId3Behavior::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "klvBehavior" => {
+                            builder = builder.set_klv_behavior(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CmafKlvBehavior::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "nielsenId3Behavior" => {
+                            builder = builder.set_nielsen_id3_behavior(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CmafNielsenId3Behavior::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "scte35Type" => {
+                            builder = builder.set_scte35_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::Scte35Type::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "segmentLength" => {
+                            builder = builder.set_segment_length(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "segmentLengthUnits" => {
+                            builder = builder.set_segment_length_units(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CmafIngestSegmentLengthUnits::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "timedMetadataId3Frame" => {
+                            builder = builder.set_timed_metadata_id3_frame(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CmafTimedMetadataId3Frame::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "timedMetadataId3Period" => {
+                            builder = builder.set_timed_metadata_id3_period(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "timedMetadataPassthrough" => {
+                            builder = builder.set_timed_metadata_passthrough(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CmafTimedMetadataPassthrough::from(u.as_ref())))
+                                    .transpose()?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

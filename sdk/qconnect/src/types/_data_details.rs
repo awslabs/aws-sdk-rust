@@ -6,6 +6,12 @@
 pub enum DataDetails {
     /// <p>Details about the content data.</p>
     ContentData(crate::types::ContentDataDetails),
+    /// <p>Streaming chunk data for email generative answers containing partial knowledge-based response content.</p>
+    EmailGenerativeAnswerChunkData(crate::types::EmailGenerativeAnswerChunkDataDetails),
+    /// <p>Streaming chunk data for email overview containing partial overview content.</p>
+    EmailOverviewChunkData(crate::types::EmailOverviewChunkDataDetails),
+    /// <p>Streaming chunk data for email response generation containing partial response content.</p>
+    EmailResponseChunkData(crate::types::EmailResponseChunkDataDetails),
     /// <p>Details about the generative chunk data.</p>
     GenerativeChunkData(crate::types::GenerativeChunkDataDetails),
     /// <p>Details about the generative data.</p>
@@ -37,6 +43,45 @@ impl DataDetails {
     /// Returns true if this is a [`ContentData`](crate::types::DataDetails::ContentData).
     pub fn is_content_data(&self) -> bool {
         self.as_content_data().is_ok()
+    }
+    /// Tries to convert the enum instance into [`EmailGenerativeAnswerChunkData`](crate::types::DataDetails::EmailGenerativeAnswerChunkData), extracting the inner [`EmailGenerativeAnswerChunkDataDetails`](crate::types::EmailGenerativeAnswerChunkDataDetails).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_email_generative_answer_chunk_data(&self) -> ::std::result::Result<&crate::types::EmailGenerativeAnswerChunkDataDetails, &Self> {
+        if let DataDetails::EmailGenerativeAnswerChunkData(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`EmailGenerativeAnswerChunkData`](crate::types::DataDetails::EmailGenerativeAnswerChunkData).
+    pub fn is_email_generative_answer_chunk_data(&self) -> bool {
+        self.as_email_generative_answer_chunk_data().is_ok()
+    }
+    /// Tries to convert the enum instance into [`EmailOverviewChunkData`](crate::types::DataDetails::EmailOverviewChunkData), extracting the inner [`EmailOverviewChunkDataDetails`](crate::types::EmailOverviewChunkDataDetails).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_email_overview_chunk_data(&self) -> ::std::result::Result<&crate::types::EmailOverviewChunkDataDetails, &Self> {
+        if let DataDetails::EmailOverviewChunkData(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`EmailOverviewChunkData`](crate::types::DataDetails::EmailOverviewChunkData).
+    pub fn is_email_overview_chunk_data(&self) -> bool {
+        self.as_email_overview_chunk_data().is_ok()
+    }
+    /// Tries to convert the enum instance into [`EmailResponseChunkData`](crate::types::DataDetails::EmailResponseChunkData), extracting the inner [`EmailResponseChunkDataDetails`](crate::types::EmailResponseChunkDataDetails).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_email_response_chunk_data(&self) -> ::std::result::Result<&crate::types::EmailResponseChunkDataDetails, &Self> {
+        if let DataDetails::EmailResponseChunkData(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`EmailResponseChunkData`](crate::types::DataDetails::EmailResponseChunkData).
+    pub fn is_email_response_chunk_data(&self) -> bool {
+        self.as_email_response_chunk_data().is_ok()
     }
     /// Tries to convert the enum instance into [`GenerativeChunkData`](crate::types::DataDetails::GenerativeChunkData), extracting the inner [`GenerativeChunkDataDetails`](crate::types::GenerativeChunkDataDetails).
     /// Returns `Err(&Self)` if it can't be converted.

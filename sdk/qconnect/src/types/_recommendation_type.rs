@@ -15,6 +15,9 @@
 ///     RecommendationType::BlockedGenerativeAnswerChunk => { /* ... */ },
 ///     RecommendationType::BlockedIntentAnswerChunk => { /* ... */ },
 ///     RecommendationType::DetectedIntent => { /* ... */ },
+///     RecommendationType::EmailGenerativeAnswerChunk => { /* ... */ },
+///     RecommendationType::EmailOverviewChunk => { /* ... */ },
+///     RecommendationType::EmailResponseChunk => { /* ... */ },
 ///     RecommendationType::GenerativeAnswer => { /* ... */ },
 ///     RecommendationType::GenerativeAnswerChunk => { /* ... */ },
 ///     RecommendationType::GenerativeResponse => { /* ... */ },
@@ -55,6 +58,12 @@ pub enum RecommendationType {
     #[allow(missing_docs)] // documentation missing in model
     DetectedIntent,
     #[allow(missing_docs)] // documentation missing in model
+    EmailGenerativeAnswerChunk,
+    #[allow(missing_docs)] // documentation missing in model
+    EmailOverviewChunk,
+    #[allow(missing_docs)] // documentation missing in model
+    EmailResponseChunk,
+    #[allow(missing_docs)] // documentation missing in model
     GenerativeAnswer,
     #[allow(missing_docs)] // documentation missing in model
     GenerativeAnswerChunk,
@@ -74,6 +83,9 @@ impl ::std::convert::From<&str> for RecommendationType {
             "BLOCKED_GENERATIVE_ANSWER_CHUNK" => RecommendationType::BlockedGenerativeAnswerChunk,
             "BLOCKED_INTENT_ANSWER_CHUNK" => RecommendationType::BlockedIntentAnswerChunk,
             "DETECTED_INTENT" => RecommendationType::DetectedIntent,
+            "EMAIL_GENERATIVE_ANSWER_CHUNK" => RecommendationType::EmailGenerativeAnswerChunk,
+            "EMAIL_OVERVIEW_CHUNK" => RecommendationType::EmailOverviewChunk,
+            "EMAIL_RESPONSE_CHUNK" => RecommendationType::EmailResponseChunk,
             "GENERATIVE_ANSWER" => RecommendationType::GenerativeAnswer,
             "GENERATIVE_ANSWER_CHUNK" => RecommendationType::GenerativeAnswerChunk,
             "GENERATIVE_RESPONSE" => RecommendationType::GenerativeResponse,
@@ -97,6 +109,9 @@ impl RecommendationType {
             RecommendationType::BlockedGenerativeAnswerChunk => "BLOCKED_GENERATIVE_ANSWER_CHUNK",
             RecommendationType::BlockedIntentAnswerChunk => "BLOCKED_INTENT_ANSWER_CHUNK",
             RecommendationType::DetectedIntent => "DETECTED_INTENT",
+            RecommendationType::EmailGenerativeAnswerChunk => "EMAIL_GENERATIVE_ANSWER_CHUNK",
+            RecommendationType::EmailOverviewChunk => "EMAIL_OVERVIEW_CHUNK",
+            RecommendationType::EmailResponseChunk => "EMAIL_RESPONSE_CHUNK",
             RecommendationType::GenerativeAnswer => "GENERATIVE_ANSWER",
             RecommendationType::GenerativeAnswerChunk => "GENERATIVE_ANSWER_CHUNK",
             RecommendationType::GenerativeResponse => "GENERATIVE_RESPONSE",
@@ -111,6 +126,9 @@ impl RecommendationType {
             "BLOCKED_GENERATIVE_ANSWER_CHUNK",
             "BLOCKED_INTENT_ANSWER_CHUNK",
             "DETECTED_INTENT",
+            "EMAIL_GENERATIVE_ANSWER_CHUNK",
+            "EMAIL_OVERVIEW_CHUNK",
+            "EMAIL_RESPONSE_CHUNK",
             "GENERATIVE_ANSWER",
             "GENERATIVE_ANSWER_CHUNK",
             "GENERATIVE_RESPONSE",
@@ -142,6 +160,9 @@ impl ::std::fmt::Display for RecommendationType {
             RecommendationType::BlockedGenerativeAnswerChunk => write!(f, "BLOCKED_GENERATIVE_ANSWER_CHUNK"),
             RecommendationType::BlockedIntentAnswerChunk => write!(f, "BLOCKED_INTENT_ANSWER_CHUNK"),
             RecommendationType::DetectedIntent => write!(f, "DETECTED_INTENT"),
+            RecommendationType::EmailGenerativeAnswerChunk => write!(f, "EMAIL_GENERATIVE_ANSWER_CHUNK"),
+            RecommendationType::EmailOverviewChunk => write!(f, "EMAIL_OVERVIEW_CHUNK"),
+            RecommendationType::EmailResponseChunk => write!(f, "EMAIL_RESPONSE_CHUNK"),
             RecommendationType::GenerativeAnswer => write!(f, "GENERATIVE_ANSWER"),
             RecommendationType::GenerativeAnswerChunk => write!(f, "GENERATIVE_ANSWER_CHUNK"),
             RecommendationType::GenerativeResponse => write!(f, "GENERATIVE_RESPONSE"),

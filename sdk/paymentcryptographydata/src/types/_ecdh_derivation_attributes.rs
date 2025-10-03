@@ -2,7 +2,7 @@
 
 /// <p>Parameters required to establish ECDH based key exchange.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EcdhDerivationAttributes {
     /// <p>The <code>keyArn</code> of the certificate that signed the client's <code>PublicKeyCertificate</code>.</p>
     pub certificate_authority_public_key_identifier: ::std::string::String,
@@ -48,21 +48,6 @@ impl EcdhDerivationAttributes {
         self.shared_information.deref()
     }
 }
-impl ::std::fmt::Debug for EcdhDerivationAttributes {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
-        let mut formatter = f.debug_struct("EcdhDerivationAttributes");
-        formatter.field(
-            "certificate_authority_public_key_identifier",
-            &self.certificate_authority_public_key_identifier,
-        );
-        formatter.field("public_key_certificate", &"*** Sensitive Data Redacted ***");
-        formatter.field("key_algorithm", &self.key_algorithm);
-        formatter.field("key_derivation_function", &self.key_derivation_function);
-        formatter.field("key_derivation_hash_algorithm", &self.key_derivation_hash_algorithm);
-        formatter.field("shared_information", &self.shared_information);
-        formatter.finish()
-    }
-}
 impl EcdhDerivationAttributes {
     /// Creates a new builder-style object to manufacture [`EcdhDerivationAttributes`](crate::types::EcdhDerivationAttributes).
     pub fn builder() -> crate::types::builders::EcdhDerivationAttributesBuilder {
@@ -71,7 +56,7 @@ impl EcdhDerivationAttributes {
 }
 
 /// A builder for [`EcdhDerivationAttributes`](crate::types::EcdhDerivationAttributes).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct EcdhDerivationAttributesBuilder {
     pub(crate) certificate_authority_public_key_identifier: ::std::option::Option<::std::string::String>,
@@ -222,20 +207,5 @@ impl EcdhDerivationAttributesBuilder {
                 )
             })?,
         })
-    }
-}
-impl ::std::fmt::Debug for EcdhDerivationAttributesBuilder {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
-        let mut formatter = f.debug_struct("EcdhDerivationAttributesBuilder");
-        formatter.field(
-            "certificate_authority_public_key_identifier",
-            &self.certificate_authority_public_key_identifier,
-        );
-        formatter.field("public_key_certificate", &"*** Sensitive Data Redacted ***");
-        formatter.field("key_algorithm", &self.key_algorithm);
-        formatter.field("key_derivation_function", &self.key_derivation_function);
-        formatter.field("key_derivation_hash_algorithm", &self.key_derivation_hash_algorithm);
-        formatter.field("shared_information", &self.shared_information);
-        formatter.finish()
     }
 }

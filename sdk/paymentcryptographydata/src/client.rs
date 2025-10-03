@@ -177,6 +177,8 @@ mod generate_pin_data;
 
 mod re_encrypt_data;
 
+mod translate_key_material;
+
 mod translate_pin_data;
 
 mod verify_auth_request_cryptogram;

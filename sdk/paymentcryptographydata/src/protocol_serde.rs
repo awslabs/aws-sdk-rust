@@ -37,6 +37,8 @@ pub(crate) mod shape_generate_pin_data;
 
 pub(crate) mod shape_re_encrypt_data;
 
+pub(crate) mod shape_translate_key_material;
+
 pub(crate) mod shape_translate_pin_data;
 
 pub(crate) mod shape_verify_auth_request_cryptogram;
@@ -77,6 +79,8 @@ pub(crate) mod shape_resource_not_found_exception;
 
 pub(crate) mod shape_throttling_exception;
 
+pub(crate) mod shape_translate_key_material_input;
+
 pub(crate) mod shape_translate_pin_data_input;
 
 pub(crate) mod shape_validation_exception;
@@ -105,7 +109,11 @@ pub(crate) mod shape_dukpt_derivation_attributes;
 
 pub(crate) mod shape_encryption_decryption_attributes;
 
+pub(crate) mod shape_incoming_key_material;
+
 pub(crate) mod shape_mac_attributes;
+
+pub(crate) mod shape_outgoing_key_material;
 
 pub(crate) mod shape_pin_data;
 
@@ -124,6 +132,8 @@ pub(crate) mod shape_validation_exception_field_list;
 pub(crate) mod shape_visa_amex_derivation_outputs;
 
 pub(crate) mod shape_wrapped_key;
+
+pub(crate) mod shape_wrapped_working_key;
 
 pub(crate) mod shape_amex_attributes;
 
@@ -167,11 +177,15 @@ pub(crate) mod shape_ibm3624_pin_verification;
 
 pub(crate) mod shape_ibm3624_random_pin;
 
+pub(crate) mod shape_incoming_diffie_hellman_tr31_key_block;
+
 pub(crate) mod shape_mac_algorithm_dukpt;
 
 pub(crate) mod shape_mac_algorithm_emv;
 
 pub(crate) mod shape_master_card_attributes;
+
+pub(crate) mod shape_outgoing_tr31_key_block;
 
 pub(crate) mod shape_session_key_amex;
 
@@ -202,6 +216,8 @@ pub(crate) mod shape_visa_pin_verification_value;
 pub(crate) mod shape_wrapped_key_material;
 
 pub(crate) mod shape_current_pin_attributes;
+
+pub(crate) mod shape_diffie_hellman_derivation_data;
 
 pub(crate) mod shape_ecdh_derivation_attributes;
 

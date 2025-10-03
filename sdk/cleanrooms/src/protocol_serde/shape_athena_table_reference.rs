@@ -3,11 +3,14 @@ pub fn ser_athena_table_reference(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AthenaTableReference,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    if let Some(var_1) = &input.region {
+        object.key("region").string(var_1.as_str());
+    }
     {
         object.key("workGroup").string(input.work_group.as_str());
     }
-    if let Some(var_1) = &input.output_location {
-        object.key("outputLocation").string(var_1.as_str());
+    if let Some(var_2) = &input.output_location {
+        object.key("outputLocation").string(var_2.as_str());
     }
     {
         object.key("databaseName").string(input.database_name.as_str());
@@ -33,6 +36,13 @@ where
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "region" => {
+                            builder = builder.set_region(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CommercialRegion::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "workGroup" => {
                             builder = builder.set_work_group(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

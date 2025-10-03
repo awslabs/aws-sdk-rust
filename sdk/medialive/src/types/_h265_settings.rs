@@ -16,7 +16,7 @@ pub struct H265Settings {
     pub buf_size: ::std::option::Option<i32>,
     /// Includes colorspace metadata in the output.
     pub color_metadata: ::std::option::Option<crate::types::H265ColorMetadata>,
-    /// Color Space settings
+    /// Specify the type of color space to apply or choose to pass through. The default is to pass through the color space that is in the source.
     pub color_space_settings: ::std::option::Option<crate::types::H265ColorSpaceSettings>,
     /// Optional. Both filters reduce bandwidth by removing imperceptible details. You can enable one of the filters. We recommend that you try both filters and observe the results to decide which one to use. The Temporal Filter reduces bandwidth by removing imperceptible details in the content. It combines perceptual filtering and motion compensated temporal filtering (MCTF). It operates independently of the compression level. The Bandwidth Reduction filter is a perceptual filter located within the encoding loop. It adapts to the current compression level to filter imperceptible signals. This filter works only when the resolution is 1080p or lower.
     pub filter_settings: ::std::option::Option<crate::types::H265FilterSettings>,
@@ -114,7 +114,7 @@ impl H265Settings {
     pub fn color_metadata(&self) -> ::std::option::Option<&crate::types::H265ColorMetadata> {
         self.color_metadata.as_ref()
     }
-    /// Color Space settings
+    /// Specify the type of color space to apply or choose to pass through. The default is to pass through the color space that is in the source.
     pub fn color_space_settings(&self) -> ::std::option::Option<&crate::types::H265ColorSpaceSettings> {
         self.color_space_settings.as_ref()
     }
@@ -398,17 +398,17 @@ impl H265SettingsBuilder {
     pub fn get_color_metadata(&self) -> &::std::option::Option<crate::types::H265ColorMetadata> {
         &self.color_metadata
     }
-    /// Color Space settings
+    /// Specify the type of color space to apply or choose to pass through. The default is to pass through the color space that is in the source.
     pub fn color_space_settings(mut self, input: crate::types::H265ColorSpaceSettings) -> Self {
         self.color_space_settings = ::std::option::Option::Some(input);
         self
     }
-    /// Color Space settings
+    /// Specify the type of color space to apply or choose to pass through. The default is to pass through the color space that is in the source.
     pub fn set_color_space_settings(mut self, input: ::std::option::Option<crate::types::H265ColorSpaceSettings>) -> Self {
         self.color_space_settings = input;
         self
     }
-    /// Color Space settings
+    /// Specify the type of color space to apply or choose to pass through. The default is to pass through the color space that is in the source.
     pub fn get_color_space_settings(&self) -> &::std::option::Option<crate::types::H265ColorSpaceSettings> {
         &self.color_space_settings
     }

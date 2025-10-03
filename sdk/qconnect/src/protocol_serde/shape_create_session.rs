@@ -47,6 +47,21 @@ pub fn de_create_session_http_error(
             }
             tmp
         }),
+        "DependencyFailedException" => crate::operation::create_session::CreateSessionError::DependencyFailedException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::DependencyFailedExceptionBuilder::default();
+                output = crate::protocol_serde::shape_dependency_failed_exception::de_dependency_failed_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::create_session::CreateSessionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "ResourceNotFoundException" => crate::operation::create_session::CreateSessionError::ResourceNotFoundException({
             #[allow(unused_mut)]
             let mut tmp = {

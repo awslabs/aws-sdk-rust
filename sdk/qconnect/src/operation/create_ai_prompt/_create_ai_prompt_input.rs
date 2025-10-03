@@ -17,7 +17,9 @@ pub struct CreateAiPromptInput {
     pub visibility_status: ::std::option::Option<crate::types::VisibilityStatus>,
     /// <p>The type of the prompt template for this AI Prompt.</p>
     pub template_type: ::std::option::Option<crate::types::AiPromptTemplateType>,
-    /// <p>The identifier of the model used for this AI Prompt.</p>
+    /// <p>The identifier of the model used for this AI Prompt.</p><note>
+    /// <p>For information about which models are supported in each Amazon Web Services Region, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-ai-prompts.html#cli-create-aiprompt">Supported models for system/custom prompts</a>.</p>
+    /// </note>
     pub model_id: ::std::option::Option<::std::string::String>,
     /// <p>The API Format of the AI Prompt.</p>
     /// <p>Recommended values: <code>MESSAGES | TEXT_COMPLETIONS</code></p><note>
@@ -58,7 +60,9 @@ impl CreateAiPromptInput {
     pub fn template_type(&self) -> ::std::option::Option<&crate::types::AiPromptTemplateType> {
         self.template_type.as_ref()
     }
-    /// <p>The identifier of the model used for this AI Prompt.</p>
+    /// <p>The identifier of the model used for this AI Prompt.</p><note>
+    /// <p>For information about which models are supported in each Amazon Web Services Region, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-ai-prompts.html#cli-create-aiprompt">Supported models for system/custom prompts</a>.</p>
+    /// </note>
     pub fn model_id(&self) -> ::std::option::Option<&str> {
         self.model_id.as_deref()
     }
@@ -206,18 +210,24 @@ impl CreateAiPromptInputBuilder {
     pub fn get_template_type(&self) -> &::std::option::Option<crate::types::AiPromptTemplateType> {
         &self.template_type
     }
-    /// <p>The identifier of the model used for this AI Prompt.</p>
+    /// <p>The identifier of the model used for this AI Prompt.</p><note>
+    /// <p>For information about which models are supported in each Amazon Web Services Region, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-ai-prompts.html#cli-create-aiprompt">Supported models for system/custom prompts</a>.</p>
+    /// </note>
     /// This field is required.
     pub fn model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the model used for this AI Prompt.</p>
+    /// <p>The identifier of the model used for this AI Prompt.</p><note>
+    /// <p>For information about which models are supported in each Amazon Web Services Region, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-ai-prompts.html#cli-create-aiprompt">Supported models for system/custom prompts</a>.</p>
+    /// </note>
     pub fn set_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_id = input;
         self
     }
-    /// <p>The identifier of the model used for this AI Prompt.</p>
+    /// <p>The identifier of the model used for this AI Prompt.</p><note>
+    /// <p>For information about which models are supported in each Amazon Web Services Region, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-ai-prompts.html#cli-create-aiprompt">Supported models for system/custom prompts</a>.</p>
+    /// </note>
     pub fn get_model_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.model_id
     }

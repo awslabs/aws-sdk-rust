@@ -17,6 +17,8 @@ pub struct CreateSessionInput {
     pub tag_filter: ::std::option::Option<crate::types::TagFilter>,
     /// <p>The configuration of the AI Agents (mapped by AI Agent Type to AI Agent version) that should be used by Amazon Q in Connect for this Session.</p>
     pub ai_agent_configuration: ::std::option::Option<::std::collections::HashMap<crate::types::AiAgentType, crate::types::AiAgentConfigurationData>>,
+    /// <p>The Amazon Resource Name (ARN) of the email contact in Amazon Connect. Used to retrieve email content and establish session context for AI-powered email assistance.</p>
+    pub contact_arn: ::std::option::Option<::std::string::String>,
 }
 impl CreateSessionInput {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="http://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
@@ -49,6 +51,10 @@ impl CreateSessionInput {
     ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::AiAgentType, crate::types::AiAgentConfigurationData>> {
         self.ai_agent_configuration.as_ref()
     }
+    /// <p>The Amazon Resource Name (ARN) of the email contact in Amazon Connect. Used to retrieve email content and establish session context for AI-powered email assistance.</p>
+    pub fn contact_arn(&self) -> ::std::option::Option<&str> {
+        self.contact_arn.as_deref()
+    }
 }
 impl CreateSessionInput {
     /// Creates a new builder-style object to manufacture [`CreateSessionInput`](crate::operation::create_session::CreateSessionInput).
@@ -69,6 +75,7 @@ pub struct CreateSessionInputBuilder {
     pub(crate) tag_filter: ::std::option::Option<crate::types::TagFilter>,
     pub(crate) ai_agent_configuration:
         ::std::option::Option<::std::collections::HashMap<crate::types::AiAgentType, crate::types::AiAgentConfigurationData>>,
+    pub(crate) contact_arn: ::std::option::Option<::std::string::String>,
 }
 impl CreateSessionInputBuilder {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="http://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
@@ -188,6 +195,20 @@ impl CreateSessionInputBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<crate::types::AiAgentType, crate::types::AiAgentConfigurationData>> {
         &self.ai_agent_configuration
     }
+    /// <p>The Amazon Resource Name (ARN) of the email contact in Amazon Connect. Used to retrieve email content and establish session context for AI-powered email assistance.</p>
+    pub fn contact_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.contact_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the email contact in Amazon Connect. Used to retrieve email content and establish session context for AI-powered email assistance.</p>
+    pub fn set_contact_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.contact_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the email contact in Amazon Connect. Used to retrieve email content and establish session context for AI-powered email assistance.</p>
+    pub fn get_contact_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.contact_arn
+    }
     /// Consumes the builder and constructs a [`CreateSessionInput`](crate::operation::create_session::CreateSessionInput).
     pub fn build(
         self,
@@ -200,6 +221,7 @@ impl CreateSessionInputBuilder {
             tags: self.tags,
             tag_filter: self.tag_filter,
             ai_agent_configuration: self.ai_agent_configuration,
+            contact_arn: self.contact_arn,
         })
     }
 }

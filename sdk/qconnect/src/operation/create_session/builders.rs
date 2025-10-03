@@ -221,4 +221,18 @@ impl CreateSessionFluentBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<crate::types::AiAgentType, crate::types::AiAgentConfigurationData>> {
         self.inner.get_ai_agent_configuration()
     }
+    /// <p>The Amazon Resource Name (ARN) of the email contact in Amazon Connect. Used to retrieve email content and establish session context for AI-powered email assistance.</p>
+    pub fn contact_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.contact_arn(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the email contact in Amazon Connect. Used to retrieve email content and establish session context for AI-powered email assistance.</p>
+    pub fn set_contact_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_contact_arn(input);
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the email contact in Amazon Connect. Used to retrieve email content and establish session context for AI-powered email assistance.</p>
+    pub fn get_contact_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_contact_arn()
+    }
 }

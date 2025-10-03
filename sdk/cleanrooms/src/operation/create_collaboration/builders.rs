@@ -328,4 +328,23 @@ impl CreateCollaborationFluentBuilder {
     pub fn get_auto_approved_change_request_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AutoApprovedChangeType>> {
         self.inner.get_auto_approved_change_request_types()
     }
+    ///
+    /// Appends an item to `allowedResultRegions`.
+    ///
+    /// To override the contents of this collection use [`set_allowed_result_regions`](Self::set_allowed_result_regions).
+    ///
+    /// <p>The Amazon Web Services Regions where collaboration query results can be stored. When specified, results can only be written to these Regions. This parameter enables you to meet your compliance and data governance requirements, and implement regional data governance policies.</p>
+    pub fn allowed_result_regions(mut self, input: crate::types::SupportedS3Region) -> Self {
+        self.inner = self.inner.allowed_result_regions(input);
+        self
+    }
+    /// <p>The Amazon Web Services Regions where collaboration query results can be stored. When specified, results can only be written to these Regions. This parameter enables you to meet your compliance and data governance requirements, and implement regional data governance policies.</p>
+    pub fn set_allowed_result_regions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SupportedS3Region>>) -> Self {
+        self.inner = self.inner.set_allowed_result_regions(input);
+        self
+    }
+    /// <p>The Amazon Web Services Regions where collaboration query results can be stored. When specified, results can only be written to these Regions. This parameter enables you to meet your compliance and data governance requirements, and implement regional data governance policies.</p>
+    pub fn get_allowed_result_regions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SupportedS3Region>> {
+        self.inner.get_allowed_result_regions()
+    }
 }

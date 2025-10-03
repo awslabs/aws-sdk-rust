@@ -51,6 +51,12 @@ pub use crate::types::_translation_pin_data_iso_format034::TranslationPinDataIso
 
 pub use crate::types::_translation_pin_data_iso_format1::TranslationPinDataIsoFormat1Builder;
 
+pub use crate::types::_wrapped_working_key::WrappedWorkingKeyBuilder;
+
+pub use crate::types::_outgoing_tr31_key_block::OutgoingTr31KeyBlockBuilder;
+
+pub use crate::types::_incoming_diffie_hellman_tr31_key_block::IncomingDiffieHellmanTr31KeyBlockBuilder;
+
 pub use crate::types::_dukpt_encryption_attributes::DukptEncryptionAttributesBuilder;
 
 pub use crate::types::_symmetric_encryption_attributes::SymmetricEncryptionAttributesBuilder;

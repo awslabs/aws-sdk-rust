@@ -16,7 +16,7 @@ pub struct H264Settings {
     pub buf_size: ::std::option::Option<i32>,
     /// Includes colorspace metadata in the output.
     pub color_metadata: ::std::option::Option<crate::types::H264ColorMetadata>,
-    /// Color Space settings
+    /// Specify the type of color space to apply or choose to pass through. The default is to pass through the color space that is in the source.
     pub color_space_settings: ::std::option::Option<crate::types::H264ColorSpaceSettings>,
     /// Entropy encoding mode. Use cabac (must be in Main or High profile) or cavlc.
     pub entropy_encoding: ::std::option::Option<crate::types::H264EntropyEncoding>,
@@ -118,7 +118,7 @@ impl H264Settings {
     pub fn color_metadata(&self) -> ::std::option::Option<&crate::types::H264ColorMetadata> {
         self.color_metadata.as_ref()
     }
-    /// Color Space settings
+    /// Specify the type of color space to apply or choose to pass through. The default is to pass through the color space that is in the source.
     pub fn color_space_settings(&self) -> ::std::option::Option<&crate::types::H264ColorSpaceSettings> {
         self.color_space_settings.as_ref()
     }
@@ -412,17 +412,17 @@ impl H264SettingsBuilder {
     pub fn get_color_metadata(&self) -> &::std::option::Option<crate::types::H264ColorMetadata> {
         &self.color_metadata
     }
-    /// Color Space settings
+    /// Specify the type of color space to apply or choose to pass through. The default is to pass through the color space that is in the source.
     pub fn color_space_settings(mut self, input: crate::types::H264ColorSpaceSettings) -> Self {
         self.color_space_settings = ::std::option::Option::Some(input);
         self
     }
-    /// Color Space settings
+    /// Specify the type of color space to apply or choose to pass through. The default is to pass through the color space that is in the source.
     pub fn set_color_space_settings(mut self, input: ::std::option::Option<crate::types::H264ColorSpaceSettings>) -> Self {
         self.color_space_settings = input;
         self
     }
-    /// Color Space settings
+    /// Specify the type of color space to apply or choose to pass through. The default is to pass through the color space that is in the source.
     pub fn get_color_space_settings(&self) -> &::std::option::Option<crate::types::H264ColorSpaceSettings> {
         &self.color_space_settings
     }

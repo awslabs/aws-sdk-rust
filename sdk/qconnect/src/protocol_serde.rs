@@ -253,6 +253,8 @@ pub(crate) mod shape_create_session_input;
 
 pub(crate) mod shape_deactivate_message_template_input;
 
+pub(crate) mod shape_dependency_failed_exception;
+
 pub(crate) mod shape_notify_recommendations_received_input;
 
 pub(crate) mod shape_precondition_failed_exception;
@@ -511,7 +513,13 @@ pub(crate) mod shape_content_metadata;
 
 pub(crate) mod shape_customer_profile_attributes;
 
+pub(crate) mod shape_email_generative_answer_ai_agent_configuration;
+
 pub(crate) mod shape_email_message_template_content;
+
+pub(crate) mod shape_email_overview_ai_agent_configuration;
+
+pub(crate) mod shape_email_response_ai_agent_configuration;
 
 pub(crate) mod shape_failure_reason;
 
@@ -692,6 +700,12 @@ pub(crate) mod shape_url_configuration;
 pub(crate) mod shape_web_crawler_limits;
 
 pub(crate) mod shape_content_data_details;
+
+pub(crate) mod shape_email_generative_answer_chunk_data_details;
+
+pub(crate) mod shape_email_overview_chunk_data_details;
+
+pub(crate) mod shape_email_response_chunk_data_details;
 
 pub(crate) mod shape_generative_chunk_data_details;
 

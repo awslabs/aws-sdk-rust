@@ -120,6 +120,10 @@ where
                                 crate::protocol_serde::shape_auto_approved_change_type_list::de_auto_approved_change_type_list(tokens)?,
                             );
                         }
+                        "allowedResultRegions" => {
+                            builder = builder
+                                .set_allowed_result_regions(crate::protocol_serde::shape_allowed_result_regions::de_allowed_result_regions(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

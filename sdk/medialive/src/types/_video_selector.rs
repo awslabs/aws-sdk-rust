@@ -4,9 +4,9 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VideoSelector {
-    /// Specifies the color space of an input. This setting works in tandem with colorSpaceUsage and a video description's colorSpaceSettingsChoice to determine if any conversion will be performed.
+    /// Controls how MediaLive will use the color space metadata from the source. Typically, choose FOLLOW, which means to use the color space metadata without changing it. Or choose another value (a standard). In this case, the handling is controlled by the colorspaceUsage property.
     pub color_space: ::std::option::Option<crate::types::VideoSelectorColorSpace>,
-    /// Color space settings
+    /// Choose HDR10 only if the following situation applies. Firstly, you specified HDR10 in ColorSpace. Secondly, the attached input is for AWS Elemental Link. Thirdly, you plan to convert the content to another color space. You need to specify the color space metadata that is missing from the source sent from AWS Elemental Link.
     pub color_space_settings: ::std::option::Option<crate::types::VideoSelectorColorSpaceSettings>,
     /// Applies only if colorSpace is a value other than follow. This field controls how the value in the colorSpace field will be used. fallback means that when the input does include color space data, that data will be used, but when the input has no color space data, the value in colorSpace will be used. Choose fallback if your input is sometimes missing color space data, but when it does have color space data, that data is correct. force means to always use the value in colorSpace. Choose force if your input usually has no color space data or might have unreliable color space data.
     pub color_space_usage: ::std::option::Option<crate::types::VideoSelectorColorSpaceUsage>,
@@ -14,11 +14,11 @@ pub struct VideoSelector {
     pub selector_settings: ::std::option::Option<crate::types::VideoSelectorSettings>,
 }
 impl VideoSelector {
-    /// Specifies the color space of an input. This setting works in tandem with colorSpaceUsage and a video description's colorSpaceSettingsChoice to determine if any conversion will be performed.
+    /// Controls how MediaLive will use the color space metadata from the source. Typically, choose FOLLOW, which means to use the color space metadata without changing it. Or choose another value (a standard). In this case, the handling is controlled by the colorspaceUsage property.
     pub fn color_space(&self) -> ::std::option::Option<&crate::types::VideoSelectorColorSpace> {
         self.color_space.as_ref()
     }
-    /// Color space settings
+    /// Choose HDR10 only if the following situation applies. Firstly, you specified HDR10 in ColorSpace. Secondly, the attached input is for AWS Elemental Link. Thirdly, you plan to convert the content to another color space. You need to specify the color space metadata that is missing from the source sent from AWS Elemental Link.
     pub fn color_space_settings(&self) -> ::std::option::Option<&crate::types::VideoSelectorColorSpaceSettings> {
         self.color_space_settings.as_ref()
     }
@@ -48,31 +48,31 @@ pub struct VideoSelectorBuilder {
     pub(crate) selector_settings: ::std::option::Option<crate::types::VideoSelectorSettings>,
 }
 impl VideoSelectorBuilder {
-    /// Specifies the color space of an input. This setting works in tandem with colorSpaceUsage and a video description's colorSpaceSettingsChoice to determine if any conversion will be performed.
+    /// Controls how MediaLive will use the color space metadata from the source. Typically, choose FOLLOW, which means to use the color space metadata without changing it. Or choose another value (a standard). In this case, the handling is controlled by the colorspaceUsage property.
     pub fn color_space(mut self, input: crate::types::VideoSelectorColorSpace) -> Self {
         self.color_space = ::std::option::Option::Some(input);
         self
     }
-    /// Specifies the color space of an input. This setting works in tandem with colorSpaceUsage and a video description's colorSpaceSettingsChoice to determine if any conversion will be performed.
+    /// Controls how MediaLive will use the color space metadata from the source. Typically, choose FOLLOW, which means to use the color space metadata without changing it. Or choose another value (a standard). In this case, the handling is controlled by the colorspaceUsage property.
     pub fn set_color_space(mut self, input: ::std::option::Option<crate::types::VideoSelectorColorSpace>) -> Self {
         self.color_space = input;
         self
     }
-    /// Specifies the color space of an input. This setting works in tandem with colorSpaceUsage and a video description's colorSpaceSettingsChoice to determine if any conversion will be performed.
+    /// Controls how MediaLive will use the color space metadata from the source. Typically, choose FOLLOW, which means to use the color space metadata without changing it. Or choose another value (a standard). In this case, the handling is controlled by the colorspaceUsage property.
     pub fn get_color_space(&self) -> &::std::option::Option<crate::types::VideoSelectorColorSpace> {
         &self.color_space
     }
-    /// Color space settings
+    /// Choose HDR10 only if the following situation applies. Firstly, you specified HDR10 in ColorSpace. Secondly, the attached input is for AWS Elemental Link. Thirdly, you plan to convert the content to another color space. You need to specify the color space metadata that is missing from the source sent from AWS Elemental Link.
     pub fn color_space_settings(mut self, input: crate::types::VideoSelectorColorSpaceSettings) -> Self {
         self.color_space_settings = ::std::option::Option::Some(input);
         self
     }
-    /// Color space settings
+    /// Choose HDR10 only if the following situation applies. Firstly, you specified HDR10 in ColorSpace. Secondly, the attached input is for AWS Elemental Link. Thirdly, you plan to convert the content to another color space. You need to specify the color space metadata that is missing from the source sent from AWS Elemental Link.
     pub fn set_color_space_settings(mut self, input: ::std::option::Option<crate::types::VideoSelectorColorSpaceSettings>) -> Self {
         self.color_space_settings = input;
         self
     }
-    /// Color space settings
+    /// Choose HDR10 only if the following situation applies. Firstly, you specified HDR10 in ColorSpace. Secondly, the attached input is for AWS Elemental Link. Thirdly, you plan to convert the content to another color space. You need to specify the color space metadata that is missing from the source sent from AWS Elemental Link.
     pub fn get_color_space_settings(&self) -> &::std::option::Option<crate::types::VideoSelectorColorSpaceSettings> {
         &self.color_space_settings
     }

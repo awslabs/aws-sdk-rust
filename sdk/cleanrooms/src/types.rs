@@ -287,6 +287,8 @@ pub use crate::types::_table_reference::TableReference;
 
 pub use crate::types::_athena_table_reference::AthenaTableReference;
 
+pub use crate::types::_commercial_region::CommercialRegion;
+
 pub use crate::types::_snowflake_table_reference::SnowflakeTableReference;
 
 pub use crate::types::_snowflake_table_schema::SnowflakeTableSchema;
@@ -461,6 +463,8 @@ pub use crate::types::_batch_get_collaboration_analysis_template_error::BatchGet
 
 pub use crate::types::_collaboration::Collaboration;
 
+pub use crate::types::_supported_s3_region::SupportedS3Region;
+
 pub use crate::types::_auto_approved_change_type::AutoApprovedChangeType;
 
 pub use crate::types::_analytics_engine::AnalyticsEngine;
@@ -616,6 +620,8 @@ mod _collaboration_query_log_status;
 mod _collaboration_summary;
 
 mod _column;
+
+mod _commercial_region;
 
 mod _compute_configuration;
 
@@ -948,6 +954,8 @@ mod _snowflake_table_reference;
 mod _snowflake_table_schema;
 
 mod _snowflake_table_schema_v1;
+
+mod _supported_s3_region;
 
 mod _table_reference;
 

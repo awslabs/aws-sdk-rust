@@ -25,6 +25,27 @@ pub fn ser_ai_agent_configuration(
             crate::protocol_serde::shape_self_service_ai_agent_configuration::ser_self_service_ai_agent_configuration(&mut object_3, inner)?;
             object_3.finish();
         }
+        crate::types::AiAgentConfiguration::EmailResponseAiAgentConfiguration(inner) => {
+            #[allow(unused_mut)]
+            let mut object_4 = object_3.key("emailResponseAIAgentConfiguration").start_object();
+            crate::protocol_serde::shape_email_response_ai_agent_configuration::ser_email_response_ai_agent_configuration(&mut object_4, inner)?;
+            object_4.finish();
+        }
+        crate::types::AiAgentConfiguration::EmailOverviewAiAgentConfiguration(inner) => {
+            #[allow(unused_mut)]
+            let mut object_5 = object_3.key("emailOverviewAIAgentConfiguration").start_object();
+            crate::protocol_serde::shape_email_overview_ai_agent_configuration::ser_email_overview_ai_agent_configuration(&mut object_5, inner)?;
+            object_5.finish();
+        }
+        crate::types::AiAgentConfiguration::EmailGenerativeAnswerAiAgentConfiguration(inner) => {
+            #[allow(unused_mut)]
+            let mut object_6 = object_3.key("emailGenerativeAnswerAIAgentConfiguration").start_object();
+            crate::protocol_serde::shape_email_generative_answer_ai_agent_configuration::ser_email_generative_answer_ai_agent_configuration(
+                &mut object_6,
+                inner,
+            )?;
+            object_6.finish();
+        }
         crate::types::AiAgentConfiguration::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "AiAgentConfiguration",
@@ -80,6 +101,24 @@ where
                                 Some(crate::types::AiAgentConfiguration::SelfServiceAiAgentConfiguration(
                                     crate::protocol_serde::shape_self_service_ai_agent_configuration::de_self_service_ai_agent_configuration(tokens)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'selfServiceAIAgentConfiguration' cannot be null"))?
+                                ))
+                            }
+                            "emailResponseAIAgentConfiguration" => {
+                                Some(crate::types::AiAgentConfiguration::EmailResponseAiAgentConfiguration(
+                                    crate::protocol_serde::shape_email_response_ai_agent_configuration::de_email_response_ai_agent_configuration(tokens)?
+                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'emailResponseAIAgentConfiguration' cannot be null"))?
+                                ))
+                            }
+                            "emailOverviewAIAgentConfiguration" => {
+                                Some(crate::types::AiAgentConfiguration::EmailOverviewAiAgentConfiguration(
+                                    crate::protocol_serde::shape_email_overview_ai_agent_configuration::de_email_overview_ai_agent_configuration(tokens)?
+                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'emailOverviewAIAgentConfiguration' cannot be null"))?
+                                ))
+                            }
+                            "emailGenerativeAnswerAIAgentConfiguration" => {
+                                Some(crate::types::AiAgentConfiguration::EmailGenerativeAnswerAiAgentConfiguration(
+                                    crate::protocol_serde::shape_email_generative_answer_ai_agent_configuration::de_email_generative_answer_ai_agent_configuration(tokens)?
+                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'emailGenerativeAnswerAIAgentConfiguration' cannot be null"))?
                                 ))
                             }
                             _ => {

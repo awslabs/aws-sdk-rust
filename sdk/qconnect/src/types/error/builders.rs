@@ -17,4 +17,6 @@ pub use crate::types::error::_throttling_exception::ThrottlingExceptionBuilder;
 
 pub use crate::types::error::_precondition_failed_exception::PreconditionFailedExceptionBuilder;
 
+pub use crate::types::error::_dependency_failed_exception::DependencyFailedExceptionBuilder;
+
 pub use crate::types::error::_too_many_tags_exception::TooManyTagsExceptionBuilder;

@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AthenaTableReference {
+    /// <p>The Amazon Web Services Region where the Athena table is located. This parameter is required to uniquely identify and access tables across different Regions.</p>
+    pub region: ::std::option::Option<crate::types::CommercialRegion>,
     /// <p>The workgroup of the Athena table reference.</p>
     pub work_group: ::std::string::String,
     /// <p>The output location for the Athena table.</p>
@@ -14,6 +16,10 @@ pub struct AthenaTableReference {
     pub table_name: ::std::string::String,
 }
 impl AthenaTableReference {
+    /// <p>The Amazon Web Services Region where the Athena table is located. This parameter is required to uniquely identify and access tables across different Regions.</p>
+    pub fn region(&self) -> ::std::option::Option<&crate::types::CommercialRegion> {
+        self.region.as_ref()
+    }
     /// <p>The workgroup of the Athena table reference.</p>
     pub fn work_group(&self) -> &str {
         use std::ops::Deref;
@@ -45,12 +51,27 @@ impl AthenaTableReference {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct AthenaTableReferenceBuilder {
+    pub(crate) region: ::std::option::Option<crate::types::CommercialRegion>,
     pub(crate) work_group: ::std::option::Option<::std::string::String>,
     pub(crate) output_location: ::std::option::Option<::std::string::String>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
     pub(crate) table_name: ::std::option::Option<::std::string::String>,
 }
 impl AthenaTableReferenceBuilder {
+    /// <p>The Amazon Web Services Region where the Athena table is located. This parameter is required to uniquely identify and access tables across different Regions.</p>
+    pub fn region(mut self, input: crate::types::CommercialRegion) -> Self {
+        self.region = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Amazon Web Services Region where the Athena table is located. This parameter is required to uniquely identify and access tables across different Regions.</p>
+    pub fn set_region(mut self, input: ::std::option::Option<crate::types::CommercialRegion>) -> Self {
+        self.region = input;
+        self
+    }
+    /// <p>The Amazon Web Services Region where the Athena table is located. This parameter is required to uniquely identify and access tables across different Regions.</p>
+    pub fn get_region(&self) -> &::std::option::Option<crate::types::CommercialRegion> {
+        &self.region
+    }
     /// <p>The workgroup of the Athena table reference.</p>
     /// This field is required.
     pub fn work_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -117,6 +138,7 @@ impl AthenaTableReferenceBuilder {
     /// - [`table_name`](crate::types::builders::AthenaTableReferenceBuilder::table_name)
     pub fn build(self) -> ::std::result::Result<crate::types::AthenaTableReference, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AthenaTableReference {
+            region: self.region,
             work_group: self.work_group.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "work_group",

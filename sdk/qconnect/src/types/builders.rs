@@ -129,6 +129,12 @@ pub use crate::types::_result_data::ResultDataBuilder;
 
 pub use crate::types::_data_summary::DataSummaryBuilder;
 
+pub use crate::types::_email_generative_answer_chunk_data_details::EmailGenerativeAnswerChunkDataDetailsBuilder;
+
+pub use crate::types::_email_overview_chunk_data_details::EmailOverviewChunkDataDetailsBuilder;
+
+pub use crate::types::_email_response_chunk_data_details::EmailResponseChunkDataDetailsBuilder;
+
 pub use crate::types::_generative_chunk_data_details::GenerativeChunkDataDetailsBuilder;
 
 pub use crate::types::_source_content_data_details::SourceContentDataDetailsBuilder;
@@ -243,11 +249,17 @@ pub use crate::types::_ai_agent_version_summary::AiAgentVersionSummaryBuilder;
 
 pub use crate::types::_ai_agent_summary::AiAgentSummaryBuilder;
 
-pub use crate::types::_self_service_ai_agent_configuration::SelfServiceAiAgentConfigurationBuilder;
+pub use crate::types::_email_generative_answer_ai_agent_configuration::EmailGenerativeAnswerAiAgentConfigurationBuilder;
 
 pub use crate::types::_association_configuration::AssociationConfigurationBuilder;
 
 pub use crate::types::_knowledge_base_association_configuration_data::KnowledgeBaseAssociationConfigurationDataBuilder;
+
+pub use crate::types::_email_overview_ai_agent_configuration::EmailOverviewAiAgentConfigurationBuilder;
+
+pub use crate::types::_email_response_ai_agent_configuration::EmailResponseAiAgentConfigurationBuilder;
+
+pub use crate::types::_self_service_ai_agent_configuration::SelfServiceAiAgentConfigurationBuilder;
 
 pub use crate::types::_answer_recommendation_ai_agent_configuration::AnswerRecommendationAiAgentConfigurationBuilder;
 

@@ -13,6 +13,9 @@
 /// # let aiagenttype = unimplemented!();
 /// match aiagenttype {
 ///     AiAgentType::AnswerRecommendation => { /* ... */ },
+///     AiAgentType::EmailGenerativeAnswer => { /* ... */ },
+///     AiAgentType::EmailOverview => { /* ... */ },
+///     AiAgentType::EmailResponse => { /* ... */ },
 ///     AiAgentType::ManualSearch => { /* ... */ },
 ///     AiAgentType::SelfService => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -46,6 +49,12 @@ pub enum AiAgentType {
     #[allow(missing_docs)] // documentation missing in model
     AnswerRecommendation,
     #[allow(missing_docs)] // documentation missing in model
+    EmailGenerativeAnswer,
+    #[allow(missing_docs)] // documentation missing in model
+    EmailOverview,
+    #[allow(missing_docs)] // documentation missing in model
+    EmailResponse,
+    #[allow(missing_docs)] // documentation missing in model
     ManualSearch,
     #[allow(missing_docs)] // documentation missing in model
     SelfService,
@@ -57,6 +66,9 @@ impl ::std::convert::From<&str> for AiAgentType {
     fn from(s: &str) -> Self {
         match s {
             "ANSWER_RECOMMENDATION" => AiAgentType::AnswerRecommendation,
+            "EMAIL_GENERATIVE_ANSWER" => AiAgentType::EmailGenerativeAnswer,
+            "EMAIL_OVERVIEW" => AiAgentType::EmailOverview,
+            "EMAIL_RESPONSE" => AiAgentType::EmailResponse,
             "MANUAL_SEARCH" => AiAgentType::ManualSearch,
             "SELF_SERVICE" => AiAgentType::SelfService,
             other => AiAgentType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -75,6 +87,9 @@ impl AiAgentType {
     pub fn as_str(&self) -> &str {
         match self {
             AiAgentType::AnswerRecommendation => "ANSWER_RECOMMENDATION",
+            AiAgentType::EmailGenerativeAnswer => "EMAIL_GENERATIVE_ANSWER",
+            AiAgentType::EmailOverview => "EMAIL_OVERVIEW",
+            AiAgentType::EmailResponse => "EMAIL_RESPONSE",
             AiAgentType::ManualSearch => "MANUAL_SEARCH",
             AiAgentType::SelfService => "SELF_SERVICE",
             AiAgentType::Unknown(value) => value.as_str(),
@@ -82,7 +97,14 @@ impl AiAgentType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ANSWER_RECOMMENDATION", "MANUAL_SEARCH", "SELF_SERVICE"]
+        &[
+            "ANSWER_RECOMMENDATION",
+            "EMAIL_GENERATIVE_ANSWER",
+            "EMAIL_OVERVIEW",
+            "EMAIL_RESPONSE",
+            "MANUAL_SEARCH",
+            "SELF_SERVICE",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for AiAgentType {
@@ -106,6 +128,9 @@ impl ::std::fmt::Display for AiAgentType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             AiAgentType::AnswerRecommendation => write!(f, "ANSWER_RECOMMENDATION"),
+            AiAgentType::EmailGenerativeAnswer => write!(f, "EMAIL_GENERATIVE_ANSWER"),
+            AiAgentType::EmailOverview => write!(f, "EMAIL_OVERVIEW"),
+            AiAgentType::EmailResponse => write!(f, "EMAIL_RESPONSE"),
             AiAgentType::ManualSearch => write!(f, "MANUAL_SEARCH"),
             AiAgentType::SelfService => write!(f, "SELF_SERVICE"),
             AiAgentType::Unknown(value) => write!(f, "{}", value),

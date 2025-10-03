@@ -22,6 +22,9 @@ pub mod generate_pin_data;
 /// Types for the `ReEncryptData` operation.
 pub mod re_encrypt_data;
 
+/// Types for the `TranslateKeyMaterial` operation.
+pub mod translate_key_material;
+
 /// Types for the `TranslatePinData` operation.
 pub mod translate_pin_data;
 

@@ -40,6 +40,8 @@ pub struct Collaboration {
     pub analytics_engine: ::std::option::Option<crate::types::AnalyticsEngine>,
     /// <p>The types of change requests that are automatically approved for this collaboration.</p>
     pub auto_approved_change_types: ::std::option::Option<::std::vec::Vec<crate::types::AutoApprovedChangeType>>,
+    /// <p>The Amazon Web Services Regions where collaboration query results can be stored. Returns the list of Region identifiers that were specified when the collaboration was created. This list is used to enforce regional storage policies and compliance requirements.</p>
+    pub allowed_result_regions: ::std::option::Option<::std::vec::Vec<crate::types::SupportedS3Region>>,
 }
 impl Collaboration {
     /// <p>The unique ID for the collaboration.</p>
@@ -117,6 +119,12 @@ impl Collaboration {
     pub fn auto_approved_change_types(&self) -> &[crate::types::AutoApprovedChangeType] {
         self.auto_approved_change_types.as_deref().unwrap_or_default()
     }
+    /// <p>The Amazon Web Services Regions where collaboration query results can be stored. Returns the list of Region identifiers that were specified when the collaboration was created. This list is used to enforce regional storage policies and compliance requirements.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.allowed_result_regions.is_none()`.
+    pub fn allowed_result_regions(&self) -> &[crate::types::SupportedS3Region] {
+        self.allowed_result_regions.as_deref().unwrap_or_default()
+    }
 }
 impl Collaboration {
     /// Creates a new builder-style object to manufacture [`Collaboration`](crate::types::Collaboration).
@@ -145,6 +153,7 @@ pub struct CollaborationBuilder {
     pub(crate) job_log_status: ::std::option::Option<crate::types::CollaborationJobLogStatus>,
     pub(crate) analytics_engine: ::std::option::Option<crate::types::AnalyticsEngine>,
     pub(crate) auto_approved_change_types: ::std::option::Option<::std::vec::Vec<crate::types::AutoApprovedChangeType>>,
+    pub(crate) allowed_result_regions: ::std::option::Option<::std::vec::Vec<crate::types::SupportedS3Region>>,
 }
 impl CollaborationBuilder {
     /// <p>The unique ID for the collaboration.</p>
@@ -398,6 +407,26 @@ impl CollaborationBuilder {
     pub fn get_auto_approved_change_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AutoApprovedChangeType>> {
         &self.auto_approved_change_types
     }
+    /// Appends an item to `allowed_result_regions`.
+    ///
+    /// To override the contents of this collection use [`set_allowed_result_regions`](Self::set_allowed_result_regions).
+    ///
+    /// <p>The Amazon Web Services Regions where collaboration query results can be stored. Returns the list of Region identifiers that were specified when the collaboration was created. This list is used to enforce regional storage policies and compliance requirements.</p>
+    pub fn allowed_result_regions(mut self, input: crate::types::SupportedS3Region) -> Self {
+        let mut v = self.allowed_result_regions.unwrap_or_default();
+        v.push(input);
+        self.allowed_result_regions = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The Amazon Web Services Regions where collaboration query results can be stored. Returns the list of Region identifiers that were specified when the collaboration was created. This list is used to enforce regional storage policies and compliance requirements.</p>
+    pub fn set_allowed_result_regions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SupportedS3Region>>) -> Self {
+        self.allowed_result_regions = input;
+        self
+    }
+    /// <p>The Amazon Web Services Regions where collaboration query results can be stored. Returns the list of Region identifiers that were specified when the collaboration was created. This list is used to enforce regional storage policies and compliance requirements.</p>
+    pub fn get_allowed_result_regions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SupportedS3Region>> {
+        &self.allowed_result_regions
+    }
     /// Consumes the builder and constructs a [`Collaboration`](crate::types::Collaboration).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::CollaborationBuilder::id)
@@ -472,6 +501,7 @@ impl CollaborationBuilder {
             job_log_status: self.job_log_status,
             analytics_engine: self.analytics_engine,
             auto_approved_change_types: self.auto_approved_change_types,
+            allowed_result_regions: self.allowed_result_regions,
         })
     }
 }

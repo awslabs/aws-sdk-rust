@@ -203,6 +203,12 @@ pub use crate::types::_data_summary::DataSummary;
 
 pub use crate::types::_data_details::DataDetails;
 
+pub use crate::types::_email_generative_answer_chunk_data_details::EmailGenerativeAnswerChunkDataDetails;
+
+pub use crate::types::_email_overview_chunk_data_details::EmailOverviewChunkDataDetails;
+
+pub use crate::types::_email_response_chunk_data_details::EmailResponseChunkDataDetails;
+
 pub use crate::types::_generative_chunk_data_details::GenerativeChunkDataDetails;
 
 pub use crate::types::_source_content_data_details::SourceContentDataDetails;
@@ -403,7 +409,7 @@ pub use crate::types::_ai_agent_summary::AiAgentSummary;
 
 pub use crate::types::_ai_agent_configuration::AiAgentConfiguration;
 
-pub use crate::types::_self_service_ai_agent_configuration::SelfServiceAiAgentConfiguration;
+pub use crate::types::_email_generative_answer_ai_agent_configuration::EmailGenerativeAnswerAiAgentConfiguration;
 
 pub use crate::types::_association_configuration::AssociationConfiguration;
 
@@ -412,6 +418,12 @@ pub use crate::types::_association_configuration_data::AssociationConfigurationD
 pub use crate::types::_knowledge_base_association_configuration_data::KnowledgeBaseAssociationConfigurationData;
 
 pub use crate::types::_ai_agent_association_configuration_type::AiAgentAssociationConfigurationType;
+
+pub use crate::types::_email_overview_ai_agent_configuration::EmailOverviewAiAgentConfiguration;
+
+pub use crate::types::_email_response_ai_agent_configuration::EmailResponseAiAgentConfiguration;
+
+pub use crate::types::_self_service_ai_agent_configuration::SelfServiceAiAgentConfiguration;
 
 pub use crate::types::_answer_recommendation_ai_agent_configuration::AnswerRecommendationAiAgentConfiguration;
 
@@ -555,11 +567,23 @@ mod _document;
 
 mod _document_text;
 
+mod _email_generative_answer_ai_agent_configuration;
+
+mod _email_generative_answer_chunk_data_details;
+
 mod _email_header;
 
 mod _email_message_template_content;
 
 mod _email_message_template_content_body;
+
+mod _email_overview_ai_agent_configuration;
+
+mod _email_overview_chunk_data_details;
+
+mod _email_response_ai_agent_configuration;
+
+mod _email_response_chunk_data_details;
 
 mod _extended_message_template_data;
 

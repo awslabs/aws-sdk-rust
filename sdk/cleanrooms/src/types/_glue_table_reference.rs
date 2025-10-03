@@ -4,12 +4,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GlueTableReference {
+    /// <p>The Amazon Web Services Region where the Glue table is located. This parameter is required to uniquely identify and access tables across different Regions.</p>
+    pub region: ::std::option::Option<crate::types::CommercialRegion>,
     /// <p>The name of the Glue table.</p>
     pub table_name: ::std::string::String,
     /// <p>The name of the database the Glue table belongs to.</p>
     pub database_name: ::std::string::String,
 }
 impl GlueTableReference {
+    /// <p>The Amazon Web Services Region where the Glue table is located. This parameter is required to uniquely identify and access tables across different Regions.</p>
+    pub fn region(&self) -> ::std::option::Option<&crate::types::CommercialRegion> {
+        self.region.as_ref()
+    }
     /// <p>The name of the Glue table.</p>
     pub fn table_name(&self) -> &str {
         use std::ops::Deref;
@@ -32,10 +38,25 @@ impl GlueTableReference {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct GlueTableReferenceBuilder {
+    pub(crate) region: ::std::option::Option<crate::types::CommercialRegion>,
     pub(crate) table_name: ::std::option::Option<::std::string::String>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
 }
 impl GlueTableReferenceBuilder {
+    /// <p>The Amazon Web Services Region where the Glue table is located. This parameter is required to uniquely identify and access tables across different Regions.</p>
+    pub fn region(mut self, input: crate::types::CommercialRegion) -> Self {
+        self.region = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Amazon Web Services Region where the Glue table is located. This parameter is required to uniquely identify and access tables across different Regions.</p>
+    pub fn set_region(mut self, input: ::std::option::Option<crate::types::CommercialRegion>) -> Self {
+        self.region = input;
+        self
+    }
+    /// <p>The Amazon Web Services Region where the Glue table is located. This parameter is required to uniquely identify and access tables across different Regions.</p>
+    pub fn get_region(&self) -> &::std::option::Option<crate::types::CommercialRegion> {
+        &self.region
+    }
     /// <p>The name of the Glue table.</p>
     /// This field is required.
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -72,6 +93,7 @@ impl GlueTableReferenceBuilder {
     /// - [`database_name`](crate::types::builders::GlueTableReferenceBuilder::database_name)
     pub fn build(self) -> ::std::result::Result<crate::types::GlueTableReference, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::GlueTableReference {
+            region: self.region,
             table_name: self.table_name.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "table_name",
